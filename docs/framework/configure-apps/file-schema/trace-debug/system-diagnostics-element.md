@@ -1,72 +1,73 @@
 ---
-title: "&lt;system.diagnostics&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#system.diagnostics"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<system.diagnostics> (élément)"
-  - "system.diagnostics (élément)"
+title: "&lt;System.Diagnostics&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#system.diagnostics
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics
+helpviewer_keywords:
+- <system.diagnostics> element
+- system.diagnostics element
 ms.assetid: 3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2
-caps.latest.revision: 17
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: d336a0f733451cb28d8fe57af20585515b71ca4b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;system.diagnostics&gt;, &#233;l&#233;ment
-Spécifie les écouteurs de traçage qui collectent, stockent et routent des messages, ainsi que le niveau auquel un commutateur de traçage est défini.  
+# <a name="ltsystemdiagnosticsgt-element"></a><span data-ttu-id="85293-102">&lt;System.Diagnostics&gt; élément</span><span class="sxs-lookup"><span data-stu-id="85293-102">&lt;system.diagnostics&gt; Element</span></span>
+<span data-ttu-id="85293-103">Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.</span><span class="sxs-lookup"><span data-stu-id="85293-103">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="85293-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="85293-104">\<configuration></span></span>  
+<span data-ttu-id="85293-105">\<System.Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="85293-105">\<system.diagnostics></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="85293-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="85293-106">Syntax</span></span>  
+  
+```xml  
 <system.diagnostics>   
 </system.diagnostics>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="85293-107">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="85293-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="85293-108">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="85293-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
- Aucun.  
+### <a name="attributes"></a><span data-ttu-id="85293-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="85293-109">Attributes</span></span>  
+ <span data-ttu-id="85293-110">Aucun</span><span class="sxs-lookup"><span data-stu-id="85293-110">None.</span></span>  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="85293-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="85293-111">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="85293-112">Élément</span><span class="sxs-lookup"><span data-stu-id="85293-112">Element</span></span>|<span data-ttu-id="85293-113">Description</span><span class="sxs-lookup"><span data-stu-id="85293-113">Description</span></span>|  
 |-------------|-----------------|  
-|[\<assert\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/assert-element.md)|Spécifie s'il convient d'afficher une boîte de message lorsque vous appelez la méthode <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=fullName>; spécifie également le nom du fichier dans lequel écrire les messages.|  
-|[\<performanceCounters\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md)|Spécifie la taille de la mémoire globale partagée par les compteurs de performance.|  
-|[\<sharedListeners\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md)|Contient des écouteurs qui peuvent être référencés par n'importe quel élément trace ou source.  Les écouteurs identifiés comme des écouteurs partagés peuvent être ajoutés aux sources ou aux traces par nom.|  
-|[\<sources\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sources-element.md)|Spécifie les sources de trace qui initient des messages de traçage.|  
-|[\<commutateurs\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/switches-element.md)|Contient des commutateurs de traçage et les niveaux auxquels les commutateurs de traçage sont définis.|  
-|[\<trace\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)|Contient des écouteurs qui collectent, stockent et routent des messages de traçage.|  
+|[<span data-ttu-id="85293-114">\<assert></span><span class="sxs-lookup"><span data-stu-id="85293-114">\<assert></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/assert-element.md)|<span data-ttu-id="85293-115">Indique si une boîte de message doit s’afficher quand vous appelez la méthode <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ; spécifie également le nom du fichier dans lequel écrire les messages.</span><span class="sxs-lookup"><span data-stu-id="85293-115">Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.</span></span>|  
+|[<span data-ttu-id="85293-116">\<performanceCounters></span><span class="sxs-lookup"><span data-stu-id="85293-116">\<performanceCounters></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md)|<span data-ttu-id="85293-117">Spécifie la taille de la mémoire globale partagée par les compteurs de performances.</span><span class="sxs-lookup"><span data-stu-id="85293-117">Specifies the size of the global memory shared by performance counters.</span></span>|  
+|[<span data-ttu-id="85293-118">\<sharedListeners></span><span class="sxs-lookup"><span data-stu-id="85293-118">\<sharedListeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md)|<span data-ttu-id="85293-119">Contient des écouteurs auxquels toute source ou tout élément de trace peuvent faire référence.</span><span class="sxs-lookup"><span data-stu-id="85293-119">Contains listeners that any source or trace element can reference.</span></span> <span data-ttu-id="85293-120">Les écouteurs identifiés comme des écouteurs partagés peuvent être ajoutés à des sources ou des traces par nom.</span><span class="sxs-lookup"><span data-stu-id="85293-120">Listeners identified as shared listeners can be added to sources or traces by name.</span></span>|  
+|[<span data-ttu-id="85293-121">\<sources></span><span class="sxs-lookup"><span data-stu-id="85293-121">\<sources></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sources-element.md)|<span data-ttu-id="85293-122">Spécifie les sources de trace qui initient des messages de traçage.</span><span class="sxs-lookup"><span data-stu-id="85293-122">Specifies trace sources that initiate tracing messages.</span></span>|  
+|[<span data-ttu-id="85293-123">\<switches></span><span class="sxs-lookup"><span data-stu-id="85293-123">\<switches></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/switches-element.md)|<span data-ttu-id="85293-124">Contient les commutateurs de traçage et les niveaux où les commutateurs de trace sont définies.</span><span class="sxs-lookup"><span data-stu-id="85293-124">Contains trace switches and the levels where the trace switches are set.</span></span>|  
+|[<span data-ttu-id="85293-125">\<trace></span><span class="sxs-lookup"><span data-stu-id="85293-125">\<trace></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)|<span data-ttu-id="85293-126">Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.</span><span class="sxs-lookup"><span data-stu-id="85293-126">Contains listeners that collect, store, and route tracing messages.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="85293-127">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="85293-127">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="85293-128">Élément</span><span class="sxs-lookup"><span data-stu-id="85293-128">Element</span></span>|<span data-ttu-id="85293-129">Description</span><span class="sxs-lookup"><span data-stu-id="85293-129">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
+|`configuration`|<span data-ttu-id="85293-130">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="85293-130">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
   
-## Exemple  
- L'exemple suivant montre comment incorporer un commutateur de traçage et un écouteur de traçage dans l'élément **\<system.diagnostics\>**.  Le commutateur de traçage `General` est défini au niveau [TraceLevel.Error](frlrfSystemDiagnosticsTraceLevelClassTopic).  L'écouteur de traçage `myListener` crée un fichier `MyListener.log` et écrit la sortie dans ce fichier.  
+## <a name="example"></a><span data-ttu-id="85293-131">Exemple</span><span class="sxs-lookup"><span data-stu-id="85293-131">Example</span></span>  
+ <span data-ttu-id="85293-132">L’exemple suivant montre comment incorporer un commutateur de trace et un écouteur de suivi à l’intérieur de la  **\<system.diagnostics >** élément.</span><span class="sxs-lookup"><span data-stu-id="85293-132">The following example shows how to embed a trace switch and a trace listener inside the **\<system.diagnostics>** element.</span></span> <span data-ttu-id="85293-133">Le `General` commutateur de trace est défini sur le <xref:System.Diagnostics.TraceLevel> niveau.</span><span class="sxs-lookup"><span data-stu-id="85293-133">The `General` trace switch is set to the <xref:System.Diagnostics.TraceLevel> level.</span></span> <span data-ttu-id="85293-134">L’écouteur de suivi `myListener` crée un fichier appelé `MyListener.log` et écrit la sortie dans le fichier.</span><span class="sxs-lookup"><span data-stu-id="85293-134">The trace listener `myListener` creates a file called `MyListener.log` and writes the output to the file.</span></span>  
   
 > [!NOTE]
->  Dans le .NET Framework version 2.0, vous pouvez utiliser le texte pour spécifier la valeur d'un commutateur.  Par exemple, vous pouvez spécifier `true` pour un <xref:System.Diagnostics.BooleanSwitch> ou utiliser le texte représentant une valeur d'énumération telle que `Error` pour un <xref:System.Diagnostics.TraceSwitch>.  La ligne `<add name="myTraceSwitch" value="Error" />` équivaut à `<add name="myTraceSwitch" value="1" />`.  
+>  <span data-ttu-id="85293-135">Dans .NET Framework 2.0, vous pouvez spécifier la valeur d'un commutateur avec du texte.</span><span class="sxs-lookup"><span data-stu-id="85293-135">In the .NET Framework version 2.0, you can use text to specify the value for a switch.</span></span> <span data-ttu-id="85293-136">Par exemple, vous pouvez spécifier `true` pour un <xref:System.Diagnostics.BooleanSwitch> ou utilisez le texte représentant une valeur d’énumération comme `Error` pour un <xref:System.Diagnostics.TraceSwitch>.</span><span class="sxs-lookup"><span data-stu-id="85293-136">For example, you can specify `true` for a <xref:System.Diagnostics.BooleanSwitch> or use the text representing an enumeration value such as `Error` for a <xref:System.Diagnostics.TraceSwitch>.</span></span> <span data-ttu-id="85293-137">La ligne `<add name="myTraceSwitch" value="Error" />` équivaut à `<add name="myTraceSwitch" value="1" />`.</span><span class="sxs-lookup"><span data-stu-id="85293-137">The line `<add name="myTraceSwitch" value="Error" />` is equivalent to `<add name="myTraceSwitch" value="1" />`.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <system.diagnostics>  
       <switches>  
@@ -81,7 +82,7 @@ Spécifie les écouteurs de traçage qui collectent, stockent et routent des mes
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Diagnostics.Trace>   
- <xref:System.Diagnostics.Debug>   
- [Schéma des paramètres de traçage et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+## <a name="see-also"></a><span data-ttu-id="85293-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="85293-138">See Also</span></span>  
+ <xref:System.Diagnostics.Trace>  
+ <xref:System.Diagnostics.Debug>  
+ [<span data-ttu-id="85293-139">Schéma des paramètres de trace et de débogage</span><span class="sxs-lookup"><span data-stu-id="85293-139">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

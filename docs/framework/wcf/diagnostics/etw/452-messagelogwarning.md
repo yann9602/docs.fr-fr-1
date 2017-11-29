@@ -1,40 +1,43 @@
 ---
-title: "452 - MessageLogWarning | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 452 - MessageLogWarning
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 22a9f6ea-5b5f-4110-8a4e-9be9c983fbbb
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4bc2b5a77a32e2209ef9ce0621d898486da3bc3e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 452 - MessageLogWarning
-## Propriétés  
+# <a name="452---messagelogwarning"></a><span data-ttu-id="a0832-102">452 - MessageLogWarning</span><span class="sxs-lookup"><span data-stu-id="a0832-102">452 - MessageLogWarning</span></span>
+## <a name="properties"></a><span data-ttu-id="a0832-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="a0832-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|452|  
-|Mots clés|Dépannage, WCFMessageLogging|  
-|Niveau|Avertissement|  
-|Canal|Microsoft\-Windows\-Serveur d'applications \-Applications\/Analyse|  
+|<span data-ttu-id="a0832-104">ID</span><span class="sxs-lookup"><span data-stu-id="a0832-104">ID</span></span>|<span data-ttu-id="a0832-105">452</span><span class="sxs-lookup"><span data-stu-id="a0832-105">452</span></span>|  
+|<span data-ttu-id="a0832-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="a0832-106">Keywords</span></span>|<span data-ttu-id="a0832-107">Dépannage, WCFMessageLogging</span><span class="sxs-lookup"><span data-stu-id="a0832-107">Troubleshooting, WCFMessageLogging</span></span>|  
+|<span data-ttu-id="a0832-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="a0832-108">Level</span></span>|<span data-ttu-id="a0832-109">Avertissement</span><span class="sxs-lookup"><span data-stu-id="a0832-109">Warning</span></span>|  
+|<span data-ttu-id="a0832-110">Canal</span><span class="sxs-lookup"><span data-stu-id="a0832-110">Channel</span></span>|<span data-ttu-id="a0832-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="a0832-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## Description  
- Cet événement est émis lorsque l'avertissement du journal des messages est envoyé.  
+## <a name="description"></a><span data-ttu-id="a0832-112">Description</span><span class="sxs-lookup"><span data-stu-id="a0832-112">Description</span></span>  
+ <span data-ttu-id="a0832-113">Cet événement est émis lorsque l'avertissement du journal des messages est envoyé.</span><span class="sxs-lookup"><span data-stu-id="a0832-113">This event is emitted when the message log warning is sent.</span></span>  
   
-## Message  
- %1  
+## <a name="message"></a><span data-ttu-id="a0832-114">Message</span><span class="sxs-lookup"><span data-stu-id="a0832-114">Message</span></span>  
+ <span data-ttu-id="a0832-115">%1</span><span class="sxs-lookup"><span data-stu-id="a0832-115">%1</span></span>  
   
-## Détails  
+## <a name="details"></a><span data-ttu-id="a0832-116">Détails</span><span class="sxs-lookup"><span data-stu-id="a0832-116">Details</span></span>  
   
-|Nom d'élément de données|Type d'élément de données|Description|  
-|------------------------------|-------------------------------|-----------------|  
-|data1|`xs:string`||  
-|AppDomain|`xs:string`|Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.|
+|<span data-ttu-id="a0832-117">Nom d'élément de données</span><span class="sxs-lookup"><span data-stu-id="a0832-117">Data Item Name</span></span>|<span data-ttu-id="a0832-118">Type d'élément de données</span><span class="sxs-lookup"><span data-stu-id="a0832-118">Data Item Type</span></span>|<span data-ttu-id="a0832-119">Description</span><span class="sxs-lookup"><span data-stu-id="a0832-119">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="a0832-120">data1</span><span class="sxs-lookup"><span data-stu-id="a0832-120">data1</span></span>|`xs:string`||  
+|<span data-ttu-id="a0832-121">AppDomain</span><span class="sxs-lookup"><span data-stu-id="a0832-121">AppDomain</span></span>|`xs:string`|<span data-ttu-id="a0832-122">Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.</span><span class="sxs-lookup"><span data-stu-id="a0832-122">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

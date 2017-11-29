@@ -1,146 +1,148 @@
 ---
-title: "Exemples de syntaxe de requ&#234;te fond&#233;e sur une m&#233;thode&#160;: op&#233;rateurs d&#39;agr&#233;gation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Exemples de syntaxe de requête fondée sur une méthode : opérateurs d'agrégation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 0e306067-5720-4782-9719-2286570a7e47
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 3a86b508531f0db216f5d6bda04dc091a98ab0e1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Exemples de syntaxe de requ&#234;te fond&#233;e sur une m&#233;thode&#160;: op&#233;rateurs d&#39;agr&#233;gation
-Les exemples de cette rubrique montrent comment utiliser les méthodes <xref:System.Linq.Enumerable.Aggregate%2A>, <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.LongCount%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A> et <xref:System.Linq.Enumerable.Sum%2A> pour interroger le [modèle de vente AdventureWorks Sales Model](http://msdn.microsoft.com/fr-fr/f16cd988-673f-4376-b034-129ca93c7832) à l'aide de la syntaxe de requête fondée sur une méthode.  Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
+# <a name="method-based-query-syntax-examples-aggregate-operators"></a><span data-ttu-id="e6be3-102">Exemples de syntaxe de requête fondée sur une méthode : opérateurs d'agrégation</span><span class="sxs-lookup"><span data-stu-id="e6be3-102">Method-Based Query Syntax Examples: Aggregate Operators</span></span>
+<span data-ttu-id="e6be3-103">Les exemples de cette rubrique montrent comment utiliser le <xref:System.Linq.Enumerable.Aggregate%2A>, <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.LongCount%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, et <xref:System.Linq.Enumerable.Sum%2A> méthodes permettant d’interroger la [dumodèledeventeAdventureWorks](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832) à l’aide de la syntaxe de requête fondée sur une méthode.</span><span class="sxs-lookup"><span data-stu-id="e6be3-103">The examples in this topic demonstrate how to use the <xref:System.Linq.Enumerable.Aggregate%2A>, <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.LongCount%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, and <xref:System.Linq.Enumerable.Sum%2A> methods to query the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832) using method-based query syntax.</span></span> <span data-ttu-id="e6be3-104">Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="e6be3-104">The AdventureWorks Sales Model used in these examples is built from the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
   
- Les exemples de cette rubrique utilisent les instructions `using`\/`Imports` suivantes :  
+ <span data-ttu-id="e6be3-105">Les exemples de cette rubrique utilisent les éléments suivants `using` / `Imports` instructions :</span><span class="sxs-lookup"><span data-stu-id="e6be3-105">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
   
-## Average  
+## <a name="average"></a><span data-ttu-id="e6be3-106">Average</span><span class="sxs-lookup"><span data-stu-id="e6be3-106">Average</span></span>  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour trouver le prix moyen courant des produits.  
+### <a name="example"></a><span data-ttu-id="e6be3-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-107">Example</span></span>  
+ <span data-ttu-id="e6be3-108">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour trouver le prix moyen courant des produits.</span><span class="sxs-lookup"><span data-stu-id="e6be3-108">The following example uses the <xref:System.Linq.Enumerable.Average%2A> method to find the average list price of the products.</span></span>  
   
  [!code-csharp[DP L2E Examples#Average_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#average_mq)]
  [!code-vb[DP L2E Examples#Average_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#average_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour trouver le prix moyen courant des produits de chaque style.  
+### <a name="example"></a><span data-ttu-id="e6be3-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-109">Example</span></span>  
+ <span data-ttu-id="e6be3-110">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour trouver le prix moyen courant des produits de chaque style.</span><span class="sxs-lookup"><span data-stu-id="e6be3-110">The following example uses the <xref:System.Linq.Enumerable.Average%2A> method to find the average list price of the products of each style.</span></span>  
   
  [!code-csharp[DP L2E Examples#Average2_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#average2_mq)]
  [!code-vb[DP L2E Examples#Average2_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#average2_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour trouver le montant total moyen dû.  
+### <a name="example"></a><span data-ttu-id="e6be3-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-111">Example</span></span>  
+ <span data-ttu-id="e6be3-112">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour trouver le montant total moyen dû.</span><span class="sxs-lookup"><span data-stu-id="e6be3-112">The following example uses the <xref:System.Linq.Enumerable.Average%2A> method to find the average total due.</span></span>  
   
  [!code-csharp[DP L2E Examples#AverageProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#averageprojection_mq)]
  [!code-vb[DP L2E Examples#AverageProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#averageprojection_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour obtenir le montant total moyen dû pour chaque ID de contact.  
+### <a name="example"></a><span data-ttu-id="e6be3-113">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-113">Example</span></span>  
+ <span data-ttu-id="e6be3-114">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour obtenir le montant total moyen dû pour chaque ID de contact.</span><span class="sxs-lookup"><span data-stu-id="e6be3-114">The following example uses the <xref:System.Linq.Enumerable.Average%2A> method to get the average total due for each contact ID.</span></span>  
   
  [!code-csharp[DP L2E Examples#AverageGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#averagegrouped_mq)]
  [!code-vb[DP L2E Examples#AverageGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#averagegrouped_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour obtenir les commandes présentant le montant total moyen dû pour chaque ID de contact.  
+### <a name="example"></a><span data-ttu-id="e6be3-115">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-115">Example</span></span>  
+ <span data-ttu-id="e6be3-116">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Average%2A> pour obtenir les commandes présentant le montant total moyen dû pour chaque ID de contact.</span><span class="sxs-lookup"><span data-stu-id="e6be3-116">The following example uses the <xref:System.Linq.Enumerable.Average%2A> method to get the orders with the average total due for each contact.</span></span>  
   
  [!code-csharp[DP L2E Examples#AverageElements_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#averageelements_mq)]
  [!code-vb[DP L2E Examples#AverageElements_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#averageelements_mq)]  
   
-## Nombre  
+## <a name="count"></a><span data-ttu-id="e6be3-117">Nombre</span><span class="sxs-lookup"><span data-stu-id="e6be3-117">Count</span></span>  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Count%2A> pour retourner le nombre de produits dans la table Product.  
+### <a name="example"></a><span data-ttu-id="e6be3-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-118">Example</span></span>  
+ <span data-ttu-id="e6be3-119">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Count%2A> pour retourner le nombre de produits dans la table Product.</span><span class="sxs-lookup"><span data-stu-id="e6be3-119">The following example uses the <xref:System.Linq.Enumerable.Count%2A> method to return the number of products in the Product table.</span></span>  
   
  [!code-csharp[DP L2E Examples#Count](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#count)]
  [!code-vb[DP L2E Examples#Count](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#count)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Count%2A> pour retourner une liste des ID de contact et du nombre de commandes de chacun d'eux.  
+### <a name="example"></a><span data-ttu-id="e6be3-120">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-120">Example</span></span>  
+ <span data-ttu-id="e6be3-121">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Count%2A> pour retourner une liste des ID de contact et du nombre de commandes de chacun d'eux.</span><span class="sxs-lookup"><span data-stu-id="e6be3-121">The following example uses the <xref:System.Linq.Enumerable.Count%2A> method to return a list of contact IDs and how many orders each has.</span></span>  
   
  [!code-csharp[DP L2E Examples#CountNested](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#countnested)]
  [!code-vb[DP L2E Examples#CountNested](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#countnested)]  
   
-### Exemple  
- L'exemple ci\-dessous regroupe les produits par couleur et utilise la méthode <xref:System.Linq.Enumerable.Count%2A> pour retourner le nombre de produits dans chaque groupe de couleur.  
+### <a name="example"></a><span data-ttu-id="e6be3-122">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-122">Example</span></span>  
+ <span data-ttu-id="e6be3-123">L'exemple ci-dessous regroupe les produits par couleur et utilise la méthode <xref:System.Linq.Enumerable.Count%2A> pour retourner le nombre de produits dans chaque groupe de couleur.</span><span class="sxs-lookup"><span data-stu-id="e6be3-123">The following example groups products by color and uses the <xref:System.Linq.Enumerable.Count%2A> method to return the number of products in each color group.</span></span>  
   
  [!code-csharp[DP L2E Examples#CountGrouped](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#countgrouped)]
  [!code-vb[DP L2E Examples#CountGrouped](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#countgrouped)]  
   
-## LongCount  
+## <a name="longcount"></a><span data-ttu-id="e6be3-124">LongCount</span><span class="sxs-lookup"><span data-stu-id="e6be3-124">LongCount</span></span>  
   
-### Exemple  
- L'exemple ci\-dessous obtient le nombre de contacts sous la forme d'un entier long.  
+### <a name="example"></a><span data-ttu-id="e6be3-125">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-125">Example</span></span>  
+ <span data-ttu-id="e6be3-126">L'exemple ci-dessous obtient le nombre de contacts sous la forme d'un entier long.</span><span class="sxs-lookup"><span data-stu-id="e6be3-126">The following example gets the contact count as a long integer.</span></span>  
   
  [!code-csharp[DP L2E Examples#LongCountSimple](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#longcountsimple)]
  [!code-vb[DP L2E Examples#LongCountSimple](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#longcountsimple)]  
   
-## Max  
+## <a name="max"></a><span data-ttu-id="e6be3-127">Max</span><span class="sxs-lookup"><span data-stu-id="e6be3-127">Max</span></span>  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Max%2A> pour obtenir le montant total dû le plus élevé.  
+### <a name="example"></a><span data-ttu-id="e6be3-128">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-128">Example</span></span>  
+ <span data-ttu-id="e6be3-129">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Max%2A> pour obtenir le montant total dû le plus élevé.</span><span class="sxs-lookup"><span data-stu-id="e6be3-129">The following example uses the <xref:System.Linq.Enumerable.Max%2A> method to get the largest total due.</span></span>  
   
  [!code-csharp[DP L2E Examples#MaxProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#maxprojection_mq)]
  [!code-vb[DP L2E Examples#MaxProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#maxprojection_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Max%2A> pour obtenir le montant total dû le plus élevé pour chaque ID de contact.  
+### <a name="example"></a><span data-ttu-id="e6be3-130">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-130">Example</span></span>  
+ <span data-ttu-id="e6be3-131">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Max%2A> pour obtenir le montant total dû le plus élevé pour chaque ID de contact.</span><span class="sxs-lookup"><span data-stu-id="e6be3-131">The following example uses the <xref:System.Linq.Enumerable.Max%2A> method to get the largest total due for each contact ID.</span></span>  
   
  [!code-csharp[DP L2E Examples#MaxGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#maxgrouped_mq)]
  [!code-vb[DP L2E Examples#MaxGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#maxgrouped_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Max%2A> pour obtenir les commandes présentant le montant total dû le plus élevé pour chaque ID de contact.  
+### <a name="example"></a><span data-ttu-id="e6be3-132">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-132">Example</span></span>  
+ <span data-ttu-id="e6be3-133">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Max%2A> pour obtenir les commandes présentant le montant total dû le plus élevé pour chaque ID de contact.</span><span class="sxs-lookup"><span data-stu-id="e6be3-133">The following example uses the <xref:System.Linq.Enumerable.Max%2A> method to get the orders with the largest total due for each contact ID.</span></span>  
   
  [!code-csharp[DP L2E Examples#MaxElements_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#maxelements_mq)]
  [!code-vb[DP L2E Examples#MaxElements_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#maxelements_mq)]  
   
-## Min  
+## <a name="min"></a><span data-ttu-id="e6be3-134">Min</span><span class="sxs-lookup"><span data-stu-id="e6be3-134">Min</span></span>  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Min%2A> pour obtenir le montant total dû le plus bas.  
+### <a name="example"></a><span data-ttu-id="e6be3-135">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-135">Example</span></span>  
+ <span data-ttu-id="e6be3-136">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Min%2A> pour obtenir le montant total dû le plus bas.</span><span class="sxs-lookup"><span data-stu-id="e6be3-136">The following example uses the <xref:System.Linq.Enumerable.Min%2A> method to get the smallest total due.</span></span>  
   
  [!code-csharp[DP L2E Examples#MinProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#minprojection_mq)]
  [!code-vb[DP L2E Examples#MinProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#minprojection_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Min%2A> pour obtenir le montant total dû le plus bas pour chaque ID de contact.  
+### <a name="example"></a><span data-ttu-id="e6be3-137">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-137">Example</span></span>  
+ <span data-ttu-id="e6be3-138">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Min%2A> pour obtenir le montant total dû le plus bas pour chaque ID de contact.</span><span class="sxs-lookup"><span data-stu-id="e6be3-138">The following example uses the <xref:System.Linq.Enumerable.Min%2A> method to get the smallest total due for each contact ID.</span></span>  
   
  [!code-csharp[DP L2E Examples#MinGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#mingrouped_mq)]
  [!code-vb[DP L2E Examples#MinGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#mingrouped_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Min%2A> pour obtenir les commandes présentant le montant total dû le plus bas pour chaque ID de contact.  
+### <a name="example"></a><span data-ttu-id="e6be3-139">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-139">Example</span></span>  
+ <span data-ttu-id="e6be3-140">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Min%2A> pour obtenir les commandes présentant le montant total dû le plus bas pour chaque ID de contact.</span><span class="sxs-lookup"><span data-stu-id="e6be3-140">The following example uses the <xref:System.Linq.Enumerable.Min%2A> method to get the orders with the smallest total due for each contact.</span></span>  
   
  [!code-csharp[DP L2E Examples#MinElements_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#minelements_mq)]
  [!code-vb[DP L2E Examples#MinElements_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#minelements_mq)]  
   
-## Sum  
+## <a name="sum"></a><span data-ttu-id="e6be3-141">Sum</span><span class="sxs-lookup"><span data-stu-id="e6be3-141">Sum</span></span>  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Sum%2A> pour obtenir le total des quantités commandées de la table SalesOrderDetail.  
+### <a name="example"></a><span data-ttu-id="e6be3-142">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-142">Example</span></span>  
+ <span data-ttu-id="e6be3-143">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Sum%2A> pour obtenir le total des quantités commandées de la table SalesOrderDetail.</span><span class="sxs-lookup"><span data-stu-id="e6be3-143">The following example uses the <xref:System.Linq.Enumerable.Sum%2A> method to get the total number of order quantities in the SalesOrderDetail table.</span></span>  
   
  [!code-csharp[DP L2E Examples#SumProjection_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#sumprojection_mq)]
  [!code-vb[DP L2E Examples#SumProjection_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#sumprojection_mq)]  
   
-### Exemple  
- L'exemple ci\-dessous utilise la méthode <xref:System.Linq.Enumerable.Sum%2A> pour obtenir le montant total dû pour chaque ID de contact.  
+### <a name="example"></a><span data-ttu-id="e6be3-144">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6be3-144">Example</span></span>  
+ <span data-ttu-id="e6be3-145">L'exemple ci-dessous utilise la méthode <xref:System.Linq.Enumerable.Sum%2A> pour obtenir le montant total dû pour chaque ID de contact.</span><span class="sxs-lookup"><span data-stu-id="e6be3-145">The following example uses the <xref:System.Linq.Enumerable.Sum%2A> method to get the total due for each contact ID.</span></span>  
   
  [!code-csharp[DP L2E Examples#SumGrouped_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#sumgrouped_mq)]
  [!code-vb[DP L2E Examples#SumGrouped_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#sumgrouped_mq)]  
   
-## Voir aussi  
- [Requêtes dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+## <a name="see-also"></a><span data-ttu-id="e6be3-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e6be3-146">See Also</span></span>  
+ [<span data-ttu-id="e6be3-147">Requêtes dans LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="e6be3-147">Queries in LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

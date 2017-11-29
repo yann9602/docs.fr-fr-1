@@ -1,99 +1,102 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: interrogation de relations (C#) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure pas à pas : interrogation de relations (C#)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c294b888d95c4d6a77d96198f885c2363fda4e36
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: interrogation de relations (C#)
-Cette procédure pas à pas explique comment utiliser des *associations* [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour représenter les relations de clé étrangère dans la base de données.  
+# <a name="walkthrough-querying-across-relationships-c"></a><span data-ttu-id="b91aa-102">Procédure pas à pas : interrogation de relations (C#)</span><span class="sxs-lookup"><span data-stu-id="b91aa-102">Walkthrough: Querying Across Relationships (C#)</span></span>
+<span data-ttu-id="b91aa-103">Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *associations* pour représenter les relations de clé étrangère dans la base de données.</span><span class="sxs-lookup"><span data-stu-id="b91aa-103">This walkthrough demonstrates the use of [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *associations* to represent foreign-key relationships in the database.</span></span>  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
- Cette procédure pas à pas a été écrite à l'aide des paramètres de développement Visual C\#.  
+ <span data-ttu-id="b91aa-104">Cette procédure pas à pas a été écrite à l'aide des paramètres de développement Visual C#.</span><span class="sxs-lookup"><span data-stu-id="b91aa-104">This walkthrough was written by using Visual C# Development Settings.</span></span>  
   
-## Composants requis  
- Vous devez avoir terminé [Procédure pas à pas : requête et modèle objet simples \(C\#\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md).  Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\\linqtest5.  
+## <a name="prerequisites"></a><span data-ttu-id="b91aa-105">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="b91aa-105">Prerequisites</span></span>  
+ <span data-ttu-id="b91aa-106">Vous devez avoir terminé [procédure pas à pas : requête (c#) et modèle d’objet Simple](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md).</span><span class="sxs-lookup"><span data-stu-id="b91aa-106">You must have completed [Walkthrough: Simple Object Model and Query (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md).</span></span> <span data-ttu-id="b91aa-107">Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\linqtest5.</span><span class="sxs-lookup"><span data-stu-id="b91aa-107">This walkthrough builds on that one, including the presence of the northwnd.mdf file in c:\linqtest5.</span></span>  
   
-## Vue d'ensemble  
- Cette procédure pas à pas se compose de trois tâches principales :  
+## <a name="overview"></a><span data-ttu-id="b91aa-108">Vue d'ensemble</span><span class="sxs-lookup"><span data-stu-id="b91aa-108">Overview</span></span>  
+ <span data-ttu-id="b91aa-109">Cette procédure pas à pas se compose de trois tâches principales :</span><span class="sxs-lookup"><span data-stu-id="b91aa-109">This walkthrough consists of three main tasks:</span></span>  
   
--   Ajout d'une classe d'entité pour représenter la table Orders dans l'exemple de base de données Northwind.  
+-   <span data-ttu-id="b91aa-110">Ajout d'une classe d'entité pour représenter la table Orders dans l'exemple de base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="b91aa-110">Adding an entity class to represent the Orders table in the sample Northwind database.</span></span>  
   
--   Ajout d'annotations à la classe `Customer` pour améliorer la relation entre les classes `Customer` et `Order`.  
+-   <span data-ttu-id="b91aa-111">Ajout d'annotations à la classe `Customer` pour améliorer la relation entre les classes `Customer` et `Order`.</span><span class="sxs-lookup"><span data-stu-id="b91aa-111">Supplementing annotations to the `Customer` class to enhance the relationship between the `Customer` and `Order` classes.</span></span>  
   
--   Création et exécution d'une requête pour tenter d'obtenir des informations `Order` en utilisant la classe `Customer`.  
+-   <span data-ttu-id="b91aa-112">Création et exécution d'une requête pour tenter d'obtenir des informations `Order` en utilisant la classe `Customer`.</span><span class="sxs-lookup"><span data-stu-id="b91aa-112">Creating and running a query to test obtaining `Order` information by using the `Customer` class.</span></span>  
   
-## Mappage de relations entre des tables  
- Une fois la définition de classe `Customer` terminée, créez la définition de classe d'entité `Order` qui inclut le code suivant indiquant que `Order.Customer` est une clé étrangère de `Customer.CustomerID`.  
+## <a name="mapping-relationships-across-tables"></a><span data-ttu-id="b91aa-113">Mappage de relations entre des tables</span><span class="sxs-lookup"><span data-stu-id="b91aa-113">Mapping Relationships Across Tables</span></span>  
+ <span data-ttu-id="b91aa-114">Une fois la définition de classe `Customer` terminée, créez la définition de classe d'entité `Order` qui inclut le code suivant indiquant que `Order.Customer` est une clé étrangère de `Customer.CustomerID`.</span><span class="sxs-lookup"><span data-stu-id="b91aa-114">After the `Customer` class definition, create the `Order` entity class definition that includes the following code, which indicates that `Order.Customer` relates as a foreign key to `Customer.CustomerID`.</span></span>  
   
-#### Pour ajouter la classe d'entité Order  
+#### <a name="to-add-the-order-entity-class"></a><span data-ttu-id="b91aa-115">Pour ajouter la classe d'entité Order</span><span class="sxs-lookup"><span data-stu-id="b91aa-115">To add the Order entity class</span></span>  
   
--   Tapez ou collez le code suivant après la classe `Customer` :  
+-   <span data-ttu-id="b91aa-116">Tapez ou collez le code suivant après la classe `Customer` :</span><span class="sxs-lookup"><span data-stu-id="b91aa-116">Type or paste the following code after the `Customer` class:</span></span>  
   
      [!code-csharp[DLinqWalk2CS#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#1)]  
   
-## Annotation de la classe Customer  
- Dans cette étape, annotez la classe `Customer` pour indiquer sa relation avec la classe `Order`.  Cet ajout n'est pas strictement nécessaire étant donné que la définition de la relation dans chacune des directions est suffisante pour créer le lien.  Cependant, l'ajout de cette annotation vous permet de naviguer facilement parmi les objets dans chacune des directions.  
+## <a name="annotating-the-customer-class"></a><span data-ttu-id="b91aa-117">Annotation de la classe Customer</span><span class="sxs-lookup"><span data-stu-id="b91aa-117">Annotating the Customer Class</span></span>  
+ <span data-ttu-id="b91aa-118">Dans cette étape, annotez la classe `Customer` pour indiquer sa relation avec la classe `Order`.</span><span class="sxs-lookup"><span data-stu-id="b91aa-118">In this step, you annotate the `Customer` class to indicate its relationship to the `Order` class.</span></span> <span data-ttu-id="b91aa-119">Cet ajout n'est pas strictement nécessaire étant donné que la définition de la relation dans chacune des directions est suffisante pour créer le lien.</span><span class="sxs-lookup"><span data-stu-id="b91aa-119">(This addition is not strictly necessary, because defining the relationship in either direction is sufficient to create the link.</span></span> <span data-ttu-id="b91aa-120">Cependant, l'ajout de cette annotation vous permet de naviguer facilement parmi les objets dans chacune des directions.</span><span class="sxs-lookup"><span data-stu-id="b91aa-120">But adding this annotation does enable you to easily navigate objects in either direction.)</span></span>  
   
-#### Pour annoter la classe Customer  
+#### <a name="to-annotate-the-customer-class"></a><span data-ttu-id="b91aa-121">Pour annoter la classe Customer</span><span class="sxs-lookup"><span data-stu-id="b91aa-121">To annotate the Customer class</span></span>  
   
--   Tapez ou collez le code suivant dans la classe `Customer` :  
+-   <span data-ttu-id="b91aa-122">Tapez ou collez le code suivant dans la classe `Customer` :</span><span class="sxs-lookup"><span data-stu-id="b91aa-122">Type or paste the following code into the `Customer` class:</span></span>  
   
      [!code-csharp[DLinqWalk2CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#2)]  
   
-## Création et exécution d'une requête dans la relation entre les classes Order et Customer  
- Vous pouvez désormais accéder aux objets `Order` directement à partir des objets `Customer` ou inversement.  Vous n'avez pas besoin d'une *jointure* explicite entre les clients et les commandes.  
+## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a><span data-ttu-id="b91aa-123">Création et exécution d'une requête dans la relation entre les classes Order et Customer</span><span class="sxs-lookup"><span data-stu-id="b91aa-123">Creating and Running a Query Across the Customer-Order Relationship</span></span>  
+ <span data-ttu-id="b91aa-124">Vous pouvez désormais accéder aux objets `Order` directement à partir des objets `Customer` ou inversement.</span><span class="sxs-lookup"><span data-stu-id="b91aa-124">You can now access `Order` objects directly from the `Customer` objects, or in the opposite order.</span></span> <span data-ttu-id="b91aa-125">Vous n’avez pas besoin explicite *jointure* entre customers et orders.</span><span class="sxs-lookup"><span data-stu-id="b91aa-125">You do not need an explicit *join* between customers and orders.</span></span>  
   
-#### Pour accéder aux objets Order à l'aide d'objets Customer  
+#### <a name="to-access-order-objects-by-using-customer-objects"></a><span data-ttu-id="b91aa-126">Pour accéder aux objets Order à l'aide d'objets Customer</span><span class="sxs-lookup"><span data-stu-id="b91aa-126">To access Order objects by using Customer objects</span></span>  
   
-1.  Modifiez la méthode `Main` en tapant ou en collant le code suivant dans la méthode :  
+1.  <span data-ttu-id="b91aa-127">Modifiez la méthode `Main` en tapant ou en collant le code suivant dans la méthode :</span><span class="sxs-lookup"><span data-stu-id="b91aa-127">Modify the `Main` method by typing or pasting the following code into the method:</span></span>  
   
      [!code-csharp[DLinqWalk2CS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#3)]  
   
-2.  Appuyez sur F5 pour déboguer l'application.  
+2.  <span data-ttu-id="b91aa-128">Appuyez sur F5 pour déboguer l'application.</span><span class="sxs-lookup"><span data-stu-id="b91aa-128">Press F5 to debug your application.</span></span>  
   
     > [!NOTE]
-    >  Vous pouvez supprimer le code SQL dans la fenêtre de console en supprimant `db.Log = Console.Out;`.  
+    >  <span data-ttu-id="b91aa-129">Vous pouvez supprimer le code SQL dans la fenêtre de console en supprimant `db.Log = Console.Out;`.</span><span class="sxs-lookup"><span data-stu-id="b91aa-129">You can eliminate the SQL code in the Console window by commenting out `db.Log = Console.Out;`.</span></span>  
   
-3.  Appuyez sur Entrée dans la fenêtre de console pour arrêter le débogage.  
+3.  <span data-ttu-id="b91aa-130">Appuyez sur Entrée dans la fenêtre de console pour arrêter le débogage.</span><span class="sxs-lookup"><span data-stu-id="b91aa-130">Press Enter in the Console window to stop debugging.</span></span>  
   
-## Création d'une vue fortement typée de votre base de données  
- Il est beaucoup plus facile de démarrer avec une vue fortement typée de votre base de données.  En effectuant un typage fort de l'objet <xref:System.Data.Linq.DataContext>, vous n'avez pas besoin d'effectuer des appels à <xref:System.Data.Linq.DataContext.GetTable%2A>.  Vous pouvez utiliser des tables fortement typées dans toutes vos requêtes lorsque vous utilisez l'objet <xref:System.Data.Linq.DataContext> fortement typé.  
+## <a name="creating-a-strongly-typed-view-of-your-database"></a><span data-ttu-id="b91aa-131">Création d'une vue fortement typée de votre base de données</span><span class="sxs-lookup"><span data-stu-id="b91aa-131">Creating a Strongly Typed View of Your Database</span></span>  
+ <span data-ttu-id="b91aa-132">Il est beaucoup plus facile de démarrer avec une vue fortement typée de votre base de données.</span><span class="sxs-lookup"><span data-stu-id="b91aa-132">It is much easier to start with a strongly typed view of your database.</span></span> <span data-ttu-id="b91aa-133">En effectuant un typage fort de l'objet <xref:System.Data.Linq.DataContext>, vous n'avez pas besoin d'effectuer des appels à <xref:System.Data.Linq.DataContext.GetTable%2A>.</span><span class="sxs-lookup"><span data-stu-id="b91aa-133">By strongly typing the <xref:System.Data.Linq.DataContext> object, you do not need calls to <xref:System.Data.Linq.DataContext.GetTable%2A>.</span></span> <span data-ttu-id="b91aa-134">Vous pouvez utiliser des tables fortement typées dans toutes vos requêtes lorsque vous utilisez l'objet <xref:System.Data.Linq.DataContext> fortement typé.</span><span class="sxs-lookup"><span data-stu-id="b91aa-134">You can use strongly typed tables in all your queries when you use the strongly typed <xref:System.Data.Linq.DataContext> object.</span></span>  
   
- Dans les étapes suivantes, vous créerez `Customers` comme table fortement typée qui mappe à la table Customers dans la base de données.  
+ <span data-ttu-id="b91aa-135">Dans les étapes suivantes, vous créerez `Customers` comme table fortement typée qui mappe à la table Customers dans la base de données.</span><span class="sxs-lookup"><span data-stu-id="b91aa-135">In the following steps, you will create `Customers` as a strongly typed table that maps to the Customers table in the database.</span></span>  
   
-#### Pour effectuer un typage fort de l'objet DataContext  
+#### <a name="to-strongly-type-the-datacontext-object"></a><span data-ttu-id="b91aa-136">Pour effectuer un typage fort de l'objet DataContext</span><span class="sxs-lookup"><span data-stu-id="b91aa-136">To strongly type the DataContext object</span></span>  
   
-1.  Ajoutez le code suivant au\-dessus de la déclaration de classe `Customer`.  
+1.  <span data-ttu-id="b91aa-137">Ajoutez le code suivant au-dessus de la déclaration de classe `Customer`.</span><span class="sxs-lookup"><span data-stu-id="b91aa-137">Add the following code above the `Customer` class declaration.</span></span>  
   
      [!code-csharp[DLinqWalk2CS#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#4)]  
   
-2.  Modifiez la méthode `Main` pour utiliser le <xref:System.Data.Linq.DataContext> fortement typé comme suit :  
+2.  <span data-ttu-id="b91aa-138">Modifiez la méthode `Main` pour utiliser le <xref:System.Data.Linq.DataContext> fortement typé comme suit :</span><span class="sxs-lookup"><span data-stu-id="b91aa-138">Modify the `Main` method to use the strongly typed <xref:System.Data.Linq.DataContext> as follows:</span></span>  
   
      [!code-csharp[DLinqWalk2CS#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#5)]  
   
-3.  Appuyez sur F5 pour déboguer l'application.  
+3.  <span data-ttu-id="b91aa-139">Appuyez sur F5 pour déboguer l'application.</span><span class="sxs-lookup"><span data-stu-id="b91aa-139">Press F5 to debug your application.</span></span>  
   
-     La sortie de la fenêtre de console est :  
+     <span data-ttu-id="b91aa-140">La sortie de la fenêtre de console est :</span><span class="sxs-lookup"><span data-stu-id="b91aa-140">The Console window output is:</span></span>  
   
      `ID=WHITC`  
   
-4.  Appuyez sur Entrée dans la fenêtre de console pour arrêter le débogage.  
+4.  <span data-ttu-id="b91aa-141">Appuyez sur Entrée dans la fenêtre de console pour arrêter le débogage.</span><span class="sxs-lookup"><span data-stu-id="b91aa-141">Press Enter in the console window to stop debugging.</span></span>  
   
-## Étapes suivantes  
- La procédure pas à pas suivante \([Procédure pas à pas : manipulation de données \(C\#\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)\) explique comment manipuler des données.  Cette procédure pas à pas ne requiert pas d'enregistrer les deux procédures pas à pas de cette série que vous avez déjà terminées.  
+## <a name="next-steps"></a><span data-ttu-id="b91aa-142">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="b91aa-142">Next Steps</span></span>  
+ <span data-ttu-id="b91aa-143">La procédure pas à pas suivante ([procédure pas à pas : manipulation de données (c#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) montre comment manipuler les données.</span><span class="sxs-lookup"><span data-stu-id="b91aa-143">The next walkthrough ([Walkthrough: Manipulating Data (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) demonstrates how to manipulate data.</span></span> <span data-ttu-id="b91aa-144">Cette procédure pas à pas ne requiert pas d'enregistrer les deux procédures pas à pas de cette série que vous avez déjà terminées.</span><span class="sxs-lookup"><span data-stu-id="b91aa-144">That walkthrough does not require that you save the two walkthroughs in this series that you have already completed.</span></span>  
   
-## Voir aussi  
- [Apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+## <a name="see-also"></a><span data-ttu-id="b91aa-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b91aa-145">See Also</span></span>  
+ [<span data-ttu-id="b91aa-146">Apprentissage par les procédures pas à pas</span><span class="sxs-lookup"><span data-stu-id="b91aa-146">Learning by Walkthroughs</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

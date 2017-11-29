@@ -7,50 +7,43 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - cache [.NET Framework], network applications
 - network resources, caching
 - Internet, caching
 ms.assetid: fc258a40-f370-434f-ae09-4a8cb11ddaeb
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bdd1416de418dfb9b8b5c68da205817ae6d6225b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b960942d17e402b333354bbd932cf63d11b1209f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="cache-management-for-network-applications"></a>Gestion du cache pour les applications réseau
-Cette rubrique et ses sous-rubriques associées décrivent la mise en cache pour les ressources obtenues à l’aide des classes <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest> et <xref:System.Net.FtpWebRequest>.  
+# <a name="cache-management-for-network-applications"></a><span data-ttu-id="6d5d7-102">Gestion du cache pour les applications réseau</span><span class="sxs-lookup"><span data-stu-id="6d5d7-102">Cache Management for Network Applications</span></span>
+<span data-ttu-id="6d5d7-103">Cette rubrique et ses sous-rubriques associées décrivent la mise en cache pour les ressources obtenues à l’aide des classes <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest> et <xref:System.Net.FtpWebRequest>.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-103">This topic and its related subtopics describe caching for resources obtained using the <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest>, and <xref:System.Net.FtpWebRequest> classes.</span></span>  
   
- Un cache procure un stockage temporaire des ressources qui ont été demandées par une application. Si une application demande la même ressource plusieurs fois, celle-ci peut être retournée à partir du cache, ce qui évite de devoir la redemander au serveur. La mise en cache peut améliorer les performances de l’application en réduisant la durée nécessaire pour obtenir une ressource demandée. Elle peut également réduire le trafic réseau en réduisant le nombre d’allers-retours au serveur. Bien que la mise en cache améliore les performances, elle augmente le risque que la ressource retournée à l’application soit périmée, c’est-à-dire qu’elle ne soit pas identique à la ressource qui aurait été envoyée par le serveur si la mise en cache n’était pas utilisée.  
+ <span data-ttu-id="6d5d7-104">Un cache procure un stockage temporaire des ressources qui ont été demandées par une application.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-104">A cache provides temporary storage of resources that have been requested by an application.</span></span> <span data-ttu-id="6d5d7-105">Si une application demande la même ressource plusieurs fois, celle-ci peut être retournée à partir du cache, ce qui évite de devoir la redemander au serveur.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-105">If an application requests the same resource more than once, the resource can be returned from the cache, avoiding the overhead of re-requesting it from the server.</span></span> <span data-ttu-id="6d5d7-106">La mise en cache peut améliorer les performances de l’application en réduisant la durée nécessaire pour obtenir une ressource demandée.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-106">Caching can improve application performance by reducing the time required to get a requested resource.</span></span> <span data-ttu-id="6d5d7-107">Elle peut également réduire le trafic réseau en réduisant le nombre d’allers-retours au serveur.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-107">Caching can also decrease network traffic by reducing the number of trips to the server.</span></span> <span data-ttu-id="6d5d7-108">Bien que la mise en cache améliore les performances, elle augmente le risque que la ressource retournée à l’application soit périmée, c’est-à-dire qu’elle ne soit pas identique à la ressource qui aurait été envoyée par le serveur si la mise en cache n’était pas utilisée.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-108">While caching improves performance, it increases the risk that the resource returned to the application is stale, meaning that it is not identical to the resource that would have been sent by the server if caching were not in use.</span></span>  
   
- La mise en cache peut permettre à des utilisateurs ou des processus non autorisés de lire des données sensibles. Une réponse authentifiée mise en cache peut-être récupérée à partir du cache sans autorisation supplémentaire. Si la mise en cache est activée, définissez <xref:System.Net.WebRequest.CachePolicy%2A> sur <xref:System.Net.Cache.RequestCacheLevel.BypassCache> ou <xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore> pour désactiver la mise en cache pour cette demande.  
+ <span data-ttu-id="6d5d7-109">La mise en cache peut permettre à des utilisateurs ou des processus non autorisés de lire des données sensibles.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-109">Caching may allow unauthorized users or processes to read sensitive data.</span></span> <span data-ttu-id="6d5d7-110">Une réponse authentifiée mise en cache peut-être récupérée à partir du cache sans autorisation supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-110">An authenticated response that is cached may be retrieved from the cache without an additional authorization.</span></span> <span data-ttu-id="6d5d7-111">Si la mise en cache est activée, définissez <xref:System.Net.WebRequest.CachePolicy%2A> sur <xref:System.Net.Cache.RequestCacheLevel.BypassCache> ou <xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore> pour désactiver la mise en cache pour cette demande.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-111">If caching is enabled, change to <xref:System.Net.WebRequest.CachePolicy%2A> to <xref:System.Net.Cache.RequestCacheLevel.BypassCache> or <xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore> to disable caching for this request.</span></span>  
   
- Pour des raisons de sécurité, la mise en cache n’est **pas** recommandée pour les scénarios de couche intermédiaire.  
+ <span data-ttu-id="6d5d7-112">Pour des raisons de sécurité, la mise en cache n’est **pas** recommandée pour les scénarios de couche intermédiaire.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-112">Due to security concerns, caching is **not** recommended for middle tier scenarios.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)  
- Explique ce qu’est une stratégie de cache et comment en définir une.  
+## <a name="in-this-section"></a><span data-ttu-id="6d5d7-113">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="6d5d7-113">In This Section</span></span>  
+ [<span data-ttu-id="6d5d7-114">Stratégie de cache</span><span class="sxs-lookup"><span data-stu-id="6d5d7-114">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)  
+ <span data-ttu-id="6d5d7-115">Explique ce qu’est une stratégie de cache et comment en définir une.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-115">Explains what a cache policy is and how to define one.</span></span>  
   
- [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)  
- Définit chaque type de stratégie de cache basée sur l’emplacement disponible pour les ressources Hypertext Transfer Protocol (http et https).  
+ [<span data-ttu-id="6d5d7-116">Stratégies de cache basées sur l’emplacement</span><span class="sxs-lookup"><span data-stu-id="6d5d7-116">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ <span data-ttu-id="6d5d7-117">Définit chaque type de stratégie de cache basée sur l’emplacement disponible pour les ressources Hypertext Transfer Protocol (http et https).</span><span class="sxs-lookup"><span data-stu-id="6d5d7-117">Defines each type of location-based cache policy available for Hypertext Transfer Protocol (http and https) resources.</span></span>  
   
- [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- Décrit les critères qui peuvent être utilisés pour personnaliser une stratégie de cache basée sur la durée.  
+ [<span data-ttu-id="6d5d7-118">Stratégies de cache basées sur la durée</span><span class="sxs-lookup"><span data-stu-id="6d5d7-118">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)  
+ <span data-ttu-id="6d5d7-119">Décrit les critères qui peuvent être utilisés pour personnaliser une stratégie de cache basée sur la durée.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-119">Describes the criteria that can be used to customize a time-based cache policy.</span></span>  
   
- [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
- Décrit comment créer par programmation des stratégies de cache et des demandes qui utilisent la mise en cache.  
+ [<span data-ttu-id="6d5d7-120">Configuration de la mise en cache dans les applications réseau</span><span class="sxs-lookup"><span data-stu-id="6d5d7-120">Configuring Caching in Network Applications</span></span>](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
+ <span data-ttu-id="6d5d7-121">Décrit comment créer par programmation des stratégies de cache et des demandes qui utilisent la mise en cache.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-121">Describes how to programmatically create cache policies and requests that use caching.</span></span>  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a><span data-ttu-id="6d5d7-122">Référence</span><span class="sxs-lookup"><span data-stu-id="6d5d7-122">Reference</span></span>  
  <xref:System.Net.Cache>  
- Définit les types et les énumérations utilisés pour définir des stratégies de cache applicables aux ressources obtenues à l’aide des classes <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest> et <xref:System.Net.FtpWebRequest>.
-
+ <span data-ttu-id="6d5d7-123">Définit les types et les énumérations utilisés pour définir des stratégies de cache applicables aux ressources obtenues à l’aide des classes <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest> et <xref:System.Net.FtpWebRequest>.</span><span class="sxs-lookup"><span data-stu-id="6d5d7-123">Defines the types and enumerations used to define cache policies for resources obtained using the <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest>, and <xref:System.Net.FtpWebRequest> classes.</span></span>

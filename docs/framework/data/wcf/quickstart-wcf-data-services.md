@@ -1,59 +1,57 @@
 ---
-title: "D&#233;marrage rapide (services de donn&#233;es WCF) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "HTML"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "Services de données WCF, exemple de démarrage rapide"
-  - "Services de données WCF, service EDM (Entity Data Model)"
+title: "Démarrage rapide (services de données WCF)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF Data Services, quick-start example
+- WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a5223f9b6e7854ec6575e8673bb874a1b9b60df7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# D&#233;marrage rapide (services de donn&#233;es WCF)
-Ce démarrage rapide vous aide à vous familiariser avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] via une série de tâches qui viennent en support des rubriques dans [Mise en route](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).  
+# <a name="quickstart-wcf-data-services"></a><span data-ttu-id="59c67-102">Démarrage rapide (services de données WCF)</span><span class="sxs-lookup"><span data-stu-id="59c67-102">Quickstart (WCF Data Services)</span></span>
+<span data-ttu-id="59c67-103">Ce démarrage rapide vous aide à vous familiariser avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] via une série de tâches qui prennent en charge les rubriques de [mise en route](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="59c67-103">This quickstart helps you become familiar with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] and the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] through a series of tasks that support the topics in [Getting Started](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).</span></span>  
   
-## Contenu du didacticiel  
- La première tâche dans ce démarrage rapide montre comment créer un service de données pour exposer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] issu de l'exemple de base de données Northwind. Dans les rubriques ultérieures, vous accéderez au flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à l'aide d'un navigateur Web et vous créerez également une application cliente [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] qui consomme le flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à l'aide de bibliothèques clientes.  
+## <a name="what-you-will-learn"></a><span data-ttu-id="59c67-104">Contenu du didacticiel</span><span class="sxs-lookup"><span data-stu-id="59c67-104">What You Will Learn</span></span>  
+ <span data-ttu-id="59c67-105">La première tâche dans ce démarrage rapide montre comment créer un service de données pour exposer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] issu de l'exemple de base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="59c67-105">The first task in this quickstart shows how to create a data service to expose an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed from the Northwind sample database.</span></span> <span data-ttu-id="59c67-106">Dans les rubriques ultérieures, vous accéderez au flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à l'aide d'un navigateur Web et vous créerez également une application cliente [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] qui consomme le flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à l'aide de bibliothèques clientes.</span><span class="sxs-lookup"><span data-stu-id="59c67-106">In later topics, you will access the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed by using a Web browser, and also create a [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] client application that consumes the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed by using client libraries.</span></span>  
   
-## Composants requis  
- Pour effectuer ce démarrage rapide, vous devez installer les composants suivants :  
+## <a name="prerequisites"></a><span data-ttu-id="59c67-107">Composants requis</span><span class="sxs-lookup"><span data-stu-id="59c67-107">Prerequisites</span></span>  
+ <span data-ttu-id="59c67-108">Pour effectuer ce démarrage rapide, vous devez installer les composants suivants :</span><span class="sxs-lookup"><span data-stu-id="59c67-108">To complete this quickstart, you must install the following components:</span></span>  
   
--   [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+-   [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)]<span data-ttu-id="59c67-109">.</span><span class="sxs-lookup"><span data-stu-id="59c67-109">.</span></span>  
   
--   Instance de [!INCLUDE[msCoName](../../../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Ceci comprend SQL Server Express, qui est inclus dans une installation par défaut de [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)].  
+-   <span data-ttu-id="59c67-110">Une instance de [!INCLUDE[msCoName](../../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="59c67-110">An instance of [!INCLUDE[msCoName](../../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="59c67-111">Ceci comprend SQL Server Express, qui est inclus dans une installation par défaut de [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="59c67-111">This includes SQL Server Express, which is included in a default installation of [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)].</span></span>  
   
--   Exemple de base de données Northwind. Pour télécharger cet exemple de base de données, consultez la page de téléchargement, [Exemples de bases de données pour SQL Server](http://go.microsoft.com/fwlink/?linkid=24758).  
+-   <span data-ttu-id="59c67-112">Exemple de base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="59c67-112">The Northwind sample database.</span></span> <span data-ttu-id="59c67-113">Pour télécharger cet exemple de base de données, consultez la page de téléchargement, [Exemples de bases de données pour SQL Server](http://go.microsoft.com/fwlink/?linkid=24758).</span><span class="sxs-lookup"><span data-stu-id="59c67-113">To download this sample database, see the download page, [Sample Databases for SQL Server](http://go.microsoft.com/fwlink/?linkid=24758).</span></span>  
   
-## Tâches de démarrage rapide WCF Data Services  
- [Création du service de données](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
- Définir l'application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], définir le modèle de données, créer le service de données et autoriser l'accès aux ressources.  
+## <a name="wcf-data-services-quickstart-tasks"></a><span data-ttu-id="59c67-114">Tâches de démarrage rapide WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="59c67-114">WCF Data Services Quickstart Tasks</span></span>  
+ [<span data-ttu-id="59c67-115">Création du service de données</span><span class="sxs-lookup"><span data-stu-id="59c67-115">Creating the Data Service</span></span>](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
+ <span data-ttu-id="59c67-116">Définir l'application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] , définir le modèle de données, créer le service de données et autoriser l'accès aux ressources.</span><span class="sxs-lookup"><span data-stu-id="59c67-116">Define the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application, define the data model, create the data service, and enable access to resources.</span></span>  
   
- [Accès au service à partir d'un navigateur Web](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
- Démarrer le service à partir de [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] et y accéder en soumettant des demandes HTTP GET au flux exposé via un navigateur Web.  
+ [<span data-ttu-id="59c67-117">L’accès au Service à partir d’un navigateur Web</span><span class="sxs-lookup"><span data-stu-id="59c67-117">Accessing the Service from a Web Browser</span></span>](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
+ <span data-ttu-id="59c67-118">Démarrer le service à partir de [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] et y accéder en soumettant des demandes HTTP GET au flux exposé via un navigateur Web.</span><span class="sxs-lookup"><span data-stu-id="59c67-118">Start the service from [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] and access the service by submitting HTTP GET requests through a Web browser to the exposed feed.</span></span>  
   
- [Création de l'application cliente .NET Framework](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
- Créer une application cliente [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pour consommer le flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], lier des données aux contrôles Windows, modifier les données liées dans les contrôles dépendants, puis renvoyer les modifications au service de données.  
+ [<span data-ttu-id="59c67-119">Création de l’Application cliente .NET Framework</span><span class="sxs-lookup"><span data-stu-id="59c67-119">Creating the .NET Framework Client Application</span></span>](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
+ <span data-ttu-id="59c67-120">Créer une application cliente [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pour consommer le flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] , lier des données aux contrôles Windows, modifier les données liées dans les contrôles dépendants, puis renvoyer les modifications au service de données.</span><span class="sxs-lookup"><span data-stu-id="59c67-120">Create a [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] client application to consume the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed, bind data to Windows controls, change data in the bound controls, and then send the changes back to the data service.</span></span>  
   
 > [!NOTE]
->  Les fichiers projet d’une version terminée du démarrage rapide peuvent être téléchargés à partir de la page [WCF Data Services Quickstart \(OData Service and WPF Client\)](http://go.microsoft.com/fwlink/?LinkId=179994).  
+>  <span data-ttu-id="59c67-121">Les fichiers projet d’une version terminée du démarrage rapide peuvent être téléchargés à partir de la page [WCF Data Services Quickstart (OData Service and WPF Client)](http://go.microsoft.com/fwlink/?LinkId=179994) .</span><span class="sxs-lookup"><span data-stu-id="59c67-121">Project files from a completed version of the quickstart can be downloaded from the [WCF Data Services Documentation Samples](http://go.microsoft.com/fwlink/?LinkId=179994) page.</span></span>  
   
-## Étapes suivantes  
- [Démarrer le didacticiel Démarrage rapide](../../../../docs/framework/data/wcf/creating-the-data-service.md).  
+## <a name="next-steps"></a><span data-ttu-id="59c67-122">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="59c67-122">Next Steps</span></span>  
+ <span data-ttu-id="59c67-123">[Démarrer le didacticiel Démarrage rapide](../../../../docs/framework/data/wcf/creating-the-data-service.md).</span><span class="sxs-lookup"><span data-stu-id="59c67-123">[Start the Quickstart](../../../../docs/framework/data/wcf/creating-the-data-service.md).</span></span>  
   
-## Voir aussi  
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md)
+## <a name="see-also"></a><span data-ttu-id="59c67-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="59c67-124">See Also</span></span>  
+ [<span data-ttu-id="59c67-125">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="59c67-125">ADO.NET Entity Framework</span></span>](../../../../docs/framework/data/adonet/ef/index.md)

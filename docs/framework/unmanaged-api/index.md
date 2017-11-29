@@ -1,72 +1,75 @@
 ---
-title: "R&#233;f&#233;rence des API non manag&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Runtime, les API non managées"
-  - "Common language runtime, API non managées"
-  - "référence des API natives (.NET Framework)"
-  - "référence des API non managées (.NET Framework)"
+title: "Informations de référence sur les API non managées"
+ms.custom: 
+ms.date: 11/06/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords:
+- runtime, unmanaged APIs
+- common language runtime, unmanaged APIs
+- native API reference [.NET Framework]
+- unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
-caps.latest.revision: 24
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 24
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a7069762dd95636399c53c98e8bdef6f00be62c1
+ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/15/2017
 ---
-# R&#233;f&#233;rence des API non manag&#233;es
-Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.  
+# <a name="unmanaged-api-reference"></a><span data-ttu-id="1e684-102">Informations de référence sur les API non managées</span><span class="sxs-lookup"><span data-stu-id="1e684-102">Unmanaged API Reference</span></span>
+<span data-ttu-id="1e684-103">Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.</span><span class="sxs-lookup"><span data-stu-id="1e684-103">This section includes information on unmanaged APIs that can be used by managed-code-related applications, such as runtime hosts, compilers, disassemblers, obfuscators, debuggers, and profilers.</span></span>  
   
-## Dans cette section  
- [Types de données courants](../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)  
- Répertorie les types de données courants qui sont utilisés, en particulier dans les API de profilage et de débogage non managées.  
+## <a name="in-this-section"></a><span data-ttu-id="1e684-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="1e684-104">In This Section</span></span>  
+ [<span data-ttu-id="1e684-105">Types de données communs</span><span class="sxs-lookup"><span data-stu-id="1e684-105">Common Data Types</span></span>](../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)  
+ <span data-ttu-id="1e684-106">Répertorie les types de données courants qui sont utilisés, en particulier dans les API de profilage et de débogage non managées.</span><span class="sxs-lookup"><span data-stu-id="1e684-106">Lists the common data types that are used, particularly in the unmanaged profiling and debugging APIs.</span></span>  
   
- [ALink](../../../ml/index.xml)  
- Décrit une API ALink, qui prend en charge la création d'assemblys et de modules indépendants .NET Framework.  
+ [<span data-ttu-id="1e684-107">ALink)</span><span class="sxs-lookup"><span data-stu-id="1e684-107">ALink</span></span>](../../../docs/framework/unmanaged-api/alink/index.md)  
+ <span data-ttu-id="1e684-108">Décrit une API ALink, qui prend en charge la création d'assemblys et de modules indépendants .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="1e684-108">Describes the ALink API, which supports the creation of .NET Framework assemblies and unbound modules.</span></span>  
   
- [Authenticode](../../../ml/index.xml)  
- Prend en charge le module de création et de vérification des licences XrML Authenticode.  
+ [<span data-ttu-id="1e684-109">Authenticode</span><span class="sxs-lookup"><span data-stu-id="1e684-109">Authenticode</span></span>](../../../docs/framework/unmanaged-api/authenticode/index.md)  
+ <span data-ttu-id="1e684-110">Prend en charge le module de création et de vérification des licences XrML Authenticode.</span><span class="sxs-lookup"><span data-stu-id="1e684-110">Supports the Authenticode XrML license creation and verification module.</span></span>  
   
- [Constantes](../../../docs/framework/unmanaged-api/constants-unmanaged-api-reference.md)  
- Décrit les constantes définies dans CorSym.idl.  
+ [<span data-ttu-id="1e684-111">Constantes</span><span class="sxs-lookup"><span data-stu-id="1e684-111">Constants</span></span>](../../../docs/framework/unmanaged-api/constants-unmanaged-api-reference.md)  
+ <span data-ttu-id="1e684-112">Décrit les constantes définies dans CorSym.idl.</span><span class="sxs-lookup"><span data-stu-id="1e684-112">Describes the constants that are defined in CorSym.idl.</span></span>  
   
- [Attributs d'interface personnalisée](http://msdn.microsoft.com/fr-fr/940952f9-46ad-4a1a-920f-118dc0bdcd9f)  
- Décrit les attributs de l'interface personnalisée COM \(Component Object Model\).  
+ [<span data-ttu-id="1e684-113">Attributs d’Interface personnalisés</span><span class="sxs-lookup"><span data-stu-id="1e684-113">Custom Interface Attributes</span></span>](http://msdn.microsoft.com/en-us/940952f9-46ad-4a1a-920f-118dc0bdcd9f)  
+ <span data-ttu-id="1e684-114">Décrit les attributs de l'interface personnalisée COM (Component Object Model).</span><span class="sxs-lookup"><span data-stu-id="1e684-114">Describes component object model (COM) custom interface attributes.</span></span>  
   
- [Débogage](../../../ml/index.xml)  
- Décrit l'API de débogage, qui permet à un débogueur de déboguer du code qui s'exécute dans un environnement CLR \(Common Language Runtime\).  
+ [<span data-ttu-id="1e684-115">Débogage</span><span class="sxs-lookup"><span data-stu-id="1e684-115">Debugging</span></span>](../../../docs/framework/unmanaged-api/debugging/index.md)  
+ <span data-ttu-id="1e684-116">Décrit l'API de débogage, qui permet à un débogueur de déboguer du code qui s'exécute dans un environnement CLR (Common Language Runtime).</span><span class="sxs-lookup"><span data-stu-id="1e684-116">Describes the debugging API, which enables a debugger to debug code that runs in the common language runtime (CLR) environment.</span></span>  
   
- [Magasin de symboles des diagnostics](../../../ml/index.xml)  
- Décrit l'API du magasin de symboles des diagnostics, qui permet à un compilateur de générer des informations de symbole utilisables par un débogueur.  
+ [<span data-ttu-id="1e684-117">Magasin de symboles de Diagnostics</span><span class="sxs-lookup"><span data-stu-id="1e684-117">Diagnostics Symbol Store</span></span>](../../../docs/framework/unmanaged-api/diagnostics/index.md)  
+ <span data-ttu-id="1e684-118">Décrit l'API du magasin de symboles des diagnostics, qui permet à un compilateur de générer des informations de symbole utilisables par un débogueur.</span><span class="sxs-lookup"><span data-stu-id="1e684-118">Describes the diagnostics symbol store API, which enables a compiler to generate symbol information for use by a debugger.</span></span>  
   
- [Fusion](../../../ml/index.xml)  
- Décrit l'API de fusion, qui permet à un hôte de runtime d'accéder aux propriétés des ressources d'une application pour pouvoir localiser les versions correctes de ces ressources pour l'application.  
+ [<span data-ttu-id="1e684-119">Fusion</span><span class="sxs-lookup"><span data-stu-id="1e684-119">Fusion</span></span>](../../../docs/framework/unmanaged-api/fusion/index.md)  
+ <span data-ttu-id="1e684-120">Décrit l'API de fusion, qui permet à un hôte de runtime d'accéder aux propriétés des ressources d'une application pour pouvoir localiser les versions correctes de ces ressources pour l'application.</span><span class="sxs-lookup"><span data-stu-id="1e684-120">Describes the fusion API, which enables a runtime host to access the properties of an application's resources in order to locate the correct versions of those resources for the application.</span></span>  
   
- [Hébergement](../../../ml/index.xml)  
- Décrit l'API d'hébergement, qui permet à des hôtes non managés d'intégrer le CLR dans leurs applications.  
+ [<span data-ttu-id="1e684-121">Hébergement d’applications WPF</span><span class="sxs-lookup"><span data-stu-id="1e684-121">Hosting</span></span>](../../../docs/framework/unmanaged-api/hosting/index.md)  
+ <span data-ttu-id="1e684-122">Décrit l'API d'hébergement, qui permet à des hôtes non managés d'intégrer le CLR dans leurs applications.</span><span class="sxs-lookup"><span data-stu-id="1e684-122">Describes the hosting API, which enables unmanaged hosts to integrate the CLR into their applications.</span></span>  
   
- [Métadonnées](../../../ml/index.xml)  
- Décrit l'API de métadonnées, qui permet à un client comme un compilateur de générer les métadonnées d'un composant ou d'y accéder sans que les types soient chargés par le CLR.  
+ [<span data-ttu-id="1e684-123">Métadonnées</span><span class="sxs-lookup"><span data-stu-id="1e684-123">Metadata</span></span>](../../../docs/framework/unmanaged-api/metadata/index.md)  
+ <span data-ttu-id="1e684-124">Décrit l'API de métadonnées, qui permet à un client comme un compilateur de générer les métadonnées d'un composant ou d'y accéder sans que les types soient chargés par le CLR.</span><span class="sxs-lookup"><span data-stu-id="1e684-124">Describes the metadata API, which enables a client such as a compiler to generate or access a component's metadata without the types being loaded by the CLR.</span></span>  
   
- [Profilage](../../../ml/index.xml)  
- Décrit l'API de profilage, qui permet à un profileur de surveiller l'exécution d'un programme par le CLR.  
+ [<span data-ttu-id="1e684-125">Profilage</span><span class="sxs-lookup"><span data-stu-id="1e684-125">Profiling</span></span>](../../../docs/framework/unmanaged-api/profiling/index.md)  
+ <span data-ttu-id="1e684-126">Décrit l'API de profilage, qui permet à un profileur de surveiller l'exécution d'un programme par le CLR.</span><span class="sxs-lookup"><span data-stu-id="1e684-126">Describes the profiling API, which enables a profiler to monitor a program's execution by the CLR.</span></span>  
   
- [Nommage fort](../../../ml/index.xml)  
- Décrit l'API de nommage fort, qui permet à un client d'administrer la signature par noms forts pour les assemblys.  
+ [<span data-ttu-id="1e684-127">Nom fort</span><span class="sxs-lookup"><span data-stu-id="1e684-127">Strong Naming</span></span>](../../../docs/framework/unmanaged-api/strong-naming/index.md)  
+ <span data-ttu-id="1e684-128">Décrit l'API de nommage fort, qui permet à un client d'administrer la signature par noms forts pour les assemblys.</span><span class="sxs-lookup"><span data-stu-id="1e684-128">Describes the strong naming API, which enables a client to administer strong name signing for assemblies.</span></span>  
+
+ [<span data-ttu-id="1e684-129">Compteurs de Performance et de WMI</span><span class="sxs-lookup"><span data-stu-id="1e684-129">WMI and Performance Counters</span></span>](wmi/index.md)  
+ <span data-ttu-id="1e684-130">Décrit les API qui encapsulent les appels à des bibliothèques de Windows Management Instrumentation (WMI).</span><span class="sxs-lookup"><span data-stu-id="1e684-130">Describes the APIs that wrap calls to Windows Management Instrumentation (WMI) libraries.</span></span>
   
- [Fonctions d'assistance Tlbexp](../../../ml/index.xml)  
- Décrit les deux fonctions et l'interface d'assistance utilisées par l'exportateur de bibliothèques de types \(Tlbexp.exe\) lors du processus de conversion « assembly vers bibliothèque de types ».  
+ [<span data-ttu-id="1e684-131">Fonctions d’assistance Tlbexp</span><span class="sxs-lookup"><span data-stu-id="1e684-131">Tlbexp Helper Functions</span></span>](../../../docs/framework/unmanaged-api/tlbexp/index.md)  
+ <span data-ttu-id="1e684-132">Décrit les deux fonctions et l'interface d'assistance utilisées par l'exportateur de bibliothèques de types (Tlbexp.exe) lors du processus de conversion « assembly vers bibliothèque de types ».</span><span class="sxs-lookup"><span data-stu-id="1e684-132">Describes the two helper functions and interface used by the Type Library Exporter (Tlbexp.exe) during the assembly-to-type-library conversion process.</span></span>  
   
-## Rubriques connexes  
- [Guide de développement](../../../docs/framework/development-guide.md)  
+## <a name="related-sections"></a><span data-ttu-id="1e684-133">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="1e684-133">Related Sections</span></span>  
+ [<span data-ttu-id="1e684-134">Guide de développement</span><span class="sxs-lookup"><span data-stu-id="1e684-134">Development Guide</span></span>](../../../docs/framework/development-guide.md)  
   
- [Lecture avancée pour le .NET Framework](http://msdn.microsoft.com/fr-fr/faae8083-fecb-4514-b133-b0a5a32a7c3c)
+ [<span data-ttu-id="1e684-135">Lecture avancée pour le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="1e684-135">Advanced Reading for the .NET Framework</span></span>](http://msdn.microsoft.com/en-us/faae8083-fecb-4514-b133-b0a5a32a7c3c)

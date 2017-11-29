@@ -1,35 +1,38 @@
 ---
-title: "3370 - BinaryMessageEncodingStart | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 3370 - BinaryMessageEncodingStart
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 624f8dab-a150-468e-9709-613621a8627f
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 21b4624666506d192e2773875a84432474895ffb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 3370 - BinaryMessageEncodingStart
-## Propriétés  
+# <a name="3370---binarymessageencodingstart"></a><span data-ttu-id="e80f0-102">3370 - BinaryMessageEncodingStart</span><span class="sxs-lookup"><span data-stu-id="e80f0-102">3370 - BinaryMessageEncodingStart</span></span>
+## <a name="properties"></a><span data-ttu-id="e80f0-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="e80f0-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|3370|  
-|Mots clés|Canal|  
-|Niveau|Verbose|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Débogage|  
+|<span data-ttu-id="e80f0-104">ID</span><span class="sxs-lookup"><span data-stu-id="e80f0-104">ID</span></span>|<span data-ttu-id="e80f0-105">3370</span><span class="sxs-lookup"><span data-stu-id="e80f0-105">3370</span></span>|  
+|<span data-ttu-id="e80f0-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="e80f0-106">Keywords</span></span>|<span data-ttu-id="e80f0-107">Canal</span><span class="sxs-lookup"><span data-stu-id="e80f0-107">Channel</span></span>|  
+|<span data-ttu-id="e80f0-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="e80f0-108">Level</span></span>|<span data-ttu-id="e80f0-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="e80f0-109">Verbose</span></span>|  
+|<span data-ttu-id="e80f0-110">Canal</span><span class="sxs-lookup"><span data-stu-id="e80f0-110">Channel</span></span>|<span data-ttu-id="e80f0-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="e80f0-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## Description  
- Cet événement est émis lorsque le BinaryMessageEncoder a commencé à encoder le message.  
+## <a name="description"></a><span data-ttu-id="e80f0-112">Description</span><span class="sxs-lookup"><span data-stu-id="e80f0-112">Description</span></span>  
+ <span data-ttu-id="e80f0-113">Cet événement est émis lorsque le BinaryMessageEncoder a commencé à encoder le message.</span><span class="sxs-lookup"><span data-stu-id="e80f0-113">This event is emitted when the BinaryMessageEncoder started encoding the message.</span></span>  
   
-## Message  
- BinaryMessageEncoder a démarré l'encodage du message.  
+## <a name="message"></a><span data-ttu-id="e80f0-114">Message</span><span class="sxs-lookup"><span data-stu-id="e80f0-114">Message</span></span>  
+ <span data-ttu-id="e80f0-115">BinaryMessageEncoder a démarré l'encodage du message.</span><span class="sxs-lookup"><span data-stu-id="e80f0-115">BinaryMessageEncoder started encoding the message.</span></span>  
   
-## Détails
+## <a name="details"></a><span data-ttu-id="e80f0-116">Détails</span><span class="sxs-lookup"><span data-stu-id="e80f0-116">Details</span></span>

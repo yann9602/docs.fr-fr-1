@@ -1,31 +1,27 @@
 ---
 title: "Exemple d’exécution différée (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 50f4fbac-81fe-4f26-aedf-506e21419b19
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: b902c58f801a6e157a971335895670e8a8bf2181
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fdbe45ceda1c7c1d82664bcf3b84b79b4fd85511
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="deferred-execution-example-c"></a>Exemple d’exécution différée (C#)
-Cette rubrique montre comment l'exécution et l'évaluation différées affectent l'exécution de vos requêtes LINQ to XML.  
+# <a name="deferred-execution-example-c"></a><span data-ttu-id="0d2eb-102">Exemple d’exécution différée (C#)</span><span class="sxs-lookup"><span data-stu-id="0d2eb-102">Deferred Execution Example (C#)</span></span>
+<span data-ttu-id="0d2eb-103">Cette rubrique montre comment l'exécution et l'évaluation différées affectent l'exécution de vos requêtes LINQ to XML.</span><span class="sxs-lookup"><span data-stu-id="0d2eb-103">This topic shows how deferred execution and lazy evaluation affect the execution of your LINQ to XML queries.</span></span>  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant illustre l'ordre d'exécution lors de l'utilisation d'une méthode d'extension qui utilise l'exécution différée. L'exemple déclare un tableau de trois chaînes. Il itère ensuite au sein de la collection retournée par `ConvertCollectionToUpperCase`.  
+## <a name="example"></a><span data-ttu-id="0d2eb-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="0d2eb-104">Example</span></span>  
+ <span data-ttu-id="0d2eb-105">L'exemple suivant illustre l'ordre d'exécution lors de l'utilisation d'une méthode d'extension qui utilise l'exécution différée.</span><span class="sxs-lookup"><span data-stu-id="0d2eb-105">The following example shows the order of execution when using an extension method that uses deferred execution.</span></span> <span data-ttu-id="0d2eb-106">L'exemple déclare un tableau de trois chaînes.</span><span class="sxs-lookup"><span data-stu-id="0d2eb-106">The example declares an array of three strings.</span></span> <span data-ttu-id="0d2eb-107">Il itère ensuite au sein de la collection retournée par `ConvertCollectionToUpperCase`.</span><span class="sxs-lookup"><span data-stu-id="0d2eb-107">It then iterates through the collection returned by `ConvertCollectionToUpperCase`.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -56,7 +52,7 @@ class Program
 }  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="0d2eb-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="0d2eb-108">This example produces the following output:</span></span>  
   
 ```  
 ToUpper: source abc  
@@ -67,14 +63,13 @@ ToUpper: source ghi
 Main: str GHI  
 ```  
   
- Notez que lors de l'itération de la collection retournée par `ConvertCollectionToUpperCase`, chaque élément est récupéré du tableau de chaînes source et converti en majuscules avant que l'élément suivant ne soit récupéré du tableau de chaînes source.  
+ <span data-ttu-id="0d2eb-109">Notez que lors de l'itération de la collection retournée par `ConvertCollectionToUpperCase`, chaque élément est récupéré du tableau de chaînes source et converti en majuscules avant que l'élément suivant ne soit récupéré du tableau de chaînes source.</span><span class="sxs-lookup"><span data-stu-id="0d2eb-109">Notice that when iterating through the collection returned by `ConvertCollectionToUpperCase`, each item is retrieved from the source string array and converted to uppercase before the next item is retrieved from the source string array.</span></span>  
   
- Vous pouvez constater que l'intégralité du tableau de chaînes n'est pas convertie en majuscules avant que chaque élément de la collection retournée n'ait été traité dans la boucle `foreach` dans `Main`.  
+ <span data-ttu-id="0d2eb-110">Vous pouvez constater que l'intégralité du tableau de chaînes n'est pas convertie en majuscules avant que chaque élément de la collection retournée n'ait été traité dans la boucle `foreach` dans `Main`.</span><span class="sxs-lookup"><span data-stu-id="0d2eb-110">You can see that the entire array of strings is not converted to uppercase before each item in the returned collection is processed in the `foreach` loop in `Main`.</span></span>  
   
- La rubrique suivante de ce didacticiel illustre le chaînage de requêtes.  
+ <span data-ttu-id="0d2eb-111">La rubrique suivante de ce didacticiel illustre le chaînage de requêtes.</span><span class="sxs-lookup"><span data-stu-id="0d2eb-111">The next topic in this tutorial illustrates chaining queries together:</span></span>  
   
--   [Exemple de chaînage de requêtes (C#)](../../../../csharp/programming-guide/concepts/linq/chaining-queries-example.md)  
+-   [<span data-ttu-id="0d2eb-112">Exemple de chaînage de requêtes (C#)</span><span class="sxs-lookup"><span data-stu-id="0d2eb-112">Chaining Queries Example (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/chaining-queries-example.md)  
   
-## <a name="see-also"></a>Voir aussi  
- [Didacticiel : chaînage de requêtes (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
-
+## <a name="see-also"></a><span data-ttu-id="0d2eb-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0d2eb-113">See Also</span></span>  
+ [<span data-ttu-id="0d2eb-114">Didacticiel : chaînage de requêtes (C#)</span><span class="sxs-lookup"><span data-stu-id="0d2eb-114">Tutorial: Chaining Queries Together (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)

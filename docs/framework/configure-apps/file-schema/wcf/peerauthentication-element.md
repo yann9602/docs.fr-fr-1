@@ -1,30 +1,40 @@
 ---
-title: "&lt;peerAuthentication&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;peerAuthentication&gt;, élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3cc625f5fdb20505f2e36c5a2d37fca0676bbb37
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;peerAuthentication&gt;, &#233;l&#233;ment
-Spécifie les options d'authentification pour les clients du réseau pair à pair.  
+# <a name="ltpeerauthenticationgt-element"></a><span data-ttu-id="ca70c-102">&lt;peerAuthentication&gt;, élément</span><span class="sxs-lookup"><span data-stu-id="ca70c-102">&lt;peerAuthentication&gt; Element</span></span>
+<span data-ttu-id="ca70c-103">Spécifie les options d'authentification pour les clients du réseau pair à pair.</span><span class="sxs-lookup"><span data-stu-id="ca70c-103">Specifies authentication options for peer-to-peer clients.</span></span>  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] la programmation d'égal à égal, consultez [Réseaux homologues](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
+ [!INCLUDE[crabout](../../../../../includes/crabout-md.md)]<span data-ttu-id="ca70c-104">voir de programmation, de pair à pair [mise en réseau pair à pair](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).</span><span class="sxs-lookup"><span data-stu-id="ca70c-104"> peer-to-peer programming, see [Peer-to-Peer Networking](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="ca70c-105">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="ca70c-105">\<system.ServiceModel></span></span>  
+<span data-ttu-id="ca70c-106">\<comportements ></span><span class="sxs-lookup"><span data-stu-id="ca70c-106">\<behaviors></span></span>  
+<span data-ttu-id="ca70c-107">\<endpointBehaviors ></span><span class="sxs-lookup"><span data-stu-id="ca70c-107">\<endpointBehaviors></span></span>  
+<span data-ttu-id="ca70c-108">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="ca70c-108">\<behavior></span></span>  
+<span data-ttu-id="ca70c-109">\<clientCredentials ></span><span class="sxs-lookup"><span data-stu-id="ca70c-109">\<clientCredentials></span></span>  
+<span data-ttu-id="ca70c-110">\<homologue ></span><span class="sxs-lookup"><span data-stu-id="ca70c-110">\<peer></span></span>  
+<span data-ttu-id="ca70c-111">\<PeerAuthentication ></span><span class="sxs-lookup"><span data-stu-id="ca70c-111">\<PeerAuthentication></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="ca70c-112">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ca70c-112">Syntax</span></span>  
   
+```xml  
 <peerAuthentication  
 customCertificateValidatorType = "namespace.typeName, [,AssemblyName] [,Version=version number] [,Culture=culture] [,PublicKeyToken=token]"  
 certificateValidationMode = "ChainTrust/None/PeerTrust/PeerOrChainTrust/Custom"  
@@ -33,58 +43,58 @@ trustedStoreLocation="CurrentUser/LocalMachine"
 />  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="ca70c-113">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="ca70c-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="ca70c-114">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="ca70c-114">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="ca70c-115">Attributs</span><span class="sxs-lookup"><span data-stu-id="ca70c-115">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|`customCertificateValidatorType`|Chaîne facultative.  Type et assembly utilisés pour valider un type personnalisé.  Cet attribut doit être défini lorsque `certificateValidationMode` a la valeur `Custom`.|  
-|`certifcateValidationMode`|Énumération facultative.  Spécifie l'un de trois modes utilisés pour valider des informations d'identification.  S'il est défini à `Custom`, un `customCertificateValidator` doit également être fourni.  La valeur par défaut est `ChainTrust`.|  
-|`revocationMode`|Énumération facultative.  Un des modes utilisés pour vérifier des listes de certificat révoqués \(CRL\).  La valeur par défaut est `Online`.|  
-|`trustedStoreLocation`|Énumération facultative.  L'un des deux emplacements du magasin du système : `LocalMachine` ou `CurrentUser`.  Cette valeur est utilisée lorsqu'un certificat de service est négocié au client.  La validation est exécutée sur le magasin **Personnes autorisées** dans l'emplacement de magasin spécifié.  La valeur par défaut est `CurrentUser`.|  
+|<span data-ttu-id="ca70c-116">Attribut</span><span class="sxs-lookup"><span data-stu-id="ca70c-116">Attribute</span></span>|<span data-ttu-id="ca70c-117">Description</span><span class="sxs-lookup"><span data-stu-id="ca70c-117">Description</span></span>|  
+|---------------|-----------------|  
+|`customCertificateValidatorType`|<span data-ttu-id="ca70c-118">Chaîne facultative.</span><span class="sxs-lookup"><span data-stu-id="ca70c-118">Optional string.</span></span> <span data-ttu-id="ca70c-119">Type et assembly utilisés pour valider un type personnalisé.</span><span class="sxs-lookup"><span data-stu-id="ca70c-119">A type and assembly used to validate a custom type.</span></span> <span data-ttu-id="ca70c-120">Cet attribut doit être défini lorsque `certificateValidationMode` a la valeur `Custom`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-120">This attribute must be set when `certificateValidationMode` is set to `Custom`.</span></span>|  
+|`certifcateValidationMode`|<span data-ttu-id="ca70c-121">Énumération facultative.</span><span class="sxs-lookup"><span data-stu-id="ca70c-121">Optional enumeration.</span></span> <span data-ttu-id="ca70c-122">Spécifie l'un de trois modes utilisés pour valider des informations d'identification.</span><span class="sxs-lookup"><span data-stu-id="ca70c-122">Specifies one of three modes used to validate credentials.</span></span> <span data-ttu-id="ca70c-123">S'il est défini à `Custom`, un `customCertificateValidator` doit également être fourni.</span><span class="sxs-lookup"><span data-stu-id="ca70c-123">If set to `Custom`, then a `customCertificateValidator` must also be supplied.</span></span> <span data-ttu-id="ca70c-124">La valeur par défaut est `ChainTrust`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-124">The default is `ChainTrust`.</span></span>|  
+|`revocationMode`|<span data-ttu-id="ca70c-125">Énumération facultative.</span><span class="sxs-lookup"><span data-stu-id="ca70c-125">Optional enumeration.</span></span> <span data-ttu-id="ca70c-126">Un des modes utilisés pour vérifier des listes de certificat révoqués (CRL).</span><span class="sxs-lookup"><span data-stu-id="ca70c-126">One of the modes used to check for a revoked certificate lists (CRL).</span></span> <span data-ttu-id="ca70c-127">La valeur par défaut est `Online`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-127">The default is `Online`.</span></span>|  
+|`trustedStoreLocation`|<span data-ttu-id="ca70c-128">Énumération facultative.</span><span class="sxs-lookup"><span data-stu-id="ca70c-128">Optional enumeration.</span></span> <span data-ttu-id="ca70c-129">L'un des deux emplacements du magasin du système : `LocalMachine` ou `CurrentUser`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-129">One of the two system store locations: `LocalMachine` or `CurrentUser`.</span></span> <span data-ttu-id="ca70c-130">Cette valeur est utilisée lorsqu'un certificat de service est négocié au client.</span><span class="sxs-lookup"><span data-stu-id="ca70c-130">This value is used when a service certificate is negotiated to the client.</span></span> <span data-ttu-id="ca70c-131">La validation est exécutée sur le **personnes** stocker dans l’emplacement de magasin spécifié.</span><span class="sxs-lookup"><span data-stu-id="ca70c-131">Validation is performed against the **Trusted People** store in the specified store location.</span></span> <span data-ttu-id="ca70c-132">La valeur par défaut est `CurrentUser`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-132">The default is `CurrentUser`.</span></span>|  
   
-## customCertificateValidatorType, attribut  
+## <a name="customcertificatevalidatortype-attribute"></a><span data-ttu-id="ca70c-133">customCertificateValidatorType, attribut</span><span class="sxs-lookup"><span data-stu-id="ca70c-133">customCertificateValidatorType Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|Chaîne|Spécifie le nom de type, l'assembly et d'autres données utilisées pour rechercher le type.  Au minimum, un espace de noms et un nom de type sont requis.  Les informations facultatives incluent : le nom de l'assembly, le numéro de version, la culture et le jeton de clé publique.|  
+|<span data-ttu-id="ca70c-134">Valeur</span><span class="sxs-lookup"><span data-stu-id="ca70c-134">Value</span></span>|<span data-ttu-id="ca70c-135">Description</span><span class="sxs-lookup"><span data-stu-id="ca70c-135">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="ca70c-136">Chaîne</span><span class="sxs-lookup"><span data-stu-id="ca70c-136">String</span></span>|<span data-ttu-id="ca70c-137">Spécifie le nom de type, l'assembly et d'autres données utilisées pour rechercher le type.</span><span class="sxs-lookup"><span data-stu-id="ca70c-137">Specifies the type name and assembly and other data used to find the type.</span></span> <span data-ttu-id="ca70c-138">Au minimum, un espace de noms et un nom de type sont requis.</span><span class="sxs-lookup"><span data-stu-id="ca70c-138">At minimum, a namespace and type name are required.</span></span> <span data-ttu-id="ca70c-139">Les informations facultatives incluent : le nom de l'assembly, le numéro de version, la culture et le jeton de clé publique.</span><span class="sxs-lookup"><span data-stu-id="ca70c-139">Optional information includes: assembly name, version number, culture, and public key token.</span></span>|  
   
-## certificateValidationMode, attribut  
+## <a name="certificatevalidationmode-attribute"></a><span data-ttu-id="ca70c-140">certificateValidationMode, attribut</span><span class="sxs-lookup"><span data-stu-id="ca70c-140">certificateValidationMode Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|Énumération|Une des valeurs suivantes : `None`, `PeerTrust`, `ChainTrust`, `PeerOrChainTrust` et `Custom`.  La valeur par défaut est `ChainTrust`.<br /><br /> Pour plus d'informations, consultez [Utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
+|<span data-ttu-id="ca70c-141">Valeur</span><span class="sxs-lookup"><span data-stu-id="ca70c-141">Value</span></span>|<span data-ttu-id="ca70c-142">Description</span><span class="sxs-lookup"><span data-stu-id="ca70c-142">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="ca70c-143">Énumération</span><span class="sxs-lookup"><span data-stu-id="ca70c-143">Enumeration</span></span>|<span data-ttu-id="ca70c-144">Une des valeurs suivantes : `None`, `PeerTrust`, `ChainTrust`, `PeerOrChainTrust` et `Custom`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-144">One of the following values: `None`, `PeerTrust`, `ChainTrust`, `PeerOrChainTrust`, `Custom`.</span></span> <span data-ttu-id="ca70c-145">La valeur par défaut est `ChainTrust`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-145">The default is `ChainTrust`.</span></span><br /><br /> <span data-ttu-id="ca70c-146">Pour plus d’informations, consultez [utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="ca70c-146">For more information, see [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>|  
   
-## revocationMode, attribut  
+## <a name="revocationmode-attribute"></a><span data-ttu-id="ca70c-147">revocationMode, attribut</span><span class="sxs-lookup"><span data-stu-id="ca70c-147">revocationMode Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|Énumération|Une des valeurs suivantes : `NoCheck`, `Online` et `Offline`.  La valeur par défaut est `Online`.<br /><br /> Pour plus d'informations, consultez [Utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
+|<span data-ttu-id="ca70c-148">Valeur</span><span class="sxs-lookup"><span data-stu-id="ca70c-148">Value</span></span>|<span data-ttu-id="ca70c-149">Description</span><span class="sxs-lookup"><span data-stu-id="ca70c-149">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="ca70c-150">Énumération</span><span class="sxs-lookup"><span data-stu-id="ca70c-150">Enumeration</span></span>|<span data-ttu-id="ca70c-151">Une des valeurs suivantes : `NoCheck`, `Online` et `Offline`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-151">One of the following values: `NoCheck`, `Online`, `Offline`.</span></span> <span data-ttu-id="ca70c-152">La valeur par défaut est `Online`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-152">The default is `Online`.</span></span><br /><br /> <span data-ttu-id="ca70c-153">Pour plus d’informations, consultez [utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="ca70c-153">For more information, see [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>|  
   
-## trustedStoreLocation, attribut  
+## <a name="trustedstorelocation-attribute"></a><span data-ttu-id="ca70c-154">trustedStoreLocation, attribut</span><span class="sxs-lookup"><span data-stu-id="ca70c-154">trustedStoreLocation Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|Énumération|Une des valeurs suivantes : `LocalMachine` ou `CurrentUser`.  La valeur par défaut est `CurrentUser`.  Si l'application cliente s'exécute sous un compte système, le certificat se trouve généralement dans `LocalMachine`.  Si l'application cliente s'exécute sous un compte d'utilisateur, le certificat se trouve généralement dans `CurrentUser`.|  
+|<span data-ttu-id="ca70c-155">Valeur</span><span class="sxs-lookup"><span data-stu-id="ca70c-155">Value</span></span>|<span data-ttu-id="ca70c-156">Description</span><span class="sxs-lookup"><span data-stu-id="ca70c-156">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="ca70c-157">Énumération</span><span class="sxs-lookup"><span data-stu-id="ca70c-157">Enumeration</span></span>|<span data-ttu-id="ca70c-158">Une des valeurs suivantes : `LocalMachine` ou `CurrentUser`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-158">One of the following values: `LocalMachine` or `CurrentUser`.</span></span> <span data-ttu-id="ca70c-159">La valeur par défaut est `CurrentUser`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-159">The default is `CurrentUser`.</span></span> <span data-ttu-id="ca70c-160">Si l'application cliente s'exécute sous un compte système, le certificat se trouve généralement dans `LocalMachine`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-160">If the client application is running under a system account then the certificate is typically under `LocalMachine`.</span></span> <span data-ttu-id="ca70c-161">Si l'application cliente s'exécute sous un compte d'utilisateur, le certificat se trouve généralement dans `CurrentUser`.</span><span class="sxs-lookup"><span data-stu-id="ca70c-161">If the client application is running under a user account then the certificate is typically in `CurrentUser`.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="ca70c-162">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="ca70c-162">Child Elements</span></span>  
+ <span data-ttu-id="ca70c-163">Aucun.</span><span class="sxs-lookup"><span data-stu-id="ca70c-163">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="ca70c-164">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="ca70c-164">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="ca70c-165">Élément</span><span class="sxs-lookup"><span data-stu-id="ca70c-165">Element</span></span>|<span data-ttu-id="ca70c-166">Description</span><span class="sxs-lookup"><span data-stu-id="ca70c-166">Description</span></span>|  
 |-------------|-----------------|  
-|[\<peer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Spécifie une information d'identification utilisée pour authentifier le client auprès d'un service homologue.|  
+|[<span data-ttu-id="ca70c-167">\<homologue ></span><span class="sxs-lookup"><span data-stu-id="ca70c-167">\<peer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|<span data-ttu-id="ca70c-168">Spécifie une information d'identification utilisée pour authentifier le client auprès d'un service homologue.</span><span class="sxs-lookup"><span data-stu-id="ca70c-168">Specifies a credential used for authenticating the client to a peer service.</span></span>|  
   
-## Notes  
- L'élément `<authentication>` correspond à la classe <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>.  Cet élément spécifie un validateur, appelé pendant l'authentification de voisins dans la maille.  Lorsqu'un nouvel homologue essaie d'établir une connexion avec un voisin, il transmet ses propres informations d'identification à l'homologue répondant.  Le validateur du répondeur est appelé pour vérifier les informations d'identification du tiers distant.  Chaque fois qu'une connexion est établie avec un homologue de la maille, les deux homologues sont authentifiés mutuellement, ce qui signifie que des validateurs sont appelés à chaque extrémité.  
+## <a name="remarks"></a><span data-ttu-id="ca70c-169">Remarques</span><span class="sxs-lookup"><span data-stu-id="ca70c-169">Remarks</span></span>  
+ <span data-ttu-id="ca70c-170">L'élément `<authentication>` correspond à la classe <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>.</span><span class="sxs-lookup"><span data-stu-id="ca70c-170">The `<authentication>` element corresponds to the <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication> class.</span></span> <span data-ttu-id="ca70c-171">Cet élément spécifie un validateur, appelé pendant l'authentification de voisins dans la maille.</span><span class="sxs-lookup"><span data-stu-id="ca70c-171">This element specifies a validator, which is invoked during neighbor-to-neighbor authentication in the mesh.</span></span> <span data-ttu-id="ca70c-172">Lorsqu'un nouvel homologue essaie d'établir une connexion avec un voisin, il transmet ses propres informations d'identification à l'homologue répondant.</span><span class="sxs-lookup"><span data-stu-id="ca70c-172">When a new peer tries to establish a neighbor connection, it passes its own credential to the responding peer.</span></span> <span data-ttu-id="ca70c-173">Le validateur du répondeur est appelé pour vérifier les informations d'identification du tiers distant.</span><span class="sxs-lookup"><span data-stu-id="ca70c-173">The validator of the responder is invoked to verify the credential of the remote party.</span></span> <span data-ttu-id="ca70c-174">Chaque fois qu'une connexion est établie avec un homologue de la maille, les deux homologues sont authentifiés mutuellement, ce qui signifie que des validateurs sont appelés à chaque extrémité.</span><span class="sxs-lookup"><span data-stu-id="ca70c-174">Whenever a peer connection is established in the mesh, both peers are mutually authenticated, meaning validators on both ends are invoked.</span></span>  
   
-## Exemple  
- Le code suivant affecte la valeur `PeerOrChainTrust` au mode de validation du certificat.  
+## <a name="example"></a><span data-ttu-id="ca70c-175">Exemple</span><span class="sxs-lookup"><span data-stu-id="ca70c-175">Example</span></span>  
+ <span data-ttu-id="ca70c-176">Le code suivant affecte la valeur `PeerOrChainTrust` au mode de validation du certificat.</span><span class="sxs-lookup"><span data-stu-id="ca70c-176">The following code sets the certificate validation mode to `PeerOrChainTrust`.</span></span>  
   
-```  
+```xml  
 <behaviors>  
  <endpointBehaviors>  
   <behavior name="MyEndpointBehavior">  
@@ -102,14 +112,14 @@ trustedStoreLocation="CurrentUser/LocalMachine"
 </endpointBehaviors>  
 ```  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.PeerCredentialElement>   
- <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>   
- <xref:System.ServiceModel.Security.PeerCredential.PeerAuthentication%2A>   
- <xref:System.ServiceModel.Configuration.PeerCredentialElement.PeerAuthentication%2A>   
- <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>   
- [Utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [Réseaux homologues](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)   
- [Peer Channel Message Authentication](http://msdn.microsoft.com/fr-fr/80e73386-514e-4c30-9e4a-b9ca8c173a95)   
- [Peer Channel Custom Authentication](http://msdn.microsoft.com/fr-fr/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)   
- [Sécurisation des applications de canal homologue](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+## <a name="see-also"></a><span data-ttu-id="ca70c-177">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ca70c-177">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
+ <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>  
+ <xref:System.ServiceModel.Security.PeerCredential.PeerAuthentication%2A>  
+ <xref:System.ServiceModel.Configuration.PeerCredentialElement.PeerAuthentication%2A>  
+ <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>  
+ [<span data-ttu-id="ca70c-178">Utilisation des certificats</span><span class="sxs-lookup"><span data-stu-id="ca70c-178">Working with Certificates</span></span>](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [<span data-ttu-id="ca70c-179">Mise en réseau pair à pair</span><span class="sxs-lookup"><span data-stu-id="ca70c-179">Peer-to-Peer Networking</span></span>](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [<span data-ttu-id="ca70c-180">Authentification de Message de canal homologue</span><span class="sxs-lookup"><span data-stu-id="ca70c-180">Peer Channel Message Authentication</span></span>](http://msdn.microsoft.com/en-us/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
+ [<span data-ttu-id="ca70c-181">Authentification personnalisée de canal homologue</span><span class="sxs-lookup"><span data-stu-id="ca70c-181">Peer Channel Custom Authentication</span></span>](http://msdn.microsoft.com/en-us/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
+ [<span data-ttu-id="ca70c-182">Sécurisation des Applications de canal homologue</span><span class="sxs-lookup"><span data-stu-id="ca70c-182">Securing Peer Channel Applications</span></span>](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

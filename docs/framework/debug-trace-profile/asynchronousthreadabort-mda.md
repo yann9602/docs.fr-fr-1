@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - asynchronous thread aborts
 - AsynchronousThreadAbort MDA
@@ -21,46 +15,45 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - MDAs (managed debugging assistants), asynchronous thread aborts
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9a80b0cdd762a9dc26089aa450cf998b1832dbc1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 6f7bfee4375a14a4456493333e65a953d406c732
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="asynchronousthreadabort-mda"></a>Assistant Débogage managé asynchronousThreadAbort
-L’Assistant Débogage managé (MDA) `asynchronousThreadAbort` est activé quand un thread tente d’introduire un abandon asynchrone dans un autre thread. Les abandons de threads synchrones n’activent pas l’Assistant Débogage managé `asynchronousThreadAbort`.
+# <a name="asynchronousthreadabort-mda"></a><span data-ttu-id="bf3be-102">Assistant Débogage managé asynchronousThreadAbort</span><span class="sxs-lookup"><span data-stu-id="bf3be-102">asynchronousThreadAbort MDA</span></span>
+<span data-ttu-id="bf3be-103">L’Assistant Débogage managé (MDA) `asynchronousThreadAbort` est activé quand un thread tente d’introduire un abandon asynchrone dans un autre thread.</span><span class="sxs-lookup"><span data-stu-id="bf3be-103">The `asynchronousThreadAbort` managed debugging assistant (MDA) is activated when a thread attempts to introduce an asynchronous abort into another thread.</span></span> <span data-ttu-id="bf3be-104">Les abandons de threads synchrones n’activent pas l’Assistant Débogage managé `asynchronousThreadAbort`.</span><span class="sxs-lookup"><span data-stu-id="bf3be-104">Synchronous thread aborts do not activate the `asynchronousThreadAbort` MDA.</span></span>
 
-## <a name="symptoms"></a>Symptômes
- Une application se bloque avec une exception <xref:System.Threading.ThreadAbortException> non gérée quand le thread d’application principal est abandonné. Si l’application continuait à s’exécuter, les conséquences pourraient être pires qu’un blocage, entraînant éventuellement un endommagement supplémentaire des données.
+## <a name="symptoms"></a><span data-ttu-id="bf3be-105">Symptômes</span><span class="sxs-lookup"><span data-stu-id="bf3be-105">Symptoms</span></span>
+ <span data-ttu-id="bf3be-106">Une application se bloque avec une exception <xref:System.Threading.ThreadAbortException> non gérée quand le thread d’application principal est abandonné.</span><span class="sxs-lookup"><span data-stu-id="bf3be-106">An application crashes with an unhandled <xref:System.Threading.ThreadAbortException> when the main application thread is aborted.</span></span> <span data-ttu-id="bf3be-107">Si l’application continuait à s’exécuter, les conséquences pourraient être pires qu’un blocage, entraînant éventuellement un endommagement supplémentaire des données.</span><span class="sxs-lookup"><span data-stu-id="bf3be-107">If the application were to continue to execute, the consequences might be worse than the application crashing, possibly resulting in further data corruption.</span></span>
 
- Des opérations censées être atomiques ont probablement été interrompues après l’achèvement partiel, laissant les données d’application dans un état imprévisible. Une exception <xref:System.Threading.ThreadAbortException> peut être générée à partir de points apparemment aléatoires dans l’exécution du code, souvent à des endroits à partir desquels une exception n’est pas censée se produire. Le code n’est peut-être pas capable de gérer cette exception, entraînant un état endommagé.
+ <span data-ttu-id="bf3be-108">Des opérations censées être atomiques ont probablement été interrompues après l’achèvement partiel, laissant les données d’application dans un état imprévisible.</span><span class="sxs-lookup"><span data-stu-id="bf3be-108">Operations meant to be atomic have likely been interrupted after partial completion, leaving application data in an unpredictable state.</span></span> <span data-ttu-id="bf3be-109">Une exception <xref:System.Threading.ThreadAbortException> peut être générée à partir de points apparemment aléatoires dans l’exécution du code, souvent à des endroits à partir desquels une exception n’est pas censée se produire.</span><span class="sxs-lookup"><span data-stu-id="bf3be-109">A <xref:System.Threading.ThreadAbortException> can be generated from seemingly random points in the execution of code, often in places from which an exception is not expected to arise.</span></span> <span data-ttu-id="bf3be-110">Le code n’est peut-être pas capable de gérer cette exception, entraînant un état endommagé.</span><span class="sxs-lookup"><span data-stu-id="bf3be-110">The code might not be capable of handling such an exception, resulting in a corrupt state.</span></span>
 
- Les symptômes peuvent varier considérablement en raison du caractère aléatoire du problème.
+ <span data-ttu-id="bf3be-111">Les symptômes peuvent varier considérablement en raison du caractère aléatoire du problème.</span><span class="sxs-lookup"><span data-stu-id="bf3be-111">Symptoms can vary widely due to the randomness inherent to the problem.</span></span>
 
-## <a name="cause"></a>Cause
- Le code dans un thread a appelé la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=fullName> sur un thread cible pour introduire un abandon de thread asynchrone. L’abandon de thread est asynchrone, car le code qui effectue l’appel à <xref:System.Threading.Thread.Abort%2A> s’exécute sur un thread différent de la cible de l’opération d’abandon. Les abandons de threads synchrones ne doivent pas provoquer de problème, car le thread exécutant <xref:System.Threading.Thread.Abort%2A> doit l’avoir fait uniquement à un point de contrôle sécurisé où l’état de l’application est cohérent.
+## <a name="cause"></a><span data-ttu-id="bf3be-112">Cause</span><span class="sxs-lookup"><span data-stu-id="bf3be-112">Cause</span></span>
+ <span data-ttu-id="bf3be-113">Le code dans un thread a appelé la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> sur un thread cible pour introduire un abandon de thread asynchrone.</span><span class="sxs-lookup"><span data-stu-id="bf3be-113">Code in one thread called the <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> method on a target thread to introduce an asynchronous thread abort.</span></span> <span data-ttu-id="bf3be-114">L’abandon de thread est asynchrone, car le code qui effectue l’appel à <xref:System.Threading.Thread.Abort%2A> s’exécute sur un thread différent de la cible de l’opération d’abandon.</span><span class="sxs-lookup"><span data-stu-id="bf3be-114">The thread abort is asynchronous because the code that makes the call to <xref:System.Threading.Thread.Abort%2A> is running on a different thread than the target of the abort operation.</span></span> <span data-ttu-id="bf3be-115">Les abandons de threads synchrones ne doivent pas provoquer de problème, car le thread exécutant <xref:System.Threading.Thread.Abort%2A> doit l’avoir fait uniquement à un point de contrôle sécurisé où l’état de l’application est cohérent.</span><span class="sxs-lookup"><span data-stu-id="bf3be-115">Synchronous thread aborts should not cause a problem because the thread performing the <xref:System.Threading.Thread.Abort%2A> should have done so only at a safe checkpoint where application state is consistent.</span></span>
 
- Les abandons de threads asynchrones présentent un problème, car ils sont traités à des points inattendus dans l’exécution du thread cible. Pour éviter cela, le code écrit pour s’exécuter sur un thread susceptible d’être abandonné de cette manière aurait besoin de gérer une exception <xref:System.Threading.ThreadAbortException> presque à chaque ligne de code, en prenant soin de remettre les données d’application dans un état cohérent. Il n’est pas réaliste de s’attendre à ce que le code soit écrit avec ce problème à l’esprit, ni d’écrire du code qui protège contre tous les cas possibles.
+ <span data-ttu-id="bf3be-116">Les abandons de threads asynchrones présentent un problème, car ils sont traités à des points inattendus dans l’exécution du thread cible.</span><span class="sxs-lookup"><span data-stu-id="bf3be-116">Asynchronous thread aborts present a problem because they are processed at unpredictable points in the target thread's execution.</span></span> <span data-ttu-id="bf3be-117">Pour éviter cela, le code écrit pour s’exécuter sur un thread susceptible d’être abandonné de cette manière aurait besoin de gérer une exception <xref:System.Threading.ThreadAbortException> presque à chaque ligne de code, en prenant soin de remettre les données d’application dans un état cohérent.</span><span class="sxs-lookup"><span data-stu-id="bf3be-117">To avoid this, code written to run on a thread that might be aborted in this manner would need to handle a <xref:System.Threading.ThreadAbortException> at almost every line of code, taking care to put application data back into a consistent state.</span></span> <span data-ttu-id="bf3be-118">Il n’est pas réaliste de s’attendre à ce que le code soit écrit avec ce problème à l’esprit, ni d’écrire du code qui protège contre tous les cas possibles.</span><span class="sxs-lookup"><span data-stu-id="bf3be-118">It is not realistic to expect code to be written with this problem in mind or to write code that protects against all possible circumstances.</span></span>
 
- Les appels dans le code non managé et les blocs `finally` ne seront pas abandonnés de façon asynchrone, mais dès la sortie de l’une de ces catégories.
+ <span data-ttu-id="bf3be-119">Les appels dans le code non managé et les blocs `finally` ne seront pas abandonnés de façon asynchrone, mais dès la sortie de l’une de ces catégories.</span><span class="sxs-lookup"><span data-stu-id="bf3be-119">Calls into unmanaged code and `finally` blocks will not be aborted asynchronously but immediately upon exit from one of these categories.</span></span>
 
- La cause peut être difficile à déterminer en raison du caractère aléatoire du problème.
+ <span data-ttu-id="bf3be-120">La cause peut être difficile à déterminer en raison du caractère aléatoire du problème.</span><span class="sxs-lookup"><span data-stu-id="bf3be-120">The cause might be difficult to determine due to the randomness inherent to the problem.</span></span>
 
-## <a name="resolution"></a>Résolution
- Évitez les conceptions du code qui exigent l’utilisation d’abandons de threads asynchrones. Il existe plusieurs approches plus appropriées pour l’interruption d’un thread cible qui ne nécessitent pas d’appel à <xref:System.Threading.Thread.Abort%2A>. La plus sûre consiste à introduire un mécanisme, par exemple une propriété commune, qui envoie un signal au thread cible pour demander une interruption. Le thread cible vérifie ce signal à certains points de contrôle sécurisés. S’il remarque qu’une interruption a été demandée, il peut s’arrêter correctement.
+## <a name="resolution"></a><span data-ttu-id="bf3be-121">Résolution</span><span class="sxs-lookup"><span data-stu-id="bf3be-121">Resolution</span></span>
+ <span data-ttu-id="bf3be-122">Évitez les conceptions du code qui exigent l’utilisation d’abandons de threads asynchrones.</span><span class="sxs-lookup"><span data-stu-id="bf3be-122">Avoid code design that requires the use of asynchronous thread aborts.</span></span> <span data-ttu-id="bf3be-123">Il existe plusieurs approches plus appropriées pour l’interruption d’un thread cible qui ne nécessitent pas d’appel à <xref:System.Threading.Thread.Abort%2A>.</span><span class="sxs-lookup"><span data-stu-id="bf3be-123">There are several approaches more appropriate for interruption of a target thread that do not require a call to <xref:System.Threading.Thread.Abort%2A>.</span></span> <span data-ttu-id="bf3be-124">La plus sûre consiste à introduire un mécanisme, par exemple une propriété commune, qui envoie un signal au thread cible pour demander une interruption.</span><span class="sxs-lookup"><span data-stu-id="bf3be-124">The safest is to introduce a mechanism, such as a common property, that signals the target thread to request an interrupt.</span></span> <span data-ttu-id="bf3be-125">Le thread cible vérifie ce signal à certains points de contrôle sécurisés.</span><span class="sxs-lookup"><span data-stu-id="bf3be-125">The target thread checks the signal at certain safe checkpoints.</span></span> <span data-ttu-id="bf3be-126">S’il remarque qu’une interruption a été demandée, il peut s’arrêter correctement.</span><span class="sxs-lookup"><span data-stu-id="bf3be-126">If it notices that an interrupt has been requested, it can shut down gracefully.</span></span>
 
-## <a name="effect-on-the-runtime"></a>Effet sur le runtime
- Cet Assistant Débogage managé n'a aucun effet sur le CLR. Il signale uniquement des données sur les abandons de threads asynchrones.
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="bf3be-127">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="bf3be-127">Effect on the Runtime</span></span>
+ <span data-ttu-id="bf3be-128">Cet Assistant Débogage managé n'a aucun effet sur le CLR.</span><span class="sxs-lookup"><span data-stu-id="bf3be-128">This MDA has no effect on the CLR.</span></span> <span data-ttu-id="bf3be-129">Il signale uniquement des données sur les abandons de threads asynchrones.</span><span class="sxs-lookup"><span data-stu-id="bf3be-129">It only reports data about asynchronous thread aborts.</span></span>
 
-## <a name="output"></a>Sortie
- L’Assistant Débogage managé signale l’ID du thread qui exécute l’abandon et l’ID du thread qui est la cible de l’abandon. Ces ID ne sont jamais les mêmes, car ce scénario se limite aux abandons asynchrones.
+## <a name="output"></a><span data-ttu-id="bf3be-130">Sortie</span><span class="sxs-lookup"><span data-stu-id="bf3be-130">Output</span></span>
+ <span data-ttu-id="bf3be-131">L’Assistant Débogage managé signale l’ID du thread qui exécute l’abandon et l’ID du thread qui est la cible de l’abandon.</span><span class="sxs-lookup"><span data-stu-id="bf3be-131">The MDA reports the ID of the thread performing the abort and the ID of the thread that is the target of the abort.</span></span> <span data-ttu-id="bf3be-132">Ces ID ne sont jamais les mêmes, car ce scénario se limite aux abandons asynchrones.</span><span class="sxs-lookup"><span data-stu-id="bf3be-132">These will never be the same because this is limited to asynchronous aborts.</span></span>
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a><span data-ttu-id="bf3be-133">Configuration</span><span class="sxs-lookup"><span data-stu-id="bf3be-133">Configuration</span></span>
 
 ```xml
 <mdaConfig>
@@ -70,8 +63,8 @@ L’Assistant Débogage managé (MDA) `asynchronousThreadAbort` est activé quan
 </mdaConfig>
 ```
 
-## <a name="example"></a>Exemple
- L’activation de l’Assistant Débogage managé `asynchronousThreadAbort` nécessite uniquement un appel à <xref:System.Threading.Thread.Abort%2A> sur un thread en cours d’exécution distinct. Tenez compte des conséquences si le contenu de la fonction de démarrage du thread était un ensemble d’opérations plus complexes susceptibles d’être interrompues à un point arbitraire par l’abandon.
+## <a name="example"></a><span data-ttu-id="bf3be-134">Exemple</span><span class="sxs-lookup"><span data-stu-id="bf3be-134">Example</span></span>
+ <span data-ttu-id="bf3be-135">L’activation de l’Assistant Débogage managé `asynchronousThreadAbort` nécessite uniquement un appel à <xref:System.Threading.Thread.Abort%2A> sur un thread en cours d’exécution distinct.</span><span class="sxs-lookup"><span data-stu-id="bf3be-135">Activating the `asynchronousThreadAbort` MDA requires only a call to <xref:System.Threading.Thread.Abort%2A> on a separate running thread.</span></span> <span data-ttu-id="bf3be-136">Tenez compte des conséquences si le contenu de la fonction de démarrage du thread était un ensemble d’opérations plus complexes susceptibles d’être interrompues à un point arbitraire par l’abandon.</span><span class="sxs-lookup"><span data-stu-id="bf3be-136">Consider the consequences if the contents of the thread start function were a set of more complex operations which might be interrupted at any arbitrary point by the abort.</span></span>
 
 ```csharp
 using System.Threading;
@@ -85,6 +78,5 @@ void FireMda()
 }
 ```
 
-## <a name="see-also"></a>Voir aussi
- <xref:System.Threading.Thread> [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-
+## <a name="see-also"></a><span data-ttu-id="bf3be-137">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bf3be-137">See Also</span></span>
+ <span data-ttu-id="bf3be-138"><xref:System.Threading.Thread> [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)</span><span class="sxs-lookup"><span data-stu-id="bf3be-138"><xref:System.Threading.Thread> [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)</span></span>

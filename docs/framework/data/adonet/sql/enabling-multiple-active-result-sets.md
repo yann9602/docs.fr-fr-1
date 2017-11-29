@@ -1,33 +1,39 @@
 ---
-title: "Activation des ensembles de r&#233;sultats actifs multiples (MARS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Activation de MARS (Multiple Active Result Sets)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 1d39d1666f63d7d6f7a6154a124280486c3fccce
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Activation des ensembles de r&#233;sultats actifs multiples (MARS)
-MARS est une fonction qui opère avec SQL Server pour permettre l'exécution de plusieurs lots sur une seule connexion.  Lorsque MARS est activé pour une utilisation avec SQL Server, chaque objet de commande utilisé ajoute une session à la connexion.  
+# <a name="enabling-multiple-active-result-sets"></a><span data-ttu-id="a90b1-102">Activation de MARS (Multiple Active Result Sets)</span><span class="sxs-lookup"><span data-stu-id="a90b1-102">Enabling Multiple Active Result Sets</span></span>
+<span data-ttu-id="a90b1-103">MARS est une fonctionnalité qui opère avec SQL Server pour permettre l’exécution de plusieurs lots sur une seule connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-103">Multiple Active Result Sets (MARS) is a feature that works with SQL Server to allow the execution of multiple batches on a single connection.</span></span> <span data-ttu-id="a90b1-104">Lorsque MARS est activé pour une utilisation avec SQL Server, chaque objet de commande utilisé ajoute une session à la connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-104">When MARS is enabled for use with SQL Server, each command object used adds a session to the connection.</span></span>  
   
 > [!NOTE]
->  Une session MARS unique ouvre une connexion logique qu'utilisera la fonction MARS, puis une connexion logique pour chaque commande active.  
+>  <span data-ttu-id="a90b1-105">Une session MARS unique ouvre une connexion logique qu'utilisera la fonction MARS, puis une connexion logique pour chaque commande active.</span><span class="sxs-lookup"><span data-stu-id="a90b1-105">A single MARS session opens one logical connection for MARS to use and then one logical connection for each active command.</span></span>  
   
-## Activation et désactivation de MARS dans la chaîne de connexion  
+## <a name="enabling-and-disabling-mars-in-the-connection-string"></a><span data-ttu-id="a90b1-106">Activation et désactivation de MARS dans la chaîne de connexion</span><span class="sxs-lookup"><span data-stu-id="a90b1-106">Enabling and Disabling MARS in the Connection String</span></span>  
   
 > [!NOTE]
->  Les chaînes de connexion suivantes utilisent l'exemple de base de données **AdventureWorks** inclus avec SQL Server.  Les chaînes de connexion fournies supposent que la base de données est installée sur un serveur nommé MSSQL1.  Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.  
+>  <span data-ttu-id="a90b1-107">Les chaînes de connexion suivantes utilisent l’exemple **AdventureWorks** inclus avec SQL Server de base de données.</span><span class="sxs-lookup"><span data-stu-id="a90b1-107">The following connection strings use the sample **AdventureWorks** database included with SQL Server.</span></span> <span data-ttu-id="a90b1-108">Les chaînes de connexion fournies supposent que la base de données est installée sur un serveur nommé MSSQL1.</span><span class="sxs-lookup"><span data-stu-id="a90b1-108">The connection strings provided assume that the database is installed on a server named MSSQL1.</span></span> <span data-ttu-id="a90b1-109">Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.</span><span class="sxs-lookup"><span data-stu-id="a90b1-109">Modify the connection string as necessary for your environment.</span></span>  
   
- La fonction MARS est désactivée par défaut.  Vous pouvez l'activer en ajoutant la paire de mots clés « MultipleActiveResultSets\=True » à votre chaîne de connexion. "  True » est la seule valeur valide pour l'activation de MARS.  L'exemple suivant montre comment se connecter à une instance de SQL Server et comment spécifier que MARS doit être activé.  
+ <span data-ttu-id="a90b1-110">La fonction MARS est désactivée par défaut.</span><span class="sxs-lookup"><span data-stu-id="a90b1-110">The MARS feature is disabled by default.</span></span> <span data-ttu-id="a90b1-111">Vous pouvez l'activer en ajoutant la paire de mots clés « MultipleActiveResultSets=True » à votre chaîne de connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-111">It can be enabled by adding the "MultipleActiveResultSets=True" keyword pair to your connection string.</span></span> <span data-ttu-id="a90b1-112">« True » est la seule valeur valide pour l'activation de MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-112">"True" is the only valid value for enabling MARS.</span></span> <span data-ttu-id="a90b1-113">L'exemple suivant montre comment se connecter à une instance de SQL Server et comment spécifier que MARS doit être activé.</span><span class="sxs-lookup"><span data-stu-id="a90b1-113">The following example demonstrates how to connect to an instance of SQL Server and how to specify that MARS should be enabled.</span></span>  
   
 ```vb  
 Dim connectionString As String = "Data Source=MSSQL1;" & _  
@@ -41,7 +47,7 @@ string connectionString = "Data Source=MSSQL1;" +
     "MultipleActiveResultSets=True";  
 ```  
   
- Vous pouvez désactiver MARS en ajoutant la paire de mots clés « MultipleActiveResultSets\=False » à votre chaîne de connexion. "  False » est la seule valeur valide pour la désactivation de MARS.  La chaîne de connexion suivante montre comment désactiver MARS.  
+ <span data-ttu-id="a90b1-114">Vous pouvez désactiver MARS en ajoutant la paire de mots clés « MultipleActiveResultSets=False » à votre chaîne de connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-114">You can disable MARS by adding the "MultipleActiveResultSets=False" keyword pair to your connection string.</span></span> <span data-ttu-id="a90b1-115">« False » est la seule valeur valide pour la désactivation de MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-115">"False" is the only valid value for disabling MARS.</span></span> <span data-ttu-id="a90b1-116">La chaîne de connexion suivante montre comment désactiver MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-116">The following connection string demonstrates how to disable MARS.</span></span>  
   
 ```vb  
 Dim connectionString As String = "Data Source=MSSQL1;" & _  
@@ -55,66 +61,66 @@ string connectionString = "Data Source=MSSQL1;" +
     "MultipleActiveResultSets=False";  
 ```  
   
-## Considérations particulières en relation avec l'utilisation de MARS  
- En général, les applications existantes ne nécessitent aucune modification pour utiliser une connexion de type MARS.  Toutefois, si vous souhaitez utiliser des fonctions MARS dans vos applications, vous devez comprendre les considérations particulières suivantes.  
+## <a name="special-considerations-when-using-mars"></a><span data-ttu-id="a90b1-117">Considérations particulières en relation avec l'utilisation de MARS</span><span class="sxs-lookup"><span data-stu-id="a90b1-117">Special Considerations When Using MARS</span></span>  
+ <span data-ttu-id="a90b1-118">En général, les applications existantes ne nécessitent aucune modification pour utiliser une connexion de type MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-118">In general, existing applications should not need modification to use a MARS-enabled connection.</span></span> <span data-ttu-id="a90b1-119">Toutefois, si vous souhaitez utiliser des fonctions MARS dans vos applications, vous devez comprendre les considérations particulières suivantes.</span><span class="sxs-lookup"><span data-stu-id="a90b1-119">However, if you wish to use MARS features in your applications, you should understand the following special considerations.</span></span>  
   
-### Entrelacement d'instructions  
- Les opérations MARS s'exécutent de façon synchrone sur le serveur.  L'entrelacement des instructions SELECT et BULK INSERT est autorisé.  Toutefois, les instructions DML \(Data Manipulation Language\) et DDL \(Data Definition Language\) s'exécutent de manière atomique.  Toute instruction tentant de s'exécuter alors qu'un lot atomique est en cours d'exécution est bloquée.  L'exécution en parallèle au niveau du serveur n'est pas une fonction MARS.  
+### <a name="statement-interleaving"></a><span data-ttu-id="a90b1-120">Entrelacement d'instructions</span><span class="sxs-lookup"><span data-stu-id="a90b1-120">Statement Interleaving</span></span>  
+ <span data-ttu-id="a90b1-121">Les opérations MARS s'exécutent de façon synchrone sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="a90b1-121">MARS operations execute synchronously on the server.</span></span> <span data-ttu-id="a90b1-122">L'entrelacement des instructions SELECT et BULK INSERT est autorisé.</span><span class="sxs-lookup"><span data-stu-id="a90b1-122">Statement interleaving of SELECT and BULK INSERT statements is allowed.</span></span> <span data-ttu-id="a90b1-123">Toutefois, les instructions DML (Data Manipulation Language) et DDL (Data Definition Language) s'exécutent de manière atomique.</span><span class="sxs-lookup"><span data-stu-id="a90b1-123">However, data manipulation language (DML) and data definition language (DDL) statements execute atomically.</span></span> <span data-ttu-id="a90b1-124">Toute instruction tentant de s'exécuter alors qu'un lot atomique est en cours d'exécution est bloquée.</span><span class="sxs-lookup"><span data-stu-id="a90b1-124">Any statements attempting to execute while an atomic batch is executing are blocked.</span></span> <span data-ttu-id="a90b1-125">L'exécution en parallèle au niveau du serveur n'est pas une fonction MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-125">Parallel execution at the server is not a MARS feature.</span></span>  
   
- Si deux lots sont soumis dans le cadre d'une connexion MARS, l'un deux contenant une instruction SELECT et l'autre contenant une instruction DML, l'exécution de l'instruction DML peut commencer à l'intérieur de l'instruction SELECT.  Toutefois, l'instruction DML doit être exécutée entièrement avant que l'instruction SELECT puisse progresser.  Si les deux instructions s'exécutent dans le cadre de la même transaction, toute modification opérée par une instruction DML après que l'exécution de l'instruction SELECT a commencé est invisible pour l'opération de lecture.  
+ <span data-ttu-id="a90b1-126">Si deux lots sont soumis dans le cadre d'une connexion MARS, l'un deux contenant une instruction SELECT et l'autre contenant une instruction DML, l'exécution de l'instruction DML peut commencer à l'intérieur de l'instruction SELECT.</span><span class="sxs-lookup"><span data-stu-id="a90b1-126">If two batches are submitted under a MARS connection, one of them containing a SELECT statement, the other containing a DML statement, the DML can begin execution within execution of the SELECT statement.</span></span> <span data-ttu-id="a90b1-127">Toutefois, l'instruction DML doit être exécutée entièrement avant que l'instruction SELECT puisse progresser.</span><span class="sxs-lookup"><span data-stu-id="a90b1-127">However, the DML statement must run to completion before the SELECT statement can make progress.</span></span> <span data-ttu-id="a90b1-128">Si les deux instructions s'exécutent dans le cadre de la même transaction, toute modification opérée par une instruction DML après que l'exécution de l'instruction SELECT a commencé est invisible pour l'opération de lecture.</span><span class="sxs-lookup"><span data-stu-id="a90b1-128">If both statements are running under the same transaction, any changes made by a DML statement after the SELECT statement has started execution are not visible to the read operation.</span></span>  
   
- Une instruction WAITFOR à l'intérieur d'une instruction SELECT ne génère pas la transaction lorsqu'elle est en attente, c'est\-à\-dire, jusqu'à ce que la première ligne soit produite.  Cela implique qu'aucun autre lot ne peut s'exécuter dans le cadre de la même connexion tant qu'une instruction WAITFOR est en attente.  
+ <span data-ttu-id="a90b1-129">Une instruction WAITFOR à l'intérieur d'une instruction SELECT ne génère pas la transaction lorsqu'elle est en attente, c'est-à-dire, jusqu'à ce que la première ligne soit produite.</span><span class="sxs-lookup"><span data-stu-id="a90b1-129">A WAITFOR statement inside a SELECT statement does not yield the transaction while it is waiting, that is, until the first row is produced.</span></span> <span data-ttu-id="a90b1-130">Cela implique qu'aucun autre lot ne peut s'exécuter dans le cadre de la même connexion tant qu'une instruction WAITFOR est en attente.</span><span class="sxs-lookup"><span data-stu-id="a90b1-130">This implies that no other batches can execute within the same connection while a WAITFOR statement is waiting.</span></span>  
   
-### Cache de session MARS  
- Lors de l'ouverture d'une connexion alors que MARS est activé, une session logique est créée, qui ajoute une charge supplémentaire.  Afin de minimiser la charge et d'améliorer les performances, **SqlClient** met en cache la session MARS à l'intérieur d'une connexion.  Le cache contient au maximum 10 sessions MARS.  L'utilisateur ne peut pas modifier cette valeur.  Si la limite de session est atteinte, une nouvelle session est créée sans qu'aucune erreur ne soit générée.  Le cache et les sessions qu'il contient sont valables pour une connexion ; ils ne sont pas partagés entre plusieurs connexions.  En cas d'abandon d'une session, cette dernière retourne au pool, à moins que la limite supérieure du pool ne soit atteinte.  Si le pool de caches est plein, la session est fermée.  Les sessions MARS n'expirent pas.  Elles ne sont nettoyées qu'en cas de suppression de l'objet de connexion.  Le cache de session MARS n'est pas préchargé.  Il est chargé lorsque l'application demande des sessions supplémentaires.  
+### <a name="mars-session-cache"></a><span data-ttu-id="a90b1-131">Cache de session MARS</span><span class="sxs-lookup"><span data-stu-id="a90b1-131">MARS Session Cache</span></span>  
+ <span data-ttu-id="a90b1-132">Lors de l'ouverture d'une connexion alors que MARS est activé, une session logique est créée, qui ajoute une charge supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="a90b1-132">When a connection is opened with MARS enabled, a logical session is created, which adds additional overhead.</span></span> <span data-ttu-id="a90b1-133">Pour minimiser la charge et améliorer les performances, **SqlClient** met en cache la session MARS au sein d’une connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-133">To minimize overhead and enhance performance, **SqlClient** caches the MARS session within a connection.</span></span> <span data-ttu-id="a90b1-134">Le cache contient au maximum 10 sessions MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-134">The cache contains at most 10 MARS sessions.</span></span> <span data-ttu-id="a90b1-135">L'utilisateur ne peut pas modifier cette valeur.</span><span class="sxs-lookup"><span data-stu-id="a90b1-135">This value is not user adjustable.</span></span> <span data-ttu-id="a90b1-136">Si la limite de session est atteinte, une nouvelle session est créée sans qu'aucune erreur ne soit générée.</span><span class="sxs-lookup"><span data-stu-id="a90b1-136">If the session limit is reached, a new session is created—an error is not generated.</span></span> <span data-ttu-id="a90b1-137">Le cache et les sessions qu'il contient sont valables pour une connexion ; ils ne sont pas partagés entre plusieurs connexions.</span><span class="sxs-lookup"><span data-stu-id="a90b1-137">The cache and sessions contained in it are per-connection; they are not shared across connections.</span></span> <span data-ttu-id="a90b1-138">En cas d'abandon d'une session, cette dernière retourne au pool, à moins que la limite supérieure du pool ne soit atteinte.</span><span class="sxs-lookup"><span data-stu-id="a90b1-138">When a session is released, it is returned to the pool unless the pool's upper limit has been reached.</span></span> <span data-ttu-id="a90b1-139">Si le pool de caches est plein, la session est fermée.</span><span class="sxs-lookup"><span data-stu-id="a90b1-139">If the cache pool is full, the session is closed.</span></span> <span data-ttu-id="a90b1-140">Les sessions MARS n'expirent pas.</span><span class="sxs-lookup"><span data-stu-id="a90b1-140">MARS sessions do not expire.</span></span> <span data-ttu-id="a90b1-141">Elles ne sont nettoyées qu'en cas de suppression de l'objet de connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-141">They are only cleaned up when the connection object is disposed.</span></span> <span data-ttu-id="a90b1-142">Le cache de session MARS n'est pas préchargé.</span><span class="sxs-lookup"><span data-stu-id="a90b1-142">The MARS session cache is not preloaded.</span></span> <span data-ttu-id="a90b1-143">Il est chargé lorsque l'application demande des sessions supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="a90b1-143">It is loaded as the application requires more sessions.</span></span>  
   
-### Sécurité des threads  
- Les opérations MARS ne sont pas thread\-safe.  
+### <a name="thread-safety"></a><span data-ttu-id="a90b1-144">Sécurité des threads</span><span class="sxs-lookup"><span data-stu-id="a90b1-144">Thread Safety</span></span>  
+ <span data-ttu-id="a90b1-145">Les opérations MARS ne sont pas thread-safe.</span><span class="sxs-lookup"><span data-stu-id="a90b1-145">MARS operations are not thread-safe.</span></span>  
   
-### Regroupement de connexions  
- Les connexions de type MARS sont regroupées comme toute autre connexion.  Si une application ouvre deux connexions, l'une avec MARS activé et l'autre avec MARS désactivé, les deux connexions se trouvent dans des pools séparés.  Pour plus d'informations, consultez [Regroupement de connexions SQL Server \(ADO.NET\)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+### <a name="connection-pooling"></a><span data-ttu-id="a90b1-146">Regroupement de connexions</span><span class="sxs-lookup"><span data-stu-id="a90b1-146">Connection Pooling</span></span>  
+ <span data-ttu-id="a90b1-147">Les connexions de type MARS sont regroupées comme toute autre connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-147">MARS-enabled connections are pooled like any other connection.</span></span> <span data-ttu-id="a90b1-148">Si une application ouvre deux connexions, l'une avec MARS activé et l'autre avec MARS désactivé, les deux connexions se trouvent dans des pools séparés.</span><span class="sxs-lookup"><span data-stu-id="a90b1-148">If an application opens two connections, one with MARS enabled and one with MARS disabled, the two connections are in separate pools.</span></span> <span data-ttu-id="a90b1-149">Pour plus d’informations, consultez [le regroupement de connexion SQL Server (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).</span><span class="sxs-lookup"><span data-stu-id="a90b1-149">For more information, see [SQL Server Connection Pooling (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).</span></span>  
   
-### Environnement d'exécution par lots SQL Server  
- Lors de l'ouverture d'une connexion, un environnement par défaut est défini.  Cet environnement est ensuite copié dans une session MARS logique.  
+### <a name="sql-server-batch-execution-environment"></a><span data-ttu-id="a90b1-150">Environnement d'exécution par lots SQL Server</span><span class="sxs-lookup"><span data-stu-id="a90b1-150">SQL Server Batch Execution Environment</span></span>  
+ <span data-ttu-id="a90b1-151">Lors de l'ouverture d'une connexion, un environnement par défaut est défini.</span><span class="sxs-lookup"><span data-stu-id="a90b1-151">When a connection is opened, a default environment is defined.</span></span> <span data-ttu-id="a90b1-152">Cet environnement est ensuite copié dans une session MARS logique.</span><span class="sxs-lookup"><span data-stu-id="a90b1-152">This environment is then copied into a logical MARS session.</span></span>  
   
- L'environnement d'exécution par lots inclut les composants suivants :  
+ <span data-ttu-id="a90b1-153">L'environnement d'exécution par lots inclut les composants suivants :</span><span class="sxs-lookup"><span data-stu-id="a90b1-153">The batch execution environment includes the following components:</span></span>  
   
--   Options définies \(par exemple, ANSI\_NULLS, DATE\_FORMAT, LANGUAGE, TEXTSIZE\)  
+-   <span data-ttu-id="a90b1-154">Options définies (par exemple, ANSI_NULLS, DATE_FORMAT, LANGUAGE, TEXTSIZE)</span><span class="sxs-lookup"><span data-stu-id="a90b1-154">Set options (for example, ANSI_NULLS, DATE_FORMAT, LANGUAGE, TEXTSIZE)</span></span>  
   
--   Contexte de sécurité \(rôle d'utilisateur\/d'application\)  
+-   <span data-ttu-id="a90b1-155">Contexte de sécurité (rôle d'utilisateur/d'application)</span><span class="sxs-lookup"><span data-stu-id="a90b1-155">Security context (user/application role)</span></span>  
   
--   Contexte de base de données \(base de données actuelle\)  
+-   <span data-ttu-id="a90b1-156">Contexte de base de données (base de données actuelle)</span><span class="sxs-lookup"><span data-stu-id="a90b1-156">Database context (current database)</span></span>  
   
--   Variables d'état d'exécution \(par exemple, @@ERROR, @@ROWCOUNT, @@FETCH\_STATUS @@IDENTITY\)  
+-   <span data-ttu-id="a90b1-157">Variables de l’état d’exécution (par exemple, @@ERROR, @@ROWCOUNT, @@FETCH_STATUS @@IDENTITY)</span><span class="sxs-lookup"><span data-stu-id="a90b1-157">Execution state variables (for example, @@ERROR, @@ROWCOUNT, @@FETCH_STATUS @@IDENTITY)</span></span>  
   
--   Tables temporaires de niveau supérieur  
+-   <span data-ttu-id="a90b1-158">Tables temporaires de niveau supérieur</span><span class="sxs-lookup"><span data-stu-id="a90b1-158">Top-level temporary tables</span></span>  
   
- Avec MARS, un environnement d'exécution par défaut est associé à une connexion.  Chaque nouveau lot qui commence à s'exécuter dans le cadre d'une connexion donnée reçoit une copie de l'environnement par défaut.  Chaque fois qu'un code est exécuté dans le cadre d'un lot donné, toutes les modifications apportées à l'environnement sont étendues au lot spécifique.  Quand une exécution se termine, les paramètres d'exécution sont copiés dans l'environnement par défaut.  Si un seul lot émet plusieurs commandes à exécuter de façon séquentielle dans le cadre de la même transaction, la sémantique est la même que celle exposée par les connexions impliquant des clients ou serveurs antérieurs.  
+ <span data-ttu-id="a90b1-159">Avec MARS, un environnement d'exécution par défaut est associé à une connexion.</span><span class="sxs-lookup"><span data-stu-id="a90b1-159">With MARS, a default execution environment is associated to a connection.</span></span> <span data-ttu-id="a90b1-160">Chaque nouveau lot qui commence à s'exécuter dans le cadre d'une connexion donnée reçoit une copie de l'environnement par défaut.</span><span class="sxs-lookup"><span data-stu-id="a90b1-160">Every new batch that starts executing under a given connection receives a copy of the default environment.</span></span> <span data-ttu-id="a90b1-161">Chaque fois qu'un code est exécuté dans le cadre d'un lot donné, toutes les modifications apportées à l'environnement sont étendues au lot spécifique.</span><span class="sxs-lookup"><span data-stu-id="a90b1-161">Whenever code is executed under a given batch, all changes made to the environment are scoped to the specific batch.</span></span> <span data-ttu-id="a90b1-162">Quand une exécution se termine, les paramètres d'exécution sont copiés dans l'environnement par défaut.</span><span class="sxs-lookup"><span data-stu-id="a90b1-162">Once execution finishes, the execution settings are copied into the default environment.</span></span> <span data-ttu-id="a90b1-163">Si un seul lot émet plusieurs commandes à exécuter de façon séquentielle dans le cadre de la même transaction, la sémantique est la même que celle exposée par les connexions impliquant des clients ou serveurs antérieurs.</span><span class="sxs-lookup"><span data-stu-id="a90b1-163">In the case of a single batch issuing several commands to be executed sequentially under the same transaction, semantics are the same as those exposed by connections involving earlier clients or servers.</span></span>  
   
-### Exécution en parallèle  
- MARS n'est pas conçu pour supprimer toutes les exigences de connexions multiples dans une application.  Si une application a besoin d'une véritable exécution en parallèle de commandes par rapport à un serveur, il convient d'utiliser plusieurs connexions.  
+### <a name="parallel-execution"></a><span data-ttu-id="a90b1-164">Exécution en parallèle</span><span class="sxs-lookup"><span data-stu-id="a90b1-164">Parallel Execution</span></span>  
+ <span data-ttu-id="a90b1-165">MARS n'est pas conçu pour supprimer toutes les exigences de connexions multiples dans une application.</span><span class="sxs-lookup"><span data-stu-id="a90b1-165">MARS is not designed to remove all requirements for multiple connections in an application.</span></span> <span data-ttu-id="a90b1-166">Si une application a besoin d'une véritable exécution en parallèle de commandes par rapport à un serveur, il convient d'utiliser plusieurs connexions.</span><span class="sxs-lookup"><span data-stu-id="a90b1-166">If an application needs true parallel execution of commands against a server, multiple connections should be used.</span></span>  
   
- Observez par exemple le scénario suivant.  Deux objets de commande sont créés, l'un pour le traitement d'un ensemble de résultats et un autre pour la mise à jour de données ; ils partagent une connexion commune via MARS.  Dans ce scénario, le `Transaction`.`Commit` échoue lors de la mise à jour jusqu'à ce que tous les résultats aient été lus sur le premier objet de commande, en générant l'exception suivante :  
+ <span data-ttu-id="a90b1-167">Observez par exemple le scénario suivant.</span><span class="sxs-lookup"><span data-stu-id="a90b1-167">For example, consider the following scenario.</span></span> <span data-ttu-id="a90b1-168">Deux objets de commande sont créés, l'un pour le traitement d'un ensemble de résultats et un autre pour la mise à jour de données ; ils partagent une connexion commune via MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-168">Two command objects are created, one for processing a result set and another for updating data; they share a common connection via MARS.</span></span> <span data-ttu-id="a90b1-169">Dans ce scénario, le `Transaction`.`Commit`</span><span class="sxs-lookup"><span data-stu-id="a90b1-169">In this scenario, the `Transaction`.`Commit`</span></span> <span data-ttu-id="a90b1-170">Échec de la mise à jour jusqu'à ce que tous les résultats ont été lus sur le premier objet de commande, en générant l’exception suivante :</span><span class="sxs-lookup"><span data-stu-id="a90b1-170">fails on the update until all the results have been read on the first command object, yielding the following exception:</span></span>  
   
- Message : contexte de transaction utilisé par une autre session.  
+ <span data-ttu-id="a90b1-171">Message : contexte de transaction utilisé par une autre session.</span><span class="sxs-lookup"><span data-stu-id="a90b1-171">Message: Transaction context in use by another session.</span></span>  
   
- Source : fournisseur de données .Net SqlClient  
+ <span data-ttu-id="a90b1-172">Source : fournisseur de données .Net SqlClient</span><span class="sxs-lookup"><span data-stu-id="a90b1-172">Source: .Net SqlClient Data Provider</span></span>  
   
- Attendu : \(null\)  
+ <span data-ttu-id="a90b1-173">Attendu : (null)</span><span class="sxs-lookup"><span data-stu-id="a90b1-173">Expected: (null)</span></span>  
   
- Reçu : System.Data.SqlClient.SqlException  
+ <span data-ttu-id="a90b1-174">Reçu : System.Data.SqlClient.SqlException</span><span class="sxs-lookup"><span data-stu-id="a90b1-174">Received: System.Data.SqlClient.SqlException</span></span>  
   
- Il existe trois options pour gérer ce scénario :  
+ <span data-ttu-id="a90b1-175">Il existe trois options pour gérer ce scénario :</span><span class="sxs-lookup"><span data-stu-id="a90b1-175">There are three options for handling this scenario:</span></span>  
   
-1.  Démarrez la transaction après la création du lecteur, de façon à ce qu'il ne fasse pas partie de la transaction.  Chaque mise à jour devient alors sa propre transaction.  
+1.  <span data-ttu-id="a90b1-176">Démarrez la transaction après la création du lecteur, de façon à ce qu'il ne fasse pas partie de la transaction.</span><span class="sxs-lookup"><span data-stu-id="a90b1-176">Start the transaction after the reader is created, so that it is not part of the transaction.</span></span> <span data-ttu-id="a90b1-177">Chaque mise à jour devient alors sa propre transaction.</span><span class="sxs-lookup"><span data-stu-id="a90b1-177">Every update then becomes its own transaction.</span></span>  
   
-2.  Validez tout le travail une fois le lecteur fermé.  Cela permet l'exécution d'un lot substantiel de mises à jour.  
+2.  <span data-ttu-id="a90b1-178">Validez tout le travail une fois le lecteur fermé.</span><span class="sxs-lookup"><span data-stu-id="a90b1-178">Commit all work after the reader is closed.</span></span> <span data-ttu-id="a90b1-179">Cela permet l'exécution d'un lot substantiel de mises à jour.</span><span class="sxs-lookup"><span data-stu-id="a90b1-179">This has the potential for a substantial batch of updates.</span></span>  
   
-3.  N'utilisez pas MARS ; utilisez plutôt une connexion distincte pour chaque objet de commande comme vous l'auriez fait avant MARS.  
+3.  <span data-ttu-id="a90b1-180">N'utilisez pas MARS ; utilisez plutôt une connexion distincte pour chaque objet de commande comme vous l'auriez fait avant MARS.</span><span class="sxs-lookup"><span data-stu-id="a90b1-180">Don't use MARS; instead use a separate connection for each command object as you would have before MARS.</span></span>  
   
-### Détection de la prise en charge de MARS  
- Une application peut contrôler la prise en charge de MARS en lisant la valeur `SqlConnection.ServerVersion`.  Le nombre majeur doit être de 9 pour SQL Server 2005 et 10 pour SQL Server 2008.  
+### <a name="detecting-mars-support"></a><span data-ttu-id="a90b1-181">Détection de la prise en charge de MARS</span><span class="sxs-lookup"><span data-stu-id="a90b1-181">Detecting MARS Support</span></span>  
+ <span data-ttu-id="a90b1-182">Une application peut contrôler la prise en charge de MARS en lisant la valeur `SqlConnection.ServerVersion`.</span><span class="sxs-lookup"><span data-stu-id="a90b1-182">An application can check for MARS support by reading the `SqlConnection.ServerVersion` value.</span></span> <span data-ttu-id="a90b1-183">Le nombre majeur doit être de 9 pour SQL Server 2005 et 10 pour SQL Server 2008.</span><span class="sxs-lookup"><span data-stu-id="a90b1-183">The major number should be 9 for SQL Server 2005 and 10 for SQL Server 2008.</span></span>  
   
-## Voir aussi  
- [Ensembles de résultats actifs multiples \(MARS\)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="a90b1-184">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a90b1-184">See Also</span></span>  
+ [<span data-ttu-id="a90b1-185">Jeux de résultats actifs multiples (MARS)</span><span class="sxs-lookup"><span data-stu-id="a90b1-185">Multiple Active Result Sets (MARS)</span></span>](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
+ [<span data-ttu-id="a90b1-186">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="a90b1-186">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,29 +1,35 @@
 ---
-title: "Proc&#233;dure&#160;: filtrer au niveau du DataContext | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : filtrer au niveau du DataContext"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 15505cd7-0df2-427a-9f86-e0f96f60ee2e
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 69b711802d04e005095167db7df544e0f00d0b19
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: filtrer au niveau du DataContext
-Vous pouvez filtrer des `EntitySets` au niveau du `DataContext`.  Ce type de filtre s'applique à toutes les requêtes effectuées avec cette instance de <xref:System.Data.Linq.DataContext>.  
+# <a name="how-to-filter-at-the-datacontext-level"></a><span data-ttu-id="823b7-102">Comment : filtrer au niveau du DataContext</span><span class="sxs-lookup"><span data-stu-id="823b7-102">How to: Filter at the DataContext Level</span></span>
+<span data-ttu-id="823b7-103">Vous pouvez filtrer des `EntitySets` au niveau du `DataContext`.</span><span class="sxs-lookup"><span data-stu-id="823b7-103">You can filter `EntitySets` at the `DataContext` level.</span></span> <span data-ttu-id="823b7-104">Ce type de filtre s'applique à toutes les requêtes effectuées avec cette instance de <xref:System.Data.Linq.DataContext>.</span><span class="sxs-lookup"><span data-stu-id="823b7-104">Such filters apply to all queries done with that <xref:System.Data.Linq.DataContext> instance.</span></span>  
   
-## Exemple  
- Dans l'exemple suivant, <xref:System.Data.Linq.DataLoadOptions.AssociateWith%28System.Linq.Expressions.LambdaExpression%29?displayProperty=fullName> est utilisé pour filtrer les commandes pré\-chargées pour les clients par `ShippedDate`.  
+## <a name="example"></a><span data-ttu-id="823b7-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="823b7-105">Example</span></span>  
+ <span data-ttu-id="823b7-106">Dans l'exemple suivant, <xref:System.Data.Linq.DataLoadOptions.AssociateWith%28System.Linq.Expressions.LambdaExpression%29?displayProperty=nameWithType> est utilisé pour filtrer les commandes pré-chargées pour les clients par `ShippedDate`.</span><span class="sxs-lookup"><span data-stu-id="823b7-106">In the following example, <xref:System.Data.Linq.DataLoadOptions.AssociateWith%28System.Linq.Expressions.LambdaExpression%29?displayProperty=nameWithType> is used to filter the pre-loaded orders for customers by `ShippedDate`.</span></span>  
   
  [!code-csharp[DLinqQueryConcepts#10](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#10)]
  [!code-vb[DLinqQueryConcepts#10](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#10)]  
   
-## Voir aussi  
- [Concepts relatifs aux requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
+## <a name="see-also"></a><span data-ttu-id="823b7-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="823b7-107">See Also</span></span>  
+ [<span data-ttu-id="823b7-108">Concepts relatifs aux requêtes</span><span class="sxs-lookup"><span data-stu-id="823b7-108">Query Concepts</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)

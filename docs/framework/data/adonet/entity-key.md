@@ -1,51 +1,54 @@
 ---
-title: "cl&#233; d&#39;entit&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "clé d'entité"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: d0d7df7ff1a0e8e732688e10befb4bffa86599d0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# cl&#233; d&#39;entit&#233;
-Une *clé d'entité* est une [propriété](../../../../docs/framework/data/adonet/property.md) ou un jeu de propriétés d'un [type d'entité](../../../../docs/framework/data/adonet/entity-type.md) utilisées pour déterminer l'identité.  Les propriétés qui composent une clé d'entité sont choisies au moment du design.  Les valeurs des propriétés de clé d'entité doivent identifier de façon unique une instance de type d'entité dans un [jeu d'entités](../../../../docs/framework/data/adonet/entity-set.md) au moment de l'exécution.  Les propriétés qui composent une clé d'entité doivent être choisies pour garantir l'unicité des instances dans un jeu d'entités.  
+# <a name="entity-key"></a><span data-ttu-id="a9840-102">clé d'entité</span><span class="sxs-lookup"><span data-stu-id="a9840-102">entity key</span></span>
+<span data-ttu-id="a9840-103">Un *clé d’entité* est un [propriété](../../../../docs/framework/data/adonet/property.md) ou un ensemble de propriétés d’un [type d’entité](../../../../docs/framework/data/adonet/entity-type.md) qui permettent de déterminer l’identité.</span><span class="sxs-lookup"><span data-stu-id="a9840-103">An *entity key* is a [property](../../../../docs/framework/data/adonet/property.md) or a set of properties of an [entity type](../../../../docs/framework/data/adonet/entity-type.md) that are used to determine identity.</span></span> <span data-ttu-id="a9840-104">Les propriétés qui composent une clé d'entité sont choisies au moment du design.</span><span class="sxs-lookup"><span data-stu-id="a9840-104">The properties that make up an entity key are chosen at design time.</span></span> <span data-ttu-id="a9840-105">Les valeurs des propriétés de clé d’entité doivent identifier une instance de type d’entité dans un [jeu d’entités](../../../../docs/framework/data/adonet/entity-set.md) au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="a9840-105">The values of entity key properties must uniquely identify an entity type instance within an [entity set](../../../../docs/framework/data/adonet/entity-set.md) at run time.</span></span> <span data-ttu-id="a9840-106">Les propriétés qui composent une clé d'entité doivent être choisies pour garantir l'unicité des instances dans un jeu d'entités.</span><span class="sxs-lookup"><span data-stu-id="a9840-106">The properties that make up an entity key should be chosen to guarantee uniqueness of instances in an entity set.</span></span>  
   
- Pour être une clé d'entité, un jeu de propriétés doit répondre aux spécifications suivantes :  
+ <span data-ttu-id="a9840-107">Pour être une clé d'entité, un jeu de propriétés doit répondre aux spécifications suivantes :</span><span class="sxs-lookup"><span data-stu-id="a9840-107">The following are the requirements for a set of properties to be an entity key:</span></span>  
   
--   Il ne peut pas y avoir deux clés d'entité identiques dans un même jeu d'entités.  Autrement dit, pour deux entités quelconques dans un jeu d'entités, les valeurs de toutes les propriétés qui constituent une clé ne peuvent pas être les mêmes.  Toutefois, quelques\-unes des valeurs \(mais pas toutes\) qui composent une clé d'entité peuvent être les mêmes.  
+-   <span data-ttu-id="a9840-108">Il ne peut pas y avoir deux clés d'entité identiques dans un même jeu d'entités.</span><span class="sxs-lookup"><span data-stu-id="a9840-108">No two entity keys within an entity set can be identical.</span></span> <span data-ttu-id="a9840-109">Autrement dit, pour deux entités quelconques dans un jeu d'entités, les valeurs de toutes les propriétés qui constituent une clé ne peuvent pas être les mêmes.</span><span class="sxs-lookup"><span data-stu-id="a9840-109">That is, for any two entities within an entity set, the values for all of the properties that constitute a key cannot be the same.</span></span> <span data-ttu-id="a9840-110">Toutefois, quelques-unes des valeurs (mais pas toutes) qui composent une clé d'entité peuvent être les mêmes.</span><span class="sxs-lookup"><span data-stu-id="a9840-110">However, some (but not all) of the values that make up an entity key can be the same.</span></span>  
   
--   Une clé d'entité doit comprendre un jeu de [propriétés de type primitif](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md) immuables et non Nullable.  
+-   <span data-ttu-id="a9840-111">Une clé d’entité doit être composé d’un ensemble de non nullable, immuable, [propriétés de type primitif](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).</span><span class="sxs-lookup"><span data-stu-id="a9840-111">An entity key must consist of a set of non-nullable, immutable, [primitive type properties](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).</span></span>  
   
--   Les propriétés qui composent une clé d'entité pour un type d'entité donné ne peuvent pas être modifiées.  Vous ne pouvez pas autoriser plusieurs clés d'entité possibles pour un type d'entité donné ; les clés de substitution ne sont pas prises en charge.  
+-   <span data-ttu-id="a9840-112">Les propriétés qui composent une clé d'entité pour un type d'entité donné ne peuvent pas être modifiées.</span><span class="sxs-lookup"><span data-stu-id="a9840-112">The properties that make up an entity key for a given entity type cannot change.</span></span> <span data-ttu-id="a9840-113">Vous ne pouvez pas autoriser plusieurs clés d'entité possibles pour un type d'entité donné ; les clés de substitution ne sont pas prises en charge.</span><span class="sxs-lookup"><span data-stu-id="a9840-113">You cannot allow more than one possible entity key for a given entity type; surrogate keys are not supported.</span></span>  
   
--   Lorsqu'une entité est impliquée dans une hiérarchie d'héritage, l'entité racine doit contenir toutes les propriétés qui composent la clé d'entité, et la clé d'entité doit être définie sur le type d'entité racine.  Pour plus d'informations, consultez [Entity Data Model : héritage](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).  
+-   <span data-ttu-id="a9840-114">Lorsqu'une entité est impliquée dans une hiérarchie d'héritage, l'entité racine doit contenir toutes les propriétés qui composent la clé d'entité, et la clé d'entité doit être définie sur le type d'entité racine.</span><span class="sxs-lookup"><span data-stu-id="a9840-114">When an entity is involved in an inheritance hierarchy, the root entity must contain all the properties that make up the entity key, and the entity key must be defined on the root entity type.</span></span> <span data-ttu-id="a9840-115">Pour plus d’informations, consultez [Entity Data Model : héritage](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).</span><span class="sxs-lookup"><span data-stu-id="a9840-115">For more information, see [Entity Data Model: Inheritance](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).</span></span>  
   
-## Exemple  
- Le diagramme suivant montre un modèle conceptuel avec trois types d'entités : `Book`, `Publisher` et `Author`.  Les propriétés de chaque type d'entité qui composent sa clé d'entité sont signalées par « \(Key\) ».  Notez que le type d'entité `Author` possède une clé d'entité composée de deux propriétés : `Name` et `Address`.  
+## <a name="example"></a><span data-ttu-id="a9840-116">Exemple</span><span class="sxs-lookup"><span data-stu-id="a9840-116">Example</span></span>  
+ <span data-ttu-id="a9840-117">Le diagramme suivant montre un modèle conceptuel avec trois types d'entités : `Book`, `Publisher` et `Author`.</span><span class="sxs-lookup"><span data-stu-id="a9840-117">The diagram below shows a conceptual model with three entity types: `Book`, `Publisher`, and `Author`.</span></span> <span data-ttu-id="a9840-118">Les propriétés de chaque type d'entité qui composent sa clé d'entité sont signalées par « (Key) ».</span><span class="sxs-lookup"><span data-stu-id="a9840-118">The properties of each entity type that make up its entity key are denoted with "(Key)".</span></span> <span data-ttu-id="a9840-119">Notez que le type d'entité `Author` possède une clé d'entité composée de deux propriétés : `Name` et `Address`.</span><span class="sxs-lookup"><span data-stu-id="a9840-119">Note that the `Author` entity type has an entity key that consists of two properties, `Name` and `Address`.</span></span>  
   
- ![Exemple de modèle](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ <span data-ttu-id="a9840-120">![Exemple de modèle](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span><span class="sxs-lookup"><span data-stu-id="a9840-120">![Example Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span></span>  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) utilise un langage spécifique à un domaine \(DSL\), appelé [CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md) \(Conceptual Schema Definition Language\), pour définir des modèles conceptuels.  Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci\-dessus.  Notez que la clé d'entité est définie en référençant la propriété `ISBN` du type d'entité.  
+ <span data-ttu-id="a9840-121">Le [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels.</span><span class="sxs-lookup"><span data-stu-id="a9840-121">The [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) uses a domain-specific language (DSL) called conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) to define conceptual models.</span></span> <span data-ttu-id="a9840-122">Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="a9840-122">The CSDL below defines the `Book` entity type shown in the diagram above.</span></span> <span data-ttu-id="a9840-123">Notez que la clé d'entité est définie en référençant la propriété `ISBN` du type d'entité.</span><span class="sxs-lookup"><span data-stu-id="a9840-123">Note that the entity key is defined by referencing the `ISBN` property of the entity type.</span></span>  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
- La propriété `ISBN` est un bon choix pour la clé d'entité, car un numéro ISBN \(International Standard Book Number\) identifie un livre de façon unique.  
+ <span data-ttu-id="a9840-124">La propriété `ISBN` est un bon choix pour la clé d'entité, car un numéro ISBN (International Standard Book Number) identifie un livre de façon unique.</span><span class="sxs-lookup"><span data-stu-id="a9840-124">The `ISBN` property is a good choice for the entity key because an International Standard Book Number (ISBN) uniquely identifies a book.</span></span>  
   
- Le CSDL suivant définit le type d'entité `Author` présenté dans le diagramme ci\-dessus.  Notez que la clé d'entité comprend deux propriétés : `Name` et `Address`.  
+ <span data-ttu-id="a9840-125">Le CSDL suivant définit le type d'entité `Author` présenté dans le diagramme ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="a9840-125">The CSDL below defines the `Author` entity type shown in the diagram above.</span></span> <span data-ttu-id="a9840-126">Notez que la clé d'entité comprend deux propriétés : `Name` et `Address`.</span><span class="sxs-lookup"><span data-stu-id="a9840-126">Note that the entity key consists of two properties, `Name` and `Address`.</span></span>  
   
  [!code-xml[EDM_Example_Model#CompositeKeyExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#compositekeyexample)]  
   
- L'utilisation de `Name` et d'`Address` pour la clé d'entité est un choix raisonnable, car il est improbable que deux auteurs du même nom habitent à la même adresse.  Toutefois, ce choix pour une clé d'entité ne garantit pas vraiment l'unicité des clés d'entité dans un jeu d'entités.  Il est recommandé dans ce cas d'ajouter une propriété, telle qu'`AuthorId`, qui peut être utilisée pour identifier un auteur de façon unique.  
+ <span data-ttu-id="a9840-127">L'utilisation de `Name` et d'`Address` pour la clé d'entité est un choix raisonnable, car il est improbable que deux auteurs du même nom habitent à la même adresse.</span><span class="sxs-lookup"><span data-stu-id="a9840-127">Using `Name` and `Address` for the entity key is a reasonable choice, because two authors of the same name are unlikely to live at the same address.</span></span> <span data-ttu-id="a9840-128">Toutefois, ce choix pour une clé d'entité ne garantit pas vraiment l'unicité des clés d'entité dans un jeu d'entités.</span><span class="sxs-lookup"><span data-stu-id="a9840-128">However, this choice for an entity key does not absolutely guarantee unique entity keys in an entity set.</span></span> <span data-ttu-id="a9840-129">Il est recommandé dans ce cas d'ajouter une propriété, telle qu'`AuthorId`, qui peut être utilisée pour identifier un auteur de façon unique.</span><span class="sxs-lookup"><span data-stu-id="a9840-129">Adding a property, such as `AuthorId`, that could be used to uniquely identify an author would be recommended in this case.</span></span>  
   
-## Voir aussi  
- [Concepts clés d'Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)   
- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a><span data-ttu-id="a9840-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a9840-130">See Also</span></span>  
+ [<span data-ttu-id="a9840-131">Concepts clés du modèle de données Entity</span><span class="sxs-lookup"><span data-stu-id="a9840-131">Entity Data Model Key Concepts</span></span>](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [<span data-ttu-id="a9840-132">Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="a9840-132">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)

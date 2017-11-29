@@ -1,50 +1,56 @@
 ---
-title: "Identit&#233; d&#39;un objet | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Identité d'un objet"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c788f2f9-65cc-4455-9907-e8388a268e00
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 97c07ce351de5b7939bdcaf441bc46dac50a8c23
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Identit&#233; d&#39;un objet
-Les identités des objets du runtime sont uniques.  Deux variables qui font référence au même objet font en réalité référence à la même instance de l'objet.  Par conséquent, les modifications que vous apportez avec un chemin d'accès via une variable sont immédiatement visibles via l'autre variable.  
+# <a name="object-identity"></a><span data-ttu-id="0ea00-102">Identité d'un objet</span><span class="sxs-lookup"><span data-stu-id="0ea00-102">Object Identity</span></span>
+<span data-ttu-id="0ea00-103">Les identités des objets du runtime sont uniques.</span><span class="sxs-lookup"><span data-stu-id="0ea00-103">Objects in the runtime have unique identities.</span></span> <span data-ttu-id="0ea00-104">Deux variables qui font référence au même objet font en réalité référence à la même instance de l'objet.</span><span class="sxs-lookup"><span data-stu-id="0ea00-104">Two variables that refer to the same object actually refer to the same instance of the object.</span></span> <span data-ttu-id="0ea00-105">Par conséquent, les modifications que vous apportez avec un chemin d'accès via une variable sont immédiatement visibles via l'autre variable.</span><span class="sxs-lookup"><span data-stu-id="0ea00-105">Because of this fact, changes that you make by way of a path through one variable are immediately visible through the other.</span></span>  
   
- Les lignes d'une table de bases de données relationnelle n'ont pas d'identités uniques.  Étant donné que chaque ligne a une clé primaire unique, deux lignes ne peuvent pas partager la même valeur de clé.  Toutefois, cela concerne uniquement le contenu de la table de base de données.  
+ <span data-ttu-id="0ea00-106">Les lignes d'une table de bases de données relationnelle n'ont pas d'identités uniques.</span><span class="sxs-lookup"><span data-stu-id="0ea00-106">Rows in a relational database table do not have unique identities.</span></span> <span data-ttu-id="0ea00-107">Étant donné que chaque ligne a une clé primaire unique, deux lignes ne peuvent pas partager la même valeur de clé.</span><span class="sxs-lookup"><span data-stu-id="0ea00-107">Because each row has a unique primary key, no two rows share the same key value.</span></span> <span data-ttu-id="0ea00-108">Toutefois, cela concerne uniquement le contenu de la table de base de données.</span><span class="sxs-lookup"><span data-stu-id="0ea00-108">However, this fact constrains only the contents of the database table.</span></span>  
   
- Dans la réalité, les données sont souvent extraites de la base de données vers une couche différente où une application fonctionne avec celles\-ci.  Il s'agit du modèle que [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge.  Lorsque des données sont extraites de la base de données comme lignes, il est peu probable que deux lignes qui représentent les mêmes données correspondent réellement aux mêmes instances de ligne.  Si vous interrogez un client spécifique deux fois, vous obtenez deux lignes de données. Chaque ligne contient les mêmes informations.  
+ <span data-ttu-id="0ea00-109">Dans la réalité, les données sont souvent extraites de la base de données vers une couche différente où une application fonctionne avec celles-ci.</span><span class="sxs-lookup"><span data-stu-id="0ea00-109">In reality, data is most often brought out of the database and into a different tier, where an application works with it.</span></span> <span data-ttu-id="0ea00-110">Il s'agit du modèle que [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge.</span><span class="sxs-lookup"><span data-stu-id="0ea00-110">This is the model that [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] supports.</span></span> <span data-ttu-id="0ea00-111">Lorsque des données sont extraites de la base de données comme lignes, il est peu probable que deux lignes qui représentent les mêmes données correspondent réellement aux mêmes instances de ligne.</span><span class="sxs-lookup"><span data-stu-id="0ea00-111">When data is brought out of the database as rows, you have no expectation that two rows that represent the same data actually correspond to the same row instances.</span></span> <span data-ttu-id="0ea00-112">Si vous interrogez un client spécifique deux fois, vous obtenez deux lignes de données.</span><span class="sxs-lookup"><span data-stu-id="0ea00-112">If you query for a specific customer two times, you get two rows of data.</span></span> <span data-ttu-id="0ea00-113">Chaque ligne contient les mêmes informations.</span><span class="sxs-lookup"><span data-stu-id="0ea00-113">Each row contains the same information.</span></span>  
   
- Vous souhaitez obtenir quelque chose de très différent avec les objets.  Si vous demandez à plusieurs reprises les mêmes informations au <xref:System.Data.Linq.DataContext>, vous vous attendez à ce que celui\-ci vous donne la même instance d'objet.  Ce comportement est attendu, étant donné que les objets ont une signification particulière pour votre application, et vous vous attendez à ce qu'ils se comportent comme des objets.  Vous les avez conçus comme des hiérarchies ou des graphiques.  Vous comptez les récupérer comme tels et ne pas recevoir de nombreuses instances répliquées uniquement parce que vous avez effectué la même demande plusieurs fois.  
+ <span data-ttu-id="0ea00-114">Vous souhaitez obtenir quelque chose de très différent avec les objets.</span><span class="sxs-lookup"><span data-stu-id="0ea00-114">With objects you expect something very different.</span></span> <span data-ttu-id="0ea00-115">Si vous demandez à plusieurs reprises les mêmes informations au <xref:System.Data.Linq.DataContext>, vous vous attendez à ce que celui-ci vous donne la même instance d'objet.</span><span class="sxs-lookup"><span data-stu-id="0ea00-115">You expect that if you ask the <xref:System.Data.Linq.DataContext> for the same information repeatedly, it will in fact give you the same object instance.</span></span> <span data-ttu-id="0ea00-116">Ce comportement est attendu, étant donné que les objets ont une signification particulière pour votre application, et vous vous attendez à ce qu'ils se comportent comme des objets.</span><span class="sxs-lookup"><span data-stu-id="0ea00-116">You expect this behavior because objects have special meaning for your application and you expect them to behave like objects.</span></span> <span data-ttu-id="0ea00-117">Vous les avez conçus comme des hiérarchies ou des graphiques.</span><span class="sxs-lookup"><span data-stu-id="0ea00-117">You designed them as hierarchies or graphs.</span></span> <span data-ttu-id="0ea00-118">Vous comptez les récupérer comme tels et ne pas recevoir de nombreuses instances répliquées uniquement parce que vous avez effectué la même demande plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="0ea00-118">You expect to retrieve them as such and not to receive multitudes of replicated instances just because you asked for the same thing more than one time.</span></span>  
   
- Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], le <xref:System.Data.Linq.DataContext> gère l'identité de l'objet.  À chaque fois que vous récupérez une nouvelle ligne de la base de données, elle est entrée dans une table d'identités par sa clé primaire et un objet est créé.  À chaque fois que vous récupérez cette ligne, l'instance d'objet d'origine est remise à l'application.  De cette façon, le <xref:System.Data.Linq.DataContext> traduit le concept d'identité tel que la base de données l'a vu \(autrement dit, des clés primaire\) en concept d'identité vu par le langage \(autrement dit, des instances\).  L'application voit uniquement l'objet dans l'état dans lequel il a été récupéré la première fois.  Si les nouvelles données sont différentes, elles sont ignorées.  Pour plus d'informations, consultez [Récupération d'objets du cache d'identité](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).  
+ <span data-ttu-id="0ea00-119">Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], le <xref:System.Data.Linq.DataContext> gère l'identité de l'objet.</span><span class="sxs-lookup"><span data-stu-id="0ea00-119">In [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], the <xref:System.Data.Linq.DataContext> manages object identity.</span></span> <span data-ttu-id="0ea00-120">À chaque fois que vous récupérez une nouvelle ligne de la base de données, elle est entrée dans une table d'identités par sa clé primaire et un objet est créé.</span><span class="sxs-lookup"><span data-stu-id="0ea00-120">Whenever you retrieve a new row from the database, the row is logged in an identity table by its primary key, and a new object is created.</span></span> <span data-ttu-id="0ea00-121">À chaque fois que vous récupérez cette ligne, l'instance d'objet d'origine est remise à l'application.</span><span class="sxs-lookup"><span data-stu-id="0ea00-121">Whenever you retrieve that same row, the original object instance is handed back to the application.</span></span> <span data-ttu-id="0ea00-122">De cette façon, le <xref:System.Data.Linq.DataContext> traduit le concept d'identité tel que la base de données l'a vu (autrement dit, des clés primaire) en concept d'identité vu par le langage (autrement dit, des instances).</span><span class="sxs-lookup"><span data-stu-id="0ea00-122">In this manner the <xref:System.Data.Linq.DataContext> translates the concept of identity as seen by the database (that is, primary keys) into the concept of identity seen by the language (that is, instances).</span></span> <span data-ttu-id="0ea00-123">L'application voit uniquement l'objet dans l'état dans lequel il a été récupéré la première fois.</span><span class="sxs-lookup"><span data-stu-id="0ea00-123">The application only sees the object in the state that it was first retrieved.</span></span> <span data-ttu-id="0ea00-124">Si les nouvelles données sont différentes, elles sont ignorées.</span><span class="sxs-lookup"><span data-stu-id="0ea00-124">The new data, if different, is discarded.</span></span> <span data-ttu-id="0ea00-125">Pour plus d’informations, consultez [récupération d’objets à partir du Cache d’identité](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).</span><span class="sxs-lookup"><span data-stu-id="0ea00-125">For more information, see [Retrieving Objects from the Identity Cache](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).</span></span>  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise cette approche pour gérer l'intégrité d'objets locaux pour prendre en charge des mises à jour optimistes.  Étant donné que les seules modifications qui se produisent une fois que l'objet a été créé sont celles effectuées par l'application, le rôle de l'application est correctement défini.  Si un tiers extérieur a effectué des modifications dans l'intervalle, elles sont identifiées au moment où `SubmitChanges()` est appelé.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="0ea00-126">utilise cette approche pour gérer l’intégrité des objets locaux pour prendre en charge les mises à jour optimistes.</span><span class="sxs-lookup"><span data-stu-id="0ea00-126"> uses this approach to manage the integrity of local objects in order to support optimistic updates.</span></span> <span data-ttu-id="0ea00-127">Étant donné que les seules modifications qui se produisent une fois que l'objet a été créé sont celles effectuées par l'application, le rôle de l'application est correctement défini.</span><span class="sxs-lookup"><span data-stu-id="0ea00-127">Because the only changes that occur after the object is at first created are those made by the application, the intent of the application is clear.</span></span> <span data-ttu-id="0ea00-128">Si un tiers extérieur a effectué des modifications dans l'intervalle, elles sont identifiées au moment où `SubmitChanges()` est appelé.</span><span class="sxs-lookup"><span data-stu-id="0ea00-128">If changes by an outside party have occurred in the interim, they are identified at the time `SubmitChanges()` is called.</span></span>  
   
 > [!NOTE]
->  Si l'objet demandé par la requête est facilement identifiable comme un objet déjà récupéré, aucune requête n'est exécutée.  La table d'identités agit en tant que cache de tous les objets récupérés précédemment.  
+>  <span data-ttu-id="0ea00-129">Si l'objet demandé par la requête est facilement identifiable comme un objet déjà récupéré, aucune requête n'est exécutée.</span><span class="sxs-lookup"><span data-stu-id="0ea00-129">If the object requested by the query is easily identifiable as one already retrieved, no query is executed.</span></span> <span data-ttu-id="0ea00-130">La table d'identités agit en tant que cache de tous les objets récupérés précédemment.</span><span class="sxs-lookup"><span data-stu-id="0ea00-130">The identity table acts as a cache of all previously retrieved objects.</span></span>  
   
-## Exemples  
+## <a name="examples"></a><span data-ttu-id="0ea00-131">Exemples</span><span class="sxs-lookup"><span data-stu-id="0ea00-131">Examples</span></span>  
   
-### Exemple 1 de la mise en cache d'objets  
- Dans cet exemple, si vous exécutez les mêmes requêtes deux fois, vous recevez une référence au même objet en mémoire à chaque fois.  
+### <a name="object-caching-example-1"></a><span data-ttu-id="0ea00-132">Exemple 1 de la mise en cache d'objets</span><span class="sxs-lookup"><span data-stu-id="0ea00-132">Object Caching Example 1</span></span>  
+ <span data-ttu-id="0ea00-133">Dans cet exemple, si vous exécutez les mêmes requêtes deux fois, vous recevez une référence au même objet en mémoire à chaque fois.</span><span class="sxs-lookup"><span data-stu-id="0ea00-133">In this example, if you execute the same query two times, you receive a reference to the same object in memory every time.</span></span>  
   
  [!code-csharp[DLinqObjectIdentity#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectIdentity/cs/Program.cs#1)]
  [!code-vb[DLinqObjectIdentity#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqObjectIdentity/vb/Module1.vb#1)]  
   
-### Exemple 2 de la mise en cache d'objets  
- Dans cet exemple, si vous exécutez des requêtes différentes qui retournent la même ligne de la base de données, vous recevez une référence au même objet en mémoire à chaque fois.  
+### <a name="object-caching-example-2"></a><span data-ttu-id="0ea00-134">Exemple 2 de la mise en cache d'objets</span><span class="sxs-lookup"><span data-stu-id="0ea00-134">Object Caching Example 2</span></span>  
+ <span data-ttu-id="0ea00-135">Dans cet exemple, si vous exécutez des requêtes différentes qui retournent la même ligne de la base de données, vous recevez une référence au même objet en mémoire à chaque fois.</span><span class="sxs-lookup"><span data-stu-id="0ea00-135">In this example, if you execute different queries that return the same row from the database, you receive a reference to the same object in memory every time.</span></span>  
   
  [!code-csharp[DLinqObjectIdentity#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectIdentity/cs/Program.cs#2)]
  [!code-vb[DLinqObjectIdentity#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqObjectIdentity/vb/Module1.vb#2)]  
   
-## Voir aussi  
- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+## <a name="see-also"></a><span data-ttu-id="0ea00-136">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0ea00-136">See Also</span></span>  
+ [<span data-ttu-id="0ea00-137">Informations générales</span><span class="sxs-lookup"><span data-stu-id="0ea00-137">Background Information</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

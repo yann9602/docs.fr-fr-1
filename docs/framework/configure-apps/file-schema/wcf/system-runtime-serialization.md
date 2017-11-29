@@ -1,30 +1,32 @@
 ---
-title: "&lt;system.runtime.serialization&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;System.Runtime.Serialization&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a8cebf4c-06d2-4667-8f5b-c3e1fc90df6f
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5a47417ded6e0917fadf2134eed5997d9d3b3d74
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;system.runtime.serialization&gt;
-Représente l'élément racine correspondant à la section d'espace de noms <xref:System.Runtime.Serialization> et contient des éléments permettant de définir les options du <xref:System.Runtime.Serialization.DataContractSerializer>.  
+# <a name="ltsystemruntimeserializationgt"></a><span data-ttu-id="7bab3-102">&lt;System.Runtime.Serialization&gt;</span><span class="sxs-lookup"><span data-stu-id="7bab3-102">&lt;system.runtime.serialization&gt;</span></span>
+<span data-ttu-id="7bab3-103">Représente l'élément racine correspondant à la section d'espace de noms <xref:System.Runtime.Serialization> et contient des éléments permettant de définir les options du <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="7bab3-103">Represents the root element for the <xref:System.Runtime.Serialization> namespace section and contains elements for setting options of the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
   
- system.runtime.serialization  
+ <span data-ttu-id="7bab3-104">system.runtime.serialization</span><span class="sxs-lookup"><span data-stu-id="7bab3-104">system.runtime.serialization</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="7bab3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7bab3-105">Syntax</span></span>  
   
-```  
-  
+```xml  
 <configuration>  
   <system.runtime.serialization>  
     <dataContractSerializer ignoreExtensionDataObject="Boolean"  
@@ -41,25 +43,25 @@ Représente l'élément racine correspondant à la section d'espace de noms <xre
 </configuration>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="7bab3-106">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="7bab3-106">Attributes and Elements</span></span>  
+ <span data-ttu-id="7bab3-107">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="7bab3-107">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### Attributs  
- Aucun  
+### <a name="attributes"></a><span data-ttu-id="7bab3-108">Attributs</span><span class="sxs-lookup"><span data-stu-id="7bab3-108">Attributes</span></span>  
+ <span data-ttu-id="7bab3-109">Aucun</span><span class="sxs-lookup"><span data-stu-id="7bab3-109">None.</span></span>  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="7bab3-110">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="7bab3-110">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="7bab3-111">Élément</span><span class="sxs-lookup"><span data-stu-id="7bab3-111">Element</span></span>|<span data-ttu-id="7bab3-112">Description</span><span class="sxs-lookup"><span data-stu-id="7bab3-112">Description</span></span>|  
 |-------------|-----------------|  
-|[\<dataContractSerializer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|Active l'ajout de types connus à utiliser lors de la désérialisation.|  
+|[<span data-ttu-id="7bab3-113">\<dataContractSerializer ></span><span class="sxs-lookup"><span data-stu-id="7bab3-113">\<dataContractSerializer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|<span data-ttu-id="7bab3-114">Active l’ajout de types connus à utiliser lors de la désérialisation.</span><span class="sxs-lookup"><span data-stu-id="7bab3-114">Enables addition of known types to be used when deserialization.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="7bab3-115">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="7bab3-115">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="7bab3-116">Élément</span><span class="sxs-lookup"><span data-stu-id="7bab3-116">Element</span></span>|<span data-ttu-id="7bab3-117">Description</span><span class="sxs-lookup"><span data-stu-id="7bab3-117">Description</span></span>|  
 |-------------|-----------------|  
-|[\<configuration\>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Élément de niveau supérieur de la configuration.|  
+|[<span data-ttu-id="7bab3-118">\<configuration>, élément</span><span class="sxs-lookup"><span data-stu-id="7bab3-118">\<configuration> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|<span data-ttu-id="7bab3-119">Élément de niveau supérieur de la configuration.</span><span class="sxs-lookup"><span data-stu-id="7bab3-119">The top level element for configuration.</span></span>|  
   
-## Voir aussi  
- <xref:System.Runtime.Serialization>   
- [Utilisation de contrats de données](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)   
- [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+## <a name="see-also"></a><span data-ttu-id="7bab3-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7bab3-120">See Also</span></span>  
+ <xref:System.Runtime.Serialization>  
+ [<span data-ttu-id="7bab3-121">À l’aide de contrats de données</span><span class="sxs-lookup"><span data-stu-id="7bab3-121">Using Data Contracts</span></span>](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [<span data-ttu-id="7bab3-122">Types connus de contrat de données</span><span class="sxs-lookup"><span data-stu-id="7bab3-122">Data Contract Known Types</span></span>](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

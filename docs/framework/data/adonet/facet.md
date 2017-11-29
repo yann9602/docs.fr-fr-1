@@ -1,46 +1,49 @@
 ---
-title: "facette | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: facet
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 91c4e6aa-3e54-4b6c-a38a-abf27808cc85
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e72ecd610951a42ceb5c3aa581bf70f255e5e2f7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# facette
-Une *facette* est utilisée pour ajouter des détails à une définition de propriété de type primitif.  Une définition de [propriété](../../../../docs/framework/data/adonet/property.md) contient des informations sur le type de propriété ; mais souvent, plus de détails sont nécessaires.  Par exemple, un type d'entité dans un modèle conceptuel peut avoir une propriété de type `String` dont la valeur ne peut pas être null.  Les facettes vous permettent de spécifier ce niveau de détail.  
+# <a name="facet"></a><span data-ttu-id="19ade-102">facet</span><span class="sxs-lookup"><span data-stu-id="19ade-102">facet</span></span>
+<span data-ttu-id="19ade-103">A *facette* est utilisé pour ajouter des détails à une définition de propriété de type primitif.</span><span class="sxs-lookup"><span data-stu-id="19ade-103">A *facet* is used to add detail to a primitive type property definition.</span></span> <span data-ttu-id="19ade-104">A [propriété](../../../../docs/framework/data/adonet/property.md) définition contient des informations sur le type de propriété, mais plus de détails est souvent nécessaire.</span><span class="sxs-lookup"><span data-stu-id="19ade-104">A [property](../../../../docs/framework/data/adonet/property.md) definition contains information about the property type, but often more detail is necessary.</span></span> <span data-ttu-id="19ade-105">Par exemple, un type d'entité dans un modèle conceptuel peut avoir une propriété de type `String` dont la valeur ne peut pas être null.</span><span class="sxs-lookup"><span data-stu-id="19ade-105">For example, an entity type in a conceptual model might have a property of type `String` whose value cannot be set to null.</span></span> <span data-ttu-id="19ade-106">Les facettes vous permettent de spécifier ce niveau de détail.</span><span class="sxs-lookup"><span data-stu-id="19ade-106">Facets allow you to specify this level of detail.</span></span>  
   
- Le tableau suivant décrit les facettes prises en charge dans le modèle EDM.  
+ <span data-ttu-id="19ade-107">Le tableau suivant décrit les facettes prises en charge dans le modèle EDM.</span><span class="sxs-lookup"><span data-stu-id="19ade-107">The table below describes the facets that are supported in the EDM.</span></span>  
   
 > [!NOTE]
->  Les valeurs et comportements exacts des facettes sont déterminés par l'environnement d'exécution qui utilise une implémentation EDM.  
+>  <span data-ttu-id="19ade-108">Les valeurs et comportements exacts des facettes sont déterminés par l'environnement d'exécution qui utilise une implémentation EDM.</span><span class="sxs-lookup"><span data-stu-id="19ade-108">The exact values and behaviors of facets are determined by the run-time environment that uses an EDM implementation.</span></span>  
   
-|Facette|Description|S'applique à|  
-|-------------|-----------------|------------------|  
-|`Collation`|Spécifie la table de classement ou ordre de tri à utiliser lors de l'exécution d'opérations de comparaison et de tri sur des valeurs de la propriété.|`String`|  
-|`ConcurrencyMode`|Indique que la valeur de la propriété doit être utilisée pour des contrôles d'accès concurrentiel optimiste.|Toutes les propriétés de type primitif|  
-|`Default`|Spécifie la valeur par défaut de la propriété si aucune valeur n'est fournie en cas d'instanciation.|Toutes les propriétés de type primitif|  
-|`FixedLength`|Spécifie si la longueur de la valeur de propriété peut varier.|`Binary`, `String`|  
-|`MaxLength`|Spécifie la longueur maximale de la valeur de propriété.|`Binary`, `String`|  
-|`Nullable`|Spécifie si la propriété peut avoir une valeur null.|Toutes les propriétés de type primitif|  
-|`Precision`|Pour les propriétés de type `Decimal`, spécifie le nombre de chiffres qu'une valeur de propriété peut avoir.  Pour les propriétés de type `Time`, `DateTime` et `DateTimeOffset`, spécifie le nombre de chiffres de la partie fractionnaire des secondes de la valeur de propriété.|`DateTime`, `DateTimeOffset`, `Decimal`, `Time`,|  
-|`Scale`|Spécifie le nombre de chiffres à droite de la virgule décimale pour la valeur de propriété.|Decimal|  
-|`Unicode`|Indique si la valeur de propriété est stockée au format Unicode.|`String`|  
+|<span data-ttu-id="19ade-109">Facette</span><span class="sxs-lookup"><span data-stu-id="19ade-109">Facet</span></span>|<span data-ttu-id="19ade-110">Description</span><span class="sxs-lookup"><span data-stu-id="19ade-110">Description</span></span>|<span data-ttu-id="19ade-111">S'applique à</span><span class="sxs-lookup"><span data-stu-id="19ade-111">Applies to</span></span>|  
+|-----------|-----------------|----------------|  
+|`Collation`|<span data-ttu-id="19ade-112">Spécifie la table de classement ou ordre de tri à utiliser lors de l'exécution d'opérations de comparaison et de tri sur des valeurs de la propriété.</span><span class="sxs-lookup"><span data-stu-id="19ade-112">Specifies the collating sequence (or sorting sequence) to be used when performing comparison and ordering operations on values of the property.</span></span>|`String`|  
+|`ConcurrencyMode`|<span data-ttu-id="19ade-113">Indique que la valeur de la propriété doit être utilisée pour des contrôles d'accès concurrentiel optimiste.</span><span class="sxs-lookup"><span data-stu-id="19ade-113">Indicates that the value of the property should be used for optimistic concurrency checks.</span></span>|<span data-ttu-id="19ade-114">Toutes les propriétés de type primitif</span><span class="sxs-lookup"><span data-stu-id="19ade-114">All primitive type properties</span></span>|  
+|`Default`|<span data-ttu-id="19ade-115">Spécifie la valeur par défaut de la propriété si aucune valeur n'est fournie en cas d'instanciation.</span><span class="sxs-lookup"><span data-stu-id="19ade-115">Specifies the default value of the property if no value is supplied upon instantiation.</span></span>|<span data-ttu-id="19ade-116">Toutes les propriétés de type primitif</span><span class="sxs-lookup"><span data-stu-id="19ade-116">All primitive type properties</span></span>|  
+|`FixedLength`|<span data-ttu-id="19ade-117">Spécifie si la longueur de la valeur de propriété peut varier.</span><span class="sxs-lookup"><span data-stu-id="19ade-117">Specifies whether the length of the property value can vary.</span></span>|<span data-ttu-id="19ade-118">`Binary`, `String`</span><span class="sxs-lookup"><span data-stu-id="19ade-118">`Binary`, `String`</span></span>|  
+|`MaxLength`|<span data-ttu-id="19ade-119">Spécifie la longueur maximale de la valeur de propriété.</span><span class="sxs-lookup"><span data-stu-id="19ade-119">Specifies the maximum length of the property value.</span></span>|<span data-ttu-id="19ade-120">`Binary`, `String`</span><span class="sxs-lookup"><span data-stu-id="19ade-120">`Binary`, `String`</span></span>|  
+|`Nullable`|<span data-ttu-id="19ade-121">Spécifie si la propriété peut avoir une valeur null.</span><span class="sxs-lookup"><span data-stu-id="19ade-121">Specifies whether the property can have a null value.</span></span>|<span data-ttu-id="19ade-122">Toutes les propriétés de type primitif</span><span class="sxs-lookup"><span data-stu-id="19ade-122">All primitive type properties</span></span>|  
+|`Precision`|<span data-ttu-id="19ade-123">Pour les propriétés de type `Decimal`, spécifie le nombre de chiffres qu'une valeur de propriété peut avoir.</span><span class="sxs-lookup"><span data-stu-id="19ade-123">For properties of type `Decimal`, specifies the number of digits a property value can have.</span></span> <span data-ttu-id="19ade-124">Pour les propriétés de type `Time`, `DateTime` et `DateTimeOffset`, spécifie le nombre de chiffres de la partie fractionnaire des secondes de la valeur de propriété.</span><span class="sxs-lookup"><span data-stu-id="19ade-124">For properties of type `Time`, `DateTime`, and `DateTimeOffset`, specifies the number of digits for the fractional part of seconds of the property value.</span></span>|<span data-ttu-id="19ade-125">`DateTime`, `DateTimeOffset`, `Decimal`, `Time`,</span><span class="sxs-lookup"><span data-stu-id="19ade-125">`DateTime`, `DateTimeOffset`, `Decimal`, `Time`,</span></span>|  
+|`Scale`|<span data-ttu-id="19ade-126">Spécifie le nombre de chiffres à droite de la virgule décimale pour la valeur de propriété.</span><span class="sxs-lookup"><span data-stu-id="19ade-126">Specifies the number of digits to the right of the decimal point for the property value.</span></span>|<span data-ttu-id="19ade-127">Decimal</span><span class="sxs-lookup"><span data-stu-id="19ade-127">Decimal</span></span>|  
+|`Unicode`|<span data-ttu-id="19ade-128">Indique si la valeur de propriété est stockée au format Unicode.</span><span class="sxs-lookup"><span data-stu-id="19ade-128">Indicates whether the property value is stored as Unicode.</span></span>|`String`|  
   
-## Exemple  
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) utilise un langage spécifique à un domaine \(DSL\), appelé [CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md) \(Conceptual Schema Definition Language\), pour définir des modèles conceptuels.  Le CSDL suivant définit un type d'entité `Book`.  Notez que les facettes sont implémentées en tant qu'attributs XML.  Les valeurs de facette indiquent qu'aucune propriété ne peut avoir la valeur null, et que les facettes `Scale` et `Precision` de la propriété `Revision` ont la valeur 29.  
+## <a name="example"></a><span data-ttu-id="19ade-129">Exemple</span><span class="sxs-lookup"><span data-stu-id="19ade-129">Example</span></span>  
+ <span data-ttu-id="19ade-130">Le [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels.</span><span class="sxs-lookup"><span data-stu-id="19ade-130">The [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) uses a domain-specific language (DSL) called conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) to define conceptual models.</span></span> <span data-ttu-id="19ade-131">Le CSDL suivant définit un type d'entité `Book`.</span><span class="sxs-lookup"><span data-stu-id="19ade-131">The following CSDL defines a `Book` entity type.</span></span> <span data-ttu-id="19ade-132">Notez que les facettes sont implémentées en tant qu'attributs XML.</span><span class="sxs-lookup"><span data-stu-id="19ade-132">Note that facets are implemented as XML attributes.</span></span> <span data-ttu-id="19ade-133">Les valeurs de facette indiquent qu'aucune propriété ne peut avoir la valeur null, et que les facettes `Scale` et `Precision` de la propriété `Revision` ont la valeur 29.</span><span class="sxs-lookup"><span data-stu-id="19ade-133">The facet values indicate that no property can be set to null, and that the `Scale` and `Precision` of the `Revision` property are each set to 29.</span></span>  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
-## Voir aussi  
- [Concepts clés d'Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)   
- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a><span data-ttu-id="19ade-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="19ade-134">See Also</span></span>  
+ [<span data-ttu-id="19ade-135">Concepts clés du modèle de données Entity</span><span class="sxs-lookup"><span data-stu-id="19ade-135">Entity Data Model Key Concepts</span></span>](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [<span data-ttu-id="19ade-136">Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="19ade-136">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)

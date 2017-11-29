@@ -1,102 +1,104 @@
 ---
-title: "&lt;loadFromRemoteSources&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "loadFromRemoteSources, élément"
-  - "<loadFromRemoteSources>, élément"
+title: "&lt;loadFromRemoteSources&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- loadFromRemoteSources element
+- <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-caps.latest.revision: 31
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 31
+caps.latest.revision: "31"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 959073381ef936fa7c0b248419c8529deaee969f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;loadFromRemoteSources&gt;, &#233;l&#233;ment
-Spécifie si la confiance totale doit être accordée aux assemblys de sources distantes.  
+# <a name="ltloadfromremotesourcesgt-element"></a><span data-ttu-id="13b77-102">&lt;loadFromRemoteSources&gt; élément</span><span class="sxs-lookup"><span data-stu-id="13b77-102">&lt;loadFromRemoteSources&gt; Element</span></span>
+<span data-ttu-id="13b77-103">Spécifie si les assemblys à partir de sources distantes doivent se voir accorder une confiance totale.</span><span class="sxs-lookup"><span data-stu-id="13b77-103">Specifies whether assemblies from remote sources should be granted full trust.</span></span>  
   
 > [!NOTE]
->  Si vous avez été dirigé vers cette rubrique en raison d'un message d'erreur dans la liste des erreurs de projet Visual Studio ou d'une erreur de build, consultez [Comment : utiliser un assembly à partir du Web dans Visual Studio](http://msdn.microsoft.com/fr-fr/d8635b63-89a0-41aa-90f4-f351b2111070).  
+>  <span data-ttu-id="13b77-104">Si vous avez été redirigé vers cette rubrique en raison d’un message d’erreur dans la liste d’erreurs de projet Visual Studio ou une erreur de build, consultez [Comment : utiliser un Assembly à partir du Web dans Visual Studio](http://msdn.microsoft.com/en-us/d8635b63-89a0-41aa-90f4-f351b2111070).</span><span class="sxs-lookup"><span data-stu-id="13b77-104">If you were directed to this topic because of an error message in the Visual Studio project error list or a build error, see [How to: Use an Assembly from the Web in Visual Studio](http://msdn.microsoft.com/en-us/d8635b63-89a0-41aa-90f4-f351b2111070).</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="13b77-105">\<configuration></span><span class="sxs-lookup"><span data-stu-id="13b77-105">\<configuration></span></span>  
+<span data-ttu-id="13b77-106">\<runtime ></span><span class="sxs-lookup"><span data-stu-id="13b77-106">\<runtime></span></span>  
+<span data-ttu-id="13b77-107">\<loadFromRemoteSources ></span><span class="sxs-lookup"><span data-stu-id="13b77-107">\<loadFromRemoteSources></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="13b77-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="13b77-108">Syntax</span></span>  
+  
+```xml  
 <loadFromRemoteSources    
    enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="13b77-109">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="13b77-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="13b77-110">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="13b77-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="13b77-111">Attributs</span><span class="sxs-lookup"><span data-stu-id="13b77-111">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si la confiance totale doit être accordée à un assembly chargé à partir de sources distantes.|  
+|<span data-ttu-id="13b77-112">Attribut</span><span class="sxs-lookup"><span data-stu-id="13b77-112">Attribute</span></span>|<span data-ttu-id="13b77-113">Description</span><span class="sxs-lookup"><span data-stu-id="13b77-113">Description</span></span>|  
+|---------------|-----------------|  
+|`enabled`|<span data-ttu-id="13b77-114">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="13b77-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="13b77-115">Spécifie si un assembly est chargé à partir de sources distantes doit-elle se voir accorder une confiance totale.</span><span class="sxs-lookup"><span data-stu-id="13b77-115">Specifies whether an assembly that is loaded from remote sources should be granted full trust.</span></span>|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a><span data-ttu-id="13b77-116">Attribut enabled</span><span class="sxs-lookup"><span data-stu-id="13b77-116">enabled Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|`false`|N'accordez pas une confiance totale aux applications à partir de sources distantes.  Il s'agit de la valeur par défaut.|  
-|`true`|Accordez la confiance totale aux applications de sources distantes.|  
+|<span data-ttu-id="13b77-117">Valeur</span><span class="sxs-lookup"><span data-stu-id="13b77-117">Value</span></span>|<span data-ttu-id="13b77-118">Description</span><span class="sxs-lookup"><span data-stu-id="13b77-118">Description</span></span>|  
+|-----------|-----------------|  
+|`false`|<span data-ttu-id="13b77-119">N’accordez pas une confiance totale aux applications à partir de sources distantes.</span><span class="sxs-lookup"><span data-stu-id="13b77-119">Do not grant full trust to applications from remote sources.</span></span> <span data-ttu-id="13b77-120">Il s'agit de la valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="13b77-120">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="13b77-121">Accorder une confiance totale aux applications à partir de sources distantes.</span><span class="sxs-lookup"><span data-stu-id="13b77-121">Grant full trust to applications from remote sources.</span></span>|  
   
-### Éléments enfants  
- Aucun.  
+### <a name="child-elements"></a><span data-ttu-id="13b77-122">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="13b77-122">Child Elements</span></span>  
+ <span data-ttu-id="13b77-123">Aucun.</span><span class="sxs-lookup"><span data-stu-id="13b77-123">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="13b77-124">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="13b77-124">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="13b77-125">Élément</span><span class="sxs-lookup"><span data-stu-id="13b77-125">Element</span></span>|<span data-ttu-id="13b77-126">Description</span><span class="sxs-lookup"><span data-stu-id="13b77-126">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
+|`configuration`|<span data-ttu-id="13b77-127">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="13b77-127">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="13b77-128">Contient des informations sur les options d'initialisation du runtime.</span><span class="sxs-lookup"><span data-stu-id="13b77-128">Contains information about runtime initialization options.</span></span>|  
   
-## Notes  
- Dans le .NET Framework version 3.5 et versions antérieures, si vous chargiez un assembly à partir d'un emplacement distant, l'assembly s'exécutait avec un niveau de confiance partiel, avec un jeu accordé qui dépendait de la zone dans laquelle il était chargé.  Par exemple, si vous avez chargé l'assembly à partir d'un site Web, il était chargé dans la zone Internet et se voyait accorder le jeu d'autorisations Internet.  En d'autres termes, il s'exécutait dans un bac à sable \(sandbox\) Internet.  Si vous essayez d'exécuter cet assembly avec [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] ou avec des versions ultérieures, une exception est levée ; vous devez créer explicitement un bac à sable \(sandbox\) pour l'assembly \(voir [Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable \(sandbox\)](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)\), ou l'exécuter avec une confiance totale.  
+## <a name="remarks"></a><span data-ttu-id="13b77-129">Remarques</span><span class="sxs-lookup"><span data-stu-id="13b77-129">Remarks</span></span>  
+ <span data-ttu-id="13b77-130">Dans le .NET Framework version 3.5 et les versions antérieures, si vous avez chargé un assembly à partir d’un emplacement distant, l’assembly s’exécute une confiance partielle avec un jeu d’autorisations qui dépendaient de la zone dans laquelle il a été chargé.</span><span class="sxs-lookup"><span data-stu-id="13b77-130">In the .NET Framework version 3.5 and earlier versions, if you loaded an assembly from a remote location, the assembly would run partially trusted with a grant set that depended on the zone in which it was loaded.</span></span> <span data-ttu-id="13b77-131">Par exemple, si vous avez chargé un assembly à partir d’un site Web, il a été chargé dans la zone Internet et accordé le jeu d’autorisations Internet.</span><span class="sxs-lookup"><span data-stu-id="13b77-131">For example, if you loaded an assembly from a website, it was loaded into the Internet zone and granted the Internet permission set.</span></span> <span data-ttu-id="13b77-132">En d’autres termes, elle est exécutée dans un bac à sable Internet.</span><span class="sxs-lookup"><span data-stu-id="13b77-132">In other words, it executed in an Internet sandbox.</span></span> <span data-ttu-id="13b77-133">Si vous essayez d’exécuter cet assembly dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures, une exception est levée ; vous devez soit créer explicitement un bac à sable pour l’assembly (consultez [Comment : exécuter Partially Trusted Code dans un bac à sable](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)), ou l’exécuter en mode confiance totale.</span><span class="sxs-lookup"><span data-stu-id="13b77-133">If you try to run that assembly in the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] and later versions, an exception is thrown; you must either explicitly create a sandbox for the assembly (see [How to: Run Partially Trusted Code in a Sandbox](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)), or run it in full trust.</span></span>  
   
- L'élément `<loadFromRemoteSources>` vous permet de spécifier que les assemblys qui auraient du s'exécuter avec un niveau de confiance partiel dans les versions antérieures du .NET Framework devront exécutés avec une confiance totale avec [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et avec les versions ultérieures.  Par défaut, les assemblys distants ne fonctionnent pas dans [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures.  Pour exécuter un assembly distants, vous devez soit de exécutez\-le sous la forme d'un niveau de confiance totale ou créer <xref:System.AppDomain> sandboxed dans lequel l'exécuter.  
-  
-> [!NOTE]
->  Dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], les assemblys sur les partages réseau local sont exécutés comme complètement approuvé par défaut ; vous ne devez pas activer l'élément `<loadFromRemoteSources>`.  
+ <span data-ttu-id="13b77-134">Le `<loadFromRemoteSources>` élément vous permet de spécifier que les assemblys qui auraient été exécutées de confiance partiel dans les versions antérieures du .NET Framework doivent être exécutées entièrement confiance dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="13b77-134">The `<loadFromRemoteSources>` element lets you specify that the assemblies that would have run partially trusted in earlier versions of the .NET Framework are to be run fully trusted in the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] and later versions.</span></span> <span data-ttu-id="13b77-135">Par défaut, les assemblys à distance ne s’exécutent pas dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="13b77-135">By default, remote assemblies do not run in the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] and later.</span></span> <span data-ttu-id="13b77-136">Pour exécuter un assembly distant, vous devez l’exécuter avec une confiance totale ou créer un bac à sable <xref:System.AppDomain> dans pour son exécution.</span><span class="sxs-lookup"><span data-stu-id="13b77-136">To run a remote assembly, you must either run it as fully trusted or create a sandboxed <xref:System.AppDomain> in which to run it.</span></span>  
   
 > [!NOTE]
->  Si une application a été copiée à partir du Web, elle est signalée par Windows comme une application Web, même si elle réside sur l'ordinateur local.  Vous pouvez modifier cette désignation en modifiant les propriétés de fichier ou utiliser l'élément `<loadFromRemoteSources>` pour accorder la confiance totale à l'assembly.  Ou bien, vous pouvez utiliser la méthode de <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> pour le chargement d'un assembly local que le système d'exploitation est marqué comme ayant été chargé à partir du Web.  
-  
- L'attribut `enabled` pour cet élément est efficace uniquement lorsque la sécurité d'accès du code est désactivée.  Par défaut, la stratégie CAS est désactivée dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures.  Si vous affectez à `enabled` la valeur `true`, les applications distantes sont de confiance totale.  
-  
- Si `<loadFromRemoteSources>` `enabled` n'a pas la valeur `true`, une exception est levée dans les conditions suivantes :  
-  
--   Le comportement de bac à sable du domaine actuel est différent de son comportement dans [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  La stratégie CAS doit être désactivée et le domaine actuel ne doit pas être en mode Bac à sable \(sandbox\).  
-  
--   L'assembly chargé ne provient pas de la zone `MyComputer`.  
+>  <span data-ttu-id="13b77-137">Dans le [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], assemblys sur des partages de réseau local sont exécutées avec une confiance totale par défaut ; vous n’avez pas à activer le `<loadFromRemoteSources>` élément.</span><span class="sxs-lookup"><span data-stu-id="13b77-137">In the [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], assemblies on local network shares are run as full trust by default; you do not have to enable the `<loadFromRemoteSources>` element.</span></span>  
   
 > [!NOTE]
->  Vous pouvez obtenir une <xref:System.IO.FileLoadException> sur un PC virtuel Windows lorsque vous essayez de charger un fichier à partir des dossiers liés sur l'ordinateur d'hébergement.  Cette erreur peut également se produire lorsque vous essayez de charger un fichier d'un dossier lié \(plus [Services de bureau à distance](http://go.microsoft.com/fwlink/?LinkId=182775) des services Terminal Server\).  Pour éviter une exception, affectez à `enabled` la valeur `true`.  
+>  <span data-ttu-id="13b77-138">Si une application a été copiée à partir du web, il est signalé par Windows comme étant une application web, même s’il se trouve sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="13b77-138">If an application has been copied from the web, it is flagged by Windows as being a web application, even if it resides on the local computer.</span></span> <span data-ttu-id="13b77-139">Vous pouvez modifier cette désignation en modifiant les propriétés du fichier, ou vous pouvez utiliser la `<loadFromRemoteSources>` élément à accorder à l’assembly de confiance totale.</span><span class="sxs-lookup"><span data-stu-id="13b77-139">You can change that designation by changing the file properties, or you can use the `<loadFromRemoteSources>` element to grant the assembly full trust.</span></span> <span data-ttu-id="13b77-140">En guise d’alternative, vous pouvez utiliser la <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> méthode pour charger un assembly local que le système d’exploitation a signalé comme ayant été chargé à partir du web.</span><span class="sxs-lookup"><span data-stu-id="13b77-140">As an alternative, you can use the <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> method to load a local assembly that the operating system has flagged as having been loaded from the web.</span></span>  
   
- La définition de l'élément `<loadFromRemoteSources>` à `true` empêche la levée de cette exception.  Cela vous permet de spécifier que vous ne comptez pas sur le Common Language Runtime pour passer en mode Bac à sable \(sandbox\) les assemblys chargés pour des raisons de sécurité, et qu'ils peuvent être autorisés à s'exécuter avec une confiance totale.  
+ <span data-ttu-id="13b77-141">Le `enabled` d’attribut pour cet élément est efficace uniquement lorsque la sécurité d’accès du code (CAS) est désactivée.</span><span class="sxs-lookup"><span data-stu-id="13b77-141">The `enabled` attribute for this element is effective only when code access security (CAS) is disabled.</span></span> <span data-ttu-id="13b77-142">Par défaut, la stratégie CAS est désactivée dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="13b77-142">By default, CAS policy is disabled in the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] and later versions.</span></span> <span data-ttu-id="13b77-143">Si vous définissez `enabled` à `true`, applications distantes sont de confiance totale.</span><span class="sxs-lookup"><span data-stu-id="13b77-143">If you set `enabled` to `true`, remote applications are granted full trust.</span></span>  
+  
+ <span data-ttu-id="13b77-144">Si `<loadFromRemoteSources>``enabled` n’est pas définie `true`, une exception est levée dans les conditions suivantes :</span><span class="sxs-lookup"><span data-stu-id="13b77-144">If `<loadFromRemoteSources>``enabled` is not set to `true`, an exception is thrown under the following conditions:</span></span>  
+  
+-   <span data-ttu-id="13b77-145">Le comportement de bac à sable du domaine actuel est différent de son comportement dans le [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="13b77-145">The sandboxing behavior of the current domain is different from its behavior in the [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].</span></span> <span data-ttu-id="13b77-146">Cela nécessite la stratégie CAS doit être désactivée et le domaine actuel, ne pas à sable (sandbox).</span><span class="sxs-lookup"><span data-stu-id="13b77-146">This requires CAS policy to be disabled, and the current domain not to be sandboxed.</span></span>  
+  
+-   <span data-ttu-id="13b77-147">L’assembly en cours de chargement n’est pas à partir de la `MyComputer` zone.</span><span class="sxs-lookup"><span data-stu-id="13b77-147">The assembly being loaded is not from the `MyComputer` zone.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="13b77-148">Vous risquez d’obtenir un <xref:System.IO.FileLoadException> dans une application Windows Virtual PC lorsque vous essayez de charger un fichier à partir des dossiers liés sur l’ordinateur hôte.</span><span class="sxs-lookup"><span data-stu-id="13b77-148">You may get a <xref:System.IO.FileLoadException> in a Windows Virtual PC application when you try to load a file from linked folders on the hosting computer.</span></span> <span data-ttu-id="13b77-149">Cette erreur peut également se produire lorsque vous essayez de charger un fichier à partir d’un dossier lié via [Services Bureau à distance](http://go.microsoft.com/fwlink/?LinkId=182775) (Terminal Services).</span><span class="sxs-lookup"><span data-stu-id="13b77-149">This error may also occur when you try to load a file from a folder linked over [Remote Desktop Services](http://go.microsoft.com/fwlink/?LinkId=182775) (Terminal Services).</span></span> <span data-ttu-id="13b77-150">Pour éviter l’exception, définissez `enabled` à `true`.</span><span class="sxs-lookup"><span data-stu-id="13b77-150">To avoid the exception, set `enabled` to `true`.</span></span>  
+  
+ <span data-ttu-id="13b77-151">Définition de la `<loadFromRemoteSources>` élément `true` empêche cette exception ne soit levée.</span><span class="sxs-lookup"><span data-stu-id="13b77-151">Setting the `<loadFromRemoteSources>` element to `true` prevents this exception from being thrown.</span></span> <span data-ttu-id="13b77-152">Il permet de spécifier que vous ne comptez pas sur le common language runtime pour le bac à sable les assemblys chargés pour la sécurité, et qu’ils soient autorisés à exécuter en tant qu’une confiance totale.</span><span class="sxs-lookup"><span data-stu-id="13b77-152">It enables you to specify that you are not relying on the common language runtime to sandbox the loaded assemblies for security, and that they can be allowed to execute as full trust.</span></span>  
   
 > [!IMPORTANT]
->  Si l'assembly ne doit pas s'exécuter avec une confiance totale, ne définissez pas cet élément de configuration.  Créez à la place un <xref:System.AppDomain> bac à sable dans lequel charger l'assembly.  
+>  <span data-ttu-id="13b77-153">Si l’assembly ne doit pas s’exécuter en mode confiance totale, ne définissez pas cet élément de configuration.</span><span class="sxs-lookup"><span data-stu-id="13b77-153">If the assembly should not run in full trust, do not set this configuration element.</span></span> <span data-ttu-id="13b77-154">Au lieu de cela, créez un bac à sable <xref:System.AppDomain> dans lequel charger l’assembly.</span><span class="sxs-lookup"><span data-stu-id="13b77-154">Instead, create a sandboxed <xref:System.AppDomain> in which to load the assembly.</span></span>  
   
-## Fichier de configuration  
- Cet élément est utilisé en général dans le fichier de configuration de l'application, mais peut être utilisée dans d'autres fichiers de configuration selon le contexte.  Pour plus d'informations, consultez l'article [Utilisations plus implicites de stratégie CAS : loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839) du blog de sécurité.NET.  
+## <a name="configuration-file"></a><span data-ttu-id="13b77-155">Fichier de configuration</span><span class="sxs-lookup"><span data-stu-id="13b77-155">Configuration File</span></span>  
+ <span data-ttu-id="13b77-156">Cet élément est généralement utilisé dans le fichier de configuration d’application, mais il peut être utilisé dans d’autres fichiers de configuration en fonction du contexte.</span><span class="sxs-lookup"><span data-stu-id="13b77-156">This element is typically used in the application configuration file, but can be used in other configuration files depending upon the context.</span></span> <span data-ttu-id="13b77-157">Pour plus d’informations, consultez l’article [plus implicite utilise de la stratégie CAS : loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839) dans le blog de sécurité .NET.</span><span class="sxs-lookup"><span data-stu-id="13b77-157">For more information, see the article [More Implicit Uses of CAS Policy: loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839) in the .NET Security blog.</span></span>  
   
-## Exemple  
- L'exemple suivant indique comment accorder la confiance totale aux applications de sources distantes.  
+## <a name="example"></a><span data-ttu-id="13b77-158">Exemple</span><span class="sxs-lookup"><span data-stu-id="13b77-158">Example</span></span>  
+ <span data-ttu-id="13b77-159">L’exemple suivant montre comment accorder une confiance totale aux applications à partir de sources distantes.</span><span class="sxs-lookup"><span data-stu-id="13b77-159">The following example shows how to grant full trust to applications from remote sources.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <loadFromRemoteSources enabled="true"/>  
@@ -104,8 +106,8 @@ Spécifie si la confiance totale doit être accordée aux assemblys de sources d
 </configuration>  
 ```  
   
-## Voir aussi  
- [Utilisations plus implicites de stratégie CAS : loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839)   
- [Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable \(sandbox\)](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)   
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+## <a name="see-also"></a><span data-ttu-id="13b77-160">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="13b77-160">See Also</span></span>  
+ [<span data-ttu-id="13b77-161">Utilise plus implicite de stratégie CAS : loadFromRemoteSources</span><span class="sxs-lookup"><span data-stu-id="13b77-161">More Implicit Uses of CAS Policy: loadFromRemoteSources</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=266839)  
+ [<span data-ttu-id="13b77-162">Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)</span><span class="sxs-lookup"><span data-stu-id="13b77-162">How to: Run Partially Trusted Code in a Sandbox</span></span>](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
+ [<span data-ttu-id="13b77-163">Schéma des paramètres d’exécution</span><span class="sxs-lookup"><span data-stu-id="13b77-163">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="13b77-164">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="13b77-164">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)

@@ -1,88 +1,69 @@
 ---
 title: Gestion des exceptions (Guide de programmation C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: dfdd8b8bdd89e4253dfc1afebc1e78140b121dd6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ab03e00a6b62d0c737c90fdb489be2a78f7ab6af
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="exception-handling-c-programming-guide"></a>Gestion des exceptions (Guide de programmation C#)
-Un bloc [try](../../../csharp/language-reference/keywords/try-catch.md) est utilisé par les programmeurs C# pour partitionner du code susceptible d’être affecté par une exception. Des blocs [catch](../../../csharp/language-reference/keywords/try-catch.md) associés sont utilisés pour gérer les exceptions générées. Un bloc [finally](../../../csharp/language-reference/keywords/try-finally.md) contient du code qui s’exécute dans tous les cas, qu’une exception soit levée ou non dans le bloc `try` (il peut s’agir par exemple de la libération des ressources allouées dans le bloc `try`). Un bloc `try` doit être associé à un ou plusieurs blocs `catch`, à un bloc `finally`, ou aux deux.  
+# <a name="exception-handling-c-programming-guide"></a><span data-ttu-id="d252e-102">Gestion des exceptions (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="d252e-102">Exception Handling (C# Programming Guide)</span></span>
+<span data-ttu-id="d252e-103">Un bloc [try](../../../csharp/language-reference/keywords/try-catch.md) est utilisé par les programmeurs C# pour partitionner du code susceptible d’être affecté par une exception.</span><span class="sxs-lookup"><span data-stu-id="d252e-103">A [try](../../../csharp/language-reference/keywords/try-catch.md) block is used by C# programmers to partition code that might be affected by an exception.</span></span> <span data-ttu-id="d252e-104">Des blocs [catch](../../../csharp/language-reference/keywords/try-catch.md) associés sont utilisés pour gérer les exceptions générées.</span><span class="sxs-lookup"><span data-stu-id="d252e-104">Associated [catch](../../../csharp/language-reference/keywords/try-catch.md) blocks are used to handle any resulting exceptions.</span></span> <span data-ttu-id="d252e-105">Un bloc [finally](../../../csharp/language-reference/keywords/try-finally.md) contient du code qui s’exécute dans tous les cas, qu’une exception soit levée ou non dans le bloc `try` (il peut s’agir par exemple de la libération des ressources allouées dans le bloc `try`).</span><span class="sxs-lookup"><span data-stu-id="d252e-105">A [finally](../../../csharp/language-reference/keywords/try-finally.md) block contains code that is run regardless of whether or not an exception is thrown in the `try` block, such as releasing resources that are allocated in the `try` block.</span></span> <span data-ttu-id="d252e-106">Un bloc `try` doit être associé à un ou plusieurs blocs `catch`, à un bloc `finally`, ou aux deux.</span><span class="sxs-lookup"><span data-stu-id="d252e-106">A `try` block requires one or more associated `catch` blocks, or a `finally` block, or both.</span></span>  
   
- Les exemples suivants montrent une instruction `try-catch`, une instruction `try-finally` et une instruction `try-catch-finally`.  
+ <span data-ttu-id="d252e-107">Les exemples suivants montrent une instruction `try-catch`, une instruction `try-finally` et une instruction `try-catch-finally`.</span><span class="sxs-lookup"><span data-stu-id="d252e-107">The following examples show a `try-catch` statement, a `try-finally` statement, and a `try-catch-finally` statement.</span></span>  
   
- [!code-cs[csProgGuideExceptions#6](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_1.cs)]  
+ [!code-csharp[csProgGuideExceptions#6](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_1.cs)]  
   
- [!code-cs[csProgGuideExceptions#7](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_2.cs)]  
+ [!code-csharp[csProgGuideExceptions#7](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_2.cs)]  
   
- [!code-cs[csProgGuideExceptions#8](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_3.cs)]  
+ [!code-csharp[csProgGuideExceptions#8](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_3.cs)]  
   
- Un bloc `try` sans bloc `catch` ou `finally` provoque une erreur du compilateur.  
+ <span data-ttu-id="d252e-108">Un bloc `try` sans bloc `catch` ou `finally` provoque une erreur du compilateur.</span><span class="sxs-lookup"><span data-stu-id="d252e-108">A `try` block without a `catch` or `finally` block causes a compiler error.</span></span>  
   
-## <a name="catch-blocks"></a>Blocs catch  
- Un bloc `catch` peut spécifier le type d’exception à intercepter. La spécification de type est appelée *filtre d’exception*. Le type d’exception doit être dérivé de <xref:System.Exception>. En général, ne spécifiez pas <xref:System.Exception> comme filtre d’exception, sauf si vous savez comment gérer toutes les exceptions susceptibles d’être levées dans le bloc `try` ou si vous avez inclus une instruction [throw](../../../csharp/language-reference/keywords/throw.md) à la fin de votre bloc `catch`.  
+## <a name="catch-blocks"></a><span data-ttu-id="d252e-109">Blocs catch</span><span class="sxs-lookup"><span data-stu-id="d252e-109">Catch Blocks</span></span>  
+ <span data-ttu-id="d252e-110">Un bloc `catch` peut spécifier le type d’exception à intercepter.</span><span class="sxs-lookup"><span data-stu-id="d252e-110">A `catch` block can specify the type of exception to catch.</span></span> <span data-ttu-id="d252e-111">La spécification de type est appelée *filtre d’exception*.</span><span class="sxs-lookup"><span data-stu-id="d252e-111">The type specification is called an *exception filter*.</span></span> <span data-ttu-id="d252e-112">Le type d’exception doit être dérivé de <xref:System.Exception>.</span><span class="sxs-lookup"><span data-stu-id="d252e-112">The exception type should be derived from <xref:System.Exception>.</span></span> <span data-ttu-id="d252e-113">En général, ne spécifiez pas <xref:System.Exception> comme filtre d’exception, sauf si vous savez comment gérer toutes les exceptions susceptibles d’être levées dans le bloc `try` ou si vous avez inclus une instruction [throw](../../../csharp/language-reference/keywords/throw.md) à la fin de votre bloc `catch`.</span><span class="sxs-lookup"><span data-stu-id="d252e-113">In general, do not specify <xref:System.Exception> as the exception filter unless either you know how to handle all exceptions that might be thrown in the `try` block, or you have included a [throw](../../../csharp/language-reference/keywords/throw.md) statement at the end of your `catch` block.</span></span>  
   
- Vous pouvez chaîner plusieurs blocs `catch` avec des filtres d’exception différents. Les blocs `catch` sont évalués de haut en bas dans votre code, mais un seul bloc `catch` est exécuté pour chaque exception levée. Le premier bloc `catch` qui spécifie le type exact ou une classe de base de l’exception levée est exécuté. Si aucun bloc `catch` ne spécifie un filtre d’exception correspondant, un bloc `catch` qui n’a pas de filtre est sélectionné, s’il y en a un dans l’instruction. Lors du positionnement des blocs `catch`, il est important de placer en premier les types d’exception les plus spécifiques (c’est-à-dire les plus dérivés).  
+ <span data-ttu-id="d252e-114">Vous pouvez chaîner plusieurs blocs `catch` avec des filtres d’exception différents.</span><span class="sxs-lookup"><span data-stu-id="d252e-114">Multiple `catch` blocks with different exception filters can be chained together.</span></span> <span data-ttu-id="d252e-115">Les blocs `catch` sont évalués de haut en bas dans votre code, mais un seul bloc `catch` est exécuté pour chaque exception levée.</span><span class="sxs-lookup"><span data-stu-id="d252e-115">The `catch` blocks are evaluated from top to bottom in your code, but only one `catch` block is executed for each exception that is thrown.</span></span> <span data-ttu-id="d252e-116">Le premier bloc `catch` qui spécifie le type exact ou une classe de base de l’exception levée est exécuté.</span><span class="sxs-lookup"><span data-stu-id="d252e-116">The first `catch` block that specifies the exact type or a base class of the thrown exception is executed.</span></span> <span data-ttu-id="d252e-117">Si aucun bloc `catch` ne spécifie un filtre d’exception correspondant, un bloc `catch` qui n’a pas de filtre est sélectionné, s’il y en a un dans l’instruction.</span><span class="sxs-lookup"><span data-stu-id="d252e-117">If no `catch` block specifies a matching exception filter, a `catch` block that does not have a filter is selected, if one is present in the statement.</span></span> <span data-ttu-id="d252e-118">Lors du positionnement des blocs `catch`, il est important de placer en premier les types d’exception les plus spécifiques (c’est-à-dire les plus dérivés).</span><span class="sxs-lookup"><span data-stu-id="d252e-118">It is important to position `catch` blocks with the most specific (that is, the most derived) exception types first.</span></span>  
   
- Vous devez intercepter les exceptions quand les conditions suivantes sont remplies :  
+ <span data-ttu-id="d252e-119">Vous devez intercepter les exceptions quand les conditions suivantes sont remplies :</span><span class="sxs-lookup"><span data-stu-id="d252e-119">You should catch exceptions when the following conditions are true:</span></span>  
   
--   Vous savez pourquoi l’exception a été levée et vous pouvez implémenter une récupération spécifique, par exemple inviter l’utilisateur à entrer un nouveau nom de fichier quand vous interceptez un objet <xref:System.IO.FileNotFoundException>.  
+-   <span data-ttu-id="d252e-120">Vous savez pourquoi l’exception a été levée et vous pouvez implémenter une récupération spécifique, par exemple inviter l’utilisateur à entrer un nouveau nom de fichier quand vous interceptez un objet <xref:System.IO.FileNotFoundException>.</span><span class="sxs-lookup"><span data-stu-id="d252e-120">You have a good understanding of why the exception might be thrown, and you can implement a specific recovery, such as prompting the user to enter a new file name when you catch a <xref:System.IO.FileNotFoundException> object.</span></span>  
   
--   Vous pouvez créer et lever une nouvelle exception plus spécifique.  
+-   <span data-ttu-id="d252e-121">Vous pouvez créer et lever une nouvelle exception plus spécifique.</span><span class="sxs-lookup"><span data-stu-id="d252e-121">You can create and throw a new, more specific exception.</span></span>  
   
-     [!code-cs[csProgGuideExceptions#9](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_4.cs)]  
+     [!code-csharp[csProgGuideExceptions#9](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_4.cs)]  
   
--   Vous voulez traiter partiellement une exception avant de la transmettre en vue d’un traitement supplémentaire. Dans l’exemple suivant, un bloc `catch` est utilisé pour ajouter une entrée à un journal d’erreurs avant de relever l’exception.  
+-   <span data-ttu-id="d252e-122">Vous voulez traiter partiellement une exception avant de la transmettre en vue d’un traitement supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="d252e-122">You want to partially handle an exception before passing it on for additional handling.</span></span> <span data-ttu-id="d252e-123">Dans l’exemple suivant, un bloc `catch` est utilisé pour ajouter une entrée à un journal d’erreurs avant de relever l’exception.</span><span class="sxs-lookup"><span data-stu-id="d252e-123">In the following example, a `catch` block is used to add an entry to an error log before re-throwing the exception.</span></span>  
   
-     [!code-cs[csProgGuideExceptions#10](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_5.cs)]  
+     [!code-csharp[csProgGuideExceptions#10](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_5.cs)]  
   
-## <a name="finally-blocks"></a>Blocs Finally  
- Un bloc `finally` vous permet de nettoyer les actions qui sont exécutées dans un bloc `try`. S’il est présent, le bloc `finally` s’exécute en dernier, après le bloc `try` et tout bloc `catch` mis en correspondance. Un bloc `finally` s’exécute toujours, qu’une exception soit levée ou non, et même si aucun bloc `catch` correspondant au type d’exception n’est trouvé.  
+## <a name="finally-blocks"></a><span data-ttu-id="d252e-124">Blocs Finally</span><span class="sxs-lookup"><span data-stu-id="d252e-124">Finally Blocks</span></span>  
+ <span data-ttu-id="d252e-125">Un bloc `finally` vous permet de nettoyer les actions qui sont exécutées dans un bloc `try`.</span><span class="sxs-lookup"><span data-stu-id="d252e-125">A `finally` block enables you to clean up actions that are performed in a `try` block.</span></span> <span data-ttu-id="d252e-126">S’il est présent, le bloc `finally` s’exécute en dernier, après le bloc `try` et tout bloc `catch` mis en correspondance.</span><span class="sxs-lookup"><span data-stu-id="d252e-126">If present, the `finally` block executes last, after the `try` block and any matched `catch` block.</span></span> <span data-ttu-id="d252e-127">Un bloc `finally` s’exécute toujours, qu’une exception soit levée ou non, et même si aucun bloc `catch` correspondant au type d’exception n’est trouvé.</span><span class="sxs-lookup"><span data-stu-id="d252e-127">A `finally` block always runs, regardless of whether an exception is thrown or a `catch` block matching the exception type is found.</span></span>  
   
- Le bloc `finally` peut être utilisé pour libérer des ressources telles que des flux de fichiers, des connexions de base de données et des handles graphiques, sans attendre que le récupérateur de mémoire dans le runtime finalise les objets. Pour plus d’informations, consultez [Instruction using](../../../csharp/language-reference/keywords/using-statement.md).  
+ <span data-ttu-id="d252e-128">Le bloc `finally` peut être utilisé pour libérer des ressources telles que des flux de fichiers, des connexions de base de données et des handles graphiques, sans attendre que le récupérateur de mémoire dans le runtime finalise les objets.</span><span class="sxs-lookup"><span data-stu-id="d252e-128">The `finally` block can be used to release resources such as file streams, database connections, and graphics handles without waiting for the garbage collector in the runtime to finalize the objects.</span></span> <span data-ttu-id="d252e-129">Pour plus d’informations, consultez [Instruction using](../../../csharp/language-reference/keywords/using-statement.md).</span><span class="sxs-lookup"><span data-stu-id="d252e-129">See [using Statement](../../../csharp/language-reference/keywords/using-statement.md) for more information.</span></span>  
   
- Dans l’exemple suivant, le bloc `finally` est utilisé pour fermer un fichier ouvert dans le bloc `try`. Notez que l’état du handle de fichier est vérifié avant la fermeture du fichier. Si le bloc `try` ne peut pas ouvrir le fichier, le handle de fichier a encore la valeur `null` et le bloc `finally` n’essaie pas de le fermer. En guise d’alternative, si le fichier est ouvert avec succès dans le bloc `try`, le bloc `finally` ferme le fichier ouvert.  
+ <span data-ttu-id="d252e-130">Dans l’exemple suivant, le bloc `finally` est utilisé pour fermer un fichier ouvert dans le bloc `try`.</span><span class="sxs-lookup"><span data-stu-id="d252e-130">In the following example, the `finally` block is used to close a file that is opened in the `try` block.</span></span> <span data-ttu-id="d252e-131">Notez que l’état du handle de fichier est vérifié avant la fermeture du fichier.</span><span class="sxs-lookup"><span data-stu-id="d252e-131">Notice that the state of the file handle is checked before the file is closed.</span></span> <span data-ttu-id="d252e-132">Si le bloc `try` ne peut pas ouvrir le fichier, le handle de fichier a encore la valeur `null` et le bloc `finally` n’essaie pas de le fermer.</span><span class="sxs-lookup"><span data-stu-id="d252e-132">If the `try` block cannot open the file, the file handle still has the value `null` and the `finally` block does not try to close it.</span></span> <span data-ttu-id="d252e-133">En guise d’alternative, si le fichier est ouvert avec succès dans le bloc `try`, le bloc `finally` ferme le fichier ouvert.</span><span class="sxs-lookup"><span data-stu-id="d252e-133">Alternatively, if the file is opened successfully in the `try` block, the `finally` block closes the open file.</span></span>  
   
- [!code-cs[csProgGuideExceptions#11](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_6.cs)]  
+ [!code-csharp[csProgGuideExceptions#11](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_6.cs)]  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
+## <a name="c-language-specification"></a><span data-ttu-id="d252e-134">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="d252e-134">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Exceptions et gestion des exceptions](../../../csharp/programming-guide/exceptions/index.md)   
- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)   
- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
- [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)   
- [using, instruction](../../../csharp/language-reference/keywords/using-statement.md)
-
+## <a name="see-also"></a><span data-ttu-id="d252e-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d252e-135">See Also</span></span>  
+ [<span data-ttu-id="d252e-136">Référence C#</span><span class="sxs-lookup"><span data-stu-id="d252e-136">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="d252e-137">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="d252e-137">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="d252e-138">Exceptions et gestion des exceptions</span><span class="sxs-lookup"><span data-stu-id="d252e-138">Exceptions and Exception Handling</span></span>](../../../csharp/programming-guide/exceptions/index.md)  
+ [<span data-ttu-id="d252e-139">try-catch</span><span class="sxs-lookup"><span data-stu-id="d252e-139">try-catch</span></span>](../../../csharp/language-reference/keywords/try-catch.md)  
+ [<span data-ttu-id="d252e-140">try-finally</span><span class="sxs-lookup"><span data-stu-id="d252e-140">try-finally</span></span>](../../../csharp/language-reference/keywords/try-finally.md)  
+ [<span data-ttu-id="d252e-141">try-catch-finally</span><span class="sxs-lookup"><span data-stu-id="d252e-141">try-catch-finally</span></span>](../../../csharp/language-reference/keywords/try-catch-finally.md)  
+ [<span data-ttu-id="d252e-142">using, instruction</span><span class="sxs-lookup"><span data-stu-id="d252e-142">using Statement</span></span>](../../../csharp/language-reference/keywords/using-statement.md)

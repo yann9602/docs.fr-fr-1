@@ -1,63 +1,72 @@
 ---
-title: "&lt;connectionPoolSettings&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;connectionPoolSettings&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a43b2719606321fe77bb9b017c6a4304ba02f7a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;connectionPoolSettings&gt;
-Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.  
+# <a name="ltconnectionpoolsettingsgt"></a><span data-ttu-id="e0acb-102">&lt;connectionPoolSettings&gt;</span><span class="sxs-lookup"><span data-stu-id="e0acb-102">&lt;connectionPoolSettings&gt;</span></span>
+<span data-ttu-id="e0acb-103">Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.</span><span class="sxs-lookup"><span data-stu-id="e0acb-103">Specifies additional connection pool settings for a Named Pipe binding.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="e0acb-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="e0acb-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="e0acb-105">\<liaisons ></span><span class="sxs-lookup"><span data-stu-id="e0acb-105">\<bindings></span></span>  
+<span data-ttu-id="e0acb-106">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="e0acb-106">\<customBinding></span></span>  
+<span data-ttu-id="e0acb-107">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="e0acb-107">\<binding></span></span>  
+<span data-ttu-id="e0acb-108">\<namePipeTransport ></span><span class="sxs-lookup"><span data-stu-id="e0acb-108">\<namePipeTransport></span></span>  
+<span data-ttu-id="e0acb-109">\<connectionPoolSettings ></span><span class="sxs-lookup"><span data-stu-id="e0acb-109">\<connectionPoolSettings></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="e0acb-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e0acb-110">Syntax</span></span>  
   
+```xml  
 <connectionPoolSettings  
-        groupName=”String”  
+        groupName="String"  
     idleTimeout"TimeSpan"  
-    maxOutboundConnectionsPerEndpopint=”Integer” />  
+    maxOutboundConnectionsPerEndpopint="Integer" />  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="e0acb-111">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="e0acb-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="e0acb-112">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="e0acb-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="e0acb-113">Attributs</span><span class="sxs-lookup"><span data-stu-id="e0acb-113">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|`groupName`|Chaîne qui définit le nom du pool de connexions utilisé pour les canaux sortants.  En mode de transmission continu, les connexions ne sont pas partagées, ce qui signifie que la mise en pool des connexions est désactivée.  La valeur par défaut est une chaîne par défaut.  Vous pouvez modifier cette valeur pour isoler les connexions d'un client particulier dans des groupes séparés.|  
-|`idleTimeout`|<xref:System.TimeSpan> positif qui spécifie la période maximale d'inactivité de la connexion au terme de laquelle la connexion est coupée.  La valeur par défaut est 00:02:00.|  
-|`maxOutboundConnectionsPerEndpoint`|Entier positif qui spécifie le nombre maximal de connexions à un point de terminaison distant initié par le service.  Toute connexion dépassant cette limite est mise en file d'attente jusqu'à ce qu'une place se libère.  `idleTimeout` limite la durée pendant laquelle les connexions restent dans la file d'attente avant qu'une exception soit levée.  La valeur par défaut est 10.<br /><br /> Cet attribut limite le nombre de connexions actives simultanées entre le client et un point de terminaison de service particulier.  Si cette valeur est dépassée, il est possible que le service ne semble pas répondre au client.  Dans ce cas, cette valeur doit être ajustée de façon à être supérieure au nombre maximal de connexions simultanées prévues à un point de terminaison spécifique.|  
+|<span data-ttu-id="e0acb-114">Attribut</span><span class="sxs-lookup"><span data-stu-id="e0acb-114">Attribute</span></span>|<span data-ttu-id="e0acb-115">Description</span><span class="sxs-lookup"><span data-stu-id="e0acb-115">Description</span></span>|  
+|---------------|-----------------|  
+|`groupName`|<span data-ttu-id="e0acb-116">Chaîne qui définit le nom du pool de connexions utilisé pour les canaux sortants.</span><span class="sxs-lookup"><span data-stu-id="e0acb-116">A string that defines the name of the connection pool used for outgoing channels.</span></span> <span data-ttu-id="e0acb-117">En mode de transmission continu, les connexions ne sont pas partagées, ce qui signifie que la mise en pool des connexions est désactivée.</span><span class="sxs-lookup"><span data-stu-id="e0acb-117">In streamed mode, connections are not shared, meaning that connection pooling is disabled.</span></span> <span data-ttu-id="e0acb-118">La valeur par défaut est une chaîne par défaut.</span><span class="sxs-lookup"><span data-stu-id="e0acb-118">The default is a "default" string.</span></span> <span data-ttu-id="e0acb-119">Vous pouvez modifier cette valeur pour isoler les connexions d'un client particulier dans des groupes séparés.</span><span class="sxs-lookup"><span data-stu-id="e0acb-119">You can modify this value to isolate the connections for a particular client into separate groups.</span></span>|  
+|`idleTimeout`|<span data-ttu-id="e0acb-120"><xref:System.TimeSpan> positif qui spécifie la période maximale d'inactivité de la connexion au terme de laquelle la connexion est coupée.</span><span class="sxs-lookup"><span data-stu-id="e0acb-120">A positive <xref:System.TimeSpan> that specifies the maximum time the connection can be idle before being disconnected.</span></span> <span data-ttu-id="e0acb-121">La valeur par défaut est 00:02:00.</span><span class="sxs-lookup"><span data-stu-id="e0acb-121">The default is 00:02:00.</span></span>|  
+|`maxOutboundConnectionsPerEndpoint`|<span data-ttu-id="e0acb-122">Entier positif qui spécifie le nombre maximal de connexions à un point de terminaison distant initié par le service.</span><span class="sxs-lookup"><span data-stu-id="e0acb-122">A positive integer that specifies the maximum number of connections to a remote endpoint initiated by the service.</span></span> <span data-ttu-id="e0acb-123">Toute connexion dépassant cette limite est mise en file d'attente jusqu'à ce qu'une place se libère.</span><span class="sxs-lookup"><span data-stu-id="e0acb-123">Connections in excess of the limit are queued until a space below the limit becomes available.</span></span> <span data-ttu-id="e0acb-124">`idleTimeout` limite la durée pendant laquelle les connexions restent dans la file d'attente avant qu'une exception soit levée.</span><span class="sxs-lookup"><span data-stu-id="e0acb-124">The `idleTimeout` limits the duration in which connections remain queued before an exception is thrown.</span></span> <span data-ttu-id="e0acb-125">La valeur par défaut est 10.</span><span class="sxs-lookup"><span data-stu-id="e0acb-125">The default is 10.</span></span><br /><br /> <span data-ttu-id="e0acb-126">Cet attribut limite le nombre de connexions actives simultanées entre le client et un point de terminaison de service particulier.</span><span class="sxs-lookup"><span data-stu-id="e0acb-126">This attribute limits the number of simultaneous active connections from the client to a particular service endpoint.</span></span> <span data-ttu-id="e0acb-127">Si cette valeur est dépassée, il est possible que le service ne semble pas répondre au client.</span><span class="sxs-lookup"><span data-stu-id="e0acb-127">If this value is exceeded by having more active client connections, the service may appear unresponsive to the client.</span></span> <span data-ttu-id="e0acb-128">Dans ce cas, cette valeur doit être ajustée de façon à être supérieure au nombre maximal de connexions simultanées prévues à un point de terminaison spécifique.</span><span class="sxs-lookup"><span data-stu-id="e0acb-128">In this case, this value should be adjusted to exceed the maximum number of expected simultaneous client connections to a specific endpoint.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="e0acb-129">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="e0acb-129">Child Elements</span></span>  
+ <span data-ttu-id="e0acb-130">Aucun.</span><span class="sxs-lookup"><span data-stu-id="e0acb-130">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="e0acb-131">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="e0acb-131">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="e0acb-132">Élément</span><span class="sxs-lookup"><span data-stu-id="e0acb-132">Element</span></span>|<span data-ttu-id="e0acb-133">Description</span><span class="sxs-lookup"><span data-stu-id="e0acb-133">Description</span></span>|  
 |-------------|-----------------|  
-|[\<namedPipeTransport\>](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Définit un transport qui entraîne un canal à transférer des messages à l'aide de canaux nommés.|  
+|[<span data-ttu-id="e0acb-134">\<namedPipeTransport ></span><span class="sxs-lookup"><span data-stu-id="e0acb-134">\<namedPipeTransport></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|<span data-ttu-id="e0acb-135">Définit un transport qui entraîne un canal à transférer des messages à l'aide de canaux nommés.</span><span class="sxs-lookup"><span data-stu-id="e0acb-135">Defines a transport that causes a channel to transfer messages using named pipes.</span></span>|  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.NamedPipeConnectionPoolSettingsElement>   
- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement.ConnectionPoolSettings%2A>   
- <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>   
- <xref:System.ServiceModel.Channels.TransportBindingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)   
- [Choix d'un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)   
- [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a><span data-ttu-id="e0acb-136">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e0acb-136">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.NamedPipeConnectionPoolSettingsElement>  
+ <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement.ConnectionPoolSettings%2A>  
+ <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>  
+ <xref:System.ServiceModel.Channels.TransportBindingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [<span data-ttu-id="e0acb-137">Transports</span><span class="sxs-lookup"><span data-stu-id="e0acb-137">Transports</span></span>](../../../../../docs/framework/wcf/feature-details/transports.md)  
+ [<span data-ttu-id="e0acb-138">Choix d’un Transport</span><span class="sxs-lookup"><span data-stu-id="e0acb-138">Choosing a Transport</span></span>](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [<span data-ttu-id="e0acb-139">Liaisons</span><span class="sxs-lookup"><span data-stu-id="e0acb-139">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="e0acb-140">Extension de liaisons</span><span class="sxs-lookup"><span data-stu-id="e0acb-140">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [<span data-ttu-id="e0acb-141">Liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="e0acb-141">Custom Bindings</span></span>](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [<span data-ttu-id="e0acb-142">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="e0acb-142">\<customBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

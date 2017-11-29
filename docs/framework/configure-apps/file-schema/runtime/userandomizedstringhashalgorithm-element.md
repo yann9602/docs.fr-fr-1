@@ -1,110 +1,109 @@
 ---
-title: "&lt;UseRandomizedStringHashAlgorithm&gt;, &#201;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<UseRandomizedStringHashAlgorithm> (élément)"
-  - "UseRandomizedStringHashAlgorithm (élément)"
+title: "&lt;UseRandomizedStringHashAlgorithm&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- UseRandomizedStringHashAlgorithm element
+- <UseRandomizedStringHashAlgorithm> element
 ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7cd561cf0e0a9e080b150bdaa412686126423c91
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;UseRandomizedStringHashAlgorithm&gt;, &#201;l&#233;ment
-Détermine si le Common Langage Runtime calcule des codes de hachage pour les chaînes par domaine d'application.  
+# <a name="ltuserandomizedstringhashalgorithmgt-element"></a><span data-ttu-id="a0ded-102">&lt;UseRandomizedStringHashAlgorithm&gt; élément</span><span class="sxs-lookup"><span data-stu-id="a0ded-102">&lt;UseRandomizedStringHashAlgorithm&gt; Element</span></span>
+<span data-ttu-id="a0ded-103">Détermine si le common language runtime calcule les codes de hachage de chaînes sur un par domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-103">Determines whether the common language runtime calculates hash codes for strings on a per application domain basis.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="a0ded-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="a0ded-104">\<configuration></span></span>  
+<span data-ttu-id="a0ded-105">\<runtime ></span><span class="sxs-lookup"><span data-stu-id="a0ded-105">\<runtime></span></span>  
+<span data-ttu-id="a0ded-106">\<UseRandomizedStringHashAlgorithm ></span><span class="sxs-lookup"><span data-stu-id="a0ded-106">\<UseRandomizedStringHashAlgorithm></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="a0ded-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a0ded-107">Syntax</span></span>  
+  
+```xml  
 <UseRandomizedStringHashAlgorithm   
    enabled=0|1 />  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a0ded-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="a0ded-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="a0ded-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="a0ded-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="a0ded-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="a0ded-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si les codes de hachage pour les chaînes sont calculés par domaine d'application.|  
+|<span data-ttu-id="a0ded-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="a0ded-111">Attribute</span></span>|<span data-ttu-id="a0ded-112">Description</span><span class="sxs-lookup"><span data-stu-id="a0ded-112">Description</span></span>|  
+|---------------|-----------------|  
+|`enabled`|<span data-ttu-id="a0ded-113">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="a0ded-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="a0ded-114">Indique si les codes de hachage pour les chaînes sont calculés sur un par domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-114">Specifies whether hash codes for strings are calculated on a per application domain basis.</span></span>|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a><span data-ttu-id="a0ded-115">Attribut enabled</span><span class="sxs-lookup"><span data-stu-id="a0ded-115">enabled Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|`0`|Le Common Langage Runtime ne calcule pas les codes de hachage des chaînes par domaine d'application ; un seul algorithme est utilisé pour calculer les codes de hachage des chaînes.  Valeur par défaut.|  
-|`1`|Le Common Langage Runtime calcule les codes de hachage pour les chaînes par domaine d'application.  Les chaînes identiques dans des domaines d'application différents et dans des processus différents ont différents codes de hachage.|  
+|<span data-ttu-id="a0ded-116">Valeur</span><span class="sxs-lookup"><span data-stu-id="a0ded-116">Value</span></span>|<span data-ttu-id="a0ded-117">Description</span><span class="sxs-lookup"><span data-stu-id="a0ded-117">Description</span></span>|  
+|-----------|-----------------|  
+|`0`|<span data-ttu-id="a0ded-118">Le common language runtime ne calcule pas les codes de hachage de chaînes sur un par domaine d’application ; un seul algorithme est utilisé pour calculer les codes de hachage de chaîne.</span><span class="sxs-lookup"><span data-stu-id="a0ded-118">The common language runtime does not compute hash codes for strings on a per application domain basis; a single algorithm is used to calculate string hash codes.</span></span> <span data-ttu-id="a0ded-119">Il s'agit de la valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="a0ded-119">This is the default.</span></span>|  
+|`1`|<span data-ttu-id="a0ded-120">Le common language runtime calcule les codes de hachage de chaînes sur un par domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-120">The common language runtime computes hash codes for strings on a per application domain basis.</span></span> <span data-ttu-id="a0ded-121">Chaînes identiques dans différents domaines d’application et dans différents processus aura des codes de hachage différent.</span><span class="sxs-lookup"><span data-stu-id="a0ded-121">Identical strings in different application domains and in different processes will have different hash codes.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="a0ded-122">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="a0ded-122">Child Elements</span></span>  
+ <span data-ttu-id="a0ded-123">Aucun.</span><span class="sxs-lookup"><span data-stu-id="a0ded-123">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="a0ded-124">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="a0ded-124">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="a0ded-125">Élément</span><span class="sxs-lookup"><span data-stu-id="a0ded-125">Element</span></span>|<span data-ttu-id="a0ded-126">Description</span><span class="sxs-lookup"><span data-stu-id="a0ded-126">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
+|`configuration`|<span data-ttu-id="a0ded-127">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="a0ded-127">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="a0ded-128">Contient des informations sur les options d'initialisation du runtime.</span><span class="sxs-lookup"><span data-stu-id="a0ded-128">Contains information about runtime initialization options.</span></span>|  
   
-## Notes  
- Par défaut, la classe <xref:System.StringComparer> et la méthode <xref:System.String.GetHashCode%2A?displayProperty=fullName> utilisent un algorithme de hachage unique qui produit un code de hachage cohérent dans les domaines d'application.  Cela revient à définir l'attribut `enabled` de l'élément `<UseRandomizedStringHashAlgorithm>` sur `0`.  Il s'agit de l'algorithme de hachage utilisé dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
+## <a name="remarks"></a><span data-ttu-id="a0ded-129">Remarques</span><span class="sxs-lookup"><span data-stu-id="a0ded-129">Remarks</span></span>  
+ <span data-ttu-id="a0ded-130">Par défaut, le <xref:System.StringComparer> classe et <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> la méthode utilise un seul algorithme de hachage qui génère un code de hachage cohérent entre domaines d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-130">By default, the <xref:System.StringComparer> class and the <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> method use a single hashing algorithm that produces a consistent hash code across application domains.</span></span> <span data-ttu-id="a0ded-131">Cela revient à affecter la `enabled` attribut de la `<UseRandomizedStringHashAlgorithm>` élément `0`.</span><span class="sxs-lookup"><span data-stu-id="a0ded-131">This is equivalent to setting the `enabled` attribute of the `<UseRandomizedStringHashAlgorithm>` element to `0`.</span></span> <span data-ttu-id="a0ded-132">Il s’agit d’algorithme de hachage utilisé dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="a0ded-132">This is the hashing algorithm used in the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].</span></span>  
   
- La classe <xref:System.StringComparer> et la méthode <xref:System.String.GetHashCode%2A?displayProperty=fullName> peuvent également utiliser un algorithme de hachage différent qui calcule les codes de hachage par domaine d'application.  Par conséquent, les codes de hachage pour des chaînes équivalentes diffèreront entre des domaines d'application.  Il s'agit d'une fonctionnalité déclarative. Pour en tirer parti, vous devez définir l'attribut `enabled` de l'élément `<UseRandomizedStringHashAlgorithm>` sur `1`.  
+ <span data-ttu-id="a0ded-133">Le <xref:System.StringComparer> classe et le <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> méthode peut également utiliser un autre algorithme de hachage qui calcule les codes de hachage sur un par domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-133">The <xref:System.StringComparer> class and the <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> method can also use a different hashing algorithm that computes hash codes on a per application domain basis.</span></span> <span data-ttu-id="a0ded-134">Par conséquent, les codes de hachage pour les chaînes équivalentes sont différentes entre domaines d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-134">As a result, hash codes for equivalent strings will differ across application domains.</span></span> <span data-ttu-id="a0ded-135">Il s’agit d’une fonctionnalité d’abonnement ; Pour en bénéficier, vous devez définir le `enabled` attribut de la `<UseRandomizedStringHashAlgorithm>` élément `1`.</span><span class="sxs-lookup"><span data-stu-id="a0ded-135">This is an opt-in feature; to take advantage of it, you must set the `enabled` attribute of the `<UseRandomizedStringHashAlgorithm>` element to `1`.</span></span>  
   
- La recherche de chaîne dans une table de hachage est généralement une opération O\(1\).  Toutefois, lorsque de nombreuses collisions se produisent, la recherche peut devenir une opération O\(n<sup>2</sup>\).  Vous pouvez utiliser l'élément de configuration `<UseRandomizedStringHashAlgorithm>` pour générer un algorithme de hachage aléatoire par domaine d'application, qui limite à son tour le nombre de collisions potentielles, en particulier lorsque les clés à partir desquelles les codes de hachage sont calculés sont basées sur la saisie de données par les utilisateurs.  
+ <span data-ttu-id="a0ded-136">La recherche de chaîne dans une table de hachage est généralement une opération o (1).</span><span class="sxs-lookup"><span data-stu-id="a0ded-136">The string lookup in a hash table is typically an O(1) operation.</span></span> <span data-ttu-id="a0ded-137">Toutefois, lorsqu’un grand nombre de collisions se produire, la recherche peut devenir un O (n<sup>2</sup>) opération.</span><span class="sxs-lookup"><span data-stu-id="a0ded-137">However, when a large number of collisions occur, the lookup can become an O(n<sup>2</sup>) operation.</span></span> <span data-ttu-id="a0ded-138">Vous pouvez utiliser la `<UseRandomizedStringHashAlgorithm>` élément de configuration pour générer un algorithme de hachage aléatoire par domaine d’application, qui à son tour limite le nombre de collisions potentielles, en particulier lorsque les clés à partir de laquelle les codes de hachage sont calculées reposent sur les données d’entrée par les utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="a0ded-138">You can use the `<UseRandomizedStringHashAlgorithm>` configuration element to generate a random hashing algorithm per application domain, which in turn limits the number of potential collisions, particularly when the keys from which the hash codes are calculated are based on data input by users.</span></span>  
   
-## Exemple  
- L'exemple suivant définit une classe `DisplayString` qui inclut une constante de chaîne privée, `s`, dont la valeur est « Ceci est une chaîne ». Il inclut également une méthode `ShowStringHashCode` qui affiche la valeur de chaîne et son code de hachage avec le nom du domaine d'application dans lequel la méthode est exécutée.  
+## <a name="example"></a><span data-ttu-id="a0ded-139">Exemple</span><span class="sxs-lookup"><span data-stu-id="a0ded-139">Example</span></span>  
+ <span data-ttu-id="a0ded-140">L’exemple suivant définit un `DisplayString` classe qui inclut une constante de chaîne privée, `s`, dont la valeur est « Il s’agit d’une chaîne. »</span><span class="sxs-lookup"><span data-stu-id="a0ded-140">The following example defines a `DisplayString` class that includes a private string constant, `s`, whose value is "This is a string."</span></span> <span data-ttu-id="a0ded-141">Il inclut également un `ShowStringHashCode` méthode qui affiche la valeur de chaîne et son code de hachage, ainsi que le nom du domaine d’application dans lequel la méthode s’exécute.</span><span class="sxs-lookup"><span data-stu-id="a0ded-141">It also includes a `ShowStringHashCode` method that displays the string value and its hash code along with the name of the application domain in which the method is executing.</span></span>  
   
  [!code-csharp[System.String.GetHashCode#2](../../../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.String.GetHashCode/CS/perdomain.cs#2)]
  [!code-vb[System.String.GetHashCode#2](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.GetHashCode/VB/perdomain.vb#2)]  
   
- Lorsque vous exécutez l'exemple sans fournir un fichier de configuration, il affiche une sortie similaire à la suivante.  Notez que les codes de hachage pour la chaîne sont identiques dans les deux domaines d'application.  
+ <span data-ttu-id="a0ded-142">Lorsque vous exécutez l’exemple sans fournir un fichier de configuration, il affiche une sortie similaire à ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="a0ded-142">When you run the example without supplying a configuration file, it displays output similar to the following.</span></span> <span data-ttu-id="a0ded-143">Notez que les codes de hachage pour la chaîne sont identiques dans les deux domaines d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-143">Note that the hash codes for the string are identical in the two application domains.</span></span>  
   
 ```  
-  
 String 'This is a string.' in domain 'PerDomain.exe': 941BCEAC  
 String 'This is a string.' in domain 'NewDomain': 941BCEAC  
-  
 ```  
   
- Toutefois, si vous ajoutez le fichier de configuration suivant au répertoire de l'exemple, puis exécutez l'exemple, les codes de hachage pour la même chaîne diffèrent par domaine d'application.  
+ <span data-ttu-id="a0ded-144">Toutefois, si vous ajoutez le fichier de configuration suivant au répertoire de l’exemple et exécutez l’exemple, les codes de hachage pour la même chaîne diffèrent par domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="a0ded-144">However, if you add the following configuration file to the example's directory and then run the example, the hash codes for the same string will differ by application domain.</span></span>  
   
-```  
-  
+```xml  
 <?xml version ="1.0"?>  
 <configuration>  
    <runtime>  
       <UseRandomizedStringHashAlgorithm enabled="1" />  
    </runtime>  
 </configuration>  
-  
 ```  
   
- Lorsque le fichier de configuration est présent, l'exemple affiche la sortie suivante :  
+ <span data-ttu-id="a0ded-145">Lorsque le fichier de configuration est présent, l’exemple affiche la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="a0ded-145">When the configuration file is present, the example displays the following output:</span></span>  
   
 ```  
-  
 String 'This is a string.' in domain 'PerDomain.exe': 5435776D  
 String 'This is a string.' in domain 'NewDomain': 75CC8236  
-  
 ```  
   
-## Voir aussi  
- <xref:System.StringComparer.GetHashCode%2A?displayProperty=fullName>   
- <xref:System.String.GetHashCode%2A?displayProperty=fullName>   
- <xref:System.Object.GetHashCode%2A?displayProperty=fullName>
+## <a name="see-also"></a><span data-ttu-id="a0ded-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a0ded-146">See Also</span></span>  
+ <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType>  
+ <xref:System.String.GetHashCode%2A?displayProperty=nameWithType>  
+ <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>

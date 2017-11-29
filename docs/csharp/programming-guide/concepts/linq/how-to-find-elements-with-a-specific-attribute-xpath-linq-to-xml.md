@@ -1,35 +1,31 @@
 ---
 title: "Guide pratique pour rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: daed00dd-923a-43be-8a90-eee406f6f574
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 66053135dbfdf6f61ff1f09b846acd9d9cfe054f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fec0b9a4dc5cee0f10f1675f1b8b281c40be7f21
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)
-Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique. Vous ne vous souciez pas du contenu de l'attribut. Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.  
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a><span data-ttu-id="1ae2f-102">Guide pratique pour rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="1ae2f-102">How to: Find Elements with a Specific Attribute (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="1ae2f-103">Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique.</span><span class="sxs-lookup"><span data-stu-id="1ae2f-103">Sometimes you want to find all elements that have a specific attribute.</span></span> <span data-ttu-id="1ae2f-104">Vous ne vous souciez pas du contenu de l'attribut.</span><span class="sxs-lookup"><span data-stu-id="1ae2f-104">You are not concerned about the contents of the attribute.</span></span> <span data-ttu-id="1ae2f-105">Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.</span><span class="sxs-lookup"><span data-stu-id="1ae2f-105">Instead, you want to select based on the existence of the attribute.</span></span>  
   
- L’expression XPath est la suivante :  
+ <span data-ttu-id="1ae2f-106">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="1ae2f-106">The XPath expression is:</span></span>  
   
  `./*[@Select]`  
   
-## <a name="example"></a>Exemple  
- Le code suivant sélectionne simplement les éléments qui ont l'attribut `Select`.  
+## <a name="example"></a><span data-ttu-id="1ae2f-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="1ae2f-107">Example</span></span>  
+ <span data-ttu-id="1ae2f-108">Le code suivant sélectionne simplement les éléments qui ont l'attribut `Select`.</span><span class="sxs-lookup"><span data-stu-id="1ae2f-108">The following code selects just the elements that have the `Select` attribute.</span></span>  
   
 ```csharp  
 XElement doc = XElement.Parse(  
@@ -60,7 +56,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="1ae2f-109">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="1ae2f-109">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -68,6 +64,5 @@ Results are identical
 <Child4 Select="true">4</Child4>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
-
+## <a name="see-also"></a><span data-ttu-id="1ae2f-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1ae2f-110">See Also</span></span>  
+ [<span data-ttu-id="1ae2f-111">LINQ to XML pour les utilisateurs XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="1ae2f-111">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

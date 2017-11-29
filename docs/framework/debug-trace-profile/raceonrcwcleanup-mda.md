@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - RCW
 - managed debugging assistants (MDAs), RCWs
@@ -22,36 +16,35 @@ helpviewer_keywords:
 - RaceOnRCWCleanup MDA
 - runtime callable wrappers
 ms.assetid: bee1e9b1-50a8-4c89-9cd9-7dd6b2458187
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 16635cd31fcae0005e77d9d55ecf391bc0d79a75
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 055ca5a85ca37401107b5cef8f6ff55237c3320b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="raceonrcwcleanup-mda"></a>Assistant Débogage managé raceOnRCWCleanup
-L’Assistant Débogage managé (MDA) `raceOnRCWCleanup` est activé quand le Common Language Runtime (CLR) détecte qu’un [wrapper RCW](../../../docs/framework/interop/runtime-callable-wrapper.md) est en cours d’utilisation au moment où un appel visant à le libérer est effectué à l’aide d’une commande telle que la méthode <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=fullName>.  
+# <a name="raceonrcwcleanup-mda"></a><span data-ttu-id="45ca9-102">Assistant Débogage managé raceOnRCWCleanup</span><span class="sxs-lookup"><span data-stu-id="45ca9-102">raceOnRCWCleanup MDA</span></span>
+<span data-ttu-id="45ca9-103">L’Assistant Débogage managé (MDA) `raceOnRCWCleanup` est activé quand le Common Language Runtime (CLR) détecte qu’un [wrapper RCW](../../../docs/framework/interop/runtime-callable-wrapper.md) est en cours d’utilisation au moment où un appel visant à le libérer est effectué à l’aide d’une commande telle que la méthode <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="45ca9-103">The `raceOnRCWCleanup` managed debugging assistant (MDA) is activated when the common language runtime (CLR) detects that a [Runtime Callable Wrapper](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) is in use when a call to release it is made using a command such as the <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType> method.</span></span>  
   
-## <a name="symptoms"></a>Symptômes  
- Violations d'accès ou altération de la mémoire pendant ou après la libération d'un RCW à l'aide de <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> ou d'une méthode similaire.  
+## <a name="symptoms"></a><span data-ttu-id="45ca9-104">Symptômes</span><span class="sxs-lookup"><span data-stu-id="45ca9-104">Symptoms</span></span>  
+ <span data-ttu-id="45ca9-105">Violations d'accès ou altération de la mémoire pendant ou après la libération d'un RCW à l'aide de <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> ou d'une méthode similaire.</span><span class="sxs-lookup"><span data-stu-id="45ca9-105">Access violations or memory corruption during or after freeing an RCW using <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> or a similar method.</span></span>  
   
-## <a name="cause"></a>Cause  
- Le RCW est en cours d'utilisation sur un autre thread ou sur la pile des threads de libération,  et ne peut donc pas être libéré.  
+## <a name="cause"></a><span data-ttu-id="45ca9-106">Cause</span><span class="sxs-lookup"><span data-stu-id="45ca9-106">Cause</span></span>  
+ <span data-ttu-id="45ca9-107">Le RCW est en cours d'utilisation sur un autre thread ou sur la pile des threads de libération,</span><span class="sxs-lookup"><span data-stu-id="45ca9-107">The RCW is in use on another thread or on the freeing thread stack.</span></span>  <span data-ttu-id="45ca9-108">et ne peut donc pas être libéré.</span><span class="sxs-lookup"><span data-stu-id="45ca9-108">An RCW that is in use cannot be released.</span></span>  
   
-## <a name="resolution"></a>Résolution  
- Ne libérez pas un RCW qui pourrait être utilisé dans le thread actuel ou dans d'autres threads.  
+## <a name="resolution"></a><span data-ttu-id="45ca9-109">Résolution</span><span class="sxs-lookup"><span data-stu-id="45ca9-109">Resolution</span></span>  
+ <span data-ttu-id="45ca9-110">Ne libérez pas un RCW qui pourrait être utilisé dans le thread actuel ou dans d'autres threads.</span><span class="sxs-lookup"><span data-stu-id="45ca9-110">Do not free an RCW that could be in use either in the current or in other threads.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
- Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="45ca9-111">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="45ca9-111">Effect on the Runtime</span></span>  
+ <span data-ttu-id="45ca9-112">Cet Assistant Débogage managé n'a aucun effet sur le CLR.</span><span class="sxs-lookup"><span data-stu-id="45ca9-112">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a>Sortie  
- Message décrivant l'erreur.  
+## <a name="output"></a><span data-ttu-id="45ca9-113">Sortie</span><span class="sxs-lookup"><span data-stu-id="45ca9-113">Output</span></span>  
+ <span data-ttu-id="45ca9-114">Message décrivant l'erreur.</span><span class="sxs-lookup"><span data-stu-id="45ca9-114">A message describing the error.</span></span>  
   
-## <a name="configuration"></a>Configuration  
+## <a name="configuration"></a><span data-ttu-id="45ca9-115">Configuration</span><span class="sxs-lookup"><span data-stu-id="45ca9-115">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -61,8 +54,7 @@ L’Assistant Débogage managé (MDA) `raceOnRCWCleanup` est activé quand le Co
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-
+## <a name="see-also"></a><span data-ttu-id="45ca9-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="45ca9-116">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [<span data-ttu-id="45ca9-117">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="45ca9-117">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [<span data-ttu-id="45ca9-118">Marshaling d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="45ca9-118">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)

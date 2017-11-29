@@ -1,81 +1,79 @@
 ---
-title: "&#201;l&#233;ment &lt;disableCommitThreadStack&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCommitThreadStack"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCommitThreadStack"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<disableCommitThreadStack> (élément)"
-  - "disableCommitThreadStack (élément)"
+title: "&lt;disableCommitThreadStack&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCommitThreadStack
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCommitThreadStack
+helpviewer_keywords:
+- <disableCommitThreadStack> element
+- disableCommitThreadStack element
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 8d74566b71501cf21081ac894048bb1c29e0ad94
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &#201;l&#233;ment &lt;disableCommitThreadStack&gt;
-Spécifie si la pile des threads complète est validée quand un thread est démarré.  
+# <a name="ltdisablecommitthreadstackgt-element"></a><span data-ttu-id="cb0dd-102">&lt;disableCommitThreadStack&gt; élément</span><span class="sxs-lookup"><span data-stu-id="cb0dd-102">&lt;disableCommitThreadStack&gt; Element</span></span>
+<span data-ttu-id="cb0dd-103">Spécifie si la pile des threads complète est validée quand un thread est démarré.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-103">Specifies whether the full thread stack is committed when a thread is started.</span></span>  
   
- \<configuration\>  
-\<runtime\>  
-\<disableCommitThreadStack\>  
+ <span data-ttu-id="cb0dd-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="cb0dd-104">\<configuration></span></span>  
+<span data-ttu-id="cb0dd-105">\<runtime ></span><span class="sxs-lookup"><span data-stu-id="cb0dd-105">\<runtime></span></span>  
+<span data-ttu-id="cb0dd-106">\<disableCommitThreadStack ></span><span class="sxs-lookup"><span data-stu-id="cb0dd-106">\<disableCommitThreadStack></span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="cb0dd-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cb0dd-107">Syntax</span></span>  
   
-```  
+```xml  
 <disableCommitThreadStack enabled="0|1"/>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="cb0dd-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="cb0dd-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="cb0dd-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="cb0dd-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="cb0dd-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|enabled|Attribut requis.<br /><br /> Spécifie si la validation de la pile des threads complète lors du démarrage de thread \(comportement par défaut\) est désactivée.|  
+|<span data-ttu-id="cb0dd-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="cb0dd-111">Attribute</span></span>|<span data-ttu-id="cb0dd-112">Description</span><span class="sxs-lookup"><span data-stu-id="cb0dd-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="cb0dd-113">enabled</span><span class="sxs-lookup"><span data-stu-id="cb0dd-113">enabled</span></span>|<span data-ttu-id="cb0dd-114">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="cb0dd-115">Spécifie si la validation de la pile des threads complète lors du démarrage de thread (comportement par défaut) est désactivée.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-115">Specifies whether committing the full thread stack on thread startup (the default behavior) is disabled.</span></span>|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a><span data-ttu-id="cb0dd-116">Attribut enabled</span><span class="sxs-lookup"><span data-stu-id="cb0dd-116">enabled Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|0|Ne pas désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
-|1|Désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
+|<span data-ttu-id="cb0dd-117">Valeur</span><span class="sxs-lookup"><span data-stu-id="cb0dd-117">Value</span></span>|<span data-ttu-id="cb0dd-118">Description</span><span class="sxs-lookup"><span data-stu-id="cb0dd-118">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="cb0dd-119">0</span><span class="sxs-lookup"><span data-stu-id="cb0dd-119">0</span></span>|<span data-ttu-id="cb0dd-120">Ne pas désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-120">Do not disable the default behavior of the common language runtime, which is to commit the full thread stack when a thread is started.</span></span>|  
+|<span data-ttu-id="cb0dd-121">1</span><span class="sxs-lookup"><span data-stu-id="cb0dd-121">1</span></span>|<span data-ttu-id="cb0dd-122">Désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-122">Disable the default behavior of the common language runtime, which is to commit the full thread stack when a thread is started.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="cb0dd-123">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="cb0dd-123">Child Elements</span></span>  
+ <span data-ttu-id="cb0dd-124">Aucun.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-124">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="cb0dd-125">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="cb0dd-125">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="cb0dd-126">Élément</span><span class="sxs-lookup"><span data-stu-id="cb0dd-126">Element</span></span>|<span data-ttu-id="cb0dd-127">Description</span><span class="sxs-lookup"><span data-stu-id="cb0dd-127">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)].|  
-|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
+|`configuration`|<span data-ttu-id="cb0dd-128">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="cb0dd-128">The root element in every configuration file used by the common language runtime and [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] applications.</span></span>|  
+|`runtime`|<span data-ttu-id="cb0dd-129">Contient des informations sur les liaisons d’assembly et l’opération garbage collection.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-129">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## Notes  
- Le comportement par défaut du Common Language Runtime consiste à valider la pile des threads complète quand un thread est démarré. Si un grand nombre de threads doivent être créés sur un serveur disposant d’une mémoire limitée, et que la plupart de ces threads utilisent très peu d’espace de pile, les performances du serveur peuvent être améliorées si le Common Language Runtime ne valide pas la pile des threads complète immédiatement quand un thread est démarré.  
+## <a name="remarks"></a><span data-ttu-id="cb0dd-130">Remarques</span><span class="sxs-lookup"><span data-stu-id="cb0dd-130">Remarks</span></span>  
+ <span data-ttu-id="cb0dd-131">Le comportement par défaut du Common Language Runtime consiste à valider la pile des threads complète quand un thread est démarré.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-131">The default behavior of the common language runtime is to commit the full thread stack when a thread is started.</span></span> <span data-ttu-id="cb0dd-132">Si un grand nombre de threads doivent être créés sur un serveur disposant d’une mémoire limitée, et que la plupart de ces threads utilisent très peu d’espace de pile, les performances du serveur peuvent être améliorées si le Common Language Runtime ne valide pas la pile des threads complète immédiatement quand un thread est démarré.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-132">If a large number of threads must be created on a server that has limited memory, and most of those threads will use very little stack space, the server might perform better if the common language runtime does not commit the full thread stack immediately when a thread is started.</span></span>  
   
 > [!NOTE]
->  Les hôtes non managés peuvent utiliser l’indicateur de démarrage `STARTUP_DISABLE_COMMITTHREADSTACK` dans l’énumération [STARTUP\_FLAGS](../../../../../ocs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) pour obtenir le même résultat.  
+>  <span data-ttu-id="cb0dd-133">Les hôtes non managés peuvent utiliser l’indicateur de démarrage `STARTUP_DISABLE_COMMITTHREADSTACK` dans l’énumération [STARTUP_FLAGS](../../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) pour obtenir le même résultat.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-133">Unmanaged hosts can use the `STARTUP_DISABLE_COMMITTHREADSTACK` startup flag in the [STARTUP_FLAGS](../../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) enumeration to accomplish the same result.</span></span>  
   
-## Exemple  
- L’exemple suivant montre comment désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète lors du démarrage d’un thread.  
+## <a name="example"></a><span data-ttu-id="cb0dd-134">Exemple</span><span class="sxs-lookup"><span data-stu-id="cb0dd-134">Example</span></span>  
+ <span data-ttu-id="cb0dd-135">L’exemple suivant montre comment désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète lors du démarrage d’un thread.</span><span class="sxs-lookup"><span data-stu-id="cb0dd-135">The following example shows how to disable the default behavior of the common language runtime, which is to commit the full thread stack on thread startup.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <disableCommitThreadStack enabled="1" />  
@@ -83,6 +81,6 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+## <a name="see-also"></a><span data-ttu-id="cb0dd-136">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cb0dd-136">See Also</span></span>  
+ [<span data-ttu-id="cb0dd-137">Schéma des paramètres d’exécution</span><span class="sxs-lookup"><span data-stu-id="cb0dd-137">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="cb0dd-138">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="cb0dd-138">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)

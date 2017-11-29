@@ -1,84 +1,91 @@
 ---
-title: "&lt;federationConfiguration&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;federationConfiguration&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
-caps.latest.revision: 9
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 9abe07c065dbea67c5ebc4a4490d9f88258130c8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;federationConfiguration&gt;
-Configure la <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> \(WSFAM\) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> \(SAM\) lorsque vous utilisez fédérés d'authentification via le protocole WS\-Federation.  Configure la <xref:System.Security.Claims.ClaimsAuthorizationManager> lors de l'utilisation du <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> ou le <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> classe pour fournir un contrôle d'accès basé sur les revendications.  
+# <a name="ltfederationconfigurationgt"></a><span data-ttu-id="31355-102">&lt;federationConfiguration&gt;</span><span class="sxs-lookup"><span data-stu-id="31355-102">&lt;federationConfiguration&gt;</span></span>
+<span data-ttu-id="31355-103">Configure le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) lors de l’utilisation fédéré d’authentification via le protocole WS-Federation.</span><span class="sxs-lookup"><span data-stu-id="31355-103">Configures the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) and the <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) when using federated authentication through the WS-Federation protocol.</span></span> <span data-ttu-id="31355-104">Configure le <xref:System.Security.Claims.ClaimsAuthorizationManager> lorsque vous utilisez la <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> ou <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> classe pour fournir un contrôle d’accès basé sur les revendications.</span><span class="sxs-lookup"><span data-stu-id="31355-104">Configures the <xref:System.Security.Claims.ClaimsAuthorizationManager> when using the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> or the <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> class to provide claims-based access control.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="31355-105">\<system.identityModel.services ></span><span class="sxs-lookup"><span data-stu-id="31355-105">\<system.identityModel.services></span></span>  
+<span data-ttu-id="31355-106">\<federationConfiguration ></span><span class="sxs-lookup"><span data-stu-id="31355-106">\<federationConfiguration></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="31355-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="31355-107">Syntax</span></span>  
+  
+```xml  
 <system.identityModel.services>  
-  <federationConfiguration name=xs:string identityConfigurationName=xs:string>  
-  </federationConfiguration>  
+  <federationConfiguration name=xs:string identityConfigurationName=xs:string>  
+  </federationConfiguration>  
 </system.identityModel.services>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="31355-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="31355-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="31355-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="31355-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="31355-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="31355-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|name|Le nom de cet élément de configuration de fédération.  Cet attribut fournit principalement un point d'extensibilité pour les protocoles à venir.  Facultatif.|  
-|identityConfigurationName|Le nom de la section de configuration d'identité comme spécifié dans une [\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) élément à utiliser.  Si cet attribut n'est pas spécifié, la section de configuration de l'identité par défaut est utilisée.  Facultatif.|  
+|<span data-ttu-id="31355-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="31355-111">Attribute</span></span>|<span data-ttu-id="31355-112">Description</span><span class="sxs-lookup"><span data-stu-id="31355-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="31355-113">name</span><span class="sxs-lookup"><span data-stu-id="31355-113">name</span></span>|<span data-ttu-id="31355-114">Le nom de cet élément de configuration de fédération.</span><span class="sxs-lookup"><span data-stu-id="31355-114">The name of this federation configuration element.</span></span> <span data-ttu-id="31355-115">Cet attribut fournit principalement un point d’extensibilité pour les protocoles à venir.</span><span class="sxs-lookup"><span data-stu-id="31355-115">This attribute primarily provides an extensibility point for future protocols.</span></span> <span data-ttu-id="31355-116">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="31355-116">Optional.</span></span>|  
+|<span data-ttu-id="31355-117">identityConfigurationName</span><span class="sxs-lookup"><span data-stu-id="31355-117">identityConfigurationName</span></span>|<span data-ttu-id="31355-118">Le nom de la section de configuration d’identité tel que spécifié dans un [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) élément à utiliser.</span><span class="sxs-lookup"><span data-stu-id="31355-118">The name of the identity configuration section as specified in an [\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) element to use.</span></span> <span data-ttu-id="31355-119">Si cet attribut n’est pas spécifié, la section de configuration d’identité par défaut est utilisée.</span><span class="sxs-lookup"><span data-stu-id="31355-119">If this attribute is not specified, the default identity configuration section is used.</span></span> <span data-ttu-id="31355-120">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="31355-120">Optional.</span></span>|  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="31355-121">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="31355-121">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="31355-122">Élément</span><span class="sxs-lookup"><span data-stu-id="31355-122">Element</span></span>|<span data-ttu-id="31355-123">Description</span><span class="sxs-lookup"><span data-stu-id="31355-123">Description</span></span>|  
 |-------------|-----------------|  
-|[\<cookieHandler\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|Configure le Gestionnaire de cookie utilisé par le SAM.  Facultatif.|  
-|[\<serviceCertificate\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|Configure le certificat qui est utilisé pour crypter et décrypter les jetons.  Facultatif.|  
-|[\<wsFederation\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|Configure le Module d'authentification de WS\-Federation \(WSFAM\).  Facultatif.|  
+|[<span data-ttu-id="31355-124">\<cookieHandler ></span><span class="sxs-lookup"><span data-stu-id="31355-124">\<cookieHandler></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|<span data-ttu-id="31355-125">Configure le Gestionnaire de cookie utilisé par le SAM.</span><span class="sxs-lookup"><span data-stu-id="31355-125">Configures the cookie handler used by the SAM.</span></span> <span data-ttu-id="31355-126">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="31355-126">Optional.</span></span>|  
+|[<span data-ttu-id="31355-127">\<serviceCertificate ></span><span class="sxs-lookup"><span data-stu-id="31355-127">\<serviceCertificate></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|<span data-ttu-id="31355-128">Configure le certificat qui est utilisé pour chiffrer et déchiffrer les jetons.</span><span class="sxs-lookup"><span data-stu-id="31355-128">Configures the certificate that is used to encrypt and decrypt tokens.</span></span> <span data-ttu-id="31355-129">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="31355-129">Optional.</span></span>|  
+|[<span data-ttu-id="31355-130">\<wsFederation ></span><span class="sxs-lookup"><span data-stu-id="31355-130">\<wsFederation></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|<span data-ttu-id="31355-131">Configure le Module d’authentification WS-Federation (WSFAM).</span><span class="sxs-lookup"><span data-stu-id="31355-131">Configures the WS-Federation Authentication Module (WSFAM).</span></span> <span data-ttu-id="31355-132">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="31355-132">Optional.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="31355-133">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="31355-133">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="31355-134">Élément</span><span class="sxs-lookup"><span data-stu-id="31355-134">Element</span></span>|<span data-ttu-id="31355-135">Description</span><span class="sxs-lookup"><span data-stu-id="31355-135">Description</span></span>|  
 |-------------|-----------------|  
-|[\<system.identityModel.services\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)|Section de configuration pour l'authentification à l'aide du protocole WS\-Federation.|  
+|[<span data-ttu-id="31355-136">\<system.identityModel.services></span><span class="sxs-lookup"><span data-stu-id="31355-136">\<system.identityModel.services></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)|<span data-ttu-id="31355-137">Section de configuration pour l’authentification à l’aide du protocole WS-Federation.</span><span class="sxs-lookup"><span data-stu-id="31355-137">Configuration section for authentication using the WS-Federation protocol.</span></span>|  
   
-## Notes  
- Le \<federationConfiguration\> élément fournit différents paramètres dans deux scénarios différents :  
+## <a name="remarks"></a><span data-ttu-id="31355-138">Remarques</span><span class="sxs-lookup"><span data-stu-id="31355-138">Remarks</span></span>  
+ <span data-ttu-id="31355-139">Le \<federationConfiguration > élément fournit des paramètres dans deux scénarios différents :</span><span class="sxs-lookup"><span data-stu-id="31355-139">The \<federationConfiguration> element provides settings in two different scenarios:</span></span>  
   
--   Lors de l'utilisation de WS\-Federation dans une application Web passive, l'élément contient des paramètres qui configurent le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> \(WSFAM\) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> \(SAM\).  Il fait référence également à la configuration de l'identité à utiliser pour configurer les gestionnaires de jeton de sécurité et des certificats et des composants tels que le Gestionnaire d'autorisations de créances et du Gestionnaire d'authentification de revendications.  
+-   <span data-ttu-id="31355-140">Lorsque vous utilisez WS-Federation dans une application Web passive, l’élément contient des paramètres permettant de configurer le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).</span><span class="sxs-lookup"><span data-stu-id="31355-140">When using WS-Federation in a passive Web application, the element contains settings that configure the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) and the <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).</span></span> <span data-ttu-id="31355-141">Il fait également référence à la configuration de l’identité à utiliser pour configurer les gestionnaires de jetons de sécurité et des certificats et des composants tels que le Gestionnaire d’autorisations de revendications et le Gestionnaire d’authentification de revendications.</span><span class="sxs-lookup"><span data-stu-id="31355-141">It also references the identity configuration to be used to configure security token handlers and certificates, and components like the claims authorization manager and the claims authentication manager.</span></span>  
   
--   Lorsque vous utilisez le <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> ou le <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> de classe pour fournir un contrôle d'accès basé sur les revendications dans votre code, l'élément fait référence à la configuration de l'identité qui configure le Gestionnaire de demandes d'autorisations et la stratégie qui est utilisé pour prendre des décisions d'autorisation.  Ceci est vrai même dans les scénarios qui ne sont pas les scénarios Web passifs ; par exemple, les applications Windows Communication Foundation \(WCF\) ou une application qui n'est pas basé sur le Web.  Si l'application n'est pas une application Web passive, la [\<claimsAuthorizationManager\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) élément \(et ses éléments de stratégie enfant, le cas échéant\) de la configuration de l'identité référencée par la `<federationConfiguration>` élément sont les seuls paramètres appliqués.  Tous les autres sont ignorés.  
+-   <span data-ttu-id="31355-142">Lorsque vous utilisez la <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> ou le <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> de classe pour fournir un contrôle d’accès basé sur les revendications dans votre code, l’élément fait référence à la configuration qui configure la stratégie qui est utilisé pour rendre l’autorisation et le Gestionnaire d’autorisations de revendications d’identité décisions.</span><span class="sxs-lookup"><span data-stu-id="31355-142">When using the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> or the <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> class to provide claims-based access control in your code, the element references the identity configuration that configures the claims authorization manager and policy that is used to make authorization decisions.</span></span> <span data-ttu-id="31355-143">Cela est vrai, même dans les scénarios qui ne sont pas des scénarios Web passifs. par exemple, les applications Windows Communication Foundation (WCF) ou une application qui n’est pas basée sur le Web.</span><span class="sxs-lookup"><span data-stu-id="31355-143">This is true, even in scenarios that are not passive Web scenarios; for example, Windows Communication Foundation (WCF) applications or an application that is not Web-based.</span></span> <span data-ttu-id="31355-144">Si l’application n’est pas une application Web passive, le [ \<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) élément (et ses éléments de stratégie enfants, le cas échéant) de la configuration de l’identité référencée par la `<federationConfiguration>` élément les seuls paramètres sont appliqués.</span><span class="sxs-lookup"><span data-stu-id="31355-144">If the application is not a passive Web application, the [\<claimsAuthorizationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) element (and its child policy elements, if present) of the identity configuration referenced by the `<federationConfiguration>` element are the only settings applied.</span></span> <span data-ttu-id="31355-145">Tous les autres sont ignorés.</span><span class="sxs-lookup"><span data-stu-id="31355-145">All others are ignored.</span></span>  
   
- Indépendamment du scénario, le runtime charge la configuration par défaut de la fédération.  Le comportement est défini comme suit :  
+ <span data-ttu-id="31355-146">Quel que soit le scénario, le runtime charge la configuration de la fédération par défaut.</span><span class="sxs-lookup"><span data-stu-id="31355-146">Regardless of the scenario, the runtime loads the default federation configuration.</span></span> <span data-ttu-id="31355-147">Le comportement est défini comme suit :</span><span class="sxs-lookup"><span data-stu-id="31355-147">The behavior is defined as follows:</span></span>  
   
-1.  S'il y a aucun `<federationConfiguration>` élément présent, le runtime crée une configuration de la fédération et le remplit avec les valeurs par défaut.  Cette configuration par défaut de la fédération fera référence à la configuration d'identité par défaut.  
+1.  <span data-ttu-id="31355-148">S’il existe aucune `<federationConfiguration>` élément présent, le runtime crée une configuration de la fédération et la remplit avec les valeurs par défaut.</span><span class="sxs-lookup"><span data-stu-id="31355-148">If there is no `<federationConfiguration>` element present, the runtime creates a federation configuration and populates it with default values.</span></span> <span data-ttu-id="31355-149">Cette configuration de la fédération par défaut fait référence à la configuration d’identité par défaut.</span><span class="sxs-lookup"><span data-stu-id="31355-149">This default federation configuration will reference the default identity configuration.</span></span>  
   
-2.  Si un seul `<federationConfiguration>` élément est présent, c'est la configuration de la fédération par défaut indépendamment de si elle est nommée ou sans nom.  Si sa `identityConfiguration` attribut est spécifié, la configuration de l'identité nommée est référencée ; dans le cas contraire, la configuration d'identité par défaut est référencée.  
+2.  <span data-ttu-id="31355-150">Si un seul `<federationConfiguration>` élément est présent, il s’agit de la configuration de la fédération par défaut qu’il soit nommé ou sans nom.</span><span class="sxs-lookup"><span data-stu-id="31355-150">If a single `<federationConfiguration>` element is present, it is the default federation configuration regardless of whether it is named or unnamed.</span></span> <span data-ttu-id="31355-151">Si son `identityConfiguration` attribut est spécifié, la configuration d’identité nommée est référencée ; sinon, la configuration d’identité par défaut est référencée.</span><span class="sxs-lookup"><span data-stu-id="31355-151">If its `identityConfiguration` attribute is specified, the named identity configuration is referenced; otherwise, the default identity configuration is referenced.</span></span>  
   
-3.  Si un sans nom `<federationConfiguration>` élément est présent, c'est la configuration par défaut de la fédération.  Si sa `identityConfiguration` attribut est spécifié, la configuration de l'identité nommée est référencée ; dans le cas contraire, la configuration d'identité par défaut est référencée.  
+3.  <span data-ttu-id="31355-152">Si elle est sans nom `<federationConfiguration>` élément est présent, il s’agit de la configuration de la fédération par défaut.</span><span class="sxs-lookup"><span data-stu-id="31355-152">If an unnamed `<federationConfiguration>` element is present, it is the default federation configuration.</span></span> <span data-ttu-id="31355-153">Si son `identityConfiguration` attribut est spécifié, la configuration d’identité nommée est référencée ; sinon, la configuration d’identité par défaut est référencée.</span><span class="sxs-lookup"><span data-stu-id="31355-153">If its `identityConfiguration` attribute is specified, the named identity configuration is referenced; otherwise, the default identity configuration is referenced.</span></span>  
   
-4.  Si plusieurs nommé `<federationConfiguration>` éléments sont présents et non sans nom `<federationConfiguration>` élément est présent, une exception est levée.  
+4.  <span data-ttu-id="31355-154">Si plusieurs nommé `<federationConfiguration>` éléments sont présents et sans aucun nom `<federationConfiguration>` élément est présent, une exception est levée.</span><span class="sxs-lookup"><span data-stu-id="31355-154">If multiple named `<federationConfiguration>` elements are present and no unnamed `<federationConfiguration>` element is present, an exception is thrown.</span></span>  
   
- En règle générale, un seul `<federationConfiguration>` section est définie.  Cette section est la configuration par défaut de la fédération.  Vous pouvez spécifier plusieurs, nommé de manière unique `<federationConfiguration>` éléments ; Toutefois, dans ce cas, si vous souhaitez charger une configuration autre que celui sans nom de la fédération, vous devez fournir un gestionnaire pour le.  <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>événements et définir les <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=fullName> propriété dans le Gestionnaire d'un <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objet initialisé avec les valeurs appropriées de `<federationConfiguration>` élément dans le fichier de configuration.  
+ <span data-ttu-id="31355-155">En règle générale, un seul `<federationConfiguration>` section est définie.</span><span class="sxs-lookup"><span data-stu-id="31355-155">Typically, only a single `<federationConfiguration>` section is defined.</span></span> <span data-ttu-id="31355-156">Cette section est la configuration de la fédération par défaut.</span><span class="sxs-lookup"><span data-stu-id="31355-156">This section is the default federation configuration.</span></span> <span data-ttu-id="31355-157">Vous pouvez spécifier plusieurs nommés de manière unique `<federationConfiguration>` éléments ; Toutefois, dans ce cas, si vous souhaitez charger une configuration de la fédération autre que celui sans nom, vous devez fournir un gestionnaire pour le.</span><span class="sxs-lookup"><span data-stu-id="31355-157">You may specify multiple, uniquely-named `<federationConfiguration>` elements; however, in this case, if you want to load a federation configuration other than the unnamed one, you must provide a handler for the.</span></span> <span data-ttu-id="31355-158"><xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>événement et définissez la <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> propriété dans le gestionnaire pour un <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objet initialisé avec les valeurs de la `<federationConfiguration>` élément dans le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="31355-158"><xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated> event and set the <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> property inside the handler to a <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> object initialized with values from the appropriate `<federationConfiguration>` element in the configuration file.</span></span>  
   
- Le `<federationConfiguration>` élément est représenté par la <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement> classe.  L'objet de configuration est représenté par la <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> classe.  Un seul <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> instance est définie sur le <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=fullName> propriété et fournit la configuration fédérée pour l'application.  
+ <span data-ttu-id="31355-159">Le `<federationConfiguration>` élément est représenté par la <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement> classe.</span><span class="sxs-lookup"><span data-stu-id="31355-159">The `<federationConfiguration>` element is represented by the <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement> class.</span></span> <span data-ttu-id="31355-160">L’objet de configuration lui-même est représenté par la <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> classe.</span><span class="sxs-lookup"><span data-stu-id="31355-160">The configuration object itself is represented by the <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> class.</span></span> <span data-ttu-id="31355-161">Un seul <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> instance est définie sur le <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> propriété et fournit une configuration fédérée pour l’application.</span><span class="sxs-lookup"><span data-stu-id="31355-161">A single <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> instance is set on the <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> property and provides federated configuration for the application.</span></span>  
   
-## Exemple  
- Le XML suivant un `<federationConfiguration>` élément qui spécifie les paramètres pour la WSFAM et spécifie que le Gestionnaire de cookie par défaut \(une instance de la <xref:System.IdentityModel.Services.ChunkedCookieHandler> classe\) être utilisé par le SAM.  
+## <a name="example"></a><span data-ttu-id="31355-162">Exemple</span><span class="sxs-lookup"><span data-stu-id="31355-162">Example</span></span>  
+ <span data-ttu-id="31355-163">Le code XML suivant montre un `<federationConfiguration>` élément qui spécifie les paramètres pour la WSFAM et spécifie que le Gestionnaire de cookie par défaut (une instance de la <xref:System.IdentityModel.Services.ChunkedCookieHandler> classe) est utilisé par le SAM.</span><span class="sxs-lookup"><span data-stu-id="31355-163">The following XML shows a `<federationConfiguration>` element that specifies settings for the WSFAM and specifies that the default cookie handler (an instance of the <xref:System.IdentityModel.Services.ChunkedCookieHandler> class) be used by the SAM.</span></span>  
   
 > [!WARNING]
->  Dans cet exemple, WSFAM ni le Gestionnaire de cookies sont requis pour utiliser le protocole HTTPS.  C'est parce que le `requireHttps` d'attribut sur le `<wsFederation>` élément et le `requireSsl` d'attribut sur le `<cookieHandlerElement>` sont `false`.  Ces paramètres ne sont pas recommandés pour la plupart des environnements de production car ils pourraient présenter un risque de sécurité.  
+>  <span data-ttu-id="31355-164">Dans cet exemple, ni le Gestionnaire de cookie ni WSFAM sont requis pour utiliser HTTPS.</span><span class="sxs-lookup"><span data-stu-id="31355-164">In this example, neither the cookie handler nor WSFAM are required to use HTTPS.</span></span> <span data-ttu-id="31355-165">C’est parce que le `requireHttps` de l’attribut le `<wsFederation>` élément et la `requireSsl` de l’attribut le `<cookieHandlerElement>` sont `false`.</span><span class="sxs-lookup"><span data-stu-id="31355-165">This is because the `requireHttps` attribute on the `<wsFederation>` element and the `requireSsl` attribute on the `<cookieHandlerElement>` are `false`.</span></span> <span data-ttu-id="31355-166">Ces paramètres ne sont pas recommandés pour la plupart des environnements de production car ils peuvent présenter un risque de sécurité.</span><span class="sxs-lookup"><span data-stu-id="31355-166">These settings are not recommended for most production environments as they may present a security risk.</span></span>  
   
-```  
+```xml  
 <system.identityModel.services>  
   <federationConfiguration>  
     <wsFederation passiveRedirectEnabled="true"   
@@ -93,8 +100,8 @@ Configure la <xref:System.IdentityModel.Services.WSFederationAuthenticationModul
 </system.identityModel.services>  
 ```  
   
-## Voir aussi  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>   
- <xref:System.IdentityModel.Services.SessionAuthenticationModule>   
- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=fullName>   
- [\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)
+## <a name="see-also"></a><span data-ttu-id="31355-167">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="31355-167">See Also</span></span>  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule>  
+ <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="31355-168">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="31355-168">\<identityConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)

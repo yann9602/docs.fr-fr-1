@@ -1,31 +1,34 @@
 ---
-title: "Donn&#233;es XML dans SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Données XML dans SQL Server"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9849d319-f518-4e3d-a7cd-f8fdcaaa1d4d
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e00fe409a9628d160700b5eed4dd0f57f8a1c3bf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Donn&#233;es XML dans SQL Server
-SQL Server expose la fonctionnalité de SQLXML à l'intérieur de .NET Framework.  Les développeurs peuvent écrire des applications qui accèdent à des données XML à partir d'une instance de SQL Server, importer les données dans l'environnement .NET Framework, traiter les données et renvoyer les mises à jour à SQL Server.  Les données XML peuvent être utilisées de plusieurs manières dans SQL Server, y compris pour le stockage de données et comme valeurs de paramètre pour l'extraction de données.  La classe **SQLXML** dans .NET Framework fournit la prise en charge côté client pour travailler avec des données stockées dans une colonne XML dans SQL Server.  Pour plus d'informations, consultez « classes managées SQLXML » dans la documentation en ligne de SQL Server.  
+# <a name="xml-data-in-sql-server"></a><span data-ttu-id="dcb79-102">Données XML dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="dcb79-102">XML Data in SQL Server</span></span>
+<span data-ttu-id="dcb79-103">SQL Server expose la fonctionnalité de SQLXML à l'intérieur de .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="dcb79-103">SQL Server exposes the functionality of SQLXML inside the .NET Framework.</span></span> <span data-ttu-id="dcb79-104">Les développeurs peuvent écrire des applications qui accèdent à des données XML à partir d'une instance de SQL Server, importer les données dans l'environnement .NET Framework, traiter les données et renvoyer les mises à jour à SQL Server.</span><span class="sxs-lookup"><span data-stu-id="dcb79-104">Developers can write applications that access XML data from an instance of SQL Server, bring the data into the .NET Framework environment, process the data, and send the updates back to SQL Server.</span></span> <span data-ttu-id="dcb79-105">Les données XML peuvent être utilisées de plusieurs manières dans SQL Server, y compris pour le stockage de données et comme valeurs de paramètre pour l'extraction de données.</span><span class="sxs-lookup"><span data-stu-id="dcb79-105">XML data can be used in several ways in SQL Server, including data storage, and as parameter values for retrieving data.</span></span> <span data-ttu-id="dcb79-106">Le **SqlXml** classe dans le .NET Framework fournit la prise en charge côté client pour l’utilisation des données stockées dans une colonne XML dans SQL Server.</span><span class="sxs-lookup"><span data-stu-id="dcb79-106">The **SqlXml** class in the .NET Framework provides the client-side support for working with data stored in an XML column within SQL Server.</span></span> <span data-ttu-id="dcb79-107">Pour plus d'informations, consultez « classes managées SQLXML » dans la documentation en ligne de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="dcb79-107">For more information, see "SQLXML Managed Classes" in SQL Server Books Online.</span></span>  
   
-## Dans cette section  
- [Valeurs de colonne XML SQL](../../../../../docs/framework/data/adonet/sql/sql-xml-column-values.md)  
- Montre comment extraire et utiliser des données XML extraites de SQL Server.  
+## <a name="in-this-section"></a><span data-ttu-id="dcb79-108">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="dcb79-108">In This Section</span></span>  
+ [<span data-ttu-id="dcb79-109">Valeurs de colonne XML SQL</span><span class="sxs-lookup"><span data-stu-id="dcb79-109">SQL XML Column Values</span></span>](../../../../../docs/framework/data/adonet/sql/sql-xml-column-values.md)  
+ <span data-ttu-id="dcb79-110">Montre comment extraire et utiliser des données XML extraites de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="dcb79-110">Demonstrates how to retrieve and work with XML data retrieved from SQL Server.</span></span>  
   
- [Spécification de valeurs XML comme paramètres](../../../../../docs/framework/data/adonet/sql/specifying-xml-values-as-parameters.md)  
- Montre comment passer des données XML sous la forme d'un paramètre à une commande.  
+ [<span data-ttu-id="dcb79-111">Spécification de valeurs XML en tant que paramètres</span><span class="sxs-lookup"><span data-stu-id="dcb79-111">Specifying XML Values as Parameters</span></span>](../../../../../docs/framework/data/adonet/sql/specifying-xml-values-as-parameters.md)  
+ <span data-ttu-id="dcb79-112">Montre comment passer des données XML sous la forme d'un paramètre à une commande.</span><span class="sxs-lookup"><span data-stu-id="dcb79-112">Demonstrates how to pass XML data as a parameter to a command.</span></span>  
   
-## Voir aussi  
- [SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="dcb79-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dcb79-113">See Also</span></span>  
+ [<span data-ttu-id="dcb79-114">SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="dcb79-114">SQL Server and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/index.md)  
+ [<span data-ttu-id="dcb79-115">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="dcb79-115">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

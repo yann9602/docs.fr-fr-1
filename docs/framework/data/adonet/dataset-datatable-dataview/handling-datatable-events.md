@@ -1,90 +1,96 @@
 ---
-title: "Gestion des &#233;v&#233;nements DataTable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Gestion des événements de DataTable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c67fe25e405b81b3e48aa861dc4d6af837835226
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Gestion des &#233;v&#233;nements DataTable
-L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant être traités par une application.  Le tableau ci\-dessous décrit les événements `DataTable`.  
+# <a name="handling-datatable-events"></a><span data-ttu-id="506a8-102">Gestion des événements de DataTable</span><span class="sxs-lookup"><span data-stu-id="506a8-102">Handling DataTable Events</span></span>
+<span data-ttu-id="506a8-103">L'objet <xref:System.Data.DataTable> fournit une série d'événements pouvant être traités par une application.</span><span class="sxs-lookup"><span data-stu-id="506a8-103">The <xref:System.Data.DataTable> object provides a series of events that can be processed by an application.</span></span> <span data-ttu-id="506a8-104">Le tableau ci-dessous décrit les événements `DataTable`.</span><span class="sxs-lookup"><span data-stu-id="506a8-104">The following table describes `DataTable` events.</span></span>  
   
-|Événement|Description|  
-|---------------|-----------------|  
-|<xref:System.Data.DataTable.Initialized>|Se produit après que la méthode <xref:System.Data.DataTable.EndInit%2A> d'un `DataTable` a été appelée.  Cet événement est destiné principalement à prendre en charge les scénarios au moment du design.|  
-|<xref:System.Data.DataTable.ColumnChanged>|Se produit après qu'une valeur a été modifiée avec succès dans un <xref:System.Data.DataColumn>.|  
-|<xref:System.Data.DataTable.ColumnChanging>|Se produit quand une valeur a été proposée pour un `DataColumn`.|  
-|<xref:System.Data.DataTable.RowChanged>|Se produit après qu'une valeur `DataColumn` ou le <xref:System.Data.DataRow.RowState%2A> d'un <xref:System.Data.DataRow> ont été modifiés avec succès dans le `DataTable`.|  
-|<xref:System.Data.DataTable.RowChanging>|Se produit quand une modification a été proposée pour une valeur `DataColumn` ou le `RowState` d'un `DataRow` dans le `DataTable`.|  
-|<xref:System.Data.DataTable.RowDeleted>|Se produit après qu'un `DataRow` dans le `DataTable` a été marqué comme `Deleted`.|  
-|<xref:System.Data.DataTable.RowDeleting>|Se produit avant qu'un `DataRow` dans le `DataTable` soit marqué comme `Deleted`.|  
-|<xref:System.Data.DataTable.TableCleared>|Se produit après qu'un appel à la méthode <xref:System.Data.DataTable.Clear%2A> du `DataTable` a effacé avec succès chaque `DataRow`.|  
-|<xref:System.Data.DataTable.TableClearing>|Se produit après que la méthode `Clear` a été appelée mais avant que l'opération `Clear` commence.|  
-|<xref:System.Data.DataTable.TableNewRow>|Se produit après la création d'un nouveau `DataRow` par un appel à la méthode `NewRow` du `DataTable`.|  
-|<xref:System.ComponentModel.MarshalByValueComponent.Disposed>|Se produit lorsque le `DataTable` a la valeur `Disposed`.  Hérité de l'objet <xref:System.ComponentModel.MarshalByValueComponent>.|  
-  
-> [!NOTE]
->  La plupart des opérations qui ajoutent ou suppriment des lignes ne déclenchent pas les événements `ColumnChanged` et `ColumnChanging`.  Toutefois, la méthode `ReadXml` déclenche les événements `ColumnChanged` et `ColumnChanging`, à moins que `XmlReadMode` ait la valeur `DiffGram` ou `Auto` lorsque le document XML lu est un `DiffGram`.  
-  
-> [!WARNING]
->  Les données peuvent être endommagées si elles sont modifiées dans un `DataSet` à partir duquel l'événement `RowChanged` est déclenché.  Aucune exception n'est levée en cas d'endommagement de ce type.  
-  
-## Autres événements liés  
- La propriété <xref:System.Data.DataTable.Constraints%2A> détient une instance <xref:System.Data.ConstraintCollection>.  La classe <xref:System.Data.ConstraintCollection> expose un événement <xref:System.Data.ConstraintCollection.CollectionChanged>.  Cet événement se déclenche lorsqu'une contrainte est ajoutée, modifiée ou supprimée dans `ConstraintCollection`.  
-  
- La propriété <xref:System.Data.DataTable.Columns%2A> détient une instance <xref:System.Data.DataColumnCollection>.  La classe `DataColumnCollection` expose un événement <xref:System.Data.DataColumnCollection.CollectionChanged>.  Cet événement se déclenche lorsqu'un `DataColumn` est ajouté, modifié ou supprimé dans `DataColumnCollection`.  Les modifications à l'origine du déclenchement de l'événement incluent des modifications du nom, du type, de l'expression ou de la position ordinale d'une colonne.  
-  
- La propriété <xref:System.Data.DataSet.Tables%2A> d'un <xref:System.Data.DataSet> détient une instance <xref:System.Data.DataTableCollection>.  La classe `DataTableCollection` expose un événement `CollectionChanged` et un événement `CollectionChanging`.  Ces événements se déclenchent lorsqu'un `DataTable` est ajouté ou supprimé dans le `DataSet`.  
-  
- Les modifications apportées aux `DataRows` peuvent également déclencher des événements pour un <xref:System.Data.DataView> associé.  La classe `DataView` expose un événement <xref:System.Data.DataView.ListChanged> qui se déclenche lorsqu'une valeur `DataColumn` change ou lorsque la composition ou l'ordre de tri de la vue changent.  La classe <xref:System.Data.DataRowView> expose un événement <xref:System.Data.DataRowView.PropertyChanged> qui se déclenche lorsqu'une valeur `DataColumn` associée change.  
-  
-## Ordre des opérations  
- Voici l'ordre des opérations qui se produisent lorsqu'un `DataRow` est ajouté, modifié ou supprimé :  
-  
-1.  Créez l'enregistrement proposé et appliquez les modifications éventuelles.  
-  
-2.  Vérifiez les contraintes pour les colonnes autres que les colonnes d'expression.  
-  
-3.  Déclenchez les événements `RowChanging` ou `RowDeleting` selon les besoins.  
-  
-4.  Définissez l'enregistrement proposé comme enregistrement en cours.  
-  
-5.  Mettez à jour les index associés éventuels.  
-  
-6.  Déclenchez les événements `ListChanged` pour les objets `DataView` associés et les événements `PropertyChanged` pour les objets `DataRowView` associés.  
-  
-7.  Évaluez toutes les colonnes d'expression, mais retardez la vérification des contraintes éventuelles sur ces colonnes.  
-  
-8.  Déclenchez les événements `ListChanged` pour les objets `DataView` associés et les événements `PropertyChanged` pour les objets `DataRowView` associés affectés par les évaluations des colonnes d'expression.  
-  
-9. Déclenchez les événements `RowChanged` ou `RowDeleted` selon les besoins.  
-  
-10. Vérifiez les contraintes sur les colonnes d'expression.  
+|<span data-ttu-id="506a8-105">Événement</span><span class="sxs-lookup"><span data-stu-id="506a8-105">Event</span></span>|<span data-ttu-id="506a8-106">Description</span><span class="sxs-lookup"><span data-stu-id="506a8-106">Description</span></span>|  
+|-----------|-----------------|  
+|<xref:System.Data.DataTable.Initialized>|<span data-ttu-id="506a8-107">Se produit après que la méthode <xref:System.Data.DataTable.EndInit%2A> d'un `DataTable` a été appelée.</span><span class="sxs-lookup"><span data-stu-id="506a8-107">Occurs after the <xref:System.Data.DataTable.EndInit%2A> method of a `DataTable` is called.</span></span> <span data-ttu-id="506a8-108">Cet événement est destiné principalement à prendre en charge les scénarios au moment du design.</span><span class="sxs-lookup"><span data-stu-id="506a8-108">This event is intended primarily to support design-time scenarios.</span></span>|  
+|<xref:System.Data.DataTable.ColumnChanged>|<span data-ttu-id="506a8-109">Se produit après qu'une valeur a été modifiée avec succès dans un <xref:System.Data.DataColumn>.</span><span class="sxs-lookup"><span data-stu-id="506a8-109">Occurs after a value has been successfully changed in a <xref:System.Data.DataColumn>.</span></span>|  
+|<xref:System.Data.DataTable.ColumnChanging>|<span data-ttu-id="506a8-110">Se produit quand une valeur a été proposée pour un `DataColumn`.</span><span class="sxs-lookup"><span data-stu-id="506a8-110">Occurs when a value has been submitted for a `DataColumn`.</span></span>|  
+|<xref:System.Data.DataTable.RowChanged>|<span data-ttu-id="506a8-111">Se produit après qu'une valeur `DataColumn` ou le <xref:System.Data.DataRow.RowState%2A> d'un <xref:System.Data.DataRow> ont été modifiés avec succès dans le `DataTable`.</span><span class="sxs-lookup"><span data-stu-id="506a8-111">Occurs after a `DataColumn` value or the <xref:System.Data.DataRow.RowState%2A> of a <xref:System.Data.DataRow> in the `DataTable` has been changed successfully.</span></span>|  
+|<xref:System.Data.DataTable.RowChanging>|<span data-ttu-id="506a8-112">Se produit quand une modification a été proposée pour une valeur `DataColumn` ou le `RowState` d'un `DataRow` dans le `DataTable`.</span><span class="sxs-lookup"><span data-stu-id="506a8-112">Occurs when a change has been submitted for a `DataColumn` value or the `RowState` of a `DataRow` in the `DataTable`.</span></span>|  
+|<xref:System.Data.DataTable.RowDeleted>|<span data-ttu-id="506a8-113">Se produit après qu'un `DataRow` dans le `DataTable` a été marqué comme `Deleted`.</span><span class="sxs-lookup"><span data-stu-id="506a8-113">Occurs after a `DataRow` in the `DataTable` has been marked as `Deleted`.</span></span>|  
+|<xref:System.Data.DataTable.RowDeleting>|<span data-ttu-id="506a8-114">Se produit avant qu'un `DataRow` dans le `DataTable` soit marqué comme `Deleted`.</span><span class="sxs-lookup"><span data-stu-id="506a8-114">Occurs before a `DataRow` in the `DataTable` is marked as `Deleted`.</span></span>|  
+|<xref:System.Data.DataTable.TableCleared>|<span data-ttu-id="506a8-115">Se produit après qu'un appel à la méthode <xref:System.Data.DataTable.Clear%2A> du `DataTable` a effacé avec succès chaque `DataRow`.</span><span class="sxs-lookup"><span data-stu-id="506a8-115">Occurs after a call to the <xref:System.Data.DataTable.Clear%2A> method of the `DataTable` has successfully cleared every `DataRow`.</span></span>|  
+|<xref:System.Data.DataTable.TableClearing>|<span data-ttu-id="506a8-116">Se produit après que la méthode `Clear` a été appelée mais avant que l'opération `Clear` commence.</span><span class="sxs-lookup"><span data-stu-id="506a8-116">Occurs after the `Clear` method is called but before the `Clear` operation begins.</span></span>|  
+|<xref:System.Data.DataTable.TableNewRow>|<span data-ttu-id="506a8-117">Se produit après la création d'un nouveau `DataRow` par un appel à la méthode `NewRow` du `DataTable`.</span><span class="sxs-lookup"><span data-stu-id="506a8-117">Occurs after a new `DataRow` is created by a call to the `NewRow` method of the `DataTable`.</span></span>|  
+|<xref:System.ComponentModel.MarshalByValueComponent.Disposed>|<span data-ttu-id="506a8-118">Se produit lorsque le `DataTable` a la valeur `Disposed`.</span><span class="sxs-lookup"><span data-stu-id="506a8-118">Occurs when the `DataTable` is `Disposed`.</span></span> <span data-ttu-id="506a8-119">Hérité de l'objet <xref:System.ComponentModel.MarshalByValueComponent>.</span><span class="sxs-lookup"><span data-stu-id="506a8-119">Inherited from <xref:System.ComponentModel.MarshalByValueComponent>.</span></span>|  
   
 > [!NOTE]
->  Des modifications apportées aux colonnes d'expression ne déclenchent jamais des événements `DataTable`.  Des modifications apportées aux colonnes d'expression déclenchent uniquement des événements `DataView` et `DataRowView`.  Les colonnes d'expression peuvent avoir des dépendances sur plusieurs autres colonnes et peuvent être évaluées plusieurs fois au cours d'une même opération `DataRow`.  Chaque évaluation d'expression déclenche des événements et une opération `DataRow` individuelle peut déclencher plusieurs événements `ListChanged` et `PropertyChanged` lorsque des colonnes d'expression sont affectées, dont éventuellement plusieurs événements pour une même colonne d'expression.  
+>  <span data-ttu-id="506a8-120">La plupart des opérations qui ajoutent ou suppriment des lignes ne déclenchent pas les événements `ColumnChanged` et `ColumnChanging`.</span><span class="sxs-lookup"><span data-stu-id="506a8-120">Most operations that add or delete rows do not raise the `ColumnChanged` and `ColumnChanging` events.</span></span> <span data-ttu-id="506a8-121">Toutefois, la méthode `ReadXml` déclenche les événements `ColumnChanged` et `ColumnChanging`, à moins que `XmlReadMode` ait la valeur `DiffGram` ou `Auto` lorsque le document XML lu est un `DiffGram`.</span><span class="sxs-lookup"><span data-stu-id="506a8-121">However, the `ReadXml` method does raise `ColumnChanged` and `ColumnChanging` events, unless the `XmlReadMode` is set to `DiffGram` or is set to `Auto` when the XML document being read is a `DiffGram`.</span></span>  
   
 > [!WARNING]
->  Ne levez pas de <xref:System.NullReferenceException> à l'intérieur du gestionnaire d'événements `RowChanged`.  Si une <xref:System.NullReferenceException> est levée à l'intérieur de l'événement `RowChanged` d'une `DataTable`, `DataTable` sera corrompue.  
+>  <span data-ttu-id="506a8-122">Les données peuvent être endommagées si elles sont modifiées dans un `DataSet` à partir duquel l'événement `RowChanged` est déclenché.</span><span class="sxs-lookup"><span data-stu-id="506a8-122">Data corruption can occur if data is modified in a `DataSet` from which the `RowChanged` event is raised.</span></span> <span data-ttu-id="506a8-123">Aucune exception n'est levée en cas d'endommagement de ce type.</span><span class="sxs-lookup"><span data-stu-id="506a8-123">No exception will be raised if such data corruption occurs.</span></span>  
   
-### Exemple  
- L'exemple ci\-dessous montre comment créer des gestionnaires d'événements pour les événements `RowChanged`, `RowChanging`, `RowDeleted`, `RowDeleting`, `ColumnChanged`, `ColumnChanging`, `TableNewRow`, `TableCleared` et `TableClearing`.  Chaque gestionnaire d'événements affiche la sortie dans la fenêtre de console lorsqu'il est déclenché.  
+## <a name="additional-related-events"></a><span data-ttu-id="506a8-124">Autres événements liés</span><span class="sxs-lookup"><span data-stu-id="506a8-124">Additional Related Events</span></span>  
+ <span data-ttu-id="506a8-125">La propriété <xref:System.Data.DataTable.Constraints%2A> détient une instance <xref:System.Data.ConstraintCollection>.</span><span class="sxs-lookup"><span data-stu-id="506a8-125">The <xref:System.Data.DataTable.Constraints%2A> property holds a <xref:System.Data.ConstraintCollection> instance.</span></span> <span data-ttu-id="506a8-126">La classe <xref:System.Data.ConstraintCollection> expose un événement <xref:System.Data.ConstraintCollection.CollectionChanged>.</span><span class="sxs-lookup"><span data-stu-id="506a8-126">The <xref:System.Data.ConstraintCollection> class exposes a <xref:System.Data.ConstraintCollection.CollectionChanged> event.</span></span> <span data-ttu-id="506a8-127">Cet événement se déclenche lorsqu'une contrainte est ajoutée, modifiée ou supprimée dans `ConstraintCollection`.</span><span class="sxs-lookup"><span data-stu-id="506a8-127">This event fires when a constraint is added, modified, or removed from the `ConstraintCollection`.</span></span>  
+  
+ <span data-ttu-id="506a8-128">La propriété <xref:System.Data.DataTable.Columns%2A> détient une instance <xref:System.Data.DataColumnCollection>.</span><span class="sxs-lookup"><span data-stu-id="506a8-128">The <xref:System.Data.DataTable.Columns%2A> property holds a <xref:System.Data.DataColumnCollection> instance.</span></span> <span data-ttu-id="506a8-129">La classe `DataColumnCollection` expose un événement <xref:System.Data.DataColumnCollection.CollectionChanged>.</span><span class="sxs-lookup"><span data-stu-id="506a8-129">The `DataColumnCollection` class exposes a <xref:System.Data.DataColumnCollection.CollectionChanged> event.</span></span> <span data-ttu-id="506a8-130">Cet événement se déclenche lorsqu'un `DataColumn` est ajouté, modifié ou supprimé dans `DataColumnCollection`.</span><span class="sxs-lookup"><span data-stu-id="506a8-130">This event fires when a `DataColumn` is added, modified, or removed from the `DataColumnCollection`.</span></span> <span data-ttu-id="506a8-131">Les modifications à l'origine du déclenchement de l'événement incluent des modifications du nom, du type, de l'expression ou de la position ordinale d'une colonne.</span><span class="sxs-lookup"><span data-stu-id="506a8-131">Modifications that cause the event to fire include changes to the name, type, expression or ordinal position of a column.</span></span>  
+  
+ <span data-ttu-id="506a8-132">La propriété <xref:System.Data.DataSet.Tables%2A> d'un <xref:System.Data.DataSet> détient une instance <xref:System.Data.DataTableCollection>.</span><span class="sxs-lookup"><span data-stu-id="506a8-132">The <xref:System.Data.DataSet.Tables%2A> property of a <xref:System.Data.DataSet> holds a <xref:System.Data.DataTableCollection> instance.</span></span> <span data-ttu-id="506a8-133">La classe `DataTableCollection` expose un événement `CollectionChanged` et un événement `CollectionChanging`.</span><span class="sxs-lookup"><span data-stu-id="506a8-133">The `DataTableCollection` class exposes both a `CollectionChanged` and a `CollectionChanging` event.</span></span> <span data-ttu-id="506a8-134">Ces événements se déclenchent lorsqu'un `DataTable` est ajouté ou supprimé dans le `DataSet`.</span><span class="sxs-lookup"><span data-stu-id="506a8-134">These events fire when a `DataTable` is added to or removed from the `DataSet`.</span></span>  
+  
+ <span data-ttu-id="506a8-135">Les modifications apportées aux `DataRows` peuvent également déclencher des événements pour un <xref:System.Data.DataView> associé.</span><span class="sxs-lookup"><span data-stu-id="506a8-135">Changes to `DataRows` can also trigger events for an associated <xref:System.Data.DataView>.</span></span> <span data-ttu-id="506a8-136">La classe `DataView` expose un événement <xref:System.Data.DataView.ListChanged> qui se déclenche lorsqu'une valeur `DataColumn` change ou lorsque la composition ou l'ordre de tri de la vue changent.</span><span class="sxs-lookup"><span data-stu-id="506a8-136">The `DataView` class exposes a <xref:System.Data.DataView.ListChanged> event that fires when a `DataColumn` value changes or when the composition or sort order of the view changes.</span></span> <span data-ttu-id="506a8-137">La classe <xref:System.Data.DataRowView> expose un événement <xref:System.Data.DataRowView.PropertyChanged> qui se déclenche lorsqu'une valeur `DataColumn` associée change.</span><span class="sxs-lookup"><span data-stu-id="506a8-137">The <xref:System.Data.DataRowView> class exposes a <xref:System.Data.DataRowView.PropertyChanged> event that fires when an associated `DataColumn` value changes.</span></span>  
+  
+## <a name="sequence-of-operations"></a><span data-ttu-id="506a8-138">Ordre des opérations</span><span class="sxs-lookup"><span data-stu-id="506a8-138">Sequence of Operations</span></span>  
+ <span data-ttu-id="506a8-139">Voici l'ordre des opérations qui se produisent lorsqu'un `DataRow` est ajouté, modifié ou supprimé :</span><span class="sxs-lookup"><span data-stu-id="506a8-139">Here is the sequence of operations that occur when a `DataRow` is added, modified, or deleted:</span></span>  
+  
+1.  <span data-ttu-id="506a8-140">Créez l'enregistrement proposé et appliquez les modifications éventuelles.</span><span class="sxs-lookup"><span data-stu-id="506a8-140">Create the proposed record and apply any changes.</span></span>  
+  
+2.  <span data-ttu-id="506a8-141">Vérifiez les contraintes pour les colonnes autres que les colonnes d'expression.</span><span class="sxs-lookup"><span data-stu-id="506a8-141">Check constraints for non-expression columns.</span></span>  
+  
+3.  <span data-ttu-id="506a8-142">Déclenchez les événements `RowChanging` ou `RowDeleting` selon les besoins.</span><span class="sxs-lookup"><span data-stu-id="506a8-142">Raise the `RowChanging` or `RowDeleting` events as applicable.</span></span>  
+  
+4.  <span data-ttu-id="506a8-143">Définissez l'enregistrement proposé comme enregistrement en cours.</span><span class="sxs-lookup"><span data-stu-id="506a8-143">Set the proposed record to be the current record.</span></span>  
+  
+5.  <span data-ttu-id="506a8-144">Mettez à jour les index associés éventuels.</span><span class="sxs-lookup"><span data-stu-id="506a8-144">Update any associated indexes.</span></span>  
+  
+6.  <span data-ttu-id="506a8-145">Déclenchez les événements `ListChanged` pour les objets `DataView` associés et les événements `PropertyChanged` pour les objets `DataRowView` associés.</span><span class="sxs-lookup"><span data-stu-id="506a8-145">Raise `ListChanged` events for associated `DataView` objects and `PropertyChanged` events for associated `DataRowView` objects.</span></span>  
+  
+7.  <span data-ttu-id="506a8-146">Évaluez toutes les colonnes d'expression, mais retardez la vérification des contraintes éventuelles sur ces colonnes.</span><span class="sxs-lookup"><span data-stu-id="506a8-146">Evaluate all expression columns, but delay checking any constraints on these columns.</span></span>  
+  
+8.  <span data-ttu-id="506a8-147">Déclenchez les événements `ListChanged` pour les objets `DataView` associés et les événements `PropertyChanged` pour les objets `DataRowView` associés affectés par les évaluations des colonnes d'expression.</span><span class="sxs-lookup"><span data-stu-id="506a8-147">Raise `ListChanged` events for associated `DataView` objects and `PropertyChanged` events for associated `DataRowView` objects affected by the expression column evaluations.</span></span>  
+  
+9. <span data-ttu-id="506a8-148">Déclenchez les événements `RowChanged` ou `RowDeleted` selon les besoins.</span><span class="sxs-lookup"><span data-stu-id="506a8-148">Raise `RowChanged` or `RowDeleted` events as applicable.</span></span>  
+  
+10. <span data-ttu-id="506a8-149">Vérifiez les contraintes sur les colonnes d'expression.</span><span class="sxs-lookup"><span data-stu-id="506a8-149">Check constraints on expression columns.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="506a8-150">Des modifications apportées aux colonnes d'expression ne déclenchent jamais des événements `DataTable`.</span><span class="sxs-lookup"><span data-stu-id="506a8-150">Changes to expression columns never raise `DataTable` events.</span></span> <span data-ttu-id="506a8-151">Des modifications apportées aux colonnes d'expression déclenchent uniquement des événements `DataView` et `DataRowView`.</span><span class="sxs-lookup"><span data-stu-id="506a8-151">Changes to expression columns only raise `DataView` and `DataRowView` events.</span></span> <span data-ttu-id="506a8-152">Les colonnes d'expression peuvent avoir des dépendances sur plusieurs autres colonnes et peuvent être évaluées plusieurs fois au cours d'une même opération `DataRow`.</span><span class="sxs-lookup"><span data-stu-id="506a8-152">Expression columns can have dependencies on multiple other columns, and can be evaluated multiple times during a single `DataRow` operation.</span></span> <span data-ttu-id="506a8-153">Chaque évaluation d'expression déclenche des événements et une opération `DataRow` individuelle peut déclencher plusieurs événements `ListChanged` et `PropertyChanged` lorsque des colonnes d'expression sont affectées, dont éventuellement plusieurs événements pour une même colonne d'expression.</span><span class="sxs-lookup"><span data-stu-id="506a8-153">Each expression evaluation raises events, and a single `DataRow` operation can raise multiple `ListChanged` and `PropertyChanged` events when expression columns are affected, possibly including multiple events for the same expression column.</span></span>  
+  
+> [!WARNING]
+>  <span data-ttu-id="506a8-154">Ne levez pas de <xref:System.NullReferenceException> à l'intérieur du gestionnaire d'événements `RowChanged`.</span><span class="sxs-lookup"><span data-stu-id="506a8-154">Do not throw a <xref:System.NullReferenceException> within the `RowChanged` event handler.</span></span> <span data-ttu-id="506a8-155">Si une <xref:System.NullReferenceException> est levée à l'intérieur de l'événement `RowChanged` d'une `DataTable`, `DataTable` sera corrompue.</span><span class="sxs-lookup"><span data-stu-id="506a8-155">If a <xref:System.NullReferenceException> is thrown within the `RowChanged` event of a `DataTable`, then the `DataTable` will be corrupted.</span></span>  
+  
+### <a name="example"></a><span data-ttu-id="506a8-156">Exemple</span><span class="sxs-lookup"><span data-stu-id="506a8-156">Example</span></span>  
+ <span data-ttu-id="506a8-157">L'exemple ci-dessous montre comment créer des gestionnaires d'événements pour les événements `RowChanged`, `RowChanging`, `RowDeleted`, `RowDeleting`, `ColumnChanged`, `ColumnChanging`, `TableNewRow`, `TableCleared` et `TableClearing`.</span><span class="sxs-lookup"><span data-stu-id="506a8-157">The following example demonstrates how to create event handlers for the `RowChanged`, `RowChanging`, `RowDeleted`, `RowDeleting`, `ColumnChanged`, `ColumnChanging`, `TableNewRow`, `TableCleared`, and `TableClearing` events.</span></span> <span data-ttu-id="506a8-158">Chaque gestionnaire d'événements affiche la sortie dans la fenêtre de console lorsqu'il est déclenché.</span><span class="sxs-lookup"><span data-stu-id="506a8-158">Each event handler displays output in the console window when it is fired.</span></span>  
   
  [!code-csharp[DataWorks DataTable.Events#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTable.Events/CS/source.cs#1)]
  [!code-vb[DataWorks DataTable.Events#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTable.Events/VB/source.vb#1)]  
   
-## Voir aussi  
- [Manipulation de données dans un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
- [Gestion des événements DataAdapter](../../../../../docs/framework/data/adonet/handling-dataadapter-events.md)   
- [Gestion des événements de DataSet ](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataset-events.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="506a8-159">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="506a8-159">See Also</span></span>  
+ [<span data-ttu-id="506a8-160">Manipulation de données dans un DataTable</span><span class="sxs-lookup"><span data-stu-id="506a8-160">Manipulating Data in a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [<span data-ttu-id="506a8-161">Gestion des événements DataAdapter</span><span class="sxs-lookup"><span data-stu-id="506a8-161">Handling DataAdapter Events</span></span>](../../../../../docs/framework/data/adonet/handling-dataadapter-events.md)  
+ [<span data-ttu-id="506a8-162">Gestion des événements de DataSet</span><span class="sxs-lookup"><span data-stu-id="506a8-162">Handling DataSet Events</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataset-events.md)  
+ [<span data-ttu-id="506a8-163">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="506a8-163">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

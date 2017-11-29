@@ -1,88 +1,114 @@
 ---
-title: "&lt;alwaysFlowImpersonationPolicy&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/alwaysFlowImpersonationPolicy"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#alwaysFlowImpersonationPolicy"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<alwaysFlowImpersonationPolicy> (élément)"
-  - "alwaysFlowImpersonationPolicy (élément)"
+title: "&lt;alwaysFlowImpersonationPolicy&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/alwaysFlowImpersonationPolicy
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#alwaysFlowImpersonationPolicy
+helpviewer_keywords:
+- alwaysFlowImpersonationPolicy element
+- <alwaysFlowImpersonationPolicy> element
 ms.assetid: ee622801-9e46-470b-85ab-88c4b1dd2ee1
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 52cdb26f6f78ed740efa1f27958368e8c7e2ae78
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;alwaysFlowImpersonationPolicy&gt;, &#233;l&#233;ment
-Spécifie que l'identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d'exécution de l'emprunt d'identité.  
+# <a name="ltalwaysflowimpersonationpolicygt-element"></a><span data-ttu-id="9b56c-102">&lt;alwaysFlowImpersonationPolicy&gt; élément</span><span class="sxs-lookup"><span data-stu-id="9b56c-102">&lt;alwaysFlowImpersonationPolicy&gt; Element</span></span>
+<span data-ttu-id="9b56c-103">Spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité.</span><span class="sxs-lookup"><span data-stu-id="9b56c-103">Specifies that the Windows identity always flows across asynchronous points, regardless of how impersonation was performed.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="9b56c-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="9b56c-104">\<configuration></span></span>  
+<span data-ttu-id="9b56c-105">\<runtime ></span><span class="sxs-lookup"><span data-stu-id="9b56c-105">\<runtime></span></span>  
+<span data-ttu-id="9b56c-106">\<alwaysFlowImpersonationPolicy ></span><span class="sxs-lookup"><span data-stu-id="9b56c-106">\<alwaysFlowImpersonationPolicy></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="9b56c-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9b56c-107">Syntax</span></span>  
+  
+```xml  
 <alwaysFlowImpersonationPolicy    
   enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="9b56c-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="9b56c-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="9b56c-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="9b56c-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="9b56c-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="9b56c-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Indique si l'identité Windows est transmise entre des points asynchrones.|  
+|<span data-ttu-id="9b56c-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="9b56c-111">Attribute</span></span>|<span data-ttu-id="9b56c-112">Description</span><span class="sxs-lookup"><span data-stu-id="9b56c-112">Description</span></span>|  
+|---------------|-----------------|  
+|`enabled`|<span data-ttu-id="9b56c-113">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="9b56c-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="9b56c-114">Indique si l’identité Windows est transmise entre des points asynchrones.</span><span class="sxs-lookup"><span data-stu-id="9b56c-114">Indicates whether the Windows identity flows across asynchronous points.</span></span>|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a><span data-ttu-id="9b56c-115">Attribut enabled</span><span class="sxs-lookup"><span data-stu-id="9b56c-115">enabled Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|`false`|L'identité Windows n'est pas transmise entre des points asynchrones, à moins que l'emprunt d'identité soit exécuté par l'intermédiaire de méthodes managées telles que <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A>.  Il s'agit de la valeur par défaut.|  
-|`true`|Spécifie que l'identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d'exécution de l'emprunt d'identité.|  
+|<span data-ttu-id="9b56c-116">Valeur</span><span class="sxs-lookup"><span data-stu-id="9b56c-116">Value</span></span>|<span data-ttu-id="9b56c-117">Description</span><span class="sxs-lookup"><span data-stu-id="9b56c-117">Description</span></span>|  
+|-----------|-----------------|  
+|`false`|<span data-ttu-id="9b56c-118">L’identité n’est pas transmise entre des points asynchrones, à moins que l’emprunt d’identité est effectuée par le biais de Windows telles que les méthodes managées <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A>.</span><span class="sxs-lookup"><span data-stu-id="9b56c-118">The Windows identity does not flow across asynchronous points, unless the impersonation is performed through managed methods such as <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A>.</span></span> <span data-ttu-id="9b56c-119">Il s'agit de la valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="9b56c-119">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="9b56c-120">L’identité Windows est toujours transmise entre des points asynchrones, quelle que soit la façon dont l’emprunt d’identité a été effectuée.</span><span class="sxs-lookup"><span data-stu-id="9b56c-120">The Windows identity always flows across asynchronous points, regardless of how impersonation was performed.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="9b56c-121">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="9b56c-121">Child Elements</span></span>  
+ <span data-ttu-id="9b56c-122">Aucun.</span><span class="sxs-lookup"><span data-stu-id="9b56c-122">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="9b56c-123">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="9b56c-123">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="9b56c-124">Élément</span><span class="sxs-lookup"><span data-stu-id="9b56c-124">Element</span></span>|<span data-ttu-id="9b56c-125">Description</span><span class="sxs-lookup"><span data-stu-id="9b56c-125">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`configuration`|<span data-ttu-id="9b56c-126">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="9b56c-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="9b56c-127">Contient des informations sur les liaisons d’assembly et l’opération garbage collection.</span><span class="sxs-lookup"><span data-stu-id="9b56c-127">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## Notes  
- Dans les versions 1.0 et 1.1 du .NET Framework, l'identité Windows n'est pas transmise entre des points asynchrones.  Le .NET Framework version 2.0 comprend un objet <xref:System.Threading.ExecutionContext> qui contient des informations à propos du thread en cours d'exécution et les transmet entre des points asynchrones d'un domaine d'application.  <xref:System.Security.Principal.WindowsIdentity> est également transmis dans le cadre des informations passées entre des points asynchrones, à condition que l'emprunt d'identité ait été exécuté à l'aide de méthodes managées telles que <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> et pas par d'autres moyens, tels qu'un appel de code non managé à des méthodes natives.  Cet élément est utilisé pour spécifier la transmission de l'identité Windows entre des points asynchrones, indépendamment du mode d'exécution de l'emprunt d'identité.  
+## <a name="remarks"></a><span data-ttu-id="9b56c-128">Remarques</span><span class="sxs-lookup"><span data-stu-id="9b56c-128">Remarks</span></span>  
+ <span data-ttu-id="9b56c-129">Dans les versions 1.0 et 1.1 du .NET Framework, l’identité Windows n’est pas transmis entre des points asynchrones.</span><span class="sxs-lookup"><span data-stu-id="9b56c-129">In the .NET Framework versions 1.0 and 1.1, the Windows identity does not flow across asynchronous points.</span></span> <span data-ttu-id="9b56c-130">Dans le .NET Framework version 2.0, il existe un <xref:System.Threading.ExecutionContext> objet qui contient des informations sur le thread en cours d’exécution et les transmet entre des points asynchrones dans un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="9b56c-130">In the .NET Framework version 2.0, there is an <xref:System.Threading.ExecutionContext> object that contains information about the currently executing thread, and flows it across asynchronous points within an application domain.</span></span> <span data-ttu-id="9b56c-131">Le <xref:System.Security.Principal.WindowsIdentity> également transmis dans le cadre des informations qui circulent entre des points asynchrones, sous réserve de l’emprunt d’identité a été obtenue à l’aide de méthodes managées telles que <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> et pas par d’autres moyens, tels que platform appel à des méthodes natives.</span><span class="sxs-lookup"><span data-stu-id="9b56c-131">The <xref:System.Security.Principal.WindowsIdentity> also flows as part of the information that flows across the asynchronous points, provided the impersonation was achieved using managed methods such as <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> and not through other means such as platform invoke to native methods.</span></span> <span data-ttu-id="9b56c-132">Cet élément est utilisé pour spécifier que l’identité de Windows est transmise entre des points asynchrones, quelle que soit la façon dont l’emprunt d’identité a été atteint.</span><span class="sxs-lookup"><span data-stu-id="9b56c-132">This element is used to specify that the Windows identity does flow across asynchronous points, regardless of how the impersonation was achieved.</span></span>  
   
- Vous pouvez modifier ce comportement par défaut de deux autres façons :  
+ <span data-ttu-id="9b56c-133">Vous pouvez modifier ce comportement par défaut de deux manières différentes :</span><span class="sxs-lookup"><span data-stu-id="9b56c-133">You can alter this default behavior in two other ways:</span></span>  
   
-1.  Dans le code managé, thread par thread.  
+1.  <span data-ttu-id="9b56c-134">Dans le code managé sur une base par thread.</span><span class="sxs-lookup"><span data-stu-id="9b56c-134">In managed code on a per-thread basis.</span></span>  
   
-     Vous pouvez supprimer le flux thread par thread en modifiant les paramètres <xref:System.Threading.ExecutionContext> et <xref:System.Security.SecurityContext> à l'aide de la méthode <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=fullName>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=fullName> ou <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=fullName>.  
+     <span data-ttu-id="9b56c-135">Vous pouvez supprimer le flux sur une base par thread en modifiant le <xref:System.Threading.ExecutionContext> et <xref:System.Security.SecurityContext> paramètres à l’aide de la <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType>, ou <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> (méthode).</span><span class="sxs-lookup"><span data-stu-id="9b56c-135">You can suppress the flow on a per-thread basis by modifying the <xref:System.Threading.ExecutionContext> and <xref:System.Security.SecurityContext> settings by using the <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType>, or <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> method.</span></span>  
   
-2.  Dans l'appel à l'interface d'hébergement non managée pour charger le Common Language Runtime.  
+2.  <span data-ttu-id="9b56c-136">Dans l’appel à l’interface d’hébergement non managée pour charger le common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="9b56c-136">In the call to the unmanaged hosting interface to load the common language runtime (CLR).</span></span>  
   
-     Si vous utilisez une interface d'hébergement non managée \(au lieu d'un simple fichier exécutable managé\) pour charger le Common Language Runtime, vous pouvez spécifier un indicateur spécial dans l'appel à la fonction [CorBindToRuntimeEx, fonction](../../../../../ocs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md).  Pour activer le mode de compatibilité pour l'ensemble du processus, affectez la valeur STARTUP\_ALWAYSFLOW\_IMPERSONATION au paramètre `flags` de [CorBindToRuntimeEx, fonction](../../../../../ocs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md).  
+     <span data-ttu-id="9b56c-137">Si une interface d’hébergement non managée (au lieu d’un simple fichier exécutable managé) est utilisée pour charger le CLR, vous pouvez spécifier un indicateur spécial dans l’appel à la [fonction CorBindToRuntimeEx](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) (fonction).</span><span class="sxs-lookup"><span data-stu-id="9b56c-137">If an unmanaged hosting interface (instead of a simple managed executable) is used to load the CLR, you can specify a special flag in the call to the [CorBindToRuntimeEx Function](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) function.</span></span> <span data-ttu-id="9b56c-138">Pour activer le mode de compatibilité pour l’ensemble du processus, définissez la `flags` paramètre [fonction CorBindToRuntimeEx](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) à `STARTUP_ALWAYSFLOW_IMPERSONATION`.</span><span class="sxs-lookup"><span data-stu-id="9b56c-138">To enable the compatibility mode for the entire process, set the `flags` parameter for [CorBindToRuntimeEx Function](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) to `STARTUP_ALWAYSFLOW_IMPERSONATION`.</span></span>  
   
-## Fichier de configuration  
- Cet élément peut être utilisé uniquement dans le fichier de configuration de l'application.  
+## <a name="configuration-file"></a><span data-ttu-id="9b56c-139">Fichier de configuration</span><span class="sxs-lookup"><span data-stu-id="9b56c-139">Configuration File</span></span>  
+ <span data-ttu-id="9b56c-140">Dans une application .NET Framework, cet élément peut être utilisé uniquement dans le fichier de configuration d’application.</span><span class="sxs-lookup"><span data-stu-id="9b56c-140">In a .NET Framework application, this element can be used only in the application configuration file.</span></span>  
   
-## Exemple  
- L'exemple suivant montre comment spécifier la transmission de l'identité Windows entre des points asynchrones, même si l'emprunt d'identité est effectué par d'autres moyens que les méthodes managées.  
+ <span data-ttu-id="9b56c-141">Pour une application ASP.NET, le flux de l’emprunt d’identité peut être configuré dans le fichier aspnet.config trouvé dans le \<dossier Windows > \Microsoft.NET\Framework\vx.x.xxxx active.</span><span class="sxs-lookup"><span data-stu-id="9b56c-141">For an ASP.NET application, the impersonation flow can be configured in the aspnet.config file found in the \<Windows Folder>\Microsoft.NET\Framework\vx.x.xxxx directory.</span></span>  
+  
+ <span data-ttu-id="9b56c-142">ASP.NET par défaut désactive le flux de l’emprunt d’identité dans le fichier aspnet.config à l’aide de paramètres de configuration suivants :</span><span class="sxs-lookup"><span data-stu-id="9b56c-142">ASP.NET by default disables the impersonation flow in the aspnet.config file by using the following configuration settings:</span></span>  
   
 ```  
+configuration>  
+   <runtime>  
+      <legacyImpersonationPolicy enabled="true"/>  
+      <alwaysFlowImpersonationPolicy enabled="false"/>  
+   </runtime>  
+</configuration>  
+```  
+  
+ <span data-ttu-id="9b56c-143">Dans ASP.NET, si vous souhaitez autoriser le flux d’emprunt d’identité à la place, vous devez utiliser explicitement les paramètres de configuration suivants :</span><span class="sxs-lookup"><span data-stu-id="9b56c-143">In ASP.NET, if you want to allow the flow of impersonation instead, you must explicitly use the following configuration settings:</span></span>  
+  
+```xml  
+<configuration>  
+   <runtime>  
+      <legacyImpersonationPolicy enabled="false"/>  
+      <alwaysFlowImpersonationPolicy enabled="true"/>  
+   </runtime>  
+</configuration>  
+```  
+  
+## <a name="example"></a><span data-ttu-id="9b56c-144">Exemple</span><span class="sxs-lookup"><span data-stu-id="9b56c-144">Example</span></span>  
+ <span data-ttu-id="9b56c-145">L’exemple suivant montre comment spécifier que l’identité Windows est transmise entre des points asynchrones, même lorsque l’emprunt d’identité est obtenue grâce à d’autres moyens que les méthodes managées.</span><span class="sxs-lookup"><span data-stu-id="9b56c-145">The following example shows how to specify that the Windows identity flows across asynchronous points, even when the impersonation is achieved through means other than managed methods.</span></span>  
+  
+```xml  
 <configuration>  
   <runtime>  
     <alwaysFlowImpersonationPolicy enabled="true"/>  
@@ -90,7 +116,7 @@ Spécifie que l'identité Windows est toujours transmise entre des points asynch
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<legacyImpersonationPolicy\>, élément](../../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)
+## <a name="see-also"></a><span data-ttu-id="9b56c-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9b56c-146">See Also</span></span>  
+ [<span data-ttu-id="9b56c-147">Schéma des paramètres d’exécution</span><span class="sxs-lookup"><span data-stu-id="9b56c-147">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="9b56c-148">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="9b56c-148">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="9b56c-149">\<legacyImpersonationPolicy > élément</span><span class="sxs-lookup"><span data-stu-id="9b56c-149">\<legacyImpersonationPolicy> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)

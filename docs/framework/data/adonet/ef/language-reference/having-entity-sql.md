@@ -1,63 +1,61 @@
 ---
-title: "HAVING (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: HAVING (Entity SQL)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b5d52d97-8372-4335-beac-2d0b79dc3707
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a64bc0c9b5e1358046e78429780af796f60e404e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# HAVING (Entity SQL)
-Spécifie une condition de recherche pour un groupe ou un agrégat.  
+# <a name="having-entity-sql"></a><span data-ttu-id="08ca6-102">HAVING (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="08ca6-102">HAVING (Entity SQL)</span></span>
+<span data-ttu-id="08ca6-103">Spécifie une condition de recherche pour un groupe ou un agrégat.</span><span class="sxs-lookup"><span data-stu-id="08ca6-103">Specifies a search condition for a group or an aggregate.</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="08ca6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="08ca6-104">Syntax</span></span>  
   
 ```  
-  
 [ HAVING search_condition ]  
 ```  
   
-## Arguments  
+## <a name="arguments"></a><span data-ttu-id="08ca6-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="08ca6-105">Arguments</span></span>  
  `search_condition`  
- Indique les critères de recherche à réunir pour le groupe ou l'agrégat. Lorsque HAVING est utilisé avec GROUP BY ALL, la clause HAVING remplace ALL.  
+ <span data-ttu-id="08ca6-106">Indique les critères de recherche à réunir pour le groupe ou l'agrégat.</span><span class="sxs-lookup"><span data-stu-id="08ca6-106">Specifies the search condition for the group or the aggregate to meet.</span></span> <span data-ttu-id="08ca6-107">Lorsque HAVING est utilisé avec GROUP BY ALL, la clause HAVING remplace ALL.</span><span class="sxs-lookup"><span data-stu-id="08ca6-107">When HAVING is used with GROUP BY ALL, the HAVING clause overrides ALL.</span></span>  
   
-## Notes  
- La clause HAVING est utilisée pour spécifier une condition de filtrage supplémentaire sur le résultat d'un regroupement. Si aucune clause GROUP BY n'est spécifiée dans l'expression de requête, un groupe implicite constitué d'un seul ensemble est supposé exister.  
+## <a name="remarks"></a><span data-ttu-id="08ca6-108">Remarques</span><span class="sxs-lookup"><span data-stu-id="08ca6-108">Remarks</span></span>  
+ <span data-ttu-id="08ca6-109">La clause HAVING est utilisée pour spécifier une condition de filtrage supplémentaire sur le résultat d'un regroupement.</span><span class="sxs-lookup"><span data-stu-id="08ca6-109">The HAVING clause is used to specify an additional filtering condition on the result of a grouping.</span></span> <span data-ttu-id="08ca6-110">Si aucune clause GROUP BY n'est spécifiée dans l'expression de requête, un groupe implicite constitué d'un seul ensemble est supposé exister.</span><span class="sxs-lookup"><span data-stu-id="08ca6-110">If no GROUP BY clause is specified in the query expression, an implicit single-set group is assumed.</span></span>  
   
 > [!NOTE]
->  HAVING ne peut être utilisé qu’avec l’instruction [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md). Quand [GROUP BY](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) n’est pas utilisé, HAVING se comporte comme une clause WHERE.  
+>  <span data-ttu-id="08ca6-111">HAVING ne peut être utilisé uniquement avec les [sélectionnez](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) instruction.</span><span class="sxs-lookup"><span data-stu-id="08ca6-111">HAVING can be used only with the [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) statement.</span></span> <span data-ttu-id="08ca6-112">Lorsque [GROUP BY](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) est ne pas utilisé, HAVING se comporte comme une clause WHERE.</span><span class="sxs-lookup"><span data-stu-id="08ca6-112">When [GROUP BY](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) is not used, HAVING behaves like a WHERE clause.</span></span>  
   
- La clause HAVING fonctionne comme la clause WHERE, à la différence près que son application intervient après l'opération GROUP BY. Cela signifie que la clause HAVING ne peut faire référence qu'à des agrégats et des alias de regroupement, comme l'illustre l'exemple suivant.  
+ <span data-ttu-id="08ca6-113">La clause HAVING fonctionne comme la clause WHERE, à la différence près que son application intervient après l'opération GROUP BY.</span><span class="sxs-lookup"><span data-stu-id="08ca6-113">The HAVING clause works like the WHERE clause except that it is applied after the GROUP BY operation.</span></span> <span data-ttu-id="08ca6-114">Cela signifie que la clause HAVING ne peut faire référence qu'à des agrégats et des alias de regroupement, comme l'illustre l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="08ca6-114">This means that the HAVING clause can only make references to grouping aliases and aggregates, as illustrated in the following example.</span></span>  
   
 ```  
 SELECT Name, SUM(o.Price * o.Quantity) AS Total FROM orderLines AS o GROUP BY o.Product AS Name  
 HAVING SUM(o.Quantity) > 1  
 ```  
   
- La clause précédente limite les groupes à ceux qui comportent plusieurs produits.  
+ <span data-ttu-id="08ca6-115">La clause précédente limite les groupes à ceux qui comportent plusieurs produits.</span><span class="sxs-lookup"><span data-stu-id="08ca6-115">The previous restricts the groups to only those that include more than one product.</span></span>  
   
-## Exemple  
- La requête Entity SQL ci\-dessous utilise les opérateurs HAVING et GROUP BY pour spécifier un critère de recherche pour un groupe ou un agrégat. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
+## <a name="example"></a><span data-ttu-id="08ca6-116">Exemple</span><span class="sxs-lookup"><span data-stu-id="08ca6-116">Example</span></span>  
+ <span data-ttu-id="08ca6-117">La requête Entity SQL ci-dessous utilise les opérateurs HAVING et GROUP BY pour spécifier un critère de recherche pour un groupe ou un agrégat.</span><span class="sxs-lookup"><span data-stu-id="08ca6-117">The following Entity SQL query uses the HAVING and GROUP BY operators to specify a search condition for a group or an aggregate.</span></span> <span data-ttu-id="08ca6-118">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="08ca6-118">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="08ca6-119">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="08ca6-119">To compile and run this query, follow these steps:</span></span>  
   
-1.  Suivez la procédure indiquée dans [Procédure : exécuter une requête qui retourne des résultats PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1.  <span data-ttu-id="08ca6-120">Suivez la procédure de [Comment : exécuter une requête qui retourne des résultats PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).</span><span class="sxs-lookup"><span data-stu-id="08ca6-120">Follow the procedure in [How to: Execute a Query that Returns PrimitiveType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).</span></span>  
   
-2.  Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :  
+2.  <span data-ttu-id="08ca6-121">Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="08ca6-121">Pass the following query as an argument to the `ExecutePrimitiveTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#HAVING](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#having)]  
   
-## Voir aussi  
- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)   
- [Expressions de requête](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)
+## <a name="see-also"></a><span data-ttu-id="08ca6-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="08ca6-122">See Also</span></span>  
+ [<span data-ttu-id="08ca6-123">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="08ca6-123">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
+ [<span data-ttu-id="08ca6-124">Expressions de requête</span><span class="sxs-lookup"><span data-stu-id="08ca6-124">Query Expressions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)

@@ -1,58 +1,38 @@
 ---
-title: "Guide pratique pour modifier du contenu de chaîne (Guide de programmation C#)"
-ms.date: 2015-07-20
+title: "Comment : modifier du contenu de chaîne (Guide de programmation C#)"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- strings [C#], modifying
+helpviewer_keywords: strings [C#], modifying
 ms.assetid: b6c20bba-ce22-43d7-ad1b-5ce65f714055
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: b0810d5722c2c32f7884187bb2e3fc5a039825c9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 114b6fdabd235d7e57947e77b672352e28aff11e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-modify-string-contents-c-programming-guide"></a>Guide pratique pour modifier du contenu de chaîne (Guide de programmation C#)
-Étant donné que les chaînes sont *immuables*, il n’est pas possible (sans utiliser du code unsafe) de modifier la valeur d’un objet string après sa création. Toutefois, il existe de nombreuses façons de modifier la valeur d’une chaîne et de stocker le résultat dans un nouvel objet string. La classe <xref:System.String?displayProperty=fullName> fournit des méthodes qui fonctionnent sur une chaîne d’entrée et retournent un nouvel objet string. Dans de nombreux cas, vous pouvez affecter le nouvel objet à la variable qui contenait la chaîne d’origine. La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName> fournit des méthodes supplémentaires qui fonctionnent d’une manière similaire. La classe <xref:System.Text.StringBuilder?displayProperty=fullName> fournit une mémoire tampon de caractères que vous pouvez modifier « sur place ». Vous appelez la méthode <xref:System.Text.StringBuilder.ToString%2A?displayProperty=fullName> pour créer un objet string qui contient le contenu actuel de la mémoire tampon.  
+# <a name="how-to-modify-string-contents-c-programming-guide"></a><span data-ttu-id="deb9a-102">Comment : modifier du contenu de chaîne (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="deb9a-102">How to: Modify String Contents (C# Programming Guide)</span></span>
+<span data-ttu-id="deb9a-103">Étant donné que les chaînes sont *immuables*, il n’est pas possible (sans utiliser du code unsafe) de modifier la valeur d’un objet string après sa création.</span><span class="sxs-lookup"><span data-stu-id="deb9a-103">Because strings are *immutable*, it is not possible (without using unsafe code) to modify the value of a string object after it has been created.</span></span> <span data-ttu-id="deb9a-104">Toutefois, il existe de nombreuses façons de modifier la valeur d’une chaîne et de stocker le résultat dans un nouvel objet string.</span><span class="sxs-lookup"><span data-stu-id="deb9a-104">However, there are many ways to modify the value of a string and store the result in a new string object.</span></span> <span data-ttu-id="deb9a-105">La classe <xref:System.String?displayProperty=nameWithType> fournit des méthodes qui fonctionnent sur une chaîne d’entrée et retournent un nouvel objet string.</span><span class="sxs-lookup"><span data-stu-id="deb9a-105">The <xref:System.String?displayProperty=nameWithType> class provides methods that operate on an input string and return a new string object.</span></span> <span data-ttu-id="deb9a-106">Dans de nombreux cas, vous pouvez affecter le nouvel objet à la variable qui contenait la chaîne d’origine.</span><span class="sxs-lookup"><span data-stu-id="deb9a-106">In many cases, you can assign the new object to the variable that held the original string.</span></span> <span data-ttu-id="deb9a-107">La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> fournit des méthodes supplémentaires qui fonctionnent d’une manière similaire.</span><span class="sxs-lookup"><span data-stu-id="deb9a-107">The <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> class provides additional methods that work in a similar manner.</span></span> <span data-ttu-id="deb9a-108">La classe <xref:System.Text.StringBuilder?displayProperty=nameWithType> fournit une mémoire tampon de caractères que vous pouvez modifier « sur place ».</span><span class="sxs-lookup"><span data-stu-id="deb9a-108">The <xref:System.Text.StringBuilder?displayProperty=nameWithType> class provides a character buffer that you can modify "in-place."</span></span> <span data-ttu-id="deb9a-109">Vous appelez la méthode <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType> pour créer un objet string qui contient le contenu actuel de la mémoire tampon.</span><span class="sxs-lookup"><span data-stu-id="deb9a-109">You call the <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType> method to create a new string object that contains the current contents of the buffer.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant indique différentes façons de remplacer ou de supprimer des sous-chaînes dans une chaîne spécifiée.  
+## <a name="example"></a><span data-ttu-id="deb9a-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="deb9a-110">Example</span></span>  
+ <span data-ttu-id="deb9a-111">L’exemple suivant indique différentes façons de remplacer ou de supprimer des sous-chaînes dans une chaîne spécifiée.</span><span class="sxs-lookup"><span data-stu-id="deb9a-111">The following example shows various ways to replace or remove substrings in a specified string.</span></span>  
   
- [!code-cs[csProgGuideStrings#28](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_1.cs)]  
+ [!code-csharp[csProgGuideStrings#28](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_1.cs)]  
   
-## <a name="example"></a>Exemple  
- Pour accéder aux caractères individuels d’une chaîne en utilisant la notation de tableau, vous pouvez utiliser l’objet <xref:System.Text.StringBuilder>, qui surcharge l’opérateur `[]` pour permettre d’accéder à sa mémoire tampon de caractères interne. Vous pouvez également convertir la chaîne en un tableau de caractères en utilisant la méthode <xref:System.String.ToCharArray%2A>. L’exemple suivant utilise `ToCharArray` pour créer le tableau. Certains éléments de ce tableau sont ensuite modifiés. Un constructeur String prenant un tableau de caractères comme paramètres d’entrée est ensuite appelé pour créer une chaîne.  
+## <a name="example"></a><span data-ttu-id="deb9a-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="deb9a-112">Example</span></span>  
+ <span data-ttu-id="deb9a-113">Pour accéder aux caractères individuels d’une chaîne en utilisant la notation de tableau, vous pouvez utiliser l’objet <xref:System.Text.StringBuilder>, qui surcharge l’opérateur `[]` pour permettre d’accéder à sa mémoire tampon de caractères interne.</span><span class="sxs-lookup"><span data-stu-id="deb9a-113">To access the individual characters in a string by using array notation, you can use the <xref:System.Text.StringBuilder> object, which overloads the `[]` operator to provide access to its internal character buffer.</span></span> <span data-ttu-id="deb9a-114">Vous pouvez également convertir la chaîne en un tableau de caractères en utilisant la méthode <xref:System.String.ToCharArray%2A>.</span><span class="sxs-lookup"><span data-stu-id="deb9a-114">You can also convert the string to an array of chars by using the <xref:System.String.ToCharArray%2A> method.</span></span> <span data-ttu-id="deb9a-115">L’exemple suivant utilise `ToCharArray` pour créer le tableau.</span><span class="sxs-lookup"><span data-stu-id="deb9a-115">The following example uses `ToCharArray` to create the array.</span></span> <span data-ttu-id="deb9a-116">Certains éléments de ce tableau sont ensuite modifiés.</span><span class="sxs-lookup"><span data-stu-id="deb9a-116">Some elements of this array are then modified.</span></span> <span data-ttu-id="deb9a-117">Un constructeur String prenant un tableau de caractères comme paramètres d’entrée est ensuite appelé pour créer une chaîne.</span><span class="sxs-lookup"><span data-stu-id="deb9a-117">A string constructor that takes a char array as an input parameter is then called to create a new string.</span></span>  
   
- [!code-cs[csProgGuideStrings#24](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_2.cs)]  
+ [!code-csharp[csProgGuideStrings#24](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_2.cs)]  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant est fourni pour les très rares cas où vous voulez modifier une chaîne sur place en utilisant du code unsafe, en procédant d’une façon similaire aux tableaux de caractères de style C. Il indique comment accéder aux différents caractères « sur place » en utilisant le mot clé fixed. Il montre également un effet secondaire possible des opérations risquées effectuées sur les chaînes, lié à la façon dont le compilateur C# stocke (intègre) les chaînes en interne. En général, il est préférable de ne pas utiliser cette technique, sauf en cas d’absolue nécessité.  
+## <a name="example"></a><span data-ttu-id="deb9a-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="deb9a-118">Example</span></span>  
+ <span data-ttu-id="deb9a-119">L’exemple suivant est fourni pour les très rares cas où vous voulez modifier une chaîne sur place en utilisant du code unsafe, en procédant d’une façon similaire aux tableaux de caractères de style C.</span><span class="sxs-lookup"><span data-stu-id="deb9a-119">The following example is provided for those very rare situations in which you may want to modify a string in-place by using unsafe code in a manner similar to C-style char arrays.</span></span> <span data-ttu-id="deb9a-120">Il indique comment accéder aux différents caractères « sur place » en utilisant le mot clé fixed.</span><span class="sxs-lookup"><span data-stu-id="deb9a-120">The example shows how to access the individual characters "in-place" by using the fixed keyword.</span></span> <span data-ttu-id="deb9a-121">Il montre également un effet secondaire possible des opérations risquées effectuées sur les chaînes, lié à la façon dont le compilateur C# stocke (intègre) les chaînes en interne.</span><span class="sxs-lookup"><span data-stu-id="deb9a-121">It also demonstrates one possible side effect of unsafe operations on strings that results from the way that the C# compiler stores (interns) strings internally.</span></span> <span data-ttu-id="deb9a-122">En général, il est préférable de ne pas utiliser cette technique, sauf en cas d’absolue nécessité.</span><span class="sxs-lookup"><span data-stu-id="deb9a-122">In general, you should not use this technique unless it is absolutely necessary.</span></span>  
   
- [!code-cs[csProgGuideStrings#29](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_3.cs)]  
+ [!code-csharp[csProgGuideStrings#29](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_3.cs)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Chaînes](../../../csharp/programming-guide/strings/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="deb9a-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="deb9a-123">See Also</span></span>  
+ [<span data-ttu-id="deb9a-124">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="deb9a-124">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="deb9a-125">Chaînes</span><span class="sxs-lookup"><span data-stu-id="deb9a-125">Strings</span></span>](../../../csharp/programming-guide/strings/index.md)

@@ -1,43 +1,46 @@
 ---
-title: "Concepts relatifs aux requ&#234;tes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Concepts relatifs aux requêtes"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9a125749-ccb5-49d5-999d-d2db7171d74d
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 14be34b5d988a51a4785defbfcec95a4a073cc2c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Concepts relatifs aux requ&#234;tes
-Cette section décrit les concepts principaux relatifs à la conception de requêtes [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+# <a name="query-concepts"></a><span data-ttu-id="c5390-102">Concepts relatifs aux requêtes</span><span class="sxs-lookup"><span data-stu-id="c5390-102">Query Concepts</span></span>
+<span data-ttu-id="c5390-103">Cette section décrit les concepts principaux relatifs à la conception de requêtes [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c5390-103">This section describes key concepts for designing [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] queries in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
   
-## Dans cette section  
- [Requêtes LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/linq-to-sql-queries.md)  
- Fait référence à des rubriques générales de [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] et explique des éléments spécifiques à [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+## <a name="in-this-section"></a><span data-ttu-id="c5390-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="c5390-104">In This Section</span></span>  
+ [<span data-ttu-id="c5390-105">Requêtes LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="c5390-105">LINQ to SQL Queries</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/linq-to-sql-queries.md)  
+ <span data-ttu-id="c5390-106">Fait référence à des rubriques générales de [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] et explique des éléments spécifiques à [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c5390-106">Refers to general [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] topics, and explains items specific to [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
   
- [Interrogation de relations](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md)  
- Explique comment utiliser des associations dans le modèle objet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ [<span data-ttu-id="c5390-107">Interrogation de relations</span><span class="sxs-lookup"><span data-stu-id="c5390-107">Querying Across Relationships</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md)  
+ <span data-ttu-id="c5390-108">Explique comment utiliser des associations dans le modèle objet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c5390-108">Explains how to use associations in the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] object model.</span></span>  
   
- [Comparaison entre une exécution locale et une exécution distante](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)  
- Explique comment spécifier où une requête doit être exécutée.  
+ [<span data-ttu-id="c5390-109">Exécution à distance. Exécution locale</span><span class="sxs-lookup"><span data-stu-id="c5390-109">Remote vs. Local Execution</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/remote-vs-local-execution.md)  
+ <span data-ttu-id="c5390-110">Explique comment spécifier où une requête doit être exécutée.</span><span class="sxs-lookup"><span data-stu-id="c5390-110">Explains how to specify where you want your query executed.</span></span>  
   
- [Comparaison entre le chargement différé et le chargement immédiat](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)  
- Décrit comment indiquer quand les objets connexes sont chargés.  
+ [<span data-ttu-id="c5390-111">Exécution différée / le chargement immédiat</span><span class="sxs-lookup"><span data-stu-id="c5390-111">Deferred versus Immediate Loading</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)  
+ <span data-ttu-id="c5390-112">Décrit comment indiquer quand les objets connexes sont chargés.</span><span class="sxs-lookup"><span data-stu-id="c5390-112">Describes how to specify when related objects are loaded.</span></span>  
   
-## Rubriques connexes  
- [Guide de programmation](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
- Contient des liens vers des rubriques qui décrivent la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+## <a name="related-sections"></a><span data-ttu-id="c5390-113">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="c5390-113">Related Sections</span></span>  
+ [<span data-ttu-id="c5390-114">Guide de programmation</span><span class="sxs-lookup"><span data-stu-id="c5390-114">Programming Guide</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
+ <span data-ttu-id="c5390-115">Contient des liens vers des rubriques qui décrivent la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c5390-115">Contains links to topics that explain the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technology.</span></span>  
   
- [Identité d'un objet](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
- Explique le concept d'identité d'objet dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ [<span data-ttu-id="c5390-116">Identité de l’objet</span><span class="sxs-lookup"><span data-stu-id="c5390-116">Object Identity</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
+ <span data-ttu-id="c5390-117">Explique le concept d'identité d'objet dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c5390-117">Explains the concept of object identity in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
   
- [Introduction to LINQ Queries \(C\#\)](../Topic/Introduction%20to%20LINQ%20Queries%20\(C%23\).md)  
- Fournit une introduction aux opérations de requête dans [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].
+ [<span data-ttu-id="c5390-118">Introduction aux requêtes LINQ (C#)</span><span class="sxs-lookup"><span data-stu-id="c5390-118">Introduction to LINQ Queries (C#)</span></span>](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
+ <span data-ttu-id="c5390-119">Fournit une introduction aux opérations de requête dans [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c5390-119">Provides an introduction to query operations in [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].</span></span>

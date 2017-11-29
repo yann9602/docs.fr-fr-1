@@ -1,44 +1,47 @@
 ---
-title: "220 - MessageSentToTransport | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 220 - MessageSentToTransport
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: aef4e781-240b-45bc-bff8-400053037e71
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a84aa9ccbb51f2390376fc549660ca5e027969c1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 220 - MessageSentToTransport
-## Propriétés  
+# <a name="220---messagesenttotransport"></a><span data-ttu-id="9e62a-102">220 - MessageSentToTransport</span><span class="sxs-lookup"><span data-stu-id="9e62a-102">220 - MessageSentToTransport</span></span>
+## <a name="properties"></a><span data-ttu-id="9e62a-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="9e62a-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|Id|220|  
-|Mots clés|EndToEndMonitoring, Dépannage, ServiceModel|  
-|Niveau|Information|  
-|Canal|Microsoft\-Windows\-Serveur d'applications\-Applications\/Analyse|  
+|<span data-ttu-id="9e62a-104">Id</span><span class="sxs-lookup"><span data-stu-id="9e62a-104">Id</span></span>|<span data-ttu-id="9e62a-105">220</span><span class="sxs-lookup"><span data-stu-id="9e62a-105">220</span></span>|  
+|<span data-ttu-id="9e62a-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="9e62a-106">Keywords</span></span>|<span data-ttu-id="9e62a-107">EndToEndMonitoring, Dépannage, ServiceModel</span><span class="sxs-lookup"><span data-stu-id="9e62a-107">EndToEndMonitoring, Troubleshooting, ServiceModel</span></span>|  
+|<span data-ttu-id="9e62a-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="9e62a-108">Level</span></span>|<span data-ttu-id="9e62a-109">Information</span><span class="sxs-lookup"><span data-stu-id="9e62a-109">Information</span></span>|  
+|<span data-ttu-id="9e62a-110">Canal</span><span class="sxs-lookup"><span data-stu-id="9e62a-110">Channel</span></span>|<span data-ttu-id="9e62a-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="9e62a-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## Description  
- Cet événement est émis lorsque le modèle de service envoie un message au transport.  
+## <a name="description"></a><span data-ttu-id="9e62a-112">Description</span><span class="sxs-lookup"><span data-stu-id="9e62a-112">Description</span></span>  
+ <span data-ttu-id="9e62a-113">Cet événement est émis lorsque le modèle de service envoie un message au transport.</span><span class="sxs-lookup"><span data-stu-id="9e62a-113">This event is emitted when the Service Model sends a message to the transport.</span></span>  
   
 > [!NOTE]
->  Il n'est pas émis pour les transports unidirectionnels.  
+>  <span data-ttu-id="9e62a-114">Il n'est pas émis pour les transports unidirectionnels.</span><span class="sxs-lookup"><span data-stu-id="9e62a-114">This event will not be emitted for one-way transports.</span></span>  
   
-## Message  
- Le répartiteur a envoyé un message au transport.ID de corrélation \=\= '%1.'  
+## <a name="message"></a><span data-ttu-id="9e62a-115">Message</span><span class="sxs-lookup"><span data-stu-id="9e62a-115">Message</span></span>  
+ <span data-ttu-id="9e62a-116">Le répartiteur a envoyé un message au transport.</span><span class="sxs-lookup"><span data-stu-id="9e62a-116">The Dispatcher sent a message to the transport.</span></span> <span data-ttu-id="9e62a-117">ID de corrélation == '%1.'</span><span class="sxs-lookup"><span data-stu-id="9e62a-117">Correlation ID == '%1'.</span></span>  
   
-## Détails  
+## <a name="details"></a><span data-ttu-id="9e62a-118">Détails</span><span class="sxs-lookup"><span data-stu-id="9e62a-118">Details</span></span>  
   
-|Nom d'élément de données|Type d'élément de données|Description|  
-|------------------------------|-------------------------------|-----------------|  
-|ID de corrélation|`xs:GUID`|ID d'activité utilisé pour mettre en corrélation un événement `MessageSentToTransport` provenant d'un service ou d'un client avec son événement `MessageReceivedFromTransport` correspondant à l'autre bout.|  
-|HostReference|`xs:string`|Pour les services hébergés par le Web, ce champ identifie de manière unique le service dans la hiérarchie Web.Son format est défini de la façon suivante : 'Chemin d'accès virtuel de l'Application Nom du site Web&#124;Chemin d'accès virtuel du Service&#124;ServiceName.Exemple : 'Site Web par défaut\/CalculatorApplication&#124;\/CalculatorService.svc&#124;CalculatorService'.|  
-|AppDomain|`xs:string`|Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.|
+|<span data-ttu-id="9e62a-119">Nom d'élément de données</span><span class="sxs-lookup"><span data-stu-id="9e62a-119">Data Item Name</span></span>|<span data-ttu-id="9e62a-120">Type d'élément de données</span><span class="sxs-lookup"><span data-stu-id="9e62a-120">Data Item Type</span></span>|<span data-ttu-id="9e62a-121">Description</span><span class="sxs-lookup"><span data-stu-id="9e62a-121">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="9e62a-122">ID de corrélation</span><span class="sxs-lookup"><span data-stu-id="9e62a-122">Correlation ID</span></span>|`xs:GUID`|<span data-ttu-id="9e62a-123">ID d'activité utilisé pour mettre en corrélation un événement `MessageSentToTransport` provenant d'un service ou d'un client avec son événement `MessageReceivedFromTransport` correspondant à l'autre bout.</span><span class="sxs-lookup"><span data-stu-id="9e62a-123">The activity ID used to correlate a `MessageSentToTransport` event from a service or client to its corresponding `MessageReceivedFromTransport` on the other end.</span></span>|  
+|<span data-ttu-id="9e62a-124">HostReference</span><span class="sxs-lookup"><span data-stu-id="9e62a-124">HostReference</span></span>|`xs:string`|<span data-ttu-id="9e62a-125">Pour les services hébergés par le Web, ce champ identifie de manière unique le service dans la hiérarchie Web.</span><span class="sxs-lookup"><span data-stu-id="9e62a-125">For Web-hosted services, this field uniquely identifies the service in the Web hierarchy.</span></span> <span data-ttu-id="9e62a-126">Son format est défini en tant que ' chemin d’accès virtuel de Site Web de nom d’Application &#124; Chemin d’accès virtuel de service &#124; ServiceName'.</span><span class="sxs-lookup"><span data-stu-id="9e62a-126">Its format is defined as 'Web Site Name Application Virtual Path&#124;Service Virtual Path&#124;ServiceName'.</span></span> <span data-ttu-id="9e62a-127">Exemple : ' Default Web Site/CalculatorApplication &#124;/CalculatorService.svc &#124; CalculatorService ».</span><span class="sxs-lookup"><span data-stu-id="9e62a-127">Example: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.</span></span>|  
+|<span data-ttu-id="9e62a-128">AppDomain</span><span class="sxs-lookup"><span data-stu-id="9e62a-128">AppDomain</span></span>|`xs:string`|<span data-ttu-id="9e62a-129">Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.</span><span class="sxs-lookup"><span data-stu-id="9e62a-129">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

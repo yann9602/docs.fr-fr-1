@@ -1,35 +1,31 @@
 ---
 title: "Guide pratique pour récupérer la valeur superficielle d’un élément (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 5dcbe3faa457a4880a85f5827d0e5c4808b6a44b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: aad07fdba1d3df2b72f867e6845536300031146b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Guide pratique pour récupérer la valeur superficielle d’un élément (C#)
-Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l'élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.  
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a><span data-ttu-id="18e14-102">Guide pratique pour récupérer la valeur superficielle d’un élément (C#)</span><span class="sxs-lookup"><span data-stu-id="18e14-102">How to: Retrieve the Shallow Value of an Element (C#)</span></span>
+<span data-ttu-id="18e14-103">Cette rubrique montre comment obtenir la valeur superficielle d'un élément.</span><span class="sxs-lookup"><span data-stu-id="18e14-103">This topic shows how to get the shallow value of an element.</span></span> <span data-ttu-id="18e14-104">La valeur superficielle est la valeur de l'élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.</span><span class="sxs-lookup"><span data-stu-id="18e14-104">The shallow value is the value of the specific element only, as opposed to the deep value, which includes the values of all descendent elements concatenated into a single string.</span></span>  
   
- Lorsque vous extrayez la valeur d'un élément par le biais d'une conversion ou en utilisant la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>, vous extrayez une valeur profonde. Pour extraire la valeur superficielle, vous pouvez utiliser la méthode d'extension `ShallowValue`, comme illustré dans l'exemple suivant. L'extraction de la valeur superficielle est utile lorsque vous voulez sélectionner des éléments en fonction de leur contenu.  
+ <span data-ttu-id="18e14-105">Lorsque vous extrayez la valeur d'un élément par le biais d'une conversion ou en utilisant la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType>, vous extrayez une valeur profonde.</span><span class="sxs-lookup"><span data-stu-id="18e14-105">When you retrieve an element value by using either casting or the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property, you retrieve the deep value.</span></span> <span data-ttu-id="18e14-106">Pour extraire la valeur superficielle, vous pouvez utiliser la méthode d'extension `ShallowValue`, comme illustré dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="18e14-106">To retrieve the shallow value, you can use the `ShallowValue` extension method, as shown in the follwing example.</span></span> <span data-ttu-id="18e14-107">L'extraction de la valeur superficielle est utile lorsque vous voulez sélectionner des éléments en fonction de leur contenu.</span><span class="sxs-lookup"><span data-stu-id="18e14-107">Retrieving the shallow value is useful when you want to select elements based on their content.</span></span>  
   
- L'exemple suivant déclare une méthode d'extension qui extrait la valeur superficielle d'un élément. Il utilise ensuite la méthode d’extension dans une requête pour répertorier tous les éléments qui contiennent une valeur calculée.  
+ <span data-ttu-id="18e14-108">L'exemple suivant déclare une méthode d'extension qui extrait la valeur superficielle d'un élément.</span><span class="sxs-lookup"><span data-stu-id="18e14-108">The following example declares an extension method that retrieves the shallow value of an element.</span></span> <span data-ttu-id="18e14-109">Il utilise ensuite la méthode d’extension dans une requête pour répertorier tous les éléments qui contiennent une valeur calculée.</span><span class="sxs-lookup"><span data-stu-id="18e14-109">It then uses the extension method in a query to list all elements that contain a calculated value.</span></span>  
   
-## <a name="example"></a>Exemple  
- Le fichier texte suivant, Report.xml, est la source pour cet exemple.  
+## <a name="example"></a><span data-ttu-id="18e14-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="18e14-110">Example</span></span>  
+ <span data-ttu-id="18e14-111">Le fichier texte suivant, Report.xml, est la source pour cet exemple.</span><span class="sxs-lookup"><span data-stu-id="18e14-111">The following text file, Report.xml, is the source for this example.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -82,7 +78,7 @@ class Program
 }  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="18e14-112">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="18e14-112">This example produces the following output:</span></span>  
   
 ```  
 Column  Name="CustomerId"   =Customer.CustomerId.Heading  
@@ -91,6 +87,5 @@ Column  Name="CustomerId"   =Customer.CustomerId
 Column  Name="Name"         =Customer.Name  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Axes LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
-
+## <a name="see-also"></a><span data-ttu-id="18e14-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="18e14-113">See Also</span></span>  
+ [<span data-ttu-id="18e14-114">Axes LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="18e14-114">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

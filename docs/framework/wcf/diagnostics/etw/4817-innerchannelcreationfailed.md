@@ -1,35 +1,38 @@
 ---
-title: "4817 - InnerChannelCreationFailed | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 4817 - InnerChannelCreationFailed
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c1a20619-beda-49b9-bb64-76b6a009c32b
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c414b2bb2e3d36ac4ae8f9fd64645faa16d8e3c6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 4817 - InnerChannelCreationFailed
-## Propriétés  
+# <a name="4817---innerchannelcreationfailed"></a><span data-ttu-id="42b57-102">4817 - InnerChannelCreationFailed</span><span class="sxs-lookup"><span data-stu-id="42b57-102">4817 - InnerChannelCreationFailed</span></span>
+## <a name="properties"></a><span data-ttu-id="42b57-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="42b57-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|4817|  
-|Mots clés|Découverte|  
-|Niveau|Avertissement|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Débogage|  
+|<span data-ttu-id="42b57-104">ID</span><span class="sxs-lookup"><span data-stu-id="42b57-104">ID</span></span>|<span data-ttu-id="42b57-105">4817</span><span class="sxs-lookup"><span data-stu-id="42b57-105">4817</span></span>|  
+|<span data-ttu-id="42b57-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="42b57-106">Keywords</span></span>|<span data-ttu-id="42b57-107">Découverte</span><span class="sxs-lookup"><span data-stu-id="42b57-107">Discovery</span></span>|  
+|<span data-ttu-id="42b57-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="42b57-108">Level</span></span>|<span data-ttu-id="42b57-109">Avertissement</span><span class="sxs-lookup"><span data-stu-id="42b57-109">Warning</span></span>|  
+|<span data-ttu-id="42b57-110">Canal</span><span class="sxs-lookup"><span data-stu-id="42b57-110">Channel</span></span>|<span data-ttu-id="42b57-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="42b57-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## Description  
- Cet événement est émis lorsque le DiscoveryClientChannel n'a pas pu créer le canal avec un point de terminaison découvert.  DiscoveryClientChannel va tenter d'utiliser le prochain point de terminaison découvert disponible.  
+## <a name="description"></a><span data-ttu-id="42b57-112">Description</span><span class="sxs-lookup"><span data-stu-id="42b57-112">Description</span></span>  
+ <span data-ttu-id="42b57-113">Cet événement est émis lorsque le DiscoveryClientChannel n'a pas pu créer le canal avec un point de terminaison découvert.</span><span class="sxs-lookup"><span data-stu-id="42b57-113">This event is emitted when the DiscoveryClientChannel failed to create the channel with a discovered endpoint.</span></span> <span data-ttu-id="42b57-114">DiscoveryClientChannel va tenter d'utiliser le prochain point de terminaison découvert disponible.</span><span class="sxs-lookup"><span data-stu-id="42b57-114">The DiscoveryClientChannel will now attempt to use the next available discovered endpoint.</span></span>  
   
-## Message  
- DiscoveryClientChannel n'a pas pu créer le canal avec un point de terminaison découvert avec EndpointAddress\='%1' et Via\='%2'.  DiscoveryClientChannel va tenter d'utiliser le prochain point de terminaison découvert disponible.  
+## <a name="message"></a><span data-ttu-id="42b57-115">Message</span><span class="sxs-lookup"><span data-stu-id="42b57-115">Message</span></span>  
+ <span data-ttu-id="42b57-116">DiscoveryClientChannel n'a pas pu créer le canal avec un point de terminaison découvert avec EndpointAddress='%1' et Via='%2'.</span><span class="sxs-lookup"><span data-stu-id="42b57-116">The DiscoveryClientChannel failed to create the channel with a discovered endpoint with EndpointAddress='%1' and Via='%2'.</span></span> <span data-ttu-id="42b57-117">DiscoveryClientChannel va tenter d'utiliser le prochain point de terminaison découvert disponible.</span><span class="sxs-lookup"><span data-stu-id="42b57-117">The DiscoveryClientChannel will now attempt to use the next available discovered endpoint.</span></span>  
   
-## Détails
+## <a name="details"></a><span data-ttu-id="42b57-118">Détails</span><span class="sxs-lookup"><span data-stu-id="42b57-118">Details</span></span>

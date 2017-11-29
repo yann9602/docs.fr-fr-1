@@ -1,65 +1,47 @@
 ---
 title: Finaliseurs (Guide de programmation C#)
-ms.date: 2017-05-10
+ms.date: 05/10/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - ~ [C#], in finalizers
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: b1efe92c371e44eb2d650eb07facc3e7030e9766
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 43bb7e6488da5eda863e7ad70b25c9bf55bebb52
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
-Les finaliseurs permettent de détruire des instances de classes.  
+# <a name="finalizers-c-programming-guide"></a><span data-ttu-id="7d333-102">Finaliseurs (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="7d333-102">Finalizers (C# Programming Guide)</span></span>
+<span data-ttu-id="7d333-103">Les finaliseurs permettent de détruire des instances de classes.</span><span class="sxs-lookup"><span data-stu-id="7d333-103">Finalizers are used to destruct instances of classes.</span></span>  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a><span data-ttu-id="7d333-104">Remarques</span><span class="sxs-lookup"><span data-stu-id="7d333-104">Remarks</span></span>  
   
--   Les finaliseurs ne peuvent pas être définis dans des structs. Ils sont utilisés uniquement avec les classes.  
+-   <span data-ttu-id="7d333-105">Les finaliseurs ne peuvent pas être définis dans des structs.</span><span class="sxs-lookup"><span data-stu-id="7d333-105">Finalizers cannot be defined in structs.</span></span> <span data-ttu-id="7d333-106">Ils sont utilisés uniquement avec les classes.</span><span class="sxs-lookup"><span data-stu-id="7d333-106">They are only used with classes.</span></span>  
   
--   Une classe ne peut avoir qu’un seul finaliseur.  
+-   <span data-ttu-id="7d333-107">Une classe ne peut avoir qu’un seul finaliseur.</span><span class="sxs-lookup"><span data-stu-id="7d333-107">A class can only have one finalizer.</span></span>  
   
--   Les finaliseurs ne peuvent pas être hérités ou surchargés.  
+-   <span data-ttu-id="7d333-108">Les finaliseurs ne peuvent pas être hérités ou surchargés.</span><span class="sxs-lookup"><span data-stu-id="7d333-108">Finalizers cannot be inherited or overloaded.</span></span>  
   
--   Les finaliseurs ne peuvent pas être appelés. Ils sont appelés automatiquement.  
+-   <span data-ttu-id="7d333-109">Les finaliseurs ne peuvent pas être appelés.</span><span class="sxs-lookup"><span data-stu-id="7d333-109">Finalizers cannot be called.</span></span> <span data-ttu-id="7d333-110">Ils sont appelés automatiquement.</span><span class="sxs-lookup"><span data-stu-id="7d333-110">They are invoked automatically.</span></span>  
   
--   Un finaliseur ne prend pas de modificateur et n’a pas de paramètre.  
+-   <span data-ttu-id="7d333-111">Un finaliseur ne prend pas de modificateur et n’a pas de paramètre.</span><span class="sxs-lookup"><span data-stu-id="7d333-111">A finalizer does not take modifiers or have parameters.</span></span>  
   
- Par exemple, voici une déclaration de finaliseur pour la classe `Car`.
+ <span data-ttu-id="7d333-112">Par exemple, voici une déclaration de finaliseur pour la classe `Car`.</span><span class="sxs-lookup"><span data-stu-id="7d333-112">For example, the following is a declaration of a finalizer for the `Car` class.</span></span>
   
- [!code-cs[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_1.cs)]  
+ [!code-csharp[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_1.cs)]  
 
-Un finaliseur peut aussi être implémenté en tant que définition de corps d’expression, comme l’illustre l’exemple suivant.
+<span data-ttu-id="7d333-113">Un finaliseur peut aussi être implémenté en tant que définition de corps d’expression, comme l’illustre l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="7d333-113">A finalizer can also be implemented as an expression body definition, as the following example shows.</span></span>
 
-[!code-cs[expression-bodied-finalizer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-destructor.cs#1)]  
+[!code-csharp[expression-bodied-finalizer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-destructor.cs#1)]  
   
- Le finaliseur appelle implicitement <xref:System.Object.Finalize%2A> sur la classe de base de l’objet. Ainsi, un appel à un finaliseur est traduit implicitement en ce code :  
+ <span data-ttu-id="7d333-114">Le finaliseur appelle implicitement <xref:System.Object.Finalize%2A> sur la classe de base de l’objet.</span><span class="sxs-lookup"><span data-stu-id="7d333-114">The finalizer implicitly calls <xref:System.Object.Finalize%2A> on the base class of the object.</span></span> <span data-ttu-id="7d333-115">Ainsi, un appel à un finaliseur est traduit implicitement en ce code :</span><span class="sxs-lookup"><span data-stu-id="7d333-115">Therefore, a call to a finalizer is implicitly translated to the following code:</span></span>  
   
 ```csharp  
 protected override void Finalize()  
@@ -75,40 +57,39 @@ protected override void Finalize()
 }  
 ```  
   
- Cela signifie que la méthode `Finalize` est appelée de manière récursive pour toutes les instances de la chaîne d’héritage, de la plus dérivée à la moins dérivée.  
+ <span data-ttu-id="7d333-116">Cela signifie que la méthode `Finalize` est appelée de manière récursive pour toutes les instances de la chaîne d’héritage, de la plus dérivée à la moins dérivée.</span><span class="sxs-lookup"><span data-stu-id="7d333-116">This means that the `Finalize` method is called recursively for all instances in the inheritance chain, from the most-derived to the least-derived.</span></span>  
   
 > [!NOTE]
->  Les finaliseurs vides ne doivent pas être utilisés. Quand une classe contient un finaliseur, une entrée est créée dans la file d’attente `Finalize`. Quand le finaliseur est appelé, le récupérateur de mémoire est appelé pour traiter la file d’attente. Un finaliseur vide entraîne une perte de performances inutile.  
+>  <span data-ttu-id="7d333-117">Les finaliseurs vides ne doivent pas être utilisés.</span><span class="sxs-lookup"><span data-stu-id="7d333-117">Empty finalizers should not be used.</span></span> <span data-ttu-id="7d333-118">Quand une classe contient un finaliseur, une entrée est créée dans la file d’attente `Finalize`.</span><span class="sxs-lookup"><span data-stu-id="7d333-118">When a class contains a finalizer, an entry is created in the `Finalize` queue.</span></span> <span data-ttu-id="7d333-119">Quand le finaliseur est appelé, le récupérateur de mémoire est appelé pour traiter la file d’attente.</span><span class="sxs-lookup"><span data-stu-id="7d333-119">When the finalizer is called, the garbage collector is invoked to process the queue.</span></span> <span data-ttu-id="7d333-120">Un finaliseur vide entraîne une perte de performances inutile.</span><span class="sxs-lookup"><span data-stu-id="7d333-120">An empty finalizer just causes a needless loss of performance.</span></span>  
   
- Le programmeur n’a aucun contrôle sur le moment où le finaliseur est appelé, car celui-ci est déterminé par le récupérateur de mémoire. Le récupérateur de mémoire recherche les objets qui ne sont plus utilisés par l’application. S’il considère qu’un objet peut être finalisé, il appelle le finaliseur (s’il y en a un) et libère la mémoire utilisée pour stocker l’objet. Les finaliseurs sont également appelés quand le programme s’arrête.  
+ <span data-ttu-id="7d333-121">Le programmeur n’a aucun contrôle sur le moment où le finaliseur est appelé, car celui-ci est déterminé par le récupérateur de mémoire.</span><span class="sxs-lookup"><span data-stu-id="7d333-121">The programmer has no control over when the finalizer is called because this is determined by the garbage collector.</span></span> <span data-ttu-id="7d333-122">Le récupérateur de mémoire recherche les objets qui ne sont plus utilisés par l’application.</span><span class="sxs-lookup"><span data-stu-id="7d333-122">The garbage collector checks for objects that are no longer being used by the application.</span></span> <span data-ttu-id="7d333-123">S’il considère qu’un objet peut être finalisé, il appelle le finaliseur (s’il y en a un) et libère la mémoire utilisée pour stocker l’objet.</span><span class="sxs-lookup"><span data-stu-id="7d333-123">If it considers an object eligible for finalization, it calls the finalizer (if any) and reclaims the memory used to store the object.</span></span> <span data-ttu-id="7d333-124">Les finaliseurs sont également appelés quand le programme s’arrête.</span><span class="sxs-lookup"><span data-stu-id="7d333-124">Finalizers are also called when the program exits.</span></span>  
   
- Il est possible de forcer le nettoyage de la mémoire en appelant <xref:System.GC.Collect%2A>, mais la plupart du temps c’est à éviter car cela peut créer des problèmes de performances.  
+ <span data-ttu-id="7d333-125">Il est possible de forcer le nettoyage de la mémoire en appelant <xref:System.GC.Collect%2A>, mais la plupart du temps c’est à éviter car cela peut créer des problèmes de performances.</span><span class="sxs-lookup"><span data-stu-id="7d333-125">It is possible to force garbage collection by calling <xref:System.GC.Collect%2A>, but most of the time, this should be avoided because it may create performance issues.</span></span>  
   
-## <a name="using-finalizers-to-release-resources"></a>Utilisation des finaliseurs pour libérer des ressources  
- En général, C# ne nécessite pas autant de gestion de mémoire que quand vous développez avec un langage qui ne cible pas un runtime avec nettoyage de la mémoire. En effet, le récupérateur de mémoire .NET Framework gère implicitement l’allocation et la libération de la mémoire pour vos objets. Toutefois, quand votre application encapsule des ressources non managées, telles que des fenêtres, des fichiers et des connexions réseau, vous devez utiliser des finaliseurs pour libérer ces ressources. Quand l’objet peut être finalisé, le récupérateur de mémoire exécute la méthode `Finalize` de l’objet.  
+## <a name="using-finalizers-to-release-resources"></a><span data-ttu-id="7d333-126">Utilisation des finaliseurs pour libérer des ressources</span><span class="sxs-lookup"><span data-stu-id="7d333-126">Using Finalizers to Release Resources</span></span>  
+ <span data-ttu-id="7d333-127">En général, C# ne nécessite pas autant de gestion de mémoire que quand vous développez avec un langage qui ne cible pas un runtime avec nettoyage de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="7d333-127">In general, C# does not require as much memory management as is needed when you develop with a language that does not target a runtime with garbage collection.</span></span> <span data-ttu-id="7d333-128">En effet, le récupérateur de mémoire .NET Framework gère implicitement l’allocation et la libération de la mémoire pour vos objets.</span><span class="sxs-lookup"><span data-stu-id="7d333-128">This is because the .NET Framework garbage collector implicitly manages the allocation and release of memory for your objects.</span></span> <span data-ttu-id="7d333-129">Toutefois, quand votre application encapsule des ressources non managées, telles que des fenêtres, des fichiers et des connexions réseau, vous devez utiliser des finaliseurs pour libérer ces ressources.</span><span class="sxs-lookup"><span data-stu-id="7d333-129">However, when your application encapsulates unmanaged resources such as windows, files, and network connections, you should use finalizers to free those resources.</span></span> <span data-ttu-id="7d333-130">Quand l’objet peut être finalisé, le récupérateur de mémoire exécute la méthode `Finalize` de l’objet.</span><span class="sxs-lookup"><span data-stu-id="7d333-130">When the object is eligible for finalization, the garbage collector runs the `Finalize` method of the object.</span></span>  
   
-## <a name="explicit-release-of-resources"></a>Libération explicite de ressources  
- Si votre application utilise une ressource externe coûteuse, nous vous recommandons également de proposer un moyen de libérer explicitement la ressource avant que le récupérateur de mémoire ne libère l’objet. Pour cela, vous devez implémenter une méthode `Dispose` à partir de l’interface <xref:System.IDisposable> qui effectue le nettoyage nécessaire pour l’objet. Cela peut améliorer considérablement les performances de l’application. Même avec ce contrôle explicite des ressources, le finaliseur devient un dispositif de protection pour nettoyer les ressources si l’appel à la méthode `Dispose` a échoué.  
+## <a name="explicit-release-of-resources"></a><span data-ttu-id="7d333-131">Libération explicite de ressources</span><span class="sxs-lookup"><span data-stu-id="7d333-131">Explicit Release of Resources</span></span>  
+ <span data-ttu-id="7d333-132">Si votre application utilise une ressource externe coûteuse, nous vous recommandons également de proposer un moyen de libérer explicitement la ressource avant que le récupérateur de mémoire ne libère l’objet.</span><span class="sxs-lookup"><span data-stu-id="7d333-132">If your application is using an expensive external resource, we also recommend that you provide a way to explicitly release the resource before the garbage collector frees the object.</span></span> <span data-ttu-id="7d333-133">Pour cela, vous devez implémenter une méthode `Dispose` à partir de l’interface <xref:System.IDisposable> qui effectue le nettoyage nécessaire pour l’objet.</span><span class="sxs-lookup"><span data-stu-id="7d333-133">You do this by implementing a `Dispose` method from the <xref:System.IDisposable> interface that performs the necessary cleanup for the object.</span></span> <span data-ttu-id="7d333-134">Cela peut améliorer considérablement les performances de l’application.</span><span class="sxs-lookup"><span data-stu-id="7d333-134">This can considerably improve the performance of the application.</span></span> <span data-ttu-id="7d333-135">Même avec ce contrôle explicite des ressources, le finaliseur devient un dispositif de protection pour nettoyer les ressources si l’appel à la méthode `Dispose` a échoué.</span><span class="sxs-lookup"><span data-stu-id="7d333-135">Even with this explicit control over resources, the finalizer becomes a safeguard to clean up resources if the call to the `Dispose` method failed.</span></span>  
   
- Pour plus d’informations sur le nettoyage des ressources, consultez les rubriques suivantes :  
+ <span data-ttu-id="7d333-136">Pour plus d’informations sur le nettoyage des ressources, consultez les rubriques suivantes :</span><span class="sxs-lookup"><span data-stu-id="7d333-136">For more details about cleaning up resources, see the following topics:</span></span>  
   
--   [Nettoyage de ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
+-   [<span data-ttu-id="7d333-137">Nettoyage de ressources non managées</span><span class="sxs-lookup"><span data-stu-id="7d333-137">Cleaning Up Unmanaged Resources</span></span>](../../../standard/garbage-collection/unmanaged.md)  
   
--   [Implémentation d’une méthode dispose](../../../standard/garbage-collection/implementing-dispose.md)  
+-   [<span data-ttu-id="7d333-138">Implémentation d’une méthode dispose</span><span class="sxs-lookup"><span data-stu-id="7d333-138">Implementing a Dispose Method</span></span>](../../../standard/garbage-collection/implementing-dispose.md)  
   
--   [using, instruction](../../../csharp/language-reference/keywords/using-statement.md)  
+-   [<span data-ttu-id="7d333-139">using, instruction</span><span class="sxs-lookup"><span data-stu-id="7d333-139">using Statement</span></span>](../../../csharp/language-reference/keywords/using-statement.md)  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant crée trois classes qui forment une chaîne d’héritage. La classe `First` est la classe de base, `Second` est dérivée de `First`, et `Third` est dérivée de `Second`. Toutes trois ont des finaliseurs. Dans `Main`, une instance de la classe la plus dérivée est créée. Quand le programme s’exécute, notez que les finaliseurs des trois classes sont appelés automatiquement, et dans l’ordre, de la plus dérivée à la moins dérivée.  
+## <a name="example"></a><span data-ttu-id="7d333-140">Exemple</span><span class="sxs-lookup"><span data-stu-id="7d333-140">Example</span></span>  
+ <span data-ttu-id="7d333-141">L’exemple suivant crée trois classes qui forment une chaîne d’héritage.</span><span class="sxs-lookup"><span data-stu-id="7d333-141">The following example creates three classes that make a chain of inheritance.</span></span> <span data-ttu-id="7d333-142">La classe `First` est la classe de base, `Second` est dérivée de `First`, et `Third` est dérivée de `Second`.</span><span class="sxs-lookup"><span data-stu-id="7d333-142">The class `First` is the base class, `Second` is derived from `First`, and `Third` is derived from `Second`.</span></span> <span data-ttu-id="7d333-143">Toutes trois ont des finaliseurs.</span><span class="sxs-lookup"><span data-stu-id="7d333-143">All three have finalizers.</span></span> <span data-ttu-id="7d333-144">Dans `Main`, une instance de la classe la plus dérivée est créée.</span><span class="sxs-lookup"><span data-stu-id="7d333-144">In `Main`, an instance of the most-derived class is created.</span></span> <span data-ttu-id="7d333-145">Quand le programme s’exécute, notez que les finaliseurs des trois classes sont appelés automatiquement, et dans l’ordre, de la plus dérivée à la moins dérivée.</span><span class="sxs-lookup"><span data-stu-id="7d333-145">When the program runs, notice that the finalizers for the three classes are called automatically, and in order, from the most-derived to the least-derived.</span></span>  
   
- [!code-cs[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_2.cs)]  
+ [!code-csharp[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_2.cs)]  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
+## <a name="c-language-specification"></a><span data-ttu-id="7d333-146">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="7d333-146">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.IDisposable>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [Nettoyage de la mémoire](../../../standard/garbage-collection/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="7d333-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7d333-147">See Also</span></span>  
+ <xref:System.IDisposable>  
+ [<span data-ttu-id="7d333-148">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="7d333-148">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="7d333-149">Constructeurs</span><span class="sxs-lookup"><span data-stu-id="7d333-149">Constructors</span></span>](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+ [<span data-ttu-id="7d333-150">Nettoyage de la mémoire</span><span class="sxs-lookup"><span data-stu-id="7d333-150">Garbage Collection</span></span>](../../../standard/garbage-collection/index.md)

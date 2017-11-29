@@ -5,30 +5,28 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5062669f-8bfc-420a-a25d-d8ab992ab10e
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: d471e860e74c9a01770c95671401bdbbc23643cb
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="custom-token-handlers"></a>Gestionnaires de jetons personnalisés
-Cette rubrique traite des gestionnaires de jetons dans WIF et de la façon dont ils sont utilisés pour traiter les jetons. Elle décrit également ce qui est nécessaire pour créer des gestionnaires de jetons personnalisés pour les types de jetons qui ne sont pas pris en charge par défaut dans WIF.  
+# <a name="custom-token-handlers"></a><span data-ttu-id="3c57e-102">Gestionnaires de jetons personnalisés</span><span class="sxs-lookup"><span data-stu-id="3c57e-102">Custom Token Handlers</span></span>
+<span data-ttu-id="3c57e-103">Cette rubrique traite des gestionnaires de jetons dans WIF et de la façon dont ils sont utilisés pour traiter les jetons.</span><span class="sxs-lookup"><span data-stu-id="3c57e-103">This topic discusses token handlers in WIF and how they are used to process tokens.</span></span> <span data-ttu-id="3c57e-104">Elle décrit également ce qui est nécessaire pour créer des gestionnaires de jetons personnalisés pour les types de jetons qui ne sont pas pris en charge par défaut dans WIF.</span><span class="sxs-lookup"><span data-stu-id="3c57e-104">The topic also covers what is necessary to create custom token handlers for token types that are not supported by default in WIF.</span></span>  
   
-## <a name="introduction-to-token-handlers-in-wif"></a>Introduction aux gestionnaires de jetons dans WIF  
- WIF s’appuie sur les gestionnaires de jetons de sécurité pour créer, lire, écrire et valider les jetons pour une application par partie de confiance ou un service d’émission de jeton de sécurité (STS). Les gestionnaires de jetons sont des points d’extensibilité qui vous permettent d’ajouter un gestionnaire de jetons personnalisé dans le pipeline WIF, ou de personnaliser la façon dont un gestionnaire de jeton existant gère les jetons. WIF fournit neuf gestionnaires de jetons de sécurité intégrés qui peuvent être modifiés ou entièrement substitués pour changer la fonctionnalité si nécessaire.  
+## <a name="introduction-to-token-handlers-in-wif"></a><span data-ttu-id="3c57e-105">Introduction aux gestionnaires de jetons dans WIF</span><span class="sxs-lookup"><span data-stu-id="3c57e-105">Introduction to Token Handlers in WIF</span></span>  
+ <span data-ttu-id="3c57e-106">WIF s’appuie sur les gestionnaires de jetons de sécurité pour créer, lire, écrire et valider les jetons pour une application par partie de confiance ou un service d’émission de jeton de sécurité (STS).</span><span class="sxs-lookup"><span data-stu-id="3c57e-106">WIF relies on security token handlers to create, read, write, and validate tokens for a relying party (RP) application or a security token service (STS).</span></span> <span data-ttu-id="3c57e-107">Les gestionnaires de jetons sont des points d’extensibilité qui vous permettent d’ajouter un gestionnaire de jetons personnalisé dans le pipeline WIF, ou de personnaliser la façon dont un gestionnaire de jeton existant gère les jetons.</span><span class="sxs-lookup"><span data-stu-id="3c57e-107">Token handlers are extensibility points for you to add a custom token handler in the WIF pipeline, or to customize the way that an existing token handler manages tokens.</span></span> <span data-ttu-id="3c57e-108">WIF fournit neuf gestionnaires de jetons de sécurité intégrés qui peuvent être modifiés ou entièrement substitués pour changer la fonctionnalité si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="3c57e-108">WIF provides nine built-in security token handlers that can be modified or entirely overridden to change the functionality as necessary.</span></span>  
   
-## <a name="built-in-security-token-handlers-in-wif"></a>Gestionnaires de jetons de sécurité intégrés dans WIF  
- WIF 4.5 comprend neuf classes de gestionnaires de jetons de sécurité qui dérivent de la classe de base abstraite <xref:System.IdentityModel.Tokens.SecurityTokenHandler> :  
+## <a name="built-in-security-token-handlers-in-wif"></a><span data-ttu-id="3c57e-109">Gestionnaires de jetons de sécurité intégrés dans WIF</span><span class="sxs-lookup"><span data-stu-id="3c57e-109">Built-In Security Token Handlers in WIF</span></span>  
+ <span data-ttu-id="3c57e-110">WIF 4.5 comprend neuf classes de gestionnaires de jetons de sécurité qui dérivent de la classe de base abstraite <xref:System.IdentityModel.Tokens.SecurityTokenHandler> :</span><span class="sxs-lookup"><span data-stu-id="3c57e-110">WIF 4.5 includes nine security token handler classes that derive from the abstract base class <xref:System.IdentityModel.Tokens.SecurityTokenHandler>:</span></span>  
   
 -   <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler>  
   
@@ -48,14 +46,14 @@ Cette rubrique traite des gestionnaires de jetons dans WIF et de la façon dont 
   
 -   <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler>  
   
-## <a name="adding-a-custom-token-handler"></a>Ajout d’un gestionnaire de jetons personnalisé  
- Certains types de jetons, tels que les jetons SWT (Simple Web Tokens) et JWT (JSON Web Tokens) n’ont pas de gestionnaires de jetons intégrés fournis par WIF. Pour ces types de jetons et d’autres qui n’ont pas de gestionnaire intégré, vous devez effectuer les étapes suivantes pour créer un gestionnaire de jetons personnalisé.  
+## <a name="adding-a-custom-token-handler"></a><span data-ttu-id="3c57e-111">Ajout d’un gestionnaire de jetons personnalisé</span><span class="sxs-lookup"><span data-stu-id="3c57e-111">Adding a Custom Token Handler</span></span>  
+ <span data-ttu-id="3c57e-112">Certains types de jetons, tels que les jetons SWT (Simple Web Tokens) et JWT (JSON Web Tokens) n’ont pas de gestionnaires de jetons intégrés fournis par WIF.</span><span class="sxs-lookup"><span data-stu-id="3c57e-112">Some token types, such as Simple Web Tokens (SWT) and JSON Web Tokens (JWT) do not have built-in token handlers provided by WIF.</span></span> <span data-ttu-id="3c57e-113">Pour ces types de jetons et d’autres qui n’ont pas de gestionnaire intégré, vous devez effectuer les étapes suivantes pour créer un gestionnaire de jetons personnalisé.</span><span class="sxs-lookup"><span data-stu-id="3c57e-113">For these token types and for others that do not have a built-in handler, you need to perform the following steps to create a custom token handler.</span></span>  
   
-#### <a name="adding-a-custom-token-handler"></a>Ajout d’un gestionnaire de jetons personnalisé  
+#### <a name="adding-a-custom-token-handler"></a><span data-ttu-id="3c57e-114">Ajout d’un gestionnaire de jetons personnalisé</span><span class="sxs-lookup"><span data-stu-id="3c57e-114">Adding a custom token handler</span></span>  
   
-1.  Créez une classe dérivée de <xref:System.IdentityModel.Tokens.SecurityTokenHandler>.  
+1.  <span data-ttu-id="3c57e-115">Créez une classe dérivée de <xref:System.IdentityModel.Tokens.SecurityTokenHandler>.</span><span class="sxs-lookup"><span data-stu-id="3c57e-115">Create a new class that derives from <xref:System.IdentityModel.Tokens.SecurityTokenHandler>.</span></span>  
   
-2.  Substituez les méthodes suivantes et fournissez votre propre implémentation :  
+2.  <span data-ttu-id="3c57e-116">Substituez les méthodes suivantes et fournissez votre propre implémentation :</span><span class="sxs-lookup"><span data-stu-id="3c57e-116">Override the following methods and provide your own implementation:</span></span>  
   
     -   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A>  
   
@@ -69,7 +67,7 @@ Cette rubrique traite des gestionnaires de jetons dans WIF et de la façon dont 
   
     -   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>  
   
-3.  Ajoutez une référence au nouveau gestionnaire de jetons personnalisé dans le fichier *Web.config* ou *App.config*, dans la section **\<system.identityModel>** qui s’applique à WIF. Par exemple, le balisage de configuration suivant spécifie un nouveau gestionnaire de jetons nommé **MyCustomTokenHandler** qui se trouve dans l’espace de noms **CustomToken**.  
+3.  <span data-ttu-id="3c57e-117">Ajoutez une référence au nouveau gestionnaire de jetons personnalisé dans le fichier *Web.config* ou *App.config*, dans la section **\<system.identityModel>** qui s’applique à WIF.</span><span class="sxs-lookup"><span data-stu-id="3c57e-117">Add a reference to the new custom token handler in the *Web.config* or *App.config* file, within the **\<system.identityModel>** section that applies to WIF.</span></span> <span data-ttu-id="3c57e-118">Par exemple, le balisage de configuration suivant spécifie un nouveau gestionnaire de jetons nommé **MyCustomTokenHandler** qui se trouve dans l’espace de noms **CustomToken**.</span><span class="sxs-lookup"><span data-stu-id="3c57e-118">For example, the following configuration markup specifies a new token handler named **MyCustomTokenHandler** that resides in the **CustomToken** namespace.</span></span>  
   
     ```xml  
     <system.identityModel>  
@@ -81,7 +79,7 @@ Cette rubrique traite des gestionnaires de jetons dans WIF et de la façon dont 
     </system.identityModel>  
     ```  
   
-     Notez que si vous fournissez votre propre gestionnaire de jetons pour gérer un type de jeton qui a déjà un gestionnaire de jetons intégré, vous devez ajouter un élément **\<remove>** pour supprimer le gestionnaire par défaut et utiliser votre gestionnaire personnalisé à la place. Par exemple, la configuration suivante remplace le <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> par défaut par le gestionnaire de jetons personnalisé :  
+     <span data-ttu-id="3c57e-119">Notez que si vous fournissez votre propre gestionnaire de jetons pour gérer un type de jeton qui a déjà un gestionnaire de jetons intégré, vous devez ajouter un élément **\<remove>** pour supprimer le gestionnaire par défaut et utiliser votre gestionnaire personnalisé à la place.</span><span class="sxs-lookup"><span data-stu-id="3c57e-119">Note that if you are providing your own token handler to handle a token type that already has a built-in token handler, you need to add a **\<remove>** element to drop the default handler and use your custom handler instead.</span></span> <span data-ttu-id="3c57e-120">Par exemple, la configuration suivante remplace le <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> par défaut par le gestionnaire de jetons personnalisé :</span><span class="sxs-lookup"><span data-stu-id="3c57e-120">For example, the following configuration replaces the default <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> with the custom token handler:</span></span>  
   
     ```xml  
     <system.identityModel>  
@@ -93,4 +91,3 @@ Cette rubrique traite des gestionnaires de jetons dans WIF et de la façon dont 
         </identityConfiguration>  
     </system.identityModel>  
     ```
-

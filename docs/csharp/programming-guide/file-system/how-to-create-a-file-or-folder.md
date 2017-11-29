@@ -1,53 +1,35 @@
 ---
 title: "Guide pratique pour créer un fichier ou un dossier (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - folders [C#]
 - creating files [C#]
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: f7eb2c6386a8433c025a9f2abea4b03f6ab271d6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 150190eeef829bd0431eeea7789025b9905553e3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Guide pratique pour créer un fichier ou un dossier (Guide de programmation C#)
-Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un sous-dossier, créer un fichier dans le sous-dossier et écrire des données dans le fichier.  
+# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a><span data-ttu-id="6b33c-102">Guide pratique pour créer un fichier ou un dossier (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="6b33c-102">How to: Create a File or Folder (C# Programming Guide)</span></span>
+<span data-ttu-id="6b33c-103">Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un sous-dossier, créer un fichier dans le sous-dossier et écrire des données dans le fichier.</span><span class="sxs-lookup"><span data-stu-id="6b33c-103">You can programmatically create a folder on your computer, create a subfolder, create a file in the subfolder, and write data to the file.</span></span>  
   
-## <a name="example"></a>Exemple  
- [!code-cs[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-create-a-file-or-folder_1.cs)]  
+## <a name="example"></a><span data-ttu-id="6b33c-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="6b33c-104">Example</span></span>  
+ [!code-csharp[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-create-a-file-or-folder_1.cs)]  
   
- Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n’est levée. Toutefois, <xref:System.IO.File.Create%2A?displayProperty=fullName> remplace un fichier existant par un nouveau fichier. L’exemple utilise une instruction `if`-`else` pour éviter qu’un fichier existant soit pas remplacé.  
+ <span data-ttu-id="6b33c-105">Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n’est levée.</span><span class="sxs-lookup"><span data-stu-id="6b33c-105">If the folder already exists, <xref:System.IO.Directory.CreateDirectory%2A> does nothing, and no exception is thrown.</span></span> <span data-ttu-id="6b33c-106">Toutefois, <xref:System.IO.File.Create%2A?displayProperty=nameWithType> remplace un fichier existant par un nouveau fichier.</span><span class="sxs-lookup"><span data-stu-id="6b33c-106">However, <xref:System.IO.File.Create%2A?displayProperty=nameWithType> replaces an existing file with a new file.</span></span> <span data-ttu-id="6b33c-107">L’exemple utilise une instruction `if`-`else` pour éviter qu’un fichier existant soit pas remplacé.</span><span class="sxs-lookup"><span data-stu-id="6b33c-107">The example uses an `if`-`else` statement to prevent an existing file from being replaced.</span></span>  
   
- En apportant les modifications suivantes dans l’exemple, vous pouvez spécifier des résultats différents si un fichier avec un nom spécifique existe déjà. Si un tel fichier n’existe pas, le code en crée un. Si un tel fichier existe, le code ajoute des données à ce fichier.  
+ <span data-ttu-id="6b33c-108">En apportant les modifications suivantes dans l’exemple, vous pouvez spécifier des résultats différents si un fichier avec un nom spécifique existe déjà.</span><span class="sxs-lookup"><span data-stu-id="6b33c-108">By making the following changes in the example, you can specify different outcomes based on whether a file with a certain name already exists.</span></span> <span data-ttu-id="6b33c-109">Si un tel fichier n’existe pas, le code en crée un.</span><span class="sxs-lookup"><span data-stu-id="6b33c-109">If such a file doesn't exist, the code creates one.</span></span> <span data-ttu-id="6b33c-110">Si un tel fichier existe, le code ajoute des données à ce fichier.</span><span class="sxs-lookup"><span data-stu-id="6b33c-110">If such a file exists, the code appends data to that file.</span></span>  
   
--   Spécifiez un nom de fichier non aléatoire.  
+-   <span data-ttu-id="6b33c-111">Spécifiez un nom de fichier non aléatoire.</span><span class="sxs-lookup"><span data-stu-id="6b33c-111">Specify a non-random file name.</span></span>  
   
     ```csharp  
     // Comment out the following line.  
@@ -57,7 +39,7 @@ Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un 
     string fileName = "MyNewFile.txt";  
     ```  
   
--   Remplacez l’instruction `if`-`else` par l’instruction `using` dans le code suivant.  
+-   <span data-ttu-id="6b33c-112">Remplacez l’instruction `if`-`else` par l’instruction `using` dans le code suivant.</span><span class="sxs-lookup"><span data-stu-id="6b33c-112">Replace the `if`-`else` statement with the `using` statement in the following code.</span></span>  
   
     ```csharp  
     using (System.IO.FileStream fs = new System.IO.FileStream(pathString, FileMode.Append))   
@@ -69,29 +51,28 @@ Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un 
     }  
     ```  
   
- Exécutez l’exemple plusieurs fois pour vérifier que les données sont ajoutées au fichier à chaque fois.  
+ <span data-ttu-id="6b33c-113">Exécutez l’exemple plusieurs fois pour vérifier que les données sont ajoutées au fichier à chaque fois.</span><span class="sxs-lookup"><span data-stu-id="6b33c-113">Run the example several times to verify that data is added to the file each time.</span></span>  
   
- Pour découvrir d’autres valeurs `FileMode` que vous pouvez essayer, consultez <xref:System.IO.FileMode>.  
+ <span data-ttu-id="6b33c-114">Pour découvrir d’autres valeurs `FileMode` que vous pouvez essayer, consultez <xref:System.IO.FileMode>.</span><span class="sxs-lookup"><span data-stu-id="6b33c-114">For more `FileMode` values that you can try, see <xref:System.IO.FileMode>.</span></span>  
   
- Les conditions ci-dessous peuvent générer une exception.  
+ <span data-ttu-id="6b33c-115">Les conditions ci-dessous peuvent générer une exception.</span><span class="sxs-lookup"><span data-stu-id="6b33c-115">The following conditions may cause an exception:</span></span>  
   
--   Le nom du dossier est mal formé. Par exemple, il contient des caractères non conformes ou uniquement des espaces blancs (classe <xref:System.ArgumentException>). Utilisez la classe <xref:System.IO.Path> pour créer des noms de chemin valides.  
+-   <span data-ttu-id="6b33c-116">Le nom du dossier est mal formé.</span><span class="sxs-lookup"><span data-stu-id="6b33c-116">The folder name is malformed.</span></span> <span data-ttu-id="6b33c-117">Par exemple, il contient des caractères non conformes ou uniquement des espaces blancs (classe <xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="6b33c-117">For example, it contains illegal characters or is only white space (<xref:System.ArgumentException> class).</span></span> <span data-ttu-id="6b33c-118">Utilisez la classe <xref:System.IO.Path> pour créer des noms de chemin valides.</span><span class="sxs-lookup"><span data-stu-id="6b33c-118">Use the <xref:System.IO.Path> class to create valid path names.</span></span>  
   
--   Le dossier parent du dossier à créer est en lecture seule (classe <xref:System.IO.IOException>).  
+-   <span data-ttu-id="6b33c-119">Le dossier parent du dossier à créer est en lecture seule (classe <xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="6b33c-119">The parent folder of the folder to be created is read-only (<xref:System.IO.IOException> class).</span></span>  
   
--   Le nom du dossier est `null` (classe <xref:System.ArgumentNullException>).  
+-   <span data-ttu-id="6b33c-120">Le nom du dossier est `null` (classe <xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="6b33c-120">The folder name is `null` (<xref:System.ArgumentNullException> class).</span></span>  
   
--   Le nom du dossier est trop long (classe <xref:System.IO.PathTooLongException>).  
+-   <span data-ttu-id="6b33c-121">Le nom du dossier est trop long (classe <xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="6b33c-121">The folder name is too long (<xref:System.IO.PathTooLongException> class).</span></span>  
   
--   Le nom du dossier est uniquement un signe deux-points, « : » (classe <xref:System.IO.PathTooLongException>).  
+-   <span data-ttu-id="6b33c-122">Le nom du dossier est uniquement un signe deux-points, « : » (classe <xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="6b33c-122">The folder name is only a colon, ":" (<xref:System.IO.PathTooLongException> class).</span></span>  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans les situations de confiance partielle.  
+## <a name="net-framework-security"></a><span data-ttu-id="6b33c-123">Sécurité .NET Framework</span><span class="sxs-lookup"><span data-stu-id="6b33c-123">.NET Framework Security</span></span>  
+ <span data-ttu-id="6b33c-124">Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans les situations de confiance partielle.</span><span class="sxs-lookup"><span data-stu-id="6b33c-124">An instance of the <xref:System.Security.SecurityException> class may be thrown in partial-trust situations.</span></span>  
   
- Si vous n’êtes pas autorisé à créer le dossier, l’exemple lève une instance de la classe <xref:System.UnauthorizedAccessException>.  
+ <span data-ttu-id="6b33c-125">Si vous n’êtes pas autorisé à créer le dossier, l’exemple lève une instance de la classe <xref:System.UnauthorizedAccessException>.</span><span class="sxs-lookup"><span data-stu-id="6b33c-125">If you don’t have permission to create the folder, the example throws an instance of the <xref:System.UnauthorizedAccessException> class.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.IO?displayProperty=fullName>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="6b33c-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6b33c-126">See Also</span></span>  
+ <xref:System.IO?displayProperty=nameWithType>  
+ [<span data-ttu-id="6b33c-127">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="6b33c-127">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="6b33c-128">Système de fichiers et Registre (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="6b33c-128">File System and the Registry (C# Programming Guide)</span></span>](../../../csharp/programming-guide/file-system/index.md)

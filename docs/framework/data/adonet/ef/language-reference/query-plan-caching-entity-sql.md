@@ -1,63 +1,62 @@
 ---
-title: "Mise en cache d&#39;un plan de requ&#234;te (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Mise en cache d'un plan de requête (Entity SQL)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 90b0c685-5ef2-461b-98b4-c3c0a2b253c7
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 814b4451d5e08d5f9df4d370b2127d971f3fdd1d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Mise en cache d&#39;un plan de requ&#234;te (Entity SQL)
-À chaque tentative d'exécution d'une requête, le pipeline de la requête recherche son cache de plan de requête pour voir si la requête exacte est déjà compilée et disponible.  Si tel est le cas, il réutilise le plan mis en cache plutôt que d'en générer un nouveau.  Si aucune correspondance n'est trouvée dans le cache du plan de requête, la requête est compilée et mise en cache.  Une requête est identifiée par son texte [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et sa collection de paramètres \(noms et types\).  Toutes les comparaisons de texte respectent la casse.  
+# <a name="query-plan-caching-entity-sql"></a><span data-ttu-id="fc01a-102">Mise en cache d'un plan de requête (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="fc01a-102">Query Plan Caching (Entity SQL)</span></span>
+<span data-ttu-id="fc01a-103">À chaque tentative d'exécution d'une requête, le pipeline de la requête recherche son cache de plan de requête pour voir si la requête exacte est déjà compilée et disponible.</span><span class="sxs-lookup"><span data-stu-id="fc01a-103">Whenever an attempt to execute a query is made, the query pipeline looks up its query plan cache to see whether the exact query is already compiled and available.</span></span> <span data-ttu-id="fc01a-104">Si tel est le cas, il réutilise le plan mis en cache plutôt que d'en générer un nouveau.</span><span class="sxs-lookup"><span data-stu-id="fc01a-104">If so, it reuses the cached plan rather than building a new one.</span></span> <span data-ttu-id="fc01a-105">Si aucune correspondance n'est trouvée dans le cache du plan de requête, la requête est compilée et mise en cache.</span><span class="sxs-lookup"><span data-stu-id="fc01a-105">If a match is not found in the query plan cache, the query is compiled and cached.</span></span> <span data-ttu-id="fc01a-106">Une requête est identifiée par son texte [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et sa collection de paramètres (noms et types).</span><span class="sxs-lookup"><span data-stu-id="fc01a-106">A query is identified by its [!INCLUDE[esql](../../../../../../includes/esql-md.md)] text and parameter collection (names and types).</span></span> <span data-ttu-id="fc01a-107">Toutes les comparaisons de texte respectent la casse.</span><span class="sxs-lookup"><span data-stu-id="fc01a-107">All text comparisons are case-sensitive.</span></span>  
   
-## Configuration  
- La mise en cache du plan de requête est configurable par le biais de <xref:System.Data.EntityClient.EntityCommand>.  
+## <a name="configuration"></a><span data-ttu-id="fc01a-108">Configuration</span><span class="sxs-lookup"><span data-stu-id="fc01a-108">Configuration</span></span>  
+ <span data-ttu-id="fc01a-109">La mise en cache du plan de requête est configurable par le biais de <xref:System.Data.EntityClient.EntityCommand>.</span><span class="sxs-lookup"><span data-stu-id="fc01a-109">Query plan caching is configurable through the <xref:System.Data.EntityClient.EntityCommand>.</span></span>  
   
- Pour activer ou désactiver la mise en cache du plan de requête par le biais de <xref:System.Data.EntityClient.EntityCommand.EnablePlanCaching%2A?displayProperty=fullName>, affectez à cette propriété la valeur `true` ou `false`.  La désactivation de la mise en cache du plan pour les requêtes dynamiques individuelles qui ne seront probablement pas utilisées plus d'une fois améliore les performances.  
+ <span data-ttu-id="fc01a-110">Pour activer ou désactiver la mise en cache du plan de requête par le biais de <xref:System.Data.EntityClient.EntityCommand.EnablePlanCaching%2A?displayProperty=nameWithType>, affectez à cette propriété la valeur `true` ou `false`.</span><span class="sxs-lookup"><span data-stu-id="fc01a-110">To enable or disable query plan caching through <xref:System.Data.EntityClient.EntityCommand.EnablePlanCaching%2A?displayProperty=nameWithType>, set this property to `true` or `false`.</span></span> <span data-ttu-id="fc01a-111">La désactivation de la mise en cache du plan pour les requêtes dynamiques individuelles qui ne seront probablement pas utilisées plus d'une fois améliore les performances.</span><span class="sxs-lookup"><span data-stu-id="fc01a-111">Disabling plan caching for individual dynamic queries that are unlikely to be used more then once improves performance.</span></span>  
   
- Vous pouvez activer la mise en cache du plan de requête via <xref:System.Data.Objects.ObjectQuery.EnablePlanCaching%2A>.  
+ <span data-ttu-id="fc01a-112">Vous pouvez activer la mise en cache du plan de requête via <xref:System.Data.Objects.ObjectQuery.EnablePlanCaching%2A>.</span><span class="sxs-lookup"><span data-stu-id="fc01a-112">You can enable query plan caching through <xref:System.Data.Objects.ObjectQuery.EnablePlanCaching%2A>.</span></span>  
   
-## Pratique recommandée  
- Les requêtes dynamiques doivent être évitées, en général.  L'exemple de requête dynamique suivant est vulnérable aux attaques par injection de code SQL, car il accepte directement l'entrée utilisateur sans aucune validation.  
+## <a name="recommended-practice"></a><span data-ttu-id="fc01a-113">Pratique recommandée</span><span class="sxs-lookup"><span data-stu-id="fc01a-113">Recommended Practice</span></span>  
+ <span data-ttu-id="fc01a-114">Les requêtes dynamiques doivent être évitées, en général.</span><span class="sxs-lookup"><span data-stu-id="fc01a-114">Dynamic queries should be avoided, in general.</span></span> <span data-ttu-id="fc01a-115">L'exemple de requête dynamique suivant est vulnérable aux attaques par injection de code SQL, car il accepte directement l'entrée utilisateur sans aucune validation.</span><span class="sxs-lookup"><span data-stu-id="fc01a-115">The following dynamic query example is vulnerable to SQL injection attacks, because it takes user input directly without any validation.</span></span>  
   
  `"SELECT sp.SalesYTD FROM AdventureWorksEntities.SalesPerson as sp WHERE sp.EmployeeID = " + employeeTextBox.Text;`  
   
- Si vous utilisez des requêtes générées dynamiquement, pensez à désactiver la mise en cache du plan de requête pour éviter une consommation inutile de mémoire pour les entrées de cache qui ne seront probablement pas réutilisées.  
+ <span data-ttu-id="fc01a-116">Si vous utilisez des requêtes générées dynamiquement, pensez à désactiver la mise en cache du plan de requête pour éviter une consommation inutile de mémoire pour les entrées de cache qui ne seront probablement pas réutilisées.</span><span class="sxs-lookup"><span data-stu-id="fc01a-116">If you do use dynamically generated queries, consider disabling query plan caching to avoid unnecessary memory consumption for cache entries that are unlikely to be reused.</span></span>  
   
- La mise en cache du plan de requête sur les requêtes statiques et les requêtes paramétrables peut fournir des avantages en matière de performances.  L'exemple ci\-dessous illustre une requête statique :  
+ <span data-ttu-id="fc01a-117">La mise en cache du plan de requête sur les requêtes statiques et les requêtes paramétrables peut fournir des avantages en matière de performances.</span><span class="sxs-lookup"><span data-stu-id="fc01a-117">Query plan caching on static queries and parameterized queries can provide performance benefits.</span></span> <span data-ttu-id="fc01a-118">L'exemple ci-dessous illustre une requête statique :</span><span class="sxs-lookup"><span data-stu-id="fc01a-118">The following is an example of a static query:</span></span>  
   
 ```  
 "SELECT sp.SalesYTD FROM AdventureWorksEntities.SalesPerson as sp";  
 ```  
   
- Pour que les requêtes soient mappées correctement par le cache du plan de requête, elles doivent satisfaire les conditions suivantes :  
+ <span data-ttu-id="fc01a-119">Pour que les requêtes soient mappées correctement par le cache du plan de requête, elles doivent satisfaire les conditions suivantes :</span><span class="sxs-lookup"><span data-stu-id="fc01a-119">For queries to be matched properly by the query plan cache, they should comply with the following requirements:</span></span>  
   
--   Le texte de requête doit être un modèle constant, de préférence une chaîne ou une ressource constante.  
+-   <span data-ttu-id="fc01a-120">Le texte de requête doit être un modèle constant, de préférence une chaîne ou une ressource constante.</span><span class="sxs-lookup"><span data-stu-id="fc01a-120">Query text should be a constant pattern, preferably a constant string or a resource.</span></span>  
   
--   <xref:System.Data.EntityClient.EntityParameter> ou <xref:System.Data.Objects.ObjectParameter> doit être utilisé partout où une valeur fournie par l'utilisateur doit être transmise.  
+-   <span data-ttu-id="fc01a-121"><xref:System.Data.EntityClient.EntityParameter> ou <xref:System.Data.Objects.ObjectParameter> doit être utilisé partout où une valeur fournie par l'utilisateur doit être transmise.</span><span class="sxs-lookup"><span data-stu-id="fc01a-121"><xref:System.Data.EntityClient.EntityParameter> or <xref:System.Data.Objects.ObjectParameter> should be used wherever a user-supplied value must be passed.</span></span>  
   
- Vous devez éviter les modèles de requête suivants, qui consomment inutilement des emplacements dans le cache du plan de requête :  
+ <span data-ttu-id="fc01a-122">Vous devez éviter les modèles de requête suivants, qui consomment inutilement des emplacements dans le cache du plan de requête :</span><span class="sxs-lookup"><span data-stu-id="fc01a-122">You should avoid the following query patterns, which unnecessarily consume slots in the query plan cache:</span></span>  
   
--   modifications de la casse du texte ;  
+-   <span data-ttu-id="fc01a-123">modifications de la casse du texte ;</span><span class="sxs-lookup"><span data-stu-id="fc01a-123">Changes to letter case in the text.</span></span>  
   
--   modifications des espaces blancs ;  
+-   <span data-ttu-id="fc01a-124">modifications des espaces blancs ;</span><span class="sxs-lookup"><span data-stu-id="fc01a-124">Changes to white space.</span></span>  
   
--   modifications des valeurs littérales ;  
+-   <span data-ttu-id="fc01a-125">modifications des valeurs littérales ;</span><span class="sxs-lookup"><span data-stu-id="fc01a-125">Changes to literal values.</span></span>  
   
--   modifications du texte à l'intérieur des commentaires.  
+-   <span data-ttu-id="fc01a-126">modifications du texte à l'intérieur des commentaires.</span><span class="sxs-lookup"><span data-stu-id="fc01a-126">Changes to text inside comments.</span></span>  
   
-## Voir aussi  
- [Vue d'ensemble d'Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+## <a name="see-also"></a><span data-ttu-id="fc01a-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fc01a-127">See Also</span></span>  
+ [<span data-ttu-id="fc01a-128">Vue d’ensemble de Entity SQL</span><span class="sxs-lookup"><span data-stu-id="fc01a-128">Entity SQL Overview</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

@@ -1,46 +1,52 @@
 ---
-title: "Proc&#233;dure&#160;: d&#233;finir une op&#233;ration de service (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Opérations de service [WCF Data Services]"
-  - "Services de données WCF, opérations de service"
+title: "Comment : définir une opération de service (services de données WCF)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Service Operations [WCF Data Services]
+- WCF Data Services, service operations
 ms.assetid: dfcd3cb1-2f07-4d0b-b16a-6b056c4f45fa
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: feac51c92a7e963d440eefbae94a58b94f49797e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: d&#233;finir une op&#233;ration de service (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] exposent des méthodes définies sur le serveur comme des opérations de service.  Les opérations de service permettent à un service de données de fournir l'accès via un URI à une méthode définie sur le serveur.  Pour définir une opération de service, appliquez l'attribut \[`WebGet]` ou `[WebInvoke]` à la méthode.  Pour prendre en charge des opérateurs de requête, l'opération de service doit retourner une instance <xref:System.Linq.IQueryable%601>.  Les opérations de service peuvent accéder à la source de données sous\-jacente via la propriété <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> sur le <xref:System.Data.Services.DataService%601>. Pour plus d'informations, consultez [Opérations de service](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  
+# <a name="how-to-define-a-service-operation-wcf-data-services"></a><span data-ttu-id="0f472-102">Comment : définir une opération de service (services de données WCF)</span><span class="sxs-lookup"><span data-stu-id="0f472-102">How to: Define a Service Operation (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="0f472-103"> exposent des méthodes définies sur le serveur comme des opérations de service.</span><span class="sxs-lookup"><span data-stu-id="0f472-103"> expose methods that are defined on the server as service operations.</span></span> <span data-ttu-id="0f472-104">Opérations de service permettent à un service de données fournir l’accès via un URI à une méthode qui est définie sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="0f472-104">Service operations allow a data service to provide access through a URI to a method that is defined on the server.</span></span> <span data-ttu-id="0f472-105">Pour définir une opération de service, appliquez le [`WebGet]` ou `[WebInvoke]` d’attribut à la méthode.</span><span class="sxs-lookup"><span data-stu-id="0f472-105">To define a service operation, apply the [`WebGet]` or `[WebInvoke]` attribute to the method.</span></span> <span data-ttu-id="0f472-106">Pour prendre en charge les opérateurs de requête, l’opération de service doit retourner un <xref:System.Linq.IQueryable%601> instance.</span><span class="sxs-lookup"><span data-stu-id="0f472-106">To support query operators, the service operation must return an <xref:System.Linq.IQueryable%601> instance.</span></span> <span data-ttu-id="0f472-107">Les opérations de service peuvent accéder à la source de données sous-jacente via la propriété <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> sur <xref:System.Data.Services.DataService%601>.</span><span class="sxs-lookup"><span data-stu-id="0f472-107">Service operations may access the underlying data source through the <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> property on the <xref:System.Data.Services.DataService%601>.</span></span> <span data-ttu-id="0f472-108">Pour plus d’informations, consultez [les opérations de Service](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="0f472-108">For more information, see [Service Operations](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).</span></span>  
   
- L'exemple dans cette rubrique définit une opération de service nommée `GetOrdersByCity` qui retourne une instance <xref:System.Linq.IQueryable%601> filtrée d'objets `Orders` et  `Order_Details` connexes.  L'exemple accède à l'instance <xref:System.Data.Objects.ObjectContext> qui est la source de données pour l'exemple de service de données Northwind.  Ce service est créé lorsque vous complétez le [démarrage rapide WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
+ <span data-ttu-id="0f472-109">L'exemple dans cette rubrique définit une opération de service nommée `GetOrdersByCity` qui retourne une instance <xref:System.Linq.IQueryable%601> filtrée d'objets `Orders` et  `Order_Details` connexes.</span><span class="sxs-lookup"><span data-stu-id="0f472-109">The example in this topic defines a service operation named `GetOrdersByCity` that returns a filtered <xref:System.Linq.IQueryable%601> instance of `Orders` and related `Order_Details` objects.</span></span> <span data-ttu-id="0f472-110">L'exemple accède à l'instance <xref:System.Data.Objects.ObjectContext> qui est la source de données pour l'exemple de service de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="0f472-110">The example accesses the <xref:System.Data.Objects.ObjectContext> instance that is the data source for the Northwind sample data service.</span></span> <span data-ttu-id="0f472-111">Ce service est créé lorsque vous complétez le [démarrage rapide WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="0f472-111">This service is created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-### Pour définir une opération de service dans le service de données Northwind  
+### <a name="to-define-a-service-operation-in-the-northwind-data-service"></a><span data-ttu-id="0f472-112">Pour définir une opération de service dans le service de données Northwind</span><span class="sxs-lookup"><span data-stu-id="0f472-112">To define a service operation in the Northwind data service</span></span>  
   
-1.  Dans le projet de service de données Northwind, ouvrez le fichier Northwind.svc.  
+1.  <span data-ttu-id="0f472-113">Dans le projet de service de données Northwind, ouvrez le fichier Northwind.svc.</span><span class="sxs-lookup"><span data-stu-id="0f472-113">In the Northwind data service project, open the Northwind.svc file.</span></span>  
   
-2.  Dans la classe `Northwind`, définissez une méthode d'opération de service nommée `GetOrdersByCity` comme suit :  
+2.  <span data-ttu-id="0f472-114">Dans la classe `Northwind`, définissez une méthode d'opération de service nommée `GetOrdersByCity` comme suit :</span><span class="sxs-lookup"><span data-stu-id="0f472-114">In the `Northwind` class, define a service operation method named `GetOrdersByCity` as follows:</span></span>  
   
      [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationdef)]
      [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationdef)]  
   
-3.  Dans la méthode `InitializeService` de la classe `Northwind`, ajoutez le code suivant pour permettre l'accès à l'opération de service :  
+3.  <span data-ttu-id="0f472-115">Dans la méthode `InitializeService` de la classe `Northwind`, ajoutez le code suivant pour permettre l'accès à l'opération de service :</span><span class="sxs-lookup"><span data-stu-id="0f472-115">In the `InitializeService` method of the `Northwind` class, add the following code to enable access to the service operation:</span></span>  
   
      [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationconfig)]
      [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationconfig)]  
   
-### Pour interroger l'opération de service GetOrdersByCity  
+### <a name="to-query-the-getordersbycity-service-operation"></a><span data-ttu-id="0f472-116">Pour interroger l'opération de service GetOrdersByCity</span><span class="sxs-lookup"><span data-stu-id="0f472-116">To query the GetOrdersByCity service operation</span></span>  
   
--   Dans un navigateur Web, entrez l'un des URI suivants pour appeler l'opération de service définie dans l'exemple suivant :  
+-   <span data-ttu-id="0f472-117">Dans un navigateur Web, entrez l'un des URI suivants pour appeler l'opération de service définie dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="0f472-117">In a Web browser, enter one of the following URIs to invoke the service operation that is defined in the following example:</span></span>  
   
     -   `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'`  
   
@@ -48,14 +54,14 @@ caps.handback.revision: 2
   
     -   `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order_Details&$orderby=RequiredDate desc`  
   
-## Exemple  
- L'exemple suivant implémente une opération de service nommée `GetOrderByCity` sur le service de données Northwind.  Cette opération utilise ADO.NET Entity Framework pour retourner un jeu d'objets `Orders` et `Order_Details` connexes comme une instance <xref:System.Linq.IQueryable%601> basée sur le nom de ville fourni.  
+## <a name="example"></a><span data-ttu-id="0f472-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="0f472-118">Example</span></span>  
+ <span data-ttu-id="0f472-119">L'exemple suivant implémente une opération de service nommée `GetOrderByCity` sur le service de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="0f472-119">The following example implements a service operation named `GetOrderByCity` on the Northwind data service.</span></span> <span data-ttu-id="0f472-120">Cette opération utilise ADO.NET Entity Framework pour retourner un jeu d'objets `Orders` et `Order_Details` connexes comme une instance <xref:System.Linq.IQueryable%601> basée sur le nom de ville fourni.</span><span class="sxs-lookup"><span data-stu-id="0f472-120">This operation uses the ADO.NET Entity Framework to return a set of `Orders` and related `Order_Details` objects as an <xref:System.Linq.IQueryable%601> instance based on the provided city name.</span></span>  
   
 > [!NOTE]
->  Les opérateurs de requête sont pris en charge sur ce point de terminaison d'opération de service parce que la méthode retourne une instance <xref:System.Linq.IQueryable%601>.  
+>  <span data-ttu-id="0f472-121">Les opérateurs de requête sont pris en charge sur ce point de terminaison d'opération de service parce que la méthode retourne une instance <xref:System.Linq.IQueryable%601>.</span><span class="sxs-lookup"><span data-stu-id="0f472-121">Query operators are supported on this service operation endpoint because the method returns an <xref:System.Linq.IQueryable%601> instance.</span></span>  
   
  [!code-csharp[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperation)]
  [!code-vb[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperation)]  
   
-## Voir aussi  
- [Définition de WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="0f472-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0f472-122">See Also</span></span>  
+ [<span data-ttu-id="0f472-123">Définition de WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="0f472-123">Defining WCF Data Services</span></span>](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

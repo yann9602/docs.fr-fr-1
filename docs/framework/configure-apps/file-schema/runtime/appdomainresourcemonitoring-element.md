@@ -1,76 +1,78 @@
 ---
-title: "&lt;appDomainResourceMonitoring&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<appDomainResourceMonitoring> (élément)"
-  - "appDomainResourceMonitoring (élément)"
+title: "&lt;appDomainResourceMonitoring&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- appDomainResourceMonitoring element
+- <appDomainResourceMonitoring> element
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
-caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 5c9591789c007466adce107732a7ab777b1de241
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;appDomainResourceMonitoring&gt;, &#233;l&#233;ment
-Indique au runtime de collecter des statistiques sur tous les domaines d'application du processus pendant la durée de vie du processus.  
+# <a name="ltappdomainresourcemonitoringgt-element"></a><span data-ttu-id="b7ea5-102">&lt;appDomainResourceMonitoring&gt; élément</span><span class="sxs-lookup"><span data-stu-id="b7ea5-102">&lt;appDomainResourceMonitoring&gt; Element</span></span>
+<span data-ttu-id="b7ea5-103">Demande au runtime de collecter des statistiques sur tous les domaines d’application du processus sur toute sa durée.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-103">Instructs the runtime to collect statistics on all application domains in the process for the life of the process.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="b7ea5-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="b7ea5-104">\<configuration></span></span>  
+<span data-ttu-id="b7ea5-105">\<runtime ></span><span class="sxs-lookup"><span data-stu-id="b7ea5-105">\<runtime></span></span>  
+<span data-ttu-id="b7ea5-106">\<appDomainResourceMonitoring ></span><span class="sxs-lookup"><span data-stu-id="b7ea5-106">\<appDomainResourceMonitoring></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="b7ea5-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b7ea5-107">Syntax</span></span>  
+  
+```xml  
 <appDomainResourceMonitoring    
    enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="b7ea5-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="b7ea5-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="b7ea5-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="b7ea5-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="b7ea5-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si le runtime collecte des statistiques pour l'analyse de ressource de domaine d'application.|  
+|<span data-ttu-id="b7ea5-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="b7ea5-111">Attribute</span></span>|<span data-ttu-id="b7ea5-112">Description</span><span class="sxs-lookup"><span data-stu-id="b7ea5-112">Description</span></span>|  
+|---------------|-----------------|  
+|`enabled`|<span data-ttu-id="b7ea5-113">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="b7ea5-114">Indique si le runtime collecte des statistiques pour l’analyse de ressource de domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-114">Specifies whether the runtime collects statistics for application domain resource monitoring.</span></span>|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a><span data-ttu-id="b7ea5-115">Attribut enabled</span><span class="sxs-lookup"><span data-stu-id="b7ea5-115">enabled Attribute</span></span>  
   
-|Valeur|Description|  
-|------------|-----------------|  
-|`true`|Les statistiques pour l'analyse de ressource de domaine d'application sont collectées.|  
-|`false`|Les statistiques pour l'analyse de ressource de domaine d'application ne sont pas collectées.|  
+|<span data-ttu-id="b7ea5-116">Valeur</span><span class="sxs-lookup"><span data-stu-id="b7ea5-116">Value</span></span>|<span data-ttu-id="b7ea5-117">Description</span><span class="sxs-lookup"><span data-stu-id="b7ea5-117">Description</span></span>|  
+|-----------|-----------------|  
+|`true`|<span data-ttu-id="b7ea5-118">Les statistiques pour l’analyse de ressource de domaine d’application sont collectées.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-118">Statistics for application domain resource monitoring are collected.</span></span>|  
+|`false`|<span data-ttu-id="b7ea5-119">Statistiques pour l’analyse de ressource de domaine d’application ne sont pas collectées.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-119">Statistics for application domain resource monitoring are not collected.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="b7ea5-120">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="b7ea5-120">Child Elements</span></span>  
+ <span data-ttu-id="b7ea5-121">Aucun.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-121">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="b7ea5-122">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="b7ea5-122">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="b7ea5-123">Élément</span><span class="sxs-lookup"><span data-stu-id="b7ea5-123">Element</span></span>|<span data-ttu-id="b7ea5-124">Description</span><span class="sxs-lookup"><span data-stu-id="b7ea5-124">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`configuration`|<span data-ttu-id="b7ea5-125">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-125">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="b7ea5-126">Contient des informations sur les liaisons d’assembly et l’opération garbage collection.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-126">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## Notes  
- L'analyse de ressource de domaine d'application est disponible via la classe de domaine d'application managée, l'interface [ICLRAppDomainResourceMonitor](../../../../../ocs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) d'hébergement et le traçage d'événements pour Windows \(ETW\).  Lorsque l'analyse est activée, les statistiques sont collectées pour tous les domaines d'application dans le processus pendant la durée de vie de celui\-ci.  
+## <a name="remarks"></a><span data-ttu-id="b7ea5-127">Remarques</span><span class="sxs-lookup"><span data-stu-id="b7ea5-127">Remarks</span></span>  
+ <span data-ttu-id="b7ea5-128">L’analyse de ressource de domaine d’application est disponible via la classe de domaine d’application managée, l’hébergement [ICLRAppDomainResourceMonitor](../../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) interface et le suivi d’événements pour Windows (ETW).</span><span class="sxs-lookup"><span data-stu-id="b7ea5-128">Application domain resource monitoring is available through the managed application domain class, the hosting [ICLRAppDomainResourceMonitor](../../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) interface, and event tracing for Windows (ETW).</span></span> <span data-ttu-id="b7ea5-129">Lorsque l’analyse est activée, les statistiques sont collectées pour tous les domaines d’application dans le processus pour la durée de vie du processus.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-129">When monitoring is enabled, statistics are collected for all application domains in the process for the life of the process.</span></span>  
   
- Pour activer l'analyse à partir du code managé, utilisez la propriété <xref:System.AppDomain.MonitoringIsEnabled%2A>.  
+ <span data-ttu-id="b7ea5-130">Pour activer l’analyse du code managé, utilisez la <xref:System.AppDomain.MonitoringIsEnabled%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-130">To enable monitoring from managed code, use the <xref:System.AppDomain.MonitoringIsEnabled%2A> property.</span></span>  
   
- Cet élément de configuration est disponible uniquement dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures.  
+ <span data-ttu-id="b7ea5-131">Cet élément de configuration est uniquement disponible dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-131">This configuration element is available only in the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] and later.</span></span>  
   
-## Exemple  
- L'exemple suivant indique comment activer l'analyse de ressource de domaine d'application.  
+## <a name="example"></a><span data-ttu-id="b7ea5-132">Exemple</span><span class="sxs-lookup"><span data-stu-id="b7ea5-132">Example</span></span>  
+ <span data-ttu-id="b7ea5-133">L’exemple suivant montre comment activer l’analyse de ressource de domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="b7ea5-133">The following example shows how to enable application domain resource monitoring.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <appDomainResourceMonitoring enabled="true"/>  
@@ -78,7 +80,7 @@ Indique au runtime de collecter des statistiques sur tous les domaines d'applica
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=fullName>   
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+## <a name="see-also"></a><span data-ttu-id="b7ea5-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b7ea5-134">See Also</span></span>  
+ <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="b7ea5-135">Schéma des paramètres d’exécution</span><span class="sxs-lookup"><span data-stu-id="b7ea5-135">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="b7ea5-136">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="b7ea5-136">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)

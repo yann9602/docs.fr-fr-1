@@ -1,44 +1,50 @@
 ---
-title: "Proc&#233;dure&#160;: soumettre des modifications &#224; la base de donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : soumettre des modifications à la base de données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c7cba174-9d40-491d-b32c-f2d73b7e9eab
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 039eaac26833651fbd82dc1a69a31f394c1464c5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: soumettre des modifications &#224; la base de donn&#233;es
-Indépendamment du nombre de modifications apportées aux objets, celles\-ci sont apportées uniquement aux réplicas en mémoire.  Vous n'avez pas apporté de modifications aux données effectives dans la base de données.  Vos modifications ne sont pas transmises au serveur tant que vous n'appelez pas explicitement <xref:System.Data.Linq.DataContext.SubmitChanges%2A> sur le <xref:System.Data.Linq.DataContext>.  
+# <a name="how-to-submit-changes-to-the-database"></a><span data-ttu-id="27f3e-102">Comment : soumettre des modifications à la base de données</span><span class="sxs-lookup"><span data-stu-id="27f3e-102">How to: Submit Changes to the Database</span></span>
+<span data-ttu-id="27f3e-103">Indépendamment du nombre de modifications apportées aux objets, celles-ci sont apportées uniquement aux réplicas en mémoire.</span><span class="sxs-lookup"><span data-stu-id="27f3e-103">Regardless of how many changes you make to your objects, changes are made only to in-memory replicas.</span></span> <span data-ttu-id="27f3e-104">Vous n'avez pas apporté de modifications aux données effectives dans la base de données.</span><span class="sxs-lookup"><span data-stu-id="27f3e-104">You have made no changes to the actual data in the database.</span></span> <span data-ttu-id="27f3e-105">Vos modifications ne sont pas transmises au serveur tant que vous n'appelez pas explicitement <xref:System.Data.Linq.DataContext.SubmitChanges%2A> sur le <xref:System.Data.Linq.DataContext>.</span><span class="sxs-lookup"><span data-stu-id="27f3e-105">Your changes are not transmitted to the server until you explicitly call <xref:System.Data.Linq.DataContext.SubmitChanges%2A> on the <xref:System.Data.Linq.DataContext>.</span></span>  
   
- Lorsque vous effectuez cet appel, le <xref:System.Data.Linq.DataContext> essaie de traduire vos modifications en commandes SQL équivalentes.  Vous pouvez utiliser votre propre logique personnalisée pour substituer ces actions, mais l'ordre de soumission est géré par un service du <xref:System.Data.Linq.DataContext> connu sous le nom de *processeur de modification*.  La séquence d'événements se décompose comme suit :  
+ <span data-ttu-id="27f3e-106">Lorsque vous effectuez cet appel, le <xref:System.Data.Linq.DataContext> essaie de traduire vos modifications en commandes SQL équivalentes.</span><span class="sxs-lookup"><span data-stu-id="27f3e-106">When you make this call, the <xref:System.Data.Linq.DataContext> tries to translate your changes into equivalent SQL commands.</span></span> <span data-ttu-id="27f3e-107">Vous pouvez utiliser votre propre logique personnalisée pour substituer ces actions, mais l’ordre de soumission est géré par un service de la <xref:System.Data.Linq.DataContext> appelé le *processeur de modification*.</span><span class="sxs-lookup"><span data-stu-id="27f3e-107">You can use your own custom logic to override these actions, but the order of submission is orchestrated by a service of the <xref:System.Data.Linq.DataContext> known as the *change processor*.</span></span> <span data-ttu-id="27f3e-108">La séquence d'événements se décompose comme suit :</span><span class="sxs-lookup"><span data-stu-id="27f3e-108">The sequence of events is as follows:</span></span>  
   
-1.  Lorsque vous appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] examine l'ensemble d'objets connus pour déterminer si de nouvelles instances ont été attachées.  Le cas échéant, ces nouvelles instances sont ajoutées au jeu d'objets suivis.  
+1.  <span data-ttu-id="27f3e-109">Lorsque vous appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] examine l'ensemble d'objets connus pour déterminer si de nouvelles instances ont été attachées.</span><span class="sxs-lookup"><span data-stu-id="27f3e-109">When you call <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] examines the set of known objects to determine whether new instances have been attached to them.</span></span> <span data-ttu-id="27f3e-110">Le cas échéant, ces nouvelles instances sont ajoutées au jeu d'objets suivis.</span><span class="sxs-lookup"><span data-stu-id="27f3e-110">If they have, these new instances are added to the set of tracked objects.</span></span>  
   
-2.  Tous les objets qui ont des modifications en attente sont organisés dans une séquence d'objets en fonction de leurs dépendances.  Les objets dont les modifications dépendent d'autres objets sont classés d'après leurs dépendances.  
+2.  <span data-ttu-id="27f3e-111">Tous les objets qui ont des modifications en attente sont organisés dans une séquence d'objets en fonction de leurs dépendances.</span><span class="sxs-lookup"><span data-stu-id="27f3e-111">All objects that have pending changes are ordered into a sequence of objects based on the dependencies between them.</span></span> <span data-ttu-id="27f3e-112">Les objets dont les modifications dépendent d'autres objets sont classés d'après leurs dépendances.</span><span class="sxs-lookup"><span data-stu-id="27f3e-112">Objects whose changes depend on other objects are sequenced after their dependencies.</span></span>  
   
-3.  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] démarre une transaction pour encapsuler la série de commandes individuelles, juste avant que toutes les modifications réelles soient transmises.  
+3.  <span data-ttu-id="27f3e-113">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] démarre une transaction pour encapsuler la série de commandes individuelles, juste avant que toutes les modifications réelles soient transmises.</span><span class="sxs-lookup"><span data-stu-id="27f3e-113">Immediately before any actual changes are transmitted, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] starts a transaction to encapsulate the series of individual commands.</span></span>  
   
-4.  Les modifications apportées aux objets sont traduites une par une en commandes SQL et sont envoyées au serveur.  
+4.  <span data-ttu-id="27f3e-114">Les modifications apportées aux objets sont traduites une par une en commandes SQL et sont envoyées au serveur.</span><span class="sxs-lookup"><span data-stu-id="27f3e-114">The changes to the objects are translated one by one to SQL commands and sent to the server.</span></span>  
   
- À ce stade, toutes les erreurs détectées par la base de données interrompent le processus de soumission et une exception est levée.  Toutes les modifications apportées à la base de données sont restaurées comme si aucune soumission ne s'était produite.  Le <xref:System.Data.Linq.DataContext> a encore un enregistrement complet de toutes les modifications.  Par conséquent, vous pouvez essayer de résoudre le problème et d'appeler encore <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, comme dans l'exemple de code qui suit.  
+ <span data-ttu-id="27f3e-115">À ce stade, toutes les erreurs détectées par la base de données interrompent le processus de soumission et une exception est levée.</span><span class="sxs-lookup"><span data-stu-id="27f3e-115">At this point, any errors detected by the database cause the submission process to stop, and an exception is raised.</span></span> <span data-ttu-id="27f3e-116">Toutes les modifications apportées à la base de données sont restaurées comme si aucune soumission ne s'était produite.</span><span class="sxs-lookup"><span data-stu-id="27f3e-116">All changes to the database are rolled back as if no submissions ever occurred.</span></span> <span data-ttu-id="27f3e-117">Le <xref:System.Data.Linq.DataContext> a encore un enregistrement complet de toutes les modifications.</span><span class="sxs-lookup"><span data-stu-id="27f3e-117">The <xref:System.Data.Linq.DataContext> still has a full recording of all changes.</span></span> <span data-ttu-id="27f3e-118">Par conséquent, vous pouvez essayer de résoudre le problème et d'appeler encore <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, comme dans l'exemple de code qui suit.</span><span class="sxs-lookup"><span data-stu-id="27f3e-118">You can therefore try to correct the problem and call <xref:System.Data.Linq.DataContext.SubmitChanges%2A> again, as in the code example that follows.</span></span>  
   
-## Exemple  
- Lorsque la transaction autour de la soumission a réussi, le <xref:System.Data.Linq.DataContext> accepte les modifications apportées aux objets en ignorant les informations de suivi des modifications.  
+## <a name="example"></a><span data-ttu-id="27f3e-119">Exemple</span><span class="sxs-lookup"><span data-stu-id="27f3e-119">Example</span></span>  
+ <span data-ttu-id="27f3e-120">Lorsque la transaction autour de la soumission a réussi, le <xref:System.Data.Linq.DataContext> accepte les modifications apportées aux objets en ignorant les informations de suivi des modifications.</span><span class="sxs-lookup"><span data-stu-id="27f3e-120">When the transaction around the submission is completed successfully, the <xref:System.Data.Linq.DataContext> accepts the changes to the objects by ignoring the change-tracking information.</span></span>  
   
  [!code-csharp[DLinqSubmittingChanges#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#1)]
  [!code-vb[DLinqSubmittingChanges#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#1)]  
   
-## Voir aussi  
- [Procédure : détecter et résoudre des soumissions en conflit](../../../../../../docs/framework/data/adonet/sql/linq/how-to-detect-and-resolve-conflicting-submissions.md)   
- [Procédure : gérer les conflits de changement](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)   
- [Téléchargement d'exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)   
- [Apport et soumission de modifications de données](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)
+## <a name="see-also"></a><span data-ttu-id="27f3e-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="27f3e-121">See Also</span></span>  
+ [<span data-ttu-id="27f3e-122">Comment : détecter et résoudre des soumissions en conflit</span><span class="sxs-lookup"><span data-stu-id="27f3e-122">How to: Detect and Resolve Conflicting Submissions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-detect-and-resolve-conflicting-submissions.md)  
+ [<span data-ttu-id="27f3e-123">Comment : gérer les conflits de modifications</span><span class="sxs-lookup"><span data-stu-id="27f3e-123">How to: Manage Change Conflicts</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)  
+ [<span data-ttu-id="27f3e-124">Téléchargement d’exemples de base de données</span><span class="sxs-lookup"><span data-stu-id="27f3e-124">Downloading Sample Databases</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
+ [<span data-ttu-id="27f3e-125">Apport et soumission de modifications de données</span><span class="sxs-lookup"><span data-stu-id="27f3e-125">Making and Submitting Data Changes</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)
