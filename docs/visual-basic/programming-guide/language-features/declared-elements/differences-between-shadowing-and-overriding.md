@@ -1,70 +1,69 @@
 ---
-title: "Differences Between Shadowing and Overriding (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "shadowing, vs. overriding"
-  - "overriding, vs. shadowing"
+title: "Différences entre l'occultation et la substitution (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- shadowing, vs. overriding
+- overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
-caps.latest.revision: 24
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2d67486d9c6af96d314abad7142ba86779d74f5d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Differences Between Shadowing and Overriding (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Lorsque vous définissez une classe qui hérite d'une classe de base, vous souhaitez parfois redéfinir un ou plusieurs des éléments de classe de base dans la classe dérivée.  L'occultation et la substitution sont disponibles à cette fin.  
+# <a name="differences-between-shadowing-and-overriding-visual-basic"></a><span data-ttu-id="1c003-102">Différences entre l'occultation et la substitution (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1c003-102">Differences Between Shadowing and Overriding (Visual Basic)</span></span>
+<span data-ttu-id="1c003-103">Lorsque vous définissez une classe qui hérite d’une classe de base, vous souhaitez parfois redéfinir une ou plusieurs des éléments de la classe de base dans la classe dérivée.</span><span class="sxs-lookup"><span data-stu-id="1c003-103">When you define a class that inherits from a base class, you sometimes want to redefine one or more of the base class elements in the derived class.</span></span> <span data-ttu-id="1c003-104">Occultation et substitution sont disponibles à cet effet.</span><span class="sxs-lookup"><span data-stu-id="1c003-104">Shadowing and overriding are both available for this purpose.</span></span>  
   
-## Comparaison  
- Les mécanismes d'occultation et de substitution sont tous deux utilisés lorsqu'une classe dérivée hérite d'une classe de base et redéfinissent un élément déclaré par un autre.  Il existe toutefois des différences notables entre l'occultation et la substitution.  
+## <a name="comparison"></a><span data-ttu-id="1c003-105">Comparaison</span><span class="sxs-lookup"><span data-stu-id="1c003-105">Comparison</span></span>  
+ <span data-ttu-id="1c003-106">Occultation et substitution sont utilisés lorsqu’une classe dérivée hérite d’une classe de base et redéfinissent un élément déclaré par un autre.</span><span class="sxs-lookup"><span data-stu-id="1c003-106">Shadowing and overriding are both used when a derived class inherits from a base class, and both redefine one declared element with another.</span></span> <span data-ttu-id="1c003-107">Mais il existe des différences significatives entre les deux.</span><span class="sxs-lookup"><span data-stu-id="1c003-107">But there are significant differences between the two.</span></span>  
   
- Le tableau suivant compare l'occultation à la substitution.  
+ <span data-ttu-id="1c003-108">Le tableau suivant compare l’occultation et substitution.</span><span class="sxs-lookup"><span data-stu-id="1c003-108">The following table compares shadowing with overriding.</span></span>  
   
 ||||  
-|-|-|-|  
-|Point de comparaison|Occultation|Substitution|  
-|Objectif|Protège contre une modification de classe de base suivante qui introduit un membre déjà défini dans votre classe dérivée|Atteint le polymorphisme en définissant une implémentation différente d'une procédure ou d'une propriété avec la même séquence d'appel <sup>1</sup>|  
-|Élément redéfini|Tout type d'élément déclaré|Seulement une procédure \(`Function`, `Sub` ou `Operator`\) ou une propriété|  
-|Élément redéfinissant|Tout type d'élément déclaré|Seulement une procédure ou une propriété avec une séquence d'appel identique<sup>1</sup>|  
-|Niveau d'accès de l'élément redéfinissant|N'importe quel niveau d'accès|Impossible de modifier le niveau d'accès de l'élément substitué|  
-|Lisibilité et accessibilité en écriture de l'élément redéfinissant|Toute combinaison|Ne peut pas modifier la lisibilité et la facilité d'écriture de la propriété substituée|  
-|Contrôle sur la redéfinition|L'élément de classe de base ne peut pas appliquer ou interdire l'occultation|L'élément de classe de base peut spécifier `MustOverride`, `NotOverridable` ou `Overridable`|  
-|Utilisation de mot clé|`Shadows` recommandé dans la classe dérivée ; `Shadows` supposé lorsque ni `Shadows` ni `Overrides` ne sont spécifiés<sup>2</sup>|`Overridable` ou `MustOverride` requis dans la classe de base ; `Overrides` requis dans la classe dérivée|  
-|Héritage d'élément redéfinissant par des classes dérivant de votre classe dérivée|Élément occultant hérité par des classes plus dérivées ; élément occulté toujours masqué<sup>3</sup>|Élément substituant hérité par des classes plus dérivées ; élément substitué toujours substitué|  
+|---|---|---|  
+|<span data-ttu-id="1c003-109">Point de comparaison</span><span class="sxs-lookup"><span data-stu-id="1c003-109">Point of comparison</span></span>|<span data-ttu-id="1c003-110">Clichés instantanés</span><span class="sxs-lookup"><span data-stu-id="1c003-110">Shadowing</span></span>|<span data-ttu-id="1c003-111">Substitution</span><span class="sxs-lookup"><span data-stu-id="1c003-111">Overriding</span></span>|  
+|<span data-ttu-id="1c003-112">Objectif</span><span class="sxs-lookup"><span data-stu-id="1c003-112">Purpose</span></span>|<span data-ttu-id="1c003-113">Protège contre une modification de classe de base suivante qui introduit un membre que vous avez déjà défini dans votre classe dérivée</span><span class="sxs-lookup"><span data-stu-id="1c003-113">Protects against a subsequent base-class modification that introduces a member you have already defined in your derived class</span></span>|<span data-ttu-id="1c003-114">Atteint le polymorphisme en définissant une implémentation différente d’une procédure ou une propriété avec la même séquence d’appel<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="1c003-114">Achieves polymorphism by defining a different implementation of a procedure or property with the same calling sequence<sup>1</sup></span></span>|  
+|<span data-ttu-id="1c003-115">Élément redéfini</span><span class="sxs-lookup"><span data-stu-id="1c003-115">Redefined element</span></span>|<span data-ttu-id="1c003-116">Un type d’élément déclaré</span><span class="sxs-lookup"><span data-stu-id="1c003-116">Any declared element type</span></span>|<span data-ttu-id="1c003-117">Seule une procédure (`Function`, `Sub`, ou `Operator`) ou une propriété</span><span class="sxs-lookup"><span data-stu-id="1c003-117">Only a procedure (`Function`, `Sub`, or `Operator`) or property</span></span>|  
+|<span data-ttu-id="1c003-118">Élément redéfinissant</span><span class="sxs-lookup"><span data-stu-id="1c003-118">Redefining element</span></span>|<span data-ttu-id="1c003-119">Un type d’élément déclaré</span><span class="sxs-lookup"><span data-stu-id="1c003-119">Any declared element type</span></span>|<span data-ttu-id="1c003-120">Seulement une procédure ou une propriété avec la séquence d’appel identiques<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="1c003-120">Only a procedure or property with the identical calling sequence<sup>1</sup></span></span>|  
+|<span data-ttu-id="1c003-121">Niveau d’accès de l’élément redéfinissant</span><span class="sxs-lookup"><span data-stu-id="1c003-121">Access level of redefining element</span></span>|<span data-ttu-id="1c003-122">Niveau d’accès</span><span class="sxs-lookup"><span data-stu-id="1c003-122">Any access level</span></span>|<span data-ttu-id="1c003-123">Impossible de modifier le niveau d’accès de l’élément substitué</span><span class="sxs-lookup"><span data-stu-id="1c003-123">Cannot change access level of overridden element</span></span>|  
+|<span data-ttu-id="1c003-124">Lecture et écriture de l’élément redéfinissant</span><span class="sxs-lookup"><span data-stu-id="1c003-124">Readability and writability of redefining element</span></span>|<span data-ttu-id="1c003-125">N’importe quelle combinaison</span><span class="sxs-lookup"><span data-stu-id="1c003-125">Any combination</span></span>|<span data-ttu-id="1c003-126">Impossible de changer la lisibilité ou écriture de la propriété substituée</span><span class="sxs-lookup"><span data-stu-id="1c003-126">Cannot change readability or writability of overridden property</span></span>|  
+|<span data-ttu-id="1c003-127">Contrôle sur la redéfinition</span><span class="sxs-lookup"><span data-stu-id="1c003-127">Control over redefining</span></span>|<span data-ttu-id="1c003-128">Élément de la classe de base ne peut pas appliquer ou interdire l’occultation</span><span class="sxs-lookup"><span data-stu-id="1c003-128">Base class element cannot enforce or prohibit shadowing</span></span>|<span data-ttu-id="1c003-129">Élément de la classe de base peut spécifier `MustOverride`, `NotOverridable`, ou`Overridable`</span><span class="sxs-lookup"><span data-stu-id="1c003-129">Base class element can specify `MustOverride`, `NotOverridable`, or `Overridable`</span></span>|  
+|<span data-ttu-id="1c003-130">Utilisation du mot clé</span><span class="sxs-lookup"><span data-stu-id="1c003-130">Keyword usage</span></span>|<span data-ttu-id="1c003-131">`Shadows`recommandé dans la classe dérivée ; `Shadows` pris par défaut si aucune `Shadows` ni `Overrides` spécifié<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="1c003-131">`Shadows` recommended in derived class; `Shadows` assumed if neither `Shadows` nor `Overrides` specified<sup>2</sup></span></span>|<span data-ttu-id="1c003-132">`Overridable`ou `MustOverride` requis dans la classe de base ; `Overrides` requis dans la classe dérivée</span><span class="sxs-lookup"><span data-stu-id="1c003-132">`Overridable` or `MustOverride` required in base class; `Overrides` required in derived class</span></span>|  
+|<span data-ttu-id="1c003-133">Héritage de l’élément redéfinissant par les classes dérivées de votre classe dérivée</span><span class="sxs-lookup"><span data-stu-id="1c003-133">Inheritance of redefining element by classes deriving from your derived class</span></span>|<span data-ttu-id="1c003-134">Occultation d’élément héritée en plus des classes dérivées ; élément occulté toujours masqué<sup>3</sup></span><span class="sxs-lookup"><span data-stu-id="1c003-134">Shadowing element inherited by further derived classes; shadowed element still hidden<sup>3</sup></span></span>|<span data-ttu-id="1c003-135">Élément substituant hérité en plus des classes dérivées ; élément substitué toujours substitué</span><span class="sxs-lookup"><span data-stu-id="1c003-135">Overriding element inherited by further derived classes; overridden element still overridden</span></span>|  
   
- <sup>1</sup> La *séquence d'appel* se compose du type d'élément \(`Function`, `Sub`, `Operator` ou `Property`\), du nom, de la liste d'arguments et du type de retour.  Vous ne pouvez pas substituer une procédure par une propriété, ou vice versa.  Vous ne pouvez pas substituer un genre de procédure \(`Function`, `Sub` ou `Operator`\) par un autre genre.  
+ <span data-ttu-id="1c003-136"><sup>1</sup> le *la séquence d’appel* se compose du type d’élément (`Function`, `Sub`, `Operator`, ou `Property`), nom de la liste de paramètres et type de retour.</span><span class="sxs-lookup"><span data-stu-id="1c003-136"><sup>1</sup> The *calling sequence* consists of the element type (`Function`, `Sub`, `Operator`, or `Property`), name, parameter list, and return type.</span></span> <span data-ttu-id="1c003-137">Vous ne pouvez pas substituer une procédure avec une propriété ou l’autre sens.</span><span class="sxs-lookup"><span data-stu-id="1c003-137">You cannot override a procedure with a property, or the other way around.</span></span> <span data-ttu-id="1c003-138">Vous ne pouvez pas remplacer un genre de procédure (`Function`, `Sub`, ou `Operator`) avec un autre type.</span><span class="sxs-lookup"><span data-stu-id="1c003-138">You cannot override one kind of procedure (`Function`, `Sub`, or `Operator`) with another kind.</span></span>  
   
- <sup>2</sup> Si vous ne spécifiez pas `Shadows` ou `Overrides`, le compilateur signale un message d'avertissement pour vous aider à vérifier le genre de redéfinition que vous souhaitez utiliser.  Si vous ignorez l'avertissement, le mécanisme d'occultation est utilisé.  
+ <span data-ttu-id="1c003-139"><sup>2</sup> si vous ne spécifiez pas `Shadows` ou `Overrides`, le compilateur émet un message d’avertissement pour vous aider à vérifier le genre de redéfinition que vous souhaitez utiliser.</span><span class="sxs-lookup"><span data-stu-id="1c003-139"><sup>2</sup> If you do not specify either `Shadows` or `Overrides`, the compiler issues a warning message to help you be sure which kind of redefinition you want to use.</span></span> <span data-ttu-id="1c003-140">Si vous ignorez l’avertissement, le mécanisme d’occultation est utilisé.</span><span class="sxs-lookup"><span data-stu-id="1c003-140">If you ignore the warning, the shadowing mechanism is used.</span></span>  
   
- <sup>3</sup> Si l'élément occultant est inaccessible dans une classe plus dérivée, l'occultation n'est pas héritée.  Par exemple, si vous déclarez l'élément occultant comme `Private`, une classe dérivant de votre classe dérivée hérite de l'élément d'origine et non de l'élément occultant.  
+ <span data-ttu-id="1c003-141"><sup>3</sup> si l’élément d’occultation est inaccessible dans une classe plus dérivée, l’occultation n’est pas hérité.</span><span class="sxs-lookup"><span data-stu-id="1c003-141"><sup>3</sup> If the shadowing element is inaccessible in a further derived class, shadowing is not inherited.</span></span> <span data-ttu-id="1c003-142">Par exemple, si vous déclarez l’élément d’occultation comme `Private`, une classe dérivant de votre classe dérivée hérite de l’élément d’origine au lieu de l’élément d’occultation.</span><span class="sxs-lookup"><span data-stu-id="1c003-142">For example, if you declare the shadowing element as `Private`, a class deriving from your derived class inherits the original element instead of the shadowing element.</span></span>  
   
-## Indications  
- Vous utilisez normalement la substitution dans les cas suivants :  
+## <a name="guidelines"></a><span data-ttu-id="1c003-143">Recommandations</span><span class="sxs-lookup"><span data-stu-id="1c003-143">Guidelines</span></span>  
+ <span data-ttu-id="1c003-144">Vous utilisez normalement la substitution dans les cas suivants :</span><span class="sxs-lookup"><span data-stu-id="1c003-144">You normally use overriding in the following cases:</span></span>  
   
--   Vous définissez des classes dérivées polymorphes.  
+-   <span data-ttu-id="1c003-145">Vous définissez des classes dérivées polymorphes.</span><span class="sxs-lookup"><span data-stu-id="1c003-145">You are defining polymorphic derived classes.</span></span>  
   
--   Vous souhaitez la sécurité du compilateur qui applique le type d'élément et la séquence d'appel identiques.  
+-   <span data-ttu-id="1c003-146">Vous souhaitez que la sécurité du compilateur appliquer le type d’élément identiques et la séquence d’appel.</span><span class="sxs-lookup"><span data-stu-id="1c003-146">You want the safety of having the compiler enforce the identical element type and calling sequence.</span></span>  
   
- Vous utilisez normalement l'occultation dans les cas suivants :  
+ <span data-ttu-id="1c003-147">Vous utilisez normalement l’occultation dans les cas suivants :</span><span class="sxs-lookup"><span data-stu-id="1c003-147">You normally use shadowing in the following cases:</span></span>  
   
--   Vous savez que votre classe de base peut être modifiée et peut définir un élément à l'aide du même nom que le vôtre.  
+-   <span data-ttu-id="1c003-148">Vous pensez que votre classe de base peut être modifiée et définir un élément à l’aide du même nom que le vôtre.</span><span class="sxs-lookup"><span data-stu-id="1c003-148">You anticipate that your base class might be modified and define an element using the same name as yours.</span></span>  
   
--   Vous souhaitez pouvoir modifier le type d'élément ou la séquence d'appel.  
+-   <span data-ttu-id="1c003-149">Vous souhaitez que la possibilité de modifier le type d’élément ou de la séquence d’appel.</span><span class="sxs-lookup"><span data-stu-id="1c003-149">You want the freedom of changing the element type or calling sequence.</span></span>  
   
-## Voir aussi  
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)   
- [How to: Hide a Variable with the Same Name as Your Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)   
- [How to: Hide an Inherited Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)   
- [How to: Access a Variable Hidden by a Derived Class](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)   
- [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)   
- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)
+## <a name="see-also"></a><span data-ttu-id="1c003-150">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1c003-150">See Also</span></span>  
+ [<span data-ttu-id="1c003-151">Références aux éléments déclarés</span><span class="sxs-lookup"><span data-stu-id="1c003-151">References to Declared Elements</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ [<span data-ttu-id="1c003-152">Occultation dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="1c003-152">Shadowing in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)  
+ [<span data-ttu-id="1c003-153">Guide pratique : masquer une variable portant le même nom que votre variable</span><span class="sxs-lookup"><span data-stu-id="1c003-153">How to: Hide a Variable with the Same Name as Your Variable</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)  
+ [<span data-ttu-id="1c003-154">Guide pratique : masquer une variable héritée</span><span class="sxs-lookup"><span data-stu-id="1c003-154">How to: Hide an Inherited Variable</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)  
+ [<span data-ttu-id="1c003-155">Guide pratique : accéder à une variable masquée par une classe dérivée</span><span class="sxs-lookup"><span data-stu-id="1c003-155">How to: Access a Variable Hidden by a Derived Class</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)  
+ [<span data-ttu-id="1c003-156">Shadows</span><span class="sxs-lookup"><span data-stu-id="1c003-156">Shadows</span></span>](../../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [<span data-ttu-id="1c003-157">Overrides</span><span class="sxs-lookup"><span data-stu-id="1c003-157">Overrides</span></span>](../../../../visual-basic/language-reference/modifiers/overrides.md)

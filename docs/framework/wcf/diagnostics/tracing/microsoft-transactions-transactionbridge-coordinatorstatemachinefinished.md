@@ -1,28 +1,31 @@
 ---
-title: "Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 16cb428d-d886-4789-a961-6fded4b0dbba
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7c9a456e668560cb2172de80295b731a6103aa7a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished
-La machine à états pour un enrôlement de coordinateur est passée à l'état Finished.  
+# <a name="microsofttransactionstransactionbridgecoordinatorstatemachinefinished"></a><span data-ttu-id="e975d-102">Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished</span><span class="sxs-lookup"><span data-stu-id="e975d-102">Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished</span></span>
+<span data-ttu-id="e975d-103">La machine à états pour un enrôlement de coordinateur est passée à l'état Finished.</span><span class="sxs-lookup"><span data-stu-id="e975d-103">The state machine for a coordinator enlistment has entered the finished state.</span></span>  
   
-## Description  
- Suivi lorsque le gestionnaire de transactions local croit qu'un enrôlement de coordinateur supérieur a terminé le traitement 2PC.Le résultat peut être Committed, Aborted ou Forgotten.Suivi également lorsque le gestionnaire de transaction local vote ReadOnly pendant la préparation.  
+## <a name="description"></a><span data-ttu-id="e975d-104">Description</span><span class="sxs-lookup"><span data-stu-id="e975d-104">Description</span></span>  
+ <span data-ttu-id="e975d-105">Suivi lorsque le gestionnaire de transactions local croit qu'un enrôlement de coordinateur supérieur a terminé le traitement 2PC.</span><span class="sxs-lookup"><span data-stu-id="e975d-105">Traced when the local Transaction Manager believes a superior coordinator enlistment has completed 2pc processing.</span></span> <span data-ttu-id="e975d-106">Le résultat peut être Committed, Aborted ou Forgotten.</span><span class="sxs-lookup"><span data-stu-id="e975d-106">The outcome for the enlistment can be Committed or Aborted or Forgotten.</span></span> <span data-ttu-id="e975d-107">Suivi également lorsque le gestionnaire de transaction local vote ReadOnly pendant la préparation.</span><span class="sxs-lookup"><span data-stu-id="e975d-107">It is also traced if the local Transaction Manager votes ReadOnly during Prepare.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e975d-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e975d-108">See Also</span></span>  
+ [<span data-ttu-id="e975d-109">Le suivi</span><span class="sxs-lookup"><span data-stu-id="e975d-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e975d-110">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="e975d-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e975d-111">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="e975d-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

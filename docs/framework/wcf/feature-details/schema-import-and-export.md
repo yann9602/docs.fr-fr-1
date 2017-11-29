@@ -1,71 +1,77 @@
 ---
-title: "Importation et exportation de sch&#233;mas | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF, importation et exportation de schémas"
-  - "classe XsdDataContractExporter"
-  - "Classe XsdDataContractImporter"
+title: "Importation et exportation de schémas"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- WCF, schema import and export
+- XsdDataContractExporter class
+- XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c0c6d4917cc34021381e30d45b50b225b6aa4d18
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Importation et exportation de sch&#233;mas
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]inclut un nouveau moteur de sérialisation, le <xref:System.Runtime.Serialization.DataContractSerializer>. Le moteur de sérialisation `DataContractSerializer` traduit des objets [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] en langage XML et inversement. Outre le sérialiseur lui-même, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] intègre un système lui permettant d'importer et d'exporter les schémas afférents. *Schéma* est une description formelle, précise et lisible de la forme de XML par le sérialiseur ou que le désérialiseur peut accéder. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise le langage de définition de schéma XSD, inspiré du langage XML et défini par le consortium World Wide Web Consortium (W3C). Ce format est compatible avec de nombreuses plateformes tierces.  
+# <a name="schema-import-and-export"></a><span data-ttu-id="13c4f-102">Importation et exportation de schémas</span><span class="sxs-lookup"><span data-stu-id="13c4f-102">Schema Import and Export</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="13c4f-103"> comprend un nouveau moteur de sérialisation, le <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="13c4f-103"> includes a new serialization engine, the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span> <span data-ttu-id="13c4f-104">Le moteur de sérialisation `DataContractSerializer` traduit des objets [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] en langage XML et inversement.</span><span class="sxs-lookup"><span data-stu-id="13c4f-104">The `DataContractSerializer` translates between [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objects and XML (in both directions).</span></span> <span data-ttu-id="13c4f-105">Outre le sérialiseur lui-même, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] intègre un système lui permettant d'importer et d'exporter les schémas afférents.</span><span class="sxs-lookup"><span data-stu-id="13c4f-105">In addition to the serializer itself, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] includes associated schema import and schema export mechanisms.</span></span> <span data-ttu-id="13c4f-106">*Schéma* est une description formelle et précise lisible de la forme de XML par le sérialiseur ou que le désérialiseur peut accéder.</span><span class="sxs-lookup"><span data-stu-id="13c4f-106">*Schema* is a formal, precise, and machine-readable description of the shape of XML that the serializer produces or that the deserializer can access.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="13c4f-107"> utilise le langage de définition de schéma XSD, inspiré du langage XML et défini par le consortium World Wide Web Consortium (W3C). Ce format est compatible avec de nombreuses plateformes tierces.</span><span class="sxs-lookup"><span data-stu-id="13c4f-107"> uses the World Wide Web Consortium (W3C) XML Schema definition language (XSD) as its schema representation, which is widely interoperable with numerous third-party platforms.</span></span>  
   
- Le composant d’importation de schéma, <xref:System.Runtime.Serialization.XsdDataContractImporter>, utilise un document de schéma XSD et génère [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] (normalement les classes de contrat de données) des classes telles que les formes sérialisées correspondent au schéma donné.  
+ <span data-ttu-id="13c4f-108">L'importateur de schémas, <xref:System.Runtime.Serialization.XsdDataContractImporter>, utilise un document de schéma XSD pour générer des classes [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] (il s'agit en principe de classes de contrat de données) et faire correspondre les formes sérialisées générées au schéma donné.</span><span class="sxs-lookup"><span data-stu-id="13c4f-108">The schema import component, <xref:System.Runtime.Serialization.XsdDataContractImporter>, takes an XSD schema document and generates [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] classes (normally data contract classes) such that the serialized forms correspond to the given schema.</span></span>  
   
- Par exemple, le fragment de schéma suivant :  
+ <span data-ttu-id="13c4f-109">Par exemple, le fragment de schéma suivant :</span><span class="sxs-lookup"><span data-stu-id="13c4f-109">For example, the following schema fragment:</span></span>  
   
  [!code-csharp[c_SchemaImportExport#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#8)]
  [!code-vb[c_SchemaImportExport#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#8)]  
   
- génère le type suivant (légèrement simplifié pour permettre une meilleure compréhension).  
+ <span data-ttu-id="13c4f-110">génère le type suivant (légèrement simplifié pour permettre une meilleure compréhension).</span><span class="sxs-lookup"><span data-stu-id="13c4f-110">generates the following type (simplified slightly for better readability).</span></span>  
   
  [!code-csharp[c_SchemaImportExport#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#1)]
  [!code-vb[c_SchemaImportExport#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#1)]  
   
- Notez que le type généré respecte les meilleures pratiques du contrat de données plusieurs (trouvé dans [meilleures pratiques : contrôle de version de contrat de données](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)) :  
+ <span data-ttu-id="13c4f-111">Notez que le type généré suit les meilleures pratiques du contrat de données plusieurs (trouvé dans [meilleures pratiques : contrôle de version de contrat de données](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)) :</span><span class="sxs-lookup"><span data-stu-id="13c4f-111">Note that the generated type follows several data contract best practices (found in [Best Practices: Data Contract Versioning](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)):</span></span>  
   
--   Le type implémente le <xref:System.Runtime.Serialization.IExtensibleDataObject> interface. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Contrats de données de compatibilité ascendante](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+-   <span data-ttu-id="13c4f-112">Ce type implémente l'interface <xref:System.Runtime.Serialization.IExtensibleDataObject>.</span><span class="sxs-lookup"><span data-stu-id="13c4f-112">The type implements the <xref:System.Runtime.Serialization.IExtensibleDataObject> interface.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="13c4f-113">[Des contrats de données à compatibilité ascendante](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).</span><span class="sxs-lookup"><span data-stu-id="13c4f-113"> [Forward-Compatible Data Contracts](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).</span></span>  
   
--   Les membres de données sont implémentés sous forme de propriétés publiques qui encapsulent des champs privés.  
+-   <span data-ttu-id="13c4f-114">Les membres de données sont implémentés sous forme de propriétés publiques qui encapsulent des champs privés.</span><span class="sxs-lookup"><span data-stu-id="13c4f-114">Data members are implemented as public properties that wrap private fields.</span></span>  
   
--   La classe est une classe partielle et des éléments peuvent y être ajoutés sans modifier le code généré.  
+-   <span data-ttu-id="13c4f-115">La classe est une classe partielle et des éléments peuvent y être ajoutés sans modifier le code généré.</span><span class="sxs-lookup"><span data-stu-id="13c4f-115">The class is a partial class, and additions can be made without modifying generated code.</span></span>  
   
- Le <xref:System.Runtime.Serialization.XsdDataContractExporter> vous permet d’effectuer l’opération inverse : utilisent des types sérialisables avec les `DataContractSerializer` et générer un document de schéma XSD.  
+ <span data-ttu-id="13c4f-116">L'exportateur <xref:System.Runtime.Serialization.XsdDataContractExporter> vous permet d'effectuer l'opération inverse, c'est-à-dire de prendre des types pouvant être sérialisés à l'aide de `DataContractSerializer`, puis de générer un document de schéma XSD.</span><span class="sxs-lookup"><span data-stu-id="13c4f-116">The <xref:System.Runtime.Serialization.XsdDataContractExporter> enables you to do the reverse—take types that are serializable with the `DataContractSerializer` and generate an XSD Schema document.</span></span>  
   
-## <a name="fidelity-is-not-guaranteed"></a>Fidélité non garantie  
- Lors de la conversion, puis reconversion des schémas ou types, la stricte fidélité des informations converties n'est pas garantie. (A *aller-retour* consiste à importer un schéma pour créer un ensemble de classes et exporter le résultat pour recréer le schéma.) Il se peut que le schéma ainsi recréé ne soit pas exactement identique au schéma d'origine. Effectuer à nouveau le processus dans le sens inverse ne garantit pas en effet la fidélité aux informations d'origine. (Exportez un type pour générer son schéma, puis réimportez le type. Il est improbable que le même type soit retourné.)  
+## <a name="fidelity-is-not-guaranteed"></a><span data-ttu-id="13c4f-117">Fidélité non garantie</span><span class="sxs-lookup"><span data-stu-id="13c4f-117">Fidelity Is Not Guaranteed</span></span>  
+ <span data-ttu-id="13c4f-118">Lors de la conversion, puis reconversion des schémas ou types, la stricte fidélité des informations converties n'est pas garantie.</span><span class="sxs-lookup"><span data-stu-id="13c4f-118">It is not guaranteed that schema or types make a round trip with total fidelity.</span></span> <span data-ttu-id="13c4f-119">(A *aller-retour* consiste à importer un schéma pour créer un ensemble de classes et exporter le résultat pour recréer le schéma.) Il se peut que le schéma ainsi recréé ne soit pas exactement identique au schéma d'origine.</span><span class="sxs-lookup"><span data-stu-id="13c4f-119">(A *round trip* means to import a schema to create a set of classes, and export the result to create a schema again.) The same schema may not be returned.</span></span> <span data-ttu-id="13c4f-120">Effectuer à nouveau le processus dans le sens inverse ne garantit pas en effet la fidélité aux informations d'origine.</span><span class="sxs-lookup"><span data-stu-id="13c4f-120">Reversing the process is also not guaranteed to preserve fidelity.</span></span> <span data-ttu-id="13c4f-121">(Exportez un type pour générer son schéma, puis réimportez le type.</span><span class="sxs-lookup"><span data-stu-id="13c4f-121">(Export a type to generate its schema, and then import the type back.</span></span> <span data-ttu-id="13c4f-122">Il est improbable que le même type soit retourné.)</span><span class="sxs-lookup"><span data-stu-id="13c4f-122">It is unlikely the same type is returned.)</span></span>  
   
-## <a name="supported-types"></a>Types pris en charge  
- Le modèle de contrat de données prend uniquement en charge un sous-ensemble limité de schémas WC3. Tout schéma ne se conformant pas à ce sous-ensemble provoquera la levée d'une exception lors de l'importation. Par exemple, il n'est pas possible d'indiquer qu'un membre de données d'un contrat de données doit être sérialisé sous forme d'attribut XML. Les schémas nécessitant l'utilisation d'attributs XML ne sont donc pas pris en charge et provoqueront la levée d'exceptions lors de l'importation, le contrat de données ne pouvant être généré à l'aide des attributs XML appropriés.  
+## <a name="supported-types"></a><span data-ttu-id="13c4f-123">Types pris en charge</span><span class="sxs-lookup"><span data-stu-id="13c4f-123">Supported Types</span></span>  
+ <span data-ttu-id="13c4f-124">Le modèle de contrat de données prend uniquement en charge un sous-ensemble limité de schémas WC3.</span><span class="sxs-lookup"><span data-stu-id="13c4f-124">The data contract model supports only a limited subset of the WC3 schema.</span></span> <span data-ttu-id="13c4f-125">Tout schéma ne se conformant pas à ce sous-ensemble provoquera la levée d'une exception lors de l'importation.</span><span class="sxs-lookup"><span data-stu-id="13c4f-125">Any schema that does not conform to this subset will cause an exception during the import process.</span></span> <span data-ttu-id="13c4f-126">Par exemple, il n'est pas possible d'indiquer qu'un membre de données d'un contrat de données doit être sérialisé sous forme d'attribut XML.</span><span class="sxs-lookup"><span data-stu-id="13c4f-126">For example, there is no way to specify that a data member of a data contract should be serialized as an XML attribute.</span></span> <span data-ttu-id="13c4f-127">Les schémas nécessitant l'utilisation d'attributs XML ne sont donc pas pris en charge et provoqueront la levée d'exceptions lors de l'importation, le contrat de données ne pouvant être généré à l'aide des attributs XML appropriés.</span><span class="sxs-lookup"><span data-stu-id="13c4f-127">Thus, schemas that require the use of XML attributes are not supported and will cause exceptions during import, because it is impossible to generate a data contract with the correct XML projection.</span></span>  
   
- Par exemple, il est impossible d'importer le fragment de schéma suivant à l'aide des paramètres d'importation par défaut.  
+ <span data-ttu-id="13c4f-128">Par exemple, il est impossible d'importer le fragment de schéma suivant à l'aide des paramètres d'importation par défaut.</span><span class="sxs-lookup"><span data-stu-id="13c4f-128">For example, the following schema fragment cannot be imported using the default import settings.</span></span>  
   
- <!-- TODO: review snippet reference [!code[c_SchemaImportExport#9](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#9)]  -->  
+ [!code-xml[c_SchemaImportExport#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#9)]  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Référence du schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Lorsqu'un schéma ne se conforme pas aux règles des contrats de données, utilisez un autre moteur de sérialisation. Par exemple, le <xref:System.Xml.Serialization.XmlSerializer> utilise son propre mécanisme d’importation de schéma. De plus, il existe un mode spécial d’importation dans lequel la plage du schéma pris en charge est développée. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]la section sur la génération de <xref:System.Xml.Serialization.IXmlSerializable> tape [importation du schéma pour générer des Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="13c4f-129">[Référence du schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).</span><span class="sxs-lookup"><span data-stu-id="13c4f-129"> [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).</span></span> <span data-ttu-id="13c4f-130">Lorsqu'un schéma ne se conforme pas aux règles des contrats de données, utilisez un autre moteur de sérialisation.</span><span class="sxs-lookup"><span data-stu-id="13c4f-130">If a schema does not conform to the data contract rules, use a different serialization engine.</span></span> <span data-ttu-id="13c4f-131">Le moteur de sérialisation <xref:System.Xml.Serialization.XmlSerializer> utilise, par exemple, son propre mécanisme d'importation de schéma.</span><span class="sxs-lookup"><span data-stu-id="13c4f-131">For example, the <xref:System.Xml.Serialization.XmlSerializer> uses its own separate schema import mechanism.</span></span> <span data-ttu-id="13c4f-132">De plus, il existe un mode spécial d’importation dans lequel la plage du schéma pris en charge est développée.</span><span class="sxs-lookup"><span data-stu-id="13c4f-132">Also, there is a special import mode in which the range of supported schema is expanded.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="13c4f-133">la section sur la génération de <xref:System.Xml.Serialization.IXmlSerializable> tape [l’importation de schéma pour générer des Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).</span><span class="sxs-lookup"><span data-stu-id="13c4f-133"> the section about generating <xref:System.Xml.Serialization.IXmlSerializable> types in [Importing Schema to Generate Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).</span></span>  
   
- L'exportateur `XsdDataContractExporter` prend en charge tous les types [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] qui peuvent être sérialisés à l'aide du moteur de sérialisation `DataContractSerializer`. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Remarque : le schéma généré à l’aide la `XsdDataContractExporter` données normalement valide qui le `XsdDataContractImporter` peut utiliser (sauf si la <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> est utilisé pour personnaliser le schéma).  
+ <span data-ttu-id="13c4f-134">L'exportateur `XsdDataContractExporter` prend en charge tous les types [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] qui peuvent être sérialisés à l'aide du moteur de sérialisation `DataContractSerializer`.</span><span class="sxs-lookup"><span data-stu-id="13c4f-134">The `XsdDataContractExporter` supports any [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] types that can be serialized with the `DataContractSerializer`.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="13c4f-135">[Pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).</span><span class="sxs-lookup"><span data-stu-id="13c4f-135"> [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).</span></span> <span data-ttu-id="13c4f-136">Remarque : le schéma généré à l'aide de `XsdDataContractExporter` contient en principe des données utilisables par l'importateur `XsdDataContractImporter`, sauf si <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> est utilisé afin de personnaliser ce schéma).</span><span class="sxs-lookup"><span data-stu-id="13c4f-136">Note that schema generated using the `XsdDataContractExporter` is normally valid data that the `XsdDataContractImporter` can use (unless the <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> is used to customize the schema).</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]à l’aide de la <xref:System.Runtime.Serialization.XsdDataContractImporter>, consultez [importation du schéma pour générer des Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="13c4f-137">à l’aide de la <xref:System.Runtime.Serialization.XsdDataContractImporter>, consultez [l’importation de schéma pour générer des Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).</span><span class="sxs-lookup"><span data-stu-id="13c4f-137"> using the <xref:System.Runtime.Serialization.XsdDataContractImporter>, see [Importing Schema to Generate Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]à l’aide de la <xref:System.Runtime.Serialization.XsdDataContractExporter>, consultez [exportation de schémas à partir des Classes](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="13c4f-138">à l’aide de la <xref:System.Runtime.Serialization.XsdDataContractExporter>, consultez [exportation de schémas à partir des Classes](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).</span><span class="sxs-lookup"><span data-stu-id="13c4f-138"> using the <xref:System.Runtime.Serialization.XsdDataContractExporter>, see [Exporting Schemas from Classes](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- <xref:System.Runtime.Serialization.XsdDataContractImporter>   
- <xref:System.Runtime.Serialization.XsdDataContractExporter>   
- [Importation du schéma pour générer des Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)   
- [Exportation de schémas à partir de Classes](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)
+## <a name="see-also"></a><span data-ttu-id="13c4f-139">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="13c4f-139">See Also</span></span>  
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter>  
+ <xref:System.Runtime.Serialization.XsdDataContractExporter>  
+ [<span data-ttu-id="13c4f-140">Importation du schéma pour générer des Classes</span><span class="sxs-lookup"><span data-stu-id="13c4f-140">Importing Schema to Generate Classes</span></span>](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)  
+ [<span data-ttu-id="13c4f-141">Exportation de schémas à partir de Classes</span><span class="sxs-lookup"><span data-stu-id="13c4f-141">Exporting Schemas from Classes</span></span>](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)

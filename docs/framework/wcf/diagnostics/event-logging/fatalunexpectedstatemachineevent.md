@@ -1,31 +1,34 @@
 ---
-title: "FatalUnexpectedStateMachineEvent | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: FatalUnexpectedStateMachineEvent
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 57714066-921f-4ced-90a7-5fdd3dd79552
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9312bc1fc36ffe25307e6e936f7676780df288e1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# FatalUnexpectedStateMachineEvent
-ID : 137  
+# <a name="fatalunexpectedstatemachineevent"></a><span data-ttu-id="77cc3-102">FatalUnexpectedStateMachineEvent</span><span class="sxs-lookup"><span data-stu-id="77cc3-102">FatalUnexpectedStateMachineEvent</span></span>
+<span data-ttu-id="77cc3-103">ID : 137</span><span class="sxs-lookup"><span data-stu-id="77cc3-103">Id: 137</span></span>  
   
- Gravité : Erreur  
+ <span data-ttu-id="77cc3-104">Gravité : Erreur</span><span class="sxs-lookup"><span data-stu-id="77cc3-104">Severity: Error</span></span>  
   
- Catégorie : TransactionBridge  
+ <span data-ttu-id="77cc3-105">Catégorie : TransactionBridge</span><span class="sxs-lookup"><span data-stu-id="77cc3-105">Category: TransactionBridge</span></span>  
   
-## Description  
- Cet événement indique qu'une machine d'état a essayé de traiter un événement inattendu.L'événement a été considéré comme fatal.Il répertorie l'ID de transaction, la machine d'état, l'état actuel, l'historique, le nom de l'événement, les détails de l'événement, le nom de processus et l'ID de processus.  
+## <a name="description"></a><span data-ttu-id="77cc3-106">Description</span><span class="sxs-lookup"><span data-stu-id="77cc3-106">Description</span></span>  
+ <span data-ttu-id="77cc3-107">Cet événement indique qu'un ordinateur d'état a essayé de traiter un événement inattendu.</span><span class="sxs-lookup"><span data-stu-id="77cc3-107">This event indicates that a state machine attempted to process an unexpected event.</span></span> <span data-ttu-id="77cc3-108">L'événement a été considéré comme fatal.</span><span class="sxs-lookup"><span data-stu-id="77cc3-108">The event was considered fatal.</span></span> <span data-ttu-id="77cc3-109">L’événement répertorie l’ID de transaction, l’ordinateur d’état, l’état actuel, l’historique, le nom de l’événement, le détails de l’événement, le nom de processus et l’ID de processus.</span><span class="sxs-lookup"><span data-stu-id="77cc3-109">The event lists the transaction ID, State machine, Current state, History, Event name, Event details, process name and process ID.</span></span>  
   
-## Voir aussi  
- [Journalisation des événements](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)   
- [Référence générale relative aux événements](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="77cc3-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="77cc3-110">See Also</span></span>  
+ [<span data-ttu-id="77cc3-111">Journalisation des événements</span><span class="sxs-lookup"><span data-stu-id="77cc3-111">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="77cc3-112">Référence générale des événements</span><span class="sxs-lookup"><span data-stu-id="77cc3-112">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

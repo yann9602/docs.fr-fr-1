@@ -1,41 +1,39 @@
 ---
-title: "XML comment exception must have a &#39;cref&#39; attribute | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc42319"
-  - "vbc42319"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC42319"
+title: Exception de commentaire XML doit avoir un &#39; cref &#39; attribut
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc42319
+- vbc42319
+helpviewer_keywords: BC42319
 ms.assetid: 62eeeba3-6811-48be-b1ef-c2e4feda3177
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c0c22c9cd9415faf17d027c3751d166662a92b50
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# XML comment exception must have a &#39;cref&#39; attribute
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-La balise \<exception\> permet de documenter les exceptions qui peuvent être levées par une méthode.  L'attribut `cref` requis désigne le nom d'un membre qui est vérifié par le générateur de documentation.  Si le membre existe, il est traduit en nom d'élément canonique dans le fichier documentation.  
+# <a name="xml-comment-exception-must-have-a-39cref39-attribute"></a><span data-ttu-id="95fa2-102">Exception de commentaire XML doit avoir un &#39; cref &#39; attribut</span><span class="sxs-lookup"><span data-stu-id="95fa2-102">XML comment exception must have a &#39;cref&#39; attribute</span></span>
+<span data-ttu-id="95fa2-103">Le \<exception > balise permet de documenter les exceptions qui peuvent être levées par une méthode.</span><span class="sxs-lookup"><span data-stu-id="95fa2-103">The \<exception> tag provides a way to document the exceptions that may be thrown by a method.</span></span> <span data-ttu-id="95fa2-104">Requis `cref` attribut désigne le nom d’un membre qui est vérifié par le Générateur de documentation.</span><span class="sxs-lookup"><span data-stu-id="95fa2-104">The required `cref` attribute designates the name of a member, which is checked by the documentation generator.</span></span> <span data-ttu-id="95fa2-105">Si le membre existe, il est converti en nom d’élément canonique dans le fichier de documentation.</span><span class="sxs-lookup"><span data-stu-id="95fa2-105">If the member exists, it is translated to the canonical element name in the documentation file.</span></span>  
   
- **ID d'erreur :** BC42319  
+ <span data-ttu-id="95fa2-106">**ID d’erreur :** BC42319</span><span class="sxs-lookup"><span data-stu-id="95fa2-106">**Error ID:** BC42319</span></span>  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="95fa2-107">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="95fa2-107">To correct this error</span></span>  
   
--   Ajoutez l'attribut `cref` à l'exception comme suit :  
+-   <span data-ttu-id="95fa2-108">Ajouter le `cref` attribut à l’exception, comme suit :</span><span class="sxs-lookup"><span data-stu-id="95fa2-108">Add the `cref` attribute to the exception as follows:</span></span>  
   
     ```  
     '''<exception cref="member">description</exception>  
     ```  
   
-## Voir aussi  
- [\<exception\>](../../../visual-basic/language-reference/xmldoc/exception.md)   
- [How to: Create XML Documentation](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)   
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="95fa2-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="95fa2-109">See Also</span></span>  
+ [<span data-ttu-id="95fa2-110">\<exception></span><span class="sxs-lookup"><span data-stu-id="95fa2-110">\<exception></span></span>](../../../visual-basic/language-reference/xmldoc/exception.md)  
+ [<span data-ttu-id="95fa2-111">Guide pratique : créer une documentation XML</span><span class="sxs-lookup"><span data-stu-id="95fa2-111">How to: Create XML Documentation</span></span>](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)  
+ [<span data-ttu-id="95fa2-112">Étiquettes XML pour les commentaires</span><span class="sxs-lookup"><span data-stu-id="95fa2-112">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

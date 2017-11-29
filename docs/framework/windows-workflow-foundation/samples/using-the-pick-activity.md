@@ -1,63 +1,67 @@
 ---
-title: "Utilisation de l&#39;activit&#233; Pick | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Utilisation de l'activité Pick"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5a95567afd955848b81bc343109acfe3fd138c7f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Utilisation de l&#39;activit&#233; Pick
-Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statements.Pick>.  
+# <a name="using-the-pick-activity"></a><span data-ttu-id="8bd2a-102">Utilisation de l'activité Pick</span><span class="sxs-lookup"><span data-stu-id="8bd2a-102">Using the Pick Activity</span></span>
+<span data-ttu-id="8bd2a-103">Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statements.Pick>.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-103">This sample demonstrates how to use the <xref:System.Activities.Statements.Pick> activity.</span></span>  
   
- L'activité <xref:System.Activities.Statements.Pick> fournit une modélisation de contrôle basée sur les événements.Le comportement est semblable à celui de l'instruction `switch` de C\#, qui exécute une seule des branches dans l'instruction `switch`.Contrairement à l'instruction `switch` dans laquelle une branche est exécutée en fonction d'une valeur, l'activité <xref:System.Activities.Statements.Pick> exécute une branche en fonction de l'exécution d'une activité.  
+ <span data-ttu-id="8bd2a-104">L'activité <xref:System.Activities.Statements.Pick> fournit une modélisation de contrôle basée sur les événements.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-104">The <xref:System.Activities.Statements.Pick> activity provides event-based control modeling.</span></span> <span data-ttu-id="8bd2a-105">Le comportement est semblable à celui de l'instruction `switch` de C#, qui exécute une seule des branches dans l'instruction `switch`.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-105">It behaves similar to the C# `switch` statement, which executes only one of the branches in the `switch` statement.</span></span> <span data-ttu-id="8bd2a-106">Contrairement à l'instruction `switch` dans laquelle une branche est exécutée en fonction d'une valeur, l'activité <xref:System.Activities.Statements.Pick> exécute une branche en fonction de l'exécution d'une activité.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-106">Unlike the `switch` statement in which a branch is executed based upon on a value, the <xref:System.Activities.Statements.Pick> activity executes a branch based upon how an activity completes.</span></span>  
   
- Cet exemple invite un utilisateur à taper son nom sur la console dans une période de temps donné.L'activité <xref:System.Activities.Statements.Pick> dans l'exemple a deux branches qui sont exécutées selon si l'utilisateur tape son nom dans les 5 secondes ou non.Si l'utilisateur tape son nom dans les 5 secondes, la première branche, qui contient une activité `ReadLine` personnalisée est exécutée ; sinon, l'autre branche, qui contient une activité <xref:System.Activities.Statements.Delay> est exécutée.Une fois qu'un nom d'utilisateur est tapé sur la console, il est imprimé sur la console.Si rien n'est entré dans les 5 secondes, l'opération expire.  
+ <span data-ttu-id="8bd2a-107">Cet exemple invite un utilisateur à taper son nom sur la console dans une période de temps donné.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-107">This sample prompts a user to type in their name on the console within a given time period.</span></span> <span data-ttu-id="8bd2a-108">L'activité <xref:System.Activities.Statements.Pick> dans l'exemple a deux branches qui sont exécutées selon si l'utilisateur tape son nom dans les 5 secondes ou non.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-108">The <xref:System.Activities.Statements.Pick> activity in the sample has two branches that are executed based upon whether the user types in their name within 5 seconds or not.</span></span> <span data-ttu-id="8bd2a-109">Si l'utilisateur tape son nom dans les 5 secondes, la première branche, qui contient une activité `ReadLine` personnalisée est exécutée ; sinon, l'autre branche, qui contient une activité <xref:System.Activities.Statements.Delay> est exécutée.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-109">If the user types in their name within 5 seconds, the first branch is executed, which contains a custom `ReadLine` activity; otherwise the other branch is executed, which contains a <xref:System.Activities.Statements.Delay> activity.</span></span> <span data-ttu-id="8bd2a-110">Une fois qu'un nom d'utilisateur est tapé sur la console, il est imprimé sur la console.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-110">Once a user’s name is typed in on the console, the user’s name is printed on the console.</span></span> <span data-ttu-id="8bd2a-111">Si rien n'est entré dans les 5 secondes, l'opération expire.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-111">If an input is not entered within 5 seconds, the operation is timed out.</span></span>  
   
-## Démonstrations  
- Activité <xref:System.Activities.Statements.Pick>.  
+## <a name="demonstrates"></a><span data-ttu-id="8bd2a-112">Démonstrations</span><span class="sxs-lookup"><span data-stu-id="8bd2a-112">Demonstrates</span></span>  
+ <span data-ttu-id="8bd2a-113">Activité <xref:System.Activities.Statements.Pick></span><span class="sxs-lookup"><span data-stu-id="8bd2a-113"><xref:System.Activities.Statements.Pick> activity.</span></span>  
   
-## Discussion  
- L'exemple inclut un workflow de concepteur et un workflow encodé.  
+## <a name="discussion"></a><span data-ttu-id="8bd2a-114">Discussion</span><span class="sxs-lookup"><span data-stu-id="8bd2a-114">Discussion</span></span>  
+ <span data-ttu-id="8bd2a-115">L'exemple inclut un workflow de concepteur et un workflow encodé.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-115">The sample includes a Designer workflow and coded workflow.</span></span>  
   
- Workflow de concepteur  
- La version concepteur de l'exemple montre comment créer un workflow dans le concepteur.Les fichiers suivants sont inclus :  
+ <span data-ttu-id="8bd2a-116">Workflow de concepteur</span><span class="sxs-lookup"><span data-stu-id="8bd2a-116">Designer Workflow</span></span>  
+ <span data-ttu-id="8bd2a-117">La version concepteur de l'exemple montre comment créer un workflow dans le concepteur.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-117">The Designer version of the sample demonstrates how to create a workflow in the designer.</span></span> <span data-ttu-id="8bd2a-118">Les fichiers suivants sont inclus :</span><span class="sxs-lookup"><span data-stu-id="8bd2a-118">The following files are included:</span></span>  
   
--   Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.  
+-   <span data-ttu-id="8bd2a-119">Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-119">Program.cs : Includes the `Main` function that executes the sample workflow.</span></span>  
   
--   ReadString.cs : activité personnalisée qui lit une entrée de la console.  
+-   <span data-ttu-id="8bd2a-120">ReadString.cs : activité personnalisée qui lit une entrée de la console.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-120">ReadString.cs: A custom activity that reads some input from the console.</span></span>  
   
--   Sequence1.xaml : workflow créé à l'aide du concepteur qui utilise Pick.  
+-   <span data-ttu-id="8bd2a-121">Sequence1.xaml : workflow créé à l'aide du concepteur qui utilise Pick.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-121">Sequence1.xaml: A workflow created using the designer that uses Pick.</span></span>  
   
- Workflow encodé  
- La version encodée de l'exemple montre comment créer un workflow dans le concepteur.Les fichiers suivants sont inclus :  
+ <span data-ttu-id="8bd2a-122">Workflow encodé</span><span class="sxs-lookup"><span data-stu-id="8bd2a-122">Coded Workflow</span></span>  
+ <span data-ttu-id="8bd2a-123">La version encodée de l'exemple montre comment créer un workflow dans le concepteur.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-123">The coded version of the sample demonstrates how to create a workflow in the designer.</span></span> <span data-ttu-id="8bd2a-124">Les fichiers suivants sont inclus :</span><span class="sxs-lookup"><span data-stu-id="8bd2a-124">The following files are included:</span></span>  
   
--   Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.  
+-   <span data-ttu-id="8bd2a-125">Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-125">Program.cs : Includes the `Main` function that executes the sample workflow.</span></span>  
   
--   ReadString.cs : activité personnalisée qui lit une entrée de la console.  
+-   <span data-ttu-id="8bd2a-126">ReadString.cs : activité personnalisée qui lit une entrée de la console.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-126">ReadString.cs: A custom activity that reads some input from the console.</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="8bd2a-127">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="8bd2a-127">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution Pick.sln.  
+1.  <span data-ttu-id="8bd2a-128">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution Pick.sln.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-128">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the Pick.sln solution file.</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+2.  <span data-ttu-id="8bd2a-129">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-129">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  Pour exécuter la solution, appuyez sur F5.  
+3.  <span data-ttu-id="8bd2a-130">Pour exécuter la solution, appuyez sur F5.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-130">To run the solution, press F5.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="8bd2a-131">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-131">The samples may already be installed on your machine.</span></span> <span data-ttu-id="8bd2a-132">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-132">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="8bd2a-133">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="8bd2a-133">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="8bd2a-134">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="8bd2a-134">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="8bd2a-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8bd2a-135">See Also</span></span>

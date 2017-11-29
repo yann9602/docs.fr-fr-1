@@ -1,51 +1,54 @@
 ---
-title: "CustomChannelsTester | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: CustomChannelsTester
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2d915d567a5918060ab5e7592d4cd49384249ab9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# CustomChannelsTester
-`CustomChannelsTester` est un outil utilisé pour tester vos implémentations de canal personnalisées sur un jeu de contrats de service prédéfinis.  Vous pouvez sélectionner le jeu de contrats de service et le transmettre à l'outil à l'aide d'un fichier XML.  L'outil génère ensuite le service et le client qui effectue vos implémentations de canal personnalisées pendant l'échange de messages.  
+# <a name="customchannelstester"></a><span data-ttu-id="13f0d-102">CustomChannelsTester</span><span class="sxs-lookup"><span data-stu-id="13f0d-102">CustomChannelsTester</span></span>
+<span data-ttu-id="13f0d-103">`CustomChannelsTester` est un outil utilisé pour tester vos implémentations de canal personnalisées sur un jeu de contrats de service prédéfinis.</span><span class="sxs-lookup"><span data-stu-id="13f0d-103">The `CustomChannelsTester` is a tool that you can use to test your custom channel implementations against a set of predefined service contracts.</span></span> <span data-ttu-id="13f0d-104">Vous pouvez sélectionner le jeu de contrats de service et le transmettre à l'outil à l'aide d'un fichier XML.</span><span class="sxs-lookup"><span data-stu-id="13f0d-104">You can select the set of service contracts and pass it to the tool using an XML file.</span></span> <span data-ttu-id="13f0d-105">L'outil génère ensuite le service et le client qui effectue vos implémentations de canal personnalisées pendant l'échange de messages.</span><span class="sxs-lookup"><span data-stu-id="13f0d-105">The tool then generates the service and client that exercises your custom channel implementations during message exchange.</span></span>  
   
-### Pour générer l'outil  
+### <a name="to-build-the-tool"></a><span data-ttu-id="13f0d-106">Pour générer l'outil</span><span class="sxs-lookup"><span data-stu-id="13f0d-106">To build the tool</span></span>  
   
-1.  Pour générer la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1.  <span data-ttu-id="13f0d-107">Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="13f0d-107">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-2.  La génération de la solution crée trois fichiers : CustomChannelsTester.exe, TestSpec.xml et SampleRun.cmd.  Le fichier SampleRun.cmd a une ligne de commande d'exemple qui indique comment utiliser cet outil pour tester l'exemple [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md).  
+2.  <span data-ttu-id="13f0d-108">La génération de la solution crée trois fichiers : CustomChannelsTester.exe, TestSpec.xml et SampleRun.cmd.</span><span class="sxs-lookup"><span data-stu-id="13f0d-108">Building the solution generates three files: CustomChannelsTester.exe, TestSpec.xml and SampleRun.cmd.</span></span> <span data-ttu-id="13f0d-109">Le fichier SampleRun.cmd a une ligne de commande d’exemple qui montre comment utiliser cet outil pour tester le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="13f0d-109">The file SampleRun.cmd has a sample command line that shows how to use this tool to test the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
   
-### Pour exécuter l'outil  
+### <a name="to-run-the-tool"></a><span data-ttu-id="13f0d-110">Pour exécuter l'outil</span><span class="sxs-lookup"><span data-stu-id="13f0d-110">To run the tool</span></span>  
   
--   À l'invite de commandes, tapez la commande suivante :  
+-   <span data-ttu-id="13f0d-111">À l'invite de commandes, tapez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="13f0d-111">At the command prompt type the following command:</span></span>  
   
     ```  
     CustomChannelsTester.exe /binding:YourCustomBindngName /dll:TheAssemblyWhereThisTypeisDefined /testspec:XmlFileNameWhichContainsTestOptions  
     ```  
   
-     L'utilisation de l'option `/binding` est obligatoire.  
+     <span data-ttu-id="13f0d-112">L'utilisation de l'option `/binding` est obligatoire.</span><span class="sxs-lookup"><span data-stu-id="13f0d-112">Using the `/binding` option is required.</span></span>  
   
-     `/dll` est requis si la « liaison » n'est pas une liaison fournie par le système fournie par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+     <span data-ttu-id="13f0d-113">`/dll` est requis si la « liaison » n'est pas une liaison fournie par le système fournie par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="13f0d-113">`/dll` is required if "binding" is not a system-provided binding provided by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
   
-     `/testspec` est facultatif.  
+     <span data-ttu-id="13f0d-114">`/testspec` est facultatif.</span><span class="sxs-lookup"><span data-stu-id="13f0d-114">`/testspec` is optional.</span></span>  
   
-     Cela crée le serveur et les clients basés sur les caractéristiques de test et la liaison.  
+     <span data-ttu-id="13f0d-115">Cela crée le serveur et les clients basés sur les caractéristiques de test et la liaison.</span><span class="sxs-lookup"><span data-stu-id="13f0d-115">This creates server and clients based on the test specifications and the binding.</span></span>  
   
-     Exécute le client et le serveur, et retourne les résultats.  
+     <span data-ttu-id="13f0d-116">Exécute le client et le serveur, et retourne les résultats.</span><span class="sxs-lookup"><span data-stu-id="13f0d-116">Executes the client and server and returns the results.</span></span>  
   
-     Voici l'exemple XML pour la description des caractéristiques de test \(testspec.xml\) :  
+     <span data-ttu-id="13f0d-117">Voici l'exemple XML pour la description des caractéristiques de test (testspec.xml) :</span><span class="sxs-lookup"><span data-stu-id="13f0d-117">The following is the sample XML for the description of the test specifications (testspec.xml):</span></span>  
   
-    ```  
+    ```xml  
     <TestSpec xmlns="http://WCF/TestSpec" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"   
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >  
     <ServiceContract>  
@@ -76,4 +79,4 @@ caps.handback.revision: 12
     </TestSpec>  
     ```  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="13f0d-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="13f0d-118">See Also</span></span>

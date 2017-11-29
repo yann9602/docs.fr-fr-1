@@ -1,59 +1,64 @@
 ---
-title: "Comment&#160;: impl&#233;menter un formulaire qui utilise une op&#233;ration d&#39;arri&#232;re-plan | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "opérations d'arrière-plan"
-  - "tâches en arrière-plan"
-  - "threads d'arrière-plan"
-  - "BackgroundWorker (composant)"
-  - "composants (Windows Forms), asynchrones"
-  - "formulaires, opérations d'arrière-plan"
-  - "formulaires, multithreading"
-  - "threads (Windows Forms), opérations d'arrière-plan"
-  - "threads (Windows Forms), formulaires"
+title: "Comment : implémenter un formulaire qui utilise une opération d'arrière-plan"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- threading [Windows Forms], forms
+- BackgroundWorker component
+- background tasks
+- forms [Windows Forms], multithreading
+- components [Windows Forms], asynchronous
+- forms [Windows Forms], background operations
+- background threads
+- threading [Windows Forms], background operations
+- background operations
 ms.assetid: 9f483f93-1613-4be1-a021-b4934e9c78f3
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a519f1611e419ec439a70ec86f457049582c4ceb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: impl&#233;menter un formulaire qui utilise une op&#233;ration d&#39;arri&#232;re-plan
-L'exemple de programme suivant crée un formulaire qui calcule les nombres de Fibonacci.  Le calcul s'exécute sur un thread distinct du thread d'interface utilisateur, pour que l'interface utilisateur continue de s'exécuter sans délai lors du calcul.  
+# <a name="how-to-implement-a-form-that-uses-a-background-operation"></a><span data-ttu-id="bbec0-102">Comment : implémenter un formulaire qui utilise une opération d'arrière-plan</span><span class="sxs-lookup"><span data-stu-id="bbec0-102">How to: Implement a Form That Uses a Background Operation</span></span>
+<span data-ttu-id="bbec0-103">L'exemple de programme suivant crée un formulaire qui calcule les nombres de Fibonacci.</span><span class="sxs-lookup"><span data-stu-id="bbec0-103">The following example program creates a form that calculates Fibonacci numbers.</span></span> <span data-ttu-id="bbec0-104">Le calcul s'exécute sur un thread distinct du thread d'interface utilisateur, pour que l'interface utilisateur continue de s'exécuter sans délai lors du calcul.</span><span class="sxs-lookup"><span data-stu-id="bbec0-104">The calculation runs on a thread that is separate from the user interface thread, so the user interface continues to run without delays as the calculation proceeds.</span></span>  
   
- Cette tâche est très bien prise en charge dans Visual Studio.  
+ <span data-ttu-id="bbec0-105">Cette tâche est très bien prise en charge dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="bbec0-105">There is extensive support for this task in Visual Studio.</span></span>  
   
- Consultez également [Procédure pas à pas : implémentation d'un formulaire qui utilise une opération d'arrière\-plan](http://msdn.microsoft.com/library/b2zk6580%20\(v=vs.110\)).  
+ <span data-ttu-id="bbec0-106">Consultez également [Procédure pas à pas : implémentation d’un formulaire qui utilise une opération d’arrière-plan](http://msdn.microsoft.com/library/b2zk6580\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="bbec0-106">Also see [Walkthrough: Implementing a Form That Uses a Background Operation](http://msdn.microsoft.com/library/b2zk6580\(v=vs.110\)).</span></span>  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="bbec0-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="bbec0-107">Example</span></span>  
  [!code-cpp[System.ComponentModel.BackgroundWorker#1](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp#1)]
  [!code-csharp[System.ComponentModel.BackgroundWorker#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#1)]
  [!code-vb[System.ComponentModel.BackgroundWorker#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#1)]  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a><span data-ttu-id="bbec0-108">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="bbec0-108">Compiling the Code</span></span>  
+ <span data-ttu-id="bbec0-109">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="bbec0-109">This example requires:</span></span>  
   
--   Références aux assemblys System, System.Drawing et System.Windows.Forms.  
+-   <span data-ttu-id="bbec0-110">Références aux assemblys System, System.Drawing et System.Windows.Forms.</span><span class="sxs-lookup"><span data-stu-id="bbec0-110">References to the System, System.Drawing, and System.Windows.Forms assemblies.</span></span>  
   
- Pour plus d'informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez [Génération à partir de la ligne de commande](../Topic/Building%20from%20the%20Command%20Line%20\(Visual%20Basic\).md) ou [Génération à partir de la ligne de commande avec csc.exe](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.  Consultez également [Comment : compiler et exécuter un exemple complet de code Windows Forms à l'aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228%20\(v=vs.110\)).  
+ <span data-ttu-id="bbec0-111">Pour plus d’informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez [Génération à partir de la ligne de commande](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) ou [Génération à partir de la ligne de commande avec csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="bbec0-111">For information about building this example from the command line for [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="bbec0-112">Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.</span><span class="sxs-lookup"><span data-stu-id="bbec0-112">You can also build this example in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] by pasting the code into a new project.</span></span>  <span data-ttu-id="bbec0-113">Consultez également [Guide pratique pour compiler et exécuter un exemple complet de code Windows Forms à l’aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="bbec0-113">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
   
-## Programmation fiable  
+## <a name="robust-programming"></a><span data-ttu-id="bbec0-114">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="bbec0-114">Robust Programming</span></span>  
   
 > [!CAUTION]
->  Quand vous utilisez le multithreading, vous vous exposez potentiellement à des bogues très sérieux et complexes.  Consultez les [Managed Threading Best Practices](../../../../docs/standard/threading/managed-threading-best-practices.md) avant d'implémenter une solution qui utilise le multithreading.  
+>  <span data-ttu-id="bbec0-115">Quand vous utilisez le multithreading, vous vous exposez potentiellement à des bogues très sérieux et complexes.</span><span class="sxs-lookup"><span data-stu-id="bbec0-115">When using multithreading of any sort, you potentially expose yourself to very serious and complex bugs.</span></span> <span data-ttu-id="bbec0-116">Consultez les [Meilleures pratiques pour le threading managé](../../../../docs/standard/threading/managed-threading-best-practices.md) avant d’implémenter une solution qui utilise le multithreading.</span><span class="sxs-lookup"><span data-stu-id="bbec0-116">Consult the [Managed Threading Best Practices](../../../../docs/standard/threading/managed-threading-best-practices.md) before implementing any solution that uses multithreading.</span></span>  
   
-## Voir aussi  
- <xref:System.ComponentModel.BackgroundWorker>   
- <xref:System.ComponentModel.DoWorkEventArgs>   
- [Event\-based Asynchronous Pattern Overview](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)   
- [Managed Threading Best Practices](../../../../docs/standard/threading/managed-threading-best-practices.md)
+## <a name="see-also"></a><span data-ttu-id="bbec0-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bbec0-117">See Also</span></span>  
+ <xref:System.ComponentModel.BackgroundWorker>  
+ <xref:System.ComponentModel.DoWorkEventArgs>  
+ [<span data-ttu-id="bbec0-118">Vue d’ensemble du modèle asynchrone basé sur les événements</span><span class="sxs-lookup"><span data-stu-id="bbec0-118">Event-based Asynchronous Pattern Overview</span></span>](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
+ [<span data-ttu-id="bbec0-119">Bonnes pratiques de threading géré</span><span class="sxs-lookup"><span data-stu-id="bbec0-119">Managed Threading Best Practices</span></span>](../../../../docs/standard/threading/managed-threading-best-practices.md)

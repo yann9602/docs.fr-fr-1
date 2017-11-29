@@ -1,28 +1,31 @@
 ---
-title: "Conversations s&#233;curis&#233;es et sessions s&#233;curis&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Conversations sécurisées et sessions sécurisées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 48cb104a-532d-40ae-aa57-769dae103fda
-caps.latest.revision: 13
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 6647ef8124279e9fc0b3049beb5c87f887125dfa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Conversations s&#233;curis&#233;es et sessions s&#233;curis&#233;es
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a la capacité d'établir des sessions sécurisées entre deux points de terminaison qui s'authentifient l'un l'autre et conviennent d'un chiffrement et d'un processus de signature numérique.Par exemple, le point de terminaison de service peut demander qu'un point de terminaison de client envoie un jeton de sécurité basé sur un certificat X.509 pour l'authentification.Une fois que le client est authentifié, le point de terminaison de service renvoie un jeton de contexte de sécurité \(SCT\) au client, utilisé ensuite pour sécuriser tous les messages suivants dans la session.L'établissement de cette session sécurisée permet d'améliorer l'ensemble des messages échangés entre les deux points de terminaison, parce que le SCT a une clé symétrique.Les clés asymétriques, sur lesquelles les certificats X.509 sont basés, requièrent beaucoup plus de puissance de calcul que les clés symétriques pour générer une signature numérique ou chiffrer un jeu de données.  
+# <a name="secure-conversations-and-secure-sessions"></a><span data-ttu-id="a84df-102">Conversations sécurisées et sessions sécurisées</span><span class="sxs-lookup"><span data-stu-id="a84df-102">Secure Conversations and Secure Sessions</span></span>
+<span data-ttu-id="a84df-103">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a la capacité d'établir des sessions sécurisées entre deux points de terminaison qui s'authentifient l'un l'autre et conviennent d'un chiffrement et d'un processus de signature numérique.</span><span class="sxs-lookup"><span data-stu-id="a84df-103">A feature of [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] is the ability to establish secure sessions between two endpoints that authenticate each other and agree upon an encryption and digital signature process.</span></span> <span data-ttu-id="a84df-104">Par exemple, le point de terminaison de service peut demander qu'un point de terminaison de client envoie un jeton de sécurité basé sur un certificat X.509 pour l'authentification.</span><span class="sxs-lookup"><span data-stu-id="a84df-104">For example, the service endpoint might require a client endpoint to send a security token based upon an X.509 certificate for authentication.</span></span> <span data-ttu-id="a84df-105">Une fois que le client est authentifié, le point de terminaison de service renvoie un jeton de contexte de sécurité (SCT) au client, utilisé ensuite pour sécuriser tous les messages suivants dans la session.</span><span class="sxs-lookup"><span data-stu-id="a84df-105">Once the client is authenticated, the service endpoint returns a security context token (SCT) back to the client that is then used to secure all subsequent messages within the session.</span></span> <span data-ttu-id="a84df-106">L'établissement de cette session sécurisée permet d'améliorer l'ensemble des messages échangés entre les deux points de terminaison, parce que le SCT a une clé symétrique.</span><span class="sxs-lookup"><span data-stu-id="a84df-106">Establishing this secure session enables the set of messages that are exchanged between the two endpoints to be more efficient, because the SCT has a symmetric key.</span></span> <span data-ttu-id="a84df-107">Les clés asymétriques, sur lesquelles les certificats X.509 sont basés, requièrent beaucoup plus de puissance de calcul que les clés symétriques pour générer une signature numérique ou chiffrer un jeu de données.</span><span class="sxs-lookup"><span data-stu-id="a84df-107">Asymmetric keys, which X.509 certificates are based upon, require significantly more computational power than symmetric keys when generating a digital signature or encrypting a set of data.</span></span>  
   
- La stratégie de démarrage \(définie dans la section 6.2.7 de la norme [WS\-SecurityPolicy](http://go.microsoft.com/fwlink/?LinkId=99817) \(page pouvant être en anglais\)\) contient les assertions de sécurité de message utilisées pour sécuriser le canal et authentifier le client avant l'échange RST\/SCT et RSTR\/SCT.Certaines liaisons standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ont une propriété `Security.Message.EstablishSecurityContext` qui contrôle si la conversation sécurisée est utilisée.Lorsque vous utilisez les liaisons personnalisées, le démarrage est indiqué en imbriquant les éléments de liaison de sécurité, soit par le biais de [\<secureConversationBootstrap\>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) dans le fichier de configuration, soit en appelant <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%2A> dans le code.  
+ <span data-ttu-id="a84df-108">La stratégie de démarrage (défini dans la section 6.2.7 de la [WS-SecurityPolicy](http://go.microsoft.com/fwlink/?LinkId=99817) standard) contient les assertions de sécurité de message utilisées pour sécuriser le canal et d’authentifier le client avant l’échange RST/SCT et RSTR/SCT.</span><span class="sxs-lookup"><span data-stu-id="a84df-108">The bootstrap policy (defined in section 6.2.7 of the [WS-SecurityPolicy](http://go.microsoft.com/fwlink/?LinkId=99817) standard) contains the message security assertions used to secure the channel and authenticate the client prior to the RST/SCT and RSTR/SCT exchange.</span></span> <span data-ttu-id="a84df-109">Certaines liaisons standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ont une propriété `Security.Message.EstablishSecurityContext` qui contrôle si la conversation sécurisée est utilisée.</span><span class="sxs-lookup"><span data-stu-id="a84df-109">Certain [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] standard bindings have a `Security.Message.EstablishSecurityContext` property which controls whether secure conversation is used.</span></span> <span data-ttu-id="a84df-110">Lorsque vous utilisez des liaisons personnalisées le programme d’amorçage est indiqué par imbrication éléments de liaison de sécurité, que ce soit via [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) dans le fichier de configuration, ou en appelant <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%2A> dans le code.</span><span class="sxs-lookup"><span data-stu-id="a84df-110">When using custom bindings the bootstrap is indicated by nesting security binding elements, either through [\<secureConversationBootstrap>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) in the configuration file, or by calling <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%2A> in code.</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] les sessions, consultez [Utilisation de sessions](../../../../docs/framework/wcf/using-sessions.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="a84df-111">sessions, consultez [à l’aide de Sessions](../../../../docs/framework/wcf/using-sessions.md).</span><span class="sxs-lookup"><span data-stu-id="a84df-111"> sessions, see [Using Sessions](../../../../docs/framework/wcf/using-sessions.md).</span></span>  
   
-## Voir aussi  
- [Sessions, instanciation et accès concurrentiel](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)   
- [Comment : créer un service qui requiert des sessions](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)
+## <a name="see-also"></a><span data-ttu-id="a84df-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a84df-112">See Also</span></span>  
+ [<span data-ttu-id="a84df-113">Sessions, instanciation et accès concurrentiel</span><span class="sxs-lookup"><span data-stu-id="a84df-113">Sessions, Instancing, and Concurrency</span></span>](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)  
+ [<span data-ttu-id="a84df-114">Comment : créer un Service qui requiert des Sessions</span><span class="sxs-lookup"><span data-stu-id="a84df-114">How to: Create a Service That Requires Sessions</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)

@@ -1,33 +1,36 @@
 ---
-title: "Conception des flux de travaux | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "programmation [WF], conception des flux de travaux"
+title: Conception des flux de travaux
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: programming [WF], designing workflows
 ms.assetid: 41f727b5-b142-4c1b-b046-492b96135ae6
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: aff3f8108eb5cbe254575c73a5022e8dd1f99db1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Conception des flux de travaux
-Les rubriques de cette section décrivent les paradigmes de contrôle de flux utilisés dans le développement de flux de travail.  
+# <a name="designing-workflows"></a><span data-ttu-id="00c42-102">Conception des flux de travaux</span><span class="sxs-lookup"><span data-stu-id="00c42-102">Designing Workflows</span></span>
+<span data-ttu-id="00c42-103">Les rubriques de cette section décrivent les paradigmes de contrôle de flux utilisés dans le développement de flux de travail.</span><span class="sxs-lookup"><span data-stu-id="00c42-103">The topics in this section describe the flow-control paradigms used in workflow development.</span></span>  
   
-## Dans cette section  
- [Workflows d'organigramme](../../../docs/framework/windows-workflow-foundation//flowchart-workflows.md)  
- Indique comment créer des flux de travail à l'aide du paradigme classique d'organigramme.  
+## <a name="in-this-section"></a><span data-ttu-id="00c42-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="00c42-104">In This Section</span></span>  
+ [<span data-ttu-id="00c42-105">Workflows d’organigramme</span><span class="sxs-lookup"><span data-stu-id="00c42-105">Flowchart Workflows</span></span>](../../../docs/framework/windows-workflow-foundation/flowchart-workflows.md)  
+ <span data-ttu-id="00c42-106">Indique comment créer des flux de travail à l'aide du paradigme classique d'organigramme.</span><span class="sxs-lookup"><span data-stu-id="00c42-106">Shows how to create workflows using the familiar flowchart paradigm.</span></span>  
   
- [Workflows procéduraux](../../../docs/framework/windows-workflow-foundation//procedural-workflows.md)  
- Indique comment créer des flux de travail à l'aide d'un paradigme d'exécution séquentielle de base.  
+ [<span data-ttu-id="00c42-107">Workflows procéduraux</span><span class="sxs-lookup"><span data-stu-id="00c42-107">Procedural Workflows</span></span>](../../../docs/framework/windows-workflow-foundation/procedural-workflows.md)  
+ <span data-ttu-id="00c42-108">Indique comment créer des flux de travail à l'aide d'un paradigme d'exécution séquentielle de base.</span><span class="sxs-lookup"><span data-stu-id="00c42-108">Shows how to create workflows using a basic, sequential execution paradigm.</span></span>  
   
- [Workflows d'ordinateur d'état](../../../docs/framework/windows-workflow-foundation//state-machine-workflows.md)  
- Traite de l'utilisation des workflows d'organigramme pour implémenter des flux de travail événementiels dans [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], à la place du modèle d'ordinateur d'état utilisé dans les versions précédentes.  
+ [<span data-ttu-id="00c42-109">Workflows de machine à états</span><span class="sxs-lookup"><span data-stu-id="00c42-109">State Machine Workflows</span></span>](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md)  
+ <span data-ttu-id="00c42-110">Traite de l'utilisation des workflows d'organigramme pour implémenter des flux de travail événementiels dans [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], à la place du modèle d'ordinateur d'état utilisé dans les versions précédentes.</span><span class="sxs-lookup"><span data-stu-id="00c42-110">Discusses how to use Flowchart workflows to implement event-driven workflows in [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], as a replacement for the State Machine model used in previous versions.</span></span>  
   
- [Création de workflows, d'activités et d'expressions à l'aide du code impératif](../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)  
- Explique comment créer un flux de travail à l'aide du code impératif.
+ [<span data-ttu-id="00c42-111">Création de workflows, d’activités et d’expressions à l’aide du code impératif</span><span class="sxs-lookup"><span data-stu-id="00c42-111">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)  
+ <span data-ttu-id="00c42-112">Explique comment créer un flux de travail à l'aide du code impératif.</span><span class="sxs-lookup"><span data-stu-id="00c42-112">Describes how to author a workflow with imperative code.</span></span>

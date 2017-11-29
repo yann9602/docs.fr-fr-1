@@ -1,17 +1,13 @@
 ---
-title: "Initialiseurs d’objets : Types nommés et anonymes (Visual Basic) | Documents Microsoft"
+title: "Initialiseurs d'objets : types nommés et anonymes (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vb.ObjectInitializer
-dev_langs:
-- VB
+f1_keywords: vb.ObjectInitializer
 helpviewer_keywords:
 - object initializers [Visual Basic]
 - anonymous types [Visual Basic], object initializers
@@ -19,98 +15,84 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d684ad4f3dd47dc7400ea401a94660af832ef866
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 349e4f7b4902eb18845fee7cb4d01b217849a4d2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Initialiseurs d'objets : types nommés et anonymes (Visual Basic)
-Initialiseurs d’objets vous permettent de vous permettent de spécifier les propriétés d’un objet complexe à l’aide d’une expression unique. Elles peuvent servir à créer des instances de types nommés et de types anonymes.  
+# <a name="object-initializers-named-and-anonymous-types-visual-basic"></a><span data-ttu-id="6ba40-102">Initialiseurs d'objets : types nommés et anonymes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6ba40-102">Object Initializers: Named and Anonymous Types (Visual Basic)</span></span>
+<span data-ttu-id="6ba40-103">Initialiseurs d’objets vous permettent de vous permet de spécifier les propriétés d’un objet complexe à l’aide d’une expression unique.</span><span class="sxs-lookup"><span data-stu-id="6ba40-103">Object initializers enable you to specify properties for a complex object by using a single expression.</span></span> <span data-ttu-id="6ba40-104">Ils peuvent être utilisés pour créer des instances de types nommés et de types anonymes.</span><span class="sxs-lookup"><span data-stu-id="6ba40-104">They can be used to create instances of named types and of anonymous types.</span></span>  
   
-## <a name="declarations"></a>Déclarations  
- Déclarations d’instances de types nommés et anonymes peuvent sembler presque identiques, mais leurs effets ne sont pas identiques. Chaque catégorie dispose de capacités et restrictions qui lui sont propres. L’exemple suivant montre une manière pratique pour déclarer et initialiser une instance d’une classe nommée, `Customer`, à l’aide d’une liste d’initialiseurs objet. Notez que le nom de la classe est spécifié après le mot clé `New`.  
+## <a name="declarations"></a><span data-ttu-id="6ba40-105">Déclarations</span><span class="sxs-lookup"><span data-stu-id="6ba40-105">Declarations</span></span>  
+ <span data-ttu-id="6ba40-106">Déclarations d’instances de types nommés et anonymes peuvent sembler presque identiques, mais leurs effets ne sont pas identiques.</span><span class="sxs-lookup"><span data-stu-id="6ba40-106">Declarations of instances of named and anonymous types can look almost identical, but their effects are not the same.</span></span> <span data-ttu-id="6ba40-107">Chaque catégorie dispose de capacités et les restrictions qui lui sont propres.</span><span class="sxs-lookup"><span data-stu-id="6ba40-107">Each category has abilities and restrictions of its own.</span></span> <span data-ttu-id="6ba40-108">L’exemple suivant montre un moyen pratique pour déclarer et initialiser une instance d’une classe nommée, `Customer`, à l’aide d’une liste d’initialiseurs objet.</span><span class="sxs-lookup"><span data-stu-id="6ba40-108">The following example shows a convenient way to declare and initialize an instance of a named class, `Customer`, by using an object initializer list.</span></span> <span data-ttu-id="6ba40-109">Notez que le nom de la classe est spécifié après le mot clé `New`.</span><span class="sxs-lookup"><span data-stu-id="6ba40-109">Notice that the name of the class is specified after the keyword `New`.</span></span>  
   
- [!code-vb[VbVbalrObjectInit n °&1;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_1.vb)]  
+ [!code-vb[VbVbalrObjectInit#1](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_1.vb)]  
   
- Un type anonyme n’a pas de nom utilisable. Par conséquent, une instanciation d’un type anonyme ne peut pas inclure un nom de classe.  
+ <span data-ttu-id="6ba40-110">Un type anonyme n’a pas de nom utilisable.</span><span class="sxs-lookup"><span data-stu-id="6ba40-110">An anonymous type has no usable name.</span></span> <span data-ttu-id="6ba40-111">Par conséquent, une instanciation d’un type anonyme ne peut pas inclure un nom de classe.</span><span class="sxs-lookup"><span data-stu-id="6ba40-111">Therefore an instantiation of an anonymous type cannot include a class name.</span></span>  
   
- [!code-vb[VbVbalrObjectInit n °&2;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
+ [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
   
- La configuration requise et les résultats des deux déclarations ne sont pas identiques. Pour `namedCust`, un `Customer` classe a un `Name` propriété doit déjà exister, et la déclaration crée une instance de cette classe. Pour `anonymousCust`, le compilateur définit une nouvelle classe qui possède une propriété, une chaîne appelée `Name`et crée une nouvelle instance de cette classe.  
+ <span data-ttu-id="6ba40-112">La configuration requise et les résultats des deux déclarations ne sont pas identiques.</span><span class="sxs-lookup"><span data-stu-id="6ba40-112">The requirements and results of the two declarations are not the same.</span></span> <span data-ttu-id="6ba40-113">Pour `namedCust`, un `Customer` classe qui a un `Name` propriété doit déjà exister, et la déclaration crée une instance de cette classe.</span><span class="sxs-lookup"><span data-stu-id="6ba40-113">For `namedCust`, a `Customer` class that has a `Name` property must already exist, and the declaration creates an instance of that class.</span></span> <span data-ttu-id="6ba40-114">Pour `anonymousCust`, le compilateur définit une nouvelle classe qui possède une propriété, une chaîne appelée `Name`et crée une nouvelle instance de cette classe.</span><span class="sxs-lookup"><span data-stu-id="6ba40-114">For `anonymousCust`, the compiler defines a new class that has one property, a string called `Name`, and creates a new instance of that class.</span></span>  
   
-## <a name="named-types"></a>Types nommés  
- Initialiseurs d’objets sont un moyen simple pour appeler le constructeur d’un type, puis définissez les valeurs de certaines ou toutes les propriétés dans une instruction unique. Le compilateur appelle le constructeur approprié pour l’instruction : le constructeur par défaut si aucun argument n’est présenté, ou un constructeur paramétrable, si un ou plusieurs arguments sont envoyés. Après cela, les propriétés spécifiées sont initialisées dans l’ordre dans lequel elles sont présentées dans la liste d’initialiseurs.  
+## <a name="named-types"></a><span data-ttu-id="6ba40-115">Types nommés</span><span class="sxs-lookup"><span data-stu-id="6ba40-115">Named Types</span></span>  
+ <span data-ttu-id="6ba40-116">Initialiseurs d’objets fournissent un moyen simple pour appeler le constructeur d’un type, puis définissez les valeurs de certaines ou toutes les propriétés dans une instruction unique.</span><span class="sxs-lookup"><span data-stu-id="6ba40-116">Object initializers provide a simple way to call the constructor of a type and then set the values of some or all properties in a single statement.</span></span> <span data-ttu-id="6ba40-117">Le compilateur appelle le constructeur approprié pour l’instruction : le constructeur par défaut si aucun argument n’est présentés, ou un constructeur paramétrable, si un ou plusieurs arguments sont envoyé.</span><span class="sxs-lookup"><span data-stu-id="6ba40-117">The compiler invokes the appropriate constructor for the statement: the default constructor if no arguments are presented, or a parameterized constructor if one or more arguments are sent.</span></span> <span data-ttu-id="6ba40-118">Après cela, les propriétés spécifiées sont initialisées dans l’ordre dans lequel elles sont présentées dans la liste d’initialiseurs.</span><span class="sxs-lookup"><span data-stu-id="6ba40-118">After that, the specified properties are initialized in the order in which they are presented in the initializer list.</span></span>  
   
- Chaque initialisation de la liste d’initialiseurs se compose de l’assignation d’une valeur initiale d’un membre de la classe. Les noms et les types de données des membres sont déterminées lors de la classe est définie. Dans les exemples suivants, la `Customer` classe doit exister et doivent comporter des membres nommés `Name` et `City` qui peut accepter des valeurs de chaîne.  
+ <span data-ttu-id="6ba40-119">Chaque initialisation de la liste d’initialiseurs se compose de l’attribution d’une valeur initiale à un membre de la classe.</span><span class="sxs-lookup"><span data-stu-id="6ba40-119">Each initialization in the initializer list consists of the assignment of an initial value to a member of the class.</span></span> <span data-ttu-id="6ba40-120">Les noms et types de données des membres sont déterminées lors de la classe est définie.</span><span class="sxs-lookup"><span data-stu-id="6ba40-120">The names and data types of the members are determined when the class is defined.</span></span> <span data-ttu-id="6ba40-121">Dans les exemples suivants, le `Customer` classe doit exister et doivent comporter des membres nommés `Name` et `City` qui peut accepter des valeurs de chaîne.</span><span class="sxs-lookup"><span data-stu-id="6ba40-121">In the following examples, the `Customer` class must exist, and must have members named `Name` and `City` that can accept string values.</span></span>  
   
- [!code-vb[VbVbalrObjectInit n °&3;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_3.vb)]  
+ [!code-vb[VbVbalrObjectInit#3](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_3.vb)]  
   
- Vous pouvez également obtenir le même résultat en utilisant le code suivant :  
+ <span data-ttu-id="6ba40-122">Vous pouvez également obtenir le même résultat en utilisant le code suivant :</span><span class="sxs-lookup"><span data-stu-id="6ba40-122">Alternatively, you can obtain the same result by using the following code:</span></span>  
   
- [!code-vb[VbVbalrObjectInit n °&4;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_4.vb)]  
+ [!code-vb[VbVbalrObjectInit#4](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_4.vb)]  
   
- Chacune de ces déclarations équivaut à l’exemple suivant, qui crée un `Customer` de l’objet à l’aide du constructeur par défaut, puis spécifie des valeurs initiales pour les `Name` et `City` propriétés en utilisant un `With` instruction.  
+ <span data-ttu-id="6ba40-123">Chacune de ces déclarations est équivalente à l’exemple suivant, qui crée un `Customer` de l’objet à l’aide du constructeur par défaut, puis spécifie des valeurs initiales pour les `Name` et `City` propriétés à l’aide un `With` instruction.</span><span class="sxs-lookup"><span data-stu-id="6ba40-123">Each of these declarations is equivalent to the following example, which creates a `Customer` object by using the default constructor, and then specifies initial values for the `Name` and `City` properties by using a `With` statement.</span></span>  
   
- [!code-vb[VbVbalrObjectInit n °&5;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_5.vb)]  
+ [!code-vb[VbVbalrObjectInit#5](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_5.vb)]  
   
- Si le `Customer` classe contient un constructeur paramétrable qui vous permet d’envoyer une valeur pour `Name`, par exemple, vous pouvez également déclarer et initialiser un `Customer` objet comme suit :  
+ <span data-ttu-id="6ba40-124">Si le `Customer` classe contient un constructeur paramétrable qui vous permet d’envoyer une valeur pour `Name`, par exemple, vous pouvez également déclarer et initialiser un `Customer` objet comme suit :</span><span class="sxs-lookup"><span data-stu-id="6ba40-124">If the `Customer` class contains a parameterized constructor that enables you to send in a value for `Name`, for example, you can also declare and initialize a `Customer` object in the following ways:</span></span>  
   
- [!code-vb[VbVbalrObjectInit n °&6;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_6.vb)]  
+ [!code-vb[VbVbalrObjectInit#6](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_6.vb)]  
   
- Il est inutile d’initialiser toutes les propriétés, comme le montre le code suivant.  
+ <span data-ttu-id="6ba40-125">Il est inutile d’initialiser toutes les propriétés, comme le montre le code suivant.</span><span class="sxs-lookup"><span data-stu-id="6ba40-125">You do not have to initialize all properties, as the following code shows.</span></span>  
   
- [!code-vb[VbVbalrObjectInit&#7;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_7.vb)]  
+ [!code-vb[VbVbalrObjectInit#7](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_7.vb)]  
   
- Toutefois, la liste d’initialisation ne peut pas être vide. Propriétés non initialisées conservent leurs valeurs par défaut.  
+ <span data-ttu-id="6ba40-126">Toutefois, la liste d’initialisation ne peut pas être vide.</span><span class="sxs-lookup"><span data-stu-id="6ba40-126">However, the initialization list cannot be empty.</span></span> <span data-ttu-id="6ba40-127">Propriétés non initialisées conservent leurs valeurs par défaut.</span><span class="sxs-lookup"><span data-stu-id="6ba40-127">Uninitialized properties retain their default values.</span></span>  
   
-### <a name="type-inference-with-named-types"></a>Inférence de type avec les Types nommés  
- Vous pouvez raccourcir le code pour la déclaration de `cust1` en combinant des initialiseurs d’objets et l’inférence de type local. Cela vous permet d’omettre le `As` clause dans la déclaration de variable. Le type de données de la variable est déduit du type de l’objet qui est créé par l’assignation. Dans l’exemple suivant, le type de `cust6` est `Customer`.  
+### <a name="type-inference-with-named-types"></a><span data-ttu-id="6ba40-128">Inférence de type avec des Types nommés</span><span class="sxs-lookup"><span data-stu-id="6ba40-128">Type Inference with Named Types</span></span>  
+ <span data-ttu-id="6ba40-129">Vous pouvez raccourcir le code pour la déclaration de `cust1` en combinant des initialiseurs d’objets et l’inférence de type local.</span><span class="sxs-lookup"><span data-stu-id="6ba40-129">You can shorten the code for the declaration of `cust1` by combining object initializers and local type inference.</span></span> <span data-ttu-id="6ba40-130">Cela vous permet d’omettre le `As` clause dans la déclaration de variable.</span><span class="sxs-lookup"><span data-stu-id="6ba40-130">This enables you to omit the `As` clause in the variable declaration.</span></span> <span data-ttu-id="6ba40-131">Le type de données de la variable est déduit du type de l’objet qui est créé par l’assignation.</span><span class="sxs-lookup"><span data-stu-id="6ba40-131">The data type of the variable is inferred from the type of the object that is created by the assignment.</span></span> <span data-ttu-id="6ba40-132">Dans l’exemple suivant, le type de `cust6` est `Customer`.</span><span class="sxs-lookup"><span data-stu-id="6ba40-132">In the following example, the type of `cust6` is `Customer`.</span></span>  
   
- [!code-vb[VbVbalrObjectInit n °&8;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_8.vb)]  
+ [!code-vb[VbVbalrObjectInit#8](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_8.vb)]  
   
-### <a name="remarks-about-named-types"></a>Remarques sur les Types nommés  
+### <a name="remarks-about-named-types"></a><span data-ttu-id="6ba40-133">Remarques sur les Types nommés</span><span class="sxs-lookup"><span data-stu-id="6ba40-133">Remarks About Named Types</span></span>  
   
--   Un membre de classe ne peut pas être initialisé plusieurs fois dans la liste d’initialiseurs objet. La déclaration de `cust7` provoque une erreur.  
+-   <span data-ttu-id="6ba40-134">Un membre de classe ne peut pas être initialisé plusieurs fois dans la liste d’initialiseurs objet.</span><span class="sxs-lookup"><span data-stu-id="6ba40-134">A class member cannot be initialized more than one time in the object initializer list.</span></span> <span data-ttu-id="6ba40-135">La déclaration de `cust7` provoque une erreur.</span><span class="sxs-lookup"><span data-stu-id="6ba40-135">The declaration of `cust7` causes an error.</span></span>  
   
-     [!code-vb[VbVbalrObjectInit&#9;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_9.vb)]  
+     [!code-vb[VbVbalrObjectInit#9](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_9.vb)]  
   
--   Un membre peut être utilisé pour initialiser lui-même ou un autre champ. Si un membre est accessible avant qu’il a été initialisé, comme dans la déclaration suivante pour `cust8`, la valeur par défaut sera utilisée. N’oubliez pas que lorsqu’une déclaration qui utilise un initialiseur d’objet est traitée, la première chose qui se produit est que le constructeur approprié est appelé. Après cela, les champs individuels dans la liste d’initialiseurs sont initialisés. Dans les exemples suivants, la valeur par défaut `Name` est attribué pour `cust8`, et une valeur initialisée est assignée en `cust9`.  
+-   <span data-ttu-id="6ba40-136">Un membre peut être permettant d’initialiser lui-même ou un autre champ.</span><span class="sxs-lookup"><span data-stu-id="6ba40-136">A member can be used to initialize itself or another field.</span></span> <span data-ttu-id="6ba40-137">Si un membre est accessible avant qu’il a été initialisé, comme dans la déclaration suivante pour `cust8`, la valeur par défaut sera utilisée.</span><span class="sxs-lookup"><span data-stu-id="6ba40-137">If a member is accessed before it has been initialized, as in the following declaration for `cust8`, the default value will be used.</span></span> <span data-ttu-id="6ba40-138">N’oubliez pas que lorsqu’une déclaration qui utilise un initialiseur d’objet est traitée, la première chose qui se produit est que le constructeur approprié est appelé.</span><span class="sxs-lookup"><span data-stu-id="6ba40-138">Remember that when a declaration that uses an object initializer is processed, the first thing that happens is that the appropriate constructor is invoked.</span></span> <span data-ttu-id="6ba40-139">Après cela, les champs individuels dans la liste d’initialiseurs sont initialisés.</span><span class="sxs-lookup"><span data-stu-id="6ba40-139">After that, the individual fields in the initializer list are initialized.</span></span> <span data-ttu-id="6ba40-140">Dans les exemples suivants, la valeur par défaut `Name` est attribué pour `cust8`, et une valeur initialisée est assignée dans `cust9`.</span><span class="sxs-lookup"><span data-stu-id="6ba40-140">In the following examples, the default value for `Name` is assigned for `cust8`, and an initialized value is assigned in `cust9`.</span></span>  
   
-     [!code-vb[VbVbalrObjectInit&#10;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_10.vb)]  
+     [!code-vb[VbVbalrObjectInit#10](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_10.vb)]  
   
-     L’exemple suivant utilise le constructeur paramétrable de `cust3` et `cust4` pour déclarer et initialiser `cust10` et `cust11`.  
+     <span data-ttu-id="6ba40-141">L’exemple suivant utilise le constructeur paramétrable de `cust3` et `cust4` pour déclarer et initialiser `cust10` et `cust11`.</span><span class="sxs-lookup"><span data-stu-id="6ba40-141">The following example uses the parameterized constructor from `cust3` and `cust4` to declare and initialize `cust10` and `cust11`.</span></span>  
   
-     [!code-vb[VbVbalrObjectInit&#11;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_11.vb)]  
+     [!code-vb[VbVbalrObjectInit#11](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_11.vb)]  
   
--   Initialiseurs d’objets peuvent être imbriquées. Dans l’exemple suivant, `AddressClass` est une classe qui a deux propriétés, `City` et `State`et `Customer` classe a un `Address` propriété qui est une instance de `AddressClass`.  
+-   <span data-ttu-id="6ba40-142">Initialiseurs d’objets peuvent être imbriquées.</span><span class="sxs-lookup"><span data-stu-id="6ba40-142">Object initializers can be nested.</span></span> <span data-ttu-id="6ba40-143">Dans l’exemple suivant, `AddressClass` est une classe qui a deux propriétés, `City` et `State`et le `Customer` classe a un `Address` propriété qui est une instance de `AddressClass`.</span><span class="sxs-lookup"><span data-stu-id="6ba40-143">In the following example, `AddressClass` is a class that has two properties, `City` and `State`, and the `Customer` class has an `Address` property that is an instance of `AddressClass`.</span></span>  
   
-     [!code-vb[VbVbalrObjectInit&#12;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_12.vb)]  
+     [!code-vb[VbVbalrObjectInit#12](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_12.vb)]  
   
--   La liste d’initialisation ne peut pas être vide.  
+-   <span data-ttu-id="6ba40-144">La liste d’initialisation ne peut pas être vide.</span><span class="sxs-lookup"><span data-stu-id="6ba40-144">The initialization list cannot be empty.</span></span>  
   
--   L’instance en cours d’initialisation ne peut pas être de type Object.  
+-   <span data-ttu-id="6ba40-145">L’instance en cours d’initialisation ne peut pas être de type Object.</span><span class="sxs-lookup"><span data-stu-id="6ba40-145">The instance being initialized cannot be of type Object.</span></span>  
   
--   Membres de classe en cours d’initialisation ne peut pas être des membres partagés, des membres en lecture seule, des constantes ou des appels de méthode.  
+-   <span data-ttu-id="6ba40-146">Membres de classe en cours d’initialisation ne peut pas être des membres partagés, des membres en lecture seule, des constantes ou des appels de méthode.</span><span class="sxs-lookup"><span data-stu-id="6ba40-146">Class members being initialized cannot be shared members, read-only members, constants, or method calls.</span></span>  
   
--   Membres de classe en cours d’initialisation ne peut pas être qualifiés ou indexés. Les exemples suivants déclenchent des erreurs du compilateur :  
+-   <span data-ttu-id="6ba40-147">Membres de classe en cours d’initialisation ne peut pas être qualifiés ou indexés.</span><span class="sxs-lookup"><span data-stu-id="6ba40-147">Class members being initialized cannot be indexed or qualified.</span></span> <span data-ttu-id="6ba40-148">Les exemples suivants déclenchent des erreurs du compilateur :</span><span class="sxs-lookup"><span data-stu-id="6ba40-148">The following examples raise compiler errors:</span></span>  
   
      `'' Not valid.`  
   
@@ -118,44 +100,44 @@ Initialiseurs d’objets vous permettent de vous permettent de spécifier les pr
   
      `' Dim c2 = New Customer with {.Address.City = "Springfield"}`  
   
-## <a name="anonymous-types"></a>Types anonymes  
- Les types anonymes utilisent les initialiseurs d’objets pour créer des instances de nouveaux types que vous ne définissez pas explicitement et du nom. Au lieu de cela, le compilateur génère un type en fonction des propriétés que vous désignez dans la liste d’initialiseurs objet. Étant donné que le nom du type n’est pas spécifié, il est appelé un *type anonyme*. Par exemple, comparez la déclaration suivante au précédent pour `cust6`.  
+## <a name="anonymous-types"></a><span data-ttu-id="6ba40-149">Types anonymes</span><span class="sxs-lookup"><span data-stu-id="6ba40-149">Anonymous Types</span></span>  
+ <span data-ttu-id="6ba40-150">Les types anonymes utilisent les initialiseurs d’objets pour créer des instances de nouveaux types que vous ne définissez pas explicitement et du nom.</span><span class="sxs-lookup"><span data-stu-id="6ba40-150">Anonymous types use object initializers to create instances of new types that you do not explicitly define and name.</span></span> <span data-ttu-id="6ba40-151">Au lieu de cela, le compilateur génère un type en fonction des propriétés que vous désignez dans la liste d’initialiseurs objet.</span><span class="sxs-lookup"><span data-stu-id="6ba40-151">Instead, the compiler generates a type according to the properties you designate in the object initializer list.</span></span> <span data-ttu-id="6ba40-152">Étant donné que le nom du type n’est pas spécifié, il est appelé un *type anonyme*.</span><span class="sxs-lookup"><span data-stu-id="6ba40-152">Because the name of the type is not specified, it is referred to as an *anonymous type*.</span></span> <span data-ttu-id="6ba40-153">Par exemple, comparer la déclaration suivante au précédent pour `cust6`.</span><span class="sxs-lookup"><span data-stu-id="6ba40-153">For example, compare the following declaration to the earlier one for `cust6`.</span></span>  
   
- [!code-vb[VbVbalrObjectInit&#13;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_13.vb)]  
+ [!code-vb[VbVbalrObjectInit#13](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_13.vb)]  
   
- La seule différence est syntaxique : aucun nom n’est spécifié après `New` pour le type de données. Toutefois, il est assez différent de ce qui se produit. Le compilateur définit un nouveau type anonyme qui a deux propriétés, `Name` et `City`et crée une instance avec les valeurs spécifiées. L’inférence de type détermine les types de `Name` et `City` dans l’exemple pour être des chaînes.  
+ <span data-ttu-id="6ba40-154">La seule différence est syntaxique : aucun nom n’est spécifié après `New` pour le type de données.</span><span class="sxs-lookup"><span data-stu-id="6ba40-154">The only difference syntactically is that no name is specified after `New` for the data type.</span></span> <span data-ttu-id="6ba40-155">Toutefois, il est très différente de ce qui se passe.</span><span class="sxs-lookup"><span data-stu-id="6ba40-155">However, what happens is quite different.</span></span> <span data-ttu-id="6ba40-156">Le compilateur définit un nouveau type anonyme qui a deux propriétés, `Name` et `City`et crée une instance de celui-ci avec les valeurs spécifiées.</span><span class="sxs-lookup"><span data-stu-id="6ba40-156">The compiler defines a new anonymous type that has two properties, `Name` and `City`, and creates an instance of it with the specified values.</span></span> <span data-ttu-id="6ba40-157">L’inférence de type détermine les types de `Name` et `City` dans l’exemple pour être des chaînes.</span><span class="sxs-lookup"><span data-stu-id="6ba40-157">Type inference determines the types of `Name` and `City` in the example to be strings.</span></span>  
   
 > [!CAUTION]
->  Le nom du type anonyme est généré par le compilateur et peut varier de compilation en compilation. Votre code ne doit pas utiliser ou s’appuient sur le nom d’un type anonyme.  
+>  <span data-ttu-id="6ba40-158">Le nom du type anonyme est généré par le compilateur et peut varier de compilation en compilation.</span><span class="sxs-lookup"><span data-stu-id="6ba40-158">The name of the anonymous type is generated by the compiler, and may vary from compilation to compilation.</span></span> <span data-ttu-id="6ba40-159">Votre code ne doit pas utiliser ou s’appuient sur le nom d’un type anonyme.</span><span class="sxs-lookup"><span data-stu-id="6ba40-159">Your code should not use or rely on the name of an anonymous type.</span></span>  
   
- Le nom du type n’est pas disponible, vous ne pouvez pas utiliser un `As` clause déclarer `cust13`. Son type doit être déduit. Sans utiliser la liaison tardive, cela limite l’utilisation de types anonymes aux variables locales.  
+ <span data-ttu-id="6ba40-160">Le nom du type n’est pas disponible, vous ne pouvez pas utiliser un `As` clause pour déclarer `cust13`.</span><span class="sxs-lookup"><span data-stu-id="6ba40-160">Because the name of the type is not available, you cannot use an `As` clause to declare `cust13`.</span></span> <span data-ttu-id="6ba40-161">Son type doit être déduit.</span><span class="sxs-lookup"><span data-stu-id="6ba40-161">Its type must be inferred.</span></span> <span data-ttu-id="6ba40-162">Sans utiliser de liaison tardive, ce qui limite l’utilisation de types anonymes aux variables locales.</span><span class="sxs-lookup"><span data-stu-id="6ba40-162">Without using late binding, this limits the use of anonymous types to local variables.</span></span>  
   
- Les types anonymes fournissent un support essentiel pour [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] des requêtes. Pour plus d’informations sur l’utilisation de types anonymes dans les requêtes, consultez [les Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) et [Introduction à LINQ dans Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
+ <span data-ttu-id="6ba40-163">Types anonymes ne fournissent une prise en charge critique pour [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] des requêtes.</span><span class="sxs-lookup"><span data-stu-id="6ba40-163">Anonymous types provide critical support for [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries.</span></span> <span data-ttu-id="6ba40-164">Pour plus d’informations sur l’utilisation de types anonymes dans les requêtes, consultez [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) et [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).</span><span class="sxs-lookup"><span data-stu-id="6ba40-164">For more information about the use of anonymous types in queries, see [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) and [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).</span></span>  
   
-### <a name="remarks-about-anonymous-types"></a>Remarques sur les Types anonymes  
+### <a name="remarks-about-anonymous-types"></a><span data-ttu-id="6ba40-165">Remarques sur les Types anonymes</span><span class="sxs-lookup"><span data-stu-id="6ba40-165">Remarks About Anonymous Types</span></span>  
   
--   En règle générale, tout ou partie des propriétés dans une déclaration de type anonyme est constituée de propriétés de clé, indiquées en tapant le mot clé `Key` devant le nom de propriété.  
+-   <span data-ttu-id="6ba40-166">En règle générale, tout ou partie des propriétés dans une déclaration de type anonyme seront des propriétés de clé, qui sont indiquées en tapant le mot clé `Key` devant le nom de propriété.</span><span class="sxs-lookup"><span data-stu-id="6ba40-166">Typically, all or most of the properties in an anonymous type declaration will be key properties, which are indicated by typing the keyword `Key` in front of the property name.</span></span>  
   
-     [!code-vb[VbVbalrObjectInit&#14;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_14.vb)]  
+     [!code-vb[VbVbalrObjectInit#14](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_14.vb)]  
   
-     Pour plus d’informations sur les propriétés de clé, consultez la page [clé](../../../../visual-basic/language-reference/modifiers/key.md).  
+     <span data-ttu-id="6ba40-167">Pour plus d’informations sur les propriétés de clé, consultez [clé](../../../../visual-basic/language-reference/modifiers/key.md).</span><span class="sxs-lookup"><span data-stu-id="6ba40-167">For more information about key properties, see [Key](../../../../visual-basic/language-reference/modifiers/key.md).</span></span>  
   
--   Comme types nommés, les listes d’initialiseurs pour les définitions de type anonyme doivent déclarer au moins une propriété.  
+-   <span data-ttu-id="6ba40-168">Comme types nommés, les listes d’initialiseurs pour les définitions de type anonymes doivent déclarer au moins une propriété.</span><span class="sxs-lookup"><span data-stu-id="6ba40-168">Like named types, initializer lists for anonymous type definitions must declare at least one property.</span></span>  
   
-     [!code-vb[VbVbalrObjectInit n °&2;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
+     [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
   
--   Lorsqu’une instance d’un type anonyme est déclarée, le compilateur génère une définition de type anonyme correspondante. Les noms et les types de données des propriétés sont extraites de la déclaration d’instance et sont inclus par le compilateur dans la définition. Les propriétés ne sont pas nommées et définies à l’avance, comme elles le seraient pour un type nommé. Leurs types sont déduits. Vous ne pouvez pas spécifier les types de données des propriétés en utilisant un `As` clause.  
+-   <span data-ttu-id="6ba40-169">Lorsqu’une instance d’un type anonyme est déclarée, le compilateur génère une définition de type anonyme correspondante.</span><span class="sxs-lookup"><span data-stu-id="6ba40-169">When an instance of an anonymous type is declared, the compiler generates a matching anonymous type definition.</span></span> <span data-ttu-id="6ba40-170">Les noms et types de données des propriétés sont tirées de la déclaration d’instance et sont inclus par le compilateur dans la définition.</span><span class="sxs-lookup"><span data-stu-id="6ba40-170">The names and data types of the properties are taken from the instance declaration, and are included by the compiler in the definition.</span></span> <span data-ttu-id="6ba40-171">Les propriétés ne sont pas nommées et définies à l’avance, tels qu’ils seraient pour un type nommé.</span><span class="sxs-lookup"><span data-stu-id="6ba40-171">The properties are not named and defined in advance, as they would be for a named type.</span></span> <span data-ttu-id="6ba40-172">Leurs types sont déduits.</span><span class="sxs-lookup"><span data-stu-id="6ba40-172">Their types are inferred.</span></span> <span data-ttu-id="6ba40-173">Vous ne pouvez pas spécifier les types de données des propriétés en utilisant un `As` clause.</span><span class="sxs-lookup"><span data-stu-id="6ba40-173">You cannot specify the data types of the properties by using an `As` clause.</span></span>  
   
--   Les types anonymes peuvent également établir les noms et valeurs de leurs propriétés de plusieurs autres façons. Par exemple, une propriété de type anonyme peut prendre à la fois le nom et la valeur d’une variable, ou le nom et la valeur d’une propriété d’un autre objet.  
+-   <span data-ttu-id="6ba40-174">Les types anonymes peuvent également établir les noms et valeurs de leurs propriétés de plusieurs autres façons.</span><span class="sxs-lookup"><span data-stu-id="6ba40-174">Anonymous types can also establish the names and values of their properties in several other ways.</span></span> <span data-ttu-id="6ba40-175">Par exemple, une propriété de type anonyme peut prendre le nom et la valeur d’une variable, ou le nom et la valeur d’une propriété d’un autre objet.</span><span class="sxs-lookup"><span data-stu-id="6ba40-175">For example, an anonymous type property can take both the name and the value of a variable, or the name and value of a property of another object.</span></span>  
   
-     [!code-vb[VbVbalrObjectInit&#15;](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_15.vb)]  
+     [!code-vb[VbVbalrObjectInit#15](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_15.vb)]  
   
-     Pour plus d’informations sur les options pour définir les propriétés dans les types anonymes, consultez [Comment : déduire les noms de propriétés et les Types dans les déclarations de Type anonyme](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).  
+     <span data-ttu-id="6ba40-176">Pour plus d’informations sur les options permettant de définir des propriétés dans les types anonymes, consultez [Comment : déduire les noms de propriétés et les Types dans les déclarations de Type anonyme](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).</span><span class="sxs-lookup"><span data-stu-id="6ba40-176">For more information about the options for defining properties in anonymous types, see [How to: Infer Property Names and Types in Anonymous Type Declarations](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Inférence de Type local](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
- [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [Comment : déduire les Types dans les déclarations de types anonymes et les noms de propriété](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)   
- [Clé](../../../../visual-basic/language-reference/modifiers/key.md)   
- [Guide pratique : déclarer un objet à l’aide d’un initialiseur d’objet](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)
+## <a name="see-also"></a><span data-ttu-id="6ba40-177">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ba40-177">See Also</span></span>  
+ [<span data-ttu-id="6ba40-178">Inférence de type local</span><span class="sxs-lookup"><span data-stu-id="6ba40-178">Local Type Inference</span></span>](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
+ [<span data-ttu-id="6ba40-179">Types anonymes</span><span class="sxs-lookup"><span data-stu-id="6ba40-179">Anonymous Types</span></span>](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
+ [<span data-ttu-id="6ba40-180">Introduction à LINQ en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6ba40-180">Introduction to LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [<span data-ttu-id="6ba40-181">Guide pratique : déduire les types et les noms de propriétés dans des déclarations de types anonymes</span><span class="sxs-lookup"><span data-stu-id="6ba40-181">How to: Infer Property Names and Types in Anonymous Type Declarations</span></span>](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
+ [<span data-ttu-id="6ba40-182">Key</span><span class="sxs-lookup"><span data-stu-id="6ba40-182">Key</span></span>](../../../../visual-basic/language-reference/modifiers/key.md)  
+ [<span data-ttu-id="6ba40-183">Guide pratique : déclarer un objet à l’aide d’un initialiseur d’objet</span><span class="sxs-lookup"><span data-stu-id="6ba40-183">How to: Declare an Object by Using an Object Initializer</span></span>](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)

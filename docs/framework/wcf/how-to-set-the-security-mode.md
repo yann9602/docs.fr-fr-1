@@ -1,94 +1,100 @@
 ---
-title: "Comment&#160;: d&#233;finir le mode de s&#233;curit&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Mode (propriété)"
-  - "WCF, sécurité"
-  - "WCF, mode de sécurité"
+title: "Comment : définir le mode de sécurité"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Mode property
+- WCF, security mode
+- WCF, security
 ms.assetid: 6e01dd9f-b5dd-4474-b24c-06e124de4ff7
-caps.latest.revision: 22
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 595999bfa7d3472fc31274a0c9652af5416d2da5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;finir le mode de s&#233;curit&#233;
-La sécurité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] propose trois modes de sécurité standard disponibles sur la plupart des liaisons prédéfinies : transport, message et transport avec informations d'identification de message. Il existe également deux modes supplémentaires propres à deux liaisons particulières. Il s'agit du mode « informations d'identification de transport uniquement » disponible sur la liaison <xref:System.ServiceModel.BasicHttpBinding> et du mode « les deux » disponible sur la liaison <xref:System.ServiceModel.NetMsmqBinding>.Cette rubrique traite essentiellement des trois principaux modes de sécurité : <xref:System.ServiceModel.SecurityMode>, <xref:System.ServiceModel.SecurityMode> et <xref:System.ServiceModel.SecurityMode>.  
+# <a name="how-to-set-the-security-mode"></a><span data-ttu-id="f629a-102">Comment : définir le mode de sécurité</span><span class="sxs-lookup"><span data-stu-id="f629a-102">How to: Set the Security Mode</span></span>
+<span data-ttu-id="f629a-103">La sécurité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] propose trois modes de sécurité standard disponibles sur la plupart des liaisons prédéfinies : transport, message et transport avec informations d'identification de message.</span><span class="sxs-lookup"><span data-stu-id="f629a-103">[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] security has three common security modes that are found on most predefined bindings: transport, message, and "transport with message credential."</span></span> <span data-ttu-id="f629a-104">Il existe également deux modes supplémentaires propres à deux liaisons particulières. Il s'agit du mode « informations d'identification de transport uniquement » disponible sur la liaison <xref:System.ServiceModel.BasicHttpBinding> et du mode « les deux » disponible sur la liaison <xref:System.ServiceModel.NetMsmqBinding>.</span><span class="sxs-lookup"><span data-stu-id="f629a-104">Two additional modes are specific to two bindings: the "transport-credential only" mode found on the <xref:System.ServiceModel.BasicHttpBinding>, and the "Both" mode, found on the <xref:System.ServiceModel.NetMsmqBinding>.</span></span> <span data-ttu-id="f629a-105">Cette rubrique traite essentiellement des trois principaux modes de sécurité : <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message> et <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.</span><span class="sxs-lookup"><span data-stu-id="f629a-105">However, this topic concentrates on the three common security modes: <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message>, and <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.</span></span>  
   
- Remarque : toutes les liaisons prédéfinies ne prennent pas nécessairement en charge chacun de ces modes.Cette rubrique, dans laquelle le mode est défini à l'aide des classes <xref:System.ServiceModel.WSHttpBinding> et <xref:System.ServiceModel.NetTcpBinding>, illustre comment définir les modes de sécurité à l'aide d'un programme ou dans la configuration.  
+ <span data-ttu-id="f629a-106">Remarque : toutes les liaisons prédéfinies ne prennent pas nécessairement en charge chacun de ces modes.</span><span class="sxs-lookup"><span data-stu-id="f629a-106">Note that not every predefined binding supports all of these modes.</span></span> <span data-ttu-id="f629a-107">Cette rubrique, dans laquelle le mode est défini à l'aide des classes <xref:System.ServiceModel.WSHttpBinding> et <xref:System.ServiceModel.NetTcpBinding>, illustre comment définir les modes de sécurité à l'aide d'un programme ou dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="f629a-107">This topic sets the mode with the <xref:System.ServiceModel.WSHttpBinding> and <xref:System.ServiceModel.NetTcpBinding> classes and demonstrates how to set the mode both programmatically and through configuration.</span></span>  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] la sécurité, consultez [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez [Vue d'ensemble de la sécurité](../../../docs/framework/wcf/feature-details/security-overview.md), [Sécurisation de services](../../../docs/framework/wcf/securing-services.md) et [Sécurisation des services et des clients](../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).[!INCLUDE[crabout](../../../includes/crabout-md.md)] le mode de transport et le message, consultez [Sécurité de transport](../../../docs/framework/wcf/feature-details/transport-security.md) et [Sécurité des messages](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
+ [!INCLUDE[crabout](../../../includes/crdefault-md.md)]<span data-ttu-id="f629a-108">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] sécurité, consultez [vue d’ensemble de la sécurité](../../../docs/framework/wcf/feature-details/security-overview.md), [sécurisation des Services](../../../docs/framework/wcf/securing-services.md), et [sécurisation des Services et les Clients](../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).</span><span class="sxs-lookup"><span data-stu-id="f629a-108"> [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] security, see [Security Overview](../../../docs/framework/wcf/feature-details/security-overview.md), [Securing Services](../../../docs/framework/wcf/securing-services.md), and [Securing Services and Clients](../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="f629a-109">mode de transport et message, consultez [sécurité du Transport](../../../docs/framework/wcf/feature-details/transport-security.md) et [la sécurité des messages](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="f629a-109"> transport mode and message, see [Transport Security](../../../docs/framework/wcf/feature-details/transport-security.md) and [Message Security](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).</span></span>  
   
-### Pour définir le mode de sécurité dans le code  
+### <a name="to-set-the-security-mode-in-code"></a><span data-ttu-id="f629a-110">Pour définir le mode de sécurité dans le code</span><span class="sxs-lookup"><span data-stu-id="f629a-110">To set the security mode in code</span></span>  
   
-1.  Créez une instance de la classe de liaison en cours d'utilisation.Pour obtenir une liste des liaisons prédéfinies, consultez [Liaisons fournies par le système](../../../docs/framework/wcf/system-provided-bindings.md).Cet exemple de code crée une instance de la classe <xref:System.ServiceModel.WSHttpBinding>.  
+1.  <span data-ttu-id="f629a-111">Créez une instance de la classe de liaison en cours d’utilisation.</span><span class="sxs-lookup"><span data-stu-id="f629a-111">Create an instance of the binding class that you are using.</span></span> <span data-ttu-id="f629a-112">Pour obtenir la liste de liaisons prédéfinies, consultez [les liaisons fournies](../../../docs/framework/wcf/system-provided-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="f629a-112">For a list of predefined bindings, see [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md).</span></span> <span data-ttu-id="f629a-113">Cet exemple de code crée une instance de la classe <xref:System.ServiceModel.WSHttpBinding>.</span><span class="sxs-lookup"><span data-stu-id="f629a-113">This example creates an instance of the <xref:System.ServiceModel.WSHttpBinding> class.</span></span>  
   
-2.  Définissez la propriété `Mode` de l'objet retourné par la propriété `Security`.  
+2.  <span data-ttu-id="f629a-114">Définissez la propriété `Mode` de l'objet retourné par la propriété `Security`.</span><span class="sxs-lookup"><span data-stu-id="f629a-114">Set the `Mode` property of the object returned by the `Security` property.</span></span>  
   
      [!code-csharp[c_SettingSecurityMode#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#1)]
      [!code-vb[c_SettingSecurityMode#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#1)]  
   
-     Vous pouvez également affecter la valeur message au mode, comme illustré dans l'exemple de code suivant.  
+     <span data-ttu-id="f629a-115">Vous pouvez également affecter la valeur message au mode, comme illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="f629a-115">Alternatively, set the mode to message, as shown in the following code.</span></span>  
   
      [!code-csharp[c_SettingSecurityMode#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#2)]
      [!code-vb[c_SettingSecurityMode#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#2)]  
   
-     Vous pouvez aussi affecter la valeur transport avec informations d'identification de message au mode, comme illustré dans l'exemple de code suivant.  
+     <span data-ttu-id="f629a-116">Vous pouvez aussi affecter la valeur transport avec informations d'identification de message au mode, comme illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="f629a-116">Or set the mode to transport with message credentials, as shown in the following code.</span></span>  
   
      [!code-csharp[c_SettingSecurityMode#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#3)]
      [!code-vb[c_SettingSecurityMode#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#3)]  
   
-3.  Vous pouvez enfin définir le mode dans le constructeur de la liaison, comme illustré dans l'exemple de code suivant.  
+3.  <span data-ttu-id="f629a-117">Vous pouvez enfin définir le mode dans le constructeur de la liaison, comme illustré dans l’exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="f629a-117">You can also set the mode in the constructor of the binding, as shown in the following code.</span></span>  
   
      [!code-csharp[c_SettingSecurityMode#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#4)]
      [!code-vb[c_SettingSecurityMode#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#4)]  
   
-## Définition de la propriété ClientCredentialType  
- La définition de la propriété `ClientCredentialType` dépend de la valeur affectée au mode de sécurité.Par exemple, si vous utilisez la classe <xref:System.ServiceModel.WSHttpBinding> et affectez au mode la valeur `Transport` vous devez affecter à la propriété <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> de la classe <xref:System.ServiceModel.HttpTransportSecurity> une valeur appropriée.  
+## <a name="setting-the-clientcredentialtype-property"></a><span data-ttu-id="f629a-118">Définition de la propriété ClientCredentialType</span><span class="sxs-lookup"><span data-stu-id="f629a-118">Setting the ClientCredentialType Property</span></span>  
+ <span data-ttu-id="f629a-119">La définition de la propriété `ClientCredentialType` dépend de la valeur affectée au mode de sécurité.</span><span class="sxs-lookup"><span data-stu-id="f629a-119">Setting the mode to one of the three values determines how you set the `ClientCredentialType` property.</span></span> <span data-ttu-id="f629a-120">Par exemple, si vous utilisez la classe <xref:System.ServiceModel.WSHttpBinding> et affectez au mode la valeur `Transport` vous devez affecter à la propriété <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> de la classe <xref:System.ServiceModel.HttpTransportSecurity> une valeur appropriée.</span><span class="sxs-lookup"><span data-stu-id="f629a-120">For example, using the <xref:System.ServiceModel.WSHttpBinding> class, setting the mode to `Transport` means you must set the <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> property of the <xref:System.ServiceModel.HttpTransportSecurity> class to an appropriate value.</span></span>  
   
-#### Pour définir la propriété ClientCredentialType pour le mode de sécurité de niveau transport  
+#### <a name="to-set-the-clientcredentialtype-property-for-transport-mode"></a><span data-ttu-id="f629a-121">Pour définir la propriété ClientCredentialType pour le mode de sécurité de niveau transport</span><span class="sxs-lookup"><span data-stu-id="f629a-121">To set the ClientCredentialType property for Transport mode</span></span>  
   
-1.  Créez une instance de la liaison.  
+1.  <span data-ttu-id="f629a-122">Créez une instance de la liaison.</span><span class="sxs-lookup"><span data-stu-id="f629a-122">Create an instance of the binding.</span></span>  
   
-2.  Affectez la valeur `Transport` à la propriété `Mode`.  
+2.  <span data-ttu-id="f629a-123">Affectez à la propriété `Mode` la valeur `Transport`.</span><span class="sxs-lookup"><span data-stu-id="f629a-123">Set the `Mode` property to `Transport`.</span></span>  
   
-3.  Affectez à la propriété `ClientCredential` une valeur appropriée.L'exemple de code suivant affecte à la propriété la valeur `Windows`.  
+3.  <span data-ttu-id="f629a-124">Affectez à la propriété `ClientCredential` une valeur appropriée.</span><span class="sxs-lookup"><span data-stu-id="f629a-124">Set the `ClientCredential` property to an appropriate value.</span></span> <span data-ttu-id="f629a-125">L'exemple de code suivant affecte à la propriété la valeur `Windows`.</span><span class="sxs-lookup"><span data-stu-id="f629a-125">The following code sets the property to `Windows`.</span></span>  
   
      [!code-csharp[c_SettingSecurityMode#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#5)]
      [!code-vb[c_SettingSecurityMode#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#5)]  
   
-#### Pour définir la propriété ClientCredentialType pour le mode de sécurité de niveau message  
+#### <a name="to-set-the-clientcredentialtype-property-for-message-mode"></a><span data-ttu-id="f629a-126">Pour définir la propriété ClientCredentialType pour le mode de sécurité de niveau message</span><span class="sxs-lookup"><span data-stu-id="f629a-126">To set the ClientCredentialType property for Message mode</span></span>  
   
-1.  Créez une instance de la liaison.  
+1.  <span data-ttu-id="f629a-127">Créez une instance de la liaison.</span><span class="sxs-lookup"><span data-stu-id="f629a-127">Create an instance of the binding.</span></span>  
   
-2.  Affectez la valeur `Message` à la propriété `Mode`.  
+2.  <span data-ttu-id="f629a-128">Affectez à la propriété `Mode` la valeur `Message`.</span><span class="sxs-lookup"><span data-stu-id="f629a-128">Set the `Mode` property to `Message`.</span></span>  
   
-3.  Affectez à la propriété `ClientCredential` une valeur appropriée.L'exemple de code suivant affecte à la propriété la valeur `Certificate`.  
+3.  <span data-ttu-id="f629a-129">Affectez à la propriété `ClientCredential` une valeur appropriée.</span><span class="sxs-lookup"><span data-stu-id="f629a-129">Set the `ClientCredential` property to an appropriate value.</span></span> <span data-ttu-id="f629a-130">L'exemple de code suivant affecte à la propriété la valeur `Certificate`.</span><span class="sxs-lookup"><span data-stu-id="f629a-130">The following code sets the property to `Certificate`.</span></span>  
   
      [!code-csharp[c_SettingSecurityMode#6](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#6)]
      [!code-vb[c_SettingSecurityMode#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#6)]  
   
-#### Pour définir le mode et la propriété ClientCredentialType dans la configuration  
+#### <a name="to-set-the-mode-and-clientcredentialtype-property-in-configuration"></a><span data-ttu-id="f629a-131">Pour définir le mode et la propriété ClientCredentialType dans la configuration</span><span class="sxs-lookup"><span data-stu-id="f629a-131">To set the Mode and ClientCredentialType property in configuration</span></span>  
   
-1.  Ajoutez un élément de liaison approprié à l'élément [\<liaisons\>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) du fichier de configuration.L'exemple suivant ajoute un élément [\<wsHttpBinding\>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
+1.  <span data-ttu-id="f629a-132">Ajouter un élément de liaison approprié à la [ \<liaisons >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) élément du fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="f629a-132">Add an appropriate binding element to the [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element of the configuration file.</span></span> <span data-ttu-id="f629a-133">L’exemple suivant ajoute un [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) élément.</span><span class="sxs-lookup"><span data-stu-id="f629a-133">The following example adds a [\<wsHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) element.</span></span>  
   
-2.  Ajoutez un élément `<binding>`, puis affectez à son attribut `name` une valeur appropriée.  
+2.  <span data-ttu-id="f629a-134">Ajouter un `<binding>` et définissez son `name` attribut une valeur appropriée.</span><span class="sxs-lookup"><span data-stu-id="f629a-134">Add a `<binding>` element and set its `name` attribute to an appropriate value.</span></span>  
   
-3.  Ajoutez un élément `<security>`, puis affectez à l'attribut `mode` les valeurs `Message`, `Transport`ou `TransportWithMessageCredential`.  
+3.  <span data-ttu-id="f629a-135">Ajoutez un élément `<security>`, puis affectez à l'attribut `mode` les valeurs `Message`, `Transport`ou `TransportWithMessageCredential`.</span><span class="sxs-lookup"><span data-stu-id="f629a-135">Add a `<security>` element and set the `mode` attribute to `Message`, `Transport`, or `TransportWithMessageCredential`.</span></span>  
   
-4.  Si le mode a la valeur `Transport`, ajoutez un élément `<transport>` , puis affectez à l'attribut `clientCredential` une valeur appropriée.  
+4.  <span data-ttu-id="f629a-136">Si le mode a la valeur `Transport`, ajoutez un élément `<transport>` , puis affectez à l'attribut `clientCredential` une valeur appropriée.</span><span class="sxs-lookup"><span data-stu-id="f629a-136">If the mode is set to `Transport`, add a `<transport>` element and set the `clientCredential` attribute to an appropriate value.</span></span>  
   
-     L'exemple suivant affecte au mode la valeur `Transport"`, puis affecte à l'attribut `clientCredentialType` de l'élément `<transport>` la valeur `Windows"`.  
+     <span data-ttu-id="f629a-137">L'exemple suivant affecte au mode la valeur `Transport"`, puis affecte à l'attribut `clientCredentialType` de l'élément `<transport>` la valeur `Windows"`.</span><span class="sxs-lookup"><span data-stu-id="f629a-137">The following example sets the mode to "`Transport"`, and then sets the `clientCredentialType` attribute of the `<transport>` element to "`Windows"`.</span></span>  
   
-    ```  
+    ```xml  
     <wsHttpBinding>  
     <binding name="TransportSecurity">  
         <security mode="Transport" />  
@@ -98,9 +104,9 @@ La sécurité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] propose trois
     </wsHttpBinding >  
     ```  
   
-     Vous pouvez également affecter au `security mode` la valeur `Message"`, suivie d'un élément `<"message">`.Cet exemple affecte au `clientCredentialType` la valeur `Certificate"`.  
+     <span data-ttu-id="f629a-138">Vous pouvez également affecter au `security mode` la valeur `Message"`, suivie d'un élément `<"message">`.</span><span class="sxs-lookup"><span data-stu-id="f629a-138">Alternatively, set the `security mode` to "`Message"`, followed by a `<"message">` element.</span></span> <span data-ttu-id="f629a-139">Cet exemple affecte au `clientCredentialType` la valeur `Certificate"`.</span><span class="sxs-lookup"><span data-stu-id="f629a-139">This example sets the `clientCredentialType` to "`Certificate"`.</span></span>  
   
-    ```  
+    ```xml  
     <wsHttpBinding>  
     <binding name="MessageSecurity">  
         <security mode="Message" />  
@@ -110,20 +116,20 @@ La sécurité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] propose trois
     </wsHttpBinding >  
     ```  
   
-     L'utilisation de la valeur <xref:System.ServiceModel.BasicHttpSecurityMode> forme un cas à part, expliqué ci\-dessous.  
+     <span data-ttu-id="f629a-140">L'utilisation de la valeur <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> forme un cas à part, expliqué ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="f629a-140">Using the <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> value is a special case, and is explained below.</span></span>  
   
-### Utilisation de TransportWithMessageCredential  
- Lorsque vous affectez au mode de sécurité la valeur `TransportWithMessageCredential`, le mécanisme chargé d'offrir la sécurité de niveau transport dépend du transport utilisé.Par exemple, le protocole HTTP utilise la sécurité Secure Sockets Layer \(SSL\) sur HTTP, c'est\-à\-dire HTTPS.Par conséquent, la définition d'une propriété `ClientCredentialType` pour tout objet de sécurité de transport \(tel que <xref:System.ServiceModel.HttpTransportSecurity>\) sera sans effet.En d'autres termes, vous pouvez uniquement définir la propriété `ClientCredentialType` de l'objet de sécurité de message \(pour la liaison `WSHttpBinding`, il s'agit de l'objet <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>\).  
+### <a name="using-transportwithmessagecredential"></a><span data-ttu-id="f629a-141">Utilisation de TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="f629a-141">Using TransportWithMessageCredential</span></span>  
+ <span data-ttu-id="f629a-142">Lorsque vous affectez au mode de sécurité la valeur `TransportWithMessageCredential`, le mécanisme chargé d'offrir la sécurité de niveau transport dépend du transport utilisé.</span><span class="sxs-lookup"><span data-stu-id="f629a-142">When setting the security mode to `TransportWithMessageCredential`, the transport determines the actual mechanism that provides the transport-level security.</span></span> <span data-ttu-id="f629a-143">Par exemple, le protocole HTTP utilise la sécurité Secure Sockets Layer (SSL) sur HTTP, c'est-à-dire HTTPS.</span><span class="sxs-lookup"><span data-stu-id="f629a-143">For example, the HTTP protocol uses Secure Sockets Layer (SSL) over HTTP (HTTPS).</span></span> <span data-ttu-id="f629a-144">Par conséquent, la définition d'une propriété `ClientCredentialType` pour tout objet de sécurité de transport (tel que <xref:System.ServiceModel.HttpTransportSecurity>) sera sans effet.</span><span class="sxs-lookup"><span data-stu-id="f629a-144">Therefore, setting the `ClientCredentialType` property of any transport security object (such as <xref:System.ServiceModel.HttpTransportSecurity>) is ignored.</span></span>  <span data-ttu-id="f629a-145">En d'autres termes, vous pouvez uniquement définir la propriété `ClientCredentialType` de l'objet de sécurité de message (pour la liaison `WSHttpBinding`, il s'agit de l'objet <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>).</span><span class="sxs-lookup"><span data-stu-id="f629a-145">In other words, you can only set the `ClientCredentialType` of the message security object (for the `WSHttpBinding` binding, the <xref:System.ServiceModel.NonDualMessageSecurityOverHttp> object).</span></span>  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Comment : utiliser des informations d'identification de sécurité de transport et de message](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md).  
+ [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="f629a-146">[Comment : utilise la sécurité de Transport et les informations d’identification de Message](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md).</span><span class="sxs-lookup"><span data-stu-id="f629a-146"> [How to: Use Transport Security and Message Credentials](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md).</span></span>  
   
-## Voir aussi  
- [Comment : configurer un port avec un certificat SSL](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)   
- [Comment : utiliser des informations d'identification de sécurité de transport et de message](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)   
- [Sécurité de transport](../../../docs/framework/wcf/feature-details/transport-security.md)   
- [Sécurité des messages](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)   
- [Vue d'ensemble de la sécurité](../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Liaisons fournies par le système](../../../docs/framework/wcf/system-provided-bindings.md)   
- [\<sécurité\>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)   
- [\<sécurité\>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)   
- [\<sécurité\>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+## <a name="see-also"></a><span data-ttu-id="f629a-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f629a-147">See Also</span></span>  
+ [<span data-ttu-id="f629a-148">Comment : configurer un Port avec un certificat SSL</span><span class="sxs-lookup"><span data-stu-id="f629a-148">How to: Configure a Port with an SSL Certificate</span></span>](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [<span data-ttu-id="f629a-149">Comment : utilise la sécurité de Transport et les informations d’identification de Message</span><span class="sxs-lookup"><span data-stu-id="f629a-149">How to: Use Transport Security and Message Credentials</span></span>](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
+ [<span data-ttu-id="f629a-150">Sécurité de transport</span><span class="sxs-lookup"><span data-stu-id="f629a-150">Transport Security</span></span>](../../../docs/framework/wcf/feature-details/transport-security.md)  
+ [<span data-ttu-id="f629a-151">Sécurité des messages</span><span class="sxs-lookup"><span data-stu-id="f629a-151">Message Security</span></span>](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
+ [<span data-ttu-id="f629a-152">Vue d’ensemble de la sécurité</span><span class="sxs-lookup"><span data-stu-id="f629a-152">Security Overview</span></span>](../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [<span data-ttu-id="f629a-153">Liaisons fournies par le système</span><span class="sxs-lookup"><span data-stu-id="f629a-153">System-Provided Bindings</span></span>](../../../docs/framework/wcf/system-provided-bindings.md)  
+ [<span data-ttu-id="f629a-154">\<sécurité ></span><span class="sxs-lookup"><span data-stu-id="f629a-154">\<security></span></span>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)  
+ [<span data-ttu-id="f629a-155">\<sécurité ></span><span class="sxs-lookup"><span data-stu-id="f629a-155">\<security></span></span>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)  
+ [<span data-ttu-id="f629a-156">\<sécurité ></span><span class="sxs-lookup"><span data-stu-id="f629a-156">\<security></span></span>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)

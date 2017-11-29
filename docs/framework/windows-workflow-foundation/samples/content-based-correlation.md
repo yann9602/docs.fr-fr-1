@@ -1,47 +1,51 @@
 ---
-title: "Corr&#233;lation bas&#233;e sur le contenu | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Corrélation basée sur le contenu"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8638b5d6-1d59-456d-8acd-179a5b39b260
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0490dcc854a6686c69ebc480df42e6086d1fdc52
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Corr&#233;lation bas&#233;e sur le contenu
-Cet exemple montre comment les activités de messagerie \(<xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply> et <xref:System.ServiceModel.Activities.ReceiveReply>\) peuvent être utilisées avec plusieurs corrélations basées sur le contenu et une corrélation basée sur le contenu.Dans ce scénario, une corrélation est d'abord initialisée en fonction d'un ID de bon de commande, puis une autre corrélation est créée ultérieurement en fonction de l'ID du client.Cela montre comment une activité <xref:System.ServiceModel.Activities.Receive> peut à la fois suivre une corrélation existante et initialiser une nouvelle corrélation en fonction du même message entrant.  
+# <a name="content-based-correlation"></a><span data-ttu-id="2ceb4-102">Corrélation basée sur le contenu</span><span class="sxs-lookup"><span data-stu-id="2ceb4-102">Content-Based Correlation</span></span>
+<span data-ttu-id="2ceb4-103">Cet exemple montre comment les activités de messagerie (<xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply> et <xref:System.ServiceModel.Activities.ReceiveReply>) peuvent être utilisées avec plusieurs corrélations basées sur le contenu et une corrélation basée sur le contenu.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-103">This sample demonstrates how the messaging activities (<xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, and <xref:System.ServiceModel.Activities.ReceiveReply>) can be used with multiple content-based correlations.and content-based correlation.</span></span> <span data-ttu-id="2ceb4-104">Dans ce scénario, une corrélation est d'abord initialisée en fonction d'un ID de bon de commande, puis une autre corrélation est créée ultérieurement en fonction de l'ID du client.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-104">In this scenario, a correlation is first initialized based on a purchase order ID, and then another correlation is created later based on the customer ID.</span></span> <span data-ttu-id="2ceb4-105">Cela montre comment une activité <xref:System.ServiceModel.Activities.Receive> peut à la fois suivre une corrélation existante et initialiser une nouvelle corrélation en fonction du même message entrant.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-105">This shows how a <xref:System.ServiceModel.Activities.Receive> activity can both follow an existing correlation and initialize a new correlation based on the same incoming message.</span></span>  
   
-## Démonstrations  
- Activités de messagerie et corrélation basée sur le contenu  
+## <a name="demonstrates"></a><span data-ttu-id="2ceb4-106">Démonstrations</span><span class="sxs-lookup"><span data-stu-id="2ceb4-106">Demonstrates</span></span>  
+ <span data-ttu-id="2ceb4-107">Activités de messagerie et corrélation basée sur le contenu</span><span class="sxs-lookup"><span data-stu-id="2ceb4-107">Messaging activities and content-based correlation</span></span>  
   
-## Discussion  
- Cet exemple montre comment utiliser plusieurs corrélations basées sur le contenu.Dans ce scénario, une corrélation est d'abord initialisée en fonction d'un ID de bon de commande, puis une autre corrélation est créée ultérieurement en fonction de l'ID du client.Les corrélations sont mises en cascade à l'aide d'une activité <xref:System.ServiceModel.Activities.Receive> qui, à la fois, suit une corrélation existante \(PurchaseOrderId\) et initialise une nouvelle corrélation \(CustomerID\) en fonction du même message entrant.Pour cela, l'activité <xref:System.ServiceModel.Activities.Receive> utilise les propriétés <xref:System.ServiceModel.Activities.Receive.CorrelatesOn%2A>, <xref:System.ServiceModel.Activities.Receive.CorrelatesWith%2A> et <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A>.  
+## <a name="discussion"></a><span data-ttu-id="2ceb4-108">Discussion</span><span class="sxs-lookup"><span data-stu-id="2ceb4-108">Discussion</span></span>  
+ <span data-ttu-id="2ceb4-109">Cet exemple montre comment utiliser plusieurs corrélations basées sur le contenu.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-109">This sample shows how to use multiple content-based correlations.</span></span>  <span data-ttu-id="2ceb4-110">Dans ce scénario, une corrélation est d'abord initialisée en fonction d'un ID de bon de commande, puis une autre corrélation est créée ultérieurement en fonction de l'ID du client.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-110">In this scenario, a correlation is first initialized based on a purchase order ID, and then another correlation is created later based on the customer ID.</span></span>  <span data-ttu-id="2ceb4-111">Les corrélations sont mises en cascade à l'aide d'une activité <xref:System.ServiceModel.Activities.Receive> qui, à la fois, suit une corrélation existante (PurchaseOrderId) et initialise une nouvelle corrélation (CustomerID) en fonction du même message entrant.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-111">The correlations are cascaded using a <xref:System.ServiceModel.Activities.Receive> activity that both follows an existing correlation (PurchaseOrderId) and initializes a new correlation (CustomerId) based on the same incoming message.</span></span>  <span data-ttu-id="2ceb4-112">Pour cela, l'activité <xref:System.ServiceModel.Activities.Receive> utilise les propriétés <xref:System.ServiceModel.Activities.Receive.CorrelatesOn%2A>, <xref:System.ServiceModel.Activities.Receive.CorrelatesWith%2A> et <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A>.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-112">To accomplish this, the <xref:System.ServiceModel.Activities.Receive> activity uses the <xref:System.ServiceModel.Activities.Receive.CorrelatesOn%2A>, <xref:System.ServiceModel.Activities.Receive.CorrelatesWith%2A> and <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> properties.</span></span>  
   
-## Pour utiliser cet exemple  
+## <a name="to-use-this-sample"></a><span data-ttu-id="2ceb4-113">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="2ceb4-113">To use this sample</span></span>  
   
-1.  Ouvrez [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] avec des autorisations élevées, en cliquant avec le bouton droit sur l'icône de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] et en sélectionnant **Exécuter en tant qu'administrateur**.  
+1.  <span data-ttu-id="2ceb4-114">Ouvrez [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] avec des autorisations élevées, en cliquant sur le [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] icône et en sélectionnant **exécuter en tant qu’administrateur**.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-114">Open [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with elevated permissions, by right-clicking the [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] icon and selecting **Run as administrator**.</span></span>  
   
-2.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution CascadingCorrelation.sln.  
+2.  <span data-ttu-id="2ceb4-115">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution CascadingCorrelation.sln.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-115">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the CascadingCorrelation.sln solution file.</span></span>  
   
-3.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+3.  <span data-ttu-id="2ceb4-116">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-116">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-4.  Pour exécuter le serveur, appuyez sur F5.  
+4.  <span data-ttu-id="2ceb4-117">Pour exécuter le serveur, appuyez sur F5.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-117">To run the server, press F5.</span></span>  
   
-5.  Une fois que le service est prêt et qu'il écoute les messages, dans l'Explorateur de solutions, cliquez avec le bouton droit sur le projet Client et exécutez\-le.  
+5.  <span data-ttu-id="2ceb4-118">Une fois que le service est prêt et qu'il écoute les messages, dans l'Explorateur de solutions, cliquez avec le bouton droit sur le projet Client et exécutez-le.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-118">Once the service is ready and listening for messages, in Solution Explorer, right-click the Client project and run it.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="2ceb4-119">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-119">The samples may already be installed on your machine.</span></span> <span data-ttu-id="2ceb4-120">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-120">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="2ceb4-121">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="2ceb4-121">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="2ceb4-122">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="2ceb4-122">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Services\ContentBasedCorrelation`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\ContentBasedCorrelation`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="2ceb4-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2ceb4-123">See Also</span></span>

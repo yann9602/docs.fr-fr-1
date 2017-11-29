@@ -1,65 +1,66 @@
 ---
-title: "RichTextBox, contr&#244;le (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles RichEdit"
-  - "RichTextBox (contrôle Windows Forms)"
-  - "zones de texte"
+title: "RichTextBox, contrôle (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- text boxes
+- RichTextBox control [Windows Forms]
+- rich edit controls
 ms.assetid: 3225f2ef-c6d9-4bd4-9d3e-2219e58edbf2
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 80621a12a4ccd5008a0331af005629d45f60abdf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# RichTextBox, contr&#244;le (Windows Forms)
-Le contrôle `RichTextBox` Windows Forms permet d'afficher, d'entrer et de manipuler du texte mis en forme.  Le contrôle `RichTextBox` effectue les mêmes tâches que le contrôle <xref:System.Windows.Forms.TextBox>, mais il peut également afficher des polices, des couleurs et des liens, charger du texte et des images incorporées à partir d'un fichier, annuler et répéter des opérations d'édition et enfin rechercher des caractères spécifiques.  Le contrôle `RichTextBox` est généralement utilisé pour fournir des fonctionnalités de manipulation et d'affichage de texte semblables à celles des applications de traitement de texte comme Microsoft Word.  À l'instar du contrôle <xref:System.Windows.Forms.TextBox>, le contrôle `RichTextBox` peut afficher des barres de défilement ; mais contrairement à lui, il affiche par défaut les barres horizontale et verticale et propose des paramètres de barre de défilement supplémentaires.  
+# <a name="richtextbox-control-windows-forms"></a><span data-ttu-id="00a94-102">RichTextBox, contrôle (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="00a94-102">RichTextBox Control (Windows Forms)</span></span>
+<span data-ttu-id="00a94-103">Windows Forms `RichTextBox` contrôle est utilisé pour l’affichage, la saisie et la manipulation de texte avec mise en forme.</span><span class="sxs-lookup"><span data-stu-id="00a94-103">The Windows Forms `RichTextBox` control is used for displaying, entering, and manipulating text with formatting.</span></span> <span data-ttu-id="00a94-104">Le `RichTextBox` contrôle effectue tout le <xref:System.Windows.Forms.TextBox> effectue, mais il peut également afficher des polices, couleurs et des liens ; charger du texte et des images incorporées à partir d’un fichier ; l’annulation et la restauration par progression de la modification des opérations ; et rechercher les caractères spécifiés.</span><span class="sxs-lookup"><span data-stu-id="00a94-104">The `RichTextBox` control does everything the <xref:System.Windows.Forms.TextBox> control does, but it can also display fonts, colors, and links; load text and embedded images from a file; undo and redo editing operations; and find specified characters.</span></span> <span data-ttu-id="00a94-105">Le `RichTextBox` contrôle est généralement utilisé pour fournir la manipulation du texte et afficher les fonctionnalités similaires aux applications de traitement de texte tel que Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="00a94-105">The `RichTextBox` control is typically used to provide text manipulation and display features similar to word processing applications such as Microsoft Word.</span></span> <span data-ttu-id="00a94-106">Comme le <xref:System.Windows.Forms.TextBox> (contrôle), le `RichTextBox` contrôle peut afficher les barres de défilement ; mais contrairement à la <xref:System.Windows.Forms.TextBox> contrôle, il affiche des barres de défilement horizontal et vertical par défaut et comporte des paramètres de barre de défilement supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="00a94-106">Like the <xref:System.Windows.Forms.TextBox> control, the `RichTextBox` control can display scroll bars; but unlike the <xref:System.Windows.Forms.TextBox> control, it displays both horizontal and vertical scrollbars by default and has additional scrollbar settings.</span></span>  
   
-## Dans cette section  
- [Vue d'ensemble du contrôle RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-overview-windows-forms.md)  
- Présente les concepts généraux attachés au contrôle `RichTextBox`, lequel permet aux utilisateurs d'entrer, d'afficher et de manipuler du texte avec des options de mise en forme.  
+## <a name="in-this-section"></a><span data-ttu-id="00a94-107">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="00a94-107">In This Section</span></span>  
+ [<span data-ttu-id="00a94-108">Vue d’ensemble du contrôle RichTextBox</span><span class="sxs-lookup"><span data-stu-id="00a94-108">RichTextBox Control Overview</span></span>](../../../../docs/framework/winforms/controls/richtextbox-control-overview-windows-forms.md)  
+ <span data-ttu-id="00a94-109">Présente les concepts généraux de le `RichTextBox` contrôle, ce qui permet aux utilisateurs d’entrer, afficher et de manipuler du texte avec les options de mise en forme.</span><span class="sxs-lookup"><span data-stu-id="00a94-109">Introduces the general concepts of the `RichTextBox` control, which allows users to enter, display, and manipulate text with formatting options.</span></span>  
   
- [Comment : déterminer le moment où les attributs de mise en forme changent dans le contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/determine-when-formatting-attributes-change-wf-richtextbox-control.md)  
- Explique comment garder trace des changements de mise en forme des polices et des paragraphes dans le contrôle `RichTextBox`.  
+ [<span data-ttu-id="00a94-110">Guide pratique pour déterminer le moment où les attributs de mise en forme changent dans le contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-110">How to: Determine When Formatting Attributes Change in the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/determine-when-formatting-attributes-change-wf-richtextbox-control.md)  
+ <span data-ttu-id="00a94-111">Explique comment effectuer le suivi des modifications de police et de mise en forme dans le `RichTextBox` contrôle.</span><span class="sxs-lookup"><span data-stu-id="00a94-111">Explains how to keep track of changes in font and paragraph formatting in the `RichTextBox` control.</span></span>  
   
- [Comment : afficher les barres de défilement dans le contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control.md)  
- Décrit les nombreuses options disponibles pour les barres de défilement dans le contrôle `RichTextBox`.  
+ [<span data-ttu-id="00a94-112">Guide pratique pour afficher les barres de défilement dans le contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-112">How to: Display Scroll Bars in the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control.md)  
+ <span data-ttu-id="00a94-113">Décrit les nombreuses options disponibles pour les barres de défilement dans le `RichTextBox` contrôle.</span><span class="sxs-lookup"><span data-stu-id="00a94-113">Describes the many choices available for scroll bars in the `RichTextBox` control.</span></span>  
   
- [Comment : afficher des liens de style Web avec le contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-display-web-style-links-with-the-windows-forms-richtextbox-control.md)  
- Explique comment créer un lien vers des sites Web à partir du contrôle `RichTextBox`.  
+ [<span data-ttu-id="00a94-114">Guide pratique pour afficher des liens de style Web avec le contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-114">How to: Display Web-Style Links with the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-display-web-style-links-with-the-windows-forms-richtextbox-control.md)  
+ <span data-ttu-id="00a94-115">Explique comment créer des liens vers des sites Web à partir de la `RichTextBox` contrôle.</span><span class="sxs-lookup"><span data-stu-id="00a94-115">Explains how to link to Web sites from the `RichTextBox` control.</span></span>  
   
- [Comment : activer les opérations glisser\-déplacer avec le contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/enable-drag-and-drop-operations-with-wf-richtextbox-control.md)  
- Explique comment faire glisser des données dans le contrôle `RichTextBox`.  
+ [<span data-ttu-id="00a94-116">Guide pratique pour activer les opérations glisser-déplacer avec le contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-116">How to: Enable Drag-and-Drop Operations with the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/enable-drag-and-drop-operations-with-wf-richtextbox-control.md)  
+ <span data-ttu-id="00a94-117">Fournit des instructions pour faire glisser des données dans le `RichTextBox` contrôle.</span><span class="sxs-lookup"><span data-stu-id="00a94-117">Provides instructions for dragging data into the `RichTextBox` control.</span></span>  
   
- [Comment : charger des fichiers dans le contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-load-files-into-the-windows-forms-richtextbox-control.md)  
- Explique comment charger un fichier existant dans le contrôle `RichTextBox`.  
+ [<span data-ttu-id="00a94-118">Guide pratique pour charger des fichiers dans le contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-118">How to: Load Files into the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-load-files-into-the-windows-forms-richtextbox-control.md)  
+ <span data-ttu-id="00a94-119">Fournit des instructions pour le chargement d’un fichier existant dans le `RichTextBox` contrôle.</span><span class="sxs-lookup"><span data-stu-id="00a94-119">Provides instructions for loading an existing file into the `RichTextBox` control.</span></span>  
   
- [Comment : enregistrer des fichiers avec le contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-save-files-with-the-windows-forms-richtextbox-control.md)  
- Explique comment enregistrer le contenu du contrôle `RichTextBox` dans un fichier.  
+ [<span data-ttu-id="00a94-120">Guide pratique pour enregistrer des fichiers avec le contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-120">How to: Save Files with the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-save-files-with-the-windows-forms-richtextbox-control.md)  
+ <span data-ttu-id="00a94-121">Fournit des instructions pour l’enregistrement du contenu de la `RichTextBox` contrôle dans un fichier.</span><span class="sxs-lookup"><span data-stu-id="00a94-121">Provides instructions for saving the contents of the `RichTextBox` control to a file.</span></span>  
   
- [Comment : définir les attributs de police du contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-font-attributes-for-the-windows-forms-richtextbox-control.md)  
- Explique comment définir la famille de polices, ainsi que la taille, le style et la couleur du texte dans le contrôle `RichTextBox`.  
+ [<span data-ttu-id="00a94-122">Guide pratique pour définir les attributs de police du contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-122">How to: Set Font Attributes for the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-font-attributes-for-the-windows-forms-richtextbox-control.md)  
+ <span data-ttu-id="00a94-123">Explique comment définir la famille de polices, la taille, style et couleur du texte dans le `RichTextBox` contrôle.</span><span class="sxs-lookup"><span data-stu-id="00a94-123">Describes how to set the font family, size, style, and color of text in the `RichTextBox` control.</span></span>  
   
- [Comment : définir les retraits, les retraits négatifs de première ligne et les listes à puces avec le contrôle RichTextBox Windows Forms](../../../../docs/framework/winforms/controls/set-indents-hanging-indents-bulleted-paragraphs-with-wf-richtextbox.md)  
- Explique comment mettre en forme des paragraphes dans le contrôle `RichTextBox`.  
+ [<span data-ttu-id="00a94-124">Guide pratique pour définir les retraits, les retraits négatifs de première ligne et les listes à puces avec le contrôle RichTextBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-124">How to: Set Indents, Hanging Indents, and Bulleted Paragraphs with the Windows Forms RichTextBox Control</span></span>](../../../../docs/framework/winforms/controls/set-indents-hanging-indents-bulleted-paragraphs-with-wf-richtextbox.md)  
+ <span data-ttu-id="00a94-125">Décrit la mise en forme des paragraphes dans le `RichTextBox` contrôle.</span><span class="sxs-lookup"><span data-stu-id="00a94-125">Describes how to format paragraphs in the `RichTextBox` control.</span></span>  
   
-## Référence  
- <xref:System.Windows.Forms.RichTextBox>, classe  
- Décrit cette classe et propose des liens vers tous ses membres.  
+## <a name="reference"></a><span data-ttu-id="00a94-126">Référence</span><span class="sxs-lookup"><span data-stu-id="00a94-126">Reference</span></span>  
+ <span data-ttu-id="00a94-127">Classe <xref:System.Windows.Forms.RichTextBox></span><span class="sxs-lookup"><span data-stu-id="00a94-127"><xref:System.Windows.Forms.RichTextBox> class</span></span>  
+ <span data-ttu-id="00a94-128">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="00a94-128">Describes this class and has links to all its members.</span></span>  
   
-## Rubriques connexes  
- [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Fournit la liste complète des contrôles Windows Forms ainsi que des liens vers des informations sur leur utilisation.  
+## <a name="related-sections"></a><span data-ttu-id="00a94-129">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="00a94-129">Related Sections</span></span>  
+ [<span data-ttu-id="00a94-130">Contrôles à utiliser dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00a94-130">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ <span data-ttu-id="00a94-131">Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.</span><span class="sxs-lookup"><span data-stu-id="00a94-131">Provides a complete list of Windows Forms controls, with links to information on their use.</span></span>  
   
- [TextBox, contrôle](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)  
- Présente les concepts généraux attachés au contrôle <xref:System.Windows.Forms.TextBox>, lequel permet à l'utilisateur d'entrer des données modifiables sur plusieurs lignes.
+ [<span data-ttu-id="00a94-132">TextBox, contrôle</span><span class="sxs-lookup"><span data-stu-id="00a94-132">TextBox Control</span></span>](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)  
+ <span data-ttu-id="00a94-133">Présente les concepts généraux de le <xref:System.Windows.Forms.TextBox> contrôle, ce qui permet des modifiable multiligne d’entrer des données à partir de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="00a94-133">Introduces the general concepts of the <xref:System.Windows.Forms.TextBox> control, which allows editable, multiline input from the user.</span></span>

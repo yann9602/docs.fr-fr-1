@@ -1,55 +1,55 @@
 ---
-title: "Comment&#160;: organiser les contr&#244;les &#224; l&#39;aide des lignes d&#39;alignement (SnapLines) et de la grille dans les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GridSize"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), aligner"
-  - "aligner sur la grille, Concepteur Windows Forms"
-  - "Windows Forms, options de grille dans le concepteur"
+title: "Comment : organiser les contrôles à l'aide des lignes d'alignement (SnapLines) et de la grille dans les Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: GridSize
+helpviewer_keywords:
+- snap to grid [Windows Forms], Windows Forms Designer
+- Windows Forms, grid options in designer
+- controls [Windows Forms], aligning
 ms.assetid: bb54bce5-880f-4a36-af68-8cf92058dc1c
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ab199f390fa6a704ad3b3d2a17387d034cf2e57
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: organiser les contr&#244;les &#224; l&#39;aide des lignes d&#39;alignement (SnapLines) et de la grille dans les Windows Forms
-À l'aide des fonctionnalités de disposition de [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], vous pouvez déterminer précisément où les contrôles sont placés sur un formulaire.  Les contrôles ajoutés à un formulaire ou déplacés sur un formulaire peuvent être alignés automatiquement sur les lignes et colonnes de la grille du Concepteur Windows Forms Designer, ou vous pouvez aligner les contrôles à l'aide de la fonctionnalité d'alignement \(SnapLines\).  
+# <a name="how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms"></a><span data-ttu-id="851c8-102">Comment : organiser les contrôles à l'aide des lignes d'alignement (SnapLines) et de la grille dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="851c8-102">How to: Arrange Controls with Snaplines and the Grid in Windows Forms</span></span>
+<span data-ttu-id="851c8-103">À l’aide des fonctionnalités de disposition [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], vous pouvez déterminer précisément où les contrôles sont placés sur un formulaire.</span><span class="sxs-lookup"><span data-stu-id="851c8-103">Using the layout features of [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], you can precisely direct where controls are placed on a form.</span></span> <span data-ttu-id="851c8-104">Les contrôles ajoutés à un formulaire ou déplacés sur un formulaire peuvent être alignés automatiquement pour les lignes et colonnes de grille du Concepteur Windows Forms, ou vous pouvez aligner des contrôles à l’aide de la fonctionnalité des lignes d’alignement.</span><span class="sxs-lookup"><span data-stu-id="851c8-104">Controls added to a form or moved on a form can be automatically aligned to the rows and columns of the Windows Forms Designer's grid, or you can align controls by using the snaplines feature.</span></span>  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="851c8-105">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="851c8-105">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="851c8-106">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="851c8-106">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="851c8-107">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="851c8-107">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### Pour aligner tous les contrôles à la grille  
+### <a name="to-snap-all-controls-to-the-grid"></a><span data-ttu-id="851c8-108">Pour tous les contrôles à la grille d’alignement</span><span class="sxs-lookup"><span data-stu-id="851c8-108">To snap all controls to the grid</span></span>  
   
--   Sélectionnez le mode de disposition **SnapToGrid** dans le Concepteur Windows Forms de la boîte de dialogue **Options**.  
+-   <span data-ttu-id="851c8-109">Sélectionnez le **SnapToGrid** en mode de mise en page dans le Concepteur Windows Forms **Options** boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="851c8-109">Select the **SnapToGrid** layout mode in the Windows Forms Designer **Options** dialog box.</span></span>  
   
-     Pour plus d'informations, consultez [General, Windows Forms Designer, Options Dialog Box](http://msdn.microsoft.com/fr-fr/8dd170af-72f0-4212-b04b-034ceee92834).  Tous les contrôles s'alignent désormais le long des points de la grille.  
+     <span data-ttu-id="851c8-110">Pour plus d’informations, consultez [général, Concepteur Windows Forms, boîte de dialogue Options](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834).</span><span class="sxs-lookup"><span data-stu-id="851c8-110">For more information, see [General, Windows Forms Designer, Options Dialog Box](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834).</span></span> <span data-ttu-id="851c8-111">Tous les contrôles s’alignent désormais sur les points de la grille.</span><span class="sxs-lookup"><span data-stu-id="851c8-111">All controls now align themselves along the points on the grid.</span></span>  
   
-     Vous pouvez aligner individuellement certains contrôles à la grille en les verrouillant à l'emplacement de votre choix.  Toutefois, ces contrôles une fois verrouillés ne peuvent plus être déplacés ni redimensionnés.  Pour plus d'informations sur le verrouillage des contrôles, consultez [Comment : verrouiller des contrôles sur des Windows Forms](../../../../docs/framework/winforms/controls/how-to-lock-controls-to-windows-forms.md).  
+     <span data-ttu-id="851c8-112">Vous pouvez aligner des contrôles individuels à la grille en verrouillant en place.</span><span class="sxs-lookup"><span data-stu-id="851c8-112">You can snap individual controls to the grid by locking them in place.</span></span> <span data-ttu-id="851c8-113">Toutefois, pendant qu’ils sont verrouillés, ils ne peuvent pas être déplacés ou redimensionnés.</span><span class="sxs-lookup"><span data-stu-id="851c8-113">However, while they are locked, they cannot be moved or resized.</span></span> <span data-ttu-id="851c8-114">Pour plus d’informations sur le verrouillage des contrôles, consultez [Comment : verrouiller les contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-lock-controls-to-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="851c8-114">For more information about locking controls, see [How to: Lock Controls to Windows Forms](../../../../docs/framework/winforms/controls/how-to-lock-controls-to-windows-forms.md).</span></span>  
   
-### Pour aligner des contrôles à l'aide des lignes d'alignement \(SnapLines\)  
+### <a name="to-align-controls-using-snaplines"></a><span data-ttu-id="851c8-115">Pour aligner des contrôles à l’aide des lignes d’alignement</span><span class="sxs-lookup"><span data-stu-id="851c8-115">To align controls using snaplines</span></span>  
   
--   Sélectionnez le mode de disposition **Lignes d'alignement \(SnapLines\)** dans le Concepteur Windows Forms de la boîte de dialogue **Options**.  
+-   <span data-ttu-id="851c8-116">Sélectionnez le **les lignes d’alignement** en mode de mise en page dans le Concepteur Windows Forms **Options** boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="851c8-116">Select the **SnapLines** layout mode in the Windows Forms Designer **Options** dialog box.</span></span>  
   
-     Pour plus d'informations, consultez [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide des lignes d'alignement \(SnapLines\)](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).  Vous pouvez maintenant utiliser les lignes d'alignement \(snaplines\) pour aligner et réorganiser les contrôles sur votre formulaire.  
+     <span data-ttu-id="851c8-117">Pour plus d’informations, consultez [procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide des lignes d’alignement](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).</span><span class="sxs-lookup"><span data-stu-id="851c8-117">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using Snaplines](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).</span></span> <span data-ttu-id="851c8-118">Vous pouvez maintenant utiliser les lignes d’alignement pour aligner et organiser les contrôles sur votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="851c8-118">You can now use snaplines to align and arrange controls on your form.</span></span>  
   
-## Voir aussi  
- [General, Windows Forms Designer, Options Dialog Box](http://msdn.microsoft.com/fr-fr/8dd170af-72f0-4212-b04b-034ceee92834)   
- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide des lignes d'alignement \(SnapLines\)](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)   
- [contrôles Windows Forms](../../../../docs/framework/winforms/controls/index.md)   
- [Comment : ajouter des contrôles à des Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)   
- [Disposition des contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [Création d'étiquettes et de raccourcis pour les contrôles Windows Forms](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
- [Classement par fonction des contrôles Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+## <a name="see-also"></a><span data-ttu-id="851c8-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="851c8-119">See Also</span></span>  
+ [<span data-ttu-id="851c8-120">Général, Concepteur Windows Forms, boîte de dialogue Options</span><span class="sxs-lookup"><span data-stu-id="851c8-120">General, Windows Forms Designer, Options Dialog Box</span></span>](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834)  
+ [<span data-ttu-id="851c8-121">Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide des lignes d’alignement</span><span class="sxs-lookup"><span data-stu-id="851c8-121">Walkthrough: Arranging Controls on Windows Forms Using Snaplines</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ [<span data-ttu-id="851c8-122">Contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="851c8-122">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)  
+ [<span data-ttu-id="851c8-123">Comment : ajouter des contrôles à des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="851c8-123">How to: Add Controls to Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  
+ [<span data-ttu-id="851c8-124">Disposition des contrôles dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="851c8-124">Arranging Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [<span data-ttu-id="851c8-125">Création d'étiquettes et de raccourcis pour les contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="851c8-125">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [<span data-ttu-id="851c8-126">Contrôles à utiliser dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="851c8-126">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [<span data-ttu-id="851c8-127">Classement par fonction des contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="851c8-127">Windows Forms Controls by Function</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

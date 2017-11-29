@@ -1,18 +1,15 @@
 ---
-title: "Comment : modifier la valeur d’un Argument de procédure (Visual Basic) | Documents Microsoft"
+title: "Comment : modifier la valeur d’un argument de la procédure (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- procedures, arguments
-- procedures, parameters
+- procedures [Visual Basic], arguments
+- procedures [Visual Basic], parameters
 - procedure arguments
 - arguments [Visual Basic], passing by reference
 - Visual Basic code, procedures
@@ -22,94 +19,80 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6c42a50b75bcc70ae0a3f70771b9e1f85626004b
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: ba23c8f0b4b0b6e751546019af902a6305b9ef53
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Comment : modifier la valeur d’un argument de la procédure (Visual Basic)
-Lorsque vous appelez une procédure, chaque argument que vous fournissez correspond à l’un des paramètres définis dans la procédure. Dans certains cas, le code de procédure peut modifier la valeur sous-jacente à un argument dans le code appelant. Dans d’autres cas, la procédure peut modifier uniquement sa copie locale d’un argument.  
+# <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a><span data-ttu-id="7ee18-102">Comment : modifier la valeur d’un argument de la procédure (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7ee18-102">How to: Change the Value of a Procedure Argument (Visual Basic)</span></span>
+<span data-ttu-id="7ee18-103">Lorsque vous appelez une procédure, chaque argument que vous fournissez correspond à un des paramètres définis dans la procédure.</span><span class="sxs-lookup"><span data-stu-id="7ee18-103">When you call a procedure, each argument you supply corresponds to one of the parameters defined in the procedure.</span></span> <span data-ttu-id="7ee18-104">Dans certains cas, le code de procédure peut modifier la valeur sous-jacente à un argument dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="7ee18-104">In some cases, the procedure code can change the value underlying an argument in the calling code.</span></span> <span data-ttu-id="7ee18-105">Dans d’autres cas, la procédure peut modifier uniquement sa copie locale d’un argument.</span><span class="sxs-lookup"><span data-stu-id="7ee18-105">In other cases, the procedure can change only its local copy of an argument.</span></span>  
   
- Lorsque vous appelez la procédure, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] fait une copie locale de chaque argument est passé [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Pour chaque argument passé [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] donne le code de procédure une référence directe à l’élément de programmation sous-jacent à l’argument dans le code appelant.  
+ <span data-ttu-id="7ee18-106">Lorsque vous appelez la procédure, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] effectue une copie locale de chaque argument est passé [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md).</span><span class="sxs-lookup"><span data-stu-id="7ee18-106">When you call the procedure, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] makes a local copy of every argument that is passed [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md).</span></span> <span data-ttu-id="7ee18-107">Pour chaque argument passé [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] donne le code de procédure une référence directe à l’élément de programmation sous-jacent à l’argument dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="7ee18-107">For each argument passed [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] gives the procedure code a direct reference to the programming element underlying the argument in the calling code.</span></span>  
   
- Si l’élément sous-jacent dans le code appelant est un élément modifiable et que l’argument est passé `ByRef`, le code de procédure peut utiliser la référence directe pour modifier la valeur de l’élément dans le code appelant.  
+ <span data-ttu-id="7ee18-108">Si l’élément sous-jacent dans le code appelant est un élément modifiable et que l’argument est passé `ByRef`, le code de procédure peut utiliser la référence directe pour modifier la valeur de l’élément dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="7ee18-108">If the underlying element in the calling code is a modifiable element and the argument is passed `ByRef`, the procedure code can use the direct reference to change the element's value in the calling code.</span></span>  
   
-## <a name="changing-the-underlying-value"></a>Modification de la valeur sous-jacente  
+## <a name="changing-the-underlying-value"></a><span data-ttu-id="7ee18-109">Modifier la valeur sous-jacente</span><span class="sxs-lookup"><span data-stu-id="7ee18-109">Changing the Underlying Value</span></span>  
   
-#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a>Pour modifier la valeur sous-jacente d’un argument de procédure dans le code appelant  
+#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a><span data-ttu-id="7ee18-110">Pour modifier la valeur sous-jacente d’un argument de procédure dans le code appelant</span><span class="sxs-lookup"><span data-stu-id="7ee18-110">To change the underlying value of a procedure argument in the calling code</span></span>  
   
-1.  Dans la déclaration de procédure, spécifiez [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) pour le paramètre correspondant à l’argument.  
+1.  <span data-ttu-id="7ee18-111">Dans la déclaration de procédure, spécifiez [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) pour le paramètre correspondant à l’argument.</span><span class="sxs-lookup"><span data-stu-id="7ee18-111">In the procedure declaration, specify [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) for the parameter corresponding to the argument.</span></span>  
   
-2.  Dans le code appelant, passez un élément de programmation modifiable comme argument.  
+2.  <span data-ttu-id="7ee18-112">Dans le code appelant, passer un élément de programmation modifiable comme argument.</span><span class="sxs-lookup"><span data-stu-id="7ee18-112">In the calling code, pass a modifiable programming element as the argument.</span></span>  
   
-3.  Dans le code appelant, ne placez pas l’argument entre parenthèses dans la liste d’arguments.  
+3.  <span data-ttu-id="7ee18-113">Dans le code appelant, ne placez pas l’argument entre parenthèses dans la liste d’arguments.</span><span class="sxs-lookup"><span data-stu-id="7ee18-113">In the calling code, do not enclose the argument in parentheses in the argument list.</span></span>  
   
-4.  Dans le code de procédure, utilisez le nom de paramètre pour assigner une valeur à l’élément sous-jacent dans le code appelant.  
+4.  <span data-ttu-id="7ee18-114">Dans le code de procédure, utilisez le nom de paramètre pour assigner une valeur à l’élément sous-jacent dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="7ee18-114">In the procedure code, use the parameter name to assign a value to the underlying element in the calling code.</span></span>  
   
- Consultez l’exemple ci-dessous pour une démonstration.  
+ <span data-ttu-id="7ee18-115">Consultez l’exemple ci-dessous pour une démonstration.</span><span class="sxs-lookup"><span data-stu-id="7ee18-115">See the example further down for a demonstration.</span></span>  
   
-## <a name="changing-local-copies"></a>Modification de Copies locales  
- Si l’élément sous-jacent dans le code appelant est un élément non modifiable, ou si l’argument est passé `ByVal`, la procédure ne peut pas modifier sa valeur dans le code appelant. Toutefois, la procédure peut modifier sa copie locale de l’argument.  
+## <a name="changing-local-copies"></a><span data-ttu-id="7ee18-116">Modification de Copies locales</span><span class="sxs-lookup"><span data-stu-id="7ee18-116">Changing Local Copies</span></span>  
+ <span data-ttu-id="7ee18-117">Si l’élément sous-jacent dans le code appelant est un élément non modifiable, ou si l’argument est passé `ByVal`, la procédure ne peut pas modifier sa valeur dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="7ee18-117">If the underlying element in the calling code is a nonmodifiable element, or if the argument is passed `ByVal`, the procedure cannot change its value in the calling code.</span></span> <span data-ttu-id="7ee18-118">Toutefois, la procédure peut modifier sa copie locale de l’argument.</span><span class="sxs-lookup"><span data-stu-id="7ee18-118">However, the procedure can change its local copy of such an argument.</span></span>  
   
-#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a>Pour modifier la copie d’un argument de procédure dans le code de procédure  
+#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a><span data-ttu-id="7ee18-119">Pour modifier la copie d’un argument de procédure dans le code de procédure</span><span class="sxs-lookup"><span data-stu-id="7ee18-119">To change the copy of a procedure argument in the procedure code</span></span>  
   
-1.  Dans la déclaration de procédure, spécifiez [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) pour le paramètre correspondant à l’argument.  
+1.  <span data-ttu-id="7ee18-120">Dans la déclaration de procédure, spécifiez [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) pour le paramètre correspondant à l’argument.</span><span class="sxs-lookup"><span data-stu-id="7ee18-120">In the procedure declaration, specify [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) for the parameter corresponding to the argument.</span></span>  
   
-     ou  
+     <span data-ttu-id="7ee18-121">ou</span><span class="sxs-lookup"><span data-stu-id="7ee18-121">-or-</span></span>  
   
-     Dans le code appelant, mettez l’argument entre parenthèses dans la liste d’arguments. Cette option force [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour passer l’argument par valeur, même si le paramètre correspondant spécifie `ByRef`.  
+     <span data-ttu-id="7ee18-122">Dans le code appelant, mettez l’argument entre parenthèses dans la liste d’arguments.</span><span class="sxs-lookup"><span data-stu-id="7ee18-122">In the calling code, enclose the argument in parentheses in the argument list.</span></span> <span data-ttu-id="7ee18-123">Cette opération force [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] à passer l’argument par valeur, même si le paramètre correspondant spécifie `ByRef`.</span><span class="sxs-lookup"><span data-stu-id="7ee18-123">This forces [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] to pass the argument by value, even if the corresponding parameter specifies `ByRef`.</span></span>  
   
-2.  Dans le code de procédure, utilisez le nom de paramètre pour assigner une valeur à la copie locale de l’argument. La valeur sous-jacente dans le code appelant n’est pas modifiée.  
+2.  <span data-ttu-id="7ee18-124">Dans le code de procédure, utilisez le nom de paramètre pour assigner une valeur à la copie locale de l’argument.</span><span class="sxs-lookup"><span data-stu-id="7ee18-124">In the procedure code, use the parameter name to assign a value to the local copy of the argument.</span></span> <span data-ttu-id="7ee18-125">La valeur sous-jacente dans le code appelant n’est pas modifiée.</span><span class="sxs-lookup"><span data-stu-id="7ee18-125">The underlying value in the calling code is not changed.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant illustre deux procédures qui acceptent une variable tableau et opèrent sur ses éléments. Le `increase` procédure ajoute simplement la valeur&1; à chaque élément. Le `replace` procédure assigne un nouveau tableau au paramètre `a()` , puis l’ajoute à chaque élément.  
+## <a name="example"></a><span data-ttu-id="7ee18-126">Exemple</span><span class="sxs-lookup"><span data-stu-id="7ee18-126">Example</span></span>  
+ <span data-ttu-id="7ee18-127">L’exemple suivant illustre deux procédures qui acceptent une variable tableau et opèrent sur ses éléments.</span><span class="sxs-lookup"><span data-stu-id="7ee18-127">The following example shows two procedures that take an array variable and operate on its elements.</span></span> <span data-ttu-id="7ee18-128">Le `increase` procédure ajoute simplement la valeur 1 à chaque élément.</span><span class="sxs-lookup"><span data-stu-id="7ee18-128">The `increase` procedure simply adds one to each element.</span></span> <span data-ttu-id="7ee18-129">Le `replace` procédure assigne un nouveau tableau au paramètre `a()` , puis ajoute 1 à chaque élément.</span><span class="sxs-lookup"><span data-stu-id="7ee18-129">The `replace` procedure assigns a new array to the parameter `a()` and then adds one to each element.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#35;](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_1.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_1.vb)]  
   
- [!code-vb[VbVbcnProcedures n °&36;](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_2.vb)]  
+ [!code-vb[VbVbcnProcedures#36](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_2.vb)]  
   
- [!code-vb[VbVbcnProcedures&#37;](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_3.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_3.vb)]  
   
- Le premier `MsgBox` appel affiche « après Increase (n) : 11, 21, 31, 41 ». Étant donné que le tableau `n` est un type référence, `replace` peut modifier ses membres, même si le mécanisme de passage est `ByVal`.  
+ <span data-ttu-id="7ee18-130">Le premier `MsgBox` appel affiche « après Increase (n) : 11, 21, 31, 41 ».</span><span class="sxs-lookup"><span data-stu-id="7ee18-130">The first `MsgBox` call displays "After increase(n): 11, 21, 31, 41".</span></span> <span data-ttu-id="7ee18-131">Étant donné que le tableau `n` est un type référence, `replace` peut modifier ses membres, même si le mécanisme de passage est `ByVal`.</span><span class="sxs-lookup"><span data-stu-id="7ee18-131">Because the array `n` is a reference type, `replace` can change its members, even though the passing mechanism is `ByVal`.</span></span>  
   
- La seconde `MsgBox` appel affiche « après Replace (n) : 101, 201, 301 ». Étant donné que `n` est passée `ByRef`, `replace` peut modifier la variable `n` dans le code appelant et affecter un nouveau tableau. Étant donné que `n` est un type référence, `replace` peut également modifier ses membres.  
+ <span data-ttu-id="7ee18-132">La seconde `MsgBox` appel affiche « après Replace (n) : 101, 201, 301 ».</span><span class="sxs-lookup"><span data-stu-id="7ee18-132">The second `MsgBox` call displays "After replace(n): 101, 201, 301".</span></span> <span data-ttu-id="7ee18-133">Étant donné que `n` est passé `ByRef`, `replace` peut modifier la variable `n` dans le code appelant et affecter un nouveau tableau.</span><span class="sxs-lookup"><span data-stu-id="7ee18-133">Because `n` is passed `ByRef`, `replace` can modify the variable `n` in the calling code and assign a new array to it.</span></span> <span data-ttu-id="7ee18-134">Étant donné que `n` est un type référence, `replace` peut également modifier ses membres.</span><span class="sxs-lookup"><span data-stu-id="7ee18-134">Because `n` is a reference type, `replace` can also change its members.</span></span>  
   
- Vous pouvez empêcher la procédure de modification de la variable elle-même dans le code appelant. Consultez la page [Comment : protéger un Argument de procédure contre les modifications de valeur](./how-to-protect-a-procedure-argument-against-value-changes.md).  
+ <span data-ttu-id="7ee18-135">Vous pouvez empêcher la procédure de modification de la variable elle-même dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="7ee18-135">You can prevent the procedure from modifying the variable itself in the calling code.</span></span> <span data-ttu-id="7ee18-136">Consultez [Comment : protéger un Argument de procédure contre les modifications de valeur](./how-to-protect-a-procedure-argument-against-value-changes.md).</span><span class="sxs-lookup"><span data-stu-id="7ee18-136">See [How to: Protect a Procedure Argument Against Value Changes](./how-to-protect-a-procedure-argument-against-value-changes.md).</span></span>  
   
-## <a name="compiling-the-code"></a>Compilation du code  
- Lorsque vous passez une variable par référence, vous devez utiliser le `ByRef` (mot clé) pour spécifier ce mécanisme.  
+## <a name="compiling-the-code"></a><span data-ttu-id="7ee18-137">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="7ee18-137">Compiling the Code</span></span>  
+ <span data-ttu-id="7ee18-138">Lorsque vous passez une variable par référence, vous devez utiliser le `ByRef` mot clé pour spécifier ce mécanisme.</span><span class="sxs-lookup"><span data-stu-id="7ee18-138">When you pass a variable by reference, you must use the `ByRef` keyword to specify this mechanism.</span></span>  
   
- La valeur par défaut dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] consiste à passer des arguments par valeur. Toutefois, il est conseillé de comprennent le [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) ou [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) mot-clé avec chaque paramètre déclaré. Cela rend votre code plus facile à lire.  
+ <span data-ttu-id="7ee18-139">La valeur par défaut dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] consiste à passer des arguments par valeur.</span><span class="sxs-lookup"><span data-stu-id="7ee18-139">The default in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] is to pass arguments by value.</span></span> <span data-ttu-id="7ee18-140">Toutefois, il est conseillé pour inclure la [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) ou [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) mot clé with chaque paramètre déclaré.</span><span class="sxs-lookup"><span data-stu-id="7ee18-140">However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter.</span></span> <span data-ttu-id="7ee18-141">Cela rend votre code plus facile à lire.</span><span class="sxs-lookup"><span data-stu-id="7ee18-141">This makes your code easier to read.</span></span>  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Il existe toujours un risque potentiel en autorisant une procédure modifier la valeur sous-jacente à un argument dans le code appelant. Assurez-vous que cette valeur pour être modifiée et préparez-vous à vérifier la validité avant de l’utiliser.  
+## <a name="net-framework-security"></a><span data-ttu-id="7ee18-142">Sécurité .NET Framework</span><span class="sxs-lookup"><span data-stu-id="7ee18-142">.NET Framework Security</span></span>  
+ <span data-ttu-id="7ee18-143">Il est toujours un risque potentiel pour autoriser une procédure modifier la valeur sous-jacente à un argument dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="7ee18-143">There is always a potential risk in allowing a procedure to change the value underlying an argument in the calling code.</span></span> <span data-ttu-id="7ee18-144">Assurez-vous que cette valeur pour être modifiée et préparez-vous à vérifier la validité avant de l’utiliser.</span><span class="sxs-lookup"><span data-stu-id="7ee18-144">Make sure you expect this value to be changed, and be prepared to check it for validity before using it.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Procédures](./index.md)   
- [Arguments et paramètres de procédure](./procedure-parameters-and-arguments.md)   
- [Comment : passer des Arguments à une procédure](./how-to-pass-arguments-to-a-procedure.md)   
- [Passage des Arguments par valeur et par référence](./passing-arguments-by-value-and-by-reference.md)   
- [Différences entre les Arguments modifiables et non modifiables](./differences-between-modifiable-and-nonmodifiable-arguments.md)   
- [Différences entre le passage d’un Argument par valeur et par référence](./differences-between-passing-an-argument-by-value-and-by-reference.md)   
- [Comment : protéger un Argument de procédure contre les modifications de valeur](./how-to-protect-a-procedure-argument-against-value-changes.md)   
- [Comment : forcer un Argument à passer par valeur](./how-to-force-an-argument-to-be-passed-by-value.md)   
- [Passage des Arguments par Position et par nom](./passing-arguments-by-position-and-by-name.md)   
- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a><span data-ttu-id="7ee18-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7ee18-145">See Also</span></span>  
+ [<span data-ttu-id="7ee18-146">Procédures</span><span class="sxs-lookup"><span data-stu-id="7ee18-146">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="7ee18-147">Paramètres et arguments d’une procédure</span><span class="sxs-lookup"><span data-stu-id="7ee18-147">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="7ee18-148">Guide pratique : passer des arguments à une procédure</span><span class="sxs-lookup"><span data-stu-id="7ee18-148">How to: Pass Arguments to a Procedure</span></span>](./how-to-pass-arguments-to-a-procedure.md)  
+ [<span data-ttu-id="7ee18-149">Passage d’un argument par valeur et par référence</span><span class="sxs-lookup"><span data-stu-id="7ee18-149">Passing Arguments by Value and by Reference</span></span>](./passing-arguments-by-value-and-by-reference.md)  
+ [<span data-ttu-id="7ee18-150">Différences entre les arguments modifiables et non modifiables</span><span class="sxs-lookup"><span data-stu-id="7ee18-150">Differences Between Modifiable and Nonmodifiable Arguments</span></span>](./differences-between-modifiable-and-nonmodifiable-arguments.md)  
+ [<span data-ttu-id="7ee18-151">Différences entre le passage d’un argument par valeur et par référence</span><span class="sxs-lookup"><span data-stu-id="7ee18-151">Differences Between Passing an Argument By Value and By Reference</span></span>](./differences-between-passing-an-argument-by-value-and-by-reference.md)  
+ [<span data-ttu-id="7ee18-152">Guide pratique : protéger un argument de procédure contre les modifications de valeur</span><span class="sxs-lookup"><span data-stu-id="7ee18-152">How to: Protect a Procedure Argument Against Value Changes</span></span>](./how-to-protect-a-procedure-argument-against-value-changes.md)  
+ [<span data-ttu-id="7ee18-153">Guide pratique : forcer le passage d’un argument par valeur</span><span class="sxs-lookup"><span data-stu-id="7ee18-153">How to: Force an Argument to Be Passed by Value</span></span>](./how-to-force-an-argument-to-be-passed-by-value.md)  
+ [<span data-ttu-id="7ee18-154">Passage des arguments par position et par nom</span><span class="sxs-lookup"><span data-stu-id="7ee18-154">Passing Arguments by Position and by Name</span></span>](./passing-arguments-by-position-and-by-name.md)  
+ [<span data-ttu-id="7ee18-155">Types valeur et types référence</span><span class="sxs-lookup"><span data-stu-id="7ee18-155">Value Types and Reference Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

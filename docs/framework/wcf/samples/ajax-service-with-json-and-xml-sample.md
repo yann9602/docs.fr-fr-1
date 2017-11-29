@@ -1,39 +1,41 @@
 ---
-title: "AJAX Service with JSON and XML, exemple | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: AJAX Service with JSON and XML, exemple
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c0913a94f2fffd74890d7f996b2b103ed52f8d2f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# AJAX Service with JSON and XML, exemple
-Cet exemple indique comment utiliser [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour créer un service AJAX \(Asynchronous JavaScript and XML\) qui retourne des données JSON \(JavaScript Object Notation\) ou XML.Vous pouvez accéder à un service AJAX en utilisant le code JavaScript à partir d'un client de navigateur Web.Cet exemple repose sur l'exemple [Basic AJAX Service](../../../../docs/framework/wcf/samples/basic-ajax-service.md).  
+# <a name="ajax-service-with-json-and-xml-sample"></a><span data-ttu-id="f4942-102">AJAX Service with JSON and XML, exemple</span><span class="sxs-lookup"><span data-stu-id="f4942-102">AJAX Service with JSON and XML Sample</span></span>
+<span data-ttu-id="f4942-103">Cet exemple indique comment utiliser [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour créer un service AJAX (Asynchronous JavaScript and XML) qui retourne des données JSON (JavaScript Object Notation) ou XML.</span><span class="sxs-lookup"><span data-stu-id="f4942-103">This sample demonstrates how to use [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] to create an Asynchronous JavaScript and XML (AJAX) service that returns either JavaScript Object Notation (JSON) or XML data.</span></span> <span data-ttu-id="f4942-104">Vous pouvez accéder à un service AJAX en utilisant le code JavaScript à partir d'un client de navigateur Web.</span><span class="sxs-lookup"><span data-stu-id="f4942-104">You can access an AJAX service by using JavaScript code from a Web browser client.</span></span> <span data-ttu-id="f4942-105">Cet exemple est basé le [servie AJAX de base](../../../../docs/framework/wcf/samples/basic-ajax-service.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="f4942-105">This sample builds on the [Basic AJAX Service](../../../../docs/framework/wcf/samples/basic-ajax-service.md) sample.</span></span>  
   
- Contrairement aux autres exemples AJAX, celui\-ci n'utilise pas ASP.NET AJAX et le contrôle <xref:System.Web.UI.ScriptManager>.Une fois configurés, les services AJAX [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont accessibles à partir de n'importe quelle page HTML via JavaScript, et ce scénario est présenté ici.Pour obtenir un exemple d'utilisation de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec ASP.NET AJAX, consultez [AJAX Samples](http://msdn.microsoft.com/fr-fr/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).  
+ <span data-ttu-id="f4942-106">Contrairement aux autres exemples AJAX, celui-ci n'utilise pas ASP.NET AJAX et le contrôle <xref:System.Web.UI.ScriptManager>.</span><span class="sxs-lookup"><span data-stu-id="f4942-106">Unlike the other AJAX samples, this sample does not use ASP.NET AJAX and the <xref:System.Web.UI.ScriptManager> control.</span></span> <span data-ttu-id="f4942-107">Une fois configurés, les services AJAX [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont accessibles à partir de n'importe quelle page HTML via JavaScript, et ce scénario est présenté ici.</span><span class="sxs-lookup"><span data-stu-id="f4942-107">With some additional configuration, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] AJAX services can be accessed from any HTML page through JavaScript, and this scenario is shown here.</span></span> <span data-ttu-id="f4942-108">Pour obtenir un exemple d’utilisation de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec ASP.NET AJAX, consultez [exemples AJAX](http://msdn.microsoft.com/en-us/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).</span><span class="sxs-lookup"><span data-stu-id="f4942-108">For an example of using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] with ASP.NET AJAX, see [AJAX Samples](http://msdn.microsoft.com/en-us/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).</span></span>  
   
- Cet exemple illustre comment commuter le type de réponse d'une opération entre JSON et XML.Cette fonctionnalité est disponible que le service soit configuré pour être accessible par ASP.NET AJAX ou par une page cliente HTML\/JavaScript.  
+ <span data-ttu-id="f4942-109">Cet exemple illustre comment commuter le type de réponse d'une opération entre JSON et XML.</span><span class="sxs-lookup"><span data-stu-id="f4942-109">This sample shows how to switch the response type of an operation between JSON and XML.</span></span> <span data-ttu-id="f4942-110">Cette fonctionnalité est disponible que le service soit configuré pour être accessible par ASP.NET AJAX ou par une page cliente HTML/JavaScript.</span><span class="sxs-lookup"><span data-stu-id="f4942-110">This functionality is available regardless of whether the service is configured to be accessed by ASP.NET AJAX or by an HTML/JavaScript client page.</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.  
+>  <span data-ttu-id="f4942-111">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="f4942-111">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Pour permettre l'utilisation de clients AJAX non\-ASP.NET, utilisez <xref:System.ServiceModel.Activation.WebServiceHostFactory> \(pas <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>\) dans le fichier .svc.<xref:System.ServiceModel.Activation.WebServiceHostFactory> ajoute un point de terminaison standard <xref:System.ServiceModel.Description.WebHttpEndpoint> au service.Ce point de terminaison est configuré avec une adresse vide renvoyant au fichier .svc ; cela signifie que l'adresse du service est http:\/\/localhost\/ServiceModelSamples\/service.svc, sans autre suffixe que celui correspondant au nom de l'opération.  
+ <span data-ttu-id="f4942-112">Pour permettre l'utilisation de clients AJAX non-ASP.NET, utilisez <xref:System.ServiceModel.Activation.WebServiceHostFactory> (pas <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) dans le fichier .svc.</span><span class="sxs-lookup"><span data-stu-id="f4942-112">To enable the use of non-ASP.NET AJAX clients, use <xref:System.ServiceModel.Activation.WebServiceHostFactory> (not <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) in the .svc file.</span></span> <span data-ttu-id="f4942-113"><xref:System.ServiceModel.Activation.WebServiceHostFactory> ajoute un point de terminaison standard <xref:System.ServiceModel.Description.WebHttpEndpoint> au service.</span><span class="sxs-lookup"><span data-stu-id="f4942-113"><xref:System.ServiceModel.Activation.WebServiceHostFactory> adds a <xref:System.ServiceModel.Description.WebHttpEndpoint> standard endpoint to the service.</span></span> <span data-ttu-id="f4942-114">Ce point de terminaison est configuré avec une adresse vide renvoyant au fichier .svc ; cela signifie que l'adresse du service est http://localhost/ServiceModelSamples/service.svc, sans autre suffixe que celui correspondant au nom de l'opération.</span><span class="sxs-lookup"><span data-stu-id="f4942-114">The endpoint is configured at an empty address relative to the .svc file; this means that the address of the service is http://localhost/ServiceModelSamples/service.svc, with no additional suffixes other than the operation name.</span></span>  
   
 ```html  
 <%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>  
-  
 ```  
   
- La section suivante dans Web.config peut être utilisée pour apporter des modifications de configuration supplémentaires au point de terminaison.Elle peut être supprimée si aucune modification supplémentaire n'est requise.  
+ <span data-ttu-id="f4942-115">La section suivante dans Web.config peut être utilisée pour apporter des modifications de configuration supplémentaires au point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="f4942-115">The following section in Web.config can be used to make additional configuration changes to the endpoint.</span></span> <span data-ttu-id="f4942-116">Elle peut être supprimée si aucune modification supplémentaire n'est requise.</span><span class="sxs-lookup"><span data-stu-id="f4942-116">It can be removed if no extra changes are needed.</span></span>  
   
 ```xml  
 <system.serviceModel>  
@@ -44,12 +46,11 @@ Cet exemple indique comment utiliser [!INCLUDE[indigo1](../../../../includes/ind
     </webHttpEndpoint>  
   </standardEndpoints>  
 </system.serviceModel>  
-  
 ```  
   
- Le format de données par défaut pour <xref:System.ServiceModel.Description.WebHttpEndpoint> est XML, alors que le format de données par défaut pour [for T:System.ServiceModel.Description.WebScriptEndpoint](assetId:///for T:System.ServiceModel.Description.WebScriptEndpoint?qualifyHint=False&autoUpgrade=True) est JSON.Pour plus d'informations, consultez [Création de services AJAX WCF sans ASP.NET](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md).  
+ <span data-ttu-id="f4942-117">Mettre en forme les données par défaut pour <xref:System.ServiceModel.Description.WebHttpEndpoint> est XML, le format de données par défaut lors de la <xref:System.ServiceModel.Description.WebScriptEndpoint> est JSON.</span><span class="sxs-lookup"><span data-stu-id="f4942-117">The default data format for <xref:System.ServiceModel.Description.WebHttpEndpoint> is XML, while the default data format for <xref:System.ServiceModel.Description.WebScriptEndpoint> is JSON.</span></span> <span data-ttu-id="f4942-118">Pour plus d’informations, consultez [création de Services AJAX WCF sans ASP.NET](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md).</span><span class="sxs-lookup"><span data-stu-id="f4942-118">For more information, see [Creating WCF AJAX Services without ASP.NET](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md).</span></span>  
   
- Le service présenté dans l'exemple suivant est un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] standard avec deux opérations.Ces deux opérations requièrent le style de corps <xref:System.ServiceModel.Web.WebMessageBodyStyle> sur les attributs <xref:System.ServiceModel.Web.WebGetAttribute> ou <xref:System.ServiceModel.Web.WebInvokeAttribute>, ce qui est spécifique au comportement `webHttp` et n'a aucune incidence sur le commutateur de format de données JSON\/XML.  
+ <span data-ttu-id="f4942-119">Le service présenté dans l'exemple suivant est un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] standard avec deux opérations.</span><span class="sxs-lookup"><span data-stu-id="f4942-119">The service in the following sample is a standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service with two operations.</span></span> <span data-ttu-id="f4942-120">Ces deux opérations requièrent le style de corps <xref:System.ServiceModel.Web.WebMessageBodyStyle.Wrapped> sur les attributs <xref:System.ServiceModel.Web.WebGetAttribute> ou <xref:System.ServiceModel.Web.WebInvokeAttribute>, ce qui est spécifique au comportement `webHttp` et n'a aucune incidence sur le commutateur de format de données JSON/XML.</span><span class="sxs-lookup"><span data-stu-id="f4942-120">Both operations require the <xref:System.ServiceModel.Web.WebMessageBodyStyle.Wrapped> body style on the <xref:System.ServiceModel.Web.WebGetAttribute> or <xref:System.ServiceModel.Web.WebInvokeAttribute> attributes, which is specific to the `webHttp` behavior and has no bearing on the JSON/XML data format switch.</span></span>  
   
 ```  
 [OperationContract]  
@@ -57,9 +58,9 @@ Cet exemple indique comment utiliser [!INCLUDE[indigo1](../../../../includes/ind
 MathResult DoMathXml(double n1, double n2);  
 ```  
   
- Le format de réponse de l'opération est spécifié comme étant XML ; il s'agit du paramètre par défaut pour le comportement [\<webHttp\>](../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md).Il est toutefois conseillé de spécifier explicitement le format de réponse.  
+ <span data-ttu-id="f4942-121">Le format de réponse pour l’opération est spécifié en tant que XML, qui est la valeur par défaut pour la définition de la [ \<webHttp >](../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) comportement.</span><span class="sxs-lookup"><span data-stu-id="f4942-121">The response format for the operation is specified as XML, which is the default setting for the [\<webHttp>](../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) behavior.</span></span> <span data-ttu-id="f4942-122">Il est toutefois conseillé de spécifier explicitement le format de réponse.</span><span class="sxs-lookup"><span data-stu-id="f4942-122">However, it is good practice explicitly specify the response format.</span></span>  
   
- L'autre opération utilise l'attribut `WebInvokeAttribute` et spécifie explicitement JSON au lieu de XML pour la réponse.  
+ <span data-ttu-id="f4942-123">L'autre opération utilise l'attribut `WebInvokeAttribute` et spécifie explicitement JSON au lieu de XML pour la réponse.</span><span class="sxs-lookup"><span data-stu-id="f4942-123">The other operation uses the `WebInvokeAttribute` attribute and explicitly specifies JSON instead of XML for the response.</span></span>  
   
 ```  
 [OperationContract]  
@@ -67,9 +68,9 @@ MathResult DoMathXml(double n1, double n2);
 MathResult DoMathJson(double n1, double n2);  
 ```  
   
- Notez que dans les deux cas, les opérations retournent un type complexe, `MathResult`, lequel constitue un type de contrat de données [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] standard.  
+ <span data-ttu-id="f4942-124">Notez que dans les deux cas, les opérations retournent un type complexe, `MathResult`, lequel constitue un type de contrat de données [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] standard.</span><span class="sxs-lookup"><span data-stu-id="f4942-124">Note that in both cases the operations return a complex type, `MathResult`, which is a standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] data contract type.</span></span>  
   
- La page Web XmlAjaxClientPage.htm client contient du code JavaScript qui appelle l'une des deux opérations précédemment mentionnées lorsque l'utilisateur clique sur les boutons **Perform calculation \(return JSON\)** ou **Perform calculation \(return XML\)** dans la page.Le code permettant d'appeler le service construit un corps JSON et l'envoie à l'aide de HTTP POST.La requête est créée manuellement dans JavaScript, contrairement à l'exemple [Basic AJAX Service](../../../../docs/framework/wcf/samples/basic-ajax-service.md) et aux autres exemples utilisant ASP.NET AJAX.  
+ <span data-ttu-id="f4942-125">La page Web XmlAjaxClientPage.htm client contient du code JavaScript qui appelle l’une des deux opérations lorsque l’utilisateur clique sur le **Perform calculation (return JSON)** ou **Perform calculation (return XML)**  boutons de la page.</span><span class="sxs-lookup"><span data-stu-id="f4942-125">The client Web page XmlAjaxClientPage.htm contains JavaScript code that invokes one of the preceding two operations when the user clicks the **Perform calculation (return JSON)** or **Perform calculation (return XML)** buttons on the page.</span></span> <span data-ttu-id="f4942-126">Le code permettant d'appeler le service construit un corps JSON et l'envoie à l'aide de HTTP POST.</span><span class="sxs-lookup"><span data-stu-id="f4942-126">The code to invoke the service constructs a JSON body and sends it using HTTP POST.</span></span> <span data-ttu-id="f4942-127">La demande est créée manuellement dans JavaScript, contrairement à la [servie AJAX de base](../../../../docs/framework/wcf/samples/basic-ajax-service.md) exemple et les autres exemples à l’aide d’ASP.NET AJAX.</span><span class="sxs-lookup"><span data-stu-id="f4942-127">The request is created manually in JavaScript, unlike the [Basic AJAX Service](../../../../docs/framework/wcf/samples/basic-ajax-service.md) sample and the other samples using ASP.NET AJAX.</span></span>  
   
 ```  
 // Create HTTP request  
@@ -92,7 +93,7 @@ xmlHttp.setRequestHeader("Content-type", "application/json");
 xmlHttp.send(body);  
 ```  
   
- La réponse du service s'affiche sans traitement supplémentaire dans une zone de texte de la page.Cet exemple est implémenté à des fins de démonstration pour vous permettre d'observer directement les formats de données XML et JSON utilisés.  
+ <span data-ttu-id="f4942-128">La réponse du service s'affiche sans traitement supplémentaire dans une zone de texte de la page.</span><span class="sxs-lookup"><span data-stu-id="f4942-128">When the service responds, the response is displayed without any further processing in a textbox on the page.</span></span> <span data-ttu-id="f4942-129">Cet exemple est implémenté à des fins de démonstration pour vous permettre d'observer directement les formats de données XML et JSON utilisés.</span><span class="sxs-lookup"><span data-stu-id="f4942-129">This is implemented for demonstration purposes to allow you to directly observe the XML and JSON data formats used.</span></span>  
   
 ```  
 // Create result handler   
@@ -104,21 +105,21 @@ xmlHttp.onreadystatechange=function(){
 ```  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="f4942-130">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="f4942-130">The samples may already be installed on your machine.</span></span> <span data-ttu-id="f4942-131">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="f4942-131">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="f4942-132">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="f4942-132">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="f4942-133">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="f4942-133">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\AJAX\XmlAjaxService`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\AJAX\XmlAjaxService`  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="f4942-134">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="f4942-134">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="f4942-135">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="f4942-135">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Générez la solution XmlAjaxService.sln comme indiqué dans la rubrique [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="f4942-136">Générez la solution XmlAjaxService.sln comme décrit dans [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="f4942-136">Build the solution XmlAjaxService.sln as described in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  Accédez à http:\/\/localhost\/ServiceModelSamples\/XmlAjaxClientPage.htm \(n'ouvrez pas XmlAjaxClientPage.htm dans le navigateur à partir du répertoire du projet\).  
+3.  <span data-ttu-id="f4942-137">Accédez à http://localhost/ServiceModelSamples/XmlAjaxClientPage.htm (n'ouvrez pas XmlAjaxClientPage.htm dans le navigateur à partir du répertoire du projet).</span><span class="sxs-lookup"><span data-stu-id="f4942-137">Navigate to http://localhost/ServiceModelSamples/XmlAjaxClientPage.htm (do not open XmlAjaxClientPage.htm in the browser from the project directory).</span></span>  
   
-## Voir aussi  
- [AJAX Service Using HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)
+## <a name="see-also"></a><span data-ttu-id="f4942-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f4942-138">See Also</span></span>  
+ [<span data-ttu-id="f4942-139">AJAX Service utilisant HTTP POST</span><span class="sxs-lookup"><span data-stu-id="f4942-139">AJAX Service Using HTTP POST</span></span>](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)

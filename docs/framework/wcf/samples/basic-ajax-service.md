@@ -1,30 +1,33 @@
 ---
-title: "Basic AJAX Service | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Basic AJAX Service
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d66d0c91-0109-45a0-a901-f3e4667c2465
-caps.latest.revision: 30
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 690d92e5c4107816c43efcd07cdaff2b8bc62e2c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Basic AJAX Service
-Cet exemple montre comment utiliser [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour créer un service de base ASP.NET AJAX \(Asynchronous JavaScript and XML\), c'est\-à\-dire un service accessible à l'aide d'un code Javascript par un client de navigateur Web\).  L'attribut <xref:System.ServiceModel.Web.WebGetAttribute> est utilisé afin de garantir que le service répond aux requêtes HTTP GET et que ce service utilise le format de données JSON \(JavaScript Object Notation\) pour les réponses.  
+# <a name="basic-ajax-service"></a><span data-ttu-id="63dd7-102">Basic AJAX Service</span><span class="sxs-lookup"><span data-stu-id="63dd7-102">Basic AJAX Service</span></span>
+<span data-ttu-id="63dd7-103">Cet exemple montre comment utiliser [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour créer un service de base ASP.NET AJAX (Asynchronous JavaScript and XML), c'est-à-dire un service accessible à l'aide d'un code Javascript par un client de navigateur Web).</span><span class="sxs-lookup"><span data-stu-id="63dd7-103">This sample demonstrates how to use [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] to create a basic ASP.NET Asynchronous JavaScript and XML (AJAX) service (a service that you can access using JavaScript code from a Web browser client).</span></span> <span data-ttu-id="63dd7-104">L'attribut <xref:System.ServiceModel.Web.WebGetAttribute> est utilisé afin de garantir que le service répond aux requêtes HTTP GET et que ce service utilise le format de données JSON (JavaScript Object Notation) pour les réponses.</span><span class="sxs-lookup"><span data-stu-id="63dd7-104">The service uses the <xref:System.ServiceModel.Web.WebGetAttribute> attribute to ensure that the service responds to HTTP GET requests and is configured to use the JavaScript Object Notation (JSON) data format for responses.</span></span>  
   
- La prise en charge d'AJAX dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est optimisée pour permettre son utilisation avec ASP.NET AJAX via le contrôle `ScriptManager`.  Pour obtenir un exemple d'utilisation de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec ASP.NET AJAX, consultez [AJAX Samples](http://msdn.microsoft.com/fr-fr/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).  
+ <span data-ttu-id="63dd7-105">La prise en charge d'AJAX dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est optimisée pour permettre son utilisation avec ASP.NET AJAX via le contrôle `ScriptManager`.</span><span class="sxs-lookup"><span data-stu-id="63dd7-105">AJAX support in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] is optimized for use with ASP.NET AJAX through the `ScriptManager` control.</span></span> <span data-ttu-id="63dd7-106">Pour obtenir un exemple d’utilisation de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec ASP.NET AJAX, consultez le [exemples AJAX](http://msdn.microsoft.com/en-us/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).</span><span class="sxs-lookup"><span data-stu-id="63dd7-106">For an example of using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] with ASP.NET AJAX, see the [AJAX Samples](http://msdn.microsoft.com/en-us/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.  
+>  <span data-ttu-id="63dd7-107">La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.</span><span class="sxs-lookup"><span data-stu-id="63dd7-107">The set-up procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Dans le code suivant, l'attribut <xref:System.ServiceModel.Web.WebGetAttribute> est appliqué à l'opération `Add` afin de garantir que le service répond aux requêtes HTTP GET.  Le code utilise la méthode GET pour des raisons pratiques \(vous pouvez construire une requête HTTP GET à partir de tout navigateur Web\).  Vous pouvez également utiliser la méthode GET pour activer la mise en cache.  HTTP POST est la valeur par défaut en l'absence d'attribut `WebGetAttribute`.  
+ <span data-ttu-id="63dd7-108">Dans le code suivant, l'attribut <xref:System.ServiceModel.Web.WebGetAttribute> est appliqué à l'opération `Add` afin de garantir que le service répond aux requêtes HTTP GET.</span><span class="sxs-lookup"><span data-stu-id="63dd7-108">In the following code, the <xref:System.ServiceModel.Web.WebGetAttribute> attribute is applied to the `Add` operation to ensure that the service responds to HTTP GET requests.</span></span> <span data-ttu-id="63dd7-109">Le code utilise la méthode GET pour des raisons pratiques (vous pouvez construire une requête HTTP GET à partir de tout navigateur Web).</span><span class="sxs-lookup"><span data-stu-id="63dd7-109">The code uses GET for simplicity (you can construct an HTTP GET request from any Web browser).</span></span> <span data-ttu-id="63dd7-110">Vous pouvez également utiliser la méthode GET pour activer la mise en cache.</span><span class="sxs-lookup"><span data-stu-id="63dd7-110">You can also use GET to enable caching.</span></span> <span data-ttu-id="63dd7-111">HTTP POST est la valeur par défaut en l'absence d'attribut `WebGetAttribute`.</span><span class="sxs-lookup"><span data-stu-id="63dd7-111">HTTP POST is the default in the absence of the `WebGetAttribute` attribute.</span></span>  
   
 ```  
 [ServiceContract(Namespace = "SimpleAjaxService")]  
@@ -35,16 +38,15 @@ public interface ICalculator
     double Add(double n1, double n2);  
     //Other operations omitted…  
 }  
-  
 ```  
   
- Le fichier d'exemple .svc utilise <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, qui ajoute un point de terminaison standard <xref:System.ServiceModel.Description.WebScriptEndpoint> au service.  Ce point de terminaison est configuré à une adresse vide relative au fichier .svc.  Cela signifie que l'adresse du service est http:\/\/localhost\/ServiceModelSamples\/service.svc, sans autre suffixe que celui correspondant au nom de l'opération.  
+ <span data-ttu-id="63dd7-112">Le fichier d'exemple .svc utilise <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, qui ajoute un point de terminaison standard <xref:System.ServiceModel.Description.WebScriptEndpoint> au service.</span><span class="sxs-lookup"><span data-stu-id="63dd7-112">The sample .svc file uses <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, which adds a <xref:System.ServiceModel.Description.WebScriptEndpoint> standard endpoint to the service.</span></span> <span data-ttu-id="63dd7-113">Ce point de terminaison est configuré à une adresse vide relative au fichier .svc.</span><span class="sxs-lookup"><span data-stu-id="63dd7-113">The endpoint is configured at an empty address relative to the .svc file.</span></span> <span data-ttu-id="63dd7-114">Cela signifie que l'adresse du service est http://localhost/ServiceModelSamples/service.svc, sans autre suffixe que celui correspondant au nom de l'opération.</span><span class="sxs-lookup"><span data-stu-id="63dd7-114">This means that the address of the service is http://localhost/ServiceModelSamples/service.svc, with no additional suffixes other than the operation name.</span></span>  
   
 ```  
 <%@ServiceHost language="C#" Debug="true" Service="Microsoft.Samples.SimpleAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory" %>  
 ```  
   
- Le <xref:System.ServiceModel.Description.WebScriptEndpoint> est préconfiguré pour rendre le service accessible à partir d'une page cliente ASP.NET AJAX.  La section suivante dans Web.config peut être utilisée pour apporter des modifications de configuration supplémentaires au point de terminaison.  Elle peut être supprimée si aucune modification supplémentaire n'est requise.  
+ <span data-ttu-id="63dd7-115">Le <xref:System.ServiceModel.Description.WebScriptEndpoint> est préconfiguré pour rendre le service accessible à partir d'une page cliente ASP.NET AJAX.</span><span class="sxs-lookup"><span data-stu-id="63dd7-115">The <xref:System.ServiceModel.Description.WebScriptEndpoint> is pre-configured to make the service accessible from an ASP.NET AJAX client page.</span></span> <span data-ttu-id="63dd7-116">La section suivante dans Web.config peut être utilisée pour apporter des modifications de configuration supplémentaires au point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="63dd7-116">The following section in Web.config can be used to make additional configuration changes to the endpoint.</span></span> <span data-ttu-id="63dd7-117">Elle peut être supprimée si aucune modification supplémentaire n'est requise.</span><span class="sxs-lookup"><span data-stu-id="63dd7-117">It can be removed if no extra changes are required.</span></span>  
   
 ```xml  
 <system.serviceModel>  
@@ -55,23 +57,21 @@ public interface ICalculator
     </webScriptEndpoint>  
   </standardEndpoints>  
 </system.serviceModel>  
-  
 ```  
   
- Le <xref:System.ServiceModel.Description.WebScriptEndpoint> affecte au format de données par défaut du service la valeur JSON au lieu de XML.  Pour appeler le service, accédez à http:\/\/localhost\/ServiceModelSamples\/service.svc\/Add?  n1\=100&n2\=200 après avoir effectué les étapes d'installation et de génération indiquées plus loin dans cette rubrique.  L'utilisation d'une requête HTTP GET active cette fonctionnalité de test.  
+ <span data-ttu-id="63dd7-118">Le <xref:System.ServiceModel.Description.WebScriptEndpoint> affecte au format de données par défaut du service la valeur JSON au lieu de XML.</span><span class="sxs-lookup"><span data-stu-id="63dd7-118">The <xref:System.ServiceModel.Description.WebScriptEndpoint> sets the default data format for the service to JSON instead of XML.</span></span> <span data-ttu-id="63dd7-119">Pour appeler le service, naviguez jusqu'à http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200 après avoir effectué les étapes d'installation et de génération indiquées plus loin.</span><span class="sxs-lookup"><span data-stu-id="63dd7-119">To invoke the service, navigate to http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200 after completing the set up and build steps shown later in this topic.</span></span> <span data-ttu-id="63dd7-120">L'utilisation d'une requête HTTP GET active cette fonctionnalité de test.</span><span class="sxs-lookup"><span data-stu-id="63dd7-120">This testing functionality is enabled by the use of a HTTP GET request.</span></span>  
   
- La page Web PostAjaxClientPage.aspx du client contient le code ASP.NET permettant d'appeler le service à chaque fois que l'utilisateur clique sur l'un des boutons d'opération de cette page.  Le contrôle `ScriptManager` est utilisé pour permettre l'accès à un proxy du service via JavaScript.  
+ <span data-ttu-id="63dd7-121">La page Web PostAjaxClientPage.aspx du client contient le code ASP.NET permettant d'appeler le service à chaque fois que l'utilisateur clique sur l'un des boutons d'opération de cette page.</span><span class="sxs-lookup"><span data-stu-id="63dd7-121">The client Web page SimpleAjaxClientPage.aspx contains ASP.NET code to invoke the service whenever the user clicks one of the operation buttons on the page.</span></span> <span data-ttu-id="63dd7-122">Le contrôle `ScriptManager` est utilisé pour permettre l'accès à un proxy du service via JavaScript.</span><span class="sxs-lookup"><span data-stu-id="63dd7-122">The `ScriptManager` control is used to make a proxy to the service accessible through JavaScript.</span></span>  
   
 ```  
 <asp:ScriptManager ID="ScriptManager" runat="server">  
-     <Services>  
-          <asp:ServiceReference Path="service.svc" />  
-     </Services>  
+    <Services>  
+        <asp:ServiceReference Path="service.svc" />  
+    </Services>  
 </asp:ScriptManager>  
-  
 ```  
   
- Le proxy local est instancié et les opérations sont appelées à l'aide du code Javascript suivant.  
+ <span data-ttu-id="63dd7-123">Le proxy local est instancié et les opérations sont appelées à l'aide du code Javascript suivant.</span><span class="sxs-lookup"><span data-stu-id="63dd7-123">The local proxy is instantiated and operations are invoked using the following JavaScript code.</span></span>  
   
 ```  
 // Code for extracting arguments n1 and n2 omitted…  
@@ -79,25 +79,23 @@ public interface ICalculator
 var proxy = new SimpleAjaxService.ICalculator();  
 // Code for selecting operation omitted…  
 proxy.Add(parseFloat(n1), parseFloat(n2), onSuccess, onFail, null);  
-  
 ```  
   
- Si l'appel du service réussit, le code appelle le gestionnaire `onSuccess` et le résultat de l'opération s'affiche dans une zone de texte.  
+ <span data-ttu-id="63dd7-124">Si l'appel du service réussit, le code appelle le gestionnaire `onSuccess` et le résultat de l'opération s'affiche dans une zone de texte.</span><span class="sxs-lookup"><span data-stu-id="63dd7-124">If the service call succeeds, the code invokes the `onSuccess` handler and the result of the operation is displayed in a text box.</span></span>  
   
 ```  
 function onSuccess(mathResult){  
      document.getElementById("result").value = mathResult;  
 }  
-  
 ```  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="63dd7-125">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="63dd7-125">The samples may already be installed on your machine.</span></span> <span data-ttu-id="63dd7-126">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="63dd7-126">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, accédez à la page des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="63dd7-127">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="63dd7-127">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="63dd7-128">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="63dd7-128">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Ajax\SimpleAjaxService`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Ajax\SimpleAjaxService`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="63dd7-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="63dd7-129">See Also</span></span>

@@ -1,62 +1,66 @@
 ---
-title: "Comment&#160;: cr&#233;er une collection de polices priv&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "polices, créer des collections privées"
-  - "collections de polices privées, créer"
+title: "Comment : créer une collection de polices privées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- private font collections [Windows Forms], creating
+- fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3016fb9a1b1d8466137bcaddb0b885c02c399baf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er une collection de polices priv&#233;es
-La classe <xref:System.Drawing.Text.PrivateFontCollection> hérite de la classe de base abstraite <xref:System.Drawing.Text.FontCollection>.  Vous pouvez utiliser un objet <xref:System.Drawing.Text.PrivateFontCollection> pour maintenir un ensemble de polices spécifiquement pour votre application.  Une collection de polices privée peut inclure des polices système installées ainsi que des polices qui n'ont pas été installées sur l'ordinateur.  Pour ajouter un fichier de polices à une collection de polices privées, appelez la méthode <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> d'un objet <xref:System.Drawing.Text.PrivateFontCollection>.  
+# <a name="how-to-create-a-private-font-collection"></a><span data-ttu-id="5e098-102">Comment : créer une collection de polices privées</span><span class="sxs-lookup"><span data-stu-id="5e098-102">How to: Create a Private Font Collection</span></span>
+<span data-ttu-id="5e098-103">Le <xref:System.Drawing.Text.PrivateFontCollection> classe hérite de la <xref:System.Drawing.Text.FontCollection> classe de base abstraite.</span><span class="sxs-lookup"><span data-stu-id="5e098-103">The <xref:System.Drawing.Text.PrivateFontCollection> class inherits from the <xref:System.Drawing.Text.FontCollection> abstract base class.</span></span> <span data-ttu-id="5e098-104">Vous pouvez utiliser un <xref:System.Drawing.Text.PrivateFontCollection> objet de conserver un jeu de polices spécifiquement pour votre application.</span><span class="sxs-lookup"><span data-stu-id="5e098-104">You can use a <xref:System.Drawing.Text.PrivateFontCollection> object to maintain a set of fonts specifically for your application.</span></span> <span data-ttu-id="5e098-105">Une collection de polices privées peut inclure des polices système installées ainsi que des polices qui n’ont pas été installées sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="5e098-105">A private font collection can include installed system fonts as well as fonts that have not been installed on the computer.</span></span> <span data-ttu-id="5e098-106">Pour ajouter un fichier de polices à une collection de polices privées, appelez le <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> méthode d’un <xref:System.Drawing.Text.PrivateFontCollection> objet.</span><span class="sxs-lookup"><span data-stu-id="5e098-106">To add a font file to a private font collection, call the <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> method of a <xref:System.Drawing.Text.PrivateFontCollection> object.</span></span>  
   
- La propriété <xref:System.Drawing.Text.FontCollection.Families%2A> d'un objet <xref:System.Drawing.Text.PrivateFontCollection> contient un tableau d'objets <xref:System.Drawing.FontFamily>.  
+ <span data-ttu-id="5e098-107">Le <xref:System.Drawing.Text.FontCollection.Families%2A> propriété d’un <xref:System.Drawing.Text.PrivateFontCollection> objet contient un tableau de <xref:System.Drawing.FontFamily> objets.</span><span class="sxs-lookup"><span data-stu-id="5e098-107">The <xref:System.Drawing.Text.FontCollection.Families%2A> property of a <xref:System.Drawing.Text.PrivateFontCollection> object contains an array of <xref:System.Drawing.FontFamily> objects.</span></span>  
   
- Le nombre de familles de polices dans une collection de polices privées n'est pas nécessairement le même que le nombre de fichiers de polices qui ont été ajoutés à la collection.  Par exemple, supposons que vous ajoutiez les fichiers ArialBd.tff, Times.tff et TimesBd.tff à une collection.  La collection comportera trois fichiers mais seulement deux familles puisque que Times.tff et TimesBd.tff appartiennent à la même famille.  
+ <span data-ttu-id="5e098-108">Le nombre de familles de polices dans une collection de polices privées n’est pas nécessairement le même que le nombre de fichiers de polices qui ont été ajoutés à la collection.</span><span class="sxs-lookup"><span data-stu-id="5e098-108">The number of font families in a private font collection is not necessarily the same as the number of font files that have been added to the collection.</span></span> <span data-ttu-id="5e098-109">Par exemple, supposons que vous ajoutez les fichiers ArialBd.tff, Times.tff et TimesBd.tff à une collection.</span><span class="sxs-lookup"><span data-stu-id="5e098-109">For example, suppose you add the files ArialBd.tff, Times.tff, and TimesBd.tff to a collection.</span></span> <span data-ttu-id="5e098-110">Il y aura trois fichiers mais seulement deux familles dans la collection, car Times.tff et TimesBd.tff appartiennent à la même famille.</span><span class="sxs-lookup"><span data-stu-id="5e098-110">There will be three files but only two families in the collection because Times.tff and TimesBd.tff belong to the same family.</span></span>  
   
-## Exemple  
- L'exemple suivant ajoute les trois fichiers de polices suivants à un objet <xref:System.Drawing.Text.PrivateFontCollection> :  
+## <a name="example"></a><span data-ttu-id="5e098-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="5e098-111">Example</span></span>  
+ <span data-ttu-id="5e098-112">L’exemple suivant ajoute les fichiers de trois police suivants pour un <xref:System.Drawing.Text.PrivateFontCollection> objet :</span><span class="sxs-lookup"><span data-stu-id="5e098-112">The following example adds the following three font files to a <xref:System.Drawing.Text.PrivateFontCollection> object:</span></span>  
   
--   C:\\*systemroot*\\Fonts\\Arial.tff \(Arial, Normal\)  
+-   <span data-ttu-id="5e098-113">C:\\*systemroot*\Fonts\Arial.tff (Arial, normal)</span><span class="sxs-lookup"><span data-stu-id="5e098-113">C:\\*systemroot*\Fonts\Arial.tff (Arial, regular)</span></span>  
   
--   C:\\*systemroot*\\Fonts\\CourBI.tff \(Courier New, Gras Italique\)  
+-   <span data-ttu-id="5e098-114">C:\\*systemroot*\Fonts\CourBI.tff (Courier New, gras et italique)</span><span class="sxs-lookup"><span data-stu-id="5e098-114">C:\\*systemroot*\Fonts\CourBI.tff (Courier New, bold italic)</span></span>  
   
--   C:\\*systemroot*\\Fonts\\TimesBd.tff \(Times New Roman, Gras\)  
+-   <span data-ttu-id="5e098-115">C:\\*systemroot*\Fonts\TimesBd.tff (Times New Roman, gras)</span><span class="sxs-lookup"><span data-stu-id="5e098-115">C:\\*systemroot*\Fonts\TimesBd.tff (Times New Roman, bold)</span></span>  
   
- Le code récupère un tableau d'objets <xref:System.Drawing.FontFamily> de la propriété <xref:System.Drawing.Text.FontCollection.Families%2A> de l'objet <xref:System.Drawing.Text.PrivateFontCollection>.  
+ <span data-ttu-id="5e098-116">Le code récupère un tableau de <xref:System.Drawing.FontFamily> des objets de la <xref:System.Drawing.Text.FontCollection.Families%2A> propriété de la <xref:System.Drawing.Text.PrivateFontCollection> objet.</span><span class="sxs-lookup"><span data-stu-id="5e098-116">The code retrieves an array of <xref:System.Drawing.FontFamily> objects from the <xref:System.Drawing.Text.FontCollection.Families%2A> property of the <xref:System.Drawing.Text.PrivateFontCollection> object.</span></span>  
   
- Pour chaque objet <xref:System.Drawing.FontFamily> dans la collection, le code appelle la méthode <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> pour déterminer si divers styles \(Regular, Bold, Italic, Bold Italic, Underline et Strikeout\) sont disponibles.  Les arguments passés à la méthode <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> sont des membres de l'énumération <xref:System.Drawing.FontStyle>.  
+ <span data-ttu-id="5e098-117">Pour chaque <xref:System.Drawing.FontFamily> objet dans la collection, le code appelle la <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> méthode pour déterminer si divers styles (Normal, gras, italique, gras et italique, souligné et barré) sont disponibles.</span><span class="sxs-lookup"><span data-stu-id="5e098-117">For each <xref:System.Drawing.FontFamily> object in the collection, the code calls the <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> method to determine whether various styles (regular, bold, italic, bold italic, underline, and strikeout) are available.</span></span> <span data-ttu-id="5e098-118">Les arguments passés à la <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> méthode sont membres de la <xref:System.Drawing.FontStyle> énumération.</span><span class="sxs-lookup"><span data-stu-id="5e098-118">The arguments passed to the <xref:System.Drawing.FontFamily.IsStyleAvailable%2A> method are members of the <xref:System.Drawing.FontStyle> enumeration.</span></span>  
   
- Si une combinaison famille\/style donnée est disponible, un objet <xref:System.Drawing.Font> est généré en utilisant cette famille et ce style.  Le premier argument passé au constructeur <xref:System.Drawing.Font.%23ctor%2A> est le nom de la famille de polices \(et non un objet <xref:System.Drawing.FontFamily> comme c'est le cas pour d'autres variantes du constructeur <xref:System.Drawing.Font.%23ctor%2A>\).  Une fois l'objet <xref:System.Drawing.Font> construit, il est passé à la méthode <xref:System.Drawing.Graphics.DrawString%2A> de la classe <xref:System.Drawing.Graphics> pour afficher le nom de famille ainsi que le nom du style.  
+ <span data-ttu-id="5e098-119">Si une combinaison famille/style donnée est disponible, un <xref:System.Drawing.Font> objet est construit à l’aide de cette famille et ce style.</span><span class="sxs-lookup"><span data-stu-id="5e098-119">If a given family/style combination is available, a <xref:System.Drawing.Font> object is constructed using that family and style.</span></span> <span data-ttu-id="5e098-120">Le premier argument passé à la <xref:System.Drawing.Font.%23ctor%2A> constructeur est le nom de famille de polices (pas un <xref:System.Drawing.FontFamily> de l’objet comme c’est le cas pour d’autres variantes de la <xref:System.Drawing.Font.%23ctor%2A> constructeur).</span><span class="sxs-lookup"><span data-stu-id="5e098-120">The first argument passed to the <xref:System.Drawing.Font.%23ctor%2A> constructor is the font family name (not a <xref:System.Drawing.FontFamily> object as is the case for other variations of the <xref:System.Drawing.Font.%23ctor%2A> constructor).</span></span> <span data-ttu-id="5e098-121">Après le <xref:System.Drawing.Font> objet est construit, il est passé à la <xref:System.Drawing.Graphics.DrawString%2A> méthode de la <xref:System.Drawing.Graphics> classe pour afficher le nom de famille, ainsi que le nom du style.</span><span class="sxs-lookup"><span data-stu-id="5e098-121">After the <xref:System.Drawing.Font> object is constructed, it is passed to the <xref:System.Drawing.Graphics.DrawString%2A> method of the <xref:System.Drawing.Graphics> class to display the family name along with the name of the style.</span></span>  
   
- La sortie du code suivant est analogue à celle qui est présentée dans l'illustration suivante.  
+ <span data-ttu-id="5e098-122">La sortie du code suivant est semblable à la sortie affichée dans l’illustration suivante.</span><span class="sxs-lookup"><span data-stu-id="5e098-122">The output of the following code is similar to the output shown in the following illustration.</span></span>  
   
- ![Polices du texte](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")  
+ <span data-ttu-id="5e098-123">![Polices du texte](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")</span><span class="sxs-lookup"><span data-stu-id="5e098-123">![Fonts Text](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")</span></span>  
   
- Arial.tff \(qui a été ajouté à la collection de polices privées dans l'exemple de code suivant\) est le fichier de police pour le style Arial Regular.  Notez toutefois que la sortie du programme montre plusieurs styles disponibles autres que le style Regular pour la famille de polices Arial.  Ceci est dû au fait que [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut simuler les styles italique, gras et italique et gras depuis le style normal.  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut également produire des soulignements et des barrés depuis le style normal.  
+ <span data-ttu-id="5e098-124">Arial.tff (qui a été ajouté à la collection de polices privées dans l’exemple de code suivant) est le fichier de police pour le style Arial regular.</span><span class="sxs-lookup"><span data-stu-id="5e098-124">Arial.tff (which was added to the private font collection in the following code example) is the font file for the Arial regular style.</span></span> <span data-ttu-id="5e098-125">Toutefois, notez que la sortie du programme montre plusieurs styles disponibles que regular pour la famille de polices Arial.</span><span class="sxs-lookup"><span data-stu-id="5e098-125">Note, however, that the program output shows several available styles other than regular for the Arial font family.</span></span> <span data-ttu-id="5e098-126">C’est parce que [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut simuler les styles italique gras, italique et gras depuis le style Normal.</span><span class="sxs-lookup"><span data-stu-id="5e098-126">That is because [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] can simulate the bold, italic, and bold italic styles from the regular style.</span></span> [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="5e098-127">peut également produire des soulignements et des barrés depuis le style Normal.</span><span class="sxs-lookup"><span data-stu-id="5e098-127"> can also produce underlines and strikeouts from the regular style.</span></span>  
   
- De la même façon, [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut simuler le style italique gras depuis du style gras ou italique.  La sortie du programme montre que le style Bold Italic est disponible pour la famille Times bien que TimesBd.tff \(Times New Roman, bold\) est le seul fichier Times de la collection.  
+ <span data-ttu-id="5e098-128">De même, [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut simuler le style gras et italique à partir du style gras ou italique.</span><span class="sxs-lookup"><span data-stu-id="5e098-128">Similarly, [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] can simulate the bold italic style from either the bold style or the italic style.</span></span> <span data-ttu-id="5e098-129">La sortie du programme montre que le style italique gras est disponible pour la famille Times bien que TimesBd.tff (Times New Roman, gras) est le seul fichier Times de la collection.</span><span class="sxs-lookup"><span data-stu-id="5e098-129">The program output shows that the bold italic style is available for the Times family even though TimesBd.tff (Times New Roman, bold) is the only Times file in the collection.</span></span>  
   
  [!code-csharp[System.Drawing.FontsAndText#51](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#51)]
  [!code-vb[System.Drawing.FontsAndText#51](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#51)]  
   
-## Compilation du code  
- L'exemple précédent est destiné à une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
+## <a name="compiling-the-code"></a><span data-ttu-id="5e098-130">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="5e098-130">Compiling the Code</span></span>  
+ <span data-ttu-id="5e098-131">L'exemple précédent est conçu pour une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="5e098-131">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of <xref:System.Windows.Forms.PaintEventHandler>.</span></span>  
   
-## Voir aussi  
- <xref:System.Drawing.Text.PrivateFontCollection>   
- [Utilisation de polices et de texte](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)
+## <a name="see-also"></a><span data-ttu-id="5e098-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5e098-132">See Also</span></span>  
+ <xref:System.Drawing.Text.PrivateFontCollection>  
+ [<span data-ttu-id="5e098-133">Utilisation de polices et de texte</span><span class="sxs-lookup"><span data-stu-id="5e098-133">Using Fonts and Text</span></span>](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)

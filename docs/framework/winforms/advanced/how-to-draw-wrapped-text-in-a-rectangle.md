@@ -1,57 +1,61 @@
 ---
-title: "Comment&#160;: &#233;crire du texte renvoy&#233; &#224; la ligne dans un rectangle | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "chaînes (Windows Forms), dessiner dans un rectangle"
-  - "texte (Windows Forms), dessiner dans un rectangle"
-  - "Windows Forms, dessiner un texte dans un rectangle"
+title: "Comment : écrire du texte renvoyé à la ligne dans un rectangle"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Windows Forms, drawing text in a rectangle
+- text [Windows Forms], drawing in a rectangle
+- strings [Windows Forms], drawing in a rectangle
 ms.assetid: e1fb432a-dc90-48b5-9b6b-acc14507133d
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 773216c30adf1c684ec705a909038354aab0fec9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: &#233;crire du texte renvoy&#233; &#224; la ligne dans un rectangle
-Vous pouvez dessiner du texte renvoyé à la ligne dans un rectangle en utilisant la méthode surchargée <xref:System.Drawing.Graphics.DrawString%2A> de la classe <xref:System.Drawing.Graphics> qui utilise un paramètre <xref:System.Drawing.Rectangle> ou <xref:System.Drawing.RectangleF>.  Vous pouvez également utiliser <xref:System.Drawing.Brush> et <xref:System.Drawing.Font>.  
+# <a name="how-to-draw-wrapped-text-in-a-rectangle"></a><span data-ttu-id="48d12-102">Comment : écrire du texte renvoyé à la ligne dans un rectangle</span><span class="sxs-lookup"><span data-stu-id="48d12-102">How to: Draw Wrapped Text in a Rectangle</span></span>
+<span data-ttu-id="48d12-103">Vous pouvez dessiner du texte encapsulé dans un rectangle à l’aide de la <xref:System.Drawing.Graphics.DrawString%2A> surchargées de la <xref:System.Drawing.Graphics> classe qui prend un <xref:System.Drawing.Rectangle> ou <xref:System.Drawing.RectangleF> paramètre.</span><span class="sxs-lookup"><span data-stu-id="48d12-103">You can draw wrapped text in a rectangle by using the <xref:System.Drawing.Graphics.DrawString%2A> overloaded method of the <xref:System.Drawing.Graphics> class that takes a <xref:System.Drawing.Rectangle> or <xref:System.Drawing.RectangleF> parameter.</span></span> <span data-ttu-id="48d12-104">Vous pouvez également utiliser un <xref:System.Drawing.Brush> et un <xref:System.Drawing.Font>.</span><span class="sxs-lookup"><span data-stu-id="48d12-104">You will also use a <xref:System.Drawing.Brush> and a <xref:System.Drawing.Font>.</span></span>  
   
- Vous pouvez aussi dessiner du texte renvoyé à la ligne dans un rectangle en utilisant la méthode surchargée <xref:System.Windows.Forms.TextRenderer.DrawText%2A> de <xref:System.Windows.Forms.TextRenderer> qui utilise les paramètres <xref:System.Drawing.Rectangle> et <xref:System.Windows.Forms.TextFormatFlags>.  Vous pouvez également utiliser <xref:System.Drawing.Color> et <xref:System.Drawing.Font>.  
+ <span data-ttu-id="48d12-105">Vous pouvez également dessiner du texte encapsulé dans un rectangle à l’aide de la <xref:System.Windows.Forms.TextRenderer.DrawText%2A> surchargées de la <xref:System.Windows.Forms.TextRenderer> qui accepte un <xref:System.Drawing.Rectangle> et un <xref:System.Windows.Forms.TextFormatFlags> paramètre.</span><span class="sxs-lookup"><span data-stu-id="48d12-105">You can also draw wrapped text in a rectangle by using the <xref:System.Windows.Forms.TextRenderer.DrawText%2A> overloaded method of the <xref:System.Windows.Forms.TextRenderer> that takes a <xref:System.Drawing.Rectangle> and a <xref:System.Windows.Forms.TextFormatFlags> parameter.</span></span> <span data-ttu-id="48d12-106">Vous pouvez également utiliser un <xref:System.Drawing.Color> et un <xref:System.Drawing.Font>.</span><span class="sxs-lookup"><span data-stu-id="48d12-106">You will also use a <xref:System.Drawing.Color> and a <xref:System.Drawing.Font>.</span></span>  
   
- L'illustration suivante affiche la sortie du texte dessiné dans le rectangle lorsque vous utilisez la méthode <xref:System.Drawing.Graphics.DrawString%2A>.  
+ <span data-ttu-id="48d12-107">L’illustration suivante montre la sortie du texte dessiné dans le rectangle lorsque vous utilisez la <xref:System.Drawing.Graphics.DrawString%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="48d12-107">The following illustration shows the output of text drawn in the rectangle when you use the <xref:System.Drawing.Graphics.DrawString%2A> method.</span></span>  
   
- ![Polices du texte](../../../../docs/framework/winforms/advanced/media/csfontstext2.png "csfontstext2")  
+ <span data-ttu-id="48d12-108">![Polices du texte](../../../../docs/framework/winforms/advanced/media/csfontstext2.png "csfontstext2")</span><span class="sxs-lookup"><span data-stu-id="48d12-108">![Fonts Text](../../../../docs/framework/winforms/advanced/media/csfontstext2.png "csfontstext2")</span></span>  
   
-### Pour dessiner du texte renvoyé à la ligne dans un rectangle avec GDI\+  
+### <a name="to-draw-wrapped-text-in-a-rectangle-with-gdi"></a><span data-ttu-id="48d12-109">Inclus pour dessiner le texte dans un rectangle avec GDI +</span><span class="sxs-lookup"><span data-stu-id="48d12-109">To draw wrapped text in a rectangle with GDI+</span></span>  
   
-1.  Utilisez la méthode surchargée <xref:System.Drawing.Graphics.DrawString%2A>, en passant le texte que vous voulez, <xref:System.Drawing.Rectangle> ou <xref:System.Drawing.RectangleF>, <xref:System.Drawing.Font> et <xref:System.Drawing.Brush>.  
+1.  <span data-ttu-id="48d12-110">Utilisez le <xref:System.Drawing.Graphics.DrawString%2A> méthode surchargée, en passant le texte que vous le souhaitez, <xref:System.Drawing.Rectangle> ou <xref:System.Drawing.RectangleF>, <xref:System.Drawing.Font> et <xref:System.Drawing.Brush>.</span><span class="sxs-lookup"><span data-stu-id="48d12-110">Use the <xref:System.Drawing.Graphics.DrawString%2A> overloaded method, passing the text you want, <xref:System.Drawing.Rectangle> or <xref:System.Drawing.RectangleF>, <xref:System.Drawing.Font> and <xref:System.Drawing.Brush>.</span></span>  
   
      [!code-csharp[System.Drawing.AlignDrawnText#50](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#50)]
      [!code-vb[System.Drawing.AlignDrawnText#50](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#50)]  
   
-### Pour dessiner du texte renvoyé à la ligne dans un rectangle avec GDI  
+### <a name="to-draw-wrapped-text-in-a-rectangle-with-gdi"></a><span data-ttu-id="48d12-111">Inclus pour dessiner le texte dans un rectangle avec GDI</span><span class="sxs-lookup"><span data-stu-id="48d12-111">To draw wrapped text in a rectangle with GDI</span></span>  
   
-1.  Utilisez la valeur d'énumération <xref:System.Windows.Forms.TextFormatFlags> pour spécifier que le texte doit être renvoyé à la ligne avec la méthode surchargée <xref:System.Windows.Forms.TextRenderer.DrawText%2A>, en passant le texte que vous voulez, <xref:System.Drawing.Rectangle>, <xref:System.Drawing.Font> et <xref:System.Drawing.Color>.  
+1.  <span data-ttu-id="48d12-112">Utilisez le <xref:System.Windows.Forms.TextFormatFlags> valeur d’énumération pour spécifier le texte doit être ajusté à la <xref:System.Windows.Forms.TextRenderer.DrawText%2A> méthode surchargée, en passant le texte que vous le souhaitez, <xref:System.Drawing.Rectangle>, <xref:System.Drawing.Font> et <xref:System.Drawing.Color>.</span><span class="sxs-lookup"><span data-stu-id="48d12-112">Use the <xref:System.Windows.Forms.TextFormatFlags> enumeration value to specify the text should be wrapped with the <xref:System.Windows.Forms.TextRenderer.DrawText%2A> overloaded method, passing the text you want, <xref:System.Drawing.Rectangle>, <xref:System.Drawing.Font> and <xref:System.Drawing.Color>.</span></span>  
   
      [!code-csharp[System.Drawing.AlignDrawnText#60](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#60)]
      [!code-vb[System.Drawing.AlignDrawnText#60](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#60)]  
   
-## Compilation du code  
- Les exemples précédents nécessitent :  
+## <a name="compiling-the-code"></a><span data-ttu-id="48d12-113">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="48d12-113">Compiling the Code</span></span>  
+ <span data-ttu-id="48d12-114">Les exemples précédents nécessitent :</span><span class="sxs-lookup"><span data-stu-id="48d12-114">The previous examples require:</span></span>  
   
--   <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
+-   <span data-ttu-id="48d12-115"><xref:System.Windows.Forms.PaintEventArgs>`e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="48d12-115"><xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of <xref:System.Windows.Forms.PaintEventHandler>.</span></span>  
   
-## Voir aussi  
- [Comment : écrire du texte avec GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)   
- [Utilisation de polices et de texte](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)   
- [Comment : construire des familles de polices et des polices](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)   
- [Comment : écrire du texte à un emplacement spécifié](../../../../docs/framework/winforms/advanced/how-to-draw-text-at-a-specified-location.md)
+## <a name="see-also"></a><span data-ttu-id="48d12-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="48d12-116">See Also</span></span>  
+ [<span data-ttu-id="48d12-117">Guide pratique pour écrire du texte avec GDI</span><span class="sxs-lookup"><span data-stu-id="48d12-117">How to: Draw Text with GDI</span></span>](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
+ [<span data-ttu-id="48d12-118">Utilisation de polices et de texte</span><span class="sxs-lookup"><span data-stu-id="48d12-118">Using Fonts and Text</span></span>](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
+ [<span data-ttu-id="48d12-119">Guide pratique pour construire des familles de polices et des polices</span><span class="sxs-lookup"><span data-stu-id="48d12-119">How to: Construct Font Families and Fonts</span></span>](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  
+ [<span data-ttu-id="48d12-120">Guide pratique pour écrire du texte à un emplacement spécifié</span><span class="sxs-lookup"><span data-stu-id="48d12-120">How to: Draw Text at a Specified Location</span></span>](../../../../docs/framework/winforms/advanced/how-to-draw-text-at-a-specified-location.md)

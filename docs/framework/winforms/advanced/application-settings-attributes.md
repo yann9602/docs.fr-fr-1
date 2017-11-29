@@ -1,53 +1,54 @@
 ---
-title: "Attributs des param&#232;tres d&#39;application | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "paramètres d'application (Windows Forms), attributs"
-  - "attributs (Windows Forms), paramètres d'application"
-  - "classes wrapper, paramètres d'application"
+title: "Attributs des paramètres d'application"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application settings [Windows Forms], attributes
+- attributes [Windows Forms], application settings
+- wrapper classes [Windows Forms], application settings
 ms.assetid: 53caa66c-a9fb-43a5-953c-ad092590098d
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1879ac6704619092c4c0d9cd6fab0356ea07a13d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Attributs des param&#232;tres d&#39;application
-L'architecture des paramètres d'application fournit un grand nombre d'attributs qui peuvent être appliqués à la classe wrapper de paramètres d'application ou à ses propriétés individuelles.  Ces attributs sont examinés au moment de l'exécution par l'infrastructure de paramètres d'application, souvent représentée spécifiquement par le fournisseur de paramètres, afin d'adapter son fonctionnement aux besoins énoncés du wrapper personnalisé.  
+# <a name="application-settings-attributes"></a><span data-ttu-id="092d1-102">Attributs des paramètres d'application</span><span class="sxs-lookup"><span data-stu-id="092d1-102">Application Settings Attributes</span></span>
+<span data-ttu-id="092d1-103">L’architecture de paramètres d’Application fournit beaucoup d’attributs qui peut être appliqués à la classe wrapper de paramètres application ou à ses propriétés individuelles.</span><span class="sxs-lookup"><span data-stu-id="092d1-103">The Application Settings architecture provides many attributes that can be applied either to the applications settings wrapper class or its individual properties.</span></span> <span data-ttu-id="092d1-104">Ces attributs sont examinées au moment de l’exécution par l’infrastructure de paramètres d’application, souvent en particulier le fournisseur de paramètres, afin d’adapter son fonctionnement aux besoins énoncés du wrapper personnalisé.</span><span class="sxs-lookup"><span data-stu-id="092d1-104">These attributes are examined at run time by the application settings infrastructure, often specifically the settings provider, in order to tailor its functioning to the stated needs of the custom wrapper.</span></span>  
   
- Le tableau suivant répertorie les attributs qui peuvent s'appliquer à la classe wrapper de paramètres d'application, aux propriétés individuelles de cette classe, ou aux deux.  Par définition, seul un attribut de portée unique \(**UserScopedSettingAttribute** ou **ApplicationScopedSettingAttribute**\) doit être appliqué à chaque propriété de paramètres.  
+ <span data-ttu-id="092d1-105">Le tableau suivant répertorie les attributs qui peuvent être appliqués à la classe wrapper de paramètres application, des propriétés individuelles de cette classe ou les deux.</span><span class="sxs-lookup"><span data-stu-id="092d1-105">The following table lists the attributes that can be applied to the application settings wrapper class, this class's individual properties, or both.</span></span> <span data-ttu-id="092d1-106">Par définition, uniquement un attribut de portée unique :**UserScopedSettingAttribute** ou **ApplicationScopedSettingAttribute**, doivent être appliquées à chaque propriété de paramètres.</span><span class="sxs-lookup"><span data-stu-id="092d1-106">By definition, only a single scope attribute—**UserScopedSettingAttribute** or **ApplicationScopedSettingAttribute**—must be applied to each and every settings property.</span></span>  
   
 > [!NOTE]
->  Un fournisseur de paramètres personnalisé dérivé de la classe <xref:System.Configuration.SettingsProvider> n'est requis que pour la reconnaissance des trois attributs suivants : **ApplicationScopedSettingAttribute**, **UserScopedSettingAttribute** et **DefaultSettingValueAttribute**.  
+>  <span data-ttu-id="092d1-107">Un fournisseur de paramètres personnalisés dérivés de la <xref:System.Configuration.SettingsProvider> de classe, est nécessaire uniquement pour reconnaître les trois attributs suivants : **ApplicationScopedSettingAttribute**, **UserScopedSettingAttribute**, et **DefaultSettingValueAttribute**.</span><span class="sxs-lookup"><span data-stu-id="092d1-107">A custom settings provider, derived from the <xref:System.Configuration.SettingsProvider> class, is only required to recognize the following three attributes: **ApplicationScopedSettingAttribute**, **UserScopedSettingAttribute**, and **DefaultSettingValueAttribute**.</span></span>  
   
-|Attribut|Cible|Description|  
-|--------------|-----------|-----------------|  
-|<xref:System.Configuration.SettingsProviderAttribute>|Les deux|Spécifie le nom court du fournisseur de paramètres à utiliser pour la persistance.<br /><br /> Si cet attribut n'est pas fourni, le fournisseur par défaut, <xref:System.Configuration.LocalFileSettingsProvider>, est utilisé.|  
-|<xref:System.Configuration.UserScopedSettingAttribute>|Les deux|Définit une propriété en tant que paramètre d'application de portée utilisateur.|  
-|<xref:System.Configuration.ApplicationScopedSettingAttribute>|Les deux|Définit une propriété en tant que paramètre d'application de portée application.|  
-|<xref:System.Configuration.DefaultSettingValueAttribute>|Propriété|Spécifie une chaîne qui peut être désérialisée par le fournisseur en valeur par défaut codée de manière irréversible pour cette propriété.<br /><br /> <xref:System.Configuration.LocalFileSettingsProvider> ne requiert pas cet attribut, et se substituera à toute valeur fournie par cet attribut \(s'il comporte déjà une valeur persistante\).|  
-|<xref:System.Configuration.SettingsDescriptionAttribute>|Propriété|Fournit le test descriptif d'un paramètre individuel, utilisé à l'origine par les outils d'exécution et de design.|  
-|<xref:System.Configuration.SettingsGroupNameAttribute>|Classe|Fournit un nom explicite pour un groupe de paramètres.  Si cet attribut est manquant, <xref:System.Configuration.ApplicationSettingsBase> utilise le nom de classe wrapper.|  
-|<xref:System.Configuration.SettingsGroupDescriptionAttribute>|Classe|Fournit le test descriptif d'un groupe de paramètres, utilisé à l'origine par les outils d'exécution et de design.|  
-|<xref:System.Configuration.SettingsManageabilityAttribute>|Les deux|Spécifie le nombre de services de maniabilité \(zéro ou davantage\) à fournir au groupe de paramètres ou à la propriété.  Les services disponibles sont décrits par l'énumération <xref:System.Configuration.SettingsManageability>.|  
-|<xref:System.Configuration.SpecialSettingAttribute>|Propriété|Indique qu'un paramètre appartient à une catégorie spécifique, prédéfinie \(telle qu'une chaîne de connexion\) qui suggère un traitement spécifique par le fournisseur de paramètres.  Les catégories prédéfinies pour cet attribut sont définies par l'énumération <xref:System.Configuration.SpecialSetting>.|  
-|<xref:System.Configuration.SettingsSerializeAsAttribute>|Les deux|Spécifie un mécanisme de sérialisation par défaut pour un groupe de paramètres ou pour une propriété.  Les mécanismes de sérialisation disponibles sont définis par l'énumération <xref:System.Configuration.SettingsSerializeAs>.|  
-|<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>|Propriété|Spécifie qu'un fournisseur de paramètres doit désactiver toutes les fonctionnalités de mise à niveau de l'application pour la propriété marquée.|  
+|<span data-ttu-id="092d1-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="092d1-108">Attribute</span></span>|<span data-ttu-id="092d1-109">une cible</span><span class="sxs-lookup"><span data-stu-id="092d1-109">Target</span></span>|<span data-ttu-id="092d1-110">Description</span><span class="sxs-lookup"><span data-stu-id="092d1-110">Description</span></span>|  
+|---------------|------------|-----------------|  
+|<xref:System.Configuration.SettingsProviderAttribute>|<span data-ttu-id="092d1-111">Both</span><span class="sxs-lookup"><span data-stu-id="092d1-111">Both</span></span>|<span data-ttu-id="092d1-112">Spécifie le nom court du fournisseur de paramètres à utiliser pour la persistance.</span><span class="sxs-lookup"><span data-stu-id="092d1-112">Specifies the short name of the settings provider to use for persistence.</span></span><br /><br /> <span data-ttu-id="092d1-113">Si cet attribut n’est pas fourni, le fournisseur par défaut, <xref:System.Configuration.LocalFileSettingsProvider>, est supposé.</span><span class="sxs-lookup"><span data-stu-id="092d1-113">If this attribute is not supplied, the default provider, <xref:System.Configuration.LocalFileSettingsProvider>, is assumed.</span></span>|  
+|<xref:System.Configuration.UserScopedSettingAttribute>|<span data-ttu-id="092d1-114">Both</span><span class="sxs-lookup"><span data-stu-id="092d1-114">Both</span></span>|<span data-ttu-id="092d1-115">Définit une propriété comme un paramètre d’application de portée utilisateur.</span><span class="sxs-lookup"><span data-stu-id="092d1-115">Defines a property as a user-scoped application setting.</span></span>|  
+|<xref:System.Configuration.ApplicationScopedSettingAttribute>|<span data-ttu-id="092d1-116">Both</span><span class="sxs-lookup"><span data-stu-id="092d1-116">Both</span></span>|<span data-ttu-id="092d1-117">Définit une propriété en tant que paramètre d’application de portée d’application.</span><span class="sxs-lookup"><span data-stu-id="092d1-117">Defines a property as an application-scoped application setting.</span></span>|  
+|<xref:System.Configuration.DefaultSettingValueAttribute>|<span data-ttu-id="092d1-118">Propriété</span><span class="sxs-lookup"><span data-stu-id="092d1-118">Property</span></span>|<span data-ttu-id="092d1-119">Spécifie une chaîne qui peut être désérialisée par le fournisseur dans la valeur par défaut codées en dur pour cette propriété.</span><span class="sxs-lookup"><span data-stu-id="092d1-119">Specifies a string that can be deserialized by the provider into the hard-coded default value for this property.</span></span><br /><br /> <span data-ttu-id="092d1-120">Le <xref:System.Configuration.LocalFileSettingsProvider> ne nécessite pas de cet attribut et remplace toute valeur fournie par cet attribut s’il existe déjà une valeur persistante.</span><span class="sxs-lookup"><span data-stu-id="092d1-120">The <xref:System.Configuration.LocalFileSettingsProvider> does not require this attribute, and will override any value provided by this attribute if there is a value already persisted.</span></span>|  
+|<xref:System.Configuration.SettingsDescriptionAttribute>|<span data-ttu-id="092d1-121">Propriété</span><span class="sxs-lookup"><span data-stu-id="092d1-121">Property</span></span>|<span data-ttu-id="092d1-122">Fournit le test descriptif d’un paramètre individuel, principalement utilisée par les outils de conception et d’exécution.</span><span class="sxs-lookup"><span data-stu-id="092d1-122">Provides the descriptive test for an individual setting, used primarily by run-time and design-time tools.</span></span>|  
+|<xref:System.Configuration.SettingsGroupNameAttribute>|<span data-ttu-id="092d1-123">Classe</span><span class="sxs-lookup"><span data-stu-id="092d1-123">Class</span></span>|<span data-ttu-id="092d1-124">Fournit un nom explicite pour un groupe de paramètres.</span><span class="sxs-lookup"><span data-stu-id="092d1-124">Provides an explicit name for a settings group.</span></span> <span data-ttu-id="092d1-125">Si cet attribut est absent, <xref:System.Configuration.ApplicationSettingsBase> utilise le nom de classe wrapper.</span><span class="sxs-lookup"><span data-stu-id="092d1-125">If this attribute is missing, <xref:System.Configuration.ApplicationSettingsBase> uses the wrapper class name.</span></span>|  
+|<xref:System.Configuration.SettingsGroupDescriptionAttribute>|<span data-ttu-id="092d1-126">Classe</span><span class="sxs-lookup"><span data-stu-id="092d1-126">Class</span></span>|<span data-ttu-id="092d1-127">Fournit le test descriptif pour un groupe de paramètres, principalement utilisée par les outils de conception et d’exécution.</span><span class="sxs-lookup"><span data-stu-id="092d1-127">Provides the descriptive test for a settings group, used primarily by run-time and design-time tools.</span></span>|  
+|<xref:System.Configuration.SettingsManageabilityAttribute>|<span data-ttu-id="092d1-128">Both</span><span class="sxs-lookup"><span data-stu-id="092d1-128">Both</span></span>|<span data-ttu-id="092d1-129">Spécifie zéro ou plusieurs services de gestion qui doivent être fournis pour la propriété ou un groupe de paramètres.</span><span class="sxs-lookup"><span data-stu-id="092d1-129">Specifies zero or more manageability services that should be provided to the settings group or property.</span></span> <span data-ttu-id="092d1-130">Les services disponibles sont décrits par le <xref:System.Configuration.SettingsManageability> énumération.</span><span class="sxs-lookup"><span data-stu-id="092d1-130">The available services are described by the <xref:System.Configuration.SettingsManageability> enumeration.</span></span>|  
+|<xref:System.Configuration.SpecialSettingAttribute>|<span data-ttu-id="092d1-131">Propriété</span><span class="sxs-lookup"><span data-stu-id="092d1-131">Property</span></span>|<span data-ttu-id="092d1-132">Indique qu’un paramètre appartient à une catégorie spécifique, prédéfinie, telle qu’une chaîne de connexion, ce qui suggère un traitement spécifique par le fournisseur de paramètres.</span><span class="sxs-lookup"><span data-stu-id="092d1-132">Indicates that a setting belongs to a special, predefined category, such as a connection string, that suggests special processing by the settings provider.</span></span> <span data-ttu-id="092d1-133">Les catégories prédéfinies pour cet attribut sont définies par le <xref:System.Configuration.SpecialSetting> énumération.</span><span class="sxs-lookup"><span data-stu-id="092d1-133">The predefined categories for this attribute are defined by the <xref:System.Configuration.SpecialSetting> enumeration.</span></span>|  
+|<xref:System.Configuration.SettingsSerializeAsAttribute>|<span data-ttu-id="092d1-134">Both</span><span class="sxs-lookup"><span data-stu-id="092d1-134">Both</span></span>|<span data-ttu-id="092d1-135">Spécifie un mécanisme de sérialisation par défaut pour une propriété ou un groupe de paramètres.</span><span class="sxs-lookup"><span data-stu-id="092d1-135">Specifies a preferred serialization mechanism for a settings group or property.</span></span> <span data-ttu-id="092d1-136">Les mécanismes de sérialisation disponibles sont définis par le <xref:System.Configuration.SettingsSerializeAs> énumération.</span><span class="sxs-lookup"><span data-stu-id="092d1-136">The available serialization mechanisms are defined by the <xref:System.Configuration.SettingsSerializeAs> enumeration.</span></span>|  
+|<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>|<span data-ttu-id="092d1-137">Propriété</span><span class="sxs-lookup"><span data-stu-id="092d1-137">Property</span></span>|<span data-ttu-id="092d1-138">Spécifie qu’un fournisseur de paramètres doit désactiver toutes les fonctionnalités de mise à niveau d’application pour la propriété marquée.</span><span class="sxs-lookup"><span data-stu-id="092d1-138">Specifies that a settings provider should disable all application upgrade functionality for the marked property.</span></span>|  
   
- *Classe* indique que l'attribut peut être appliqué uniquement à une classe wrapper de paramètres d'application.  *Propriété* indique que l'attribut peut être appliqué uniquement aux propriétés de paramètres.  *Les deux* indique que l'attribut peut être appliqué aux deux niveaux.  
+ <span data-ttu-id="092d1-139">*Classe* indique que l’attribut peut être appliqué uniquement à une classe wrapper de paramètres application.</span><span class="sxs-lookup"><span data-stu-id="092d1-139">*Class* indicates that the attribute can be applied only to an application settings wrapper class.</span></span> <span data-ttu-id="092d1-140">*Propriété* indique que l’attribut peut être appliqué uniquement aux propriétés de paramètres.</span><span class="sxs-lookup"><span data-stu-id="092d1-140">*Property* indicates that the attribute can be applied only settings properties.</span></span> <span data-ttu-id="092d1-141">*Les deux* indique que l’attribut peut être appliqué aux deux niveaux.</span><span class="sxs-lookup"><span data-stu-id="092d1-141">*Both* indicates that the attribute can be applied at either level.</span></span>  
   
-## Voir aussi  
- <xref:System.Configuration.ApplicationSettingsBase>   
- <xref:System.Configuration.SettingsProvider>   
- [Architecture des paramètres d'application](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)   
- [How to: Create Application Settings](http://msdn.microsoft.com/fr-fr/53b3af80-1c02-4e35-99c6-787663148945)
+## <a name="see-also"></a><span data-ttu-id="092d1-142">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="092d1-142">See Also</span></span>  
+ <xref:System.Configuration.ApplicationSettingsBase>  
+ <xref:System.Configuration.SettingsProvider>  
+ [<span data-ttu-id="092d1-143">Architecture des paramètres d'application</span><span class="sxs-lookup"><span data-stu-id="092d1-143">Application Settings Architecture</span></span>](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)  
+ [<span data-ttu-id="092d1-144">Comment : créer des paramètres d’application</span><span class="sxs-lookup"><span data-stu-id="092d1-144">How to: Create Application Settings</span></span>](http://msdn.microsoft.com/en-us/53b3af80-1c02-4e35-99c6-787663148945)

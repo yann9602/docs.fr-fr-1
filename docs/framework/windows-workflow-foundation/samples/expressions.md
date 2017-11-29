@@ -1,42 +1,46 @@
 ---
-title: "Expressions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Expressions2
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 43a85905-77b5-4893-bb38-1cb9b293d69d
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c988f41966f6e7bbd87fc4552de15b28117ecde5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Expressions
-Cet exemple montre comment utiliser des expressions de base dans un workflow.Il se compose d'un workflow qui calcule des statistiques de salaires de base pour deux employés d'une société fictive.Deux classes, `Employee` et `SalaryStats`, sont définies dans Employee.cs et SalaryStats.cs.Ces classes sont utilisées dans un workflow qui montre comment effectuer des opérations arithmétiques et de chaîne simples sur les propriétés de variables de types complexes.  
+# <a name="expressions"></a><span data-ttu-id="39e99-102">Expressions</span><span class="sxs-lookup"><span data-stu-id="39e99-102">Expressions</span></span>
+<span data-ttu-id="39e99-103">Cet exemple montre comment utiliser des expressions de base dans un workflow.</span><span class="sxs-lookup"><span data-stu-id="39e99-103">This sample demonstrates how to use basic expressions in a workflow.</span></span> <span data-ttu-id="39e99-104">Il se compose d'un workflow qui calcule des statistiques de salaires de base pour deux employés d'une société fictive.</span><span class="sxs-lookup"><span data-stu-id="39e99-104">It consists of a workflow that calculates basic salary statistics for two employees of a fictitious company.</span></span> <span data-ttu-id="39e99-105">Deux classes, `Employee` et `SalaryStats`, sont définies dans Employee.cs et SalaryStats.cs.</span><span class="sxs-lookup"><span data-stu-id="39e99-105">Two classes, `Employee` and `SalaryStats`, are defined in Employee.cs and SalaryStats.cs.</span></span> <span data-ttu-id="39e99-106">Ces classes sont utilisées dans un workflow qui montre comment effectuer des opérations arithmétiques et de chaîne simples sur les propriétés de variables de types complexes.</span><span class="sxs-lookup"><span data-stu-id="39e99-106">These classes are used in a workflow that shows how to perform simple arithmetic and string operations on properties of variables of complex types.</span></span>  
   
- Le workflow de calcul des salaires est défini à la fois en XAML et en C\# pour montrer les deux styles de création.La version XAML est contenue dans SalaryCalculation.xaml, et peut être affichée et modifiée dans le concepteur de workflow.La version C\# se trouve dans Program.cs.Les expressions utilisées en XAML sont conformes à la syntaxe Visual Basic et utilisent les activités d'expressions <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> à exécuter.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] les expressions Visual Basic, consultez [Expressions](http://go.microsoft.com/fwlink/?LinkId=165912)Par ailleurs, les expressions en C\# sont écrites sous la forme d'expressions lambda et utilisent des activités d'expressions <xref:System.Activities.Expressions.LambdaValue%601> et <xref:System.Activities.Expressions.LambdaReference%601>.L'écriture d'expressions sous la forme d'expressions lambda permet au compilateur C\# de fournir une mise en surbrillance de la syntaxe et une vérification statique.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] les expressions lambda en C\#, consultez [Expressions lambda \(Guide de programmation C\#\)](http://go.microsoft.com/fwlink/?LinkId=182082).Si un workflow est créé dans le code à l'aide de Visual Basic, les expressions lambda Visual Basic sont utilisées.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] les expressions lambda en Visual Basic, consultez [Expressions lambda \(Visual Basic\)](http://go.microsoft.com/fwlink/?LinkId=152437).[!INCLUDE[crabout](../../../../includes/crabout-md.md)] la création de workflows à l'aide du code, consultez [Création de workflows, d'activités et d'expressions à l'aide du code impératif](../../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md).  
+ <span data-ttu-id="39e99-107">Le workflow de calcul des salaires est défini à la fois en XAML et en C# pour montrer les deux styles de création.</span><span class="sxs-lookup"><span data-stu-id="39e99-107">The salary calculation workflow is defined both in XAML and in C# to demonstrate the two authoring styles.</span></span> <span data-ttu-id="39e99-108">La version XAML est contenue dans SalaryCalculation.xaml, et peut être affichée et modifiée dans le concepteur de workflow.</span><span class="sxs-lookup"><span data-stu-id="39e99-108">The XAML version is contained in SalaryCalculation.xaml and can be viewed and edited in the workflow designer.</span></span> <span data-ttu-id="39e99-109">La version C# se trouve dans Program.cs.</span><span class="sxs-lookup"><span data-stu-id="39e99-109">The C# version resides in Program.cs.</span></span> <span data-ttu-id="39e99-110">Les expressions utilisées en XAML sont conformes à la syntaxe Visual Basic et utilisent les activités d'expressions <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> à exécuter.</span><span class="sxs-lookup"><span data-stu-id="39e99-110">The expressions used in XAML conform to Visual Basic syntax, and use <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> expression activities to execute.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="39e99-111">Expressions Visual Basic Voir, [Expressions Visual Basic](http://go.microsoft.com/fwlink/?LinkId=165912).</span><span class="sxs-lookup"><span data-stu-id="39e99-111"> Visual Basic expressions see, [Visual Basic Expressions](http://go.microsoft.com/fwlink/?LinkId=165912).</span></span> <span data-ttu-id="39e99-112">Par ailleurs, les expressions en C# sont écrites sous la forme d'expressions lambda et utilisent des activités d'expressions <xref:System.Activities.Expressions.LambdaValue%601> et <xref:System.Activities.Expressions.LambdaReference%601>.</span><span class="sxs-lookup"><span data-stu-id="39e99-112">On the other hand, expressions in C# are written as lambda expressions and use <xref:System.Activities.Expressions.LambdaValue%601> and <xref:System.Activities.Expressions.LambdaReference%601> expression activities.</span></span> <span data-ttu-id="39e99-113">L’écriture d’expressions sous la forme d’expressions lambda permet au compilateur C# de fournir une mise en surbrillance de la syntaxe et une vérification statique.</span><span class="sxs-lookup"><span data-stu-id="39e99-113">Writing expressions as lambda expressions allows the C# compiler to provide syntax highlighting and static verification.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="39e99-114">expressions lambda en c#, consultez [Expressions Lambda (Guide de programmation c#)](http://go.microsoft.com/fwlink/?LinkId=182082).</span><span class="sxs-lookup"><span data-stu-id="39e99-114"> lambda expressions in C#, see [Lambda Expressions (C# Programming Guide)](http://go.microsoft.com/fwlink/?LinkId=182082).</span></span> <span data-ttu-id="39e99-115">Si un workflow est créé dans le code à l’aide de Visual Basic, les expressions lambda Visual Basic sont utilisées.</span><span class="sxs-lookup"><span data-stu-id="39e99-115">If a workflow is authored in code using Visual Basic, then Visual Basic lambda expressions are used.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="39e99-116">les expressions lambda en Visual Basic, consultez [Expressions Lambda (Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=152437).</span><span class="sxs-lookup"><span data-stu-id="39e99-116"> lambda expressions in Visual Basic, see [Lambda Expressions (Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=152437).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="39e99-117">sur la création de workflows à l’aide de code, consultez [création de Workflows, des activités et des Expressions à l’aide d’impératif Code](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span><span class="sxs-lookup"><span data-stu-id="39e99-117"> about authoring workflows using code, see [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span></span>  
   
-#### Pour exécuter l'exemple  
+#### <a name="to-run-the-sample"></a><span data-ttu-id="39e99-118">Pour exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="39e99-118">To run the sample</span></span>  
   
-1.  Ouvrez la solution Expressions.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1.  <span data-ttu-id="39e99-119">Ouvrez la solution Expressions.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="39e99-119">Open the Expressions.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B ou sélectionnez **Générer la solution** dans le menu **Générer**.  
+2.  <span data-ttu-id="39e99-120">Appuyez sur CTRL + MAJ + B pour générer la solution ou sélectionnez **générer la Solution** à partir de la **générer** menu.</span><span class="sxs-lookup"><span data-stu-id="39e99-120">Press CTRL+SHIFT+B to build the solution or select **Build Solution** from the **Build** menu.</span></span>  
   
     > [!NOTE]
-    >  Pour ouvrir SalaryCalculation.xaml dans le concepteur Visual Studio, vous devez d'abord compiler votre projet pour vérifier que les classes `Employee` et `SalaryStats` sont disponibles pour le concepteur.  
+    >  <span data-ttu-id="39e99-121">Pour ouvrir SalaryCalculation.xaml dans le concepteur Visual Studio, vous devez d'abord compiler votre projet pour vérifier que les classes `Employee` et `SalaryStats` sont disponibles pour le concepteur.</span><span class="sxs-lookup"><span data-stu-id="39e99-121">To open SalaryCalculation.xaml in the Visual Studio designer, you must first compile your project to ensure that `Employee` and `SalaryStats` classes are available to the designer.</span></span>  
   
-3.  Une fois que la génération a réussi, appuyez sur F5 ou sélectionnez **Démarrer le débogage** dans le menu **Déboguer**.Vous pouvez également appuyer sur Ctrl\+F5 ou sélectionner **Exécuter sans débogage** dans le menu **Déboguer** pour effectuer une exécution sans débogage.  
+3.  <span data-ttu-id="39e99-122">Une fois la génération a réussi, appuyez sur F5 ou sélectionnez **démarrer le débogage** à partir de la **déboguer** menu.</span><span class="sxs-lookup"><span data-stu-id="39e99-122">Once the build has succeeded, press F5 or select **Start Debugging** from the **Debug** menu.</span></span> <span data-ttu-id="39e99-123">Ou bien vous pouvez appuyer sur Ctrl + F5 ou sélectionnez **démarrer sans débogage** à partir de la **déboguer** menu pour exécuter sans débogage.</span><span class="sxs-lookup"><span data-stu-id="39e99-123">Alternatively you can press Ctrl+F5 or select **Start Without Debugging** from the **Debug** menu to run without debugging.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="39e99-124">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="39e99-124">The samples may already be installed on your computer.</span></span> <span data-ttu-id="39e99-125">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="39e99-125">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="39e99-126">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="39e99-126">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="39e99-127">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="39e99-127">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Expressions`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Expressions`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="39e99-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="39e99-128">See Also</span></span>

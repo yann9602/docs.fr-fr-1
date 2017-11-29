@@ -1,37 +1,32 @@
 ---
-title: "Comment : chaîner des appels de méthode d’axe (LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Comment : chaîner des appels de méthode d’axe (LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: e4e22942-39bd-460f-b3c0-9f09e53d3aa9
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7c0e9d440ab50b7f275296731e5210578bcedcaa
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 39579d08d339ed8964520936d28ee289de5fb15d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>Comment : chaîner des appels de méthode d’axe (LINQ to XML) (Visual Basic)
-Un schéma courant que vous utiliserez dans votre code consiste à appeler une méthode d’axe, puis à appeler l’un des axes de méthode d’extension.  
+# <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a><span data-ttu-id="c51f8-102">Comment : chaîner des appels de méthode d’axe (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c51f8-102">How to: Chain Axis Method Calls (LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="c51f8-103">Un schéma courant que vous utiliserez dans votre code consiste à appeler une méthode d’axe, puis à appeler l’un des axes de méthode d’extension.</span><span class="sxs-lookup"><span data-stu-id="c51f8-103">A common pattern that you will use in your code is to call an axis method, then call one of the extension method axes.</span></span>  
   
- Il existe deux axes avec le nom de `Elements` qui retournent une collection d’éléments : le <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>(méthode) et le <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>méthode.</xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> </xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName> Vous pouvez combiner ces deux axes pour rechercher tous les éléments d’un nom spécifié à une profondeur donnée dans l’arborescence.  
+ <span data-ttu-id="c51f8-104">Il existe deux axes avec le nom `Elements` qui retournent une collection d'éléments : la méthode <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> et la méthode <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c51f8-104">There are two axes with the name of `Elements` that return a collection of elements: the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method and the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="c51f8-105">Vous pouvez combiner ces deux axes pour rechercher tous les éléments d’un nom spécifié à une profondeur donnée dans l’arborescence.</span><span class="sxs-lookup"><span data-stu-id="c51f8-105">You can combine these two axes to find all elements of a specified name at a given depth in the tree.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple utilise <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>et <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>pour rechercher tous les `Name` tous les éléments `Address` tous les éléments `PurchaseOrder` éléments.</xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> </xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>  
+## <a name="example"></a><span data-ttu-id="c51f8-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="c51f8-106">Example</span></span>  
+ <span data-ttu-id="c51f8-107">Cet exemple utilise <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> et <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> pour rechercher tous les éléments `Name` dans tous les éléments `Address` de tous les éléments `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="c51f8-107">This example uses <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> and <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> to find all `Name` elements in all `Address` elements in all `PurchaseOrder` elements.</span></span>  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ <span data-ttu-id="c51f8-108">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="c51f8-108">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim purchaseOrders As XElement = XElement.Load("PurchaseOrders.xml")  
@@ -43,7 +38,7 @@ For Each e As XElement In names
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="c51f8-109">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="c51f8-109">This example produces the following output:</span></span>  
   
 ```xml  
 <Name>Ellen Adams</Name>  
@@ -54,10 +49,10 @@ Next
 <Name>Jessica Arnold</Name>  
 ```  
   
- Cela fonctionne car une des implémentations de la `Elements` axe est comme une méthode d’extension sur <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XContainer>.</xref:System.Xml.Linq.XContainer> </xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>dérive de <xref:System.Xml.Linq.XContainer>, vous pouvez appeler la <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>méthode sur les résultats d’un appel à la <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>méthode.</xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName> </xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> </xref:System.Xml.Linq.XContainer></xref:System.Xml.Linq.XElement>  
+ <span data-ttu-id="c51f8-110">Cela fonctionne car l'une des implémentations de l'axe `Elements` est en tant que méthode d'extension sur l'objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XContainer>.</span><span class="sxs-lookup"><span data-stu-id="c51f8-110">This works because one of the implementations of the `Elements` axis is as an extension method on <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XContainer>.</span></span> <span data-ttu-id="c51f8-111"><xref:System.Xml.Linq.XElement> dérivant de <xref:System.Xml.Linq.XContainer>, vous pouvez appeler la méthode <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> sur les résultats d'un appel à la méthode <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c51f8-111"><xref:System.Xml.Linq.XElement> derives from <xref:System.Xml.Linq.XContainer>, so you can call the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method on the results of a call to the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method.</span></span>  
   
-## <a name="example"></a>Exemple  
- Quelquefois, vous souhaitez récupérer tous les éléments à une profondeur d'élément spécifique lorsqu'il peut y avoir ou ne pas y avoir d'ancêtres intermédiaires. Par exemple, dans le document suivant, vous pourriez souhaiter récupérer tous les éléments `ConfigParameter` qui sont des enfants de l'élément `Customer`, mais pas le `ConfigParameter` qui est un enfant de l'élément `Root`.  
+## <a name="example"></a><span data-ttu-id="c51f8-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="c51f8-112">Example</span></span>  
+ <span data-ttu-id="c51f8-113">Quelquefois, vous souhaitez récupérer tous les éléments à une profondeur d'élément spécifique lorsqu'il peut y avoir ou ne pas y avoir d'ancêtres intermédiaires.</span><span class="sxs-lookup"><span data-stu-id="c51f8-113">Sometimes you want to retrieve all elements at a particular element depth when there might or might not be intervening ancestors.</span></span> <span data-ttu-id="c51f8-114">Par exemple, dans le document suivant, vous pourriez souhaiter récupérer tous les éléments `ConfigParameter` qui sont des enfants de l'élément `Customer`, mais pas le `ConfigParameter` qui est un enfant de l'élément `Root`.</span><span class="sxs-lookup"><span data-stu-id="c51f8-114">For example, in the following document, you might want to retrieve all the `ConfigParameter` elements that are children of the `Customer` element, but not the `ConfigParameter` that is a child of the `Root` element.</span></span>  
   
 ```xml  
 <Root>  
@@ -81,7 +76,7 @@ Next
 </Root>  
 ```  
   
- Pour ce faire, vous pouvez utiliser la <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>axe, comme suit :</xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>  
+ <span data-ttu-id="c51f8-115">Pour cela, vous pouvez utiliser l'axe <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> comme suit :</span><span class="sxs-lookup"><span data-stu-id="c51f8-115">To do this, you can use the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> axis, as follows:</span></span>  
   
 ```vb  
 Dim root As XElement = XElement.Load("Irregular.xml")  
@@ -92,17 +87,17 @@ For Each cp As XElement In configParameters
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="c51f8-116">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="c51f8-116">This example produces the following output:</span></span>  
   
 ```xml  
 <ConfigParameter>FirstConfigParameter</ConfigParameter>  
 <ConfigParameter>SecondConfigParameter</ConfigParameter>  
 ```  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant illustre la même technique pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+## <a name="example"></a><span data-ttu-id="c51f8-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="c51f8-117">Example</span></span>  
+ <span data-ttu-id="c51f8-118">L'exemple suivant illustre la même technique pour du code XML qui est dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="c51f8-118">The following example shows the same technique for XML that is in a namespace.</span></span> <span data-ttu-id="c51f8-119">Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="c51f8-119">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur dans un Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
+ <span data-ttu-id="c51f8-120">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur dans un espace de noms](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="c51f8-120">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).</span></span>  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -120,7 +115,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="c51f8-121">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="c51f8-121">This example produces the following output:</span></span>  
   
 ```xml  
 <aw:Name xmlns:aw="http://www.adventure-works.com">Ellen Adams</aw:Name>  
@@ -131,5 +126,5 @@ End Module
 <aw:Name xmlns:aw="http://www.adventure-works.com">Jessica Arnold</aw:Name>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Axes LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+## <a name="see-also"></a><span data-ttu-id="c51f8-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c51f8-122">See Also</span></span>  
+ [<span data-ttu-id="c51f8-123">Axes LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c51f8-123">LINQ to XML Axes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

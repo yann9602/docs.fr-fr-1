@@ -1,36 +1,35 @@
 ---
-title: "Tracing and Message Logging | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "suivi et journalisation"
+title: Tracing and Message Logging
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-caps.latest.revision: 53
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 53
+caps.latest.revision: "53"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a73c6e544b7aae003a525c29743d68db18a54515
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Tracing and Message Logging
-Cet exemple illustre comment activer l'enregistrement des suivis et des messages.Les journaux de suivis et de messages ainsi obtenus peuvent être affichés à l'aide de l'outil [Service Trace Viewer Tool \(SvcTraceViewer.exe\)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).Cet exemple est basé sur [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+# <a name="tracing-and-message-logging"></a><span data-ttu-id="4f253-102">Tracing and Message Logging</span><span class="sxs-lookup"><span data-stu-id="4f253-102">Tracing and Message Logging</span></span>
+<span data-ttu-id="4f253-103">Cet exemple illustre comment activer l'enregistrement des suivis et des messages.</span><span class="sxs-lookup"><span data-stu-id="4f253-103">This sample demonstrates how to enable tracing and message logging.</span></span> <span data-ttu-id="4f253-104">Les suivis résultants et les journaux de messages sont affichés à l’aide de la [outil Service Trace Viewer (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).</span><span class="sxs-lookup"><span data-stu-id="4f253-104">The resulting traces and message logs are viewed using the [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).</span></span> <span data-ttu-id="4f253-105">Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span><span class="sxs-lookup"><span data-stu-id="4f253-105">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent en fin de rubrique.  
+>  <span data-ttu-id="4f253-106">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="4f253-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
-## Suivi  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise le mécanisme de suivi défini dans l'espace de noms <xref:System.Diagnostics>.Dans ce modèle de suivi, les données de suivi sont générées par les sources de suivi implémentées par les applications.Chacune de ces sources est identifiée à l'aide d'un nom.Les consommateurs de suivis créent des écouteurs pour les sources de suivi à partir desquelles ils souhaitent récupérer des informations.Pour recevoir des données de suivi d'une source, vous devez créer un écouteur pour cette source.Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], l'une des solutions pour ce faire consiste à ajouter le code suivant au fichier de configuration du service ou du client en définissant la source de suivi du modèle de service `switchValue` :  
+## <a name="tracing"></a><span data-ttu-id="4f253-107">Traçage</span><span class="sxs-lookup"><span data-stu-id="4f253-107">Tracing</span></span>  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="4f253-108"> utilise le mécanisme de suivi défini dans l'espace de noms <xref:System.Diagnostics>.</span><span class="sxs-lookup"><span data-stu-id="4f253-108"> uses the tracing mechanism defined in the <xref:System.Diagnostics> namespace.</span></span> <span data-ttu-id="4f253-109">Dans ce modèle de suivi, les données de suivi sont générées par les sources de suivi implémentées par les applications.</span><span class="sxs-lookup"><span data-stu-id="4f253-109">In this tracing model, trace data is produced by trace sources that applications implement.</span></span> <span data-ttu-id="4f253-110">Chacune de ces sources est identifiée à l'aide d'un nom.</span><span class="sxs-lookup"><span data-stu-id="4f253-110">Each source is identified by a name.</span></span> <span data-ttu-id="4f253-111">Les consommateurs de suivis créent des écouteurs pour les sources de suivi à partir desquelles ils souhaitent récupérer des informations.</span><span class="sxs-lookup"><span data-stu-id="4f253-111">Trace consumers create trace listeners for the trace sources for which they want to retrieve information.</span></span> <span data-ttu-id="4f253-112">Pour recevoir des données de suivi d'une source, vous devez créer un écouteur pour cette source.</span><span class="sxs-lookup"><span data-stu-id="4f253-112">To receive trace data, you must create a listener for the trace source.</span></span> <span data-ttu-id="4f253-113">Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], l'une des solutions pour ce faire consiste à ajouter le code suivant au fichier de configuration du service ou du client en définissant la source de suivi du modèle de service `switchValue` :</span><span class="sxs-lookup"><span data-stu-id="4f253-113">In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], this can be done by adding the following code to either the service’s or client’s configuration file by setting the Service Model trace source `switchValue`:</span></span>  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
       <source name="System.ServiceModel" switchValue="Information,ActivityTracing"  
@@ -53,27 +52,27 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
 </system.diagnostics>  
 ```  
   
- Pour plus d'informations sur les sources de suivi, consultez la section Source de suivi dans la rubrique [Configuration du suivi](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
+ <span data-ttu-id="4f253-114">Pour plus d’informations sur les sources de trace, consultez la section de la Source de Trace dans le [configuration du suivi](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md) rubrique.</span><span class="sxs-lookup"><span data-stu-id="4f253-114">For more information about trace sources, see the Trace Source section in the [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md) topic.</span></span>  
   
-## Suivi et propagation d'activité  
- L'activation de `ActivityTracing` et l'affectation de la valeur `true` à `propagateActivity`  dans les sources de suivi `system.ServiceModel` du client et du service permettent de mettre en relation les suivis des unités logiques de traitement \(activités\), les suivis des activités propres à chaque point de terminaison \(via le transfert des activités\) et les suivis des activités impliquant plusieurs points de terminaison \(via la propagation des ID d'activité\).  
+## <a name="activity-tracing-and-propagation"></a><span data-ttu-id="4f253-115">Suivi et propagation d'activité</span><span class="sxs-lookup"><span data-stu-id="4f253-115">Activity Tracing and Propagation</span></span>  
+ <span data-ttu-id="4f253-116">Ayant `ActivityTracing` activé et `propagateActivity` la valeur `true` dans les `system.ServiceModel` des sources de trace pour le client et le service fournissent une corrélation de suivis dans des unités logiques de traitement (activités), entre les activités au sein des points de terminaison ( à travers des transferts d’activité) et entre les activités couvrant plusieurs points de terminaison (via la propagation d’ID d’activité).</span><span class="sxs-lookup"><span data-stu-id="4f253-116">Having `ActivityTracing` enabled and `propagateActivity` set to `true` in the `system.ServiceModel` trace sources for both the client and service provide correlation of traces within logical units of processing (activities), across activities within endpoints (through activity transfers), and across activities spanning multiple endpoints (through activity ID propagation).</span></span>  
   
- Ces trois mécanismes \(activités, transfert et propagation\) peuvent vous permettre de localiser plus facilement la cause première d'une erreur, notamment en utilisant l'outil Service Trace Viewer.Pour plus d'informations, consultez [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
+ <span data-ttu-id="4f253-117">Ces trois mécanismes (activités, transfert et propagation) peuvent vous permettre de localiser plus facilement la cause racine d’une erreur, notamment en utilisant l’outil Service Trace Viewer.</span><span class="sxs-lookup"><span data-stu-id="4f253-117">These three mechanisms (activities, transfers, and propagation) can help you locate the root cause of an error more quickly using the Service Trace Viewer tool.</span></span> <span data-ttu-id="4f253-118">Pour plus d’informations, consultez [à l’aide de Service Trace Viewer pour afficher les suivis corrélés et dépannage](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).</span><span class="sxs-lookup"><span data-stu-id="4f253-118">For more information, see [Using Service Trace Viewer for Viewing Correlated Traces and Troubleshooting](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).</span></span>  
   
- Il est possible d'étendre le suivi fourni par le ServiceModel en créant des suivis d'activité définis par l'utilisateur.Les suivis d'activité définis par l'utilisateur permettent :  
+ <span data-ttu-id="4f253-119">Il est possible d'étendre le suivi fourni par le ServiceModel en créant des suivis d'activité définis par l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="4f253-119">It is possible to extend the tracing that is provided by the ServiceModel by creating user-defined activity traces.</span></span> <span data-ttu-id="4f253-120">Les suivis d'activité définis par l'utilisateur permettent :</span><span class="sxs-lookup"><span data-stu-id="4f253-120">User-defined activity tracing allows the user to create trace activities to:</span></span>  
   
--   De regrouper les suivis dans des unités logiques de travail.  
+-   <span data-ttu-id="4f253-121">De regrouper les suivis dans des unités logiques de travail.</span><span class="sxs-lookup"><span data-stu-id="4f253-121">Group traces into logical units of work.</span></span>  
   
--   De mettre en relation les activités à l'aide du transfert et de la propagation.  
+-   <span data-ttu-id="4f253-122">De mettre en relation les activités à l'aide du transfert et de la propagation.</span><span class="sxs-lookup"><span data-stu-id="4f253-122">Correlate activities through transfers and propagation.</span></span>  
   
--   D'atténuer les pertes en termes de performances du suivi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] \(par exemple, de diminuer l'espace disque occupé par le stockage des journaux\).  
+-   <span data-ttu-id="4f253-123">D'atténuer les pertes en termes de performances du suivi [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (par exemple, de diminuer l'espace disque occupé par le stockage des journaux).</span><span class="sxs-lookup"><span data-stu-id="4f253-123">Lessen the performance cost of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tracing (for example, the disk space cost of a log file).</span></span>  
   
- Pour plus d'informations sur les suivis d'activité définis par l'utilisateur, consultez l'exemple [Extending Tracing](../../../../docs/framework/wcf/samples/extending-tracing.md).  
+ <span data-ttu-id="4f253-124">Pour plus d’informations sur la trace de l’activité défini par l’utilisateur, consultez la [extension suivi](../../../../docs/framework/wcf/samples/extending-tracing.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="4f253-124">For more information about user-defined activity trace, please see the [Extending Tracing](../../../../docs/framework/wcf/samples/extending-tracing.md) sample.</span></span>  
   
-## Enregistrement des messages  
- L'enregistrement des messages peut être activé à la fois sur le client et le service de toute application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Pour activer l'enregistrement des messages, vous devez ajouter le code suivant au client ou au service :  
+## <a name="message-logging"></a><span data-ttu-id="4f253-125">Journalisation des messages</span><span class="sxs-lookup"><span data-stu-id="4f253-125">Message Logging</span></span>  
+ <span data-ttu-id="4f253-126">L'enregistrement des messages peut être activé à la fois sur le client et le service de toute application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4f253-126">Message logging can be enabled both on the client and service of any [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application.</span></span> <span data-ttu-id="4f253-127">Pour activer l'enregistrement des messages, vous devez ajouter le code suivant au client ou au service :</span><span class="sxs-lookup"><span data-stu-id="4f253-127">To enable message logging, you must add the following code to either the client or service:</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <diagnostics>  
@@ -89,11 +88,11 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
 </configuration>  
 ```  
   
- Lorsqu'un message est enregistré, le type de suivi généré pour ce message n'est pas le même si ce message est suivi au niveau du client ou du serveur.Par exemple, le suivi du message « Add » est assuré dans la catégorie « TransportWrite », au niveau du client alors que son suivi est assuré dans la catégorie « TransportRead », au niveau du service.  
+ <span data-ttu-id="4f253-128">Lorsqu'un message est enregistré, le type de suivi généré pour ce message n'est pas le même si ce message est suivi au niveau du client ou du serveur.</span><span class="sxs-lookup"><span data-stu-id="4f253-128">When a message is recorded, the trace type depends on whether it is being traced at the client or the server.</span></span> <span data-ttu-id="4f253-129">Par exemple, le suivi du message « Add » est assuré dans la catégorie « TransportWrite », au niveau du client alors que son suivi est assuré dans la catégorie « TransportRead », au niveau du service.</span><span class="sxs-lookup"><span data-stu-id="4f253-129">For example, an "Add" message that is sent to a client is traced under the "TransportWrite" category at the client, whereas the same message is traced under the "TransportRead" category at the service.</span></span>  
   
- Configurez l'écouteur de suivi en ajoutant le code suivant à la section <xref:System.Diagnostics> du fichier App.config du client ou du fichier Web.config du service :  
+ <span data-ttu-id="4f253-130">Configurez l'écouteur de suivi en ajoutant le code suivant à la section <xref:System.Diagnostics> du fichier App.config du client ou du fichier Web.config du service :</span><span class="sxs-lookup"><span data-stu-id="4f253-130">Configure the trace listener by adding the following code to the <xref:System.Diagnostics> section of the client's App.config file or the service's Web.config file:</span></span>  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
       <source name="System.ServiceModel" switchValue="Information,ActivityTracing"  
@@ -116,32 +115,32 @@ Cet exemple illustre comment activer l'enregistrement des suivis et des messages
   </system.diagnostics>  
 ```  
   
- Les messages sont enregistrés au format XML dans le fichier de configuration stocké dans le répertoire cible spécifié.  
+ <span data-ttu-id="4f253-131">Les messages sont enregistrés au format XML dans le fichier de configuration stocké dans le répertoire cible spécifié.</span><span class="sxs-lookup"><span data-stu-id="4f253-131">Messages are logged in XML format in the target directory specified in the configuration file.</span></span>  
   
 > [!NOTE]
->  Les fichiers de suivi ne peuvent pas être créés si un répertoire de journal n'est pas créé auparavant.Assurez\-vous que le répertoire C:\\logs\\ existe ou définissez un autre répertoire d'enregistrement dans la configuration de l'écouteur.Consultez les instructions initiales de configuration figurant en fin de rubrique pour plus d'informations.  
+>  <span data-ttu-id="4f253-132">Les fichiers de suivi ne peuvent pas être créés si un répertoire de journal n'est pas créé auparavant.</span><span class="sxs-lookup"><span data-stu-id="4f253-132">Trace files are not created without initially creating the log directory.</span></span> <span data-ttu-id="4f253-133">Assurez-vous que le répertoire C:\logs\ existe ou définissez un autre répertoire d'enregistrement dans la configuration de l'écouteur.</span><span class="sxs-lookup"><span data-stu-id="4f253-133">Make sure that the directory C:\logs\ exists, or specify an alternate logging directory in the listener configuration.</span></span> <span data-ttu-id="4f253-134">Consultez les instructions initiales de configuration figurant en fin de rubrique pour plus d'informations.</span><span class="sxs-lookup"><span data-stu-id="4f253-134">See the initial setup instructions at the end of this document for more information.</span></span>  
   
- Pour plus d'informations sur l'enregistrement des messages, consultez la rubrique [Configuration de la journalisation des messages](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md).  
+ <span data-ttu-id="4f253-135">Pour plus d’informations sur la journalisation des messages, consultez le [configuration de la journalisation du Message](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) rubrique.</span><span class="sxs-lookup"><span data-stu-id="4f253-135">For more information about message logging, see the [Configuring Message Logging](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) topic.</span></span>  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="4f253-136">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="4f253-136">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure figurant à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="4f253-137">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="4f253-137">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Avant d'exécuter l'exemple Tracing and Message Logging, créez le répertoire C:\\logs\\ dans lequel le service stockera les fichiers .svclog.Le nom de ce répertoire est défini dans le fichier de configuration sous la forme d'un chemin d'accès indiquant où les suivis et les messages doivent être enregistrés. Ce chemin peut être modifié.Accordez à l'utilisateur des droits d'accès en écriture de service réseau au répertoire des journaux.  
+2.  <span data-ttu-id="4f253-138">Avant d'exécuter l'exemple Tracing and Message Logging, créez le répertoire C:\logs\ dans lequel le service stockera les fichiers .svclog.</span><span class="sxs-lookup"><span data-stu-id="4f253-138">Before running the Tracing and Message Logging sample, create the directory C:\logs\ for the service to write the .svclog files to.</span></span> <span data-ttu-id="4f253-139">Le nom de ce répertoire est défini dans le fichier de configuration sous la forme d'un chemin d'accès indiquant où les suivis et les messages doivent être enregistrés. Ce chemin peut être modifié.</span><span class="sxs-lookup"><span data-stu-id="4f253-139">The name of this directory is defined in the configuration file as the path for the traces and messages to be logged and can be changed.</span></span> <span data-ttu-id="4f253-140">Accordez à l'utilisateur des droits d'accès en écriture de service réseau au répertoire des journaux.</span><span class="sxs-lookup"><span data-stu-id="4f253-140">Give the user Network Service write access to the logs directory.</span></span>  
   
-3.  Pour générer l'édition C\#, C\+\+ ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans la rubrique [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  <span data-ttu-id="4f253-141">Pour générer l’édition c#, C++ ou Visual Basic .NET de la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="4f253-141">To build the C#, C++, or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-4.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  <span data-ttu-id="4f253-142">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="4f253-142">To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="4f253-143">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="4f253-143">The samples may already be installed on your computer.</span></span> <span data-ttu-id="4f253-144">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="4f253-144">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="4f253-145">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="4f253-145">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="4f253-146">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="4f253-146">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
   
-## Voir aussi  
- [Suivi](../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Exemples d'analyse AppFabric](http://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a><span data-ttu-id="4f253-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4f253-147">See Also</span></span>  
+ [<span data-ttu-id="4f253-148">Le suivi</span><span class="sxs-lookup"><span data-stu-id="4f253-148">Tracing</span></span>](../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="4f253-149">Exemples d’analyse AppFabric</span><span class="sxs-lookup"><span data-stu-id="4f253-149">AppFabric Monitoring Samples</span></span>](http://go.microsoft.com/fwlink/?LinkId=193959)

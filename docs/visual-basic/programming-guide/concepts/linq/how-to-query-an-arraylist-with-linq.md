@@ -1,46 +1,37 @@
 ---
-title: "Comment : interroger un ArrayList avec LINQ (Visual Basic) | Documents Microsoft"
+title: "Comment : interroger un ArrayList avec LINQ (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 176358a9-d765-4b57-9557-7feb4428138d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f48b06c23b1e28fccb953638954a8d9afefe574e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 6740d8a7c6d4a31ccd3730249695c24c6417785d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>Comment : interroger un ArrayList avec LINQ (Visual Basic)
-Lorsque vous utilisez LINQ pour requête non générique <xref:System.Collections.IEnumerable>collections telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour répercuter le type spécifique des objets dans la collection.</xref:System.Collections.ArrayList> </xref:System.Collections.IEnumerable> Par exemple, si vous avez un <xref:System.Collections.ArrayList>de `Student` objets, votre [à partir de la Clause](../../../../visual-basic/language-reference/queries/from-clause.md) doit ressembler à ceci :</xref:System.Collections.ArrayList>  
+# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a><span data-ttu-id="f90e8-102">Comment : interroger un ArrayList avec LINQ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f90e8-102">How to: Query an ArrayList with LINQ (Visual Basic)</span></span>
+<span data-ttu-id="f90e8-103">Quand vous utilisez LINQ pour interroger des collections <xref:System.Collections.IEnumerable> non génériques telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour qu’il reflète le type spécifique des objets de la collection.</span><span class="sxs-lookup"><span data-stu-id="f90e8-103">When using LINQ to query non-generic <xref:System.Collections.IEnumerable> collections such as <xref:System.Collections.ArrayList>, you must explicitly declare the type of the range variable to reflect the specific type of the objects in the collection.</span></span> <span data-ttu-id="f90e8-104">Par exemple, si vous avez un <xref:System.Collections.ArrayList> de `Student` objets, votre [à partir de la Clause](../../../../visual-basic/language-reference/queries/from-clause.md) doit ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="f90e8-104">For example, if you have an <xref:System.Collections.ArrayList> of `Student` objects, your [From Clause](../../../../visual-basic/language-reference/queries/from-clause.md) should look like this:</span></span>  
   
 ```  
 Dim query = From student As Student In arrList   
 ...  
 ```  
   
- En spécifiant le type de la variable de portée, vous effectuez un cast de chaque élément de la <xref:System.Collections.ArrayList>à un `Student`.</xref:System.Collections.ArrayList>  
+ <span data-ttu-id="f90e8-105">En spécifiant le type de la variable de portée, vous effectuez un cast de chaque élément du `Student` en <xref:System.Collections.ArrayList>.</span><span class="sxs-lookup"><span data-stu-id="f90e8-105">By specifying the type of the range variable, you are casting each item in the <xref:System.Collections.ArrayList> to a `Student`.</span></span>  
   
- L’utilisation d’une variable de portée explicitement typée dans une expression de requête équivaut à appeler le <xref:System.Linq.Enumerable.Cast%2A>méthode.</xref:System.Linq.Enumerable.Cast%2A> <xref:System.Linq.Enumerable.Cast%2A>lève une exception si le cast spécifié ne peut pas être effectué.</xref:System.Linq.Enumerable.Cast%2A> <xref:System.Linq.Enumerable.Cast%2A>et <xref:System.Linq.Enumerable.OfType%2A>sont les deux méthodes d’opérateur de requête Standard qui opèrent sur non générique <xref:System.Collections.IEnumerable>types.</xref:System.Collections.IEnumerable> </xref:System.Linq.Enumerable.OfType%2A></xref:System.Linq.Enumerable.Cast%2A> Dans Visual Basic, vous devez appeler explicitement la <xref:System.Linq.Enumerable.Cast%2A>méthode sur la source de données pour garantir un type de variable de plage spécifique.</xref:System.Linq.Enumerable.Cast%2A> Pour plus d’informations, consultez[relations des types dans des opérations de requête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
+ <span data-ttu-id="f90e8-106">L’utilisation d’une variable de portée explicitement typée dans une expression de requête équivaut à appeler la méthode <xref:System.Linq.Enumerable.Cast%2A>.</span><span class="sxs-lookup"><span data-stu-id="f90e8-106">The use of an explicitly typed range variable in a query expression is equivalent to calling the <xref:System.Linq.Enumerable.Cast%2A> method.</span></span> <span data-ttu-id="f90e8-107"><xref:System.Linq.Enumerable.Cast%2A> lève une exception si le cast spécifié ne peut pas être effectué.</span><span class="sxs-lookup"><span data-stu-id="f90e8-107"><xref:System.Linq.Enumerable.Cast%2A> throws an exception if the specified cast cannot be performed.</span></span> <span data-ttu-id="f90e8-108"><xref:System.Linq.Enumerable.Cast%2A> et <xref:System.Linq.Enumerable.OfType%2A> sont les deux méthodes d’opérateur de requête standard qui fonctionnent sur les types <xref:System.Collections.IEnumerable> non génériques.</span><span class="sxs-lookup"><span data-stu-id="f90e8-108"><xref:System.Linq.Enumerable.Cast%2A> and <xref:System.Linq.Enumerable.OfType%2A> are the two Standard Query Operator methods that operate on non-generic <xref:System.Collections.IEnumerable> types.</span></span> <span data-ttu-id="f90e8-109">En Visual Basic, vous devez appeler explicitement la <xref:System.Linq.Enumerable.Cast%2A> méthode sur la source de données pour garantir un type de variable de portée spécifique.</span><span class="sxs-lookup"><span data-stu-id="f90e8-109">In Visual Basic, you must explicitly call the <xref:System.Linq.Enumerable.Cast%2A> method on the data source to ensure a specific range variable type.</span></span> <span data-ttu-id="f90e8-110">Pour plus d’informations, consultez[relations des types dans les opérations de requête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).</span><span class="sxs-lookup"><span data-stu-id="f90e8-110">For more information, see[Type Relationships in Query Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre une requête simple sur un <xref:System.Collections.ArrayList>.</xref:System.Collections.ArrayList> Notez que cet exemple utilise des initialiseurs d’objets lorsque le code appelle la <xref:System.Collections.ArrayList.Add%2A>(méthode), mais cela n’est pas une obligation.</xref:System.Collections.ArrayList.Add%2A>  
+## <a name="example"></a><span data-ttu-id="f90e8-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="f90e8-111">Example</span></span>  
+ <span data-ttu-id="f90e8-112">L’exemple suivant montre une requête simple sur un <xref:System.Collections.ArrayList>.</span><span class="sxs-lookup"><span data-stu-id="f90e8-112">The following example shows a simple query over an <xref:System.Collections.ArrayList>.</span></span> <span data-ttu-id="f90e8-113">Notez que cet exemple utilise des initialiseurs d’objets quand le code appelle la méthode <xref:System.Collections.ArrayList.Add%2A>, mais cela n’est pas une obligation.</span><span class="sxs-lookup"><span data-stu-id="f90e8-113">Note that this example uses object initializers when the code calls the <xref:System.Collections.ArrayList.Add%2A> method, but this is not a requirement.</span></span>  
   
 ```vb  
 Imports System.Collections  
@@ -94,6 +85,5 @@ End Module
 '   Garcia: 97  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-
+## <a name="see-also"></a><span data-ttu-id="f90e8-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f90e8-114">See Also</span></span>  
+ [<span data-ttu-id="f90e8-115">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f90e8-115">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)

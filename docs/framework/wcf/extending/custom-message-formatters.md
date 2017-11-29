@@ -1,45 +1,48 @@
 ---
-title: "Formateurs de messages personnalis&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Formateurs de messages personnalisés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c07435f3-5214-4791-8961-2c2b61306d71
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 01998d0ac732f63f6771c47bfc76a8207a5531f3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Formateurs de messages personnalis&#233;s
-Le contenu d'un message est souvent au format XML, ce qui n'est pas généralement un format pratique pour une application.  Les applications manipulent des objets, obtiennent et définissent leurs propriétés.  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise le *contrat de données* pour convertir un objet <xref:System.ServiceModel.Channels.Message> en un objet facile à traiter par une application.  Ces processus sont appelés sérialisation et désérialisation.  Notez que ces mêmes termes sont utilisés pour décrire la sérialisation et la désérialisation effectuées par la couche transport en direction et à partir du format de transmission de message, qui est un processus non apparenté.  
+# <a name="custom-message-formatters"></a><span data-ttu-id="14e63-102">Formateurs de messages personnalisés</span><span class="sxs-lookup"><span data-stu-id="14e63-102">Custom Message Formatters</span></span>
+<span data-ttu-id="14e63-103">Le contenu d'un message est souvent au format XML, ce qui n'est pas généralement un format pratique pour une application.</span><span class="sxs-lookup"><span data-stu-id="14e63-103">The content in a message is often in the form of XML, which is usually not a convenient format for an application.</span></span> <span data-ttu-id="14e63-104">Les applications manipulent des objets, obtiennent et définissent leurs propriétés.</span><span class="sxs-lookup"><span data-stu-id="14e63-104">Applications manipulate objects, getting and setting their properties.</span></span> [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="14e63-105">utilise le *contrat de données* pour convertir un <xref:System.ServiceModel.Channels.Message> objet dans un objet facilement géré par une application.</span><span class="sxs-lookup"><span data-stu-id="14e63-105"> uses the *Data Contract* to convert a <xref:System.ServiceModel.Channels.Message> object into an object easily handled by an application.</span></span> <span data-ttu-id="14e63-106">Ces processus sont appelés sérialisation et désérialisation.</span><span class="sxs-lookup"><span data-stu-id="14e63-106">These processes are called serialization and deserialization.</span></span> <span data-ttu-id="14e63-107">Notez que ces mêmes termes sont utilisés pour décrire la sérialisation et la désérialisation effectuées par la couche transport en direction et à partir du format de transmission de message, qui est un processus non apparenté.</span><span class="sxs-lookup"><span data-stu-id="14e63-107">Note that these same terms are used to describe the serialization and deserialization done by the transport layer to and from the message wire format, which is an unrelated process.</span></span>  
   
- Vous pouvez utiliser un formateur de messages personnalisés si vous devez implémenter une conversion spécialisée entre des messages et des objets que vous ne pouvez pas accomplir au moyen d'un contrat de données.  Pour ce faire, modifiez ou étendez le comportement d'exécution d'une opération de contrat spécifique sur un client ou un service.  
+ <span data-ttu-id="14e63-108">Vous pouvez utiliser un formateur de messages personnalisés si vous devez implémenter une conversion spécialisée entre des messages et des objets que vous ne pouvez pas accomplir au moyen d'un contrat de données.</span><span class="sxs-lookup"><span data-stu-id="14e63-108">You can use a custom message formatter if you need to implement a specialized conversion between messages and objects that you cannot accomplish by means of a Data Contract.</span></span> <span data-ttu-id="14e63-109">Pour ce faire, modifiez ou étendez le comportement d'exécution d'une opération de contrat spécifique sur un client ou un service.</span><span class="sxs-lookup"><span data-stu-id="14e63-109">Do this by modifying or extending the execution behavior of a specific contract operation on a client or a service.</span></span>  
   
-## Formateurs de messages personnalisés sur le client  
- L'interface <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> définit les méthodes utilisées pour contrôler la conversion de messages en objets et d'objets en messages pour les applications clientes.  
+## <a name="custom-message-formatters-on-the-client"></a><span data-ttu-id="14e63-110">Formateurs de messages personnalisés sur le client</span><span class="sxs-lookup"><span data-stu-id="14e63-110">Custom Message Formatters on the Client</span></span>  
+ <span data-ttu-id="14e63-111">L'interface <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> définit les méthodes utilisées pour contrôler la conversion de messages en objets et d'objets en messages pour les applications clientes.</span><span class="sxs-lookup"><span data-stu-id="14e63-111">The <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> interface defines methods that are used to control the conversion of messages into objects and objects into messages for client applications.</span></span>  
   
- Vous devez implémenter cette interface.  Commencez par substituer la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.DeserializeReply%2A> pour désérialiser un message.  Cette méthode est appelée après la réception d'un message entrant, mais avant sa distribution à l'opération cliente.  
+ <span data-ttu-id="14e63-112">Vous devez implémenter cette interface.</span><span class="sxs-lookup"><span data-stu-id="14e63-112">You must implement this interface.</span></span> <span data-ttu-id="14e63-113">Commencez par substituer la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.DeserializeReply%2A> pour désérialiser un message.</span><span class="sxs-lookup"><span data-stu-id="14e63-113">First override the <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.DeserializeReply%2A> method to deserialize a message.</span></span> <span data-ttu-id="14e63-114">Cette méthode est appelée après la réception d'un message entrant, mais avant sa distribution à l'opération cliente.</span><span class="sxs-lookup"><span data-stu-id="14e63-114">This method is called after an incoming message is received, but before it is dispatched to the client operation.</span></span>  
   
- Puis, substituez la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.SerializeRequest%2A> pour sérialiser un objet.  Cette méthode est appelée avant l'envoi d'un message sortant.  
+ <span data-ttu-id="14e63-115">Puis, substituez la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.SerializeRequest%2A> pour sérialiser un objet.</span><span class="sxs-lookup"><span data-stu-id="14e63-115">Next, override the <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.SerializeRequest%2A> method to serialize an object.</span></span> <span data-ttu-id="14e63-116">Cette méthode est appelée avant l'envoi d'un message sortant.</span><span class="sxs-lookup"><span data-stu-id="14e63-116">This method is called prior to sending an outgoing message.</span></span>  
   
- Pour insérer le formateur personnalisé dans l'application de service, assignez l'objet <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> à la propriété <xref:System.ServiceModel.Dispatcher.ClientOperation.Formatter%2A> à l'aide d'un comportement d'opération.  Pour plus d'informations sur les comportements, consultez [Configuration et extension de l'exécution à l'aide de comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
+ <span data-ttu-id="14e63-117">Pour insérer le formateur personnalisé dans l'application de service, assignez l'objet <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> à la propriété <xref:System.ServiceModel.Dispatcher.ClientOperation.Formatter%2A> à l'aide d'un comportement d'opération.</span><span class="sxs-lookup"><span data-stu-id="14e63-117">To insert the custom formatter into the service application, assign the <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> object to the <xref:System.ServiceModel.Dispatcher.ClientOperation.Formatter%2A> property using an operation behavior.</span></span> <span data-ttu-id="14e63-118">Pour plus d’informations sur les comportements, consultez [configuration et l’extension de l’exécution des comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).</span><span class="sxs-lookup"><span data-stu-id="14e63-118">For information about behaviors, see [Configuring and Extending the Runtime with Behaviors](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).</span></span>  
   
-## Formateurs de messages personnalisés sur le service  
- L'interface <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> définit des méthodes qui convertissent un objet <xref:System.ServiceModel.Channels.Message> en paramètres pour une opération et de paramètres en objet <xref:System.ServiceModel.Channels.Message> dans une application de service.  
+## <a name="custom-message-formatters-on-the-service"></a><span data-ttu-id="14e63-119">Formateurs de messages personnalisés sur le service</span><span class="sxs-lookup"><span data-stu-id="14e63-119">Custom Message Formatters on the Service</span></span>  
+ <span data-ttu-id="14e63-120">L'interface <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> définit des méthodes qui convertissent un objet <xref:System.ServiceModel.Channels.Message> en paramètres pour une opération et de paramètres en objet <xref:System.ServiceModel.Channels.Message> dans une application de service.</span><span class="sxs-lookup"><span data-stu-id="14e63-120">The <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> interface defines methods that convert a <xref:System.ServiceModel.Channels.Message> object into parameters for an operation and from parameters into a <xref:System.ServiceModel.Channels.Message> object in a service application.</span></span>  
   
- Vous devez implémenter cette interface.  Commencez par substituer la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.DeserializeReply%2A> pour désérialiser un message.  Cette méthode est appelée après la réception d'un message entrant, mais avant sa distribution à l'opération cliente.  
+ <span data-ttu-id="14e63-121">Vous devez implémenter cette interface.</span><span class="sxs-lookup"><span data-stu-id="14e63-121">You must implement this interface.</span></span> <span data-ttu-id="14e63-122">Commencez par substituer la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.DeserializeReply%2A> pour désérialiser un message.</span><span class="sxs-lookup"><span data-stu-id="14e63-122">First override the <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.DeserializeReply%2A> method to deserialize a message.</span></span> <span data-ttu-id="14e63-123">Cette méthode est appelée après la réception d'un message entrant, mais avant sa distribution à l'opération cliente.</span><span class="sxs-lookup"><span data-stu-id="14e63-123">This method is called after an incoming message is received, but before it is dispatched to the client operation.</span></span>  
   
- Puis, substituez la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.SerializeRequest%2A> pour sérialiser un objet.  Cette méthode est appelée avant l'envoi d'un message sortant.  
+ <span data-ttu-id="14e63-124">Puis, substituez la méthode <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.SerializeRequest%2A> pour sérialiser un objet.</span><span class="sxs-lookup"><span data-stu-id="14e63-124">Next, override the <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter.SerializeRequest%2A> method to serialize an object.</span></span> <span data-ttu-id="14e63-125">Cette méthode est appelée avant l'envoi d'un message sortant.</span><span class="sxs-lookup"><span data-stu-id="14e63-125">This method is called prior to sending an outgoing message.</span></span>  
   
- Pour insérer le formateur personnalisé dans l'application de service, assignez l'objet <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> à la propriété <xref:System.ServiceModel.Dispatcher.DispatchOperation.Formatter%2A> à l'aide d'un comportement d'opération.  Pour plus d'informations sur les comportements, consultez [Configuration et extension de l'exécution à l'aide de comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
+ <span data-ttu-id="14e63-126">Pour insérer le formateur personnalisé dans l'application de service, assignez l'objet <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> à la propriété <xref:System.ServiceModel.Dispatcher.DispatchOperation.Formatter%2A> à l'aide d'un comportement d'opération.</span><span class="sxs-lookup"><span data-stu-id="14e63-126">To insert the custom formatter into the service application, assign the <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> object to the <xref:System.ServiceModel.Dispatcher.DispatchOperation.Formatter%2A> property using an operation behavior.</span></span> <span data-ttu-id="14e63-127">Pour plus d’informations sur les comportements, consultez [configuration et l’extension de l’exécution des comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).</span><span class="sxs-lookup"><span data-stu-id="14e63-127">For information about behaviors, see [Configuring and Extending the Runtime with Behaviors](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).</span></span>  
   
-## Voir aussi  
- <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter>   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter>   
- [Configuration et extension de l'exécution à l'aide de comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+## <a name="see-also"></a><span data-ttu-id="14e63-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="14e63-128">See Also</span></span>  
+ <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter>  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter>  
+ [<span data-ttu-id="14e63-129">Configuration et extension de l’exécution des comportements</span><span class="sxs-lookup"><span data-stu-id="14e63-129">Configuring and Extending the Runtime with Behaviors</span></span>](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

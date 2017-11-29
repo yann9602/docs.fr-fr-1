@@ -1,43 +1,47 @@
 ---
-title: "Imbrication de TransactionScope dans un service | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Imbrication de TransactionScope dans un service
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e7e1ba64-1384-4eba-add8-415636e2d6d0
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 475da3f9204764a2585bd7a50381db7ad72c2b1e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Imbrication de TransactionScope dans un service
-Cet exemple se compose de deux scénarios qui s'exécutent, en montrant comment gérer des instances d'activité <xref:System.Activities.Statements.TransactionScope> dans un service.En premier lieu, la transaction est initiée à l'aide de l'activité <xref:System.Activities.Statements.TransactionScope> pour créer une transaction sur le client et <xref:System.ServiceModel.Activities.TransactedReceiveScope> pour recevoir et mesurer l'étendue de la durée de vie de la transaction sur le serveur.Le premier scénario dans le service exécute une activité <xref:System.Activities.Statements.TransactionScope> secondaire pour illustrer l'imbrication des activités <xref:System.Activities.Statements.TransactionScope> dans le service.Le deuxième scénario montre comment les délais d'expiration sont respectés dans les activités <xref:System.Activities.Statements.TransactionScope> imbriquées.  
+# <a name="nesting-of-transactionscope-within-a-service"></a><span data-ttu-id="c2740-102">Imbrication de TransactionScope dans un service</span><span class="sxs-lookup"><span data-stu-id="c2740-102">Nesting of TransactionScope within a service</span></span>
+<span data-ttu-id="c2740-103">Cet exemple se compose de deux scénarios qui s'exécutent, en montrant comment gérer des instances d'activité <xref:System.Activities.Statements.TransactionScope> dans un service.</span><span class="sxs-lookup"><span data-stu-id="c2740-103">This sample consists of two scenarios that run showing how to handle <xref:System.Activities.Statements.TransactionScope> activity instances within a service.</span></span> <span data-ttu-id="c2740-104">En premier lieu, la transaction est initiée à l'aide de l'activité <xref:System.Activities.Statements.TransactionScope> pour créer une transaction sur le client et <xref:System.ServiceModel.Activities.TransactedReceiveScope> pour recevoir et mesurer l'étendue de la durée de vie de la transaction sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="c2740-104">First the transaction is initiated using the <xref:System.Activities.Statements.TransactionScope> activity to create a new transaction on the client and <xref:System.ServiceModel.Activities.TransactedReceiveScope> to receive and scope the lifetime of the transaction on the server.</span></span> <span data-ttu-id="c2740-105">Le premier scénario dans le service exécute une activité <xref:System.Activities.Statements.TransactionScope> secondaire pour illustrer l'imbrication des activités <xref:System.Activities.Statements.TransactionScope> dans le service.</span><span class="sxs-lookup"><span data-stu-id="c2740-105">The first scenario within the service runs a secondary <xref:System.Activities.Statements.TransactionScope> activity to demonstrate the nesting of the <xref:System.Activities.Statements.TransactionScope> activities within the service.</span></span> <span data-ttu-id="c2740-106">Le deuxième scénario montre comment les délais d'expiration sont respectés dans les activités <xref:System.Activities.Statements.TransactionScope> imbriquées.</span><span class="sxs-lookup"><span data-stu-id="c2740-106">The second scenario shows how time-outs are respected within the nested <xref:System.Activities.Statements.TransactionScope> activities.</span></span>  
   
-## Application cliente  
- L'application cliente exécute un workflow qui démarre une activité <xref:System.Activities.Statements.TransactionScope>, imprime l'ID de transaction distribuée, envoie un message au serveur, passe la transaction, reçoit la réponse, imprime à nouveau l'ID de transaction distribuée et se termine.Cette opération est effectuée une fois pour chaque scénario de service.  
+## <a name="client-application"></a><span data-ttu-id="c2740-107">Application cliente</span><span class="sxs-lookup"><span data-stu-id="c2740-107">Client Application</span></span>  
+ <span data-ttu-id="c2740-108">L'application cliente exécute un workflow qui démarre une activité <xref:System.Activities.Statements.TransactionScope>, imprime l'ID de transaction distribuée, envoie un message au serveur, passe la transaction, reçoit la réponse, imprime à nouveau l'ID de transaction distribuée et se termine.</span><span class="sxs-lookup"><span data-stu-id="c2740-108">The client application runs a workflow that starts a <xref:System.Activities.Statements.TransactionScope> activity, prints the distributed transaction ID, sends a message to the server, flows the transaction, receives the reply, prints the distributed transaction ID again and completes.</span></span> <span data-ttu-id="c2740-109">Cette opération est effectuée une fois pour chaque scénario de service.</span><span class="sxs-lookup"><span data-stu-id="c2740-109">It does this once for each service scenario.</span></span>  
   
-## Application serveur  
- Le projet serveur est hébergé dans <xref:System.ServiceModel.Activities.WorkflowServiceHost>, ce qui crée le point de terminaison sur lequel écouter le message du client.Le workflow est centré sur le <xref:System.ServiceModel.Activities.TransactedReceiveScope>, qui reçoit la transaction passée du client, imprime l'ID de transaction distribuée, puis exécute une deuxième activité <xref:System.Activities.Statements.TransactionScope>.Dans le premier scénario, la transaction est effectuée avec succès.Dans le deuxième scénario, le corps de l'activité <xref:System.Activities.Statements.TransactionScope> est un délai de cinq secondes et le délai d'expiration de la transaction est défini à deux secondes.Lorsque la transaction expire, elle est abandonnée.  
+## <a name="server-application"></a><span data-ttu-id="c2740-110">Application serveur</span><span class="sxs-lookup"><span data-stu-id="c2740-110">Server Application</span></span>  
+ <span data-ttu-id="c2740-111">Le projet serveur est hébergé dans <xref:System.ServiceModel.Activities.WorkflowServiceHost>, ce qui crée le point de terminaison sur lequel écouter le message du client.</span><span class="sxs-lookup"><span data-stu-id="c2740-111">The server project is hosted in <xref:System.ServiceModel.Activities.WorkflowServiceHost>, which creates the endpoint to listen for the message from the client.</span></span> <span data-ttu-id="c2740-112">Le workflow est centré sur le <xref:System.ServiceModel.Activities.TransactedReceiveScope>, qui reçoit la transaction passée du client, imprime l'ID de transaction distribuée, puis exécute une deuxième activité <xref:System.Activities.Statements.TransactionScope>.</span><span class="sxs-lookup"><span data-stu-id="c2740-112">The workflow is centered on the <xref:System.ServiceModel.Activities.TransactedReceiveScope>, which receives the flowed transaction from the client, prints the distributed transaction ID and then executes a second <xref:System.Activities.Statements.TransactionScope> activity.</span></span> <span data-ttu-id="c2740-113">Dans le premier scénario, la transaction est effectuée avec succès.</span><span class="sxs-lookup"><span data-stu-id="c2740-113">In the first scenario, the transaction is completed successfully.</span></span> <span data-ttu-id="c2740-114">Dans le deuxième scénario, le corps de l'activité <xref:System.Activities.Statements.TransactionScope> est un délai de cinq secondes et le délai d'expiration de la transaction est défini à deux secondes.</span><span class="sxs-lookup"><span data-stu-id="c2740-114">In the second scenario, the body of the <xref:System.Activities.Statements.TransactionScope> activity is a five-second delay and the time-out for the transaction is set to two seconds.</span></span> <span data-ttu-id="c2740-115">Lorsque la transaction expire, elle est abandonnée.</span><span class="sxs-lookup"><span data-stu-id="c2740-115">When the transaction times out the transaction is aborted.</span></span>  
   
-#### Pour exécuter l'exemple  
+#### <a name="to-run-the-sample"></a><span data-ttu-id="c2740-116">Pour exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="c2740-116">To run the sample</span></span>  
   
-1.  Ouvrez la solution TransactionServiceExample.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1.  <span data-ttu-id="c2740-117">Ouvrez la solution TransactionServiceExample.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c2740-117">Open the TransactionServiceExample.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B ou sélectionnez **Générer la solution** dans le menu **Générer**.  
+2.  <span data-ttu-id="c2740-118">Pour générer la solution, appuyez sur CTRL + MAJ + B ou sélectionnez **générer la Solution** à partir de la **générer** menu.</span><span class="sxs-lookup"><span data-stu-id="c2740-118">To build the solution, press CTRL+SHIFT+B or select **Build Solution** from the **Build** menu.</span></span>  
   
-3.  Une fois que la génération a réussi, cliquez avec le bouton droit sur la solution, puis sélectionnez **Définir les projets de démarrage**.Dans la boîte de dialogue, sélectionnez **Plusieurs projets de démarrage** et vérifiez que l'action pour les deux projets est **Démarrer**.  
+3.  <span data-ttu-id="c2740-119">Une fois la génération a réussi, avec le bouton droit de la solution et sélectionnez **définir les projets de démarrage**.</span><span class="sxs-lookup"><span data-stu-id="c2740-119">Once the build has succeeded, right-click the solution and select **Set Startup Projects**.</span></span> <span data-ttu-id="c2740-120">Dans la boîte de dialogue, sélectionnez **plusieurs projets de démarrage** et vérifiez que l’action pour les deux projets est **Démarrer**.</span><span class="sxs-lookup"><span data-stu-id="c2740-120">From the dialog box, select **Multiple Startup Projects** and ensure the action for both projects is **Start**.</span></span>  
   
-4.  Appuyez sur F5 ou sélectionnez **Démarrer le débogage** dans le menu **Déboguer**.Vous pouvez également appuyer sur CTRL\+F5 ou sélectionner **Exécuter sans débogage** dans le menu **Déboguer** pour effectuer une exécution sans débogage.  
+4.  <span data-ttu-id="c2740-121">Appuyez sur F5 ou sélectionnez **démarrer le débogage** à partir de la **déboguer** menu.</span><span class="sxs-lookup"><span data-stu-id="c2740-121">Press F5 or select **Start Debugging** from the **Debug** menu.</span></span> <span data-ttu-id="c2740-122">Ou bien, vous pouvez appuyer sur CTRL + F5 ou sélectionnez **démarrer sans débogage** à partir de la **déboguer** menu pour exécuter sans débogage.</span><span class="sxs-lookup"><span data-stu-id="c2740-122">Alternatively, you can press CTRL+F5 or select **Start Without Debugging** from the **Debug** menu to run without debugging.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="c2740-123">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="c2740-123">The samples may already be installed on your machine.</span></span> <span data-ttu-id="c2740-124">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="c2740-124">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="c2740-125">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="c2740-125">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="c2740-126">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="c2740-126">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Transactions\TRSCompostability`
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Transactions\TRSComposability`

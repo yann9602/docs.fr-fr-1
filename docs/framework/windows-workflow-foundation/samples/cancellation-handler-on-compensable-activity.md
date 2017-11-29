@@ -1,23 +1,27 @@
 ---
-title: "Gestionnaire d&#39;annulation sur une activit&#233; compensable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Gestionnaire d'annulation sur une activité compensable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: afd98bee-eccf-47e9-99c9-27cea84ce5ce
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b39b5d9277767160225a34be9e0c71a36e7b6d78
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Gestionnaire d&#39;annulation sur une activit&#233; compensable
-Cet exemple montre l'utilisation d'un gestionnaire d'annulation sur un <xref:System.Activities.Statements.CompensableActivity>.  
+# <a name="cancellation-handler-on-compensable-activity"></a><span data-ttu-id="511cd-102">Gestionnaire d'annulation sur une activité compensable</span><span class="sxs-lookup"><span data-stu-id="511cd-102">Cancellation Handler on Compensable Activity</span></span>
+<span data-ttu-id="511cd-103">Cet exemple montre l'utilisation d'un gestionnaire d'annulation sur un <xref:System.Activities.Statements.CompensableActivity>.</span><span class="sxs-lookup"><span data-stu-id="511cd-103">This sample demonstrates the use of a cancellation handler on a <xref:System.Activities.Statements.CompensableActivity>.</span></span>  
   
- Cet exemple contient deux scénarios qui illustrent l'utilisation de l'annulation <xref:System.Activities.Statements.CompensableActivity>. Le premier scénario contient une activité compensable racine qui contient trois activités compensables enfants.Deux activités enfants terminent l'exécution de leurs corps d'activité avec succès.Lorsque le troisième corps d'activité enfant s'exécute, il rencontre une exception gérée en annulant le traitement de la troisième activité, après quoi l'annulation de l'activité racine est déclenchée.La logique dans l'activité racine de cet exemple consiste à compenser les deux autres activités enfants terminées précédemment.  
+ <span data-ttu-id="511cd-104">Cet exemple contient deux scénarios qui illustrent l'utilisation de l'annulation <xref:System.Activities.Statements.CompensableActivity>. Le premier scénario contient une activité compensable racine qui contient trois activités compensables enfants.</span><span class="sxs-lookup"><span data-stu-id="511cd-104">This sample contains two scenarios that demonstrate the use of <xref:System.Activities.Statements.CompensableActivity> cancellation.The first scenario contains a root compensable activity that contains three child compensable activities.</span></span> <span data-ttu-id="511cd-105">Deux activités enfants terminent l'exécution de leurs corps d'activité avec succès.</span><span class="sxs-lookup"><span data-stu-id="511cd-105">Two child activities finish running their activity bodies successfully.</span></span> <span data-ttu-id="511cd-106">Lorsque le troisième corps d'activité enfant s'exécute, il rencontre une exception gérée en annulant le traitement de la troisième activité, après quoi l'annulation de l'activité racine est déclenchée.</span><span class="sxs-lookup"><span data-stu-id="511cd-106">When the third child activity body runs, it encounters an exception that is handled by canceling the third activity processing, after which the cancellation of the root activity is triggered.</span></span> <span data-ttu-id="511cd-107">La logique dans l'activité racine de cet exemple consiste à compenser les deux autres activités enfants terminées précédemment.</span><span class="sxs-lookup"><span data-stu-id="511cd-107">The logic in the root activity in this example is to compensate the other two child activities that completed earlier.</span></span>  
   
 ```  
 Try  
@@ -42,10 +46,9 @@ Try
 Catches {  
 // Can do more stuff...  
 }  
-  
 ```  
   
- Le deuxième scénario illustre l'exécution d'un <xref:System.Activities.Statements.TryCatch> en parallèle avec un <xref:System.Activities.Statements.Delay>, qui finit avant la branche <xref:System.Activities.Statements.TryCatch>.La condition d'achèvement a la valeur `true` une fois que la première branche est terminée, ce qui provoque l'annulation de l'autre branche.  
+ <span data-ttu-id="511cd-108">Le deuxième scénario illustre l'exécution d'un <xref:System.Activities.Statements.TryCatch> en parallèle avec un <xref:System.Activities.Statements.Delay>, qui finit avant la branche <xref:System.Activities.Statements.TryCatch>.</span><span class="sxs-lookup"><span data-stu-id="511cd-108">The second scenario demonstrates executing a <xref:System.Activities.Statements.TryCatch> in parallel with a <xref:System.Activities.Statements.Delay>, which finishes before the <xref:System.Activities.Statements.TryCatch> branch.</span></span> <span data-ttu-id="511cd-109">La condition d'achèvement a la valeur `true` une fois que la première branche est terminée, ce qui provoque l'annulation de l'autre branche.</span><span class="sxs-lookup"><span data-stu-id="511cd-109">The completion condition is set to `true` once the first branch finishes, causing the other branch to be canceled.</span></span>  
   
 ```  
 Parallel   
@@ -74,24 +77,23 @@ Parallel
         }  
     }  
 }  
-  
 ```  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="511cd-110">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="511cd-110">To set up, build, and run the sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez CompensationCancellation.sln.  
+1.  <span data-ttu-id="511cd-111">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez CompensationCancellation.sln.</span><span class="sxs-lookup"><span data-stu-id="511cd-111">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open CompensationCancellation.sln.</span></span>  
   
-2.  Générez l'exemple en appuyant sur Ctrl\+Maj\+B ou sélectionnez Générer la solution dans le menu Générer.  
+2.  <span data-ttu-id="511cd-112">Générez l'exemple en appuyant sur Ctrl+Maj+B ou sélectionnez Générer la solution dans le menu Générer.</span><span class="sxs-lookup"><span data-stu-id="511cd-112">Build the sample by pressing CTRL+SHIFT+B or select "Build Solution" from the Build menu..</span></span>  
   
-3.  Exécutez l'exemple en appuyant sur F5 ou sélectionnez Démarrer le débogage dans le menu Déboguer.Vous pouvez également appuyer sur Ctrl\+F5 ou sélectionner Exécuter sans débogage dans le menu Déboguer.  
+3.  <span data-ttu-id="511cd-113">Exécutez l'exemple en appuyant sur F5 ou sélectionnez Démarrer le débogage dans le menu Déboguer.</span><span class="sxs-lookup"><span data-stu-id="511cd-113">Run the sample by pressing F5 or select "Start Debugging" from the Debug menu.</span></span> <span data-ttu-id="511cd-114">Vous pouvez également appuyer sur Ctrl+F5 ou sélectionner Exécuter sans débogage dans le menu Déboguer.</span><span class="sxs-lookup"><span data-stu-id="511cd-114">Alternately you may press Ctrl+F5 or select "Start without Debugging" from the Debug menu.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="511cd-115">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="511cd-115">The samples may already be installed on your machine.</span></span> <span data-ttu-id="511cd-116">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="511cd-116">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="511cd-117">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="511cd-117">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="511cd-118">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="511cd-118">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Compensation\CompensationCancellation`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Compensation\CompensationCancellation`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="511cd-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="511cd-119">See Also</span></span>

@@ -1,48 +1,51 @@
 ---
-title: "Mappage externe | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Mappage externe
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 7a0650f444f901d37797ca81343f06cb566f8112
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mappage externe
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge le *mappage externe*, processus par lequel vous utilisez un fichier XML distinct pour spécifier le mappage entre le modèle de données de la base de données et votre modèle objet.  Les avantages de l'utilisation d'un fichier de mappage externe sont notamment les suivants :  
+# <a name="external-mapping"></a><span data-ttu-id="7bf4d-102">Mappage externe</span><span class="sxs-lookup"><span data-stu-id="7bf4d-102">External Mapping</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="7bf4d-103">prend en charge *mappage externe*, un processus par lequel vous utilisez un fichier XML distinct pour spécifier le mappage entre le modèle de données de la base de données et votre modèle objet.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-103"> supports *external mapping*, a process by which you use a separate XML file to specify mapping between the data model of the database and your object model.</span></span> <span data-ttu-id="7bf4d-104">Les avantages de l'utilisation d'un fichier de mappage externe sont notamment les suivants :</span><span class="sxs-lookup"><span data-stu-id="7bf4d-104">Advantages of using an external mapping file include the following:</span></span>  
   
--   Vous pouvez conserver votre code de mappage en dehors de votre code d'application.  Cette méthode permet de réduire l'encombrement dans votre code d'application.  
+-   <span data-ttu-id="7bf4d-105">Vous pouvez conserver votre code de mappage en dehors de votre code d'application.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-105">You can keep your mapping code out of your application code.</span></span> <span data-ttu-id="7bf4d-106">Cette méthode permet de réduire l'encombrement dans votre code d'application.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-106">This approach reduces clutter in your application code.</span></span>  
   
--   Vous pouvez traiter un fichier de mappage externe un peu comme un fichier de configuration.  Par exemple, vous pouvez modifier la manière dont votre application se comporte après l'envoi des binaires par la simple permutation du fichier binaire externe.  
+-   <span data-ttu-id="7bf4d-107">Vous pouvez traiter un fichier de mappage externe un peu comme un fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-107">You can treat an external mapping file something like a configuration file.</span></span> <span data-ttu-id="7bf4d-108">Par exemple, vous pouvez modifier la manière dont votre application se comporte après l'envoi des binaires par la simple permutation du fichier binaire externe.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-108">For example, you can update how your application behaves after shipping the binaries by just swapping out the external mapping file.</span></span>  
   
-## Spécifications  
- Le fichier de mappage doit être un fichier XML et le fichier doit valider un fichier de définition de schéma [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] \(.xsd\).  
+## <a name="requirements"></a><span data-ttu-id="7bf4d-109">Spécifications</span><span class="sxs-lookup"><span data-stu-id="7bf4d-109">Requirements</span></span>  
+ <span data-ttu-id="7bf4d-110">Le fichier de mappage doit être un fichier XML, et le fichier doit valider un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fichier schema definition (.xsd).</span><span class="sxs-lookup"><span data-stu-id="7bf4d-110">The mapping file must be an XML file, and the file must validate against a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] schema definition (.xsd) file.</span></span>  
   
- Les règles suivantes s'appliquent :  
+ <span data-ttu-id="7bf4d-111">Les règles suivantes s'appliquent :</span><span class="sxs-lookup"><span data-stu-id="7bf4d-111">The following rules apply:</span></span>  
   
--   Le fichier de mappage doit être un fichier XML.  
+-   <span data-ttu-id="7bf4d-112">Le fichier de mappage doit être un fichier XML.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-112">The mapping file must be an XML file.</span></span>  
   
--   Le fichier de mappage XML doit être valide par rapport au fichier de définition de schéma XML.  Pour plus d'informations, consultez [Procédure : valider des fichiers de mappage externes et DBML](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
+-   <span data-ttu-id="7bf4d-113">Le fichier de mappage XML doit être valide par rapport au fichier de définition de schéma XML.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-113">The XML mapping file must be valid against the XML schema definition file.</span></span> <span data-ttu-id="7bf4d-114">Pour plus d’informations, consultez [Comment : valider les DBML et les fichiers de mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span><span class="sxs-lookup"><span data-stu-id="7bf4d-114">For more information, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
--   Le mappage externe substitue le mappage basé sur les attributs.  En d'autres termes, lorsque vous utilisez une source de mappage externe pour créer un <xref:System.Data.Linq.DataContext>, le <xref:System.Data.Linq.DataContext> ignore tous les attributs de mappage que vous avez créés sur les classes.  Ce comportement est vrai si la classe est incluse dans le fichier de mappage externe.  
+-   <span data-ttu-id="7bf4d-115">Le mappage externe substitue le mappage basé sur les attributs.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-115">External mapping overrides attribute-based mapping.</span></span> <span data-ttu-id="7bf4d-116">En d'autres termes, lorsque vous utilisez une source de mappage externe pour créer un <xref:System.Data.Linq.DataContext>, le <xref:System.Data.Linq.DataContext> ignore tous les attributs de mappage que vous avez créés sur les classes.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-116">In other words, when you use an external mapping source to create a <xref:System.Data.Linq.DataContext>, the <xref:System.Data.Linq.DataContext> ignores all mapping attributes you have created on classes.</span></span> <span data-ttu-id="7bf4d-117">Ce comportement est vrai si la classe est incluse dans le fichier de mappage externe.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-117">This behavior is true whether the class is included in the external mapping file.</span></span>  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne prend pas en charge l'utilisation hybride des deux approches de mappage \(basé sur les attributs et externe\).  
+-   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="7bf4d-118"> ne prend pas en charge l'utilisation hybride des deux approches de mappage (basé sur les attributs et externe).</span><span class="sxs-lookup"><span data-stu-id="7bf4d-118"> does not support the hybrid use of the two mapping approaches (attribute-based and external).</span></span>  
   
-## Fichier de définition de schéma XML  
- Le mappage externe dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] doit être valide par rapport à la définition de schéma XML suivante.  
+## <a name="xml-schema-definition-file"></a><span data-ttu-id="7bf4d-119">Fichier de définition de schéma XML</span><span class="sxs-lookup"><span data-stu-id="7bf4d-119">XML Schema Definition File</span></span>  
+ <span data-ttu-id="7bf4d-120">Le mappage externe dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] doit être valide par rapport à la définition de schéma XML suivante.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-120">External mapping in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] must be valid against the following XML schema definition.</span></span>  
   
- Ce fichier de définition de schéma est différent du fichier de définition de schéma utilisé pour valider un fichier DBML.  Pour plus d'informations, consultez [Génération de code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
+ <span data-ttu-id="7bf4d-121">Ce fichier de définition de schéma est différent du fichier de définition de schéma utilisé pour valider un fichier DBML.</span><span class="sxs-lookup"><span data-stu-id="7bf4d-121">Distinguish this schema definition file from the schema definition file that is used to validate a DBML file.</span></span> <span data-ttu-id="7bf4d-122">Pour plus d’informations, consultez [la génération de Code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).</span><span class="sxs-lookup"><span data-stu-id="7bf4d-122">For more information, see [Code Generation in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).</span></span>  
   
 > [!NOTE]
->  Les utilisateurs [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] trouveront également ce fichier XSD dans la boîte de dialogue Schémas XML sous le nom "LinqToSqlMapping.xsd".  Pour utiliser correctement ce fichier pour valider un fichier de mappage externe, consultez [Procédure : valider des fichiers de mappage externes et DBML](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
+>  <span data-ttu-id="7bf4d-123">Les utilisateurs [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] trouveront également ce fichier XSD dans la boîte de dialogue Schémas XML sous le nom "LinqToSqlMapping.xsd".</span><span class="sxs-lookup"><span data-stu-id="7bf4d-123">[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] users will also find this XSD file in the XML Schemas dialog box as "LinqToSqlMapping.xsd".</span></span> <span data-ttu-id="7bf4d-124">Pour utiliser ce fichier correctement pour valider un fichier de mappage externe, consultez [Comment : valider des DBML et les fichiers de mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span><span class="sxs-lookup"><span data-stu-id="7bf4d-124">To use this file correctly for validating an external mapping file, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  
@@ -148,7 +151,7 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## Voir aussi  
- [Génération de code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)   
- [Reference](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)   
- [Procédure : générer le modèle objet sous forme de fichier externe](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)
+## <a name="see-also"></a><span data-ttu-id="7bf4d-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7bf4d-125">See Also</span></span>  
+ [<span data-ttu-id="7bf4d-126">Génération de code dans LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="7bf4d-126">Code Generation in LINQ to SQL</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [<span data-ttu-id="7bf4d-127">Référence</span><span class="sxs-lookup"><span data-stu-id="7bf4d-127">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
+ [<span data-ttu-id="7bf4d-128">Comment : générer le modèle objet comme un fichier externe</span><span class="sxs-lookup"><span data-stu-id="7bf4d-128">How to: Generate the Object Model as an External File</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)

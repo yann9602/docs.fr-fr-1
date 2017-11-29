@@ -1,34 +1,30 @@
 ---
-title: Exemple qui imprime des parties de Document Office Open XML (Visual Basic) | Documents Microsoft
+title: Exemple qui imprime des parties de Document Office Open XML (Visual Basic)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 72e8cd6126cd049cafff6e18e1ef609f600cf7c9
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 96596c86674f5df2b9949a07adab2f313a07633d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Exemple qui imprime des parties de Document Office Open XML (Visual Basic)
-Cette rubrique montre comment ouvrir un document Office Open XML et accéder à ses parties.  
+# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a><span data-ttu-id="60288-102">Exemple qui imprime des parties de Document Office Open XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="60288-102">Example that Outputs Office Open XML Document Parts (Visual Basic)</span></span>
+<span data-ttu-id="60288-103">Cette rubrique montre comment ouvrir un document Office Open XML et accéder à ses parties.</span><span class="sxs-lookup"><span data-stu-id="60288-103">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant ouvre un document Office Open XML et imprime la partie document et la partie de style sur la console.  
+## <a name="example"></a><span data-ttu-id="60288-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="60288-104">Example</span></span>  
+ <span data-ttu-id="60288-105">L'exemple suivant ouvre un document Office Open XML et imprime la partie document et la partie de style sur la console.</span><span class="sxs-lookup"><span data-stu-id="60288-105">The following example opens an Office Open XML document, and prints the document part and the style part to the console.</span></span>  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans le <xref:System.IO.Packaging?displayProperty=fullName>espace de noms.</xref:System.IO.Packaging?displayProperty=fullName>  
+ <span data-ttu-id="60288-106">Cet exemple utilise des classes de l'assembly WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="60288-106">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="60288-107">Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="60288-107">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Const fileName As String = "SampleDoc.docx"  
@@ -77,5 +73,5 @@ Using wdPackage As Package = Package.Open(fileName, FileMode.Open, FileAccess.Re
 End Using  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Détails d’Office Open XML WordprocessingML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+## <a name="see-also"></a><span data-ttu-id="60288-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="60288-108">See Also</span></span>  
+ [<span data-ttu-id="60288-109">Détails d’Office ouvrent les Documents WordprocessingML XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="60288-109">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

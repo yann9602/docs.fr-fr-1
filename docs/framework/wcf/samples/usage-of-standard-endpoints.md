@@ -1,28 +1,31 @@
 ---
-title: "Utilisation de points de terminaison standard | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Utilisation de points de terminaison standard
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ecd6a62f-9619-4778-a497-6f888087a9ea
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 85dda1619fe3a77c4716806de2467cb96287b2f9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Utilisation de points de terminaison standard
-Cet exemple montre comment utiliser des points de terminaison standard dans des fichiers de configuration de service.  Un point de terminaison standard permet à l'utilisateur de simplifier des définitions de point de terminaison en utilisant une propriété unique pour décrire une combinaison adresse, liaison et contrat avec les propriétés supplémentaires qui lui sont associées.  Cet exemple montre comment définir et implémenter un point de terminaison standard personnalisé et comment définir des propriétés spécifiques dans le point de terminaison.  
+# <a name="usage-of-standard-endpoints"></a><span data-ttu-id="bc07d-102">Utilisation de points de terminaison standard</span><span class="sxs-lookup"><span data-stu-id="bc07d-102">Usage of Standard Endpoints</span></span>
+<span data-ttu-id="bc07d-103">Cet exemple montre comment utiliser des points de terminaison standard dans des fichiers de configuration de service.</span><span class="sxs-lookup"><span data-stu-id="bc07d-103">This sample demonstrates how to use standard endpoints in service configuration files.</span></span> <span data-ttu-id="bc07d-104">Un point de terminaison standard permet à l'utilisateur de simplifier des définitions de point de terminaison en utilisant une propriété unique pour décrire une combinaison adresse, liaison et contrat avec les propriétés supplémentaires qui lui sont associées.</span><span class="sxs-lookup"><span data-stu-id="bc07d-104">A standard endpoint allows the user to simplify endpoint definitions by using a single property to describe an address, binding and contract combination with additional properties associated to it.</span></span> <span data-ttu-id="bc07d-105">Cet exemple montre comment définir et implémenter un point de terminaison standard personnalisé et comment définir des propriétés spécifiques dans le point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="bc07d-105">This sample demonstrates how to define and implement a custom standard endpoint and how to define specific properties in the endpoint.</span></span>  
   
-## Détails de l'exemple  
- Les points de terminaison de service peuvent être spécifiés en fournissant trois paramètres : adresse, liaison et contrat.  D'autres paramètres peuvent être fournis : configuration du comportement, en\-têtes, URI d'écoute, et ainsi de suite.  Il peut arriver que certains ou l'ensemble des adresses, liaisons et contrats aient des valeurs qui ne peuvent pas changer.  C'est pourquoi il est possible d'utiliser des points de terminaison standard.  Les points de terminaison d'échange de métadonnées et de découverte en sont des exemples.  Les points de terminaison standard facilitent également l'utilisation en autorisant la configuration de points de terminaison de service sans avoir à fournir des informations d'une nature fixe ou à créer leurs propres points de terminaison standard, afin, par exemple, de faciliter l'utilisation en fournissant un jeu raisonnable de valeurs par défaut, ce qui réduit les commentaires des fichiers de configuration.  
+## <a name="sample-details"></a><span data-ttu-id="bc07d-106">Détails de l'exemple</span><span class="sxs-lookup"><span data-stu-id="bc07d-106">Sample Details</span></span>  
+ <span data-ttu-id="bc07d-107">Les points de terminaison de service peuvent être spécifiés en fournissant trois paramètres : adresse, liaison et contrat.</span><span class="sxs-lookup"><span data-stu-id="bc07d-107">Service endpoints can be specified by supplying three parameters: address, binding and contract.</span></span> <span data-ttu-id="bc07d-108">D'autres paramètres peuvent être fournis : configuration du comportement, en-têtes, URI d'écoute, et ainsi de suite.</span><span class="sxs-lookup"><span data-stu-id="bc07d-108">Other parameters that can be supplied include behavior configuration, headers, listen URI, and so on.</span></span> <span data-ttu-id="bc07d-109">Il peut arriver que certains ou l'ensemble des adresses, liaisons et contrats aient des valeurs qui ne peuvent pas changer.</span><span class="sxs-lookup"><span data-stu-id="bc07d-109">In some cases, any or all of addresses, bindings and contracts have values that cannot change.</span></span> <span data-ttu-id="bc07d-110">C'est pourquoi il est possible d'utiliser des points de terminaison standard.</span><span class="sxs-lookup"><span data-stu-id="bc07d-110">For this reason, it is possible to use standard endpoints.</span></span> <span data-ttu-id="bc07d-111">Les points de terminaison d'échange de métadonnées et de découverte en sont des exemples.</span><span class="sxs-lookup"><span data-stu-id="bc07d-111">Some examples of such endpoints include metadata exchange endpoints and discovery endpoints.</span></span> <span data-ttu-id="bc07d-112">Les points de terminaison standard facilitent également l'utilisation en autorisant la configuration de points de terminaison de service sans avoir à fournir des informations d'une nature fixe ou à créer leurs propres points de terminaison standard, afin, par exemple, de faciliter l'utilisation en fournissant un jeu raisonnable de valeurs par défaut, ce qui réduit les commentaires des fichiers de configuration.</span><span class="sxs-lookup"><span data-stu-id="bc07d-112">Standard endpoints also improve usability by allowing configuration of service endpoints without having to provide information of a fixed nature or to create their own standard endpoints, for example to improve usability by supplying a reasonable set of default values and thus reducing the verbosity of configuration files.</span></span>  
   
- Cet exemple se compose de deux projets : le service qui définit deux points de terminaison standard et le client qui communique avec ce service.  La façon dont les points de terminaison standard du service sont définis dans le fichier de configuration est illustrée dans l'exemple suivant.  
+ <span data-ttu-id="bc07d-113">Cet exemple se compose de deux projets : le service qui définit deux points de terminaison standard et le client qui communique avec ce service.</span><span class="sxs-lookup"><span data-stu-id="bc07d-113">This sample consists of two projects: the service that defines two standard endpoints and the client that communicates with the service.</span></span> <span data-ttu-id="bc07d-114">La façon dont les points de terminaison standard du service sont définis dans le fichier de configuration est illustrée dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="bc07d-114">The way the standard endpoints are defined for the service in the configuration file is show in the following example.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -53,12 +56,11 @@ Cet exemple montre comment utiliser des points de terminaison standard dans des 
     </standardEndpoints>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- Le premier point de terminaison défini pour le service est du genre `customEndpoint` \(dont la définition est visible dans la section `<standardEndpoints>`\) où la valeur `true` est affectée à la propriété `property`.  C'est le cas d'un point de terminaison personnalisé avec une nouvelle propriété.  Le deuxième point de terminaison correspond à un point de terminaison de métadonnées, où les valeurs d'adresse, de liaison et de contrat sont fixes.  
+ <span data-ttu-id="bc07d-115">Le premier point de terminaison défini pour le service est du genre `customEndpoint` (dont la définition est visible dans la section `<standardEndpoints>`) où la valeur `property` est affectée à la propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="bc07d-115">The first endpoint defined for the service is of kind `customEndpoint`, whose definition can be seen in the `<standardEndpoints>` section, in which the property `property` is given the value `true`.</span></span> <span data-ttu-id="bc07d-116">C'est le cas d'un point de terminaison personnalisé avec une nouvelle propriété.</span><span class="sxs-lookup"><span data-stu-id="bc07d-116">This is the case of an endpoint customized with a new property.</span></span> <span data-ttu-id="bc07d-117">Le deuxième point de terminaison correspond à un point de terminaison de métadonnées, où les valeurs d'adresse, de liaison et de contrat sont fixes.</span><span class="sxs-lookup"><span data-stu-id="bc07d-117">The second endpoint corresponds to a metadata endpoint, in which the values for address, binding and contract are fixed.</span></span>  
   
- Pour définir l'élément du point de terminaison standard, une classe qui dérive de `StandardEndpointElement` doit être créée.  Dans le cas de cet exemple, la classe `CustomEndpointElement` a été définie comme indiqué dans l'exemple suivant.  
+ <span data-ttu-id="bc07d-118">Pour définir l'élément du point de terminaison standard, une classe qui dérive de `StandardEndpointElement` doit être créée.</span><span class="sxs-lookup"><span data-stu-id="bc07d-118">To define the standard endpoint element, a class that derives from `StandardEndpointElement` must be created.</span></span> <span data-ttu-id="bc07d-119">Dans le cas de cet exemple, la classe `CustomEndpointElement` a été définie comme indiqué dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="bc07d-119">In the case of this sample, the `CustomEndpointElement` class has been defined as shown in the following example.</span></span>  
   
 ```csharp  
 public class CustomEndpointElement : StandardEndpointElement  
@@ -109,10 +111,9 @@ public class CustomEndpointElement : StandardEndpointElement
     {  
     }  
 }  
-  
 ```  
   
- Dans la fonction `CreateServiceEndpoint`, un objet `CustomEndpoint` est créé.  Sa définition est représentée dans l'exemple suivant.  
+ <span data-ttu-id="bc07d-120">Dans la fonction `CreateServiceEndpoint`, un objet `CustomEndpoint` est créé.</span><span class="sxs-lookup"><span data-stu-id="bc07d-120">In the `CreateServiceEndpoint` function, a `CustomEndpoint` object is created.</span></span> <span data-ttu-id="bc07d-121">Sa définition est représentée dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="bc07d-121">Its definition is shown in the following example.</span></span>  
   
 ```  
 public class CustomEndpoint : ServiceEndpoint  
@@ -140,43 +141,42 @@ public class CustomEndpoint : ServiceEndpoint
             set;  
         }  
     }  
-  
 ```  
   
- Pour permettre la communication entre service et client, une référence au service est créée dans le client.  Lorsque l'exemple est généré et exécuté, le service s'exécute et le client communique avec lui.  Notez que la référence de service doit être mise à jour à chaque modification du service.  
+ <span data-ttu-id="bc07d-122">Pour permettre la communication entre service et client, une référence au service est créée dans le client.</span><span class="sxs-lookup"><span data-stu-id="bc07d-122">To perform the communication between service and client, a service reference is created in the client to the service.</span></span> <span data-ttu-id="bc07d-123">Lorsque l'exemple est généré et exécuté, le service s'exécute et le client communique avec lui.</span><span class="sxs-lookup"><span data-stu-id="bc07d-123">When the sample is built and executed, the service executes and the client communicates with it.</span></span> <span data-ttu-id="bc07d-124">Notez que la référence de service doit être mise à jour à chaque modification du service.</span><span class="sxs-lookup"><span data-stu-id="bc07d-124">Note that the service reference should be updated every time there is some change in the service.</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="bc07d-125">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="bc07d-125">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez le fichier StandardEndpoints.sln.  
+1.  <span data-ttu-id="bc07d-126">À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez le fichier StandardEndpoints.sln.</span><span class="sxs-lookup"><span data-stu-id="bc07d-126">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the StandardEndpoints.sln file.</span></span>  
   
-2.  Permettez à plusieurs projets de démarrer.  
+2.  <span data-ttu-id="bc07d-127">Permettez à plusieurs projets de démarrer.</span><span class="sxs-lookup"><span data-stu-id="bc07d-127">Enable multiple projects to start up.</span></span>  
   
-    1.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur la solution Standard Endpoints et sélectionnez **Propriétés**.  
+    1.  <span data-ttu-id="bc07d-128">Dans **l’Explorateur de solutions**, avec le bouton droit de la solution de points de terminaison Standard, puis sélectionnez **propriétés**.</span><span class="sxs-lookup"><span data-stu-id="bc07d-128">In **Solution Explorer**, right-click the Standard Endpoints solution and then select **Properties**.</span></span>  
   
-    2.  Dans **Propriétés communes**, sélectionnez **Projet de démarrage**, puis cliquez sur **Plusieurs projets de démarrage**.  
+    2.  <span data-ttu-id="bc07d-129">Dans **propriétés communes**, sélectionnez **projet de démarrage**, puis cliquez sur **plusieurs projets de démarrage**.</span><span class="sxs-lookup"><span data-stu-id="bc07d-129">In **Common Properties**, select **Startup Project**, and then click **Multiple Startup Projects**.</span></span>  
   
-    3.  Déplacez le projet Service vers le début de la liste, avec l'**Action** **Démarrer**.  
+    3.  <span data-ttu-id="bc07d-130">Déplacer le projet de Service au début de la liste, avec la **Action** la valeur **Démarrer**.</span><span class="sxs-lookup"><span data-stu-id="bc07d-130">Move the Service project to the beginning of the list, with the **Action** set to **Start**.</span></span>  
   
-    4.  Déplacez le projet Client après le projet Service, également avec l'**Action** **Démarrer**.  
+    4.  <span data-ttu-id="bc07d-131">Déplacer le projet Client après le projet de Service, également avec la **Action** la valeur **Démarrer**.</span><span class="sxs-lookup"><span data-stu-id="bc07d-131">Move the Client project after the Service project, also with the **Action** set to **Start**.</span></span>  
   
-         De cette façon, le projet Client est exécuté après le projet Service.  
+         <span data-ttu-id="bc07d-132">De cette façon, le projet Client est exécuté après le projet Service.</span><span class="sxs-lookup"><span data-stu-id="bc07d-132">This specifies that the Client project is executed after the Service project.</span></span>  
   
-3.  Pour exécuter la solution, appuyez sur F5.  
+3.  <span data-ttu-id="bc07d-133">Pour exécuter la solution, appuyez sur F5.</span><span class="sxs-lookup"><span data-stu-id="bc07d-133">To run the solution, press F5.</span></span>  
   
 > [!NOTE]
->  Si ces étapes ne fonctionnent pas, vérifiez que votre environnement a été correctement configuré, en procédant comme suit.  
+>  <span data-ttu-id="bc07d-134">Si ces étapes ne fonctionnent pas, vérifiez que votre environnement a été correctement configuré, en procédant comme suit.</span><span class="sxs-lookup"><span data-stu-id="bc07d-134">If these steps do not work, then make sure that your environment has been properly set up, using the following steps.</span></span>  
 >   
->  1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
-> 2.  Pour générer la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
-> 3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+>  1.  <span data-ttu-id="bc07d-135">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="bc07d-135">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+> 2.  <span data-ttu-id="bc07d-136">Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="bc07d-136">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+> 3.  <span data-ttu-id="bc07d-137">Pour exécuter l’exemple dans un seul ou plusieurs configurations d’ordinateur, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="bc07d-137">To run the sample in a single or multiple computer configurations, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="bc07d-138">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="bc07d-138">The samples may already be installed on your machine.</span></span> <span data-ttu-id="bc07d-139">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="bc07d-139">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, accédez à la page des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="bc07d-140">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="bc07d-140">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="bc07d-141">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="bc07d-141">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Services\StandardEndpoints`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\StandardEndpoints`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="bc07d-142">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bc07d-142">See Also</span></span>

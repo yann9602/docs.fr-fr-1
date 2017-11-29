@@ -1,43 +1,48 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: impl&#233;mentation du mode virtuel dans le contr&#244;le DataGridView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "données (Windows Forms), gérer de grands groupes de données"
-  - "DataGridView (contrôle Windows Forms), grands groupes de données"
-  - "DataGridView (contrôle Windows Forms), mode virtuel"
-  - "mode virtuel, procédures pas à pas"
-  - "procédures pas à pas (Windows Forms), DataGridView (contrôle)"
+title: "Procédure pas à pas : implémentation du mode virtuel dans le contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- data [Windows Forms], managing large data sets
+- DataGridView control [Windows Forms], virtual mode
+- virtual mode [Windows Forms], walkthroughs
+- DataGridView control [Windows Forms], large data sets
+- walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 74eb5276-5ab8-4ce0-8005-dae751d85f7c
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 31806d3ed13776e26634914b48bc887297ea4dab
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: impl&#233;mentation du mode virtuel dans le contr&#244;le DataGridView Windows Forms
-Lorsque vous souhaitez afficher de très grandes quantités de données sous forme de tableau dans un contrôle <xref:System.Windows.Forms.DataGridView>, vous pouvez affecter à la propriété <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> la valeur `true` et gérer explicitement l'interaction du contrôle avec son magasin de données.  Cela vous permet de régler avec précision la performance du contrôle dans cette situation.  
+# <a name="walkthrough-implementing-virtual-mode-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="78927-102">Procédure pas à pas : implémentation du mode virtuel dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="78927-102">Walkthrough: Implementing Virtual Mode in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="78927-103">Lorsque vous souhaitez afficher de très grandes quantités de données tabulaires dans un <xref:System.Windows.Forms.DataGridView> (contrôle), vous pouvez définir le <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> propriété `true` et gérer explicitement l’interaction du contrôle avec son magasin de données.</span><span class="sxs-lookup"><span data-stu-id="78927-103">When you want to display very large quantities of tabular data in a <xref:System.Windows.Forms.DataGridView> control, you can set the <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> property to `true` and explicitly manage the control's interaction with its data store.</span></span> <span data-ttu-id="78927-104">Cela vous permet d’optimiser les performances du contrôle dans cette situation.</span><span class="sxs-lookup"><span data-stu-id="78927-104">This lets you fine-tune the performance of the control in this situation.</span></span>  
   
- Le contrôle <xref:System.Windows.Forms.DataGridView> fournit plusieurs événements que vous pouvez gérer pour interagir avec un magasin de données personnalisé.  Cette procédure pas à pas vous guide à travers le processus d'implémentation de ces gestionnaires d'événements.  L'exemple de code dans cette rubrique utilise une source de données très simple au titre d'illustration.  Dans un cadre de production, vous chargez en général uniquement les lignes que vous devez afficher dans un cache, et gérez les événements <xref:System.Windows.Forms.DataGridView> pour interagir avec le cache et le mettre à jour.  Pour plus d'informations, consultez [Implémentation du mode virtuel avec le chargement de données juste\-à\-temps dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
+ <span data-ttu-id="78927-105">Le <xref:System.Windows.Forms.DataGridView> contrôle fournit plusieurs événements que vous pouvez gérer pour interagir avec un magasin de données personnalisé.</span><span class="sxs-lookup"><span data-stu-id="78927-105">The <xref:System.Windows.Forms.DataGridView> control provides several events that you can handle to interact with a custom data store.</span></span> <span data-ttu-id="78927-106">Cette procédure pas à pas vous guide tout au long du processus de mise en œuvre de ces gestionnaires d’événements.</span><span class="sxs-lookup"><span data-stu-id="78927-106">This walkthrough guides you through the process of implementing these event handlers.</span></span> <span data-ttu-id="78927-107">L’exemple de code dans cette rubrique utilise une source de données très simple à titre d’illustration.</span><span class="sxs-lookup"><span data-stu-id="78927-107">The code example in this topic uses a very simple data source for illustration purposes.</span></span> <span data-ttu-id="78927-108">Dans un environnement de production, vous chargez en général uniquement les lignes que vous devez afficher dans un cache et de gérer les <xref:System.Windows.Forms.DataGridView> événements manipuler et mettre à jour le cache.</span><span class="sxs-lookup"><span data-stu-id="78927-108">In a production setting, you will typically load only the rows you need to display into a cache, and handle <xref:System.Windows.Forms.DataGridView> events to interact with and update the cache.</span></span> <span data-ttu-id="78927-109">Pour plus d’informations, consultez [implémentation du Mode virtuel avec le chargement de données juste à temps dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)</span><span class="sxs-lookup"><span data-stu-id="78927-109">For more information, see [Implementing Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)</span></span>  
   
- Pour copier le code dans cette rubrique sous forme de liste unique, consultez [Comment : implémenter le mode virtuel dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md).  
+ <span data-ttu-id="78927-110">Pour copier le code dans cette rubrique sous forme de liste unique, consultez [Comment : implémenter le Mode virtuel dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md).</span><span class="sxs-lookup"><span data-stu-id="78927-110">To copy the code in this topic as a single listing, see [How to: Implement Virtual Mode in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md).</span></span>  
   
-## Création du formulaire  
+## <a name="creating-the-form"></a><span data-ttu-id="78927-111">Création du formulaire</span><span class="sxs-lookup"><span data-stu-id="78927-111">Creating the Form</span></span>  
   
-#### Pour implémenter le mode virtuel  
+#### <a name="to-implement-virtual-mode"></a><span data-ttu-id="78927-112">Pour implémenter le mode virtuel</span><span class="sxs-lookup"><span data-stu-id="78927-112">To implement virtual mode</span></span>  
   
-1.  Créez une classe qui dérive de <xref:System.Windows.Forms.Form> et contient un contrôle <xref:System.Windows.Forms.DataGridView>.  
+1.  <span data-ttu-id="78927-113">Créez une classe qui dérive de <xref:System.Windows.Forms.Form> et contient un <xref:System.Windows.Forms.DataGridView> contrôle.</span><span class="sxs-lookup"><span data-stu-id="78927-113">Create a class that derives from <xref:System.Windows.Forms.Form> and contains a <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
-     Le code suivant contient une initialisation de base.  Il déclare quelques variables qui seront utilisées dans les étapes ultérieures, fournit une méthode `Main` et fournit une présentation de formulaire simple dans le constructeur de classe.  
+     <span data-ttu-id="78927-114">Le code suivant contient une initialisation de base.</span><span class="sxs-lookup"><span data-stu-id="78927-114">The following code contains some basic initialization.</span></span> <span data-ttu-id="78927-115">Il déclare quelques variables qui seront utilisées dans les étapes ultérieures, fournit un `Main` (méthode) et fournit une présentation de formulaire simple dans le constructeur de classe.</span><span class="sxs-lookup"><span data-stu-id="78927-115">It declares some variables that will be used in later steps, provides a `Main` method, and provides a simple form layout in the class constructor.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#001](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#001)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#001](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#001)]
@@ -46,101 +51,101 @@ Lorsque vous souhaitez afficher de très grandes quantités de données sous for
     [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#002](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#002)]
     [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#002](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#002)]  
   
-2.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.Form.Load> de votre formulaire qui initialise le contrôle <xref:System.Windows.Forms.DataGridView> et remplit le magasin de données avec des valeurs d'échantillon.  
+2.  <span data-ttu-id="78927-116">Implémentez un gestionnaire pour de votre formulaire <xref:System.Windows.Forms.Form.Load> événement qui initialise le <xref:System.Windows.Forms.DataGridView> de contrôle et remplit le magasin de données avec des exemples de valeurs.</span><span class="sxs-lookup"><span data-stu-id="78927-116">Implement a handler for your form's <xref:System.Windows.Forms.Form.Load> event that initializes the <xref:System.Windows.Forms.DataGridView> control and populates the data store with sample values.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#110](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#110)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#110](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#110)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#110](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#110)]  
   
-3.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.CellValueNeeded> qui récupère la valeur de cellule demandée dans le magasin de données ou l'objet `Customer` en cours de modification.  
+3.  <span data-ttu-id="78927-117">Implémentez un gestionnaire pour le <xref:System.Windows.Forms.DataGridView.CellValueNeeded> événement qui Récupère la valeur de cellule demandée à partir du magasin de données ou le `Customer` objet en cours de modification.</span><span class="sxs-lookup"><span data-stu-id="78927-117">Implement a handler for the <xref:System.Windows.Forms.DataGridView.CellValueNeeded> event that retrieves the requested cell value from the data store or the `Customer` object currently in edit.</span></span>  
   
-     Cet événement se produit chaque fois que le contrôle <xref:System.Windows.Forms.DataGridView> doit peindre une cellule.  
+     <span data-ttu-id="78927-118">Cet événement se produit chaque fois que le <xref:System.Windows.Forms.DataGridView> contrôle a besoin peindre une cellule.</span><span class="sxs-lookup"><span data-stu-id="78927-118">This event occurs whenever the <xref:System.Windows.Forms.DataGridView> control needs to paint a cell.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#120](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#120)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#120](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#120)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#120](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#120)]  
   
-4.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.CellValuePushed> qui stocke une valeur de cellule modifiée dans l'objet `Customer` qui représente la ligne modifiée.  Cet événement se produit chaque fois que l'utilisateur valide un changement de valeur de la cellule.  
+4.  <span data-ttu-id="78927-119">Implémentez un gestionnaire pour le <xref:System.Windows.Forms.DataGridView.CellValuePushed> événement qui stocke une valeur de cellule modifiée dans le `Customer` objet qui représente la ligne modifiée.</span><span class="sxs-lookup"><span data-stu-id="78927-119">Implement a handler for the <xref:System.Windows.Forms.DataGridView.CellValuePushed> event that stores an edited cell value in the `Customer` object representing the edited row.</span></span> <span data-ttu-id="78927-120">Cet événement se produit chaque fois que l’utilisateur enregistre une modification de valeur de cellule.</span><span class="sxs-lookup"><span data-stu-id="78927-120">This event occurs whenever the user commits a cell value change.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#130](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#130)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#130](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#130)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#130](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#130)]  
   
-5.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.NewRowNeeded> qui crée un nouvel objet `Customer` représentant une ligne nouvellement créée.  
+5.  <span data-ttu-id="78927-121">Implémentez un gestionnaire pour le <xref:System.Windows.Forms.DataGridView.NewRowNeeded> événement qui crée un nouveau `Customer` objet représentant une ligne nouvellement créée.</span><span class="sxs-lookup"><span data-stu-id="78927-121">Implement a handler for the <xref:System.Windows.Forms.DataGridView.NewRowNeeded> event that creates a new `Customer` object representing a newly created row.</span></span>  
   
-     Cet événement se produit chaque fois que l'utilisateur entre dans la ligne pour de nouveaux enregistrements.  
+     <span data-ttu-id="78927-122">Cet événement se produit chaque fois que l’utilisateur entre la ligne pour les nouveaux enregistrements.</span><span class="sxs-lookup"><span data-stu-id="78927-122">This event occurs whenever the user enters the row for new records.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#140](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#140)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#140](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#140)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#140](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#140)]  
   
-6.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.RowValidated> qui enregistre les lignes nouvelles ou modifiées dans le magasin de données.  
+6.  <span data-ttu-id="78927-123">Implémentez un gestionnaire pour le <xref:System.Windows.Forms.DataGridView.RowValidated> événement qui enregistre les lignes nouvelles ou modifiées dans le magasin de données.</span><span class="sxs-lookup"><span data-stu-id="78927-123">Implement a handler for the <xref:System.Windows.Forms.DataGridView.RowValidated> event that saves new or modified rows to the data store.</span></span>  
   
-     Cet événement se produit chaque fois que l'utilisateur change la ligne actuelle.  
+     <span data-ttu-id="78927-124">Cet événement se produit chaque fois que l’utilisateur modifie la ligne actuelle.</span><span class="sxs-lookup"><span data-stu-id="78927-124">This event occurs whenever the user changes the current row.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#150](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#150)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#150](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#150)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#150](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#150)]  
   
-7.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> qui indique si l'événement <xref:System.Windows.Forms.DataGridView.CancelRowEdit> se produit lorsque l'utilisateur signale une inversion de ligne en appuyant deux fois sur ÉCHAP en mode édition, ou une fois dans un autre mode.  
+7.  <span data-ttu-id="78927-125">Implémentez un gestionnaire pour le <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> événement qui indique si le <xref:System.Windows.Forms.DataGridView.CancelRowEdit> événement se produit lorsque l’utilisateur signale une inversion de ligne en appuyant sur ÉCHAP deux fois en mode édition ou qu’une seule fois à l’extérieur en mode édition.</span><span class="sxs-lookup"><span data-stu-id="78927-125">Implement a handler for the <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> event that indicates whether the <xref:System.Windows.Forms.DataGridView.CancelRowEdit> event will occur when the user signals row reversion by pressing ESC twice in edit mode or once outside of edit mode.</span></span>  
   
-     Par défaut, <xref:System.Windows.Forms.DataGridView.CancelRowEdit> se produit en cas d'inversion de ligne lorsque chaque cellule de la ligne actuelle a été modifiée, sauf si la propriété <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=fullName> a la valeur `true` dans le gestionnaire d'événements <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded>.  Cet événement est utile lorsque la portée de validation est déterminée au moment de l'exécution.  
+     <span data-ttu-id="78927-126">Par défaut, <xref:System.Windows.Forms.DataGridView.CancelRowEdit> se produit après inversion de ligne lorsque toutes les cellules de la ligne actuelle ont été modifiées, sauf si le <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=nameWithType> est définie sur `true` dans le <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> Gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="78927-126">By default, <xref:System.Windows.Forms.DataGridView.CancelRowEdit> occurs upon row reversion when any cells in the current row have been modified unless the <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=nameWithType> property is set to `true` in the <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> event handler.</span></span> <span data-ttu-id="78927-127">Cet événement est utile lorsque la portée de validation est déterminée au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="78927-127">This event is useful when the commit scope is determined at run time.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#160](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#160)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#160](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#160)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#160](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#160)]  
   
-8.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.CancelRowEdit> qui ignore les valeurs de l'objet `Customer` représentant la ligne actuelle.  
+8.  <span data-ttu-id="78927-128">Implémentez un gestionnaire pour le <xref:System.Windows.Forms.DataGridView.CancelRowEdit> événement qui ignore les valeurs de la `Customer` objet représentant la ligne actuelle.</span><span class="sxs-lookup"><span data-stu-id="78927-128">Implement a handler for the <xref:System.Windows.Forms.DataGridView.CancelRowEdit> event that discards the values of the `Customer` object representing the current row.</span></span>  
   
-     Cet événement se produit lorsque l'utilisateur signale l'inversion de ligne en appuyant deux fois sur ÉCHAP en mode édition, ou une fois dans un autre mode.  Cet événement ne se produit pas si aucune cellule de la ligne actuelle n'a été modifiée ou si la valeur `false` a été affectée à la propriété <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=fullName> dans un gestionnaire d'événements <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded>.  
+     <span data-ttu-id="78927-129">Cet événement se produit lorsque l’utilisateur signale une inversion de ligne en appuyant sur ÉCHAP deux fois en mode édition ou qu’une seule fois à l’extérieur en mode édition.</span><span class="sxs-lookup"><span data-stu-id="78927-129">This event occurs when the user signals row reversion by pressing ESC twice in edit mode or once outside of edit mode.</span></span> <span data-ttu-id="78927-130">Cet événement ne survient pas si aucune cellule de la ligne actuelle n’a été modifié ou si la valeur de la <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=nameWithType> propriété a été définie sur `false` dans un <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> Gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="78927-130">This event does not occur if no cells in the current row have been modified or if the value of the <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=nameWithType> property has been set to `false` in a <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> event handler.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#170](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#170)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#170](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#170)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#170](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#170)]  
   
-9. Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.UserDeletingRow> qui supprime un objet `Customer` existant dans le magasin de données ou ignore un objet `Customer` non enregistré qui représente une ligne venant d'être créée.  
+9. <span data-ttu-id="78927-131">Implémentez un gestionnaire pour le <xref:System.Windows.Forms.DataGridView.UserDeletingRow> événement qui supprime un `Customer` objet à partir du magasin de données ou ignore un non enregistrées `Customer` objet représentant une ligne nouvellement créée.</span><span class="sxs-lookup"><span data-stu-id="78927-131">Implement a handler for the <xref:System.Windows.Forms.DataGridView.UserDeletingRow> event that deletes an existing `Customer` object from the data store or discards an unsaved `Customer` object representing a newly created row.</span></span>  
   
-     Cet événement se produit chaque fois que l'utilisateur supprime une ligne en cliquant sur un en\-tête de ligne et en appuyant sur la touche SUPPR.  
+     <span data-ttu-id="78927-132">Cet événement se produit chaque fois que l’utilisateur supprime une ligne en cliquant sur un en-tête de ligne en appuyant sur la touche SUPPR.</span><span class="sxs-lookup"><span data-stu-id="78927-132">This event occurs whenever the user deletes a row by clicking a row header and pressing the DELETE key.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#180](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#180)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#180](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#180)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#180](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#180)]  
   
-10. Implémentez une classe `Customers` simple pour représenter les éléments de données utilisés par cet exemple de code.  
+10. <span data-ttu-id="78927-133">Implémenter un simple `Customers` classe pour représenter les éléments de données utilisés par cet exemple de code.</span><span class="sxs-lookup"><span data-stu-id="78927-133">Implement a simple `Customers` class to represent the data items used by this code example.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#200](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#200)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#200](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#200)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#200](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#200)]  
   
-## Test de l'application  
- Vous pouvez à présent tester le formulaire afin de vous assurer qu'il se comporte comme prévu.  
+## <a name="testing-the-application"></a><span data-ttu-id="78927-134">Test de l'application</span><span class="sxs-lookup"><span data-stu-id="78927-134">Testing the Application</span></span>  
+ <span data-ttu-id="78927-135">Vous pouvez maintenant tester le formulaire pour vous assurer qu’il se comporte comme prévu.</span><span class="sxs-lookup"><span data-stu-id="78927-135">You can now test the form to make sure it behaves as expected.</span></span>  
   
-#### Pour tester le formulaire  
+#### <a name="to-test-the-form"></a><span data-ttu-id="78927-136">Pour tester le formulaire</span><span class="sxs-lookup"><span data-stu-id="78927-136">To test the form</span></span>  
   
--   Compilez et exécutez l'application.  
+-   <span data-ttu-id="78927-137">Compilez et exécutez l'application.</span><span class="sxs-lookup"><span data-stu-id="78927-137">Compile and run the application.</span></span>  
   
-     Vous observerez un contrôle <xref:System.Windows.Forms.DataGridView> rempli de trois enregistrements de client.  Vous pouvez modifier les valeurs de plusieurs cellules dans une ligne et appuyer deux fois sur ÉCHAP en mode édition, ou une fois dans un autre mode, pour redonner à toute la ligne ses valeurs d'origine.  Lorsque vous modifiez, ajoutez ou supprimez des lignes dans le contrôle, les objets `Customer` dans le magasin de données sont également modifiés, ajoutés ou supprimés.  
+     <span data-ttu-id="78927-138">Vous verrez un <xref:System.Windows.Forms.DataGridView> contrôle rempli avec trois enregistrements de client.</span><span class="sxs-lookup"><span data-stu-id="78927-138">You will see a <xref:System.Windows.Forms.DataGridView> control populated with three customer records.</span></span> <span data-ttu-id="78927-139">Vous pouvez modifier les valeurs de plusieurs cellules dans une ligne et appuyez sur ÉCHAP deux fois en mode édition et une fois en dehors du mode d’édition pour rétablir la ligne entière pour ses valeurs d’origine.</span><span class="sxs-lookup"><span data-stu-id="78927-139">You can modify the values of multiple cells in a row and press ESC twice in edit mode and once outside of edit mode to revert the entire row to its original values.</span></span> <span data-ttu-id="78927-140">Lorsque vous modifiez, ajouter ou supprimer des lignes dans le contrôle, `Customer` objets dans le magasin de données modifiées, ajoutées ou aussi supprimés.</span><span class="sxs-lookup"><span data-stu-id="78927-140">When you modify, add, or delete rows in the control, `Customer` objects in the data store are modified, added, or deleted as well.</span></span>  
   
-## Étapes suivantes  
- Cette application vous donne des notions de base sur les événements que vous devez gérer pour implémenter le mode virtuel dans le contrôle <xref:System.Windows.Forms.DataGridView>.  Vous pouvez améliorer cette application de base de plusieurs manières :  
+## <a name="next-steps"></a><span data-ttu-id="78927-141">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="78927-141">Next Steps</span></span>  
+ <span data-ttu-id="78927-142">Cette application vous donne une compréhension de base des événements, vous devez gérer pour implémenter le mode virtuel dans le <xref:System.Windows.Forms.DataGridView> contrôle.</span><span class="sxs-lookup"><span data-stu-id="78927-142">This application gives you a basic understanding of the events you must handle to implement virtual mode in the <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="78927-143">Vous pouvez améliorer cette application de base de plusieurs façons :</span><span class="sxs-lookup"><span data-stu-id="78927-143">You can improve this basic application in a number of ways:</span></span>  
   
--   Implémentez un magasin de données qui mette en cache des valeurs d'une base de données externe.  Le cache doit récupérer ou ignorer au besoin les valeurs de sorte qu'il ne contienne que les éléments devant être affichés tout en consommant une petite quantité de mémoire sur l'ordinateur client.  
+-   <span data-ttu-id="78927-144">Implémenter un magasin de données qui met en cache les valeurs à partir d’une base de données externe.</span><span class="sxs-lookup"><span data-stu-id="78927-144">Implement a data store that caches values from an external database.</span></span> <span data-ttu-id="78927-145">Le cache doit récupérer et ignorer les valeurs si nécessaire pour qu’il contienne uniquement ce qui est nécessaire pour l’affichage tout en consommant une petite quantité de mémoire sur l’ordinateur client.</span><span class="sxs-lookup"><span data-stu-id="78927-145">The cache should retrieve and discard values as necessary so that it only contains what is necessary for display while consuming a small amount of memory on the client computer.</span></span>  
   
--   Réglez avec précision la performance du magasin de données selon vos besoins.  Par exemple, vous pouvez chercher à compenser la lenteur des connexions réseau plutôt que les limitations de mémoire de l'ordinateur client en utilisant une taille de cache plus grande et en réduisant le nombre de requêtes de base de données.  
+-   <span data-ttu-id="78927-146">Optimiser les performances de la banque de données selon vos besoins.</span><span class="sxs-lookup"><span data-stu-id="78927-146">Fine-tune the performance of the data store depending on your requirements.</span></span> <span data-ttu-id="78927-147">Par exemple, vous souhaiterez peut-être compenser pour les connexions réseau lentes plutôt que des limitations de mémoire d’ordinateur client à l’aide d’une plus grande taille de cache et de réduire le nombre de requêtes de base de données.</span><span class="sxs-lookup"><span data-stu-id="78927-147">For example, you might want to compensate for slow network connections rather than client-computer memory limitations by using a larger cache size and minimizing the number of database queries.</span></span>  
   
- Pour plus d'informations sur la mise en cache de valeurs à partir d'une base de données externe, consultez [Comment : implémenter le mode virtuel avec le chargement de données juste\-à\-temps dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).  
+ <span data-ttu-id="78927-148">Pour plus d’informations sur la mise en cache de valeurs à partir d’une base de données externe, consultez [Comment : implémenter le Mode virtuel avec le chargement de données juste à temps dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).</span><span class="sxs-lookup"><span data-stu-id="78927-148">For more information about caching values from an external database, see [How to: Implement Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>   
- <xref:System.Windows.Forms.DataGridView.CellValueNeeded>   
- <xref:System.Windows.Forms.DataGridView.CellValuePushed>   
- <xref:System.Windows.Forms.DataGridView.NewRowNeeded>   
- <xref:System.Windows.Forms.DataGridView.RowValidated>   
- <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded>   
- <xref:System.Windows.Forms.DataGridView.CancelRowEdit>   
- <xref:System.Windows.Forms.DataGridView.UserDeletingRow>   
- [Réglage des performances dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)   
- [Meilleures pratiques pour la mise à l'échelle du contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)   
- [Implémentation du mode virtuel avec le chargement de données juste\-à\-temps dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)   
- [Comment : implémenter le mode virtuel dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="78927-149">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="78927-149">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
+ <xref:System.Windows.Forms.DataGridView.CellValueNeeded>  
+ <xref:System.Windows.Forms.DataGridView.CellValuePushed>  
+ <xref:System.Windows.Forms.DataGridView.NewRowNeeded>  
+ <xref:System.Windows.Forms.DataGridView.RowValidated>  
+ <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded>  
+ <xref:System.Windows.Forms.DataGridView.CancelRowEdit>  
+ <xref:System.Windows.Forms.DataGridView.UserDeletingRow>  
+ [<span data-ttu-id="78927-150">Réglage des performances dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="78927-150">Performance Tuning in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="78927-151">Meilleures pratiques pour la mise à l'échelle du contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="78927-151">Best Practices for Scaling the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="78927-152">Implémentation du mode virtuel avec le chargement immédiat des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="78927-152">Implementing Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
+ [<span data-ttu-id="78927-153">Guide pratique pour implémenter le mode virtuel dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="78927-153">How to: Implement Virtual Mode in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md)

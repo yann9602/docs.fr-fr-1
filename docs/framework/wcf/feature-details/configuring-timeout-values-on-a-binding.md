@@ -1,102 +1,103 @@
 ---
-title: "configuration de valeurs du d&#233;lai d&#39;attente sur une liaison | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "configuration de valeurs du délai d’attente sur une liaison"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 458f2143021ac40bfcaddbe957113e400bd5f3c5
+ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/28/2017
 ---
-# configuration de valeurs du d&#233;lai d&#39;attente sur une liaison
-Il existe plusieurs paramètres de délai d'attente disponibles dans les liaisons WCF.  Définir ces paramètres de délai d'attente correctement peut non seulement améliorer les performances de votre service, mais également jouer un rôle dans la facilité d'utilisation et la sécurité de ce dernier.  Les délais d'attente suivants sont disponibles sur les liaisons WCF :  
+# <a name="configuring-timeout-values-on-a-binding"></a><span data-ttu-id="2d0a2-102">configuration de valeurs du délai d’attente sur une liaison</span><span class="sxs-lookup"><span data-stu-id="2d0a2-102">Configuring Timeout Values on a Binding</span></span>
+<span data-ttu-id="2d0a2-103">Il existe plusieurs paramètres de délai d’attente disponibles dans les liaisons WCF.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-103">There are a number of timeout settings available in WCF bindings.</span></span> <span data-ttu-id="2d0a2-104">Définir ces paramètres de délai d'attente correctement peut non seulement améliorer les performances de votre service, mais également jouer un rôle dans la facilité d'utilisation et la sécurité de ce dernier.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-104">Setting these timeout settings correctly can improve not only your service’s performance but also play a role in the usability and security of your service.</span></span> <span data-ttu-id="2d0a2-105">Les délais d'attente suivants sont disponibles sur les liaisons WCF :</span><span class="sxs-lookup"><span data-stu-id="2d0a2-105">The following timeouts are available on WCF bindings:</span></span>  
   
-1.  OpenTimeout  
+1.  <span data-ttu-id="2d0a2-106">OpenTimeout</span><span class="sxs-lookup"><span data-stu-id="2d0a2-106">OpenTimeout</span></span>  
   
-2.  CloseTimeout  
+2.  <span data-ttu-id="2d0a2-107">CloseTimeout</span><span class="sxs-lookup"><span data-stu-id="2d0a2-107">CloseTimeout</span></span>  
   
-3.  SendTimeout  
+3.  <span data-ttu-id="2d0a2-108">SendTimeout</span><span class="sxs-lookup"><span data-stu-id="2d0a2-108">SendTimeout</span></span>  
   
-4.  ReceiveTimeout  
+4.  <span data-ttu-id="2d0a2-109">ReceiveTimeout</span><span class="sxs-lookup"><span data-stu-id="2d0a2-109">ReceiveTimeout</span></span>  
   
-## Délais d'attente de liaison WCF  
- Chacun des paramètres décrits dans cette rubrique sont créés sur la liaison elle\-même, dans le code ou la configuration.  Le code suivant montre comment définir des délais d'attente par programme sur une liaison WCF dans le contexte d'un service auto\-hébergé.  
+## <a name="wcf-binding-timeouts"></a><span data-ttu-id="2d0a2-110">Délais d'attente de liaison WCF</span><span class="sxs-lookup"><span data-stu-id="2d0a2-110">WCF Binding Timeouts</span></span>  
+ <span data-ttu-id="2d0a2-111">Chacun des paramètres décrits dans cette rubrique sont créés sur la liaison elle-même, dans le code ou la configuration.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-111">Each of the settings discussed in this topic are made on the binding itself, either in code or configuration.</span></span> <span data-ttu-id="2d0a2-112">Le code suivant montre comment définir des délais d'attente par programme sur une liaison WCF dans le contexte d'un service auto-hébergé.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-112">The following code shows how to programmatically set timeouts on a WCF binding in the context of a self-hosted service.</span></span>  
   
 ```csharp  
-public static void Main()  
-        {  
-            Uri baseAddress = new Uri("http://localhost/MyServer/MyService");  
-  
-            try  
-            {  
-                ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService));  
-  
-                WSHttpBinding binding = new WSHttpBinding();  
-                binding.OpenTimeout = new TimeSpan(0, 10, 0);  
-                binding.CloseTimeout = new TimeSpan(0, 10, 0);  
-                binding.SendTimeout = new TimeSpan(0, 10, 0);  
-                binding.ReceiveTimeout = new TimeSpan(0, 10, 0);  
-  
-                serviceHost.AddServiceEndpoint("ICalculator", binding, baseAddress);  
-                serviceHost.Open();  
-  
-                // The service can now be accessed.  
-                Console.WriteLine("The service is ready.");  
-                Console.WriteLine("Press <ENTER> to terminate service.");  
-                Console.WriteLine();  
-                Console.ReadLine();  
-  
-            }  
-            catch (CommunicationException ex)  
-            {  
-                // Handle exception ...  
-            }  
-        }  
-  
+public static void Main()
+{
+    Uri baseAddress = new Uri("http://localhost/MyServer/MyService");
+    
+    try
+    {
+        ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService));
+        
+        WSHttpBinding binding = new WSHttpBinding();
+        binding.OpenTimeout = new TimeSpan(0, 10, 0);
+        binding.CloseTimeout = new TimeSpan(0, 10, 0);
+        binding.SendTimeout = new TimeSpan(0, 10, 0);
+        binding.ReceiveTimeout = new TimeSpan(0, 10, 0);
+        
+        serviceHost.AddServiceEndpoint("ICalculator", binding, baseAddress);
+        serviceHost.Open();
+        
+        // The service can now be accessed.
+        Console.WriteLine("The service is ready.");
+        Console.WriteLine("Press <ENTER> to terminate service.");
+        Console.WriteLine();
+        Console.ReadLine();
+    }
+    catch (CommunicationException ex)
+    {
+        // Handle exception ...
+    }
+}
 ```  
   
- L'exemple suivant montre comment configurer des délais d'attente sur une liaison dans un fichier de configuration.  
+ <span data-ttu-id="2d0a2-113">L'exemple suivant montre comment configurer des délais d'attente sur une liaison dans un fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-113">The following example shows how to configure timeouts on a binding in a configuration file.</span></span>  
   
 ```xml  
-<configuration>  
-  <system.serviceModel>  
-    <bindings>  
-      <wsHttpBinding>  
-        <binding openTimeout="00:10:00"   
-                 closeTimeout="00:10:00"   
-                 sendTimeout="00:10:00"   
-                 receiveTimeout="00:10:00">  
-        </binding>  
-      </wsHttpBinding>  
-    </bindings>  
-  </system.serviceModel>  
-  
+<configuration>
+  <system.serviceModel>
+    <bindings>
+      <wsHttpBinding>
+        <binding openTimeout="00:10:00" 
+                 closeTimeout="00:10:00" 
+                 sendTimeout="00:10:00" 
+                 receiveTimeout="00:10:00">
+        </binding>
+      </wsHttpBinding>
+    </bindings>
+  </system.serviceModel>
+</configuration>
 ```  
   
- Plus d'informations sur ces paramètres se trouvent dans la documentation de la classe <xref:System.ServiceModel.Channels.Binding>.  
+ <span data-ttu-id="2d0a2-114">Plus d'informations sur ces paramètres se trouvent dans la documentation de la classe <xref:System.ServiceModel.Channels.Binding>.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-114">More information about these settings can be found in the documentation for the <xref:System.ServiceModel.Channels.Binding> class.</span></span>  
   
-### Délais d'attente côté client  
- Du côté client :  
+### <a name="client-side-timeouts"></a><span data-ttu-id="2d0a2-115">Délais d'attente côté client</span><span class="sxs-lookup"><span data-stu-id="2d0a2-115">Client-side Timeouts</span></span>  
+ <span data-ttu-id="2d0a2-116">Du côté client :</span><span class="sxs-lookup"><span data-stu-id="2d0a2-116">On the client side:</span></span>  
   
-1.  SendTimeout – utilisé pour initialiser OperationTimeout, qui détermine le processus entier pour envoyer un message, y compris recevoir un message de réponse pour une opération de service de demande\/réponse.  Ce délai d'attente s'applique également lors de l'envoi des messages de réponse d'une méthode du contrat de rappel.  
+1.  <span data-ttu-id="2d0a2-117">SendTimeout – utilisé pour initialiser OperationTimeout, qui détermine le processus entier pour envoyer un message, y compris recevoir un message de réponse pour une opération de service de demande/réponse.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-117">SendTimeout – used to initialize the OperationTimeout, which governs the whole process of sending a message, including receiving a reply message for a request/reply service operation.</span></span> <span data-ttu-id="2d0a2-118">Ce délai d'attente s'applique également lors de l'envoi des messages de réponse d'une méthode du contrat de rappel.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-118">This timeout also applies when sending reply messages from a callback contract method.</span></span>  
   
-2.  OpenTimeout – utilisé lors de l'ouverture de canaux lorsqu'aucune valeur du délai d'attente explicite n'est spécifiée  
+2.  <span data-ttu-id="2d0a2-119">OpenTimeout – utilisé lors de l'ouverture de canaux lorsqu'aucune valeur du délai d'attente explicite n'est spécifiée</span><span class="sxs-lookup"><span data-stu-id="2d0a2-119">OpenTimeout – used when opening channels when no explicit timeout value is specified</span></span>  
   
-3.  CloseTimeout – utilisé lors de la fermeture des canaux lorsqu'aucune valeur de délai d'attente explicite n'est spécifiée  
+3.  <span data-ttu-id="2d0a2-120">CloseTimeout – utilisé lors de la fermeture des canaux lorsqu'aucune valeur de délai d'attente explicite n'est spécifiée</span><span class="sxs-lookup"><span data-stu-id="2d0a2-120">CloseTimeout – used when closing channels when no explicit timeout value is specified</span></span>  
   
-4.  ReceiveTimeout \- n'est pas utilisé  
+4.  <span data-ttu-id="2d0a2-121">ReceiveTimeout - n'est pas utilisé</span><span class="sxs-lookup"><span data-stu-id="2d0a2-121">ReceiveTimeout – is not used</span></span>  
   
-### Délais d'attente côté client  
- Du côté service :  
+### <a name="service-side-timeouts"></a><span data-ttu-id="2d0a2-122">Délais d’expiration côté service</span><span class="sxs-lookup"><span data-stu-id="2d0a2-122">Service-side Timeouts</span></span>  
+ <span data-ttu-id="2d0a2-123">Du côté service :</span><span class="sxs-lookup"><span data-stu-id="2d0a2-123">On the service side:</span></span>  
   
-1.  SendTimeout, OpentTimeout et CloseTimeout sont les mêmes que sur le client  
+1.  <span data-ttu-id="2d0a2-124">SendTimeout, OpentTimeout et CloseTimeout sont les mêmes que sur le client</span><span class="sxs-lookup"><span data-stu-id="2d0a2-124">SendTimeout, OpentTimeout, CloseTimeout are the same as on the client</span></span>  
   
-2.  ReceiveTimeout – utilisé par la couche d'infrastructure de service pour initialiser le délai d'inactivité de session qui contrôle la durée pendant laquelle une session peut être inactive avant expiration.
+2.  <span data-ttu-id="2d0a2-125">ReceiveTimeout – utilisé par la couche d'infrastructure de service pour initialiser le délai d'inactivité de session qui contrôle la durée pendant laquelle une session peut être inactive avant expiration.</span><span class="sxs-lookup"><span data-stu-id="2d0a2-125">ReceiveTimeout – used by the Service Framework Layer to initialize the session-idle timeout which controls how long a session can be idle before timing out.</span></span>

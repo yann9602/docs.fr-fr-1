@@ -1,186 +1,192 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: liaison de donn&#233;es dans des applications hybrides | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "liaison de données (interopérabilité WPF)"
-  - "applications hybrides (interopérabilité WPF)"
+title: "Procédure pas à pas : liaison de données dans des applications hybrides"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- hybrid applications [WPF interoperability]
+- data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-caps.latest.revision: 39
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 36
+caps.latest.revision: "39"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 957559cbc88855700471cc457f76d69ef5a296d9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: liaison de donn&#233;es dans des applications hybrides
-La liaison d'une source de données à un contrôle est essentielle pour fournir aux utilisateurs l'accès aux données sous\-jacentes, que vous utilisiez [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Cette procédure pas à pas montre comment vous pouvez utiliser la liaison de données dans les applications hybrides qui incluent à la fois des contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+# <a name="walkthrough-binding-to-data-in-hybrid-applications"></a><span data-ttu-id="0558e-102">Procédure pas à pas : liaison de données dans des applications hybrides</span><span class="sxs-lookup"><span data-stu-id="0558e-102">Walkthrough: Binding to Data in Hybrid Applications</span></span>
+<span data-ttu-id="0558e-103">Liaison d’une source de données à un contrôle est essentielle pour fournir aux utilisateurs d’accéder aux données sous-jacentes, que vous utilisiez [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0558e-103">Binding a data source to a control is essential for providing users with access to underlying data, whether you are using [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] or [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="0558e-104">Cette procédure pas à pas montre comment vous pouvez utiliser la liaison de données dans les applications hybrides qui incluent les deux [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contrôles.</span><span class="sxs-lookup"><span data-stu-id="0558e-104">This walkthrough shows how you can use data binding in hybrid applications that include both [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] and [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] controls.</span></span>  
   
- Cette procédure pas à pas illustre les tâches suivantes :  
+ <span data-ttu-id="0558e-105">Cette procédure pas à pas décrit notamment les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="0558e-105">Tasks illustrated in this walkthrough include:</span></span>  
   
--   création du projet ;  
+-   <span data-ttu-id="0558e-106">Création du projet.</span><span class="sxs-lookup"><span data-stu-id="0558e-106">Creating the project.</span></span>  
   
--   Définition du modèle de données.  
+-   <span data-ttu-id="0558e-107">Définition du modèle de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-107">Defining the data template.</span></span>  
   
--   Spécification de la disposition du formulaire.  
+-   <span data-ttu-id="0558e-108">Spécification de la disposition du formulaire.</span><span class="sxs-lookup"><span data-stu-id="0558e-108">Specifying the form layout.</span></span>  
   
--   Spécification des liaisons de données.  
+-   <span data-ttu-id="0558e-109">Spécification des liaisons de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-109">Specifying data bindings.</span></span>  
   
--   Affichage de données en utilisant l'interopérabilité.  
+-   <span data-ttu-id="0558e-110">Affichage des données à l’aide de l’interopérabilité.</span><span class="sxs-lookup"><span data-stu-id="0558e-110">Displaying data by using interoperation.</span></span>  
   
--   Ajout de la source de données au projet.  
+-   <span data-ttu-id="0558e-111">Ajout de la source de données au projet.</span><span class="sxs-lookup"><span data-stu-id="0558e-111">Adding the data source to the project.</span></span>  
   
--   Liaison à la source de données.  
+-   <span data-ttu-id="0558e-112">Liaison à la source de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-112">Binding to the data source.</span></span>  
   
- Pour obtenir l'intégralité du code des tâches illustrées dans cette procédure pas à pas, consultez [Liaison de données dans des applications hybrides, exemple](http://go.microsoft.com/fwlink/?LinkID=159983).  
+ <span data-ttu-id="0558e-113">Pour l’intégralité du code des tâches illustrées dans cette procédure pas à pas, consultez [une liaison de données dans des Applications hybrides, exemple](http://go.microsoft.com/fwlink/?LinkID=159983).</span><span class="sxs-lookup"><span data-stu-id="0558e-113">For a complete code listing of the tasks illustrated in this walkthrough, see [Data Binding in Hybrid Applications Sample](http://go.microsoft.com/fwlink/?LinkID=159983).</span></span>  
   
- Lorsque vous avez terminé, vous disposerez de connaissances relatives aux fonctionnalités de liaison de données dans les applications hybrides.  
+ <span data-ttu-id="0558e-114">À l’issue de cette procédure, vous aurez une meilleure compréhension des fonctionnalités de liaison de données dans les applications hybrides.</span><span class="sxs-lookup"><span data-stu-id="0558e-114">When you are finished, you will have an understanding of data binding features in hybrid applications.</span></span>  
   
-## Composants requis  
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
+## <a name="prerequisites"></a><span data-ttu-id="0558e-115">Prérequis</span><span class="sxs-lookup"><span data-stu-id="0558e-115">Prerequisites</span></span>  
+ <span data-ttu-id="0558e-116">Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="0558e-116">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]<span data-ttu-id="0558e-117">.</span><span class="sxs-lookup"><span data-stu-id="0558e-117">.</span></span>  
   
--   Accès à la base de données Northwind exécutée sur Microsoft SQL Server..  
+-   <span data-ttu-id="0558e-118">Accès à la base de données Northwind en cours d’exécution sur Microsoft SQL Server.</span><span class="sxs-lookup"><span data-stu-id="0558e-118">Access to the Northwind sample database running on Microsoft SQL Server.</span></span>  
   
-## Création du projet  
+## <a name="creating-the-project"></a><span data-ttu-id="0558e-119">Création du projet</span><span class="sxs-lookup"><span data-stu-id="0558e-119">Creating the Project</span></span>  
   
-#### Pour créer et paramétrer le projet  
+#### <a name="to-create-and-set-up-the-project"></a><span data-ttu-id="0558e-120">Pour créer et configurer le projet</span><span class="sxs-lookup"><span data-stu-id="0558e-120">To create and set up the project</span></span>  
   
-1.  Créez un projet d'application WPF nommé `WPFWithWFAndDatabinding`.  
+1.  <span data-ttu-id="0558e-121">Créez un projet d’Application WPF nommé `WPFWithWFAndDatabinding`.</span><span class="sxs-lookup"><span data-stu-id="0558e-121">Create a WPF Application project named `WPFWithWFAndDatabinding`.</span></span>  
   
-2.  Dans l'Explorateur de solutions, ajoutez une référence aux assemblys suivants.  
+2.  <span data-ttu-id="0558e-122">Dans l’Explorateur de solutions, ajoutez des références aux assemblys suivants.</span><span class="sxs-lookup"><span data-stu-id="0558e-122">In Solution Explorer, add references to the following assemblies.</span></span>  
   
-    -   WindowsFormsIntegration  
+    -   <span data-ttu-id="0558e-123">WindowsFormsIntegration</span><span class="sxs-lookup"><span data-stu-id="0558e-123">WindowsFormsIntegration</span></span>  
   
-    -   System.Windows.Forms  
+    -   <span data-ttu-id="0558e-124">System.Windows.Forms</span><span class="sxs-lookup"><span data-stu-id="0558e-124">System.Windows.Forms</span></span>  
   
-3.  Ouvrez MainWindow.xaml dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
+3.  <span data-ttu-id="0558e-125">Ouvrez MainWindow.xaml dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0558e-125">Open MainWindow.xaml in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>  
   
-4.  Dans l'élément <xref:System.Windows.Window>, ajoutez le mappage d'espaces de noms [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] suivant.  
+4.  <span data-ttu-id="0558e-126">Dans le <xref:System.Windows.Window> élément, ajoutez le code suivant [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mappage des espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="0558e-126">In the <xref:System.Windows.Window> element, add the following [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] namespaces mapping.</span></span>  
   
     ```xaml  
     xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"  
     ```  
   
-5.  Nommez<xref:System.Windows.Controls.Grid> l'élément `mainGrid` par défaut en attribuant la propriété <xref:System.Windows.FrameworkElement.Name%2A>.  
+5.  <span data-ttu-id="0558e-127">Nom de la valeur par défaut <xref:System.Windows.Controls.Grid> élément `mainGrid` en assignant le <xref:System.Windows.FrameworkElement.Name%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="0558e-127">Name the default <xref:System.Windows.Controls.Grid> element `mainGrid` by assigning the <xref:System.Windows.FrameworkElement.Name%2A> property.</span></span>  
   
-     [!code-xml[WPFWithWFAndDatabinding#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#8)]  
+     [!code-xaml[WPFWithWFAndDatabinding#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#8)]  
   
-## Définition du modèle de données  
- La liste principale des clients est affichée dans un contrôle <xref:System.Windows.Controls.ListBox>.  L'exemple de code suivant définit un objet <xref:System.Windows.DataTemplate> nommé `ListItemsTemplate` qui contrôle l'arborescence d'éléments visuels du contrôle <xref:System.Windows.Controls.ListBox>.  Ce <xref:System.Windows.DataTemplate> est attribué à la propriété <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> du contrôle <xref:System.Windows.Controls.ListBox>.  
+## <a name="defining-the-data-template"></a><span data-ttu-id="0558e-128">Définition du modèle de données</span><span class="sxs-lookup"><span data-stu-id="0558e-128">Defining the Data Template</span></span>  
+ <span data-ttu-id="0558e-129">La liste principale des clients est affichée dans un <xref:System.Windows.Controls.ListBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="0558e-129">The master list of customers is displayed in a <xref:System.Windows.Controls.ListBox> control.</span></span> <span data-ttu-id="0558e-130">L’exemple de code suivant définit un <xref:System.Windows.DataTemplate> objet nommé `ListItemsTemplate` qui contrôle l’arborescence d’éléments visuels de la <xref:System.Windows.Controls.ListBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="0558e-130">The following code example defines a <xref:System.Windows.DataTemplate> object named `ListItemsTemplate` that controls the visual tree of the <xref:System.Windows.Controls.ListBox> control.</span></span> <span data-ttu-id="0558e-131">Cela <xref:System.Windows.DataTemplate> est affectée à la <xref:System.Windows.Controls.ListBox> du contrôle <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="0558e-131">This <xref:System.Windows.DataTemplate> is assigned to the <xref:System.Windows.Controls.ListBox> control's <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> property.</span></span>  
   
-#### Pour définir le modèle de données  
+#### <a name="to-define-the-data-template"></a><span data-ttu-id="0558e-132">Pour définir le modèle de données</span><span class="sxs-lookup"><span data-stu-id="0558e-132">To define the data template</span></span>  
   
--   Copiez le code XAML suivant dans la déclaration de l'élément <xref:System.Windows.Controls.Grid>.  
+-   <span data-ttu-id="0558e-133">Copiez le code XAML suivant dans la <xref:System.Windows.Controls.Grid> déclaration de l’élément.</span><span class="sxs-lookup"><span data-stu-id="0558e-133">Copy the following XAML into the <xref:System.Windows.Controls.Grid> element's declaration.</span></span>  
   
-     [!code-xml[WPFWithWFAndDatabinding#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#3)]  
+     [!code-xaml[WPFWithWFAndDatabinding#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#3)]  
   
-## Spécification de la disposition du formulaire  
- La disposition du formulaire est définie par une grille comportant trois lignes et trois colonnes.  Les contrôles <xref:System.Windows.Controls.Label> sont fournis pour identifier chaque colonne dans la table Customers.  
+## <a name="specifying-the-form-layout"></a><span data-ttu-id="0558e-134">Spécification de la disposition du formulaire</span><span class="sxs-lookup"><span data-stu-id="0558e-134">Specifying the Form Layout</span></span>  
+ <span data-ttu-id="0558e-135">La disposition du formulaire est définie par une grille de trois lignes et trois colonnes.</span><span class="sxs-lookup"><span data-stu-id="0558e-135">The layout of the form is defined by a grid with three rows and three columns.</span></span> <span data-ttu-id="0558e-136"><xref:System.Windows.Controls.Label>les contrôles sont fournis pour identifier chaque colonne dans la table Customers.</span><span class="sxs-lookup"><span data-stu-id="0558e-136"><xref:System.Windows.Controls.Label> controls are provided to identify each column in the Customers table.</span></span>  
   
-#### Pour paramétrer la disposition de la grille  
+#### <a name="to-set-up-the-grid-layout"></a><span data-ttu-id="0558e-137">Pour configurer la disposition de la grille</span><span class="sxs-lookup"><span data-stu-id="0558e-137">To set up the Grid layout</span></span>  
   
--   Copiez le code XAML suivant dans la déclaration de l'élément <xref:System.Windows.Controls.Grid>.  
+-   <span data-ttu-id="0558e-138">Copiez le code XAML suivant dans la <xref:System.Windows.Controls.Grid> déclaration de l’élément.</span><span class="sxs-lookup"><span data-stu-id="0558e-138">Copy the following XAML into the <xref:System.Windows.Controls.Grid> element's declaration.</span></span>  
   
-     [!code-xml[WPFWithWFAndDatabinding#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#4)]  
+     [!code-xaml[WPFWithWFAndDatabinding#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#4)]  
   
-#### Pour paramétrer les contrôles Label  
+#### <a name="to-set-up-the-label-controls"></a><span data-ttu-id="0558e-139">Pour configurer les contrôles Label</span><span class="sxs-lookup"><span data-stu-id="0558e-139">To set up the Label controls</span></span>  
   
--   Copiez le code XAML suivant dans la déclaration de l'élément <xref:System.Windows.Controls.Grid>.  
+-   <span data-ttu-id="0558e-140">Copiez le code XAML suivant dans la <xref:System.Windows.Controls.Grid> déclaration de l’élément.</span><span class="sxs-lookup"><span data-stu-id="0558e-140">Copy the following XAML into the <xref:System.Windows.Controls.Grid> element's declaration.</span></span>  
   
-     [!code-xml[WPFWithWFAndDatabinding#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#5)]  
+     [!code-xaml[WPFWithWFAndDatabinding#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#5)]  
   
-## Spécification des liaisons de données  
- La liste principale des clients est affichée dans un contrôle <xref:System.Windows.Controls.ListBox>.  Le `ListItemsTemplate` attaché lie un contrôle <xref:System.Windows.Controls.TextBlock> au champ `ContactName` de la base de données.  
+## <a name="specifying-data-bindings"></a><span data-ttu-id="0558e-141">Spécification des liaisons de données</span><span class="sxs-lookup"><span data-stu-id="0558e-141">Specifying Data Bindings</span></span>  
+ <span data-ttu-id="0558e-142">La liste principale des clients est affichée dans un <xref:System.Windows.Controls.ListBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="0558e-142">The master list of customers is displayed in a <xref:System.Windows.Controls.ListBox> control.</span></span> <span data-ttu-id="0558e-143">Le fichier joint `ListItemsTemplate` lie un <xref:System.Windows.Controls.TextBlock> le contrôle à la `ContactName` champ à partir de la base de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-143">The attached `ListItemsTemplate` binds a <xref:System.Windows.Controls.TextBlock> control to the `ContactName` field from the database.</span></span>  
   
- Les détails de chaque enregistrement client sont affichés dans plusieurs contrôles <xref:System.Windows.Controls.TextBox>.  
+ <span data-ttu-id="0558e-144">Les détails de chaque enregistrement client sont affichés dans plusieurs <xref:System.Windows.Controls.TextBox> contrôles.</span><span class="sxs-lookup"><span data-stu-id="0558e-144">The details of each customer record are displayed in several <xref:System.Windows.Controls.TextBox> controls.</span></span>  
   
-#### Pour spécifier des liaisons de données  
+#### <a name="to-specify-data-bindings"></a><span data-ttu-id="0558e-145">Pour spécifier des liaisons de données</span><span class="sxs-lookup"><span data-stu-id="0558e-145">To specify data bindings</span></span>  
   
--   Copiez le code XAML suivant dans la déclaration de l'élément <xref:System.Windows.Controls.Grid>.  
+-   <span data-ttu-id="0558e-146">Copiez le code XAML suivant dans la <xref:System.Windows.Controls.Grid> déclaration de l’élément.</span><span class="sxs-lookup"><span data-stu-id="0558e-146">Copy the following XAML into the <xref:System.Windows.Controls.Grid> element's declaration.</span></span>  
   
-     La classe <xref:System.Windows.Data.Binding> lie les contrôles <xref:System.Windows.Controls.TextBox> aux champs appropriés dans la base de données.  
+     <span data-ttu-id="0558e-147">Le <xref:System.Windows.Data.Binding> classe lie le <xref:System.Windows.Controls.TextBox> contrôles aux champs appropriés dans la base de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-147">The <xref:System.Windows.Data.Binding> class binds the <xref:System.Windows.Controls.TextBox> controls to the appropriate fields in the database.</span></span>  
   
-     [!code-xml[WPFWithWFAndDatabinding#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#6)]  
+     [!code-xaml[WPFWithWFAndDatabinding#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#6)]  
   
-## Affichage de données en utilisant l'interopérabilité  
- Les ordres qui correspondent au client sélectionné sont affichés dans un contrôle <xref:System.Windows.Forms.DataGridView?displayProperty=fullName> nommé `dataGridView1`.  Le contrôle `dataGridView1` est lié à la source de données dans le fichier code\-behind.  Un contrôle <xref:System.Windows.Forms.Integration.WindowsFormsHost> est le parent de ce contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].  
+## <a name="displaying-data-by-using-interoperation"></a><span data-ttu-id="0558e-148">Affichage des données à l’aide de l’interopérabilité</span><span class="sxs-lookup"><span data-stu-id="0558e-148">Displaying Data by Using Interoperation</span></span>  
+ <span data-ttu-id="0558e-149">Les commandes correspondant au client sélectionné sont affichées dans un <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> contrôle nommé `dataGridView1`.</span><span class="sxs-lookup"><span data-stu-id="0558e-149">The orders corresponding to the selected customer are displayed in a <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> control named `dataGridView1`.</span></span> <span data-ttu-id="0558e-150">Le `dataGridView1` contrôle est lié à la source de données dans le fichier code-behind.</span><span class="sxs-lookup"><span data-stu-id="0558e-150">The `dataGridView1` control is bound to the data source in the code-behind file.</span></span> <span data-ttu-id="0558e-151">A <xref:System.Windows.Forms.Integration.WindowsFormsHost> contrôle est le parent de ce [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôle.</span><span class="sxs-lookup"><span data-stu-id="0558e-151">A <xref:System.Windows.Forms.Integration.WindowsFormsHost> control is the parent of this [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] control.</span></span>  
   
-#### Pour afficher des données dans le contrôle DataGridView  
+#### <a name="to-display-data-in-the-datagridview-control"></a><span data-ttu-id="0558e-152">Pour afficher des données dans le contrôle DataGridView</span><span class="sxs-lookup"><span data-stu-id="0558e-152">To display data in the DataGridView control</span></span>  
   
--   Copiez le code XAML suivant dans la déclaration de l'élément <xref:System.Windows.Controls.Grid>.  
+-   <span data-ttu-id="0558e-153">Copiez le code XAML suivant dans la <xref:System.Windows.Controls.Grid> déclaration de l’élément.</span><span class="sxs-lookup"><span data-stu-id="0558e-153">Copy the following XAML into the <xref:System.Windows.Controls.Grid> element's declaration.</span></span>  
   
-     [!code-xml[WPFWithWFAndDatabinding#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#7)]  
+     [!code-xaml[WPFWithWFAndDatabinding#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#7)]  
   
-## Ajout de la source de données au projet  
- Avec [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], vous pouvez ajouter facilement une source de données à votre projet.  Cette procédure ajoute un groupe de données fortement typé à votre projet.  Plusieurs autres classes de prise en charge, telles que les adaptateurs de table pour chacune des tables choisies, sont également ajoutées.  
+## <a name="adding-the-data-source-to-the-project"></a><span data-ttu-id="0558e-154">Ajout de la source de données au projet</span><span class="sxs-lookup"><span data-stu-id="0558e-154">Adding the Data Source to the Project</span></span>  
+ <span data-ttu-id="0558e-155">Avec [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], vous pouvez facilement ajouter une source de données à votre projet.</span><span class="sxs-lookup"><span data-stu-id="0558e-155">With [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], you can easily add a data source to your project.</span></span> <span data-ttu-id="0558e-156">Cette procédure ajoute un jeu de données fortement typé à votre projet.</span><span class="sxs-lookup"><span data-stu-id="0558e-156">This procedure adds a strongly typed data set to your project.</span></span> <span data-ttu-id="0558e-157">Plusieurs autres classes de prise en charge, comme les adaptateurs de table pour chacune des tables choisies, sont également ajoutées.</span><span class="sxs-lookup"><span data-stu-id="0558e-157">Several other support classes, such as table adapters for each of the chosen tables, are also added.</span></span>  
   
-#### Pour ajouter la source de données  
+#### <a name="to-add-the-data-source"></a><span data-ttu-id="0558e-158">Pour ajouter la source de données</span><span class="sxs-lookup"><span data-stu-id="0558e-158">To add the data source</span></span>  
   
-1.  Dans le menu **Données**, sélectionnez **Ajouter une nouvelle source de données**.  
+1.  <span data-ttu-id="0558e-159">À partir de la **données** menu, sélectionnez **ajouter une nouvelle Source de données**.</span><span class="sxs-lookup"><span data-stu-id="0558e-159">From the **Data** menu, select **Add New Data Source**.</span></span>  
   
-2.  Dans l'**Assistant Configuration de source de données**, créez une connexion à la base de données Northwind à l'aide d'un dataset.  Pour plus d'informations, consultez [Comment : établir une connexion à des données d'une base de données](../Topic/How%20to:%20Connect%20to%20Data%20in%20a%20Database.md).  
+2.  <span data-ttu-id="0558e-160">Dans le **Assistant de Configuration de Source de données**, créez une connexion à la base de données Northwind à l’aide d’un jeu de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-160">In the **Data Source Configuration Wizard**, create a connection to the Northwind database by using a dataset.</span></span> <span data-ttu-id="0558e-161">Pour plus d’informations, consultez [Comment : se connecter à des données dans une base de données](http://msdn.microsoft.com/library/6c56e54e-8834-4297-85aa-cc1a443ba556).</span><span class="sxs-lookup"><span data-stu-id="0558e-161">For more information, see [How to: Connect to Data in a Database](http://msdn.microsoft.com/library/6c56e54e-8834-4297-85aa-cc1a443ba556).</span></span>  
   
-3.  Lorsque vous êtes invités par l'**Assistant Configuration de source de données**, enregistrez la chaîne de connexion en tant que `NorthwindConnectionString`.  
+3.  <span data-ttu-id="0558e-162">Lorsque vous êtes invité par le **Assistant de Configuration de Source de données**, enregistrer la chaîne de connexion en tant que `NorthwindConnectionString`.</span><span class="sxs-lookup"><span data-stu-id="0558e-162">When you are prompted by the **Data Source Configuration Wizard**, save the connection string as `NorthwindConnectionString`.</span></span>  
   
-4.  Lorsque vous êtes invité à choisir vos objets de base de données, sélectionnez les tables `Customers` et `Orders`, puis nommez le groupe de données généré `NorthwindDataSet`.  
+4.  <span data-ttu-id="0558e-163">Lorsque vous êtes invité à choisir vos objets de base de données, sélectionnez le `Customers` et `Orders` tables et le nom du jeu de données généré `NorthwindDataSet`.</span><span class="sxs-lookup"><span data-stu-id="0558e-163">When you are prompted to choose your database objects, select the `Customers` and `Orders` tables, and name the generated data set `NorthwindDataSet`.</span></span>  
   
-## Liaison à la source de données  
- Le composant <xref:System.Windows.Forms.BindingSource?displayProperty=fullName> fournit une interface uniforme pour la source de données de l'application.  La liaison à la source de données est implémentée dans le fichier code\-behind.  
+## <a name="binding-to-the-data-source"></a><span data-ttu-id="0558e-164">Liaison à la source de données</span><span class="sxs-lookup"><span data-stu-id="0558e-164">Binding to the Data Source</span></span>  
+ <span data-ttu-id="0558e-165">Le <xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType> composant fournit une interface uniforme pour la source de données de l’application.</span><span class="sxs-lookup"><span data-stu-id="0558e-165">The <xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType> component provides a uniform interface for the application's data source.</span></span> <span data-ttu-id="0558e-166">La liaison à la source de données est implémentée dans le fichier code-behind.</span><span class="sxs-lookup"><span data-stu-id="0558e-166">Binding to the data source is implemented in the code-behind file.</span></span>  
   
-#### Pour effectuer la liaison à la source de données  
+#### <a name="to-bind-to-the-data-source"></a><span data-ttu-id="0558e-167">Pour effectuer la liaison à la source de données</span><span class="sxs-lookup"><span data-stu-id="0558e-167">To bind to the data source</span></span>  
   
-1.  Ouvrez le fichier code\-behind, nommé MainWindow.xaml.vb ou MainWindow.xaml.cs.  
+1.  <span data-ttu-id="0558e-168">Ouvrez le fichier code-behind nommé MainWindow.xaml.vb ou MainWindow.xaml.cs.</span><span class="sxs-lookup"><span data-stu-id="0558e-168">Open the code-behind file, which is named MainWindow.xaml.vb or MainWindow.xaml.cs.</span></span>  
   
-2.  Copiez le code suivant dans la définition de classe `MainWindow`.  
+2.  <span data-ttu-id="0558e-169">Copiez le code suivant dans le `MainWindow` définition de classe.</span><span class="sxs-lookup"><span data-stu-id="0558e-169">Copy the following code into the `MainWindow` class definition.</span></span>  
   
-     Ce code déclare le composant <xref:System.Windows.Forms.BindingSource> et les classes d'assistance associées qui se connectent à la base de données.  
+     <span data-ttu-id="0558e-170">Ce code déclare le <xref:System.Windows.Forms.BindingSource> composant et les classes d’assistance associées qui se connectent à la base de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-170">This code declares the <xref:System.Windows.Forms.BindingSource> component and associated helper classes that connect to the database.</span></span>  
   
      [!code-csharp[WPFWithWFAndDatabinding#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#11)]
      [!code-vb[WPFWithWFAndDatabinding#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#11)]  
   
-3.  Copiez le code suivant dans le constructeur.  
+3.  <span data-ttu-id="0558e-171">Copiez le code suivant dans le constructeur.</span><span class="sxs-lookup"><span data-stu-id="0558e-171">Copy the following code into the constructor.</span></span>  
   
-     Ce code crée et initialise le composant <xref:System.Windows.Forms.BindingSource>.  
+     <span data-ttu-id="0558e-172">Ce code crée et initialise le <xref:System.Windows.Forms.BindingSource> composant.</span><span class="sxs-lookup"><span data-stu-id="0558e-172">This code creates and initializes the <xref:System.Windows.Forms.BindingSource> component.</span></span>  
   
      [!code-csharp[WPFWithWFAndDatabinding#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#12)]
      [!code-vb[WPFWithWFAndDatabinding#12](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#12)]  
   
-4.  Ouvrez MainWindow.xaml.  
+4.  <span data-ttu-id="0558e-173">Ouvrez MainWindow.xaml.</span><span class="sxs-lookup"><span data-stu-id="0558e-173">Open MainWindow.xaml.</span></span>  
   
-5.  En mode Design ou XAML, sélectionnez l'élément <xref:System.Windows.Window>.  
+5.  <span data-ttu-id="0558e-174">En mode Création ou la vue XAML, sélectionnez le <xref:System.Windows.Window> élément.</span><span class="sxs-lookup"><span data-stu-id="0558e-174">In Design view or XAML view, select the <xref:System.Windows.Window> element.</span></span>  
   
-6.  Dans la fenêtre Propriétés, cliquez sur l'onglet **Événements**.  
+6.  <span data-ttu-id="0558e-175">Dans la fenêtre Propriétés, cliquez sur le **événements** onglet.</span><span class="sxs-lookup"><span data-stu-id="0558e-175">In the Properties window, click the **Events** tab.</span></span>  
   
-7.  Double\-cliquez sur l'événement <xref:System.Windows.FrameworkElement.Loaded>.  
+7.  <span data-ttu-id="0558e-176">Double-cliquez sur le <xref:System.Windows.FrameworkElement.Loaded> événement.</span><span class="sxs-lookup"><span data-stu-id="0558e-176">Double-click the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span>  
   
-8.  Copiez le code suivant dans le gestionnaire d'événements <xref:System.Windows.FrameworkElement.Loaded>.  
+8.  <span data-ttu-id="0558e-177">Copiez le code suivant dans le <xref:System.Windows.FrameworkElement.Loaded> Gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="0558e-177">Copy the following code into the <xref:System.Windows.FrameworkElement.Loaded> event handler.</span></span>  
   
-     Ce code affecte le composant <xref:System.Windows.Forms.BindingSource> en tant que contexte de données et remplit les objets d'adaptateur `Customers` et `Orders`.  
+     <span data-ttu-id="0558e-178">Ce code affecte la <xref:System.Windows.Forms.BindingSource> composant en tant que le contexte de données et remplit la `Customers` et `Orders` objets de carte.</span><span class="sxs-lookup"><span data-stu-id="0558e-178">This code assigns the <xref:System.Windows.Forms.BindingSource> component as the data context and populates the `Customers` and `Orders` adapter objects.</span></span>  
   
      [!code-csharp[WPFWithWFAndDatabinding#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#13)]
      [!code-vb[WPFWithWFAndDatabinding#13](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#13)]  
   
-9. Copiez le code suivant dans la définition de classe `MainWindow`.  
+9. <span data-ttu-id="0558e-179">Copiez le code suivant dans le `MainWindow` définition de classe.</span><span class="sxs-lookup"><span data-stu-id="0558e-179">Copy the following code into the `MainWindow` class definition.</span></span>  
   
-     Cette méthode gère l'événement <xref:System.Windows.Data.CollectionView.CurrentChanged> et met à jour l'élément actuel de la liaison de données.  
+     <span data-ttu-id="0558e-180">Cette méthode gère le <xref:System.Windows.Data.CollectionView.CurrentChanged> événements et met à jour l’élément actuel de la liaison de données.</span><span class="sxs-lookup"><span data-stu-id="0558e-180">This method handles the <xref:System.Windows.Data.CollectionView.CurrentChanged> event and updates the current item of the data binding.</span></span>  
   
      [!code-csharp[WPFWithWFAndDatabinding#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#14)]
      [!code-vb[WPFWithWFAndDatabinding#14](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#14)]  
   
-10. Appuyez sur F5 pour générer et exécuter l'application.  
+10. <span data-ttu-id="0558e-181">Appuyez sur F5 pour générer et exécuter l'application.</span><span class="sxs-lookup"><span data-stu-id="0558e-181">Press F5 to build and run the application.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [Concepteur WPF](http://msdn.microsoft.com/fr-fr/c6c65214-8411-4e16-b254-163ed4099c26)   
- [Liaison de données dans des applications hybrides, exemple](http://go.microsoft.com/fwlink/?LinkID=159983)   
- [Procédure pas à pas : hébergement d'un contrôle composite Windows Forms dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)   
- [Procédure pas à pas : hébergement d'un contrôle composite WPF dans les Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="0558e-182">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0558e-182">See Also</span></span>  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [<span data-ttu-id="0558e-183">Concepteur WPF</span><span class="sxs-lookup"><span data-stu-id="0558e-183">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [<span data-ttu-id="0558e-184">Liaison de données dans des Applications hybrides, exemple</span><span class="sxs-lookup"><span data-stu-id="0558e-184">Data Binding in Hybrid Applications Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=159983)  
+ [<span data-ttu-id="0558e-185">Procédure pas à pas : hébergement d'un contrôle composite Windows Forms dans WPF</span><span class="sxs-lookup"><span data-stu-id="0558e-185">Walkthrough: Hosting a Windows Forms Composite Control in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)  
+ [<span data-ttu-id="0558e-186">Procédure pas à pas : Hébergement d'un contrôle composite WPF dans Windows Forms</span><span class="sxs-lookup"><span data-stu-id="0558e-186">Walkthrough: Hosting a WPF Composite Control in Windows Forms</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

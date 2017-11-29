@@ -1,59 +1,65 @@
 ---
-title: "Comment&#160;: exporter des assertions de strat&#233;gie personnalis&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : exporter des assertions de stratégie personnalisées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 99030386-43b0-4f7b-866d-17ea307f5cbd
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 466aecb5102332d3e246fd340e43b482d2c17a4c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: exporter des assertions de strat&#233;gie personnalis&#233;es
-Les assertions de stratégie décrivent les fonctions et les spécifications d'un point de terminaison de service.Les applications de service peuvent utiliser des assertions de stratégie personnalisées dans les métadonnées de service pour communiquer des informations de personnalisation de point de terminaison, de liaison ou de contrat à l'application cliente.Vous pouvez utiliser [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour exporter des assertions dans des expressions de stratégie attachées dans les liaisons WSDL au point de terminaison, à l'opération ou aux objets de message, selon les fonctions ou les spécifications que vous communiquez.  
+# <a name="how-to-export-custom-policy-assertions"></a><span data-ttu-id="2cda8-102">Comment : exporter des assertions de stratégie personnalisées</span><span class="sxs-lookup"><span data-stu-id="2cda8-102">How to: Export Custom Policy Assertions</span></span>
+<span data-ttu-id="2cda8-103">Les assertions de stratégie décrivent les fonctions et les exigences d’un point de terminaison de service.</span><span class="sxs-lookup"><span data-stu-id="2cda8-103">Policy assertions describe the capabilities and requirements of a service endpoint.</span></span> <span data-ttu-id="2cda8-104">Les applications de service peuvent utiliser des assertions de stratégie personnalisées dans les métadonnées de service pour communiquer des informations de personnalisation de point de terminaison, de liaison ou de contrat à l'application cliente.</span><span class="sxs-lookup"><span data-stu-id="2cda8-104">Service applications can use custom policy assertions in service metadata to communicate endpoint, binding or contract customization information to the client application.</span></span> <span data-ttu-id="2cda8-105">Vous pouvez utiliser [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour exporter des assertions dans des expressions de stratégie attachées dans les liaisons WSDL au point de terminaison, à l'opération ou aux objets de message, selon les fonctions ou les spécifications que vous communiquez.</span><span class="sxs-lookup"><span data-stu-id="2cda8-105">You can use [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] to export assertions in policy expressions attached in WSDL bindings at the endpoint, operation, or message subjects, depending upon the capabilities or requirements you are communicating.</span></span>  
   
- Les assertions de stratégie personnalisées sont exportées en implémentant l'interface <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=fullName> sur <xref:System.ServiceModel.Channels.BindingElement?displayProperty=fullName> et en insérant directement l'élément de liaison dans la liaison du point de terminaison de service ou en inscrivant l'élément de liaison dans le fichier de configuration de l'application.Votre implémentation de l'exportation de la stratégie doit ajouter votre assertion de stratégie personnalisée comme une instance <xref:System.Xml.XmlElement?displayProperty=fullName> au <xref:System.ServiceModel.Description.PolicyAssertionCollection?displayProperty=fullName> approprié sur le <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=fullName> qui est passé dans la méthode <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A>.  
+ <span data-ttu-id="2cda8-106">Les assertions de stratégie personnalisées sont exportées en implémentant l'interface <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> sur <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> et en insérant directement l'élément de liaison dans la liaison du point de terminaison de service ou en inscrivant l'élément de liaison dans le fichier de configuration de l'application.</span><span class="sxs-lookup"><span data-stu-id="2cda8-106">Custom policy assertions are exported by implementing the <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> interface on a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> and either inserting the binding element directly into the binding of the service endpoint or by registering the binding element in your application configuration file.</span></span> <span data-ttu-id="2cda8-107">Votre implémentation de l'exportation de la stratégie doit ajouter votre assertion de stratégie personnalisée comme une instance <xref:System.Xml.XmlElement?displayProperty=nameWithType> au <xref:System.ServiceModel.Description.PolicyAssertionCollection?displayProperty=nameWithType> approprié sur le <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> qui est passé dans la méthode <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A>.</span><span class="sxs-lookup"><span data-stu-id="2cda8-107">Your policy export implementation should add your custom policy assertion as a <xref:System.Xml.XmlElement?displayProperty=nameWithType> instance to the appropriate <xref:System.ServiceModel.Description.PolicyAssertionCollection?displayProperty=nameWithType> on the <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> passed into the <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A> method.</span></span>  
   
- En outre, vous devez vérifier la propriété <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> de la classe <xref:System.ServiceModel.Description.WsdlExporter> et exporter les expressions de stratégie imbriquées et les attributs de l'infrastructure de stratégie dans l'espace de noms correct en fonction de la version de stratégie spécifiée.  
+ <span data-ttu-id="2cda8-108">En outre, vous devez vérifier la propriété <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> de la classe <xref:System.ServiceModel.Description.WsdlExporter> et exporter les expressions de stratégie imbriquées et les attributs de l'infrastructure de stratégie dans l'espace de noms correct en fonction de la version de stratégie spécifiée.</span><span class="sxs-lookup"><span data-stu-id="2cda8-108">In addition you must check the <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> property of the <xref:System.ServiceModel.Description.WsdlExporter> class and export nested policy expressions and policy framework attributes in the correct namespace based on the policy version specified.</span></span>  
   
- Pour importer des assertions de stratégie personnalisées, consultez <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=fullName> et [Comment : importer des assertions de stratégie personnalisées](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md).  
+ <span data-ttu-id="2cda8-109">Pour importer les assertions de stratégie personnalisées, consultez <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> et [Comment : importer des Assertions de stratégie](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md).</span><span class="sxs-lookup"><span data-stu-id="2cda8-109">To import custom policy assertions, see <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> and [How to: Import Custom Policy Assertions](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md).</span></span>  
   
-### Pour exporter des assertions de stratégie personnalisées  
+### <a name="to-export-custom-policy-assertions"></a><span data-ttu-id="2cda8-110">Pour exporter des assertions de stratégie personnalisées</span><span class="sxs-lookup"><span data-stu-id="2cda8-110">To export custom policy assertions</span></span>  
   
-1.  Implémentez l'interface <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=fullName> sur un <xref:System.ServiceModel.Channels.BindingElement?displayProperty=fullName>.L'exemple de code ci\-dessous montre l'implémentation d'une assertion de stratégie personnalisée au niveau de la liaison.  
+1.  <span data-ttu-id="2cda8-111">Implémentez l'interface <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> sur un <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="2cda8-111">Implement the <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> interface on a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>.</span></span> <span data-ttu-id="2cda8-112">L’exemple de code ci-dessous montre l’implémentation d’une assertion de stratégie personnalisée au niveau de la liaison.</span><span class="sxs-lookup"><span data-stu-id="2cda8-112">The following code example shows the implementation of a custom policy assertion at the binding level.</span></span>  
   
      [!code-csharp[CustomPolicySample#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/policyexporter.cs#14)]
      [!code-vb[CustomPolicySample#14](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/custompolicysample/vb/policyexporter.vb#14)]  
   
-2.  Insérez l'élément de liaison dans la liaison de point de terminaison par programme ou à l'aide d'un fichier de configuration d'application.Reportez\-vous aux procédures ci\-dessous.  
+2.  <span data-ttu-id="2cda8-113">Insérez l’élément de liaison dans la liaison de point de terminaison par programme ou à l’aide d’un fichier de configuration d’application.</span><span class="sxs-lookup"><span data-stu-id="2cda8-113">Insert the binding element into the endpoint binding either programmatically or using an application configuration file.</span></span> <span data-ttu-id="2cda8-114">Reportez-vous aux procédures ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="2cda8-114">See the following procedures.</span></span>  
   
-### Pour insérer un élément de liaison à l'aide d'un fichier de configuration d'application  
+### <a name="to-insert-a-binding-element-using-an-application-configuration-file"></a><span data-ttu-id="2cda8-115">Pour insérer un élément de liaison à l'aide d'un fichier de configuration d'application</span><span class="sxs-lookup"><span data-stu-id="2cda8-115">To insert a binding element using an application configuration file</span></span>  
   
-1.  Implémentez <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=fullName> pour l'élément de liaison de l'assertion de stratégie personnalisée.  
+1.  <span data-ttu-id="2cda8-116">Implémentez <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=nameWithType> pour l'élément de liaison de l'assertion de stratégie personnalisée.</span><span class="sxs-lookup"><span data-stu-id="2cda8-116">Implement <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=nameWithType> for your custom policy assertion binding element.</span></span>  
   
-2.  Ajoutez l'extension d'élément de liaison au fichier de configuration à l'aide de l'élément [\<bindingElementExtensions\>](../../../../docs/framework/configure-apps/file-schema/wcf/bindingelementextensions.md).  
+2.  <span data-ttu-id="2cda8-117">Ajouter l’extension d’élément de liaison pour le fichier de configuration à l’aide de la [ \<bindingElementExtensions >](../../../../docs/framework/configure-apps/file-schema/wcf/bindingelementextensions.md) élément.</span><span class="sxs-lookup"><span data-stu-id="2cda8-117">Add the binding element extension to the configuration file using the [\<bindingElementExtensions>](../../../../docs/framework/configure-apps/file-schema/wcf/bindingelementextensions.md) element.</span></span>  
   
-3.  Créez une liaison personnalisée à l'aide de <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=fullName>.  
+3.  <span data-ttu-id="2cda8-118">Créez une liaison personnalisée à l'aide de <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="2cda8-118">Build a custom binding using the <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>.</span></span>  
   
-### Pour insérer un élément de liaison par programme  
+### <a name="to-insert-a-binding-element-programmatically"></a><span data-ttu-id="2cda8-119">Pour insérer un élément de liaison par programme</span><span class="sxs-lookup"><span data-stu-id="2cda8-119">To insert a binding element programmatically</span></span>  
   
-1.  Créez un nouveau <xref:System.ServiceModel.Channels.BindingElement?displayProperty=fullName> et ajoutez\-le à un <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=fullName>.  
+1.  <span data-ttu-id="2cda8-120">Créez un nouveau <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> et ajoutez-le à un <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="2cda8-120">Create a new <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> and add it to a <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>.</span></span>  
   
-2.  Ajoutez la liaison personnalisée de l'étape 1.à un nouveau point de terminaison et ajoutez ce nouveau point de terminaison de service au <xref:System.ServiceModel.ServiceHost?displayProperty=fullName> en appelant la méthode <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A>.  
+2.  <span data-ttu-id="2cda8-121">Ajoutez la liaison personnalisée de l'étape 1.</span><span class="sxs-lookup"><span data-stu-id="2cda8-121">Add the custom binding from step 1.</span></span> <span data-ttu-id="2cda8-122">à un nouveau point de terminaison et ajoutez ce nouveau point de terminaison de service au <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> en appelant la méthode <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A>.</span><span class="sxs-lookup"><span data-stu-id="2cda8-122">to a new endpoint and add that new service endpoint to the <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> by calling the <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> method.</span></span>  
   
-3.  Ouvrez <xref:System.ServiceModel.ServiceHost>.L'exemple de code ci\-dessous montre la création d'une liaison personnalisée et l'insertion par programme d'éléments de liaison.  
+3.  <span data-ttu-id="2cda8-123">Ouvrez <xref:System.ServiceModel.ServiceHost>.</span><span class="sxs-lookup"><span data-stu-id="2cda8-123">Open the <xref:System.ServiceModel.ServiceHost>.</span></span> <span data-ttu-id="2cda8-124">L’exemple de code ci-dessous montre la création d’une liaison personnalisée et l’insertion par programme d’éléments de liaison.</span><span class="sxs-lookup"><span data-stu-id="2cda8-124">The following code example shows the creation of a custom binding and the programmatic insertion of binding elements.</span></span>  
   
      [!code-csharp[s_imperative#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/service.cs#1)]
      [!code-vb[s_imperative#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/service.vb#1)]  
   
-## Voir aussi  
- <xref:System.ServiceModel.Description.IPolicyImportExtension>   
- <xref:System.ServiceModel.Description.IPolicyExportExtension>   
- [Comment : importer des assertions de stratégie personnalisées](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)
+## <a name="see-also"></a><span data-ttu-id="2cda8-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2cda8-125">See Also</span></span>  
+ <xref:System.ServiceModel.Description.IPolicyImportExtension>  
+ <xref:System.ServiceModel.Description.IPolicyExportExtension>  
+ [<span data-ttu-id="2cda8-126">Comment : importer des Assertions de stratégie personnalisées</span><span class="sxs-lookup"><span data-stu-id="2cda8-126">How to: Import Custom Policy Assertions</span></span>](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)

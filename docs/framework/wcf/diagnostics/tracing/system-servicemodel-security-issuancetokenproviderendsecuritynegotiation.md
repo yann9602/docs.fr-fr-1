@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 44a0b49e-fbd7-4649-a29a-1d1a6cd36a90
-caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: c67c7ed840f7ad32358b986f20280c76283c92b0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation
-System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation  
+# <a name="systemservicemodelsecurityissuancetokenproviderendsecuritynegotiation"></a><span data-ttu-id="e8e3a-102">System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation</span><span class="sxs-lookup"><span data-stu-id="e8e3a-102">System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation</span></span>
+<span data-ttu-id="e8e3a-103">System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation</span><span class="sxs-lookup"><span data-stu-id="e8e3a-103">System.ServiceModel.Security.IssuanceTokenProviderEndSecurityNegotiation</span></span>  
   
-## Description  
- IssuanceTokenProvider a achevé la négociation de sécurité.  
+## <a name="description"></a><span data-ttu-id="e8e3a-104">Description</span><span class="sxs-lookup"><span data-stu-id="e8e3a-104">Description</span></span>  
+ <span data-ttu-id="e8e3a-105">IssuanceTokenProvider a achevé la négociation de sécurité.</span><span class="sxs-lookup"><span data-stu-id="e8e3a-105">The IssuanceTokenProvider has completed the security negotiation.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e8e3a-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e8e3a-106">See Also</span></span>  
+ [<span data-ttu-id="e8e3a-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="e8e3a-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e8e3a-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="e8e3a-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e8e3a-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="e8e3a-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
