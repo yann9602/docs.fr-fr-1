@@ -1,45 +1,27 @@
 ---
 title: "Délégués (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - delegates [Visual Basic]
 - Visual Basic code, delegates
 ms.assetid: 410b60dc-5e60-4ec0-bfae-426755a2ee28
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0b65f2d74064542177790e513eb2452274743b51
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: fe21d8c0dcefaea35d9f96cd2ecbff92a1c83d36
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="delegates-visual-basic"></a>Délégués (Visual Basic)
-Les délégués sont des objets qui font référence à des méthodes. Ils sont parfois décrits comme des *pointeurs de fonction de type sécurisé*, car ils sont comparables aux pointeurs de fonction utilisés dans d’autres langages de programmation. Mais, contrairement aux pointeurs de fonction, les délégués [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] sont un type de référence basé sur la classe <xref:System.Delegate?displayProperty=fullName>. Les délégués peuvent faire référence à des méthodes partagées (méthodes qui peuvent être appelées sans une instance spécifique de classe) et des méthodes d’instance.  
+Les délégués sont des objets qui font référence à des méthodes. Ils sont parfois décrits comme des *pointeurs de fonction de type sécurisé*, car ils sont comparables aux pointeurs de fonction utilisés dans d’autres langages de programmation. Mais, contrairement aux pointeurs de fonction, les délégués [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] sont un type de référence basé sur la classe <xref:System.Delegate?displayProperty=nameWithType>. Les délégués peuvent faire référence à des méthodes partagées (méthodes qui peuvent être appelées sans une instance spécifique de classe) et des méthodes d’instance.  
   
 ## <a name="delegates-and-events"></a>Délégués et événements  
  Les délégués sont utiles dans les situations où un intermédiaire est nécessaire entre une procédure appelante et la procédure appelée. Par exemple, vous pouvez créer un objet qui déclenche des événements pour pouvoir appeler différents gestionnaires d’événements dans différentes circonstances. Malheureusement, l’objet qui déclenche les événements ne peut pas savoir à l’avance quel gestionnaire d’événements gère un événement donné. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vous permet d’associer de façon dynamique des gestionnaires d’événements à des événements en créant un délégué lorsque vous utilisez l’instruction `AddHandler`. À l’exécution, le délégué transmet les appels au gestionnaire d’événements approprié.  
@@ -91,4 +73,3 @@ Les délégués sont des objets qui font référence à des méthodes. Ils sont 
 |[Guide pratique : passer des procédures à une autre procédure en Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)|Montre comment utiliser des délégués pour transmettre une procédure à une autre procédure.|  
 |[Conversion simplifiée des délégués](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)|Explique comment affecter des sous-routines et des fonctions aux délégués ou aux gestionnaires même si leurs signatures ne sont pas identiques.|  
 |[Événements](../../../../visual-basic/programming-guide/language-features/events/index.md)|Fournit une vue d’ensemble des événements en Visual Basic.|
-

@@ -1,14 +1,11 @@
 ---
 title: "Littéraux XML (Visual Basic)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - declaring XML literals [Visual Basic]
 - Visual Basic, XML literals
@@ -17,29 +14,14 @@ helpviewer_keywords:
 - XML literals [Visual Basic], reference
 - literals [Visual Basic], XML
 ms.assetid: 16b28c40-8768-423f-bd9c-22ff10de2b54
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9182402167c64d6683670ae240cd0dd58ee9d1ef
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 149959ac279f63bfd3b070461a4316941c2b7c19
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="xml-literals-visual-basic"></a>Littéraux XML (Visual Basic)
 Les rubriques de cette section documentent la syntaxe des littéraux XML dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. La syntaxe des littéraux XML vous permet d’incorporer du code XML directement dans votre code.  
@@ -56,4 +38,3 @@ Les rubriques de cette section documentent la syntaxe des littéraux XML dans [!
   
 ## <a name="see-also"></a>Voir aussi  
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
-
