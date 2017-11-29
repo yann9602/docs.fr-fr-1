@@ -1,60 +1,64 @@
 ---
-title: "Comment&#160;: faire pivoter des couleurs | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "couleurs, faire pivoter"
-  - "exemples (Windows Forms), faire pivoter les couleurs"
+title: "Comment : faire pivoter des couleurs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- colors [Windows Forms], rotating
+- examples [Windows Forms], rotating colors
 ms.assetid: e2e4c300-159c-4f4a-9b56-103b0f7cbc05
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c82a77ff3d643afc0ddd542868a96c17d31ef336
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: faire pivoter des couleurs
-La rotation dans un espace de couleurs à quatre dimensions est difficile à visualiser.  Pour faciliter la visualisation, choisissez de ne pas modifier l'une des composantes de couleur.  Supposez que la composante alpha soit fixée à 1 \(totalement opaque\).  Vous pouvez ensuite visualiser un espace de couleurs à trois dimensions ayant des axes rouges, verts et bleus, comme montré dans l'illustration suivante.  
+# <a name="how-to-rotate-colors"></a>Comment : faire pivoter des couleurs
+Rotation dans un espace de couleurs à quatre dimensions est difficile de visualiser. Nous pouvons facilitent la visualisation, choisissez de conserver un des composants de couleur fixe. Supposons que nous acceptons de conserver le composant alpha est fixé à 1 (entièrement opaque). Vous pouvez ensuite visualiser un espace à trois dimensions de couleur des axes de rouges, verts et bleus, comme indiqué dans l’illustration suivante.  
   
  ![Recoloriage](../../../../docs/framework/winforms/advanced/media/recoloring03.gif "recoloring03")  
   
- Une couleur peut être représentée sous la forme d'un point dans un espace en trois dimensions.  Par exemple, le point \(1, 0, 0\) dans l'espace représente la couleur rouge et le point \(0, 1, 0\) la couleur verte.  
+ Une couleur peut être considérée comme un point dans un espace 3D. Par exemple, le point (1, 0, 0) dans l’espace représente la couleur rouge, et le point (0, 1, 0) dans l’espace représente la couleur verte.  
   
- L'illustration suivante montre la rotation de la couleur \(1, 0, 0\) via un angle de 60 degrés du plan Rouge\-Vert.  La rotation d'un plan parallèle en plan Rouge\-Vert peut être représentée comme une rotation sur l'axe bleu.  
+ L’illustration suivante montre ce que cela signifie pour faire pivoter la couleur (1, 0, 0) via un angle de 60 degrés dans le plan rouge-vert. Rotation d’un plan parallèle au plan rouge-vert peut être considérée comme une rotation sur l’axe bleu.  
   
  ![Recoloriage](../../../../docs/framework/winforms/advanced/media/recoloring04.gif "recoloring04")  
   
- L'illustration suivante montre la façon d'initialiser une matrice de couleurs pour effectuer des rotations sur chacun des trois axes de coordonnées \(rouge, vert, bleu\).  
+ L’illustration suivante montre comment initialiser une matrice de couleurs pour effectuer des rotations sur chacun des trois axes de coordonnées (rouge, vert, bleu).  
   
  ![Recoloriage](../../../../docs/framework/winforms/advanced/media/recoloring05.gif "recoloring05")  
   
-## Exemple  
- L'exemple suivant prend une image d'une seule couleur \(1, 0, 0.6\) et applique une rotation de 60 degrés sur l'axe bleu.  L'angle de rotation est balayé pour passer d'un plan parallèle au plan rouge\-vert.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant prend une image qui est une couleur (1, 0, 0.6) et applique une rotation de 60 degrés sur l’axe bleu. L’angle de rotation est rangé dans un plan parallèle au plan rouge-vert.  
   
- L'illustration suivante montre l'image d'origine sur la gauche et l'image dont les couleurs ont subi une rotation sur la droite.  
+ L’illustration suivante montre l’image d’origine sur la gauche et l’image pivotée de couleur sur la droite.  
   
- ![Rotation des couleurs](../../../../docs/framework/winforms/advanced/media/colortrans5.png "colortrans5")  
+ ![Faire pivoter des couleurs](../../../../docs/framework/winforms/advanced/media/colortrans5.png "colortrans5")  
   
- L'illustration suivante montre une visualisation de la rotation de couleurs effectuée dans le code ci\-après.  
+ L’illustration suivante montre une visualisation de la rotation de couleurs effectuée dans le code suivant.  
   
  ![Recoloriage](../../../../docs/framework/winforms/advanced/media/recoloring06.gif "recoloring06")  
   
  [!code-csharp[System.Drawing.RotateColors#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RotateColors/CS/Form1.cs#1)]
  [!code-vb[System.Drawing.RotateColors#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RotateColors/VB/Form1.vb#1)]  
   
-## Compilation du code  
- L'exemple précédent est destiné à une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre du gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint>.  Remplacez `RotationInput.bmp` par le nom et le chemin d'accès d'un fichier image valides sur votre système.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ L'exemple précédent est conçu pour une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs>`e`, qui est un paramètre du gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint>. Remplacez `RotationInput.bmp` avec un nom de fichier image et le chemin d’accès valide sur votre système.  
   
-## Voir aussi  
- <xref:System.Drawing.Imaging.ColorMatrix>   
- <xref:System.Drawing.Imaging.ImageAttributes>   
- [Graphiques et dessins dans les Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Drawing.Imaging.ColorMatrix>  
+ <xref:System.Drawing.Imaging.ImageAttributes>  
+ [Graphiques et dessins dans Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [Recoloriage des images](../../../../docs/framework/winforms/advanced/recoloring-images.md)

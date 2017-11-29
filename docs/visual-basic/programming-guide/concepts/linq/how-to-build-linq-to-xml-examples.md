@@ -1,30 +1,22 @@
 ---
-title: "Comment : générer des exemples LINQ to XML (Visual Basic) | Documents Microsoft"
+title: "Comment : générer des exemples LINQ to XML (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 565bca7a-ac8b-497f-8d8d-3323b3d7799e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b6f1d67ad5dd0a8c6b1500ea9b0b953b70251b93
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 544aa67497bbcb8b7ed508cc7fa2c1d5210123ba
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-build-linq-to-xml-examples-visual-basic"></a>Comment : générer des exemples LINQ to XML (Visual Basic)
 Les différents extraits et exemples présentés dans cette documentation utilisent des classes et des types de différents espaces de noms. Lors de la compilation de code Visual Basic, vous devez fournir des instructions `Imports` appropriées.  
@@ -52,4 +44,4 @@ Imports System.IO.Packaging
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to XML programmation présentation (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+ [LINQ à la vue d’ensemble de programmation XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

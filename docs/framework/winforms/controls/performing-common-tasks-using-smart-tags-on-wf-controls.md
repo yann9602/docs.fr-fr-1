@@ -1,82 +1,83 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: ex&#233;cution de t&#226;ches courantes &#224; l&#39;aide de balises actives dans les contr&#244;les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "actions du concepteur"
-  - "DesignerAction (modèle objet)"
-  - "balises actives"
+title: "Procédure pas à pas : exécution de tâches courantes à l’aide de balises actives dans les contrôles Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DesignerAction object model
+- smart tags
+- designer actions
 ms.assetid: cac337e6-00f6-4584-80f4-75728f5ea113
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2e6b815be85576f037e0f24668c44756b95abd6e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: ex&#233;cution de t&#226;ches courantes &#224; l&#39;aide de balises actives dans les contr&#244;les Windows Forms
-Lorsque vous construisez des formulaires et des contrôles pour votre application Windows Forms, il existe de nombreuses tâches que vous effectuerez à plusieurs reprises.  Voici quelques\-unes des tâches courantes que vous aurez à exécuter :  
+# <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>Procédure pas à pas : exécution de tâches courantes à l’aide de balises actives dans les contrôles Windows Forms
+Lorsque vous construisez des formulaires et les contrôles de votre application Windows Forms, il existe de nombreuses tâches, que vous allez effectuer à plusieurs reprises. Voici certaines des tâches courantes que vous rencontrerez :  
   
--   Ajout ou suppression d'un onglet sur un <xref:System.Windows.Forms.TabControl>.  
+-   Ajout ou suppression d’un onglet sur un <xref:System.Windows.Forms.TabControl>.  
   
--   Ancrage d'un contrôle à son parent.  
+-   Ancrage d’un contrôle à son parent.  
   
--   Modification de l'orientation d'un contrôle <xref:System.Windows.Forms.SplitContainer>.  
+-   Modification de l’orientation d’un <xref:System.Windows.Forms.SplitContainer> contrôle.  
   
- Pour accélérer le développement, beaucoup de contrôles offrent des balises actives qui sont des menus contextuels qui vous permettent d'exécuter des tâches courantes comme celles\-ci en un seul geste au moment du design.  Ces tâches sont appelées *verbes de balise active*.  
+ Pour accélérer le développement, de nombreux contrôles offrent des balises actives, qui sont des menus contextuels qui vous permettent d’effectuer des tâches courantes, comme dans un seul geste au moment du design. Ces tâches sont appelées *verbes de balise active*.  
   
- Les balises actives restent attachées à une instance de contrôle pendant toute leur durée de vie dans le concepteur et sont toujours disponibles.  
+ Balises actives restent attachées à une instance de contrôle pour sa durée de vie dans le concepteur et sont toujours disponibles.  
   
- Cette procédure pas à pas illustre les tâches suivantes :  
+ Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
--   Création d'un projet Windows Forms  
+-   Création d’un projet Windows Forms  
   
--   Utilisation de balises actives  
+-   À l’aide de balises actives  
   
 -   Activation et désactivation de balises actives  
   
- Lorsque vous aurez terminé, vous aurez assimilé le fonctionnement du rôle joué par ces importantes fonctionnalités de disposition.  
+ À l’issue de cette procédure, vous comprendrez le rôle joué par ces fonctionnalités de disposition importantes.  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
-## Création du projet  
- La première étape consiste à créer le projet et configurer le formulaire.  
+## <a name="creating-the-project"></a>Création du projet  
+ La première étape consiste à créer le projet et à configurer le formulaire.  
   
-#### Pour créer le projet  
+#### <a name="to-create-the-project"></a>Pour créer le projet  
   
-1.  Créez un projet d'application Windows appelé « SmartTagsExample ».  Pour plus d'informations, consultez [How to: Create a Windows Application Project](http://msdn.microsoft.com/fr-fr/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+1.  Créez un projet d’application Windows appelé « SmartTagsExample ». Pour plus d’informations, consultez l’article [Comment : créer un projet d’application Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 2.  Sélectionnez le formulaire dans le **Concepteur Windows Forms**.  
   
-## Utilisation des balises actives  
+## <a name="using-smart-tags"></a>À l’aide de balises actives  
  Les balises actives sont toujours disponibles au moment du design sur les contrôles qui les proposent.  
   
-#### Pour utiliser des balises actives  
+#### <a name="to-use-smart-tags"></a>Pour utiliser des balises actives  
   
-1.  Faites glisser un contrôle <xref:System.Windows.Forms.TabControl> de la **Boîte à outils** jusqu'à votre formulaire.  Notez le glyphe de balise active \(![Glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) qui apparaît sur le côté du <xref:System.Windows.Forms.TabControl>.  
+1.  Faites glisser un <xref:System.Windows.Forms.TabControl> à partir de la **boîte à outils** vers votre formulaire. Notez le glyphe de balise active (![glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) qui apparaît sur le côté de la <xref:System.Windows.Forms.TabControl>.  
   
-2.  Cliquez sur le glyphe de balise active.  Dans le menu contextuel qui apparaît à côté du glyphe, sélectionnez l'élément **Ajouter un onglet**.  Observez qu'une nouvelle page d'onglets est ajoutée au <xref:System.Windows.Forms.TabControl>.  
+2.  Cliquez sur le glyphe de balise active. Dans le menu contextuel qui s’affiche en regard du glyphe, sélectionnez le **ajouter un onglet** élément. Observez qu’une nouvelle page d’onglet est ajoutée à la <xref:System.Windows.Forms.TabControl>.  
   
-3.  Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **Boîte à outils** vers votre formulaire.  
+3.  Faites glisser un <xref:System.Windows.Forms.TableLayoutPanel> contrôle depuis la **boîte à outils** vers votre formulaire.  
   
-4.  Cliquez sur le glyphe de balise active.  Dans le menu contextuel qui apparaît à côté du glyphe, sélectionnez l'élément **Ajouter une colonne**.  Observez qu'une nouvelle colonne est ajoutée au contrôle <xref:System.Windows.Forms.TableLayoutPanel>.  
+4.  Cliquez sur le glyphe de balise active. Dans le menu contextuel qui s’affiche en regard du glyphe, sélectionnez le **ajouter une colonne** élément. Observez qu’une nouvelle colonne est ajoutée à la <xref:System.Windows.Forms.TableLayoutPanel> contrôle.  
   
-5.  Faites glisser un contrôle <xref:System.Windows.Forms.SplitContainer> de la **Boîte à outils** vers votre formulaire.  
+5.  Faites glisser un <xref:System.Windows.Forms.SplitContainer> contrôle depuis la **boîte à outils** vers votre formulaire.  
   
-6.  Cliquez sur le glyphe de balise active.  Dans le menu contextuel qui apparaît à côté du glyphe, sélectionnez l'élément **Fractionnement horizontal**.  Observez que la barre de fractionnement du contrôle <xref:System.Windows.Forms.SplitContainer> est maintenant orientée horizontalement.  
+6.  Cliquez sur le glyphe de balise active. Dans le menu contextuel qui s’affiche en regard du glyphe, sélectionnez le **fractionnement Horizontal** élément. Observez que le <xref:System.Windows.Forms.SplitContainer> barre de fractionnement du contrôle est maintenant orientée horizontalement.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.TextBox>   
- <xref:System.Windows.Forms.TabControl>   
- <xref:System.Windows.Forms.SplitContainer>   
- <xref:System.ComponentModel.Design.DesignerActionList>   
- [Walkthrough: Adding Smart Tags to a Windows Forms Component](../Topic/Walkthrough:%20Adding%20Smart%20Tags%20to%20a%20Windows%20Forms%20Component.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.TextBox>  
+ <xref:System.Windows.Forms.TabControl>  
+ <xref:System.Windows.Forms.SplitContainer>  
+ <xref:System.ComponentModel.Design.DesignerActionList>  
+ [Procédure pas à pas : Ajout de balises actives pour un composant Windows Forms](http://msdn.microsoft.com/library/a6814169-fa7d-4527-808c-637ca5c95f63)

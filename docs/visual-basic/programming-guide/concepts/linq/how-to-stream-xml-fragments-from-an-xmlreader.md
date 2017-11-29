@@ -1,53 +1,159 @@
 ---
-title: "Procédure : diffuser des fragments XML en continu à partir d’un XmlReader (Visual Basic) | Documents Microsoft"
+title: "Comment : diffuser des fragments XML en continu à partir d’un XmlReader (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: f67ce598-4a12-4dcb-9a07-24deca02a111
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c9c60bb4730ef6569390f76f63c40a2cbd1c9524
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f18c922208fb52ffa775bd36e76c74f04d60f3b1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Procédure : diffuser des fragments XML en continu à partir d’un XmlReader (Visual Basic)
-Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de charger l’intégralité de l’arborescence XML en mémoire. Cette rubrique montre comment diffuser des fragments à l’aide d’un <xref:System.Xml.XmlReader>.</xref:System.Xml.XmlReader>  
+# <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Comment : diffuser des fragments XML en continu à partir d’un XmlReader (Visual Basic)
+Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de charger l’intégralité de l’arborescence XML en mémoire. Cette rubrique montre comment diffuser des fragments en continu à l'aide d'un objet <xref:System.Xml.XmlReader>.  
   
- Une des méthodes plus efficaces d’utiliser un <xref:System.Xml.XmlReader>pour lire <xref:System.Xml.Linq.XElement>objets consiste à écrire votre propre méthode d’axe personnalisée.</xref:System.Xml.Linq.XElement> </xref:System.Xml.XmlReader> Une méthode d’axe retourne généralement une collection telle que <xref:System.Collections.Generic.IEnumerable%601>de <xref:System.Xml.Linq.XElement>, comme illustré dans l’exemple dans cette rubrique.</xref:System.Xml.Linq.XElement> </xref:System.Collections.Generic.IEnumerable%601> Dans la méthode d’axe personnalisée, après avoir créé le fragment XML en appelant le <xref:System.Xml.Linq.XNode.ReadFrom%2A>(méthode), retourner la collection à l’aide `yield return`.</xref:System.Xml.Linq.XNode.ReadFrom%2A> Cela fournit une sémantique d'exécution différée à votre méthode d'axe personnalisée.  
+ L'une des manières les plus efficaces d'utiliser un objet <xref:System.Xml.XmlReader> pour lire des objets <xref:System.Xml.Linq.XElement> consiste à écrire votre propre méthode d'axe personnalisée. Une méthode d'axe retourne généralement une collection telle que <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement>, comme illustré dans l'exemple de cette rubrique. Dans la méthode d'axe personnalisée, après avoir créé le fragment XML en appelant la méthode <xref:System.Xml.Linq.XNode.ReadFrom%2A>, retournez la collection à l'aide de `yield return`. Cela fournit une sémantique d'exécution différée à votre méthode d'axe personnalisée.  
   
- Lorsque vous créez une arborescence XML à partir d’un <xref:System.Xml.XmlReader>objet, la <xref:System.Xml.XmlReader>doit être positionné sur un élément.</xref:System.Xml.XmlReader> </xref:System.Xml.XmlReader> Le <xref:System.Xml.Linq.XNode.ReadFrom%2A>méthode ne retourne pas jusqu'à ce qu’il a lu la balise de fermeture de l’élément.</xref:System.Xml.Linq.XNode.ReadFrom%2A>  
+ Lorsque vous créez une arborescence XML à partir d'un objet <xref:System.Xml.XmlReader>, l'objet <xref:System.Xml.XmlReader> doit être positionné sur un élément. La méthode <xref:System.Xml.Linq.XNode.ReadFrom%2A> ne retourne que lorsqu'elle a lu la balise de fermeture de l'élément.  
   
- Si vous souhaitez créer une arborescence partielle, vous pouvez instancier un <xref:System.Xml.XmlReader>, positionnez le lecteur sur le nœud que vous souhaitez convertir en un <xref:System.Xml.Linq.XElement>de l’arborescence, puis créer la <xref:System.Xml.Linq.XElement>objet.</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XElement> </xref:System.Xml.XmlReader>  
+ Si vous souhaitez créer une arborescence partielle, vous pouvez instancier un objet <xref:System.Xml.XmlReader>, positionner le lecteur sur le nœud que vous souhaitez convertir en une arborescence <xref:System.Xml.Linq.XElement>, puis créer l'objet <xref:System.Xml.Linq.XElement>.  
   
- La rubrique [procédure : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) contient des informations et un exemple sur la diffusion en continu un document plus complexe.  
+ La rubrique [Comment : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) contient des informations et un exemple montrant comment diffuser en continu un document plus complexe.  
   
- La rubrique [Comment : effectuer de diffusion en continu transformer des Documents XML volumineux (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) contient un exemple d’utilisation de LINQ to XML pour transformer des documents XML extrêmement volumineux tout en maintenant un faible encombrement mémoire.  
+ La rubrique [Comment : effectuer de diffusion en continu transformer des Documents XML volumineux (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) contient un exemple de l’utilisation de LINQ to XML pour transformer des documents XML extrêmement volumineux tout en conservant un faible encombrement mémoire.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l'interroger à l'aide d'une requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
+ Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l'interroger à l'aide d'une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```vb  
+Module Module1  
+    Sub Main()  
+        Dim markup = "<Root>" &  
+                     "  <Child Key=""01"">" &  
+                     "    <GrandChild>aaa</GrandChild>" &  
+                     "  </Child>" &  
+                     "  <Child Key=""02"">" &  
+                     "    <GrandChild>bbb</GrandChild>" &  
+                     "  </Child>" &  
+                     "  <Child Key=""03"">" &  
+                     "    <GrandChild>ccc</GrandChild>" &  
+                     "  </Child>" &  
+                     "</Root>"  
+  
+        Dim grandChildData =  
+             From el In New StreamRootChildDoc(New IO.StringReader(markup))  
+             Where CInt(el.@Key) > 1  
+             Select el.<GrandChild>.Value  
+  
+        For Each s In grandChildData  
+            Console.WriteLine(s)  
+        Next  
+    End Sub  
+End Module  
+  
+Public Class StreamRootChildDoc  
+    Implements IEnumerable(Of XElement)  
+  
+    Private _stringReader As IO.StringReader  
+  
+    Public Sub New(ByVal stringReader As IO.StringReader)  
+        _stringReader = stringReader  
+    End Sub  
+  
+    Public Function GetEnumerator() As IEnumerator(Of XElement) Implements IEnumerable(Of XElement).GetEnumerator  
+        Return New StreamChildEnumerator(_stringReader)  
+    End Function  
+  
+    Public Function GetEnumerator1() As IEnumerator Implements IEnumerable.GetEnumerator  
+        Return Me.GetEnumerator()  
+    End Function  
+End Class  
+  
+Public Class StreamChildEnumerator  
+    Implements IEnumerator(Of XElement)  
+  
+    Private _current As XElement  
+    Private _reader As Xml.XmlReader  
+    Private _stringReader As IO.StringReader  
+  
+    Public Sub New(ByVal stringReader As IO.StringReader)  
+        _stringReader = stringReader  
+        _reader = Xml.XmlReader.Create(_stringReader)  
+        _reader.MoveToContent()  
+    End Sub  
+  
+    Public ReadOnly Property Current As XElement Implements IEnumerator(Of XElement).Current  
+        Get  
+            Return _current  
+        End Get  
+    End Property  
+  
+    Public ReadOnly Property Current1 As Object Implements IEnumerator.Current  
+        Get  
+            Return Me.Current  
+        End Get  
+    End Property  
+  
+    Public Function MoveNext() As Boolean Implements IEnumerator.MoveNext  
+        While _reader.Read()  
+            Select Case _reader.NodeType  
+                Case Xml.XmlNodeType.Element  
+                    Dim el = TryCast(XElement.ReadFrom(_reader), XElement)  
+                    If el IsNot Nothing Then  
+                        _current = el  
+                        Return True  
+                    End If  
+            End Select  
+        End While  
+  
+        Return False  
+    End Function  
+  
+    Public Sub Reset() Implements IEnumerator.Reset  
+        _reader = Xml.XmlReader.Create(_stringReader)  
+        _reader.MoveToContent()  
+    End Sub  
+  
+#Region "IDisposable Support"  
+    Private disposedValue As Boolean ' To detect redundant calls  
+  
+    ' IDisposable  
+    Protected Overridable Sub Dispose(ByVal disposing As Boolean)  
+        If Not Me.disposedValue Then  
+            If disposing Then  
+                _reader.Close()  
+            End If  
+        End If  
+        Me.disposedValue = True  
+    End Sub  
+  
+    Public Sub Dispose() Implements IDisposable.Dispose  
+        Dispose(True)  
+        GC.SuppressFinalize(Me)  
+    End Sub  
+#End Region  
+  
+End Class  
+```  
+  
  Cet exemple génère la sortie suivante :  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```  
+bbb  
+ccc  
+```  
+  
  Dans cet exemple, le document source est très petit. Toutefois, cet exemple aurait un faible encombrement mémoire même s'il y avait des millions d'éléments `Child`.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Procédure pas à pas : Implémentation IEnumerable(Of T) en Visual Basic](../../../../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)   
+ [Procédure pas à pas : Implémentation de IEnumerable(Of T) en Visual Basic](../../../../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)  
  [L’analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

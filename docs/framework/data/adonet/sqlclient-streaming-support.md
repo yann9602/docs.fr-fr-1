@@ -1,23 +1,26 @@
 ---
-title: "Prise en charge de la diffusion en continu pour SqlClient | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Prise en charge de la diffusion en continu pour SqlClient
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 85999a6aa15b04ffa2751d7312f71aaab1582ea3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Prise en charge de la diffusion en continu pour SqlClient
-La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] et une application \(nouveauté de [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]\) prend en charge des données non structurées sur le serveur \(documents, images et fichiers multimédias\).  Une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] peut stocker des objets BLOB, mais la récupération de BLOB peut utiliser beaucoup de mémoire.  
+# <a name="sqlclient-streaming-support"></a>Prise en charge de la diffusion en continu pour SqlClient
+La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] et une application (nouveauté de [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) prend en charge des données non structurées sur le serveur (documents, images et fichiers multimédias). Une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] peut stocker des objets BLOB, mais la récupération de BLOB peut utiliser beaucoup de mémoire.  
   
  La prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] simplifie l'écriture d'applications qui diffusent les données, sans devoir entièrement charger les données dans la mémoire, ce qui réduit le nombre d'exceptions de dépassement de capacité de mémoire.  
   
@@ -26,16 +29,16 @@ La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../..
 > [!WARNING]
 >  Les appels asynchrones ne sont pas pris en charge si une application utilise également le mot clé de chaîne de connexion `Context Connection`.  
 >   
->  Les membres ajoutés pour la prise en charge de la diffusion en continu sont utilisés pour récupérer des données de requêtes et passer des paramètres aux requêtes et aux procédures stockées.  La fonctionnalité de diffusion en continu répond à des scénarios OLTP de base et de migration des données et s'applique aux environnements de migration des données sur site et hors site.  
+>  Les membres ajoutés pour la prise en charge de la diffusion en continu sont utilisés pour récupérer des données de requêtes et passer des paramètres aux requêtes et aux procédures stockées. La fonctionnalité de diffusion en continu répond à des scénarios OLTP de base et de migration des données et s'applique aux environnements de migration des données sur site et hors site.  
   
-## Prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- La prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans les classes <xref:System.Data.Common.DbDataReader> et <xref:System.Data.SqlClient.SqlDataReader> pour obtenir les objets <xref:System.IO.Stream>, <xref:System.Xml.XmlReader> et <xref:System.IO.TextReader> et réagir à ces derniers.  Ces classes sont utilisées pour récupérer les données des requêtes.  Par conséquent, la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] répond aux scénarios OLTP et s'applique aux environnements sur site et hors site.  
+## <a name="streaming-support-from-includessnoversionincludesssnoversion-mdmd"></a>Prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
+ La prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans les classes <xref:System.Data.Common.DbDataReader> et <xref:System.Data.SqlClient.SqlDataReader> pour obtenir les objets <xref:System.IO.Stream>, <xref:System.Xml.XmlReader> et <xref:System.IO.TextReader> et réagir à ces derniers.  Ces classes sont utilisées pour récupérer les données des requêtes. Par conséquent, la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] répond aux scénarios OLTP et s'applique aux environnements sur site et hors site.  
   
- Les membres suivants ont été ajoutés à <xref:System.Data.SqlClient.SqlDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :  
+ Les membres suivants ont été ajoutés à <xref:System.Data.SqlClient.SqlDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :  
   
 1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
-2.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=fullName>  
+2.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=nameWithType>  
   
 3.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValueAsync%2A>  
   
@@ -45,7 +48,7 @@ La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../..
   
 6.  <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
   
- Les membres suivants ont été ajoutés à <xref:System.Data.Common.DbDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :  
+ Les membres suivants ont été ajoutés à <xref:System.Data.Common.DbDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :  
   
 1.  <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
   
@@ -53,18 +56,18 @@ La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../..
   
 3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
-## Prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- La prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans la classe <xref:System.Data.SqlClient.SqlParameter> de façon à ce qu'elle reçoive et réagisse aux objets <xref:System.Xml.XmlReader>, <xref:System.IO.Stream> et <xref:System.IO.TextReader>.  <xref:System.Data.SqlClient.SqlParameter> est utilisé pour passer des paramètres aux requêtes et aux procédures stockées.  
+## <a name="streaming-support-to-includessnoversionincludesssnoversion-mdmd"></a>Prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
+ La prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans la classe <xref:System.Data.SqlClient.SqlParameter> de façon à ce qu'elle reçoive et réagisse aux objets <xref:System.Xml.XmlReader>, <xref:System.IO.Stream> et <xref:System.IO.TextReader>. <xref:System.Data.SqlClient.SqlParameter> est utilisé pour passer des paramètres aux requêtes et aux procédures stockées.  
   
- Supprimer un objet <xref:System.Data.SqlClient.SqlCommand> ou appeler <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> doit annuler toute opération en continu.  Si une application envoie <xref:System.Threading.CancellationToken>, l'annulation n'est pas garantie.  
+ Supprimer un objet <xref:System.Data.SqlClient.SqlCommand> ou appeler <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> doit annuler toute opération en continu. Si une application envoie <xref:System.Threading.CancellationToken>, l'annulation n'est pas garantie.  
   
- Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.Stream> :  
+ Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.Stream> :  
   
 -   **Binary**  
   
 -   **VarBinary**  
   
- Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.TextReader> :  
+ Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.TextReader> :  
   
 -   **Char**  
   
@@ -74,13 +77,13 @@ La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../..
   
 -   **Xml**  
   
- Le type **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> accepte un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.Xml.XmlReader>.  
+ Le **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> type accepte un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.Xml.XmlReader>.  
   
  <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> accepte des valeurs de type <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader> et <xref:System.IO.Stream>.  
   
  <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, et l'objet <xref:System.IO.Stream> seront envoyés jusqu'à la valeur définie par <xref:System.Data.SqlClient.SqlParameter.Size%2A>.  
   
-## Exemple \-\- Diffusion en continu à partir de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
+## <a name="sample----streaming-from-includessnoversionincludesssnoversion-mdmd"></a>Exemple -- Diffusion en continu à partir de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
  Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :  
   
 ```  
@@ -110,7 +113,7 @@ GO
   
 -   Récupérez les données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].  
   
--   Transférer des fichiers volumineux \(objets BLOB\) d'une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à une autre sans insuffisance de mémoire.  
+-   Transférer des fichiers volumineux (objets BLOB) d'une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à une autre sans insuffisance de mémoire.  
   
 ```  
 using System;  
@@ -299,10 +302,9 @@ namespace StreamingFromServer {
       }  
    }  
 }  
-  
 ```  
   
-## Exemple \-\- Diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
+## <a name="sample----streaming-to-includessnoversionincludesssnoversion-mdmd"></a>Exemple -- Diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
  Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :  
   
 ```  
@@ -456,10 +458,9 @@ namespace StreamingToServer {
       }  
    }  
 }  
-  
 ```  
   
-## Exemple \-\- Transmission en continu d'un [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à un autre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
+## <a name="sample----streaming-from-one-includessnoversionincludesssnoversion-mdmd-to-another-includessnoversionincludesssnoversion-mdmd"></a>Exemple -- Transmission en continu d'un [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à un autre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
  Cet exemple montre comment diffuser en continu un objet BLOB d'un [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à un autre, avec la prise en charge de l'annulation.  
   
 ```  
@@ -523,8 +524,7 @@ namespace StreamingFromServerToAnother {
       }  
    }  
 }  
-  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)

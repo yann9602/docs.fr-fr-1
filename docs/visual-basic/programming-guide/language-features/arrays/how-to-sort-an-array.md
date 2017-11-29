@@ -1,32 +1,30 @@
 ---
-title: "How to: Sort An Array in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "Array.Sort"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "arrays [Visual Basic], sorting"
-  - "examples [Visual Basic], arrays"
+title: "Comment : trier un tableau dans Visual Basic"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: Array.Sort
+helpviewer_keywords:
+- arrays [Visual Basic], sorting
+- examples [Visual Basic], arrays
 ms.assetid: 9289aeaa-9626-4698-94a7-1d1fd3702b87
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 310c2dacb384de49c80073840c6c58d37f3937d9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Sort An Array in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Cet exemple déclare un tableau d'objets `String` nommé `zooAnimals`, le remplit et le trie par ordre alphabétique.  
+# <a name="how-to-sort-an-array-in-visual-basic"></a>Comment : trier un tableau dans Visual Basic
+Cet exemple déclare un tableau de `String` objets nommés `zooAnimals`, il remplit, puis le tri par ordre alphabétique.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```  
 Private Sub sortAnimals()  
@@ -38,23 +36,23 @@ Private Sub sortAnimals()
 End Sub  
 ```  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
--   Accès à Mscorlib.dll et à l'espace de noms <xref:System>.  
+-   Accès à Mscorlib.dll et <xref:System> espace de noms.  
   
-## Programmation fiable  
- Les conditions ci\-dessous peuvent générer une exception.  
+## <a name="robust-programming"></a>Programmation fiable  
+ Les conditions ci-dessous peuvent générer une exception.  
   
--   Le tableau est vide \(classe <xref:System.ArgumentNullException>\).  
+-   Le tableau est vide (<xref:System.ArgumentNullException> classe)  
   
--   Le tableau est multidimensionnel \(classe <xref:System.RankException>\).  
+-   Le tableau est multidimensionnel (<xref:System.RankException> classe)  
   
--   Un ou plusieurs éléments du tableau n'implémentent pas l'interface <xref:System.IComparable> \(classe <xref:System.InvalidOperationException>\).  
+-   Un ou plusieurs éléments du tableau n’implémentent pas le <xref:System.IComparable> interface (<xref:System.InvalidOperationException> classe)  
   
-## Voir aussi  
- <xref:System.Array.Sort%2A?displayProperty=fullName>   
- [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
- [Troubleshooting Arrays](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)   
- [Collections](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)   
- [For Each...Next, instruction](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Array.Sort%2A?displayProperty=nameWithType>  
+ [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
+ [Dépannage des tableaux](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)  
+ [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
+ [For Each...Next (instruction)](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)

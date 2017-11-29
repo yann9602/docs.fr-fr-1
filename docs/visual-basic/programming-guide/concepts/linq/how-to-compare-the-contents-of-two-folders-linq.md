@@ -1,44 +1,36 @@
 ---
-title: "Comment : comparer le contenu de deux dossiers (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : comparer le contenu de deux dossiers (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 903c7e9a-f48d-4a07-a8a8-5450d2646efa
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1ce4f89c88fd856d3471e4f32c4f69d15e8ccb4c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a65b5f74e872cb4d2e459bc7ff866ca332706ef9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>Comment : comparer le contenu de deux dossiers (LINQ) (Visual Basic)
-Cet exemple illustre trois façons de comparer deux listes de fichiers :  
+Cet exemple montre trois façons de comparer deux listes de fichiers :  
   
--   En recherchant une valeur booléenne qui spécifie si les deux listes sont identiques.  
+-   En recherchant une valeur booléenne qui spécifie si les deux listes sont identiques  
   
--   En recherchant l’intersection récupérer les fichiers qui se trouvent dans les deux dossiers.  
+-   En recherchant l’intersection pour récupérer les fichiers qui se trouvent dans les deux dossiers  
   
--   En recherchant les différences pour récupérer les fichiers qui se trouvent dans un dossier, mais pas l’autre.  
+-   En recherchant la différence ensembliste pour récupérer les fichiers qui se trouvent dans un dossier, mais pas dans l’autre  
   
     > [!NOTE]
     >  Les techniques présentées ici peuvent être adaptées pour comparer des séquences d’objets de tout type.  
   
- La `FileComparer` classe présentée ici montre comment utiliser une classe de comparateur personnalisée avec les opérateurs de requête Standard. La classe n’est pas destinée pour une utilisation dans des scénarios réels. Car il utilise uniquement le nom et la longueur en octets de chaque fichier pour déterminer si le contenu de chaque dossier est identique ou non. Dans un scénario réel, vous devez modifier ce comparateur pour effectuer une vérification de l’égalité plus rigoureuse.  
+ La classe `FileComparer` présentée ici montre comment utiliser une classe de comparateur personnalisée avec les opérateurs de requête standard. La classe n’est pas destinée à être utilisée dans des scénarios réels. Elle utilise simplement le nom et la longueur en octets de chaque fichier pour déterminer si les dossiers ont un contenu identique. Dans un scénario réel, vous devriez modifier ce comparateur pour effectuer une vérification d’égalité plus rigoureuse.  
   
 ## <a name="example"></a>Exemple  
   
@@ -131,8 +123,8 @@ End Module
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+ Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

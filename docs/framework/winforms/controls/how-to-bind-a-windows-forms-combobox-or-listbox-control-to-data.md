@@ -1,52 +1,55 @@
 ---
-title: "Comment&#160;: lier un contr&#244;le ComboBox ou ListBox Windows Forms aux donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles dépendants, zones de liste déroulante"
-  - "zones de liste déroulante, liaison de données"
-  - "ComboBox (contrôle Windows Forms), liaison de données"
-  - "données (Windows Forms), lier aux contrôles"
-  - "liaison de données, zones de liste déroulante"
-  - "contrôles liés aux données, Windows Forms"
-  - "zones de liste, liaison de données"
-  - "ListBox (contrôle Windows Forms), liaison de données"
-  - "contrôles Windows Forms, liaison de données"
+title: "Comment : lier un contrôle ComboBox ou ListBox Windows Forms aux données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data [Windows Forms], binding to controls
+- list boxes [Windows Forms], data binding
+- ComboBox control [Windows Forms], data binding
+- data binding [Windows Forms], combo boxes
+- ListBox control [Windows Forms], data binding
+- combo boxes [Windows Forms], data binding
+- bound controls [Windows Forms], combo boxes
+- Windows Forms controls, data binding
+- data-bound controls [Windows Forms], Windows Forms
 ms.assetid: dfd7f081-8bea-4a41-86a3-86a1934828ef
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6193e4cc86a470f046c220dc21150e0fc0bf792a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: lier un contr&#244;le ComboBox ou ListBox Windows Forms aux donn&#233;es
-Vous pouvez lier les <xref:System.Windows.Forms.ComboBox> et <xref:System.Windows.Forms.ListBox> aux données pour effectuer des tâches telles que parcourir des données dans une base de données, entrer de nouvelles données ou modifier des données existantes.  
+# <a name="how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data"></a>Comment : lier un contrôle ComboBox ou ListBox Windows Forms aux données
+Vous pouvez lier le <xref:System.Windows.Forms.ComboBox> et <xref:System.Windows.Forms.ListBox> aux données pour effectuer des tâches telles que l’exploration de données dans une base de données, entrez de nouvelles données ou modifier des données existantes.  
   
-### Pour lier un contrôle ComboBox ou ListBox  
+### <a name="to-bind-a-combobox-or-listbox-control"></a>Pour lier un contrôle ComboBox ou ListBox  
   
-1.  Définissez la propriété `DataSource`  avec un objet de source de données.  Les sources de données possibles sont une <xref:System.Windows.Forms.BindingSource> liée aux données, une table de données, une vue de données, un groupe de données, un gestionnaire de vue de données, un tableau ou toute classe implémentant l'interface <xref:System.Collections.IList>.  Pour plus d'informations, consultez [Sources de données prises en charge par les Windows Forms](../../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md).  
+1.  Définir le `DataSource` propriété à un objet de source de données. Sources de données possibles incluent un <xref:System.Windows.Forms.BindingSource> lié à des données, une table de données, une vue de données, un jeu de données, une vue de données manager, un tableau ou toute classe qui implémente le <xref:System.Collections.IList> interface. Pour plus d’informations, consultez [des Sources de données prises en charge par les Windows Forms](../../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md).  
   
-2.  Si vous créez une liaison avec une table, donnez à la propriété `DisplayMember`  le nom d'une colonne dans la source de données.  
+2.  Si vous établissez une liaison à une table, définissez la `DisplayMember` nom à la propriété d’une colonne dans la source de données.  
   
-     \- ou \-  
+     \- ou -  
   
-     Si vous créez une liaison avec un <xref:System.Collections.IList>, définissez le membre d'affichage à une propriété publique du type dans la liste.  
+     Si vous établissez une liaison à un <xref:System.Collections.IList>, définissez le membre d’affichage pour une propriété publique du type dans la liste.  
   
     ```vb  
     Private Sub BindComboBox()  
       ComboBox1.DataSource = DataSet1.Tables("Suppliers")  
       ComboBox1.DisplayMember = "ProductName"  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -55,15 +58,14 @@ Vous pouvez lier les <xref:System.Windows.Forms.ComboBox> et <xref:System.Window
       comboBox1.DataSource = dataSet1.Tables["Suppliers"];  
       comboBox1.DisplayMember = "ProductName";  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  En cas de liaison à une source de données qui n'implémente pas l'interface <xref:System.ComponentModel.IBindingList>, par exemple un <xref:System.Collections.ArrayList>, les données du contrôle lié ne sont pas mises à jour lorsque la source de données est mise à jour.  Par exemple, si une zone de liste déroulante est liée à une <xref:System.Collections.ArrayList> et que des données sont ajoutées à une <xref:System.Collections.ArrayList>, ces nouveaux éléments n'apparaissent pas dans la zone de liste déroulante.  Cependant, vous pouvez forcer la mise à jour de la zone de liste déroulante en appelant les méthodes <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A> et <xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A> sur l'instance de la classe <xref:System.Windows.Forms.BindingContext> à laquelle le contrôle est lié.  
+    >  Si vous ne sont liés à une source de données qui n’implémente pas le <xref:System.ComponentModel.IBindingList> d’interface, comme un <xref:System.Collections.ArrayList>, données du contrôle lié ne seront pas mis à jour lors de la mise à jour de la source de données. Par exemple, si vous disposez d’une zone de liste déroulante est liée à une <xref:System.Collections.ArrayList> et les données sont ajoutées à la <xref:System.Collections.ArrayList>, ces nouveaux éléments n’apparaîtront pas dans la zone de liste déroulante. Toutefois, vous pouvez forcer la zone de liste déroulante pour être mis à jour en appelant le <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A> et <xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A> méthodes sur l’instance de la <xref:System.Windows.Forms.BindingContext> classe à laquelle le contrôle est lié.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ComboBox>   
- <xref:System.Windows.Forms.ListBox>   
- [Liaison de données Windows Forms](../../../../docs/framework/winforms/windows-forms-data-binding.md)   
- [Liaison de données et Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md)   
- [Contrôles Windows Forms utilisés pour l'affichage de listes d'options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ComboBox>  
+ <xref:System.Windows.Forms.ListBox>  
+ [Liaison de données Windows Forms](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
+ [Liaison de données et Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
+ [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)

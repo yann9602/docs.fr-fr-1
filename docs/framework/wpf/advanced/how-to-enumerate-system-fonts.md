@@ -1,31 +1,37 @@
 ---
-title: "Comment&#160;: &#233;num&#233;rer des polices syst&#232;me | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "énumérer, polices système"
-  - "polices, énumérer"
-  - "polices système, énumérer"
-  - "typographie, énumérer les polices système"
+title: "Comment : énumérer des polices système"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- typography [WPF], enumerating system fonts
+- fonts [WPF], enumerating
+- system fonts [WPF], enumerating
+- enumerating [WPF], system fonts
 ms.assetid: 36e37791-55b9-4f01-a496-5cc10335e6a6
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ae03cbd8828f61011f8d806be32b5827d77b22a
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: &#233;num&#233;rer des polices syst&#232;me
-## Exemple  
- L'exemple suivant indique comment énumérer les polices dans la collection de polices système.  Le nom de la famille de polices de chaque <xref:System.Windows.Media.FontFamily> dans <xref:System.Windows.Media.Fonts.SystemFontFamilies%2A> est ajouté comme élément à une zone de liste déroulante.  
+# <a name="how-to-enumerate-system-fonts"></a>Comment : énumérer des polices système
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment énumérer les polices dans la collection de polices système. Le nom de famille de polices de chaque <xref:System.Windows.Media.FontFamily> dans <xref:System.Windows.Media.Fonts.SystemFontFamilies%2A> est ajouté en tant qu’élément à une zone de liste déroulante.  
   
  [!code-csharp[TextOverview#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextOverview/CSharp/Window1.xaml.cs#100)]
  [!code-vb[TextOverview#100](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextOverview/visualbasic/window1.xaml.vb#100)]  
   
- Si plusieurs versions de la même famille de polices résident dans le même répertoire, l'énumération de police [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] retourne la version de la police la plus récente.  Si les informations de version ne fournissent pas de résolution, la police avec l'horodatage le plus récent est retournée.  Si les informations d'horodatage sont équivalentes, le fichier de police qui est en premier par ordre alphabétique est retourné.
+ Si plusieurs versions de la même famille de polices résident dans le même répertoire, le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] police énumération sans corrélation retourne la version la plus récente de la police. Si les informations de version ne fournissent pas de résolution, la police avec l’horodatage le plus récent est retournée. Si les informations d’horodatage sont équivalentes, le fichier de polices qui apparaît en premier dans l’ordre alphabétique est retourné.

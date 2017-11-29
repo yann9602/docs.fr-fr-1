@@ -1,46 +1,47 @@
 ---
-title: "Comment&#160;: regrouper des contr&#244;les au moyen du contr&#244;le GroupBox Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), regroupement"
-  - "GroupBox (contrôle Windows Forms), regrouper les contrôles"
-  - "contrôles Windows Forms, regroupement"
+title: "Comment : regrouper des contrôles au moyen du contrôle GroupBox Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [Windows Forms], grouping
+- GroupBox control [Windows Forms], grouping controls
+- Windows Forms controls, grouping
 ms.assetid: 0bda316d-bd2a-43aa-ac73-342453303169
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 50d29de04b4e221105bb02e58de01344f13af69f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: regrouper des contr&#244;les au moyen du contr&#244;le GroupBox Windows Forms
-Les contrôles <xref:System.Windows.Forms.GroupBox> Windows Forms permettent de regrouper d'autres contrôles.  Il existe trois raisons de regrouper des contrôles :  
+# <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a>Comment : regrouper des contrôles au moyen du contrôle GroupBox Windows Forms
+Windows Forms <xref:System.Windows.Forms.GroupBox> contrôles sont utilisés pour regrouper d’autres contrôles. Il existe trois raisons aux contrôles de groupe :  
   
--   Pour créer un regroupement visuel d'éléments de formulaire connexes en vue de fournir une interface plus claire à l'utilisateur.  
+-   Pour créer un regroupement visuel d’éléments connexes pour une interface utilisateur claire.  
   
--   Pour créer un regroupement de programmation \(des cases d'option par exemple\).  
+-   Pour créer un regroupement de programmation (des cases d’option, par exemple).  
   
--   Pour déplacer les contrôles comme une même entité au moment du design.  
+-   Pour déplacer les contrôles en tant qu’unité au moment du design.  
   
-### Pour créer un groupe de contrôles  
+### <a name="to-create-a-group-of-controls"></a>Pour créer un groupe de contrôles  
   
-1.  Dessinez un contrôle <xref:System.Windows.Forms.GroupBox> dans un formulaire.  
+1.  Dessiner un <xref:System.Windows.Forms.GroupBox> contrôle sur un formulaire.  
   
-2.  Ajoutez des contrôles en les dessinant l'un après l'autre jusqu'à la zone de groupe.  
+2.  Ajouter d’autres contrôles dans la zone de groupe, en dessinant à l’intérieur de la zone de groupe.  
   
-     Si vous voulez inclure dans la zone de groupe des contrôles existants, sélectionnez\-les tous, coupez\-les dans le Presse\-papiers, sélectionnez le contrôle <xref:System.Windows.Forms.GroupBox>, puis collez\-les dans la zone de groupe.  Vous pouvez aussi les faire glisser jusqu'à la zone de groupe.  
+     Si vous avez des contrôles existants que vous voulez inclure dans une zone de groupe, vous pouvez sélectionner tous les contrôles, les couper dans le Presse-papiers, sélectionnez le <xref:System.Windows.Forms.GroupBox> de contrôle et les coller dans la zone de groupe. Vous pouvez également faire glisser les dans la zone de groupe.  
   
-3.  Indiquez une légende appropriée pour la propriété <xref:System.Windows.Forms.GroupBox.Text%2A> de la zone de groupe.  
+3.  Définir le <xref:System.Windows.Forms.GroupBox.Text%2A> propriété de la zone de groupe pour une légende appropriée.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.GroupBox>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.GroupBox>  
  [GroupBox, contrôle](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)

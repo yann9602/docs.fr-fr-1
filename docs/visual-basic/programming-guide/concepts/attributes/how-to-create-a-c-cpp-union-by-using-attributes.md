@@ -1,36 +1,28 @@
 ---
-title: "Comment : créer une Union C-C++ à l’aide d’attributs (Visual Basic) | Documents Microsoft"
+title: "Comment : créer une Union C-C++ à l’aide d’attributs (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 9352a7e4-c0da-4d07-aa14-55ed43736fcb
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3ff1686328630b233b25839c79d0009d48aab5ab
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: eb25f8e8664bf0c99fd19dd66031fcb5ba8dd799
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>Comment : créer une Union C/C++ à l’aide d’attributs (Visual Basic)
-À l’aide d’attributs, vous pouvez personnaliser la disposition des structures en mémoire. Par exemple, vous pouvez créer ce qu’on appelle une union en C/C++ à l’aide de la `StructLayout(LayoutKind.Explicit)` et `FieldOffset` les attributs.  
+Vous pouvez personnaliser la disposition des structs en mémoire à l’aide d’attributs. Par exemple, vous pouvez créer ce qu’on appelle une union en C/C++ à l’aide des attributs `StructLayout(LayoutKind.Explicit)` et `FieldOffset`.  
   
 ## <a name="example"></a>Exemple  
- Dans ce segment de code, tous les champs de `TestUnion` démarrer au même emplacement en mémoire.  
+ Dans ce segment de code, tous les champs de `TestUnion` débutent au même emplacement en mémoire.  
   
 ```vb  
 ' Add an Imports statement for System.Runtime.InteropServices.  
@@ -53,12 +45,12 @@ End Structure
 ```  
   
 ## <a name="example"></a>Exemple  
- Voici un autre exemple où champs commencent à différentes définie explicitement les emplacements.  
+ Voici un autre exemple où les champs débutent à différents emplacements définis explicitement.  
   
 ```vb  
 ' Add an Imports statement for System.Runtime.InteropServices.  
   
- <System.Runtime.InteropServices.StructLayout(   
+ <System.Runtime.InteropServices.StructLayout(  
       System.Runtime.InteropServices.LayoutKind.Explicit)>   
 Structure TestExplicit  
      <System.Runtime.InteropServices.FieldOffset(0)>   
@@ -81,14 +73,14 @@ Structure TestExplicit
  End Structure  
 ```  
   
- Les champs de deux entiers, `i1` et `i2`, partagent les mêmes emplacements de mémoire et `lg`. Ce type de contrôle sur la disposition d’une structure est utile lorsque vous utilisez l’appel de plate-forme.  
+ Les deux champs entiers, `i1` et `i2`, partagent leurs emplacements de mémoire avec `lg`. Ce type de contrôle sur la disposition des structs est utile quand vous utilisez des appels de code non managé.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Reflection></xref:System.Reflection>   
- <xref:System.Attribute></xref:System.Attribute>   
- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)   
- [Attributs](https://msdn.microsoft.com/library/5x6cd29c)   
- [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
- [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)   
- [Création d’attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)   
+ <xref:System.Reflection>  
+ <xref:System.Attribute>  
+ [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)  
+ [Attributs](https://msdn.microsoft.com/library/5x6cd29c)  
+ [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
+ [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
+ [Créer des attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)  
  [Accéder à des attributs à l’aide de la réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
