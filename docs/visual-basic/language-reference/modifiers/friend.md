@@ -1,88 +1,86 @@
 ---
-title: "Friend (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Friend"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Friend, mot clé"
-  - "Friend, modificateur d’accès"
-  - "mot clé Friend, syntaxe"
-  - "Protected Friend, combinaison de mots clés"
-  - "mot clé Friend, et Protected"
+title: Friend (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Friend
+helpviewer_keywords:
+- Friend keyword [Visual Basic]
+- Friend access modifier
+- Friend keyword [Visual Basic], syntax
+- Protected Friend keyword combination
+- Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-caps.latest.revision: 25
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 32f993e4b9bcd126ebb6d70310fc0781e8b137b9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Friend (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Spécifie qu'un ou plusieurs éléments de programmation déclarés sont accessibles uniquement à partir de l'assembly qui contient leur déclaration.  
+# <a name="friend-visual-basic"></a><span data-ttu-id="77c66-102">Friend (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="77c66-102">Friend (Visual Basic)</span></span>
+<span data-ttu-id="77c66-103">Spécifie qu’un ou plusieurs éléments de programmation déclarés sont accessibles uniquement à partir de l’assembly qui contient leur déclaration.</span><span class="sxs-lookup"><span data-stu-id="77c66-103">Specifies that one or more declared programming elements are accessible only from within the assembly that contains their declaration.</span></span>  
   
-## Notes  
- Dans de nombreux cas, vous souhaitez que les éléments de programmation, tels que les classes et les structures, soient utilisés par l'assembly entier, pas uniquement par le composant qui les déclare.  Toutefois, vous ne pouvez pas les utiliser pour être accessible par le code en dehors de l'assembly \(par exemple, si l'application est propriétaire\).  Si vous souhaitez limiter l'accès à un élément de cette façon, vous pouvez la déclarer à l'aide de le modificateur d' `Friend` .  
+## <a name="remarks"></a><span data-ttu-id="77c66-104">Remarques</span><span class="sxs-lookup"><span data-stu-id="77c66-104">Remarks</span></span>  
+ <span data-ttu-id="77c66-105">Dans de nombreux cas, vous souhaitez que les éléments tels que les classes et les structures à utiliser par la totalité de l’assembly, pas uniquement par le composant qui les déclare de programmation.</span><span class="sxs-lookup"><span data-stu-id="77c66-105">In many cases, you want programming elements such as classes and structures to be used by the entire assembly, not only by the component that declares them.</span></span> <span data-ttu-id="77c66-106">Toutefois, vous pouvez les rendre accessibles par le code en dehors de l’assembly (par exemple, si l’application est propriétaire).</span><span class="sxs-lookup"><span data-stu-id="77c66-106">However, you might not want them to be accessible by code outside the assembly (for example, if the application is proprietary).</span></span> <span data-ttu-id="77c66-107">Si vous souhaitez limiter l’accès à un élément de cette façon, vous pouvez la déclarer à l’aide de la `Friend` modificateur.</span><span class="sxs-lookup"><span data-stu-id="77c66-107">If you want to limit access to an element in this way, you can declare it by using the `Friend` modifier.</span></span>  
   
- Le code d'autres classes, structures et modules compilés dans le même assembly peut accéder à tous les éléments `Friend` de cet assembly.  
+ <span data-ttu-id="77c66-108">Le code dans d’autres classes, structures et les modules qui sont compilés dans le même assembly peut accéder à tous les `Friend` éléments dans cet assembly.</span><span class="sxs-lookup"><span data-stu-id="77c66-108">Code in other classes, structures, and modules that are compiled to the same assembly can access all the `Friend` elements in that assembly.</span></span>  
   
- l'accès d'`Friend` est souvent le niveau par défaut pour les éléments de programmation d'une application, et `Friend` est le niveau d'accès par défaut d'une interface, d'un module, d'une classe, ou d'une structure.  
+ <span data-ttu-id="77c66-109">`Friend`l’accès est souvent le niveau par défaut pour les éléments de programmation d’une application, et `Friend` est l’accès par défaut au niveau d’une interface, un module, une classe ou une structure.</span><span class="sxs-lookup"><span data-stu-id="77c66-109">`Friend` access is often the preferred level for an application's programming elements, and `Friend` is the default access level of an interface, a module, a class, or a structure.</span></span>  
   
- Vous pouvez utiliser `Friend` uniquement au module, à l'interface, ou au niveau de l'espace de noms.  Par conséquent, le contexte de déclaration pour un élément d' `Friend` doit être un fichier source, espace de noms, une interface, d'un module, une classe, ou une structure ; il ne peut pas être une procédure.  
+ <span data-ttu-id="77c66-110">Vous pouvez utiliser `Friend` uniquement au niveau du module, interface ou espace de noms.</span><span class="sxs-lookup"><span data-stu-id="77c66-110">You can use `Friend` only at the module, interface, or namespace level.</span></span> <span data-ttu-id="77c66-111">Par conséquent, le contexte de déclaration pour un `Friend` élément doit être un fichier source, un espace de noms, une interface, un module, une classe ou une structure ; il ne peut pas être une procédure.</span><span class="sxs-lookup"><span data-stu-id="77c66-111">Therefore, the declaration context for a `Friend` element must be a source file, a namespace, an interface, a module, a class, or a structure; it can't be a procedure.</span></span>  
   
- Vous pouvez utiliser le modificateur `Friend` conjointement avec le modificateur [Protected](../../../visual-basic/language-reference/modifiers/protected.md) dans la même déclaration.  Cette combinaison confère accès d' `Friend` et accès protégé sur les éléments déclarés ; ils sont accessibles n'importe où dans le même assembly, de leur propre classe, et des classes dérivées.  Vous pouvez spécifier `Protected Friend` uniquement sur les membres d'une classe.  
+ <span data-ttu-id="77c66-112">Vous pouvez utiliser la `Friend` modificateur conjointement avec la [protégé](../../../visual-basic/language-reference/modifiers/protected.md) modificateur dans la même déclaration.</span><span class="sxs-lookup"><span data-stu-id="77c66-112">You can use the `Friend` modifier in conjunction with the [Protected](../../../visual-basic/language-reference/modifiers/protected.md) modifier in the same declaration.</span></span> <span data-ttu-id="77c66-113">Cette combinaison confère à la fois `Friend` accès et l’accès protégé sur les éléments déclarés, afin qu’ils soient accessibles à partir de n’importe où dans le même assembly, de leur propre classe et de classes dérivées.</span><span class="sxs-lookup"><span data-stu-id="77c66-113">This combination confers both `Friend` access and protected access on the declared elements, so they are accessible from anywhere in the same assembly, from their own class, and from derived classes.</span></span> <span data-ttu-id="77c66-114">Vous pouvez spécifier `Protected Friend` uniquement sur les membres de classes.</span><span class="sxs-lookup"><span data-stu-id="77c66-114">You can specify `Protected Friend` only on members of classes.</span></span>  
   
- Pour une comparaison d' `Friend` et les autres modificateurs d'accès, consultez l' [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ <span data-ttu-id="77c66-115">Pour obtenir une comparaison de `Friend` et l’autre les modificateurs d’accès, consultez [niveaux en Visual Basic d’accès](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="77c66-115">For a comparison of `Friend` and the other access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
 > [!NOTE]
->  Vous pouvez spécifier qu'un autre assembly est un assembly friend, qui lui permet d'accéder à tous les types et membres marqués comme `Friend`.  Pour plus d'informations, consultez [Assemblys friend](../Topic/Friend%20Assemblies%20\(C%23%20and%20Visual%20Basic\).md).  
+>  <span data-ttu-id="77c66-116">Vous pouvez spécifier qu’un autre assembly est un assembly friend, ce qui permet d’accéder à tous les types et membres qui sont marqués comme `Friend`.</span><span class="sxs-lookup"><span data-stu-id="77c66-116">You can specify that another assembly is a friend assembly, which allows it to access all types and members that are marked as `Friend`.</span></span> <span data-ttu-id="77c66-117">Pour plus d’informations, consultez [Assemblys friend](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055).</span><span class="sxs-lookup"><span data-stu-id="77c66-117">For more information, see [Friend Assemblies](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055).</span></span>  
   
-## Exemple  
- La classe suivante utilise le modificateur `Friend` pour permettre à d'autres éléments de programmation du même assembly d'accéder à certains membres.  
+## <a name="example"></a><span data-ttu-id="77c66-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="77c66-118">Example</span></span>  
+ <span data-ttu-id="77c66-119">La classe suivante utilise le `Friend` modificateur pour autoriser d’autres éléments de programmation dans le même assembly pour accéder à certains membres.</span><span class="sxs-lookup"><span data-stu-id="77c66-119">The following class uses the `Friend` modifier to allow other programming elements within the same assembly to access certain members.</span></span>  
   
  [!code-vb[VbVbalrAccessModifiers#1](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/friend_1.vb)]  
   
-## Utilisation  
- Vous pouvez utiliser le modificateur d' `Friend` dans ces contextes :  
+## <a name="usage"></a><span data-ttu-id="77c66-120">Utilisation</span><span class="sxs-lookup"><span data-stu-id="77c66-120">Usage</span></span>  
+ <span data-ttu-id="77c66-121">Vous pouvez utiliser la `Friend` modificateur dans les contextes :</span><span class="sxs-lookup"><span data-stu-id="77c66-121">You can use the `Friend` modifier in these contexts:</span></span>  
   
- [Class, instruction](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [<span data-ttu-id="77c66-122">Class (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-122">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Const, instruction](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [<span data-ttu-id="77c66-123">Const (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-123">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare, instruction](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [<span data-ttu-id="77c66-124">Declare (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-124">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [Delegate, instruction](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [<span data-ttu-id="77c66-125">Delegate (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-125">Delegate Statement</span></span>](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [Dim, instruction](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="77c66-126">Dim (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-126">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Enum, instruction](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [<span data-ttu-id="77c66-127">Enum (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-127">Enum Statement</span></span>](../../../visual-basic/language-reference/statements/enum-statement.md)  
   
- [Event, instruction](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [<span data-ttu-id="77c66-128">Event (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-128">Event Statement</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function, instruction](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="77c66-129">Function (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-129">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Interface, instruction](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [<span data-ttu-id="77c66-130">Interface (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-130">Interface Statement</span></span>](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Module, instruction](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [<span data-ttu-id="77c66-131">Module (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-131">Module Statement</span></span>](../../../visual-basic/language-reference/statements/module-statement.md)  
   
- [Property, instruction](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="77c66-132">Property (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-132">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Structure, instruction](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [<span data-ttu-id="77c66-133">Structure (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-133">Structure Statement</span></span>](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [Sub, instruction](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="77c66-134">Sub (instruction)</span><span class="sxs-lookup"><span data-stu-id="77c66-134">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## Voir aussi  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- [Public](../../../visual-basic/language-reference/modifiers/public.md)   
- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)   
- [Private](../../../visual-basic/language-reference/modifiers/private.md)   
- [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [Procedures](../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a><span data-ttu-id="77c66-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="77c66-135">See Also</span></span>  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ [<span data-ttu-id="77c66-136">Public</span><span class="sxs-lookup"><span data-stu-id="77c66-136">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)  
+ [<span data-ttu-id="77c66-137">Protected</span><span class="sxs-lookup"><span data-stu-id="77c66-137">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)  
+ [<span data-ttu-id="77c66-138">Private</span><span class="sxs-lookup"><span data-stu-id="77c66-138">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)  
+ [<span data-ttu-id="77c66-139">Niveaux d’accès dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="77c66-139">Access levels in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [<span data-ttu-id="77c66-140">Procédures</span><span class="sxs-lookup"><span data-stu-id="77c66-140">Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [<span data-ttu-id="77c66-141">Structures</span><span class="sxs-lookup"><span data-stu-id="77c66-141">Structures</span></span>](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [<span data-ttu-id="77c66-142">Objets et classes</span><span class="sxs-lookup"><span data-stu-id="77c66-142">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

@@ -8,28 +8,25 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: f09584345d10cece014da9604ffbfe01ad08d10f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b6ef944b9c41d26736f044fff9d40efb5e3ef32f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-control-serialization-of-derived-classes"></a>Comment : contrôler la sérialisation de classes dérivées
-L’utilisation de l’attribut **XmlElementAttribute** pour modifier le nom d’un élément XML ne constitue pas l’unique moyen de personnaliser la sérialisation d’un objet. Vous pouvez également personnaliser le flux de données XML en effectuant une dérivation à partir d'une classe existante et en indiquant à l'instance <xref:System.Xml.Serialization.XmlSerializer> comment sérialiser la nouvelle classe.  
+# <a name="how-to-control-serialization-of-derived-classes"></a><span data-ttu-id="de834-102">Comment : contrôler la sérialisation de classes dérivées</span><span class="sxs-lookup"><span data-stu-id="de834-102">How to: Control Serialization of Derived Classes</span></span>
+<span data-ttu-id="de834-103">L’utilisation de l’attribut **XmlElementAttribute** pour modifier le nom d’un élément XML ne constitue pas l’unique moyen de personnaliser la sérialisation d’un objet.</span><span class="sxs-lookup"><span data-stu-id="de834-103">Using the **XmlElementAttribute** attribute to change the name of an XML element is not the only way to customize object serialization.</span></span> <span data-ttu-id="de834-104">Vous pouvez également personnaliser le flux de données XML en effectuant une dérivation à partir d'une classe existante et en indiquant à l'instance <xref:System.Xml.Serialization.XmlSerializer> comment sérialiser la nouvelle classe.</span><span class="sxs-lookup"><span data-stu-id="de834-104">You can also customize the XML stream by deriving from an existing class and instructing the <xref:System.Xml.Serialization.XmlSerializer> instance how to serialize the new class.</span></span>  
   
- Par exemple, d'après une classe `Book`, vous pouvez effectuer une dérivation et créer une classe `ExpandedBook` qui dispose de quelques propriétés supplémentaires. Toutefois, vous devez demander à **XmlSerializer** d’accepter le type dérivé lors de la sérialisation ou de la désérialisation. Pour ce faire, créez une instance <xref:System.Xml.Serialization.XmlElementAttribute> et affectez à sa propriété **Type** le type de la classe dérivée. Ajoutez **XmlElementAttribute** à une instance <xref:System.Xml.Serialization.XmlAttributes>. Ajoutez ensuite **XmlAttributes** à une instance <xref:System.Xml.Serialization.XmlAttributeOverrides>, en spécifiant le type qui est substitué et le nom du membre qui accepte la classe dérivée. L'exemple suivant le démontre.  
+ <span data-ttu-id="de834-105">Par exemple, d'après une classe `Book`, vous pouvez effectuer une dérivation et créer une classe `ExpandedBook` qui dispose de quelques propriétés supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="de834-105">For example, given a `Book` class, you can derive from it and create an `ExpandedBook` class that has a few more properties.</span></span> <span data-ttu-id="de834-106">Toutefois, vous devez demander à **XmlSerializer** d’accepter le type dérivé lors de la sérialisation ou de la désérialisation.</span><span class="sxs-lookup"><span data-stu-id="de834-106">However, you must instruct the **XmlSerializer** to accept the derived type when serializing or deserializing.</span></span> <span data-ttu-id="de834-107">Pour ce faire, créez une instance <xref:System.Xml.Serialization.XmlElementAttribute> et affectez à sa propriété **Type** le type de la classe dérivée.</span><span class="sxs-lookup"><span data-stu-id="de834-107">This can be done by creating a <xref:System.Xml.Serialization.XmlElementAttribute> instance and setting its **Type** property to the derived class type.</span></span> <span data-ttu-id="de834-108">Ajoutez **XmlElementAttribute** à une instance <xref:System.Xml.Serialization.XmlAttributes>.</span><span class="sxs-lookup"><span data-stu-id="de834-108">Add the **XmlElementAttribute** to a <xref:System.Xml.Serialization.XmlAttributes> instance.</span></span> <span data-ttu-id="de834-109">Ajoutez ensuite **XmlAttributes** à une instance <xref:System.Xml.Serialization.XmlAttributeOverrides>, en spécifiant le type qui est substitué et le nom du membre qui accepte la classe dérivée.</span><span class="sxs-lookup"><span data-stu-id="de834-109">Then add the **XmlAttributes** to a <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, specifying the type being overridden and the name of the member that accepts the derived class.</span></span> <span data-ttu-id="de834-110">L'exemple suivant le démontre.</span><span class="sxs-lookup"><span data-stu-id="de834-110">This is shown in the following example.</span></span>  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a><span data-ttu-id="de834-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="de834-111">Example</span></span>  
   
 ```vb  
 Public Class Orders  
@@ -244,12 +241,11 @@ public class Run
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Serialization.XmlSerializer>   
- <xref:System.Xml.Serialization.XmlElementAttribute>   
- <xref:System.Xml.Serialization.XmlAttributes>   
- <xref:System.Xml.Serialization.XmlAttributeOverrides>   
- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
- [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-
+## <a name="see-also"></a><span data-ttu-id="de834-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="de834-112">See Also</span></span>  
+ <xref:System.Xml.Serialization.XmlSerializer>  
+ <xref:System.Xml.Serialization.XmlElementAttribute>  
+ <xref:System.Xml.Serialization.XmlAttributes>  
+ <xref:System.Xml.Serialization.XmlAttributeOverrides>  
+ [<span data-ttu-id="de834-113">Sérialisation XML et SOAP</span><span class="sxs-lookup"><span data-stu-id="de834-113">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [<span data-ttu-id="de834-114">Guide pratique pour sérialiser un objet</span><span class="sxs-lookup"><span data-stu-id="de834-114">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="de834-115">Guide pratique pour spécifier un nom d’élément différent pour un flux XML</span><span class="sxs-lookup"><span data-stu-id="de834-115">How to: Specify an Alternate Element Name for an XML Stream</span></span>](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

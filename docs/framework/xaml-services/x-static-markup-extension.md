@@ -1,88 +1,91 @@
 ---
-title: "x:Static Markup Extension | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "StaticExtension"
-  - "xStatic"
-  - "x:Static"
-helpviewer_keywords: 
-  - "x:Static markup extension [XAML Services]"
-  - "Static markup extension in XAML [XAML Services]"
-  - "XAML [XAML Services], x:Static markup extension"
+title: x:Static, extension de balisage
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- StaticExtension
+- xStatic
+- x:Static
+helpviewer_keywords:
+- x:Static markup extension [XAML Services]
+- Static markup extension in XAML [XAML Services]
+- XAML [XAML Services], x:Static markup extension
 ms.assetid: 056aee79-7cdd-434f-8174-dfc856cad343
-caps.latest.revision: 25
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: d006c8d0937a454dcbe092dcc3e35c4644088e59
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# x:Static Markup Extension
-Référence à une entité de code statique par valeur définie dans [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] \- moyen conforme.  La propriété statique qui est référencée peut être utilisée pour fournir la valeur d'une propriété en XAML.  
+# <a name="xstatic-markup-extension"></a><span data-ttu-id="75273-102">x:Static, extension de balisage</span><span class="sxs-lookup"><span data-stu-id="75273-102">x:Static Markup Extension</span></span>
+<span data-ttu-id="75273-103">Fait référence à une entité de code en valeur statique qui est définie dans un [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– moyen conforme.</span><span class="sxs-lookup"><span data-stu-id="75273-103">References any static by-value code entity that is defined in a [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]–compliant way.</span></span> <span data-ttu-id="75273-104">La propriété statique qui est référencée peut être utilisée pour fournir la valeur d’une propriété en XAML.</span><span class="sxs-lookup"><span data-stu-id="75273-104">The static property that is referenced can be used to provide the value of a property in XAML.</span></span>  
   
-## Utilisation d'attributs XAML  
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="75273-105">Utilisation d'attributs XAML</span><span class="sxs-lookup"><span data-stu-id="75273-105">XAML Attribute Usage</span></span>  
   
+```xaml  
+<object property="{x:Static prefix:typeName.staticMemberName}" .../>  
 ```  
-<object property="{x:Static prefix:typeName.staticMemberName}" .../>  
-```  
   
-## Valeurs XAML  
+## <a name="xaml-values"></a><span data-ttu-id="75273-106">Valeurs XAML</span><span class="sxs-lookup"><span data-stu-id="75273-106">XAML Values</span></span>  
   
 |||  
 |-|-|  
-|`prefix`|Facultatif.  Préfixe qui fait référence à un espace de noms XAML mappé non défini par défaut.  `prefix` est affiché explicitement dans l'utilisation parce que vous référencez rarement des propriétés statiques qui viennent d'un espace de noms XAML par défaut.  Consultez la section Notes.|  
-|`typeName`|Obligatoire.  Le nom du type qui définit le membre statique souhaité.|  
-|`staticMemberName`|Obligatoire.  Nom du membre de valeur statique souhaité \(constante, propriété statique, champ ou valeur d'énumération\).|  
+|`prefix`|<span data-ttu-id="75273-107">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="75273-107">Optional.</span></span> <span data-ttu-id="75273-108">Un préfixe qui fait référence à un espace de noms XAML mappé, non définis par défaut.</span><span class="sxs-lookup"><span data-stu-id="75273-108">A prefix that refers to a mapped, non-default XAML namespace.</span></span> <span data-ttu-id="75273-109">`prefix`est affiché explicitement dans l’utilisation parce que vous référencez rarement des propriétés statiques qui proviennent d’un espace de noms XAML par défaut.</span><span class="sxs-lookup"><span data-stu-id="75273-109">`prefix` is shown explicitly in the usage because you rarely reference static properties that come from a default XAML namespace.</span></span> <span data-ttu-id="75273-110">Consultez la section Notes.</span><span class="sxs-lookup"><span data-stu-id="75273-110">See Remarks.</span></span>|  
+|`typeName`|<span data-ttu-id="75273-111">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="75273-111">Required.</span></span> <span data-ttu-id="75273-112">Le nom du type qui définit le membre statique souhaité.</span><span class="sxs-lookup"><span data-stu-id="75273-112">The name of the type that defines the desired static member.</span></span>|  
+|`staticMemberName`|<span data-ttu-id="75273-113">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="75273-113">Required.</span></span> <span data-ttu-id="75273-114">Le nom du membre de valeur statique souhaitée (une constante, une propriété statique, un champ ou une valeur d’énumération).</span><span class="sxs-lookup"><span data-stu-id="75273-114">The name of the desired static value member (a constant, a static property, a field, or an enumeration value).</span></span>|  
   
-## Notes  
- L'entité de code référencée doit correspondre à l'un des éléments suivants :  
+## <a name="remarks"></a><span data-ttu-id="75273-115">Remarques</span><span class="sxs-lookup"><span data-stu-id="75273-115">Remarks</span></span>  
+ <span data-ttu-id="75273-116">L’entité de code référencée doit être une des opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="75273-116">The code entity that is referenced must be one of the following:</span></span>  
   
--   Constante  
+-   <span data-ttu-id="75273-117">Une constante</span><span class="sxs-lookup"><span data-stu-id="75273-117">A constant</span></span>  
   
--   propriété statique ;  
+-   <span data-ttu-id="75273-118">Une propriété statique</span><span class="sxs-lookup"><span data-stu-id="75273-118">A static property</span></span>  
   
--   Champ  
+-   <span data-ttu-id="75273-119">Un champ</span><span class="sxs-lookup"><span data-stu-id="75273-119">A field</span></span>  
   
--   Valeur d'énumération.  
+-   <span data-ttu-id="75273-120">Une valeur d’énumération</span><span class="sxs-lookup"><span data-stu-id="75273-120">An enumeration value</span></span>  
   
- La spécification d'une autre entité de code, telle qu'une propriété non statique, génère une erreur au moment de la compilation si le XAML est compilé pour balisage, ou une exception d'analyse de temps de chargement XAML.  
+ <span data-ttu-id="75273-121">Spécifiant toute autre entité de code, comme une propriété non statique, de provoque une erreur de compilation si le code XAML est compilé par balisage, ou une exception de l’analyse au moment du chargement XAML.</span><span class="sxs-lookup"><span data-stu-id="75273-121">Specifying any other code entity, such as a nonstatic property, causes a compile-time error if the XAML is markup compiled, or a XAML load-time parse exception.</span></span>  
   
- Vous pouvez effectuer des références `x:Static` à des champs ou propriétés statiques situés en dehors de l'espace de noms XAML par défaut pour le document XAML actif. Cela nécessite toutefois un mappage de préfixe.  Les espaces de noms XAML sont presque toujours définis à l'élément racine du document XAML.  
+ <span data-ttu-id="75273-122">Vous pouvez apporter `x:Static` des références à des champs statiques ou des propriétés qui ne sont pas dans l’espace de noms XAML par défaut pour le document XAML en cours ; Toutefois, cela nécessite un mappage de préfixe.</span><span class="sxs-lookup"><span data-stu-id="75273-122">You can make `x:Static` references to static fields or properties that are not in the default XAML namespace for the current XAML document; however, this requires a prefix mapping.</span></span> <span data-ttu-id="75273-123">Espaces de noms XAML sont presque toujours définies sur l’élément racine du document XAML.</span><span class="sxs-lookup"><span data-stu-id="75273-123">XAML namespaces are almost always defined on the root element of the XAML document.</span></span>  
   
- Les opérations de recherche de propriétés statiques peuvent être exécutées par les Services XAML du .NET Framework et leurs lecteurs et writers XAML, lors de l'exécution avec le contexte de schéma XAML par défaut.  Ce contexte de schéma XAML peut utiliser la réflexion CLR pour fournir les valeurs statiques nécessaires à la construction de graphiques d'objets.  Le `typeName` que vous spécifiez est en fait un nom de type XAML, et non pas un nom de type CLR, bien qu'il s'agisse essentiellement du même nom lors de l'utilisation du contexte de schéma XAML par défaut ou de  toutes les infrastructures d'implémentation XAML existantes basées sur CLR.  
+ <span data-ttu-id="75273-124">Les opérations de recherche pour les propriétés statiques peuvent être effectuées par les Services XAML .NET Framework et ses lecteurs XAML et les writers XAML, quand elles sont exécutées avec le contexte de schéma XAML par défaut.</span><span class="sxs-lookup"><span data-stu-id="75273-124">The lookup operations for static properties can be performed by .NET Framework XAML Services and its XAML readers and XAML writers, when they are running with the default XAML schema context.</span></span> <span data-ttu-id="75273-125">Ce contexte de schéma XAML peut utiliser la réflexion CLR pour fournir les valeurs statiques nécessaires pour la construction de graphique d’objet.</span><span class="sxs-lookup"><span data-stu-id="75273-125">This XAML schema context can use CLR reflection to provide the necessary static values for object graph construction.</span></span> <span data-ttu-id="75273-126">Le `typeName` vous spécifiez est en fait un nom de type XAML, pas un nom de type CLR, bien qu’il s’agit essentiellement le même nom lorsque vous utilisez le contexte de schéma XAML par défaut ou lors de l’utilisation de toutes les infrastructures d’implémentation XAML basé sur CLR existants.</span><span class="sxs-lookup"><span data-stu-id="75273-126">The `typeName` you specify is actually a XAML type name, not a CLR type name, although these are essentially the same name when using the default XAML schema context or when using all existing CLR-based XAML-implementing frameworks.</span></span>  
   
- Utilisez l'avertissement lorsque vous faites des références `x:Static` qui ne sont pas directement le type de la valeur d'une propriété.  Dans la séquence de traitement XAML, les valeurs fournies d'une extension de balisage n'appellent pas une conversion de valeurs supplémentaire.  Ceci est vrai, même si les résultats de votre référence `x:Static` créent une chaîne de texte et une conversion de valeur pour les valeurs d'attribut basées sur une chaîne de texte ont lieu typiquement pour ce membre spécifique ou pour toutes les valeurs membres du type de retour.  
+ <span data-ttu-id="75273-127">Soyez prudent lorsque vous apportez `x:Static` références qui ne sont pas directement le type de valeur d’une propriété.</span><span class="sxs-lookup"><span data-stu-id="75273-127">Use caution when you make `x:Static` references that are not directly the type of a property's value.</span></span> <span data-ttu-id="75273-128">Dans le code XAML du traitement de séquence, les valeurs fournie d’une extension de balisage n’appellent pas une conversion de valeur supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="75273-128">In the XAML processing sequence, provided values from a markup extension do not invoke additional value conversion.</span></span> <span data-ttu-id="75273-129">Cela est vrai même si votre `x:Static` référence crée une chaîne de texte et une conversion de valeur pour les valeurs d’attribut basé sur la chaîne de texte, généralement se produit pour ce membre spécifique ou pour des valeurs de membre de type de retour.</span><span class="sxs-lookup"><span data-stu-id="75273-129">This is true even if your `x:Static` reference creates a text string, and a value conversion for attribute values based on text string typically occurs either for that specific member or for any member values of the return type.</span></span>  
   
- La syntaxe d'attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage.  Le jeton de chaîne fourni après la chaîne d'identificateur `x:Static` est assigné en tant que valeur <xref:System.Windows.Markup.StaticExtension.Member%2A> de la classe d'extension <xref:System.Windows.Markup.StaticExtension> sous\-jacente.  
+ <span data-ttu-id="75273-130">La syntaxe d'attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage.</span><span class="sxs-lookup"><span data-stu-id="75273-130">Attribute syntax is the most common syntax used with this markup extension.</span></span> <span data-ttu-id="75273-131">Le jeton de chaîne fourni après la chaîne d'identificateur `x:Static` est assigné en tant que valeur <xref:System.Windows.Markup.StaticExtension.Member%2A> de la classe d'extension <xref:System.Windows.Markup.StaticExtension> sous-jacente.</span><span class="sxs-lookup"><span data-stu-id="75273-131">The string token provided after the `x:Static` identifier string is assigned as the <xref:System.Windows.Markup.StaticExtension.Member%2A> value of the underlying <xref:System.Windows.Markup.StaticExtension> extension class.</span></span>  
   
- Il existe deux autres utilisations de XAML qui sont techniquement possibles.  Toutefois, ces utilisations sont moins courantes parce qu'elles sont inutilement détaillées :  
+ <span data-ttu-id="75273-132">Il existe deux autres utilisations de code XAML qui sont techniquement possibles.</span><span class="sxs-lookup"><span data-stu-id="75273-132">There are two other XAML usages that are technically possible.</span></span> <span data-ttu-id="75273-133">Toutefois, ces utilisations sont moins courantes, car elles sont inutilement détaillés :</span><span class="sxs-lookup"><span data-stu-id="75273-133">However, these usages are less common because they are unnecessarily verbose:</span></span>  
   
- **Syntaxe des éléments objet :** `<x:Static Member="``prefix``:``typeName``.``staticMemberName``" .../>`  
+ <span data-ttu-id="75273-134">**Syntaxe d’élément de l’objet :** `<x:Static Member="` `prefix` `:` `typeName` `.` `staticMemberName``" .../>`</span><span class="sxs-lookup"><span data-stu-id="75273-134">**Object element syntax:** `<x:Static Member="` `prefix` `:` `typeName` `.` `staticMemberName` `" .../>`</span></span>  
   
- **Syntaxe d'attribut avec propriété Member explicite pour la chaîne d'initialisation :** `<``object````property``="{x:Static Member=``prefix``:``typeName``.``staticMemberName``}" .../>`  
+ <span data-ttu-id="75273-135">**Syntaxe d’attribut avec la propriété de membre explicite pour la chaîne d’initialisation :** `<` `object`  ``  `property` `="{x:Static Member=` `prefix` `:` `typeName` `.` `staticMemberName``}" .../>`</span><span class="sxs-lookup"><span data-stu-id="75273-135">**Attribute syntax with explicit Member property for initialization string:** `<` `object` `` `property` `="{x:Static Member=` `prefix` `:` `typeName` `.` `staticMemberName` `}" .../>`</span></span>  
   
- Dans l'implémentation des services XAML .NET Framework, la gestion de cette extension de balisage est définie par la classe <xref:System.Windows.Markup.StaticExtension>.  
+ <span data-ttu-id="75273-136">Dans l’implémentation de Services XAML .NET Framework, la gestion de cette extension de balisage est définie par le <xref:System.Windows.Markup.StaticExtension> classe.</span><span class="sxs-lookup"><span data-stu-id="75273-136">In the .NET Framework XAML Services implementation, the handling for this markup extension is defined by the <xref:System.Windows.Markup.StaticExtension> class.</span></span>  
   
- `x:Static` est une extension de balisage.  En XAML, toutes les extensions de balisage utilisent les caractères `{` et `}` dans leur syntaxe d'attributs, convention selon laquelle un processeur XAML reconnaît qu'une extension de balisage doit fournir une valeur.  Pour plus d'informations sur les extensions de balisage, consultez [Markup Extensions for XAML Overview](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
+ <span data-ttu-id="75273-137">`x:Static` est une extension de balisage.</span><span class="sxs-lookup"><span data-stu-id="75273-137">`x:Static` is a markup extension.</span></span> <span data-ttu-id="75273-138">Toutes les extensions de balisage en cours d’utilisation XAML le `{` et `}` caractères dans leur syntaxe d’attribut, qui est la convention selon laquelle un processeur XAML reconnaît qu’une extension de balisage doit fournir une valeur.</span><span class="sxs-lookup"><span data-stu-id="75273-138">All markup extensions in XAML use the `{` and `}` characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must provide a value.</span></span> <span data-ttu-id="75273-139">Pour plus d’informations sur les extensions de balisage, consultez [Markup Extensions for XAML Overview](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).</span><span class="sxs-lookup"><span data-stu-id="75273-139">For more information about markup extensions, see [Markup Extensions for XAML Overview](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).</span></span>  
   
-## Remarques sur l'utilisation de WPF  
- L'espace de noms XAML par défaut que vous utilisez pour la programmation WPF ne contient pas beaucoup de propriétés statiques utiles. La plupart des propriétés statiques utiles sont prises en charge, tel qu'avec les convertisseurs de type qui en facilitent l'utilisation sans nécessiter `{x:Static}`.  Pour les propriétés statiques, vous devez mapper un préfixe pour un espace de noms XAML si l'un des éléments suivants est vrai :  
+## <a name="wpf-usage-notes"></a><span data-ttu-id="75273-140">Notes d’utilisation WPF</span><span class="sxs-lookup"><span data-stu-id="75273-140">WPF Usage Notes</span></span>  
+ <span data-ttu-id="75273-141">L’espace de noms XAML par défaut vous utilisez pour la programmation WPF ne contient pas de nombreuses propriétés statiques utiles, et la plupart des propriétés statiques utiles prennent en charge tels que les convertisseurs de type qui facilitent l’utilisation sans nécessiter de `{x:Static}` .</span><span class="sxs-lookup"><span data-stu-id="75273-141">The default XAML namespace you use for WPF programming does not contain many useful static properties, and most of the useful static properties have support such as type converters that facilitate the usage without requiring `{x:Static}` .</span></span> <span data-ttu-id="75273-142">Pour les propriétés statiques, vous devez mapper un préfixe pour un espace de noms XAML si une des conditions suivantes est remplie :</span><span class="sxs-lookup"><span data-stu-id="75273-142">For static properties, you must map a prefix for a XAML namespace if one of the following is true:</span></span>  
   
--   Vous référencez un type qui existe dans WPF, mais qui ne fait pas partie de l'espace de noms XAML par défaut \([!INCLUDE[TLA#tla_wpfxmlnsv1](../../../includes/tlasharptla-wpfxmlnsv1-md.md)]\).  Cette situation est courante lors de l'utilisation de `x:Static`.  Par exemple, vous pouvez utiliser une référence `x:Static` avec un mappage d'espace de noms XAML à l'espace de noms CLR <xref:System> et à l'assembly mscorlib de manière à référencer les propriétés statiques de la classe <xref:System.Environment>.  
+-   <span data-ttu-id="75273-143">Vous référencez un type qui existe dans WPF, mais ne fait pas partie de l’espace de noms XAML par défaut pour WPF ([!INCLUDE[TLA#tla_wpfxmlnsv1](../../../includes/tlasharptla-wpfxmlnsv1-md.md)]).</span><span class="sxs-lookup"><span data-stu-id="75273-143">You are referencing a type that exists in WPF but is not part of the default XAML namespace for WPF ([!INCLUDE[TLA#tla_wpfxmlnsv1](../../../includes/tlasharptla-wpfxmlnsv1-md.md)]).</span></span> <span data-ttu-id="75273-144">Il s’agit d’un scénario assez courant d’utilisation `x:Static`.</span><span class="sxs-lookup"><span data-stu-id="75273-144">This is a fairly common scenario for using `x:Static`.</span></span> <span data-ttu-id="75273-145">Par exemple, vous pouvez utiliser un `x:Static` référence avec un mappage d’espace de noms XAML à le <xref:System> assembly CLR d’espace de noms et mscorlib pour référencer les propriétés statiques de la <xref:System.Environment> classe.</span><span class="sxs-lookup"><span data-stu-id="75273-145">For example, you might use an `x:Static` reference with a XAML namespace mapping to the <xref:System> CLR namespace and mscorlib assembly in order to reference the static properties of the <xref:System.Environment> class.</span></span>  
   
--   Vous référencez un type d'un assembly personnalisé.  
+-   <span data-ttu-id="75273-146">Vous référencez un type d’un assembly personnalisé.</span><span class="sxs-lookup"><span data-stu-id="75273-146">You are referencing a type from a custom assembly.</span></span>  
   
--   Vous référencez un type qui existe dans un assembly WMPF, mais qui se trouve dans un espace de noms CLR qui n'a pas été mappé pour faire partie de l'espace de noms XAML par défaut WPF.  Le mappage d'espaces de noms CLR dans l'espace de noms XAML par défaut pour WPF est exécuté par les définitions dans les différents assemblys WPF \(pour plus d'informations sur ce concept, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)\).  Les espaces de noms CLR non mappés peuvent exister si cet espace de noms CLR est composé principalement de définitions de classe qui ne sont généralement pas prévues pour XAML, telles que <xref:System.Windows.Threading>.  
+-   <span data-ttu-id="75273-147">Vous référencez un type qui existe dans un assembly WPF, mais ce type est dans un espace de noms CLR qui n’a pas été mappé comme faisant partie de l’espace de noms WPF par défaut.</span><span class="sxs-lookup"><span data-stu-id="75273-147">You are referencing a type that exists in a WPF assembly, but that type is within a CLR namespace that was not mapped to be part of the WPF default XAML namespace.</span></span> <span data-ttu-id="75273-148">Le mappage des espaces de noms CLR dans l’espace de noms XAML par défaut pour WPF est exécuté par les définitions dans les différents assemblys WPF (pour plus d’informations sur ce concept, consultez [espaces de noms XAML et mappage Namespace pour XAML WPF](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)).</span><span class="sxs-lookup"><span data-stu-id="75273-148">The mapping of CLR namespaces into the default XAML namespace for WPF is performed by definitions in the various WPF assemblies (for more information about this concept, see [XAML Namespaces and Namespace Mapping for WPF XAML](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)).</span></span> <span data-ttu-id="75273-149">Espaces de noms CLR non mappés peuvent exister si cet espace de noms CLR est composé principalement de définitions de classe qui sont généralement pas prévues pour XAML, tels que <xref:System.Windows.Threading>.</span><span class="sxs-lookup"><span data-stu-id="75273-149">Non-mapped CLR namespaces can exist if that CLR namespace is composed mostly of class definitions that are not typically intended for XAML, such as <xref:System.Windows.Threading>.</span></span>  
   
- Pour plus d'informations sur l'utilisation des préfixes et des espaces de noms XAML pour WPF, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+ <span data-ttu-id="75273-150">Pour plus d’informations sur l’utilisation des préfixes et espaces de noms XAML pour WPF, consultez [espaces de noms XAML et Namespace Mapping for WPF XAML](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).</span><span class="sxs-lookup"><span data-stu-id="75273-150">For more information on how to use prefixes and XAML namespaces for WPF, see [XAML Namespaces and Namespace Mapping for WPF XAML](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).</span></span>  
   
-## Voir aussi  
- [x:Type Markup Extension](../../../docs/framework/xaml-services/x-type-markup-extension.md)   
- [Types Migrated from WPF to System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+## <a name="see-also"></a><span data-ttu-id="75273-151">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="75273-151">See Also</span></span>  
+ [<span data-ttu-id="75273-152">x:Type, extension de balisage</span><span class="sxs-lookup"><span data-stu-id="75273-152">x:Type Markup Extension</span></span>](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
+ [<span data-ttu-id="75273-153">Types migrés de WPF vers System.Xaml</span><span class="sxs-lookup"><span data-stu-id="75273-153">Types Migrated from WPF to System.Xaml</span></span>](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

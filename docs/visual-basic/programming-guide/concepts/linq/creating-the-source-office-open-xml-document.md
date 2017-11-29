@@ -1,41 +1,37 @@
 ---
-title: "Création du Document Office Open XML Source (Visual Basic) | Documents Microsoft"
+title: "Création du Document Office Open XML Source (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 61ccd6fb-0c47-4075-afdf-5b5021330f21
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 928a3c34836464e7603c485b64c9c426913ae7b2
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: c573f703ea3d7550dabd994f538e28e197874715
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>Création du Document Office Open XML Source (Visual Basic)
-Cette rubrique montre comment créer le document WordprocessingML Office Open XML utilisé par les autres exemples de ce didacticiel. Si vous suivez ces instructions, votre sortie correspondra à la sortie fournie dans chaque exemple.  
+# <a name="creating-the-source-office-open-xml-document-visual-basic"></a><span data-ttu-id="429a2-102">Création du Document Office Open XML Source (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="429a2-102">Creating the Source Office Open XML Document (Visual Basic)</span></span>
+<span data-ttu-id="429a2-103">Cette rubrique montre comment créer le document WordprocessingML Office Open XML utilisé par les autres exemples de ce didacticiel.</span><span class="sxs-lookup"><span data-stu-id="429a2-103">This topic shows how to create the Office Open XML WordprocessingML document that the other examples in this tutorial use.</span></span> <span data-ttu-id="429a2-104">Si vous suivez ces instructions, votre sortie correspondra à la sortie fournie dans chaque exemple.</span><span class="sxs-lookup"><span data-stu-id="429a2-104">If you follow these instructions, your output will match the output provided in each example.</span></span>  
   
- Toutefois, les exemples présentés dans ce didacticiel fonctionnent avec n'importe quel document WordprocessingML valide.  
+ <span data-ttu-id="429a2-105">Toutefois, les exemples présentés dans ce didacticiel fonctionnent avec n'importe quel document WordprocessingML valide.</span><span class="sxs-lookup"><span data-stu-id="429a2-105">However, the examples in this tutorial will work with any valid WordprocessingML document.</span></span>  
   
- Pour créer le document utilisé par ce didacticiel, vous devez avoir Microsoft Office 2007 ou version ultérieure, ou vous devez disposer de Microsoft Office 2003 avec le Pack de compatibilité Microsoft Office pour Word, Excel et Formats de fichier PowerPoint 2007.  
+ <span data-ttu-id="429a2-106">Pour créer le document utilisé par ce didacticiel, Microsoft Office 2007 ou une version ultérieure, ou bien Microsoft Office 2003 avec le Module de compatibilité Microsoft Office pour les formats de fichiers Word, Excel et PowerPoint 2007 doit être installé sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="429a2-106">To create the document that this tutorial uses, you must either have Microsoft Office 2007 or later installed, or you must have Microsoft Office 2003 with the Microsoft Office Compatibility Pack for Word, Excel, and PowerPoint 2007 File Formats.</span></span>  
   
-## <a name="creating-the-wordprocessingml-document"></a>Création du document WordprocessingML  
+## <a name="creating-the-wordprocessingml-document"></a><span data-ttu-id="429a2-107">Création du document WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="429a2-107">Creating the WordprocessingML Document</span></span>  
   
-#### <a name="to-create-the-wordprocessingml-document"></a>Pour créer le document WordprocessingML  
+#### <a name="to-create-the-wordprocessingml-document"></a><span data-ttu-id="429a2-108">Pour créer le document WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="429a2-108">To create the WordprocessingML document</span></span>  
   
-1.  Créez un nouveau document Microsoft Word.  
+1.  <span data-ttu-id="429a2-109">Créez un nouveau document Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="429a2-109">Create a new Microsoft Word document.</span></span>  
   
-2.  Collez le texte suivant dans le nouveau document :  
+2.  <span data-ttu-id="429a2-110">Collez le texte suivant dans le nouveau document :</span><span class="sxs-lookup"><span data-stu-id="429a2-110">Paste the following text into the new document:</span></span>  
   
     ```  
     Parsing WordprocessingML with LINQ to XML  
@@ -55,16 +51,16 @@ Cette rubrique montre comment créer le document WordprocessingML Office Open XM
     Hello World  
     ```  
   
-3.  Mettez en forme la première ligne à l'aide du style « Titre 1 ».  
+3.  <span data-ttu-id="429a2-111">Mettez en forme la première ligne à l'aide du style « Titre 1 ».</span><span class="sxs-lookup"><span data-stu-id="429a2-111">Format the first line with the style "Heading 1".</span></span>  
   
-4.  Sélectionnez les lignes qui contiennent le code Visual Basic. La première ligne commence par le mot clé `Imports`. La dernière ligne est « End Class ». Mettez en forme les lignes avec la police Courrier. Mettez-les en forme avec un nouveau style et nommez le nouveau style « Code ».  
+4.  <span data-ttu-id="429a2-112">Sélectionnez les lignes qui contiennent le code Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="429a2-112">Select the lines that contain the Visual Basic code.</span></span> <span data-ttu-id="429a2-113">La première ligne commence par le mot clé `Imports`.</span><span class="sxs-lookup"><span data-stu-id="429a2-113">The first line starts with the `Imports` keyword.</span></span> <span data-ttu-id="429a2-114">La dernière ligne est « End Class ».</span><span class="sxs-lookup"><span data-stu-id="429a2-114">The last line is "End Class".</span></span> <span data-ttu-id="429a2-115">Mettez en forme les lignes avec la police Courrier.</span><span class="sxs-lookup"><span data-stu-id="429a2-115">Format the lines with the courier font.</span></span> <span data-ttu-id="429a2-116">Mettez-les en forme avec un nouveau style et nommez le nouveau style « Code ».</span><span class="sxs-lookup"><span data-stu-id="429a2-116">Format them with a new style, and name the new style "Code".</span></span>  
   
-5.  Pour finir, sélectionnez la ligne entière qui contient la sortie et mettez-la en forme avec le style `Code`.  
+5.  <span data-ttu-id="429a2-117">Pour finir, sélectionnez la ligne entière qui contient la sortie et mettez-la en forme avec le style `Code`.</span><span class="sxs-lookup"><span data-stu-id="429a2-117">Finally, select the entire line that contains the output, and format it with the `Code` style.</span></span>  
   
-6.  Enregistrez le document et nommez-le SampleDoc.docx.  
+6.  <span data-ttu-id="429a2-118">Enregistrez le document et nommez-le SampleDoc.docx.</span><span class="sxs-lookup"><span data-stu-id="429a2-118">Save the document, and name it SampleDoc.docx.</span></span>  
   
     > [!NOTE]
-    >  Si vous utilisez Microsoft Word 2003, sélectionnez **Document Word 2007** dans les **enregistrer en tant que Type** liste déroulante.  
+    >  <span data-ttu-id="429a2-119">Si vous utilisez Microsoft Word 2003, sélectionnez **Document Word 2007** dans la liste déroulante **Type de fichier**.</span><span class="sxs-lookup"><span data-stu-id="429a2-119">If you are using Microsoft Word 2003, select **Word 2007 Document** in the **Save as Type** drop-down list.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Didacticiel : Manipulation de contenu dans un Document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+## <a name="see-also"></a><span data-ttu-id="429a2-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="429a2-120">See Also</span></span>  
+ [<span data-ttu-id="429a2-121">Didacticiel : Manipulation de contenu dans un Document WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="429a2-121">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

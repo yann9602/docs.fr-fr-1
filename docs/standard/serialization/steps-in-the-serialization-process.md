@@ -7,30 +7,29 @@ helpviewer_keywords:
 - binary serialization, steps
 - serialization, steps
 ms.assetid: 4bcbc883-2a91-418f-b968-6c86a25e9737
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: a4c125493e1b59d329bf4626c45f48b2b222d308
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: cc6df422359826bc908bd412aaf89aa784be59ba
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="steps-in-the-serialization-process"></a>Étapes du processus de sérialisation
-Quand la méthode <xref:System.Runtime.Serialization.Formatter.Serialize*> est appelée sur un [formateur](xref:System.Runtime.Serialization.Formatter), la sérialisation de l’objet s’effectue d’après la séquence de règles suivante :
+# <a name="steps-in-the-serialization-process"></a><span data-ttu-id="22437-102">Étapes du processus de sérialisation</span><span class="sxs-lookup"><span data-stu-id="22437-102">Steps in the serialization process</span></span>
+<span data-ttu-id="22437-103">Quand la méthode <xref:System.Runtime.Serialization.Formatter.Serialize*> est appelée sur un [formateur](xref:System.Runtime.Serialization.Formatter), la sérialisation de l’objet s’effectue d’après la séquence de règles suivante :</span><span class="sxs-lookup"><span data-stu-id="22437-103">When the <xref:System.Runtime.Serialization.Formatter.Serialize*> method is called on a [formatter](xref:System.Runtime.Serialization.Formatter), object serialization proceeds according to the following sequence of rules:</span></span>
 
-- Un contrôle est effectué pour déterminer si le formateur possède un sélecteur de substitut. Si tel est le cas, vérifiez si le sélecteur de substitut gère des objets du type donné. Si le sélecteur gère le type d’objet, <xref:System.Runtime.Serialization.ISerializable.GetObjectData*?displayProperty=fullName> est appelée sur le sélecteur de substitution.
+- <span data-ttu-id="22437-104">Un contrôle est effectué pour déterminer si le formateur possède un sélecteur de substitut.</span><span class="sxs-lookup"><span data-stu-id="22437-104">A check is made to determine whether the formatter has a surrogate selector.</span></span> <span data-ttu-id="22437-105">Si tel est le cas, vérifiez si le sélecteur de substitut gère des objets du type donné.</span><span class="sxs-lookup"><span data-stu-id="22437-105">If the formatter does, check whether the surrogate selector handles objects of the given type.</span></span> <span data-ttu-id="22437-106">Si le sélecteur gère le type d’objet, <xref:System.Runtime.Serialization.ISerializable.GetObjectData*?displayProperty=nameWithType> est appelée sur le sélecteur de substitution.</span><span class="sxs-lookup"><span data-stu-id="22437-106">If the selector handles the object type, <xref:System.Runtime.Serialization.ISerializable.GetObjectData*?displayProperty=nameWithType> is called on the surrogate selector.</span></span>
 
-- S’il n’existe aucun sélecteur de substitution ou s’il ne gère pas ce type d’objet, un contrôle est effectué pour déterminer si l’objet est marqué avec l’attribut [Serializable](xref:System.SerializableAttribute). S’il ne l’est pas, une exception <xref:System.Runtime.Serialization.SerializationException> est levée.
+- <span data-ttu-id="22437-107">S’il n’existe aucun sélecteur de substitution ou s’il ne gère pas ce type d’objet, un contrôle est effectué pour déterminer si l’objet est marqué avec l’attribut [Serializable](xref:System.SerializableAttribute).</span><span class="sxs-lookup"><span data-stu-id="22437-107">If there is no surrogate selector or if it does not handle the object type, a check is made to determine whether the object is marked with the [Serializable](xref:System.SerializableAttribute) attribute.</span></span> <span data-ttu-id="22437-108">S’il ne l’est pas, une exception <xref:System.Runtime.Serialization.SerializationException> est levée.</span><span class="sxs-lookup"><span data-stu-id="22437-108">If the object is not, a <xref:System.Runtime.Serialization.SerializationException> is thrown.</span></span>
 
-- Si l’objet est marqué convenablement, vérifiez s’il implémente l’interface <xref:System.Runtime.Serialization.ISerializable>. Si tel est le cas, <xref:System.Runtime.Serialization.ISerializable.GetObjectData*> est appelée sur l’objet.
+- <span data-ttu-id="22437-109">Si l’objet est marqué convenablement, vérifiez s’il implémente l’interface <xref:System.Runtime.Serialization.ISerializable>.</span><span class="sxs-lookup"><span data-stu-id="22437-109">If the object is marked appropriately, check whether the object implements the <xref:System.Runtime.Serialization.ISerializable> interface.</span></span> <span data-ttu-id="22437-110">Si tel est le cas, <xref:System.Runtime.Serialization.ISerializable.GetObjectData*> est appelée sur l’objet.</span><span class="sxs-lookup"><span data-stu-id="22437-110">If the object does, <xref:System.Runtime.Serialization.ISerializable.GetObjectData*> is called on the object.</span></span>
   
-- Si l’objet n’implémente pas <xref:System.Runtime.Serialization.ISerializable>, la stratégie de sérialisation par défaut est utilisée. Elle permet de sérialiser tous les champs non marqués comme [NonSerialized](xref:System.NonSerializedAttribute).
+- <span data-ttu-id="22437-111">Si l’objet n’implémente pas <xref:System.Runtime.Serialization.ISerializable>, la stratégie de sérialisation par défaut est utilisée. Elle permet de sérialiser tous les champs non marqués comme [NonSerialized](xref:System.NonSerializedAttribute).</span><span class="sxs-lookup"><span data-stu-id="22437-111">If the object does not implement <xref:System.Runtime.Serialization.ISerializable>, the default serialization policy is used, serializing all fields not marked as [NonSerialized](xref:System.NonSerializedAttribute).</span></span>
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   
-## <a name="see-also"></a>Voir aussi  
- [Sérialisation binaire](binary-serialization.md)   
- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)
+## <a name="see-also"></a><span data-ttu-id="22437-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="22437-112">See Also</span></span>  
+ [<span data-ttu-id="22437-113">Sérialisation binaire</span><span class="sxs-lookup"><span data-stu-id="22437-113">Binary Serialization</span></span>](binary-serialization.md)  
+ [<span data-ttu-id="22437-114">Sérialisation XML et SOAP</span><span class="sxs-lookup"><span data-stu-id="22437-114">XML and SOAP Serialization</span></span>](xml-and-soap-serialization.md)

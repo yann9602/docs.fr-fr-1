@@ -1,35 +1,38 @@
 ---
-title: "Acc&#232;s aux services WCF avec une application cliente Windows Store | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Accès aux services WCF avec une application cliente Windows Store"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1a1d30258063063cd4b91e328fc39e961ecb4425
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Acc&#232;s aux services WCF avec une application cliente Windows Store
-Windows 8 introduit un nouveau type d'application appelé applications du Windows Store. Ces applications sont conçues autour d'une interface d'écran tactile. .NET Framework 4.5 permet aux applications du Windows Store d'appeler des services WCF.  
+# <a name="accessing-wcf-services-with-a-windows-store-client-app"></a><span data-ttu-id="c7578-102">Accès aux services WCF avec une application cliente Windows Store</span><span class="sxs-lookup"><span data-stu-id="c7578-102">Accessing WCF Services with a Windows Store Client App</span></span>
+<span data-ttu-id="c7578-103">Windows 8 introduit un nouveau type d'application appelé applications du Windows Store.</span><span class="sxs-lookup"><span data-stu-id="c7578-103">Windows 8 introduces a new type of application called Windows Store applications.</span></span> <span data-ttu-id="c7578-104">Ces applications sont conçues autour d'une interface d'écran tactile.</span><span class="sxs-lookup"><span data-stu-id="c7578-104">These applications are designed around a touch screen interface.</span></span> <span data-ttu-id="c7578-105">.NET Framework 4.5 permet aux applications du Windows Store d'appeler des services WCF.</span><span class="sxs-lookup"><span data-stu-id="c7578-105">.NET Framework 4.5 enables Windows Store applications to call WCF services.</span></span>  
   
-## Prise en charge de WCF dans les applications du Windows Store  
- Un sous\-ensemble de fonctionnalités WCF est disponible dans une application du Windows Store. Pour plus d'informations, consultez les sections suivantes.  
+## <a name="wcf-support-in-windows-store-applications"></a><span data-ttu-id="c7578-106">Prise en charge de WCF dans les applications du Windows Store</span><span class="sxs-lookup"><span data-stu-id="c7578-106">WCF Support in Windows Store Applications</span></span>  
+ <span data-ttu-id="c7578-107">Un sous-ensemble de fonctionnalités WCF est disponible dans une application du Windows Store. Pour plus d'informations, consultez les sections suivantes.</span><span class="sxs-lookup"><span data-stu-id="c7578-107">A subset of WCF functionality is available from within a Windows Store application, see the following sections for more details.</span></span>  
   
 > [!IMPORTANT]
->  Utilisez les API de syndication WinRT au lieu de celles exposées par WCF. Pour plus d’informations, consultez [API de syndication WinRT](http://go.microsoft.com/fwlink/?LinkId=236265)  
+>  <span data-ttu-id="c7578-108">Utilisez les API de syndication WinRT au lieu de celles exposées par WCF.</span><span class="sxs-lookup"><span data-stu-id="c7578-108">Use the WinRT syndication APIs instead of those exposed by WCF.</span></span> <span data-ttu-id="c7578-109">Pour plus d’informations, consultez [API de syndication WinRT](http://go.microsoft.com/fwlink/?LinkId=236265)</span><span class="sxs-lookup"><span data-stu-id="c7578-109">For more information see, [WinRT Syndication API](http://go.microsoft.com/fwlink/?LinkId=236265)</span></span>  
   
 > [!WARNING]
->  L'utilisation de la fonctionnalité Ajouter une référence de service pour ajouter une référence de service Web à un composant d'exécution Windows n'est pas pris en charge.  
+>  <span data-ttu-id="c7578-110">L'utilisation de la fonctionnalité Ajouter une référence de service pour ajouter une référence de service Web à un composant d'exécution Windows n'est pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="c7578-110">Using Add Service Reference to add a web service reference to a Windows Runtime Component isn’t supported.</span></span>  
   
-### Liaisons prises en charge  
- Les liaisons WCF suivantes sont prises en charge dans les applications du Windows Store :  
+### <a name="supported-bindings"></a><span data-ttu-id="c7578-111">Liaisons prises en charge</span><span class="sxs-lookup"><span data-stu-id="c7578-111">Supported Bindings</span></span>  
+ <span data-ttu-id="c7578-112">Les liaisons WCF suivantes sont prises en charge dans les applications du Windows Store :</span><span class="sxs-lookup"><span data-stu-id="c7578-112">The following WCF bindings are supported in Windows Store Applications:</span></span>  
   
 1.  <xref:System.ServiceModel.BasicHttpBinding>  
   
@@ -37,9 +40,9 @@ Windows 8 introduit un nouveau type d'application appelé applications du Windo
   
 3.  <xref:System.ServiceModel.NetHttpBinding>  
   
-4.  <xref:System.ServiceModel.CustomBinding>  
+4.  <xref:System.ServiceModel.Channels.CustomBinding>
   
- Les éléments de liaison suivants sont pris en charge dans les applications du Windows Store :  
+ <span data-ttu-id="c7578-113">Les éléments de liaison suivants sont pris en charge dans les applications du Windows Store :</span><span class="sxs-lookup"><span data-stu-id="c7578-113">The following binding elements are supported in Windows Store Applications</span></span>  
   
 1.  <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
   
@@ -59,100 +62,131 @@ Windows 8 introduit un nouveau type d'application appelé applications du Windo
   
 9. <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
   
- Les encodages de texte et binaires sont pris en charge. Tous les modes de transfert WCF sont pris en charge. Pour plus d’informations, consultez [Transfert des messages par diffusion en continu](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md).  
+ <span data-ttu-id="c7578-114">Les encodages de texte et binaires sont pris en charge.</span><span class="sxs-lookup"><span data-stu-id="c7578-114">Both Text and Binary encodings are supported.</span></span> <span data-ttu-id="c7578-115">Tous les modes de transfert WCF sont pris en charge.</span><span class="sxs-lookup"><span data-stu-id="c7578-115">All WCF transfer modes are supported.</span></span> <span data-ttu-id="c7578-116">Pour plus d’informations, consultez [Streaming Message Transfer](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md).</span><span class="sxs-lookup"><span data-stu-id="c7578-116">For more information see, [Streaming Message Transfer](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md).</span></span>  
   
-### Ajouter une référence de service  
- Pour appeler un service WCF d'une application du Windows Store, utilisez la fonctionnalité Ajouter une référence de service de Visual Studio 2012. Vous remarquerez certaines modifications apportées à la fonctionnalité Ajouter une référence de service exécutée dans une application du Windows Store. Tout d'abord, aucun fichier de configuration n'est généré. Les applications du Windows Store n'utilisent pas les fichiers de configuration, elles doivent être configurées dans le code. Ce code de configuration se trouve dans le fichier References.cs généré par la fonctionnalité Ajouter une référence de service. Pour afficher ce fichier, veillez à sélectionner Afficher tous les fichiers dans l'Explorateur de solutions. Le fichier se trouve sous les nœuds Références de service et Reference.svcmap dans le projet. Toutes les opérations générées pour les services WCF dans une application du Windows Store seront des opérations asynchrones à l'aide du modèle asynchrone basé sur des tâches. Pour plus d’informations, consultez [Modèle asynchrone basé sur des tâches](http://msdn.microsoft.com/magazine/ff959203.aspx).  
+### <a name="add-service-reference"></a><span data-ttu-id="c7578-117">Ajouter une référence de service</span><span class="sxs-lookup"><span data-stu-id="c7578-117">Add Service Reference</span></span>  
+ <span data-ttu-id="c7578-118">Pour appeler un service WCF d'une application du Windows Store, utilisez la fonctionnalité Ajouter une référence de service de Visual Studio 2012.</span><span class="sxs-lookup"><span data-stu-id="c7578-118">To call a WCF service from a Windows Store application, use the Add Service Reference feature of Visual Studio 2012.</span></span> <span data-ttu-id="c7578-119">Vous remarquerez certaines modifications apportées à la fonctionnalité Ajouter une référence de service exécutée dans une application du Windows Store.</span><span class="sxs-lookup"><span data-stu-id="c7578-119">You will notice a few changes in the functionality of Add Service Reference when done within a Windows Store application.</span></span> <span data-ttu-id="c7578-120">Tout d'abord, aucun fichier de configuration n'est généré.</span><span class="sxs-lookup"><span data-stu-id="c7578-120">First no configuration file is generated.</span></span> <span data-ttu-id="c7578-121">Les applications du Windows Store n'utilisent pas les fichiers de configuration, elles doivent être configurées dans le code.</span><span class="sxs-lookup"><span data-stu-id="c7578-121">Windows Store applications do not use configuration files, so they must be configured in code.</span></span> <span data-ttu-id="c7578-122">Ce code de configuration se trouve dans le fichier References.cs généré par la fonctionnalité Ajouter une référence de service.</span><span class="sxs-lookup"><span data-stu-id="c7578-122">This configuration code can be found in the References.cs file generated by Add Service Reference.</span></span> <span data-ttu-id="c7578-123">Pour afficher ce fichier, assurez-vous de sélectionner « Afficher tous les fichiers » dans l’Explorateur de solutions.</span><span class="sxs-lookup"><span data-stu-id="c7578-123">To see this file, make sure to select "Show All Files" in the solution explorer.</span></span> <span data-ttu-id="c7578-124">Le fichier se trouve sous les nœuds Références de service et Reference.svcmap dans le projet.</span><span class="sxs-lookup"><span data-stu-id="c7578-124">The file will be located under the Service References and then Reference.svcmap nodes within the project.</span></span> <span data-ttu-id="c7578-125">Toutes les opérations générées pour les services WCF dans une application du Windows Store seront des opérations asynchrones à l'aide du modèle asynchrone basé sur des tâches.</span><span class="sxs-lookup"><span data-stu-id="c7578-125">All operations generated for WCF services within a Windows Store application will be asynchronous using the Task-based asynchronous pattern.</span></span> <span data-ttu-id="c7578-126">Pour plus d’informations, consultez [Modèle asynchrone basé sur des tâches](http://msdn.microsoft.com/magazine/ff959203.aspx).</span><span class="sxs-lookup"><span data-stu-id="c7578-126">For more information, see [Task-based Asynchronous Pattern](http://msdn.microsoft.com/magazine/ff959203.aspx).</span></span>  
   
- Comme la configuration est maintenant générée dans le code, toutes les modifications effectuées dans le fichier Reference.cs sont remplacées à chaque mise à jour de la référence de service. Pour remédier à cette situation, le code de configuration est généré dans une méthode partielle, que vous pouvez implémenter dans votre classe proxy client. La méthode partielle est déclarée comme suit :  
-  
-```csharp  
-static partial void Configure(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);  
-  
-```  
-  
- Vous pouvez ensuite appliquer cette méthode partielle et modifier la liaison ou le point de terminaison dans votre classe proxy client comme suit :  
+ <span data-ttu-id="c7578-127">Comme la configuration est maintenant générée dans le code, toutes les modifications effectuées dans le fichier Reference.cs sont remplacées à chaque mise à jour de la référence de service.</span><span class="sxs-lookup"><span data-stu-id="c7578-127">Because configuration is now generated in code, any changes made in the Reference.cs file would be overwritten every time the service reference is updated.</span></span> <span data-ttu-id="c7578-128">Pour remédier à cette situation, le code de configuration est généré dans une méthode partielle, que vous pouvez implémenter dans votre classe proxy client.</span><span class="sxs-lookup"><span data-stu-id="c7578-128">To remedy this situation the configuration code is generated within a partial method, which you can implement in your client proxy class.</span></span> <span data-ttu-id="c7578-129">La méthode partielle est déclarée comme suit :</span><span class="sxs-lookup"><span data-stu-id="c7578-129">The partial method is declared as follows:</span></span>  
   
 ```csharp  
-public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfClient.ServiceRefMultiEndpt.IService1>, MetroWcfClient.ServiceRefMultiEndpt.IService1 { static partial void Configure(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials) { if (serviceEndpoint.Name == ServiceRefMultiEndpt.Service1Client.EndpointConfiguration.BasicHttpBinding_IService1.ToString()) { serviceEndpoint.Binding.SendTimeout = new System.TimeSpan(0, 1, 0); } else if (serviceEndpoint.Name == ServiceRefMultiEndpt.Service1Client.EndpointConfiguration.BasicHttpBinding_IService11.ToString()) { serviceEndpoint.Binding.SendTimeout = new System.TimeSpan(0, 1, 0); clientCredentials.UserName.UserName = "username1"; clientCredentials.UserName.Password = "password"; } else if (serviceEndpoint.Name == ServiceRefMultiEndpt.Service1Client.EndpointConfiguration.NetTcpBinding_IService1.ToString()) { serviceEndpoint.Binding.Name = "MyTcpBinding"; serviceEndpoint.Address = new System.ServiceModel.EndpointAddress("net.tcp://localhost/tcp"); } } }  
-  
+static partial void Configure(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint,  
+            System.ServiceModel.Description.ClientCredentials clientCredentials);  
 ```  
   
-### Sérialisation  
- Les sérialiseurs suivants sont pris en charge dans les applications du Windows Store :  
+ <span data-ttu-id="c7578-130">Vous pouvez ensuite appliquer cette méthode partielle et modifier la liaison ou le point de terminaison dans votre classe proxy client comme suit :</span><span class="sxs-lookup"><span data-stu-id="c7578-130">You can then implement this partial method and change the binding or endpoint in your client proxy class as follows:</span></span>  
   
-1.  DataContractSerializer  
+```csharp  
+public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfClient.ServiceRefMultiEndpt.IService1>, MetroWcfClient.ServiceRefMultiEndpt.IService1  
+    {   
+        static partial void Configure(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint,   
+            System.ServiceModel.Description.ClientCredentials clientCredentials)  
+        {  
+            if (serviceEndpoint.Name ==   
+                    ServiceRefMultiEndpt.Service1Client.EndpointConfiguration.BasicHttpBinding_IService1.ToString())  
+            {  
+                serviceEndpoint.Binding.SendTimeout = new System.TimeSpan(0, 1, 0);  
+            }  
+            else if (serviceEndpoint.Name ==   
+                    ServiceRefMultiEndpt.Service1Client.EndpointConfiguration.BasicHttpBinding_IService11.ToString())  
+            {  
+                serviceEndpoint.Binding.SendTimeout = new System.TimeSpan(0, 1, 0);  
+                clientCredentials.UserName.UserName = "username1";  
+                clientCredentials.UserName.Password = "password";  
+            }  
+            else if (serviceEndpoint.Name ==   
+                    ServiceRefMultiEndpt.Service1Client.EndpointConfiguration.NetTcpBinding_IService1.ToString())  
+            {  
+                serviceEndpoint.Binding.Name = "MyTcpBinding";  
+                serviceEndpoint.Address = new System.ServiceModel.EndpointAddress("net.tcp://localhost/tcp");  
+            }  
+        }  
+    }  
+```  
   
-2.  DataContractJsonSerializer  
+### <a name="serialization"></a><span data-ttu-id="c7578-131">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="c7578-131">Serialization</span></span>  
+ <span data-ttu-id="c7578-132">Les sérialiseurs suivants sont pris en charge dans les applications du Windows Store :</span><span class="sxs-lookup"><span data-stu-id="c7578-132">The following serializers are supported in Windows Store applications:</span></span>  
   
-3.  XmlSerializer  
+1.  <span data-ttu-id="c7578-133">DataContractSerializer</span><span class="sxs-lookup"><span data-stu-id="c7578-133">DataContractSerializer</span></span>  
+  
+2.  <span data-ttu-id="c7578-134">DataContractJsonSerializer</span><span class="sxs-lookup"><span data-stu-id="c7578-134">DataContractJsonSerializer</span></span>  
+  
+3.  <span data-ttu-id="c7578-135">XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="c7578-135">XmlSerializer</span></span>  
   
 > [!WARNING]
->  XmlDictionaryWriter.Write\(DateTime\) écrit maintenant l'objet DateTime en tant que chaîne.  
+>  <span data-ttu-id="c7578-136">XmlDictionaryWriter.Write(DateTime) écrit maintenant l'objet DateTime en tant que chaîne.</span><span class="sxs-lookup"><span data-stu-id="c7578-136">XmlDictionaryWriter.Write(DateTime) now writes the DateTime object as a string.</span></span>  
   
-### Sécurité  
- Les modes suivants de sécurité sont pris en charge dans les applications du Windows Store :  
+### <a name="security"></a><span data-ttu-id="c7578-137">Sécurité</span><span class="sxs-lookup"><span data-stu-id="c7578-137">Security</span></span>  
+ <span data-ttu-id="c7578-138">Les modes suivants de sécurité sont pris en charge dans les applications du Windows Store :</span><span class="sxs-lookup"><span data-stu-id="c7578-138">The following security modes are supported in Windows Store applications</span></span>  
   
-1.  <xref:System.ServiceModel.SecurityMode>  
+1.  <xref:System.ServiceModel.SecurityMode.None>  
   
-2.  <xref:System.ServiceModel.SecurityMode>  
+2.  <xref:System.ServiceModel.SecurityMode.Transport>  
   
-3.  <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredentials>  
+3.  <!--zz <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredentials> --> `System.ServiceModel.SecurityMode.TransportWithMessageCredentials`
   
-4.  <xref:System.ServiceModel.SecurityMode.TransportCredentialOnly>  
+4.  <!--zz <xref:System.ServiceModel.SecurityMode.TransportCredentialOnly>  --> `System.ServiceModel.SecurityMode.TransportCredentialOnly`
   
- Les types d'informations d'identification du client suivants sont pris en charge dans les applications du Windows Store :  
+ <span data-ttu-id="c7578-139">Les types d'informations d'identification du client suivants sont pris en charge dans les applications du Windows Store :</span><span class="sxs-lookup"><span data-stu-id="c7578-139">The following client credential types are supported in Windows Store applications</span></span>  
   
-1.  None  
+1.  <span data-ttu-id="c7578-140">None</span><span class="sxs-lookup"><span data-stu-id="c7578-140">None</span></span>  
   
-2.  Basic  
+2.  <span data-ttu-id="c7578-141">Basic</span><span class="sxs-lookup"><span data-stu-id="c7578-141">Basic</span></span>  
   
-3.  Digest  
+3.  <span data-ttu-id="c7578-142">Digest</span><span class="sxs-lookup"><span data-stu-id="c7578-142">Digest</span></span>  
   
-4.  Par négociation  
+4.  <span data-ttu-id="c7578-143">Par négociation</span><span class="sxs-lookup"><span data-stu-id="c7578-143">Negotiate</span></span>  
   
-5.  NTLM  
+5.  <span data-ttu-id="c7578-144">NTLM</span><span class="sxs-lookup"><span data-stu-id="c7578-144">NTLM</span></span>  
   
-6.  Windows  
+6.  <span data-ttu-id="c7578-145">Windows</span><span class="sxs-lookup"><span data-stu-id="c7578-145">Windows</span></span>  
   
-7.  Nom d'utilisateur \(sécurité du message\)  
+7.  <span data-ttu-id="c7578-146">Nom d'utilisateur (sécurité du message)</span><span class="sxs-lookup"><span data-stu-id="c7578-146">Username (Message Security)</span></span>  
   
-8.  Windows \(sécurité du transport\)  
+8.  <span data-ttu-id="c7578-147">Windows (sécurité du transport)</span><span class="sxs-lookup"><span data-stu-id="c7578-147">Windows (Transport Security)</span></span>  
   
- Pour que les applications du Windows Store accèdent aux informations d'identification Windows par défaut et les envoient, vous devez activer cette fonctionnalité dans le fichier Package.appmanifest. Ouvrez ce fichier et sélectionnez l'onglet Capacités, puis sélectionnez Informations d'identification Windows par défaut. Cela permet à l'application de se connecter aux ressources intranet qui nécessitent des informations d'identification de domaine.  
+ <span data-ttu-id="c7578-148">Pour que les applications du Windows Store accèdent aux informations d'identification Windows par défaut et les envoient, vous devez activer cette fonctionnalité dans le fichier Package.appmanifest.</span><span class="sxs-lookup"><span data-stu-id="c7578-148">In order for Windows Store applications to access and send default Windows credentials, you must enable this functionality within the Package.appmanifest file.</span></span> <span data-ttu-id="c7578-149">Ouvrez ce fichier et sélectionnez l’onglet capacités et sélectionnez « D’identification de Windows par défaut ».</span><span class="sxs-lookup"><span data-stu-id="c7578-149">Open this file and select the Capabilities tab and select "Default Windows Credentials".</span></span> <span data-ttu-id="c7578-150">Cela permet à l'application de se connecter aux ressources intranet qui nécessitent des informations d'identification de domaine.</span><span class="sxs-lookup"><span data-stu-id="c7578-150">This allows the application to connect to intranet resources that require domain credentials.</span></span>  
   
 > [!IMPORTANT]
->  Pour que les applications du Windows Store passent des appels entre les ordinateurs, vous devez activer une autre fonction appelée Réseau domestique\/de bureau. Ce paramètre se trouve également dans le fichier Package.appmanifest sous l'onglet Capacités. Activez la case à cocher Réseau domestique\/de bureau. Cela donne à votre application un accès entrant et sortant au réseau des lieux approuvés par l'utilisateur, tels que le domicile et le bureau. Les ports entrants critiques sont toujours bloqués. Pour accéder aux services sur Internet, vous devez également activer la fonction Internet \(client\).  
+>  <span data-ttu-id="c7578-151">Dans l’ordre pour les applications du Windows Store effectuer des appels entre les ordinateurs, vous devez activer une autre fonction appelée « Réseau domestique/entreprise ».</span><span class="sxs-lookup"><span data-stu-id="c7578-151">In order for Windows Store applications to make cross machine calls you must enable another capability called "Home/Work Networking".</span></span> <span data-ttu-id="c7578-152">Ce paramètre se trouve également dans le fichier Package.appmanifest sous l'onglet Capacités. Activez la case à cocher Réseau domestique/de bureau.</span><span class="sxs-lookup"><span data-stu-id="c7578-152">This setting is also in the Package.appmanifest file under the Capabilities tab. Select the Home/Work Networking checkbox.</span></span> <span data-ttu-id="c7578-153">Cela donne à votre application un accès entrant et sortant au réseau des lieux approuvés par l'utilisateur, tels que le domicile et le bureau.</span><span class="sxs-lookup"><span data-stu-id="c7578-153">This gives your application inbound and outbound access to the networks of the user’s trusted places like home and work.</span></span> <span data-ttu-id="c7578-154">Les ports entrants critiques sont toujours bloqués.</span><span class="sxs-lookup"><span data-stu-id="c7578-154">Inbound critical ports are always blocked.</span></span> <span data-ttu-id="c7578-155">Pour accéder aux services sur Internet, vous devez également activer la fonction Internet (client).</span><span class="sxs-lookup"><span data-stu-id="c7578-155">For accessing services on the internet you must also enable Internet (Client) capability.</span></span>  
   
-### Divers  
- L'utilisation des classes suivantes est prise en charge pour les applications du Windows Store :  
+### <a name="misc"></a><span data-ttu-id="c7578-156">Divers</span><span class="sxs-lookup"><span data-stu-id="c7578-156">Misc</span></span>  
+ <span data-ttu-id="c7578-157">L'utilisation des classes suivantes est prise en charge pour les applications du Windows Store :</span><span class="sxs-lookup"><span data-stu-id="c7578-157">The use of the following classes is supported for Windows Store Applications:</span></span>  
   
 1.  <xref:System.ServiceModel.ChannelFactory>  
   
-2.  <xref:System.ServiceModel.DuplexChannelFactory>  
+2.  <!--zz <xref:System.ServiceModel.DuplexChannelFactory> --> `System.ServiceModel.DuplexChannelFactory`
   
 3.  <xref:System.ServiceModel.CallbackBehaviorAttribute>  
   
-### Définition des contrats de service  
- Nous vous recommandons de définir les opérations de service asynchrones uniquement à l'aide du modèle asynchrone basé sur des tâches. Cela garantit que les applications du Windows Store restent réactives lors de l'appel d'une opération de service.  
+### <a name="defining-service-contracts"></a><span data-ttu-id="c7578-158">Définition des contrats de service</span><span class="sxs-lookup"><span data-stu-id="c7578-158">Defining Service Contracts</span></span>  
+ <span data-ttu-id="c7578-159">Nous vous recommandons de définir les opérations de service asynchrones uniquement à l'aide du modèle asynchrone basé sur des tâches.</span><span class="sxs-lookup"><span data-stu-id="c7578-159">We recommend only defining asynchronous service operations using the task-based async pattern.</span></span> <span data-ttu-id="c7578-160">Cela garantit que les applications du Windows Store restent réactives lors de l'appel d'une opération de service.</span><span class="sxs-lookup"><span data-stu-id="c7578-160">This ensures Windows Store applications remain responsive while calling a service operation.</span></span>  
   
 > [!WARNING]
->  Même si aucune exception n'est levée si vous définissez une opération synchrone, il est vivement recommandé de définir uniquement des opérations asynchrones.  
+>  <span data-ttu-id="c7578-161">Même si aucune exception n'est levée si vous définissez une opération synchrone, il est vivement recommandé de définir uniquement des opérations asynchrones.</span><span class="sxs-lookup"><span data-stu-id="c7578-161">While no exception will be thrown if you define a synchronous operation, it is strongly recommended to only define asynchronous operations.</span></span>  
   
-### Appels de services WCF des applications du Windows Store  
- Comme mentionné précédemment, toute la configuration doit être effectuée dans le code de la méthode GetBindingForEndpoint de la classe proxy générée. L'appel d'une opération de service est identique à l'appel d'une méthode asynchrone basée sur des tâches comme indiqué dans l'extrait de code suivant.  
+### <a name="calling-wcf-services-from-windows-store-applications"></a><span data-ttu-id="c7578-162">Appels de services WCF des applications du Windows Store</span><span class="sxs-lookup"><span data-stu-id="c7578-162">Calling WCF Services from Windows Store Applications</span></span>  
+ <span data-ttu-id="c7578-163">Comme mentionné précédemment, toute la configuration doit être effectuée dans le code de la méthode GetBindingForEndpoint de la classe proxy générée.</span><span class="sxs-lookup"><span data-stu-id="c7578-163">As mentioned before all configuration must be done in code in the GetBindingForEndpoint method in the generated proxy class.</span></span> <span data-ttu-id="c7578-164">L'appel d'une opération de service est identique à l'appel d'une méthode asynchrone basée sur des tâches comme indiqué dans l'extrait de code suivant.</span><span class="sxs-lookup"><span data-stu-id="c7578-164">Calling a service operation is done the same as calling any task-based asynchronous method as shown in the following code snippet.</span></span>  
   
 ```csharp  
-void async SomeMethod() { ServiceClient proxy = new ServiceClient(); Task<T> results = await proxy.CallAsync(param1, param2); T result = results.Result; if (result.Success) { // Do something with result } }  
-  
+void async SomeMethod()  
+{  
+    ServiceClient proxy = new ServiceClient();  
+    Task<T> results = await proxy.CallAsync(param1, param2);  
+    T result = results.Result;  
+    if (result.Success)  
+    {  
+       // Do something with result  
+    }  
+}  
 ```  
   
- Notez l'utilisation du mot clé async dans la méthode qui effectue l'appel asynchrone et du mot clé await lors de l'appel de la méthode asynchrone.  
+ <span data-ttu-id="c7578-165">Notez l'utilisation du mot clé async dans la méthode qui effectue l'appel asynchrone et du mot clé await lors de l'appel de la méthode asynchrone.</span><span class="sxs-lookup"><span data-stu-id="c7578-165">Notice the use of the async keyword on the method making the asynchronous call and the await keyword when calling the asynchronous method.</span></span>  
   
-## Voir aussi  
- [WCF dans les applications du Windows Store \(blog\)](http://blogs.msdn.com/b/piyushjo/archive/2011/09/22/wcf-in-win8-metro-styled-apps-absolutely-supported.aspx)   
- [WCF, clients du Windows Store et sécurité](http://blogs.msdn.com/b/piyushjo/archive/2011/10/11/calling-a-wcf-service-from-a-metro-application-adding-security.aspx)   
- [Applications du Windows Store et appels entre ordinateurs](http://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)   
- [Appel d’un service WCF déployé dans Azure à partir d’une application du Windows Store](http://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)   
- [Programmation de la sécurité dans WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)   
- [Liaisons](../../../../docs/framework/wcf/bindings.md)
+## <a name="see-also"></a><span data-ttu-id="c7578-166">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c7578-166">See Also</span></span>  
+ [<span data-ttu-id="c7578-167">WCF dans le blog sur les applications du Windows Store</span><span class="sxs-lookup"><span data-stu-id="c7578-167">WCF in Windows Store Apps Blog</span></span>](http://blogs.msdn.com/b/piyushjo/archive/2011/09/22/wcf-in-win8-metro-styled-apps-absolutely-supported.aspx)  
+ [<span data-ttu-id="c7578-168">Sécurité et les Clients WCF Windows Store</span><span class="sxs-lookup"><span data-stu-id="c7578-168">WCF Windows Store Clients and Security</span></span>](http://blogs.msdn.com/b/piyushjo/archive/2011/10/11/calling-a-wcf-service-from-a-metro-application-adding-security.aspx)  
+ [<span data-ttu-id="c7578-169">Applications du Windows Store et les appels entre ordinateurs</span><span class="sxs-lookup"><span data-stu-id="c7578-169">Windows Store Apps and Cross Machine Calls</span></span>](http://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)  
+ [<span data-ttu-id="c7578-170">Appel d’un Service WCF déployé dans Azure à partir d’une application Windows Store</span><span class="sxs-lookup"><span data-stu-id="c7578-170">Calling a WCF Service Deployed in Azure from a Windows Store App</span></span>](http://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)  
+ [<span data-ttu-id="c7578-171">Programmation de la sécurité WCF</span><span class="sxs-lookup"><span data-stu-id="c7578-171">Programming WCF Security</span></span>](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)  
+ [<span data-ttu-id="c7578-172">Liaisons</span><span class="sxs-lookup"><span data-stu-id="c7578-172">Bindings</span></span>](../../../../docs/framework/wcf/bindings.md)

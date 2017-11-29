@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d748b1bc-5f8f-457c-918f-aadbc1c580f6
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3a70eadf6ae308458749beaacb62b7b61fd642aa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService
-System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService  
+# <a name="systemservicemodelcomintegrationcomintegrationservicehoststartingservice"></a><span data-ttu-id="a111e-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span><span class="sxs-lookup"><span data-stu-id="a111e-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span></span>
+<span data-ttu-id="a111e-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span><span class="sxs-lookup"><span data-stu-id="a111e-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService</span></span>  
   
-## Description  
- ComPlus: Démarrage du service.  
+## <a name="description"></a><span data-ttu-id="a111e-104">Description</span><span class="sxs-lookup"><span data-stu-id="a111e-104">Description</span></span>  
+ <span data-ttu-id="a111e-105">ComPlus: Démarrage du service.</span><span class="sxs-lookup"><span data-stu-id="a111e-105">ComPlus: Starting service.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="a111e-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a111e-106">See Also</span></span>  
+ [<span data-ttu-id="a111e-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="a111e-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="a111e-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="a111e-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="a111e-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="a111e-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

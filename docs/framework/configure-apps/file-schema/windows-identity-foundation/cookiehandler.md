@@ -1,90 +1,98 @@
 ---
-title: "&lt;cookieHandler&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;cookieHandler&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
-caps.latest.revision: 5
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 88e968d025c959ec33674a9d8edb5e63341433ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;cookieHandler&gt;
-Configure la <xref:System.IdentityModel.Services.CookieHandler> qui le <xref:System.IdentityModel.Services.SessionAuthenticationModule> \(SAM\) utilise pour lire et écrire des cookies.  
+# <a name="ltcookiehandlergt"></a><span data-ttu-id="af331-102">&lt;cookieHandler&gt;</span><span class="sxs-lookup"><span data-stu-id="af331-102">&lt;cookieHandler&gt;</span></span>
+<span data-ttu-id="af331-103">Configure le <xref:System.IdentityModel.Services.CookieHandler> qui le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) utilise pour lire et écrire des cookies.</span><span class="sxs-lookup"><span data-stu-id="af331-103">Configures the <xref:System.IdentityModel.Services.CookieHandler> that the <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) uses to read and write cookies.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="af331-104">\<system.identityModel.services ></span><span class="sxs-lookup"><span data-stu-id="af331-104">\<system.identityModel.services></span></span>  
+<span data-ttu-id="af331-105">\<federationConfiguration ></span><span class="sxs-lookup"><span data-stu-id="af331-105">\<federationConfiguration></span></span>  
+<span data-ttu-id="af331-106">\<cookieHandler ></span><span class="sxs-lookup"><span data-stu-id="af331-106">\<cookieHandler></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="af331-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="af331-107">Syntax</span></span>  
+  
+```xml  
 <system.identityModel.services>  
-  <federationConfiguration>  
-    <cookieHandler name=xs:string  
-        path=Path  
-        mode="Chunked||Custom||Default"  
-        persistentSessionLifetime=xs:string  
-        hideFromScript=xs:boolean  
-        requireSSL=xs:boolean  
-        domain=xs:string  
-      <chunkedCookieHandler size=xs:int />  
-      <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" />  
-    </cookieHandler>  
-  </federationConfiguration>  
+  <federationConfiguration>  
+    <cookieHandler name=xs:string  
+        path=Path  
+        mode="Chunked||Custom||Default"  
+        persistentSessionLifetime=xs:string  
+        hideFromScript=xs:boolean  
+        requireSSL=xs:boolean  
+        domain=xs:string  
+      <chunkedCookieHandler size=xs:int />  
+      <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" />  
+    </cookieHandler>  
+  </federationConfiguration>  
 </system.identityModel.services>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="af331-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="af331-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="af331-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="af331-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="af331-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="af331-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|name|Spécifie le nom de base pour tous les cookies écrits.  La valeur par défaut est « FedAuth ».|  
-|path|Spécifie la valeur de chemin d'accès pour tous les cookies écrits.  La valeur par défaut est « HttpRuntime.AppDomainAppVirtualPath ».|  
-|mode|Parmi les <xref:System.IdentityModel.Services.CookieHandlerMode> valeurs qui spécifie le type de Gestionnaire de cookie utilisé par le SAM.  Les valeurs suivantes peuvent être utilisées :<br /><br /> -   « Default »: identique à « Chunked ».<br />-   « Segmenté » — utilise une instance de la <xref:System.IdentityModel.Services.ChunkedCookieHandler> classe.  Ce gestionnaire de cookie garantit que les cookies individuels ne dépassent pas une taille maximale du jeu.  Pour ce faire, il potentiellement « segmentation » un seul cookie logique dans un certain nombre de cookies on\-the\-wire.<br />-   « Personnalisé » — utilise une instance d'une classe personnalisée dérivée de <xref:System.IdentityModel.Services.CookieHandler>.  La classe dérivée est référencée par le `<customCookieHandler>` élément enfant.<br /><br /> La valeur par défaut est « Default ».|  
-|persistentSessionLifetime|Spécifie la durée de vie des sessions persistantes.  Si zéro, sessions transitoires sont toujours utilisées.  La valeur par défaut est "0:0:0", qui spécifie une session en régime transitoire.  La valeur maximale est "365:0:0", qui spécifie une session de 365 jours.  La valeur doit être spécifiée en fonction de la restriction suivante : `<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />`, où la valeur la plus à gauche indique les jours, la valeur médiane \(si présent\) spécifie les heures et la valeur à l'extrême droite \(si présent\) spécifie les minutes.|  
-|requireSsl|Spécifie si l'indicateur « Sécurisé » est émis pour tous les cookies écrits.  Si cette valeur est définie, les cookies de session sign\-in sera uniquement disponibles via HTTPS.  La valeur par défaut est « true ».|  
-|hideFromScript|Contrôle si l'indicateur « HttpOnly » est émis pour tous les cookies écrits.  Certains navigateurs web Honorer cet indicateur en conservant le script côté client d'accéder à la valeur du cookie.  La valeur par défaut est « true ».|  
-|domaine|La valeur de domaine pour tous les cookies écrits.  La valeur par défaut est "".|  
+|<span data-ttu-id="af331-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="af331-111">Attribute</span></span>|<span data-ttu-id="af331-112">Description</span><span class="sxs-lookup"><span data-stu-id="af331-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="af331-113">name</span><span class="sxs-lookup"><span data-stu-id="af331-113">name</span></span>|<span data-ttu-id="af331-114">Spécifie le nom de base pour tout cookie écrit.</span><span class="sxs-lookup"><span data-stu-id="af331-114">Specifies the base name for any cookies written.</span></span> <span data-ttu-id="af331-115">La valeur par défaut est « FedAuth ».</span><span class="sxs-lookup"><span data-stu-id="af331-115">The default is "FedAuth".</span></span>|  
+|<span data-ttu-id="af331-116">path</span><span class="sxs-lookup"><span data-stu-id="af331-116">path</span></span>|<span data-ttu-id="af331-117">Spécifie la valeur de chemin d’accès pour tout cookie écrit.</span><span class="sxs-lookup"><span data-stu-id="af331-117">Specifies the path value for any cookies written.</span></span> <span data-ttu-id="af331-118">La valeur par défaut est « Place du HttpRuntime.AppDomainAppVirtualPath ».</span><span class="sxs-lookup"><span data-stu-id="af331-118">The default is "HttpRuntime.AppDomainAppVirtualPath".</span></span>|  
+|<span data-ttu-id="af331-119">mode</span><span class="sxs-lookup"><span data-stu-id="af331-119">mode</span></span>|<span data-ttu-id="af331-120">Parmi les <xref:System.IdentityModel.Services.CookieHandlerMode> valeurs qui spécifie le type de gestionnaire de cookie utilisé par le SAM.</span><span class="sxs-lookup"><span data-stu-id="af331-120">One of the <xref:System.IdentityModel.Services.CookieHandlerMode> values that specifies the kind of cookie handler used by the SAM.</span></span> <span data-ttu-id="af331-121">Les valeurs suivantes peuvent être utilisées :</span><span class="sxs-lookup"><span data-stu-id="af331-121">The following values may be used:</span></span><br /><br /> <span data-ttu-id="af331-122">-« Default », le même que « Chunked ».</span><span class="sxs-lookup"><span data-stu-id="af331-122">-   "Default" — The same as "Chunked".</span></span><br /><span data-ttu-id="af331-123">-« Mémorisé en bloc », utilise une instance de la <xref:System.IdentityModel.Services.ChunkedCookieHandler> classe.</span><span class="sxs-lookup"><span data-stu-id="af331-123">-   "Chunked" — Uses an instance of the <xref:System.IdentityModel.Services.ChunkedCookieHandler> class.</span></span> <span data-ttu-id="af331-124">Ce gestionnaire de cookie garantit que des cookies ne dépassent pas une taille maximale du jeu.</span><span class="sxs-lookup"><span data-stu-id="af331-124">This cookie handler ensures that individual cookies do not exceed a set maximum size.</span></span> <span data-ttu-id="af331-125">Pour ce faire, il potentiellement « segmentation » un cookie logique en plusieurs cookies sur simultanée.</span><span class="sxs-lookup"><span data-stu-id="af331-125">It accomplishes this by potentially "chunking" one logical cookie into a number of cookies on-the-wire.</span></span><br /><span data-ttu-id="af331-126">-« Custom », utilise une instance d’une classe personnalisée dérivée de <xref:System.IdentityModel.Services.CookieHandler>.</span><span class="sxs-lookup"><span data-stu-id="af331-126">-   "Custom" — Uses an instance of a custom class derived from <xref:System.IdentityModel.Services.CookieHandler>.</span></span> <span data-ttu-id="af331-127">La classe dérivée est référencée par le `<customCookieHandler>` élément enfant.</span><span class="sxs-lookup"><span data-stu-id="af331-127">The derived class is referenced by the `<customCookieHandler>` child element.</span></span><br /><br /> <span data-ttu-id="af331-128">La valeur par défaut est « Default ».</span><span class="sxs-lookup"><span data-stu-id="af331-128">The default is "Default".</span></span>|  
+|<span data-ttu-id="af331-129">persistentSessionLifetime</span><span class="sxs-lookup"><span data-stu-id="af331-129">persistentSessionLifetime</span></span>|<span data-ttu-id="af331-130">Spécifie la durée de vie de sessions persistantes.</span><span class="sxs-lookup"><span data-stu-id="af331-130">Specifies the lifetime of persistent sessions.</span></span> <span data-ttu-id="af331-131">Si zéro, les sessions temporaires sont toujours utilisées.</span><span class="sxs-lookup"><span data-stu-id="af331-131">If zero, transient sessions are always used.</span></span> <span data-ttu-id="af331-132">La valeur par défaut est « 0:0:0 », qui spécifie une session temporaire.</span><span class="sxs-lookup"><span data-stu-id="af331-132">The default value is "0:0:0", which specifies a transient session.</span></span> <span data-ttu-id="af331-133">La valeur maximale est « 365:0:0 », qui spécifie une session de 365 jours.</span><span class="sxs-lookup"><span data-stu-id="af331-133">The maximum value is "365:0:0", which specifies a session of 365 days.</span></span> <span data-ttu-id="af331-134">La valeur doit être spécifiée en fonction de la restriction suivante : `<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />`, où la valeur la plus à gauche indique les jours, la valeur médiane (le cas échéant) spécifie les heures et la valeur plus à droite (le cas échéant) spécifie les minutes.</span><span class="sxs-lookup"><span data-stu-id="af331-134">The value should be specified according to the following restriction: `<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />`, where the leftmost value specifies days, the middle value (if present) specifies hours, and the rightmost value (if present) specifies minutes.</span></span>|  
+|<span data-ttu-id="af331-135">RequireSsl</span><span class="sxs-lookup"><span data-stu-id="af331-135">requireSsl</span></span>|<span data-ttu-id="af331-136">Spécifie si l’indicateur « Sécurisé » est émis pour tout cookie écrit.</span><span class="sxs-lookup"><span data-stu-id="af331-136">Specifies whether the "Secure" flag is emitted for any cookies written.</span></span> <span data-ttu-id="af331-137">Si cette valeur est définie, les cookies de session seront uniquement accessible via le protocole HTTPS.</span><span class="sxs-lookup"><span data-stu-id="af331-137">If this value is set, the sign-in session cookies will only be available over HTTPS.</span></span> <span data-ttu-id="af331-138">La valeur par défaut est "true".</span><span class="sxs-lookup"><span data-stu-id="af331-138">The default is "true".</span></span>|  
+|<span data-ttu-id="af331-139">hideFromScript</span><span class="sxs-lookup"><span data-stu-id="af331-139">hideFromScript</span></span>|<span data-ttu-id="af331-140">Contrôle si l’indicateur « HttpOnly » est émis pour tout cookie écrit.</span><span class="sxs-lookup"><span data-stu-id="af331-140">Controls whether the "HttpOnly" flag is emitted for any cookies written.</span></span> <span data-ttu-id="af331-141">Certains navigateurs web respectent cet indicateur en conservant un script côté client d’accéder à la valeur du cookie.</span><span class="sxs-lookup"><span data-stu-id="af331-141">Certain web browsers honor this flag by keeping client-side script from accessing the cookie value.</span></span> <span data-ttu-id="af331-142">La valeur par défaut est "true".</span><span class="sxs-lookup"><span data-stu-id="af331-142">The default is "true".</span></span>|  
+|<span data-ttu-id="af331-143">de domaine</span><span class="sxs-lookup"><span data-stu-id="af331-143">domain</span></span>|<span data-ttu-id="af331-144">La valeur de domaine pour tout cookie écrit.</span><span class="sxs-lookup"><span data-stu-id="af331-144">The domain value for any cookies written.</span></span> <span data-ttu-id="af331-145">La valeur par défaut est "".</span><span class="sxs-lookup"><span data-stu-id="af331-145">The default is "".</span></span>|  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="af331-146">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="af331-146">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="af331-147">Élément</span><span class="sxs-lookup"><span data-stu-id="af331-147">Element</span></span>|<span data-ttu-id="af331-148">Description</span><span class="sxs-lookup"><span data-stu-id="af331-148">Description</span></span>|  
 |-------------|-----------------|  
-|[\<chunkedCookieHandler\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/chunkedcookiehandler.md)|Configure la <xref:System.IdentityModel.Services.ChunkedCookieHandler>.  Cet élément ne peut être présent si la `mode` l'attribut de la `<cookieHandler>` élément est « Default » ou « Chunked ».|  
-|[\<customCookieHandler\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/customcookiehandler.md)|Définit le type de Gestionnaire de cookie personnalisé.  Cet élément doit être présent si la `mode` l'attribut de la `<cookieHandler>` élément est « Custom ».  Il ne peut pas être présent pour toutes les autres valeurs de la `mode` attribut.  Le type personnalisé doit être dérivé de la <xref:System.IdentityModel.Services.CookieHandler> classe.|  
+|[<span data-ttu-id="af331-149">\<chunkedCookieHandler ></span><span class="sxs-lookup"><span data-stu-id="af331-149">\<chunkedCookieHandler></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/chunkedcookiehandler.md)|<span data-ttu-id="af331-150">Configure le <xref:System.IdentityModel.Services.ChunkedCookieHandler>.</span><span class="sxs-lookup"><span data-stu-id="af331-150">Configures the <xref:System.IdentityModel.Services.ChunkedCookieHandler>.</span></span> <span data-ttu-id="af331-151">Cet élément peut uniquement être présent si la `mode` attribut de la `<cookieHandler>` élément est « Default » ou « Mémorisé en bloc ».</span><span class="sxs-lookup"><span data-stu-id="af331-151">This element may only be present if the `mode` attribute of the `<cookieHandler>` element is "Default" or "Chunked".</span></span>|  
+|[<span data-ttu-id="af331-152">\<customCookieHandler ></span><span class="sxs-lookup"><span data-stu-id="af331-152">\<customCookieHandler></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/customcookiehandler.md)|<span data-ttu-id="af331-153">Définit le type de gestionnaire de cookie personnalisé.</span><span class="sxs-lookup"><span data-stu-id="af331-153">Sets the custom cookie handler type.</span></span> <span data-ttu-id="af331-154">Cet élément doit être présent si la `mode` attribut de la `<cookieHandler>` élément est « Custom ».</span><span class="sxs-lookup"><span data-stu-id="af331-154">This element must be present if the `mode` attribute of the `<cookieHandler>` element is "Custom".</span></span> <span data-ttu-id="af331-155">Il ne peut pas être présent pour toutes les autres valeurs de la `mode` attribut.</span><span class="sxs-lookup"><span data-stu-id="af331-155">It cannot be present for any other values of the `mode` attribute.</span></span> <span data-ttu-id="af331-156">Le type personnalisé doit être dérivé du <xref:System.IdentityModel.Services.CookieHandler> classe.</span><span class="sxs-lookup"><span data-stu-id="af331-156">The custom type must be derived from the <xref:System.IdentityModel.Services.CookieHandler> class.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="af331-157">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="af331-157">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="af331-158">Élément</span><span class="sxs-lookup"><span data-stu-id="af331-158">Element</span></span>|<span data-ttu-id="af331-159">Description</span><span class="sxs-lookup"><span data-stu-id="af331-159">Description</span></span>|  
 |-------------|-----------------|  
-|[\<federationConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Contient les paramètres qui configurent le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> \(WSFAM\) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> \(SAM\).|  
+|[<span data-ttu-id="af331-160">\<federationConfiguration></span><span class="sxs-lookup"><span data-stu-id="af331-160">\<federationConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|<span data-ttu-id="af331-161">Contient les paramètres qui configurent le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).</span><span class="sxs-lookup"><span data-stu-id="af331-161">Contains the settings that configure the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) and the <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).</span></span>|  
   
-## Notes  
- Le <xref:System.IdentityModel.Services.CookieHandler> est responsable de lire et écrire des cookies brutes à HTTP au niveau du protocole.  Vous pouvez configurer soit un <xref:System.IdentityModel.Services.ChunkedCookieHandler> ou un gestionnaire de cookie personnalisé dérivé de la <xref:System.IdentityModel.Services.CookieHandler> classe.  
+## <a name="remarks"></a><span data-ttu-id="af331-162">Remarques</span><span class="sxs-lookup"><span data-stu-id="af331-162">Remarks</span></span>  
+ <span data-ttu-id="af331-163">Le <xref:System.IdentityModel.Services.CookieHandler> est responsable de lire et écrire des cookies brutes sur le protocole HTTP au niveau du protocole.</span><span class="sxs-lookup"><span data-stu-id="af331-163">The <xref:System.IdentityModel.Services.CookieHandler> is responsible for reading and writing raw cookies at the HTTP protocol level.</span></span> <span data-ttu-id="af331-164">Vous pouvez configurer un <xref:System.IdentityModel.Services.ChunkedCookieHandler> ou un gestionnaire de cookie personnalisé dérivé de la <xref:System.IdentityModel.Services.CookieHandler> classe.</span><span class="sxs-lookup"><span data-stu-id="af331-164">You can configure either a <xref:System.IdentityModel.Services.ChunkedCookieHandler> or a custom cookie handler derived from the <xref:System.IdentityModel.Services.CookieHandler> class.</span></span>  
   
- Pour configurer un gestionnaire de cookie mémorisé en bloc, définissez l'attribut mode « Chunked » ou « Default ».  La taille de segment par défaut est 2000 octets, mais vous pouvez éventuellement spécifier une taille de segment différent en incluant une `<chunkedCookieHandler>` élément enfant.  
+ <span data-ttu-id="af331-165">Pour configurer un gestionnaire de cookie mémorisé en bloc, définissez l’attribut mode « Chunked » ou « Default ».</span><span class="sxs-lookup"><span data-stu-id="af331-165">To configure a chunked cookie handler, set the mode attribute to "Chunked" or "Default".</span></span> <span data-ttu-id="af331-166">La taille de segment par défaut est 2 000 octets, mais vous pouvez choisir une taille de segment différent en incluant un `<chunkedCookieHandler>` élément enfant.</span><span class="sxs-lookup"><span data-stu-id="af331-166">The default chunk size is 2000 bytes, but you may optionally specify a different chunk size by including a `<chunkedCookieHandler>` child element.</span></span>  
   
- Pour configurer un gestionnaire de cookie personnalisé, définissez l'attribut mode sur « Custom ».  Vous devez également spécifier une `<customCookieHandler>` élément enfant qui fait référence au type de votre gestionnaire personnalisé.  
+ <span data-ttu-id="af331-167">Pour configurer un gestionnaire personnalisé de cookie, définissez l’attribut mode à « Custom ».</span><span class="sxs-lookup"><span data-stu-id="af331-167">To configure a custom cookie handler, set the mode attribute to "Custom".</span></span> <span data-ttu-id="af331-168">Vous devez également spécifier un `<customCookieHandler>` élément enfant qui fait référence au type de votre gestionnaire personnalisé.</span><span class="sxs-lookup"><span data-stu-id="af331-168">You must also specify a `<customCookieHandler>` child element that references the type of your custom handler.</span></span>  
   
- Le `<cookieHandler>` élément est représenté par la <xref:System.IdentityModel.Services.CookieHandlerElement> classe.  Le Gestionnaire de cookie qui a été spécifié dans la configuration est disponible à partir de la <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> propriété de la <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objet définie sur le <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=fullName> propriété.  
+ <span data-ttu-id="af331-169">Le `<cookieHandler>` élément est représenté par la <xref:System.IdentityModel.Services.CookieHandlerElement> classe.</span><span class="sxs-lookup"><span data-stu-id="af331-169">The `<cookieHandler>` element is represented by the <xref:System.IdentityModel.Services.CookieHandlerElement> class.</span></span> <span data-ttu-id="af331-170">Le Gestionnaire de cookie qui a été spécifié dans la configuration est disponible à partir de la <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> propriété de la <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objet définie sur le <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> propriété.</span><span class="sxs-lookup"><span data-stu-id="af331-170">The cookie handler that was specified in configuration is available from the <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> property of the <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> object set on the <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> property.</span></span>  
   
-## Exemple  
- Le XML suivant un `<cookieHandler>` élément.  Dans cet exemple, parce que le `mode` attribut n'est pas spécifié, le Gestionnaire de cookie par défaut sera utilisé par le SAM.  Il s'agit d'une instance de la <xref:System.IdentityModel.Services.ChunkedCookieHandler> classe.  Étant donné que la `<chunkedCookieHandler>` élément enfant n'est pas spécifié, la taille de segment par défaut sera utilisée.  HTTPS ne sera pas nécessaire car le `requireSsl` attribut a la valeur `false`.  
+## <a name="example"></a><span data-ttu-id="af331-171">Exemple</span><span class="sxs-lookup"><span data-stu-id="af331-171">Example</span></span>  
+ <span data-ttu-id="af331-172">Le code XML suivant montre un `<cookieHandler>` élément.</span><span class="sxs-lookup"><span data-stu-id="af331-172">The following XML shows a `<cookieHandler>` element.</span></span> <span data-ttu-id="af331-173">Dans cet exemple, étant donné que le `mode` attribut n’est pas spécifié, le Gestionnaire de cookie par défaut sera utilisé par le SAM.</span><span class="sxs-lookup"><span data-stu-id="af331-173">In this example, because the `mode` attribute is not specified, the default cookie handler will be used by the SAM.</span></span> <span data-ttu-id="af331-174">Il s’agit d’une instance de la <xref:System.IdentityModel.Services.ChunkedCookieHandler> classe.</span><span class="sxs-lookup"><span data-stu-id="af331-174">This is an instance of the <xref:System.IdentityModel.Services.ChunkedCookieHandler> class.</span></span> <span data-ttu-id="af331-175">Étant donné que le `<chunkedCookieHandler>` élément enfant n’est pas spécifié, la taille de segment par défaut sera utilisée.</span><span class="sxs-lookup"><span data-stu-id="af331-175">Because the `<chunkedCookieHandler>` child element is not specified, the default chunk size will be used.</span></span> <span data-ttu-id="af331-176">HTTPS n’est plus nécessaire car le `requireSsl` attribut a la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="af331-176">HTTPS will not be required because the `requireSsl` attribute is set `false`.</span></span>  
   
 > [!WARNING]
->  Dans cet exemple, HTTPS n'est pas nécessaire d'écrire des cookies de session.  C'est parce que le `requireSsl` d'attribut sur le `<cookieHandler>` élément est définie sur `false`.  Ce paramètre n'est pas recommandé pour la plupart des environnements de production tel qu'il peut présenter un risque de sécurité.  
+>  <span data-ttu-id="af331-177">Dans cet exemple, HTTPS n’est pas requis pour écrire les cookies de session.</span><span class="sxs-lookup"><span data-stu-id="af331-177">In this example, HTTPS is not required to write session cookies.</span></span> <span data-ttu-id="af331-178">C’est parce que le `requireSsl` de l’attribut le `<cookieHandler>` a la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="af331-178">This is because the `requireSsl` attribute on the `<cookieHandler>` element is set to `false`.</span></span> <span data-ttu-id="af331-179">Ce paramètre n’est pas recommandé pour la plupart des environnements de production, car elle peut présenter un risque de sécurité.</span><span class="sxs-lookup"><span data-stu-id="af331-179">This setting is not recommended for most production environments as it may present a security risk.</span></span>  
   
-```  
+```xml  
 <cookieHandler requireSsl="false" />  
 ```  
   
-## Voir aussi  
- <xref:System.IdentityModel.Services.CookieHandler>   
- <xref:System.IdentityModel.Services.ChunkedCookieHandler>   
+## <a name="see-also"></a><span data-ttu-id="af331-180">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="af331-180">See Also</span></span>  
+ <xref:System.IdentityModel.Services.CookieHandler>  
+ <xref:System.IdentityModel.Services.ChunkedCookieHandler>  
  <xref:System.IdentityModel.Services.SessionAuthenticationModule>

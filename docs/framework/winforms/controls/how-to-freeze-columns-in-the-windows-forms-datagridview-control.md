@@ -1,55 +1,59 @@
 ---
-title: "Comment&#160;: figer les colonnes du contr&#244;le DataGridView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "colonnes (Windows Forms), bloquer"
-  - "DataGridView (contrôle Windows Forms), colonnes toujours affichées"
-  - "DataGridView (contrôle Windows Forms), bloquer les colonnes"
+title: "Comment : figer les colonnes du contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- columns [Windows Forms], freezing
+- DataGridView control [Windows Forms], freezing columns
+- DataGridView control [Windows Forms], columns always in view
 ms.assetid: 2ef8b1de-782e-4867-af8d-58171ab5c106
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: baf2b0218c1818d6a92ca7790c8c50bd94ecfd9d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: figer les colonnes du contr&#244;le DataGridView Windows Forms
-Quand des utilisateurs consultent des données affichées dans un contrôle Windows Forms <xref:System.Windows.Forms.DataGridView>, ils doivent parfois faire fréquemment référence à une même colonne ou un même ensemble de colonnes.  Par exemple, lors de l'affichage d'un tableau d'informations sur des clients qui contient de nombreuses colonnes, il est utile d'afficher le nom du client en permanence tout en laissant d'autres colonnes défiler à l'extérieur de la zone visible.  
+# <a name="how-to-freeze-columns-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="42b88-102">Comment : figer les colonnes du contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="42b88-102">How to: Freeze Columns in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="42b88-103">Quand des utilisateurs consultent des données affichées dans un contrôle Windows Forms <xref:System.Windows.Forms.DataGridView>, ils doivent parfois faire fréquemment référence à une même colonne ou un même ensemble de colonnes.</span><span class="sxs-lookup"><span data-stu-id="42b88-103">When users view data displayed in a Windows Forms <xref:System.Windows.Forms.DataGridView> control, they sometimes need to refer to a single column or set of columns frequently.</span></span> <span data-ttu-id="42b88-104">Par exemple, lors de l'affichage d'un tableau d'informations sur des clients qui contient de nombreuses colonnes, il est utile d'afficher le nom du client en permanence tout en laissant d'autres colonnes défiler à l'extérieur de la zone visible.</span><span class="sxs-lookup"><span data-stu-id="42b88-104">For example, when displaying a table of customer information that contains many columns, it is useful to display the customer name at all times while enabling other columns to scroll outside the visible region.</span></span>  
   
- Pour obtenir ce comportement, vous pouvez figer des colonnes dans le contrôle.  Quand vous figez une colonne, toutes les colonnes à sa gauche \(ou à sa droite dans les scripts de droite à gauche\) sont aussi figées.  Les colonnes figées restent en place, tandis que toutes les autres colonnes peuvent défiler.  
+ <span data-ttu-id="42b88-105">Pour obtenir ce comportement, vous pouvez figer des colonnes dans le contrôle.</span><span class="sxs-lookup"><span data-stu-id="42b88-105">To achieve this behavior, you can freeze columns in the control.</span></span> <span data-ttu-id="42b88-106">Quand vous figez une colonne, toutes les colonnes à sa gauche (ou à sa droite dans les scripts de droite à gauche) sont aussi figées.</span><span class="sxs-lookup"><span data-stu-id="42b88-106">When you freeze a column, all the columns to its left (or to its right in right-to-left language scripts) are frozen as well.</span></span> <span data-ttu-id="42b88-107">Les colonnes figées restent en place, tandis que toutes les autres colonnes peuvent défiler.</span><span class="sxs-lookup"><span data-stu-id="42b88-107">Frozen columns remain in place while all other columns can scroll.</span></span>  
   
 > [!NOTE]
->  Si la réorganisation des colonnes est activée, les colonnes figées sont traitées comme un groupe distinct des colonnes non figées.  Les utilisateurs peuvent repositionner des colonnes dans l'un ou l'autre groupe, mais ils ne peuvent pas déplacer une colonne d'un groupe à l'autre.  
+>  <span data-ttu-id="42b88-108">Si la réorganisation des colonnes est activée, les colonnes figées sont traitées comme un groupe distinct des colonnes non figées.</span><span class="sxs-lookup"><span data-stu-id="42b88-108">If column reordering is enabled, the frozen columns are treated as a group distinct from the unfrozen columns.</span></span> <span data-ttu-id="42b88-109">Les utilisateurs peuvent repositionner des colonnes dans l'un ou l'autre groupe, mais ils ne peuvent pas déplacer une colonne d'un groupe à l'autre.</span><span class="sxs-lookup"><span data-stu-id="42b88-109">Users can reposition columns in either group, but they cannot move a column from one group to the other.</span></span>  
   
- La propriété <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A> d'une colonne détermine si la colonne est toujours visible dans la grille.  
+ <span data-ttu-id="42b88-110">La propriété <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A> d'une colonne détermine si la colonne est toujours visible dans la grille.</span><span class="sxs-lookup"><span data-stu-id="42b88-110">The <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A> property of a column determines whether the column is always visible within the grid.</span></span>  
   
- Cette tâche est prise en charge dans Visual Studio.  Consultez également [Comment : figer les colonnes du contrôle DataGridView Windows Forms à l'aide du concepteur](http://msdn.microsoft.com/library/717ss6s6%20\(v=vs.110\)).  
+ <span data-ttu-id="42b88-111">Cette tâche est prise en charge dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="42b88-111">There is support for this task in Visual Studio.</span></span>  <span data-ttu-id="42b88-112">Consultez également [Comment : figer les colonnes dans les Windows Forms DataGridView contrôle à l’aide du concepteur](http://msdn.microsoft.com/library/717ss6s6\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="42b88-112">Also see [How to: Freeze Columns in the Windows Forms DataGridView Control Using the Designer](http://msdn.microsoft.com/library/717ss6s6\(v=vs.110\)).</span></span>  
   
-### Pour figer une colonne par programmation  
+### <a name="to-freeze-a-column-programmatically"></a><span data-ttu-id="42b88-113">Pour figer une colonne par programmation</span><span class="sxs-lookup"><span data-stu-id="42b88-113">To freeze a column programmatically</span></span>  
   
--   Affectez à la propriété <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=fullName> la valeur `true`.  
+-   <span data-ttu-id="42b88-114">Affectez à la propriété <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType> la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="42b88-114">Set the <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType> property to `true`.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#061](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#061)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#061](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#061)]  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a><span data-ttu-id="42b88-115">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="42b88-115">Compiling the Code</span></span>  
+ <span data-ttu-id="42b88-116">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="42b88-116">This example requires:</span></span>  
   
--   un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` qui contient une colonne nommée `AddToCartButton` ;  
+-   <span data-ttu-id="42b88-117">un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` qui contient une colonne nommée `AddToCartButton` ;</span><span class="sxs-lookup"><span data-stu-id="42b88-117">A <xref:System.Windows.Forms.DataGridView> control named `dataGridView1` that contains a column named `AddToCartButton`.</span></span>  
   
--   des références aux assemblys <xref:System?displayProperty=fullName> et <xref:System.Windows.Forms?displayProperty=fullName>.  
+-   <span data-ttu-id="42b88-118">des références aux assemblys <xref:System?displayProperty=nameWithType> et <xref:System.Windows.Forms?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="42b88-118">References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridView>   
- [Fonctionnalités de base liées aux colonnes, lignes et cellules dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)   
- [Comment : activer la réorganisation des colonnes du contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="42b88-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="42b88-119">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridView>  
+ [<span data-ttu-id="42b88-120">Fonctionnalités de base liées aux colonnes, lignes et cellules dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="42b88-120">Basic Column, Row, and Cell Features in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
+ [<span data-ttu-id="42b88-121">Guide pratique pour activer la réorganisation des colonnes du contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="42b88-121">How to: Enable Column Reordering in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)

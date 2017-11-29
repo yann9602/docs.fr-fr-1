@@ -1,25 +1,28 @@
 ---
-title: "MsmqBindingElementBase | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: MsmqBindingElementBase
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 210d41ab-a2a4-4d7a-afd2-0916c08a4015
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 009596ee8fd7218a07487183d932e91dad07797c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# MsmqBindingElementBase
-MsmqBindingElementBase  
+# <a name="msmqbindingelementbase"></a><span data-ttu-id="635e9-102">MsmqBindingElementBase</span><span class="sxs-lookup"><span data-stu-id="635e9-102">MsmqBindingElementBase</span></span>
+<span data-ttu-id="635e9-103">MsmqBindingElementBase</span><span class="sxs-lookup"><span data-stu-id="635e9-103">MsmqBindingElementBase</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="635e9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="635e9-104">Syntax</span></span>  
   
 ```  
 class MsmqBindingElementBase : TransportBindingElement  
@@ -38,95 +41,95 @@ class MsmqBindingElementBase : TransportBindingElement
 };  
 ```  
   
-## Méthodes  
- La classe MsmqBindingElementBase ne définit pas de méthode.  
+## <a name="methods"></a><span data-ttu-id="635e9-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="635e9-105">Methods</span></span>  
+ <span data-ttu-id="635e9-106">La classe MsmqBindingElementBase ne définit pas de méthode.</span><span class="sxs-lookup"><span data-stu-id="635e9-106">The MsmqBindingElementBase class does not define any methods.</span></span>  
   
-## Propriétés  
- La classe MsmqBindingElementBase a les propriétés suivantes :  
+## <a name="properties"></a><span data-ttu-id="635e9-107">Propriétés</span><span class="sxs-lookup"><span data-stu-id="635e9-107">Properties</span></span>  
+ <span data-ttu-id="635e9-108">La classe MsmqBindingElementBase a les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="635e9-108">The MsmqBindingElementBase class has the following properties:</span></span>  
   
-### CustomDeadLetterQueue  
- Type de données : chaîne  
+### <a name="customdeadletterqueue"></a><span data-ttu-id="635e9-109">CustomDeadLetterQueue</span><span class="sxs-lookup"><span data-stu-id="635e9-109">CustomDeadLetterQueue</span></span>  
+ <span data-ttu-id="635e9-110">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="635e9-110">Data type: string</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-111">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-111">Access type: Read-only</span></span>  
   
- URI qui contient l'emplacement de la file d'attente de lettres mortes pour chaque application, dans laquelle les messages expirés ou dont le transfert ou la remise a échoué sont placés.  
+ <span data-ttu-id="635e9-112">URI qui contient l'emplacement de la file d'attente de lettres mortes pour chaque application, dans laquelle les messages expirés ou dont le transfert ou la remise a échoué sont placés.</span><span class="sxs-lookup"><span data-stu-id="635e9-112">A URI that contains the location of the dead letter queue for each application, where messages that have expired or that have failed transfer or delivery are placed.</span></span>  
   
-### DeadLetterQueue  
- Type de données : chaîne  
+### <a name="deadletterqueue"></a><span data-ttu-id="635e9-113">DeadLetterQueue</span><span class="sxs-lookup"><span data-stu-id="635e9-113">DeadLetterQueue</span></span>  
+ <span data-ttu-id="635e9-114">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="635e9-114">Data type: string</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-115">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-115">Access type: Read-only</span></span>  
   
- Valeur d'énumération qui indique le type de la file d'attente de lettres mortes à utiliser.  
+ <span data-ttu-id="635e9-116">Valeur d'énumération qui indique le type de la file d'attente de lettres mortes à utiliser.</span><span class="sxs-lookup"><span data-stu-id="635e9-116">An enumeration value that indicates the type of dead letter queue to use.</span></span>  
   
-### Durable  
- Type de données : booléen  
+### <a name="durable"></a><span data-ttu-id="635e9-117">Durable</span><span class="sxs-lookup"><span data-stu-id="635e9-117">Durable</span></span>  
+ <span data-ttu-id="635e9-118">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="635e9-118">Data type: boolean</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-119">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-119">Access type: Read-only</span></span>  
   
- Valeur qui indique si les messages traités par cette liaison sont durables ou volatils.  
+ <span data-ttu-id="635e9-120">Valeur qui indique si les messages traités par cette liaison sont durables ou volatils.</span><span class="sxs-lookup"><span data-stu-id="635e9-120">A value that indicates whether the messages processed by this binding are durable or volatile.</span></span>  
   
-### ExactlyOnce  
- Type de données : booléen  
+### <a name="exactlyonce"></a><span data-ttu-id="635e9-121">ExactlyOnce</span><span class="sxs-lookup"><span data-stu-id="635e9-121">ExactlyOnce</span></span>  
+ <span data-ttu-id="635e9-122">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="635e9-122">Data type: boolean</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-123">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-123">Access type: Read-only</span></span>  
   
- Valeur booléenne qui indique si les messages traités par cette liaison sont reçus exactement une fois.  
+ <span data-ttu-id="635e9-124">Valeur booléenne qui indique si les messages traités par cette liaison sont reçus exactement une fois.</span><span class="sxs-lookup"><span data-stu-id="635e9-124">A Boolean value that indicates whether messages processed by this binding are received exactly once.</span></span>  
   
-### MaxRetryCycles  
- Type de données : sint32  
+### <a name="maxretrycycles"></a><span data-ttu-id="635e9-125">MaxRetryCycles</span><span class="sxs-lookup"><span data-stu-id="635e9-125">MaxRetryCycles</span></span>  
+ <span data-ttu-id="635e9-126">Type de données : sint32</span><span class="sxs-lookup"><span data-stu-id="635e9-126">Data type: sint32</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-127">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-127">Access type: Read-only</span></span>  
   
- Nombre maximal de cycles de nouvelle tentative de livraison de messages à l'application de réception.  
+ <span data-ttu-id="635e9-128">Nombre maximal de cycles de nouvelle tentative de livraison de messages à l'application de réception.</span><span class="sxs-lookup"><span data-stu-id="635e9-128">The maximum number of retry cycles to attempt delivery of messages to the receiving application.</span></span>  
   
-### ReceiveErrorHandling  
- Type de données : chaîne  
+### <a name="receiveerrorhandling"></a><span data-ttu-id="635e9-129">ReceiveErrorHandling</span><span class="sxs-lookup"><span data-stu-id="635e9-129">ReceiveErrorHandling</span></span>  
+ <span data-ttu-id="635e9-130">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="635e9-130">Data type: string</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-131">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-131">Access type: Read-only</span></span>  
   
- Paramètres de gestion de messages incohérents.  
+ <span data-ttu-id="635e9-132">Paramètres de gestion de messages incohérents.</span><span class="sxs-lookup"><span data-stu-id="635e9-132">The settings for poison message handling.</span></span>  
   
-### ReceiveRetryCount  
- Type de données : sint32  
+### <a name="receiveretrycount"></a><span data-ttu-id="635e9-133">ReceiveRetryCount</span><span class="sxs-lookup"><span data-stu-id="635e9-133">ReceiveRetryCount</span></span>  
+ <span data-ttu-id="635e9-134">Type de données : sint32</span><span class="sxs-lookup"><span data-stu-id="635e9-134">Data type: sint32</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-135">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-135">Access type: Read-only</span></span>  
   
- Nombre maximal de nouvelles tentatives immédiates sur un message qui est lu à partir de la file d'attente d'application.  
+ <span data-ttu-id="635e9-136">Nombre maximal de nouvelles tentatives immédiates sur un message qui est lu à partir de la file d'attente d'application.</span><span class="sxs-lookup"><span data-stu-id="635e9-136">The maximum number of immediate retry attempts on a message that is read from the application queue.</span></span>  
   
-### RetryCycleDelay  
- Type de données : datetime  
+### <a name="retrycycledelay"></a><span data-ttu-id="635e9-137">RetryCycleDelay</span><span class="sxs-lookup"><span data-stu-id="635e9-137">RetryCycleDelay</span></span>  
+ <span data-ttu-id="635e9-138">Type de données : datetime</span><span class="sxs-lookup"><span data-stu-id="635e9-138">Data type: datetime</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-139">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-139">Access type: Read-only</span></span>  
   
- Valeur qui indique l'intervalle entre des cycles de nouvelle tentative de remise d'un message n'ayant pas pu être remis immédiatement.  
+ <span data-ttu-id="635e9-140">Valeur qui indique l'intervalle entre des cycles de nouvelle tentative de remise d'un message n'ayant pas pu être remis immédiatement.</span><span class="sxs-lookup"><span data-stu-id="635e9-140">A value that indicates the time delay between retry cycles when attempting to deliver a message that could not be delivered immediately.</span></span>  
   
-### TimeToLive  
- Type de données : datetime  
+### <a name="timetolive"></a><span data-ttu-id="635e9-141">TimeToLive</span><span class="sxs-lookup"><span data-stu-id="635e9-141">TimeToLive</span></span>  
+ <span data-ttu-id="635e9-142">Type de données : datetime</span><span class="sxs-lookup"><span data-stu-id="635e9-142">Data type: datetime</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-143">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-143">Access type: Read-only</span></span>  
   
- Intervalle qui indique combien de temps les messages traités par cette liaison peuvent séjourner dans la file d'attente avant expiration.  
+ <span data-ttu-id="635e9-144">Intervalle qui indique combien de temps les messages traités par cette liaison peuvent séjourner dans la file d'attente avant expiration.</span><span class="sxs-lookup"><span data-stu-id="635e9-144">The interval of time that indicates how long the messages processed by this binding can be in the queue before they expire.</span></span>  
   
-### UseMsmqTracing  
- Type de données : booléen  
+### <a name="usemsmqtracing"></a><span data-ttu-id="635e9-145">UseMsmqTracing</span><span class="sxs-lookup"><span data-stu-id="635e9-145">UseMsmqTracing</span></span>  
+ <span data-ttu-id="635e9-146">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="635e9-146">Data type: boolean</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-147">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-147">Access type: Read-only</span></span>  
   
- Valeur booléenne qui indique si les messages traités par cette liaison doivent être suivis.  
+ <span data-ttu-id="635e9-148">Valeur booléenne qui indique si les messages traités par cette liaison doivent être suivis.</span><span class="sxs-lookup"><span data-stu-id="635e9-148">A Boolean value that indicates whether messages processed by this binding should be traced.</span></span>  
   
-### UseSourceJournal  
- Type de données : booléen  
+### <a name="usesourcejournal"></a><span data-ttu-id="635e9-149">UseSourceJournal</span><span class="sxs-lookup"><span data-stu-id="635e9-149">UseSourceJournal</span></span>  
+ <span data-ttu-id="635e9-150">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="635e9-150">Data type: boolean</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="635e9-151">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="635e9-151">Access type: Read-only</span></span>  
   
- Valeur booléenne qui indique si les copies des messages traités par cette liaison doivent être stockées dans la file d'attente du journal source.  
+ <span data-ttu-id="635e9-152">Valeur booléenne qui indique si les copies des messages traités par cette liaison doivent être stockées dans la file d'attente du journal source.</span><span class="sxs-lookup"><span data-stu-id="635e9-152">A Boolean value that indicates whether copies of messages processed by this binding should be stored in the source journal queue.</span></span>  
   
-## Spécifications  
+## <a name="requirements"></a><span data-ttu-id="635e9-153">Spécifications</span><span class="sxs-lookup"><span data-stu-id="635e9-153">Requirements</span></span>  
   
-|MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|<span data-ttu-id="635e9-154">MOF</span><span class="sxs-lookup"><span data-stu-id="635e9-154">MOF</span></span>|<span data-ttu-id="635e9-155">Déclaré dans Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="635e9-155">Declared in Servicemodel.mof.</span></span>|  
+|---------|-----------------------------------|  
+|<span data-ttu-id="635e9-156">Espace de noms</span><span class="sxs-lookup"><span data-stu-id="635e9-156">Namespace</span></span>|<span data-ttu-id="635e9-157">Défini dans root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="635e9-157">Defined in root\ServiceModel</span></span>|  
   
-## Voir aussi  
- <xref:System.ServiceModel.NetMsmqBinding>   
+## <a name="see-also"></a><span data-ttu-id="635e9-158">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="635e9-158">See Also</span></span>  
+ <xref:System.ServiceModel.NetMsmqBinding>  
  <xref:System.ServiceModel.MsmqBindingBase>

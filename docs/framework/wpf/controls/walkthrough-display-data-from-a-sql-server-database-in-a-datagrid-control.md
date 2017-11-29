@@ -1,110 +1,116 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: affichage de donn&#233;es d&#39;une base de donn&#233;es SQL Server dans un contr&#244;le DataGrid | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles (WPF), DataGrid"
-  - "DataGrid (WPF), afficher des données de SQL Server"
+title: "Procédure pas à pas : affichage de données d'une base de données SQL Server dans un contrôle DataGrid"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGrid [WPF], displaying data from SQL Server
+- controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c89ed9425920602f80a2407b7529b3eb215a2e3d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: affichage de donn&#233;es d&#39;une base de donn&#233;es SQL Server dans un contr&#244;le DataGrid
-Dans cette procédure pas à pas, vous extrayez des données d'une base de données SQL Server et affichez ces données dans un contrôle <xref:System.Windows.Controls.DataGrid>.  Vous utilisez ADO.NET Entity Framework pour créer les classes d'entité qui représentent les données et utilisez LINQ pour écrire une requête qui extrait les données spécifiées d'une classe d'entité.  
+# <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a><span data-ttu-id="39245-102">Procédure pas à pas : affichage de données d'une base de données SQL Server dans un contrôle DataGrid</span><span class="sxs-lookup"><span data-stu-id="39245-102">Walkthrough: Display Data from a SQL Server Database in a DataGrid Control</span></span>
+<span data-ttu-id="39245-103">Dans cette procédure pas à pas, vous récupérer des données d’une base de données SQL Server et afficher ces données dans un <xref:System.Windows.Controls.DataGrid> contrôle.</span><span class="sxs-lookup"><span data-stu-id="39245-103">In this walkthrough, you retrieve data from a SQL Server database and display that data in a <xref:System.Windows.Controls.DataGrid> control.</span></span> <span data-ttu-id="39245-104">ADO.NET Entity Framework vous permet de créer les classes d’entité qui représentent les données et utilisent LINQ pour écrire une requête qui Récupère les données spécifiées à partir d’une classe d’entité.</span><span class="sxs-lookup"><span data-stu-id="39245-104">You use the ADO.NET Entity Framework to create the entity classes that represent the data, and use LINQ to write a query that retrieves the specified data from an entity class.</span></span>  
   
-## Composants requis  
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
+## <a name="prerequisites"></a><span data-ttu-id="39245-105">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="39245-105">Prerequisites</span></span>  
+ <span data-ttu-id="39245-106">Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="39245-106">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)].  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="39245-107">.</span><span class="sxs-lookup"><span data-stu-id="39245-107">.</span></span>  
   
--   Accès à une instance en cours d'exécution de SQL Server ou SQL Server Express à laquelle l'exemple de base de données AdventureWorksLT2008 est attaché.  Vous pouvez télécharger la base de données AdventureWorksLT2008 à partir du [site Web CodePlex \(éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkId=159848).  
+-   <span data-ttu-id="39245-108">Accès à une instance en cours d’exécution de SQL Server ou SQL Server Express qui possède la base de données AdventureWorks attaché.</span><span class="sxs-lookup"><span data-stu-id="39245-108">Access to a running instance of SQL Server or SQL Server Express that has the AdventureWorks sample database attached to it.</span></span> <span data-ttu-id="39245-109">Vous pouvez télécharger la base de données AdventureWorks à partir de la [GitHub](https://github.com/Microsoft/sql-server-samples/releases).</span><span class="sxs-lookup"><span data-stu-id="39245-109">You can download the AdventureWorks database from the [GitHub](https://github.com/Microsoft/sql-server-samples/releases).</span></span>  
   
-### Pour créer des classes d'entité  
+### <a name="to-create-entity-classes"></a><span data-ttu-id="39245-110">Pour créer des classes d’entité</span><span class="sxs-lookup"><span data-stu-id="39245-110">To create entity classes</span></span>  
   
-1.  Créez un projet d'application WPF en Visual Basic ou C\#, et nommez\-le `DataGridSQLExample`.  
+1.  <span data-ttu-id="39245-111">Créer un nouveau projet d’Application WPF dans Visual Basic ou c# et nommez-le `DataGridSQLExample`.</span><span class="sxs-lookup"><span data-stu-id="39245-111">Create a new WPF Application project in Visual Basic or C#, and name it `DataGridSQLExample`.</span></span>  
   
-2.  Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, pointez sur **Ajouter**, puis sélectionnez **Nouvel élément**.  
+2.  <span data-ttu-id="39245-112">Dans l’Explorateur de solutions, cliquez sur votre projet, pointez sur **ajouter**, puis sélectionnez **un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="39245-112">In Solution Explorer, right-click your project, point to **Add**, and then select **New Item**.</span></span>  
   
-     La boîte de dialogue Ajouter un nouvel élément s'affiche.  
+     <span data-ttu-id="39245-113">La boîte de dialogue Ajouter un nouvel élément s’affiche.</span><span class="sxs-lookup"><span data-stu-id="39245-113">The Add New Item dialog box appears.</span></span>  
   
-3.  Dans le volet Modèles installés, sélectionnez **Données**, puis dans la liste de modèles, choisissez **ADO.NET Entity Data Model**.  
+3.  <span data-ttu-id="39245-114">Dans le volet Modèles installés, sélectionnez **données** et dans la liste des modèles, sélectionnez **Mode de données d’entité ADO.NET**l.</span><span class="sxs-lookup"><span data-stu-id="39245-114">In the Installed Templates pane, select **Data** and in the list of templates, select **ADO.NET Entity Data Mode**l.</span></span>  
   
-     ![Sélectionner ADO.NET Entity Data Model](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step1.png "DataGrid\_SQL\_EF\_Step1")  
+     <span data-ttu-id="39245-115">![Sélectionnez ADO.NET Entity Data Model](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step1.png "DataGrid_SQL_EF_Step1")</span><span class="sxs-lookup"><span data-stu-id="39245-115">![Select ADO.NET Entity Data Model](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step1.png "DataGrid_SQL_EF_Step1")</span></span>  
   
-4.  Renommez le fichier `AdventureWorksModel.edmx`, puis cliquez sur **Ajouter**.  
+4.  <span data-ttu-id="39245-116">Nommez le fichier `AdventureWorksModel.edmx` puis cliquez sur **ajouter**.</span><span class="sxs-lookup"><span data-stu-id="39245-116">Name the file `AdventureWorksModel.edmx` and then click **Add**.</span></span>  
   
-     L'Assistant Entity Data Model s'affiche.  
+     <span data-ttu-id="39245-117">L'Assistant Entity Data Model s'affiche.</span><span class="sxs-lookup"><span data-stu-id="39245-117">The Entity Data Model Wizard appears.</span></span>  
   
-5.  Dans l'écran Choisir le contenu du Model, sélectionnez **Générer à partir de la base de données**, puis sur **Suivant**.  
+5.  <span data-ttu-id="39245-118">Dans l’écran de choisir le contenu du modèle, sélectionnez **générer à partir de la base de données** puis cliquez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="39245-118">In the Choose Model Contents screen, select **Generate from database** and then click **Next**.</span></span>  
   
-     ![Sélectionner l'option Générer à partir de la base de données](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step2.png "DataGrid\_SQL\_EF\_Step2")  
+     <span data-ttu-id="39245-119">![Sélectionnez les générer à partir de l’option de base de données](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step2.png "DataGrid_SQL_EF_Step2")</span><span class="sxs-lookup"><span data-stu-id="39245-119">![Select Generate from database option](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step2.png "DataGrid_SQL_EF_Step2")</span></span>  
   
-6.  Dans l'écran Choisir votre connexion de données, fournissez la connexion à votre base de données AdventureWorksLT2008.  Pour plus d'informations, consultez [Boîte de dialogue Choisir votre connexion de données](http://go.microsoft.com/fwlink/?LinkId=160190).  
+6.  <span data-ttu-id="39245-120">Dans l’écran Choisir votre connexion de données, fournissez la connexion à votre base de données AdventureWorksLT2008.</span><span class="sxs-lookup"><span data-stu-id="39245-120">In the Choose Your Data Connection screen, provide the connection to your AdventureWorksLT2008 database.</span></span> <span data-ttu-id="39245-121">Pour plus d’informations, consultez [boîte de dialogue Choisir votre connexion de données](http://go.microsoft.com/fwlink/?LinkId=160190).</span><span class="sxs-lookup"><span data-stu-id="39245-121">For more information, see [Choose Your Data Connection Dialog Box](http://go.microsoft.com/fwlink/?LinkId=160190).</span></span>  
   
-     ![Fournir la connexion à la base de données](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step3.png "DataGrid\_SQL\_EF\_Step3")  
+     <span data-ttu-id="39245-122">![Fournir la connexion à la base de données](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step3.png "DataGrid_SQL_EF_Step3")</span><span class="sxs-lookup"><span data-stu-id="39245-122">![Provide connection to database](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step3.png "DataGrid_SQL_EF_Step3")</span></span>  
   
-7.  Vérifiez que le nom est `AdventureWorksLT2008Entities` et que la case à cocher **Enregistrer les paramètres de connexion de l'entité dans App.Config en tant que** est activée, puis cliquez sur **Suivant**.  
+7.  <span data-ttu-id="39245-123">Assurez-vous que le nom est `AdventureWorksLT2008Entities` et que le **enregistrer les paramètres de connexion de l’entité dans App.Config en tant que** case à cocher est sélectionnée, puis cliquez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="39245-123">Make sure that the name is `AdventureWorksLT2008Entities` and that the **Save entity connection settings in App.Config as** check box is selected, and then click **Next**.</span></span>  
   
-8.  Dans l'écran Choisir vos objets de base de données, développez le nœud Tables, puis sélectionnez les tables **Product** et **ProductCategory**.  
+8.  <span data-ttu-id="39245-124">Dans l’écran Choisir vos objets de base de données, développez le nœud Tables, puis sélectionnez le **produit** et **ProductCategory** tables.</span><span class="sxs-lookup"><span data-stu-id="39245-124">In the Choose Your Database Objects screen, expand the Tables node, and select the **Product** and **ProductCategory** tables.</span></span>  
   
-     Vous pouvez générer des classes d'entité pour toutes les tables ; toutefois, vous extrayez seulement des données de ces deux tables dans cet exemple.  
+     <span data-ttu-id="39245-125">Vous pouvez générer des classes d’entité pour toutes les tables ; Toutefois, dans cet exemple vous uniquement récupérer des données à partir de ces deux tables.</span><span class="sxs-lookup"><span data-stu-id="39245-125">You can generate entity classes for all of the tables; however, in this example you only retrieve data from those two tables.</span></span>  
   
-     ![Sélectionner Product et ProductCategory dans les tables](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step4.png "DataGrid\_SQL\_EF\_Step4")  
+     <span data-ttu-id="39245-126">![Sélectionner Product et ProductCategory à partir des tables](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step4.png "DataGrid_SQL_EF_Step4")</span><span class="sxs-lookup"><span data-stu-id="39245-126">![Select Product and ProductCategory from tables](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step4.png "DataGrid_SQL_EF_Step4")</span></span>  
   
-9. Cliquez sur **Terminer**.  
+9. <span data-ttu-id="39245-127">Cliquez sur **Terminer**.</span><span class="sxs-lookup"><span data-stu-id="39245-127">Click **Finish**.</span></span>  
   
-     Les entités Product et ProductCategory sont affichées dans le concepteur d'entités.  
+     <span data-ttu-id="39245-128">Les entités Product et ProductCategory sont affichées dans le Concepteur d’entités.</span><span class="sxs-lookup"><span data-stu-id="39245-128">The Product and ProductCategory entities are displayed in the Entity Designer.</span></span>  
   
-     ![Modèles d'entité Product et ProductCategory](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step5.png "DataGrid\_SQL\_EF\_Step5")  
+     <span data-ttu-id="39245-129">![Modèles d’entité Product et ProductCategory](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step5.png "DataGrid_SQL_EF_Step5")</span><span class="sxs-lookup"><span data-stu-id="39245-129">![Product and ProductCategory entity models](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step5.png "DataGrid_SQL_EF_Step5")</span></span>  
   
-### Pour extraire et présenter les données  
+### <a name="to-retrieve-and-present-the-data"></a><span data-ttu-id="39245-130">Pour récupérer et présenter les données</span><span class="sxs-lookup"><span data-stu-id="39245-130">To retrieve and present the data</span></span>  
   
-1.  Ouvrez le fichier MainWindow.xaml.  
+1.  <span data-ttu-id="39245-131">Ouvrez le fichier MainWindow.xaml.</span><span class="sxs-lookup"><span data-stu-id="39245-131">Open the MainWindow.xaml file.</span></span>  
   
-2.  Affectez à la propriété <xref:System.Windows.FrameworkElement.Width%2A> sur la <xref:System.Windows.Window> la valeur 450.  
+2.  <span data-ttu-id="39245-132">Définir le <xref:System.Windows.FrameworkElement.Width%2A> propriété sur le <xref:System.Windows.Window> à 450.</span><span class="sxs-lookup"><span data-stu-id="39245-132">Set the <xref:System.Windows.FrameworkElement.Width%2A> property on the <xref:System.Windows.Window> to 450.</span></span>  
   
-3.  Dans l'éditeur XAML, ajoutez la balise <xref:System.Windows.Controls.DataGrid> suivante entre les balises `<Grid>` et `</Grid>` pour ajouter un <xref:System.Windows.Controls.DataGrid> nommé `dataGrid1`.  
+3.  <span data-ttu-id="39245-133">Dans l’éditeur XAML, ajoutez le code suivant <xref:System.Windows.Controls.DataGrid> balise entre le `<Grid>` et `</Grid>` balises pour ajouter un <xref:System.Windows.Controls.DataGrid> nommé `dataGrid1`.</span><span class="sxs-lookup"><span data-stu-id="39245-133">In the XAML editor, add the following <xref:System.Windows.Controls.DataGrid> tag between the `<Grid>` and `</Grid>` tags to add a <xref:System.Windows.Controls.DataGrid> named `dataGrid1`.</span></span>  
   
-     [!code-xml[DataGrid_SQL_EF_Walkthrough#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#3)]  
+     [!code-xaml[DataGrid_SQL_EF_Walkthrough#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#3)]  
   
-     ![Fenêtre avec DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid\_SQL\_EF\_Step6")  
+     <span data-ttu-id="39245-134">![Fenêtre avec DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid_SQL_EF_Step6")</span><span class="sxs-lookup"><span data-stu-id="39245-134">![Window with DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid_SQL_EF_Step6")</span></span>  
   
-4.  Sélectionnez la <xref:System.Windows.Window>.  
+4.  <span data-ttu-id="39245-135">Sélectionnez le contrôle <xref:System.Windows.Window>.</span><span class="sxs-lookup"><span data-stu-id="39245-135">Select the <xref:System.Windows.Window>.</span></span>  
   
-5.  À l'aide de la fenêtre Propriétés ou de l'éditeur XAML, créez un gestionnaire d'événements pour le <xref:System.Windows.Window> nommé `Window_Loaded` qui correspond à l'événement <xref:System.Windows.FrameworkElement.Loaded>.  Pour plus d'informations, consultez [Comment : créer un gestionnaire d'événements simple](http://msdn.microsoft.com/fr-fr/b1456e07-9dec-4354-99cf-18666b64f480).  
+5.  <span data-ttu-id="39245-136">À l’aide de la fenêtre Propriétés ou l’éditeur XAML, créez un gestionnaire d’événements pour le <xref:System.Windows.Window> nommé `Window_Loaded` pour la <xref:System.Windows.FrameworkElement.Loaded> événement.</span><span class="sxs-lookup"><span data-stu-id="39245-136">Using the Properties window or XAML editor, create an event handler for the <xref:System.Windows.Window> named `Window_Loaded` for the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span> <span data-ttu-id="39245-137">Pour plus d’informations, consultez [Comment : créer un gestionnaire d’événements Simple](http://msdn.microsoft.com/en-us/b1456e07-9dec-4354-99cf-18666b64f480).</span><span class="sxs-lookup"><span data-stu-id="39245-137">For more information, see [How to: Create a Simple Event Handler](http://msdn.microsoft.com/en-us/b1456e07-9dec-4354-99cf-18666b64f480).</span></span>  
   
-     Le code XAML correspondant à MainWindow.xaml est présenté ci\-dessous.  
+     <span data-ttu-id="39245-138">Le code suivant illustre le code XAML pour MainWindow.xaml.</span><span class="sxs-lookup"><span data-stu-id="39245-138">The following shows the XAML for MainWindow.xaml.</span></span>  
   
     > [!NOTE]
-    >  Si vous utilisez Visual Basic, dans la première ligne de MainWindow.xaml, remplacez `x:Class="DataGridSQLExample.MainWindow"` par `x:Class="MainWindow"`.  
+    >  <span data-ttu-id="39245-139">Si vous utilisez Visual Basic, dans la première ligne de MainWindow.xaml, remplacez `x:Class="DataGridSQLExample.MainWindow"` avec `x:Class="MainWindow"`.</span><span class="sxs-lookup"><span data-stu-id="39245-139">If you are using Visual Basic, in the first line of MainWindow.xaml, replace `x:Class="DataGridSQLExample.MainWindow"` with `x:Class="MainWindow"`.</span></span>  
   
-     [!code-xml[DataGrid_SQL_EF_Walkthrough#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#1)]  
+     [!code-xaml[DataGrid_SQL_EF_Walkthrough#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#1)]  
   
-6.  Ouvrez le fichier code\-behind \(MainWindow.xaml.vb ou MainWindow.xaml.cs\) correspondant à <xref:System.Windows.Window>.  
+6.  <span data-ttu-id="39245-140">Ouvrez le fichier code-behind (MainWindow.xaml.vb ou MainWindow.xaml.cs) pour le <xref:System.Windows.Window>.</span><span class="sxs-lookup"><span data-stu-id="39245-140">Open the code-behind file (MainWindow.xaml.vb or MainWindow.xaml.cs) for the <xref:System.Windows.Window>.</span></span>  
   
-7.  Ajoutez le code suivant pour extraire uniquement des valeurs spécifiques des tables jointes et affecter à la propriété <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> de la <xref:System.Windows.Controls.DataGrid> les résultats de la requête.  
+7.  <span data-ttu-id="39245-141">Ajoutez le code suivant pour extraire uniquement les valeurs spécifiques des tables jointes et pour configurer le <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> propriété de la <xref:System.Windows.Controls.DataGrid> aux résultats de la requête.</span><span class="sxs-lookup"><span data-stu-id="39245-141">Add the following code to retrieve only specific values from the joined tables and set the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> property of the <xref:System.Windows.Controls.DataGrid> to the results of the query.</span></span>  
   
      [!code-csharp[DataGrid_SQL_EF_Walkthrough#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml.cs#2)]
      [!code-vb[DataGrid_SQL_EF_Walkthrough#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/VB/MainWindow.xaml.vb#2)]  
   
-8.  Exécutez l'exemple.  
+8.  <span data-ttu-id="39245-142">Exécutez l'exemple.</span><span class="sxs-lookup"><span data-stu-id="39245-142">Run the example.</span></span>  
   
-     Un <xref:System.Windows.Controls.DataGrid> présentant des données doit s'afficher.  
+     <span data-ttu-id="39245-143">Vous devez voir un <xref:System.Windows.Controls.DataGrid> qui affiche des données.</span><span class="sxs-lookup"><span data-stu-id="39245-143">You should see a <xref:System.Windows.Controls.DataGrid> that displays data.</span></span>  
   
-     ![DataGrid avec des données de la base de données SQL](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step7.png "DataGrid\_SQL\_EF\_Step7")  
+     <span data-ttu-id="39245-144">![DataGrid avec des données à partir de la base de données SQL](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step7.png "DataGrid_SQL_EF_Step7")</span><span class="sxs-lookup"><span data-stu-id="39245-144">![DataGrid with data from SQL database](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step7.png "DataGrid_SQL_EF_Step7")</span></span>  
   
-## Étapes suivantes  
+## <a name="next-steps"></a><span data-ttu-id="39245-145">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="39245-145">Next Steps</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Controls.DataGrid>   
- [Comment faire : Démarrer avec Entity Framework dans les applications WPF ?](http://go.microsoft.com/fwlink/?LinkId=159868)
+## <a name="see-also"></a><span data-ttu-id="39245-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="39245-146">See Also</span></span>  
+ <xref:System.Windows.Controls.DataGrid>  
+ [<span data-ttu-id="39245-147">Comment faire pour démarrer avec Entity Framework dans les Applications WPF ?</span><span class="sxs-lookup"><span data-stu-id="39245-147">How Do I: Get Started with Entity Framework in WPF Applications?</span></span>](http://go.microsoft.com/fwlink/?LinkId=159868)

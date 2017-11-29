@@ -1,58 +1,58 @@
 ---
-title: "Comment&#160;: ancrer des contr&#244;les aux Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), fixer"
-  - "Dock (propriété)"
-  - "applications de style Explorateur, créer"
-  - "contrôles Windows Forms, remplir une zone cliente"
+title: "Comment : ancrer des contrôles aux Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [Windows Forms], docking
+- Explorer-style applications [Windows Forms], creating
+- Windows Forms controls, filling client area
 ms.assetid: bc11f2e4-e90a-4830-b0e2-f43b6e2b8bec
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4897a195dcafb8264bbab619f1a46118a829f44e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ancrer des contr&#244;les aux Windows Forms
-Vous pouvez ancrer des contrôles aux bords de votre formulaire ou demander qu'ils remplissent leur conteneur \(qui peut être un formulaire ou un contrôle conteneur\).  Par exemple, l'Explorateur Windows ancre son contrôle <xref:System.Windows.Forms.TreeView> au côté gauche de la fenêtre et son contrôle <xref:System.Windows.Forms.ListView> au côté droit.  La propriété <xref:System.Windows.Forms.Control.Dock%2A> permet de définir le mode d'ancrage de tous les contrôles Windows Forms visibles.  
+# <a name="how-to-dock-controls-on-windows-forms"></a><span data-ttu-id="29c7b-102">Comment : ancrer des contrôles aux Windows Forms</span><span class="sxs-lookup"><span data-stu-id="29c7b-102">How to: Dock Controls on Windows Forms</span></span>
+<span data-ttu-id="29c7b-103">Vous pouvez ancrer des contrôles sur les bords de votre formulaire ou demander qu’ils remplissent le conteneur du contrôle (un formulaire ou un contrôle conteneur).</span><span class="sxs-lookup"><span data-stu-id="29c7b-103">You can dock controls to the edges of your form or have them fill the control's container (either a form or a container control).</span></span> <span data-ttu-id="29c7b-104">Par exemple, l’Explorateur Windows ancre son <xref:System.Windows.Forms.TreeView> contrôle sur le côté gauche de la fenêtre et son <xref:System.Windows.Forms.ListView> contrôle sur le côté droit de la fenêtre.</span><span class="sxs-lookup"><span data-stu-id="29c7b-104">For example, Windows Explorer docks its <xref:System.Windows.Forms.TreeView> control to the left side of the window and its <xref:System.Windows.Forms.ListView> control to the right side of the window.</span></span> <span data-ttu-id="29c7b-105">Utilisez le <xref:System.Windows.Forms.Control.Dock%2A> propriété pour tous les contrôles Windows Forms visibles définir le mode d’ancrage.</span><span class="sxs-lookup"><span data-stu-id="29c7b-105">Use the <xref:System.Windows.Forms.Control.Dock%2A> property for all visible Windows Forms controls to define the docking mode.</span></span>  
   
 > [!NOTE]
->  Les contrôles sont ancrés dans l'ordre de plan inverse.  
+>  <span data-ttu-id="29c7b-106">Les contrôles sont ancrés dans l’ordre z inverse.</span><span class="sxs-lookup"><span data-stu-id="29c7b-106">Controls are docked in reverse z-order.</span></span>  
   
- La propriété <xref:System.Windows.Forms.Control.Dock%2A> interagit avec la propriété <xref:System.Windows.Forms.Control.AutoSize%2A>.  Pour plus d'informations, consultez [Vue d'ensemble de la propriété AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).  
+ <span data-ttu-id="29c7b-107">Le <xref:System.Windows.Forms.Control.Dock%2A> propriété interagit avec le <xref:System.Windows.Forms.Control.AutoSize%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="29c7b-107">The <xref:System.Windows.Forms.Control.Dock%2A> property interacts with the <xref:System.Windows.Forms.Control.AutoSize%2A> property.</span></span> <span data-ttu-id="29c7b-108">Pour plus d’informations, consultez [vue d’ensemble de la propriété AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).</span><span class="sxs-lookup"><span data-stu-id="29c7b-108">For more information, see [AutoSize Property Overview](../../../../docs/framework/winforms/controls/autosize-property-overview.md).</span></span>  
   
-### Pour ancrer un contrôle  
+### <a name="to-dock-a-control"></a><span data-ttu-id="29c7b-109">Pour ancrer un contrôle</span><span class="sxs-lookup"><span data-stu-id="29c7b-109">To dock a control</span></span>  
   
-1.  Sélectionnez le contrôle à ancrer.  
+1.  <span data-ttu-id="29c7b-110">Sélectionnez le contrôle que vous souhaitez ancrer.</span><span class="sxs-lookup"><span data-stu-id="29c7b-110">Select the control that you want to dock.</span></span>  
   
-2.  Dans la fenêtre Propriétés, cliquez sur la flèche à droite de la propriété <xref:System.Windows.Forms.Control.Dock%2A>.  
+2.  <span data-ttu-id="29c7b-111">Dans la fenêtre Propriétés, cliquez sur la flèche située à droite de la <xref:System.Windows.Forms.Control.Dock%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="29c7b-111">In the Properties window, click the arrow to the right of the <xref:System.Windows.Forms.Control.Dock%2A> property.</span></span>  
   
-     Un éditeur dans lequel est affichée une série de zones représentant les bords et la partie centrale du formulaire apparaît.  
+     <span data-ttu-id="29c7b-112">Un éditeur s’affiche qui affiche une série de zones représentant les bords et le centre de l’écran.</span><span class="sxs-lookup"><span data-stu-id="29c7b-112">An editor is displayed that shows a series of boxes representing the edges and the center of the form.</span></span>  
   
-3.  Cliquez sur le bouton représentant le bord du formulaire auquel vous voulez ancrer le contrôle.  Pour remplir le formulaire du contrôle ou le contrôle conteneur, cliquez sur la zone centrale.  Cliquez sur **\(Aucun\)** pour désactiver l'ancrage.  
+3.  <span data-ttu-id="29c7b-113">Cliquez sur le bouton qui représente le bord de l’écran où vous souhaitez ancrer le contrôle.</span><span class="sxs-lookup"><span data-stu-id="29c7b-113">Click the button that represents the edge of the form where you want to dock the control.</span></span> <span data-ttu-id="29c7b-114">Pour remplir le contenu du formulaire du contrôle ou le contrôle conteneur, cliquez sur la zone centrale.</span><span class="sxs-lookup"><span data-stu-id="29c7b-114">To fill the contents of the control's form or container control, click the center box.</span></span> <span data-ttu-id="29c7b-115">Cliquez sur **(aucun)** pour désactiver l’ancrage.</span><span class="sxs-lookup"><span data-stu-id="29c7b-115">Click **(none)** to disable docking.</span></span>  
   
-     Le contrôle est automatiquement redimensionné par rapport aux limites du bord d'ancrage.  
+     <span data-ttu-id="29c7b-116">Le contrôle est automatiquement redimensionné pour s’ajuster les limites du bord ancré.</span><span class="sxs-lookup"><span data-stu-id="29c7b-116">The control is automatically resized to fit the boundaries of the docked edge.</span></span>  
   
     > [!NOTE]
-    >  Les contrôles hérités doivent présenter l'accès `Protected` pour pouvoir être ancrés.  Pour modifier le niveau d'accès d'un contrôle, définissez sa propriété **Modifier** dans la fenêtre Propriétés.  
+    >  <span data-ttu-id="29c7b-117">Les contrôles hérités doivent être `Protected` pour pouvoir être ancrée.</span><span class="sxs-lookup"><span data-stu-id="29c7b-117">Inherited controls must be `Protected` to be able to be docked.</span></span> <span data-ttu-id="29c7b-118">Pour modifier le niveau d’accès d’un contrôle, définissez son **modificateur** propriété dans la fenêtre Propriétés.</span><span class="sxs-lookup"><span data-stu-id="29c7b-118">To change the access level of a control, set its **Modifier** property in the Properties window.</span></span>  
   
-## Voir aussi  
- [contrôles Windows Forms](../../../../docs/framework/winforms/controls/index.md)   
- [Disposition des contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [Création d'étiquettes et de raccourcis pour les contrôles Windows Forms](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
- [Classement par fonction des contrôles Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)   
- [Comment : ancrer des contrôles enfants dans un contrôle FlowLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)   
- [Comment : ancrer et arrimer des contrôles enfants dans un contrôle TableLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)   
- [Vue d'ensemble de la propriété AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md)   
- [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="29c7b-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="29c7b-119">See Also</span></span>  
+ [<span data-ttu-id="29c7b-120">Contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="29c7b-120">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)  
+ [<span data-ttu-id="29c7b-121">Disposition des contrôles dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="29c7b-121">Arranging Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [<span data-ttu-id="29c7b-122">Création d'étiquettes et de raccourcis pour les contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="29c7b-122">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [<span data-ttu-id="29c7b-123">Contrôles à utiliser dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="29c7b-123">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [<span data-ttu-id="29c7b-124">Classement par fonction des contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="29c7b-124">Windows Forms Controls by Function</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)  
+ [<span data-ttu-id="29c7b-125">Guide pratique pour ancrer des contrôles enfants dans un contrôle FlowLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="29c7b-125">How to: Anchor and Dock Child Controls in a FlowLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
+ [<span data-ttu-id="29c7b-126">Guide pratique pour ancrer et arrimer des contrôles enfants dans un contrôle TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="29c7b-126">How to: Anchor and Dock Child Controls in a TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [<span data-ttu-id="29c7b-127">Vue d’ensemble de la propriété AutoSize</span><span class="sxs-lookup"><span data-stu-id="29c7b-127">AutoSize Property Overview</span></span>](../../../../docs/framework/winforms/controls/autosize-property-overview.md)  
+ [<span data-ttu-id="29c7b-128">Guide pratique pour ancrer des contrôles sur des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="29c7b-128">How to: Anchor Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)

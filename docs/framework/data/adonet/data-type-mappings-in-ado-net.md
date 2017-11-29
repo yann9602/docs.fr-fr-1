@@ -1,51 +1,54 @@
 ---
-title: "Mappages de types de donn&#233;es dans ADO.NET | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Mappages de types de données dans ADO.NET"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d4afab94-ada6-4c77-a73c-41f17bae6b5a
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 65f9d8a6182c5882a173a3a3733c1c0c220efbf6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mappages de types de donn&#233;es dans ADO.NET
-Le .NET Framework est basé sur le système de type commun, qui définit la manière dont les types sont déclarés, utilisés et gérés dans le runtime.  Il est constitué de types de valeur et de types de référence, qui dérivent tous du type de base <xref:System.Object>.  Lorsque vous travaillez avec une source de données, le type de données est déduit du fournisseur de données s'il n'est pas explicitement spécifié.  Par exemple, un objet <xref:System.Data.DataSet> est indépendant de toute source de données spécifique.  Les données d'un `DataSet` sont extraites d'une source de données et les modifications y sont répercutées à l'aide d'un `DataAdapter`.  Autrement dit, lorsqu'un `DataAdapter` remplit un objet <xref:System.Data.DataTable> dans un `DataSet` avec des valeurs provenant d'une source de données, les types de données des colonnes du `DataTable` qui en résultent sont des types [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] et non des types spécifiques au fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] utilisé pour la connexion à la source de données.  
+# <a name="data-type-mappings-in-adonet"></a><span data-ttu-id="cf60b-102">Mappages de types de données dans ADO.NET</span><span class="sxs-lookup"><span data-stu-id="cf60b-102">Data Type Mappings in ADO.NET</span></span>
+<span data-ttu-id="cf60b-103">Le .NET Framework est basé sur le système de type commun, qui définit la manière dont les types sont déclarés, utilisés et gérés dans le runtime.</span><span class="sxs-lookup"><span data-stu-id="cf60b-103">The .NET Framework is based on the common type system, which defines how types are declared, used, and managed in the runtime.</span></span> <span data-ttu-id="cf60b-104">Il est constitué de types de valeur et de types de référence, qui dérivent tous du type de base <xref:System.Object>.</span><span class="sxs-lookup"><span data-stu-id="cf60b-104">It consists of both value types and reference types, which all derive from the <xref:System.Object> base type.</span></span> <span data-ttu-id="cf60b-105">Lorsque vous travaillez avec une source de données, le type de données est déduit du fournisseur de données s'il n'est pas explicitement spécifié.</span><span class="sxs-lookup"><span data-stu-id="cf60b-105">When working with a data source, the data type is inferred from the data provider if it is not explicitly specified.</span></span> <span data-ttu-id="cf60b-106">Par exemple, un objet <xref:System.Data.DataSet> est indépendant de toute source de données spécifique.</span><span class="sxs-lookup"><span data-stu-id="cf60b-106">For example, a <xref:System.Data.DataSet> object is independent of any specific data source.</span></span> <span data-ttu-id="cf60b-107">Les données d'un `DataSet` sont extraites d'une source de données et les modifications y sont répercutées à l'aide d'un `DataAdapter`.</span><span class="sxs-lookup"><span data-stu-id="cf60b-107">Data in a `DataSet` is retrieved from a data source, and changes are persisted back to the data source by using a `DataAdapter`.</span></span> <span data-ttu-id="cf60b-108">Autrement dit, lorsqu'un `DataAdapter` remplit un objet <xref:System.Data.DataTable> dans un `DataSet` avec des valeurs provenant d'une source de données, les types de données des colonnes du `DataTable` qui en résultent sont des types [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] et non des types spécifiques au fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] utilisé pour la connexion à la source de données.</span><span class="sxs-lookup"><span data-stu-id="cf60b-108">This means that when a `DataAdapter` fills a <xref:System.Data.DataTable> in a `DataSet` with values from a data source, the resulting data types of the columns in the `DataTable` are [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] types, instead of types specific to the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data provider that is used to connect to the data source.</span></span>  
   
- De même, lorsqu'un `DataReader` retourne une valeur d'une source de données, la valeur résultante est stockée dans une variable locale de type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Pour les opérations `Fill` du `DataAdapter`, comme pour les méthodes `Get` du `DataReader`, le type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] est déduit de la valeur retournée du fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+ <span data-ttu-id="cf60b-109">De même, lorsqu'un `DataReader` retourne une valeur d'une source de données, la valeur résultante est stockée dans une variable locale de type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cf60b-109">Likewise, when a `DataReader` returns a value from a data source, the resulting value is stored in a local variable that has a [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] type.</span></span> <span data-ttu-id="cf60b-110">Pour les opérations `Fill` du `DataAdapter` comme pour les méthodes `Get` du `DataReader`, le type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] est déduit de la valeur retournée du fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cf60b-110">For both the `Fill` operations of the `DataAdapter` and the `Get` methods of the `DataReader`, the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] type is inferred from the value returned from the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data provider.</span></span>  
   
- Si vous ne souhaitez pas utiliser le type de données déduit, vous pouvez appeler les méthodes d'accesseur typé du `DataReader`, lorsque vous connaissez le type spécifique de la valeur retournée.  Ces méthodes permettent d'obtenir des performances optimales en retournant une valeur comme type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spécifique, évitant ainsi toute conversion de type supplémentaire.  
+ <span data-ttu-id="cf60b-111">Si vous ne souhaitez pas utiliser le type de données déduit, vous pouvez appeler les méthodes d'accesseur typé du `DataReader`, lorsque vous connaissez le type spécifique de la valeur retournée.</span><span class="sxs-lookup"><span data-stu-id="cf60b-111">Instead of relying on the inferred data type, you can use the typed accessor methods of the `DataReader` when you know the specific type of the value being returned.</span></span> <span data-ttu-id="cf60b-112">Ces méthodes permettent d'obtenir des performances optimales en retournant une valeur comme type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spécifique, évitant ainsi toute conversion de type supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="cf60b-112">Typed accessor methods give you better performance by returning a value as a specific [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] type, which eliminates the need for additional type conversion.</span></span>  
   
 > [!NOTE]
->  Les valeurs null des types de données du fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sont représentées par `DBNull.Value`.  
+>  <span data-ttu-id="cf60b-113">Les valeurs null des types de données du fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sont représentées par `DBNull.Value`.</span><span class="sxs-lookup"><span data-stu-id="cf60b-113">Null values for [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data provider data types are represented by `DBNull.Value`.</span></span>  
   
-## Dans cette section  
- [Mappages de types de données SQL Server](../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
- Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.SqlClient>.  
+## <a name="in-this-section"></a><span data-ttu-id="cf60b-114">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="cf60b-114">In This Section</span></span>  
+ [<span data-ttu-id="cf60b-115">Mappages de Type de données SQL Server</span><span class="sxs-lookup"><span data-stu-id="cf60b-115">SQL Server Data Type Mappings</span></span>](../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
+ <span data-ttu-id="cf60b-116">Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.SqlClient>.</span><span class="sxs-lookup"><span data-stu-id="cf60b-116">Lists inferred data type mappings and data accessor methods for <xref:System.Data.SqlClient>.</span></span>  
   
- [Mappages de types de données OLE DB](../../../../docs/framework/data/adonet/ole-db-data-type-mappings.md)  
- Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.OleDb>.  
+ [<span data-ttu-id="cf60b-117">Mappages de types de données OLE DB</span><span class="sxs-lookup"><span data-stu-id="cf60b-117">OLE DB Data Type Mappings</span></span>](../../../../docs/framework/data/adonet/ole-db-data-type-mappings.md)  
+ <span data-ttu-id="cf60b-118">Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.OleDb>.</span><span class="sxs-lookup"><span data-stu-id="cf60b-118">Lists inferred data type mappings and data accessor methods for <xref:System.Data.OleDb>.</span></span>  
   
- [Mappages de types de données ODBC](../../../../docs/framework/data/adonet/odbc-data-type-mappings.md)  
- Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.Odbc>.  
+ [<span data-ttu-id="cf60b-119">Mappages de types de données ODBC</span><span class="sxs-lookup"><span data-stu-id="cf60b-119">ODBC Data Type Mappings</span></span>](../../../../docs/framework/data/adonet/odbc-data-type-mappings.md)  
+ <span data-ttu-id="cf60b-120">Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.Odbc>.</span><span class="sxs-lookup"><span data-stu-id="cf60b-120">Lists inferred data type mappings and data accessor methods for <xref:System.Data.Odbc>.</span></span>  
   
- [Mappages de types de données Oracle](../../../../docs/framework/data/adonet/oracle-data-type-mappings.md)  
- Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.OracleClient>.  
+ [<span data-ttu-id="cf60b-121">Mappages de types de données Oracle</span><span class="sxs-lookup"><span data-stu-id="cf60b-121">Oracle Data Type Mappings</span></span>](../../../../docs/framework/data/adonet/oracle-data-type-mappings.md)  
+ <span data-ttu-id="cf60b-122">Répertorie les mappages de types de données déduits et les méthodes d'accesseur de données pour <xref:System.Data.OracleClient>.</span><span class="sxs-lookup"><span data-stu-id="cf60b-122">Lists inferred data type mappings and data accessor methods for <xref:System.Data.OracleClient>.</span></span>  
   
- [Nombres à virgule flottante](../../../../docs/framework/data/adonet/floating-point-numbers.md)  
- Décrit les problèmes que les développeurs rencontrent fréquemment lorsqu'ils utilisent des nombres à virgule flottante.  
+ [<span data-ttu-id="cf60b-123">Chiffres à virgule flottante</span><span class="sxs-lookup"><span data-stu-id="cf60b-123">Floating-Point Numbers</span></span>](../../../../docs/framework/data/adonet/floating-point-numbers.md)  
+ <span data-ttu-id="cf60b-124">Décrit les problèmes que les développeurs rencontrent fréquemment lorsqu'ils utilisent des nombres à virgule flottante.</span><span class="sxs-lookup"><span data-stu-id="cf60b-124">Describes issues that developers frequently encounter when working with floating-point numbers.</span></span>  
   
-## Voir aussi  
- [Types de données SQL Server et ADO.NET](../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)   
- [Configuration des paramètres et des types de données des paramètres](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)   
- [Récupération d'informations de schéma de base de données](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)   
- [Système de type commun](../../../../docs/standard/base-types/common-type-system.md)   
- [Converting Types](http://msdn.microsoft.com/fr-fr/6038316e-bdaf-4f55-8006-407f591ce156)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="cf60b-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cf60b-125">See Also</span></span>  
+ [<span data-ttu-id="cf60b-126">Types de données SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="cf60b-126">SQL Server Data Types and ADO.NET</span></span>](../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
+ [<span data-ttu-id="cf60b-127">Configuration des paramètres et des Types de données de paramètre</span><span class="sxs-lookup"><span data-stu-id="cf60b-127">Configuring Parameters and Parameter Data Types</span></span>](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
+ [<span data-ttu-id="cf60b-128">La récupération des informations de schéma de base de données</span><span class="sxs-lookup"><span data-stu-id="cf60b-128">Retrieving Database Schema Information</span></span>](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [<span data-ttu-id="cf60b-129">Système de type commun</span><span class="sxs-lookup"><span data-stu-id="cf60b-129">Common Type System</span></span>](../../../../docs/standard/base-types/common-type-system.md)  
+ [<span data-ttu-id="cf60b-130">Conversion de Types</span><span class="sxs-lookup"><span data-stu-id="cf60b-130">Converting Types</span></span>](http://msdn.microsoft.com/en-us/6038316e-bdaf-4f55-8006-407f591ce156)  
+ [<span data-ttu-id="cf60b-131">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="cf60b-131">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

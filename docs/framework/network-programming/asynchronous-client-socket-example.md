@@ -8,28 +8,25 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - asynchronous client sockets
 - sockets, code examples
 - sockets, asynchronous client sockets
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 42ef1745942f5c91a979e352d66c111cf7e52973
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1a159f2a761acd85e963f34d3d9622b43b3a3aeb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="asynchronous-client-socket-example"></a>Exemple de socket client asynchrone
-L’exemple de programme suivant crée un client qui se connecte à un serveur. Le client est créé avec un socket asynchrone. L’exécution de l’application cliente n’est donc pas suspendue pendant que le serveur retourne une réponse. L’application envoie une chaîne au serveur, puis affiche la chaîne retournée par le serveur sur la console.  
+# <a name="asynchronous-client-socket-example"></a><span data-ttu-id="b0ba3-102">Exemple de socket client asynchrone</span><span class="sxs-lookup"><span data-stu-id="b0ba3-102">Asynchronous Client Socket Example</span></span>
+<span data-ttu-id="b0ba3-103">L’exemple de programme suivant crée un client qui se connecte à un serveur.</span><span class="sxs-lookup"><span data-stu-id="b0ba3-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="b0ba3-104">Le client est créé avec un socket asynchrone. L’exécution de l’application cliente n’est donc pas suspendue pendant que le serveur retourne une réponse.</span><span class="sxs-lookup"><span data-stu-id="b0ba3-104">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="b0ba3-105">L’application envoie une chaîne au serveur, puis affiche la chaîne retournée par le serveur sur la console.</span><span class="sxs-lookup"><span data-stu-id="b0ba3-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
   
 ```vb  
 Imports System  
@@ -66,12 +63,12 @@ Public Class AsynchronousClient
     Public Shared Sub Main()  
         ' Establish the remote endpoint for the socket.  
         ' For this example use local machine.  
-        Dim ipHostInfo As IPHostEntry = Dns.Resolve(Dns.GetHostName())  
+        Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
         Dim ipAddress As IPAddress = ipHostInfo.AddressList(0)  
         Dim remoteEP As New IPEndPoint(ipAddress, port)  
   
         ' Create a TCP/IP socket.  
-        Dim client As New Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp)  
+        Dim client As New Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp)  
   
         ' Connect to the remote endpoint.  
         client.BeginConnect(remoteEP, New AsyncCallback(AddressOf ConnectCallback), client)  
@@ -206,12 +203,12 @@ public class AsynchronousClient {
             // Establish the remote endpoint for the socket.  
             // The name of the   
             // remote device is "host.contoso.com".  
-            IPHostEntry ipHostInfo = Dns.Resolve("host.contoso.com");  
+            IPHostEntry ipHostInfo = Dns.GetHostEntry("host.contoso.com");  
             IPAddress ipAddress = ipHostInfo.AddressList[0];  
             IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);  
   
             // Create a TCP/IP socket.  
-            Socket client = new Socket(AddressFamily.InterNetwork,  
+            Socket client = new Socket(ipAddress.AddressFamily,  
                 SocketType.Stream, ProtocolType.Tcp);  
   
             // Connect to the remote endpoint.  
@@ -333,8 +330,7 @@ public class AsynchronousClient {
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemple de sockets serveur asynchrones](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)   
- [Utilisation d’un socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
- [Exemples de code de socket](../../../docs/framework/network-programming/socket-code-examples.md)
-
+## <a name="see-also"></a><span data-ttu-id="b0ba3-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b0ba3-106">See Also</span></span>  
+ [<span data-ttu-id="b0ba3-107">Exemple de socket serveur asynchrone</span><span class="sxs-lookup"><span data-stu-id="b0ba3-107">Asynchronous Server Socket Example</span></span>](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
+ [<span data-ttu-id="b0ba3-108">À l’aide d’un Socket serveur synchrone</span><span class="sxs-lookup"><span data-stu-id="b0ba3-108">Using a Synchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [<span data-ttu-id="b0ba3-109">Exemples de code de socket</span><span class="sxs-lookup"><span data-stu-id="b0ba3-109">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)

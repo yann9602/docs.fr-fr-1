@@ -1,35 +1,27 @@
 ---
-title: "Accéder à des attributs à l’aide de la réflexion (Visual Basic) | Documents Microsoft"
+title: "Accéder à des attributs à l’aide de la réflexion (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4763eccc5d1a6bdf3e89c1c4d825d5ff5c6caa3e
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a4397200b5a2aa5f337dd3479b5405c1a9f245a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accéder à des attributs à l’aide de la réflexion (Visual Basic)
-Le fait que vous pouvez définir des attributs personnalisés et les placer dans votre code source serait peu d’intérêt la possibilité de récupérer ces informations et en agissant sur elle. En utilisant la réflexion, vous pouvez récupérer les informations qui a été définies avec des attributs personnalisés. La méthode clé est `GetCustomAttributes`, qui retourne un tableau d’objets qui sont les équivalents de l’exécution des attributs du code source. Cette méthode a plusieurs versions surchargées. Pour plus d’informations, consultez <xref:System.Attribute>.</xref:System.Attribute>  
+# <a name="accessing-attributes-by-using-reflection-visual-basic"></a><span data-ttu-id="d1548-102">Accéder à des attributs à l’aide de la réflexion (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d1548-102">Accessing Attributes by Using Reflection (Visual Basic)</span></span>
+<span data-ttu-id="d1548-103">La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations.</span><span class="sxs-lookup"><span data-stu-id="d1548-103">The fact that you can define custom attributes and place them in your source code would be of little value without some way of retrieving that information and acting on it.</span></span> <span data-ttu-id="d1548-104">La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés.</span><span class="sxs-lookup"><span data-stu-id="d1548-104">By using reflection, you can retrieve the information that was defined with custom attributes.</span></span> <span data-ttu-id="d1548-105">La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="d1548-105">The key method is `GetCustomAttributes`, which returns an array of objects that are the run-time equivalents of the source code attributes.</span></span> <span data-ttu-id="d1548-106">Cette méthode a plusieurs versions surchargées.</span><span class="sxs-lookup"><span data-stu-id="d1548-106">This method has several overloaded versions.</span></span> <span data-ttu-id="d1548-107">Pour plus d'informations, consultez <xref:System.Attribute>.</span><span class="sxs-lookup"><span data-stu-id="d1548-107">For more information, see <xref:System.Attribute>.</span></span>  
   
- Une spécification d’attribut tels que :  
+ <span data-ttu-id="d1548-108">Par exemple, cette spécification d’attribut :</span><span class="sxs-lookup"><span data-stu-id="d1548-108">An attribute specification such as:</span></span>  
   
 ```vb  
 <Author("P. Ackerman", Version:=1.1)>   
@@ -38,17 +30,17 @@ Class SampleClass
 End Class  
 ```  
   
- est semblable à ceci :  
+ <span data-ttu-id="d1548-109">est semblable à celle-ci d’un point de vue conceptuel :</span><span class="sxs-lookup"><span data-stu-id="d1548-109">is conceptually equivalent to this:</span></span>  
   
 ```vb  
 Dim anonymousAuthorObject As Author = New Author("P. Ackerman")  
 anonymousAuthorObject.version = 1.1  
 ```  
   
- Toutefois, le code n’est pas exécuté jusqu'à ce que `SampleClass` est interrogée sur les attributs. Appel de `GetCustomAttributes` sur `SampleClass` entraîne une `Author` objet et l’initialisation comme illustré ci-dessus. Si la classe a d’autres attributs, les autres objets d’attribut sont construits de la même façon. `GetCustomAttributes`Renvoie la `Author` objet et autres objets d’attribut dans un tableau. Vous pouvez ensuite itérer sur ce tableau, déterminer les attributs ont été appliqués en fonction du type de chaque élément du tableau et extraire des informations à partir des objets des attributs.  
+ <span data-ttu-id="d1548-110">Toutefois, le code n’est pas exécuté tant qu’une requête n’est pas effectuée sur `SampleClass` pour obtenir les attributs.</span><span class="sxs-lookup"><span data-stu-id="d1548-110">However, the code is not executed until `SampleClass` is queried for attributes.</span></span> <span data-ttu-id="d1548-111">L’appel de `GetCustomAttributes` sur `SampleClass` entraîne la construction et l’initialisation d’un objet `Author` comme illustré ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="d1548-111">Calling `GetCustomAttributes` on `SampleClass` causes an `Author` object to be constructed and initialized as above.</span></span> <span data-ttu-id="d1548-112">Si la classe a d’autres attributs, les autres objets attribut sont construits de la même façon.</span><span class="sxs-lookup"><span data-stu-id="d1548-112">If the class has other attributes, other attribute objects are constructed similarly.</span></span> <span data-ttu-id="d1548-113">`GetCustomAttributes` retourne ensuite l’objet `Author` et les autres objets attribut dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="d1548-113">`GetCustomAttributes` then returns the `Author` object and any other attribute objects in an array.</span></span> <span data-ttu-id="d1548-114">Vous pouvez ensuite itérer sur ce tableau, déterminer quels attributs ont été appliqués en fonction du type de chaque élément du tableau et extraire des informations des objets attribut.</span><span class="sxs-lookup"><span data-stu-id="d1548-114">You can then iterate over this array, determine what attributes were applied based on the type of each array element, and extract information from the attribute objects.</span></span>  
   
-## <a name="example"></a>Exemple  
- Voici un exemple complet. Un attribut personnalisé est défini, appliqué à plusieurs entités et récupéré par réflexion.  
+## <a name="example"></a><span data-ttu-id="d1548-115">Exemple</span><span class="sxs-lookup"><span data-stu-id="d1548-115">Example</span></span>  
+ <span data-ttu-id="d1548-116">Voici un exemple complet.</span><span class="sxs-lookup"><span data-stu-id="d1548-116">Here is a complete example.</span></span> <span data-ttu-id="d1548-117">Un attribut personnalisé est défini, appliqué à plusieurs entités, puis récupéré par réflexion.</span><span class="sxs-lookup"><span data-stu-id="d1548-117">A custom attribute is defined, applied to several entities, and retrieved via reflection.</span></span>  
   
 ```vb  
 ' Multiuse attribute  
@@ -116,11 +108,11 @@ Class TestAuthorAttribute
 End Class  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Reflection></xref:System.Reflection>   
- <xref:System.Attribute></xref:System.Attribute>   
- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)   
- [Récupération des informations stockées dans les attributs](http://msdn.microsoft.com/library/37dfe4e3-7da0-48b6-a3d9-398981524e1c)   
- [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
- [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)   
- [Création d’attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+## <a name="see-also"></a><span data-ttu-id="d1548-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d1548-118">See Also</span></span>  
+ <xref:System.Reflection>  
+ <xref:System.Attribute>  
+ [<span data-ttu-id="d1548-119">Guide de programmation Visual Basic</span><span class="sxs-lookup"><span data-stu-id="d1548-119">Visual Basic Programming Guide</span></span>](../../../../visual-basic/programming-guide/index.md)  
+ [<span data-ttu-id="d1548-120">Récupération des informations stockées dans les attributs</span><span class="sxs-lookup"><span data-stu-id="d1548-120">Retrieving Information Stored in Attributes</span></span>](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
+ [<span data-ttu-id="d1548-121">Réflexion (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d1548-121">Reflection (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/reflection.md)  
+ [<span data-ttu-id="d1548-122">Attributs (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d1548-122">Attributes (Visual Basic)</span></span>](../../../../visual-basic/language-reference/attributes.md)  
+ [<span data-ttu-id="d1548-123">Créer des attributs personnalisés (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d1548-123">Creating Custom Attributes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)

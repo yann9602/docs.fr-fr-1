@@ -1,23 +1,27 @@
 ---
-title: "Transactions de workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Transactions de workflow
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6081fb02-c0f2-483d-97b8-f3b7dc03011d
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 50c720395a8319f4590edb1c495c343d481c73c7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Transactions de workflow
-[!INCLUDE[wf1](../../../includes/wf1-md.md)] offre une prise en charge pour participer aux transactions <xref:System.Transactions> en utilisant l'activité <xref:System.Activities.Statements.TransactionScope> pour étendre une unité traitée de travail.Alors que le <xref:System.Transactions.TransactionScope?displayProperty=fullName> doit être terminé explicitement, l'activité <xref:System.Activities.Statements.TransactionScope?displayProperty=fullName> appelle implicitement la transaction une fois cette dernière terminée.Toute activité contenue dans l'élément <xref:System.Activities.Statements.TransactionScope.Body%2A> de l'activité <xref:System.Activities.Statements.TransactionScope> participe à la transaction.WF peut transférer des transactions dans un workflow en faisant appel à l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>.Comme l'activité <xref:System.Activities.Statements.TransactionScope>, toute activité contenue dans le <xref:System.ServiceModel.Activities.TransactedReceiveScope.Body%2A> participe à la transaction.WF vérifie que les activités dépendant de <xref:System.Transactions.Transaction.Current%2A?displayProperty=fullName> utilisent à la fois <xref:System.Activities.Statements.TransactionScope> et <xref:System.ServiceModel.Activities.TransactedReceiveScope>.Si les activités fournies par le système ne remplissent pas toutes les conditions, les activités personnalisées peuvent être construites à l'aide du <xref:System.Activities.RuntimeTransactionHandle> afin d'activer un flux avancé et des scénarios de contrôle de transaction.  
+# <a name="workflow-transactions"></a><span data-ttu-id="77b34-102">Transactions de workflow</span><span class="sxs-lookup"><span data-stu-id="77b34-102">Workflow Transactions</span></span>
+[!INCLUDE[wf1](../../../includes/wf1-md.md)]<span data-ttu-id="77b34-103"> offre une prise en charge pour participer aux transactions <xref:System.Transactions> en utilisant l'activité <xref:System.Activities.Statements.TransactionScope> pour étendre une unité traitée de travail.</span><span class="sxs-lookup"><span data-stu-id="77b34-103"> provides support for participating in <xref:System.Transactions> transactions by using the <xref:System.Activities.Statements.TransactionScope> activity to scope a transacted unit of work.</span></span> <span data-ttu-id="77b34-104">Alors que le <xref:System.Transactions.TransactionScope?displayProperty=nameWithType> doit être terminé explicitement, l'activité <xref:System.Activities.Statements.TransactionScope?displayProperty=nameWithType> appelle implicitement la transaction une fois cette dernière terminée.</span><span class="sxs-lookup"><span data-stu-id="77b34-104">While the <xref:System.Transactions.TransactionScope?displayProperty=nameWithType> must be explicitly completed the <xref:System.Activities.Statements.TransactionScope?displayProperty=nameWithType> activity implicitly calls complete on the transaction upon successful completion.</span></span> <span data-ttu-id="77b34-105">Toute activité contenue dans l'élément <xref:System.Activities.Statements.TransactionScope.Body%2A> de l'activité <xref:System.Activities.Statements.TransactionScope> participe à la transaction.</span><span class="sxs-lookup"><span data-stu-id="77b34-105">Any activities that are contained in the <xref:System.Activities.Statements.TransactionScope.Body%2A> of the <xref:System.Activities.Statements.TransactionScope> activity participate in the transaction.</span></span> <span data-ttu-id="77b34-106">WF peut transférer des transactions dans un workflow en faisant appel à l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>.</span><span class="sxs-lookup"><span data-stu-id="77b34-106">WF can to flow transactions into a workflow through the use of the <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity.</span></span> <span data-ttu-id="77b34-107">Comme l'activité <xref:System.Activities.Statements.TransactionScope>, toute activité contenue dans le <xref:System.ServiceModel.Activities.TransactedReceiveScope.Body%2A> participe à la transaction.</span><span class="sxs-lookup"><span data-stu-id="77b34-107">Like the <xref:System.Activities.Statements.TransactionScope> activity, any activity contained in the <xref:System.ServiceModel.Activities.TransactedReceiveScope.Body%2A> participates in the transaction.</span></span> <span data-ttu-id="77b34-108">WF vérifie que les activités dépendant de <xref:System.Transactions.Transaction.Current%2A?displayProperty=nameWithType> utilisent à la fois <xref:System.Activities.Statements.TransactionScope> et <xref:System.ServiceModel.Activities.TransactedReceiveScope>.</span><span class="sxs-lookup"><span data-stu-id="77b34-108">WF ensures that activities dependent on <xref:System.Transactions.Transaction.Current%2A?displayProperty=nameWithType> works with both <xref:System.Activities.Statements.TransactionScope> and <xref:System.ServiceModel.Activities.TransactedReceiveScope>.</span></span> <span data-ttu-id="77b34-109">Si les activités fournies par le système ne remplissent pas toutes les conditions, les activités personnalisées peuvent être construites à l'aide du <xref:System.Activities.RuntimeTransactionHandle> afin d'activer un flux avancé et des scénarios de contrôle de transaction.</span><span class="sxs-lookup"><span data-stu-id="77b34-109">If the system-provided activities do not address all requirements, custom activities can be built using the <xref:System.Activities.RuntimeTransactionHandle> to enable advanced flow and transaction control scenarios.</span></span>  
   
- Dans l'exemple suivant extrait de [Bases de TransactionScope](../../../docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md), un workflow est composé d'une activité <xref:System.Activities.Statements.Sequence> qui contient des activités enfants, y compris une activité <xref:System.Activities.Statements.TransactionScope>.Les activités <xref:System.Activities.Statements.TransactionScope.Body%2A> du <xref:System.Activities.Statements.TransactionScope> s'exécutent sous la transaction initialisée par l'activité <xref:System.Activities.Statements.TransactionScope>.  
+ <span data-ttu-id="77b34-110">Dans l’exemple suivant, issu de la [de TransactionScope](../../../docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md) exemple, un workflow est construit consistant en un <xref:System.Activities.Statements.Sequence> activité contenant des activités enfants, y compris un <xref:System.Activities.Statements.TransactionScope> activité.</span><span class="sxs-lookup"><span data-stu-id="77b34-110">In the following example, taken from the [Basic TransactionScope](../../../docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md) sample, a workflow is constructed consisting of a <xref:System.Activities.Statements.Sequence> activity that contains child activities including a <xref:System.Activities.Statements.TransactionScope> activity.</span></span> <span data-ttu-id="77b34-111">Les activités <xref:System.Activities.Statements.TransactionScope.Body%2A> du <xref:System.Activities.Statements.TransactionScope> s'exécutent sous la transaction initialisée par l'activité <xref:System.Activities.Statements.TransactionScope>.</span><span class="sxs-lookup"><span data-stu-id="77b34-111">The <xref:System.Activities.Statements.TransactionScope.Body%2A> activities of the <xref:System.Activities.Statements.TransactionScope> execute under the transaction initialized by the <xref:System.Activities.Statements.TransactionScope> activity.</span></span>  
   
 ```csharp  
 static Activity ScenarioOne()  
@@ -49,12 +53,11 @@ static Activity ScenarioOne()
         }  
     };  
 }  
-  
 ```  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] les exemples de [Transactions](../../../docs/framework/windows-workflow-foundation/samples/basic-transactions.md) de base et le scénario en fonction de les exemples de [Transactions](../../../docs/framework/windows-workflow-foundation/samples/transactions.md).[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] sur l'utilisation de <xref:System.ServiceModel.Activities.TransactedReceiveScope>, consultez [Flux de transactions vers et depuis des services de workflow](../../../docs/framework/wcf/feature-details/flowing-transactions-into-and-out-of-workflow-services.md).  
+ [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="77b34-112">base [Transactions](../../../docs/framework/windows-workflow-foundation/samples/transactions.md) exemples et le scénario en fonction [Transactions](../../../docs/framework/windows-workflow-foundation/samples/transactions.md) exemples.</span><span class="sxs-lookup"><span data-stu-id="77b34-112"> the basic [Transactions](../../../docs/framework/windows-workflow-foundation/samples/transactions.md) samples, and the scenario based [Transactions](../../../docs/framework/windows-workflow-foundation/samples/transactions.md) samples.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="77b34-113">sur l’utilisation de <xref:System.ServiceModel.Activities.TransactedReceiveScope>, consultez [circulation des Transactions vers et depuis des Services de Workflow](../../../docs/framework/wcf/feature-details/flowing-transactions-into-and-out-of-workflow-services.md).</span><span class="sxs-lookup"><span data-stu-id="77b34-113"> about using <xref:System.ServiceModel.Activities.TransactedReceiveScope>, see [Flowing Transactions into and out of Workflow Services](../../../docs/framework/wcf/feature-details/flowing-transactions-into-and-out-of-workflow-services.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Activities.Statements.TransactionScope>   
- <xref:System.Transactions.TransactionScope>   
- <xref:System.Transactions.Transaction.Current%2A?displayProperty=fullName>
+## <a name="see-also"></a><span data-ttu-id="77b34-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="77b34-114">See Also</span></span>  
+ <xref:System.Activities.Statements.TransactionScope>  
+ <xref:System.Transactions.TransactionScope>  
+ <xref:System.Transactions.Transaction.Current%2A?displayProperty=nameWithType>

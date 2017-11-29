@@ -1,40 +1,40 @@
 ---
-title: "Untyped Request/Reply | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Demande-réponse non typé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0bf0f9d9-7caf-4d3d-8c9e-2d468cca16a5
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c154fe7c072fc90d616e9788055a45ed66deb0db
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Untyped Request/Reply
-Cet exemple montre comment définir des contrats d'opération qui utilisent la classe Message.  
+# <a name="untyped-requestreply"></a><span data-ttu-id="db17c-102">Untyped Request/Reply</span><span class="sxs-lookup"><span data-stu-id="db17c-102">Untyped Request/Reply</span></span>
+<span data-ttu-id="db17c-103">Cet exemple montre comment définir des contrats d'opération qui utilisent la classe Message.</span><span class="sxs-lookup"><span data-stu-id="db17c-103">This sample demonstrates how to define operation contracts that use the Message class.</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent en fin de rubrique.  
+>  <span data-ttu-id="db17c-104">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="db17c-104">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Cet exemple est basé sur [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).Le contrat de service définit une opération qui prend un type de message comme argument et retourne un message.L'opération recueille toutes les données requises pour calculer la somme du corps du message puis envoie la somme dans le corps du message de retour.  
+ <span data-ttu-id="db17c-105">Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span><span class="sxs-lookup"><span data-stu-id="db17c-105">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span></span> <span data-ttu-id="db17c-106">Le contrat de service définit une opération qui prend un type de message comme argument et retourne un message.</span><span class="sxs-lookup"><span data-stu-id="db17c-106">The service contract defines one operation that takes in a message type as an argument and returns a message.</span></span> <span data-ttu-id="db17c-107">L'opération recueille toutes les données requises pour calculer la somme du corps du message puis envoie la somme dans le corps du message de retour.</span><span class="sxs-lookup"><span data-stu-id="db17c-107">The operation collects all required data to compute the sum from the message body and then sends the sum as body in the return message.</span></span>  
   
 ```  
-  
 [OperationContract(Action = CalculatorService.RequestAction, ReplyAction = CalculatorService.ReplyAction)]  
 Message ComputeSum(Message request);  
-  
 ```  
   
- Sur le service, l'opération récupère le tableau d'entiers passé dans le message d'entrée puis calcule la somme.Pour envoyer un message de réponse, l'exemple crée un nouveau message avec la version de message et l'action appropriées et inclut la somme calculée dans son corps.C'est ce que montre l'exemple de code suivant.  
+ <span data-ttu-id="db17c-108">Sur le service, l'opération récupère le tableau d'entiers passé dans le message d'entrée puis calcule la somme.</span><span class="sxs-lookup"><span data-stu-id="db17c-108">On the service, the operation retrieves the array of integers passed in the input message and then computes the sum.</span></span> <span data-ttu-id="db17c-109">Pour envoyer un message de réponse, l'exemple crée un nouveau message avec la version de message et l'action appropriées et inclut la somme calculée dans son corps.</span><span class="sxs-lookup"><span data-stu-id="db17c-109">To send a response message, the sample creates a new message with the appropriate message version and Action and adds the computed sum as its body.</span></span> <span data-ttu-id="db17c-110">C'est ce que montre l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="db17c-110">The following sample code demonstrates this.</span></span>  
   
 ```  
-  
 public Message ComputeSum(Message request)  
 {  
     //The body of the message contains a list of numbers which will be   
@@ -51,13 +51,11 @@ public Message ComputeSum(Message request)
                                       ReplyAction, result);  
     return response;  
 }  
-  
 ```  
   
- Le client utilise un code généré par l'[Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour créer un proxy vers le service distant.Pour envoyer un message de demande, le client doit connaître la version du message, qui dépend du canal sous\-jacent.Donc, il crée une <xref:System.ServiceModel.OperationContextScope> étendue au canal proxy qu'il a créé, ce qui crée un <xref:System.ServiceModel.OperationContext> avec la version de message correcte indiquée à la propriété `OutgoingMessageHeaders.MessageVersion`.Le client passe un tableau d'entrées dans le corps du message de demande puis appelle `ComputeSum` sur le proxy.Le client récupère ensuite la somme des entrées qu'il a passées en accédant à la méthode `GetBody<T>` depuis le message de réponse.C'est ce que montre l'exemple de code suivant.  
+ <span data-ttu-id="db17c-111">Le client utilise le code généré par [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour créer un proxy pour le service distant.</span><span class="sxs-lookup"><span data-stu-id="db17c-111">The client uses code that is generated by [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to create a proxy to the remote service.</span></span> <span data-ttu-id="db17c-112">Pour envoyer un message de demande, le client doit connaître la version du message, qui dépend du canal sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="db17c-112">To send a request message, the client must have the message version, which depends on the underlying channel.</span></span> <span data-ttu-id="db17c-113">Donc, il crée une <xref:System.ServiceModel.OperationContextScope> étendue au canal proxy qu'il a créé, ce qui crée un <xref:System.ServiceModel.OperationContext> avec la version de message correcte indiquée à la propriété `OutgoingMessageHeaders.MessageVersion`.</span><span class="sxs-lookup"><span data-stu-id="db17c-113">Thus, it creates a new <xref:System.ServiceModel.OperationContextScope> scoped to the proxy channel it created, which creates an <xref:System.ServiceModel.OperationContext> with the correct message version populated in its `OutgoingMessageHeaders.MessageVersion` property.</span></span> <span data-ttu-id="db17c-114">Le client passe un tableau d'entrées dans le corps du message de demande puis appelle `ComputeSum` sur le proxy.</span><span class="sxs-lookup"><span data-stu-id="db17c-114">The client passes an input array as the body to the request message and then invokes the `ComputeSum` on the proxy.</span></span> <span data-ttu-id="db17c-115">Le client récupère ensuite la somme des entrées qu'il a passées en accédant à la méthode `GetBody<T>` depuis le message de réponse.</span><span class="sxs-lookup"><span data-stu-id="db17c-115">The client then retrieves the sum of the inputs it passed by accessing the `GetBody<T>` method on the reply message.</span></span> <span data-ttu-id="db17c-116">C'est ce que montre l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="db17c-116">The following sample code demonstrates this.</span></span>  
   
 ```  
-  
 using (new OperationContextScope(client.InnerChannel))  
 {  
     // Call the Sum service operation.  
@@ -71,37 +69,34 @@ using (new OperationContextScope(client.InnerChannel))
     Console.WriteLine("Sum of numbers passed (1,2,3,4,5) = {0}",   
                                                        response);  
 }  
-  
 ```  
   
- Cet exemple est un exemple hébergé sur le Web donc seul le fichier exécutable client doit être exécuté.L'exemple suivant illustre la sortie sur le client.  
+ <span data-ttu-id="db17c-117">Cet exemple est un exemple hébergé sur le Web donc seul le fichier exécutable client doit être exécuté.</span><span class="sxs-lookup"><span data-stu-id="db17c-117">This sample is a Web-hosted sample and so only the client executable must be run.</span></span> <span data-ttu-id="db17c-118">L'exemple suivant illustre la sortie sur le client.</span><span class="sxs-lookup"><span data-stu-id="db17c-118">The following is the sample output on the client.</span></span>  
   
 ```  
-  
 Prompt>Client.exe  
 Sum of numbers passed (1,2,3,4,5) = 15  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
- Cet exemple est un exemple hébergé sur le Web : suivez le lien fourni à l'étape 3 pour voir comment générer et exécuter l'exemple.  
+ <span data-ttu-id="db17c-119">Cet exemple est un exemple hébergé sur le Web : suivez le lien fourni à l'étape 3 pour voir comment générer et exécuter l'exemple.</span><span class="sxs-lookup"><span data-stu-id="db17c-119">This sample is a Web-hosted sample and so check the link provided in step 3 to see how to build and run the sample.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="db17c-120">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="db17c-120">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="db17c-121">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="db17c-121">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="db17c-122">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="db17c-122">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  <span data-ttu-id="db17c-123">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="db17c-123">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="db17c-124">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="db17c-124">The samples may already be installed on your machine.</span></span> <span data-ttu-id="db17c-125">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="db17c-125">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="db17c-126">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="db17c-126">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="db17c-127">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="db17c-127">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Untyped`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Untyped`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="db17c-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="db17c-128">See Also</span></span>

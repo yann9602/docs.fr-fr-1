@@ -1,25 +1,28 @@
 ---
-title: "ServiceAuthorizationBehavior | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ServiceAuthorizationBehavior
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 77dad8e8-fea4-4d1c-b366-2f01a2a87f78
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: eb02a02557a88bf53ca1a8e5b30fe66d6995e545
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceAuthorizationBehavior
-ServiceAuthorizationBehavior  
+# <a name="serviceauthorizationbehavior"></a><span data-ttu-id="71896-102">ServiceAuthorizationBehavior</span><span class="sxs-lookup"><span data-stu-id="71896-102">ServiceAuthorizationBehavior</span></span>
+<span data-ttu-id="71896-103">ServiceAuthorizationBehavior</span><span class="sxs-lookup"><span data-stu-id="71896-103">ServiceAuthorizationBehavior</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="71896-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="71896-104">Syntax</span></span>  
   
 ```  
 class ServiceAuthorizationBehavior : Behavior  
@@ -31,45 +34,45 @@ class ServiceAuthorizationBehavior : Behavior
 };  
 ```  
   
-## Méthodes  
- La classe ServiceAuthorizationBehavior ne définit pas de méthode.  
+## <a name="methods"></a><span data-ttu-id="71896-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="71896-105">Methods</span></span>  
+ <span data-ttu-id="71896-106">La classe ServiceAuthorizationBehavior ne définit pas de méthode.</span><span class="sxs-lookup"><span data-stu-id="71896-106">The ServiceAuthorizationBehavior class does not define any methods.</span></span>  
   
-## Propriétés  
- La classe ServiceAuthorizationBehavior a les propriétés suivantes :  
+## <a name="properties"></a><span data-ttu-id="71896-107">Propriétés</span><span class="sxs-lookup"><span data-stu-id="71896-107">Properties</span></span>  
+ <span data-ttu-id="71896-108">La classe ServiceAuthorizationBehavior a les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="71896-108">The ServiceAuthorizationBehavior class has the following properties:</span></span>  
   
-### ImpersonateCallerForAllOperations  
- Type de données : booléen  
+### <a name="impersonatecallerforalloperations"></a><span data-ttu-id="71896-109">ImpersonateCallerForAllOperations</span><span class="sxs-lookup"><span data-stu-id="71896-109">ImpersonateCallerForAllOperations</span></span>  
+ <span data-ttu-id="71896-110">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="71896-110">Data type: boolean</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="71896-111">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="71896-111">Access type: Read-only</span></span>  
   
- Valeur qui contrôle si le service essaie d'emprunter l'identité à l'aide des informations d'identification fournies par le message entrant.  
+ <span data-ttu-id="71896-112">Valeur qui contrôle si le service essaie d'emprunter l'identité à l'aide des informations d'identification fournies par le message entrant.</span><span class="sxs-lookup"><span data-stu-id="71896-112">A value that controls whether the service attempts to impersonate using the credentials provided by the incoming message.</span></span>  
   
-### PrincipalPermissionMode  
- Type de données : chaîne  
+### <a name="principalpermissionmode"></a><span data-ttu-id="71896-113">PrincipalPermissionMode</span><span class="sxs-lookup"><span data-stu-id="71896-113">PrincipalPermissionMode</span></span>  
+ <span data-ttu-id="71896-114">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="71896-114">Data type: string</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="71896-115">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="71896-115">Access type: Read-only</span></span>  
   
- Principal de sécurité utilisée pour effectuer les opérations sur le serveur.  
+ <span data-ttu-id="71896-116">Principal de sécurité utilisée pour effectuer les opérations sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="71896-116">The principal used to carry out operations on the server.</span></span>  
   
-### RoleProvider  
- Type de données : chaîne  
+### <a name="roleprovider"></a><span data-ttu-id="71896-117">RoleProvider</span><span class="sxs-lookup"><span data-stu-id="71896-117">RoleProvider</span></span>  
+ <span data-ttu-id="71896-118">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="71896-118">Data type: string</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="71896-119">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="71896-119">Access type: Read-only</span></span>  
   
- Nom du fournisseur de rôles ASP.NET.  
+ <span data-ttu-id="71896-120">Nom du fournisseur de rôles ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="71896-120">The name of the ASP.NET role provider.</span></span>  
   
-### ServiceAuthorizationManager  
- Type de données : chaîne  
+### <a name="serviceauthorizationmanager"></a><span data-ttu-id="71896-121">ServiceAuthorizationManager</span><span class="sxs-lookup"><span data-stu-id="71896-121">ServiceAuthorizationManager</span></span>  
+ <span data-ttu-id="71896-122">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="71896-122">Data type: string</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="71896-123">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="71896-123">Access type: Read-only</span></span>  
   
- Gestionnaire d'autorisations utilisé pour l'autorisation personnalisée.  
+ <span data-ttu-id="71896-124">Gestionnaire d'autorisations utilisé pour l'autorisation personnalisée.</span><span class="sxs-lookup"><span data-stu-id="71896-124">The authorization manager used for custom authorization.</span></span>  
   
-## Spécifications  
+## <a name="requirements"></a><span data-ttu-id="71896-125">Spécifications</span><span class="sxs-lookup"><span data-stu-id="71896-125">Requirements</span></span>  
   
-|MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|<span data-ttu-id="71896-126">MOF</span><span class="sxs-lookup"><span data-stu-id="71896-126">MOF</span></span>|<span data-ttu-id="71896-127">Déclaré dans Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="71896-127">Declared in Servicemodel.mof.</span></span>|  
+|---------|-----------------------------------|  
+|<span data-ttu-id="71896-128">Espace de noms</span><span class="sxs-lookup"><span data-stu-id="71896-128">Namespace</span></span>|<span data-ttu-id="71896-129">Défini dans root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="71896-129">Defined in root\ServiceModel</span></span>|  
   
-## Voir aussi  
+## <a name="see-also"></a><span data-ttu-id="71896-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="71896-130">See Also</span></span>  
  <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>

@@ -1,54 +1,57 @@
 ---
-title: "xml:lang Handling in XAML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "XAML [XAML Services], xml:lang attribute"
-  - "xml:lang attribute [XAML Services]"
-  - "RFC 3066 standard [XAML Services]"
-  - "standards [XAML Services], RFC 3066"
+title: Gestion de xml:lang en XAML
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XAML [XAML Services], xml:lang attribute
+- xml:lang attribute [XAML Services]
+- RFC 3066 standard [XAML Services]
+- standards [XAML Services], RFC 3066
 ms.assetid: 7aac0078-a1c5-41f8-b8b0-975510d9dca0
-caps.latest.revision: 16
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "16"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 47dd34db82e796418b68fcf9b28ef3e4d4eaca4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# xml:lang Handling in XAML
-L’attribut `xml:lang` est un attribut [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)] qui déclare les informations de langue et de culture pour un élément dans XML. Cette même signification de l’attribut persiste en XAML. Toutefois, certaines considérations supplémentaires s’appliquent.  
+# <a name="xmllang-handling-in-xaml"></a><span data-ttu-id="ad500-102">Gestion de xml:lang en XAML</span><span class="sxs-lookup"><span data-stu-id="ad500-102">xml:lang Handling in XAML</span></span>
+<span data-ttu-id="ad500-103">L’attribut `xml:lang` est un attribut [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]qui déclare les informations de langue et de culture pour un élément dans XML.</span><span class="sxs-lookup"><span data-stu-id="ad500-103">The `xml:lang` attribute is an [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]-defined attribute that declares the language and culture information for an element in XML.</span></span> <span data-ttu-id="ad500-104">Cette même signification de l’attribut persiste en XAML. Toutefois, certaines considérations supplémentaires s’appliquent.</span><span class="sxs-lookup"><span data-stu-id="ad500-104">This same meaning of the attribute persists in XAML; however, some additional considerations apply.</span></span>  
   
-## Utilisation d'attributs XAML  
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="ad500-105">Utilisation d'attributs XAML</span><span class="sxs-lookup"><span data-stu-id="ad500-105">XAML Attribute Usage</span></span>  
   
+```xaml  
+<object xml:lang="rfc3066lang" />  
 ```  
-<object xml:lang="rfc3066lang" />  
-```  
   
-## Valeurs XAML  
+## <a name="xaml-values"></a><span data-ttu-id="ad500-106">Valeurs XAML</span><span class="sxs-lookup"><span data-stu-id="ad500-106">XAML Values</span></span>  
   
 |||  
 |-|-|  
-|*rfc3066lang*|Chaîne dérivée de la norme [RFC 3066](http://go.microsoft.com/fwlink/?LinkId=132454) qui identifie une langue ou une langue\-région. Dans le dernier cas, la langue et la région sont séparées par un tiret. Pour plus d’informations sur les valeurs et le format, consultez <xref:System.Windows.Markup.XmlLanguage>.|  
+|<span data-ttu-id="ad500-107">*rfc3066lang*</span><span class="sxs-lookup"><span data-stu-id="ad500-107">*rfc3066lang*</span></span>|<span data-ttu-id="ad500-108">Chaîne dérivée de la norme [RFC 3066](http://go.microsoft.com/fwlink/?LinkId=132454) qui identifie une langue ou une langue-région.</span><span class="sxs-lookup"><span data-stu-id="ad500-108">A string that is derived from the [RFC 3066](http://go.microsoft.com/fwlink/?LinkId=132454) standard and identifies either a language or a language-region.</span></span> <span data-ttu-id="ad500-109">Dans le dernier cas, la langue et la région sont séparées par un tiret.</span><span class="sxs-lookup"><span data-stu-id="ad500-109">When it is the latter, the language and region are separated by a single hyphen.</span></span> <span data-ttu-id="ad500-110">Pour plus d’informations sur les valeurs et le format, consultez <xref:System.Windows.Markup.XmlLanguage> .</span><span class="sxs-lookup"><span data-stu-id="ad500-110">See <xref:System.Windows.Markup.XmlLanguage> for more information about the values and format.</span></span>|  
   
-## Notes  
- La définition de l’attribut `xml:lang` en [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] est dérivée de `xml:lang`, défini comme un « attribut spécial » par le [!INCLUDE[TLA#tla_w3c](../../../includes/tlasharptla-w3c-md.md)] pour [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]. Les informations de langue et de culture peuvent être traitées de différentes façons par les éléments, selon leurs implémentations. Toutefois, il n’existe aucun traitement [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] par défaut de l’attribut `xml:lang`.  
+## <a name="remarks"></a><span data-ttu-id="ad500-111">Remarques</span><span class="sxs-lookup"><span data-stu-id="ad500-111">Remarks</span></span>  
+ <span data-ttu-id="ad500-112">La définition de l’attribut `xml:lang` en [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] est dérivée de `xml:lang` , défini comme un « attribut spécial » par le [!INCLUDE[TLA#tla_w3c](../../../includes/tlasharptla-w3c-md.md)] pour [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)].</span><span class="sxs-lookup"><span data-stu-id="ad500-112">The definition for the `xml:lang` attribute in [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] is derived from `xml:lang` as defined as a "special attribute" by the [!INCLUDE[TLA#tla_w3c](../../../includes/tlasharptla-w3c-md.md)] for [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)].</span></span> <span data-ttu-id="ad500-113">Les informations de langue et de culture peuvent être traitées de différentes façons par les éléments, selon leurs implémentations. Toutefois, il n’existe aucun traitement [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] par défaut de l’attribut `xml:lang` .</span><span class="sxs-lookup"><span data-stu-id="ad500-113">Language and culture information is potentially processed in different ways by elements, depending on their implementations; however, there is no default [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] processing of the `xml:lang` attribute.</span></span>  
   
- La valeur par défaut de l’attribut `xml:lang` est une chaîne vide au niveau de l’attribut.  
+ <span data-ttu-id="ad500-114">La valeur par défaut de l’attribut `xml:lang` est une chaîne vide au niveau de l’attribut.</span><span class="sxs-lookup"><span data-stu-id="ad500-114">The default value of the `xml:lang` attribute is an empty string at the attribute level.</span></span>  
   
- Les effets et la valeur de l’attribut `xml:lang` sont généralement transmis aux éléments enfants, quand ils sont interprétés par des systèmes qui agissent sur les valeurs `xml:lang`.  
+ <span data-ttu-id="ad500-115">Les effets et la valeur de l’attribut `xml:lang` sont généralement transmis aux éléments enfants, quand ils sont interprétés par des systèmes qui agissent sur les valeurs `xml:lang` .</span><span class="sxs-lookup"><span data-stu-id="ad500-115">The `xml:lang` attribute effects and the value of the attribute are generally perpetuated to child elements, when interpreted by systems that act on `xml:lang` values.</span></span>  
   
- Lorsqu’elle est interprétée par les writers XAML des services XAML du .NET Framework, une valeur `xml:lang` peut créer des objets <xref:System.Windows.Markup.XmlLanguage> ou <xref:System.Globalization.CultureInfo> dans la représentation d’objet sous\-jacente. Toutefois, ce comportement varie selon que la valeur spécifiée pour `xml:lang` est ou non une construction valide pour ces classes.  
+ <span data-ttu-id="ad500-116">Lorsqu’elle est interprétée par les writers XAML des services XAML du .NET Framework, une valeur `xml:lang` peut créer des objets <xref:System.Windows.Markup.XmlLanguage> ou <xref:System.Globalization.CultureInfo> dans la représentation d’objet sous-jacente. Toutefois, ce comportement varie selon que la valeur spécifiée pour `xml:lang` est ou non une construction valide pour ces classes.</span><span class="sxs-lookup"><span data-stu-id="ad500-116">When interpreted by XAML writers of .NET Framework XAML Services, an `xml:lang` value can create <xref:System.Windows.Markup.XmlLanguage> or <xref:System.Globalization.CultureInfo> objects in the underlying object representation; however, that behavior depends on whether the value specified for `xml:lang` is a valid construction for those classes.</span></span>  
   
- Les infrastructures peuvent créer des associations entre les propriétés définies par l’infrastructure et la signification de `xml:lang` dans XML en appliquant <xref:System.Windows.Markup.XmlLangPropertyAttribute> à la propriété.  
+ <span data-ttu-id="ad500-117">Les infrastructures peuvent créer des associations entre les propriétés définies par l’infrastructure et la signification de `xml:lang` dans XML en appliquant <xref:System.Windows.Markup.XmlLangPropertyAttribute> à la propriété.</span><span class="sxs-lookup"><span data-stu-id="ad500-117">Frameworks can create associations between framework-defined properties and the meaning of `xml:lang` in XML by applying <xref:System.Windows.Markup.XmlLangPropertyAttribute> to the property.</span></span>  
   
-## Nœuds d’utilisation WPF  
- Pour les éléments qui sont des classes dérivées de <xref:System.Windows.FrameworkElement> ou <xref:System.Windows.FrameworkContentElement>, vous pouvez utiliser la propriété de dépendance <xref:System.Windows.FrameworkElement.Language%2A> équivalente à la place de l’attribut `xml:lang`. Par défaut, la propriété <xref:System.Windows.FrameworkElement.Language%2A> utilise « en\-US » si elle n’est pas définie autrement via la propriété ou via le traitement de l’attribut `xml:lang`.  
+## <a name="wpf-usage-nodes"></a><span data-ttu-id="ad500-118">Nœuds d’utilisation WPF</span><span class="sxs-lookup"><span data-stu-id="ad500-118">WPF Usage Nodes</span></span>  
+ <span data-ttu-id="ad500-119">Pour les éléments qui sont des classes dérivées de <xref:System.Windows.FrameworkElement> ou <xref:System.Windows.FrameworkContentElement>, vous pouvez utiliser la propriété de dépendance <xref:System.Windows.FrameworkElement.Language%2A> équivalente à la place de l’attribut `xml:lang` .</span><span class="sxs-lookup"><span data-stu-id="ad500-119">For elements that are derived classes of <xref:System.Windows.FrameworkElement> or <xref:System.Windows.FrameworkContentElement>, you can use the equivalent <xref:System.Windows.FrameworkElement.Language%2A> dependency property instead of the `xml:lang` attribute.</span></span> <span data-ttu-id="ad500-120">Par défaut, la propriété <xref:System.Windows.FrameworkElement.Language%2A> utilise « en-US » si elle n’est pas définie autrement via la propriété ou via le traitement de l’attribut `xml:lang` .</span><span class="sxs-lookup"><span data-stu-id="ad500-120">By default, the <xref:System.Windows.FrameworkElement.Language%2A> property uses "en-US" if it is not otherwise set, either through the property or through processing the `xml:lang` attribute.</span></span>  
   
-## Voir aussi  
- [Globalisation pour WPF](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md)
+## <a name="see-also"></a><span data-ttu-id="ad500-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ad500-121">See Also</span></span>  
+ [<span data-ttu-id="ad500-122">Globalisation pour WPF</span><span class="sxs-lookup"><span data-stu-id="ad500-122">Globalization for WPF</span></span>](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)

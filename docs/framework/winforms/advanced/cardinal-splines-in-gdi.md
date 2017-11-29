@@ -1,46 +1,50 @@
 ---
-title: "Splines cardinales dans GDI+ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "splines cardinales"
-  - "GDI+, splines cardinales"
-  - "splines, cardinales"
+title: Splines cardinales dans GDI+
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- splines [Windows Forms], cardinal
+- GDI+, cardinal splines
+- cardinal splines
 ms.assetid: 09b3797a-6294-422d-9adf-a5a0a7695c0c
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0ad417ee61026f6573f19e70409511e0b28e4d78
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Splines cardinales dans GDI+
-Une spline cardinale est une séquence de courbes reliées entre elles pour former une courbe plus grande.  La spline est spécifiée par un tableau de points et un paramètre de tension.  Une spline cardinale passe par tous les points du tableau sans former d'angles et sans créer de brusques changements de tension de la courbe.  L'illustration suivante représente un ensemble de points et une spline cardinale qui passe par tous ces points.  
+# <a name="cardinal-splines-in-gdi"></a><span data-ttu-id="61bbb-102">Splines cardinales dans GDI+</span><span class="sxs-lookup"><span data-stu-id="61bbb-102">Cardinal Splines in GDI+</span></span>
+<span data-ttu-id="61bbb-103">Une spline cardinale est une séquence de courbes reliées entre elles pour former une courbe plus grande.</span><span class="sxs-lookup"><span data-stu-id="61bbb-103">A cardinal spline is a sequence of individual curves joined to form a larger curve.</span></span> <span data-ttu-id="61bbb-104">La spline est spécifiée par un tableau de points et un paramètre de tension.</span><span class="sxs-lookup"><span data-stu-id="61bbb-104">The spline is specified by an array of points and a tension parameter.</span></span> <span data-ttu-id="61bbb-105">Une spline cardinale passe correctement sur chaque point dans le tableau ; Il existe des angles aigus et aucune modification brusque dans la précision de la courbe.</span><span class="sxs-lookup"><span data-stu-id="61bbb-105">A cardinal spline passes smoothly through each point in the array; there are no sharp corners and no abrupt changes in the tightness of the curve.</span></span> <span data-ttu-id="61bbb-106">L’illustration suivante montre un ensemble de points et une spline cardinale qui passe par chaque point dans le jeu.</span><span class="sxs-lookup"><span data-stu-id="61bbb-106">The following illustration shows a set of points and a cardinal spline that passes through each point in the set.</span></span>  
   
- ![Spline cardinale](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art09.png "Aboutgdip02\_art09")  
+ <span data-ttu-id="61bbb-107">![Spline cardinale](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art09.gif "Aboutgdip02_art09")</span><span class="sxs-lookup"><span data-stu-id="61bbb-107">![Cardinal Spline](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art09.gif "Aboutgdip02_art09")</span></span>  
   
-## Splines physiques et mathématiques  
- Dans le domaine industriel, une spline \(appelée fausse languette\) est une petite pièce de bois \(ou autre matériau flexible\).  Avant l'introduction des splines mathématiques, les dessinateurs industriels utilisaient des fausses languettes pour dessiner des courbes.  Ils plaçaient la fausse languette sur une feuille de papier et la fixaient en divers points prédéfinis.  Il suffisait ensuite de suivre le bord de la fausse languette avec un stylo ou un crayon pour dessiner la courbe.  Un même ensemble de points pouvait produire des courbes différentes en fonction des propriétés de la fausse languette.  Par exemple, une fausse languette présentant une forte résistance à la flexion ne donnait pas la même courbe qu'une fausse languette très souple.  
+## <a name="physical-and-mathematical-splines"></a><span data-ttu-id="61bbb-108">Splines physiques et mathématiques</span><span class="sxs-lookup"><span data-stu-id="61bbb-108">Physical and Mathematical Splines</span></span>  
+ <span data-ttu-id="61bbb-109">Une spline physique est un élément dynamique de bois ou autre matériau flexible.</span><span class="sxs-lookup"><span data-stu-id="61bbb-109">A physical spline is a thin piece of wood or other flexible material.</span></span> <span data-ttu-id="61bbb-110">Avant l’arrivée des splines mathématiques, les concepteurs utilisés splines physiques pour dessiner des courbes.</span><span class="sxs-lookup"><span data-stu-id="61bbb-110">Before the advent of mathematical splines, designers used physical splines to draw curves.</span></span> <span data-ttu-id="61bbb-111">Un concepteur est placer la spline sur une feuille de papier et ancrez-la à un ensemble donné de points.</span><span class="sxs-lookup"><span data-stu-id="61bbb-111">A designer would place the spline on a piece of paper and anchor it to a given set of points.</span></span> <span data-ttu-id="61bbb-112">Le concepteur peut ensuite créer une courbe en dessinant le long de la spline avec un stylet ou un crayon.</span><span class="sxs-lookup"><span data-stu-id="61bbb-112">The designer could then create a curve by drawing along the spline with a pen or pencil.</span></span> <span data-ttu-id="61bbb-113">Un ensemble donné de points peut produire des courbes, en fonction des propriétés de la spline physique différentes.</span><span class="sxs-lookup"><span data-stu-id="61bbb-113">A given set of points could yield a variety of curves, depending on the properties of the physical spline.</span></span> <span data-ttu-id="61bbb-114">Par exemple, une spline avec une forte résistance à pliage produirait une courbe différente à une spline extrêmement flexible.</span><span class="sxs-lookup"><span data-stu-id="61bbb-114">For example, a spline with a high resistance to bending would produce a different curve than an extremely flexible spline.</span></span>  
   
- En mathématiques, les formules utilisées pour les splines sont basées sur les propriétés de baguettes flexibles ; elles produisent donc des courbes analogues à celles que l'on obtenait avec des fausses languettes.  À partir d'un même ensemble de points, des fausses languettes de flexibilité différente produisaient des courbes différentes ; de même, les splines mathématiques définies avec le même ensemble de points mais des paramètres de tension différents donnent des courbes différentes.  L'illustration suivante représente quatre splines cardinales passant par le même ensemble de points.  La tension est indiquée pour chaque spline.  La valeur 0 correspond à une tension physique infinie qui force la courbe à prendre le chemin le plus court \(ligne droite\) entre les points.  La valeur 1 correspond à une tension physique nulle qui permet de relier les points par un tracé de courbure minimum.  Avec des valeurs de tension supérieures à 1, la courbe se comporte comme un ressort qui se détend pour prendre le chemin le plus long entre les points.  
+ <span data-ttu-id="61bbb-115">Les formules de splines mathématiques sont basées sur les propriétés de profilés flexibles, afin des courbes produites par des splines mathématiques sont similaires aux courbes qui ont été générés une fois par splines physiques.</span><span class="sxs-lookup"><span data-stu-id="61bbb-115">The formulas for mathematical splines are based on the properties of flexible rods, so the curves produced by mathematical splines are similar to the curves that were once produced by physical splines.</span></span> <span data-ttu-id="61bbb-116">Comme splines physiques de différents tension produira différentes courbes via un ensemble donné de points, des splines mathématiques avec des valeurs différentes pour le paramètre de tension produira différentes courbes via un ensemble donné de points.</span><span class="sxs-lookup"><span data-stu-id="61bbb-116">Just as physical splines of different tension will produce different curves through a given set of points, mathematical splines with different values for the tension parameter will produce different curves through a given set of points.</span></span> <span data-ttu-id="61bbb-117">L’illustration suivante montre quatre splines cardinales passant par le même ensemble de points.</span><span class="sxs-lookup"><span data-stu-id="61bbb-117">The following illustration shows four cardinal splines passing through the same set of points.</span></span> <span data-ttu-id="61bbb-118">La tension est indiquée pour chaque spline.</span><span class="sxs-lookup"><span data-stu-id="61bbb-118">The tension is shown for each spline.</span></span> <span data-ttu-id="61bbb-119">La valeur 0 correspond à une tension physique infinie qui force la courbe à prendre le plus court (ligne droite) entre les points.</span><span class="sxs-lookup"><span data-stu-id="61bbb-119">A tension of 0 corresponds to infinite physical tension, forcing the curve to take the shortest way (straight lines) between points.</span></span> <span data-ttu-id="61bbb-120">La valeur 1 correspond à aucune tension physique, ce qui permet la spline prendre le chemin d’accès de courbure minimum.</span><span class="sxs-lookup"><span data-stu-id="61bbb-120">A tension of 1 corresponds to no physical tension, allowing the spline to take the path of least total bend.</span></span> <span data-ttu-id="61bbb-121">Avec les valeurs de tension supérieures à 1, la courbe se comporte comme un ressort, envoyée à prendre le chemin le plus long.</span><span class="sxs-lookup"><span data-stu-id="61bbb-121">With tension values greater than 1, the curve behaves like a compressed spring, pushed to take a longer path.</span></span>  
   
- ![Splines cardinales](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art10.png "Aboutgdip02\_art10")  
+ <span data-ttu-id="61bbb-122">![Splines cardinales](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art10.gif "Aboutgdip02_art10")</span><span class="sxs-lookup"><span data-stu-id="61bbb-122">![Cardinal Splines](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art10.gif "Aboutgdip02_art10")</span></span>  
   
- Les quatre splines de l'illustration précédente partagent la même tangente au point de départ.  La tangente est une ligne qui va du point de départ au point suivant de la courbe.  De même, la tangente commune en fin de courbe est une ligne qui va du dernier à l'avant\-dernier point de la courbe.  
+ <span data-ttu-id="61bbb-123">Les quatre splines de l’illustration précédente partagent la même tangente au point de départ.</span><span class="sxs-lookup"><span data-stu-id="61bbb-123">The four splines in the preceding illustration share the same tangent line at the starting point.</span></span> <span data-ttu-id="61bbb-124">La tangente est la ligne dessinée à partir du point de départ au point suivant le long de la courbe.</span><span class="sxs-lookup"><span data-stu-id="61bbb-124">The tangent is the line drawn from the starting point to the next point along the curve.</span></span> <span data-ttu-id="61bbb-125">De même, la tangente partagée sur le point de fin est la ligne tracée à partir du point de fin au point précédent sur la courbe.</span><span class="sxs-lookup"><span data-stu-id="61bbb-125">Likewise, the shared tangent at the ending point is the line drawn from the ending point to the previous point on the curve.</span></span>  
   
- Pour dessiner une spline cardinale, il vous faut une instance de la classe <xref:System.Drawing.Graphics>, un objet <xref:System.Drawing.Pen> et un tableau d'objets <xref:System.Drawing.Point>. L'instance de la classe <xref:System.Drawing.Graphics> fournit la méthode <xref:System.Drawing.Graphics.DrawCurve%2A> qui dessine la spline et l'objet <xref:System.Drawing.Pen> stocke les attributs de la spline, notamment la largeur et la couleur de la ligne.  Le tableau d'objets <xref:System.Drawing.Point> stocke les points par lesquels la courbe doit passer.  L'exemple de code suivant montre comment dessiner une spline cardinale qui passe par les points définis dans  `myPointArray`.  Le troisième paramètre indique la tension.  
+ <span data-ttu-id="61bbb-126">Pour dessiner une spline cardinale, vous avez besoin d’une instance de la <xref:System.Drawing.Graphics> (classe), un <xref:System.Drawing.Pen>et un tableau de <xref:System.Drawing.Point> objets de l’instance de la <xref:System.Drawing.Graphics> classe fournit le <xref:System.Drawing.Graphics.DrawCurve%2A> méthode, qui dessine la spline, et le <xref:System.Drawing.Pen> stocke les attributs de la spline, telles que la largeur de ligne et la couleur.</span><span class="sxs-lookup"><span data-stu-id="61bbb-126">To draw a cardinal spline, you need an instance of the <xref:System.Drawing.Graphics> class, a <xref:System.Drawing.Pen>, and an array of <xref:System.Drawing.Point> objects The instance of the <xref:System.Drawing.Graphics> class provides the <xref:System.Drawing.Graphics.DrawCurve%2A> method, which draws the spline, and the <xref:System.Drawing.Pen> stores attributes of the spline, such as line width and color.</span></span> <span data-ttu-id="61bbb-127">Le tableau de <xref:System.Drawing.Point> objets stocke les points de la courbe doit passer.</span><span class="sxs-lookup"><span data-stu-id="61bbb-127">The array of <xref:System.Drawing.Point> objects stores the points that the curve will pass through.</span></span> <span data-ttu-id="61bbb-128">L’exemple de code suivant montre comment dessiner une spline cardinale qui passe par les points dans `myPointArray`.</span><span class="sxs-lookup"><span data-stu-id="61bbb-128">The following code example shows how to draw a cardinal spline that passes through the points in `myPointArray`.</span></span> <span data-ttu-id="61bbb-129">Le troisième paramètre est la tension.</span><span class="sxs-lookup"><span data-stu-id="61bbb-129">The third parameter is the tension.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#31)]
  [!code-vb[LinesCurvesAndShapes#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#31)]  
   
-## Voir aussi  
- [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [Génération et dessin de courbes](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)
+## <a name="see-also"></a><span data-ttu-id="61bbb-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="61bbb-130">See Also</span></span>  
+ [<span data-ttu-id="61bbb-131">Lignes, courbes et formes</span><span class="sxs-lookup"><span data-stu-id="61bbb-131">Lines, Curves, and Shapes</span></span>](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [<span data-ttu-id="61bbb-132">Génération et dessin de courbes</span><span class="sxs-lookup"><span data-stu-id="61bbb-132">Constructing and Drawing Curves</span></span>](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)

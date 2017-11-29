@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: affa55c6-03b5-4664-bb9c-2b9d15620df3
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6f40226d278450c5ea70440a4ed4e68894f07e8e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting
-System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting  
+# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstarting"></a><span data-ttu-id="50308-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting</span><span class="sxs-lookup"><span data-stu-id="50308-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting</span></span>
+<span data-ttu-id="50308-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting</span><span class="sxs-lookup"><span data-stu-id="50308-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarting</span></span>  
   
-## Description  
- Démarrage de ServiceModelInitializer.  
+## <a name="description"></a><span data-ttu-id="50308-104">Description</span><span class="sxs-lookup"><span data-stu-id="50308-104">Description</span></span>  
+ <span data-ttu-id="50308-105">Démarrage de ServiceModelInitializer.</span><span class="sxs-lookup"><span data-stu-id="50308-105">The ServiceModelInitializer is starting.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="50308-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="50308-106">See Also</span></span>  
+ [<span data-ttu-id="50308-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="50308-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="50308-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="50308-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="50308-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="50308-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

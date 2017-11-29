@@ -1,58 +1,59 @@
 ---
-title: "Comment&#160;: stocker des cl&#233;s asym&#233;triques dans un conteneur de cl&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "clés asymétriques (.NET Framework)"
-  - "chiffrement (.NET Framework), clés asymétriques"
-  - "clés de déchiffrement"
-  - "chiffrement (.NET Framework), clés asymétriques"
-  - "clés de chiffrement"
-  - "clés, asymétriques"
-  - "clés, stocker dans les conteneurs de clé"
-  - "stocker des clés asymétriques"
+title: "Comment : stocker des clés asymétriques dans un conteneur de clé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- cryptography [.NET Framework], asymmetric keys
+- storing asymmetric keys
+- keys, asymmetric
+- encryption keys
+- keys, storing in key containers
+- asymmetric keys [.NET Framework]
+- encryption [.NET Framework], asymmetric keys
+- decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-caps.latest.revision: 20
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "20"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 475139230c4b58bc6dcc307bd99eeafdc3e89e53
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: stocker des cl&#233;s asym&#233;triques dans un conteneur de cl&#233;
-Les clés privées asymétriques ne doivent jamais être stockées textuellement ou en texte brut sur l'ordinateur local.  Si vous avez besoin de stocker une clé privée, vous devez utiliser un conteneur de clé.  Pour plus d'informations sur les conteneurs de clé, consultez [Understanding Machine\-Level and User\-Level RSA Key Containers](../Topic/Understanding%20Machine-Level%20and%20User-Level%20RSA%20Key%20Containers.md).  
+# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a><span data-ttu-id="082c6-102">Comment : stocker des clés asymétriques dans un conteneur de clé</span><span class="sxs-lookup"><span data-stu-id="082c6-102">How to: Store Asymmetric Keys in a Key Container</span></span>
+<span data-ttu-id="082c6-103">Les clés privées asymétriques ne doivent jamais être stockées textuellement ou en texte brut sur l'ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="082c6-103">Asymmetric private keys should never be stored verbatim or in plain text on the local computer.</span></span> <span data-ttu-id="082c6-104">Si vous avez besoin de stocker une clé privée, vous devez utiliser un conteneur de clé.</span><span class="sxs-lookup"><span data-stu-id="082c6-104">If you need to store a private key, you should use a key container.</span></span> <span data-ttu-id="082c6-105">Pour plus d’informations sur les conteneurs de clé, consultez [Présentation des conteneurs de clé RSA ordinateur et utilisateur](http://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9).</span><span class="sxs-lookup"><span data-stu-id="082c6-105">For more information on key containers, see [Understanding Machine-Level and User-Level RSA Key Containers](http://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9).</span></span>  
   
-### Pour créer une clé asymétrique et l'enregistrer dans un conteneur de clés  
+### <a name="to-create-an-asymmetric-key-and-save-it-in-a-key-container"></a><span data-ttu-id="082c6-106">Pour créer une clé asymétrique et l'enregistrer dans un conteneur de clés</span><span class="sxs-lookup"><span data-stu-id="082c6-106">To create an asymmetric key and save it in a key container</span></span>  
   
-1.  Créez une nouvelle instance d'une classe <xref:System.Security.Cryptography.CspParameters> et passez le nom que vous souhaitez donner au conteneur de clés dans le champ <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=fullName>.  
+1.  <span data-ttu-id="082c6-107">Créer une nouvelle instance d’un <xref:System.Security.Cryptography.CspParameters> classe et passez le nom que vous souhaitez appeler le conteneur de clé pour le <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> champ.</span><span class="sxs-lookup"><span data-stu-id="082c6-107">Create a new instance of a <xref:System.Security.Cryptography.CspParameters> class and pass the name that you want to call the key container to the <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> field.</span></span>  
   
-2.  Créez une nouvelle instance d'une classe qui dérive de la classe <xref:System.Security.Cryptography.AsymmetricAlgorithm> \(habituellement **RSACryptoServiceProvider** ou **DSACryptoServiceProvider**\) et passez l'objet **CspParameters** créé précédemment à son constructeur.  
+2.  <span data-ttu-id="082c6-108">Créer une nouvelle instance d’une classe qui dérive de la <xref:System.Security.Cryptography.AsymmetricAlgorithm> classe (généralement **RSACryptoServiceProvider** ou **DSACryptoServiceProvider**) et passez précédemment créé  **CspParameters** objet à son constructeur.</span><span class="sxs-lookup"><span data-stu-id="082c6-108">Create a new instance of a class that derives from the <xref:System.Security.Cryptography.AsymmetricAlgorithm> class (usually **RSACryptoServiceProvider** or **DSACryptoServiceProvider**) and pass the previously created **CspParameters** object to its constructor.</span></span>  
   
-### Pour supprimer la clé dans un conteneur de clés  
+### <a name="to-delete-the-key-from-a-key-container"></a><span data-ttu-id="082c6-109">Pour supprimer la clé dans un conteneur de clés</span><span class="sxs-lookup"><span data-stu-id="082c6-109">To delete the key from a key container</span></span>  
   
-1.  Créez une nouvelle instance d'une classe **CspParameters** et passez le nom que vous souhaitez donner au conteneur de clés dans le champ **CspParameters.KeyContainerName**.  
+1.  <span data-ttu-id="082c6-110">Créez une nouvelle instance d’une classe **CspParameters** et passez le nom que vous souhaitez donner au conteneur de clé dans le champ **CspParameters.KeyContainerName**.</span><span class="sxs-lookup"><span data-stu-id="082c6-110">Create a new instance of a **CspParameters** class and pass the name that you want to call the key container to the **CspParameters.KeyContainerName** field.</span></span>  
   
-2.  Créez une nouvelle instance d'une classe qui dérive de la classe **AsymmetricAlgorithm** \(habituellement **RSACryptoServiceProvider** ou **DSACryptoServiceProvider**\) et passez l'objet **CspParameters** créé précédemment à son constructeur.  
+2.  <span data-ttu-id="082c6-111">Créez une nouvelle instance d’une classe qui dérive de la classe **AsymmetricAlgorithm** (habituellement **RSACryptoServiceProvider** ou **DSACryptoServiceProvider**) et passez l’objet **CspParameters** créé précédemment à son constructeur.</span><span class="sxs-lookup"><span data-stu-id="082c6-111">Create a new instance of a class that derives from the **AsymmetricAlgorithm** class (usually **RSACryptoServiceProvider** or **DSACryptoServiceProvider**) and pass the previously created **CspParameters** object to its constructor.</span></span>  
   
-3.  Affectez à la propriété **PersistKeyInCSP** de la classe qui dérive d'**AsymmetricAlgorithm** la valeur **false** \(**False** dans Visual Basic\).  
+3.  <span data-ttu-id="082c6-112">Affectez à la propriété **PersistKeyInCSP** de la classe qui dérive d’**AsymmetricAlgorithm** la valeur **false** (**False** dans Visual Basic).</span><span class="sxs-lookup"><span data-stu-id="082c6-112">Set the **PersistKeyInCSP** property of the class that derives from **AsymmetricAlgorithm** to **false** (**False** in Visual Basic).</span></span>  
   
-4.  Appelez la méthode **Clear** de la classe qui dérive d'**AsymmetricAlgorithm**.  Cette méthode libère toutes les ressources de la classe et efface le conteneur de clés.  
+4.  <span data-ttu-id="082c6-113">Appelez la méthode **Clear** de la classe qui dérive d’**AsymmetricAlgorithm**.</span><span class="sxs-lookup"><span data-stu-id="082c6-113">Call the **Clear** method of the class that derives from **AsymmetricAlgorithm**.</span></span> <span data-ttu-id="082c6-114">Cette méthode libère toutes les ressources de la classe et efface le conteneur de clés.</span><span class="sxs-lookup"><span data-stu-id="082c6-114">This method releases all resources of the class and clears the key container.</span></span>  
   
-## Exemple  
- L'exemple suivant illustre comment créer une clé asymétrique, l'enregistrer dans un conteneur de clés, récupérer la clé ultérieurement et supprimer la clé du conteneur.  
+## <a name="example"></a><span data-ttu-id="082c6-115">Exemple</span><span class="sxs-lookup"><span data-stu-id="082c6-115">Example</span></span>  
+ <span data-ttu-id="082c6-116">L'exemple suivant illustre comment créer une clé asymétrique, l'enregistrer dans un conteneur de clés, récupérer la clé ultérieurement et supprimer la clé du conteneur.</span><span class="sxs-lookup"><span data-stu-id="082c6-116">The following example demonstrates how to create an asymmetric key, save it in a key container, retrieve the key at a later time, and delete the key from the container.</span></span>  
   
- Notez que le code inclus dans la méthode `GenKey_SaveInContainer` est similaire à celui de la méthode `GetKeyFromContainer`.  Quand vous spécifiez un nom de conteneur de clés pour un objet <xref:System.Security.Cryptography.CspParameters> et le passez à un objet <xref:System.Security.Cryptography.AsymmetricAlgorithm> avec la propriété <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> ou la propriété <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> définie sur true, les événements suivants se produisent.  S'il n'existe aucun conteneur de clés portant le nom spécifié, un conteneur est créé et la clé est conservée.  Si un conteneur de clés portant le nom spécifié existe déjà, la clé incluse dans ce conteneur est automatiquement chargée dans l'objet <xref:System.Security.Cryptography.AsymmetricAlgorithm> actuel.  Par conséquent, le code inclus dans la méthode `GenKey_SaveInContainer` conserve la clé car il est exécuté en premier, tandis que le code inclus dans la méthode `GetKeyFromContainer` charge la clé car il est exécuté en second.  
+ <span data-ttu-id="082c6-117">Notez que le code inclus dans la méthode `GenKey_SaveInContainer` est similaire à celui de la méthode `GetKeyFromContainer`.</span><span class="sxs-lookup"><span data-stu-id="082c6-117">Notice that code in the `GenKey_SaveInContainer` method and the `GetKeyFromContainer` method is similar.</span></span>  <span data-ttu-id="082c6-118">Quand vous spécifiez un nom de conteneur de clés pour un objet <xref:System.Security.Cryptography.CspParameters> et le passez à un objet <xref:System.Security.Cryptography.AsymmetricAlgorithm> avec la propriété <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> ou la propriété <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> définie sur true, les événements suivants se produisent.</span><span class="sxs-lookup"><span data-stu-id="082c6-118">When you specify a key container name for a <xref:System.Security.Cryptography.CspParameters> object and pass it to an <xref:System.Security.Cryptography.AsymmetricAlgorithm> object with the <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> property or <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> property set to true, the following occurs.</span></span>  <span data-ttu-id="082c6-119">S'il n'existe aucun conteneur de clés portant le nom spécifié, un conteneur est créé et la clé est conservée.</span><span class="sxs-lookup"><span data-stu-id="082c6-119">If a key container with the specified name does not exist, then one is created and the key is persisted.</span></span>  <span data-ttu-id="082c6-120">Si un conteneur de clés portant le nom spécifié existe déjà, la clé incluse dans ce conteneur est automatiquement chargée dans l'objet <xref:System.Security.Cryptography.AsymmetricAlgorithm> actuel.</span><span class="sxs-lookup"><span data-stu-id="082c6-120">If a key container with the specified name does exist, then the key in the container is automatically loaded into the current <xref:System.Security.Cryptography.AsymmetricAlgorithm> object.</span></span>  <span data-ttu-id="082c6-121">Par conséquent, le code inclus dans la méthode `GenKey_SaveInContainer` conserve la clé car il est exécuté en premier, tandis que le code inclus dans la méthode `GetKeyFromContainer` charge la clé car il est exécuté en second.</span><span class="sxs-lookup"><span data-stu-id="082c6-121">Therefore, the code in the `GenKey_SaveInContainer` method persists the key because it is run first, while the code in the `GetKeyFromContainer` method loads the key because it is run second.</span></span>  
   
 ```vb  
 Imports System  
@@ -130,7 +131,6 @@ Public Class StoreKey
         Console.WriteLine("Key deleted.")  
     End Sub  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -220,18 +220,18 @@ public class StoreKey
 ```  
   
 ```Output  
-  
-            Key added to container:  
+Key added to container:  
 <RSAKeyValue> Key Information A</RSAKeyValue>  
-Key retrieved from container:  
+Key retrieved from container :  
 <RSAKeyValue> Key Information A</RSAKeyValue>  
-Key deleted.  Key added to container:  
+Key deleted.  
+Key added to container:  
 <RSAKeyValue> Key Information B</RSAKeyValue>  
-Key deleted.    
+Key deleted.  
 ```  
   
-## Voir aussi  
- [Génération de clés pour le chiffrement et le déchiffrement](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)   
- [Chiffrement de données](../../../docs/standard/security/encrypting-data.md)   
- [Déchiffrement de données](../../../docs/standard/security/decrypting-data.md)   
- [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a><span data-ttu-id="082c6-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="082c6-122">See Also</span></span>  
+ [<span data-ttu-id="082c6-123">Génération de clés pour le chiffrement et le déchiffrement</span><span class="sxs-lookup"><span data-stu-id="082c6-123">Generating Keys for Encryption and Decryption</span></span>](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)  
+ [<span data-ttu-id="082c6-124">Chiffrement de données</span><span class="sxs-lookup"><span data-stu-id="082c6-124">Encrypting Data</span></span>](../../../docs/standard/security/encrypting-data.md)  
+ [<span data-ttu-id="082c6-125">Déchiffrement de données</span><span class="sxs-lookup"><span data-stu-id="082c6-125">Decrypting Data</span></span>](../../../docs/standard/security/decrypting-data.md)  
+ [<span data-ttu-id="082c6-126">Cryptographic Services</span><span class="sxs-lookup"><span data-stu-id="082c6-126">Cryptographic Services</span></span>](../../../docs/standard/security/cryptographic-services.md)

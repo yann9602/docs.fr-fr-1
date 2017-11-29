@@ -1,39 +1,42 @@
 ---
-title: "Service Identity, exemple | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Service Identity, exemple
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cb07dea841bf85901d89df5912e233cc64c2fed2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Service Identity, exemple
-Cet exemple montre comment définir l'identité d'un service.Au moment du design, un client peut récupérer l'identité à l'aide des métadonnées du service, puis au miment de l'exécution, il peut authentifier l'identité du service.Le concept d'identité de service consiste à permettre à un client d'authentifier un service avant d'appeler l'une de ses opérations, ce qui protège le client contre les appels non authentifiés.Sur une connexion sécurisée, le service authentifie également les informations d'identification d'un client avant de lui autoriser l'accès, mais ce n'est pas l'objet traité dans cet exemple.Pour plus d'informations sur l'authentification du serveur, consultez les exemples indiqués dans [Client](../../../../docs/framework/wcf/samples/client.md).  
+# <a name="service-identity-sample"></a><span data-ttu-id="88ea0-102">Service Identity, exemple</span><span class="sxs-lookup"><span data-stu-id="88ea0-102">Service Identity Sample</span></span>
+<span data-ttu-id="88ea0-103">Cet exemple montre comment définir l'identité d'un service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-103">This service identity sample demonstrates how to set the identity for a service.</span></span> <span data-ttu-id="88ea0-104">Au moment du design, un client peut récupérer l'identité à l'aide des métadonnées du service, puis au miment de l'exécution, il peut authentifier l'identité du service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-104">At design time, a client can retrieve the identity using the service's metadata and then at runtime the client can authenticate the service's identity.</span></span> <span data-ttu-id="88ea0-105">Le concept d'identité de service consiste à permettre à un client d'authentifier un service avant d'appeler l'une de ses opérations, ce qui protège le client contre les appels non authentifiés.</span><span class="sxs-lookup"><span data-stu-id="88ea0-105">The concept of service identity is to allow a client to authenticate a service before calling any of its operations, thereby protecting the client from unauthenticated calls.</span></span> <span data-ttu-id="88ea0-106">Sur une connexion sécurisée, le service authentifie également les informations d'identification d'un client avant de lui autoriser l'accès, mais ce n'est pas l'objet traité dans cet exemple.</span><span class="sxs-lookup"><span data-stu-id="88ea0-106">On a secure connection the service also authenticates a client's credentials before allowing it access, but this is not the focus of this sample.</span></span> <span data-ttu-id="88ea0-107">Consultez les exemples de [Client](../../../../docs/framework/wcf/samples/client.md) qui indiquent l’authentification du serveur.</span><span class="sxs-lookup"><span data-stu-id="88ea0-107">See the samples in [Client](../../../../docs/framework/wcf/samples/client.md) that show server authentication.</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+>  <span data-ttu-id="88ea0-108">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="88ea0-108">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Cet exemple illustre les fonctionnalités suivantes :  
+ <span data-ttu-id="88ea0-109">Cet exemple illustre les fonctionnalités suivantes :</span><span class="sxs-lookup"><span data-stu-id="88ea0-109">This sample illustrates the following features:</span></span>  
   
--   Comment définir les divers types d'identité sur différents points de terminaison d'un service.Chaque type d'identité possède des fonctionnalités différentes.Le type d'identité à utiliser dépend du type d'informations d'identification de sécurité utilisé sur la liaison du point de terminaison.  
+-   <span data-ttu-id="88ea0-110">Comment définir les divers types d'identité sur différents points de terminaison d'un service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-110">How to set the different types of identity on different endpoints for a service.</span></span> <span data-ttu-id="88ea0-111">Chaque type d'identité possède des fonctionnalités différentes.</span><span class="sxs-lookup"><span data-stu-id="88ea0-111">Each type of identity has different capabilities.</span></span> <span data-ttu-id="88ea0-112">Le type d'identité à utiliser dépend du type d'informations d'identification de sécurité utilisé sur la liaison du point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="88ea0-112">The type of identity to use is dependent on the type of security credentials used on the endpoint's binding.</span></span>  
   
--   L'identité peut être définie de façon déclarative dans la configuration ou de façon impérative dans le code.Pour le client et le service, vous devez généralement utiliser la configuration.  
+-   <span data-ttu-id="88ea0-113">L'identité peut être définie de façon déclarative dans la configuration ou de façon impérative dans le code.</span><span class="sxs-lookup"><span data-stu-id="88ea0-113">Identity can either be set declaratively in configuration or imperatively in code.</span></span> <span data-ttu-id="88ea0-114">Pour le client et le service, vous devez généralement utiliser la configuration.</span><span class="sxs-lookup"><span data-stu-id="88ea0-114">Typically for both the client and the service you should use configuration to set the identity.</span></span>  
   
--   Comment définir une identité personnalisée sur le clientUne identité personnalisée est en général une personnalisation d'un type d'identité existant qui permet au client d'examiner d'autres informations de revendication fournies dans les informations d'identification du service afin de prendre des décisions d'autorisation avant d'appeler le service.  
+-   <span data-ttu-id="88ea0-115">Comment définir une identité personnalisée sur le client</span><span class="sxs-lookup"><span data-stu-id="88ea0-115">How to set a custom identity on the client.</span></span> <span data-ttu-id="88ea0-116">Une identité personnalisée est en général une personnalisation d'un type d'identité existant qui permet au client d'examiner d'autres informations de revendication fournies dans les informations d'identification du service afin de prendre des décisions d'autorisation avant d'appeler le service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-116">A custom identity is typically a customization of an existing type of identity that enables the client to examine other claim information provided in the service's credentials to make authorization decisions before calling the service.</span></span>  
   
     > [!NOTE]
-    >  Cet exemple vérifie l'identité d'un certificat spécifique appelé identity.com et la clé RSA contenue dans ce certificat.Lors de l'utilisation des types d'identité Certificat et RSA dans la configuration sur le client, l'une des méthodes utilisées pour obtenir facilement ces valeurs consiste à inspecter le WSDL du service dans lequel ces valeurs sont sérialisées.  
+    >  <span data-ttu-id="88ea0-117">Cet exemple vérifie l'identité d'un certificat spécifique appelé identity.com et la clé RSA contenue dans ce certificat.</span><span class="sxs-lookup"><span data-stu-id="88ea0-117">This sample checks the identity of a specific certificate called identity.com and the RSA key contained within this certificate.</span></span> <span data-ttu-id="88ea0-118">Lors de l'utilisation des types d'identité Certificat et RSA dans la configuration sur le client, l'une des méthodes utilisées pour obtenir facilement ces valeurs consiste à inspecter le WSDL du service dans lequel ces valeurs sont sérialisées.</span><span class="sxs-lookup"><span data-stu-id="88ea0-118">When using the Certificate and RSA identity types in configuration on the client, an easy way to get these values is to inspect the WSDL for the service where these values are serialized.</span></span>  
   
- L'exemple de code suivant montre comment configurer l'identité d'un point de terminaison de service avec le serveur DNS \(Domain Name Server\) d'un certificat à l'aide de WSHttpBinding.  
+ <span data-ttu-id="88ea0-119">L'exemple de code suivant montre comment configurer l'identité d'un point de terminaison de service avec le serveur DNS (Domain Name Server) d'un certificat à l'aide de WSHttpBinding.</span><span class="sxs-lookup"><span data-stu-id="88ea0-119">The following sample code shows how to configure the identity of a service endpoint with the Domain Name Server (DNS) of a certificate using a WSHttpBinding.</span></span>  
   
 ```  
 //Create a service endpoint and set its identity to the certificate's DNS                 
@@ -43,12 +46,11 @@ wsAnonbinding.Security.Message.ClientCredentialType = MessageCredentialType.None
 WServiceEndpoint ep = serviceHost.AddServiceEndpoint(typeof(ICalculator),wsAnonbinding, String.Empty);  
 EndpointAddress epa = new EndpointAddress(dnsrelativeAddress,EndpointIdentity.CreateDnsIdentity("identity.com"));  
 ep.Address = epa;  
-  
 ```  
   
- L'identité peut également être spécifiée dans la configuration dans le fichier App.config.L'exemple suivant montre comment définir l'identité UPN \(User Principal Name, nom d'utilisateur principal\) pour un point de terminaison de service.  
+ <span data-ttu-id="88ea0-120">L'identité peut également être spécifiée dans la configuration dans le fichier App.config.</span><span class="sxs-lookup"><span data-stu-id="88ea0-120">The identity can also be specified in configuration in the App.config file.</span></span> <span data-ttu-id="88ea0-121">L'exemple suivant montre comment définir l'identité UPN (User Principal Name, nom d'utilisateur principal) pour un point de terminaison de service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-121">The following example shows how to set the UPN (User Principal Name) identity for a service endpoint.</span></span>  
   
-```  
+```xml  
 <endpoint address="upnidentity"  
         behaviorConfiguration=""  
         binding="wsHttpBinding"  
@@ -60,13 +62,11 @@ ep.Address = epa;
       <userPrincipalName value="host\myservice.com" />  
   </identity >  
 </endpoint>  
-  
 ```  
   
- Une identité personnalisée peut être définie sur le client en dérivant des classes <xref:System.ServiceModel.EndpointIdentity> et <xref:System.ServiceModel.Security.IdentityVerifier>.D'un point de vue conceptuel, la classe <xref:System.ServiceModel.Security.IdentityVerifier> peut être considérée comme étant l'équivalent client de la classe `AuthorizationManager` du service.L'exemple de code suivant présente une implémentation de `OrgEndpointIdentity`, qui stocke un nom d'organisation à faire correspondre au nom du sujet du certificat du serveur.Le contrôle d'autorisation du nom d'organisation se produit dans la méthode `CheckAccess` sur la classe `CustomIdentityVerifier`.  
+ <span data-ttu-id="88ea0-122">Une identité personnalisée peut être définie sur le client en dérivant des classes <xref:System.ServiceModel.EndpointIdentity> et <xref:System.ServiceModel.Security.IdentityVerifier>.</span><span class="sxs-lookup"><span data-stu-id="88ea0-122">A custom identity can be set on the client by deriving from the <xref:System.ServiceModel.EndpointIdentity> and the <xref:System.ServiceModel.Security.IdentityVerifier> classes.</span></span> <span data-ttu-id="88ea0-123">D'un point de vue conceptuel, la classe <xref:System.ServiceModel.Security.IdentityVerifier> peut être considérée comme étant l'équivalent client de la classe `AuthorizationManager` du service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-123">Conceptually the <xref:System.ServiceModel.Security.IdentityVerifier> class can be considered to be the client equivalent of the service's `AuthorizationManager` class.</span></span> <span data-ttu-id="88ea0-124">L'exemple de code suivant présente une implémentation de `OrgEndpointIdentity`, qui stocke un nom d'organisation à faire correspondre au nom du sujet du certificat du serveur.</span><span class="sxs-lookup"><span data-stu-id="88ea0-124">The following code example shows an implementation of `OrgEndpointIdentity`, which stores an organization name to match in the subject name of the server's certificate.</span></span> <span data-ttu-id="88ea0-125">Le contrôle d'autorisation du nom d'organisation se produit dans la méthode `CheckAccess` sur la classe `CustomIdentityVerifier`.</span><span class="sxs-lookup"><span data-stu-id="88ea0-125">The authorization check for the organization name occurs in the `CheckAccess` method on the `CustomIdentityVerifier` class.</span></span>  
   
 ```  
-  
 // This custom EndpointIdentity stores an organization name   
 public class OrgEndpointIdentity : EndpointIdentity  
 {  
@@ -113,60 +113,60 @@ class CustomIdentityVerifier : IdentityVerifier
 }  
 ```  
   
- Cet exemple utilise un certificat appelé identity.com qui est situé dans le dossier de solution Identity correspondant à votre langue.  
+ <span data-ttu-id="88ea0-126">Cet exemple utilise un certificat appelé identity.com qui est situé dans le dossier de solution Identity correspondant à votre langue.</span><span class="sxs-lookup"><span data-stu-id="88ea0-126">This sample uses a certificate called identity.com which is in the language-specific Identity solution folder.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="88ea0-127">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="88ea0-127">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée dans la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="88ea0-128">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="88ea0-128">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="88ea0-129">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="88ea0-129">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  <span data-ttu-id="88ea0-130">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="88ea0-130">To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-### Pour exécuter l'exemple sur le même ordinateur  
+### <a name="to-run-the-sample-on-the-same-computer"></a><span data-ttu-id="88ea0-131">Pour exécuter l'exemple sur le même ordinateur</span><span class="sxs-lookup"><span data-stu-id="88ea0-131">To run the sample on the same computer</span></span>  
   
-1.  Sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] ou [!INCLUDE[wv](../../../../includes/wv-md.md)], importez le fichier de certificat Identity.pfx du dossier de solution Identity dans le magasin de certificats LocalMachine\/My \(Personal\) à l'aide de l'outil enfichable MMC.Ce fichier est protégé par mot de passe.Lors de l'importation, un mot de passe vous est demandé.Tapez `xyz` dans la zone de mot de passe.Pour plus d'informations, consultez la rubrique [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).Ceci fait, exécutez Setup.bat dans une invite de commandes de Visual Studio avec des privilèges élevés, qui copie ce certificat dans le magasin CurrentUser\/Trusted People pour une utilisation sur le client.  
+1.  <span data-ttu-id="88ea0-132">Sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] ou [!INCLUDE[wv](../../../../includes/wv-md.md)], importez le fichier de certificat Identity.pfx du dossier de solution Identity dans le magasin de certificats LocalMachine/My (Personal) à l'aide de l'outil enfichable MMC.</span><span class="sxs-lookup"><span data-stu-id="88ea0-132">On [!INCLUDE[wxp](../../../../includes/wxp-md.md)] or [!INCLUDE[wv](../../../../includes/wv-md.md)], import the Identity.pfx certificate file in the Identity solution folder into the LocalMachine/My (Personal) certificate store using the MMC snap-in tool.</span></span> <span data-ttu-id="88ea0-133">Ce fichier est protégé par mot de passe.</span><span class="sxs-lookup"><span data-stu-id="88ea0-133">This file is password protected.</span></span> <span data-ttu-id="88ea0-134">Lors de l'importation, un mot de passe vous est demandé.</span><span class="sxs-lookup"><span data-stu-id="88ea0-134">During the import you are asked for a password.</span></span> <span data-ttu-id="88ea0-135">Type `xyz` dans la zone de mot de passe.</span><span class="sxs-lookup"><span data-stu-id="88ea0-135">Type `xyz` into the password box.</span></span> <span data-ttu-id="88ea0-136">Pour plus d’informations, consultez la [Comment : afficher les certificats avec le composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md) rubrique.</span><span class="sxs-lookup"><span data-stu-id="88ea0-136">For more information, see the [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md) topic.</span></span> <span data-ttu-id="88ea0-137">Ceci fait, exécutez Setup.bat dans une invite de commandes de Visual Studio avec des privilèges élevés, qui copie ce certificat dans le magasin CurrentUser/Trusted People pour une utilisation sur le client.</span><span class="sxs-lookup"><span data-stu-id="88ea0-137">Once this is done, run Setup.bat in a Visual Studio command prompt with administrator privileges, which copies this certificate to the CurrentUser/Trusted People store for use on the client.</span></span>  
   
-2.  Sur [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], exécutez Setup.bat à partir du dossier d'installation de l'exemple dans une fenêtre d'invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec des privilèges d'administrateur.Tous les certificats requis pour l'exécution de l'exemple sont ainsi installés.  
-  
-    > [!NOTE]
-    >  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d'une invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].La variable d'environnement PATH définie dans l'invite de commandes [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.Assurez\-vous d'effacer les certificats en exécutant Cleanup.bat une fois l'exemple terminé.D'autres exemples de sécurité utilisent ces mêmes certificats.  
-  
-3.  Lancez Service.exe à partir du répertoire de \\service\\bin.Vérifiez que le service indique qu'il est prêt et affiche une invite avant d'appuyer sur \<Enter\> pour terminer le service.  
-  
-4.  Lancez Client.exe à partir du répertoire \\client\\bin ou en appuyant sur F5 dans Visual Studio pour effectuer la génération et l'exécution.L'activité du client s'affiche sur son application de console.  
-  
-5.  Si le client et le service ne parviennent pas à communiquer, consultez la rubrique [Troubleshooting Tips](http://msdn.microsoft.com/fr-fr/8787c877-5e96-42da-8214-fa737a38f10b).  
-  
-### Pour exécuter l'exemple sur plusieurs ordinateurs  
-  
-1.  Avant de générer la partie cliente de l'exemple, modifiez la valeur de l'adresse de point de terminaison du service du fichier Client.cs dans la méthode `CallServiceCustomClientIdentity`.Puis générez l'exemple.  
-  
-2.  Créez un répertoire sur l'ordinateur de service.  
-  
-3.  Copiez les fichiers programme du service de \\service\\bin dans le répertoire sur l'ordinateur de service.Copiez également les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.  
-  
-4.  Créez un répertoire sur l'ordinateur client pour les fichiers binaires du client.  
-  
-5.  Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client.Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
-  
-6.  Sur l'ordinateur de service, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez `setup.bat service`.L'exécution de `setup.bat` à l'aide de l'argument `service` crée un certificat de service portant le nom de domaine complet de l'ordinateur, puis exporte ce certificat vers un fichier nommé Service.cer.  
-  
-7.  Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
-  
-8.  Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.Plusieurs instances doivent être modifiées.  
-  
-9. Sur le client, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez ImportServiceCert.bat.Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser \- TrustedPeople.  
-  
-10. Sur l'ordinateur de service, lancez Service.exe à partir d'une invite de commandes.  
-  
-11. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes.Si le client et le service ne parviennent pas à communiquer, consultez la rubrique [Troubleshooting Tips](http://msdn.microsoft.com/fr-fr/8787c877-5e96-42da-8214-fa737a38f10b).  
-  
-### Pour procéder au nettoyage après exécution de l'exemple  
-  
--   Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.  
+2.  <span data-ttu-id="88ea0-138">Sur [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], exécutez Setup.bat à partir du dossier d'installation de l'exemple dans une fenêtre d'invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec des privilèges d'administrateur.</span><span class="sxs-lookup"><span data-stu-id="88ea0-138">On [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], run Setup.bat from the sample install folder inside a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] command prompt with administrator privileges.</span></span> <span data-ttu-id="88ea0-139">Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.</span><span class="sxs-lookup"><span data-stu-id="88ea0-139">This installs all the certificates required for running the sample.</span></span>  
   
     > [!NOTE]
-    >  Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs.Si vous avez exécuté des exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui utilisent des certificats sur plusieurs ordinateurs, assurez\-vous d'effacer les certificats de service installés dans le magasin CurrentUser \- TrustedPeople.Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+    >  <span data-ttu-id="88ea0-140">Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d'une invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="88ea0-140">The Setup.bat batch file is designed to be run from a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt.</span></span> <span data-ttu-id="88ea0-141">La variable d'environnement PATH définie dans l'invite de commandes [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.</span><span class="sxs-lookup"><span data-stu-id="88ea0-141">The PATH environment variable set within the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt points to the directory that contains executables required by the Setup.bat script.</span></span> <span data-ttu-id="88ea0-142">Assurez-vous d'effacer les certificats en exécutant Cleanup.bat une fois l'exemple terminé.</span><span class="sxs-lookup"><span data-stu-id="88ea0-142">Ensure that you remove the certificates by running Cleanup.bat when you have finished with the sample.</span></span> <span data-ttu-id="88ea0-143">D'autres exemples de sécurité utilisent ces mêmes certificats.</span><span class="sxs-lookup"><span data-stu-id="88ea0-143">Other security samples use the same certificates.</span></span>  
   
-## Voir aussi
+3.  <span data-ttu-id="88ea0-144">Lancez Service.exe à partir du répertoire de \service\bin.</span><span class="sxs-lookup"><span data-stu-id="88ea0-144">Launch Service.exe from the \service\bin directory.</span></span> <span data-ttu-id="88ea0-145">Vérifiez que le service indique qu’il est prêt et affiche une invite à appuyer sur \<entrée > pour terminer le service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-145">Ensure that the service indicates that it is ready and displays a prompt to Press \<Enter> to terminate the service.</span></span>  
+  
+4.  <span data-ttu-id="88ea0-146">Lancez Client.exe à partir du répertoire \client\bin ou en appuyant sur F5 dans Visual Studio pour effectuer la génération et l'exécution.</span><span class="sxs-lookup"><span data-stu-id="88ea0-146">Launch Client.exe from \client\bin directory or by pressing F5 in Visual Studio to build and run.</span></span> <span data-ttu-id="88ea0-147">L'activité du client s'affiche sur son application de console.</span><span class="sxs-lookup"><span data-stu-id="88ea0-147">Client activity is displayed on the client console application.</span></span>  
+  
+5.  <span data-ttu-id="88ea0-148">Si le client et le service ne parviennent pas à communiquer, consultez [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span><span class="sxs-lookup"><span data-stu-id="88ea0-148">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
+  
+### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="88ea0-149">Pour exécuter l'exemple sur plusieurs ordinateurs</span><span class="sxs-lookup"><span data-stu-id="88ea0-149">To run the sample across computers</span></span>  
+  
+1.  <span data-ttu-id="88ea0-150">Avant de générer la partie cliente de l'exemple, modifiez la valeur de l'adresse de point de terminaison du service du fichier Client.cs dans la méthode `CallServiceCustomClientIdentity`.</span><span class="sxs-lookup"><span data-stu-id="88ea0-150">Before building the client part of the sample, be sure to change the value for the service's endpoint address in the Client.cs file in the `CallServiceCustomClientIdentity` method.</span></span> <span data-ttu-id="88ea0-151">Puis générez l'exemple.</span><span class="sxs-lookup"><span data-stu-id="88ea0-151">Then build the sample.</span></span>  
+  
+2.  <span data-ttu-id="88ea0-152">Créez un répertoire sur l'ordinateur de service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-152">Create a directory on the service computer.</span></span>  
+  
+3.  <span data-ttu-id="88ea0-153">Copiez les fichiers programme du service de \service\bin dans le répertoire sur l'ordinateur de service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-153">Copy the service program files from service\bin to the directory on the service computer.</span></span> <span data-ttu-id="88ea0-154">Copiez également les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-154">Also copy the Setup.bat and Cleanup.bat files to the service computer.</span></span>  
+  
+4.  <span data-ttu-id="88ea0-155">Créez un répertoire sur l'ordinateur client pour les fichiers binaires du client.</span><span class="sxs-lookup"><span data-stu-id="88ea0-155">Create a directory on the client computer for the client binaries.</span></span>  
+  
+5.  <span data-ttu-id="88ea0-156">Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client.</span><span class="sxs-lookup"><span data-stu-id="88ea0-156">Copy the client program files to the client directory on the client computer.</span></span> <span data-ttu-id="88ea0-157">Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.</span><span class="sxs-lookup"><span data-stu-id="88ea0-157">Also copy the Setup.bat, Cleanup.bat, and ImportServiceCert.bat files to the client.</span></span>  
+  
+6.  <span data-ttu-id="88ea0-158">Sur l'ordinateur de service, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez `setup.bat service`.</span><span class="sxs-lookup"><span data-stu-id="88ea0-158">On the service, run `setup.bat service` in a Visual Studio command prompt opened with administrator privileges.</span></span> <span data-ttu-id="88ea0-159">En cours d’exécution `setup.bat` avec la `service` argument crée un certificat de service portant le nom de domaine complet de l’ordinateur et exporte le certificat de service dans un fichier nommé Service.cer.</span><span class="sxs-lookup"><span data-stu-id="88ea0-159">Running `setup.bat` with the `service` argument creates a service certificate with the fully-qualified domain name of the computer and exports the service certificate to a file named Service.cer.</span></span>  
+  
+7.  <span data-ttu-id="88ea0-160">Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.</span><span class="sxs-lookup"><span data-stu-id="88ea0-160">Copy the Service.cer file from the service directory to the client directory on the client computer.</span></span>  
+  
+8.  <span data-ttu-id="88ea0-161">Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.</span><span class="sxs-lookup"><span data-stu-id="88ea0-161">In the Client.exe.config file on the client computer, change the address value of the endpoint to match the new address of your service.</span></span> <span data-ttu-id="88ea0-162">Plusieurs instances doivent être modifiées.</span><span class="sxs-lookup"><span data-stu-id="88ea0-162">There are multiple instances that must be changed.</span></span>  
+  
+9. <span data-ttu-id="88ea0-163">Sur le client, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez ImportServiceCert.bat.</span><span class="sxs-lookup"><span data-stu-id="88ea0-163">On the client, run ImportServiceCert.bat in a Visual Studio command prompt opened with administrator privileges.</span></span> <span data-ttu-id="88ea0-164">Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.</span><span class="sxs-lookup"><span data-stu-id="88ea0-164">This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.</span></span>  
+  
+10. <span data-ttu-id="88ea0-165">Sur l'ordinateur de service, lancez Service.exe à partir d'une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="88ea0-165">On the service computer, launch the Service.exe from the command prompt.</span></span>  
+  
+11. <span data-ttu-id="88ea0-166">Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="88ea0-166">On the client computer, launch Client.exe from a command prompt.</span></span> <span data-ttu-id="88ea0-167">Si le client et le service ne parviennent pas à communiquer, consultez [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span><span class="sxs-lookup"><span data-stu-id="88ea0-167">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
+  
+### <a name="to-clean-up-after-the-sample"></a><span data-ttu-id="88ea0-168">Pour procéder au nettoyage après exécution de l'exemple</span><span class="sxs-lookup"><span data-stu-id="88ea0-168">To clean up after the sample</span></span>  
+  
+-   <span data-ttu-id="88ea0-169">Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.</span><span class="sxs-lookup"><span data-stu-id="88ea0-169">Run Cleanup.bat in the samples folder once you have finished running the sample.</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="88ea0-170">Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs.</span><span class="sxs-lookup"><span data-stu-id="88ea0-170">This script does not remove service certificates on a client when running this sample across computers.</span></span> <span data-ttu-id="88ea0-171">Si vous avez exécuté des exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui utilisent des certificats sur plusieurs ordinateurs, assurez-vous d'effacer les certificats de service installés dans le magasin CurrentUser - TrustedPeople.</span><span class="sxs-lookup"><span data-stu-id="88ea0-171">If you have run [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples that use certificates across computers, be sure to clear the service certificates that have been installed in the CurrentUser - TrustedPeople store.</span></span> <span data-ttu-id="88ea0-172">Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.</span><span class="sxs-lookup"><span data-stu-id="88ea0-172">To do this, use the following command: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` For example: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="88ea0-173">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="88ea0-173">See Also</span></span>

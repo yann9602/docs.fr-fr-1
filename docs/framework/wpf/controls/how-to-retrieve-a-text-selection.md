@@ -1,41 +1,47 @@
 ---
-title: "Comment&#160;: r&#233;cup&#233;rer une s&#233;lection de texte | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "récupérer du texte"
-  - "texte, récupérer"
-  - "TextBox (contrôle), récupérer du texte"
+title: "Comment : récupérer une sélection de texte"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- text [WPF], retrieving
+- TextBox control [WPF], retrieving text
+- retrieving text [WPF]
 ms.assetid: d5793172-1e11-4a39-9be0-73f336ed858d
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8d5e1c362c02d2d1d9e1840ea2a55df6875a80ad
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: r&#233;cup&#233;rer une s&#233;lection de texte
-Cet exemple montre une méthode pour utiliser la propriété <xref:System.Windows.Controls.TextBox.SelectedText%2A> pour récupérer du texte sélectionné par l'utilisateur dans un contrôle <xref:System.Windows.Controls.TextBox>.  
+# <a name="how-to-retrieve-a-text-selection"></a><span data-ttu-id="cfa98-102">Comment : récupérer une sélection de texte</span><span class="sxs-lookup"><span data-stu-id="cfa98-102">How to: Retrieve a Text Selection</span></span>
+<span data-ttu-id="cfa98-103">Cet exemple montre une manière d’utiliser la <xref:System.Windows.Controls.TextBox.SelectedText%2A> propriété à récupérer le texte que l’utilisateur a sélectionné dans une <xref:System.Windows.Controls.TextBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="cfa98-103">This example shows one way to use the <xref:System.Windows.Controls.TextBox.SelectedText%2A> property to retrieve text that the user has selected in a <xref:System.Windows.Controls.TextBox> control.</span></span>  
   
-## Exemple  
- L'exemple [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] suivant montre la définition d'un contrôle <xref:System.Windows.Controls.TextBox> qui contient du texte à sélectionner, et un contrôle <xref:System.Windows.Controls.Button> associé à une méthode <xref:System.Windows.Controls.Button.OnClick%2A> spécifiée.  
+## <a name="example"></a><span data-ttu-id="cfa98-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="cfa98-104">Example</span></span>  
+ <span data-ttu-id="cfa98-105">Les éléments suivants [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] exemple illustre la définition d’un <xref:System.Windows.Controls.TextBox> contrôle contenant du texte à sélectionner, et un <xref:System.Windows.Controls.Button> contrôle avec un <xref:System.Windows.Controls.Button.OnClick%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="cfa98-105">The following [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] example shows the definition of a <xref:System.Windows.Controls.TextBox> control that contains some text to select, and a <xref:System.Windows.Controls.Button> control with a specified <xref:System.Windows.Controls.Button.OnClick%2A> method.</span></span>  
   
- Dans cet exemple, un bouton avec un gestionnaire d'événements <xref:System.Windows.Controls.Primitives.ButtonBase.Click> associé est utilisé pour récupérer la sélection de texte.  Lorsque l'utilisateur clique sur le bouton, la méthode <xref:System.Windows.Controls.Button.OnClick%2A> copie le texte sélectionné de la zone de texte dans une chaîne.  Les cas particuliers dans lesquels la sélection de texte est récupérée \(en cliquant sur un bouton\), ainsi que l'action effectuée avec cette sélection \(copie de la sélection de texte dans une chaîne\), peuvent être facilement modifiés pour s'adapter à une grande variété de scénarios.  
+ <span data-ttu-id="cfa98-106">Dans cet exemple, un bouton avec associé à un <xref:System.Windows.Controls.Primitives.ButtonBase.Click> Gestionnaire d’événements est utilisé pour récupérer la sélection de texte.</span><span class="sxs-lookup"><span data-stu-id="cfa98-106">In this example, a button with an associated <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event handler is used to retrieve the text selection.</span></span> <span data-ttu-id="cfa98-107">Lorsque l’utilisateur clique sur le bouton, le <xref:System.Windows.Controls.Button.OnClick%2A> méthode copie le texte sélectionné dans la zone de texte dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="cfa98-107">When the user clicks the button, the <xref:System.Windows.Controls.Button.OnClick%2A> method copies any selected text in the textbox into a string.</span></span> <span data-ttu-id="cfa98-108">Circonstances particulières auxquelles la sélection de texte est récupérée (en cliquant sur un bouton), ainsi que l’action effectuée avec cette sélection (copie la sélection de texte en une chaîne), peut facilement être modifié pour prendre en charge un large éventail de scénarios.</span><span class="sxs-lookup"><span data-stu-id="cfa98-108">The particular circumstances by which the text selection is retrieved (clicking a button), as well as the action taken with that selection (copying the text selection to a string), can easily be modified to accommodate a wide variety of scenarios.</span></span>  
   
- [!code-xml[TextBox_MiscCode#_TextBoxSelectTextXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textboxselecttextxaml)]  
+ [!code-xaml[TextBox_MiscCode#_TextBoxSelectTextXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textboxselecttextxaml)]  
   
-## Exemple  
- L'exemple [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] suivant montre un gestionnaire d'événements <xref:System.Windows.Controls.Button.OnClick%2A> pour le bouton défini en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pour cet exemple.  
+## <a name="example"></a><span data-ttu-id="cfa98-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="cfa98-109">Example</span></span>  
+ <span data-ttu-id="cfa98-110">Les éléments suivants [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] exemple illustre une <xref:System.Windows.Controls.Button.OnClick%2A> Gestionnaire d’événements pour le bouton défini dans le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pour cet exemple.</span><span class="sxs-lookup"><span data-stu-id="cfa98-110">The following [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] example shows an <xref:System.Windows.Controls.Button.OnClick%2A> event handler for the button defined in the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] for this example.</span></span>  
   
  [!code-csharp[TextBox_MiscCode#_SelectText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_selecttext)]
  [!code-vb[TextBox_MiscCode#_SelectText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_selecttext)]  
   
-## Voir aussi  
- [Vue d'ensemble de TextBox](../../../../docs/framework/wpf/controls/textbox-overview.md)   
- [Vue d'ensemble de RichTextBox](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
+## <a name="see-also"></a><span data-ttu-id="cfa98-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cfa98-111">See Also</span></span>  
+ [<span data-ttu-id="cfa98-112">Vue d’ensemble de TextBox</span><span class="sxs-lookup"><span data-stu-id="cfa98-112">TextBox Overview</span></span>](../../../../docs/framework/wpf/controls/textbox-overview.md)  
+ [<span data-ttu-id="cfa98-113">Vue d’ensemble de RichTextBox</span><span class="sxs-lookup"><span data-stu-id="cfa98-113">RichTextBox Overview</span></span>](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

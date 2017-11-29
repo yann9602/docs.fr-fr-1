@@ -1,96 +1,98 @@
 ---
-title: "Comment&#160;: ajouter des am&#233;liorations aux ToolStripMenuItems | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "coches, ajouter aux menus"
-  - "commandes (Windows Forms), regrouper sur les menus"
-  - "images (Windows Forms), ajouter aux menus"
-  - "raccourcis clavier, afficher dans les menus"
-  - "éléments de menu, ajouter des coches"
-  - "éléments de menu, ajouter des images"
-  - "éléments de menu, afficher les touches d'accès"
-  - "éléments de menu, afficher les touches de raccourci"
-  - "éléments de menu, afficher les séparateurs"
-  - "menus, regrouper les commandes"
-  - "séparateurs, afficher dans les menus"
-  - "ToolStripMenuItems"
-  - "ToolStripMenuItems, ajouter des coches"
-  - "ToolStripMenuItems, ajouter des images"
-  - "ToolStripMenuItems, afficher les touches d'accès"
-  - "ToolStripMenuItems, afficher les touches de raccourci"
-  - "ToolStripMenuItems, afficher les barres de séparation"
-  - "ToolStripSeparators, afficher sur les MenuStrips"
+title: "Comment : ajouter des améliorations aux ToolStripMenuItems"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- commands [Windows Forms], grouping on menus
+- check marks [Windows Forms], adding to menus
+- ToolStripMenuItems [Windows Forms], displaying access keys
+- menus [Windows Forms], grouping commands
+- menu items [Windows Forms], displaying shortcut keys
+- ToolStripMenuItems
+- separators [Windows Forms], displaying on menus
+- menu items [Windows Forms], showing separators
+- menu items [Windows Forms], adding check marks
+- ToolStripMenuItems [Windows Forms], adding check marks
+- menu items [Windows Forms], adding images
+- ToolStripSeparators [Windows Forms], displaying on MenuStrips
+- menu items [Windows Forms], displaying access keys
+- ToolStripMenuItems [Windows Forms], displaying shortcut keys
+- ToolStripMenuItems [Windows Forms], adding images
+- keyboard shortcuts [Windows Forms], displaying on menus
+- images [Windows Forms], adding to menus
+- ToolStripMenuItems [Windows Forms], showing separator bars
 ms.assetid: aa5f19bb-b545-4378-bfa6-36ba592f0d7c
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2701094ffcbcf7eeb14444163b995816398876fe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ajouter des am&#233;liorations aux ToolStripMenuItems
-Vous pouvez améliorer la facilité d'utilisation des contrôles <xref:System.Windows.Forms.MenuStrip> et <xref:System.Windows.Forms.ContextMenuStrip> des façons suivantes :  
+# <a name="how-to-add-enhancements-to-toolstripmenuitems"></a><span data-ttu-id="fbbdb-102">Comment : ajouter des améliorations aux ToolStripMenuItems</span><span class="sxs-lookup"><span data-stu-id="fbbdb-102">How to: Add Enhancements to ToolStripMenuItems</span></span>
+<span data-ttu-id="fbbdb-103">Vous pouvez améliorer la facilité d’utilisation de <xref:System.Windows.Forms.MenuStrip> et <xref:System.Windows.Forms.ContextMenuStrip> contrôles comme suit :</span><span class="sxs-lookup"><span data-stu-id="fbbdb-103">You can enhance the usability of <xref:System.Windows.Forms.MenuStrip> and <xref:System.Windows.Forms.ContextMenuStrip> controls in the following ways:</span></span>  
   
--   Ajoutez des coches pour indiquer si une fonction est active ou non \(par exemple, si une règle est affichée le long de la marge d'une application de traitement de texte\) ou pour désigner le fichier d'une liste de fichiers qui se trouve affiché \(par exemple, dans le menu **Fenêtre**\).  
+-   <span data-ttu-id="fbbdb-104">Ajouter des coches pour désigner si une fonctionnalité est activée ou désactivée, telles que si une règle est affichée le long de la marge d’une application de traitement de texte, ou pour indiquer le fichier d’une liste de fichiers est affichée, par exemple, en tant que sur un **fenêtre** menu.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-104">Add check marks to designate whether a feature is turned on or off, such as whether a ruler is displayed along the margin of a word-processing application, or to indicate which file in a list of files is being displayed, such as on a **Window** menu.</span></span>  
   
--   Ajoutez les images qui visuellement représentent des commandes de menu.  
+-   <span data-ttu-id="fbbdb-105">Ajouter des images qui visuellement représentent des commandes de menu.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-105">Add images that visually represent menu commands.</span></span>  
   
--   Affichez des touches de raccourci pour fournir un clavier autre à la souris pour exécuter des commandes.  Par exemple, appuyez sur CTRL\+C exécute la commande **Copy**.  
+-   <span data-ttu-id="fbbdb-106">Afficher les touches de raccourci pour fournir un autre clavier à la souris pour exécuter des commandes.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-106">Display shortcut keys to provide a keyboard alternative to the mouse for performing commands.</span></span> <span data-ttu-id="fbbdb-107">Par exemple, l’en appuyant sur CTRL + C effectue la **copie** commande.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-107">For example, pressing CTRL+C performs the **Copy** command.</span></span>  
   
--   Affichez des touches d'accès rapide pour fournir un clavier autre à la souris pour la navigation de menu.  Par exemple, appuyez sur ALT\+F pour choisir le menu **Fichier**.  
+-   <span data-ttu-id="fbbdb-108">Afficher les clés d’accès pour fournir un autre clavier à la souris pour la navigation de menu.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-108">Display access keys to provide a keyboard alternative to the mouse for menu navigation.</span></span> <span data-ttu-id="fbbdb-109">Par exemple, en appuyant sur ALT + F pour choisir le **fichier** menu.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-109">For example, pressing ALT+F chooses the **File** menu.</span></span>  
   
--   Affichez des barres de séparation pour regrouper des commandes connexes et rendre des menus plus lisibles.  
+-   <span data-ttu-id="fbbdb-110">Afficher les barres de séparation pour regrouper les commandes associées et d’améliorer la lisibilité des menus.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-110">Show separator bars to group related commands and make menus more readable.</span></span>  
   
-### Pour afficher une coche sur une commande de menu  
+### <a name="to-display-a-check-mark-on-a-menu-command"></a><span data-ttu-id="fbbdb-111">Pour afficher une coche sur une commande de menu</span><span class="sxs-lookup"><span data-stu-id="fbbdb-111">To display a check mark on a menu command</span></span>  
   
--   affectez à sa propriété <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> la valeur `true`.  
+-   <span data-ttu-id="fbbdb-112">Définir son <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-112">Set its <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> property to `true`.</span></span>  
   
-     Affectez à la propriété <xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> la valeur `true`.  Utilisez cette procédure uniquement si vous souhaitez que la commande de menu apparaisse comme cochée par défaut, indépendamment de sa sélection ou non.  
+     <span data-ttu-id="fbbdb-113">Il définit également la <xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-113">This also sets the <xref:System.Windows.Forms.ToolStripMenuItem.CheckState%2A> property to `true`.</span></span> <span data-ttu-id="fbbdb-114">Utilisez cette procédure uniquement si vous souhaitez que la commande de menu apparaisse comme cochée par défaut, indépendamment de si elle est sélectionnée.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-114">Use this procedure only if you want the menu command to appear as checked by default, regardless of whether it is selected.</span></span>  
   
-### Pour afficher une coche qui modifie l'état à chaque clic  
+### <a name="to-display-a-check-mark-that-changes-state-with-each-click"></a><span data-ttu-id="fbbdb-115">Pour afficher une coche qui modifie l’état à chaque clic</span><span class="sxs-lookup"><span data-stu-id="fbbdb-115">To display a check mark that changes state with each click</span></span>  
   
--   Affectez à la propriété <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> du contrôle la valeur `true`.  
+-   <span data-ttu-id="fbbdb-116">Définir la commande de menu <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-116">Set the menu command's <xref:System.Windows.Forms.ToolStripMenuItem.CheckOnClick%2A> property to `true`.</span></span>  
   
-### Pour ajouter une image à une commande de menu  
+### <a name="to-add-an-image-to-a-menu-command"></a><span data-ttu-id="fbbdb-117">Pour ajouter une image à une commande de menu</span><span class="sxs-lookup"><span data-stu-id="fbbdb-117">To add an image to a menu command</span></span>  
   
--   Définissez la propriété <xref:System.Windows.Forms.ToolStripItem.Image%2A> de la commande de menu selon le nom de l'image.  Si la propriété <xref:System.Windows.Forms.ToolStripItemDisplayStyle> de cette commande de menu a la valeur <xref:System.Windows.Forms.ToolStripItemDisplayStyle> ou <xref:System.Windows.Forms.ToolStripItemDisplayStyle>, l'image ne peut pas être affichée.  
-  
-> [!NOTE]
->  La marge d'image peut également afficher une coche si vous le décidez.  Vous pouvez également attribuer à la propriété <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> de l'image la valeur `true`, et l'image apparaîtra avec une bordure hachurée au moment de l'exécution.  
-  
-### Pour afficher une touche de raccourci pour une commande de menu  
-  
--   Définissez la propriété <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> de la commande de menu selon la séquence de touches désirée, telle que CTRL\+O pour la commande de menu **Ouvrir** et attribuez à la propriété <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> la valeur `true`.  
-  
-### Pour afficher des touches de raccourci personnalisées pour une commande de menu  
-  
--   Définissez la propriété <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> de la commande de menu selon la séquence de touches désirée, telle que CTRL\+MAJ\+O plutôt que MAJ\+CTRL\+O, et attribuez à la propriété <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> la valeur `true`.  
-  
-### Pour afficher une touche d'accès rapide pour une commande de menu  
-  
--   Lorsque vous définissez la propriété <xref:System.Windows.Forms.ToolStripItem.Text%2A> pour la commande de menu, entrez une perluète \(&\) devant la lettre qui doit être soulignée comme touche d'accès rapide.  Par exemple, si vous tapez  `&Open`  comme propriété <xref:System.Windows.Forms.ToolStripItem.Text%2A> d'un élément de menu, il apparaîtra ainsi : **O**uvrir.  
-  
-     Pour naviguer jusqu'à cet élément de menu, appuyez sur ALT pour amener le focus sur le <xref:System.Windows.Forms.MenuStrip>, puis sur la touche d'accès rapide correspondant au nom du menu.  Lorsque le menu s'ouvre en affichant les éléments avec leurs touches d'accès rapide, il suffit d'appuyer sur l'une de ces touches pour sélectionner la commande de menu correspondant.  
+-   <span data-ttu-id="fbbdb-118">Définir la commande de menu <xref:System.Windows.Forms.ToolStripItem.Image%2A> nom à la propriété de l’image.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-118">Set the menu command's <xref:System.Windows.Forms.ToolStripItem.Image%2A> property to the name of the image.</span></span> <span data-ttu-id="fbbdb-119">Si le <xref:System.Windows.Forms.ToolStripItemDisplayStyle> de cette commande de menu est définie sur <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> ou <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None>, l’image ne peut pas être affichée.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-119">If the <xref:System.Windows.Forms.ToolStripItemDisplayStyle> property of this menu command is set to <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> or <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None>, the image cannot be displayed.</span></span>  
   
 > [!NOTE]
->  Évitez de définir des touches d'accès rapide en double, en définissant par exemple deux fois ALT\+F dans le même système de menus.  L'ordre de sélection des touches d'accès rapide en double ne peut pas être garanti.  
+>  <span data-ttu-id="fbbdb-120">La marge d’image peut également afficher une case à cocher si vous le souhaitez.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-120">The image margin can also show a check mark if you so choose.</span></span> <span data-ttu-id="fbbdb-121">En outre, vous pouvez définir le <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> propriété de l’image à `true`, et l’image s’affiche avec une bordure hachurée au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-121">Also, you can set the <xref:System.Windows.Forms.ToolStripMenuItem.Checked%2A> property of the image to `true`, and the image will appear with a hatched border around it at run time.</span></span>  
   
-### Pour afficher une barre de séparation entre des commandes de menu  
+### <a name="to-display-a-shortcut-key-for-a-menu-command"></a><span data-ttu-id="fbbdb-122">Pour afficher une touche de raccourci pour une commande de menu</span><span class="sxs-lookup"><span data-stu-id="fbbdb-122">To display a shortcut key for a menu command</span></span>  
   
--   Après avoir défini vos <xref:System.Windows.Forms.MenuStrip> et les éléments qui le composent, utilisez la méthode <xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> ou <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> pour ajouter les commandes de menu et les contrôles <xref:System.Windows.Forms.ToolStripSeparator> au <xref:System.Windows.Forms.MenuStrip> dans l'ordre que vous souhaitez.  
+-   <span data-ttu-id="fbbdb-123">Définir la commande de menu <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> propriété à la combinaison de touches souhaitée, tels que CTRL + O pour la **ouvrir** commande de menu et définissez la <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-123">Set the menu command's <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys%2A> property to the desired keyboard combination, such as CTRL+O for the **Open** menu command, and set the <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> property to `true`.</span></span>  
   
-     \[Visual Basic\]  
+### <a name="to-display-custom-shortcut-keys-for-a-menu-command"></a><span data-ttu-id="fbbdb-124">Pour afficher les touches de raccourci personnalisées pour une commande de menu</span><span class="sxs-lookup"><span data-stu-id="fbbdb-124">To display custom shortcut keys for a menu command</span></span>  
   
-    ```  
+-   <span data-ttu-id="fbbdb-125">Définir la commande de menu <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> propriété à la combinaison de touches souhaitée, tels que CTRL + MAJ + O plutôt que MAJ + CTRL + O et ensemble la <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-125">Set the menu command's <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeyDisplayString%2A> property to the desired keyboard combination, such as CTRL+SHIFT+O rather than SHIFT+CTRL+O, and set the <xref:System.Windows.Forms.ToolStripMenuItem.ShowShortcutKeys%2A> property to `true`.</span></span>  
+  
+### <a name="to-display-an-access-key-for-a-menu-command"></a><span data-ttu-id="fbbdb-126">Pour afficher une clé d’accès pour une commande de menu</span><span class="sxs-lookup"><span data-stu-id="fbbdb-126">To display an access key for a menu command</span></span>  
+  
+-   <span data-ttu-id="fbbdb-127">Lorsque vous définissez le <xref:System.Windows.Forms.ToolStripItem.Text%2A> propriété pour la commande de menu, entrez une esperluette (&) devant la lettre que vous souhaitez être soulignée comme touche d’accès rapide.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-127">When you set the <xref:System.Windows.Forms.ToolStripItem.Text%2A> property for the menu command, enter an ampersand (&) before the letter you want to be underlined as the access key.</span></span> <span data-ttu-id="fbbdb-128">Par exemple, si vous tapez `&Open` comme le <xref:System.Windows.Forms.ToolStripItem.Text%2A> génère dans une commande de menu qui s’affiche en tant que propriété d’un élément de menu **O**stylet.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-128">For example, typing `&Open` as the <xref:System.Windows.Forms.ToolStripItem.Text%2A> property of a menu item will result in a menu command that appears as **O**pen.</span></span>  
+  
+     <span data-ttu-id="fbbdb-129">Pour accéder à cette commande de menu, appuyez sur ALT pour donner le focus à la <xref:System.Windows.Forms.MenuStrip>, appuyez sur la touche d’accès du nom de menu.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-129">To navigate to this menu command, press ALT to give focus to the <xref:System.Windows.Forms.MenuStrip>, and press the access key of the menu name.</span></span> <span data-ttu-id="fbbdb-130">Lorsque le menu s’ouvre et affiche les éléments avec des clés d’accès, il vous suffit d’appuyer sur la touche d’accès rapide pour sélectionner la commande de menu.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-130">When the menu opens and shows items with access keys, you only need to press the access key to select the menu command.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="fbbdb-131">Évitez de définir des clés d’accès en double, tel que la définition ALT + F à deux reprises dans le même système de menus.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-131">Avoid defining duplicate access keys, such as defining ALT+F twice in the same menu system.</span></span> <span data-ttu-id="fbbdb-132">L’ordre de sélection des clés d’accès en double ne peut pas être garantie.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-132">The selection order of duplicate access keys cannot be guaranteed.</span></span>  
+  
+### <a name="to-display-a-separator-bar-between-menu-commands"></a><span data-ttu-id="fbbdb-133">Pour afficher une barre de séparation entre les commandes de menu</span><span class="sxs-lookup"><span data-stu-id="fbbdb-133">To display a separator bar between menu commands</span></span>  
+  
+-   <span data-ttu-id="fbbdb-134">Après avoir défini votre <xref:System.Windows.Forms.MenuStrip> et les éléments qu’il contient, utilisez la <xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> ou <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> méthode pour ajouter les commandes de menu et <xref:System.Windows.Forms.ToolStripSeparator> des contrôles à le <xref:System.Windows.Forms.MenuStrip> dans l’ordre souhaité.</span><span class="sxs-lookup"><span data-stu-id="fbbdb-134">After you define your <xref:System.Windows.Forms.MenuStrip> and the items it will contain, use the <xref:System.Windows.Forms.ToolStripItemCollection.AddRange%2A> or <xref:System.Windows.Forms.ToolStripItemCollection.Add%2A> method to add the menu commands and <xref:System.Windows.Forms.ToolStripSeparator> controls to the <xref:System.Windows.Forms.MenuStrip> in the order you want.</span></span>  
+  
+    ```vb  
     ' This code adds a top-level File menu to the MenuStrip.  
     Me.menuStrip1.Items.Add(New ToolStripMenuItem() _  
     {Me.fileToolStripMenuItem})  
@@ -102,12 +104,9 @@ Vous pouvez améliorer la facilité d'utilisation des contrôles <xref:System.Wi
     ToolStripMenuItem() {Me.newToolStripMenuItem, _  
     Me.openToolStripMenuItem, Me.toolStripSeparator1, _  
     Me.saveToolStripMenuItem, Me.exitToolStripMenuItem})  
-  
     ```  
   
-     \[C\#\]  
-  
-    ```  
+    ```csharp  
     // This code adds a top-level File menu to the MenuStrip.  
     this.menuStrip1.Items.Add(new ToolStripItem[]_  
     {this.fileToolStripMenuItem});  
@@ -124,7 +123,7 @@ Vous pouvez améliorer la facilité d'utilisation des contrôles <xref:System.Wi
     this.exitToolStripMenuItem});  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ToolStripMenuItem>   
- [Vue d'ensemble du contrôle MenuStrip](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="fbbdb-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fbbdb-135">See Also</span></span>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ToolStripMenuItem>  
+ [<span data-ttu-id="fbbdb-136">Vue d'ensemble du contrôle MenuStrip</span><span class="sxs-lookup"><span data-stu-id="fbbdb-136">MenuStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)

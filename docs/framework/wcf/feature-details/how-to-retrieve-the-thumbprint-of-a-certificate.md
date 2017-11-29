@@ -1,53 +1,55 @@
 ---
-title: "Comment&#160;: r&#233;cup&#233;rer l&#39;empreinte num&#233;rique d&#39;un certificat | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "certificats [WCF], récupération d'empreinte numérique"
+title: "Comment : récupérer l'empreinte numérique d'un certificat"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4719be3d4e98407062bd246df4f14b9cbf452c74
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: r&#233;cup&#233;rer l&#39;empreinte num&#233;rique d&#39;un certificat
-Lors de l'écriture d'une application [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui utilise un certificat X.509 pour l'authentification, il est souvent nécessaire de spécifier les revendications incluses dans le certificat. Par exemple, vous devez fournir une revendication d'empreinte numérique lors de l'utilisation de l'énumération <xref:System.Security.Cryptography.X509Certificates.X509FindType> dans la méthode <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>. La recherche de la valeur de revendication s'effectue en deux étapes. En premier lieu, ouvrez le composant logiciel enfichable MMC \(Microsoft Management Console\) pour les certificats. \(Consultez [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).\) Ensuite, comme décrit ici, recherchez un certificat approprié et copiez son empreinte numérique \(ou d'autres valeurs de revendication\).  
+# <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a><span data-ttu-id="ed178-102">Comment : récupérer l'empreinte numérique d'un certificat</span><span class="sxs-lookup"><span data-stu-id="ed178-102">How to: Retrieve the Thumbprint of a Certificate</span></span>
+<span data-ttu-id="ed178-103">Lors de l'écriture d'une application [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui utilise un certificat X.509 pour l'authentification, il est souvent nécessaire de spécifier les revendications incluses dans le certificat.</span><span class="sxs-lookup"><span data-stu-id="ed178-103">When writing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] application that uses an X.509 certificate for authentication, it is often necessary to specify claims found in the certificate.</span></span> <span data-ttu-id="ed178-104">Par exemple, vous devez fournir une revendication d'empreinte numérique lors de l'utilisation de l'énumération <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> dans la méthode <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> .</span><span class="sxs-lookup"><span data-stu-id="ed178-104">For example, you must supply a thumbprint claim when using the <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> enumeration in the <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> method.</span></span> <span data-ttu-id="ed178-105">La recherche de la valeur de revendication s'effectue en deux étapes.</span><span class="sxs-lookup"><span data-stu-id="ed178-105">Finding the claim value requires two steps.</span></span> <span data-ttu-id="ed178-106">En premier lieu, ouvrez le composant logiciel enfichable MMC (Microsoft Management Console) pour les certificats.</span><span class="sxs-lookup"><span data-stu-id="ed178-106">First, open the Microsoft Management Console (MMC) snap-in for certificates.</span></span> <span data-ttu-id="ed178-107">(Consultez [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).) Ensuite, comme décrit ici, recherchez un certificat approprié et copiez son empreinte numérique (ou d'autres valeurs de revendication).</span><span class="sxs-lookup"><span data-stu-id="ed178-107">(See [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).) Second, as described here, find an appropriate certificate and copy its thumbprint (or other claim values).</span></span>  
   
- Si vous utilisez un certificat pour l'authentification du service, il est important de noter la valeur de la colonne **Délivré à** \(la première colonne dans la console\). Lors de l'utilisation du protocole SSL \(Secure Sockets Layer\) comme sécurité de transport, l'un des premiers contrôles effectués consiste à comparer l'URI \(Uniform Resource Identifier\) d'adresse de base d'un service à la valeur **Délivré à**. Les valeurs doivent correspondre ou le processus d'authentification s'interrompt.  
+ <span data-ttu-id="ed178-108">Si vous utilisez un certificat pour l'authentification du service, il est important de noter la valeur de la colonne **Délivré à** (la première colonne dans la console).</span><span class="sxs-lookup"><span data-stu-id="ed178-108">If you are using a certificate for service authentication, it is important to note the value of the **Issued To** column (the first column in the console).</span></span> <span data-ttu-id="ed178-109">Lors de l'utilisation du protocole SSL (Secure Sockets Layer) comme sécurité de transport, l'un des premiers contrôles effectués consiste à comparer l'URI (Uniform Resource Identifier) d'adresse de base d'un service à la valeur **Délivré à** .</span><span class="sxs-lookup"><span data-stu-id="ed178-109">When using Secure Sockets Layer (SSL) as a transport security, one of the first checks done is to compare the base address Uniform Resource Identifier (URI) of a service to the **Issued To** value.</span></span> <span data-ttu-id="ed178-110">Les valeurs doivent correspondre ou le processus d'authentification s'interrompt.</span><span class="sxs-lookup"><span data-stu-id="ed178-110">The values must match or the authentication process is halted.</span></span>  
   
- Vous pouvez également vous servir de l'outil Makecert.exe dans le Kit de développement logiciel \(SDK\) [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour créer des certificats temporaires à utiliser uniquement lors du développement. Toutefois, par défaut, ce type de certificat n'est pas délivré par une autorité de certification, il est donc inutilisable à des fins de production.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Comment : créer des certificats temporaires à utiliser au cours du développement](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md).  
+ <span data-ttu-id="ed178-111">Vous pouvez également vous servir de l'outil Makecert.exe dans le Kit de développement logiciel (SDK) [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour créer des certificats temporaires à utiliser uniquement lors du développement.</span><span class="sxs-lookup"><span data-stu-id="ed178-111">You can also use the Makecert.exe tool from the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK to create temporary certificates for use only during development.</span></span> <span data-ttu-id="ed178-112">Toutefois, par défaut, ce type de certificat n'est pas délivré par une autorité de certification, il est donc inutilisable à des fins de production.</span><span class="sxs-lookup"><span data-stu-id="ed178-112">By default, however, such a certificate is not issued by a certification authority, and is unusable for production purposes.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="ed178-113">[Comment : créer des certificats temporaires à utiliser pendant le développement](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md).</span><span class="sxs-lookup"><span data-stu-id="ed178-113"> [How to: Create Temporary Certificates for Use During Development](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md).</span></span>  
   
-### Pour récupérer l'empreinte numérique d'un certificat  
+### <a name="to-retrieve-a-certificates-thumbprint"></a><span data-ttu-id="ed178-114">Pour récupérer l'empreinte numérique d'un certificat</span><span class="sxs-lookup"><span data-stu-id="ed178-114">To retrieve a certificate's thumbprint</span></span>  
   
-1.  Ouvrez le composant logiciel enfichable MMC \(Microsoft Management Console\) pour les certificats. \(Consultez [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).\)  
+1.  <span data-ttu-id="ed178-115">Ouvrez le composant logiciel enfichable MMC (Microsoft Management Console) pour les certificats.</span><span class="sxs-lookup"><span data-stu-id="ed178-115">Open the Microsoft Management Console (MMC) snap-in for certificates.</span></span> <span data-ttu-id="ed178-116">(Consultez [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).)</span><span class="sxs-lookup"><span data-stu-id="ed178-116">(See [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).)</span></span>  
   
-2.  Dans le volet gauche de la fenêtre **Racine de la console**, cliquez sur **Certificats \(ordinateur local\)**.  
+2.  <span data-ttu-id="ed178-117">Dans le volet gauche de la fenêtre **Racine de la console** , cliquez sur **Certificats (ordinateur local)**.</span><span class="sxs-lookup"><span data-stu-id="ed178-117">In the **Console Root** window's left pane, click **Certificates (Local Computer)**.</span></span>  
   
-3.  Cliquez sur le dossier **Personnel** pour le développer.  
+3.  <span data-ttu-id="ed178-118">Cliquez sur le dossier **Personnel** pour le développer.</span><span class="sxs-lookup"><span data-stu-id="ed178-118">Click the **Personal** folder to expand it.</span></span>  
   
-4.  Cliquez sur le dossier **Certificats** pour le développer.  
+4.  <span data-ttu-id="ed178-119">Cliquez sur le dossier **Certificats** pour le développer.</span><span class="sxs-lookup"><span data-stu-id="ed178-119">Click the **Certificates** folder to expand it.</span></span>  
   
-5.  Dans la liste de certificats, notez le titre **Rôles prévus**. Recherchez un certificat qui répertorie **Authentification du client** comme rôle prévu.  
+5.  <span data-ttu-id="ed178-120">Dans la liste de certificats, notez le titre **Rôles prévus** .</span><span class="sxs-lookup"><span data-stu-id="ed178-120">In the list of certificates, note the **Intended Purposes** heading.</span></span> <span data-ttu-id="ed178-121">Recherchez un certificat qui répertorie **Authentification du client** comme rôle prévu.</span><span class="sxs-lookup"><span data-stu-id="ed178-121">Find a certificate that lists **Client Authentication** as an intended purpose.</span></span>  
   
-6.  Double\-cliquez sur le certificat.  
+6.  <span data-ttu-id="ed178-122">Double-cliquez sur le certificat.</span><span class="sxs-lookup"><span data-stu-id="ed178-122">Double-click the certificate.</span></span>  
   
-7.  Dans la boîte de dialogue **Certificat**, cliquez sur l'onglet **Détails**.  
+7.  <span data-ttu-id="ed178-123">Dans la boîte de dialogue **Certificat** , cliquez sur l'onglet **Détails** .</span><span class="sxs-lookup"><span data-stu-id="ed178-123">In the **Certificate** dialog box, click the **Details** tab.</span></span>  
   
-8.  Faites défiler la liste de champs et cliquez sur **Empreinte numérique**.  
+8.  <span data-ttu-id="ed178-124">Faites défiler la liste de champs et cliquez sur **Empreinte numérique**.</span><span class="sxs-lookup"><span data-stu-id="ed178-124">Scroll through the list of fields and click **Thumbprint**.</span></span>  
   
-9. Copiez les caractères hexadécimaux de la zone. Si cette empreinte numérique est utilisée dans le code pour `X509FindType`, supprimez les espaces entre les nombres hexadécimaux. Par exemple, l'empreinte numérique "a9 09 50 2d d8 2a e4 14 33 e6 f8 38 86 b0 0d 42 77 a3 2a 7b" doit être spécifiée sous la forme "a909502dd82ae41433e6f83886b00d4277a32a7b" dans le code.  
+9. <span data-ttu-id="ed178-125">Copiez les caractères hexadécimaux de la zone.</span><span class="sxs-lookup"><span data-stu-id="ed178-125">Copy the hexadecimal characters from the box.</span></span> <span data-ttu-id="ed178-126">Si cette empreinte numérique est utilisée dans le code pour `X509FindType`, supprimez les espaces entre les nombres hexadécimaux.</span><span class="sxs-lookup"><span data-stu-id="ed178-126">If this thumbprint is used in code for the `X509FindType`, remove the spaces between the hexadecimal numbers.</span></span> <span data-ttu-id="ed178-127">Par exemple, l'empreinte numérique "a9 09 50 2d d8 2a e4 14 33 e6 f8 38 86 b0 0d 42 77 a3 2a 7b" doit être spécifiée sous la forme "a909502dd82ae41433e6f83886b00d4277a32a7b" dans le code.</span><span class="sxs-lookup"><span data-stu-id="ed178-127">For example, the thumbprint "a9 09 50 2d d8 2a e4 14 33 e6 f8 38 86 b0 0d 42 77 a3 2a 7b" should be specified as "a909502dd82ae41433e6f83886b00d4277a32a7b" in code.</span></span>  
   
-## Voir aussi  
- <xref:System.Security.Cryptography.X509Certificates.X509FindType>   
- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>   
- [Comment : configurer un port avec un certificat SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)   
- [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)   
- [Comment : créer des certificats temporaires à utiliser au cours du développement](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
+## <a name="see-also"></a><span data-ttu-id="ed178-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ed178-128">See Also</span></span>  
+ <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>  
+ <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>  
+ [<span data-ttu-id="ed178-129">Comment : configurer un Port avec un certificat SSL</span><span class="sxs-lookup"><span data-stu-id="ed178-129">How to: Configure a Port with an SSL Certificate</span></span>](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [<span data-ttu-id="ed178-130">Comment : afficher des certificats avec le composant logiciel enfichable MMC</span><span class="sxs-lookup"><span data-stu-id="ed178-130">How to: View Certificates with the MMC Snap-in</span></span>](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)  
+ [<span data-ttu-id="ed178-131">Comment : créer des certificats temporaires à utiliser pendant le développement</span><span class="sxs-lookup"><span data-stu-id="ed178-131">How to: Create Temporary Certificates for Use During Development</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)

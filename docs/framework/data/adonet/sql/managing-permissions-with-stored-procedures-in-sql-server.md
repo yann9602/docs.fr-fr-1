@@ -1,74 +1,77 @@
 ---
-title: "Gestion des autorisations &#224; l&#39;aide des proc&#233;dures stock&#233;es dans SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Gestion des autorisations avec les procédures stockées dans SQL Server"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 806cd23060dde3f7b466df0d4ce39162353380e6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Gestion des autorisations &#224; l&#39;aide des proc&#233;dures stock&#233;es dans SQL Server
-Une méthode pour créer plusieurs lignes de défense autour de votre base de données consiste à implémenter tous les accès aux données à l'aide de procédures stockées ou de fonctions définies par l'utilisateur.  Vous révoquez ou refusez toutes les autorisations sur les objets sous\-jacents, tels que les tables, et accordez les autorisations EXECUTE sur les procédures stockées  De cette manière, vous créez un périmètre de sécurité autour vos objets de données et de base de données.  
+# <a name="managing-permissions-with-stored-procedures-in-sql-server"></a><span data-ttu-id="cccb3-102">Gestion des autorisations avec les procédures stockées dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="cccb3-102">Managing Permissions with Stored Procedures in SQL Server</span></span>
+<span data-ttu-id="cccb3-103">Une méthode pour créer plusieurs lignes de défense autour de votre base de données consiste à implémenter tous les accès aux données à l'aide de procédures stockées ou de fonctions définies par l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="cccb3-103">One method of creating multiple lines of defense around your database is to implement all data access using stored procedures or user-defined functions.</span></span> <span data-ttu-id="cccb3-104">Vous révoquez ou refusez toutes les autorisations sur les objets sous-jacents, tels que les tables, et accordez les autorisations EXECUTE sur les procédures stockées</span><span class="sxs-lookup"><span data-stu-id="cccb3-104">You revoke or deny all permissions to underlying objects, such as tables, and grant EXECUTE permissions on stored procedures.</span></span> <span data-ttu-id="cccb3-105">De cette manière, vous créez un périmètre de sécurité autour vos objets de données et de base de données.</span><span class="sxs-lookup"><span data-stu-id="cccb3-105">This effectively creates a security perimeter around your data and database objects.</span></span>  
   
-## Avantages des procédures stockées  
- Les procédures stockées ont les avantages suivants :  
+## <a name="stored-procedure-benefits"></a><span data-ttu-id="cccb3-106">Avantages des procédures stockées</span><span class="sxs-lookup"><span data-stu-id="cccb3-106">Stored Procedure Benefits</span></span>  
+ <span data-ttu-id="cccb3-107">Les procédures stockées ont les avantages suivants :</span><span class="sxs-lookup"><span data-stu-id="cccb3-107">Stored procedures have the following benefits:</span></span>  
   
--   Les règles d'entreprise et la logique des données peuvent être encapsulées de telle sorte que les utilisateurs ont accès aux données et aux objets uniquement selon les méthodes définies par les développeurs et les administrateurs de bases de données.  
+-   <span data-ttu-id="cccb3-108">Les règles d'entreprise et la logique des données peuvent être encapsulées de telle sorte que les utilisateurs ont accès aux données et aux objets uniquement selon les méthodes définies par les développeurs et les administrateurs de bases de données. </span><span class="sxs-lookup"><span data-stu-id="cccb3-108">Data logic and business rules can be encapsulated so that users can access data and objects only in ways that developers and database administrators intend.</span></span>  
   
--   Des procédures stockées paramétrées et chargées de valider toutes les entrées d'utilisateur peuvent servir à contrer les attaques par injection SQL.  Si vous utilisez du code SQL dynamique, veillez à paramétrer vos commandes et n'incluez jamais de valeurs de paramètre directement dans une chaîne de requête.  
+-   <span data-ttu-id="cccb3-109">Des procédures stockées paramétrées et chargées de valider toutes les entrées d'utilisateur peuvent servir à contrer les attaques par injection SQL.</span><span class="sxs-lookup"><span data-stu-id="cccb3-109">Parameterized stored procedures that validate all user input can be used to thwart SQL injection attacks.</span></span> <span data-ttu-id="cccb3-110">Si vous utilisez du code SQL dynamique, veillez à paramétrer vos commandes et n'incluez jamais de valeurs de paramètre directement dans une chaîne de requête.</span><span class="sxs-lookup"><span data-stu-id="cccb3-110">If you use dynamic SQL, be sure to parameterize your commands, and never include parameter values directly into a query string.</span></span>  
   
--   Les modifications des requêtes et des données ad hoc peuvent être interdites.  Ainsi, les utilisateurs ne peuvent pas, par inadvertance ou par malveillance, détruire des données ou exécuter des requêtes qui nuisent aux performances sur le serveur ou le réseau.  
+-   <span data-ttu-id="cccb3-111">Les modifications des requêtes et des données ad hoc peuvent être interdites.</span><span class="sxs-lookup"><span data-stu-id="cccb3-111">Ad hoc queries and data modifications can be disallowed.</span></span> <span data-ttu-id="cccb3-112">Ainsi, les utilisateurs ne peuvent pas, par inadvertance ou par malveillance, détruire des données ou exécuter des requêtes qui nuisent aux performances sur le serveur ou le réseau.</span><span class="sxs-lookup"><span data-stu-id="cccb3-112">This prevents users from maliciously or inadvertently destroying data or executing queries that impair performance on the server or the network.</span></span>  
   
--   Les erreurs peuvent être traitées dans le code de procédure sans passer directement dans les applications clientes.  Cela empêche le retour de messages d'erreur, ce qui peut contribuer à une attaque de détection.  Enregistrez les erreurs et traitez\-les sur le serveur.  
+-   <span data-ttu-id="cccb3-113">Les erreurs peuvent être traitées dans le code de procédure sans passer directement dans les applications clientes.</span><span class="sxs-lookup"><span data-stu-id="cccb3-113">Errors can be handled in procedure code without being passed directly to client applications.</span></span> <span data-ttu-id="cccb3-114">Cela empêche le retour de messages d'erreur, ce qui peut contribuer à une attaque de détection.</span><span class="sxs-lookup"><span data-stu-id="cccb3-114">This prevents error messages from being returned that could aid in a probing attack.</span></span> <span data-ttu-id="cccb3-115">Enregistrez les erreurs et traitez-les sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="cccb3-115">Log errors and handle them on the server.</span></span>  
   
--   Les procédures stockées peuvent être écrites une seule fois et sont accessibles par de nombreuses applications.  
+-   <span data-ttu-id="cccb3-116">Les procédures stockées peuvent être écrites une seule fois et sont accessibles par de nombreuses applications.</span><span class="sxs-lookup"><span data-stu-id="cccb3-116">Stored procedures can be written once, and accessed by many applications.</span></span>  
   
--   Les applications clientes n'ont pas besoin de recevoir des informations sur les structures de données sous\-jacentes.  Le code des procédures stockées peut être modifié sans nécessiter des changements dans les applications clientes à condition que ces changements ne concernent pas les listes de paramètres ou les types de données retournés.  
+-   <span data-ttu-id="cccb3-117">Les applications clientes n'ont pas besoin de recevoir des informations sur les structures de données sous-jacentes.</span><span class="sxs-lookup"><span data-stu-id="cccb3-117">Client applications do not need to know anything about the underlying data structures.</span></span> <span data-ttu-id="cccb3-118">Le code des procédures stockées peut être modifié sans nécessiter des changements dans les applications clientes à condition que ces changements ne concernent pas les listes de paramètres ou les types de données retournés.</span><span class="sxs-lookup"><span data-stu-id="cccb3-118">Stored procedure code can be changed without requiring changes in client applications as long as the changes do not affect parameter lists or returned data types.</span></span>  
   
--   Les procédures stockées peuvent réduire le trafic réseau en associant plusieurs opérations dans un appel de procédure.  
+-   <span data-ttu-id="cccb3-119">Les procédures stockées peuvent réduire le trafic réseau en associant plusieurs opérations dans un appel de procédure.</span><span class="sxs-lookup"><span data-stu-id="cccb3-119">Stored procedures can reduce network traffic by combining multiple operations into one procedure call.</span></span>  
   
-## Exécution des procédures stockées  
- Les procédures stockées tirent parti du chaînage des propriétés permettant de fournir l'accès aux données pour ne pas que les utilisateurs aient l'autorisation explicite d'accéder aux objets de base de données.  Une chaîne de propriétés existe lorsque les objets qui sont accessibles les uns aux autres de manière séquentielle sont détenus par le même utilisateur.  Par exemple, une procédure stockée peut appeler d'autres procédures stockées, ou une procédure stockée peut accéder à plusieurs tables.  Si tous les objets dans la chaîne d'exécution ont le même propriétaire, SQL Server se contente de vérifier l'autorisation EXECUTE pour l'appelant, et non les autorisations de l'appelant sur d'autres objets.  Par conséquent, il vous suffit d'accorder les autorisations EXECUTE sur les procédures stockées ; vous pouvez révoquer ou refuser toutes les autorisations sur les tables sous\-jacentes.  
+## <a name="stored-procedure-execution"></a><span data-ttu-id="cccb3-120">Exécution des procédures stockées</span><span class="sxs-lookup"><span data-stu-id="cccb3-120">Stored Procedure Execution</span></span>  
+ <span data-ttu-id="cccb3-121">Les procédures stockées tirent parti du chaînage des propriétés permettant de fournir l'accès aux données pour ne pas que les utilisateurs aient l'autorisation explicite d'accéder aux objets de base de données.</span><span class="sxs-lookup"><span data-stu-id="cccb3-121">Stored procedures take advantage of ownership chaining to provide access to data so that users do not need to have explicit permission to access database objects.</span></span> <span data-ttu-id="cccb3-122">Une chaîne de propriétés existe lorsque les objets qui sont accessibles les uns aux autres de manière séquentielle sont détenus par le même utilisateur.</span><span class="sxs-lookup"><span data-stu-id="cccb3-122">An ownership chain exists when objects that access each other sequentially are owned by the same user.</span></span> <span data-ttu-id="cccb3-123">Par exemple, une procédure stockée peut appeler d'autres procédures stockées, ou une procédure stockée peut accéder à plusieurs tables.</span><span class="sxs-lookup"><span data-stu-id="cccb3-123">For example, a stored procedure can call other stored procedures, or a stored procedure can access multiple tables.</span></span> <span data-ttu-id="cccb3-124">Si tous les objets dans la chaîne d'exécution ont le même propriétaire, SQL Server se contente de vérifier l'autorisation EXECUTE pour l'appelant, et non les autorisations de l'appelant sur d'autres objets.</span><span class="sxs-lookup"><span data-stu-id="cccb3-124">If all objects in the chain of execution have the same owner, then SQL Server only checks the EXECUTE permission for the caller, not the caller's permissions on other objects.</span></span> <span data-ttu-id="cccb3-125">Par conséquent, il vous suffit d'accorder les autorisations EXECUTE sur les procédures stockées ; vous pouvez révoquer ou refuser toutes les autorisations sur les tables sous-jacentes. </span><span class="sxs-lookup"><span data-stu-id="cccb3-125">Therefore you need to grant only EXECUTE permissions on stored procedures; you can revoke or deny all permissions on the underlying tables.</span></span>  
   
-## Meilleures pratiques  
- La simple écriture de procédures stockées ne suffit pas à sécuriser votre application de façon adéquate.  Vous devez également envisager les défaillances de sécurité potentielles suivantes.  
+## <a name="best-practices"></a><span data-ttu-id="cccb3-126">Meilleures pratiques</span><span class="sxs-lookup"><span data-stu-id="cccb3-126">Best Practices</span></span>  
+ <span data-ttu-id="cccb3-127">La simple écriture de procédures stockées ne suffit pas à sécuriser votre application de façon adéquate.</span><span class="sxs-lookup"><span data-stu-id="cccb3-127">Simply writing stored procedures isn't enough to adequately secure your application.</span></span> <span data-ttu-id="cccb3-128">Vous devez également envisager les défaillances de sécurité potentielles suivantes.</span><span class="sxs-lookup"><span data-stu-id="cccb3-128">You should also consider the following potential security holes.</span></span>  
   
--   Accordez les autorisations EXECUTE sur les procédures stockées pour les rôles de base de données que vous souhaitez faire accéder aux données.  
+-   <span data-ttu-id="cccb3-129">Accordez les autorisations EXECUTE sur les procédures stockées pour les rôles de base de données que vous souhaitez faire accéder aux données.</span><span class="sxs-lookup"><span data-stu-id="cccb3-129">Grant EXECUTE permissions on the stored procedures for database roles you want to be able to access the data.</span></span>  
   
--   Révoquez ou refusez toutes les autorisations sur les tables sous\-jacentes pour tous les rôles et les utilisateurs de la base de données, y compris le rôle `public`.  Tous les utilisateurs héritent des autorisations de public.  Par conséquent, le refus des autorisations à `public` signifient que seuls les membres et les propriétaires `sysadmin` ont un accès ; tous les autres utilisateurs ne pourront pas hériter des autorisations issues des appartenances d'autres rôles.  
+-   <span data-ttu-id="cccb3-130">Révoquez ou refusez toutes les autorisations sur les tables sous-jacentes pour tous les rôles et les utilisateurs de la base de données, y compris le rôle `public`.</span><span class="sxs-lookup"><span data-stu-id="cccb3-130">Revoke or deny all permissions to the underlying tables for all roles and users in the database, including the `public` role.</span></span> <span data-ttu-id="cccb3-131">Tous les utilisateurs héritent des autorisations de public.</span><span class="sxs-lookup"><span data-stu-id="cccb3-131">All users inherit permissions from public.</span></span> <span data-ttu-id="cccb3-132">Par conséquent, le refus des autorisations à `public` signifient que seuls les membres et les propriétaires `sysadmin` ont un accès ; tous les autres utilisateurs ne pourront pas hériter des autorisations issues des appartenances d'autres rôles.</span><span class="sxs-lookup"><span data-stu-id="cccb3-132">Therefore denying permissions to `public` means that only owners and `sysadmin` members have access; all other users will be unable to inherit permissions from membership in other roles.</span></span>  
   
--   N'ajoutez pas d'utilisateurs ou de rôles aux rôles `sysadmin` ou `db_owner`.  Les administrateurs système et les propriétaires de bases de données peuvent accéder à tous les objets de base de données.  
+-   <span data-ttu-id="cccb3-133">N'ajoutez pas d'utilisateurs ou de rôles aux rôles `sysadmin` ou `db_owner`.</span><span class="sxs-lookup"><span data-stu-id="cccb3-133">Do not add users or roles to the `sysadmin` or `db_owner` roles.</span></span> <span data-ttu-id="cccb3-134">Les administrateurs système et les propriétaires de bases de données peuvent accéder à tous les objets de base de données.</span><span class="sxs-lookup"><span data-stu-id="cccb3-134">System administrators and database owners can access all database objects.</span></span>  
   
--   Désactivez le compte `guest`.  Cela empêche les utilisateurs anonymes de se connecter à la base de données.  Le compte invité est désactivé par défaut dans les nouvelles bases de données.  
+-   <span data-ttu-id="cccb3-135">Désactivez le compte `guest`.</span><span class="sxs-lookup"><span data-stu-id="cccb3-135">Disable the `guest` account.</span></span> <span data-ttu-id="cccb3-136">Cela empêche les utilisateurs anonymes de se connecter à la base de données.</span><span class="sxs-lookup"><span data-stu-id="cccb3-136">This will prevent anonymous users from connecting to the database.</span></span> <span data-ttu-id="cccb3-137">Le compte invité est désactivé par défaut dans les nouvelles bases de données.</span><span class="sxs-lookup"><span data-stu-id="cccb3-137">The guest account is disabled by default in new databases.</span></span>  
   
--   Implémentez la gestion des erreurs et enregistrez les erreurs.  
+-   <span data-ttu-id="cccb3-138">Implémentez la gestion des erreurs et enregistrez les erreurs.</span><span class="sxs-lookup"><span data-stu-id="cccb3-138">Implement error handling and log errors.</span></span>  
   
--   Créez des procédures stockées paramétrées qui valident toutes les entrées d'utilisateur.  Traitez toutes les entrées d'utilisateur comme non approuvées.  
+-   <span data-ttu-id="cccb3-139">Créez des procédures stockées paramétrées qui valident toutes les entrées d'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="cccb3-139">Create parameterized stored procedures that validate all user input.</span></span> <span data-ttu-id="cccb3-140">Traitez toutes les entrées d'utilisateur comme non approuvées.</span><span class="sxs-lookup"><span data-stu-id="cccb3-140">Treat all user input as untrusted.</span></span>  
   
--   Évitez d'utiliser le code SQL dynamique, sauf si cela est absolument nécessaire.  Utilisez la fonction Transact\-SQL QUOTENAME\(\) pour délimiter une valeur de chaîne et échapper à toute occurrence du délimiteur dans la chaîne d'entrée.  
+-   <span data-ttu-id="cccb3-141">Évitez d'utiliser le code SQL dynamique, sauf si cela est absolument nécessaire.</span><span class="sxs-lookup"><span data-stu-id="cccb3-141">Avoid dynamic SQL unless absolutely necessary.</span></span> <span data-ttu-id="cccb3-142">Utilisez la fonction Transact-SQL QUOTENAME() pour délimiter une valeur de chaîne et échapper à toute occurrence du délimiteur dans la chaîne d'entrée.</span><span class="sxs-lookup"><span data-stu-id="cccb3-142">Use the Transact-SQL QUOTENAME() function to delimit a string value and escape any occurrence of the delimiter in the input string.</span></span>  
   
-## Ressources externes  
- Pour plus d'informations, voir les ressources ci\-dessous.  
+## <a name="external-resources"></a><span data-ttu-id="cccb3-143">Ressources externes</span><span class="sxs-lookup"><span data-stu-id="cccb3-143">External Resources</span></span>  
+ <span data-ttu-id="cccb3-144">Pour plus d'informations, voir les ressources ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="cccb3-144">For more information, see the following resources.</span></span>  
   
-|Ressource|Description|  
-|---------------|-----------------|  
-|[Procédures stockées](http://msdn.microsoft.com/library/ms190782.aspx) et [Injection SQL](http://go.microsoft.com/fwlink/?LinkId=98234) dans la documentation en ligne de SQL Server|Ces rubriques expliquent comment créer des procédures stockées et comment fonctionne l'injection SQL.|  
+|<span data-ttu-id="cccb3-145">Ressource</span><span class="sxs-lookup"><span data-stu-id="cccb3-145">Resource</span></span>|<span data-ttu-id="cccb3-146">Description</span><span class="sxs-lookup"><span data-stu-id="cccb3-146">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="cccb3-147">[Procédures stockées](http://msdn.microsoft.com/library/ms190782.aspx) et [Injection SQL](http://go.microsoft.com/fwlink/?LinkId=98234) dans la documentation en ligne de SQL Server</span><span class="sxs-lookup"><span data-stu-id="cccb3-147">[Stored Procedures](http://msdn.microsoft.com/library/ms190782.aspx) and [SQL Injection](http://go.microsoft.com/fwlink/?LinkId=98234) in SQL Server Books Online</span></span>|<span data-ttu-id="cccb3-148">Ces rubriques expliquent comment créer des procédures stockées et comment fonctionne l'injection SQL.</span><span class="sxs-lookup"><span data-stu-id="cccb3-148">Topics describe how to create stored procedures and how SQL Injection works.</span></span>|  
   
-## Voir aussi  
- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [Vue d'ensemble de la sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)   
- [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)   
- [Écriture de code SQL dynamique sécurisé dans SQL Server](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)   
- [Signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)   
- [Personnalisation des autorisations avec emprunt d'identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)   
- [Modification de données à l'aide de procédures stockées\)](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="cccb3-149">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cccb3-149">See Also</span></span>  
+ [<span data-ttu-id="cccb3-150">Sécurisation des applications ADO.NET</span><span class="sxs-lookup"><span data-stu-id="cccb3-150">Securing ADO.NET Applications</span></span>](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [<span data-ttu-id="cccb3-151">Vue d’ensemble de la sécurité SQL Server</span><span class="sxs-lookup"><span data-stu-id="cccb3-151">Overview of SQL Server Security</span></span>](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
+ [<span data-ttu-id="cccb3-152">Scénarios de sécurité dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="cccb3-152">Application Security Scenarios in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [<span data-ttu-id="cccb3-153">L’écriture SQL dynamique sécurisé dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="cccb3-153">Writing Secure Dynamic SQL in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
+ [<span data-ttu-id="cccb3-154">Signature de procédures stockées dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="cccb3-154">Signing Stored Procedures in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
+ [<span data-ttu-id="cccb3-155">Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="cccb3-155">Customizing Permissions with Impersonation in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
+ [<span data-ttu-id="cccb3-156">Modification des données avec des procédures stockées</span><span class="sxs-lookup"><span data-stu-id="cccb3-156">Modifying Data with Stored Procedures</span></span>](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
+ [<span data-ttu-id="cccb3-157">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="cccb3-157">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

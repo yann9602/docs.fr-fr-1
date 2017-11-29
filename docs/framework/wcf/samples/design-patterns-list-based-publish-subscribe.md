@@ -1,34 +1,37 @@
 ---
-title: "Design Patterns&#160;: List-Based Publish-Subscribe | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Design Patterns : List-Based Publish-Subscribe"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9f3f5b9f8b07083c46ad98ce6e8ab6b5d3242e05
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Design Patterns&#160;: List-Based Publish-Subscribe
-Cet exemple illustre le modèle de publication\/abonnement basé sur une liste implémenté en tant que programme [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+# <a name="design-patterns-list-based-publish-subscribe"></a><span data-ttu-id="9410c-102">Design Patterns : List-Based Publish-Subscribe</span><span class="sxs-lookup"><span data-stu-id="9410c-102">Design Patterns: List-Based Publish-Subscribe</span></span>
+<span data-ttu-id="9410c-103">Cet exemple illustre le modèle de publication/abonnement basé sur une liste implémenté en tant que programme [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9410c-103">This sample illustrates the List-based Publish-Subscribe pattern implemented as a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] program.</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+>  <span data-ttu-id="9410c-104">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="9410c-104">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Le modèle de conception de publication et d'abonnement basé sur une liste est décrit dans la publication Microsoft Patterns & Practices, [Modèles d'intégration](http://go.microsoft.com/fwlink/?LinkId=95894).  Le modèle de publication\/abonnement transmet des informations à une collection des destinataires qui se sont abonnés une rubrique d'informations.  Ce modèle gère une liste d'abonnés.  Lorsque des informations doivent être partagées, une copie est envoyée à chaque abonné de la liste.  Cet exemple illustre un modèle de publication\/abonnement basé sur liste dynamique, où les clients peuvent s'abonner ou annuler leur abonnement aussi souvent que nécessaire.  
+ <span data-ttu-id="9410c-105">Le modèle de conception basé sur liste publication-abonnement est décrit dans la publication Microsoft Patterns & Practices, [modèles d’intégration](http://go.microsoft.com/fwlink/?LinkId=95894).</span><span class="sxs-lookup"><span data-stu-id="9410c-105">The List-based Publish-Subscribe design pattern is described in the Microsoft Patterns & Practices publication, [Integration Patterns](http://go.microsoft.com/fwlink/?LinkId=95894).</span></span> <span data-ttu-id="9410c-106">Le modèle de publication/abonnement transmet des informations à une collection des destinataires qui se sont abonnés une rubrique d’informations.</span><span class="sxs-lookup"><span data-stu-id="9410c-106">The Publish-Subscribe pattern passes information to a collection of recipients who have subscribed to an information topic.</span></span> <span data-ttu-id="9410c-107">Ce modèle gère une liste d'abonnés.</span><span class="sxs-lookup"><span data-stu-id="9410c-107">List-based publish-subscribe maintains a list of subscribers.</span></span> <span data-ttu-id="9410c-108">Lorsque des informations doivent être partagées, une copie est envoyée à chaque abonné de la liste.</span><span class="sxs-lookup"><span data-stu-id="9410c-108">When there is information to share, a copy is sent to each subscriber on the list.</span></span> <span data-ttu-id="9410c-109">Cet exemple illustre un modèle de publication/abonnement basé sur liste dynamique, où les clients peuvent s'abonner ou annuler leur abonnement aussi souvent que nécessaire.</span><span class="sxs-lookup"><span data-stu-id="9410c-109">This sample demonstrates a dynamic list-based publish-subscribe pattern, where clients can subscribe or unsubscribe as often as required.</span></span>  
   
- Il se compose d'un client, d'un service et d'un programme de source de données.  Il peut y avoir plusieurs clients et plusieurs programmes de source de données en cours d'exécution.  Les clients s'abonnent au service, reçoivent des notifications et annulent leur abonnement.  Les programmes de source de données envoient des informations au service à partager avec tous les abonnés actuels.  
+ <span data-ttu-id="9410c-110">Il se compose d'un client, d'un service et d'un programme de source de données.</span><span class="sxs-lookup"><span data-stu-id="9410c-110">The List-based Publish-Subscribe sample consists of a client, a service, and a data source program.</span></span> <span data-ttu-id="9410c-111">Il peut y avoir plusieurs clients et plusieurs programmes de source de données en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="9410c-111">There can be more than one client and more than one data source program running.</span></span> <span data-ttu-id="9410c-112">Les clients s'abonnent au service, reçoivent des notifications et annulent leur abonnement.</span><span class="sxs-lookup"><span data-stu-id="9410c-112">Clients subscribe to the service, receive notifications, and unsubscribe.</span></span> <span data-ttu-id="9410c-113">Les programmes de source de données envoient des informations au service à partager avec tous les abonnés actuels.</span><span class="sxs-lookup"><span data-stu-id="9410c-113">Data source programs send information to the service to be shared with all current subscribers.</span></span>  
   
- Dans cet exemple, le client et la source de données sont des programmes de console \(fichiers .exe\) et le service est une bibliothèque \(.dll\) hébergée par les services Internet \(IIS\).  L'activité du client et de la source de données sont visibles sur le Bureau.  
+ <span data-ttu-id="9410c-114">Dans cet exemple, le client et la source de données sont des programmes de console (fichiers .exe) et le service est une bibliothèque (.dll) hébergée par les services Internet (IIS).</span><span class="sxs-lookup"><span data-stu-id="9410c-114">In this sample, the client and data source are console programs (.exe files) and the service is a library (.dll) hosted in Internet Information Services (IIS).</span></span> <span data-ttu-id="9410c-115">L'activité du client et de la source de données sont visibles sur le Bureau.</span><span class="sxs-lookup"><span data-stu-id="9410c-115">Client and data source activity are visible on the desktop.</span></span>  
   
- Le service utilise la communication duplex.  Le contrat de service `ISampleContract` est associé à un contrat de rappel `ISampleClientCallback`.  Le service implémente les opérations d'abonnement et d'annulation d'abonnement que les clients utilisent pour rejoindre ou quitter la liste des abonnés.  Le service implémente également l'opération de service `PublishPriceChange` que le programme de source de données appelle pour fournir le service avec de nouvelles informations.  Le logiciel client implémente l'opération de service `PriceChange` que le service appelle pour prévenir tous les abonnés d'une modification de prix.  
+ <span data-ttu-id="9410c-116">Le service utilise la communication duplex.</span><span class="sxs-lookup"><span data-stu-id="9410c-116">The service uses duplex communication.</span></span> <span data-ttu-id="9410c-117">Le contrat de service `ISampleContract` est associé à un contrat de rappel `ISampleClientCallback`.</span><span class="sxs-lookup"><span data-stu-id="9410c-117">The `ISampleContract` service contract is paired up with an `ISampleClientCallback` callback contract.</span></span> <span data-ttu-id="9410c-118">Le service implémente les opérations d'abonnement et d'annulation d'abonnement que les clients utilisent pour rejoindre ou quitter la liste des abonnés.</span><span class="sxs-lookup"><span data-stu-id="9410c-118">The service implements Subscribe and Unsubscribe service operations, which clients use to join or leave the list of subscribers.</span></span> <span data-ttu-id="9410c-119">Le service implémente également l'opération de service `PublishPriceChange` que le programme de source de données appelle pour fournir le service avec de nouvelles informations.</span><span class="sxs-lookup"><span data-stu-id="9410c-119">The service also implements the `PublishPriceChange` service operation, which the data source program calls to provide the service with new information.</span></span> <span data-ttu-id="9410c-120">Le logiciel client implémente l'opération de service `PriceChange` que le service appelle pour prévenir tous les abonnés d'une modification de prix.</span><span class="sxs-lookup"><span data-stu-id="9410c-120">The client program implements the `PriceChange` service operation, which the service calls to notify all subscribers of a price change.</span></span>  
   
 ```  
 // Create a service contract and define the service operations.  
@@ -53,7 +56,7 @@ public interface ISampleClientContract
 }  
 ```  
   
- Le service utilise un événement .NET Framework comme mécanisme pour informer tous les abonnés à propos des nouvelles informations.  Lorsqu'un client rejoint le service en appelant l'opération d'abonnement, il fournit un gestionnaire d'événements.  Lorsqu'un client part, il annule son gestionnaire d'événements de l'événement.  Lorsqu'une source de données appelle le service pour signaler une modification de prix, le service déclenche l'événement.  Il appelle chaque instance du service, une pour chaque client qui s'est abonné, et entraîne l'exécution de leurs gestionnaires d'événements.  Chaque gestionnaire d'événements transmet les informations à son client via sa fonction de rappel.  
+ <span data-ttu-id="9410c-121">Le service utilise un événement .NET Framework comme mécanisme pour informer tous les abonnés à propos des nouvelles informations.</span><span class="sxs-lookup"><span data-stu-id="9410c-121">The service uses a .NET Framework event as the mechanism to inform all subscribers about new information.</span></span> <span data-ttu-id="9410c-122">Lorsqu'un client rejoint le service en appelant l'opération d'abonnement, il fournit un gestionnaire d'événements.</span><span class="sxs-lookup"><span data-stu-id="9410c-122">When a client joins the service by calling Subscribe, it provides an event handler.</span></span> <span data-ttu-id="9410c-123">Lorsqu'un client part, il annule son gestionnaire d'événements de l'événement.</span><span class="sxs-lookup"><span data-stu-id="9410c-123">When a client leaves, it unsubscribes its event handler from the event.</span></span> <span data-ttu-id="9410c-124">Lorsqu'une source de données appelle le service pour signaler une modification de prix, le service déclenche l'événement.</span><span class="sxs-lookup"><span data-stu-id="9410c-124">When a data source calls the service to report a price change, the service raises the event.</span></span> <span data-ttu-id="9410c-125">Il appelle chaque instance du service, une pour chaque client qui s'est abonné, et entraîne l'exécution de leurs gestionnaires d'événements.</span><span class="sxs-lookup"><span data-stu-id="9410c-125">This calls each instance of the service, one for each client that has subscribed, and causes their event handlers to execute.</span></span> <span data-ttu-id="9410c-126">Chaque gestionnaire d'événements transmet les informations à son client via sa fonction de rappel.</span><span class="sxs-lookup"><span data-stu-id="9410c-126">Each event handler passes the information to its client through its callback function.</span></span>  
   
 ```  
 public class PriceChangeEventArgs : EventArgs  
@@ -113,60 +116,59 @@ public class PriceChangeEventArgs : EventArgs
         }  
   
     }  
-  
 ```  
   
- Lorsque vous exécutez l'exemple, lancez plusieurs clients.  Les clients s'abonnent au service.  Exécutez ensuite le programme de source de données qui envoie des informations au service.  Le service transmet les informations à tous les abonnés.  Vous pouvez consulter l'activité sur chaque console cliente qui confirme que les informations ont été reçues.  Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
+ <span data-ttu-id="9410c-127">Lorsque vous exécutez l'exemple, lancez plusieurs clients.</span><span class="sxs-lookup"><span data-stu-id="9410c-127">When you run the sample, launch several clients.</span></span> <span data-ttu-id="9410c-128">Les clients s'abonnent au service.</span><span class="sxs-lookup"><span data-stu-id="9410c-128">The clients subscribe to the service.</span></span> <span data-ttu-id="9410c-129">Exécutez ensuite le programme de source de données qui envoie des informations au service.</span><span class="sxs-lookup"><span data-stu-id="9410c-129">Then run the data source program, which sends information to the service.</span></span> <span data-ttu-id="9410c-130">Le service transmet les informations à tous les abonnés.</span><span class="sxs-lookup"><span data-stu-id="9410c-130">The service passes on the information to all subscribers.</span></span> <span data-ttu-id="9410c-131">Vous pouvez consulter l'activité sur chaque console cliente qui confirme que les informations ont été reçues.</span><span class="sxs-lookup"><span data-stu-id="9410c-131">You can see activity on each client console confirming that the information has been received.</span></span> <span data-ttu-id="9410c-132">Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.</span><span class="sxs-lookup"><span data-stu-id="9410c-132">Press ENTER in the client window to shut down the client.</span></span>  
   
-### Pour configurer et générer l'exemple  
+### <a name="to-set-up-and-build-the-sample"></a><span data-ttu-id="9410c-133">Pour configurer et générer l'exemple</span><span class="sxs-lookup"><span data-stu-id="9410c-133">To set up and build the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="9410c-134">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="9410c-134">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="9410c-135">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="9410c-135">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-### Pour exécuter l'exemple sur le même ordinateur  
+### <a name="to-run-the-sample-on-the-same-machine"></a><span data-ttu-id="9410c-136">Pour exécuter l'exemple sur le même ordinateur</span><span class="sxs-lookup"><span data-stu-id="9410c-136">To run the sample on the same machine</span></span>  
   
-1.  Assurez\-vous que le service est accessible en saisissant l'adresse http:\/\/localhost\/servicemodelsamples\/service.svc dans un navigateur.  Une page de confirmation doit s'afficher en réponse.  
+1.  <span data-ttu-id="9410c-137">Assurez-vous que le service est accessible en saisissant l'adresse http://localhost/servicemodelsamples/service.svc dans un navigateur.</span><span class="sxs-lookup"><span data-stu-id="9410c-137">Test that you can access the service using a browser by entering the following address: http://localhost/servicemodelsamples/service.svc.</span></span> <span data-ttu-id="9410c-138">Une page de confirmation doit s'afficher en réponse.</span><span class="sxs-lookup"><span data-stu-id="9410c-138">A confirmation page should be displayed in response.</span></span>  
   
-2.  Exécutez Client.exe à partir du dossier \\client\\bin\\ figurant dans le dossier correspondant à votre langue.  L'activité du client s'affiche dans sa fenêtre de console.  Lancez plusieurs clients.  
+2.  <span data-ttu-id="9410c-139">Exécutez Client.exe à partir de \client\bin\\, figurant dans le dossier de langue.</span><span class="sxs-lookup"><span data-stu-id="9410c-139">Run Client.exe from \client\bin\\, from under the language-specific folder.</span></span> <span data-ttu-id="9410c-140">L'activité du client s'affiche dans sa fenêtre de console.</span><span class="sxs-lookup"><span data-stu-id="9410c-140">Client activity is displayed on the client console window.</span></span> <span data-ttu-id="9410c-141">Lancez plusieurs clients.</span><span class="sxs-lookup"><span data-stu-id="9410c-141">Launch several clients.</span></span>  
   
-3.  Exécutez Datasource.exe à partir du dossier \\datasource\\bin\\ figurant dans le dossier correspondant à votre langue.  L'activité de source de données est affichée sur la fenêtre de console.  Une fois que la source de données envoie des informations au service, elles doivent être transmises à chaque client.  
+3.  <span data-ttu-id="9410c-142">Exécutez Datasource.exe à partir de \datasource\bin\\, figurant dans le dossier de langue.</span><span class="sxs-lookup"><span data-stu-id="9410c-142">Run Datasource.exe from \datasource\bin\\, from under the language-specific folder.</span></span> <span data-ttu-id="9410c-143">L'activité de source de données est affichée sur la fenêtre de console.</span><span class="sxs-lookup"><span data-stu-id="9410c-143">Data source activity is displayed on the console window.</span></span> <span data-ttu-id="9410c-144">Une fois que la source de données envoie des informations au service, elles doivent être transmises à chaque client.</span><span class="sxs-lookup"><span data-stu-id="9410c-144">Once the data source sends information to the service, it should be passed on to each client.</span></span>  
   
-4.  Si le client, la source de données et les programmes de service ne sont pas en mesure de communiquer, consultez la rubrique [Troubleshooting Tips](http://msdn.microsoft.com/fr-fr/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  <span data-ttu-id="9410c-145">Si le client, la source de données et les programmes de service ne sont pas en mesure de communiquer, consultez [conseils de dépannage](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span><span class="sxs-lookup"><span data-stu-id="9410c-145">If the client, data source, and service programs are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
-### Pour exécuter l'exemple sur plusieurs ordinateurs  
+### <a name="to-run-the-sample-across-machines"></a><span data-ttu-id="9410c-146">Pour exécuter l'exemple sur plusieurs ordinateurs</span><span class="sxs-lookup"><span data-stu-id="9410c-146">To run the sample across machines</span></span>  
   
-1.  Installez l'ordinateur de service:  
+1.  <span data-ttu-id="9410c-147">Installez l'ordinateur de service:</span><span class="sxs-lookup"><span data-stu-id="9410c-147">Set up the service machine:</span></span>  
   
-    1.  Créez un répertoire virtuel nommé ServiceModelSamples sur l'ordinateur de service.  Le fichier de commandes Setupvroot.bat inclus dans la [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) permet de créer le répertoire de disque et le répertoire virtuel.  
+    1.  <span data-ttu-id="9410c-148">Créez un répertoire virtuel nommé ServiceModelSamples sur l'ordinateur de service.</span><span class="sxs-lookup"><span data-stu-id="9410c-148">On the service machine, create a virtual directory named ServiceModelSamples.</span></span> <span data-ttu-id="9410c-149">Le traitement du fichier Setupvroot.bat à partir de la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) peut être utilisé pour créer le répertoire de disque et le répertoire virtuel.</span><span class="sxs-lookup"><span data-stu-id="9410c-149">The batch file Setupvroot.bat from the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) can be used to create the disk directory and virtual directory.</span></span>  
   
-    2.  Copiez les fichiers du programme de service depuis %SystemDrive%\\Inetpub\\wwwroot\\servicemodelsamples vers le répertoire virtuel ServiceModelSamples.  Assurez\-vous d'intégrer les fichiers au répertoire \\bin.  
+    2.  <span data-ttu-id="9410c-150">Copiez les fichiers du programme de service depuis %SystemDrive%\Inetpub\wwwroot\servicemodelsamples vers le répertoire virtuel ServiceModelSamples.</span><span class="sxs-lookup"><span data-stu-id="9410c-150">Copy the service program files from %SystemDrive%\Inetpub\wwwroot\servicemodelsamples to the ServiceModelSamples virtual directory on the service machine.</span></span> <span data-ttu-id="9410c-151">Assurez-vous d'intégrer les fichiers au répertoire \bin.</span><span class="sxs-lookup"><span data-stu-id="9410c-151">Be sure to include the files in the \bin directory.</span></span>  
   
-    3.  Assurez\-vous que le service est accessible depuis l'ordinateur du client en utilisant un navigateur.  
+    3.  <span data-ttu-id="9410c-152">Assurez-vous que le service est accessible depuis l'ordinateur du client en utilisant un navigateur.</span><span class="sxs-lookup"><span data-stu-id="9410c-152">Test that you can access the service from the client machine using a browser.</span></span>  
   
-2.  Installez les ordinateurs clients :  
+2.  <span data-ttu-id="9410c-153">Installez les ordinateurs clients :</span><span class="sxs-lookup"><span data-stu-id="9410c-153">Set up the client machines:</span></span>  
   
-    1.  Copiez les fichiers de programme client du dossier \\client\\bin\\ \(situé dans le dossier correspondant à votre langue\) sur l'ordinateur client.  
+    1.  <span data-ttu-id="9410c-154">Copiez les fichiers de programme client du dossier \client\bin\ (situé dans le dossier correspondant à votre langue) sur l'ordinateur client.</span><span class="sxs-lookup"><span data-stu-id="9410c-154">Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client machines.</span></span>  
   
-    2.  Dans chaque fichier de configuration client, modifiez l'adresse de la définition du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.  Remplacez toutes les occurrences de « localhost » de l'adresse par un nom de domaine complet.  
+    2.  <span data-ttu-id="9410c-155">Dans chaque fichier de configuration client, modifiez l'adresse de la définition du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.</span><span class="sxs-lookup"><span data-stu-id="9410c-155">In each client configuration file, change the address value of the endpoint definition to match the new address of your service.</span></span> <span data-ttu-id="9410c-156">Remplacez toutes les occurrences de « localhost » de l'adresse par un nom de domaine complet.</span><span class="sxs-lookup"><span data-stu-id="9410c-156">Replace any references to "localhost" with a fully-qualified domain name in the address.</span></span>  
   
-3.  Installez l'ordinateur de source de données:  
+3.  <span data-ttu-id="9410c-157">Installez l'ordinateur de source de données:</span><span class="sxs-lookup"><span data-stu-id="9410c-157">Set up the data source machine:</span></span>  
   
-    1.  Copiez les fichiers du programme de source de données du dossier \\datasource\\bin\\ \(dans le dossier correspondant à votre langue\) sur l'ordinateur de source de données.  
+    1.  <span data-ttu-id="9410c-158">Copiez les fichiers du programme de source de données du dossier \datasource\bin\ (dans le dossier correspondant à votre langue) sur l'ordinateur de source de données.</span><span class="sxs-lookup"><span data-stu-id="9410c-158">Copy the data source program files from the \datasource\bin\ folder, under the language-specific folder, to the data source machine.</span></span>  
   
-    2.  Dans le fichier de configuration de la source de données, modifiez l'adresse de la définition du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.  Remplacez toutes les occurrences de « localhost » de l'adresse par un nom de domaine complet.  
+    2.  <span data-ttu-id="9410c-159">Dans le fichier de configuration de la source de données, modifiez l'adresse de la définition du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.</span><span class="sxs-lookup"><span data-stu-id="9410c-159">In the data source configuration file, change the address value of the endpoint definition to match the new address of your service.</span></span> <span data-ttu-id="9410c-160">Remplacez toutes les occurrences de « localhost » de l'adresse par un nom de domaine complet.</span><span class="sxs-lookup"><span data-stu-id="9410c-160">Replace any references to "localhost" with a fully-qualified domain name in the address.</span></span>  
   
-4.  Sur les ordinateurs clients, lancez Client.exe à partir d'une invite de commandes.  
+4.  <span data-ttu-id="9410c-161">Sur les ordinateurs clients, lancez Client.exe à partir d'une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="9410c-161">On the client machines, launch Client.exe from a command prompt.</span></span>  
   
-5.  Sur l'ordinateur de source de données, lancez Datasource.exe à partir d'une invite de commandes.  
+5.  <span data-ttu-id="9410c-162">Sur l'ordinateur de source de données, lancez Datasource.exe à partir d'une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="9410c-162">On the data source machine, launch Datasource.exe from a command prompt.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="9410c-163">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="9410c-163">The samples may already be installed on your machine.</span></span> <span data-ttu-id="9410c-164">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="9410c-164">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, accédez à la page des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="9410c-165">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="9410c-165">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="9410c-166">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="9410c-166">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstalll>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="9410c-167">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9410c-167">See Also</span></span>

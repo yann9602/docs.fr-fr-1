@@ -1,222 +1,226 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: cr&#233;ation d&#39;un formulaire MDI avec la fusion de menus et des contr&#244;les ToolStrip | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "formulaires MDI"
-  - "formulaires MDI, créer"
-  - "formulaires MDI, procédures pas à pas"
-  - "MDI, créer des formulaires"
-  - "interface multidocument (MDI) (formulaires)"
-  - "barres d'outils (Windows Forms)"
-  - "ToolStrip (contrôle Windows Forms)"
-  - "ToolStripPanel (contrôle Windows Forms)"
+title: "Procédure pas à pas : création d'un formulaire MDI avec la fusion de menus et des contrôles ToolStrip"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- toolbars [Windows Forms]
+- ToolStripPanel control [Windows Forms]
+- MDI [Windows Forms], creating forms
+- multiple document interface forms
+- MDI forms
+- ToolStrip control [Windows Forms]
+- MDI forms [Windows Forms], creating
+- MDI forms [Windows Forms], walkthroughs
 ms.assetid: fbab4221-74af-42d0-bbf4-3c97f7b2e544
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bca5439f247951496d82c03b57ec1fa0e21a8271
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: cr&#233;ation d&#39;un formulaire MDI avec la fusion de menus et des contr&#244;les ToolStrip
-L'espace de noms <xref:System.Windows.Forms?displayProperty=fullName> prend en charge les applications d'interface multidocument \(MDI\), et le contrôle <xref:System.Windows.Forms.MenuStrip> prend en charge la fusion de menus.  Les formulaires MDI peuvent également conserver des contrôles <xref:System.Windows.Forms.ToolStrip>.  
+# <a name="walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls"></a><span data-ttu-id="f18dd-102">Procédure pas à pas : création d'un formulaire MDI avec la fusion de menus et des contrôles ToolStrip</span><span class="sxs-lookup"><span data-stu-id="f18dd-102">Walkthrough: Creating an MDI Form with Menu Merging and ToolStrip Controls</span></span>
+<span data-ttu-id="f18dd-103">L'espace de noms <xref:System.Windows.Forms?displayProperty=nameWithType> prend en charge plusieurs applications MDI (Multiple Document Interface) et le contrôle <xref:System.Windows.Forms.MenuStrip> prend en charge la fusion de menus.</span><span class="sxs-lookup"><span data-stu-id="f18dd-103">The <xref:System.Windows.Forms?displayProperty=nameWithType> namespace supports multiple document interface (MDI) applications, and the <xref:System.Windows.Forms.MenuStrip> control supports menu merging.</span></span> <span data-ttu-id="f18dd-104">Les formulaires MDI peuvent également contenir des contrôles <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="f18dd-104">MDI forms can also <xref:System.Windows.Forms.ToolStrip> controls.</span></span>  
   
- Cette procédure pas à pas montre comment utiliser des contrôles <xref:System.Windows.Forms.ToolStripPanel> avec un formulaire MDI.  Le formulaire prend également en charge la fusion de menus avec les menus enfants.  Les tâches suivantes sont illustrées dans cette procédure pas à pas :  
+ <span data-ttu-id="f18dd-105">Cette procédure pas à pas montre comment utiliser <xref:System.Windows.Forms.ToolStripPanel> les contrôles dans un formulaire MDI.</span><span class="sxs-lookup"><span data-stu-id="f18dd-105">This walkthrough demonstrates how to use <xref:System.Windows.Forms.ToolStripPanel> controls with an MDI form.</span></span> <span data-ttu-id="f18dd-106">Le formulaire prend également en charge la fusion de menus avec les menus enfants.</span><span class="sxs-lookup"><span data-stu-id="f18dd-106">The form also supports menu merging with child menus.</span></span> <span data-ttu-id="f18dd-107">Les tâches suivantes sont illustrées dans cette procédure pas à pas :</span><span class="sxs-lookup"><span data-stu-id="f18dd-107">The following tasks are illustrated in this walkthrough:</span></span>  
   
--   Création d'un projet Windows Forms.  
+-   <span data-ttu-id="f18dd-108">Création d’un projet Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="f18dd-108">Creating a Windows Forms project.</span></span>  
   
--   Création du menu principal de votre formulaire.  Le nom réel du menu changera.  
+-   <span data-ttu-id="f18dd-109">Création du menu principal de votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-109">Creating the main menu for your form.</span></span> <span data-ttu-id="f18dd-110">Le nom réel du menu varient.</span><span class="sxs-lookup"><span data-stu-id="f18dd-110">The actual name of the menu will vary.</span></span>  
   
--   Ajout du contrôle <xref:System.Windows.Forms.ToolStripPanel> à la **boîte à outils**.  
+-   <span data-ttu-id="f18dd-111">Ajout de la <xref:System.Windows.Forms.ToolStripPanel> le contrôle à la **boîte à outils**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-111">Adding the <xref:System.Windows.Forms.ToolStripPanel> control to the **Toolbox**.</span></span>  
   
--   Création d'un formulaire enfant.  
+-   <span data-ttu-id="f18dd-112">Création d’un formulaire enfant.</span><span class="sxs-lookup"><span data-stu-id="f18dd-112">Creating a child form.</span></span>  
   
--   Réorganisation des contrôles <xref:System.Windows.Forms.ToolStripPanel> par ordre de plan.  
+-   <span data-ttu-id="f18dd-113">Réorganiser les <xref:System.Windows.Forms.ToolStripPanel> par ordre de plan des contrôles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-113">Arranging <xref:System.Windows.Forms.ToolStripPanel> controls by z-order.</span></span>  
   
- Lorsque vous aurez terminé, vous disposerez d'un formulaire MDI prenant en charge la fusion de menus et des contrôles <xref:System.Windows.Forms.ToolStrip> déplaçables.  
+ <span data-ttu-id="f18dd-114">Lorsque vous avez terminé, vous aurez un formulaire MDI qui prend en charge la fusion de menus et d’être déplacés <xref:System.Windows.Forms.ToolStrip> contrôles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-114">When you are finished, you will have an MDI form that supports menu merging and movable <xref:System.Windows.Forms.ToolStrip> controls.</span></span>  
   
- Pour copier le code dans cette rubrique sous forme de liste unique, consultez [Comment : créer un formulaire MDI avec la fusion de menus et des contrôles ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).  
+ <span data-ttu-id="f18dd-115">Pour copier le code dans cette rubrique sous forme de liste unique, consultez [Comment : créer un formulaire MDI avec la fusion de menus et des contrôles ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).</span><span class="sxs-lookup"><span data-stu-id="f18dd-115">To copy the code in this topic as a single listing, see [How to: Create an MDI Form with Menu Merging and ToolStrip Controls](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).</span></span>  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="f18dd-116">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="f18dd-116">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="f18dd-117">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="f18dd-117">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="f18dd-118">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="f18dd-118">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-## Composants requis  
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
+## <a name="prerequisites"></a><span data-ttu-id="f18dd-119">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="f18dd-119">Prerequisites</span></span>  
+ <span data-ttu-id="f18dd-120">Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="f18dd-120">In order to complete this walkthrough, you will need:</span></span>  
   
--   Avoir des autorisations suffisantes pour être en mesure de créer et d'exécuter des projets d'application Windows Forms sur l'ordinateur où [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] est installé.  
+-   <span data-ttu-id="f18dd-121">Des autorisations suffisantes pour pouvoir créer et exécuter des projets d’application Windows Forms sur l’ordinateur où [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] est installé.</span><span class="sxs-lookup"><span data-stu-id="f18dd-121">Sufficient permissions to be able to create and run Windows Forms application projects on the computer where [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] is installed.</span></span>  
   
-## Création du projet  
- La première étape consiste à créer le projet et configurer le formulaire.  
+## <a name="creating-the-project"></a><span data-ttu-id="f18dd-122">Création du projet</span><span class="sxs-lookup"><span data-stu-id="f18dd-122">Creating the Project</span></span>  
+ <span data-ttu-id="f18dd-123">La première étape consiste à créer le projet et à configurer le formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-123">The first step is to create the project and set up the form.</span></span>  
   
-#### Pour créer le projet  
+#### <a name="to-create-the-project"></a><span data-ttu-id="f18dd-124">Pour créer le projet</span><span class="sxs-lookup"><span data-stu-id="f18dd-124">To create the project</span></span>  
   
-1.  Créez un projet d'application Windows appelé MdiForm.  
+1.  <span data-ttu-id="f18dd-125">Créez un projet d’Application Windows appelé **feuille MDI**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-125">Create a Windows Application project called **MdiForm**.</span></span>  
   
-     Pour plus d'informations, consultez [How to: Create a Windows Application Project](http://msdn.microsoft.com/fr-fr/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+     <span data-ttu-id="f18dd-126">Pour plus d'informations, consultez [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).</span><span class="sxs-lookup"><span data-stu-id="f18dd-126">For more information, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).</span></span>  
   
-2.  Dans le Concepteur Windows Forms, sélectionnez le formulaire.  
+2.  <span data-ttu-id="f18dd-127">Dans le Concepteur Windows Forms, sélectionnez le formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-127">In the Windows Forms Designer, select the form.</span></span>  
   
-3.  Dans la fenêtre Propriétés, affectez au <xref:System.Windows.Forms.Form.IsMdiContainer%2A> la valeur `true`.  
+3.  <span data-ttu-id="f18dd-128">Dans la fenêtre Propriétés, définissez la valeur de la <xref:System.Windows.Forms.Form.IsMdiContainer%2A> à `true`.</span><span class="sxs-lookup"><span data-stu-id="f18dd-128">In the Properties window, set the value of the <xref:System.Windows.Forms.Form.IsMdiContainer%2A> to `true`.</span></span>  
   
-## Création du menu principal.  
- Le formulaire MDI parent contient le menu principal.  Le menu principal possède un élément de menu nommé **Fenêtre**.  À l'aide de l'élément de menu **Fenêtre**, vous pouvez créer des formulaires enfants.  Les éléments de menu issus de formulaires enfants sont fusionnés dans le menu principal.  
+## <a name="creating-the-main-menu"></a><span data-ttu-id="f18dd-129">Création du Menu principal</span><span class="sxs-lookup"><span data-stu-id="f18dd-129">Creating the Main Menu</span></span>  
+ <span data-ttu-id="f18dd-130">Le formulaire MDI parent contient le menu principal.</span><span class="sxs-lookup"><span data-stu-id="f18dd-130">The parent MDI form contains the main menu.</span></span> <span data-ttu-id="f18dd-131">Le menu principal possède un élément de menu nommé **fenêtre**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-131">The main menu has one menu item named **Window**.</span></span> <span data-ttu-id="f18dd-132">Avec la **fenêtre** l’élément de menu, vous pouvez créer des formulaires enfants.</span><span class="sxs-lookup"><span data-stu-id="f18dd-132">With the **Window** menu item, you can create child forms.</span></span> <span data-ttu-id="f18dd-133">Éléments de menu à partir de formulaires enfants sont fusionnés dans le menu principal.</span><span class="sxs-lookup"><span data-stu-id="f18dd-133">Menu items from child forms are merged into the main menu.</span></span>  
   
-#### Pour créer le menu principal  
+#### <a name="to-create-the-main-menu"></a><span data-ttu-id="f18dd-134">Pour créer le menu principal</span><span class="sxs-lookup"><span data-stu-id="f18dd-134">To create the Main menu</span></span>  
   
-1.  À partir de la **boîte à outils**, faites glisser un contrôle <xref:System.Windows.Forms.MenuStrip> dans le formulaire.  
+1.  <span data-ttu-id="f18dd-135">À partir de la **boîte à outils**, faites glisser un <xref:System.Windows.Forms.MenuStrip> contrôle vers le formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-135">From the **Toolbox**, drag a <xref:System.Windows.Forms.MenuStrip> control onto the form.</span></span>  
   
-2.  Ajoutez un <xref:System.Windows.Forms.ToolStripMenuItem> au contrôle <xref:System.Windows.Forms.MenuStrip> et nommez\-le Fenêtre.  
+2.  <span data-ttu-id="f18dd-136">Ajouter un <xref:System.Windows.Forms.ToolStripMenuItem> à la <xref:System.Windows.Forms.MenuStrip> contrôler et nommez-le **fenêtre**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-136">Add a <xref:System.Windows.Forms.ToolStripMenuItem> to the <xref:System.Windows.Forms.MenuStrip> control and name it **Window**.</span></span>  
   
-3.  Sélectionnez le contrôle <xref:System.Windows.Forms.MenuStrip>.  
+3.  <span data-ttu-id="f18dd-137">Sélectionnez le contrôle <xref:System.Windows.Forms.MenuStrip>.</span><span class="sxs-lookup"><span data-stu-id="f18dd-137">Select the <xref:System.Windows.Forms.MenuStrip> control.</span></span>  
   
-4.  Dans la fenêtre Propriétés, affectez la valeur `ToolStripMenuItem1` à la propriété <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A>.  
+4.  <span data-ttu-id="f18dd-138">Dans la fenêtre Propriétés, définissez la valeur de la <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> propriété `ToolStripMenuItem1`.</span><span class="sxs-lookup"><span data-stu-id="f18dd-138">In the Properties window, set the value of the <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> property to `ToolStripMenuItem1`.</span></span>  
   
-5.  Ajoutez un sous\-élément à l'élément de menu **Fenêtre**, puis nommez\-le Nouveau.  
+5.  <span data-ttu-id="f18dd-139">Ajouter un sous-élément à la **fenêtre** élément de menu, puis nommez le sous-élément **nouveau**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-139">Add a subitem to the **Window** menu item, and then name the subitem **New**.</span></span>  
   
-6.  Dans la fenêtre Propriétés, cliquez sur **Événements**.  
+6.  <span data-ttu-id="f18dd-140">Dans la fenêtre Propriétés, cliquez sur **événements**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-140">In the Properties window, click **Events**.</span></span>  
   
-7.  Double\-cliquez sur l'événement <xref:System.Windows.Forms.ToolStripItem.Click>.  
+7.  <span data-ttu-id="f18dd-141">Double-cliquez sur le <xref:System.Windows.Forms.ToolStripItem.Click> événement.</span><span class="sxs-lookup"><span data-stu-id="f18dd-141">Double-click the <xref:System.Windows.Forms.ToolStripItem.Click> event.</span></span>  
   
-     Le Concepteur Windows Forms génère un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.ToolStripItem.Click>.  
+     <span data-ttu-id="f18dd-142">Le Concepteur Windows Forms génère un gestionnaire d’événements pour le <xref:System.Windows.Forms.ToolStripItem.Click> événement.</span><span class="sxs-lookup"><span data-stu-id="f18dd-142">The Windows Forms Designer generates an event handler for the <xref:System.Windows.Forms.ToolStripItem.Click> event.</span></span>  
   
-8.  Insérez le code suivant dans le gestionnaire d'événements.  
+8.  <span data-ttu-id="f18dd-143">Insérez le code suivant dans le Gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="f18dd-143">Insert the following code into the event handler.</span></span>  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.MdiForm#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.MdiForm/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.ToolStrip.MdiForm#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.MdiForm/VB/Form1.vb#2)]  
   
-## Ajout du contrôle ToolStripPanel à la boîte à outils  
- Lorsque vous utilisez des contrôles <xref:System.Windows.Forms.MenuStrip> avec un formulaire MDI, vous devez avoir le contrôle <xref:System.Windows.Forms.ToolStripPanel>.  Vous devez ajouter le contrôle <xref:System.Windows.Forms.ToolStripPanel> à la **boîte à outils** pour générer votre formulaire MDI dans le Concepteur Windows Forms.  
+## <a name="adding-the-toolstrippanel-control-to-the-toolbox"></a><span data-ttu-id="f18dd-144">Ajout du contrôle ToolStripPanel à la boîte à outils</span><span class="sxs-lookup"><span data-stu-id="f18dd-144">Adding the ToolStripPanel Control to the Toolbox</span></span>  
+ <span data-ttu-id="f18dd-145">Lorsque vous utilisez <xref:System.Windows.Forms.MenuStrip> contrôles avec un formulaire MDI doit avoir le <xref:System.Windows.Forms.ToolStripPanel> contrôle.</span><span class="sxs-lookup"><span data-stu-id="f18dd-145">When you use <xref:System.Windows.Forms.MenuStrip> controls with an MDI form you must have the <xref:System.Windows.Forms.ToolStripPanel> control.</span></span> <span data-ttu-id="f18dd-146">Vous devez ajouter le <xref:System.Windows.Forms.ToolStripPanel> le contrôle à la **boîte à outils** pour générer votre formulaire MDI dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="f18dd-146">You must add the <xref:System.Windows.Forms.ToolStripPanel> control to the **Toolbox** to build your MDI form in the Windows Forms Designer.</span></span>  
   
-#### Pour ajouter le contrôle ToolStripPanel à la boîte à outils  
+#### <a name="to-add-the-toolstrippanel-control-to-the-toolbox"></a><span data-ttu-id="f18dd-147">Pour ajouter le contrôle ToolStripPanel à la boîte à outils</span><span class="sxs-lookup"><span data-stu-id="f18dd-147">To add the ToolStripPanel control to the Toolbox</span></span>  
   
-1.  Ouvrez la **Boîte à outils**, puis cliquez sur l'onglet **Tous les Windows Forms** pour afficher les contrôles Windows Forms disponibles.  
+1.  <span data-ttu-id="f18dd-148">Ouvrez le **boîte à outils**, puis cliquez sur le **tous les Windows Forms** onglet pour afficher les contrôles Windows Forms disponibles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-148">Open the **Toolbox**, and then click the **All Windows Forms** tab to show the available Windows Forms controls.</span></span>  
   
-2.  Cliquez avec le bouton droit pour ouvrir le menu contextuel et sélectionnez **Choisir les éléments**.  
+2.  <span data-ttu-id="f18dd-149">Avec le bouton droit pour ouvrir le menu contextuel, puis sélectionnez **choisir des éléments de**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-149">Right-click to open the shortcut menu, and select **Choose Items**.</span></span>  
   
-3.  Dans la boîte de dialogue **Choisir des éléments de boîte à outils**, faites défiler la colonne **Nom** vers le bas jusqu'à **ToolStripPanel**.  
+3.  <span data-ttu-id="f18dd-150">Dans le **choisir des éléments de boîte à outils** boîte de dialogue, faites défiler vers le bas la **nom** colonne jusqu'à ce que vous trouviez **ToolStripPanel**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-150">In the **Choose Toolbox Items** dialog box, scroll down the **Name** column until you find **ToolStripPanel**.</span></span>  
   
-4.  Activez la case à cocher pour **ToolStripPanel**, puis cliquez sur **OK**.  
+4.  <span data-ttu-id="f18dd-151">Activez la case à cocher en **ToolStripPanel**, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-151">Select the check box by **ToolStripPanel**, and then click **OK**.</span></span>  
   
-     Le contrôle <xref:System.Windows.Forms.ToolStripPanel> apparaît dans la **boîte à outils**.  
+     <span data-ttu-id="f18dd-152">Le <xref:System.Windows.Forms.ToolStripPanel> contrôle s’affiche dans le **boîte à outils**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-152">The <xref:System.Windows.Forms.ToolStripPanel> control appears in the **Toolbox**.</span></span>  
   
-## Création d'un formulaire enfant  
- Dans cette procédure, vous définirez une classe de formulaire enfant séparée qui a son propre contrôle <xref:System.Windows.Forms.MenuStrip>.  Les éléments de menu pour ce formulaire sont fusionnés avec ceux du formulaire parent.  
+## <a name="creating-a-child-form"></a><span data-ttu-id="f18dd-153">Création d’un formulaire enfant</span><span class="sxs-lookup"><span data-stu-id="f18dd-153">Creating a Child Form</span></span>  
+ <span data-ttu-id="f18dd-154">Dans cette procédure, vous allez définir une classe de formulaire enfant séparée qui a son propre <xref:System.Windows.Forms.MenuStrip> contrôle.</span><span class="sxs-lookup"><span data-stu-id="f18dd-154">In this procedure, you will define a separate child form class that has its own <xref:System.Windows.Forms.MenuStrip> control.</span></span> <span data-ttu-id="f18dd-155">Les éléments de menu pour ce formulaire sont fusionnées avec celles du formulaire parent.</span><span class="sxs-lookup"><span data-stu-id="f18dd-155">The menu items for this form are merged with those of the parent form.</span></span>  
   
-#### Pour définir un formulaire enfant  
+#### <a name="to-define-a-child-form"></a><span data-ttu-id="f18dd-156">Pour définir un formulaire enfant</span><span class="sxs-lookup"><span data-stu-id="f18dd-156">To define a child form</span></span>  
   
-1.  Ajoutez un nouveau formulaire nommé `ChildForm` au projet.  
+1.  <span data-ttu-id="f18dd-157">Ajoutez un nouveau formulaire nommé `ChildForm` au projet.</span><span class="sxs-lookup"><span data-stu-id="f18dd-157">Add a new form named `ChildForm` to the project.</span></span>  
   
-     Pour plus d'informations, consultez [How to: Add Windows Forms to a Project](http://msdn.microsoft.com/fr-fr/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
+     <span data-ttu-id="f18dd-158">Pour plus d’informations, consultez [Comment : ajouter des Windows Forms à un projet](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1).</span><span class="sxs-lookup"><span data-stu-id="f18dd-158">For more information, see [How to: Add Windows Forms to a Project](http://msdn.microsoft.com/en-us/3d7bb25f-fd90-47cf-9378-fa0d764686c1).</span></span>  
   
-2.  À partir de la **boîte à outils**, faites glisser un contrôle <xref:System.Windows.Forms.MenuStrip> dans le formulaire enfant.  
+2.  <span data-ttu-id="f18dd-159">À partir de la **boîte à outils**, faites glisser un <xref:System.Windows.Forms.MenuStrip> contrôle dans le formulaire enfant.</span><span class="sxs-lookup"><span data-stu-id="f18dd-159">From the **Toolbox**, drag a <xref:System.Windows.Forms.MenuStrip> control onto the child form.</span></span>  
   
-3.  Cliquez sur le glyph de la balise active du contrôle <xref:System.Windows.Forms.MenuStrip> \(![Glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\), puis sélectionnez **Modifier les éléments**.  
+3.  <span data-ttu-id="f18dd-160">Cliquez sur le <xref:System.Windows.Forms.MenuStrip> glyphe de balise active du contrôle (![glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")), puis sélectionnez **modifier les éléments**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-160">Click the <xref:System.Windows.Forms.MenuStrip> control's smart tag glyph (![Smart Tag Glyph](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")), and then select **Edit Items**.</span></span>  
   
-4.  Dans la boîte de dialogue **Éditeur de collections Items**, ajoutez un nouveau <xref:System.Windows.Forms.ToolStripMenuItem>nommé ChildMenuItem au menu enfant.  
+4.  <span data-ttu-id="f18dd-161">Dans le **éditeur de collections Items** boîte de dialogue zone, ajoutez une nouvelle <xref:System.Windows.Forms.ToolStripMenuItem> nommé **ChildMenuItem** au menu enfant.</span><span class="sxs-lookup"><span data-stu-id="f18dd-161">In the **Items Collection Editor** dialog box, add a new <xref:System.Windows.Forms.ToolStripMenuItem> named **ChildMenuItem** to the child menu.</span></span>  
   
-     Pour plus d'informations, consultez [ToolStrip Items Collection Editor](http://msdn.microsoft.com/fr-fr/e681f3ab-94ba-4b2b-ac64-1dfad46caa25).  
+     <span data-ttu-id="f18dd-162">Pour plus d’informations, consultez [éditeur de collections d’éléments ToolStrip](http://msdn.microsoft.com/en-us/e681f3ab-94ba-4b2b-ac64-1dfad46caa25).</span><span class="sxs-lookup"><span data-stu-id="f18dd-162">For more information, see [ToolStrip Items Collection Editor](http://msdn.microsoft.com/en-us/e681f3ab-94ba-4b2b-ac64-1dfad46caa25).</span></span>  
   
-## Test du formulaire  
+## <a name="testing-the-form"></a><span data-ttu-id="f18dd-163">Test du formulaire</span><span class="sxs-lookup"><span data-stu-id="f18dd-163">Testing the Form</span></span>  
   
-#### Pour tester votre formulaire  
+#### <a name="to-test-your-form"></a><span data-ttu-id="f18dd-164">Pour tester votre formulaire</span><span class="sxs-lookup"><span data-stu-id="f18dd-164">To test your form</span></span>  
   
-1.  Appuyez sur F5 pour compiler et exécuter votre formulaire.  
+1.  <span data-ttu-id="f18dd-165">Appuyez sur F5 pour compiler et exécuter votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-165">Press F5 to compile and run your form.</span></span>  
   
-2.  Cliquez sur l'élément de menu **Fenêtre** pour ouvrir le menu, puis sur **Nouveau**.  
+2.  <span data-ttu-id="f18dd-166">Cliquez sur le **fenêtre** élément de menu pour ouvrir le menu, puis cliquez sur **nouveau**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-166">Click the **Window** menu item to open the menu, and then click **New**.</span></span>  
   
-     Un nouveau formulaire enfant est créé dans la zone cliente MDI du formulaire.  Le menu du formulaire enfant est fusionné avec le menu principal.  
+     <span data-ttu-id="f18dd-167">Un nouveau formulaire enfant est créé dans la zone du formulaire MDI client.</span><span class="sxs-lookup"><span data-stu-id="f18dd-167">A new child form is created in the form's MDI client area.</span></span> <span data-ttu-id="f18dd-168">Les menus du formulaire enfant sont fusionné avec le menu principal.</span><span class="sxs-lookup"><span data-stu-id="f18dd-168">The child form's menu is merged with the main menu.</span></span>  
   
-3.  Fermez le formulaire enfant.  
+3.  <span data-ttu-id="f18dd-169">Fermez le formulaire enfant.</span><span class="sxs-lookup"><span data-stu-id="f18dd-169">Close the child form.</span></span>  
   
-     Le menu du formulaire enfant est supprimé du menu principal.  
+     <span data-ttu-id="f18dd-170">Les menus du formulaire enfant sont supprimé dans le menu principal.</span><span class="sxs-lookup"><span data-stu-id="f18dd-170">The child form's menu is removed from the main menu.</span></span>  
   
-4.  Cliquez plusieurs fois sur **Nouveau**.  
+4.  <span data-ttu-id="f18dd-171">Cliquez sur **nouveau** plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="f18dd-171">Click **New** several times.</span></span>  
   
-     Les formulaires enfants sont automatiquement répertoriés sous l'élément de menu **Fenêtre** car la propriété <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> du contrôle <xref:System.Windows.Forms.MenuStrip> est assignée.  
+     <span data-ttu-id="f18dd-172">Les formulaires enfants sont automatiquement répertoriés sous la W**fenêtre** élément de menu, car le <xref:System.Windows.Forms.MenuStrip> du contrôle <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> est affectée.</span><span class="sxs-lookup"><span data-stu-id="f18dd-172">The child forms are automatically listed under the W**indow** menu item because the <xref:System.Windows.Forms.MenuStrip> control's <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> property is assigned.</span></span>  
   
-## Ajout de la prise en charge de ToolStrip  
- Dans cette procédure, vous ajouterez quatre contrôles <xref:System.Windows.Forms.ToolStrip> au formulaire parent MDI.  Chaque contrôle <xref:System.Windows.Forms.ToolStrip> est ajouté à l'intérieur d'un contrôle <xref:System.Windows.Forms.ToolStripPanel>, lequel est ancré au bord du formulaire.  
+## <a name="adding-toolstrip-support"></a><span data-ttu-id="f18dd-173">Ajout d’un Support ToolStrip</span><span class="sxs-lookup"><span data-stu-id="f18dd-173">Adding ToolStrip Support</span></span>  
+ <span data-ttu-id="f18dd-174">Dans cette procédure, vous allez ajouter quatre <xref:System.Windows.Forms.ToolStrip> contrôles au formulaire parent MDI.</span><span class="sxs-lookup"><span data-stu-id="f18dd-174">In this procedure, you will add four <xref:System.Windows.Forms.ToolStrip> controls to the MDI parent form.</span></span> <span data-ttu-id="f18dd-175">Chaque <xref:System.Windows.Forms.ToolStrip> contrôle est ajouté à l’intérieur d’un <xref:System.Windows.Forms.ToolStripPanel> contrôle, qui est ancré sur le bord de l’écran.</span><span class="sxs-lookup"><span data-stu-id="f18dd-175">Each <xref:System.Windows.Forms.ToolStrip> control is added inside a <xref:System.Windows.Forms.ToolStripPanel> control, which is docked to the edge of the form.</span></span>  
   
-#### Pour ajouter des contrôles ToolStrip au formulaire parent MDI  
+#### <a name="to-add-toolstrip-controls-to-the-mdi-parent-form"></a><span data-ttu-id="f18dd-176">Pour ajouter des contrôles ToolStrip au formulaire parent MDI</span><span class="sxs-lookup"><span data-stu-id="f18dd-176">To add ToolStrip controls to the MDI parent form</span></span>  
   
-1.  À partir de la **boîte à outils**, faites glisser un contrôle <xref:System.Windows.Forms.ToolStripPanel> dans le formulaire.  
+1.  <span data-ttu-id="f18dd-177">À partir de la **boîte à outils**, faites glisser un <xref:System.Windows.Forms.ToolStripPanel> contrôle vers le formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-177">From the **Toolbox**, drag a <xref:System.Windows.Forms.ToolStripPanel> control onto the form.</span></span>  
   
-2.  Le contrôle <xref:System.Windows.Forms.ToolStripPanel> étant sélectionné, double\-cliquez sur le contrôle <xref:System.Windows.Forms.ToolStrip> dans la **boîte à outils**.  
+2.  <span data-ttu-id="f18dd-178">Avec la <xref:System.Windows.Forms.ToolStripPanel> contrôle sélectionné, double-cliquez sur le <xref:System.Windows.Forms.ToolStrip> contrôler dans le **boîte à outils**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-178">With the <xref:System.Windows.Forms.ToolStripPanel> control selected, double-click the <xref:System.Windows.Forms.ToolStrip> control in the **Toolbox**.</span></span>  
   
-     Un contrôle <xref:System.Windows.Forms.ToolStrip> est créé dans le contrôle <xref:System.Windows.Forms.ToolStripPanel>.  
+     <span data-ttu-id="f18dd-179">A <xref:System.Windows.Forms.ToolStrip> contrôle est créé dans le <xref:System.Windows.Forms.ToolStripPanel> contrôle.</span><span class="sxs-lookup"><span data-stu-id="f18dd-179">A <xref:System.Windows.Forms.ToolStrip> control is created in the <xref:System.Windows.Forms.ToolStripPanel> control.</span></span>  
   
-3.  Sélectionnez le contrôle <xref:System.Windows.Forms.ToolStripPanel>.  
+3.  <span data-ttu-id="f18dd-180">Sélectionnez le contrôle <xref:System.Windows.Forms.ToolStripPanel>.</span><span class="sxs-lookup"><span data-stu-id="f18dd-180">Select the <xref:System.Windows.Forms.ToolStripPanel> control.</span></span>  
   
-4.  Dans la fenêtre Propriétés, remplacez la valeur de la propriété <xref:System.Windows.Forms.Control.Dock%2A> du contrôle par <xref:System.Windows.Forms.DockStyle>.  
+4.  <span data-ttu-id="f18dd-181">Dans la fenêtre Propriétés, modifiez la valeur du contrôle <xref:System.Windows.Forms.Control.Dock%2A> propriété <xref:System.Windows.Forms.DockStyle.Left>.</span><span class="sxs-lookup"><span data-stu-id="f18dd-181">In the Properties window, change the value of the control's <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Left>.</span></span>  
   
-     Le contrôle <xref:System.Windows.Forms.ToolStripPanel> s'ancre sur le côté gauche du formulaire, sous le menu principal.  La zone cliente MDI s'ajuste au contrôle <xref:System.Windows.Forms.ToolStripPanel>.  
+     <span data-ttu-id="f18dd-182">Le <xref:System.Windows.Forms.ToolStripPanel> contrôler s’ancre sur le côté gauche de l’écran, sous le menu principal.</span><span class="sxs-lookup"><span data-stu-id="f18dd-182">The <xref:System.Windows.Forms.ToolStripPanel> control docks to the left side of the form, underneath the main menu.</span></span> <span data-ttu-id="f18dd-183">La zone cliente MDI est redimensionné pour s’ajuster à la <xref:System.Windows.Forms.ToolStripPanel> contrôle.</span><span class="sxs-lookup"><span data-stu-id="f18dd-183">The MDI client area resizes to fit the <xref:System.Windows.Forms.ToolStripPanel> control.</span></span>  
   
-5.  Répétez les étapes 1 à 4.  
+5.  <span data-ttu-id="f18dd-184">Répétez les étapes 1 à 4.</span><span class="sxs-lookup"><span data-stu-id="f18dd-184">Repeat steps 1 through 4.</span></span>  
   
-     Ancrez le nouveau contrôle <xref:System.Windows.Forms.ToolStripPanel> au bord supérieur du formulaire.  
+     <span data-ttu-id="f18dd-185">Ancrer la nouvelle <xref:System.Windows.Forms.ToolStripPanel> contrôle en haut du formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-185">Dock the new <xref:System.Windows.Forms.ToolStripPanel> control to the top of the form.</span></span>  
   
-     Le contrôle <xref:System.Windows.Forms.ToolStripPanel> est ancré sous le menu principal, mais à droite du premier contrôle <xref:System.Windows.Forms.ToolStripPanel>.  Cette étape illustre l'importance de l'ordre de plan pour positionner correctement les contrôles <xref:System.Windows.Forms.ToolStripPanel>.  
+     <span data-ttu-id="f18dd-186">Le <xref:System.Windows.Forms.ToolStripPanel> contrôle est ancré sous le menu principal, mais à droite de la première <xref:System.Windows.Forms.ToolStripPanel> contrôle.</span><span class="sxs-lookup"><span data-stu-id="f18dd-186">The <xref:System.Windows.Forms.ToolStripPanel> control is docked underneath the main menu, but to the right of the first <xref:System.Windows.Forms.ToolStripPanel> control.</span></span> <span data-ttu-id="f18dd-187">Cette étape illustre l’importance de l’ordre de plan positionner correctement <xref:System.Windows.Forms.ToolStripPanel> contrôles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-187">This step illustrates the importance of z-order in correctly positioning <xref:System.Windows.Forms.ToolStripPanel> controls.</span></span>  
   
-6.  Répétez les étapes 1 à 4 pour deux autres contrôles <xref:System.Windows.Forms.ToolStripPanel>.  
+6.  <span data-ttu-id="f18dd-188">Répétez les étapes 1 à 4 pour deux autres <xref:System.Windows.Forms.ToolStripPanel> contrôles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-188">Repeat steps 1 through 4 for two more <xref:System.Windows.Forms.ToolStripPanel> controls.</span></span>  
   
-     Ancrez les nouveaux contrôles <xref:System.Windows.Forms.ToolStripPanel> à droite et en bas du formulaire.  
+     <span data-ttu-id="f18dd-189">Ancrer la nouvelle <xref:System.Windows.Forms.ToolStripPanel> contrôles à droite et en bas du formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-189">Dock the new <xref:System.Windows.Forms.ToolStripPanel> controls to the right and bottom of the form.</span></span>  
   
-## Organisation des contrôles ToolStripPanel suivant l'ordre de plan  
- La position d'un contrôle <xref:System.Windows.Forms.ToolStripPanel> ancré sur votre formulaire MDI est déterminée par sa position dans l'ordre de plan.  Vous pouvez facilement organiser l'ordre de plan de vos contrôles dans la fenêtre Structure du document.  
+## <a name="arranging-toolstrippanel-controls-by-z-order"></a><span data-ttu-id="f18dd-190">Organisation des contrôles ToolStripPanel par ordre de plan</span><span class="sxs-lookup"><span data-stu-id="f18dd-190">Arranging ToolStripPanel Controls by Z-order</span></span>  
+ <span data-ttu-id="f18dd-191">La position d’une fenêtre fixe <xref:System.Windows.Forms.ToolStripPanel> contrôle sur votre formulaire MDI est déterminée par la position du contrôle dans l’ordre de plan.</span><span class="sxs-lookup"><span data-stu-id="f18dd-191">The position of a docked <xref:System.Windows.Forms.ToolStripPanel> control on your MDI form is determined by the control's position in the z-order.</span></span> <span data-ttu-id="f18dd-192">Vous pouvez facilement réorganiser l’ordre de plan de vos contrôles dans la fenêtre Structure du Document.</span><span class="sxs-lookup"><span data-stu-id="f18dd-192">You can easily arrange the z-order of your controls in the Document Outline window.</span></span>  
   
-#### Pour organiser les contrôles ToolStripPanel suivant l'ordre de plan  
+#### <a name="to-arrange-toolstrippanel-controls-by-z-order"></a><span data-ttu-id="f18dd-193">Pour organiser les contrôles ToolStripPanel suivant l’ordre de plan</span><span class="sxs-lookup"><span data-stu-id="f18dd-193">To arrange ToolStripPanel controls by Z-order</span></span>  
   
-1.  Dans le menu **Affichage**, cliquez sur **Autres fenêtres** , puis sur **Structure du document**.  
+1.  <span data-ttu-id="f18dd-194">Dans le **vue** menu, cliquez sur **autres fenêtres**, puis cliquez sur **structure du Document**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-194">In the **View** menu, click **Other Windows**, and then click **Document Outline**.</span></span>  
   
-     La disposition de vos contrôles <xref:System.Windows.Forms.ToolStripPanel> issus de la procédure précédente n'est pas standard.  La raison en est que l'ordre de plan n'est pas correct.  Utilisez la fenêtre Structure du document pour modifier l'ordre de plan des contrôles.  
+     <span data-ttu-id="f18dd-195">La disposition de votre <xref:System.Windows.Forms.ToolStripPanel> contrôles à partir de la procédure précédente n’est pas standard.</span><span class="sxs-lookup"><span data-stu-id="f18dd-195">The arrangement of your <xref:System.Windows.Forms.ToolStripPanel> controls from the previous procedure is nonstandard.</span></span> <span data-ttu-id="f18dd-196">Il s’agit, car l’ordre de plan n’est pas correct.</span><span class="sxs-lookup"><span data-stu-id="f18dd-196">This is because the z-order is not correct.</span></span> <span data-ttu-id="f18dd-197">Utilisez la fenêtre Structure du Document pour modifier l’ordre de plan des contrôles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-197">Use the Document Outline window to change the z-order of the controls.</span></span>  
   
-2.  Dans la fenêtre Structure du document, sélectionnez **ToolStripPanel4**.  
+2.  <span data-ttu-id="f18dd-198">Dans la fenêtre Structure du Document, sélectionnez **ToolStripPanel4**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-198">In the Document Outline window, select **ToolStripPanel4**.</span></span>  
   
-3.  Cliquez plusieurs fois sur le bouton fléché Bas, jusqu'à ce que **ToolStripPanel4** apparaisse en bas de la liste.  
+3.  <span data-ttu-id="f18dd-199">Cliquez sur le bouton de flèche vers le bas à plusieurs reprises, jusqu'à ce que **ToolStripPanel4** figure au bas de la liste.</span><span class="sxs-lookup"><span data-stu-id="f18dd-199">Click the down-arrow button repeatedly, until **ToolStripPanel4** is at the bottom of the list.</span></span>  
   
-     Le contrôle **ToolStripPanel4** est ancré au bord inférieur du formulaire, sous les autres contrôles.  
+     <span data-ttu-id="f18dd-200">Le **ToolStripPanel4** contrôle est ancré en bas de l’écran, sous les autres contrôles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-200">The **ToolStripPanel4** control is docked to the bottom of the form, underneath the other controls.</span></span>  
   
-4.  Sélectionnez **ToolStripPanel2**.  
+4.  <span data-ttu-id="f18dd-201">Sélectionnez **ToolStripPanel2**.</span><span class="sxs-lookup"><span data-stu-id="f18dd-201">Select **ToolStripPanel2**.</span></span>  
   
-5.  Cliquez sur le bouton fléché bas une fois pour positionner le troisième contrôle de la liste.  
+5.  <span data-ttu-id="f18dd-202">Cliquez une fois sur le bouton de flèche vers le bas pour positionner le troisième contrôle dans la liste.</span><span class="sxs-lookup"><span data-stu-id="f18dd-202">Click the down-arrow button one time to position the control third in the list.</span></span>  
   
-     Le contrôle **ToolStripPanel2** est ancré au bord supérieur du formulaire, sous le menu principal et au\-dessus des autres contrôles.  
+     <span data-ttu-id="f18dd-203">Le **ToolStripPanel2** contrôle est ancrée en haut de l’écran, sous le menu principal et au-dessus des autres contrôles.</span><span class="sxs-lookup"><span data-stu-id="f18dd-203">The **ToolStripPanel2** control is docked to the top of the form, underneath the main menu and above the other controls.</span></span>  
   
-6.  Sélectionnez différents contrôles dans la fenêtre **Structure du document** et placez\-les à différents endroits dans l'ordre de plan.  Notez l'effet de l'ordre de plan sur la position des contrôles ancrés.  Utilisez CTRL\+Z ou **Annuler** dans le menu **Edition** pour annuler les modifications apportées.  
+6.  <span data-ttu-id="f18dd-204">Sélectionnez différents contrôles dans le **structure du Document** fenêtre et les déplacer à différents endroits dans l’ordre de plan.</span><span class="sxs-lookup"><span data-stu-id="f18dd-204">Select various controls in the **Document Outline** window and move them to different positions in the z-order.</span></span> <span data-ttu-id="f18dd-205">Notez l’effet de l’ordre de plan sur la position des contrôles ancrés.</span><span class="sxs-lookup"><span data-stu-id="f18dd-205">Note the effect of the z-order on the placement of docked controls.</span></span> <span data-ttu-id="f18dd-206">Utilisez CTRL + Z ou **Annuler** sur la **modifier** menu pour annuler vos modifications.</span><span class="sxs-lookup"><span data-stu-id="f18dd-206">Use CTRL-Z or **Undo** on the **Edit** menu to undo your changes.</span></span>  
   
-## Point de contrôle  
+## <a name="checkpoint"></a><span data-ttu-id="f18dd-207">Point de contrôle</span><span class="sxs-lookup"><span data-stu-id="f18dd-207">Checkpoint</span></span>  
   
-#### Pour tester votre formulaire  
+#### <a name="to-test-your-form"></a><span data-ttu-id="f18dd-208">Pour tester votre formulaire</span><span class="sxs-lookup"><span data-stu-id="f18dd-208">To test your form</span></span>  
   
-1.  Appuyez sur F5 pour compiler et exécuter votre formulaire.  
+1.  <span data-ttu-id="f18dd-209">Appuyez sur F5 pour compiler et exécuter votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-209">Press F5 to compile and run your form.</span></span>  
   
-2.  Cliquez sur la poignée d'un contrôle <xref:System.Windows.Forms.ToolStrip> et placez\-le à différents endroits sur le formulaire en le faisant glisser.  
+2.  <span data-ttu-id="f18dd-210">Cliquez sur la poignée d’un <xref:System.Windows.Forms.ToolStrip> contrôler et faites glisser le contrôle à différents endroits dans le formulaire.</span><span class="sxs-lookup"><span data-stu-id="f18dd-210">Click the grip of a <xref:System.Windows.Forms.ToolStrip> control and drag the control to different positions on the form.</span></span>  
   
-     Vous pouvez faire glisser un contrôle <xref:System.Windows.Forms.ToolStrip> d'un contrôle <xref:System.Windows.Forms.ToolStripPanel> à un autre.  
+     <span data-ttu-id="f18dd-211">Vous pouvez faire glisser un <xref:System.Windows.Forms.ToolStrip> contrôle à partir d’un <xref:System.Windows.Forms.ToolStripPanel> contrôle à un autre.</span><span class="sxs-lookup"><span data-stu-id="f18dd-211">You can drag a <xref:System.Windows.Forms.ToolStrip> control from one <xref:System.Windows.Forms.ToolStripPanel> control to another.</span></span>  
   
-## Étapes suivantes  
- Dans cette procédure pas à pas, vous avez créé un formulaire parent MDI avec des contrôles <xref:System.Windows.Forms.ToolStrip> et une fusion de menus.  Vous pouvez utiliser la famille de contrôles <xref:System.Windows.Forms.ToolStrip> à bien d'autres fins :  
+## <a name="next-steps"></a><span data-ttu-id="f18dd-212">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="f18dd-212">Next Steps</span></span>  
+ <span data-ttu-id="f18dd-213">Dans cette procédure pas à pas, vous avez créé un formulaire MDI parent avec <xref:System.Windows.Forms.ToolStrip> de contrôles et de la fusion de menus.</span><span class="sxs-lookup"><span data-stu-id="f18dd-213">In this walkthrough, you have created an MDI parent form with <xref:System.Windows.Forms.ToolStrip> controls and menu merging.</span></span> <span data-ttu-id="f18dd-214">Vous pouvez utiliser la <xref:System.Windows.Forms.ToolStrip> famille de contrôles de nombreuses autres fins :</span><span class="sxs-lookup"><span data-stu-id="f18dd-214">You can use the <xref:System.Windows.Forms.ToolStrip> family of controls for many other purposes:</span></span>  
   
--   Créer des menus contextuels pour vos contrôles avec <xref:System.Windows.Forms.ContextMenuStrip>.  Pour plus d'informations, consultez [Vue d'ensemble du composant ContextMenu](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md).  
+-   <span data-ttu-id="f18dd-215">Créer des menus contextuels pour vos contrôles avec <xref:System.Windows.Forms.ContextMenuStrip>.</span><span class="sxs-lookup"><span data-stu-id="f18dd-215">Create shortcut menus for your controls with <xref:System.Windows.Forms.ContextMenuStrip>.</span></span> <span data-ttu-id="f18dd-216">Pour plus d’informations, consultez [vue d’ensemble du composant ContextMenu](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="f18dd-216">For more information, see [ContextMenu Component Overview](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md).</span></span>  
   
--   Créer un formulaire doté d'un menu standard automatiquement rempli.  Pour plus d'informations, consultez [Procédure pas à pas : mise à disposition d'éléments de menu standard pour un formulaire](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).  
+-   <span data-ttu-id="f18dd-217">Créer un formulaire avec un menu standard automatiquement rempli.</span><span class="sxs-lookup"><span data-stu-id="f18dd-217">Created a form with an automatically populated standard menu.</span></span> <span data-ttu-id="f18dd-218">Pour plus d’informations, consultez [procédure pas à pas : éléments de Menu Standard à un formulaire](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).</span><span class="sxs-lookup"><span data-stu-id="f18dd-218">For more information, see [Walkthrough: Providing Standard Menu Items to a Form](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).</span></span>  
   
--   Donnez à vos contrôles <xref:System.Windows.Forms.ToolStrip> un aspect professionnel.  Pour plus d'informations, consultez [Comment : définir le convertisseur ToolStrip pour une application](../../../../docs/framework/winforms/controls/how-to-set-the-toolstrip-renderer-for-an-application.md).  
+-   <span data-ttu-id="f18dd-219">Donnez à votre <xref:System.Windows.Forms.ToolStrip> contrôle un aspect professionnel.</span><span class="sxs-lookup"><span data-stu-id="f18dd-219">Give your <xref:System.Windows.Forms.ToolStrip> controls a professional appearance.</span></span> <span data-ttu-id="f18dd-220">Pour plus d’informations, consultez [Comment : définir le convertisseur ToolStrip pour une Application](../../../../docs/framework/winforms/controls/how-to-set-the-toolstrip-renderer-for-an-application.md).</span><span class="sxs-lookup"><span data-stu-id="f18dd-220">For more information, see [How to: Set the ToolStrip Renderer for an Application](../../../../docs/framework/winforms/controls/how-to-set-the-toolstrip-renderer-for-an-application.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.StatusStrip>   
- [Comment : créer des formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)   
- [Comment : créer des formulaires MDI enfants](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)   
- [Comment : insérer un MenuStrip dans un menu déroulant MDI](../../../../docs/framework/winforms/controls/how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms.md)   
- [ToolStrip, contrôle](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="f18dd-221">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f18dd-221">See Also</span></span>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.StatusStrip>  
+ [<span data-ttu-id="f18dd-222">Guide pratique pour créer des formulaires MDI parents</span><span class="sxs-lookup"><span data-stu-id="f18dd-222">How to: Create MDI Parent Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ [<span data-ttu-id="f18dd-223">Guide pratique pour créer des formulaires MDI enfants</span><span class="sxs-lookup"><span data-stu-id="f18dd-223">How to: Create MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
+ [<span data-ttu-id="f18dd-224">Guide pratique pour insérer un MenuStrip dans un menu déroulant MDI</span><span class="sxs-lookup"><span data-stu-id="f18dd-224">How to: Insert a MenuStrip into an MDI Drop-Down Menu</span></span>](../../../../docs/framework/winforms/controls/how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms.md)  
+ [<span data-ttu-id="f18dd-225">Contrôle ToolStrip</span><span class="sxs-lookup"><span data-stu-id="f18dd-225">ToolStrip Control</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)

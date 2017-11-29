@@ -1,82 +1,87 @@
 ---
-title: "Comment&#160;: &#233;tablir une liaison &#224; un service Web &#224; l&#39;aide du BindingSource Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "BindingSource (composant Windows Forms), lier à un service Web"
-  - "BindingSource (composant Windows Forms), exemples"
-  - "contrôles (Windows Forms), lier au service Web"
-  - "exemples (Windows Forms), BindingSource (composant)"
-  - "services Web, lier des contrôles"
+title: "Comment : établir une liaison à un service Web à l’aide du BindingSource Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- Web services [Windows Forms], binding controls
+- BindingSource component [Windows Forms], binding to a Web service
+- examples [Windows Forms], BindingSource component
+- controls [Windows Forms], binding to Web service
+- BindingSource component [Windows Forms], examples
 ms.assetid: ee261207-4573-4cb9-a8cb-5185037e0fba
-caps.latest.revision: 26
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d5024ad9000811aa438183de240c91b659644a7a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: &#233;tablir une liaison &#224; un service Web &#224; l&#39;aide du BindingSource Windows Forms
-Si vous voulez lier un contrôle Windows Forms aux résultats obtenus à partir d'un appel à un service web XML, vous pouvez utiliser un composant <xref:System.Windows.Forms.BindingSource>.  Cette procédure est similaire à celle d'une liaison d'un composant <xref:System.Windows.Forms.BindingSource> à un type.  Vous devez créer un proxy côté client qui contienne les méthodes et les types exposés par le service web.  Vous générez un proxy côté client à partir du service web \(.asmx\) lui\-même ou à partir de son fichier WSDL.  En outre, votre proxy côté client doit exposer les champs de types complexes utilisés par le service web en tant que propriétés publiques.  Vous pouvez ensuite lier la <xref:System.Windows.Forms.BindingSource> à l'un des types exposés dans le proxy du service web.  
+# <a name="how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource"></a><span data-ttu-id="ef24b-102">Comment : établir une liaison à un service Web à l’aide du BindingSource Windows Forms</span><span class="sxs-lookup"><span data-stu-id="ef24b-102">How to: Bind to a Web Service Using the Windows Forms BindingSource</span></span>
+<span data-ttu-id="ef24b-103">Si vous voulez lier un contrôle Windows Forms aux résultats obtenus à partir d'un appel à un service web XML, vous pouvez utiliser un composant <xref:System.Windows.Forms.BindingSource>.</span><span class="sxs-lookup"><span data-stu-id="ef24b-103">If you want to bind a Windows Form control to the results obtained from calling an XML Web service, you can use a <xref:System.Windows.Forms.BindingSource> component.</span></span> <span data-ttu-id="ef24b-104">Cette procédure est similaire à celle d'une liaison d'un composant <xref:System.Windows.Forms.BindingSource> à un type.</span><span class="sxs-lookup"><span data-stu-id="ef24b-104">This procedure is similar to binding a <xref:System.Windows.Forms.BindingSource> component to a type.</span></span> <span data-ttu-id="ef24b-105">Vous devez créer un proxy côté client qui contienne les méthodes et les types exposés par le service web.</span><span class="sxs-lookup"><span data-stu-id="ef24b-105">You must create a client-side proxy that contains the methods and types exposed by the Web service.</span></span> <span data-ttu-id="ef24b-106">Vous générez un proxy côté client à partir du service web (.asmx) lui-même ou à partir de son fichier WSDL.</span><span class="sxs-lookup"><span data-stu-id="ef24b-106">You generate a client-side proxy from the Web service (.asmx) itself, or its Web Services Description Language (WSDL) file.</span></span> <span data-ttu-id="ef24b-107">En outre, votre proxy côté client doit exposer les champs de types complexes utilisés par le service web en tant que propriétés publiques.</span><span class="sxs-lookup"><span data-stu-id="ef24b-107">Additionally, your client-side proxy must expose the fields of complex types used by the Web service as public properties.</span></span> <span data-ttu-id="ef24b-108">Vous pouvez ensuite lier la <xref:System.Windows.Forms.BindingSource> à l'un des types exposés dans le proxy du service web.</span><span class="sxs-lookup"><span data-stu-id="ef24b-108">You then bind the <xref:System.Windows.Forms.BindingSource> to one of the types exposed in the Web service proxy.</span></span>  
   
-### Pour créer un proxy côté client et créer des liaisons à celui\-ci  
+### <a name="to-create-and-bind-to-a-client-side-proxy"></a><span data-ttu-id="ef24b-109">Pour créer un proxy côté client et créer des liaisons à celui-ci</span><span class="sxs-lookup"><span data-stu-id="ef24b-109">To create and bind to a client-side proxy</span></span>  
   
-1.  Créez un formulaire Windows dans le répertoire de votre choix, avec un espace de noms approprié.  
+1.  <span data-ttu-id="ef24b-110">Créez un formulaire Windows dans le répertoire de votre choix, avec un espace de noms approprié.</span><span class="sxs-lookup"><span data-stu-id="ef24b-110">Create a Windows Form in the directory of your choice, with an appropriate namespace.</span></span>  
   
-2.  Ajoutez un composant <xref:System.Windows.Forms.BindingSource> au formulaire.  
+2.  <span data-ttu-id="ef24b-111">Ajoutez un composant <xref:System.Windows.Forms.BindingSource> au formulaire.</span><span class="sxs-lookup"><span data-stu-id="ef24b-111">Add a <xref:System.Windows.Forms.BindingSource> component to the form.</span></span>  
   
-3.  Ouvrez l'invite de commandes [!INCLUDE[winsdklong](../../../../includes/winsdklong-md.md)], puis accédez au répertoire où se trouve votre formulaire.  
+3.  <span data-ttu-id="ef24b-112">Ouvrez l'invite de commandes [!INCLUDE[winsdklong](../../../../includes/winsdklong-md.md)], puis accédez au répertoire où se trouve votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="ef24b-112">Open the [!INCLUDE[winsdklong](../../../../includes/winsdklong-md.md)] command prompt, and navigate to the same directory that your form is located in.</span></span>  
   
-4.  À l'aide de l'outil WSDL, entrez `wsdl` et l'URL du fichier .asmx ou WSDL du service Web, suivie de l'espace de noms de votre application, et éventuellement le langage utilisé.  
+4.  <span data-ttu-id="ef24b-113">À l’aide de l’outil WSDL, entrez `wsdl` et l’URL du fichier .asmx ou WSDL du service web, suivi de l’espace de noms de votre application, et éventuellement le langage utilisé.</span><span class="sxs-lookup"><span data-stu-id="ef24b-113">Using the WSDL tool, enter `wsdl` and the URL for the .asmx or WSDL file for the Web service, followed by the namespace of your application, and optionally the language you are working in.</span></span>  
   
-     L'exemple de code suivant utilise le service web situé à l'adresse suivante : http:\/\/webservices.eraserver.  net\/zipcoderesolver\/zipcoderesolver.asmx.  Pour obtenir un exemple pour un type C\#, voir `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx BindToWebService`. Pour obtenir un exemple pour un type Visual Basic, voir `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService /language:VB`.  Le fait de passer le chemin d'accès en tant qu'argument à l'outil WSDL génère un proxy côté client dans le même répertoire et le même espace de noms que votre application, dans le langage spécifié.  Si vous utilisez [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], ajoutez le fichier à votre projet.  
+     <span data-ttu-id="ef24b-114">L’exemple de code suivant utilise le service web situé à l’adresse suivante : http://webservices.eraserver.net/zipcoderesolver/zipcoderesolver.asmx.</span><span class="sxs-lookup"><span data-stu-id="ef24b-114">The following code example uses the Web service located at http://webservices.eraserver.net/zipcoderesolver/zipcoderesolver.asmx.</span></span> <span data-ttu-id="ef24b-115">Par exemple, pour un type C# `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService` ou pour un type Visual Basic `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService /language:VB`.</span><span class="sxs-lookup"><span data-stu-id="ef24b-115">For example, for C# type `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService`, or for Visual Basic type `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService /language:VB`.</span></span> <span data-ttu-id="ef24b-116">Le fait de passer le chemin d’accès en tant qu’argument à l’outil WSDL génère un proxy côté client dans le même répertoire et le même espace de noms que votre application, dans le langage spécifié.</span><span class="sxs-lookup"><span data-stu-id="ef24b-116">Passing the path as an argument to the WSDL tool will generate a client-side proxy in the same directory and namespace as your application, in the specified language.</span></span> <span data-ttu-id="ef24b-117">Si vous utilisez [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], ajoutez le fichier à votre projet.</span><span class="sxs-lookup"><span data-stu-id="ef24b-117">If you are using [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], add the file to your project.</span></span>  
   
-5.  Sélectionnez un type dans le proxy côté client avec lequel créer une liaison.  
+5.  <span data-ttu-id="ef24b-118">Sélectionnez un type dans le proxy côté client avec lequel créer une liaison.</span><span class="sxs-lookup"><span data-stu-id="ef24b-118">Select a type in the client-side proxy to bind to.</span></span>  
   
-     Il s'agit généralement d'un type retourné par une méthode fournie par le service web.  Les champs du type choisi doivent être exposés en tant que propriétés publiques pour la liaison.  
+     <span data-ttu-id="ef24b-119">Il s'agit généralement d'un type retourné par une méthode fournie par le service web.</span><span class="sxs-lookup"><span data-stu-id="ef24b-119">This is typically a type returned by a method offered by the Web service.</span></span> <span data-ttu-id="ef24b-120">Les champs du type choisi doivent être exposés en tant que propriétés publiques pour la liaison.</span><span class="sxs-lookup"><span data-stu-id="ef24b-120">The fields of the chosen type must be exposed as public properties for binding purposes.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataConnectorWebService#4](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CPP/form1.cpp#4)]
      [!code-csharp[System.Windows.Forms.DataConnectorWebService#4](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CS/form1.cs#4)]
      [!code-vb[System.Windows.Forms.DataConnectorWebService#4](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/VB/form1.vb#4)]  
   
-6.  Définissez la propriété <xref:System.Windows.Forms.BindingSource.DataSource%2A> de <xref:System.Windows.Forms.BindingSource> sur le type contenu dans le proxy côté client du service web.  
+6.  <span data-ttu-id="ef24b-121">Définissez la propriété <xref:System.Windows.Forms.BindingSource.DataSource%2A> de <xref:System.Windows.Forms.BindingSource> sur le type contenu dans le proxy côté client du service web.</span><span class="sxs-lookup"><span data-stu-id="ef24b-121">Set the <xref:System.Windows.Forms.BindingSource.DataSource%2A> property of the <xref:System.Windows.Forms.BindingSource> to the type you want that is contained in the Web service client-side proxy.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataConnectorWebService#2](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CPP/form1.cpp#2)]
      [!code-csharp[System.Windows.Forms.DataConnectorWebService#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CS/form1.cs#2)]
      [!code-vb[System.Windows.Forms.DataConnectorWebService#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/VB/form1.vb#2)]  
   
-### Pour lier des contrôles à une BindingSource liée à un service web  
+### <a name="to-bind-controls-to-the-bindingsource-that-is-bound-to-a-web-service"></a><span data-ttu-id="ef24b-122">Pour lier des contrôles à une BindingSource liée à un service web</span><span class="sxs-lookup"><span data-stu-id="ef24b-122">To bind controls to the BindingSource that is bound to a Web service</span></span>  
   
--   Liez des contrôles à <xref:System.Windows.Forms.BindingSource>, en passant la propriété publique du type de service web de votre choix en tant que paramètre.  
+-   <span data-ttu-id="ef24b-123">Liez des contrôles à <xref:System.Windows.Forms.BindingSource>, en passant la propriété publique du type de service web de votre choix en tant que paramètre.</span><span class="sxs-lookup"><span data-stu-id="ef24b-123">Bind controls to the <xref:System.Windows.Forms.BindingSource>, passing the public property of the Web service type that you want as a parameter.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataConnectorWebService#3](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CPP/form1.cpp#3)]
      [!code-csharp[System.Windows.Forms.DataConnectorWebService#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CS/form1.cs#3)]
      [!code-vb[System.Windows.Forms.DataConnectorWebService#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/VB/form1.vb#3)]  
   
-## Exemple  
- L'exemple de code suivant montre comment lier un composant <xref:System.Windows.Forms.BindingSource> à un service web, puis comment lier une zone de texte au composant <xref:System.Windows.Forms.BindingSource>.  Quand vous cliquez sur le bouton, une méthode de service web est appelée et les résultats s'affichent dans `textbox1`.  
+## <a name="example"></a><span data-ttu-id="ef24b-124">Exemple</span><span class="sxs-lookup"><span data-stu-id="ef24b-124">Example</span></span>  
+ <span data-ttu-id="ef24b-125">L'exemple de code suivant montre comment lier un composant <xref:System.Windows.Forms.BindingSource> à un service web, puis comment lier une zone de texte au composant <xref:System.Windows.Forms.BindingSource>.</span><span class="sxs-lookup"><span data-stu-id="ef24b-125">The following code example demonstrates how to bind a <xref:System.Windows.Forms.BindingSource> component to a Web service, and then how to bind a text box to the <xref:System.Windows.Forms.BindingSource> component.</span></span> <span data-ttu-id="ef24b-126">Quand vous cliquez sur le bouton, une méthode de service web est appelée et les résultats s'affichent dans `textbox1`.</span><span class="sxs-lookup"><span data-stu-id="ef24b-126">When you click the button, a Web service method is called and the results will appear in `textbox1`.</span></span>  
   
  [!code-cpp[System.Windows.Forms.DataConnectorWebService#1](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CPP/form1.cpp#1)]
  [!code-csharp[System.Windows.Forms.DataConnectorWebService#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CS/form1.cs#1)]
  [!code-vb[System.Windows.Forms.DataConnectorWebService#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/VB/form1.vb#1)]  
   
-## Compilation du code  
- Il s'agit d'un exemple complet qui inclut une méthode `Main` et une version raccourcie du code du proxy côté client.  
+## <a name="compiling-the-code"></a><span data-ttu-id="ef24b-127">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="ef24b-127">Compiling the Code</span></span>  
+ <span data-ttu-id="ef24b-128">Il s'agit d'un exemple complet qui inclut une méthode `Main` et une version raccourcie du code du proxy côté client.</span><span class="sxs-lookup"><span data-stu-id="ef24b-128">This is a complete example that includes a `Main` method, and a shortened version of client-side proxy code.</span></span>  
   
- Cet exemple nécessite :  
+ <span data-ttu-id="ef24b-129">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="ef24b-129">This example requires:</span></span>  
   
--   Des références aux assemblys System, System.Drawing, System.Web.Services, System.Windows.Forms et System.Xml.  
+-   <span data-ttu-id="ef24b-130">Des références aux assemblys System, System.Drawing, System.Web.Services, System.Windows.Forms et System.Xml.</span><span class="sxs-lookup"><span data-stu-id="ef24b-130">References to the System, System.Drawing, System.Web.Services, System.Windows.Forms and System.Xml assemblies.</span></span>  
   
- Pour plus d'informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], voir [Génération à partir de la ligne de commande](../Topic/Building%20from%20the%20Command%20Line%20\(Visual%20Basic\).md) ou [Génération à partir de la ligne de commande avec csc.exe](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.  Voir également [Comment : compiler et exécuter un exemple complet de code Windows Forms à l'aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ <span data-ttu-id="ef24b-131">Pour plus d’informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez [Génération à partir de la ligne de commande](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) ou [Génération à partir de la ligne de commande avec csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="ef24b-131">For information about building this example from the command line for [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="ef24b-132">Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.</span><span class="sxs-lookup"><span data-stu-id="ef24b-132">You can also build this example in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] by pasting the code into a new project.</span></span>  <span data-ttu-id="ef24b-133">Consultez également [Guide pratique pour compiler et exécuter un exemple complet de code Windows Forms à l’aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="ef24b-133">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
   
-## Voir aussi  
- [Composant BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)   
- [Comment : lier un contrôle Windows Forms à un type](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)
+## <a name="see-also"></a><span data-ttu-id="ef24b-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ef24b-134">See Also</span></span>  
+ [<span data-ttu-id="ef24b-135">BindingSource, composant</span><span class="sxs-lookup"><span data-stu-id="ef24b-135">BindingSource Component</span></span>](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [<span data-ttu-id="ef24b-136">Comment : lier un contrôle Windows Forms à un type</span><span class="sxs-lookup"><span data-stu-id="ef24b-136">How to: Bind a Windows Forms Control to a Type</span></span>](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)

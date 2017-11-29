@@ -1,51 +1,56 @@
 ---
-title: "Comment&#160;: personnaliser l&#39;ajout d&#39;&#233;l&#233;ments avec le composant BindingSource Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles [Windows Forms], création d’éléments"
-  - "composant BindingSource [Windows Forms], personnalisation de l’ajout d’élément avec"
-  - "exemples [Windows Forms], composant BindingSource"
-  - "composant BindingSource [Windows Forms], exemples"
+title: "Comment : personnaliser l'ajout d'éléments avec le composant BindingSource Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- controls [Windows Forms], creating new items
+- BindingSource component [Windows Forms], customizing item addition with
+- examples [Windows Forms], BindingSource component
+- BindingSource component [Windows Forms], examples
 ms.assetid: 1aae11fc-6fb2-4cb9-b3d0-e0638fe77ef0
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7d1978d3b2cf8634d9222ee5278077dfbe437d04
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: personnaliser l&#39;ajout d&#39;&#233;l&#233;ments avec le composant BindingSource Windows Forms
-Quand vous utilisez un composant <xref:System.Windows.Forms.BindingSource> pour lier un contrôle Windows Forms à une source de données, vous pouvez être contraint de personnaliser la création de nouveaux éléments. Le composant <xref:System.Windows.Forms.BindingSource> simplifie cette personnalisation en fournissant l'événement <xref:System.Windows.Forms.BindingSource.AddingNew>, qui est généralement déclenché quand le contrôle lié doit créer un élément. Votre gestionnaire d'événements peut fournir tout comportement personnalisé nécessaire \(par exemple, appeler une méthode sur un service web ou obtenir un nouvel objet à partir d'une fabrique de classe\).  
+# <a name="how-to-customize-item-addition-with-the-windows-forms-bindingsource"></a><span data-ttu-id="b414c-102">Comment : personnaliser l'ajout d'éléments avec le composant BindingSource Windows Forms</span><span class="sxs-lookup"><span data-stu-id="b414c-102">How to: Customize Item Addition with the Windows Forms BindingSource</span></span>
+<span data-ttu-id="b414c-103">Quand vous utilisez un composant <xref:System.Windows.Forms.BindingSource> pour lier un contrôle Windows Forms à une source de données, vous pouvez être contraint de personnaliser la création de nouveaux éléments.</span><span class="sxs-lookup"><span data-stu-id="b414c-103">When you use a <xref:System.Windows.Forms.BindingSource> component to bind a Windows Forms control to a data source, you may find it necessary to customize the creation of new items.</span></span> <span data-ttu-id="b414c-104">Le composant <xref:System.Windows.Forms.BindingSource> simplifie cette personnalisation en fournissant l'événement <xref:System.Windows.Forms.BindingSource.AddingNew> , qui est généralement déclenché quand le contrôle lié doit créer un élément.</span><span class="sxs-lookup"><span data-stu-id="b414c-104">The <xref:System.Windows.Forms.BindingSource> component makes this straightforward by providing the <xref:System.Windows.Forms.BindingSource.AddingNew> event, which is typically raised when the bound control needs to create a new item.</span></span> <span data-ttu-id="b414c-105">Votre gestionnaire d'événements peut fournir tout comportement personnalisé nécessaire (par exemple, appeler une méthode sur un service web ou obtenir un nouvel objet à partir d'une fabrique de classe).</span><span class="sxs-lookup"><span data-stu-id="b414c-105">Your event handler can provide whatever custom behavior is required (for example, calling a method on a Web service or getting a new object from a class factory).</span></span>  
   
 > [!NOTE]
->  Quand un élément est ajouté en gérant l'événement <xref:System.Windows.Forms.BindingSource.AddingNew>, cet ajout ne peut pas être annulé.  
+>  <span data-ttu-id="b414c-106">Quand un élément est ajouté en gérant l'événement <xref:System.Windows.Forms.BindingSource.AddingNew> , cet ajout ne peut pas être annulé.</span><span class="sxs-lookup"><span data-stu-id="b414c-106">When an item is added by handling the <xref:System.Windows.Forms.BindingSource.AddingNew> event, the addition cannot be canceled.</span></span>  
   
-## Exemple  
- L'exemple suivant montre comment lier un contrôle <xref:System.Windows.Forms.DataGridView> à une fabrique de classe à l'aide d'un composant <xref:System.Windows.Forms.BindingSource>. Quand l'utilisateur clique sur la nouvelle ligne du contrôle <xref:System.Windows.Forms.DataGridView>, l'événement <xref:System.Windows.Forms.BindingSource.AddingNew> est déclenché. Le gestionnaire d'événements crée un objet `DemoCustomer`, qui est affecté à la propriété <xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A?displayProperty=fullName>. Cela provoque l'ajout du nouvel objet `DemoCustomer` à la liste du composant <xref:System.Windows.Forms.BindingSource> et son affichage sur la nouvelle ligne du contrôle <xref:System.Windows.Forms.DataGridView>.  
+## <a name="example"></a><span data-ttu-id="b414c-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="b414c-107">Example</span></span>  
+ <span data-ttu-id="b414c-108">L'exemple suivant montre comment lier un contrôle <xref:System.Windows.Forms.DataGridView> à une fabrique de classe à l'aide d'un composant <xref:System.Windows.Forms.BindingSource> .</span><span class="sxs-lookup"><span data-stu-id="b414c-108">The following example demonstrates how to bind a <xref:System.Windows.Forms.DataGridView> control to a class factory by using a <xref:System.Windows.Forms.BindingSource> component.</span></span> <span data-ttu-id="b414c-109">Quand l'utilisateur clique sur la nouvelle ligne du contrôle <xref:System.Windows.Forms.DataGridView> , l'événement <xref:System.Windows.Forms.BindingSource.AddingNew> est déclenché.</span><span class="sxs-lookup"><span data-stu-id="b414c-109">When the user clicks the <xref:System.Windows.Forms.DataGridView> control's new row, the <xref:System.Windows.Forms.BindingSource.AddingNew> event is raised.</span></span> <span data-ttu-id="b414c-110">Le gestionnaire d'événements crée un objet `DemoCustomer`, qui est affecté à la propriété <xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="b414c-110">The event handler creates a new `DemoCustomer` object, which is assigned to the <xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="b414c-111">Cela provoque l'ajout du nouvel objet `DemoCustomer` à la liste du composant <xref:System.Windows.Forms.BindingSource> et son affichage sur la nouvelle ligne du contrôle <xref:System.Windows.Forms.DataGridView> .</span><span class="sxs-lookup"><span data-stu-id="b414c-111">This causes the new `DemoCustomer` object to be added to the <xref:System.Windows.Forms.BindingSource> component's list and to be displayed in the new row of the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
  [!code-cpp[System.Windows.Forms.DataConnector.AddingNew#1](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/CPP/form1.cpp#1)]
  [!code-csharp[System.Windows.Forms.DataConnector.AddingNew#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/CS/form1.cs#1)]
  [!code-vb[System.Windows.Forms.DataConnector.AddingNew#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/VB/form1.vb#1)]  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a><span data-ttu-id="b414c-112">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="b414c-112">Compiling the Code</span></span>  
+ <span data-ttu-id="b414c-113">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="b414c-113">This example requires:</span></span>  
   
--   Références aux assemblys System, System.Data, System.Drawing et System.Windows.Forms.  
+-   <span data-ttu-id="b414c-114">Références aux assemblys System, System.Data, System.Drawing et System.Windows.Forms.</span><span class="sxs-lookup"><span data-stu-id="b414c-114">References to the System, System.Data, System.Drawing and System.Windows.Forms assemblies.</span></span>  
   
- Pour plus d’informations sur la création de cet exemple à partir de la ligne de commande associée à [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou à [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez les pages [Génération à partir de la ligne de commande](../Topic/Building%20from%20the%20Command%20Line%20\(Visual%20Basic\).md) ou [Génération à partir de la ligne de commande avec csc.exe](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.  Consultez également la page [Comment : compiler et exécuter un exemple complet de code Windows Forms à l’aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ <span data-ttu-id="b414c-115">Pour plus d’informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez [Génération à partir de la ligne de commande](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) ou [Génération à partir de la ligne de commande avec csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="b414c-115">For information about building this example from the command line for [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="b414c-116">Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.</span><span class="sxs-lookup"><span data-stu-id="b414c-116">You can also build this example in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] by pasting the code into a new project.</span></span>  <span data-ttu-id="b414c-117">Consultez également [Guide pratique pour compiler et exécuter un exemple complet de code Windows Forms à l’aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="b414c-117">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.BindingNavigator>   
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.BindingSource>   
- [Composant BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)   
- [Comment : lier un contrôle Windows Forms à un type](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)
+## <a name="see-also"></a><span data-ttu-id="b414c-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b414c-118">See Also</span></span>  
+ <xref:System.Windows.Forms.BindingNavigator>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.BindingSource>  
+ [<span data-ttu-id="b414c-119">BindingSource, composant</span><span class="sxs-lookup"><span data-stu-id="b414c-119">BindingSource Component</span></span>](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [<span data-ttu-id="b414c-120">Comment : lier un contrôle Windows Forms à un type</span><span class="sxs-lookup"><span data-stu-id="b414c-120">How to: Bind a Windows Forms Control to a Type</span></span>](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)

@@ -1,73 +1,76 @@
 ---
-title: "Comment&#160;: configurer Visual Studio pour d&#233;boguer une application de navigateur XAML et appeler un service Web | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "configurer Visual Studio pour déboguer des applications de navigateur XAML (WPF)"
-  - "configurer Visual Studio pour déboguer des applications XBAP (WPF)"
-  - "déboguer des exceptions de sécurité pour des applications de navigateur XAML (WPF)"
-  - "déboguer des applications de navigateur XAML qui appellent un service Web (WPF)"
-  - "exception de sécurité pour des applications de navigateur XAML (WPF), débogage"
+title: "Comment : configurer Visual Studio pour déboguer une application de navigateur XAML et appeler un service Web"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- debugging XBAPs that call a Web service [WPF]
+- debugging security exceptions for XBAPs [WPF]
+- security exception for XBAPs [WPF], debugging
+- configuring Visual Studio to debug XAML browser applications [WPF]
+- configuring Visual Studio to debug XBAPs [WPF]
 ms.assetid: fd1db082-a7bb-4c4b-9331-6ad74a0682d0
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5db89cf6220f086d2d71b99f3e6440e584d6a5d7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: configurer Visual Studio pour d&#233;boguer une application de navigateur XAML et appeler un service Web
-Les [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] s'exécutent dans un bac à sable \(sandbox\) de sécurité de confiance partielle limité aux autorisations de la zone Internet.  Ce jeu d'autorisations limite les appels de service Web uniquement aux services Web situés sur le site d'origine de l'application [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].  Toutefois, lorsqu'une [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] est déboguée depuis [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)], elle n'est pas considérée avoir le même site d'origine que le service Web auquel elle fait référence.  Cela provoque la levée d'exceptions de sécurité lorsque la [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] tente d'appeler le service Web.  Toutefois, un projet [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)][!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] peut être configuré pour faire croire qu'il a le même site d'origine que le service Web qu'il appelle lors du débogage.  Cela permet à [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] d'appeler sans risque le service Web sans lever des exceptions de sécurité.  
+# <a name="how-to-configure-visual-studio-to-debug-a-xaml-browser-application-to-call-a-web-service"></a><span data-ttu-id="18726-102">Comment : configurer Visual Studio pour déboguer une application de navigateur XAML et appeler un service Web</span><span class="sxs-lookup"><span data-stu-id="18726-102">How to: Configure Visual Studio to Debug a XAML Browser Application to Call a Web Service</span></span>
+[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]<span data-ttu-id="18726-103">exécuter dans un sandbox de sécurité de confiance partielle est limité à l’ensemble de la zone Internet d’autorisations.</span><span class="sxs-lookup"><span data-stu-id="18726-103"> run within a partial-trust security sandbox that is restricted to the Internet zone set of permissions.</span></span> <span data-ttu-id="18726-104">Ce jeu d’autorisations restreint les appels de service Web uniquement les services Web qui sont trouvent dans le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] site de l’application d’origine.</span><span class="sxs-lookup"><span data-stu-id="18726-104">This permission set restricts Web service calls to only Web services that are located at the [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] application's site of origin.</span></span> <span data-ttu-id="18726-105">Lorsqu’un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] du débogage à partir de [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)], bien qu’il n’est pas censé avoir le même site d’origine que le service Web qu’il référence.</span><span class="sxs-lookup"><span data-stu-id="18726-105">When an [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] is debugged from [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)], though, it is not considered to have the same site of origin as the Web service it references.</span></span> <span data-ttu-id="18726-106">Cette causes des exceptions de sécurité à déclencher lorsque le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] tente d’appeler le service Web.</span><span class="sxs-lookup"><span data-stu-id="18726-106">This causes security exceptions to be raised when the [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] attempts to call the Web service.</span></span> <span data-ttu-id="18726-107">Toutefois, un [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] projet peut être configuré pour avoir le même site d’origine que le service Web qu’elle appelle lors du débogage.</span><span class="sxs-lookup"><span data-stu-id="18726-107">However, a [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] project can be configured to simulate having the same site of origin as the Web service it calls while debugging.</span></span> <span data-ttu-id="18726-108">Cela permet la [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] en toute sécurité appeler le service Web sans provoquer des exceptions de sécurité.</span><span class="sxs-lookup"><span data-stu-id="18726-108">This allows the [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] to safely call the Web service without causing security exceptions.</span></span>  
   
-## Configuration de Visual Studio  
- Pour configurer [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] pour déboguer une [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] qui appelle un service Web :  
+## <a name="configuring-visual-studio"></a><span data-ttu-id="18726-109">Configuration de Visual Studio</span><span class="sxs-lookup"><span data-stu-id="18726-109">Configuring Visual Studio</span></span>  
+ <span data-ttu-id="18726-110">Pour configurer [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] pour déboguer un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] qui appelle un service Web :</span><span class="sxs-lookup"><span data-stu-id="18726-110">To configure [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] to debug an [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] that calls a Web service:</span></span>  
   
-1.  Un projet étant sélectionné dans l'**Explorateur de solutions**, cliquez dans le menu **Projet** sur **Propriétés**.  
+1.  <span data-ttu-id="18726-111">Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**.</span><span class="sxs-lookup"><span data-stu-id="18726-111">With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**.</span></span>  
   
-2.  Dans le **Concepteur de projets**, cliquez sur l'onglet **Déboguer**.  
+2.  <span data-ttu-id="18726-112">Dans le **Concepteur de projets**, cliquez sur le **déboguer** onglet.</span><span class="sxs-lookup"><span data-stu-id="18726-112">In the **Project Designer**, click the **Debug** tab.</span></span>  
   
-3.  Dans la section **Action de démarrage**, sélectionnez **Démarrer le programme externe**, puis effectuez l'opération suivante :  
+3.  <span data-ttu-id="18726-113">Dans le **Action de démarrage** section, sélectionnez **démarrer le programme externe** et entrez les informations suivantes :</span><span class="sxs-lookup"><span data-stu-id="18726-113">In the **Start Action** section, select **Start external program** and enter the following:</span></span>  
   
      `C:\WINDOWS\System32\PresentationHost.exe`  
   
-4.  Dans la section **Options de démarrage**, entrez les éléments ci\-dessous dans la zone de texte **Arguments de la ligne de commande** :  
+4.  <span data-ttu-id="18726-114">Dans le **Options de démarrage** section, entrez le texte suivant dans le **arguments de ligne de commande** zone de texte :</span><span class="sxs-lookup"><span data-stu-id="18726-114">In the **Start Options** section, enter the following into the **Command line arguments** text box:</span></span>  
   
-     `-debug`  *filename*  
+     <span data-ttu-id="18726-115">`-debug`  *nom de fichier*</span><span class="sxs-lookup"><span data-stu-id="18726-115">`-debug`  *filename*</span></span>  
   
-     La valeur *NomFichier* du paramètre **\-debug** correspond au nom de fichier .xbap. Par exemple :  
+     <span data-ttu-id="18726-116">Le *nom de fichier* la valeur pour le **-déboguer** paramètre est le nom de fichier .xbap ; par exemple :</span><span class="sxs-lookup"><span data-stu-id="18726-116">The *filename* value for the **-debug** parameter is the .xbap filename; for example:</span></span>  
   
      `-debug c:\example.xbap`  
   
 > [!NOTE]
->  Il s'agit de la configuration par défaut pour les solutions créées avec le modèle de projet [!INCLUDE[TLA2#tla_visualstu2005](../../../../includes/tla2sharptla-visualstu2005-md.md)][!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)].  
+>  <span data-ttu-id="18726-117">Cette configuration est la valeur par défaut pour les solutions qui sont créés avec le [!INCLUDE[TLA2#tla_visualstu2005](../../../../includes/tla2sharptla-visualstu2005-md.md)] [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] modèle de projet.</span><span class="sxs-lookup"><span data-stu-id="18726-117">This is the default configuration for solutions that are created with the [!INCLUDE[TLA2#tla_visualstu2005](../../../../includes/tla2sharptla-visualstu2005-md.md)] [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] project template.</span></span>  
   
-1.  Un projet étant sélectionné dans l'**Explorateur de solutions**, cliquez dans le menu **Projet** sur **Propriétés**.  
+1.  <span data-ttu-id="18726-118">Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**.</span><span class="sxs-lookup"><span data-stu-id="18726-118">With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**.</span></span>  
   
-2.  Dans le **Concepteur de projets**, cliquez sur l'onglet **Déboguer**.  
+2.  <span data-ttu-id="18726-119">Dans le **Concepteur de projets**, cliquez sur le **déboguer** onglet.</span><span class="sxs-lookup"><span data-stu-id="18726-119">In the **Project Designer**, click the **Debug** tab.</span></span>  
   
-3.  Dans la section **Options de démarrage**, ajoutez le paramètre de ligne de commande suivant à la zone de texte **Arguments de la ligne de commande** :  
+3.  <span data-ttu-id="18726-120">Dans le **Options de démarrage** section, ajoutez le paramètre de ligne de commande suivant à la **arguments de ligne de commande** zone de texte :</span><span class="sxs-lookup"><span data-stu-id="18726-120">In the **Start Options** section, add the following command-line parameter to the **Command line arguments** text box:</span></span>  
   
-     `-debugSecurityZoneURL`  *URL*  
+     <span data-ttu-id="18726-121">`-debugSecurityZoneURL`  *URL*</span><span class="sxs-lookup"><span data-stu-id="18726-121">`-debugSecurityZoneURL`  *URL*</span></span>  
   
-     La valeur *URL* du paramètre **\-debugSecurityZoneURL** est l'[!INCLUDE[TLA#tla_url](../../../../includes/tlasharptla-url-md.md)] de l'emplacement à simuler comme site d'origine de l'application.  
+     <span data-ttu-id="18726-122">Le *URL* la valeur pour le **- debugSecurityZoneURL** paramètre est le [!INCLUDE[TLA#tla_url](../../../../includes/tlasharptla-url-md.md)] pour l’emplacement que vous souhaitez simuler comme site d’origine de votre application.</span><span class="sxs-lookup"><span data-stu-id="18726-122">The *URL* value for the **-debugSecurityZoneURL** parameter is the [!INCLUDE[TLA#tla_url](../../../../includes/tlasharptla-url-md.md)] for the location that you want to simulate as being the site of origin of your application.</span></span>  
   
- Supposons, qu'une [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] utilise un service Web avec l'[!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] suivante :  
+ <span data-ttu-id="18726-123">Par exemple, considérez un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] qui utilise un service Web par le code suivant [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)]:</span><span class="sxs-lookup"><span data-stu-id="18726-123">As an example, consider a [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] that uses a Web service with the following [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)]:</span></span>  
   
  `http://services.msdn.microsoft.com/ContentServices/ContentService.asmx`  
   
- Le site d'origine [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] du service Web est :  
+ <span data-ttu-id="18726-124">Le site d’origine [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] pour ce site Web service est :</span><span class="sxs-lookup"><span data-stu-id="18726-124">The site of origin [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] for this Web service is:</span></span>  
   
  `http://services.msdn.microsoft.com`  
   
- Par conséquent, le paramètre de ligne de commande **\-debugSecurityZoneURL** complet et la valeur sont :  
+ <span data-ttu-id="18726-125">Par conséquent, le texte complet **- debugSecurityZoneURL** paramètre de ligne de commande et la valeur est :</span><span class="sxs-lookup"><span data-stu-id="18726-125">Consequently, the complete **-debugSecurityZoneURL** command-line parameter and value is:</span></span>  
   
  `-debugSecurityZoneURL http://services.msdn.microsoft.com`  
   
-## Voir aussi  
- [Hôte WPF \(PresentationHost.exe\)](../../../../docs/framework/wpf/app-development/wpf-host-presentationhost-exe.md)
+## <a name="see-also"></a><span data-ttu-id="18726-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="18726-126">See Also</span></span>  
+ [<span data-ttu-id="18726-127">Hôte WPF (PresentationHost.exe)</span><span class="sxs-lookup"><span data-stu-id="18726-127">WPF Host (PresentationHost.exe)</span></span>](../../../../docs/framework/wpf/app-development/wpf-host-presentationhost-exe.md)

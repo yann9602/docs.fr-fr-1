@@ -1,119 +1,121 @@
 ---
-title: "Proc&#233;dure&#160;: appeler des fonctions d&#233;finies par mod&#232;le comme des m&#233;thodes d&#39;objet | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : appeler des fonctions définies par modèle comme méthodes d'objet"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 33bae8a8-4ed8-4a1f-85d1-c62ff288cc61
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a934cd8c122a1564c034f8578e8bad680ba919a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: appeler des fonctions d&#233;finies par mod&#232;le comme des m&#233;thodes d&#39;objet
-Cette rubrique décrit comment appeler une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext> ou comme une méthode statique sur une classe personnalisée.  Une *fonction définie par modèle* est une fonction qui est définie dans le modèle conceptuel.  Les procédures décrites dans cette rubrique montrent comment appeler directement ces fonctions au lieu de les appeler à partir de requêtes LINQ to Entities.  Pour plus d'informations sur l'appel de fonctions définies par modèle dans des requêtes LINQ to Entities, consultez [Procédure : appeler des fonctions définies par modèle dans des requêtes](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).  
+# <a name="how-to-call-model-defined-functions-as-object-methods"></a><span data-ttu-id="77fb2-102">Comment : appeler des fonctions définies par modèle comme méthodes d'objet</span><span class="sxs-lookup"><span data-stu-id="77fb2-102">How to: Call Model-Defined Functions as Object Methods</span></span>
+<span data-ttu-id="77fb2-103">Cette rubrique décrit comment appeler une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext> ou comme une méthode statique sur une classe personnalisée.</span><span class="sxs-lookup"><span data-stu-id="77fb2-103">This topic describes how to call a model-defined function as a method on an <xref:System.Data.Objects.ObjectContext> object or as a static method on a custom class.</span></span> <span data-ttu-id="77fb2-104">A *fonction définie par modèle* est une fonction qui est définie dans le modèle conceptuel.</span><span class="sxs-lookup"><span data-stu-id="77fb2-104">A *model-defined function* is a function that is defined in the conceptual model.</span></span> <span data-ttu-id="77fb2-105">Les procédures décrites dans cette rubrique montrent comment appeler directement ces fonctions au lieu de les appeler à partir de requêtes LINQ to Entities.</span><span class="sxs-lookup"><span data-stu-id="77fb2-105">The procedures in the topic describe how to call these functions directly instead of calling them from LINQ to Entities queries.</span></span> <span data-ttu-id="77fb2-106">Pour plus d’informations sur l’appel de fonctions définies par le modèle de LINQ aux requêtes d’entités, consultez [Comment : Call Model-Defined des fonctions dans les requêtes](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).</span><span class="sxs-lookup"><span data-stu-id="77fb2-106">For information about calling model-defined functions in LINQ to Entities queries, see [How to: Call Model-Defined Functions in Queries](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).</span></span>  
   
- Si vous appelez une fonction définie par modèle comme une méthode <xref:System.Data.Objects.ObjectContext> ou comme une méthode statique sur une classe personnalisée, vous devez mapper en premier la méthode à la fonction définie par modèle avec un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>.  Toutefois, lorsque vous définissez une méthode sur la classe <xref:System.Data.Objects.ObjectContext>, vous devez utiliser la propriété <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> pour exposer le fournisseur LINQ, alors que lorsque vous définissez une méthode statique sur une classe personnalisée, vous devez utiliser la propriété <xref:System.Linq.IQueryable.Provider%2A> pour exposer le fournisseur LINQ.  Pour plus d'informations, consultez les exemples qui suivent les procédures ci\-dessous.  
+ <span data-ttu-id="77fb2-107">Si vous appelez une fonction définie par modèle comme une méthode <xref:System.Data.Objects.ObjectContext> ou comme une méthode statique sur une classe personnalisée, vous devez mapper en premier la méthode à la fonction définie par modèle avec un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-107">Whether you call a model-defined function as an <xref:System.Data.Objects.ObjectContext> method or as a static method on a custom class, you must first map the method to the model-defined function with an <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>.</span></span> <span data-ttu-id="77fb2-108">Toutefois, lorsque vous définissez une méthode sur la classe <xref:System.Data.Objects.ObjectContext>, vous devez utiliser la propriété <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> pour exposer le fournisseur LINQ, alors que lorsque vous définissez une méthode statique sur une classe personnalisée, vous devez utiliser la propriété <xref:System.Linq.IQueryable.Provider%2A> pour exposer le fournisseur LINQ.</span><span class="sxs-lookup"><span data-stu-id="77fb2-108">However, when you define a method on the <xref:System.Data.Objects.ObjectContext> class, you must use the <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> property to expose the LINQ provider, whereas when you define a static method on a custom class, you must use the <xref:System.Linq.IQueryable.Provider%2A> property to expose the LINQ provider.</span></span> <span data-ttu-id="77fb2-109">Pour plus d'informations, consultez les exemples qui suivent les procédures ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="77fb2-109">For more information, see the examples that follow the procedures below.</span></span>  
   
- Les procédures suivantes fournissent une présentation de haut niveau pour l'appel d'une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext> et comme une méthode statique sur une classe personnalisée.  Les exemples qui suivent fournissent plus de détail sur les étapes des procédures.  Les procédures supposent que vous avez défini une fonction dans le modèle conceptuel.  Pour plus d'informations, consultez [How to: Define Custom Functions in the Conceptual Model](http://msdn.microsoft.com/fr-fr/0dad7b8b-58f6-4271-b238-f34810d68e5f).  
+ <span data-ttu-id="77fb2-110">Les procédures suivantes fournissent une présentation de haut niveau pour l'appel d'une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext> et comme une méthode statique sur une classe personnalisée.</span><span class="sxs-lookup"><span data-stu-id="77fb2-110">The procedures below provide high-level outlines for calling a model-defined function as a method on an <xref:System.Data.Objects.ObjectContext> object and as a static method on a custom class.</span></span> <span data-ttu-id="77fb2-111">Les exemples qui suivent fournissent plus de détail sur les étapes des procédures.</span><span class="sxs-lookup"><span data-stu-id="77fb2-111">The examples that follow provide more detail about the steps in the procedures.</span></span> <span data-ttu-id="77fb2-112">Les procédures supposent que vous avez défini une fonction dans le modèle conceptuel.</span><span class="sxs-lookup"><span data-stu-id="77fb2-112">The procedures assume that you have defined a function in the conceptual model.</span></span> <span data-ttu-id="77fb2-113">Pour plus d’informations, consultez [Comment : définir des fonctions personnalisées dans le modèle conceptuel](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).</span><span class="sxs-lookup"><span data-stu-id="77fb2-113">For more information, see [How to: Define Custom Functions in the Conceptual Model](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).</span></span>  
   
-### Pour appeler une fonction définie par modèle comme une méthode sur un objet ObjectContext  
+### <a name="to-call-a-model-defined-function-as-a-method-on-an-objectcontext-object"></a><span data-ttu-id="77fb2-114">Pour appeler une fonction définie par modèle comme une méthode sur un objet ObjectContext</span><span class="sxs-lookup"><span data-stu-id="77fb2-114">To call a model-defined function as a method on an ObjectContext object</span></span>  
   
-1.  Ajoutez un fichier source pour étendre la classe partielle dérivée de la classe <xref:System.Data.Objects.ObjectContext>, générée automatiquement par les outils Entity Framework.  La définition du stub de CLR dans un fichier source distinct empêche la perte des modifications lorsque le fichier est régénéré.  
+1.  <span data-ttu-id="77fb2-115">Ajoutez un fichier source pour étendre la classe partielle dérivée de la classe <xref:System.Data.Objects.ObjectContext>, générée automatiquement par les outils Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="77fb2-115">Add a source file to extend the partial class derived from the <xref:System.Data.Objects.ObjectContext> class, auto-generated by the Entity Framework tools.</span></span> <span data-ttu-id="77fb2-116">La définition du stub de CLR dans un fichier source distinct empêche la perte des modifications lorsque le fichier est régénéré.</span><span class="sxs-lookup"><span data-stu-id="77fb2-116">Defining the CLR stub in a separate source file will prevent the changes from being lost when the file is regenerated.</span></span>  
   
-2.  Ajoutez une méthode CLR \(Common Language Runtime\) à votre classe <xref:System.Data.Objects.ObjectContext> qui effectue les opérations suivantes :  
+2.  <span data-ttu-id="77fb2-117">Ajoutez une méthode CLR (Common Language Runtime) à votre classe <xref:System.Data.Objects.ObjectContext> qui effectue les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="77fb2-117">Add a common language runtime (CLR) method to your <xref:System.Data.Objects.ObjectContext> class that does the following:</span></span>  
   
-    -   Elle est mappée à la fonction définie dans le modèle conceptuel.  Pour mapper la méthode, vous devez lui appliquer un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>.  Notez que les paramètres <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> et <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> de l'attribut correspondent au nom de l'espace de noms du modèle conceptuel et au nom de la fonction dans le modèle conceptuel, respectivement.  La résolution des noms de fonctions pour LINQ respecte la casse.  
+    -   <span data-ttu-id="77fb2-118">Elle est mappée à la fonction définie dans le modèle conceptuel.</span><span class="sxs-lookup"><span data-stu-id="77fb2-118">Maps to the function defined in the conceptual model.</span></span> <span data-ttu-id="77fb2-119">Pour mapper la méthode, vous devez lui appliquer un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-119">To map the method, you must apply an <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> to the method.</span></span> <span data-ttu-id="77fb2-120">Notez que les paramètres <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> et <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> de l'attribut correspondent au nom de l'espace de noms du modèle conceptuel et au nom de la fonction dans le modèle conceptuel, respectivement.</span><span class="sxs-lookup"><span data-stu-id="77fb2-120">Note that the <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> and <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parameters of the attribute are the namespace name of the conceptual model and the function name in the conceptual model, respectively.</span></span> <span data-ttu-id="77fb2-121">La résolution des noms de fonctions pour LINQ respecte la casse.</span><span class="sxs-lookup"><span data-stu-id="77fb2-121">Function name resolution for LINQ is case sensitive.</span></span>  
   
-    -   Elle retourne les résultats de la méthode <xref:System.Linq.IQueryProvider.Execute%2A> retournée par la propriété <xref:System.Data.Objects.ObjectContext.QueryProvider%2A>.  
+    -   <span data-ttu-id="77fb2-122">Elle retourne les résultats de la méthode <xref:System.Linq.IQueryProvider.Execute%2A> retournée par la propriété <xref:System.Data.Objects.ObjectContext.QueryProvider%2A>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-122">Returns the results of the <xref:System.Linq.IQueryProvider.Execute%2A> method that is returned by the <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> property.</span></span>  
   
-3.  Appelez la méthode en tant que membre sur une instance de la classe <xref:System.Data.Objects.ObjectContext>.  
+3.  <span data-ttu-id="77fb2-123">Appelez la méthode en tant que membre sur une instance de la classe <xref:System.Data.Objects.ObjectContext>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-123">Call the method as a member on an instance of the <xref:System.Data.Objects.ObjectContext> class.</span></span>  
   
-### Pour appeler une fonction définie par modèle comme une méthode statique sur une classe personnalisée  
+### <a name="to-call-a-model-defined-function-as-static-method-on-a-custom-class"></a><span data-ttu-id="77fb2-124">Pour appeler une fonction définie par modèle comme une méthode statique sur une classe personnalisée</span><span class="sxs-lookup"><span data-stu-id="77fb2-124">To call a model-defined function as static method on a custom class</span></span>  
   
-1.  Ajoutez une classe à votre application avec une méthode statique qui effectue les opérations suivantes :  
+1.  <span data-ttu-id="77fb2-125">Ajoutez une classe à votre application avec une méthode statique qui effectue les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="77fb2-125">Add a class to your application with a static method that does the following:</span></span>  
   
-    -   Elle est mappée à la fonction définie dans le modèle conceptuel.  Pour mapper la méthode, vous devez lui appliquer un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>.  Notez que les paramètres <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> et <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> de l'attribut correspondent au nom de l'espace de noms du modèle conceptuel et au nom de la fonction dans le modèle conceptuel, respectivement.  
+    -   <span data-ttu-id="77fb2-126">Elle est mappée à la fonction définie dans le modèle conceptuel.</span><span class="sxs-lookup"><span data-stu-id="77fb2-126">Maps to the function defined in the conceptual model.</span></span> <span data-ttu-id="77fb2-127">Pour mapper la méthode, vous devez lui appliquer un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-127">To map the method, you must apply an <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> to the method.</span></span> <span data-ttu-id="77fb2-128">Notez que les paramètres <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> et <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> de l'attribut correspondent au nom de l'espace de noms du modèle conceptuel et au nom de la fonction dans le modèle conceptuel, respectivement.</span><span class="sxs-lookup"><span data-stu-id="77fb2-128">Note that the <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> and <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parameters of the attribute are the namespace name of the conceptual model and the function name in the conceptual model, respectively.</span></span>  
   
-    -   Elle accepte un argument <xref:System.Linq.IQueryable>.  
+    -   <span data-ttu-id="77fb2-129">Elle accepte un argument <xref:System.Linq.IQueryable>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-129">Accepts an <xref:System.Linq.IQueryable> argument.</span></span>  
   
-    -   Elle retourne les résultats de la méthode <xref:System.Linq.IQueryProvider.Execute%2A> retournée par la propriété <xref:System.Linq.IQueryable.Provider%2A>.  
+    -   <span data-ttu-id="77fb2-130">Elle retourne les résultats de la méthode <xref:System.Linq.IQueryProvider.Execute%2A> retournée par la propriété <xref:System.Linq.IQueryable.Provider%2A>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-130">Returns the results of the <xref:System.Linq.IQueryProvider.Execute%2A> method that is returned by the <xref:System.Linq.IQueryable.Provider%2A> property.</span></span>  
   
-2.  Appelez la méthode comme méthode statique sur la classe personnalisée.  
+2.  <span data-ttu-id="77fb2-131">Appelez la méthode comme méthode statique sur la classe personnalisée.</span><span class="sxs-lookup"><span data-stu-id="77fb2-131">Call the method as a member a static method on the custom class</span></span>  
   
-## Exemple  
- **Appel d'une fonction définie par modèle comme une méthode sur un objet ObjectContext**  
+## <a name="example"></a><span data-ttu-id="77fb2-132">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-132">Example</span></span>  
+ <span data-ttu-id="77fb2-133">**Appel d’une fonction définie par modèle comme une méthode sur un objet ObjectContext**</span><span class="sxs-lookup"><span data-stu-id="77fb2-133">**Calling a Model-Defined Function as a Method on an ObjectContext Object**</span></span>  
   
- L'exemple suivant montre comment appeler une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext>.  L'exemple utilise le [modèle de vente AdventureWorks Sales Model](http://msdn.microsoft.com/fr-fr/f16cd988-673f-4376-b034-129ca93c7832).  
+ <span data-ttu-id="77fb2-134">L'exemple suivant montre comment appeler une fonction définie par modèle comme une méthode sur un objet <xref:System.Data.Objects.ObjectContext>.</span><span class="sxs-lookup"><span data-stu-id="77fb2-134">The following example demonstrates how to call a model-defined function as a method on an <xref:System.Data.Objects.ObjectContext> object.</span></span> <span data-ttu-id="77fb2-135">L’exemple utilise le [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).</span><span class="sxs-lookup"><span data-stu-id="77fb2-135">The example uses the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).</span></span>  
   
- Considérez la fonction de modèle conceptuel ci\-dessous qui retourne le revenu généré par un produit donné.  \(Pour plus d'informations sur l'ajout de la fonction dans le modèle conceptuel, consultez [How to: Define Custom Functions in the Conceptual Model](http://msdn.microsoft.com/fr-fr/0dad7b8b-58f6-4271-b238-f34810d68e5f).\)  
+ <span data-ttu-id="77fb2-136">Considérez la fonction de modèle conceptuel ci-dessous qui retourne le revenu généré par un produit donné.</span><span class="sxs-lookup"><span data-stu-id="77fb2-136">Consider the conceptual model function below that returns product revenue for a specified product.</span></span> <span data-ttu-id="77fb2-137">(Pour plus d’informations sur l’ajout de la fonction à votre modèle conceptuel, consultez [Comment : définir des fonctions personnalisées dans le modèle conceptuel](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).)</span><span class="sxs-lookup"><span data-stu-id="77fb2-137">(For information about adding the function to your conceptual model, see [How to: Define Custom Functions in the Conceptual Model](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).)</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[DP L2E Methods on ObjectContext#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/obj/x86/debug/edmxresourcestoembed/adventureworks.csdl#4)]  -->
- <!-- TODO: review snippet reference [!code-xml[DP L2E Methods on ObjectContext#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/obj/x86/debug/edmxresourcestoembed/adventureworks.csdl#4)]  -->
  [!code-xml[DP L2E Methods on ObjectContext#4](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#4)]  
-  
-## Exemple  
- Le code suivant ajoute une méthode à la classe `AdventureWorksEntities` qui est mappée à la fonction de modèle conceptuel ci\-dessus.  
+
+## <a name="example"></a><span data-ttu-id="77fb2-138">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-138">Example</span></span>  
+ <span data-ttu-id="77fb2-139">Le code suivant ajoute une méthode à la classe `AdventureWorksEntities` qui est mappée à la fonction de modèle conceptuel ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="77fb2-139">The following code adds a method to the `AdventureWorksEntities` class that maps to the conceptual model function above.</span></span>  
   
  [!code-csharp[DP L2E Methods on ObjectContext#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#2)]
  [!code-vb[DP L2E Methods on ObjectContext#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#2)]  
   
-## Exemple  
- Le code suivant appelle la méthode ci\-dessus pour afficher le revenu généré par un produit donné :  
+## <a name="example"></a><span data-ttu-id="77fb2-140">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-140">Example</span></span>  
+ <span data-ttu-id="77fb2-141">Le code suivant appelle la méthode ci-dessus pour afficher le revenu généré par un produit donné :</span><span class="sxs-lookup"><span data-stu-id="77fb2-141">The following code calls the method above to display the product revenue for a specified product:</span></span>  
   
  [!code-csharp[DP L2E Methods on ObjectContext#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#3)]
  [!code-vb[DP L2E Methods on ObjectContext#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#3)]  
   
-## Exemple  
- L'exemple suivant montre comment appeler une fonction définie par modèle qui retourne une collection \(en tant qu'objet <xref:System.Linq.IQueryable%601>\).  Considérez la fonction de modèle conceptuel ci\-dessous qui retourne tous les détails `SalesOrderDetails` pour un ID de produit donné.  
+## <a name="example"></a><span data-ttu-id="77fb2-142">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-142">Example</span></span>  
+ <span data-ttu-id="77fb2-143">L'exemple suivant montre comment appeler une fonction définie par modèle qui retourne une collection (en tant qu'objet <xref:System.Linq.IQueryable%601>).</span><span class="sxs-lookup"><span data-stu-id="77fb2-143">The following example demonstrates how to call a model-defined function that returns a collection (as an <xref:System.Linq.IQueryable%601> object).</span></span> <span data-ttu-id="77fb2-144">Considérez la fonction de modèle conceptuel ci-dessous qui retourne tous les détails `SalesOrderDetails` pour un ID de produit donné.</span><span class="sxs-lookup"><span data-stu-id="77fb2-144">Consider the conceptual model function below that returns all the `SalesOrderDetails` for a given product ID.</span></span>  
   
  [!code-xml[DP L2E Methods on ObjectContext#7](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#7)]  
   
-## Exemple  
- Le code suivant ajoute une méthode à la classe `AdventureWorksEntities` qui est mappée à la fonction de modèle conceptuel ci\-dessus.  
+## <a name="example"></a><span data-ttu-id="77fb2-145">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-145">Example</span></span>  
+ <span data-ttu-id="77fb2-146">Le code suivant ajoute une méthode à la classe `AdventureWorksEntities` qui est mappée à la fonction de modèle conceptuel ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="77fb2-146">The following code adds a method to the `AdventureWorksEntities` class that maps to the conceptual model function above.</span></span>  
   
  [!code-csharp[DP L2E Methods on ObjectContext#8](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#8)]
  [!code-vb[DP L2E Methods on ObjectContext#8](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#8)]  
   
-## Exemple  
- Le code suivant appelle la méthode.  Notez que la requête <xref:System.Linq.IQueryable%601> retournée est encore affinée pour retourner les totaux de ligne pour chaque `SalesOrderDetail`.  
+## <a name="example"></a><span data-ttu-id="77fb2-147">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-147">Example</span></span>  
+ <span data-ttu-id="77fb2-148">Le code suivant appelle la méthode.</span><span class="sxs-lookup"><span data-stu-id="77fb2-148">The following code calls the method.</span></span> <span data-ttu-id="77fb2-149">Notez que la requête <xref:System.Linq.IQueryable%601> retournée est encore affinée pour retourner les totaux de ligne pour chaque `SalesOrderDetail`.</span><span class="sxs-lookup"><span data-stu-id="77fb2-149">Note that the returned <xref:System.Linq.IQueryable%601> query is further refined to return line totals for each `SalesOrderDetail`.</span></span>  
   
  [!code-csharp[DP L2E Methods on ObjectContext#9](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#9)]
  [!code-vb[DP L2E Methods on ObjectContext#9](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#9)]  
   
-## Exemple  
- **Appel d'une fonction définie par modèle comme une méthode statique sur une classe personnalisée**  
+## <a name="example"></a><span data-ttu-id="77fb2-150">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-150">Example</span></span>  
+ <span data-ttu-id="77fb2-151">**Appel d’une fonction définie par modèle comme une méthode statique sur une classe personnalisée**</span><span class="sxs-lookup"><span data-stu-id="77fb2-151">**Calling a Model-Defined Function as a Static Method on a Custom Class**</span></span>  
   
- L'exemple suivant montre comment appeler une fonction définie par modèle comme une méthode statique sur une classe personnalisée.  L'exemple utilise le [modèle de vente AdventureWorks Sales Model](http://msdn.microsoft.com/fr-fr/f16cd988-673f-4376-b034-129ca93c7832).  
+ <span data-ttu-id="77fb2-152">L'exemple suivant montre comment appeler une fonction définie par modèle comme une méthode statique sur une classe personnalisée.</span><span class="sxs-lookup"><span data-stu-id="77fb2-152">The next example demonstrates how to call a model-defined function as a static method on a custom class.</span></span> <span data-ttu-id="77fb2-153">L’exemple utilise le [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).</span><span class="sxs-lookup"><span data-stu-id="77fb2-153">The example uses the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).</span></span>  
   
 > [!NOTE]
->  Lorsque vous appelez une fonction définie par modèle comme une méthode statique sur une classe personnalisée, la fonction définie par modèle doit accepter une collection et retourner une agrégation de valeurs dans la collection.  
+>  <span data-ttu-id="77fb2-154">Lorsque vous appelez une fonction définie par modèle comme une méthode statique sur une classe personnalisée, la fonction définie par modèle doit accepter une collection et retourner une agrégation de valeurs dans la collection.</span><span class="sxs-lookup"><span data-stu-id="77fb2-154">When you call a model-defined function as a static method on a custom class, the model-defined function must accept a collection and return an aggregation of values in the collection.</span></span>  
   
- Considérez la fonction de modèle conceptuel ci\-dessous, qui retourne le revenu produit pour une collection SalesOrderDetail.  \(Pour plus d'informations sur l'ajout de la fonction dans le modèle conceptuel, consultez [How to: Define Custom Functions in the Conceptual Model](http://msdn.microsoft.com/fr-fr/0dad7b8b-58f6-4271-b238-f34810d68e5f).\)  
+ <span data-ttu-id="77fb2-155">Considérez la fonction de modèle conceptuel ci-dessous, qui retourne le revenu produit pour une collection SalesOrderDetail.</span><span class="sxs-lookup"><span data-stu-id="77fb2-155">Consider the conceptual model function below that returns product revenue for a SalesOrderDetail collection.</span></span> <span data-ttu-id="77fb2-156">(Pour plus d’informations sur l’ajout de la fonction à votre modèle conceptuel, consultez [Comment : définir des fonctions personnalisées dans le modèle conceptuel](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).).</span><span class="sxs-lookup"><span data-stu-id="77fb2-156">(For information about adding the function to your conceptual model, see [How to: Define Custom Functions in the Conceptual Model](http://msdn.microsoft.com/en-us/0dad7b8b-58f6-4271-b238-f34810d68e5f).).</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[DP L2E Methods on ObjectContext#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/obj/x86/debug/edmxresourcestoembed/adventureworks.csdl#1)]  -->
- <!-- TODO: review snippet reference [!code-xml[DP L2E Methods on ObjectContext#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/obj/x86/debug/edmxresourcestoembed/adventureworks.csdl#1)]  -->
- [!code-xml[DP L2E Methods on ObjectContext#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#1)]  
+ [!code-xml[DP L2E Methods on ObjectContext#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#1)]
   
-## Exemple  
- Le code suivant ajoute une classe à votre application qui contient une méthode statique mappée à la fonction de modèle conceptuel ci\-dessus.  
+## <a name="example"></a><span data-ttu-id="77fb2-157">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-157">Example</span></span>  
+ <span data-ttu-id="77fb2-158">Le code suivant ajoute une classe à votre application qui contient une méthode statique mappée à la fonction de modèle conceptuel ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="77fb2-158">The following code adds a class to your application that contains a static method that maps to the conceptual model function above.</span></span>  
   
  [!code-csharp[DP L2E Methods on ObjectContext#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#5)]
  [!code-vb[DP L2E Methods on ObjectContext#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#5)]  
   
-## Exemple  
- Le code suivant appelle la méthode ci\-dessus pour afficher le revenu produit pour une collection SalesOrderDetail :  
+## <a name="example"></a><span data-ttu-id="77fb2-159">Exemple</span><span class="sxs-lookup"><span data-stu-id="77fb2-159">Example</span></span>  
+ <span data-ttu-id="77fb2-160">Le code suivant appelle la méthode ci-dessus pour afficher le revenu produit pour une collection SalesOrderDetail :</span><span class="sxs-lookup"><span data-stu-id="77fb2-160">The following code calls the method above to display the product revenue for a SalesOrderDetail collection:</span></span>  
   
  [!code-csharp[DP L2E Methods on ObjectContext#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#6)]
  [!code-vb[DP L2E Methods on ObjectContext#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#6)]  
   
-## Voir aussi  
- [.edmx File Overview](http://msdn.microsoft.com/fr-fr/f4c8e7ce-1db6-417e-9759-15f8b55155d4)   
- [Requêtes dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)   
- [Appel de fonctions dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)
+## <a name="see-also"></a><span data-ttu-id="77fb2-161">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="77fb2-161">See Also</span></span>  
+ [<span data-ttu-id="77fb2-162">vue d’ensemble du fichier .edmx</span><span class="sxs-lookup"><span data-stu-id="77fb2-162">.edmx File Overview</span></span>](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+ [<span data-ttu-id="77fb2-163">Requêtes dans LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="77fb2-163">Queries in LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)  
+ [<span data-ttu-id="77fb2-164">Appel de fonctions dans les requêtes LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="77fb2-164">Calling Functions in LINQ to Entities Queries</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)

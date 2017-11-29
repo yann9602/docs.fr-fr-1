@@ -1,43 +1,48 @@
 ---
-title: "Proc&#233;dure&#160;: d&#233;finir des en-t&#234;tes dans la demande cliente (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Services de données WCF, personnalisation des demandes"
+title: "Procédure : définir des en-têtes dans la demande cliente (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: WCF Data Services, customizing requests
 ms.assetid: 3d55168d-5901-4f48-8117-6c93da3ab5ae
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 62bd78c58f83e0fbe2a6d8ed08104b15e183001b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: d&#233;finir des en-t&#234;tes dans la demande cliente (WCF Data Services)
-Lorsque vous utilisez la bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour accéder à un service de données qui prend en charge [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)], celle\-ci définit automatiquement les en\-têtes HTTP requis dans les messages de demande transmis au service de données.  Toutefois, la bibliothèque cliente ne sait pas définir les en\-têtes de message requis dans certains cas, par exemple, quand le service de données exige une authentification basée sur des revendication ou des cookies.  Pour plus d'informations, consultez [WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md#clientAuthentication).  Dans ces cas, vous devez définir manuellement les en\-têtes dans le message de demande avant de le transmettre.  L'exemple de cette rubrique illustre comment utiliser l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> pour ajouter un nouvel en\-tête au message de demande avant qu'il ne soit envoyé au service de données.  
+# <a name="how-to-set-headers-in-the-client-request-wcf-data-services"></a><span data-ttu-id="a6467-102">Procédure : définir des en-têtes dans la demande cliente (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="a6467-102">How to: Set Headers in the Client Request (WCF Data Services)</span></span>
+<span data-ttu-id="a6467-103">Lorsque vous utilisez la bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour accéder à un service de données qui prend en charge [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)], celle-ci définit automatiquement les en-têtes HTTP requis dans les messages de demande transmis au service de données.</span><span class="sxs-lookup"><span data-stu-id="a6467-103">When you use the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client library to access a data service that supports the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)], the client library automatically sets the required HTTP headers in request messages sent to the data service.</span></span> <span data-ttu-id="a6467-104">Toutefois, la bibliothèque cliente ne sait pas définir les en-têtes de message requis dans certains cas, par exemple, quand le service de données exige une authentification basée sur des revendication ou des cookies.</span><span class="sxs-lookup"><span data-stu-id="a6467-104">However, the client library does not know to set message headers that are required in certain cases, such as when the data service requires claims-based authentication or cookies.</span></span> <span data-ttu-id="a6467-105">Pour plus d’informations, consultez [sécurisation de WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md#clientAuthentication).</span><span class="sxs-lookup"><span data-stu-id="a6467-105">For more information, see [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md#clientAuthentication).</span></span> <span data-ttu-id="a6467-106">Dans ces cas, vous devez définir manuellement les en-têtes dans le message de demande avant de le transmettre.</span><span class="sxs-lookup"><span data-stu-id="a6467-106">In these cases, you must manually set message headers in the request message before it is sent.</span></span> <span data-ttu-id="a6467-107">L'exemple de cette rubrique illustre comment utiliser l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> pour ajouter un nouvel en-tête au message de demande avant qu'il ne soit envoyé au service de données.</span><span class="sxs-lookup"><span data-stu-id="a6467-107">The example in this topic shows how to handle the <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> event to add a new header to the request message before it is sent to the data service.</span></span>  
   
- L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement.  Ce service et les classes de données clientes sont créés lorsque vous complétez le [démarrage rapide WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  Vous pouvez aussi utiliser l'[exemple de service de données Northwind](http://go.microsoft.com/fwlink/?LinkId=187426) qui est publié sur le site web [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Cet exemple de service de données est en lecture seule et les tentatives d'y enregistrer des modifications retournent une erreur.  Les exemples de services de données sur le site Web [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] autorisent l'authentification anonyme.  
+ <span data-ttu-id="a6467-108">L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement.</span><span class="sxs-lookup"><span data-stu-id="a6467-108">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="a6467-109">Ce service et les classes de données clientes sont créés lorsque vous complétez le [démarrage rapide WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="a6467-109">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span> <span data-ttu-id="a6467-110">Vous pouvez également utiliser le [service de données exemple Northwind](http://go.microsoft.com/fwlink/?LinkId=187426) qui est publié sur le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] site Web ; ces exemples de données service est en lecture seule et essayez d’enregistrer les modifications retourne une erreur.</span><span class="sxs-lookup"><span data-stu-id="a6467-110">You can also use the [Northwind sample data service](http://go.microsoft.com/fwlink/?LinkId=187426) that is published on the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Web site; this sample data service is read-only and attempting to save changes returns an error.</span></span> <span data-ttu-id="a6467-111">Les exemples de données des services sur le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] site Web autorisent l’authentification anonyme.</span><span class="sxs-lookup"><span data-stu-id="a6467-111">The sample data services on the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Web site allow anonymous authentication.</span></span>  
   
-## Exemple  
- L'exemple suivant enregistre un gestionnaire pour l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest>, puis exécute une requête sur le service de données.  
+## <a name="example"></a><span data-ttu-id="a6467-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="a6467-112">Example</span></span>  
+ <span data-ttu-id="a6467-113">L'exemple suivant enregistre un gestionnaire pour l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest>, puis exécute une requête sur le service de données.</span><span class="sxs-lookup"><span data-stu-id="a6467-113">The following example registers a handler for the <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> event and then executes a query against the data service.</span></span>  
   
 > [!NOTE]
->  Lorsqu'un service de données exige que vous définissiez manuellement l'en\-tête de message de chaque demande, considérez d'utiliser un gestionnaire pour l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> en remplaçant la méthode `OnContextCreated` partielle dans le conteneur d'entités qui représente le service de données, dans ce cas : `NorthwindEntities`.  
+>  <span data-ttu-id="a6467-114">Lorsqu'un service de données exige que vous définissiez manuellement l'en-tête de message de chaque demande, considérez d'utiliser un gestionnaire pour l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> en remplaçant la méthode `OnContextCreated` partielle dans le conteneur d'entités qui représente le service de données, dans ce cas : `NorthwindEntities`.</span><span class="sxs-lookup"><span data-stu-id="a6467-114">When a data service requires you to manually set the message header for every request, consider registering the handler for the <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> event by overriding the `OnContextCreated` partial method in the entity container that represents the data service, which in this case is `NorthwindEntities`.</span></span>  
   
- [!code-csharp[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#registerheadersquery)]
- [!code-vb[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#registerheadersquery)]  
+[!code-csharp[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#registerheadersquery)]   
+[!code-vb[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#registerheadersquery)]
   
-## Exemple  
- La méthode suivante utilise l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> et ajoute un en\-tête automatique à la demande.  
+## <a name="example"></a><span data-ttu-id="a6467-115">Exemple</span><span class="sxs-lookup"><span data-stu-id="a6467-115">Example</span></span>  
+ <span data-ttu-id="a6467-116">La méthode suivante utilise l'événement <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> et ajoute un en-tête automatique à la demande.</span><span class="sxs-lookup"><span data-stu-id="a6467-116">The following method handles the <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> event and adds an Authentication header to the request.</span></span>  
   
- [!code-csharp[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#onsendingrequest)]
+ [!code-csharp[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#onsendingrequest)]  
  [!code-vb[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#onsendingrequest)]  
   
-## Voir aussi  
- [Sécurisation de WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)   
- [Bibliothèque cliente de WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+## <a name="see-also"></a><span data-ttu-id="a6467-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a6467-117">See Also</span></span>  
+ [<span data-ttu-id="a6467-118">Sécurisation de WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="a6467-118">Securing WCF Data Services</span></span>](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
+ [<span data-ttu-id="a6467-119">Bibliothèque cliente WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="a6467-119">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

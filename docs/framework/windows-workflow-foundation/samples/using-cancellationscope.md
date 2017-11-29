@@ -1,47 +1,51 @@
 ---
-title: "Utilisation de CancellationScope | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Utilisation de CancellationScope
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 39c5c338-b316-43d6-b7fe-a543281dd1ec
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d621991c1250c073e485193059d426e7cd4682f0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Utilisation de CancellationScope
-Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statements.CancellationScope> pour annuler un travail dans une application.  
+# <a name="using-cancellationscope"></a><span data-ttu-id="a3f59-102">Utilisation de CancellationScope</span><span class="sxs-lookup"><span data-stu-id="a3f59-102">Using CancellationScope</span></span>
+<span data-ttu-id="a3f59-103">Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statements.CancellationScope> pour annuler un travail dans une application.</span><span class="sxs-lookup"><span data-stu-id="a3f59-103">This sample demonstrates how to use the <xref:System.Activities.Statements.CancellationScope> activity to cancel work in an application.</span></span>  
   
- De nombreux composants et services de niveau intermédiaire comptent sur la construction de programmation connue des transactions pour gérer l'annulation pour eux.  Toutefois, dans un certain nombre de cas, le travail qui ne peut pas être fait dans une transaction doit être annulé.  Il est plus difficile d'utiliser l'annulation que d'utiliser des transactions, car le travail qui doit être annulé doit être d'abord suivi.  [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] vous aide en fournissant une activité <xref:System.Activities.Statements.CancellationScope>.  
+ <span data-ttu-id="a3f59-104">De nombreux composants et services de niveau intermédiaire comptent sur la construction de programmation connue des transactions pour gérer l'annulation pour eux.</span><span class="sxs-lookup"><span data-stu-id="a3f59-104">Many middle tier components and services rely on the well-known programming construct of transactions to handle cancellation for them.</span></span>  <span data-ttu-id="a3f59-105">Toutefois, dans un certain nombre de cas, le travail qui ne peut pas être fait dans une transaction doit être annulé.</span><span class="sxs-lookup"><span data-stu-id="a3f59-105">However, there are many situations in which work that cannot be done in a transaction must be canceled.</span></span>  <span data-ttu-id="a3f59-106">Il est plus difficile d'utiliser l'annulation que d'utiliser des transactions, car le travail qui doit être annulé doit être d'abord suivi.</span><span class="sxs-lookup"><span data-stu-id="a3f59-106">Using cancellation is more difficult than using transactions, because work that must be canceled must first be tracked.</span></span> [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]<span data-ttu-id="a3f59-107"> vous aide en fournissant une activité <xref:System.Activities.Statements.CancellationScope>.</span><span class="sxs-lookup"><span data-stu-id="a3f59-107"> helps you with this by providing a <xref:System.Activities.Statements.CancellationScope> activity.</span></span>  
   
- L'annulation peut être déclenchée à partir d'une activité ou à partir du parent de l'activité.  Les activités enfants sont planifiées par leur activité parente \(telles qu'un <xref:System.Activities.Statements.Sequence>, un <xref:System.Activities.Statements.Parallel>, un <xref:System.Activities.Statements.Flowchart> ou une activité composite personnalisée\).  L'activité parente peut annuler des activités enfants pour n'importe quelle raison.  Par exemple, une activité <xref:System.Activities.Statements.Parallel> avec trois branches enfants annule les branches enfants restantes chaque fois qu'elle termine une branche et que l'expression <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> prend la valeur `true`.  Le workflow peut également être annulé de manière externe par l'application hôte en appelant <xref:System.Activities.WorkflowApplication.Cancel%2A>.  
+ <span data-ttu-id="a3f59-108">L'annulation peut être déclenchée à partir d'une activité ou à partir du parent de l'activité.</span><span class="sxs-lookup"><span data-stu-id="a3f59-108">Cancellation can be triggered either from within an activity or from the activity's parent.</span></span>  <span data-ttu-id="a3f59-109">Les activités enfants sont planifiées par leur activité parente (telles qu'un <xref:System.Activities.Statements.Sequence>, un <xref:System.Activities.Statements.Parallel>, un <xref:System.Activities.Statements.Flowchart> ou une activité composite personnalisée).</span><span class="sxs-lookup"><span data-stu-id="a3f59-109">Child activities are scheduled by their parent activity (such as a <xref:System.Activities.Statements.Sequence>, <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.Flowchart>, or a custom composite activity).</span></span>  <span data-ttu-id="a3f59-110">L'activité parente peut annuler des activités enfants pour n'importe quelle raison.</span><span class="sxs-lookup"><span data-stu-id="a3f59-110">The parent activity can cancel child activities for any reason.</span></span>  <span data-ttu-id="a3f59-111">Par exemple, une activité <xref:System.Activities.Statements.Parallel> avec trois branches enfants annule les branches enfants restantes chaque fois qu'elle termine une branche et que l'expression <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> prend la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="a3f59-111">For example, a <xref:System.Activities.Statements.Parallel> activity with three child branches will cancel the remaining child branches whenever it completes a branch and the <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> expression evaluates to `true`.</span></span> <span data-ttu-id="a3f59-112">Le workflow peut également être annulé de manière externe par l'application hôte en appelant <xref:System.Activities.WorkflowApplication.Cancel%2A>.</span><span class="sxs-lookup"><span data-stu-id="a3f59-112">The workflow can also be canceled externally by the host application by calling <xref:System.Activities.WorkflowApplication.Cancel%2A>.</span></span>  
   
- Pour utiliser l'activité <xref:System.Activities.Statements.CancellationScope>, placez le travail qui doit être annulé dans la propriété <xref:System.Activities.Statements.CancellationScope.Body%2A>, et placez le travail qui est effectué après l'annulation dans la propriété <xref:System.Activities.Statements.CancellationScope.CancellationHandler%2A>.  
+ <span data-ttu-id="a3f59-113">Pour utiliser l'activité <xref:System.Activities.Statements.CancellationScope>, placez le travail qui doit être annulé dans la propriété <xref:System.Activities.Statements.CancellationScope.Body%2A>, et placez le travail qui est effectué après l'annulation dans la propriété <xref:System.Activities.Statements.CancellationScope.CancellationHandler%2A>.</span><span class="sxs-lookup"><span data-stu-id="a3f59-113">To use the <xref:System.Activities.Statements.CancellationScope> activity, put the work that needs to be canceled into the <xref:System.Activities.Statements.CancellationScope.Body%2A> property, and put the work that is performed after cancellation into the <xref:System.Activities.Statements.CancellationScope.CancellationHandler%2A> property.</span></span>  
   
- Cet exemple illustre l'annulation d'une activité à partir de l'activité elle\-même.  
+ <span data-ttu-id="a3f59-114">Cet exemple illustre l'annulation d'une activité à partir de l'activité elle-même.</span><span class="sxs-lookup"><span data-stu-id="a3f59-114">This sample demonstrates cancelling an activity from within the activity itself.</span></span>  
   
- Le scénario utilisé par l'exemple pour illustrer l'activité <xref:System.Activities.Statements.CancellationScope> est un client qui souhaite acheter dès que possible un billet pour Miami.  Il y a deux agences de voyage qui souhaitent traiter l'affaire.  L'exemple utilise deux <xref:System.Activities.Statements.CancellationScope> dans une activité <xref:System.Activities.Statements.Parallel> pour modéliser cette logique métier.  Le <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> de l'activité <xref:System.Activities.Statements.Parallel> a la valeur `true` ; étant donné que <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> est vérifié une fois chaque branche terminée, cela entraînera l'annulation de la branche restante après la fin de la première branche.  L'application cliente demande aux deux agences d'acheter le billet, et lorsque la première confirme que le billet a été acheté, l'application annule la commande auprès de l'autre agence.  
+ <span data-ttu-id="a3f59-115">Le scénario utilisé par l'exemple pour illustrer l'activité <xref:System.Activities.Statements.CancellationScope> est un client qui souhaite acheter dès que possible un billet pour Miami.</span><span class="sxs-lookup"><span data-stu-id="a3f59-115">The scenario that the sample uses to demonstrate the <xref:System.Activities.Statements.CancellationScope> activity is a client wanting to buy a ticket to Miami as soon as possible.</span></span> <span data-ttu-id="a3f59-116">Il y a deux agences de voyage qui souhaitent traiter l'affaire.</span><span class="sxs-lookup"><span data-stu-id="a3f59-116">There are two travel agencies that want the business.</span></span> <span data-ttu-id="a3f59-117">L'exemple utilise deux <xref:System.Activities.Statements.CancellationScope> dans une activité <xref:System.Activities.Statements.Parallel> pour modéliser cette logique métier.</span><span class="sxs-lookup"><span data-stu-id="a3f59-117">The sample uses two <xref:System.Activities.Statements.CancellationScope> within a <xref:System.Activities.Statements.Parallel> activity to model this business logic.</span></span> <span data-ttu-id="a3f59-118">Le <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> de l'activité <xref:System.Activities.Statements.Parallel> a la valeur `true` ; étant donné que <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> est vérifié une fois chaque branche terminée, cela entraînera l'annulation de la branche restante après la fin de la première branche.</span><span class="sxs-lookup"><span data-stu-id="a3f59-118">The <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> of the <xref:System.Activities.Statements.Parallel> activity is set to `true`; since the <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> is checked after any branch completes, this will cause the remaining branch to be canceled after the first branch completes.</span></span> <span data-ttu-id="a3f59-119">L'application cliente demande aux deux agences d'acheter le billet, et lorsque la première confirme que le billet a été acheté, l'application annule la commande auprès de l'autre agence.</span><span class="sxs-lookup"><span data-stu-id="a3f59-119">The client application asks both agencies to buy the ticket, and when the first one confirms that the ticket has been bought, the application cancels the order at the other agency.</span></span>  
   
-## Pour utiliser cet exemple  
+## <a name="to-use-this-sample"></a><span data-ttu-id="a3f59-120">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="a3f59-120">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution CancelationScopeXAML.sln.  
+1.  <span data-ttu-id="a3f59-121">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution CancelationScopeXAML.sln.</span><span class="sxs-lookup"><span data-stu-id="a3f59-121">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the CancelationScopeXAML.sln solution file.</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+2.  <span data-ttu-id="a3f59-122">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="a3f59-122">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  Pour exécuter la solution, appuyez sur Ctrl\+F5.  
+3.  <span data-ttu-id="a3f59-123">Pour exécuter la solution, appuyez sur Ctrl+F5.</span><span class="sxs-lookup"><span data-stu-id="a3f59-123">To run the solution, press CTRL+F5.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="a3f59-124">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="a3f59-124">The samples may already be installed on your machine.</span></span> <span data-ttu-id="a3f59-125">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="a3f59-125">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, accédez à la page des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="a3f59-126">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="a3f59-126">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="a3f59-127">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="a3f59-127">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Built-InActivities\CancellationScope`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\CancellationScope`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="a3f59-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a3f59-128">See Also</span></span>

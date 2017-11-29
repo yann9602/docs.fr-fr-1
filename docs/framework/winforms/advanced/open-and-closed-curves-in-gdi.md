@@ -1,63 +1,67 @@
 ---
-title: "Courbes ouvertes et ferm&#233;es dans GDI+ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "courbes"
-  - "courbes, dessiner"
-  - "courbes, remplir"
-  - "GDI+, courbes"
+title: "Courbes ouvertes et fermées dans GDI+"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- curves [Windows Forms], filling
+- GDI+, curves
+- curves [Windows Forms], drawing
+- curves
 ms.assetid: 08d2cc9a-dc9d-4eed-bcbb-2c8e2ca5d3ae
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 14da32848978299a0d0651596bbfbfe17c2e0d53
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Courbes ouvertes et ferm&#233;es dans GDI+
-L'illustration suivante représente deux courbes dont l'une est ouverte et l'autre fermée.  
+# <a name="open-and-closed-curves-in-gdi"></a><span data-ttu-id="5085f-102">Courbes ouvertes et fermées dans GDI+</span><span class="sxs-lookup"><span data-stu-id="5085f-102">Open and Closed Curves in GDI+</span></span>
+<span data-ttu-id="5085f-103">L’illustration suivante montre deux courbes : un seul est ouvert et l’autre fermée.</span><span class="sxs-lookup"><span data-stu-id="5085f-103">The following illustration shows two curves: one open and one closed.</span></span>  
   
- ![Courbes ouvertes et fermées](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art24.png "Aboutgdip02\_art24")  
+ <span data-ttu-id="5085f-104">![Courbes ouvertes et fermées](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art24.gif "Aboutgdip02_art24")</span><span class="sxs-lookup"><span data-stu-id="5085f-104">![Open & Closed curves](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art24.gif "Aboutgdip02_art24")</span></span>  
   
-## Interface managée pour les courbes  
- Les courbes fermées ont un intérieur qui peut être rempli à l'aide d'un pinceau.  La classe <xref:System.Drawing.Graphics> de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit les méthodes suivantes pour le remplissage de formes fermées et de courbes : <xref:System.Drawing.Graphics.FillRectangle%2A>, <xref:System.Drawing.Graphics.FillEllipse%2A>, <xref:System.Drawing.Graphics.FillPie%2A>, <xref:System.Drawing.Graphics.FillPolygon%2A>, <xref:System.Drawing.Graphics.FillClosedCurve%2A>, <xref:System.Drawing.Graphics.FillPath%2A> et <xref:System.Drawing.Graphics.FillRegion%2A>.  Lorsque vous appelez une de ces méthodes, vous devez lui passer un type de pinceau précis \(<xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush> ou <xref:System.Drawing.Drawing2D.PathGradientBrush>\) en tant qu'argument.  
+## <a name="managed-interface-for-curves"></a><span data-ttu-id="5085f-105">Interface managée pour les courbes</span><span class="sxs-lookup"><span data-stu-id="5085f-105">Managed Interface for Curves</span></span>  
+ <span data-ttu-id="5085f-106">Courbes fermées ont un intérieur et qui peuvent être remplis avec un pinceau.</span><span class="sxs-lookup"><span data-stu-id="5085f-106">Closed curves have an interior and therefore can be filled with a brush.</span></span> <span data-ttu-id="5085f-107">Le <xref:System.Drawing.Graphics> classe dans [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit les méthodes suivantes pour remplir des formes fermées et courbes : <xref:System.Drawing.Graphics.FillRectangle%2A>, <xref:System.Drawing.Graphics.FillEllipse%2A>, <xref:System.Drawing.Graphics.FillPie%2A>, <xref:System.Drawing.Graphics.FillPolygon%2A>, <xref:System.Drawing.Graphics.FillClosedCurve%2A>, <xref:System.Drawing.Graphics.FillPath%2A>, et <xref:System.Drawing.Graphics.FillRegion%2A>.</span><span class="sxs-lookup"><span data-stu-id="5085f-107">The <xref:System.Drawing.Graphics> class in [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] provides the following methods for filling closed shapes and curves: <xref:System.Drawing.Graphics.FillRectangle%2A>, <xref:System.Drawing.Graphics.FillEllipse%2A>, <xref:System.Drawing.Graphics.FillPie%2A>, <xref:System.Drawing.Graphics.FillPolygon%2A>, <xref:System.Drawing.Graphics.FillClosedCurve%2A>, <xref:System.Drawing.Graphics.FillPath%2A>, and <xref:System.Drawing.Graphics.FillRegion%2A>.</span></span> <span data-ttu-id="5085f-108">Lorsque vous appelez une de ces méthodes, vous devez passer un des types de pinceau spécifique (<xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, ou <xref:System.Drawing.Drawing2D.PathGradientBrush>) en tant qu’argument.</span><span class="sxs-lookup"><span data-stu-id="5085f-108">Whenever you call one of these methods, you must pass one of the specific brush types (<xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, or <xref:System.Drawing.Drawing2D.PathGradientBrush>) as an argument.</span></span>  
   
- La méthode <xref:System.Drawing.Graphics.FillPie%2A> est associée à la méthode <xref:System.Drawing.Graphics.DrawArc%2A>.  De même que la méthode <xref:System.Drawing.Graphics.DrawArc%2A> dessine une partie du contour d'une ellipse, la méthode <xref:System.Drawing.Graphics.FillPie%2A> remplit une portion de l'intérieur d'une ellipse.  L'exemple suivant dessine un arc et remplit la portion correspondante de l'intérieur de l'ellipse :  
+ <span data-ttu-id="5085f-109">Le <xref:System.Drawing.Graphics.FillPie%2A> méthode est associée à la <xref:System.Drawing.Graphics.DrawArc%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="5085f-109">The <xref:System.Drawing.Graphics.FillPie%2A> method is a companion to the <xref:System.Drawing.Graphics.DrawArc%2A> method.</span></span> <span data-ttu-id="5085f-110">Tout comme le <xref:System.Drawing.Graphics.DrawArc%2A> méthode dessine une partie du contour d’une ellipse, la <xref:System.Drawing.Graphics.FillPie%2A> méthode remplit une portion de l’intérieur d’une ellipse.</span><span class="sxs-lookup"><span data-stu-id="5085f-110">Just as the <xref:System.Drawing.Graphics.DrawArc%2A> method draws a portion of the outline of an ellipse, the <xref:System.Drawing.Graphics.FillPie%2A> method fills a portion of the interior of an ellipse.</span></span> <span data-ttu-id="5085f-111">L’exemple suivant dessine un arc et remplit la partie correspondante de l’intérieur de l’ellipse :</span><span class="sxs-lookup"><span data-stu-id="5085f-111">The following example draws an arc and fills the corresponding portion of the interior of the ellipse:</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#21)]
  [!code-vb[LinesCurvesAndShapes#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#21)]  
   
- L'illustration suivante représente l'arc et le secteur rempli.  
+ <span data-ttu-id="5085f-112">L’illustration suivante montre l’arc et le secteur rempli.</span><span class="sxs-lookup"><span data-stu-id="5085f-112">The following illustration shows the arc and the filled pie.</span></span>  
   
- ![Courbes ouvertes et fermées](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art25.png "Aboutgdip02\_art25")  
+ <span data-ttu-id="5085f-113">![Courbes ouvertes et fermées](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art25.gif "Aboutgdip02_art25")</span><span class="sxs-lookup"><span data-stu-id="5085f-113">![Open & Closed curves](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art25.gif "Aboutgdip02_art25")</span></span>  
   
- La méthode <xref:System.Drawing.Graphics.FillClosedCurve%2A> est associée à la méthode <xref:System.Drawing.Graphics.DrawClosedCurve%2A>.  Ces deux méthodes ferment automatiquement la courbe en reliant le point de départ et le point d'arrivée.  L'exemple suivant dessine une courbe qui passe par les points \(0, 0\), \(60, 20\) et \(40, 50\).  Ensuite, la courbe est fermée automatiquement par liaison du point \(40, 50\) au point de départ \(0, 0\) et l'intérieur est rempli à l'aide d'une couleur unie.  
+ <span data-ttu-id="5085f-114">Le <xref:System.Drawing.Graphics.FillClosedCurve%2A> méthode est associée à la <xref:System.Drawing.Graphics.DrawClosedCurve%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="5085f-114">The <xref:System.Drawing.Graphics.FillClosedCurve%2A> method is a companion to the <xref:System.Drawing.Graphics.DrawClosedCurve%2A> method.</span></span> <span data-ttu-id="5085f-115">Les deux méthodes ferment automatiquement la courbe en vous connectant le point de fin pour le point de départ.</span><span class="sxs-lookup"><span data-stu-id="5085f-115">Both methods automatically close the curve by connecting the ending point to the starting point.</span></span> <span data-ttu-id="5085f-116">L’exemple suivant dessine une courbe passant par (0, 0), (60, 20) et (40, 50).</span><span class="sxs-lookup"><span data-stu-id="5085f-116">The following example draws a curve that passes through (0, 0), (60, 20), and (40, 50).</span></span> <span data-ttu-id="5085f-117">Ensuite, la courbe est fermée automatiquement en vous connectant (40, 50) au point de départ (0, 0), et l’intérieur est rempli avec une couleur unie.</span><span class="sxs-lookup"><span data-stu-id="5085f-117">Then, the curve is automatically closed by connecting (40, 50) to the starting point (0, 0), and the interior is filled with a solid color.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#22](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#22)]
  [!code-vb[LinesCurvesAndShapes#22](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#22)]  
   
- La méthode <xref:System.Drawing.Graphics.FillPath%2A> remplit l'intérieur des différents éléments d'un tracé.  Si un tracé comprend un élément qui ne forme pas une courbe fermée ou une forme, la méthode <xref:System.Drawing.Graphics.FillPath%2A> ferme automatiquement cet élément et le remplit.  L'exemple suivant dessine et remplit un tracé constitué d'un arc, d'une spline cardinale, d'une chaîne et d'un secteur.  
+ <span data-ttu-id="5085f-118">Le <xref:System.Drawing.Graphics.FillPath%2A> méthode remplit l’intérieur des différents éléments d’un chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="5085f-118">The <xref:System.Drawing.Graphics.FillPath%2A> method fills the interiors of the separate pieces of a path.</span></span> <span data-ttu-id="5085f-119">Si une partie d’un chemin d’accès ne forme pas une courbe fermée ou une forme, la <xref:System.Drawing.Graphics.FillPath%2A> méthode ferme automatiquement cet élément du chemin d’accès avant de le remplir.</span><span class="sxs-lookup"><span data-stu-id="5085f-119">If a piece of a path doesn't form a closed curve or shape, the <xref:System.Drawing.Graphics.FillPath%2A> method automatically closes that piece of the path before filling it.</span></span> <span data-ttu-id="5085f-120">L’exemple suivant dessine et remplit un chemin d’accès qui se compose d’un arc, une spline cardinale, une chaîne et un graphique en secteurs :</span><span class="sxs-lookup"><span data-stu-id="5085f-120">The following example draws and fills a path that consists of an arc, a cardinal spline, a string, and a pie:</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#23](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#23)]
  [!code-vb[LinesCurvesAndShapes#23](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#23)]  
   
- L'illustration suivante représente ce tracé avec et sans le remplissage uni.  Notez que la méthode <xref:System.Drawing.Graphics.DrawPath%2A> ne remplit pas le texte de la chaîne mais l'encadre.  La méthode qui permet de peindre l'intérieur des caractères de la chaîne est <xref:System.Drawing.Graphics.FillPath%2A>.  
+ <span data-ttu-id="5085f-121">L’illustration suivante montre le chemin d’accès avec et sans le remplissage uni.</span><span class="sxs-lookup"><span data-stu-id="5085f-121">The following illustration shows the path with and without the solid fill.</span></span> <span data-ttu-id="5085f-122">Notez que le texte dans la chaîne est indiqué, mais ne remplit pas par le <xref:System.Drawing.Graphics.DrawPath%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="5085f-122">Note that the text in the string is outlined, but not filled, by the <xref:System.Drawing.Graphics.DrawPath%2A> method.</span></span> <span data-ttu-id="5085f-123">Il s’agit du <xref:System.Drawing.Graphics.FillPath%2A> méthode qui permet de peindre l’intérieur des caractères dans la chaîne.</span><span class="sxs-lookup"><span data-stu-id="5085f-123">It is the <xref:System.Drawing.Graphics.FillPath%2A> method that paints the interiors of the characters in the string.</span></span>  
   
- ![Chaîne dans un tracé](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art26.png "Aboutgdip02\_art26")  
+ <span data-ttu-id="5085f-124">![Chaîne dans un chemin d’accès](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art26.gif "Aboutgdip02_art26")</span><span class="sxs-lookup"><span data-stu-id="5085f-124">![String in a path](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art26.gif "Aboutgdip02_art26")</span></span>  
   
-## Voir aussi  
- <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=fullName>   
- <xref:System.Drawing.Pen?displayProperty=fullName>   
- <xref:System.Drawing.Point?displayProperty=fullName>   
- [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [Comment : créer des objets graphiques pour le dessin](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)   
- [Génération et dessin de tracés](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)
+## <a name="see-also"></a><span data-ttu-id="5085f-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5085f-125">See Also</span></span>  
+ <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>  
+ <xref:System.Drawing.Pen?displayProperty=nameWithType>  
+ <xref:System.Drawing.Point?displayProperty=nameWithType>  
+ [<span data-ttu-id="5085f-126">Lignes, courbes et formes</span><span class="sxs-lookup"><span data-stu-id="5085f-126">Lines, Curves, and Shapes</span></span>](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [<span data-ttu-id="5085f-127">Guide pratique pour créer des objets graphiques pour le dessin</span><span class="sxs-lookup"><span data-stu-id="5085f-127">How to: Create Graphics Objects for Drawing</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
+ [<span data-ttu-id="5085f-128">Génération et dessin de tracés</span><span class="sxs-lookup"><span data-stu-id="5085f-128">Constructing and Drawing Paths</span></span>](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)

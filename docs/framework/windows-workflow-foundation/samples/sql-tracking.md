@@ -1,68 +1,72 @@
 ---
-title: "Suivi SQL | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Suivi SQL
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dcffb306c8466e63e0d5888c91d5f6015845d81c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Suivi SQL
-Cet exemple montre comment écrire un participant de suivi SQL personnalisé, qui écrit des enregistrements de suivi dans une base de données SQL.[!INCLUDE[wf](../../../../includes/wf-md.md)] fournit le suivi de workflow pour avoir plus de visibilité dans l'exécution d'une instance de workflow.Le runtime de suivi émet des enregistrements de suivi de workflow lors de l'exécution du workflow.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] le suivi du workflow, consultez [Suivi et traçage de workflow](../../../../docs/framework/windows-workflow-foundation//workflow-tracking-and-tracing.md).  
+# <a name="sql-tracking"></a><span data-ttu-id="0230c-102">Suivi SQL</span><span class="sxs-lookup"><span data-stu-id="0230c-102">SQL Tracking</span></span>
+<span data-ttu-id="0230c-103">Cet exemple montre comment écrire un participant de suivi SQL personnalisé, qui écrit des enregistrements de suivi dans une base de données SQL.</span><span class="sxs-lookup"><span data-stu-id="0230c-103">This sample demonstrates how to write a custom SQL tracking participant, that writes tracking records to a SQL database.</span></span> [!INCLUDE[wf](../../../../includes/wf-md.md)]<span data-ttu-id="0230c-104"> fournit le suivi de workflow pour avoir plus de visibilité dans l'exécution d'une instance de workflow.</span><span class="sxs-lookup"><span data-stu-id="0230c-104"> provides workflow tracking to gain visibility into the execution of a workflow instance.</span></span> <span data-ttu-id="0230c-105">Le runtime de suivi émet des enregistrements de suivi de workflow lors de l'exécution du workflow.</span><span class="sxs-lookup"><span data-stu-id="0230c-105">The tracking runtime emits workflow tracking records during the execution of the workflow.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0230c-106">flux de travail de suivi, consultez [suivi et traçage de Workflow](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).</span><span class="sxs-lookup"><span data-stu-id="0230c-106"> workflow tracking, see [Workflow Tracking and Tracing](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="0230c-107">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="0230c-107">To use this sample</span></span>  
   
-1.  Vérifiez que vous disposez de SQL Server 2008, SQL Server 2008 Express ou version plus récente.Les scripts fournis avec l'exemple supposent l'utilisation d'une instance SQL Express sur votre ordinateur local.Si vous avez une instance différente, modifiez les scripts liés à la base de données avant d'exécuter l'exemple.  
+1.  <span data-ttu-id="0230c-108">Vérifiez que vous disposez de SQL Server 2008, SQL Server 2008 Express ou version plus récente.</span><span class="sxs-lookup"><span data-stu-id="0230c-108">Verify you have SQL Server 2008, SQL Server 2008 Express or newer installed.</span></span> <span data-ttu-id="0230c-109">Les scripts fournis avec l'exemple supposent l'utilisation d'une instance SQL Express sur votre ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="0230c-109">The scripts packaged with the sample assume the use of a SQL Express instance on your local computer.</span></span> <span data-ttu-id="0230c-110">Si vous avez une instance différente, modifiez les scripts liés à la base de données avant d'exécuter l'exemple.</span><span class="sxs-lookup"><span data-stu-id="0230c-110">If you have a different instance please modify the database-related scripts before running the sample.</span></span>  
   
-2.  Créez la base de données de suivi SQL Server en exécutant Trackingsetup.cmd dans le répertoire de scripts \(\\WF\\Basic\\Tracking\\SqlTracking\\CS\\Scripts\).Cela crée une base de données appelée TrackingSample.  
-  
-    > [!NOTE]
-    >  Le script crée la base de données sur l'instance par défaut de SQL Express.Si vous souhaitez l'installer sur une instance de base de données différente, modifiez le script Trackingsetup.cmd.  
-  
-3.  Ouvrez SqlTrackingSample.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
-  
-4.  Appuyez sur Ctrl\+Maj\+B pour générer la solution.  
-  
-5.  Appuyez sur F5 pour exécuter l'application.  
-  
-     La fenêtre du navigateur s'ouvre et affiche la liste des répertoires pour l'application.  
-  
-6.  Dans le navigateur, cliquez sur StockPriceService.xamlx.  
-  
-7.  Le navigateur affiche la page StockPriceService, laquelle contient l'adresse WSDL du service local.Copiez cette adresse.  
-  
-     L'adresse WSDL du service local est, par exemple, http:\/\/localhost:65193\/StockPriceService.xamlx?wsdl.  
-  
-8.  Exécutez le client test WCF \(WcfTestClient.exe\) à l'aide de l'[!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)].Il se trouve dans le répertoire Microsoft Visual Studio 10.0\\Common7\\IDE.  
-  
-9. Dans le client test WCF, cliquez sur le menu **Fichier** et sélectionnez**Ajouter un service**.Collez l'adresse du service local dans la zone de texte.Cliquez sur **OK** pour fermer la boîte de dialogue.  
-  
-10. Dans le client test WCF, double\-cliquez sur **GetStockPrice**.Cela ouvre l'opération `GetStockPrice` qui prend un paramètre, tapez la valeur `Contoso` et cliquez sur **Appeler**.  
-  
-11. Les enregistrements de suivi émis sont écrits dans une base de données SQL.Pour afficher les enregistrements de suivi, ouvrez la base de données TrackingSample dans SQL Management Studio et naviguez jusqu'aux tables.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] SQL Server Management Studio, consultez [Présentation de SQL Server Management Studio](http://go.microsoft.com/fwlink/?LinkId=165645).SQL Server 2008 Management Studio Express peut être téléchargé [ici](http://go.microsoft.com/fwlink/?LinkId=180520)L'exécution d'une requête Sélection dans les tables affiche les données dans les enregistrements de suivi stockés dans les tables respectives.  
-  
-#### Pour désinstaller l'exemple  
-  
-1.  Exécutez le script Trackingcleanup.cmd dans le répertoire de l'exemple \(\\WF\\Basic\\Tracking\\SqlTracking\).  
+2.  <span data-ttu-id="0230c-111">Créez la base de données de suivi SQL Server en exécutant Trackingsetup.cmd dans le répertoire de scripts (\WF\Basic\Tracking\SqlTracking\CS\Scripts).</span><span class="sxs-lookup"><span data-stu-id="0230c-111">Create the SQL Server tracking database by running Trackingsetup.cmd in the scripts directory (\WF\Basic\Tracking\SqlTracking\CS\Scripts).</span></span> <span data-ttu-id="0230c-112">Cela crée une base de données appelée TrackingSample.</span><span class="sxs-lookup"><span data-stu-id="0230c-112">This creates a database called TrackingSample.</span></span>  
   
     > [!NOTE]
-    >  Trackingcleanup.cmd essaie de supprimer la base de données de votre ordinateur local SQL Express.Si vous utilisez une autre instance SQL Server, modifiez Trackingcleanup.cmd.  
+    >  <span data-ttu-id="0230c-113">Le script crée la base de données sur l'instance par défaut de SQL Express.</span><span class="sxs-lookup"><span data-stu-id="0230c-113">The script creates the database on the default instance of SQL Express.</span></span> <span data-ttu-id="0230c-114">Si vous souhaitez l'installer sur une instance de base de données différente, modifiez le script Trackingsetup.cmd.</span><span class="sxs-lookup"><span data-stu-id="0230c-114">If you want to install it on a different database instance, edit the Trackingsetup.cmd script.</span></span>  
+  
+3.  <span data-ttu-id="0230c-115">Ouvrez SqlTrackingSample.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0230c-115">Open SqlTrackingSample.sln in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
+  
+4.  <span data-ttu-id="0230c-116">Appuyez sur Ctrl+Maj+B pour générer la solution.</span><span class="sxs-lookup"><span data-stu-id="0230c-116">Press CTRL+SHIFT+B to build the solution.</span></span>  
+  
+5.  <span data-ttu-id="0230c-117">Appuyez sur F5 pour exécuter l'application.</span><span class="sxs-lookup"><span data-stu-id="0230c-117">Press F5 to run the application.</span></span>  
+  
+     <span data-ttu-id="0230c-118">La fenêtre du navigateur s'ouvre et affiche la liste des répertoires pour l'application.</span><span class="sxs-lookup"><span data-stu-id="0230c-118">The browser window opens and shows the directory listing for the application.</span></span>  
+  
+6.  <span data-ttu-id="0230c-119">Dans le navigateur, cliquez sur StockPriceService.xamlx.</span><span class="sxs-lookup"><span data-stu-id="0230c-119">In the browser, click StockPriceService.xamlx.</span></span>  
+  
+7.  <span data-ttu-id="0230c-120">Le navigateur affiche la page StockPriceService, laquelle contient l'adresse WSDL du service local.</span><span class="sxs-lookup"><span data-stu-id="0230c-120">The browser displays the StockPriceService page, which contains the local service WSDL address.</span></span> <span data-ttu-id="0230c-121">Copiez cette adresse.</span><span class="sxs-lookup"><span data-stu-id="0230c-121">Copy this address.</span></span>  
+  
+     <span data-ttu-id="0230c-122">L'adresse WSDL du service local est, par exemple, http://localhost:65193/StockPriceService.xamlx?wsdl.</span><span class="sxs-lookup"><span data-stu-id="0230c-122">An example of the local service WSDL address is http://localhost:65193/StockPriceService.xamlx?wsdl.</span></span>  
+  
+8.  <span data-ttu-id="0230c-123">À l'aide de l'[!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], exécutez le client test WCF (WcfTestClient.exe).</span><span class="sxs-lookup"><span data-stu-id="0230c-123">Using [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], run the WCF test client (WcfTestClient.exe).</span></span> <span data-ttu-id="0230c-124">Il se trouve dans le répertoire Microsoft Visual Studio 10.0\Common7\IDE.</span><span class="sxs-lookup"><span data-stu-id="0230c-124">It is located in the Microsoft Visual Studio 10.0\Common7\IDE directory.</span></span>  
+  
+9. <span data-ttu-id="0230c-125">Dans le client test WCF, cliquez sur le **fichier** menu et sélectionnez **ajouter un Service**.</span><span class="sxs-lookup"><span data-stu-id="0230c-125">In the WCF test client, click the **File** menu and select **Add Service**.</span></span> <span data-ttu-id="0230c-126">Collez l'adresse du service local dans la zone de texte.</span><span class="sxs-lookup"><span data-stu-id="0230c-126">Paste the local service address in the textbox.</span></span> <span data-ttu-id="0230c-127">Cliquez sur **OK** pour fermer la boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="0230c-127">Click **OK** to close the dialog.</span></span>  
+  
+10. <span data-ttu-id="0230c-128">Dans le client test WCF, double-cliquez sur **GetStockPrice**.</span><span class="sxs-lookup"><span data-stu-id="0230c-128">In the WCF test client, double click **GetStockPrice**.</span></span> <span data-ttu-id="0230c-129">Cette opération ouvre le `GetStockPrice` opération qui prend un paramètre, tapez la valeur `Contoso` et cliquez sur **Invoke**.</span><span class="sxs-lookup"><span data-stu-id="0230c-129">This opens the `GetStockPrice` operation that takes one parameter, type in the value `Contoso` and click **Invoke**.</span></span>  
+  
+11. <span data-ttu-id="0230c-130">Les enregistrements de suivi émis sont écrits dans une base de données SQL.</span><span class="sxs-lookup"><span data-stu-id="0230c-130">The emitted tracking records are written to a SQL database.</span></span> <span data-ttu-id="0230c-131">Pour afficher les enregistrements de suivi, ouvrez la base de données TrackingSample dans SQL Management Studio et naviguez jusqu'aux tables.</span><span class="sxs-lookup"><span data-stu-id="0230c-131">To view the tracking records, open the TrackingSample database in SQL Management Studio and navigate to the tables.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0230c-132">SQL Server Management Studio, consultez [présentation de SQL Server Management Studio](http://go.microsoft.com/fwlink/?LinkId=165645).</span><span class="sxs-lookup"><span data-stu-id="0230c-132"> SQL Server Management Studio, see [Introducing SQL Server Management Studio](http://go.microsoft.com/fwlink/?LinkId=165645).</span></span> <span data-ttu-id="0230c-133">SQL Server 2008 Management Studio Express peut être téléchargé [ici](http://go.microsoft.com/fwlink/?LinkId=180520).</span><span class="sxs-lookup"><span data-stu-id="0230c-133">SQL Server 2008 Management Studio Express can be downloaded [here](http://go.microsoft.com/fwlink/?LinkId=180520).</span></span> <span data-ttu-id="0230c-134">L'exécution d'une requête Sélection dans les tables affiche les données dans les enregistrements de suivi stockés dans les tables respectives.</span><span class="sxs-lookup"><span data-stu-id="0230c-134">Running a select query on the tables displays the data within the tracking records stored in the respective tables.</span></span>  
+  
+#### <a name="to-uninstall-the-sample"></a><span data-ttu-id="0230c-135">Pour désinstaller l'exemple</span><span class="sxs-lookup"><span data-stu-id="0230c-135">To uninstall the sample</span></span>  
+  
+1.  <span data-ttu-id="0230c-136">Exécutez le script Trackingcleanup.cmd dans le répertoire de l'exemple (\WF\Basic\Tracking\SqlTracking).</span><span class="sxs-lookup"><span data-stu-id="0230c-136">Run theTrackingcleanup.cmd script in the sample directory (\WF\Basic\Tracking\SqlTracking).</span></span>  
+  
+    > [!NOTE]
+    >  <span data-ttu-id="0230c-137">Trackingcleanup.cmd essaie de supprimer la base de données de votre ordinateur local SQL Express.</span><span class="sxs-lookup"><span data-stu-id="0230c-137">The Trackingcleanup.cmd attempts to delete the database in your local computer SQL Express.</span></span> <span data-ttu-id="0230c-138">Si vous utilisez une autre instance SQL Server, modifiez Trackingcleanup.cmd.</span><span class="sxs-lookup"><span data-stu-id="0230c-138">If you are using another SQL server instance, edit Trackingcleanup.cmd.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="0230c-139">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="0230c-139">The samples may already be installed on your computer.</span></span> <span data-ttu-id="0230c-140">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="0230c-140">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="0230c-141">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="0230c-141">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="0230c-142">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="0230c-142">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`  
   
-## Voir aussi  
- [Exemples d'analyse AppFabric](http://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a><span data-ttu-id="0230c-143">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0230c-143">See Also</span></span>  
+ [<span data-ttu-id="0230c-144">Exemples d’analyse AppFabric</span><span class="sxs-lookup"><span data-stu-id="0230c-144">AppFabric Monitoring Samples</span></span>](http://go.microsoft.com/fwlink/?LinkId=193959)

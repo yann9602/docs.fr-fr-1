@@ -1,33 +1,37 @@
 ---
-title: "Impl&#233;mentation de m&#233;thode dans les contr&#244;les personnalis&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles utilisateur (Windows Forms), implémentation de la méthode"
-  - "contrôles personnalisés (Windows Forms), la surcharge de méthodes"
-  - "contrôles personnalisés (Windows Forms), implémentation de la méthode"
-  - "méthodes (Windows Forms)"
-  - "méthodes (Windows Forms), contrôles personnalisés"
+title: "Implémentation de méthode dans les contrôles personnalisés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- user controls [Windows Forms], method implementation
+- custom controls [Windows Forms], overloading methods
+- custom controls [Windows Forms], method implementation
+- methods [Windows Forms]
+- methods [Windows Forms], custom controls
 ms.assetid: 35d14fca-4bb4-4a27-8211-1f7a98ea27de
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3c992197b653fb3999870247a3a4cdb4015612ff
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Impl&#233;mentation de m&#233;thode dans les contr&#244;les personnalis&#233;s
-Une méthode est implémentée dans un contrôle comme dans tout autre composant.  
+# <a name="method-implementation-in-custom-controls"></a><span data-ttu-id="1b70f-102">Implémentation de méthode dans les contrôles personnalisés</span><span class="sxs-lookup"><span data-stu-id="1b70f-102">Method Implementation in Custom Controls</span></span>
+<span data-ttu-id="1b70f-103">Une méthode est implémentée dans un contrôle comme dans tout autre composant.</span><span class="sxs-lookup"><span data-stu-id="1b70f-103">A method is implemented in a control in the same manner a method would be implemented in any other component.</span></span>  
   
- En Visual Basic, si une méthode est nécessaire pour retourner une valeur, elle est implémentée en tant que `Public Function`. Si aucune valeur n'est retournée, elle est implémentée en tant que `Public Sub`. Les méthodes sont déclarées à l'aide de la syntaxe suivante :  
+ <span data-ttu-id="1b70f-104">En Visual Basic, si une méthode est nécessaire pour retourner une valeur, elle est implémentée en tant que `Public Function`.</span><span class="sxs-lookup"><span data-stu-id="1b70f-104">In Visual Basic, if a method is required to return a value, it is implemented as a `Public Function`.</span></span> <span data-ttu-id="1b70f-105">Si aucune valeur n'est retournée, elle est implémentée en tant que `Public Sub`.</span><span class="sxs-lookup"><span data-stu-id="1b70f-105">If no value is returned, it is implemented as a `Public Sub`.</span></span> <span data-ttu-id="1b70f-106">Les méthodes sont déclarées à l'aide de la syntaxe suivante :</span><span class="sxs-lookup"><span data-stu-id="1b70f-106">Methods are declared using the following syntax:</span></span>  
   
 ```vb  
 Public Function ConvertMatterToEnergy(Matter as Integer) As Integer  
@@ -35,9 +39,9 @@ Public Function ConvertMatterToEnergy(Matter as Integer) As Integer
 End Function  
 ```  
   
- Les fonctions doivent spécifier un type de retour, tel qu'entier, chaîne, objet, etc., car elles retournent une valeur. Le cas échéant, vous devez également spécifier les arguments acceptés par les procédures `Function` ou `Sub`.  
+ <span data-ttu-id="1b70f-107">Les fonctions doivent spécifier un type de retour, tel qu'entier, chaîne, objet, etc., car elles retournent une valeur.</span><span class="sxs-lookup"><span data-stu-id="1b70f-107">Because functions return a value, they must specify a return type, such as integer, string, object, and so on.</span></span> <span data-ttu-id="1b70f-108">Le cas échéant, vous devez également spécifier les arguments acceptés par les procédures `Function` ou `Sub`.</span><span class="sxs-lookup"><span data-stu-id="1b70f-108">The arguments `Function` or `Sub` procedures take, if any, must also be specified.</span></span>  
   
- C# ne fait aucune différence entre les fonctions et les procédures, contrairement à Visual Basic. Une méthode retourne une valeur ou `void`. La syntaxe permettant de déclarer une méthode publique C# est la suivante :  
+ <span data-ttu-id="1b70f-109">C# ne fait aucune différence entre les fonctions et les procédures, contrairement à Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="1b70f-109">C# makes no distinction between functions and procedures, as Visual Basic does.</span></span> <span data-ttu-id="1b70f-110">Une méthode retourne une valeur ou `void`.</span><span class="sxs-lookup"><span data-stu-id="1b70f-110">A method either returns a value or returns `void`.</span></span> <span data-ttu-id="1b70f-111">La syntaxe permettant de déclarer une méthode publique C# est la suivante :</span><span class="sxs-lookup"><span data-stu-id="1b70f-111">The syntax for declaring a C# public method is:</span></span>  
   
 ```csharp  
 public int ConvertMatterToEnergy(int matter)  
@@ -46,17 +50,17 @@ public int ConvertMatterToEnergy(int matter)
 }  
 ```  
   
- Quand vous déclarez une méthode, déclarez tous ses arguments en tant que types de données explicites, si possible. Les arguments qui acceptent des références d'objet doivent être déclarés comme des types de classe spécifiques : par exemple, `As Widget` au lieu d'`As Object`. En Visual Basic, le paramètre `Option Strict` par défaut applique automatiquement cette règle.  
+ <span data-ttu-id="1b70f-112">Quand vous déclarez une méthode, déclarez tous ses arguments en tant que types de données explicites, si possible.</span><span class="sxs-lookup"><span data-stu-id="1b70f-112">When you declare a method, declare all of its arguments as explicit data types whenever possible.</span></span> <span data-ttu-id="1b70f-113">Les arguments qui acceptent des références d'objet doivent être déclarés comme des types de classe spécifiques : par exemple, `As Widget` au lieu d'`As Object`.</span><span class="sxs-lookup"><span data-stu-id="1b70f-113">Arguments that take object references should be declared as specific class types — for example, `As Widget` instead of `As Object`.</span></span> <span data-ttu-id="1b70f-114">En Visual Basic, le paramètre `Option Strict` par défaut applique automatiquement cette règle.</span><span class="sxs-lookup"><span data-stu-id="1b70f-114">In Visual Basic, the default setting `Option Strict` automatically enforces this rule.</span></span>  
   
- Les arguments typés permettent au compilateur de détecter de nombreuses erreurs au cours du développement, plutôt qu'au moment de l'exécution. Le compilateur détecte systématiquement les erreurs, tandis que le test au moment de l'exécution est du même niveau qu'une suite de tests.  
+ <span data-ttu-id="1b70f-115">Les arguments typés permettent au compilateur de détecter de nombreuses erreurs au cours du développement, plutôt qu'au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="1b70f-115">Typed arguments allow many developer errors to be caught by the compiler, rather than at run time.</span></span> <span data-ttu-id="1b70f-116">Le compilateur détecte systématiquement les erreurs, tandis que le test au moment de l'exécution est du même niveau qu'une suite de tests.</span><span class="sxs-lookup"><span data-stu-id="1b70f-116">The compiler always catches errors, whereas run-time testing is only as good as the test suite.</span></span>  
   
-## <a name="overloaded-methods"></a>Méthodes surchargées  
- Si vous voulez permettre aux utilisateurs que vous contrôlez de fournir des combinaisons différentes de paramètres à une méthode, offrez plusieurs surcharges de la méthode, à l'aide de types de données explicites. Évitez la création de paramètres déclarés `As Object` qui peuvent contenir tout type de données, car cela peut générer des erreurs qui ne seraient pas détectées pendant le test.  
+## <a name="overloaded-methods"></a><span data-ttu-id="1b70f-117">Méthodes surchargées</span><span class="sxs-lookup"><span data-stu-id="1b70f-117">Overloaded Methods</span></span>  
+ <span data-ttu-id="1b70f-118">Si vous voulez permettre aux utilisateurs que vous contrôlez de fournir des combinaisons différentes de paramètres à une méthode, offrez plusieurs surcharges de la méthode, à l'aide de types de données explicites.</span><span class="sxs-lookup"><span data-stu-id="1b70f-118">If you want to allow users of your control to supply different combinations of parameters to a method, provide multiple overloads of the method, using explicit data types.</span></span> <span data-ttu-id="1b70f-119">Évitez la création de paramètres déclarés `As Object` qui peuvent contenir tout type de données, car cela peut générer des erreurs qui ne seraient pas détectées pendant le test.</span><span class="sxs-lookup"><span data-stu-id="1b70f-119">Avoid creating parameters declared `As Object` that can contain any data type, as this can lead to errors that might not be caught in testing.</span></span>  
   
 > [!NOTE]
->  Le type de données universel du Common Language Runtime est `Object` plutôt que `Variant`. `Variant` a été supprimé du langage.  
+>  <span data-ttu-id="1b70f-120">Le type de données universel du Common Language Runtime est `Object` plutôt que `Variant`.</span><span class="sxs-lookup"><span data-stu-id="1b70f-120">The universal data type in the common language runtime is `Object` rather than `Variant`.</span></span> <span data-ttu-id="1b70f-121">`Variant` a été supprimé du langage.</span><span class="sxs-lookup"><span data-stu-id="1b70f-121">`Variant` has been removed from the language.</span></span>  
   
- Par exemple, la méthode `Spin` d'un hypothétique contrôle `Widget` peut permettre la spécification directe de la direction et de la vitesse de rotation, ou la spécification d'un autre objet `Widget` à partir duquel le moment cinétique doit être absorbé :  
+ <span data-ttu-id="1b70f-122">Par exemple, la méthode `Spin` d'un hypothétique contrôle `Widget` peut permettre la spécification directe de la direction et de la vitesse de rotation, ou la spécification d'un autre objet `Widget` à partir duquel le moment cinétique doit être absorbé :</span><span class="sxs-lookup"><span data-stu-id="1b70f-122">For example, the `Spin` method of a hypothetical `Widget` control might allow either direct specification of spin direction and speed, or specification of another `Widget` object from which angular momentum is to be absorbed:</span></span>  
   
 ```vb  
 Overloads Public Sub Spin( _  
@@ -81,6 +85,6 @@ public void Spin(Widget driver)
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Événements](../../../../docs/standard/events/index.md)   
- [Propriétés dans les contrôles Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)
+## <a name="see-also"></a><span data-ttu-id="1b70f-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1b70f-123">See Also</span></span>  
+ [<span data-ttu-id="1b70f-124">Événements</span><span class="sxs-lookup"><span data-stu-id="1b70f-124">Events</span></span>](../../../../docs/standard/events/index.md)  
+ [<span data-ttu-id="1b70f-125">Propriétés dans les contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1b70f-125">Properties in Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)

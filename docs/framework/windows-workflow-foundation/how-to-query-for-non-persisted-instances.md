@@ -1,69 +1,67 @@
 ---
-title: "Proc&#233;dure&#160;: rechercher des instances non&#160;persistantes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : rechercher des instances non persistantes"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 294019b1-c1a7-4b81-a14f-b47c106cd723
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7c83e9364fa599d4356b69fe93ae3eaaa618c2f9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: rechercher des instances non&#160;persistantes
-Lorsqu'une nouvelle instance de service est créée et que le comportement de magasin d'instances de workflow SQL est défini pour le service, l'hôte de service crée une entrée initiale pour cette instance de service dans le magasin d'instances.Par la suite, lorsque l'instance de service persiste pour la première fois, le comportement de magasin d'instances de workflow SQL stocke l'état de l'instance actuelle avec les données supplémentaires qui sont requises pour l'activation, la récupération et le contrôle.  
+# <a name="how-to-query-for-non-persisted-instances"></a><span data-ttu-id="8179f-102">Procédure : rechercher des instances non persistantes</span><span class="sxs-lookup"><span data-stu-id="8179f-102">How to: Query for Non-persisted Instances</span></span>
+<span data-ttu-id="8179f-103">Lorsqu'une nouvelle instance de service est créée et que le comportement de magasin d'instances de workflow SQL est défini pour le service, l'hôte de service crée une entrée initiale pour cette instance de service dans le magasin d'instances.</span><span class="sxs-lookup"><span data-stu-id="8179f-103">When a new instance of a service is created and the service has the SQL Workflow Instance Store behavior defined, the service host creates a initial entry for that service instance in the instance store.</span></span> <span data-ttu-id="8179f-104">Par la suite, lorsque l'instance de service persiste pour la première fois, le comportement de magasin d'instances de workflow SQL stocke l'état de l'instance actuelle avec les données supplémentaires qui sont requises pour l'activation, la récupération et le contrôle.</span><span class="sxs-lookup"><span data-stu-id="8179f-104">Subsequently when the service instance persists for the first time, the SQL Workflow Instance Store behavior stores the current instance state together with additional data that is required for activation, recovery, and control.</span></span>  
   
- Si une instance n'est pas persistante après la création de l'entrée initiale pour l'instance, l'instance de service est considérée comme étant dans l'état non persistant.Toutes les instances de service persistantes peuvent être interrogées et contrôlées.Les instances de service non persistantes ne peuvent être ni interrogées, ni contrôlées.Si une instance non persistante est interrompue en raison d'une exception non prise en charge, elle peut être interrogée, mais pas contrôlée.  
+ <span data-ttu-id="8179f-105">Si une instance n'est pas persistante après la création de l'entrée initiale pour l'instance, l'instance de service est considérée comme étant dans l'état non persistant.</span><span class="sxs-lookup"><span data-stu-id="8179f-105">If an instance is not persisted after the initial entry for the instance is created, the service instance is said to be in the non-persisted state.</span></span> <span data-ttu-id="8179f-106">Toutes les instances de service persistantes peuvent être interrogées et contrôlées.</span><span class="sxs-lookup"><span data-stu-id="8179f-106">All the persisted service instances can be queried and controlled.</span></span> <span data-ttu-id="8179f-107">Les instances de service non persistantes ne peuvent être ni interrogées, ni contrôlées.</span><span class="sxs-lookup"><span data-stu-id="8179f-107">Non-persisted service instances can neither be queried nor controlled.</span></span> <span data-ttu-id="8179f-108">Si une instance non persistante est interrompue en raison d'une exception non prise en charge, elle peut être interrogée, mais pas contrôlée.</span><span class="sxs-lookup"><span data-stu-id="8179f-108">If a non-persisted instance is suspended due to an unhandled exception it can be queried but not controlled.</span></span>  
   
- Les instances de service durables qui ne sont pas encore persistantes restent dans un état non persistant dans les scénarios suivants :  
+ <span data-ttu-id="8179f-109">Les instances de service durables qui ne sont pas encore persistantes restent dans un état non persistant dans les scénarios suivants :</span><span class="sxs-lookup"><span data-stu-id="8179f-109">Durable service instances that are not yet persisted remain in a non-persisted state in the following scenarios:</span></span>  
   
--   L'hôte de service se bloque avant que l'instance soit persistante pour la première fois.L'entrée initiale pour l'instance reste dans le magasin d'instances.L'instance n'est pas récupérable.Si un message corrélé arrive, l'instance devient à nouveau active.  
+-   <span data-ttu-id="8179f-110">L'hôte de service se bloque avant que l'instance soit persistante pour la première fois.</span><span class="sxs-lookup"><span data-stu-id="8179f-110">The service host crashes before the instance persisted for the first time.</span></span> <span data-ttu-id="8179f-111">L'entrée initiale pour l'instance reste dans le magasin d'instances.</span><span class="sxs-lookup"><span data-stu-id="8179f-111">The initial entry for the instance remains in the instance store.</span></span> <span data-ttu-id="8179f-112">L'instance n'est pas récupérable.</span><span class="sxs-lookup"><span data-stu-id="8179f-112">The instance is not recoverable.</span></span> <span data-ttu-id="8179f-113">Si un message corrélé arrive, l'instance devient à nouveau active.</span><span class="sxs-lookup"><span data-stu-id="8179f-113">If a correlated message arrives, the instance becomes active again.</span></span>  
   
--   L'instance rencontre une exception non prise en charge avant qu'elle soit persistante pour la première fois.Les scénarios suivants se produisent :  
+-   <span data-ttu-id="8179f-114">L'instance rencontre une exception non prise en charge avant qu'elle soit persistante pour la première fois.</span><span class="sxs-lookup"><span data-stu-id="8179f-114">The instance experiences an unhandled exception before it persisted for the first time.</span></span> <span data-ttu-id="8179f-115">Les scénarios suivants se produisent :</span><span class="sxs-lookup"><span data-stu-id="8179f-115">The following scenarios arise</span></span>  
   
-    -   Si la valeur de la propriété **UnhandledExceptionAction** est **Abandon**, les informations de déploiement du service sont écrites dans le magasin d'instances et l'instance est déchargée de la mémoire.L'instance reste dans l'état non persistant dans la base de données de persistance.  
+    -   <span data-ttu-id="8179f-116">Si la valeur de la **UnhandledExceptionAction** est définie sur **abandonner**, les informations de déploiement de service sont écrites dans le magasin d’instances et l’instance est déchargée de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="8179f-116">If the value of the **UnhandledExceptionAction** property is set to **Abandon**, the service deployment information is written to the instance store and the instance is unloaded from memory.</span></span> <span data-ttu-id="8179f-117">L'instance reste dans l'état non persistant dans la base de données de persistance.</span><span class="sxs-lookup"><span data-stu-id="8179f-117">The instance remains in non-persisted state in the persistence database.</span></span>  
   
-    -   Si la valeur de la propriété **UnhandledExceptionAction** est **AbandonAndSuspsend**, les informations de déploiement du service sont écrites dans la base de données de persistance et l'état de l'instance a la valeur **Suspendu**.L'instance ne peut pas reprendre, être annulée ou être terminée.L'hôte de service ne peut pas charger l'instance car l'instance n'est pas encore persistante et, par conséquent, l'entrée de base de données pour l'instance n'est pas terminée.  
+    -   <span data-ttu-id="8179f-118">Si la valeur de la **UnhandledExceptionAction** est définie sur **AbandonAndSuspsend**, les informations de déploiement de service sont écrites pour la base de données de persistance et l’état de l’instance a la valeur  **Suspendu**.</span><span class="sxs-lookup"><span data-stu-id="8179f-118">If the value of the **UnhandledExceptionAction** property is set to **AbandonAndSuspsend**, the service deployment information is written to the persistence database and the instance state is set to **Suspended**.</span></span> <span data-ttu-id="8179f-119">L'instance ne peut pas reprendre, être annulée ou être terminée.</span><span class="sxs-lookup"><span data-stu-id="8179f-119">The instance cannot be resumed, canceled, or terminated.</span></span> <span data-ttu-id="8179f-120">L'hôte de service ne peut pas charger l'instance car l'instance n'est pas encore persistante et, par conséquent, l'entrée de base de données pour l'instance n'est pas terminée.</span><span class="sxs-lookup"><span data-stu-id="8179f-120">The service host cannot load the instance because the instance hasn't persisted yet and, hence the database entry for the instance is not complete.</span></span>  
   
-    -   Si la valeur de la propriété **UnhandledExceptionAction** est **Cancel** ou **Terminate**, les informations de déploiement du service sont écrites dans le magasin d'instances et l'état de l'instance a la valeur **a Terminé**.  
+    -   <span data-ttu-id="8179f-121">Si la valeur de la **UnhandledExceptionAction** est définie sur **Annuler** ou **Terminate**, les informations de déploiement de service sont écrites dans le magasin d’instances et la état de l’instance a la valeur **terminé**.</span><span class="sxs-lookup"><span data-stu-id="8179f-121">If the value of the **UnhandledExceptionAction** property is set to **Cancel** or **Terminate**, the service deployment information is written to the instance store and the instance state is set to **Completed**.</span></span>  
   
- Les sections suivantes fournissent des exemples de requêtes pour rechercher des instances non persistantes dans la base de données de persistance SQL et supprimer ces instances de la base de données.  
+ <span data-ttu-id="8179f-122">Les sections suivantes fournissent des exemples de requêtes pour rechercher des instances non persistantes dans la base de données de persistance SQL et supprimer ces instances de la base de données.</span><span class="sxs-lookup"><span data-stu-id="8179f-122">The following sections provide sample queries to find non-persisted instances in the SQL persistence database and to delete these instances from the database.</span></span>  
   
-## Pour rechercher toutes les instances pas encore persistantes  
- La requête SQL suivante retourne l'ID et l'heure de création de toutes les instances qui ne sont pas encore persistantes dans la base de données de persistance.  
+## <a name="to-find-all-instances-not-persisted-yet"></a><span data-ttu-id="8179f-123">Pour rechercher toutes les instances pas encore persistantes</span><span class="sxs-lookup"><span data-stu-id="8179f-123">To find all instances not persisted yet</span></span>  
+ <span data-ttu-id="8179f-124">La requête SQL suivante retourne l'ID et l'heure de création de toutes les instances qui ne sont pas encore persistantes dans la base de données de persistance.</span><span class="sxs-lookup"><span data-stu-id="8179f-124">The following SQL query returns the ID and creation time for all instances that are not persisted in to the persistence database yet.</span></span>  
   
 ```  
-  
 select InstanceId, CreationTime from [System.Activities.DurableInstancing].[Instances] where IsInitialized = 0;  
-  
 ```  
   
-## Pour rechercher toutes les instances pas encore persistantes et également non chargées  
- La requête SQL suivante retourne l'ID et l'heure de création de toutes les instances qui ne sont pas persistantes et qui ne sont pas non plus chargées.  
+## <a name="to-find-all-instances-not-persisted-yet-and-also-not-loaded"></a><span data-ttu-id="8179f-125">Pour rechercher toutes les instances pas encore persistantes et également non chargées</span><span class="sxs-lookup"><span data-stu-id="8179f-125">To find all instances not persisted yet and also not loaded</span></span>  
+ <span data-ttu-id="8179f-126">La requête SQL suivante retourne l'ID et l'heure de création de toutes les instances qui ne sont pas persistantes et qui ne sont pas non plus chargées.</span><span class="sxs-lookup"><span data-stu-id="8179f-126">The following SQL query returns ID and creation time for all instances that are not persisted and also are not loaded.</span></span>  
   
 ```  
-  
 select InstanceId, CreationTime from [System.Activities.DurableInstancing].[Instances] where IsInitialized = 0 and CurrentMachine is NULL;  
-  
 ```  
   
-## Pour rechercher toutes les instances interrompues pas encore persistantes  
- La requête SQL suivante retourne l'ID, l'heure de création, la raison de l'interruption et le nom de l'exception d'interruption de toutes les instances qui ne sont pas persistantes et qui sont également dans un état interrompu.  
+## <a name="to-find-all-suspended-instances-not-persisted-yet"></a><span data-ttu-id="8179f-127">Pour rechercher toutes les instances interrompues pas encore persistantes</span><span class="sxs-lookup"><span data-stu-id="8179f-127">To find all suspended instances not persisted yet</span></span>  
+ <span data-ttu-id="8179f-128">La requête SQL suivante retourne l'ID, l'heure de création, la raison de l'interruption et le nom de l'exception d'interruption de toutes les instances qui ne sont pas persistantes et qui sont également dans un état interrompu.</span><span class="sxs-lookup"><span data-stu-id="8179f-128">The following SQL query returns ID, creation time, suspension reason, and suspension exception name for all instances that are not persisted and also in a suspended state.</span></span>  
   
 ```  
-  
 select InstanceId, CreationTime, SuspensionReason, SuspensionExceptionName from [System.Activities.DurableInstancing].[Instances] where IsInitialized = 0 and IsSuspended = 1;  
-  
 ```  
   
-## Pour supprimer des instances non persistantes de la base de données de persistance  
- Vous devez vérifier régulièrement les instances non persistantes dans le magasin d'instances, et les supprimer si vous êtes sûr que l'instance ne recevra pas de message corrélé.Par exemple, si l'instance se trouve dans la base de données depuis plusieurs mois et que vous savez que le workflow a généralement une durée de vie de quelques jours, il est possible de supposer sans risque que c'est une instance non initialisée qui a bloqué.  
+## <a name="to-delete-non-persisted-instances-from-the-persistence-database"></a><span data-ttu-id="8179f-129">Pour supprimer des instances non persistantes de la base de données de persistance</span><span class="sxs-lookup"><span data-stu-id="8179f-129">To delete non-persisted instances from the persistence database</span></span>  
+ <span data-ttu-id="8179f-130">Vous devez vérifier régulièrement les instances non persistantes dans le magasin d'instances, et les supprimer si vous êtes sûr que l'instance ne recevra pas de message corrélé.</span><span class="sxs-lookup"><span data-stu-id="8179f-130">You should periodically check the instance store for non-persisted instances and remove instances from the instance store if you are sure that the instance will not receive a correlated message.</span></span> <span data-ttu-id="8179f-131">Par exemple, si l'instance se trouve dans la base de données depuis plusieurs mois et que vous savez que le workflow a généralement une durée de vie de quelques jours, il est possible de supposer sans risque que c'est une instance non initialisée qui a bloqué.</span><span class="sxs-lookup"><span data-stu-id="8179f-131">For example, if the instance has been in the database for several months and you know that the workflow typically has a lifetime of a few days, it would be safe to assume that this is an uninitialized instance that had crashed.</span></span>  
   
- En général, il est possible de supprimer sans risque des instances non persistantes qui ne sont pas interrompues ou pas chargées.Vous ne devez pas supprimer **toutes** les instances non persistantes car cet ensemble d'instances inclut des instances qui viennent d'être créées mais qui ne sont pas encore persistantes.Vous devez supprimer uniquement les instances non persistantes qui restent car l'hôte du service de workflow sur lequel l'instance était chargée a provoqué une exception ou l'instance elle\-même a provoqué une exception.  
+ <span data-ttu-id="8179f-132">En général, il est possible de supprimer sans risque des instances non persistantes qui ne sont pas interrompues ou pas chargées.</span><span class="sxs-lookup"><span data-stu-id="8179f-132">In general, it is safe to delete non-persisted instances that are not suspended or not loaded.</span></span> <span data-ttu-id="8179f-133">Vous ne devez pas supprimer **tous les** les instances non persistantes car cet ensemble d’instances inclut des instances qui viennent d’être créées mais qui ne sont pas encore persistantes.</span><span class="sxs-lookup"><span data-stu-id="8179f-133">You should not delete **all** the non-persisted instances because this instance set includes instances that are just created but are not persisted yet.</span></span> <span data-ttu-id="8179f-134">Vous devez supprimer uniquement les instances non persistantes qui restent car l'hôte du service de workflow sur lequel l'instance était chargée a provoqué une exception ou l'instance elle-même a provoqué une exception.</span><span class="sxs-lookup"><span data-stu-id="8179f-134">You should only delete non-persisted instances that are left over because the workflow service host that had the instance loaded caused an exception or the instance itself caused an exception.</span></span>  
   
 > [!WARNING]
->  La suppression d'instances non persistantes du magasin d'instances diminue la taille du magasin et peut améliorer les performances des opérations de stockage.
+>  <span data-ttu-id="8179f-135">La suppression d'instances non persistantes du magasin d'instances diminue la taille du magasin et peut améliorer les performances des opérations de stockage.</span><span class="sxs-lookup"><span data-stu-id="8179f-135">Deleting non-persisted instances from the instance store decreases the size of the store and may improve the performance of store operations.</span></span>

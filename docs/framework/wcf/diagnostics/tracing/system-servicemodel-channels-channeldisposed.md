@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Channels.ChannelDisposed | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Channels.ChannelDisposed
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 172198d5-d6c3-48d6-b8ed-8cc9b7ba0204
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 986c9d5d2e5cfe899c017a9131fc90c49b35ce5a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Channels.ChannelDisposed
-System.ServiceModel.Channels.ChannelDisposed  
+# <a name="systemservicemodelchannelschanneldisposed"></a><span data-ttu-id="895b3-102">System.ServiceModel.Channels.ChannelDisposed</span><span class="sxs-lookup"><span data-stu-id="895b3-102">System.ServiceModel.Channels.ChannelDisposed</span></span>
+<span data-ttu-id="895b3-103">System.ServiceModel.Channels.ChannelDisposed</span><span class="sxs-lookup"><span data-stu-id="895b3-103">System.ServiceModel.Channels.ChannelDisposed</span></span>  
   
-## Description  
- Un canal a été éliminé.  
+## <a name="description"></a><span data-ttu-id="895b3-104">Description</span><span class="sxs-lookup"><span data-stu-id="895b3-104">Description</span></span>  
+ <span data-ttu-id="895b3-105">Un canal a été éliminé.</span><span class="sxs-lookup"><span data-stu-id="895b3-105">A channel was disposed.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="895b3-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="895b3-106">See Also</span></span>  
+ [<span data-ttu-id="895b3-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="895b3-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="895b3-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="895b3-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="895b3-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="895b3-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

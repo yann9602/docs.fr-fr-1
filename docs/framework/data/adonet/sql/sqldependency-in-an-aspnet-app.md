@@ -1,41 +1,46 @@
 ---
-title: "SqlDependency dans une application ASP.NET  | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: SqlDependency dans une application ASP.NET
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ff226ce3-f6b5-47a1-8d22-dc78b67e07f5
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 69cdb468098a373f17ec25f28e43b77c650cc05f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# SqlDependency dans une application ASP.NET 
-L'exemple de cette section montre comment utiliser <xref:System.Data.SqlClient.SqlDependency> indirectement en tirant parti de l'objet <xref:System.Web.Caching.SqlCacheDependency> ASP.NET.  L'objet <xref:System.Web.Caching.SqlCacheDependency> utilise un objet <xref:System.Data.SqlClient.SqlDependency> pour écouter les notifications et mettre correctement à jour le cache.  
+# <a name="sqldependency-in-an-aspnet-application"></a><span data-ttu-id="f3354-102">SqlDependency dans une application ASP.NET</span><span class="sxs-lookup"><span data-stu-id="f3354-102">SqlDependency in an ASP.NET Application</span></span>
+<span data-ttu-id="f3354-103">L'exemple de cette section montre comment utiliser <xref:System.Data.SqlClient.SqlDependency> indirectement en tirant parti de l'objet <xref:System.Web.Caching.SqlCacheDependency> ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="f3354-103">The example in this section shows how to use <xref:System.Data.SqlClient.SqlDependency> indirectly by leveraging the ASP.NET <xref:System.Web.Caching.SqlCacheDependency> object.</span></span> <span data-ttu-id="f3354-104">L'objet <xref:System.Web.Caching.SqlCacheDependency> utilise un objet <xref:System.Data.SqlClient.SqlDependency> pour écouter les notifications et mettre correctement à jour le cache.</span><span class="sxs-lookup"><span data-stu-id="f3354-104">The <xref:System.Web.Caching.SqlCacheDependency> object uses a <xref:System.Data.SqlClient.SqlDependency> to listen for notifications and correctly update the cache.</span></span>  
   
 > [!NOTE]
->  L'exemple de code est basé sur l'hypothèse que vous avez activé les notifications de requête en exécutant les scripts dans [Activation des notifications de requête](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md).  
+>  <span data-ttu-id="f3354-105">L’exemple de code suppose que vous avez activé les notifications de requête en exécutant les scripts de [l’activation des Notifications de requête](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md).</span><span class="sxs-lookup"><span data-stu-id="f3354-105">The sample code assumes that you have enabled query notifications by executing the scripts in [Enabling Query Notifications](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md).</span></span>  
   
-## À propose de l'exemple d'application  
- L'exemple d'application utilise une page Web ASP.NET unique pour afficher les références des produits extraites de la base de données SQL Server **AdventureWorks** dans un contrôle <xref:System.Web.UI.WebControls.GridView>.  Lorsque la page se charge, le code écrit l'heure actuelle dans un contrôle <xref:System.Web.UI.WebControls.Label>.  Ensuite, elle définit un objet <xref:System.Web.Caching.SqlCacheDependency> et les propriétés de l'objet <xref:System.Web.Caching.Cache> pour stocker les données du cache pendant trois minutes au maximum.  Le code se connecte ensuite à la base de données et récupère les données.  Une fois que la page est chargée et que l'application s'exécute, ASP.NET récupère les données dans le cache, ce que vous pouvez vérifier en notant que l'heure indiquée sur la page ne change pas.  Si les données surveillées sont modifiées, ASP.NET invalide le cache et remplit de nouveau le contrôle `GridView` avec les données actualisées, ce qui met à jour l'heure affichée dans le contrôle `Label`.  
+## <a name="about-the-sample-application"></a><span data-ttu-id="f3354-106">À propose de l'exemple d'application</span><span class="sxs-lookup"><span data-stu-id="f3354-106">About the Sample Application</span></span>  
+ <span data-ttu-id="f3354-107">L’exemple d’application utilise une page Web ASP.NET unique pour afficher des informations de produit à partir de la **AdventureWorks** base de données SQL Server dans un <xref:System.Web.UI.WebControls.GridView> contrôle.</span><span class="sxs-lookup"><span data-stu-id="f3354-107">The sample application uses a single ASP.NET Web page to display product information from the **AdventureWorks** SQL Server database in a <xref:System.Web.UI.WebControls.GridView> control.</span></span> <span data-ttu-id="f3354-108">Lorsque la page se charge, le code écrit l'heure actuelle dans un contrôle <xref:System.Web.UI.WebControls.Label>.</span><span class="sxs-lookup"><span data-stu-id="f3354-108">When the page loads, the code writes the current time to a <xref:System.Web.UI.WebControls.Label> control.</span></span> <span data-ttu-id="f3354-109">Ensuite, elle définit un objet <xref:System.Web.Caching.SqlCacheDependency> et les propriétés de l'objet <xref:System.Web.Caching.Cache> pour stocker les données du cache pendant trois minutes au maximum.</span><span class="sxs-lookup"><span data-stu-id="f3354-109">It then defines a <xref:System.Web.Caching.SqlCacheDependency> object and sets properties on the <xref:System.Web.Caching.Cache> object to store the cache data for up to three minutes.</span></span> <span data-ttu-id="f3354-110">Le code se connecte ensuite à la base de données et récupère les données.</span><span class="sxs-lookup"><span data-stu-id="f3354-110">The code then connects to the database and retrieves the data.</span></span> <span data-ttu-id="f3354-111">Une fois que la page est chargée et que l'application s'exécute, ASP.NET récupère les données dans le cache, ce que vous pouvez vérifier en notant que l'heure indiquée sur la page ne change pas.</span><span class="sxs-lookup"><span data-stu-id="f3354-111">When the page is loaded and the application is running ASP.NET will retrieve data from the cache, which you can verify by noting that the time on the page does not change.</span></span> <span data-ttu-id="f3354-112">Si les données surveillées sont modifiées, ASP.NET invalide le cache et remplit de nouveau le contrôle `GridView` avec les données actualisées, ce qui met à jour l'heure affichée dans le contrôle `Label`.</span><span class="sxs-lookup"><span data-stu-id="f3354-112">If the data being monitored changes, ASP.NET invalidates the cache and repopulate the `GridView` control with fresh data, updating the time displayed in the `Label` control.</span></span>  
   
-## Création de l'exemple d'application  
- Procédez comme suit pour créer et exécuter l'exemple d'application :  
+## <a name="creating-the-sample-application"></a><span data-ttu-id="f3354-113">Création de l'exemple d'application</span><span class="sxs-lookup"><span data-stu-id="f3354-113">Creating the Sample Application</span></span>  
+ <span data-ttu-id="f3354-114">Procédez comme suit pour créer et exécuter l'exemple d'application :</span><span class="sxs-lookup"><span data-stu-id="f3354-114">Follow these steps to create and run the sample application:</span></span>  
   
-1.  Créez un site Web ASP.NET.  
+1.  <span data-ttu-id="f3354-115">Créez un site Web ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="f3354-115">Create a new ASP.NET Web site.</span></span>  
   
-2.  Ajoutez un contrôle <xref:System.Web.UI.WebControls.Label> et un contrôle <xref:System.Web.UI.WebControls.GridView> à la page Default.aspx.  
+2.  <span data-ttu-id="f3354-116">Ajoutez un contrôle <xref:System.Web.UI.WebControls.Label> et un contrôle <xref:System.Web.UI.WebControls.GridView> à la page Default.aspx.</span><span class="sxs-lookup"><span data-stu-id="f3354-116">Add a <xref:System.Web.UI.WebControls.Label> and a <xref:System.Web.UI.WebControls.GridView> control to the Default.aspx page.</span></span>  
   
-3.  Ouvrez le module de classe de la page et ajoutez les directives suivantes :  
+3.  <span data-ttu-id="f3354-117">Ouvrez le module de classe de la page et ajoutez les directives suivantes :</span><span class="sxs-lookup"><span data-stu-id="f3354-117">Open the page's class module and add the following directives:</span></span>  
   
     ```vb  
-  
     Option Strict On  
     Option Explicit On  
   
@@ -47,21 +52,21 @@ L'exemple de cette section montre comment utiliser <xref:System.Data.SqlClient.S
     using System.Web.Caching;  
     ```  
   
-4.  Ajoutez le code suivant dans l'événement `Page_Load` de la page :  
+4.  <span data-ttu-id="f3354-118">Ajoutez le code suivant dans l'événement `Page_Load` de la page :</span><span class="sxs-lookup"><span data-stu-id="f3354-118">Add the following code in the page's `Page_Load` event:</span></span>  
   
      [!code-csharp[DataWorks SqlDependency.AspNet#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/CS/Default.aspx.cs#1)]
      [!code-vb[DataWorks SqlDependency.AspNet#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/VB/Default.aspx.vb#1)]  
   
-5.  Ajoutez deux méthodes d'assistance, `GetConnectionString` et `GetSQL`.  La chaîne de connexion définie utilise une sécurité intégrée.  Vous devez vérifier que le compte que vous utilisez dispose des autorisations de base de données nécessaires et que les notifications sont activées dans l'exemple de base de données, **AdventureWorks**.  Pour plus d'informations, consultez [Special Considerations When Using Query Notifications](http://msdn.microsoft.com/fr-fr/a83c8dc8-4fb9-4ffd-a2a5-c07cf4a203c7).  
+5.  <span data-ttu-id="f3354-119">Ajoutez deux méthodes d'assistance, `GetConnectionString` et `GetSQL`.</span><span class="sxs-lookup"><span data-stu-id="f3354-119">Add two helper methods, `GetConnectionString` and `GetSQL`.</span></span> <span data-ttu-id="f3354-120">La chaîne de connexion définie utilise une sécurité intégrée.</span><span class="sxs-lookup"><span data-stu-id="f3354-120">The connection string defined uses integrated security.</span></span> <span data-ttu-id="f3354-121">Vous devez vérifier que le compte que vous utilisez a les autorisations de base de données nécessaires et que la base de données exemple **AdventureWorks**, notifications sont activées.</span><span class="sxs-lookup"><span data-stu-id="f3354-121">You will need to verify that the account you are using has the necessary database permissions and that the sample database, **AdventureWorks**, has notifications enabled.</span></span> <span data-ttu-id="f3354-122">Pour plus d’informations, consultez [spécial considérations lorsque à l’aide de Notifications de requête](http://msdn.microsoft.com/en-us/a83c8dc8-4fb9-4ffd-a2a5-c07cf4a203c7).</span><span class="sxs-lookup"><span data-stu-id="f3354-122">For more information, see [Special Considerations When Using Query Notifications](http://msdn.microsoft.com/en-us/a83c8dc8-4fb9-4ffd-a2a5-c07cf4a203c7).</span></span>  
   
      [!code-csharp[DataWorks SqlDependency.AspNet#2](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/CS/Default.aspx.cs#2)]
      [!code-vb[DataWorks SqlDependency.AspNet#2](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/VB/Default.aspx.vb#2)]  
   
-### Test de l'application  
- L'application met en cache les données affichées sur le formulaire Web et l'actualise toutes les trois minutes en cas d'inactivité.  En cas de modification de la base de données, le cache est immédiatement actualisé.  Exécutez l'application à partir de Visual Studio, ce qui charge la page dans le navigateur.  L'heure d'actualisation du cache affichée indique la dernière actualisation du cache.  Attendez trois minutes, puis actualisez la page. Un événement de publication se produit alors.  Notez que l'heure affichée sur la page a changé.  Si vous actualisez la page avant trois minutes, l'heure affichée sur la page restera la même.  
+### <a name="testing-the-application"></a><span data-ttu-id="f3354-123">Test de l'application</span><span class="sxs-lookup"><span data-stu-id="f3354-123">Testing the Application</span></span>  
+ <span data-ttu-id="f3354-124">L'application met en cache les données affichées sur le formulaire Web et l'actualise toutes les trois minutes en cas d'inactivité.</span><span class="sxs-lookup"><span data-stu-id="f3354-124">The application caches the data displayed on the Web form and refreshes it every three minutes if there is no activity.</span></span> <span data-ttu-id="f3354-125">En cas de modification de la base de données, le cache est immédiatement actualisé.</span><span class="sxs-lookup"><span data-stu-id="f3354-125">If a change occurs to the database, the cache is refreshed immediately.</span></span> <span data-ttu-id="f3354-126">Exécutez l'application à partir de Visual Studio, ce qui charge la page dans le navigateur.</span><span class="sxs-lookup"><span data-stu-id="f3354-126">Run the application from Visual Studio, which loads the page into the browser.</span></span> <span data-ttu-id="f3354-127">L'heure d'actualisation du cache affichée indique la dernière actualisation du cache.</span><span class="sxs-lookup"><span data-stu-id="f3354-127">The cache refresh time displayed indicates when the cache was last refreshed.</span></span> <span data-ttu-id="f3354-128">Attendez trois minutes, puis actualisez la page. Un événement de publication se produit alors.</span><span class="sxs-lookup"><span data-stu-id="f3354-128">Wait three minutes, and then refresh the page, causing a postback event to occur.</span></span> <span data-ttu-id="f3354-129">Notez que l'heure affichée sur la page a changé.</span><span class="sxs-lookup"><span data-stu-id="f3354-129">Note that the time displayed on the page has changed.</span></span> <span data-ttu-id="f3354-130">Si vous actualisez la page avant trois minutes, l'heure affichée sur la page restera la même.</span><span class="sxs-lookup"><span data-stu-id="f3354-130">If you refresh the page in less than three minutes, the time displayed on the page will remain the same.</span></span>  
   
- Mettez à jour les données dans la base de données en utilisant une commande Transact\-SQL UPDATE, puis actualisez la page.  L'heure affichée indique maintenant que le cache a été actualisé avec les nouvelles données de la base de données.  Notez que même si le cache est mis à jour, l'heure affichée sur le page n'est pas modifiée tant qu'un événement de publication ne s'est pas produit.  
+ <span data-ttu-id="f3354-131">Mettez à jour les données dans la base de données en utilisant une commande Transact-SQL UPDATE, puis actualisez la page.</span><span class="sxs-lookup"><span data-stu-id="f3354-131">Now update the data in the database, using a Transact-SQL UPDATE command and refresh the page.</span></span> <span data-ttu-id="f3354-132">L'heure affichée indique maintenant que le cache a été actualisé avec les nouvelles données de la base de données.</span><span class="sxs-lookup"><span data-stu-id="f3354-132">The time displayed now indicates that the cache was refreshed with the new data from the database.</span></span> <span data-ttu-id="f3354-133">Notez que même si le cache est mis à jour, l'heure affichée sur le page n'est pas modifiée tant qu'un événement de publication ne s'est pas produit.</span><span class="sxs-lookup"><span data-stu-id="f3354-133">Note that although the cache is updated, the time displayed on the page does not change until a postback event occurs.</span></span>  
   
-## Voir aussi  
- [Notifications de requête dans SQL Server](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="f3354-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f3354-134">See Also</span></span>  
+ [<span data-ttu-id="f3354-135">Notifications de requête dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="f3354-135">Query Notifications in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)  
+ [<span data-ttu-id="f3354-136">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="f3354-136">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

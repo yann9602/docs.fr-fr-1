@@ -1,43 +1,37 @@
 ---
-title: "S&#233;curit&#233; et g&#233;n&#233;ration de code imm&#233;diate | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "sécurité du code, génération de code à la volée"
-  - "génération de code à la volée"
-  - "codage sécurisé, génération de code à la volée"
-  - "sécurité (.NET Framework), génération de code à la volée"
+title: "Sécurité et génération de code immédiate"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- code security, on-the-fly code generation
+- on-the-fly code generation
+- security [.NET Framework], on-the-fly code generation
+- secure coding, on-the-fly code generation
 ms.assetid: 6d221724-bb21-4d76-90c3-0ee2a2e69be2
-caps.latest.revision: 10
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: c00c66be812f2a1cdfdf761f681d2a0561a284bf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# S&#233;curit&#233; et g&#233;n&#233;ration de code imm&#233;diate
-Certaines bibliothèques fonctionnent en générant du code et en l'exécutant afin d'effectuer certaines opérations pour l'appelant.  Le problème de base est la génération de code pour le compte de code d'un niveau de confiance moindre et son exécution à un niveau de confiance supérieur.  Ce problème se complique quand l'appelant peut influencer la génération du code ; vous devez donc vous assurer que seul du code que vous estimez sécurisé est généré.  
+# <a name="security-and-on-the-fly-code-generation"></a><span data-ttu-id="a5fa4-102">Sécurité et génération de code immédiate</span><span class="sxs-lookup"><span data-stu-id="a5fa4-102">Security and On-the-Fly Code Generation</span></span>
+<span data-ttu-id="a5fa4-103">Certaines bibliothèques fonctionnent en générant du code et en l'exécutant afin d'effectuer certaines opérations pour l'appelant.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-103">Some libraries operate by generating code and running it to perform some operation for the caller.</span></span> <span data-ttu-id="a5fa4-104">Le problème de base est la génération de code pour le compte de code d'un niveau de confiance moindre et son exécution à un niveau de confiance supérieur.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-104">The basic problem is generating code on behalf of lesser-trust code and running it at a higher trust.</span></span> <span data-ttu-id="a5fa4-105">Ce problème se complique quand l'appelant peut influencer la génération du code ; vous devez donc vous assurer que seul du code que vous estimez sécurisé est généré.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-105">The problem worsens when the caller can influence code generation, so you must ensure that only code you consider safe is generated.</span></span>  
   
- Vous devez toujours savoir précisément quel code vous générez.  Cela signifie que vous devez avoir un contrôle strict sur toutes les valeurs que vous recevez d'un utilisateur, qu'il s'agisse de chaînes entourées de guillemets \(qui devraient être échappées, car elles ne peuvent pas inclure d'éléments de code inattendus\), d'identificateurs \(dont la validité doit être vérifiée\) ou de tout autre élément.  Les identificateurs peuvent être dangereux, car vous pouvez modifier un assembly compilé pour que ses identificateurs contiennent des caractères étranges qui risquent de le bloquer \(bien qu'il s'agisse rarement d'une faille en matière de sécurité\).  
+ <span data-ttu-id="a5fa4-106">Vous devez toujours savoir précisément quel code vous générez.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-106">You need to know exactly what code you are generating at all times.</span></span> <span data-ttu-id="a5fa4-107">Cela signifie que vous devez avoir un contrôle strict sur toutes les valeurs que vous recevez d'un utilisateur, qu'il s'agisse de chaînes entourées de guillemets (qui devraient être échappées, car elles ne peuvent pas inclure d'éléments de code inattendus), d'identificateurs (dont la validité doit être vérifiée) ou de tout autre élément.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-107">This means that you must have strict controls on any values that you get from a user, be they quote-enclosed strings (which should be escaped so they cannot include unexpected code elements), identifiers (which should be checked to verify that they are valid identifiers), or anything else.</span></span> <span data-ttu-id="a5fa4-108">Les identificateurs peuvent être dangereux, car vous pouvez modifier un assembly compilé pour que ses identificateurs contiennent des caractères étranges qui risquent de le bloquer (bien qu'il s'agisse rarement d'une faille en matière de sécurité).</span><span class="sxs-lookup"><span data-stu-id="a5fa4-108">Identifiers can be dangerous because a compiled assembly can be modified so that its identifiers contain strange characters, which will probably break it (although this is rarely a security vulnerability).</span></span>  
   
- Nous vous recommandons de générer votre code à l'aide de l'émission de réflexion, qui vous aide souvent à éviter la plupart de ces problèmes.  
+ <span data-ttu-id="a5fa4-109">Nous vous recommandons de générer votre code à l'aide de l'émission de réflexion, qui vous aide souvent à éviter la plupart de ces problèmes.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-109">It is recommended that you generate code with reflection emit, which often helps you avoid many of these problems.</span></span>  
   
- Pendant la compilation du code, examinez s'il est possible pour un programme nuisible de le modifier.  Existe\-t\-il un laps de temps durant lequel du code nuisible peut changer du code source sur le disque avant sa lecture par le compilateur ou avant le chargement par votre code du fichier .dll ?  Si c'est le cas, vous devez protéger le répertoire contenant ces fichiers à l'aide de la sécurité d'accès du code ou d'une liste de contrôle d'accès dans le fichier système, en fonction de la situation.  
+ <span data-ttu-id="a5fa4-110">Pendant la compilation du code, examinez s'il est possible pour un programme nuisible de le modifier.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-110">When you compile the code, consider whether there is some way a malicious program could modify it.</span></span> <span data-ttu-id="a5fa4-111">Existe-t-il un laps de temps durant lequel du code nuisible peut changer du code source sur le disque avant sa lecture par le compilateur ou avant le chargement par votre code du fichier .dll ?</span><span class="sxs-lookup"><span data-stu-id="a5fa4-111">Is there a small window of time during which malicious code can change source code on disk before the compiler reads it or before your code loads the .dll file?</span></span> <span data-ttu-id="a5fa4-112">Si c’est le cas, vous devez protéger le répertoire contenant ces fichiers à l’aide d’une liste de contrôle d’accès dans le fichier système, en fonction de la situation.</span><span class="sxs-lookup"><span data-stu-id="a5fa4-112">If so, you must protect the directory containing these files, using an Access Control List in the file system, as appropriate.</span></span>  
   
- Si un appelant peut influencer le code généré au point de provoquer une erreur de compilation, le risque dans ce cas d'une faille en matière de sécurité est possible.  
-  
- Exécutez le code généré avec le niveau d'autorisation le moins élevé possible à l'aide de <xref:System.Security.Permissions.SecurityAction> ou [Deny](http://msdn.microsoft.com/fr-fr/6b4d2e01-c504-4ac3-b50e-d6f5e7f5df25).  
-  
-## Voir aussi  
- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="a5fa4-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a5fa4-113">See Also</span></span>  
+ [<span data-ttu-id="a5fa4-114">Instructions de codage sécurisé</span><span class="sxs-lookup"><span data-stu-id="a5fa4-114">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

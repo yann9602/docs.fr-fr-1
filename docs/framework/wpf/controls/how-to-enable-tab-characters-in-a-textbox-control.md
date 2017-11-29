@@ -1,32 +1,35 @@
 ---
-title: "Comment&#160;: activer des tabulations dans un contr&#244;le TextBox | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "caractères de tabulation, activer"
-  - "TextBox (contrôle), activer les caractères de tabulation"
+title: "Comment : activer des tabulations dans un contrôle TextBox"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- TextBox control [WPF], enabling tab characters
+- tab characters [WPF], enabling
 ms.assetid: 14b1b064-61f7-4958-be63-88d85b868d03
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cc77668d9544cb37a8c9d1fcbdc3ed0351bc9eef
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: activer des tabulations dans un contr&#244;le TextBox
-Cet exemple indique comment activer l'acceptation de tabulations en tant qu'entrée normale dans un contrôle <xref:System.Windows.Controls.TextBox>.  
+# <a name="how-to-enable-tab-characters-in-a-textbox-control"></a><span data-ttu-id="2b05f-102">Comment : activer des tabulations dans un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="2b05f-102">How to: Enable Tab Characters in a TextBox Control</span></span>
+<span data-ttu-id="2b05f-103">Cet exemple montre comment activer l’acceptation des caractères de tabulation en tant qu’entrée normale dans un <xref:System.Windows.Controls.TextBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="2b05f-103">This example shows how to enable the acceptance of tab characters as normal input in a <xref:System.Windows.Controls.TextBox> control.</span></span>  
   
-## Exemple  
- Pour activer l'acceptation de tabulations en tant qu'entrée dans un contrôle <xref:System.Windows.Controls.TextBox>, définissez l'attribut <xref:System.Windows.Controls.Primitives.TextBoxBase.AcceptsTab%2A> sur la valeur **true**.  
+## <a name="example"></a><span data-ttu-id="2b05f-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="2b05f-104">Example</span></span>  
+ <span data-ttu-id="2b05f-105">Pour activer l’acceptation des caractères de tabulation en tant qu’entrée dans un <xref:System.Windows.Controls.TextBox> , affectez la <xref:System.Windows.Controls.Primitives.TextBoxBase.AcceptsTab%2A> attribut **true**.</span><span class="sxs-lookup"><span data-stu-id="2b05f-105">To enable the acceptance of tab characters as input in a <xref:System.Windows.Controls.TextBox> control, set the <xref:System.Windows.Controls.Primitives.TextBoxBase.AcceptsTab%2A> attribute to **true**.</span></span>  
   
- [!code-xml[TextBox_EnablingTab#_AcceptsTab](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_EnablingTab/CS/Window1.xaml#_acceptstab)]  
+ [!code-xaml[TextBox_EnablingTab#_AcceptsTab](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_EnablingTab/CS/Window1.xaml#_acceptstab)]  
   
-## Voir aussi  
- [Vue d'ensemble de TextBox](../../../../docs/framework/wpf/controls/textbox-overview.md)   
- [Vue d'ensemble de RichTextBox](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
+## <a name="see-also"></a><span data-ttu-id="2b05f-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2b05f-106">See Also</span></span>  
+ [<span data-ttu-id="2b05f-107">Vue d’ensemble de TextBox</span><span class="sxs-lookup"><span data-stu-id="2b05f-107">TextBox Overview</span></span>](../../../../docs/framework/wpf/controls/textbox-overview.md)  
+ [<span data-ttu-id="2b05f-108">Vue d’ensemble de RichTextBox</span><span class="sxs-lookup"><span data-stu-id="2b05f-108">RichTextBox Overview</span></span>](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

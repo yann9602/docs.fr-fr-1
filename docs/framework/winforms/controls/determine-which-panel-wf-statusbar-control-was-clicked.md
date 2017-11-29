@@ -1,44 +1,49 @@
 ---
-title: "Comment&#160;: d&#233;terminer le panneau du contr&#244;le StatusBar Windows Forms sur lequel l&#39;utilisateur a cliqu&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Panel (contrôle Windows Forms), déterminer l'objet du clic"
-  - "PanelClick (événement), déterminer le volet sur lequel l'utilisateur a cliqué"
-  - "panneaux, déterminer un clic"
-  - "barres d'état, déterminer le volet sur lequel l'utilisateur a cliqué"
-  - "StatusBar (contrôle Windows Forms), coder les événements Click du volet"
-  - "StatusBar (contrôle Windows Forms), déterminer le volet sur lequel l'utilisateur a cliqué"
+title: "Comment : déterminer le panneau du contrôle StatusBar Windows Forms sur lequel l'utilisateur a cliqué"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- status bars [Windows Forms], determining panel clicked
+- panels [Windows Forms], determining clicked
+- StatusBar control [Windows Forms], coding panel click events
+- StatusBar control [Windows Forms], determining panel clicked
+- PanelClick event [Windows Forms], determining panel clicked
+- Panel control [Windows Forms], determining click
 ms.assetid: d14c6092-04b2-4a07-8ddf-0dd11277ff5f
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 27cf31d7e5944f206bca880adad1407ab124ad6d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;terminer le panneau du contr&#244;le StatusBar Windows Forms sur lequel l&#39;utilisateur a cliqu&#233;
+# <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a><span data-ttu-id="0fa0a-102">Comment : déterminer le panneau du contrôle StatusBar Windows Forms sur lequel l'utilisateur a cliqué</span><span class="sxs-lookup"><span data-stu-id="0fa0a-102">How to: Determine Which Panel in the Windows Forms StatusBar Control Was Clicked</span></span>
 > [!IMPORTANT]
->  Les contrôles <xref:System.Windows.Forms.StatusStrip> et <xref:System.Windows.Forms.ToolStripStatusLabel> remplacent les contrôles <xref:System.Windows.Forms.StatusBar> et <xref:System.Windows.Forms.StatusBarPanel> et y ajoutent des fonctionnalités ; toutefois, les contrôles <xref:System.Windows.Forms.StatusBar> et <xref:System.Windows.Forms.StatusBarPanel> sont conservés pour la compatibilité descendante et une utilisation future, si tel est votre choix.  
+>  <span data-ttu-id="0fa0a-103">Le <xref:System.Windows.Forms.StatusStrip> et <xref:System.Windows.Forms.ToolStripStatusLabel> contrôles remplacer et ajouter des fonctionnalités à la <xref:System.Windows.Forms.StatusBar> et <xref:System.Windows.Forms.StatusBarPanel> contrôle ; Toutefois, le <xref:System.Windows.Forms.StatusBar> et <xref:System.Windows.Forms.StatusBarPanel> contrôles sont conservés pour la compatibilité descendante et l’utilisation future si vous Choisissez.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-103">The <xref:System.Windows.Forms.StatusStrip> and <xref:System.Windows.Forms.ToolStripStatusLabel> controls replace and add functionality to the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls; however, the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls are retained for both backward compatibility and future use, if you choose.</span></span>  
   
- Pour programmer le contrôle [StatusBar, contrôle](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) pour répondre aux clics de l'utilisateur, utilisez une instruction case dans l'événement <xref:System.Windows.Forms.StatusBar.PanelClick>.  L'événement contient un argument \(l'argument panel\), qui contient une référence à l'objet <xref:System.Windows.Forms.StatusBarPanel> sur lequel le clic est effectué.  À l'aide de cette référence, vous pouvez identifier l'index du panneau sur lequel le clic est effectué et, par conséquent, le programme.  
+ <span data-ttu-id="0fa0a-104">Programme le [contrôle StatusBar](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) contrôle pour répondre aux clics de l’utilisateur, utilisez une instruction case dans la <xref:System.Windows.Forms.StatusBar.PanelClick> événement.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-104">To program the [StatusBar Control](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) control to respond to user clicks, use a case statement within the <xref:System.Windows.Forms.StatusBar.PanelClick> event.</span></span> <span data-ttu-id="0fa0a-105">L’événement contient un argument (l’argument panel), qui contient une référence à le clic sur <xref:System.Windows.Forms.StatusBarPanel>.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-105">The event contains an argument (the panel argument), which contains a reference to the clicked <xref:System.Windows.Forms.StatusBarPanel>.</span></span> <span data-ttu-id="0fa0a-106">À l’aide de cette référence, vous pouvez déterminer l’index du panneau et programmer en conséquence.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-106">Using this reference, you can determine the index of the clicked panel, and program accordingly.</span></span>  
   
 > [!NOTE]
->  Vérifiez que la propriété <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> du contrôle <xref:System.Windows.Forms.StatusBar> a la valeur `true`.  
+>  <span data-ttu-id="0fa0a-107">Vérifiez que le <xref:System.Windows.Forms.StatusBar> du contrôle <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> est définie sur `true`.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-107">Ensure that the <xref:System.Windows.Forms.StatusBar> control's <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> property is set to `true`.</span></span>  
   
-### Pour identifier le panneau sur lequel l'utilisateur a cliqué  
+### <a name="to-determine-which-panel-was-clicked"></a><span data-ttu-id="0fa0a-108">Pour déterminer l’utilisateur a cliqué sur le panneau de configuration</span><span class="sxs-lookup"><span data-stu-id="0fa0a-108">To determine which panel was clicked</span></span>  
   
-1.  Dans le gestionnaire d'événements <xref:System.Windows.Forms.StatusBar.PanelClick>, utilisez une instruction `Select Case` \(dans [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]\) ou `switch case` \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] ou [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) pour identifier le panneau sur lequel l'utilisateur a cliqué en examinant l'index du panneau dans les arguments d'événement.  
+1.  <span data-ttu-id="0fa0a-109">Dans le <xref:System.Windows.Forms.StatusBar.PanelClick> Gestionnaire d’événements, utilisez un `Select Case` (dans [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]) ou `switch case` ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] ou [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) pour déterminer le panneau a été utilisé en examinant l’index du panneau dans les arguments d’événement.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-109">In the <xref:System.Windows.Forms.StatusBar.PanelClick> event handler, use a `Select Case` (in [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]) or `switch case` ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] or [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) statement to determine which panel was clicked by examining the index of the clicked panel in the event arguments.</span></span>  
   
-     L'exemple de code suivant nécessite la présence dans le formulaire d'un contrôle <xref:System.Windows.Forms.StatusBar>, `StatusBar1`, et de deux objets <xref:System.Windows.Forms.StatusBarPanel>,`StatusBarPanel1`  et `StatusBarPanel2`.  
+     <span data-ttu-id="0fa0a-110">L’exemple de code suivant nécessite la présence, dans le formulaire, d’un <xref:System.Windows.Forms.StatusBar> (contrôle), `StatusBar1`et deux <xref:System.Windows.Forms.StatusBarPanel> objets, `StatusBarPanel1` et `StatusBarPanel2`.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-110">The following code example requires the presence, on the form, of a <xref:System.Windows.Forms.StatusBar> control, `StatusBar1`, and two <xref:System.Windows.Forms.StatusBarPanel> objects, `StatusBarPanel1` and `StatusBarPanel2`.</span></span>  
   
     ```vb  
     Private Sub StatusBar1_PanelClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.StatusBarPanelClickEventArgs) Handles StatusBar1.PanelClick  
@@ -49,7 +54,6 @@ caps.handback.revision: 16
            MessageBox.Show("You have clicked Panel Two.")  
        End Select  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -66,7 +70,6 @@ caps.handback.revision: 16
              break;  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -86,13 +89,12 @@ caps.handback.revision: 16
        }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
+     <span data-ttu-id="0fa0a-111">([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="0fa0a-111">([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.statusBar1.PanelClick += new   
        System.Windows.Forms.StatusBarPanelClickEventHandler   
        (this.statusBar1_PanelClick);  
-  
     ```  
   
     ```cpp  
@@ -101,9 +103,9 @@ caps.handback.revision: 16
        (this, &Form1::statusBar1_PanelClick);  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.StatusBar>   
- <xref:System.Windows.Forms.ToolStripStatusLabel>   
- [Comment : définir la taille des panneaux de la barre d'état](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)   
- [Procédure pas à pas : mise à jour des informations de barre d'état au moment de l'exécution](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)   
- [Vue d'ensemble du contrôle StatusBar](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="0fa0a-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0fa0a-112">See Also</span></span>  
+ <xref:System.Windows.Forms.StatusBar>  
+ <xref:System.Windows.Forms.ToolStripStatusLabel>  
+ [<span data-ttu-id="0fa0a-113">Guide pratique pour définir la taille des panneaux de la barre d'état</span><span class="sxs-lookup"><span data-stu-id="0fa0a-113">How to: Set the Size of Status-Bar Panels</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)  
+ [<span data-ttu-id="0fa0a-114">Procédure pas à pas : mise à jour des informations de barre d'état au moment de l'exécution</span><span class="sxs-lookup"><span data-stu-id="0fa0a-114">Walkthrough: Updating Status Bar Information at Run Time</span></span>](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)  
+ [<span data-ttu-id="0fa0a-115">Vue d’ensemble du contrôle StatusBar</span><span class="sxs-lookup"><span data-stu-id="0fa0a-115">StatusBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)

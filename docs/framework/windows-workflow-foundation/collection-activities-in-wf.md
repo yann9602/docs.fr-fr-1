@@ -1,36 +1,40 @@
 ---
-title: "Activit&#233;s de collection dans le WF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Activités de collection dans le WF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7f1feb09c67051c1e99ac199adc20fe6ca4d6e4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Activit&#233;s de collection dans le WF
-Les activités de collection sont utilisées pour utiliser les objets de collection dans un workflow.  [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] comprend des activités fournies par le système permettant d'ajouter des éléments à une collection et de les supprimer, de vérifier l'existence d'un élément dans une collection et d'effacer une collection.  `ExistsInCollection` et `RemoveFromCollectio`n ont un <xref:System.Activities.OutArgument%601> du type <xref:System.Boolean>, qui indique le résultat.  
+# <a name="collection-activities-in-wf"></a><span data-ttu-id="a1788-102">Activités de collection dans le WF</span><span class="sxs-lookup"><span data-stu-id="a1788-102">Collection Activities in WF</span></span>
+<span data-ttu-id="a1788-103">Les activités de collection sont utilisées pour utiliser les objets de collection dans un workflow.</span><span class="sxs-lookup"><span data-stu-id="a1788-103">Collection activities are used to work with collection objects in a workflow.</span></span> [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]<span data-ttu-id="a1788-104"> comprend des activités fournies par le système permettant d'ajouter des éléments à une collection et de les supprimer, de vérifier l'existence d'un élément dans une collection et d'effacer une collection.</span><span class="sxs-lookup"><span data-stu-id="a1788-104"> has system-provided activities for adding and removing items from a collection, testing for the existence of an item in a collection, and clearing a collection.</span></span> <span data-ttu-id="a1788-105">`ExistsInCollection`et `RemoveFromCollection` ont un <xref:System.Activities.OutArgument%601> de type <xref:System.Boolean>, qui indique le résultat.</span><span class="sxs-lookup"><span data-stu-id="a1788-105">`ExistsInCollection` and `RemoveFromCollection` have an <xref:System.Activities.OutArgument%601> of type <xref:System.Boolean>, which indicates the result.</span></span>  
   
 > [!IMPORTANT]
->  Si une activité de collection est exécutée avant de définir l'objet de collection sous\-jacent, un objet <xref:System.InvalidOperationException> est levé et l'activité émet une erreur.  
+>  <span data-ttu-id="a1788-106">Si une activité de collection est exécutée avant de définir l'objet de collection sous-jacent, un objet <xref:System.InvalidOperationException> est levé et l'activité émet une erreur.</span><span class="sxs-lookup"><span data-stu-id="a1788-106">If a collection activity is executed before setting the underlying collection object, an <xref:System.InvalidOperationException> is thrown and the activity faults.</span></span>  
   
-## Activités de collection  
+## <a name="collection-activities"></a><span data-ttu-id="a1788-107">Activités de collection</span><span class="sxs-lookup"><span data-stu-id="a1788-107">Collection activities</span></span>  
   
 |||  
 |-|-|  
-|<xref:System.Activities.Statements.AddToCollection%601>|Ajoute un élément à une collection spécifiée.|  
-|<xref:System.Activities.Statements.ClearCollection%601>|Efface tous les éléments d'une collection spécifiée.|  
-|<xref:System.Activities.Statements.ExistsInCollection%601>|Retourne `true` si un élément existe dans une collection.|  
-|<xref:System.Activities.Statements.RemoveFromCollection%601>|Supprime un élément d'une collection spécifiée et retourne `true` si celui\-ci a correctement été supprimé.|  
+|<xref:System.Activities.Statements.AddToCollection%601>|<span data-ttu-id="a1788-108">Ajoute un élément à une collection spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a1788-108">Adds an item to a specified collection.</span></span>|  
+|<xref:System.Activities.Statements.ClearCollection%601>|<span data-ttu-id="a1788-109">Efface tous les éléments d’une collection spécifiée.</span><span class="sxs-lookup"><span data-stu-id="a1788-109">Clears all items from a specified collection.</span></span>|  
+|<xref:System.Activities.Statements.ExistsInCollection%601>|<span data-ttu-id="a1788-110">Retourne `true` si un élément existe dans une collection.</span><span class="sxs-lookup"><span data-stu-id="a1788-110">Returns `true` if an item exists in a collection.</span></span>|  
+|<xref:System.Activities.Statements.RemoveFromCollection%601>|<span data-ttu-id="a1788-111">Supprime un élément d'une collection spécifiée et retourne `true` si celui-ci a correctement été supprimé.</span><span class="sxs-lookup"><span data-stu-id="a1788-111">Removes an item from a specified collection and returns `true` if the item was successfully removed.</span></span>|  
   
-## Utilisation d'activités de collection  
- L'exemple de code suivant montre comment interagir avec une collection déclarée comme une variable de workflow.  La collection utilisée est un objet <xref:System.Collections.Generic.List%E2%80%991> d'objets <xref:System.String>, nommée `fruitList`.  
+## <a name="using-collection-activities"></a><span data-ttu-id="a1788-112">Utilisation d'activités de collection</span><span class="sxs-lookup"><span data-stu-id="a1788-112">Using collection activities</span></span>  
+ <span data-ttu-id="a1788-113">L'exemple de code suivant montre comment interagir avec une collection déclarée comme une variable de workflow.</span><span class="sxs-lookup"><span data-stu-id="a1788-113">The following code example demonstrates how to interact with a collection declared as a workflow variable.</span></span> <span data-ttu-id="a1788-114">La collection utilisée est une <!--zz <xref:System.Collections.Generic.List%E2%80%991>--> `System.Collections.Generic.List` de <xref:System.String> objets nommés `fruitList`.</span><span class="sxs-lookup"><span data-stu-id="a1788-114">The collection used is a <!--zz <xref:System.Collections.Generic.List%E2%80%991>--> `System.Collections.Generic.List`  of <xref:System.String> objects named `fruitList`.</span></span>  
   
 ```csharp  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -85,7 +89,6 @@ Activity wf = new Sequence
         }  
     }  
 };  
-  
 ```  
   
 ```xaml  
@@ -229,10 +232,9 @@ Activity wf = new Sequence
     </If.Then>  
   </If>  
 </Sequence>  
-  
 ```  
   
- Les exemples de code ci\-dessus peuvent également être créés à l'aide de <xref:Microsoft.CSharp.Activities.CSharpValue%601> à la place de <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
+ <span data-ttu-id="a1788-115">Les exemples de code ci-dessus peuvent également être créés à l'aide de <xref:Microsoft.CSharp.Activities.CSharpValue%601> à la place de <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.</span><span class="sxs-lookup"><span data-stu-id="a1788-115">The above code samples can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601></span></span>  
   
 ```  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -287,10 +289,9 @@ Activity wf = new Sequence
         }  
     }  
 };  
-  
 ```  
   
-```  
+```xml  
 <Sequence  
    xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"  
    xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"  
@@ -431,8 +432,7 @@ Activity wf = new Sequence
     </If.Then>  
   </If>  
 </Sequence>  
-  
 ```  
   
-## Voir aussi  
- [Création de workflows, d'activités et d'expressions à l'aide du code impératif](../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## <a name="see-also"></a><span data-ttu-id="a1788-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a1788-116">See Also</span></span>  
+ [<span data-ttu-id="a1788-117">Création de workflows, d’activités et d’expressions à l’aide du code impératif</span><span class="sxs-lookup"><span data-stu-id="a1788-117">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

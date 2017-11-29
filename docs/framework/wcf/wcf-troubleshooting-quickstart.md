@@ -1,117 +1,124 @@
 ---
-title: "D&#233;marrage rapide de la r&#233;solution des probl&#232;mes WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF [WCF], résolution des problèmes"
-  - "Windows Communication Foundation [WCF], résolution des problèmes"
+title: "Démarrage rapide de la résolution des problèmes WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF [WCF], troubleshooting
+- Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d72afb0fa1c316b981a15ef1e124f21b5be0b09d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# D&#233;marrage rapide de la r&#233;solution des probl&#232;mes WCF
-Cette rubrique décrit quelques problèmes connus rencontrés par les clients lorsqu'ils développement des clients et services WCF. Si le problème que vous rencontrez n'est pas répertorié dans la liste, nous vous recommandons de configurer le traçage de votre service. Vous allez ainsi générer un fichier de suivi que vous pourrez consulter à l'aide de la visionneuse dédiée pour obtenir des informations détaillées sur les exceptions pouvant se produire au sein du service. Pour plus d’informations sur la configuration du traçage, consultez [Configuration du suivi](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Pour plus d’informations sur la visionneuse de fichier de traçage, consultez [Service Trace Viewer Tool \(SvcTraceViewer.exe\)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
+# <a name="wcf-troubleshooting-quickstart"></a><span data-ttu-id="06df8-102">Démarrage rapide de la résolution des problèmes WCF</span><span class="sxs-lookup"><span data-stu-id="06df8-102">WCF Troubleshooting Quickstart</span></span>
+<span data-ttu-id="06df8-103">Cette rubrique décrit quelques problèmes connus rencontrés par les clients lorsqu'ils développement des clients et services WCF.</span><span class="sxs-lookup"><span data-stu-id="06df8-103">This topic lists a number of known issues customers have run into while developing WCF clients and services.</span></span> <span data-ttu-id="06df8-104">Si le problème que vous rencontrez n'est pas répertorié dans la liste, nous vous recommandons de configurer le traçage de votre service.</span><span class="sxs-lookup"><span data-stu-id="06df8-104">If the issue you are running into is not in this list, we recommend you configure tracing for your service.</span></span> <span data-ttu-id="06df8-105">Vous allez ainsi générer un fichier de suivi que vous pourrez consulter à l'aide de la visionneuse dédiée pour obtenir des informations détaillées sur les exceptions pouvant se produire au sein du service.</span><span class="sxs-lookup"><span data-stu-id="06df8-105">This will generate a trace file that you can view with the trace file viewer and get detailed information about exceptions that may be occurring within the service.</span></span> <span data-ttu-id="06df8-106">Pour plus d’informations sur la configuration du traçage, consultez [Configuring Tracing](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).</span><span class="sxs-lookup"><span data-stu-id="06df8-106">For more information on configuring tracing, see: [Configuring Tracing](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).</span></span> <span data-ttu-id="06df8-107">Pour plus d’informations sur la visionneuse de fichier de traçage, consultez [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).</span><span class="sxs-lookup"><span data-stu-id="06df8-107">For more information on the trace file viewer, see: [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).</span></span>  
   
-1.  [Après l'installation de Windows 7 et IIS, lorsque vous tentez d'accéder à un service WCF, vous obtenez le message d'erreur suivant : Erreur HTTP 404.3 –Introuvable](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
+1.  [<span data-ttu-id="06df8-108">Après l'installation de Windows 7 et IIS, lorsque vous tentez d'accéder à un service WCF, vous obtenez le message d'erreur suivant : Erreur HTTP 404.3 –Introuvable</span><span class="sxs-lookup"><span data-stu-id="06df8-108">After installing Windows 7 and IIS, when I attempt to browse to a WCF service I get the following error message: HTTP Error 404.3 – Not Found</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
   
-     Erreur HTTP 404.3 – Introuvable. Impossible d’afficher la page demandée en raison de la configuration d’extension. Si la page est un script, ajoutez un gestionnaire. Si le fichier doit être téléchargé, ajoutez un mappage MIME. Erreur détaillée InformationModule StaticFileModule.  
+     <span data-ttu-id="06df8-109">Erreur HTTP 404.3 – Introuvable. Impossible d’afficher la page demandée en raison de la configuration d’extension.</span><span class="sxs-lookup"><span data-stu-id="06df8-109">HTTP Error 404.3 – Not FoundThe page you are requesting cannot be served because of the extension configuration.</span></span> <span data-ttu-id="06df8-110">Si la page est un script, ajoutez un gestionnaire.</span><span class="sxs-lookup"><span data-stu-id="06df8-110">If the page is a script, add a handler.</span></span> <span data-ttu-id="06df8-111">Si le fichier doit être téléchargé, ajoutez un mappage MIME.</span><span class="sxs-lookup"><span data-stu-id="06df8-111">If the file should be downloaded, add a MIME map.</span></span> <span data-ttu-id="06df8-112">Erreur détaillée InformationModule StaticFileModule.</span><span class="sxs-lookup"><span data-stu-id="06df8-112">Detailed Error InformationModule StaticFileModule.</span></span>  
   
-2.  [Je reçois parfois une MessageSecurityException sur la deuxième demande si mon client est inactif pendant un instant après la première demande. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q1)  
+2.  [<span data-ttu-id="06df8-113">Je reçois parfois une MessageSecurityException sur la deuxième demande si mon client est inactif pendant un instant après la première demande. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-113">Sometimes I receive a MessageSecurityException on the second request if my client is idle for a while after the first request. What is happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q1)  
   
-3.  [Mon service commence à rejeter les nouveaux clients une fois qu'environ 10 clients interagissent avec lui. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q2)  
+3.  [<span data-ttu-id="06df8-114">Mon service commence à rejeter les nouveaux clients une fois qu'environ 10 clients interagissent avec lui. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-114">My service starts to reject new clients after about 10 clients are interacting with it. What is happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q2)  
   
-4.  [Est\-ce que je peux charger la configuration de mon service autrement qu'à partir du fichier de configuration de l'application WCF ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q3)  
+4.  [<span data-ttu-id="06df8-115">Est-ce que je peux charger la configuration de mon service autrement qu'à partir du fichier de configuration de l'application WCF ?</span><span class="sxs-lookup"><span data-stu-id="06df8-115">Can I load my service configuration from somewhere other than the WCF application’s configuration file?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q3)  
   
-5.  [Mon service et mon client fonctionnent convenablement, mais je ne parviens pas à les faire fonctionner lorsque le client est sur un autre ordinateur. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q4)  
+5.  [<span data-ttu-id="06df8-116">Mon service et mon client fonctionnent convenablement, mais je ne parviens pas à les faire fonctionner lorsque le client est sur un autre ordinateur. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-116">My service and client work great, but I can’t get them to work when the client is on another computer? What’s happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q4)  
   
-6.  [Lorsque je lève une FaultException\<Exception\> où le type est une exception, je reçois toujours un type FaultException général sur le client, et non le type générique. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q5)  
+6.  [<span data-ttu-id="06df8-117">Lorsque je lève une FaultException\<Exception > où le type est une exception, je reçois toujours un type FaultException général sur le client et non le type générique. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-117">When I throw a FaultException\<Exception> where the type is an exception, I always receive a general FaultException type on the client and not the generic type. What’s happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q5)  
   
-7.  [Il semble que les opérations monodirectionnelles et demande\-réponse reviennent quasiment à la même vitesse lorsque la réponse ne contient pas de données. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q6)  
+7.  [<span data-ttu-id="06df8-118">Il semble que les opérations monodirectionnelles et demande-réponse reviennent quasiment à la même vitesse lorsque la réponse ne contient pas de données. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-118">It seems like one-way and request-reply operations return at roughly the same speed when the reply contains no data. What's happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q6)  
   
-8.  [J'utilise un certificat X.509 avec mon service et j'obtiens une System.Security.Cryptography.CryptographicException. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q77)  
+8.  [<span data-ttu-id="06df8-119">J'utilise un certificat X.509 avec mon service et j'obtiens une System.Security.Cryptography.CryptographicException. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-119">I’m using an X.509 certificate with my service and I get a System.Security.Cryptography.CryptographicException. What’s happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q77)  
   
-9. [J'ai remplacé les majuscules du premier paramètre d'une opération par des minuscules ; à présent, mon client lève une exception. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q88)  
+9. [<span data-ttu-id="06df8-120">J'ai remplacé les majuscules du premier paramètre d'une opération par des minuscules ; à présent, mon client lève une exception. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-120">I changed the first parameter of an operation from uppercase to lowercase; now my client throws an exception. What's happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q88)  
   
-10. [J'utilise l'un de mes outils de suivi et j'obtiens une EndpointNotFoundException. Que se passe\-t\-il ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q99)  
+10. [<span data-ttu-id="06df8-121">J'utilise l'un de mes outils de suivi et j'obtiens une EndpointNotFoundException. Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-121">I’m using one of my tracing tools and I get an EndpointNotFoundException. What’s happening?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q99)  
   
-11. [Lors de l'appel d'une application HTTP Web WCF à partir d'une application SOAP WCF, le service retourne l'erreur suivante : 405 Méthode non autorisée](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BK_MK99)  
+11. [<span data-ttu-id="06df8-122">Lors de l'appel d'une application HTTP Web WCF à partir d'une application SOAP WCF, le service retourne l'erreur suivante : 405 Méthode non autorisée</span><span class="sxs-lookup"><span data-stu-id="06df8-122">When calling a WCF Web HTTP application from a WCF SOAP application the service returns the following error: 405 Method Not Allowed</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BK_MK99)  
   
- [Qu'est-ce que l'adresse de base ? Comment est-elle liée à une adresse de point de terminaison ?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q10)  
+ [<span data-ttu-id="06df8-123">Qu'est-ce que l'adresse de base ? Comment est-elle liée à une adresse de point de terminaison ?</span><span class="sxs-lookup"><span data-stu-id="06df8-123">What is the base address? How does it relate to an endpoint address?</span></span>](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q10)  
   
 <a name="bkmk_0"></a>   
-## Après l'installation de Windows 7 et IIS, lorsque vous tentez d'accéder à un service WCF, vous obtenez le message d'erreur suivant : Erreur HTTP 404.3 –Introuvable  
- Voici le message d'erreur complet :  
+## <a name="after-installing-windows-7-and-iis-when-i-attempt-to-browse-to-a-wcf-service-i-get-the-following-error-message-http-error-4043--not-found"></a><span data-ttu-id="06df8-124">Après l'installation de Windows 7 et IIS, lorsque vous tentez d'accéder à un service WCF, vous obtenez le message d'erreur suivant : Erreur HTTP 404.3 –Introuvable</span><span class="sxs-lookup"><span data-stu-id="06df8-124">After installing Windows 7 and IIS, when I attempt to browse to a WCF service I get the following error message: HTTP Error 404.3 – Not Found</span></span>  
+ <span data-ttu-id="06df8-125">Voici le message d'erreur complet :</span><span class="sxs-lookup"><span data-stu-id="06df8-125">The full error message is:</span></span>  
   
- Erreur HTTP 404.3 – Introuvable. Impossible d'afficher la page demandée en raison de la configuration d'extension. Si la page est un script, ajoutez un gestionnaire. Si le fichier doit être téléchargé, ajoutez un mappage MIME. Erreur détaillée InformationModule StaticFileModule.  
+ <span data-ttu-id="06df8-126">Erreur HTTP 404.3 – Introuvable. Impossible d’afficher la page demandée en raison de la configuration d’extension.</span><span class="sxs-lookup"><span data-stu-id="06df8-126">HTTP Error 404.3 – Not FoundThe page you are requesting cannot be served because of the extension configuration.</span></span> <span data-ttu-id="06df8-127">Si la page est un script, ajoutez un gestionnaire.</span><span class="sxs-lookup"><span data-stu-id="06df8-127">If the page is a script, add a handler.</span></span> <span data-ttu-id="06df8-128">Si le fichier doit être téléchargé, ajoutez un mappage MIME.</span><span class="sxs-lookup"><span data-stu-id="06df8-128">If the file should be downloaded, add a MIME map.</span></span> <span data-ttu-id="06df8-129">Erreur détaillée InformationModule StaticFileModule.</span><span class="sxs-lookup"><span data-stu-id="06df8-129">Detailed Error InformationModule StaticFileModule.</span></span>  
   
- Ce message d'erreur se produit lorsque l'« activation HTTP de Windows Communication Foundation » n'est pas explicitement définie dans le Panneau de configuration. Pour cela, dans le Panneau de configuration, cliquez sur Programmes dans le coin inférieur gauche de la fenêtre. Cliquez sur Activer ou désactiver des fonctionnalités Windows. Développez l'élément Microsoft .NET Framework 3.5.1, puis sélectionnez Activation HTTP de Windows Communication Foundation.  
+ <span data-ttu-id="06df8-130">Ce message d’erreur se produit lorsque le « Activation HTTP Windows Communication Foundation » n’est pas explicitement définie dans le panneau de configuration.</span><span class="sxs-lookup"><span data-stu-id="06df8-130">This error message occurs when "Windows Communication Foundation HTTP Activation" is not explicitly set in the Control Panel.</span></span> <span data-ttu-id="06df8-131">Pour cela, dans le Panneau de configuration, cliquez sur Programmes dans le coin inférieur gauche de la fenêtre.</span><span class="sxs-lookup"><span data-stu-id="06df8-131">To set this go to the Control Panel, click Programs in the lower left hand corner of the window.</span></span> <span data-ttu-id="06df8-132">Cliquez sur Activer ou désactiver des fonctionnalités Windows.</span><span class="sxs-lookup"><span data-stu-id="06df8-132">Click Turn Windows features on or off.</span></span> <span data-ttu-id="06df8-133">Développez l'élément Microsoft .NET Framework 3.5.1, puis sélectionnez Activation HTTP de Windows Communication Foundation.</span><span class="sxs-lookup"><span data-stu-id="06df8-133">Expand Microsoft .NET Framework 3.5.1 and select Windows Communication Foundation HTTP Activation.</span></span>  
   
 <a name="BKMK_q1"></a>   
-## Je reçois parfois une MessageSecurityException sur la deuxième demande si mon client est inactif pendant un instant après la première demande. Que se passe\-t\-il ?  
- La deuxième demande peut échouer pour deux raisons principales : \(1\) la session a expiré ou \(2\) le serveur Web qui héberge le service est recyclé. Dans le premier cas, la session est valide jusqu'à ce que le service expire. Lorsque le service ne reçoit pas de demande du client pendant la période spécifiée dans la liaison du service \(<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>\), le service met fin à la session de sécurité. Les messages clients suivants engendrent une <xref:System.ServiceModel.Security.MessageSecurityException>. Le client doit de nouveau établir une session sécurisée avec le service pour envoyer de futurs messages ou utiliser un jeton de contexte de sécurité avec état. Les jetons de contexte de sécurité avec état permettent également à une session sécurisée de survivre à un serveur Web en cours de recyclage.[!INCLUDE[crabout](../../../includes/crabout-md.md)] l’utilisation de jetons de contexte de sécurité avec état dans une session sécurisée, consultez [Procédure : créer un jeton de contexte de sécurité pour une session sécurisée](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Vous pouvez également désactiver des sessions sécurisées. Lorsque vous utilisez la liaison [\<wsHttpBinding\>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), vous pouvez affecter à la propriété `establishSecurityContext` la valeur `false` pour désactiver des sessions sécurisées. Pour désactiver des sessions sécurisées pour d'autres liaisons, vous devez créer une liaison personnalisée. Pour plus d’informations sur la création d’une liaison personnalisée, consultez [Comment : créer une liaison personnalisée à l'aide de SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Avant d'appliquer chacune de ces options, vous devez comprendre les conditions de sécurité de votre application.  
+## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a><span data-ttu-id="06df8-134">Je reçois parfois une MessageSecurityException sur la deuxième demande si mon client est inactif pendant un instant après la première demande.</span><span class="sxs-lookup"><span data-stu-id="06df8-134">Sometimes I receive a MessageSecurityException on the second request if my client is idle for a while after the first request.</span></span> <span data-ttu-id="06df8-135">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-135">What is happening?</span></span>  
+ <span data-ttu-id="06df8-136">La deuxième demande peut échouer pour deux raisons principales : (1) la session a expiré ou (2) le serveur Web qui héberge le service est recyclé.</span><span class="sxs-lookup"><span data-stu-id="06df8-136">The second request can fail primarily for two reasons: (1) the session has timed out or (2) the Web server that is hosting the service is recycled.</span></span> <span data-ttu-id="06df8-137">Dans le premier cas, la session est valide jusqu'à ce que le service expire. Lorsque le service ne reçoit pas de demande du client pendant la période spécifiée dans la liaison du service (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), le service met fin à la session de sécurité.</span><span class="sxs-lookup"><span data-stu-id="06df8-137">In the first case, the session is valid until the service times out. When the service does not receive a request from the client within the period of time specified in the service's binding (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), the service terminates the security session.</span></span> <span data-ttu-id="06df8-138">Les messages clients suivants engendrent une <xref:System.ServiceModel.Security.MessageSecurityException>.</span><span class="sxs-lookup"><span data-stu-id="06df8-138">Subsequent client messages result in the <xref:System.ServiceModel.Security.MessageSecurityException>.</span></span> <span data-ttu-id="06df8-139">Le client doit de nouveau établir une session sécurisée avec le service pour envoyer de futurs messages ou utiliser un jeton de contexte de sécurité avec état.</span><span class="sxs-lookup"><span data-stu-id="06df8-139">The client must re-establish a secure session with the service to send future messages or use a stateful security context token.</span></span> <span data-ttu-id="06df8-140">Les jetons de contexte de sécurité avec état permettent également à une session sécurisée de survivre à un serveur Web en cours de recyclage.</span><span class="sxs-lookup"><span data-stu-id="06df8-140">Stateful security context tokens also allow a secure session to survive a Web server being recycled.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="06df8-141">l’utilisation de jetons de contexte dans une session sécurisée, consultez [Comment : créer un jeton de contexte de sécurité pour une Session sécurisée](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).</span><span class="sxs-lookup"><span data-stu-id="06df8-141"> using stateful secure context tokens in a secure session, see [How to: Create a Security Context Token for a Secure Session](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).</span></span> <span data-ttu-id="06df8-142">Vous pouvez également désactiver des sessions sécurisées.</span><span class="sxs-lookup"><span data-stu-id="06df8-142">Alternatively, you can disable secure sessions.</span></span> <span data-ttu-id="06df8-143">Lorsque vous utilisez la [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) de liaison, vous pouvez définir le `establishSecurityContext` propriété `false` pour désactiver des sessions sécurisées.</span><span class="sxs-lookup"><span data-stu-id="06df8-143">When you use the [\<wsHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) binding, you can set the `establishSecurityContext` property to `false` to disable secure sessions.</span></span> <span data-ttu-id="06df8-144">Pour désactiver des sessions sécurisées pour d'autres liaisons, vous devez créer une liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="06df8-144">To disable secure sessions for other bindings, you must create a custom binding.</span></span> <span data-ttu-id="06df8-145">Pour plus d’informations sur la création d’une liaison personnalisée, consultez [How to: Create a Custom Binding Using the SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).</span><span class="sxs-lookup"><span data-stu-id="06df8-145">For details about creating a custom binding, see [How to: Create a Custom Binding Using the SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).</span></span> <span data-ttu-id="06df8-146">Avant d'appliquer chacune de ces options, vous devez comprendre les conditions de sécurité de votre application.</span><span class="sxs-lookup"><span data-stu-id="06df8-146">Before you apply any of these options, you must understand your application's security requirements.</span></span>  
   
 <a name="BKMK_q2"></a>   
-## Mon service commence à rejeter les nouveaux clients une fois qu'environ 10 clients interagissent avec lui. Que se passe\-t\-il ?  
- Par défaut, les services peuvent avoir uniquement 10 sessions simultanées. Par conséquent, si les liaisons de service utilisent des sessions, le service accepte les nouvelles connexions clientes jusqu'à ce qu'il atteigne ce nombre, après quoi il refuse les nouvelles connexions clientes jusqu'à ce que l'une des sessions en cours se termine. Vous pouvez prendre en charge davantage de clients de plusieurs manières. Si votre service ne requiert pas de sessions, n’utilisez pas de liaison avec session. \([!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Utilisation de sessions](../../../docs/framework/wcf/using-sessions.md).\) Une autre option consiste à augmenter la limite de session en changeant la valeur de la propriété <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> par le nombre approprié à votre situation.  
+## <a name="my-service-starts-to-reject-new-clients-after-about-10-clients-are-interacting-with-it-what-is-happening"></a><span data-ttu-id="06df8-147">Mon service commence à rejeter les nouveaux clients une fois qu'environ 10 clients interagissent avec lui.</span><span class="sxs-lookup"><span data-stu-id="06df8-147">My service starts to reject new clients after about 10 clients are interacting with it.</span></span> <span data-ttu-id="06df8-148">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-148">What is happening?</span></span>  
+ <span data-ttu-id="06df8-149">Par défaut, les services peuvent avoir uniquement 10 sessions simultanées.</span><span class="sxs-lookup"><span data-stu-id="06df8-149">By default, services can have only 10 concurrent sessions.</span></span> <span data-ttu-id="06df8-150">Par conséquent, si les liaisons de service utilisent des sessions, le service accepte les nouvelles connexions clientes jusqu'à ce qu'il atteigne ce nombre, après quoi il refuse les nouvelles connexions clientes jusqu'à ce que l'une des sessions en cours se termine.</span><span class="sxs-lookup"><span data-stu-id="06df8-150">Therefore, if the service bindings use sessions, the service accepts new client connections until it reaches that number, after which it refuses new client connections until one of the current sessions ends.</span></span> <span data-ttu-id="06df8-151">Vous pouvez prendre en charge davantage de clients de plusieurs manières.</span><span class="sxs-lookup"><span data-stu-id="06df8-151">You can support more clients in a number of ways.</span></span> <span data-ttu-id="06df8-152">Si votre service ne requiert pas de sessions, n’utilisez pas de liaison avec session.</span><span class="sxs-lookup"><span data-stu-id="06df8-152">If your service does not require sessions, do not use a sessionful binding.</span></span> <span data-ttu-id="06df8-153">([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [à l’aide de Sessions](../../../docs/framework/wcf/using-sessions.md).) Une autre option consiste à augmenter la limite de session en changeant la valeur de la propriété <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> par le nombre approprié à votre situation.</span><span class="sxs-lookup"><span data-stu-id="06df8-153">([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Using Sessions](../../../docs/framework/wcf/using-sessions.md).) Another option is to increase the session limit by changing the value of the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> property to the number appropriate to your circumstance.</span></span>  
   
 <a name="BKMK_q3"></a>   
-## Est\-ce que je peux charger la configuration de mon service autrement qu'à partir du fichier de configuration de l'application WCF ?  
- Oui. Toutefois vous devez créer une classe <xref:System.ServiceModel.ServiceHost> personnalisée qui remplace la méthode <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A>. À l'intérieur de cette méthode, vous pouvez appeler la base pour charger la configuration en premier \(si vous souhaitez charger également les informations de configuration standard\), mais vous pouvez également remplacer entièrement le système de chargement de la configuration. Notez que si vous souhaitez charger la configuration à partir d'un fichier de configuration différent du fichier de configuration de l'application, vous devez analyser le fichier de configuration vous\-même et charger la configuration.  
+## <a name="can-i-load-my-service-configuration-from-somewhere-other-than-the-wcf-applications-configuration-file"></a><span data-ttu-id="06df8-154">Est-ce que je peux charger la configuration de mon service autrement qu'à partir du fichier de configuration de l'application WCF ?</span><span class="sxs-lookup"><span data-stu-id="06df8-154">Can I load my service configuration from somewhere other than the WCF application’s configuration file?</span></span>  
+ <span data-ttu-id="06df8-155">Oui. Toutefois vous devez créer une classe <xref:System.ServiceModel.ServiceHost> personnalisée qui remplace la méthode <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> .</span><span class="sxs-lookup"><span data-stu-id="06df8-155">Yes, however, you have to create a custom <xref:System.ServiceModel.ServiceHost> class that overrides the <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> method.</span></span> <span data-ttu-id="06df8-156">À l'intérieur de cette méthode, vous pouvez appeler la base pour charger la configuration en premier (si vous souhaitez charger également les informations de configuration standard), mais vous pouvez également remplacer entièrement le système de chargement de la configuration.</span><span class="sxs-lookup"><span data-stu-id="06df8-156">Inside that method, you can call the base to load configuration first (if you want to load the standard configuration information as well) but you can also entirely replace the configuration loading system.</span></span> <span data-ttu-id="06df8-157">Notez que si vous souhaitez charger la configuration à partir d'un fichier de configuration différent du fichier de configuration de l'application, vous devez analyser le fichier de configuration vous-même et charger la configuration.</span><span class="sxs-lookup"><span data-stu-id="06df8-157">Note that if you want to load configuration from a configuration file that is different from the application configuration file, you must parse the configuration file yourself and load the configuration.</span></span>  
   
- L'exemple de code suivant indique la manière de substituer la méthode <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> et de configurer directement un point de terminaison.  
+ <span data-ttu-id="06df8-158">L'exemple de code suivant indique la manière de substituer la méthode <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> et de configurer directement un point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="06df8-158">The following code example shows how to override the <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> method and directly configure an endpoint.</span></span>  
   
-```  
+```csharp
 public class MyServiceHost : ServiceHost  
 {  
-  public MyServiceHost(Type serviceType, params Uri[] baseAddresses)    
-    : base(serviceType, baseAddresses)  
-  { Console.WriteLine("MyServiceHost Constructor"); }  
+    public MyServiceHost(Type serviceType, params Uri[] baseAddresses)    
+      : base(serviceType, baseAddresses)  
+    {
+        Console.WriteLine("MyServiceHost Constructor");
+    }  
   
-  protected override void ApplyConfiguration()  
-  {  
-    string straddress = GetAddress();  
-    Uri address = new Uri(straddress);  
-    Binding binding = GetBinding();  
-    base.AddServiceEndpoint(typeof(IData), binding, address);  
-  }  
+    protected override void ApplyConfiguration()  
+    {  
+        string straddress = GetAddress();  
+        Uri address = new Uri(straddress);  
+        Binding binding = GetBinding();  
+        base.AddServiceEndpoint(typeof(IData), binding, address);  
+    }  
   
-  string GetAddress()  
-  { return "http://MyMachine:7777/MyEndpointAddress/"; }  
+    string GetAddress()  
+    {
+        return "http://MyMachine:7777/MyEndpointAddress/";
+    }  
   
-  Binding GetBinding()  
-  {  
-    WSHttpBinding binding = new WSHttpBinding();  
-    binding.Security.Mode = SecurityMode.None;  
-    return binding;  
-  }  
+    Binding GetBinding()  
+    {  
+        WSHttpBinding binding = new WSHttpBinding();  
+        binding.Security.Mode = SecurityMode.None;  
+        return binding;  
+    }  
 }  
 ```  
   
 <a name="BKMK_q4"></a>   
-## Mon service et mon client fonctionnent convenablement, mais je ne parviens pas à les faire fonctionner lorsque le client est sur un autre ordinateur. Que se passe\-t\-il ?  
- En fonction de l'exception, plusieurs problèmes peuvent exister :  
+## <a name="my-service-and-client-work-great-but-i-cant-get-them-to-work-when-the-client-is-on-another-computer-whats-happening"></a><span data-ttu-id="06df8-159">Mon service et mon client fonctionnent convenablement, mais je ne parviens pas à les faire fonctionner lorsque le client est sur un autre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="06df8-159">My service and client work great, but I can’t get them to work when the client is on another computer?</span></span> <span data-ttu-id="06df8-160">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-160">What’s happening?</span></span>  
+ <span data-ttu-id="06df8-161">En fonction de l'exception, plusieurs problèmes peuvent exister :</span><span class="sxs-lookup"><span data-stu-id="06df8-161">Depending upon the exception, there may be several issues:</span></span>  
   
--   Vous devrez peut\-être remplacer les adresses de point de terminaison du client par le nom d'hôte, au lieu de « localhost ».  
+-   <span data-ttu-id="06df8-162">Vous devrez peut-être remplacer les adresses de point de terminaison du client par le nom d'hôte, au lieu de « localhost ».</span><span class="sxs-lookup"><span data-stu-id="06df8-162">You might need to change the client endpoint addresses to the host name and not "localhost".</span></span>  
   
--   Vous devrez peut\-être ouvrir le port vers l'application. Pour plus d’informations, consultez [Instructions sur les pare\-feu](../../../docs/framework/wcf/samples/firewall-instructions.md) dans les exemples du Kit de développement logiciel.  
+-   <span data-ttu-id="06df8-163">Vous devrez peut-être ouvrir le port vers l'application.</span><span class="sxs-lookup"><span data-stu-id="06df8-163">You might need to open the port to the application.</span></span> <span data-ttu-id="06df8-164">Pour plus d’informations, consultez [Firewall Instructions](../../../docs/framework/wcf/samples/firewall-instructions.md) dans les exemples du Kit de développement logiciel.</span><span class="sxs-lookup"><span data-stu-id="06df8-164">For details, see [Firewall Instructions](../../../docs/framework/wcf/samples/firewall-instructions.md) from the SDK samples.</span></span>  
   
--   Pour d’autres problèmes possibles, consultez la rubrique des exemples [Running the Samples in a Workgroup and Across Machines](http://msdn.microsoft.com/fr-fr/a451a525-e7ce-452d-9da9-620221260113).  
+-   <span data-ttu-id="06df8-165">Pour d’autres problèmes possibles, consultez la rubrique des exemples [Running the Samples in a Workgroup and Across Machines](http://msdn.microsoft.com/en-us/a451a525-e7ce-452d-9da9-620221260113).</span><span class="sxs-lookup"><span data-stu-id="06df8-165">For other possible issues, see the samples topic [Running the Samples in a Workgroup and Across Machines](http://msdn.microsoft.com/en-us/a451a525-e7ce-452d-9da9-620221260113).</span></span>  
   
--   Si votre client utilise des informations d'identification Windows et que l'exception est une <xref:System.ServiceModel.Security.SecurityNegotiationException>, configurez Kerberos comme suit.  
+-   <span data-ttu-id="06df8-166">Si votre client utilise des informations d'identification Windows et que l'exception est une <xref:System.ServiceModel.Security.SecurityNegotiationException>, configurez Kerberos comme suit.</span><span class="sxs-lookup"><span data-stu-id="06df8-166">If your client is using Windows credentials and the exception is a <xref:System.ServiceModel.Security.SecurityNegotiationException>, configure Kerberos as follows.</span></span>  
   
-    1.  Ajoutez les informations d'identification à l'élément de point de terminaison dans le fichier App.config du client :  
+    1.  <span data-ttu-id="06df8-167">Ajoutez les informations d'identification à l'élément de point de terminaison dans le fichier App.config du client :</span><span class="sxs-lookup"><span data-stu-id="06df8-167">Add the identity credentials to the endpoint element in the client’s App.config file:</span></span>  
   
-        ```  
+        ```xml
         <endpoint   
           address="http://MyServer:8000/MyService/"   
           binding="wsHttpBinding"   
@@ -125,59 +132,59 @@ public class MyServiceHost : ServiceHost
         </endpoint>  
         ```  
   
-    2.  Exécutez le service auto\-hébergé sous le compte System ou NetworkService. Vous pouvez exécuter cette commande pour créer une fenêtre de commande sous le compte System :  
+    2.  <span data-ttu-id="06df8-168">Exécutez le service auto-hébergé sous le compte System ou NetworkService.</span><span class="sxs-lookup"><span data-stu-id="06df8-168">Run the self-hosted service under the System or NetworkService account.</span></span> <span data-ttu-id="06df8-169">Vous pouvez exécuter cette commande pour créer une fenêtre de commande sous le compte System :</span><span class="sxs-lookup"><span data-stu-id="06df8-169">You can run this command to create a command window under the System account:</span></span>  
   
+        ```console
+        at 12:36 /interactive "cmd.exe"  
         ```  
-        at 12:36  /interactive "cmd.exe"  
-        ```  
   
-    3.  Hébergez le service sous IIS \(Internet Information Services\) qui, par défaut, utilise le compte du nom de principal du service \(SPN\).  
+    3.  <span data-ttu-id="06df8-170">Hébergez le service sous IIS (Internet Information Services) qui, par défaut, utilise le compte du nom de principal du service (SPN).</span><span class="sxs-lookup"><span data-stu-id="06df8-170">Host the service under Internet Information Services (IIS), which, by default, uses the service principal name (SPN) account.</span></span>  
   
-    4.  Enregistrez un nouveau SPN avec le domaine à l'aide de SetSPN. Notez que vous devez être administrateur de domaine pour effectuer cette opération.  
+    4.  <span data-ttu-id="06df8-171">Enregistrez un nouveau SPN avec le domaine à l'aide de SetSPN.</span><span class="sxs-lookup"><span data-stu-id="06df8-171">Register a new SPN with the domain using SetSPN.</span></span> <span data-ttu-id="06df8-172">Notez que vous devez être administrateur de domaine pour effectuer cette opération.</span><span class="sxs-lookup"><span data-stu-id="06df8-172">Note that you will need to be a domain administrator in order to do this.</span></span>  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] le protocole Kerberos, consultez [Concepts de sécurité utilisés dans WCF](../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md) et :  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="06df8-173"> le protocole Kerberos, consultez [Security Concepts Used in WCF](../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md) et :</span><span class="sxs-lookup"><span data-stu-id="06df8-173"> the Kerberos protocol, see [Security Concepts Used in WCF](../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md) and:</span></span>  
   
--   [Débogage d'erreurs d'authentification Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
+-   [<span data-ttu-id="06df8-174">Débogage des erreurs d’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="06df8-174">Debugging Windows Authentication Errors</span></span>](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
   
--   [Inscription de noms de principaux du service Kerberos à l’aide de Http.sys](http://go.microsoft.com/fwlink/?LinkId=86943)  
+-   [<span data-ttu-id="06df8-175">Inscription de noms de principaux du service Kerberos à l’aide de Http.sys</span><span class="sxs-lookup"><span data-stu-id="06df8-175">Registering Kerberos Service Principal Names by Using Http.sys</span></span>](http://go.microsoft.com/fwlink/?LinkId=86943)  
   
--   [Kerberos Explained \(Présentation de Kerberos\)](http://go.microsoft.com/fwlink/?LinkId=86946)  
+-   [<span data-ttu-id="06df8-176">Kerberos Explained (Présentation de Kerberos)</span><span class="sxs-lookup"><span data-stu-id="06df8-176">Kerberos Explained</span></span>](http://go.microsoft.com/fwlink/?LinkId=86946)  
   
 <a name="BKMK_q5"></a>   
-## Lorsque je lève une FaultException\<Exception\> où le type est une exception, je reçois toujours un type FaultException général sur le client, et non le type générique. Que se passe\-t\-il ?  
- Il est fortement recommandé de créer votre propre type de données d'erreur personnalisé et de le déclarer comme le type de détail dans votre contrat d'erreur. La raison est que l'utilisation des types d'exceptions fournis par le système :  
+## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a><span data-ttu-id="06df8-177">Lorsque je lève une FaultException\<Exception > où le type est une exception, je reçois toujours un type FaultException général sur le client et non le type générique.</span><span class="sxs-lookup"><span data-stu-id="06df8-177">When I throw a FaultException\<Exception> where the type is an exception, I always receive a general FaultException type on the client and not the generic type.</span></span> <span data-ttu-id="06df8-178">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-178">What’s happening?</span></span>  
+ <span data-ttu-id="06df8-179">Il est fortement recommandé de créer votre propre type de données d'erreur personnalisé et de le déclarer comme le type de détail dans votre contrat d'erreur.</span><span class="sxs-lookup"><span data-stu-id="06df8-179">It is highly recommended that you create your own custom error data type and declare that as the detail type in your fault contract.</span></span> <span data-ttu-id="06df8-180">La raison est que l'utilisation des types d'exceptions fournis par le système :</span><span class="sxs-lookup"><span data-stu-id="06df8-180">The reason is that using system-provided exception types:</span></span>  
   
--   crée une dépendance des types qui supprime l'une des plus grandes forces des applications orientées service ;  
+-   <span data-ttu-id="06df8-181">crée une dépendance des types qui supprime l'une des plus grandes forces des applications orientées service ;</span><span class="sxs-lookup"><span data-stu-id="06df8-181">Creates a type dependency that removes one of the biggest strengths of service-oriented applications.</span></span>  
   
--   ne peut pas dépendre d'exceptions sérialisant de manière standard  \(certaines, comme <xref:System.Security.SecurityException> risquent de pas être du tout sérialisables\) ;  
+-   <span data-ttu-id="06df8-182">ne peut pas dépendre d'exceptions sérialisant de manière standard</span><span class="sxs-lookup"><span data-stu-id="06df8-182">Cannot depend upon exceptions serializing in a standard way.</span></span> <span data-ttu-id="06df8-183">(certaines, comme <xref:System.Security.SecurityException>risquent de pas être du tout sérialisables) ;</span><span class="sxs-lookup"><span data-stu-id="06df8-183">Some—like <xref:System.Security.SecurityException>—may not be serializable at all.</span></span>  
   
--   expose des informations d'implémentation interne aux clients.[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Spécification et gestion des erreurs dans les contrats et les services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+-   <span data-ttu-id="06df8-184">expose des informations d'implémentation interne aux clients.</span><span class="sxs-lookup"><span data-stu-id="06df8-184">Exposes internal implementation details to clients.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="06df8-185">[Spécification et gestion des erreurs dans les contrats et les Services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).</span><span class="sxs-lookup"><span data-stu-id="06df8-185"> [Specifying and Handling Faults in Contracts and Services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).</span></span>  
   
- Si vous déboguez une application, toutefois, vous pouvez sérialiser des informations sur les exceptions et les renvoyer au client à l'aide de la classe <xref:System.ServiceModel.Description.ServiceDebugBehavior>.  
+ <span data-ttu-id="06df8-186">Si vous déboguez une application, toutefois, vous pouvez sérialiser des informations sur les exceptions et les renvoyer au client à l'aide de la classe <xref:System.ServiceModel.Description.ServiceDebugBehavior> .</span><span class="sxs-lookup"><span data-stu-id="06df8-186">If you are debugging an application, however, you can serialize exception information and return it to the client by using the <xref:System.ServiceModel.Description.ServiceDebugBehavior> class.</span></span>  
   
 <a name="BKMK_q6"></a>   
-## Il semble que les opérations monodirectionnelles et demande\-réponse reviennent quasiment à la même vitesse lorsque la réponse ne contient pas de données. Que se passe\-t\-il ?  
- Spécifier qu'une opération est monodirectionnelle signifie uniquement que le contrat de l'opération accepte un message d'entrée et ne renvoie pas de message de sortie. Dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], tous les appels clients sont renvoyés lorsque les données sortantes ont été écrites sur le fil ou qu'une exception est levée. Les opérations monodirectionnelles fonctionnent de la même façon et elles peuvent lever si le service ne peut pas être localisé ou bloquer si le service n'est pas préparé à accepter les données du réseau. En général, dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], cela provoque des appels monodirectionnels renvoyés au client plus rapidement qu'une demande\-réponse ; mais toute condition qui ralentit l'envoi des données sortantes sur le réseau ralentit les opérations monodirectionnelles ainsi que les opérations demande\-réponse. Voir [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Services monodirectionnels](../../../docs/framework/wcf/feature-details/one-way-services.md) et [Accès aux services à l'aide d'un client WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
+## <a name="it-seems-like-one-way-and-request-reply-operations-return-at-roughly-the-same-speed-when-the-reply-contains-no-data-whats-happening"></a><span data-ttu-id="06df8-187">Il semble que les opérations monodirectionnelles et demande-réponse reviennent quasiment à la même vitesse lorsque la réponse ne contient pas de données.</span><span class="sxs-lookup"><span data-stu-id="06df8-187">It seems like one-way and request-reply operations return at roughly the same speed when the reply contains no data.</span></span> <span data-ttu-id="06df8-188">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-188">What's happening?</span></span>  
+ <span data-ttu-id="06df8-189">Spécifier qu'une opération est monodirectionnelle signifie uniquement que le contrat de l'opération accepte un message d'entrée et ne renvoie pas de message de sortie.</span><span class="sxs-lookup"><span data-stu-id="06df8-189">Specifying that an operation is one way means only that the operation contract accepts an input message and does not return an output message.</span></span> <span data-ttu-id="06df8-190">Dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], tous les appels clients sont renvoyés lorsque les données sortantes ont été écrites sur le fil ou qu'une exception est levée.</span><span class="sxs-lookup"><span data-stu-id="06df8-190">In [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], all client invocations return when the outbound data has been written to the wire or an exception is thrown.</span></span> <span data-ttu-id="06df8-191">Les opérations monodirectionnelles fonctionnent de la même façon et elles peuvent lever si le service ne peut pas être localisé ou bloquer si le service n'est pas préparé à accepter les données du réseau.</span><span class="sxs-lookup"><span data-stu-id="06df8-191">One-way operations work the same way, and they can throw if the service cannot be located or block if the service is not prepared to accept the data from the network.</span></span> <span data-ttu-id="06df8-192">En général, dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], cela provoque des appels monodirectionnels renvoyés au client plus rapidement qu'une demande-réponse ; mais toute condition qui ralentit l'envoi des données sortantes sur le réseau ralentit les opérations monodirectionnelles ainsi que les opérations demande-réponse.</span><span class="sxs-lookup"><span data-stu-id="06df8-192">Typically in [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], this results in one-way calls returning to the client more quickly than request-reply; but any condition that slows the sending of the outbound data over the network slows one-way operations as well as request-reply operations.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="06df8-193">[Services unidirectionnels](../../../docs/framework/wcf/feature-details/one-way-services.md) et [l’accès aux Services à l’aide d’un Client WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).</span><span class="sxs-lookup"><span data-stu-id="06df8-193"> [One-Way Services](../../../docs/framework/wcf/feature-details/one-way-services.md) and [Accessing Services Using a WCF Client](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).</span></span>  
   
 <a name="BKMK_q77"></a>   
-## J'utilise un certificat X.509 avec mon service et j'obtiens une System.Security.Cryptography.CryptographicException. Que se passe\-t\-il ?  
- Cela se produit couramment après avoir modifié le compte d'utilisateur sous lequel le processus de travail IIS s'exécute. Par exemple, dans [!INCLUDE[wxp](../../../includes/wxp-md.md)], si vous modifiez le compte d'utilisateur par défaut sous lequel Aspnet\_wp.exe s'exécute en remplaçant ASPNET par un compte d'utilisateur personnalisé, vous pouvez obtenir cette erreur. Lors de l'utilisation d'une clé privée, le processus qui l'utilise aura besoin des autorisations d'accès au fichier qui stocke cette clé.  
+## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a><span data-ttu-id="06df8-194">J'utilise un certificat X.509 avec mon service et j'obtiens une System.Security.Cryptography.CryptographicException.</span><span class="sxs-lookup"><span data-stu-id="06df8-194">I’m using an X.509 certificate with my service and I get a System.Security.Cryptography.CryptographicException.</span></span> <span data-ttu-id="06df8-195">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-195">What’s happening?</span></span>  
+ <span data-ttu-id="06df8-196">Cela se produit couramment après avoir modifié le compte d'utilisateur sous lequel le processus de travail IIS s'exécute.</span><span class="sxs-lookup"><span data-stu-id="06df8-196">This commonly occurs after changing the user account under which the IIS worker process runs.</span></span> <span data-ttu-id="06df8-197">Par exemple, dans [!INCLUDE[wxp](../../../includes/wxp-md.md)], si vous modifiez le compte d'utilisateur par défaut sous lequel Aspnet_wp.exe s'exécute en remplaçant ASPNET par un compte d'utilisateur personnalisé, vous pouvez obtenir cette erreur.</span><span class="sxs-lookup"><span data-stu-id="06df8-197">For example, in [!INCLUDE[wxp](../../../includes/wxp-md.md)], if you change the default user account that the Aspnet_wp.exe runs under from ASPNET to a custom user account, you may see this error.</span></span> <span data-ttu-id="06df8-198">Lors de l'utilisation d'une clé privée, le processus qui l'utilise aura besoin des autorisations d'accès au fichier qui stocke cette clé.</span><span class="sxs-lookup"><span data-stu-id="06df8-198">If using a private key, the process that uses it will need to have permissions to access the file storing that key.</span></span>  
   
- Le cas échéant, vous devez octroyer des privilèges d'accès en lecture au compte du processus pour le fichier contenant la clé privée. Par exemple, si le processus de travail IIS s'exécute sous le compte Jacques, vous devrez octroyer à Jacques un accès en lecture au fichier contenant la clé privée.  
+ <span data-ttu-id="06df8-199">Le cas échéant, vous devez octroyer des privilèges d'accès en lecture au compte du processus pour le fichier contenant la clé privée.</span><span class="sxs-lookup"><span data-stu-id="06df8-199">If this is the case, you must give read access privileges to the process's account for the file containing the private key.</span></span> <span data-ttu-id="06df8-200">Par exemple, si le processus de travail IIS s'exécute sous le compte Jacques, vous devrez octroyer à Jacques un accès en lecture au fichier contenant la clé privée.</span><span class="sxs-lookup"><span data-stu-id="06df8-200">For example, if the IIS worker process is running under the Bob account, then you will need to give Bob read access to the file containing the private key.</span></span>  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] sur la manière d’octroyer au compte d’utilisateur l’accès correct au fichier contenant la clé privée pour un certificat X.509 spécifique, consultez [Comment : rendre des certificats X.509 accessibles à WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="06df8-201"> sur la manière d’octroyer au compte d’utilisateur l’accès correct au fichier contenant la clé privée pour un certificat X.509 spécifique, consultez [How to: Make X.509 Certificates Accessible to WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="06df8-201"> how to give the correct user account access to the file that contains the private key for a specific X.509 certificate, see [How to: Make X.509 Certificates Accessible to WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).</span></span>  
   
 <a name="BKMK_q88"></a>   
-## J'ai remplacé les majuscules du premier paramètre d'une opération par des minuscules ; à présent, mon client lève une exception. Que se passe\-t\-il ?  
- La valeur des noms de paramètre dans la signature de l'opération fait partie du contrat et respecte la casse. Utilisez l'attribut <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=fullName> lorsque vous devez distinguer le nom du paramètre local et les métadonnées qui décrivent l'opération pour les applications clientes.  
+## <a name="i-changed-the-first-parameter-of-an-operation-from-uppercase-to-lowercase-now-my-client-throws-an-exception-whats-happening"></a><span data-ttu-id="06df8-202">J'ai remplacé les majuscules du premier paramètre d'une opération par des minuscules ; à présent, mon client lève une exception.</span><span class="sxs-lookup"><span data-stu-id="06df8-202">I changed the first parameter of an operation from uppercase to lowercase; now my client throws an exception.</span></span> <span data-ttu-id="06df8-203">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-203">What's happening?</span></span>  
+ <span data-ttu-id="06df8-204">La valeur des noms de paramètre dans la signature de l'opération fait partie du contrat et respecte la casse.</span><span class="sxs-lookup"><span data-stu-id="06df8-204">The value of the parameter names in the operation signature are part of the contract and are case-sensitive.</span></span> <span data-ttu-id="06df8-205">Utilisez l'attribut <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> lorsque vous devez distinguer le nom du paramètre local et les métadonnées qui décrivent l'opération pour les applications clientes.</span><span class="sxs-lookup"><span data-stu-id="06df8-205">Use the <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> attribute when you need to distinguish between the local parameter name and the metadata that describes the operation for client applications.</span></span>  
   
 <a name="BKMK_q99"></a>   
-## J'utilise l'un de mes outils de suivi et j'obtiens une EndpointNotFoundException. Que se passe\-t\-il ?  
- Si vous utilisez un outil de suivi qui n'est pas le mécanisme de suivi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] fourni par le système et que vous recevez une <xref:System.ServiceModel.EndpointNotFoundException> qui indique une incompatibilité du filtre d'adresse, vous devez utiliser la classe <xref:System.ServiceModel.Description.ClientViaBehavior> pour diriger les messages vers l'utilitaire de suivi et faire rediriger ces messages par l'utilitaire vers l'adresse du service. La classe <xref:System.ServiceModel.Description.ClientViaBehavior> altère l'en\-tête d'adressage  `Via`  pour spécifier l'adresse réseau suivante séparément du dernier destinataire, indiqué par l'en\-tête d'adressage `To`. Ce faisant, en revanche, ne modifiez pas l'adresse du point de terminaison, utilisée pour établir la valeur `To`.  
+## <a name="im-using-one-of-my-tracing-tools-and-i-get-an-endpointnotfoundexception-whats-happening"></a><span data-ttu-id="06df8-206">J'utilise l'un de mes outils de suivi et j'obtiens une EndpointNotFoundException.</span><span class="sxs-lookup"><span data-stu-id="06df8-206">I’m using one of my tracing tools and I get an EndpointNotFoundException.</span></span> <span data-ttu-id="06df8-207">Que se passe-t-il ?</span><span class="sxs-lookup"><span data-stu-id="06df8-207">What’s happening?</span></span>  
+ <span data-ttu-id="06df8-208">Si vous utilisez un outil de suivi qui n'est pas le mécanisme de suivi [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] fourni par le système et que vous recevez une <xref:System.ServiceModel.EndpointNotFoundException> qui indique une incompatibilité du filtre d'adresse, vous devez utiliser la classe <xref:System.ServiceModel.Description.ClientViaBehavior> pour diriger les messages vers l'utilitaire de suivi et faire rediriger ces messages par l'utilitaire vers l'adresse du service.</span><span class="sxs-lookup"><span data-stu-id="06df8-208">If you are using a tracing tool that is not the system-provided [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] tracing mechanism and you receive an <xref:System.ServiceModel.EndpointNotFoundException> that indicates that there was an address filter mismatch, you need to use the <xref:System.ServiceModel.Description.ClientViaBehavior> class to direct the messages to the tracing utility and have the utility redirect those messages to the service address.</span></span> <span data-ttu-id="06df8-209">La classe <xref:System.ServiceModel.Description.ClientViaBehavior> altère l'en-tête d'adressage `Via` pour spécifier l'adresse réseau suivante séparément du dernier destinataire, indiqué par l'en-tête d'adressage `To` .</span><span class="sxs-lookup"><span data-stu-id="06df8-209">The <xref:System.ServiceModel.Description.ClientViaBehavior> class alters the `Via` addressing header to specify the next network address separately from the ultimate receiver, indicated by the `To` addressing header.</span></span> <span data-ttu-id="06df8-210">Ce faisant, en revanche, ne modifiez pas l'adresse du point de terminaison, utilisée pour établir la valeur `To` .</span><span class="sxs-lookup"><span data-stu-id="06df8-210">When doing this, however, do not change the endpoint address, which is used to establish the `To` value.</span></span>  
   
- L'exemple de code suivant présente un exemple de fichier de configuration d'un client.  
+ <span data-ttu-id="06df8-211">L'exemple de code suivant présente un exemple de fichier de configuration d'un client.</span><span class="sxs-lookup"><span data-stu-id="06df8-211">The following code example shows an example client configuration file.</span></span>  
   
-```  
+```xml
 <endpoint   
   address=http://localhost:8000/MyServer/  
   binding="wsHttpBinding"  
@@ -196,65 +203,61 @@ public class MyServiceHost : ServiceHost
 ```  
   
 <a name="BKMK_q10"></a>   
-## Qu'est\-ce que l'adresse de base ? Comment est\-elle liée à une adresse de point de terminaison ?  
- Une adresse de base est l'adresse racine d'une classe <xref:System.ServiceModel.ServiceHost>. Par défaut, si vous ajoutez une classe <xref:System.ServiceModel.Description.ServiceMetadataBehavior> dans votre configuration de service, tous les points de terminaison WSDL \(Web Services Description Language\) que l'hôte publie sont récupérés à partir de l'adresse de base HTTP, plus toute adresse relative fournie au comportement de métadonnées, plus « ?wsdl ». Si vous connaissez bien [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] et IIS, l'adresse de base équivaut au répertoire virtuel.  
+## <a name="what-is-the-base-address-how-does-it-relate-to-an-endpoint-address"></a><span data-ttu-id="06df8-212">Qu'est-ce que l'adresse de base ?</span><span class="sxs-lookup"><span data-stu-id="06df8-212">What is the base address?</span></span> <span data-ttu-id="06df8-213">Comment est-elle liée à une adresse de point de terminaison ?</span><span class="sxs-lookup"><span data-stu-id="06df8-213">How does it relate to an endpoint address?</span></span>  
+ <span data-ttu-id="06df8-214">Une adresse de base est l'adresse racine d'une classe <xref:System.ServiceModel.ServiceHost> .</span><span class="sxs-lookup"><span data-stu-id="06df8-214">A base address is the root address for a <xref:System.ServiceModel.ServiceHost> class.</span></span> <span data-ttu-id="06df8-215">Par défaut, si vous ajoutez une classe <xref:System.ServiceModel.Description.ServiceMetadataBehavior> dans votre configuration de service, tous les points de terminaison WSDL (Web Services Description Language) que l'hôte publie sont récupérés à partir de l'adresse de base HTTP, plus toute adresse relative fournie au comportement de métadonnées, plus « ?wsdl ».</span><span class="sxs-lookup"><span data-stu-id="06df8-215">By default, if you add a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> class into your service configuration, the Web Services Description Language (WSDL) for all endpoints the host publishes are retrieved from the HTTP base address, plus any relative address provided to the metadata behavior, plus "?wsdl".</span></span> <span data-ttu-id="06df8-216">Si vous connaissez bien [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] et IIS, l'adresse de base équivaut au répertoire virtuel.</span><span class="sxs-lookup"><span data-stu-id="06df8-216">If you are familiar with [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] and IIS, the base address is equivalent to the virtual directory.</span></span>  
   
-## Partage d'un port entre un point de terminaison de service et un point de terminaison mex à l'aide de NetTcpBinding  
- Si vous spécifiez l'adresse de base d'un service en tant que net.tcp:\/\/MyServer:8080\/MyService et ajoutez les points de terminaison suivants :  
+## <a name="sharing-a-port-between-a-service-endpoint-and-a-mex-endpoint-using-the-nettcpbinding"></a><span data-ttu-id="06df8-217">Partage d'un port entre un point de terminaison de service et un point de terminaison mex à l'aide de NetTcpBinding</span><span class="sxs-lookup"><span data-stu-id="06df8-217">Sharing a port between a service endpoint and a mex endpoint using the NetTcpBinding</span></span>  
+ <span data-ttu-id="06df8-218">Si vous spécifiez l'adresse de base d'un service en tant que net.tcp://MyServer:8080/MyService et ajoutez les points de terminaison suivants :</span><span class="sxs-lookup"><span data-stu-id="06df8-218">If you specify the base address for a service as net.tcp://MyServer:8080/MyService and add the following endpoints:</span></span>  
   
 ```xml  
 <services>  
-      <service name="Microsoft.Samples.NetTcp.CalculatorService">  
-        <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
-        <endpoint address="mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
-      </service>  
-    </services>  
-  
+  <service name="Microsoft.Samples.NetTcp.CalculatorService">  
+    <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
+    <endpoint address="mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
+  </service>  
+</services>  
 ```  
   
- Et si vous modifiez un des paramètres NetTcpBinding comme illustré dans l'extrait de configuration suivant :  
+ <span data-ttu-id="06df8-219">Et si vous modifiez un des paramètres NetTcpBinding comme illustré dans l'extrait de configuration suivant :</span><span class="sxs-lookup"><span data-stu-id="06df8-219">And if you modify one of the NetTcpBinding settings as shown in the following configuration snippet:</span></span>  
   
 ```xml  
 <bindings>  
-      <netTcpBinding>  
-        <binding closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" transactionFlow="false" transferMode="Buffered" transactionProtocol="OleTransactions" hostNameComparisonMode="StrongWildcard" listenBacklog="10" maxBufferPoolSize="524288" maxBufferSize="65536" maxConnections="11" maxReceivedMessageSize="65536">  
-          <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384"/>  
-          <reliableSession ordered="true" inactivityTimeout="00:10:00" enabled="false"/>  
-          <security mode="Transport">  
-            <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign"/>  
-          </security>  
-        </binding>  
-      </netTcpBinding>  
-    </bindings>  
-  
+  <netTcpBinding>  
+    <binding closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" transactionFlow="false" transferMode="Buffered" transactionProtocol="OleTransactions" hostNameComparisonMode="StrongWildcard" listenBacklog="10" maxBufferPoolSize="524288" maxBufferSize="65536" maxConnections="11" maxReceivedMessageSize="65536">  
+      <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384"/>  
+      <reliableSession ordered="true" inactivityTimeout="00:10:00" enabled="false"/>  
+      <security mode="Transport">  
+        <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign"/>  
+      </security>  
+    </binding>  
+  </netTcpBinding>  
+</bindings>  
 ```  
   
- Un message d'erreur se présentant comme suit s'affiche : Exception non gérée : System.ServiceModel.AddressAlreadyInUseException : Il existe déjà un écouteur sur le point de terminaison IP 0.0.0.0:9000 Vous pouvez contourner cette erreur en spécifiant une URL complète avec un autre port pour le point de terminaison MEX comme illustré dans l'extrait de configuration suivant :  
+ <span data-ttu-id="06df8-220">Vous verrez une erreur semblable à la suivante : Exception non gérée : System.ServiceModel.AddressAlreadyInUseException : il existe déjà un écouteur sur 0.0.0.0:9000 de point de terminaison IP vous pouvez contourner cette erreur en spécifiant une URL qualifiée complète avec un autre port pour le point de terminaison MEX comme illustré dans l’extrait de configuration suivant :</span><span class="sxs-lookup"><span data-stu-id="06df8-220">You will see an error like the following: Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is already a listener on IP endpoint 0.0.0.0:9000 You can work around this error by specifying a fully qualified URL with a different port for the MEX endpoint as shown in the following configuration snippet:</span></span>  
   
-```  
+```xml
 <services>  
-      <service name="Microsoft.Samples.NetTcp.CalculatorService">  
-        <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
-        <endpoint address="net.tcp://localhost:9001/servicemodelsamples/mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
-      </service>  
-    </services>  
-  
+  <service name="Microsoft.Samples.NetTcp.CalculatorService">  
+    <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
+    <endpoint address="net.tcp://localhost:9001/servicemodelsamples/mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
+  </service>  
+</services>  
 ```  
   
 <a name="BK_MK99"></a>   
-## Lors de l'appel d'une application HTTP Web WCF à partir d'une application SOAP WCF, le service retourne l'erreur suivante : 405 Méthode non autorisée  
- Le fait d'appeler une application HTTP Web WCF \(un service qui utilise <xref:System.ServiceModel.WebHttpBinding> et <xref:System.ServiceModel.Description.WebHttpBehavior>\) à partir d'un service WCF peut générer l'exception suivante : `Exception non gérée : System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail] : Le serveur distant a retourné une réponse inattendue : (405) Méthode non autorisée.` Cette exception se produit parce que WCF remplace le <xref:System.ServiceModel.OperationContext> sortant par le <xref:System.ServiceModel.OperationContext> entrant. Pour résoudre ce problème, créez un <xref:System.ServiceModel.OperationContextScope> dans l'opération de service HTTP Web WCF. Exemple :  
+## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a><span data-ttu-id="06df8-221">Lors de l'appel d'une application HTTP Web WCF à partir d'une application SOAP WCF, le service retourne l'erreur suivante : 405 Méthode non autorisée</span><span class="sxs-lookup"><span data-stu-id="06df8-221">When calling a WCF Web HTTP application from a WCF SOAP application the service returns the following error: 405 Method Not Allowed</span></span>  
+ <span data-ttu-id="06df8-222">Appel d’une application HTTP Web WCF (un service qui utilise le <xref:System.ServiceModel.WebHttpBinding> et <xref:System.ServiceModel.Description.WebHttpBehavior>) à partir d’un service WCF service peut générer l’exception suivante : `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail] : le serveur distant a retourné une réponse inattendue : (405) méthode non autorisée. » cette exception se produit parce que WCF remplace sortant <xref:System.ServiceModel.OperationContext> avec entrant <xref:System.ServiceModel.OperationContext>.</span><span class="sxs-lookup"><span data-stu-id="06df8-222">Calling a WCF Web HTTP application (a service that uses the <xref:System.ServiceModel.WebHttpBinding> and <xref:System.ServiceModel.Description.WebHttpBehavior>) from a WCF service may generate the following exception: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: The remote server returned an unexpected response: (405) Method Not Allowed.\` This exception occurs because WCF overwrites the outgoing <xref:System.ServiceModel.OperationContext> with the incoming <xref:System.ServiceModel.OperationContext>.</span></span> <span data-ttu-id="06df8-223">Pour résoudre ce problème, créez un <xref:System.ServiceModel.OperationContextScope> dans l'opération de service HTTP Web WCF.</span><span class="sxs-lookup"><span data-stu-id="06df8-223">To solve this problem create an <xref:System.ServiceModel.OperationContextScope> within the WCF Web HTTP service operation.</span></span> <span data-ttu-id="06df8-224">Exemple :</span><span class="sxs-lookup"><span data-stu-id="06df8-224">For example:</span></span>  
   
-```ecmascript  
+```csharp
 public string Echo(string input)  
-        {  
-            using (new OperationContextScope(this.InnerChannel))  
-            {  
-                return base.Channel.Echo(input);  
-            }  
-        }  
-  
+{  
+    using (new OperationContextScope(this.InnerChannel))  
+    {  
+        return base.Channel.Echo(input);  
+    }  
+}  
 ```  
   
-## Voir aussi  
- [Débogage d'erreurs d'authentification Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)
+## <a name="see-also"></a><span data-ttu-id="06df8-225">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="06df8-225">See Also</span></span>  
+ [<span data-ttu-id="06df8-226">Débogage des erreurs d’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="06df8-226">Debugging Windows Authentication Errors</span></span>](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)

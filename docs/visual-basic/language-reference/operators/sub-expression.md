@@ -1,73 +1,72 @@
 ---
-title: "Sub Expression (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-helpviewer_keywords: 
-  - "lambda expressions [Visual Basic], sub expression"
-  - "Sub Expression [Visual Basic]"
-  - "subroutines [Visual Basic], sub expressions"
+title: Sous-expression (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- lambda expressions [Visual Basic], sub expression
+- Sub Expression [Visual Basic]
+- subroutines [Visual Basic], sub expressions
 ms.assetid: 36b6bfd1-6539-4d8f-a5eb-6541a745ffde
-caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 43e35bd0386bc56478603ec36437981785cc8ffb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Sub Expression (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Déclare les paramètres et le code qui définissent une expression lambda de sous\-routine.  
+# <a name="sub-expression-visual-basic"></a><span data-ttu-id="ce3be-102">Sous-expression (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ce3be-102">Sub Expression (Visual Basic)</span></span>
+<span data-ttu-id="ce3be-103">Déclare les paramètres et le code qui définissent une expression lambda de sous-routine.</span><span class="sxs-lookup"><span data-stu-id="ce3be-103">Declares the parameters and code that define a subroutine lambda expression.</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="ce3be-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ce3be-104">Syntax</span></span>  
   
 ```  
-Sub ( [ parameterlist ] ) statement  
+Sub ( [ parameterlist ] ) statement  
 - or -  
-Sub ( [ parameterlist ] )  
-  [ statements ]  
+Sub ( [ parameterlist ] )  
+  [ statements ]  
 End Sub  
-  
 ```  
   
-## Composants  
+## <a name="parts"></a><span data-ttu-id="ce3be-105">Composants</span><span class="sxs-lookup"><span data-stu-id="ce3be-105">Parts</span></span>  
   
-|||  
-|-|-|  
-|Terme|Définition|  
-|`parameterlist`|Facultatif.  Liste des noms de variables locales représentant les paramètres de la procédure.  Les parenthèses doivent être présentes même quand la liste est vide.  Pour plus d'informations, consultez [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).|  
-|`statement`|Obligatoire.  Instruction unique.|  
-|`statements`|Obligatoire.  Liste d'instructions.|  
+|<span data-ttu-id="ce3be-106">Terme</span><span class="sxs-lookup"><span data-stu-id="ce3be-106">Term</span></span>|<span data-ttu-id="ce3be-107">Définition</span><span class="sxs-lookup"><span data-stu-id="ce3be-107">Definition</span></span>|  
+|---|---|  
+|`parameterlist`|<span data-ttu-id="ce3be-108">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="ce3be-108">Optional.</span></span> <span data-ttu-id="ce3be-109">Liste des noms de variables locales qui représentent les paramètres de la procédure.</span><span class="sxs-lookup"><span data-stu-id="ce3be-109">A list of local variable names that represent the parameters of the procedure.</span></span> <span data-ttu-id="ce3be-110">Les parenthèses doivent être présents même lorsque la liste est vide.</span><span class="sxs-lookup"><span data-stu-id="ce3be-110">The parentheses must be present even when the list is empty.</span></span> <span data-ttu-id="ce3be-111">Pour plus d’informations, consultez [liste de paramètres](../../../visual-basic/language-reference/statements/parameter-list.md).</span><span class="sxs-lookup"><span data-stu-id="ce3be-111">For more information, see [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).</span></span>|  
+|`statement`|<span data-ttu-id="ce3be-112">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="ce3be-112">Required.</span></span> <span data-ttu-id="ce3be-113">Une instruction unique.</span><span class="sxs-lookup"><span data-stu-id="ce3be-113">A single statement.</span></span>|  
+|`statements`|<span data-ttu-id="ce3be-114">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="ce3be-114">Required.</span></span> <span data-ttu-id="ce3be-115">Une liste d’instructions.</span><span class="sxs-lookup"><span data-stu-id="ce3be-115">A list of statements.</span></span>|  
   
-## Notes  
- Une *expression lambda* est une sous\-routine qui n'a pas de nom et qui exécute une ou plusieurs instructions.  Vous pouvez utiliser une expression lambda partout où vous pouvez utiliser un type délégué, sauf en tant qu'argument à `RemoveHandler`.  Pour plus d'informations sur les délégués et l'utilisation d'expressions lambda avec les délégués, consultez [Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md) et [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
+## <a name="remarks"></a><span data-ttu-id="ce3be-116">Remarques</span><span class="sxs-lookup"><span data-stu-id="ce3be-116">Remarks</span></span>  
+ <span data-ttu-id="ce3be-117">A *expression lambda* est une sous-routine qui n’a pas de nom et qui exécute une ou plusieurs instructions.</span><span class="sxs-lookup"><span data-stu-id="ce3be-117">A *lambda expression* is a subroutine that does not have a name and that executes one or more statements.</span></span> <span data-ttu-id="ce3be-118">Vous pouvez utiliser une expression lambda n’importe où que vous pouvez utiliser un type délégué, sauf en tant qu’argument à `RemoveHandler`.</span><span class="sxs-lookup"><span data-stu-id="ce3be-118">You can use a lambda expression anywhere that you can use a delegate type, except as an argument to `RemoveHandler`.</span></span> <span data-ttu-id="ce3be-119">Pour plus d’informations sur les délégués et l’utilisation d’expressions lambda avec les délégués, consultez [instruction Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md) et [Conversion souple en délégué](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).</span><span class="sxs-lookup"><span data-stu-id="ce3be-119">For more information about delegates, and the use of lambda expressions with delegates, see [Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md) and [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).</span></span>  
   
-## Syntaxe d'expression lambda  
- La syntaxe d'une expression lambda est similaire à celle d'une sous\-routine standard.  Les différences sont les suivantes :  
+## <a name="lambda-expression-syntax"></a><span data-ttu-id="ce3be-120">Syntaxe d’expression lambda</span><span class="sxs-lookup"><span data-stu-id="ce3be-120">Lambda Expression Syntax</span></span>  
+ <span data-ttu-id="ce3be-121">La syntaxe d’une expression lambda ressemble à celle d’une sous-routine standard.</span><span class="sxs-lookup"><span data-stu-id="ce3be-121">The syntax of a lambda expression resembles that of a standard subroutine.</span></span> <span data-ttu-id="ce3be-122">Les différences sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="ce3be-122">The differences are as follows:</span></span>  
   
--   Une expression lambda n'a pas de nom.  
+-   <span data-ttu-id="ce3be-123">Une expression lambda n’a pas un nom.</span><span class="sxs-lookup"><span data-stu-id="ce3be-123">A lambda expression does not have a name.</span></span>  
   
--   Une expression lambda ne peut pas avoir de modificateur, tel que `Overloads` ou `Overrides`.  
+-   <span data-ttu-id="ce3be-124">Une expression lambda ne peut pas avoir un modificateur, tel que `Overloads` ou `Overrides`.</span><span class="sxs-lookup"><span data-stu-id="ce3be-124">A lambda expression cannot have a modifier, such as `Overloads` or `Overrides`.</span></span>  
   
--   Le corps d'une expression lambda sur une ligne doit être une instruction, pas une expression.  Le corps peut se composer d'un appel à une sous\-procédure, mais pas d'un appel à une procédure de fonction.  
+-   <span data-ttu-id="ce3be-125">Le corps d’une expression lambda sur une ligne doit être une instruction, pas une expression.</span><span class="sxs-lookup"><span data-stu-id="ce3be-125">The body of a single-line lambda expression must be a statement, not an expression.</span></span> <span data-ttu-id="ce3be-126">Le corps peut se composer d’un appel à une procédure sub, mais pas d’un appel à une procédure function.</span><span class="sxs-lookup"><span data-stu-id="ce3be-126">The body can consist of a call to a sub procedure, but not a call to a function procedure.</span></span>  
   
--   Dans une expression lambda, soit tous les paramètres doivent avoir des types de données spécifiés, soit tous les paramètres doivent être déduits.  
+-   <span data-ttu-id="ce3be-127">Dans une expression lambda, soit tous les paramètres doivent avoir spécifié les types de données ou tous les paramètres doivent être déduits.</span><span class="sxs-lookup"><span data-stu-id="ce3be-127">In a lambda expression, either all parameters must have specified data types or all parameters must be inferred.</span></span>  
   
--   Les paramètres facultatifs et `ParamArray` ne sont pas autorisés dans les expressions lambda.  
+-   <span data-ttu-id="ce3be-128">Facultatif et `ParamArray` paramètres ne sont pas autorisés dans les expressions lambda.</span><span class="sxs-lookup"><span data-stu-id="ce3be-128">Optional and `ParamArray` parameters are not permitted in lambda expressions.</span></span>  
   
--   Les paramètres génériques ne sont pas autorisés dans les expressions lambda.  
+-   <span data-ttu-id="ce3be-129">Paramètres génériques ne sont pas autorisés dans les expressions lambda.</span><span class="sxs-lookup"><span data-stu-id="ce3be-129">Generic parameters are not permitted in lambda expressions.</span></span>  
   
-## Exemple  
- L'exemple suivant présente une expression lambda qui écrit une valeur sur la console.  L'exemple montre la syntaxe d'expression lambda sur une ou plusieurs lignes d'une sous\-routine.  Pour plus d'exemples, consultez [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+## <a name="example"></a><span data-ttu-id="ce3be-130">Exemple</span><span class="sxs-lookup"><span data-stu-id="ce3be-130">Example</span></span>  
+ <span data-ttu-id="ce3be-131">Voici un exemple d’une expression lambda qui écrit une valeur dans la console.</span><span class="sxs-lookup"><span data-stu-id="ce3be-131">Following is an example of a lambda expression that writes a value to the console.</span></span> <span data-ttu-id="ce3be-132">L’exemple montre les deux la syntaxe d’expression lambda multiligne ou plusieurs lignes d’une sous-routine.</span><span class="sxs-lookup"><span data-stu-id="ce3be-132">The example shows both the single-line and multiline lambda expression syntax for a subroutine.</span></span> <span data-ttu-id="ce3be-133">Pour plus d’exemples, consultez [Expressions Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="ce3be-133">For more examples, see [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).</span></span>  
   
  [!code-vb[VbVbalrLambdas#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/sub-expression_1.vb)]  
   
-## Voir aussi  
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)   
- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)   
- [Statements](../../../visual-basic/programming-guide/language-features/statements.md)   
- [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+## <a name="see-also"></a><span data-ttu-id="ce3be-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ce3be-134">See Also</span></span>  
+ [<span data-ttu-id="ce3be-135">Sub (instruction)</span><span class="sxs-lookup"><span data-stu-id="ce3be-135">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="ce3be-136">Expressions lambda</span><span class="sxs-lookup"><span data-stu-id="ce3be-136">Lambda Expressions</span></span>](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [<span data-ttu-id="ce3be-137">Opérateurs et expressions</span><span class="sxs-lookup"><span data-stu-id="ce3be-137">Operators and Expressions</span></span>](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
+ [<span data-ttu-id="ce3be-138">Instructions</span><span class="sxs-lookup"><span data-stu-id="ce3be-138">Statements</span></span>](../../../visual-basic/programming-guide/language-features/statements.md)  
+ [<span data-ttu-id="ce3be-139">Conversion simplifiée des délégués</span><span class="sxs-lookup"><span data-stu-id="ce3be-139">Relaxed Delegate Conversion</span></span>](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)

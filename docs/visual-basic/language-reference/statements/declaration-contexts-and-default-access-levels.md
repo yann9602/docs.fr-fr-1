@@ -1,65 +1,64 @@
 ---
-title: "Declaration Contexts and Default Access Levels (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "module level, defined"
-  - "declaration contexts, Visual Basic"
-  - "procedure level, defined"
-  - "namespace level, defined"
-  - "access levels, Visual Basic"
-  - "access levels, default levels"
+title: "Contextes de déclaration et niveaux d'accès par défaut (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- module level, defined
+- declaration contexts, Visual Basic
+- procedure level, defined
+- namespace level, defined
+- access levels, Visual Basic
+- access levels, default levels
 ms.assetid: bf63b96e-e825-4745-88c8-5dae222728db
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b89b74a6c0393f6a52a0b5c1ddf6f66c505564ba
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Declaration Contexts and Default Access Levels (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Cette rubrique décrit quels types Visual Basic il est possible de déclarer dans quels autres types et quelle est la valeur par défaut de leurs niveaux d'accès si ceux\-ci ne sont pas spécifiés.  
+# <a name="declaration-contexts-and-default-access-levels-visual-basic"></a><span data-ttu-id="8b299-102">Contextes de déclaration et niveaux d'accès par défaut (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8b299-102">Declaration Contexts and Default Access Levels (Visual Basic)</span></span>
+<span data-ttu-id="8b299-103">Cette rubrique décrit les types Visual Basic peuvent être déclarées dans les autres types, et ce que leurs niveaux d’accès par défaut n’est spécifié.</span><span class="sxs-lookup"><span data-stu-id="8b299-103">This topic describes which Visual Basic types can be declared within which other types, and what their access levels default to if not specified.</span></span>  
   
-## Niveaux de contexte de déclaration  
- Le *contexte de déclaration* d'un élément de programmation est la région de code dans laquelle il est déclaré.  Il s'agit souvent d'un autre élément de programmation, qui est ensuite appelé *élément contenant*.  
+## <a name="declaration-context-levels"></a><span data-ttu-id="8b299-104">Niveaux de contexte de déclaration</span><span class="sxs-lookup"><span data-stu-id="8b299-104">Declaration Context Levels</span></span>  
+ <span data-ttu-id="8b299-105">Le *contexte de déclaration* d’un élément de programmation est la région de code dans laquelle elle est déclarée.</span><span class="sxs-lookup"><span data-stu-id="8b299-105">The *declaration context* of a programming element is the region of code in which it is declared.</span></span> <span data-ttu-id="8b299-106">Il s’agit souvent d’un autre élément de programmation, qui est alors appelé la *contenant l’élément*.</span><span class="sxs-lookup"><span data-stu-id="8b299-106">This is often another programming element, which is then called the *containing element*.</span></span>  
   
- Les niveaux de contextes de déclaration sont les suivants :  
+ <span data-ttu-id="8b299-107">Les niveaux de contextes de déclaration sont les suivants :</span><span class="sxs-lookup"><span data-stu-id="8b299-107">The levels for declaration contexts are the following:</span></span>  
   
--   *Niveau d'espace de noms* — dans un fichier source ou un espace de noms, mais pas dans une classe, une structure, un module ou une interface  
+-   <span data-ttu-id="8b299-108">*Niveau de Namespace* — dans un fichier source ou un espace de noms mais pas dans une classe, une structure, un module ou une interface</span><span class="sxs-lookup"><span data-stu-id="8b299-108">*Namespace level* — within a source file or namespace but not within a class, structure, module, or interface</span></span>  
   
--   *Niveau de module* — dans une classe, une structure, un module ou une interface, mais pas dans une procédure ou un bloc  
+-   <span data-ttu-id="8b299-109">*Au niveau du module* — au sein d’une classe, une structure, un module ou une interface, mais pas dans une procédure ou un bloc</span><span class="sxs-lookup"><span data-stu-id="8b299-109">*Module level* — within a class, structure, module, or interface but not within a procedure or block</span></span>  
   
--   *Niveau de procédure* — dans une procédure ou un bloc \(tel que `If` ou `For`\)  
+-   <span data-ttu-id="8b299-110">*Niveau de la procédure* — au sein d’une procédure ou un bloc (tel que `If` ou `For`)</span><span class="sxs-lookup"><span data-stu-id="8b299-110">*Procedure level* — within a procedure or block (such as `If` or `For`)</span></span>  
   
- Le tableau suivant montre les niveaux d'accès par défaut de plusieurs éléments de programmation déclarés, selon leurs contextes de déclaration.  
+ <span data-ttu-id="8b299-111">Le tableau suivant présente les niveaux d’accès par défaut pour les différents éléments de programmation déclarés, selon leurs contextes de déclaration.</span><span class="sxs-lookup"><span data-stu-id="8b299-111">The following table shows the default access levels for various declared programming elements, depending on their declaration contexts.</span></span>  
   
-|Élément déclaré|Niveau d'espace de noms|Niveau de module|Niveau de procédure|  
-|---------------------|-----------------------------|----------------------|-------------------------|  
-|Variable \([Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)\)|Non autorisé|`Private` \(`Public` dans `Structure`, non autorisé dans `Interface`\)|`Public`|  
-|Constante \([Const Statement](../../../visual-basic/language-reference/statements/const-statement.md)\)|Non autorisé|`Private` \(`Public` dans `Structure`, non autorisé dans `Interface`\)|`Public`|  
-|Énumération \([Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)\)|`Friend`|`Public`|Non autorisé|  
-|Classe \([Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)\)|`Friend`|`Public`|Non autorisé|  
-|Structure \([Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md)\)|`Friend`|`Public`|Non autorisé|  
-|Module \([Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)\)|`Friend`|Non autorisé|Non autorisé|  
-|l'interface \([Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)\)|`Friend`|`Public`|Non autorisé|  
-|Procédure \([Function Statement](../../../visual-basic/language-reference/statements/function-statement.md), [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)\)|Non autorisé|`Public`|Non autorisé|  
-|Référence externe \([Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)\)|Non autorisé|`Public` \(non autorisé dans `Interface`\)|Non autorisé|  
-|Opérateur \([Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)\)|Non autorisé|`Public` \(non autorisé dans `Interface` ou `Module`\)|Non autorisé|  
-|Propriété \([Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)\)|Non autorisé|`Public`|Non autorisé|  
-|Propriété par défaut \([Default](../../../visual-basic/language-reference/modifiers/default.md)\)|Non autorisé|`Public` \(non autorisé dans `Module`\)|Non autorisé|  
-|Événement \([Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)\)|Non autorisé|`Public`|Non autorisé|  
-|Délégué \([Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md)\)|`Friend`|`Public`|Non autorisé|  
+|<span data-ttu-id="8b299-112">Élément déclaré</span><span class="sxs-lookup"><span data-stu-id="8b299-112">Declared element</span></span>|<span data-ttu-id="8b299-113">Niveau de Namespace</span><span class="sxs-lookup"><span data-stu-id="8b299-113">Namespace level</span></span>|<span data-ttu-id="8b299-114">Au niveau du module</span><span class="sxs-lookup"><span data-stu-id="8b299-114">Module level</span></span>|<span data-ttu-id="8b299-115">Niveau de la procédure</span><span class="sxs-lookup"><span data-stu-id="8b299-115">Procedure level</span></span>|  
+|----------------------|---------------------|------------------|---------------------|  
+|<span data-ttu-id="8b299-116">Variable ([Dim, instruction](../../../visual-basic/language-reference/statements/dim-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-116">Variable ([Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md))</span></span>|<span data-ttu-id="8b299-117">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-117">Not allowed</span></span>|<span data-ttu-id="8b299-118">`Private`(`Public` dans `Structure`, non autorisé dans `Interface`)</span><span class="sxs-lookup"><span data-stu-id="8b299-118">`Private` (`Public` in `Structure`, not allowed in `Interface`)</span></span>|`Public`|  
+|<span data-ttu-id="8b299-119">Constante ([Const, instruction](../../../visual-basic/language-reference/statements/const-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-119">Constant ([Const Statement](../../../visual-basic/language-reference/statements/const-statement.md))</span></span>|<span data-ttu-id="8b299-120">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-120">Not allowed</span></span>|<span data-ttu-id="8b299-121">`Private`(`Public` dans `Structure`, non autorisé dans `Interface`)</span><span class="sxs-lookup"><span data-stu-id="8b299-121">`Private` (`Public` in `Structure`, not allowed in `Interface`)</span></span>|`Public`|  
+|<span data-ttu-id="8b299-122">Énumération ([Enum, instruction](../../../visual-basic/language-reference/statements/enum-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-122">Enumeration ([Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="8b299-123">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-123">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-124">Classe ([Class, instruction](../../../visual-basic/language-reference/statements/class-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-124">Class ([Class Statement](../../../visual-basic/language-reference/statements/class-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="8b299-125">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-125">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-126">Structure ([Structure instruction](../../../visual-basic/language-reference/statements/structure-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-126">Structure ([Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="8b299-127">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-127">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-128">Module ([Module, instruction](../../../visual-basic/language-reference/statements/module-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-128">Module ([Module Statement](../../../visual-basic/language-reference/statements/module-statement.md))</span></span>|`Friend`|<span data-ttu-id="8b299-129">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-129">Not allowed</span></span>|<span data-ttu-id="8b299-130">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-130">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-131">Interface ([Interface, instruction](../../../visual-basic/language-reference/statements/interface-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-131">Interface ([Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="8b299-132">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-132">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-133">Procédure ([Function, instruction](../../../visual-basic/language-reference/statements/function-statement.md), [Sub, instruction](../../../visual-basic/language-reference/statements/sub-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-133">Procedure ([Function Statement](../../../visual-basic/language-reference/statements/function-statement.md), [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md))</span></span>|<span data-ttu-id="8b299-134">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-134">Not allowed</span></span>|`Public`|<span data-ttu-id="8b299-135">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-135">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-136">Référence externe ([instruction Declare](../../../visual-basic/language-reference/statements/declare-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-136">External reference ([Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md))</span></span>|<span data-ttu-id="8b299-137">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-137">Not allowed</span></span>|<span data-ttu-id="8b299-138">`Public`(non autorisé dans `Interface`)</span><span class="sxs-lookup"><span data-stu-id="8b299-138">`Public` (not allowed in `Interface`)</span></span>|<span data-ttu-id="8b299-139">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-139">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-140">Opérateur ([Operator, instruction](../../../visual-basic/language-reference/statements/operator-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-140">Operator ([Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md))</span></span>|<span data-ttu-id="8b299-141">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-141">Not allowed</span></span>|<span data-ttu-id="8b299-142">`Public`(non autorisé dans `Interface` ou `Module`)</span><span class="sxs-lookup"><span data-stu-id="8b299-142">`Public` (not allowed in `Interface` or `Module`)</span></span>|<span data-ttu-id="8b299-143">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-143">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-144">Propriété ([Property, instruction](../../../visual-basic/language-reference/statements/property-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-144">Property ([Property Statement](../../../visual-basic/language-reference/statements/property-statement.md))</span></span>|<span data-ttu-id="8b299-145">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-145">Not allowed</span></span>|`Public`|<span data-ttu-id="8b299-146">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-146">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-147">Propriété par défaut ([par défaut](../../../visual-basic/language-reference/modifiers/default.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-147">Default property ([Default](../../../visual-basic/language-reference/modifiers/default.md))</span></span>|<span data-ttu-id="8b299-148">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-148">Not allowed</span></span>|<span data-ttu-id="8b299-149">`Public`(non autorisé dans `Module`)</span><span class="sxs-lookup"><span data-stu-id="8b299-149">`Public` (not allowed in `Module`)</span></span>|<span data-ttu-id="8b299-150">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-150">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-151">Événements ([Event, instruction](../../../visual-basic/language-reference/statements/event-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-151">Event ([Event Statement](../../../visual-basic/language-reference/statements/event-statement.md))</span></span>|<span data-ttu-id="8b299-152">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-152">Not allowed</span></span>|`Public`|<span data-ttu-id="8b299-153">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-153">Not allowed</span></span>|  
+|<span data-ttu-id="8b299-154">Délégué ([Delegate, instruction](../../../visual-basic/language-reference/statements/delegate-statement.md))</span><span class="sxs-lookup"><span data-stu-id="8b299-154">Delegate ([Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md))</span></span>|`Friend`|`Public`|<span data-ttu-id="8b299-155">Non autorisé</span><span class="sxs-lookup"><span data-stu-id="8b299-155">Not allowed</span></span>|  
   
- Pour plus d'informations, consultez [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ <span data-ttu-id="8b299-156">Pour plus d’informations, consultez [niveaux en Visual Basic d’accès](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="8b299-156">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
-## Voir aussi  
- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)   
- [Private](../../../visual-basic/language-reference/modifiers/private.md)   
- [Public](../../../visual-basic/language-reference/modifiers/public.md)
+## <a name="see-also"></a><span data-ttu-id="8b299-157">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8b299-157">See Also</span></span>  
+ [<span data-ttu-id="8b299-158">Friend</span><span class="sxs-lookup"><span data-stu-id="8b299-158">Friend</span></span>](../../../visual-basic/language-reference/modifiers/friend.md)  
+ [<span data-ttu-id="8b299-159">Private</span><span class="sxs-lookup"><span data-stu-id="8b299-159">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)  
+ [<span data-ttu-id="8b299-160">Public</span><span class="sxs-lookup"><span data-stu-id="8b299-160">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)

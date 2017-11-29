@@ -1,119 +1,122 @@
 ---
-title: "Guide de l&#39;interop&#233;rabilit&#233; des protocoles de services Web | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Guide de l'interopérabilité des protocoles de services Web"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: eff6ffe73d5296fb103811a51d94636ea757854e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Guide de l&#39;interop&#233;rabilit&#233; des protocoles de services Web
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implémente plusieurs protocoles de services Web.  Un grand nombre de ces protocoles incluent plusieurs options et points d'extensibilité qui sont laissés à la discrétion de l'implémenteur.  Cette rubrique fournit une liste des protocoles des services Web implémentés par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Des détails d'implémentation pour chaque protocole pris en charge sont fournis dans les autres rubriques de cette section.  
+# <a name="web-services-protocols-interoperability-guide"></a><span data-ttu-id="361bc-102">Guide de l'interopérabilité des protocoles de services Web</span><span class="sxs-lookup"><span data-stu-id="361bc-102">Web Services Protocols Interoperability Guide</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="361bc-103"> implémente plusieurs protocoles de services Web.</span><span class="sxs-lookup"><span data-stu-id="361bc-103"> implements a number of Web services protocols.</span></span> <span data-ttu-id="361bc-104">Un grand nombre de ces protocoles incluent plusieurs options et points d'extensibilité qui sont laissés à la discrétion de l'implémenteur.</span><span class="sxs-lookup"><span data-stu-id="361bc-104">Many of these protocols include a number of options and extensibility points left to the discretion of the implementer.</span></span> <span data-ttu-id="361bc-105">Cette rubrique fournit une liste des protocoles des services Web implémentés par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="361bc-105">This topic provides a list of Web services protocols [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implements.</span></span> <span data-ttu-id="361bc-106">Des détails d'implémentation pour chaque protocole pris en charge sont fournis dans les autres rubriques de cette section.</span><span class="sxs-lookup"><span data-stu-id="361bc-106">Other topics within this section provide implementation details for each protocol supported.</span></span>  
   
-## Protocoles des services Web implémentés par WCF  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit une prise en charge des protocoles de l'infrastructure des services Web par l'intermédiaire des canaux, et des protocoles d'application de services Web par l'intermédiaire de la fonctionnalité de contrats.  L'interopérabilité pour les protocoles d'application s'effectue à l'aide des langages XSD \(XML Schema Description\) 1.0 et WSDL \(Web Services Description Language \) 1.1.  
+## <a name="web-services-protocols-implemented-by-wcf"></a><span data-ttu-id="361bc-107">Protocoles des services Web implémentés par WCF</span><span class="sxs-lookup"><span data-stu-id="361bc-107">Web Services Protocols Implemented by WCF</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="361bc-108"> fournit une prise en charge des protocoles de l'infrastructure des services Web par l'intermédiaire des canaux, et des protocoles d'application de services Web par l'intermédiaire de la fonctionnalité de contrats.</span><span class="sxs-lookup"><span data-stu-id="361bc-108"> provides support for Web services (WS) infrastructure protocols through channels and Web services application protocols through the contracts feature.</span></span> <span data-ttu-id="361bc-109">L'interopérabilité pour les protocoles d'application s'effectue à l'aide des langages XSD (XML Schema Description) 1.0 et WSDL (Web Services Description Language ) 1.1.</span><span class="sxs-lookup"><span data-stu-id="361bc-109">Interoperability for application protocols is accomplished through XML Schema description language 1.0 (XSD) and Web Services Description Language (WSDL) 1.1.</span></span>  
   
- L'interopérabilité des protocoles d'infrastructure est fournie par la famille des spécifications WS\-\*.  Les canaux [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] assurent la prise en charge de plusieurs protocoles d'infrastructure WS\-\*.  Les canaux [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont configurés à l'aide d'éléments de liaison.  Les tableaux suivants contiennent la liste complète des protocoles d'infrastructure WS\-\* implémentés par différents éléments de liaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ <span data-ttu-id="361bc-110">L'interopérabilité des protocoles d'infrastructure est fournie par la famille des spécifications WS-*.</span><span class="sxs-lookup"><span data-stu-id="361bc-110">Infrastructure protocols interoperability is provided by the WS-* specifications.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="361bc-111">les canaux fournissent la prise en charge pour un nombre de WS -\* protocoles d’infrastructure.</span><span class="sxs-lookup"><span data-stu-id="361bc-111"> channels provide support for a number of WS-\* infrastructure protocols.</span></span> <span data-ttu-id="361bc-112">Les canaux [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont configurés à l'aide d'éléments de liaison.</span><span class="sxs-lookup"><span data-stu-id="361bc-112">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] channels are configured using binding elements.</span></span> <span data-ttu-id="361bc-113">Les tableaux suivants contiennent la liste complète des WS -\* implémentés par différents protocoles d’infrastructure [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] éléments de liaison.</span><span class="sxs-lookup"><span data-stu-id="361bc-113">The following tables contain the full list of the WS-\* infrastructure protocols implemented by various [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] binding elements.</span></span>  
   
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement> prend en charge les spécifications présentées dans le tableau suivant :  
+ <span data-ttu-id="361bc-114"><xref:System.ServiceModel.Channels.HttpTransportBindingElement> prend en charge les spécifications présentées dans le tableau suivant :</span><span class="sxs-lookup"><span data-stu-id="361bc-114"><xref:System.ServiceModel.Channels.HttpTransportBindingElement> supports the specifications in the following table.</span></span>  
   
-|Spécification\/document|Link|  
+|<span data-ttu-id="361bc-115">Spécification/document</span><span class="sxs-lookup"><span data-stu-id="361bc-115">Specification/document</span></span>|<span data-ttu-id="361bc-116">Link</span><span class="sxs-lookup"><span data-stu-id="361bc-116">Link</span></span>|  
 |-----------------------------|----------|  
-|HTTP 1.1|[RFC 2616](http://go.microsoft.com/fwlink/?LinkId=90372)|  
-|Liaison HTTP SOAP 1.1|[Protocole SOAP \(Simple Object Access Protocol\) 1.1](http://go.microsoft.com/fwlink/?LinkId=90520), Section 7|  
-|Liaison HTTP SOAP 1,2|[SOAP Version 1.2, partie 2 : compléments \(deuxième édition\)](http://go.microsoft.com/fwlink/?LinkId=95329), Section 7|  
+|<span data-ttu-id="361bc-117">HTTP 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-117">HTTP 1.1</span></span>|[<span data-ttu-id="361bc-118">RFC 2616</span><span class="sxs-lookup"><span data-stu-id="361bc-118">RFC 2616</span></span>](http://go.microsoft.com/fwlink/?LinkId=90372)|  
+|<span data-ttu-id="361bc-119">Liaison HTTP SOAP 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-119">SOAP 1.1 HTTP Binding</span></span>|<span data-ttu-id="361bc-120">[Simple Object Access Protocol (SOAP) 1.1](http://go.microsoft.com/fwlink/?LinkId=90520), Section 7</span><span class="sxs-lookup"><span data-stu-id="361bc-120">[Simple Object Access Protocol (SOAP) 1.1](http://go.microsoft.com/fwlink/?LinkId=90520), Section 7</span></span>|  
+|<span data-ttu-id="361bc-121">Liaison HTTP SOAP 1,2</span><span class="sxs-lookup"><span data-stu-id="361bc-121">SOAP 1.2 HTTP Binding</span></span>|<span data-ttu-id="361bc-122">[La Version de SOAP 1.2, partie 2 : Compléments ((deuxième édition)](http://go.microsoft.com/fwlink/?LinkId=95329), Section 7</span><span class="sxs-lookup"><span data-stu-id="361bc-122">[SOAP Version 1.2 Part 2: Adjuncts (Second Edition)](http://go.microsoft.com/fwlink/?LinkId=95329), Section 7</span></span>|  
   
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> et <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> prennent en charge les spécifications présentées dans le tableau suivant :  
+ <span data-ttu-id="361bc-123"><xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> et <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> prennent en charge les spécifications présentées dans le tableau suivant :</span><span class="sxs-lookup"><span data-stu-id="361bc-123"><xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> and <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> support the specifications in the following table.</span></span>  
   
-|Spécification\/Document|Link|  
+|<span data-ttu-id="361bc-124">Spécification/Document</span><span class="sxs-lookup"><span data-stu-id="361bc-124">Specification/Document</span></span>|<span data-ttu-id="361bc-125">Link</span><span class="sxs-lookup"><span data-stu-id="361bc-125">Link</span></span>|  
 |-----------------------------|----------|  
-|XML|[Langage XML \(Extensible Markup Language\) 1.0 \(quatrième édition\)](http://go.microsoft.com/fwlink/?LinkId=15139)|  
-|SOAP 1,1|[Protocole SOAP \(Simple Object Access Protocol\) 1.1](http://go.microsoft.com/fwlink/?LinkId=96687)|  
-|SOAP 1.2 Core|[SOAP Version 1.2, partie 1 : infrastructure de messagerie \(deuxième édition\)](http://go.microsoft.com/fwlink/?LinkId=94664)|  
-|WS\-Addressing 2004\/08|[Web Services Addressing \(WS\-Addressing\)](http://go.microsoft.com/fwlink/?LinkId=81239)|  
-|W3C Web Services Addressing 1.0 – Éléments principaux|[Web Services Addressing 1.0 \- Éléments principaux](http://go.microsoft.com/fwlink/?LinkId=96688)|  
-|W3C Web Services Addressing 1.0 – Liaison SOAP|[Web Services Addressing 1.0 \- Liaison SOAP](http://go.microsoft.com/fwlink/?LinkId=96689)|  
-|W3C Web Services Addressing 1.0 – Liaison WSDL\*|[Web Services Addressing 1.0 \- Liaison WSDL](http://go.microsoft.com/fwlink/?LinkId=96690)|  
-|W3C Web Services Addressing 1.0 \- Métadonnées|[Web Services Addressing 1.0 \- Métadonnées](http://www.w3.org/TR/ws-addr-metadata/)|  
-|Liaison WSDL SOAP 1.1|[Langage WSDL \(Web Services Description Language\) 1.1](http://go.microsoft.com/fwlink/?LinkId=96160)|  
-|Liaison WSDL SOAP 1.2|[Extension de liaison WSDL 1.1 pour SOAP 1.2](http://go.microsoft.com/fwlink/?LinkId=96691)|  
+|<span data-ttu-id="361bc-126">XML</span><span class="sxs-lookup"><span data-stu-id="361bc-126">XML</span></span>|[<span data-ttu-id="361bc-127">Extensible Markup Language (XML) 1.0 ((quatrième édition)</span><span class="sxs-lookup"><span data-stu-id="361bc-127">Extensible Markup Language (XML) 1.0 (Fourth Edition)</span></span>](http://go.microsoft.com/fwlink/?LinkId=15139)|  
+|<span data-ttu-id="361bc-128">SOAP 1,1</span><span class="sxs-lookup"><span data-stu-id="361bc-128">SOAP 1.1</span></span>|[<span data-ttu-id="361bc-129">Simple Object Access Protocol (SOAP) 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-129">Simple Object Access Protocol (SOAP) 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=96687)|  
+|<span data-ttu-id="361bc-130">SOAP 1.2 Core</span><span class="sxs-lookup"><span data-stu-id="361bc-130">SOAP 1.2 Core</span></span>|[<span data-ttu-id="361bc-131">SOAP Version 1.2, partie 1 : Infrastructure de messagerie ((deuxième édition)</span><span class="sxs-lookup"><span data-stu-id="361bc-131">SOAP Version 1.2 Part 1: Messaging Framework (Second Edition)</span></span>](http://go.microsoft.com/fwlink/?LinkId=94664)|  
+|<span data-ttu-id="361bc-132">WS-Addressing 2004/08</span><span class="sxs-lookup"><span data-stu-id="361bc-132">WS-Addressing 2004/08</span></span>|[<span data-ttu-id="361bc-133">Adressage (WS-Addressing) de Services Web</span><span class="sxs-lookup"><span data-stu-id="361bc-133">Web Services Addressing (WS-Addressing)</span></span>](http://go.microsoft.com/fwlink/?LinkId=81239)|  
+|<span data-ttu-id="361bc-134">W3C Web Services Addressing 1.0 – Éléments principaux</span><span class="sxs-lookup"><span data-stu-id="361bc-134">W3C Web Services Addressing 1.0 - Core</span></span>|[<span data-ttu-id="361bc-135">Web Services Addressing 1.0 - éléments principaux</span><span class="sxs-lookup"><span data-stu-id="361bc-135">Web Services Addressing 1.0 - Core</span></span>](http://go.microsoft.com/fwlink/?LinkId=96688)|  
+|<span data-ttu-id="361bc-136">W3C Web Services Addressing 1.0 – Liaison SOAP</span><span class="sxs-lookup"><span data-stu-id="361bc-136">W3C Web Services Addressing 1.0 - SOAP Binding</span></span>|[<span data-ttu-id="361bc-137">Web Services Addressing 1.0 - liaison SOAP</span><span class="sxs-lookup"><span data-stu-id="361bc-137">Web Services Addressing 1.0 - SOAP Binding</span></span>](http://go.microsoft.com/fwlink/?LinkId=96689)|  
+|<span data-ttu-id="361bc-138">W3C Web Services Addressing 1.0 – Liaison WSDL*</span><span class="sxs-lookup"><span data-stu-id="361bc-138">W3C Web Services Addressing 1.0 - WSDL Binding*</span></span>|[<span data-ttu-id="361bc-139">Web Services Addressing 1.0 - liaison WSDL</span><span class="sxs-lookup"><span data-stu-id="361bc-139">Web Services Addressing 1.0 - WSDL Binding</span></span>](http://go.microsoft.com/fwlink/?LinkId=96690)|  
+|<span data-ttu-id="361bc-140">W3C Web Services Addressing 1.0 - Métadonnées</span><span class="sxs-lookup"><span data-stu-id="361bc-140">W3C Web Services Addressing 1.0 Metadata</span></span>|[<span data-ttu-id="361bc-141">Web Services Addressing 1.0 - métadonnées</span><span class="sxs-lookup"><span data-stu-id="361bc-141">Web Services Addressing 1.0 - Metadata</span></span>](http://www.w3.org/TR/ws-addr-metadata/)|  
+|<span data-ttu-id="361bc-142">Liaison WSDL SOAP 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-142">WSDL SOAP1.1 Binding</span></span>|[<span data-ttu-id="361bc-143">Web Services Description Language (WSDL) 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-143">Web Services Description Language (WSDL) 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=96160)|  
+|<span data-ttu-id="361bc-144">Liaison WSDL SOAP 1.2</span><span class="sxs-lookup"><span data-stu-id="361bc-144">WSDL SOAP1.2 Binding</span></span>|[<span data-ttu-id="361bc-145">WSDL Extension de liaison 1.1 pour SOAP 1.2</span><span class="sxs-lookup"><span data-stu-id="361bc-145">WSDL 1.1 Binding Extension for SOAP 1.2</span></span>](http://go.microsoft.com/fwlink/?LinkId=96691)|  
   
- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> prend en charge les spécifications présentées dans le tableau suivant :  
+ <span data-ttu-id="361bc-146"><xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> prend en charge les spécifications présentées dans le tableau suivant :</span><span class="sxs-lookup"><span data-stu-id="361bc-146"><xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> supports the specifications in the following table.</span></span>  
   
-|Spécification\/document|Link|  
+|<span data-ttu-id="361bc-147">Spécification/document</span><span class="sxs-lookup"><span data-stu-id="361bc-147">Specification/document</span></span>|<span data-ttu-id="361bc-148">Link</span><span class="sxs-lookup"><span data-stu-id="361bc-148">Link</span></span>|  
 |-----------------------------|----------|  
-|XOP|[XML\-binary Optimized Packaging](http://go.microsoft.com/fwlink/?LinkId=96714)|  
-|Liaison MTOM \+ SOAP1.2|[Mécanisme d'optimisation de la transmission des messages SOAP](http://go.microsoft.com/fwlink/?LinkId=96713)|  
-|Liaison MTOM SOAP 1.1|[Liaison SOAP 1.1 pour MTOM 1.0](http://go.microsoft.com/fwlink/?LinkId=96712)|  
-|MTOM WS\-PolicyAssertions|Résultats à publier.|  
+|<span data-ttu-id="361bc-149">XOP</span><span class="sxs-lookup"><span data-stu-id="361bc-149">XOP</span></span>|[<span data-ttu-id="361bc-150">XML binaire optimisé empaquetage</span><span class="sxs-lookup"><span data-stu-id="361bc-150">XML-binary Optimized Packaging</span></span>](http://go.microsoft.com/fwlink/?LinkId=96714)|  
+|<span data-ttu-id="361bc-151">Liaison MTOM + SOAP1.2</span><span class="sxs-lookup"><span data-stu-id="361bc-151">MTOM + SOAP1.2 Binding</span></span>|[<span data-ttu-id="361bc-152">SOAP Message Transmission Optimization Mechanism</span><span class="sxs-lookup"><span data-stu-id="361bc-152">SOAP Message Transmission Optimization Mechanism</span></span>](http://go.microsoft.com/fwlink/?LinkId=96713)|  
+|<span data-ttu-id="361bc-153">Liaison MTOM SOAP 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-153">MTOM SOAP 1.1 Binding</span></span>|[<span data-ttu-id="361bc-154">Liaison SOAP 1.1 pour MTOM 1.0</span><span class="sxs-lookup"><span data-stu-id="361bc-154">SOAP 1.1 Binding for MTOM 1.0</span></span>](http://go.microsoft.com/fwlink/?LinkId=96712)|  
+|<span data-ttu-id="361bc-155">MTOM WS-PolicyAssertions</span><span class="sxs-lookup"><span data-stu-id="361bc-155">MTOM WS-PolicyAssertions</span></span>|<span data-ttu-id="361bc-156">Résultats à publier.</span><span class="sxs-lookup"><span data-stu-id="361bc-156">To be published.</span></span>|  
   
- <xref:System.ServiceModel.Channels.SecurityBindingElement> prend en charge les spécifications présentées dans le tableau suivant :  
+ <span data-ttu-id="361bc-157"><xref:System.ServiceModel.Channels.SecurityBindingElement> prend en charge les spécifications présentées dans le tableau suivant :</span><span class="sxs-lookup"><span data-stu-id="361bc-157"><xref:System.ServiceModel.Channels.SecurityBindingElement> supports the specifications in the following table.</span></span>  
   
-|Spécification\/document|Link|  
+|<span data-ttu-id="361bc-158">Spécification/document</span><span class="sxs-lookup"><span data-stu-id="361bc-158">Specification/document</span></span>|<span data-ttu-id="361bc-159">Link</span><span class="sxs-lookup"><span data-stu-id="361bc-159">Link</span></span>|  
 |-----------------------------|----------|  
-|WSS : SOAP Message Security 1,0|[Web Services Security : SOAP Message Security 1.0](http://go.microsoft.com/fwlink/?LinkId=94684)|  
-|WSS : Username Token Profile 1.0|[Web Services Security UsernameToken Profile 1.0](http://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> requérir Password\/@Type\=PasswordText \(valeur par défaut\)|  
-|WSS : X.509 Token Profile 1.0|[Web Services Security X.509 Certificate Token Profile](http://go.microsoft.com/fwlink/?LinkId=95335)|  
-|WSS: SAML 1.1 Token Profile 1,0|[Web Services Security: SAML Token Profile](http://go.microsoft.com/fwlink/?LinkId=96693)|  
-|WSS : SOAP Message Security 1.1|[Web Services Security : SOAP Message Security 1.1](http://go.microsoft.com/fwlink/?LinkId=91240)|  
-|WSS Username Token Profile 1.1|[Web Services Security UsernameToken Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> n'implémentez pas la dérivation de clés basée sur mot de passe ;<br /><br /> requérir Password\/@Type\=PasswordText \(valeur par défaut\)|  
-|WSS : X509 Token Profile 1.1|[Web Services Security X.509 Certificate Token Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=95332)|  
-|WSS: Kerberos Token Profile 1.1|[Web Services Security Kerberos Token Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=95333)|  
-|WSS: SAML 1.1 Token Profile 1.1|[Web Services Security SAML Token Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=96694)|  
-|WS\-Secure Conversation|[Web Services Secure Conversation Language](http://go.microsoft.com/fwlink/?LinkId=95317)|  
-|WS\-Trust 1.4 \(page pouvant être en anglais\)|[Web Services Trust Language](http://go.microsoft.com/fwlink/?LinkId=169514)|  
-|WS\-SecurityPolicy 2005\/07|[Web Services Secure Conversation Language](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Selon les corrections des errata soumis au comité technique OASIS WS\-SX.<br /><br /> [ws\-sx message](http://go.microsoft.com/fwlink/?LinkId=96700)|  
-|WS\-ReliableMessaging 1.1|[Protocole de messagerie fiable version 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
+|<span data-ttu-id="361bc-160">WSS : SOAP Message Security 1,0</span><span class="sxs-lookup"><span data-stu-id="361bc-160">WSS: SOAP Message Security 1.0</span></span>|[<span data-ttu-id="361bc-161">Web Services Security : SOAP Message Security 1.0</span><span class="sxs-lookup"><span data-stu-id="361bc-161">Web Services Security: SOAP Message Security 1.0</span></span>](http://go.microsoft.com/fwlink/?LinkId=94684)|  
+|<span data-ttu-id="361bc-162">WSS : Username Token Profile 1.0</span><span class="sxs-lookup"><span data-stu-id="361bc-162">WSS: Username Token Profile 1.0</span></span>|[<span data-ttu-id="361bc-163">Web Services Security UsernameToken Profile 1.0</span><span class="sxs-lookup"><span data-stu-id="361bc-163">Web Services Security UsernameToken Profile 1.0</span></span>](http://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> <span data-ttu-id="361bc-164">nécessitent Password/@Type= PasswordText (par défaut)</span><span class="sxs-lookup"><span data-stu-id="361bc-164">require Password/@Type=PasswordText (default)</span></span>|  
+|<span data-ttu-id="361bc-165">WSS : X.509 Token Profile 1.0</span><span class="sxs-lookup"><span data-stu-id="361bc-165">WSS: X.509 Token Profile 1.0</span></span>|[<span data-ttu-id="361bc-166">Web Services Security X.509 Certificate Token Profile</span><span class="sxs-lookup"><span data-stu-id="361bc-166">Web Services Security X.509 Certificate Token Profile</span></span>](http://go.microsoft.com/fwlink/?LinkId=95335)|  
+|<span data-ttu-id="361bc-167">WSS: SAML 1.1 Token Profile 1,0</span><span class="sxs-lookup"><span data-stu-id="361bc-167">WSS: SAML 1.1 Token Profile 1.0</span></span>|[<span data-ttu-id="361bc-168">Web Services Security : Profil du jeton SAML</span><span class="sxs-lookup"><span data-stu-id="361bc-168">Web Services Security: SAML Token Profile</span></span>](http://go.microsoft.com/fwlink/?LinkId=96693)|  
+|<span data-ttu-id="361bc-169">WSS : SOAP Message Security 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-169">WSS: SOAP Message Security 1.1</span></span>|[<span data-ttu-id="361bc-170">Web Services Security : SOAP Message Security 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-170">Web Services Security: SOAP Message Security 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=91240)|  
+|<span data-ttu-id="361bc-171">WSS Username Token Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-171">WSS Username Token Profile 1.1</span></span>|[<span data-ttu-id="361bc-172">Web Services Security UsernameToken Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-172">Web Services Security UsernameToken Profile 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> <span data-ttu-id="361bc-173">n'implémentez pas la dérivation de clés basée sur mot de passe ;</span><span class="sxs-lookup"><span data-stu-id="361bc-173">do not implement password-based key derivation;</span></span><br /><br /> <span data-ttu-id="361bc-174">nécessitent Password/@Type= PasswordText (par défaut)</span><span class="sxs-lookup"><span data-stu-id="361bc-174">require Password/@Type=PasswordText (default)</span></span>|  
+|<span data-ttu-id="361bc-175">WSS : X509 Token Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-175">WSS: X509 Token Profile 1.1</span></span>|[<span data-ttu-id="361bc-176">Web Services Security X.509 Certificate Token Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-176">Web Services Security X.509 Certificate Token Profile 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=95332)|  
+|<span data-ttu-id="361bc-177">WSS: Kerberos Token Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-177">WSS: Kerberos Token Profile 1.1</span></span>|[<span data-ttu-id="361bc-178">Web Services Security Kerberos Token Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-178">Web Services Security Kerberos Token Profile 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=95333)|  
+|<span data-ttu-id="361bc-179">WSS: SAML 1.1 Token Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-179">WSS: SAML 1.1 Token Profile 1.1</span></span>|[<span data-ttu-id="361bc-180">Web Services Security SAML Token Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-180">Web Services Security SAML Token Profile 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=96694)|  
+|<span data-ttu-id="361bc-181">WS-Secure Conversation</span><span class="sxs-lookup"><span data-stu-id="361bc-181">WS-Secure Conversation</span></span>|[<span data-ttu-id="361bc-182">Langue de Conversation sécurisée de Services Web</span><span class="sxs-lookup"><span data-stu-id="361bc-182">Web Services Secure Conversation Language</span></span>](http://go.microsoft.com/fwlink/?LinkId=95317)|  
+|<span data-ttu-id="361bc-183">WS-Trust 1.4 (page pouvant être en anglais)</span><span class="sxs-lookup"><span data-stu-id="361bc-183">WS-Trust 1.4</span></span>|[<span data-ttu-id="361bc-184">Services Web confiance Language</span><span class="sxs-lookup"><span data-stu-id="361bc-184">Web Services Trust Language</span></span>](http://go.microsoft.com/fwlink/?LinkId=169514)|  
+|<span data-ttu-id="361bc-185">WS-SecurityPolicy 2005/07</span><span class="sxs-lookup"><span data-stu-id="361bc-185">WS-SecurityPolicy 2005/07</span></span>|[<span data-ttu-id="361bc-186">Langue de Conversation sécurisée de Services Web</span><span class="sxs-lookup"><span data-stu-id="361bc-186">Web Services Secure Conversation Language</span></span>](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> <span data-ttu-id="361bc-187">Selon les corrections des errata soumis au comité technique OASIS WS-SX.</span><span class="sxs-lookup"><span data-stu-id="361bc-187">As amended by errata submitted to OASIS WS-SX Technical Committee.</span></span><br /><br /> [<span data-ttu-id="361bc-188">message de ws-sx.</span><span class="sxs-lookup"><span data-stu-id="361bc-188">ws-sx message</span></span>](http://go.microsoft.com/fwlink/?LinkId=96700)|  
+|<span data-ttu-id="361bc-189">WS-ReliableMessaging 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-189">WS-ReliableMessaging 1.1</span></span>|[<span data-ttu-id="361bc-190">Protocole de messagerie fiable version 1,1</span><span class="sxs-lookup"><span data-stu-id="361bc-190">Reliable Messaging Protocol version 1.1</span></span>](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
   
- <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> prend en charge les spécifications présentées dans le tableau suivant :  
+ <span data-ttu-id="361bc-191"><xref:System.ServiceModel.Channels.TransactionFlowBindingElement> prend en charge les spécifications présentées dans le tableau suivant :</span><span class="sxs-lookup"><span data-stu-id="361bc-191"><xref:System.ServiceModel.Channels.TransactionFlowBindingElement> supports the specifications in the following table.</span></span>  
   
-|Spécification\/Document|Link|  
+|<span data-ttu-id="361bc-192">Spécification/Document</span><span class="sxs-lookup"><span data-stu-id="361bc-192">Specification/Document</span></span>|<span data-ttu-id="361bc-193">Link</span><span class="sxs-lookup"><span data-stu-id="361bc-193">Link</span></span>|  
 |-----------------------------|----------|  
-|WS\-Coordination|[Web Services Coordination](http://go.microsoft.com/fwlink/?LinkId=95324)|  
-|WS\-AtomicTransaction|[Web Services Atomic Transaction](http://go.microsoft.com/fwlink/?LinkId=95323)|  
+|<span data-ttu-id="361bc-194">WS-Coordination</span><span class="sxs-lookup"><span data-stu-id="361bc-194">WS-Coordination</span></span>|[<span data-ttu-id="361bc-195">Coordination de Services Web</span><span class="sxs-lookup"><span data-stu-id="361bc-195">Web Services Coordination</span></span>](http://go.microsoft.com/fwlink/?LinkId=95324)|  
+|<span data-ttu-id="361bc-196">WS-AtomicTransaction</span><span class="sxs-lookup"><span data-stu-id="361bc-196">WS-AtomicTransaction</span></span>|[<span data-ttu-id="361bc-197">Transaction atomique des Services Web</span><span class="sxs-lookup"><span data-stu-id="361bc-197">Web Services Atomic Transaction</span></span>](http://go.microsoft.com/fwlink/?LinkId=95323)|  
   
- Les classes  <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <xref:System.ServiceModel.Description.WSDLExporter>, <xref:System.ServiceModel.Description.WSDLImporter> et <xref:System.ServiceModel.Description.MetadataResolver> fournissent la prise en charge des spécifications de métadonnées suivantes.  
+ <span data-ttu-id="361bc-198">Le <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <!--zz <xref:System.ServiceModel.Description.WSDLExporter>, <xref:System.ServiceModel.Description.WSDLImporter>, --> `System.ServiceModel.Description.MetadataImporter`, `System.ServiceModel.Description.WSDLImporter`, et <xref:System.ServiceModel.Description.MetadataResolver> classes prennent en charge les spécifications de métadonnées suivantes :</span><span class="sxs-lookup"><span data-stu-id="361bc-198">The <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <!--zz <xref:System.ServiceModel.Description.WSDLExporter>, <xref:System.ServiceModel.Description.WSDLImporter>, --> `System.ServiceModel.Description.MetadataImporter`, `System.ServiceModel.Description.WSDLImporter`, and <xref:System.ServiceModel.Description.MetadataResolver> classes provide support for the following metadata specifications:</span></span>  
   
--   [Schéma XML, partie 1 : structures \(deuxième édition\)](http://go.microsoft.com/fwlink/?LinkId=3536)  
+-   [<span data-ttu-id="361bc-199">XML Schema Part 1 : Structures Second Edition</span><span class="sxs-lookup"><span data-stu-id="361bc-199">XML Schema Part 1: Structures Second Edition</span></span>](http://go.microsoft.com/fwlink/?LinkId=3536)  
   
--   [Schéma XML, partie 2 : types de données \(deuxième édition\)](http://go.microsoft.com/fwlink/?LinkId=40138)  
+-   [<span data-ttu-id="361bc-200">XML Schema Part 2 : Types de données deuxième édition</span><span class="sxs-lookup"><span data-stu-id="361bc-200">XML Schema Part 2: Data types Second Edition</span></span>](http://go.microsoft.com/fwlink/?LinkId=40138)  
   
--   [WSDL 1.1](http://go.microsoft.com/fwlink/?LinkId=96160)  
+-   [<span data-ttu-id="361bc-201">WSDL 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-201">WSDL 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=96160)  
   
--   [WS\-Policy 1.2](http://go.microsoft.com/fwlink/?LinkId=96705)  
+-   [<span data-ttu-id="361bc-202">WS-Policy 1.2</span><span class="sxs-lookup"><span data-stu-id="361bc-202">WS-Policy 1.2</span></span>](http://go.microsoft.com/fwlink/?LinkId=96705)  
   
--   [WS\-Policy 1.5](http://go.microsoft.com/fwlink/?LinkId=96706)  
+-   [<span data-ttu-id="361bc-203">WS-Policy 1.5</span><span class="sxs-lookup"><span data-stu-id="361bc-203">WS-Policy 1.5</span></span>](http://go.microsoft.com/fwlink/?LinkId=96706)  
   
--   [WS\-PolicyAttachment 1.2](http://go.microsoft.com/fwlink/?LinkId=96707)  
+-   [<span data-ttu-id="361bc-204">WS-PolicyAttachment 1.2</span><span class="sxs-lookup"><span data-stu-id="361bc-204">WS-PolicyAttachment 1.2</span></span>](http://go.microsoft.com/fwlink/?LinkId=96707)  
   
--   [WS\-MetadataExchange 1.1](http://go.microsoft.com/fwlink/?LinkId=94868)  
+-   [<span data-ttu-id="361bc-205">WS-MetadataExchange 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-205">WS-MetadataExchange 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=94868)  
   
--   [WS\-Transfer Get pour la récupération de métadonnées](http://go.microsoft.com/fwlink/?LinkId=96708)  
+-   [<span data-ttu-id="361bc-206">WS-Transfer Get pour la récupération de métadonnées</span><span class="sxs-lookup"><span data-stu-id="361bc-206">WS-Transfer Get for metadata retrieval</span></span>](http://go.microsoft.com/fwlink/?LinkId=96708)  
   
- De plus, les profils d'interopérabilité suivants sont implémentés dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ <span data-ttu-id="361bc-207">De plus, les profils d'interopérabilité suivants sont implémentés dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="361bc-207">In addition, the following Interoperability Profiles are implemented across [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]:</span></span>  
   
--   [Basic Profile 1.1](http://go.microsoft.com/fwlink/?LinkId=69313)  
+-   [<span data-ttu-id="361bc-208">Basic Profile 1.1</span><span class="sxs-lookup"><span data-stu-id="361bc-208">Basic Profile 1.1</span></span>](http://go.microsoft.com/fwlink/?LinkId=69313)  
   
--   [Simple SOAP Binding 1.0](http://go.microsoft.com/fwlink/?LinkId=96710)  
+-   [<span data-ttu-id="361bc-209">Simple SOAP Binding 1.0</span><span class="sxs-lookup"><span data-stu-id="361bc-209">Simple SOAP Binding 1.0</span></span>](http://go.microsoft.com/fwlink/?LinkId=96710)  
   
--   [Basic Security Profile 1.0 document non définitif](http://go.microsoft.com/fwlink/?LinkId=96711)  
+-   [<span data-ttu-id="361bc-210">Basic Security Profile 1.0 travail brouillon</span><span class="sxs-lookup"><span data-stu-id="361bc-210">Basic Security Profile 1.0 Working Draft</span></span>](http://go.microsoft.com/fwlink/?LinkId=96711)  
   
-## Voir aussi  
- [Protocoles de services Web pris en charge par des liaisons d'interopérabilité fournies par le système](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)   
- [Protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)   
- [Référence des schémas de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)   
- [WSDL et stratégie](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)   
- [Protocoles de sécurité](../../../../docs/framework/wcf/feature-details/security-protocols.md)   
- [Protocole de messagerie fiable version 1.0](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)   
- [Protocole de messagerie fiable version 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)   
- [Protocoles de transaction](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)   
- [Protocole d'échange de contexte](../../../../docs/framework/wcf/feature-details/context-exchange-protocol.md)
+## <a name="see-also"></a><span data-ttu-id="361bc-211">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="361bc-211">See Also</span></span>  
+ [<span data-ttu-id="361bc-212">Protocoles pris en charge par les liaisons d’interopérabilité fournies par le système des Services Web</span><span class="sxs-lookup"><span data-stu-id="361bc-212">Web Services Protocols Supported by System-Provided Interoperability Bindings</span></span>](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+ [<span data-ttu-id="361bc-213">Protocoles de messagerie</span><span class="sxs-lookup"><span data-stu-id="361bc-213">Messaging Protocols</span></span>](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)  
+ [<span data-ttu-id="361bc-214">Référence de schéma de contrat de données</span><span class="sxs-lookup"><span data-stu-id="361bc-214">Data Contract Schema Reference</span></span>](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
+ [<span data-ttu-id="361bc-215">WSDL et stratégie</span><span class="sxs-lookup"><span data-stu-id="361bc-215">WSDL and Policy</span></span>](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)  
+ [<span data-ttu-id="361bc-216">Protocoles de sécurité</span><span class="sxs-lookup"><span data-stu-id="361bc-216">Security Protocols</span></span>](../../../../docs/framework/wcf/feature-details/security-protocols.md)  
+ [<span data-ttu-id="361bc-217">Protocole de messagerie fiable version 1.0</span><span class="sxs-lookup"><span data-stu-id="361bc-217">Reliable Messaging Protocol version 1.0</span></span>](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)  
+ [<span data-ttu-id="361bc-218">Protocole de messagerie fiable version 1,1</span><span class="sxs-lookup"><span data-stu-id="361bc-218">Reliable Messaging Protocol version 1.1</span></span>](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)  
+ [<span data-ttu-id="361bc-219">Protocoles de transaction</span><span class="sxs-lookup"><span data-stu-id="361bc-219">Transaction Protocols</span></span>](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)  
+ [<span data-ttu-id="361bc-220">Protocole d’échange de contexte</span><span class="sxs-lookup"><span data-stu-id="361bc-220">Context Exchange Protocol</span></span>](../../../../docs/framework/wcf/feature-details/context-exchange-protocol.md)

@@ -1,35 +1,33 @@
 ---
-title: "Input past end of file | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID62"
-dev_langs: 
-  - "VB"
+title: "L'entrée dépasse la fin du fichier"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID62
 ms.assetid: 65292704-6e7d-4622-9f50-eb655a59b016
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 27de462d5d28ee09107d75afe8269e7401c4dc39
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Input past end of file
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Une instruction `Input` lit à partir d'un fichier vide ou d'un fichier dans lequel toutes les données sont utilisées ou vous avez utilisé la fonction `EOF` avec un fichier ouvert pour un accès binaire.  
+# <a name="input-past-end-of-file"></a><span data-ttu-id="bcd0b-102">L'entrée dépasse la fin du fichier</span><span class="sxs-lookup"><span data-stu-id="bcd0b-102">Input past end of file</span></span>
+<span data-ttu-id="bcd0b-103">Soit un `Input` instruction lit à partir d’un fichier qui est vide ou dans lequel toutes les données est utilisée, ou vous avez utilisé le `EOF` fonction avec un fichier ouvert pour un accès binaire.</span><span class="sxs-lookup"><span data-stu-id="bcd0b-103">Either an `Input` statement is reading from a file that is empty or one in which all the data is used, or you used the `EOF` function with a file opened for binary access.</span></span>  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="bcd0b-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="bcd0b-104">To correct this error</span></span>  
   
-1.  Utilisez la fonction `EOF` immédiatement avant l'instruction `Input` pour détecter la fin du fichier.  
+1.  <span data-ttu-id="bcd0b-105">Utilisez le `EOF` de fonction immédiatement avant la `Input` instruction pour détecter la fin du fichier.</span><span class="sxs-lookup"><span data-stu-id="bcd0b-105">Use the `EOF` function immediately before the `Input` statement to detect the end of the file.</span></span>  
   
-2.  Si le fichier est ouvert pour un accès binaire, utilisez `Seek` et `Loc`.  
+2.  <span data-ttu-id="bcd0b-106">Si le fichier est ouvert pour un accès binaire, utilisez `Seek` et `Loc`.</span><span class="sxs-lookup"><span data-stu-id="bcd0b-106">If the file is opened for binary access, use `Seek` and `Loc`.</span></span>  
   
-## Voir aussi  
- <xref:Microsoft.VisualBasic.FileSystem.Input%2A>   
- <xref:Microsoft.VisualBasic.FileSystem.EOF%2A>   
- <xref:Microsoft.VisualBasic.FileSystem.Seek%2A>   
+## <a name="see-also"></a><span data-ttu-id="bcd0b-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bcd0b-107">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.FileSystem.Input%2A>  
+ <xref:Microsoft.VisualBasic.FileSystem.EOF%2A>  
+ <xref:Microsoft.VisualBasic.FileSystem.Seek%2A>  
  <xref:Microsoft.VisualBasic.FileSystem.Loc%2A>

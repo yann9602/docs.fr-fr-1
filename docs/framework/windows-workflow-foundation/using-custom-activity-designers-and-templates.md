@@ -1,36 +1,40 @@
 ---
-title: "Utilisation de concepteurs d&#39;activit&#233;s et de mod&#232;les d&#39;activit&#233; personnalis&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Utilisation de concepteurs d'activités et de modèles d'activité personnalisés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1aab82e7-7f89-4255-be46-526b09ceeb8b
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6c07855537e7fdbd2d2323c00b7fe8f5c7cb1d4f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Utilisation de concepteurs d&#39;activit&#233;s et de mod&#232;les d&#39;activit&#233; personnalis&#233;s
-Cette section contient des rubriques qui expliquent comment créer des concepteurs d'activités personnalisés et des modèles d'activité personnalisés.  
+# <a name="using-custom-activity-designers-and-templates"></a><span data-ttu-id="85bce-102">Utilisation de concepteurs d'activités et de modèles d'activité personnalisés</span><span class="sxs-lookup"><span data-stu-id="85bce-102">Using Custom Activity Designers and Templates</span></span>
+<span data-ttu-id="85bce-103">Cette section contient des rubriques qui expliquent comment créer des concepteurs d'activités personnalisés et des modèles d'activité personnalisés.</span><span class="sxs-lookup"><span data-stu-id="85bce-103">This section contains topics describing how to create custom activity designers and custom activity templates.</span></span>  
   
-## Dans cette section  
- [Procédure : créer un concepteur d'activités personnalisées](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-activity-designer.md)  
- Explique comment créer un concepteur d'activités personnalisées lorsque les concepteurs fournis par le workflow ne sont pas appropriés aux tâches de conception.  
+## <a name="in-this-section"></a><span data-ttu-id="85bce-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="85bce-104">In This Section</span></span>  
+ [<span data-ttu-id="85bce-105">Guide pratique pour créer un concepteur d’activités personnalisé</span><span class="sxs-lookup"><span data-stu-id="85bce-105">How to: Create a Custom Activity Designer</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)  
+ <span data-ttu-id="85bce-106">Explique comment créer un concepteur d’activités personnalisées lorsque les concepteurs fournis par le workflow ne sont pas appropriés aux tâches de conception.</span><span class="sxs-lookup"><span data-stu-id="85bce-106">Describes how create a customized activity designer when the designers provided by the workflow are not appropriate to the design tasks.</span></span>  
   
- [Procédure : créer un modèle d'activité personnalisé](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-activity-template.md)  
- Explique comment utiliser des modèles d'activité personnalisés pour préconfigurer des activités afin que les utilisateurs n'aient pas à créer chaque activité individuellement et à configurer manuellement leurs propriétés et autres paramètres.  
+ [<span data-ttu-id="85bce-107">Guide pratique pour: créer un modèle d’activité personnalisé</span><span class="sxs-lookup"><span data-stu-id="85bce-107">How to: Create a Custom Activity Template</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-template.md)  
+ <span data-ttu-id="85bce-108">Explique comment utiliser des modèles d'activité personnalisés pour préconfigurer des activités afin que les utilisateurs n'aient pas à créer chaque activité individuellement et à configurer manuellement leurs propriétés et autres paramètres.</span><span class="sxs-lookup"><span data-stu-id="85bce-108">Describes how to use custom activity templates to preconfigure activities so that users do not have to create each activity individually and configure their properties and other settings manually.</span></span>  
   
- [Utilisation du contexte d'édition ModelItem](../../../docs/framework/windows-workflow-foundation//using-the-modelitem-editing-context.md)  
- Décrit comment utiliser les fonctionnalités du contexte d'édition ModelItem pour permettre au concepteur d'interagir avec l'hôte.  
+ [<span data-ttu-id="85bce-109">Utilisation du contexte d’édition ModelItem</span><span class="sxs-lookup"><span data-stu-id="85bce-109">Using the ModelItem Editing Context</span></span>](../../../docs/framework/windows-workflow-foundation/using-the-modelitem-editing-context.md)  
+ <span data-ttu-id="85bce-110">Décrit comment utiliser les fonctionnalités du contexte d’édition ModelItem pour permettre au concepteur d’interagir avec l’hôte.</span><span class="sxs-lookup"><span data-stu-id="85bce-110">Describes how to use the features of the ModelItem editing context to allow the designer to interact with the host.</span></span>  
   
- [Liaison d'une propriété d'activité personnalisée à un contrôle de concepteur](../../../docs/framework/windows-workflow-foundation//binding-a-custom-activity-property-to-a-designer-control.md)  
- Décrit comment lier un contrôle ListView à une propriété d'activité dans le concepteur.  
+ [<span data-ttu-id="85bce-111">Liaison d’une propriété d’activité personnalisée à un contrôle de concepteur</span><span class="sxs-lookup"><span data-stu-id="85bce-111">Binding a custom activity property to a designer control</span></span>](../../../docs/framework/windows-workflow-foundation/binding-a-custom-activity-property-to-a-designer-control.md)  
+ <span data-ttu-id="85bce-112">Décrit comment lier un contrôle ListView à une propriété d'activité dans le concepteur.</span><span class="sxs-lookup"><span data-stu-id="85bce-112">Describes how to bind a listview control to an activity property in the designer.</span></span>  
   
-## Référence  
+## <a name="reference"></a><span data-ttu-id="85bce-113">Référence</span><span class="sxs-lookup"><span data-stu-id="85bce-113">Reference</span></span>  
  <xref:System.Activities.Presentation.ActivityDesigner>  
   
  <xref:System.Activities.Presentation.View.ExpressionTextBox>  
@@ -41,8 +45,8 @@ Cette section contient des rubriques qui expliquent comment créer des concepteu
   
  <xref:System.Activities.Presentation.Model.ModelTreeManager>  
   
-## Rubriques connexes  
- [Réhébergement du Workflow Designer](../../../docs/framework/windows-workflow-foundation//rehosting-the-workflow-designer.md)  
+## <a name="related-sections"></a><span data-ttu-id="85bce-114">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="85bce-114">Related Sections</span></span>  
+ [<span data-ttu-id="85bce-115">Réhébergement du concepteur de flux de travail</span><span class="sxs-lookup"><span data-stu-id="85bce-115">Rehosting the Workflow Designer</span></span>](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
   
-## Ressources externes  
- [Activités personnalisées](../../../docs/framework/windows-workflow-foundation/samples/custom-activities.md)
+## <a name="external-resources"></a><span data-ttu-id="85bce-116">Ressources externes</span><span class="sxs-lookup"><span data-stu-id="85bce-116">External Resources</span></span>  
+ [<span data-ttu-id="85bce-117">Activités personnalisées</span><span class="sxs-lookup"><span data-stu-id="85bce-117">Custom Activities</span></span>](../../../docs/framework/windows-workflow-foundation/samples/custom-activities.md)

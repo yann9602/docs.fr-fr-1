@@ -1,57 +1,59 @@
 ---
-title: "Comment&#160;: acc&#233;der au mod&#232;le objet de document HTML manag&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Modèle DOM HTML, l’accès à"
-  - "Managed HTML DOM, l’accès à"
+title: "Guide pratique pour accéder au modèle DOM (Document Object Model) HTML managé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- HTML DOM [Windows Forms], accessing
+- managed HTML DOM [Windows Forms], accessing
 ms.assetid: 40fa5cd5-1ed8-42f6-a93f-9ac01608bbeb
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 284bd30a0a42f245c6b75d916853b264c7f72e6a
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: acc&#233;der au mod&#232;le objet de document HTML manag&#233;
-Vous pouvez accéder au modèle DOM (Document Object Model) HTML géré à partir de deux types d'applications :  
+# <a name="how-to-access-the-managed-html-document-object-model"></a><span data-ttu-id="35f2f-102">Guide pratique pour accéder au modèle DOM (Document Object Model) HTML managé</span><span class="sxs-lookup"><span data-stu-id="35f2f-102">How to: Access the Managed HTML Document Object Model</span></span>
+<span data-ttu-id="35f2f-103">Vous pouvez accéder au modèle DOM (Document Object Model) HTML géré à partir de deux types d'applications :</span><span class="sxs-lookup"><span data-stu-id="35f2f-103">You can access the managed HTML Document Object Model (DOM) from two types of applications:</span></span>  
   
--   Une application Windows Forms (.exe) qui a hébergé la <xref:System.Windows.Forms.WebBrowser> contrôle. Ces deux technologies complètent mutuellement, avec la <xref:System.Windows.Forms.WebBrowser> contrôle affichant la page à l’utilisateur et le modèle DOM HTML qui représente la structure logique du document.  
+-   <span data-ttu-id="35f2f-104">l'application Windows Forms (.exe) qui a hébergé le contrôle <xref:System.Windows.Forms.WebBrowser> géré.</span><span class="sxs-lookup"><span data-stu-id="35f2f-104">A Windows Forms application (.exe) that hosted the managed <xref:System.Windows.Forms.WebBrowser> control.</span></span> <span data-ttu-id="35f2f-105">Ces deux technologies se complètent mutuellement, avec le contrôle <xref:System.Windows.Forms.WebBrowser> qui affiche la page pour l'utilisateur et le modèle DOM HTML qui représente la structure logique du document ;</span><span class="sxs-lookup"><span data-stu-id="35f2f-105">These two technologies complement one another, with the <xref:System.Windows.Forms.WebBrowser> control displaying the page to the user and the HTML DOM representing the document's logical structure.</span></span>  
   
--   Windows Forms <xref:System.Windows.Forms.UserControl> hébergé dans Internet Explorer. Le modèle DOM HTML qui représente la page sur laquelle vous pouvez accéder à votre <xref:System.Windows.Forms.UserControl> est hébergé pour modifier la structure du document ou ouvrir des boîtes de dialogue modales, parmi de nombreuses autres possibilités.  
+-   <span data-ttu-id="35f2f-106">l'<xref:System.Windows.Forms.UserControl> Windows Forms hébergé dans Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="35f2f-106">A Windows Forms <xref:System.Windows.Forms.UserControl> hosted within Internet Explorer.</span></span> <span data-ttu-id="35f2f-107">Vous pouvez accéder au modèle DOM HTML qui représente la page sur laquelle votre <xref:System.Windows.Forms.UserControl> est hébergé pour modifier la structure du document ou ouvrir des boîtes de dialogue modales, entre autres possibilités.</span><span class="sxs-lookup"><span data-stu-id="35f2f-107">You can access the HTML DOM representing the page on which your <xref:System.Windows.Forms.UserControl> is hosted in order to change the document's structure or open modal dialog boxes, among many other possibilities.</span></span>  
   
-### <a name="to-access-dom-from-a-windows-forms-application"></a>Pour accéder au modèle DOM à partir d’une application Windows Forms  
+### <a name="to-access-dom-from-a-windows-forms-application"></a><span data-ttu-id="35f2f-108">Pour accéder au modèle DOM à partir d'une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="35f2f-108">To access DOM from a Windows Forms application</span></span>  
   
-1.  Hôte un <xref:System.Windows.Forms.WebBrowser> contrôler dans votre application Windows Forms et surveillez le <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> événement. Pour plus d’informations sur l’hébergement de contrôles et la surveillance des événements, consultez la page [événements](../../../../docs/standard/events/index.md).  
+1.  <span data-ttu-id="35f2f-109">Hébergez un contrôle <xref:System.Windows.Forms.WebBrowser> dans votre application Windows Forms et surveillez l'événement <xref:System.Windows.Forms.WebBrowser.DocumentCompleted>.</span><span class="sxs-lookup"><span data-stu-id="35f2f-109">Host a <xref:System.Windows.Forms.WebBrowser> control within your Windows Forms application and monitor for the <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event.</span></span> <span data-ttu-id="35f2f-110">Pour plus d’informations sur l’hébergement de contrôles et la surveillance d’événements, consultez [Événements](../../../../docs/standard/events/index.md).</span><span class="sxs-lookup"><span data-stu-id="35f2f-110">For details on hosting controls and monitoring for events, see [Events](../../../../docs/standard/events/index.md).</span></span>  
   
-2.  Récupérer le <xref:System.Windows.Forms.HtmlDocument> pour la page actuelle en accédant à la <xref:System.Windows.Forms.WebBrowser.Document%2A> propriété de la <xref:System.Windows.Forms.WebBrowser> contrôle.  
+2.  <span data-ttu-id="35f2f-111">Récupérez <xref:System.Windows.Forms.HtmlDocument> pour la page actuelle en accédant à la propriété <xref:System.Windows.Forms.WebBrowser.Document%2A> du contrôle <xref:System.Windows.Forms.WebBrowser>.</span><span class="sxs-lookup"><span data-stu-id="35f2f-111">Retrieve the <xref:System.Windows.Forms.HtmlDocument> for the current page by accessing the <xref:System.Windows.Forms.WebBrowser.Document%2A> property of the <xref:System.Windows.Forms.WebBrowser> control.</span></span>  
+
+### <a name="to-access-dom-from-a-usercontrol-hosted-in-internet-explorer"></a><span data-ttu-id="35f2f-112">Pour accéder au modèle DOM à partir d'un UserControl hébergé dans Internet Explorer</span><span class="sxs-lookup"><span data-stu-id="35f2f-112">To access DOM from a UserControl hosted in Internet Explorer</span></span>  
   
-<!-- TODO: review snippet reference  [!CODE [AccessHTMLDOMApp#1](AccessHTMLDOMApp#1)]  -->  
+1.  <span data-ttu-id="35f2f-113">Créez votre propre classe personnalisée dérivée de la classe <xref:System.Windows.Forms.UserControl>.</span><span class="sxs-lookup"><span data-stu-id="35f2f-113">Create your own custom derived class of the <xref:System.Windows.Forms.UserControl> class.</span></span> <span data-ttu-id="35f2f-114">Pour plus d’informations, consultez [Guide pratique pour créer des contrôles composites](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md).</span><span class="sxs-lookup"><span data-stu-id="35f2f-114">For more information, see [How to: Author Composite Controls](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md).</span></span>  
   
-### <a name="to-access-dom-from-a-usercontrol-hosted-in-internet-explorer"></a>Pour accéder au modèle DOM à partir d'un UserControl hébergé dans Internet Explorer  
-  
-1.  Créer votre propre classe personnalisée dérivée de la <xref:System.Windows.Forms.UserControl> classe. Pour plus d’informations, consultez [Comment : créer des contrôles composites](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md).  
-  
-2.  Placez le code suivant dans votre gestionnaire d’événements Load pour votre <xref:System.Windows.Forms.UserControl>:  
+2.  <span data-ttu-id="35f2f-115">Placez le code suivant dans votre gestionnaire d'événements Load pour <xref:System.Windows.Forms.UserControl> :</span><span class="sxs-lookup"><span data-stu-id="35f2f-115">Place the following code inside of your Load event handler for your <xref:System.Windows.Forms.UserControl>:</span></span>  
   
  [!code-csharp[AccessHTMLDOMControl#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/AccessHTMLDOMControl/cs/UserControl1.cs#1)]
  [!code-vb[AccessHTMLDOMControl#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/AccessHTMLDOMControl/vb/UserControl1.vb#1)]  
   
-## <a name="robust-programming"></a>Programmation fiable  
+## <a name="robust-programming"></a><span data-ttu-id="35f2f-116">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="35f2f-116">Robust Programming</span></span>  
   
-1.  Lors de l’utilisation du modèle DOM via le <xref:System.Windows.Forms.WebBrowser> (contrôle), vous devez systématiquement attendre que la <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> événement se produit avant de tenter d’accéder à la <xref:System.Windows.Forms.WebBrowser.Document%2A> propriété de la <xref:System.Windows.Forms.WebBrowser> contrôle. Le <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> événement est déclenché après chargée de l’ensemble du document ; si vous utilisez le modèle DOM avant, cela risque de provoquer une exception d’exécution dans votre application.  
+1.  <span data-ttu-id="35f2f-117">Quand vous utilisez le modèle DOM via le contrôle <xref:System.Windows.Forms.WebBrowser>, vous devez systématiquement attendre que l'événement <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> se produise avant de tenter d'accéder à la propriété <xref:System.Windows.Forms.WebBrowser.Document%2A> du contrôle <xref:System.Windows.Forms.WebBrowser>.</span><span class="sxs-lookup"><span data-stu-id="35f2f-117">When using the DOM through the <xref:System.Windows.Forms.WebBrowser> control, you should always wait until the <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event occurs before attempting to access the <xref:System.Windows.Forms.WebBrowser.Document%2A> property of the <xref:System.Windows.Forms.WebBrowser> control.</span></span> <span data-ttu-id="35f2f-118">L'événement <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> est déclenché une fois que le document entier a été chargé. Si vous utilisez le modèle DOM avant, cela risque de provoquer une exception au moment de l'exécution dans votre application.</span><span class="sxs-lookup"><span data-stu-id="35f2f-118">The <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event is raised after the entire document has loaded; if you use the DOM before then, you risk causing a run-time exception in your application.</span></span>  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a><span data-ttu-id="35f2f-119">Sécurité .NET Framework</span><span class="sxs-lookup"><span data-stu-id="35f2f-119">.NET Framework Security</span></span>  
   
-1.  Votre application ou <xref:System.Windows.Forms.UserControl> nécessite la confiance totale pour accéder à la DOM. HTML managé Si vous déployez une application Windows Forms à l’aide [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], vous pouvez demander une confiance totale à l’aide de l’élévation d’autorisations ou de déploiement d’applications approuvées, consultez [sécurisation des Applications ClickOnce](../Topic/Securing%20ClickOnce%20Applications.md) pour plus d’informations.  
+1.  <span data-ttu-id="35f2f-120">Votre application ou <xref:System.Windows.Forms.UserControl> nécessite la confiance totale pour accéder au modèle DOM HTML géré.</span><span class="sxs-lookup"><span data-stu-id="35f2f-120">Your application or <xref:System.Windows.Forms.UserControl> will require full trust in order to access the managed HTML DOM.</span></span> <span data-ttu-id="35f2f-121">Si vous déployez une application Windows Forms à l’aide de [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], vous pouvez demander une confiance totale en utilisant les options d’élévation d’autorisations ou de déploiement d’application approuvée. Pour plus d’informations, consultez [Sécurisation des applications ClickOnce](/visualstudio/deployment/securing-clickonce-applications).</span><span class="sxs-lookup"><span data-stu-id="35f2f-121">If you are deploying a Windows Forms application using [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], you can request full trust using either Permission Elevation or Trusted Application Deployment; see [Securing ClickOnce Applications](/visualstudio/deployment/securing-clickonce-applications) for details.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Utilisation du modèle objet de Document HTML managé](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)
+## <a name="see-also"></a><span data-ttu-id="35f2f-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="35f2f-122">See Also</span></span>  
+ [<span data-ttu-id="35f2f-123">Utilisation du modèle DOM HTML managé</span><span class="sxs-lookup"><span data-stu-id="35f2f-123">Using the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

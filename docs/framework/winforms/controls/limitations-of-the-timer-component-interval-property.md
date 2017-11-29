@@ -1,43 +1,44 @@
 ---
-title: "Restrictions relatives &#224; la propri&#233;t&#233; Interval du composant Timer Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Interval (propriété), limitations"
-  - "Timer (composant Windows Forms), limitations de la propriété Interval"
-  - "minuteries, intervalles entre les événements"
-  - "minuteries, reposant sur Windows"
+title: "Limitations du composant Timer Windows Forms &#39; la propriété d’intervalle s"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- timers [Windows Forms], event intervals
+- Interval property [Windows Forms], limitations
+- timers [Windows Forms], Windows-based
+- Timer component [Windows Forms], limitations of Interval property
 ms.assetid: 7e5fb513-77e7-4046-a8e8-aab94e61ca0f
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 72af16b7dcb7709dd132a3748a454eda57acc168
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Restrictions relatives &#224; la propri&#233;t&#233; Interval du composant Timer Windows Forms
-Le composant <xref:System.Windows.Forms.Timer> Windows Forms possède une propriété <xref:System.Windows.Forms.Timer.Interval%2A> qui spécifie le nombre de millisecondes qui doivent s'écouler entre deux événements de minuterie \(Timer\).  Sauf si le composant est désactivé, une minuterie \(Timer\) continue de recevoir l'événement <xref:System.Windows.Forms.Timer.Tick> à intervalles à peu près constants.  
+# <a name="limitations-of-the-windows-forms-timer-component39s-interval-property"></a><span data-ttu-id="7d0f1-102">Limitations du composant Timer Windows Forms &#39; la propriété d’intervalle s</span><span class="sxs-lookup"><span data-stu-id="7d0f1-102">Limitations of the Windows Forms Timer Component&#39;s Interval Property</span></span>
+<span data-ttu-id="7d0f1-103">Windows Forms <xref:System.Windows.Forms.Timer> composant a un <xref:System.Windows.Forms.Timer.Interval%2A> propriété qui spécifie le nombre de millisecondes qui s’écouler entre deux événements de minuterie suivant.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-103">The Windows Forms <xref:System.Windows.Forms.Timer> component has an <xref:System.Windows.Forms.Timer.Interval%2A> property that specifies the number of milliseconds that pass between one timer event and the next.</span></span> <span data-ttu-id="7d0f1-104">À moins que le composant est désactivé, une minuterie continue à recevoir le <xref:System.Windows.Forms.Timer.Tick> événement à intervalles réguliers à peu près égales.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-104">Unless the component is disabled, a timer continues to receive the <xref:System.Windows.Forms.Timer.Tick> event at roughly equal intervals of time.</span></span>  
   
- Ce composant est conçu pour un environnement Windows Forms.  Si vous avez besoin d'une minuterie \(Timer\) adaptée à un environnement serveur, consultez [Introduction to Server\-Based Timers](http://msdn.microsoft.com/fr-fr/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).  
+ <span data-ttu-id="7d0f1-105">Ce composant est conçu pour un environnement Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-105">This component is designed for a Windows Forms environment.</span></span> <span data-ttu-id="7d0f1-106">Si vous avez besoin d’un minuteur adapté à un environnement de serveur, consultez l’article [Introduction aux minuteurs serveur](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).</span><span class="sxs-lookup"><span data-stu-id="7d0f1-106">If you need a timer that is suitable for a server environment, see [Introduction to Server-Based Timers](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).</span></span>  
   
-## Propriété Interval  
- La propriété <xref:System.Windows.Forms.Timer.Interval%2A> impose quelques restrictions dont vous devez tenir compte lorsque vous programmez un composant <xref:System.Windows.Forms.Timer> :  
+## <a name="the-interval-property"></a><span data-ttu-id="7d0f1-107">La propriété Interval</span><span class="sxs-lookup"><span data-stu-id="7d0f1-107">The Interval Property</span></span>  
+ <span data-ttu-id="7d0f1-108">Le <xref:System.Windows.Forms.Timer.Interval%2A> propriété présente quelques limitations à prendre en compte les quand vous programmez un <xref:System.Windows.Forms.Timer> composant :</span><span class="sxs-lookup"><span data-stu-id="7d0f1-108">The <xref:System.Windows.Forms.Timer.Interval%2A> property has a few limitations to consider when you are programming a <xref:System.Windows.Forms.Timer> component:</span></span>  
   
--   Si votre application ou une autre impose une demande importante au système \(boucles longues, calculs complexes, accès intensifs à un périphérique, un réseau ou un port, par exemple\), elle peut ne pas obtenir des événements de minuterie \(Timer\) aussi souvent que spécifié par la propriété <xref:System.Windows.Forms.Timer.Interval%2A>.  
+-   <span data-ttu-id="7d0f1-109">Si votre application ou une autre application effectue des demandes importantes sur le système, telles que les boucles longues, calculs complexes, ou le lecteur, réseau ou des accès de port, votre application ne disposeront pas d’événements de la minuterie aussi souvent que le <xref:System.Windows.Forms.Timer.Interval%2A> propriété spécifie.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-109">If your application or another application is making heavy demands on the system — such as long loops, intensive calculations, or drive, network, or port access — your application may not get timer events as often as the <xref:System.Windows.Forms.Timer.Interval%2A> property specifies.</span></span>  
   
--   Il n'est pas garanti que l'intervalle s'écoule dans le temps exact.  Pour que sa précision soit garantie, la minuterie \(Timer\) doit pouvoir au besoin consulter l'horloge système plutôt que de suivre en interne le temps écoulé.  
+-   <span data-ttu-id="7d0f1-110">L’intervalle n’est pas garantie devant s’écouler exactement le moment.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-110">The interval is not guaranteed to elapse exactly on time.</span></span> <span data-ttu-id="7d0f1-111">Pour garantir l’exactitude, la minuterie doit consulter l’horloge système en fonction des besoins, plutôt que de suivre en interne le temps écoulé.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-111">To ensure accuracy, the timer should check the system clock as needed, rather than try to keep track of accumulated time internally.</span></span>  
   
--   La précision de la propriété <xref:System.Windows.Forms.Timer.Interval%2A> est exprimée en millisecondes.  Certains ordinateurs fournissent un compteur haute résolution qui a une résolution supérieure aux millisecondes.  La disponibilité d'un tel compteur dépend du processeur de votre ordinateur.  Pour plus d'informations, consultez l'article 172338, "How To Use QueryPerformanceCounter to Time Code" \(Comment Utiliser QueryPerformanceCounter sur le code temporel\) dans la Base de connaissances Microsoft à l'adresse http:\/\/www.microsoft.com\/france\/support.  
+-   <span data-ttu-id="7d0f1-112">La précision de la <xref:System.Windows.Forms.Timer.Interval%2A> propriété est exprimée en millisecondes.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-112">The precision of the <xref:System.Windows.Forms.Timer.Interval%2A> property is in milliseconds.</span></span> <span data-ttu-id="7d0f1-113">Certains ordinateurs fournissent un compteur haute résolution d’une résolution supérieure aux millisecondes.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-113">Some computers provide a high-resolution counter that has a resolution higher than milliseconds.</span></span> <span data-ttu-id="7d0f1-114">La disponibilité d’un tel compteur varie selon le matériel de processeur de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-114">The availability of such a counter depends on the processor hardware of your computer.</span></span> <span data-ttu-id="7d0f1-115">Pour plus d’informations, consultez l’article 172338, « Comment utiliser QueryPerformanceCounter à temps Code, » dans la Base de connaissances Microsoft à http://support.microsoft.com.</span><span class="sxs-lookup"><span data-stu-id="7d0f1-115">For more information, see article 172338, "How To Use QueryPerformanceCounter to Time Code," in the Microsoft Knowledge Base at http://support.microsoft.com.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Timer>   
- [Timer, composant](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)   
- [Vue d'ensemble du composant Timer](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="7d0f1-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7d0f1-116">See Also</span></span>  
+ <xref:System.Windows.Forms.Timer>  
+ [<span data-ttu-id="7d0f1-117">Timer, composant</span><span class="sxs-lookup"><span data-stu-id="7d0f1-117">Timer Component</span></span>](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
+ [<span data-ttu-id="7d0f1-118">Vue d’ensemble du composant Timer</span><span class="sxs-lookup"><span data-stu-id="7d0f1-118">Timer Component Overview</span></span>](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)

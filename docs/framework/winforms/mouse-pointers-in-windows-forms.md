@@ -1,45 +1,46 @@
 ---
-title: "Pointeurs de souris dans les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "curseurs, paramètre (Windows Forms)"
-  - "curseurs de la souris"
-  - "pointeurs de souris"
-  - "pointeurs de souris, paramètre (Windows Forms)"
-  - "souris, curseurs"
-  - "pointeurs, paramètre (Windows Forms)"
+title: Pointeurs de souris dans les Windows Forms
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- pointers [Windows Forms], setting
+- mouse pointers
+- mouse cursors
+- mouse pointers [Windows Forms], setting
+- cursors [Windows Forms], setting
+- mouse [Windows Forms], cursors
 ms.assetid: c3400d85-de5b-42e8-abc3-d6088d69ee53
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4fb0e193ccbced719f30ede91cb59cd51dd349a9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Pointeurs de souris dans les Windows Forms
-Le *pointeur* de la souris, également appelé curseur, est une bitmap qui spécifie un point de focus sur l'écran destiné aux entrées d'utilisateur avec la souris.  Cette rubrique fournit une vue d'ensemble du pointeur de la souris dans Windows Forms et décrit quelques\-unes des méthodes de modification et de contrôle de ce dernier.  
+# <a name="mouse-pointers-in-windows-forms"></a><span data-ttu-id="95a18-102">Pointeurs de souris dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="95a18-102">Mouse Pointers in Windows Forms</span></span>
+<span data-ttu-id="95a18-103">La souris *pointeur*, qui est parfois appelé curseur, est une bitmap qui spécifie un point de focus sur l’écran de l’utilisateur avec la souris.</span><span class="sxs-lookup"><span data-stu-id="95a18-103">The mouse *pointer*, which is sometimes referred to as the cursor, is a bitmap that specifies a focus point on the screen for user input with the mouse.</span></span> <span data-ttu-id="95a18-104">Cette rubrique fournit une vue d’ensemble du pointeur de la souris dans les Windows Forms et décrit quelques-unes des façons de modifier et de contrôler le pointeur de la souris.</span><span class="sxs-lookup"><span data-stu-id="95a18-104">This topic provides an overview of the mouse pointer in Windows Forms and describes some of the ways to modify and control the mouse pointer.</span></span>  
   
-## Accès au pointeur de la souris  
- Le pointeur de la souris est représenté par la classe <xref:System.Windows.Forms.Cursor> et chaque <xref:System.Windows.Forms.Control> possède une propriété <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=fullName> qui spécifie le pointeur associé à ce contrôle.  La classe <xref:System.Windows.Forms.Cursor> contient des propriétés qui décrivent le pointeur \(par exemple, les propriétés <xref:System.Windows.Forms.Cursor.Position%2A> et <xref:System.Windows.Forms.Cursor.HotSpot%2A>\), ainsi que des méthodes qui permettent de modifier l'aspect du pointeur \(par exemple, les méthodes <xref:System.Windows.Forms.Cursor.Show%2A>, <xref:System.Windows.Forms.Cursor.Hide%2A> et <xref:System.Windows.Forms.Cursor.DrawStretched%2A>\).  
+## <a name="accessing-the-mouse-pointer"></a><span data-ttu-id="95a18-105">Le pointeur de la souris de l’accès à</span><span class="sxs-lookup"><span data-stu-id="95a18-105">Accessing the Mouse Pointer</span></span>  
+ <span data-ttu-id="95a18-106">Le pointeur de la souris est représenté par le <xref:System.Windows.Forms.Cursor> classe et chaque <xref:System.Windows.Forms.Control> a un <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> propriété qui spécifie le pointeur pour ce contrôle.</span><span class="sxs-lookup"><span data-stu-id="95a18-106">The mouse pointer is represented by the <xref:System.Windows.Forms.Cursor> class, and each <xref:System.Windows.Forms.Control> has a <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> property that specifies the pointer for that control.</span></span> <span data-ttu-id="95a18-107">Le <xref:System.Windows.Forms.Cursor> classe contient des propriétés qui décrivent le pointeur, telles que la <xref:System.Windows.Forms.Cursor.Position%2A> et <xref:System.Windows.Forms.Cursor.HotSpot%2A> propriétés et méthodes qui peuvent modifier l’apparence du pointeur, telles que la <xref:System.Windows.Forms.Cursor.Show%2A>, <xref:System.Windows.Forms.Cursor.Hide%2A>, et <xref:System.Windows.Forms.Cursor.DrawStretched%2A> méthodes.</span><span class="sxs-lookup"><span data-stu-id="95a18-107">The <xref:System.Windows.Forms.Cursor> class contains properties that describe the pointer, such as the <xref:System.Windows.Forms.Cursor.Position%2A> and <xref:System.Windows.Forms.Cursor.HotSpot%2A> properties, and methods that can modify the appearance of the pointer, such as the <xref:System.Windows.Forms.Cursor.Show%2A>, <xref:System.Windows.Forms.Cursor.Hide%2A>, and <xref:System.Windows.Forms.Cursor.DrawStretched%2A> methods.</span></span>  
   
-## Contrôle du pointeur de la souris  
- Vous pouvez limiter la zone d'utilisation du pointeur de la souris ou modifier la position de la souris.  Vous pouvez obtenir ou définir l'emplacement actuel de la souris à l'aide de la propriété <xref:System.Windows.Forms.Cursor.Position%2A> de <xref:System.Windows.Forms.Cursor>.  De plus, vous pouvez limiter la zone d'utilisation du pointeur de la souris via la définition de la propriété <xref:System.Windows.Forms.Cursor.Clip%2A>.  La zone de découpage correspond par défaut à l'écran entier.  
+## <a name="controlling-the-mouse-pointer"></a><span data-ttu-id="95a18-108">Contrôle le pointeur de souris</span><span class="sxs-lookup"><span data-stu-id="95a18-108">Controlling the Mouse Pointer</span></span>  
+ <span data-ttu-id="95a18-109">Vous pouvez être amené à limiter la zone dans laquelle le pointeur de la souris peut être utilisé ou modifier la position de la souris.</span><span class="sxs-lookup"><span data-stu-id="95a18-109">Sometimes you may want to limit the area in which the mouse pointer can be used or change the position the mouse.</span></span> <span data-ttu-id="95a18-110">Vous pouvez obtenir ou définir l’emplacement actuel de la souris à l’aide de la <xref:System.Windows.Forms.Cursor.Position%2A> propriété de la <xref:System.Windows.Forms.Cursor>.</span><span class="sxs-lookup"><span data-stu-id="95a18-110">You can get or set the current location of the mouse using the <xref:System.Windows.Forms.Cursor.Position%2A> property of the <xref:System.Windows.Forms.Cursor>.</span></span> <span data-ttu-id="95a18-111">En outre, vous pouvez limiter la zone que le pointeur de la souris peut être utilisé définir le <xref:System.Windows.Forms.Cursor.Clip%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="95a18-111">In addition, you can limit the area the mouse pointer can be used be setting the <xref:System.Windows.Forms.Cursor.Clip%2A> property.</span></span> <span data-ttu-id="95a18-112">Par défaut, la zone de découpage est l’ensemble de l’écran.</span><span class="sxs-lookup"><span data-stu-id="95a18-112">The clip area, by default, is the entire screen.</span></span>  
   
-## Modification du pointeur de la souris  
- La modification du pointeur de la souris constitue un moyen important de fournir des informations à l'utilisateur.  Par exemple, le pointeur de la souris peut être modifié dans les gestionnaires des événements <xref:System.Windows.Forms.Control.MouseEnter> et <xref:System.Windows.Forms.Control.MouseLeave> pour indiquer à l'utilisateur que des calculs sont en cours et pour limiter l'interaction utilisateur au sein du contrôle.  Il arrive parfois que le pointeur de la souris change en raison d'événements système, tels qu'une opération de glisser\-déplacer dans votre application.  
+## <a name="changing-the-mouse-pointer"></a><span data-ttu-id="95a18-113">Modification du pointeur de la souris</span><span class="sxs-lookup"><span data-stu-id="95a18-113">Changing the Mouse Pointer</span></span>  
+ <span data-ttu-id="95a18-114">Modification du pointeur de la souris est un moyen important de fournir des commentaires à l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="95a18-114">Changing the mouse pointer is an important way of providing feedback to the user.</span></span> <span data-ttu-id="95a18-115">Par exemple, le pointeur de la souris peut être modifié dans les gestionnaires de la <xref:System.Windows.Forms.Control.MouseEnter> et <xref:System.Windows.Forms.Control.MouseLeave> événements indiquer à l’utilisateur que des calculs sont en cours et pour limiter l’interaction utilisateur dans le contrôle.</span><span class="sxs-lookup"><span data-stu-id="95a18-115">For example, the mouse pointer can be modified in the handlers of the <xref:System.Windows.Forms.Control.MouseEnter> and <xref:System.Windows.Forms.Control.MouseLeave> events to tell the user that computations are occurring and to limit user interaction in the control.</span></span> <span data-ttu-id="95a18-116">Parfois, le pointeur de la souris change en raison d’événements système, par exemple lorsque votre application est impliquée dans une opération de glisser-déplacer.</span><span class="sxs-lookup"><span data-stu-id="95a18-116">Sometimes, the mouse pointer will change because of system events, such as when your application is involved in a drag-and-drop operation.</span></span>  
   
- Le principal moyen de modifier le pointeur de la souris consiste à définir la propriété <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=fullName> ou <xref:System.Windows.Forms.Control.DefaultCursor%2A> d'un contrôle en affectant un nouveau <xref:System.Windows.Forms.Cursor>.  Pour obtenir des exemples de modification du pointeur de la souris, consultez l'exemple de code figurant dans la classe <xref:System.Windows.Forms.Cursor>.  Par ailleurs, la classe <xref:System.Windows.Forms.Cursors> expose un jeu d'objets <xref:System.Windows.Forms.Cursor> pour un grand nombre de types de pointeurs différents \(par exemple, un pointeur qui ressemble à une main\).  Pour afficher le pointeur d'attente \(qui ressemble à un sablier\) chaque fois que le pointeur de la souris se trouve sur le contrôle, utilisez la propriété <xref:System.Windows.Forms.Control.UseWaitCursor%2A> de la classe <xref:System.Windows.Forms.Control>.  
+ <span data-ttu-id="95a18-117">La principale manière de modifier le pointeur de la souris est en définissant le <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> ou <xref:System.Windows.Forms.Control.DefaultCursor%2A> propriété d’un contrôle vers un nouveau <xref:System.Windows.Forms.Cursor>.</span><span class="sxs-lookup"><span data-stu-id="95a18-117">The primary way to change the mouse pointer is by setting the <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> or <xref:System.Windows.Forms.Control.DefaultCursor%2A> property of a control to a new <xref:System.Windows.Forms.Cursor>.</span></span> <span data-ttu-id="95a18-118">Pour obtenir des exemples de modification du pointeur de la souris, consultez l’exemple de code dans la <xref:System.Windows.Forms.Cursor> classe.</span><span class="sxs-lookup"><span data-stu-id="95a18-118">For examples of changing the mouse pointer, see the code example in the <xref:System.Windows.Forms.Cursor> class.</span></span> <span data-ttu-id="95a18-119">En outre, le <xref:System.Windows.Forms.Cursors> classe expose un ensemble de <xref:System.Windows.Forms.Cursor> objets pour de nombreux types de pointeurs, comme un pointeur qui ressemble à une main.</span><span class="sxs-lookup"><span data-stu-id="95a18-119">In addition, the <xref:System.Windows.Forms.Cursors> class exposes a set of <xref:System.Windows.Forms.Cursor> objects for many different types of pointers, such as a pointer that resembles a hand.</span></span> <span data-ttu-id="95a18-120">Pour afficher le pointeur d’attente, qui ressemble à un sablier, chaque fois que le pointeur de la souris est sur le contrôle, utilisez la <xref:System.Windows.Forms.Control.UseWaitCursor%2A> propriété de la <xref:System.Windows.Forms.Control> classe.</span><span class="sxs-lookup"><span data-stu-id="95a18-120">To display the wait pointer, which resembles an hourglass, whenever the mouse pointer is on the control, use the <xref:System.Windows.Forms.Control.UseWaitCursor%2A> property of the <xref:System.Windows.Forms.Control> class.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Cursor>   
- [Entrée de la souris dans une application Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)   
- [Fonctionnalité de glisser\-déplacer dans les Windows Forms](../../../docs/framework/winforms/drag-and-drop-functionality-in-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="95a18-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="95a18-121">See Also</span></span>  
+ <xref:System.Windows.Forms.Cursor>  
+ [<span data-ttu-id="95a18-122">Entrée de la souris dans une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="95a18-122">Mouse Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="95a18-123">Fonctionnalité de glisser-déposer dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="95a18-123">Drag-and-Drop Functionality in Windows Forms</span></span>](../../../docs/framework/winforms/drag-and-drop-functionality-in-windows-forms.md)

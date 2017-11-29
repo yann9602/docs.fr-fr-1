@@ -1,44 +1,47 @@
 ---
-title: "Activit&#233; de strat&#233;gie dans .NET Framework&#160;4.5 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Activité de stratégie dans .NET Framework 4.5"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8e375e0c-d7c1-4d69-88ab-36d52db0aa7e
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1374bc086923b9ffef288a7fa90427710bdd91b4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Activit&#233; de strat&#233;gie dans .NET Framework&#160;4.5
-L'activité Policy4 permet que des objets <xref:System.Workflow.Activities.Rules.RuleSet> de [!INCLUDE[wf2](../../../../includes/wf2-md.md)] dans [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] \(WF 3.5\) soient utilisés dans [!INCLUDE[wf2](../../../../includes/wf2-md.md)] dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] \(WF 4.5\) directement à l'aide du moteur de règles fourni dans WF 3.5.À l'aide de cette activité, vous pouvez créer et exécuter un <xref:System.Workflow.Activities.Rules.RuleSet> WF 3.5.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] le moteur de règles WF 3.5 inclus dans Windows Workflow Foundation, consultez la Présentation du moteur de règles Windows Workflow Foundation.Pour plus d'informations sur la migration de règles vers WF dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)], consultez [Conseils de migration](../../../../docs/framework/windows-workflow-foundation//migration-guidance.md).  
+# <a name="policy-activity-in-net-framework-45"></a><span data-ttu-id="7529c-102">Activité de stratégie dans .NET Framework 4.5</span><span class="sxs-lookup"><span data-stu-id="7529c-102">Policy Activity in .NET Framework 4.5</span></span>
+<span data-ttu-id="7529c-103">L'activité Policy4 permet que des objets [!INCLUDE[wf2](../../../../includes/wf2-md.md)] de [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] dans <xref:System.Workflow.Activities.Rules.RuleSet> (WF 3.5) soient utilisés dans [!INCLUDE[wf2](../../../../includes/wf2-md.md)] dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 4.5) directement à l'aide du moteur de règles fourni dans WF 3.5.</span><span class="sxs-lookup"><span data-stu-id="7529c-103">The Policy4 activity allows [!INCLUDE[wf2](../../../../includes/wf2-md.md)] in [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objects to be used in [!INCLUDE[wf2](../../../../includes/wf2-md.md)] in [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 4.5) directly by using the rules engine that is shipped in WF 3.5.</span></span> <span data-ttu-id="7529c-104">À l'aide de cette activité, vous pouvez créer et exécuter un <xref:System.Workflow.Activities.Rules.RuleSet> WF 3.5.</span><span class="sxs-lookup"><span data-stu-id="7529c-104">By using this activity, you can create and execute a WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet>.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="7529c-105"> le moteur de règles WF 3.5 inclus dans Windows Workflow Foundation, consultez la Présentation du moteur de règles Windows Workflow Foundation.</span><span class="sxs-lookup"><span data-stu-id="7529c-105"> WF 3.5 Rules Engine included as part of Windows Workflow Foundation, please read Introduction to the Windows Workflow Foundation Rules Engine.</span></span> <span data-ttu-id="7529c-106">Pour plus d’informations sur la migration de règles WF dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)], veuillez lire [conseils de Migration](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).</span><span class="sxs-lookup"><span data-stu-id="7529c-106">For more information about migrating rules to WF in [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)], please read [Migration Guidance](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="7529c-107">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="7529c-107">The samples may already be installed on your machine.</span></span> <span data-ttu-id="7529c-108">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="7529c-108">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="7529c-109">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="7529c-109">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="7529c-110">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="7529c-110">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Rules-Policy4`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Rules-Policy4`  
   
-## Projets dans cet exemple  
+## <a name="projects-in-this-sample"></a><span data-ttu-id="7529c-111">Projets dans cet exemple</span><span class="sxs-lookup"><span data-stu-id="7529c-111">Projects in this Sample</span></span>  
   
-|Nom du projet|Description|Fichiers principaux|  
-|-------------------|-----------------|-------------------------|  
-|Policy4|Contient l'activité Policy4 et son concepteur [!INCLUDE[wf1](../../../../includes/wf1-md.md)].|**Policy4.cs** : définition de l'activité Policy4.<br /><br /> **PolicyDesigner.xaml** : concepteur personnalisé pour l'activité Policy4.Il utilise l'éditeur de règles \([classe RuleSetDialog](http://go.microsoft.com/fwlink/?LinkId=150378)\) du moteur de règles [!INCLUDE[wf1](../../../../includes/wf1-md.md)].|  
-|ImperativeCodeClientSample|Exemple d'application cliente qui configure et exécute un workflow à l'aide d'une application Policy4 utilisant du code C\# impératif \(aucun concepteur [!INCLUDE[wf1](../../../../includes/wf1-md.md)] utilisé\).|**ApplyDiscount.rules** : fichier avec les définitions de règles [!INCLUDE[wf1](../../../../includes/wf1-md.md)].<br /><br /> **Order.cs** : type qui représente une commande client.Les règles sont appliquées aux objets de ce type.<br /><br /> **Program.cs** : configure et exécute un workflow qui a une activité Policy4 pour appliquer les règles définies dans ApplyDiscount.rules aux instances d'objets Order.<br /><br /> **App.config** : fichier de configuration avec le chemin d'accès du fichier de règles.|  
-|DesignerClientSample|Exemple d'application cliente qui configure et exécute un workflow à l'aide d'une application Policy4 dans le concepteur [!INCLUDE[wf1](../../../../includes/wf1-md.md)].|**Sequence1.xaml** : workflow séquentiel qui utilise une activité Policy4 pour effectuer des évaluations de règle.<br /><br /> `Program.cs` : exécute une instance du workflow définie dans Sequence1.xaml.|  
+|<span data-ttu-id="7529c-112">Nom du projet</span><span class="sxs-lookup"><span data-stu-id="7529c-112">Project Name</span></span>|<span data-ttu-id="7529c-113">Description</span><span class="sxs-lookup"><span data-stu-id="7529c-113">Description</span></span>|<span data-ttu-id="7529c-114">Fichiers principaux</span><span class="sxs-lookup"><span data-stu-id="7529c-114">Main Files</span></span>|  
+|------------------|-----------------|----------------|  
+|<span data-ttu-id="7529c-115">Policy4</span><span class="sxs-lookup"><span data-stu-id="7529c-115">Policy4</span></span>|<span data-ttu-id="7529c-116">Contient l'activité Policy4 et son concepteur [!INCLUDE[wf1](../../../../includes/wf1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7529c-116">Contains the Policy4 activity and its [!INCLUDE[wf1](../../../../includes/wf1-md.md)] designer.</span></span>|<span data-ttu-id="7529c-117">**Policy4.cs**: définition de l’activité Policy4.</span><span class="sxs-lookup"><span data-stu-id="7529c-117">**Policy4.cs**: Policy4 activity definition.</span></span><br /><br /> <span data-ttu-id="7529c-118">**PolicyDesigner.xaml**: concepteur personnalisé pour l’activité Policy4.</span><span class="sxs-lookup"><span data-stu-id="7529c-118">**PolicyDesigner.xaml**: Custom designer for Policy4 activity.</span></span> <span data-ttu-id="7529c-119">Elle utilise l’éditeur de règles ([classe RuleSetDialog](http://go.microsoft.com/fwlink/?LinkId=150378)) à partir de [!INCLUDE[wf1](../../../../includes/wf1-md.md)] moteur de règles.</span><span class="sxs-lookup"><span data-stu-id="7529c-119">It uses the rules editor ([RuleSetDialog Class](http://go.microsoft.com/fwlink/?LinkId=150378)) from [!INCLUDE[wf1](../../../../includes/wf1-md.md)] rules engine.</span></span>|  
+|<span data-ttu-id="7529c-120">ImperativeCodeClientSample</span><span class="sxs-lookup"><span data-stu-id="7529c-120">ImperativeCodeClientSample</span></span>|<span data-ttu-id="7529c-121">Exemple d'application cliente qui configure et exécute un workflow à l'aide d'une application Policy4 utilisant du code C# impératif (aucun concepteur [!INCLUDE[wf1](../../../../includes/wf1-md.md)] utilisé).</span><span class="sxs-lookup"><span data-stu-id="7529c-121">Sample client application that configures and runs a workflow using a Policy4 application using imperative C# code (no [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Designer used).</span></span>|<span data-ttu-id="7529c-122">**ApplyDiscount.rules**: fichier avec [!INCLUDE[wf1](../../../../includes/wf1-md.md)] définitions de règles.</span><span class="sxs-lookup"><span data-stu-id="7529c-122">**ApplyDiscount.rules**: File with [!INCLUDE[wf1](../../../../includes/wf1-md.md)] rule definitions.</span></span><br /><br /> <span data-ttu-id="7529c-123">**Order.cs**: Type qui représente une commande client.</span><span class="sxs-lookup"><span data-stu-id="7529c-123">**Order.cs**: Type that represents a customer order.</span></span> <span data-ttu-id="7529c-124">Les règles sont appliquées aux objets de ce type.</span><span class="sxs-lookup"><span data-stu-id="7529c-124">Rules are applied to objects of this type.</span></span><br /><br /> <span data-ttu-id="7529c-125">**Program.cs**: Configure et exécute un workflow qui a une activité Policy4 pour appliquer les règles définies dans ApplyDiscount.rules aux instances d’objets Order.</span><span class="sxs-lookup"><span data-stu-id="7529c-125">**Program.cs**: Configures and runs a workflow that has a Policy4 activity to apply rules defined in ApplyDiscount.rules to instances of Order objects.</span></span><br /><br /> <span data-ttu-id="7529c-126">**App.config**: fichier de Configuration avec le chemin d’accès du fichier de règles.</span><span class="sxs-lookup"><span data-stu-id="7529c-126">**App.config**: Configuration file with the path of the rules file.</span></span>|  
+|<span data-ttu-id="7529c-127">DesignerClientSample</span><span class="sxs-lookup"><span data-stu-id="7529c-127">DesignerClientSample</span></span>|<span data-ttu-id="7529c-128">Exemple d'application cliente qui configure et exécute un workflow à l'aide d'une application Policy4 dans le concepteur [!INCLUDE[wf1](../../../../includes/wf1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7529c-128">Sample client application that configures and runs a workflow using a Policy4 application in the [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Designer.</span></span>|<span data-ttu-id="7529c-129">**Sequence1.XAML**: workflow séquentiel qui utilise une activité Policy4 pour effectuer des évaluations de règle.</span><span class="sxs-lookup"><span data-stu-id="7529c-129">**Sequence1.xaml**: Sequential workflow that uses a Policy4 activity to perform rule evaluations.</span></span><br /><br /> <span data-ttu-id="7529c-130">`Program.cs` : exécute une instance du workflow définie dans Sequence1.xaml.</span><span class="sxs-lookup"><span data-stu-id="7529c-130">`Program.cs`: Runs an instance of the workflow defined in Sequence1.xaml.</span></span>|  
   
-## Activité Policy4  
- L'activité Policy4 est une classe qui dérive de <xref:System.Activities.NativeActivity%601> et qui permet aux workflows d'exécuter des ensembles de règles \(RuleSets\) [!INCLUDE[wf1](../../../../includes/wf1-md.md)].L'exemple de code suivant est une définition simplifiée du modèle d'objet public de l'activité.  
+## <a name="the-policy4-activity"></a><span data-ttu-id="7529c-131">Activité Policy4</span><span class="sxs-lookup"><span data-stu-id="7529c-131">The Policy4 Activity</span></span>  
+ <span data-ttu-id="7529c-132">L'activité Policy4 est une classe qui dérive de <xref:System.Activities.NativeActivity%601> et qui permet aux workflows d'exécuter des ensembles de règles (RuleSets) [!INCLUDE[wf1](../../../../includes/wf1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7529c-132">The Policy4 activity is a class that derives from <xref:System.Activities.NativeActivity%601> that allows workflows to execute [!INCLUDE[wf1](../../../../includes/wf1-md.md)] RuleSets.</span></span> <span data-ttu-id="7529c-133">L'exemple de code suivant est une définition simplifiée du modèle d'objet public de l'activité.</span><span class="sxs-lookup"><span data-stu-id="7529c-133">The following code example is a simplified definition of the public OM of the activity.</span></span>  
   
 ```csharp  
-  
 public class Policy4Activity<TResult>: NativeActivity<TResult>  
 {  
     public RuleSet RuleSet  
@@ -50,40 +53,40 @@ public class Policy4Activity<TResult>: NativeActivity<TResult>
 }  
 ```  
   
-|Propriété|Description|  
-|---------------|-----------------|  
-|RuleSet|[Classe RuleSet](http://go.microsoft.com/fwlink/?LinkId=150379) WF pour .NET Framework 3.5 à évaluer lorsque l'activité est exécutée.|  
-|TargetObject|Objet sur lequel les règles de la [classe RuleSet](http://go.microsoft.com/fwlink/?LinkId=150379) sont évaluées.|  
-|ValidationError|Liste des erreurs de validation retournées par le moteur de règles [!INCLUDE[wf1](../../../../includes/wf1-md.md)] pour .NET Framework 3.5 lors de la validation de la [classe RuleSet](http://go.microsoft.com/fwlink/?LinkId=150379) sur l'objet cible avant l'exécution.|  
+|<span data-ttu-id="7529c-134">Propriété</span><span class="sxs-lookup"><span data-stu-id="7529c-134">Property</span></span>|<span data-ttu-id="7529c-135">Description</span><span class="sxs-lookup"><span data-stu-id="7529c-135">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="7529c-136">RuleSet</span><span class="sxs-lookup"><span data-stu-id="7529c-136">RuleSet</span></span>|<span data-ttu-id="7529c-137">WF [classe RuleSet](http://go.microsoft.com/fwlink/?LinkId=150379) pour .NET Framework 3.5 à évaluer lorsque l’activité est exécutée.</span><span class="sxs-lookup"><span data-stu-id="7529c-137">The WF [RuleSet Class](http://go.microsoft.com/fwlink/?LinkId=150379) for .NET Framework 3.5 to be evaluated when the activity is executed.</span></span>|  
+|<span data-ttu-id="7529c-138">TargetObject</span><span class="sxs-lookup"><span data-stu-id="7529c-138">TargetObject</span></span>|<span data-ttu-id="7529c-139">L’objet sur lequel les règles dans le [classe RuleSet](http://go.microsoft.com/fwlink/?LinkId=150379) sont évaluées.</span><span class="sxs-lookup"><span data-stu-id="7529c-139">The object against which the Rules in the [RuleSet Class](http://go.microsoft.com/fwlink/?LinkId=150379) are evaluated.</span></span>|  
+|<span data-ttu-id="7529c-140">ValidationError</span><span class="sxs-lookup"><span data-stu-id="7529c-140">ValidationError</span></span>|<span data-ttu-id="7529c-141">La liste des erreurs de validation retournées par la [!INCLUDE[wf1](../../../../includes/wf1-md.md)] du moteur de règles pour .NET Framework 3.5 lors de la validation du [classe RuleSet](http://go.microsoft.com/fwlink/?LinkId=150379) sur l’objet cible avant l’exécution.</span><span class="sxs-lookup"><span data-stu-id="7529c-141">The list of validation errors returned by the [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Rule Engine for .NET Framework 3.5 when validating the [RuleSet Class](http://go.microsoft.com/fwlink/?LinkId=150379) against the target object before execution.</span></span>|  
   
-## Concepteur de l'activité Policy4  
- Le concepteur de Policy4 ajoute la fonctionnalité permettant de configurer une activité Policy4 sans qu'il soit nécessaire d'écrire du code.Après avoir généré la solution, il se trouve dans la boîte à outils, dans la section **Microsoft.Samples.Activities.Rules**.  
+## <a name="policy4-activity-designer"></a><span data-ttu-id="7529c-142">Concepteur de l'activité Policy4</span><span class="sxs-lookup"><span data-stu-id="7529c-142">Policy4 Activity Designer</span></span>  
+ <span data-ttu-id="7529c-143">Le concepteur de Policy4 ajoute la fonctionnalité permettant de configurer une activité Policy4 sans qu'il soit nécessaire d'écrire du code.</span><span class="sxs-lookup"><span data-stu-id="7529c-143">The Policy4 designer adds the capability to configure a Policy4 activity without the need to write code.</span></span> <span data-ttu-id="7529c-144">Après la génération de la solution, il peut être trouvé dans la boîte à outils dans la section **Microsoft.Samples.Activities.Rules**.</span><span class="sxs-lookup"><span data-stu-id="7529c-144">After building the solution, it can be found in the toolbox in the section **Microsoft.Samples.Activities.Rules**.</span></span>  
   
- Le concepteur WF vous permet de configurer un objet cible et un ensemble de règles \(RuleSet\).Lorsque l'utilisateur clique sur le bouton **Modifier le RuleSet**, la [classe RuleSetDialog](http://go.microsoft.com/fwlink/?LinkId=150378) WF pour [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] s'affiche.Cette boîte de dialogue est l'éditeur de règles de [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] réhébergé.Utilisez l'éditeur pour créer et modifier les règles que l'activité Policy4 exécute.  
+ <span data-ttu-id="7529c-145">Le concepteur WF vous permet de configurer un objet cible et un ensemble de règles (RuleSet).</span><span class="sxs-lookup"><span data-stu-id="7529c-145">The WF Designer allows you to configure a target object and a RuleSet.</span></span> <span data-ttu-id="7529c-146">Lorsque le **modifier le RuleSet** bouton est activé, le WF [classe RuleSetDialog](http://go.microsoft.com/fwlink/?LinkId=150378) pour [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] s’affiche.</span><span class="sxs-lookup"><span data-stu-id="7529c-146">When the **Edit RuleSet** button is clicked, the WF [RuleSetDialog Class](http://go.microsoft.com/fwlink/?LinkId=150378) for [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] is displayed.</span></span> <span data-ttu-id="7529c-147">Cette boîte de dialogue est l'éditeur de règles de [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] réhébergé.</span><span class="sxs-lookup"><span data-stu-id="7529c-147">This dialog is the re-hosted [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] Rules Editor.</span></span> <span data-ttu-id="7529c-148">Utilisez l'éditeur pour créer et modifier les règles que l'activité Policy4 exécute.</span><span class="sxs-lookup"><span data-stu-id="7529c-148">Use the editor to create and edit the rules that the Policy4 activity executes.</span></span>  
   
-## Utilisation de cet exemple  
- Aucune configuration particulière n'est requise pour exécuter cet exemple.Ouvrez simplement la solution dans Visual Studio, puis appuyez sur F5 pour exécuter l'application.  
+## <a name="using-this-sample"></a><span data-ttu-id="7529c-149">Utilisation de cet exemple</span><span class="sxs-lookup"><span data-stu-id="7529c-149">Using this Sample</span></span>  
+ <span data-ttu-id="7529c-150">Aucune configuration particulière n'est requise pour exécuter cet exemple.</span><span class="sxs-lookup"><span data-stu-id="7529c-150">No special set up is required to run this sample.</span></span> <span data-ttu-id="7529c-151">Ouvrez simplement la solution dans Visual Studio, puis appuyez sur F5 pour exécuter l'application.</span><span class="sxs-lookup"><span data-stu-id="7529c-151">Just open the solution in Visual Studio, and press F5 to run the application.</span></span>  
   
- Cet exemple contient deux applications clientes : ImperativeCodeClientSample et DesignerClientSample.Le client ImperativeCodeClientSample montre comment configurer et exécuter l'activité Policy40 à l'aide de code C\# impératif.DesignerClientSample montre comment configurer et exécuter l'activité Policy4 à l'aide du concepteur.  
+ <span data-ttu-id="7529c-152">Cet exemple contient deux applications clientes : ImperativeCodeClientSample et DesignerClientSample.</span><span class="sxs-lookup"><span data-stu-id="7529c-152">This sample contains two client applications: ImperativeCodeClientSample and DesignerClientSample.</span></span> <span data-ttu-id="7529c-153">Le client ImperativeCodeClientSample montre comment configurer et exécuter l'activité Policy40 à l'aide de code C# impératif.</span><span class="sxs-lookup"><span data-stu-id="7529c-153">The ImperativeCodeClientSample client shows how to configure and run the Policy40 activity using C# imperative code.</span></span> <span data-ttu-id="7529c-154">DesignerClientSample montre comment configurer et exécuter l'activité Policy4 à l'aide du concepteur.</span><span class="sxs-lookup"><span data-stu-id="7529c-154">The DesignerClientSample shows how to configure and run the Policy4 activity using the designer.</span></span>  
   
-#### Pour exécuter l'application cliente ImperativeCodeClientSample  
+#### <a name="to-run-the-imperativecodeclientsample-client-application"></a><span data-ttu-id="7529c-155">Pour exécuter l'application cliente ImperativeCodeClientSample</span><span class="sxs-lookup"><span data-stu-id="7529c-155">To run the ImperativeCodeClientSample client application</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez le fichier solution Policy4Sample.sln.  
+1.  <span data-ttu-id="7529c-156">À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez le fichier solution Policy4Sample.sln.</span><span class="sxs-lookup"><span data-stu-id="7529c-156">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the Policy4Sample.sln solution file.</span></span>  
   
-2.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **ImperativeCodeClientSample**, puis sélectionnez **Définir comme projet de démarrage**.  
+2.  <span data-ttu-id="7529c-157">Dans **l’Explorateur de solutions**, avec le bouton droit le **ImperativeCodeClientSample** de projet, puis sélectionnez **définir comme projet de démarrage**.</span><span class="sxs-lookup"><span data-stu-id="7529c-157">In **Solution Explorer**, right-click the **ImperativeCodeClientSample** project and then select **Set as startup project**.</span></span>  
   
-3.  Pour exécuter le projet, appuyez sur CTRL\+F5.  
+3.  <span data-ttu-id="7529c-158">Pour exécuter le projet, appuyez sur CTRL+F5.</span><span class="sxs-lookup"><span data-stu-id="7529c-158">To run the project, press CTRL+F5.</span></span>  
   
-#### Pour exécuter l'application cliente ImperativeCodeClientSample  
+#### <a name="to-run-the-imperativecodeclientsample-client-application"></a><span data-ttu-id="7529c-159">Pour exécuter l'application cliente ImperativeCodeClientSample</span><span class="sxs-lookup"><span data-stu-id="7529c-159">To run the ImperativeCodeClientSample client application</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez le fichier solution Policy4Sample.sln.  
+1.  <span data-ttu-id="7529c-160">À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez le fichier solution Policy4Sample.sln.</span><span class="sxs-lookup"><span data-stu-id="7529c-160">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the Policy4Sample.sln solution file.</span></span>  
   
-2.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **DesignerClientSample**.  
+2.  <span data-ttu-id="7529c-161">Dans **l’Explorateur de solutions**, cliquez sur le **DesignerClientSample** projet.</span><span class="sxs-lookup"><span data-stu-id="7529c-161">In **Solution Explorer**, right-click the **DesignerClientSample** project.</span></span>  
   
-    -   Sélectionnez **Définir comme projet de démarrage**.  
+    -   <span data-ttu-id="7529c-162">Sélectionnez **définir comme projet de démarrage**.</span><span class="sxs-lookup"><span data-stu-id="7529c-162">Select **Set as startup project**.</span></span>  
   
-3.  Appuyez sur Ctrl\+Maj\+B pour compiler le projet.  
+3.  <span data-ttu-id="7529c-163">Pour compiler le projet, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="7529c-163">To compile the project, press CTRL+SHIFT+B.</span></span>  
   
-4.  Pour exécuter le projet, appuyez sur CTRL\+F5.  
+4.  <span data-ttu-id="7529c-164">Pour exécuter le projet, appuyez sur CTRL+F5.</span><span class="sxs-lookup"><span data-stu-id="7529c-164">To run the project, press CTRL+F5.</span></span>  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="7529c-165">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7529c-165">See Also</span></span>

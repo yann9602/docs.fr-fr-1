@@ -1,92 +1,96 @@
 ---
-title: "Pinceaux et remplissage de formes dans GDI+ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "pinceaux, GDI+"
-  - "pinceaux, dégradé"
-  - "formes remplies, GDI+"
-  - "GDI+, pinceaux"
-  - "GDI+, formes remplies"
-  - "pinceaux à couleurs dégradées"
-  - "formes, GDI+"
+title: Pinceaux et remplissage de formes dans GDI+
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- brushes [Windows Forms], GDI+
+- filled shapes [Windows Forms], GDI+
+- shapes [Windows Forms], GDI+
+- GDI+, brushes
+- GDI+, filled shapes
+- gradient brushes
+- brushes [Windows Forms], gradient
 ms.assetid: e863e2a7-0294-4130-99b6-f1ea3201e7cd
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 01d7359499c858ad7c4f1da2fa24f18e801bb324
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Pinceaux et remplissage de formes dans GDI+
-Une forme fermée \(comme un rectangle ou une ellipse\) comprend un contour et un intérieur.  Le contour est dessiné avec un stylet et l'intérieur est rempli avec un pinceau.  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit plusieurs classes de pinceaux pour le remplissage des intérieurs des formes fermées : <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush> et <xref:System.Drawing.Drawing2D.PathGradientBrush>.  Toutes ces classes héritent de la classe <xref:System.Drawing.Brush>.  L'illustration suivante représente un rectangle rempli à l'aide d'un pinceau uni et une ellipse remplie à l'aide d'un pinceau à hachures.  
+# <a name="brushes-and-filled-shapes-in-gdi"></a><span data-ttu-id="f1b42-102">Pinceaux et remplissage de formes dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f1b42-102">Brushes and Filled Shapes in GDI+</span></span>
+<span data-ttu-id="f1b42-103">Une forme fermée, comme un rectangle ou une ellipse, se compose d’un plan et un intérieur.</span><span class="sxs-lookup"><span data-stu-id="f1b42-103">A closed shape, such as a rectangle or an ellipse, consists of an outline and an interior.</span></span> <span data-ttu-id="f1b42-104">Le plan est dessiné avec un stylet et l’intérieur est rempli avec un pinceau.</span><span class="sxs-lookup"><span data-stu-id="f1b42-104">The outline is drawn with a pen and the interior is filled with a brush.</span></span> [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="f1b42-105">fournit plusieurs classes de pinceaux pour remplir l’intérieur des formes fermées : <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, et <xref:System.Drawing.Drawing2D.PathGradientBrush>.</span><span class="sxs-lookup"><span data-stu-id="f1b42-105"> provides several brush classes for filling the interiors of closed shapes: <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, and <xref:System.Drawing.Drawing2D.PathGradientBrush>.</span></span> <span data-ttu-id="f1b42-106">Toutes ces classes héritent de la <xref:System.Drawing.Brush> classe.</span><span class="sxs-lookup"><span data-stu-id="f1b42-106">All of these classes inherit from the <xref:System.Drawing.Brush> class.</span></span> <span data-ttu-id="f1b42-107">L’illustration suivante montre un rectangle rempli avec un pinceau uni et une ellipse remplie avec un pinceau à hachures.</span><span class="sxs-lookup"><span data-stu-id="f1b42-107">The following illustration shows a rectangle filled with a solid brush and an ellipse filled with a hatch brush.</span></span>  
   
- ![Formes pleines](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art17.png "Aboutgdip02\_art17")  
+ <span data-ttu-id="f1b42-108">![Formes pleines](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art17.gif "Aboutgdip02_art17")</span><span class="sxs-lookup"><span data-stu-id="f1b42-108">![Filled Shapes](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art17.gif "Aboutgdip02_art17")</span></span>  
   
-## Pinceaux unis  
- Pour remplir une forme fermée, vous avez besoin d'une instance de la classe <xref:System.Drawing.Graphics> et d'un objet <xref:System.Drawing.Brush>.  L'instance de la classe <xref:System.Drawing.Graphics> fournit des méthodes, telles que <xref:System.Drawing.Graphics.FillRectangle%2A> et <xref:System.Drawing.Graphics.FillEllipse%2A>, et l'objet <xref:System.Drawing.Brush> stocke des attributs de remplissage, par exemple la couleur et le motif.  <xref:System.Drawing.Brush> est passé en tant qu'argument à la méthode de remplissage.  L'exemple de code suivant montre comment remplir une ellipse avec une couleur rouge unie.  
+## <a name="solid-brushes"></a><span data-ttu-id="f1b42-109">Pinceaux Unis</span><span class="sxs-lookup"><span data-stu-id="f1b42-109">Solid Brushes</span></span>  
+ <span data-ttu-id="f1b42-110">Pour remplir une forme fermée, vous avez besoin d’une instance de la <xref:System.Drawing.Graphics> classe et un <xref:System.Drawing.Brush>.</span><span class="sxs-lookup"><span data-stu-id="f1b42-110">To fill a closed shape, you need an instance of the <xref:System.Drawing.Graphics> class and a <xref:System.Drawing.Brush>.</span></span> <span data-ttu-id="f1b42-111">L’instance de la <xref:System.Drawing.Graphics> classe fournit des méthodes, telles que <xref:System.Drawing.Graphics.FillRectangle%2A> et <xref:System.Drawing.Graphics.FillEllipse%2A>et <xref:System.Drawing.Brush> stocke les attributs de remplissage, telles que la couleur et le motif.</span><span class="sxs-lookup"><span data-stu-id="f1b42-111">The instance of the <xref:System.Drawing.Graphics> class provides methods, such as <xref:System.Drawing.Graphics.FillRectangle%2A> and <xref:System.Drawing.Graphics.FillEllipse%2A>, and the <xref:System.Drawing.Brush> stores attributes of the fill, such as color and pattern.</span></span> <span data-ttu-id="f1b42-112">Le <xref:System.Drawing.Brush> est passé en tant qu’arguments à la méthode de remplissage.</span><span class="sxs-lookup"><span data-stu-id="f1b42-112">The <xref:System.Drawing.Brush> is passed as one of the arguments to the fill method.</span></span> <span data-ttu-id="f1b42-113">L’exemple de code suivant montre comment remplir une ellipse avec une couleur rouge unie.</span><span class="sxs-lookup"><span data-stu-id="f1b42-113">The following code example shows how to fill an ellipse with a solid red color.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#121](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#121)]
  [!code-vb[LinesCurvesAndShapes#121](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#121)]  
   
 > [!NOTE]
->  Dans l'exemple précédent, le pinceau est du type <xref:System.Drawing.SolidBrush> qui hérite de <xref:System.Drawing.Brush>.  
+>  <span data-ttu-id="f1b42-114">Dans l’exemple précédent, le pinceau est de type <xref:System.Drawing.SolidBrush>, qui hérite de <xref:System.Drawing.Brush>.</span><span class="sxs-lookup"><span data-stu-id="f1b42-114">In the preceding example, the brush is of type <xref:System.Drawing.SolidBrush>, which inherits from <xref:System.Drawing.Brush>.</span></span>  
   
-## Pinceaux à hachures  
- Lorsque vous remplissez une forme à l'aide d'un pinceau à hachure, vous spécifiez une couleur de premier plan, une couleur d'arrière\-plan et un style de hachures.  La couleur de premier plan est celle des hachures.  
+## <a name="hatch-brushes"></a><span data-ttu-id="f1b42-115">Pinceaux à hachures</span><span class="sxs-lookup"><span data-stu-id="f1b42-115">Hatch Brushes</span></span>  
+ <span data-ttu-id="f1b42-116">Lorsque vous remplissez une forme avec un pinceau à hachures, vous spécifiez une couleur de premier plan, une couleur d’arrière-plan et un style de hachurage.</span><span class="sxs-lookup"><span data-stu-id="f1b42-116">When you fill a shape with a hatch brush, you specify a foreground color, a background color, and a hatch style.</span></span> <span data-ttu-id="f1b42-117">La couleur de premier plan est la couleur des hachures.</span><span class="sxs-lookup"><span data-stu-id="f1b42-117">The foreground color is the color of the hatching.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#122](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#122)]
  [!code-vb[LinesCurvesAndShapes#122](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#122)]  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit plus de 50 styles de hachurage. Les trois styles présentés dans l'illustration suivante sont <xref:System.Drawing.Drawing2D.HatchStyle>, <xref:System.Drawing.Drawing2D.HatchStyle> et <xref:System.Drawing.Drawing2D.HatchStyle>.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="f1b42-118">fournit plus de 50 styles de hachurage. les trois styles présentés dans l’illustration suivante sont <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>, <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>, et <xref:System.Drawing.Drawing2D.HatchStyle.Cross>.</span><span class="sxs-lookup"><span data-stu-id="f1b42-118"> provides more than 50 hatch styles; the three styles shown in the following illustration are <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>, <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>, and <xref:System.Drawing.Drawing2D.HatchStyle.Cross>.</span></span>  
   
- ![Formes pleines](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art18.png "Aboutgdip02\_art18")  
+ <span data-ttu-id="f1b42-119">![Formes pleines](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art18.gif "Aboutgdip02_art18")</span><span class="sxs-lookup"><span data-stu-id="f1b42-119">![Filled Shapes](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art18.gif "Aboutgdip02_art18")</span></span>  
   
-## Pinceaux à texture  
- Un pinceau à texture vous permet de remplir une forme avec un motif stocké dans une bitmap.  Par exemple, supposez que l'image suivante soit stockée dans un fichier disque `MyTexture.bmp`.  
+## <a name="texture-brushes"></a><span data-ttu-id="f1b42-120">Pinceaux de texture</span><span class="sxs-lookup"><span data-stu-id="f1b42-120">Texture Brushes</span></span>  
+ <span data-ttu-id="f1b42-121">Avec un pinceau de la texture, vous pouvez remplir une forme avec un modèle stocké dans une bitmap.</span><span class="sxs-lookup"><span data-stu-id="f1b42-121">With a texture brush, you can fill a shape with a pattern stored in a bitmap.</span></span> <span data-ttu-id="f1b42-122">Par exemple, supposons que l’image suivante est stockée dans un fichier de disque nommé `MyTexture.bmp`.</span><span class="sxs-lookup"><span data-stu-id="f1b42-122">For example, suppose the following picture is stored in a disk file named `MyTexture.bmp`.</span></span>  
   
- ![Forme pleine](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art19.png "Aboutgdip02\_Art19")  
+ <span data-ttu-id="f1b42-123">![Rempli forme](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art19.gif "Aboutgdip02_Art19")</span><span class="sxs-lookup"><span data-stu-id="f1b42-123">![Filled Shape](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art19.gif "Aboutgdip02_Art19")</span></span>  
   
- L'exemple de code suivant montre comment remplir une ellipse en répétant l'image stockée dans `MyTexture.bmp`.  
+ <span data-ttu-id="f1b42-124">L’exemple de code suivant montre comment remplir une ellipse en répétant l’image stockée dans `MyTexture.bmp`.</span><span class="sxs-lookup"><span data-stu-id="f1b42-124">The following code example shows how to fill an ellipse by repeating the picture stored in `MyTexture.bmp`.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#123](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#123)]
  [!code-vb[LinesCurvesAndShapes#123](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#123)]  
   
- L'illustration suivante montre l'ellipse remplie.  
+ <span data-ttu-id="f1b42-125">L’illustration suivante montre l’ellipse remplie.</span><span class="sxs-lookup"><span data-stu-id="f1b42-125">The following illustration shows the filled ellipse.</span></span>  
   
- ![Forme pleine](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art20.png "AboutGdip02\_Art20")  
+ <span data-ttu-id="f1b42-126">![Rempli forme](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art20.gif "AboutGdip02_Art20")</span><span class="sxs-lookup"><span data-stu-id="f1b42-126">![Filled Shape](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art20.gif "AboutGdip02_Art20")</span></span>  
   
-## Pinceaux à dégradé  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit deux genres de pinceaux de dégradé : linéaire et de tracé.  Utilisez un pinceau à dégradé linéaire pour remplir une forme avec une couleur qui change graduellement à mesure que vous déplacez le pinceau \(horizontalement, verticalement ou en diagonale\) sur la forme.  L'exemple de code suivant montre comment remplir une ellipse à l'aide d'un pinceau à dégradé horizontal qui passe du bleu au vert en passant de l'extrémité gauche à l'extrémité droite de l'ellipse.  
+## <a name="gradient-brushes"></a><span data-ttu-id="f1b42-127">Pinceaux à couleurs dégradées</span><span class="sxs-lookup"><span data-stu-id="f1b42-127">Gradient Brushes</span></span>  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="f1b42-128">fournit deux types de pinceaux de dégradé : linéaire et chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="f1b42-128"> provides two kinds of gradient brushes: linear and path.</span></span> <span data-ttu-id="f1b42-129">Vous pouvez utiliser un pinceau de dégradé linéaire pour remplir une forme avec une couleur qui passe progressivement à mesure que vous déplacez sur la forme horizontalement, verticalement, ou en diagonale.</span><span class="sxs-lookup"><span data-stu-id="f1b42-129">You can use a linear gradient brush to fill a shape with color that changes gradually as you move across the shape horizontally, vertically, or diagonally.</span></span> <span data-ttu-id="f1b42-130">L’exemple de code suivant montre comment remplir une ellipse avec un pinceau de dégradé horizontal qui passe au vert bleu, lorsque vous déplacez le bord gauche de l’ellipse vers le bord droit.</span><span class="sxs-lookup"><span data-stu-id="f1b42-130">The following code example shows how to fill an ellipse with a horizontal gradient brush that changes from blue to green as you move from the left edge of the ellipse to the right edge.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#124](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#124)]
  [!code-vb[LinesCurvesAndShapes#124](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#124)]  
   
- L'illustration suivante montre l'ellipse remplie.  
+ <span data-ttu-id="f1b42-131">L’illustration suivante montre l’ellipse remplie.</span><span class="sxs-lookup"><span data-stu-id="f1b42-131">The following illustration shows the filled ellipse.</span></span>  
   
- ![Forme pleine](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art21.png "AboutGdip02\_Art21")  
+ <span data-ttu-id="f1b42-132">![Rempli forme](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art21.gif "AboutGdip02_Art21")</span><span class="sxs-lookup"><span data-stu-id="f1b42-132">![Filled Shape](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art21.gif "AboutGdip02_Art21")</span></span>  
   
- Un pinceau à dégradé de tracé peut être configuré pour changer de couleur en passant du centre d'une forme à son contour.  
+ <span data-ttu-id="f1b42-133">Un pinceau de dégradé du chemin d’accès peut être configuré pour modifier la couleur que vous déplacez à partir du centre de la forme vers le bord.</span><span class="sxs-lookup"><span data-stu-id="f1b42-133">A path gradient brush can be configured to change color as you move from the center of a shape toward the edge.</span></span>  
   
- ![Forme pleine](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art22.png "AboutGdip02\_Art22")  
+ <span data-ttu-id="f1b42-134">![Rempli forme](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art22.gif "AboutGdip02_Art22")</span><span class="sxs-lookup"><span data-stu-id="f1b42-134">![Filled Shape](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art22.gif "AboutGdip02_Art22")</span></span>  
   
- Les pinceaux à dégradé de tracé offrent une grande souplesse d'utilisation.  Dans l'illustration suivante, le pinceau à dégradé utilisé pour remplir le triangle passe graduellement du rouge au centre à trois couleurs différentes en allant vers les sommets.  
+ <span data-ttu-id="f1b42-135">Pinceaux de dégradé de chemin d’accès est très souple.</span><span class="sxs-lookup"><span data-stu-id="f1b42-135">Path gradient brushes are quite flexible.</span></span> <span data-ttu-id="f1b42-136">Pinceau de dégradé utilisé pour remplir le triangle dans les modifications suivantes d’illustration graduellement du rouge au centre à chacune des trois couleurs sur les sommets.</span><span class="sxs-lookup"><span data-stu-id="f1b42-136">The gradient brush used to fill the triangle in the following illustration changes gradually from red at the center to each of three different colors at the vertices.</span></span>  
   
- ![Forme pleine](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art23.png "AboutGdip02\_Art23")  
+ <span data-ttu-id="f1b42-137">![Rempli forme](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art23.gif "AboutGdip02_Art23")</span><span class="sxs-lookup"><span data-stu-id="f1b42-137">![Filled Shape](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art23.gif "AboutGdip02_Art23")</span></span>  
   
-## Voir aussi  
- <xref:System.Drawing.SolidBrush?displayProperty=fullName>   
- <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=fullName>   
- <xref:System.Drawing.TextureBrush?displayProperty=fullName>   
- <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=fullName>   
- [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [Comment : dessiner un rectangle rempli dans un Windows Form](../../../../docs/framework/winforms/advanced/how-to-draw-a-filled-rectangle-on-a-windows-form.md)   
- [Comment : dessiner une ellipse remplie dans un Windows Form](../../../../docs/framework/winforms/advanced/how-to-draw-a-filled-ellipse-on-a-windows-form.md)
+## <a name="see-also"></a><span data-ttu-id="f1b42-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f1b42-138">See Also</span></span>  
+ <xref:System.Drawing.SolidBrush?displayProperty=nameWithType>  
+ <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=nameWithType>  
+ <xref:System.Drawing.TextureBrush?displayProperty=nameWithType>  
+ <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=nameWithType>  
+ [<span data-ttu-id="f1b42-139">Lignes, courbes et formes</span><span class="sxs-lookup"><span data-stu-id="f1b42-139">Lines, Curves, and Shapes</span></span>](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [<span data-ttu-id="f1b42-140">Guide pratique pour dessiner un rectangle rempli dans un Windows Form</span><span class="sxs-lookup"><span data-stu-id="f1b42-140">How to: Draw a Filled Rectangle on a Windows Form</span></span>](../../../../docs/framework/winforms/advanced/how-to-draw-a-filled-rectangle-on-a-windows-form.md)  
+ [<span data-ttu-id="f1b42-141">Guide pratique pour dessiner une ellipse remplie dans un Windows Form</span><span class="sxs-lookup"><span data-stu-id="f1b42-141">How to: Draw a Filled Ellipse on a Windows Form</span></span>](../../../../docs/framework/winforms/advanced/how-to-draw-a-filled-ellipse-on-a-windows-form.md)

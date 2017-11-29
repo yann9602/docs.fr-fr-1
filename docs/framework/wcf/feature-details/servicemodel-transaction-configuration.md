@@ -1,37 +1,39 @@
 ---
-title: "Configuration des transactions ServiceModel | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "transactions (WCF), configuration ServiceModel"
+title: Configuration des transactions ServiceModel
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: transactions [WCF], ServiceModel configuration
 ms.assetid: 5636067a-7fbd-4485-aaa2-8141c502acf3
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 54b07eff0b54816fe2d359a27f75b07ecb9f355a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Configuration des transactions ServiceModel
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit trois attributs permettant de configurer des transactions pour un service : `transactionFlow`, `transactionProtocol` et `transactionTimeout`.  
+# <a name="servicemodel-transaction-configuration"></a><span data-ttu-id="f7cce-102">Configuration des transactions ServiceModel</span><span class="sxs-lookup"><span data-stu-id="f7cce-102">ServiceModel Transaction Configuration</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="f7cce-103"> fournit trois attributs permettant de configurer des transactions pour un service : `transactionFlow`, `transactionProtocol` et `transactionTimeout`.</span><span class="sxs-lookup"><span data-stu-id="f7cce-103"> provides three attributes for configuring transactions for a service: `transactionFlow`, `transactionProtocol`, and `transactionTimeout`.</span></span>  
   
-## Configuration de transactionFlow  
- La plupart des liaisons prédéfinies fournies par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] contiennent les attributs `transactionFlow` et `transactionProtocol` afin de vous permettre de configurer la liaison pour qu'elle accepte des transactions entrantes pour un point de terminaison spécifique à l'aide d'un protocole de flux de transaction spécifique.Par ailleurs, l'élément `transactionFlow` et son attribut `transactionProtocol` vous permettent de générer votre propre liaison personnalisée.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] la définition des éléments de configuration, consultez [\<liaison\>](../../../../docs/framework/misc/binding.md) et [Schéma de configuration WCF](../../../../docs/framework/configure-apps/file-schema/wcf/index.md).  
+## <a name="configuring-transactionflow"></a><span data-ttu-id="f7cce-104">Configuration de transactionFlow</span><span class="sxs-lookup"><span data-stu-id="f7cce-104">Configuring transactionFlow</span></span>  
+ <span data-ttu-id="f7cce-105">La plupart des liaisons prédéfinies fournies par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] contiennent les attributs `transactionFlow` et `transactionProtocol` afin de vous permettre de configurer la liaison pour qu'elle accepte des transactions entrantes pour un point de terminaison spécifique à l'aide d'un protocole de flux de transaction spécifique.</span><span class="sxs-lookup"><span data-stu-id="f7cce-105">Most of the predefined bindings [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] provides contain the `transactionFlow` and `transactionProtocol` attributes, so that you can configure the binding to accept incoming transactions for a specific endpoint using a specific transaction flow protocol.</span></span> <span data-ttu-id="f7cce-106">Par ailleurs, l'élément `transactionFlow` et son attribut `transactionProtocol` vous permettent de générer votre propre liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="f7cce-106">In addition, you can use the `transactionFlow` element and its `transactionProtocol` attribute to build your own custom binding.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="f7cce-107">les éléments de configuration, consultez [ \<liaison >](../../../../docs/framework/misc/binding.md) et [schéma de Configuration WCF](../../../../docs/framework/configure-apps/file-schema/wcf/index.md).</span><span class="sxs-lookup"><span data-stu-id="f7cce-107"> setting the configuration elements, see [\<binding>](../../../../docs/framework/misc/binding.md) and [WCF Configuration Schema](../../../../docs/framework/configure-apps/file-schema/wcf/index.md).</span></span>  
   
- L'attribut `transactionFlow` spécifie si le flux de transaction est activé pour les points de terminaison de service qui utilisent la liaison.  
+ <span data-ttu-id="f7cce-108">L'attribut `transactionFlow` spécifie si le flux de transaction est activé pour les points de terminaison de service qui utilisent la liaison.</span><span class="sxs-lookup"><span data-stu-id="f7cce-108">The `transactionFlow` attribute specifies whether transaction flow is enabled for service endpoints that use the binding.</span></span>  
   
-## Configuration de transactionProtocol  
- L'attribut `transactionProtocol` spécifie le protocole de transaction à utiliser avec les points de terminaison de service qui utilisent la liaison.  
+## <a name="configuring-transactionprotocol"></a><span data-ttu-id="f7cce-109">Configuration de transactionProtocol</span><span class="sxs-lookup"><span data-stu-id="f7cce-109">Configuring transactionProtocol</span></span>  
+ <span data-ttu-id="f7cce-110">L'attribut `transactionProtocol` spécifie le protocole de transaction à utiliser avec les points de terminaison de service qui utilisent la liaison.</span><span class="sxs-lookup"><span data-stu-id="f7cce-110">The `transactionProtocol` attribute specifies the transaction protocol to use with service endpoints that use the binding.</span></span>  
   
- L'exemple suivant présente une section de configuration qui configure la liaison spécifiée pour prendre en charge le flux de transaction, ainsi qu'une utilisation du protocole WS\-AtomicTransaction.  
+ <span data-ttu-id="f7cce-111">L'exemple suivant présente une section de configuration qui configure la liaison spécifiée pour prendre en charge le flux de transaction, ainsi qu'une utilisation du protocole WS-AtomicTransaction.</span><span class="sxs-lookup"><span data-stu-id="f7cce-111">The following is an example of a configuration section that configures the specified binding to support transaction flow, as well as a use the WS-AtomicTransaction protocol.</span></span>  
   
-```  
+```xml  
 <netNamedPipeBinding>  
    <binding name="test"  
       closeTimeout="00:00:10"  
@@ -48,10 +50,10 @@ caps.handback.revision: 8
 </netNamedPipeBinding>  
 ```  
   
-## Configuration de transactionTimeout  
- Vous pouvez configurer l'attribut `transactionTimeout` pour votre service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans l'élément `behavior` du fichier de configuration.Le code suivant montre comment procéder :  
+## <a name="configuring-transactiontimeout"></a><span data-ttu-id="f7cce-112">Configuration de transactionTimeout</span><span class="sxs-lookup"><span data-stu-id="f7cce-112">Configuring transactionTimeout</span></span>  
+ <span data-ttu-id="f7cce-113">Vous pouvez configurer l'attribut `transactionTimeout` pour votre service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans l'élément `behavior` du fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="f7cce-113">You can configure the `transactionTimeout` attribute for your [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service in the `behavior` element of the configuration file.</span></span> <span data-ttu-id="f7cce-114">Le code suivant montre comment procéder.</span><span class="sxs-lookup"><span data-stu-id="f7cce-114">The following code demonstrates how to do this.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <system.serviceModel>  
       <behaviors>  
@@ -61,14 +63,14 @@ caps.handback.revision: 8
 </configuration>  
 ```  
   
- L'attribut `transactionTimeout` spécifie le délai dans lequel une nouvelle transaction créée au niveau du service doit se terminer.Il est utilisé comme délai d'attente <xref:System.Transactions.TransactionScope> pour toute opération qui établit une nouvelle transaction ; si <xref:System.ServiceModel.OperationBehaviorAttribute> est appliqué, la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> a la valeur `true`.  
+ <span data-ttu-id="f7cce-115">L'attribut `transactionTimeout` spécifie le délai dans lequel une nouvelle transaction créée au niveau du service doit se terminer.</span><span class="sxs-lookup"><span data-stu-id="f7cce-115">The `transactionTimeout` attribute specifies the time period within which a new transaction created at the service must complete.</span></span> <span data-ttu-id="f7cce-116">Il est utilisé comme délai d'attente <xref:System.Transactions.TransactionScope> pour toute opération qui établit une nouvelle transaction ; si <xref:System.ServiceModel.OperationBehaviorAttribute> est appliqué, la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> a la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="f7cce-116">It is used as the <xref:System.Transactions.TransactionScope> time-out for any operation that establishes a new transaction, and if <xref:System.ServiceModel.OperationBehaviorAttribute> is applied, the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> property is set to `true`.</span></span>  
   
- Le délai d'attente spécifie la durée entre la création de la transaction et l'exécution de la phase 1 du protocole de validation en deux phases.  
+ <span data-ttu-id="f7cce-117">Le délai d'attente spécifie la durée entre la création de la transaction et l'exécution de la phase 1 du protocole de validation en deux phases.</span><span class="sxs-lookup"><span data-stu-id="f7cce-117">The time-out specifies the duration of time from the creation of the transaction to the completion of phase 1 in the two-phase commit protocol.</span></span>  
   
- Si cet attribut est défini dans une section de configuration de `service`, vous devez appliquer au moins une méthode du service correspondant avec <xref:System.ServiceModel.OperationBehaviorAttribute>, dans lequel la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> a la valeur `true`.  
+ <span data-ttu-id="f7cce-118">Si cet attribut est défini dans une section de configuration de `service`, vous devez appliquer au moins une méthode du service correspondant avec <xref:System.ServiceModel.OperationBehaviorAttribute>, dans lequel la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> a la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="f7cce-118">If this attribute is set within a `service` configuration section, you should apply at least one method of the corresponding service with <xref:System.ServiceModel.OperationBehaviorAttribute>, in which the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> property is set to `true`.</span></span>  
   
- Notez que la valeur du délai d'attente utilisée est toujours la plus petite entre le paramètre de configuration `transactionTimeout` et la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A>.  
+ <span data-ttu-id="f7cce-119">Notez que la valeur du délai d'attente utilisée est toujours la plus petite entre le paramètre de configuration `transactionTimeout` et la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A>.</span><span class="sxs-lookup"><span data-stu-id="f7cce-119">Note that the time-out value used is the smaller value between this `transactionTimeout` configuration setting and any <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> property.</span></span>  
   
-## Voir aussi  
- [\<liaison\>](../../../../docs/framework/misc/binding.md)   
- [Schéma de configuration WCF](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)
+## <a name="see-also"></a><span data-ttu-id="f7cce-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f7cce-120">See Also</span></span>  
+ [<span data-ttu-id="f7cce-121">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="f7cce-121">\<binding></span></span>](../../../../docs/framework/misc/binding.md)  
+ [<span data-ttu-id="f7cce-122">Schéma de configuration de WCF</span><span class="sxs-lookup"><span data-stu-id="f7cce-122">WCF Configuration Schema</span></span>](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)

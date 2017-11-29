@@ -1,69 +1,69 @@
 ---
-title: "Vue d&#39;ensemble du contr&#244;le WebBrowser | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "WebBrowser"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "pages Web, afficher dans les applications"
-  - "WebBrowser (contrôle Windows Forms), à propos de"
+title: "Vue d'ensemble du contrôle WebBrowser"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: WebBrowser
+helpviewer_keywords:
+- WebBrowser control [Windows Forms], about
+- Web pages [Windows Forms], displaying in applications
 ms.assetid: 6e3e1cc2-9c48-4136-9659-e99e4e60b7e9
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9c2dfae4cbd7f583ce69ff5591c24a573db0d4e4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble du contr&#244;le WebBrowser
-Le contrôle <xref:System.Windows.Forms.WebBrowser> fournit un wrapper managé destiné au contrôle ActiveX WebBrowser.  Le wrapper managé permet d'afficher des pages Web dans vos applications clientes Windows Forms.  Vous pouvez utiliser le contrôle <xref:System.Windows.Forms.WebBrowser> pour dupliquer les fonctionnalités de navigation Web d'Internet Explorer dans votre application ou encore désactiver les fonctionnalités Internet Explorer par défaut et utiliser ce contrôle comme une simple visionneuse de documents HTML.  Vous pouvez également utiliser le contrôle pour ajouter des éléments d'interface utilisateur DHTML à votre formulaire et masquer le fait qu'ils sont hébergés dans le contrôle <xref:System.Windows.Forms.WebBrowser>.  Cette approche vous permet de combiner de façon transparente les contrôles Web et Windows Forms dans une même application.  
+# <a name="webbrowser-control-overview"></a><span data-ttu-id="6772f-102">Vue d'ensemble du contrôle WebBrowser</span><span class="sxs-lookup"><span data-stu-id="6772f-102">WebBrowser Control Overview</span></span>
+<span data-ttu-id="6772f-103">Le <xref:System.Windows.Forms.WebBrowser> contrôle fournit un wrapper managé pour le contrôle WebBrowser ActiveX.</span><span class="sxs-lookup"><span data-stu-id="6772f-103">The <xref:System.Windows.Forms.WebBrowser> control provides a managed wrapper for the WebBrowser ActiveX control.</span></span> <span data-ttu-id="6772f-104">Le wrapper managé vous permet d’afficher des pages Web dans vos applications clientes Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="6772f-104">The managed wrapper lets you display Web pages in your Windows Forms client applications.</span></span> <span data-ttu-id="6772f-105">Vous pouvez utiliser la <xref:System.Windows.Forms.WebBrowser> contrôle de dupliquer les fonctionnalités de navigation Web d’Internet Explorer dans votre application, ou vous peut désactiver la fonctionnalité d’Internet Explorer par défaut et utiliser le contrôle comme une simple visionneuse de documents HTML.</span><span class="sxs-lookup"><span data-stu-id="6772f-105">You can use the <xref:System.Windows.Forms.WebBrowser> control to duplicate Internet Explorer Web browsing functionality in your application or you can disable default Internet Explorer functionality and use the control as a simple HTML document viewer.</span></span> <span data-ttu-id="6772f-106">Vous pouvez également utiliser le contrôle à ajouter des éléments d’interface utilisateur DHTML à votre formulaire et masquer le fait qu’ils sont hébergés dans le <xref:System.Windows.Forms.WebBrowser> contrôle.</span><span class="sxs-lookup"><span data-stu-id="6772f-106">You can also use the control to add DHTML-based user interface elements to your form and hide the fact that they are hosted in the <xref:System.Windows.Forms.WebBrowser> control.</span></span> <span data-ttu-id="6772f-107">Cette approche vous permet de combiner de façon transparente les contrôles Web avec des contrôles Windows Forms dans une application unique.</span><span class="sxs-lookup"><span data-stu-id="6772f-107">This approach lets you seamlessly combine Web controls with Windows Forms controls in a single application.</span></span>  
   
-## Propriétés, méthodes et événements fréquemment utilisés  
- Le contrôle <xref:System.Windows.Forms.WebBrowser> possède plusieurs propriétés, méthodes et événements que vous pouvez utiliser pour implémenter des contrôles d'Internet Explorer.  Par exemple, vous pouvez utiliser la méthode `Navigate` pour implémenter une barre d'adresses, et les méthodes `GoBack`, `GoForward`, `Stop` et `Refresh` pour implémenter des boutons de navigation sur une barre d'outils.  Vous pouvez gérer l'événement `Navigated` pour mettre à jour la barre d'adresses avec la valeur de la propriété `Url` et la barre de titre avec la valeur de la propriété `DocumentTitle`.  
+## <a name="frequently-used-properties-methods-and-events"></a><span data-ttu-id="6772f-108">Propriétés fréquemment utilisées, méthodes et événements</span><span class="sxs-lookup"><span data-stu-id="6772f-108">Frequently Used Properties, Methods, and Events</span></span>  
+ <span data-ttu-id="6772f-109">Le <xref:System.Windows.Forms.WebBrowser> contrôle possède plusieurs propriétés, méthodes et événements que vous pouvez utiliser pour implémenter des contrôles dans Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="6772f-109">The <xref:System.Windows.Forms.WebBrowser> control has several properties, methods, and events that you can use to implement controls found in Internet Explorer.</span></span> <span data-ttu-id="6772f-110">Par exemple, vous pouvez utiliser la `Navigate` méthode pour implémenter une barre d’adresses et le `GoBack`, `GoForward`, `Stop`, et `Refresh` méthodes à implémenter des boutons de navigation sur une barre d’outils.</span><span class="sxs-lookup"><span data-stu-id="6772f-110">For example, you can use the `Navigate` method to implement an address bar, and the `GoBack`, `GoForward`, `Stop`, and `Refresh` methods to implement navigation buttons on a toolbar.</span></span> <span data-ttu-id="6772f-111">Vous pouvez gérer le `Navigated` événement pour mettre à jour de la barre d’adresses avec la valeur de la `Url` propriété et la barre de titre avec la valeur de la `DocumentTitle` propriété.</span><span class="sxs-lookup"><span data-stu-id="6772f-111">You can handle the `Navigated` event to update the address bar with the value of the `Url` property and the title bar with the value of the `DocumentTitle` property.</span></span>  
   
- Si vous souhaitez générer votre propre contenu de page dans votre application, vous pouvez définir la propriété `DocumentText`.  Si vous connaissez le modèle DOM \(Document Object Model\) HTML, vous pouvez également manipuler le contenu de la page Web en cours via la propriété `Document`.  À l'aide de cette propriété, vous pouvez stocker et modifier des documents dans la mémoire au lieu d'explorer les fichiers.  
+ <span data-ttu-id="6772f-112">Si vous souhaitez générer votre propre contenu de page au sein de votre application, vous pouvez définir le `DocumentText` propriété.</span><span class="sxs-lookup"><span data-stu-id="6772f-112">If you want to generate your own page content within your application, you can set the `DocumentText` property.</span></span> <span data-ttu-id="6772f-113">Si vous êtes familiarisé avec le modèle objet de document HTML (DOM), vous pouvez également manipuler le contenu de la page Web actuelle par le biais du `Document` propriété.</span><span class="sxs-lookup"><span data-stu-id="6772f-113">If you are familiar with the HTML document object model (DOM), you can also manipulate the contents of the current Web page through the `Document` property.</span></span> <span data-ttu-id="6772f-114">Avec cette propriété, vous pouvez stocker et modifier des documents dans la mémoire au lieu de naviguer entre les fichiers.</span><span class="sxs-lookup"><span data-stu-id="6772f-114">With this property, you can store and modify documents in memory instead of navigating among files.</span></span>  
   
- La propriété `Document` vous permet également d'appeler des méthodes implémentées dans du code de script de page Web à partir de votre code d'application cliente.  Pour accéder au code d'application cliente à partir du code de script, définissez la propriété `ObjectForScripting`.  L'objet spécifié est accessible par votre code de script en tant qu'objet `window.external`.  
+ <span data-ttu-id="6772f-115">Le `Document` propriété vous permet également d’appeler des méthodes implémentées dans du code à partir de votre code d’application cliente de script de page Web.</span><span class="sxs-lookup"><span data-stu-id="6772f-115">The `Document` property also lets you call methods implemented in Web page scripting code from your client application code.</span></span> <span data-ttu-id="6772f-116">Pour accéder à votre code d’application cliente à partir de votre code de script, définissez la `ObjectForScripting` propriété.</span><span class="sxs-lookup"><span data-stu-id="6772f-116">To access your client application code from your scripting code, set the `ObjectForScripting` property.</span></span> <span data-ttu-id="6772f-117">L’objet que vous spécifiez est accessible par le code de votre script en tant que le `window.external` objet.</span><span class="sxs-lookup"><span data-stu-id="6772f-117">The object that you specify can be accessed by your script code as the `window.external` object.</span></span>  
   
-|Nom|Description|  
-|---------|-----------------|  
-|Propriété <xref:System.Windows.Forms.WebBrowser.Document%2A>|Obtient un objet qui fournit un accès managé au modèle DOM \(Document Object Model\) HTML de la page Web en cours.|  
-|Événement <xref:System.Windows.Forms.WebBrowser.DocumentCompleted>|Se produit à la fin du chargement d'une page Web.|  
-|Propriété <xref:System.Windows.Forms.WebBrowser.DocumentText%2A>|Obtient ou définit le contenu HTML de la page Web en cours.|  
-|Propriété <xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A>|Obtient le titre de la page Web en cours.|  
-|Méthode <xref:System.Windows.Forms.WebBrowser.GoBack%2A>|Accède à la page précédente de l'historique.|  
-|Méthode <xref:System.Windows.Forms.WebBrowser.GoForward%2A>|Accède à la page suivante de l'historique.|  
-|Méthode <xref:System.Windows.Forms.WebBrowser.Navigate%2A>|Accède à l'URL spécifiée.|  
-|Événement <xref:System.Windows.Forms.WebBrowser.Navigating>|Se produit avant le début de la navigation et permet d'annuler l'action.|  
-|Propriété <xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A>|Obtient ou définit un objet que le code de script de la page Web peut utiliser pour communiquer avec votre application.|  
-|Méthode <xref:System.Windows.Forms.WebBrowser.Print%2A>|Imprime la page Web en cours.|  
-|Méthode <xref:System.Windows.Forms.WebBrowser.Refresh%2A>|Recharge la page Web en cours.|  
-|Méthode <xref:System.Windows.Forms.WebBrowser.Stop%2A>|Arrête la navigation en cours, ainsi que les éléments de page dynamiques, tels que les sons et animations.|  
-|Propriété <xref:System.Windows.Forms.WebBrowser.Url%2A>|Obtient ou définit l'URL de la page Web en cours.  La définition de cette propriété permet au contrôle d'accéder à la nouvelle URL.|  
+|<span data-ttu-id="6772f-118">Nom</span><span class="sxs-lookup"><span data-stu-id="6772f-118">Name</span></span>|<span data-ttu-id="6772f-119">Description</span><span class="sxs-lookup"><span data-stu-id="6772f-119">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="6772f-120">Propriété <xref:System.Windows.Forms.WebBrowser.Document%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-120"><xref:System.Windows.Forms.WebBrowser.Document%2A> property</span></span>|<span data-ttu-id="6772f-121">Obtient un objet qui fournit l’accès managé pour le modèle objet de document HTML (DOM) de la page Web actuelle.</span><span class="sxs-lookup"><span data-stu-id="6772f-121">Gets an object that provides managed access to the HTML document object model (DOM) of the current Web page.</span></span>|  
+|<span data-ttu-id="6772f-122"><xref:System.Windows.Forms.WebBrowser.DocumentCompleted>événement</span><span class="sxs-lookup"><span data-stu-id="6772f-122"><xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event</span></span>|<span data-ttu-id="6772f-123">Se produit lorsqu’une page Web est chargée.</span><span class="sxs-lookup"><span data-stu-id="6772f-123">Occurs when a Web page finishes loading.</span></span>|  
+|<span data-ttu-id="6772f-124">Propriété <xref:System.Windows.Forms.WebBrowser.DocumentText%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-124"><xref:System.Windows.Forms.WebBrowser.DocumentText%2A> property</span></span>|<span data-ttu-id="6772f-125">Obtient ou définit le contenu de la page Web HTML.</span><span class="sxs-lookup"><span data-stu-id="6772f-125">Gets or sets the HTML content of the current Web page.</span></span>|  
+|<span data-ttu-id="6772f-126">Propriété <xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-126"><xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A> property</span></span>|<span data-ttu-id="6772f-127">Obtient le titre de la page Web actuelle.</span><span class="sxs-lookup"><span data-stu-id="6772f-127">Gets the title of the current Web page.</span></span>|  
+|<span data-ttu-id="6772f-128">Méthode <xref:System.Windows.Forms.WebBrowser.GoBack%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-128"><xref:System.Windows.Forms.WebBrowser.GoBack%2A> method</span></span>|<span data-ttu-id="6772f-129">Navigue vers la page précédente dans l’historique.</span><span class="sxs-lookup"><span data-stu-id="6772f-129">Navigates to the previous page in history.</span></span>|  
+|<span data-ttu-id="6772f-130">Méthode <xref:System.Windows.Forms.WebBrowser.GoForward%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-130"><xref:System.Windows.Forms.WebBrowser.GoForward%2A> method</span></span>|<span data-ttu-id="6772f-131">Navigue vers la page suivante dans l’historique.</span><span class="sxs-lookup"><span data-stu-id="6772f-131">Navigates to the next page in history.</span></span>|  
+|<span data-ttu-id="6772f-132">Méthode <xref:System.Windows.Forms.WebBrowser.Navigate%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-132"><xref:System.Windows.Forms.WebBrowser.Navigate%2A> method</span></span>|<span data-ttu-id="6772f-133">Navigue vers l’URL spécifiée.</span><span class="sxs-lookup"><span data-stu-id="6772f-133">Navigates to the specified URL.</span></span>|  
+|<span data-ttu-id="6772f-134"><xref:System.Windows.Forms.WebBrowser.Navigating>événement</span><span class="sxs-lookup"><span data-stu-id="6772f-134"><xref:System.Windows.Forms.WebBrowser.Navigating> event</span></span>|<span data-ttu-id="6772f-135">Se produit avant le début de la navigation, l’activation de l’action doit être annulée.</span><span class="sxs-lookup"><span data-stu-id="6772f-135">Occurs before navigation begins, enabling the action to be canceled.</span></span>|  
+|<span data-ttu-id="6772f-136">Propriété <xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-136"><xref:System.Windows.Forms.WebBrowser.ObjectForScripting%2A> property</span></span>|<span data-ttu-id="6772f-137">Obtient ou définit un objet de code de script de page Web peuvent utiliser pour communiquer avec votre application.</span><span class="sxs-lookup"><span data-stu-id="6772f-137">Gets or sets an object that Web page scripting code can use to communicate with your application.</span></span>|  
+|<span data-ttu-id="6772f-138">Méthode <xref:System.Windows.Forms.WebBrowser.Print%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-138"><xref:System.Windows.Forms.WebBrowser.Print%2A> method</span></span>|<span data-ttu-id="6772f-139">Permet d’imprimer la page Web actuelle.</span><span class="sxs-lookup"><span data-stu-id="6772f-139">Prints the current Web page.</span></span>|  
+|<span data-ttu-id="6772f-140">Méthode <xref:System.Windows.Forms.WebBrowser.Refresh%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-140"><xref:System.Windows.Forms.WebBrowser.Refresh%2A> method</span></span>|<span data-ttu-id="6772f-141">Recharge la page Web actuelle.</span><span class="sxs-lookup"><span data-stu-id="6772f-141">Reloads the current Web page.</span></span>|  
+|<span data-ttu-id="6772f-142">Méthode <xref:System.Windows.Forms.WebBrowser.Stop%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-142"><xref:System.Windows.Forms.WebBrowser.Stop%2A> method</span></span>|<span data-ttu-id="6772f-143">Arrête la navigation en cours et arrête les éléments de page dynamique tels que des sons et des animations.</span><span class="sxs-lookup"><span data-stu-id="6772f-143">Halts the current navigation and stops dynamic page elements such as sounds and animation.</span></span>|  
+|<span data-ttu-id="6772f-144">Propriété <xref:System.Windows.Forms.WebBrowser.Url%2A></span><span class="sxs-lookup"><span data-stu-id="6772f-144"><xref:System.Windows.Forms.WebBrowser.Url%2A> property</span></span>|<span data-ttu-id="6772f-145">Obtient ou définit l’URL de la page Web actuelle.</span><span class="sxs-lookup"><span data-stu-id="6772f-145">Gets or sets the URL of the current Web page.</span></span> <span data-ttu-id="6772f-146">Définition de cette propriété navigue le contrôle à la nouvelle URL.</span><span class="sxs-lookup"><span data-stu-id="6772f-146">Setting this property navigates the control to the new URL.</span></span>|  
   
-## Voir aussi  
- <xref:System.Windows.Forms.WebBrowser>   
- <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>   
- <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>   
- <xref:System.Windows.Forms.WebBrowserEncryptionLevel>   
- <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs>   
- <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>   
- <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>   
- <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>   
- <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>   
- <xref:System.Windows.Forms.WebBrowserReadyState>   
- <xref:System.Windows.Forms.WebBrowserRefreshOption>   
- [Comment : naviguer vers une URL avec un contrôle WebBrowser](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)   
- [Comment : imprimer avec un contrôle WebBrowser](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)   
- [Comment : ajouter des fonctionnalités de navigateur Web à une application Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)   
- [Comment : créer une visionneuse de documents HTML dans une application Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)   
- [Comment : implémenter la communication bidirectionnelle entre le code DHTML et le code d'application cliente](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)   
- [Sécurité WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-security.md)
+## <a name="see-also"></a><span data-ttu-id="6772f-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6772f-147">See Also</span></span>  
+ <xref:System.Windows.Forms.WebBrowser>  
+ <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  
+ <xref:System.Windows.Forms.WebBrowserEncryptionLevel>  
+ <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>  
+ <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>  
+ <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>  
+ <xref:System.Windows.Forms.WebBrowserReadyState>  
+ <xref:System.Windows.Forms.WebBrowserRefreshOption>  
+ [<span data-ttu-id="6772f-148">Guide pratique pour naviguer vers une URL avec un contrôle WebBrowser</span><span class="sxs-lookup"><span data-stu-id="6772f-148">How to: Navigate to a URL with the WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
+ [<span data-ttu-id="6772f-149">Guide pratique pour imprimer avec un contrôle WebBrowser</span><span class="sxs-lookup"><span data-stu-id="6772f-149">How to: Print with a WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)  
+ [<span data-ttu-id="6772f-150">Guide pratique pour ajouter des fonctionnalités de navigateur Web à une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6772f-150">How to: Add Web Browser Capabilities to a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
+ [<span data-ttu-id="6772f-151">Guide pratique pour créer une visionneuse de documents HTML dans une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6772f-151">How to: Create an HTML Document Viewer in a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="6772f-152">Guide pratique pour implémenter la communication bidirectionnelle entre le code DHTML et le code d'application cliente</span><span class="sxs-lookup"><span data-stu-id="6772f-152">How to: Implement Two-Way Communication Between DHTML Code and Client Application Code</span></span>](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)  
+ [<span data-ttu-id="6772f-153">Sécurité WebBrowser</span><span class="sxs-lookup"><span data-stu-id="6772f-153">WebBrowser Security</span></span>](../../../../docs/framework/winforms/controls/webbrowser-security.md)

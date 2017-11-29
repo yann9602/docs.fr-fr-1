@@ -1,84 +1,82 @@
 ---
-title: "Conventions de mise en majuscules | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "noms à casse mixte (.NET Framework)"
-  - "indications de conception de bibliothèques de classes (.NET Framework), mise en majuscules"
-  - "Noms à casse Pascal (.NET Framework)"
-  - "respect de la casse, les conventions de mise en majuscules"
-  - "noms (.NET Framework), mise en majuscules"
+title: Conventions de mise en majuscules
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- camel-case names [.NET Framework]
+- class library design guidelines [.NET Framework], capitalization
+- Pascal-case names [.NET Framework]
+- case sensitivity, capitalization conventions
+- names [.NET Framework], capitalization
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
-caps.latest.revision: 16
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: e1bddb7bb3559e6f39b7884b92f64bee8fbb3510
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Conventions de mise en majuscules
-Les instructions de ce chapitre mise en page une méthode simple pour l’utilisation de cas, lorsqu’il est appliqué de manière cohérente, vérifiez les identificateurs pour les types, membres et paramètres faciles à lire.  
+# <a name="capitalization-conventions"></a><span data-ttu-id="35e05-102">Conventions de mise en majuscules</span><span class="sxs-lookup"><span data-stu-id="35e05-102">Capitalization Conventions</span></span>
+<span data-ttu-id="35e05-103">Les instructions de cette mise en page chapitre une méthode simple pour l’utilisation de cas qui, en cas d’application constamment, assurez-vous des identificateurs pour les types, membres et paramètres faciles à lire.</span><span class="sxs-lookup"><span data-stu-id="35e05-103">The guidelines in this chapter lay out a simple method for using case that, when applied consistently, make identifiers for types, members, and parameters easy to read.</span></span>  
   
-## Règles de casse des identificateurs  
- Pour différencier des mots dans un identificateur, mettre en majuscules la première lettre de chaque mot dans l’identificateur. N’utilisez pas de traits de soulignement pour différencier des mots, ou d’ailleurs, n’importe où dans les identificateurs. Il existe deux façons appropriés profit des identificateurs, en fonction de l’utilisation de l’identificateur :  
+## <a name="capitalization-rules-for-identifiers"></a><span data-ttu-id="35e05-104">Règles de casse des identificateurs</span><span class="sxs-lookup"><span data-stu-id="35e05-104">Capitalization Rules for Identifiers</span></span>  
+ <span data-ttu-id="35e05-105">Afin de distinguer des mots dans un identificateur, pour mettre en majuscule la première lettre de chaque mot dans l’identificateur.</span><span class="sxs-lookup"><span data-stu-id="35e05-105">To differentiate words in an identifier, capitalize the first letter of each word in the identifier.</span></span> <span data-ttu-id="35e05-106">N’utilisez pas de traits de soulignement pour différencier des mots, ou d’ailleurs, n’importe où dans les identificateurs.</span><span class="sxs-lookup"><span data-stu-id="35e05-106">Do not use underscores to differentiate words, or for that matter, anywhere in identifiers.</span></span> <span data-ttu-id="35e05-107">Il existe deux façons appropriés pour tirer profit des identificateurs, en fonction de l’utilisation de l’identificateur :</span><span class="sxs-lookup"><span data-stu-id="35e05-107">There are two appropriate ways to capitalize identifiers, depending on the use of the identifier:</span></span>  
   
--   Casse Pascal  
+-   <span data-ttu-id="35e05-108">Casse Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-108">PascalCasing</span></span>  
   
--   casse mixte  
+-   <span data-ttu-id="35e05-109">casse mixte</span><span class="sxs-lookup"><span data-stu-id="35e05-109">camelCasing</span></span>  
   
- La convention de casse Pascal, utilisée pour tous les identificateurs à l’exception des noms de paramètre, met en majuscule le premier caractère de chaque mot \(y compris les acronymes sur deux lettres en longueur\), comme indiqué dans les exemples suivants :  
+ <span data-ttu-id="35e05-110">La convention de casse Pascal, utilisée pour tous les identificateurs à l’exception des noms de paramètres, met en majuscule le premier caractère de chaque mot (y compris les acronymes sur les deux lettres longueur), comme indiqué dans les exemples suivants :</span><span class="sxs-lookup"><span data-stu-id="35e05-110">The PascalCasing convention, used for all identifiers except parameter names, capitalizes the first character of each word (including acronyms over two letters in length), as shown in the following examples:</span></span>  
   
- `PropertyDescriptor`   
+ `PropertyDescriptor`  
  `HtmlTag`  
   
- Un cas particulier concerne des acronymes de deux lettres dans laquelle les lettres sont en majuscules, comme indiqué dans l’identificateur suivant :  
+ <span data-ttu-id="35e05-111">Un cas particulier concerne des acronymes de deux lettres correspondant à la fois des lettres sont en majuscules, comme indiqué dans l’identificateur suivant :</span><span class="sxs-lookup"><span data-stu-id="35e05-111">A special case is made for two-letter acronyms in which both letters are capitalized, as shown in the following identifier:</span></span>  
   
  `IOStream`  
   
- La convention de casse mixte, utilisée uniquement pour les noms de paramètre, met en majuscule le premier caractère de chaque mot, sauf le premier mot, comme indiqué dans les exemples suivants. Comme dans l’exemple également, les acronymes de deux lettres qui commencent un identificateur à casse mixte sont en minuscules.  
+ <span data-ttu-id="35e05-112">La convention de casse mixte, utilisée uniquement pour les noms de paramètres, met en majuscule le premier caractère de chaque mot, sauf le premier mot, comme indiqué dans les exemples suivants.</span><span class="sxs-lookup"><span data-stu-id="35e05-112">The camelCasing convention, used only for parameter names, capitalizes the first character of each word except the first word, as shown in the following examples.</span></span> <span data-ttu-id="35e05-113">Comme dans l’exemple également, les acronymes de deux lettres qui commencent un identificateur à casse mixte sont en minuscules.</span><span class="sxs-lookup"><span data-stu-id="35e05-113">As the example also shows, two-letter acronyms that begin a camel-cased identifier are both lowercase.</span></span>  
   
- `propertyDescriptor`   
- `ioStream`   
+ `propertyDescriptor`  
+ `ioStream`  
  `htmlTag`  
   
- **✓ faire** utilisent la casse Pascal pour tous les noms de membre, le type et espace de noms publics composés de plusieurs mots.  
+ <span data-ttu-id="35e05-114">**✓ FAIRE** utilisent la casse Pascal pour tous les noms de membre, le type et espace de noms publics constitué de plusieurs mots.</span><span class="sxs-lookup"><span data-stu-id="35e05-114">**✓ DO** use PascalCasing for all public member, type, and namespace names consisting of multiple words.</span></span>  
   
- **✓ faire** utilisez la casse mixte pour les noms de paramètre.  
+ <span data-ttu-id="35e05-115">**✓ FAIRE** utilisez la casse mixte pour les noms de paramètre.</span><span class="sxs-lookup"><span data-stu-id="35e05-115">**✓ DO** use camelCasing for parameter names.</span></span>  
   
- Le tableau suivant décrit les règles de mise en majuscules pour différents types d’identificateurs.  
+ <span data-ttu-id="35e05-116">Le tableau suivant décrit les règles de mise en majuscules pour différents types d’identificateurs.</span><span class="sxs-lookup"><span data-stu-id="35e05-116">The following table describes the capitalization rules for different types of identifiers.</span></span>  
   
-|Identificateur|Casse|Exemple|  
-|--------------------|-----------|-------------|  
-|Espace de noms|Pascal|`namespace System.Security { ... }`|  
-|Type|Pascal|`public class StreamReader { ... }`|  
-|Interface|Pascal|`public interface IEnumerable { ... }`|  
-|Méthode|Pascal|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|  
-|Propriété|Pascal|`public class String {` <br />  `public int Length { get; }` <br /> `}`|  
-|Événement|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
-|Champ|Pascal|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|  
-|Valeur d’énumération|Pascal|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|  
-|Paramètre|Casse mixte|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
+|<span data-ttu-id="35e05-117">Identificateur</span><span class="sxs-lookup"><span data-stu-id="35e05-117">Identifier</span></span>|<span data-ttu-id="35e05-118">Casse</span><span class="sxs-lookup"><span data-stu-id="35e05-118">Casing</span></span>|<span data-ttu-id="35e05-119">Exemple</span><span class="sxs-lookup"><span data-stu-id="35e05-119">Example</span></span>|  
+|----------------|------------|-------------|  
+|<span data-ttu-id="35e05-120">Espace de noms</span><span class="sxs-lookup"><span data-stu-id="35e05-120">Namespace</span></span>|<span data-ttu-id="35e05-121">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-121">Pascal</span></span>|`namespace System.Security { ... }`|  
+|<span data-ttu-id="35e05-122">Type</span><span class="sxs-lookup"><span data-stu-id="35e05-122">Type</span></span>|<span data-ttu-id="35e05-123">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-123">Pascal</span></span>|`public class StreamReader { ... }`|  
+|<span data-ttu-id="35e05-124">Interface</span><span class="sxs-lookup"><span data-stu-id="35e05-124">Interface</span></span>|<span data-ttu-id="35e05-125">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-125">Pascal</span></span>|`public interface IEnumerable { ... }`|  
+|<span data-ttu-id="35e05-126">Méthode</span><span class="sxs-lookup"><span data-stu-id="35e05-126">Method</span></span>|<span data-ttu-id="35e05-127">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-127">Pascal</span></span>|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|  
+|<span data-ttu-id="35e05-128">Propriété</span><span class="sxs-lookup"><span data-stu-id="35e05-128">Property</span></span>|<span data-ttu-id="35e05-129">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-129">Pascal</span></span>|`public class String {` <br />  `public int Length { get; }` <br /> `}`|  
+|<span data-ttu-id="35e05-130">Événement</span><span class="sxs-lookup"><span data-stu-id="35e05-130">Event</span></span>|<span data-ttu-id="35e05-131">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-131">Pascal</span></span>|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
+|<span data-ttu-id="35e05-132">Champ</span><span class="sxs-lookup"><span data-stu-id="35e05-132">Field</span></span>|<span data-ttu-id="35e05-133">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-133">Pascal</span></span>|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|  
+|<span data-ttu-id="35e05-134">Valeur d’énumération</span><span class="sxs-lookup"><span data-stu-id="35e05-134">Enum value</span></span>|<span data-ttu-id="35e05-135">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-135">Pascal</span></span>|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|  
+|<span data-ttu-id="35e05-136">Paramètre</span><span class="sxs-lookup"><span data-stu-id="35e05-136">Parameter</span></span>|<span data-ttu-id="35e05-137">Mixte</span><span class="sxs-lookup"><span data-stu-id="35e05-137">Camel</span></span>|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
   
-## Mots composés et les termes courants relatifs à la mise en majuscule  
- La plupart des termes composés sont traités comme des mots isolés dans le cadre de la mise en majuscules.  
+## <a name="capitalizing-compound-words-and-common-terms"></a><span data-ttu-id="35e05-138">Mise en majuscule de mots composés et les termes courants</span><span class="sxs-lookup"><span data-stu-id="35e05-138">Capitalizing Compound Words and Common Terms</span></span>  
+ <span data-ttu-id="35e05-139">La plupart des termes composés sont traités comme des mots isolés pour les besoins de mise en majuscules.</span><span class="sxs-lookup"><span data-stu-id="35e05-139">Most compound terms are treated as single words for purposes of capitalization.</span></span>  
   
- **X ne pas** majuscule chaque soi\-disant mots composés fermés.  
+ <span data-ttu-id="35e05-140">**X ne sont pas** majuscule chaque soi-disant fermé mots composés.</span><span class="sxs-lookup"><span data-stu-id="35e05-140">**X DO NOT** capitalize each word in so-called closed-form compound words.</span></span>  
   
- Il s’agit de mots composés écrits comme un mot unique, comme le point de terminaison. Pour les besoins de règles de casse, traitez un mot composé fermé comme un mot unique. Utiliser un dictionnaire actuel pour déterminer si un mot composé est écrit dans le formulaire fermé.  
+ <span data-ttu-id="35e05-141">Il s’agit de mots composés écrits comme un mot unique, comme point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="35e05-141">These are compound words written as a single word, such as endpoint.</span></span> <span data-ttu-id="35e05-142">Les instructions de la casse, à des fins de traiter un mot composé fermé comme un mot unique.</span><span class="sxs-lookup"><span data-stu-id="35e05-142">For the purpose of casing guidelines, treat a closed-form compound word as a single word.</span></span> <span data-ttu-id="35e05-143">Utiliser un dictionnaire actuel pour déterminer si un mot composé est écrit dans une forme fermée.</span><span class="sxs-lookup"><span data-stu-id="35e05-143">Use a current dictionary to determine if a compound word is written in closed form.</span></span>  
   
-|Pascal|Casse mixte|Pas|  
-|------------|-----------------|---------|  
+|<span data-ttu-id="35e05-144">Pascal</span><span class="sxs-lookup"><span data-stu-id="35e05-144">Pascal</span></span>|<span data-ttu-id="35e05-145">Mixte</span><span class="sxs-lookup"><span data-stu-id="35e05-145">Camel</span></span>|<span data-ttu-id="35e05-146">pas</span><span class="sxs-lookup"><span data-stu-id="35e05-146">Not</span></span>|  
+|------------|-----------|---------|  
 |`BitFlag`|`bitFlag`|`Bitflag`|  
 |`Callback`|`callback`|`CallBack`|  
 |`Canceled`|`canceled`|`Cancelled`|  
@@ -105,15 +103,15 @@ Les instructions de ce chapitre mise en page une méthode simple pour l’utilis
 |`WhiteSpace`|`whiteSpace`|`Whitespace`|  
 |`Writable`|`writable`|`Writeable`|  
   
-## Respect de la casse  
- Langages qui peuvent s’exécuter sur le CLR ne sont pas tenus de prendre en charge le respect de la casse, bien que certains. Même si votre langage prend en charge, autres langages qui peuvent accéder à votre infrastructure ne le faites pas. Par conséquent, d’API qui sont accessibles de l’extérieur, ne peut pas s’appuient sur incident seul pour faire la distinction entre deux noms dans le même contexte.  
+## <a name="case-sensitivity"></a><span data-ttu-id="35e05-147">Respect de la casse</span><span class="sxs-lookup"><span data-stu-id="35e05-147">Case Sensitivity</span></span>  
+ <span data-ttu-id="35e05-148">Les langues qui peuvent s’exécuter sur le CLR ne sont pas requis pour prendre en charge le respect de la casse, bien que certains.</span><span class="sxs-lookup"><span data-stu-id="35e05-148">Languages that can run on the CLR are not required to support case-sensitivity, although some do.</span></span> <span data-ttu-id="35e05-149">Même si votre langage prend en charge, autres langages qui peuvent accéder à votre version de framework ne le font pas.</span><span class="sxs-lookup"><span data-stu-id="35e05-149">Even if your language supports it, other languages that might access your framework do not.</span></span> <span data-ttu-id="35e05-150">Des API qui sont accessibles de l’extérieur, par conséquent, ne peut pas vous fier cas seul pour faire la distinction entre les deux noms dans le même contexte.</span><span class="sxs-lookup"><span data-stu-id="35e05-150">Any APIs that are externally accessible, therefore, cannot rely on case alone to distinguish between two names in the same context.</span></span>  
   
- **X ne pas** supposer que tous les langages de programmation respectent la casse. Ils ne sont pas. Les noms ne peuvent pas différer par leur casse uniquement.  
+ <span data-ttu-id="35e05-151">**X ne sont pas** supposent que tous les langages de programmation respectent la casse.</span><span class="sxs-lookup"><span data-stu-id="35e05-151">**X DO NOT** assume that all programming languages are case sensitive.</span></span> <span data-ttu-id="35e05-152">mais ils ne le sont pas.</span><span class="sxs-lookup"><span data-stu-id="35e05-152">They are not.</span></span> <span data-ttu-id="35e05-153">Les noms ne peuvent pas différer par la casse uniquement.</span><span class="sxs-lookup"><span data-stu-id="35e05-153">Names cannot differ by case alone.</span></span>  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ <span data-ttu-id="35e05-154">*Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*</span><span class="sxs-lookup"><span data-stu-id="35e05-154">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [Framework Design Guidelines : Conventions, langages et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison\-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ <span data-ttu-id="35e05-155">*Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*</span><span class="sxs-lookup"><span data-stu-id="35e05-155">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## Voir aussi  
- [Instructions de conception d’infrastructure](../../../docs/standard/design-guidelines/index.md)   
- [Indications concernant l'attribution d'un nom](../../../docs/standard/design-guidelines/naming-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="35e05-156">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="35e05-156">See Also</span></span>  
+ [<span data-ttu-id="35e05-157">Règles de conception de .NET Framework</span><span class="sxs-lookup"><span data-stu-id="35e05-157">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
+ [<span data-ttu-id="35e05-158">Affectation de noms</span><span class="sxs-lookup"><span data-stu-id="35e05-158">Naming Guidelines</span></span>](../../../docs/standard/design-guidelines/naming-guidelines.md)

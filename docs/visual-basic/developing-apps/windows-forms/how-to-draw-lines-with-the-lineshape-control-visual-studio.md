@@ -1,61 +1,63 @@
 ---
-title: "How to: Draw Lines with the LineShape Control (Visual Studio) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "LineShape control"
-  - "lines, drawing"
+title: "Comment : dessiner des lignes avec le contrôle LineShape (Visual Studio)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- LineShape control [Visual Basic]
+- lines, drawing
 ms.assetid: 83e71b4e-aa76-4f9b-b547-8704309fd1e5
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f170250dde2f6db31ed68908936c0e9714a7e846
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Draw Lines with the LineShape Control (Visual Studio)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Vous pouvez utiliser le contrôle <xref:Microsoft.VisualBasic.PowerPacks.LineShape> pour dessiner des lignes horizontales, verticales ou diagonales sur un formulaire ou un conteneur, que ce soit au moment du design ou de l'exécution.  
+# <a name="how-to-draw-lines-with-the-lineshape-control-visual-studio"></a><span data-ttu-id="14885-102">Comment : dessiner des lignes avec le contrôle LineShape (Visual Studio)</span><span class="sxs-lookup"><span data-stu-id="14885-102">How to: Draw Lines with the LineShape Control (Visual Studio)</span></span>
+<span data-ttu-id="14885-103">Vous pouvez utiliser la <xref:Microsoft.VisualBasic.PowerPacks.LineShape> contrôle pour dessiner une ligne horizontale, verticale ou diagonale sur un formulaire ou un conteneur, à la fois au moment du design et au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="14885-103">You can use the <xref:Microsoft.VisualBasic.PowerPacks.LineShape> control to draw horizontal, vertical, or diagonal lines on a form or container, both at design time and at run time.</span></span>  
   
- **Remarque** Il est possible que pour certains des éléments de l'interface utilisateur de Visual Studio, votre ordinateur affiche des noms ou des emplacements différents de ceux indiqués dans les intructions suivantes.  Ces éléments dépendent de l'édition de Visual Studio dont vous disposez et des paramètres que vous utilisez.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+ <span data-ttu-id="14885-104">**Remarque** votre ordinateur peut afficher des noms différents ou des emplacements de l’utilisateur de Visual Studio pour les éléments d’interface dans les instructions suivantes.</span><span class="sxs-lookup"><span data-stu-id="14885-104">**Note** Your computer might show different names or locations for some of the Visual Studio user interface elements in the following instructions.</span></span> <span data-ttu-id="14885-105">L'édition de Visual Studio dont vous disposez et les paramètres que vous utilisez déterminent ces éléments.</span><span class="sxs-lookup"><span data-stu-id="14885-105">The Visual Studio edition that you have and the settings that you use determine these elements.</span></span> <span data-ttu-id="14885-106">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="14885-106">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### Pour dessiner une ligne au moment du design  
+### <a name="to-draw-a-line-at-design-time"></a><span data-ttu-id="14885-107">Pour dessiner une ligne au moment du design</span><span class="sxs-lookup"><span data-stu-id="14885-107">To draw a line at design time</span></span>  
   
-1.  Faites glisser le contrôle <xref:Microsoft.VisualBasic.PowerPacks.LineShape> depuis l'onglet **Visual Basic PowerPacks** de la **Boîte à outils** vers un formulaire ou un contrôle conteneur.  
+1.  <span data-ttu-id="14885-108">Faites glisser le <xref:Microsoft.VisualBasic.PowerPacks.LineShape> contrôler à partir de la **Visual Basic PowerPacks** onglet dans le **boîte à outils** faire glisser vers un formulaire ou un contrôle conteneur.</span><span class="sxs-lookup"><span data-stu-id="14885-108">Drag the <xref:Microsoft.VisualBasic.PowerPacks.LineShape> control from the **Visual Basic PowerPacks** tab in the **Toolbox** drag to a form or container control.</span></span>  
   
-2.  Faites glisser les poignées de dimensionnement et de déplacement pour changer la taille et la position de la ligne.  
+2.  <span data-ttu-id="14885-109">Faites glisser la poignée et déplacez les poignées pour redimensionner et positionner la ligne.</span><span class="sxs-lookup"><span data-stu-id="14885-109">Drag the sizing and move handles to size and position the line.</span></span>  
   
-     Vous pouvez également redimensionner et repositionner la ligne en modifiant les propriétés `X1`, `X2`, `Y1` et `Y2` dans la fenêtre **Propriétés**.  
+     <span data-ttu-id="14885-110">Vous pouvez également redimensionner et repositionner la ligne en modifiant le `X1`, `X2`, `Y1`, et `Y2` propriétés dans le **propriétés** fenêtre.</span><span class="sxs-lookup"><span data-stu-id="14885-110">You can also size and position the line by changing the `X1`, `X2`, `Y1`, and `Y2` properties in the **Properties** window.</span></span>  
   
-3.  Dans la fenêtre **Propriétés**, définissez facultativement des propriétés supplémentaires telles que `BorderStyle` ou `BorderColor` pour modifier l'apparence de la ligne.  
+3.  <span data-ttu-id="14885-111">Dans le **propriétés** fenêtre, vous pouvez également définir des propriétés supplémentaires telles que `BorderStyle` ou `BorderColor` pour modifier l’apparence de la ligne.</span><span class="sxs-lookup"><span data-stu-id="14885-111">In the **Properties** window, optionally set additional properties such as `BorderStyle` or `BorderColor` to change the appearance of the line.</span></span>  
   
-### Pour dessiner une ligne au moment de l'exécution  
+### <a name="to-draw-a-line-at-run-time"></a><span data-ttu-id="14885-112">Pour dessiner une ligne en cours d’exécution</span><span class="sxs-lookup"><span data-stu-id="14885-112">To draw a line at run time</span></span>  
   
-1.  Dans le menu **Projet**, cliquez sur **Ajouter une référence**.  
+1.  <span data-ttu-id="14885-113">Dans le menu **Projet**, cliquez sur **Ajouter une référence**.</span><span class="sxs-lookup"><span data-stu-id="14885-113">On the **Project** menu, click **Add Reference**.</span></span>  
   
-2.  Dans la boîte de dialogue **Ajouter une référence**, sélectionnez **Microsoft.VisualBasic.PowerPacks.VS**, puis cliquez sur **OK**.  
+2.  <span data-ttu-id="14885-114">Dans le **ajouter une référence** boîte de dialogue, sélectionnez **Microsoft.VisualBasic.PowerPacks.VS**, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="14885-114">In the **Add Reference** dialog box, select **Microsoft.VisualBasic.PowerPacks.VS**, and then click **OK**.</span></span>  
   
-3.  Dans l'**Éditeur de code**, ajoutez une instruction `Imports` ou `using` en haut du module :  
+3.  <span data-ttu-id="14885-115">Dans le **éditeur de Code**, ajoutez une `Imports` ou `using` instruction en haut du module :</span><span class="sxs-lookup"><span data-stu-id="14885-115">In the **Code Editor**, add an `Imports` or `using` statement at the top of the module:</span></span>  
   
-    ```vb#  
-    Imports Microsoft.VisualBasic.PowerPacks  
-    ```  
+```vb  
+Imports Microsoft.VisualBasic.PowerPacks  
+```  
   
-    ```c#  
-    using Microsoft.VisualBasic.PowerPacks;  
-    ```  
+```csharp  
+using Microsoft.VisualBasic.PowerPacks;  
+```  
   
-4.  Ajoutez le code suivant à une procédure `Event` :  
+4.  <span data-ttu-id="14885-116">Ajoutez le code suivant dans une procédure `Event` :</span><span class="sxs-lookup"><span data-stu-id="14885-116">Add the following code in an `Event` procedure:</span></span>  
   
-     [!code-cs[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.cs)]
+     [!code-csharp[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.vb)]  
   
-## Voir aussi  
- <xref:Microsoft.VisualBasic.PowerPacks.LineShape>   
- [Introduction to the Line and Shape Controls](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)   
- [How to: Draw Shapes with the OvalShape and RectangleShape Controls](../../../visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)
+## <a name="see-also"></a><span data-ttu-id="14885-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="14885-117">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.PowerPacks.LineShape>  
+ [<span data-ttu-id="14885-118">Introduction aux contrôles Line et Shape</span><span class="sxs-lookup"><span data-stu-id="14885-118">Introduction to the Line and Shape Controls</span></span>](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)  
+ [<span data-ttu-id="14885-119">Guide pratique : dessiner des formes avec les contrôles OvalShape et RectangleShape</span><span class="sxs-lookup"><span data-stu-id="14885-119">How to: Draw Shapes with the OvalShape and RectangleShape Controls</span></span>](../../../visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)

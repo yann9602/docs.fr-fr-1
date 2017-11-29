@@ -1,107 +1,110 @@
 ---
-title: "Mod&#232;le de thread de l&#39;encre | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "thread de l'interface utilisateur d'une application"
-  - "thread de rendu dynamique"
-  - "plug-in de collection de l'encre"
-  - "modèle de thread de l'encre"
-  - "encre, rendu"
-  - "thread du stylet"
-  - "plug-ins, pour l'encre"
-  - "rendu de l'encre"
-  - "plug-in de stylet"
-  - "modèle de thread"
+title: "Modèle de thread de l'encre"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application user interface thread [WPF]
+- stylus plug-in
+- ink threading model [WPF]
+- ink [WPF], rendering
+- pen thread [WPF]
+- threading model [WPF]
+- rendering ink [WPF]
+- dynamic rendering thread [WPF]
+- ink collection plug-in
+- plug-ins [WPF], for ink
 ms.assetid: c85fcad1-cb50-4431-847c-ac4145a35c89
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: efbd05f88b962363e3b866fbf914f6d3a37823cc
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Mod&#232;le de thread de l&#39;encre
-L'un des avantages de l'encre dans un Tablet PC est que la sensation est presque la même que lorsqu'on écrit sur du papier avec un vrai crayon.  Pour cela, le stylet collecte les données d'entrée à un taux beaucoup plus élevé que ne le fait une souris et restitue l'encre lorsque l'utilisateur écrit.  Le thread de l'interface utilisateur de l'application n'est pas suffisant pour collecter les données du stylet et restituer l'encre car il peut se bloquer.  Pour résoudre ce problème, une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise deux threads supplémentaires lorsqu'un utilisateur écrit avec de l'encre.  
+# <a name="the-ink-threading-model"></a><span data-ttu-id="d0cd0-102">Modèle de thread de l'encre</span><span class="sxs-lookup"><span data-stu-id="d0cd0-102">The Ink Threading Model</span></span>
+<span data-ttu-id="d0cd0-103">Un des avantages de l’encre sur un Tablet PC est qu’il semble beaucoup l’écriture avec un stylet régulière et un livre.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-103">One of the benefits of ink on a Tablet PC is that it feels a lot like writing with a regular pen and paper.</span></span>  <span data-ttu-id="d0cd0-104">Pour ce faire, le stylet collecte les données d’entrée à un taux beaucoup plus important que la souris et restitue l’encre lorsque l’utilisateur écrit.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-104">To accomplish this, the tablet pen collects input data at a much higher rate than a mouse does and renders the ink as the user writes.</span></span>  <span data-ttu-id="d0cd0-105">Thread d’interface utilisateur de l’application utilisateur n’est pas suffisant pour collecter les données du stylet et restituer l’encre car il peut se bloquer.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-105">The application's user interface (UI) thread is not sufficient for collecting pen data and rendering ink, because it can become blocked.</span></span>  <span data-ttu-id="d0cd0-106">Pour résoudre ce problème, un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application utilise deux threads supplémentaires lorsqu’un utilisateur écrit d’encre.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-106">To solve this, a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application uses two additional threads when a user writes ink.</span></span>  
   
- La liste suivante décrit les threads qui participent à la collecte et à la restitution de l'encre numérique :  
+ <span data-ttu-id="d0cd0-107">La liste suivante décrit les threads qui participent à la collecte et le rendu de l’encre numérique :</span><span class="sxs-lookup"><span data-stu-id="d0cd0-107">The following list describes the threads that take part in collecting and rendering digital ink:</span></span>  
   
--   Thread du stylet : thread qui accepte la saisie du stylet.  \(En fait, il s'agit d'un pool de threads, mais dans cette rubrique, on l'appelle thread du stylet\).  
+-   <span data-ttu-id="d0cd0-108">Thread de stylet : le thread qui accepte une entrée du stylet.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-108">Pen thread - the thread that takes input from the stylus.</span></span>  <span data-ttu-id="d0cd0-109">(En réalité, il s’agit d’un pool de threads, mais cette rubrique fait référence à ce dernier en tant qu’un thread de stylet.)</span><span class="sxs-lookup"><span data-stu-id="d0cd0-109">(In reality, this is a thread pool, but this topic refers to it as a pen thread.)</span></span>  
   
--   Thread de l'interface utilisateur d'une application : thread qui contrôle l'interface utilisateur de l'application.  
+-   <span data-ttu-id="d0cd0-110">Thread d’interface utilisateur application - le thread qui contrôle l’interface utilisateur de l’application.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-110">Application user interface thread - the thread that controls the user interface of the application.</span></span>  
   
--   Thread de rendu dynamique : thread qui restitue l'encre lorsque l'utilisateur trace un trait.  Le thread de rendu dynamique est différent du thread qui restitue d'autres éléments d'interface pour l'application, comme mentionné dans le [Modèle de thread](../../../../docs/framework/wpf/advanced/threading-model.md) de Windows Presentation Foundation.  
+-   <span data-ttu-id="d0cd0-111">Thread de rendu dynamique - le thread qui restitue l’encre lorsque l’utilisateur trace un trait.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-111">Dynamic rendering thread - the thread that renders the ink while the user draws a stroke.</span></span> <span data-ttu-id="d0cd0-112">Le thread de rendu dynamique est différent du thread qui restitue d’autres éléments d’interface utilisateur pour l’application, comme indiqué dans Windows Presentation Foundation [modèle de thread](../../../../docs/framework/wpf/advanced/threading-model.md).</span><span class="sxs-lookup"><span data-stu-id="d0cd0-112">The dynamic rendering thread is different than the thread that renders other UI elements for the application, as mentioned in Window Presentation Foundation [Threading Model](../../../../docs/framework/wpf/advanced/threading-model.md).</span></span>  
   
- Le modèle d'encrage est le même, que l'application utilise le <xref:System.Windows.Controls.InkCanvas> ou un contrôle personnalisé similaire à celui présenté dans [Création d'un contrôle d'entrée d'encre](../../../../docs/framework/wpf/advanced/creating-an-ink-input-control.md).  Bien que cette rubrique étudie les threads en termes de <xref:System.Windows.Controls.InkCanvas>, les mêmes concepts s'appliquent lorsque vous créez un contrôle personnalisé.  
+ <span data-ttu-id="d0cd0-113">Le modèle pour l’écriture manuscrite est le même que l’application utilise le <xref:System.Windows.Controls.InkCanvas> ou un contrôle personnalisé similaire à celui de [création d’un contrôle d’entrée manuscrite](../../../../docs/framework/wpf/advanced/creating-an-ink-input-control.md).</span><span class="sxs-lookup"><span data-stu-id="d0cd0-113">The inking model is the same whether the application uses the <xref:System.Windows.Controls.InkCanvas> or a custom control similar to the one in [Creating an Ink Input Control](../../../../docs/framework/wpf/advanced/creating-an-ink-input-control.md).</span></span>  <span data-ttu-id="d0cd0-114">Bien que cette rubrique traite des threads en termes de la <xref:System.Windows.Controls.InkCanvas>, les mêmes concepts s’appliquent lorsque vous créez un contrôle personnalisé.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-114">Although this topic discusses threading in terms of the <xref:System.Windows.Controls.InkCanvas>, the same concepts apply when you create a custom control.</span></span>  
   
-## Vue d'ensemble des threads  
- Le diagramme suivant illustre le modèle de thread lorsqu'un utilisateur trace un trait :  
+## <a name="threading-overview"></a><span data-ttu-id="d0cd0-115">Vue d’ensemble des threads</span><span class="sxs-lookup"><span data-stu-id="d0cd0-115">Threading Overview</span></span>  
+ <span data-ttu-id="d0cd0-116">Le diagramme suivant illustre le modèle de thread lorsqu’un utilisateur trace un trait :</span><span class="sxs-lookup"><span data-stu-id="d0cd0-116">The following diagram illustrates the threading model when a user draws a stroke:</span></span>  
   
- ![Modèle de thread lors du dessin d'un trait.](../../../../docs/framework/wpf/advanced/media/inkthreading-drawingink.png "InkThreading\_DrawingInk")  
+ <span data-ttu-id="d0cd0-117">![Modèle de thread lors du dessin d’un trait. ] (../../../../docs/framework/wpf/advanced/media/inkthreading-drawingink.png "InkThreading_DrawingInk")</span><span class="sxs-lookup"><span data-stu-id="d0cd0-117">![Threading model while drawing a stroke.](../../../../docs/framework/wpf/advanced/media/inkthreading-drawingink.png "InkThreading_DrawingInk")</span></span>  
   
-1.  Actions effectuées lorsque l'utilisateur trace le trait  
+1.  <span data-ttu-id="d0cd0-118">Actions qui se produisent pendant que l’utilisateur dessine le tracé</span><span class="sxs-lookup"><span data-stu-id="d0cd0-118">Actions occurring while the user draws the stroke</span></span>  
   
-    1.  Lorsque l'utilisateur trace un trait, les points du stylet arrivent sur le thread du stylet.  Les plug\-ins du stylet, y compris le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, acceptent les points du stylet sur le thread du stylet et peuvent les modifier avant que le <xref:System.Windows.Controls.InkCanvas> ne les reçoive.  
+    1.  <span data-ttu-id="d0cd0-119">Lorsque l’utilisateur trace un trait, les points du stylet arrivent sur le thread du stylet.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-119">When the user draws a stroke, the stylus points come in on the pen thread.</span></span>  <span data-ttu-id="d0cd0-120">Plug-ins du stylet, y compris le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, acceptez les points du stylet sur le thread du stylet et ont la possibilité de les modifier avant du <xref:System.Windows.Controls.InkCanvas> les reçoit.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-120">Stylus plug-ins, including the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, accept the stylus points on the pen thread and have the chance to modify them before the <xref:System.Windows.Controls.InkCanvas> receives them.</span></span>  
   
-    2.  Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> restitue les points du stylet sur le thread de rendu dynamique.  Cela se produit au même moment que l'étape précédente.  
+    2.  <span data-ttu-id="d0cd0-121">Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> restitue les points du stylet sur le thread de rendu dynamique.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-121">The <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> renders the stylus points on the dynamic rendering thread.</span></span> <span data-ttu-id="d0cd0-122">Cela se produit en même temps que l’étape précédente.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-122">This happens at the same time as the previous step.</span></span>  
   
-    3.  Le <xref:System.Windows.Controls.InkCanvas> reçoit les points du stylet sur le thread de l'interface utilisateur.  
+    3.  <span data-ttu-id="d0cd0-123">Le <xref:System.Windows.Controls.InkCanvas> reçoit les points du stylet sur le thread d’interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-123">The <xref:System.Windows.Controls.InkCanvas> receives the stylus points on the UI thread.</span></span>  
   
-2.  Actions effectuées après que l'utilisateur ait terminé le trait  
+2.  <span data-ttu-id="d0cd0-124">Action qui se produit une fois que l’utilisateur termine le trait</span><span class="sxs-lookup"><span data-stu-id="d0cd0-124">Actions occurring after the user ends the stroke</span></span>  
   
-    1.  Lorsque l'utilisateur a terminé de tracer le trait, le <xref:System.Windows.Controls.InkCanvas> crée un objet <xref:System.Windows.Ink.Stroke> et l'ajoute au <xref:System.Windows.Controls.InkPresenter> qui le restitue de manière statique.  
+    1.  <span data-ttu-id="d0cd0-125">Lorsque l’utilisateur termine le trait, la <xref:System.Windows.Controls.InkCanvas> crée un <xref:System.Windows.Ink.Stroke> de l’objet et l’ajoute à la <xref:System.Windows.Controls.InkPresenter>, qui le restitue de manière statique.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-125">When the user finishes drawing the stroke, the <xref:System.Windows.Controls.InkCanvas> creates a <xref:System.Windows.Ink.Stroke> object and adds it to the <xref:System.Windows.Controls.InkPresenter>, which statically renders it.</span></span>  
   
-    2.  Le thread de l'interface utilisateur informe le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> que le trait est restitué de manière statique, de sorte que le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> supprime la représentation visuelle du trait.  
+    2.  <span data-ttu-id="d0cd0-126">Les alertes de thread d’interface utilisateur du <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> que le trait est restitué de manière statique, donc la <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> supprime la représentation visuelle du trait.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-126">The UI thread alerts the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> that the stroke is statically rendered, so the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> removes its visual representation of the stroke.</span></span>  
   
-## Plug\-ins de collection de l'encre et de stylet  
- Chaque <xref:System.Windows.UIElement> dispose d'un <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.  Les objets <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> de <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> reçoivent et peuvent modifier les points du stylet sur le thread du stylet.  Les objets <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> reçoivent les points du stylet selon leur ordre dans <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.  
+## <a name="ink-collection-and-stylus-plug-ins"></a><span data-ttu-id="d0cd0-127">Collecte d’encre et Plug-ins du stylet</span><span class="sxs-lookup"><span data-stu-id="d0cd0-127">Ink collection and Stylus Plug-ins</span></span>  
+ <span data-ttu-id="d0cd0-128">Chaque <xref:System.Windows.UIElement> a un <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-128">Each <xref:System.Windows.UIElement> has a <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.</span></span>  <span data-ttu-id="d0cd0-129">Le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> des objets dans le <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> reçoivent et peuvent modifier les points du stylet sur le thread du stylet.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-129">The <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objects in the <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> receive and can modify the stylus points on the pen thread.</span></span> <span data-ttu-id="d0cd0-130">Le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objets reçoivent les points du stylet selon leur ordre dans le <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-130">The <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objects receive the stylus points according to their order in the <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.</span></span>  
   
- Le diagramme suivant illustre la situation hypothétique où la collection <xref:System.Windows.UIElement.StylusPlugIns%2A> d'un <xref:System.Windows.UIElement> contient `stylusPlugin1`, un <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, et `stylusPlugin2`, dans cet ordre.  
+ <span data-ttu-id="d0cd0-131">Le diagramme suivant illustre la situation hypothétique où la <xref:System.Windows.UIElement.StylusPlugIns%2A> collection d’un <xref:System.Windows.UIElement> contient `stylusPlugin1`, un <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, et `stylusPlugin2`, dans cet ordre.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-131">The following diagram illustrates the hypothetical situation where the <xref:System.Windows.UIElement.StylusPlugIns%2A> collection of a <xref:System.Windows.UIElement> contains `stylusPlugin1`, a <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, and `stylusPlugin2`, in that order.</span></span>  
   
- ![L'ordre des StylusPlugins affecte la sortie.](../../../../docs/framework/wpf/advanced/media/inkthreading-pluginorder.png "InkThreading\_PluginOrder")  
+ <span data-ttu-id="d0cd0-132">![Ordre des StylusPlugins affecte la sortie. ] (../../../../docs/framework/wpf/advanced/media/inkthreading-pluginorder.png "InkThreading_PluginOrder")</span><span class="sxs-lookup"><span data-stu-id="d0cd0-132">![Order of Stylus Plugins affect output.](../../../../docs/framework/wpf/advanced/media/inkthreading-pluginorder.png "InkThreading_PluginOrder")</span></span>  
   
- Dans le diagramme précédent, le comportement suivant est observé :  
+ <span data-ttu-id="d0cd0-133">Dans le diagramme précédent, le comportement suivant se produit :</span><span class="sxs-lookup"><span data-stu-id="d0cd0-133">In the previous diagram, the following behavior takes place:</span></span>  
   
-1.  `StylusPlugin1` modifie les valeurs de x et y.  
+1.  <span data-ttu-id="d0cd0-134">`StylusPlugin1`Modifie les valeurs de x et y.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-134">`StylusPlugin1` modifies the values for x and y.</span></span>  
   
-2.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> reçoit les points modifiés du stylet et les restitue sur le thread de rendu dynamique.  
+2.  <span data-ttu-id="d0cd0-135"><xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>reçoit les points modifiés du stylet et les restitue sur le thread de rendu dynamique.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-135"><xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> receives the modified stylus points and renders them on the dynamic rendering thread.</span></span>  
   
-3.  `StylusPlugin2` reçoit les points modifiés du stylet, puis modifie les valeurs de x et y.  
+3.  <span data-ttu-id="d0cd0-136">`StylusPlugin2`reçoit les points modifiés du stylet, puis modifie les valeurs de x et y.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-136">`StylusPlugin2` receives the modified stylus points and further modifies the values for x and y.</span></span>  
   
-4.  L'application collecte les points du stylet et, lorsque l'utilisateur a terminé son trait, restitue le trait de manière statique.  
+4.  <span data-ttu-id="d0cd0-137">L’application collecte les points du stylet et, lorsque l’utilisateur termine le trait, restitue le trait de manière statique.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-137">The application collects the stylus points, and, when the user finishes the stroke, statically renders the stroke.</span></span>  
   
- Supposez que `stylusPlugin1` restreint les points du stylet à un rectangle et que `stylusPlugin2` traduit les points du stylet vers la droite.  Dans le scénario précédent, le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> reçoit les points du stylet restreints, mais pas les points du stylet traduits.  Lorsque l'utilisateur trace son trait, ce dernier est restitué dans les limites du rectangle, mais le trait ne semble pas traduit tant que l'utilisateur n'a pas soulevé le stylet.  
+ <span data-ttu-id="d0cd0-138">Supposons que `stylusPlugin1` restreint les points du stylet à un rectangle et `stylusPlugin2` traduit les points du stylet à droite.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-138">Suppose that `stylusPlugin1` restricts the stylus points to a rectangle and `stylusPlugin2` translates the stylus points to the right.</span></span>  <span data-ttu-id="d0cd0-139">Dans le scénario précédent, le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> reçoit les points du stylet restreints, mais pas les points du stylet traduits.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-139">In the previous scenario, the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> receives the restricted stylus points, but not the translated stylus points.</span></span>  <span data-ttu-id="d0cd0-140">Lorsque l’utilisateur dessine le trait, le trait est restitué dans les limites du rectangle, mais le trait ne semble pas être traduite jusqu'à ce que l’utilisateur lève le stylet.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-140">When the user draws the stroke, the stroke is rendered within the bounds of the rectangle, but the stroke doesn't appear to be translated until the user lifts the pen.</span></span>  
   
-### Exécution d'opérations avec un plug\-in de stylet sur le thread de l'interface utilisateur  
- Étant donné que le test de recherche précis ne peut pas être exécuté sur le thread du stylet, certains éléments sont susceptibles de recevoir une entrée de stylet destinée à d'autres éléments.  Si vous devez vous assurer que l'entrée a été correctement routée avant d'exécuter une opération, abonnez\-vous et exécutez l'opération dans la méthode <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDownProcessed%2A>, <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMoveProcessed%2A> ou <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed%2A>.  Ces méthodes sont appelées par le thread d'application après l'exécution du test de recherche précis.  Pour s'abonner à ces méthodes, appelez la méthode <xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A> dans la méthode qui a lieu sur le thread du stylet.  
+### <a name="performing-operations-with-a-stylus-plug-in-on-the-ui-thread"></a><span data-ttu-id="d0cd0-141">Exécution d’opérations avec un plug-in sur le thread d’interface utilisateur du stylet</span><span class="sxs-lookup"><span data-stu-id="d0cd0-141">Performing operations with a Stylus Plug-in on the UI thread</span></span>  
+ <span data-ttu-id="d0cd0-142">Étant donné que le test de positionnement précis ne peut pas être effectué sur le thread du stylet, certains éléments susceptibles de recevoir une entrée de stylet destinée aux autres éléments.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-142">Because accurate hit-testing cannot be performed on the pen thread, some elements might occasionally receive stylus input intended for other elements.</span></span> <span data-ttu-id="d0cd0-143">Si vous devez vous assurer que l’entrée a été correctement routée avant d’effectuer une opération, s’abonner à et effectuer l’opération dans le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDownProcessed%2A>, <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMoveProcessed%2A>, ou <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="d0cd0-143">If you need to make sure the input was routed correctly before performing an operation, subscribe to and perform the operation in the <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDownProcessed%2A>, <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMoveProcessed%2A>, or <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed%2A> method.</span></span> <span data-ttu-id="d0cd0-144">Ces méthodes sont appelées par le thread d’application après l’exécution du test de positionnement précis.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-144">These methods are invoked by the application thread after accurate hit-testing has been performed.</span></span> <span data-ttu-id="d0cd0-145">Pour vous abonner à ces méthodes, appelez le <xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A> méthode dans la méthode qui se produit sur le thread du stylet.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-145">To subscribe to these methods, call the <xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A> method in the method that occurs on the pen thread.</span></span>  
   
- Le diagramme suivant illustre la relation entre le thread du stylet et le thread de l'interface utilisateur par rapport aux événements du stylet d'un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>.  
+ <span data-ttu-id="d0cd0-146">Le diagramme suivant illustre la relation entre le thread du stylet et le thread d’interface utilisateur en ce qui concerne les événements de stylet d’un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-146">The following diagram illustrates the relationship between the pen thread and UI thread with respect to the stylus events of a <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>.</span></span>  
   
- ![Modèles de threads manuscrits &#40;interface utilisateur et stylet&#41;](../../../../docs/framework/wpf/advanced/media/inkthreading-plugincallbacks.png "InkThreading\_PluginCallbacks")  
+ <span data-ttu-id="d0cd0-147">![Encre des modèles de threads &#40; L’interface utilisateur et stylet &#41; ] (../../../../docs/framework/wpf/advanced/media/inkthreading-plugincallbacks.png "InkThreading_PluginCallbacks")</span><span class="sxs-lookup"><span data-stu-id="d0cd0-147">![Ink Threading Models &#40;UI and Pen&#41;](../../../../docs/framework/wpf/advanced/media/inkthreading-plugincallbacks.png "InkThreading_PluginCallbacks")</span></span>  
   
-## Restitution de l'encre  
- Lorsque l'utilisateur trace un trait, <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> restitue l'encre sur un thread séparé pour que l'encre semble « couler » du stylet même lorsque le thread de l'interface utilisateur est occupé.  Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> génère une arborescence visuelle sur le thread de rendu dynamique pendant qu'il collecte des points de stylet.  Lorsque l'utilisateur a terminé son trait, le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> demande à être informé de la prochaine passe de rendu effectuée par l'application.  Une fois que l'application a terminé la passe de rendu suivante, le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> nettoie son arborescence visuelle.  Le schéma suivant illustre ce processus.  
+## <a name="rendering-ink"></a><span data-ttu-id="d0cd0-148">Rendu de l’encre</span><span class="sxs-lookup"><span data-stu-id="d0cd0-148">Rendering Ink</span></span>  
+ <span data-ttu-id="d0cd0-149">Lorsque l’utilisateur trace un trait, <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> restitue l’encre sur un thread séparé pour que l’encre semble « couler » du stylet même lorsque le thread d’interface utilisateur est occupé.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-149">As the user draws a stroke, <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> renders the ink on a separate thread so the ink appears to "flow" from the pen even when the UI thread is busy.</span></span>  <span data-ttu-id="d0cd0-150">Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> génère une arborescence visuelle sur le thread de rendu dynamique pendant qu’il collecte les points du stylet.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-150">The <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> builds a visual tree on the dynamic rendering thread as it collects stylus points.</span></span>  <span data-ttu-id="d0cd0-151">Lorsque l’utilisateur termine le trait, la <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> demande à être informé de la prochaine passe de rendu effectuée par l’application.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-151">When the user finishes the stroke, the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> asks to be notified when the application does the next rendering pass.</span></span>  <span data-ttu-id="d0cd0-152">Une fois que l’application a terminé la passe de rendu suivante, le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> nettoie son arborescence d’éléments visuels.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-152">After the application completes the next rendering pass, the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> cleans up its visual tree.</span></span>  <span data-ttu-id="d0cd0-153">Le diagramme suivant illustre ce processus.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-153">The following diagram illustrates this process.</span></span>  
   
- ![Diagramme des threads manuscrits](../../../../docs/framework/wpf/advanced/media/inkthreading-visualtree.png "InkThreading\_VisualTree")  
+ <span data-ttu-id="d0cd0-154">![Encre threading diagramme](../../../../docs/framework/wpf/advanced/media/inkthreading-visualtree.png "InkThreading_VisualTree")</span><span class="sxs-lookup"><span data-stu-id="d0cd0-154">![Ink threading diagram](../../../../docs/framework/wpf/advanced/media/inkthreading-visualtree.png "InkThreading_VisualTree")</span></span>  
   
-1.  L'utilisateur commence à tracer le trait.  
+1.  <span data-ttu-id="d0cd0-155">L’utilisateur commence le trait.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-155">The user begins the stroke.</span></span>  
   
-    1.  Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> crée l'arborescence visuelle.  
+    1.  <span data-ttu-id="d0cd0-156">Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> crée l’arborescence d’éléments visuels.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-156">The <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> creates the visual tree.</span></span>  
   
-2.  L'utilisateur trace le trait.  
+2.  <span data-ttu-id="d0cd0-157">L’utilisateur est le trait.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-157">The user is drawing the stroke.</span></span>  
   
-    1.  Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> génère l'arborescence visuelle.  
+    1.  <span data-ttu-id="d0cd0-158">Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> génère l’arborescence visuelle.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-158">The <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> builds the visual tree.</span></span>  
   
-3.  L'utilisateur termine le trait.  
+3.  <span data-ttu-id="d0cd0-159">L’utilisateur termine le trait.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-159">The user ends the stroke.</span></span>  
   
-    1.  Le <xref:System.Windows.Controls.InkPresenter> ajoute le trait à son arborescence visuelle.  
+    1.  <span data-ttu-id="d0cd0-160">Le <xref:System.Windows.Controls.InkPresenter> ajoute le trait à son arborescence d’éléments visuels.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-160">The <xref:System.Windows.Controls.InkPresenter> adds the stroke to its visual tree.</span></span>  
   
-    2.  Media Integration Layer \(MIL\) restitue les traits de manière statique.  
+    2.  <span data-ttu-id="d0cd0-161">La couche MIL (Media Integration) restitue les traits de manière statique.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-161">The Media Integration Layer (MIL) statically renders the strokes.</span></span>  
   
-    3.  Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> nettoie les effets visuels.
+    3.  <span data-ttu-id="d0cd0-162">Le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> nettoie les éléments visuels.</span><span class="sxs-lookup"><span data-stu-id="d0cd0-162">The <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> cleans up the visuals.</span></span>

@@ -1,55 +1,59 @@
 ---
-title: "Cr&#233;ation de l&#39;activit&#233; de workflow &#224; l&#39;aide de la classe CodeActivity | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Création de l'activité de workflow à l'aide de la classe CodeActivity"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: cfe315c1-f86d-43ec-b9ce-2f8c469b1106
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f9894926ba93461d332eaac248c71d20ea4e7d30
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Cr&#233;ation de l&#39;activit&#233; de workflow &#224; l&#39;aide de la classe CodeActivity
-Les activités créées en héritant de <xref:System.Activities.CodeActivity> peuvent implémenter un comportement impératif de base en remplaçant la méthode <xref:System.Activities.CodeActivity.Execute%2A>.  
+# <a name="workflow-activity-authoring-using-the-codeactivity-class"></a><span data-ttu-id="effc1-102">Création de l'activité de workflow à l'aide de la classe CodeActivity</span><span class="sxs-lookup"><span data-stu-id="effc1-102">Workflow Activity Authoring Using the CodeActivity Class</span></span>
+<span data-ttu-id="effc1-103">Les activités créées en héritant de <xref:System.Activities.CodeActivity> peuvent implémenter un comportement impératif de base en remplaçant la méthode <xref:System.Activities.CodeActivity.Execute%2A>.</span><span class="sxs-lookup"><span data-stu-id="effc1-103">Activities created by inheriting from <xref:System.Activities.CodeActivity> can implement basic imperative behavior by overriding the <xref:System.Activities.CodeActivity.Execute%2A> method.</span></span>  
   
-## Utilisation de CodeActivityContext  
- Les fonctionnalités de l'exécution du workflow sont accessibles à partir de la méthode <xref:System.Activities.CodeActivity.Execute%2A> en utilisant les membres du paramètre `context`, de type <xref:System.Activities.CodeActivityContext>.Les fonctionnalités disponibles via <xref:System.Activities.CodeActivityContext> sont notamment :  
+## <a name="using-codeactivitycontext"></a><span data-ttu-id="effc1-104">Utilisation de CodeActivityContext</span><span class="sxs-lookup"><span data-stu-id="effc1-104">Using CodeActivityContext</span></span>  
+ <span data-ttu-id="effc1-105">Les fonctionnalités de l'exécution du workflow sont accessibles à partir de la méthode <xref:System.Activities.CodeActivity.Execute%2A> en utilisant les membres du paramètre `context`, de type <xref:System.Activities.CodeActivityContext>.</span><span class="sxs-lookup"><span data-stu-id="effc1-105">Features of the workflow runtime can be accessed from within the <xref:System.Activities.CodeActivity.Execute%2A> method by using members of the `context` parameter, of type <xref:System.Activities.CodeActivityContext>.</span></span> <span data-ttu-id="effc1-106">Les fonctionnalités disponibles via <xref:System.Activities.CodeActivityContext> sont notamment :</span><span class="sxs-lookup"><span data-stu-id="effc1-106">The features available through <xref:System.Activities.CodeActivityContext> include the following:</span></span>  
   
--   Obtention et définition des valeurs de variables et d'arguments.  
+-   <span data-ttu-id="effc1-107">Obtention et définition des valeurs de variables et d'arguments.</span><span class="sxs-lookup"><span data-stu-id="effc1-107">Getting and setting the values of variables and arguments.</span></span>  
   
--   Fonctionnalités de suivi personnalisées à l'aide de <xref:System.Activities.CodeActivityContext.Track%2A>.  
+-   <span data-ttu-id="effc1-108">Fonctionnalités de suivi personnalisées à l'aide de <xref:System.Activities.CodeActivityContext.Track%2A>.</span><span class="sxs-lookup"><span data-stu-id="effc1-108">Custom tracking features using <xref:System.Activities.CodeActivityContext.Track%2A>.</span></span>  
   
--   Accès aux propriétés d'exécution de l'activité à l'aide de <xref:System.Activities.CodeActivityContext.GetProperty%2A>.  
+-   <span data-ttu-id="effc1-109">Accès aux propriétés d'exécution de l'activité à l'aide de <xref:System.Activities.CodeActivityContext.GetProperty%2A>.</span><span class="sxs-lookup"><span data-stu-id="effc1-109">Access to the activity’s execution properties using <xref:System.Activities.CodeActivityContext.GetProperty%2A>.</span></span>  
   
-#### Pour créer une activité personnalisée qui hérite de CodeActivity  
+#### <a name="to-create-a-custom-activity-that-inherits-from-codeactivity"></a><span data-ttu-id="effc1-110">Pour créer une activité personnalisée qui hérite de CodeActivity</span><span class="sxs-lookup"><span data-stu-id="effc1-110">To create a custom activity that inherits from CodeActivity</span></span>  
   
-1.  Ouvrez [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].  
+1.  <span data-ttu-id="effc1-111">Ouvrez [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="effc1-111">Open[!INCLUDE[vs2010](../../../includes/vs2010-md.md)].</span></span>  
   
-2.  Sélectionnez **Fichier**, **Nouveau**, puis **Projet**.Sélectionnez **Workflow 4.0** sous **Visual C\#** dans la fenêtre **Types de projets**, puis le nœud **v2010**.Sélectionnez **Bibliothèque d'activités** dans la fenêtre **Modèles**.Nommez le nouveau projet HelloActivity.  
+2.  <span data-ttu-id="effc1-112">Sélectionnez **fichier**, **nouveau**, puis **projet**.</span><span class="sxs-lookup"><span data-stu-id="effc1-112">Select **File**, **New**, and then **Project**.</span></span> <span data-ttu-id="effc1-113">Sélectionnez **Workflow 4.0** sous **Visual C#** dans les **Types de projets** , puis sélectionnez le **v2010** nœud.</span><span class="sxs-lookup"><span data-stu-id="effc1-113">Select **Workflow 4.0** under **Visual C#** in the **Project Types** window, and select the **v2010** node.</span></span> <span data-ttu-id="effc1-114">Sélectionnez **bibliothèque d’activités** dans les **modèles** fenêtre.</span><span class="sxs-lookup"><span data-stu-id="effc1-114">Select **Activity Library** in the **Templates** window.</span></span> <span data-ttu-id="effc1-115">Nommez le nouveau projet HelloActivity.</span><span class="sxs-lookup"><span data-stu-id="effc1-115">Name the new project HelloActivity.</span></span>  
   
-3.  Cliquez avec le bouton droit sur Activity1.xaml dans le projet HelloActivity et sélectionnez **Supprimer**.  
+3.  <span data-ttu-id="effc1-116">Cliquez sur Activity1.xaml dans le projet HelloActivity et sélectionnez **supprimer**.</span><span class="sxs-lookup"><span data-stu-id="effc1-116">Right-click Activity1.xaml in the HelloActivity project and select **Delete**.</span></span>  
   
-4.  Cliquez avec le bouton droit sur le projet HelloActivity et sélectionnez **Ajouter**, puis **Classe**.Nommez la nouvelle classe HelloActivity.cs.  
+4.  <span data-ttu-id="effc1-117">Cliquez sur le projet HelloActivity et sélectionnez **ajouter** , puis **classe**.</span><span class="sxs-lookup"><span data-stu-id="effc1-117">Right-click the HelloActivity project and select **Add** , and then **Class**.</span></span> <span data-ttu-id="effc1-118">Nommez la nouvelle classe HelloActivity.cs.</span><span class="sxs-lookup"><span data-stu-id="effc1-118">Name the new class HelloActivity.cs.</span></span>  
   
-5.  Dans le fichier HelloActivity.cs, ajoutez les directives `using` suivantes.  
+5.  <span data-ttu-id="effc1-119">Dans le fichier HelloActivity.cs, ajoutez les directives `using` suivantes.</span><span class="sxs-lookup"><span data-stu-id="effc1-119">In the HelloActivity.cs file, add the following `using` directives.</span></span>  
   
     ```csharp  
     using System.Activities;  
     using System.Activities.Statements;  
     ```  
   
-6.  Faites en sorte que la nouvelle classe hérite de <xref:System.Activities.CodeActivity> en ajoutant une classe de base à la déclaration de classe.  
+6.  <span data-ttu-id="effc1-120">Faites en sorte que la nouvelle classe hérite de <xref:System.Activities.CodeActivity> en ajoutant une classe de base à la déclaration de classe.</span><span class="sxs-lookup"><span data-stu-id="effc1-120">Make the new class inherit from <xref:System.Activities.CodeActivity> by adding a base class to the class declaration.</span></span>  
   
     ```csharp  
     class HelloActivity : CodeActivity  
     ```  
   
-7.  Ajoutez des fonctionnalités à la classe en ajoutant une méthode <xref:System.Activities.CodeActivity.Execute%2A>.  
+7.  <span data-ttu-id="effc1-121">Ajoutez des fonctionnalités à la classe en ajoutant une méthode <xref:System.Activities.CodeActivity.Execute%2A>.</span><span class="sxs-lookup"><span data-stu-id="effc1-121">Add functionality to the class by adding an <xref:System.Activities.CodeActivity.Execute%2A> method.</span></span>  
   
     ```csharp  
     protected override void Execute(CodeActivityContext context)  
@@ -58,7 +62,7 @@ Les activités créées en héritant de <xref:System.Activities.CodeActivity> pe
     }  
     ```  
   
-8.  Utilisez le <xref:System.Activities.CodeActivityContext> pour créer un enregistrement de suivi.  
+8.  <span data-ttu-id="effc1-122">Utilisez le <xref:System.Activities.CodeActivityContext> pour créer un enregistrement de suivi.</span><span class="sxs-lookup"><span data-stu-id="effc1-122">Use the <xref:System.Activities.CodeActivityContext> to create a tracking record.</span></span>  
   
     ```csharp  
     protected override void Execute(CodeActivityContext context)  
@@ -68,5 +72,4 @@ Les activités créées en héritant de <xref:System.Activities.CodeActivity> pe
         record.Data.Add(new KeyValuePair<String, Object>("ExecutionTime", DateTime.Now));  
         context.Track(record);  
     }  
-  
     ```

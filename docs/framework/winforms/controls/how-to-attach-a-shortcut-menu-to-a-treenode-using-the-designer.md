@@ -1,45 +1,46 @@
 ---
-title: "Comment&#160;: attacher un menu contextuel &#224; un TreeNode &#224; l&#39;aide du concepteur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "menus contextuels, attacher à des TreeNodes"
-  - "TreeNode, attacher un menu contextuel (à l'aide du concepteur)"
+title: "Comment : attacher un menu contextuel à un TreeNode à l’aide du concepteur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- shortcut menus [Windows Forms], attaching to TreeNodes
+- TreeNode [Windows Forms], attaching a shortcut menu using Designer
 ms.assetid: 8e45e184-1313-4f8f-90ff-2cd5789b2268
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e1ec1b0236aab0f4ac61cb58d4fe006d17594e17
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: attacher un menu contextuel &#224; un TreeNode &#224; l&#39;aide du concepteur
-Le contrôle <xref:System.Windows.Forms.TreeView> Windows Forms affiche des nœuds selon une organisation hiérarchique rappelant la présentation des fichiers et des dossiers dans le volet gauche de l'Explorateur Windows dans les systèmes d'exploitation Windows.  En définissant la propriété <xref:System.Windows.Forms.Control.ContextMenuStrip%2A>, vous pouvez fournir des opérations contextuelles à l'utilisateur lorsqu'il clique avec le bouton droit sur le contrôle <xref:System.Windows.Forms.TreeView>.  En associant un composant <xref:System.Windows.Forms.ContextMenuStrip> aux éléments <xref:System.Windows.Forms.TreeNode> individuels, vous pouvez ajouter un niveau personnalisé de fonctionnalités de menu contextuel à vos contrôles <xref:System.Windows.Forms.TreeView>.  
+# <a name="how-to-attach-a-shortcut-menu-to-a-treenode-using-the-designer"></a><span data-ttu-id="a0cbe-102">Comment : attacher un menu contextuel à un TreeNode à l’aide du concepteur</span><span class="sxs-lookup"><span data-stu-id="a0cbe-102">How to: Attach a Shortcut Menu to a TreeNode Using the Designer</span></span>
+<span data-ttu-id="a0cbe-103">Windows Forms <xref:System.Windows.Forms.TreeView> contrôle affiche une hiérarchie de nœuds, semblables aux fichiers et dossiers affichés dans le volet gauche de la fonctionnalité de l’Explorateur Windows dans les systèmes d’exploitation Windows.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-103">The Windows Forms <xref:System.Windows.Forms.TreeView> control displays a hierarchy of nodes, similar to the files and folders displayed in the left pane of the Windows Explorer feature in Windows operating systems.</span></span> <span data-ttu-id="a0cbe-104">En définissant le <xref:System.Windows.Forms.Control.ContextMenuStrip%2A> propriété, vous pouvez fournir opérations contextuelles à l’utilisateur lorsque leur droit le <xref:System.Windows.Forms.TreeView> contrôle.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-104">By setting the <xref:System.Windows.Forms.Control.ContextMenuStrip%2A> property, you can provide context-sensitive operations to the user when they right-click the <xref:System.Windows.Forms.TreeView> control.</span></span> <span data-ttu-id="a0cbe-105">En associant un <xref:System.Windows.Forms.ContextMenuStrip> composant avec une personne <xref:System.Windows.Forms.TreeNode> éléments, vous pouvez ajouter un niveau personnalisé de fonctionnalités de menu contextuel à votre <xref:System.Windows.Forms.TreeView> contrôles.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-105">By associating a <xref:System.Windows.Forms.ContextMenuStrip> component with individual <xref:System.Windows.Forms.TreeNode> items, you can add a customized level of shortcut menu functionality to your <xref:System.Windows.Forms.TreeView> controls.</span></span>  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="a0cbe-106">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-106">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="a0cbe-107">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="a0cbe-107">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="a0cbe-108">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="a0cbe-108">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### Pour associer un menu contextuel à un TreeNode au moment du design  
+### <a name="to-associate-a-shortcut-menu-with-a-treenode-at-design-time"></a><span data-ttu-id="a0cbe-109">Pour associer un menu contextuel à un TreeNode au moment du design</span><span class="sxs-lookup"><span data-stu-id="a0cbe-109">To associate a shortcut menu with a TreeNode at design time</span></span>  
   
-1.  Ajoutez un contrôle <xref:System.Windows.Forms.TreeView> à votre formulaire, puis ajoutez des nœuds au <xref:System.Windows.Forms.TreeView> autant que nécessaire.  Pour plus d'informations, consultez [Comment : ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md).  
+1.  <span data-ttu-id="a0cbe-110">Ajouter un <xref:System.Windows.Forms.TreeView> le contrôle à votre formulaire, puis ajouter des nœuds à la <xref:System.Windows.Forms.TreeView> en fonction des besoins.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-110">Add a <xref:System.Windows.Forms.TreeView> control to your form, and then add nodes to the <xref:System.Windows.Forms.TreeView> as needed.</span></span> <span data-ttu-id="a0cbe-111">Pour plus d’informations, consultez [Comment : ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md).</span><span class="sxs-lookup"><span data-stu-id="a0cbe-111">For more information, see [How to: Add and Remove Nodes with the Windows Forms TreeView Control](../../../../docs/framework/winforms/controls/how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md).</span></span>  
   
-2.  Ajoutez un composant <xref:System.Windows.Forms.ContextMenuStrip> à votre formulaire, puis ajoutez des éléments de menu au menu contextuel qui représente les opérations de niveau de nœud que vous souhaitez rendre disponible au moment de l'exécution.  Pour plus d'informations, consultez [Comment : ajouter des éléments de menu à un ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-add-menu-items-to-a-contextmenustrip.md).  
+2.  <span data-ttu-id="a0cbe-112">Ajouter un <xref:System.Windows.Forms.ContextMenuStrip> à votre formulaire, puis ajoutez des éléments de menu au menu contextuel qui représentent des opérations au niveau du nœud vous souhaitez rendre disponible au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-112">Add a <xref:System.Windows.Forms.ContextMenuStrip> component to your form, and then add menu items to the shortcut menu that represent node-level operations you wish to make available at run time.</span></span> <span data-ttu-id="a0cbe-113">Pour plus d’informations, consultez [Comment : ajouter des éléments de Menu à un ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-add-menu-items-to-a-contextmenustrip.md).</span><span class="sxs-lookup"><span data-stu-id="a0cbe-113">For more information, see [How to: Add Menu Items to a ContextMenuStrip](../../../../docs/framework/winforms/controls/how-to-add-menu-items-to-a-contextmenustrip.md).</span></span>  
   
-3.  Rouvrez la boîte de dialogue **Éditeur TreeNode** pour le contrôle <xref:System.Windows.Forms.TreeView>, sélectionnez le nœud à modifier, puis définissez sa propriété <xref:System.Windows.Forms.ContextMenuStrip> en fonction du menu contextuel que vous avez ajouté.  
+3.  <span data-ttu-id="a0cbe-114">Rouvrez le **TreeNode** boîte de dialogue pour le <xref:System.Windows.Forms.TreeView> contrôle, sélectionnez le nœud à modifier et définir son <xref:System.Windows.Forms.ContextMenuStrip> propriété dans le menu contextuel que vous avez ajouté.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-114">Reopen the **TreeNodeEditor** dialog box for the <xref:System.Windows.Forms.TreeView> control, select the node to edit, and set its <xref:System.Windows.Forms.ContextMenuStrip> property to the shortcut menu that you added.</span></span>  
   
-4.  Lorsque cette propriété est définie, le menu contextuel s'affiche quand vous cliquez avec le bouton droit sur le nœud.  
+4.  <span data-ttu-id="a0cbe-115">Lorsque cette propriété est définie, le menu contextuel s’affichera lorsque vous cliquez sur le nœud.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-115">When this property is set, the shortcut menu will be displayed when you right-click the node.</span></span>  
   
-     Vous devez également écrire le code permettant de gérer les événements <xref:System.Windows.Forms.ToolStripItem.Click> pour ces options de menu.  
+     <span data-ttu-id="a0cbe-116">En outre, vous souhaitez écrire du code pour gérer les <xref:System.Windows.Forms.ToolStripItem.Click> événements pour ces éléments de menu.</span><span class="sxs-lookup"><span data-stu-id="a0cbe-116">Additionally, you will want to write code to handle the <xref:System.Windows.Forms.ToolStripItem.Click> events for these menu items.</span></span>  
   
-## Voir aussi  
- [TreeView, contrôle](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)   
- [Vue d'ensemble du contrôle TreeView](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)   
- [ContextMenuStrip, contrôle](../../../../docs/framework/winforms/controls/contextmenustrip-control.md)
+## <a name="see-also"></a><span data-ttu-id="a0cbe-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a0cbe-117">See Also</span></span>  
+ [<span data-ttu-id="a0cbe-118">TreeView, contrôle</span><span class="sxs-lookup"><span data-stu-id="a0cbe-118">TreeView Control</span></span>](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
+ [<span data-ttu-id="a0cbe-119">Vue d’ensemble du contrôle TreeView</span><span class="sxs-lookup"><span data-stu-id="a0cbe-119">TreeView Control Overview</span></span>](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)  
+ [<span data-ttu-id="a0cbe-120">ContextMenuStrip, contrôle</span><span class="sxs-lookup"><span data-stu-id="a0cbe-120">ContextMenuStrip Control</span></span>](../../../../docs/framework/winforms/controls/contextmenustrip-control.md)

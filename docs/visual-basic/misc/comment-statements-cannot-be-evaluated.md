@@ -1,21 +1,24 @@
 ---
-title: "Les instructions comment ne peuvent pas &#234;tre &#233;valu&#233;es | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
+title: "Les instructions comment ne peuvent pas être évaluées"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
 ms.assetid: ffe8a2ba-a426-4a0b-8216-040af76615ed
-caps.latest.revision: 2
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4a673789bbfad0c7e62d21efd330375810ddae67
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Les instructions comment ne peuvent pas &#234;tre &#233;valu&#233;es
-Insérez l'introduction ici.  
+# <a name="comment-statements-cannot-be-evaluated"></a><span data-ttu-id="c2546-102">Les instructions comment ne peuvent pas être évaluées</span><span class="sxs-lookup"><span data-stu-id="c2546-102">Comment statements cannot be evaluated</span></span>
+<span data-ttu-id="c2546-103">Insérez l'introduction ici.</span><span class="sxs-lookup"><span data-stu-id="c2546-103">Insert introduction here.</span></span>  
   
-## Titre de la section  
- Insérez le corps de la section ici.  
+## <a name="section-heading"></a><span data-ttu-id="c2546-104">Titre de la section</span><span class="sxs-lookup"><span data-stu-id="c2546-104">Section Heading</span></span>  
+ <span data-ttu-id="c2546-105">Insérez le corps de la section ici.</span><span class="sxs-lookup"><span data-stu-id="c2546-105">Insert section body here.</span></span>  
   
-### Titre de la sous\-section  
- Insérez le corps de la sous\-section ici.
+### <a name="subsection-heading"></a><span data-ttu-id="c2546-106">Titre de la sous-section</span><span class="sxs-lookup"><span data-stu-id="c2546-106">Subsection Heading</span></span>  
+ <span data-ttu-id="c2546-107">Insérez le corps de la sous-section ici.</span><span class="sxs-lookup"><span data-stu-id="c2546-107">Insert subsection body here.</span></span>
