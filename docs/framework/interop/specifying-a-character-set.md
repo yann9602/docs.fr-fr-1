@@ -5,33 +5,30 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - platform invoke, attribute fields
 - attribute fields in platform invoke, CharSet
 - CharSet field
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a1b0e444ef73deac6f6e353c8e1b67d1cf361ab2
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3e97c640472156c1a47ad125bffeaf39b8eb0762
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="specifying-a-character-set"></a>Spécification d'un jeu de caractères
-Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> contrôle le marshaling des chaînes et détermine de quelle façon l’appel de code non managé recherche des noms de fonction dans une DLL. Cette rubrique décrit ces deux comportements.  
+Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> contrôle le marshaling des chaînes et détermine de quelle façon l’appel de code non managé recherche des noms de fonction dans une DLL. Cette rubrique décrit ces deux comportements.  
   
  Certaines API exportent deux versions de fonctions qui acceptent des arguments de chaîne : caractères étroits (ANSI) et caractères larges (Unicode). L’API Win32, par exemple, inclut les noms de point d’entrée suivants pour la fonction **MessageBox** :  
   
@@ -54,7 +51,7 @@ Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?display
   
 -   Correspondance de noms  
   
-     Quand le champ <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=fullName> a la valeur **true** (valeur par défaut dans [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]), l’appel de code non managé recherche uniquement le nom que vous spécifiez. Par exemple, si vous spécifiez **MessageBox**, l’appel de code non managé recherche **MessageBox** et échoue s’il ne trouve pas de correspondance exacte.  
+     Quand le champ <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> a la valeur **true** (valeur par défaut dans [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]), l’appel de code non managé recherche uniquement le nom que vous spécifiez. Par exemple, si vous spécifiez **MessageBox**, l’appel de code non managé recherche **MessageBox** et échoue s’il ne trouve pas de correspondance exacte.  
   
      Quand le champ **ExactSpelling** a la valeur **false** (valeur par défaut dans C++ et C#), l’appel de code non managé recherche d’abord l’alias non altéré (**MessageBox**), puis il recherche le nom altéré (**MessageBoxA**) si l’alias non altéré est introuvable. Notez que la correspondance de noms ANSI et la correspondance de noms Unicode n’ont pas le même comportement.  
   
@@ -77,7 +74,7 @@ Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?display
 ## <a name="specifying-a-character-set-in-visual-basic"></a>Spécification d’un jeu de caractères dans Visual Basic  
  L’exemple suivant déclare la fonction **MessageBox** trois fois, chaque fois avec un comportement de jeu de caractères différent. Vous pouvez spécifier le comportement de jeu de caractères dans Visual Basic en ajoutant le mot clé **Ansi**, **Unicode** ou **Auto** à l’instruction de déclaration.  
   
- Si vous omettez le mot clé de jeu de caractères, comme c’est le cas dans la première instruction de déclaration, le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> est par défaut défini sur le jeu de caractères ANSI. Dans l’exemple, la deuxième et la troisième instructions spécifient explicitement un jeu de caractères à l’aide d’un mot clé.  
+ Si vous omettez le mot clé de jeu de caractères, comme c’est le cas dans la première instruction de déclaration, le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> est par défaut défini sur le jeu de caractères ANSI. Dans l’exemple, la deuxième et la troisième instructions spécifient explicitement un jeu de caractères à l’aide d’un mot clé.  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -98,7 +95,7 @@ End Class
 ```  
   
 ## <a name="specifying-a-character-set-in-c-and-c"></a>Spécification d’un jeu de caractères dans C# et C++  
- Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=fullName> identifie le jeu de caractères sous-jacent au format ANSI ou Unicode. Le jeu de caractères contrôle de quelle manière les arguments de chaîne d’une méthode doivent être marshalés. Spécifiez le jeu de caractères de l’une des manières suivantes :  
+ Le champ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> identifie le jeu de caractères sous-jacent au format ANSI ou Unicode. Le jeu de caractères contrôle de quelle manière les arguments de chaîne d’une méthode doivent être marshalés. Spécifiez le jeu de caractères de l’une des manières suivantes :  
   
 ```csharp  
 [DllImport("dllname", CharSet=CharSet.Ansi)]  
@@ -152,8 +149,7 @@ extern "C" int MessageBox(HWND hWnd,
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.DllImportAttribute>   
- [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)   
- [Exemples d’appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)   
+ <xref:System.Runtime.InteropServices.DllImportAttribute>  
+ [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
+ [Exemples d'appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)  
  [Marshaling de données à l’aide de l’appel de code managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
-

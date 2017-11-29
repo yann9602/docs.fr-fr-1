@@ -1,59 +1,64 @@
 ---
-title: "&lt;ThrowUnobservedTaskExceptions&gt;, &#201;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<ThrowUnobservedTaskExceptions> (élément)"
-  - "ThrowUnobservedTaskExceptions (élément)"
+title: "&lt;ThrowUnobservedTaskExceptions&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ThrowUnobservedTaskExceptions element
+- <ThrowUnobservedTaskExceptions> element
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
-caps.latest.revision: 6
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d171c2058a79476d99c5952cc6a697f126af81c4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;ThrowUnobservedTaskExceptions&gt;, &#201;l&#233;ment
-Spécifie si les exceptions non gérées de tâche doivent arrêter un processus en cours de exécution.  
+# <a name="ltthrowunobservedtaskexceptionsgt-element"></a>&lt;ThrowUnobservedTaskExceptions&gt; élément
+Indique si les exceptions de tâches non gérées doivent arrêter un processus en cours d’exécution.  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+\<ThrowUnobservedTaskExceptions >  
   
-```vb  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <ThrowUnobservedTaskExceptions  
    enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si les exceptions non gérées de tâche doivent arrêter le processus en cours de exécution.|  
+|---------------|-----------------|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si les exceptions de tâche non gérée doivent s’arrêter le processus en cours d’exécution.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`false`|N'interrompt pas le traitement en cours pour une exception non prise en charge de travail.  Il s'agit de la valeur par défaut.|  
-|`true`|Interrompt le traitement en cours pour une exception non prise en charge de travail.|  
+|-----------|-----------------|  
+|`false`|N’arrête pas le processus en cours d’exécution pour une exception de tâche non gérée. Il s'agit de la valeur par défaut.|  
+|`true`|Termine le processus en cours d’exécution pour une exception de tâche non gérée.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
@@ -61,39 +66,38 @@ Spécifie si les exceptions non gérées de tâche doivent arrêter un processus
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
 |||  
   
-## Notes  
- Si une exception associée à <xref:System.Threading.Tasks.Task> n'a pas été chaîne observée, aucune opération <xref:System.Threading.Tasks.Task.Wait%2A>, le parent n'est pas attachée, et la propriété <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=fullName> n'a pas été lue l'exception de la tâche est considérée inaperçue.  
+## <a name="remarks"></a>Remarques  
+ Si une exception qui est associée à un <xref:System.Threading.Tasks.Task> n’a pas été respectées, il est sans <xref:System.Threading.Tasks.Task.Wait%2A> opération, le parent n’est pas attachée et le <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> propriété n’a pas lu à l’exception de la tâche est considérée comme défaillante.  
   
- Dans [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], par défaut, si <xref:System.Threading.Tasks.Task> qui a une exception inaperçue est récupéré par le garbage collector, un finaliseur lève une exception et met fin au processus.  L'arrêt du processus est déterminé par celle du garbage collection et la finalisation.  
+ Dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], par défaut, si un <xref:System.Threading.Tasks.Task> qui a un défaillante exception est le garbage collector, le finaliseur lève une exception et met fin au processus. L’arrêt du processus est déterminée par la durée du garbage collection et la finalisation.  
   
- Pour qu'il soit plus simple pour les développeurs d'écrire du code asynchrone basé sur des tâches, le [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] modifie ce comportement par défaut pour les exceptions inaperçues.  Les exceptions inaperçues provoquent toujours l'événement <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> à déclencher, mais par défaut, le processus ne se termine pas.  Au lieu de cela, l'exception est ignorée après que l'événement soit déclenché, même si un gestionnaire d'événements respecte l'exception.  
+ Pour le rendre plus facile pour les développeurs d’écrire du code asynchrone basé sur les tâches, les [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] modifie ce comportement par défaut pour les exceptions non prise en charge. Non prises en charge les exceptions d’entraînent toujours le <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> événement soit déclenché, mais par défaut, le processus s’arrête. Au lieu de cela, l’exception est ignorée une fois que l’événement est déclenché, indépendamment de si un gestionnaire d’événements observe l’exception.  
   
- Dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], vous pouvez utiliser [\<ThrowUnobservedTaskExceptions\> élément](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) dans un fichier de configuration de l'application pour activer le comportement [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] de lever une exception.  
+ Dans le [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], vous pouvez utiliser la [ \<ThrowUnobservedTaskExceptions > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) dans un fichier de configuration d’application pour activer la [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] comportement de lever une exception.  
   
- Vous pouvez également spécifier le comportement d'exception de l'une des manières suivantes :  
+ Vous pouvez également spécifier le comportement d’exception dans une des manières suivantes :  
   
--   En définissant la variable d'environnement `COMPlus_ThrowUnobservedTaskExceptions` \(`set COMPlus_ThrowUnobservedTaskExceptions=1`\).  
+-   En définissant la variable d’environnement `COMPlus_ThrowUnobservedTaskExceptions` (`set COMPlus_ThrowUnobservedTaskExceptions=1`).  
   
--   En définissant la valeur DWORD ThrowUnobservedTaskExceptions de Registre \= 1 dans la clé d'HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\.NETFramework.  
+-   En définissant le Registre DWORD value ThrowUnobservedTaskExceptions = 1 dans le HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework clé.  
   
-## Exemple  
- Le code exemple suivant illustre l'activation de lever des exceptions dans les tâches en utilisant un fichier de configuration de l'application.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment activer la levée d’exceptions dans les tâches à l’aide d’un fichier de configuration.  
   
-```  
+```xml  
 <configuration>   
     <runtime>   
         <ThrowUnobservedTaskExceptions enabled="true"/>   
     </runtime>   
 </configuration>  
-  
 ```  
   
-## Exemple  
- L'exemple suivant montre comment une exception inaperçue est levée depuis une tâche.  Le code doit être exécuté en tant que programme publié pour pouvoir fonctionner correctement.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment une propagation de l’exception est levée à partir d’une tâche. Le code doit être exécuté comme un programme lancé fonctionne correctement.  
   
  [!code-csharp[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/throwunobservedtaskexceptions/cs/program.cs#1)]
  [!code-vb[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/throwunobservedtaskexceptions/vb/program.vb#1)]  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)

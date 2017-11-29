@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -25,21 +23,20 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: 945d00c6-7202-466c-9df9-140b84156d43
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8562670aad8a20a28eddcd2ebbe434a0402aff59
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ecd08b708b8725ae7b53bfee26b1d4d8668756cd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-a-synchronous-client-socket"></a>Utilisation d’un socket client synchrone
 Un socket client synchrone interrompt l’exécution de l’application durant l’opération réseau. Les sockets synchrones ne sont pas appropriés pour les applications dont l’exécution nécessite une utilisation intensive du réseau, mais ils facilitent l’accès aux services réseau pour les autres applications.  
   
- Pour envoyer les données, passez un tableau d’octets à l’une des méthodes d’envoi de données de la classe <xref:System.Net.Sockets.Socket> (<xref:System.Net.Sockets.Socket.Send%2A> et <xref:System.Net.Sockets.Socket.SendTo%2A>). L’exemple suivant encode une chaîne dans une mémoire tampon de tableau d’octets à l’aide de la propriété <xref:System.Text.Encoding.ASCII%2A?displayProperty=fullName>, puis transmet la mémoire tampon à l’appareil réseau avec la méthode **Send**. La méthode **Send** retourne le nombre d’octets envoyés à l’appareil réseau.  
+ Pour envoyer les données, passez un tableau d’octets à l’une des méthodes d’envoi de données de la classe <xref:System.Net.Sockets.Socket> (<xref:System.Net.Sockets.Socket.Send%2A> et <xref:System.Net.Sockets.Socket.SendTo%2A>). L’exemple suivant encode une chaîne dans une mémoire tampon de tableau d’octets à l’aide de la propriété <xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType>, puis transmet la mémoire tampon à l’appareil réseau avec la méthode **Send**. La méthode **Send** retourne le nombre d’octets envoyés à l’appareil réseau.  
   
 ```vb  
 Dim msg As Byte() = _  
@@ -83,7 +80,6 @@ s.Close();
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Utilisation d’un socket client asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
- [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)   
+ [Utilisation d’un Socket Client asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
+ [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)  
  [Exemple de socket client synchrone](../../../docs/framework/network-programming/synchronous-client-socket-example.md)
-

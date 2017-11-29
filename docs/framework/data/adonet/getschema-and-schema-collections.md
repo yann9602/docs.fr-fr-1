@@ -1,35 +1,39 @@
 ---
-title: "GetSchema et collections de sch&#233;mas | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Collections GetSchema et Schema
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 4790195d5f02ac1f68f8ab4c5ef39499052cd725
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# GetSchema et collections de sch&#233;mas
-Les classes **Connection** dans chacun des fournisseurs .NET Framework managés implémentent une méthode **GetSchema** qui est utilisée pour extraire des informations de schéma sur la base de données actuellement connectée, et les informations de schéma retournées par la méthode **GetSchema** se présentent sous la forme d'un <xref:System.Data.DataTable>.  La méthode **GetSchema** est une méthode surchargée qui fournit des paramètres facultatifs pour spécifier la collection de schémas à retourner et restreindre la quantité d'informations retournées.  
+# <a name="getschema-and-schema-collections"></a>Collections GetSchema et Schema
+Le **connexion** classes dans chacun de l’implémentation de fournisseurs managés .NET Framework une **GetSchema** méthode qui est utilisée pour récupérer les informations de schéma sur la base de données qui est actuellement connecté, et les informations de schéma retournées par la **GetSchema** méthode se présente sous la forme d’un <xref:System.Data.DataTable>. Le **GetSchema** méthode est une méthode surchargée qui fournit des paramètres facultatifs pour spécifier la collection de schémas à retourner et restreindre la quantité d’informations retournées.  
   
-## Spécification des collections de schémas  
- Le premier paramètre facultatif de la méthode **GetSchema** est le nom de collection spécifié comme chaîne.  Il y a deux types de collection de schémas : les collections de schémas communes qui sont communes à tous les fournisseurs et les collections de schémas spécifiques qui sont spécifiques à chaque fournisseur.  
+## <a name="specifying-the-schema-collections"></a>Spécification des collections de schémas  
+ Le premier paramètre facultatif de la **GetSchema** méthode est le nom de la collection qui est spécifié sous forme de chaîne. Il y a deux types de collection de schémas : les collections de schémas communes qui sont communes à tous les fournisseurs et les collections de schémas spécifiques qui sont spécifiques à chaque fournisseur.  
   
- Vous pouvez interroger un fournisseur .NET Framework managé afin d'établir la liste des collections de schémas prises en charge en appelant la méthode **GetSchema** sans argument ou avec le nom de collection de schémas « MetaDataCollections ».  Cette opération retourne un <xref:System.Data.DataTable> avec une liste des collections de schémas prises en charge, le nombre de restrictions qu'elles prennent en charge et le nombre d'éléments d'identification qu'elles utilisent.  
+ Vous pouvez interroger un fournisseur .NET Framework managé afin de déterminer la liste des collections de schémas prises en charge en appelant le **GetSchema** méthode sans argument ou avec le nom de collection de schémas « MetaDataCollections ». Cette opération retourne un <xref:System.Data.DataTable> avec une liste des collections de schémas prises en charge, le nombre de restrictions qu'elles prennent en charge et le nombre d'éléments d'identification qu'elles utilisent.  
   
-### Exemple d'extraction de collections de schémas  
- Les exemples suivants montrent comment utiliser la méthode <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> du fournisseur de données .NET Framework pour la classe SQL Server <xref:System.Data.SqlClient.SqlConnection> afin d'extraire des informations de schéma sur toutes les tables contenues dans l'exemple de base de données **AdventureWorks** :  
+### <a name="retrieving-schema-collections-example"></a>Exemple d’extraction de collections de schémas  
+ Les exemples suivants montrent comment utiliser le <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> méthode du fournisseur de données .NET Framework pour SQL Server <xref:System.Data.SqlClient.SqlConnection> classe pour récupérer les informations de schéma sur toutes les tables contenues dans le **AdventureWorks**base de données exemple :  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 Imports System.Data.SqlClient  
   
 Module Module1  
@@ -65,9 +69,7 @@ Module Module1
 End Module  
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -112,6 +114,6 @@ class Program
 }  
 ```  
   
-## Voir aussi  
- [Récupération d'informations de schéma de base de données](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [La récupération des informations de schéma de base de données](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

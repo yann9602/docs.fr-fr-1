@@ -1,25 +1,28 @@
 ---
-title: "PeerSecuritySettings | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: PeerSecuritySettings
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 24ae0d35-f3a3-419b-afd6-686e22aae27b
-caps.latest.revision: 7
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 02cd483f2f7ec5e599b286b672d051a0e8d57940
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# PeerSecuritySettings
+# <a name="peersecuritysettings"></a>PeerSecuritySettings
 PeerSecuritySettings  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class PeerSecuritySettings  
@@ -29,31 +32,31 @@ class PeerSecuritySettings
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe PeerSecuritySettings ne définit pas de méthode.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe PeerSecuritySettings a les propriétés suivantes :  
   
-### Mode  
+### <a name="mode"></a>Mode  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Utilisation ou non d'une sécurité au niveau du message et au niveau du transport par un point de terminaison configuré avec la liaison.  
   
-### Transport  
+### <a name="transport"></a>Transport  
  Type de données : PeerTransportSecuritySettings  
   
  Type d'accès : lecture seule  
   
  Paramètres de sécurité du transport.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.PeerSecuritySettings>

@@ -1,30 +1,36 @@
 ---
-title: "Configuration des comportements clients | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Configuration des comportements clients
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: df5b32fa-e73b-4e8e-b66f-357c748e0173
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6f16f32128c7223fa600802ae593d36286847dc8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Configuration des comportements clients
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] configure les comportements de deux manières : en faisant référence aux configurations de comportement, qui sont définies dans la section `<behavior>` du fichier de configuration d'une application cliente, ou par programme dans l'application appelante.  Cette rubrique décrit ces deux approches.  
+# <a name="configuring-client-behaviors"></a>Configuration des comportements clients
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] configure les comportements de deux manières : en faisant référence aux configurations de comportement, qui sont définies dans la section `<behavior>` du fichier de configuration d'une application cliente, ou par programme dans l'application appelante. Cette rubrique décrit ces deux approches.  
   
- Lors de l'utilisation d'un fichier de configuration, la configuration du comportement est une collection nommée de paramètres de configuration.  Le nom de chaque configuration de comportement doit être unique.  Cette chaîne est utilisée dans l'attribut `behaviorConfiguration` d'une configuration de point de terminaison pour lier le point de terminaison au comportement.  
+ Lors de l'utilisation d'un fichier de configuration, la configuration du comportement est une collection nommée de paramètres de configuration. Le nom de chaque configuration de comportement doit être unique. Cette chaîne est utilisée dans l'attribut `behaviorConfiguration` d'une configuration de point de terminaison pour lier le point de terminaison au comportement.  
   
-## Exemple  
- Le code de configuration suivant définit un comportement appelé `myBehavior`.  Le point de terminaison de client référence ce comportement dans l'attribut `behaviorConfiguration`.  
+## <a name="example"></a>Exemple  
+ Le code de configuration suivant définit un comportement appelé `myBehavior`. Le point de terminaison de client référence ce comportement dans l'attribut `behaviorConfiguration`.  
   
-```  
+```xml  
 <configuration>  
     <system.serviceModel>  
         <behaviors>  
@@ -46,14 +52,14 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## Utilisation de comportements par programme  
+## <a name="using-behaviors-programmatically"></a>Utilisation de comportements par programme  
  Vous pouvez également configurer ou insérer par programme des comportements en localisant la propriété `Behaviors` appropriée sur l'objet client [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ou l'objet de fabrication de canaux client avant d'ouvrir le client.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple de code suivant indique comment insérer par programme un comportement en accédant à la propriété <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> sur <xref:System.ServiceModel.Description.ServiceEndpoint> retournée à partir de la propriété <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> avant la création de l'objet de canal.  
   
  [!code-csharp[ChannelFactoryBehaviors#10](../../../samples/snippets/csharp/VS_Snippets_CFX/channelfactorybehaviors/cs/client.cs#10)]
  [!code-vb[ChannelFactoryBehaviors#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/channelfactorybehaviors/vb/client.vb#10)]  
   
-## Voir aussi  
- [\<comportements\>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
+## <a name="see-also"></a>Voir aussi  
+ [\<comportements >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)

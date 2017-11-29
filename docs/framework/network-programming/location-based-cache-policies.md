@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Cache If Available policy
 - reload policy
@@ -26,16 +21,15 @@ helpviewer_keywords:
 - Cache Or Next Cache Only policy
 - Refresh policy
 ms.assetid: e41d7f1a-0a6a-4dee-97d1-c6a8b6a07fc2
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a5b4bf67db3fcbb70d2a93f35976d8d9b4b3a028
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 7a1be9f377f9b241bf46ac67f4f3f08fc5a43821
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="location-based-cache-policies"></a>stratégies de cache basées sur l’emplacement
 Une stratégie de cache basée sur l’emplacement définit l’actualisation des entrées valides mises en cache en fonction de l’emplacement d’où la ressource demandée peut être récupérée. Une ressource mise en cache est valide si elle respecte les exigences de revalidation spécifiées par le serveur. Une stratégie de cache basée sur l’emplacement peut être créée par programmation à l’aide du constructeur de classe <xref:System.Net.Cache.RequestCachePolicy> ou <xref:System.Net.Cache.HttpRequestCachePolicy>. Le type de stratégie basée sur l’emplacement est passé au constructeur avec une valeur d’énumération <xref:System.Net.Cache.RequestCacheLevel> ou <xref:System.Net.Cache.HttpRequestCacheLevel>. Pour obtenir des exemples de code qui créent des stratégies de cache basées sur l’emplacement, consultez [Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Les sections suivantes expliquent chaque type de stratégie de cache basée sur l’emplacement pour les ressources HTTP et HTTPS.  
@@ -62,9 +56,8 @@ Une stratégie de cache basée sur l’emplacement définit l’actualisation de
  Compare la copie de la ressource située dans le cache et celle située sur le serveur. Si la copie située sur le serveur est plus récente, elle est utilisée pour répondre à la demande et remplace la copie située dans le cache. Si la copie située dans le cache est identique à celle du serveur, la copie du cache est utilisée. Dans le protocole de mise en cache HTTP, vous pouvez accomplir cette tâche à l’aide d’une demande conditionnelle.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
- [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)   
- [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)   
- [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)   
+ [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)  
+ [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)  
+ [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
  [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
-

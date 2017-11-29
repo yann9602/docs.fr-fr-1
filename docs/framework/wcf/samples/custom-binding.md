@@ -1,33 +1,36 @@
 ---
-title: "Liaison personnalis&#233;e | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Liaison personnalisée"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3c9537ea-9708-4ebc-b861-219f2e2db53d
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0df615d0320c769aa986e8cca5d272ab6df4ad2d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Liaison personnalis&#233;e
-Cette section contient des exemples qui illustrent l'utilisation d'un attribut de liaison personnalisé d'un élément de point de terminaison.  
+# <a name="custom-binding"></a>Liaison personnalisée
+Cette section contient des exemples qui illustrent l’utilisation d’un attribut de liaison personnalisé d’un élément de point de terminaison.  
   
-## Dans cette section  
- [Custom Binding Imperative](../../../../docs/framework/wcf/samples/custom-binding-imperative.md)  
+## <a name="in-this-section"></a>Dans cette section  
+ [Impératif de liaison personnalisée](../../../../docs/framework/wcf/samples/custom-binding-imperative.md)  
  Montre comment écrire du code impératif pour définir et utiliser des liaisons personnalisées sans fichier de configuration ou sans client généré par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Custom Binding Transport and Encoding](../../../../docs/framework/wcf/samples/custom-binding-transport-and-encoding.md)  
- Montre comment configurer une liaison personnalisée avec plusieurs éléments de transport et d'encodage de message.  
+ [Liaison de Transport et un encodage personnalisé](../../../../docs/framework/wcf/samples/custom-binding-transport-and-encoding.md)  
+ Montre comment configurer une liaison personnalisée avec plusieurs éléments de transport et d’encodage de message.  
   
- [Custom Binding Reliable Session](../../../../docs/framework/wcf/samples/custom-binding-reliable-session.md)  
- Montre comment configurer une liaison personnalisée avec plusieurs éléments de transport et d'encodage de message, en particulier en activant des sessions fiables.  
+ [Session fiable de liaison personnalisée](../../../../docs/framework/wcf/samples/custom-binding-reliable-session.md)  
+ Montre comment configurer une liaison personnalisée avec plusieurs éléments de transport et d’encodage de message, en particulier en activant des sessions fiables.  
   
- [Custom Binding Reliable Session over HTTPS](../../../../docs/framework/wcf/samples/custom-binding-reliable-session-over-https.md)  
+ [Liaison de Session fiable sur HTTPS personnalisée](../../../../docs/framework/wcf/samples/custom-binding-reliable-session-over-https.md)  
  Montre l'utilisation de la sécurité de transport SSL avec des sessions fiables.

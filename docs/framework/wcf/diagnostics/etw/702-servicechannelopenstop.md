@@ -1,35 +1,38 @@
 ---
-title: "702 - ServiceChannelOpenStop | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 702 - ServiceChannelOpenStop
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 190298c4-8216-4eb5-b8b0-8072400838c5
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: eab1c031f77fc6578af46b426477b3378f9aa195
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 702 - ServiceChannelOpenStop
-## Propriétés  
+# <a name="702---servicechannelopenstop"></a>702 - ServiceChannelOpenStop
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
 |ID|702|  
 |Mots clés|ServiceModel|  
 |Niveau|Information|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Analyse|  
+|Canal|Microsoft-Windows-Application Server-Applications/Analyse|  
   
-## Description  
+## <a name="description"></a>Description  
  Cet événement est émis lorsque ServiceChannelOpen s'arrête.  
   
-## Message  
+## <a name="message"></a>Message  
  ServiceChannelOpen terminé.  
   
-## Détails
+## <a name="details"></a>Détails

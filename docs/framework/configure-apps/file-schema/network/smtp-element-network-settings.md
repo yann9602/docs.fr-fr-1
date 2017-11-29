@@ -1,76 +1,78 @@
 ---
-title: "&lt;smtp&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#smtp"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<smtp> (élément)"
-  - "smtp (élément)"
+title: "&lt;SMTP&gt; élément (paramètres réseau)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#smtp
+helpviewer_keywords:
+- <smtp> element
+- smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-caps.latest.revision: 13
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 17b4050c43354da7e7ba6c3ea13a0c7621faf0a0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;smtp&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau)
-Configure le format de la livraison, la méthode de livraison et l'adresse d'origine pour l'envoi de messages électroniques.  
+# <a name="ltsmtpgt-element-network-settings"></a>&lt;SMTP&gt; élément (paramètres réseau)
+Configure le format de remise, de la méthode de remise et à partir de l’adresse pour l’envoi de messages électroniques.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.NET >  
+\<mailSettings >  
+\<SMTP >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
       <smtp  
-  deliveryFormat="format"   
-  deliveryMethod="method"   
-  from="from address"   
-  <specifiedPickupDirectory> … </ specifiedPickupDirectory >  
-  <network> … </network>  
-/smtp>  
+        deliveryFormat="format"   
+        deliveryMethod="method"   
+        from="from address">
+          <specifiedPickupDirectory> … </ specifiedPickupDirectory >  
+          <network> … </network>  
+      </smtp>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`deliveryFormat`|Spécifie le format de remise des courriers électroniques sortants.  Les valeurs acceptables sont SevenBit et International.|  
-|`deliveryMethod`|Spécifie la méthode d'acheminement des messages électroniques.  Les valeurs acceptables sont network, pickupDirectoryFromIis et SpecifiedPickupDirectory.|  
-|`from`|Spécifie l'adresse d'origine des messages électroniques sortants.|  
+|---------------|-----------------|  
+|`deliveryFormat`|Spécifie le format de remise de messages électroniques sortants. Les valeurs acceptables sont SevenBit et International.|  
+|`deliveryMethod`|Spécifie la méthode de remise pour les messages électroniques. Les valeurs acceptables sont network, pickupDirectoryFromIis et specifiedPickupDirectory.|  
+|`from`|Spécifie l’adresse d’origine de messages électroniques sortants.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`specifiedPickupDirectory`|Configure le répertoire local pour un serveur SMTP \(Simple Mail Transport Protocol\).|  
+|---------------|-----------------|  
+|`specifiedPickupDirectory`|Configure le répertoire local pour un serveur SMTP Simple Mail Transport Protocol ().|  
 |`network`|Configure les options réseau pour un serveur SMTP externe.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[\<mailSettings\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Configure les options d'envoi des messages.|  
+|[\<mailSettings>, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Configure les options d’envoi du courrier.|  
   
-## Exemple  
- L'exemple de code suivant spécifie les paramètres SMTP appropriés pour envoyer des messages électroniques à l'aide des informations d'identification réseau par défaut.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant spécifie les paramètres SMTP appropriés pour envoyer des messages électroniques en utilisant les informations d’identification de réseau par défaut.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <mailSettings>  
@@ -86,9 +88,9 @@ Configure le format de la livraison, la méthode de livraison et l'adresse d'ori
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Net.Configuration.SmtpSection?displayProperty=fullName>   
- <xref:System.Net.Mail.SmtpClient?displayProperty=fullName>   
- <xref:System.Net.Mail.SmtpDeliveryFormat>   
- <xref:System.Net.Mail.SmtpDeliveryMethod>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>  
+ <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>  
+ <xref:System.Net.Mail.SmtpDeliveryFormat>  
+ <xref:System.Net.Mail.SmtpDeliveryMethod>  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

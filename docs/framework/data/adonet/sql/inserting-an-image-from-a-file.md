@@ -1,28 +1,34 @@
 ---
-title: "Insertion d&#39;une image &#224; partir d&#39;un fichier | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Insertion d'une image à partir d'un fichier"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a780e35d9eb5420138587102aee753e96a8eff9c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Insertion d&#39;une image &#224; partir d&#39;un fichier
-Vous pouvez écrire des objets binaires volumineux \(BLOB\) dans une base de données sous forme de données de type binaire ou caractère en fonction du type du champ de votre source de données.  BLOB est un terme générique qui fait référence aux types de données `text`, `ntext` et `image` qui contiennent généralement des documents et des images.  
+# <a name="inserting-an-image-from-a-file"></a>Insertion d'une image à partir d'un fichier
+Vous pouvez écrire des objets binaires volumineux (BLOB) dans une base de données sous forme de données de type binaire ou caractère en fonction du type du champ de votre source de données. BLOB est un terme générique qui fait référence aux types de données `text`, `ntext` et `image` qui contiennent généralement des documents et des images.  
   
- Pour écrire une valeur BLOB dans votre base de données, utilisez l'instruction INSERT ou UPDATE appropriée et passez la valeur BLOB en tant que paramètre d'entrée \(consultez [Configuration des paramètres et des types de données des paramètres](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)\).  Si le BLOB est stocké sous forme de texte, dans le cas, par exemple, d'un champ `text` SQL Server, vous pouvez le passer en tant que paramètre de chaîne.  Si le BLOB est stocké sous forme binaire, dans le cas, par exemple, d'un champ `image` SQL Server, vous pouvez passer un tableau de type `byte` en tant que paramètre binaire.  
+ Pour écrire une valeur BLOB dans votre base de données, utilisez l’instruction INSERT ou UPDATE appropriée et passez la valeur BLOB en tant que paramètre d’entrée (consultez [configuration des paramètres et des Types de données de paramètre](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)). Si le BLOB est stocké sous forme de texte, dans le cas, par exemple, d'un champ `text` SQL Server, vous pouvez le passer en tant que paramètre de chaîne. Si le BLOB est stocké sous forme binaire, dans le cas, par exemple, d'un champ `image` SQL Server, vous pouvez passer un tableau de type `byte` en tant que paramètre binaire.  
   
-## Exemple  
- L'exemple de code suivant ajoute les informations relatives à un employé dans la table Employees de la base de données Northwind.  Une photo de l'employé est lue dans un fichier et ajoutée dans le champ Photo de la table, qui est un champ image.  
+## <a name="example"></a>Exemple  
+ L'exemple de code suivant ajoute les informations relatives à un employé dans la table Employees de la base de données Northwind. Une photo de l'employé est lue dans un fichier et ajoutée dans le champ Photo de la table, qui est un champ image.  
   
 ```vb  
 Public Shared Sub AddEmployee( _  
@@ -134,9 +140,9 @@ public static byte[] GetPhoto(string filePath)
 }  
 ```  
   
-## Voir aussi  
- [Utilisation de commandes pour modifier des données](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)   
- [Récupération de données binaires](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)   
- [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)   
- [Mappages de types de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [À l’aide des commandes pour modifier des données](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+ [Extraction de données binaires](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
+ [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [Mappages de Type de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

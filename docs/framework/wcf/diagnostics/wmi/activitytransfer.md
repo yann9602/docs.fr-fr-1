@@ -1,25 +1,28 @@
 ---
-title: "ActivityTransfer | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ActivityTransfer
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fc40ef17-2a92-4ce2-853c-6ba8e5d571f3
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: acbc346da940caf933868a03295744132bda4733
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# ActivityTransfer
+# <a name="activitytransfer"></a>ActivityTransfer
 Événement du transfert de l'activité  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class ActivityTransfer : WSAT_TraceEvent  
@@ -29,28 +32,28 @@ class ActivityTransfer : WSAT_TraceEvent
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe ActivityTransfer ne définit pas de méthode.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe ActivityTransfer a les propriétés suivantes :  
   
-### ActivityID  
+### <a name="activityid"></a>ActivityID  
   
--   Type de données : objet                   
-     Type d'accès : lecture seule  
+-   Type de données : objet  
+    Type d'accès : lecture seule  
   
 -   ID d'activité  
   
-### RelatedActivityID  
+### <a name="relatedactivityid"></a>RelatedActivityID  
   
--   Type de données : objet                   
-     Type d'accès : lecture seule  
+-   Type de données : objet  
+    Type d'accès : lecture seule  
   
 -   ID d'activité connexe  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel.|
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel.|

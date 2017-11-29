@@ -1,19 +1,14 @@
 ---
-title: Guide pratique pour mapper des HRESULT et des exceptions
+title: "Comment : mapper des HRESULT et des exceptions"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+dev_langs: cpp
 helpviewer_keywords:
 - interoperation with unmanaged code, HRESULTs
 - exceptions, HRESULTs
@@ -22,18 +17,17 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 842c223d63aafe38e2506d1430ac17ea2051884d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 41220f37837c1bd2e983a82ecb3406fe1cb918e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-map-hresults-and-exceptions"></a>Guide pratique pour mapper des HRESULT et des exceptions
+# <a name="how-to-map-hresults-and-exceptions"></a>Comment : mapper des HRESULT et des exceptions
 Les méthodes COM signalent les erreurs en retournant des HRESULT ; les méthodes .NET les signalent en levant des exceptions. Le runtime gère la transition entre les deux. Chaque classe d’exception dans le .NET Framework est mappée à une valeur HRESULT.  
   
  Les classes d’exceptions définies par l’utilisateur peuvent spécifier la valeur HRESULT appropriée. Ces classes d’exceptions peuvent modifier dynamiquement la valeur HRESULT à retourner quand l’exception est générée par la définition du champ **HResult** sur l’objet exception. Des informations supplémentaires relatives à l’exception sont fournies au client par le biais de l’interface **IErrorInfo**, qui est implémentée sur l’objet .NET dans le processus non managé.  
@@ -156,6 +150,5 @@ CMyClass::MethodThatThrows
  Les champs d’exception, tels que **Message**, **Source** et **StackTrace** ne sont pas disponibles pour **StackOverflowException**.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)   
+ [Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  [Exceptions](../../../docs/standard/exceptions/index.md)
-

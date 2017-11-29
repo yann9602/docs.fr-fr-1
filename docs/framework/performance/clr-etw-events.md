@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-caps.latest.revision: 45
+caps.latest.revision: "45"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 57253982ec28b022cea102867f7b49788e10d422
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1d0619388b429bd1824a62bc29ccb222eea1ffde
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="clr-etw-events"></a>Événements ETW du CLR
 Les rubriques de cette section décrivent le suivi d’événements pour les événements Windows (ETW). Chaque événement est associé à un mot clé et à un niveau, qui sont décrits dans la rubrique [Niveaux et mots clés ETW du CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md). Le CLR a deux fournisseurs pour les événements :  
@@ -72,10 +70,9 @@ Les rubriques de cette section décrivent le suivi d’événements pour les év
  Capture des informations utilisées avec d’autres événements pour générer des traces de pile après le déclenchement d’un événement.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Improve Debugging and Performance Tuning with ETW](http://go.microsoft.com/fwlink/?LinkId=179696)  (Améliorer le débogage et le réglage des performances à l’aide d’ETW)  
- [Blog sur les performances de Windows](http://go.microsoft.com/fwlink/?LinkId=179509)   
- [Contrôle de l’enregistrement .NET Framework](../../../docs/framework/performance/controlling-logging.md)   
- [Fournisseurs ETW du CLR](../../../docs/framework/performance/clr-etw-providers.md)   
- [Niveaux et mots clés ETW du CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)   
+ [Améliorer le débogage et le réglage des performances avec ETW](http://go.microsoft.com/fwlink/?LinkId=179696)  
+ [Blog des performances de Windows](http://go.microsoft.com/fwlink/?LinkId=179509)  
+ [Contrôle de l’enregistrement .NET Framework](../../../docs/framework/performance/controlling-logging.md)  
+ [Fournisseurs ETW du CLR](../../../docs/framework/performance/clr-etw-providers.md)  
+ [Niveaux et mots clés ETW du CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
  [Événements ETW dans le Common Language Runtime](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
-

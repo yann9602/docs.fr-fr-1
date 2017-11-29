@@ -1,80 +1,82 @@
 ---
-title: "&lt;NetFx40_PInvokeStackResilience&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<NetFx40_PInvokeStackResilience> (élément)"
-  - "NetFx40_PInvokeStackResilience (élément)"
+title: "&lt;NetFx40_PInvokeStackResilience&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <NetFx40_PInvokeStackResilience> element
+- NetFx40_PInvokeStackResilience element
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 3e77e43ed9d7520cbbcf453d067a49de3a86de3f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;NetFx40_PInvokeStackResilience&gt;, &#233;l&#233;ment
-Spécifie si le runtime résout automatiquement les déclarations d'appel de code non managé au moment de l'exécution, au prix de transitions plus lentes entre le code managé et non managé.  
+# <a name="ltnetfx40pinvokestackresiliencegt-element"></a>&lt;NetFx40_PInvokeStackResilience&gt; élément
+Indique si le runtime corrige automatiquement les déclarations incorrectes d’appel de code non managé à l’exécution, au prix de transitions plus lentes entre le code managé et le code non managé.  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+< NetFx40_PInvokeStackResilience >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <NetFx40_PInvokeStackResilience  enabled="1|0"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si le runtime détecte des déclarations d'appel de code non managé incorrectes et résout automatiquement la pile au moment de l'exécution sur les plateformes 32 bits.|  
+|---------------|-----------------|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si le runtime détecte plateforme incorrect déclarations d’appel et résout automatiquement la pile au moment de l’exécution sur les plateformes 32 bits.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`0`|Le runtime utilise l'architecture de marshaling d'interopérabilité la plus rapide introduite dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], qui ne détecte pas et ne résout pas les déclarations d'appel de plateforme.  Il s'agit de la valeur par défaut.|  
-|`1`|Le runtime utilise les transitions lentes qui détectent et résolvent les déclarations d'appel de plateforme.|  
+|-----------|-----------------|  
+|`0`|Le runtime utilise l’architecture introduite dans de marshaling d’interopérabilité plus rapide la [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], qui ne détecte pas et les déclarations d’appel de plateforme incorrect de correctif. Il s'agit de la valeur par défaut.|  
+|`1`|Les runtime utilise les transitions lentes pour détecter et corriger la plateforme incorrecte les déclarations d’appel.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## Notes  
- Cet élément vous permet d'échanger du marshaling d'interopérabilité plus rapide contre une résistance de temps d'exécution pour des déclarations d'appel de plateforme incorrectes.  
+## <a name="remarks"></a>Remarques  
+ Cet élément vous permet aux échanges plus rapidement le marshaling d’interopérabilité pour les déclarations d’appel de résilience d’exécution sur la plateforme incorrecte.  
   
- Lors du démarrage avec le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], une architecture de marshaling d'interopérabilité simplifiée offre une amélioration significative des performances pour les transitions du code managé au code non managé.  Dans les versions antérieures du .NET Framework, la couche de marshaling détectait des déclarations d'appel de code non managé sur les plateformes 32 bits et résolvait automatiquement la pile.  La nouvelle architecture de marshaling élimine cette étape.  Par conséquent, les transitions sont très rapides, mais une déclaration d'appel de code non managé peut provoquer une défaillance de programme.  
+ En commençant par le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], une architecture de marshaling d’interopérabilité simplifiée offre une amélioration significative des performances pour les transitions du code managé au code non managé. Dans les versions antérieures du .NET Framework, la plateforme incorrecte détectée de couche marshaling sur les plateformes 32 bits, les déclarations d’appel et corrigés automatiquement la pile. La nouvelle architecture de marshaling élimine cette étape. Par conséquent, les transitions sont très rapides, mais une déclaration non managé incorrectes peuvent provoquer un échec du programme.  
   
- Pour faciliter la détection des déclarations incorrectes pendant le développement, le débogage Visual Studio a été amélioré.  L'Assistant Débogage managé \(MDA\) [pInvokeStackImbalance](../../../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md) vous notifie des déclarations d'appel de plateforme incorrectes lorsque votre application s'exécute avec le débogueur attaché.  
+ Pour faciliter la détection des déclarations incorrectes pendant le développement, le débogage de Visual Studio a été amélioré. Le [pInvokeStackImbalance](../../../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md) assistant débogage managé (MDA) vous notifie de plateforme incorrect appel déclarations lorsque votre application s’exécute avec le débogueur attaché.  
   
- Pour les scénarios dans lesquels votre application utilise des composants que vous ne pouvez pas recompiler et les déclarations d'appel de plateforme sont incorrectes, vous pouvez utiliser l'élément `NetFx40_PInvokeStackResilience`.  L'ajout de cet élément à votre fichier de configuration de l'application avec `enabled="1"` opte pour un mode de compatibilité avec le comportement des versions antérieures du .NET Framework, au prix de transitions plus lentes.  Les assemblys compilés avec les versions antérieures du .NET Framework optent automatiquement pour ce mode de compatibilité et n'ont pas besoin de cet élément.  
+ Pour les scénarios où votre application utilise des composants que vous ne pouvez pas recompiler et qu’avez incorrect non managé déclarations, vous pouvez utiliser la `NetFx40_PInvokeStackResilience` élément. Ajout de cet élément à votre fichier de configuration d’application avec `enabled="1"` opte pour un mode de compatibilité avec le comportement des versions antérieures du .NET Framework, au prix de transitions plus lentes. Les assemblys qui ont été compilés avec des versions antérieures du .NET Framework sont automatiquement choisis dans ce mode de compatibilité et n’avez pas besoin de cet élément.  
   
-## Fichier de configuration  
- Cet élément peut être utilisé uniquement dans le fichier de configuration de l'application.  
+## <a name="configuration-file"></a>Fichier de configuration  
+ Cet élément peut être utilisé uniquement dans le fichier de configuration d’application.  
   
-## Exemple  
- L'exemple suivant montre comment opter pour une résistance accrue contre les déclarations d'appel de plateforme incorrectes pour une application, mais avec des transitions plus lentes entre le code managé et le code non managé.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment adopter une résistance accrue contre incorrect pour une application, au prix de transitions plus lentes entre les déclarations d’appel de plateforme de code managé et.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <NetFx40_PInvokeStackResilience enabled="1"/>  
@@ -82,7 +84,7 @@ Spécifie si le runtime résout automatiquement les déclarations d'appel de cod
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [pInvokeStackImbalance](../../../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md)
