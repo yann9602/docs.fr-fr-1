@@ -5,30 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - marshaling, COM interop
 - interop marshaling
 - interop marshaling, about interop marshaling
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ebe7d3aa48fa77287f20781938a0b9863f60de5f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 381eccc42d5abb85cde618f4710f044f172295d5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="interop-marshaling"></a>Marshaling d’interopérabilité
 <a name="top"></a> Le marshaling d’interopérabilité détermine la façon dont les données sont transmises dans les arguments de méthode et les valeurs de retour entre la mémoire managée et non managée lors des appels. Le marshaling d’interopérabilité est une activité d’exécution effectuée par le service de marshaling du common language runtime.  
@@ -88,7 +81,7 @@ Processus de marshaling dans un même cloisonnement.
  Si vous prévoyez d'exporter un serveur managé, n'oubliez pas que le client COM détermine le cloisonnement du serveur. Un serveur managé appelé par un client COM initialisé dans un MTA doit garantir la cohérence des threads.  
   
 ### <a name="managed-clients-and-com-servers"></a>Clients managés et serveurs COM  
- Le paramètre par défaut des cloisonnements de clients managés est MTA. Toutefois, le type d'application du client .NET peut modifier le paramètre par défaut. Par exemple, le paramètre de cloisonnement d'un client [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] est STA. Vous pouvez utiliser l'attribut <xref:System.STAThreadAttribute?displayProperty=fullName>, l'attribut <xref:System.MTAThreadAttribute?displayProperty=fullName>, la propriété <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=fullName> ou la propriété <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=fullName> pour examiner et modifier le paramètre de cloisonnement d'un client managé.  
+ Le paramètre par défaut des cloisonnements de clients managés est MTA. Toutefois, le type d'application du client .NET peut modifier le paramètre par défaut. Par exemple, le paramètre de cloisonnement d'un client [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] est STA. Vous pouvez utiliser l'attribut <xref:System.STAThreadAttribute?displayProperty=nameWithType>, l'attribut <xref:System.MTAThreadAttribute?displayProperty=nameWithType>, la propriété <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> ou la propriété <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> pour examiner et modifier le paramètre de cloisonnement d'un client managé.  
   
  L'auteur du composant définit l'affinité de thread d'un serveur COM. Le tableau suivant montre les combinaisons de paramètres de cloisonnement pour les serveurs COM et les clients .NET. Il montre également la configuration de marshaling requise qui en résulte pour les combinaisons.  
   
@@ -162,8 +155,8 @@ Appels distants traversant des pare-feu à l'aide de SOAP ou de la classe TcpCha
 |-----------|-----------------|  
 |[Comportement de marshaling par défaut](../../../docs/framework/interop/default-marshaling-behavior.md)|Décrit les règles utilisées par le service de marshaling d’interopérabilité pour marshaler des données.|  
 |[Marshaling de données à l’aide de l’appel de code managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)|Décrit comment déclarer des paramètres de méthode et passer des arguments à des fonctions exportées par des bibliothèques non managées.|  
-|[Marshaling de données avec COM Interop](../../../docs/framework/interop/marshaling-data-with-com-interop.md)|Décrit comment personnaliser des wrappers COM pour modifier le comportement de marshaling.|  
-|[Guide pratique pour migrer du code DCOM managé vers WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)|Décrit comment effectuer une migration de DCOM à WCF.|  
+|[Marshaler des données avec COM Interop](../../../docs/framework/interop/marshaling-data-with-com-interop.md)|Décrit comment personnaliser des wrappers COM pour modifier le comportement de marshaling.|  
+|[Guide pratique pour migrer le modèle DCOM de code managé vers WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)|Décrit comment effectuer une migration de DCOM à WCF.|  
 |[Guide pratique pour mapper des HRESULT et des exceptions](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)|Décrit comment mapper des exceptions personnalisées aux HRESULT et fournit le mappage complet de chaque HRESULT à sa classe d'exception comparable dans .NET Framework.|  
 |[Interopérabilité à l’aide de types génériques](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58)|Décrit les actions prises en charge lors de l'utilisation de types génériques pour l'interopérabilité COM.|  
 |[Interopération avec du code non managé](../../../docs/framework/interop/index.md)|Décrit les services d'interopérabilité fournis par le common language runtime.|  
@@ -174,7 +167,6 @@ Appels distants traversant des pare-feu à l'aide de SOAP ou de la classe TcpCha
   
 <a name="reference"></a>   
 ## <a name="reference"></a>Référence  
- <xref:System.Runtime.InteropServices?displayProperty=fullName>  
+ <xref:System.Runtime.InteropServices?displayProperty=nameWithType>  
   
  [Retour au début](#top)
-

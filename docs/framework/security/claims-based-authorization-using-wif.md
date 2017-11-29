@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: f1086958a56aadbddf54f20295b91e885adf71c4
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="claims-based-authorization-using-wif"></a>Autorisation basée sur les revendications utilisant WIF
 Dans une application de partie de confiance, une autorisation détermine les ressources auxquelles une identité authentifié est autorisé à accéder et les opérations qu'elle est autorisée à exécuter sur ces ressources. Une autorisation incorrecte ou faible entraîne la divulgation d'informations et la falsification de données. Cette rubrique présente les méthodes disponibles pour implémenter une autorisation pour les applications Web ASP.NET qui prennent en charge les revendications et les services qui utilisent Windows Identity Foundation (WIF) et le service d'émission de jetons de sécurité (STS), par exemple, le service de contrôle d'accès (ACS) Microsoft Azure.  
@@ -72,4 +70,3 @@ Dans une application de partie de confiance, une autorisation détermine les res
 5.  L'accès est accordé si la valeur des résultats est true et refusé si la valeur est false. Par exemple, la règle peut indiquer que l'utilisateur est âgé de plus de 21 ans et habite dans l'état de Washington.  
   
  <xref:System.Security.Claims.ClaimsAuthorizationManager> est utile pour extérioriser la logique de décision pour l'autorisation basée sur les revendications dans vos applications. ClaimsAuthorizationManager est un composant WIF fourni dans le cadre de .NET 4.5. ClaimsAuthorizationManager vous permet d'intercepter des requêtes entrantes et d'implémenter toute logique de votre choix pour prendre des décisions d'autorisation basées sur les revendications entrantes. Cela devient important lorsque la logique d'autorisation doit être modifiée. Dans ce cas, l'utilisation de ClaimsAuthorizationManager n'affecte pas l'intégrité de l'application, réduisant ainsi la probabilité d'une erreur d'application suite à la modification. Pour en savoir plus sur l’utilisation de ClaimsAuthorizationManager pour implémenter le contrôle d’accès basé sur les revendications, consultez [Guide pratique pour implémenter une autorisation de revendication dans une application ASP. NET prenant en charge les revendications à l’aide de WIF et ACS](http://go.microsoft.com/fwlink/?LinkID=247446).
-

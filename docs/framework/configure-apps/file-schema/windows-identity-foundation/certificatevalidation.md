@@ -1,67 +1,75 @@
 ---
-title: "&lt;certificateValidation&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;certificateValidation&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6c54c704-b55e-4631-88ff-4d4a5621554c
-caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 778088f2e0508f5a80c29ae027b2442a80286795
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;certificateValidation&gt;
-Contrôle les paramètres que les gestionnaires de jetons utilisent pour valider des certificats.  Ces paramètres sont substitués si un gestionnaire spécifique est configuré avec son propre validateur.  
+# <a name="ltcertificatevalidationgt"></a>&lt;certificateValidation&gt;
+Contrôle les paramètres qui utilisent des gestionnaires de jetons pour valider les certificats. Ces paramètres sont remplacés si un gestionnaire spécifique est configuré avec son propre validateur.  
   
-## Syntaxe  
+ \<system.identityModel >  
+\<identityConfiguration >  
+\<certificateValidation >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <certificateValidation  
-      certificateValidationMode="None||ChainTrust||PeerTrust||PeerOrChainTrust||Custom"  
-      revocationMode="NoCheck||Offline||Online"  
-      trustedStoreLocation="CurrentLocation||LocalMachine" >  
-    </certificateValidation>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <certificateValidation  
+      certificateValidationMode="None||ChainTrust||PeerTrust||PeerOrChainTrust||Custom"  
+      revocationMode="NoCheck||Offline||Online"  
+      trustedStoreLocation="CurrentLocation||LocalMachine" >  
+    </certificateValidation>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|certificateValidationMode|Une valeur d' <xref:System.ServiceModel.Security.X509CertificateValidationMode> qui spécifie le mode de validation à utiliser pour le certificat X.509.  La valeur par défaut est « PeerOrChainTrust ».  Pour spécifier un validateur personnalisé, définissez cet attribut « custom » et spécifiez le validateur [\<certificateValidator\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidator.md) à l'aide de l'élément.  Facultatif.|  
-|revocationMode|Une valeur d' <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> qui spécifie le mode de révocation à utiliser pour le certificat X.509.  La valeur par défaut est « en ligne ».  Facultatif.|  
-|trustedStoreLocation|Une valeur d' <xref:System.Security.Cryptography.X509Certificates.StoreLocation> qui spécifie le magasin de certificats X.509.  La valeur par défaut est « LocalMachine ».  Facultatif.|  
+|---------------|-----------------|  
+|certificateValidationMode|Un <xref:System.ServiceModel.Security.X509CertificateValidationMode> valeur qui spécifie le mode de validation à utiliser pour le certificat X.509. La valeur par défaut est « PeerOrChainTrust ». Pour spécifier un validateur personnalisé, définissez cet attribut à « Custom » et le programme de validation à l’aide de la [ \<certificateValidator >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidator.md) élément. Facultatif.|  
+|revocationMode|Un <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> valeur qui spécifie le mode de révocation à utiliser pour le certificat X.509. La valeur par défaut est « Online ». Facultatif.|  
+|trustedStoreLocation|A <xref:System.Security.Cryptography.X509Certificates.StoreLocation> valeur qui spécifie le magasin de certificats X.509. La valeur par défaut est « Ordinateur_local ». Facultatif.|  
   
-### Éléments enfants  
-  
-|Élément|Description|  
-|-------------|-----------------|  
-|[\<certificateValidator\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidator.md)|Spécifie un type personnalisé pour la validation de certificat.  Ce type est utilisé uniquement si l'attribut d' [\<certificateValidation\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)`certificateValidationMode` de l'élément est « custom ».|  
-  
-### Éléments parents  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Spécifie des paramètres d'identité au niveau de le service.|  
-|[\<securityTokenHandlerConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Fournit la configuration pour une collection de gestionnaires de jetons de sécurité.|  
+|[\<certificateValidator >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidator.md)|Spécifie un type personnalisé pour la validation de certificat. Ce type est utilisé uniquement si la `certificateValidationMode` attribut de la [ \<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md) a la valeur « Custom ».|  
   
-## Notes  
- Un élément d' `<certificateValidation>` peut être spécifié au niveau de le service sous l'élément d' `<identityConfiguration>` ou sur la collection de gestionnaire de jetons de sécurité de niveau à l'élément d' `<securityTokenHandlerConfiguration>` .  Les paramètres définis pour une collection de jetons substituent ceux spécifiés dans le service.  Certains gestionnaires de jetons vous permettent de spécifier des paramètres de validation de certificat dans la configuration.  Les paramètres sur des gestionnaires de jetons substituent ceux spécifiés au niveau de le service et sur la collection de gestionnaire de jetons de sécurité.  
+### <a name="parent-elements"></a>Éléments parents  
   
-## Exemple  
+|Élément|Description|  
+|-------------|-----------------|  
+|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Spécifie les paramètres d’identité au niveau du service.|  
+|[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Fournit des gestionnaires de jetons de configuration pour une collection de sécurité.|  
   
-```  
+## <a name="remarks"></a>Remarques  
+ A `<certificateValidation>` élément peut être spécifié au niveau du service sous le `<identityConfiguration>` élément ou sur le niveau de regroupement de gestionnaire de jetons de sécurité sous le `<securityTokenHandlerConfiguration>` élément. Paramètres sur une collection de gestionnaire de jetons remplacent celles spécifiées sur le service. Certains gestionnaires de jetons permettent de spécifier les paramètres de validation de certificat dans la configuration. Paramètres sur les gestionnaires de jetons individuels remplacent celles spécifiées à la fois au niveau du service et sur la collection de gestionnaire de jetons de sécurité.  
+  
+## <a name="example"></a>Exemple  
+  
+```xml  
 <certificateValidation certificateValidationMode="PeerOrChainTrust"  
                        revocationMode="Online"  
                        trustedStoreLocation="LocalMachine" />  

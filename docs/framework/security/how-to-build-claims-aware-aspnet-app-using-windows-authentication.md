@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 676a03678cbdf6fe08e628806df2a1853fb71718
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>Comment : générer une application ASP.NET prenant en charge les revendications à l’aide de l’authentification Windows
 ## <a name="applies-to"></a>S'applique à  
@@ -150,4 +148,3 @@ ms.lasthandoff: 08/21/2017
 #### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows  
   
 1.  Appuyez sur **F5** pour générer et exécuter l’application. La page *Default.aspx* doit s’afficher, avec le nom de votre compte Windows (dont le nom de domaine) comme utilisateur authentifié dans la partie supérieure droite de la page. Le contenu de la page doit inclure un tableau rempli avec les revendications récupérées à partir de votre compte Windows.
-

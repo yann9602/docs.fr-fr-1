@@ -1,67 +1,76 @@
 ---
-title: "&lt;customCookieHandler&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;customCookieHandler&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a03b153d-5ec6-4915-9031-6f0c3fd348be
-caps.latest.revision: 7
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 6
+caps.latest.revision: "7"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: df95e8d47d6a19e4fd488fa14bc771bc2c2b56b7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;customCookieHandler&gt;
-Définit le type de Gestionnaire de cookie personnalisé.  Cet élément ne peut être présent si la `mode` l'attribut de la `<cookieHandler>` élément est « Custom ».  Le type personnalisé doit être dérivé de la <xref:System.IdentityModel.Services.CookieHandler> classe.  
+# <a name="ltcustomcookiehandlergt"></a>&lt;customCookieHandler&gt;
+Définit le type de gestionnaire de cookie personnalisé. Cet élément peut uniquement être présent si la `mode` attribut de la `<cookieHandler>` élément est « Custom ». Le type personnalisé doit être dérivé du <xref:System.IdentityModel.Services.CookieHandler> classe.  
   
-## Syntaxe  
+ \<system.identityModel.services >  
+\<federationConfiguration >  
+\<cookieHandler >  
+\<customCookieHandler >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <system.identityModel.services>  
-  <federationConfiguration>  
-    <cookieHandler mode=”Custom”>  
-      <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" >  
-      </customCookieHandler>  
-    </cookieHandler>  
-  </federationConfiguration>  
+  <federationConfiguration>  
+    <cookieHandler mode="Custom">  
+      <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" >  
+      </customCookieHandler>  
+    </cookieHandler>  
+  </federationConfiguration>  
 </system.identityModel.services>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|type|Spécifie un type personnalisé qui dérive de la <xref:System.IdentityModel.Services.CookieHandler> classe.  Pour plus d'informations sur la façon de spécifier la `type` d'attribut, consultez [Custom Type References](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_CustomTypeReferences).|  
+|---------------|-----------------|  
+|type|Spécifie un type personnalisé qui dérive de la <xref:System.IdentityModel.Services.CookieHandler> classe. Pour plus d’informations sur la façon de spécifier le `type` d’attribut, consultez [références de Type personnalisé](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md).|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ None  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<cookieHandler\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|Configure la <xref:System.IdentityModel.Services.CookieHandler> qui le <xref:System.IdentityModel.Services.SessionAuthenticationModule> utilise pour lire et écrire des cookies.|  
+|[\<cookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|Configure le <xref:System.IdentityModel.Services.CookieHandler> qui le <xref:System.IdentityModel.Services.SessionAuthenticationModule> utilise pour lire et écrire des cookies.|  
   
-## Notes  
- Lorsque vous spécifiez un gestionnaire de cookie personnalisé en définissant la `mode` l'attribut de la `<cookieHandler>` élément « Personnalisé », vous devez spécifier le type du Gestionnaire de cookie personnalisé en incluant une `<customCookieHandler>` élément enfant qui fait référence au type de Gestionnaire de cookie.  Cet élément ne peut pas être spécifié quand le `mode` attribut a la valeur « Chunked » ou « Default ».  Gestionnaires de cookie personnalisé doivent dériver de la <xref:System.IdentityModel.Services.CookieHandler> classe.  
+## <a name="remarks"></a>Remarques  
+ Lorsque vous spécifiez un gestionnaire de cookie personnalisé en définissant le `mode` attribut de la `<cookieHandler>` élément à « Custom », vous devez spécifier le type du Gestionnaire de cookie personnalisé en incluant un `<customCookieHandler>` élément enfant qui fait référence au type de gestionnaire de cookie. Cet élément ne peut pas être spécifié quand le `mode` attribut a la valeur « Chunked » ou « Default ». Gestionnaires de cookie personnalisé doivent dériver de la <xref:System.IdentityModel.Services.CookieHandler> classe.  
   
  Le `<customCookieHandler>` élément est représenté par la <xref:System.IdentityModel.Configuration.CustomTypeElement> classe.  
   
-## Exemple  
- L'exemple suivant configure le SAM pour utiliser un gestionnaire de cookie personnalisé de type `MyNamespace.MyCustomCookieHandler`.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant configure le SAM pour utiliser un gestionnaire de cookie personnalisé de type `MyNamespace.MyCustomCookieHandler`.  
   
-```  
+```xml  
 <cookieHandler mode="Custom">  
     <customCookieHandler type="MyNamespace.MyCustomCookieHandler, MyAssembly" />  
 </cookieHandler>  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.IdentityModel.Services.CookieHandler>

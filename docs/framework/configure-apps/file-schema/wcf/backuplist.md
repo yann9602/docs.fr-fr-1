@@ -1,72 +1,67 @@
 ---
-title: "&lt;backupList&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;backupList&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a3d9d1f9-4a53-45e9-a880-86c8bee0b833
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e9f8138f2a2448293e1f26da5f7d0562b1338b7d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;backupList&gt;
-Représente une section de configuration pour définir une liste de sauvegarde qui énumère un ensemble de points de terminaison à utiliser par le service de routage en cas d'inaccessibilité du point de terminaison principal. Si le premier point de terminaison de la liste est inactif, le service de routage bascule automatiquement sur le suivant dans la liste. Vous disposez ainsi d'une méthode rapide pour renforcer la fiabilité de votre application sans avoir à apprendre à votre application cliente à gérer des modèles complexes ou à rechercher l'emplacement de tous vos services déployés.  
+# <a name="ltbackuplistgt"></a>&lt;backupList&gt;
+Représente une section de configuration pour définir une liste de sauvegarde qui énumère un ensemble de points de terminaison que vous souhaitez que le Service de routage à utiliser au cas où le point de terminaison principal ne peut pas être atteint. Si le premier point de terminaison de la liste est inactif, le service de routage bascule automatiquement sur le suivant dans la liste.  Vous disposez ainsi d’une méthode rapide pour renforcer la fiabilité de votre application sans avoir à apprendre à votre application cliente à gérer des modèles complexes ou à rechercher l’emplacement de tous vos services déployés.  
   
-## Syntaxe  
+ \<system.serviceModel >  
+\<routage >  
+\<backupLists >  
+\<backupList >  
   
-```vb  
+## <a name="syntax"></a>Syntaxe  
   
-<routing>  
-  <backupLists>  
-    <backupList name="String">  
-      <add endpointName="String" />  
-    </backupList>    
-  </backupLists>  
-</routing>  
-  
-```  
-  
-```csharp  
-  
-```  
-  
-## Attributs et éléments  
+```xml 
+   <routing>  <backupLists>    <backupList name="String">      <add endpointName="String" />    </backupList>    </backupLists></routing>  
+```
+
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
+|---------------|-----------------|  
 |name|Chaîne qui spécifie le nom permettant d'identifier la liste de points de terminaison.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<filtre\>](../../../../../docs/framework/configure-apps/file-schema/wcf/filter.md)||  
+|[\<filter>](../../../../../docs/framework/configure-apps/file-schema/wcf/filter.md)||  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<router\>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Liste de points de terminaison de sauvegarde.|  
+|[\<routage >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Liste de points de terminaison de sauvegarde.|  
   
-## Notes  
- Cette section contient une collection ordonnée de points de terminaison auxquels un message sera transmis si une exception de communication se produit lors de l'envoi au point de terminaison primaire.  
+## <a name="remarks"></a>Remarques  
+ Cette section contient une collection ordonnée de points de terminaison auxquels un message sera transmis si une exception de communication se produit lors de l’envoi au point de terminaison primaire.  
   
- En cas d'échec d'un envoi au point de terminaison primaire répertorié dans l'attribut `endpointName` de [\<ajouter\>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-entries.md) avec une exception de communication, le service de routage tente d'envoyer le message au premier point de terminaison dans cette section de configuration.  Si l'opération échoue également avec une exception de communication, le service de routage essaie d'envoyer le message au point de terminaison suivant contenu dans cette section jusqu'à ce que la tentative d'envoi aboutisse, retourne une erreur autre qu'une exception de communication, ou que tous les points de terminaison de la collection retournent une erreur.  
+ Si un envoi au point de terminaison principal est répertorié dans le `endpointName` attribut de [ \<Ajouter >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-entries.md) échoue avec une exception de communication, le Service de routage essaiera d’envoyer le message au premier point de terminaison dans ce section de configuration. Si l'opération échoue également avec une exception de communication, le service de routage essaie d'envoyer le message au point de terminaison suivant contenu dans cette section jusqu'à ce que la tentative d'envoi aboutisse, retourne une erreur autre qu'une exception de communication, ou que tous les points de terminaison de la collection retournent une erreur.  
   
- Dans l'exemple suivant, si un envoi au point de terminaison primaire appelé « Destination » retourne une exception de communication, le service essaiera d'envoyer le message à « alternateServiceQueue ».  Si cette tentative retourne également une exception de communication, le service de routage essaiera d'envoyer le message au point de terminaison suivant dans la collection.  
+ Dans l’exemple suivant, si un envoi au point de terminaison primaire appelé « Destination » retourne une exception de communication, le service essaiera d’envoyer le message à « alternateServiceQueue ». Si cette tentative retourne également une exception de communication, le service de routage essaiera d’envoyer le message au point de terminaison suivant dans la collection.  
   
-```  
-  
+```xml  
 <filterTables>  
      <filterTable name="filterTable1">  
           <add filterName="MatchAllFilter1" endpointName="Destination" backupList="backupEndpointList"/>  
@@ -80,5 +75,5 @@ Représente une section de configuration pour définir une liste de sauvegarde q
 </backupLists>  
 ```  
   
-## Voir aussi  
- [System.ServiceModel.Routing.Configuration.BackupEndpointCollection](assetId:///System.ServiceModel.Routing.Configuration.BackupEndpointCollection?qualifyHint=False&amp;autoUpgrade=True)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection?displayProperty=nameWithType>    

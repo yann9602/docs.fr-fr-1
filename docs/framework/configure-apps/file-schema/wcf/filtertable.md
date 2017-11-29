@@ -1,67 +1,58 @@
 ---
-title: "&lt;filterTable&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;filterTable&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e9f05441-3ad1-49b9-a267-71724aa094b4
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 04780d51cfd1d1d0049fc608cf7bd304be382b9b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;filterTable&gt;
-Représente une table de routage qui contient une liste de filtres par rapport auxquels évaluer les messages et le point de terminaison client vers lequel acheminer les messages si le filtre prend la valeur True.  
+# <a name="ltfiltertablegt"></a>&lt;filterTable&gt;
+Représente une table de routage qui contient une liste de filtres pour évaluer des messages et router les messages vers le point de terminaison client si le filtre a la valeur true.  
   
-## Syntaxe  
+ \<system.serviceModel >  
+\<routage >  
+\<routingTables >  
+\<table >  
   
-```vb  
+## <a name="syntax"></a>Syntaxe  
   
-<routing>  
-      <filterTables>  
-        <filterTable name="String">  
-          <entries>  
-            <add backupList=”String”  
-                 endpointName="String"   
-                 filterName="String"   
-                 priority="Integer" />  
-          </entries>  
-        </table>  
-      </routingTables>  
-</routing>  
-  
-```  
-  
-```csharp  
-  
-```  
-  
-## Attributs et éléments  
+```xml
+   <routing>      <filterTables>        <filterTable name="String">          <entries>            <add backupList="String"                 endpointName="String"                  filterName="String"                  priority="Integer" />          </entries>        </table>      </routingTables></routing>  
+```
+
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |name|Chaîne qui contient le nom unique de cet élément de configuration.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<filtres\>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Mappages entre les filtres de routage et les points de terminaison cibles auxquels envoyer des messages lorsque le filtre correspond.|  
+|[\<filtres >](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Mappages entre les filtres de routage et les points de terminaison cibles auxquels envoyer des messages lorsque le filtre correspond.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<router\>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Section de configuration qui contient des tables de routage.|  
+|[\<routage >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Section de configuration qui contient des tables de routage.|  
   
-## Voir aussi  
- [System.ServiceModel.Routing.Configuration.RoutingSection](assetId:///System.ServiceModel.Routing.Configuration.RoutingSection?qualifyHint=False&amp;autoUpgrade=True)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>    
