@@ -1,35 +1,33 @@
 ---
-title: "&#39;&lt;membername&gt;&#39; is ambiguous across the inherited interfaces &#39;&lt;interfacename1&gt;&#39; and &#39;&lt;interfacename2&gt;&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30685"
-  - "bc30685"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30685"
+title: "&#39; &lt;membername&gt;&#39; est ambigu dans les interfaces héritées &#39;&lt; nom_interface1&gt;&#39; et &#39;&lt; nom_interface2&gt;&#39;"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30685
+- bc30685
+helpviewer_keywords: BC30685
 ms.assetid: 756add7a-23d5-4b4f-a48d-8297d6459c73
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 0bf4a9c263fd197cdd5d5b4886ee18e2ff112488
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &#39;&lt;membername&gt;&#39; is ambiguous across the inherited interfaces &#39;&lt;interfacename1&gt;&#39; and &#39;&lt;interfacename2&gt;&#39;
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-L'interface hérite de deux ou plusieurs membres ayant le même nom à partir de plusieurs interfaces.  
+# <a name="39ltmembernamegt39-is-ambiguous-across-the-inherited-interfaces-39ltinterfacename1gt39-and-39ltinterfacename2gt39"></a>&#39; &lt;membername&gt;&#39; est ambigu dans les interfaces héritées &#39;&lt; nom_interface1&gt;&#39; et &#39;&lt; nom_interface2&gt;&#39;
+L’interface hérite de deux ou plusieurs membres portant le même nom à partir de plusieurs interfaces.  
   
- **ID d'erreur :** BC30685  
+ **ID d’erreur :** BC30685  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Effectuez un cast de la valeur sur l'interface de base que vous souhaitez utiliser. Par exemple :  
+-   Effectuer un cast de la valeur de l’interface de base que vous souhaitez utiliser. par exemple :  
   
     ```  
     Interface Left  
@@ -54,5 +52,5 @@ L'interface hérite de deux ou plusieurs membres ayant le même nom à partir de
     End Module  
     ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

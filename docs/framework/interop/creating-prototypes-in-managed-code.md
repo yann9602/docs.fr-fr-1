@@ -5,15 +5,13 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - prototypes in managed code
 - COM interop, DLL functions
@@ -26,16 +24,15 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9a3dcc625a838dc8823930e31541543b9c4c7f8f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 59cfb9160ccd84c41d71ad29b417b05fb4a17233
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Création de prototypes dans du code managé
 Cette rubrique décrit comment accéder aux fonctions non managées et présente plusieurs champs d’attribut qui permettent d’annoter les définitions de méthode dans du code managé. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
@@ -43,7 +40,7 @@ Cette rubrique décrit comment accéder aux fonctions non managées et présente
  Avant de pouvoir accéder à une fonction DLL non managée depuis du code managé, vous devez connaître le nom de la fonction et le nom de la DLL qui l'exporte. Avec ces informations, vous pouvez commencer à écrire la définition managée d'une fonction non managée implémentée dans une DLL. En outre, vous pouvez ajuster la façon dont l'appel de code non managé crée la fonction et marshale les données vers et depuis la fonction.  
   
 > [!NOTE]
->  Les fonctions de l'API Win32 qui allouent une chaîne vous permettent de libérer la chaîne à l'aide d'une méthode telle que `LocalFree`. L'appel de code non managé gère ces paramètres différemment. Pour les appels de code non managé, affectez au paramètre un type `IntPtr` au lieu d'un type `String`. Utilisez les méthodes fournies par la classe <xref:System.Runtime.InteropServices.Marshal?displayProperty=fullName> pour convertir manuellement le type en chaîne et le libérer manuellement.  
+>  Les fonctions de l'API Win32 qui allouent une chaîne vous permettent de libérer la chaîne à l'aide d'une méthode telle que `LocalFree`. L'appel de code non managé gère ces paramètres différemment. Pour les appels de code non managé, affectez au paramètre un type `IntPtr` au lieu d'un type `String`. Utilisez les méthodes fournies par la classe <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> pour convertir manuellement le type en chaîne et le libérer manuellement.  
   
 ## <a name="declaration-basics"></a>Principes de base des déclarations  
  Les définitions managées des fonctions non managées dépendent du langage, comme nous allons le voir dans les exemples suivants. Pour obtenir des exemples de code plus complets, consultez [Exemples d’appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md).  
@@ -233,12 +230,11 @@ interface IDemandStubsItf
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Consommation de fonctions DLL non managées](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)   
- [Spécification d’un point d’entrée](../../../docs/framework/interop/specifying-an-entry-point.md)   
- [Spécification d’un jeu de caractères](../../../docs/framework/interop/specifying-a-character-set.md)   
- [Exemples d’appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)   
- [Considérations relatives à la sécurité des appels de code non managé](http://msdn.microsoft.com/en-us/bbcc67f7-50b5-4917-88ed-cb15470409fb)   
- [Identification des fonctions des DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md)   
- [Création d’une classe pour contenir des fonctions DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)   
+ [Consommation de fonctions DLL non managées](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
+ [Spécification d'un point d'entrée](../../../docs/framework/interop/specifying-an-entry-point.md)  
+ [Spécification d'un jeu de caractères](../../../docs/framework/interop/specifying-a-character-set.md)  
+ [Exemples d'appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)  
+ [Considérations sur la sécurité d’appel de plateforme](http://msdn.microsoft.com/en-us/bbcc67f7-50b5-4917-88ed-cb15470409fb)  
+ [Identification des fonctions des DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md)  
+ [Création d’une classe pour contenir des fonctions DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)  
  [Appel à une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md)
-

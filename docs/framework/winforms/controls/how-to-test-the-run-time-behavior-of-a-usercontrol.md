@@ -1,83 +1,84 @@
 ---
-title: "Comment&#160;: tester le comportement d&#39;un UserControl au moment de l&#39;ex&#233;cution | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles composites, tester"
-  - "contrôles utilisateur (Windows Forms), tester"
-  - "UserControl (classe), comportement au moment de l'exécution"
-  - "UserControl (classe), tester"
-  - "conteneur de test UserControl"
+title: "Comment : tester le comportement d'un UserControl au moment de l'exécution"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UserControl class [Windows Forms], testing
+- user controls [Windows Forms], testing
+- composite controls [Windows Forms], testing
+- UserControl Test Container
+- UserControl class [Windows Forms], run-time behavior
 ms.assetid: 4e4d5c49-1346-40ac-9d96-40211b573583
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2ce4f821a7b964b3ed2e03c795346b47bb88d618
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: tester le comportement d&#39;un UserControl au moment de l&#39;ex&#233;cution
-Lorsque vous développez un <xref:System.Windows.Forms.UserControl>, vous devez tester son comportement à l'exécution.  Vous pouvez créer un projet d'application Windows séparé et placer votre contrôle sur un formulaire de test, mais cette procédure est gênante.  Une approche plus rapide et plus facile est d'utiliser le **conteneur de test UserControl** fourni par Visual Studio.  Ce conteneur de test démarre directement à partir de votre projet de bibliothèque de contrôles Windows.  
+# <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>Comment : tester le comportement d'un UserControl au moment de l'exécution
+Lorsque vous développez un <xref:System.Windows.Forms.UserControl>, vous devez tester son comportement au moment de l’exécution. Vous pouvez créer un projet d’application Windows distincts et placer votre contrôle sur un formulaire de test, mais cette procédure n’est pas pratique. Un moyen plus rapide et plus facile consiste à utiliser le **conteneur de Test UserControl** fournis par Visual Studio. Ce conteneur de test démarre directement à partir de votre projet de bibliothèque de contrôles Windows.  
   
 > [!IMPORTANT]
->  Pour que le conteneur de test charge votre <xref:System.Windows.Forms.UserControl>, le contrôle doit avoir au moins un constructeur public.  
+>  Le conteneur de test charger votre <xref:System.Windows.Forms.UserControl>, le contrôle doit avoir au moins un constructeur public.  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 > [!NOTE]
->  Vous ne pouvez pas tester un contrôle Visual C\+\+ à l'aide du **conteneur de test UserControl**.  
+>  Un contrôle Visual C++ ne peut pas être testé à l’aide de la **conteneur de Test UserControl**.  
   
-### Pour tester le comportement à l'exécution d'un UserControl  
+### <a name="to-test-the-run-time-behavior-of-a-usercontrol"></a>Pour tester le comportement d’exécution d’un UserControl  
   
-1.  Créez un projet de bibliothèque de contrôles Windows appelé TestContainerExample.  Pour plus d'informations, consultez [Windows Control Library Template](http://msdn.microsoft.com/fr-fr/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
+1.  Créer un projet de bibliothèque de contrôles Windows appelé **TestContainerExample**. Pour plus d’informations, consultez [modèle de bibliothèque de contrôles Windows](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
   
-2.  Dans le **Concepteur Windows Forms Designer**, faites glisser un contrôle <xref:System.Windows.Forms.Label> de la **Boîte à outils** sur l'aire de conception du contrôle.  
+2.  Dans le **Concepteur Windows Forms**, faites glisser un <xref:System.Windows.Forms.Label> contrôle depuis la **boîte à outils** sur l’aire de conception du contrôle.  
   
-3.  Appuyez sur F5 pour générer le projet et exécuter le **conteneur de test UserControl**.  Le conteneur de test apparaît avec votre <xref:System.Windows.Forms.UserControl> dans le volet **Aperçu**.  
+3.  Appuyez sur F5 pour générer le projet et exécuter le **conteneur de Test UserControl**. Le conteneur de test s’affiche avec votre <xref:System.Windows.Forms.UserControl> dans les **aperçu** volet.  
   
-4.  Sélectionnez la propriété <xref:System.Windows.Forms.Control.BackColor%2A> affichée dans le contrôle <xref:System.Windows.Forms.PropertyGrid> à droite du volet **Aperçu**.  Modifiez sa valeur en `ControlDark`.  Notez que le contrôle prend une couleur plus sombre.  Essayez de modifier d'autres valeurs de propriété et observez l'effet sur votre contrôle.  
+4.  Sélectionnez le <xref:System.Windows.Forms.Control.BackColor%2A> propriété affichée dans le <xref:System.Windows.Forms.PropertyGrid> contrôle situé à droite de la **aperçu** volet. Modifiez sa valeur en `ControlDark`. Observez que le contrôle devient une couleur plus sombre. Essayez de modifier d’autres valeurs de propriété et observez l’effet sur votre contrôle.  
   
-5.  Cliquez sur la case à cocher **Appliquer la valeur Fill à la propriété Dock au contrôle utilisateur** au\-dessous du volet **Aperçu**.  Observez que le contrôle est redimensionné pour remplir le volet.  Redimensionnez le conteneur de test et observez que le contrôle est redimensionné avec le volet.  
+5.  Cliquez sur le **ancrer le contrôle utilisateur remplir** case à cocher ci-dessous le **aperçu** volet. Observez que le contrôle est redimensionné pour remplir le volet. Redimensionner le conteneur de test et observez que le contrôle est redimensionné avec le volet.  
   
 6.  Fermez le conteneur de test.  
   
-7.  Ajoutez un autre contrôle utilisateur au projet TestContainerExample.  Pour plus d'informations, consultez [NIB:How to: Add Existing Items to a Project](http://msdn.microsoft.com/fr-fr/15f4cfb7-78ab-457f-9f14-099a25a6a2d3).  
+7.  Ajoutez un autre contrôle utilisateur à la **TestContainerExample** projet. Pour plus d’informations, consultez [NIB : Comment : ajouter des éléments existants à un projet](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3).  
   
-8.  Dans le **concepteur Windows Forms**, faites glisser un contrôle <xref:System.Windows.Forms.Button> de la **Boîte à outils** sur l'aire de conception du contrôle.  
+8.  Dans le **Concepteur Windows Forms**, faites glisser un <xref:System.Windows.Forms.Button> contrôle depuis la **boîte à outils** sur l’aire de conception du contrôle.  
   
 9. Appuyez sur F5 pour générer le projet et exécuter le conteneur de test.  
   
-10. Cliquez sur **Sélectionner un contrôle utilisateur** <xref:System.Windows.Forms.ComboBox> pour commuter entre les deux contrôles utilisateur.  
+10. Cliquez sur le **sélectionner un contrôle utilisateur** <xref:System.Windows.Forms.ComboBox> pour basculer entre les deux contrôles utilisateur.  
   
-## Test des contrôles utilisateur à partir d'un autre projet  
- Vous pouvez tester des contrôles utilisateur à partir d'autres projets dans le conteneur de test de votre projet actuel.  
+## <a name="testing-user-controls-from-another-project"></a>Contrôles utilisateur à partir d’un autre projet de test  
+ Vous pouvez tester les contrôles utilisateur à partir d’autres projets dans le conteneur de test de votre projet actuel.  
   
-#### Pour tester des contrôles utilisateur à partir d'un autre projet  
+#### <a name="to-test-user-controls-from-another-project"></a>Pour tester les contrôles utilisateur à partir d’un autre projet  
   
-1.  Créez un projet de bibliothèque de contrôles Windows appelé TestContainerExample2.  Pour plus d'informations, consultez [Windows Control Library Template](http://msdn.microsoft.com/fr-fr/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
+1.  Créer un projet de bibliothèque de contrôles Windows appelé **TestContainerExample2**. Pour plus d’informations, consultez [modèle de bibliothèque de contrôles Windows](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
   
-2.  Dans le **concepteur Windows Forms**, faites glisser un contrôle <xref:System.Windows.Forms.RadioButton> de la **Boîte à outils** sur l'aire de conception du contrôle.  
+2.  Dans le **Concepteur Windows Forms**, faites glisser un <xref:System.Windows.Forms.RadioButton> contrôle depuis la **boîte à outils** sur l’aire de conception du contrôle.  
   
-3.  Appuyez sur F5 pour générer le projet et exécuter le conteneur de test.  Le conteneur de test apparaît avec votre <xref:System.Windows.Forms.UserControl> dans le volet **Aperçu**.  
+3.  Appuyez sur F5 pour générer le projet et exécuter le conteneur de test. Le conteneur de test s’affiche avec votre <xref:System.Windows.Forms.UserControl> dans les **aperçu** volet.  
   
-4.  Cliquez sur le bouton **Charger**.  
+4.  Cliquez sur le **charge** bouton.  
   
-5.  Dans la boîte de dialogue **Ouvrir**, naviguez jusqu'à TestContainerExample.dll que vous avez construit dans la procédure précédente.  Sélectionnez TestContainerExample.dll et cliquez sur le bouton **Ouvrir** pour charger les contrôles utilisateur.  
+5.  Dans le **ouvrir** boîte de dialogue, accédez à **TestContainerExample**.dll que vous avez créé dans la procédure précédente. Sélectionnez **TestContainerExample**.dll et cliquez sur le **ouvrir** bouton Charger les contrôles utilisateur  
   
-6.  Utilisez **Sélectionner un contrôle utilisateur** <xref:System.Windows.Forms.ComboBox> pour commuter entre les deux contrôles utilisateur du projet TestContainerExample.  
+6.  Utilisez le **sélectionner un contrôle utilisateur** <xref:System.Windows.Forms.ComboBox> pour basculer entre les deux contrôles utilisateur à partir de la **TestContainerExample** projet.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.UserControl>   
- [Comment : créer des contrôles composites](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)   
- [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)   
- [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual C\#](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)   
- [User Control Designer](http://msdn.microsoft.com/fr-fr/2abb9eec-ba32-45cb-b73d-8b52a8bd6bf1)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.UserControl>  
+ [Guide pratique pour créer des contrôles composites](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)  
+ [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
+ [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual C#](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
+ [Concepteur de contrôles utilisateur](http://msdn.microsoft.com/en-us/2abb9eec-ba32-45cb-b73d-8b52a8bd6bf1)

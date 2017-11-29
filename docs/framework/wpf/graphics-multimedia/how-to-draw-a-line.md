@@ -1,38 +1,42 @@
 ---
-title: "Comment&#160;: dessiner une ligne | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "dessiner, lignes"
-  - "graphiques (WPF), lignes"
-  - "lignes, dessiner"
+title: "Comment : dessiner une ligne"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- drawing [WPF], lines
+- graphics [WPF], lines
+- lines [WPF], drawing
 ms.assetid: 0513ee01-6b27-4bb3-85f3-3a3e6710d80e
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4911aea91416fb84e9a18d54c145b494737ef9dd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: dessiner une ligne
-Cet exemple montre comment dessiner des lignes à l'aide de l'élément <xref:System.Windows.Shapes.Line>.  
+# <a name="how-to-draw-a-line"></a>Comment : dessiner une ligne
+Cet exemple vous montre comment dessiner des lignes à l’aide de la <xref:System.Windows.Shapes.Line> élément.  
   
- Pour dessiner une ligne, créez un élément <xref:System.Windows.Shapes.Line>.  Utilisez ses propriétés <xref:System.Windows.Shapes.Line.X1%2A> et <xref:System.Windows.Shapes.Line.Y1%2A> pour définir son point de départ et utilisez ses propriétés <xref:System.Windows.Shapes.Line.X2%2A> et <xref:System.Windows.Shapes.Line.Y2%2A> pour définir son point de terminaison.  Enfin, définissez <xref:System.Windows.Shapes.Shape.Stroke%2A> et <xref:System.Windows.Shapes.Shape.StrokeThickness%2A>, car une ligne sans trait est invisible.  
+ Pour dessiner une ligne, créez un <xref:System.Windows.Shapes.Line> élément. Utiliser sa <xref:System.Windows.Shapes.Line.X1%2A> et <xref:System.Windows.Shapes.Line.Y1%2A> propriétés pour définir son point de départ ; et ses <xref:System.Windows.Shapes.Line.X2%2A> et <xref:System.Windows.Shapes.Line.Y2%2A> propriétés à définir son point de terminaison. Enfin, définissez son <xref:System.Windows.Shapes.Shape.Stroke%2A> et <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> , car une ligne sans trait est invisible.  
   
- La définition de l'élément <xref:System.Windows.Shapes.Shape.Fill%2A> pour une ligne n'a aucun effet, car une ligne n'a pas d'intérieur.  
+ Définition de la <xref:System.Windows.Shapes.Shape.Fill%2A> , élément pour une ligne n’a aucun effet, car une ligne n’a pas d’intérieur.  
   
- L'exemple suivant dessine trois lignes dans un élément <xref:System.Windows.Controls.Canvas>.  
+ L’exemple suivant dessine trois lignes dans un <xref:System.Windows.Controls.Canvas> élément.  
   
-## Exemple  
- [!code-xml[drawingwithshapeelements#LineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
+## <a name="example"></a>Exemple  
+ [!code-xaml[drawingwithshapeelements#LineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
   
- Cet exemple est extrait d'un exemple plus complet ; pour l'obtenir, consultez [Éléments de forme, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160037).  
+ Cet exemple fait partie d’un exemple plus complet ; Pour obtenir un exemple complet, consultez [éléments de forme, exemple](http://go.microsoft.com/fwlink/?LinkID=160037).  
   
-## Voir aussi  
- <xref:System.Windows.Shapes.Line>
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Shapes.Line>  
+ [Éléments de forme, exemple](http://go.microsoft.com/fwlink/?LinkID=160037)

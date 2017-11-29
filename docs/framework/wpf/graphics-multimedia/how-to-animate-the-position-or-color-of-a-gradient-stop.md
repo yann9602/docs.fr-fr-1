@@ -1,49 +1,55 @@
 ---
-title: "Comment&#160;: animer la position ou la couleur d&#39;un point de d&#233;grad&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "animation, couleur des objets GradientStop"
-  - "animation, position des objets GradientStop"
-  - "couleurs, animer"
-  - "objets GradientStop, animer la couleur de"
-  - "objets GradientStop, animer la position de"
-  - "position, animer"
+title: "Comment : animer la position ou la couleur d'un point de dégradé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- position [WPF], animating
+- animation [WPF], position of GradientStop objects
+- GradientStop objects [WPF], animating color of
+- colors [WPF], animating
+- animation [WPF], color of GradientStop objects
+- GradientStop objects [WPF], animating position of
 ms.assetid: 6f5b8b47-6c32-4b8e-98ee-fdf6515ec843
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 968d285d8a3345da9810f0ba4797bf8b2e33d36e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: animer la position ou la couleur d&#39;un point de d&#233;grad&#233;
-Cet exemple indique comment animer les <xref:System.Windows.Media.GradientStop.Color%2A> et <xref:System.Windows.Media.GradientStop.Offset%2A> d'objets <xref:System.Windows.Media.GradientStop>.  
+# <a name="how-to-animate-the-position-or-color-of-a-gradient-stop"></a>Comment : animer la position ou la couleur d'un point de dégradé
+Cet exemple montre comment animer la <xref:System.Windows.Media.GradientStop.Color%2A> et <xref:System.Windows.Media.GradientStop.Offset%2A> de <xref:System.Windows.Media.GradientStop> objets.  
   
-## Exemple  
- L'exemple suivant anime trois points de dégradé dans <xref:System.Windows.Media.LinearGradientBrush>.  Cet exemple utilise trois animations, chacune animant un point de dégradé différent :  
+## <a name="example"></a>Exemple  
+ L’exemple suivant anime trois points de dégradé dans un <xref:System.Windows.Media.LinearGradientBrush>. L’exemple utilise trois animations, chacune d’elles réalise une animation d’un point de dégradé différent :  
   
--   La première animation, un <xref:System.Windows.Media.Animation.DoubleAnimation>, anime le <xref:System.Windows.Media.GradientStop.Offset%2A> du premier point de dégradé de 0.0 à 1.0, puis revient à 0.0.  Par conséquent, la première couleur du dégradé se décale de la gauche vers la droite du rectangle, puis revient sur la gauche.  
+-   La première animation, un <xref:System.Windows.Media.Animation.DoubleAnimation>, anime le premier point de dégradé <xref:System.Windows.Media.GradientStop.Offset%2A> de 0.0 à 1.0, puis revient à 0.0. Par conséquent, la première couleur du dégradé se décale à partir de la gauche vers le côté droit du rectangle et puis de nouveau sur le côté gauche.  
   
--   La deuxième animation, un <xref:System.Windows.Media.Animation.ColorAnimation>, anime le <xref:System.Windows.Media.GradientStop.Color%2A> du deuxième point de dégradé de <xref:System.Windows.Media.Colors.Purple%2A> vers <xref:System.Windows.Media.Colors.Yellow%2A>, puis vice versa vers <xref:System.Windows.Media.Colors.Purple%2A> de nouveau.  En conséquence, la couleur au centre du dégradé passe de violet à jaune, puis de nouveau à violet.  
+-   La deuxième animation, un <xref:System.Windows.Media.Animation.ColorAnimation>, anime le deuxième point de dégradé <xref:System.Windows.Media.GradientStop.Color%2A> de <xref:System.Windows.Media.Colors.Purple%2A> à <xref:System.Windows.Media.Colors.Yellow%2A> , puis revient à <xref:System.Windows.Media.Colors.Purple%2A>. Par conséquent, la couleur intermédiaire du dégradé passe de violet en jaune et en violet.  
   
--   La troisième animation, un autre <xref:System.Windows.Media.Animation.ColorAnimation>, anime l'opacité du <xref:System.Windows.Media.GradientStop.Color%2A> du troisième point de dégradé de \-1, puis vice versa.  En conséquence, la troisième couleur dans les atténuations dégradées devient loin, puis encore opaque.  
+-   La troisième animation, un autre <xref:System.Windows.Media.Animation.ColorAnimation>, anime l’opacité de la troisième point de dégradé <xref:System.Windows.Media.GradientStop.Color%2A> par -1, puis à nouveau. Par conséquent, la troisième couleur dans le dégradé disparaît et devient alors opaque à nouveau.  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/GradientStopAnimationExample.cs#graphicsmmgradientanimationexampleswholepage)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/gradientstopanimationexample.vb#graphicsmmgradientanimationexampleswholepage)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/GradientStopAnimationExample.xaml#graphicsmmgradientanimationexampleswholepage)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/GradientStopAnimationExample.xaml#graphicsmmgradientanimationexampleswholepage)]  
   
- Bien que cet exemple utilise un <xref:System.Windows.Media.LinearGradientBrush>, le processus est le même pour animer des objets <xref:System.Windows.Media.GradientStop> dans un <xref:System.Windows.Media.RadialGradientBrush>.  
+ Bien que cet exemple utilise un <xref:System.Windows.Media.LinearGradientBrush>, le processus est le même pour animer <xref:System.Windows.Media.GradientStop> d’objets contenus dans un <xref:System.Windows.Media.RadialGradientBrush>.  
   
- Pour obtenir des exemples supplémentaires, consultez [Pinceaux, exemple](http://go.microsoft.com/fwlink/?LinkID=159973).  
+ Pour obtenir des exemples supplémentaires, consultez le [pinceaux, exemple](http://go.microsoft.com/fwlink/?LinkID=159973).  
   
-## Voir aussi  
- <xref:System.Windows.Media.GradientStop>   
- [Vue d'ensemble de l'animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [Vue d'ensemble des storyboards](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Media.GradientStop>  
+ [Vue d’ensemble de l’animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Vue d'ensemble des plans conceptuels](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)

@@ -1,6 +1,6 @@
 ---
 title: "Informations de référence sur les symboles et les opérateurs (F#)"
-description: "Informations de référence sur les symboles et les opérateurs (F#)"
+description: "En savoir plus sur les symboles et les opérateurs qui sont utilisés dans le langage de programmation F #."
 keywords: visual f#, f#, programmation fonctionnelle
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ab453800-d4d0-4a11-9d55-2b358d56af27
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 514dc37dce3df3f40ae99ce55772b0c4e8deb95f
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: d1000e991a6c07693f2e639ee8f0a386d53a2aae
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="symbol-and-operator-reference"></a>Informations de référence sur les symboles et les opérateurs
 
 > [!NOTE]
@@ -128,7 +127,7 @@ Le tableau suivant indique l'ordre de priorité des opérateurs et autres mots c
 |--------|-------------|
 |`as`|Droit|
 |`when`|Droit|
-|<code>&#124;</code> (barre verticale)|Gauche|
+|<code>&#124;</code>(barre verticale)|Gauche|
 |`;`|Droit|
 |`let`|Non associatif|
 |`function`, `fun`, `match`, `try`|Non associatif|
@@ -139,7 +138,7 @@ Le tableau suivant indique l'ordre de priorité des opérateurs et autres mots c
 |`or`, <code>&#124;&#124;</code>|Gauche|
 |`&`, `&&`|Gauche|
 |`:>`, `:?>`|Droit|
-|`!=`*op*, `<`*op*, `>`*op*, `=`, <code>&#124;</code>*op*, `&`*op*, `&`<br /><br />(notamment `<<<`, `>>>`, <code>&#124;&#124;&#124;</code>, `&&&`)|Gauche|
+|`!=`*Op*, `<` *op*, `>` *op*, `=`, <code>&#124;</code> *op*, `&`  *Op*,`&`<br /><br />(y compris `<<<`, `>>>`, <code>&#124;&#124;&#124;</code>, `&&&`)|Gauche|
 |`^`*op*<br /><br />(y compris `^^^`)|Droit|
 |`::`|Droit|
 |`:?`|Non associatif|
@@ -147,7 +146,7 @@ Le tableau suivant indique l'ordre de priorité des opérateurs et autres mots c
 |`*`*op*, `/`*op*, `%`*op*|Gauche|
 |`**`*op*|Droit|
 |`f x` (application de fonction)|Gauche|
-|<code>&#124;</code> (critères spéciaux)|Droit|
+|<code>&#124;</code>(critères spéciaux)|Droit|
 |opérateurs de préfixe (`+`*op*, `-`*op*, `%`, `%%`, `&`, `&&`, `!`*op*, `~`*op*)|Gauche|
 |`.`|Left|
 |`f(x)`|Gauche|
@@ -158,4 +157,3 @@ F# prend en charge la surcharge d'opérateur personnalisé. Cela signifie que vo
 [Informations de référence du langage F#](../index.md)
 
 [Surcharge d'opérateur](../operator-overloading.md)
-

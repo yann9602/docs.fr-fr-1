@@ -1,37 +1,35 @@
 ---
-title: "&#39;#Region&#39; and &#39;#End Region&#39; statements are not valid within method bodies/multiline lambdas | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc32025"
-  - "vbc32025"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC32025"
+title: "&#39; #Region &#39; et &#39; #End Region &#39; les instructions ne sont pas valides dans les expressions lambda multiligne de corps de méthode"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc32025
+- vbc32025
+helpviewer_keywords: BC32025
 ms.assetid: 43707bf1-1c6b-4d82-b081-e5a17dca51c1
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 614d0c7324bfbf07bc5736c799e8b54937ead081
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &#39;#Region&#39; and &#39;#End Region&#39; statements are not valid within method bodies/multiline lambdas
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Le bloc `#Region` doit être déclaré au niveau d'une classe, d'un module ou d'un espace de noms.  Une région que vous pouvez réduire peut inclure une ou plusieurs procédures, mais elle ne peut pas commencer ou se terminer à l'intérieur d'une procédure.  
+# <a name="39region39-and-39end-region39-statements-are-not-valid-within-method-bodiesmultiline-lambdas"></a>&#39; #Region &#39; et &#39; #End Region &#39; les instructions ne sont pas valides dans les expressions lambda multiligne corps de méthode
+Le `#Region` bloc doit être déclaré au niveau de la classe, module ou d’espace de noms. Une zone réductible peut inclure une ou plusieurs procédures, mais il ne peut pas commencer ou se terminer à l’intérieur d’une procédure.  
   
- **ID d'erreur :** BC32025  
+ **ID d’erreur :** BC32025  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1.  Assurez\-vous qu'une instruction `End Function` ou `End Sub` termine bien la procédure précédente.  
+1.  Assurez-vous que la procédure précédente est correctement terminée avec un `End Function` ou `End Sub` instruction.  
   
-2.  Assurez\-vous que les directives `#Region` et `#End Region` se trouvent dans le même bloc de code.  
+2.  Vérifiez que le `#Region` et `#End Region` sont des directives dans le même bloc de code.  
   
-## Voir aussi  
- [\#Region Directive](../../../visual-basic/language-reference/directives/region-directive.md)
+## <a name="see-also"></a>Voir aussi  
+ [#Region (directive)](../../../visual-basic/language-reference/directives/region-directive.md)

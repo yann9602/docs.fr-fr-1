@@ -1,36 +1,37 @@
 ---
-title: "S&#233;curit&#233; et conditions de concurrence | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "sécurité du code, conflits d'accès"
-  - "conflits d'accès"
-  - "codage sécurisé, conflits d'accès"
-  - "sécurité (.NET Framework), conflits d'accès"
+title: "Sécurité et conditions de concurrence"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- security [.NET Framework], race conditions
+- race conditions
+- secure coding, race conditions
+- code security, race conditions
 ms.assetid: ea3edb80-b2e8-4e85-bfed-311b20cb59b6
-caps.latest.revision: 9
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: c092113f670c5799d98dcb13c9c713bbd1a47fb6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# S&#233;curit&#233; et conditions de concurrence
-Un autre problème concerne les risques de brèches dans la sécurité et leur exploitation par des conditions de concurrence critique.  Ce problème peut se manifester de plusieurs façons :  Les sous\-rubriques suivantes mettent en avant certains des principaux pièges que le développeur doit éviter.  
+# <a name="security-and-race-conditions"></a>Sécurité et conditions de concurrence
+Un autre problème concerne le risque de failles de sécurité exploité par des conditions de concurrence. Il existe plusieurs façons dans lequel cela peut se produire. Les sous-rubriques qui suivent décrivent certains des principaux pièges que le développeur doit éviter.  
   
-## Conditions de concurrence critique dans la méthode Dispose  
- Si la méthode **Dispose** d'une classe \(consultez [Garbage Collection](../../../docs/standard/garbage-collection/index.md) pour plus d'informations\) n'est pas synchronisée, il est possible que le code de nettoyage à l'intérieur de **Dispose** soit exécuté plus d'une fois, comme illustré dans l'exemple suivant.  
+## <a name="race-conditions-in-the-dispose-method"></a>Conditions de concurrence dans la méthode Dispose  
+ Si une classe de **Dispose** (méthode) (pour plus d’informations, consultez [le Garbage Collection](../../../docs/standard/garbage-collection/index.md)) est non synchronisé, il est possible que le code de nettoyage à l’intérieur de **Dispose** peut être exécutée plus de fois, comme illustré dans l’exemple suivant.  
   
 ```vb  
 Sub Dispose()  
@@ -39,7 +40,6 @@ Sub Dispose()
        myObj = Nothing  
     End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -53,13 +53,13 @@ void Dispose()
 }  
 ```  
   
- Comme cette implémentation **Dispose** n'est pas synchronisée, il est possible que `Cleanup` soit d'abord appelé par un thread puis par un deuxième thread avant que `_myObj` reçoive la valeur **null**.  Qu'il s'agisse d'un problème de sécurité ou non dépend du résultat de l'exécution du code `Cleanup`.  Un problème central lié aux implémentations **Dispose** synchronisées concerne l'utilisation de handles de ressource comme des fichiers par exemple.  Une suppression inappropriée peut entraîner l'utilisation d'un handle incorrect, ce qui génère souvent des failles en matière de sécurité.  
+ Étant donné que cela **Dispose** implémentation n’est pas synchronisée, il est possible pour `Cleanup` à être appelé par tout d’abord un thread, puis un deuxième thread avant `_myObj` a la valeur **null**. S’il s’agit d’un problème de sécurité dépend de ce qui se passe lorsque le `Cleanup` code s’exécute. Un problème majeur avec non synchronisés **Dispose** implémentations implique l’utilisation de handles de ressource tels que les fichiers. Suppression inappropriée peut entraîner le handle incorrect à utiliser, ce qui conduit souvent à des failles de sécurité.  
   
-## Conditions de concurrence critique dans des constructeurs  
- Dans certaines applications, il est parfois possible pour d'autres threads d'accéder à des membres de la classe avant l'exécution complète de leurs constructeurs de classe.  Vous devez passer en revue tous les constructeurs de classe pour vous assurer qu'il n'y a pas de problème lié à la sécurité si cela doit se produire ou synchroniser des threads, si nécessaire.  
+## <a name="race-conditions-in-constructors"></a>Conditions de concurrence dans les constructeurs  
+ Dans certaines applications, il peut être possible d’autres threads peuvent accéder aux membres de la classe avant l’exécution complète de leurs constructeurs de classe. Vous devez passer en revue tous les constructeurs de classe pour vous assurer qu’il n’y a aucun problème de sécurité si cela doit se produire ou synchroniser des threads si nécessaire.  
   
-## Conditions de concurrence critique avec les objets mis en cache  
- Le code qui met en cache des informations de sécurité ou utilise l'opération [assertion](../../../docs/framework/misc/using-the-assert-method.md) de la sécurité d'accès du code peut être également soumis à des conditions de concurrence critique si d'autres parties de la classe ne sont pas correctement synchronisées, comme illustré dans l'exemple suivant.  
+## <a name="race-conditions-with-cached-objects"></a>Conditions de concurrence avec les objets mis en cache  
+ Code qui met en cache les informations de sécurité ou qui utilise la sécurité d’accès du code [Assert](../../../docs/framework/misc/using-the-assert-method.md) opération peut également être vulnérable aux conditions de concurrence critique si d’autres parties de la classe ne sont pas correctement synchronisées, comme indiqué dans l’exemple suivant.  
   
 ```vb  
 Sub SomeSecureFunction()  
@@ -78,7 +78,6 @@ Sub DoOtherWork()
         DoSomethingTrusted()  
     End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -105,12 +104,12 @@ void DoOtherWork()
 }  
 ```  
   
- S'il existe d'autres chemins vers `DoOtherWork` qui peuvent être appelés par un autre thread à l'aide du même objet, un appelant non fiable peut ignorer une demande sans la voir.  
+ S’il existe d’autres chemins pour `DoOtherWork` qui peut être appelée à partir d’un autre thread avec le même objet, un appelant non fiable peut ignorer une demande.  
   
- Si votre code met en cache des informations de sécurité, veillez à le passer en revue dans le cadre de cette faille.  
+ Si votre code met en cache les informations de sécurité, assurez-vous que vous l’examinez cette vulnérabilité.  
   
-## Conditions de concurrence critique dans des finaliseurs  
- Des conditions de concurrence critique peuvent également se produire dans un objet qui référence une ressource statique ou non managée qu'il libère ensuite dans son finaliseur.  Si plusieurs objets partagent une ressource manipulée dans un finaliseur de classe, les objets doivent synchroniser tous les accès à cette ressource.  
+## <a name="race-conditions-in-finalizers"></a>Conditions de concurrence dans les finaliseurs  
+ Conditions de concurrence peuvent également se produire dans un objet qui fait référence à une ressource statique ou non managée qu’il libère ensuite dans son finaliseur. Si plusieurs objets partagent une ressource manipulée dans un finaliseur de classe, les objets doivent synchroniser tous les accès à cette ressource.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)

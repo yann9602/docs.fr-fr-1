@@ -1,44 +1,65 @@
 ---
-title: "Utilisation de la Variance dans les Interfaces pour les Collections génériques (Visual Basic) | Documents Microsoft"
+title: "Utilisation de la Variance dans les Interfaces pour les Collections génériques (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c867fcea-7462-4995-b9c5-542feec74036
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 86184c7de3fe16148bf954b16d703ca682216337
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b8944bf8f6377ddc633f81dccd9f379bf176d9f3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a>Utilisation de la Variance dans les Interfaces pour les Collections génériques (Visual Basic)
-Une interface covariante autorise ses méthodes à retourner des types plus dérivés que ceux spécifiés dans l’interface. Une interface contravariante autorise ses méthodes à accepter des paramètres de types moins dérivés que ceux spécifiés dans l’interface.  
+Une interface covariante permet à ses méthodes de retourner des types plus dérivés que ceux spécifiés dans l’interface. Une interface contravariante permet à ses méthodes d’accepter des paramètres de types moins dérivés que ceux spécifiés dans l’interface.  
   
- Dans .NET Framework 4, plusieurs interfaces existantes est devenu covariants et contravariant. Ceux-ci incluent <xref:System.Collections.Generic.IEnumerable%601>et <xref:System.IComparable%601>.</xref:System.IComparable%601> </xref:System.Collections.Generic.IEnumerable%601> Cela vous permet de réutiliser des méthodes qui fonctionnent avec les collections génériques de types de base pour les collections de types dérivés.  
+ Dans .NET Framework 4, plusieurs interfaces existantes sont devenues covariantes et contravariantes. Celles-ci comprennent <xref:System.Collections.Generic.IEnumerable%601> et <xref:System.IComparable%601>. Cela vous permet de réutiliser des méthodes qui fonctionnent avec les collections génériques de types de base pour les collections de types dérivés.  
   
  Pour obtenir la liste des variantes dans le .NET Framework, consultez [Variance dans les Interfaces génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).  
   
-## <a name="converting-generic-collections"></a>Conversion de Collections génériques  
- L’exemple suivant illustre les avantages de la prise en charge de la covariance dans le <xref:System.Collections.Generic.IEnumerable%601>interface.</xref:System.Collections.Generic.IEnumerable%601> Le `PrintFullName` méthode accepte une collection de la `IEnumerable(Of Person)` type en tant que paramètre. Toutefois, vous pouvez le réutiliser pour une collection de la `IEnumerable(Of Person)` type, car `Employee` hérite `Person`.  
+## <a name="converting-generic-collections"></a>Conversion de collections génériques  
+ L’exemple suivant illustre les avantages de la prise en charge de la covariance dans l’interface <xref:System.Collections.Generic.IEnumerable%601>. La méthode `PrintFullName` accepte une collection de type `IEnumerable(Of Person)` comme paramètre. Toutefois, vous pouvez la réutiliser pour une collection de type `IEnumerable(Of Person)`, car `Employee` hérite de `Person`.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
-## <a name="comparing-generic-collections"></a>Comparaison de Collections génériques  
- L’exemple suivant illustre les avantages de la prise en charge de la contravariance dans les <xref:System.Collections.Generic.IComparer%601>interface.</xref:System.Collections.Generic.IComparer%601> La classe `PersonComparer` implémente l'interface `IComparer(Of Person)`. Toutefois, vous pouvez réutiliser cette classe pour comparer une séquence d’objets de la `Employee` type, car `Employee` hérite `Person`.  
+```vb  
+' Simple hierarchy of classes.  
+Public Class Person  
+    Public Property FirstName As String  
+    Public Property LastName As String  
+End Class  
+  
+Public Class Employee  
+    Inherits Person  
+End Class  
+  
+' The method has a parameter of the IEnumerable(Of Person) type.  
+Public Sub PrintFullName(ByVal persons As IEnumerable(Of Person))  
+    For Each person As Person In persons  
+        Console.WriteLine(  
+            "Name: " & person.FirstName & " " & person.LastName)  
+    Next  
+End Sub  
+  
+Sub Main()  
+    Dim employees As IEnumerable(Of Employee) = New List(Of Employee)  
+  
+    ' You can pass IEnumerable(Of Employee),   
+    ' although the method expects IEnumerable(Of Person).  
+  
+    PrintFullName(employees)  
+  
+End Sub  
+```  
+  
+## <a name="comparing-generic-collections"></a>Comparaison de collections génériques  
+ L’exemple suivant illustre les avantages de la prise en charge de la contravariance dans l’interface <xref:System.Collections.Generic.IComparer%601>. La classe `PersonComparer` implémente l'interface `IComparer(Of Person)`. Toutefois, vous pouvez réutiliser cette classe pour comparer une séquence d’objets de type `Employee`, car `Employee` hérite de `Person`.  
   
 ```vb  
 ' Simple hierarhcy of classes.  
@@ -98,4 +119,4 @@ End Sub
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Variance dans les Interfaces génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+ [Variance dans les interfaces génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)

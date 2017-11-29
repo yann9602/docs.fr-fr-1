@@ -1,27 +1,33 @@
 ---
-title: "Comment&#160;: trier une colonne GridView lors d&#39;un clic sur un en-t&#234;te | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles GridView"
-  - "contrôles ListView"
-  - "Contrôles ListView, trier des colonnes GridView"
-  - "Contrôles GridView, contrôle ListView"
+title: "Comment : trier une colonne GridView lors d'un clic sur un en-tête"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [WPF], GridView
+- controls [WPF], ListView
+- ListView controls [WPF], sorting GridView columns
+- GridView controls [WPF], ListView control
 ms.assetid: 4865d720-d147-40ed-83a7-af7587f8aad8
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a6f05f9f1fef335bc0bae578220d458ade9bfe06
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: trier une colonne GridView lors d&#39;un clic sur un en-t&#234;te
+# <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>Comment : trier une colonne GridView lors d'un clic sur un en-tête
 Cet exemple montre comment créer un <xref:System.Windows.Controls.ListView> contrôle qui implémente un <xref:System.Windows.Controls.GridView> afficher en mode trie le contenu des données lorsqu’un utilisateur clique sur un en-tête de colonne.  
   
 ## <a name="example"></a>Exemple  
@@ -41,7 +47,7 @@ Cet exemple montre comment créer un <xref:System.Windows.Controls.ListView> con
 </GridView>  
 ```  
   
- L’exemple suivant montre les éléments de données qui sont définies comme une <xref:System.Collections.ArrayList> de <xref:System.DateTime> objets. Le <xref:System.Collections.ArrayList> est défini comme le <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pour la <xref:System.Windows.Controls.ListView> contrôle.  
+ L’exemple suivant montre les éléments de données qui sont définies comme un <xref:System.Collections.ArrayList> de <xref:System.DateTime> objets. Le <xref:System.Collections.ArrayList> est défini comme le <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pour la <xref:System.Windows.Controls.ListView> contrôle.  
   
 ```xaml  
 <ListView.ItemsSource>  
@@ -62,7 +68,7 @@ Cet exemple montre comment créer un <xref:System.Windows.Controls.ListView> con
 </ListView.ItemsSource>  
 ```  
   
- Le `s` et `p` identificateurs dans les [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balises font référence aux mappages d’espace de noms qui sont définis dans les métadonnées de la [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page. L’exemple suivant montre la définition de métadonnées.  
+ Les identificateurs `s` et `p` des balises [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] font référence aux mappages d’espace de noms qui sont définis dans les métadonnées de la page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. L’exemple suivant montre la définition des métadonnées.  
   
 ```xaml  
 <Window        
@@ -73,7 +79,7 @@ Cet exemple montre comment créer un <xref:System.Windows.Controls.ListView> con
     xmlns:p="clr-namespace:System;assembly=mscorlib">  
 ```  
   
- Pour trier les données en fonction du contenu d’une colonne, l’exemple définit un gestionnaire d’événements pour gérer les <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement qui se produit lorsque vous appuyez sur le bouton d’en-tête de colonne. L’exemple suivant montre comment spécifier un gestionnaire d’événements pour le <xref:System.Windows.Controls.GridViewColumnHeader> contrôle.  
+ Pour trier les données selon le contenu d’une colonne, l’exemple définit un gestionnaire d’événements pour gérer les <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement qui se produit lorsque vous appuyez sur le bouton d’en-tête de colonne. L’exemple suivant montre comment spécifier un gestionnaire d’événements pour le <xref:System.Windows.Controls.GridViewColumnHeader> contrôle.  
   
 ```xaml  
 <ListView x:Name='lv' Height="150" HorizontalAlignment="Center"   
@@ -82,7 +88,7 @@ Cet exemple montre comment créer un <xref:System.Windows.Controls.ListView> con
  >  
 ```  
   
- L’exemple définit le Gestionnaire d’événements afin que le sens du tri change entre l’ordre croissant et décroissant chaque fois que vous appuyez sur le bouton d’en-tête de colonne. L’exemple suivant montre le Gestionnaire d’événements.  
+ L’exemple définit le gestionnaire d’événements de sorte que le sens du tri change entre l’ordre croissant et décroissant chaque fois que vous appuyez sur le bouton d’en-tête de colonne. L’exemple suivant illustre le gestionnaire d’événements.  
   
 ```csharp  
 public partial class Window1 : Window  
@@ -196,7 +202,7 @@ Partial Public Class Window1
         End Sub  
 ```  
   
- L’exemple suivant montre l’algorithme de tri qui est appelée par le Gestionnaire d’événements pour trier les données. Le tri est effectué en créant un nouveau <xref:System.ComponentModel.SortDescription> structure.  
+ L’exemple suivant montre l’algorithme de tri qui est appelé par le gestionnaire d’événements pour trier les données. Le tri est effectué en créant un nouveau <xref:System.ComponentModel.SortDescription> structure.  
   
 ```csharp  
 private void Sort(string sortBy, ListSortDirection direction)  
@@ -209,7 +215,6 @@ private void Sort(string sortBy, ListSortDirection direction)
     dataView.SortDescriptions.Add(sd);  
     dataView.Refresh();  
 }  
-  
 ```  
   
 ```vb  
@@ -224,8 +229,8 @@ Private Sub Sort(ByVal sortBy As String, ByVal direction As ListSortDirection)
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.GridView>   
- [Vue d’ensemble de ListView](../../../../docs/framework/wpf/controls/listview-overview.md)   
- [Vue d’ensemble de GridView](../../../../docs/framework/wpf/controls/gridview-overview.md)   
- [Rubriques "Comment"](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.GridView>  
+ [Vue d’ensemble de ListView](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [Vue d’ensemble de GridView](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [Rubriques de guide pratique](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

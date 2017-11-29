@@ -1,39 +1,45 @@
 ---
-title: "Remplissage d&#39;un DataSet &#224; partir d&#39;un DataAdapter | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Remplissage d'un DataSet à partir d'un DataAdapter"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 3fa0ac7d-e266-4954-bfac-3fbe2f913153
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 3648340050e5ee3a761efcbedd89f649ff8d9c91
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Remplissage d&#39;un DataSet &#224; partir d&#39;un DataAdapter
+# <a name="populating-a-dataset-from-a-dataadapter"></a>Remplissage d'un DataSet à partir d'un DataAdapter
 L’objet [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]<xref:System.Data.DataSet> est une représentation résidente en mémoire de données, qui propose un modèle de programmation relationnel cohérent, indépendant de la source de données. Le `DataSet` représente un jeu de données complet qui comprend des tables, des contraintes et des relations entre les tables. Étant donné que le `DataSet` est indépendant de la source de données, le `DataSet` peut inclure des données locales par rapport à l'application ainsi que des données provenant de plusieurs sources. L'interaction avec les sources de données existantes est contrôlée par le `DataAdapter`.  
   
- La propriété `SelectCommand` du `DataAdapter` est un objet `Command` qui extrait les données de la source de données. Les propriétés `InsertCommand`, `UpdateCommand` et `DeleteCommand` du `DataAdapter` sont des objets `Command` qui gèrent les mises à jour des données dans la source de données conformément aux modifications apportées dans le `DataSet`. Ces propriétés sont abordées plus en détail dans [Mise à jour de sources de données avec des DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
+ La propriété `SelectCommand` du `DataAdapter` est un objet `Command` qui extrait les données de la source de données. Les propriétés `InsertCommand`, `UpdateCommand`et `DeleteCommand` du `DataAdapter` sont des objets `Command` qui gèrent les mises à jour des données dans la source de données conformément aux modifications apportées dans le `DataSet`. Ces propriétés sont abordées plus en détail dans [mise à jour des Sources de données avec DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
   
- La méthode `Fill` du `DataAdapter` sert à remplir un `DataSet` avec les résultats de la `SelectCommand` du `DataAdapter`. La méthode `Fill` prend comme arguments un `DataSet` à remplir, ainsi qu'un objet `DataTable`, ou le nom du `DataTable` à remplir avec les lignes retournées par `SelectCommand`.  
-  
-> [!NOTE]
->  L'utilisation du `DataAdapter` pour extraire une table dans son intégralité prend du temps, particulièrement si la table contient de nombreuses lignes. Cela vient du fait qu'accéder à la base de données, localiser et traiter les données, puis transférer les données au client prend du temps. L'extraction de l'intégralité de la table vers le client verrouille également toutes les lignes sur le serveur. Pour améliorer les performances, vous pouvez utiliser la clause `WHERE` pour réduire drastiquement le nombre de lignes retournées au client. Vous pouvez également réduire la quantité de données retournées au client en répertoriant de façon explicite uniquement les colonnes requises dans l'instruction `SELECT`. Une autre solution de contournement efficace consiste à extraire les lignes par lots, par exemple plusieurs centaines de lignes à la fois, et à extraire le lot suivant uniquement lorsque le client a terminé le traitement du lot actuel.  
-  
- La méthode `Fill` utilise l'objet `DataReader` de manière implicite pour retourner les noms et les types de colonnes utilisés pour créer les tables du `DataSet` ainsi que les données pour remplir les lignes des tables du `DataSet`. Les tables et les colonnes ne sont créées que si elles n'existent pas encore ; sinon `Fill` utilise le schéma `DataSet` existant. Les types de colonnes sont créés en tant que types [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] conformément aux tableaux fournis dans [Mappages de types de données dans ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md). Les clés primaires ne sont pas créées, sauf si elles existent dans la source de données et que `DataAdapter`**.**`MissingSchemaAction` a la valeur `MissingSchemaAction`**.**`AddWithKey`. Si `Fill` détecte qu'il existe une clé primaire pour une table, elle remplace les données du `DataSet` par celles de la source de données pour les lignes dont les valeurs de colonne de clé primaire correspondent à celles de la ligne retournée par la source de données. Si aucune clé primaire n'est trouvée, les données sont ajoutées à la table dans le `DataSet`.`Fill` utilise les mappages éventuels quand vous remplissez le `DataSet` \(voir [Mappages de DataAdapter DataTable et DataColumn](../../../../docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)\).  
+ La méthode `Fill` du `DataAdapter` sert à remplir un `DataSet` avec les résultats de la `SelectCommand` du `DataAdapter`. La méthode`Fill` prend comme arguments un `DataSet` à remplir, ainsi qu'un objet `DataTable` , ou le nom du `DataTable` à remplir avec les lignes retournées par `SelectCommand`.  
   
 > [!NOTE]
->  Si `SelectCommand` retourne les résultats d'une jointure externe, le `DataAdapter` ne définit pas de valeur `PrimaryKey` pour le `DataTable` obtenu. Vous devez définir vous\-même la `PrimaryKey` pour garantir une résolution correcte des lignes dupliquées. Pour plus d'informations, consultez [Définition des clés primaires](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
+>  L'utilisation du `DataAdapter` pour extraire une table dans son intégralité prend du temps, particulièrement si la table contient de nombreuses lignes. Cela vient du fait qu'accéder à la base de données, localiser et traiter les données, puis transférer les données au client prend du temps. L'extraction de l'intégralité de la table vers le client verrouille également toutes les lignes sur le serveur. Pour améliorer les performances, vous pouvez utiliser la clause `WHERE` pour réduire drastiquement le nombre de lignes retournées au client. Vous pouvez également réduire la quantité de données retournées au client en répertoriant de façon explicite uniquement les colonnes requises dans l'instruction `SELECT` . Une autre solution de contournement efficace consiste à extraire les lignes par lots, par exemple plusieurs centaines de lignes à la fois, et à extraire le lot suivant uniquement lorsque le client a terminé le traitement du lot actuel.  
+  
+ La méthode `Fill` utilise l'objet `DataReader` de manière implicite pour retourner les noms et les types de colonnes utilisés pour créer les tables du `DataSet`ainsi que les données pour remplir les lignes des tables du `DataSet`. Les tables et les colonnes ne sont créées que si elles n'existent pas encore ; sinon `Fill` utilise le schéma `DataSet` existant. Types de colonne sont créés en tant que [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] conformément aux tableaux dans les types [des mappages de Type de données dans ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md). Les clés primaires ne sont pas créées, sauf si elles existent dans la source de données et que `DataAdapter`**.**`MissingSchemaAction` a la valeur `MissingSchemaAction`**.**`AddWithKey`. Si `Fill` détecte qu'il existe une clé primaire pour une table, elle remplace les données du `DataSet` par celles de la source de données pour les lignes dont les valeurs de colonne de clé primaire correspondent à celles de la ligne retournée par la source de données. Si aucune clé primaire n'est trouvée, les données sont ajoutées à la table dans le `DataSet`. `Fill`utilise les mappages qui peuvent exister lorsque vous remplissez le `DataSet` (consultez [mappages DataAdapter DataTable et DataColumn](../../../../docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)).  
+  
+> [!NOTE]
+>  Si `SelectCommand` retourne les résultats d'une jointure externe, le `DataAdapter` ne définit pas de valeur `PrimaryKey` pour le `DataTable`obtenu. Vous devez définir vous-même la `PrimaryKey` pour garantir une résolution correcte des lignes dupliquées. Pour plus d’informations, consultez [définition des clés primaires](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
   
  L'exemple de code suivant crée une instance d'un objet <xref:System.Data.SqlClient.SqlDataAdapter> qui utilise un objet <xref:System.Data.SqlClient.SqlConnection> sur la base de données `Northwind` Microsoft SQL Server et remplit un objet <xref:System.Data.DataTable> dans un `DataSet` avec la liste des clients. L'instruction SQL et les arguments <xref:System.Data.SqlClient.SqlConnection> passés au constructeur <xref:System.Data.SqlClient.SqlDataAdapter> sont utilisés pour créer la propriété <xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A> de l'objet <xref:System.Data.SqlClient.SqlDataAdapter>.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -57,16 +63,16 @@ adapter.Fill(customers, "Customers");
 ```  
   
 > [!NOTE]
->  Ce code n'ouvre pas et ne ferme pas la `Connection` de manière explicite. La méthode `Fill` ouvre implicitement la `Connection` que le `DataAdapter` utilise si la connexion n'est pas déjà ouverte. Si `Fill` a ouvert la connexion, `Fill` la ferme aussi lorsque son exécution est terminée. Cela peut simplifier votre code lorsque vous ne traitez qu'une seule opération comme `Fill` ou `Update`. Cependant, si vous effectuez plusieurs opérations qui nécessitent une connexion ouverte, vous pouvez améliorer les performances de votre application en appelant de manière explicite la méthode `Open` de `Connection`, en effectuant les opérations sur la source de données, puis en appelant la méthode `Close` de `Connection`. Vous devez tenter de réduire autant que possible le temps d'ouverture des connexions à la source de données pour libérer des ressources afin que d'autres applications clientes puissent les utiliser.  
+>  Ce code n'ouvre pas et ne ferme pas la `Connection`de manière explicite. La méthode `Fill` ouvre implicitement la `Connection` que le `DataAdapter` utilise si la connexion n'est pas déjà ouverte. Si `Fill` a ouvert la connexion, `Fill` la ferme aussi lorsque son exécution est terminée. Cela peut simplifier votre code lorsque vous ne traitez qu'une seule opération comme `Fill` ou `Update`. Cependant, si vous effectuez plusieurs opérations qui nécessitent une connexion ouverte, vous pouvez améliorer les performances de votre application en appelant de manière explicite la méthode `Open` de `Connection`, en effectuant les opérations sur la source de données, puis en appelant la méthode `Close` de `Connection`. Vous devez tenter de réduire autant que possible le temps d'ouverture des connexions à la source de données pour libérer des ressources afin que d'autres applications clientes puissent les utiliser.  
   
-## Jeux de résultats multiples  
- Si le `DataAdapter` détecte plusieurs jeux de résultats, il crée plusieurs tables dans le `DataSet`. Les tables reçoivent un nom incrémentiel par défaut de Table*N*, commençant par « Table » pour Table0. Si un nom de table est passé comme argument à la méthode `Fill`, les tables reçoivent le nom incrémentiel par défaut TableName*N*, commençant par « TableName » pour TableName0.  
+## <a name="multiple-result-sets"></a>Jeux de résultats multiples  
+ Si le `DataAdapter` détecte plusieurs jeux de résultats, il crée plusieurs tables dans le `DataSet`. Les tables reçoivent un nom incrémentiel par défaut de Table*N*, commençant par « Table » pour Table0. Si un nom de table est passé comme argument à la méthode `Fill` , les tables reçoivent le nom incrémentiel par défaut TableName*N*, commençant par « TableName » pour TableName0.  
   
-## Remplissage d'un DataSet à partir de plusieurs DataAdapters  
- Vous pouvez utiliser un nombre quelconque d’objets `DataAdapter`avec un `DataSet`. Chaque `DataAdapter` peut être utilisé pour remplir un ou plusieurs objets `DataTable` et répercuter les mises à jour dans la source de données concernée. Les objets `DataRelation` et `Constraint` peuvent être ajoutés localement au `DataSet`, ce qui vous permet de relier des données provenant de sources de données hétérogènes. Par exemple, un `DataSet` peut contenir des données provenant d'une base de données Microsoft SQL Server, d'une base de données IBM DB2 exposée via OLE DB et d'une source de données qui diffuse le XML en continu. Un ou plusieurs objets `DataAdapter` peuvent gérer la communication vers chaque source de données.  
+## <a name="populating-a-dataset-from-multiple-dataadapters"></a>Remplissage d'un DataSet à partir de plusieurs DataAdapters  
+ Un nombre quelconque de `DataAdapter` objets peuvent être utilisés avec un `DataSet`. Chaque `DataAdapter` peut être utilisé pour remplir un ou plusieurs objets `DataTable` et répercuter les mises à jour dans la source de données concernée. Les objets`DataRelation` et `Constraint` peuvent être ajoutés localement au `DataSet` , ce qui vous permet de relier des données provenant de sources de données hétérogènes. Par exemple, un `DataSet` peut contenir des données provenant d'une base de données Microsoft SQL Server, d'une base de données IBM DB2 exposée via OLE DB et d'une source de données qui diffuse le XML en continu. Un ou plusieurs objets `DataAdapter` peuvent gérer la communication vers chaque source de données.  
   
-### Exemple  
- L'exemple de code suivant remplit une liste de clients provenant de la base de données `Northwind` sur Microsoft SQL Server, ainsi qu'une liste de commandes provenant de la base de données `Northwind` stockée dans Microsoft Access 2000. Les tables remplies sont reliées par un `DataRelation` et la liste des clients est ensuite affichée avec les commandes du client concerné. Pour plus d’informations sur les objets `DataRelation`, consultez [Ajout d'objets DataRelation](../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md) et [Exploration des DataRelations](../../../../docs/framework/data/adonet/dataset-datatable-dataview/navigating-datarelations.md).  
+### <a name="example"></a>Exemple  
+ L'exemple de code suivant remplit une liste de clients provenant de la base de données `Northwind` sur Microsoft SQL Server, ainsi qu'une liste de commandes provenant de la base de données `Northwind` stockée dans Microsoft Access 2000. Les tables remplies sont reliées par un `DataRelation`et la liste des clients est ensuite affichée avec les commandes du client concerné. Pour plus d’informations sur `DataRelation` , consultez [Ajout de DataRelations](../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md) et [navigation des DataRelations](../../../../docs/framework/data/adonet/dataset-datatable-dataview/navigating-datarelations.md).  
   
 ```vb  
 ' Assumes that customerConnection is a valid SqlConnection object.  
@@ -94,7 +100,6 @@ For Each pRow In customerOrders.Tables("Customers").Rows
     Console.WriteLine(vbTab & cRow("OrderID").ToString())  
   Next  
 Next  
-  
 ```  
   
 ```csharp  
@@ -122,19 +127,19 @@ foreach (DataRow pRow in customerOrders.Tables["Customers"].Rows)
 }  
 ```  
   
-## Type décimal SQL Server  
- Par défaut, le `DataSet` stocke les données à l'aide de types de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Pour la plupart des applications, ils fournissent une représentation pratique des informations de la source de données. Cette représentation peut néanmoins poser un problème lorsque le type de données dans la source de données est un decimal SQL Server ou un type de données numérique. Le type de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] `decimal` autorise un nombre maximal de 28 chiffres significatifs, tandis que le type de données `decimal` SQL Server en autorise 38. Si `SqlDataAdapter` détermine pendant une opération `Fill` que la précision d'un champ `decimal` SQL Server est supérieure à 28 caractères, la ligne actuelle n'est pas ajoutée au `DataTable`. Au lieu de cela, l'événement `FillError` se produit, ce qui vous permet de déterminer une éventuelle perte de précision et de répondre de manière appropriée. Pour plus d'informations sur l'événement `FillError`, consultez [Gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md). Pour obtenir la valeur `decimal` SQL Server, vous pouvez également utiliser un objet <xref:System.Data.SqlClient.SqlDataReader> et appeler la méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlDecimal%2A>.  
+## <a name="sql-server-decimal-type"></a>Type décimal SQL Server  
+ Par défaut, le `DataSet` stocke les données à l'aide de types de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] . Pour la plupart des applications, ils fournissent une représentation pratique des informations de la source de données. Cette représentation peut néanmoins poser un problème lorsque le type de données dans la source de données est un decimal SQL Server ou un type de données numérique. Le type de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] `decimal` autorise un nombre maximal de 28 chiffres significatifs, tandis que le type de données `decimal` SQL Server en autorise 38. Si `SqlDataAdapter` détermine pendant une opération `Fill` que la précision d'un champ `decimal` SQL Server est supérieure à 28 caractères, la ligne actuelle n'est pas ajoutée au `DataTable`. Au lieu de cela, l'événement `FillError` se produit, ce qui vous permet de déterminer une éventuelle perte de précision et de répondre de manière appropriée. Pour plus d’informations sur la `FillError` événements, consultez [gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md). Pour obtenir la valeur `decimal` SQL Server, vous pouvez également utiliser un objet <xref:System.Data.SqlClient.SqlDataReader> et appeler la méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlDecimal%2A> .  
   
- [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 a introduit une prise en charge avancée de <xref:System.Data.SqlTypes> dans le `DataSet`. Pour plus d'informations, consultez [SqlTypes et le DataSet](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
+ [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 a introduit une prise en charge avancée de <xref:System.Data.SqlTypes> dans le `DataSet`. Pour plus d'informations, consultez [SqlTypes and the DataSet](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
   
-## Chapitres OLE DB  
- Les jeux de lignes hiérarchiques ou chapitres \(`DBTYPE_HCHAPTER` de type OLE DB, `adChapter` de type ADO\) peuvent être utilisés pour remplir le contenu d'un `DataSet`. Lorsque l'objet <xref:System.Data.OleDb.OleDbDataAdapter> rencontre une colonne chapitre pendant une opération `Fill`, un `DataTable` est créé pour cette colonne et la table correspondante est remplie avec les colonnes et les lignes provenant du chapitre. La table créée pour la colonne chapitre est nommée à l'aide des noms de la table parente et de la colonne chapitre sous la forme « *ParentTableNameChapteredColumnName* ». Si une table correspondant au nom de la colonne chapitre existe déjà dans le `DataSet`, la table actuelle est remplie avec les données du chapitre. S'il n'y a pas de colonne, dans une table existante, qui corresponde à une colonne trouvée dans le chapitre, une nouvelle colonne est ajoutée.  
+## <a name="ole-db-chapters"></a>Chapitres OLE DB  
+ Les jeux de lignes hiérarchiques ou chapitres ( `DBTYPE_HCHAPTER`de type OLE DB, `adChapter`de type ADO) peuvent être utilisés pour remplir le contenu d'un `DataSet`. Lorsque l'objet <xref:System.Data.OleDb.OleDbDataAdapter> rencontre une colonne chapitre pendant une opération `Fill` , un `DataTable` est créé pour cette colonne et la table correspondante est remplie avec les colonnes et les lignes provenant du chapitre. La table créée pour la colonne chapitre est nommée à l'aide des noms de la table parente et de la colonne chapitre sous la forme «*ParentTableNameChapteredColumnName*». Si une table correspondant au nom de la colonne chapitre existe déjà dans le `DataSet` , la table actuelle est remplie avec les données du chapitre. S'il n'y a pas de colonne, dans une table existante, qui corresponde à une colonne trouvée dans le chapitre, une nouvelle colonne est ajoutée.  
   
- Avant que les tables du `DataSet` ne soient remplies avec les données des colonnes chapitres, une relation est créée entre les tables parent et enfant du jeu de lignes hiérarchique par l'ajout d'une colonne d'entiers aux deux tables, la définition de l'incrémentation automatique de la colonne parente et la création d'un `DataRelation` à l'aide des colonnes ajoutées des deux tables. La relation ajoutée est nommée à l'aide des noms de table parente et de colonne chapitre sous la forme « *ParentTableNameChapterColumnName* ».  
+ Avant que les tables du `DataSet` ne soient remplies avec les données des colonnes chapitres, une relation est créée entre les tables parent et enfant du jeu de lignes hiérarchique par l'ajout d'une colonne d'entiers aux deux tables, la définition de l'incrémentation automatique de la colonne parente et la création d'un `DataRelation` à l'aide des colonnes ajoutées des deux tables. La relation ajoutée est nommée à l'aide des noms de table parente et de colonne chapitre sous la forme «*ParentTableNameChapterColumnName*».  
   
  Notez que la colonne associée n'existe que dans le `DataSet`. Les remplissages suivants à partir de la source de données peuvent engendrer l'ajout de nouvelles lignes aux tables plutôt que la fusion des modifications dans les lignes existantes.  
   
- Notez par ailleurs que si vous utilisez la surcharge `DataAdapter.Fill` qui prend un `DataTable`, seule cette table sera remplie. Une colonne entier auto\-incrémentée sera toujours ajoutée à la table mais aucune table enfant ne sera créée ni remplie et aucune relation ne sera créée.  
+ Notez par ailleurs que si vous utilisez la surcharge `DataAdapter.Fill` qui prend un `DataTable`, seule cette table sera remplie. Une colonne entier auto-incrémentée sera toujours ajoutée à la table mais aucune table enfant ne sera créée ni remplie et aucune relation ne sera créée.  
   
  L'exemple suivant utilise le fournisseur MSDataShape pour générer une colonne chapitre de commandes pour chaque client d'une liste de clients. Un `DataSet` est alors rempli avec les données.  
   
@@ -168,16 +173,16 @@ adapter.Fill(customers, "Customers");
 }  
 ```  
   
- Une fois l'opération `Fill` terminée, le `DataSet` contient deux tables : `Customers` et `CustomersOrders`, où `CustomersOrders` représente la colonne chapitre. Une colonne supplémentaire nommée `Orders` est ajoutée à la table `Customers` et une colonne supplémentaire nommée `CustomersOrders` est ajoutée à la table `CustomersOrders`. L'incrémentation automatique de la colonne `Orders` dans la table `Customers` est définie. Un `DataRelation`, `CustomersOrders`, est créé avec les colonnes ajoutées aux tables, `Customers` étant la table parente. Les tableaux suivants présentent certains résultats de l'exemple.  
+ Une fois l'opération `Fill` terminée, le `DataSet` contient deux tables : `Customers` et `CustomersOrders`, où `CustomersOrders` représente la colonne chapitre. Une colonne supplémentaire nommée `Orders` est ajoutée à la table `Customers` et une colonne supplémentaire nommée `CustomersOrders` est ajoutée à la table `CustomersOrders` . L'incrémentation automatique de la colonne `Orders` dans la table `Customers` est définie. Un `DataRelation`, `CustomersOrders`, est créé avec les colonnes ajoutées aux tables, `Customers` étant la table parente. Les tableaux suivants présentent certains résultats de l'exemple.  
   
-### TableName: Customers  
+### <a name="tablename-customers"></a>TableName: Customers  
   
 |CustomerID|CompanyName|Orders|  
 |----------------|-----------------|------------|  
 |ALFKI|Alfreds Futterkiste|0|  
 |ANATR|Ana Trujillo Emparedados y helados|1|  
   
-### TableName: CustomersOrders  
+### <a name="tablename-customersorders"></a>TableName: CustomersOrders  
   
 |CustomerID|OrderID|CustomersOrders|  
 |----------------|-------------|---------------------|  
@@ -186,9 +191,9 @@ adapter.Fill(customers, "Customers");
 |ANATR|10308|1|  
 |ANATR|10625|1|  
   
-## Voir aussi  
- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [Mappages de types de données dans ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)   
- [Modification de données à l'aide d'un DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)   
- [Ensembles de résultats actifs multiples \(MARS\)](../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)   
+## <a name="see-also"></a>Voir aussi  
+ [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [Mappages de types de données dans ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
+ [Modification des données à l’aide d’un DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)  
+ [Jeux de résultats actifs multiples (MARS)](../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

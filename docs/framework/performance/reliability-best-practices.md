@@ -1,12 +1,11 @@
 ---
-title: "Bonnes pratiques concernant la fiabilité"
+title: "Meilleures pratiques pour la fiabilité"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -46,18 +45,17 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2c3f93e90c330881ec5002b820569b27416e049a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5ed637cd5d173e12114f436b739ce3c114bb420f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="reliability-best-practices"></a>Bonnes pratiques concernant la fiabilité
+# <a name="reliability-best-practices"></a>Meilleures pratiques pour la fiabilité
 Même si les règles de fiabilité suivantes concernent plus spécialement SQL Server, elles peuvent également s’appliquer à n’importe quelle application serveur basée sur l’hôte. Il est extrêmement important d’éviter que les serveurs, tels que les serveurs SQL Server, soient victimes de fuite de ressources ou de panne.  Toutefois, il est impossible de le faire en écrivant du code réécrit pour chaque méthode qui modifie l’état d’un objet.  Le but n’est pas ici d’écrire du code managé totalement fiable et capable de récupérer des erreurs partout où elles se produisent avec du code réécrit.  Cette tâche relèverait pratiquement de l’impossible.  Le Common Language Runtime (CLR) ne peut offrir suffisamment de garanties quant à la possibilité d’écrire du code managé parfait.  Notez qu’à la différence d’ASP.NET, SQL Server utilise un seul processus qui ne peut pas être recyclé sans mettre une base de données hors connexion pendant une durée inacceptable.  
   
  Compte tenu de l’insuffisance de garanties offertes et de l’exécution au sein d’un seul processus, la fiabilité est fondée sur la possibilité d’arrêter des threads ou de recycler des domaines d’application chaque fois que nécessaire et de prendre des mesures adéquates assurant l’absence de fuites de ressources de système d’exploitation telles que les handles ou la mémoire.  Même avec cette contrainte de fiabilité plus simple, il existe encore d’autres exigences importantes concernant la fiabilité :  
@@ -96,7 +94,7 @@ Même si les règles de fiabilité suivantes concernent plus spécialement SQL S
   
  La plupart des classes qui ont un finaliseur chargé de nettoyer simplement un handle de système d’exploitation n’ont plus besoin du finaliseur. Au lieu de cela, le finaliseur est sur la classe dérivée <xref:System.Runtime.InteropServices.SafeHandle>.  
   
- Notez que <xref:System.Runtime.InteropServices.SafeHandle> ne remplace pas <xref:System.IDisposable.Dispose%2A?displayProperty=fullName>.  La suppression explicite des ressources du système d’exploitation présente encore des avantages concernant le niveau de performance, mais aussi des risques de contention de ressources.  Vous devez simplement savoir que les blocs `finally` qui suppriment explicitement des ressources peuvent ne pas arriver au terme de leur exécution.  
+ Notez que <xref:System.Runtime.InteropServices.SafeHandle> ne remplace pas <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>.  La suppression explicite des ressources du système d’exploitation présente encore des avantages concernant le niveau de performance, mais aussi des risques de contention de ressources.  Vous devez simplement savoir que les blocs `finally` qui suppriment explicitement des ressources peuvent ne pas arriver au terme de leur exécution.  
   
  <xref:System.Runtime.InteropServices.SafeHandle> vous permet d’implémenter votre propre méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> destinée à libérer le handle, en passant par exemple l’état à une routine de libération du handle du système d’exploitation ou en libérant un ensemble de handles dans une boucle.  Le CLR garantit l’exécution de cette méthode.  Il incombe à l’auteur de l’implémentation de <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> de garantir la libération du handle dans toutes les circonstances. Si ce n’est pas le cas,une fuite du handle se produit, souvent associée à la fuite des ressources natives qui lui sont associées. Ainsi, il est essentiel de structurer des classes dérivées <xref:System.Runtime.InteropServices.SafeHandle> de telle sorte que l’implémentation de <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> ne nécessite pas l’allocation de ressources qui ne seront peut-être pas disponibles au moment de l’appel. Notez que l’appel à des méthodes susceptibles d’échouer dans l’implémentation de <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> est admis pour autant que votre code puisse gérer de tels échecs et achever le contrat pour libérer le handle natif. À des fins de débogage, <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> a une valeur de retour de type <xref:System.Boolean> à laquelle il est possible d’affecter la valeur `false` si une erreur grave se produit et empêche la libération de la ressource. Cela active l’Assistant Débogage managé (MDA) de [releaseHandleFailed](../../../docs/framework/debug-trace-profile/releasehandlefailed-mda.md), s’il est activé, pour vous permettre d’identifier le problème. Il n’affecte le runtime d’aucune autre façon ; la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> n’est plus appelée pour la même ressource et, en conséquence, une fuite du handle se produit.  
   
@@ -289,6 +287,5 @@ public static MyClass SingletonProperty
  Cette action indique au compilateur juste-à-temps de préparer tout le code dans le bloc finally avant d’exécuter le bloc `try`. Cela garantit que le code du bloc finally est généré et s’exécute dans tous les cas. Il n’est pas rare d’avoir un bloc `try` vide dans une région d’exécution limitée. L’utilisation d’une région d’exécution limitée protège des abandons de threads asynchrones et des exceptions de mémoire insuffisante. Consultez <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A> pour obtenir une forme de région d’exécution limitée qui gère en plus des dépassements de la capacité de la pile pour du code très profond.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.ConstrainedExecution>   
+ <xref:System.Runtime.ConstrainedExecution>  
  [Attributs de programmation et de protection des hôtes SQL Server](../../../docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)
-

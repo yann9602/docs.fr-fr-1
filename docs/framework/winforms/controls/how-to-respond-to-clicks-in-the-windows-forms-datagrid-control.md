@@ -1,39 +1,43 @@
 ---
-title: "Comment&#160;: r&#233;pondre aux clics dans le contr&#244;le DataGrid Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "cellules, emplacement dans DataGrid"
-  - "événements Click, surveiller dans les contrôles DataGrid"
-  - "DataGrid (contrôle Windows Forms), événements Click"
-  - "DataGrid (contrôle Windows Forms), exemples"
-  - "DataGrid (contrôle Windows Forms), retourner la valeur de la cellule sélectionnée"
-  - "exemples (Windows Forms), DataGrid (contrôle)"
+title: "Comment : répondre aux clics dans le contrôle DataGrid Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Click event [Windows Forms], monitoring in DataGrid controls
+- DataGrid control [Windows Forms], examples
+- DataGrid control [Windows Forms], returning clicked cell value
+- cells [Windows Forms], location in DataGrid
+- examples [Windows Forms], DataGrid control
+- DataGrid control [Windows Forms], click events
 ms.assetid: a0aa204b-8351-4d82-9933-ee21a5c9e409
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ae228835fb150b1d65f7405a10813f24e707268f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: r&#233;pondre aux clics dans le contr&#244;le DataGrid Windows Forms
+# <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a>Comment : répondre aux clics dans le contrôle DataGrid Windows Forms
 > [!NOTE]
->  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  Pour plus d'informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Le contrôle <xref:System.Windows.Forms.DataGrid> Windows Forms une fois connecté à la base de données, vous pouvez surveiller la cellule sur laquelle l'utilisateur a cliqué.  
+ Une fois les Windows Forms <xref:System.Windows.Forms.DataGrid> est connecté à une base de données, vous pouvez surveiller la cellule sur laquelle l’utilisateur a cliqué.  
   
-### Pour détecter à quel moment l'utilisateur du contrôle DataGrid sélectionne une cellule différente  
+### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a>Pour détecter lorsque l’utilisateur du contrôle DataGrid sélectionne une cellule différente  
   
--   Dans le gestionnaire d'événements <xref:System.Windows.Forms.DataGrid.CurrentCellChanged>, écrivez du code pour fournir la réponse appropriée.  
+-   Dans la <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> Gestionnaire d’événements, écrire du code pour réagir de façon appropriée.  
   
     ```vb  
     Private Sub myDataGrid_CurrentCellChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles myDataGrid.CurrentCellChanged  
@@ -41,7 +45,6 @@ caps.handback.revision: 11
           & ", Row is " & myDataGrid.CurrentCell.RowNumber _  
           & ", Value is " & myDataGrid.Item(myDataGrid.CurrentCell))  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -54,18 +57,18 @@ caps.handback.revision: 11
     }  
     ```  
   
-     \(Visual C\#\) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
+     (Visual c#) Placez le code suivant dans le constructeur du formulaire pour inscrire le Gestionnaire d’événements.  
   
     ```csharp  
     this.myDataGrid.CurrentCellChanged += new  
        System.EventHandler(this.myDataGrid_CurrentCellChanged);  
     ```  
   
-### Pour identifier la partie du contrôle DataGrid sur laquelle l'utilisateur a cliqué  
+### <a name="to-determine-which-part-of-the-datagrid-the-user-clicked"></a>Pour déterminer quelle partie de la grille de données que l’utilisateur a cliqué  
   
--   Appelez la méthode <xref:System.Windows.Forms.DataGrid.HitTest%2A> dans un gestionnaire d'événements approprié, tel que celui de l'événement <xref:System.Windows.Forms.Control.MouseDown> ou <xref:System.Windows.Forms.Control.Click>.  
+-   Appelez le <xref:System.Windows.Forms.DataGrid.HitTest%2A> méthode dans un gestionnaire d’événements approprié, tel que celui de la <xref:System.Windows.Forms.Control.MouseDown> ou <xref:System.Windows.Forms.Control.Click> événement.  
   
-     La méthode <xref:System.Windows.Forms.DataGrid.HitTest%2A> retourne un objet <xref:System.Windows.Forms.DataGrid.HitTestInfo> qui contient la ligne et la colonne de la zone sélectionnée.  
+     Le <xref:System.Windows.Forms.DataGrid.HitTest%2A> méthode retourne un <xref:System.Windows.Forms.DataGrid.HitTestInfo> objet qui contient la ligne et colonne de la zone sélectionnée.  
   
     ```vb  
     Private Sub myDataGrid_MouseDown(ByVal sender As Object, _  
@@ -96,7 +99,6 @@ caps.handback.revision: 11
   
        Console.WriteLine(message)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -140,7 +142,7 @@ caps.handback.revision: 11
     }  
     ```  
   
-     \(Visual C\#\) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
+     (Visual c#) Placez le code suivant dans le constructeur du formulaire pour inscrire le Gestionnaire d’événements.  
   
     ```csharp  
     this.myDataGrid.MouseDown += new  
@@ -148,6 +150,6 @@ caps.handback.revision: 11
        (this.myDataGrid_MouseDown);  
     ```  
   
-## Voir aussi  
- [DataGrid, contrôle](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)   
- [Comment : modifier des données affichées dans le contrôle DataGrid Windows Forms au moment de l'exécution](../../../../docs/framework/winforms/controls/change-displayed-data-at-run-time-wf-datagrid-control.md)
+## <a name="see-also"></a>Voir aussi  
+ [DataGrid, contrôle](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
+ [Guide pratique pour modifier des données affichées dans le contrôle DataGrid Windows Forms au moment de l’exécution](../../../../docs/framework/winforms/controls/change-displayed-data-at-run-time-wf-datagrid-control.md)

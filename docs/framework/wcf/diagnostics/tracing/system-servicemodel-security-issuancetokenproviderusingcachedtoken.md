@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ee51ed4e-821c-4010-8d64-eabde522169f
-caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: fa1fef8e46ec98ddc6eae1928621e2b84eb6ec1d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken
+# <a name="systemservicemodelsecurityissuancetokenproviderusingcachedtoken"></a>System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken
 System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken  
   
-## Description  
+## <a name="description"></a>Description  
  IssuanceTokenProvider a utilisé le jeton de service mis en cache.  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

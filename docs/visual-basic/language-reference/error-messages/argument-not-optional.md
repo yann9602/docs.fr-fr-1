@@ -1,31 +1,29 @@
 ---
-title: "Argument not optional (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID449"
-dev_langs: 
-  - "VB"
+title: Argument non facultatif (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID449
 ms.assetid: 76e7bcf3-24ed-4cd5-945b-b98f1c76944b
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 91cc5bc90e226a36f4afe6ccc250dfe28ead5b5b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Argument not optional (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Le nombre et les types d'arguments doivent correspondre à ceux qui sont attendus.  Soit le nombre d'arguments est incorrect, soit un argument omis n'est pas facultatif.  Un argument ne peut être omis de l'appel à une procédure définie par l'utilisateur que s'il a été déclaré `Optional` dans la définition de procédure.  
+# <a name="argument-not-optional-visual-basic"></a>Argument non facultatif (Visual Basic)
+Le nombre et les types d’arguments doivent correspondre à ceux attendus. Il existe un nombre incorrect d’arguments, soit un argument omis n’est pas facultatif. Un argument ne peut être omis d’un appel à une procédure définie par l’utilisateur s’il a été déclaré `Optional` dans la définition de procédure.  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
 1.  Fournissez tous les arguments nécessaires.  
   
-2.  Assurez\-vous que les arguments omis sont facultatifs.  S'ils ne le sont pas, fournissez l'argument dans l'appel ou déclarez le paramètre `Optional` dans la définition.  
+2.  Assurez-vous que les arguments omis sont facultatifs. Si elles ne sont pas, fournissez l’argument dans l’appel ou déclarez le paramètre `Optional` dans la définition.  
   
-## Voir aussi  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Voir aussi  
+ [Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md)

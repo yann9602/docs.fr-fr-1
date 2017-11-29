@@ -1,28 +1,24 @@
 ---
-title: Projection de code XML en une autre forme (Visual Basic) | Documents Microsoft
+title: "Projection de code XML dans une forme différente (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0b05fbff86bcac06a3ce375c162c70dc308f4913
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 2cf5f963b8675f22c9cab0297d8f48eb68f5aefb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="projecting-xml-in-a-different-shape-visual-basic"></a>Projection de code XML en une autre forme (Visual Basic)
+# <a name="projecting-xml-in-a-different-shape-visual-basic"></a>Projection de code XML dans une forme différente (Visual Basic)
 Cette rubrique illustre un exemple de projection de code XML dont la forme est différente du code XML source.  
   
  De nombreuses transformations XML courantes sont composées de requêtes chaînées, comme dans cet exemple. Il est courant de commencer avec une certaine forme de code XML, de projeter des résultats intermédiaires en tant que collections de types anonymes ou nommés, puis de projeter les résultats dans du code XML sous une forme complètement différente du code XML source.  
@@ -30,9 +26,9 @@ Cette rubrique illustre un exemple de projection de code XML dont la forme est d
 ## <a name="example"></a>Exemple  
  Cet exemple traite un document WordprocessingML et récupère les nœuds de paragraphes à partir d'un document WordprocessingML. Il identifie également le style et le texte de chaque paragraphe. Pour finir, l'exemple projette le code XML sous une forme différente. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle instruction qui effectue la projection figure dans des commentaires.  
   
- Pour obtenir des instructions pour la création du document source pour cet exemple, consultez la page [création de la Source de Document Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pour obtenir des instructions pour la création du document source pour cet exemple, consultez [création de la Source de Document Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans le <xref:System.IO.Packaging?displayProperty=fullName>espace de noms.</xref:System.IO.Packaging?displayProperty=fullName>  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -241,9 +237,9 @@ End Module
 ```  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- Dans l’exemple suivant, vous allez interroger pour rechercher tout le texte dans un document Word :  
+ Dans l’exemple suivant, vous allez effectuer une requête pour rechercher toutes les occurrences d’un texte dans un document Word :  
   
--   [Rechercher du texte dans des Documents Word (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+-   [Rechercher du texte dans les Documents Word (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
   
 ## <a name="see-also"></a>Voir aussi  
  [Didacticiel : Manipulation de contenu dans un Document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

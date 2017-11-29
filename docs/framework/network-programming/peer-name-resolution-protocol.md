@@ -7,24 +7,18 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0deccc8be5616c76f4c447c50f22544fe0fabe47
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 805f6f6ed7990b42065dfe7985a5d81844961897
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# protocole PNRP
+# <a name="peer-name-resolution-protocol"></a>protocole PNRP
 Dans les environnements pair à pair, les pairs utilisent des systèmes de résolution de noms spécifiques pour résoudre les emplacements réseau les uns des autres (adresses, protocoles et ports) à partir de noms et d’autres types d’identificateurs. Dans le passé, la résolution des noms de pairs était compliquée en raison de la nature transitoire de la connectivité, et d’autres défauts du système DNS.  
   
  La plateforme de réseau pair à pair de Microsoft® Windows® a résolu ce problème grâce au protocole PNRP, à une inscription de noms sécurisée, évolutive et dynamique, ainsi qu’au protocole de résolution de noms développé à l’origine pour Windows XP, puis amélioré pour Windows Vista™. Le protocole PNRP fonctionne très différemment des systèmes traditionnels de résolution de noms, et offre de nouvelles possibilités aux développeurs d’applications.  
@@ -45,7 +39,7 @@ Dans les environnements pair à pair, les pairs utilisent des systèmes de réso
   
 -  
   
-## Espace de noms System.Net.PeerToPeer  
+## <a name="the-systemnetpeertopeer-namespace"></a>Espace de noms System.Net.PeerToPeer  
   
 -   La fonctionnalité PNRP est définie par l’espace de noms <xref:System.Net.PeerToPeer> dans le .NET Framework version 3.5. Elle fournit un ensemble de types qui peuvent être utilisés pour inscrire et résoudre des noms de pairs avec un service PNRP disponible.  
   
@@ -73,9 +67,8 @@ Dans les environnements pair à pair, les pairs utilisent des systèmes de réso
   
 -  
   
-## Voir aussi  
- <xref:System.ServiceModel.PeerResolvers>   
- <xref:System.Net.PeerToPeer>   
- [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.PeerResolvers>  
+ <xref:System.Net.PeerToPeer>  
+ [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Exemple de technologie PeerToPeer](http://go.microsoft.com/fwlink/?LinkID=179571)
-

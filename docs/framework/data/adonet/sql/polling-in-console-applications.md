@@ -1,32 +1,36 @@
 ---
-title: "Interrogation dans des applications console | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Interrogation dans les applications console
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 781fcd73dc56841eb7eadbf0bd6a0093643e608a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Interrogation dans des applications console
-Les opérations asynchrones dans ADO.NET vous permettent de lancer des opérations de base de données de longue durée sur un thread tout en exécutant d'autres tâches dans un autre thread.  Toutefois, dans la plupart des scénarios, vous risquez d'atteindre un point où votre application ne doit pas continuer jusqu'à ce que l'opération de base de données soit terminée.  Dans de tels cas, il est utile d'interroger l'opération asynchrone afin de déterminer si elle a été exécutée ou non.  
+# <a name="polling-in-console-applications"></a>Interrogation dans les applications console
+Les opérations asynchrones dans ADO.NET vous permettent de lancer des opérations de base de données de longue durée sur un thread tout en exécutant d’autres tâches dans un autre thread. Toutefois, dans la plupart des scénarios, vous risquez d'atteindre un point où votre application ne doit pas continuer jusqu'à ce que l'opération de base de données soit terminée. Dans de tels cas, il est utile d'interroger l'opération asynchrone afin de déterminer si elle a été exécutée ou non.  
   
  Vous pouvez utiliser la propriété <xref:System.IAsyncResult.IsCompleted%2A> pour vérifier si l'opération a été exécutée ou non.  
   
-## Exemple  
- L'application console suivante met à jour des données dans l'exemple de base de données **AdventureWorks**, en opérant de façon asynchrone.  Pour émuler un processus de longue durée, cet exemple insère une instruction WAITFOR dans le texte de commande.  Normalement, vous ne devez pas tenter d'exécuter vos commandes plus lentement mais procéder de la sorte dans ce cas facilite la démonstration d'un comportement asynchrone.  
+## <a name="example"></a>Exemple  
+ L’application console suivante met à jour les données dans le **AdventureWorks** base de données exemple opérant de façon asynchrone. Pour émuler un processus de longue durée, cet exemple insère une instruction WAITFOR dans le texte de commande. Normalement, vous ne devez pas tenter d'exécuter vos commandes plus lentement mais procéder de la sorte dans ce cas facilite la démonstration d'un comportement asynchrone.  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 Imports System  
 Imports System.Data.SqlClient  
   
@@ -102,9 +106,7 @@ Module Module1
 End Module   
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -198,6 +200,6 @@ class Class1
 }  
 ```  
   
-## Voir aussi  
- [Opérations asynchrones](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Opérations asynchrones](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

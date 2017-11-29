@@ -1,63 +1,61 @@
 ---
-title: "Le fait de sceller | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "limiter l’extensibilité"
-  - "classes (.NET Framework), le fait de sceller"
-  - "empêcher la personnalisation"
-  - "classes sealed"
+title: Sceller
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- limiting extensibility
+- classes [.NET Framework], sealing
+- preventing customization
+- sealed classes
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
-caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 8caa253a3f17c58f542317de579c4f7832c4efac
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Le fait de sceller
-L’une des fonctionnalités des infrastructures orientée objet est que les développeurs peuvent étendre et personnaliser les de manière inattendue par les concepteurs de framework. C’est la puissance et le risque de conception extensible. Lorsque vous concevez votre infrastructure, il est donc très important de concevoir soigneusement pour l’extensibilité lorsqu’il est nécessaire et pour limiter l’extensibilité lorsqu’il est dangereux.  
+# <a name="sealing"></a>Sceller
+Une des fonctionnalités des infrastructures d’orientée objet est que les développeurs peuvent étendre et personnalisez-les de manières inattendues par les concepteurs de framework. Il s’agit la puissance et le risque de conception extensible. Lorsque vous concevez votre infrastructure, il est donc très important de concevoir soigneusement pour l’extensibilité lorsqu’il est nécessaire et pour limiter l’extensibilité lorsqu’il est dangereux.  
   
- Le scellement d’un mécanisme puissant qui empêche d’extensibilité. Vous pouvez sceller la classe ou des membres. Sceller une classe empêche les utilisateurs d’hériter de la classe. Le scellement d’un membre empêche les utilisateurs de remplacer un membre particulier.  
+ Scellement d’un mécanisme puissant qui empêche d’extensibilité. Vous pouvez sceller à la classe ou des membres individuels. Le fait de sceller une classe d’empêche les utilisateurs d’hériter de la classe. Le fait de sceller un membre d’empêche les utilisateurs de substituer un membre particulier.  
   
- **X ne pas** sceller des classes sans avoir une bonne raison de le faire.  
+ **X ne sont pas** sceller des classes sans avoir une bonne raison de le faire.  
   
- Sceller une classe, car vous ne pouvez pas considérer un scénario d’extensibilité n’est pas une bonne raison. Les utilisateurs de Framework comme héritent des classes pour diverses raisons identifiable, telles que l’ajout de membres de commodité. Consultez [Classes unsealed](../../../docs/standard/design-guidelines/unsealed-classes.md) pour obtenir des exemples de raisons identifiable, les utilisateurs veulent d’hériter d’un type.  
+ Le fait de sceller une classe, car vous ne savez pas un scénario d’extensibilité n’est pas une bonne raison. Les utilisateurs de Framework tels que d’hériter des classes pour différentes raisons identifiable, telles que l’ajout de membres de commodité. Consultez [Classes Unsealed](../../../docs/standard/design-guidelines/unsealed-classes.md) pour obtenir des exemples de raisons identifiable les utilisateurs souhaitent hériter d’un type.  
   
- Bonnes raisons pour sceller une classe sont les suivantes :  
+ Raisons pour sceller une classe sont les suivantes :  
   
--   La classe est une classe statique. Consultez [Conception de classes statiques](../../../docs/standard/design-guidelines/static-class.md).  
+-   La classe est une classe statique. Consultez [conception d’une classe statique](../../../docs/standard/design-guidelines/static-class.md).  
   
--   La classe stocke des secrets sensibles à la sécurité dans les membres protégés hérités.  
+-   La classe stocke des secrets de sécurité sensibles dans des membres protégés hérités.  
   
 -   La classe hérite de nombreux membres virtuels et le coût de leur scellement individuellement serait dépassent les avantages de la classe non scellés.  
   
--   La classe est un attribut qui nécessite une recherche très rapides à l’exécution. Attributs sealed ont des niveaux de performances légèrement supérieures que celles non scellés. Consultez [Attributs](../../../docs/standard/design-guidelines/attributs.md).  
+-   La classe est un attribut qui nécessite la recherche d’exécution très rapide. Les attributs sealed ont des niveaux de performance légèrement plus élevées que celles non scellés. consultez [attributs](../../../docs/standard/design-guidelines/attributes.md).  
   
- **X ne pas** déclarer les membres virtuels ou protégés sur les types sealed.  
+ **X ne sont pas** déclarer les membres virtuels ou protégés sur les types sealed.  
   
  Par définition, les types sealed ne peut pas être héritées. Cela signifie que les membres protégés sur les types sealed ne peut pas être appelées, et les méthodes virtuelles sur les types sealed ne peut pas être substituées.  
   
- **✓ envisagez** sceller les membres que vous substituez.  
+ **✓ Envisagez** sceller les membres que vous substituez.  
   
- Des problèmes qui peuvent résulter de présentation des membres virtuels \(section [Membres virtuels](../../../docs/standard/design-guidelines/virtual-members.md)\) s’appliquent aux remplacements, bien qu’à un degré légèrement moindre. Le fait de sceller un remplacement vous protège ces problèmes à partir de ce point dans la hiérarchie d’héritage.  
+ Des problèmes qui peuvent résulter de présentation des membres virtuels (présentés dans [membres virtuels](../../../docs/standard/design-guidelines/virtual-members.md)) s’appliquent aux substitutions, bien qu’à un degré moindre. Le fait de sceller un remplacement vous protège ces problèmes, en commençant à partir de ce point dans la hiérarchie d’héritage.  
   
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [Framework Design Guidelines : Conventions, langages et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison\-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
-## Voir aussi  
- [Instructions de conception d’infrastructure](../../../docs/standard/design-guidelines/index.md)   
- [Conception pour l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
+ [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  [Classes unsealed](../../../docs/standard/design-guidelines/unsealed-classes.md)
