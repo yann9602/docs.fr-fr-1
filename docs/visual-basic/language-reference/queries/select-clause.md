@@ -1,68 +1,66 @@
 ---
-title: "Select Clause (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.QuerySelect"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Select statement"
-  - "Select clause"
-  - "queries [Visual Basic], Select"
+title: Select, clause (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.QuerySelect
+helpviewer_keywords:
+- Select statement [Visual Basic]
+- Select clause [Visual Basic]
+- queries [Visual Basic], Select
 ms.assetid: 27a3f61c-5960-4692-9b91-4d0c4b6178fe
-caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a9d8cabcbd8554ca2aee639eaac8a52f0485a266
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Select Clause (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Définit le résultat d'une requête.  
+# <a name="select-clause-visual-basic"></a><span data-ttu-id="b6182-102">Select, clause (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b6182-102">Select Clause (Visual Basic)</span></span>
+<span data-ttu-id="b6182-103">Définit le résultat d’une requête.</span><span class="sxs-lookup"><span data-stu-id="b6182-103">Defines the result of a query.</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="b6182-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6182-104">Syntax</span></span>  
   
 ```  
 Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]  
 ```  
   
-## Composants  
+## <a name="parts"></a><span data-ttu-id="b6182-105">Composants</span><span class="sxs-lookup"><span data-stu-id="b6182-105">Parts</span></span>  
  `var1`  
- Facultatif.  Alias pouvant être utilisé pour référencer les résultats de l'expression de colonne.  
+ <span data-ttu-id="b6182-106">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="b6182-106">Optional.</span></span> <span data-ttu-id="b6182-107">Un alias qui peut être utilisé pour référencer les résultats de l’expression de colonne.</span><span class="sxs-lookup"><span data-stu-id="b6182-107">An alias that can be used to reference the results of the column expression.</span></span>  
   
  `fieldName1`  
- Obligatoire.  Nom du champ à retourner dans le résultat de la requête.  
+ <span data-ttu-id="b6182-108">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="b6182-108">Required.</span></span> <span data-ttu-id="b6182-109">Le nom du champ à retourner dans le résultat de la requête.</span><span class="sxs-lookup"><span data-stu-id="b6182-109">The name of the field to return in the query result.</span></span>  
   
-## Notes  
- Vous pouvez utiliser la clause `Select` pour définir les résultats à retourner d'une requête.  Cela vous permet de définir les membres d'un nouveau type anonyme créé par une requête ou de cibler les membres d'un type nommé retourné par une requête.  La clause `Select` n'est pas obligatoire pour une requête.  Si aucune clause `Select` n'est spécifiée, la requête retournera un type en fonction de tous les membres des variables de portée identifiés pour la portée actuelle.  Pour plus d'informations, consultez [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  Lorsqu'une requête crée un type nommé, elle retourne un résultat de type <xref:System.Collections.Generic.IEnumerable%601> où `T` est le type créé.  
+## <a name="remarks"></a><span data-ttu-id="b6182-110">Remarques</span><span class="sxs-lookup"><span data-stu-id="b6182-110">Remarks</span></span>  
+ <span data-ttu-id="b6182-111">Vous pouvez utiliser la `Select` clause pour définir les résultats à retourner à partir d’une requête.</span><span class="sxs-lookup"><span data-stu-id="b6182-111">You can use the `Select` clause to define the results to return from a query.</span></span> <span data-ttu-id="b6182-112">Cela vous permet de définir les membres d’un nouveau type anonyme créé par une requête ou de cibler les membres d’un type nommé qui est retourné par une requête.</span><span class="sxs-lookup"><span data-stu-id="b6182-112">This enables you to either define the members of a new anonymous type that is created by a query, or to target the members of a named type that is returned by a query.</span></span> <span data-ttu-id="b6182-113">Le `Select` clause n’est pas obligatoire pour une requête.</span><span class="sxs-lookup"><span data-stu-id="b6182-113">The `Select` clause is not required for a query.</span></span> <span data-ttu-id="b6182-114">Si aucun `Select` clause est spécifiée, la requête retournera un type en fonction de tous les membres des variables de portée identifiées pour l’étendue actuelle.</span><span class="sxs-lookup"><span data-stu-id="b6182-114">If no `Select` clause is specified, the query will return a type based on all members of the range variables identified for the current scope.</span></span> <span data-ttu-id="b6182-115">Pour plus d’informations, consultez [Types anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).</span><span class="sxs-lookup"><span data-stu-id="b6182-115">For more information, see [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).</span></span> <span data-ttu-id="b6182-116">Lorsqu’une requête crée un type nommé, elle retournera un résultat de type <xref:System.Collections.Generic.IEnumerable%601> où `T` est le type créé.</span><span class="sxs-lookup"><span data-stu-id="b6182-116">When a query creates a named type, it will return a result of type <xref:System.Collections.Generic.IEnumerable%601> where `T` is the created type.</span></span>  
   
- La clause `Select` peut référencer toutes les variables de la portée actuelle.  Cela inclut des variables de portée identifiées dans la clause `From` \(ou dans les clauses `From`\).  Cela inclut également toutes les nouvelles variables créées avec un alias par les clauses `Aggregate`, `Let`, `Group By`ou `Group Join` ou les variables d'une clause `Select` précédente dans l'expression de requête.  La clause `Select` peut également inclure des valeurs statiques.  Par exemple, l'exemple de code suivant affiche une expression de requête dans laquelle la clause `Select` définit le résultat de la requête comme un nouveau type anonyme possédant quatre membres : `ProductName`, `Price`, `Discount` et `DiscountedPrice`.  Les valeurs membres `ProductName` et `Price` sont issues de la variable de portée du produit définie dans la clause `From`.  La valeur membre `DiscountedPrice` est calculée dans la clause `Let`.  Le membre `Discount` est une valeur statique.  
+ <span data-ttu-id="b6182-117">Le `Select` clause peut faire référence à des variables dans la portée actuelle.</span><span class="sxs-lookup"><span data-stu-id="b6182-117">The `Select` clause can reference any variables in the current scope.</span></span> <span data-ttu-id="b6182-118">Cela inclut des variables de portée identifiées dans le `From` clause (ou `From` clauses).</span><span class="sxs-lookup"><span data-stu-id="b6182-118">This includes range variables identified in the `From` clause (or `From` clauses).</span></span> <span data-ttu-id="b6182-119">Il inclut également toutes les nouvelles variables créées avec un alias par le `Aggregate`, `Let`, `Group By`, ou `Group Join` clauses ou les variables d’une précédente `Select` clause dans l’expression de requête.</span><span class="sxs-lookup"><span data-stu-id="b6182-119">It also includes any new variables created with an alias by the `Aggregate`, `Let`, `Group By`, or `Group Join` clauses, or variables from a previous `Select` clause in the query expression.</span></span> <span data-ttu-id="b6182-120">Le `Select` clause peut également inclure des valeurs statiques.</span><span class="sxs-lookup"><span data-stu-id="b6182-120">The `Select` clause can also include static values.</span></span> <span data-ttu-id="b6182-121">Par exemple, l’exemple de code suivant montre une expression de requête dans lequel le `Select` clause définit le résultat de requête comme un nouveau type anonyme avec quatre membres : `ProductName`, `Price`, `Discount`, et `DiscountedPrice`.</span><span class="sxs-lookup"><span data-stu-id="b6182-121">For example, the following code example shows a query expression in which the `Select` clause defines the query result as a new anonymous type with four members: `ProductName`, `Price`, `Discount`, and `DiscountedPrice`.</span></span> <span data-ttu-id="b6182-122">Le `ProductName` et `Price` les valeurs de membre sont issues de la variable de portée du produit qui est définie dans le `From` clause.</span><span class="sxs-lookup"><span data-stu-id="b6182-122">The `ProductName` and `Price` member values are taken from the product range variable that is defined in the `From` clause.</span></span> <span data-ttu-id="b6182-123">Le `DiscountedPrice` valeur membre est calculée dans le `Let` clause.</span><span class="sxs-lookup"><span data-stu-id="b6182-123">The `DiscountedPrice` member value is calculated in the `Let` clause.</span></span> <span data-ttu-id="b6182-124">Le `Discount` membre est une valeur statique.</span><span class="sxs-lookup"><span data-stu-id="b6182-124">The `Discount` member is a static value.</span></span>  
   
  [!code-vb[VbSimpleQuerySamples#27](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/select-clause_1.vb)]  
   
- La clause `Select` introduit un nouveau jeu de variables de portée pour les clauses de requête suivantes, et les variables de portée précédentes qui sont hors de portée.  La dernière clause `Select` d'une expression de requête détermine la valeur de retour de la requête.  Par exemple, la requête suivante retourne la Société et l'ID de commande pour chaque ordre de client dont le total dépasse 500.  La première clause `Select` identifie les variables de portée pour la clause `Where` et la deuxième clause `Select`.  La deuxième clause `Select` identifie les valeurs retournées par la requête comme un nouveau type anonyme.  
+ <span data-ttu-id="b6182-125">Le `Select` clause introduit un nouveau jeu de variables de portée pour les clauses de requête suivantes, et les variables de portée précédentes ne sont plus dans la portée.</span><span class="sxs-lookup"><span data-stu-id="b6182-125">The `Select` clause introduces a new set of range variables for subsequent query clauses, and previous range variables are no longer in scope.</span></span> <span data-ttu-id="b6182-126">La dernière `Select` clause dans une expression de requête détermine la valeur de retour de la requête.</span><span class="sxs-lookup"><span data-stu-id="b6182-126">The last `Select` clause in a query expression determines the return value of the query.</span></span> <span data-ttu-id="b6182-127">Par exemple, la requête suivante retourne la société ID de nom et l’ordre pour chaque commande client dont le total est supérieure à 500.</span><span class="sxs-lookup"><span data-stu-id="b6182-127">For example, the following query returns the company name and order ID for every customer order for which the total exceeds 500.</span></span> <span data-ttu-id="b6182-128">La première `Select` clause identifie les variables de plage pour le `Where` et la deuxième clause `Select` clause.</span><span class="sxs-lookup"><span data-stu-id="b6182-128">The first `Select` clause identifies the range variables for the `Where` clause and the second `Select` clause.</span></span> <span data-ttu-id="b6182-129">La seconde `Select` clause identifie les valeurs retournées par la requête sous la forme d’un nouveau type anonyme.</span><span class="sxs-lookup"><span data-stu-id="b6182-129">The second `Select` clause identifies the values returned by the query as a new anonymous type.</span></span>  
   
  [!code-vb[VbSimpleQuerySamples#28](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/select-clause_2.vb)]  
   
- Si la clause `Select` identifie un élément unique à retourner, l'expression de requête retourne une collection du type de cet élément unique.  Si la clause `Select` identifie des éléments multiples à retourner, l'expression de requête retourne une collection d'un nouveau type anonyme, en fonction des éléments sélectionnés.  Par exemple, les deux requêtes suivantes retournent des collections de deux types différents basés sur la clause `Select`.  La première requête retourne une collection de noms de société sous forme de chaînes.  La deuxième requête retourne une collection d'objets `Customer` remplie avec les noms de société et les adresses.  
+ <span data-ttu-id="b6182-130">Si le `Select` clause identifie un élément unique à retourner, l’expression de requête retourne une collection du type de cet élément unique.</span><span class="sxs-lookup"><span data-stu-id="b6182-130">If the `Select` clause identifies a single item to return, the query expression returns a collection of the type of that single item.</span></span> <span data-ttu-id="b6182-131">Si le `Select` clause identifie plusieurs éléments à retourner, l’expression de requête retourne une collection d’un nouveau type anonyme, en fonction des éléments sélectionnés.</span><span class="sxs-lookup"><span data-stu-id="b6182-131">If the `Select` clause identifies multiple items to return, the query expression returns a collection of a new anonymous type, based on the selected items.</span></span> <span data-ttu-id="b6182-132">Par exemple, les deux requêtes suivantes retournent des collections de deux types différents selon le `Select` clause.</span><span class="sxs-lookup"><span data-stu-id="b6182-132">For example, the following two queries return collections of two different types based on the `Select` clause.</span></span> <span data-ttu-id="b6182-133">La première requête retourne une collection de noms de société sous forme de chaînes.</span><span class="sxs-lookup"><span data-stu-id="b6182-133">The first query returns a collection of company names as strings.</span></span> <span data-ttu-id="b6182-134">La deuxième requête retourne une collection de `Customer` objets remplies avec les noms de société et les informations d’adresse.</span><span class="sxs-lookup"><span data-stu-id="b6182-134">The second query returns a collection of `Customer` objects populated with the company names and address information.</span></span>  
   
  [!code-vb[VbSimpleQuerySamples#29](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/select-clause_3.vb)]  
   
-## Exemple  
- L'expression de requête suivante utilise une clause `From` pour déclarer une variable de portée `cust` pour la collection `customers`.  La clause `Select` sélectionne le nom de client et la valeur d'ID et remplit les colonnes `CompanyName` et `CustomerID` de la nouvelle variable de portée.  L'instruction `For Each` effectue une boucle sur chaque objet retourné et affiche les colonnes `CompanyName` et `CustomerID` pour chaque enregistrement.  
+## <a name="example"></a><span data-ttu-id="b6182-135">Exemple</span><span class="sxs-lookup"><span data-stu-id="b6182-135">Example</span></span>  
+ <span data-ttu-id="b6182-136">La requête suivante expression utilise une `From` clause pour déclarer une variable de portée `cust` pour la `customers` collection.</span><span class="sxs-lookup"><span data-stu-id="b6182-136">The following query expression uses a `From` clause to declare a range variable `cust` for the `customers` collection.</span></span> <span data-ttu-id="b6182-137">Le `Select` clause sélectionne le nom du client et la valeur d’ID et remplit la `CompanyName` et `CustomerID` les colonnes de la nouvelle variable de plage.</span><span class="sxs-lookup"><span data-stu-id="b6182-137">The `Select` clause selects the customer name and ID value and populates the `CompanyName` and `CustomerID` columns of the new range variable.</span></span> <span data-ttu-id="b6182-138">Le `For Each` instruction effectue une itération sur chaque objet retourné et affiche le `CompanyName` et `CustomerID` colonnes pour chaque enregistrement.</span><span class="sxs-lookup"><span data-stu-id="b6182-138">The `For Each` statement loops over each returned object and displays the `CompanyName` and `CustomerID` columns for each record.</span></span>  
   
  [!code-vb[VbSimpleQuerySamples#30](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/select-clause_4.vb)]  
   
-## Voir aussi  
- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [Queries](../../../visual-basic/language-reference/queries/queries.md)   
- [From Clause](../../../visual-basic/language-reference/queries/from-clause.md)   
- [Where Clause](../../../visual-basic/language-reference/queries/where-clause.md)   
- [Order By Clause](../../../visual-basic/language-reference/queries/order-by-clause.md)   
- [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+## <a name="see-also"></a><span data-ttu-id="b6182-139">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b6182-139">See Also</span></span>  
+ [<span data-ttu-id="b6182-140">Introduction à LINQ en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="b6182-140">Introduction to LINQ in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [<span data-ttu-id="b6182-141">Requêtes</span><span class="sxs-lookup"><span data-stu-id="b6182-141">Queries</span></span>](../../../visual-basic/language-reference/queries/queries.md)  
+ [<span data-ttu-id="b6182-142">From (clause)</span><span class="sxs-lookup"><span data-stu-id="b6182-142">From Clause</span></span>](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [<span data-ttu-id="b6182-143">Where (clause)</span><span class="sxs-lookup"><span data-stu-id="b6182-143">Where Clause</span></span>](../../../visual-basic/language-reference/queries/where-clause.md)  
+ [<span data-ttu-id="b6182-144">Order By (clause)</span><span class="sxs-lookup"><span data-stu-id="b6182-144">Order By Clause</span></span>](../../../visual-basic/language-reference/queries/order-by-clause.md)  
+ [<span data-ttu-id="b6182-145">Types anonymes</span><span class="sxs-lookup"><span data-stu-id="b6182-145">Anonymous Types</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)

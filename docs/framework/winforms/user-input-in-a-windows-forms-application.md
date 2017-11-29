@@ -1,45 +1,45 @@
 ---
-title: "Entr&#233;e d&#39;utilisateur dans une application Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Windows Forms, entrée d'utilisateur"
+title: "Entrée d’utilisateur dans une application Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Windows Forms, user input
 ms.assetid: 9d61fa96-70f7-4754-885a-49a4a6316bdb
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fb6f832b77404b57ab22e4ac472e7707f0e10dd5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Entr&#233;e d&#39;utilisateur dans une application Windows Forms
-Dans Windows Forms, l'entrée d'utilisateur est envoyée aux applications sous la forme de messages Windows.  Une série de méthodes substituables traite ces messages au niveau de l'application, du formulaire et du contrôle.  Lorsque ces méthodes reçoivent les messages de clavier et de souris, ils déclenchent des événements qui peuvent être gérés pour obtenir des informations à propos des entrées de souris ou de clavier.  Dans beaucoup de cas, les applications Windows Forms seront en mesure de traiter simplement toutes les entrées d'utilisateur en gérant ces événements.  Dans d'autres cas, une application peut devoir se substituer à l'une des méthodes qui traitent les messages afin d'intercepter un message particulier avant qu'il ne soit reçu par l'application, le formulaire ou le contrôle.  
+# <a name="user-input-in-a-windows-forms-application"></a><span data-ttu-id="11a78-102">Entrée d’utilisateur dans une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="11a78-102">User Input in a Windows Forms Application</span></span>
+<span data-ttu-id="11a78-103">Dans les Windows Forms, l’entrée d’utilisateur est envoyée aux applications sous la forme de messages Windows.</span><span class="sxs-lookup"><span data-stu-id="11a78-103">In Windows Forms, user input is sent to applications in the form of Windows messages.</span></span> <span data-ttu-id="11a78-104">Une série de méthodes substituables traite ces messages au niveau de l’application, du formulaire et niveau de contrôle.</span><span class="sxs-lookup"><span data-stu-id="11a78-104">A series of overridable methods process these messages at the application, form, and control level.</span></span> <span data-ttu-id="11a78-105">Lorsque ces méthodes reçoivent les messages de clavier et souris, ils déclenchent des événements qui peuvent être gérés pour obtenir des informations sur la souris ou du clavier d’entrée.</span><span class="sxs-lookup"><span data-stu-id="11a78-105">When these methods receive mouse and keyboard messages, they raise events that can be handled to get information about the mouse or keyboard input.</span></span> <span data-ttu-id="11a78-106">Dans de nombreux cas, les applications Windows Forms seront en mesure de traiter toutes les entrées utilisateur simplement en gérant ces événements.</span><span class="sxs-lookup"><span data-stu-id="11a78-106">In many cases, Windows Forms applications will be able to process all user input simply by handling these events.</span></span> <span data-ttu-id="11a78-107">Dans d’autres cas, une application devrez peut-être remplacer une des méthodes qui traitent les messages afin d’intercepter un message particulier avant qu’il est reçu par l’application, un formulaire ou un contrôle.</span><span class="sxs-lookup"><span data-stu-id="11a78-107">In other cases, an application may need to override one of the methods that process messages in order to intercept a particular message before it is received by the application, form, or control.</span></span>  
   
-## Événements de souris et de clavier  
- Tous les contrôles Windows Forms héritent d'un jeu d'événements en rapport avec les entrées de souris et de clavier.  Par exemple, un contrôle peut gérer l'événement <xref:System.Windows.Forms.Control.KeyPress> afin de déterminer le code de caractère d'une touche qui a été enfoncée, ou un contrôle peut gérer l'événement <xref:System.Windows.Forms.Control.MouseClick> pour déterminer l'emplacement d'un clic de souris.  Pour plus d'informations sur les événements de clavier et de souris, consultez [Utilisation des événements du clavier](../../../docs/framework/winforms/using-keyboard-events.md) et [Événements liés à la souris dans les Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).  
+## <a name="mouse-and-keyboard-events"></a><span data-ttu-id="11a78-108">Événements de souris et clavier</span><span class="sxs-lookup"><span data-stu-id="11a78-108">Mouse and Keyboard Events</span></span>  
+ <span data-ttu-id="11a78-109">Tous les contrôles Windows Forms héritent d’un ensemble d’événements liés à la souris et clavier.</span><span class="sxs-lookup"><span data-stu-id="11a78-109">All Windows Forms controls inherit a set of events related to mouse and keyboard input.</span></span> <span data-ttu-id="11a78-110">Par exemple, un contrôle peut gérer le <xref:System.Windows.Forms.Control.KeyPress> événement afin de déterminer le code de caractère d’une clé qui a été enfoncée, ou un contrôle peut gérer le <xref:System.Windows.Forms.Control.MouseClick> événement pour déterminer l’emplacement de la souris, cliquez sur.</span><span class="sxs-lookup"><span data-stu-id="11a78-110">For example, a control can handle the <xref:System.Windows.Forms.Control.KeyPress> event to determine the character code of a key that was pressed, or a control can handle the <xref:System.Windows.Forms.Control.MouseClick> event to determine the location of a mouse click.</span></span> <span data-ttu-id="11a78-111">Pour plus d’informations sur les événements de souris et de clavier, consultez [à l’aide des événements de clavier](../../../docs/framework/winforms/using-keyboard-events.md) et [les événements de souris dans les Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="11a78-111">For more information on the mouse and keyboard events, see [Using Keyboard Events](../../../docs/framework/winforms/using-keyboard-events.md) and [Mouse Events in Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).</span></span>  
   
-## Méthodes qui traitent les messages des entrées d'utilisateur  
- Les formulaires et les contrôles ont accès à l'interface <xref:System.Windows.Forms.IMessageFilter> et à un jeu de méthodes substituables qui traitent les messages Windows à différents points dans la file d'attente de messages.  Ces méthodes ont toutes un paramètre <xref:System.Windows.Forms.Message>, qui encapsule les détails de bas niveau des messages Windows.  Vous pouvez implémenter ou substituer ces méthodes pour examiner le message, puis consommer le message ou le transmettre au consommateur suivant dans la file d'attente de messages.  Le tableau suivant présente les méthodes qui traitent tous les messages Windows dans Windows Forms.  
+## <a name="methods-that-process-user-input-messages"></a><span data-ttu-id="11a78-112">Méthodes qui traitent les Messages d’entrée d’utilisateur</span><span class="sxs-lookup"><span data-stu-id="11a78-112">Methods that Process User Input Messages</span></span>  
+ <span data-ttu-id="11a78-113">Formulaires et les contrôles ont accès à la <xref:System.Windows.Forms.IMessageFilter> interface et un jeu de méthodes substituables qui traitent les messages Windows à différents points dans la file d’attente.</span><span class="sxs-lookup"><span data-stu-id="11a78-113">Forms and controls have access to the <xref:System.Windows.Forms.IMessageFilter> interface and a set of overridable methods that process Windows messages at different points in the message queue.</span></span> <span data-ttu-id="11a78-114">Ces méthodes ont tous un <xref:System.Windows.Forms.Message> paramètre, qui encapsule les détails de bas niveau des messages Windows.</span><span class="sxs-lookup"><span data-stu-id="11a78-114">These methods all have a <xref:System.Windows.Forms.Message> parameter, which encapsulates the low-level details of Windows messages.</span></span> <span data-ttu-id="11a78-115">Vous pouvez implémenter ou substituer ces méthodes pour examiner le message, puis consommer le message ou la passer au consommateur suivant dans la file d’attente.</span><span class="sxs-lookup"><span data-stu-id="11a78-115">You can implement or override these methods to examine the message and then either consume the message or pass it on to the next consumer in the message queue.</span></span> <span data-ttu-id="11a78-116">Le tableau suivant présente les méthodes qui traitent tous les messages Windows dans les Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="11a78-116">The following table presents the methods that process all Windows messages in Windows Forms.</span></span>  
   
-|Méthode|Remarques|  
-|-------------|---------------|  
-|<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>|Cette méthode intercepte les messages Windows mis en file d'attente \(ou publiés\) au niveau de l'application.|  
-|<xref:System.Windows.Forms.Control.PreProcessMessage%2A>|Cette méthode intercepte les messages Windows au niveau du formulaire et du contrôle avant qu'ils aient été traités.|  
-|<xref:System.Windows.Forms.Control.WndProc%2A>|Cette méthode traite des messages Windows au niveau du formulaire et du contrôle.|  
-|<xref:System.Windows.Forms.Control.DefWndProc%2A>|Cette méthode exécute le traitement par défaut des messages Windows au niveau du formulaire et du contrôle.  Cela assure le fonctionnement minimal d'une fenêtre.|  
-|<xref:System.Windows.Forms.Control.OnNotifyMessage%2A>|Cette méthode intercepte les messages au niveau du formulaire et du contrôle une fois qu'ils ont été traités.  Le bit de style <xref:System.Windows.Forms.ControlStyles> doit être défini pour que cette méthode puisse être appelée.|  
+|<span data-ttu-id="11a78-117">Méthode</span><span class="sxs-lookup"><span data-stu-id="11a78-117">Method</span></span>|<span data-ttu-id="11a78-118">Remarques</span><span class="sxs-lookup"><span data-stu-id="11a78-118">Notes</span></span>|  
+|------------|-----------|  
+|<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>|<span data-ttu-id="11a78-119">Cette méthode intercepte en file d’attente des messages Windows (également appelé validées) au niveau de l’application.</span><span class="sxs-lookup"><span data-stu-id="11a78-119">This method intercepts queued (also known as posted) Windows messages at the application level.</span></span>|  
+|<xref:System.Windows.Forms.Control.PreProcessMessage%2A>|<span data-ttu-id="11a78-120">Cette méthode intercepte les messages Windows au niveau du formulaire et de contrôle avant qu’ils ont été traités.</span><span class="sxs-lookup"><span data-stu-id="11a78-120">This method intercepts Windows messages at the form and control level before they have been processed.</span></span>|  
+|<xref:System.Windows.Forms.Control.WndProc%2A>|<span data-ttu-id="11a78-121">Cette méthode traite les messages Windows au niveau du formulaire et de contrôle.</span><span class="sxs-lookup"><span data-stu-id="11a78-121">This method processes Windows messages at the form and control level.</span></span>|  
+|<xref:System.Windows.Forms.Control.DefWndProc%2A>|<span data-ttu-id="11a78-122">Cette méthode effectue le traitement par défaut des messages Windows au niveau du formulaire et de contrôle.</span><span class="sxs-lookup"><span data-stu-id="11a78-122">This method performs the default processing of Windows messages at the form and control level.</span></span> <span data-ttu-id="11a78-123">Cela fournit les fonctionnalités minimales d’une fenêtre.</span><span class="sxs-lookup"><span data-stu-id="11a78-123">This provides the minimal functionality of a window.</span></span>|  
+|<xref:System.Windows.Forms.Control.OnNotifyMessage%2A>|<span data-ttu-id="11a78-124">Cette méthode intercepte les messages au niveau du formulaire et de contrôle, une fois qu’ils ont été traités.</span><span class="sxs-lookup"><span data-stu-id="11a78-124">This method intercepts messages at the form and control level, after they have been processed.</span></span> <span data-ttu-id="11a78-125">Le <xref:System.Windows.Forms.ControlStyles.EnableNotifyMessage> bit de style doit être définie pour cette méthode à appeler.</span><span class="sxs-lookup"><span data-stu-id="11a78-125">The <xref:System.Windows.Forms.ControlStyles.EnableNotifyMessage> style bit must be set for this method to be called.</span></span>|  
   
- Les messages de la souris et du clavier sont également traités par un jeu supplémentaire de méthodes substituables qui sont spécifiques à ces types de messages.  Pour plus d'informations, consultez [Fonctionnement de l'entrée au clavier](../../../docs/framework/winforms/how-keyboard-input-works.md) et [Fonctionnement des entrées de la souris dans les Windows Forms](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md).  
+ <span data-ttu-id="11a78-126">Les messages de clavier et souris sont également traités par un jeu supplémentaire de méthodes substituables qui sont spécifiques à ces types de messages.</span><span class="sxs-lookup"><span data-stu-id="11a78-126">Keyboard and mouse messages are also processed by an additional set of overridable methods that are specific to those types of messages.</span></span> <span data-ttu-id="11a78-127">Pour plus d’informations, consultez [fonctionnement des entrées au clavier](../../../docs/framework/winforms/how-keyboard-input-works.md) et [souris entrée fonctionnement dans les Windows Forms](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="11a78-127">For more information, see [How Keyboard Input Works](../../../docs/framework/winforms/how-keyboard-input-works.md) and [How Mouse Input Works in Windows Forms](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md).</span></span>  
   
-## Voir aussi  
- [Entrées d'utilisateur dans les Windows Forms](../../../docs/framework/winforms/user-input-in-windows-forms.md)   
- [Entrée au clavier dans une application Windows Forms](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)   
- [Entrée de la souris dans une application Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+## <a name="see-also"></a><span data-ttu-id="11a78-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="11a78-128">See Also</span></span>  
+ [<span data-ttu-id="11a78-129">Entrées d’utilisateur dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="11a78-129">User Input in Windows Forms</span></span>](../../../docs/framework/winforms/user-input-in-windows-forms.md)  
+ [<span data-ttu-id="11a78-130">Entrée au clavier dans une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="11a78-130">Keyboard Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
+ [<span data-ttu-id="11a78-131">Entrée de la souris dans une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="11a78-131">Mouse Input in a Windows Forms Application</span></span>](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

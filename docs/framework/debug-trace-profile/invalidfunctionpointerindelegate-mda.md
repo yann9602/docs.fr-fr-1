@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - invalidFunctionPointerInDelegate MDA
 - managed debugging assistants (MDAs), invalid function pointer to delegates
@@ -24,36 +18,35 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), marshaling
 - invalid function pointers
 ms.assetid: 99ae44f1-783e-49a9-9009-24f54bbd0f09
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c448f1e60570ae8eff9c0af0dfc942c1ed5d7599
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5e9fd1faacc7be5b95e2bab0d8fdbee105e35498
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="invalidfunctionpointerindelegate-mda"></a>invalidFunctionPointerInDelegate (MDA)
-L'Assistant Débogage managé `invalidFunctionPointerInDelegate` est activé quand un pointeur de fonction non valide est transmis pour créer un délégué sur un pointeur de fonction natif.  
+# <a name="invalidfunctionpointerindelegate-mda"></a><span data-ttu-id="5bfc8-102">invalidFunctionPointerInDelegate (MDA)</span><span class="sxs-lookup"><span data-stu-id="5bfc8-102">invalidFunctionPointerInDelegate MDA</span></span>
+<span data-ttu-id="5bfc8-103">L'Assistant Débogage managé `invalidFunctionPointerInDelegate` est activé quand un pointeur de fonction non valide est transmis pour créer un délégué sur un pointeur de fonction natif.</span><span class="sxs-lookup"><span data-stu-id="5bfc8-103">The `invalidFunctionPointerInDelegate` managed debugging assistant (MDA) is activated when an invalid function pointer is passed in to construct a delegate over a native function pointer.</span></span>  
   
-## <a name="symptoms"></a>Symptômes  
- Violations d'accès ou endommagement de mémoire inattendu pendant l'utilisation d'un délégué sur un pointeur de fonction.  
+## <a name="symptoms"></a><span data-ttu-id="5bfc8-104">Symptômes</span><span class="sxs-lookup"><span data-stu-id="5bfc8-104">Symptoms</span></span>  
+ <span data-ttu-id="5bfc8-105">Violations d'accès ou endommagement de mémoire inattendu pendant l'utilisation d'un délégué sur un pointeur de fonction.</span><span class="sxs-lookup"><span data-stu-id="5bfc8-105">Access violations or unexpected memory corruption when using a delegate over a function pointer.</span></span>  
   
-## <a name="cause"></a>Cause  
- Un pointeur de fonction non valide a été spécifié.  
+## <a name="cause"></a><span data-ttu-id="5bfc8-106">Cause</span><span class="sxs-lookup"><span data-stu-id="5bfc8-106">Cause</span></span>  
+ <span data-ttu-id="5bfc8-107">Un pointeur de fonction non valide a été spécifié.</span><span class="sxs-lookup"><span data-stu-id="5bfc8-107">An invalid function pointer was specified.</span></span>  
   
-## <a name="resolution"></a>Solution  
- Spécifiez un pointeur de fonction valide.  
+## <a name="resolution"></a><span data-ttu-id="5bfc8-108">Solution</span><span class="sxs-lookup"><span data-stu-id="5bfc8-108">Resolution</span></span>  
+ <span data-ttu-id="5bfc8-109">Spécifiez un pointeur de fonction valide.</span><span class="sxs-lookup"><span data-stu-id="5bfc8-109">Specify a valid function pointer</span></span>  
   
-## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
- Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="5bfc8-110">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="5bfc8-110">Effect on the Runtime</span></span>  
+ <span data-ttu-id="5bfc8-111">Cet Assistant Débogage managé n'a aucun effet sur le CLR.</span><span class="sxs-lookup"><span data-stu-id="5bfc8-111">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a>Sortie  
- Pointeur de fonction non valide.  
+## <a name="output"></a><span data-ttu-id="5bfc8-112">Sortie</span><span class="sxs-lookup"><span data-stu-id="5bfc8-112">Output</span></span>  
+ <span data-ttu-id="5bfc8-113">Pointeur de fonction non valide.</span><span class="sxs-lookup"><span data-stu-id="5bfc8-113">The invalid function pointer.</span></span>  
   
-## <a name="configuration"></a>Configuration  
+## <a name="configuration"></a><span data-ttu-id="5bfc8-114">Configuration</span><span class="sxs-lookup"><span data-stu-id="5bfc8-114">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -63,8 +56,7 @@ L'Assistant Débogage managé `invalidFunctionPointerInDelegate` est activé qua
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-
+## <a name="see-also"></a><span data-ttu-id="5bfc8-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5bfc8-115">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [<span data-ttu-id="5bfc8-116">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="5bfc8-116">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [<span data-ttu-id="5bfc8-117">Marshaling d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="5bfc8-117">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)

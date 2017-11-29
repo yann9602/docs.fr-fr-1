@@ -1,83 +1,89 @@
 ---
-title: "Comment&#160;: d&#233;finir l&#39;alignement horizontal et vertical d&#39;un TileBrush | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "aligner, TileBrush"
-  - "alignement horizontal de TileBrush"
-  - "TileBrush, alignement de"
-  - "alignement verticontal de TileBrush"
+title: "Comment : définir l'alignement horizontal et vertical d'un TileBrush"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- TileBrush [WPF], alignment of
+- vertical alignment of TileBrushes [WPF]
+- aligning [WPF], TileBrushes
+- horizontal alignment of Tilebrushes [WPF]
 ms.assetid: 65ae89bd-9246-4c9e-bde4-2fb991d4060d
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3c581bb167c020e9e4f0de26b0e17e7a1d70704e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;finir l&#39;alignement horizontal et vertical d&#39;un TileBrush
-Cet exemple montre comment contrôler l'alignement horizontal et vertical du contenu d'une mosaïque.  Pour contrôler l'alignement horizontal et vertical d'un <xref:System.Windows.Media.TileBrush>, utilisez ses propriétés <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A>.  
+# <a name="how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush"></a><span data-ttu-id="5315e-102">Comment : définir l'alignement horizontal et vertical d'un TileBrush</span><span class="sxs-lookup"><span data-stu-id="5315e-102">How to: Set the Horizontal and Vertical Alignment of a TileBrush</span></span>
+<span data-ttu-id="5315e-103">Cet exemple montre comment contrôler l’alignement horizontal et vertical d’un contenu dans une mosaïque.</span><span class="sxs-lookup"><span data-stu-id="5315e-103">This example shows how to control the horizontal and vertical alignment of content in a tile.</span></span> <span data-ttu-id="5315e-104">Pour contrôler l’alignement horizontal et vertical d’un <xref:System.Windows.Media.TileBrush>, utilisez son <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A> propriétés.</span><span class="sxs-lookup"><span data-stu-id="5315e-104">To control the horizontal and vertical alignment of a <xref:System.Windows.Media.TileBrush>, use its <xref:System.Windows.Media.TileBrush.AlignmentX%2A> and <xref:System.Windows.Media.TileBrush.AlignmentY%2A> properties.</span></span>  
   
- Les propriétés <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A> d'un <xref:System.Windows.Media.TileBrush> sont utilisées lorsque l'une des conditions suivantes est vérifiée :  
+ <span data-ttu-id="5315e-105">Le <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A> propriétés d’un <xref:System.Windows.Media.TileBrush> sont utilisées lorsque une des conditions suivantes est vraie :</span><span class="sxs-lookup"><span data-stu-id="5315e-105">The <xref:System.Windows.Media.TileBrush.AlignmentX%2A> and <xref:System.Windows.Media.TileBrush.AlignmentY%2A> properties of a <xref:System.Windows.Media.TileBrush> are used when either of the following conditions is true:</span></span>  
   
--   La propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> est <xref:System.Windows.Media.Stretch> ou <xref:System.Windows.Media.Stretch> et le <xref:System.Windows.Media.TileBrush.Viewbox%2A> et le <xref:System.Windows.Media.TileBrush.Viewport%2A> ont des [proportions](GTMT) différentes.  
+-   <span data-ttu-id="5315e-106">Le <xref:System.Windows.Media.TileBrush.Stretch%2A> propriété <xref:System.Windows.Media.Stretch.Uniform> ou <xref:System.Windows.Media.Stretch.UniformToFill> et <xref:System.Windows.Media.TileBrush.Viewbox%2A> et <xref:System.Windows.Media.TileBrush.Viewport%2A> ont des proportions différentes.</span><span class="sxs-lookup"><span data-stu-id="5315e-106">The <xref:System.Windows.Media.TileBrush.Stretch%2A> property is <xref:System.Windows.Media.Stretch.Uniform> or <xref:System.Windows.Media.Stretch.UniformToFill> and the <xref:System.Windows.Media.TileBrush.Viewbox%2A> and <xref:System.Windows.Media.TileBrush.Viewport%2A> have different aspect ratios.</span></span>  
   
--   La propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> est <xref:System.Windows.Media.Stretch> et le <xref:System.Windows.Media.TileBrush.Viewbox%2A> et le <xref:System.Windows.Media.TileBrush.Viewport%2A> n'ont pas la même taille.  
+-   <span data-ttu-id="5315e-107">Le <xref:System.Windows.Media.TileBrush.Stretch%2A> propriété <xref:System.Windows.Media.Stretch.None> et <xref:System.Windows.Media.TileBrush.Viewbox%2A> et <xref:System.Windows.Media.TileBrush.Viewport%2A> sont de tailles différentes.</span><span class="sxs-lookup"><span data-stu-id="5315e-107">The <xref:System.Windows.Media.TileBrush.Stretch%2A> property is <xref:System.Windows.Media.Stretch.None> and the <xref:System.Windows.Media.TileBrush.Viewbox%2A> and <xref:System.Windows.Media.TileBrush.Viewport%2A> are different sizes.</span></span>  
   
-## Exemple  
- L'exemple suivant aligne le contenu d'un <xref:System.Windows.Media.DrawingBrush>, un type de <xref:System.Windows.Media.TileBrush>, dans l'angle supérieur gauche de sa mosaïque.  Pour aligner le contenu, l'exemple affecte la valeur <xref:System.Windows.Media.AlignmentX> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentX%2A> du <xref:System.Windows.Media.DrawingBrush> et la valeur <xref:System.Windows.Media.AlignmentY> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentY%2A>.  Cet exemple génère la sortie suivante.  
+## <a name="example"></a><span data-ttu-id="5315e-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="5315e-108">Example</span></span>  
+ <span data-ttu-id="5315e-109">L’exemple suivant aligne le contenu d’un <xref:System.Windows.Media.DrawingBrush>, qui est un type de <xref:System.Windows.Media.TileBrush>, à l’angle supérieur gauche de sa mosaïque.</span><span class="sxs-lookup"><span data-stu-id="5315e-109">The following example aligns the content of a <xref:System.Windows.Media.DrawingBrush>, which is a type of <xref:System.Windows.Media.TileBrush>, to the upper-left corner of its tile.</span></span> <span data-ttu-id="5315e-110">Pour aligner le contenu, l’exemple définit le <xref:System.Windows.Media.TileBrush.AlignmentX%2A> propriété de la <xref:System.Windows.Media.DrawingBrush> à <xref:System.Windows.Media.AlignmentX.Left> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A> propriété <xref:System.Windows.Media.AlignmentY.Top>.</span><span class="sxs-lookup"><span data-stu-id="5315e-110">To align the content, the example sets the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property of the <xref:System.Windows.Media.DrawingBrush> to <xref:System.Windows.Media.AlignmentX.Left> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Top>.</span></span> <span data-ttu-id="5315e-111">Cet exemple produit la sortie suivante.</span><span class="sxs-lookup"><span data-stu-id="5315e-111">This example produces the following output.</span></span>  
   
- ![TileBrush avec alignement en haut à gauche](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm\_TileBrushAlignmentExampleTopLeft")  
-TileBrush avec un contenu aligné dans l'angle supérieur gauche  
+ <span data-ttu-id="5315e-112">![TileBrush avec top &#45; alignement à gauche](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm_TileBrushAlignmentExampleTopLeft")</span><span class="sxs-lookup"><span data-stu-id="5315e-112">![A TileBrush with top&#45;left alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm_TileBrushAlignmentExampleTopLeft")</span></span>  
+<span data-ttu-id="5315e-113">TileBrush avec un contenu aligné dans l’angle supérieur gauche</span><span class="sxs-lookup"><span data-stu-id="5315e-113">TileBrush with content aligned to the upper-left corner</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushtopleftalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushtopleftalignmentinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmentinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmentinline)]  
   
-## Exemple  
- L'exemple suivant aligne le contenu d'un <xref:System.Windows.Media.DrawingBrush> dans l'angle inférieur droit de sa mosaïque en affectant la valeur <xref:System.Windows.Media.AlignmentX> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et la valeur <xref:System.Windows.Media.AlignmentY> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentY%2A>.  Cet exemple donne les résultats suivants.  
+## <a name="example"></a><span data-ttu-id="5315e-114">Exemple</span><span class="sxs-lookup"><span data-stu-id="5315e-114">Example</span></span>  
+ <span data-ttu-id="5315e-115">L’exemple suivant aligne le contenu d’un <xref:System.Windows.Media.DrawingBrush> vers le coin inférieur droit de sa mosaïque en définissant le <xref:System.Windows.Media.TileBrush.AlignmentX%2A> propriété <xref:System.Windows.Media.AlignmentX.Right> et le <xref:System.Windows.Media.TileBrush.AlignmentY%2A> propriété <xref:System.Windows.Media.AlignmentY.Bottom>.</span><span class="sxs-lookup"><span data-stu-id="5315e-115">The next example aligns the content of a <xref:System.Windows.Media.DrawingBrush> to the lower-right corner of its tile by setting the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property to <xref:System.Windows.Media.AlignmentX.Right> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Bottom>.</span></span> <span data-ttu-id="5315e-116">L’exemple produit le résultat suivant :</span><span class="sxs-lookup"><span data-stu-id="5315e-116">The example produces the following output.</span></span>  
   
- ![TileBrush avec alignement en bas à droite](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm\_TileBrushAlignmentExampleBottomRight")  
-TileBrush avec un contenu aligné dans l'angle inférieur droit  
+ <span data-ttu-id="5315e-117">![TileBrush avec bas &#45; alignement à droite](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm_TileBrushAlignmentExampleBottomRight")</span><span class="sxs-lookup"><span data-stu-id="5315e-117">![A TileBrush with bottom&#45;right alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm_TileBrushAlignmentExampleBottomRight")</span></span>  
+<span data-ttu-id="5315e-118">TileBrush avec un contenu aligné dans l’angle inférieur droit</span><span class="sxs-lookup"><span data-stu-id="5315e-118">TileBrush with content aligned to the lower-right corner</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushbottomrightalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushbottomrightalignmentinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
   
-## Exemple  
- L'exemple suivant aligne le contenu d'un <xref:System.Windows.Media.DrawingBrush> dans l'angle supérieur gauche de sa mosaïque en affectant la valeur <xref:System.Windows.Media.AlignmentX> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et la valeur <xref:System.Windows.Media.AlignmentY> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentY%2A>.  Il définit également le <xref:System.Windows.Media.TileBrush.Viewport%2A> et le <xref:System.Windows.Media.TileBrush.TileMode%2A> du <xref:System.Windows.Media.DrawingBrush> pour produire un modèle de mosaïque.  Cet exemple donne les résultats suivants.  
+## <a name="example"></a><span data-ttu-id="5315e-119">Exemple</span><span class="sxs-lookup"><span data-stu-id="5315e-119">Example</span></span>  
+ <span data-ttu-id="5315e-120">L’exemple suivant aligne le contenu d’un <xref:System.Windows.Media.DrawingBrush> à l’angle supérieur gauche de sa mosaïque en définissant le <xref:System.Windows.Media.TileBrush.AlignmentX%2A> propriété <xref:System.Windows.Media.AlignmentX.Left> et le <xref:System.Windows.Media.TileBrush.AlignmentY%2A> propriété <xref:System.Windows.Media.AlignmentY.Top>.</span><span class="sxs-lookup"><span data-stu-id="5315e-120">The next example aligns the content of a <xref:System.Windows.Media.DrawingBrush> to the upper-left corner of its tile by setting the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property to <xref:System.Windows.Media.AlignmentX.Left> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Top>.</span></span> <span data-ttu-id="5315e-121">Il définit également la <xref:System.Windows.Media.TileBrush.Viewport%2A> et <xref:System.Windows.Media.TileBrush.TileMode%2A> de la <xref:System.Windows.Media.DrawingBrush> pour produire un modèle de vignette.</span><span class="sxs-lookup"><span data-stu-id="5315e-121">It also sets the <xref:System.Windows.Media.TileBrush.Viewport%2A> and <xref:System.Windows.Media.TileBrush.TileMode%2A> of the <xref:System.Windows.Media.DrawingBrush> to produce a tile pattern.</span></span> <span data-ttu-id="5315e-122">L’exemple produit le résultat suivant :</span><span class="sxs-lookup"><span data-stu-id="5315e-122">The example produces the following output.</span></span>  
   
- ![TileBrush en mosaïque avec alignement en haut à gauche](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm\_TileBrushAlignmentExampleTopLeftTiled")  
-Modèle de mosaïque avec un contenu aligné dans l'angle supérieur gauche de la mosaïque de base  
+ <span data-ttu-id="5315e-123">![TileBrush en mosaïque avec top &#45; alignement à gauche](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm_TileBrushAlignmentExampleTopLeftTiled")</span><span class="sxs-lookup"><span data-stu-id="5315e-123">![A tiled TileBrush with top&#45;left alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm_TileBrushAlignmentExampleTopLeftTiled")</span></span>  
+<span data-ttu-id="5315e-124">Modèle de mosaïque avec contenu aligné en haut à gauche dans la mosaïque de base</span><span class="sxs-lookup"><span data-stu-id="5315e-124">Tile pattern with content aligned to upper-left in base tile</span></span>  
   
- L'illustration met en évidence une mosaïque de base afin que vous puissiez voir comment son contenu est aligné.  Notez que le paramètre <xref:System.Windows.Media.TileBrush.AlignmentX%2A> n'a aucun effet car le contenu du <xref:System.Windows.Media.DrawingBrush> remplit horizontalement toute la mosaïque de base.  
+ <span data-ttu-id="5315e-125">L’illustration montre la mosaïque pour que vous puissiez voir comment son contenu est aligné.</span><span class="sxs-lookup"><span data-stu-id="5315e-125">The illustration highlights abase tile so that you can see how its content is aligned.</span></span> <span data-ttu-id="5315e-126">Notez que la <xref:System.Windows.Media.TileBrush.AlignmentX%2A> paramètre n’a aucun effet car le contenu de la <xref:System.Windows.Media.DrawingBrush> remplit horizontalement toute la mosaïque de base.</span><span class="sxs-lookup"><span data-stu-id="5315e-126">Notice that the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> setting has no effect because the content of the <xref:System.Windows.Media.DrawingBrush> completely fills the base tile horizontally.</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushtopleftalignmenttiledinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushtopleftalignmenttiledinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmenttiledinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmenttiledinline)]  
   
-## Exemple  
- Le dernier exemple aligne le contenu d'un <xref:System.Windows.Media.DrawingBrush> en mosaïque dans l'angle inférieur droit de sa mosaïque de base en affectant la valeur <xref:System.Windows.Media.AlignmentX> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et la valeur <xref:System.Windows.Media.AlignmentY> à la propriété <xref:System.Windows.Media.TileBrush.AlignmentY%2A>.  Cet exemple donne les résultats suivants.  
+## <a name="example"></a><span data-ttu-id="5315e-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="5315e-127">Example</span></span>  
+ <span data-ttu-id="5315e-128">Le dernier exemple aligne le contenu d’une mosaïque <xref:System.Windows.Media.DrawingBrush> à l’angle inférieur droit de sa mosaïque de base en définissant le <xref:System.Windows.Media.TileBrush.AlignmentX%2A> propriété <xref:System.Windows.Media.AlignmentX.Right> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A> propriété <xref:System.Windows.Media.AlignmentY.Bottom>.</span><span class="sxs-lookup"><span data-stu-id="5315e-128">The final example aligns the content of a tiled <xref:System.Windows.Media.DrawingBrush> to the lower-right of its base tile by setting the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> property to <xref:System.Windows.Media.AlignmentX.Right> and the <xref:System.Windows.Media.TileBrush.AlignmentY%2A> property to <xref:System.Windows.Media.AlignmentY.Bottom>.</span></span> <span data-ttu-id="5315e-129">L’exemple produit le résultat suivant :</span><span class="sxs-lookup"><span data-stu-id="5315e-129">The example produces the following output.</span></span>  
   
- ![TileBrush en mosaïque avec alignement en bas à droite](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm\_TileBrushAlignmentExampleBottomRightTiled")  
-Modèle de mosaïque avec un contenu aligné dans l'angle inférieur droit de la mosaïque de base  
+ <span data-ttu-id="5315e-130">![Une mosaïque de TileBrush avec bas &#45; avec le bouton droit alignement](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm_TileBrushAlignmentExampleBottomRightTiled")</span><span class="sxs-lookup"><span data-stu-id="5315e-130">![A tiled TileBrush with bottom&#45;right alignment](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm_TileBrushAlignmentExampleBottomRightTiled")</span></span>  
+<span data-ttu-id="5315e-131">Modèle de mosaïque avec contenu aligné en bas à droite dans la mosaïque de base</span><span class="sxs-lookup"><span data-stu-id="5315e-131">Tile pattern with content aligned to lower-right in base tile</span></span>  
   
- Le paramètre <xref:System.Windows.Media.TileBrush.AlignmentX%2A> n'a toujours aucun effet car le contenu du <xref:System.Windows.Media.DrawingBrush> remplit horizontalement toute la mosaïque de base.  
+ <span data-ttu-id="5315e-132">Là encore, la <xref:System.Windows.Media.TileBrush.AlignmentX%2A> paramètre n’a aucun effet car le contenu de la <xref:System.Windows.Media.DrawingBrush> remplit horizontalement toute la mosaïque de base.</span><span class="sxs-lookup"><span data-stu-id="5315e-132">Again, the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> setting has no effect because the content of the <xref:System.Windows.Media.DrawingBrush> completely fills the base tile horizontally.</span></span>  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushbottomrightalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushbottomrightalignmentinline)]
- [!code-xml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
+ [!code-xaml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
   
- Les exemples utilisent des objets <xref:System.Windows.Media.DrawingBrush> pour montrer comment sont utilisées les propriétés <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A>.  Ces propriétés se comportent de la même manière pour tous les pinceaux mosaïque : <xref:System.Windows.Media.DrawingBrush>, <xref:System.Windows.Media.ImageBrush> et <xref:System.Windows.Media.VisualBrush>.  Pour plus d'informations sur les pinceaux mosaïque, consultez [Peinture avec des objets d'image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
+ <span data-ttu-id="5315e-133">Les exemples utilisent <xref:System.Windows.Media.DrawingBrush> objets afin d’illustrer comment les <xref:System.Windows.Media.TileBrush.AlignmentX%2A> et <xref:System.Windows.Media.TileBrush.AlignmentY%2A> propriétés sont utilisées.</span><span class="sxs-lookup"><span data-stu-id="5315e-133">The examples use <xref:System.Windows.Media.DrawingBrush> objects to demonstrate how the <xref:System.Windows.Media.TileBrush.AlignmentX%2A> and <xref:System.Windows.Media.TileBrush.AlignmentY%2A> properties are used.</span></span> <span data-ttu-id="5315e-134">Ces propriétés se comportent de façon identique pour tous les pinceaux de mosaïque : <xref:System.Windows.Media.DrawingBrush>, <xref:System.Windows.Media.ImageBrush>, et <xref:System.Windows.Media.VisualBrush>.</span><span class="sxs-lookup"><span data-stu-id="5315e-134">These properties behave identically for all the tile brushes: <xref:System.Windows.Media.DrawingBrush>, <xref:System.Windows.Media.ImageBrush>, and <xref:System.Windows.Media.VisualBrush>.</span></span> <span data-ttu-id="5315e-135">Pour plus d’informations sur les pinceaux mosaïques, consultez l’article [Peinture avec des objets d’image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).</span><span class="sxs-lookup"><span data-stu-id="5315e-135">For more information about tile brushes, see [Painting with Images, Drawings, and Visuals](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Media.DrawingBrush>   
- <xref:System.Windows.Media.ImageBrush>   
- <xref:System.Windows.Media.VisualBrush>   
- [Peinture avec des objets d'image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+## <a name="see-also"></a><span data-ttu-id="5315e-136">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5315e-136">See Also</span></span>  
+ <xref:System.Windows.Media.DrawingBrush>  
+ <xref:System.Windows.Media.ImageBrush>  
+ <xref:System.Windows.Media.VisualBrush>  
+ [<span data-ttu-id="5315e-137">Peinture avec des images, des dessins et des objets visuels</span><span class="sxs-lookup"><span data-stu-id="5315e-137">Painting with Images, Drawings, and Visuals</span></span>](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

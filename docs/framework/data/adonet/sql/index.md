@@ -5,57 +5,54 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-ado
+ms.technology: dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: effff61b424f914584ba1ffd963c100afbc3d745
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: ab519f7881dd20c3fd9e2e08fef14591477d94a4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="sql-server-and-adonet"></a>SQL Server et ADO.NET
-Cette section décrit des fonctions et des comportements spécifiques au fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>).  
+# <a name="sql-server-and-adonet"></a><span data-ttu-id="08ea4-102">SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="08ea4-102">SQL Server and ADO.NET</span></span>
+<span data-ttu-id="08ea4-103">Cette section décrit des fonctions et des comportements spécifiques au fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>).</span><span class="sxs-lookup"><span data-stu-id="08ea4-103">This section describes features and behaviors that are specific to the .NET Framework Data Provider for SQL Server (<xref:System.Data.SqlClient>).</span></span>  
   
- <xref:System.Data.SqlClient> permet d'accéder à différentes versions de SQL Server, qui encapsule des protocoles spécifiques à la base de données. La fonctionnalité du fournisseur de données est conçue pour être similaire à celle des fournisseurs de données .NET Framework pour OLE DB, ODBC et Oracle. <xref:System.Data.SqlClient> inclut un analyseur TDS (Tabular Data Stream) qui permet de communiquer directement avec SQL Server.  
+ <span data-ttu-id="08ea4-104"><xref:System.Data.SqlClient> permet d'accéder à différentes versions de SQL Server, qui encapsule des protocoles spécifiques à la base de données.</span><span class="sxs-lookup"><span data-stu-id="08ea4-104"><xref:System.Data.SqlClient> provides access to versions of SQL Server, which encapsulates database-specific protocols.</span></span> <span data-ttu-id="08ea4-105">La fonctionnalité du fournisseur de données est conçue pour être similaire à celle des fournisseurs de données .NET Framework pour OLE DB, ODBC et Oracle.</span><span class="sxs-lookup"><span data-stu-id="08ea4-105">The functionality of the data provider is designed to be similar to that of the .NET Framework data providers for OLE DB, ODBC, and Oracle.</span></span> <span data-ttu-id="08ea4-106"><xref:System.Data.SqlClient> inclut un analyseur TDS (Tabular Data Stream) qui permet de communiquer directement avec SQL Server.</span><span class="sxs-lookup"><span data-stu-id="08ea4-106"><xref:System.Data.SqlClient> includes a tabular data stream (TDS) parser to communicate directly with SQL Server.</span></span>  
   
 > [!NOTE]
->  Pour utiliser le fournisseur de données .NET Framework pour SQL Server, une application doit faire référence à l'espace de noms <xref:System.Data.SqlClient>.  
+>  <span data-ttu-id="08ea4-107">Pour utiliser le fournisseur de données .NET Framework pour SQL Server, une application doit faire référence à l'espace de noms <xref:System.Data.SqlClient>.</span><span class="sxs-lookup"><span data-stu-id="08ea4-107">To use the .NET Framework Data Provider for SQL Server, an application must reference the <xref:System.Data.SqlClient> namespace.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- Fournit une vue d’ensemble des fonctionnalités de sécurité de SQL Server et des scénarios d’application consacrés à la création d’applications ADO.NET sécurisées ciblant SQL Server.  
+## <a name="in-this-section"></a><span data-ttu-id="08ea4-108">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="08ea4-108">In This Section</span></span>  
+ [<span data-ttu-id="08ea4-109">Sécurité SQL Server</span><span class="sxs-lookup"><span data-stu-id="08ea4-109">SQL Server Security</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ <span data-ttu-id="08ea4-110">Fournit une vue d’ensemble des fonctionnalités de sécurité de SQL Server et des scénarios d’application consacrés à la création d’applications ADO.NET sécurisées ciblant SQL Server.</span><span class="sxs-lookup"><span data-stu-id="08ea4-110">Provides an overview of SQL Server security features, and application scenarios for creating secure ADO.NET applications that target SQL Server.</span></span>  
   
- [Types de données SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
- Décrit comment utiliser les types de données SQL Server et comment ces derniers interagissent avec les types de données .NET Framework.  
+ [<span data-ttu-id="08ea4-111">Types de données SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="08ea4-111">SQL Server Data Types and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
+ <span data-ttu-id="08ea4-112">Décrit comment utiliser les types de données SQL Server et comment ces derniers interagissent avec les types de données .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="08ea4-112">Describes how to work with SQL Server data types and how they interact with .NET Framework data types.</span></span>  
   
- [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- Décrit comment utiliser des données de valeur élevée dans SQL Server.  
+ [<span data-ttu-id="08ea4-113">Données binaires et de valeur élevée SQL Server</span><span class="sxs-lookup"><span data-stu-id="08ea4-113">SQL Server Binary and Large-Value Data</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ <span data-ttu-id="08ea4-114">Décrit comment utiliser des données de valeur élevée dans SQL Server.</span><span class="sxs-lookup"><span data-stu-id="08ea4-114">Describes how to work with large value data in SQL Server.</span></span>  
   
- [Opérations sur les données SQL Server dans ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)  
- Décrit comment utiliser des données dans SQL Server. Contient des sections consacrées aux opérations de copie en bloc, à MARS, aux opérations asynchrones et aux paramètres table.  
+ [<span data-ttu-id="08ea4-115">Opérations sur les données SQL Server dans ADO.NET</span><span class="sxs-lookup"><span data-stu-id="08ea4-115">SQL Server Data Operations in ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)  
+ <span data-ttu-id="08ea4-116">Décrit comment utiliser des données dans SQL Server.</span><span class="sxs-lookup"><span data-stu-id="08ea4-116">Describes how to work with data in SQL Server.</span></span> <span data-ttu-id="08ea4-117">Contient des sections consacrées aux opérations de copie en bloc, à MARS, aux opérations asynchrones et aux paramètres table.</span><span class="sxs-lookup"><span data-stu-id="08ea4-117">Contains sections about bulk copy operations, MARS, asynchronous operations, and table-valued parameters.</span></span>  
   
- [Fonctionnalités SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
- Décrit les fonctionnalités de SQL Server utiles aux développeurs d’applications ADO.NET.  
+ [<span data-ttu-id="08ea4-118">Fonctionnalités SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="08ea4-118">SQL Server Features and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
+ <span data-ttu-id="08ea4-119">Décrit les fonctionnalités de SQL Server utiles aux développeurs d’applications ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="08ea4-119">Describes SQL Server features that are useful for ADO.NET application developers.</span></span>  
   
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
- Décrit les blocs de construction, les processus et les techniques de base requis pour la création d'applications LINQ to SQL.  
+ [<span data-ttu-id="08ea4-120">LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="08ea4-120">LINQ to SQL</span></span>](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ <span data-ttu-id="08ea4-121">Décrit les blocs de construction, les processus et les techniques de base requis pour la création d'applications LINQ to SQL.</span><span class="sxs-lookup"><span data-stu-id="08ea4-121">Describes the basic building blocks, processes, and techniques required for creating LINQ to SQL applications.</span></span>  
   
- Pour la documentation complète du moteur de base de données SQL Server, consultez la documentation en ligne de SQL Server correspondant à la version de SQL Server que vous utilisez.  
+ <span data-ttu-id="08ea4-122">Pour la documentation complète du moteur de base de données SQL Server, consultez la documentation en ligne de SQL Server correspondant à la version de SQL Server que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="08ea4-122">For complete documentation of the SQL Server Database Engine, see SQL Server Books Online for the version of SQL Server you are using.</span></span>  
   
- [Documentation en ligne de SQL Server](http://msdn.microsoft.com/library/ms130214.aspx)  
+ [<span data-ttu-id="08ea4-123">Documentation en ligne de SQL Server</span><span class="sxs-lookup"><span data-stu-id="08ea4-123">SQL Server Books Online</span></span>](http://msdn.microsoft.com/library/ms130214.aspx)  
   
-## <a name="see-also"></a>Voir aussi  
- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [Mappages de types de données dans ADO.NET](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)   
- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [Extraction et modification de données dans ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
-
+## <a name="see-also"></a><span data-ttu-id="08ea4-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="08ea4-124">See Also</span></span>  
+ [<span data-ttu-id="08ea4-125">Sécurisation des applications ADO.NET</span><span class="sxs-lookup"><span data-stu-id="08ea4-125">Securing ADO.NET Applications</span></span>](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [<span data-ttu-id="08ea4-126">Mappages de types de données dans ADO.NET</span><span class="sxs-lookup"><span data-stu-id="08ea4-126">Data Type Mappings in ADO.NET</span></span>](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
+ [<span data-ttu-id="08ea4-127">DataSets, DataTables et DataViews</span><span class="sxs-lookup"><span data-stu-id="08ea4-127">DataSets, DataTables, and DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [<span data-ttu-id="08ea4-128">Extraction et modification de données dans ADO.NET</span><span class="sxs-lookup"><span data-stu-id="08ea4-128">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [<span data-ttu-id="08ea4-129">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="08ea4-129">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

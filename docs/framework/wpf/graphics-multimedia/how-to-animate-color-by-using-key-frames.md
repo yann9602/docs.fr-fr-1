@@ -1,46 +1,52 @@
 ---
-title: "Comment&#160;: animer une couleur &#224; l&#39;aide d&#39;images cl&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "animation, couleurs avec des images clés"
-  - "couleurs, animer avec des images clés"
-  - "images clés, animer les couleurs avec"
+title: "Comment : animer une couleur à l'aide d'images clés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- colors [WPF], animating with key frames
+- animation [WPF], colors with key frames
+- key frames [WPF], animating colors with
 ms.assetid: ab04ffa6-4de9-4d5b-a3b4-4e35d5b2ef35
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d117d57e5cc761aa2f31fd6531bff8d96ea30dc3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: animer une couleur &#224; l&#39;aide d&#39;images cl&#233;s
-Cet exemple indique comment animer la <xref:System.Windows.Media.SolidColorBrush.Color%2A> d'un <xref:System.Windows.Media.SolidColorBrush> à l'aide d'images clés.  
+# <a name="how-to-animate-color-by-using-key-frames"></a><span data-ttu-id="57a99-102">Comment : animer une couleur à l'aide d'images clés</span><span class="sxs-lookup"><span data-stu-id="57a99-102">How to: Animate Color by Using Key Frames</span></span>
+<span data-ttu-id="57a99-103">Cet exemple montre comment animer la <xref:System.Windows.Media.SolidColorBrush.Color%2A> d’un <xref:System.Windows.Media.SolidColorBrush> à l’aide d’images clés.</span><span class="sxs-lookup"><span data-stu-id="57a99-103">This example shows how to animate the <xref:System.Windows.Media.SolidColorBrush.Color%2A> of a <xref:System.Windows.Media.SolidColorBrush> by using key frames.</span></span>  
   
-## Exemple  
- L'exemple suivant utilise la classe <xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames> pour animer la propriété <xref:System.Windows.Media.SolidColorBrush.Color%2A> d'un <xref:System.Windows.Media.SolidColorBrush>.  Cette animation utilise trois images clés de la manière suivante :  
+## <a name="example"></a><span data-ttu-id="57a99-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="57a99-104">Example</span></span>  
+ <span data-ttu-id="57a99-105">L’exemple suivant utilise le <xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames> classe pour animer la <xref:System.Windows.Media.SolidColorBrush.Color%2A> propriété d’un <xref:System.Windows.Media.SolidColorBrush>.</span><span class="sxs-lookup"><span data-stu-id="57a99-105">The following example uses the <xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames> class to animate the <xref:System.Windows.Media.SolidColorBrush.Color%2A> property of a <xref:System.Windows.Media.SolidColorBrush>.</span></span> <span data-ttu-id="57a99-106">Cette animation utilise trois images clés de la manière suivante :</span><span class="sxs-lookup"><span data-stu-id="57a99-106">This animation uses three key frames in the following manner:</span></span>  
   
-1.  Pendant les deux premières secondes, utilise une instance de la classe <xref:System.Windows.Media.Animation.LinearColorKeyFrame> pour modifier progressivement la couleur du vert au rouge.  Les images clés linéaires telles que <xref:System.Windows.Media.Animation.LinearColorKeyFrame> créent une transition linéaire fluide entre les valeurs.  
+1.  <span data-ttu-id="57a99-107">Pendant les deux premières secondes, utilise une instance de la <xref:System.Windows.Media.Animation.LinearColorKeyFrame> classe à modifier progressivement la couleur du vert au rouge.</span><span class="sxs-lookup"><span data-stu-id="57a99-107">During the first two seconds, uses an instance of the <xref:System.Windows.Media.Animation.LinearColorKeyFrame> class to gradually change the color from green to red.</span></span> <span data-ttu-id="57a99-108">Images clés linéaires comme <xref:System.Windows.Media.Animation.LinearColorKeyFrame> créer une transition linéaire fluide entre les valeurs.</span><span class="sxs-lookup"><span data-stu-id="57a99-108">Linear key frames like <xref:System.Windows.Media.Animation.LinearColorKeyFrame> create a smooth linear transition between values.</span></span>  
   
-2.  À la fin de la demi\-seconde suivante, utilise une instance de la classe <xref:System.Windows.Media.Animation.DiscreteColorKeyFrame> pour modifier rapidement la couleur du rouge au jaune.  Les images clés discrètes telles que <xref:System.Windows.Media.Animation.DiscreteColorKeyFrame> créent des modifications soudaines entre les valeurs, c'est\-à\-dire que la modification de couleur dans cette partie de l'animation se produit rapidement et n'est pas subtile.  
+2.  <span data-ttu-id="57a99-109">À la fin de la prochaine demi-seconde, utilise une instance de la <xref:System.Windows.Media.Animation.DiscreteColorKeyFrame> classe permettant de rapidement changer la couleur du rouge au jaune.</span><span class="sxs-lookup"><span data-stu-id="57a99-109">During the end of the next half second, uses an instance of the <xref:System.Windows.Media.Animation.DiscreteColorKeyFrame> class to quickly change the color from red to yellow.</span></span> <span data-ttu-id="57a99-110">Les images clés discrètes telles que <xref:System.Windows.Media.Animation.DiscreteColorKeyFrame> créer des changements soudains entre les valeurs, autrement dit, le changement de couleur dans cette partie de l’animation se produit rapidement et n’est pas subtil.</span><span class="sxs-lookup"><span data-stu-id="57a99-110">Discrete key frames like <xref:System.Windows.Media.Animation.DiscreteColorKeyFrame> create sudden changes between values, that is, the color change in this part of the animation occurs quickly and is not subtle.</span></span>  
   
-3.  Pendant les deux dernières secondes, utilise une instance de la classe <xref:System.Windows.Media.Animation.SplineColorKeyFrame> pour modifier à nouveau la couleur — du jaune au vert, cette fois\-ci.  Des images clé [spline](GTMT) telles que <xref:System.Windows.Media.Animation.SplineColorKeyFrame> créent une transition variable entre des valeurs en fonction des valeurs de la propriété <xref:System.Windows.Media.Animation.SplineColorKeyFrame.KeySpline%2A>.  Dans cet exemple, la modification de couleur commence lentement et accélère de façon exponentielle vers la fin du segment temporel.  
+3.  <span data-ttu-id="57a99-111">Pendant les deux dernières secondes, utilise une instance de la <xref:System.Windows.Media.Animation.SplineColorKeyFrame> classe pour modifier la couleur à nouveau, cette fois du jaune en vert.</span><span class="sxs-lookup"><span data-stu-id="57a99-111">During the final two seconds, uses an instance of the <xref:System.Windows.Media.Animation.SplineColorKeyFrame> class to change the color again—this time from yellow back to green.</span></span> <span data-ttu-id="57a99-112">Les images clés spline comme <xref:System.Windows.Media.Animation.SplineColorKeyFrame> créer une transition entre des valeurs en fonction des valeurs de la <xref:System.Windows.Media.Animation.SplineColorKeyFrame.KeySpline%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="57a99-112">Spline key frames like <xref:System.Windows.Media.Animation.SplineColorKeyFrame> create a variable transition between values according to the values of the <xref:System.Windows.Media.Animation.SplineColorKeyFrame.KeySpline%2A> property.</span></span> <span data-ttu-id="57a99-113">Dans cet exemple, le changement de couleur commence lentement, puis accélère de façon exponentielle jusqu’à la fin du segment temporel.</span><span class="sxs-lookup"><span data-stu-id="57a99-113">In this example, the change in color begins slowly and speeds up exponentially toward the end of the time segment.</span></span>  
   
  [!code-csharp[keyframes_snip#ColorAnimationUsingKeyFramesWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_snip/CSharp/ColorAnimationUsingKeyFramesExample.cs#coloranimationusingkeyframeswholepage)]
  [!code-vb[keyframes_snip#ColorAnimationUsingKeyFramesWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/keyframes_snip/visualbasic/coloranimationusingkeyframesexample.vb#coloranimationusingkeyframeswholepage)]
- [!code-xml[keyframes_snip#ColorAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/ColorAnimationUsingKeyFramesExample.xaml#coloranimationusingkeyframeswholepage)]  
+ [!code-xaml[keyframes_snip#ColorAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/ColorAnimationUsingKeyFramesExample.xaml#coloranimationusingkeyframeswholepage)]  
   
- Pour obtenir l'exemple complet, consultez [Animation d'image clé, exemple](http://go.microsoft.com/fwlink/?LinkID=160012).  
+ <span data-ttu-id="57a99-114">Pour l’exemple complet, consultez la page [Animation d’image clé, exemple](http://go.microsoft.com/fwlink/?LinkID=160012).</span><span class="sxs-lookup"><span data-stu-id="57a99-114">For the complete sample, see [KeyFrame Animation Sample](http://go.microsoft.com/fwlink/?LinkID=160012).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Media.SolidColorBrush.Color%2A>   
- <xref:System.Windows.Media.SolidColorBrush>   
- <xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>   
- [Vue d'ensemble des animations d'image clé](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)   
- [Rubriques "Comment" relatives aux images clés](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="57a99-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="57a99-115">See Also</span></span>  
+ <xref:System.Windows.Media.SolidColorBrush.Color%2A>  
+ <xref:System.Windows.Media.SolidColorBrush>  
+ <xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>  
+ [<span data-ttu-id="57a99-116">Vue d'ensemble des animations d'image clé</span><span class="sxs-lookup"><span data-stu-id="57a99-116">Key-Frame Animations Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
+ [<span data-ttu-id="57a99-117">Guides pratiques relatifs aux images clés</span><span class="sxs-lookup"><span data-stu-id="57a99-117">Key-Frame How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)

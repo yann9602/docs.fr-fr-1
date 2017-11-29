@@ -1,110 +1,183 @@
 ---
-title: "Signatures de chiffrement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "chiffrement (.NET Framework), signatures"
-  - "signatures numériques"
-  - "signatures numériques, à propos de"
-  - "signatures numériques, générer"
-  - "signatures numériques, vérifier"
-  - "signatures numériques, signature XML"
-  - "chiffrement (.NET Framework), signatures"
-  - "générer des signatures"
-  - "sécurité (.NET Framework), signatures"
-  - "signatures, de chiffrement"
-  - "signer XML"
-  - "vérifier les signatures"
-  - "signature XML"
+title: Signatures de chiffrement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- digital signatures
+- cryptography [.NET Framework], signatures
+- digital signatures, XML signing
+- signatures, cryptographic
+- digital signatures, generating
+- verifying signatures
+- generating signatures
+- digital signatures, about
+- encryption [.NET Framework], signatures
+- security [.NET Framework], signatures
+- XML signing
+- digital signatures, verifying
+- signing XML
 ms.assetid: aa87cb7f-e608-4a81-948b-c9b8a1225783
-caps.latest.revision: 17
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 0651ae0fbc85b01d3e02354c06a9796804c8516e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Signatures de chiffrement
-<a name="top"></a> Les signatures numériques de chiffrement utilisent des algorithmes de clé publique pour assurer l'intégrité des données. Quand vous signez des données avec une signature numérique, un tiers peut vérifier la signature et prouver que les données viennent bien de vous et qu'elles n'ont pas été modifiées après que vous les avez signées. Pour plus d’informations sur les signatures numériques, consultez [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md).  
+# <a name="cryptographic-signatures"></a><span data-ttu-id="c05ab-102">Signatures de chiffrement</span><span class="sxs-lookup"><span data-stu-id="c05ab-102">Cryptographic Signatures</span></span>
+<span data-ttu-id="c05ab-103"><a name="top"></a> Les signatures numériques de chiffrement utilisent des algorithmes de clé publique pour assurer l'intégrité des données.</span><span class="sxs-lookup"><span data-stu-id="c05ab-103"><a name="top"></a> Cryptographic digital signatures use public key algorithms to provide data integrity.</span></span> <span data-ttu-id="c05ab-104">Quand vous signez des données avec une signature numérique, un tiers peut vérifier la signature et prouver que les données viennent bien de vous et qu'elles n'ont pas été modifiées après que vous les avez signées.</span><span class="sxs-lookup"><span data-stu-id="c05ab-104">When you sign data with a digital signature, someone else can verify the signature, and can prove that the data originated from you and was not altered after you signed it.</span></span> <span data-ttu-id="c05ab-105">Pour plus d’informations sur les signatures numériques, consultez [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md).</span><span class="sxs-lookup"><span data-stu-id="c05ab-105">For more information about digital signatures, see [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md).</span></span>  
   
- Cette rubrique explique comment générer et vérifier des signatures numériques en utilisant les classes de l'espace de noms <xref:System.Security.Cryptography?displayProperty=fullName>.  
+ <span data-ttu-id="c05ab-106">Cette rubrique explique comment générer et vérifier des signatures numériques en utilisant les classes de l'espace de noms <xref:System.Security.Cryptography?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c05ab-106">This topic explains how to generate and verify digital signatures using classes in the <xref:System.Security.Cryptography?displayProperty=nameWithType> namespace.</span></span>  
   
--   [Génération de signatures](#generate)  
+-   [<span data-ttu-id="c05ab-107">Génération de signatures</span><span class="sxs-lookup"><span data-stu-id="c05ab-107">Generating Signatures</span></span>](#generate)  
   
--   [Vérification des signatures](#verify)  
+-   [<span data-ttu-id="c05ab-108">Vérification des signatures</span><span class="sxs-lookup"><span data-stu-id="c05ab-108">Verifying Signatures</span></span>](#verify)  
   
 <a name="generate"></a>   
-## Génération de signatures  
- Les signatures numériques sont généralement appliquées à des valeurs de hachage qui représentent des données plus volumineuses. Dans l'exemple suivant, une signature numérique est appliquée à une valeur de hachage. Dans un premier temps, une nouvelle instance de la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> est créée pour générer une paire de clés publique\/privée. Ensuite, <xref:System.Security.Cryptography.RSACryptoServiceProvider> est passé à une nouvelle instance de la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter>. Cela a pour effet de transférer la clé privée à <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter>, qui effectue la signature numérique proprement dite. Pour pouvoir signer le code de hachage, vous devez au préalable spécifier l'algorithme de hachage à utiliser. Dans cet exemple, c'est l'algorithme SHA1 qui est utilisé. Enfin, la méthode <xref:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature%2A> est appelée pour effectuer la signature.  
+## <a name="generating-signatures"></a><span data-ttu-id="c05ab-109">Génération de signatures</span><span class="sxs-lookup"><span data-stu-id="c05ab-109">Generating Signatures</span></span>  
+ <span data-ttu-id="c05ab-110">Les signatures numériques sont généralement appliquées à des valeurs de hachage qui représentent des données plus volumineuses.</span><span class="sxs-lookup"><span data-stu-id="c05ab-110">Digital signatures are usually applied to hash values that represent larger data.</span></span> <span data-ttu-id="c05ab-111">Dans l'exemple suivant, une signature numérique est appliquée à une valeur de hachage.</span><span class="sxs-lookup"><span data-stu-id="c05ab-111">The following example applies a digital signature to a hash value.</span></span> <span data-ttu-id="c05ab-112">Dans un premier temps, une nouvelle instance de la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> est créée pour générer une paire de clés publique/privée.</span><span class="sxs-lookup"><span data-stu-id="c05ab-112">First, a new instance of the <xref:System.Security.Cryptography.RSACryptoServiceProvider> class is created to generate a public/private key pair.</span></span> <span data-ttu-id="c05ab-113">Ensuite, <xref:System.Security.Cryptography.RSACryptoServiceProvider> est passé à une nouvelle instance de la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> .</span><span class="sxs-lookup"><span data-stu-id="c05ab-113">Next, the <xref:System.Security.Cryptography.RSACryptoServiceProvider> is passed to a new instance of the <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> class.</span></span> <span data-ttu-id="c05ab-114">Cela a pour effet de transférer la clé privée à <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter>, qui effectue la signature numérique proprement dite.</span><span class="sxs-lookup"><span data-stu-id="c05ab-114">This transfers the private key to the <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter>, which actually performs the digital signing.</span></span> <span data-ttu-id="c05ab-115">Pour pouvoir signer le code de hachage, vous devez au préalable spécifier l'algorithme de hachage à utiliser.</span><span class="sxs-lookup"><span data-stu-id="c05ab-115">Before you can sign the hash code, you must specify a hash algorithm to use.</span></span> <span data-ttu-id="c05ab-116">Dans cet exemple, c'est l'algorithme SHA1 qui est utilisé.</span><span class="sxs-lookup"><span data-stu-id="c05ab-116">This example uses the SHA1 algorithm.</span></span> <span data-ttu-id="c05ab-117">Enfin, la méthode <xref:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature%2A> est appelée pour effectuer la signature.</span><span class="sxs-lookup"><span data-stu-id="c05ab-117">Finally, the <xref:System.Security.Cryptography.AsymmetricSignatureFormatter.CreateSignature%2A> method is called to perform the signing.</span></span>  
   
 ```vb  
-Imports System Imports System.Security.Cryptography Module Module1 Sub Main() 'The hash value to sign. Dim HashValue As Byte() = {59, 4, 248, 102, 77, 97, 142, 201, 210, 12, 224, 93, 25, 41, 100, 197, 213, 134, 130, 135} 'The value to hold the signed value. Dim SignedHashValue() As Byte 'Generate a public/private key pair. Dim RSA As New RSACryptoServiceProvider() 'Create an RSAPKCS1SignatureFormatter object and pass it 'the RSACryptoServiceProvider to transfer the private key. Dim RSAFormatter As New RSAPKCS1SignatureFormatter(RSA) 'Set the hash algorithm to SHA1. RSAFormatter.SetHashAlgorithm("SHA1") 'Create a signature for HashValue and assign it to 'SignedHashValue. SignedHashValue = RSAFormatter.CreateSignature(HashValue) End Sub End Module using System; using System.Security.Cryptography;  
+Imports System  
+Imports System.Security.Cryptography  
   
+Module Module1  
+    Sub Main()  
+        'The hash value to sign.  
+        Dim HashValue As Byte() = {59, 4, 248, 102, 77, 97, 142, 201, 210, 12, 224, 93, 25, 41, 100, 197, 213, 134, 130, 135}  
+  
+        'The value to hold the signed value.  
+        Dim SignedHashValue() As Byte  
+  
+        'Generate a public/private key pair.  
+        Dim RSA As New RSACryptoServiceProvider()  
+  
+        'Create an RSAPKCS1SignatureFormatter object and pass it   
+        'the RSACryptoServiceProvider to transfer the private key.  
+        Dim RSAFormatter As New RSAPKCS1SignatureFormatter(RSA)  
+  
+        'Set the hash algorithm to SHA1.  
+        RSAFormatter.SetHashAlgorithm("SHA1")  
+  
+        'Create a signature for HashValue and assign it to   
+        'SignedHashValue.  
+        SignedHashValue = RSAFormatter.CreateSignature(HashValue)  
+    End Sub  
+End Module  
+  
+using System;  
+using System.Security.Cryptography;  
 ```  
   
 ```csharp  
-class Class1 { static void Main() { //The hash value to sign. byte[] HashValue = {59,4,248,102,77,97,142,201,210,12,224,93,25,41,100,197,213,134,130,135}; //The value to hold the signed value. byte[] SignedHashValue; //Generate a public/private key pair. RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(); //Create an RSAPKCS1SignatureFormatter object and pass it the //RSACryptoServiceProvider to transfer the private key. RSAPKCS1SignatureFormatter RSAFormatter = new RSAPKCS1SignatureFormatter(RSA); //Set the hash algorithm to SHA1. RSAFormatter.SetHashAlgorithm("SHA1"); //Create a signature for HashValue and assign it to //SignedHashValue. SignedHashValue = RSAFormatter.CreateSignature(HashValue); } }  
+class Class1  
+{  
+   static void Main()  
+   {  
+      //The hash value to sign.  
+      byte[] HashValue = {59,4,248,102,77,97,142,201,210,12,224,93,25,41,100,197,213,134,130,135};  
+  
+      //The value to hold the signed value.  
+      byte[] SignedHashValue;  
+  
+      //Generate a public/private key pair.  
+      RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();  
+  
+      //Create an RSAPKCS1SignatureFormatter object and pass it the   
+      //RSACryptoServiceProvider to transfer the private key.  
+      RSAPKCS1SignatureFormatter RSAFormatter = new RSAPKCS1SignatureFormatter(RSA);  
+  
+      //Set the hash algorithm to SHA1.  
+      RSAFormatter.SetHashAlgorithm("SHA1");  
+  
+      //Create a signature for HashValue and assign it to   
+      //SignedHashValue.  
+      SignedHashValue = RSAFormatter.CreateSignature(HashValue);  
+   }  
+}  
 ```  
   
-### Signature des fichiers XML  
- Le .NET Framework fournit l’espace de noms <xref:System.Security.Cryptography.Xml>, qui vous permet de signer le XML. Il est important de signer le XML quand vous voulez vérifier qu'il provient bien d'une certaine source. Par exemple, si vous utilisez un service de cotation boursière qui utilise du XML, vous pouvez vérifier la source de ce dernier s'il est signé.  
+### <a name="signing-xml-files"></a><span data-ttu-id="c05ab-118">Signature des fichiers XML</span><span class="sxs-lookup"><span data-stu-id="c05ab-118">Signing XML Files</span></span>  
+ <span data-ttu-id="c05ab-119">Le .NET Framework fournit l’espace de noms <xref:System.Security.Cryptography.Xml> , qui vous permet de signer le XML.</span><span class="sxs-lookup"><span data-stu-id="c05ab-119">The .NET Framework provides the <xref:System.Security.Cryptography.Xml> namespace, which enables you sign XML.</span></span> <span data-ttu-id="c05ab-120">Il est important de signer le XML quand vous voulez vérifier qu'il provient bien d'une certaine source.</span><span class="sxs-lookup"><span data-stu-id="c05ab-120">Signing XML is important when you want to verify that the XML originates from a certain source.</span></span> <span data-ttu-id="c05ab-121">Par exemple, si vous utilisez un service de cotation boursière qui utilise du XML, vous pouvez vérifier la source de ce dernier s'il est signé.</span><span class="sxs-lookup"><span data-stu-id="c05ab-121">For example, if you are using a stock quote service that uses XML, you can verify the source of the XML if it is signed.</span></span>  
   
- Les classes de cet espace de noms suivent les [recommandations en matière de syntaxe et de traitement des signatures XML](http://go.microsoft.com/fwlink/?LinkId=136777) du World Wide Web Consortium.  
+ <span data-ttu-id="c05ab-122">Les classes de cet espace de noms suivent les [recommandations en matière de syntaxe et de traitement des signatures XML](http://go.microsoft.com/fwlink/?LinkId=136777) du World Wide Web Consortium.</span><span class="sxs-lookup"><span data-stu-id="c05ab-122">The classes in this namespace follow the [XML-Signature Syntax and Processing recommendation](http://go.microsoft.com/fwlink/?LinkId=136777) from the World Wide Web Consortium.</span></span>  
   
- [Retour au début](#top)  
+ [<span data-ttu-id="c05ab-123">Retour au début</span><span class="sxs-lookup"><span data-stu-id="c05ab-123">Back to top</span></span>](#top)  
   
 <a name="verify"></a>   
-## Vérification des signatures  
- Pour vérifier que les données ont été signées par un tiers donné, vous devez disposer des informations suivantes :  
+## <a name="verifying-signatures"></a><span data-ttu-id="c05ab-124">Vérification des signatures</span><span class="sxs-lookup"><span data-stu-id="c05ab-124">Verifying Signatures</span></span>  
+ <span data-ttu-id="c05ab-125">Pour vérifier que les données ont été signées par un tiers donné, vous devez disposer des informations suivantes :</span><span class="sxs-lookup"><span data-stu-id="c05ab-125">To verify that data was signed by a particular party, you must have the following information:</span></span>  
   
--   la clé publique du tiers qui a signé les données ;  
+-   <span data-ttu-id="c05ab-126">la clé publique du tiers qui a signé les données ;</span><span class="sxs-lookup"><span data-stu-id="c05ab-126">The public key of the party that signed the data.</span></span>  
   
--   la signature numérique ;  
+-   <span data-ttu-id="c05ab-127">la signature numérique ;</span><span class="sxs-lookup"><span data-stu-id="c05ab-127">The digital signature.</span></span>  
   
--   les données qui ont été signées ;  
+-   <span data-ttu-id="c05ab-128">les données qui ont été signées ;</span><span class="sxs-lookup"><span data-stu-id="c05ab-128">The data that was signed.</span></span>  
   
--   l'algorithme de hachage utilisé par le signataire.  
+-   <span data-ttu-id="c05ab-129">l'algorithme de hachage utilisé par le signataire.</span><span class="sxs-lookup"><span data-stu-id="c05ab-129">The hash algorithm used by the signer.</span></span>  
   
- Pour vérifier une signature signée par la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter>, utilisez la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter>. La clé publique du signataire doit être fournie à la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter>. Vous aurez besoin des valeurs du modulo et de l'exposant pour spécifier la clé publique. \(Le tiers qui a généré la paire de clés publique\/privée doit fournir ces valeurs.\) Commencez par créer un objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> pour contenir la clé publique chargée de vérifier la signature, puis initialisez une structure <xref:System.Security.Cryptography.RSAParameters> avec les valeurs du modulo et de l’exposant qui spécifient la clé publique.  
+ <span data-ttu-id="c05ab-130">Pour vérifier une signature signée par la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> , utilisez la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> .</span><span class="sxs-lookup"><span data-stu-id="c05ab-130">To verify a signature signed by the <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> class, use the <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> class.</span></span> <span data-ttu-id="c05ab-131">La clé publique du signataire doit être fournie à la classe <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> .</span><span class="sxs-lookup"><span data-stu-id="c05ab-131">The <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> class must be supplied the public key of the signer.</span></span> <span data-ttu-id="c05ab-132">Vous aurez besoin des valeurs du modulo et de l'exposant pour spécifier la clé publique.</span><span class="sxs-lookup"><span data-stu-id="c05ab-132">You will need the values of the modulus and the exponent to specify the public key.</span></span> <span data-ttu-id="c05ab-133">(Le tiers qui a généré la paire de clés publique/privée doit fournir ces valeurs.) Tout d’abord créer un <xref:System.Security.Cryptography.RSACryptoServiceProvider> objet pour contenir la clé publique qui vérifie la signature, puis initialisez une <xref:System.Security.Cryptography.RSAParameters> structure et les valeurs du modulo et exposant qui spécifient la clé publique.</span><span class="sxs-lookup"><span data-stu-id="c05ab-133">(The party that generated the public/private key pair should provide these values.) First create an <xref:System.Security.Cryptography.RSACryptoServiceProvider> object to hold the public key that will verify the signature, and then initialize an <xref:System.Security.Cryptography.RSAParameters> structure to the modulus and exponent values that specify the public key.</span></span>  
   
- Le code suivant illustre la création d’une structure <xref:System.Security.Cryptography.RSAParameters>. La propriété `Modulus` est définie avec la valeur d'un tableau d'octets nommé `ModulusData`, tandis que la propriété `Exponent` est définie avec la valeur d'un tableau d'octets nommé `ExponentData`.  
+ <span data-ttu-id="c05ab-134">Le code suivant illustre la création d’une structure <xref:System.Security.Cryptography.RSAParameters> .</span><span class="sxs-lookup"><span data-stu-id="c05ab-134">The following code shows the creation of an <xref:System.Security.Cryptography.RSAParameters> structure.</span></span> <span data-ttu-id="c05ab-135">La propriété `Modulus` est définie avec la valeur d'un tableau d'octets nommé `ModulusData` , tandis que la propriété `Exponent` est définie avec la valeur d'un tableau d'octets nommé `ExponentData`.</span><span class="sxs-lookup"><span data-stu-id="c05ab-135">The `Modulus` property is set to the value of a byte array called `ModulusData` and the `Exponent` property is set to the value of a byte array called `ExponentData`.</span></span>  
   
 ```vb  
-Dim RSAKeyInfo As RSAParameters RSAKeyInfo.Modulus = ModulusData RSAKeyInfo.Exponent = ExponentData  
-  
+Dim RSAKeyInfo As RSAParameters  
+RSAKeyInfo.Modulus = ModulusData  
+RSAKeyInfo.Exponent = ExponentData  
 ```  
   
 ```csharp  
-RSAParameters RSAKeyInfo; RSAKeyInfo.Modulus = ModulusData; RSAKeyInfo.Exponent = ExponentData;  
+RSAParameters RSAKeyInfo;  
+RSAKeyInfo.Modulus = ModulusData;  
+RSAKeyInfo.Exponent = ExponentData;  
 ```  
   
- Après avoir créé l’objet <xref:System.Security.Cryptography.RSAParameters>, vous pouvez initialiser une nouvelle instance de la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> avec les valeurs spécifiées dans <xref:System.Security.Cryptography.RSAParameters>. À son tour, la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> est transmise au constructeur d'un <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> pour transférer la clé.  
+ <span data-ttu-id="c05ab-136">Après avoir créé l’objet <xref:System.Security.Cryptography.RSAParameters> , vous pouvez initialiser une nouvelle instance de la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> avec les valeurs spécifiées dans <xref:System.Security.Cryptography.RSAParameters>.</span><span class="sxs-lookup"><span data-stu-id="c05ab-136">After you have created the <xref:System.Security.Cryptography.RSAParameters> object, you can initialize a new instance of the <xref:System.Security.Cryptography.RSACryptoServiceProvider> class to the values specified in <xref:System.Security.Cryptography.RSAParameters>.</span></span> <span data-ttu-id="c05ab-137">À son tour, la classe <xref:System.Security.Cryptography.RSACryptoServiceProvider> est transmise au constructeur d'un <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> pour transférer la clé.</span><span class="sxs-lookup"><span data-stu-id="c05ab-137">The <xref:System.Security.Cryptography.RSACryptoServiceProvider> is, in turn, passed to the constructor of an <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> to transfer the key.</span></span>  
   
- L'exemple suivant illustre ce processus. Dans cet exemple, `HashValue` et `SignedHashValue` sont les tableaux d'octets fournis par un tiers distant. Le tiers distant a signé `HashValue` à l'aide de l'algorithme SHA1, générant ainsi la signature numérique `SignedHashValue`. La  
+ <span data-ttu-id="c05ab-138">L'exemple suivant illustre ce processus.</span><span class="sxs-lookup"><span data-stu-id="c05ab-138">The following example illustrates this process.</span></span> <span data-ttu-id="c05ab-139">Dans cet exemple, `HashValue` et `SignedHashValue` sont les tableaux d'octets fournis par un tiers distant.</span><span class="sxs-lookup"><span data-stu-id="c05ab-139">In this example, `HashValue` and `SignedHashValue` are arrays of bytes provided by a remote party.</span></span> <span data-ttu-id="c05ab-140">Le tiers distant a signé `HashValue` à l'aide de l'algorithme SHA1, générant ainsi la signature numérique `SignedHashValue`.</span><span class="sxs-lookup"><span data-stu-id="c05ab-140">The remote party has signed the `HashValue` using the SHA1 algorithm, producing the digital signature `SignedHashValue`.</span></span> <span data-ttu-id="c05ab-141">La clé publique du signataire doit être fournie à la classe</span><span class="sxs-lookup"><span data-stu-id="c05ab-141">The</span></span>  
   
- méthode <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=fullName> vérifie que la signature numérique est valide et qu'elle a été utilisée pour signer `HashValue`.  
+ <span data-ttu-id="c05ab-142">méthode <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType> vérifie que la signature numérique est valide et qu'elle a été utilisée pour signer `HashValue`.</span><span class="sxs-lookup"><span data-stu-id="c05ab-142"><xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter.VerifySignature%2A?displayProperty=nameWithType> method verifies that the digital signature is valid and was used to sign the `HashValue`.</span></span>  
   
 ```vb  
-Dim RSA As New RSACryptoServiceProvider() RSA.ImportParameters(RSAKeyInfo) Dim RSADeformatter As New RSAPKCS1SignatureDeformatter(RSA) RSADeformatter.SetHashAlgorithm("SHA1") If RSADeformatter.VerifySignature(HashValue, SignedHashValue) Then Console.WriteLine("The signature is valid.") Else Console.WriteLine("The signture is not valid.") End If  
-  
+Dim RSA As New RSACryptoServiceProvider()  
+RSA.ImportParameters(RSAKeyInfo)  
+Dim RSADeformatter As New RSAPKCS1SignatureDeformatter(RSA)  
+RSADeformatter.SetHashAlgorithm("SHA1")  
+If RSADeformatter.VerifySignature(HashValue, SignedHashValue) Then  
+   Console.WriteLine("The signature is valid.")  
+Else  
+   Console.WriteLine("The signture is not valid.")  
+End If  
 ```  
   
 ```csharp  
-RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(); RSA.ImportParameters(RSAKeyInfo); RSAPKCS1SignatureDeformatter RSADeformatter = new RSAPKCS1SignatureDeformatter(RSA); RSADeformatter.SetHashAlgorithm("SHA1"); if(RSADeformatter.VerifySignature(HashValue, SignedHashValue)) { Console.WriteLine("The signature is valid."); } else { Console.WriteLine("The signature is not valid."); }  
+RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();  
+RSA.ImportParameters(RSAKeyInfo);  
+RSAPKCS1SignatureDeformatter RSADeformatter = new RSAPKCS1SignatureDeformatter(RSA);  
+RSADeformatter.SetHashAlgorithm("SHA1");  
+if(RSADeformatter.VerifySignature(HashValue, SignedHashValue))  
+{  
+   Console.WriteLine("The signature is valid.");  
+}  
+else  
+{  
+   Console.WriteLine("The signature is not valid.");  
+}  
 ```  
   
- Ce fragment de code affiche « `The signature is valid` » si la signature est valide et « `The signature is not valid` » si elle ne l'est pas.  
+ <span data-ttu-id="c05ab-143">Ce fragment de code affiche «`The signature is valid`» si la signature est valide et «`The signature is not valid`» si elle ne l'est pas.</span><span class="sxs-lookup"><span data-stu-id="c05ab-143">This code fragment will display "`The signature is valid`" if the signature is valid and "`The signature is not valid`" if it is not.</span></span>  
   
-## Voir aussi  
- [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a><span data-ttu-id="c05ab-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c05ab-144">See Also</span></span>  
+ [<span data-ttu-id="c05ab-145">Cryptographic Services</span><span class="sxs-lookup"><span data-stu-id="c05ab-145">Cryptographic Services</span></span>](../../../docs/standard/security/cryptographic-services.md)

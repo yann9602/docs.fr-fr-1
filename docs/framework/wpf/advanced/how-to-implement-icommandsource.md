@@ -1,70 +1,74 @@
 ---
-title: "Comment&#160;: impl&#233;menter ICommandSource | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "interfaces ICommandSource, implémenter"
-  - "interfaces, ICommandSource, implémenter"
+title: "Comment : implémenter ICommandSource"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: ICommandSource interfaces [WPF], implementing
 ms.assetid: 7452dd39-6e11-44bf-806a-31d87f3772ac
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bdff5ebeb51daff4e8848e9a7c8282c2eee6f208
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: impl&#233;menter ICommandSource
-Cet exemple indique comment créer une source de commande en implémentant <xref:System.Windows.Input.ICommandSource>.  Une source de commande est un objet qui sait comment appeler une commande.  L'interface <xref:System.Windows.Input.ICommandSource> expose trois membres : <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> et <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.  <xref:System.Windows.Input.ICommandSource.Command%2A> est la commande qui sera invoquée.  <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> est un type de données défini par l'utilisateur qui est transmis de la source de commande à la méthode qui gère la commande.  <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> est l'objet sur lequel est exécutée la commande.  
+# <a name="how-to-implement-icommandsource"></a><span data-ttu-id="c8521-102">Comment : implémenter ICommandSource</span><span class="sxs-lookup"><span data-stu-id="c8521-102">How to: Implement ICommandSource</span></span>
+<span data-ttu-id="c8521-103">Cet exemple montre comment créer une source de commande en implémentant <xref:System.Windows.Input.ICommandSource>.</span><span class="sxs-lookup"><span data-stu-id="c8521-103">This example shows how to create a command source by implementing <xref:System.Windows.Input.ICommandSource>.</span></span>  <span data-ttu-id="c8521-104">Une source de commande est un objet qui sait comment appeler une commande.</span><span class="sxs-lookup"><span data-stu-id="c8521-104">A command source is an object that knows how to invoke a command.</span></span>  <span data-ttu-id="c8521-105">Le <xref:System.Windows.Input.ICommandSource> interface expose trois membres : <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, et <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.</span><span class="sxs-lookup"><span data-stu-id="c8521-105">The <xref:System.Windows.Input.ICommandSource> interface exposes three members: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, and <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.</span></span>  <span data-ttu-id="c8521-106"><xref:System.Windows.Input.ICommandSource.Command%2A>est la commande qui sera invoquée.</span><span class="sxs-lookup"><span data-stu-id="c8521-106"><xref:System.Windows.Input.ICommandSource.Command%2A> is the command which will be invoked.</span></span> <span data-ttu-id="c8521-107">Le <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> est un type de données défini par l’utilisateur qui est passé à partir de la source de commande à la méthode qui gère la commande.</span><span class="sxs-lookup"><span data-stu-id="c8521-107">The <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> is a user-defined data type which is passed from the command source to the method which handles the command.</span></span> <span data-ttu-id="c8521-108">Le <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> est l’objet qui est en cours d’exécution sur la commande.</span><span class="sxs-lookup"><span data-stu-id="c8521-108">The <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> is the object that the command is being executed on.</span></span>  
   
- Dans cet exemple, une classe qui sous\-classe le contrôle <xref:System.Windows.Controls.Slider> et implémente <xref:System.Windows.Input.ICommandSource> est créée.  
+ <span data-ttu-id="c8521-109">Dans cet exemple, une classe est créée qui sous-classe le <xref:System.Windows.Controls.Slider> contrôle et met en œuvre <xref:System.Windows.Input.ICommandSource>.</span><span class="sxs-lookup"><span data-stu-id="c8521-109">In this example, a class is created which subclasses the <xref:System.Windows.Controls.Slider> control and implements <xref:System.Windows.Input.ICommandSource>.</span></span>  
   
-## Exemple  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit plusieurs classes qui implémentent <xref:System.Windows.Input.ICommandSource>, comme <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.MenuItem> et <xref:System.Windows.Controls.ListBoxItem>.  Une source de commande définit comment appeler une commande.  <xref:System.Windows.Controls.Button> et <xref:System.Windows.Controls.MenuItem> invoquent une commande lorsque vous cliquez dessus.  <xref:System.Windows.Controls.ListBoxItem> appelle une commande lorsque l'utilisateur double\-clique dessus.  Ces classes ne deviennent une source de commande que lorsque leur propriété <xref:System.Windows.Input.ICommandSource.Command%2A> est définie.  
+## <a name="example"></a><span data-ttu-id="c8521-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="c8521-110">Example</span></span>  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="c8521-111">fournit un certain nombre de classes qui implémentent <xref:System.Windows.Input.ICommandSource>, tel que <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.MenuItem>, et <xref:System.Windows.Controls.ListBoxItem>.</span><span class="sxs-lookup"><span data-stu-id="c8521-111"> provides a number of classes which implement <xref:System.Windows.Input.ICommandSource>, such as <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.MenuItem>, and <xref:System.Windows.Controls.ListBoxItem>.</span></span>  <span data-ttu-id="c8521-112">Une source de commande définit comment appeler une commande.</span><span class="sxs-lookup"><span data-stu-id="c8521-112">A command source defines how it invokes a command.</span></span>   <span data-ttu-id="c8521-113"><xref:System.Windows.Controls.Button>et <xref:System.Windows.Controls.MenuItem> appeler une commande lorsque vous cliquiez dessus.</span><span class="sxs-lookup"><span data-stu-id="c8521-113"><xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.MenuItem> invoke a command when they are clicked.</span></span>  <span data-ttu-id="c8521-114">A <xref:System.Windows.Controls.ListBoxItem> appelle une commande lorsque le double-clic sur.</span><span class="sxs-lookup"><span data-stu-id="c8521-114">A <xref:System.Windows.Controls.ListBoxItem> invokes a command when it is double clicked.</span></span> <span data-ttu-id="c8521-115">Ces classes ne deviennent une commande source quand leur <xref:System.Windows.Input.ICommandSource.Command%2A> est définie.</span><span class="sxs-lookup"><span data-stu-id="c8521-115">These classes only become a command source when their <xref:System.Windows.Input.ICommandSource.Command%2A> property is set.</span></span>  
   
- Dans cet exemple, nous appellerons la commande lorsque le curseur sera déplacé, ou plus précisément lorsque la propriété <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> sera modifiée.  
+ <span data-ttu-id="c8521-116">Pour cet exemple, nous appellerons la commande lorsque le curseur est déplacé, ou plus précisément, lorsque le <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> propriété est modifiée.</span><span class="sxs-lookup"><span data-stu-id="c8521-116">For this example we will invoke the command when the slider is moved, or more accurately, when the <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property is changed.</span></span>  
   
- Les éléments suivants composent la définition de classe.  
+ <span data-ttu-id="c8521-117">Voici la définition de classe.</span><span class="sxs-lookup"><span data-stu-id="c8521-117">The following is the class definition.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceClassDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourceclassdefinition)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceClassDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourceclassdefinition)]  
   
- L'étape suivante consiste à implémenter les membres <xref:System.Windows.Input.ICommandSource>.  Dans cet exemple, les propriétés sont implémentées en tant qu'objets <xref:System.Windows.DependencyProperty>.  Cela permet aux propriétés d'utiliser la liaison de données.  Pour plus d'informations sur la classe <xref:System.Windows.DependencyProperty>, consultez [Vue d'ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  Pour plus d'informations sur la liaison de données, consultez [Vue d'ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+ <span data-ttu-id="c8521-118">L’étape suivante consiste à implémenter le <xref:System.Windows.Input.ICommandSource> membres.</span><span class="sxs-lookup"><span data-stu-id="c8521-118">The next step is to implement the <xref:System.Windows.Input.ICommandSource> members.</span></span>  <span data-ttu-id="c8521-119">Dans cet exemple, les propriétés sont implémentées en tant que <xref:System.Windows.DependencyProperty> objets.</span><span class="sxs-lookup"><span data-stu-id="c8521-119">In this example, the properties are implemented as <xref:System.Windows.DependencyProperty> objects.</span></span>  <span data-ttu-id="c8521-120">Ainsi, les propriétés à utiliser la liaison de données.</span><span class="sxs-lookup"><span data-stu-id="c8521-120">This enables the properties to use data binding.</span></span>  <span data-ttu-id="c8521-121">Pour plus d’informations sur la <xref:System.Windows.DependencyProperty> de classe, consultez la [vue d’ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).</span><span class="sxs-lookup"><span data-stu-id="c8521-121">For more information about the <xref:System.Windows.DependencyProperty> class, see the [Dependency Properties Overview](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).</span></span>  <span data-ttu-id="c8521-122">Pour plus d’informations sur la liaison de données, consultez la [vue d’ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md).</span><span class="sxs-lookup"><span data-stu-id="c8521-122">For more information about data binding, see the [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).</span></span>  
   
- Seule la propriété <xref:System.Windows.Input.ICommandSource.Command%2A> est illustrée ici.  
+ <span data-ttu-id="c8521-123">Uniquement les <xref:System.Windows.Input.ICommandSource.Command%2A> propriété est illustrée ici.</span><span class="sxs-lookup"><span data-stu-id="c8521-123">Only the <xref:System.Windows.Input.ICommandSource.Command%2A> property is shown here.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceCommandPropertyDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourcecommandpropertydefinition)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceCommandPropertyDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourcecommandpropertydefinition)]  
   
- Les éléments suivants représentent le rappel de changement <xref:System.Windows.DependencyProperty>.  
+ <span data-ttu-id="c8521-124">Voici le <xref:System.Windows.DependencyProperty> modifier le rappel.</span><span class="sxs-lookup"><span data-stu-id="c8521-124">The following is the <xref:System.Windows.DependencyProperty> change callback.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceCommandChanged](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourcecommandchanged)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceCommandChanged](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourcecommandchanged)]  
   
- L'étape suivante consiste à ajouter et supprimer la commande associée à la source de commande.  La propriété <xref:System.Windows.Input.ICommandSource.Command%2A> ne peut pas être remplacée simplement à l'ajout d'une nouvelle commande car les gestionnaires d'événements éventuellement associés à la commande précédente doivent être supprimés en premier.  
+ <span data-ttu-id="c8521-125">L’étape suivante consiste à ajouter et supprimer la commande qui est associée à la source de commande.</span><span class="sxs-lookup"><span data-stu-id="c8521-125">The next step is to add and remove the command which is associated with the command source.</span></span>  <span data-ttu-id="c8521-126">Le <xref:System.Windows.Input.ICommandSource.Command%2A> propriété ne peut pas être remplacée simplement une nouvelle commande est ajoutée, car les gestionnaires d’événements associés à la commande précédente, doivent être supprimés en premier.</span><span class="sxs-lookup"><span data-stu-id="c8521-126">The <xref:System.Windows.Input.ICommandSource.Command%2A> property cannot simply be overwritten when a new command is added, because the event handlers associated with the previous command, if there was one, must be removed first.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandSourceHookUnHookCommands](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandsourcehookunhookcommands)]
  [!code-vb[ImplementICommandSource#ImplementICommandSourceHookUnHookCommands](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandsourcehookunhookcommands)]  
   
- La dernière étape consiste à créer la logique du gestionnaire <xref:System.Windows.Input.ICommand.CanExecuteChanged> et la méthode <xref:System.Windows.Input.ICommand.Execute%2A>.  
+ <span data-ttu-id="c8521-127">La dernière étape consiste à créer la logique pour le <xref:System.Windows.Input.ICommand.CanExecuteChanged> gestionnaire et <xref:System.Windows.Input.ICommand.Execute%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="c8521-127">The last step is to create logic for the <xref:System.Windows.Input.ICommand.CanExecuteChanged> handler and the <xref:System.Windows.Input.ICommand.Execute%2A> method.</span></span>  
   
- L'événement <xref:System.Windows.Input.ICommand.CanExecuteChanged> informe la source de commande que la possibilité d'exécuter la commande sur la cible de commande actuelle a peut\-être changé.  Lorsqu'une source de commande reçoit cet événement, elle appelle généralement la méthode <xref:System.Windows.Input.ICommand.CanExecute%2A> sur la commande.  Si la commande ne peut pas s'exécuter sur la cible de la commande actuelle, la source de commande se désactivera d'elle\-même en règle générale.  Si la commande peut s'exécuter sur la cible, la source de commande s'activera d'elle\-même en règle générale.  
+ <span data-ttu-id="c8521-128">Le <xref:System.Windows.Input.ICommand.CanExecuteChanged> événements informe la source de commande que la capacité de la commande à exécuter sur la cible de commande actuelle a peut-être changé.</span><span class="sxs-lookup"><span data-stu-id="c8521-128">The <xref:System.Windows.Input.ICommand.CanExecuteChanged> event notifies the command source that the ability of the command to execute on the current command target may have changed.</span></span>  <span data-ttu-id="c8521-129">Lorsqu’une source de commande reçoit cet événement, elle appelle généralement la <xref:System.Windows.Input.ICommand.CanExecute%2A> méthode sur la commande.</span><span class="sxs-lookup"><span data-stu-id="c8521-129">When a command source receives this event, it typically calls the <xref:System.Windows.Input.ICommand.CanExecute%2A> method on the command.</span></span>  <span data-ttu-id="c8521-130">Si la commande ne peut pas s’exécuter sur la cible de commande actuelle, la source de commande est généralement désactivée.</span><span class="sxs-lookup"><span data-stu-id="c8521-130">If the command cannot execute on the current command target, the command source will typically disable itself.</span></span>  <span data-ttu-id="c8521-131">Si la commande peut s’exécuter sur la cible de commande actuelle, la source de commande activera généralement lui-même.</span><span class="sxs-lookup"><span data-stu-id="c8521-131">If the command can execute on the current command target, the command source will typically enable itself.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandCanExecuteChanged](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandcanexecutechanged)]
  [!code-vb[ImplementICommandSource#ImplementICommandCanExecuteChanged](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandcanexecutechanged)]  
   
- La dernière étape consiste en la méthode <xref:System.Windows.Input.ICommand.Execute%2A>.  Si la commande est un <xref:System.Windows.Input.RoutedCommand>, la méthode <xref:System.Windows.Input.RoutedCommand><xref:System.Windows.Input.RoutedCommand.Execute%2A> est appelée ; sinon, la méthode <xref:System.Windows.Input.ICommand><xref:System.Windows.Input.ICommand.Execute%2A> est appelée.  
+ <span data-ttu-id="c8521-132">La dernière étape est la <xref:System.Windows.Input.ICommand.Execute%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="c8521-132">The last step is the <xref:System.Windows.Input.ICommand.Execute%2A> method.</span></span>  <span data-ttu-id="c8521-133">Si la commande est un <xref:System.Windows.Input.RoutedCommand>, le <xref:System.Windows.Input.RoutedCommand> <xref:System.Windows.Input.RoutedCommand.Execute%2A> méthode est appelée ; sinon, le <xref:System.Windows.Input.ICommand> <xref:System.Windows.Input.ICommand.Execute%2A> méthode est appelée.</span><span class="sxs-lookup"><span data-stu-id="c8521-133">If the command is a <xref:System.Windows.Input.RoutedCommand>, the <xref:System.Windows.Input.RoutedCommand> <xref:System.Windows.Input.RoutedCommand.Execute%2A> method is called; otherwise, the <xref:System.Windows.Input.ICommand> <xref:System.Windows.Input.ICommand.Execute%2A> method is called.</span></span>  
   
  [!code-csharp[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandexecute)]
  [!code-vb[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandexecute)]  
   
-## Voir aussi  
- <xref:System.Windows.Input.ICommandSource>   
- <xref:System.Windows.Input.ICommand>   
- <xref:System.Windows.Input.RoutedCommand>   
- [Vue d'ensemble des commandes](../../../../docs/framework/wpf/advanced/commanding-overview.md)
+## <a name="see-also"></a><span data-ttu-id="c8521-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c8521-134">See Also</span></span>  
+ <xref:System.Windows.Input.ICommandSource>  
+ <xref:System.Windows.Input.ICommand>  
+ <xref:System.Windows.Input.RoutedCommand>  
+ [<span data-ttu-id="c8521-135">Vue d’ensemble des commandes</span><span class="sxs-lookup"><span data-stu-id="c8521-135">Commanding Overview</span></span>](../../../../docs/framework/wpf/advanced/commanding-overview.md)

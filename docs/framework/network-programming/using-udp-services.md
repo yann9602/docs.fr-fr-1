@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - protocols, UDP
 - network resources, UDP
@@ -25,33 +23,32 @@ helpviewer_keywords:
 - sending data, UDP
 - application protocols, UDP
 ms.assetid: d5c3477a-e798-454c-a890-738ba14c5707
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2986feda76b035e3651712609364b4194378a64c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c535710175423ebd0d163edc9bce78cfb2e18168
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="using-udp-services"></a>Utilisation des services UDP
-La classe <xref:System.Net.Sockets.UdpClient> communique avec les services réseau à l’aide d’UDP. Les méthodes et propriétés de la classe <xref:System.Net.Sockets.UdpClient> assurent l’abstraction des informations nécessaires pour créer un <xref:System.Net.Sockets.Socket> permettant l’envoi et la réception de données avec le protocole UDP.  
+# <a name="using-udp-services"></a><span data-ttu-id="b7a9e-102">Utilisation des services UDP</span><span class="sxs-lookup"><span data-stu-id="b7a9e-102">Using UDP Services</span></span>
+<span data-ttu-id="b7a9e-103">La classe <xref:System.Net.Sockets.UdpClient> communique avec les services réseau à l’aide d’UDP.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-103">The <xref:System.Net.Sockets.UdpClient> class communicates with network services using UDP.</span></span> <span data-ttu-id="b7a9e-104">Les méthodes et propriétés de la classe <xref:System.Net.Sockets.UdpClient> assurent l’abstraction des informations nécessaires pour créer un <xref:System.Net.Sockets.Socket> permettant l’envoi et la réception de données avec le protocole UDP.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-104">The properties and methods of the <xref:System.Net.Sockets.UdpClient> class abstract the details of creating a <xref:System.Net.Sockets.Socket> for requesting and receiving data using UDP.</span></span>  
   
- UDP (User Datagram Protocol) est un protocole simple qui essaie de fournir les données à un hôte distant le plus efficacement possible. Toutefois, comme le protocole UDP est un protocole non connecté, les datagrammes UDP envoyés au point de terminaison distant ne sont pas assurés d’arriver, ou d’arriver dans la même séquence que celle dans laquelle ils ont été envoyés. Les applications qui utilisent le protocole UDP doivent être en mesure de gérer les datagrammes manquants, en double et hors séquence.  
+ <span data-ttu-id="b7a9e-105">UDP (User Datagram Protocol) est un protocole simple qui essaie de fournir les données à un hôte distant le plus efficacement possible.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-105">User Datagram Protocol (UDP) is a simple protocol that makes a best effort to deliver data to a remote host.</span></span> <span data-ttu-id="b7a9e-106">Toutefois, comme le protocole UDP est un protocole non connecté, les datagrammes UDP envoyés au point de terminaison distant ne sont pas assurés d’arriver, ou d’arriver dans la même séquence que celle dans laquelle ils ont été envoyés.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-106">However, because the UDP protocol is a connectionless protocol, UDP datagrams sent to the remote endpoint are not guaranteed to arrive, nor are they guaranteed to arrive in the same sequence in which they are sent.</span></span> <span data-ttu-id="b7a9e-107">Les applications qui utilisent le protocole UDP doivent être en mesure de gérer les datagrammes manquants, en double et hors séquence.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-107">Applications that use UDP must be prepared to handle missing, duplicate, and out-of-sequence datagrams.</span></span>  
   
- Pour envoyer un datagramme avec une connexion UDP, vous devez connaître l’adresse de l’appareil réseau qui héberge le service dont vous avez besoin, ainsi que le numéro de port UDP utilisé par ce service pour communiquer. L’IANA (Internet Assigned Numbers Authority) définit les numéros de port des services courants (consultez www.iana.org/assignments/port-numbers). Les services qui ne figurent pas dans la liste de l’IANA peuvent avoir des numéros de port compris dans la plage 1 024 à 65 535.  
+ <span data-ttu-id="b7a9e-108">Pour envoyer un datagramme avec une connexion UDP, vous devez connaître l’adresse de l’appareil réseau qui héberge le service dont vous avez besoin, ainsi que le numéro de port UDP utilisé par ce service pour communiquer.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-108">To send a datagram using UDP, you must know the network address of the network device hosting the service you need and the UDP port number that the service uses to communicate.</span></span> <span data-ttu-id="b7a9e-109">L’IANA (Internet Assigned Numbers Authority) définit les numéros de port des services courants (consultez www.iana.org/assignments/port-numbers).</span><span class="sxs-lookup"><span data-stu-id="b7a9e-109">The Internet Assigned Numbers Authority (Iana) defines port numbers for common services (see www.iana.org/assignments/port-numbers).</span></span> <span data-ttu-id="b7a9e-110">Les services qui ne figurent pas dans la liste de l’IANA peuvent avoir des numéros de port compris dans la plage 1 024 à 65 535.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-110">Services not on the Iana list can have port numbers in the range 1,024 to 65,535.</span></span>  
   
- Des adresses réseau spéciales sont utilisées pour prendre en charge les messages de diffusion UDP sur les réseaux IP. L’exemple suivant utilise la famille d’adresses IP version 4 pour Internet.  
+ <span data-ttu-id="b7a9e-111">Des adresses réseau spéciales sont utilisées pour prendre en charge les messages de diffusion UDP sur les réseaux IP.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-111">Special network addresses are used to support UDP broadcast messages on IP-based networks.</span></span> <span data-ttu-id="b7a9e-112">L’exemple suivant utilise la famille d’adresses IP version 4 pour Internet.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-112">The following discussion uses the IP version 4 address family used on the Internet as an example.</span></span>  
   
- Les adresses IP version 4 spécifient les adresses réseau sur 32 bits. Pour les adresses de classe C utilisant un masque de sous-réseau 255.255.255.0, ces bits sont divisés en quatre octets. Au format décimal, les quatre octets s’écrivent selon la notation connue de quatre nombres séparés par un point (par exemple, 192.168.100.2). Les deux premiers octets (192.168 dans cet exemple) forment le numéro du réseau, le troisième octet (100) définit le sous-réseau et le dernier octet (2) est l’identificateur de l’hôte.  
+ <span data-ttu-id="b7a9e-113">Les adresses IP version 4 spécifient les adresses réseau sur 32 bits.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-113">IP version 4 addresses use 32 bits to specify a network address.</span></span> <span data-ttu-id="b7a9e-114">Pour les adresses de classe C utilisant un masque de sous-réseau 255.255.255.0, ces bits sont divisés en quatre octets.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-114">For class C addresses using a netmask of 255.255.255.0, these bits are separated into four octets.</span></span> <span data-ttu-id="b7a9e-115">Au format décimal, les quatre octets s’écrivent selon la notation connue de quatre nombres séparés par un point (par exemple, 192.168.100.2).</span><span class="sxs-lookup"><span data-stu-id="b7a9e-115">When expressed in decimal, the four octets form the familiar dotted-quad notation, such as 192.168.100.2.</span></span> <span data-ttu-id="b7a9e-116">Les deux premiers octets (192.168 dans cet exemple) forment le numéro du réseau, le troisième octet (100) définit le sous-réseau et le dernier octet (2) est l’identificateur de l’hôte.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-116">The first two octets (192.168 in this example) form the network number, the third octet (100) defines the subnet, and the final octet (2) is the host identifier.</span></span>  
   
- Quand tous les bits d’une adresse IP sont définis à la valeur 1 ou à la valeur 255.255.255.255, ils constituent une adresse de diffusion limitée. L’envoi d’un datagramme UDP à cette adresse remet le message à n’importe quel hôte sur le segment réseau local. Étant donné que les routeurs ne transfèrent jamais les messages envoyés à cette adresse, seuls les hôtes sur le segment réseau reçoivent le message de diffusion.  
+ <span data-ttu-id="b7a9e-117">Quand tous les bits d’une adresse IP sont définis à la valeur 1 ou à la valeur 255.255.255.255, ils constituent une adresse de diffusion limitée.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-117">Setting all the bits of an IP address to one, or 255.255.255.255, forms the limited broadcast address.</span></span> <span data-ttu-id="b7a9e-118">L’envoi d’un datagramme UDP à cette adresse remet le message à n’importe quel hôte sur le segment réseau local.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-118">Sending a UDP datagram to this address delivers the message to any host on the local network segment.</span></span> <span data-ttu-id="b7a9e-119">Étant donné que les routeurs ne transfèrent jamais les messages envoyés à cette adresse, seuls les hôtes sur le segment réseau reçoivent le message de diffusion.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-119">Because routers never forward messages sent to this address, only hosts on the network segment receive the broadcast message.</span></span>  
   
- Les messages de diffusion peuvent être dirigés vers des parties spécifiques d’un réseau en définissant tous les bits de l’identificateur de l’hôte. Par exemple, pour envoyer un message de diffusion à tous les hôtes sur le réseau identifié par les adresses IP commençant par 192.168.1, utilisez l’adresse 192.168.1.255.  
+ <span data-ttu-id="b7a9e-120">Les messages de diffusion peuvent être dirigés vers des parties spécifiques d’un réseau en définissant tous les bits de l’identificateur de l’hôte.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-120">Broadcasts can be directed to specific portions of a network by setting all bits of the host identifier.</span></span> <span data-ttu-id="b7a9e-121">Par exemple, pour envoyer un message de diffusion à tous les hôtes sur le réseau identifié par les adresses IP commençant par 192.168.1, utilisez l’adresse 192.168.1.255.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-121">For example, to send a broadcast to all hosts on the network identified by IP addresses starting with 192.168.1, use the address 192.168.1.255.</span></span>  
   
- L’exemple de code suivant utilise un <xref:System.Net.Sockets.UdpClient> pour écouter les datagrammes UDP envoyés à l’adresse de diffusion 192.168.1.255 dirigée sur le port 11 000. Le client reçoit une chaîne de message et écrit le message sur la console.  
+ <span data-ttu-id="b7a9e-122">L’exemple de code suivant utilise un <xref:System.Net.Sockets.UdpClient> pour écouter les datagrammes UDP envoyés à l’adresse de diffusion 192.168.1.255 dirigée sur le port 11 000.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-122">The following code example uses a <xref:System.Net.Sockets.UdpClient> to listen for UDP datagrams sent to the directed broadcast address 192.168.1.255 on port 11,000.</span></span> <span data-ttu-id="b7a9e-123">Le client reçoit une chaîne de message et écrit le message sur la console.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-123">The client receives a message string and writes the message to the console.</span></span>  
   
 ```vb  
 Imports System  
@@ -139,7 +136,7 @@ public class UDPListener
 }  
 ```  
   
- L’exemple de code suivant utilise un <xref:System.Net.Sockets.UdpClient> pour envoyer les datagrammes UDP à l’adresse de diffusion 192.168.1.255 dirigée sur le port 11 000. Le client envoie la chaîne de message spécifiée sur la ligne de commande.  
+ <span data-ttu-id="b7a9e-124">L’exemple de code suivant utilise un <xref:System.Net.Sockets.UdpClient> pour envoyer les datagrammes UDP à l’adresse de diffusion 192.168.1.255 dirigée sur le port 11 000.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-124">The following code example uses a <xref:System.Net.Sockets.UdpClient> to send UDP datagrams to the directed broadcast address 192.168.1.255, using port 11,000.</span></span> <span data-ttu-id="b7a9e-125">Le client envoie la chaîne de message spécifiée sur la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="b7a9e-125">The client sends the message string specified on the command line.</span></span>  
   
 ```vb  
 Imports System  
@@ -186,8 +183,7 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.Sockets.UdpClient>   
- <xref:System.Net.IPAddress>   
+## <a name="see-also"></a><span data-ttu-id="b7a9e-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b7a9e-126">See Also</span></span>  
+ <xref:System.Net.Sockets.UdpClient>  
+ <xref:System.Net.IPAddress>  
  
-

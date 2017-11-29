@@ -1,68 +1,73 @@
 ---
-title: "Comment&#160;: cr&#233;er un fournisseur de jetons de s&#233;curit&#233; personnalis&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "sécurité [WCF], fourniture d'informations d'identification"
+title: "Comment : créer un fournisseur de jetons de sécurité personnalisé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: security [WCF], providing credentials
 ms.assetid: db8cb478-aa43-478b-bf97-c6489ad7c7fd
-caps.latest.revision: 10
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 0bf616b1af46c62166b0430c1b67b3a97f0613ed
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er un fournisseur de jetons de s&#233;curit&#233; personnalis&#233;
-Cette rubrique montre comment créer de nouveaux types de jetons à l'aide d'un fournisseur de jetons de sécurité personnalisé et comment intégrer le fournisseur à un gestionnaire de jetons de sécurité personnalisé.  
+# <a name="how-to-create-a-custom-security-token-provider"></a><span data-ttu-id="8c667-102">Comment : créer un fournisseur de jetons de sécurité personnalisé</span><span class="sxs-lookup"><span data-stu-id="8c667-102">How to: Create a Custom Security Token Provider</span></span>
+<span data-ttu-id="8c667-103">Cette rubrique montre comment créer de nouveaux types de jetons à l'aide d'un fournisseur de jetons de sécurité personnalisé et comment intégrer le fournisseur à un gestionnaire de jetons de sécurité personnalisé.</span><span class="sxs-lookup"><span data-stu-id="8c667-103">This topic shows how to create new token types with a custom security token provider and how to integrate the provider with a custom security token manager.</span></span>  
   
 > [!NOTE]
->  Créez un fournisseur de jetons personnalisé si les jetons fournis par le système, situés dans l'espace de noms <xref:System.IdentityModel.Tokens>, ne répondent pas à vos besoins.  
+>  <span data-ttu-id="8c667-104">Créez un fournisseur de jetons personnalisé si les jetons fournis par le système, situés dans l'espace de noms <xref:System.IdentityModel.Tokens>, ne répondent pas à vos besoins.</span><span class="sxs-lookup"><span data-stu-id="8c667-104">Create a custom token provider if the system-provided tokens found in the <xref:System.IdentityModel.Tokens> namespace do not match your requirements.</span></span>  
   
- Le fournisseur de jetons de sécurité crée une représentation de jeton de sécurité en fonction des informations d'identification du client ou du service.  Pour utiliser le fournisseur de jetons de sécurité personnalisé dans la sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vous devez créer des informations d'identification personnalisées et des implémentations de gestionnaire de jetons de sécurité.  
+ <span data-ttu-id="8c667-105">Le fournisseur de jetons de sécurité crée une représentation de jeton de sécurité en fonction des informations d'identification du client ou du service.</span><span class="sxs-lookup"><span data-stu-id="8c667-105">The security token provider creates a security token representation based on information in the client or service credentials.</span></span> <span data-ttu-id="8c667-106">Pour utiliser le fournisseur de jetons de sécurité personnalisé dans la sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vous devez créer des informations d'identification personnalisées et des implémentations de gestionnaire de jetons de sécurité.</span><span class="sxs-lookup"><span data-stu-id="8c667-106">To use the custom security token provider in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, you must create custom credentials and security token manager implementations.</span></span>  
   
- Pour en savoir plus sur les informations d'identification personnalisées et le gestionnaire de jetons de sécurité consultez [Procédure pas à pas : création d'informations d'identification de client et de service personnalisées](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+ <span data-ttu-id="8c667-107">Pour plus d’informations sur les informations d’identification personnalisées et le Gestionnaire de jetons de sécurité, consultez le [procédure pas à pas : création d’un Client personnalisé et les informations d’identification du Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).</span><span class="sxs-lookup"><span data-stu-id="8c667-107">For more information about custom credentials and security token manager see the [Walkthrough: Creating Custom Client and Service Credentials](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).</span></span>  
   
- Pour en savoir plus sur les informations d'identification, le gestionnaire de jetons de sécurité ainsi que les classes Provider et Authenticator, consultez [Security Architecture](http://msdn.microsoft.com/fr-fr/16593476-d36a-408d-808c-ae6fd483e28f).  
+ <span data-ttu-id="8c667-108">Pour plus d’informations sur les informations d’identification, jeton manager, fournisseur et authentificateur de classes de sécurité, consultez le [Architecture de sécurité](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).</span><span class="sxs-lookup"><span data-stu-id="8c667-108">For more information about credentials, security token manager, provider and authenticator classes, see the [Security Architecture](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).</span></span>  
   
-### Pour créer un fournisseur de jetons de sécurité personnalisé  
+### <a name="to-create-a-custom-security-token-provider"></a><span data-ttu-id="8c667-109">Pour créer un fournisseur de jetons de sécurité personnalisé</span><span class="sxs-lookup"><span data-stu-id="8c667-109">To create a custom security token provider</span></span>  
   
-1.  Définissez une nouvelle classe dérivée de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider>.  
+1.  <span data-ttu-id="8c667-110">Définissez une nouvelle classe dérivée de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider>.</span><span class="sxs-lookup"><span data-stu-id="8c667-110">Define a new class derived from the <xref:System.IdentityModel.Selectors.SecurityTokenProvider> class.</span></span>  
   
-2.  Implémentez la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29>.  La méthode est chargée de créer et retourner une instance du jeton de sécurité.  L'exemple suivant crée une classe nommée `MySecurityTokenProvider`et substitue la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> pour retourner une instance de la classe <xref:System.IdentityModel.Tokens.X509SecurityToken>.  Le constructeur de classe requiert une instance de la classe <xref:System.Security.Cryptography.X509Certificates.X509Certificate2>.  
+2.  <span data-ttu-id="8c667-111">Implémentez la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29>.</span><span class="sxs-lookup"><span data-stu-id="8c667-111">Implement the <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> method.</span></span> <span data-ttu-id="8c667-112">La méthode est chargée de créer et retourner une instance du jeton de sécurité.</span><span class="sxs-lookup"><span data-stu-id="8c667-112">The method is responsible for creating and returning an instance of the security token.</span></span> <span data-ttu-id="8c667-113">L'exemple suivant crée une classe nommée `MySecurityTokenProvider`et substitue la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> pour retourner une instance de la classe <xref:System.IdentityModel.Tokens.X509SecurityToken>.</span><span class="sxs-lookup"><span data-stu-id="8c667-113">The following example creates a class named `MySecurityTokenProvider`, and overrides the <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> method to return an instance of the <xref:System.IdentityModel.Tokens.X509SecurityToken> class.</span></span> <span data-ttu-id="8c667-114">Le constructeur de classe requiert une instance de la classe <xref:System.Security.Cryptography.X509Certificates.X509Certificate2>.</span><span class="sxs-lookup"><span data-stu-id="8c667-114">The class constructor requires an instance of the <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> class.</span></span>  
   
      [!code-csharp[c_CustomTokenProvider#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenprovider/cs/source.cs#1)]
      [!code-vb[c_CustomTokenProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenprovider/vb/source.vb#1)]  
   
-### Pour intégrer un fournisseur de jetons de sécurité personnalisé à un gestionnaire de jetons de sécurité personnalisé  
+### <a name="to-integrate-a-custom-security-token-provider-with-a-custom-security-token-manager"></a><span data-ttu-id="8c667-115">Pour intégrer un fournisseur de jetons de sécurité personnalisé à un gestionnaire de jetons de sécurité personnalisé</span><span class="sxs-lookup"><span data-stu-id="8c667-115">To integrate a custom security token provider with a custom security token manager</span></span>  
   
-1.  Définissez une nouvelle classe dérivée de la classe <xref:System.IdentityModel.Selectors.SecurityTokenManager>.  \(L'exemple suivant est dérivé de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>, elle\-même dérivée de la classe <xref:System.IdentityModel.Selectors.SecurityTokenManager>.\)  
+1.  <span data-ttu-id="8c667-116">Définissez une nouvelle classe dérivée de la classe <xref:System.IdentityModel.Selectors.SecurityTokenManager>.</span><span class="sxs-lookup"><span data-stu-id="8c667-116">Define a new class derived from the <xref:System.IdentityModel.Selectors.SecurityTokenManager> class.</span></span> <span data-ttu-id="8c667-117">(L'exemple suivant est dérivé de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>, elle-même dérivée de la classe <xref:System.IdentityModel.Selectors.SecurityTokenManager>.)</span><span class="sxs-lookup"><span data-stu-id="8c667-117">(The example below derives from the <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> class, which derives from the <xref:System.IdentityModel.Selectors.SecurityTokenManager> class.)</span></span>  
   
-2.  Substituez la méthode <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> si elle ne l'est pas déjà.  
+2.  <span data-ttu-id="8c667-118">Substituez la méthode <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> si elle ne l'est pas déjà.</span><span class="sxs-lookup"><span data-stu-id="8c667-118">Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> method if is not already overridden.</span></span>  
   
-     La méthode <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> est chargée de retourner une instance de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider> appropriée pour le paramètre <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> passé à la méthode par l'infrastructure de sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Modifiez la méthode pour retourner l'implémentation du fournisseur de jetons de sécurité personnalisé \(créée dans la procédure précédente\) lorsque la méthode est appelée avec un paramètre de jeton de sécurité approprié.  Pour plus d'informations sur le gestionnaire de jetons de sécurité, consultez [Procédure pas à pas : création d'informations d'identification de client et de service personnalisées](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+     <span data-ttu-id="8c667-119">La méthode <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> est chargée de retourner une instance de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider> appropriée pour le paramètre <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> passé à la méthode par l'infrastructure de sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8c667-119">The <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> method is responsible for returning an instance of the <xref:System.IdentityModel.Selectors.SecurityTokenProvider> class appropriate to the <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parameter passed to the method by the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security framework.</span></span> <span data-ttu-id="8c667-120">Modifiez la méthode pour retourner l'implémentation du fournisseur de jetons de sécurité personnalisé (créée dans la procédure précédente) lorsque la méthode est appelée avec un paramètre de jeton de sécurité approprié.</span><span class="sxs-lookup"><span data-stu-id="8c667-120">Modify the method to return the custom security token provider implementation (created in the previous procedure) when the method is called with an appropriate security token parameter.</span></span> <span data-ttu-id="8c667-121">Pour plus d’informations sur le Gestionnaire de jetons de sécurité, consultez le [procédure pas à pas : création d’un Client personnalisé et les informations d’identification du Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).</span><span class="sxs-lookup"><span data-stu-id="8c667-121">For more information about the security token manager, see the [Walkthrough: Creating Custom Client and Service Credentials](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).</span></span>  
   
-3.  Ajoutez une logique personnalisée à la méthode pour lui permettre de retourner votre fournisseur de jetons de sécurité personnalisé en fonction du paramètre <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>.  L'exemple suivant retourne le fournisseur de jetons de sécurité personnalisé si les exigences de jeton sont satisfaites.  Ces exigences incluent un jeton de sécurité X.509 et la direction des messages \(le jeton est utilisé pour la sortie de message\).  Dans tous les autres cas, le code appelle la classe de base pour conserver le comportement fourni par le système pour les autres exigences de jeton de sécurité.  
+3.  <span data-ttu-id="8c667-122">Ajoutez une logique personnalisée à la méthode pour lui permettre de retourner votre fournisseur de jetons de sécurité personnalisé en fonction du paramètre <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>.</span><span class="sxs-lookup"><span data-stu-id="8c667-122">Add custom logic to the method to enable it to return your custom security token provider based on the <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parameter.</span></span> <span data-ttu-id="8c667-123">L'exemple suivant retourne le fournisseur de jetons de sécurité personnalisé si les exigences de jeton sont satisfaites.</span><span class="sxs-lookup"><span data-stu-id="8c667-123">The following sample returns the custom security token provider if the token requirements are met.</span></span> <span data-ttu-id="8c667-124">Ces exigences incluent un jeton de sécurité X.509 et la direction des messages (le jeton est utilisé pour la sortie de message).</span><span class="sxs-lookup"><span data-stu-id="8c667-124">The requirements include an X.509 security token and the message direction (that the token is used for message output).</span></span> <span data-ttu-id="8c667-125">Dans tous les autres cas, le code appelle la classe de base pour conserver le comportement fourni par le système pour les autres exigences de jeton de sécurité.</span><span class="sxs-lookup"><span data-stu-id="8c667-125">For all other cases, the code calls the base class to maintain the system-provided behavior for other security token requirements.</span></span>  
   
  [!code-csharp[c_CustomTokenProvider#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenprovider/cs/source.cs#2)]
  [!code-vb[c_CustomTokenProvider#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenprovider/vb/source.vb#2)]  
   
-## Exemple  
- Le code suivant montre une implémentation <xref:System.IdentityModel.Selectors.SecurityTokenProvider> complète avec une implémentation <xref:System.IdentityModel.Selectors.SecurityTokenManager> correspondante.  
+## <a name="example"></a><span data-ttu-id="8c667-126">Exemple</span><span class="sxs-lookup"><span data-stu-id="8c667-126">Example</span></span>  
+ <span data-ttu-id="8c667-127">Le code suivant montre une implémentation <xref:System.IdentityModel.Selectors.SecurityTokenProvider> complète avec une implémentation <xref:System.IdentityModel.Selectors.SecurityTokenManager> correspondante.</span><span class="sxs-lookup"><span data-stu-id="8c667-127">The following shows a complete <xref:System.IdentityModel.Selectors.SecurityTokenProvider> implementation along with a corresponding <xref:System.IdentityModel.Selectors.SecurityTokenManager> implementation.</span></span>  
   
  [!code-csharp[c_CustomTokenProvider#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenprovider/cs/source.cs#0)]
  [!code-vb[c_CustomTokenProvider#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenprovider/vb/source.vb#0)]  
   
-## Voir aussi  
- <xref:System.IdentityModel.Selectors.SecurityTokenProvider>   
- <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>   
- <xref:System.IdentityModel.Selectors.SecurityTokenManager>   
- <xref:System.IdentityModel.Tokens.X509SecurityToken>   
- [Procédure pas à pas : création d'informations d'identification de client et de service personnalisées](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)   
- [Comment : créer un authentificateur de jetons de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)   
- [Security Architecture](http://msdn.microsoft.com/fr-fr/16593476-d36a-408d-808c-ae6fd483e28f)
+## <a name="see-also"></a><span data-ttu-id="8c667-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8c667-128">See Also</span></span>  
+ <xref:System.IdentityModel.Selectors.SecurityTokenProvider>  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>  
+ <xref:System.IdentityModel.Selectors.SecurityTokenManager>  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken>  
+ [<span data-ttu-id="8c667-129">Procédure pas à pas : Création d’un Client personnalisé et informations d’identification de Service</span><span class="sxs-lookup"><span data-stu-id="8c667-129">Walkthrough: Creating Custom Client and Service Credentials</span></span>](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
+ [<span data-ttu-id="8c667-130">Comment : créer un authentificateur de jeton de sécurité personnalisé</span><span class="sxs-lookup"><span data-stu-id="8c667-130">How to: Create a Custom Security Token Authenticator</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+ [<span data-ttu-id="8c667-131">Architecture de sécurité</span><span class="sxs-lookup"><span data-stu-id="8c667-131">Security Architecture</span></span>](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)

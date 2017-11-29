@@ -1,88 +1,80 @@
 ---
-title: "Vue d&#39;ensemble de ScrollViewer | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles, ScrollViewer"
-  - "ScrollViewer (contrôle), à propos du contrôle ScrollViewer"
+title: Vue d'ensemble de ScrollViewer
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- controls [WPF], ScrollViewer
+- ScrollViewer control [WPF], about ScrollViewer control
 ms.assetid: 94a13b94-cfdf-4b12-a1aa-90cb50c6e9b9
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f6398e4a40a1d4a83bc0ae080321112fb6d9fcd6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble de ScrollViewer
-Le contenu d'une interface utilisateur est souvent plus important que la zone d'affichage d'un écran d'ordinateur.  Le contrôle <xref:System.Windows.Controls.ScrollViewer> offre un moyen pratique d'activer le défilement du contenu dans les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Cette rubrique présente l'élément <xref:System.Windows.Controls.ScrollViewer> et fournit plusieurs exemples d'utilisation.  
-  
- Cette rubrique contient les sections suivantes :  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
--   [Contrôle ScrollViewer](#what_is_a_scrollviewer_element)  
-  
--   [Défilement physique contredéfilement logique](#scrollviewer_physical_vs_logical)  
-  
--   [Définition et utilisation d'un élément ScrollViewer](#scrollviewer_markup_syntax_and_sample)  
-  
--   [Application d'un style à un ScrollViewer](#scrollviewer_styling_scrollviewer)  
-  
--   [Pagination des documents](#scrollviewer_scroll_vs_paginate)  
-  
--   [Related Topics](#seeAlsoToggle)  
+# <a name="scrollviewer-overview"></a><span data-ttu-id="88ac5-102">Vue d'ensemble de ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="88ac5-102">ScrollViewer Overview</span></span>
+<span data-ttu-id="88ac5-103">Le contenu d’une interface utilisateur occupe souvent un espace plus important que la zone d’affiche d’un écran d’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="88ac5-103">Content within a user interface is often larger than a computer screen's display area.</span></span> <span data-ttu-id="88ac5-104">Le <xref:System.Windows.Controls.ScrollViewer> contrôle offre un moyen pratique d’activer le défilement du contenu dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span><span class="sxs-lookup"><span data-stu-id="88ac5-104">The <xref:System.Windows.Controls.ScrollViewer> control provides a convenient way to enable scrolling of content in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span> <span data-ttu-id="88ac5-105">Cette rubrique présente la <xref:System.Windows.Controls.ScrollViewer> élément et fournit plusieurs exemples d’utilisation.</span><span class="sxs-lookup"><span data-stu-id="88ac5-105">This topic introduces the <xref:System.Windows.Controls.ScrollViewer> element and provides several usage examples.</span></span>  
   
 <a name="what_is_a_scrollviewer_element"></a>   
-## Contrôle ScrollViewer  
- Il existe deux éléments prédéfinis qui activent le défilement dans les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] : <xref:System.Windows.Controls.Primitives.ScrollBar> et <xref:System.Windows.Controls.ScrollViewer>.  Le contrôle <xref:System.Windows.Controls.ScrollViewer> encapsule des éléments <xref:System.Windows.Controls.Primitives.ScrollBar> horizontaux et verticaux et un conteneur de contenu \(tel qu'un élément <xref:System.Windows.Controls.Panel>\) afin d'afficher d'autres éléments visibles dans une zone défilante.  Vous devez générer un objet personnalisé afin d'utiliser l'élément <xref:System.Windows.Controls.Primitives.ScrollBar> pour faire défiler le contenu.  Toutefois, vous pouvez utiliser l'élément <xref:System.Windows.Controls.ScrollViewer> lui\-même car c'est un contrôle composite qui encapsule les fonctionnalités <xref:System.Windows.Controls.Primitives.ScrollBar>.  
+## <a name="the-scrollviewer-control"></a><span data-ttu-id="88ac5-106">Le contrôle ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="88ac5-106">The ScrollViewer Control</span></span>  
+ <span data-ttu-id="88ac5-107">Il existe deux éléments prédéfinis qui permettent le défilement dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications : <xref:System.Windows.Controls.Primitives.ScrollBar> et <xref:System.Windows.Controls.ScrollViewer>.</span><span class="sxs-lookup"><span data-stu-id="88ac5-107">There are two predefined elements that enable scrolling in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications: <xref:System.Windows.Controls.Primitives.ScrollBar> and <xref:System.Windows.Controls.ScrollViewer>.</span></span> <span data-ttu-id="88ac5-108">Le <xref:System.Windows.Controls.ScrollViewer> contrôle encapsule horizontal et vertical <xref:System.Windows.Controls.Primitives.ScrollBar> éléments et un conteneur de contenu (comme un <xref:System.Windows.Controls.Panel> élément) pour afficher d’autres éléments visibles dans une zone avec défilement.</span><span class="sxs-lookup"><span data-stu-id="88ac5-108">The <xref:System.Windows.Controls.ScrollViewer> control encapsulates horizontal and vertical <xref:System.Windows.Controls.Primitives.ScrollBar> elements and a content container (such as a <xref:System.Windows.Controls.Panel> element) in order to display other visible elements in a scrollable area.</span></span> <span data-ttu-id="88ac5-109">Vous devez créer un objet personnalisé afin d’utiliser le <xref:System.Windows.Controls.Primitives.ScrollBar> , élément pour les faire défiler le contenu.</span><span class="sxs-lookup"><span data-stu-id="88ac5-109">You must build a custom object in order to use the <xref:System.Windows.Controls.Primitives.ScrollBar> element for content scrolling.</span></span> <span data-ttu-id="88ac5-110">Toutefois, vous pouvez utiliser la <xref:System.Windows.Controls.ScrollViewer> élément par lui-même, car il s’agit d’un contrôle composite qui encapsule <xref:System.Windows.Controls.Primitives.ScrollBar> fonctionnalité.</span><span class="sxs-lookup"><span data-stu-id="88ac5-110">However, you can use the <xref:System.Windows.Controls.ScrollViewer> element by itself because it is a composite control that encapsulates <xref:System.Windows.Controls.Primitives.ScrollBar> functionality.</span></span>  
   
- Le contrôle <xref:System.Windows.Controls.ScrollViewer> répond aux commandes de la souris et du clavier et définit de nombreuses méthodes qui permettent de faire défiler le contenu par incréments prédéterminés.  Vous pouvez utiliser l'événement <xref:System.Windows.Controls.ScrollViewer.ScrollChanged> pour détecter une modification dans un état <xref:System.Windows.Controls.ScrollViewer>.  
+ <span data-ttu-id="88ac5-111">Le <xref:System.Windows.Controls.ScrollViewer> contrôle répond aux commandes de la souris et du clavier et définit de nombreuses méthodes permettant de faire défiler le contenu par incréments prédéterminés.</span><span class="sxs-lookup"><span data-stu-id="88ac5-111">The <xref:System.Windows.Controls.ScrollViewer> control responds to both mouse and keyboard commands, and defines numerous methods with which to scroll content by predetermined increments.</span></span> <span data-ttu-id="88ac5-112">Vous pouvez utiliser la <xref:System.Windows.Controls.ScrollViewer.ScrollChanged> événements pour détecter une modification dans un <xref:System.Windows.Controls.ScrollViewer> état.</span><span class="sxs-lookup"><span data-stu-id="88ac5-112">You can use the <xref:System.Windows.Controls.ScrollViewer.ScrollChanged> event to detect a change in a <xref:System.Windows.Controls.ScrollViewer> state.</span></span>  
   
- Un <xref:System.Windows.Controls.ScrollViewer> peut avoir un seul enfant, en général un élément <xref:System.Windows.Controls.Panel> qui peut héberger une collection d'éléments <xref:System.Windows.Controls.Panel.Children%2A>.  La propriété <xref:System.Windows.Controls.ContentPresenter.Content%2A> définit l'unique enfant du <xref:System.Windows.Controls.ScrollViewer>.  
+ <span data-ttu-id="88ac5-113">A <xref:System.Windows.Controls.ScrollViewer> peut avoir un seul enfant, généralement un <xref:System.Windows.Controls.Panel> élément qui peut héberger un <xref:System.Windows.Controls.Panel.Children%2A> collection d’éléments.</span><span class="sxs-lookup"><span data-stu-id="88ac5-113">A <xref:System.Windows.Controls.ScrollViewer> can only have one child, typically a <xref:System.Windows.Controls.Panel> element that can host a <xref:System.Windows.Controls.Panel.Children%2A> collection of elements.</span></span> <span data-ttu-id="88ac5-114">Le <xref:System.Windows.Controls.ContentPresenter.Content%2A> propriété définit l’unique enfant de la <xref:System.Windows.Controls.ScrollViewer>.</span><span class="sxs-lookup"><span data-stu-id="88ac5-114">The <xref:System.Windows.Controls.ContentPresenter.Content%2A> property defines the sole child of the <xref:System.Windows.Controls.ScrollViewer>.</span></span>  
   
 <a name="scrollviewer_physical_vs_logical"></a>   
-## Défilement physique contredéfilement logique  
- Le défilement physique est utilisé pour faire défiler le contenu par un incrément physique prédéterminé, généralement par une valeur indiquée en pixels.  Le défilement logique est utilisé pour passer à l'élément suivant dans l'arborescence logique.  Le défilement physique est défini par défaut pour la plupart des éléments <xref:System.Windows.Controls.Panel>.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prend en charge les deux types de défilement.  
+## <a name="physical-vs-logical-scrolling"></a><span data-ttu-id="88ac5-115">Défilement physique ou défilement logique</span><span class="sxs-lookup"><span data-stu-id="88ac5-115">Physical vs. Logical Scrolling</span></span>  
+ <span data-ttu-id="88ac5-116">Le défilement physique est utilisé pour faire défiler le contenu selon un incrément physique prédéterminé, généralement une valeur déclarée en pixels.</span><span class="sxs-lookup"><span data-stu-id="88ac5-116">Physical scrolling is used to scroll content by a predetermined physical increment, typically by a value that is declared in pixels.</span></span> <span data-ttu-id="88ac5-117">Le défilement logique est utilisé pour faire défiler l’écran jusqu’à l’élément suivant dans l’arborescence logique.</span><span class="sxs-lookup"><span data-stu-id="88ac5-117">Logical scrolling is used to scroll to the next item in the logical tree.</span></span> <span data-ttu-id="88ac5-118">Le défilement physique est le comportement de défilement par défaut pour la plupart des <xref:System.Windows.Controls.Panel> éléments.</span><span class="sxs-lookup"><span data-stu-id="88ac5-118">Physical scrolling is the default scroll behavior for most <xref:System.Windows.Controls.Panel> elements.</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="88ac5-119"> prend en charge les deux types de défilement.</span><span class="sxs-lookup"><span data-stu-id="88ac5-119"> supports both types of scrolling.</span></span>  
   
-#### Interface IScrollInfo  
- L'interface <xref:System.Windows.Controls.Primitives.IScrollInfo> représente la zone de défilement principale dans un contrôle <xref:System.Windows.Controls.ScrollViewer> ou un contrôle dérivé.  L'interface définit les propriétés et les méthodes de défilement qui peuvent être implémentées par les éléments <xref:System.Windows.Controls.Panel> qui requièrent le défilement par unité logique, plutôt que par incrément physique.  Le casting d'une instance de <xref:System.Windows.Controls.Primitives.IScrollInfo> en un <xref:System.Windows.Controls.Panel> dérivé, puis l'utilisation de ses méthodes de défilement permettent de passer facilement à l'unité logique suivante dans une collection enfant, plutôt que par incrément de pixels.  Par défaut, le contrôle <xref:System.Windows.Controls.ScrollViewer> prend en charge le défilement par unités physiques.  
+#### <a name="the-iscrollinfo-interface"></a><span data-ttu-id="88ac5-120">L’interface IScrollInfo</span><span class="sxs-lookup"><span data-stu-id="88ac5-120">The IScrollInfo Interface</span></span>  
+ <span data-ttu-id="88ac5-121">Le <xref:System.Windows.Controls.Primitives.IScrollInfo> interface représente la zone de défilement principale dans un <xref:System.Windows.Controls.ScrollViewer> ou contrôle dérivé.</span><span class="sxs-lookup"><span data-stu-id="88ac5-121">The <xref:System.Windows.Controls.Primitives.IScrollInfo> interface represents the main scrolling region within a <xref:System.Windows.Controls.ScrollViewer> or derived control.</span></span> <span data-ttu-id="88ac5-122">L’interface définit les propriétés et méthodes qui peuvent être implémentées par défilement <xref:System.Windows.Controls.Panel> les éléments qui requièrent le défilement par unité logique, plutôt que par incrément physique.</span><span class="sxs-lookup"><span data-stu-id="88ac5-122">The interface defines scrolling properties and methods that can be implemented by <xref:System.Windows.Controls.Panel> elements that require scrolling by logical unit, rather than by a physical increment.</span></span> <span data-ttu-id="88ac5-123">Conversion d’une instance de <xref:System.Windows.Controls.Primitives.IScrollInfo> à une dérivée <xref:System.Windows.Controls.Panel> et ensuite à l’aide de ses méthodes de défilement fournit un moyen utile pour accéder à l’unité logique suivante dans une collection d’enfants, plutôt que par incrément de pixels.</span><span class="sxs-lookup"><span data-stu-id="88ac5-123">Casting an instance of <xref:System.Windows.Controls.Primitives.IScrollInfo> to a derived <xref:System.Windows.Controls.Panel> and then using its scrolling methods provides a useful way to scroll to the next logical unit in a child collection, rather than by pixel increment.</span></span> <span data-ttu-id="88ac5-124">Par défaut, le <xref:System.Windows.Controls.ScrollViewer> contrôle prend en charge le défilement en unités physiques.</span><span class="sxs-lookup"><span data-stu-id="88ac5-124">By default, the <xref:System.Windows.Controls.ScrollViewer> control supports scrolling by physical units.</span></span>  
   
- <xref:System.Windows.Controls.StackPanel> et <xref:System.Windows.Controls.VirtualizingStackPanel> implémentent <xref:System.Windows.Controls.Primitives.IScrollInfo> et prennent en charge le défilement logique en mode natif.  Pour les contrôles de disposition qui prennent en charge le défilement logique en mode natif, vous pouvez toujours effectuer un défilement physique en encapsulant l'élément hôte <xref:System.Windows.Controls.Panel> dans un <xref:System.Windows.Controls.ScrollViewer> et en affectant `false` à la propriété <xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>.  
+ <span data-ttu-id="88ac5-125"><xref:System.Windows.Controls.StackPanel>et <xref:System.Windows.Controls.VirtualizingStackPanel> ils implémentent tous deux <xref:System.Windows.Controls.Primitives.IScrollInfo> et en mode natif prennent en charge le défilement logique.</span><span class="sxs-lookup"><span data-stu-id="88ac5-125"><xref:System.Windows.Controls.StackPanel> and <xref:System.Windows.Controls.VirtualizingStackPanel> both implement <xref:System.Windows.Controls.Primitives.IScrollInfo> and natively support logical scrolling.</span></span> <span data-ttu-id="88ac5-126">Pour les contrôles de disposition qui en mode natif prise en charge le défilement logique, vous pouvez toujours effectuer un défilement physique en encapsulant l’hôte <xref:System.Windows.Controls.Panel> élément dans une <xref:System.Windows.Controls.ScrollViewer> et en définissant le <xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A> propriété `false`.</span><span class="sxs-lookup"><span data-stu-id="88ac5-126">For layout controls that natively support logical scrolling, you can still achieve physical scrolling by wrapping the host <xref:System.Windows.Controls.Panel> element in a <xref:System.Windows.Controls.ScrollViewer> and setting the <xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A> property to `false`.</span></span>  
   
- L'exemple de code suivant montre comment effectuer le cast d'une instance de <xref:System.Windows.Controls.Primitives.IScrollInfo> en un <xref:System.Windows.Controls.StackPanel> et utiliser les méthodes de défilement de contenu \(<xref:System.Windows.Controls.Primitives.IScrollInfo.LineUp%2A> et <xref:System.Windows.Controls.Primitives.IScrollInfo.LineDown%2A>\) définies par l'interface.  
+ <span data-ttu-id="88ac5-127">L’exemple de code suivant montre comment effectuer un cast d’une instance de <xref:System.Windows.Controls.Primitives.IScrollInfo> à un <xref:System.Windows.Controls.StackPanel> et utiliser les méthodes de défilement de contenu (<xref:System.Windows.Controls.Primitives.IScrollInfo.LineUp%2A> et <xref:System.Windows.Controls.Primitives.IScrollInfo.LineDown%2A>) définies par l’interface.</span><span class="sxs-lookup"><span data-stu-id="88ac5-127">The following code example demonstrates how to cast an instance of <xref:System.Windows.Controls.Primitives.IScrollInfo> to a <xref:System.Windows.Controls.StackPanel> and use content scrolling methods (<xref:System.Windows.Controls.Primitives.IScrollInfo.LineUp%2A> and <xref:System.Windows.Controls.Primitives.IScrollInfo.LineDown%2A>) defined by the interface.</span></span>  
   
  [!code-csharp[IScrollInfoMethods#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/IScrollInfoMethods/CSharp/Window1.xaml.cs#3)]
  [!code-vb[IScrollInfoMethods#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/IScrollInfoMethods/VisualBasic/Window1.xaml.vb#3)]  
   
 <a name="scrollviewer_markup_syntax_and_sample"></a>   
-## Définition et utilisation d'un élément ScrollViewer  
- L'exemple suivant crée un <xref:System.Windows.Controls.ScrollViewer> dans une fenêtre contenant du texte et un rectangle.  Les éléments <xref:System.Windows.Controls.Primitives.ScrollBar> apparaissent uniquement lorsqu'ils sont nécessaires.  Lorsque vous redimensionnez la fenêtre, les éléments <xref:System.Windows.Controls.Primitives.ScrollBar> apparaissent et disparaissent, en raison des valeurs mises à jour des propriétés <xref:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibility%2A> et <xref:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibility%2A>.  
+## <a name="defining-and-using-a-scrollviewer-element"></a><span data-ttu-id="88ac5-128">Définition et utilisation d’un élément ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="88ac5-128">Defining and Using a ScrollViewer Element</span></span>  
+ <span data-ttu-id="88ac5-129">L’exemple suivant crée un <xref:System.Windows.Controls.ScrollViewer> dans une fenêtre qui contient du texte et un rectangle.</span><span class="sxs-lookup"><span data-stu-id="88ac5-129">The following example creates a <xref:System.Windows.Controls.ScrollViewer> in a window that contains some text and a rectangle.</span></span> <span data-ttu-id="88ac5-130"><xref:System.Windows.Controls.Primitives.ScrollBar>les éléments apparaissent uniquement lorsqu’ils sont nécessaires.</span><span class="sxs-lookup"><span data-stu-id="88ac5-130"><xref:System.Windows.Controls.Primitives.ScrollBar> elements appear only when they are necessary.</span></span> <span data-ttu-id="88ac5-131">Lorsque vous redimensionnez la fenêtre, le <xref:System.Windows.Controls.Primitives.ScrollBar> éléments apparaissent et disparaissent, en raison de valeurs mises à jour de la <xref:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibility%2A> et <xref:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibility%2A> propriétés.</span><span class="sxs-lookup"><span data-stu-id="88ac5-131">When you resize the window, the <xref:System.Windows.Controls.Primitives.ScrollBar> elements appear and disappear, due to updated values of the <xref:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibility%2A> and <xref:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibility%2A> properties.</span></span>  
   
  [!code-cpp[ScrollViewer#1](../../../../samples/snippets/cpp/VS_Snippets_Wpf/ScrollViewer/CPP/ScrollViewer_wcp.cpp#1)]
  [!code-csharp[ScrollViewer#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewer/CSharp/ScrollViewer_wcp.cs#1)]
  [!code-vb[ScrollViewer#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollViewer/VisualBasic/ScrollViewer.vb#1)]
- [!code-xml[ScrollViewer#1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/ScrollViewer/XAML/Pane1.xaml#1)]  
+ [!code-xaml[ScrollViewer#1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/ScrollViewer/XAML/Pane1.xaml#1)]  
   
 <a name="scrollviewer_styling_scrollviewer"></a>   
-## Application d'un style à un ScrollViewer  
- Comme tous les contrôles de Windows Presentation Foundation, il est possible d'appliquer un style à <xref:System.Windows.Controls.ScrollViewer> pour modifier le comportement de rendu par défaut du contrôle.  Pour plus d'informations sur le style des contrôles, consultez [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+## <a name="styling-a-scrollviewer"></a><span data-ttu-id="88ac5-132">Application d’un style à un élément ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="88ac5-132">Styling a ScrollViewer</span></span>  
+ <span data-ttu-id="88ac5-133">Comme tous les contrôles dans Windows Presentation Foundation, le <xref:System.Windows.Controls.ScrollViewer> peut être un style pour modifier le comportement de rendu par défaut du contrôle.</span><span class="sxs-lookup"><span data-stu-id="88ac5-133">Like all controls in Windows Presentation Foundation, the <xref:System.Windows.Controls.ScrollViewer> can be styled in order to change the default rendering behavior of the control.</span></span> <span data-ttu-id="88ac5-134">Pour plus d’informations sur l’application d’un style aux contrôles, consultez [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span><span class="sxs-lookup"><span data-stu-id="88ac5-134">For additional information on control styling, see [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span></span>  
   
 <a name="scrollviewer_scroll_vs_paginate"></a>   
-## Pagination des documents  
- Pour le contenu du document, une alternative au défilement consiste à choisir un conteneur de document qui prend en charge la pagination.  <xref:System.Windows.Documents.FlowDocument> convient aux documents conçus pour être hébergés dans un contrôle d'affichage, tel que <xref:System.Windows.Controls.FlowDocumentPageViewer>, qui prend en charge le contenu paginé sur plusieurs pages, supprimant ainsi le besoin de défilement.  <xref:System.Windows.Controls.DocumentViewer> fournit une solution pour la consultation de contenu <xref:System.Windows.Documents.FixedDocument>, qui utilise le défilement traditionnel pour afficher le contenu en dehors de la zone d'affichage.  
+## <a name="paginating-documents"></a><span data-ttu-id="88ac5-135">Pagination de documents</span><span class="sxs-lookup"><span data-stu-id="88ac5-135">Paginating Documents</span></span>  
+ <span data-ttu-id="88ac5-136">Pour le contenu de document, il est possible de choisir un conteneur de documents qui prend en charge la pagination plutôt que d’utiliser le défilement.</span><span class="sxs-lookup"><span data-stu-id="88ac5-136">For document content, an alternative to scrolling is to choose a document container that supports pagination.</span></span> <span data-ttu-id="88ac5-137"><xref:System.Windows.Documents.FlowDocument>pour les documents qui sont conçus pour être hébergé dans un contrôle d’affichage, tel que <xref:System.Windows.Controls.FlowDocumentPageViewer>, qui prend en charge le contenu paginé sur plusieurs pages, ainsi le besoin de défilement.</span><span class="sxs-lookup"><span data-stu-id="88ac5-137"><xref:System.Windows.Documents.FlowDocument> is for documents that are designed to be hosted within a viewing control, such as <xref:System.Windows.Controls.FlowDocumentPageViewer>, that supports paginating content across multiple pages, preventing the need for scrolling.</span></span> <span data-ttu-id="88ac5-138"><xref:System.Windows.Controls.DocumentViewer>Fournit une solution pour l’affichage <xref:System.Windows.Documents.FixedDocument> contenu, qui utilise le défilement traditionnel pour afficher le contenu en dehors de la zone d’affichage.</span><span class="sxs-lookup"><span data-stu-id="88ac5-138"><xref:System.Windows.Controls.DocumentViewer> provides a solution for viewing <xref:System.Windows.Documents.FixedDocument> content, which uses traditional scrolling to display content outside the realm of the display area.</span></span>  
   
- Pour plus d'informations sur les formats de document et les options de présentation, consultez [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md).  
+ <span data-ttu-id="88ac5-139">Pour plus d’informations sur les formats et les options de présentation de documents, consultez [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md).</span><span class="sxs-lookup"><span data-stu-id="88ac5-139">For additional information about document formats and presentation options, see [Documents in WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Controls.ScrollViewer>   
- <xref:System.Windows.Controls.Primitives.ScrollBar>   
- <xref:System.Windows.Controls.Primitives.IScrollInfo>   
- [Create a Scroll Viewer](http://msdn.microsoft.com/fr-fr/c8e46af7-b417-441b-aa30-791cbdbd43ef)   
- [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [Styles et modèles ScrollBar](../../../../docs/framework/wpf/controls/scrollbar-styles-and-templates.md)   
- [Contrôles](../../../../docs/framework/wpf/advanced/optimizing-performance-controls.md)
+## <a name="see-also"></a><span data-ttu-id="88ac5-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="88ac5-140">See Also</span></span>  
+ <xref:System.Windows.Controls.ScrollViewer>  
+ <xref:System.Windows.Controls.Primitives.ScrollBar>  
+ <xref:System.Windows.Controls.Primitives.IScrollInfo>  
+ [<span data-ttu-id="88ac5-141">Créer une visionneuse de défilement</span><span class="sxs-lookup"><span data-stu-id="88ac5-141">Create a Scroll Viewer</span></span>](http://msdn.microsoft.com/en-us/c8e46af7-b417-441b-aa30-791cbdbd43ef)  
+ [<span data-ttu-id="88ac5-142">Documents dans WPF</span><span class="sxs-lookup"><span data-stu-id="88ac5-142">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="88ac5-143">Styles et modèles ScrollBar</span><span class="sxs-lookup"><span data-stu-id="88ac5-143">ScrollBar Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/scrollbar-styles-and-templates.md)  
+ [<span data-ttu-id="88ac5-144">Contrôles</span><span class="sxs-lookup"><span data-stu-id="88ac5-144">Controls</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-controls.md)

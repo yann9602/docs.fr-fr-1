@@ -1,40 +1,43 @@
 ---
-title: "Exposition de vos donn&#233;es comme un service (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "mise en route, Services de données WCF"
-  - "Services de données WCF, configuration"
-  - "Services de données WCF, mise en route"
+title: "Exposition de vos données comme service (services de données WCF)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF Data Services, configuring
+- getting started, WCF Data Services
+- WCF Data Services, getting started
 ms.assetid: df0bbcee-f66f-4a88-abb4-4e73c8b9c908
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 122d05d5e4bd7690f32b22453dccbfaab2fb7f13
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Exposition de vos donn&#233;es comme un service (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] s'intègre à Visual Studio pour vous permettre de définir plus facilement des services permettant d'exposer vos données sous forme de flux [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)].  La création d'un service de données qui expose un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] implique les étapes fondamentales suivantes :  
+# <a name="exposing-your-data-as-a-service-wcf-data-services"></a><span data-ttu-id="9a5c1-102">Exposition de vos données comme service (services de données WCF)</span><span class="sxs-lookup"><span data-stu-id="9a5c1-102">Exposing Your Data as a Service (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="9a5c1-103">s’intègre à Visual Studio pour vous permettre de définir plus facilement des services permettant d’exposer vos données en tant que [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] flux.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-103"> integrates with Visual Studio to enable you to more easily define services to expose your data as [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feeds.</span></span> <span data-ttu-id="9a5c1-104">Création d’un service de données qui expose un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux implique les étapes de base suivantes :</span><span class="sxs-lookup"><span data-stu-id="9a5c1-104">Creating a data service that exposes an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed involves the following basic steps:</span></span>  
   
-1.  **Définir** **le modèle de données**.  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] prend en charge en natif les modèles de données basés sur [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).  Pour plus d'informations, consultez [Procédure : créer un service de données à l'aide d'une source de données ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).  
+1.  <span data-ttu-id="9a5c1-105">**Définir** **le modèle de données**.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-105">**Define** **the data model**.</span></span> [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="9a5c1-106">en mode natif prend en charge les modèles de données qui sont basées sur les [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).</span><span class="sxs-lookup"><span data-stu-id="9a5c1-106"> natively supports data models that are based on the [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).</span></span> <span data-ttu-id="9a5c1-107">Pour plus d’informations, consultez [procédure : création d’un Service de données à l’aide d’une Source de données ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="9a5c1-107">For more information, see [How to: Create a Data Service Using an ADO.NET Entity Framework Data Source](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).</span></span>  
   
-     [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] prend en charge également des modèles de données basés sur les objets du common language runtime \(CLR\) qui retournent une instance de l'interface <xref:System.Linq.IQueryable%601>.  Cela vous permet de déployer des services de données qui sont basés sur des listes, des tableaux et des collections dans .NET Framework. Pour activer la création, la mise à jour et la suppression d'opérations sur ces structures de données, vous devez également implémenter l'interface <xref:System.Data.Services.IUpdatable>.  Pour plus d'informations, consultez [Procédure : créer un service de données à l'aide du fournisseur de réflexion](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).  
+     [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="9a5c1-108"> prend en charge également des modèles de données basés sur les objets du common language runtime (CLR) qui retournent une instance de l'interface <xref:System.Linq.IQueryable%601>.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-108"> also supports data models that are based on common language runtime (CLR) objects that return an instance of the <xref:System.Linq.IQueryable%601> interface.</span></span> <span data-ttu-id="9a5c1-109">Vous pouvez ainsi déployer des services de données basés sur les listes, les tableaux et les collections du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-109">This enables you to deploy data services that are based on lists, arrays, and collections in the .NET Framework.</span></span> <span data-ttu-id="9a5c1-110">Pour permettre les opérations de création, lecture, mise à jour et suppression sur ces structures de données, vous devez également implémenter l'interface <xref:System.Data.Services.IUpdatable>.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-110">To enable create, update, and delete operations over these data structures, you must also implement the <xref:System.Data.Services.IUpdatable> interface.</span></span> <span data-ttu-id="9a5c1-111">Pour plus d’informations, consultez [Comment : créer un Service de données à l’aide du fournisseur de réflexion](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="9a5c1-111">For more information, see [How to: Create a Data Service Using the Reflection Provider](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).</span></span>  
   
-     Pour répondre à des scénarios plus évolués, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] inclut aussi un jeu de fournisseurs qui vous permet de définir un modèle de données basé sur des types de données à liaison tardive.  Pour plus d'informations, consultez [Fournisseurs de services de données personnalisés](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).  
+     <span data-ttu-id="9a5c1-112">Pour des scénarios plus avancés, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] inclut un ensemble de fournisseurs qui vous permettent de définir un modèle de données basé sur les types de données de la liaison tardive.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-112">For more advanced scenarios, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] includes a set of providers that enable you to define a data model based on late-bound data types.</span></span> <span data-ttu-id="9a5c1-113">Pour plus d’informations, consultez [fournisseurs de services de données personnalisé](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="9a5c1-113">For more information, see [Custom Data Service Providers](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).</span></span>  
   
-2.  **Création du service de données.** Le service de données le plus simple expose une classe qui hérite de la classe <xref:System.Data.Services.DataService%601>, avec un type `T` qui est le nom qualifié par l'espace de noms du conteneur d'entités.  Pour plus d'informations, consultez [Définition de WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md).  
+2.  <span data-ttu-id="9a5c1-114">**Créer le service de données.**</span><span class="sxs-lookup"><span data-stu-id="9a5c1-114">**Create the data service.**</span></span> <span data-ttu-id="9a5c1-115">Le service de données le plus basique expose une classe qui hérite de la classe <xref:System.Data.Services.DataService%601> , avec un type `T` qui est le nom qualifié par l'espace de noms du conteneur d'entités.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-115">The most basic data service exposes a class that inherits from the <xref:System.Data.Services.DataService%601> class, with a type `T` that is the namespace-qualified name of the entity container.</span></span> <span data-ttu-id="9a5c1-116">Pour plus d'informations, consultez [Defining WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="9a5c1-116">For more information, see [Defining WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md).</span></span>  
   
-3.  **Configurer le service de données.** Par défaut, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] désactive l'accès aux ressources exposées par un conteneur d'entités. L'interface <xref:System.Data.Services.DataServiceConfiguration> vous permet de configurer l'accès aux ressources et aux opérations de service, de spécifier la version d'[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] prise en charge et de définir d'autres comportements à l'échelle du service, comme les comportements du traitement par lots ou le nombre maximal d'entités qui peuvent être retournées dans une seule réponse. Pour plus d'informations, consultez [Configuration du service de données](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).  
+3.  <span data-ttu-id="9a5c1-117">**Configurer le service de données.**</span><span class="sxs-lookup"><span data-stu-id="9a5c1-117">**Configure the data service.**</span></span> <span data-ttu-id="9a5c1-118">Par défaut, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] désactive l'accès aux ressources exposées par un conteneur d'entités.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-118">By default, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] disables access to resources that are exposed by an entity container.</span></span> <span data-ttu-id="9a5c1-119">L'interface <xref:System.Data.Services.DataServiceConfiguration> vous permet de configurer l'accès aux ressources et opérations de service, de spécifier la version d'[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] prise en charge et de définir d'autres comportements à l'échelle du service, tels que les comportements de traitement par lot ou le nombre maximal d'entités qui peuvent être retournés dans une réponse unique.</span><span class="sxs-lookup"><span data-stu-id="9a5c1-119">The <xref:System.Data.Services.DataServiceConfiguration> interface enables you to configure access to resources and service operations, specify the supported version of [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], and to define other service-wide behaviors, such as batching behaviors or the maximum number of entities that can be returned in a single response.</span></span> <span data-ttu-id="9a5c1-120">Pour plus d’informations, consultez [configuration du Service de données](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="9a5c1-120">For more information, see [Configuring the Data Service](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).</span></span>  
   
- Pour obtenir un exemple sur la manière de créer un service de données simple basé sur l'exemple de base de données Northwind, consultez [Démarrage rapide](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
+ <span data-ttu-id="9a5c1-121">Pour obtenir un exemple montrant comment créer un service de données simple qui repose sur la base de données Northwind, consultez [Quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="9a5c1-121">For an example of how to create a simple data service that is based on the Northwind sample database, see [Quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-## Voir aussi  
- [Mise en route](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)   
- [Vue d'ensemble](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
+## <a name="see-also"></a><span data-ttu-id="9a5c1-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9a5c1-122">See Also</span></span>  
+ [<span data-ttu-id="9a5c1-123">Prise en main</span><span class="sxs-lookup"><span data-stu-id="9a5c1-123">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
+ [<span data-ttu-id="9a5c1-124">Vue d’ensemble</span><span class="sxs-lookup"><span data-stu-id="9a5c1-124">Overview</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)

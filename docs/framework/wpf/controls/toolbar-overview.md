@@ -1,56 +1,58 @@
 ---
-title: "Vue d&#39;ensemble de ToolBar | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles, ToolBar"
-  - "ToolBar (contrôle)"
+title: Vue d'ensemble de ToolBar
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [WPF], ToolBar
+- ToolBar control [WPF]
 ms.assetid: a8edb32c-118d-4f31-b6e6-8899082b504b
-caps.latest.revision: 28
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 27
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dddf6940e180b3d997357390ead38f99f52994ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble de ToolBar
-Les contrôles <xref:System.Windows.Controls.ToolBar> sont les conteneurs d'un groupe de commandes ou des contrôles généralement associés dans leur fonction.  Un <xref:System.Windows.Controls.ToolBar> contient généralement des boutons qui appellent des commandes.  
+# <a name="toolbar-overview"></a><span data-ttu-id="faeef-102">Vue d'ensemble de ToolBar</span><span class="sxs-lookup"><span data-stu-id="faeef-102">ToolBar Overview</span></span>
+<span data-ttu-id="faeef-103"><xref:System.Windows.Controls.ToolBar>les contrôles sont des conteneurs d’un groupe de commandes ou des contrôles généralement associés dans leur fonction.</span><span class="sxs-lookup"><span data-stu-id="faeef-103"><xref:System.Windows.Controls.ToolBar> controls are containers for a group of commands or controls which are typically related in their function.</span></span> <span data-ttu-id="faeef-104">A <xref:System.Windows.Controls.ToolBar> contient généralement des boutons qui appellent des commandes.</span><span class="sxs-lookup"><span data-stu-id="faeef-104">A <xref:System.Windows.Controls.ToolBar> usually contains buttons which invoke commands.</span></span>  
   
-   
   
 <a name="ToolBarControl"></a>   
-## Contrôle ToolBar  
- Le contrôle <xref:System.Windows.Controls.ToolBar> prend son nom de la disposition sous forme de barre des boutons ou autres contrôles figurant sur une ligne ou dans une colonne unique.  Les contrôles [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.ToolBar> fournissent un mécanisme de dépassement de capacité qui place dans une zone de débordement spéciale les éléments qui ne tiennent pas naturellement dans un <xref:System.Windows.Controls.ToolBar> à taille limitée.  En outre, les contrôles [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> sont habituellement utilisés avec le contrôle <xref:System.Windows.Controls.ToolBarTray> associé, qui fournit un comportement de disposition spécial, ainsi que la prise en charge du dimensionnement et de l'organisation des barres d'outils déterminés par l'utilisateur.  
+## <a name="toolbar-control"></a><span data-ttu-id="faeef-105">ToolBar, contrôle</span><span class="sxs-lookup"><span data-stu-id="faeef-105">ToolBar Control</span></span>  
+ <span data-ttu-id="faeef-106">Le <xref:System.Windows.Controls.ToolBar> contrôle tire son nom de la disposition sous forme de barre de boutons ou d’autres contrôles dans une seule ligne ou colonne.</span><span class="sxs-lookup"><span data-stu-id="faeef-106">The <xref:System.Windows.Controls.ToolBar> control takes its name from the bar-like arrangement of buttons or other controls into a single row or column.</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="faeef-107"><xref:System.Windows.Controls.ToolBar> contrôles offrent un mécanisme de dépassement de capacité qui place tous les éléments qui ne tiennent pas naturellement au sein d’une contrainte de taille <xref:System.Windows.Controls.ToolBar> dans une zone de débordement spéciale.</span><span class="sxs-lookup"><span data-stu-id="faeef-107"> <xref:System.Windows.Controls.ToolBar> controls provide an overflow mechanism which places any items that do not fit naturally within a size-constrained <xref:System.Windows.Controls.ToolBar> into a special overflow area.</span></span> <span data-ttu-id="faeef-108">En outre, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> les contrôles sont généralement utilisés avec le <xref:System.Windows.Controls.ToolBarTray> contrôle, qui fournit le comportement de disposition spécial ainsi que la prise en charge de dimensionnement et d’organiser des barres d’outils initiée par l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="faeef-108">Also, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> controls are usually used with the related <xref:System.Windows.Controls.ToolBarTray> control, which provides special layout behavior as well as support for user-initiated sizing and arranging of toolbars.</span></span>  
   
 <a name="Creating_ToolBars"></a>   
-## Spécification de la position de Toolbars dans un ToolBarTray  
- Utilisez les propriétés <xref:System.Windows.Controls.ToolBar.Band%2A> et <xref:System.Windows.Controls.ToolBar.BandIndex%2A> pour positionner le <xref:System.Windows.Controls.ToolBar> dans le <xref:System.Windows.Controls.ToolBarTray>.  <xref:System.Windows.Controls.ToolBar.Band%2A> indique la position à laquelle le <xref:System.Windows.Controls.ToolBar> est placé dans son <xref:System.Windows.Controls.ToolBarTray> parent.  <xref:System.Windows.Controls.ToolBar.BandIndex%2A> indique l'ordre dans lequel le <xref:System.Windows.Controls.ToolBar> est placé dans sa bande.  L'exemple suivant indique comment utiliser cette propriété pour placer des contrôles <xref:System.Windows.Controls.ToolBar> dans un <xref:System.Windows.Controls.ToolBarTray>.  
+## <a name="specifying-the-position-of-toolbars-in-a-toolbartray"></a><span data-ttu-id="faeef-109">Spécifier la position des contrôles ToolBar dans un ToolBarTray</span><span class="sxs-lookup"><span data-stu-id="faeef-109">Specifying the Position of ToolBars in a ToolBarTray</span></span>  
+ <span data-ttu-id="faeef-110">Utilisez le <xref:System.Windows.Controls.ToolBar.Band%2A> et <xref:System.Windows.Controls.ToolBar.BandIndex%2A> propriétés pour positionner le <xref:System.Windows.Controls.ToolBar> dans le <xref:System.Windows.Controls.ToolBarTray>.</span><span class="sxs-lookup"><span data-stu-id="faeef-110">Use the <xref:System.Windows.Controls.ToolBar.Band%2A> and <xref:System.Windows.Controls.ToolBar.BandIndex%2A> properties to position the <xref:System.Windows.Controls.ToolBar> in the <xref:System.Windows.Controls.ToolBarTray>.</span></span> <span data-ttu-id="faeef-111"><xref:System.Windows.Controls.ToolBar.Band%2A>Indique la position à laquelle le <xref:System.Windows.Controls.ToolBar> est placé dans son parent <xref:System.Windows.Controls.ToolBarTray>.</span><span class="sxs-lookup"><span data-stu-id="faeef-111"><xref:System.Windows.Controls.ToolBar.Band%2A> indicates the position in which the <xref:System.Windows.Controls.ToolBar> is placed within its parent <xref:System.Windows.Controls.ToolBarTray>.</span></span> <span data-ttu-id="faeef-112"><xref:System.Windows.Controls.ToolBar.BandIndex%2A>Indique l’ordre dans lequel le <xref:System.Windows.Controls.ToolBar> est placé dans sa bande.</span><span class="sxs-lookup"><span data-stu-id="faeef-112"><xref:System.Windows.Controls.ToolBar.BandIndex%2A> indicates the order in which the <xref:System.Windows.Controls.ToolBar> is placed within its band.</span></span> <span data-ttu-id="faeef-113">L’exemple suivant montre comment utiliser cette propriété pour placer <xref:System.Windows.Controls.ToolBar> contrôle à l’intérieur d’un <xref:System.Windows.Controls.ToolBarTray>.</span><span class="sxs-lookup"><span data-stu-id="faeef-113">The following example shows how use this property to place <xref:System.Windows.Controls.ToolBar> controls inside a <xref:System.Windows.Controls.ToolBarTray>.</span></span>  
   
- [!code-xml[ToolBarExample#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#2)]  
+ [!code-xaml[ToolBarExample#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#2)]  
   
 <a name="ToolBars_with_Overflow_Items"></a>   
-## ToolBars avec éléments de dépassement de capacité  
- Les contrôles <xref:System.Windows.Controls.ToolBar> contiennent souvent un nombre d'éléments supérieur à la capacité de la barre d'outils.  Lorsque cela se produit, le <xref:System.Windows.Controls.ToolBar> affiche un bouton de dépassement de capacité.  Pour afficher les éléments de dépassement de capacité, cliquez sur le bouton de dépassement de capacité et les éléments apparaissent dans une fenêtre indépendante sous le <xref:System.Windows.Controls.ToolBar>.  Le graphique suivant illustre un <xref:System.Windows.Controls.ToolBar> avec des éléments de dépassement de capacité.  
+## <a name="toolbars-with-overflow-items"></a><span data-ttu-id="faeef-114">Contrôles ToolBar avec éléments de dépassement</span><span class="sxs-lookup"><span data-stu-id="faeef-114">ToolBars with Overflow Items</span></span>  
+ <span data-ttu-id="faeef-115">Souvent <xref:System.Windows.Controls.ToolBar> contrôles contiennent plus d’éléments que s’adaptent à la taille de la barre d’outils.</span><span class="sxs-lookup"><span data-stu-id="faeef-115">Often <xref:System.Windows.Controls.ToolBar> controls contain more items than can fit into the toolbar's size.</span></span> <span data-ttu-id="faeef-116">Dans ce cas, la <xref:System.Windows.Controls.ToolBar> affiche un bouton de dépassement de capacité.</span><span class="sxs-lookup"><span data-stu-id="faeef-116">When this happens, the <xref:System.Windows.Controls.ToolBar> displays an overflow button.</span></span> <span data-ttu-id="faeef-117">Pour afficher les éléments de dépassement de capacité, un utilisateur clique sur le bouton de dépassement de capacité et les éléments sont affichés dans une fenêtre contextuelle ci-dessous le <xref:System.Windows.Controls.ToolBar>.</span><span class="sxs-lookup"><span data-stu-id="faeef-117">To see the overflow items, a user clicks the overflow button and the items are shown in a pop-up window below the <xref:System.Windows.Controls.ToolBar>.</span></span> <span data-ttu-id="faeef-118">Le graphique suivant illustre un <xref:System.Windows.Controls.ToolBar> avec des éléments de dépassement de capacité.</span><span class="sxs-lookup"><span data-stu-id="faeef-118">The following graphic shows a <xref:System.Windows.Controls.ToolBar> with overflow items.</span></span>  
   
- ![Barre d'outils avec dépassement de capacité](../../../../docs/framework/wpf/controls/media/toolbarwithoverflowitem.png "ToolbarWithOverflowItem")  
-ToolBars avec éléments de dépassement de capacité  
+ <span data-ttu-id="faeef-119">![Barre d’outils avec dépassement de capacité](../../../../docs/framework/wpf/controls/media/toolbarwithoverflowitem.png "ToolbarWithOverflowItem")</span><span class="sxs-lookup"><span data-stu-id="faeef-119">![ToolBar with overflow](../../../../docs/framework/wpf/controls/media/toolbarwithoverflowitem.png "ToolbarWithOverflowItem")</span></span>  
+<span data-ttu-id="faeef-120">ToolBar avec éléments de dépassement</span><span class="sxs-lookup"><span data-stu-id="faeef-120">Toolbar with Overflow Items</span></span>  
   
- Vous pouvez spécifier à quel moment un élément d'une barre d'outils est placé sur le panneau de dépassement de capacité en affectant <xref:System.Windows.Controls.OverflowMode?displayProperty=fullName>, <xref:System.Windows.Controls.OverflowMode?displayProperty=fullName> ou <xref:System.Windows.Controls.OverflowMode?displayProperty=fullName> à la propriété <xref:System.Windows.Controls.ToolBar.OverflowMode%2A?displayProperty=fullName> attachée.  L'exemple suivant spécifie que les quatre derniers boutons sur la barre d'outils doivent toujours être placés sur le panneau de dépassement de capacité.  
+ <span data-ttu-id="faeef-121">Vous pouvez spécifier quand un élément dans une barre d’outils est placé sur le panneau de dépassement de capacité en définissant le <xref:System.Windows.Controls.ToolBar.OverflowMode%2A?displayProperty=nameWithType> propriété attachée <xref:System.Windows.Controls.OverflowMode.Always?displayProperty=nameWithType>, <xref:System.Windows.Controls.OverflowMode.Never?displayProperty=nameWithType>, ou <xref:System.Windows.Controls.OverflowMode.AsNeeded?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="faeef-121">You can specify when an item on a toolbar is placed on the overflow panel by setting the <xref:System.Windows.Controls.ToolBar.OverflowMode%2A?displayProperty=nameWithType> attached property to <xref:System.Windows.Controls.OverflowMode.Always?displayProperty=nameWithType>, <xref:System.Windows.Controls.OverflowMode.Never?displayProperty=nameWithType>, or <xref:System.Windows.Controls.OverflowMode.AsNeeded?displayProperty=nameWithType>.</span></span> <span data-ttu-id="faeef-122">L’exemple suivant spécifie que les quatre derniers boutons de la barre d’outils doivent toujours se trouver sur le panneau de dépassement.</span><span class="sxs-lookup"><span data-stu-id="faeef-122">The following example specifies that the last four buttons on the toolbar should always be on the overflow panel.</span></span>  
   
- [!code-xml[ToolBarExample#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#3)]  
+ [!code-xaml[ToolBarExample#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#3)]  
   
- Le <xref:System.Windows.Controls.ToolBar> utilise un <xref:System.Windows.Controls.Primitives.ToolBarPanel> et un <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> dans son <xref:System.Windows.Controls.ControlTemplate>.  Le <xref:System.Windows.Controls.Primitives.ToolBarPanel> est responsable de la disposition des éléments sur la barre d'outils.  Le <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> est responsable de la disposition des éléments qui ne tiennent pas sur le <xref:System.Windows.Controls.ToolBar>.  Pour obtenir un exemple d'un <xref:System.Windows.Controls.ControlTemplate> pour un <xref:System.Windows.Controls.ToolBar>, consultez  
+ <span data-ttu-id="faeef-123">Le <xref:System.Windows.Controls.ToolBar> utilise un <xref:System.Windows.Controls.Primitives.ToolBarPanel> et un <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> dans son <xref:System.Windows.Controls.ControlTemplate>.</span><span class="sxs-lookup"><span data-stu-id="faeef-123">The <xref:System.Windows.Controls.ToolBar> uses a <xref:System.Windows.Controls.Primitives.ToolBarPanel> and a <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> in its <xref:System.Windows.Controls.ControlTemplate>.</span></span>  <span data-ttu-id="faeef-124">Le <xref:System.Windows.Controls.Primitives.ToolBarPanel> est responsable de la disposition des éléments dans la barre d’outils.</span><span class="sxs-lookup"><span data-stu-id="faeef-124">The <xref:System.Windows.Controls.Primitives.ToolBarPanel> is responsible for the layout of the items on the toolbar.</span></span>  <span data-ttu-id="faeef-125">Le <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> est responsable de la disposition des éléments qui ne tiennent pas dans le <xref:System.Windows.Controls.ToolBar>.</span><span class="sxs-lookup"><span data-stu-id="faeef-125">The <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> is responsible for the layout of the items that do not fit on the <xref:System.Windows.Controls.ToolBar>.</span></span> <span data-ttu-id="faeef-126">Pour obtenir un exemple d’un <xref:System.Windows.Controls.ControlTemplate> pour un <xref:System.Windows.Controls.ToolBar>, consultez</span><span class="sxs-lookup"><span data-stu-id="faeef-126">For an example of a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.ToolBar>, see</span></span>  
   
- [Styles et modèles ToolBar](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md).  
+ <span data-ttu-id="faeef-127">[Styles et modèles ToolBar](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md).</span><span class="sxs-lookup"><span data-stu-id="faeef-127">[ToolBar Styles and Templates](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Controls.Primitives.ToolBarPanel>   
- <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>   
- [Donner un style aux contrôles d'une barre d'outils](../../../../docs/framework/wpf/controls/how-to-style-controls-on-a-toolbar.md)   
- [Galerie de contrôles WPF, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160053)
+## <a name="see-also"></a><span data-ttu-id="faeef-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="faeef-128">See Also</span></span>  
+ <xref:System.Windows.Controls.Primitives.ToolBarPanel>  
+ <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>  
+ [<span data-ttu-id="faeef-129">Donner un style aux contrôles d'une barre d'outils</span><span class="sxs-lookup"><span data-stu-id="faeef-129">Style Controls on a ToolBar</span></span>](../../../../docs/framework/wpf/controls/how-to-style-controls-on-a-toolbar.md)  
+ [<span data-ttu-id="faeef-130">Exemple de galerie de contrôles WPF</span><span class="sxs-lookup"><span data-stu-id="faeef-130">WPF Controls Gallery Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160053)

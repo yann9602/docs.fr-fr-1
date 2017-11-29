@@ -1,45 +1,48 @@
 ---
-title: "H&#233;bergement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Hosting2
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0820c7e5-0b50-4cde-80e7-74e346513002
-caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8b0e8aa1dfe2e7a737e88530a206739eef39b2cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# H&#233;bergement
-Les rubriques de cette section décrivent l'hébergement de service.Un service peut être hébergé par les services IIS \(Internet Information Services\), le service WAS \(Windows Process Activation Service\), Windows Server AppFabric, un service Windows ou par une application managée. Cette option est souvent connue sous le nom d'*auto\-hébergement*.  
+# <a name="hosting"></a><span data-ttu-id="68bd2-102">Hébergement</span><span class="sxs-lookup"><span data-stu-id="68bd2-102">Hosting</span></span>
+<span data-ttu-id="68bd2-103">Les rubriques de cette section décrivent l'hébergement de service.</span><span class="sxs-lookup"><span data-stu-id="68bd2-103">The topics in the section describe service hosting.</span></span> <span data-ttu-id="68bd2-104">Un service peut être hébergé par Internet Information Services (IIS), Service d’Activation des processus Windows (WAS), Windows Server AppFabric, un service Windows, ou par une application managée, cette option est souvent appelée *hébergement personnel*.</span><span class="sxs-lookup"><span data-stu-id="68bd2-104">A service can be hosted by Internet Information Services (IIS), Windows Process Activation Service (WAS), Windows Server AppFabric, a Windows service, or by a managed application—this option is often referred to as *self hosting*.</span></span>  
   
- Il est important de noter que l'exécution d'un service ou d'une extension à partir d'un hôte non fiable compromet la sécurité.  
+ <span data-ttu-id="68bd2-105">Il est important de noter que l'exécution d'un service ou d'une extension à partir d'un hôte non fiable compromet la sécurité.</span><span class="sxs-lookup"><span data-stu-id="68bd2-105">It is important to note that running a service or any extension from an untrusted host compromises security.</span></span>  
   
-## Dans cette section  
- [Hébergement dans les services IIS \(Internet Information Services\)](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
- Décrit le mode d'hébergement d'un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service dans Internet Information Services ou [Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496).  
+## <a name="in-this-section"></a><span data-ttu-id="68bd2-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="68bd2-106">In This Section</span></span>  
+ [<span data-ttu-id="68bd2-107">Hébergement dans Internet Information Services</span><span class="sxs-lookup"><span data-stu-id="68bd2-107">Hosting in Internet Information Services</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ <span data-ttu-id="68bd2-108">Décrit comment un [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service est hébergé dans Internet Information Services ou [Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496).</span><span class="sxs-lookup"><span data-stu-id="68bd2-108">Describes how a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service is hosted in Internet Information Services or [Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496).</span></span>  
   
- [Hébergement dans le service d'activation de processus de Windows \(WAS, Windows Process Activation Service\)](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
- Décrit le mode d'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par le service WAS.  
+ [<span data-ttu-id="68bd2-109">Hébergement dans le service d’activation des processus Windows</span><span class="sxs-lookup"><span data-stu-id="68bd2-109">Hosting in Windows Process Activation Service</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
+ <span data-ttu-id="68bd2-110">Décrit le mode d'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par le service WAS.</span><span class="sxs-lookup"><span data-stu-id="68bd2-110">Describes how a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service is hosted by Windows Process Activation Service.</span></span>  
   
- [Hébergement dans une application de service Windows](../../../../docs/framework/wcf/feature-details/hosting-in-a-windows-service-application.md)  
- Décrit le mode d'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par un service Windows.  
+ [<span data-ttu-id="68bd2-111">Hébergement dans une Application de Service Windows</span><span class="sxs-lookup"><span data-stu-id="68bd2-111">Hosting in a Windows Service Application</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-a-windows-service-application.md)  
+ <span data-ttu-id="68bd2-112">Décrit le mode d'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par un service Windows.</span><span class="sxs-lookup"><span data-stu-id="68bd2-112">Describes how a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service is hosted by a Windows service.</span></span>  
   
- [Hébergement dans une application managée](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)  
- Décrit le mode d'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans une application managée.  
+ [<span data-ttu-id="68bd2-113">Hébergement dans une Application managée</span><span class="sxs-lookup"><span data-stu-id="68bd2-113">Hosting in a Managed Application</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)  
+ <span data-ttu-id="68bd2-114">Décrit le mode d'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans une application managée.</span><span class="sxs-lookup"><span data-stu-id="68bd2-114">Describes how a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service is hosted in a managed application.</span></span>  
   
- [Activation basée sur la configuration dans les services IIS et WAS](../../../../docs/framework/wcf/feature-details/configuration-based-activation-in-iis-and-was.md)  
- Décrit comment un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est hébergé dans les services IIS ou WAS sans utiliser de fichier .svc.  
+ [<span data-ttu-id="68bd2-115">Activation basée sur la configuration dans IIS et WAS</span><span class="sxs-lookup"><span data-stu-id="68bd2-115">Configuration-Based Activation in IIS and WAS</span></span>](../../../../docs/framework/wcf/feature-details/configuration-based-activation-in-iis-and-was.md)  
+ <span data-ttu-id="68bd2-116">Décrit comment un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est hébergé dans les services IIS ou WAS sans utiliser de fichier .svc.</span><span class="sxs-lookup"><span data-stu-id="68bd2-116">Describes how a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service is hosted under IIS or WAS without using a .svc file.</span></span>  
   
- [Prise en charge de plusieurs liaisons de site IIS](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)  
- Décrit comment spécifier plusieurs adresses de base pour un service à l'aide du même modèle d'URI sur un site Web unique.  
+ [<span data-ttu-id="68bd2-117">Prise en charge de plusieurs liaisons de Site IIS</span><span class="sxs-lookup"><span data-stu-id="68bd2-117">Supporting Multiple IIS Site Bindings</span></span>](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)  
+ <span data-ttu-id="68bd2-118">Décrit comment spécifier plusieurs adresses de base pour un service à l’aide du même modèle d’URI sur un site web unique.</span><span class="sxs-lookup"><span data-stu-id="68bd2-118">Describes how to specify multiple base addresses for a service using the same URI scheme on a single Web site.</span></span>  
   
-## Voir aussi  
- [Hébergement de services](../../../../docs/framework/wcf/hosting-services.md)   
- [Fonctionnalités d'hébergement de Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a><span data-ttu-id="68bd2-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="68bd2-119">See Also</span></span>  
+ [<span data-ttu-id="68bd2-120">Hébergement de services</span><span class="sxs-lookup"><span data-stu-id="68bd2-120">Hosting Services</span></span>](../../../../docs/framework/wcf/hosting-services.md)  
+ [<span data-ttu-id="68bd2-121">Fonctionnalités d’hébergement de Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="68bd2-121">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)
