@@ -1,66 +1,69 @@
 ---
-title: "Comment&#160;: ajouter des contr&#244;les sans interface utilisateur &#224; des Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "NonVisualSelection"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), non visuels"
-  - "contrôles invisibles"
-  - "contrôles non visuels"
-  - "contrôles Windows Forms, ajouter aux formulaires"
-  - "contrôles Windows Forms, non visuels"
+title: "Comment : ajouter des contrôles sans interface utilisateur à des Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+f1_keywords: NonVisualSelection
+helpviewer_keywords:
+- invisible controls [Windows Forms]
+- Windows Forms controls, adding to form
+- controls [Windows Forms], nonvisual
+- Windows Forms controls, nonvisual
+- nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7deea3aca390ebfa4cc1fcbf16a0e898301ae434
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ajouter des contr&#244;les sans interface utilisateur &#224; des Windows Forms
-Les contrôles \(ou composants\) non visuels apportent des fonctionnalités à votre application.  À la différence des autres contrôles, les composants ne fournissent pas d'interface d'utilisateur et n'ont, par conséquent, pas besoin d'être affichés sur la surface du Concepteur Windows Forms.  Lorsqu'un composant est ajouté à un formulaire, le Concepteur Windows Forms affiche, au bas du formulaire, une barre redimensionnable dans laquelle sont présentés tous les composants.  Une fois qu'un contrôle a été ajouté à la barre d'état des composants, vous pouvez le sélectionner et définir ses propriétés comme vous le feriez avec n'importe quel contrôle du formulaire.  
+# <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a><span data-ttu-id="cacaf-102">Comment : ajouter des contrôles sans interface utilisateur à des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-102">How to: Add Controls Without a User Interface to Windows Forms</span></span>
+<span data-ttu-id="cacaf-103">Un contrôle non visuel (ou un composant) fournit des fonctionnalités à votre application.</span><span class="sxs-lookup"><span data-stu-id="cacaf-103">A nonvisual control (or component) provides functionality to your application.</span></span> <span data-ttu-id="cacaf-104">Contrairement à d’autres contrôles, les composants ne fournissent pas d’interface utilisateur à l’utilisateur et par conséquent, n’avez pas besoin être affiché sur l’aire du Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="cacaf-104">Unlike other controls, components do not provide a user interface to the user and thus do not need to be displayed on the Windows Forms Designer surface.</span></span> <span data-ttu-id="cacaf-105">Lorsqu’un composant est ajouté à un formulaire, le Concepteur Windows Forms affiche une barre d’état redimensionnable au bas de l’écran où tous les composants sont affichés.</span><span class="sxs-lookup"><span data-stu-id="cacaf-105">When a component is added to a form, the Windows Forms Designer displays a resizable tray at the bottom of the form where all components are displayed.</span></span> <span data-ttu-id="cacaf-106">Une fois qu’un contrôle a été ajouté à la barre d’état du composant, vous pouvez sélectionner le composant et définissez ses propriétés comme vous le feriez pour tout autre contrôle sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="cacaf-106">Once a control has been added to the component tray, you can select the component and set its properties as you would any other control on the form.</span></span>  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="cacaf-107">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="cacaf-107">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="cacaf-108">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="cacaf-108">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="cacaf-109">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="cacaf-109">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### Pour ajouter un composant à un Windows Form  
+### <a name="to-add-a-component-to-a-windows-form"></a><span data-ttu-id="cacaf-110">Pour ajouter un composant à un Windows Form</span><span class="sxs-lookup"><span data-stu-id="cacaf-110">To add a component to a Windows Form</span></span>  
   
-1.  Ouvrez le formulaire.  Pour plus d'informations, consultez [How to: Display Windows Forms in the Designer](http://msdn.microsoft.com/fr-fr/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).  
+1.  <span data-ttu-id="cacaf-111">Ouvrez le formulaire.</span><span class="sxs-lookup"><span data-stu-id="cacaf-111">Open the form.</span></span> <span data-ttu-id="cacaf-112">Pour plus d’informations, consultez [Comment : afficher des Windows Forms dans le concepteur](http://msdn.microsoft.com/en-us/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).</span><span class="sxs-lookup"><span data-stu-id="cacaf-112">For details, see [How to: Display Windows Forms in the Designer](http://msdn.microsoft.com/en-us/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).</span></span>  
   
-2.  Dans la **Boîte à outils**, cliquez sur un composant et faites\-le glisser jusqu'à votre formulaire.  
+2.  <span data-ttu-id="cacaf-113">Dans le **boîte à outils**, cliquez sur un composant et faites-le glisser vers votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="cacaf-113">In the **Toolbox**, click a component and drag it to your form.</span></span>  
   
-     Il apparaît alors dans la barre d'état des composants.  
+     <span data-ttu-id="cacaf-114">Votre composant s’affiche dans la barre d’état du composant.</span><span class="sxs-lookup"><span data-stu-id="cacaf-114">Your component appears in the component tray.</span></span>  
   
- En outre, il est possible d'ajouter des composants à un formulaire au moment de l'exécution.  Il s'agit d'un scénario fréquent, car les composants ne possèdent pas d'expression visuelle, contrairement aux contrôles \(qui disposent d'une interface utilisateur\).  Dans l'exemple ci\-dessous, un composant <xref:System.Windows.Forms.Timer> est ajouté au moment de l'exécution.  \(Notez que [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] contient différents types de minuteries \(Timers\) ; dans ce cas, utilisez un composant <xref:System.Windows.Forms.Timer> Windows Forms.  Pour plus d'informations sur les différentes minuteries \(Timers\) présentes dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], consultez [Introduction to Server\-Based Timers](http://msdn.microsoft.com/fr-fr/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).\)  
+ <span data-ttu-id="cacaf-115">En outre, les composants peuvent être ajoutés à un formulaire au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="cacaf-115">Furthermore, components can be added to a form at run time.</span></span> <span data-ttu-id="cacaf-116">Il s’agit d’un scénario courant, en particulier, car les composants n’ont pas de représentation visuelle, contrairement aux contrôles qui ont une interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="cacaf-116">This is a common scenario, especially because components do not have a visual expression, unlike controls that have a user interface.</span></span> <span data-ttu-id="cacaf-117">Dans l’exemple ci-dessous, un <xref:System.Windows.Forms.Timer> composant est ajouté au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="cacaf-117">In the example below, a <xref:System.Windows.Forms.Timer> component is added at run time.</span></span> <span data-ttu-id="cacaf-118">(Notez que [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] contient un numéro de différents types de minuteries ; dans ce cas, utilisez un Windows Forms <xref:System.Windows.Forms.Timer> composant.</span><span class="sxs-lookup"><span data-stu-id="cacaf-118">(Note that [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] contains a number of different timers; in this case, use a Windows Forms <xref:System.Windows.Forms.Timer> component.</span></span> <span data-ttu-id="cacaf-119">Pour plus d’informations sur les différentes minuteries dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], consultez [Introduction aux minuteurs serveur](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).)</span><span class="sxs-lookup"><span data-stu-id="cacaf-119">For more information about the different timers in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], see [Introduction to Server-Based Timers](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).)</span></span>  
   
 > [!CAUTION]
->  Les composants possèdent souvent des propriétés spécifiques au contrôle qui doivent être définies pour qu'ils puissent fonctionner correctement.  Dans le cas du composant <xref:System.Windows.Forms.Timer> de l'exemple ci\-dessous, vous devez définir la propriété `Interval`.  Lorsque vous ajoutez des composants à votre projet, veillez à définir les propriétés nécessaires à ce composant.  
+>  <span data-ttu-id="cacaf-120">Composants ont souvent des propriétés spécifiques au contrôle qui doivent être définies pour le composant de fonctionner efficacement.</span><span class="sxs-lookup"><span data-stu-id="cacaf-120">Components often have control-specific properties that must be set for the component to function effectively.</span></span> <span data-ttu-id="cacaf-121">Dans le cas de la <xref:System.Windows.Forms.Timer> composant ci-dessous, vous définissez le `Interval` propriété.</span><span class="sxs-lookup"><span data-stu-id="cacaf-121">In the case of the <xref:System.Windows.Forms.Timer> component below, you set the `Interval` property.</span></span> <span data-ttu-id="cacaf-122">Assurez-vous que, lors de l’ajout de composants à votre projet, définissez les propriétés nécessaires à ce composant.</span><span class="sxs-lookup"><span data-stu-id="cacaf-122">Be sure, when adding components to your project, that you set the properties necessary for that component.</span></span>  
   
-#### Pour ajouter par programme un composant à un Windows Form  
+#### <a name="to-add-a-component-to-a-windows-form-programmatically"></a><span data-ttu-id="cacaf-123">Pour ajouter un composant à un Windows Form par programmation</span><span class="sxs-lookup"><span data-stu-id="cacaf-123">To add a component to a Windows Form programmatically</span></span>  
   
-1.  Créez une instance de la classe <xref:System.Windows.Forms.Timer> dans le code.  
+1.  <span data-ttu-id="cacaf-124">Créez une instance de la <xref:System.Windows.Forms.Timer> classe dans le code.</span><span class="sxs-lookup"><span data-stu-id="cacaf-124">Create an instance of the <xref:System.Windows.Forms.Timer> class in code.</span></span>  
   
-2.  Définissez la propriété `Interval` pour déterminer l'intervalle entre les graduations de la minuterie \(Timer\).  
+2.  <span data-ttu-id="cacaf-125">Définir le `Interval` propriété pour déterminer l’intervalle entre les graduations de la minuterie.</span><span class="sxs-lookup"><span data-stu-id="cacaf-125">Set the `Interval` property to determine the time between ticks of the timer.</span></span>  
   
-3.  Configurez toutes les autres propriétés nécessaires à votre composant.  
+3.  <span data-ttu-id="cacaf-126">Configurez toutes les autres propriétés nécessaires pour votre composant.</span><span class="sxs-lookup"><span data-stu-id="cacaf-126">Configure any other necessary properties for your component.</span></span>  
   
-     Le code suivant montre comment créer un objet <xref:System.Windows.Forms.Timer> et définir sa propriété `Interval`.  
+     <span data-ttu-id="cacaf-127">Le code suivant illustre la création d’un <xref:System.Windows.Forms.Timer> avec son `Interval` jeu de propriétés.</span><span class="sxs-lookup"><span data-stu-id="cacaf-127">The following code shows the creation of a <xref:System.Windows.Forms.Timer> with its `Interval` property set.</span></span>  
   
     ```vb  
     Public Sub CreateTimer()  
        Dim timerKeepTrack As New System.Windows.Forms.Timer  
        timerKeepTrack.Interval = 1000  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -70,7 +73,6 @@ Les contrôles \(ou composants\) non visuels apportent des fonctionnalités à v
            System.Windows.Forms.Timer();  
        timerKeepTrack.Interval = 1000;  
     }  
-  
     ```  
   
     ```cpp  
@@ -84,14 +86,14 @@ Les contrôles \(ou composants\) non visuels apportent des fonctionnalités à v
     ```  
   
     > [!IMPORTANT]
-    >  Vous risquez d'exposer votre ordinateur local à un problème de sécurité sur le réseau si vous référencez un UserControl nuisible.  Ce risque est présent dans le cas d'une personne malveillante qui crée un contrôle personnalisé préjudiciable, si vous ajoutez par erreur ce contrôle à votre projet.  
+    >  <span data-ttu-id="cacaf-128">Vous pouvez exposer votre ordinateur local à un risque de sécurité via le réseau en référençant un UserControl malveillant.</span><span class="sxs-lookup"><span data-stu-id="cacaf-128">You might expose your local computer to a security risk through the network by referencing a malicious UserControl.</span></span> <span data-ttu-id="cacaf-129">Il s’agit uniquement d’un problème dans le cas d’une personne malveillante, créer un contrôle personnalisé causer des dommages, suivi de vous ajouter par erreur à votre projet.</span><span class="sxs-lookup"><span data-stu-id="cacaf-129">This would only be a concern in the case of a malicious person creating a damaging custom control, followed by you mistakenly adding it to your project.</span></span>  
   
-## Voir aussi  
- [contrôles Windows Forms](../../../../docs/framework/winforms/controls/index.md)   
- [Comment : ajouter des contrôles à des Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)   
- [Comment : ajouter des contrôles ActiveX aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)   
- [Comment : copier des contrôles entre des Windows Forms](../../../../docs/framework/winforms/controls/how-to-copy-controls-between-windows-forms.md)   
- [Placement de contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)   
- [Création d'étiquettes et de raccourcis pour les contrôles Windows Forms](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
- [Classement par fonction des contrôles Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+## <a name="see-also"></a><span data-ttu-id="cacaf-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cacaf-130">See Also</span></span>  
+ [<span data-ttu-id="cacaf-131">Contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-131">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)  
+ [<span data-ttu-id="cacaf-132">Comment : ajouter des contrôles à des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-132">How to: Add Controls to Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  
+ [<span data-ttu-id="cacaf-133">Guide pratique pour ajouter des contrôles ActiveX aux Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-133">How to: Add ActiveX Controls to Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
+ [<span data-ttu-id="cacaf-134">Guide pratique pour copier des contrôles entre des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-134">How to: Copy Controls Between Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-copy-controls-between-windows-forms.md)  
+ [<span data-ttu-id="cacaf-135">Placement de contrôles dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-135">Putting Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)  
+ [<span data-ttu-id="cacaf-136">Création d'étiquettes et de raccourcis pour les contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-136">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [<span data-ttu-id="cacaf-137">Contrôles à utiliser dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-137">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [<span data-ttu-id="cacaf-138">Classement par fonction des contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cacaf-138">Windows Forms Controls by Function</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

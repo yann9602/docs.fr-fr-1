@@ -1,41 +1,44 @@
 ---
-title: "Prise en charge de la diffusion en continu pour SqlClient | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Prise en charge de la diffusion en continu pour SqlClient
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 85999a6aa15b04ffa2751d7312f71aaab1582ea3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Prise en charge de la diffusion en continu pour SqlClient
-La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] et une application \(nouveauté de [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]\) prend en charge des données non structurées sur le serveur \(documents, images et fichiers multimédias\).  Une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] peut stocker des objets BLOB, mais la récupération de BLOB peut utiliser beaucoup de mémoire.  
+# <a name="sqlclient-streaming-support"></a><span data-ttu-id="16912-102">Prise en charge de la diffusion en continu pour SqlClient</span><span class="sxs-lookup"><span data-stu-id="16912-102">SqlClient Streaming Support</span></span>
+<span data-ttu-id="16912-103">La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] et une application (nouveauté de [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) prend en charge des données non structurées sur le serveur (documents, images et fichiers multimédias).</span><span class="sxs-lookup"><span data-stu-id="16912-103">Streaming support between [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] and an application (new in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) supports unstructured data on the server (documents, images, and media files).</span></span> <span data-ttu-id="16912-104">Une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] peut stocker des objets BLOB, mais la récupération de BLOB peut utiliser beaucoup de mémoire.</span><span class="sxs-lookup"><span data-stu-id="16912-104">A [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] database can store binary large objects (BLOBs), but retrieving BLOBS can use a lot of memory.</span></span>  
   
- La prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] simplifie l'écriture d'applications qui diffusent les données, sans devoir entièrement charger les données dans la mémoire, ce qui réduit le nombre d'exceptions de dépassement de capacité de mémoire.  
+ <span data-ttu-id="16912-105">La prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] simplifie l'écriture d'applications qui diffusent les données, sans devoir entièrement charger les données dans la mémoire, ce qui réduit le nombre d'exceptions de dépassement de capacité de mémoire.</span><span class="sxs-lookup"><span data-stu-id="16912-105">Streaming support to and from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] simplifies writing applications that stream data, without having to fully load the data into memory, resulting in fewer memory overflow exceptions.</span></span>  
   
- La prise en charge de la diffusion en continu facilite la montée en charge des applications intermédiaires, surtout dans les scénarios où les objets métiers se connectent à SQL Azure afin d'envoyer, de récupérer et manipuler des BLOB.  
+ <span data-ttu-id="16912-106">La prise en charge de la diffusion en continu facilite la montée en charge des applications intermédiaires, surtout dans les scénarios où les objets métiers se connectent à SQL Azure afin d'envoyer, de récupérer et manipuler des BLOB.</span><span class="sxs-lookup"><span data-stu-id="16912-106">Streaming support will also enable middle-tier applications to scale better, especially in scenarios where business objects connect to SQL Azure in order to send, retrieve, and manipulate large BLOBs.</span></span>  
   
 > [!WARNING]
->  Les appels asynchrones ne sont pas pris en charge si une application utilise également le mot clé de chaîne de connexion `Context Connection`.  
+>  <span data-ttu-id="16912-107">Les appels asynchrones ne sont pas pris en charge si une application utilise également le mot clé de chaîne de connexion `Context Connection`.</span><span class="sxs-lookup"><span data-stu-id="16912-107">Asynchronous calls are not supported if an application also uses the `Context Connection` connection string keyword.</span></span>  
 >   
->  Les membres ajoutés pour la prise en charge de la diffusion en continu sont utilisés pour récupérer des données de requêtes et passer des paramètres aux requêtes et aux procédures stockées.  La fonctionnalité de diffusion en continu répond à des scénarios OLTP de base et de migration des données et s'applique aux environnements de migration des données sur site et hors site.  
+>  <span data-ttu-id="16912-108">Les membres ajoutés pour la prise en charge de la diffusion en continu sont utilisés pour récupérer des données de requêtes et passer des paramètres aux requêtes et aux procédures stockées.</span><span class="sxs-lookup"><span data-stu-id="16912-108">The members added to support streaming are used to retrieve data from queries and to pass parameters to queries and stored procedures.</span></span> <span data-ttu-id="16912-109">La fonctionnalité de diffusion en continu répond à des scénarios OLTP de base et de migration des données et s'applique aux environnements de migration des données sur site et hors site.</span><span class="sxs-lookup"><span data-stu-id="16912-109">The streaming feature addresses basic OLTP and data migration scenarios and is applicable to on premise and off premise data migrations.environments.</span></span>  
   
-## Prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- La prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans les classes <xref:System.Data.Common.DbDataReader> et <xref:System.Data.SqlClient.SqlDataReader> pour obtenir les objets <xref:System.IO.Stream>, <xref:System.Xml.XmlReader> et <xref:System.IO.TextReader> et réagir à ces derniers.  Ces classes sont utilisées pour récupérer les données des requêtes.  Par conséquent, la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] répond aux scénarios OLTP et s'applique aux environnements sur site et hors site.  
+## <a name="streaming-support-from-includessnoversionincludesssnoversion-mdmd"></a><span data-ttu-id="16912-110">Prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span><span class="sxs-lookup"><span data-stu-id="16912-110">Streaming Support from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span></span>  
+ <span data-ttu-id="16912-111">La prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans les classes <xref:System.Data.Common.DbDataReader> et <xref:System.Data.SqlClient.SqlDataReader> pour obtenir les objets <xref:System.IO.Stream>, <xref:System.Xml.XmlReader> et <xref:System.IO.TextReader> et réagir à ces derniers.</span><span class="sxs-lookup"><span data-stu-id="16912-111">Streaming support from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduces new functionality in the <xref:System.Data.Common.DbDataReader> and in the <xref:System.Data.SqlClient.SqlDataReader> classes in order to get <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, and <xref:System.IO.TextReader> objects and react to them.</span></span>  <span data-ttu-id="16912-112">Ces classes sont utilisées pour récupérer les données des requêtes.</span><span class="sxs-lookup"><span data-stu-id="16912-112">These classes are used to retrieve data from queries.</span></span> <span data-ttu-id="16912-113">Par conséquent, la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] répond aux scénarios OLTP et s'applique aux environnements sur site et hors site.</span><span class="sxs-lookup"><span data-stu-id="16912-113">As a result, Streaming support from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] addresses OLTP scenarios and applies to on-premise and off-premise environments.</span></span>  
   
- Les membres suivants ont été ajoutés à <xref:System.Data.SqlClient.SqlDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :  
+ <span data-ttu-id="16912-114">Les membres suivants ont été ajoutés à <xref:System.Data.SqlClient.SqlDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :</span><span class="sxs-lookup"><span data-stu-id="16912-114">The following members were added to <xref:System.Data.SqlClient.SqlDataReader> to enable streaming support from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]:</span></span>  
   
 1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
-2.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=fullName>  
+2.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=nameWithType>  
   
 3.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValueAsync%2A>  
   
@@ -45,7 +48,7 @@ La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../..
   
 6.  <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
   
- Les membres suivants ont été ajoutés à <xref:System.Data.Common.DbDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :  
+ <span data-ttu-id="16912-115">Les membres suivants ont été ajoutés à <xref:System.Data.Common.DbDataReader> pour activer la prise en charge de la diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] :</span><span class="sxs-lookup"><span data-stu-id="16912-115">The following members were added to <xref:System.Data.Common.DbDataReader> to enable streaming support from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]:</span></span>  
   
 1.  <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
   
@@ -53,35 +56,35 @@ La prise en charge de la diffusion en continu entre [!INCLUDE[ssNoVersion](../..
   
 3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
-## Prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- La prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans la classe <xref:System.Data.SqlClient.SqlParameter> de façon à ce qu'elle reçoive et réagisse aux objets <xref:System.Xml.XmlReader>, <xref:System.IO.Stream> et <xref:System.IO.TextReader>.  <xref:System.Data.SqlClient.SqlParameter> est utilisé pour passer des paramètres aux requêtes et aux procédures stockées.  
+## <a name="streaming-support-to-includessnoversionincludesssnoversion-mdmd"></a><span data-ttu-id="16912-116">Prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span><span class="sxs-lookup"><span data-stu-id="16912-116">Streaming Support to [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span></span>  
+ <span data-ttu-id="16912-117">La prise en charge de la diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduit une nouvelle fonctionnalité dans la classe <xref:System.Data.SqlClient.SqlParameter> de façon à ce qu'elle reçoive et réagisse aux objets <xref:System.Xml.XmlReader>, <xref:System.IO.Stream> et <xref:System.IO.TextReader>.</span><span class="sxs-lookup"><span data-stu-id="16912-117">Streaming support to [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] introduces new functionality in the <xref:System.Data.SqlClient.SqlParameter> class so it can accept and react to <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, and <xref:System.IO.TextReader> objects.</span></span> <span data-ttu-id="16912-118"><xref:System.Data.SqlClient.SqlParameter> est utilisé pour passer des paramètres aux requêtes et aux procédures stockées.</span><span class="sxs-lookup"><span data-stu-id="16912-118"><xref:System.Data.SqlClient.SqlParameter> is used to pass parameters to queries and stored procedures.</span></span>  
   
- Supprimer un objet <xref:System.Data.SqlClient.SqlCommand> ou appeler <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> doit annuler toute opération en continu.  Si une application envoie <xref:System.Threading.CancellationToken>, l'annulation n'est pas garantie.  
+ <span data-ttu-id="16912-119">Supprimer un objet <xref:System.Data.SqlClient.SqlCommand> ou appeler <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> doit annuler toute opération en continu.</span><span class="sxs-lookup"><span data-stu-id="16912-119">Disposing a <xref:System.Data.SqlClient.SqlCommand> object or calling <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> must cancel any streaming operation.</span></span> <span data-ttu-id="16912-120">Si une application envoie <xref:System.Threading.CancellationToken>, l'annulation n'est pas garantie.</span><span class="sxs-lookup"><span data-stu-id="16912-120">If an application sends <xref:System.Threading.CancellationToken>, cancellation is not guaranteed.</span></span>  
   
- Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.Stream> :  
+ <span data-ttu-id="16912-121">Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.Stream> :</span><span class="sxs-lookup"><span data-stu-id="16912-121">The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.Stream>:</span></span>  
   
--   **Binary**  
+-   <span data-ttu-id="16912-122">**Binary**</span><span class="sxs-lookup"><span data-stu-id="16912-122">**Binary**</span></span>  
   
--   **VarBinary**  
+-   <span data-ttu-id="16912-123">**VarBinary**</span><span class="sxs-lookup"><span data-stu-id="16912-123">**VarBinary**</span></span>  
   
- Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.TextReader> :  
+ <span data-ttu-id="16912-124">Les types suivants <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> acceptent un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.IO.TextReader> :</span><span class="sxs-lookup"><span data-stu-id="16912-124">The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.TextReader>:</span></span>  
   
--   **Char**  
+-   <span data-ttu-id="16912-125">**Char**</span><span class="sxs-lookup"><span data-stu-id="16912-125">**Char**</span></span>  
   
--   **NChar**  
+-   <span data-ttu-id="16912-126">**NChar**</span><span class="sxs-lookup"><span data-stu-id="16912-126">**NChar**</span></span>  
   
--   **NVarChar**  
+-   <span data-ttu-id="16912-127">**NVarChar**</span><span class="sxs-lookup"><span data-stu-id="16912-127">**NVarChar**</span></span>  
   
--   **Xml**  
+-   <span data-ttu-id="16912-128">**Xml**</span><span class="sxs-lookup"><span data-stu-id="16912-128">**Xml**</span></span>  
   
- Le type **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> accepte un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.Xml.XmlReader>.  
+ <span data-ttu-id="16912-129">Le **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> type accepte un <xref:System.Data.SqlClient.SqlParameter.Value%2A> de <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="16912-129">The **Xml**<xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> type will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.Xml.XmlReader>.</span></span>  
   
- <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> accepte des valeurs de type <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader> et <xref:System.IO.Stream>.  
+ <span data-ttu-id="16912-130"><xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> accepte des valeurs de type <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader> et <xref:System.IO.Stream>.</span><span class="sxs-lookup"><span data-stu-id="16912-130"><xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> can accept values of type <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, and <xref:System.IO.Stream>.</span></span>  
   
- <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, et l'objet <xref:System.IO.Stream> seront envoyés jusqu'à la valeur définie par <xref:System.Data.SqlClient.SqlParameter.Size%2A>.  
+ <span data-ttu-id="16912-131"><xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, et l'objet <xref:System.IO.Stream> seront envoyés jusqu'à la valeur définie par <xref:System.Data.SqlClient.SqlParameter.Size%2A>.</span><span class="sxs-lookup"><span data-stu-id="16912-131">The <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, and <xref:System.IO.Stream> object will be transferred up to the value defined by the <xref:System.Data.SqlClient.SqlParameter.Size%2A>.</span></span>  
   
-## Exemple \-\- Diffusion en continu à partir de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :  
+## <a name="sample----streaming-from-includessnoversionincludesssnoversion-mdmd"></a><span data-ttu-id="16912-132">Exemple -- Diffusion en continu à partir de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span><span class="sxs-lookup"><span data-stu-id="16912-132">Sample -- Streaming from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span></span>  
+ <span data-ttu-id="16912-133">Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :</span><span class="sxs-lookup"><span data-stu-id="16912-133">Use the following [!INCLUDE[tsql](../../../../includes/tsql-md.md)] to create the sample database:</span></span>  
   
 ```  
 CREATE DATABASE [Demo]  
@@ -100,17 +103,17 @@ INSERT INTO [Streams] (textdata, bindata, xmldata) VALUES (N'Another row', 0x666
 GO  
 ```  
   
- L'exemple montre comment effectuer les actions suivantes :  
+ <span data-ttu-id="16912-134">L'exemple montre comment effectuer les actions suivantes :</span><span class="sxs-lookup"><span data-stu-id="16912-134">The sample shows how to do the following:</span></span>  
   
--   Éviter de bloquer un thread d'interface utilisateur en fournissant une façon asynchrone de récupérer des fichiers volumineux.  
+-   <span data-ttu-id="16912-135">Éviter de bloquer un thread d'interface utilisateur en fournissant une façon asynchrone de récupérer des fichiers volumineux.</span><span class="sxs-lookup"><span data-stu-id="16912-135">Avoid blocking a user-interface thread by providing an asynchronous way to retrieve large files.</span></span>  
   
--   Transférer un fichier texte volumineux de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   <span data-ttu-id="16912-136">Transférer un fichier texte volumineux de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="16912-136">Transfer a large text file from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   Transférer un fichier XML volumineux de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   <span data-ttu-id="16912-137">Transférer un fichier XML volumineux de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="16912-137">Transfer a large XML file from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   Récupérez les données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].  
+-   <span data-ttu-id="16912-138">Récupérez les données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="16912-138">Retrieve data from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].</span></span>  
   
--   Transférer des fichiers volumineux \(objets BLOB\) d'une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à une autre sans insuffisance de mémoire.  
+-   <span data-ttu-id="16912-139">Transférer des fichiers volumineux (objets BLOB) d'une base de données [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à une autre sans insuffisance de mémoire.</span><span class="sxs-lookup"><span data-stu-id="16912-139">Transfer large files (BLOBs) from one [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] database to another without running out of memory.</span></span>  
   
 ```  
 using System;  
@@ -299,11 +302,10 @@ namespace StreamingFromServer {
       }  
    }  
 }  
-  
 ```  
   
-## Exemple \-\- Diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :  
+## <a name="sample----streaming-to-includessnoversionincludesssnoversion-mdmd"></a><span data-ttu-id="16912-140">Exemple -- Diffusion en continu vers [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span><span class="sxs-lookup"><span data-stu-id="16912-140">Sample -- Streaming to [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span></span>  
+ <span data-ttu-id="16912-141">Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :</span><span class="sxs-lookup"><span data-stu-id="16912-141">Use the following [!INCLUDE[tsql](../../../../includes/tsql-md.md)] to create the sample database:</span></span>  
   
 ```  
 CREATE DATABASE [Demo2]  
@@ -324,19 +326,19 @@ CREATE TABLE [BinaryStreamsCopy] (
 GO  
 ```  
   
- L'exemple montre comment effectuer les actions suivantes :  
+ <span data-ttu-id="16912-142">L'exemple montre comment effectuer les actions suivantes :</span><span class="sxs-lookup"><span data-stu-id="16912-142">The sample shows how to do the following:</span></span>  
   
--   Transfert d'un objet BLOB à [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   <span data-ttu-id="16912-143">Transfert d'un objet BLOB à [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="16912-143">Transferring a large BLOB to [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   Transfert d'un fichier texte à [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   <span data-ttu-id="16912-144">Transfert d'un fichier texte à [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="16912-144">Transferring a large text file to [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   Utilisation de la nouvelle fonctionnalité asynchrone pour transférer un objet BLOB.  
+-   <span data-ttu-id="16912-145">Utilisation de la nouvelle fonctionnalité asynchrone pour transférer un objet BLOB.</span><span class="sxs-lookup"><span data-stu-id="16912-145">Using the new asynchronous feature to transfer a large BLOB.</span></span>  
   
--   Utilisation de la nouvelle fonctionnalité asynchrone et du mot clé await pour transférer un objet BLOB.  
+-   <span data-ttu-id="16912-146">Utilisation de la nouvelle fonctionnalité asynchrone et du mot clé await pour transférer un objet BLOB.</span><span class="sxs-lookup"><span data-stu-id="16912-146">Using the new asynchronous feature and the await keyword to transfer a large BLOB.</span></span>  
   
--   Annuler le transfert d'un grand BLOB.  
+-   <span data-ttu-id="16912-147">Annuler le transfert d'un grand BLOB.</span><span class="sxs-lookup"><span data-stu-id="16912-147">Cancelling the transfer of a large BLOB..</span></span>  
   
--   Diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à une autre application à l'aide de la nouvelle fonctionnalité asynchrone.  
+-   <span data-ttu-id="16912-148">Diffusion en continu de [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à une autre application à l'aide de la nouvelle fonctionnalité asynchrone.</span><span class="sxs-lookup"><span data-stu-id="16912-148">Streaming from one [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] to another using the new asynchronous feature.</span></span>  
   
 ```  
 using System;  
@@ -456,11 +458,10 @@ namespace StreamingToServer {
       }  
    }  
 }  
-  
 ```  
   
-## Exemple \-\- Transmission en continu d'un [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à un autre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]  
- Cet exemple montre comment diffuser en continu un objet BLOB d'un [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à un autre, avec la prise en charge de l'annulation.  
+## <a name="sample----streaming-from-one-includessnoversionincludesssnoversion-mdmd-to-another-includessnoversionincludesssnoversion-mdmd"></a><span data-ttu-id="16912-149">Exemple -- Transmission en continu d'un [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à un autre [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span><span class="sxs-lookup"><span data-stu-id="16912-149">Sample -- Streaming From One [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] to Another [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]</span></span>  
+ <span data-ttu-id="16912-150">Cet exemple montre comment diffuser en continu un objet BLOB d'un [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] à un autre, avec la prise en charge de l'annulation.</span><span class="sxs-lookup"><span data-stu-id="16912-150">This sample demonstrates how to asynchronously stream a large BLOB from one [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] to another, with support for cancellation.</span></span>  
   
 ```  
 using System;  
@@ -523,8 +524,7 @@ namespace StreamingFromServerToAnother {
       }  
    }  
 }  
-  
 ```  
   
-## Voir aussi  
- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+## <a name="see-also"></a><span data-ttu-id="16912-151">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="16912-151">See Also</span></span>  
+ [<span data-ttu-id="16912-152">Extraction et modification de données dans ADO.NET</span><span class="sxs-lookup"><span data-stu-id="16912-152">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)

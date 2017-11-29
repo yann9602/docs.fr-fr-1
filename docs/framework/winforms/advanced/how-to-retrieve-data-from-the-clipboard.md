@@ -1,67 +1,71 @@
 ---
-title: "Comment&#160;: r&#233;cup&#233;rer des donn&#233;es du Presse-papiers | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Presse-papiers, récupérer des données"
-  - "coller les données du Presse-papiers"
+title: "Comment : récupérer des données du Presse-papiers"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- pasting Clipboard data
+- Clipboard [Windows Forms], retrieving data
 ms.assetid: 99612537-2c8a-449f-aab5-2b3b28d656e7
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c2f71c6738f19e70826b95626377097de0cd9b3b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: r&#233;cup&#233;rer des donn&#233;es du Presse-papiers
-La classe <xref:System.Windows.Forms.Clipboard> fournit des méthodes que vous pouvez utiliser pour interagir avec les fonctionnalités du Presse\-papiers du système d'exploitation Windows.  De nombreuses applications utilisent le Presse\-papiers en tant que référentiel temporaire pour les données.  Par exemple, les applications de traitement de texte utilisent le Presse\-papiers pour les opérations de copier\-coller.  Le Presse\-papiers est également utile pour transférer des informations d'une application à un autre.  
+# <a name="how-to-retrieve-data-from-the-clipboard"></a><span data-ttu-id="1f722-102">Comment : récupérer des données du Presse-papiers</span><span class="sxs-lookup"><span data-stu-id="1f722-102">How to: Retrieve Data from the Clipboard</span></span>
+<span data-ttu-id="1f722-103">La <xref:System.Windows.Forms.Clipboard> classe fournit des méthodes que vous pouvez utiliser pour interagir avec la fonctionnalité du Presse-papiers du système d’exploitation Windows.</span><span class="sxs-lookup"><span data-stu-id="1f722-103">The <xref:System.Windows.Forms.Clipboard> class provides methods that you can use to interact with the Windows operating system Clipboard feature.</span></span> <span data-ttu-id="1f722-104">De nombreuses applications utilisent le Presse-papiers comme référentiel temporaire pour les données.</span><span class="sxs-lookup"><span data-stu-id="1f722-104">Many applications use the Clipboard as a temporary repository for data.</span></span> <span data-ttu-id="1f722-105">Par exemple, les traitements utiliser le Presse-papiers lors des opérations de couper-coller.</span><span class="sxs-lookup"><span data-stu-id="1f722-105">For example, word processors use the Clipboard during cut-and-paste operations.</span></span> <span data-ttu-id="1f722-106">Le Presse-papiers est également utile pour transférer des informations d’une application vers un autre.</span><span class="sxs-lookup"><span data-stu-id="1f722-106">The Clipboard is also useful for transferring information from one application to another.</span></span>  
   
- Certaines applications stockent des données dans le Presse\-papiers dans plusieurs formats pour augmenter le nombre d'applications capables d'utiliser les données.  Un format de Presse\-papiers est une chaîne qui identifie le format.  Une application qui utilise le format identifié peut récupérer les données associées sur le Presse\-papiers.  La classe <xref:System.Windows.Forms.DataFormats> fournit des noms de formats prédéfinis que vous pouvez utiliser.  Vous pouvez également utiliser vos propres noms de formats ou le type d'un objet comme son format.  Pour plus d'informations sur l'ajout de données dans le Presse\-papiers, consultez [Comment : ajouter des données au Presse\-papiers](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md).  
+ <span data-ttu-id="1f722-107">Certaines applications stockent des données dans le Presse-papiers dans plusieurs formats pour augmenter le nombre d’autres applications qui peut utiliser les données.</span><span class="sxs-lookup"><span data-stu-id="1f722-107">Some applications store data on the Clipboard in multiple formats to increase the number of other applications that can potentially use the data.</span></span> <span data-ttu-id="1f722-108">Un format de Presse-papiers est une chaîne qui identifie le format.</span><span class="sxs-lookup"><span data-stu-id="1f722-108">A Clipboard format is a string that identifies the format.</span></span> <span data-ttu-id="1f722-109">Une application qui utilise le format identifié peut récupérer les données associées dans le Presse-papiers.</span><span class="sxs-lookup"><span data-stu-id="1f722-109">An application that uses the identified format can retrieve the associated data on the Clipboard.</span></span> <span data-ttu-id="1f722-110">La <xref:System.Windows.Forms.DataFormats> classe fournit les noms de formats prédéfinis pour votre utilisation.</span><span class="sxs-lookup"><span data-stu-id="1f722-110">The <xref:System.Windows.Forms.DataFormats> class provides predefined format names for your use.</span></span> <span data-ttu-id="1f722-111">Vous pouvez également utiliser vos propres noms de format ou utiliser un type d’objet en tant que son format.</span><span class="sxs-lookup"><span data-stu-id="1f722-111">You can also use your own format names or use an object's type as its format.</span></span> <span data-ttu-id="1f722-112">Pour plus d’informations sur l’ajout de données dans le Presse-papiers, consultez [Comment : ajouter des données dans le Presse-papiers](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md).</span><span class="sxs-lookup"><span data-stu-id="1f722-112">For information about adding data to the Clipboard, see [How to: Add Data to the Clipboard](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md).</span></span>  
   
- Pour déterminer si le Presse\-papiers contient des données dans un format particulier, utilisez une des méthodes `Contains`*Format* ou la méthode <xref:System.Windows.Forms.Clipboard.GetData%2A>.  Pour récupérer des données du Presse\-papiers, utilisez une des méthodes `Get`*Format* ou la méthode <xref:System.Windows.Forms.Clipboard.GetData%2A>.  Ces méthodes sont nouvelles dans [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  
+ <span data-ttu-id="1f722-113">Pour déterminer si le Presse-papiers contient des données dans un format particulier, utilisez une de la `Contains` *Format* méthodes ou <xref:System.Windows.Forms.Clipboard.GetData%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="1f722-113">To determine whether the Clipboard contains data in a particular format, use one of the `Contains`*Format* methods or the <xref:System.Windows.Forms.Clipboard.GetData%2A> method.</span></span> <span data-ttu-id="1f722-114">Pour récupérer des données à partir du Presse-papiers, utilisez une de la `Get` *Format* méthodes ou <xref:System.Windows.Forms.Clipboard.GetData%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="1f722-114">To retrieve data from the Clipboard, use one of the `Get`*Format* methods or the <xref:System.Windows.Forms.Clipboard.GetData%2A> method.</span></span> <span data-ttu-id="1f722-115">Ces méthodes sont nouvelles dans [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1f722-115">These methods are new in [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span>  
   
- Pour accéder aux données du Presse\-papiers en utilisant les versions précédentes du [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)], utilisez la méthode <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> et appelez les méthodes de l'<xref:System.Windows.Forms.IDataObject> retourné.  Pour déterminer si un format particulier est disponible dans l'objet retourné, par exemple, appelez la méthode <xref:System.Windows.Forms.IDataObject.GetDataPresent%2A>.  
+ <span data-ttu-id="1f722-116">Pour accéder aux données à partir du Presse-papiers à l’aide de versions antérieures à [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)], utilisez le <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> (méthode) et appeler les méthodes de retourné <xref:System.Windows.Forms.IDataObject>.</span><span class="sxs-lookup"><span data-stu-id="1f722-116">To access data from the Clipboard by using versions earlier than [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)], use the <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> method and call the methods of the returned <xref:System.Windows.Forms.IDataObject>.</span></span> <span data-ttu-id="1f722-117">Pour déterminer si un format particulier est disponible dans l’objet retourné, par exemple, appelez le <xref:System.Windows.Forms.IDataObject.GetDataPresent%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="1f722-117">To determine whether a particular format is available in the returned object, for example, call the <xref:System.Windows.Forms.IDataObject.GetDataPresent%2A> method.</span></span>  
   
 > [!NOTE]
->  Toutes les applications Windows partagent le Presse\-papiers du système.  Par conséquent, le contenu est susceptible de changer lorsque vous basculez vers une autre application.  
+>  <span data-ttu-id="1f722-118">Toutes les applications Windows partagent le Presse-papiers du système.</span><span class="sxs-lookup"><span data-stu-id="1f722-118">All Windows-based applications share the system Clipboard.</span></span> <span data-ttu-id="1f722-119">Par conséquent, le contenu est susceptible de changer lorsque vous basculez vers une autre application.</span><span class="sxs-lookup"><span data-stu-id="1f722-119">Therefore, the contents are subject to change when you switch to another application.</span></span>  
 >   
->  La classe <xref:System.Windows.Forms.Clipboard> peut être utilisée uniquement dans les threads configurés en mode STA \(Single Thread Apartment\).  Pour utiliser cette classe, veillez à ce que votre méthode `Main` soit marquée avec l'attribut <xref:System.STAThreadAttribute>.  
+>  <span data-ttu-id="1f722-120">La <xref:System.Windows.Forms.Clipboard> classe peut uniquement être utilisée dans les threads en mode thread unique cloisonné (STA).</span><span class="sxs-lookup"><span data-stu-id="1f722-120">The <xref:System.Windows.Forms.Clipboard> class can only be used in threads set to single thread apartment (STA) mode.</span></span> <span data-ttu-id="1f722-121">Pour utiliser cette classe, assurez-vous que votre `Main` méthode est marquée avec le <xref:System.STAThreadAttribute> attribut.</span><span class="sxs-lookup"><span data-stu-id="1f722-121">To use this class, ensure that your `Main` method is marked with the <xref:System.STAThreadAttribute> attribute.</span></span>  
   
-### Pour récupérer des données du Presse\-papiers dans un format commun unique  
+### <a name="to-retrieve-data-from-the-clipboard-in-a-single-common-format"></a><span data-ttu-id="1f722-122">Pour récupérer des données à partir du Presse-papiers dans un format commun unique</span><span class="sxs-lookup"><span data-stu-id="1f722-122">To retrieve data from the Clipboard in a single, common format</span></span>  
   
-1.  Utilisez la méthode <xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>, <xref:System.Windows.Forms.Clipboard.GetFileDropList%2A>, <xref:System.Windows.Forms.Clipboard.GetImage%2A> ou <xref:System.Windows.Forms.Clipboard.GetText%2A>.  Si vous le souhaitez, vous pouvez utiliser les méthodes `Contains`*Format* correspondantes afin de déterminer si les données sont disponibles dans un format particulier.  Ces méthodes sont disponibles uniquement dans [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  
+1.  <span data-ttu-id="1f722-123">Utilisez le <xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>, <xref:System.Windows.Forms.Clipboard.GetFileDropList%2A>, <xref:System.Windows.Forms.Clipboard.GetImage%2A>, ou <xref:System.Windows.Forms.Clipboard.GetText%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="1f722-123">Use the <xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>, <xref:System.Windows.Forms.Clipboard.GetFileDropList%2A>, <xref:System.Windows.Forms.Clipboard.GetImage%2A>, or <xref:System.Windows.Forms.Clipboard.GetText%2A> method.</span></span> <span data-ttu-id="1f722-124">Si vous le souhaitez, utilisez la `Contains` *Format* méthodes afin de déterminer si les données sont disponibles dans un format particulier.</span><span class="sxs-lookup"><span data-stu-id="1f722-124">Optionally, use the corresponding `Contains`*Format* methods first to determine whether data is available in a particular format.</span></span> <span data-ttu-id="1f722-125">Ces méthodes sont disponibles uniquement dans [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1f722-125">These methods are available only in [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span>  
   
      [!code-csharp[System.Windows.Forms.Clipboard#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#2)]
      [!code-vb[System.Windows.Forms.Clipboard#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#2)]  
   
-### Pour récupérer des données du Presse\-papiers dans un format personnalisé  
+### <a name="to-retrieve-data-from-the-clipboard-in-a-custom-format"></a><span data-ttu-id="1f722-126">Pour récupérer des données à partir du Presse-papiers dans un format personnalisé</span><span class="sxs-lookup"><span data-stu-id="1f722-126">To retrieve data from the Clipboard in a custom format</span></span>  
   
-1.  Utilisez la méthode <xref:System.Windows.Forms.Clipboard.GetData%2A> avec un nom de format personnalisé.  Cette méthode est uniquement disponible dans [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  
+1.  <span data-ttu-id="1f722-127">Utilisez la <xref:System.Windows.Forms.Clipboard.GetData%2A> méthode avec un nom de format personnalisé.</span><span class="sxs-lookup"><span data-stu-id="1f722-127">Use the <xref:System.Windows.Forms.Clipboard.GetData%2A> method with a custom format name.</span></span> <span data-ttu-id="1f722-128">Cette méthode est uniquement disponible dans [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1f722-128">This method is available only in [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span>  
   
-     Vous pouvez également utiliser des noms de formats prédéfinis avec la méthode <xref:System.Windows.Forms.Clipboard.SetData%2A>.  Pour plus d'informations, consultez <xref:System.Windows.Forms.DataFormats>.  
+     <span data-ttu-id="1f722-129">Vous pouvez également utiliser des noms de formats prédéfinis avec la <xref:System.Windows.Forms.Clipboard.SetData%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="1f722-129">You can also use predefined format names with the <xref:System.Windows.Forms.Clipboard.SetData%2A> method.</span></span> <span data-ttu-id="1f722-130">Pour plus d'informations, consultez <xref:System.Windows.Forms.DataFormats>.</span><span class="sxs-lookup"><span data-stu-id="1f722-130">For more information, see <xref:System.Windows.Forms.DataFormats>.</span></span>  
   
      [!code-csharp[System.Windows.Forms.Clipboard#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#3)]
      [!code-vb[System.Windows.Forms.Clipboard#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#3)]  
     [!code-csharp[System.Windows.Forms.Clipboard#100](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#100)]
     [!code-vb[System.Windows.Forms.Clipboard#100](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#100)]  
   
-### Pour récupérer des données du Presse\-papiers dans des formats multiples  
+### <a name="to-retrieve-data-from-the-clipboard-in-multiple-formats"></a><span data-ttu-id="1f722-131">Pour récupérer des données à partir du Presse-papiers dans plusieurs formats</span><span class="sxs-lookup"><span data-stu-id="1f722-131">To retrieve data from the Clipboard in multiple formats</span></span>  
   
-1.  Utilisez la méthode <xref:System.Windows.Forms.Clipboard.GetDataObject%2A>.  Vous devez utiliser cette méthode pour récupérer des données du Presse\-papiers sur les versions précédentes du [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].  
+1.  <span data-ttu-id="1f722-132">Utilisez la méthode <xref:System.Windows.Forms.Clipboard.GetDataObject%2A>.</span><span class="sxs-lookup"><span data-stu-id="1f722-132">Use the <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> method.</span></span> <span data-ttu-id="1f722-133">Vous devez utiliser cette méthode pour récupérer des données à partir du Presse-papiers dans les versions antérieures à [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1f722-133">You must use this method to retrieve data from the Clipboard on versions earlier than [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].</span></span>  
   
      [!code-csharp[System.Windows.Forms.Clipboard#4](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#4)]
      [!code-vb[System.Windows.Forms.Clipboard#4](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#4)]  
     [!code-csharp[System.Windows.Forms.Clipboard#100](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#100)]
     [!code-vb[System.Windows.Forms.Clipboard#100](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#100)]  
   
-## Voir aussi  
- [Opérations glisser\-déplacer et prise en charge du Presse\-papiers](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)   
- [Comment : ajouter des données au Presse\-papiers](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)
+## <a name="see-also"></a><span data-ttu-id="1f722-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1f722-134">See Also</span></span>  
+ [<span data-ttu-id="1f722-135">Opérations glisser-déposer et prise en charge du Presse-papiers</span><span class="sxs-lookup"><span data-stu-id="1f722-135">Drag-and-Drop Operations and Clipboard Support</span></span>](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)  
+ [<span data-ttu-id="1f722-136">Guide pratique pour ajouter des données au Presse-papiers</span><span class="sxs-lookup"><span data-stu-id="1f722-136">How to: Add Data to the Clipboard</span></span>](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)

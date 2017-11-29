@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2a1a5612-82c6-4cf6-aa96-ca6f5df12b69
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6cf182d7a71c38caf1dcee8823f362c614c87dd8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader
-System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader  
+# <a name="systemservicemodeldiagnosticsfailedtoaddanactivityidheader"></a><span data-ttu-id="d887c-102">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="d887c-102">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span></span>
+<span data-ttu-id="d887c-103">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="d887c-103">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span></span>  
   
-## Description  
- Échec de la définition d'un en\-tête d'identificateur de l'activité sur un message sortant.  
+## <a name="description"></a><span data-ttu-id="d887c-104">Description</span><span class="sxs-lookup"><span data-stu-id="d887c-104">Description</span></span>  
+ <span data-ttu-id="d887c-105">Échec de la définition d'un en-tête d'identificateur de l'activité sur un message sortant.</span><span class="sxs-lookup"><span data-stu-id="d887c-105">Failed to set an activity id header on an outgoing message.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="d887c-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d887c-106">See Also</span></span>  
+ [<span data-ttu-id="d887c-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="d887c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="d887c-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="d887c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="d887c-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="d887c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -1,38 +1,30 @@
 ---
-title: "Comment : créer une arborescence à partir d’un XmlReader (Visual Basic) | Documents Microsoft"
+title: "Comment : créer une arborescence à partir d’un XmlReader (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 6de683d8-177d-402b-b0de-d0539f1ce5d8
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a8dff4e518d8850b4050389e5677ac81ecd1e074
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 4ceae7c2bee85e7b368322c8ba195dea9feff672
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a>Comment : créer une arborescence à partir d’un XmlReader (Visual Basic)
-Cette rubrique montre comment créer une arborescence XML directement à partir d’un <xref:System.Xml.XmlReader>.</xref:System.Xml.XmlReader> Pour créer un <xref:System.Xml.Linq.XElement>d’un <xref:System.Xml.XmlReader>, vous devez positionner le <xref:System.Xml.XmlReader>sur un nœud d’élément.</xref:System.Xml.XmlReader> </xref:System.Xml.XmlReader> </xref:System.Xml.Linq.XElement> Le <xref:System.Xml.XmlReader>ignorera les commentaires et instructions de traitement, mais si le <xref:System.Xml.XmlReader>est positionné sur un nœud de texte, une erreur sera renvoyée.</xref:System.Xml.XmlReader> </xref:System.Xml.XmlReader> Pour éviter ces erreurs, placez toujours le <xref:System.Xml.XmlReader>sur un élément avant de créer une arborescence XML à partir de <xref:System.Xml.XmlReader>.</xref:System.Xml.XmlReader> </xref:System.Xml.XmlReader>  
+# <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a><span data-ttu-id="5aa6f-102">Comment : créer une arborescence à partir d’un XmlReader (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5aa6f-102">How to: Create a Tree from an XmlReader (Visual Basic)</span></span>
+<span data-ttu-id="5aa6f-103">Cette rubrique montre comment créer une arborescence XML directement à partir d'un objet <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="5aa6f-103">This topic shows how to create an XML tree directly from an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="5aa6f-104">Pour créer un objet <xref:System.Xml.Linq.XElement> à partir d'un objet <xref:System.Xml.XmlReader>, vous devez placer l'objet <xref:System.Xml.XmlReader> sur un nœud d'élément.</span><span class="sxs-lookup"><span data-stu-id="5aa6f-104">To create an <xref:System.Xml.Linq.XElement> from an <xref:System.Xml.XmlReader>, you must position the <xref:System.Xml.XmlReader> on an element node.</span></span> <span data-ttu-id="5aa6f-105">L'objet <xref:System.Xml.XmlReader> ignorera les commentaires et les instructions de traitement, mais si l'objet <xref:System.Xml.XmlReader> est placé sur un nœud de texte, une erreur sera renvoyée.</span><span class="sxs-lookup"><span data-stu-id="5aa6f-105">The <xref:System.Xml.XmlReader> will skip comments and processing instructions, but if the <xref:System.Xml.XmlReader> is positioned on a text node, an error will be thrown.</span></span> <span data-ttu-id="5aa6f-106">Pour éviter de telles erreurs, placez toujours l'objet <xref:System.Xml.XmlReader> sur un élément avant de créer une arborescence XML à partir de l'objet <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="5aa6f-106">To avoid such errors, always position the <xref:System.Xml.XmlReader> on an element before you create an XML tree from the <xref:System.Xml.XmlReader>.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : livres (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+## <a name="example"></a><span data-ttu-id="5aa6f-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="5aa6f-107">Example</span></span>  
+ <span data-ttu-id="5aa6f-108">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="5aa6f-108">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
- Le code suivant crée un objet `T:System.Xml.XmlReader`, puis il lit les nœuds jusqu'à trouver le premier nœud d'élément. Il charge ensuite le <xref:System.Xml.Linq.XElement>objet.</xref:System.Xml.Linq.XElement>  
+ <span data-ttu-id="5aa6f-109">Le code suivant crée un objet `T:System.Xml.XmlReader`, puis il lit les nœuds jusqu'à trouver le premier nœud d'élément.</span><span class="sxs-lookup"><span data-stu-id="5aa6f-109">The following code creates an `T:System.Xml.XmlReader` object, and then reads nodes until it finds the first element node.</span></span> <span data-ttu-id="5aa6f-110">Il charge ensuite l'objet <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="5aa6f-110">It then loads the <xref:System.Xml.Linq.XElement> object.</span></span>  
   
 ```vb  
 Dim r As XmlReader = XmlReader.Create("books.xml")  
@@ -43,7 +35,7 @@ Dim e As XElement = XElement.Load(r)
 Console.WriteLine(e)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="5aa6f-111">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="5aa6f-111">This example produces the following output:</span></span>  
   
 ```xml  
 <Catalog>  
@@ -69,5 +61,5 @@ Console.WriteLine(e)
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [L’analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="5aa6f-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5aa6f-112">See Also</span></span>  
+ [<span data-ttu-id="5aa6f-113">L’analyse XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5aa6f-113">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

@@ -1,35 +1,27 @@
 ---
-title: "Exemple de fichier XML : Des données numériques (LINQ to XML) | Documents Microsoft"
+title: "Exemple de fichier XML : Données numériques (LINQ to XML)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5faef812-0006-4d84-9cf2-5746070e7fbf
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 84953c852f9a30047b52b20cbe98429c4e18fd2c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 7da4b44e20d1d1e980c8acc4fe83b32e4d0b2018
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="sample-xml-file-numerical-data-linq-to-xml"></a>Exemple de fichier XML : Données numériques (LINQ to XML)
-Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements.  
+# <a name="sample-xml-file-numerical-data-linq-to-xml"></a><span data-ttu-id="7ca67-102">Exemple de fichier XML : Données numériques (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="7ca67-102">Sample XML File: Numerical Data (LINQ to XML)</span></span>
+<span data-ttu-id="7ca67-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7ca67-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="7ca67-104">Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements.</span><span class="sxs-lookup"><span data-stu-id="7ca67-104">This file contains numerical data for summing, averaging, and grouping.</span></span>  
   
-## <a name="dataxml"></a>Data.xml  
+## <a name="dataxml"></a><span data-ttu-id="7ca67-105">Data.xml</span><span class="sxs-lookup"><span data-stu-id="7ca67-105">Data.xml</span></span>  
   
 ```xml  
 <Root>  
@@ -72,5 +64,5 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
 </Root>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples de documents XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="7ca67-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7ca67-106">See Also</span></span>  
+ [<span data-ttu-id="7ca67-107">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="7ca67-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

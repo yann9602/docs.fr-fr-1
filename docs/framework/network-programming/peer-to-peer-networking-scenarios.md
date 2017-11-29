@@ -7,82 +7,75 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: d23b1a64-2e08-4014-882a-c1dd766bdcc2
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: edf493f0999dc78e6b1065176f1638b23667d9b3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5d110d49ed93c1c53c257e4c01c3fc68eb2e0b0b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="peer-to-peer-networking-scenarios"></a>Scénarios de réseaux homologues
-Les réseaux pair à pair (P2P) permettent ou améliorent les scénarios suivants :  
+# <a name="peer-to-peer-networking-scenarios"></a><span data-ttu-id="705e1-102">Scénarios de réseaux homologues</span><span class="sxs-lookup"><span data-stu-id="705e1-102">Peer-to-Peer Networking Scenarios</span></span>
+<span data-ttu-id="705e1-103">Les réseaux pair à pair (P2P) permettent ou améliorent les scénarios suivants :</span><span class="sxs-lookup"><span data-stu-id="705e1-103">Peer-to-peer networking enables or enhances the following scenarios:</span></span>  
   
-## <a name="real-time-communications-rtc"></a>Communications en temps réel  
+## <a name="real-time-communications-rtc"></a><span data-ttu-id="705e1-104">Communications en temps réel</span><span class="sxs-lookup"><span data-stu-id="705e1-104">Real-Time Communications (RTC)</span></span>  
   
--   Messagerie instantanée sans serveur  
+-   <span data-ttu-id="705e1-105">Messagerie instantanée sans serveur</span><span class="sxs-lookup"><span data-stu-id="705e1-105">Serverless Instant Messaging</span></span>  
   
- Les communications en temps réel sont couramment utilisées de nos jours. En effet, les utilisateurs d’ordinateurs peuvent discuter au moyen de conversations vocales ou vidéo. Toutefois, la plupart des programmes existants et de leurs protocoles de communication s’appuient sur des serveurs. Si vous appartenez à un réseau sans fil ad hoc ou à un réseau isolé, vous ne pouvez pas utiliser ces fonctionnalités de communication en temps réel. Le technologie pair à pair permet d’étendre les technologies de communication en temps réel aux autres environnements réseau.  
+ <span data-ttu-id="705e1-106">Les communications en temps réel sont couramment utilisées de nos jours.</span><span class="sxs-lookup"><span data-stu-id="705e1-106">RTC exists today.</span></span> <span data-ttu-id="705e1-107">En effet, les utilisateurs d’ordinateurs peuvent discuter au moyen de conversations vocales ou vidéo.</span><span class="sxs-lookup"><span data-stu-id="705e1-107">Computer users can chat and have voice or video conversations with their peers today.</span></span> <span data-ttu-id="705e1-108">Toutefois, la plupart des programmes existants et de leurs protocoles de communication s’appuient sur des serveurs.</span><span class="sxs-lookup"><span data-stu-id="705e1-108">However, many of the existing programs and their communications protocols rely on servers to function.</span></span> <span data-ttu-id="705e1-109">Si vous appartenez à un réseau sans fil ad hoc ou à un réseau isolé, vous ne pouvez pas utiliser ces fonctionnalités de communication en temps réel.</span><span class="sxs-lookup"><span data-stu-id="705e1-109">If you are participating in an ad-hoc wireless network or are a part of an isolated network, you are unable to use these RTC facilities.</span></span> <span data-ttu-id="705e1-110">Le technologie pair à pair permet d’étendre les technologies de communication en temps réel aux autres environnements réseau.</span><span class="sxs-lookup"><span data-stu-id="705e1-110">Peer-to-peer technology allows the extension of RTC technologies to these additional networking environments.</span></span>  
   
--   Matchmaking et jeu en temps réel  
+-   <span data-ttu-id="705e1-111">Matchmaking et jeu en temps réel</span><span class="sxs-lookup"><span data-stu-id="705e1-111">Real-time matchmaking and gameplay</span></span>  
   
- Les jeux en temps réel font également partie des technologies couramment utilisées aujourd’hui. Il existe de nombreux sites de jeux en ligne qui proposent à la communauté des gamers de jouer sur Internet. Ils permettent de trouver d’autres joueurs ayant les mêmes centres d’intérêt et de jouer avec eux. Le problème est que les sites de jeux n’existent que sur Internet et sont destinés aux joueurs invétérés qui souhaitent se mesurer aux meilleurs joueurs du monde. Ces sites font le suivi de vos parties et fournissent des statistiques. Toutefois, ils ne permettent pas de configurer un jeu ad hoc entre joueurs disposant d’environnements réseau différents. Les réseaux pair à pair, en revanche, fournissent cette possibilité.  
+ <span data-ttu-id="705e1-112">Les jeux en temps réel font également partie des technologies couramment utilisées aujourd’hui.</span><span class="sxs-lookup"><span data-stu-id="705e1-112">Similar to RTC, real-time game play exists today.</span></span> <span data-ttu-id="705e1-113">Il existe de nombreux sites de jeux en ligne qui proposent à la communauté des gamers de jouer sur Internet.</span><span class="sxs-lookup"><span data-stu-id="705e1-113">There are many Web-based game sites that cater to the gaming community via the Internet.</span></span> <span data-ttu-id="705e1-114">Ils permettent de trouver d’autres joueurs ayant les mêmes centres d’intérêt et de jouer avec eux.</span><span class="sxs-lookup"><span data-stu-id="705e1-114">They offer the ability to find other gamers with similar interests and play a game together.</span></span> <span data-ttu-id="705e1-115">Le problème est que les sites de jeux n’existent que sur Internet et sont destinés aux joueurs invétérés qui souhaitent se mesurer aux meilleurs joueurs du monde.</span><span class="sxs-lookup"><span data-stu-id="705e1-115">The problem is that the game sites exist only on the Internet and are geared toward the avid gamer who wants to play against the best gamers in the world.</span></span> <span data-ttu-id="705e1-116">Ces sites font le suivi de vos parties et fournissent des statistiques.</span><span class="sxs-lookup"><span data-stu-id="705e1-116">These sites track and provide the statistics to help in the process.</span></span> <span data-ttu-id="705e1-117">Toutefois, ils ne permettent pas de configurer un jeu ad hoc entre joueurs disposant d’environnements réseau différents.</span><span class="sxs-lookup"><span data-stu-id="705e1-117">However, these sites do not allow a gamer to set up an ad-hoc game among friends in a variety of networking environments.</span></span> <span data-ttu-id="705e1-118">Les réseaux pair à pair, en revanche, fournissent cette possibilité.</span><span class="sxs-lookup"><span data-stu-id="705e1-118">Peer-to-peer networking can provide this capability.</span></span>  
   
-## <a name="collaboration"></a>Collaboration  
+## <a name="collaboration"></a><span data-ttu-id="705e1-119">Collaboration</span><span class="sxs-lookup"><span data-stu-id="705e1-119">Collaboration</span></span>  
   
--   Espaces de travail de projet pour la résolution des problèmes  
+-   <span data-ttu-id="705e1-120">Espaces de travail de projet pour la résolution des problèmes</span><span class="sxs-lookup"><span data-stu-id="705e1-120">Project workspaces solving a goal</span></span>  
   
- Les applications d’espace de travail partagé permettent de créer des groupes de travail ad hoc, puis d’autoriser les propriétaires des groupes de travail à ajouter à l’espace de travail partagé les outils et le contenu qui permettront au groupe de résoudre un problème. Il peut s’agir de forums, d’outils de productivité ou de fichiers.  
+ <span data-ttu-id="705e1-121">Les applications d’espace de travail partagé permettent de créer des groupes de travail ad hoc, puis d’autoriser les propriétaires des groupes de travail à ajouter à l’espace de travail partagé les outils et le contenu qui permettront au groupe de résoudre un problème.</span><span class="sxs-lookup"><span data-stu-id="705e1-121">Shared workspace applications allow for the creation of ad-hoc workgroups and then allow the workgroup owners to populate the shared workspace with the tools and content that will allow the group to solve a problem.</span></span> <span data-ttu-id="705e1-122">Il peut s’agir de forums, d’outils de productivité ou de fichiers.</span><span class="sxs-lookup"><span data-stu-id="705e1-122">This could include message boards, productivity tools, and files.</span></span>  
   
--   Partage de fichiers  
+-   <span data-ttu-id="705e1-123">Partage de fichiers</span><span class="sxs-lookup"><span data-stu-id="705e1-123">Sharing files with others</span></span>  
   
- Le partage d’un sous-ensemble d’espace de travail de projet correspond à la possibilité de partager des fichiers. Même si cette fonctionnalité est disponible dans la version actuelle de Windows, elle peut être améliorée grâce à l’utilisation d’un réseau pair à pair qui facilite la mise à disposition du contenu des fichiers. Le fait de faciliter l’accès à la grande richesse de contenu située à la périphérie d’Internet ou dans des environnements informatiques ad-hoc accroît l’intérêt de l’informatique en réseau.  
+ <span data-ttu-id="705e1-124">Le partage d’un sous-ensemble d’espace de travail de projet correspond à la possibilité de partager des fichiers.</span><span class="sxs-lookup"><span data-stu-id="705e1-124">A subset of project workspace sharing is the ability to share files.</span></span> <span data-ttu-id="705e1-125">Même si cette fonctionnalité est disponible dans la version actuelle de Windows, elle peut être améliorée grâce à l’utilisation d’un réseau pair à pair qui facilite la mise à disposition du contenu des fichiers.</span><span class="sxs-lookup"><span data-stu-id="705e1-125">Although this ability exists today with the current version of Windows, it can be enhanced through peer-to-peer networking to make file content available in an easy and friendly way.</span></span> <span data-ttu-id="705e1-126">Le fait de faciliter l’accès à la grande richesse de contenu située à la périphérie d’Internet ou dans des environnements informatiques ad-hoc accroît l’intérêt de l’informatique en réseau.</span><span class="sxs-lookup"><span data-stu-id="705e1-126">Allowing easy access to the incredible wealth of content at the edge of the Internet or in ad-hoc computing environments increases the value of network computing.</span></span>  
   
--   Partage des expériences  
+-   <span data-ttu-id="705e1-127">Partage des expériences</span><span class="sxs-lookup"><span data-stu-id="705e1-127">Sharing experiences</span></span>  
   
- Grâce au développement des technologies sans fil, les réseaux pair à pair vous permettent d’être en ligne au sein d’un groupe de pairs, et de partager vos expériences en temps réel (par exemple, un coucher de soleil, un concert de rock ou une croisière).  
+ <span data-ttu-id="705e1-128">Grâce au développement des technologies sans fil, les réseaux pair à pair vous permettent d’être en ligne au sein d’un groupe de pairs, et de partager vos expériences en temps réel (par exemple, un coucher de soleil, un concert de rock ou une croisière).</span><span class="sxs-lookup"><span data-stu-id="705e1-128">With wireless connectivity becoming more prevalent, peer-to-peer networking allows you to be online in a group of peers and to be able to share your experiences (such as a sunset, a rock concert, or a vacation cruise) while they are occurring.</span></span>  
   
-## <a name="content-distribution"></a>Distribution de contenu  
+## <a name="content-distribution"></a><span data-ttu-id="705e1-129">Distribution de contenu</span><span class="sxs-lookup"><span data-stu-id="705e1-129">Content Distribution</span></span>  
   
--   SMS  
+-   <span data-ttu-id="705e1-130">SMS</span><span class="sxs-lookup"><span data-stu-id="705e1-130">Text messages</span></span>  
   
- Les réseaux pair à pair permettent la diffusion d’informations textuelles sous la forme de fichiers ou de messages vers un grand groupe d’utilisateurs. Il peut s’agir, par exemple, d’une liste de nouveautés.  
-  
--  
-  
--   Audio et vidéo  
-  
- Les réseaux pair à pair peuvent également permettre de diffuser des informations audio ou vidéo pour un grand groupe d’utilisateurs, par exemple, lors d’un grand concert ou d’une réunion d’entreprise. À l’heure actuelle, pour distribuer du contenu, vous devez configurer des serveurs à capacité élevée pour collecter et distribuer la charge à des centaines, voire des milliers d’utilisateurs. Avec un réseau pair à pair, seuls quelques pairs obtiennent leur contenu des serveurs centralisés. Les pairs envoient ces informations à quelques autres personnes, qui les envoient à d’autres utilisateurs, et ainsi de suite. La charge de distribution du contenu est ainsi répartie entre les pairs du cloud. Un pair qui souhaite recevoir ce contenu va s’adresser au pair de distribution le plus proche.  
+ <span data-ttu-id="705e1-131">Les réseaux pair à pair permettent la diffusion d’informations textuelles sous la forme de fichiers ou de messages vers un grand groupe d’utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="705e1-131">Peer-to-peer networking can allow for the dissemination of text-based information in the form of files or messages to a large group of users.</span></span> <span data-ttu-id="705e1-132">Il peut s’agir, par exemple, d’une liste de nouveautés.</span><span class="sxs-lookup"><span data-stu-id="705e1-132">An example is a news list.</span></span>  
   
 -  
   
--   Distribution de mises à jour produit  
+-   <span data-ttu-id="705e1-133">Audio et vidéo</span><span class="sxs-lookup"><span data-stu-id="705e1-133">Audio and video</span></span>  
   
- Les réseaux pair à pair peuvent également fournir un mécanisme efficace de distribution de logiciels tels que les mises à jour produit (mises à jour de sécurité et service packs). Un pair qui dispose d’une connexion à un serveur de distribution de logiciels peut obtenir la mise à jour produit et la propager vers les autres membres de son groupe.  
-  
--  
-  
-## <a name="distributed-processing"></a>Traitement distribué  
-  
--   Division et distribution d’une tâche  
-  
- Une tâche de calcul de grande envergure peut d’abord être divisée en plusieurs tâches de calcul plus petites, mieux adaptées aux ressources informatiques du pair. Un pair peut se charger de la division de la tâche de calcul. Ensuite, les réseaux pair à pair peuvent distribuer les différentes tâches à chaque pair du groupe. Chaque pair exécute sa tâche de calcul et signale ses résultats à un point d’accumulation centralisé.  
-  
--   Agrégation des ressources informatiques  
-  
- Une autre façon d’utiliser les réseaux pair à pair pour le traitement distribué consiste à utiliser des programmes qui sont exécutés sur chaque pair pendant les périodes d’inactivité du processeur et qui font partie d’une plus grande tâche de calcul coordonnée par un serveur central. En regroupant les processeurs de plusieurs ordinateurs, les réseaux pair à pair peuvent transformer un groupe d’ordinateurs pairs en un grand processeur parallèle servant aux tâches de calcul de grande envergure.  
+ <span data-ttu-id="705e1-134">Les réseaux pair à pair peuvent également permettre de diffuser des informations audio ou vidéo pour un grand groupe d’utilisateurs, par exemple, lors d’un grand concert ou d’une réunion d’entreprise.</span><span class="sxs-lookup"><span data-stu-id="705e1-134">Peer-to-peer networking can also allow for the dissemination of audio or video information to a large group of users, such as a large concert or company meeting.</span></span> <span data-ttu-id="705e1-135">À l’heure actuelle, pour distribuer du contenu, vous devez configurer des serveurs à capacité élevée pour collecter et distribuer la charge à des centaines, voire des milliers d’utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="705e1-135">To distribute the content today, you must configure high-capacity servers to collect and distribute the load to hundreds or thousands of users.</span></span> <span data-ttu-id="705e1-136">Avec un réseau pair à pair, seuls quelques pairs obtiennent leur contenu des serveurs centralisés.</span><span class="sxs-lookup"><span data-stu-id="705e1-136">With peer-to-peer networking, only a handful of peers would actually get their content from the centralized servers.</span></span> <span data-ttu-id="705e1-137">Les pairs envoient ces informations à quelques autres personnes, qui les envoient à d’autres utilisateurs, et ainsi de suite.</span><span class="sxs-lookup"><span data-stu-id="705e1-137">These peers would flood this information out to a few more people who send it to others, and so on.</span></span> <span data-ttu-id="705e1-138">La charge de distribution du contenu est ainsi répartie entre les pairs du cloud.</span><span class="sxs-lookup"><span data-stu-id="705e1-138">The load of distributing the content is distributed to the peers in the cloud.</span></span> <span data-ttu-id="705e1-139">Un pair qui souhaite recevoir ce contenu va s’adresser au pair de distribution le plus proche.</span><span class="sxs-lookup"><span data-stu-id="705e1-139">A peer that wants to receive the content would find the closest distributing peer and get the content from them.</span></span>  
   
 -  
   
-## <a name="see-also"></a>Voir aussi  
+-   <span data-ttu-id="705e1-140">Distribution de mises à jour produit</span><span class="sxs-lookup"><span data-stu-id="705e1-140">Distribution of product updates</span></span>  
+  
+ <span data-ttu-id="705e1-141">Les réseaux pair à pair peuvent également fournir un mécanisme efficace de distribution de logiciels tels que les mises à jour produit (mises à jour de sécurité et service packs).</span><span class="sxs-lookup"><span data-stu-id="705e1-141">Peer-to-peer networking can also provide an efficient mechanism to distribute software such as product updates (security updates and service packs).</span></span> <span data-ttu-id="705e1-142">Un pair qui dispose d’une connexion à un serveur de distribution de logiciels peut obtenir la mise à jour produit et la propager vers les autres membres de son groupe.</span><span class="sxs-lookup"><span data-stu-id="705e1-142">A peer that has a connection to a software distribution server can obtain the product update and propagate it to the other members of its group.</span></span>  
+  
+-  
+  
+## <a name="distributed-processing"></a><span data-ttu-id="705e1-143">Traitement distribué</span><span class="sxs-lookup"><span data-stu-id="705e1-143">Distributed Processing</span></span>  
+  
+-   <span data-ttu-id="705e1-144">Division et distribution d’une tâche</span><span class="sxs-lookup"><span data-stu-id="705e1-144">Division and distribution of a task</span></span>  
+  
+ <span data-ttu-id="705e1-145">Une tâche de calcul de grande envergure peut d’abord être divisée en plusieurs tâches de calcul plus petites, mieux adaptées aux ressources informatiques du pair.</span><span class="sxs-lookup"><span data-stu-id="705e1-145">A large computing task can first be divided into separate smaller computing tasks well suited to the computing resources of a peer.</span></span> <span data-ttu-id="705e1-146">Un pair peut se charger de la division de la tâche de calcul.</span><span class="sxs-lookup"><span data-stu-id="705e1-146">A peer could do the dividing of the large computing task.</span></span> <span data-ttu-id="705e1-147">Ensuite, les réseaux pair à pair peuvent distribuer les différentes tâches à chaque pair du groupe.</span><span class="sxs-lookup"><span data-stu-id="705e1-147">Then, peer-to-peer networking can distribute the individual tasks to the separate peers in the group.</span></span> <span data-ttu-id="705e1-148">Chaque pair exécute sa tâche de calcul et signale ses résultats à un point d’accumulation centralisé.</span><span class="sxs-lookup"><span data-stu-id="705e1-148">Each peer performs its computing task and reports its result back to a centralized accumulation point.</span></span>  
+  
+-   <span data-ttu-id="705e1-149">Agrégation des ressources informatiques</span><span class="sxs-lookup"><span data-stu-id="705e1-149">Aggregation of computer resources</span></span>  
+  
+ <span data-ttu-id="705e1-150">Une autre façon d’utiliser les réseaux pair à pair pour le traitement distribué consiste à utiliser des programmes qui sont exécutés sur chaque pair pendant les périodes d’inactivité du processeur et qui font partie d’une plus grande tâche de calcul coordonnée par un serveur central.</span><span class="sxs-lookup"><span data-stu-id="705e1-150">Another way to utilize peer-to-peer networking for distributed processing is to run programs on each peer that run during idle processor times and are part of a larger computing task that is coordinated by a central server.</span></span> <span data-ttu-id="705e1-151">En regroupant les processeurs de plusieurs ordinateurs, les réseaux pair à pair peuvent transformer un groupe d’ordinateurs pairs en un grand processeur parallèle servant aux tâches de calcul de grande envergure.</span><span class="sxs-lookup"><span data-stu-id="705e1-151">By aggregating the processors of multiple computers, peer-to-peer networking can turn a group of peer computers into a large parallel processor for large computing tasks.</span></span>  
+  
+-  
+  
+## <a name="see-also"></a><span data-ttu-id="705e1-152">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="705e1-152">See Also</span></span>  
  <xref:System.Net.PeerToPeer.Collaboration>
-

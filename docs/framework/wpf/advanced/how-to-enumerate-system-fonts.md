@@ -1,31 +1,37 @@
 ---
-title: "Comment&#160;: &#233;num&#233;rer des polices syst&#232;me | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "énumérer, polices système"
-  - "polices, énumérer"
-  - "polices système, énumérer"
-  - "typographie, énumérer les polices système"
+title: "Comment : énumérer des polices système"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- typography [WPF], enumerating system fonts
+- fonts [WPF], enumerating
+- system fonts [WPF], enumerating
+- enumerating [WPF], system fonts
 ms.assetid: 36e37791-55b9-4f01-a496-5cc10335e6a6
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ae03cbd8828f61011f8d806be32b5827d77b22a
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: &#233;num&#233;rer des polices syst&#232;me
-## Exemple  
- L'exemple suivant indique comment énumérer les polices dans la collection de polices système.  Le nom de la famille de polices de chaque <xref:System.Windows.Media.FontFamily> dans <xref:System.Windows.Media.Fonts.SystemFontFamilies%2A> est ajouté comme élément à une zone de liste déroulante.  
+# <a name="how-to-enumerate-system-fonts"></a><span data-ttu-id="05565-102">Comment : énumérer des polices système</span><span class="sxs-lookup"><span data-stu-id="05565-102">How to: Enumerate System Fonts</span></span>
+## <a name="example"></a><span data-ttu-id="05565-103">Exemple</span><span class="sxs-lookup"><span data-stu-id="05565-103">Example</span></span>  
+ <span data-ttu-id="05565-104">L’exemple suivant montre comment énumérer les polices dans la collection de polices système.</span><span class="sxs-lookup"><span data-stu-id="05565-104">The following example shows how to enumerate the fonts in the system font collection.</span></span> <span data-ttu-id="05565-105">Le nom de famille de polices de chaque <xref:System.Windows.Media.FontFamily> dans <xref:System.Windows.Media.Fonts.SystemFontFamilies%2A> est ajouté en tant qu’élément à une zone de liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="05565-105">The font family name of each <xref:System.Windows.Media.FontFamily> within <xref:System.Windows.Media.Fonts.SystemFontFamilies%2A> is added as an item to a combo box.</span></span>  
   
  [!code-csharp[TextOverview#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextOverview/CSharp/Window1.xaml.cs#100)]
  [!code-vb[TextOverview#100](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextOverview/visualbasic/window1.xaml.vb#100)]  
   
- Si plusieurs versions de la même famille de polices résident dans le même répertoire, l'énumération de police [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] retourne la version de la police la plus récente.  Si les informations de version ne fournissent pas de résolution, la police avec l'horodatage le plus récent est retournée.  Si les informations d'horodatage sont équivalentes, le fichier de police qui est en premier par ordre alphabétique est retourné.
+ <span data-ttu-id="05565-106">Si plusieurs versions de la même famille de polices résident dans le même répertoire, le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] police énumération sans corrélation retourne la version la plus récente de la police.</span><span class="sxs-lookup"><span data-stu-id="05565-106">If multiple versions of the same font family reside in the same directory, the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] font enumeration returns the most recent version of the font.</span></span> <span data-ttu-id="05565-107">Si les informations de version ne fournissent pas de résolution, la police avec l’horodatage le plus récent est retournée.</span><span class="sxs-lookup"><span data-stu-id="05565-107">If the version information does not provide resolution, the font with latest timestamp is returned.</span></span> <span data-ttu-id="05565-108">Si les informations d’horodatage sont équivalentes, le fichier de polices qui apparaît en premier dans l’ordre alphabétique est retourné.</span><span class="sxs-lookup"><span data-stu-id="05565-108">If the timestamp information is equivalent, the font file that is first in alphabetical order is returned.</span></span>

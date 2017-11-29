@@ -1,48 +1,51 @@
 ---
-title: "Comment&#160;: utiliser le fournisseur d&#39;appartenances ASP.NET | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF et ASP.NET"
-  - "WCF, autorisation"
-  - "WCF, sécurité"
+title: "Comment : utiliser le fournisseur d'appartenances ASP.NET"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF and ASP.NET
+- WCF, authorization
+- WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 74056ae23b08850b9c9a564248d6e276fc518a8a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: utiliser le fournisseur d&#39;appartenances ASP.NET
-Le fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] est une fonctionnalité qui permet aux développeurs [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] de créer des sites Web permettant aux utilisateurs de créer des combinaisons uniques de nom d'utilisateur et de mot de passe.Grâce à cette fonctionnalité, les utilisateurs peuvent établir un compte avec le site et disposer d'un accès exclusif à celui\-ci et à ses services.Cette approche diffère de la sécurité Windows, qui requiert que les utilisateurs disposent de comptes dans un domaine Windows.Au lieu de cela, l'utilisateur qui fournit ses informations d'identification \(combinaison nom d'utilisateur\/mot de passe\) peut utiliser le site et ses services.  
+# <a name="how-to-use-the-aspnet-membership-provider"></a><span data-ttu-id="015ac-102">Comment : utiliser le fournisseur d'appartenances ASP.NET</span><span class="sxs-lookup"><span data-stu-id="015ac-102">How to: Use the ASP.NET Membership Provider</span></span>
+<span data-ttu-id="015ac-103">Le fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] est une fonctionnalité qui permet aux développeurs [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] de créer des sites Web permettant aux utilisateurs de créer des combinaisons uniques de nom d'utilisateur et de mot de passe.</span><span class="sxs-lookup"><span data-stu-id="015ac-103">The [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] membership provider is a feature that enables [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] developers to create Web sites that allow users to create unique user name and password combinations.</span></span> <span data-ttu-id="015ac-104">Grâce à cette fonctionnalité, les utilisateurs peuvent établir un compte avec le site et disposer d'un accès exclusif à celui-ci et à ses services.</span><span class="sxs-lookup"><span data-stu-id="015ac-104">With this facility, any user can establish an account with the site, and sign in for exclusive access to the site and its services.</span></span> <span data-ttu-id="015ac-105">Cette approche diffère de la sécurité Windows, qui requiert que les utilisateurs disposent de comptes dans un domaine Windows.</span><span class="sxs-lookup"><span data-stu-id="015ac-105">This is in contrast to Windows security, which requires users to have accounts in a Windows domain.</span></span> <span data-ttu-id="015ac-106">Au lieu de cela, l'utilisateur qui fournit ses informations d'identification (combinaison nom d'utilisateur/mot de passe) peut utiliser le site et ses services.</span><span class="sxs-lookup"><span data-stu-id="015ac-106">Instead, any user that supplies his or her credentials (the user name/password combination) can use the site and its services.</span></span>  
   
- Pour obtenir un exemple d'application, consultez [Membership and Role Provider](../../../../docs/framework/wcf/samples/membership-and-role-provider.md).Pour plus d'informations sur l'utilisation de la fonctionnalité de fournisseur de rôle [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], consultez [Comment : utiliser le fournisseur de rôle ASP.NET avec un service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).  
+ <span data-ttu-id="015ac-107">Pour un exemple d’application, consultez [Membership and Role Provider](../../../../docs/framework/wcf/samples/membership-and-role-provider.md).</span><span class="sxs-lookup"><span data-stu-id="015ac-107">For a sample application, see [Membership and Role Provider](../../../../docs/framework/wcf/samples/membership-and-role-provider.md).</span></span> <span data-ttu-id="015ac-108">Pour plus d’informations sur l’utilisation de la [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] fonctionnalité de fournisseur de rôle, consultez [Comment : utiliser le fournisseur de rôle ASP.NET avec un Service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).</span><span class="sxs-lookup"><span data-stu-id="015ac-108">For information about using the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role provider feature, see [How to: Use the ASP.NET Role Provider with a Service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).</span></span>  
   
- La fonctionnalité d'appartenance requiert l'utilisation d'une base de données SQL Server pour stocker les informations utilisateur.Elle inclut également des méthodes qui consistent à poser une question aux utilisateurs qui ont oublié leur mot de passe.  
+ <span data-ttu-id="015ac-109">La fonctionnalité d’appartenance requiert l’utilisation d’une base de données SQL Server pour stocker les informations utilisateur.</span><span class="sxs-lookup"><span data-stu-id="015ac-109">The membership feature requires using a SQL Server database to store the user information.</span></span> <span data-ttu-id="015ac-110">Elle inclut également des méthodes qui consistent à poser une question aux utilisateurs qui ont oublié leur mot de passe.</span><span class="sxs-lookup"><span data-stu-id="015ac-110">The feature also includes methods for prompting with a question any users who have forgotten their password.</span></span>  
   
- Les développeurs [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peuvent tirer parti de ces fonctionnalités à des fins de sécurité.En cas d'intégration dans une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les utilisateurs doivent fournir une combinaison nom d'utilisateur\/mot de passe à l'application cliente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Pour transférer les données au service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], utilisez une liaison qui prend en charge les informations d'identification nom d'utilisateur\/mot de passe, telle que <xref:System.ServiceModel.WSHttpBinding> \(dans la configuration, [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)\) et affectez `UserName` au type d'informations d'identification du client.Sur le service, la sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] authentifie l'utilisateur en fonction du nom et du mot de passe, et assigne également le rôle spécifié par le rôle [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)].  
+ <span data-ttu-id="015ac-111">Les développeurs [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peuvent tirer parti de ces fonctionnalités à des fins de sécurité.</span><span class="sxs-lookup"><span data-stu-id="015ac-111">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] developers can take advantage of these features for security purposes.</span></span> <span data-ttu-id="015ac-112">En cas d'intégration dans une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les utilisateurs doivent fournir une combinaison nom d'utilisateur/mot de passe à l'application cliente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="015ac-112">When integrated into an [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application, users must supply a user name/password combination to the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client application.</span></span> <span data-ttu-id="015ac-113">Pour transférer les données à la [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de service, d’utiliser une liaison qui prend en charge les informations d’identification de nom/mot de passe utilisateur, telles que la <xref:System.ServiceModel.WSHttpBinding> (dans la configuration, le [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) et définir les informations d’identification du client type de `UserName`.</span><span class="sxs-lookup"><span data-stu-id="015ac-113">To transfer the data to the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, use a binding that supports user name/password credentials, such as the <xref:System.ServiceModel.WSHttpBinding> (in configuration, the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) and set the client credential type to `UserName`.</span></span> <span data-ttu-id="015ac-114">Sur le service, la sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] authentifie l'utilisateur en fonction du nom et du mot de passe, et assigne également le rôle spécifié par le rôle [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)].</span><span class="sxs-lookup"><span data-stu-id="015ac-114">On the service, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security authenticates the user based on the user name and password, and also assigns the role specified by the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne fournit pas de méthode visant à remplir la base de données avec les combinaisons nom d'utilisateur\/mot de passe ou autres informations utilisateur.  
+>  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="015ac-115"> ne fournit pas de méthode visant à remplir la base de données avec les combinaisons nom d'utilisateur/mot de passe ou autres informations utilisateur.</span><span class="sxs-lookup"><span data-stu-id="015ac-115"> does not provide methods to populate the database with user name/password combinations or other user information.</span></span>  
   
-### Pour configurer le fournisseur d'appartenances  
+### <a name="to-configure-the-membership-provider"></a><span data-ttu-id="015ac-116">Pour configurer le fournisseur d'appartenances</span><span class="sxs-lookup"><span data-stu-id="015ac-116">To configure the membership provider</span></span>  
   
-1.  Dans le fichier Web.config, sous l'élément \<`system.web`\>, créez un élément \<`membership`\>.  
+1.  <span data-ttu-id="015ac-117">Dans le fichier Web.config, sous le <`system.web`> élément, créer une <`membership`> élément.</span><span class="sxs-lookup"><span data-stu-id="015ac-117">In the Web.config file, under the <`system.web`> element, create a <`membership`> element.</span></span>  
   
-2.  Sous l'élément `<membership>`, créez un élément `<providers>`.  
+2.  <span data-ttu-id="015ac-118">Sous l'élément `<membership>`, créez un élément `<providers>`.</span><span class="sxs-lookup"><span data-stu-id="015ac-118">Under the `<membership>` element, create a `<providers>` element.</span></span>  
   
-3.  Ajoutez un élément `<clear />` en tant qu'enfant de l'élément \<`providers`\> afin de vider la collection de fournisseurs.  
+3.  <span data-ttu-id="015ac-119">En tant qu’enfant à la <`providers`> élément, ajouter un `<clear />` élément vider la collection de fournisseurs.</span><span class="sxs-lookup"><span data-stu-id="015ac-119">As a child to the <`providers`> element, add a `<clear />` element to flush the collection of providers.</span></span>  
   
-4.  Sous l'élément `<clear />`, créez un élément \<`add`\> avec les attributs suivants définis aux valeurs appropriées : `name`, `type`, `connectionStringName`, `applicationName`, `enablePasswordRetrieval`, `enablePasswordReset`, `requiresQuestionAndAnswer`, `requiresUniqueEmail` et `passwordFormat`.L'attribut `name` est utilisé ultérieurement comme valeur dans le fichier de configuration.L'exemple suivant lui affecte la valeur `SqlMembershipProvider`.  
+4.  <span data-ttu-id="015ac-120">Sous le `<clear />` élément, créer une <`add`> élément avec les attributs suivants ont des valeurs appropriées : `name`, `type`, `connectionStringName`, `applicationName`, `enablePasswordRetrieval`, `enablePasswordReset`, `requiresQuestionAndAnswer` , `requiresUniqueEmail`, et `passwordFormat`.</span><span class="sxs-lookup"><span data-stu-id="015ac-120">Under the `<clear />` element, create an <`add`> element with the following attributes set to appropriate values: `name`, `type`, `connectionStringName`, `applicationName`, `enablePasswordRetrieval`, `enablePasswordReset`, `requiresQuestionAndAnswer`, `requiresUniqueEmail`, and `passwordFormat`.</span></span> <span data-ttu-id="015ac-121">L'attribut `name` est utilisé ultérieurement comme valeur dans le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="015ac-121">The `name` attribute is used later as a value in the configuration file.</span></span> <span data-ttu-id="015ac-122">L'exemple suivant lui affecte la valeur `SqlMembershipProvider`.</span><span class="sxs-lookup"><span data-stu-id="015ac-122">The following example sets it to `SqlMembershipProvider`.</span></span>  
   
-     L'exemple suivant présente la section de configuration.  
+     <span data-ttu-id="015ac-123">L'exemple suivant présente la section de configuration.</span><span class="sxs-lookup"><span data-stu-id="015ac-123">The following example shows the configuration section.</span></span>  
   
     ```xml  
     <!-- Configure the Sql Membership Provider -->  
@@ -63,17 +66,17 @@ Le fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp
     </membership>  
     ```  
   
-### Pour configurer la sécurité de service afin d'accepter la combinaison nom d'utilisateur\/mot de passe  
+### <a name="to-configure-service-security-to-accept-the-user-namepassword-combination"></a><span data-ttu-id="015ac-124">Pour configurer la sécurité de service afin d'accepter la combinaison nom d'utilisateur/mot de passe</span><span class="sxs-lookup"><span data-stu-id="015ac-124">To configure service security to accept the user name/password combination</span></span>  
   
-1.  Dans le fichier de configuration, sous l'élément [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md), ajoutez un élément [\<liaisons\>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md).  
+1.  <span data-ttu-id="015ac-125">Dans le fichier de configuration, sous la [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) élément, ajouter un [ \<liaisons >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) élément.</span><span class="sxs-lookup"><span data-stu-id="015ac-125">In the configuration file, under the [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) element, add a [\<bindings>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element.</span></span>  
   
-2.  Ajoutez un élément [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) à la section des liaisons.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] la création d'un élément de liaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], consultez [Comment : spécifier une liaison de service dans la configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+2.  <span data-ttu-id="015ac-126">Ajouter un [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) à la section de liaisons.</span><span class="sxs-lookup"><span data-stu-id="015ac-126">Add a [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) to the bindings section.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="015ac-127">Création d’un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] liaison d’élément, consultez [Comment : spécifier une liaison de Service dans la Configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="015ac-127"> creating an [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] binding element, see [How to: Specify a Service Binding in Configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).</span></span>  
   
-3.  Affectez à l'attribut `mode` de l'élément `<security>` la valeur `Message`.  
+3.  <span data-ttu-id="015ac-128">Affectez à l'attribut `mode` de l'élément `<security>` la valeur `Message`.</span><span class="sxs-lookup"><span data-stu-id="015ac-128">Set the `mode` attribute of the `<security>` element to `Message`.</span></span>  
   
-4.  Affectez `UserName` à l'attribut `clientCredentialType` de l'élément \<`message`\>.Cela spécifie qu'une paire nom d'utilisateur\/mot de passe sera utilisée comme information d'identification du client.  
+4.  <span data-ttu-id="015ac-129">Définir le `clientCredentialType` attribut de la <`message`> élément `UserName`.</span><span class="sxs-lookup"><span data-stu-id="015ac-129">Set the `clientCredentialType` attribute of the <`message`> element to `UserName`.</span></span> <span data-ttu-id="015ac-130">Cela spécifie qu'une paire nom d'utilisateur/mot de passe sera utilisée comme information d'identification du client.</span><span class="sxs-lookup"><span data-stu-id="015ac-130">This specifies that a user name/password pair will be used as the client's credential.</span></span>  
   
-     L'exemple suivant présente le code de configuration de la liaison.  
+     <span data-ttu-id="015ac-131">L'exemple suivant présente le code de configuration de la liaison.</span><span class="sxs-lookup"><span data-stu-id="015ac-131">The following example shows the configuration code for the binding.</span></span>  
   
     ```xml  
     <system.serviceModel>  
@@ -90,24 +93,24 @@ Le fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp
     </system.serviceModel>  
     ```  
   
-### Pour configurer un service permettant d'utiliser le fournisseur d'appartenances  
+### <a name="to-configure-a-service-to-use-the-membership-provider"></a><span data-ttu-id="015ac-132">Pour configurer un service permettant d'utiliser le fournisseur d'appartenances</span><span class="sxs-lookup"><span data-stu-id="015ac-132">To configure a service to use the membership provider</span></span>  
   
-1.  Ajoutez un [\<comportements\>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) en tant qu'enfant de l'élément `<system.serviceModel>`.  
+1.  <span data-ttu-id="015ac-133">En tant qu’enfant à la `<system.serviceModel>` élément, ajouter un [ \<comportements >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) élément</span><span class="sxs-lookup"><span data-stu-id="015ac-133">As a child to the `<system.serviceModel>` element, add a [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) element</span></span>  
   
-2.  Ajoutez une section [\<serviceBehaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) à l'élément \<`behaviors`\>.  
+2.  <span data-ttu-id="015ac-134">Ajouter un [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) à la <`behaviors`> élément.</span><span class="sxs-lookup"><span data-stu-id="015ac-134">Add a [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) to the <`behaviors`> element.</span></span>  
   
-3.  Ajoutez un [\<comportement\>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) et affectez une valeur appropriée à l'attribut `name`.  
+3.  <span data-ttu-id="015ac-135">Ajouter un [ \<comportement >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) et définir le `name` attribut une valeur appropriée.</span><span class="sxs-lookup"><span data-stu-id="015ac-135">Add a [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) and set the `name` attribute to an appropriate value.</span></span>  
   
-4.  Ajoutez un élément [\<serviceCredentials\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) à l'élément \<`behavior`\>.  
+4.  <span data-ttu-id="015ac-136">Ajouter un [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) à la <`behavior`> élément.</span><span class="sxs-lookup"><span data-stu-id="015ac-136">Add a [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) to the <`behavior`> element.</span></span>  
   
-5.  Ajoutez un [\<userNameAuthentication\>](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) à l'élément `<serviceCredentials>`.  
+5.  <span data-ttu-id="015ac-137">Ajouter un [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) à la `<serviceCredentials>` élément.</span><span class="sxs-lookup"><span data-stu-id="015ac-137">Add a [\<userNameAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) to the `<serviceCredentials>` element.</span></span>  
   
-6.  Affectez `MembershipProvider` à l'attribut `userNamePasswordValidationMode`.  
+6.  <span data-ttu-id="015ac-138">Affectez à l'attribut `userNamePasswordValidationMode` la valeur `MembershipProvider`.</span><span class="sxs-lookup"><span data-stu-id="015ac-138">Set the `userNamePasswordValidationMode` attribute to `MembershipProvider`.</span></span>  
   
     > [!IMPORTANT]
-    >  Si la valeur `userNamePasswordValidationMode` n'est pas définie, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise l'authentification Windows au lieu du fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)].  
+    >  <span data-ttu-id="015ac-139">Si la valeur `userNamePasswordValidationMode` n'est pas définie, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise l'authentification Windows au lieu du fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)].</span><span class="sxs-lookup"><span data-stu-id="015ac-139">If the `userNamePasswordValidationMode` value is not set, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses Windows authentication instead of the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] membership provider.</span></span>  
   
-7.  Affectez à l'attribut `membershipProviderName` le nom du fournisseur \(spécifié lors de l'ajout du fournisseur dans la première procédure de cette rubrique\).L'exemple suivant présente le fragment `<serviceCredentials>` à ce point.  
+7.  <span data-ttu-id="015ac-140">Affectez à l'attribut `membershipProviderName` le nom du fournisseur (spécifié lors de l'ajout du fournisseur dans la première procédure de cette rubrique).</span><span class="sxs-lookup"><span data-stu-id="015ac-140">Set the `membershipProviderName` attribute to the name of the provider (specified when adding the provider in the first procedure in this topic).</span></span> <span data-ttu-id="015ac-141">L'exemple suivant présente le fragment `<serviceCredentials>` à ce point.</span><span class="sxs-lookup"><span data-stu-id="015ac-141">The following example shows the `<serviceCredentials>` fragment to this point.</span></span>  
   
     ```xml  
     <behaviors>  
@@ -121,13 +124,12 @@ Le fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp
           </behavior>  
        </serviceBehaviors>  
     </behaviors>  
-  
     ```  
   
-## Exemple  
- Le code suivant montre la configuration d'un service qui utilise la fonctionnalité d'appartenance ASP.  
+## <a name="example"></a><span data-ttu-id="015ac-142">Exemple</span><span class="sxs-lookup"><span data-stu-id="015ac-142">Example</span></span>  
+ <span data-ttu-id="015ac-143">Le code suivant montre la configuration d’un service qui utilise la fonctionnalité d’appartenance ASP.</span><span class="sxs-lookup"><span data-stu-id="015ac-143">The following code shows the configuration for a service that uses the ASP membership feature.</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <system.serviceModel>  
@@ -160,9 +162,8 @@ Le fournisseur d'appartenances [!INCLUDE[vstecasp](../../../../includes/vstecasp
     </bindings>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## Voir aussi  
- [Comment : utiliser le fournisseur de rôle ASP.NET avec un service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)   
- [Membership and Role Provider](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)
+## <a name="see-also"></a><span data-ttu-id="015ac-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="015ac-144">See Also</span></span>  
+ [<span data-ttu-id="015ac-145">Comment : utiliser le fournisseur de rôle ASP.NET avec un Service</span><span class="sxs-lookup"><span data-stu-id="015ac-145">How to: Use the ASP.NET Role Provider with a Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)  
+ [<span data-ttu-id="015ac-146">Fournisseur d’appartenances et rôle</span><span class="sxs-lookup"><span data-stu-id="015ac-146">Membership and Role Provider</span></span>](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)

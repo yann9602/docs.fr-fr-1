@@ -1,75 +1,67 @@
 ---
-title: "Partitionnement des données (Visual Basic) | Documents Microsoft"
+title: "Partitionnement des données (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 69c59379-b66e-422c-b324-5b5c07760ef7
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a746ce3e24812d1df6b6e221cca0364bf2cc7f1c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 0ea305a67765e1b11ceebbf65c48a685024a41f3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="partitioning-data-visual-basic"></a>Partitionnement des données (Visual Basic)
-Partitionnement dans LINQ fait référence à l’opération de division d’une séquence d’entrée en deux sections, sans réorganiser les éléments, puis retourner une des sections.  
+# <a name="partitioning-data-visual-basic"></a><span data-ttu-id="5c11d-102">Partitionnement des données (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5c11d-102">Partitioning Data (Visual Basic)</span></span>
+<span data-ttu-id="5c11d-103">Le partitionnement dans LINQ désigne l’opération consistant à diviser une séquence d’entrée en deux sections, sans réorganiser les éléments, puis à retourner l’une des sections.</span><span class="sxs-lookup"><span data-stu-id="5c11d-103">Partitioning in LINQ refers to the operation of dividing an input sequence into two sections, without rearranging the elements, and then returning one of the sections.</span></span>  
   
- L’illustration suivante montre les résultats de trois opérations de partitionnement différentes sur une séquence de caractères. La première opération retourne les trois premiers éléments de la séquence. La deuxième opération ignore les trois premiers éléments et retourne les éléments restants. La troisième opération ignore les deux premiers éléments de la séquence et retourne les trois éléments.  
+ <span data-ttu-id="5c11d-104">L’illustration suivante montre les résultats de trois opérations de partitionnement différentes sur une séquence de caractères.</span><span class="sxs-lookup"><span data-stu-id="5c11d-104">The following illustration shows the results of three different partitioning operations on a sequence of characters.</span></span> <span data-ttu-id="5c11d-105">La première opération retourne les trois premiers éléments de la séquence.</span><span class="sxs-lookup"><span data-stu-id="5c11d-105">The first operation returns the first three elements in the sequence.</span></span> <span data-ttu-id="5c11d-106">La deuxième opération ignore les trois premiers éléments et retourne les éléments restants.</span><span class="sxs-lookup"><span data-stu-id="5c11d-106">The second operation skips the first three elements and returns the remaining elements.</span></span> <span data-ttu-id="5c11d-107">La troisième opération ignore les deux premiers éléments de la séquence et retourne les trois éléments suivants.</span><span class="sxs-lookup"><span data-stu-id="5c11d-107">The third operation skips the first two elements in the sequence and returns the next three elements.</span></span>  
   
- ![LINQ, opérations de partitionnement](../../../../csharp/programming-guide/concepts/linq/media/linq_partition.png "LINQ_Partition")  
+ <span data-ttu-id="5c11d-108">![Opérations de partitionnement LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_partition.png "LINQ_Partition")</span><span class="sxs-lookup"><span data-stu-id="5c11d-108">![LINQ Partitioning Operations](../../../../csharp/programming-guide/concepts/linq/media/linq_partition.png "LINQ_Partition")</span></span>  
   
- Les méthodes d’opérateur de requête standard qui partitionnent les séquences sont répertoriées dans la section suivante.  
+ <span data-ttu-id="5c11d-109">Les méthodes d’opérateurs de requête standard qui partitionnent des séquences sont répertoriées dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="5c11d-109">The standard query operator methods that partition sequences are listed in the following section.</span></span>  
   
-## <a name="operators"></a>Opérateurs  
+## <a name="operators"></a><span data-ttu-id="5c11d-110">Opérateurs</span><span class="sxs-lookup"><span data-stu-id="5c11d-110">Operators</span></span>  
   
-|Nom d'opérateur|Description|Syntaxe d’Expression de requête Visual Basic|Informations complémentaires|  
+|<span data-ttu-id="5c11d-111">Nom d'opérateur</span><span class="sxs-lookup"><span data-stu-id="5c11d-111">Operator Name</span></span>|<span data-ttu-id="5c11d-112">Description</span><span class="sxs-lookup"><span data-stu-id="5c11d-112">Description</span></span>|<span data-ttu-id="5c11d-113">Syntaxe d’Expression de requête Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5c11d-113">Visual Basic Query Expression Syntax</span></span>|<span data-ttu-id="5c11d-114">Informations complémentaires</span><span class="sxs-lookup"><span data-stu-id="5c11d-114">More Information</span></span>|  
 |-------------------|-----------------|------------------------------------------|----------------------|  
-|Ignorer|Ignore les éléments jusqu'à une position spécifiée dans une séquence.|`Skip`|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Skip%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=fullName></xref:System.Linq.Queryable.Skip%2A?displayProperty=fullName>|  
-|SkipWhile|Ignore les éléments basés sur une fonction de prédicat jusqu'à ce qu’un élément ne remplit pas la condition.|`Skip While`|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=fullName></xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=fullName></xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=fullName>|  
-|Take|Prend les éléments jusqu'à une position spécifiée dans une séquence.|`Take`|<xref:System.Linq.Enumerable.Take%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Take%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=fullName></xref:System.Linq.Queryable.Take%2A?displayProperty=fullName>|  
-|TakeWhile|Prend les éléments basés sur une fonction de prédicat jusqu'à ce qu’un élément ne remplit pas la condition.|`Take While`|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=fullName></xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=fullName></xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=fullName>|  
+|<span data-ttu-id="5c11d-115">Ignorer</span><span class="sxs-lookup"><span data-stu-id="5c11d-115">Skip</span></span>|<span data-ttu-id="5c11d-116">Ignore les éléments jusqu’à une position spécifiée dans une séquence.</span><span class="sxs-lookup"><span data-stu-id="5c11d-116">Skips elements up to a specified position in a sequence.</span></span>|`Skip`|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="5c11d-117">SkipWhile</span><span class="sxs-lookup"><span data-stu-id="5c11d-117">SkipWhile</span></span>|<span data-ttu-id="5c11d-118">Ignore les éléments basés sur une fonction de prédicat jusqu’à un élément qui ne remplit pas la condition.</span><span class="sxs-lookup"><span data-stu-id="5c11d-118">Skips elements based on a predicate function until an element does not satisfy the condition.</span></span>|`Skip While`|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="5c11d-119">Take</span><span class="sxs-lookup"><span data-stu-id="5c11d-119">Take</span></span>|<span data-ttu-id="5c11d-120">Prend les éléments jusqu’à une position spécifiée dans une séquence.</span><span class="sxs-lookup"><span data-stu-id="5c11d-120">Takes elements up to a specified position in a sequence.</span></span>|`Take`|<xref:System.Linq.Enumerable.Take%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="5c11d-121">TakeWhile</span><span class="sxs-lookup"><span data-stu-id="5c11d-121">TakeWhile</span></span>|<span data-ttu-id="5c11d-122">Prend les éléments basés sur une fonction de prédicat jusqu’à un élément qui ne remplit pas la condition.</span><span class="sxs-lookup"><span data-stu-id="5c11d-122">Takes elements based on a predicate function until an element does not satisfy the condition.</span></span>|`Take While`|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=nameWithType>|  
   
-## <a name="query-expression-syntax-examples"></a>Exemples de syntaxe d'expression de requête  
+## <a name="query-expression-syntax-examples"></a><span data-ttu-id="5c11d-123">Exemples de syntaxe d'expression de requête</span><span class="sxs-lookup"><span data-stu-id="5c11d-123">Query Expression Syntax Examples</span></span>  
   
-### <a name="skip"></a>Ignorer  
- Le code suivant exemple utilise le `Skip` clause dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour ignorer les quatre premières chaînes d’un tableau de chaînes avant de retourner les chaînes restantes dans le tableau.  
+### <a name="skip"></a><span data-ttu-id="5c11d-124">Ignorer</span><span class="sxs-lookup"><span data-stu-id="5c11d-124">Skip</span></span>  
+ <span data-ttu-id="5c11d-125">Le code suivant exemple utilise le `Skip` clause dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pour ignorer les quatre premières chaînes dans un tableau de chaînes avant de retourner les chaînes restantes dans le tableau.</span><span class="sxs-lookup"><span data-stu-id="5c11d-125">The following code example uses the `Skip` clause in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] to skip over the first four strings in an array of strings before returning the remaining strings in the array.</span></span>  
   
- [!code-vb[CsLINQPartitioning n °&1;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_1.vb)]  
+ [!code-vb[CsLINQPartitioning#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_1.vb)]  
   
-### <a name="skipwhile"></a>SkipWhile  
- Le code suivant exemple utilise le `Skip While` clause dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour ignorer les chaînes dans un tableau dont la première lettre de la chaîne est « a ». Les chaînes restantes dans le tableau sont retournés.  
+### <a name="skipwhile"></a><span data-ttu-id="5c11d-126">SkipWhile</span><span class="sxs-lookup"><span data-stu-id="5c11d-126">SkipWhile</span></span>  
+ <span data-ttu-id="5c11d-127">Le code suivant exemple utilise le `Skip While` clause dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pour ignorer les chaînes dans un tableau lors de la première lettre de la chaîne est « a ».</span><span class="sxs-lookup"><span data-stu-id="5c11d-127">The following code example uses the `Skip While` clause in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] to skip over the strings in an array while the first letter of the string is "a".</span></span> <span data-ttu-id="5c11d-128">Les chaînes restantes dans le tableau sont retournés.</span><span class="sxs-lookup"><span data-stu-id="5c11d-128">The remaining strings in the array are returned.</span></span>  
   
- [!code-vb[CsLINQPartitioning n °&2;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_2.vb)]  
+ [!code-vb[CsLINQPartitioning#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_2.vb)]  
   
-### <a name="take"></a>Take  
- Le code suivant exemple utilise le `Take` clause dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour retourner les deux premières chaînes dans un tableau de chaînes.  
+### <a name="take"></a><span data-ttu-id="5c11d-129">Take</span><span class="sxs-lookup"><span data-stu-id="5c11d-129">Take</span></span>  
+ <span data-ttu-id="5c11d-130">Le code suivant exemple utilise le `Take` clause dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pour retourner les deux premières chaînes dans un tableau de chaînes.</span><span class="sxs-lookup"><span data-stu-id="5c11d-130">The following code example uses the `Take` clause in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] to return the first two strings in an array of strings.</span></span>  
   
- [!code-vb[CsLINQPartitioning n °&3;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_3.vb)]  
+ [!code-vb[CsLINQPartitioning#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_3.vb)]  
   
-### <a name="takewhile"></a>TakeWhile  
- Le code suivant exemple utilise le `Take While` clause dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour renvoyer des chaînes à partir d’un tableau dont la longueur de la chaîne est inférieur ou égal à cinq.  
+### <a name="takewhile"></a><span data-ttu-id="5c11d-131">TakeWhile</span><span class="sxs-lookup"><span data-stu-id="5c11d-131">TakeWhile</span></span>  
+ <span data-ttu-id="5c11d-132">Le code suivant exemple utilise le `Take While` clause dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pour retourner des chaînes à partir d’un tableau pendant que la longueur de la chaîne est inférieur ou égal à cinq.</span><span class="sxs-lookup"><span data-stu-id="5c11d-132">The following code example uses the `Take While` clause in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] to return strings from an array while the length of the string is five or less.</span></span>  
   
- [!code-vb[CsLINQPartitioning n °&4;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_4.vb)]  
+ [!code-vb[CsLINQPartitioning#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/partitioning-data_4.vb)]  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq></xref:System.Linq>   
- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Skip (Clause)](../../../../visual-basic/language-reference/queries/skip-clause.md)   
- [Skip While, Clause](../../../../visual-basic/language-reference/queries/skip-while-clause.md)   
- [Take, Clause](../../../../visual-basic/language-reference/queries/take-clause.md)   
- [Take While (clause)](../../../../visual-basic/language-reference/queries/take-while-clause.md)
+## <a name="see-also"></a><span data-ttu-id="5c11d-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5c11d-133">See Also</span></span>  
+ <xref:System.Linq>  
+ [<span data-ttu-id="5c11d-134">Vue d’ensemble des opérateurs de requête standard (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5c11d-134">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="5c11d-135">Skip (clause)</span><span class="sxs-lookup"><span data-stu-id="5c11d-135">Skip Clause</span></span>](../../../../visual-basic/language-reference/queries/skip-clause.md)  
+ [<span data-ttu-id="5c11d-136">Skip While (clause)</span><span class="sxs-lookup"><span data-stu-id="5c11d-136">Skip While Clause</span></span>](../../../../visual-basic/language-reference/queries/skip-while-clause.md)  
+ [<span data-ttu-id="5c11d-137">Take (clause)</span><span class="sxs-lookup"><span data-stu-id="5c11d-137">Take Clause</span></span>](../../../../visual-basic/language-reference/queries/take-clause.md)  
+ [<span data-ttu-id="5c11d-138">Take While (clause)</span><span class="sxs-lookup"><span data-stu-id="5c11d-138">Take While Clause</span></span>](../../../../visual-basic/language-reference/queries/take-while-clause.md)

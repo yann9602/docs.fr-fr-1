@@ -1,65 +1,66 @@
 ---
-title: "Lignes, courbes et formes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "courbes, dessiner"
-  - "lignes, dessiner"
-  - "formes, remplir"
-  - "dessiner des formes"
-  - "splines, dessiner"
+title: Lignes, courbes et formes
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- shapes [Windows Forms], filling
+- splines [Windows Forms], drawing
+- shapes. drawing
+- lines [Windows Forms], drawing
+- curves [Windows Forms], drawing
 ms.assetid: ace6e8d4-4e94-486b-9681-758a6667dc7f
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2caa77285ebe327adc690b26baeb58aa800627fb
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Lignes, courbes et formes
-La partie de graphisme vectoriel de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] est utilisée pour dessiner des lignes, dessiner des courbes, ainsi que dessiner et remplir des formes.  
+# <a name="lines-curves-and-shapes"></a><span data-ttu-id="f804b-102">Lignes, courbes et formes</span><span class="sxs-lookup"><span data-stu-id="f804b-102">Lines, Curves, and Shapes</span></span>
+<span data-ttu-id="f804b-103">La partie du graphique vectoriel de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] est utilisé pour dessiner des lignes, courbes et pour dessiner et remplir des formes.</span><span class="sxs-lookup"><span data-stu-id="f804b-103">The vector graphics portion of [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] is used to draw lines, draw curves, and to draw and fill shapes.</span></span>  
   
-## Dans cette section  
- [Vue d'ensemble des graphismes vectoriels](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md)  
- Traites des graphismes vectoriels.  
+## <a name="in-this-section"></a><span data-ttu-id="f804b-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="f804b-104">In This Section</span></span>  
+ [<span data-ttu-id="f804b-105">Vue d'ensemble des graphismes vectoriels</span><span class="sxs-lookup"><span data-stu-id="f804b-105">Vector Graphics Overview</span></span>](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md)  
+ <span data-ttu-id="f804b-106">Traite des graphismes vectoriels.</span><span class="sxs-lookup"><span data-stu-id="f804b-106">Discusses vector graphics.</span></span>  
   
- [Stylets, lignes et rectangles dans GDI\+](../../../../docs/framework/winforms/advanced/pens-lines-and-rectangles-in-gdi.md)  
- Traite du dessin de lignes et de rectangles.  
+ [<span data-ttu-id="f804b-107">Stylets, lignes et rectangles dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-107">Pens, Lines, and Rectangles in GDI+</span></span>](../../../../docs/framework/winforms/advanced/pens-lines-and-rectangles-in-gdi.md)  
+ <span data-ttu-id="f804b-108">Traite des lignes et les rectangles.</span><span class="sxs-lookup"><span data-stu-id="f804b-108">Discusses drawing lines and rectangles.</span></span>  
   
- [Ellipses et arcs dans GDI\+](../../../../docs/framework/winforms/advanced/ellipses-and-arcs-in-gdi.md)  
- Définit les arcs et les ellipses et identifie les classes nécessaires pour les dessiner.  
+ [<span data-ttu-id="f804b-109">Ellipses et arcs dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-109">Ellipses and Arcs in GDI+</span></span>](../../../../docs/framework/winforms/advanced/ellipses-and-arcs-in-gdi.md)  
+ <span data-ttu-id="f804b-110">Définit des arcs et des ellipses et identifie les classes nécessaires pour les dessiner.</span><span class="sxs-lookup"><span data-stu-id="f804b-110">Defines arcs and ellipses and identifies the classes needed to draw them.</span></span>  
   
- [Polygones dans GDI\+](../../../../docs/framework/winforms/advanced/polygons-in-gdi.md)  
- Définit les polygones et identifie les classes nécessaires pour les dessiner.  
+ [<span data-ttu-id="f804b-111">Polygones dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-111">Polygons in GDI+</span></span>](../../../../docs/framework/winforms/advanced/polygons-in-gdi.md)  
+ <span data-ttu-id="f804b-112">Définit les polygones et identifie les classes nécessaires pour les dessiner.</span><span class="sxs-lookup"><span data-stu-id="f804b-112">Defines polygons and identifies the classes needed to draw them.</span></span>  
   
- [Splines cardinales dans GDI\+](../../../../docs/framework/winforms/advanced/cardinal-splines-in-gdi.md)  
- Définit les splines cardinales et identifie les classes nécessaires pour les dessiner.  
+ [<span data-ttu-id="f804b-113">Splines cardinales dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-113">Cardinal Splines in GDI+</span></span>](../../../../docs/framework/winforms/advanced/cardinal-splines-in-gdi.md)  
+ <span data-ttu-id="f804b-114">Définit les splines cardinales et identifie les classes nécessaires pour les dessiner.</span><span class="sxs-lookup"><span data-stu-id="f804b-114">Defines cardinal splines and identifies the classes needed to draw them.</span></span>  
   
- [Splines de Bézier dans GDI\+](../../../../docs/framework/winforms/advanced/bezier-splines-in-gdi.md)  
- Définit les splines de Bézier et identifie les classes nécessaires pour les dessiner.  
+ [<span data-ttu-id="f804b-115">Splines de Bézier dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-115">Bézier Splines in GDI+</span></span>](../../../../docs/framework/winforms/advanced/bezier-splines-in-gdi.md)  
+ <span data-ttu-id="f804b-116">Définit les splines de Bézier et identifie les classes nécessaires pour les dessiner.</span><span class="sxs-lookup"><span data-stu-id="f804b-116">Defines Bezier splines and identifies the classes needed to draw them.</span></span>  
   
- [Tracés graphiques dans GDI\+](../../../../docs/framework/winforms/advanced/graphics-paths-in-gdi.md)  
- Décrit les tracés et comment les créer et les dessiner.  
+ [<span data-ttu-id="f804b-117">Tracés graphiques dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-117">Graphics Paths in GDI+</span></span>](../../../../docs/framework/winforms/advanced/graphics-paths-in-gdi.md)  
+ <span data-ttu-id="f804b-118">Décrit comment créer et dessiner les et les chemins d’accès.</span><span class="sxs-lookup"><span data-stu-id="f804b-118">Describes paths and how to create and draw them.</span></span>  
   
- [Pinceaux et remplissage de formes dans GDI\+](../../../../docs/framework/winforms/advanced/brushes-and-filled-shapes-in-gdi.md)  
- Décrit les types de pinceaux et comment les utiliser.  
+ [<span data-ttu-id="f804b-119">Pinceaux et remplissage de formes dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-119">Brushes and Filled Shapes in GDI+</span></span>](../../../../docs/framework/winforms/advanced/brushes-and-filled-shapes-in-gdi.md)  
+ <span data-ttu-id="f804b-120">Décrit les types de pinceaux et comment les utiliser.</span><span class="sxs-lookup"><span data-stu-id="f804b-120">Describes brush types and how to use them.</span></span>  
   
- [Courbes ouvertes et fermées dans GDI\+](../../../../docs/framework/winforms/advanced/open-and-closed-curves-in-gdi.md)  
- Définit les courbes ouvertes et fermées et comment les dessiner et les remplir.  
+ [<span data-ttu-id="f804b-121">Courbes ouvertes et fermées dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-121">Open and Closed Curves in GDI+</span></span>](../../../../docs/framework/winforms/advanced/open-and-closed-curves-in-gdi.md)  
+ <span data-ttu-id="f804b-122">Définit les courbes ouvertes et fermées et comment dessiner et les remplir.</span><span class="sxs-lookup"><span data-stu-id="f804b-122">Defines open and closed curves and how to draw and fill them.</span></span>  
   
- [Régions dans GDI\+](../../../../docs/framework/winforms/advanced/regions-in-gdi.md)  
- Décrit les méthodes associées aux régions.  
+ [<span data-ttu-id="f804b-123">Régions dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-123">Regions in GDI+</span></span>](../../../../docs/framework/winforms/advanced/regions-in-gdi.md)  
+ <span data-ttu-id="f804b-124">Décrit les méthodes associées aux régions.</span><span class="sxs-lookup"><span data-stu-id="f804b-124">Describes the methods associated with regions.</span></span>  
   
- [Restriction de la surface de dessin dans GDI\+](../../../../docs/framework/winforms/advanced/restricting-the-drawing-surface-in-gdi.md)  
- Décrit le découpage et son utilisation.  
+ [<span data-ttu-id="f804b-125">Restriction de la surface de dessin dans GDI+</span><span class="sxs-lookup"><span data-stu-id="f804b-125">Restricting the Drawing Surface in GDI+</span></span>](../../../../docs/framework/winforms/advanced/restricting-the-drawing-surface-in-gdi.md)  
+ <span data-ttu-id="f804b-126">Décrit le découpage et comment l’utiliser.</span><span class="sxs-lookup"><span data-stu-id="f804b-126">Describes clipping and how to use it.</span></span>  
   
- [Anticrénelage avec des lignes et des courbes](../../../../docs/framework/winforms/advanced/antialiasing-with-lines-and-curves.md)  
- Définit l'anticrénelage et comment l'utiliser lorsque vous dessinez des lignes et des courbes.
+ [<span data-ttu-id="f804b-127">Anticrénelage avec des lignes et des courbes</span><span class="sxs-lookup"><span data-stu-id="f804b-127">Antialiasing with Lines and Curves</span></span>](../../../../docs/framework/winforms/advanced/antialiasing-with-lines-and-curves.md)  
+ <span data-ttu-id="f804b-128">Définit l’anticrénelage et comment l’utiliser lors du dessin de lignes et des courbes.</span><span class="sxs-lookup"><span data-stu-id="f804b-128">Defines antialiasing and how use antialiasing when drawing lines and curves.</span></span>

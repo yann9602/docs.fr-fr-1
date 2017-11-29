@@ -5,160 +5,157 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - JIT tracing events [.NET Framework]
 - ETW, JIT tracing events (CLR)
 ms.assetid: 926adde2-c123-452e-bf4f-4b977bf06ffb
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: b33a86eb235524ed9cbe5e07dd6625fedf884411
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="jit-tracing-etw-events"></a>Événements ETW de traçage JIT
-<a name="top"></a> Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.  
+# <a name="jit-tracing-etw-events"></a><span data-ttu-id="d227d-102">Événements ETW de traçage JIT</span><span class="sxs-lookup"><span data-stu-id="d227d-102">JIT Tracing ETW Events</span></span>
+<span data-ttu-id="d227d-103"><a name="top"></a> Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.</span><span class="sxs-lookup"><span data-stu-id="d227d-103"><a name="top"></a> These events collect information relating to the success or failure of just-in-time (JIT) inlining and JIT tail calls.</span></span>  
   
- Les événements de traçage JIT se composent des deux catégories suivantes :  
+ <span data-ttu-id="d227d-104">Les événements de traçage JIT se composent des deux catégories suivantes :</span><span class="sxs-lookup"><span data-stu-id="d227d-104">JIT tracing events consist of the following two categories:</span></span>  
   
--   [Événements d’incorporation (inlining) JIT](#jit_inlining_events)  
+-   [<span data-ttu-id="d227d-105">Événements d’incorporation (inlining) JIT</span><span class="sxs-lookup"><span data-stu-id="d227d-105">JIT Inlining Events</span></span>](#jit_inlining_events)  
   
--   [Événements d'appel tail JIT](#jit_tail_call_events)  
+-   [<span data-ttu-id="d227d-106">Événements d'appel tail JIT</span><span class="sxs-lookup"><span data-stu-id="d227d-106">JIT Tail Call Events</span></span>](#jit_tail_call_events)  
   
 <a name="jit_inlining_events"></a>   
-## <a name="jit-inlining-events"></a>Événements d’incorporation (inlining) JIT  
+## <a name="jit-inlining-events"></a><span data-ttu-id="d227d-107">Événements d’incorporation (inlining) JIT</span><span class="sxs-lookup"><span data-stu-id="d227d-107">JIT Inlining Events</span></span>  
   
-### <a name="methodjitinliningfailed-event"></a>Événement MethodJitInliningFailed  
- Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+### <a name="methodjitinliningfailed-event"></a><span data-ttu-id="d227d-108">Événement MethodJitInliningFailed</span><span class="sxs-lookup"><span data-stu-id="d227d-108">MethodJitInliningFailed Event</span></span>  
+ <span data-ttu-id="d227d-109">Le tableau suivant montre les mots clés et les niveaux.</span><span class="sxs-lookup"><span data-stu-id="d227d-109">The following table shows the keyword and level.</span></span> <span data-ttu-id="d227d-110">(Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)</span><span class="sxs-lookup"><span data-stu-id="d227d-110">(For more information, see [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)</span></span>  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|<span data-ttu-id="d227d-111">Mot clé pour déclencher l'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-111">Keyword for raising the event</span></span>|<span data-ttu-id="d227d-112">Niveau</span><span class="sxs-lookup"><span data-stu-id="d227d-112">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword` (0x10)|Détaillé (5)|  
+|<span data-ttu-id="d227d-113">`JITTracingKeyword` (0x10)</span><span class="sxs-lookup"><span data-stu-id="d227d-113">`JITTracingKeyword` (0x10)</span></span>|<span data-ttu-id="d227d-114">Détaillé (5)</span><span class="sxs-lookup"><span data-stu-id="d227d-114">Verbose (5)</span></span>|  
   
- Le tableau ci-dessous montre les informations liées aux événements.  
+ <span data-ttu-id="d227d-115">Le tableau ci-dessous montre les informations liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-115">The following table shows the event information.</span></span>  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|<span data-ttu-id="d227d-116">Événement</span><span class="sxs-lookup"><span data-stu-id="d227d-116">Event</span></span>|<span data-ttu-id="d227d-117">ID d'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-117">Event ID</span></span>|<span data-ttu-id="d227d-118">Moment du déclenchement</span><span class="sxs-lookup"><span data-stu-id="d227d-118">Raised when</span></span>|  
 |-----------|--------------|-----------------|  
-|`MethodJitInliningFailed`|186|L’incorporation JIT a échoué.|  
+|`MethodJitInliningFailed`|<span data-ttu-id="d227d-119">186</span><span class="sxs-lookup"><span data-stu-id="d227d-119">186</span></span>|<span data-ttu-id="d227d-120">L’incorporation JIT a échoué.</span><span class="sxs-lookup"><span data-stu-id="d227d-120">The JIT inlining failed.</span></span>|  
   
- Le tableau ci-dessous montre les données liées aux événements.  
+ <span data-ttu-id="d227d-121">Le tableau ci-dessous montre les données liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-121">The following table shows the event data.</span></span>  
   
-|Nom du champ|Type de données|Description|  
+|<span data-ttu-id="d227d-122">Nom du champ</span><span class="sxs-lookup"><span data-stu-id="d227d-122">Field name</span></span>|<span data-ttu-id="d227d-123">Type de données</span><span class="sxs-lookup"><span data-stu-id="d227d-123">Data type</span></span>|<span data-ttu-id="d227d-124">Description</span><span class="sxs-lookup"><span data-stu-id="d227d-124">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
-|MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  
-|MethodBeingCompiledNameSignature|win:UnicodeString|Signature de la méthode en cours de compilation.|  
-|InlinerNamespace|win:UnicodeString|Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.|  
-|InlinerName|win:UnicodeString|Nom de la méthode pour laquelle le compilateur essaie de générer du code. Ce n’est peut-être pas le même que `MethodBeingCompiledName` si le compilateur essaie d'incorporer du code dans `MethodBeingCompiledName` au lieu de générer un appel à `InlinerName`.|  
-|InlinerNameSignature|win:UnicodeString|Signature de l’incorporateur.|  
-|InlineeNamespace|win:UnicodeString|Espace de noms de l’inlinee.|  
-|InlineeName|win:UnicodeString|Méthode que le compilateur essaie d'incorporer (ne pas générer d’appel vers cette méthode).|  
-|InlineeNameSignature|win:UnicodeString|Signature de l’inlinee.|  
-|FailAlways|win:Boolean|Indication destinée au compilateur JIT signalant que l’incorporation (inlining) échouera toujours pour l’inlinee.|  
-|FailReason|win:UnicodeString|INLINE_NEVER signifie qu'une tentative d'incorporation (inlining) précédente a déterminé que l'incorporation ne réussirait jamais pour une autre raison ; sinon, texte de forme libre.|  
-|ClrInstanceID|win:UnicodeString|ID unique de l'instance de CLR ou CoreCLR.|  
+|<span data-ttu-id="d227d-125">MethodBeingCompiledNameSpace</span><span class="sxs-lookup"><span data-stu-id="d227d-125">MethodBeingCompiledNameSpace</span></span>|<span data-ttu-id="d227d-126">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-126">win:UnicodeString</span></span>|<span data-ttu-id="d227d-127">Espace de noms de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-127">Namespace of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-128">MethodBeingCompiledName</span><span class="sxs-lookup"><span data-stu-id="d227d-128">MethodBeingCompiledName</span></span>|<span data-ttu-id="d227d-129">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-129">win:UnicodeString</span></span>|<span data-ttu-id="d227d-130">Nom de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-130">Name of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-131">MethodBeingCompiledNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-131">MethodBeingCompiledNameSignature</span></span>|<span data-ttu-id="d227d-132">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-132">win:UnicodeString</span></span>|<span data-ttu-id="d227d-133">Signature de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-133">Signature of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-134">InlinerNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-134">InlinerNamespace</span></span>|<span data-ttu-id="d227d-135">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-135">win:UnicodeString</span></span>|<span data-ttu-id="d227d-136">Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-136">The namespace of the method the JIT compiler is trying to generate code for.</span></span>|  
+|<span data-ttu-id="d227d-137">InlinerName</span><span class="sxs-lookup"><span data-stu-id="d227d-137">InlinerName</span></span>|<span data-ttu-id="d227d-138">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-138">win:UnicodeString</span></span>|<span data-ttu-id="d227d-139">Nom de la méthode pour laquelle le compilateur essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-139">The name of the method the compiler is attempting to generate code for.</span></span> <span data-ttu-id="d227d-140">Ce n’est peut-être pas le même que `MethodBeingCompiledName` si le compilateur essaie d'incorporer du code dans `MethodBeingCompiledName` au lieu de générer un appel à `InlinerName`.</span><span class="sxs-lookup"><span data-stu-id="d227d-140">This might not be the same as `MethodBeingCompiledName` if the compiler is attempting to inline code into `MethodBeingCompiledName` instead of generating a call to `InlinerName`.</span></span>|  
+|<span data-ttu-id="d227d-141">InlinerNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-141">InlinerNameSignature</span></span>|<span data-ttu-id="d227d-142">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-142">win:UnicodeString</span></span>|<span data-ttu-id="d227d-143">Signature de l’incorporateur.</span><span class="sxs-lookup"><span data-stu-id="d227d-143">The signature for the inliner.</span></span>|  
+|<span data-ttu-id="d227d-144">InlineeNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-144">InlineeNamespace</span></span>|<span data-ttu-id="d227d-145">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-145">win:UnicodeString</span></span>|<span data-ttu-id="d227d-146">Espace de noms de l’inlinee.</span><span class="sxs-lookup"><span data-stu-id="d227d-146">The namespace of the inlinee.</span></span>|  
+|<span data-ttu-id="d227d-147">InlineeName</span><span class="sxs-lookup"><span data-stu-id="d227d-147">InlineeName</span></span>|<span data-ttu-id="d227d-148">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-148">win:UnicodeString</span></span>|<span data-ttu-id="d227d-149">Méthode que le compilateur essaie d'incorporer (ne pas générer d’appel vers cette méthode).</span><span class="sxs-lookup"><span data-stu-id="d227d-149">The method the compiler is trying to inline (not generate a call to).</span></span>|  
+|<span data-ttu-id="d227d-150">InlineeNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-150">InlineeNameSignature</span></span>|<span data-ttu-id="d227d-151">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-151">win:UnicodeString</span></span>|<span data-ttu-id="d227d-152">Signature de l’inlinee.</span><span class="sxs-lookup"><span data-stu-id="d227d-152">The signature for the inlinee.</span></span>|  
+|<span data-ttu-id="d227d-153">FailAlways</span><span class="sxs-lookup"><span data-stu-id="d227d-153">FailAlways</span></span>|<span data-ttu-id="d227d-154">win:Boolean</span><span class="sxs-lookup"><span data-stu-id="d227d-154">win:Boolean</span></span>|<span data-ttu-id="d227d-155">Indication destinée au compilateur JIT signalant que l’incorporation (inlining) échouera toujours pour l’inlinee.</span><span class="sxs-lookup"><span data-stu-id="d227d-155">A hint to the JIT compiler that inlining will always fail for the inlinee.</span></span>|  
+|<span data-ttu-id="d227d-156">FailReason</span><span class="sxs-lookup"><span data-stu-id="d227d-156">FailReason</span></span>|<span data-ttu-id="d227d-157">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-157">win:UnicodeString</span></span>|<span data-ttu-id="d227d-158">INLINE_NEVER signifie qu'une tentative d'incorporation (inlining) précédente a déterminé que l'incorporation ne réussirait jamais pour une autre raison ; sinon, texte de forme libre.</span><span class="sxs-lookup"><span data-stu-id="d227d-158">INLINE_NEVER means a previous inlining attempt determined that inlining will never succeed for some other reason; otherwise, free-form text.</span></span>|  
+|<span data-ttu-id="d227d-159">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="d227d-159">ClrInstanceID</span></span>|<span data-ttu-id="d227d-160">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-160">win:UnicodeString</span></span>|<span data-ttu-id="d227d-161">ID unique de l'instance de CLR ou CoreCLR.</span><span class="sxs-lookup"><span data-stu-id="d227d-161">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
-### <a name="methodjitinliningsucceeded-event"></a>Événement MethodJitInliningSucceeded  
- Le tableau suivant montre les mots clés et les niveaux.  
+### <a name="methodjitinliningsucceeded-event"></a><span data-ttu-id="d227d-162">Événement MethodJitInliningSucceeded</span><span class="sxs-lookup"><span data-stu-id="d227d-162">MethodJitInliningSucceeded Event</span></span>  
+ <span data-ttu-id="d227d-163">Le tableau suivant montre les mots clés et les niveaux.</span><span class="sxs-lookup"><span data-stu-id="d227d-163">The following table shows the keyword and level.</span></span>  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|<span data-ttu-id="d227d-164">Mot clé pour déclencher l'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-164">Keyword for raising the event</span></span>|<span data-ttu-id="d227d-165">Niveau</span><span class="sxs-lookup"><span data-stu-id="d227d-165">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword` (0x10)|Détaillé (5)|  
+|<span data-ttu-id="d227d-166">`JITTracingKeyword` (0x10)</span><span class="sxs-lookup"><span data-stu-id="d227d-166">`JITTracingKeyword` (0x10)</span></span>|<span data-ttu-id="d227d-167">Détaillé (5)</span><span class="sxs-lookup"><span data-stu-id="d227d-167">Verbose (5)</span></span>|  
   
- Le tableau ci-dessous montre les informations liées aux événements.  
+ <span data-ttu-id="d227d-168">Le tableau ci-dessous montre les informations liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-168">The following table shows the event information.</span></span>  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|<span data-ttu-id="d227d-169">Événement</span><span class="sxs-lookup"><span data-stu-id="d227d-169">Event</span></span>|<span data-ttu-id="d227d-170">ID d'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-170">Event ID</span></span>|<span data-ttu-id="d227d-171">Moment du déclenchement</span><span class="sxs-lookup"><span data-stu-id="d227d-171">Raised when</span></span>|  
 |-----------|--------------|-----------------|  
-|`MethodJitInliningSucceeded`|185|L'incorporation de méthode a réussi.|  
+|`MethodJitInliningSucceeded`|<span data-ttu-id="d227d-172">185</span><span class="sxs-lookup"><span data-stu-id="d227d-172">185</span></span>|<span data-ttu-id="d227d-173">L'incorporation de méthode a réussi.</span><span class="sxs-lookup"><span data-stu-id="d227d-173">The method inlining succeeded.</span></span>|  
   
- Le tableau ci-dessous montre les données liées aux événements.  
+ <span data-ttu-id="d227d-174">Le tableau ci-dessous montre les données liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-174">The following table shows the event data.</span></span>  
   
-|Nom du champ|Type de données|Description|  
+|<span data-ttu-id="d227d-175">Nom du champ</span><span class="sxs-lookup"><span data-stu-id="d227d-175">Field name</span></span>|<span data-ttu-id="d227d-176">Type de données</span><span class="sxs-lookup"><span data-stu-id="d227d-176">Data type</span></span>|<span data-ttu-id="d227d-177">Description</span><span class="sxs-lookup"><span data-stu-id="d227d-177">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
-|MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  
-|MethodBeingCompiledNameSignature|win:UnicodeString|Signature de la méthode en cours de compilation.|  
-|InlinerNamespace|win:UnicodeString|Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.|  
-|InlinerName|win:UnicodeString|Nom de la méthode pour laquelle le compilateur essaie de générer du code. Ce n’est peut-être pas le même que `MethodBeingCompiledName` si le compilateur essaie d'incorporer du code dans `MethodBeingCompiledName` au lieu de générer un appel à `InlinerName`.|  
-|InlinerNameSignature|win:UnicodeString|Signature de l’incorporateur.|  
-|InlineeNamespace|win:UnicodeString|Espace de noms de l’inlinee.|  
-|InlineeName|win:UnicodeString|Méthode que le compilateur essaie d'incorporer (ne pas générer d’appel vers cette méthode).|  
-|InlineeNameSignature|win:UnicodeString|Signature de l’inlinee.|  
-|ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
+|<span data-ttu-id="d227d-178">MethodBeingCompiledNameSpace</span><span class="sxs-lookup"><span data-stu-id="d227d-178">MethodBeingCompiledNameSpace</span></span>|<span data-ttu-id="d227d-179">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-179">win:UnicodeString</span></span>|<span data-ttu-id="d227d-180">Espace de noms de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-180">The namespace of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-181">MethodBeingCompiledName</span><span class="sxs-lookup"><span data-stu-id="d227d-181">MethodBeingCompiledName</span></span>|<span data-ttu-id="d227d-182">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-182">win:UnicodeString</span></span>|<span data-ttu-id="d227d-183">Nom de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-183">The name of the method being that is compiled.</span></span>|  
+|<span data-ttu-id="d227d-184">MethodBeingCompiledNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-184">MethodBeingCompiledNameSignature</span></span>|<span data-ttu-id="d227d-185">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-185">win:UnicodeString</span></span>|<span data-ttu-id="d227d-186">Signature de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-186">The signature of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-187">InlinerNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-187">InlinerNamespace</span></span>|<span data-ttu-id="d227d-188">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-188">win:UnicodeString</span></span>|<span data-ttu-id="d227d-189">Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-189">The namespace of the method the JIT compiler is attempting to generate code for.</span></span>|  
+|<span data-ttu-id="d227d-190">InlinerName</span><span class="sxs-lookup"><span data-stu-id="d227d-190">InlinerName</span></span>|<span data-ttu-id="d227d-191">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-191">win:UnicodeString</span></span>|<span data-ttu-id="d227d-192">Nom de la méthode pour laquelle le compilateur essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-192">The name of the method the compiler is attempting to generate code for.</span></span> <span data-ttu-id="d227d-193">Ce n’est peut-être pas le même que `MethodBeingCompiledName` si le compilateur essaie d'incorporer du code dans `MethodBeingCompiledName` au lieu de générer un appel à `InlinerName`.</span><span class="sxs-lookup"><span data-stu-id="d227d-193">This might not be the same as `MethodBeingCompiledName` if the compiler is attempting to inline code into `MethodBeingCompiledName` instead of generating a call to `InlinerName`.</span></span>|  
+|<span data-ttu-id="d227d-194">InlinerNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-194">InlinerNameSignature</span></span>|<span data-ttu-id="d227d-195">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-195">win:UnicodeString</span></span>|<span data-ttu-id="d227d-196">Signature de l’incorporateur.</span><span class="sxs-lookup"><span data-stu-id="d227d-196">The signature for the inliner.</span></span>|  
+|<span data-ttu-id="d227d-197">InlineeNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-197">InlineeNamespace</span></span>|<span data-ttu-id="d227d-198">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-198">win:UnicodeString</span></span>|<span data-ttu-id="d227d-199">Espace de noms de l’inlinee.</span><span class="sxs-lookup"><span data-stu-id="d227d-199">The namespace of the inlinee.</span></span>|  
+|<span data-ttu-id="d227d-200">InlineeName</span><span class="sxs-lookup"><span data-stu-id="d227d-200">InlineeName</span></span>|<span data-ttu-id="d227d-201">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-201">win:UnicodeString</span></span>|<span data-ttu-id="d227d-202">Méthode que le compilateur essaie d'incorporer (ne pas générer d’appel vers cette méthode).</span><span class="sxs-lookup"><span data-stu-id="d227d-202">The method the compiler is trying to inline (not generate a call to).</span></span>|  
+|<span data-ttu-id="d227d-203">InlineeNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-203">InlineeNameSignature</span></span>|<span data-ttu-id="d227d-204">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-204">win:UnicodeString</span></span>|<span data-ttu-id="d227d-205">Signature de l’inlinee.</span><span class="sxs-lookup"><span data-stu-id="d227d-205">The signature for the inlinee.</span></span>|  
+|<span data-ttu-id="d227d-206">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="d227d-206">ClrInstanceID</span></span>|<span data-ttu-id="d227d-207">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="d227d-207">win:UInt16</span></span>|<span data-ttu-id="d227d-208">ID unique de l'instance de CLR ou CoreCLR.</span><span class="sxs-lookup"><span data-stu-id="d227d-208">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
- [Retour au début](#top)  
+ [<span data-ttu-id="d227d-209">Retour au début</span><span class="sxs-lookup"><span data-stu-id="d227d-209">Back to top</span></span>](#top)  
   
 <a name="jit_tail_call_events"></a>   
-## <a name="jit-tail-call-events"></a>Événements d'appel tail JIT  
+## <a name="jit-tail-call-events"></a><span data-ttu-id="d227d-210">Événements d'appel tail JIT</span><span class="sxs-lookup"><span data-stu-id="d227d-210">JIT Tail Call Events</span></span>  
   
-### <a name="methodjittailcallfailed-event"></a>Événement MethodJITTailCallFailed  
- Le tableau suivant montre les mots clés et les niveaux.  
+### <a name="methodjittailcallfailed-event"></a><span data-ttu-id="d227d-211">Événement MethodJITTailCallFailed</span><span class="sxs-lookup"><span data-stu-id="d227d-211">MethodJITTailCallFailed Event</span></span>  
+ <span data-ttu-id="d227d-212">Le tableau suivant montre les mots clés et les niveaux.</span><span class="sxs-lookup"><span data-stu-id="d227d-212">The following table shows the keyword and level.</span></span>  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|<span data-ttu-id="d227d-213">Mot clé pour déclencher l'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-213">Keyword for raising the event</span></span>|<span data-ttu-id="d227d-214">Niveau</span><span class="sxs-lookup"><span data-stu-id="d227d-214">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword` (0x10)|Détaillé (5)|  
+|<span data-ttu-id="d227d-215">`JITTracingKeyword` (0x10)</span><span class="sxs-lookup"><span data-stu-id="d227d-215">`JITTracingKeyword` (0x10)</span></span>|<span data-ttu-id="d227d-216">Détaillé (5)</span><span class="sxs-lookup"><span data-stu-id="d227d-216">Verbose (5)</span></span>|  
   
- Le tableau ci-dessous montre les informations liées aux événements.  
+ <span data-ttu-id="d227d-217">Le tableau ci-dessous montre les informations liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-217">The following table shows the event information.</span></span>  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|<span data-ttu-id="d227d-218">Événement</span><span class="sxs-lookup"><span data-stu-id="d227d-218">Event</span></span>|<span data-ttu-id="d227d-219">ID d'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-219">Event ID</span></span>|<span data-ttu-id="d227d-220">Moment du déclenchement</span><span class="sxs-lookup"><span data-stu-id="d227d-220">Raised when</span></span>|  
 |-----------|--------------|-----------------|  
-|`MethodJitTailCallFailed`|189|L'appel tail de méthode a échoué.|  
+|`MethodJitTailCallFailed`|<span data-ttu-id="d227d-221">189</span><span class="sxs-lookup"><span data-stu-id="d227d-221">189</span></span>|<span data-ttu-id="d227d-222">L'appel tail de méthode a échoué.</span><span class="sxs-lookup"><span data-stu-id="d227d-222">The method tail call failed.</span></span>|  
   
- Le tableau ci-dessous montre les données liées aux événements.  
+ <span data-ttu-id="d227d-223">Le tableau ci-dessous montre les données liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-223">The following table shows the event data.</span></span>  
   
-|Nom du champ|Type de données|Description|  
+|<span data-ttu-id="d227d-224">Nom du champ</span><span class="sxs-lookup"><span data-stu-id="d227d-224">Field name</span></span>|<span data-ttu-id="d227d-225">Type de données</span><span class="sxs-lookup"><span data-stu-id="d227d-225">Data type</span></span>|<span data-ttu-id="d227d-226">Description</span><span class="sxs-lookup"><span data-stu-id="d227d-226">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
-|MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  
-|MethodBeingCompiledNameSignature|win:UnicodeString|Signature de la méthode en cours de compilation.|  
-|CallerNamespace|win:UnicodeString|Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.|  
-|CallerName|win:UnicodeString|Nom de la méthode pour laquelle le compilateur essaie de générer du code.|  
-|CallerNameSignature|win:UnicodeString|Signature de l’appelant.|  
-|CalleeNamespace|win:UnicodeString|Espace de noms de l’appelé.|  
-|CalleeName|win:UnicodeString|Méthode pour laquelle le compilateur essaie d'effectuer un appel tail (ne pas générer d'appel vers cette méthode).|  
-|CalleeNameSignature|win:UnicodeString|Signature de l’appelé.|  
-|TailPrefix|win:Boolean|Préfixe de l'appel tail.|  
-|FailReason|win:UnicodeString|Raison pour laquelle l'appel tail a échoué.|  
-|ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
+|<span data-ttu-id="d227d-227">MethodBeingCompiledNameSpace</span><span class="sxs-lookup"><span data-stu-id="d227d-227">MethodBeingCompiledNameSpace</span></span>|<span data-ttu-id="d227d-228">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-228">win:UnicodeString</span></span>|<span data-ttu-id="d227d-229">Espace de noms de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-229">Namespace of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-230">MethodBeingCompiledName</span><span class="sxs-lookup"><span data-stu-id="d227d-230">MethodBeingCompiledName</span></span>|<span data-ttu-id="d227d-231">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-231">win:UnicodeString</span></span>|<span data-ttu-id="d227d-232">Nom de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-232">Name of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-233">MethodBeingCompiledNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-233">MethodBeingCompiledNameSignature</span></span>|<span data-ttu-id="d227d-234">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-234">win:UnicodeString</span></span>|<span data-ttu-id="d227d-235">Signature de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-235">Signature of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-236">CallerNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-236">CallerNamespace</span></span>|<span data-ttu-id="d227d-237">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-237">win:UnicodeString</span></span>|<span data-ttu-id="d227d-238">Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-238">The namespace of the method the JIT compiler is attempting to generate code for.</span></span>|  
+|<span data-ttu-id="d227d-239">CallerName</span><span class="sxs-lookup"><span data-stu-id="d227d-239">CallerName</span></span>|<span data-ttu-id="d227d-240">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-240">win:UnicodeString</span></span>|<span data-ttu-id="d227d-241">Nom de la méthode pour laquelle le compilateur essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-241">The name of the method the compiler is attempting to generate code for.</span></span>|  
+|<span data-ttu-id="d227d-242">CallerNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-242">CallerNameSignature</span></span>|<span data-ttu-id="d227d-243">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-243">win:UnicodeString</span></span>|<span data-ttu-id="d227d-244">Signature de l’appelant.</span><span class="sxs-lookup"><span data-stu-id="d227d-244">The signature for the caller.</span></span>|  
+|<span data-ttu-id="d227d-245">CalleeNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-245">CalleeNamespace</span></span>|<span data-ttu-id="d227d-246">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-246">win:UnicodeString</span></span>|<span data-ttu-id="d227d-247">Espace de noms de l’appelé.</span><span class="sxs-lookup"><span data-stu-id="d227d-247">The namespace of the callee.</span></span>|  
+|<span data-ttu-id="d227d-248">CalleeName</span><span class="sxs-lookup"><span data-stu-id="d227d-248">CalleeName</span></span>|<span data-ttu-id="d227d-249">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-249">win:UnicodeString</span></span>|<span data-ttu-id="d227d-250">Méthode pour laquelle le compilateur essaie d'effectuer un appel tail (ne pas générer d'appel vers cette méthode).</span><span class="sxs-lookup"><span data-stu-id="d227d-250">The method the compiler is trying to tail call (not generate a call to).</span></span>|  
+|<span data-ttu-id="d227d-251">CalleeNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-251">CalleeNameSignature</span></span>|<span data-ttu-id="d227d-252">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-252">win:UnicodeString</span></span>|<span data-ttu-id="d227d-253">Signature de l’appelé.</span><span class="sxs-lookup"><span data-stu-id="d227d-253">The signature for the callee.</span></span>|  
+|<span data-ttu-id="d227d-254">TailPrefix</span><span class="sxs-lookup"><span data-stu-id="d227d-254">TailPrefix</span></span>|<span data-ttu-id="d227d-255">win:Boolean</span><span class="sxs-lookup"><span data-stu-id="d227d-255">win:Boolean</span></span>|<span data-ttu-id="d227d-256">Préfixe de l'appel tail.</span><span class="sxs-lookup"><span data-stu-id="d227d-256">The prefix for the tail call</span></span>|  
+|<span data-ttu-id="d227d-257">FailReason</span><span class="sxs-lookup"><span data-stu-id="d227d-257">FailReason</span></span>|<span data-ttu-id="d227d-258">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-258">win:UnicodeString</span></span>|<span data-ttu-id="d227d-259">Raison pour laquelle l'appel tail a échoué.</span><span class="sxs-lookup"><span data-stu-id="d227d-259">The reason the tail call failed.</span></span>|  
+|<span data-ttu-id="d227d-260">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="d227d-260">ClrInstanceID</span></span>|<span data-ttu-id="d227d-261">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="d227d-261">win:UInt16</span></span>|<span data-ttu-id="d227d-262">ID unique de l'instance de CLR ou CoreCLR.</span><span class="sxs-lookup"><span data-stu-id="d227d-262">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
-### <a name="methodjittailcallsucceeded-event"></a>Événement MethodJITTailCallSucceeded  
- Le tableau suivant montre les mots clés et les niveaux.  
+### <a name="methodjittailcallsucceeded-event"></a><span data-ttu-id="d227d-263">Événement MethodJITTailCallSucceeded</span><span class="sxs-lookup"><span data-stu-id="d227d-263">MethodJITTailCallSucceeded Event</span></span>  
+ <span data-ttu-id="d227d-264">Le tableau suivant montre les mots clés et les niveaux.</span><span class="sxs-lookup"><span data-stu-id="d227d-264">The following table shows the keyword and level.</span></span>  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|<span data-ttu-id="d227d-265">Mot clé pour déclencher l'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-265">Keyword for raising the event</span></span>|<span data-ttu-id="d227d-266">Niveau</span><span class="sxs-lookup"><span data-stu-id="d227d-266">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword` (0x10)|Détaillé (5)|  
+|<span data-ttu-id="d227d-267">`JITTracingKeyword` (0x10)</span><span class="sxs-lookup"><span data-stu-id="d227d-267">`JITTracingKeyword` (0x10)</span></span>|<span data-ttu-id="d227d-268">Détaillé (5)</span><span class="sxs-lookup"><span data-stu-id="d227d-268">Verbose (5)</span></span>|  
   
- Le tableau ci-dessous montre les informations liées aux événements.  
+ <span data-ttu-id="d227d-269">Le tableau ci-dessous montre les informations liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-269">The following table shows the event information.</span></span>  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|<span data-ttu-id="d227d-270">Événement</span><span class="sxs-lookup"><span data-stu-id="d227d-270">Event</span></span>|<span data-ttu-id="d227d-271">ID d'événement</span><span class="sxs-lookup"><span data-stu-id="d227d-271">Event ID</span></span>|<span data-ttu-id="d227d-272">Moment du déclenchement</span><span class="sxs-lookup"><span data-stu-id="d227d-272">Raised when</span></span>|  
 |-----------|--------------|-----------------|  
-|`MethodJitTailCallSucceeded`|188|L'appel tail de méthode a réussi.|  
+|`MethodJitTailCallSucceeded`|<span data-ttu-id="d227d-273">188</span><span class="sxs-lookup"><span data-stu-id="d227d-273">188</span></span>|<span data-ttu-id="d227d-274">L'appel tail de méthode a réussi.</span><span class="sxs-lookup"><span data-stu-id="d227d-274">The method tail call succeeded.</span></span>|  
   
- Le tableau ci-dessous montre les données liées aux événements.  
+ <span data-ttu-id="d227d-275">Le tableau ci-dessous montre les données liées aux événements.</span><span class="sxs-lookup"><span data-stu-id="d227d-275">The following table shows the event data.</span></span>  
   
-|Nom du champ|Type de données|Description|  
+|<span data-ttu-id="d227d-276">Nom du champ</span><span class="sxs-lookup"><span data-stu-id="d227d-276">Field name</span></span>|<span data-ttu-id="d227d-277">Type de données</span><span class="sxs-lookup"><span data-stu-id="d227d-277">Data type</span></span>|<span data-ttu-id="d227d-278">Description</span><span class="sxs-lookup"><span data-stu-id="d227d-278">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
-|MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  
-|MethodBeingCompiledNameSignature|win:UnicodeString|Signature de la méthode en cours de compilation.|  
-|CallerNamespace|win:UnicodeString|Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.|  
-|CallerName|win:UnicodeString|Nom de la méthode pour laquelle le compilateur essaie de générer du code.|  
-|CallerNameSignature|win:UnicodeString|Signature de l’appelant.|  
-|CalleeNamespace|win:UnicodeString|Espace de noms de l’appelé.|  
-|CalleeName|win:UnicodeString|Méthode pour laquelle le compilateur essaie d'effectuer un appel tail (ne pas générer d'appel vers cette méthode).|  
-|CalleeNameSignature|win:UnicodeString|Signature de l’appelé.|  
-|TailPrefix|win:Boolean|Préfixe de l’appel tail.|  
-|TailCallType|win:UnicodeString|Type de l’appel tail.|  
-|ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
+|<span data-ttu-id="d227d-279">MethodBeingCompiledNameSpace</span><span class="sxs-lookup"><span data-stu-id="d227d-279">MethodBeingCompiledNameSpace</span></span>|<span data-ttu-id="d227d-280">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-280">win:UnicodeString</span></span>|<span data-ttu-id="d227d-281">Espace de noms de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-281">Namespace of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-282">MethodBeingCompiledName</span><span class="sxs-lookup"><span data-stu-id="d227d-282">MethodBeingCompiledName</span></span>|<span data-ttu-id="d227d-283">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-283">win:UnicodeString</span></span>|<span data-ttu-id="d227d-284">Nom de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-284">Name of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-285">MethodBeingCompiledNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-285">MethodBeingCompiledNameSignature</span></span>|<span data-ttu-id="d227d-286">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-286">win:UnicodeString</span></span>|<span data-ttu-id="d227d-287">Signature de la méthode en cours de compilation.</span><span class="sxs-lookup"><span data-stu-id="d227d-287">Signature of the method that is being compiled.</span></span>|  
+|<span data-ttu-id="d227d-288">CallerNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-288">CallerNamespace</span></span>|<span data-ttu-id="d227d-289">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-289">win:UnicodeString</span></span>|<span data-ttu-id="d227d-290">Espace de noms de la méthode pour laquelle le compilateur JIT essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-290">The namespace of the method the JIT compiler is attempting to generate code for.</span></span>|  
+|<span data-ttu-id="d227d-291">CallerName</span><span class="sxs-lookup"><span data-stu-id="d227d-291">CallerName</span></span>|<span data-ttu-id="d227d-292">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-292">win:UnicodeString</span></span>|<span data-ttu-id="d227d-293">Nom de la méthode pour laquelle le compilateur essaie de générer du code.</span><span class="sxs-lookup"><span data-stu-id="d227d-293">The name of the method the compiler is attempting to generate code for.</span></span>|  
+|<span data-ttu-id="d227d-294">CallerNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-294">CallerNameSignature</span></span>|<span data-ttu-id="d227d-295">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-295">win:UnicodeString</span></span>|<span data-ttu-id="d227d-296">Signature de l’appelant.</span><span class="sxs-lookup"><span data-stu-id="d227d-296">The signature for the caller.</span></span>|  
+|<span data-ttu-id="d227d-297">CalleeNamespace</span><span class="sxs-lookup"><span data-stu-id="d227d-297">CalleeNamespace</span></span>|<span data-ttu-id="d227d-298">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-298">win:UnicodeString</span></span>|<span data-ttu-id="d227d-299">Espace de noms de l’appelé.</span><span class="sxs-lookup"><span data-stu-id="d227d-299">The namespace of the callee.</span></span>|  
+|<span data-ttu-id="d227d-300">CalleeName</span><span class="sxs-lookup"><span data-stu-id="d227d-300">CalleeName</span></span>|<span data-ttu-id="d227d-301">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-301">win:UnicodeString</span></span>|<span data-ttu-id="d227d-302">Méthode pour laquelle le compilateur essaie d'effectuer un appel tail (ne pas générer d'appel vers cette méthode).</span><span class="sxs-lookup"><span data-stu-id="d227d-302">The method the compiler is trying to tail call (not generate a call to).</span></span>|  
+|<span data-ttu-id="d227d-303">CalleeNameSignature</span><span class="sxs-lookup"><span data-stu-id="d227d-303">CalleeNameSignature</span></span>|<span data-ttu-id="d227d-304">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-304">win:UnicodeString</span></span>|<span data-ttu-id="d227d-305">Signature de l’appelé.</span><span class="sxs-lookup"><span data-stu-id="d227d-305">The signature for the callee.</span></span>|  
+|<span data-ttu-id="d227d-306">TailPrefix</span><span class="sxs-lookup"><span data-stu-id="d227d-306">TailPrefix</span></span>|<span data-ttu-id="d227d-307">win:Boolean</span><span class="sxs-lookup"><span data-stu-id="d227d-307">win:Boolean</span></span>|<span data-ttu-id="d227d-308">Préfixe de l’appel tail.</span><span class="sxs-lookup"><span data-stu-id="d227d-308">The prefix for the tail call.</span></span>|  
+|<span data-ttu-id="d227d-309">TailCallType</span><span class="sxs-lookup"><span data-stu-id="d227d-309">TailCallType</span></span>|<span data-ttu-id="d227d-310">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="d227d-310">win:UnicodeString</span></span>|<span data-ttu-id="d227d-311">Type de l’appel tail.</span><span class="sxs-lookup"><span data-stu-id="d227d-311">The type of the tail call.</span></span>|  
+|<span data-ttu-id="d227d-312">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="d227d-312">ClrInstanceID</span></span>|<span data-ttu-id="d227d-313">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="d227d-313">win:UInt16</span></span>|<span data-ttu-id="d227d-314">ID unique de l'instance de CLR ou CoreCLR.</span><span class="sxs-lookup"><span data-stu-id="d227d-314">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
-## <a name="see-also"></a>Voir aussi  
- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
-
+## <a name="see-also"></a><span data-ttu-id="d227d-315">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d227d-315">See Also</span></span>  
+ [<span data-ttu-id="d227d-316">Événements ETW du CLR</span><span class="sxs-lookup"><span data-stu-id="d227d-316">CLR ETW Events</span></span>](../../../docs/framework/performance/clr-etw-events.md)

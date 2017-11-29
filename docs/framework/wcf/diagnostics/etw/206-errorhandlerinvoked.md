@@ -1,43 +1,46 @@
 ---
-title: "206 - ErrorHandlerInvoked | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 206 - ErrorHandlerInvoked
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 97340f4d-4e09-4e42-a17a-982b3868dbcf
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 84470cbaf7ba7951ef59b130c696462079216cde
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 206 - ErrorHandlerInvoked
-## Propriétés  
+# <a name="206---errorhandlerinvoked"></a><span data-ttu-id="4cce4-102">206 - ErrorHandlerInvoked</span><span class="sxs-lookup"><span data-stu-id="4cce4-102">206 - ErrorHandlerInvoked</span></span>
+## <a name="properties"></a><span data-ttu-id="4cce4-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="4cce4-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|206|  
-|Mots clés|Dépannage, ServiceModel|  
-|Niveau|Information|  
-|Canal|Microsoft\-Windows\-Serveur d'applications\-Applications\/Analyse|  
+|<span data-ttu-id="4cce4-104">ID</span><span class="sxs-lookup"><span data-stu-id="4cce4-104">ID</span></span>|<span data-ttu-id="4cce4-105">206</span><span class="sxs-lookup"><span data-stu-id="4cce4-105">206</span></span>|  
+|<span data-ttu-id="4cce4-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="4cce4-106">Keywords</span></span>|<span data-ttu-id="4cce4-107">Dépannage, ServiceModel</span><span class="sxs-lookup"><span data-stu-id="4cce4-107">Troubleshooting, ServiceModel</span></span>|  
+|<span data-ttu-id="4cce4-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="4cce4-108">Level</span></span>|<span data-ttu-id="4cce4-109">Information</span><span class="sxs-lookup"><span data-stu-id="4cce4-109">Information</span></span>|  
+|<span data-ttu-id="4cce4-110">Canal</span><span class="sxs-lookup"><span data-stu-id="4cce4-110">Channel</span></span>|<span data-ttu-id="4cce4-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="4cce4-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## Description  
- Cet événement est émis une fois qu'un `ErrorHandler` a eu la possibilité de gérer une exception produite dans une opération de service.  
+## <a name="description"></a><span data-ttu-id="4cce4-112">Description</span><span class="sxs-lookup"><span data-stu-id="4cce4-112">Description</span></span>  
+ <span data-ttu-id="4cce4-113">Cet événement est émis une fois qu'un `ErrorHandler` a eu la possibilité de gérer une exception produite dans une opération de service.</span><span class="sxs-lookup"><span data-stu-id="4cce4-113">This event is emitted after an `ErrorHandler` has had an opportunity to handle an exception that occurred in a service operation.</span></span>  
   
-## Message  
- Le répartiteur a appelé un ErrorHandler de type '%1' avec une exception de type '%3.'ErrorHandled \=\= '%2.'  
+## <a name="message"></a><span data-ttu-id="4cce4-114">Message</span><span class="sxs-lookup"><span data-stu-id="4cce4-114">Message</span></span>  
+ <span data-ttu-id="4cce4-115">Le répartiteur a appelé un ErrorHandler de type '%1' avec une exception de type '%3'.</span><span class="sxs-lookup"><span data-stu-id="4cce4-115">The Dispatcher invoked an ErrorHandler of type '%1' with an exception of type '%3'.</span></span> <span data-ttu-id="4cce4-116">ErrorHandled == '%2.'</span><span class="sxs-lookup"><span data-stu-id="4cce4-116">ErrorHandled == '%2'.</span></span>  
   
-## Détails  
+## <a name="details"></a><span data-ttu-id="4cce4-117">Détails</span><span class="sxs-lookup"><span data-stu-id="4cce4-117">Details</span></span>  
   
-|Nom d'élément de données|Type d'élément de données|Description|  
-|------------------------------|-------------------------------|-----------------|  
-|TypeName|`xs:string`|CLR FullName du type d'`ErrorHandler` appelé.|  
-|Géré|`xs:unsignedByte`|`true` si le gestionnaire d'erreurs a géré l'erreur, sinon `false`.|  
-|ExceptionTypeName|`xs:string`|CLR FullName de l'exception gérée.|  
-|HostReference|`xs:string`|Pour les services hébergés par le Web, ce champ identifie de manière unique le service dans la hiérarchie Web.Son format est défini de la façon suivante : 'Chemin d'accès virtuel de l'Application Nom du site Web&#124;Chemin d'accès virtuel du Service&#124;ServiceName.Exemple : 'Site Web par défaut\/CalculatorApplication&#124;\/CalculatorService.svc&#124;CalculatorService'.|  
-|AppDomain|`xs:string`|Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.|
+|<span data-ttu-id="4cce4-118">Nom d'élément de données</span><span class="sxs-lookup"><span data-stu-id="4cce4-118">Data Item Name</span></span>|<span data-ttu-id="4cce4-119">Type d'élément de données</span><span class="sxs-lookup"><span data-stu-id="4cce4-119">Data Item Type</span></span>|<span data-ttu-id="4cce4-120">Description</span><span class="sxs-lookup"><span data-stu-id="4cce4-120">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="4cce4-121">TypeName</span><span class="sxs-lookup"><span data-stu-id="4cce4-121">TypeName</span></span>|`xs:string`|<span data-ttu-id="4cce4-122">CLR FullName du type de `ErrorHandler` appelé.</span><span class="sxs-lookup"><span data-stu-id="4cce4-122">The CLR FullName of the type of the invoked `ErrorHandler`.</span></span>|  
+|<span data-ttu-id="4cce4-123">Géré</span><span class="sxs-lookup"><span data-stu-id="4cce4-123">Handled</span></span>|`xs:unsignedByte`|<span data-ttu-id="4cce4-124">`true` si le gestionnaire d'erreurs a géré l'erreur, sinon `false`.</span><span class="sxs-lookup"><span data-stu-id="4cce4-124">`true` if the error handler handled the error, otherwise `false`.</span></span>|  
+|<span data-ttu-id="4cce4-125">ExceptionTypeName</span><span class="sxs-lookup"><span data-stu-id="4cce4-125">ExceptionTypeName</span></span>|`xs:string`|<span data-ttu-id="4cce4-126">CLR FullName de l'exception gérée.</span><span class="sxs-lookup"><span data-stu-id="4cce4-126">The CLR FullName of the exception that was being handled.</span></span>|  
+|<span data-ttu-id="4cce4-127">HostReference</span><span class="sxs-lookup"><span data-stu-id="4cce4-127">HostReference</span></span>|`xs:string`|<span data-ttu-id="4cce4-128">Pour les services hébergés par le Web, ce champ identifie de manière unique le service dans la hiérarchie Web.</span><span class="sxs-lookup"><span data-stu-id="4cce4-128">For Web-hosted services, this field uniquely identifies the service in the Web hierarchy.</span></span> <span data-ttu-id="4cce4-129">Son format est défini en tant que ' chemin d’accès virtuel de Site Web de nom d’Application &#124; Chemin d’accès virtuel de service &#124; ServiceName'.</span><span class="sxs-lookup"><span data-stu-id="4cce4-129">Its format is defined as 'Web Site Name Application Virtual Path&#124;Service Virtual Path&#124;ServiceName'.</span></span> <span data-ttu-id="4cce4-130">Exemple : ' Default Web Site/CalculatorApplication &#124;/CalculatorService.svc &#124; CalculatorService ».</span><span class="sxs-lookup"><span data-stu-id="4cce4-130">Example: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.</span></span>|  
+|<span data-ttu-id="4cce4-131">AppDomain</span><span class="sxs-lookup"><span data-stu-id="4cce4-131">AppDomain</span></span>|`xs:string`|<span data-ttu-id="4cce4-132">Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.</span><span class="sxs-lookup"><span data-stu-id="4cce4-132">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

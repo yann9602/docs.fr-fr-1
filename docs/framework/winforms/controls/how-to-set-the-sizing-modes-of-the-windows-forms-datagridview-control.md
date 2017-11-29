@@ -1,75 +1,79 @@
 ---
-title: "Comment&#160;: d&#233;finir les modes de redimensionnement du contr&#244;le DataGridView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "grilles de données, définir les modes de dimensionnement"
-  - "DataGridView (contrôle Windows Forms), modes de dimensionnement"
+title: "Comment : définir les modes de redimensionnement du contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data grids [Windows Forms], setting sizing modes
+- DataGridView control [Windows Forms], sizing modes
 ms.assetid: e9ad15e6-b4bb-44aa-a767-3738e9db1651
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 811c5edd2f12794035b66260f17255283f405cbe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;finir les modes de redimensionnement du contr&#244;le DataGridView Windows Forms
-Les procédures suivantes montrent des scénarios courants de personnalisation et de combinaison des options de dimensionnement disponibles pour le contrôle <xref:System.Windows.Forms.DataGridView> et pour certaines colonnes des contrôles.  
+# <a name="how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control"></a><span data-ttu-id="2d6b4-102">Comment : définir les modes de redimensionnement du contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="2d6b4-102">How to: Set the Sizing Modes of the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="2d6b4-103">Les procédures suivantes montrent des scénarios courants de personnalisation et de combinaison des options de dimensionnement disponibles pour le contrôle <xref:System.Windows.Forms.DataGridView> et pour certaines colonnes des contrôles.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-103">The following procedures demonstrate some common scenarios that customize or combine the sizing options available for the <xref:System.Windows.Forms.DataGridView> control and for specific columns in a control.</span></span>  
   
-### Pour créer une colonne de largeur fixe  
+### <a name="to-create-a-fixed-width-column"></a><span data-ttu-id="2d6b4-104">Pour créer une colonne de largeur fixe</span><span class="sxs-lookup"><span data-stu-id="2d6b4-104">To create a fixed-width column</span></span>  
   
--   Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> sur <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode>, la propriété <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A> sur <xref:System.Windows.Forms.DataGridViewTriState>, la propriété <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> sur `true`, et la propriété <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> sur une valeur appropriée.  
+-   <span data-ttu-id="2d6b4-105">Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> sur <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.None>, la propriété <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A> sur <xref:System.Windows.Forms.DataGridViewTriState.False>, la propriété <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> sur `true`, et la propriété <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> sur une valeur appropriée.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-105">Set the <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> property to <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.None>, the <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A> property to <xref:System.Windows.Forms.DataGridViewTriState.False>, the <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> property to `true`, and the <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> property to an appropriate value.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#10)]
      [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#10)]  
   
-### Pour créer une colonne dont la taille s'ajuste au contenu  
+### <a name="to-create-a-column-that-adjusts-its-size-to-fit-its-content"></a><span data-ttu-id="2d6b4-106">Pour créer une colonne dont la taille s'ajuste au contenu</span><span class="sxs-lookup"><span data-stu-id="2d6b4-106">To create a column that adjusts its size to fit its content</span></span>  
   
--   Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> sur un mode de dimensionnement basé sur le contenu.  
+-   <span data-ttu-id="2d6b4-107">Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> sur un mode de dimensionnement basé sur le contenu.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-107">Set the <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> property to a content-based sizing mode.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#20](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#20)]
      [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#20)]  
   
-### Pour créer des colonnes avec mode de remplissage pour les valeurs de taille et d'importance variables  
+### <a name="to-create-fill-mode-columns-for-values-of-varying-size-and-importance"></a><span data-ttu-id="2d6b4-108">Pour créer des colonnes avec mode de remplissage pour les valeurs de taille et d'importance variables</span><span class="sxs-lookup"><span data-stu-id="2d6b4-108">To create fill-mode columns for values of varying size and importance</span></span>  
   
--   Définissez la propriété <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=fullName> sur <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode> pour définir le mode de dimensionnement de toutes les colonnes qui ne substituent pas cette valeur.  Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> des colonnes sur des valeurs qui soient proportionnelles à leur largeur moyenne de contenu.  Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> des colonnes importantes pour garantir un affichage partiel du contenu.  
+-   <span data-ttu-id="2d6b4-109">Définissez la propriété <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType> sur <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill> pour définir le mode de dimensionnement de toutes les colonnes qui ne substituent pas cette valeur.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-109">Set the <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType> property to <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill> to set the sizing mode for all columns that do not override this value.</span></span> <span data-ttu-id="2d6b4-110">Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> des colonnes sur des valeurs qui soient proportionnelles à leur largeur moyenne de contenu.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-110">Set the <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> properties of the columns to values that are proportional to their average content widths.</span></span> <span data-ttu-id="2d6b4-111">Définissez la propriété <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> des colonnes importantes pour garantir un affichage partiel du contenu.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-111">Set the <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> properties of important columns to ensure partial content display.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#30](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#30)]
      [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#30](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#30)]  
   
-## Exemple  
- L'exemple de code complet suivant est une démonstration d'application qui peut vous aider à comprendre les options de dimensionnement décrites dans cette rubrique.  
+## <a name="example"></a><span data-ttu-id="2d6b4-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="2d6b4-112">Example</span></span>  
+ <span data-ttu-id="2d6b4-113">L'exemple de code complet suivant est une démonstration d'application qui peut vous aider à comprendre les options de dimensionnement décrites dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-113">The following complete code example provides a demonstration application that can help you understand the sizing options described in this topic.</span></span>  
   
  [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#00)]
  [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#00)]  
   
- Pour utiliser cette démonstration d'application :  
+ <span data-ttu-id="2d6b4-114">Pour utiliser cette démonstration d'application :</span><span class="sxs-lookup"><span data-stu-id="2d6b4-114">To use this demonstration application:</span></span>  
   
--   Modifiez la taille du formulaire.  Observez comment les colonnes avec mode de remplissage changent tout en conservant les proportions indiquées par les valeurs de propriétés <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>.  Observez comment la <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> d'une colonne empêche celle\-ci de changer quand le formulaire est trop petit.  
+-   <span data-ttu-id="2d6b4-115">Modifiez la taille du formulaire.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-115">Change the size of the form.</span></span> <span data-ttu-id="2d6b4-116">Observez comment les colonnes avec mode de remplissage changent tout en conservant les proportions indiquées par les valeurs de propriétés <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-116">Observe how the fill-mode columns change their widths while retaining the proportions indicated by the <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> property values.</span></span> <span data-ttu-id="2d6b4-117">Observez comment la <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> d'une colonne empêche celle-ci de changer quand le formulaire est trop petit.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-117">Observe how a column's <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> prevents it from changing when the form is too small.</span></span>  
   
--   Modifiez les tailles des colonnes en faisant glisser les séparateurs de colonnes avec la souris.  Observez comment certaines colonnes ne peuvent pas être redimensionnées et comment les colonnes redimensionnables ne peuvent pas devenir plus étroites que leur largeur minimale.  
+-   <span data-ttu-id="2d6b4-118">Modifiez les tailles des colonnes en faisant glisser les séparateurs de colonnes avec la souris.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-118">Change the column sizes by dragging the column dividers with the mouse.</span></span> <span data-ttu-id="2d6b4-119">Observez comment certaines colonnes ne peuvent pas être redimensionnées et comment les colonnes redimensionnables ne peuvent pas devenir plus étroites que leur largeur minimale.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-119">Observe how some columns cannot be resized, and how resizable columns cannot be made narrower than their minimum widths.</span></span>  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a><span data-ttu-id="2d6b4-120">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="2d6b4-120">Compiling the Code</span></span>  
+ <span data-ttu-id="2d6b4-121">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="2d6b4-121">This example requires:</span></span>  
   
--   Des références aux assemblys System et System.Windows.Forms.  
+-   <span data-ttu-id="2d6b4-122">des références aux assemblys System et System.Windows.Forms ;</span><span class="sxs-lookup"><span data-stu-id="2d6b4-122">References to the System and System.Windows.Forms assemblies.</span></span>  
   
- Pour plus d'informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], voir [Génération à partir de la ligne de commande](../Topic/Building%20from%20the%20Command%20Line%20\(Visual%20Basic\).md) ou [Génération à partir de la ligne de commande avec csc.exe](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.  Voir également [Comment : compiler et exécuter un exemple complet de code Windows Forms à l'aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ <span data-ttu-id="2d6b4-123">Pour plus d’informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez [Génération à partir de la ligne de commande](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) ou [Génération à partir de la ligne de commande avec csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="2d6b4-123">For information about building this example from the command line for [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="2d6b4-124">Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.</span><span class="sxs-lookup"><span data-stu-id="2d6b4-124">You can also build this example in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] by pasting the code into a new project.</span></span>  <span data-ttu-id="2d6b4-125">Consultez également [Guide pratique pour compiler et exécuter un exemple complet de code Windows Forms à l’aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="2d6b4-125">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode>   
- <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.Width%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A?displayProperty=fullName>
+## <a name="see-also"></a><span data-ttu-id="2d6b4-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2d6b4-126">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode>  
+ <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.Width%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A?displayProperty=nameWithType>
