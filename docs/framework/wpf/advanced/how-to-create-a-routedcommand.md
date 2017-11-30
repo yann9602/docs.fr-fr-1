@@ -1,35 +1,38 @@
 ---
-title: "Comment&#160;: cr&#233;er un RoutedCommand | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "classes, RoutedCommand, créer"
-  - "créer, RoutedCommand (classe)"
-  - "RoutedCommand (classe), créer"
+title: "Comment : créer un RoutedCommand"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: RoutedCommand class [WPF], creating
 ms.assetid: aaf6979f-69ab-406f-979f-5766daa85fa0
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dad0cd8aaa81e6a458307ec69ec60ed369ca6b03
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er un RoutedCommand
-Cet exemple montre comment créer une <xref:System.Windows.Input.RoutedCommand> personnalisée et l'implémenter en créant un <xref:System.Windows.Input.ExecutedRoutedEventHandler> et un <xref:System.Windows.Input.CanExecuteRoutedEventHandler> et en les joignant à une <xref:System.Windows.Input.CommandBinding>.  Pour plus d'informations sur l'exécution des commandes, consultez [Vue d'ensemble des commandes](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
+# <a name="how-to-create-a-routedcommand"></a>Comment : créer un RoutedCommand
+Cet exemple montre comment créer un personnalisé <xref:System.Windows.Input.RoutedCommand> et comment implémenter la commande personnalisée en créant un <xref:System.Windows.Input.ExecutedRoutedEventHandler> et un <xref:System.Windows.Input.CanExecuteRoutedEventHandler> et les joindre à un <xref:System.Windows.Input.CommandBinding>.  Pour plus d’informations sur l’exécution des commandes, consultez le [vue d’ensemble de l’exécution des commandes](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
   
-## Exemple  
- La première étape de la création d'une <xref:System.Windows.Input.RoutedCommand> consiste à définir la commande et à l'instancier.  
+## <a name="example"></a>Exemple  
+ La première étape de création d’un <xref:System.Windows.Input.RoutedCommand> est la définition de la commande et l’instancier.  
   
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCommandDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcommanddefinition)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewCommandDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcommanddefinition)]  
   
- Pour utiliser la commande dans une application, vous devez créer les gestionnaires d'événements qui définissent le rôle de cette commande.  
+ Pour utiliser la commande dans une application, les gestionnaires d’événements qui définissent ce que fait la commande doivent être créées.  
   
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewExecuted](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewexecuted)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewExecuted](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewexecuted)]  
@@ -37,22 +40,22 @@ Cet exemple montre comment créer une <xref:System.Windows.Input.RoutedCommand> 
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCanExecute](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcanexecute)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewCanExecute](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcanexecute)]  
   
- Une <xref:System.Windows.Input.CommandBinding> associant la commande aux gestionnaires d'événements est ensuite créée.  La <xref:System.Windows.Input.CommandBinding> est créée sur un objet spécifique.  Cet objet définit la portée de la <xref:System.Windows.Input.CommandBinding> dans l'arborescence d'éléments  
+ Ensuite, un <xref:System.Windows.Input.CommandBinding> est créé qui associe la commande avec les gestionnaires d’événements. Le <xref:System.Windows.Input.CommandBinding> est créé sur un objet spécifique.  Cet objet définit l’étendue de la <xref:System.Windows.Input.CommandBinding> dans l’arborescence d’éléments  
   
- [!code-xml[CommandingOverviewSnippets#CommandingOverviewWindowCommandBindingXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewwindowcommandbindingxaml)]  
+ [!code-xaml[CommandingOverviewSnippets#CommandingOverviewWindowCommandBindingXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewwindowcommandbindingxaml)]  
   
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCustomCommandBindingCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcustomcommandbindingcodebehind)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewCustomCommandBindingCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcustomcommandbindingcodebehind)]  
   
- La dernière étape consiste à appeler la commande.  Pour ce faire, vous pouvez associer la commande à une <xref:System.Windows.Input.ICommandSource>, telle qu'un <xref:System.Windows.Controls.Button>.  
+ L’étape finale consiste à appeler la commande.  La première consiste à appeler une commande à associer à un <xref:System.Windows.Input.ICommandSource>, comme un <xref:System.Windows.Controls.Button>.  
   
- [!code-xml[CommandingOverviewSnippets#CommandingOverviewCustomCommandSourceXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcustomcommandsourcexaml)]  
+ [!code-xaml[CommandingOverviewSnippets#CommandingOverviewCustomCommandSourceXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcustomcommandsourcexaml)]  
   
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCustomCommandSourceCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcustomcommandsourcecodebehind)]
  [!code-vb[CommandingOverviewSnippets#CommandingOverviewCustomCommandSourceCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcustomcommandsourcecodebehind)]  
   
- Lorsque vous cliquez sur le bouton, la méthode <xref:System.Windows.Input.RoutedCommand.Execute%2A> sur la <xref:System.Windows.Input.RoutedCommand> personnalisée est appelée.  La <xref:System.Windows.Input.RoutedCommand> déclenche les événements routés <xref:System.Windows.Input.CommandManager.PreviewExecuted> et <xref:System.Windows.Input.CommandManager.Executed>.  Ces événements parcourent l'arborescence d'éléments à la recherche d'une <xref:System.Windows.Input.CommandBinding> pour cette commande particulière.  Si une <xref:System.Windows.Input.CommandBinding> est trouvée, le <xref:System.Windows.Input.ExecutedRoutedEventHandler> associé à cette <xref:System.Windows.Input.CommandBinding> est appelé.  
+ Lorsque le bouton est activé, le <xref:System.Windows.Input.RoutedCommand.Execute%2A> méthode personnalisée <xref:System.Windows.Input.RoutedCommand> est appelée.  Le <xref:System.Windows.Input.RoutedCommand> déclenche le <xref:System.Windows.Input.CommandManager.PreviewExecuted> et <xref:System.Windows.Input.CommandManager.Executed> les événements routés.  Ces événements parcourent l’arborescence d’éléments recherchant un <xref:System.Windows.Input.CommandBinding> pour cette commande particulière.  Si un <xref:System.Windows.Input.CommandBinding> est trouvée, le <xref:System.Windows.Input.ExecutedRoutedEventHandler> associés <xref:System.Windows.Input.CommandBinding> est appelée.  
   
-## Voir aussi  
- <xref:System.Windows.Input.RoutedCommand>   
- [Vue d'ensemble des commandes](../../../../docs/framework/wpf/advanced/commanding-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Input.RoutedCommand>  
+ [Vue d’ensemble des commandes](../../../../docs/framework/wpf/advanced/commanding-overview.md)

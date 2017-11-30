@@ -1,38 +1,41 @@
 ---
-title: "Ajouter une r&#233;f&#233;rence de service &#224; un projet de sous-ensemble portable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Ajouter une référence de service à un projet de sous-ensemble portable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d7bd456b8c89c315321ad23683708d9dacc1dda2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Ajouter une r&#233;f&#233;rence de service &#224; un projet de sous-ensemble portable
-Les projets portables du sous\-ensemble permettent aux programmeurs d'assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs plateformes .NET \(de bureau, Silverlight, Windows Phone et XBOX\).Les projets portables du sous\-ensemble référencent uniquement les bibliothèques portables .NET qui sont un assembly .NET Framework pouvant être utilisé sur toute plateforme principale .NET.  
+# <a name="add-service-reference-in-a-portable-subset-project"></a>Ajouter une référence de service à un projet de sous-ensemble portable
+Les projets portables du sous-ensemble permettent aux programmeurs d’assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs implémentations .NET (bureau, Silverlight, Windows Phone et XBOX). Projets portables du sous-ensemble référencent uniquement les bibliothèques portables .NET qui sont un assembly .NET framework qui peut être utilisé sur toute implémentation du .NET.  
   
-## Ajouter des détails de référence de service  
- Lors de l'ajout d'une référence de service dans un projet de sous\-ensemble portable, les restrictions suivantes sont appliquées :  
+## <a name="add-service-reference-details"></a>Ajouter des détails de référence de service  
+ Lors de l'ajout d'une référence de service dans un projet de sous-ensemble portable, les restrictions suivantes sont appliquées :  
   
-1.  Pour <xref:System.Xml.Serialization.XmlSerializer>, seuls les encodages littéraux sont autorisés.Les encodages SOAP génèrent une erreur lors de l'importation.  
+1.  Pour <xref:System.Xml.Serialization.XmlSerializer>, seuls les encodages littéraux sont autorisés. Les encodages SOAP génèrent une erreur lors de l'importation.  
   
-2.  Pour les services qui utilisent des scénarios <xref:System.Runtime.Serialization.DataContractSerializer>, un substitut de contrat de données est fourni pour garantir que les types réutilisés proviennent uniquement du sous\-ensemble portable.  
+2.  Pour les services qui utilisent des scénarios <xref:System.Runtime.Serialization.DataContractSerializer>, un substitut de contrat de données est fourni pour garantir que les types réutilisés proviennent uniquement du sous-ensemble portable.  
   
-3.  Les points de terminaison qui reposent sur des liaisons non prises en charge dans les bibliothèques portables \(toutes les liaisons sauf <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WsHttpBinding> sans flux de transaction, sessions fiables ou encodage MTOM et liaisons personnalisées équivalentes\) sont ignorés.  
+3.  Les points de terminaison qui reposent sur des liaisons non prises en charge dans les bibliothèques portables (toutes les liaisons sauf <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSHttpBinding> sans flux de transaction, sessions fiables ou encodage MTOM et liaisons personnalisées équivalentes) sont ignorés.  
   
-4.  Les en\-têtes de messages sont supprimés de toutes les descriptions des messages dans toutes les opérations avant importation.  
+4.  Les en-têtes de messages sont supprimés de toutes les descriptions des messages dans toutes les opérations avant importation.  
   
-5.  Les attributs non portables <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.Serializable> et <xref:System.ServiceModel.TransactionFlow> sont supprimés du code du proxy client généré.  
+5.  Les attributs non portables <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.SerializableAttribute> et <xref:System.ServiceModel.TransactionFlowAttribute> sont supprimés du code du proxy client généré.  
   
-6.  Les propriétés non portables ProtectionLevel, SessionMode, IsInitiating, IsTerminating sont supprimées de <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContract> et <xref:System.ServiceModel.FaultContract>.  
+6.  Les propriétés non portables ProtectionLevel, SessionMode, IsInitiating, IsTerminating sont supprimées de <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute> et <xref:System.ServiceModel.FaultContractAttribute>.  
   
 7.  Toutes les opérations de service sont générées comme des opérations asynchrones sur le proxy client.  
   
@@ -48,8 +51,8 @@ Les projets portables du sous\-ensemble permettent aux programmeurs d'assembly .
   
 13. <xref:System.Runtime.Serialization.DataContractSerializer> sera toujours utilisé pour les erreurs.  
   
-14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> n'est pas pris en charge dans les projets portables du sous\-ensemble.  
+14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> n'est pas pris en charge dans les projets portables du sous-ensemble.  
   
-## Voir aussi  
- [Accès aux services à l'aide d'un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Accès aux services à l’aide d’un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
  [Bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391\(v=vs.110\))

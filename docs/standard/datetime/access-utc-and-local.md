@@ -1,59 +1,69 @@
 ---
-title: "Comment&#160;: acc&#233;der aux objets UTC et aux objets de fuseau horaire local pr&#233;d&#233;finis | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "accès au fuseau horaire local"
-  - "fuseaux horaires prédéfinis"
-  - "fuseaux horaires (.NET Framework), locaux"
-  - "fuseaux horaires (.NET Framework), récupérer"
-  - "fuseaux horaires (.NET Framework), UTC"
-  - "temps UTC, prédéfinis"
+title: "Comment : accéder aux objets de zone prédéfinis UTC et l’heure locale"
+ms.custom: 
+ms.date: 04/10/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- time zones [.NET Framework], local
+- predefined time zones
+- UTC times, predefined
+- local time zone access
+- time zones [.NET Framework], retrieving
+- time zones [.NET Framework], UTC
 ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 4538407bc66ad7974a9a4998c8e5d7ccb38fab4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: acc&#233;der aux objets UTC et aux objets de fuseau horaire local pr&#233;d&#233;finis
-La classe <xref:System.TimeZoneInfo> fournit deux propriétés, <xref:System.TimeZoneInfo.Utc%2A> et <xref:System.TimeZoneInfo.Local%2A>, qui permettent à votre code d'accéder à des objets de fuseau horaire prédéfinis.  Cette rubrique explique comment accéder aux objets <xref:System.TimeZoneInfo> retournés par ces propriétés.  
-  
-### Pour accéder à l'objet TimeZoneInfo de temps universel coordonné \(UTC, Coordinated Universal Time\)  
-  
-1.  Utilisez la propriété `static` \(`Shared` dans Visual Basic\) <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour accéder au temps universel coordonné.  
-  
-2.  Plutôt que d'assigner l'objet <xref:System.TimeZoneInfo> retourné par la propriété à une variable objet, utilisez la propriété <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour accéder au temps universel coordonné.  
-  
-### Pour accéder au fuseau horaire local  
-  
-1.  Utilisez la propriété `static` \(`Shared` dans Visual Basic\) <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> pour accéder au fuseau horaire du système local.  
-  
-2.  Plutôt que d'assigner l'objet <xref:System.TimeZoneInfo> retourné par la propriété à une variable objet, utilisez la propriété <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> pour accéder au fuseau horaire local.  
-  
-## Exemple  
- Le code ci\-dessous utilise les propriétés <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> et <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour convertir un point des États\-Unis et le fuseau horaire standard de l'Est canadien, ainsi que pour afficher le nom du fuseau horaire à la console.  
-  
- [!code-csharp[System.TimeZone2.Concepts#13](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#13)]
- [!code-vb[System.TimeZone2.Concepts#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#13)]  
-  
- Vous devez toujours utiliser la propriété <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> pour accéder au fuseau horaire local plutôt que d'assigner le fuseau horaire local à une variable objet <xref:System.TimeZoneInfo>.  De la même façon, vous devez toujours faire appel à la propriété <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour accéder au temps universel coordonné plutôt que d'assigner le fuseau horaire UTC à une variable objet <xref:System.TimeZoneInfo>.  Ainsi, la variable objet <xref:System.TimeZoneInfo> ne peut pas être invalidée par un appel à la méthode <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=fullName>.  
-  
-## Compilation du code  
- Cet exemple nécessite :  
-  
--   qu'une référence à System.Core.dll soit ajoutée au projet ;  
-  
--   que l'espace de noms <xref:System> soit importé avec l'instruction `using` \(requise en code C\#\).  
-  
-## Voir aussi  
- [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)   
- [Recherche des fuseaux horaires définis sur un système local](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)   
- [Comment : instancier un objet TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)
+# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Comment : accéder aux objets de zone prédéfinis UTC et l’heure locale
+
+Le <xref:System.TimeZoneInfo> classe fournit deux propriétés, <xref:System.TimeZoneInfo.Utc%2A> et <xref:System.TimeZoneInfo.Local%2A>, qui donnent accès de votre code à des objets de fuseaux horaires prédéfinis. Cette rubrique explique comment accéder aux objets <xref:System.TimeZoneInfo> retournés par ces propriétés.
+
+### <a name="to-access-the-coordinated-universal-time-utc-timezoneinfo-object"></a>Pour accéder à l’objet TimeZoneInfo de temps universel coordonné (UTC)
+
+1. Utilisez le `static` (`Shared` en Visual Basic) <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> propriété pour accéder au temps universel coordonné.
+
+2. Plutôt que d’attribuer le <xref:System.TimeZoneInfo> objet retourné par la propriété à une variable objet, continuer à accéder au temps universel via la <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> propriété.
+
+### <a name="to-access-the-local-time-zone"></a>Pour accéder au fuseau horaire local
+
+1. Utilisez le `static` (`Shared` en Visual Basic) <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> propriété pour accéder au fuseau horaire de système local.
+
+2. Plutôt que d’attribuer le <xref:System.TimeZoneInfo> objet retourné par la propriété à une variable objet, continuer à accéder au fuseau horaire local via le <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> propriété.
+
+## <a name="example"></a>Exemple
+
+Le code suivant utilise la <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> et <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> propriétés pour convertir une heure du fuseau horaire des États-Unis et Canada est Standard, ainsi que pour afficher le nom du fuseau horaire dans la console.
+
+[!code-csharp[System.TimeZone2.Concepts#13](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#13)]
+[!code-vb[System.TimeZone2.Concepts#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#13)]
+
+Vous devez toujours accéder au fuseau horaire local via la <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> propriété au lieu d’affecter l’heure locale de la zone à une <xref:System.TimeZoneInfo> variable objet. De même, vous devez toujours accéder temps universel via la <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> propriété au lieu d’affecter l’heure UTC de la zone à une <xref:System.TimeZoneInfo> variable objet. Cela empêche le <xref:System.TimeZoneInfo> variable objet est invalidée par un appel à la <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> (méthode).
+
+## <a name="compiling-the-code"></a>Compilation du code
+
+Cet exemple nécessite :
+
+* Une référence à System.Core.dll à ajouter au projet.
+
+* Que le <xref:System> espace de noms importés avec le `using` instruction (requise en code c#).
+
+## <a name="see-also"></a>Voir aussi
+
+[Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)
+[recherche des fuseaux horaires définis sur un système local](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
+[Comment : instancier un objet TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)

@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - assemblies [.NET Framework], interop
 - COM interop, registration-free COM interop
@@ -23,16 +17,15 @@ helpviewer_keywords:
 - object activation
 - registration-free COM interop, about registration-free COM interop
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: dd08f4d4466582b1e6ff1f80f586482cd3e2ec0c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 28ecb3419bddcc8e9a192b240a7bf90474314c1f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="registration-free-com-interop"></a>COM Interop sans inscription
 COM Interop sans inscription active un composant sans utiliser le Registre Windows pour stocker les informations d'assembly. Au lieu d'inscrire un composant sur un ordinateur pendant le déploiement, vous créez des fichiers manifeste de type Win32 au moment du design qui contiennent des informations sur la liaison et l'activation. Ces fichiers manifeste, plutôt que les clés de Registre, dirigent l'activation d'un objet.  
@@ -60,15 +53,14 @@ COM Interop sans inscription active un composant sans utiliser le Registre Windo
   
 ### <a name="configuring-com-components-for-registration-free-activation"></a>Configuration des composants COM pour l'activation sans inscription  
   
-1.  Pour qu'un composant COM participe à l'activation sans inscription, il doit être déployé comme un assembly côte à côte. Les assemblys côte à côte sont non managés.  Pour plus d'informations, voir "Utilisation d'assemblys côte à côte" sur MSDN Library.  
+1.  Pour qu'un composant COM participe à l'activation sans inscription, il doit être déployé comme un assembly côte à côte. Les assemblys côte à côte sont non managés.  Pour plus d’informations, consultez [utilisation d’assemblys côte à côte](https://msdn.microsoft.com/library/windows/desktop/aa376618.aspx).  
   
-     Pour utiliser des assemblys COM côte à côte, un développeur d'applications .NET doit fournir un manifeste d'application contenant des informations de liaison et d'activation. La prise en charge des assemblys côte à côte non managés est intégrée au système d'exploitation Windows XP. Le runtime COM, pris en charge par le système d'exploitation, recherche les informations d'activation du manifeste d'application quand le composant en cours d'activation n'est pas dans le Registre.  
+     Pour utiliser des assemblys COM côte à côte, un développeur d’applications .NET doit fournir un manifeste d’application contenant des informations de liaison et d’activation. La prise en charge des assemblys côte à côte non managés est intégrée au système d'exploitation Windows XP. Le runtime COM, pris en charge par le système d'exploitation, recherche les informations d'activation du manifeste d'application quand le composant en cours d'activation n'est pas dans le Registre.  
   
-     L'activation sans inscription est facultative pour les composants COM installés sur Windows XP. Pour obtenir des instructions détaillées sur l'ajout d'un assembly côte à côte à une application, lisez l'article "Utilisation d'assemblys côte à côte" sur MSDN Library.  
+     L’activation sans inscription est facultative pour les composants COM installés sur Windows XP. Pour obtenir des instructions détaillées sur l’ajout d’un assembly côte à côte dans une application, consultez [utilisation d’assemblys côte à côte](https://msdn.microsoft.com/library/windows/desktop/aa376618.aspx).  
   
     > [!NOTE]
-    >  L'exécution côte à côte est une fonctionnalité de .NET Framework qui permet à plusieurs versions du runtime et à plusieurs versions d'applications et de composants qui utilisent une version du runtime, de s'exécuter sur le même ordinateur en même temps. L'exécution côte à côte et les assemblys côte à côte sont deux mécanismes différents de la fonctionnalité de côte à côte.  
+    >  L’exécution côte à côte est une fonctionnalité de .NET Framework qui permet à plusieurs versions du runtime et à plusieurs versions d’applications et de composants qui utilisent une version du runtime, de s’exécuter sur le même ordinateur en même temps. L'exécution côte à côte et les assemblys côte à côte sont deux mécanismes différents de la fonctionnalité de côte à côte.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide pratique pour configurer les composants COM .NET Framework pour l’activation sans inscription](../../../docs/framework/interop/configure-net-framework-based-com-components-for-reg.md)
-

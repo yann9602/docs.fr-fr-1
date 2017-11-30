@@ -1,38 +1,37 @@
 ---
-title: "New Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.new"
-  - "vb.NewConstraint"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "constraints, Visual Basic generic types"
-  - "generics [Visual Basic], constraints"
-  - "constraints, New keyword"
-  - "New constraint"
-  - "New keyword"
+title: "New, opérateur (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.new
+- vb.NewConstraint
+helpviewer_keywords:
+- constraints, Visual Basic generic types
+- generics [Visual Basic], constraints
+- constraints, New keyword [Visual Basic]
+- New constraint
+- New keyword [Visual Basic]
 ms.assetid: d7d566d7-fe0e-4336-91f7-641a542de4d0
-caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 74f0352379e861ad135ea23d31ea07d638f9e6c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# New Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Présente une clause `New` pour créer une instance de l'objet, spécifie une contrainte de constructeur sur un paramètre de type ou identifie une procédure `Sub` en tant que constructeur de classe.  
+# <a name="new-operator-visual-basic"></a>New, opérateur (Visual Basic)
+Introduit un `New` clause pour créer une nouvelle instance de l’objet, spécifie une contrainte de constructeur sur un paramètre de type ou identifie une `Sub` procédure sous la forme d’un constructeur de classe.  
   
-## Notes  
- Dans une instruction de déclaration ou d'assignation, une clause `New` doit spécifier une classe définie à partir de laquelle l'instance peut être créée.  Cela signifie que la classe doit exposer un ou plusieurs constructeurs auxquels le code appelant peut accéder.  
+## <a name="remarks"></a>Remarques  
+ Dans une déclaration ou une instruction d’assignation, un `New` clause doit spécifier une classe définie à partir de laquelle l’instance peut être créée. Cela signifie que la classe doit exposer un ou plusieurs constructeurs accessibles par le code appelant.  
   
- Vous pouvez utiliser une clause `New` dans une instruction de déclaration ou une instruction d'assignation.  Lorsque l'instruction est exécutée, elle appelle le constructeur approprié de la classe spécifiée, en passant les arguments que vous avez fournis.  L'exemple suivant illustre cela en créant des instances d'une classe `Customer` qui a deux constructeurs, l'un ne prenant aucun paramètre et l'autre prenant un paramètre de chaîne.  
+ Vous pouvez utiliser un `New` clause dans une instruction de déclaration ou une instruction d’assignation. Lorsque l’instruction s’exécute, il appelle le constructeur approprié de la classe spécifiée, en passant les arguments que vous avez fournies. L’exemple suivant illustre cela en créant des instances d’un `Customer` classe qui possède deux constructeurs, qui ne prend aucun paramètre et une qui prend un paramètre de chaîne.  
   
  [!code-vb[VbVbalrKeywords#11](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_1.vb)]  
   
@@ -40,24 +39,24 @@ Présente une clause `New` pour créer une instance de l'objet, spécifie une co
   
  [!code-vb[VbVbalrKeywords#12](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_2.vb)]  
   
- Le Common Language Runtime \(CLR\) lève une erreur <xref:System.OutOfMemoryException> s'il n'y a pas assez de mémoire pour créer la nouvelle instance.  
+ Le common language runtime (CLR) lève une <xref:System.OutOfMemoryException> erreur si la mémoire est insuffisante pour créer la nouvelle instance.  
   
 > [!NOTE]
->  Le mot clé `New` est aussi utilisé dans des listes de paramètres de type afin de spécifier que le type fourni doit exposer un constructeur sans paramètre accessible.  Pour plus d'informations sur les paramètres de type et les contraintes, consultez [Type List](../../../visual-basic/language-reference/statements/type-list.md).  
+>  Le `New` est également utilisé dans les listes de paramètres de type pour spécifier que le type fourni doit exposer un constructeur sans paramètre accessible. Pour plus d’informations sur les paramètres de type et les contraintes, consultez [Type liste](../../../visual-basic/language-reference/statements/type-list.md).  
   
- Pour créer une procédure de constructeur pour une classe, affectez au nom d'une procédure `Sub` le mot clé `New`.  Pour plus d'informations, consultez [Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).  
+ Pour créer une procédure de constructeur pour une classe, définissez le nom d’un `Sub` procédure pour le `New` (mot clé). Pour plus d’informations, consultez [durée de vie : comment les objets sont création et destruction](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).  
   
  Le mot clé `New` peut être utilisé dans les contextes suivants :  
   
- [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Dim (instruction)](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
  [Of](../../../visual-basic/language-reference/statements/of-clause.md)  
   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## Voir aussi  
- <xref:System.OutOfMemoryException>   
- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)   
- [Type List](../../../visual-basic/language-reference/statements/type-list.md)   
- [Types génériques Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.OutOfMemoryException>  
+ [Mots clés](../../../visual-basic/language-reference/keywords/index.md)  
+ [Liste de types](../../../visual-basic/language-reference/statements/type-list.md)  
+ [Types génériques en Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [Durée de vie d’un objet : création et destruction des objets](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

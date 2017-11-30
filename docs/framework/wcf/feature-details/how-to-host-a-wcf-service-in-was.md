@@ -1,22 +1,25 @@
 ---
-title: "Comment&#160;: h&#233;berger un service WCF dans WAS | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : héberger un service WCF dans WAS"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-caps.latest.revision: 25
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3069dfbde9fedc0a0c89d8f55ba1adcc852d5c24
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: h&#233;berger un service WCF dans WAS
+# <a name="how-to-host-a-wcf-service-in-was"></a>Comment : héberger un service WCF dans WAS
 Cette rubrique décrit les étapes de base requises pour créer un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] hébergé dans le service d'activation des processus de Windows (également appelé WAS). WAS est le nouveau service d'activation de processus généralisant les fonctionnalités des services IIS (Internet Information Services) qui fonctionnent avec des protocoles de transport non-HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise l'interface d'adaptateur d'écouteur pour communiquer les demandes d'activation qui sont reçues sur les protocoles non HTTP pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], tels que TCP, les canaux nommés et Message Queuing.  
   
  Cette option d'hébergement requiert que les composants d'activation WAS soient installés et configurés correctement, mais ne requiert pas l'écriture du code d'hébergement dans le cadre de l'application. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]installation et configuration du service WAS, consultez [Comment : installer et configurer les composants d’Activation WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
@@ -24,7 +27,7 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
 > [!WARNING]
 >  L’activation de WAS n’est pas prise en charge si le pipeline de traitement de demande du serveur web est en mode classique. Le pipeline de traitement de demande du serveur Web doit être en mode intégré si l'activation de WAS doit être utilisée.  
   
- Lorsqu'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est hébergé dans WAS, les liaisons standard sont utilisées de la façon habituelle. Toutefois, lorsque vous utilisez la <xref:System.ServiceModel.NetTcpBinding> et <xref:System.ServiceModel.NetNamedPipeBinding> pour configurer un service hébergé par WAS, une contrainte doit être satisfaite. Lorsque des points de terminaison différents utilisent le même transport, les paramètres de liaison doivent correspondre dans les sept propriétés suivantes :  
+ Lorsqu'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est hébergé dans WAS, les liaisons standard sont utilisées de la façon habituelle. Toutefois, lors de l'utilisation de <xref:System.ServiceModel.NetTcpBinding> et de <xref:System.ServiceModel.NetNamedPipeBinding> pour configurer un service hébergé WAS, une contrainte doit être satisfaite. Lorsque des points de terminaison différents utilisent le même transport, les paramètres de liaison doivent correspondre dans les sept propriétés suivantes :  
   
 -   ConnectionBufferSize  
   
@@ -40,9 +43,9 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
   
 -   ConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint  
   
- Dans le cas contraire, le point de terminaison initialisé premier détermine toujours les valeurs de ces propriétés, et les points de terminaison ajoutés ultérieurement lèvent un <xref:System.ServiceModel.ServiceActivationException> si elles ne correspondent pas ces paramètres.  
+ Sinon, le point de terminaison initialisé en premier détermine toujours les valeurs de ces propriétés et les points de terminaison ajoutés ultérieurement lèvent un <xref:System.ServiceModel.ServiceActivationException> s'ils ne correspondent pas à ces paramètres.  
   
- Pour la copie de la source de cet exemple, consultez la page [l’Activation TCP](../../../../docs/framework/wcf/samples/tcp-activation.md).  
+ Pour la copie de la source de cet exemple, consultez [l’Activation TCP](../../../../docs/framework/wcf/samples/tcp-activation.md).  
   
 ### <a name="to-create-a-basic-service-hosted-by-was"></a>Pour créer un service de base hébergé par WAS  
   
@@ -54,7 +57,7 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
   
      [!code-csharp[C_HowTo_HostInWAS#1122](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/service.cs#1122)]  
   
-3.  Créez un fichier Web.config pour définir le <xref:System.ServiceModel.NetTcpBinding> liaison qui sera utilisé par le `CalculatorService` points de terminaison.  
+3.  Créez un fichier Web.config pour définir la liaison <xref:System.ServiceModel.NetTcpBinding> à utiliser par les points de terminaison `CalculatorService`.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -81,7 +84,7 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
   
 ### <a name="to-create-a-client-to-use-the-service"></a>Pour créer un client qui utilise le service  
   
-1.  Utilisez [Service Model Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de la ligne de commande pour générer le code à partir des métadonnées de service.  
+1.  Utilisez [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de la ligne de commande pour générer le code à partir des métadonnées de service.  
   
     ```  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
@@ -95,9 +98,9 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
   
      [!code-csharp[C_HowTo_HostInWAS#1222](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/client.cs#1222)]  
   
-4.  La configuration du client qui utilise le <xref:System.ServiceModel.NetTcpBinding> est également générée par Svcutil.exe. Ce fichier doit être nommé dans le fichier App.config lors de l'utilisation de Visual Studio.  
+4.  La configuration du client qui utilise <xref:System.ServiceModel.NetTcpBinding> est également générée par Svcutil.exe. Ce fichier doit être nommé dans le fichier App.config lors de l'utilisation de Visual Studio.  
   
-     <!-- TODO: review snippet reference [!code[C_HowTo_HostInWAS#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]  -->  
+     [!code-xml[C_HowTo_HostInWAS#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]   
   
 5.  Créez une instance `ClientCalculator` dans une application, puis appelez les opérations de service.  
   
@@ -106,5 +109,5 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
 6.  Compilez, puis exécutez le client.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Activation TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)   
+ [Activation TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)  
  [Fonctionnalités d’hébergement de Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201276)

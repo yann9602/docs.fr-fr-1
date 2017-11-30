@@ -1,49 +1,53 @@
 ---
-title: "Comment&#160;: cr&#233;er un LineSegment dans un PathGeometry | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PathGeometry (classe)"
-  - "classes, PathGeometry"
-  - "segments de ligne, création"
-  - "graphiques (WPF), des segments de ligne"
+title: "Comment : créer un LineSegment dans un PathGeometry"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- line segments [WPF], creating
+- graphics [WPF], line segments
 ms.assetid: 0155ed47-a20d-49a7-a306-186d8e07fbc4
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: aa7ea915afa2dc80e19d270abb86ec12a39d5865
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er un LineSegment dans un PathGeometry
-Cet exemple montre comment créer un segment de ligne. Pour créer un segment de ligne, utilisez la <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, et <xref:System.Windows.Media.LineSegment> classes.  
+# <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a>Comment : créer un LineSegment dans un PathGeometry
+Cet exemple indique comment créer un segment de ligne. Pour créer un segment de ligne, utilisez le <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, et <xref:System.Windows.Media.LineSegment> classes.  
   
 ## <a name="example"></a>Exemple  
- Les exemples suivants dessinent un <xref:System.Windows.Media.LineSegment> à partir de (10, 50) à (200, 70). L’illustration suivante montre le résultant <xref:System.Windows.Media.LineSegment>; un arrière-plan de la grille a été ajouté pour afficher le système de coordonnées.  
+ Les exemples suivants dessinent un <xref:System.Windows.Media.LineSegment> à partir de (10, 50) à (200, 70). L’illustration suivante montre le qui en résulte <xref:System.Windows.Media.LineSegment>; un arrière-plan de la grille a été ajouté pour afficher le système de coordonnées.  
   
  ![LineSegment dans un PathFigure](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment")  
-LineSegment dessiné de (10,50) à (200,70)  
+LineSegment tracé de (10,50) à (200,70)  
   
- (xaml)  
+ [xaml]  
   
- Dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], vous pouvez utiliser la syntaxe d’attribut pour décrire un chemin d’accès.  
+ En [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], vous pouvez utiliser la syntaxe d’attribut pour décrire un tracé.  
   
 ```xaml  
 <Path Stroke="Black" StrokeThickness="1"    
   Data="M 10,50 L 200,70" />  
 ```  
   
- (xaml)  
+ [xaml]  
   
- (Notez que cette syntaxe d’attribut crée en fait un <xref:System.Windows.Media.StreamGeometry>, une version légère d’un <xref:System.Windows.Media.PathGeometry>. Pour plus d’informations, consultez la [Path Markup Syntax](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md) page.)  
+ (Notez que cette syntaxe d’attribut crée en fait un <xref:System.Windows.Media.StreamGeometry>, une version légère d’un <xref:System.Windows.Media.PathGeometry>. (Pour plus d’informations, consultez la page [Syntaxe XAML pour les tracés](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md).)  
   
- Dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez également dessiner un segment de ligne en utilisant la syntaxe d’élément objet. Ce qui suit est équivalente à la précédente [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] exemple.  
+ En [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez également dessiner un segment de ligne en utilisant la syntaxe d’élément objet. L'exemple suivant est équivalent à l’exemple [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] précédent.  
   
 ```xaml  
 <Path Stroke="Black" StrokeThickness="1">  
@@ -105,11 +109,11 @@ Dim myPathFigure As New PathFigure()
             myPath.Data = myPathGeometry  
 ```  
   
- Cet exemple fait partie d’un exemple plus complet ; pour l’exemple complet, consultez la [géométries, exemple](http://go.microsoft.com/fwlink/?LinkID=159989).  
+ Cet exemple fait partie d’un exemple plus vaste ; pour l’exemple complet, consultez [Géométries, exemple](http://go.microsoft.com/fwlink/?LinkID=159989).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Windows.Media.PathFigure>   
- <xref:System.Windows.Media.PathGeometry>   
- <xref:System.Windows.Media.GeometryDrawing>   
- <xref:System.Windows.Shapes.Path>   
+ <xref:System.Windows.Media.PathFigure>  
+ <xref:System.Windows.Media.PathGeometry>  
+ <xref:System.Windows.Media.GeometryDrawing>  
+ <xref:System.Windows.Shapes.Path>  
  [Vue d’ensemble de Geometry](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
