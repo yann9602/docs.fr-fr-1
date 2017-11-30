@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - MDAs (managed debugging assistants), invalid variant
 - VARIANT type errors
@@ -21,36 +15,35 @@ helpviewer_keywords:
 - invalid VARIANT types
 - managed debugging assistants (MDAs), invalid variant
 ms.assetid: d273e070-d1b1-4a53-a9c7-7af837b04a3d
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d2f91aa8bf382b6b6e0a90f45d5e7d145b6759f9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ee537dcb03dc76968b829f827c73542c07922a3b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="invalidvariant-mda"></a>Assistant Débogage managé invalidVariant
-L'Assistant Débogage managé (MDA) `invalidVariant` est activé quand une structure `VARIANT` non valide est rencontrée lors d'un appel du code natif ou non managé au code managé.  
+# <a name="invalidvariant-mda"></a><span data-ttu-id="8144f-102">Assistant Débogage managé invalidVariant</span><span class="sxs-lookup"><span data-stu-id="8144f-102">invalidVariant MDA</span></span>
+<span data-ttu-id="8144f-103">L'Assistant Débogage managé (MDA) `invalidVariant` est activé quand une structure `VARIANT` non valide est rencontrée lors d'un appel du code natif ou non managé au code managé.</span><span class="sxs-lookup"><span data-stu-id="8144f-103">The `invalidVariant` managed debugging assistant (MDA) is activated when an invalid `VARIANT` structure is encountered during a call from native or unmanaged code to managed code.</span></span>  
   
-## <a name="symptoms"></a>Symptômes  
- Comportement inattendu pendant une transition entre du code natif et managé impliquant le marshaling d'une structure `VARIANT` en objet.  
+## <a name="symptoms"></a><span data-ttu-id="8144f-104">Symptômes</span><span class="sxs-lookup"><span data-stu-id="8144f-104">Symptoms</span></span>  
+ <span data-ttu-id="8144f-105">Comportement inattendu pendant une transition entre du code natif et managé impliquant le marshaling d'une structure `VARIANT` en objet.</span><span class="sxs-lookup"><span data-stu-id="8144f-105">Unexpected behavior during a transition between native and managed code involving the marshaling of a `VARIANT` to an object.</span></span>  
   
-## <a name="cause"></a>Cause  
- Le code natif passe une structure `VARIANT` incorrecte au code managé.  Le runtime tente de marshaler cette `VARIANT` en objet et active l'Assistant Débogage managé si la `VARIANT` n'est pas valide. Exemples de structures `VARIANT` non valides : une structure `VARIANT` avec un `VARTYPE` VT_EMPTY &#124; VT_BYREF ou une structure `VARIANT` avec le `VARTYPE` VT_VARIANT.  
+## <a name="cause"></a><span data-ttu-id="8144f-106">Cause</span><span class="sxs-lookup"><span data-stu-id="8144f-106">Cause</span></span>  
+ <span data-ttu-id="8144f-107">Le code natif passe une structure `VARIANT` incorrecte au code managé.</span><span class="sxs-lookup"><span data-stu-id="8144f-107">Native code is passing a malformed `VARIANT` structure to managed code.</span></span>  <span data-ttu-id="8144f-108">Le runtime tente de marshaler cette `VARIANT` en objet et active l'Assistant Débogage managé si la `VARIANT` n'est pas valide.</span><span class="sxs-lookup"><span data-stu-id="8144f-108">The runtime attempts to marshal this `VARIANT` to an object and activates the MDA if the `VARIANT` is not valid.</span></span> <span data-ttu-id="8144f-109">Exemples de structures `VARIANT` non valides : une structure `VARIANT` avec un `VARTYPE` VT_EMPTY &#124; VT_BYREF ou une structure `VARIANT` avec le `VARTYPE` VT_VARIANT.</span><span class="sxs-lookup"><span data-stu-id="8144f-109">Examples of invalid `VARIANT`S include a `VARIANT` with `VARTYPE` VT_EMPTY &#124; VT_BYREF or a `VARIANT` with `VARTYPE` VT_VARIANT.</span></span>  
   
-## <a name="resolution"></a>Résolution  
- Le code natif ou non managé qui passe la structure `VARIANT` doit s'assurer que la `VARIANT` est correcte et bien initialisée.  
+## <a name="resolution"></a><span data-ttu-id="8144f-110">Résolution</span><span class="sxs-lookup"><span data-stu-id="8144f-110">Resolution</span></span>  
+ <span data-ttu-id="8144f-111">Le code natif ou non managé qui passe la structure `VARIANT` doit s'assurer que la `VARIANT` est correcte et bien initialisée.</span><span class="sxs-lookup"><span data-stu-id="8144f-111">The native or unmanaged code passing the `VARIANT` must ensure that the `VARIANT` is correctly formed and initialized.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
- Cet Assistant Débogage managé n'a aucun effet sur le comportement du runtime.  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="8144f-112">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="8144f-112">Effect on the Runtime</span></span>  
+ <span data-ttu-id="8144f-113">Cet Assistant Débogage managé n'a aucun effet sur le comportement du runtime.</span><span class="sxs-lookup"><span data-stu-id="8144f-113">The MDA has no effect on the runtime's behavior.</span></span>  
   
-## <a name="output"></a>Sortie  
- Message de l'Assistant Débogage managé indiquant que le runtime a détecté qu'une structure `VARIANT` incorrecte a été passée au code managé par un module non managé.  
+## <a name="output"></a><span data-ttu-id="8144f-114">Sortie</span><span class="sxs-lookup"><span data-stu-id="8144f-114">Output</span></span>  
+ <span data-ttu-id="8144f-115">Message de l'Assistant Débogage managé indiquant que le runtime a détecté qu'une structure `VARIANT` incorrecte a été passée au code managé par un module non managé.</span><span class="sxs-lookup"><span data-stu-id="8144f-115">An MDA message indicating that the runtime detected an invalid `VARIANT` passed to managed code by an unmanaged module.</span></span>  
   
-## <a name="configuration"></a>Configuration  
+## <a name="configuration"></a><span data-ttu-id="8144f-116">Configuration</span><span class="sxs-lookup"><span data-stu-id="8144f-116">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -60,8 +53,7 @@ L'Assistant Débogage managé (MDA) `invalidVariant` est activé quand une struc
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-
+## <a name="see-also"></a><span data-ttu-id="8144f-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8144f-117">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [<span data-ttu-id="8144f-118">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="8144f-118">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [<span data-ttu-id="8144f-119">Marshaling d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="8144f-119">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)

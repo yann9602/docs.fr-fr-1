@@ -1,61 +1,67 @@
 ---
-title: "Comment&#160;: personnaliser une liaison fournie par le syst&#232;me | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : personnaliser une liaison fournie par le système"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: f8b97862-e8bb-470d-8b96-07733c21fe26
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 68a6feffcb4925a20e128c2bc9f06e20ea90a678
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: personnaliser une liaison fournie par le syst&#232;me
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] inclut plusieurs liaisons fournies par le système qui vous permettent de configurer quelques\-unes des propriétés des éléments de liaison sous\-jacents, mais pas toutes les propriétés.  Cette rubrique explique comment attribuer des propriétés aux éléments de liaison afin de créer une liaison personnalisée.  
+# <a name="how-to-customize-a-system-provided-binding"></a><span data-ttu-id="6c3c6-102">Comment : personnaliser une liaison fournie par le système</span><span class="sxs-lookup"><span data-stu-id="6c3c6-102">How to: Customize a System-Provided Binding</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="6c3c6-103"> inclut plusieurs liaisons fournies par le système qui vous permettent de configurer quelques-unes des propriétés des éléments de liaison sous-jacents, mais pas toutes les propriétés.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-103"> includes several system-provided bindings that allow you to configure some of the properties of the underlying binding elements, but not all of the properties.</span></span> <span data-ttu-id="6c3c6-104">Cette rubrique explique comment attribuer des propriétés aux éléments de liaison afin de créer une liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-104">This topic demonstrates how to set properties on the binding elements to create a custom binding.</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] la façon de créer et de configurer directement des éléments de liaison sans utiliser les liaisons fournies par le système, consultez [Liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="6c3c6-105">comment créer directement et configurer des éléments de liaison sans utiliser les liaisons fournies par le système, consultez [liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="6c3c6-105"> how to directly create and configure binding elements without using the system-provided bindings, see [Custom Bindings](../../../../docs/framework/wcf/extending/custom-bindings.md).</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] la création et l'extension des liaisons personnalisées, consultez [Extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="6c3c6-106">Création et l’extension de liaisons personnalisées, consultez [extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="6c3c6-106"> creating and extending custom bindings, see [Extending Bindings](../../../../docs/framework/wcf/extending/extending-bindings.md).</span></span>  
   
- Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], toutes les liaisons sont composées d'*éléments de liaison*.  Chaque élément de liaison dérive de la classe <xref:System.ServiceModel.Channels.BindingElement>.  Les liaisons fournies par le système telles que <xref:System.ServiceModel.BasicHttpBinding> créent et configurent leurs propres éléments de liaison.  Cette rubrique vous indique comment accéder aux propriétés de ces éléments de liaison qui ne sont pas exposés directement sur la liaison et comment les modifier ; il s'agit, notamment, de la classe <xref:System.ServiceModel.BasicHttpBinding>.  
+ <span data-ttu-id="6c3c6-107">Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] toutes les liaisons sont composées de *éléments de liaison*.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-107">In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] all bindings are made up of *binding elements*.</span></span> <span data-ttu-id="6c3c6-108">Chaque élément de liaison dérive de la classe <xref:System.ServiceModel.Channels.BindingElement>.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-108">Each binding element derives from the <xref:System.ServiceModel.Channels.BindingElement> class.</span></span> <span data-ttu-id="6c3c6-109">Les liaisons fournies par le système telles que <xref:System.ServiceModel.BasicHttpBinding> créent et configurent leurs propres éléments de liaison.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-109">System-provided bindings such as <xref:System.ServiceModel.BasicHttpBinding> create and configure their own binding elements.</span></span> <span data-ttu-id="6c3c6-110">Cette rubrique vous indique comment accéder aux propriétés de ces éléments de liaison qui ne sont pas exposés directement sur la liaison et comment les modifier ; il s'agit, notamment, de la classe <xref:System.ServiceModel.BasicHttpBinding>.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-110">This topic shows you how to access and change the properties of these binding elements, which are not directly exposed on the binding; specifically, the <xref:System.ServiceModel.BasicHttpBinding> class.</span></span>  
   
- Les éléments de liaison individuels sont inclus dans une collection représentée par la classe <xref:System.ServiceModel.Channels.BindingElementCollection> et sont ajoutés dans l'ordre suivant : Transaction Flow, Reliable Session, Security, Composite Duplex, One\-way, Stream Security, Message Encoding et Transport.  Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison.  Les éléments de liaison définis par l'utilisateur peuvent également apparaître dans cette collection et doivent figurer dans le même ordre que précédemment.  Par exemple, un transport défini par l'utilisateur doit être le dernier élément de la collection d'éléments de liaison.  
+ <span data-ttu-id="6c3c6-111">Les éléments de liaison individuels sont inclus dans une collection représentée par la classe <xref:System.ServiceModel.Channels.BindingElementCollection> et sont ajoutés dans l'ordre suivant : Transaction Flow, Reliable Session, Security, Composite Duplex, One-way, Stream Security, Message Encoding et Transport.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-111">The individual binding elements are contained in a collection represented by the <xref:System.ServiceModel.Channels.BindingElementCollection> class and are added in this order: Transaction Flow, Reliable Session, Security, Composite Duplex, One-way, Stream Security, Message Encoding, and Transport.</span></span> <span data-ttu-id="6c3c6-112">Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-112">Note that not all the binding elements listed are required in every binding.</span></span> <span data-ttu-id="6c3c6-113">Les éléments de liaison définis par l'utilisateur peuvent également apparaître dans cette collection et doivent figurer dans le même ordre que précédemment.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-113">User-defined binding elements can also appear in this binding element collection and must appear in the same order as previously described.</span></span> <span data-ttu-id="6c3c6-114">Par exemple, un transport défini par l'utilisateur doit être le dernier élément de la collection d'éléments de liaison.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-114">For example, a user-defined transport must be the last element of the binding element collection.</span></span>  
   
- La classe <xref:System.ServiceModel.BasicHttpBinding> contient trois éléments de liaison :  
+ <span data-ttu-id="6c3c6-115">La classe <xref:System.ServiceModel.BasicHttpBinding> contient trois éléments de liaison :</span><span class="sxs-lookup"><span data-stu-id="6c3c6-115">The <xref:System.ServiceModel.BasicHttpBinding> class contains three binding elements:</span></span>  
   
-1.  Un élément de liaison de sécurité facultatif, soit la classe <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> utilisée avec le transport HTTP \(sécurité de niveau transport\), soit la classe <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> utilisée lorsque la couche transport fournit la sécurité, auquel cas le transport HTTPS est utilisé.  
+1.  <span data-ttu-id="6c3c6-116">Un élément de liaison de sécurité facultatif, soit la classe <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> utilisée avec le transport HTTP (sécurité de niveau transport), soit la classe <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> utilisée lorsque la couche transport fournit la sécurité, auquel cas le transport HTTPS est utilisé.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-116">An optional security binding element, either the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> class used with the HTTP transport (message level security) or the <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> class, which is used when the transport layer provides security, in which case the HTTPS transport is used.</span></span>  
   
-2.  Un élément de liaison d'encodeur de message requis, <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> ou <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>.  
+2.  <span data-ttu-id="6c3c6-117">Un élément de liaison d'encodeur de message requis, <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> ou <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-117">A required message encoder binding element, either <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> or <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>.</span></span>  
   
-3.  Un élément de liaison de transport requis, <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, ou <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>.  
+3.  <span data-ttu-id="6c3c6-118">Un élément de liaison de transport requis, <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, ou <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-118">A required transport binding element, either <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, or <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>.</span></span>  
   
- Dans cet exemple nous allons créer une instance de la liaison, générer une *liaison personnalisée* à partir de là, examiner les éléments de liaison dans la liaison personnalisée et, lorsque nous aurons trouvé l'élément de liaison HTTP, affecter à sa propriété `KeepAliveEnabled` la valeur `false`.  La propriété `KeepAliveEnabled` n'est pas exposée directement sur `BasicHttpBinding`, nous devons donc créer une liaison personnalisée pour naviguer jusqu'à l'élément de liaison et définir cette propriété.  
+ <span data-ttu-id="6c3c6-119">Dans cet exemple, nous allons créer une instance de la liaison, générer un *liaison personnalisée* à partir de celui-ci, examinez les éléments de liaison dans la liaison personnalisée, et lorsque nous aurons trouvé l’élément de liaison HTTP, nous avons défini son `KeepAliveEnabled` propriété `false`.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-119">In this example we create an instance of the binding, generate a *custom binding* from it, examine the binding elements in the custom binding, and when we find the HTTP binding element, we set its `KeepAliveEnabled` property to `false`.</span></span> <span data-ttu-id="6c3c6-120">La propriété `KeepAliveEnabled` n'est pas exposée directement sur `BasicHttpBinding`, nous devons donc créer une liaison personnalisée pour naviguer jusqu'à l'élément de liaison et définir cette propriété.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-120">The `KeepAliveEnabled` property is not exposed directly on the `BasicHttpBinding`, so we must create a custom binding to navigate down to the binding element and set this property.</span></span>  
   
-### Pour modifier une liaison fournie par le système  
+### <a name="to-modify-a-system-provided-binding"></a><span data-ttu-id="6c3c6-121">Pour modifier une liaison fournie par le système</span><span class="sxs-lookup"><span data-stu-id="6c3c6-121">To modify a system-provided binding</span></span>  
   
-1.  Créez une instance de la classe <xref:System.ServiceModel.BasicHttpBinding> et affectez à son mode de sécurité la valeur de sécurité au niveau du message.  
+1.  <span data-ttu-id="6c3c6-122">Créez une instance de la classe <xref:System.ServiceModel.BasicHttpBinding> et affectez à son mode de sécurité la valeur de sécurité au niveau du message.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-122">Create an instance of the <xref:System.ServiceModel.BasicHttpBinding> class and set its security mode to message-level.</span></span>  
   
      [!code-csharp[C_HowTo_ChangeStandardBinding#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_changestandardbinding/cs/program.cs#1)]
      [!code-vb[C_HowTo_ChangeStandardBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_changestandardbinding/vb/program.vb#1)]  
   
-2.  Créez une liaison personnalisée à partir de la liaison et ensuite une classe <xref:System.ServiceModel.Channels.BindingElementCollection> à partir de l'une des propriétés de la liaison personnalisée.  
+2.  <span data-ttu-id="6c3c6-123">Créez une liaison personnalisée à partir de la liaison et ensuite une classe <xref:System.ServiceModel.Channels.BindingElementCollection> à partir de l'une des propriétés de la liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-123">Create a custom binding from the binding and create a <xref:System.ServiceModel.Channels.BindingElementCollection> class from one of the custom binding's properties.</span></span>  
   
      [!code-csharp[C_HowTo_ChangeStandardBinding#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_changestandardbinding/cs/program.cs#2)]
      [!code-vb[C_HowTo_ChangeStandardBinding#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_changestandardbinding/vb/program.vb#2)]  
   
-3.  Parcourez la classe <xref:System.ServiceModel.Channels.BindingElementCollection> et lorsque vous trouverez la classe <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, affectez à sa propriété <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> la valeur `false`.  
+3.  <span data-ttu-id="6c3c6-124">Parcourez la classe <xref:System.ServiceModel.Channels.BindingElementCollection> et lorsque vous trouverez la classe <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, affectez à sa propriété <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="6c3c6-124">Loop through the <xref:System.ServiceModel.Channels.BindingElementCollection> class, and when you find the <xref:System.ServiceModel.Channels.HttpTransportBindingElement> class, set its <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> property to `false`.</span></span>  
   
      [!code-csharp[C_HowTo_ChangeStandardBinding#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_changestandardbinding/cs/program.cs#3)]
      [!code-vb[C_HowTo_ChangeStandardBinding#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_changestandardbinding/vb/program.vb#3)]  
   
-## Voir aussi  
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>   
- <xref:System.ServiceModel.BasicHttpBinding>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md)
+## <a name="see-also"></a><span data-ttu-id="6c3c6-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6c3c6-125">See Also</span></span>  
+ <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+ <xref:System.ServiceModel.BasicHttpBinding>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [<span data-ttu-id="6c3c6-126">Liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="6c3c6-126">Custom Bindings</span></span>](../../../../docs/framework/wcf/extending/custom-bindings.md)

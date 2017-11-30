@@ -1,42 +1,45 @@
 ---
-title: "Op&#233;rations asynchrones | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Opérations asynchrones"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e7d32c3c-bf78-4bfc-a357-c9e82e4a4b3c
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: b616a6cf08dd47a9e46e8e887efbc88469dedfd3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Op&#233;rations asynchrones
-L'exécution de certaines opérations de base de données, telles que des exécutions de commande, peut prendre du temps.  Dans ce cas, les applications mono\-thread doivent bloquer d'autres opérations et attendre que l'exécution de la commande s'achève avant de pouvoir continuer leurs propres opérations.  En revanche, la possibilité d'assigner l'opération longue à un thread d'arrière\-plan permet au thread à l'avant\-plan de rester actif pendant toute l'opération.  Dans une application Windows, par exemple, vous pouvez déléguer l'opération de longue durée à un thread d'arrière\-plan tout en autorisant le thread d'interface utilisateur à rester réactif pendant l'exécution de l'opération.  
+# <a name="asynchronous-operations"></a><span data-ttu-id="0555f-102">Opérations asynchrones</span><span class="sxs-lookup"><span data-stu-id="0555f-102">Asynchronous Operations</span></span>
+<span data-ttu-id="0555f-103">L'exécution de certaines opérations de base de données, telles que des exécutions de commande, peut prendre du temps.</span><span class="sxs-lookup"><span data-stu-id="0555f-103">Some database operations, such as command executions, can take significant time to complete.</span></span> <span data-ttu-id="0555f-104">Dans ce cas, les applications mono-thread doivent bloquer d'autres opérations et attendre que l'exécution de la commande s'achève avant de pouvoir continuer leurs propres opérations.</span><span class="sxs-lookup"><span data-stu-id="0555f-104">In such a case, single-threaded applications must block other operations and wait for the command to finish before they can continue their own operations.</span></span> <span data-ttu-id="0555f-105">En revanche, la possibilité d'assigner l'opération longue à un thread d'arrière-plan permet au thread à l'avant-plan de rester actif pendant toute l'opération.</span><span class="sxs-lookup"><span data-stu-id="0555f-105">In contrast, being able to assign the long-running operation to a background thread allows the foreground thread to remain active throughout the operation.</span></span> <span data-ttu-id="0555f-106">Dans une application Windows, par exemple, vous pouvez déléguer l'opération de longue durée à un thread d'arrière-plan tout en autorisant le thread d'interface utilisateur à rester réactif pendant l'exécution de l'opération.</span><span class="sxs-lookup"><span data-stu-id="0555f-106">In a Windows application, for example, delegating the long-running operation to a background thread allows the user interface thread to remain responsive while the operation is executing.</span></span>  
   
- .NET Framework comprend plusieurs modèles de design asynchrone standard que les développeurs peuvent utiliser pour tirer parti des threads d'arrière\-plan et libérer l'interface utilisateur ou des threads hautement prioritaires pour l'accomplissement d'autres opérations.  ADO.NET prend en charge ces mêmes modèles de design dans sa classe <xref:System.Data.SqlClient.SqlCommand>.  Plus spécifiquement, les méthodes <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> et <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A>, associées aux méthodes <xref:System.Data.SqlClient.SqlCommand.EndExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> et <xref:System.Data.SqlClient.SqlCommand.EndExecuteXmlReader%2A>, assurent la prise en charge des opérations asynchrones.  
+ <span data-ttu-id="0555f-107">.NET Framework comprend plusieurs modèles de design asynchrone standard que les développeurs peuvent utiliser pour tirer parti des threads d'arrière-plan et libérer l'interface utilisateur ou des threads hautement prioritaires pour l'accomplissement d'autres opérations.</span><span class="sxs-lookup"><span data-stu-id="0555f-107">The .NET Framework provides several standard asynchronous design patterns that developers can use to take advantage of background threads and free the user interface or high-priority threads to complete other operations.</span></span> <span data-ttu-id="0555f-108">ADO.NET prend en charge ces mêmes modèles de design dans sa classe <xref:System.Data.SqlClient.SqlCommand>.</span><span class="sxs-lookup"><span data-stu-id="0555f-108">ADO.NET supports these same design patterns in its <xref:System.Data.SqlClient.SqlCommand> class.</span></span> <span data-ttu-id="0555f-109">Plus spécifiquement, les méthodes <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> et <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A>, associées aux méthodes <xref:System.Data.SqlClient.SqlCommand.EndExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> et <xref:System.Data.SqlClient.SqlCommand.EndExecuteXmlReader%2A>, assurent la prise en charge des opérations asynchrones.</span><span class="sxs-lookup"><span data-stu-id="0555f-109">Specifically, the <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, and <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> methods, paired with the <xref:System.Data.SqlClient.SqlCommand.EndExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A>, and <xref:System.Data.SqlClient.SqlCommand.EndExecuteXmlReader%2A> methods, provide the asynchronous support.</span></span>  
   
 > [!NOTE]
->  La programmation asynchrone est une fonction clé de .NET Framework et ADO.NET exploite pleinement les modèles de design standard.  Pour plus d'informations sur les techniques asynchrones disponibles pour les développeurs, voir [Calling Synchronous Methods Asynchronously](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).  
+>  <span data-ttu-id="0555f-110">La programmation asynchrone est une fonctionnalité clé de .NET Framework et ADO.NET exploite pleinement les modèles de design standard.</span><span class="sxs-lookup"><span data-stu-id="0555f-110">Asynchronous programming is a core feature of the .NET Framework, and ADO.NET takes full advantage of the standard design patterns.</span></span> <span data-ttu-id="0555f-111">Pour plus d’informations sur les techniques asynchrones disponibles pour les développeurs, consultez [appel asynchrone des méthodes synchrones](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).</span><span class="sxs-lookup"><span data-stu-id="0555f-111">For more information about the different asynchronous techniques available to developers, see [Calling Synchronous Methods Asynchronously](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).</span></span>  
   
- Bien que l'utilisation de techniques asynchrones avec les fonctions d'ADO.NET ne nécessite pas de commentaires particuliers, il est probable que les développeurs utiliseront les fonctions asynchrones davantage dans ADO.NET que dans d'autres domaines de .NET Framework.  Il est important d'être conscient des avantages et des pièges liés à la création d'application multithread.  Les exemples présentés dans cette section épinglent plusieurs problèmes importants dont les développeurs doivent tenir compte lors de la création d'applications qui incorporent une fonctionnalité multithread.  
+ <span data-ttu-id="0555f-112">Bien que l’utilisation de techniques asynchrones avec les fonctionnalités d’ADO.NET ne nécessite pas de commentaires particuliers, il est probable que les développeurs utiliseront les fonctions asynchrones davantage dans ADO.NET que dans d’autres domaines de .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0555f-112">Although using asynchronous techniques with ADO.NET features does not add any special considerations, it is likely that more developers will use asynchronous features in ADO.NET than in other areas of the .NET Framework.</span></span> <span data-ttu-id="0555f-113">Il est important d'être conscient des avantages et des pièges liés à la création d'application multithread.</span><span class="sxs-lookup"><span data-stu-id="0555f-113">It is important to be aware of the benefits and pitfalls of creating multithreaded applications.</span></span> <span data-ttu-id="0555f-114">Les exemples présentés dans cette section épinglent plusieurs problèmes importants dont les développeurs doivent tenir compte lors de la création d'applications qui incorporent une fonctionnalité multithread.</span><span class="sxs-lookup"><span data-stu-id="0555f-114">The examples that follow in this section point out several important issues that developers will need to take into account when building applications that incorporate multithreaded functionality.</span></span>  
   
-## Dans cette section  
- [Applications Windows utilisant des rappels](../../../../../docs/framework/data/adonet/sql/windows-applications-using-callbacks.md)  
- Fournit un exemple montrant comment exécuter une commande asynchrone en toute sécurité, en gérant correctement l'interaction avec un formulaire et son contenu depuis un thread distinct.  
+## <a name="in-this-section"></a><span data-ttu-id="0555f-115">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="0555f-115">In This Section</span></span>  
+ [<span data-ttu-id="0555f-116">Applications Windows utilisant des rappels</span><span class="sxs-lookup"><span data-stu-id="0555f-116">Windows Applications Using Callbacks</span></span>](../../../../../docs/framework/data/adonet/sql/windows-applications-using-callbacks.md)  
+ <span data-ttu-id="0555f-117">Fournit un exemple montrant comment exécuter une commande asynchrone en toute sécurité, en gérant correctement l'interaction avec un formulaire et son contenu depuis un thread distinct.</span><span class="sxs-lookup"><span data-stu-id="0555f-117">Provides an example demonstrating how to execute an asynchronous command safely, correctly handling interaction with a form and its contents from a separate thread.</span></span>  
   
- [Applications ASP.NET utilisant des handles d'attente](../../../../../docs/framework/data/adonet/sql/aspnet-apps-using-wait-handles.md)  
- Fournit un exemple montrant comment exécuter plusieurs commandes simultanées à partir d'une page ASP.NET, en utilisant des handles d'attente pour gérer l'opération lors de l'accomplissement de toutes les commandes.  
+ [<span data-ttu-id="0555f-118">Applications ASP.NET utilisant des Handles d’attente</span><span class="sxs-lookup"><span data-stu-id="0555f-118">ASP.NET Applications Using Wait Handles</span></span>](../../../../../docs/framework/data/adonet/sql/aspnet-apps-using-wait-handles.md)  
+ <span data-ttu-id="0555f-119">Fournit un exemple montrant comment exécuter plusieurs commandes simultanées à partir d'une page ASP.NET, en utilisant des handles d'attente pour gérer l'opération lors de l'accomplissement de toutes les commandes.</span><span class="sxs-lookup"><span data-stu-id="0555f-119">Provides an example demonstrating how to execute multiple concurrent commands from an ASP.NET page, using Wait handles to manage the operation at completion of all the commands.</span></span>  
   
- [Interrogation dans des applications console](../../../../../docs/framework/data/adonet/sql/polling-in-console-applications.md)  
- Fournit un exemple montrant l'utilisation de l'interrogation pour attendre l'accomplissement de l'exécution d'une commande asynchrone à partir d'une application console.  Cette technique est également valable dans une bibliothèque de classes ou une autre application sans interface utilisateur.  
+ [<span data-ttu-id="0555f-120">Interrogation dans les Applications Console</span><span class="sxs-lookup"><span data-stu-id="0555f-120">Polling in Console Applications</span></span>](../../../../../docs/framework/data/adonet/sql/polling-in-console-applications.md)  
+ <span data-ttu-id="0555f-121">Fournit un exemple montrant l'utilisation de l'interrogation pour attendre l'accomplissement de l'exécution d'une commande asynchrone à partir d'une application console.</span><span class="sxs-lookup"><span data-stu-id="0555f-121">Provides an example demonstrating the use of polling to wait for the completion of an asynchronous command execution from a console application.</span></span> <span data-ttu-id="0555f-122">Cette technique est également valable dans une bibliothèque de classes ou une autre application sans interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="0555f-122">This technique is also valid in a class library or other application without a user interface.</span></span>  
   
-## Voir aussi  
- [SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)   
- [Calling Synchronous Methods Asynchronously](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="0555f-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0555f-123">See Also</span></span>  
+ [<span data-ttu-id="0555f-124">SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="0555f-124">SQL Server and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/index.md)  
+ [<span data-ttu-id="0555f-125">Appel de méthodes synchrones de façon asynchrone</span><span class="sxs-lookup"><span data-stu-id="0555f-125">Calling Synchronous Methods Asynchronously</span></span>](../../../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+ [<span data-ttu-id="0555f-126">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="0555f-126">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

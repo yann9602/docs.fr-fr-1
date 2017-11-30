@@ -1,30 +1,33 @@
 ---
-title: "Contr&#244;le de la s&#233;rialisation et de la d&#233;s&#233;rialisation avec SerializationBinder | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Contrôle de la sérialisation et de la désérialisation avec SerializationBinder"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ba8dcecf-acc7-467c-939d-021bbac797d4
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1c3180d62824f94e27e02c80e09fdf32252f0a23
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Contr&#244;le de la s&#233;rialisation et de la d&#233;s&#233;rialisation avec SerializationBinder
-Au cours de la sérialisation, un formateur transmet les informations requises pour créer une instance d'un objet de type et de version corrects.  Ces informations comprennent généralement le nom de type et le nom d'assembly complets de l'objet.  Par défaut, la désérialisation utilise ces informations pour créer une instance d'un objet identique.  Certains utilisateurs auront peut\-être besoin de vérifier quelle classe sérialiser et désérialiser, pour les raisons suivantes : la classe d'origine n'existe pas sur l'ordinateur qui effectue la désérialisation, la classe d'origine a été déplacée entre des assemblys ou une version différente de la classe est requise sur le serveur et le client.  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Usage of Serialization Binder](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md).  
+# <a name="controlling-serialization-and-deserialization-with-serializationbinder"></a><span data-ttu-id="ca715-102">Contrôle de la sérialisation et de la désérialisation avec SerializationBinder</span><span class="sxs-lookup"><span data-stu-id="ca715-102">Controlling Serialization and Deserialization with SerializationBinder</span></span>
+<span data-ttu-id="ca715-103">Au cours de la sérialisation, un formateur transmet les informations requises pour créer une instance d'un objet de type et de version corrects.</span><span class="sxs-lookup"><span data-stu-id="ca715-103">During serialization, a formatter transmits the information required to create an instance of an object of the correct type and version.</span></span> <span data-ttu-id="ca715-104">Ces informations comprennent généralement le nom de type et le nom d'assembly complets de l'objet.</span><span class="sxs-lookup"><span data-stu-id="ca715-104">This information generally includes the full type name and assembly name of the object.</span></span> <span data-ttu-id="ca715-105">Par défaut, la désérialisation utilise ces informations pour créer une instance d'un objet identique.</span><span class="sxs-lookup"><span data-stu-id="ca715-105">By default, deserialization uses this information to create an instance of an identical object.</span></span> <span data-ttu-id="ca715-106">Certains utilisateurs auront peut-être besoin de vérifier quelle classe sérialiser et désérialiser, pour les raisons suivantes : la classe d’origine n’existe pas sur l’ordinateur qui effectue la désérialisation, la classe d’origine a été déplacée entre des assemblys ou une version différente de la classe est requise sur le serveur et le client.</span><span class="sxs-lookup"><span data-stu-id="ca715-106">Some users may need to control which class to serialize and deserialize, either because the original class may not exist on the machine performing deserialization, the original class has moved between assemblies, or a different version of the class is required on the server and client.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="ca715-107">[L’utilisation de Binder de sérialisation](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md).</span><span class="sxs-lookup"><span data-stu-id="ca715-107"> [Usage of Serialization Binder](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md).</span></span>  
   
 > [!WARNING]
->  Ces fonctionnalités sont disponibles uniquement lors de l'utilisation de l'objet <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> ou <xref:System.Runtime.Serialization.NetDataContractSerializer>.  
+>  <span data-ttu-id="ca715-108">Ces fonctionnalités sont disponibles uniquement lors de l'utilisation de l'objet <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> ou <xref:System.Runtime.Serialization.NetDataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="ca715-108">This functionality is only available when using the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> or the <xref:System.Runtime.Serialization.NetDataContractSerializer>.</span></span>  
   
-## Utilisation de SerializationBinder  
- <xref:System.Runtime.Serialization.SerializationBinder> est une classe abstraite utilisée pour contrôler les types réels utilisés lors de la sérialisation et de la désérialisation.  Pour contrôler les types utilisés pendant la sérialisation et la désérialisation, dérivez une classe à partir de <xref:System.Runtime.Serialization.SerializationBinder> et substituez les méthodes <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> System.String, System.String)?qualifyHint=False&autoUpgrade=True et <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> System.String)?qualifyHint=False&autoUpgrade=True.  La méthode <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> System.String, System.String)?qualifyHint=False&autoUpgrade=True prend un <xref:System.Type> et retourne un assembly et un type de nom.  La méthode <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> System.String)?qualifyHint=False&autoUpgrade=True prend un assembly et un type de nom et retourne un <xref:System.Type>.  
+## <a name="using-serializationbinder"></a><span data-ttu-id="ca715-109">Utilisation de SerializationBinder</span><span class="sxs-lookup"><span data-stu-id="ca715-109">Using SerializationBinder</span></span>  
+ <span data-ttu-id="ca715-110"><xref:System.Runtime.Serialization.SerializationBinder> est une classe abstraite utilisée pour contrôler les types réels utilisés lors de la sérialisation et de la désérialisation.</span><span class="sxs-lookup"><span data-stu-id="ca715-110"><xref:System.Runtime.Serialization.SerializationBinder> is an abstract class used to control the actual types used during serialization and deserialization.</span></span> <span data-ttu-id="ca715-111">Pour contrôler les types utilisés pendant la sérialisation et la désérialisation, dérivez une classe de <xref:System.Runtime.Serialization.SerializationBinder> et remplacez le <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> System.String, System.String)?qualifyHint=False & mise à niveau automatique = True et <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> System.String) ? qualifyHint = False & mise à niveau automatique = True les méthodes.</span><span class="sxs-lookup"><span data-stu-id="ca715-111">To control the types used during serialization and deserialization, derive a class from <xref:System.Runtime.Serialization.SerializationBinder> and override the <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> System.String, System.String)?qualifyHint=False&autoUpgrade=True and <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> System.String)?qualifyHint=False&autoUpgrade=True methods.</span></span> <span data-ttu-id="ca715-112">Le <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> System.String, System.String)?qualifyHint=False & mise à niveau automatique = True méthode prend un <xref:System.Type> et retourne un nom de type et l’assembly.</span><span class="sxs-lookup"><span data-stu-id="ca715-112">The <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> System.String, System.String)?qualifyHint=False&autoUpgrade=True method takes a <xref:System.Type> and returns an assembly and type name.</span></span> <span data-ttu-id="ca715-113">Le <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> System.String)?qualifyHint=False & mise à niveau automatique = True méthode prend un assembly et nom de type et retourne un <xref:System.Type>.</span><span class="sxs-lookup"><span data-stu-id="ca715-113">The <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> System.String)?qualifyHint=False&autoUpgrade=True method takes an assembly and type name and returns a <xref:System.Type>.</span></span>  
   
-## Voir aussi  
- [Sérialisation et désérialisation](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)   
- [Usage of Serialization Binder](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md)
+## <a name="see-also"></a><span data-ttu-id="ca715-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ca715-114">See Also</span></span>  
+ [<span data-ttu-id="ca715-115">Sérialisation et désérialisation</span><span class="sxs-lookup"><span data-stu-id="ca715-115">Serialization and Deserialization</span></span>](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)  
+ [<span data-ttu-id="ca715-116">Utilisation de Binder de sérialisation</span><span class="sxs-lookup"><span data-stu-id="ca715-116">Usage of Serialization Binder</span></span>](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md)

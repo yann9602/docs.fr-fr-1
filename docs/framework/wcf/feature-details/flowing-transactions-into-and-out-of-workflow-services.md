@@ -1,48 +1,51 @@
 ---
-title: "Flux de transactions vers et depuis des services de workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Flux de transactions vers et depuis des services de workflow
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2a093c2bfb0d7e60c3edc4a6ab04c8a7b7e38601
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Flux de transactions vers et depuis des services de workflow
-Les services et clients de workflow peuvent participer aux transactions.Pour qu'une opération de service fasse partie d'une transaction ambiante, placez une activité <xref:System.ServiceModel.Activities.Receive> dans une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>.Tous les appels effectués par une activité <xref:System.ServiceModel.Activities.Send> ou <xref:System.ServiceModel.Activities.SendReply> au sein de l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> seront également effectués dans la transaction ambiante.Une application cliente de workflow peut créer une transaction ambiante en utilisant l'activité <xref:System.Activities.Statements.TransactionScope> et appeler des opérations de service à l'aide de la transaction ambiante.Cette rubrique vous guide dans la création d'un service de workflow et d'un client de workflow qui participent à des transactions.  
+# <a name="flowing-transactions-into-and-out-of-workflow-services"></a><span data-ttu-id="0317c-102">Flux de transactions vers et depuis des services de workflow</span><span class="sxs-lookup"><span data-stu-id="0317c-102">Flowing Transactions into and out of Workflow Services</span></span>
+<span data-ttu-id="0317c-103">Les services et clients de workflow peuvent participer aux transactions.</span><span class="sxs-lookup"><span data-stu-id="0317c-103">Workflow services and clients can participate in transactions.</span></span>  <span data-ttu-id="0317c-104">Pour qu'une opération de service fasse partie d'une transaction ambiante, placez une activité <xref:System.ServiceModel.Activities.Receive> dans une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>.</span><span class="sxs-lookup"><span data-stu-id="0317c-104">For a service operation to become part of an ambient transaction, place a <xref:System.ServiceModel.Activities.Receive> activity within a <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity.</span></span> <span data-ttu-id="0317c-105">Tous les appels effectués par une activité <xref:System.ServiceModel.Activities.Send> ou <xref:System.ServiceModel.Activities.SendReply> au sein de l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> seront également effectués dans la transaction ambiante.</span><span class="sxs-lookup"><span data-stu-id="0317c-105">Any calls made by a <xref:System.ServiceModel.Activities.Send> or a <xref:System.ServiceModel.Activities.SendReply> activity within the <xref:System.ServiceModel.Activities.TransactedReceiveScope> will also be made within the ambient transaction.</span></span> <span data-ttu-id="0317c-106">Une application cliente de workflow peut créer une transaction ambiante en utilisant l'activité <xref:System.Activities.Statements.TransactionScope> et appeler des opérations de service à l'aide de la transaction ambiante.</span><span class="sxs-lookup"><span data-stu-id="0317c-106">A workflow client application can create an ambient transaction by using the <xref:System.Activities.Statements.TransactionScope> activity and call service operations using the ambient transaction.</span></span> <span data-ttu-id="0317c-107">Cette rubrique vous guide dans la création d'un service de workflow et d'un client de workflow qui participent à des transactions.</span><span class="sxs-lookup"><span data-stu-id="0317c-107">This topic walks you through creating a workflow service and workflow client that participate in transactions.</span></span>  
   
 > [!WARNING]
->  Si une instance de service de workflow est chargée dans une transaction et le workflow contient une activité <xref:System.Activities.Statements.Persist>, l'instance de workflow va être bloquée le temps que la transaction expire.  
+>  <span data-ttu-id="0317c-108">Si une instance de service de workflow est chargée dans une transaction et le workflow contient une activité <xref:System.Activities.Statements.Persist>, l'instance de workflow va être bloquée le temps que la transaction expire.</span><span class="sxs-lookup"><span data-stu-id="0317c-108">If a workflow service instance is loaded within a transaction and the workflow contains a <xref:System.Activities.Statements.Persist> activity, the workflow instance will hang until the transaction times out.</span></span>  
   
 > [!IMPORTANT]
->  Lorsque vous utilisez une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>, il est recommandé de placer toutes les réceptions dans le workflow dans les activités <xref:System.ServiceModel.Activities.TransactedReceiveScope>.  
+>  <span data-ttu-id="0317c-109">Lorsque vous utilisez une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>, il est recommandé de placer toutes les réceptions dans le workflow dans les activités <xref:System.ServiceModel.Activities.TransactedReceiveScope>.</span><span class="sxs-lookup"><span data-stu-id="0317c-109">Whenever you use a <xref:System.ServiceModel.Activities.TransactedReceiveScope> it is recommended to place all Receives in the workflow within <xref:System.ServiceModel.Activities.TransactedReceiveScope> activities.</span></span>  
   
 > [!IMPORTANT]
->  Lorsque vous utilisez <xref:System.ServiceModel.Activities.TransactedReceiveScope> et les messages arrivent dans le mauvais ordre incorrect, le workflow est abandonné lorsque vous tentez de livrer le premier message dans le désordre.Vous devez vous assurer que votre workflow est toujours à un point d'arrêt cohérent lorsqu'il est inactif.Cela vous permet de redémarrer le workflow à partir d'un point de persistance précédent s'il est abandonné.  
+>  <span data-ttu-id="0317c-110">Lorsque vous utilisez <xref:System.ServiceModel.Activities.TransactedReceiveScope> et les messages arrivent dans le mauvais ordre incorrect, le workflow est abandonné lorsque vous tentez de livrer le premier message dans le désordre.</span><span class="sxs-lookup"><span data-stu-id="0317c-110">When using <xref:System.ServiceModel.Activities.TransactedReceiveScope> and messages arrive in the incorrect order, the workflow will be aborted when trying to deliver the first out of order message.</span></span> <span data-ttu-id="0317c-111">Vous devez vous assurer que votre workflow est toujours à un point d'arrêt cohérent lorsqu'il est inactif.</span><span class="sxs-lookup"><span data-stu-id="0317c-111">You must make sure your workflow is always at a consistent stopping point when the workflow idles.</span></span> <span data-ttu-id="0317c-112">Cela vous permet de redémarrer le workflow à partir d'un point de persistance précédent s'il est abandonné.</span><span class="sxs-lookup"><span data-stu-id="0317c-112">This will allow you to restart the workflow from a previous persistence point should the workflow be aborted.</span></span>  
   
-### Créer une bibliothèque partagée  
+### <a name="create-a-shared-library"></a><span data-ttu-id="0317c-113">Créer une bibliothèque partagée</span><span class="sxs-lookup"><span data-stu-id="0317c-113">Create a shared library</span></span>  
   
-1.  Créez une solution Visual Studio vide.  
+1.  <span data-ttu-id="0317c-114">Créez une solution Visual Studio vide.</span><span class="sxs-lookup"><span data-stu-id="0317c-114">Create a new empty Visual Studio Solution.</span></span>  
   
-2.  Ajoutez un nouveau projet de bibliothèque de classes nommé `Common`.Ajoutez des références aux assemblys suivants :  
+2.  <span data-ttu-id="0317c-115">Ajoutez un nouveau projet de bibliothèque de classes nommé `Common`.</span><span class="sxs-lookup"><span data-stu-id="0317c-115">Add a new class library project called `Common`.</span></span> <span data-ttu-id="0317c-116">Ajoutez des références aux assemblys suivants :</span><span class="sxs-lookup"><span data-stu-id="0317c-116">Add references to the following assemblies:</span></span>  
   
-    -   System.Activities.dll  
+    -   <span data-ttu-id="0317c-117">System.Activities.dll</span><span class="sxs-lookup"><span data-stu-id="0317c-117">System.Activities.dll</span></span>  
   
-    -   System.ServiceModel.dll  
+    -   <span data-ttu-id="0317c-118">System.ServiceModel.dll</span><span class="sxs-lookup"><span data-stu-id="0317c-118">System.ServiceModel.dll</span></span>  
   
-    -   System.ServiceModel.Activities.dll  
+    -   <span data-ttu-id="0317c-119">System.ServiceModel.Activities.dll</span><span class="sxs-lookup"><span data-stu-id="0317c-119">System.ServiceModel.Activities.dll</span></span>  
   
-    -   System.Transactions.dll  
+    -   <span data-ttu-id="0317c-120">System.Transactions.dll</span><span class="sxs-lookup"><span data-stu-id="0317c-120">System.Transactions.dll</span></span>  
   
-3.  Ajoutez une nouvelle classe nommée `PrintTransactionInfo` au projet `Common`.Cette classe est dérivée de <xref:System.Activities.NativeActivity> et surcharge la méthode <xref:System.Activities.NativeActivity.Execute%2A>.  
+3.  <span data-ttu-id="0317c-121">Ajoutez une nouvelle classe nommée `PrintTransactionInfo` au projet `Common`.</span><span class="sxs-lookup"><span data-stu-id="0317c-121">Add a new class called `PrintTransactionInfo` to the `Common` project.</span></span> <span data-ttu-id="0317c-122">Cette classe est dérivée de <xref:System.Activities.NativeActivity> et surcharge la méthode <xref:System.Activities.NativeActivity.Execute%2A>.</span><span class="sxs-lookup"><span data-stu-id="0317c-122">This class is derived from <xref:System.Activities.NativeActivity> and overloads the <xref:System.Activities.NativeActivity.Execute%2A> method.</span></span>  
   
     ```  
     using System;  
@@ -77,159 +80,158 @@ Les services et clients de workflow peuvent participer aux transactions.Pour qu'
         }  
   
     }  
-  
     ```  
   
-     Il s'agit d'une activité native qui affiche des informations sur la transaction ambiante et est utilisée dans les workflows du service et du client utilisés dans cette rubrique.Générez la solution pour rendre cette activité disponible dans la section **Commun** de la **boîte à outils**.  
+     <span data-ttu-id="0317c-123">Il s’agit d’une activité native qui affiche des informations sur la transaction ambiante et est utilisée dans les workflows du service et du client utilisés dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="0317c-123">This is a native activity that displays information about the ambient transaction and is used in both the service and client workflows used in this topic.</span></span> <span data-ttu-id="0317c-124">Générez la solution pour rendre cette activité disponible dans le **commune** section de la **boîte à outils**.</span><span class="sxs-lookup"><span data-stu-id="0317c-124">Build the solution to make this activity available in the **Common** section of the **Toolbox**.</span></span>  
   
-### Implémenter le service de workflow  
+### <a name="implement-the-workflow-service"></a><span data-ttu-id="0317c-125">Implémenter le service de workflow</span><span class="sxs-lookup"><span data-stu-id="0317c-125">Implement the workflow service</span></span>  
   
-1.  Ajoutez un nouveau service de workflow [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], nommé `WorkflowService`, au projet `Common`.Pour ce faire, cliquez avec le bouton droit sur le projet `Common`, sélectionnez **Ajouter**, **Nouvel élément**, puis **Workflow** sous **Modèles installés** et enfin **Application de service de workflow WCF**.  
+1.  <span data-ttu-id="0317c-126">Ajouter un nouveau [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Service de flux de travail, appelée `WorkflowService` à la `Common` projet.</span><span class="sxs-lookup"><span data-stu-id="0317c-126">Add a new [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Workflow Service, called `WorkflowService` to the `Common` project.</span></span> <span data-ttu-id="0317c-127">Pour cela, cliquez droit sur le `Common` projet, sélectionnez **ajouter**, **un nouvel élément...** , Sélectionnez **Workflow** sous **modèles installés** et sélectionnez **Service de Workflow WCF**.</span><span class="sxs-lookup"><span data-stu-id="0317c-127">To do this right click the `Common` project, select **Add**, **New Item ...**, Select **Workflow** under **Installed Templates** and select **WCF Workflow Service**.</span></span>  
   
-     ![Ajout d'un service de flux de travail](../../../../docs/framework/wcf/feature-details/media/addwfservice.JPG "AddWFService")  
+     <span data-ttu-id="0317c-128">![Ajout d’un Service de flux de travail](../../../../docs/framework/wcf/feature-details/media/addwfservice.JPG "AddWFService")</span><span class="sxs-lookup"><span data-stu-id="0317c-128">![Adding a Workflow Service](../../../../docs/framework/wcf/feature-details/media/addwfservice.JPG "AddWFService")</span></span>  
   
-2.  Supprimez les activités par défaut `ReceiveRequest` et `SendResponse`.  
+2.  <span data-ttu-id="0317c-129">Supprimez les activités par défaut `ReceiveRequest` et `SendResponse`.</span><span class="sxs-lookup"><span data-stu-id="0317c-129">Delete the default `ReceiveRequest` and `SendResponse` activities.</span></span>  
   
-3.  Faites glisser une activité <xref:System.Activities.Statements.WriteLine> dans l'activité `Sequential Service`.Affectez à la propriété Text la valeur `"Workflow Service starting ..."`, comme le montre l'exemple suivant.  
+3.  <span data-ttu-id="0317c-130">Faites glisser une activité <xref:System.Activities.Statements.WriteLine> dans l'activité `Sequential Service`.</span><span class="sxs-lookup"><span data-stu-id="0317c-130">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity into the `Sequential Service` activity.</span></span> <span data-ttu-id="0317c-131">Affectez à la propriété Text la valeur `"Workflow Service starting ..."`, comme le montre l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="0317c-131">Set the text property to `"Workflow Service starting ..."` as shown in the following example.</span></span>  
   
-     ![Ajout d'une activité WriteLine](../../../../docs/framework/wcf/feature-details/media/addwriteline.JPG "AddWriteLine")  
+     <span data-ttu-id="0317c-132">![Ajout d’une activité WriteLine](../../../../docs/framework/wcf/feature-details/media/addwriteline.JPG "AddWriteLine")</span><span class="sxs-lookup"><span data-stu-id="0317c-132">![Adding a WriteLine activity](../../../../docs/framework/wcf/feature-details/media/addwriteline.JPG "AddWriteLine")</span></span>  
   
-4.  Faites glisser une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> après l'activité <xref:System.Activities.Statements.WriteLine>.L'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> se trouve dans la section **Messagerie** de la **boîte à outils**.L'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> est composée de deux sections : **Requête** et **Corps**.La section **Requête** contient l'activité <xref:System.ServiceModel.Activities.Receive>.La section **Corps** contient les activités à exécuter dans une transaction après réception d'un message.  
+4.  <span data-ttu-id="0317c-133">Faites glisser une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> après l'activité <xref:System.Activities.Statements.WriteLine>.</span><span class="sxs-lookup"><span data-stu-id="0317c-133">Drag and drop a <xref:System.ServiceModel.Activities.TransactedReceiveScope> after the <xref:System.Activities.Statements.WriteLine> activity.</span></span> <span data-ttu-id="0317c-134">Le <xref:System.ServiceModel.Activities.TransactedReceiveScope> activité se trouvent dans le **messagerie** section de la **boîte à outils**.</span><span class="sxs-lookup"><span data-stu-id="0317c-134">The <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity can be found in the **Messaging** section of the **Toolbox**.</span></span> <span data-ttu-id="0317c-135">Le <xref:System.ServiceModel.Activities.TransactedReceiveScope> activité est composée de deux sections **demande** et **corps**.</span><span class="sxs-lookup"><span data-stu-id="0317c-135">The <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity is composed of two sections **Request** and **Body**.</span></span> <span data-ttu-id="0317c-136">Le **demande** section contient les <xref:System.ServiceModel.Activities.Receive> activité.</span><span class="sxs-lookup"><span data-stu-id="0317c-136">The **Request** section contains the <xref:System.ServiceModel.Activities.Receive> activity.</span></span> <span data-ttu-id="0317c-137">Le **corps** section contient les activités à exécuter dans une transaction après réception d’un message.</span><span class="sxs-lookup"><span data-stu-id="0317c-137">The **Body** section contains the activities to execute within a transaction after a message has been received.</span></span>  
   
-     ![Ajout d'une activité TransactedReceiveScope](../../../../docs/framework/wcf/feature-details/media/trs.JPG "TRS")  
+     <span data-ttu-id="0317c-138">![Ajout d’une activité TransactedReceiveScope](../../../../docs/framework/wcf/feature-details/media/trs.JPG "TRS")</span><span class="sxs-lookup"><span data-stu-id="0317c-138">![Adding a TransactedReceiveScope activity](../../../../docs/framework/wcf/feature-details/media/trs.JPG "TRS")</span></span>  
   
-5.  Sélectionnez l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> et cliquez sur le bouton **Variables**.Ajoutez les variables suivantes.  
+5.  <span data-ttu-id="0317c-139">Sélectionnez le <xref:System.ServiceModel.Activities.TransactedReceiveScope> activité et cliquez sur le **Variables** bouton.</span><span class="sxs-lookup"><span data-stu-id="0317c-139">Select the <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity and click the **Variables** button.</span></span> <span data-ttu-id="0317c-140">Ajoutez les variables suivantes.</span><span class="sxs-lookup"><span data-stu-id="0317c-140">Add the following variables.</span></span>  
   
-     ![Ajout de variables à TransactedReceiveScope](../../../../docs/framework/wcf/feature-details/media/trsvariables.JPG "TRSVariables")  
+     <span data-ttu-id="0317c-141">![Ajout des Variables à TransactedReceiveScope](../../../../docs/framework/wcf/feature-details/media/trsvariables.JPG "TRSVariables")</span><span class="sxs-lookup"><span data-stu-id="0317c-141">![Adding Variables to the TransactedReceiveScope](../../../../docs/framework/wcf/feature-details/media/trsvariables.JPG "TRSVariables")</span></span>  
   
     > [!NOTE]
-    >  Vous pouvez supprimer la variable de données proposée à cet endroit par défaut.Vous pouvez également utiliser la variable de handle existante.  
+    >  <span data-ttu-id="0317c-142">Vous pouvez supprimer la variable de données proposée à cet endroit par défaut.</span><span class="sxs-lookup"><span data-stu-id="0317c-142">You can delete the data variable that is there by default.</span></span> <span data-ttu-id="0317c-143">Vous pouvez également utiliser la variable de handle existante.</span><span class="sxs-lookup"><span data-stu-id="0317c-143">You can also use the existing handle variable.</span></span>  
   
-6.  Faites glisser une activité <xref:System.ServiceModel.Activities.Receive> dans la section **Requête** de l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>.Définissez les propriétés suivantes :  
+6.  <span data-ttu-id="0317c-144">Faites glisser et déposez un <xref:System.ServiceModel.Activities.Receive> activité dans le **demande** section de la <xref:System.ServiceModel.Activities.TransactedReceiveScope> activité.</span><span class="sxs-lookup"><span data-stu-id="0317c-144">Drag and drop a <xref:System.ServiceModel.Activities.Receive> activity within the **Request** section of the <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity.</span></span> <span data-ttu-id="0317c-145">Définissez les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="0317c-145">Set the following properties:</span></span>  
   
-    |Propriété|Valeur|  
-    |---------------|------------|  
-    |CanCreateInstance|True \(activez la case à cocher\)|  
-    |OperationName|StartSample|  
-    |ServiceContractName|ITransactionSample|  
+    |<span data-ttu-id="0317c-146">Propriété</span><span class="sxs-lookup"><span data-stu-id="0317c-146">Property</span></span>|<span data-ttu-id="0317c-147">Valeur</span><span class="sxs-lookup"><span data-stu-id="0317c-147">Value</span></span>|  
+    |--------------|-----------|  
+    |<span data-ttu-id="0317c-148">CanCreateInstance</span><span class="sxs-lookup"><span data-stu-id="0317c-148">CanCreateInstance</span></span>|<span data-ttu-id="0317c-149">True (activez la case à cocher)</span><span class="sxs-lookup"><span data-stu-id="0317c-149">True (check the checkbox)</span></span>|  
+    |<span data-ttu-id="0317c-150">OperationName</span><span class="sxs-lookup"><span data-stu-id="0317c-150">OperationName</span></span>|<span data-ttu-id="0317c-151">StartSample</span><span class="sxs-lookup"><span data-stu-id="0317c-151">StartSample</span></span>|  
+    |<span data-ttu-id="0317c-152">ServiceContractName</span><span class="sxs-lookup"><span data-stu-id="0317c-152">ServiceContractName</span></span>|<span data-ttu-id="0317c-153">ITransactionSample</span><span class="sxs-lookup"><span data-stu-id="0317c-153">ITransactionSample</span></span>|  
   
-     Le workflow doit ressembler à ceci :  
+     <span data-ttu-id="0317c-154">Le workflow doit ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="0317c-154">The workflow should look like this:</span></span>  
   
-     ![Ajout d'une activité Receive](../../../../docs/framework/wcf/feature-details/media/serviceaddreceive.JPG "ServiceAddReceive")  
+     <span data-ttu-id="0317c-155">![Ajout d’une activité de réception](../../../../docs/framework/wcf/feature-details/media/serviceaddreceive.JPG "ServiceAddReceive")</span><span class="sxs-lookup"><span data-stu-id="0317c-155">![Adding a Receive activity](../../../../docs/framework/wcf/feature-details/media/serviceaddreceive.JPG "ServiceAddReceive")</span></span>  
   
-7.  Cliquez sur le lien **Définir** de l'activité <xref:System.ServiceModel.Activities.Receive> et effectuez les paramétrages suivants :  
+7.  <span data-ttu-id="0317c-156">Cliquez sur le **définir...**  lien dans le <xref:System.ServiceModel.Activities.Receive> activité et effectuez les paramétrages suivants :</span><span class="sxs-lookup"><span data-stu-id="0317c-156">Click the **Define...** link in the <xref:System.ServiceModel.Activities.Receive> activity and make the following settings:</span></span>  
   
-     ![Définition des paramètres des messages pour l'activité Receive](../../../../docs/framework/wcf/feature-details/media/receivemessagesettings.JPG "ReceiveMessageSettings")  
+     <span data-ttu-id="0317c-157">![Définition des paramètres de message pour l’activité Receive](../../../../docs/framework/wcf/feature-details/media/receivemessagesettings.JPG "ReceiveMessageSettings")</span><span class="sxs-lookup"><span data-stu-id="0317c-157">![Setting message settings for the Recieve activity](../../../../docs/framework/wcf/feature-details/media/receivemessagesettings.JPG "ReceiveMessageSettings")</span></span>  
   
-8.  Faites glisser une activité <xref:System.Activities.Statements.Sequence> dans la section de corps du <xref:System.ServiceModel.Activities.TransactedReceiveScope>.Dans l'activité <xref:System.Activities.Statements.Sequence>, faites glisser deux activités <xref:System.Activities.Statements.WriteLine> et définissez les propriétés <xref:System.Activities.Statements.WriteLine.Text%2A> conformément aux indications du tableau suivant.  
+8.  <span data-ttu-id="0317c-158">Faites glisser une activité <xref:System.Activities.Statements.Sequence> dans la section de corps du <xref:System.ServiceModel.Activities.TransactedReceiveScope>.</span><span class="sxs-lookup"><span data-stu-id="0317c-158">Drag and drop a <xref:System.Activities.Statements.Sequence> activity into the Body section of the <xref:System.ServiceModel.Activities.TransactedReceiveScope>.</span></span> <span data-ttu-id="0317c-159">Dans l'activité <xref:System.Activities.Statements.Sequence>, faites glisser deux activités <xref:System.Activities.Statements.WriteLine> et définissez les propriétés <xref:System.Activities.Statements.WriteLine.Text%2A> conformément aux indications du tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="0317c-159">Within the <xref:System.Activities.Statements.Sequence> activity drag and drop two <xref:System.Activities.Statements.WriteLine> activities and set the <xref:System.Activities.Statements.WriteLine.Text%2A> properties as shown in the following table.</span></span>  
   
-    |Activité|Valeur|  
-    |--------------|------------|  
-    |1re WriteLine|“Service: Receive Completed”|  
-    |2e WriteLine|"Service: Received \= " \+ requestMessage|  
+    |<span data-ttu-id="0317c-160">Activité</span><span class="sxs-lookup"><span data-stu-id="0317c-160">Activity</span></span>|<span data-ttu-id="0317c-161">Valeur</span><span class="sxs-lookup"><span data-stu-id="0317c-161">Value</span></span>|  
+    |--------------|-----------|  
+    |<span data-ttu-id="0317c-162">1re WriteLine</span><span class="sxs-lookup"><span data-stu-id="0317c-162">1st WriteLine</span></span>|<span data-ttu-id="0317c-163">« Service : réception terminée »</span><span class="sxs-lookup"><span data-stu-id="0317c-163">"Service: Receive Completed"</span></span>|  
+    |<span data-ttu-id="0317c-164">2e WriteLine</span><span class="sxs-lookup"><span data-stu-id="0317c-164">2nd WriteLine</span></span>|<span data-ttu-id="0317c-165">"Service: Received = " + requestMessage</span><span class="sxs-lookup"><span data-stu-id="0317c-165">"Service: Received = " + requestMessage</span></span>|  
   
-     Le workflow doit maintenant ressembler à ceci :  
+     <span data-ttu-id="0317c-166">Le workflow doit maintenant ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="0317c-166">The workflow should now look like this:</span></span>  
   
-     ![Ajout d'activités WriteLine](../../../../docs/framework/wcf/feature-details/media/afteraddingwritelines.JPG "AfterAddingWriteLines")  
+     <span data-ttu-id="0317c-167">![Ajout d’activités WriteLine](../../../../docs/framework/wcf/feature-details/media/afteraddingwritelines.JPG "AfterAddingWriteLines")</span><span class="sxs-lookup"><span data-stu-id="0317c-167">![Adding WriteLine activities](../../../../docs/framework/wcf/feature-details/media/afteraddingwritelines.JPG "AfterAddingWriteLines")</span></span>  
   
-9. Faites glisser l'activité `PrintTransactionInfo` après la deuxième activité <xref:System.Activities.Statements.WriteLine> du **Corps** de l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>.  
+9. <span data-ttu-id="0317c-168">Faites glisser et déposez le `PrintTransactionInfo` activité après la deuxième <xref:System.Activities.Statements.WriteLine> activité dans le **corps** dans le <xref:System.ServiceModel.Activities.TransactedReceiveScope> activité.</span><span class="sxs-lookup"><span data-stu-id="0317c-168">Drag and drop the `PrintTransactionInfo` activity after the second <xref:System.Activities.Statements.WriteLine> activity in the **Body** in the <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity.</span></span>  
   
-     ![Après l'ajout de PrintTransactionInfo](../../../../docs/framework/wcf/feature-details/media/afteraddingprinttransactioninfo.JPG "AfterAddingPrintTransactionInfo")  
+     <span data-ttu-id="0317c-169">![Après l’ajout de PrintTransactionInfo](../../../../docs/framework/wcf/feature-details/media/afteraddingprinttransactioninfo.JPG "AfterAddingPrintTransactionInfo")</span><span class="sxs-lookup"><span data-stu-id="0317c-169">![After adding PrintTransactionInfo](../../../../docs/framework/wcf/feature-details/media/afteraddingprinttransactioninfo.JPG "AfterAddingPrintTransactionInfo")</span></span>  
   
-10. Faites glisser une activité <xref:System.Activities.Statements.Assign> après l'activité `PrintTransactionInfo` et définissez ses propriétés conformément aux indications du tableau suivant.  
+10. <span data-ttu-id="0317c-170">Faites glisser une activité <xref:System.Activities.Statements.Assign> après l'activité `PrintTransactionInfo` et définissez ses propriétés conformément aux indications du tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="0317c-170">Drag and drop an <xref:System.Activities.Statements.Assign> activity after the `PrintTransactionInfo` activity and set its properties according to the following table.</span></span>  
   
-    |Propriété|Valeur|  
-    |---------------|------------|  
-    |To|replyMessage|  
-    |Value|"Service: Sending reply."|  
+    |<span data-ttu-id="0317c-171">Propriété</span><span class="sxs-lookup"><span data-stu-id="0317c-171">Property</span></span>|<span data-ttu-id="0317c-172">Valeur</span><span class="sxs-lookup"><span data-stu-id="0317c-172">Value</span></span>|  
+    |--------------|-----------|  
+    |<span data-ttu-id="0317c-173">Pour</span><span class="sxs-lookup"><span data-stu-id="0317c-173">To</span></span>|<span data-ttu-id="0317c-174">replyMessage</span><span class="sxs-lookup"><span data-stu-id="0317c-174">replyMessage</span></span>|  
+    |<span data-ttu-id="0317c-175">Valeur</span><span class="sxs-lookup"><span data-stu-id="0317c-175">Value</span></span>|<span data-ttu-id="0317c-176">"Service: Sending reply."</span><span class="sxs-lookup"><span data-stu-id="0317c-176">"Service: Sending reply."</span></span>|  
   
-11. Faites glisser une activité <xref:System.Activities.Statements.WriteLine> après l'activité <xref:System.Activities.Statements.Assign> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Service: Begin reply."  
+11. <span data-ttu-id="0317c-177">Faites glisser une activité <xref:System.Activities.Statements.WriteLine> après l'activité <xref:System.Activities.Statements.Assign> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Service: Begin reply."</span><span class="sxs-lookup"><span data-stu-id="0317c-177">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the <xref:System.Activities.Statements.Assign> activity and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Service: Begin reply."</span></span>  
   
-     Le workflow doit maintenant ressembler à ceci :  
+     <span data-ttu-id="0317c-178">Le workflow doit maintenant ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="0317c-178">The workflow should now look like this:</span></span>  
   
-     ![Après l'ajout de Assign et de WriteLine](../../../../docs/framework/wcf/feature-details/media/afteraddingsbrwriteline.JPG "AfterAddingSBRWriteLine")  
+     <span data-ttu-id="0317c-179">![Après l’ajout de Assign et WriteLine](../../../../docs/framework/wcf/feature-details/media/afteraddingsbrwriteline.JPG "AfterAddingSBRWriteLine")</span><span class="sxs-lookup"><span data-stu-id="0317c-179">![After adding Assign and WriteLine](../../../../docs/framework/wcf/feature-details/media/afteraddingsbrwriteline.JPG "AfterAddingSBRWriteLine")</span></span>  
   
-12. Cliquez avec le bouton droit sur l'activité <xref:System.ServiceModel.Activities.Receive>, sélectionnez **Create SendReply** et collez\-la après la dernière activité <xref:System.Activities.Statements.WriteLine>.Cliquez sur le lien **Définir** de l'activité `SendReplyToReceive` et effectuez les paramétrages suivants.  
+12. <span data-ttu-id="0317c-180">Bouton droit sur le <xref:System.ServiceModel.Activities.Receive> activité et sélectionnez **Create SendReply** et collez-le après la dernière <xref:System.Activities.Statements.WriteLine> activité.</span><span class="sxs-lookup"><span data-stu-id="0317c-180">Right click the <xref:System.ServiceModel.Activities.Receive> activity and select **Create SendReply** and paste it after the last <xref:System.Activities.Statements.WriteLine> activity.</span></span> <span data-ttu-id="0317c-181">Cliquez sur le **définir...**  lien dans le `SendReplyToReceive` activité et effectuez les paramétrages suivants.</span><span class="sxs-lookup"><span data-stu-id="0317c-181">Click the **Define...** link in the `SendReplyToReceive` activity and make the following settings.</span></span>  
   
-     ![Paramètres des messages Reply](../../../../docs/framework/wcf/feature-details/media/replymessagesettings.JPG "ReplyMessageSettings")  
+     <span data-ttu-id="0317c-182">![Paramètres des messages de réponse](../../../../docs/framework/wcf/feature-details/media/replymessagesettings.JPG "ReplyMessageSettings")</span><span class="sxs-lookup"><span data-stu-id="0317c-182">![Reply message settings](../../../../docs/framework/wcf/feature-details/media/replymessagesettings.JPG "ReplyMessageSettings")</span></span>  
   
-13. Faites glisser une activité <xref:System.Activities.Statements.WriteLine> après l'activité `SendReplyToReceive` et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Service: Reply sent."  
+13. <span data-ttu-id="0317c-183">Faites glisser et déposez un <xref:System.Activities.Statements.WriteLine> activité après le `SendReplyToReceive` activité et l’ensemble qu’il a <xref:System.Activities.Statements.WriteLine.Text%2A> propriété » Service : réponse envoyée. »</span><span class="sxs-lookup"><span data-stu-id="0317c-183">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the `SendReplyToReceive` activity and set it’s <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Service: Reply sent."</span></span>  
   
-14. Faites glisser une activité <xref:System.Activities.Statements.WriteLine> en bas du workflow et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Service: Workflow ends, press ENTER to exit."  
+14. <span data-ttu-id="0317c-184">Faites glisser une activité <xref:System.Activities.Statements.WriteLine> en bas du workflow et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Service: Workflow ends, press ENTER to exit."</span><span class="sxs-lookup"><span data-stu-id="0317c-184">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity at the bottom of the workflow and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Service: Workflow ends, press ENTER to exit."</span></span>  
   
-     Le workflow de service terminé doit ressembler à ceci :  
+     <span data-ttu-id="0317c-185">Le workflow de service terminé doit ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="0317c-185">The completed service workflow should look like this:</span></span>  
   
-     ![Flux de travail du service complet](../../../../docs/framework/wcf/feature-details/media/servicecomplete.jpg "ServiceComplete")  
+     <span data-ttu-id="0317c-186">![Workflow de Service terminé](../../../../docs/framework/wcf/feature-details/media/servicecomplete.jpg "ServiceComplete")</span><span class="sxs-lookup"><span data-stu-id="0317c-186">![Complete Service Workflow](../../../../docs/framework/wcf/feature-details/media/servicecomplete.jpg "ServiceComplete")</span></span>  
   
-### Implémenter le client de workflow  
+### <a name="implement-the-workflow-client"></a><span data-ttu-id="0317c-187">Implémenter le client de workflow</span><span class="sxs-lookup"><span data-stu-id="0317c-187">Implement the workflow client</span></span>  
   
-1.  Ajoutez une nouvelle application de workflow WCF nommée `WorkflowClient` au projet `Common`.Pour ce faire, cliquez avec le bouton droit sur le projet `Common`, sélectionnez **Ajouter**, **Nouvel élément**, puis **Workflow** sous **Modèles installés** et enfin **Activité**.  
+1.  <span data-ttu-id="0317c-188">Ajoutez une nouvelle application de workflow WCF nommée `WorkflowClient` au projet `Common`.</span><span class="sxs-lookup"><span data-stu-id="0317c-188">Add a new WCF Workflow application, called `WorkflowClient` to the `Common` project.</span></span> <span data-ttu-id="0317c-189">Pour cela, cliquez droit sur le `Common` projet, sélectionnez **ajouter**, **un nouvel élément...** , Sélectionnez **Workflow** sous **modèles installés** et sélectionnez **activité**.</span><span class="sxs-lookup"><span data-stu-id="0317c-189">To do this right click the `Common` project, select **Add**, **New Item ...**, Select **Workflow** under **Installed Templates** and select **Activity**.</span></span>  
   
-     ![Ajouter un projet d'activité](../../../../docs/framework/wcf/feature-details/media/addactivity.JPG "AddActivity")  
+     <span data-ttu-id="0317c-190">![Ajouter un projet d’activité](../../../../docs/framework/wcf/feature-details/media/addactivity.JPG "AddActivity")</span><span class="sxs-lookup"><span data-stu-id="0317c-190">![Add an Activity project](../../../../docs/framework/wcf/feature-details/media/addactivity.JPG "AddActivity")</span></span>  
   
-2.  Faites glisser une activité <xref:System.Activities.Statements.Sequence> sur l'aire de conception.  
+2.  <span data-ttu-id="0317c-191">Faites glisser une activité <xref:System.Activities.Statements.Sequence> sur l'aire de conception.</span><span class="sxs-lookup"><span data-stu-id="0317c-191">Drag and drop a <xref:System.Activities.Statements.Sequence> activity onto the design surface.</span></span>  
   
-3.  Dans l'activité <xref:System.Activities.Statements.Sequence>, faites glisser une activité <xref:System.Activities.Statements.WriteLine> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur `"Client: Workflow starting"`.Le workflow doit maintenant ressembler à ceci :  
+3.  <span data-ttu-id="0317c-192">Dans l'activité <xref:System.Activities.Statements.Sequence>, faites glisser une activité <xref:System.Activities.Statements.WriteLine> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur `"Client: Workflow starting"`.</span><span class="sxs-lookup"><span data-stu-id="0317c-192">Within the <xref:System.Activities.Statements.Sequence> activity drag and drop a <xref:System.Activities.Statements.WriteLine> activity and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to `"Client: Workflow starting"`.</span></span> <span data-ttu-id="0317c-193">Le workflow doit maintenant ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="0317c-193">The workflow should now look like this:</span></span>  
   
-     ![Ajouter une activité WriteLine](../../../../docs/framework/wcf/feature-details/media/clientaddwriteline.JPG "ClientAddWriteLine")  
+     <span data-ttu-id="0317c-194">![Ajouter une activité WriteLine](../../../../docs/framework/wcf/feature-details/media/clientaddwriteline.JPG "ClientAddWriteLine")</span><span class="sxs-lookup"><span data-stu-id="0317c-194">![Add a WriteLine activity](../../../../docs/framework/wcf/feature-details/media/clientaddwriteline.JPG "ClientAddWriteLine")</span></span>  
   
-4.  Faites glisser une activité <xref:System.Activities.Statements.TransactionScope> après l'activité <xref:System.Activities.Statements.WriteLine>.Sélectionnez l'activité <xref:System.Activities.Statements.TransactionScope>, cliquez sur le bouton Variables et ajoutez les variables suivantes.  
+4.  <span data-ttu-id="0317c-195">Faites glisser une activité <xref:System.Activities.Statements.TransactionScope> après l'activité <xref:System.Activities.Statements.WriteLine>.</span><span class="sxs-lookup"><span data-stu-id="0317c-195">Drag and drop a <xref:System.Activities.Statements.TransactionScope> activity after the <xref:System.Activities.Statements.WriteLine> activity.</span></span>  <span data-ttu-id="0317c-196">Sélectionnez l'activité <xref:System.Activities.Statements.TransactionScope>, cliquez sur le bouton Variables et ajoutez les variables suivantes.</span><span class="sxs-lookup"><span data-stu-id="0317c-196">Select the <xref:System.Activities.Statements.TransactionScope> activity, click the Variables button and add the following variables.</span></span>  
   
-     ![Ajouter des variables à TransactionScope](../../../../docs/framework/wcf/feature-details/media/tsvariables.JPG "TSVariables")  
+     <span data-ttu-id="0317c-197">![Ajouter des variables à TransactionScope](../../../../docs/framework/wcf/feature-details/media/tsvariables.JPG "TSVariables")</span><span class="sxs-lookup"><span data-stu-id="0317c-197">![Add variables to the TransactionScope](../../../../docs/framework/wcf/feature-details/media/tsvariables.JPG "TSVariables")</span></span>  
   
-5.  Faites glisser une activité <xref:System.Activities.Statements.Sequence> dans le corps de l'activité <xref:System.Activities.Statements.TransactionScope>.  
+5.  <span data-ttu-id="0317c-198">Faites glisser une activité <xref:System.Activities.Statements.Sequence> dans le corps de l'activité <xref:System.Activities.Statements.TransactionScope>.</span><span class="sxs-lookup"><span data-stu-id="0317c-198">Drag and drop a <xref:System.Activities.Statements.Sequence> activity into the body of the <xref:System.Activities.Statements.TransactionScope> activity.</span></span>  
   
-6.  Faites glisser une activité `PrintTransactionInfo` dans <xref:System.Activities.Statements.Sequence>.  
+6.  <span data-ttu-id="0317c-199">Faites glisser une activité `PrintTransactionInfo` dans <xref:System.Activities.Statements.Sequence>.</span><span class="sxs-lookup"><span data-stu-id="0317c-199">Drag and drop a `PrintTransactionInfo` activity within the <xref:System.Activities.Statements.Sequence></span></span>  
   
-7.  Faites glisser une activité <xref:System.Activities.Statements.WriteLine> après l'activité `PrintTransactionInfo` et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Client: Beginning Send".Le workflow doit maintenant ressembler à ceci :  
+7.  <span data-ttu-id="0317c-200">Glisser- déposer un <xref:System.Activities.Statements.WriteLine> activité après le `PrintTransactionInfo` activité et définissez son <xref:System.Activities.Statements.WriteLine.Text%2A> propriété « Client : Beginning Send ».</span><span class="sxs-lookup"><span data-stu-id="0317c-200">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the `PrintTransactionInfo` activity and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Client: Beginning Send".</span></span> <span data-ttu-id="0317c-201">Le workflow doit maintenant ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="0317c-201">The workflow should now look like this:</span></span>  
   
-     ![Ajout d'activités](../../../../docs/framework/wcf/feature-details/media/clientaddcbswriteline.JPG "ClientAddCBSWriteLine")  
+     <span data-ttu-id="0317c-202">![Ajout d’activités](../../../../docs/framework/wcf/feature-details/media/clientaddcbswriteline.JPG "ClientAddCBSWriteLine")</span><span class="sxs-lookup"><span data-stu-id="0317c-202">![Adding activities](../../../../docs/framework/wcf/feature-details/media/clientaddcbswriteline.JPG "ClientAddCBSWriteLine")</span></span>  
   
-8.  Faites glisser une activité <xref:System.ServiceModel.Activities.Send> après l'activité <xref:System.Activities.Statements.Assign> et définissez les propriétés suivantes :  
+8.  <span data-ttu-id="0317c-203">Faites glisser une activité <xref:System.ServiceModel.Activities.Send> après l'activité <xref:System.Activities.Statements.Assign> et définissez les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="0317c-203">Drag and drop a <xref:System.ServiceModel.Activities.Send> activity after the <xref:System.Activities.Statements.Assign> activity and set the following properties:</span></span>  
   
-    |Propriété|Valeur|  
-    |---------------|------------|  
-    |EndpointConfigurationName|workflowServiceEndpoint|  
-    |OperationName|StartSample|  
-    |ServiceContractName|ITransactionSample|  
+    |<span data-ttu-id="0317c-204">Propriété</span><span class="sxs-lookup"><span data-stu-id="0317c-204">Property</span></span>|<span data-ttu-id="0317c-205">Valeur</span><span class="sxs-lookup"><span data-stu-id="0317c-205">Value</span></span>|  
+    |--------------|-----------|  
+    |<span data-ttu-id="0317c-206">EndpointConfigurationName</span><span class="sxs-lookup"><span data-stu-id="0317c-206">EndpointConfigurationName</span></span>|<span data-ttu-id="0317c-207">workflowServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="0317c-207">workflowServiceEndpoint</span></span>|  
+    |<span data-ttu-id="0317c-208">OperationName</span><span class="sxs-lookup"><span data-stu-id="0317c-208">OperationName</span></span>|<span data-ttu-id="0317c-209">StartSample</span><span class="sxs-lookup"><span data-stu-id="0317c-209">StartSample</span></span>|  
+    |<span data-ttu-id="0317c-210">ServiceContractName</span><span class="sxs-lookup"><span data-stu-id="0317c-210">ServiceContractName</span></span>|<span data-ttu-id="0317c-211">ITransactionSample</span><span class="sxs-lookup"><span data-stu-id="0317c-211">ITransactionSample</span></span>|  
   
-     Le workflow doit maintenant ressembler à ceci :  
+     <span data-ttu-id="0317c-212">Le workflow doit maintenant ressembler à ceci :</span><span class="sxs-lookup"><span data-stu-id="0317c-212">The workflow should now look like this:</span></span>  
   
-     ![Définition des propriétés de l'activité Send](../../../../docs/framework/wcf/feature-details/media/clientsendsettings.JPG "ClientSendSettings")  
+     <span data-ttu-id="0317c-213">![Définition des propriétés de l’activité d’envoi](../../../../docs/framework/wcf/feature-details/media/clientsendsettings.JPG "ClientSendSettings")</span><span class="sxs-lookup"><span data-stu-id="0317c-213">![Setting the Send activity properties](../../../../docs/framework/wcf/feature-details/media/clientsendsettings.JPG "ClientSendSettings")</span></span>  
   
-9. Cliquez sur le lien **Définir** et effectuez les paramétrages suivants :  
+9. <span data-ttu-id="0317c-214">Cliquez sur le **définir...**  lier et effectuez les paramétrages suivants :</span><span class="sxs-lookup"><span data-stu-id="0317c-214">Click the **Define...** link and make the following settings:</span></span>  
   
-     ![Paramètres des messages de l'activité Send](../../../../docs/framework/wcf/feature-details/media/sendmessagesettings.JPG "SendMessageSettings")  
+     <span data-ttu-id="0317c-215">![Activité d’envoi des paramètres de message](../../../../docs/framework/wcf/feature-details/media/sendmessagesettings.JPG "SendMessageSettings")</span><span class="sxs-lookup"><span data-stu-id="0317c-215">![Send activity message settings](../../../../docs/framework/wcf/feature-details/media/sendmessagesettings.JPG "SendMessageSettings")</span></span>  
   
-10. Cliquez avec le bouton droit sur l'activité <xref:System.ServiceModel.Activities.Send> et sélectionnez **Create ReceiveReply**.L'activité <xref:System.ServiceModel.Activities.ReceiveReply> sera automatiquement placée après l'activité <xref:System.ServiceModel.Activities.Send>.  
+10. <span data-ttu-id="0317c-216">Bouton droit sur le <xref:System.ServiceModel.Activities.Send> activité et sélectionnez **Create ReceiveReply**.</span><span class="sxs-lookup"><span data-stu-id="0317c-216">Right click the <xref:System.ServiceModel.Activities.Send> activity and select **Create ReceiveReply**.</span></span> <span data-ttu-id="0317c-217">L'activité <xref:System.ServiceModel.Activities.ReceiveReply> sera automatiquement placée après l'activité <xref:System.ServiceModel.Activities.Send>.</span><span class="sxs-lookup"><span data-stu-id="0317c-217">The <xref:System.ServiceModel.Activities.ReceiveReply> activity will be automatically placed after the <xref:System.ServiceModel.Activities.Send> activity.</span></span>  
   
-11. Cliquez sur le lien Définir…de l'activité ReceiveReplyForSend et effectuez les paramétrages suivants :  
+11. <span data-ttu-id="0317c-218">Cliquez sur le lien Définir de l'activité ReceiveReplyForSend et effectuez les paramétrages suivants :</span><span class="sxs-lookup"><span data-stu-id="0317c-218">Click the Define... link on the ReceiveReplyForSend activity and make the following settings:</span></span>  
   
-     ![Définition des paramètres de message ReceiveForSend](../../../../docs/framework/wcf/feature-details/media/clientreplymessagesettings.JPG "ClientReplyMessageSettings")  
+     <span data-ttu-id="0317c-219">![Définition des paramètres de message ReceiveForSend](../../../../docs/framework/wcf/feature-details/media/clientreplymessagesettings.JPG "ClientReplyMessageSettings")</span><span class="sxs-lookup"><span data-stu-id="0317c-219">![Setting the ReceiveForSend message settings](../../../../docs/framework/wcf/feature-details/media/clientreplymessagesettings.JPG "ClientReplyMessageSettings")</span></span>  
   
-12. Faites glisser une activité <xref:System.Activities.Statements.WriteLine> entre les activités <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.ReceiveReply> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Client: Send complete."  
+12. <span data-ttu-id="0317c-220">Faites glisser une activité <xref:System.Activities.Statements.WriteLine> entre les activités <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.ReceiveReply> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Client: Send complete."</span><span class="sxs-lookup"><span data-stu-id="0317c-220">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity between the <xref:System.ServiceModel.Activities.Send> and <xref:System.ServiceModel.Activities.ReceiveReply> activities and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Client: Send complete."</span></span>  
   
-13. Faites glisser une activité <xref:System.Activities.Statements.WriteLine> après l'activité <xref:System.ServiceModel.Activities.ReceiveReply> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Client side: Reply received \= " \+ replyMessage  
+13. <span data-ttu-id="0317c-221">Faites glisser une activité <xref:System.Activities.Statements.WriteLine> après l'activité <xref:System.ServiceModel.Activities.ReceiveReply> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Client side: Reply received = " + replyMessage</span><span class="sxs-lookup"><span data-stu-id="0317c-221">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the <xref:System.ServiceModel.Activities.ReceiveReply> activity and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Client side: Reply received = " + replyMessage</span></span>  
   
-14. Faites glisser une activité `PrintTransactionInfo` après l'activité <xref:System.Activities.Statements.WriteLine>.  
+14. <span data-ttu-id="0317c-222">Faites glisser une activité `PrintTransactionInfo` après l'activité <xref:System.Activities.Statements.WriteLine>.</span><span class="sxs-lookup"><span data-stu-id="0317c-222">Drag and drop a `PrintTransactionInfo` activity after the <xref:System.Activities.Statements.WriteLine> activity.</span></span>  
   
-15. Faites glisser une activité <xref:System.Activities.Statements.WriteLine> à la fin du workflow et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Client workflow ends." Le workflow du client terminé doit ressembler au diagramme suivant.  
+15. <span data-ttu-id="0317c-223">Faites glisser une activité <xref:System.Activities.Statements.WriteLine> à la fin du workflow et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Client workflow ends."</span><span class="sxs-lookup"><span data-stu-id="0317c-223">Drag and drop a <xref:System.Activities.Statements.WriteLine> activity at the end of the workflow and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Client workflow ends."</span></span> <span data-ttu-id="0317c-224">Le workflow du client terminé doit ressembler au diagramme suivant.</span><span class="sxs-lookup"><span data-stu-id="0317c-224">The completed client workflow should look like the following diagram.</span></span>  
   
-     ![Flux de travail client complet](../../../../docs/framework/wcf/feature-details/media/clientcompleteworkflow.jpg "ClientCompleteWorkflow")  
+     <span data-ttu-id="0317c-225">![Le workflow client complet](../../../../docs/framework/wcf/feature-details/media/clientcompleteworkflow.jpg "ClientCompleteWorkflow")</span><span class="sxs-lookup"><span data-stu-id="0317c-225">![The completed client workfliow](../../../../docs/framework/wcf/feature-details/media/clientcompleteworkflow.jpg "ClientCompleteWorkflow")</span></span>  
   
-16. Générez la solution.  
+16. <span data-ttu-id="0317c-226">Générez la solution.</span><span class="sxs-lookup"><span data-stu-id="0317c-226">Build the solution.</span></span>  
   
-### Créer l'application Service  
+### <a name="create-the-service-application"></a><span data-ttu-id="0317c-227">Créer l'application Service</span><span class="sxs-lookup"><span data-stu-id="0317c-227">Create the Service application</span></span>  
   
-1.  Ajoutez à la solution un nouveau projet d'application console nommé `Service`.Ajoutez des références aux assemblys suivants :  
+1.  <span data-ttu-id="0317c-228">Ajoutez à la solution un nouveau projet d'application console nommé `Service`.</span><span class="sxs-lookup"><span data-stu-id="0317c-228">Add a new Console Application project called `Service` to the solution.</span></span> <span data-ttu-id="0317c-229">Ajoutez des références aux assemblys suivants :</span><span class="sxs-lookup"><span data-stu-id="0317c-229">Add references to the following assemblies:</span></span>  
   
-    1.  System.Activities.dll  
+    1.  <span data-ttu-id="0317c-230">System.Activities.dll</span><span class="sxs-lookup"><span data-stu-id="0317c-230">System.Activities.dll</span></span>  
   
-    2.  System.ServiceModel.dll  
+    2.  <span data-ttu-id="0317c-231">System.ServiceModel.dll</span><span class="sxs-lookup"><span data-stu-id="0317c-231">System.ServiceModel.dll</span></span>  
   
-    3.  System.ServiceModel.Activities.dll  
+    3.  <span data-ttu-id="0317c-232">System.ServiceModel.Activities.dll</span><span class="sxs-lookup"><span data-stu-id="0317c-232">System.ServiceModel.Activities.dll</span></span>  
   
-2.  Ouvrez le fichier Program.cs généré et le code suivant :  
+2.  <span data-ttu-id="0317c-233">Ouvrez le fichier Program.cs généré et le code suivant :</span><span class="sxs-lookup"><span data-stu-id="0317c-233">Open the generated Program.cs file and the following code:</span></span>  
   
     ```  
     static void Main()  
@@ -247,10 +249,9 @@ Les services et clients de workflow peuvent participer aux transactions.Pour qu'
                   host.Close();  
               };         
           }  
-  
     ```  
   
-3.  Ajoutez le fichier app.config suivant au projet.  
+3.  <span data-ttu-id="0317c-234">Ajoutez le fichier app.config suivant au projet.</span><span class="sxs-lookup"><span data-stu-id="0317c-234">Add the following app.config file to the project.</span></span>  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -264,14 +265,13 @@ Les services et clients de workflow peuvent participer aux transactions.Pour qu'
             </bindings>  
         </system.serviceModel>  
     </configuration>  
-  
     ```  
   
-### Créer l'application Client  
+### <a name="create-the-client-application"></a><span data-ttu-id="0317c-235">Créer l'application Client</span><span class="sxs-lookup"><span data-stu-id="0317c-235">Create the client application</span></span>  
   
-1.  Ajoutez à la solution un nouveau projet d'application console nommé `Client`.Ajoutez une référence à System.Activities.dll.  
+1.  <span data-ttu-id="0317c-236">Ajoutez à la solution un nouveau projet d'application console nommé `Client`.</span><span class="sxs-lookup"><span data-stu-id="0317c-236">Add a new Console Application project called `Client` to the solution.</span></span> <span data-ttu-id="0317c-237">Ajoutez une référence à System.Activities.dll.</span><span class="sxs-lookup"><span data-stu-id="0317c-237">Add a reference to System.Activities.dll.</span></span>  
   
-2.  Ouvrez le fichier program.cs et ajoutez le code suivant.  
+2.  <span data-ttu-id="0317c-238">Ouvrez le fichier program.cs et ajoutez le code suivant.</span><span class="sxs-lookup"><span data-stu-id="0317c-238">Open the program.cs file and add the following code.</span></span>  
   
     ```  
     class Program  
@@ -320,10 +320,9 @@ Les services et clients de workflow peuvent participer aux transactions.Pour qu'
                 return UnhandledExceptionAction.Cancel;  
             }  
         }  
-  
     ```  
   
-## Voir aussi  
- [Services de workflow](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [Vue d'ensemble des transactions Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/transactions-overview.md)   
- [Utilisation de TransactedReceiveScope](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)
+## <a name="see-also"></a><span data-ttu-id="0317c-239">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0317c-239">See Also</span></span>  
+ [<span data-ttu-id="0317c-240">Services de workflow</span><span class="sxs-lookup"><span data-stu-id="0317c-240">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [<span data-ttu-id="0317c-241">Vue d’ensemble des Transactions de Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="0317c-241">Windows Communication Foundation Transactions Overview</span></span>](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
+ [<span data-ttu-id="0317c-242">Utilisation de TransactedReceiveScope</span><span class="sxs-lookup"><span data-stu-id="0317c-242">Use of TransactedReceiveScope</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)

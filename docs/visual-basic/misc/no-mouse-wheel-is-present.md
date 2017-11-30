@@ -1,30 +1,32 @@
 ---
-title: "Absence de roulette de souris | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrMouse_NoWheelIsPresent"
+title: Absence de roulette de souris
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrMouse_NoWheelIsPresent
 ms.assetid: e924ffba-4af1-4247-9a6f-d19a03738f62
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 43d91abd8178f2ac00a42af2168388f2f7b94cbd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Absence de roulette de souris
-La propriété `My.Computer.Mouse.WheelScrollLines` a été appelée, mais la souris ne possède pas de roulette de défilement.  
+# <a name="no-mouse-wheel-is-present"></a><span data-ttu-id="73695-102">Absence de roulette de souris</span><span class="sxs-lookup"><span data-stu-id="73695-102">No mouse wheel is present</span></span>
+<span data-ttu-id="73695-103">La propriété `My.Computer.Mouse.WheelScrollLines` a été appelée, mais la souris ne possède pas de roulette de défilement.</span><span class="sxs-lookup"><span data-stu-id="73695-103">The `My.Computer.Mouse.WheelScrollLines` property was called, but the mouse has no scroll wheel.</span></span>  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="73695-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="73695-104">To correct this error</span></span>  
   
--   Vérifiez la propriété `My.Computer.Mouse.WheelExists` pour déterminer si la souris a une roulette de défilement avant d’appeler la propriété `My.Computer.Mouse.WheelScrollLines`.  
+-   <span data-ttu-id="73695-105">Vérifiez la propriété `My.Computer.Mouse.WheelExists` pour déterminer si la souris a une roulette de défilement avant d’appeler la propriété `My.Computer.Mouse.WheelScrollLines` .</span><span class="sxs-lookup"><span data-stu-id="73695-105">Check the `My.Computer.Mouse.WheelExists` property to see if the mouse has a scroll wheel before calling the `My.Computer.Mouse.WheelScrollLines` property.</span></span>  
   
-     ou  
+     <span data-ttu-id="73695-106">ou</span><span class="sxs-lookup"><span data-stu-id="73695-106">-or-</span></span>  
   
--   Installez une souris dotée d’une roulette de défilement sur l’ordinateur.  
+-   <span data-ttu-id="73695-107">Installez une souris dotée d’une roulette de défilement sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="73695-107">Install a mouse with a scroll wheel on the computer.</span></span>  
   
-## Voir aussi  
- [My.Computer.Mouse.WheelScrollLines, propriété](http://msdn.microsoft.com/fr-fr/67600f96-25d7-4dd9-946a-b46e1fc6a57f)   
- [My.Computer.Mouse.WheelExists, propriété](http://msdn.microsoft.com/fr-fr/332d44f7-0b66-4eaa-b4ce-d7f161bfbd07)   
- [Gestion des exceptions et des erreurs en Visual Basic](http://msdn.microsoft.com/fr-fr/3e351e73-cf23-40ab-8b60-05794160529e)
+## <a name="see-also"></a><span data-ttu-id="73695-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="73695-108">See Also</span></span>  
+ [<span data-ttu-id="73695-109">My.Computer.Mouse.WheelScrollLines, propriété</span><span class="sxs-lookup"><span data-stu-id="73695-109">My.Computer.Mouse.WheelScrollLines Property</span></span>](http://msdn.microsoft.com/en-us/67600f96-25d7-4dd9-946a-b46e1fc6a57f)  
+ [<span data-ttu-id="73695-110">My.Computer.Mouse.WheelExists, propriété</span><span class="sxs-lookup"><span data-stu-id="73695-110">My.Computer.Mouse.WheelExists Property</span></span>](http://msdn.microsoft.com/en-us/332d44f7-0b66-4eaa-b4ce-d7f161bfbd07)  
+ [<span data-ttu-id="73695-111">Exceptions et gestion des erreurs dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="73695-111">Exception and Error Handling in Visual Basic</span></span>](http://msdn.microsoft.com/en-us/3e351e73-cf23-40ab-8b60-05794160529e)

@@ -1,36 +1,39 @@
 ---
-title: "H&#233;bergement dans une application manag&#233;e | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Hébergement dans une application managée"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 30d531d436937bf5183ac0c28d59425ea71762e8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# H&#233;bergement dans une application manag&#233;e
-Les services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peuvent être hébergés dans toute application [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Les services auto\-hébergés constituent l'option d'hébergement la plus flexible parce qu'ils requièrent le déploiement de moins d'infrastructure. Toutefois, c'est également l'option d'hébergement la moins fiable, parce que les applications gérées ne fournissent pas les fonctionnalités d'hébergement et de gestion avancées offertes par d'autres solutions d'hébergement dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], comme les services IIS \(Internet Information Services\) et les services Windows.  
+# <a name="hosting-in-a-managed-application"></a><span data-ttu-id="8082f-102">Hébergement dans une application managée</span><span class="sxs-lookup"><span data-stu-id="8082f-102">Hosting in a Managed Application</span></span>
+<span data-ttu-id="8082f-103">Les services[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peuvent être hébergés dans toute application [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="8082f-103">[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services can be hosted in any [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] application.</span></span> <span data-ttu-id="8082f-104">Les services auto-hébergés constituent l'option d'hébergement la plus flexible parce qu'ils requièrent le déploiement de moins d'infrastructure.</span><span class="sxs-lookup"><span data-stu-id="8082f-104">Self-hosting services is the most flexible hosting option because it requires the least infrastructure to deploy.</span></span> <span data-ttu-id="8082f-105">Toutefois, c'est également l'option d'hébergement la moins fiable, parce que les applications gérées ne fournissent pas les fonctionnalités d'hébergement et de gestion avancées offertes par d'autres solutions d'hébergement dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], comme les services IIS (Internet Information Services) et les services Windows.</span><span class="sxs-lookup"><span data-stu-id="8082f-105">However, it is also the least robust hosting option, because managed applications do not provide the advanced hosting and management features of other hosting options in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], such as Internet Information Services (IIS) and Windows services.</span></span>  
   
- Pour créer un service auto\-hébergé, créez et ouvrez une instance d'objet <xref:System.ServiceModel.ServiceHost>, qui démarre un service d'écoute des messages.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Comment : héberger un service WCF dans une application managée](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).  
+ <span data-ttu-id="8082f-106">Pour créer un service auto-hébergé, créez et ouvrez une instance d'objet <xref:System.ServiceModel.ServiceHost>, qui démarre un service d'écoute des messages.</span><span class="sxs-lookup"><span data-stu-id="8082f-106">To create a self-hosted service, create and open an instance of the <xref:System.ServiceModel.ServiceHost>, which starts a service listening for messages.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="8082f-107">[Comment : héberger un Service WCF dans une Application managée](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).</span><span class="sxs-lookup"><span data-stu-id="8082f-107"> [How to: Host a WCF Service in a Managed Application](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md).</span></span>  
   
- Pour obtenir un exemple complet sur la définition et l’implémentation d’un contrat ainsi que sur l’hébergement d’un service dans une application managée, consultez [Didacticiel de mise en route](../../../../docs/framework/wcf/getting-started-tutorial.md) et [Self\-Host](../../../../docs/framework/wcf/samples/self-host.md).  
+ <span data-ttu-id="8082f-108">Pour obtenir un exemple complet sur la façon de définir un contrat, implémentez le contrat et héberger un service à l’intérieur d’une application managée, consultez le [Getting Started Tutorial](../../../../docs/framework/wcf/getting-started-tutorial.md) et [auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md).</span><span class="sxs-lookup"><span data-stu-id="8082f-108">For a complete example on how to define a contract, implement the contract, and host a service inside of a managed application see the [Getting Started Tutorial](../../../../docs/framework/wcf/getting-started-tutorial.md) and the [Self-Host](../../../../docs/framework/wcf/samples/self-host.md).</span></span>  
   
- Les sections suivantes décrivent des scénarios courants utilisant cette option d'hébergement.  
+ <span data-ttu-id="8082f-109">Les sections suivantes décrivent des scénarios courants utilisant cette option d'hébergement.</span><span class="sxs-lookup"><span data-stu-id="8082f-109">The following sections describe common scenarios that use this hosting option.</span></span>  
   
-## Applications console  
- Les scénarios courants autorisés par l'auto\-hébergement sont les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui s'exécutent à l'intérieur d'applications console. L'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'intérieur d'une application console est en général utile pendant la phase de développement du service. Cela simplifie son débogage, l'obtention des informations de suivi pour déterminer ce qui se passe à l'intérieur de l'application, et son déplacement en la copiant vers un nouvel emplacement.  
+## <a name="console-applications"></a><span data-ttu-id="8082f-110">Applications console</span><span class="sxs-lookup"><span data-stu-id="8082f-110">Console Applications</span></span>  
+ <span data-ttu-id="8082f-111">Les scénarios courants autorisés par l'auto-hébergement sont les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui s'exécutent à l'intérieur d'applications console.</span><span class="sxs-lookup"><span data-stu-id="8082f-111">Common scenarios that self-hosting enables are [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services running inside console applications.</span></span> <span data-ttu-id="8082f-112">L'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'intérieur d'une application console est en général utile pendant la phase de développement du service.</span><span class="sxs-lookup"><span data-stu-id="8082f-112">Hosting a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service inside a console application is typically useful during the development phase of the service.</span></span> <span data-ttu-id="8082f-113">Cela simplifie son débogage, l'obtention des informations de suivi pour déterminer ce qui se passe à l'intérieur de l'application, et son déplacement en la copiant vers un nouvel emplacement.</span><span class="sxs-lookup"><span data-stu-id="8082f-113">This makes them easy to debug, easy to get trace information from to find out what is happening inside of the application, and easy to move around by copying them to new locations.</span></span>  
   
-## Applications clientes complexes  
- Les autres scénarios courants autorisés par l'auto\-hébergement sont les applications clientes élaborées, comme [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] ou Windows Forms \(WinForms\). Cette option d'hébergement permet aux applications clientes complexes, comme [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] et WinForms, de communiquer facilement avec le monde extérieur. Il peut s'agit par exemple, d'un client de collaboration pair à pair qui utilise [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pour son interface utilisateur et héberge également un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui permet à d'autres clients de se connecter à lui et de partager des informations.  
+## <a name="rich-client-applications"></a><span data-ttu-id="8082f-114">Applications clientes complexes</span><span class="sxs-lookup"><span data-stu-id="8082f-114">Rich Client Applications</span></span>  
+ <span data-ttu-id="8082f-115">Les autres scénarios courants autorisés par l'auto-hébergement sont les applications clientes élaborées, comme [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] ou Windows Forms (WinForms).</span><span class="sxs-lookup"><span data-stu-id="8082f-115">Other common scenarios that self-hosting enables are rich client applications, such as those based on [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] or Windows Forms (WinForms).</span></span> <span data-ttu-id="8082f-116">Cette option d'hébergement permet aux applications clientes complexes, comme [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] et WinForms, de communiquer facilement avec le monde extérieur.</span><span class="sxs-lookup"><span data-stu-id="8082f-116">This hosting option also makes it easy for rich client applications, such as [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] and WinForms applications, to communicate with the outside world.</span></span> <span data-ttu-id="8082f-117">Il peut s'agit par exemple, d'un client de collaboration pair à pair qui utilise [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pour son interface utilisateur et héberge également un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui permet à d'autres clients de se connecter à lui et de partager des informations.</span><span class="sxs-lookup"><span data-stu-id="8082f-117">For example, a peer-to-peer collaboration client that uses [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] for its user interface and also hosts a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that allows other clients to connect to it and share information.</span></span>  
   
-## Voir aussi  
- [Hébergement de services](../../../../docs/framework/wcf/hosting-services.md)   
- [Didacticiel de mise en route](../../../../docs/framework/wcf/getting-started-tutorial.md)
+## <a name="see-also"></a><span data-ttu-id="8082f-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8082f-118">See Also</span></span>  
+ [<span data-ttu-id="8082f-119">Hébergement de services</span><span class="sxs-lookup"><span data-stu-id="8082f-119">Hosting Services</span></span>](../../../../docs/framework/wcf/hosting-services.md)  
+ [<span data-ttu-id="8082f-120">Didacticiel Bien démarrer</span><span class="sxs-lookup"><span data-stu-id="8082f-120">Getting Started Tutorial</span></span>](../../../../docs/framework/wcf/getting-started-tutorial.md)
