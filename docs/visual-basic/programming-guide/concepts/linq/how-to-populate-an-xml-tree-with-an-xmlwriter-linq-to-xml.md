@@ -1,38 +1,30 @@
 ---
-title: "Comment : remplir une arborescence XML avec un XmlWriter (LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Comment : remplir une arborescence XML avec un XmlWriter (LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5792a0eb-94ee-440d-b601-58cca8c0ee0b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dfd10ec04e7293d90929d6f629201868028819ad
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 548e931a120a319bbd45885e6d1b60685d983c01
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>Comment : remplir une arborescence XML avec un XmlWriter (LINQ to XML) (Visual Basic)
-Permet de remplir une arborescence XML consiste à utiliser <xref:System.Xml.Linq.XContainer.CreateWriter%2A>pour créer un <xref:System.Xml.XmlWriter>, puis écrire dans le <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter> </xref:System.Xml.XmlWriter> </xref:System.Xml.Linq.XContainer.CreateWriter%2A> L’arborescence XML est remplie avec tous les nœuds qui sont écrits dans le <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter>  
+L'une des manières de remplir une arborescence XML consiste à utiliser <xref:System.Xml.Linq.XContainer.CreateWriter%2A> pour créer un objet <xref:System.Xml.XmlWriter>, puis à écrire dans l'objet <xref:System.Xml.XmlWriter>. L'arborescence XML est remplie avec tous les nœuds écrits dans l'objet <xref:System.Xml.XmlWriter>.  
   
- Vous utiliserez généralement cette méthode lorsque vous utilisez [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] avec une autre classe qui s’attend à écrire dans un <xref:System.Xml.XmlWriter>, tel que <xref:System.Xml.Xsl.XslCompiledTransform>.</xref:System.Xml.Xsl.XslCompiledTransform> </xref:System.Xml.XmlWriter>  
+ Vous utiliserez généralement cette méthode lorsque vous utilisez [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] avec une autre classe qui s’attend à écrire dans un <xref:System.Xml.XmlWriter>, tel que <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
 ## <a name="example"></a>Exemple  
- Une utilisation possible de <xref:System.Xml.Linq.XContainer.CreateWriter%2A>est lors de l’appel d’une transformation XSLT.</xref:System.Xml.Linq.XContainer.CreateWriter%2A> Cet exemple crée une arborescence XML, crée un <xref:System.Xml.XmlReader>à partir de l’arborescence XML, crée un nouveau document, puis crée un <xref:System.Xml.XmlWriter>à écrire dans le nouveau document.</xref:System.Xml.XmlWriter> </xref:System.Xml.XmlReader> Il appelle ensuite la transformation XSLT, en passant <xref:System.Xml.XmlReader>et <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter> </xref:System.Xml.XmlReader> Une fois la transformation terminée avec succès, la nouvelle arborescence XML est remplie avec les résultats de la transformation.  
+ Une utilisation possible de <xref:System.Xml.Linq.XContainer.CreateWriter%2A> est lors de l'appel à une transformation XSLT. Cet exemple crée une arborescence XML, crée un objet <xref:System.Xml.XmlReader> à partir de l'arborescence XML, crée un nouveau document, puis crée un objet <xref:System.Xml.XmlWriter> pour écrire dans le nouveau document. Il appelle ensuite la transformation XSLT, en passant <xref:System.Xml.XmlReader> et <xref:System.Xml.XmlWriter>. Une fois la transformation terminée avec succès, la nouvelle arborescence XML est remplie avec les résultats de la transformation.  
   
 ```vb  
 Dim xslMarkup As XDocument = _  
@@ -80,7 +72,7 @@ Console.WriteLine(newTree)
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Linq.XContainer.CreateWriter%2A></xref:System.Xml.Linq.XContainer.CreateWriter%2A>   
- <xref:System.Xml.XmlWriter></xref:System.Xml.XmlWriter>   
- <xref:System.Xml.Xsl.XslCompiledTransform></xref:System.Xml.Xsl.XslCompiledTransform>   
+ <xref:System.Xml.Linq.XContainer.CreateWriter%2A>  
+ <xref:System.Xml.XmlWriter>  
+ <xref:System.Xml.Xsl.XslCompiledTransform>  
  [Création d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

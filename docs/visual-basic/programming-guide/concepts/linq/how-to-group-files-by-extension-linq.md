@@ -1,36 +1,28 @@
 ---
-title: "Comment : regrouper des fichiers par Extension (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : regrouper les fichiers par Extension (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f78785b4da3ae3b362603eea34d81207ed48a657
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 1e2d81f88371e63f64567422e87ed5b185e7a633
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Comment : regrouper des fichiers par Extension (LINQ) (Visual Basic)
-Cet exemple montre comment LINQ peut être utilisé pour effectuer avancées de regroupement et tri des opérations sur les listes de fichiers ou dossiers. Il montre également comment parcourir les résultats dans la fenêtre de console à l’aide de la <xref:System.Linq.Enumerable.Skip%2A>et <xref:System.Linq.Enumerable.Take%2A>méthodes.</xref:System.Linq.Enumerable.Take%2A> </xref:System.Linq.Enumerable.Skip%2A>  
+# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Comment : regrouper les fichiers par Extension (LINQ) (Visual Basic)
+Cet exemple montre comment utiliser LINQ pour effectuer des opérations de regroupement et de tri avancées sur des listes de fichiers ou de dossiers. Il montre également comment parcourir les résultats dans la fenêtre de console à l’aide des méthodes <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>.  
   
 ## <a name="example"></a>Exemple  
- La requête suivante montre comment regrouper le contenu d’une arborescence de répertoires spécifiée par l’extension de nom de fichier.  
+ La requête suivante montre comment regrouper le contenu d’une arborescence de répertoires spécifiée en fonction de l’extension de nom de fichier.  
   
 ```vb  
 Module GroupByExtension  
@@ -108,11 +100,11 @@ Module GroupByExtension
 End Module  
 ```  
   
- La sortie de ce programme peut être longue, selon les détails du système de fichiers local et la `startFolder` est définie sur. Pour activer l’affichage de tous les résultats, cet exemple montre comment parcourir les résultats. Les mêmes techniques sont applicables aux applications Windows et Web. Notez que, car le code organise les éléments dans un groupe, imbriqué `For Each` boucle est requise. Il existe également une logique supplémentaire pour calculer la position actuelle dans la liste et pour permettre aux utilisateurs d’arrêter la pagination et de quitter le programme. Dans ce cas particulier, la requête de pagination est exécutée à partir de la requête d’origine les résultats mis en cache. Dans d’autres contextes, tels que LINQ to SQL, ce type de mise en cache n’est pas nécessaire.  
+ La sortie de ce programme peut être longue, en fonction des détails du système de fichiers local et de la valeur de `startFolder`. Pour permettre l’affichage de tous les résultats, cet exemple montre comment parcourir les résultats. Les mêmes techniques sont applicables aux applications Windows et web. Notez qu’étant donné que le code organise les éléments dans un groupe, une boucle `For Each` imbriquée est nécessaire. Il existe également une logique supplémentaire pour calculer la position actuelle dans la liste et pour permettre aux utilisateurs d’arrêter la pagination et de quitter le programme. Dans ce cas particulier, la requête de pagination est exécutée par rapport aux résultats de la requête d’origine mis en cache. Dans d’autres contextes, tels que LINQ to SQL, ce type de mise en cache n’est pas nécessaire.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+ Créer un projet qui cible le .NET Framework version 3.5 ou ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

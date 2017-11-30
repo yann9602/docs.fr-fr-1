@@ -1,29 +1,25 @@
 ---
-title: "Comment : rechercher les Descendants avec un nom d’élément spécifique (Visual Basic) | Documents Microsoft"
+title: "Comment : rechercher les Descendants avec un nom d’élément spécifique (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 78915518-0d25-4051-ab55-929779989510
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 678622fe04ae971e7fed2cea182b21d895edaa1c
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 076a2d6707cf0f09945030cfe75814c195cdd6cd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>Comment : rechercher les Descendants avec un nom d’élément spécifique (Visual Basic)
-Parfois, vous souhaitez rechercher tous les descendants avec un nom particulier. Vous pouvez écrire du code pour itérer au sein de tous les descendants, mais il est plus facile d’utiliser la <xref:System.Xml.Linq.XContainer.Descendants%2A>axe.</xref:System.Xml.Linq.XContainer.Descendants%2A>  
+Parfois, vous souhaitez rechercher tous les descendants avec un nom particulier. Vous pourriez écrire du code pour itérer au sein de tous les descendants, mais il est plus facile d'utiliser l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant montre comment rechercher des descendants en fonction du nom d'élément.  
@@ -114,5 +110,5 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Linq.XContainer.Descendants%2A></xref:System.Xml.Linq.XContainer.Descendants%2A>   
+ <xref:System.Xml.Linq.XContainer.Descendants%2A>  
  [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

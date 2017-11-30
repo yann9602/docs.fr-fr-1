@@ -1,46 +1,38 @@
 ---
-title: "Comment : interroger le plus grand nombre ou les fichiers dans une arborescence de répertoires (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 8c1c9f0c-95dd-4222-9be2-9ec026a13e81
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 055cbdd5a5903417ab382d390e1215f0319c0b5a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: bcdb73006958188ef14949e37b04c2913c3fa0a7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>Comment : interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (Visual Basic)
-Cet exemple montre cinq requêtes liées à la taille du fichier en octets :  
+Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :  
   
 -   Comment récupérer la taille en octets du plus grand fichier.  
   
--   Comment récupérer la taille en octets du fichier plus petit.  
+-   Comment récupérer la taille en octets du plus petit fichier.  
   
--   Comment récupérer le <xref:System.IO.FileInfo>fichier maximale ou minimale d’objets à partir d’un ou plusieurs dossiers dans un dossier racine spécifié.</xref:System.IO.FileInfo>  
+-   Comment récupérer le plus grand ou le plus petit fichier de l’objet <xref:System.IO.FileInfo> dans un ou plusieurs dossiers situés dans le dossier racine spécifié.  
   
--   Comment récupérer une séquence, telles que les 10 fichiers les plus volumineux.  
+-   Comment récupérer une séquence, telle que les 10 fichiers les plus volumineux.  
   
--   Comment classer des fichiers par groupes selon leur taille en octets, en ignorant les fichiers qui sont inférieurs à une taille spécifiée.  
+-   Comment regrouper des fichiers selon leur taille en octets, en ignorant les fichiers qui sont inférieurs à une taille spécifiée.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant contient cinq requêtes distinctes qui montrent comment interroger et regrouper des fichiers selon leur taille en octets. Vous pouvez facilement modifier ces exemples pour baser la requête sur une autre propriété de la <xref:System.IO.FileInfo>objet.</xref:System.IO.FileInfo>  
+ L’exemple suivant contient cinq requêtes distinctes qui montrent comment interroger et regrouper des fichiers selon leur taille en octets. Vous pouvez facilement modifier ces exemples pour baser la requête sur une autre propriété de l’objet <xref:System.IO.FileInfo>.  
   
 ```vb  
 Module QueryBySize  
@@ -130,13 +122,13 @@ Module QueryBySize
 End Module  
 ```  
   
- Pour retourner un ou plusieurs Terminer <xref:System.IO.FileInfo>d’objets, la requête doit tout d’abord examiner chacun d’eux dans les données source, puis les trier par la valeur de leur propriété Length.</xref:System.IO.FileInfo> Elle peut ensuite retourner l’unique ou la séquence avec les longueurs de plus grandes. Utilisez <xref:System.Linq.Enumerable.First%2A>pour renvoyer le premier élément dans une liste.</xref:System.Linq.Enumerable.First%2A> Utilisez <xref:System.Linq.Enumerable.Take%2A>pour renvoyer les n premiers éléments.</xref:System.Linq.Enumerable.Take%2A> Spécifier un ordre de tri décroissant pour placer les plus petits éléments au début de la liste.  
+ Pour retourner un ou plusieurs objets <xref:System.IO.FileInfo> complets, la requête doit d’abord examiner chacun d’eux dans la source de données, puis les trier selon la valeur de leur propriété Length. Elle peut ensuite retourner l’objet ou la séquence d’objets avec les plus grandes valeurs de longueur. Utilisez <xref:System.Linq.Enumerable.First%2A> pour retourner le premier élément d’une liste. Utilisez <xref:System.Linq.Enumerable.Take%2A> pour retourner les n premiers éléments. Spécifiez un ordre de tri décroissant pour placer les plus petits éléments au début de la liste.  
   
- La requête appelle une méthode distincte pour obtenir la taille du fichier en octets afin de consommer l’exception qui sera levée dans le cas où un fichier a été supprimé sur un autre thread dans la période de temps depuis la <xref:System.IO.FileInfo>objet a été créé dans l’appel à `GetFiles`.</xref:System.IO.FileInfo> Même la <xref:System.IO.FileInfo>objet a déjà été créé, l’exception peut se produire car un <xref:System.IO.FileInfo>objet essaiera d’actualiser son <xref:System.IO.FileInfo.Length%2A>propriété à l’aide de la taille la plus actuelle en octets de la première fois que la propriété est accessible.</xref:System.IO.FileInfo.Length%2A> </xref:System.IO.FileInfo> </xref:System.IO.FileInfo> En plaçant cette opération dans un bloc try-catch à l’extérieur de la requête, vous respectez la règle consistant à éviter les opérations dans les requêtes qui peuvent provoquer des effets secondaires. En règle générale, précaution doit être prise lors de l’utilisation des exceptions, pour vous assurer qu’une application n’est pas conservée dans un état inconnu.  
+ La requête appelle une méthode distincte pour obtenir la taille du fichier en octets et ainsi permettre l’utilisation de l’exception éventuellement levée si un fichier a été supprimé sur un autre thread depuis la création de l’objet <xref:System.IO.FileInfo> dans l’appel à `GetFiles`. Même si l’objet <xref:System.IO.FileInfo> a déjà été créé, l’exception peut être levée, car un objet <xref:System.IO.FileInfo> essaiera d’actualiser sa propriété <xref:System.IO.FileInfo.Length%2A> en utilisant la taille en octets la plus récente lors du premier accès à la propriété. En plaçant cette opération dans un bloc try-catch en dehors de la requête, nous respectons la règle qui consiste à éviter les opérations dans les requêtes qui peuvent avoir des effets secondaires. En règle générale, il faut faire très attention lors de l’utilisation d’exceptions et s’assurer que l’application ne reste pas dans un état inconnu.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+ Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

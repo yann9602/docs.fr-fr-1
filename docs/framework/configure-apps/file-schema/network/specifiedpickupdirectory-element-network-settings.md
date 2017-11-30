@@ -1,69 +1,72 @@
 ---
-title: "&lt;specifiedPickupDirectory&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#specifiedPickupDirectory"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp/specifiedPickupDirectory"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<specifiedPickupDirectory> (élément)"
-  - "specifiedPickupDirectory (élément)"
+title: "&lt;specifiedPickupDirectory&gt; élément (paramètres réseau)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#specifiedPickupDirectory
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp/specifiedPickupDirectory
+helpviewer_keywords:
+- specifiedPickupDirectory element
+- <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
-caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: ffe34e6a811dd644b149a0fda12f1d1cd338c761
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;specifiedPickupDirectory&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau)
-Configure le répertoire local pour un serveur SMTP \(Simple Mail Transport Protocol\).  
+# <a name="ltspecifiedpickupdirectorygt-element-network-settings"></a>&lt;specifiedPickupDirectory&gt; élément (paramètres réseau)
+Configure le répertoire local pour un serveur SMTP Simple Mail Transport Protocol ().  
   
-## Syntaxe  
+ \<configuration>  
+\<System.NET >  
+\<mailSettings >  
+\<SMTP >  
+\<specifiedPickupDirectory >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
-      <specifiedPickupDirectory  
-  pickupDirectoryLocation="directory"   
+```xml  
+<specifiedPickupDirectory  
+  pickupDirectoryLocation="directory"   
 />  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`pickupDirectoryLocation`|Répertoire dans lequel les applications enregistrent des messages électroniques en vue d'un traitement ultérieur par le serveur SMTP.|  
+|---------------|-----------------|  
+|`pickupDirectoryLocation`|Le répertoire dans lequel enregistrent les applications de courrier électronique pour un traitement ultérieur par le serveur SMTP.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<smtp\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Configure les options d'envoi du courrier SMTP.|  
+|[\<SMTP >, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Configure les options d’envoi du courrier SMTP Simple Mail Transport Protocol ().|  
   
-## Notes  
- L'attribut `specifiedPickupDirectory` définit le répertoire dans lequel les applications enregistrent des messages électroniques que le serveur SMTP traitera.  
+## <a name="remarks"></a>Remarques  
+ Le `specifiedPickupDirectory` attribut définit le répertoire dans lequel les applications enregistrent les messages électroniques à traiter par le serveur SMTP.  
   
-## Exemple  
- L'exemple de code suivant indique c:\\maildrop comme répertoire de collecte du courrier.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant indique c:\maildrop comme répertoire de collecte de messagerie.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <mailSettings>  
@@ -77,8 +80,8 @@ Configure le répertoire local pour un serveur SMTP \(Simple Mail Transport Prot
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Net.Mail.SmtpClient?displayProperty=fullName>   
- <xref:System.Net.Configuration.SmtpSection?displayProperty=fullName>   
- <xref:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement?displayProperty=fullName>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>  
+ <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>  
+ <xref:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement?displayProperty=nameWithType>  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

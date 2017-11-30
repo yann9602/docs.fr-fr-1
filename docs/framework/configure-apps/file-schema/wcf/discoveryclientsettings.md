@@ -1,72 +1,77 @@
 ---
-title: "&lt;discoveryClientSettings&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;discoveryClientSettings&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 02e1b823-a8bb-4074-90d5-8599f71e8f9d
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bd2e9f3fd6d2cd0b99c6b63bc8ad0eefc9ff3e01
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;discoveryClientSettings&gt;
+# <a name="ltdiscoveryclientsettingsgt"></a>&lt;discoveryClientSettings&gt;
 Contient les paramètres requis par une application pour participer au processus de découverte de service en tant que client.  
   
-## Syntaxe  
+\<système. ServiceModel >  
+\<standardEndpoints >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <system.serviceModel>  
-    <standardEndpoints>  
-       <dynamicEndpoint>   
-          <standardEndpoint>  
-             <discoveryClientSettings discoveryEndpoint=”String” >  
-               <findCriteria duration=”TimeSpan”  
-                  maxResults=”Integer”   
-                  scopeMatchBy=”Uri” >  
-                  <contractTypeNames>  
-                     <add name="String" namespace="String" />  
-                  <contractTypeNames>  
-                  <extensions />  
-                  <scopes>  
-                    <add scope="URI"/>  
-                  </scopes>  
-               </findCriteria>  
-             </discoveryClientSettings>  
-          <standardEndpoint>  
-       </dynamicEndpoint>          
-    </standardEndpoints>  
+  <standardEndpoints>
+    <dynamicEndpoint>
+      <standardEndpoint>
+        <discoveryClientSettings discoveryEndpoint="String">
+          <findCriteria duration="TimeSpan" 
+                        maxResults="Integer" 
+                        scopeMatchBy="Uri">
+            <contractTypeNames>
+              <add name="String" namespace="String" />
+            <contractTypeNames>
+            <extensions />
+            <scopes>
+              <add scope="URI"/>
+            </scopes>
+          </findCriteria>
+        </discoveryClientSettings>
+      <standardEndpoint>
+    </dynamicEndpoint>
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
+|---------------|-----------------|  
 |discoveryEndpoint|Chaîne qui contient le nom du point de terminaison de découverte permettant à une application cliente de rechercher automatiquement un service détectable et de trouver son adresse au moment de l'exécution.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<standardEndpoints\>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte.  Les critères peuvent être regroupés en critères de recherche \(spécifiant les services recherchés\) et critères d'arrêt de la recherche \(durée de la recherche\).|  
+|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte. Critères peuvent être regroupés en critères de recherche (spécifiant les services que vous recherchez) et recherchez les critères d’arrêt (la durée pendant laquelle la recherche).|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<standardEndpoints\>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Définit un point de terminaison standard qui contient des informations pour permettre à une application de fonctionner en tant que programme client qui peut rechercher l'adresse du point de terminaison de manière dynamique au moment de l'exécution.|  
+|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Définit un point de terminaison standard qui contient des informations pour permettre à une application de fonctionner en tant que programme client qui peut rechercher l'adresse du point de terminaison de manière dynamique au moment de l'exécution.|  
   
-## Voir aussi  
- <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>  
  <xref:System.ServiceModel.Discovery.Configuration.DiscoveryClientSettingsElement>

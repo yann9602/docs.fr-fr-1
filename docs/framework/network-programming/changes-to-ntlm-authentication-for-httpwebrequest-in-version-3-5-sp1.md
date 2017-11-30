@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 8bf0b428-5a21-4299-8d6e-bf8251fd978a
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 24abe4d2cc9a540f134ea32dbd6a44a630ff5524
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e23ec35b94196d1f8a597d3a74850b5292a4ef09
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>Changements apportés à l’authentification NTLM pour HttpWebRequest dans la version 3.5 SP1
 Des changements de sécurité apportés au .NET Framework version 3.5 SP1 et ultérieures affectent la manière dont l’intégration de l’authentification Windows est gérée par <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Security.NegotiateStream> et les classes associées dans l’espace de noms System.Net. Ces changements peuvent affecter les applications qui utilisent ces classes pour effectuer des requêtes web et recevoir des réponses dans lesquelles l’authentification Windows intégrée en fonction de NTLM est utilisée. Ce changement peut avoir un impact sur les serveurs web et les applications clientes configurés pour utiliser l’authentification Windows intégrée.  
@@ -39,9 +33,9 @@ Des changements de sécurité apportés au .NET Framework version 3.5 SP1 et ul
   
  En cas de configuration pour des déploiements à grande échelle, il est également courant d’attribuer un nom de serveur virtuel unique au déploiement, sans que les noms d’ordinateurs sous-jacents ne soient jamais utilisés par les applications clientes et les utilisateurs finaux. Par exemple, vous pourriez appeler le serveur www.contoso.com, mais utiliser simplement « contoso » sur un réseau interne. Ce nom porte le nom d’en-tête d’hôte dans la requête web du client. Comme spécifié par le protocole HTTP, le champ d’en-tête de requête d’hôte spécifie le numéro de port et l’hôte Internet de la ressource demandée. Ces informations sont obtenues à partir de l’URI d’origine donné par l’utilisateur ou la ressource de référence (généralement une URL HTTP). Dans le .NET Framework version 4, ces informations peuvent aussi être définies par le client à l’aide de la nouvelle propriété <xref:System.Net.HttpWebRequest.Host%2A>.  
   
- La classe <xref:System.Net.AuthenticationManager> contrôle les composants d’authentification gérés (« modules ») qui sont utilisés par les classes dérivés <xref:System.Net.WebRequest> et la classe <xref:System.Net.WebClient>. La classe <xref:System.Net.AuthenticationManager> fournit une propriété qui expose un objet <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=fullName>, indexé par chaîne d’URI, pour que les applications puissent fournir une chaîne de nom de principal du service personnalisée à utiliser lors de l’authentification.  
+ La classe <xref:System.Net.AuthenticationManager> contrôle les composants d’authentification gérés (« modules ») qui sont utilisés par les classes dérivés <xref:System.Net.WebRequest> et la classe <xref:System.Net.WebClient>. La classe <xref:System.Net.AuthenticationManager> fournit une propriété qui expose un objet <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=nameWithType>, indexé par chaîne d’URI, pour que les applications puissent fournir une chaîne de nom de principal du service personnalisée à utiliser lors de l’authentification.  
   
- La version 3.5 SP1 spécifie désormais par défaut le nom d’hôte utilisé dans l’URL de requête dans le SPN lors de l’échange d’authentification NTLM (NT LAN Manager) quand la propriété <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> n’est pas définie. Le nom d’hôte utilisé dans l’URL de requête peut être différent de l’en-tête d’hôte spécifié dans <xref:System.Net.HttpRequestHeader?displayProperty=fullName> dans la requête du client. Le nom d’hôte utilisé dans l’URL de requête peut être différent du nom d’hôte réel du serveur, du nom d’ordinateur du serveur, de l’adresse IP de l’ordinateur ou de l’adresse de bouclage. Dans ce cas, Windows fait échouer la requête d’authentification. Pour résoudre ce problème, nous devons signaler à Windows que le nom d’hôte utilisé dans l’URL de requête dans la requête du client (par exemple « contoso ») est en fait un autre nom pour l’ordinateur local.  
+ La version 3.5 SP1 spécifie désormais par défaut le nom d’hôte utilisé dans l’URL de requête dans le SPN lors de l’échange d’authentification NTLM (NT LAN Manager) quand la propriété <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> n’est pas définie. Le nom d’hôte utilisé dans l’URL de requête peut être différent de l’en-tête d’hôte spécifié dans <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType> dans la requête du client. Le nom d’hôte utilisé dans l’URL de requête peut être différent du nom d’hôte réel du serveur, du nom d’ordinateur du serveur, de l’adresse IP de l’ordinateur ou de l’adresse de bouclage. Dans ce cas, Windows fait échouer la requête d’authentification. Pour résoudre ce problème, nous devons signaler à Windows que le nom d’hôte utilisé dans l’URL de requête dans la requête du client (par exemple « contoso ») est en fait un autre nom pour l’ordinateur local.  
   
  Il existe plusieurs manières pour une application serveur de contourner cette modification. L’approche recommandée consiste à mapper le nom d’hôte utilisé dans l’URL de requête à la clé `BackConnectionHostNames` dans le Registre sur le serveur. La clé de Registre `BackConnectionHostNames` sert normalement à mapper un nom d’hôte à une adresse de bouclage. Les étapes sont listées ci-dessous.  
   
@@ -66,7 +60,6 @@ Des changements de sécurité apportés au .NET Framework version 3.5 SP1 et ul
  Une solution de contournement moins sécurisée consiste à désactiver le contrôle de retour de boucle, comme décrit dans [http://support.microsoft.com/kb/896861](http://go.microsoft.com/fwlink/?LinkID=179657). Cette opération désactive la protection contre les attaques par réflexion. Il est donc préférable de limiter l’ensemble des autres noms aux seuls noms qui seront utilisés par l’ordinateur.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=fullName>   
- <xref:System.Net.HttpRequestHeader?displayProperty=fullName>   
- <xref:System.Net.HttpWebRequest.Host%2A?displayProperty=fullName>
-
+ <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=nameWithType>  
+ <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType>  
+ <xref:System.Net.HttpWebRequest.Host%2A?displayProperty=nameWithType>
