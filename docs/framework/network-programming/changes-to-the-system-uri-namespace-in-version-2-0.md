@@ -7,25 +7,19 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7ce81e348b3e5de285a3517d70b8bc477198d3e4
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 906abbcbd3ec00e76d8c183f61828fb5135d9154
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Modifications apportées à l’espace de noms System.Uri dans la Version 2.0
-Plusieurs modifications ont été apportées à la classe <xref:System.Uri?displayProperty=fullName>. Ces modifications éliminent un comportement incorrect, améliorent la convivialité et renforcent la sécurité.  
+Plusieurs modifications ont été apportées à la classe <xref:System.Uri?displayProperty=nameWithType>. Ces modifications éliminent un comportement incorrect, améliorent la convivialité et renforcent la sécurité.  
   
 ## <a name="obsolete-and-deprecated-members"></a>Membres obsolètes et dépréciés  
  Constructeurs :  
@@ -85,5 +79,4 @@ Plusieurs modifications ont été apportées à la classe <xref:System.Uri?displ
 -   La compression de chemin d’URI a été résolue afin qu’un URI rompu ne puisse pas parcourir le système de fichiers au-dessus de la racine.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Uri?displayProperty=fullName>
-
+ <xref:System.Uri?displayProperty=nameWithType>

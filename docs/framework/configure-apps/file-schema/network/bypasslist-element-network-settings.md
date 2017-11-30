@@ -1,77 +1,79 @@
 ---
-title: "&lt;bypasslist&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#bypasslist"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<bypasslist> (élément)"
-  - "bypasslist (élément)"
+title: "&lt;BypassList&gt; élément (paramètres réseau)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#bypasslist
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist
+helpviewer_keywords:
+- bypasslist element
+- <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-caps.latest.revision: 17
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 3d349f14535de806e0b130ef64b58333e63f1b86
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;bypasslist&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau)
-Fournit un jeu d'expressions régulières décrivant les adresses qui n'utilisent pas de proxy.  
+# <a name="ltbypasslistgt-element-network-settings"></a>&lt;BypassList&gt; élément (paramètres réseau)
+Fournit un ensemble d’expressions régulières décrivant les adresses qui n’utilisent pas un proxy.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.NET >  
+\<defaultProxy >  
+\<BypassList >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
-      <bypasslist>   
+```xml  
+<bypasslist>   
 </bypasslist>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
  Aucun  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[ajouter](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-bypasslist-network-settings.md)|Ajoute une adresse IP ou un nom DNS à la liste de contournement du proxy.|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-bypasslist-network-settings.md)|Efface la liste de contournement du proxy.|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-bypasslist-network-settings.md)|Supprime une adresse IP ou un nom DNS de la liste de contournement du proxy.|  
+|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-bypasslist-network-settings.md)|Ajoute une adresse IP ou le nom DNS à la liste de contournement du proxy.|  
+|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-bypasslist-network-settings.md)|Efface la liste de contournement.|  
+|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-bypasslist-network-settings.md)|Supprime une adresse IP ou le nom DNS de la liste de contournement du proxy.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP \(Hypertext Transfer Protocol\).|  
+|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
-## Notes  
- La liste de contournement du proxy contient des expressions régulières qui décrivent les URI auxquels les instances de <xref:System.Net.WebRequest> peuvent accéder directement, sans passer par le serveur proxy.  
+## <a name="remarks"></a>Remarques  
+ La liste d’exclusion contient des expressions régulières qui décrivent les URI qui <xref:System.Net.WebRequest> instances accèdent directement à la place de via le serveur proxy.  
   
- Vous devez être vigilant lorsque vous spécifiez une expression régulière pour cet élément.  L'expression régulière "\[un\-z\]\+\\.contoso\\.com" correspond à tout hôte dans le domaine contoso.com, mais elle correspond également à tout hôte dans le domaine contoso.com.cpandl.com.  Pour indiquer uniquement un hôte dans le domaine contoso.com, utilisez une ancre \("$"\): "\[a\-z\]\+\\.contoso\\.com$".  
+ Soyez prudent lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière « [a-z] +\\.contoso\\.com » correspond à tout hôte dans le domaine contoso.com, mais elle correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour faire correspondre uniquement sur un ordinateur hôte dans le domaine contoso.com, utilisez une ancre (« $») : « [a-z] +\\.contoso\\.com$ ».  
   
- Pour plus d'informations sur les expressions régulières, consultez .[Expressions régulières du .NET Framework](../../../../../docs/standard/base-types/regular-expressions.md).  
+ Pour plus d’informations sur les expressions régulières, consultez. [Expressions régulières .NET framework](../../../../../docs/standard/base-types/regular-expressions.md).  
   
-## Fichiers de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l'application ou dans le fichier de configuration machine \(Machine.config\).  
+## <a name="configuration-files"></a>Fichiers de configuration  
+ Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## Exemple  
- L'exemple de code suivant ajoute deux adresses à la liste de contournement du proxy.  La première contourne le proxy pour tous les serveurs du domaine contoso.com ; la deuxième contourne le proxy pour tous les serveurs dont l'adresse IP commence par 192.168.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant ajoute deux adresses à la liste d’exclusion. La première contourne le proxy pour tous les serveurs dans le domaine contoso.com ; la deuxième contourne le proxy pour tous les serveurs dont les adresses IP commencent par 192.168.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <defaultProxy>  
@@ -84,6 +86,6 @@ Fournit un jeu d'expressions régulières décrivant les adresses qui n'utilisen
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Net.WebProxy?displayProperty=fullName>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

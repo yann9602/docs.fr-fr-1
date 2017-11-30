@@ -1,43 +1,46 @@
 ---
-title: "MSMQ Activation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: MSMQ Activation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 99fa5a5b76b90a6c16fa2bbd8ee11e91d77d47a5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# MSMQ Activation
-Cet exemple illustre comment héberger des applications dans le service d'activation des processus Windows \(WAS, Windows Process Activation Service\), qui sont lues à partir d'une file d'attente de messages.  Cet exemple, qui utilise la liaison `netMsmqBinding`, est basé sur l'exemple [Two\-Way Communication](../../../../docs/framework/wcf/samples/two-way-communication.md).  Dans cet exemple, le service est une application hébergée par le Web et le client est auto\-hébergé. Les résultats, qui s'affichent sur la console, permettent d'observer le statut des bons de commande envoyés.  
+# <a name="msmq-activation"></a>MSMQ Activation
+Cet exemple illustre comment héberger des applications dans le service d'activation des processus Windows (WAS, Windows Process Activation Service), qui sont lues à partir d'une file d'attente de messages. Cet exemple utilise le `netMsmqBinding` et est basé sur le [bidirectionnel Communication](../../../../docs/framework/wcf/samples/two-way-communication.md) exemple. Dans cet exemple, le service est une application hébergée par le Web et le client est auto-hébergé. Les résultats, qui s'affichent sur la console, permettent d'observer le statut des bons de commande envoyés.  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
 > [!NOTE]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  \<LecteurInstall\>:\\WF\_WCF\_Samples  
+>  \<Lecteurinstall > : \WF_WCF_Samples  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf](../../../../includes/wf-md.md)] pour [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] afin de télécharger tous les exemples [!INCLUDE[wf1](../../../../includes/wf1-md.md)] et [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] lien hypertexte « http://go.microsoft.com/fwlink/?LinkId=150780 » \t « _blank » et [!INCLUDE[wf](../../../../includes/wf-md.md)] exemples pour [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] pour télécharger tous les [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
 >   
->  \<LecteurInstall\>:\\Samples\\WCFWFCardSpace\\WCF\\Basic\\Services\\Hosting\\WASHost\\MsmqActivation.  
+>  \<Lecteurinstall > : \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
   
- Le service WAS, c'est\-à\-dire le nouveau mécanisme d'activation des processus pour [!INCLUDE[lserver](../../../../includes/lserver-md.md)], offre des fonctionnalités IIS désormais disponibles avec des applications non HTTP \(auparavant disponibles uniquement avec des applications HTTP\).  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise l'interface d'adaptateur d'écouteur pour communiquer les demandes d'activation qui sont reçues sur les protocoles non HTTP pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], tels que TCP, les canaux nommés et Message Queuing.  Les fonctionnalités de réception des demandes sur les protocoles non\-HTTP sont hébergées par les services Windows managés qui s'exécutent dans SMSvcHost.exe.  
+ Le service WAS, c'est-à-dire le nouveau mécanisme d'activation des processus pour [!INCLUDE[lserver](../../../../includes/lserver-md.md)], offre des fonctionnalités IIS désormais disponibles avec des applications non HTTP (auparavant disponibles uniquement avec des applications HTTP). [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise l'interface d'adaptateur d'écouteur pour communiquer les demandes d'activation qui sont reçues sur les protocoles non HTTP pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], tels que TCP, les canaux nommés et Message Queuing. Les fonctionnalités de réception des demandes sur les protocoles non-HTTP sont hébergées par les services Windows managés qui s'exécutent dans SMSvcHost.exe.  
   
- Le service d'adaptateur \(NetMsmqActivator\) de l'écouteur Net.Msmq active les applications en file d'attente en fonction des messages figurant dans cette file.  
+ Le service d'adaptateur (NetMsmqActivator) de l'écouteur Net.Msmq active les applications en file d'attente en fonction des messages figurant dans cette file.  
   
- Le client envoie des bons de commande au service dans les limites de l'étendue d'une transaction.  Le service traite les bons de commande qu'il reçoit via cette transaction.  Le service rappelle ensuite le client en utilisant l'état des bons de commande.  Pour faciliter la communication bidirectionnelle, le client et service utilisent tous deux des files d'attente pour y placer les bons de commande et leur état.  
+ Le client envoie des bons de commande au service dans les limites de l'étendue d'une transaction. Le service traite les bons de commande qu'il reçoit via cette transaction. Le service rappelle ensuite le client en utilisant l'état des bons de commande. Pour faciliter la communication bidirectionnelle, le client et service utilisent tous deux des files d'attente pour y placer les bons de commande et leur état.  
   
- Le contrat de service `IOrderProcessor` définit des opérations de service unidirectionnelles compatibles avec les files d'attente.  L'opération de service utilise le point de terminaison de réponse pour envoyer les états de bon de commande au client.  L'adresse du point de terminaison de réponse correspond à l'URI de la file d'attente utilisée pour renvoyer l'état des bons de commande au client.  L'application de traitement des bons de commande implémente ce contrat.  
+ Le contrat de service `IOrderProcessor` définit des opérations de service unidirectionnelles compatibles avec les files d'attente. L'opération de service utilise le point de terminaison de réponse pour envoyer les états de bon de commande au client. L'adresse du point de terminaison de réponse correspond à l'URI de la file d'attente utilisée pour renvoyer l'état des bons de commande au client. L'application de traitement des bons de commande implémente ce contrat.  
   
 ```csharp  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -47,10 +50,9 @@ public interface IOrderProcessor
     void SubmitPurchaseOrder(PurchaseOrder po,   
                                            string reportOrderStatusTo);  
 }  
-  
 ```  
   
- Le contrat de réponse auquel envoyer l'état des bons de commande est spécifié par le client.  Le client implémente le contrat d'état des bons de commande.  Le service utilise le client généré de ce contrat pour renvoyer l'état des bons de commande au client.  
+ Le contrat de réponse auquel envoyer l'état des bons de commande est spécifié par le client. Le client implémente le contrat d'état des bons de commande. Le service utilise le client généré de ce contrat pour renvoyer l'état des bons de commande au client.  
   
 ```csharp  
 [ServiceContract]  
@@ -59,10 +61,9 @@ public interface IOrderStatus
     [OperationContract(IsOneWay = true)]  
     void OrderStatus(string poNumber, string status);  
 }  
-  
 ```  
   
- L'opération de service traite le bon de commande envoyé.  L'attribut <xref:System.ServiceModel.OperationBehaviorAttribute> est appliqué à l'opération de service pour indiquer l'inscription automatique dans la transaction utilisée pour recevoir les messages depuis la file d'attente ainsi que pour spécifier l'arrivée à échéance automatique de cette transaction au terme de l'opération de service.  La classe `Orders` encapsule la fonctionnalité de traitement des bons de commande.  Dans cet exemple, elle ajoute les bons de commande à un dictionnaire.  Les opérations peuvent accéder à la transaction à laquelle l'opération de service s'est inscrite depuis la classe `Orders`.  
+ L'opération de service traite le bon de commande envoyé. L'attribut <xref:System.ServiceModel.OperationBehaviorAttribute> est appliqué à l'opération de service pour indiquer l'inscription automatique dans la transaction utilisée pour recevoir les messages depuis la file d'attente ainsi que pour spécifier l'arrivée à échéance automatique de cette transaction au terme de l'opération de service. La classe `Orders` encapsule la fonctionnalité de traitement des bons de commande. Dans cet exemple, elle ajoute les bons de commande à un dictionnaire. Les opérations peuvent accéder à la transaction à laquelle l'opération de service s'est inscrite depuis la classe `Orders`.  
   
  L'opération de service, outre traiter des bons de commande envoyés, envoie une réponse au client l'informant de l'état des commandes.  
   
@@ -86,15 +87,14 @@ public class OrderProcessorService : IOrderProcessor
             scope.Complete();  
         }  
     }  
-  
 ```  
   
  La liaison du client à utiliser est spécifiée à l'aide d'un fichier de configuration.  
   
- Le nom de la file d'attente MSMQ est spécifié dans la section appSettings de ce fichier de configuration.  Le point de terminaison du service est défini dans la section System.ServiceModel de ce même fichier.  
+ Le nom de la file d'attente MSMQ est spécifié dans la section appSettings de ce fichier de configuration. Le point de terminaison du service est défini dans la section System.ServiceModel de ce même fichier.  
   
 > [!NOTE]
->  Le nom de la file d'attente MSMQ et l'adresse du point de terminaison utilisent des conventions d'adressage légèrement différentes.  Le nom de la file d'attente MSMQ utilise un point \(.\) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès.  L'adresse du point de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spécifie un schéma net.msmq:, utilise « localhost » pour l'ordinateur local et des barres obliques dans son chemin d'accès.  Pour lire une file d'attente hébergée sur un ordinateur distant, remplacez « . » et « localhost » par le nom de cet ordinateur.  
+>  Le nom de la file d'attente MSMQ et l'adresse du point de terminaison utilisent des conventions d'adressage légèrement différentes. Le nom de la file d'attente MSMQ utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L'adresse du point de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spécifie un schéma net.msmq:, utilise « localhost » pour l'ordinateur local et des barres obliques dans son chemin d'accès. Pour lire une file d'attente hébergée sur un ordinateur distant, remplacez « . » et « localhost » par le nom de cet ordinateur.  
   
  Un fichier .svc comportant le nom de la classe est utilisé pour héberger le code de service dans WAS.  
   
@@ -102,7 +102,6 @@ public class OrderProcessorService : IOrderProcessor
   
 ```xml  
 <%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>  
-  
 ```  
   
  Ce fichier contient également une directive d'assembly permettant de vérifier que System.Transactions.dll est chargé.  
@@ -111,7 +110,7 @@ public class OrderProcessorService : IOrderProcessor
 <%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>  
 ```  
   
- Le client crée une étendue de transaction.  La communication avec le service s'effectuant dans les limites de l'étendue de la transaction, elle est considérée comme une unité atomique dans laquelle l'intégralité des messages réussissent ou échouent.  La transaction est validée par l'appel de la méthode `Complete` sur l'étendue de la transaction.  
+ Le client crée une étendue de transaction. La communication avec le service s'effectuant dans les limites de l'étendue de la transaction, elle est considérée comme une unité atomique dans laquelle l'intégralité des messages réussissent ou échouent. La transaction est validée par l'appel de la méthode `Complete` sur l'étendue de la transaction.  
   
 ```csharp  
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))  
@@ -164,10 +163,9 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))
     // Close the ServiceHostBase to shutdown the service.  
     serviceHost.Close();  
     }  
-  
 ```  
   
- Le code du client implémente le contrat `IOrderStatus` pour pouvoir recevoir l'état des bons de commande depuis le service.  Dans ce cas, le code imprime l'état des bons de commande.  
+ Le code du client implémente le contrat `IOrderStatus` pour pouvoir recevoir l'état des bons de commande depuis le service. Dans ce cas, le code imprime l'état des bons de commande.  
   
 ```csharp  
 [ServiceBehavior]  
@@ -183,7 +181,7 @@ public class OrderStatusService : IOrderStatus
 }  
 ```  
   
- La file d'attente de l'état des bons de commande est créée dans la méthode `Main`.  La configuration du client intègre la configuration du service de l'état des bons de commande pour héberger le service de l'état des bons de commande, comme illustré dans l'exemple de configuration suivant.  
+ La file d'attente de l'état des bons de commande est créée dans la méthode `Main`. La configuration du client intègre la configuration du service de l'état des bons de commande pour héberger le service de l'état des bons de commande, comme illustré dans l'exemple de configuration suivant.  
   
 ```csharp  
 <appSettings>  
@@ -213,60 +211,58 @@ public class OrderStatusService : IOrderStatus
     </client>  
   
   </system.serviceModel>  
-  
 ```  
   
- Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent sur leur console respective.  Sur ces consoles, vous pouvez voir le serveur recevoir des messages du client.  Appuyez sur le bouton ENTER de chaque console pour fermer le serveur et le client.  
+ Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent sur leur console respective. Sur ces consoles, vous pouvez voir le serveur recevoir des messages du client. Appuyez sur le bouton ENTER de chaque console pour fermer le serveur et le client.  
   
  Le client affiche les informations d'état des bons de commande envoyées par le serveur :  
   
 ```Output  
-  
-Appuyez sur <Entrée> pour arrêter le client.  Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending    
+Press <ENTER> to terminate client.  
+Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending  
 ```  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
 1.  Vérifiez qu'[!INCLUDE[iisver](../../../../includes/iisver-md.md)] est installé, car il est obligatoire pour l'activation WAS.  
   
-2.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  En outre, vous devez installer les composants d'activation [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] non HTTP :  
+2.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). En outre, vous devez installer les composants d'activation [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] non HTTP :  
   
-    1.  Dans le menu **Démarrer**, cliquez sur **Panneau de configuration**.  
+    1.  À partir de la **Démarrer** menu, choisissez **le panneau de configuration**.  
   
-    2.  Sélectionnez **Programmes et fonctionnalités**.  
+    2.  Sélectionnez **programmes et fonctionnalités**.  
   
-    3.  Cliquez sur **Activer ou désactiver des fonctionnalités Windows**.  
+    3.  Cliquez sur **activer ou désactiver des fonctionnalités Windows**.  
   
-    4.  Sous **Résumé de fonctionnalités**, cliquez sur **Ajouter des fonctionnalités**.  
+    4.  Sous **résumé des fonctionnalités**, cliquez sur **ajouter des fonctionnalités**.  
   
-    5.  Développez le nœud **Microsoft .NET Framework 3.0** et sélectionnez la fonctionnalité d'activation non HTTP de Windows Communication Foundation.  
+    5.  Développez le **Microsoft .NET Framework 3.0** nœud et cocher la **Activation Non-HTTP de Windows Communication Foundation** fonctionnalité.  
   
-3.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Exécutez le client en exécutant client.exe depuis une fenêtre de commande.  Cette exécution génère la file d'attente et envoie un message à celle\-ci.  Laissez le client s'exécuter pour connaître le résultat de la lecture de ce message par le service.  
+4.  Exécutez le client en exécutant client.exe depuis une fenêtre de commande. Cette exécution génère la file d'attente et envoie un message à celle-ci. Laissez le client s'exécuter pour connaître le résultat de la lecture de ce message par le service.  
   
-5.  Le service d'activation MSMQ s'exécute comme service réseau par défaut.  Par conséquent, la file d'attente utilisée pour activer l'application doit recevoir et lire les autorisations pour le service réseau.  Cette spécification peut être ajoutée à l'aide de Message Queuing et de la console MMC :  
+5.  Le service d'activation MSMQ s'exécute comme service réseau par défaut. Par conséquent, la file d'attente utilisée pour activer l'application doit recevoir et lire les autorisations pour le service réseau. Cette spécification peut être ajoutée à l'aide de Message Queuing et de la console MMC :  
   
-    1.  Dans le menu **Démarrer**, cliquez sur **Exécuter**, tapez `Compmgmt.msc`, puis appuyez sur ENTRÉE.  
+    1.  À partir de la **Démarrer** menu, cliquez sur **exécuter**, puis tapez `Compmgmt.msc` et appuyez sur ENTRÉE.  
   
-    2.  Sous **Services et applications**, développez **Message Queuing**.  
+    2.  Sous **Services et Applications**, développez **Message Queuing**.  
   
-    3.  Cliquez sur **Files d'attente privées**.  
+    3.  Cliquez sur **files d’attente privées**.  
   
-    4.  Cliquez avec le bouton droit de la souris sur la file d'attente \(servicemodelsamples\/Service.svc\), puis sélectionnez **Propriétés**.  
+    4.  Avec le bouton droit de la file d’attente (servicemodelsamples/service.svc) et choisissez **propriétés**.  
   
-    5.  Sous l'onglet **Sécurité**, cliquez sur **Ajouter**, puis attribuez les autorisations de lecture et de réception au service réseau.  
+    5.  Sur le **sécurité** , cliquez sur **ajouter** et donnez à lire et reçoivent des autorisations pour le Service réseau.  
   
 6.  Configurez le service d'activation des processus Windows de sorte à assurer la prise en charge de l'activation MSMQ.  
   
      Pour des raisons pratiques, les étapes suivantes sont implémentées dans le fichier de commandes AddMsmqSiteBinding.cmd se trouvant dans le répertoire de l'exemple.  
   
-    1.  Pour assurer la prise en charge de l'activation de net.msmq, le site Web par défaut doit d'abord être lié au protocole net.msmq.  Cela peut être fait à l'aide d'appcmd.exe, installé avec l'ensemble d'outils de gestion d'[!INCLUDE[iisver](../../../../includes/iisver-md.md)].  À partir d'une invite de commandes avec élévation de privilèges \(administrateur\), exécutez la commande suivante.  
+    1.  Pour assurer la prise en charge de l'activation de net.msmq, le site Web par défaut doit d'abord être lié au protocole net.msmq. Cela peut être fait à l'aide d'appcmd.exe, installé avec l'ensemble d'outils de gestion d'[!INCLUDE[iisver](../../../../includes/iisver-md.md)]. À partir d'une invite de commandes avec élévation de privilèges (administrateur), exécutez la commande suivante.  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
         -+bindings.[protocol='net.msmq',bindingInformation='localhost']  
-  
         ```  
   
         > [!NOTE]
@@ -274,21 +270,20 @@ Appuyez sur <Entrée> pour arrêter le client.  Status of order 70cf9d63-3dfa-4e
   
          Cette commande ajoute une liaison de site net.msmq au site Web par défaut.  
   
-    2.  Bien que toutes les applications d'un site partagent la même liaison net.msmq, chacune d'elles peut activer de manière individuelle la prise en charge de net.msmq.  Pour activer net.msmq pour l'application \/servicemodelsamples, exécutez la commande suivante à partir d'une invite de commandes avec élévation de privilèges.  
+    2.  Bien que toutes les applications d'un site partagent la même liaison net.msmq, chacune d'elles peut activer de manière individuelle la prise en charge de net.msmq. Pour activer net.msmq pour l'application /servicemodelsamples, exécutez la commande suivante à partir d'une invite de commandes avec élévation de privilèges.  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.msmq  
-  
         ```  
   
         > [!NOTE]
         >  Cette commande est une ligne unique de texte.  
   
-         Cette commande permet d'accéder à l'application \/servicemodelsamples à la fois via http:\/\/localhost\/servicemodelsamples et via net.msmq:\/\/localhost\/servicemodelsamples.  
+         Cette commande permet d'accéder à l'application /servicemodelsamples à la fois via http://localhost/servicemodelsamples et via net.msmq://localhost/servicemodelsamples.  
   
-7.  Si vous ne l'avez pas fait précédemment, assurez\-vous que le service d'activation MSMQ est activé.  Dans le menu **Démarrer**, cliquez sur **Exécuter**, puis tapez  `Services.msc`.  Recherchez l'**adaptateur d'écouteur Net.Msmq** dans la liste de services.  Cliquez avec le bouton droit, puis sélectionnez **Propriétés**.  Affectez au **Type de démarrage** la valeur **Automatique**, cliquez sur **Appliquer**, puis sur **Démarrer**.  Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.  
+7.  Si vous ne l'avez pas fait précédemment, assurez-vous que le service d'activation MSMQ est activé. À partir de la **Démarrer** menu, cliquez sur **exécuter**et le type `Services.msc`. Recherche dans la liste des services pour le **adaptateur d’écouteur Net.Msmq**. Avec le bouton droit et sélectionnez **propriétés**. Définir le **Type de démarrage** à **automatique**, cliquez sur **appliquer** et cliquez sur le **Démarrer** bouton. Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.  
   
-8.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  En outre, modifiez le code du client qui envoie le bon de commande en fonction du nom de l'ordinateur figurant dans l'URI de la file d'attente lors de l'envoi de ce bon.  Utilisez le code suivant :  
+8.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). En outre, modifiez le code du client qui envoie le bon de commande en fonction du nom de l'ordinateur figurant dans l'URI de la file d'attente lors de l'envoi de ce bon. Utilisez le code suivant :  
   
     ```  
     client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");  
@@ -302,7 +297,6 @@ Appuyez sur <Entrée> pour arrêter le client.  Status of order 70cf9d63-3dfa-4e
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http  
-  
         ```  
   
         > [!NOTE]
@@ -312,7 +306,6 @@ Appuyez sur <Entrée> pour arrêter le client.  Status of order 70cf9d63-3dfa-4e
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" --bindings.[protocol='net.msmq',bindingInformation='localhost']  
-  
         ```  
   
         > [!NOTE]
@@ -321,9 +314,9 @@ Appuyez sur <Entrée> pour arrêter le client.  Status of order 70cf9d63-3dfa-4e
     > [!WARNING]
     >  L'exécution du fichier de commandes réinitialise le DefaultAppPool de sorte qu'il s'exécute en utilisant .NET Framework version 2.0.  
   
- Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut.  Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport.  Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`.  Pour que MSMQ fournisse la fonctionnalité d'authentification et de signature, il doit faire partie d'un domaine.  Si vous exécutez cet exemple sur un ordinateur ne faisant pas partie d'un domaine, vous obtenez l'erreur suivante : « Le certificat Message Queuing interne pour l'utilisateur n'existe pas ».  
+ Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut. Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport. Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d'authentification et de signature, il doit faire partie d'un domaine. Si vous exécutez cet exemple sur un ordinateur ne faisant pas partie d'un domaine, vous obtenez l'erreur suivante : « Le certificat Message Queuing interne pour l'utilisateur n'existe pas ».  
   
-### Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail  
   
 1.  Si votre ordinateur ne fait pas partie d'un domaine, désactivez la sécurité du transport en affectant au mode d'authentification et au niveau de protection la valeur None, tel qu'indiqué dans l'exemple de configuration suivant.  
   
@@ -335,21 +328,20 @@ Appuyez sur <Entrée> pour arrêter le client.  Status of order 70cf9d63-3dfa-4e
             </binding>  
         </netMsmqBinding>  
     </bindings>  
-  
     ```  
   
 2.  Modifiez la configuration du serveur et du client avant d'exécuter l'exemple.  
   
     > [!NOTE]
-    >  L'affectation de `None` à `security mode` revient à affecter `None` aux modes de sécurité `MsmqAuthenticationMode`, `MsmqProtectionLevel` et `Message`.  
+    >  L'affectation de `security mode` à `None` revient à affecter `MsmqAuthenticationMode` aux modes de sécurité `MsmqProtectionLevel`, `Message` et `None`.  
   
-3.  Pour permettre l'activation sur un ordinateur associé à un groupe de travail, le service d'activation et le processus de travail doivent tous deux être exécutés sous un compte d'utilisateur spécifique \(compte identique pour les deux\) et les listes ACL correspondant à ce compte doivent figurer dans la file d'attente.  
+3.  Pour permettre l'activation sur un ordinateur associé à un groupe de travail, le service d'activation et le processus de travail doivent tous deux être exécutés sous un compte d'utilisateur spécifique (compte identique pour les deux) et les listes ACL correspondant à ce compte doivent figurer dans la file d'attente.  
   
      Pour modifier l'identité sous laquelle s'exécute le processus de travail :  
   
     1.  Exécutez Inetmgr.exe.  
   
-    2.  Sous **Pools d'applications**, cliquez avec le bouton droit de la souris sur **AppPool** \(en général **DefaultAppPool**\), puis choisissez **Définir les valeurs par défaut des pools d'applications**.  
+    2.  Sous **Pools d’applications**, avec le bouton droit le **AppPool** (généralement **DefaultAppPool**) et choisissez **définir par défaut de Pool d’applications...** .  
   
     3.  Modifiez les propriétés Identity en fonction du compte d'utilisateur à utiliser.  
   
@@ -357,15 +349,15 @@ Appuyez sur <Entrée> pour arrêter le client.  Status of order 70cf9d63-3dfa-4e
   
     1.  Exécutez Services.msc.  
   
-    2.  Cliquez avec le bouton droit de la souris sur **Net.MsmqListener Adapter**, puis choisissez **Propriétés**.  
+    2.  Cliquez sur le **Net.MsmqListener Adapter**, puis choisissez **propriétés**.  
   
-4.  Modifiez le compte figurant dans l'onglet **Ouverture de session**.  
+4.  Modifier le compte dans le **ouverture de session** onglet.  
   
-5.  Au niveau des groupes de travail, le service doit également s'exécuter à l'aide d'un jeton non restreint.  Pour ce faire, utilisez la ligne suivante dans une fenêtre de commande :  
+5.  Au niveau des groupes de travail, le service doit également s'exécuter à l'aide d'un jeton non restreint. Pour ce faire, utilisez la ligne suivante dans une fenêtre de commande :  
   
     ```  
     sc sidtype netmsmqactivator unrestricted  
     ```  
   
-## Voir aussi  
- [Exemples d'hébergement et de persistance AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>Voir aussi  
+ [Hébergement de AppFabric et exemples de persistance](http://go.microsoft.com/fwlink/?LinkId=193961)

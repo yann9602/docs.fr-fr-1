@@ -1,29 +1,32 @@
 ---
-title: "Corr&#233;lation duplex durable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Corrélation duplex durable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fc7a6655467fccf924783fea9110bdaf1b788675
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Corr&#233;lation duplex durable
-La corrélation duplex durable, également appelée corrélation de rappel, est utile lorsqu'un service de workflow a besoin d'envoyer un rappel à l'appelant initial.Contrairement au duplex WCF, le rappel peut arriver à n'importe quel moment du futur et n'est pas lié au même canal ni à la durée de vie du canal ; la seule condition est que l'appelant ait un point de terminaison actif qui écoute le message de rappel.Cela permet à deux services de workflow de communiquer dans une conversation de longue durée.Cette rubrique présente une vue d'ensemble de la corrélation duplex durable.  
+# <a name="durable-duplex-correlation"></a>Corrélation duplex durable
+La corrélation duplex durable, également appelée corrélation de rappel, est utile lorsqu’un service de workflow a besoin d’envoyer un rappel à l’appelant initial. Contrairement au duplex WCF, le rappel peut arriver à n'importe quel moment du futur et n'est pas lié au même canal ni à la durée de vie du canal ; la seule condition est que l'appelant ait un point de terminaison actif qui écoute le message de rappel. Cela permet à deux services de workflow de communiquer dans une conversation de longue durée. Cette rubrique présente une vue d'ensemble de la corrélation duplex durable.  
   
-## Utilisation de la corrélation duplex durable  
- Pour utiliser la corrélation duplex durable, les deux services doivent utiliser une liaison contextuelle qui prend en charge les opérations bidirectionnelles, telle que <xref:System.ServiceModel.NetTcpContextBinding> ou <xref:System.ServiceModel.WSHttpContextBinding>.Le service d'appel enregistre une propriété <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> avec la liaison souhaitée sur son <xref:System.ServiceModel.Endpoint> client.Le service de réception reçoit ces données dans l'appel initial, puis les utilise sur son propre <xref:System.ServiceModel.Endpoint> dans l'activité <xref:System.ServiceModel.Activities.Send> qui effectue le rappel vers le service d'appel.Dans cet exemple, deux services communiquent entre eux.Le premier service appelle une méthode sur le deuxième service, puis attend une réponse.Le deuxième service connait le nom de la méthode de rappel, mais le point de terminaison du service qui implémente cette méthode n'est pas connu au moment de la conception.  
+## <a name="using-durable-duplex-correlation"></a>Utilisation de la corrélation duplex durable  
+ Pour utiliser la corrélation duplex durable, les deux services doivent utiliser une liaison contextuelle qui prend en charge les opérations bidirectionnelles, telle que <xref:System.ServiceModel.NetTcpContextBinding> ou <xref:System.ServiceModel.WSHttpContextBinding>. Le service d'appel enregistre une propriété <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> avec la liaison souhaitée sur son <xref:System.ServiceModel.Endpoint> client. Le service de réception reçoit ces données dans l'appel initial, puis les utilise sur son propre <xref:System.ServiceModel.Endpoint> dans l'activité <xref:System.ServiceModel.Activities.Send> qui effectue le rappel vers le service d'appel. Dans cet exemple, deux services communiquent entre eux. Le premier service appelle une méthode sur le deuxième service, puis attend une réponse. Le deuxième service connait le nom de la méthode de rappel, mais le point de terminaison du service qui implémente cette méthode n'est pas connu au moment de la conception.  
   
 > [!NOTE]
->  La corrélation duplex durable peut être utilisée uniquement lorsque le <xref:System.ServiceModel.Channels.AddressingVersion> du point de terminaison est configuré avec <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>.Faute de cela, une exception <xref:System.InvalidOperation> est levée avec le message suivant : « Le message contient un en\-tête de contexte de rappel avec une référence de point de terminaison pour le AddressingVersion 'Addressing200408 \(http:\/\/schemas.xmlsoap.org\/ws\/2004\/08\/addressing\)'.Le contexte de rappel ne peut être transmis que lorsque AddressingVersion est configuré avec 'WSAddressing10'. ».  
+>  La corrélation duplex durable peut être utilisée uniquement lorsque le <xref:System.ServiceModel.Channels.AddressingVersion> du point de terminaison est configuré avec <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>. Si elle n’est pas, alors un <xref:System.InvalidOperationException> exception est levée avec le message suivant : « le message contient un en-tête de contexte de rappel avec une référence de point de terminaison pour le AddressingVersion ' Addressing200408 (lien hypertexte « http://schemas.xmlsoap.org/ws/2004/08/ adressage « http://schemas.xmlsoap.org/ws/2004/08/addressing)'. Le contexte de rappel ne peut être transmis que lorsque AddressingVersion est configuré avec 'WSAddressing10'. ».  
   
  Dans l'exemple suivant, un service de workflow est hébergé, qui crée un <xref:System.ServiceModel.Endpoint> de rappel à l'aide de l'objet <xref:System.ServiceModel.WSHttpContextBinding>.  
   
@@ -44,7 +47,7 @@ host1.Open();
 Console.WriteLine("Service1 waiting at: {0}", baseAddress1);  
 ```  
   
- Le workflow qui implémente ce service de workflow initialise la corrélation de rappel avec son activité <xref:System.ServiceModel.Activities.Send> et référence ce point de terminaison de rappel à partir de l'activité <xref:System.ServiceModel.Activities.Receive> en corrélation avec l'activité <xref:System.ServiceModel.Activities.Send>.L'exemple suivant représente le workflow retourné par la méthode `GetWF1`.  
+ Le workflow qui implémente ce service de workflow initialise la corrélation de rappel avec son activité <xref:System.ServiceModel.Activities.Send> et référence ce point de terminaison de rappel à partir de l'activité <xref:System.ServiceModel.Activities.Receive> en corrélation avec l'activité <xref:System.ServiceModel.Activities.Send>. L'exemple suivant représente le workflow retourné par la méthode `GetWF1`.  
   
 ```csharp  
 Variable<CorrelationHandle> CallbackHandle = new Variable<CorrelationHandle>();  
@@ -127,7 +130,7 @@ host2.Open();
 Console.WriteLine("Service2 waiting at: {0}", baseAddress2);  
 ```  
   
- Le workflow qui implémente ce service de workflow commence par une activité <xref:System.ServiceModel.Activities.Receive>.Cette activité de réception initialise la corrélation de rappel pour ce service, attend un certain temps pour simuler un travail de longue durée, puis rappelle dans le premier service à l'aide du contexte de rappel qui a été transmis lors du premier appel dans le service.L'exemple suivant représente le workflow retourné par un appel à la méthode `GetWF2`.Notez que l'activité <xref:System.ServiceModel.Activities.Send> a une adresse d'espace réservé, `http://www.contoso.com` ; l'adresse réelle utilisée au moment de l'exécution est l'adresse de rappel fournie.  
+ Le workflow qui implémente ce service de workflow commence par une activité <xref:System.ServiceModel.Activities.Receive>. Cette activité de réception initialise la corrélation de rappel pour ce service, attend un certain temps pour simuler un travail de longue durée, puis rappelle dans le premier service à l'aide du contexte de rappel qui a été transmis lors du premier appel dans le service. L'exemple suivant représente le workflow retourné par un appel à la méthode `GetWF2`. Notez que l'activité <xref:System.ServiceModel.Activities.Send> a une adresse d'espace réservé, `http://www.contoso.com` ; l'adresse réelle utilisée au moment de l'exécution est l'adresse de rappel fournie.  
   
 ```csharp  
 Variable<CorrelationHandle> ItemsCallbackHandle = new Variable<CorrelationHandle>();  
@@ -196,17 +199,16 @@ Activity wf = new Sequence
 ```Output  
 Service1 waiting at: http://localhost:8080/Service1  
 Service2 waiting at: http://localhost:8081/Service2  
-Appuyez sur Entrée pour quitter.   
+Press enter to exit.   
 WF1 - Started  
 WF2 - Request Received  
 WF1 - Request Submitted  
 WF2 - Sending items  
 WF2 - Items sent  
 WF1 - Items Received  
-  
 ```  
   
- Dans cet exemple, les deux workflows gèrent explicitement la corrélation à l'aide d'un objet <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>.Étant donné qu'il n'y avait qu'une seule corrélation dans ces exemples de workflows, la gestion <xref:System.ServiceModel.Activities.CorrelationHandle> par défaut aurait suffi.  
+ Dans cet exemple, les deux workflows gèrent explicitement la corrélation à l'aide d'un objet <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>. Étant donné qu'il n'y avait qu'une seule corrélation dans ces exemples de workflows, la gestion <xref:System.ServiceModel.Activities.CorrelationHandle> par défaut aurait suffi.  
   
-## Voir aussi  
- [Durable Duplex &#91;exemples WF&#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)
+## <a name="see-also"></a>Voir aussi  
+ [Corrélation Duplex durable &#91; Exemples WF &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)

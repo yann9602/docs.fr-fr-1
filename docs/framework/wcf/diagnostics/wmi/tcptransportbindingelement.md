@@ -1,25 +1,28 @@
 ---
-title: "TcpTransportBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: TcpTransportBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 33bbc1e5-44e4-4ee3-b7b5-801dc78956e4
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 180e954661319cb32edfd3180418fe9b1571ea5c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# TcpTransportBindingElement
+# <a name="tcptransportbindingelement"></a>TcpTransportBindingElement
 TcpTransportBindingElement  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement  
@@ -31,45 +34,45 @@ class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe TcpTransportBindingElement ne définit pas de méthode.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe TcpTransportBindingElement a les propriétés suivantes :  
   
-### ConnectionPoolSettings  
+### <a name="connectionpoolsettings"></a>ConnectionPoolSettings  
  Type de données : TcpConnectionPoolSettings  
   
  Type d'accès : lecture seule  
   
  Paramètres de pool de connexions.  
   
-### ListenBacklog  
+### <a name="listenbacklog"></a>ListenBacklog  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
  Nombre maximal de demandes de connexion en file d'attente pouvant être en attente.  
   
-### PortSharingEnabled  
+### <a name="portsharingenabled"></a>PortSharingEnabled  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion.  
   
-### TeredoEnabled  
+### <a name="teredoenabled"></a>TeredoEnabled  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
- Valeur booléenne qui spécifie si Teredo \(technologie d'adressage de clients placés derrière des pare\-feu\) est activé.  
+ Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>

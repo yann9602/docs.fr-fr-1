@@ -1,34 +1,32 @@
 ---
-title: "Transactions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Transactions2
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 51212219-a39e-448e-bff3-10064ff5de64
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c7611ce26c1a3b9150a60ced7b4931cc1282eecd
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Transactions
-Cette section contient des exemples qui illustrent des scénarios qui utilisent des transactions de workflow dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+# <a name="transactions"></a>Transactions
+Cette section contient des exemples qui illustrent des transactions de workflow dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
-## Dans cette section  
- [Exécuter un workflow dans un TransactionScope impératif](../../../../docs/framework/windows-workflow-foundation/samples/execute-a-workflow-in-an-imperative-transactionscope.md)  
- Montre comment exécuter un workflow à l'aide de <xref:System.Activities.WorkflowInvoker> sous un <xref:System.Transactions.Transaction> à partir de code C\# impératif.  
+## <a name="in-this-section"></a>Dans cette section  
+ [Bases de TransactionScope](../../../../docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md)  
+ Est composé de quatre scénarios qui montrent comment imbriquer des instances <xref:System.Activities.Statements.TransactionScope>.  
   
- [Étendue du convoi des transactions](../../../../docs/framework/windows-workflow-foundation/samples/transaction-convoy-scope.md)  
- Montre comment créer un modèle d'activité de messagerie de convoi parallèle conjointement avec un <xref:System.ServiceModel.Activities.TransactedReceiveScope> pour modéliser un protocole où un certain nombre d'opérations peuvent se produire dans n'importe quel ordre dans le cadre de la même transaction.  
+ [Utilisation de TransactedReceiveScope](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)  
+ Montre comment passer une transaction d'un client à un serveur à l'aide de <xref:System.Activities.Statements.TransactionScope> pour créer une nouvelle transaction sur le client et un <xref:System.ServiceModel.Activities.TransactedReceiveScope> pour recevoir un message avec une transaction passée et étendre la durée de vie de la transaction sur le serveur.  
   
- [Restauration de transaction](../../../../docs/framework/windows-workflow-foundation/samples/transaction-rollback.md)  
- Montre comment créer un <xref:System.Activities.NativeActivity> personnalisé qui accède au <xref:System.Activities.RuntimeTransactionHandle> ambiant pour obtenir la transaction ambiante et la restaurer explicitement.  
-  
- [Étendue de transaction de suppression](../../../../docs/framework/windows-workflow-foundation/samples/suppress-transaction-scope.md)  
- Montre comment créer une activité `SuppressTransactionScope` personnalisée pour supprimer la transaction runtime ambiante, si elle existe.  
-  
- [Files d'attente avec transaction](../../../../docs/framework/windows-workflow-foundation/samples/transacted-queues.md)  
- Montre comment intégrer des files d'attente et des transactions dans [!INCLUDE[wf1](../../../../includes/wf1-md.md)] pour créer des services fiables et évolutifs.
+ [Imbrication de TransactionScope dans un service](../../../../docs/framework/windows-workflow-foundation/samples/nesting-of-transactionscope-within-a-service.md)  
+ Est composé de deux scénarios qui montrent comment gérer des instances d'activité <xref:System.Activities.Statements.TransactionScope> dans un service.

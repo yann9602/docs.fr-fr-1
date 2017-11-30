@@ -1,88 +1,90 @@
 ---
-title: "&lt;NetFx40_LegacySecurityPolicy&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<NetFx40_LegacySecurityPolicy> (élément)"
-  - "NetFx40_LegacySecurityPolicy (élément)"
+title: "&lt;NetFx40_LegacySecurityPolicy&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <NetFx40_LegacySecurityPolicy> element
+- NetFx40_LegacySecurityPolicy element
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
-caps.latest.revision: 21
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: cb59eb6e2a5e831f603747b3e0f9435bd076fbf8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;NetFx40_LegacySecurityPolicy&gt;, &#233;l&#233;ment
-Spécifie si le runtime utilise la stratégie de sécurité d'accès du code héritée \(legacy\) \(CAS, Code Access Security\).  
+# <a name="ltnetfx40legacysecuritypolicygt-element"></a>&lt;NetFx40_LegacySecurityPolicy&gt; élément
+Indique si le runtime utilise la stratégie héritée de sécurité d’accès du code (CAS).  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+< NetFx40_LegacySecurityPolicy >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <NetFx40_LegacySecurityPolicy  
    enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si le runtime utilise la stratégie de sécurité d'accès du code héritée \(legacy\).|  
+|---------------|-----------------|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si le runtime utilise la stratégie CAS héritée.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`false`|Le runtime n'utilise pas la stratégie de sécurité d'accès du code héritée.  Il s'agit de la valeur par défaut.|  
-|`true`|Le runtime utilise la stratégie de sécurité d'accès du code héritée.|  
+|-----------|-----------------|  
+|`false`|Le runtime n’utilise pas la stratégie CAS héritée. Il s'agit de la valeur par défaut.|  
+|`true`|Le runtime utilise la stratégie CAS héritée.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## Notes  
- Dans le .NET Framework version 3.5 et versions antérieures, la stratégie CAS est toujours appliquée.  Dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], la stratégie CAS doit être activée.  
+## <a name="remarks"></a>Remarques  
+ Dans le .NET Framework version 3.5 et les versions antérieures, la stratégie CAS est toujours en vigueur. Dans la [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], la stratégie CAS doit être activée.  
   
- La stratégie CAS est spécifique à la version.  Les stratégies CAS personnalisées qui existent dans les versions antérieures du .NET Framework doivent être de nouveau spécifiées dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
+ La stratégie CAS est spécifique à la version. Les stratégies CAS personnalisées qui existent dans les versions antérieures du .NET Framework doivent être de nouveau spécifiées dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
   
- L'application de l'élément `<NetFx40_LegacySecurityPolicy>` à un assembly [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] n'affecte pas le [code transparent de sécurité](../../../../../docs/framework/misc/security-transparent-code.md); les règles de transparence s'appliquent encore.  
+ Application de la `<NetFx40_LegacySecurityPolicy>` élément à un [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] assembly n’affecte pas [code transparent de sécurité](../../../../../docs/framework/misc/security-transparent-code.md); toujours appliqueront des règles de transparence.  
   
 > [!IMPORTANT]
->  L'application de l'élément `<NetFx40_LegacySecurityPolicy>` peut provoquer des altérations des performances significatives pour les assemblys d'image natifs créés par le [Générateur d'image natif \(Ngen.exe\)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) qui ne sont pas installés dans le [Global Assembly Cache](../../../../../docs/framework/app-domains/gac.md).  La dégradation des performances est causée par l'incapacité de l'exécution à charger les assemblys comme images natives lorsque l'attribut est appliqué, ce qui provoque leur chargement comme assemblys juste\-à\-temps.  
+>  Application de la `<NetFx40_LegacySecurityPolicy>` élément peut entraîner des altérations des performances significatives pour les assemblys d’image natifs créés par le [Native Image Generator (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) qui ne sont pas installés dans le [GAC ](../../../../../docs/framework/app-domains/gac.md). La dégradation des performances sont causée par l’incapacité du runtime à charger les assemblys comme images natives lorsque l’attribut est appliqué, ce qui provoque leur charger les assemblys que juste-à-temps.  
   
 > [!NOTE]
->  Si vous spécifiez une version du .NET Framework cible antérieure au [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] dans les paramètres du projet pour votre projet Visual Studio, la stratégie CAS sera activée, avec toutes les stratégies CAS personnalisées que vous avez spécifiées pour cette version.  Toutefois, vous ne serez pas en mesure d'utiliser les nouveaux types et membres [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  Vous pouvez également spécifier une version antérieure du .NET Framework à l'aide de l'élément [\<supportedRuntime\> .](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) du schéma de paramètres de démarrage de votre [fichier de configuration d'application](../../../../../docs/framework/configure-apps/index.md).  
+>  Si vous spécifiez une version du .NET Framework cible est antérieure à la [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] dans les paramètres du projet pour votre projet Visual Studio, la stratégie CAS est activée, y compris toutes les stratégies CAS personnalisées vous avez spécifié pour cette version. Toutefois, vous ne serez pas en mesure d’utiliser les nouveaux [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] types et membres. Vous pouvez également spécifier une version antérieure du .NET Framework à l’aide de la [ \<supportedRuntime > élément](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) dans le schéma de paramètres de démarrage dans votre [fichier de configuration d’application](../../../../../docs/framework/configure-apps/index.md).  
   
 > [!NOTE]
->  La syntaxe des fichiers de configuration respecte la casse.  Vous devez utiliser la syntaxe fournie dans les sections Syntaxe et Exemple.  
+>  Syntaxe du fichier de configuration respecte la casse. Vous devez utiliser la syntaxe comme indiqué dans les sections syntaxe et exemple.  
   
-## Fichier de configuration  
- Cet élément peut être utilisé uniquement dans le fichier de configuration de l'application.  
+## <a name="configuration-file"></a>Fichier de configuration  
+ Cet élément peut être utilisé uniquement dans le fichier de configuration d’application.  
   
-## Exemple  
- L'exemple suivant montre comment activer la stratégie de sécurité d'accès du code héritée \(legacy\) d'une application.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment activer la stratégie CAS héritée d’une application.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <NetFx40_LegacySecurityPolicy enabled="true"/>  
@@ -90,6 +92,6 @@ Spécifie si le runtime utilise la stratégie de sécurité d'accès du code hé
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)

@@ -1,77 +1,79 @@
 ---
-title: "&lt;PreferComInsteadOfManagedRemoting&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<PreferComInsteadOfManagedRemoting> (élément)"
-  - "PreferComInsteadOfManagedRemoting (élément)"
+title: "&lt;PreferComInsteadOfManagedRemoting&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <PreferComInsteadOfManagedRemoting> element
+- PreferComInsteadOfManagedRemoting element
 ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
-caps.latest.revision: 17
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7aed6baa227b2bdf90c26f02d38ee67c1ffbbda1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;PreferComInsteadOfManagedRemoting&gt;, &#233;l&#233;ment
-Spécifie si le runtime utilisera COM Interop au lieu de la communication à distance pour tous les appels au\-delà des limites du domaine d'application.  
+# <a name="ltprefercominsteadofmanagedremotinggt-element"></a>&lt;PreferComInsteadOfManagedRemoting&gt; élément
+Spécifie si le runtime utilisera COM interop au lieu de la communication à distance pour tous les appels entre les limites du domaine d’application.  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+\<PreferComInsteadOfManagedRemoting >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <PreferComInsteadOfManagedRemoting enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Indique si le runtime utilisera COM Interop au lieu de la communication à distance au\-delà des limites du domaine d'application.|  
+|---------------|-----------------|  
+|`enabled`|Attribut requis.<br /><br /> Indique si le runtime utilisera COM interop au lieu de la communication à distance entre les limites du domaine d’application.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`false`|Le runtime utilisera la communication à distance au\-delà des limites du domaine d'application.  Il s'agit de la valeur par défaut.|  
-|`true`|Le runtime utilisera COM Interop au\-delà des limites du domaine d'application.|  
+|-----------|-----------------|  
+|`false`|Le runtime utilise la communication à distance entre les limites du domaine d’application. Il s'agit de la valeur par défaut.|  
+|`true`|Le runtime utilisera COM interop au-delà des limites de domaine application.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Notes  
- Lorsque vous affectez à l'attribut `enabled` la valeur `true`, le runtime se comporte comme suit :  
+## <a name="remarks"></a>Remarques  
+ Lorsque vous définissez la `enabled` attribut `true`, le runtime se comporte comme suit :  
   
--   L'exécution ne [IUnknown::QueryInterface](http://go.microsoft.com/fwlink/?LinkID=144867) requiert pas d'interface [IManagedObject](../../../../../ocs/framework/unmanaged-api/hosting/imanagedobject-interface.md) lorsqu'une interface [IUnknown](http://go.microsoft.com/fwlink/?LinkId=148003) entre dans le champ via une interface COM.  À la place, il construit un [Runtime Callable Wrapper](../../../../../docs/framework/interop/runtime-callable-wrapper.md) \(RCW\) autour de l'objet.  
+-   Le runtime n’appelle pas [IUnknown::QueryInterface](http://go.microsoft.com/fwlink/?LinkID=144867) pour un [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface quand un [IUnknown](http://go.microsoft.com/fwlink/?LinkId=148003) accède au domaine via une interface COM. Au lieu de cela, il construit un [Wrapper RCW](../../../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) autour de l’objet.  
   
--   Le runtime retourne E\_NOINTERFACE lorsqu'il reçoit un appel `QueryInterface` pour une interface [IManagedObject](../../../../../ocs/framework/unmanaged-api/hosting/imanagedobject-interface.md) pour tout [COM Callable Wrapper](../../../../../docs/framework/interop/com-callable-wrapper.md) \(CCW\) créé dans ce domaine.  
+-   Le runtime retourne E_NOINTERFACE lorsqu’il reçoit un `QueryInterface` appeler pour une [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface pour toute [Wrapper CCW](../../../../../docs/framework/interop/com-callable-wrapper.md) (CCW) qui a été créé dans ce domaine.  
   
- Ces deux comportements garantissent que tous les appels via les interfaces COM entre objets managés au\-delà des limites du domaine d'application utilisent COM et COM Interop au lieu de la communication à distance.  
+ Ces deux comportements garantissent que tous les appels sur COM des interfaces entre les objets gérés sur l’utilisation des limites du domaine d’application COM et COM interop au lieu de la communication à distance.  
   
-## Exemple  
- L'exemple suivant indique comment spécifier que le runtime doit utiliser COM Interop au\-delà des limites d'isolement :  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment spécifier que le runtime doit utiliser COM interop au-delà des limites d’isolation :  
   
-```  
+```xml  
 <configuration>  
   <runtime>  
     <PreferComInsteadOfManagedRemoting enabled="true"/>  
@@ -79,6 +81,6 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)

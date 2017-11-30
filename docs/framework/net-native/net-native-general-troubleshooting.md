@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: ee8c5e17-35ea-48a1-8767-83298caac1e8
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 151a36eed22323c32fed93a88d8270bdbfd99061
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="net-native-general-troubleshooting"></a>Résolution des problèmes généraux liés à .NET Native
 Cette rubrique explique comment résoudre les problèmes que vous pouvez rencontrer pendant le développement d'applications avec [!INCLUDE[net_native](../../../includes/net-native-md.md)].  
@@ -54,4 +52,3 @@ Cette rubrique explique comment résoudre les problèmes que vous pouvez rencont
   
 ## <a name="see-also"></a>Voir aussi  
  [Migration de votre application du Windows Store vers .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)
-

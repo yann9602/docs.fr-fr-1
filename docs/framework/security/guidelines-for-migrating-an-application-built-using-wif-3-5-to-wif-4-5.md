@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 7a32fe6e-5f68-4693-9371-19411fa8063c
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 151a46a1d0f5ae5ae58508bdb3cab5bbb86f07ef
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: fc5554193d93f2a88fd9e6d1c1af7923a23b2280
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="guidelines-for-migrating-an-application-built-using-wif-35-to-wif-45"></a>Recommandations sur la migration d’une application générée à l’aide de WIF 3.5 à WIF 4.5
 ## <a name="applies-to"></a>S'applique à  
@@ -37,32 +35,32 @@ ms.lasthandoff: 08/21/2017
 ### <a name="assembly-and-namespace-changes"></a>Modifications des assemblys et des espaces de noms  
  Dans WIF 3.5, toutes les classes WIF étaient contenues dans l’assembly `Microsoft.IdentityModel` (microsoft.identitymicrosoft.identitymodel.dll). Dans WIF 4.5, les classes WIF ont été réparties dans les assemblys suivants : `mscorlib` (mscorlib.dll), `System.IdentityModel` (System.IdentityModel.dll), `System.IdentityModel.Services` (System.IdentityModel.Services.dll) et `System.ServiceModel` (System.ServiceModel.dll).  
   
- Les classes WIF 3.5 étaient toutes contenues dans l’un des espaces de noms `Microsoft.IdentityModel`, par exemple `Microsoft.IdentityModel`, `Microsoft.IdentityModel.Tokens`, `Microsoft.IdentityModel.Web`, et ainsi de suite. Dans WIF 4.5, les classes WIF sont désormais réparties sur les espaces de noms [System.IdentityModel](http://go.microsoft.com/fwlink/?LinkId=272004), l’espace de noms <xref:System.Security.Claims?displayProperty=fullName> et l’espace de noms <xref:System.ServiceModel.Security?displayProperty=fullName>. En plus de cette réorganisation, certaines classes WIF 3.5 ont été abandonnées dans WIF 4.5.  
+ Les classes WIF 3.5 étaient toutes contenues dans l’un des espaces de noms `Microsoft.IdentityModel`, par exemple `Microsoft.IdentityModel`, `Microsoft.IdentityModel.Tokens`, `Microsoft.IdentityModel.Web`, et ainsi de suite. Dans WIF 4.5, les classes WIF sont désormais réparties sur les espaces de noms [System.IdentityModel](http://go.microsoft.com/fwlink/?LinkId=272004), l’espace de noms <xref:System.Security.Claims?displayProperty=nameWithType> et l’espace de noms <xref:System.ServiceModel.Security?displayProperty=nameWithType>. En plus de cette réorganisation, certaines classes WIF 3.5 ont été abandonnées dans WIF 4.5.  
   
  Le tableau suivant répertorie certains des plus importants espaces de noms WIF 4.5 et le type des classes qu’ils contiennent. Pour plus d’informations sur le mappage des espaces de noms entre WIF 3.5 et WIF 4.5 ainsi que sur les espaces de noms et les classes qui ont été abandonnés dans WIF 4.5, consultez [Mappage des espaces de noms entre WIF 3.5 et WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md).  
   
 |Espace de noms WIF 4.5|Description|  
 |-----------------------|-----------------|  
-|<xref:System.IdentityModel?displayProperty=fullName>|Contient des classes qui représentent des transformations de cookies, des services d’émission de jeton de sécurité et des lecteurs de dictionnaires XML spécifiques. Contient des classes des espaces de noms WIF 3.5 suivants : `Microsoft.IdentityModel`, `Microsoft.IdentityModel.SecurityTokenService` et `Microsoft.IdentityModel.Threading`.|  
-|<xref:System.Security.Claims?displayProperty=fullName>|Contient des classes qui représentent des revendications, des identités basées sur les revendications, des principaux basés sur les revendications et d’autres artefacts de modèles d’identité basés sur les revendications. Contient des classes de l’espace de noms `Microsoft.IdentityModel.Claims`.|  
-|<xref:System.IdentityModel.Tokens?displayProperty=fullName>|Contient des classes qui représentent des jetons de sécurité, des gestionnaires de jetons de sécurité et d’autres artefacts de jetons de sécurité. Contient des classes des espaces de noms WIF 3.5 suivants : `Microsoft.IdentityModel.Tokens`, `Microsoft.IdentityModel.Tokens.Saml11` et `Microsoft.IdentityModel.Tokens.Saml2`.|  
-|<xref:System.IdentityModel.Services?displayProperty=fullName>|Contient des classes qui sont utilisées dans des scénarios passifs (WS-Federation). Contient des classes de l’espace de noms `Microsoft.IdentityModel.Web`.|  
-|<xref:System.ServiceModel.Security?displayProperty=fullName>|Les classes qui représentent des contrats WCF, des canaux, des hôtes de service et d’autres artefacts utilisés dans des scénarios actifs (WS-Trust) figurent désormais dans cet espace de noms. Dans WIF 3.5, ces classes se trouvaient dans l’espace de noms `Microsoft.IdentityModel.Protocols.WSTrust`.|  
+|<xref:System.IdentityModel?displayProperty=nameWithType>|Contient des classes qui représentent des transformations de cookies, des services d’émission de jeton de sécurité et des lecteurs de dictionnaires XML spécifiques. Contient des classes des espaces de noms WIF 3.5 suivants : `Microsoft.IdentityModel`, `Microsoft.IdentityModel.SecurityTokenService` et `Microsoft.IdentityModel.Threading`.|  
+|<xref:System.Security.Claims?displayProperty=nameWithType>|Contient des classes qui représentent des revendications, des identités basées sur les revendications, des principaux basés sur les revendications et d’autres artefacts de modèles d’identité basés sur les revendications. Contient des classes de l’espace de noms `Microsoft.IdentityModel.Claims`.|  
+|<xref:System.IdentityModel.Tokens?displayProperty=nameWithType>|Contient des classes qui représentent des jetons de sécurité, des gestionnaires de jetons de sécurité et d’autres artefacts de jetons de sécurité. Contient des classes des espaces de noms WIF 3.5 suivants : `Microsoft.IdentityModel.Tokens`, `Microsoft.IdentityModel.Tokens.Saml11` et `Microsoft.IdentityModel.Tokens.Saml2`.|  
+|<xref:System.IdentityModel.Services?displayProperty=nameWithType>|Contient des classes qui sont utilisées dans des scénarios passifs (WS-Federation). Contient des classes de l’espace de noms `Microsoft.IdentityModel.Web`.|  
+|<xref:System.ServiceModel.Security?displayProperty=nameWithType>|Les classes qui représentent des contrats WCF, des canaux, des hôtes de service et d’autres artefacts utilisés dans des scénarios actifs (WS-Trust) figurent désormais dans cet espace de noms. Dans WIF 3.5, ces classes se trouvaient dans l’espace de noms `Microsoft.IdentityModel.Protocols.WSTrust`.|  
   
 > [!IMPORTANT]
->  Les espaces de noms `System.IdentityModel` suivants contiennent des classes qui implémentent le modèle d’identité basé sur des revendications WCF : <xref:System.IdentityModel.Claims?displayProperty=fullName>, <xref:System.IdentityModel.Policy?displayProperty=fullName> et <xref:System.IdentityModel.Selectors?displayProperty=fullName>. Le modèle d'identité basé sur des revendications WCF est remplacé par WIF. Vous ne devez pas utiliser les classes de ces trois espaces de noms quand vous créez des solutions basées sur WIF.  
+>  Les espaces de noms `System.IdentityModel` suivants contiennent des classes qui implémentent le modèle d’identité basé sur des revendications WCF : <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, <xref:System.IdentityModel.Policy?displayProperty=nameWithType> et <xref:System.IdentityModel.Selectors?displayProperty=nameWithType>. Le modèle d'identité basé sur des revendications WCF est remplacé par WIF. Vous ne devez pas utiliser les classes de ces trois espaces de noms quand vous créez des solutions basées sur WIF.  
   
 ### <a name="changes-due-to-net-integration"></a>Modifications en raison de l’intégration dans .NET  
- WIF est maintenant intégré dans le .NET Framework. La plupart des classes de principaux et d’identités .NET dérivent maintenant de <xref:System.Security.Claims.ClaimsIdentity?displayProperty=fullName> et <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName>. Cela aboutit aux modifications suivantes dans WIF 4.5 :  
+ WIF est maintenant intégré dans le .NET Framework. La plupart des classes de principaux et d’identités .NET dérivent maintenant de <xref:System.Security.Claims.ClaimsIdentity?displayProperty=nameWithType> et <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType>. Cela aboutit aux modifications suivantes dans WIF 4.5 :  
   
--   Les classes WIF qui représentent des revendications, des identités et des principaux existent maintenant dans l’espace de noms <xref:System.Security.Claims?displayProperty=fullName>.  
+-   Les classes WIF qui représentent des revendications, des identités et des principaux existent maintenant dans l’espace de noms <xref:System.Security.Claims?displayProperty=nameWithType>.  
   
     > [!IMPORTANT]
-    >  L’espace de noms <xref:System.IdentityModel.Claims?displayProperty=fullName> contient des classes qui représentent des artefacts dans le modèle d’identité basé sur des revendications WCF. Un grand nombre de ces classes ont des noms identiques aux classes WIF, par exemple `Claims`. N’utilisez pas ces classes lors de la génération de solutions basées sur WIF.  
+    >  L’espace de noms <xref:System.IdentityModel.Claims?displayProperty=nameWithType> contient des classes qui représentent des artefacts dans le modèle d’identité basé sur des revendications WCF. Un grand nombre de ces classes ont des noms identiques aux classes WIF, par exemple `Claims`. N’utilisez pas ces classes lors de la génération de solutions basées sur WIF.  
   
--   Les classes de principaux et d’identités .NET dérivent maintenant directement de <xref:System.Security.Claims.ClaimsIdentity?displayProperty=fullName> et <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName>, qui représentent des principaux et identités basés sur les revendications. Pour cette raison, les interfaces WIF 3.5 `IClaimsIdentity` et `IClaimsPrincipal` ne sont plus nécessaires et ne sont pas disponibles dans WIF 4.5.  
+-   Les classes de principaux et d’identités .NET dérivent maintenant directement de <xref:System.Security.Claims.ClaimsIdentity?displayProperty=nameWithType> et <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType>, qui représentent des principaux et identités basés sur les revendications. Pour cette raison, les interfaces WIF 3.5 `IClaimsIdentity` et `IClaimsPrincipal` ne sont plus nécessaires et ne sont pas disponibles dans WIF 4.5.  
   
--   Comme les classes de principaux et d’identités .NET telles que <xref:System.Security.Principal.WindowsIdentity?displayProperty=fullName> et <xref:System.Security.Principal.WindowsPrincipal?displayProperty=fullName> dérivent maintenant de <xref:System.Security.Claims.ClaimsIdentity> et <xref:System.Security.Claims.ClaimsPrincipal>, elles possèdent des fonctionnalités de revendications intégrées. Pour cette raison, les classes de principaux et d’identités spécifiques aux revendications telles que `WindowsClaimsIdentity` et `WindowsClaimsPrincipal` qui étaient présentes dans WIF 3.5 ne sont plus nécessaires et n’existent pas dans WIF 4.5.  
+-   Comme les classes de principaux et d’identités .NET telles que <xref:System.Security.Principal.WindowsIdentity?displayProperty=nameWithType> et <xref:System.Security.Principal.WindowsPrincipal?displayProperty=nameWithType> dérivent maintenant de <xref:System.Security.Claims.ClaimsIdentity> et <xref:System.Security.Claims.ClaimsPrincipal>, elles possèdent des fonctionnalités de revendications intégrées. Pour cette raison, les classes de principaux et d’identités spécifiques aux revendications telles que `WindowsClaimsIdentity` et `WindowsClaimsPrincipal` qui étaient présentes dans WIF 3.5 ne sont plus nécessaires et n’existent pas dans WIF 4.5.  
   
 ### <a name="other-changes-to-wif-functionality"></a>Autres modifications apportées aux fonctionnalités WIF  
  Outre celles des espaces de noms et celles dues à l’intégration dans .NET, les modifications générales suivantes sont apportées aux fonctionnalités WIF dans WIF 4.5.  
@@ -118,9 +116,9 @@ ms.lasthandoff: 08/21/2017
 <a name="BKMK_ToolingChanges"></a>   
 ### <a name="passive-ws-federation-scenarios"></a>Scénarios passifs (WS-Federation) :  
   
--   Les classes qui prennent en charge les scénarios passifs ont été déplacées vers l’espace de noms <xref:System.IdentityModel.Services?displayProperty=fullName>. Dans WIF 3.5, ces classes se trouvaient dans l’espace de noms `Microsoft.IdentityModel.Web`.  
+-   Les classes qui prennent en charge les scénarios passifs ont été déplacées vers l’espace de noms <xref:System.IdentityModel.Services?displayProperty=nameWithType>. Dans WIF 3.5, ces classes se trouvaient dans l’espace de noms `Microsoft.IdentityModel.Web`.  
   
--   Les classes dans l’espace de noms `Microsoft.IdentityModel.Web.Configuration` ont été déplacées vers <xref:System.IdentityModel.Services.Configuration?displayProperty=fullName>. Ces classes représentent des objets spécifiques à la configuration dans les scénarios passifs.  
+-   Les classes dans l’espace de noms `Microsoft.IdentityModel.Web.Configuration` ont été déplacées vers <xref:System.IdentityModel.Services.Configuration?displayProperty=nameWithType>. Ces classes représentent des objets spécifiques à la configuration dans les scénarios passifs.  
   
 -   `FederatedPasssiveSignInControl` n’est plus pris en charge ; toutes les classes dans l’espace de noms `Microsoft.IdentityModel.Web.Controls` ont été supprimées de WIF 4.5.  
   
@@ -128,7 +126,7 @@ ms.lasthandoff: 08/21/2017
   
 ### <a name="active-wcfws-trust-scenarios"></a>Scénarios actifs (WCF/WS-Trust) :  
   
--   L’espace de noms `Microsoft.IdentityModel.Protocols.WSTrust` a été divisé principalement en deux espaces de noms dans WIF 4.5. Les classes qui représentent des artefacts spécifiques au protocole WS-Trust se trouvent maintenant dans <xref:System.IdentityModel.Protocols.WSTrust?displayProperty=fullName>. Cela inclut les classes comme <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>. Les classes qui représentent des contrats de service, des canaux, des hôtes de service et d’autres artefacts qui interviennent dans l’utilisation de WS-Trust dans les applications WCF ont été déplacées vers <xref:System.ServiceModel.Security?displayProperty=fullName>, par exemple l’interface <xref:System.ServiceModel.Security.IWSTrust13AsyncContract>.  
+-   L’espace de noms `Microsoft.IdentityModel.Protocols.WSTrust` a été divisé principalement en deux espaces de noms dans WIF 4.5. Les classes qui représentent des artefacts spécifiques au protocole WS-Trust se trouvent maintenant dans <xref:System.IdentityModel.Protocols.WSTrust?displayProperty=nameWithType>. Cela inclut les classes comme <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>. Les classes qui représentent des contrats de service, des canaux, des hôtes de service et d’autres artefacts qui interviennent dans l’utilisation de WS-Trust dans les applications WCF ont été déplacées vers <xref:System.ServiceModel.Security?displayProperty=nameWithType>, par exemple l’interface <xref:System.ServiceModel.Security.IWSTrust13AsyncContract>.  
   
 -   La configuration d’une application WCF pour utiliser WIF a été considérablement simplifiée. Auparavant, l’élément `Microsoft.IdentityModel.Configuration.ConfigureServiceHostBehaviorExtensionElement` devait être ajouté comme une extension de comportement et cette fonctionnalité était alors utilisée pour insérer WIF dans le comportement de service en spécifiant un élément `<federatedServiceHostConfiguration>`. WIF 4.5 a été plus étroitement intégré dans WCF. Vous activez maintenant WIF sur un service WCF en spécifiant l’attribut `useIdentityConfiguration` sur l’élément `<system.serviceModel>`/`<behaviors>`/`<serviceBehaviors>`/`<serviceCredentials>` comme dans le XML suivant :  
   
@@ -182,8 +180,7 @@ add-windowsfeature windows-identity-foundation
 >  Comme un grand nombre des classes dans WIF 3.5 et WIF 4.5 partagent les mêmes noms, quand vous utilisez WIF 3.5 et WIF 4.5 ensemble, veillez à utiliser des noms de classes qualifiés complets ou des alias d’espaces de noms pour faire la distinction entre les classes dans WIF 3.5 et WIF 4.5.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Schéma de configuration de Windows Identity Foundation](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md)   
- [Mappage des espaces de noms entre WIF 3.5 et WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)   
- [Nouveautés de Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)   
+ [Schéma de configuration de WIF](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md)  
+ [Mappage des espaces de noms entre WIF 3.5 et WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)  
+ [Nouveautés de Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  
  [Outil Identité et accès pour Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)
-

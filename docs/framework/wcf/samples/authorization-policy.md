@@ -1,23 +1,26 @@
 ---
-title: "Authorization Policy | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Authorization Policy
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 38
+caps.latest.revision: "38"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 50998acedf3b462e17c57d784dfc1ebe6fff38b9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Authorization Policy
-Cet exemple montre comment implémenter une stratégie d'autorisation de revendication personnalisée et un gestionnaire d'autorisations de service personnalisé associé.Cela s'avère utile lorsque le service procède à des vérifications d'accès basées sur des revendications sur des opérations de service et, avant d'effectuer ces vérifications, accorde certains droits à l'appelant.Cet exemple illustre à la fois le processus d'ajout de revendications ainsi que le processus de vérification de l'accès en fonction de l'ensemble de revendications finalisé.Tous les messages d'application échangés entre le client et le serveur sont signés et chiffrés.Par défaut, avec la liaison `wsHttpBinding`, un nom d'utilisateur et un mot de passe fournis par le client sont utilisés pour l'ouverture de session d'un compte Windows NT valide.Cet exemple montre comment utiliser un <xref:System.IdentityModel.Selectors.UsernamePasswordValidator> personnalisé pour authentifier le client.De plus, cet exemple montre comment le client s'authentifie auprès du service à l'aide d'un certificat X.509.Cet exemple montre une implémentation de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> et <xref:System.ServiceModel.ServiceAuthorizationManager>, qui accordent à des utilisateurs spécifiques l'accès à des méthodes spécifiques du service.Cet exemple est basé sur l'[Message Security User Name](../../../../docs/framework/wcf/samples/message-security-user-name.md), mais montre comment effectuer une transformation de revendication avant d'appeler le <xref:System.ServiceModel.ServiceAuthorizationManager>.  
+# <a name="authorization-policy"></a>Authorization Policy
+Cet exemple montre comment implémenter une stratégie d'autorisation de revendication personnalisée et un gestionnaire d'autorisations de service personnalisé associé. Cela s'avère utile lorsque le service procède à des vérifications d'accès basées sur des revendications sur des opérations de service et, avant d'effectuer ces vérifications, accorde certains droits à l'appelant. Cet exemple illustre à la fois le processus d'ajout de revendications ainsi que le processus de vérification de l'accès en fonction de l'ensemble de revendications finalisé. Tous les messages d'application échangés entre le client et le serveur sont signés et chiffrés. Par défaut, avec la liaison `wsHttpBinding`, un nom d'utilisateur et un mot de passe fournis par le client sont utilisés pour l'ouverture de session d'un compte Windows NT valide. Cet exemple montre comment utiliser une personnalisée <!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>--> `System.IdentityModel.Selectors.UsernamePasswordValidator` pour authentifier le client. De plus, cet exemple montre comment le client s'authentifie auprès du service à l'aide d'un certificat X.509. Cet exemple montre une implémentation de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> et <xref:System.ServiceModel.ServiceAuthorizationManager>, qui accordent à des utilisateurs spécifiques l'accès à des méthodes spécifiques du service. Cet exemple est basé sur le [nom d’utilisateur de sécurité de Message](../../../../docs/framework/wcf/samples/message-security-user-name.md), mais il montre comment effectuer une transformation de revendication avant le <xref:System.ServiceModel.ServiceAuthorizationManager> qui est appelée.  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
@@ -30,15 +33,15 @@ Cet exemple montre comment implémenter une stratégie d'autorisation de revendi
   
 -   Le serveur valide les informations d'identification du client en fonction d'un validateur `UsernamePassword` personnalisé ;  
   
--   Le serveur est authentifié à l'aide du certificat X.509 du serveur ;  
+-   Le serveur est authentifié à l'aide du certificat X.509 du serveur.  
   
 -   Le serveur peut utiliser <xref:System.ServiceModel.ServiceAuthorizationManager> pour contrôler l'accès à certaines méthodes dans le service ;  
   
 -   Implémenter une interface <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.  
   
- Le service expose deux points de terminaison de communication avec le service, qui sont définis à l'aide du fichier de configuration App.config.Chaque point de terminaison se compose d'une adresse, d'une liaison et d'un contrat.Une liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS\-Security et l'authentification du nom d'utilisateur du client.L'autre liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS\-Security et l'authentification du certificat du client.L'[\<comportement\>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) spécifie que les informations d'identification de l'utilisateur doivent être utilisées à des fins d'authentification du service.Le certificat de serveur doit contenir la même valeur pour la propriété `SubjectName` que l'attribut `findValue` dans l'[\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).  
+ Le service expose deux points de terminaison de communication avec le service, qui sont définis à l'aide du fichier de configuration App.config. Chaque point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. Une liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS-Security et l'authentification du nom d'utilisateur du client. L'autre liaison est configurée avec une liaison `wsHttpBinding` standard qui utilise WS-Security et l'authentification du certificat du client. Le [ \<comportement >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) Spécifie que les informations d’identification à utiliser pour l’authentification du service. Le certificat de serveur doit contenir la même valeur pour le `SubjectName` propriété en tant que le `findValue` d’attribut dans le [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -121,12 +124,11 @@ Cet exemple montre comment implémenter une stratégie d'autorisation de revendi
   </behaviors>  
   
 </system.serviceModel>  
-  
 ```  
   
- Chaque configuration de point de terminaison de client se compose d'un nom de configuration, d'une adresse absolue pour le point de terminaison de service, de la liaison et du contrat.La liaison cliente est configurée avec le mode de sécurité approprié comme spécifié dans ce cas dans l'[\<sécurité\>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) et `clientCredentialType` comme spécifié dans l'[\<message\>](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md).  
+ Chaque configuration de point de terminaison de client se compose d’un nom de configuration, d’une adresse absolue pour le point de terminaison de service, de la liaison et du contrat. La liaison du client est configuré avec le mode de sécurité approprié tel que spécifié dans ce cas dans le [ \<sécurité >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) et `clientCredentialType` comme spécifié dans le [ \<message >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md).  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <client>  
@@ -190,7 +192,6 @@ Cet exemple montre comment implémenter une stratégie d'autorisation de revendi
     </behaviors>  
   
   </system.serviceModel>  
-  
 ```  
   
  Pour le point de terminaison basé sur nom de l'utilisateur , l'implémentation cliente définit le nom d'utilisateur et le mot de passe à utiliser.  
@@ -217,7 +218,6 @@ catch (Exception e)
 }  
   
 client1.Close();  
-  
 ```  
   
  Pour le point de terminaison basé sur certificat, l'implémentation cliente définit le certificat client à utiliser.  
@@ -243,10 +243,9 @@ catch (Exception e)
 }  
   
 client2.Close();  
-  
 ```  
   
- Cet exemple utilise un <xref:System.IdentityModel.Selectors.UsernamePasswordValidator> personnalisé pour valider les noms d'utilisateur et les mots de passe.L'exemple implémente `MyCustomUserNamePasswordValidator`, dérivé de <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>.Pour plus d'informations, consultez la documentation relative au <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>.Pour les besoins de la démonstration de l'intégration avec le <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>, cet exemple de validateur personnalisé implémente la méthode <xref:System.IdentityModel.Selectors.UsernamePasswordValidator.Validate%2A> pour accepter des paires de nom d'utilisateur\/mot de passe où le nom d'utilisateur correspond au mot de passe comme le montre le code suivant.  
+ Cet exemple utilise un <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> personnalisé pour valider les noms d'utilisateur et les mots de passe. L'exemple implémente `MyCustomUserNamePasswordValidator`, dérivé de <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. Pour plus d'informations, consultez la documentation relative au <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. Pour les besoins de la démonstration de l'intégration avec le <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>, cet exemple de validateur personnalisé implémente la méthode <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> pour accepter des paires de nom d'utilisateur/mot de passe où le nom d'utilisateur correspond au mot de passe comme le montre le code suivant.  
   
 ```  
 public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator  
@@ -269,10 +268,9 @@ public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator
     }  
   }  
 }  
-  
 ```  
   
- Une fois que le validateur est implémenté dans le code de service, l'hôte de service doit être informé de l'instance de validateur à utiliser.Cela est effectué à l'aide du code suivant.  
+ Une fois que le validateur est implémenté dans le code de service, l'hôte de service doit être informé de l'instance de validateur à utiliser. Cela est effectué à l'aide du code suivant.  
   
 ```  
 Servicehost.Credentials.UserNameAuthentication.UserNamePasswordValidationMode = UserNamePasswordValidationMode.Custom;  
@@ -281,7 +279,7 @@ serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator =
   
  Vous pouvez arriver au même résultat dans la configuration.  
   
-```  
+```xml  
 <behavior ...>  
     <serviceCredentials>  
       <!--   
@@ -293,9 +291,9 @@ serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator =
 </behavior>  
 ```  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit un modèle basé sur des revendications riches pour effectuer des vérifications d'accès.L'objet <xref:System.ServiceModel.ServiceAuthorizationManager> est utilisé pour effectuer la vérification d'accès et détermine si les revendications associées au client répondent aux spécifications nécessaires pour accéder à la méthode de service.  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit un modèle basé sur des revendications riches pour effectuer des vérifications d'accès. L'objet <xref:System.ServiceModel.ServiceAuthorizationManager> est utilisé pour effectuer la vérification d'accès et détermine si les revendications associées au client répondent aux spécifications nécessaires pour accéder à la méthode de service.  
   
- Pour les besoins de la démonstration, cet exemple illustre une implémentation de <xref:System.ServiceModel.ServiceAuthorizationManager> qui implémente la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> pour autoriser l'accès d'un utilisateur aux méthodes basées sur des revendications de type http:\/\/example.com\/claims\/allowedoperation, dont la valeur est l'URI d'action de l'opération autorisée à être appelée.  
+ Pour les besoins de la démonstration, cet exemple illustre une implémentation de <xref:System.ServiceModel.ServiceAuthorizationManager> qui implémente la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> pour autoriser l'accès d'un utilisateur aux méthodes basées sur des revendications de type http://example.com/claims/allowedoperation, dont la valeur est l'URI d'action de l'opération autorisée à être appelée.  
   
 ```  
 public class MyServiceAuthorizationManager : ServiceAuthorizationManager  
@@ -319,19 +317,17 @@ public class MyServiceAuthorizationManager : ServiceAuthorizationManager
     return false;                   
   }  
 }  
-  
 ```  
   
- Une fois que le <xref:System.ServiceModel.ServiceAuthorizationManager> personnalisé est implémenté, l'hôte de service doit être informé du <xref:System.ServiceModel.ServiceAuthorizationManager> à utiliser.Cela est illustré dans le code suivant :  
+ Une fois que le <xref:System.ServiceModel.ServiceAuthorizationManager> personnalisé est implémenté, l'hôte de service doit être informé du <xref:System.ServiceModel.ServiceAuthorizationManager> à utiliser. Cela est illustré dans le code suivant :  
   
-```  
+```xml  
 <behavior ...>  
     ...  
     <serviceAuthorization serviceAuthorizationManagerType="Microsoft.ServiceModel.Samples.MyServiceAuthorizationManager, service">  
         ...  
     </serviceAuthorization>  
 </behavior>  
-  
 ```  
   
  La méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy> principale à implémenter est la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29>.  
@@ -390,29 +386,28 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
 }  
 ```  
   
- Le code précédent montre comment la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> vérifie qu'aucune nouvelle revendication n'a été ajoutée qui affecte le traitement et ajoute des revendications spécifiques.Les revendications autorisées sont obtenues de la méthode `GetAllowedOpList`, implémentée pour retourner une liste spécifique d'opérations que l'utilisateur est autorisé à effectuer.La stratégie d'autorisation ajoute des revendications pour l'accès à l'opération particulière.Elle est utilisée ultérieurement par le <xref:System.ServiceModel.ServiceAuthorizationManager> pour exécuter des décisions relatives à la vérification de l'accès.  
+ Le code précédent montre comment la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> vérifie qu'aucune nouvelle revendication n'a été ajoutée qui affecte le traitement et ajoute des revendications spécifiques. Les revendications autorisées sont obtenues de la méthode `GetAllowedOpList`, implémentée pour retourner une liste spécifique d'opérations que l'utilisateur est autorisé à effectuer. La stratégie d'autorisation ajoute des revendications pour l'accès à l'opération particulière. Elle est utilisée ultérieurement par le <xref:System.ServiceModel.ServiceAuthorizationManager> pour exécuter des décisions relatives à la vérification de l'accès.  
   
  Une fois la <xref:System.IdentityModel.Policy.IAuthorizationPolicy> personnalisée implémentée, l'hôte de service doit être informé des stratégies d'autorisation à utiliser.  
   
-```  
+```xml  
 <serviceAuthorization ...>  
        <authorizationPolicies>   
             <add policyType='Microsoft.ServiceModel.Samples.CustomAuthorizationPolicy.MyAuthorizationPolicy, PolicyLibrary' />  
        </authorizationPolicies>   
 </serviceAuthorization>  
-  
 ```  
   
- Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console cliente.Le client appelle avec succès les méthodes d'addition, de soustraction et de multiplication, et obtient le message « Accès refusé » lors de la tentative d'appel de la méthode de division.Appuyez sur ENTER dans la fenêtre du client pour l'arrêter.  
+ Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Le client appelle avec succès les méthodes d'addition, de soustraction et de multiplication, et obtient le message « Accès refusé » lors de la tentative d'appel de la méthode de division. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
-## Fichier de commandes d'installation  
- Le fichier de commandes Setup.bat inclus avec cet exemple permet de configurer le serveur avec les certificats pertinents pour exécuter une application auto\-hébergée qui requiert une sécurité basée sur le certificat du serveur.  
+## <a name="setup-batch-file"></a>Fichier de commandes d'installation  
+ Le fichier de commandes Setup.bat inclus avec cet exemple permet de configurer le serveur avec les certificats pertinents pour exécuter une application auto-hébergée qui requiert une sécurité basée sur le certificat du serveur.  
   
  Les éléments suivants fournissent une brève vue d'ensemble des différentes sections des fichiers de commandes afin qu'ils puissent être modifiés pour s'exécuter dans la configuration appropriée :  
   
 -   Création du certificat de serveur  
   
-     Les lignes suivantes du fichier de commandes Setup.bat génèrent le certificat de serveur à utiliser.La variable %SERVER\_NAME% spécifie le nom du serveur.Modifiez\-la pour spécifier votre propre nom de serveur.La valeur par défaut est localhost.  
+     Les lignes suivantes du fichier de commandes Setup.bat créent le certificat de serveur à utiliser. La variable %SERVER_NAME% spécifie le nom du serveur. Modifiez cette variable pour spécifier votre propre nom de serveur. La valeur par défaut est localhost.  
   
     ```  
     echo ************  
@@ -422,12 +417,11 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
     echo making server cert  
     echo ************  
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-  
     ```  
   
 -   Installation du certificat de serveur dans le magasin de certificats approuvé du client.  
   
-     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client.Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client.Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats clients avec le certificat de serveur n'est pas requise.  
+     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
@@ -435,85 +429,84 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
   
 -   Création du certificat client  
   
-     Les lignes suivantes du fichier de commandes Setup.bat créent le certificat client à utiliser.La variable %USER\_NAME% spécifie le nom du serveur.Cette valeur est « test1 » parce que c'est le nom que la `IAuthorizationPolicy` recherche.Si vous modifiez la valeur de %USER\_NAME%, vous devez modifier la valeur correspondante dans la méthode `IAuthorizationPolicy.Evaluate`.  
+     Les lignes suivantes du fichier de commandes Setup.bat créent le certificat client à utiliser. La variable %USER_NAME% spécifie le nom du serveur. Cette valeur est « test1 » parce que c'est le nom que la `IAuthorizationPolicy` recherche. Si vous modifiez la valeur de %USER_NAME%, vous devez modifier la valeur correspondante dans la méthode `IAuthorizationPolicy.Evaluate`.  
   
-     Le certificat est stocké dans le magasin My \(Personal\) sous l'emplacement de magasin CurrentUser.  
+     Le certificat est stocké dans le magasin My (Personal) sous l'emplacement de magasin CurrentUser.  
   
     ```  
     echo ************  
     echo making client cert  
     echo ************  
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
-  
     ```  
   
 -   Installation du certificat client dans le magasin de certificats approuvés du serveur.  
   
-     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat client dans le magasin de personnes de confiance du client.Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système du serveur.Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats du serveur avec le certificat client n'est pas requise.  
+     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat client dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système du serveur. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats du serveur avec le certificat client n'est pas requise.  
   
     ```  
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople  
     ```  
   
-#### Pour configurer et générer l'exemple  
+#### <a name="to-set-up-and-build-the-sample"></a>Pour configurer et générer l'exemple  
   
-1.  Pour générer la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1.  Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions ci\-dessous.  
+2.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions ci-dessous.  
   
 > [!NOTE]
->  Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez\-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.  
+>  Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.  
   
-#### Pour exécuter l'exemple sur le même ordinateur  
+#### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur  
   
-1.  Ouvrez une fenêtre d'invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec des privilèges d'administrateur et exécutez Setup.bat à partir du dossier d'installation de l'exemple.Tous les certificats requis pour l'exécution de l'exemple sont ainsi installés.  
+1.  Ouvrez une fenêtre d'invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec des privilèges d'administrateur et exécutez Setup.bat à partir du dossier d'installation de l'exemple. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
   
     > [!NOTE]
-    >  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d'une invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].La variable d'environnement PATH définie dans l'invite de commandes [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.  
+    >  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d'une invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]. La variable d'environnement PATH définie dans l'invite de commandes [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.  
   
-2.  Ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez Setup.bat à partir du dossier d'installation de l'exemple.Tous les certificats requis pour l'exécution de l'exemple sont ainsi installés.  
+2.  Ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez Setup.bat à partir du dossier d'installation de l'exemple. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
   
-3.  Lancez Service.exe à partir de service\\bin.  
+3.  Lancez Service.exe à partir de service\bin.  
   
-4.  Lancer Client.exe dans \\client\\bin.L'activité du client s'affiche sur son application de console.  
+4.  Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-5.  Si le client et le service ne parviennent pas à communiquer, consultez la rubrique [Troubleshooting Tips](http://msdn.microsoft.com/fr-fr/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  Si le client et le service ne parviennent pas à communiquer, consultez [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### Pour exécuter l'exemple sur plusieurs ordinateurs  
+#### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
 1.  Créez un répertoire sur l'ordinateur de service.  
   
-2.  Copiez les fichiers programme du service de \\service\\bin dans le répertoire sur l'ordinateur de service.Copiez également les fichiers Setup.bat, Cleanup.bat, GetComputerName.vbs et ImportClientCert.bat sur l'ordinateur de service.  
+2.  Copiez les fichiers programme du service de \service\bin dans le répertoire sur l'ordinateur de service. Copiez également les fichiers Setup.bat, Cleanup.bat, GetComputerName.vbs et ImportClientCert.bat sur l'ordinateur de service.  
   
 3.  Créez un répertoire sur l'ordinateur client pour les fichiers binaires du client.  
   
-4.  Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client.Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
+4.  Copiez les fichiers programme du client dans le répertoire client de l'ordinateur client. Copiez également les fichiers Setup.bat, Cleanup.bat et ImportServiceCert.bat sur le client.  
   
-5.  Sur le serveur, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez `setup.bat service`.L'exécution de `setup.bat` à l'aide de l'argument `service` crée un certificat de service portant le nom de domaine complet de l'ordinateur, puis exporte ce certificat vers un fichier nommé Service.cer.  
+5.  Sur le serveur, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez `setup.bat service`. En cours d’exécution `setup.bat` avec la `service` argument crée un certificat de service avec le nom de domaine complet de l’ordinateur, puis exporte le certificat de service dans un fichier nommé Service.cer.  
   
-6.  Modifiez Service.exe.config pour refléter le nouveau nom de certificat \(dans l'attribut `findValue` de l'[\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)\) qui est le même que le nom de domaine complet de l'ordinateur.Modifiez également le nom de l'ordinateur dans l'élément \<service\>\/\<baseAddresses\> de localhost avec le nom complet de votre ordinateur de service.  
+6.  Modifier Service.exe.config pour refléter le nouveau nom de certificat (dans le `findValue` d’attribut dans le [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) qui est le même que le nom de domaine complet de l’ordinateur. Modifiez également le dans les \<service > /\<baseAddresses > élément à partir de localhost au nom qualifié complet de votre ordinateur de service.  
   
 7.  Copiez le fichier Service.cer du répertoire de service vers le répertoire client sur l'ordinateur client.  
   
-8.  Sur le client, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez `setup.bat client`.L'exécution de `setup.bat` à l'aide de l'argument `client` crée un certificat client appelé test1, puis exporte ce certificat vers un fichier nommé Client.cer.  
+8.  Sur le client, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez `setup.bat client`. En cours d’exécution `setup.bat` avec la `client` argument crée un certificat client appelé test1, puis exporte le certificat client vers un fichier nommé Client.cer.  
   
-9. Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.Pour ce faire, remplacez localhost par le nom de domaine complet du serveur.  
+9. Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service. Pour ce faire, remplacez localhost par le nom de domaine complet du serveur.  
   
 10. Copiez le fichier Client.cer du répertoire client dans le répertoire de service sur le serveur.  
   
-11. Sur le client, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez ImportServiceCert.bat.Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser \- TrustedPeople.  
+11. Sur le client, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez ImportServiceCert.bat. Cette opération importe le certificat de service du fichier Service.cer dans le magasin CurrentUser - TrustedPeople.  
   
-12. Sur le serveur, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez ImportClientCert.bat.Le certificat client est ainsi importé à partir du fichier Client.cer dans le magasin LocalMachine \- TrustedPeople.  
+12. Sur le serveur, ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez ImportClientCert.bat. Le certificat client est ainsi importé à partir du fichier Client.cer dans le magasin LocalMachine - TrustedPeople.  
   
 13. Sur l'ordinateur serveur, lancez Service.exe à partir de la fenêtre d'invite de commandes.  
   
-14. Sur l'ordinateur client, lancez Client.exe à partir d'une fenêtre d'invite de commandes.Si le client et le service ne parviennent pas à communiquer, consultez la rubrique [Troubleshooting Tips](http://msdn.microsoft.com/fr-fr/8787c877-5e96-42da-8214-fa737a38f10b).  
+14. Sur l'ordinateur client, lancez Client.exe à partir d'une fenêtre d'invite de commandes. Si le client et le service ne parviennent pas à communiquer, consultez [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### Pour procéder au nettoyage après exécution de l'exemple  
+#### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
-1.  Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.Cela supprime les certificats du serveur et du client du magasin de certificats.  
+1.  Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple. Cela supprime les certificats du serveur et du client du magasin de certificats.  
   
 > [!NOTE]
->  Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs.Si vous avez exécuté des exemples [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui utilisent des certificats sur plusieurs ordinateurs, assurez\-vous d'effacer les certificats de service installés dans le magasin CurrentUser \- TrustedPeople.Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+>  Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui utilisent des certificats sur plusieurs ordinateurs, assurez-vous d'effacer les certificats de service installés dans le magasin CurrentUser - TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

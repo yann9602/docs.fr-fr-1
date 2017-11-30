@@ -7,30 +7,24 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 225aa5f9-c54b-4620-ab64-5cd100cfd54c
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3e0e648fb14e07b62f70c614af84a98a256f6095
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1d4746e2303949ddeabee36e4875e7480467f33e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>Améliorations des performances de socket dans la version 3.5
-La classe <xref:System.Net.Sockets.Socket?displayProperty=fullName> a été améliorée dans la version 3.5 pour les applications qui utilisent des E/S réseau asynchrones pour optimiser les performances. Dans le cadre d’un ensemble d’améliorations apportées à la classe <xref:System.Net.Sockets.Socket>, plusieurs nouvelles classes ont été ajoutées pour fournir un autre modèle asynchrone pouvant être utilisé par les applications de socket hautes performances spécialisées. Ces améliorations ont été spécialement conçues pour les applications serveur réseau qui nécessitent un niveau de performance élevé. Une application peut utiliser exclusivement le modèle asynchrone amélioré, ou l’utiliser seulement dans des zones ciblées de l’application (lors de la réception de grandes quantités de données, par exemple).  
+La classe <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> a été améliorée dans la version 3.5 pour les applications qui utilisent des E/S réseau asynchrones pour optimiser les performances. Dans le cadre d’un ensemble d’améliorations apportées à la classe <xref:System.Net.Sockets.Socket>, plusieurs nouvelles classes ont été ajoutées pour fournir un autre modèle asynchrone pouvant être utilisé par les applications de socket hautes performances spécialisées. Ces améliorations ont été spécialement conçues pour les applications serveur réseau qui nécessitent un niveau de performance élevé. Une application peut utiliser exclusivement le modèle asynchrone amélioré, ou l’utiliser seulement dans des zones ciblées de l’application (lors de la réception de grandes quantités de données, par exemple).  
   
 ## <a name="class-enhancements"></a>Améliorations de la classe  
- L’objectif principal de ces améliorations est d’éviter la répétition des opérations d’allocation et de synchronisation d’objets durant les processus impliquant de nombreuses entrées/sorties de socket asynchrones. Le modèle de conception Begin/End actuellement implémenté par la classe <xref:System.Net.Sockets.Socket> pour les entrées/sorties asynchrones nécessite l’allocation d’un objet <xref:System.IAsyncResult?displayProperty=fullName> pour chaque opération de socket asynchrone.  
+ L’objectif principal de ces améliorations est d’éviter la répétition des opérations d’allocation et de synchronisation d’objets durant les processus impliquant de nombreuses entrées/sorties de socket asynchrones. Le modèle de conception Begin/End actuellement implémenté par la classe <xref:System.Net.Sockets.Socket> pour les entrées/sorties asynchrones nécessite l’allocation d’un objet <xref:System.IAsyncResult?displayProperty=nameWithType> pour chaque opération de socket asynchrone.  
   
- Dans la classe <xref:System.Net.Sockets.Socket> améliorée, les opérations de socket asynchrones sont décrites par des objets de la classe <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=fullName> réutilisables qui sont alloués et gérés par l’application. Les applications de socket à hautes performances peuvent ainsi mieux évaluer le nombre d’opérations de socket superposées à conserver. L’application peut créer autant d’objets <xref:System.Net.Sockets.SocketAsyncEventArgs> qu’elle a besoin. Par exemple, si une application serveur doit toujours avoir 15 opérations d’acceptation de socket en attente pour prendre en charge toutes les connexions client entrantes, elle peut préalablement allouer 15 objets <xref:System.Net.Sockets.SocketAsyncEventArgs> réutilisables à cette fin.  
+ Dans la classe <xref:System.Net.Sockets.Socket> améliorée, les opérations de socket asynchrones sont décrites par des objets de la classe <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> réutilisables qui sont alloués et gérés par l’application. Les applications de socket à hautes performances peuvent ainsi mieux évaluer le nombre d’opérations de socket superposées à conserver. L’application peut créer autant d’objets <xref:System.Net.Sockets.SocketAsyncEventArgs> qu’elle a besoin. Par exemple, si une application serveur doit toujours avoir 15 opérations d’acceptation de socket en attente pour prendre en charge toutes les connexions client entrantes, elle peut préalablement allouer 15 objets <xref:System.Net.Sockets.SocketAsyncEventArgs> réutilisables à cette fin.  
   
  Le modèle pour effectuer une opération de socket asynchrone avec cette classe comprend les étapes suivantes :  
   
@@ -49,10 +43,9 @@ La classe <xref:System.Net.Sockets.Socket?displayProperty=fullName> a été amé
  La durée de vie du nouvel objet de contexte de l’opération de socket asynchrone est déterminée par les références dans le code d’application et par les références aux E/S asynchrones. L’application n’a pas besoin de conserver de référence à un objet de contexte de l’opération de socket asynchrone une fois qu’elle a été transmise comme paramètre à l’une des méthodes de l’opération de socket asynchrone. La référence est conservée jusqu’au retour du rappel d’achèvement. Toutefois, l’application peut conserver la référence à l’objet de contexte pour la réutiliser lors d’une opération de socket asynchrone ultérieure.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.Sockets.Socket?displayProperty=fullName>   
- <xref:System.Net.Sockets.SendPacketsElement?displayProperty=fullName>   
- <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=fullName>   
- <xref:System.Net.Sockets.SocketAsyncOperation?displayProperty=fullName>   
- [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)   
+ <xref:System.Net.Sockets.Socket?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.SocketAsyncOperation?displayProperty=nameWithType>  
+ [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Exemple de technologie de performances de socket](http://go.microsoft.com/fwlink/?LinkID=179570)
-

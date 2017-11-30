@@ -1,43 +1,46 @@
 ---
-title: "Concurrency | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Concurrency (exemple) (Windows Communication Foundation)"
-  - "comportements de service, accès concurrentiel (exemple)"
+title: Concurrence
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- service behaviors, concurency sample
+- Concurrency Sample [Windows Communication Foundation]
 ms.assetid: f8dbdfb3-6858-4f95-abe3-3a1db7878926
-caps.latest.revision: 32
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 32
+caps.latest.revision: "32"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e0e6a0db5ee02f96582fe71414b620e1f78c40a1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Concurrency
-Cet exemple montre l'utilisation du <xref:System.ServiceModel.ServiceBehaviorAttribute> avec l'énumération <xref:System.ServiceModel.ConcurrencyMode> qui contrôle si une instance de service traite des messages l'un après l'autre ou simultanément.  Cet exemple est basé sur l'[Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente le contrat de service `ICalculator`.  Cet exemple définit un nouveau contrat, `ICalculatorConcurrency`, qui hérite d' `ICalculator`, fournissant deux opérations supplémentaires pour l'inspection de l'état d'accès concurrentiel du service.  En modifiant le paramètre d'accès concurrentiel, vous pouvez observer le changement de comportement en exécutant le client.  
+# <a name="concurrency"></a>Concurrence
+Cet exemple montre l'utilisation du <xref:System.ServiceModel.ServiceBehaviorAttribute> avec l'énumération <xref:System.ServiceModel.ConcurrencyMode> qui contrôle si une instance de service traite des messages l'un après l'autre ou simultanément. L’exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le `ICalculator` contrat de service. Cet exemple définit un nouveau contrat, `ICalculatorConcurrency`, qui hérite d' `ICalculator`, fournissant deux opérations supplémentaires pour l'inspection de l'état d'accès concurrentiel du service. En modifiant le paramètre d'accès concurrentiel, vous pouvez observer le changement de comportement en exécutant le client.  
   
- Dans cet exemple, le client est une application console \(.exe\) et le service est hébergé par les services IIS \(Internet Information Services\).  
+ Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
  Trois modes d'accès concurrentiel sont disponibles :  
   
--   `Single` : chaque instance de service traite un message à la fois.  Il s'agit du mode d'accès concurrentiel par défaut.  
+-   `Single` : chaque instance de service traite un message à la fois. Il s'agit du mode d'accès concurrentiel par défaut.  
   
--   `Multiple` : chaque instance de service traite plusieurs messages simultanément.  Pour utiliser ce mode, l'implémentation de service doit être « thread\-safe ».  
+-   `Multiple` : chaque instance de service traite plusieurs messages simultanément. Pour utiliser ce mode, l'implémentation de service doit être « thread-safe ».  
   
--   `Reentrant` : chaque instance de service traite un message à la fois, mais accepte des appels réentrants.  Le service accepte seulement ces appels lorsqu'il appelle.  Ce mode est illustré dans l'exemple [ConcurrencyMode.Reentrant](../../../../docs/framework/wcf/samples/concurrencymode-reentrant.md).  
+-   `Reentrant` : chaque instance de service traite un message à la fois, mais accepte des appels réentrants. Le service accepte seulement ces appels lorsqu'il appelle. Reentrant est illustré dans le [ConcurrencyMode.Reentrant](../../../../docs/framework/wcf/samples/concurrencymode-reentrant.md) exemple.  
   
- L'utilisation de l'accès concurrentiel est associée au mode d'instanciation.  Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode>, l'accès concurrentiel n'est pas pertinent, parce que chaque message est traité par une nouvelle instance de service.  Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode>, l'accès concurrentiel <xref:System.ServiceModel.ConcurrencyMode> ou <xref:System.ServiceModel.ConcurrencyMode> est pertinent, selon que la même instance traite des messages l'un après l'autre ou simultanément.  Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode>, chacun des modes d'accès concurrentiel peut être pertinent.  
+ L'utilisation de l'accès concurrentiel est associée au mode d'instanciation. Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode.PerCall>, l'accès concurrentiel n'est pas pertinent, parce que chaque message est traité par une nouvelle instance de service. Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode.Single>, l'accès concurrentiel <xref:System.ServiceModel.ConcurrencyMode.Single> ou <xref:System.ServiceModel.ConcurrencyMode.Multiple> est pertinent, selon que la même instance traite des messages l'un après l'autre ou simultanément. Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode.PerSession>, chacun des modes d'accès concurrentiel peut être pertinent.  
   
- La classe de service spécifie le comportement d'accès concurrentiel avec l'attribut `[ServiceBehavior(ConcurrencyMode=<setting>)]` comme illustré dans l'exemple de code suivant.  En modifiant les lignes commentées, vous pouvez tester les modes d'accès concurrentiel `Single` et `Multiple`.  Veillez à régénérer le service après avoir modifié le mode d'accès concurrentiel.  
+ La classe de service spécifie le comportement d'accès concurrentiel avec l'attribut `[ServiceBehavior(ConcurrencyMode=<setting>)]` comme illustré dans l'exemple de code suivant. En modifiant les lignes commentées, vous pouvez tester les modes d'accès concurrentiel `Single` et `Multiple`. Veillez à régénérer le service après avoir modifié le mode d'accès concurrentiel.  
   
 ```  
 // Single allows a single message to be processed sequentially by each service instance.  
@@ -96,27 +99,27 @@ public class CalculatorService : ICalculatorConcurrency
 }  
 ```  
   
- L'exemple utilise par défaut l'accès concurrentiel <xref:System.ServiceModel.ConcurrencyMode> avec l'instanciation <xref:System.ServiceModel.InstanceContextMode>.  Le code client a été modifié pour utiliser un proxy asynchrone.  Le client peut ainsi effectuer plusieurs appels au service sans attendre de réponse entre chaque appel.  Vous pouvez observer la différence dans le comportement du mode d'accès concurrentiel de service.  
+ L'exemple utilise par défaut l'accès concurrentiel <xref:System.ServiceModel.ConcurrencyMode.Multiple> avec l'instanciation <xref:System.ServiceModel.InstanceContextMode.Single>. Le code client a été modifié pour utiliser un proxy asynchrone. Le client peut ainsi effectuer plusieurs appels au service sans attendre de réponse entre chaque appel. Vous pouvez observer la différence dans le comportement du mode d'accès concurrentiel de service.  
   
- Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client.  Le mode d'accès concurrentiel sous lequel le service s'exécute s'affiche, chaque opération est appelée, puis, le nombre d'opérations est affiché.  Notez que lorsque le mode d'accès concurrentiel est `Multiple`, les résultats sont retournés dans un ordre différent de l'ordre d'appel parce que le service traite plusieurs messages simultanément.  En modifiant le mode d'accès concurrentiel en `Single`, les résultats sont retournés dans l'ordre d'appel parce que le service traite chaque message individuellement.  Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
+ Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Le mode d'accès concurrentiel sous lequel le service s'exécute s'affiche, chaque opération est appelée, puis, le nombre d'opérations est affiché. Notez que lorsque le mode d'accès concurrentiel est `Multiple`, les résultats sont retournés dans un ordre différent de l'ordre d'appel parce que le service traite plusieurs messages simultanément. En modifiant le mode d'accès concurrentiel en `Single`, les résultats sont retournés dans l'ordre d'appel parce que le service traite chaque message individuellement. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Si vous utilisez Svcutil.exe pour générer le client proxy, veillez à inclure l'option `/async`.  
+2.  Si vous utilisez Svcutil.exe pour générer le client du proxy, veillez à inclure le `/async` option.  
   
-3.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Concurrency`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Concurrency`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

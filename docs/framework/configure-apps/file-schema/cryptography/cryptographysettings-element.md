@@ -1,67 +1,68 @@
 ---
-title: "&lt;cryptographySettings&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptographySettings"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<cryptographySettings> (élément)"
-  - "cryptographySettings (élément)"
+title: "&lt;cryptographySettings&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptographySettings
+helpviewer_keywords:
+- cryptographySettings element
+- <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 0f023dbc3049f558acfc0fb83056f462d390fa7b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;cryptographySettings&gt;, &#233;l&#233;ment
+# <a name="ltcryptographysettingsgt-element"></a>&lt;cryptographySettings&gt; élément
 Contient des paramètres de chiffrement.  
   
-## Syntaxe  
+ \<configuration>  
+\<mscorlib >  
+\<cryptographySettings >  
   
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
+      <cryptographySettings>   
+</cryptographySettings>  
 ```  
   
-      <cryptographySettings>   
-</crytopgraphySettings>  
-```  
-  
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
- Aucun.  
+### <a name="attributes"></a>Attributs  
+ Aucun  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<cryptoNameMapping\>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|Contient les mises en correspondance des classes avec les noms conviviaux.|  
-|[\<oidMap\>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Contient les mises en correspondance des OID \(Object IDentifier\) ASN.1 avec les classes.|  
+|[\<cryptoNameMapping >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|Contient des mappages de classes à des noms conviviaux.|  
+|[\<oidMap >](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Contient les mappages de d’identificateur d’objet ASN.1 aux classes.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`mscorlib`|Contient l'élément `cryptographySettings`.|  
+|`mscorlib`|Contient le `cryptographySettings` élément.|  
   
-## Exemple  
- L'exemple suivant montre comment utiliser l'élément **\<cryptographySettings\>** pour qu'il contienne les mises en correspondance des noms de chiffrement et les mises en correspondance des OID.  Cet exemple configure le runtime de sorte que [System.Security.Cryptography.HashAlgorithm.Create](frlrfSystemSecurityCryptographyHashAlgorithmClassCreateTopic) retourne un objet `MyHashClass` et que la classe `MyCryptoClass` soit associée à l'OID 1.3.36.2.1.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser le  **\<cryptographySettings >** élément doit contenir les mappages de noms de chiffrement et les mappages de l’OID. Cet exemple configure l’exécution afin que <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> retourne un `MyHashClass` objet et la `MyCryptoClass` classe correspond à l’OID 1.3.36.2.1.  
   
-```  
+```xml  
 <configuration>  
    <mscorlib>  
       <cryptographySettings>  
@@ -85,7 +86,7 @@ Contient des paramètres de chiffrement.
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
  [Services de chiffrement](../../../../../docs/standard/security/cryptographic-services.md)

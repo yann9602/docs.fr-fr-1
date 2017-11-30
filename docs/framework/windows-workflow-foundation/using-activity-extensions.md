@@ -1,34 +1,37 @@
 ---
-title: "Utilisation d&#39;extensions d&#39;activit&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Utilisation d’extensions d’activité"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7ff4f441df437dc5785b6df77c16923a1a1c9906
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Utilisation d&#39;extensions d&#39;activit&#233;
-Les activités peuvent interagir avec les extensions d'application de workflow qui permettent à l'hôte de fournir des fonctionnalités supplémentaires qui ne sont pas explicitement modélisées dans le workflow.Cette rubrique explique comment créer et utiliser une extension pour compter le nombre de fois où l'activité s'exécute.  
+# <a name="using-activity-extensions"></a>Utilisation d’extensions d’activité
+Les activités peuvent interagir avec les extensions d'application de workflow qui permettent à l'hôte de fournir des fonctionnalités supplémentaires qui ne sont pas explicitement modélisées dans le workflow.  Cette rubrique explique comment créer et utiliser une extension pour compter le nombre de fois où l'activité s'exécute.  
   
-### Pour utiliser une extension d'activité pour compter les exécutions  
+### <a name="to-use-an-activity-extension-to-count-executions"></a>Pour utiliser une extension d'activité pour compter les exécutions  
   
-1.  Ouvrez [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].Sélectionnez **Nouveau**, **Projet**.Sous le nœud **Visual C\#**, sélectionnez **Workflow**.Sélectionnez **Application console de workflow** dans la liste des modèles.Nommez le projet `Extensions`.Cliquez sur **OK** pour créer le projet.  
+1.  Ouvrez [!INCLUDE[vs2010](../../../includes/vs2010-md.md)]. Sélectionnez **nouveau**, **projet**. Sous le **Visual C#** nœud, sélectionnez **Workflow**.  Sélectionnez **Application Console de Workflow** à partir de la liste des modèles. Attribuez un nom au projet `Extensions`. Cliquez sur **OK** pour créer le projet.  
   
-2.  Ajoutez une instruction `using` dans le fichier Program.cs pour l'espace de noms **System.Collections.Generic**.  
+2.  Ajouter un `using` instruction dans le fichier Program.cs pour le **System.Collections.Generic** espace de noms.  
   
     ```  
     using System.Collections.Generic;  
-  
     ```  
   
-3.  Dans le fichier Program.cs, créez une classe nommée **ExecutionCountExtension**.Le code suivant crée une extension de workflow qui suit les ID d'instance lorsque sa méthode **Register** est appelée.  
+3.  Dans le fichier Program.cs, créez une nouvelle classe nommée **ExecutionCountExtension**. Le code suivant crée une extension de workflow qui suit les ID d’instance lorsque sa **inscrire** méthode est appelée.  
   
     ```  
     // This extension collects a list of workflow Ids  
@@ -60,10 +63,9 @@ Les activités peuvent interagir avec les extensions d'application de workflow q
             }  
         }  
     }  
-  
     ```  
   
-4.  Créez une activité qui consomme la classe **ExecutionCountExtension**.Le code suivant définit une activité qui récupère l'objet **ExecutionCountExtension** du runtime et appelle sa méthode **Register** lorsque l'activité s'exécute.  
+4.  Créer une activité qui consomme la **ExecutionCountExtension**. Le code suivant définit une activité qui Récupère le **ExecutionCountExtension** objet à partir du runtime et appelle son **inscrire** méthode lorsque l’activité s’exécute.  
   
     ```  
     // Activity that consumes an extension provided by the host. If the extension is available  
@@ -80,10 +82,9 @@ Les activités peuvent interagir avec les extensions d'application de workflow q
   
         }  
     }  
-  
     ```  
   
-5.  Implémentez l'activité dans la méthode **Main** du fichier program.cs.Le code suivant contient les méthodes pour générer deux workflows distincts, exécuter plusieurs fois chaque workflow et afficher les données résultantes contenues dans l'extension.  
+5.  Implémentez l’activité dans le **Main** méthode du fichier program.cs. Le code suivant contient les méthodes pour générer deux workflows distincts, exécuter plusieurs fois chaque workflow et afficher les données résultantes contenues dans l'extension.  
   
     ```  
     class Program  
