@@ -1,56 +1,61 @@
 ---
-title: "Interception d&#39;entr&#233;e &#224; partir du stylet | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "architecture, System.Windows.Input.StylusPlugIns"
-  - "InkCanvas, ajouter des plug-ins à"
-  - "plug-ins, stylet"
-  - "StylusPlugIns (architecture)"
-  - "System.Windows.Input.StylusPlugIns (architecture)"
+title: "Interception d'entrée à partir du stylet"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- 'architecture [WPF], '
+- ', '
+- ', '
+- ', '
 ms.assetid: 791bb2f0-4e5c-4569-ac3c-211996808d44
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 611a2d2de56025e2f1b5add6106294834586f9af
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Interception d&#39;entr&#233;e &#224; partir du stylet
-L'architecture <xref:System.Windows.Input.StylusPlugIns> fournit un mécanisme pour l'implémentation du contrôle de bas niveau sur l'entrée <xref:System.Windows.Input.Stylus> et la création d'objets <xref:System.Windows.Ink.Stroke> à l'encre numérique.  La classe <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> fournit un mécanisme qui vous permet d'implémenter un comportement personnalisé et de l'appliquer au flux de données provenant du périphérique de stylet pour des performances optimales.  
+# <a name="intercepting-input-from-the-stylus"></a>Interception d'entrée à partir du stylet
+Le <xref:System.Windows.Input.StylusPlugIns> architecture fournit un mécanisme pour l’implémentation du contrôle de bas niveau sur <xref:System.Windows.Input.Stylus> d’entrée et de la création de l’encre numérique <xref:System.Windows.Ink.Stroke> objets. La <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> classe fournit un mécanisme vous permet d’implémenter un comportement personnalisé et l’appliquer au flux de données provenant du périphérique stylet pour des performances optimales.  
   
- Cette rubrique contient les sous\-sections suivantes :  
+ Cette rubrique contient les sous-sections suivantes :  
   
 -   [Architecture](#Architecture)  
   
--   [Implémentation de plug-ins de stylet](#ImplementingStylusPlugins)  
+-   [Implémentation de Plug-ins du stylet](#ImplementingStylusPlugins)  
   
 -   [Ajout de votre plug-in à un InkCanvas](#AddingYourPluginToAnInkCanvas)  
   
 -   [Conclusion](#Conclusion)  
   
 <a name="Architecture"></a>   
-## Architecture  
- <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> est l'évolution des API [StylusInput](http://go.microsoft.com/fwlink/?LinkId=50753&clcid=0x409) décrites dans [Accessing and Manipulating Pen Input](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409), dans [Microsoft Windows XP Tablet PC Edition Software Development Kit 1.7](http://go.microsoft.com/fwlink/?linkid=11782&clcid=0x409).  
+## <a name="architecture"></a>Architecture  
+ Le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> est l’évolution de la [StylusInput](http://go.microsoft.com/fwlink/?LinkId=50753&clcid=0x409) API, décrites dans [l’accès et la manipulation de stylet](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409), dans le [logiciel de Microsoft Windows XP Tablet PC Edition Kit de développement SDK 1.7](http://go.microsoft.com/fwlink/?linkid=11782&clcid=0x409).  
   
- Chaque <xref:System.Windows.UIElement> a une propriété <xref:System.Windows.UIElement.StylusPlugIns%2A> qui est un <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>.  Vous pouvez ajouter un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> à la propriété <xref:System.Windows.UIElement.StylusPlugIns%2A> d'un élément pour manipuler les données <xref:System.Windows.Input.StylusPoint> à mesure de leur génération.  Les données <xref:System.Windows.Input.StylusPoint> sont constituées de toutes les propriétés prises en charge par le digitaliseur de système, notamment les données de point <xref:System.Windows.Input.StylusPoint.X%2A> et <xref:System.Windows.Input.StylusPoint.Y%2A>, ainsi que les données <xref:System.Windows.Input.StylusPoint.PressureFactor%2A>.  
+ Chaque <xref:System.Windows.UIElement> a un <xref:System.Windows.UIElement.StylusPlugIns%2A> propriété qui est un <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>. Vous pouvez ajouter un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> à un élément <xref:System.Windows.UIElement.StylusPlugIns%2A> propriété manipuler <xref:System.Windows.Input.StylusPoint> données telle qu’elle sont générées. <xref:System.Windows.Input.StylusPoint>données se composent de toutes les propriétés prises en charge par le digitaliseur de système, y compris le <xref:System.Windows.Input.StylusPoint.X%2A> et <xref:System.Windows.Input.StylusPoint.Y%2A> point de données, ainsi que <xref:System.Windows.Input.StylusPoint.PressureFactor%2A> données.  
   
- Vos objets <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> sont insérés directement dans le flux de données des données provenant du périphérique <xref:System.Windows.Input.Stylus> lorsque vous ajoutez le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> à la propriété <xref:System.Windows.UIElement.StylusPlugIns%2A>.  L'ordre dans lequel les plug\-ins sont ajoutés à la collection <xref:System.Windows.UIElement.StylusPlugIns%2A> détermine l'ordre dans lequel ils recevront les données <xref:System.Windows.Input.StylusPoint>.  Par exemple, si vous ajoutez un plug\-in de filtre qui restreint l'entrée à une région particulière et que vous ajoutez ensuite un plug\-in qui reconnaît les gestes lors de leur écriture, le plug\-in qui reconnaît les gestes recevra des données <xref:System.Windows.Input.StylusPoint> filtrées.  
+ Votre <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objets sont insérés directement dans le flux de données entrantes à partir de la <xref:System.Windows.Input.Stylus> périphérique lorsque vous ajoutez le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> à la <xref:System.Windows.UIElement.StylusPlugIns%2A> propriété. L’ordre dans lequel les plug-ins sont ajoutés à la <xref:System.Windows.UIElement.StylusPlugIns%2A> collection détermine l’ordre dans lequel ils recevront <xref:System.Windows.Input.StylusPoint> données. Par exemple, si vous ajoutez un plug-in de filtre qui restreint l’entrée à une région particulière, puis ajoutez un plug-in qui reconnaît les gestes lors de leur écriture, le plug-in qui reconnaît les gestes recevra filtré <xref:System.Windows.Input.StylusPoint> données.  
   
 <a name="ImplementingStylusPlugins"></a>   
-## Implémentation de plug\-ins de stylet  
- Pour implémenter un plug\-in, dérivez une classe de <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>.  Cette classe est appliquée au flux de données lorsqu'il arrive du <xref:System.Windows.Input.Stylus>.  Dans cette classe, vous pouvez modifier les valeurs des données <xref:System.Windows.Input.StylusPoint>.  
+## <a name="implementing-stylus-plug-ins"></a>Implémentation de Plug-ins du stylet  
+ Pour implémenter un plug-in, dérivez une classe de <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>. Cette classe est appliquée au flux de données lorsqu’elles proviennent de le <xref:System.Windows.Input.Stylus>. Dans cette classe, vous pouvez modifier les valeurs de la <xref:System.Windows.Input.StylusPoint> données.  
   
 > [!CAUTION]
->  Si un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> lève ou provoque une exception, l'application se ferme.  Vous devez tester entièrement les contrôles qui utilisent un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>. N'utilisez un contrôle que si vous êtes certain que le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> ne lèvera pas d'exception.  
+>  Si un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> lève ou lève une exception, l’application se ferme. Vous devez tester les contrôles qui utilisent un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> et utiliser uniquement un contrôle si vous êtes certain le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> pas lève une exception.  
   
- L'exemple suivant montre un plug\-in qui restreint l'entrée du stylet en modifiant les valeurs <xref:System.Windows.Input.StylusPoint.X%2A> et <xref:System.Windows.Input.StylusPoint.Y%2A> dans les données <xref:System.Windows.Input.StylusPoint> lorsqu'elles proviennent du périphérique <xref:System.Windows.Input.Stylus>.  
+ L’exemple suivant illustre un plug-in qui restreint l’entrée du stylet en modifiant le <xref:System.Windows.Input.StylusPoint.X%2A> et <xref:System.Windows.Input.StylusPoint.Y%2A> des valeurs dans le <xref:System.Windows.Input.StylusPoint> données tel qu’il provient la <xref:System.Windows.Input.Stylus> appareil.  
   
  [!code-csharp[AdvancedInkTopicsSamples#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
  [!code-vb[AdvancedInkTopicsSamples#19](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
@@ -58,23 +63,23 @@ L'architecture <xref:System.Windows.Input.StylusPlugIns> fournit un mécanisme p
 [!code-vb[AdvancedInkTopicsSamples#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#3)]  
   
 <a name="AddingYourPluginToAnInkCanvas"></a>   
-## Ajout de votre plug\-in à un InkCanvas  
- Le meilleur moyen d'utiliser votre plug\-in personnalisé est d'implémenter une classe qui dérive d'InkCanvas et de l'ajouter à la propriété <xref:System.Windows.UIElement.StylusPlugIns%2A>.  
+## <a name="adding-your-plug-in-to-an-inkcanvas"></a>Ajout de votre plug-in à un InkCanvas  
+ Le moyen le plus simple à utiliser votre plug-in personnalisé consiste à implémenter une classe qui dérive d’InkCanvas et ajoutez-la à la <xref:System.Windows.UIElement.StylusPlugIns%2A> propriété.  
   
- L'exemple suivant montre un <xref:System.Windows.Controls.InkCanvas> personnalisé qui filtre l'encre.  
+ L’exemple suivant montre une personnalisée <xref:System.Windows.Controls.InkCanvas> qui filtre l’encre.  
   
  [!code-csharp[AdvancedInkTopicsSamples#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#4)]  
   
- Si vous ajoutez un `FilterInkCanvas` à votre application et que vous l'exécutez, vous remarquerez que l'encre n'est pas restreinte à une région tant que l'utilisateur n'a pas terminé son trait.  Cela est dû au fait qu'<xref:System.Windows.Controls.InkCanvas> possède une propriété <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> qui est un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> et est déjà membre de la collection <xref:System.Windows.UIElement.StylusPlugIns%2A>.  Le <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> personnalisé que vous avez ajouté à la collection <xref:System.Windows.UIElement.StylusPlugIns%2A> reçoit les données <xref:System.Windows.Input.StylusPoint> après que <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a reçu des données.  Par conséquent, les données <xref:System.Windows.Input.StylusPoint> ne seront pas filtrées tant que l'utilisateur n'aura pas soulevé le stylet pour terminer son trait.  Pour filtrer l'encre pendant que l'utilisateur dessine, vous devez insérer le `FilterPlugin` avant le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>.  
+ Si vous ajoutez un `FilterInkCanvas` à votre application et l’exécuter, vous remarquerez que l’encre n’est pas restreinte à une région jusqu'à ce que l’utilisateur après un trait. C’est parce que le <xref:System.Windows.Controls.InkCanvas> a un <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> propriété, qui est un <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> et est déjà membre de la <xref:System.Windows.UIElement.StylusPlugIns%2A> collection. Personnalisé <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> vous avez ajouté à la <xref:System.Windows.UIElement.StylusPlugIns%2A> collection reçoit le <xref:System.Windows.Input.StylusPoint> données après <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> reçoit des données. Par conséquent, le <xref:System.Windows.Input.StylusPoint> données ne sont pas filtrées jusqu'à une fois que l’utilisateur lève le stylet pour terminer un trait. Pour filtrer l’encre que l’utilisateur dessine, vous devez insérer la `FilterPlugin` avant le <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>.  
   
- Le code C\# suivant montre un <xref:System.Windows.Controls.InkCanvas> personnalisé qui filtre l'encre pendant la réalisation du dessin.  
+ Le code c# suivant illustre une personnalisée <xref:System.Windows.Controls.InkCanvas> qui filtre l’encre comme il est dessiné.  
   
  [!code-csharp[AdvancedInkTopicsSamples#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#5)]  
   
 <a name="Conclusion"></a>   
-## Conclusion  
- En dérivant vos propres classes <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> et en les insérant dans des collections <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, vous pouvez facilement améliorer le comportement de votre encre numérique.  Vous avez accès aux données <xref:System.Windows.Input.StylusPoint> lorsqu'elles sont générées, ce qui vous donne la possibilité de personnaliser l'entrée <xref:System.Windows.Input.Stylus>.  Étant donné que vous avez un accès de bas niveau aux données <xref:System.Windows.Input.StylusPoint>, vous pouvez implémenter la collecte et la restitution d'encre avec des performances optimales pour votre application.  
+## <a name="conclusion"></a>Conclusion  
+ En dérivant votre propre <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> de classes et de les insérer dans <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> collections, vous pouvez améliorer considérablement le comportement de votre encre numérique. Vous avez accès à la <xref:System.Windows.Input.StylusPoint> données tel qu’il sont générées, ce qui vous donne la possibilité de personnaliser le <xref:System.Windows.Input.Stylus> d’entrée. Étant donné que vous avez un accès de bas niveau pour le <xref:System.Windows.Input.StylusPoint> des données, vous pouvez implémenter la collecte d’encre et rendu avec des performances optimales pour votre application.  
   
-## Voir aussi  
- [Gestion avancée de l'encre](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)   
- [Accès au stylet et manipulation \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)
+## <a name="see-also"></a>Voir aussi  
+ [Gestion avancée de l’encre](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
+ [Accéder et manipuler le stylet](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

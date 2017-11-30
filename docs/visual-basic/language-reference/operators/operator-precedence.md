@@ -1,72 +1,55 @@
 ---
-title: "Priorité des opérateurs dans Visual Basic | Documents Microsoft"
-ms.date: 2015-07-20
+title: "Priorité des opérateurs en Visual Basic"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- arithmetic operators, precedence
+- arithmetic operators [Visual Basic], precedence
 - operator precedence
-- logical operators, precedence
+- logical operators [Visual Basic], precedence
 - operators [Visual Basic], associativity
 - operators [Visual Basic], resolution
-- associativity of operators
+- associativity of operators [Visual Basic]
 - operators [Visual Basic], precedence
-- precedence, of operators
-- comparison operators, precedence
-- math operators
+- precedence [Visual Basic], of operators
+- comparison operators [Visual Basic], precedence
+- math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6532fc0c26db3b736c863be075571570a3d25eef
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 6c0fb466b404cafdd4b91d061971fd683375c715
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Priorité des opérateurs en Visual Basic
-Lorsque plusieurs opérations ont lieu dans une expression, chaque partie est évalué et résolu dans un ordre prédéterminé *la priorité des opérateurs*.  
+Lorsque plusieurs opérations ont lieu dans une expression, chaque partie est évaluée et résolue dans un ordre prédéterminé *la priorité des opérateurs*.  
   
 ## <a name="precedence-rules"></a>Règles de priorité  
- Expressions contenant des opérateurs à partir de plusieurs catégories, elles sont évaluées selon les règles suivantes :  
+ Les expressions contenant des opérateurs à partir de plusieurs catégories, elles sont évaluées selon les règles suivantes :  
   
--   Les opérateurs arithmétiques et de concaténation ont l’ordre de priorité décrit dans la section suivante et leur priorité supérieure à la comparaison, logiques et opérateurs au niveau du bit.  
+-   Les opérateurs arithmétiques et de concaténation ont l’ordre de priorité décrit dans la section suivante, et que tous ont une priorité supérieure à celle de la comparaison, logiques et les opérateurs au niveau du bit.  
   
--   Tous les opérateurs de comparaison ont la même priorité et leur priorité supérieure à celle des opérateurs logiques et de bits, mais moins élevée que les opérateurs arithmétiques et de concaténation.  
+-   Tous les opérateurs de comparaison ont la même priorité et ont la précédence la plus élevée que les opérateurs logiques et au niveau du bit, mais moins élevée que les opérateurs arithmétiques et de concaténation.  
   
--   Les opérateurs logiques et de bits ont l’ordre de priorité décrit dans la section suivante, et leur priorité inférieure à celle de l’arithmétique, concaténation et les opérateurs de comparaison.  
+-   Les opérateurs logiques et au niveau du bit ont l’ordre de priorité décrite dans la section suivante, et leur priorité inférieure à celle de l’arithmétique, concaténation et les opérateurs de comparaison.  
   
--   Les opérateurs ayant la même priorité sont évalués de gauche à droite dans l’ordre dans lequel ils apparaissent dans l’expression.  
+-   Opérateurs ayant la même priorité sont évalués de gauche à droite dans l’ordre dans lequel elles apparaissent dans l’expression.  
   
 ## <a name="precedence-order"></a>Ordre de priorité  
  Les opérateurs sont évalués dans l’ordre de priorité suivant :  
   
 ### <a name="await-operator"></a>Await, opérateur  
- Await  
+ await  
   
-### <a name="arithmetic-and-concatenation-operators"></a>Opérations arithmétiques et concaténation  
- Élévation à la puissance (`^`)  
+### <a name="arithmetic-and-concatenation-operators"></a>Opérations arithmétiques et les opérateurs de concaténation  
+ Exponentiation (`^`)  
   
  Unaire identité et la négation (`+`, `–`)  
   
@@ -83,7 +66,7 @@ Lorsque plusieurs opérations ont lieu dans une expression, chaque partie est é
  Décalage de bits arithmétique (`<<`, `>>`)  
   
 ### <a name="comparison-operators"></a>Opérateurs de comparaison  
- All comparison operators (`=`, `<>`, `<`, `<=`, `>`, `>=`, `Is`, `IsNot`, `Like`, `TypeOf`... `Is`)  
+ Tous les opérateurs de comparaison (`=`, `<>`, `<`, `<=`, `>`, `>=`, `Is`, `IsNot`, `Like`, `TypeOf`... `Is`)  
   
 ### <a name="logical-and-bitwise-operators"></a>Opérateurs logiques et au niveau du bit  
  Négation (`Not`)  
@@ -95,9 +78,9 @@ Lorsque plusieurs opérations ont lieu dans une expression, chaque partie est é
  Disjonction exclusive (`Xor`)  
   
 ### <a name="comments"></a>Commentaires  
- Le `=` opérateur n'est que l’opérateur d’égalité, pas l’opérateur d’assignation.  
+ Le `=` opérateur est uniquement l’opérateur d’égalité, pas l’opérateur d’assignation.  
   
- L’opérateur de concaténation de chaîne (`&`) n’est pas un opérateur arithmétique, mais il est groupé avec les opérateurs arithmétiques priorités.  
+ L’opérateur de concaténation de chaîne (`&`) n’est pas un opérateur arithmétique, mais il est groupé avec les opérateurs arithmétiques priorité.  
   
  Le `Is` et `IsNot` opérateurs sont des opérateurs de comparaison de référence objet. Ils ne comparent pas les valeurs de deux objets ; ils vérifient uniquement pour déterminer si deux variables objets font référence à la même instance d’objet.  
   
@@ -110,12 +93,12 @@ Dim n2 As Integer = (96 / 8) / 4
 Dim n3 As Integer = 96 / (8 / 4)  
 ```  
   
- La première expression évalue la division 96 / 8 (ce qui entraîne à 12), puis la division 12 / 4, ce qui se traduit par trois. Comme le compilateur évalue les opérations de `n1` de gauche à droite, l’évaluation ne change pas lorsque cet ordre est indiqué explicitement pour `n2`. Les deux `n1` et `n2` ont un résultat de trois. En revanche, `n3` a un résultat égal à 48, parce que les parenthèses forcent le compilateur à évaluer 8 / 4 première.  
+ La première expression évalue la division 96 / 8 (ce qui se traduit à 12), puis la division 12 / 4, ce qui entraîne trois. Étant donné que le compilateur évalue les opérations de `n1` de gauche à droite, l’évaluation est le même lorsque cet ordre est indiqué explicitement pour `n2`. Les deux `n1` et `n2` avoir un résultat de trois. En revanche, `n3` a un résultat égal à 48, parce que les parenthèses forcent le compilateur à évaluer 8 / 4 premier.  
   
- En raison de ce comportement, les opérateurs sont dits *associatifs sur leur gauche* dans [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+ En raison de ce comportement, les opérateurs sont dits *associatifs sur leur gauche* dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
 ## <a name="overriding-precedence-and-associativity"></a>Substitution de priorité et associativité  
- Vous pouvez utiliser des parenthèses pour forcer certaines parties d’une expression doit être évaluée avant d’autres. Cela peut substituer l’ordre de priorité et l’associativité de gauche. [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]effectue toujours les opérations entre parenthèses avant celles en dehors. Toutefois, entre parenthèses, il maintient ordinaire priorité et associativité, sauf si vous utilisez des parenthèses dans les parenthèses. L'exemple suivant illustre ce comportement.  
+ Vous pouvez utiliser des parenthèses pour forcer certaines parties d’une expression à évaluer avant les autres. Cela peut remplacer l’ordre de priorité et l’associativité de gauche. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]exécute toujours les opérations qui sont placés entre parenthèses avant celles en dehors. Toutefois, dans les parenthèses, il maintient ordinaire priorité et associativité, sauf si vous utilisez des parenthèses dans les parenthèses. L'exemple suivant illustre ce comportement.  
   
 ```  
 Dim a, b, c, d, e, f, g As Double  
@@ -136,11 +119,11 @@ g = (a - (b + c)) / (d * e)
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [=, Opérateur](../../../visual-basic/language-reference/operators/assignment-operator.md)   
- [Opérateur](../../../visual-basic/language-reference/operators/is-operator.md)   
- [IsNot, opérateur](../../../visual-basic/language-reference/operators/isnot-operator.md)   
- [LIKE (opérateur)](../../../visual-basic/language-reference/operators/like-operator.md)   
- [TypeOf, opérateur](../../../visual-basic/language-reference/operators/typeof-operator.md)   
- [Await (opérateur)](../../../visual-basic/language-reference/operators/await-operator.md)   
- [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
+ [= (opérateur)](../../../visual-basic/language-reference/operators/assignment-operator.md)  
+ [Is (opérateur)](../../../visual-basic/language-reference/operators/is-operator.md)  
+ [IsNot (opérateur)](../../../visual-basic/language-reference/operators/isnot-operator.md)  
+ [Like (opérateur)](../../../visual-basic/language-reference/operators/like-operator.md)  
+ [TypeOf (opérateur)](../../../visual-basic/language-reference/operators/typeof-operator.md)  
+ [Await (opérateur)](../../../visual-basic/language-reference/operators/await-operator.md)  
+ [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
  [Opérateurs et expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

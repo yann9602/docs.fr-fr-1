@@ -7,26 +7,20 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - <xmlSerializer> element
 - XML serialization, configuration
 - xmlSerializer element
 ms.assetid: d129d10c-3eb7-45d9-8098-5fa853825e47
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 963850f2ef05ec51c4a9548b77eadf12fcf978c1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: cadca32d5aa34d5cb6f9091f65c34c7cba603ff5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltxmlserializergt-element"></a>Élément &lt;xmlSerializer&gt;
 Spécifie si un contrôle supplémentaire de la progression de <xref:System.Xml.Serialization.XmlSerializer> est effectué.  
@@ -76,7 +70,6 @@ Spécifie si un contrôle supplémentaire de la progression de <xref:System.Xml.
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Serialization.XmlSerializer>   
- [\<system.xml.serialization>, élément](../../../docs/standard/serialization/system-xml-serialization-element.md)   
+ <xref:System.Xml.Serialization.XmlSerializer>  
+ [\<system.xml.serialization>, élément](../../../docs/standard/serialization/system-xml-serialization-element.md)  
  [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-

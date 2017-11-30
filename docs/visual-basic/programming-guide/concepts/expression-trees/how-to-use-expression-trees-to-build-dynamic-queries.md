@@ -1,58 +1,123 @@
 ---
-title: "Comment : utiliser des arborescences d’Expression pour générer des requêtes dynamiques (Visual Basic) | Documents Microsoft"
+title: "Comment : utiliser des arborescences d’Expression pour générer des requêtes dynamiques (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 16278787-7532-4b65-98b2-7a412406c4ee
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8d69be78a9f3568535dffe54e21af80c6eb12f70
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d09f89b0b49118d575690f577c77c5c3d2a76e92
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-visual-basic"></a>Comment : utiliser des arborescences d’Expression pour générer des requêtes dynamiques (Visual Basic)
-Dans LINQ, les arborescences d’expression sont utilisés pour représenter des requêtes structurées qui cible des sources de données qui implémentent <xref:System.Linq.IQueryable%601>.</xref:System.Linq.IQueryable%601> Par exemple, le fournisseur LINQ implémente la <xref:System.Linq.IQueryable%601>interface pour l’interrogation de données relationnelles.</xref:System.Linq.IQueryable%601> Le compilateur Visual Basic compile les requêtes qui ciblent des sources dans le code qui génère une arborescence d’expression lors de l’exécution. Le fournisseur de requête peut ensuite parcourir la structure de données arborescente expression et traduire dans un langage de requête approprié pour la source de données.  
+Dans LINQ, des arborescences d’expressions sont utilisées pour représenter des requêtes structurées qui ciblent des sources de données qui implémentent <xref:System.Linq.IQueryable%601>. Par exemple, le fournisseur LINQ implémente l’interface <xref:System.Linq.IQueryable%601> pour interroger des magasins de données relationnelles. Le compilateur Visual Basic compile les requêtes qui ciblent ces sources de données dans le code qui génère une arborescence d’expression lors de l’exécution. Le fournisseur de requêtes peut ensuite parcourir la structure de données de l’arborescence d’expressions et la traduire en un langage de requête qui convienne à la source de données.  
   
- Arborescences d’expression sont également utilisées dans LINQ pour représenter des expressions lambda qui sont associées aux variables de type <xref:System.Linq.Expressions.Expression%601>.</xref:System.Linq.Expressions.Expression%601>  
+ Des arborescences d’expressions sont aussi utilisées dans LINQ pour représenter des expressions lambda assignées à des variables de type <xref:System.Linq.Expressions.Expression%601>.  
   
- Cette rubrique décrit comment utiliser des arborescences d’expression pour créer des requêtes LINQ dynamiques. Les requêtes dynamiques sont utiles lorsque les caractéristiques d’une requête ne sont pas connus au moment de la compilation. Par exemple, une application peut fournir une interface utilisateur qui permet aux utilisateurs de spécifier un ou plusieurs prédicats pour filtrer les données. Pour utiliser LINQ pour interroger, ce type d’application doit utiliser les arborescences d’expression pour créer la requête LINQ au runtime.  
+ Cette rubrique explique comment utiliser des arborescences d’expressions pour créer des requêtes LINQ dynamiques. Les requêtes dynamiques sont utiles lorsque les caractéristiques d’une requête ne sont pas connues au moment de la compilation. Par exemple, une application peut fournir une interface utilisateur qui permet aux utilisateurs de spécifier un ou plusieurs prédicats pour filtrer des données. Si vous souhaitez utiliser LINQ pour interroger des données, ce type d’application doit utiliser des arborescences d’expressions pour créer la requête LINQ au moment de l’exécution.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser des arborescences d’expression pour construire une requête sur un `IQueryable` de source de données et de l’exécuter. Le code génère une arborescence d’expression pour représenter la requête suivante :  
+ L’exemple suivant montre comment utiliser des arborescences d’expressions pour construire une requête et l’exécuter sur une source de données `IQueryable`. Le code génère une arborescence d’expressions pour représenter la requête suivante :  
   
  `companies.Where(Function(company) company.ToLower() = "coho winery" OrElse company.Length > 16).OrderBy(Function(company) company)`  
   
- Les méthodes de fabrique dans la <xref:System.Linq.Expressions>espace de noms sont utilisés pour créer des arborescences d’expression qui représentent les expressions composant la requête globale.</xref:System.Linq.Expressions> Les expressions qui représentent des appels aux méthodes d’opérateur de requête standard font référence à la <xref:System.Linq.Queryable>des implémentations de ces méthodes.</xref:System.Linq.Queryable> La dernière arborescence d’expression est passée à la <xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29>implémentation du fournisseur de la `IQueryable` source de données pour créer une requête exécutable de type `IQueryable`.</xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29> Les résultats sont obtenus par énumération de cette variable de requête.  
+ Les méthodes de fabrique de l’espace de noms <xref:System.Linq.Expressions> sont utilisées pour créer des arborescences d’expressions qui représentent les expressions qui composent l’ensemble de la requête. Les expressions qui représentent des appels aux méthodes d’opérateur de requête standard font référence aux implémentations <xref:System.Linq.Queryable> de ces méthodes. L’arborescence d’expression finale est passée à l’implémentation <xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29> du fournisseur de la source de données `IQueryable` pour créer une requête exécutable de type `IQueryable`. Les résultats sont obtenus par l’énumération de cette variable de requête.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
- Ce code utilise un nombre fixe d’expressions dans le prédicat qui est transmis à la `Queryable.Where` (méthode). Toutefois, vous pouvez écrire une application qui combine un nombre variable d’expressions de prédicat qui dépend de l’entrée d’utilisateur. Vous pouvez également varier les opérateurs de requête standard qui sont appelées dans la requête, en fonction de l’entrée de l’utilisateur.  
+```vb  
+' Add an Imports statement for System.Linq.Expressions.  
+  
+Dim companies =   
+    {"Consolidated Messenger", "Alpine Ski House", "Southridge Video", "City Power & Light",   
+     "Coho Winery", "Wide World Importers", "Graphic Design Institute", "Adventure Works",   
+     "Humongous Insurance", "Woodgrove Bank", "Margie's Travel", "Northwind Traders",   
+     "Blue Yonder Airlines", "Trey Research", "The Phone Company",   
+     "Wingtip Toys", "Lucerne Publishing", "Fourth Coffee"}  
+  
+' The IQueryable data to query.  
+Dim queryableData As IQueryable(Of String) = companies.AsQueryable()  
+  
+' Compose the expression tree that represents the parameter to the predicate.  
+Dim pe As ParameterExpression = Expression.Parameter(GetType(String), "company")  
+  
+' ***** Where(Function(company) company.ToLower() = "coho winery" OrElse company.Length > 16) *****  
+' Create an expression tree that represents the expression: company.ToLower() = "coho winery".  
+Dim left As Expression = Expression.Call(pe, GetType(String).GetMethod("ToLower", System.Type.EmptyTypes))  
+Dim right As Expression = Expression.Constant("coho winery")  
+Dim e1 As Expression = Expression.Equal(left, right)  
+  
+' Create an expression tree that represents the expression: company.Length > 16.  
+left = Expression.Property(pe, GetType(String).GetProperty("Length"))  
+right = Expression.Constant(16, GetType(Integer))  
+Dim e2 As Expression = Expression.GreaterThan(left, right)  
+  
+' Combine the expressions to create an expression tree that represents the  
+' expression: company.ToLower() = "coho winery" OrElse company.Length > 16).  
+Dim predicateBody As Expression = Expression.OrElse(e1, e2)  
+  
+' Create an expression tree that represents the expression:  
+' queryableData.Where(Function(company) company.ToLower() = "coho winery" OrElse company.Length > 16)  
+Dim whereCallExpression As MethodCallExpression = Expression.Call(   
+        GetType(Queryable),   
+        "Where",   
+        New Type() {queryableData.ElementType},   
+        queryableData.Expression,   
+        Expression.Lambda(Of Func(Of String, Boolean))(predicateBody, New ParameterExpression() {pe}))  
+' ***** End Where *****  
+  
+' ***** OrderBy(Function(company) company) *****  
+' Create an expression tree that represents the expression:  
+' whereCallExpression.OrderBy(Function(company) company)  
+Dim orderByCallExpression As MethodCallExpression = Expression.Call(   
+        GetType(Queryable),   
+        "OrderBy",   
+        New Type() {queryableData.ElementType, queryableData.ElementType},   
+        whereCallExpression,   
+        Expression.Lambda(Of Func(Of String, String))(pe, New ParameterExpression() {pe}))  
+' ***** End OrderBy *****  
+  
+' Create an executable query from the expression tree.  
+Dim results As IQueryable(Of String) = queryableData.Provider.CreateQuery(Of String)(orderByCallExpression)  
+  
+' Enumerate the results.  
+For Each company As String In results  
+    Console.WriteLine(company)  
+Next  
+  
+' This code produces the following output:  
+'  
+' Blue Yonder Airlines  
+' City Power & Light  
+' Coho Winery  
+' Consolidated Messenger  
+' Graphic Design Institute  
+' Humongous Insurance  
+' Lucerne Publishing  
+' Northwind Traders  
+' The Phone Company  
+' Wide World Importers  
+```  
+  
+ Ce code utilise un nombre fixe d’expressions dans le prédicat qui est passé à la méthode `Queryable.Where`. Toutefois, vous pouvez écrire une application qui combine un nombre variable d’expressions de prédicat dépendant des entrées utilisateur. Vous pouvez également varier les opérateurs de requête standard qui sont appelés dans la requête, en fonction des entrées utilisateur.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
   
--   Créer un nouveau **Application Console** projet.  
+-   Créez un projet **Application console**.  
   
--   Ajoutez une référence à System.Core.dll si elle n’est pas déjà référencée.  
+-   Ajoutez une référence à System.Core.dll, si cette référence n’existe pas encore.  
   
--   Inclure l’espace de noms System.Linq.Expressions.  
+-   Incluez l’espace de noms System.Linq.Expressions.  
   
 -   Copiez le code de l’exemple et collez-le dans le `Main` `Sub` procédure.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Arborescences d’expression (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)   
+ [Arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)  
  [Comment : exécuter des arborescences d’Expression (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)

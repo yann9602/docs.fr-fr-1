@@ -1,26 +1,22 @@
 ---
-title: Refactorisation dans des fonctions pures (Visual Basic) | Documents Microsoft
+title: Refactorisation dans des fonctions pures (Visual Basic)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 99e7d27b-a3ff-4577-bdb2-5a8278d6d7af
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e622436905893872521994f6dc1a5bc1c8b3d06a
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: d0a1b8d314cf1403ef5065e5432f7acd15ebb440
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="refactoring-into-pure-functions-visual-basic"></a>Refactorisation dans des fonctions pures (Visual Basic)
 L'un des aspects importants des transformations fonctionnelles pures consiste à apprendre à refactoriser le code à l'aide de fonctions pures.  
@@ -33,7 +29,7 @@ L'un des aspects importants des transformations fonctionnelles pures consiste à
   
  L'une des manières de basculer vers la programmation fonctionnelle consiste à refactoriser le code existant afin d'éliminer les effets secondaires indésirables et les dépendances externes. De cette manière, vous pouvez créer des versions avec fonctions pures du code existant.  
   
- Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [didacticiel : manipulation de contenu dans un WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) didacticiel montre comment manipuler un document WordprocessingML et contient deux exemples illustrant comment effectuer une refactorisation à l’aide d’une fonction pure.  
+ Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [didacticiel : manipulation de contenu dans un WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) didacticiel montre comment manipuler un document WordprocessingML et inclut deux exemples illustrant comment refactorisation à l’aide d’une fonction pure.  
   
 ## <a name="eliminating-side-effects-and-external-dependencies"></a>Suppression des effets secondaires et des dépendances externes  
  Les exemples suivants comparent deux fonctions non pures et une fonction pure.  
@@ -62,7 +58,7 @@ End Module
 StringOne-StringTwo  
 ```  
   
- Notez qu’il est sans intérêt si les données modifiées aient `public` ou `private` accéder à ou est un `shared` ou un membre d’instance. Une fonction pure ne change aucune donnée en dehors de la fonction.  
+ Notez qu’il est sans importance si les données modifiées aient `public` ou `private` accès, ou un `shared` membre ou un membre d’instance. Une fonction pure ne change aucune donnée en dehors de la fonction.  
   
 ### <a name="non-pure-function-that-changes-an-argument"></a>Fonction non pure qui modifie un argument  
  En outre, la version suivante de cette même fonction n'est pas pure car elle modifie le contenu de son paramètre, `sb`.  
@@ -81,7 +77,7 @@ Module Module1
 End Module  
 ```  
   
- Cette version du programme génère la même sortie que la première version, car la `HypenatedConcat` fonction a modifié la valeur (état) de son premier paramètre en appelant le <xref:System.Text.StringBuilder.Append%2A>fonction membre.</xref:System.Text.StringBuilder.Append%2A> Notez que cette altération a lieu en dépit du fait que `HypenatedConcat` utilise le passage de paramètre avec appel par valeur.  
+ Cette version du programme génère la même sortie que la première version, car la fonction `HypenatedConcat` a modifié la valeur (l'état) de son premier paramètre en appelant la fonction membre <xref:System.Text.StringBuilder.Append%2A>. Notez que cette altération a lieu en dépit du fait que `HypenatedConcat` utilise le passage de paramètre avec appel par valeur.  
   
 > [!IMPORTANT]
 >  Pour les types de référence, si vous passez un paramètre par valeur, une copie de la référence à un objet est passée. Cette copie est toujours associée aux mêmes données d'instance que la référence d'origine (jusqu'à ce que la variable de référence soit assignée à un nouvel objet). L'appel par référence n'est pas forcément nécessaire pour qu'une fonction modifie un paramètre.  
@@ -113,5 +109,5 @@ End Module
  Pour plus d’informations, consultez [vue d’ensemble Standard des opérateurs de requête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Introduction aux Transformations fonctionnelles pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
+ [Introduction aux Transformations fonctionnelles pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
  [Comparaison de la programmation fonctionnelle et de la Programmation impérative (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

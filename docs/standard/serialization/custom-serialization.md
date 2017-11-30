@@ -4,8 +4,8 @@ ms.date: 03/30/2017
 ms.prod: .net
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
+- csharp
+- vb
 helpviewer_keywords:
 - binary serialization, custom serialization
 - custom serialization
@@ -19,16 +19,15 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: dceb97f877a456cae5f0c01fda12a6402affed48
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 85ca84865305b588a9214db6e6f4e28b47937827
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="custom-serialization"></a>Sérialisation personnalisée
 La sérialisation personnalisée est le processus de contrôle de la sérialisation et désérialisation d'un type. En contrôlant la sérialisation, il est possible de garantir la compatibilité de sérialisation (capacité de sérialisation et désérialisation entre des versions d’un type) sans interrompre la fonctionnalité principale du type. Par exemple, il peut y avoir uniquement deux champs dans la première version d'un type. Dans la version suivante d'un type, plusieurs champs supplémentaires sont ajoutés. La deuxième version d'une application doit néanmoins être en mesure de sérialiser et désérialiser les deux types. Les sections suivantes décrivent comment contrôler la sérialisation.
@@ -191,7 +190,6 @@ End Class
  Les objets sont reconstruits à l'envers et les méthodes d'appel au cours de la désérialisation peuvent avoir des effets secondaires indésirables, car les méthodes appelées peuvent se rapporter aux références d'objet qui n'ont pas été désérialisées au moment de l'appel. Si la classe qui est désérialisée implémente <xref:System.Runtime.Serialization.IDeserializationCallback>, la méthode <xref:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization*> est appelée automatiquement une fois le graphique d’objets entier désérialisé. À ce stade, tous les objets enfants référencés ont été restaurés complètement. Une table de hachage est un exemple typique d'une classe difficile à désérialiser sans utiliser l'écouteur d'événements. Il est facile de récupérer les clés et valeurs paires pendant la désérialisation, mais l'ajout de ces objets à la table de hachage peut provoquer des problèmes. En effet, il n'y a aucune garantie que les classes dérivées de la table de hachage sont désérialisées. Par conséquent, les méthodes d'appel sur une table de hachage ne sont pas recommandées à ce stade.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Sérialisation binaire](binary-serialization.md)   
- [Sérialisation XML et SOAP](xml-and-soap-serialization.md)   
+ [Sérialisation binaire](binary-serialization.md)  
+ [Sérialisation XML et SOAP](xml-and-soap-serialization.md)  
  [Sécurité et sérialisation](../../../docs/framework/misc/security-and-serialization.md)
-

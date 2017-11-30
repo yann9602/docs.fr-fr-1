@@ -1,62 +1,61 @@
 ---
-title: "MustOverride (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.MustOverride"
-  - "MustOverride"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "virtual elements, pure"
-  - "elements, pure virtual"
-  - "properties [Visual Basic], redefining"
-  - "procedures, overriding"
-  - "overriding, MustOverride keyword"
-  - "procedures, redefining"
-  - "pure virtual elements"
-  - "MustOverride keyword"
-  - "properties [Visual Basic], overriding"
+title: MustOverride (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.MustOverride
+- MustOverride
+helpviewer_keywords:
+- virtual elements [Visual Basic], pure
+- elements [Visual Basic], pure virtual
+- properties [Visual Basic], redefining
+- procedures [Visual Basic], overriding
+- overriding, MustOverride keyword
+- procedures [Visual Basic], redefining
+- pure virtual elements [Visual Basic]
+- MustOverride keyword [Visual Basic]
+- properties [Visual Basic], overriding
 ms.assetid: 6e9d9ad6-bb64-433f-b32b-3ef84293bf96
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a2f7bdba4b01bd307e0c52802509669f772b5eb5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# MustOverride (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Spécifie qu'une propriété ou une procédure n'est pas implémentée dans une classe de base et doit être substituée dans une classe dérivée avant son utilisation.  
+# <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
+Spécifie qu’une propriété ou procédure n’est pas implémentée dans cette classe et doit être substituée dans une classe dérivée, avant de pouvoir être utilisé.  
   
-## Notes  
- Vous pouvez utiliser `MustOverride` uniquement dans une propriété ou une instruction de déclaration de procédure.  La propriété ou procédure qui spécifie `MustOverride` doit être un membre d'une classe, et la classe doit être marquée [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
+## <a name="remarks"></a>Remarques  
+ Vous pouvez utiliser `MustOverride` uniquement dans une instruction de déclaration de propriété ou de procédure. La propriété ou procédure spécifie `MustOverride` doit être un membre d’une classe, et la classe doit être marquée [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
   
-## Règles  
+## <a name="rules"></a>Règles  
   
--   **Déclaration incomplète.** Lorsque vous spécifiez `MustOverride`, vous ne fournissez pas de lignes de code supplémentaires pour la propriété ou la procédure, ni l'instruction `End Function`, `End Property` ou `End Sub`.  
+-   **Déclaration incomplète.** Lorsque vous spécifiez `MustOverride`, vous ne fournissez pas de lignes supplémentaires de code pour la propriété ou procédure, pas même le `End Function`, `End Property`, ou `End Sub` instruction.  
   
--   **Modificateurs combinés.** Vous ne pouvez pas spécifier `MustOverride` avec `NotOverridable`, `Overridable` ou `Shared` dans la même déclaration.  
+-   **Modificateurs combinés.** Vous ne pouvez pas spécifier `MustOverride` avec `NotOverridable`, `Overridable`, ou `Shared` dans la même déclaration.  
   
--   **Occultation et substitution.** L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais les deux approches sont significativement différentes.  Pour plus d'informations, consultez [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+-   **Occultation et substitution.** L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais il existe des différences importantes entre ces deux approches. Pour plus d’informations, consultez [occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
--   **Autres termes.** Un élément qui ne peut pas être utilisé sauf dans une substitution est parfois appelé élément *virtuel pur*.  
+-   **Autres termes.** Un élément qui ne peut pas être utilisé sauf dans une substitution est parfois appelé un *pure virtuel* élément.  
   
  Le modificateur `MustOverride` peut être utilisé dans les contextes suivants :  
   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## Voir aussi  
- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)   
- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)   
- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)   
- [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)   
- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)   
- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+## <a name="see-also"></a>Voir aussi  
+ [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
+ [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
+ [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
+ [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
+ [Mots clés](../../../visual-basic/language-reference/keywords/index.md)  
+ [Occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

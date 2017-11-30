@@ -1,46 +1,27 @@
 ---
-title: "L’attribut &quot;Extension&quot; peut être appliqué qu’aux déclarations &quot;Module&quot;, &quot;Sub&quot; ou &quot;Function&quot; | Documents Microsoft"
-ms.date: 2015-07-20
+title: "&#39; Extension &#39; attribut peut être appliqué uniquement à &#39; Module &#39; &#39; Sub &#39; ou &#39; Fonction &#39; déclarations"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc36550
 - vbc36550
-dev_langs:
-- VB
-helpviewer_keywords:
-- BC36550
+helpviewer_keywords: BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3eee008f737bf625023b6e4d58e1df7d282148d3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 9d77933c52484eb934501107d1ddad15f0eca826
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="39extension39-attribute-can-be-applied-only-to-39module39-39sub39-or-39function39-declarations"></a>L’attribut 'Extension' peut être appliqué qu’aux déclarations 'Module', 'Sub' ou 'Function'
-La seule façon d’étendre un type de données dans Visual Basic consiste à définir une méthode d’extension à l’intérieur d’un module standard. La méthode d’extension peut être un `Sub` procédure ou d’un `Function` procédure. Toutes les méthodes d’extension doivent être marquées avec l’attribut d’extension, `<Extension()>`, à partir de la <xref:System.Runtime.CompilerServices?displayProperty=fullName>espace de noms.</xref:System.Runtime.CompilerServices?displayProperty=fullName> Éventuellement, un module qui contient une méthode d’extension peut être marqué de la même façon. Aucune autre utilisation de l’attribut d’extension n’est valide.  
+# <a name="39extension39-attribute-can-be-applied-only-to-39module39-39sub39-or-39function39-declarations"></a>&#39; Extension &#39; attribut peut être appliqué uniquement à &#39; Module &#39; &#39; Sub &#39; ou &#39; Fonction &#39; déclarations
+La seule façon d’étendre un type de données en Visual Basic est de définir une méthode d’extension à l’intérieur d’un module standard. La méthode d’extension peut être un `Sub` procédure ou un `Function` procédure. Toutes les méthodes d’extension doivent être marqués avec l’attribut d’extension, `<Extension()>`, à partir de la <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> espace de noms. Si vous le souhaitez, un module qui contient une méthode d’extension peut être marqué de la même façon. Aucune autre utilisation de l’attribut extension n’est valide.  
   
  **ID d’erreur :** BC36550  
   
@@ -68,7 +49,6 @@ End Namespace
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)   
- [Méthodes d’extension](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)   
+ [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)  
+ [Méthodes d’extension](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)  
  [Module (instruction)](../../../visual-basic/language-reference/statements/module-statement.md)
-

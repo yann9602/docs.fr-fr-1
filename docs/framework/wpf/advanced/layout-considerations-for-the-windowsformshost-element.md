@@ -1,114 +1,117 @@
 ---
-title: "Consid&#233;rations sur la disposition de l&#39;&#233;l&#233;ment WindowsFormsHost | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "dip (device independent pixel)"
-  - "présentation dynamique (interopérabilité WPF)"
-  - "interopérabilité (WPF), Windows Forms"
-  - "Windows Forms (WPF), interopérabilité avec"
-  - "Windows Forms, interopérabilité WPF"
-  - "considérations sur la disposition des éléments WindowsFormsHost"
+title: "Considérations sur la disposition de l'élément WindowsFormsHost"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms [WPF], interoperability with
+- Windows Forms [WPF], WPF interoperation
+- interoperability [WPF], Windows Forms
+- WindowsFormsHost element layout considerations [WPF]
+- dynamic layout [WPF interoperability]
+- device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d21077e6012f8e48a1418f67e8f0d156d82003c3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Consid&#233;rations sur la disposition de l&#39;&#233;l&#233;ment WindowsFormsHost
-Cette rubrique décrit comment l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> interagit avec le système de disposition [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+# <a name="layout-considerations-for-the-windowsformshost-element"></a>Considérations sur la disposition de l'élément WindowsFormsHost
+Cette rubrique décrit comment les <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément interagit avec le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] système de disposition.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] prennent en charge des logiques différentes mais comparables pour dimensionner et positionner des éléments sur un formulaire ou une page.  Lorsque vous créez une interface utilisateur hybride qui héberge des contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] dans le système [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> intègre les deux méthodes de disposition.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] prennent en charge des logiques différentes mais similaire, pour dimensionner et positionner des éléments sur un formulaire ou une page. Lorsque vous créez une interface utilisateur de hybride (IU) qui héberge [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément intègre les deux méthodes de disposition.  
   
-## Différences de disposition entre WPF et Windows Forms  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise une disposition indépendante de la résolution.  Toutes les dimensions de disposition [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont spécifiées à l'aide de *pixels indépendants du périphérique*.  Un pixel indépendant du périphérique ou DIP \(Device Independent Pixel\) mesure un quatre\-vingt\-seizième d'un pouce et est indépendant de la résolution ; ainsi, le rendu obtenu sur un moniteur 72 ppp sera identique à celui obtenu sur une imprimante 19 200 ppp.  
+## <a name="differences-in-layout-between-wpf-and-windows-forms"></a>Différences de disposition entre WPF et Windows Forms  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]utilise une disposition indépendante de la résolution. Tous les [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dimensions de la mise en page sont spécifiées à l’aide de *pixels indépendants du périphérique*. Un pixel indépendant du périphérique est un sixième quatre-vingt-dix d’un pouce et indépendante de la résolution, vous obtenez des résultats similaires indépendamment de si vous effectuez un rendu à un moniteur de résolution 72 ou une imprimante 19 200 ppp.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est également basé sur la *disposition dynamique*.  Cela signifie qu'un élément d'interface se positionne sur un formulaire ou une page en fonction de son contenu, de son conteneur de disposition parent et de la dimension d'écran disponible.  La disposition dynamique facilite la localisation en ajustant automatiquement la taille et la position des éléments d'interface lorsque la longueur des chaînes qu'ils contiennent est modifiée.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]est également basée sur *disposition dynamique*. Cela signifie qu’un élément d’interface utilisateur réorganise lui-même sur un formulaire ou une page en fonction de son contenu, son conteneur de disposition parent et la taille d’écran disponibles. Disposition dynamique facilite la localisation en réglant automatiquement la taille et la position des éléments d’interface utilisateur à modifier les chaînes qu’ils contiennent.  
   
- La disposition dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] est dépendante du périphérique et plus vraisemblablement statique.  En général, les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] sont positionnés de façon absolue sur un formulaire à l'aide de dimensions spécifiées en pixels matériel.  Toutefois, [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] prend également en charge des fonctionnalités de disposition dynamique, comme décrit dans le tableau suivant.  
+ Mise en page dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] est dépendante de l’appareil et les plus susceptibles d’être statiques. En règle générale, [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles sont positionnés de façon absolue sur un formulaire à l’aide de dimensions spécifiées en pixels matériel. Toutefois, [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] prend en charge certaines fonctionnalités de disposition dynamique, comme indiqué dans le tableau suivant.  
   
-|Fonctionnalité de disposition|Description|  
-|-----------------------------------|-----------------|  
-|Redimensionnement automatique|Certains contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] se redimensionnent afin que leur contenu s'affiche correctement.  Pour plus d'informations, consultez [Vue d'ensemble de la propriété AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).|  
-|Ancrage|Les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] prennent en charge le positionnement et le dimensionnement en fonction du conteneur parent.  Pour plus d'informations, consultez <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=fullName> et <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=fullName>.|  
-|Mise à l'échelle automatique|Les contrôles conteneur se redimensionnent et redimensionnent leurs enfants selon la résolution du périphérique de sortie ou la taille, en pixels, de la police de conteneur par défaut.  Pour plus d'informations, consultez [Mise à l'échelle automatique dans les Windows Forms](../../../../docs/framework/winforms/automatic-scaling-in-windows-forms.md).|  
-|Conteneurs de disposition|Les contrôles <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel> organisent leurs contrôles enfants et se dimensionnent en fonction de leur contenu.|  
+|Fonctionnalité de mise en page|Description|  
+|--------------------|-----------------|  
+|Redimensionnement automatique|Certains [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles redimensionnent automatiquement pour s’afficher correctement leur contenu. Pour plus d’informations, consultez [vue d’ensemble de la propriété AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).|  
+|D’ancrage|[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]contrôles prennent en charge le positionnement et le dimensionnement basé sur le conteneur parent. Pour plus d’informations, consultez <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> et <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
+|Échelle automatique|Redimensionnent les contrôles conteneurs eux-mêmes et leurs enfants en fonction de la résolution de l’appareil de sortie ou la taille, en pixels, de la police du conteneur par défaut. Pour plus d’informations, consultez [mise à l’échelle automatique dans les Windows Forms](../../../../docs/framework/winforms/automatic-scaling-in-windows-forms.md).|  
+|Conteneurs de disposition|Le <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel> organiser leurs contrôles enfants de contrôles et eux-mêmes dimensionner en fonction de leur contenu.|  
   
-## Limitations de disposition  
- En général, vous ne pouvez pas mettre à l'échelle et transformer les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] autant que vous pouvez le faire dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  La liste suivante décrit les limitations connues lorsque l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> essaie d'intégrer son contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergé dans le système de disposition [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+## <a name="layout-limitations"></a>Limitations de disposition  
+ En général, [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles ne peut pas être mis à l’échelle et transformées dans la mesure du possible dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. La liste suivante décrit les limitations connues lors de la <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément essaie d’intégrer ses hébergé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] un contrôle dans le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] système de disposition.  
   
--   Dans certains cas, les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne peuvent pas être redimensionnés ou peuvent l'être uniquement à des dimensions spécifiques.  Par exemple, un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.ComboBox> prend en charge la seule hauteur définie par la taille de police du contrôle.  Dans une disposition dynamique [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] où les éléments peuvent être étirés verticalement, un contrôle <xref:System.Windows.Forms.ComboBox> hébergé ne s'étirera pas comme prévu.  
+-   Dans certains cas, les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne peuvent pas être redimensionnés, ou peuvent l’être uniquement à des dimensions particulières. Par exemple, un [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.ComboBox> contrôle prend en charge uniquement une hauteur unique, qui est définie par la taille de police du contrôle. Dans un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] disposition dynamique où éléments peuvent d’étendre verticalement, hébergé <xref:System.Windows.Forms.ComboBox> contrôle s’étire pas comme prévu.  
   
--   Les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne peuvent pas subir de rotation ni d'inclinaison.  L'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> déclenche l'événement <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> si vous effectuez une inclinaison ou une rotation.  Si vous ne gérez pas l'événement <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError>, une exception <xref:System.InvalidOperationException> est levée.  
+-   Les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne peuvent pas faire l’objet d’une rotation ou d’une inclinaison. Le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément déclenche le <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> événement si vous appliquez une transformation d’inclinaison ou une rotation. Si vous ne gérez pas les <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> événement, un <xref:System.InvalidOperationException> est déclenché.  
   
--   Dans la plupart des cas, les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne prennent pas en charge la mise à l'échelle proportionnelle.  Même si les dimensions générales du contrôle sont mises à l'échelle, les contrôles enfants et les éléments de composant du contrôle peuvent ne pas être redimensionnés comme prévu.  Cette limitation dépend de la prise en charge de la mise à l'échelle de chaque contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].  En outre, vous ne pouvez pas réduire de contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] à une taille de 0 pixel.  
+-   Dans la plupart des cas, les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne prennent pas en charge la mise à l’échelle proportionnelle. Les dimensions globales du contrôle sont mises à l’échelle, mais les contrôles enfants et les composants du contrôle risquent de ne pas être redimensionnés comme prévu. Cette limitation dépend de la prise en charge de la mise à l’échelle de chaque contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. En outre, vous ne pouvez pas mettre à l’échelle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles à une taille de 0 pixel.  
   
--   Les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] prennent en charge la mise à l'échelle automatique, qui entraîne un redimensionnement automatique du formulaire et de ses contrôles en fonction de la taille de police.  Dans une interface utilisateur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], la modification de la taille de police n'entraîne pas de redimensionnement de la disposition entière, bien que chaque élément individuel puisse être redimensionné dynamiquement.  
+-   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]contrôles prennent en charge l’échelle automatique, le formulaire sera automatiquement redimensionné lui-même et ses contrôles en fonction de la taille de police. Dans une interface utilisateur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], le changement de la taille de police ne redimensionne pas la disposition entière, mais peut entraîner le redimensionnement dynamique des éléments de façon individuelle.  
   
-### Ordre de plan  
- Dans une interface utilisateur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vous pouvez modifier l'ordre de plan des éléments afin d'en contrôler la superposition.  Un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergé est dessiné dans un handle de fenêtre \(HWND\) séparé ; ainsi, il apparaît toujours au\-dessus des éléments [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+### <a name="z-order"></a>Ordre de plan  
+ Dans une interface utilisateur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vous pouvez changer l’ordre de plan des éléments pour en contrôler la superposition. Un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergé est dessiné dans un HWND séparé. Ainsi, il s’affiche toujours par-dessus les éléments [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- Un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergé sera également dessiné au dessus des éléments <xref:System.Windows.Documents.Adorner>.  
+ Hébergé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôle est dessiné également par-dessus les <xref:System.Windows.Documents.Adorner> éléments.  
   
-## Comportement de disposition  
- Les sections suivantes décrivent les aspects spécifiques du comportement de disposition lorsque des contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] sont hébergés dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+## <a name="layout-behavior"></a>Comportement de mise en page  
+ Les sections suivantes décrivent les aspects spécifiques du comportement de mise en page lors de l’hébergement [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] des contrôles dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
-### Mise à l'échelle, conversion d'unité et indépendance vis\-à\-vis du périphérique  
- Chaque fois que l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> exécute des opérations qui impliquent des dimensions [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)], deux systèmes de coordonnées sont impliqués : un système de pixels indépendants du périphérique pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et un système de pixels matériel pour [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].  Par conséquent, vous devez appliquer des conversions d'unité et de mise à l'échelle appropriées afin d'obtenir une disposition cohérente.  
+### <a name="scaling-unit-conversion-and-device-independence"></a>Mise à l’échelle, la Conversion d’unité et indépendance de l’appareil  
+ Chaque fois que le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément effectue des opérations impliquant [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] dimensions, les deux systèmes de coordonnées sont impliquées : pixels indépendants du périphérique pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et de pixels matériel pour [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Par conséquent, vous devez appliquer unité appropriée et la mise à l’échelle des conversions pour obtenir une disposition cohérente.  
   
- La conversion entre les systèmes de coordonnées dépend de la résolution de périphérique actuelle et des transformations appliquées à la disposition ou au rendu de l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> ou de ses ancêtres.  
+ Conversion entre les systèmes de coordonnées dépend de la résolution actuelle de l’appareil et de toute disposition ou de transformations de rendu appliqués à la <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément ou de ses ancêtres.  
   
- Si le périphérique de sortie a une résolution de 96 ppp et si aucune mise à l'échelle n'a été appliquée à l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost>, un pixel indépendant du périphérique équivaut à un pixel matériel.  
+ Si le périphérique de sortie est de 96 PPP et aucune mise à l’échelle n’a été appliqué à la <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément, un pixel indépendant du périphérique est égal à un pixel de matériel.  
   
- Dans tous les autres cas, une mise à l'échelle des systèmes de coordonnées est requise.  Le contrôle hébergé n'est pas redimensionné,  mais l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> essaie de mettre à l'échelle le contrôle hébergé et tous ses contrôles enfants.  [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne prenant pas totalement en charge la mise à l'échelle, l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> est redimensionné en fonction des capacités de chaque contrôle.  
+ Tous les autres cas nécessitent la mise à l’échelle du système de coordonnées. Le contrôle hébergé n’est pas redimensionné. Au lieu de cela, le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément essaie de mettre à l’échelle le contrôle hébergé et tous ses contrôles enfants. Étant donné que [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne prennent pas en charge l’évolutivité, la <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément met à l’échelle pour le degré de prise en charge par les contrôles particuliers.  
   
- Remplacez la méthode <xref:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild%2A> afin d'obtenir une mise à l'échelle personnalisée pour le contrôle [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] hébergé.  
+ Remplacer la <xref:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild%2A> méthode pour fournir un comportement de mise à l’échelle personnalisé pour hébergé [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] contrôle.  
   
- Outre la mise à l'échelle, l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> gère les cas d'arrondi et de dépassement de capacité comme décrit dans le tableau suivant.  
+ En plus de la mise à l’échelle, la <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément gère le cas d’arrondi et de dépassement de capacité comme décrit dans le tableau suivant.  
   
 |Problème de conversion|Description|  
-|----------------------------|-----------------|  
-|Arrondi|Les dimensions des pixels indépendants du périphérique [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont spécifiées en tant que `double`, tandis que les dimensions des pixels matériel [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] sont spécifiées en tant que `int`.  Lorsque des dimensions de type `double` sont converties en dimensions de type `int`, l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> utilise l'arrondi standard, de sorte que les valeurs fractionnaires inférieures à 0,5 sont arrondies à 0.|  
-|Dépassement de capacité|Lorsque les dimensions de type `double` de l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> sont converties en `int`, un dépassement de capacité peut se produire.  Les valeurs supérieures à la valeur <xref:System.Int32.MaxValue> prennent la valeur <xref:System.Int32.MaxValue>.|  
+|----------------------|-----------------|  
+|Arrondi|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]dimensions de pixel indépendant du périphérique sont spécifiées en tant que `double`, et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] dimensions en pixels matériel sont spécifiées en tant que `int`. Dans le cas où `double`-en fonction des dimensions sont converties en `int`-en fonction des dimensions, le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément utilise l’arrondi standard, afin que les valeurs fractionnaires inférieures à 0,5 sont arrondies à 0.|  
+|Dépassement|Lorsque le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément convertit `double` valeurs `int` , valeurs de dépassement de capacité est possible. Les valeurs supérieures à <xref:System.Int32.MaxValue> ont la valeur <xref:System.Int32.MaxValue>.|  
   
-### Propriétés relatives à la disposition  
- Les propriétés qui contrôlent le comportement de disposition dans les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et les éléments [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont mappées de manière appropriée par l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost>.  Pour plus d'informations, consultez [Mappage de propriétés Windows Forms et WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md).  
+### <a name="layout-related-properties"></a>Propriétés de présentation  
+ Propriétés qui contrôlent le comportement de disposition dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] éléments sont mappés de manière appropriée par le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément. Pour plus d’informations, consultez [Mappage de propriétés Windows Forms et WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md).  
   
-### Modifications de disposition dans le contrôle hébergé  
- Les modifications apportées à la disposition dans le contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergé sont propagées à [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] afin de déclencher des mises à jour de disposition.  La méthode <xref:System.Windows.UIElement.InvalidateMeasure%2A> appliquée à l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> garantit que les modifications apportées à la disposition dans le contrôle hébergé provoquent l'exécution du moteur de présentation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+### <a name="layout-changes-in-the-hosted-control"></a>Changements de disposition dans le contrôle hébergé  
+ Changements de disposition dans hébergé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôle sont propagées à [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour déclencher des mises à jour de disposition. Le <xref:System.Windows.UIElement.InvalidateMeasure%2A> méthode sur <xref:System.Windows.Forms.Integration.WindowsFormsHost> garantit que les modifications de disposition dans le contrôle hébergé provoquent le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] moteur de disposition à exécuter.  
   
-### Contrôles Windows Forms dimensionnés continuellement  
- Les contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] qui prennent en charge la mise à l'échelle continue interagissent totalement avec le système de disposition [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  L'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> utilise les méthodes habituelles <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> pour dimensionner et organiser le contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergé.  
+### <a name="continuously-sized-windows-forms-controls"></a>Taille en permanence des contrôles Windows Forms  
+ [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]les contrôles qui prennent en charge de l’échelle continue entièrement interagissent avec le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] système de disposition. Le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément utilise le <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> méthodes comme d’habitude pour dimensionner et organiser hébergé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôle.  
   
-### Dimensionnement de l'algorithme  
- L'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> utilise la procédure suivante pour dimensionner le contrôle hébergé :  
+### <a name="sizing-algorithm"></a>Algorithme de redimensionnement  
+ Le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément utilise la procédure suivante pour dimensionner le contrôle hébergé :  
   
-1.  L'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> substitue les méthodes <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>.  
+1.  Le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément remplace la <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> méthodes.  
   
-2.  Pour déterminer la taille du contrôle hébergé, la méthode <xref:System.Windows.FrameworkElement.MeasureOverride%2A> appelle la méthode <xref:System.Windows.Forms.Control.GetPreferredSize%2A> du contrôle hébergé avec une contrainte traduite de la contrainte passée à la méthode <xref:System.Windows.FrameworkElement.MeasureOverride%2A>.  
+2.  Pour déterminer la taille du contrôle hébergé, le <xref:System.Windows.FrameworkElement.MeasureOverride%2A> méthode appelle le contrôle hébergé <xref:System.Windows.Forms.Control.GetPreferredSize%2A> méthode avec une contrainte traduite de la contrainte passée à la <xref:System.Windows.FrameworkElement.MeasureOverride%2A> (méthode).  
   
-3.  La méthode <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> essaie d'affecter la contrainte de taille donnée au contrôle hébergé.  
+3.  Le <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> méthode tente de définir le contrôle hébergé à la contrainte de taille donnée.  
   
-4.  Si la propriété <xref:System.Windows.Forms.Control.Size%2A> du contrôle hébergé correspond à la contrainte spécifiée, le contrôle hébergé est dimensionné selon cette contrainte.  
+4.  Si le contrôle hébergé <xref:System.Windows.Forms.Control.Size%2A> propriété correspond à la contrainte spécifiée, le contrôle hébergé est dimensionné à la contrainte.  
   
- Si la propriété <xref:System.Windows.Forms.Control.Size%2A> ne correspond pas à la contrainte spécifiée, le contrôle hébergé ne prend pas en charge le dimensionnement continu.  Par exemple, le contrôle <xref:System.Windows.Forms.MonthCalendar> autorise uniquement des tailles discrètes.  Les tailles autorisées pour ce contrôle sont des entiers \(représentant le nombre de mois\), pour la hauteur et la largeur.  Dans les cas comme celui\-ci, l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> se comporte comme suit :  
+ Si le <xref:System.Windows.Forms.Control.Size%2A> propriété ne correspond pas à la contrainte spécifiée, le contrôle hébergé ne prend pas en charge le dimensionnement continu. Par exemple, le <xref:System.Windows.Forms.MonthCalendar> contrôle autorise uniquement des tailles discrètes. Les tailles autorisées pour ce contrôle sont des entiers (représentant le nombre de mois) pour la hauteur et la largeur. Dans le cas par exemple, le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément se comporte comme suit :  
   
--   Si la propriété <xref:System.Windows.Forms.Control.Size%2A> retourne une taille supérieure à la contrainte spécifiée, l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> découpe le contrôle hébergé.  La hauteur et la largeur sont gérées séparément ; le contrôle hébergé peut donc être découpé en hauteur comme en largeur.  
+-   Si le <xref:System.Windows.Forms.Control.Size%2A> propriété retourne une taille supérieure à la contrainte spécifiée, le <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément découpe le contrôle hébergé. Hauteur et la largeur sont gérées séparément, le contrôle hébergé peut être tronqué dans les deux sens.  
   
--   Si la propriété <xref:System.Windows.Forms.Control.Size%2A> retourne une taille inférieure à la contrainte spécifiée, l'élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> accepte cette valeur et la retourne au système de disposition [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+-   Si le <xref:System.Windows.Forms.Control.Size%2A> propriété retourne une taille inférieure à la contrainte spécifiée, <xref:System.Windows.Forms.Integration.WindowsFormsHost> accepte cette valeur et retourne la valeur à la [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] système de disposition.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [Procédure pas à pas : organisation des contrôles Windows Forms dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)   
- [Réorganisation des contrôles Windows Forms dans l'exemple WPF](http://go.microsoft.com/fwlink/?LinkID=159971)   
- [Mappage de propriétés Windows Forms et WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [Procédure pas à pas : organisation des contrôles Windows Forms dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)  
+ [Réorganiser les fenêtres de contrôles Forms dans WPF, exemple](http://go.microsoft.com/fwlink/?LinkID=159971)  
+ [Mappage de propriétés Windows Forms et WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)  
  [Migration et interopérabilité](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)

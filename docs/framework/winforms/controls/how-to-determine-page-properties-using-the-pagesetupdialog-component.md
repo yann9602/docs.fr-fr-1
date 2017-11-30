@@ -1,41 +1,46 @@
 ---
-title: "Comment&#160;: d&#233;terminer les propri&#233;t&#233;s de la page &#224; l&#39;aide du composant PageSetupDialog | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "propriétés de la page"
-  - "mise en page"
-  - "PageSetupDialog (composant)"
+title: "Comment : déterminer les propriétés de la page à l'aide du composant PageSetupDialog"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- page properties
+- page setup
+- PageSetupDialog component
 ms.assetid: 6dae05bc-c0fd-4357-bb93-841a1631d98f
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e7dc3603d37106c122f3e92503b37dcfc02d7fef
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;terminer les propri&#233;t&#233;s de la page &#224; l&#39;aide du composant PageSetupDialog
+# <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>Comment : déterminer les propriétés de la page à l'aide du composant PageSetupDialog
 Le composant [PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) présente des options de disposition, de format du papier et d’autres choix de mise en page à l’utilisateur pour un document.  
   
  Vous devez spécifier une instance de la classe <xref:System.Drawing.Printing.PrintDocument> ; il s’agit du document à imprimer. De plus, les utilisateurs doivent avoir une imprimante installée sur leur ordinateur, localement ou sur un réseau, car c’est en partie comme cela que le composant <xref:System.Windows.Forms.PageSetupDialog> détermine les choix de mise en page présentés à l’utilisateur.  
   
- L’interaction entre le composant <xref:System.Windows.Forms.PageSetupDialog> et la classe <xref:System.Drawing.Printing.PageSettings> constitue l’un des aspects importants de son utilisation. La classe <xref:System.Drawing.Printing.PageSettings> sert à spécifier des paramètres qui modifient la façon dont une page est imprimée, comme l’orientation du papier, le format de la page et les marges. Chacun de ces paramètres est représenté en tant que propriété de la classe <xref:System.Drawing.Printing.PageSettings>. La classe <xref:System.Windows.Forms.PageSetupDialog> modifie ces valeurs de propriétés pour une instance donnée de la classe <xref:System.Drawing.Printing.PageSettings> associée au document \(et représentée en tant que propriété <xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A>\).  
+ L’interaction entre le composant <xref:System.Windows.Forms.PageSetupDialog> et la classe <xref:System.Drawing.Printing.PageSettings> constitue l’un des aspects importants de son utilisation. La classe <xref:System.Drawing.Printing.PageSettings> sert à spécifier des paramètres qui modifient la façon dont une page est imprimée, comme l’orientation du papier, le format de la page et les marges. Chacun de ces paramètres est représenté en tant que propriété de la classe <xref:System.Drawing.Printing.PageSettings> . La classe <xref:System.Windows.Forms.PageSetupDialog> modifie ces valeurs de propriétés pour une instance donnée de la classe <xref:System.Drawing.Printing.PageSettings> associée au document (et représentée en tant que propriété <xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A> ).  
   
-### Pour définir les propriétés de la page à l’aide du composant PageSetupDialog  
+### <a name="to-set-page-properties-using-the-pagesetupdialog-component"></a>Pour définir les propriétés de la page à l’aide du composant PageSetupDialog  
   
 1.  Utilisez la méthode <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> pour afficher la boîte de dialogue, en spécifiant le <xref:System.Drawing.Printing.PrintDocument> à utiliser.  
   
-     Dans l’exemple ci\-dessous, le gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> du contrôle <xref:System.Windows.Forms.Button> ouvre une instance du composant <xref:System.Windows.Forms.PageSetupDialog>. Un document existant est spécifié dans la propriété <xref:System.Windows.Forms.PageSetupDialog.Document%2A>, et sa propriété <xref:System.Drawing.Printing.PageSettings.Color%2A?displayProperty=fullName> prend la valeur `false`.  
+     Dans l’exemple ci-dessous, le gestionnaire d’événements <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Click> ouvre une instance du composant <xref:System.Windows.Forms.PageSetupDialog> . Un document existant est spécifié dans la propriété <xref:System.Windows.Forms.PageSetupDialog.Document%2A>, et sa propriété <xref:System.Drawing.Printing.PageSettings.Color%2A?displayProperty=nameWithType> prend la valeur `false`.  
   
-     L’exemple part du principe que votre formulaire contient un contrôle <xref:System.Windows.Forms.Button>, un composant <xref:System.Drawing.Printing.PrintDocument> nommé `myDocument`, et un composant <xref:System.Windows.Forms.PageSetupDialog>.  
+     L’exemple suppose que votre formulaire contient un <xref:System.Windows.Forms.Button> (contrôle), un <xref:System.Drawing.Printing.PrintDocument> composant nommé `myDocument`et un <xref:System.Windows.Forms.PageSetupDialog> composant.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -49,7 +54,6 @@ Le composant [PageSetupDialog](../../../../docs/framework/winforms/controls/page
        PageSetupDialog1.Document.DefaultPageSettings.Color = False  
        PageSetupDialog1.ShowDialog()  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -64,7 +68,6 @@ Le composant [PageSetupDialog](../../../../docs/framework/winforms/controls/page
        pageSetupDialog1.Document.DefaultPageSettings.Color = false;  
        pageSetupDialog1.ShowDialog();  
     }  
-  
     ```  
   
     ```cpp  
@@ -83,11 +86,10 @@ Le composant [PageSetupDialog](../../../../docs/framework/winforms/controls/page
        }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] et [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] et [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
-  
     ```  
   
     ```cpp  
@@ -95,7 +97,7 @@ Le composant [PageSetupDialog](../../../../docs/framework/winforms/controls/page
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.PageSetupDialog>   
- [Comment : créer des travaux d'impression Windows Forms standard](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.PageSetupDialog>  
+ [Guide pratique pour créer des travaux d’impression Windows Forms standard](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)  
  [PageSetupDialog, composant](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)

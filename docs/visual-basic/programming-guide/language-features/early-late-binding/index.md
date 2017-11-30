@@ -1,50 +1,32 @@
 ---
 title: "Liaison anticipée et liaison tardive (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- early binding
+- early binding [Visual Basic]
 - objects [Visual Basic], late-bound
 - objects [Visual Basic], early-bound
 - objects [Visual Basic], late bound
-- early binding, Visual Basic compiler
-- binding, late and early
+- early binding [Visual Basic], Visual Basic compiler
+- binding [Visual Basic], late and early
 - objects [Visual Basic], early bound
 - Visual Basic compiler, early and late binding
-- late binding
-- late binding, Visual Basic compiler
+- late binding [Visual Basic]
+- late binding [Visual Basic], Visual Basic compiler
 ms.assetid: d6ff7f1e-b94f-4205-ab8d-5cfa91758724
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 66a34580417fb8b4a814b237ec36ffe700b1b30a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: aceffe59fb6043b3089621b9a3f95b0425f9a522
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="early-and-late-binding-visual-basic"></a>Liaison anticipée et liaison tardive (Visual Basic)
 Le compilateur [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] exécute un processus appelé `binding` lorsqu’un objet est affecté à une variable objet. Un objet est dit *à liaison anticipée* lorsqu’il est affecté à une variable déclarée comme étant d’un type d’objet spécifique. Les objets à liaison anticipée permettent au compilateur d’allouer de la mémoire et d’effectuer d’autres optimisations avant l’exécution d’une application. Par exemple, le fragment de code suivant déclare une variable de type <xref:System.IO.FileStream> :  
@@ -64,7 +46,6 @@ Le compilateur [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] exécute un processus
 >  La liaison tardive ne peut être utilisée que pour accéder aux membres de type déclarés comme `Public`. L’accès aux membres déclarés comme `Friend` ou `Protected Friend` provoque une erreur d’exécution.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>   
- [Durée de vie d’un objet : création et destruction des objets](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)   
+ <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>  
+ [Durée de vie d’un objet : création et destruction des objets](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
  [Object (type de données)](../../../../visual-basic/language-reference/data-types/object-data-type.md)
-

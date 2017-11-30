@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: ba9c39a4e90e6f39f246acdaf20fb85d08254cbe
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ba6670ab5d4580eaf31d5e5c036aedde1bf7d3c3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="basic-serialization-technology-sample"></a>Sérialisation de base, exemple de technologie
 [Télécharger l’exemple](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/Basic.zip.exe)  
@@ -89,21 +88,20 @@ ms.lasthandoff: 08/21/2017
     -   <xref:System.IO.FileStream> Utilisé pour sérialiser et désérialiser des listes liées.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.IO>   
- <xref:System.IO.File>   
- <xref:System.IO.FileStream>   
- <xref:System.IO.Stream>   
- <xref:System.Random>   
- <xref:System.Runtime.Serialization>   
- <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>   
- <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>   
- <xref:System.Runtime.Serialization.IFormatter>   
- <xref:System.SerializableAttribute>   
- <xref:System.Xml.Serialization>   
- [Sérialisation de base](../../../docs/standard/serialization/basic-serialization.md)   
- [Sérialisation binaire](../../../docs/standard/serialization/binary-serialization.md)   
- [Contrôle de la sérialisation XML à l’aide d’attributs](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)   
- [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
- [Sérialisation](../../../docs/standard/serialization/index.md)   
+ <xref:System.IO>  
+ <xref:System.IO.File>  
+ <xref:System.IO.FileStream>  
+ <xref:System.IO.Stream>  
+ <xref:System.Random>  
+ <xref:System.Runtime.Serialization>  
+ <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
+ <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>  
+ <xref:System.Runtime.Serialization.IFormatter>  
+ <xref:System.SerializableAttribute>  
+ <xref:System.Xml.Serialization>  
+ [Sérialisation de base](../../../docs/standard/serialization/basic-serialization.md)  
+ [Sérialisation binaire](../../../docs/standard/serialization/binary-serialization.md)  
+ [Contrôle de la sérialisation XML à l’aide d’attributs](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
+ [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+ [Sérialisation](../../../docs/standard/serialization/index.md)  
  [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-

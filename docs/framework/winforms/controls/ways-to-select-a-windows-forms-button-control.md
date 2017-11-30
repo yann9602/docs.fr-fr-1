@@ -1,43 +1,43 @@
 ---
-title: "M&#233;thodes de s&#233;lection du contr&#244;le Button Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "bouton (contrôle Windows Forms), sélectionner"
+title: "Méthodes de sélection du contrôle Button Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: Button control [Windows Forms], selecting
 ms.assetid: fe2fc058-5118-4f70-b264-6147d64a7a8d
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 08b5359446a80da257f5afec07cc70e3d4aad46b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# M&#233;thodes de s&#233;lection du contr&#244;le Button Windows Forms
-Pour sélectionner le contrôle Button de Windows Forms, les méthodes suivantes sont à votre disposition :  
+# <a name="ways-to-select-a-windows-forms-button-control"></a>Méthodes de sélection du contrôle Button Windows Forms
+Un bouton Windows Forms peut être sélectionné comme suit :  
   
--   Cliquez sur le bouton à l'aide de la souris.  
+-   Utilisez la souris pour cliquer sur le bouton.  
   
--   Appelez l'événement <xref:System.Windows.Forms.Control.Click> du bouton dans le code.  
+-   Appel du bouton <xref:System.Windows.Forms.Control.Click> événement dans le code.  
   
--   Déplacez le focus sur le bouton en appuyant sur la touche TAB, puis sélectionnez le bouton en appuyant sur la touche ESPACE ou ENTRÉE.  
+-   Déplacer le focus sur le bouton en appuyant sur la touche TAB, puis choisissez le bouton en appuyant sur la touche espace ou entrée.  
   
--   Appuyez sur la touche d'accès rapide \(ALT \+ la lettre soulignée\) du bouton.  Pour plus d'informations sur les touches d'accès rapide, consultez [Comment : créer des touches d'accès rapide pour des contrôles Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md).  
+-   Appuyez sur la touche d’accès rapide (ALT + la lettre soulignée) du bouton. Pour plus d’informations sur les touches d’accès rapide, consultez [Comment : créer de touches d’accès rapide pour les contrôles Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md).  
   
--   S'il s'agit du bouton « Accepter » du formulaire, il est sélectionné lorsque vous appuyez sur la touche ENTRÉE, et cela même si un autre contrôle a le focus, sauf si ce contrôle est un autre bouton, une zone de texte multiligne ou un contrôle personnalisé qui intercepte la touche ENTRÉE.  
+-   Si le bouton est le bouton « accepter » du formulaire, en appuyant sur entrée choisit le bouton, même si un autre contrôle a le focus, sauf si ce contrôle est un autre bouton, une zone de texte multiligne ou un contrôle personnalisé qui intercepte la touche ENTRÉE.  
   
--   S'il s'agit du bouton « annuler » du formulaire, vous pouvez le sélectionner en appuyant sur la touche ÉCHAP, et cela même si un autre contrôle a le focus.  
+-   Si le bouton est le bouton « cancel » de l’écran, en appuyant sur ÉCHAP choisit le bouton, même si un autre contrôle a le focus.  
   
--   Appelez la méthode <xref:System.Windows.Forms.Button.PerformClick%2A> pour sélectionner le bouton par programme.  
+-   Appelez le <xref:System.Windows.Forms.Button.PerformClick%2A> (méthode) pour sélectionner le bouton par programme.  
   
-## Voir aussi  
- [Vue d'ensemble du contrôle Button](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)   
- [Comment : répondre à un clic du contrôle Button Windows Forms](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Vue d'ensemble du contrôle Button](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
+ [Guide pratique pour répondre à un clic du contrôle Button Windows Forms](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)  
  [Button, contrôle](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)

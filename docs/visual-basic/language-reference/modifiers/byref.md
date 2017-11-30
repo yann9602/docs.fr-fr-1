@@ -1,39 +1,38 @@
 ---
-title: "ByRef (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.ByRef"
-  - "ByRef"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "ByRef keyword"
-  - "ByRef keyword, contexts"
+title: ByRef (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.ByRef
+- ByRef
+helpviewer_keywords:
+- ByRef keyword [Visual Basic]
+- ByRef keyword [Visual Basic], contexts
 ms.assetid: 4692e032-46f3-4e41-b0fa-3004364d9138
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 15ccfe7b249f9d8bcbae4e0a8c99ae74716a3f87
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# ByRef (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Spécifie qu'un argument est passé de telle manière que la procédure appelée ne peut pas changer la valeur d'une variable sous\-jacente à l'argument dans le code appelant.  
+# <a name="byref-visual-basic"></a>ByRef (Visual Basic)
+Spécifie qu’un argument est passé de sorte que la procédure appelée peut modifier la valeur d’une variable sous-jacente à l’argument dans le code appelant.  
   
-## Notes  
+## <a name="remarks"></a>Remarques  
  Le modificateur `ByRef` peut être utilisé dans les contextes suivants :  
   
- [Declare, instruction](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [Function, instruction](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Sub, instruction](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## Voir aussi  
- [Mots clés](../../../visual-basic/language-reference/keywords/index.md)   
- [Passing Arguments by Value and by Reference](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+## <a name="see-also"></a>Voir aussi  
+ [Mots clés](../../../visual-basic/language-reference/keywords/index.md)  
+ [Passage d’un argument par valeur et par référence](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

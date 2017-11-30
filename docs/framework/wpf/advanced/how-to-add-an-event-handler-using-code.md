@@ -1,46 +1,52 @@
 ---
-title: "Comment&#160;: ajouter un gestionnaire d&#39;&#233;v&#233;nements &#224; l&#39;aide de code | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "gestionnaires d'événements, ajouter"
-  - "XAML, ajouter des gestionnaires d'événements"
+title: "Comment : ajouter un gestionnaire d'événements à l'aide de code"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- event handlers [WPF], adding
+- XAML [WPF], adding event handlers
 ms.assetid: 269c61e0-6bd9-4291-9bed-1c5ee66da486
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 348136a1feaf6e0a0824cf183a2eeec4e10b77fd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ajouter un gestionnaire d&#39;&#233;v&#233;nements &#224; l&#39;aide de code
-Cet exemple montre comment ajouter un gestionnaire d'événements à un élément à l'aide de code.  
+# <a name="how-to-add-an-event-handler-using-code"></a>Comment : ajouter un gestionnaire d'événements à l'aide de code
+Cet exemple montre comment ajouter un gestionnaire d’événements à un élément à l’aide de code.  
   
- Si vous souhaitez ajouter un gestionnaire d'événements à un élément [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], et que la page avec balise contenant l'élément a déjà été chargée, vous devez ajouter le gestionnaire à l'aide de code.  Ou bien, si vous développez l'arborescence d'éléments pour une application uniquement à l'aide de code et que vous ne déclarez aucun élément à l'aide de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez appeler des méthodes spécifiques pour ajouter des gestionnaires d'événements à l'arborescence d'éléments construite.  
+ Si vous souhaitez ajouter un gestionnaire d’événements à un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] élément et la page de balisage qui contient l’élément a déjà été chargé, vous devez ajouter le gestionnaire à l’aide de code. Vous pouvez également, si vous développez l’arborescence d’éléments pour une application entièrement à l’aide de code et ne déclare ne pas tous les éléments à l’aide de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez appeler des méthodes spécifiques pour ajouter des gestionnaires d’événements à l’arborescence d’éléments construite.  
   
-## Exemple  
- L'exemple suivant ajoute un nouveau <xref:System.Windows.Controls.Button> à une page existante définie initialement dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  Un fichier code\-behind implémente une méthode de gestionnaire d'événements puis ajoute cette méthode sous forme de nouveau gestionnaire d'événements sur le <xref:System.Windows.Controls.Button>.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant ajoute un nouveau <xref:System.Windows.Controls.Button> à une page existante définie initialement dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Un fichier code-behind implémente une méthode de gestionnaire d’événements et puis ajoute cette méthode comme un gestionnaire d’événements sur le <xref:System.Windows.Controls.Button>.  
   
- L'exemple [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] utilise l'opérateur `+=` pour assigner un gestionnaire à un événement.  Il s'agit du même opérateur que celui utilisé pour assigner un gestionnaire dans le modèle de gestion des événements de [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)].  [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)] ne prend pas en charge cet opérateur comme moyen permettant d'ajouter des gestionnaires d'événements.  Il requiert à la place l'une des deux techniques suivantes :  
+ Le [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] exemple utilise le `+=` opérateur pour assigner un gestionnaire à un événement. C’est le même opérateur qui est utilisé pour affecter un gestionnaire dans le [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] modèle de gestion d’événements. [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)]ne prend pas en charge cet opérateur comme un moyen d’ajouter des gestionnaires d’événements. Au lieu de cela, il requiert une des deux techniques :  
   
--   Utilisez la méthode <xref:System.Windows.UIElement.AddHandler%2A>, associée à un opérateur `AddressOf`, pour référencer l'implémentation du gestionnaire d'événements.  
+-   Utilisez le <xref:System.Windows.UIElement.AddHandler%2A> méthode, avec un `AddressOf` (opérateur), pour faire référence à l’implémentation de gestionnaire d’événements.  
   
--   Utilisez le mot clé `Handles` dans le cadre de la définition du gestionnaire d'événements.  Cette technique n'est pas indiquée ici ; consultez [Gestion des événements Visual Basic et WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md).  
+-   Utilisez le `Handles` mot clé dans le cadre de la définition de gestionnaire d’événements. Cette technique n’est pas indiquée ici ; consultez [Visual Basic et la gestion des événements de WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md).  
   
- [!code-xml[RoutedEventAddRemoveHandler#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
+ [!code-xaml[RoutedEventAddRemoveHandler#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
   
  [!code-csharp[RoutedEventAddRemoveHandler#Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml.cs#handler)]
  [!code-vb[RoutedEventAddRemoveHandler#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/VisualBasic/default.xaml.vb#handler)]  
   
 > [!NOTE]
->  L'ajout d'un gestionnaire d'événements dans la page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] analysée initialement est beaucoup plus simple.  Dans l'élément objet où vous souhaitez ajouter le gestionnaire d'événements, ajoutez un attribut correspondant au nom de l'événement que vous souhaitez gérer.  Spécifiez ensuite la valeur de cet attribut comme nom de la méthode de gestionnaire d'événements que vous avez définie dans le fichier code\-behind de la page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  Pour plus d'informations, consultez [Vue d'ensemble du langage XAML \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) ou [Vue d'ensemble des événements routés](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
+>  Ajout d’un gestionnaire d’événements dans analysée initialement [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page est beaucoup plus simple. Dans l’élément d’objet sur lequel vous souhaitez ajouter le Gestionnaire d’événements, ajoutez un attribut qui correspond au nom de l’événement que vous souhaitez gérer. Puis spécifiez la valeur de cet attribut comme nom de la méthode de gestionnaire d’événements que vous avez définie dans le fichier code-behind de la [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page. Pour plus d’informations, consultez [vue d’ensemble du XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) ou [vue d’ensemble des événements routés](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
   
-## Voir aussi  
- [Vue d'ensemble des événements routés](../../../../docs/framework/wpf/advanced/routed-events-overview.md)   
- [Rubriques Comment](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)
+## <a name="see-also"></a>Voir aussi  
+ [Vue d’ensemble des événements routés](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [Rubriques de guide pratique](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)

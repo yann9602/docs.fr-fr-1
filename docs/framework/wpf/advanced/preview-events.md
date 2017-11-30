@@ -1,41 +1,44 @@
 ---
-title: "Aper&#231;u des &#233;v&#233;nements | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "événements, Aperçu"
-  - "événements, supprimer"
-  - "événements d'aperçu"
-  - "supprimer des événements"
+title: "Aperçu des événements"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Preview events [WPF]
+- suppressing events [WPF]
+- events [WPF], Preview
+- events [WPF], suppressing
 ms.assetid: b5032308-aa9c-4d02-af11-630ecec8df7e
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 04bdf32ea329ff25fd62255b4512d8a9d5703b8f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Aper&#231;u des &#233;v&#233;nements
-Les événements d'aperçu, également appelés événements de tunneling, sont des événements routés où l'itinéraire voyage de la racine de l'application vers l'élément qui a déclenché l'événement et est signalé comme source dans les données d'événement.  Tous les scénarios d'événement ne prennent pas en charge ou ne requièrent pas des événements d'aperçu. Cette rubrique décrit les situations où les événements d'aperçu existent, la manière dont les applications ou les composants doivent les gérer et les cas où il peut s'avérer approprié de créer des événements d'aperçu dans les composants ou les classes personnalisés.  
+# <a name="preview-events"></a>Aperçu des événements
+Événements d’aperçu, également connus sous le tunneling forcé, les événements sont des événements routés où la direction de l’itinéraire se déplace à partir de la racine de l’application vers l’élément qui a déclenché l’événement et est signalé comme étant la source de données d’événement. Pas tous les scénarios d’événement prend en charge ou exiger des événements d’aperçu. Cette rubrique décrit les situations où les événements d’aperçu existent, comment les applications ou les composants doivent les gérer et les cas où la création d’événements d’aperçu dans des composants personnalisés ou des classes peut être appropriée.  
   
-## Événements d'aperçu et entrée  
- En général, lorsque vous gérez des événements d'aperçu, veillez à marquer les événements gérés dans les données d'événement.  Lorsqu'un événement d'aperçu est géré sur tout élément autre que l'élément qui l'a déclenché \(l'élément signalé comme source dans les données d'événement\), l'élément n'a pas la possibilité de gérer l'événement qu'il a déclenché.  Il s'agit parfois du résultat désiré, en particulier si l'élément en question existe dans des relations dans la composition d'un contrôle.  
+## <a name="preview-events-and-input"></a>Événements d’aperçu et entrée  
+ Lorsque vous gérez l’aperçu d’événements, en général, soyez prudent quant à marquer les événements gérés événements dans les données. Gestion d’un événement de la version d’évaluation sur tout élément autre que l’élément qui l’a déclenché (l’élément qui est signalé comme source dans les données d’événement) a pour effet de ne pas fournir un élément de la possibilité de gérer l’événement qu’il a. Parfois, voici le résultat souhaité, en particulier si l’élément en question existe dans des relations dans la composition d’un contrôle.  
   
- Pour les événements d'entrée, plus spécifiquement, les événements d'aperçu partagent également des instances des données d'événement avec l'événement de propagation équivalent.  Si vous utilisez un gestionnaire de classe d'événement d'aperçu pour marquer l'événement d'entrée géré, le gestionnaire de la classe de l'événement d'entrée de propagation ne sera pas appelé.  Ou, si vous utilisez un gestionnaire d'instance d'événement d'aperçu pour marquer l'événement géré, les gestionnaires pour l'événement de propagation ne seront généralement pas appelés.  Les gestionnaires de classe ou gestionnaires d'instance peuvent être enregistrés ou attachés avec une option à appeler même si l'événement est marqué comme géré, mais cette technique n'est pas fréquemment utilisée.  
+ Pour les événements d’entrée en particulier, les événements d’aperçu également partagent instances de données d’événement avec l’événement de propagation équivalent. Si vous utilisez un gestionnaire de classe d’événements Aperçu pour marquer l’événement d’entrée géré, le Gestionnaire de classe d’événements d’entrée propagation ne sera pas appelé. Ou, si vous utilisez un gestionnaire d’instance événements Aperçu pour marquer l’événement géré, gestionnaires pour l’événement de propagation ne seront pas généralement appelées. Gestionnaires de classe ou les gestionnaires d’instance peuvent être inscrit ou attachés avec une option à appeler même si l’événement est marqué comme géré, mais cette technique n’est pas couramment utilisé.  
   
- Pour plus d'informations sur la gestion de classes et la façon dont elle est liée aux événements d'aperçu, consultez [Marquage des événements routés comme gérés et gestion de classe](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md).  
+ Pour plus d’informations sur la gestion de classe et sa relation avec les événements d’aperçu consultez [le marquage des événements routés comme Handled et de gestion de la classe](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md).  
   
-### Résolution des problèmes liés à la suppression d'événements par des contrôles  
- La gestion de contrôle composite d'événements d'entrée utilise fréquemment des événements d'aperçu.  Dans certains cas, l'auteur du contrôle supprime un événement issu de son contrôle, peut\-être pour remplacer un événement défini par un composant qui véhicule davantage d'informations ou implique un comportement plus spécifique.  Par exemple, un <xref:System.Windows.Controls.Button> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] supprime les événements de propagation <xref:System.Windows.UIElement.MouseLeftButtonDown> et <xref:System.Windows.UIElement.MouseLeftButtonDown> déclenchés par <xref:System.Windows.Controls.Button> ou ses éléments composites afin de capturer la souris et de déclencher un événement <xref:System.Windows.Controls.Primitives.ButtonBase.Click> toujours déclenché par <xref:System.Windows.Controls.Button> lui\-même.  L'événement et ses données poursuivent l'itinéraire, mais comme <xref:System.Windows.Controls.Button> marque les données d'événement comme étant <xref:System.Windows.RoutedEventArgs.Handled%2A>, seuls sont appelés les gestionnaires de l'événement qui indiquait spécifiquement qu'ils devaient agir dans les cas `handledEventsToo`.  Si d'autres éléments vers la racine de votre application souhaitaient encore pouvoir gérer un événement supprimé par contrôle, vous pouvez attacher des gestionnaires dans le code et affecter au paramètre `handledEventsToo` la valeur `true`.  Souvent, il suffit de modifier la direction de routage que vous gérez pour qu'elle soit l'aperçu équivalent d'un événement d'entrée.  Par exemple, si un contrôle supprime <xref:System.Windows.UIElement.MouseLeftButtonDown>, essayez plutôt d'attacher un gestionnaire pour <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown>.  Cette technique fonctionne seulement pour les événements d'entrée d'élément de base, tels que <xref:System.Windows.UIElement.MouseLeftButtonDown>.  Ces événements d'entrée utilisent des paires tunneling\/propagation, déclenchent les deux événements et partagent les données d'événement.  
+### <a name="working-around-event-suppression-by-controls"></a>Résolution des problèmes liés à la suppression d’événements par des contrôles  
+ Un scénario où les événements d’aperçu sont couramment utilisées est pour la gestion de contrôle composite d’événements d’entrée. Dans certains cas, l’auteur du contrôle supprime un certain événement d’origine à partir de leur contrôle, peut-être pour remplacer un événement défini par le composant qui comporte plus d’informations ou implique un comportement plus spécifique. Par exemple, un [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Controls.Button> supprime <xref:System.Windows.UIElement.MouseLeftButtonDown> et <xref:System.Windows.UIElement.MouseLeftButtonDown> propagation des événements déclenchés par le <xref:System.Windows.Controls.Button> ou ses éléments composites en faveur de la capture de la souris et le déclenchement d’un <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement est toujours déclenché par le <xref:System.Windows.Controls.Button> lui-même. L’événement et ses données poursuivent l’itinéraire, mais comme le <xref:System.Windows.Controls.Button> marque les données d’événement en tant que <xref:System.Windows.RoutedEventArgs.Handled%2A>, seuls les gestionnaires de l’événement qui indiquait spécifiquement qu’ils doivent agir dans le `handledEventsToo` cas sont appelées.  Si d’autres éléments vers la racine de votre application souhaitaient encore pour gérer un événement supprimé par le contrôle, une autre solution consiste à attacher des gestionnaires dans le code avec `handledEventsToo` spécifié en tant que `true`. Mais souvent une technique plus simple consiste à modifier la direction de routage que vous gérez à l’équivalent de l’aperçu d’un événement d’entrée. Par exemple, si un contrôle supprime <xref:System.Windows.UIElement.MouseLeftButtonDown>, essayez de joindre un gestionnaire pour <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown> à la place. Cette technique fonctionne uniquement pour les événements d’entrée d’élément de base tels que <xref:System.Windows.UIElement.MouseLeftButtonDown>. Ces événements d’entrée utilisent des paires tunneling/propagation, déclenchent les deux événements et partagent les données d’événement.  
   
- Chacune de ces techniques a des effets secondaires ou des limitations.  L'effet secondaire de la gestion de l'événement d'aperçu réside dans le fait que la gestion de l'événement à ce stade peut désactiver des gestionnaires censés gérer l'événement de propagation. Par conséquent, la limitation est la suivante : il n'est généralement pas recommandé de marquer l'événement comme géré lorsqu'il se trouve encore sur la partie Aperçu de l'itinéraire.  La technique `handledEventsToo` présente la limitation suivante : vous ne pouvez pas spécifier un gestionnaire `handledEventsToo` en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] comme attribut, vous devez enregistrer le gestionnaire d'événements dans le code après avoir obtenu une référence d'objet à l'élément auquel le gestionnaire sera attaché.  
+ Chacune de ces techniques a des effets secondaires ou des limitations. L’effet secondaire de gestion de l’événement d’aperçu est que gestion de l’événement à ce stade peut désactiver les gestionnaires qui s’attendent à gérer l’événement de propagation, et par conséquent, la limitation est qu’il n’est généralement pas judicieux de marquer l’événement géré alors qu’il est toujours sur le Previ partie de la nouvelle de l’itinéraire. La limitation de la `handledEventsToo` technique est que vous ne pouvez pas spécifier un `handledEventsToo` gestionnaire dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] en tant qu’attribut, vous devez inscrire le Gestionnaire d’événements dans le code après avoir obtenu une référence d’objet à l’élément où le gestionnaire doit être attaché.  
   
-## Voir aussi  
- [Marquage des événements routés comme gérés et gestion de classe](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)   
- [Vue d'ensemble des événements routés](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ [Marquage des événements routés comme gérés et gestion de classe](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
+ [Vue d’ensemble des événements routés](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

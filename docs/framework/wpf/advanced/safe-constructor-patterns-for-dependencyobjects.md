@@ -1,48 +1,51 @@
 ---
-title: "Mod&#232;les de constructeur s&#233;curis&#233; pour DependencyObjects | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "modèles de constructeur pour les objets de dépendance"
-  - "objets de dépendance, modèles de constructeur"
-  - "FXCop (outil)"
+title: "Modèles de constructeur sécurisé pour DependencyObjects"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- constructor patterns for dependency objects [WPF]
+- dependency objects [WPF], constructor patterns
+- FXCop tool [WPF]
 ms.assetid: f704b81c-449a-47a4-ace1-9332e3cc6d60
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 43a38406a3c9cc171944448fce2fa2f70c483baa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mod&#232;les de constructeur s&#233;curis&#233; pour DependencyObjects
-En général, les constructeurs de classe ne doivent pas appeler des rappels, tels que des méthodes virtuelles ou des délégués, car les constructeurs peuvent être appelés comme initialisation de base des constructeurs pour une classe dérivée.  L'entrée de la méthode virtuelle peut être effectuée lorsqu'un objet a un état d'initialisation incomplet.  Toutefois, le système de propriétés lui\-même appelle et expose en interne des rappels dans le cadre du système de propriétés de dépendance.  Une opération aussi simple que définir une valeur de propriété de dépendance avec un appel à <xref:System.Windows.DependencyObject.SetValue%2A> inclut potentiellement un rappel quelque part dans la détermination.  Pour cette raison, vous devez définir les valeurs des propriétés de dépendance avec précaution dans le corps d'un constructeur, ce qui peut devenir problématique si le type est utilisé comme classe de base.  Il existe un modèle spécifique pour implémenter des constructeurs <xref:System.Windows.DependencyObject>, qui évite des problèmes spécifiques liés aux états de propriété de dépendance et aux rappels inhérents. Ce modèle est documenté ici.  
+# <a name="safe-constructor-patterns-for-dependencyobjects"></a>Modèles de constructeur sécurisé pour DependencyObjects
+En règle générale, les constructeurs de classe ne doivent pas appeler des rappels tels que les méthodes ou les délégués virtuels, étant donné que les constructeurs peuvent être appelés comme une initialisation de base des constructeurs d’une classe dérivée. L’utilisation de méthodes virtuelles peut se faire à un état d’initialisation incomplet d’un objet donné. Toutefois, le système de propriétés appelle et expose les rappels en interne, dans le cadre du système de propriétés de dépendance. Une opération aussi simple que la définition d’une valeur de propriété de dépendance avec <xref:System.Windows.DependencyObject.SetValue%2A> appel inclut potentiellement un rappel quelque part dans la détermination. Pour cette raison, vous devez être prudent lorsque vous définissez des valeurs de propriété dans le corps d’un constructeur, car cela peut devenir problématique si votre type est utilisé comme classe de base de dépendance. Il existe un modèle spécifique pour l’implémentation de <xref:System.Windows.DependencyObject> constructeurs qui évite les problèmes spécifiques liés aux États de propriété de dépendance et aux rappels inhérents, qui est décrit ici.  
   
-   
+ 
   
 <a name="Property_System_Virtual_Methods"></a>   
-## Méthodes virtuelles de système de propriétés  
- Les méthodes virtuelles ou rappels suivants sont appelés potentiellement au cours des calculs de l'appel à <xref:System.Windows.DependencyObject.SetValue%2A> qui définit une valeur de propriété de dépendance : <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.PropertyChangedCallback>, <xref:System.Windows.CoerceValueCallback>, <xref:System.Windows.DependencyObject.OnPropertyChanged%2A>.  Chacune de ces méthodes virtuelles ou chacun de ces rappels a une fonction spécifique pour étendre la souplesse du système de propriétés et des propriétés de dépendance [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Pour plus d'informations sur l'utilisation de ces méthodes virtuelles pour personnaliser la détermination des valeurs des propriétés, consultez [Validation et rappels de propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md).  
+## <a name="property-system-virtual-methods"></a>Méthodes virtuelles de système de propriétés  
+ Les méthodes virtuelles suivantes ou les rappels sont appelés potentiellement au cours des calculs de la <xref:System.Windows.DependencyObject.SetValue%2A> appel qui définit une valeur de propriété de dépendance : <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.PropertyChangedCallback>, <xref:System.Windows.CoerceValueCallback>, <xref:System.Windows.DependencyObject.OnPropertyChanged%2A>. Chacune de ces méthodes virtuelles ou rappels sert une fonction spécifique pour étendre la souplesse du système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] et les dépendances de propriétés. Pour plus d’informations sur l’utilisation de ces virtuels en vue de personnaliser la détermination des valeurs de propriété, consultez [Validation et rappels de propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md).  
   
-### Mise en application de la règle FXCop etméthodes virtuelles de système de propriétés  
- Si vous utilisez l'outil Microsoft FXCop dans le cadre du processus de génération et que vous dérivez des classes depuis des classes ou certaines classes d'infrastructure [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui appellent le constructeur de base, ou implémentez vos propres propriétés de dépendance dans des classes dérivées, vous pouvez être confronté à une violation de règle FXCop.  La chaîne de nom de cette violation est :  
+### <a name="fxcop-rule-enforcement-vs-property-system-virtuals"></a>Comparaison de l’utilisation des règles FXCop et des virtuels de système de propriétés  
+ Si vous utilisez l’outil Microsoft FXCop dans le cadre de votre processus de génération, et si vous dérivez de certaines classes de framework [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en appelant le constructeur de base, ou si vous implémentez vos propres propriétés de dépendance sur les classes dérivées, un message indiquant la violation d’une règle FXCop peut s’afficher. La chaîne de nom de cette violation est la suivante :  
   
  `DoNotCallOverridableMethodsInConstructors`  
   
- Il s'agit d'une règle qui fait partie de l'ensemble de règles publiques par défaut de FXCop.  Cette règle peut signaler une trace via le système de propriétés de dépendance qui appelle une méthode virtuelle de système de propriété de dépendance.  Cette violation de règle peut continuer d'apparaître même après avoir respecté les modèles de constructeur recommandés documentés dans cette rubrique. Par conséquent, il se peut que vous deviez désactiver ou supprimer cette règle dans la configuration de l'ensemble de règles FXCop.  
+ Cette règle fait partie de la règle publique par défaut définie pour FXCop. Elle peut signaler une trace, via le système de propriétés de dépendance, qui appelle une méthode virtuelle de système de propriété de dépendance. Le message indiquant une violation de règle peut continuer de s’afficher, même après l’application des modèles de constructeur recommandés documentés dans cette rubrique. Vous devrez donc peut-être désactiver ou supprimer cette règle dans la configuration de l’ensemble de règles FXCop.  
   
-### La plupart des problèmes proviennent des classes dérivées et non pas de l'utilisation des classes  
- Les problèmes signalés par cette règle se produisent lorsqu'une classe que vous implémentez avec des méthodes virtuelles dans sa séquence de construction est ensuite utilisée dans une dérivation de classe.  Si vous scellez la classe ou savez ou faites en sorte que la classe ne soit pas utilisée dans une dérivation de classe, alors les explications fournies ici et les problèmes qui ont motivé la règle FXCop ne s'appliquent pas.  Toutefois, si vous créez des classes pour les utiliser comme des classes de base \(si vous créez des modèles ou un groupe de bibliothèques développables, par exemple\) suivez les modèles recommandés ici concernant les constructeurs.  
+### <a name="most-issues-come-from-deriving-classes-not-using-existing-classes"></a>La plupart des problèmes proviennent des classes dérivées, et non des classes existantes  
+ Les problèmes signalés par cette règle se produisent lorsqu’une classe que vous implémentez avec des méthodes virtuelles dans sa séquence de construction est ensuite dérivée. Si vous scellez la classe, ou si vous ne voulez pas qu’elle soit dérivée, les explications fournies ici et les problèmes liés aux règles FXCop ne s’appliquent pas. Toutefois, si vous créez des classes qui sont destinées à être utilisées comme des classes de base, par exemple si vous créez des modèles ou un ensemble de bibliothèques de contrôles pouvant être développé, vous devez suivre les modèles recommandés ici pour les constructeurs.  
   
-### Les constructeurs par défaut doivent initialiser toutes les valeurs demandées par les rappels  
- Les membres d'instances utilisés par les remplacements de classe ou les rappels \(les rappels de la liste dans la section des méthodes virtuelles de système de propriétés\) doivent être initialisés dans le constructeur par défaut de classe, même si certaines de ces valeurs sont remplies par de "vraies" valeurs via des paramètres des constructeurs non définis par défaut.  
+### <a name="default-constructors-must-initialize-all-values-requested-by-callbacks"></a>Les constructeurs par défaut doivent initialiser toutes les valeurs demandées par les rappels  
+ Tous les membres d’instance qui sont utilisés par vos substitutions ou rappels de classe (les rappels de la liste dans la section « Méthodes virtuelles de système de propriétés ») doivent être initialisés dans le constructeur de classe par défaut, même si certaines de ces valeurs sont définies par de « vraies » valeurs via des paramètres de constructeurs par défaut.  
   
- L'exemple de code suivant \(et les exemples suivants\) est un exemple de pseudo\-code C\# qui viole cette règle et explique le problème :  
+ L’exemple ci-dessous, et ceux qui suivront, montrent du code C# qui enfreint cette règle et explique le problème :  
   
 ```  
 public class MyClass : DependencyObject  
@@ -69,16 +72,16 @@ public class MyClass : DependencyObject
 }  
 ```  
   
- Lorsque le code d'application appelle `new MyClass(objectvalue)`, le constructeur par défaut et les constructeurs de classes par défaut sont appelés.  Il définit ensuite `Property1 = object1` qui appelle la méthode virtuelle `OnPropertyChanged` dans le <xref:System.Windows.DependencyObject> `MyClass` propriétaire.  La substitution fait référence à `_myList` qui n'a pas encore été initialisé.  
+ Lorsque le code d’application appelle `new MyClass(objectvalue)`, il appelle le constructeur par défaut et les constructeurs de classe de base. Ensuite il définit `Property1 = object1`, qui appelle la méthode virtuelle `OnPropertyChanged` sur propriétaire `MyClass` <xref:System.Windows.DependencyObject>.  La substitution référence `_myList`, qui n’a pas encore été initialisé.  
   
- Une façon d'éviter ces problèmes consiste à s'assurer que les rappels utilisent uniquement d'autres propriétés de dépendance et que chacune de ces propriétés de dépendance a une valeur par défaut définie dans ses métadonnées enregistrées.  
+ Pour éviter ces problèmes, vérifiez que les rappels utilisent uniquement les autres propriétés de dépendance, et que cette propriété de dépendance a une valeur par défaut définie dans le cadre de ses métadonnées enregistrées.  
   
 <a name="Safe_Constructor_Patterns"></a>   
-## Modèles de constructeur sécurisé  
- Pour éviter les risques d'initialisation incomplète si la classe est utilisée comme une classe de base, suivez ces modèles :  
+## <a name="safe-constructor-patterns"></a>Modèles de constructeur sécurisés  
+ Pour éviter les risques d’initialisation incomplète si votre classe est utilisée comme classe de base, suivez ces modèles :  
   
-#### Constructeurs par défaut qui appellent l'initialisation de base  
- Implémentez ces constructeurs en appelant la valeur par défaut de base :  
+#### <a name="default-constructors-calling-base-initialization"></a>Appel de l’initialisation de base par les constructeurs par défaut  
+ Implémentez ces constructeurs qui appellent la valeur de base par défaut :  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -89,8 +92,8 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### Constructeurs non définis par défaut \(commodité\) qui ne font pas correspondre des signatures de base  
- Si ces constructeurs utilisent les paramètres pour définir des propriétés de dépendance dans l'initialisation, appelez en premier votre propre constructeur par défaut de classe pour l'initialisation, puis utilisez les paramètres pour définir les propriétés de dépendance.  Il peut s'agir de propriétés de dépendance définies par la classe ou de propriétés de dépendance héritées des classes de base, mais dans l'un ou l'autre cas utilisez le modèle suivant :  
+#### <a name="non-default-convenience-constructors-not-matching-any-base-signatures"></a>Constructeurs non définis par défaut (d’usage) ne correspondant à aucune signature de base  
+ Si ces constructeurs utilisent les paramètres pour définir les propriétés de dépendance dans l’initialisation, appelez d’abord votre propre constructeur de classe par défaut pour l’initialisation, puis utilisez les paramètres pour définir les propriétés de dépendance. Il peut s’agir des propriétés de dépendance définies par votre classe ou des propriétés de dépendance héritées des classes de base. Dans les deux cas, utilisez le modèle suivant :  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -102,8 +105,8 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### Constructeurs non définis par défaut \(commodité\) qui font correspondre des signatures de base  
- Au lieu d'appeler le constructeur de base avec le même paramétrage, appelez de nouveau votre propre constructeur par défaut de classe.  N'appelez pas l'initialiseur de base, mais `this()`.  Reproduisez ensuite le comportement du constructeur d'origine en utilisant les paramètres passés comme valeurs pour définir les propriétés pertinentes.  Utilisez la documentation du constructeur de base d'origine pour déterminer les propriétés que les paramètres sont sensés définir :  
+#### <a name="non-default-convenience-constructors-which-do-match-base-signatures"></a>Constructeurs non définis par défaut (d’usage) correspondant à une signature de base  
+ Au lieu d’appeler le constructeur de base avec le même paramétrage, rappelez le constructeur par défaut de votre propre classe. N’appelez pas l’initialiseur de base, mais `this()`. Reproduisez ensuite le comportement du constructeur d’origine en utilisant les paramètres passés comme des valeurs pour définir les propriétés nécessaires. Utilisez la documentation du constructeur de base d’origine pour déterminer les propriétés que les paramètres sont censés définir :  
   
 ```  
 public MyClass : SomeBaseClass {  
@@ -115,13 +118,13 @@ public MyClass : SomeBaseClass {
 }  
 ```  
   
-#### Doit faire correspondre toutes les signatures  
- Si le type de base a plusieurs signatures, vous devez faire correspondre toutes les signatures possibles à une implémentation de votre constructeur qui utilise le modèle recommandé d'appel du constructeur par défaut de classe avant de définir d'autres propriétés.  
+#### <a name="must-match-all-signatures"></a>Nécessité de correspondre à toutes les signatures  
+ Si le type de base a plusieurs signatures, vous devez explicitement faire correspondre autant de signatures que possible avec votre propre implémentation de constructeur qui doit utiliser le modèle recommandé d’appel de constructeur de classe par défaut avant de définir d’autres propriétés.  
   
-#### Définition des propriétés de dépendance avec SetValue  
- Ces mêmes modèles s'appliquent si vous définissez une propriété qui n'a pas de wrapper pour faciliter la définition des propriétés et que vous définissez les valeurs avec <xref:System.Windows.DependencyObject.SetValue%2A>.  Vos appels à <xref:System.Windows.DependencyObject.SetValue%2A> qui traversent des paramètres de constructeur doivent également appeler le constructeur par défaut de la classe pour l'initialisation.  
+#### <a name="setting-dependency-properties-with-setvalue"></a>Définition de propriétés de dépendance avec SetValue  
+ Ces mêmes modèles s’appliquent si vous définissez une propriété qui ne pas avoir un wrapper pour faciliter la définition des propriétés et définissez les valeurs avec <xref:System.Windows.DependencyObject.SetValue%2A>. Vos appels à <xref:System.Windows.DependencyObject.SetValue%2A> qui traversent des paramètres du constructeur doit également appeler le constructeur par défaut de la classe pour l’initialisation.  
   
-## Voir aussi  
- [Propriétés de dépendance personnalisées](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)   
- [Vue d'ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Propriétés de dépendance personnalisées](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [Vue d’ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [Sécurité de propriété de dépendance](../../../../docs/framework/wpf/advanced/dependency-property-security.md)

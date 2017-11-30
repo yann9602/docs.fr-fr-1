@@ -1,53 +1,52 @@
 ---
-title: "Optional (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Optional"
-  - "vb.optional"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Optional keyword, contexts"
-  - "Optional keyword"
+title: Optional (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Optional
+- vb.optional
+helpviewer_keywords:
+- Optional keyword [Visual Basic], contexts
+- Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 3aa01c2c1ae731c8fe00fdee24521760db69e624
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Optional (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Spécifie qu'un argument de procédure peut être omis lorsque la procédure est appelée.  
+# <a name="optional-visual-basic"></a>Optional (Visual Basic)
+Spécifie qu’un argument de procédure peut être omis lorsque la procédure est appelée.  
   
-## Notes  
- Pour chaque paramètre optionnel, vous devez spécifier une expression constante comme valeur par défaut de ce paramètre.  Si l'expression a la [rien](../../../visual-basic/language-reference/nothing.md), la valeur par défaut du type de données valeur est utilisée comme valeur par défaut du paramètre.  
+## <a name="remarks"></a>Remarques  
+ Pour chaque paramètre facultatif, vous devez spécifier une expression constante comme valeur par défaut de ce paramètre. Si l’expression prend la valeur [rien](../../../visual-basic/language-reference/nothing.md), la valeur par défaut la valeur du type de données est utilisée comme valeur par défaut du paramètre.  
   
- Si la liste de paramètres contient un paramètre optionnel, chaque paramètre qui le suit doivent également être facultatifs.  
+ Si la liste de paramètres contient un paramètre facultatif, chaque paramètre qui le suit doit également être facultatif.  
   
  Le modificateur `Optional` peut être utilisé dans les contextes suivants :  
   
--   [Declare, instruction](../../../visual-basic/language-reference/statements/declare-statement.md)  
+-   [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Function, instruction](../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Property, instruction](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Sub, instruction](../../../visual-basic/language-reference/statements/sub-statement.md)  
-  
-> [!NOTE]
->  En appelant une procédure avec ou sans paramètres optionnels, vous pouvez passer des arguments par position ou son nom.  Pour plus d'informations, consultez [Passing Arguments by Position and by Name](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).  
+-   [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 > [!NOTE]
->  Vous pouvez également définir une procédure avec des paramètres optionnels à l'aide de la surcharge.  Si vous avez un paramètre facultatif, vous pouvez définir deux versions surchargées de la procédure, de celle qui acceptent le paramètre et de celle qui ne fait pas.  Pour plus d'informations, consultez [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
+>  Lorsque vous appelez une procédure avec ou sans paramètres facultatifs, vous pouvez passer des arguments par position ou par nom. Pour plus d’informations, consultez [en passant les Arguments par Position et par nom](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).  
   
-## Exemple  
- L'exemple suivant définit une procédure qui possède un paramètre optionnel.  
+> [!NOTE]
+>  Vous pouvez également définir une procédure avec des paramètres facultatifs à l’aide de la surcharge. Si vous avez un seul paramètre facultatif, vous pouvez définir deux versions surchargées de la procédure, un qui accepte le paramètre et un autre. Pour plus d’informations, consultez [surcharge de procédure](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
+  
+## <a name="example"></a>Exemple  
+ L’exemple suivant définit une procédure qui possède un paramètre facultatif.  
   
 ```  
 Public Function FindMatches(ByRef values As List(Of String),  
@@ -68,12 +67,12 @@ Public Function FindMatches(ByRef values As List(Of String),
 End Function  
 ```  
   
-## Exemple  
- L'exemple suivant montre comment appeler une procédure avec des arguments passés par position et avec des arguments passés par nom.  La procédure a deux paramètres optionnels.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment appeler une procédure avec des arguments passés par position et avec des arguments passés par nom. La procédure comporte deux paramètres facultatifs.  
   
  [!code-vb[VbVbalrKeywords#21](../../../visual-basic/language-reference/codesnippet/VisualBasic/optional_1.vb)]  
   
-## Voir aussi  
- [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)   
- [Optional Parameters](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Liste de paramètres](../../../visual-basic/language-reference/statements/parameter-list.md)  
+ [Paramètres facultatifs](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
  [Mots clés](../../../visual-basic/language-reference/keywords/index.md)

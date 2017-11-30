@@ -1,32 +1,28 @@
 ---
-title: "Comment : rechercher un seul Descendant à l’aide de la méthode Descendants (Visual Basic) | Documents Microsoft"
+title: "Comment : rechercher un seul Descendant à l’aide de la méthode Descendants (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 0c03468c-efc8-4140-98f3-fb67acd9e8e1
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 74d4dd0b805a5ea2c189cb89bcaeca3f4cac1268
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 0647dee5ced1e986fcb3fac7915437dfb37b0796
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-find-a-single-descendant-using-the-descendants-method-visual-basic"></a>Comment : rechercher un seul Descendant à l’aide de la méthode Descendants (Visual Basic)
-Vous pouvez utiliser la <xref:System.Xml.Linq.XContainer.Descendants%2A>méthode d’axe pour écrire rapidement du code pour rechercher de façon unique un seul élément de nommé.</xref:System.Xml.Linq.XContainer.Descendants%2A> Cette technique est particulièrement utile lorsque vous souhaitez rechercher un descendant particulier avec un nom spécifique. Vous pouvez écrire du code pour naviguer jusqu'à l’élément souhaité, mais il est souvent plus rapide et plus facile d’écrire le code à l’aide du <xref:System.Xml.Linq.XContainer.Descendants%2A>axe.</xref:System.Xml.Linq.XContainer.Descendants%2A>  
+Vous pouvez utiliser la méthode d'axe <xref:System.Xml.Linq.XContainer.Descendants%2A> pour écrire rapidement du code afin de rechercher un seul élément nommé de manière unique. Cette technique est particulièrement utile lorsque vous souhaitez rechercher un descendant particulier avec un nom spécifique. Vous pourriez écrire du code pour naviguer jusqu'à l'élément souhaité, mais il est souvent plus rapide et plus facile d'écrire le code à l'aide de l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Linq.Enumerable.First%2A>opérateur de requête standard.</xref:System.Linq.Enumerable.First%2A>  
+ Cet exemple utilise l'opérateur de requête standard <xref:System.Linq.Enumerable.First%2A>.  
   
 ```vb  
 Dim root As XElement = _  

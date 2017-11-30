@@ -1,43 +1,35 @@
 ---
-title: "Comment : exécuter des arborescences d’Expression (Visual Basic) | Documents Microsoft"
+title: "Comment : exécuter des arborescences d’Expression (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e12c45b417310f097d597561b2652ee793a4b2c0
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 45a13f13659472b7620b6df070815ace1d6fb0de
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a>Comment : exécuter des arborescences d’Expression (Visual Basic)
-Cette rubrique montre comment exécuter une arborescence d’expression. L’exécution d’une arborescence d’expression peut retourner une valeur, ou il peut simplement effectuer une action telle que l’appel d’une méthode.  
+Cette rubrique montre comment exécuter une arborescence d’expressions. L’exécution d’une arborescence d’expressions peut retourner une valeur, ou elle peut simplement effectuer une action telle que l’appel d’une méthode.  
   
- Seules les arborescences d’expression qui représentent des expressions lambda peuvent être exécutées. Arborescences d’expression qui représentent des expressions lambda sont de type <xref:System.Linq.Expressions.LambdaExpression>ou <xref:System.Linq.Expressions.Expression%601>.</xref:System.Linq.Expressions.Expression%601> </xref:System.Linq.Expressions.LambdaExpression> Pour exécuter ces arborescences d’expression, appelez le <xref:System.Linq.Expressions.LambdaExpression.Compile%2A>méthode pour créer un délégué exécutable, puis appelez le délégué.</xref:System.Linq.Expressions.LambdaExpression.Compile%2A>  
+ Seules les arborescences d’expressions qui représentent des expressions lambda peuvent être exécutées. Les arborescences d’expressions qui représentent des expressions lambda peuvent être de type <xref:System.Linq.Expressions.LambdaExpression> ou <xref:System.Linq.Expressions.Expression%601>. Pour exécuter ces arborescences d’expressions, appelez la méthode <xref:System.Linq.Expressions.LambdaExpression.Compile%2A> pour créer un délégué exécutable, puis appelez le délégué.  
   
 > [!NOTE]
->  Si le type du délégué n’est pas connu, autrement dit, l’expression lambda est de type <xref:System.Linq.Expressions.LambdaExpression>et non <xref:System.Linq.Expressions.Expression%601>, vous devez appeler la <xref:System.Delegate.DynamicInvoke%2A>méthode sur le délégué au lieu d’appeler directement.</xref:System.Delegate.DynamicInvoke%2A> </xref:System.Linq.Expressions.Expression%601> </xref:System.Linq.Expressions.LambdaExpression>  
+>  Si le type du délégué n’est pas connu, autrement dit si l’expression lambda est de type <xref:System.Linq.Expressions.LambdaExpression> et non <xref:System.Linq.Expressions.Expression%601>, vous devez appeler la méthode <xref:System.Delegate.DynamicInvoke%2A> sur le délégué au lieu de l’appeler directement.  
   
- Si une arborescence d’expression ne représente pas une expression lambda, vous pouvez créer une expression lambda qui possède l’arborescence d’expression d’origine comme étant son corps, en appelant le <xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29>méthode.</xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29> Ensuite, vous pouvez exécuter l’expression lambda comme décrit précédemment dans cette section.  
+ Si une arborescence d’expressions ne représente pas une expression lambda, vous pouvez créer une expression lambda ayant l’arborescence d’expressions d’origine comme corps, en appelant la méthode <xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29>. Ensuite, vous pouvez exécuter l’expression lambda comme décrit plus haut dans cette section.  
   
 ## <a name="example"></a>Exemple  
- L’exemple de code suivant montre comment exécuter une arborescence d’expression qui représente l’élévation d’un nombre à une puissance en créant une expression lambda et en l’exécutant. Le résultat, qui représente le nombre élevé à la puissance, est affiché.  
+ L’exemple de code suivant montre comment exécuter une arborescence d’expressions qui représente l’élévation d’un nombre à une puissance en créant une expression lambda et en l’exécutant. Le résultat, qui représente le nombre élevé à la puissance, est affiché.  
   
 ```vb  
 ' The expression tree to execute.  
@@ -61,10 +53,10 @@ MsgBox(result)
   
 ## <a name="compiling-the-code"></a>Compilation du code  
   
--   Ajoutez une référence de projet à System.Core.dll si elle n’est pas déjà référencée.  
+-   Ajoutez une référence de projet à System.Core.dll, si cette référence n’existe pas encore.  
   
--   Inclure l’espace de noms System.Linq.Expressions.  
+-   Incluez l’espace de noms System.Linq.Expressions.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Arborescences d’expression (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)   
+ [Arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)  
  [Comment : modifier des arborescences d’Expression (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)

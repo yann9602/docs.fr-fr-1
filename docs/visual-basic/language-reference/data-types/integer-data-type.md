@@ -1,62 +1,82 @@
 ---
-title: "Integer Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Integer"
-  - "Integer"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "numbers, whole"
-  - "enumerated values"
-  - "whole numbers"
-  - "integral data types"
-  - "integer numbers"
-  - "numbers, integer"
-  - "integers, data types"
-  - "literal type characters, I"
-  - "integers, types"
-  - "data types [Visual Basic], integral"
-  - "% identifier type character"
-  - "data types [Visual Basic], assigning"
-  - "identifier type characters, %"
-  - "I literal type character"
-  - "Integer data type"
+title: "Integer, type de données (Visual Basic)"
+ms.date: 04/20/2017
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Integer
+- Integer
+helpviewer_keywords:
+- numbers [Visual Basic], whole
+- enumerated values [Visual Basic]
+- whole numbers
+- integral data types [Visual Basic]
+- integer numbers
+- numbers [Visual Basic], integer
+- integers [Visual Basic], data types
+- literal type characters [Visual Basic], I
+- integers [Visual Basic], types
+- data types [Visual Basic], integral
+- '% identifier type character'
+- data types [Visual Basic], assigning
+- identifier type characters [Visual Basic], %
+- I literal type character [Visual Basic]
+- Integer data type
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 69c7fb6caf5d9a10c7d033d1ba0a05c9230d472c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Integer Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Contient des entiers 32 bits \(4 octets\) signés dont la valeur est comprise entre \-2 147 483 648 et 2 147 483 647.  
+# <a name="integer-data-type-visual-basic"></a>Type de données Integer (Visual Basic)
+Contient des entiers 32 bits (4 octets) signés dont la valeur est comprise entre -2 147 483 648 et 2 147 483 647.  
   
-## Notes  
- Le type de données `Integer` offre des performances optimales sur un processeur 32 bits.  Les autres types intégraux sont plus lents à charger et à stocker en provenance et à destination de la mémoire.  
+## <a name="remarks"></a>Remarques
+ Le type de données `Integer` offre des performances optimales sur un processeur 32 bits. Les autres types intégraux sont plus lents à charger et à stocker en provenance et à destination de la mémoire.  
   
  La valeur par défaut de `Integer` est 0.  
+
+## <a name="literal-assignments"></a>Attributions de littéral
+
+Vous pouvez déclarer et initialiser une `Integer` variable en lui assignant un décimal littéral, un littéral hexadécimal, un littéral octal, ou (à partir de Visual Basic 2017) un littéral binaire. Si le littéral entier est en dehors de la plage de `Integer` (autrement dit, s’il est inférieur à <xref:System.Int32.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.Int32.MaxValue?displayProperty=nameWithType>, une erreur de compilation se produit.
+
+Dans l’exemple suivant, les entiers égaux à 16 342 représentés comme des littéraux décimaux, hexadécimaux et binaires sont assignés aux valeurs `Integer`.
+
+[!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Int)]  
+
+> [!NOTE]
+> Vous utilisez le préfixe `&h` ou `&H` pour désigner un littéral hexadécimal, le préfixe `&b` ou `&B` pour désigner un littéral binaire et le préfixe `&o` ou `&O` pour désigner un littéral octal. Les littéraux décimaux n’ont pas de préfixe.
+
+À partir de Visual Basic 2017, vous pouvez également utiliser le caractère de soulignement, `_`, comme un séparateur de chiffres pour améliorer la lisibilité, comme l’exemple suivant montre le.
+
+[!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#IntS)]  
+
+Littéraux numériques peuvent également inclure le `I` [caractère de type](../../programming-guide\language-features\data-types/type-characters.md) pour désigner le `Integer` type de données, comme le montre l’exemple suivant.
+
+```vb
+Dim number = &H035826I
+```
+
+## <a name="programming-tips"></a>Conseils de programmation
+
+-   **Considérations sur l’interopérabilité.** Si vous utilisez des composants non écrits pour le .NET Framework, tels que des objets Automation ou COM, n’oubliez pas que `Integer` a une largeur de données différente (16 bits) dans d’autres environnements. Si vous passez un argument de 16 bits à un tel composant, déclarez-le en tant que type de données `Short` et non `Integer` dans votre nouveau code Visual Basic.  
   
-## Conseils de programmation  
+-   **Étendues.** Le type de données `Integer` s'étend à `Long`, `Decimal`, `Single` ou `Double`. Cela signifie que vous pouvez convertir `Integer` en l'un de ces types sans rencontrer d'erreur <xref:System.OverflowException?displayProperty=nameWithType>.  
   
--   **Considérations sur l'interopérabilité.** Si vous utilisez des composants non écrits pour le .NET Framework, par exemple des objets Automation ou COM, n'oubliez pas que `Integer` possède une largeur de données différente \(16 bits\) dans les autres environnements.  Si vous passez un argument de 16 bits à un tel composant, déclarez\-le en tant que type de données `Short` et non `Integer` dans votre nouveau code Visual Basic.  
+-   **Caractères de type.** L'ajout du caractère de type littéral `I` à un littéral force ce dernier en type de données `Integer`. L'ajout du caractère de type identificateur `%` à un identificateur force ce dernier en type `Integer`.  
   
--   **Extension.** Le type de données `Integer` s'étend à `Long`, `Decimal`, `Single` ou `Double`.  Cela signifie que vous pouvez convertir `Integer` en l'un de ces types sans rencontrer d'erreur <xref:System.OverflowException?displayProperty=fullName>.  
+-   **Type .NET Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Int32?displayProperty=nameWithType>.  
   
--   **Caractères de type.** L'ajout du caractère de type littéral `I` à un littéral force ce dernier en type de données `Integer`.  L'ajout du caractère de type identificateur `%` à un identificateur force ce dernier en type `Integer`.  
-  
--   **Type .NET Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Int32?displayProperty=fullName>.  
-  
-## Plage  
- Si vous essayez d'assigner à une variable de type intégral un nombre situé hors de la plage de ce type, une erreur se produit.  Si vous essayez de lui assigner une fraction, le nombre est arrondi à la valeur entière supérieure ou inférieure la plus proche.  Si le nombre est proche à l'identique de deux valeurs entières, la valeur est arrondie à l'entier pair le plus proche.  Ce comportement réduit les erreurs d'arrondi qui résultent de l'arrondissement cohérent d'une valeur du milieu dans un seul sens.  Le code suivant présente des exemples d'arrondi.  
-  
-```  
+## <a name="range"></a>Plage
+
+Si vous essayez d'assigner à une variable de type intégral un nombre situé hors de la plage de ce type, une erreur se produit. Si vous essayez de lui assigner une fraction, le nombre est arrondi à la valeur entière supérieure ou inférieure la plus proche. Si le nombre est proche à l'identique de deux valeurs entières, la valeur est arrondie à l'entier pair le plus proche. Ce comportement réduit les erreurs d'arrondi qui résultent de l'arrondissement cohérent d'une valeur du milieu dans un seul sens. Le code suivant présente des exemples d'arrondi.  
+
+```vb  
 ' The valid range of an Integer variable is -2147483648 through +2147483647.  
 Dim k As Integer  
 ' The following statement causes an error because the value is too large.  
@@ -68,13 +88,14 @@ k = 4.5
 ' The following statement sets k to 6  
 ' Note, Visual Basic uses banker’s rounding (toward nearest even number)  
 k = 5.5  
-```  
-  
-## Voir aussi  
- <xref:System.Int32?displayProperty=fullName>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Long Data Type](../../../visual-basic/language-reference/data-types/long-data-type.md)   
- [Short Data Type](../../../visual-basic/language-reference/data-types/short-data-type.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [Résumé de la conversion](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+```
+
+## <a name="see-also"></a>Voir aussi
+
+<xref:System.Int32?displayProperty=nameWithType>   
+ [Types de données](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Long (type de données)](../../../visual-basic/language-reference/data-types/long-data-type.md)  
+ [Short (type de données)](../../../visual-basic/language-reference/data-types/short-data-type.md)  
+ [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

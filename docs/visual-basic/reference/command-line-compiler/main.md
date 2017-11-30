@@ -1,44 +1,27 @@
 ---
-title: /main | Documents Microsoft
-ms.date: 2015-07-20
+title: /main
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - main compiler option [Visual Basic]
 - /main compiler option [Visual Basic]
 - -main compiler option [Visual Basic]
 ms.assetid: 83fc339d-6652-415d-b205-b5133319b5b0
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dded7621845141896f353d69ab757010c825b975
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 2697b837a536b1b879196bd10843a2b76314747a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="main"></a>/main
-Spécifie la classe ou le module qui contient le `Sub Main` procédure.  
+Spécifie la classe ou le module qui contient la procédure `Sub Main`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,20 +31,20 @@ Spécifie la classe ou le module qui contient le `Sub Main` procédure.
   
 ## <a name="arguments"></a>Arguments  
  `location`  
- Obligatoire. Une qualification complète de la classe ou le module qui contient le `Sub Main` appelé au démarrage du programme. Cela peut être sous la forme **présentée** ou **/main:namespace.module**.  
+ Obligatoire. Qualification complète de la classe ou le module qui contient le `Sub Main` procédure qui est appelée lorsque le programme démarre. Cela peut être sous la forme **présentée** ou **/main:namespace.module**.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Utilisez cette option lorsque vous créez un fichier exécutable ou un programme exécutable Windows. Si le **/main** option est omise, le compilateur recherche partagé valide `Sub Main` dans tous les modules et les classes publiques.  
   
- Consultez la page [procédure Main dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md) pour en savoir plus sur les différentes formes de la `Main` procédure.  
+ Consultez [procédure Main dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md) pour en savoir plus sur les différentes formes de la `Main` procédure.  
   
- Lors de la `location` est une classe qui hérite de <xref:System.Windows.Forms.Form>, le compilateur fournit une valeur par défaut `Main` procédure qui démarre l’application si la classe n’a pas `Main` procédure.</xref:System.Windows.Forms.Form> Cela vous permet de compiler du code à la ligne de commande qui a été créée dans l’environnement de développement.  
+ Lorsque `location` est une classe qui hérite de <xref:System.Windows.Forms.Form>, le compilateur fournit une valeur par défaut `Main` procédure qui démarre l’application si la classe n’a pas `Main` procédure. Cela vous permet de compiler du code à la ligne de commande qui a été créée dans l’environnement de développement.  
   
- [!code-vb[VbVbalrCompiler&#16;](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/main_1.vb)]  
+ [!code-vb[VbVbalrCompiler#16](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/main_1.vb)]  
   
-### <a name="to-set-main-in-the-visual-studio-integrated-development-environment"></a>Pour définir /main dans Visual Studio environnement de développement intégré  
+### <a name="to-set-main-in-the-visual-studio-integrated-development-environment"></a>Pour définir l’option /main dans Visual Studio environnement de développement intégré  
   
-1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Sur le **projet** menu, cliquez sur **propriétés**.  
+1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.  
   
      Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
   
@@ -72,15 +55,15 @@ Spécifie la classe ou le module qui contient le `Sub Main` procédure.
 4.  Modifiez la valeur dans la **objet de démarrage** boîte.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `T2.vb` et `T3.vb`, en spécifiant que la `Sub Main` procédure se trouve dans le `Test2` (classe).  
+ Le code suivant compile `T2.vb` et `T3.vb`, en spécifiant que le `Sub Main` procédure se trouve dans le `Test2` classe.  
   
 ```  
 vbc t2.vb t3.vb /main:Test2  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)   
- [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)   
- [Exemples de lignes de commande Compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
- [NIB : Version de Visual Basic Hello, World](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c)   
+ [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
+ [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
+ [NIB : Version de Visual Basic de Hello, World](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c)  
  [Procédure Main dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
