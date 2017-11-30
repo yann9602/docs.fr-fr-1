@@ -1,1 +1,1 @@
-Explorateur de fichiers
+<span data-ttu-id="c556b-101">Explorateur de fichiers</span><span class="sxs-lookup"><span data-stu-id="c556b-101">File Explorer</span></span>

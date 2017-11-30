@@ -1,49 +1,50 @@
 ---
-title: "Mise en forme de donn&#233;es dans le contr&#244;le DataGridView Windows&#160;Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "données (Windows Forms), mettre en forme dans les grilles"
-  - "grilles de données, mettre en forme des données"
-  - "DataGridView (contrôle Windows Forms), mettre en forme des données"
+title: "Mise en forme de données dans le contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGridView control [Windows Forms], formatting data
+- data [Windows Forms], formatting in grids
+- data grids [Windows Forms], formatting data
 ms.assetid: 07bf558d-3748-42ba-8ba0-37fdef924081
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e716dc74946ac6f18ab82c6834518f0bd6bbea76
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mise en forme de donn&#233;es dans le contr&#244;le DataGridView Windows&#160;Forms
-Le contrôle <xref:System.Windows.Forms.DataGridView> assure la conversion automatique entre les valeurs de cellules et les types de données que les colonnes parentes affichent.  Par exemple, les colonnes de zone de texte affichent des représentations sous forme de chaîne pour les valeurs de date, d'heure, de nombre et d'énumération, et convertissent les valeurs de chaîne entrées par utilisateur en les types requis par le magasin de données.  
+# <a name="data-formatting-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="87fad-102">Mise en forme de données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="87fad-102">Data Formatting in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="87fad-103">Le <xref:System.Windows.Forms.DataGridView> contrôle fournit une conversion automatique entre les valeurs de cellule et les types de données que les colonnes parentes affichent.</span><span class="sxs-lookup"><span data-stu-id="87fad-103">The <xref:System.Windows.Forms.DataGridView> control provides automatic conversion between cell values and the data types that the parent columns display.</span></span> <span data-ttu-id="87fad-104">Colonnes de zone de texte, par exemple, affichent des représentations de chaîne des valeurs d’énumération, nombre, date et heure et convertissent des valeurs de chaîne d’entrée par l’utilisateur pour les types requis par le magasin de données.</span><span class="sxs-lookup"><span data-stu-id="87fad-104">Text box columns, for example, display string representations of date, time, number, and enumeration values, and convert user-entered string values to the types required by the data store.</span></span>  
   
-## Mise en forme avec la classe DataGridViewCellStyle  
- Le contrôle <xref:System.Windows.Forms.DataGridView> fournit des données de base qui mettent en forme les valeurs des cellules par le biais de la classe <xref:System.Windows.Forms.DataGridViewCellStyle>.  Vous pouvez utiliser la propriété <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> pour mettre en forme les valeurs de date, d'heure, de nombre et d'énumération pour la culture par défaut actuelle à l'aide des spécificateurs de format décrits dans [Mise en forme des types](../../../../docs/standard/base-types/formatting-types.md).  Vous pouvez également mettre en forme ces valeurs pour des cultures spécifiques qui utilisent la propriété <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>.  Le format spécifié est utilisé à la fois pour afficher des données et analyser les données que l'utilisateur entre dans le format spécifié.  
+## <a name="formatting-with-the-datagridviewcellstyle-class"></a><span data-ttu-id="87fad-105">Mise en forme avec la classe DataGridViewCellStyle</span><span class="sxs-lookup"><span data-stu-id="87fad-105">Formatting with the DataGridViewCellStyle class</span></span>  
+ <span data-ttu-id="87fad-106">Le <xref:System.Windows.Forms.DataGridView> contrôle fournit des données de base de mise en forme des valeurs de cellule via la <xref:System.Windows.Forms.DataGridViewCellStyle> classe.</span><span class="sxs-lookup"><span data-stu-id="87fad-106">The <xref:System.Windows.Forms.DataGridView> control provides basic data formatting of cell values through the <xref:System.Windows.Forms.DataGridViewCellStyle> class.</span></span> <span data-ttu-id="87fad-107">Vous pouvez utiliser la <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> propriété des valeurs de format de date, heure, nombre et d’énumération pour la culture par défaut actuelle à l’aide de spécificateurs de format décrits dans [mise en forme des Types](../../../../docs/standard/base-types/formatting-types.md).</span><span class="sxs-lookup"><span data-stu-id="87fad-107">You can use the <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> property to format date, time, number, and enumeration values for the current default culture using the format specifiers described in [Formatting Types](../../../../docs/standard/base-types/formatting-types.md).</span></span> <span data-ttu-id="87fad-108">Vous pouvez également mettre en forme ces valeurs pour des cultures spécifiques à l’aide de la <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="87fad-108">You can also format these values for specific cultures using the <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A> property.</span></span> <span data-ttu-id="87fad-109">Le format spécifié est utilisé pour afficher des données et analyser les données que l’utilisateur entre dans le format spécifié.</span><span class="sxs-lookup"><span data-stu-id="87fad-109">The specified format is used both to display data and to parse data that the user enters in the specified format.</span></span>  
   
- La classe <xref:System.Windows.Forms.DataGridViewCellStyle> fournit des propriétés de mise en forme supplémentaires pour le retour automatique à la ligne, l'alignement de texte et l'affichage personnalisé des valeurs de base de données nulles.  Pour plus d'informations, consultez [Comment : mettre en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).  
+ <span data-ttu-id="87fad-110">La <xref:System.Windows.Forms.DataGridViewCellStyle> classe fournit des propriétés de mise en forme supplémentaires pour wordwrap, l’alignement de texte et l’affichage personnalisé des valeurs null de base de données.</span><span class="sxs-lookup"><span data-stu-id="87fad-110">The <xref:System.Windows.Forms.DataGridViewCellStyle> class provides additional formatting properties for wordwrap, text alignment, and the custom display of null database values.</span></span> <span data-ttu-id="87fad-111">Pour plus d’informations, consultez [Comment : mettre en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).</span><span class="sxs-lookup"><span data-stu-id="87fad-111">For more information, see [How to: Format Data in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).</span></span>  
   
-## Mise en forme avec l'événement CellFormatting  
- Si la mise en forme de base ne répond pas à vos besoins, vous pouvez fournir une mise en forme de données personnalisée dans un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=fullName>.  Le <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> passé au gestionnaire a une propriété <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> qui contient initialement la valeur de la cellule.  Normalement, cette valeur est convertie automatiquement en type d'affichage.  Pour convertir la valeur vous\-même, attribuez à la propriété <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> une valeur du type d'affichage.  
+## <a name="formatting-with-the-cellformatting-event"></a><span data-ttu-id="87fad-112">Mise en forme avec l’événement CellFormatting</span><span class="sxs-lookup"><span data-stu-id="87fad-112">Formatting with the CellFormatting Event</span></span>  
+ <span data-ttu-id="87fad-113">Si la mise en forme de base ne répond pas à vos besoins, vous pouvez fournir des données personnalisées dans un gestionnaire pour la mise en forme le <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> événement.</span><span class="sxs-lookup"><span data-stu-id="87fad-113">If the basic formatting does not meet your needs, you can provide custom data formatting in a handler for the <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> event.</span></span> <span data-ttu-id="87fad-114">Le <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> passé au gestionnaire a une <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> propriété qui contient la valeur de cellule à l’origine.</span><span class="sxs-lookup"><span data-stu-id="87fad-114">The <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> passed to the handler has a <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> property that initially contains the cell value.</span></span> <span data-ttu-id="87fad-115">Normalement, cette valeur est automatiquement convertie en type d’affichage.</span><span class="sxs-lookup"><span data-stu-id="87fad-115">Normally, this value is automatically converted to the display type.</span></span> <span data-ttu-id="87fad-116">Pour convertir la valeur vous-même, attribuez le <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> propriété à une valeur de type d’affichage.</span><span class="sxs-lookup"><span data-stu-id="87fad-116">To convert the value yourself, set the <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> property to a value of the display type.</span></span>  
   
 > [!NOTE]
->  Si une chaîne de mise en forme est appliquée à la cellule, elle substitue votre modification de la valeur de propriété <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> à moins que vous ne donniez à la propriété <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A> la valeur `true`.  
+>  <span data-ttu-id="87fad-117">Si une chaîne de format est en vigueur pour la cellule, elle substitue votre modification de la <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> valeur de propriété, sauf si vous définissez la <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="87fad-117">If a format string is in effect for the cell, it overrides your change of the <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> property value unless you set the <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A> property to `true`.</span></span>  
   
- L'événement <xref:System.Windows.Forms.DataGridView.CellFormatting> est également utile lorsque vous souhaitez définir des propriétés <xref:System.Windows.Forms.DataGridViewCellStyle> pour des cellules individuelles en fonction de leurs valeurs.  Pour plus d'informations, consultez [Comment : personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
+ <span data-ttu-id="87fad-118">Le <xref:System.Windows.Forms.DataGridView.CellFormatting> événement est également utile lorsque vous souhaitez définir <xref:System.Windows.Forms.DataGridViewCellStyle> propriétés pour les cellules individuelles en fonction de leurs valeurs.</span><span class="sxs-lookup"><span data-stu-id="87fad-118">The <xref:System.Windows.Forms.DataGridView.CellFormatting> event is also useful when you want to set <xref:System.Windows.Forms.DataGridViewCellStyle> properties for individual cells based on their values.</span></span> <span data-ttu-id="87fad-119">Pour plus d’informations, consultez [Comment : personnaliser la mise en forme de données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).</span><span class="sxs-lookup"><span data-stu-id="87fad-119">For more information, see [How to: Customize Data Formatting in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).</span></span>  
   
- Si l'analyse par défaut des valeurs spécifiées par utilisateur ne répond pas à vos besoins, vous pouvez gérer l'événement <xref:System.Windows.Forms.DataGridView.CellParsing> du contrôle <xref:System.Windows.Forms.DataGridView> pour fournir l'analyse personnalisée.  
+ <span data-ttu-id="87fad-120">Si l’analyse par défaut des valeurs spécifiées par l’utilisateur ne répond pas à vos besoins, vous pouvez gérer le <xref:System.Windows.Forms.DataGridView.CellParsing> l’événement de la <xref:System.Windows.Forms.DataGridView> contrôle pour fournir l’analyse personnalisée.</span><span class="sxs-lookup"><span data-stu-id="87fad-120">If the default parsing of user-specified values does not meet your needs, you can handle the <xref:System.Windows.Forms.DataGridView.CellParsing> event of the <xref:System.Windows.Forms.DataGridView> control to provide custom parsing.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridViewCellStyle>   
- [Affichage des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)   
- [Styles de cellules dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)   
- [Comment : mettre en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)   
- [Comment : personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="87fad-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="87fad-121">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridViewCellStyle>  
+ [<span data-ttu-id="87fad-122">Affichage des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="87fad-122">Displaying Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="87fad-123">Styles de cellules dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="87fad-123">Cell Styles in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="87fad-124">Guide pratique pour mettre en forme des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="87fad-124">How to: Format Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="87fad-125">Guide pratique pour personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="87fad-125">How to: Customize Data Formatting in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)

@@ -1,1 +1,1 @@
-Concepteur de flux de travail
+<span data-ttu-id="953ae-101">Concepteur de flux de travail</span><span class="sxs-lookup"><span data-stu-id="953ae-101">Workflow Designer</span></span>

@@ -1,1 +1,1 @@
-http://schemas.microsoft.com/winfx/2006/xaml/presentation
+<span data-ttu-id="31791-101">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span><span class="sxs-lookup"><span data-stu-id="31791-101">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span></span>

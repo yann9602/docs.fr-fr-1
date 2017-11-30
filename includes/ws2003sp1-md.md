@@ -1,1 +1,1 @@
-Windows Server 2003 SP1
+<span data-ttu-id="f2350-101">Windows Server 2003 SP1</span><span class="sxs-lookup"><span data-stu-id="f2350-101">Windows Server 2003 SP1</span></span>

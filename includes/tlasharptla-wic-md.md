@@ -1,1 +1,1 @@
-Composant Imagerie Microsoft Windows Presentation Foundation
+<span data-ttu-id="4c446-101">Composant Imagerie Microsoft Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="4c446-101">Microsoft Windows Presentation Foundation Imaging Component</span></span>

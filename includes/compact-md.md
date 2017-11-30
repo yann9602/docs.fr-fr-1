@@ -1,1 +1,1 @@
-.NET Compact Framework
+<span data-ttu-id="ff65b-101">.NET Compact Framework</span><span class="sxs-lookup"><span data-stu-id="ff65b-101">.NET Compact Framework</span></span>

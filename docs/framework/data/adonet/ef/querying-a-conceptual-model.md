@@ -1,24 +1,23 @@
 ---
-title: "Interrogation d&#39;un mod&#232;le conceptuel | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Interrogation d'un modèle conceptuel"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d59a4ae7-a651-403c-82e2-6d710645a867
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: bf289605d305317d4663954a034269c4a432bd80
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Interrogation d&#39;un mod&#232;le conceptuel
-[!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] vous permet d'interroger un modèle conceptuel.  Pour interroger le modèle conceptuel à l'aide de la dernière version d'Entity Framework, consultez [Interrogation des données](http://go.microsoft.com/fwlink/?LinkId=235282)
+# <a name="querying-a-conceptual-model"></a><span data-ttu-id="84f15-102">Interrogation d'un modèle conceptuel</span><span class="sxs-lookup"><span data-stu-id="84f15-102">Querying a Conceptual Model</span></span>
+<span data-ttu-id="84f15-103">Le [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] vous permet d’interroger un modèle conceptuel.</span><span class="sxs-lookup"><span data-stu-id="84f15-103">The [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] enables you to query a conceptual model.</span></span> <span data-ttu-id="84f15-104">Pour interroger le modèle conceptuel à l’aide de la dernière version d’Entity Framework, consultez [interrogation des données](http://go.microsoft.com/fwlink/?LinkId=235282).</span><span class="sxs-lookup"><span data-stu-id="84f15-104">To query the conceptual model using the latest version of the Entity Framework, see [Querying Data](http://go.microsoft.com/fwlink/?LinkId=235282).</span></span>

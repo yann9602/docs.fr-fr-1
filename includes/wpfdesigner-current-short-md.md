@@ -1,1 +1,1 @@
-Concepteur WPF
+<span data-ttu-id="9fe32-101">Concepteur WPF</span><span class="sxs-lookup"><span data-stu-id="9fe32-101">WPF Designer</span></span>

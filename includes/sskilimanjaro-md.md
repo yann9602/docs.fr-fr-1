@@ -1,1 +1,1 @@
-SQL Server 2008 R2
+<span data-ttu-id="64c36-101">SQL Server 2008 R2</span><span class="sxs-lookup"><span data-stu-id="64c36-101">SQL Server 2008 R2</span></span>

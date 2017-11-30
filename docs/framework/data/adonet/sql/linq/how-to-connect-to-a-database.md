@@ -1,47 +1,53 @@
 ---
-title: "Proc&#233;dure&#160;: se connecter &#224; une base de donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : se connecter à une base de données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c33d74b3-530d-421b-a121-96786dd263a5
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f302e3f24b844bf0357b00bcd97ab074ac972bff
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: se connecter &#224; une base de donn&#233;es
-Le <xref:System.Data.Linq.DataContext> est le conduit principal par lequel vous vous connectez à une base de données, récupérez des objets de celle\-ci et soumettez des modifications.  Le <xref:System.Data.Linq.DataContext> fonctionne comme un <xref:System.Data.SqlClient.SqlConnection> [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)].  En fait, le <xref:System.Data.Linq.DataContext> est initialisé avec une connexion ou une chaîne de connexion que vous fournissez.  Pour plus d'informations, consultez [Méthodes DataContext \(Concepteur O\/R\)](../Topic/DataContext%20Methods%20\(O-R%20Designer\).md).  
+# <a name="how-to-connect-to-a-database"></a><span data-ttu-id="65c2c-102">Comment : se connecter à une base de données</span><span class="sxs-lookup"><span data-stu-id="65c2c-102">How to: Connect to a Database</span></span>
+<span data-ttu-id="65c2c-103">Le <xref:System.Data.Linq.DataContext> est le conduit principal par lequel vous vous connectez à une base de données, récupérez des objets de celle-ci et soumettez des modifications.</span><span class="sxs-lookup"><span data-stu-id="65c2c-103">The <xref:System.Data.Linq.DataContext> is the main conduit by which you connect to a database, retrieve objects from it, and submit changes back to it.</span></span> <span data-ttu-id="65c2c-104">Vous utilisez la <xref:System.Data.Linq.DataContext> tout comme vous utiliseriez une [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection>.</span><span class="sxs-lookup"><span data-stu-id="65c2c-104">You use the <xref:System.Data.Linq.DataContext> just as you would use an [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection>.</span></span> <span data-ttu-id="65c2c-105">En fait, le <xref:System.Data.Linq.DataContext> est initialisé avec une connexion ou une chaîne de connexion que vous fournissez.</span><span class="sxs-lookup"><span data-stu-id="65c2c-105">In fact, the <xref:System.Data.Linq.DataContext> is initialized with a connection or connection string that you supply.</span></span> <span data-ttu-id="65c2c-106">Pour plus d’informations, consultez [des méthodes DataContext (Concepteur O/R)](/visualstudio/data-tools/datacontext-methods-o-r-designer).</span><span class="sxs-lookup"><span data-stu-id="65c2c-106">For more information, see [DataContext Methods (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer).</span></span>  
   
- Le rôle de <xref:System.Data.Linq.DataContext> est de traduire vos demandes d'objets en requêtes SQL sur la base de données, puis de rassembler les objets parmi les résultats.  Le <xref:System.Data.Linq.DataContext> active [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] en implémentant le même modèle d'opérateur que les opérateurs de requête standard, tels que `Where` et `Select`.  
+ <span data-ttu-id="65c2c-107">Le rôle de <xref:System.Data.Linq.DataContext> est de traduire vos demandes d'objets en requêtes SQL sur la base de données, puis de rassembler les objets parmi les résultats.</span><span class="sxs-lookup"><span data-stu-id="65c2c-107">The purpose of the <xref:System.Data.Linq.DataContext> is to translate your requests for objects into SQL queries to be made against the database, and then to assemble objects out of the results.</span></span> <span data-ttu-id="65c2c-108">Le <xref:System.Data.Linq.DataContext> active [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] en implémentant le même modèle d'opérateur que les opérateurs de requête standard, tels que `Where` et `Select`.</span><span class="sxs-lookup"><span data-stu-id="65c2c-108">The <xref:System.Data.Linq.DataContext> enables [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] by implementing the same operator pattern as the Standard Query Operators, such as `Where` and `Select`.</span></span>  
   
 > [!IMPORTANT]
->  Il est primordial de maintenir une connexion sécurisée.  Pour plus d'informations, consultez [Sécurité dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
+>  <span data-ttu-id="65c2c-109">Il est primordial de maintenir une connexion sécurisée.</span><span class="sxs-lookup"><span data-stu-id="65c2c-109">Maintaining a secure connection is of the highest importance.</span></span> <span data-ttu-id="65c2c-110">Pour plus d’informations, consultez [sécurité dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).</span><span class="sxs-lookup"><span data-stu-id="65c2c-110">For more information, see [Security in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).</span></span>  
   
-## Exemple  
- Dans l'exemple suivant, le <xref:System.Data.Linq.DataContext> est utilisé pour se connecter à l'exemple de base de données Northwind et récupérer des lignes de clients dont la ville est Londres.  
+## <a name="example"></a><span data-ttu-id="65c2c-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="65c2c-111">Example</span></span>  
+ <span data-ttu-id="65c2c-112">Dans l'exemple suivant, le <xref:System.Data.Linq.DataContext> est utilisé pour se connecter à l'exemple de base de données Northwind et récupérer des lignes de clients dont la ville est Londres.</span><span class="sxs-lookup"><span data-stu-id="65c2c-112">In the following example, the <xref:System.Data.Linq.DataContext> is used to connect to the Northwind sample database and to retrieve rows of customers whose city is London.</span></span>  
   
  [!code-csharp[DLinqCommunicatingWithDatabase#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCommunicatingWithDatabase/cs/Program.cs#1)]
  [!code-vb[DLinqCommunicatingWithDatabase#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCommunicatingWithDatabase/vb/Module1.vb#1)]  
   
- Chaque table de base de données est représentée comme une collection `Table` disponible par le biais de la méthode <xref:System.Data.Linq.DataContext.GetTable%2A> en utilisant la classe d'entité pour l'identifier.  
+ <span data-ttu-id="65c2c-113">Chaque table de base de données est représentée comme une collection `Table` disponible par le biais de la méthode <xref:System.Data.Linq.DataContext.GetTable%2A> en utilisant la classe d'entité pour l'identifier.</span><span class="sxs-lookup"><span data-stu-id="65c2c-113">Each database table is represented as a `Table` collection available by way of the <xref:System.Data.Linq.DataContext.GetTable%2A> method, by using the entity class to identify it.</span></span>  
   
-## Exemple  
- Il est recommandé de déclarer un <xref:System.Data.Linq.DataContext> fortement typé au lieu de s'appuyer sur la classe <xref:System.Data.Linq.DataContext> de base et sur la méthode <xref:System.Data.Linq.DataContext.GetTable%2A>.  Un <xref:System.Data.Linq.DataContext> fortement typé déclare toutes les collections `Table` comme membres du contexte, comme dans l'exemple suivant.  
+## <a name="example"></a><span data-ttu-id="65c2c-114">Exemple</span><span class="sxs-lookup"><span data-stu-id="65c2c-114">Example</span></span>  
+ <span data-ttu-id="65c2c-115">Il est recommandé de déclarer un <xref:System.Data.Linq.DataContext> fortement typé au lieu de s'appuyer sur la classe <xref:System.Data.Linq.DataContext> de base et sur la méthode <xref:System.Data.Linq.DataContext.GetTable%2A>.</span><span class="sxs-lookup"><span data-stu-id="65c2c-115">Best practice is to declare a strongly typed <xref:System.Data.Linq.DataContext> instead of relying on the basic <xref:System.Data.Linq.DataContext> class and the <xref:System.Data.Linq.DataContext.GetTable%2A> method.</span></span> <span data-ttu-id="65c2c-116">Un <xref:System.Data.Linq.DataContext> fortement typé déclare toutes les collections `Table` comme membres du contexte, comme dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="65c2c-116">A strongly typed <xref:System.Data.Linq.DataContext> declares all `Table` collections as members of the context, as in the following example.</span></span>  
   
  [!code-csharp[DLinqCommunicatingWithDatabase#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCommunicatingWithDatabase/cs/Program.cs#2)]
  [!code-vb[DLinqCommunicatingWithDatabase#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCommunicatingWithDatabase/vb/Module1.vb#2)]  
   
- Vous pouvez exprimer ensuite plus simplement la requête de clients de Londres comme suit :  
+ <span data-ttu-id="65c2c-117">Vous pouvez exprimer ensuite plus simplement la requête de clients de Londres comme suit :</span><span class="sxs-lookup"><span data-stu-id="65c2c-117">You can then express the query for customers from London more simply as:</span></span>  
   
  [!code-csharp[DLinqCommunicatingWithDatabase#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCommunicatingWithDatabase/cs/Program.cs#5)]
  [!code-vb[DLinqCommunicatingWithDatabase#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCommunicatingWithDatabase/vb/Module1.vb#5)]  
   
-## Voir aussi  
- [Communication avec la base de données](../../../../../../docs/framework/data/adonet/sql/linq/communicating-with-the-database.md)
+## <a name="see-also"></a><span data-ttu-id="65c2c-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="65c2c-118">See Also</span></span>  
+ [<span data-ttu-id="65c2c-119">Communication avec la base de données</span><span class="sxs-lookup"><span data-stu-id="65c2c-119">Communicating with the Database</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/communicating-with-the-database.md)

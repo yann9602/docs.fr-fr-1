@@ -1,55 +1,53 @@
 ---
-title: "Ressources d’affectation de noms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "ressources localisées de noms [.NET Framework]"
-  - "localisation, les règles de dénomination"
-  - "noms de ressources"
-  - "applications globales, règles de dénomination"
-  - "applications internationales, règles de dénomination"
+title: "Attribution d'un nom à des ressources"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- names [.NET Framework], localized resources
+- localization, naming guidelines
+- resource names
+- global applications, naming guidelines
+- international applications, naming guidelines
 ms.assetid: 8b0e97f3-7877-44fd-bc76-e05d36d5d79c
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 89782b00799bfaac97780b0ffdee62c89fdfbe49
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Ressources d’affectation de noms
-Étant donné que les ressources localisables peuvent être référencés via certains objets comme s’ils étaient des propriétés, les instructions d’affectation de noms pour les ressources sont similaires aux indications de la propriété.  
+# <a name="naming-resources"></a><span data-ttu-id="3615b-102">Attribution d'un nom à des ressources</span><span class="sxs-lookup"><span data-stu-id="3615b-102">Naming Resources</span></span>
+<span data-ttu-id="3615b-103">Étant donné que les ressources localisables peuvent être référencés via certains objets comme s’ils étaient des propriétés, les instructions d’affectation de noms pour les ressources sont semblables aux instructions de la propriété.</span><span class="sxs-lookup"><span data-stu-id="3615b-103">Because localizable resources can be referenced via certain objects as if they were properties, the naming guidelines for resources are similar to property guidelines.</span></span>  
   
- **✓ faire** utilisent la casse Pascal dans les clés de ressources.  
+ <span data-ttu-id="3615b-104">**✓ FAIRE** utilisent la casse Pascal dans les clés de ressources.</span><span class="sxs-lookup"><span data-stu-id="3615b-104">**✓ DO** use PascalCasing in resource keys.</span></span>  
   
- **✓ faire** fournir descriptif au lieu d’identificateurs courts.  
+ <span data-ttu-id="3615b-105">**✓ FAIRE** fournir descriptif au lieu d’identificateurs courts.</span><span class="sxs-lookup"><span data-stu-id="3615b-105">**✓ DO** provide descriptive rather than short identifiers.</span></span>  
   
- **X ne pas** utiliser des mots clés spécifiques au langage principal langage CLR.  
+ <span data-ttu-id="3615b-106">**X ne sont pas** utiliser des mots clés de langage spécifique langage CLR principal.</span><span class="sxs-lookup"><span data-stu-id="3615b-106">**X DO NOT** use language-specific keywords of the main CLR languages.</span></span>  
   
- **✓ faire** utiliser uniquement des caractères alphanumériques et des traits de soulignement dans les noms des ressources.  
+ <span data-ttu-id="3615b-107">**✓ FAIRE** utiliser uniquement des caractères alphanumériques et des traits de soulignement dans les noms des ressources.</span><span class="sxs-lookup"><span data-stu-id="3615b-107">**✓ DO** use only alphanumeric characters and underscores in naming resources.</span></span>  
   
- **✓ faire** utiliser la convention d’affectation de noms suivante pour les ressources de message d’exception.  
+ <span data-ttu-id="3615b-108">**✓ FAIRE** utilisent la convention d’affectation de noms suivante pour les ressources de message d’exception.</span><span class="sxs-lookup"><span data-stu-id="3615b-108">**✓ DO** use the following naming convention for exception message resources.</span></span>  
   
- L’identificateur de ressource doit être un identificateur court de l’exception ainsi que le nom de type d’exception :  
+ <span data-ttu-id="3615b-109">L’identificateur de ressource doit être le nom de type d’exception plus un identificateur court de l’exception :</span><span class="sxs-lookup"><span data-stu-id="3615b-109">The resource identifier should be the exception type name plus a short identifier of the exception:</span></span>  
   
- `ArgumentExceptionIllegalCharacters`   
- `ArgumentExceptionInvalidName`   
+ `ArgumentExceptionIllegalCharacters`  
+ `ArgumentExceptionInvalidName`  
  `ArgumentExceptionFileNameIsMalformed`  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ <span data-ttu-id="3615b-110">*Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*</span><span class="sxs-lookup"><span data-stu-id="3615b-110">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [Framework Design Guidelines : Conventions, langages et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison\-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ <span data-ttu-id="3615b-111">*Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*</span><span class="sxs-lookup"><span data-stu-id="3615b-111">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## Voir aussi  
- [Instructions de conception d’infrastructure](../../../docs/standard/design-guidelines/index.md)   
- [Indications concernant l'attribution d'un nom](../../../docs/standard/design-guidelines/naming-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="3615b-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3615b-112">See Also</span></span>  
+ [<span data-ttu-id="3615b-113">Règles de conception de .NET Framework</span><span class="sxs-lookup"><span data-stu-id="3615b-113">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
+ [<span data-ttu-id="3615b-114">Affectation de noms</span><span class="sxs-lookup"><span data-stu-id="3615b-114">Naming Guidelines</span></span>](../../../docs/standard/design-guidelines/naming-guidelines.md)

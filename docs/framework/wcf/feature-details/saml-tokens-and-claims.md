@@ -1,59 +1,65 @@
 ---
-title: "Jetons SAML et revendications | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "fédération"
-  - "jetons émis"
-  - "jeton SAML"
-  - "WCF, fédération"
+title: Jetons SAML et revendications
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- WCF, federation
+- federation
+- issued tokens
+- SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 093b2e8c3a6bad476bc294db733de3e706c38af7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Jetons SAML et revendications
-Les *jetons* SAML \(Security Assertions Markup Language\) sont des représentations XML de revendications.Par défaut, les jetons SAML qu'utilise [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dans les scénarios de sécurité fédérée sont des *jetons émis*.  
+# <a name="saml-tokens-and-claims"></a><span data-ttu-id="7b650-102">Jetons SAML et revendications</span><span class="sxs-lookup"><span data-stu-id="7b650-102">SAML Tokens and Claims</span></span>
+<span data-ttu-id="7b650-103">Sécurité Assertions Markup Language (SAML) *jetons* sont des représentations XML de revendications.</span><span class="sxs-lookup"><span data-stu-id="7b650-103">Security Assertions Markup Language (SAML) *tokens* are XML representations of claims.</span></span> <span data-ttu-id="7b650-104">Par défaut, les jetons SAML [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise dans les scénarios de sécurité fédérée est *jetons émis*.</span><span class="sxs-lookup"><span data-stu-id="7b650-104">By default, SAML tokens [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] uses in federated security scenarios are *issued tokens*.</span></span>  
   
- Les jetons SAML comportent des instructions qui sont des ensembles de revendications générées par une entité au sujet d'une autre entité.Par exemple, dans des scénarios de sécurité fédérée, les instructions sont générées par un service de jeton de sécurité au sujet d'un utilisateur dans le système.Le service de jeton de sécurité signe le jeton SAML pour indiquer la véracité des instructions incluses dans le jeton.De plus, le jeton SAML est associé à du matériel de clé de chiffrement dont l'utilisateur du jeton SAML prouve la connaissance.Cette preuve satisfait la partie de confiance que le jeton SAML a été émis, en fait, pour cet utilisateur.Par exemple, dans un scénario classique :  
+ <span data-ttu-id="7b650-105">Les jetons SAML comportent des instructions qui sont des ensembles de revendications générées par une entité au sujet d'une autre entité.</span><span class="sxs-lookup"><span data-stu-id="7b650-105">SAML tokens carry statements that are sets of claims made by one entity about another entity.</span></span> <span data-ttu-id="7b650-106">Par exemple, dans des scénarios de sécurité fédérée, les instructions sont générées par un service de jeton de sécurité au sujet d'un utilisateur dans le système.</span><span class="sxs-lookup"><span data-stu-id="7b650-106">For example, in federated security scenarios, the statements are made by a security token service about a user in the system.</span></span> <span data-ttu-id="7b650-107">Le service de jeton de sécurité signe le jeton SAML pour indiquer la véracité des instructions incluses dans le jeton.</span><span class="sxs-lookup"><span data-stu-id="7b650-107">The security token service signs the SAML token to indicate the veracity of the statements contained in the token.</span></span> <span data-ttu-id="7b650-108">De plus, le jeton SAML est associé à du matériel de clé de chiffrement dont l'utilisateur du jeton SAML prouve la connaissance.</span><span class="sxs-lookup"><span data-stu-id="7b650-108">In addition, the SAML token is associated with cryptographic key material that the user of the SAML token proves knowledge of.</span></span> <span data-ttu-id="7b650-109">Cette preuve satisfait la partie de confiance que le jeton SAML a été émis, en fait, pour cet utilisateur.</span><span class="sxs-lookup"><span data-stu-id="7b650-109">This proof satisfies the relying party that the SAML token was, in fact, issued to that user.</span></span> <span data-ttu-id="7b650-110">Par exemple, dans un scénario classique :</span><span class="sxs-lookup"><span data-stu-id="7b650-110">For example, in a typical scenario:</span></span>  
   
-1.  Un client demande un jeton SAML à un service de jeton de sécurité en s'authentifiant auprès de ce service à l'aide des informations d'identification Windows.  
+1.  <span data-ttu-id="7b650-111">Un client demande un jeton SAML à un service de jeton de sécurité en s'authentifiant auprès de ce service à l'aide des informations d'identification Windows.</span><span class="sxs-lookup"><span data-stu-id="7b650-111">A client requests a SAML token from a security token service, authenticating to that security token service by using Windows credentials.</span></span>  
   
-2.  Le service de jeton de sécurité émet un jeton SAML pour le client.Le jeton SAML est signé avec un certificat associé au service de jeton de sécurité et contient une clé de vérification chiffrée pour le service cible.  
+2.  <span data-ttu-id="7b650-112">Le service de jeton de sécurité émet un jeton SAML pour le client.</span><span class="sxs-lookup"><span data-stu-id="7b650-112">The security token service issues a SAML token to the client.</span></span> <span data-ttu-id="7b650-113">Le jeton SAML est signé avec un certificat associé au service de jeton de sécurité et contient une clé de vérification chiffrée pour le service cible.</span><span class="sxs-lookup"><span data-stu-id="7b650-113">The SAML token is signed with a certificate associated with the security token service and contains a proof key encrypted for the target service.</span></span>  
   
-3.  Le client reçoit également une copie de la *clé de vérification*.Le client présente alors le jeton SAML au service d'application \(*partie de confiance*\) et signe le message avec cette clé de vérification.  
+3.  <span data-ttu-id="7b650-114">Le client reçoit également une copie de la *clé de vérification*.</span><span class="sxs-lookup"><span data-stu-id="7b650-114">The client also receives a copy of the *proof key*.</span></span> <span data-ttu-id="7b650-115">Le client présente alors le jeton SAML au service d’application (la *confiance*) et signe le message avec cette clé de vérification.</span><span class="sxs-lookup"><span data-stu-id="7b650-115">The client then presents the SAML token to the application service (the *relying party*) and signs the message with that proof key.</span></span>  
   
-4.  La signature sur le jeton SAML indique à la partie de confiance que le service de jeton de sécurité a émis le jeton.La signature de message créée avec la clé de vérification indique à la partie de confiance que le jeton a été émis pour le client.  
+4.  <span data-ttu-id="7b650-116">La signature sur le jeton SAML indique à la partie de confiance que le service de jeton de sécurité a émis le jeton.</span><span class="sxs-lookup"><span data-stu-id="7b650-116">The signature over the SAML token tells the relying party that the security token service issued the token.</span></span> <span data-ttu-id="7b650-117">La signature de message créée avec la clé de vérification indique à la partie de confiance que le jeton a été émis pour le client.</span><span class="sxs-lookup"><span data-stu-id="7b650-117">The message signature created with the proof key tells the relying party that the token was issued to the client.</span></span>  
   
-## Des revendications aux éléments SamlAttributes  
- Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les instructions incluses dans les jetons SAML sont modelées en tant qu'objets <xref:System.IdentityModel.Tokens.SamlAttribute>, qui peuvent être remplis directement à partir d'objets <xref:System.IdentityModel.Claims.Claim> à condition que l'objet <xref:System.IdentityModel.Claims.Claim> ait une propriété <xref:System.IdentityModel.Claims.Claim.Right%2A> de <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> et que la propriété <xref:System.IdentityModel.Claims.Claim.Resource%2A> soit du type <xref:System.String>.Par exemple :  
+## <a name="from-claims-to-samlattributes"></a><span data-ttu-id="7b650-118">Des revendications aux éléments SamlAttributes</span><span class="sxs-lookup"><span data-stu-id="7b650-118">From Claims to SamlAttributes</span></span>  
+ <span data-ttu-id="7b650-119">Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les instructions incluses dans les jetons SAML sont modelées en tant qu'objets <xref:System.IdentityModel.Tokens.SamlAttribute>, qui peuvent être remplis directement à partir d'objets <xref:System.IdentityModel.Claims.Claim> à condition que l'objet <xref:System.IdentityModel.Claims.Claim> ait une propriété <xref:System.IdentityModel.Claims.Claim.Right%2A> de <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> et que la propriété <xref:System.IdentityModel.Claims.Claim.Resource%2A> soit du type <xref:System.String>.</span><span class="sxs-lookup"><span data-stu-id="7b650-119">In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], statements in SAML tokens are modeled as <xref:System.IdentityModel.Tokens.SamlAttribute> objects, which can be populated directly from <xref:System.IdentityModel.Claims.Claim> objects, provided the <xref:System.IdentityModel.Claims.Claim> object has a <xref:System.IdentityModel.Claims.Claim.Right%2A> property of <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> and the <xref:System.IdentityModel.Claims.Claim.Resource%2A> property is of type <xref:System.String>.</span></span> <span data-ttu-id="7b650-120">Exemple :</span><span class="sxs-lookup"><span data-stu-id="7b650-120">For example:</span></span>  
   
  [!code-csharp[c_CreateSTS#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#8)]
  [!code-vb[c_CreateSTS#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#8)]  
   
 > [!NOTE]
->  Lorsque des jetons SAML sont sérialisés dans des messages, lorsqu'ils sont émis par un service de jeton de sécurité ou lorsqu'ils sont présentés par des clients à des services dans le cadre de l'authentification, le quota de taille maximale de message doit être suffisamment important pour prendre en charge le jeton SAML et les autres parties du message.Dans un cas normal, les quotas de taille de message par défaut sont suffisants.Toutefois, dans le cas où un jeton SAML est de grande taille parce qu'il contient des centaines de revendications, vous pouvez avoir besoin d'augmenter les quotas pour prendre en charge le jeton sérialisé.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Considérations sur la sécurité des données](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+>  <span data-ttu-id="7b650-121">Lorsque des jetons SAML sont sérialisés dans des messages, lorsqu'ils sont émis par un service de jeton de sécurité ou lorsqu'ils sont présentés par des clients à des services dans le cadre de l'authentification, le quota de taille maximale de message doit être suffisamment important pour prendre en charge le jeton SAML et les autres parties du message.</span><span class="sxs-lookup"><span data-stu-id="7b650-121">When SAML tokens are serialized in messages, either when they are issued by a security token service or when they are presented by clients to services as part of authentication, the maximum message size quota must be sufficiently large to accommodate the SAML token and the other message parts.</span></span> <span data-ttu-id="7b650-122">Dans un cas normal, les quotas de taille de message par défaut sont suffisants.</span><span class="sxs-lookup"><span data-stu-id="7b650-122">In normal cases, the default message size quotas are sufficient.</span></span> <span data-ttu-id="7b650-123">Toutefois, dans le cas où un jeton SAML est de grande taille parce qu'il contient des centaines de revendications, vous pouvez avoir besoin d'augmenter les quotas pour prendre en charge le jeton sérialisé.</span><span class="sxs-lookup"><span data-stu-id="7b650-123">However, in cases where a SAML token is large because it contains hundreds of claims, you may need to increase the quotas to accommodate the serialized token.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="7b650-124">[Considérations de sécurité pour les données](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).</span><span class="sxs-lookup"><span data-stu-id="7b650-124"> [Security Considerations for Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).</span></span>  
   
-## Des éléments SamlAttributes aux revendications  
- Lorsque des jetons SAML sont reçus dans des messages, les différentes instructions incluses dans le jeton SAML sont transformées en objets <xref:System.IdentityModel.Policy.IAuthorizationPolicy> qui sont placés dans <xref:System.IdentityModel.Policy.AuthorizationContext>.Les revendications provenant de chaque instruction SAML sont retournées par la propriété <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> de <xref:System.IdentityModel.Policy.AuthorizationContext> et peuvent être examinées pour déterminer s'il convient d'authentifier et d'autoriser l'utilisateur.  
+## <a name="from-samlattributes-to-claims"></a><span data-ttu-id="7b650-125">Des éléments SamlAttributes aux revendications</span><span class="sxs-lookup"><span data-stu-id="7b650-125">From SamlAttributes to Claims</span></span>  
+ <span data-ttu-id="7b650-126">Lorsque des jetons SAML sont reçus dans des messages, les différentes instructions incluses dans le jeton SAML sont transformées en objets <xref:System.IdentityModel.Policy.IAuthorizationPolicy> qui sont placés dans <xref:System.IdentityModel.Policy.AuthorizationContext>.</span><span class="sxs-lookup"><span data-stu-id="7b650-126">When SAML tokens are received in messages, the various statements in the SAML token are turned into <xref:System.IdentityModel.Policy.IAuthorizationPolicy> objects that are placed into the <xref:System.IdentityModel.Policy.AuthorizationContext>.</span></span> <span data-ttu-id="7b650-127">Les revendications provenant de chaque instruction SAML sont retournées par la propriété <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> de <xref:System.IdentityModel.Policy.AuthorizationContext> et peuvent être examinées pour déterminer s'il convient d'authentifier et d'autoriser l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="7b650-127">The claims from each SAML statement are returned by the <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> property of the <xref:System.IdentityModel.Policy.AuthorizationContext> and can be examined to determine whether to authenticate and authorize the user.</span></span>  
   
-## Voir aussi  
- <xref:System.IdentityModel.Policy.AuthorizationContext>   
- <xref:System.IdentityModel.Policy.IAuthorizationPolicy>   
- <xref:System.IdentityModel.Claims.ClaimSet>   
- [Fédération](../../../../docs/framework/wcf/feature-details/federation.md)   
- [Comment : créer un client fédéré](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)   
- [Comment : configurer des informations d'identification sur un service FS \(Federation Service\)](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)   
- [Gestion des revendications et autorisation avec le modèle d'identité](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)   
- [Revendications et jetons](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)   
- [Création de revendications et valeurs de ressource](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)   
- [Comment : créer une revendication personnalisée](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)
+## <a name="see-also"></a><span data-ttu-id="7b650-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7b650-128">See Also</span></span>  
+ <xref:System.IdentityModel.Policy.AuthorizationContext>  
+ <xref:System.IdentityModel.Policy.IAuthorizationPolicy>  
+ <xref:System.IdentityModel.Claims.ClaimSet>  
+ [<span data-ttu-id="7b650-129">Fédération</span><span class="sxs-lookup"><span data-stu-id="7b650-129">Federation</span></span>](../../../../docs/framework/wcf/feature-details/federation.md)  
+ [<span data-ttu-id="7b650-130">Comment : créer un Client fédéré</span><span class="sxs-lookup"><span data-stu-id="7b650-130">How to: Create a Federated Client</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [<span data-ttu-id="7b650-131">Comment : configurer les informations d’identification sur un Service de fédération</span><span class="sxs-lookup"><span data-stu-id="7b650-131">How to: Configure Credentials on a Federation Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [<span data-ttu-id="7b650-132">Gestion des revendications et autorisation avec le modèle d’identité</span><span class="sxs-lookup"><span data-stu-id="7b650-132">Managing Claims and Authorization with the Identity Model</span></span>](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
+ [<span data-ttu-id="7b650-133">Revendications et jetons</span><span class="sxs-lookup"><span data-stu-id="7b650-133">Claims and Tokens</span></span>](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)  
+ [<span data-ttu-id="7b650-134">Création de revendications et des valeurs de ressource</span><span class="sxs-lookup"><span data-stu-id="7b650-134">Claim Creation and Resource Values</span></span>](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)  
+ [<span data-ttu-id="7b650-135">Comment : créer une revendication personnalisée</span><span class="sxs-lookup"><span data-stu-id="7b650-135">How to: Create a Custom Claim</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)

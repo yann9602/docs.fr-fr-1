@@ -1,27 +1,29 @@
 ---
-title: "Aucun &#39;&lt;nom_m&#233;thode&gt;&#39; surcharg&#233; accessible ne peut &#234;tre appel&#233; avec ces arguments sans conversion restrictive | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrAmbiguousMatch_NarrowingConversion1"
+title: "Non accessible surchargé &#39; &lt;methodname&gt;&#39; peut être appelé avec ces arguments sans conversion restrictive"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrAmbiguousMatch_NarrowingConversion1
 ms.assetid: 2fdbadb9-8ef1-404a-a2ed-ce5f5e55cfcb
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 636dbb082323718d8df0371751828e547d99c760
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Aucun &#39;&lt;nom_m&#233;thode&gt;&#39; surcharg&#233; accessible ne peut &#234;tre appel&#233; avec ces arguments sans conversion restrictive
-Une méthode surchargée a été appelée, mais aucune méthode ne peut être mise en correspondance avec la liste des arguments fournis sans conversion restrictive.  
+# <a name="no-accessible-overloaded-39ltmethodnamegt39-can-be-called-with-these-arguments-without-a-narrowing-conversion"></a><span data-ttu-id="e7371-102">Non accessible surchargé &#39; &lt;methodname&gt;&#39; peut être appelé avec ces arguments sans conversion restrictive</span><span class="sxs-lookup"><span data-stu-id="e7371-102">No accessible overloaded &#39;&lt;methodname&gt;&#39; can be called with these arguments without a narrowing conversion</span></span>
+<span data-ttu-id="e7371-103">Une méthode surchargée a été appelée, mais aucune méthode ne peut être mise en correspondance avec la liste des arguments fournis sans conversion restrictive.</span><span class="sxs-lookup"><span data-stu-id="e7371-103">An overloaded method was called, but no method was matched with the list of provided arguments without a narrowing conversion.</span></span>  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="e7371-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="e7371-104">To correct this error</span></span>  
   
-1.  Spécifiez `Option Strict Off`.  
+1.  <span data-ttu-id="e7371-105">Spécifiez `Option Strict Off`.</span><span class="sxs-lookup"><span data-stu-id="e7371-105">Specify `Option Strict Off`.</span></span>  
   
-2.  Modifiez les arguments pour qu’ils correspondent à l’une des signatures de la méthode surchargée.  
+2.  <span data-ttu-id="e7371-106">Modifiez les arguments pour qu’ils correspondent à l’une des signatures de la méthode surchargée.</span><span class="sxs-lookup"><span data-stu-id="e7371-106">Change the arguments to match one of the signatures of the overloaded method.</span></span>  
   
-## Voir aussi  
- [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Widening and Narrowing Conversions](../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+## <a name="see-also"></a><span data-ttu-id="e7371-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e7371-107">See Also</span></span>  
+ [<span data-ttu-id="e7371-108">Passage d’un argument par valeur et par référence</span><span class="sxs-lookup"><span data-stu-id="e7371-108">Passing Arguments by Value and by Reference</span></span>](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)  
+ [<span data-ttu-id="e7371-109">Conversions étendues et restrictives</span><span class="sxs-lookup"><span data-stu-id="e7371-109">Widening and Narrowing Conversions</span></span>](../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

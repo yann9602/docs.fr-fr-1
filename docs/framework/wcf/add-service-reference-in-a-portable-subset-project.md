@@ -1,55 +1,58 @@
 ---
-title: "Ajouter une r&#233;f&#233;rence de service &#224; un projet de sous-ensemble portable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Ajouter une référence de service à un projet de sous-ensemble portable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d7bd456b8c89c315321ad23683708d9dacc1dda2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Ajouter une r&#233;f&#233;rence de service &#224; un projet de sous-ensemble portable
-Les projets portables du sous\-ensemble permettent aux programmeurs d'assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs plateformes .NET \(de bureau, Silverlight, Windows Phone et XBOX\).Les projets portables du sous\-ensemble référencent uniquement les bibliothèques portables .NET qui sont un assembly .NET Framework pouvant être utilisé sur toute plateforme principale .NET.  
+# <a name="add-service-reference-in-a-portable-subset-project"></a><span data-ttu-id="f4b33-102">Ajouter une référence de service à un projet de sous-ensemble portable</span><span class="sxs-lookup"><span data-stu-id="f4b33-102">Add Service Reference in a Portable Subset Project</span></span>
+<span data-ttu-id="f4b33-103">Les projets portables du sous-ensemble permettent aux programmeurs d’assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs implémentations .NET (bureau, Silverlight, Windows Phone et XBOX).</span><span class="sxs-lookup"><span data-stu-id="f4b33-103">Portable subset projects enable .NET assembly programmers to maintain a single source tree and build system while still supporting multiple .NET implementations (desktop, Silverlight, Windows Phone, and XBOX).</span></span> <span data-ttu-id="f4b33-104">Projets portables du sous-ensemble référencent uniquement les bibliothèques portables .NET qui sont un assembly .NET framework qui peut être utilisé sur toute implémentation du .NET.</span><span class="sxs-lookup"><span data-stu-id="f4b33-104">Portable subset projects only reference .NET portable libraries which are a .NET framework assembly that can be used on any .NET implementation.</span></span>  
   
-## Ajouter des détails de référence de service  
- Lors de l'ajout d'une référence de service dans un projet de sous\-ensemble portable, les restrictions suivantes sont appliquées :  
+## <a name="add-service-reference-details"></a><span data-ttu-id="f4b33-105">Ajouter des détails de référence de service</span><span class="sxs-lookup"><span data-stu-id="f4b33-105">Add Service Reference Details</span></span>  
+ <span data-ttu-id="f4b33-106">Lors de l'ajout d'une référence de service dans un projet de sous-ensemble portable, les restrictions suivantes sont appliquées :</span><span class="sxs-lookup"><span data-stu-id="f4b33-106">When adding a service reference in a portable subset project the following restrictions are enforced:</span></span>  
   
-1.  Pour <xref:System.Xml.Serialization.XmlSerializer>, seuls les encodages littéraux sont autorisés.Les encodages SOAP génèrent une erreur lors de l'importation.  
+1.  <span data-ttu-id="f4b33-107">Pour <xref:System.Xml.Serialization.XmlSerializer>, seuls les encodages littéraux sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f4b33-107">For <xref:System.Xml.Serialization.XmlSerializer>, only literal encodings are allowed.</span></span> <span data-ttu-id="f4b33-108">Les encodages SOAP génèrent une erreur lors de l'importation.</span><span class="sxs-lookup"><span data-stu-id="f4b33-108">SOAP encodings generate an error during import.</span></span>  
   
-2.  Pour les services qui utilisent des scénarios <xref:System.Runtime.Serialization.DataContractSerializer>, un substitut de contrat de données est fourni pour garantir que les types réutilisés proviennent uniquement du sous\-ensemble portable.  
+2.  <span data-ttu-id="f4b33-109">Pour les services qui utilisent des scénarios <xref:System.Runtime.Serialization.DataContractSerializer>, un substitut de contrat de données est fourni pour garantir que les types réutilisés proviennent uniquement du sous-ensemble portable.</span><span class="sxs-lookup"><span data-stu-id="f4b33-109">For services that use <xref:System.Runtime.Serialization.DataContractSerializer> scenarios, a data contract surrogate is provided to ensure that reused types come only from the portable subset.</span></span>  
   
-3.  Les points de terminaison qui reposent sur des liaisons non prises en charge dans les bibliothèques portables \(toutes les liaisons sauf <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WsHttpBinding> sans flux de transaction, sessions fiables ou encodage MTOM et liaisons personnalisées équivalentes\) sont ignorés.  
+3.  <span data-ttu-id="f4b33-110">Les points de terminaison qui reposent sur des liaisons non prises en charge dans les bibliothèques portables (toutes les liaisons sauf <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSHttpBinding> sans flux de transaction, sessions fiables ou encodage MTOM et liaisons personnalisées équivalentes) sont ignorés.</span><span class="sxs-lookup"><span data-stu-id="f4b33-110">Endpoints which rely on bindings not supported in portable libraries (all bindings except <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSHttpBinding> without transaction flow, reliable sessions, or MTOM encoding, and equivalent custom bindings) are ignored.</span></span>  
   
-4.  Les en\-têtes de messages sont supprimés de toutes les descriptions des messages dans toutes les opérations avant importation.  
+4.  <span data-ttu-id="f4b33-111">Les en-têtes de messages sont supprimés de toutes les descriptions des messages dans toutes les opérations avant importation.</span><span class="sxs-lookup"><span data-stu-id="f4b33-111">Message headers are deleted from all message descriptions in all operations before import.</span></span>  
   
-5.  Les attributs non portables <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.Serializable> et <xref:System.ServiceModel.TransactionFlow> sont supprimés du code du proxy client généré.  
+5.  <span data-ttu-id="f4b33-112">Les attributs non portables <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.SerializableAttribute> et <xref:System.ServiceModel.TransactionFlowAttribute> sont supprimés du code du proxy client généré.</span><span class="sxs-lookup"><span data-stu-id="f4b33-112">Non-portable attributes <xref:System.ComponentModel.DesignerCategoryAttribute>, <xref:System.SerializableAttribute>, and <xref:System.ServiceModel.TransactionFlowAttribute> are removed from generated client proxy code.</span></span>  
   
-6.  Les propriétés non portables ProtectionLevel, SessionMode, IsInitiating, IsTerminating sont supprimées de <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContract> et <xref:System.ServiceModel.FaultContract>.  
+6.  <span data-ttu-id="f4b33-113">Les propriétés non portables ProtectionLevel, SessionMode, IsInitiating, IsTerminating sont supprimées de <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute> et <xref:System.ServiceModel.FaultContractAttribute>.</span><span class="sxs-lookup"><span data-stu-id="f4b33-113">Non-portable properties ProtectionLevel, SessionMode, IsInitiating, IsTerminating are removed from <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute>, and <xref:System.ServiceModel.FaultContractAttribute>.</span></span>  
   
-7.  Toutes les opérations de service sont générées comme des opérations asynchrones sur le proxy client.  
+7.  <span data-ttu-id="f4b33-114">Toutes les opérations de service sont générées comme des opérations asynchrones sur le proxy client.</span><span class="sxs-lookup"><span data-stu-id="f4b33-114">All service operations are generated as asynchronous operations on the client proxy.</span></span>  
   
-8.  Les constructeurs clients générés qui utilisent des types non portables sont supprimés.  
+8.  <span data-ttu-id="f4b33-115">Les constructeurs clients générés qui utilisent des types non portables sont supprimés.</span><span class="sxs-lookup"><span data-stu-id="f4b33-115">Generated client constructors which use non-portable types are removed.</span></span>  
   
-9. Une instance <xref:System.Net.CookieContainer> est exposée sur le client généré.  
+9. <span data-ttu-id="f4b33-116">Une instance <xref:System.Net.CookieContainer> est exposée sur le client généré.</span><span class="sxs-lookup"><span data-stu-id="f4b33-116">A <xref:System.Net.CookieContainer> instance is exposed on the generated client.</span></span>  
   
-10. Un commentaire est inséré au début du fichier identifiant l'assembly et la version du générateur de code :`// This code was auto-generated by Microsoft.VisualStudio.Portable.AddServiceReference, version 1.0.0.0`  
+10. <span data-ttu-id="f4b33-117">Un commentaire est inséré au début du fichier identifiant l'assembly et la version du générateur de code :`// This code was auto-generated by Microsoft.VisualStudio.Portable.AddServiceReference, version 1.0.0.0`</span><span class="sxs-lookup"><span data-stu-id="f4b33-117">A comment is inserted at the top of the file identifying the assembly and version of the code generator:`// This code was auto-generated by Microsoft.VisualStudio.Portable.AddServiceReference, version 1.0.0.0`</span></span>  
   
-11. L'interface <xref:System.Runtime.Serialization.ISerializable> n'est pas prise en charge.  
+11. <span data-ttu-id="f4b33-118">L'interface <xref:System.Runtime.Serialization.ISerializable> n'est pas prise en charge.</span><span class="sxs-lookup"><span data-stu-id="f4b33-118">The <xref:System.Runtime.Serialization.ISerializable> interface is not supported.</span></span>  
   
-12. Les liaisons Net.Tcp et PollingDuplex ne sont pas prises en charge  
+12. <span data-ttu-id="f4b33-119">Les liaisons Net.Tcp et PollingDuplex ne sont pas prises en charge</span><span class="sxs-lookup"><span data-stu-id="f4b33-119">Net.Tcp and PollingDuplex bindings are not supported</span></span>  
   
-13. <xref:System.Runtime.Serialization.DataContractSerializer> sera toujours utilisé pour les erreurs.  
+13. <span data-ttu-id="f4b33-120"><xref:System.Runtime.Serialization.DataContractSerializer> sera toujours utilisé pour les erreurs.</span><span class="sxs-lookup"><span data-stu-id="f4b33-120">The <xref:System.Runtime.Serialization.DataContractSerializer> will always be used for faults.</span></span>  
   
-14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> n'est pas pris en charge dans les projets portables du sous\-ensemble.  
+14. <span data-ttu-id="f4b33-121"><xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> n'est pas pris en charge dans les projets portables du sous-ensemble.</span><span class="sxs-lookup"><span data-stu-id="f4b33-121"><xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> is not supported in portable subset projects.</span></span>  
   
-## Voir aussi  
- [Accès aux services à l'aide d'un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)   
- [Bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391\(v=vs.110\))
+## <a name="see-also"></a><span data-ttu-id="f4b33-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f4b33-122">See Also</span></span>  
+ [<span data-ttu-id="f4b33-123">Accès aux services à l’aide d’un client WCF</span><span class="sxs-lookup"><span data-stu-id="f4b33-123">Accessing Services Using a WCF Client</span></span>](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
+ <span data-ttu-id="f4b33-124">[Bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="f4b33-124">[Portable Class Library](http://msdn.microsoft.com/library/gg597391\(v=vs.110\))</span></span>

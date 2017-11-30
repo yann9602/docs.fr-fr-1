@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,46 +13,44 @@ helpviewer_keywords:
 - data access [.NET Framework], about .NET Framework data access
 - data [.NET Framework], accessing
 ms.assetid: 8c37635d-e2c1-4b64-a258-61d9e87405e6
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 3edf0cbe10361b456469714747c074ba054e16a4
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="data-and-modeling-in-the-net-framework"></a>Données et modélisation dans le .NET Framework
-Cette section fournit des informations sur la façon d'accéder aux données à l'aide d'ADO.NET, de LINQ (Language-Integrated Query), des services de données WCF et de XML.  
+# <a name="data-and-modeling-in-the-net-framework"></a><span data-ttu-id="3e886-102">Données et modélisation dans le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="3e886-102">Data and Modeling in the .NET Framework</span></span>
+<span data-ttu-id="3e886-103">Cette section fournit des informations sur la façon d'accéder aux données à l'aide d'ADO.NET, de LINQ (Language-Integrated Query), des services de données WCF et de XML.</span><span class="sxs-lookup"><span data-stu-id="3e886-103">This section provides information on how to access data using ADO.NET, Language Integrated Query (LINQ), WCF Data Services, and XML.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [ADO.NET](../../../docs/framework/data/adonet/index.md)  
- Décrit l'architecture ADO.NET et la façon d'utiliser les classes ADO.NET pour gérer des données d'application et interagir avec des sources de données, dont Microsoft SQL Server, les sources de données OLE DB et XML.  
+## <a name="in-this-section"></a><span data-ttu-id="3e886-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="3e886-104">In This Section</span></span>  
+ [<span data-ttu-id="3e886-105">ADO.NET</span><span class="sxs-lookup"><span data-stu-id="3e886-105">ADO.NET</span></span>](../../../docs/framework/data/adonet/index.md)  
+ <span data-ttu-id="3e886-106">Décrit l'architecture ADO.NET et la façon d'utiliser les classes ADO.NET pour gérer des données d'application et interagir avec des sources de données, dont Microsoft SQL Server, les sources de données OLE DB et XML.</span><span class="sxs-lookup"><span data-stu-id="3e886-106">Describes the ADO.NET architecture and how to use the ADO.NET classes to manage application data and interact with data sources, including Microsoft SQL Server, OLE DB data sources, and XML.</span></span>  
   
- [Portail LINQ](http://msdn.microsoft.com/en-us/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
- Fournit des liens vers la documentation relative à LINQ (Language-Integrated Query).  
+ [<span data-ttu-id="3e886-107">Portail LINQ</span><span class="sxs-lookup"><span data-stu-id="3e886-107">LINQ Portal</span></span>](http://msdn.microsoft.com/en-us/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
+ <span data-ttu-id="3e886-108">Fournit des liens vers la documentation relative à LINQ (Language-Integrated Query).</span><span class="sxs-lookup"><span data-stu-id="3e886-108">Provides links to relevant documentation for Language Integrated Query (LINQ).</span></span>  
   
- [Traitement transactionnel](../../../docs/framework/data/transactions/index.md)  
- Présente la prise en charge .NET Framework des transactions.  
+ [<span data-ttu-id="3e886-109">Traitement transactionnel</span><span class="sxs-lookup"><span data-stu-id="3e886-109">Transaction Processing</span></span>](../../../docs/framework/data/transactions/index.md)  
+ <span data-ttu-id="3e886-110">Présente la prise en charge .NET Framework des transactions.</span><span class="sxs-lookup"><span data-stu-id="3e886-110">Discusses the .NET Framework support for transactions.</span></span>  
   
- [WCF Data Services 4.5](../../../docs/framework/data/wcf/index.md)  
- Fournit des informations à propos de l'utilisation des services de données WCF pour déployer des services de données sur le Web ou un intranet.  
+ [<span data-ttu-id="3e886-111">WCF Data Services 4.5</span><span class="sxs-lookup"><span data-stu-id="3e886-111">WCF Data Services 4.5</span></span>](../../../docs/framework/data/wcf/index.md)  
+ <span data-ttu-id="3e886-112">Fournit des informations à propos de l'utilisation des services de données WCF pour déployer des services de données sur le Web ou un intranet.</span><span class="sxs-lookup"><span data-stu-id="3e886-112">Provides information about how to use WCF Data Services to deploy data services on the Web or an intranet.</span></span>  
   
- [Documents et données XML](../../../docs/standard/data/xml/index.md)  
- Donne une vue d'ensemble d'un jeu de classes complet et intégré qui fonctionne avec les documents et les données XML dans le .NET Framework.  
+ [<span data-ttu-id="3e886-113">Documents et données XML</span><span class="sxs-lookup"><span data-stu-id="3e886-113">XML Documents and Data</span></span>](../../../docs/standard/data/xml/index.md)  
+ <span data-ttu-id="3e886-114">Donne une vue d'ensemble d'un jeu de classes complet et intégré qui fonctionne avec les documents et les données XML dans le .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="3e886-114">Provides an overview to a comprehensive and integrated set of classes that work with XML documents and data in the .NET Framework.</span></span>  
   
- [Référence du standard XML](http://msdn.microsoft.com/en-us/79c78508-c9d0-423a-a00f-672e855de401)  
- Fournit des informations de référence sur les standards XML que Microsoft prend en charge.  
+ [<span data-ttu-id="3e886-115">Référence du standard XML</span><span class="sxs-lookup"><span data-stu-id="3e886-115">XML Standards Reference</span></span>](http://msdn.microsoft.com/en-us/79c78508-c9d0-423a-a00f-672e855de401)  
+ <span data-ttu-id="3e886-116">Fournit des informations de référence sur les standards XML que Microsoft prend en charge.</span><span class="sxs-lookup"><span data-stu-id="3e886-116">Provides reference information on XML standards that Microsoft supports.</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Technologies de modélisation Microsoft SQL Server](http://go.microsoft.com/fwlink/?LinkId=193039)  
- Décrit un ensemble de technologies qui permettent un développement et une conception rapide d'applications personnalisées basées sur les données.  
+## <a name="related-sections"></a><span data-ttu-id="3e886-117">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="3e886-117">Related Sections</span></span>  
+ [<span data-ttu-id="3e886-118">Technologies de modélisation Microsoft SQL Server</span><span class="sxs-lookup"><span data-stu-id="3e886-118">Microsoft SQL Server Modeling Technologies</span></span>](http://go.microsoft.com/fwlink/?LinkId=193039)  
+ <span data-ttu-id="3e886-119">Décrit un ensemble de technologies qui permettent un développement et une conception rapide d'applications personnalisées basées sur les données.</span><span class="sxs-lookup"><span data-stu-id="3e886-119">Describes a set of technologies that enable rapid and customized data-based application design and development.</span></span>  
   
- [Guide de développement](../../../docs/framework/development-guide.md)  
- Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.  
+ [<span data-ttu-id="3e886-120">Guide de développement</span><span class="sxs-lookup"><span data-stu-id="3e886-120">Development Guide</span></span>](../../../docs/framework/development-guide.md)  
+ <span data-ttu-id="3e886-121">Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.</span><span class="sxs-lookup"><span data-stu-id="3e886-121">Provides a guide to all key technology areas and tasks for application development, including creating, configuring, debugging, securing, and deploying your application, and information about dynamic programming, interoperability, extensibility, memory management, and threading.</span></span>  
   
- [Sécurité](../../../docs/standard/security/index.md)  
- Fournit des liens vers d'autres informations sur les classes et services du Common Language Runtime et du .NET Framework, qui facilitent le développement d'applications sécurisées.
-
+ [<span data-ttu-id="3e886-122">Sécurité</span><span class="sxs-lookup"><span data-stu-id="3e886-122">Security</span></span>](../../../docs/standard/security/index.md)  
+ <span data-ttu-id="3e886-123">Fournit des liens vers d'autres informations sur les classes et services du Common Language Runtime et du .NET Framework, qui facilitent le développement d'applications sécurisées.</span><span class="sxs-lookup"><span data-stu-id="3e886-123">Provides links to more information on the classes and services in the common language runtime and the .NET Framework that facilitate secure application development.</span></span>

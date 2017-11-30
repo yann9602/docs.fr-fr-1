@@ -1,73 +1,78 @@
 ---
-title: "&lt;udpTransportSettings&gt; de &lt;udpAnnouncementEndpoint&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;udpTransportSettings&gt; de &lt;udpAnnouncementEndpoint&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a7ddff1a-5eed-4bbc-8580-b95ef8890e1f
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f268d13af484f81e22f05e8917fd129fed68e611
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;udpTransportSettings&gt; de &lt;udpAnnouncementEndpoint&gt;
-Cet élément de configuration expose les paramètres de transport UDP de [\<udpAnnoucementEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md).  
+# <a name="ltudptransportsettingsgt-of-ltudpannouncementendpointgt"></a><span data-ttu-id="8b209-102">&lt;udpTransportSettings&gt; de &lt;udpAnnouncementEndpoint&gt;</span><span class="sxs-lookup"><span data-stu-id="8b209-102">&lt;udpTransportSettings&gt; of &lt;udpAnnouncementEndpoint&gt;</span></span>
+<span data-ttu-id="8b209-103">Cet élément de configuration expose des paramètres de transport UDP pour [ \<udpAnnoucementEndpoint >](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md).</span><span class="sxs-lookup"><span data-stu-id="8b209-103">This configuration element exposes UDP transport settings for [\<udpAnnoucementEndpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md).</span></span>  
   
-## Syntaxe  
+<span data-ttu-id="8b209-104">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="8b209-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="8b209-105">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="8b209-105">\<standardEndpoints></span></span>  
+<span data-ttu-id="8b209-106">\<udpAnnouncementEndpoint ></span><span class="sxs-lookup"><span data-stu-id="8b209-106">\<udpAnnouncementEndpoint></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="8b209-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8b209-107">Syntax</span></span>  
   
+```xml  
 <system.serviceModel>  
-    <standardEndpoints>  
-       <udpAnnouncementEndpoint>   
-          <standardEndpoint>  
-               <updTransportSettings>  
-                  duplicateMessageHistoryLength=”Integer”  
-                  maxBufferPoolSize=”Integer”   
-                  maxMulticastRetransmitCount=”Integer”  
-                  maxPendingMessageCount=”Integer”  
-                  maxReceivedMessageSize=”Integer”  
-                  maxUnicastRetransmitCount=”Integer”  
-                  multicastInterfaceId=”String”  
-                  socketReceiveBufferSize=”Integer”  
-                  timeToLive=”Integer” />   
-          </standardEndpoint>  
-       </udpAnnouncementEndpoint>          
-    </standardEndpoints>  
+  <standardEndpoints>
+    <udpAnnouncementEndpoint>
+      <standardEndpoint>
+        <updTransportSettings duplicateMessageHistoryLength="Integer" 
+                              maxBufferPoolSize="Integer" 
+                              maxMulticastRetransmitCount="Integer" 
+                              maxPendingMessageCount="Integer" 
+                              maxReceivedMessageSize="Integer" 
+                              maxUnicastRetransmitCount="Integer" 
+                              multicastInterfaceId="String" 
+                              socketReceiveBufferSize="Integer" 
+                              timeToLive="Integer" />
+      </standardEndpoint>
+    </udpAnnouncementEndpoint>
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="8b209-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="8b209-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="8b209-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="8b209-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="8b209-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="8b209-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|duplicateMessageHistoryLength|Entier qui spécifie le nombre maximal de hachages de messages utilisés par le transport pour l'identification des messages dupliqués.  La détection des doublons est effectuée au niveau de TransportManager.  Si cette propriété a la valeur 0, la détection des doublons est désactivée.<br /><br /> Cet attribut permet aux administrateurs système ou aux développeurs de désactiver les algorithmes de détection des messages dupliqués.  Cela peut s'avérer utile si vous souhaitez implémenter votre propre algorithme de détection de doublons.<br /><br /> La valeur par défaut est 4112.|  
-|maxBufferPoolSize|Entier qui spécifie la taille maximale des pools de mémoires tampons utilisés par le transport.|  
-|maxMulticastRetransmitCount|Entier qui spécifie le nombre maximal de retransmissions du message \(en plus du premier envoi\).<br /><br /> La valeur par défaut est 2.|  
-|maxPendingMessageCount|Entier qui spécifie le nombre maximal de messages reçus qui n'ont pas encore été supprimés dans InputQueue pour une instance de canal individuelle.  Si InputQueue a atteint sa limite du nombre de messages en attente, le message est supprimé.<br /><br /> La valeur par défaut est 32.|  
-|maxReceivedMessageSize|Entier qui spécifie la taille maximale d'un message pouvant être traité par la liaison.<br /><br /> La valeur par défaut est 65507.|  
-|maxUnicastRetransmitCount|Entier qui spécifie le nombre maximal de retransmissions du message \(en plus du premier envoi\).  Si le message est envoyé à une adresse unicast et qu'un message de réponse est reçu avec un en\-tête RelatesTo correspondant, la retransmission peut se terminer de manière précoce \(avant le nombre de retransmissions configuré\).<br /><br /> La valeur par défaut est 1.|  
-|multicastInterfaceId|Chaîne qui identifie de manière unique la carte réseau à utiliser lors de l'envoi et de la réception du trafic multidiffusion sur des ordinateurs multirésidents.  Au moment de l'exécution, le transport utilise cette valeur d'attribut pour rechercher l'index d'interface, qui permet ensuite de définir les options de socket `IPV6_MULTICAST_IF` et `IP_MULTICAST_IF`.  Le même index d'interface est utilisé pour rejoindre un groupe de multidiffusion \(le cas échéant\).<br /><br /> La valeur par défaut est `null`.|  
-|socketReceiveBufferSize|Entier qui spécifie la taille du tampon de réception pour le socket WinSock sous\-jacent.<br /><br /> Tout utilisateur d'un canal de réception peut se servir de cet attribut sur la liaison pour contrôler le comportement du système lorsqu'il reçoit des données.  Par exemple, si une application consomme des messages WCF entrants au seuil maximal, l'utilisation d'une valeur supérieure pour cet attribut permettrait aux messages de s'empiler dans la mémoire tampon Winsock en attendant que l'application puisse les traiter.  L'utilisation d'une valeur inférieure dans la même situation entraînerait la suppression des messages. Cet attribut expose l'option de socket Winsock `SO_RCVBUF` sous\-jacente. Cette valeur d'attribut doit avoir au moins la taille de `maxReceivedMessageSize`.  Si sa valeur est inférieure à `maxReceivedMessageSize` une exception runtime se produit.<br /><br /> La valeur par défaut est 65536.|  
-|timeToLive|Entier qui spécifie le nombre de tronçons de segments réseau pouvant être traversés par un paquet multidiffusion.  Cette propriété expose la fonctionnalité associée aux options de socket `IP_TTL` et `IP_MULTICAST_TTL`.<br /><br /> La valeur par défaut est 1.|  
+|<span data-ttu-id="8b209-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="8b209-111">Attribute</span></span>|<span data-ttu-id="8b209-112">Description</span><span class="sxs-lookup"><span data-stu-id="8b209-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="8b209-113">duplicateMessageHistoryLength</span><span class="sxs-lookup"><span data-stu-id="8b209-113">duplicateMessageHistoryLength</span></span>|<span data-ttu-id="8b209-114">Entier qui spécifie le nombre maximal de hachages de messages utilisés par le transport pour l'identification des messages dupliqués.</span><span class="sxs-lookup"><span data-stu-id="8b209-114">An integer that specifies the maximum number of message hashes used by the transport for identifying duplicate messages.</span></span>  <span data-ttu-id="8b209-115">La détection des doublons est effectuée au niveau de TransportManager.</span><span class="sxs-lookup"><span data-stu-id="8b209-115">Duplicate detection will be done at the TransportManager level.</span></span> <span data-ttu-id="8b209-116">Si cette propriété a la valeur 0, la détection des doublons est désactivée.</span><span class="sxs-lookup"><span data-stu-id="8b209-116">Setting this property to 0 disables duplicate detection.</span></span><br /><br /> <span data-ttu-id="8b209-117">Cet attribut permet aux administrateurs système ou aux développeurs de désactiver les algorithmes de détection des messages dupliqués.</span><span class="sxs-lookup"><span data-stu-id="8b209-117">This attribute allows system administrators or developers to turn off duplicate message detection algorithms.</span></span> <span data-ttu-id="8b209-118">Cela peut s'avérer utile si vous souhaitez implémenter votre propre algorithme de détection de doublons.</span><span class="sxs-lookup"><span data-stu-id="8b209-118">This may be desirable if you want to implement your own duplicate detection algorithm.</span></span><br /><br /> <span data-ttu-id="8b209-119">La valeur par défaut est 4112.</span><span class="sxs-lookup"><span data-stu-id="8b209-119">The default is 4112.</span></span>|  
+|<span data-ttu-id="8b209-120">maxBufferPoolSize</span><span class="sxs-lookup"><span data-stu-id="8b209-120">maxBufferPoolSize</span></span>|<span data-ttu-id="8b209-121">Entier qui spécifie la taille maximale des pools de mémoires tampons utilisés par le transport.</span><span class="sxs-lookup"><span data-stu-id="8b209-121">An integer that specifies the maximum size of any buffer pools used by the transport.</span></span>|  
+|<span data-ttu-id="8b209-122">maxMulticastRetransmitCount</span><span class="sxs-lookup"><span data-stu-id="8b209-122">maxMulticastRetransmitCount</span></span>|<span data-ttu-id="8b209-123">Entier qui spécifie le nombre maximal de retransmissions du message (en plus du premier envoi).</span><span class="sxs-lookup"><span data-stu-id="8b209-123">An integer that specifies the maximum number of times the message should be retransmitted (in addition to the first send).</span></span><br /><br /> <span data-ttu-id="8b209-124">La valeur par défaut est 2.</span><span class="sxs-lookup"><span data-stu-id="8b209-124">The default is 2.</span></span>|  
+|<span data-ttu-id="8b209-125">maxPendingMessageCount</span><span class="sxs-lookup"><span data-stu-id="8b209-125">maxPendingMessageCount</span></span>|<span data-ttu-id="8b209-126">Entier qui spécifie le nombre maximal de messages reçus qui n'ont pas encore été supprimés dans InputQueue pour une instance de canal individuelle.</span><span class="sxs-lookup"><span data-stu-id="8b209-126">An integer that specifies the maximum number of messages that have been received but not yet removed from the InputQueue for an individual channel instance.</span></span>  <span data-ttu-id="8b209-127">Si InputQueue a atteint sa limite du nombre de messages en attente, le message est supprimé.</span><span class="sxs-lookup"><span data-stu-id="8b209-127">If the InputQueue has hit its pending message count limit, the message will be dropped.</span></span><br /><br /> <span data-ttu-id="8b209-128">La valeur par défaut est 32.</span><span class="sxs-lookup"><span data-stu-id="8b209-128">The default is 32.</span></span>|  
+|<span data-ttu-id="8b209-129">maxReceivedMessageSize</span><span class="sxs-lookup"><span data-stu-id="8b209-129">maxReceivedMessageSize</span></span>|<span data-ttu-id="8b209-130">Entier qui spécifie la taille maximale d'un message pouvant être traité par la liaison.</span><span class="sxs-lookup"><span data-stu-id="8b209-130">An integer that specifies the maximum size for a message that can be processed by the binding.</span></span><br /><br /> <span data-ttu-id="8b209-131">La valeur par défaut est 65507.</span><span class="sxs-lookup"><span data-stu-id="8b209-131">The default value is 65507.</span></span>|  
+|<span data-ttu-id="8b209-132">maxUnicastRetransmitCount</span><span class="sxs-lookup"><span data-stu-id="8b209-132">maxUnicastRetransmitCount</span></span>|<span data-ttu-id="8b209-133">Entier qui spécifie le nombre maximal de retransmissions du message (en plus du premier envoi).</span><span class="sxs-lookup"><span data-stu-id="8b209-133">An integer that specifies the maximum number of times the message should be retransmitted (in addition to the first send).</span></span>  <span data-ttu-id="8b209-134">Si le message est envoyé à une adresse unicast et qu'un message de réponse est reçu avec un en-tête RelatesTo correspondant, la retransmission peut se terminer de manière précoce (avant le nombre de retransmissions configuré).</span><span class="sxs-lookup"><span data-stu-id="8b209-134">If the message is sent to a unicast address and a response message is received with a corresponding RelatesTo header, then retransmission may terminate early (before retransmitting the configured number of times).</span></span><br /><br /> <span data-ttu-id="8b209-135">La valeur par défaut est 1.</span><span class="sxs-lookup"><span data-stu-id="8b209-135">The default value is 1.</span></span>|  
+|<span data-ttu-id="8b209-136">multicastInterfaceId</span><span class="sxs-lookup"><span data-stu-id="8b209-136">multicastInterfaceId</span></span>|<span data-ttu-id="8b209-137">Chaîne qui identifie de manière unique la carte réseau à utiliser lors de l'envoi et de la réception du trafic multidiffusion sur des ordinateurs multirésidents.</span><span class="sxs-lookup"><span data-stu-id="8b209-137">A string that uniquely identifies the network adapter that should be used when sending and receiving multicast traffic on multi-homed machines.</span></span> <span data-ttu-id="8b209-138">Au moment de l'exécution, le transport utilise cette valeur d'attribut pour rechercher l'index d'interface, qui permet ensuite de définir les options de socket `IP_MULTICAST_IF` et `IPV6_MULTICAST_IF`.</span><span class="sxs-lookup"><span data-stu-id="8b209-138">At runtime, the transport will use this attribute value to lookup the interface index, which is then used to set the `IP_MULTICAST_IF` and `IPV6_MULTICAST_IF` socket options.</span></span>  <span data-ttu-id="8b209-139">Le même index d'interface est utilisé pour rejoindre un groupe de multidiffusion (le cas échéant).</span><span class="sxs-lookup"><span data-stu-id="8b209-139">The same interface index will be used when joining a multicast group, if applicable.</span></span><br /><br /> <span data-ttu-id="8b209-140">La valeur par défaut est `null`.</span><span class="sxs-lookup"><span data-stu-id="8b209-140">The default value is `null`.</span></span>|  
+|<span data-ttu-id="8b209-141">socketReceiveBufferSize</span><span class="sxs-lookup"><span data-stu-id="8b209-141">socketReceiveBufferSize</span></span>|<span data-ttu-id="8b209-142">Entier qui spécifie la taille du tampon de réception pour le socket WinSock sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="8b209-142">An integer that specifies the receive buffer size on the underlying WinSock socket.</span></span><br /><br /> <span data-ttu-id="8b209-143">Tout utilisateur d'un canal de réception peut se servir de cet attribut sur la liaison pour contrôler le comportement du système lorsqu'il reçoit des données.</span><span class="sxs-lookup"><span data-stu-id="8b209-143">A user of a receiving channel can use this attribute on the Binding to control how the system behaves when it receives data.</span></span>  <span data-ttu-id="8b209-144">Par exemple, si une application consomme des messages WCF entrants au seuil maximal, l'utilisation d'une valeur supérieure pour cet attribut permettrait aux messages de s'empiler dans la mémoire tampon Winsock en attendant que l'application puisse les traiter.</span><span class="sxs-lookup"><span data-stu-id="8b209-144">For example, given an application that is consuming inbound WCF messages at the maximum threshold, using a higher value for this attribute would allow messages to stack up in the WinSock buffer while waiting for the application to be able to process them.</span></span>  <span data-ttu-id="8b209-145">L'utilisation d'une valeur inférieure dans la même situation entraînerait la suppression des messages. Cet attribut expose l'option de socket Winsock `SO_RCVBUF` sous-jacente. Cette valeur d'attribut doit avoir au moins la taille de `maxReceivedMessageSize`.</span><span class="sxs-lookup"><span data-stu-id="8b209-145">Using a lower value in the same situation would result in messages getting dropped.This attribute exposes the underlying WinSock `SO_RCVBUF` socket option.This attribute value must be at least the size of `maxReceivedMessageSize`.</span></span>   <span data-ttu-id="8b209-146">Si sa valeur est inférieure à `maxReceivedMessageSize` une exception runtime se produit.</span><span class="sxs-lookup"><span data-stu-id="8b209-146">Setting it to a value smaller than the `maxReceivedMessageSize` will result in runtime exception.</span></span><br /><br /> <span data-ttu-id="8b209-147">La valeur par défaut est 65536.</span><span class="sxs-lookup"><span data-stu-id="8b209-147">The default value is 65536.</span></span>|  
+|<span data-ttu-id="8b209-148">timeToLive</span><span class="sxs-lookup"><span data-stu-id="8b209-148">timeToLive</span></span>|<span data-ttu-id="8b209-149">Entier qui spécifie le nombre de tronçons de segments réseau pouvant être traversés par un paquet multidiffusion.</span><span class="sxs-lookup"><span data-stu-id="8b209-149">An integer that specifies the number of network segment hops that a multicast packet can traverse.</span></span>  <span data-ttu-id="8b209-150">Cette propriété expose la fonctionnalité associée aux options de socket `IP_MULTICAST_TTL` et `IP_TTL`.</span><span class="sxs-lookup"><span data-stu-id="8b209-150">This attribute exposes the functionality associated with the `IP_MULTICAST_TTL` and `IP_TTL` socket options.</span></span><br /><br /> <span data-ttu-id="8b209-151">La valeur par défaut est 1.</span><span class="sxs-lookup"><span data-stu-id="8b209-151">The default value is 1.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="8b209-152">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="8b209-152">Child Elements</span></span>  
+ <span data-ttu-id="8b209-153">Aucun.</span><span class="sxs-lookup"><span data-stu-id="8b209-153">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="8b209-154">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="8b209-154">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="8b209-155">Élément</span><span class="sxs-lookup"><span data-stu-id="8b209-155">Element</span></span>|<span data-ttu-id="8b209-156">Description</span><span class="sxs-lookup"><span data-stu-id="8b209-156">Description</span></span>|  
 |-------------|-----------------|  
-|[\<udpAnnoucementEndpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md)|Point de terminaison standard qui a un contrat d'annonce fixe et une liaison de transport UDP.|  
+|[<span data-ttu-id="8b209-157">\<udpAnnoucementEndpoint ></span><span class="sxs-lookup"><span data-stu-id="8b209-157">\<udpAnnoucementEndpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md)|<span data-ttu-id="8b209-158">Point de terminaison standard qui a un contrat d’annonce fixe et une liaison de transport UDP.</span><span class="sxs-lookup"><span data-stu-id="8b209-158">A standard endpoint that has fixed announcement contract and UDP transport binding.</span></span>|  
   
-## Voir aussi  
- <xref:System.Servicemodel.Discovery.UdpTransportSettings>
+## <a name="see-also"></a><span data-ttu-id="8b209-159">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8b209-159">See Also</span></span>  
+ <xref:System.ServiceModel.Discovery.UdpTransportSettings>

@@ -1,1 +1,1 @@
-SDK
+<span data-ttu-id="b7f63-101">SDK</span><span class="sxs-lookup"><span data-stu-id="b7f63-101">SDK</span></span>

@@ -1,47 +1,53 @@
 ---
-title: "Comment&#160;: cr&#233;er une liaison dans du code | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "lier des données, créer"
-  - "liaison de données, créer"
+title: "Comment : créer une liaison dans du code"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- binding data [WPF], creating
+- data binding [WPF], creating
 ms.assetid: 1a606db9-cf5f-42ed-a1c5-9e4722ec77a0
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e6279de3b892d64bc48b4f67c9f08bd89dd1b7d7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er une liaison dans du code
-Cet exemple indique comment créer et définir un <xref:System.Windows.Data.Binding> dans le code.  
+# <a name="how-to-create-a-binding-in-code"></a><span data-ttu-id="f7f4d-102">Comment : créer une liaison dans du code</span><span class="sxs-lookup"><span data-stu-id="f7f4d-102">How to: Create a Binding in Code</span></span>
+<span data-ttu-id="f7f4d-103">Cet exemple montre comment créer et définir un <xref:System.Windows.Data.Binding> dans le code.</span><span class="sxs-lookup"><span data-stu-id="f7f4d-103">This example shows how to create and set a <xref:System.Windows.Data.Binding> in code.</span></span>  
   
-## Exemple  
- Les classes <xref:System.Windows.FrameworkElement> et <xref:System.Windows.FrameworkContentElement> exposent toutes deux une méthode `SetBinding`.  Si vous liez un élément qui hérite de l'une ou l'autre de ces classes, vous pouvez appeler la méthode <xref:System.Windows.FrameworkElement.SetBinding%2A> directement.  
+## <a name="example"></a><span data-ttu-id="f7f4d-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="f7f4d-104">Example</span></span>  
+ <span data-ttu-id="f7f4d-105">Le <xref:System.Windows.FrameworkElement> classe et le <xref:System.Windows.FrameworkContentElement> exposent toutes deux un `SetBinding` (méthode).</span><span class="sxs-lookup"><span data-stu-id="f7f4d-105">The <xref:System.Windows.FrameworkElement> class and the <xref:System.Windows.FrameworkContentElement> class both expose a `SetBinding` method.</span></span> <span data-ttu-id="f7f4d-106">Si vous liez un élément qui hérite de ces classes, vous pouvez appeler la <xref:System.Windows.FrameworkElement.SetBinding%2A> directement la méthode.</span><span class="sxs-lookup"><span data-stu-id="f7f4d-106">If you are binding an element that inherits either of these classes, you can call the <xref:System.Windows.FrameworkElement.SetBinding%2A> method directly.</span></span>  
   
- L'exemple suivant crée une classe nommée `MyData`, qui contient une propriété nommée `MyDataProperty`.  
+ <span data-ttu-id="f7f4d-107">L’exemple suivant crée une classe nommée, `MyData`, qui contient une propriété nommée `MyDataProperty`.</span><span class="sxs-lookup"><span data-stu-id="f7f4d-107">The following example creates a class named, `MyData`, which contains a property named `MyDataProperty`.</span></span>  
   
  [!code-csharp[CodeOnlyBinding#DataObject](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CodeOnlyBinding/CSharp/MyData.cs#dataobject)]
  [!code-vb[CodeOnlyBinding#DataObject](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CodeOnlyBinding/VisualBasic/MyData.vb#dataobject)]  
   
- L'exemple suivant indique comment créer un objet de liaison pour définir la source de liaison.  L'exemple utilise <xref:System.Windows.FrameworkElement.SetBinding%2A> pour lier la propriété <xref:System.Windows.Controls.TextBlock.Text%2A> de `myText` \(qui est un contrôle <xref:System.Windows.Controls.TextBlock>\) à `MyDataProperty`.  
+ <span data-ttu-id="f7f4d-108">L’exemple suivant montre comment créer un objet de liaison pour définir la source de la liaison.</span><span class="sxs-lookup"><span data-stu-id="f7f4d-108">The following example shows how to create a binding object to set the source of the binding.</span></span>  <span data-ttu-id="f7f4d-109">L’exemple utilise <xref:System.Windows.FrameworkElement.SetBinding%2A> pour lier la <xref:System.Windows.Controls.TextBlock.Text%2A> propriété du `myText`, qui est un <xref:System.Windows.Controls.TextBlock> contrôle, `MyDataProperty`.</span><span class="sxs-lookup"><span data-stu-id="f7f4d-109">The example uses <xref:System.Windows.FrameworkElement.SetBinding%2A> to bind the <xref:System.Windows.Controls.TextBlock.Text%2A> property of `myText`, which is a <xref:System.Windows.Controls.TextBlock> control, to `MyDataProperty`.</span></span>  
   
  [!code-csharp[CodeOnlyBinding#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CodeOnlyBinding/CSharp/binding.cs#1)]
  [!code-vb[CodeOnlyBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CodeOnlyBinding/VisualBasic/App.vb#1)]  
   
- Pour obtenir l'exemple de code complet, consultez [Code\-only Binding Sample](http://msdn.microsoft.com/fr-fr/764aaf0b-2216-4941-9548-9c98da18d1a6).  
+ <span data-ttu-id="f7f4d-110">Pour l’exemple de code complet, consultez [uniquement par le Code de liaison, exemple](http://msdn.microsoft.com/en-us/764aaf0b-2216-4941-9548-9c98da18d1a6).</span><span class="sxs-lookup"><span data-stu-id="f7f4d-110">For the complete code sample, see [Code-only Binding Sample](http://msdn.microsoft.com/en-us/764aaf0b-2216-4941-9548-9c98da18d1a6).</span></span>  
   
- Au lieu d'appeler <xref:System.Windows.FrameworkElement.SetBinding%2A>, vous pouvez utiliser la méthode statique <xref:System.Windows.Data.BindingOperations.SetBinding%2A> de la classe <xref:System.Windows.Data.BindingOperations>.  L'exemple suivant appelle <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=fullName> au lieu de <xref:System.Windows.FrameworkElement.SetBinding%2A?displayProperty=fullName> pour lier `myText` à `myDataProperty`.  
+ <span data-ttu-id="f7f4d-111">Au lieu d’appeler <xref:System.Windows.FrameworkElement.SetBinding%2A>, vous pouvez utiliser la <xref:System.Windows.Data.BindingOperations.SetBinding%2A> méthode statique de la <xref:System.Windows.Data.BindingOperations> classe.</span><span class="sxs-lookup"><span data-stu-id="f7f4d-111">Instead of calling <xref:System.Windows.FrameworkElement.SetBinding%2A>, you can use the <xref:System.Windows.Data.BindingOperations.SetBinding%2A> static method of the <xref:System.Windows.Data.BindingOperations> class.</span></span> <span data-ttu-id="f7f4d-112">L’exemple suivant, les appels <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType> au lieu de <xref:System.Windows.FrameworkElement.SetBinding%2A?displayProperty=nameWithType> pour lier `myText` à `myDataProperty`.</span><span class="sxs-lookup"><span data-stu-id="f7f4d-112">The following example, calls <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType> instead of <xref:System.Windows.FrameworkElement.SetBinding%2A?displayProperty=nameWithType> to bind `myText` to `myDataProperty`.</span></span>  
   
  [!code-csharp[CodeOnlyBinding#BOSetBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CodeOnlyBinding/CSharp/binding.cs#bosetbinding)]
  [!code-vb[CodeOnlyBinding#BOSetBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CodeOnlyBinding/VisualBasic/App.vb#bosetbinding)]  
   
-## Voir aussi  
- [Vue d'ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [Rubriques Comment](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="f7f4d-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f7f4d-113">See Also</span></span>  
+ [<span data-ttu-id="f7f4d-114">Vue d’ensemble de la liaison de données</span><span class="sxs-lookup"><span data-stu-id="f7f4d-114">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="f7f4d-115">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="f7f4d-115">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

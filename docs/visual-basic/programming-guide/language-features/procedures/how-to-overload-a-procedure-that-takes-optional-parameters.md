@@ -1,51 +1,50 @@
 ---
-title: "How to: Overload a Procedure that Takes Optional Parameters (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, parameters"
-  - "procedure overloading, optional parameters"
-  - "procedures, defining"
-  - "Visual Basic code, procedures"
-  - "procedure parameters"
-  - "procedures, overloading"
-  - "procedures, multiple versions"
+title: "Comment : surcharger une procédure qui accepte des paramètres optionnels (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- procedures [Visual Basic], parameters
+- procedure overloading [Visual Basic], optional parameters
+- procedures [Visual Basic], defining
+- Visual Basic code, procedures
+- procedure parameters
+- procedures [Visual Basic], overloading
+- procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b4a863944d4f9ab265aab52578fbb704ca376de5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Overload a Procedure that Takes Optional Parameters (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Si une procédure possède un ou plusieurs paramètres [Optional](../../../../visual-basic/language-reference/modifiers/optional.md), vous ne pouvez pas définir de version surchargée correspondant une de ses surcharges implicites.  Pour plus d'informations, consultez des "Implicit Overloads for Optional Parameters" dans [Considerations in Overloading Procedures](../../../../visual-basic/programming-guide/language-features/procedures/considerations-in-overloading-procedures.md).  
+# <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a><span data-ttu-id="3b8b4-102">Comment : surcharger une procédure qui accepte des paramètres optionnels (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3b8b4-102">How to: Overload a Procedure that Takes Optional Parameters (Visual Basic)</span></span>
+<span data-ttu-id="3b8b4-103">Si une procédure avec un ou plusieurs [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) paramètres, vous ne pouvez pas définir une version surchargée correspondant à un de ses surcharges implicites.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-103">If a procedure has one or more [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) parameters, you cannot define an overloaded version matching any of its implicit overloads.</span></span> <span data-ttu-id="3b8b4-104">Pour plus d’informations, consultez « Implicite surcharges pour les paramètres facultatifs » dans [considérations relatives à la surcharge de procédures](./considerations-in-overloading-procedures.md).</span><span class="sxs-lookup"><span data-stu-id="3b8b4-104">For more information, see "Implicit Overloads for Optional Parameters" in [Considerations in Overloading Procedures](./considerations-in-overloading-procedures.md).</span></span>  
   
-## Paramètre facultatif unique  
+## <a name="one-optional-parameter"></a><span data-ttu-id="3b8b4-105">Un paramètre facultatif</span><span class="sxs-lookup"><span data-stu-id="3b8b4-105">One Optional Parameter</span></span>  
   
-#### Pour surcharger une procédure qui accepte un paramètre facultatif  
+#### <a name="to-overload-a-procedure-that-takes-one-optional-parameter"></a><span data-ttu-id="3b8b4-106">Pour surcharger une procédure qui accepte un paramètre facultatif</span><span class="sxs-lookup"><span data-stu-id="3b8b4-106">To overload a procedure that takes one optional parameter</span></span>  
   
-1.  Écrivez une instruction de déclaration `Sub` ou `Function` qui inclut le paramètre facultatif dans la liste de paramètres.  N'utilisez pas le mot clé `Optional` dans cette version surchargée.  
+1.  <span data-ttu-id="3b8b4-107">Écrire un `Sub` ou `Function` instruction de déclaration qui inclut le paramètre facultatif dans la liste de paramètres.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-107">Write a `Sub` or `Function` declaration statement that includes the optional parameter in the parameter list.</span></span> <span data-ttu-id="3b8b4-108">N’utilisez pas le `Optional` mot clé dans la version surchargée.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-108">Do not use the `Optional` keyword in this overloaded version.</span></span>  
   
-2.  Faites précéder le mot clé `Sub` ou `Function` du mot clé [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md).  
+2.  <span data-ttu-id="3b8b4-109">Faites précéder le `Sub` ou `Function` mot clé with le [surcharges](../../../../visual-basic/language-reference/modifiers/overloads.md) (mot clé).</span><span class="sxs-lookup"><span data-stu-id="3b8b4-109">Precede the `Sub` or `Function` keyword with the [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) keyword.</span></span>  
   
-3.  Écrivez le code de procédure qui doit être exécuté lorsque le code appelant fournit l'argument facultatif.  
+3.  <span data-ttu-id="3b8b4-110">Écrivez le code de procédure à exécuter lorsque le code appelant fournit l’argument facultatif.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-110">Write the procedure code that should execute when the calling code supplies the optional argument.</span></span>  
   
-4.  Terminez la procédure par l'instruction `End Sub` ou `End Function`, selon le cas.  
+4.  <span data-ttu-id="3b8b4-111">Terminez la procédure par le `End Sub` ou `End Function` instruction comme il convient.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-111">Terminate the procedure with the `End Sub` or `End Function` statement as appropriate.</span></span>  
   
-5.  Écrivez une deuxième instruction de déclaration qui est identique à la première déclaration, excepté qu'elle n'inclut pas le paramètre facultatif dans la liste de paramètres.  
+5.  <span data-ttu-id="3b8b4-112">Écrivez une deuxième instruction de déclaration qui est identique à la première déclaration, sauf qu’elle n’inclut pas le paramètre facultatif dans la liste de paramètres.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-112">Write a second declaration statement that is identical to the first declaration except that it does not include the optional parameter in the parameter list.</span></span>  
   
-6.  Écrivez le code de procédure qui doit être exécuté lorsque le code appelant ne fournit pas l'argument facultatif.  Terminez la procédure par l'instruction `End Sub` ou `End Function`, selon le cas.  
+6.  <span data-ttu-id="3b8b4-113">Écrivez le code de procédure qui doit s’exécuter lorsque le code appelant ne fournit pas l’argument facultatif.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-113">Write the procedure code that should execute when the calling code does not supply the optional argument.</span></span> <span data-ttu-id="3b8b4-114">Terminez la procédure par le `End Sub` ou `End Function` instruction comme il convient.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-114">Terminate the procedure with the `End Sub` or `End Function` statement as appropriate.</span></span>  
   
-     L'exemple suivant affiche une procédure définie par un paramètre facultatif, un jeu d'équivalents de deux procédures surchargées et enfin des exemples de versions surchargées non valides et valides.  
+     <span data-ttu-id="3b8b4-115">L’exemple suivant montre une procédure définie avec un paramètre facultatif, un ensemble équivalent de deux procédures surchargées et enfin des exemples de valides et non des versions surchargées.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-115">The following example shows a procedure defined with an optional parameter,  an equivalent set of two overloaded procedures, and finally examples of both invalid and valid overloaded versions.</span></span>  
   
      [!code-vb[VbVbcnProcedures#59](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_1.vb)]  
   
@@ -53,31 +52,31 @@ Si une procédure possède un ou plusieurs paramètres [Optional](../../../../vi
   
      [!code-vb[VbVbcnProcedures#61](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_3.vb)]  
   
-## Paramètres facultatifs multiples  
- Pour créer une procédure disposant de plusieurs paramètres facultatifs, vous avez normalement besoin de plus de deux versions surchargées.  Par exemple, s'il y a deux paramètres optionnels, et le code appelant peut fournir ou omettre indépendamment chacun de l'autre, vous avez besoin de quatre versions surchargées, une pour chaque combinaison possible d'arguments fournis.  
+## <a name="multiple-optional-parameters"></a><span data-ttu-id="3b8b4-116">Plusieurs paramètres facultatifs</span><span class="sxs-lookup"><span data-stu-id="3b8b4-116">Multiple Optional Parameters</span></span>  
+ <span data-ttu-id="3b8b4-117">Pour une procédure avec plus d’un paramètre facultatif, vous devez normalement plus de deux versions surchargées.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-117">For a procedure with more than one optional parameter, you normally need more than two overloaded versions.</span></span> <span data-ttu-id="3b8b4-118">Par exemple, s’il existe deux paramètres facultatifs, et le code appelant peut fournir ou omettre de chacun d’eux indépendamment de l’autre, vous avez besoin de quatre versions surchargées, une pour chaque combinaison possible d’arguments fournis.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-118">For example, if there are two optional parameters, and the calling code can supply or omit each one independently of the other, you need four overloaded versions, one for each possible combination of supplied arguments.</span></span>  
   
- Comme le nombre de paramètres facultatifs augmente, la complexité de la surcharge augmente également.  À moins que certaines combinaisons d'arguments fournies ne soient pas acceptables, pour N paramètres facultatifs, vous devez disposer de 2 ^ N versions surchargées.  Selon la nature de la procédure, vous pouvez trouver que la clarté de logique justifie l'effort supplémentaire de définition de toutes les versions surchargées.  
+ <span data-ttu-id="3b8b4-119">Le nombre de paramètres facultatifs augmente, la complexité de la surcharge augmente.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-119">As the number of optional parameters increases, the complexity of the overloading increases.</span></span> <span data-ttu-id="3b8b4-120">À moins que certaines combinaisons d’arguments fournis ne sont pas acceptables, pour les paramètres optionnels de N, vous devez 2 ^ N des versions surchargées.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-120">Unless some combinations of supplied arguments are not acceptable, for N optional parameters you need 2 ^ N overloaded versions.</span></span> <span data-ttu-id="3b8b4-121">Selon la nature de la procédure, vous constaterez peut-être que la clarté de logique justifie l’effort supplémentaire de définition de toutes les versions surchargées.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-121">Depending on the nature of the procedure, you might find that the clarity of logic justifies the extra effort of defining all the overloaded versions.</span></span>  
   
-#### Pour surcharger une procédure qui accepte plusieurs paramètres facultatifs  
+#### <a name="to-overload-a-procedure-that-takes-more-than-one-optional-parameter"></a><span data-ttu-id="3b8b4-122">Pour surcharger une procédure qui accepte plusieurs paramètres facultatifs</span><span class="sxs-lookup"><span data-stu-id="3b8b4-122">To overload a procedure that takes more than one optional parameter</span></span>  
   
-1.  Déterminez quelles combinaisons d'arguments facultatifs fournis sont acceptables par rapport à la logique de la procédure.  Une combinaison inacceptable peut survenir si un paramètre facultatif dépend d'un autre.  Par exemple, si un paramètre accepte le nom du conjoint et qu'un autre accepte son âge, une combinaison d'arguments fournissant l'âge, mais omettant le nom est inacceptable.  
+1.  <span data-ttu-id="3b8b4-123">Déterminer quelles combinaisons d’arguments facultatifs fournis sont acceptables pour la logique de la procédure.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-123">Determine which combinations of supplied optional arguments are acceptable to the logic of the procedure.</span></span> <span data-ttu-id="3b8b4-124">Une combinaison inacceptable peut survenir si un paramètre facultatif dépend d’un autre.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-124">An unacceptable combination might arise if one optional parameter depends on another.</span></span> <span data-ttu-id="3b8b4-125">Par exemple, si un paramètre accepte un conjoint et qu’un autre accepte âge le son, une combinaison d’arguments fournissant l’âge mais en omettant le nom est inacceptable.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-125">For example, if one parameter accepts a spouse's name and another accepts the spouse's age, a combination of arguments supplying the age but omitting the name is unacceptable.</span></span>  
   
-2.  Pour chaque combinaison acceptable d'arguments facultatifs fournis, écrivez une instruction de déclaration `Sub` ou `Function` qui définit la liste de paramètres correspondante.  N'utilisez pas le mot clé `Optional`.  
+2.  <span data-ttu-id="3b8b4-126">Pour chaque combinaison acceptable d’arguments facultatifs fournis, écrivez une `Sub` ou `Function` instruction de déclaration qui définit la liste de paramètres correspondants.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-126">For each acceptable combination of supplied optional arguments, write a `Sub` or `Function` declaration statement that defines the corresponding parameter list.</span></span> <span data-ttu-id="3b8b4-127">N’utilisez pas le `Optional` (mot clé).</span><span class="sxs-lookup"><span data-stu-id="3b8b4-127">Do not use the `Optional` keyword.</span></span>  
   
-3.  Dans chaque déclaration, précédez le mot clé `Sub` ou `Function` par le mot clé [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md).  
+3.  <span data-ttu-id="3b8b4-128">Dans chaque déclaration, faites précéder le `Sub` ou `Function` mot clé avec la [surcharges](../../../../visual-basic/language-reference/modifiers/overloads.md) (mot clé).</span><span class="sxs-lookup"><span data-stu-id="3b8b4-128">In each declaration, precede the `Sub` or `Function` keyword with the [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) keyword.</span></span>  
   
-4.  Après chaque déclaration, écrivez le code de procédure à exécuter lorsque le code appelant fournit une liste d'arguments correspondant à la liste de paramètres de cette déclaration.  
+4.  <span data-ttu-id="3b8b4-129">Après chaque déclaration, écrivez le code de procédure qui doit être exécuté lorsque le code appelant fournit une liste d’arguments correspondant à la liste de paramètres de cette déclaration.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-129">Following each declaration, write the procedure code that should execute when the calling code supplies an argument list corresponding to that declaration's parameter list.</span></span>  
   
-5.  Terminez chaque procédure par l'instruction `End Sub` ou `End Function`, selon le cas.  
+5.  <span data-ttu-id="3b8b4-130">Terminez chaque procédure par le `End Sub` ou `End Function` instruction comme il convient.</span><span class="sxs-lookup"><span data-stu-id="3b8b4-130">Terminate each procedure with the `End Sub` or `End Function` statement as appropriate.</span></span>  
   
-## Voir aussi  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Optional Parameters](../../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)   
- [Parameter Arrays](../../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Troubleshooting Procedures](../../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)   
- [How to: Define Multiple Versions of a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-multiple-versions-of-a-procedure.md)   
- [How to: Call an Overloaded Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-overloaded-procedure.md)   
- [How to: Overload a Procedure that Takes an Indefinite Number of Parameters](../../../../visual-basic/programming-guide/language-features/procedures/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)   
- [Overload Resolution](../../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
+## <a name="see-also"></a><span data-ttu-id="3b8b4-131">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3b8b4-131">See Also</span></span>  
+ [<span data-ttu-id="3b8b4-132">Procédures</span><span class="sxs-lookup"><span data-stu-id="3b8b4-132">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="3b8b4-133">Paramètres et arguments d’une procédure</span><span class="sxs-lookup"><span data-stu-id="3b8b4-133">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="3b8b4-134">Paramètres facultatifs</span><span class="sxs-lookup"><span data-stu-id="3b8b4-134">Optional Parameters</span></span>](./optional-parameters.md)  
+ [<span data-ttu-id="3b8b4-135">tableaux de paramètres</span><span class="sxs-lookup"><span data-stu-id="3b8b4-135">Parameter Arrays</span></span>](./parameter-arrays.md)  
+ [<span data-ttu-id="3b8b4-136">Surcharge de procédure</span><span class="sxs-lookup"><span data-stu-id="3b8b4-136">Procedure Overloading</span></span>](./procedure-overloading.md)  
+ [<span data-ttu-id="3b8b4-137">Procédures de dépannage</span><span class="sxs-lookup"><span data-stu-id="3b8b4-137">Troubleshooting Procedures</span></span>](./troubleshooting-procedures.md)  
+ [<span data-ttu-id="3b8b4-138">Guide pratique : définir plusieurs versions d’une procédure</span><span class="sxs-lookup"><span data-stu-id="3b8b4-138">How to: Define Multiple Versions of a Procedure</span></span>](./how-to-define-multiple-versions-of-a-procedure.md)  
+ [<span data-ttu-id="3b8b4-139">Guide pratique : appeler une procédure surchargée</span><span class="sxs-lookup"><span data-stu-id="3b8b4-139">How to: Call an Overloaded Procedure</span></span>](./how-to-call-an-overloaded-procedure.md)  
+ [<span data-ttu-id="3b8b4-140">Guide pratique : surcharger une procédure qui accepte un nombre indéfini de paramètres</span><span class="sxs-lookup"><span data-stu-id="3b8b4-140">How to: Overload a Procedure that Takes an Indefinite Number of Parameters</span></span>](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)  
+ [<span data-ttu-id="3b8b4-141">Résolution de surcharge</span><span class="sxs-lookup"><span data-stu-id="3b8b4-141">Overload Resolution</span></span>](./overload-resolution.md)

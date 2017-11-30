@@ -1,1 +1,1 @@
-Éditeurs de méthode d’entrée (IME)
+<span data-ttu-id="9cad7-101">Éditeurs de méthode d’entrée (IME)</span><span class="sxs-lookup"><span data-stu-id="9cad7-101">Input Method Editors (IMEs)</span></span>

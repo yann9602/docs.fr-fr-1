@@ -1,1 +1,1 @@
-Annotations Framework
+<span data-ttu-id="d5cd5-101">Annotations Framework</span><span class="sxs-lookup"><span data-stu-id="d5cd5-101">Annotations Framework</span></span>

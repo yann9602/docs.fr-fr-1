@@ -1,37 +1,36 @@
 ---
-title: "Fonctions canoniques au niveau du bit | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Fonctions de chaînes canoniques au niveau du bit"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 993868ca-16e3-47b6-9915-c29cd63b0a21
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a20f9675af5a67291d95a9297b1ffa1c81a80522
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Fonctions canoniques au niveau du bit
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] inclut des fonctions canoniques au niveau du bit.  
+# <a name="bitwise-canonical-functions"></a><span data-ttu-id="6346a-102">Fonctions de chaînes canoniques au niveau du bit</span><span class="sxs-lookup"><span data-stu-id="6346a-102">Bitwise Canonical Functions</span></span>
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="6346a-103"> inclut des fonctions canoniques au niveau du bit.</span><span class="sxs-lookup"><span data-stu-id="6346a-103"> includes bitwise canonical functions.</span></span>  
   
-## Notes  
- Le tableau suivant présente les autres fonctions canoniques [!INCLUDE[esql](../../../../../../includes/esql-md.md)] au niveau du bit.  Ces fonctions retournent `Null` si une entrée de valeur `Null` est fournie.  Le type de retour des fonctions est le même que le ou les types d'arguments.  Les arguments doivent être du même type si la fonction prend plusieurs arguments.  Pour effectuer des opérations au niveau du bit sur différents types, vous devez effectuer une conversion explicite en un type identique.  
+## <a name="remarks"></a><span data-ttu-id="6346a-104">Remarques</span><span class="sxs-lookup"><span data-stu-id="6346a-104">Remarks</span></span>  
+ <span data-ttu-id="6346a-105">Le tableau suivant présente les autres fonctions canoniques [!INCLUDE[esql](../../../../../../includes/esql-md.md)] au niveau du bit.</span><span class="sxs-lookup"><span data-stu-id="6346a-105">The following table shows the bitwise [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span> <span data-ttu-id="6346a-106">Ces fonctions retournent `Null` si `Null` entrée est fournie.</span><span class="sxs-lookup"><span data-stu-id="6346a-106">These functions will return `Null` if `Null` input is provided.</span></span> <span data-ttu-id="6346a-107">Le type de retour des fonctions est le même que le ou les types d’arguments.</span><span class="sxs-lookup"><span data-stu-id="6346a-107">The return type of the functions is the same as the argument type(s).</span></span> <span data-ttu-id="6346a-108">Les arguments doivent être du même type si la fonction prend plusieurs arguments.</span><span class="sxs-lookup"><span data-stu-id="6346a-108">Arguments must be of the same type, if the function takes more than one argument.</span></span> <span data-ttu-id="6346a-109">Pour effectuer des opérations au niveau du bit sur différents types, vous devez effectuer un cast explicite vers le même type.</span><span class="sxs-lookup"><span data-stu-id="6346a-109">To perform bitwise operations across different types, you need to cast to the same type explicitly.</span></span>  
   
-|Fonction|Description|  
+|<span data-ttu-id="6346a-110">Fonction</span><span class="sxs-lookup"><span data-stu-id="6346a-110">Function</span></span>|<span data-ttu-id="6346a-111">Description</span><span class="sxs-lookup"><span data-stu-id="6346a-111">Description</span></span>|  
 |--------------|-----------------|  
-|`BitWiseAnd (` `value1` `,`  `value2` `)`|Retourne la conjonction au niveau du bit de `value1` et de `value2` comme type de `value1` et de `value2`.<br /><br /> **Arguments**<br /><br /> `Byte`, `Int16`, `Int32` et `Int64`.<br /><br /> **Exemple**<br /><br /> `-- The following example returns 1.`<br /><br /> `BitWiseAnd(1,3)`|  
-|`BitWiseNot (` `value` `)`|Retourne la négation au niveau du bit de `value`.<br /><br /> **Arguments**<br /><br /> `Byte`, `Int16`, `Int32` et `Int64`.<br /><br /> **Exemple**<br /><br /> `-- The following example returns -4.`<br /><br /> `BitWiseNot(3)`|  
-|`BitWiseOr (` `value1` `,`  `value2` `)`|Retourne la disjonction au niveau du bit de `value1` et de `value2` comme type de `value1` et de `value2`.<br /><br /> **Arguments**<br /><br /> Un `Byte`, un `Int16`, un `Int32` et un `Int64`.<br /><br /> **Exemple**<br /><br /> `-- The following example returns 3.`<br /><br /> `BitWiseOr(1,3)`|  
-|`BitWiseXor (` `value1` `,`  `value2` `)`|Retourne la disjonction exclusive au niveau du bit de `value1` et de `value2` comme type de `value1` et de `value2`.<br /><br /> **Arguments**<br /><br /> Un `Byte`, un `Int16`, un `Int32` et un `Int64`.<br /><br /> **Exemple**<br /><br /> `-- The following example returns 2.`<br /><br /> `BitWiseXor (1,3)`|  
+|<span data-ttu-id="6346a-112">`BitWiseAnd (` `value1` `,`  `value2` `)`</span><span class="sxs-lookup"><span data-stu-id="6346a-112">`BitWiseAnd (` `value1` `,`  `value2` `)`</span></span>|<span data-ttu-id="6346a-113">Retourne la conjonction au niveau du bit de `value1` et de `value2` comme type de `value1` et de `value2`.</span><span class="sxs-lookup"><span data-stu-id="6346a-113">Returns the bitwise conjunction of `value1` and `value2` as the type of `value1` and `value2`.</span></span><br /><br /> <span data-ttu-id="6346a-114">**Arguments**</span><span class="sxs-lookup"><span data-stu-id="6346a-114">**Arguments**</span></span><br /><br /> <span data-ttu-id="6346a-115">A `Byte`, `Int16`, `Int32`, et `Int64`.</span><span class="sxs-lookup"><span data-stu-id="6346a-115">A `Byte`, `Int16`, `Int32`, and `Int64`.</span></span><br /><br /> <span data-ttu-id="6346a-116">**Exemple**</span><span class="sxs-lookup"><span data-stu-id="6346a-116">**Example**</span></span><br /><br /> `-- The following example returns 1.`<br /><br /> `BitWiseAnd(1,3)`|  
+|<span data-ttu-id="6346a-117">`BitWiseNot (` `value` `)`</span><span class="sxs-lookup"><span data-stu-id="6346a-117">`BitWiseNot (` `value` `)`</span></span>|<span data-ttu-id="6346a-118">Retourne la négation au niveau du bit de `value`.</span><span class="sxs-lookup"><span data-stu-id="6346a-118">Returns the bitwise negation of `value`.</span></span><br /><br /> <span data-ttu-id="6346a-119">**Arguments**</span><span class="sxs-lookup"><span data-stu-id="6346a-119">**Arguments**</span></span><br /><br /> <span data-ttu-id="6346a-120">A `Byte`, `Int16`, `Int32`, et `Int64`.</span><span class="sxs-lookup"><span data-stu-id="6346a-120">A `Byte`, `Int16`, `Int32`, and `Int64`.</span></span><br /><br /> <span data-ttu-id="6346a-121">**Exemple**</span><span class="sxs-lookup"><span data-stu-id="6346a-121">**Example**</span></span><br /><br /> `-- The following example returns -4.`<br /><br /> `BitWiseNot(3)`|  
+|<span data-ttu-id="6346a-122">`BitWiseOr (` `value1` `,`  `value2` `)`</span><span class="sxs-lookup"><span data-stu-id="6346a-122">`BitWiseOr (` `value1` `,`  `value2` `)`</span></span>|<span data-ttu-id="6346a-123">Retourne la disjonction au niveau du bit de `value1` et de `value2` comme type de `value1` et de `value2`.</span><span class="sxs-lookup"><span data-stu-id="6346a-123">Returns the bitwise disjunction of `value1` and `value2` as the type of `value1` and `value2`.</span></span><br /><br /> <span data-ttu-id="6346a-124">**Arguments**</span><span class="sxs-lookup"><span data-stu-id="6346a-124">**Arguments**</span></span><br /><br /> <span data-ttu-id="6346a-125">A `Byte`, `Int16`, `Int32` et `Int64`.</span><span class="sxs-lookup"><span data-stu-id="6346a-125">A `Byte`, `Int16`, `Int32` and `Int64`.</span></span><br /><br /> <span data-ttu-id="6346a-126">**Exemple**</span><span class="sxs-lookup"><span data-stu-id="6346a-126">**Example**</span></span><br /><br /> `-- The following example returns 3.`<br /><br /> `BitWiseOr(1,3)`|  
+|<span data-ttu-id="6346a-127">`BitWiseXor (` `value1` `,`  `value2` `)`</span><span class="sxs-lookup"><span data-stu-id="6346a-127">`BitWiseXor (` `value1` `,`  `value2` `)`</span></span>|<span data-ttu-id="6346a-128">Retourne la disjonction exclusive au niveau du bit de `value1` et de `value2` comme type de `value1` et de `value2`.</span><span class="sxs-lookup"><span data-stu-id="6346a-128">Returns the bitwise exclusive disjunction of `value1` and `value2` as the type of `value1` and `value2`.</span></span><br /><br /> <span data-ttu-id="6346a-129">**Arguments**</span><span class="sxs-lookup"><span data-stu-id="6346a-129">**Arguments**</span></span><br /><br /> <span data-ttu-id="6346a-130">A `Byte`, `Int16`, `Int32` et `Int64`.</span><span class="sxs-lookup"><span data-stu-id="6346a-130">A `Byte`, `Int16`, `Int32` and `Int64`.</span></span><br /><br /> <span data-ttu-id="6346a-131">**Exemple**</span><span class="sxs-lookup"><span data-stu-id="6346a-131">**Example**</span></span><br /><br /> `-- The following example returns 2.`<br /><br /> `BitWiseXor (1,3)`|  
   
-## Voir aussi  
- [Fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
+## <a name="see-also"></a><span data-ttu-id="6346a-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6346a-132">See Also</span></span>  
+ [<span data-ttu-id="6346a-133">Fonctions canoniques</span><span class="sxs-lookup"><span data-stu-id="6346a-133">Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
