@@ -1,35 +1,38 @@
 ---
-title: "3331 - SecurityNegotiationStop | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 3331 - SecurityNegotiationStop
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 66ae93c8-00d3-4d6e-88ae-6da694285220
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1e128d9c05ed2ee9d5c900a52c0349159792356b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 3331 - SecurityNegotiationStop
-## Propriétés  
+# <a name="3331---securitynegotiationstop"></a><span data-ttu-id="bf2db-102">3331 - SecurityNegotiationStop</span><span class="sxs-lookup"><span data-stu-id="bf2db-102">3331 - SecurityNegotiationStop</span></span>
+## <a name="properties"></a><span data-ttu-id="bf2db-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="bf2db-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|3331|  
-|Mots clés|Sécurité|  
-|Niveau|Verbose|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Débogage|  
+|<span data-ttu-id="bf2db-104">ID</span><span class="sxs-lookup"><span data-stu-id="bf2db-104">ID</span></span>|<span data-ttu-id="bf2db-105">3331</span><span class="sxs-lookup"><span data-stu-id="bf2db-105">3331</span></span>|  
+|<span data-ttu-id="bf2db-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="bf2db-106">Keywords</span></span>|<span data-ttu-id="bf2db-107">Sécurité</span><span class="sxs-lookup"><span data-stu-id="bf2db-107">Security</span></span>|  
+|<span data-ttu-id="bf2db-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="bf2db-108">Level</span></span>|<span data-ttu-id="bf2db-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="bf2db-109">Verbose</span></span>|  
+|<span data-ttu-id="bf2db-110">Canal</span><span class="sxs-lookup"><span data-stu-id="bf2db-110">Channel</span></span>|<span data-ttu-id="bf2db-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="bf2db-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## Description  
- Cet événement est émis lorsque la négociation de sécurité est terminée.  
+## <a name="description"></a><span data-ttu-id="bf2db-112">Description</span><span class="sxs-lookup"><span data-stu-id="bf2db-112">Description</span></span>  
+ <span data-ttu-id="bf2db-113">Cet événement est émis lorsque la négociation de sécurité est terminée.</span><span class="sxs-lookup"><span data-stu-id="bf2db-113">This event is emitted when the security negotiation completed.</span></span>  
   
-## Message  
- Négociation de sécurité terminée.  
+## <a name="message"></a><span data-ttu-id="bf2db-114">Message</span><span class="sxs-lookup"><span data-stu-id="bf2db-114">Message</span></span>  
+ <span data-ttu-id="bf2db-115">Négociation de sécurité terminée.</span><span class="sxs-lookup"><span data-stu-id="bf2db-115">Security negotiation completed.</span></span>  
   
-## Détails
+## <a name="details"></a><span data-ttu-id="bf2db-116">Détails</span><span class="sxs-lookup"><span data-stu-id="bf2db-116">Details</span></span>

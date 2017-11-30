@@ -1,98 +1,101 @@
 ---
-title: "Apprentissage par les proc&#233;dures pas &#224; pas | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Apprentissage par les procédures pas à pas"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 38961451a51ae47d05d7625ee0e83da97261eb0b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Apprentissage par les proc&#233;dures pas &#224; pas
-La documentation [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit plusieurs procédures pas à pas.  Cette rubrique aborde certains problèmes généraux de procédure pas à pas \(y compris leur résolution\) et fournit des liens vers plusieurs procédures pas à pas de base pour découvrir [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+# <a name="learning-by-walkthroughs"></a><span data-ttu-id="1d739-102">Apprentissage par les procédures pas à pas</span><span class="sxs-lookup"><span data-stu-id="1d739-102">Learning by Walkthroughs</span></span>
+<span data-ttu-id="1d739-103">Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation fournit plusieurs procédures pas à pas.</span><span class="sxs-lookup"><span data-stu-id="1d739-103">The [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation provides several walkthroughs.</span></span> <span data-ttu-id="1d739-104">Cette rubrique aborde certains problèmes généraux de procédure pas à pas (y compris leur résolution) et fournit des liens vers plusieurs procédures pas à pas de base pour découvrir [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1d739-104">This topic addresses some general walkthrough issues (including troubleshooting), and provides links to several entry-level walkthroughs for learning about [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
   
 > [!NOTE]
->  Les procédures pas à pas de cette section Mise en route vous exposent le code de base qui prend en charge la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  En pratique, vous utiliserez généralement les projets [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] et Windows Forms pour implémenter vos applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  À cette fin, la documentation du [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] fournit des exemples et des procédures pas à pas.  
+>  <span data-ttu-id="1d739-105">Les procédures pas à pas de cette section Mise en route vous exposent le code de base qui prend en charge la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1d739-105">The walkthroughs in this Getting Started section expose you to the basic code that supports [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technology.</span></span> <span data-ttu-id="1d739-106">En pratique, vous utiliserez généralement les projets [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] et Windows Forms pour implémenter vos applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1d739-106">In actual practice, you will typically use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] and Windows Forms projects to implement your [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] applications.</span></span> <span data-ttu-id="1d739-107">À cette fin, la documentation du [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] fournit des exemples et des procédures pas à pas.</span><span class="sxs-lookup"><span data-stu-id="1d739-107">The [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] documentation provides examples and walkthroughs for this purpose.</span></span>  
   
-## Procédures pas à pas de mise en route  
- Plusieurs procédures pas à pas sont disponibles dans cette section.  Ces procédures pas à pas sont basées sur l'exemple de base de données Northwind et présentent des fonctionnalités de complexité minimale [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] à un rythme abordable.  
+## <a name="getting-started-walkthroughs"></a><span data-ttu-id="1d739-108">Procédures pas à pas de mise en route</span><span class="sxs-lookup"><span data-stu-id="1d739-108">Getting Started Walkthroughs</span></span>  
+ <span data-ttu-id="1d739-109">Plusieurs procédures pas à pas sont disponibles dans cette section.</span><span class="sxs-lookup"><span data-stu-id="1d739-109">Several walkthroughs are available in this section.</span></span> <span data-ttu-id="1d739-110">Ces procédures pas à pas sont basées sur l'exemple de base de données Northwind et présentent des fonctionnalités de complexité minimale [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] à un rythme abordable.</span><span class="sxs-lookup"><span data-stu-id="1d739-110">These walkthroughs are based on the sample Northwind database, and present [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] features at a gentle pace with minimal complexities.</span></span>  
   
- Une progression classique serait comme suit :  
+ <span data-ttu-id="1d739-111">Une progression classique serait comme suit :</span><span class="sxs-lookup"><span data-stu-id="1d739-111">A typical progression to follow would be as follows:</span></span>  
   
-|Objectif|Visual Basic|C\#|  
-|--------------|------------------|---------|  
-|Créez une classe d'entité et exécutez une requête simple.|[Procédure pas à pas : requête et modèle objet simples \(Visual Basic\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[Procédure pas à pas : requête et modèle objet simples \(C\#\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
-|Ajoutez une deuxième classe et exécutez une requête plus complexe.<br /><br /> \(Requiert l'achèvement de la procédure pas à pas précédente\).|[Procédure pas à pas : interrogation de relations \(Visual Basic\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md)|[Procédure pas à pas : interrogation de relations \(C\#\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)|  
-|Ajoutez, modifiez et supprimez des éléments dans la base de données.|[Procédure pas à pas : manipulation de données \(Visual Basic\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[Procédure pas à pas : manipulation de données \(C\#\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
-|Utilisez des procédures stockées.|[Procédure pas à pas : utilisation de procédures stockées uniquement \(Visual Basic\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[Procédure pas à pas : utilisation de procédures stockées uniquement \(C\#\)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
+|<span data-ttu-id="1d739-112">Objectif</span><span class="sxs-lookup"><span data-stu-id="1d739-112">Objective</span></span>|<span data-ttu-id="1d739-113">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="1d739-113">Visual Basic</span></span>|<span data-ttu-id="1d739-114">C#</span><span class="sxs-lookup"><span data-stu-id="1d739-114">C#</span></span>|  
+|---------------|------------------|---------|  
+|<span data-ttu-id="1d739-115">Créez une classe d'entité et exécutez une requête simple.</span><span class="sxs-lookup"><span data-stu-id="1d739-115">Create an entity class and execute a simple query.</span></span>|[<span data-ttu-id="1d739-116">Procédure pas à pas : Modèle d’objet Simple et la requête (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1d739-116">Walkthrough: Simple Object Model and Query (Visual Basic)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[<span data-ttu-id="1d739-117">Procédure pas à pas : Modèle d’objet Simple et de la requête (c#)</span><span class="sxs-lookup"><span data-stu-id="1d739-117">Walkthrough: Simple Object Model and Query (C#)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
+|<span data-ttu-id="1d739-118">Ajoutez une deuxième classe et exécutez une requête plus complexe.</span><span class="sxs-lookup"><span data-stu-id="1d739-118">Add a second class and execute a more complex query.</span></span><br /><br /> <span data-ttu-id="1d739-119">(Requiert l'achèvement de la procédure pas à pas précédente).</span><span class="sxs-lookup"><span data-stu-id="1d739-119">(Requires completion of previous walkthrough).</span></span>|[<span data-ttu-id="1d739-120">Procédure pas à pas : Interrogation de relations (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1d739-120">Walkthrough: Querying Across Relationships (Visual Basic)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md)|[<span data-ttu-id="1d739-121">Procédure pas à pas : Interrogation de relations (c#)</span><span class="sxs-lookup"><span data-stu-id="1d739-121">Walkthrough: Querying Across Relationships (C#)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)|  
+|<span data-ttu-id="1d739-122">Ajoutez, modifiez et supprimez des éléments dans la base de données.</span><span class="sxs-lookup"><span data-stu-id="1d739-122">Add, change, and delete items in the database.</span></span>|[<span data-ttu-id="1d739-123">Procédure pas à pas : Manipulation de données (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1d739-123">Walkthrough: Manipulating Data (Visual Basic)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[<span data-ttu-id="1d739-124">Procédure pas à pas : Manipulation de données (c#)</span><span class="sxs-lookup"><span data-stu-id="1d739-124">Walkthrough: Manipulating Data (C#)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
+|<span data-ttu-id="1d739-125">Utilisez des procédures stockées.</span><span class="sxs-lookup"><span data-stu-id="1d739-125">Use stored procedures.</span></span>|[<span data-ttu-id="1d739-126">Procédure pas à pas : À l’aide de procédures stockées uniquement (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1d739-126">Walkthrough: Using Only Stored Procedures (Visual Basic)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[<span data-ttu-id="1d739-127">Procédure pas à pas : À l’aide de procédures stockées uniquement (c#)</span><span class="sxs-lookup"><span data-stu-id="1d739-127">Walkthrough: Using Only Stored Procedures (C#)</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
   
-## Général  
- Les informations suivantes se rapportent à ces procédures pas à pas en général :  
+## <a name="general"></a><span data-ttu-id="1d739-128">Général</span><span class="sxs-lookup"><span data-stu-id="1d739-128">General</span></span>  
+ <span data-ttu-id="1d739-129">Les informations suivantes se rapportent à ces procédures pas à pas en général :</span><span class="sxs-lookup"><span data-stu-id="1d739-129">The following information pertains to these walkthroughs in general:</span></span>  
   
--   Environnement : chaque procédure pas à pas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] comme environnement de développement intégré \(IDE\).  
+-   <span data-ttu-id="1d739-130">Environnement : chaque procédure pas à pas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] comme environnement de développement intégré (IDE).</span><span class="sxs-lookup"><span data-stu-id="1d739-130">Environment: Each [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] walkthrough uses [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] as its integrated development environment (IDE).</span></span>  
   
--   Moteurs SQL : ces procédures pas à pas sont écrites pour être implémentées à l'aide de SQL Server Express.  Si vous n'avez pas SQL Server Express, vous pouvez le télécharger gratuitement.  Pour plus d'informations, consultez [Téléchargement d'exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+-   <span data-ttu-id="1d739-131">Moteurs SQL : ces procédures pas à pas sont écrites pour être implémentées à l'aide de SQL Server Express.</span><span class="sxs-lookup"><span data-stu-id="1d739-131">SQL engines: These walkthroughs are written to be implemented by using SQL Server Express.</span></span> <span data-ttu-id="1d739-132">Si vous n'avez pas SQL Server Express, vous pouvez le télécharger gratuitement.</span><span class="sxs-lookup"><span data-stu-id="1d739-132">If you do not have SQL Server Express, you can download it free of charge.</span></span> <span data-ttu-id="1d739-133">Pour plus d’informations, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).</span><span class="sxs-lookup"><span data-stu-id="1d739-133">For more information, see [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).</span></span>  
   
     > [!NOTE]
-    >  Les procédures pas à pas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilisent un nom de fichier comme chaîne de connexion.  La simple spécification d'un nom de fichier est une commodité fournie par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour les utilisateurs de SQL Server Express.  Faites toujours attention aux problèmes de sécurité.  Pour plus d'informations consultez [Sécurité dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
+    >  <span data-ttu-id="1d739-134">Les procédures pas à pas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilisent un nom de fichier comme chaîne de connexion.</span><span class="sxs-lookup"><span data-stu-id="1d739-134">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] walkthroughs use a file name as a connection string.</span></span> <span data-ttu-id="1d739-135">La simple spécification d'un nom de fichier est une commodité fournie par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour les utilisateurs de SQL Server Express.</span><span class="sxs-lookup"><span data-stu-id="1d739-135">Simply specifying a file name is a convenience that [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides for SQL Server Express users.</span></span> <span data-ttu-id="1d739-136">Faites toujours attention aux problèmes de sécurité.</span><span class="sxs-lookup"><span data-stu-id="1d739-136">Always pay attention to security issues.</span></span> <span data-ttu-id="1d739-137">Pour plus d’informations, consultez [sécurité dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).</span><span class="sxs-lookup"><span data-stu-id="1d739-137">For more information, see [Security in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).</span></span>  
   
--   Les procédures pas à pas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] requièrent en général l'exemple de base de données Northwind.  Pour plus d'informations, consultez [Téléchargement d'exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+-   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="1d739-138">procédures pas à pas nécessite généralement la base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="1d739-138"> walkthroughs typically require the Northwind sample database.</span></span> <span data-ttu-id="1d739-139">Pour plus d’informations, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).</span><span class="sxs-lookup"><span data-stu-id="1d739-139">For more information, see [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).</span></span>  
   
--   Les boîtes de dialogue et les commandes de menu que vous voyez dans les procédures pas à pas peuvent différer de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou votre édition [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)].  Pour modifier ces paramètres, cliquez sur **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+-   <span data-ttu-id="1d739-140">Les boîtes de dialogue et les commandes de menu que vous voyez dans les procédures pas à pas peuvent différer de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou votre édition [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1d739-140">The dialog boxes and menu commands you see in walkthroughs might differ from those described in Help, depending on your active settings or [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] edition.</span></span> <span data-ttu-id="1d739-141">Pour modifier ces paramètres, cliquez sur **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="1d739-141">To change your settings, click **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="1d739-142">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="1d739-142">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
--   Pour les procédures pas à pas qui abordent des scénarios multicouches, un serveur doit se trouver sur un ordinateur autre que l'ordinateur de développement et vous devez disposer des autorisations appropriées pour accéder au serveur.  
+-   <span data-ttu-id="1d739-143">Pour les procédures pas à pas qui abordent des scénarios multicouches, un serveur doit se trouver sur un ordinateur autre que l'ordinateur de développement et vous devez disposer des autorisations appropriées pour accéder au serveur.</span><span class="sxs-lookup"><span data-stu-id="1d739-143">For walkthroughs that address multi-tier scenarios, a server must be located on a computer that is distinct from the development computer, and you must have appropriate permissions to access the server.</span></span>  
   
--   Le nom de la classe qui représente en général la table Orders dans l'exemple de base de données Northwind est `[Order]`.  L'évitement est requis car `Order` est un mot clé dans [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)].  
+-   <span data-ttu-id="1d739-144">Le nom de la classe qui représente en général la table Orders dans l'exemple de base de données Northwind est `[Order]`.</span><span class="sxs-lookup"><span data-stu-id="1d739-144">The name of the class that typically represents the Orders table in the Northwind sample database is `[Order]`.</span></span> <span data-ttu-id="1d739-145">L'évitement est requis car `Order` est un mot clé dans [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1d739-145">The escaping is required because `Order` is a keyword in [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)].</span></span>  
   
-## Résolution des problèmes  
- Des erreurs d'exécution peuvent se produire car vous ne disposez pas des autorisations suffisantes pour accéder aux bases de données utilisées dans ces procédures pas à pas.  Consultez les étapes suivantes pour résoudre les problèmes les plus courants.  
+## <a name="troubleshooting"></a><span data-ttu-id="1d739-146">Résolution des problèmes</span><span class="sxs-lookup"><span data-stu-id="1d739-146">Troubleshooting</span></span>  
+ <span data-ttu-id="1d739-147">Des erreurs d'exécution peuvent se produire car vous ne disposez pas des autorisations suffisantes pour accéder aux bases de données utilisées dans ces procédures pas à pas.</span><span class="sxs-lookup"><span data-stu-id="1d739-147">Run-time errors can occur because you do not have sufficient permissions to access the databases used in these walkthroughs.</span></span> <span data-ttu-id="1d739-148">Consultez les étapes suivantes pour résoudre les problèmes les plus courants.</span><span class="sxs-lookup"><span data-stu-id="1d739-148">See the following steps to help resolve the most common of these issues.</span></span>  
   
-### Problèmes de connexion  
- Votre application tente peut\-être d'accéder à la base de données via une connexion à une base de données qu'elle n'accepte pas.  
+### <a name="log-on-issues"></a><span data-ttu-id="1d739-149">Problèmes de connexion</span><span class="sxs-lookup"><span data-stu-id="1d739-149">Log-On Issues</span></span>  
+ <span data-ttu-id="1d739-150">Votre application tente peut-être d'accéder à la base de données via une connexion à une base de données qu'elle n'accepte pas.</span><span class="sxs-lookup"><span data-stu-id="1d739-150">Your application might be trying to access the database by way of a database logon it does not accept.</span></span>  
   
-##### Pour vérifier ou modifier la connexion à la base de données  
+##### <a name="to-verify-or-change-the-database-log-on"></a><span data-ttu-id="1d739-151">Pour vérifier ou modifier la connexion à la base de données</span><span class="sxs-lookup"><span data-stu-id="1d739-151">To verify or change the database log on</span></span>  
   
-1.  Dans le menu **Démarrer** de Windows, pointez sur **Tous les programmes**, **Microsoft SQL Server 2005**, **Outils de configuration**, puis cliquez sur **Gestionnaire de configuration SQL Server**.  
+1.  <span data-ttu-id="1d739-152">Sur les fenêtres **Démarrer** menu, pointez sur **tous les programmes**, **Microsoft SQL Server 2005**, pointez sur **outils de Configuration**, puis cliquez sur **Gestionnaire de Configuration SQL Server**.</span><span class="sxs-lookup"><span data-stu-id="1d739-152">On the Windows **Start** menu, point to **All Programs**, **Microsoft SQL Server 2005**, point to **Configuration Tools**, and then click **SQL Server Configuration Manager**.</span></span>  
   
-2.  Dans le volet gauche du **Gestionnaire de configuration SQL Server**, cliquez sur **Services SQL Server 2005**.  
+2.  <span data-ttu-id="1d739-153">Dans le volet gauche de la **Gestionnaire de Configuration SQL Server**, cliquez sur **SQL Server 2005 Services**.</span><span class="sxs-lookup"><span data-stu-id="1d739-153">In the left pane of the **SQL Server Configuration Manager**, click **SQL Server 2005 Services**.</span></span>  
   
-3.  Dans le volet droit, cliquez avec le bouton droit sur **SQL Server \(SQLEXPRESS\)**, puis cliquez sur **Propriétés**.  
+3.  <span data-ttu-id="1d739-154">Dans le volet droit, cliquez sur **SQL Server (SQLEXPRESS)**, puis cliquez sur **propriétés**.</span><span class="sxs-lookup"><span data-stu-id="1d739-154">In the right pane, right-click **SQL Server (SQLEXPRESS)**, and then click **Properties**.</span></span>  
   
-4.  Cliquez sur l'onglet **Connexion** et vérifiez par quel moyen vous tentez de vous connecter au serveur.  
+4.  <span data-ttu-id="1d739-155">Cliquez sur le **session** onglet et vérifiez la façon dont vous tentez d’ouvrir une session sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="1d739-155">Click the **Log On** tab and verify how you are trying to log on to the server.</span></span>  
   
-     Dans la plupart des cas, **Système local** convient.  
+     <span data-ttu-id="1d739-156">Dans la plupart des cas, **système Local** fonctionne.</span><span class="sxs-lookup"><span data-stu-id="1d739-156">In most cases, **Local System** works.</span></span>  
   
-     Si vous apportez une modification, cliquez sur **Redémarrer** pour redémarrer le service.  
+     <span data-ttu-id="1d739-157">Si vous apportez une modification, cliquez sur **redémarrer** pour redémarrer le service.</span><span class="sxs-lookup"><span data-stu-id="1d739-157">If you make a change, click **Restart** to restart the service.</span></span>  
   
-### Protocoles  
- Parfois, les protocoles ne peuvent pas être définis correctement pour que votre application puisse accéder à la base de données.  Par exemple, le protocole **Canaux nommés**, requis pour les procédures pas à pas dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], n'est pas activé par défaut.  
+### <a name="protocols"></a><span data-ttu-id="1d739-158">Protocoles</span><span class="sxs-lookup"><span data-stu-id="1d739-158">Protocols</span></span>  
+ <span data-ttu-id="1d739-159">Parfois, les protocoles ne peuvent pas être définis correctement pour que votre application puisse accéder à la base de données.</span><span class="sxs-lookup"><span data-stu-id="1d739-159">At times, protocols might not be set correctly for your application to access the database.</span></span> <span data-ttu-id="1d739-160">Par exemple, le **canaux nommés** protocole, ce qui est nécessaire pour les procédures pas à pas dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], n’est pas activé par défaut.</span><span class="sxs-lookup"><span data-stu-id="1d739-160">For example, the **Named Pipes** protocol, which is required for walkthroughs in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], is not enabled by default.</span></span>  
   
-##### Pour activer le protocole Canaux nommés  
+##### <a name="to-enable-the-named-pipes-protocol"></a><span data-ttu-id="1d739-161">Pour activer le protocole Canaux nommés</span><span class="sxs-lookup"><span data-stu-id="1d739-161">To enable the Named Pipes protocol</span></span>  
   
-1.  Dans le volet gauche du **Gestionnaire de configuration SQL Server**, développez **Configuration du réseau SQL Server 2005**, puis cliquez sur **Protocoles pour SQLEXPRESS**.  
+1.  <span data-ttu-id="1d739-162">Dans le volet gauche de la **Gestionnaire de Configuration SQL Server**, développez **Configuration du réseau SQL Server 2005**, puis cliquez sur **protocoles pour SQLEXPRESS**.</span><span class="sxs-lookup"><span data-stu-id="1d739-162">In the left pane of the **SQL Server Configuration Manager**, expand **SQL Server 2005 Network Configuration**, and then click **Protocols for SQLEXPRESS**.</span></span>  
   
-2.  Dans le volet droit, vérifiez que le protocole **Canaux nommés** est activé.  Si ce n'est pas, cliquez avec le bouton droit sur **Canaux nommés** puis cliquez sur **Activer**.  
+2.  <span data-ttu-id="1d739-163">Dans le volet droit, vérifiez que le **canaux nommés** protocole est activé.</span><span class="sxs-lookup"><span data-stu-id="1d739-163">In the right pane, make sure that the **Named Pipes** protocol is enabled.</span></span> <span data-ttu-id="1d739-164">Si elle n’est pas le cas, cliquez sur **canaux nommés** puis cliquez sur **activer**.</span><span class="sxs-lookup"><span data-stu-id="1d739-164">If it is not, right-click **Name Pipes** and then click **Enable**.</span></span>  
   
-     Vous devrez arrêter et redémarrer le service.  Suivez les étapes du bloc suivant.  
+     <span data-ttu-id="1d739-165">Vous devrez arrêter et redémarrer le service.</span><span class="sxs-lookup"><span data-stu-id="1d739-165">You will have to stop and restart the service.</span></span> <span data-ttu-id="1d739-166">Suivez les étapes du bloc suivant.</span><span class="sxs-lookup"><span data-stu-id="1d739-166">Follow the steps in the next block.</span></span>  
   
-### Arrêt et redémarrage du service  
- Vous devez arrêter et redémarrer les services pour que vos modifications soient prises en compte.  
+### <a name="stopping-and-restarting-the-service"></a><span data-ttu-id="1d739-167">Arrêt et redémarrage du service</span><span class="sxs-lookup"><span data-stu-id="1d739-167">Stopping and Restarting the Service</span></span>  
+ <span data-ttu-id="1d739-168">Vous devez arrêter et redémarrer les services pour que vos modifications soient prises en compte.</span><span class="sxs-lookup"><span data-stu-id="1d739-168">You must stop and restart services before your changes can take effect.</span></span>  
   
-##### Pour arrêter et redémarrer le service  
+##### <a name="to-stop-and-restart-the-service"></a><span data-ttu-id="1d739-169">Pour arrêter et redémarrer le service</span><span class="sxs-lookup"><span data-stu-id="1d739-169">To stop and restart the service</span></span>  
   
-1.  Dans le volet gauche du **Gestionnaire de configuration SQL Server**, cliquez sur **Services SQL Server 2005**.  
+1.  <span data-ttu-id="1d739-170">Dans le volet gauche de la **Gestionnaire de Configuration SQL Server**, cliquez sur **SQL Server 2005 Services**.</span><span class="sxs-lookup"><span data-stu-id="1d739-170">In the left pane of the **SQL Server Configuration Manager**, click **SQL Server 2005 Services**.</span></span>  
   
-2.  Dans le volet droit, cliquez avec le bouton droit sur **SQL Server \(SQLEXPRESS\)**, puis cliquez sur **Arrêter**.  
+2.  <span data-ttu-id="1d739-171">Dans le volet droit, cliquez sur **SQL Server (SQLEXPRESS)**, puis cliquez sur **arrêter**.</span><span class="sxs-lookup"><span data-stu-id="1d739-171">In the right pane, right-click **SQL Server (SQLEXPRESS)**, and then click **Stop**.</span></span>  
   
-3.  Cliquez avec le bouton droit sur **SQL Server \(SQLEXPRESS\)**, puis cliquez sur **Redémarrer**.  
+3.  <span data-ttu-id="1d739-172">Avec le bouton droit **SQL Server (SQLEXPRESS)**, puis cliquez sur **redémarrer**.</span><span class="sxs-lookup"><span data-stu-id="1d739-172">Right-click **SQL Server (SQLEXPRESS)**, and then click **Restart**.</span></span>  
   
-## Voir aussi  
- [Prise en main](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
+## <a name="see-also"></a><span data-ttu-id="1d739-173">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1d739-173">See Also</span></span>  
+ [<span data-ttu-id="1d739-174">Prise en main</span><span class="sxs-lookup"><span data-stu-id="1d739-174">Getting Started</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)

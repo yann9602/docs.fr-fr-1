@@ -1,23 +1,29 @@
 ---
-title: "Informations sur les erreurs de ligne | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Informations sur l'erreur de ligne
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8b1f9070-d032-48c7-b030-bd8fbb2ca59a
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 95cbac7f5bf2c28a3db206faca443edacc5b7be1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Informations sur les erreurs de ligne
-Pour éviter d'avoir à répondre chaque fois qu'une erreur de ligne se produit pendant que vous modifiez des valeurs dans un objet <xref:System.Data.DataTable>, vous pouvez ajouter les informations d'erreur à la ligne pour une utilisation ultérieure.  L'objet <xref:System.Data.DataRow> fournit une propriété <xref:System.Data.DataRow.RowError%2A> sur chaque ligne à cette fin.  L'ajout de données à la propriété **RowError** d'un **DataRow** attribue la valeur **true** à la propriété <xref:System.Data.DataRow.HasErrors%2A> du **DataRow**.  Si le **DataRow** fait partie d'un **DataTable** et si **DataRow.HasErrors** a la valeur **true**, la propriété **DataTable.HasErrors** a également la valeur **true**.  Cela s'applique également au **DataSet** auquel appartient le **DataTable**.  Lorsque vous testez les erreurs, vous pouvez vérifier la propriété **HasErrors** pour déterminer si des informations sur les erreurs ont été ajoutées à des lignes.  Si **HasErrors** a la valeur **true**, vous pouvez utiliser la méthode <xref:System.Data.DataTable.GetErrors%2A> du **DataTable** pour ne retourner et n'examiner que les lignes ayant des erreurs, comme le montre l'exemple suivant.  
+# <a name="row-error-information"></a><span data-ttu-id="6a4a9-102">Informations sur l'erreur de ligne</span><span class="sxs-lookup"><span data-stu-id="6a4a9-102">Row Error Information</span></span>
+<span data-ttu-id="6a4a9-103">Pour éviter d'avoir à répondre chaque fois qu'une erreur de ligne se produit pendant que vous modifiez des valeurs dans un objet <xref:System.Data.DataTable>, vous pouvez ajouter les informations d'erreur à la ligne pour une utilisation ultérieure.</span><span class="sxs-lookup"><span data-stu-id="6a4a9-103">To avoid having to respond to row errors while editing values in a <xref:System.Data.DataTable>, you can add the error information to the row for later use.</span></span> <span data-ttu-id="6a4a9-104">L'objet <xref:System.Data.DataRow> fournit une propriété <xref:System.Data.DataRow.RowError%2A> sur chaque ligne à cette fin.</span><span class="sxs-lookup"><span data-stu-id="6a4a9-104">The <xref:System.Data.DataRow> object provides a <xref:System.Data.DataRow.RowError%2A> property on each row for this purpose.</span></span> <span data-ttu-id="6a4a9-105">Ajout de données à la **RowError** propriété d’un **DataRow** définit le <xref:System.Data.DataRow.HasErrors%2A> propriété de la **DataRow** à **true**.</span><span class="sxs-lookup"><span data-stu-id="6a4a9-105">Adding data to the **RowError** property of a **DataRow** sets the <xref:System.Data.DataRow.HasErrors%2A> property of the **DataRow** to **true**.</span></span> <span data-ttu-id="6a4a9-106">Si le **DataRow** fait partie d’un **DataTable**, et **DataRow.HasErrors** est **true**, le **DataTable.HasErrors** propriété est également **true**.</span><span class="sxs-lookup"><span data-stu-id="6a4a9-106">If the **DataRow** is part of a **DataTable**, and **DataRow.HasErrors** is **true**, the **DataTable.HasErrors** property is also **true**.</span></span> <span data-ttu-id="6a4a9-107">Cela s’applique également à la **DataSet** auquel le **DataTable** appartient.</span><span class="sxs-lookup"><span data-stu-id="6a4a9-107">This applies as well to the **DataSet** to which the **DataTable** belongs.</span></span> <span data-ttu-id="6a4a9-108">Lorsque vous testez les erreurs, vous pouvez vérifier le **HasErrors** propriété pour déterminer si les informations d’erreur a été ajoutées à toutes les lignes.</span><span class="sxs-lookup"><span data-stu-id="6a4a9-108">When testing for errors, you can check the **HasErrors** property to determine if error information has been added to any rows.</span></span> <span data-ttu-id="6a4a9-109">Si **HasErrors** est **true**, vous pouvez utiliser la <xref:System.Data.DataTable.GetErrors%2A> méthode de la **DataTable** à retourner et n’examiner uniquement les lignes avec des erreurs, comme illustré dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="6a4a9-109">If **HasErrors** is **true**, you can use the <xref:System.Data.DataTable.GetErrors%2A> method of the **DataTable** to return and examine only the rows with errors, as shown in the following example.</span></span>  
   
 ```vb  
 Dim workTable As DataTable = New DataTable("Customers")  
@@ -49,7 +55,6 @@ Private Shared Sub OnRowChanged( _
   If CDbl(args.Row("Total")) = 0 Then args.Row.RowError = _  
       "Total cannot be 0."  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -82,9 +87,9 @@ protected static void OnRowChanged(
 }  
 ```  
   
-## Voir aussi  
- <xref:System.Data.DataColumnCollection>   
- <xref:System.Data.DataRow>   
- <xref:System.Data.DataTable>   
- [Manipulation de données dans un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="6a4a9-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6a4a9-110">See Also</span></span>  
+ <xref:System.Data.DataColumnCollection>  
+ <xref:System.Data.DataRow>  
+ <xref:System.Data.DataTable>  
+ [<span data-ttu-id="6a4a9-111">Manipulation de données dans un DataTable</span><span class="sxs-lookup"><span data-stu-id="6a4a9-111">Manipulating Data in a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [<span data-ttu-id="6a4a9-112">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="6a4a9-112">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

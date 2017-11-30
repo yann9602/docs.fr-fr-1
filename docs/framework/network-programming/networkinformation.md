@@ -7,40 +7,32 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- Network
+helpviewer_keywords: Network
 ms.assetid: 31b44dd3-b903-4a48-8419-40419a3e4038
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3a72eb23c7ad053d6f0fe505668cd037e65d582b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: acf15eb79fab479036f182c58b8ec94d3ac43ea0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="networkinformation"></a>NetworkInformation
-L’espace de noms <xref:System.Net.NetworkInformation> permet de recueillir des informations concernant les événements, les modifications, les statistiques et les propriétés liés au réseau. Vous pouvez également déterminer si un hôte distant est accessible à l’aide de la classe <xref:System.Net.NetworkInformation.Ping?displayProperty=fullName>.  
+# <a name="networkinformation"></a><span data-ttu-id="5c77f-102">NetworkInformation</span><span class="sxs-lookup"><span data-stu-id="5c77f-102">NetworkInformation</span></span>
+<span data-ttu-id="5c77f-103">L’espace de noms <xref:System.Net.NetworkInformation> permet de recueillir des informations concernant les événements, les modifications, les statistiques et les propriétés liés au réseau.</span><span class="sxs-lookup"><span data-stu-id="5c77f-103">The <xref:System.Net.NetworkInformation> namespace enables you to gather information about network events, changes, statistics, and properties.</span></span> <span data-ttu-id="5c77f-104">Vous pouvez également déterminer si un hôte distant est accessible à l’aide de la classe <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5c77f-104">You can also determine whether a remote host is reachable by using the <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> class.</span></span>  
   
-## <a name="network-availability-and-events"></a>Disponibilité du réseau et événements réseau  
- La classe <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=fullName> permet de déterminer si l’adresse réseau ou la disponibilité du réseau ont changé. Pour utiliser cette classe, créez un gestionnaire d’événements en vue de traiter la modification, puis associez-la à un <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> ou un <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>. Pour plus d’informations, consultez [Guide pratique pour détecter la disponibilité réseau et les changements d’adresse](../../../docs/framework/network-programming/how-to-detect-network-availability-and-address-changes.md).  
+## <a name="network-availability-and-events"></a><span data-ttu-id="5c77f-105">Disponibilité du réseau et événements réseau</span><span class="sxs-lookup"><span data-stu-id="5c77f-105">Network Availability and Events</span></span>  
+ <span data-ttu-id="5c77f-106">La classe <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> permet de déterminer si l’adresse réseau ou la disponibilité du réseau ont changé.</span><span class="sxs-lookup"><span data-stu-id="5c77f-106">The <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> class enables you to determine whether the network address or availability has changed.</span></span> <span data-ttu-id="5c77f-107">Pour utiliser cette classe, créez un gestionnaire d’événements en vue de traiter la modification, puis associez-la à un <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> ou un <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="5c77f-107">To use this class, create an event handler to process the change, and associate it with a <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> or a <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>.</span></span> <span data-ttu-id="5c77f-108">Pour plus d’informations, consultez [Guide pratique pour détecter la disponibilité réseau et les changements d’adresse](../../../docs/framework/network-programming/how-to-detect-network-availability-and-address-changes.md).</span><span class="sxs-lookup"><span data-stu-id="5c77f-108">For more information, see [How to: Detect Network Availability and Address Changes](../../../docs/framework/network-programming/how-to-detect-network-availability-and-address-changes.md).</span></span>  
   
-## <a name="network-statistics-and-properties"></a>Statistiques et propriétés du réseau  
- Vous pouvez collecter des informations relatives aux statistiques et aux propriétés du réseau au niveau d’une interface ou d’un protocole. Les classes <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType> et <xref:System.Net.NetworkInformation.PhysicalAddress> fournissent des informations sur les interfaces réseau, alors que les classes <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics> et <xref:System.Net.NetworkInformation.UdpStatistics> fournissent des informations sur les paquets des couches 3 et 4. Pour plus d’informations, consultez [Guide pratique pour obtenir des informations d’interface et de protocole](../../../docs/framework/network-programming/how-to-get-interface-and-protocol-information.md).  
+## <a name="network-statistics-and-properties"></a><span data-ttu-id="5c77f-109">Statistiques et propriétés du réseau</span><span class="sxs-lookup"><span data-stu-id="5c77f-109">Network Statistics and Properties</span></span>  
+ <span data-ttu-id="5c77f-110">Vous pouvez collecter des informations relatives aux statistiques et aux propriétés du réseau au niveau d’une interface ou d’un protocole.</span><span class="sxs-lookup"><span data-stu-id="5c77f-110">You can gather network statistics and properties on an interface or protocol basis.</span></span> <span data-ttu-id="5c77f-111">Les classes <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType> et <xref:System.Net.NetworkInformation.PhysicalAddress> fournissent des informations sur les interfaces réseau, alors que les classes <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics> et <xref:System.Net.NetworkInformation.UdpStatistics> fournissent des informations sur les paquets des couches 3 et 4.</span><span class="sxs-lookup"><span data-stu-id="5c77f-111">The <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType>, and <xref:System.Net.NetworkInformation.PhysicalAddress> classes give information about a particular network interface, while the <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics>, and <xref:System.Net.NetworkInformation.UdpStatistics> classes give information about layer 3 and layer 4 packets.</span></span> <span data-ttu-id="5c77f-112">Pour plus d’informations, consultez [Guide pratique pour obtenir des informations d’interface et de protocole](../../../docs/framework/network-programming/how-to-get-interface-and-protocol-information.md).</span><span class="sxs-lookup"><span data-stu-id="5c77f-112">For more information, see [How to: Get Interface and Protocol Information](../../../docs/framework/network-programming/how-to-get-interface-and-protocol-information.md).</span></span>  
   
-## <a name="determine-if-a-remote-host-is-reachable"></a>Déterminer si un hôte distant est accessible  
- Vous pouvez utiliser la classe <xref:System.Net.NetworkInformation.Ping> pour déterminer si un hôte distant est disponible, s’il se trouve dans le réseau et s’il est accessible. Pour plus d’informations, consultez [Guide pratique pour effectuer un test ping](../../../docs/framework/network-programming/how-to-ping-a-host.md).  
+## <a name="determine-if-a-remote-host-is-reachable"></a><span data-ttu-id="5c77f-113">Déterminer si un hôte distant est accessible</span><span class="sxs-lookup"><span data-stu-id="5c77f-113">Determine if a Remote Host is Reachable</span></span>  
+ <span data-ttu-id="5c77f-114">Vous pouvez utiliser la classe <xref:System.Net.NetworkInformation.Ping> pour déterminer si un hôte distant est disponible, s’il se trouve dans le réseau et s’il est accessible.</span><span class="sxs-lookup"><span data-stu-id="5c77f-114">You can use the <xref:System.Net.NetworkInformation.Ping> class to determine whether a Remote Host is up, on the network, and reachable.</span></span> <span data-ttu-id="5c77f-115">Pour plus d’informations, consultez [Guide pratique pour effectuer un test ping](../../../docs/framework/network-programming/how-to-ping-a-host.md).</span><span class="sxs-lookup"><span data-stu-id="5c77f-115">For more information, see [How to: Ping a Host](../../../docs/framework/network-programming/how-to-ping-a-host.md).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)   
- [Exemple de technologie d’informations réseau](http://go.microsoft.com/fwlink/?LinkID=179564)   
- [Exemple de technologie NetStat](http://go.microsoft.com/fwlink/?LinkID=179562)   
- [Exemple de technologie de test ping à partir d’une application cliente](http://go.microsoft.com/fwlink/?LinkID=179565)
-
+## <a name="see-also"></a><span data-ttu-id="5c77f-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5c77f-116">See Also</span></span>  
+ [<span data-ttu-id="5c77f-117">Exemples de programmation réseau</span><span class="sxs-lookup"><span data-stu-id="5c77f-117">Network Programming Samples</span></span>](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [<span data-ttu-id="5c77f-118">Exemple de technologie d’informations réseau</span><span class="sxs-lookup"><span data-stu-id="5c77f-118">Network Information Technology Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=179564)  
+ [<span data-ttu-id="5c77f-119">Exemple de technologie NetStat</span><span class="sxs-lookup"><span data-stu-id="5c77f-119">NetStat Tool Technology Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=179562)  
+ [<span data-ttu-id="5c77f-120">Exemple de technologie de test ping à partir d’une application cliente</span><span class="sxs-lookup"><span data-stu-id="5c77f-120">Ping Client Technology Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=179565)

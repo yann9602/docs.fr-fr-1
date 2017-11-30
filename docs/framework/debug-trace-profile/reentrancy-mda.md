@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - unmanaged code, debugging
 - transitioning threads unmanaged to managed code
@@ -26,42 +20,41 @@ helpviewer_keywords:
 - managed code, debugging
 - native debugging, MDAs
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: beefdb130c953c30d50d948ef9add7ad9d867e45
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: a54a985abbc59aea0eeb46cc74560485e86b897d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="reentrancy-mda"></a>réentrance (MDA)
-L’Assistant Débogage managé (MDA) `reentrancy` est activé en cas de tentative de transition du code natif au code managé dans les cas où un basculement antérieur du code managé au mode natif n’a pas été effectué par le biais d’une transition ordonnée.  
+# <a name="reentrancy-mda"></a><span data-ttu-id="83333-102">réentrance (MDA)</span><span class="sxs-lookup"><span data-stu-id="83333-102">reentrancy MDA</span></span>
+<span data-ttu-id="83333-103">L’Assistant Débogage managé (MDA) `reentrancy` est activé en cas de tentative de transition du code natif au code managé dans les cas où un basculement antérieur du code managé au mode natif n’a pas été effectué par le biais d’une transition ordonnée.</span><span class="sxs-lookup"><span data-stu-id="83333-103">The `reentrancy` managed debugging assistant (MDA) is activated when an attempt is made to transition from native to managed code in cases where a prior switch from managed to native code was not performed through an orderly transition.</span></span>  
   
-## <a name="symptoms"></a>Symptômes  
- Le tas d’objets est endommagé ou d’autres erreurs graves se produisent lors de la transition du code natif au code managé.  
+## <a name="symptoms"></a><span data-ttu-id="83333-104">Symptômes</span><span class="sxs-lookup"><span data-stu-id="83333-104">Symptoms</span></span>  
+ <span data-ttu-id="83333-105">Le tas d’objets est endommagé ou d’autres erreurs graves se produisent lors de la transition du code natif au code managé.</span><span class="sxs-lookup"><span data-stu-id="83333-105">The object heap is corrupted or other serious errors are occurring when transitioning from native to managed code.</span></span>  
   
- Les threads qui basculent entre le code managé et le code natif dans les deux sens doivent effectuer une transition de façon ordonnée. Toutefois, certains points d’extensibilité de bas niveau dans le système d’exploitation, tels que le gestionnaire d’exceptions vectorisées, permettent de basculer entre le code managé et le code natif sans exécuter de transition ordonnée.  Ces basculement sont sous le contrôle du système d’exploitation, et non sous le contrôle du Commun Language Runtime (CLR).  Tout code natif qui s’exécute à l’intérieur de ces points d’extensibilité doit éviter de rappeler le code managé.  
+ <span data-ttu-id="83333-106">Les threads qui basculent entre le code managé et le code natif dans les deux sens doivent effectuer une transition de façon ordonnée.</span><span class="sxs-lookup"><span data-stu-id="83333-106">Threads that switch between native and managed code in either direction must perform an orderly transition.</span></span> <span data-ttu-id="83333-107">Toutefois, certains points d’extensibilité de bas niveau dans le système d’exploitation, tels que le gestionnaire d’exceptions vectorisées, permettent de basculer entre le code managé et le code natif sans exécuter de transition ordonnée.</span><span class="sxs-lookup"><span data-stu-id="83333-107">However, certain low-level extensibility points in the operating system, such as the vectored exception handler, allow switches from managed to native code without performing an orderly transition.</span></span>  <span data-ttu-id="83333-108">Ces basculement sont sous le contrôle du système d’exploitation, et non sous le contrôle du Commun Language Runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="83333-108">These switches are under operating system control, rather than under common language runtime (CLR) control.</span></span>  <span data-ttu-id="83333-109">Tout code natif qui s’exécute à l’intérieur de ces points d’extensibilité doit éviter de rappeler le code managé.</span><span class="sxs-lookup"><span data-stu-id="83333-109">Any native code that executes inside these extensibility points must avoid calling back into managed code.</span></span>  
   
-## <a name="cause"></a>Cause  
- Un point d’extensibilité de bas niveau du système d’exploitation, tel que le gestionnaire d’exceptions vectorisées, a été activé pendant l’exécution du code managé.  Le code d’application appelé par le biais de ce point d’extensibilité tente d’effectuer un rappel dans le code managé.  
+## <a name="cause"></a><span data-ttu-id="83333-110">Cause</span><span class="sxs-lookup"><span data-stu-id="83333-110">Cause</span></span>  
+ <span data-ttu-id="83333-111">Un point d’extensibilité de bas niveau du système d’exploitation, tel que le gestionnaire d’exceptions vectorisées, a été activé pendant l’exécution du code managé.</span><span class="sxs-lookup"><span data-stu-id="83333-111">A low-level operating system extensibility point, such as the vectored exception handler, has activated while executing managed code.</span></span>  <span data-ttu-id="83333-112">Le code d’application appelé par le biais de ce point d’extensibilité tente d’effectuer un rappel dans le code managé.</span><span class="sxs-lookup"><span data-stu-id="83333-112">The application code that is invoked through that extensibility point is attempting to call back into managed code.</span></span>  
   
- Ce problème est toujours dû au code d’application.  
+ <span data-ttu-id="83333-113">Ce problème est toujours dû au code d’application.</span><span class="sxs-lookup"><span data-stu-id="83333-113">This problem is always caused by application code.</span></span>  
   
-## <a name="resolution"></a>Résolution  
- Recherchez dans l’arborescence des appels de procédure le thread qui a activé cet Assistant Débogage managé.  Le thread tente d’appeler illégalement du code managé.  La trace de pile doit révéler le code d’application qui utilise ce point d’extensibilité, le code du système d’exploitation qui fournit ce point d’extensibilité et le code managé qui a été interrompu par le point d’extensibilité.  
+## <a name="resolution"></a><span data-ttu-id="83333-114">Résolution</span><span class="sxs-lookup"><span data-stu-id="83333-114">Resolution</span></span>  
+ <span data-ttu-id="83333-115">Recherchez dans l’arborescence des appels de procédure le thread qui a activé cet Assistant Débogage managé.</span><span class="sxs-lookup"><span data-stu-id="83333-115">Examine the stack trace for the thread that has activated this MDA.</span></span>  <span data-ttu-id="83333-116">Le thread tente d’appeler illégalement du code managé.</span><span class="sxs-lookup"><span data-stu-id="83333-116">The thread is attempting to illegally call into managed code.</span></span>  <span data-ttu-id="83333-117">La trace de pile doit révéler le code d’application qui utilise ce point d’extensibilité, le code du système d’exploitation qui fournit ce point d’extensibilité et le code managé qui a été interrompu par le point d’extensibilité.</span><span class="sxs-lookup"><span data-stu-id="83333-117">The stack trace should reveal the application code using this extensibility point, the operating system code that provides this extensibility point, and the managed code that was interrupted by the extensibility point.</span></span>  
   
- Vous constaterez par exemple que l’Assistant Débogage managé a été activé lors d’une tentative d’appel de code managé à l’intérieur d’un gestionnaire d’exceptions vectorisées.  Sur la pile, vous verrez le code de gestion des exceptions du système d’exploitation et le code managé qui déclenche une exception comme <xref:System.DivideByZeroException> ou <xref:System.AccessViolationException>.  
+ <span data-ttu-id="83333-118">Vous constaterez par exemple que l’Assistant Débogage managé a été activé lors d’une tentative d’appel de code managé à l’intérieur d’un gestionnaire d’exceptions vectorisées.</span><span class="sxs-lookup"><span data-stu-id="83333-118">For example, you will see the MDA activated in an attempt to call managed code from inside a vectored exception handler.</span></span>  <span data-ttu-id="83333-119">Sur la pile, vous verrez le code de gestion des exceptions du système d’exploitation et le code managé qui déclenche une exception comme <xref:System.DivideByZeroException> ou <xref:System.AccessViolationException>.</span><span class="sxs-lookup"><span data-stu-id="83333-119">On the stack you will see the operating system exception handling code and some managed code triggering an exception such as a <xref:System.DivideByZeroException> or an <xref:System.AccessViolationException>.</span></span>  
   
- Dans cet exemple, la solution consiste à implémenter le gestionnaire d’exceptions vectorisées entièrement dans le code non managé.  
+ <span data-ttu-id="83333-120">Dans cet exemple, la solution consiste à implémenter le gestionnaire d’exceptions vectorisées entièrement dans le code non managé.</span><span class="sxs-lookup"><span data-stu-id="83333-120">In this example, the correct resolution is to implement the vectored exception handler completely in unmanaged code.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
- Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="83333-121">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="83333-121">Effect on the Runtime</span></span>  
+ <span data-ttu-id="83333-122">Cet Assistant Débogage managé n'a aucun effet sur le CLR.</span><span class="sxs-lookup"><span data-stu-id="83333-122">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a>Sortie  
- L’Assistant Débogage managé signale les tentatives de réentrance non conformes.  Examinez la pile du thread pour déterminer pourquoi cela se produit et comment résoudre le problème. Voici un exemple de sortie.  
+## <a name="output"></a><span data-ttu-id="83333-123">Sortie</span><span class="sxs-lookup"><span data-stu-id="83333-123">Output</span></span>  
+ <span data-ttu-id="83333-124">L’Assistant Débogage managé signale les tentatives de réentrance non conformes.</span><span class="sxs-lookup"><span data-stu-id="83333-124">The MDA reports that illegal reentrancy is being attempted.</span></span>  <span data-ttu-id="83333-125">Examinez la pile du thread pour déterminer pourquoi cela se produit et comment résoudre le problème.</span><span class="sxs-lookup"><span data-stu-id="83333-125">Examine the thread's stack to determine why this is happening and how to correct the problem.</span></span> <span data-ttu-id="83333-126">Voici un exemple de sortie.</span><span class="sxs-lookup"><span data-stu-id="83333-126">The following is sample output.</span></span>  
   
 ```  
 Additional Information: Attempting to call into managed code without   
@@ -71,7 +64,7 @@ low-level native extensibility points. Managed Debugging Assistant
 ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.  
 ```  
   
-## <a name="configuration"></a>Configuration  
+## <a name="configuration"></a><span data-ttu-id="83333-127">Configuration</span><span class="sxs-lookup"><span data-stu-id="83333-127">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -81,8 +74,8 @@ ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
- L’exemple de code suivant provoque la levée de <xref:System.AccessViolationException>.  Dans les versions de Windows qui prennent en charge la gestion des exceptions vectorisées, cela entraîne l’appel du gestionnaire d’exceptions vectorisées managé.  Si l’Assistant Débogage managé `reentrancy` est activé, il sera déclenché pendant la tentative d’appel à `MyHandler` à partir du code de prise en charge de gestion des exceptions vectorisées du système d’exploitation.  
+## <a name="example"></a><span data-ttu-id="83333-128">Exemple</span><span class="sxs-lookup"><span data-stu-id="83333-128">Example</span></span>  
+ <span data-ttu-id="83333-129">L’exemple de code suivant provoque la levée de <xref:System.AccessViolationException>.</span><span class="sxs-lookup"><span data-stu-id="83333-129">The following code example causes an <xref:System.AccessViolationException> to be thrown.</span></span>  <span data-ttu-id="83333-130">Dans les versions de Windows qui prennent en charge la gestion des exceptions vectorisées, cela entraîne l’appel du gestionnaire d’exceptions vectorisées managé.</span><span class="sxs-lookup"><span data-stu-id="83333-130">On versions of Windows that support vectored exception handling, this will cause the managed vectored exception handler to be called.</span></span>  <span data-ttu-id="83333-131">Si l’Assistant Débogage managé `reentrancy` est activé, il sera déclenché pendant la tentative d’appel à `MyHandler` à partir du code de prise en charge de gestion des exceptions vectorisées du système d’exploitation.</span><span class="sxs-lookup"><span data-stu-id="83333-131">If the `reentrancy` MDA is enabled, the MDA will activate during the attempted call to `MyHandler` from the operating system's vectored exception handling support code.</span></span>  
   
 ```  
 using System;  
@@ -119,6 +112,5 @@ public class Reenter
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-
+## <a name="see-also"></a><span data-ttu-id="83333-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="83333-132">See Also</span></span>  
+ [<span data-ttu-id="83333-133">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="83333-133">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

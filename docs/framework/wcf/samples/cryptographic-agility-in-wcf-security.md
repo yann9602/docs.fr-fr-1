@@ -1,48 +1,51 @@
 ---
-title: "Agilit&#233; de chiffrement dans s&#233;curit&#233; WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Agilité de chiffrement dans sécurité WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c2c549e5-ac19-40c5-b686-8f67f52b6dbf
-caps.latest.revision: 9
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 8b07b23f4428053964fa33150c4300645242f918
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Agilit&#233; de chiffrement dans s&#233;curit&#233; WCF
-Cet exemple montre comment effectuer des spécifications dans un algorithme standard ou personnalisé afin de fournir une implémentation de chiffrement agile dans un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  Cet exemple est composé des projets suivants :  
+# <a name="cryptographic-agility-in-wcf-security"></a><span data-ttu-id="2b665-102">Agilité de chiffrement dans sécurité WCF</span><span class="sxs-lookup"><span data-stu-id="2b665-102">Cryptographic Agility in WCF Security</span></span>
+<span data-ttu-id="2b665-103">Cet exemple montre comment effectuer des spécifications dans un algorithme standard ou personnalisé afin de fournir une implémentation de chiffrement agile dans un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="2b665-103">This sample shows how to specify in a standard/custom algorithm to provide a cryptographic agile implementation in a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client and service.</span></span> <span data-ttu-id="2b665-104">Cet exemple est composé des projets suivants :</span><span class="sxs-lookup"><span data-stu-id="2b665-104">The sample is composed of the following projects:</span></span>  
   
- Service  
- Service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] auto\-hébergé qui implémente l'interface `ICalculator` et sécurise le point de terminaison à l'aide du <xref:System.ServiceModel.WsHttpBinding> avec la session sécurisée et la session fiable désactivées.  Le service définit une classe `SecurityAlgorithmSuite` personnalisée pour spécifier les algorithmes de chiffrement à utiliser pour la sécurité du message.  
+ <span data-ttu-id="2b665-105">Service</span><span class="sxs-lookup"><span data-stu-id="2b665-105">Service</span></span>  
+ <span data-ttu-id="2b665-106">Il s’agit d’un auto-hébergé [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service qui implémente le `ICalculator` d’interface et sécurise le point de terminaison à l’aide de la <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> avec la session sécurisée et la session fiable désactivée.</span><span class="sxs-lookup"><span data-stu-id="2b665-106">This is a self-hosted [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that implements the `ICalculator` interface and secures the endpoint using the <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> with secure session and reliable session disabled.</span></span> <span data-ttu-id="2b665-107">Le service définit une classe `SecurityAlgorithmSuite` personnalisée pour spécifier les algorithmes de chiffrement à utiliser pour la sécurité du message.</span><span class="sxs-lookup"><span data-stu-id="2b665-107">The service defines a custom `SecurityAlgorithmSuite` class to specify the cryptographic algorithms to be used for message security.</span></span>  
   
- Client  
- Client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui accède au service après une authentification réussie.  Il appelle les opérations exposées par l'interface `ICalculator` et implémentées par le service.  Le client définit également la même classe `SecurityAlgorithmSuite` personnalisée pour spécifier les algorithmes de chiffrement à utiliser pour la sécurité du message.  
+ <span data-ttu-id="2b665-108">Client</span><span class="sxs-lookup"><span data-stu-id="2b665-108">Client</span></span>  
+ <span data-ttu-id="2b665-109">Client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui accède au service après une authentification réussie.</span><span class="sxs-lookup"><span data-stu-id="2b665-109">This is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]client that accesses the service after successful authentication.</span></span> <span data-ttu-id="2b665-110">Il appelle les opérations exposées par l'interface `ICalculator` et implémentées par le service.</span><span class="sxs-lookup"><span data-stu-id="2b665-110">It invokes the operations exposed by the `ICalculator` interface and implemented by the service.</span></span> <span data-ttu-id="2b665-111">Le client définit également la même classe `SecurityAlgorithmSuite` personnalisée pour spécifier les algorithmes de chiffrement à utiliser pour la sécurité du message.</span><span class="sxs-lookup"><span data-stu-id="2b665-111">The client also defines the same custom `SecurityAlgorithmSuite` class to specify the cryptographic algorithms to be used for message security.</span></span>  
   
-### Pour utiliser cet exemple  
+### <a name="to-use-this-sample"></a><span data-ttu-id="2b665-112">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="2b665-112">To use this sample</span></span>  
   
-1.  Ouvrez la solution CryptoAgility.sln dans [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
+1.  <span data-ttu-id="2b665-113">Ouvrez la solution CryptoAgility.sln dans [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="2b665-113">Open the CryptoAgility.sln solution in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
   
-2.  Appuyez sur Ctrl\+Maj\+B pour générer la solution.  
+2.  <span data-ttu-id="2b665-114">Appuyez sur Ctrl+Maj+B pour générer la solution.</span><span class="sxs-lookup"><span data-stu-id="2b665-114">Press CTRL+SHIFT+B to build the solution.</span></span>  
   
-3.  Ouvrez l'[!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], accédez au répertoire \\WCF\\Basic\\Security\\CryptoAgility\\Service\\bin et exécutez le fichier service.exe avec des privilèges d'administrateur en cliquant avec le bouton droit sur service.exe et en sélectionnant **Exécuter en tant qu'administrateur**.  
+3.  <span data-ttu-id="2b665-115">Ouvrez [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] , accédez au répertoire \WCF\Basic\Security\CryptoAgility\Service\bin et exécutez le fichier service.exe avec des privilèges d’administrateur en cliquant sur service.exe et en sélectionnant **exécuter en tant qu’administrateur**.</span><span class="sxs-lookup"><span data-stu-id="2b665-115">Open [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] and navigate to the \WCF\Basic\Security\CryptoAgility\Service\bin directory and run the service.exe file with administrator privileges by right-clicking service.exe and selecting **Run as administrator**.</span></span>  
   
-4.  Accédez au répertoire \\WCF\\Basic\\Security\\CryptoAgility\\Client\\bin et exécutez le fichier client.exe normalement.  
+4.  <span data-ttu-id="2b665-116">Accédez au répertoire \WCF\Basic\Security\CryptoAgility\Client\bin et exécutez le fichier client.exe normalement.</span><span class="sxs-lookup"><span data-stu-id="2b665-116">Navigate to \WCF\Basic\Security\CryptoAgility\Client\bin directory and run the client.exe file normally.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="2b665-117">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="2b665-117">The samples may already be installed on your machine.</span></span> <span data-ttu-id="2b665-118">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="2b665-118">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, accédez à la page des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="2b665-119">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="2b665-119">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="2b665-120">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="2b665-120">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Security\CryptoAgility`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Security\CryptoAgility`  
   
-## Voir aussi  
- [Sécurité](../../../../docs/framework/wcf/feature-details/security.md)
+## <a name="see-also"></a><span data-ttu-id="2b665-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2b665-121">See Also</span></span>  
+ [<span data-ttu-id="2b665-122">Sécurité</span><span class="sxs-lookup"><span data-stu-id="2b665-122">Security</span></span>](../../../../docs/framework/wcf/feature-details/security.md)

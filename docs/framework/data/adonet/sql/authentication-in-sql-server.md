@@ -1,93 +1,96 @@
 ---
-title: "Authentification dans SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Authentification dans SQL Server
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-caps.latest.revision: 9
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e3b597d04ee53a094d9c50dff406f57e5fd57b00
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Authentification dans SQL Server
-[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] prend en charge deux modes d'authentification, le mode d'authentification Windows et le mode mixte.  
+# <a name="authentication-in-sql-server"></a><span data-ttu-id="8a256-102">Authentification dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="8a256-102">Authentication in SQL Server</span></span>
+[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-103"> prend en charge deux modes d'authentification, le mode d'authentification Windows et le mode mixte.</span><span class="sxs-lookup"><span data-stu-id="8a256-103"> supports two authentication modes, Windows authentication mode and mixed mode.</span></span>  
   
--   L'authentification Windows correspond au mode par défaut et il est souvent qualifié de sécurité intégrée car ce modèle de sécurité [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] est étroitement intégré à Windows.  Des comptes d'utilisateurs et de groupes Windows spécifiques sont approuvés pour se connecter à SQL Server.  Les utilisateurs Windows qui ont déjà été authentifiés n'ont pas besoin de présenter d'informations d'identification supplémentaires.  
+-   <span data-ttu-id="8a256-104">L'authentification Windows correspond au mode par défaut et il est souvent qualifié de sécurité intégrée car ce modèle de sécurité [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] est étroitement intégré à Windows.</span><span class="sxs-lookup"><span data-stu-id="8a256-104">Windows authentication is the default, and is often referred to as integrated security because this [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] security model is tightly integrated with Windows.</span></span> <span data-ttu-id="8a256-105">Des comptes d'utilisateurs et de groupes Windows spécifiques sont approuvés pour se connecter à SQL Server.</span><span class="sxs-lookup"><span data-stu-id="8a256-105">Specific Windows user and group accounts are trusted to log in to SQL Server.</span></span> <span data-ttu-id="8a256-106">Les utilisateurs Windows qui ont déjà été authentifiés n'ont pas besoin de présenter d'informations d'identification supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="8a256-106">Windows users who have already been authenticated do not have to present additional credentials.</span></span>  
   
--   Le mode mixte prend en charge l'authentification par Windows et par [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  Les paires nom d'utilisateur–mot de passe sont conservées dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
+-   <span data-ttu-id="8a256-107">Le mode mixte prend en charge l'authentification par Windows et par [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-107">Mixed mode supports authentication both by Windows and by [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="8a256-108">Les paires nom d'utilisateur–mot de passe sont conservées dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-108">User name and password pairs are maintained within [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span>  
   
 > [!IMPORTANT]
->  Il est recommandé d'utiliser l'authentification Windows chaque fois que possible.  L'authentification Windows utilise une série de messages chiffrés pour authentifier les utilisateurs dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  Lorsque des connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] sont utilisées, les noms de connexion [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] et les mots de passe sont transmis sur le réseau, ce qui les rend moins sûrs.  
+>  <span data-ttu-id="8a256-109">Il est recommandé d'utiliser l'authentification Windows chaque fois que possible.</span><span class="sxs-lookup"><span data-stu-id="8a256-109">We recommend using Windows authentication wherever possible.</span></span> <span data-ttu-id="8a256-110">L'authentification Windows utilise une série de messages chiffrés pour authentifier les utilisateurs dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-110">Windows authentication uses a series of encrypted messages to authenticate users in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="8a256-111">Lorsque des connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] sont utilisées, les noms de connexion [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] et les mots de passe sont transmis sur le réseau, ce qui les rend moins sûrs.</span><span class="sxs-lookup"><span data-stu-id="8a256-111">When [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] logins are used, [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] login names and passwords are passed across the network, which makes them less secure.</span></span>  
   
- Avec l'authentification Windows, les utilisateurs ont déjà ouvert une session Windows et n'ont pas besoin d'ouvrir une session [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] distincte.  Le `SqlConnection.ConnectionString` suivant spécifie l'authentification Windows sans nécessiter de nom d'utilisateur ni de mot de passe.  
+ <span data-ttu-id="8a256-112">Avec l'authentification Windows, les utilisateurs ont déjà ouvert une session Windows et n'ont pas besoin d'ouvrir une session [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] distincte.</span><span class="sxs-lookup"><span data-stu-id="8a256-112">With Windows authentication, users are already logged onto Windows and do not have to log on separately to [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="8a256-113">Le `SqlConnection.ConnectionString` suivant spécifie l'authentification Windows sans nécessiter de nom d'utilisateur ni de mot de passe.</span><span class="sxs-lookup"><span data-stu-id="8a256-113">The following `SqlConnection.ConnectionString` specifies Windows authentication without requiring the a user name or password.</span></span>  
   
 ```  
 "Server=MSSQL1;Database=AdventureWorks;Integrated Security=true;  
 ```  
   
 > [!NOTE]
->  Les connexions sont différentes des utilisateurs de base de données.  Vous devez mapper les connexions ou les groupes Windows sur les utilisateurs de base de données ou les rôles dans une opération distincte.  Vous accordez ensuite des autorisations aux utilisateurs ou aux rôles pour accéder aux objets de base de données.  
+>  <span data-ttu-id="8a256-114">Les connexions sont différentes des utilisateurs de base de données.</span><span class="sxs-lookup"><span data-stu-id="8a256-114">Logins are distinct from database users.</span></span> <span data-ttu-id="8a256-115">Vous devez mapper les connexions ou les groupes Windows sur les utilisateurs de base de données ou les rôles dans une opération distincte.</span><span class="sxs-lookup"><span data-stu-id="8a256-115">You must map logins or Windows groups to database users or roles in a separate operation.</span></span> <span data-ttu-id="8a256-116">Vous accordez ensuite des autorisations aux utilisateurs ou aux rôles pour accéder aux objets de base de données.</span><span class="sxs-lookup"><span data-stu-id="8a256-116">You then grant permissions to users or roles to access database objects.</span></span>  
   
-## Scénarios d'authentification  
- L'authentification Windows représente généralement le meilleur choix dans les situations suivantes :  
+## <a name="authentication-scenarios"></a><span data-ttu-id="8a256-117">Scénarios d'authentification</span><span class="sxs-lookup"><span data-stu-id="8a256-117">Authentication Scenarios</span></span>  
+ <span data-ttu-id="8a256-118">L'authentification Windows représente généralement le meilleur choix dans les situations suivantes :</span><span class="sxs-lookup"><span data-stu-id="8a256-118">Windows authentication is usually the best choice in the following situations:</span></span>  
   
--   Il existe un contrôleur de domaine.  
+-   <span data-ttu-id="8a256-119">Il existe un contrôleur de domaine.</span><span class="sxs-lookup"><span data-stu-id="8a256-119">There is a domain controller.</span></span>  
   
--   L'application et la base de données se trouvent sur le même ordinateur.  
+-   <span data-ttu-id="8a256-120">L'application et la base de données se trouvent sur le même ordinateur.</span><span class="sxs-lookup"><span data-stu-id="8a256-120">The application and the database are on the same computer.</span></span>  
   
--   Vous utilisez une instance de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express ou LocalDB.  
+-   <span data-ttu-id="8a256-121">Vous utilisez une instance de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express ou LocalDB.</span><span class="sxs-lookup"><span data-stu-id="8a256-121">You are using an instance of [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express or LocalDB.</span></span>  
   
- Les connexions SQL Server sont souvent utilisées dans les situations suivantes :  
+ <span data-ttu-id="8a256-122">Les connexions SQL Server sont souvent utilisées dans les situations suivantes :</span><span class="sxs-lookup"><span data-stu-id="8a256-122">SQL Server logins are often used in the following situations:</span></span>  
   
--   si vous avez un groupe de travail ;  
+-   <span data-ttu-id="8a256-123">si vous avez un groupe de travail ;</span><span class="sxs-lookup"><span data-stu-id="8a256-123">If you have a workgroup.</span></span>  
   
--   les utilisateurs se connectent à partir de domaines différents, non approuvés ;  
+-   <span data-ttu-id="8a256-124">les utilisateurs se connectent à partir de domaines différents, non approuvés ;</span><span class="sxs-lookup"><span data-stu-id="8a256-124">Users connect from different, non-trusted domains.</span></span>  
   
--   les applications Internet, comme [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)].  
-  
-> [!NOTE]
->  La spécification de l'authentification Windows ne désactive pas les connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  Utilisez l'instruction [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ALTER LOGIN DISABLE pour désactiver des connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] dotées de privilèges élevés.  
-  
-## Types de connexions  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] prend en charge trois types de connexions :  
-  
--   Compte d'utilisateur Windows local ou compte de domaine approuvé.  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] s'appuie sur Windows pour authentifier les comptes d'utilisateurs Windows.  
-  
--   Groupe Windows.  Accorder l'accès à un groupe Windows permet d'accorder l'accès à toutes les connexions utilisateur Windows membres du groupe.  
-  
--   Connexion [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] stocke le nom d'utilisateur et un hachage du mot de passe dans la base de données MASTER, en utilisant des méthodes d'authentification internes pour vérifier les tentatives de connexion.  
+-   <span data-ttu-id="8a256-125">les applications Internet, comme [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-125">Internet applications, such as [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)].</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] fournit les connexions créées à partir de certificats ou de clés asymétriques qui sont utilisées seulement pour la signature de code.  Elles ne peuvent pas être utilisées pour se connecter à [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
+>  <span data-ttu-id="8a256-126">La spécification de l'authentification Windows ne désactive pas les connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-126">Specifying Windows authentication does not disable [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] logins.</span></span> <span data-ttu-id="8a256-127">Utilisez l'instruction [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] ALTER LOGIN DISABLE pour désactiver des connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] dotées de privilèges élevés.</span><span class="sxs-lookup"><span data-stu-id="8a256-127">Use the ALTER LOGIN DISABLE [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] statement to disable highly-privileged [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] logins.</span></span>  
   
-## Authentification en mode mixte  
- Si vous devez utiliser l'authentification en mode mixte, vous devez créer des connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] qui sont stockées dans SQL Server.  Vous devez ensuite fournir le nom d'utilisateur et le mot de passe [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] au moment de l'exécution.  
+## <a name="login-types"></a><span data-ttu-id="8a256-128">Types de connexions</span><span class="sxs-lookup"><span data-stu-id="8a256-128">Login Types</span></span>  
+ [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-129"> prend en charge trois types de connexions :</span><span class="sxs-lookup"><span data-stu-id="8a256-129"> supports three types of logins:</span></span>  
+  
+-   <span data-ttu-id="8a256-130">Compte d'utilisateur Windows local ou compte de domaine approuvé.</span><span class="sxs-lookup"><span data-stu-id="8a256-130">A local Windows user account or trusted domain account.</span></span> [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-131"> s'appuie sur Windows pour authentifier les comptes d'utilisateurs Windows.</span><span class="sxs-lookup"><span data-stu-id="8a256-131"> relies on Windows to authenticate the Windows user accounts.</span></span>  
+  
+-   <span data-ttu-id="8a256-132">Groupe Windows.</span><span class="sxs-lookup"><span data-stu-id="8a256-132">Windows group.</span></span> <span data-ttu-id="8a256-133">Accorder l'accès à un groupe Windows permet d'accorder l'accès à toutes les connexions utilisateur Windows membres du groupe.</span><span class="sxs-lookup"><span data-stu-id="8a256-133">Granting access to a Windows group grants access to all Windows user logins that are members of the group.</span></span>  
+  
+-   <span data-ttu-id="8a256-134">Connexion [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-134">[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] login.</span></span> [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-135"> stocke le nom d'utilisateur et un hachage du mot de passe dans la base de données MASTER, en utilisant des méthodes d'authentification internes pour vérifier les tentatives de connexion.</span><span class="sxs-lookup"><span data-stu-id="8a256-135"> stores both the username and a hash of the password in the master database, by using internal authentication methods to verify login attempts.</span></span>  
+  
+> [!NOTE]
+>  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-136"> fournit les connexions créées à partir de certificats ou de clés asymétriques qui sont utilisées seulement pour la signature de code.</span><span class="sxs-lookup"><span data-stu-id="8a256-136"> provides logins created from certificates or asymmetric keys that are used only for code signing.</span></span> <span data-ttu-id="8a256-137">Elles ne peuvent pas être utilisées pour se connecter à [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-137">They cannot be used to connect to [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span>  
+  
+## <a name="mixed-mode-authentication"></a><span data-ttu-id="8a256-138">Authentification en mode mixte</span><span class="sxs-lookup"><span data-stu-id="8a256-138">Mixed Mode Authentication</span></span>  
+ <span data-ttu-id="8a256-139">Si vous devez utiliser l'authentification en mode mixte, vous devez créer des connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] qui sont stockées dans SQL Server.</span><span class="sxs-lookup"><span data-stu-id="8a256-139">If you must use mixed mode authentication, you must create [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] logins, which are stored in SQL Server.</span></span> <span data-ttu-id="8a256-140">Vous devez ensuite fournir le nom d'utilisateur et le mot de passe [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="8a256-140">You then have to supply the [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] user name and password at run time.</span></span>  
   
 > [!IMPORTANT]
->  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] est installé avec une connexion [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] nommée `sa` \(abréviation de « system administrator »\).  Attribuez un mot de passe fort à la connexion `sa` et n'utilisez pas la connexion `sa` dans votre application.  La connexion `sa` correspond au rôle serveur fixe `sysadmin`, qui possède des informations d'identification d'administration irrévocables sur le serveur entier.  Si un attaquant bénéficie de l'accès en tant qu'administrateur système, les dommages potentiels sont sans limite.  Tous les membres du groupe `BUILTIN\Administrators` Windows \(groupe des administrateurs locaux\) sont membres du rôle `sysadmin` par défaut, mais peuvent être supprimés de ce rôle.  
+>  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-141"> est installé avec une connexion [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] nommée `sa` (abréviation de « system administrator »).</span><span class="sxs-lookup"><span data-stu-id="8a256-141"> installs with a [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] login named `sa` (an abbreviation of "system administrator").</span></span> <span data-ttu-id="8a256-142">Attribuez un mot de passe fort à la connexion `sa` et n'utilisez pas la connexion `sa` dans votre application.</span><span class="sxs-lookup"><span data-stu-id="8a256-142">Assign a strong password to the `sa` login and do not use the `sa` login in your application.</span></span> <span data-ttu-id="8a256-143">La connexion `sa` correspond au rôle serveur fixe `sysadmin`, qui possède des informations d'identification d'administration irrévocables sur le serveur entier.</span><span class="sxs-lookup"><span data-stu-id="8a256-143">The `sa` login maps to the `sysadmin` fixed server role, which has irrevocable administrative credentials on the whole server.</span></span> <span data-ttu-id="8a256-144">Si un attaquant bénéficie de l'accès en tant qu'administrateur système, les dommages potentiels sont sans limite.</span><span class="sxs-lookup"><span data-stu-id="8a256-144">There are no limits to the potential damage if an attacker gains access as a system administrator.</span></span> <span data-ttu-id="8a256-145">Tous les membres du groupe `BUILTIN\Administrators` Windows (groupe des administrateurs locaux) sont membres du rôle `sysadmin` par défaut, mais peuvent être supprimés de ce rôle.</span><span class="sxs-lookup"><span data-stu-id="8a256-145">All members of the Windows `BUILTIN\Administrators` group (the local administrator's group) are members of the `sysadmin` role by default, but can be removed from that role.</span></span>  
   
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] fournit des mécanismes de stratégie de mot de passe Windows pour les connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] lorsque le logiciel s'exécute sous [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] ou des versions ultérieures.  Les stratégies de complexité des mots de passe sont conçues pour prévenir les attaques en force brute en augmentant le nombre de mots de passe possibles.  [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] peut appliquer aux mots de passe [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] les mêmes stratégies de complexité et d'expiration que celles utilisées dans [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)].  
+ [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-146"> fournit des mécanismes de stratégie de mot de passe Windows pour les connexions [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] lorsque le logiciel s'exécute sous [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] ou des versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="8a256-146"> provides Windows password policy mechanisms for [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] logins when it is running on [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] or later versions.</span></span> <span data-ttu-id="8a256-147">Les stratégies de complexité des mots de passe sont conçues pour prévenir les attaques en force brute en augmentant le nombre de mots de passe possibles.</span><span class="sxs-lookup"><span data-stu-id="8a256-147">Password complexity policies are designed to deter brute force attacks by increasing the number of possible passwords.</span></span> [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="8a256-148"> peut appliquer aux mots de passe [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] les mêmes stratégies de complexité et d'expiration que celles utilisées dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-148"> can apply the same complexity and expiration policies used in [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] to passwords used inside [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span>  
   
 > [!IMPORTANT]
->  La concaténation des chaînes de connexion à partir des entrées utilisateur peut vous rendre vulnérable à une attaque par injection de chaîne de connexion.  Utilisez le <xref:System.Data.SqlClient.SqlConnectionStringBuilder> pour créer des chaînes de connexion valides du point de vue de la syntaxe au moment de l'exécution.  Pour plus d'informations, consultez [Générateurs de chaînes de connexion](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
+>  <span data-ttu-id="8a256-149">La concaténation des chaînes de connexion à partir des entrées utilisateur peut vous rendre vulnérable à une attaque par injection de chaîne de connexion.</span><span class="sxs-lookup"><span data-stu-id="8a256-149">Concatenating connection strings from user input can leave you vulnerable to a connection string injection attack.</span></span> <span data-ttu-id="8a256-150">Utilisez le <xref:System.Data.SqlClient.SqlConnectionStringBuilder> pour créer des chaînes de connexion valides du point de vue de la syntaxe au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="8a256-150">Use the <xref:System.Data.SqlClient.SqlConnectionStringBuilder> to create syntactically valid connection strings at run time.</span></span> <span data-ttu-id="8a256-151">Pour plus d’informations, consultez [générateurs de chaînes de connexion](../../../../../docs/framework/data/adonet/connection-string-builders.md).</span><span class="sxs-lookup"><span data-stu-id="8a256-151">For more information, see [Connection String Builders](../../../../../docs/framework/data/adonet/connection-string-builders.md).</span></span>  
   
-## Ressources externes  
- Pour plus d'informations, voir les ressources ci\-dessous.  
+## <a name="external-resources"></a><span data-ttu-id="8a256-152">Ressources externes</span><span class="sxs-lookup"><span data-stu-id="8a256-152">External Resources</span></span>  
+ <span data-ttu-id="8a256-153">Pour plus d'informations, voir les ressources ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="8a256-153">For more information, see the following resources.</span></span>  
   
-|Ressource|Description|  
-|---------------|-----------------|  
-|[Principaux](http://msdn.microsoft.com/library/bb543165.aspx) dans la documentation en ligne de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]|Décrit les connexions et autres entités de sécurité dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].|  
+|<span data-ttu-id="8a256-154">Ressource</span><span class="sxs-lookup"><span data-stu-id="8a256-154">Resource</span></span>|<span data-ttu-id="8a256-155">Description</span><span class="sxs-lookup"><span data-stu-id="8a256-155">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="8a256-156">[Principaux](http://msdn.microsoft.com/library/bb543165.aspx) dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] la documentation en ligne</span><span class="sxs-lookup"><span data-stu-id="8a256-156">[Principals](http://msdn.microsoft.com/library/bb543165.aspx) in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Books Online</span></span>|<span data-ttu-id="8a256-157">Décrit les connexions et autres entités de sécurité dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a256-157">Describes logins and other security principals in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span>|  
   
-## Voir aussi  
- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)   
- [Connexion à une source de données](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)   
- [Chaînes de connexion](../../../../../docs/framework/data/adonet/connection-strings.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="8a256-158">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8a256-158">See Also</span></span>  
+ [<span data-ttu-id="8a256-159">Sécurisation des applications ADO.NET</span><span class="sxs-lookup"><span data-stu-id="8a256-159">Securing ADO.NET Applications</span></span>](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [<span data-ttu-id="8a256-160">Scénarios de sécurité dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="8a256-160">Application Security Scenarios in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [<span data-ttu-id="8a256-161">Connexion à une source de données</span><span class="sxs-lookup"><span data-stu-id="8a256-161">Connecting to a Data Source</span></span>](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
+ [<span data-ttu-id="8a256-162">Chaînes de connexion</span><span class="sxs-lookup"><span data-stu-id="8a256-162">Connection Strings</span></span>](../../../../../docs/framework/data/adonet/connection-strings.md)  
+ [<span data-ttu-id="8a256-163">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="8a256-163">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

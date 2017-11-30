@@ -1,58 +1,61 @@
 ---
-title: "Requ&#234;tes d&#39;agr&#233;gation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Requêtes d'agrégation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 13ec5580-05ce-4a1f-9d3d-8660be7891a2
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: cb1f26ec1fb8e5344946938206bb2418eeb6cd2d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Requ&#234;tes d&#39;agr&#233;gation
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge les opérateurs d'agrégation `Average`, `Count`, `Max`, `Min` et `Sum`.  Notez les caractéristiques suivantes des opérateurs d'agrégation dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] :  
+# <a name="aggregate-queries"></a><span data-ttu-id="b601d-102">Requêtes d'agrégation</span><span class="sxs-lookup"><span data-stu-id="b601d-102">Aggregate Queries</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="b601d-103"> prend en charge les opérateurs d'agrégation `Average`, `Count`, `Max`, `Min` et `Sum`.</span><span class="sxs-lookup"><span data-stu-id="b601d-103"> supports the `Average`, `Count`, `Max`, `Min`, and `Sum` aggregate operators.</span></span> <span data-ttu-id="b601d-104">Notez les caractéristiques suivantes des opérateurs d'agrégation dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] :</span><span class="sxs-lookup"><span data-stu-id="b601d-104">Note the following characteristics of aggregate operators in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]:</span></span>  
   
--   Les requêtes d'agrégation sont exécutées immédiatement.  
+-   <span data-ttu-id="b601d-105">Les requêtes d'agrégation sont exécutées immédiatement.</span><span class="sxs-lookup"><span data-stu-id="b601d-105">Aggregate queries are executed immediately.</span></span>  
   
-     Pour plus d'informations, consultez [Introduction to LINQ Queries \(C\#\)](../Topic/Introduction%20to%20LINQ%20Queries%20\(C%23\).md).  
+     <span data-ttu-id="b601d-106">Pour plus d’informations, consultez [Introduction aux requêtes LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).</span><span class="sxs-lookup"><span data-stu-id="b601d-106">For more information, see [Introduction to LINQ Queries (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).</span></span>  
   
--   Les requêtes d'agrégation retournent généralement un nombre au lieu d'une collection.  
+-   <span data-ttu-id="b601d-107">Les requêtes d’agrégation retournent généralement un nombre au lieu d’une collection.</span><span class="sxs-lookup"><span data-stu-id="b601d-107">Aggregate queries typically return a number instead of a collection.</span></span>  
   
-     Pour plus d'informations, consultez [Aggregation Operations](../../../../../../ocs/visual-basic/programming-guide/concepts/linq/aggregation-operations.md).  
+     <span data-ttu-id="b601d-108">Pour plus d’informations, consultez [opérations d’agrégation](http://msdn.microsoft.com/library/36d97c83-5de5-457d-971d-10a69365e7c4).</span><span class="sxs-lookup"><span data-stu-id="b601d-108">For more information, see [Aggregation Operations](http://msdn.microsoft.com/library/36d97c83-5de5-457d-971d-10a69365e7c4).</span></span>  
   
--   Vous ne pouvez pas appeler d'agrégats à l'aide de types anonymes.  
+-   <span data-ttu-id="b601d-109">Vous ne pouvez pas appeler d'agrégats à l'aide de types anonymes.</span><span class="sxs-lookup"><span data-stu-id="b601d-109">You cannot call aggregates against anonymous types.</span></span>  
   
- Les exemples des rubriques suivantes dérivent de l'exemple de base de données Northwind.  Pour plus d'informations, consultez [Téléchargement d'exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+ <span data-ttu-id="b601d-110">Les exemples des rubriques suivantes dérivent de l'exemple de base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="b601d-110">The examples in the following topics derive from the Northwind sample database.</span></span> <span data-ttu-id="b601d-111">Pour plus d’informations, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).</span><span class="sxs-lookup"><span data-stu-id="b601d-111">For more information, see [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).</span></span>  
   
-## Dans cette section  
- [Retourner la valeur moyenne d'une séquence numérique](../../../../../../docs/framework/data/adonet/sql/linq/return-the-average-value-from-a-numeric-sequence.md)  
- Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Average%2A>.  
+## <a name="in-this-section"></a><span data-ttu-id="b601d-112">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="b601d-112">In This Section</span></span>  
+ [<span data-ttu-id="b601d-113">Retourne la valeur moyenne d’une séquence numérique</span><span class="sxs-lookup"><span data-stu-id="b601d-113">Return the Average Value From a Numeric Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/return-the-average-value-from-a-numeric-sequence.md)  
+ <span data-ttu-id="b601d-114">Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Average%2A>.</span><span class="sxs-lookup"><span data-stu-id="b601d-114">Demonstrates how to use the <xref:System.Linq.Enumerable.Average%2A> operator.</span></span>  
   
- [Dénombrer les éléments d'une séquence](../../../../../../docs/framework/data/adonet/sql/linq/count-the-number-of-elements-in-a-sequence.md)  
- Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Count%2A>.  
+ [<span data-ttu-id="b601d-115">Le nombre d’éléments dans une séquence</span><span class="sxs-lookup"><span data-stu-id="b601d-115">Count the Number of Elements in a Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/count-the-number-of-elements-in-a-sequence.md)  
+ <span data-ttu-id="b601d-116">Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Count%2A>.</span><span class="sxs-lookup"><span data-stu-id="b601d-116">Demonstrates how to use the <xref:System.Linq.Enumerable.Count%2A> operator.</span></span>  
   
- [Rechercher la valeur maximale dans une séquence numérique](../../../../../../docs/framework/data/adonet/sql/linq/find-the-maximum-value-in-a-numeric-sequence.md)  
- Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Max%2A>.  
+ [<span data-ttu-id="b601d-117">Recherche la valeur maximale dans une séquence numérique</span><span class="sxs-lookup"><span data-stu-id="b601d-117">Find the Maximum Value in a Numeric Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/find-the-maximum-value-in-a-numeric-sequence.md)  
+ <span data-ttu-id="b601d-118">Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Max%2A>.</span><span class="sxs-lookup"><span data-stu-id="b601d-118">Demonstrates how to use the <xref:System.Linq.Enumerable.Max%2A> operator.</span></span>  
   
- [Rechercher la valeur minimale dans une séquence numérique](../../../../../../docs/framework/data/adonet/sql/linq/find-the-minimum-value-in-a-numeric-sequence.md)  
- Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Min%2A>.  
+ [<span data-ttu-id="b601d-119">Recherche la valeur minimale dans une séquence numérique</span><span class="sxs-lookup"><span data-stu-id="b601d-119">Find the Minimum Value in a Numeric Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/find-the-minimum-value-in-a-numeric-sequence.md)  
+ <span data-ttu-id="b601d-120">Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Min%2A>.</span><span class="sxs-lookup"><span data-stu-id="b601d-120">Demonstrates how to use the <xref:System.Linq.Enumerable.Min%2A> operator.</span></span>  
   
- [Calculer la somme de valeurs dans une séquence numérique](../../../../../../docs/framework/data/adonet/sql/linq/compute-the-sum-of-values-in-a-numeric-sequence.md)  
- Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Sum%2A>.  
+ [<span data-ttu-id="b601d-121">Calculer la somme des valeurs dans une séquence numérique</span><span class="sxs-lookup"><span data-stu-id="b601d-121">Compute the Sum of Values in a Numeric Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/compute-the-sum-of-values-in-a-numeric-sequence.md)  
+ <span data-ttu-id="b601d-122">Montre comment utiliser l'opérateur <xref:System.Linq.Enumerable.Sum%2A>.</span><span class="sxs-lookup"><span data-stu-id="b601d-122">Demonstrates how to use the <xref:System.Linq.Enumerable.Sum%2A> operator.</span></span>  
   
-## Rubriques connexes  
- [Exemples de requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
- Fournit des liens vers les requêtes [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dans Visual Basic et C\#.  
+## <a name="related-sections"></a><span data-ttu-id="b601d-123">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="b601d-123">Related Sections</span></span>  
+ [<span data-ttu-id="b601d-124">Exemples de requêtes</span><span class="sxs-lookup"><span data-stu-id="b601d-124">Query Examples</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
+ <span data-ttu-id="b601d-125">Fournit des liens vers les requêtes [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dans Visual Basic et C#.</span><span class="sxs-lookup"><span data-stu-id="b601d-125">Provides links to [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] queries in Visual Basic and C#.</span></span>  
   
- [Concepts relatifs aux requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
- Fournit des liens vers des rubriques qui présentent des concepts pour la conception de requêtes [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ [<span data-ttu-id="b601d-126">Concepts relatifs aux requêtes</span><span class="sxs-lookup"><span data-stu-id="b601d-126">Query Concepts</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
+ <span data-ttu-id="b601d-127">Fournit des liens vers des rubriques qui présentent des concepts pour la conception de requêtes [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="b601d-127">Provides links to topics that explain concepts for designing [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] queries in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>  
   
- [Introduction to LINQ Queries \(C\#\)](../Topic/Introduction%20to%20LINQ%20Queries%20\(C%23\).md)  
- Explique le fonctionnement des requêtes dans [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].
+ [<span data-ttu-id="b601d-128">Introduction aux requêtes LINQ (C#)</span><span class="sxs-lookup"><span data-stu-id="b601d-128">Introduction to LINQ Queries (C#)</span></span>](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
+ <span data-ttu-id="b601d-129">Explique le fonctionnement des requêtes dans [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="b601d-129">Explains how queries work in [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].</span></span>

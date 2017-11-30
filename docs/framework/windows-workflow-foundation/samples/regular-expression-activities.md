@@ -1,43 +1,47 @@
 ---
-title: "Activit&#233;s d&#39;expression r&#233;guli&#232;re | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Activités d'expression régulière"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b8f24694-49db-4339-92ec-014e3d4ae63b
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: edeb55f25abf9e6f22ebfe1d0ea63eb07ba0f203
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Activit&#233;s d&#39;expression r&#233;guli&#232;re
-Cet exemple montre comment créer un ensemble d'activités qui exposent la fonctionnalité d'expression régulière de l'espace de noms <xref:System.Text.RegularExpressions>.Ces activités personnalisées peuvent être utilisées dans une application de workflow.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] les expressions régulières, consultez Espace de noms [N:System.Text.RegularExpressions](http://go.microsoft.com/fwlink/?LinkId=150434).  
+# <a name="regular-expression-activities"></a><span data-ttu-id="94bb3-102">Activités d'expression régulière</span><span class="sxs-lookup"><span data-stu-id="94bb3-102">Regular Expression Activities</span></span>
+<span data-ttu-id="94bb3-103">Cet exemple montre comment créer un ensemble d'activités qui exposent la fonctionnalité d'expression régulière de l'espace de noms <xref:System.Text.RegularExpressions>.</span><span class="sxs-lookup"><span data-stu-id="94bb3-103">This sample demonstrates how to create a set of activities that expose the regular expression functionality of the <xref:System.Text.RegularExpressions> namespace.</span></span> <span data-ttu-id="94bb3-104">Ces activités personnalisées peuvent être utilisées dans une application de workflow.</span><span class="sxs-lookup"><span data-stu-id="94bb3-104">These custom activities can be used within a workflow application.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="94bb3-105">expressions régulières, consultez [N:System.Text.RegularExpressions](http://go.microsoft.com/fwlink/?LinkId=150434) Namespace.</span><span class="sxs-lookup"><span data-stu-id="94bb3-105"> regular expressions, see [N:System.Text.RegularExpressions](http://go.microsoft.com/fwlink/?LinkId=150434) Namespace.</span></span>  
   
- Le tableau suivant détaille les activités personnalisées dans cet exemple.  
+ <span data-ttu-id="94bb3-106">Le tableau suivant détaille les activités personnalisées dans cet exemple.</span><span class="sxs-lookup"><span data-stu-id="94bb3-106">The following table details the custom activities in this sample.</span></span>  
   
-|Activité|Description|  
+|<span data-ttu-id="94bb3-107">Activité</span><span class="sxs-lookup"><span data-stu-id="94bb3-107">Activity</span></span>|<span data-ttu-id="94bb3-108">Description</span><span class="sxs-lookup"><span data-stu-id="94bb3-108">Description</span></span>|  
 |--------------|-----------------|  
-|IsMatch|Spécifie si l'expression régulière a trouvé une correspondance dans la chaîne d'entrée.|  
-|Matches|Recherche une chaîne d'entrée pour toutes les occurrences d'une expression régulière et retourne toutes les correspondances réussies.|  
-|Replace|Dans une chaîne d'entrée spécifiée, remplace les chaînes qui correspondent à un modèle d'expression régulière par une chaîne de remplacement spécifiée.|  
+|<span data-ttu-id="94bb3-109">IsMatch</span><span class="sxs-lookup"><span data-stu-id="94bb3-109">IsMatch</span></span>|<span data-ttu-id="94bb3-110">Spécifie si l'expression régulière a trouvé une correspondance dans la chaîne d'entrée.</span><span class="sxs-lookup"><span data-stu-id="94bb3-110">Specifies whether the regular expression found a match in the input string.</span></span>|  
+|<span data-ttu-id="94bb3-111">Correspondance</span><span class="sxs-lookup"><span data-stu-id="94bb3-111">Matches</span></span>|<span data-ttu-id="94bb3-112">Recherche une chaîne d'entrée pour toutes les occurrences d'une expression régulière et retourne toutes les correspondances réussies.</span><span class="sxs-lookup"><span data-stu-id="94bb3-112">Searches an input string for all occurrences of a regular expression and returns all the successful matches.</span></span>|  
+|<span data-ttu-id="94bb3-113">Remplacer</span><span class="sxs-lookup"><span data-stu-id="94bb3-113">Replace</span></span>|<span data-ttu-id="94bb3-114">Dans une chaîne d'entrée spécifiée, remplace les chaînes qui correspondent à un modèle d'expression régulière par une chaîne de remplacement spécifiée.</span><span class="sxs-lookup"><span data-stu-id="94bb3-114">Within a specified input string, replaces strings that match a regular expression pattern with a specified replacement string.</span></span>|  
   
-## IsMatch  
- L'activité personnalisée `IsMatch` retourne la valeur `true` si la propriété de type chaîne `Input` trouve une correspondance dans l'expression régulière spécifiée dans la propriété `Pattern`.L'activité dérive de <xref:System.Activities.CodeActivity%601> et, dans la méthode <xref:System.Activities.CodeActivity%601.Execute%2A>, appelle la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A>.  
+## <a name="ismatch"></a><span data-ttu-id="94bb3-115">IsMatch</span><span class="sxs-lookup"><span data-stu-id="94bb3-115">IsMatch</span></span>  
+ <span data-ttu-id="94bb3-116">L'activité personnalisée `IsMatch` retourne la valeur `true` si la propriété de type chaîne `Input` trouve une correspondance dans l'expression régulière spécifiée dans la propriété `Pattern`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-116">The `IsMatch` custom activity returns `true` if the `Input` string property finds a match in the regular expression specified in the `Pattern` property.</span></span> <span data-ttu-id="94bb3-117">L'activité dérive de <xref:System.Activities.CodeActivity%601> et, dans la méthode <xref:System.Activities.CodeActivity%601.Execute%2A>, appelle la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A>.</span><span class="sxs-lookup"><span data-stu-id="94bb3-117">The activity derives from <xref:System.Activities.CodeActivity%601> and within the <xref:System.Activities.CodeActivity%601.Execute%2A> method calls the <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> method.</span></span>  
   
- Le tableau suivant décrit les propriétés et la valeur de retour pour l'activité personnalisée `IsMatch`.  
+ <span data-ttu-id="94bb3-118">Le tableau suivant décrit les propriétés et la valeur de retour pour l'activité personnalisée `IsMatch`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-118">The following table describes the properties and return value for the `IsMatch` custom activity.</span></span>  
   
-|Propriété ou valeur de retour|Description|  
-|-----------------------------------|-----------------|  
-|Pattern \(obligatoire\)|Expression régulière avec laquelle effectuer la recherche.|  
-|Input \(obligatoire\)|Chaîne d'entrée à rechercher.|  
-|RegexOptions|Combinaison d'opérations de bits OR de valeurs d'énumération [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446).|  
-|Valeur de retour|`true` si l'entrée trouve une correspondance dans le modèle fourni ; sinon `false`.|  
+|<span data-ttu-id="94bb3-119">Propriété ou valeur de retour</span><span class="sxs-lookup"><span data-stu-id="94bb3-119">Property or Return Value</span></span>|<span data-ttu-id="94bb3-120">Description</span><span class="sxs-lookup"><span data-stu-id="94bb3-120">Description</span></span>|  
+|------------------------------|-----------------|  
+|<span data-ttu-id="94bb3-121">Pattern (obligatoire)</span><span class="sxs-lookup"><span data-stu-id="94bb3-121">Pattern (required)</span></span>|<span data-ttu-id="94bb3-122">Expression régulière avec laquelle effectuer la recherche.</span><span class="sxs-lookup"><span data-stu-id="94bb3-122">The regular expression to search with.</span></span>|  
+|<span data-ttu-id="94bb3-123">Input (obligatoire)</span><span class="sxs-lookup"><span data-stu-id="94bb3-123">Input (required)</span></span>|<span data-ttu-id="94bb3-124">Chaîne d'entrée à rechercher.</span><span class="sxs-lookup"><span data-stu-id="94bb3-124">The input string to search.</span></span>|  
+|<span data-ttu-id="94bb3-125">RegexOptions</span><span class="sxs-lookup"><span data-stu-id="94bb3-125">RegexOptions</span></span>|<span data-ttu-id="94bb3-126">Combinaison d’opérations OR [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) valeurs d’énumération.</span><span class="sxs-lookup"><span data-stu-id="94bb3-126">Bitwise OR combination of [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) enumeration values.</span></span>|  
+|<span data-ttu-id="94bb3-127">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="94bb3-127">Return value</span></span>|<span data-ttu-id="94bb3-128">`true` si l'entrée trouve une correspondance dans le modèle fourni ; sinon `false`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-128">`true` if the input finds a match in the provided pattern; otherwise `false`.</span></span>|  
   
- L'exemple de code suivant montre comment utiliser l'activité personnalisée `IsMatch`.  
+ <span data-ttu-id="94bb3-129">L'exemple de code suivant montre comment utiliser l'activité personnalisée `IsMatch`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-129">The following code example demonstrates how to use the `IsMatch` custom activity.</span></span>  
   
 ```  
 new IsMatch  
@@ -45,22 +49,21 @@ new IsMatch
     Pattern = new InArgument<string>( @"^-?\d+(\.\d{2})?$"),  
     Input = "20.00",  
 };  
-  
 ```  
   
-## Matches  
- L'activité personnalisée `Matches` recherche une chaîne d'entrée pour toutes les occurrences d'une expression régulière et retourne toutes les correspondances réussies.L'activité dérive de <xref:System.Activities.CodeActivity%601> et, dans la méthode <xref:System.Activities.CodeActivity%601.Execute%2A>, appelle la méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A>.  
+## <a name="matches"></a><span data-ttu-id="94bb3-130">Correspondance</span><span class="sxs-lookup"><span data-stu-id="94bb3-130">Matches</span></span>  
+ <span data-ttu-id="94bb3-131">L'activité personnalisée `Matches` recherche une chaîne d'entrée pour toutes les occurrences d'une expression régulière et retourne toutes les correspondances réussies.</span><span class="sxs-lookup"><span data-stu-id="94bb3-131">The `Matches` custom activity searches an input string for all occurrences of a regular expression and returns all the successful matches.</span></span> <span data-ttu-id="94bb3-132">L'activité dérive de <xref:System.Activities.CodeActivity%601> et, dans la méthode <xref:System.Activities.CodeActivity%601.Execute%2A>, appelle la méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A>.</span><span class="sxs-lookup"><span data-stu-id="94bb3-132">The activity derives from <xref:System.Activities.CodeActivity%601> and within the <xref:System.Activities.CodeActivity%601.Execute%2A> method calls the <xref:System.Text.RegularExpressions.Regex.Matches%2A> method.</span></span>  
   
- Le tableau suivant décrit les propriétés et la valeur de retour pour l'activité personnalisée `IsMatch`.  
+ <span data-ttu-id="94bb3-133">Le tableau suivant décrit les propriétés et la valeur de retour pour l'activité personnalisée `IsMatch`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-133">The following table describes the properties and return value for the `IsMatch` custom activity.</span></span>  
   
-|Propriété ou valeur de retour|Description|  
-|-----------------------------------|-----------------|  
-|Pattern \(obligatoire\)|Expression régulière avec laquelle effectuer la recherche.|  
-|Input \(obligatoire\)|Chaîne d'entrée à rechercher.|  
-|RegexOptions|Combinaison d'opérations de bits OR de valeurs d'énumération [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446).|  
-|Valeur de retour|<xref:System.Text.RegularExpressions.MatchCollection> qui contient la collection des correspondances réussies.|  
+|<span data-ttu-id="94bb3-134">Propriété ou valeur de retour</span><span class="sxs-lookup"><span data-stu-id="94bb3-134">Property or Return Value</span></span>|<span data-ttu-id="94bb3-135">Description</span><span class="sxs-lookup"><span data-stu-id="94bb3-135">Description</span></span>|  
+|------------------------------|-----------------|  
+|<span data-ttu-id="94bb3-136">Pattern (obligatoire)</span><span class="sxs-lookup"><span data-stu-id="94bb3-136">Pattern (required)</span></span>|<span data-ttu-id="94bb3-137">Expression régulière avec laquelle effectuer la recherche.</span><span class="sxs-lookup"><span data-stu-id="94bb3-137">The regular expression to search with.</span></span>|  
+|<span data-ttu-id="94bb3-138">Input (obligatoire)</span><span class="sxs-lookup"><span data-stu-id="94bb3-138">Input (required)</span></span>|<span data-ttu-id="94bb3-139">Chaîne d'entrée à rechercher.</span><span class="sxs-lookup"><span data-stu-id="94bb3-139">The input string to search.</span></span>|  
+|<span data-ttu-id="94bb3-140">RegexOptions</span><span class="sxs-lookup"><span data-stu-id="94bb3-140">RegexOptions</span></span>|<span data-ttu-id="94bb3-141">Combinaison d’opérations OR [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) valeurs d’énumération.</span><span class="sxs-lookup"><span data-stu-id="94bb3-141">Bitwise OR combination of [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) enumeration values.</span></span>|  
+|<span data-ttu-id="94bb3-142">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="94bb3-142">Return Value</span></span>|<span data-ttu-id="94bb3-143"><xref:System.Text.RegularExpressions.MatchCollection> qui contient la collection des correspondances réussies.</span><span class="sxs-lookup"><span data-stu-id="94bb3-143">A <xref:System.Text.RegularExpressions.MatchCollection> that contains the collection of successful matches.</span></span>|  
   
- L'exemple de code suivant montre comment utiliser l'activité personnalisée `Matches`.  
+ <span data-ttu-id="94bb3-144">L'exemple de code suivant montre comment utiliser l'activité personnalisée `Matches`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-144">The following code example demonstrates how to use the `Matches` custom activity.</span></span>  
   
 ```  
 new Matches  
@@ -68,24 +71,23 @@ new Matches
     Pattern = @"\b(?<word>\w+)\s+(\k<word>)\b",  
     Input = "The quick brown fox  fox jumped over over the lazy dog dog.",  
 };  
-  
 ```  
   
-## Replace  
- L'activité personnalisée `Replace` recherche une chaîne d'entrée et remplace toutes les chaînes qui correspondent à une expression régulière spécifiée par une chaîne.L'activité dérive de <xref:System.Activities.CodeActivity%601> et, dans la méthode <xref:System.Activities.CodeActivity%601.Execute%2A>, appelle la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A>.  
+## <a name="replace"></a><span data-ttu-id="94bb3-145">Remplacer</span><span class="sxs-lookup"><span data-stu-id="94bb3-145">Replace</span></span>  
+ <span data-ttu-id="94bb3-146">L'activité personnalisée `Replace` recherche une chaîne d'entrée et remplace toutes les chaînes qui correspondent à une expression régulière spécifiée par une chaîne.</span><span class="sxs-lookup"><span data-stu-id="94bb3-146">The `Replace` custom activity searches an input string and replaces all strings that match a specified regular expression with a string.</span></span> <span data-ttu-id="94bb3-147">L'activité dérive de <xref:System.Activities.CodeActivity%601> et, dans la méthode <xref:System.Activities.CodeActivity%601.Execute%2A>, appelle la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A>.</span><span class="sxs-lookup"><span data-stu-id="94bb3-147">The activity derives from <xref:System.Activities.CodeActivity%601> and within the <xref:System.Activities.CodeActivity%601.Execute%2A> method calls the <xref:System.Text.RegularExpressions.Regex.Replace%2A> method.</span></span>  
   
- Le tableau suivant décrit les propriétés et la valeur de retour pour l'activité personnalisée `Replace`.  
+ <span data-ttu-id="94bb3-148">Le tableau suivant décrit les propriétés et la valeur de retour pour l'activité personnalisée `Replace`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-148">The following table describes the properties and return value for the `Replace` custom activity.</span></span>  
   
-|Propriété ou valeur de retour|Description|  
-|-----------------------------------|-----------------|  
-|Pattern \(obligatoire\)|Expression régulière avec laquelle effectuer la recherche.|  
-|Input \(obligatoire\)|Chaîne d'entrée à rechercher.|  
-|Replacement|Chaîne de remplacement.<br /><br /> Si un `Replacement` est spécifié, la propriété `MatchEvaluator` est ignorée.La propriété `Replacement` ou `MatchEvaluator` doit être définie.|  
-|MatchEvaluator|Méthode personnalisée qui examine chaque correspondance et retourne la chaîne correspondante d'origine ou une chaîne de remplacement.<br /><br /> Si un `Replacement` est spécifié, la propriété `MatchEvaluator` est ignorée.La propriété `Replacement` ou `MatchEvaluator` doit être définie.|  
-|RegexOptions|Combinaison d'opérations de bits OR de valeurs d'énumération [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446).|  
-|Valeur de retour|<xref:System.Text.RegularExpressions.MatchCollection> qui contient la collection des correspondances réussies.|  
+|<span data-ttu-id="94bb3-149">Propriété ou valeur de retour</span><span class="sxs-lookup"><span data-stu-id="94bb3-149">Property or Return Value</span></span>|<span data-ttu-id="94bb3-150">Description</span><span class="sxs-lookup"><span data-stu-id="94bb3-150">Description</span></span>|  
+|------------------------------|-----------------|  
+|<span data-ttu-id="94bb3-151">Pattern (obligatoire)</span><span class="sxs-lookup"><span data-stu-id="94bb3-151">Pattern (required)</span></span>|<span data-ttu-id="94bb3-152">Expression régulière avec laquelle effectuer la recherche.</span><span class="sxs-lookup"><span data-stu-id="94bb3-152">The regular expression to search with.</span></span>|  
+|<span data-ttu-id="94bb3-153">Input (obligatoire)</span><span class="sxs-lookup"><span data-stu-id="94bb3-153">Input (required)</span></span>|<span data-ttu-id="94bb3-154">Chaîne d'entrée à rechercher.</span><span class="sxs-lookup"><span data-stu-id="94bb3-154">The input string to search.</span></span>|  
+|<span data-ttu-id="94bb3-155">Replacement</span><span class="sxs-lookup"><span data-stu-id="94bb3-155">Replacement</span></span>|<span data-ttu-id="94bb3-156">Chaîne de remplacement.</span><span class="sxs-lookup"><span data-stu-id="94bb3-156">The replacement string.</span></span><br /><br /> <span data-ttu-id="94bb3-157">Si un `Replacement` est spécifié, la propriété `MatchEvaluator` est ignorée.</span><span class="sxs-lookup"><span data-stu-id="94bb3-157">If a `Replacement` is specified, then the `MatchEvaluator` property is ignored.</span></span> <span data-ttu-id="94bb3-158">La propriété `Replacement` ou `MatchEvaluator` doit être définie.</span><span class="sxs-lookup"><span data-stu-id="94bb3-158">Either the `Replacement` or `MatchEvaluator` property must be set.</span></span>|  
+|<span data-ttu-id="94bb3-159">MatchEvaluator</span><span class="sxs-lookup"><span data-stu-id="94bb3-159">MatchEvaluator</span></span>|<span data-ttu-id="94bb3-160">Méthode personnalisée qui examine chaque correspondance et retourne la chaîne correspondante d'origine ou une chaîne de remplacement.</span><span class="sxs-lookup"><span data-stu-id="94bb3-160">A custom method that examines each match and returns either the original matched string or a replacement string.</span></span><br /><br /> <span data-ttu-id="94bb3-161">Si un `Replacement` est spécifié, la propriété `MatchEvaluator` est ignorée.</span><span class="sxs-lookup"><span data-stu-id="94bb3-161">If a `Replacement` is specified, then the `MatchEvaluator` property is ignored.</span></span> <span data-ttu-id="94bb3-162">La propriété `Replacement` ou `MatchEvaluator` doit être définie.</span><span class="sxs-lookup"><span data-stu-id="94bb3-162">Either the `Replacement` or `MatchEvaluator` property must be set.</span></span>|  
+|<span data-ttu-id="94bb3-163">RegexOptions</span><span class="sxs-lookup"><span data-stu-id="94bb3-163">RegexOptions</span></span>|<span data-ttu-id="94bb3-164">Combinaison d’opérations OR [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) valeurs d’énumération.</span><span class="sxs-lookup"><span data-stu-id="94bb3-164">Bitwise OR combination of [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) enumeration values.</span></span>|  
+|<span data-ttu-id="94bb3-165">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="94bb3-165">Return Value</span></span>|<span data-ttu-id="94bb3-166"><xref:System.Text.RegularExpressions.MatchCollection> qui contient la collection des correspondances réussies.</span><span class="sxs-lookup"><span data-stu-id="94bb3-166">A <xref:System.Text.RegularExpressions.MatchCollection> that contains the collection of successful matches.</span></span>|  
   
- L'exemple de code suivant montre comment utiliser l'activité personnalisée `Replace`.  
+ <span data-ttu-id="94bb3-167">L'exemple de code suivant montre comment utiliser l'activité personnalisée `Replace`.</span><span class="sxs-lookup"><span data-stu-id="94bb3-167">The following code example demonstrates how to use the `Replace` custom activity.</span></span>  
   
 ```  
 // Using the replacement string.  
@@ -103,24 +105,23 @@ new Replace
     Input = new InArgument<string>(input),  
     MatchEvaluator = new MatchEvaluator(CapText)                  
 };  
-  
 ```  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="94bb3-168">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="94bb3-168">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution RegexActivities.sln.  
+1.  <span data-ttu-id="94bb3-169">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution RegexActivities.sln.</span><span class="sxs-lookup"><span data-stu-id="94bb3-169">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the RegexActivities.sln solution file.</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+2.  <span data-ttu-id="94bb3-170">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="94bb3-170">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  Pour exécuter la solution, appuyez sur Ctrl\+F5.  
+3.  <span data-ttu-id="94bb3-171">Pour exécuter la solution, appuyez sur Ctrl+F5.</span><span class="sxs-lookup"><span data-stu-id="94bb3-171">To run the solution, press CTRL+F5.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="94bb3-172">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="94bb3-172">The samples may already be installed on your machine.</span></span> <span data-ttu-id="94bb3-173">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="94bb3-173">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="94bb3-174">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="94bb3-174">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="94bb3-175">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="94bb3-175">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Regex`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Regex`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="94bb3-176">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="94bb3-176">See Also</span></span>

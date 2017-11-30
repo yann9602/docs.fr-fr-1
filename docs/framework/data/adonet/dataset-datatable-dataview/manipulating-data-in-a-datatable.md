@@ -1,50 +1,53 @@
 ---
-title: "Manipulation de donn&#233;es dans un DataTable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Manipulation des données dans un DataTable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5cb86d48-a987-4af4-80e0-8cc2c8373d62
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 341723d44960d4eaf9d8338e3c266720816c0899
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Manipulation de donn&#233;es dans un DataTable
-Après avoir créé un objet <xref:System.Data.DataTable> dans un objet <xref:System.Data.DataSet>, vous pouvez réaliser les mêmes opérations que lorsque vous utilisez une table d'une base de données.  Vous pouvez ajouter, afficher, modifier et supprimer les données de la table, surveiller les erreurs et les événements et interroger les données de la table.  Lorsque vous modifiez les données d'un **DataTable**, vous pouvez également vérifier l'exactitude des modifications et déterminer l'acceptation ou le rejet des modifications par programme.  
+# <a name="manipulating-data-in-a-datatable"></a><span data-ttu-id="01fce-102">Manipulation des données dans un DataTable</span><span class="sxs-lookup"><span data-stu-id="01fce-102">Manipulating Data in a DataTable</span></span>
+<span data-ttu-id="01fce-103">Après avoir créé un objet <xref:System.Data.DataTable> dans un objet <xref:System.Data.DataSet>, vous pouvez réaliser les mêmes opérations que lorsque vous utilisez une table d'une base de données.</span><span class="sxs-lookup"><span data-stu-id="01fce-103">After creating a <xref:System.Data.DataTable> in a <xref:System.Data.DataSet>, you can perform the same activities that you would when using a table in a database.</span></span> <span data-ttu-id="01fce-104">Vous pouvez ajouter, afficher, modifier et supprimer les données de la table, surveiller les erreurs et les événements et interroger les données de la table.</span><span class="sxs-lookup"><span data-stu-id="01fce-104">You can add, view, edit, and delete data in the table; you can monitor errors and events; and you can query the data in the table.</span></span> <span data-ttu-id="01fce-105">Lors de la modification des données dans un **DataTable**, vous pouvez également vérifier si les modifications sont précises et déterminent s’il faut accepter ou rejeter les modifications par programme.</span><span class="sxs-lookup"><span data-stu-id="01fce-105">When modifying data in a **DataTable**, you can also verify whether the changes are accurate, and determine whether to programmatically accept or reject the changes.</span></span>  
   
-## Dans cette section  
- [Ajout de données à un objet DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)  
- Explique comment créer des lignes et les ajouter à une table.  
+## <a name="in-this-section"></a><span data-ttu-id="01fce-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="01fce-106">In This Section</span></span>  
+ [<span data-ttu-id="01fce-107">Ajout de données à un DataTable</span><span class="sxs-lookup"><span data-stu-id="01fce-107">Adding Data to a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)  
+ <span data-ttu-id="01fce-108">Explique comment créer des lignes et les ajouter à une table.</span><span class="sxs-lookup"><span data-stu-id="01fce-108">Explains how to create new rows and add them to a table.</span></span>  
   
- [Visualisation de données dans un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/viewing-data-in-a-datatable.md)  
- Décrit comment accéder aux données d'une ligne, notamment aux versions actuelles et d'origine des données.  
+ [<span data-ttu-id="01fce-109">Affichage des données dans un DataTable</span><span class="sxs-lookup"><span data-stu-id="01fce-109">Viewing Data in a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/viewing-data-in-a-datatable.md)  
+ <span data-ttu-id="01fce-110">Décrit comment accéder aux données d'une ligne, notamment aux versions actuelles et d'origine des données.</span><span class="sxs-lookup"><span data-stu-id="01fce-110">Describes how to access the data in a row, including original and current versions of the data.</span></span>  
   
- [Méthode Load](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/the-load-method.md)  
- Décrit l'utilisation de la méthode **Load** pour remplir un **DataTable** de lignes.  
+ [<span data-ttu-id="01fce-111">La méthode Load</span><span class="sxs-lookup"><span data-stu-id="01fce-111">The Load Method</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/the-load-method.md)  
+ <span data-ttu-id="01fce-112">Décrit l’utilisation de la **charge** méthode pour remplir un **DataTable** avec des lignes.</span><span class="sxs-lookup"><span data-stu-id="01fce-112">Describes the use of the **Load** method to fill a **DataTable** with rows.</span></span>  
   
- [Modifications d'un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-edits.md)  
- Explique comment modifier les données d'une ligne, notamment suspendre les modifications d'une ligne jusqu'à la vérification et l'acceptation des modifications proposées.  
+ [<span data-ttu-id="01fce-113">Modifications de DataTable</span><span class="sxs-lookup"><span data-stu-id="01fce-113">DataTable Edits</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-edits.md)  
+ <span data-ttu-id="01fce-114">Explique comment modifier les données d'une ligne, notamment suspendre les modifications d'une ligne jusqu'à la vérification et l'acceptation des modifications proposées.</span><span class="sxs-lookup"><span data-stu-id="01fce-114">Explains how to modify the data in a row, including suspending the changes to a row until the proposed changes are verified and accepted.</span></span>  
   
- [États et versions de ligne](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
- Fournit des informations sur les différents états d'une ligne.  
+ [<span data-ttu-id="01fce-115">État des lignes et des Versions de ligne</span><span class="sxs-lookup"><span data-stu-id="01fce-115">Row States and Row Versions</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
+ <span data-ttu-id="01fce-116">Fournit des informations sur les différents états d'une ligne.</span><span class="sxs-lookup"><span data-stu-id="01fce-116">Provides information about the different states of a row.</span></span>  
   
- [Suppresion d'un objet DataRow](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarow-deletion.md)  
- Décrit comment supprimer une ligne d'une table.  
+ [<span data-ttu-id="01fce-117">Suppression de DataRow</span><span class="sxs-lookup"><span data-stu-id="01fce-117">DataRow Deletion</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarow-deletion.md)  
+ <span data-ttu-id="01fce-118">Décrit comment supprimer une ligne d'une table.</span><span class="sxs-lookup"><span data-stu-id="01fce-118">Describes how to remove a row from a table.</span></span>  
   
- [Informations sur les erreurs de ligne](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
- Explique comment insérer des informations d'erreur par ligne et résoudre les problèmes liés aux données dans une application.  
+ [<span data-ttu-id="01fce-119">Informations d’erreur de ligne</span><span class="sxs-lookup"><span data-stu-id="01fce-119">Row Error Information</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
+ <span data-ttu-id="01fce-120">Explique comment insérer des informations d'erreur par ligne et résoudre les problèmes liés aux données dans une application.</span><span class="sxs-lookup"><span data-stu-id="01fce-120">Explains how to insert error information per row, to help resolve problems with the data within an application.</span></span>  
   
- [AcceptChanges et RejectChanges](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
- Explique comment accepter ou rejeter les modifications apportées à une ligne.  
+ [<span data-ttu-id="01fce-121">AcceptChanges et RejectChanges</span><span class="sxs-lookup"><span data-stu-id="01fce-121">AcceptChanges and RejectChanges</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
+ <span data-ttu-id="01fce-122">Explique comment accepter ou rejeter les modifications apportées à une ligne.</span><span class="sxs-lookup"><span data-stu-id="01fce-122">Explains how to accept or reject the changes made to a row.</span></span>  
   
-## Voir aussi  
- [DataTable, objets](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)   
- [Gestion des événements DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="01fce-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="01fce-123">See Also</span></span>  
+ [<span data-ttu-id="01fce-124">DataTables</span><span class="sxs-lookup"><span data-stu-id="01fce-124">DataTables</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
+ [<span data-ttu-id="01fce-125">La gestion des événements de DataTable</span><span class="sxs-lookup"><span data-stu-id="01fce-125">Handling DataTable Events</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)  
+ [<span data-ttu-id="01fce-126">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="01fce-126">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

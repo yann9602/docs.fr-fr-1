@@ -1,73 +1,86 @@
 ---
-title: "Enregistrement et restauration de fuseaux horaires | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "désérialisation (.NET Framework), fuseaux horaires"
-  - "restauration de fuseaux horaires"
-  - "enregistrement de fuseaux horaires"
-  - "sérialisation (.NET Framework), fuseaux horaires"
-  - "objet de fuseau horaire (.NET Framework), désérialiser"
-  - "objet de fuseau horaire (.NET Framework), restaurer"
-  - "objet de fuseau horaire (.NET Framework), enregistrer"
-  - "objet de fuseau horaire (.NET Framework), sérialisation"
-  - "fuseaux horaires (.NET Framework), restaurer"
-  - "fuseaux horaires (.NET Framework), enregistrer"
+title: Enregistrement et restauration de fuseaux horaires
+ms.custom: 
+ms.date: 04/10/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- restoring time zones
+- deserialization [.NET Framework], time zones
+- serialization [.NET Framework], time zones
+- time zone objects [.NET Framework], restoring
+- saving time zones
+- time zone objects [.NET Framework], deserializing
+- time zones [.NET Framework], saving
+- time zones [.NET Framework], restoring
+- time zone objects [.NET Framework], serializing
+- time zone objects [.NET Framework], saving
 ms.assetid: 4028b310-e7ce-49d4-a646-1e83bfaf6f9d
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d4e04de61ed5636d0102af694220dce06c256751
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Enregistrement et restauration de fuseaux horaires
-La classe <xref:System.TimeZoneInfo> dépend du Registre pour récupérer des données de fuseau horaire prédéfinies.  Toutefois, le Registre est une structure dynamique.  En outre, les informations de fuseau horaire présentes dans le Registre sont surtout utilisées par le système d'exploitation pour gérer les ajustements et les conversions horaires de l'année en cours.  Cela a deux conséquences majeures pour les applications qui requièrent des données de fuseau horaire exactes :  
-  
--   Il se peut qu'un fuseau horaire requis par une application ne soit pas défini dans le Registre ou qu'il ait été renommé ou supprimé du Registre.  
-  
--   Il se peut qu'un fuseau horaire défini dans le Registre manque d'informations sur les règles d'ajustement spécifiques nécessaires aux conversions de fuseau horaire historiques.  
-  
- La classe <xref:System.TimeZoneInfo> surmonte ces limitations en prenant en charge la sérialisation \(enregistrement\) et la désérialisation \(restauration\) des données de fuseau horaire.  
-  
-## Sérialisation et désérialisation de fuseau horaire  
- L'enregistrement et la restauration d'un fuseau horaire en sérialisant et désérialisant des données de fuseau horaire supposent deux appels de méthode uniquement :  
-  
--   Vous pouvez sérialiser un objet <xref:System.TimeZoneInfo> en appelant la méthode <xref:System.TimeZoneInfo.ToSerializedString%2A> de cet objet.  La méthode n'accepte aucun paramètre et retourne une chaîne qui contient des informations de fuseau horaire.  
-  
--   Vous pouvez désérialiser un objet <xref:System.TimeZoneInfo> à partir d'une chaîne sérialisée en passant cette chaîne à la méthode `static` \(`Shared` dans Visual Basic\) <xref:System.TimeZoneInfo.FromSerializedString%2A?displayProperty=fullName>.  
-  
-## Scénarios de sérialisation et de désérialisation  
- La capacité d'enregistrer \(ou de sérialiser\) un objet <xref:System.TimeZoneInfo> sur une chaîne et de le restaurer \(ou le désérialiser\) en vue d'une utilisation ultérieure accroît l'utilité et la souplesse de la classe <xref:System.TimeZoneInfo>.  Cette section examine quelques situations dans lesquelles la sérialisation et la désérialisation sont très utiles.  
-  
-### Sérialisation et désérialisation de données de fuseau horaire dans une application  
- Un fuseau horaire sérialisé peut être restauré à partir d'une chaîne, le cas échéant.  Une application peut effectuer cette restauration si le fuseau horaire récupéré du Registre ne peut pas convertir correctement une date et une heure dans une plage de dates donnée.  Par exemple, les données de fuseau horaire du Registre Windows XP prennent en charge une seule règle d'ajustement, tandis que les fuseaux horaires définis dans le Registre Windows Vista fournissent généralement des informations concernant deux règles d'ajustement.  Cela signifie que les conversions d'heures historiques peuvent être inexactes.  La sérialisation et la désérialisation des données de fuseau horaire peuvent gérer cette limitation.  
-  
- Dans l'exemple suivant, une classe personnalisée <xref:System.TimeZoneInfo> qui n'a pas de règle d'ajustement est définie pour représenter le fuseau horaire standard des États\-Unis de 1883 à 1917, avant l'introduction de l'heure d'été aux États\-Unis.  Le fuseau horaire personnalisé est sérialisé dans une variable de portée globale.  La méthode de conversion de fuseau horaire, `ConvertUtcTime`, est passée pour convertir le temps universel coordonné \(UTC, Coordinated Universal Time\).  Si la date et l'heure se produisent en 1917 ou avant, fuseau horaire personnalisé de la côte est des États\-Unis est restauré à partir d'une chaîne sérialisée et remplace le fuseau horaire récupéré du Registre.  
-  
- [!code-csharp[System.TimeZone2.Serialization.1#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Serialization.1/cs/Serialization.cs#1)]
- [!code-vb[System.TimeZone2.Serialization.1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Serialization.1/vb/Serialization.vb#1)]  
-  
-### Gestion des exceptions de fuseau horaire  
- Comme le Registre est une structure dynamique, son contenu peut être modifié délibérément ou accidentellement.  Il se peut donc qu'un fuseau horaire nécessaire à l'exécution d'une application et qui devrait être défini dans le Registre soit absent.  Si la sérialisation et la désérialisation de fuseau horaire ne sont pas prises en charge, il ne vous reste plus qu'à gérer l'exception <xref:System.TimeZoneNotFoundException> résultante en mettant fin à l'application.  Toutefois, si vous faites appel à la sérialisation et à la désérialisation de fuseau horaire, vous pouvez gérer une exception <xref:System.TimeZoneNotFoundException> inattendue en restaurant le fuseau horaire requis à partir d'une chaîne sérialisée. L'application pourra alors poursuivre son exécution.  
-  
- L'exemple suivant crée et sérialise un fuseau horaire personnalisé du Centre des États\-Unis.  Il essaie ensuite de récupérer le fuseau horaire du Centre à partir du Registre.  Si l'opération de récupération lève une exception <xref:System.TimeZoneNotFoundException> ou <xref:System.InvalidTimeZoneException>, le gestionnaire d'exceptions désérialise le fuseau horaire.  
-  
- [!code-csharp[System.TimeZone2.Serialization.2#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Serialization.2/cs/Serialization2.cs#1)]
- [!code-vb[System.TimeZone2.Serialization.2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Serialization.2/vb/Serialization2.vb#1)]  
-  
-### Stockage et restauration d'une chaîne sérialisée  
- Dans les exemples précédents, les informations de fuseau horaire ont été stockées dans une variable chaîne puis restaurées.  Toutefois, la chaîne qui contient des informations de fuseau horaire sérialisées peut être stockée sur un support de stockage, tel qu'un fichier externe, un fichier de ressources incorporé dans l'application ou le Registre. \(Les informations sur les fuseaux horaires personnalisés doivent être stockées à l'écart des clés relatives au fuseau horaire du système dans le Registre.\)  
-  
- En stockant une chaîne de fuseau horaire sérialisée de cette manière, la routine de création de fuseau horaire est également séparée de l'application elle\-même.  Par exemple, une routine de création de fuseau horaire peut exécuter et créer un fichier de données qui contient des informations de fuseau horaire historiques exploitables par une application.  Le fichier de données peut ensuite être installé avec l'application puis être ouvert. Un ou plusieurs de ses fuseaux horaires peuvent être désérialisés dès que l'application en a besoin.  
-  
- Pour obtenir un exemple qui utilise une ressource incorporée afin de stocker des données de fuseau horaire sérialisées, consultez [Comment : enregistrer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) et [Comment : restaurer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).  
-  
-## Voir aussi  
- [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)
+# <a name="saving-and-restoring-time-zones"></a><span data-ttu-id="174b0-102">Enregistrement et restauration de fuseaux horaires</span><span class="sxs-lookup"><span data-stu-id="174b0-102">Saving and restoring time zones</span></span>
+
+<span data-ttu-id="174b0-103">La <xref:System.TimeZoneInfo> classe s’appuie sur le Registre pour récupérer des données de fuseau horaire prédéfinies.</span><span class="sxs-lookup"><span data-stu-id="174b0-103">The <xref:System.TimeZoneInfo> class relies on the registry to retrieve predefined time zone data.</span></span> <span data-ttu-id="174b0-104">Toutefois, le Registre est une structure dynamique.</span><span class="sxs-lookup"><span data-stu-id="174b0-104">However, the registry is a dynamic structure.</span></span> <span data-ttu-id="174b0-105">En outre, les informations de fuseau horaire que le Registre contient sont utilisées par le système d’exploitation essentiellement pour traiter les conversions et le réglage de l’heure pour l’année actuelle.</span><span class="sxs-lookup"><span data-stu-id="174b0-105">Additionally, the time zone information that the registry contains is used by the operating system primarily to handle time adjustments and conversions for the current year.</span></span> <span data-ttu-id="174b0-106">Cela a deux conséquences principales pour les applications qui s’appuient sur des données de fuseau horaire exactes :</span><span class="sxs-lookup"><span data-stu-id="174b0-106">This has two major implications for applications that rely on accurate time zone data:</span></span>
+
+* <span data-ttu-id="174b0-107">Un fuseau horaire qui est requis par une application ne peut pas être défini dans le Registre, ou peut avoir été renommé ou supprimé du Registre.</span><span class="sxs-lookup"><span data-stu-id="174b0-107">A time zone that is required by an application may not be defined in the registry, or it may have been renamed or removed from the registry.</span></span>
+
+* <span data-ttu-id="174b0-108">Un fuseau horaire qui est défini dans le Registre peut ne disposent pas d’informations sur les règles d’ajustement spécifiques qui sont nécessaires pour les conversions de fuseau horaire historiques.</span><span class="sxs-lookup"><span data-stu-id="174b0-108">A time zone that is defined in the registry may lack information about the particular adjustment rules that are necessary for historical time zone conversions.</span></span>
+
+<span data-ttu-id="174b0-109">La <xref:System.TimeZoneInfo> classe résout ces limitations en prenant en charge la sérialisation (enregistrement) et la désérialisation (restauration) des données de fuseau horaire.</span><span class="sxs-lookup"><span data-stu-id="174b0-109">The <xref:System.TimeZoneInfo> class addresses these limitations through its support for serialization (saving) and deserialization (restoring) of time zone data.</span></span>
+
+## <a name="time-zone-serialization-and-deserialization"></a><span data-ttu-id="174b0-110">La désérialisation et la sérialisation de fuseau horaire</span><span class="sxs-lookup"><span data-stu-id="174b0-110">Time zone serialization and deserialization</span></span>
+
+<span data-ttu-id="174b0-111">Enregistrement et restauration d’un fuseau horaire à sérialiser et désérialiser des données de fuseau horaire impliquent deux appels de méthode :</span><span class="sxs-lookup"><span data-stu-id="174b0-111">Saving and restoring a time zone by serializing and deserializing time zone data involves just two method calls:</span></span>
+
+* <span data-ttu-id="174b0-112">Vous pouvez sérialiser une <xref:System.TimeZoneInfo> objet en appelant l’objet <xref:System.TimeZoneInfo.ToSerializedString%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="174b0-112">You can serialize a <xref:System.TimeZoneInfo> object by calling that object's <xref:System.TimeZoneInfo.ToSerializedString%2A> method.</span></span> <span data-ttu-id="174b0-113">La méthode ne prend aucun paramètre et retourne une chaîne qui contient les informations de fuseau horaire.</span><span class="sxs-lookup"><span data-stu-id="174b0-113">The method takes no parameters and returns a string that contains time zone information.</span></span>
+
+* <span data-ttu-id="174b0-114">Vous pouvez désérialiser un <xref:System.TimeZoneInfo> objet à partir d’une chaîne sérialisée en passant cette chaîne à la `static` (`Shared` en Visual Basic) <xref:System.TimeZoneInfo.FromSerializedString%2A?displayProperty=nameWithType> (méthode).</span><span class="sxs-lookup"><span data-stu-id="174b0-114">You can deserialize a <xref:System.TimeZoneInfo> object from a serialized string by passing that string to the `static` (`Shared` in Visual Basic) <xref:System.TimeZoneInfo.FromSerializedString%2A?displayProperty=nameWithType> method.</span></span>
+
+## <a name="serialization-and-deserialization-scenarios"></a><span data-ttu-id="174b0-115">Scénarios de sérialisation et la désérialisation</span><span class="sxs-lookup"><span data-stu-id="174b0-115">Serialization and deserialization scenarios</span></span>
+
+<span data-ttu-id="174b0-116">La possibilité d’enregistrer (ou le sérialiser) un <xref:System.TimeZoneInfo> objet en une chaîne et de restauration (ou désérialiser) pour une utilisation ultérieure accroît l’utilité et la flexibilité de la <xref:System.TimeZoneInfo> classe.</span><span class="sxs-lookup"><span data-stu-id="174b0-116">The ability to save (or serialize) a <xref:System.TimeZoneInfo> object to a string and to restore (or deserialize) it for later use increases both the utility and the flexibility of the <xref:System.TimeZoneInfo> class.</span></span> <span data-ttu-id="174b0-117">Cette section examine certains des situations dans lesquelles la sérialisation et la désérialisation sont très utiles.</span><span class="sxs-lookup"><span data-stu-id="174b0-117">This section examines some of the situations in which serialization and deserialization are most useful.</span></span>
+
+### <a name="serializing-and-deserializing-time-zone-data-in-an-application"></a><span data-ttu-id="174b0-118">Sérialiser et désérialiser des données de fuseau horaire dans une application</span><span class="sxs-lookup"><span data-stu-id="174b0-118">Serializing and deserializing time zone data in an application</span></span>
+
+<span data-ttu-id="174b0-119">Lorsqu’il est nécessaire, un fuseau horaire sérialisé peut être restauré à partir d’une chaîne.</span><span class="sxs-lookup"><span data-stu-id="174b0-119">A serialized time zone can be restored from a string when it is needed.</span></span> <span data-ttu-id="174b0-120">Une application peut procéder ainsi si le fuseau horaire récupéré à partir du Registre ne peut pas convertir correctement une date et une heure dans une plage de dates.</span><span class="sxs-lookup"><span data-stu-id="174b0-120">An application might do this if the time zone retrieved from the registry is unable to correctly convert a date and time within a particular date range.</span></span> <span data-ttu-id="174b0-121">Par exemple, les données de fuseau horaire dans le Registre de Windows XP prend en charge une règle d’ajustement unique, tandis que les fuseaux horaires définis dans le Registre Windows Vista généralement fournissent des informations sur deux règles d’ajustement.</span><span class="sxs-lookup"><span data-stu-id="174b0-121">For example, time zone data in the Windows XP registry supports a single adjustment rule, while time zones defined in the Windows Vista registry typically provide information about two adjustment rules.</span></span> <span data-ttu-id="174b0-122">Cela signifie que les conversions d’heures historiques peuvent être inexactes.</span><span class="sxs-lookup"><span data-stu-id="174b0-122">This means that historical time conversions may be inaccurate.</span></span> <span data-ttu-id="174b0-123">Sérialisation et désérialisation de données de fuseau horaire peuvent gérer cette limitation.</span><span class="sxs-lookup"><span data-stu-id="174b0-123">Serialization and deserialization of time zone data can handle this limitation.</span></span>
+
+<span data-ttu-id="174b0-124">Dans l’exemple suivant, une personnalisée <xref:System.TimeZoneInfo> classe qui a des règles d’ajustement est définie pour représenter Zone de l’heure à partir de 1883 à 1917, avant l’introduction de l’heure d’été aux États-Unis.</span><span class="sxs-lookup"><span data-stu-id="174b0-124">In the following example, a custom <xref:System.TimeZoneInfo> class that has no adjustment rules is defined to represent the U.S. Eastern Standard Time zone from 1883 to 1917, before the introduction of daylight saving time in the United States.</span></span> <span data-ttu-id="174b0-125">Le fuseau horaire personnalisé est sérialisé dans une variable qui a une portée globale.</span><span class="sxs-lookup"><span data-stu-id="174b0-125">The custom time zone is serialized in a variable that has global scope.</span></span> <span data-ttu-id="174b0-126">La méthode de conversion de fuseau horaire, `ConvertUtcTime`, est passée pour convertir le temps de temps universel coordonné (UTC).</span><span class="sxs-lookup"><span data-stu-id="174b0-126">The time zone conversion method, `ConvertUtcTime`, is passed Coordinated Universal Time (UTC) times to convert.</span></span> <span data-ttu-id="174b0-127">Si la date et l’heure se produit en 1917 ou une version antérieure, le personnalisé fuseau horaire est restauré à partir d’une chaîne sérialisée et remplace le fuseau horaire récupéré à partir du Registre.</span><span class="sxs-lookup"><span data-stu-id="174b0-127">If the date and time occurs in 1917 or earlier, the custom Eastern Standard Time zone is restored from a serialized string and replaces the time zone retrieved from the registry.</span></span>
+
+[!code-csharp[System.TimeZone2.Serialization.1#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Serialization.1/cs/Serialization.cs#1)]
+[!code-vb[System.TimeZone2.Serialization.1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Serialization.1/vb/Serialization.vb#1)]
+
+### <a name="handling-time-zone-exceptions"></a><span data-ttu-id="174b0-128">La gestion des exceptions de fuseau horaire</span><span class="sxs-lookup"><span data-stu-id="174b0-128">Handling time zone exceptions</span></span>
+
+<span data-ttu-id="174b0-129">Étant donné que le Registre est une structure dynamique, son contenu est soumises à modification accidentelle ou intentionnelle.</span><span class="sxs-lookup"><span data-stu-id="174b0-129">Because the registry is a dynamic structure, its contents are subject to accidental or deliberate modification.</span></span> <span data-ttu-id="174b0-130">Cela signifie qu’un fuseau horaire qui doit être défini dans le Registre et qui est requis pour une application de s’exécuter avec succès peuvent être absent.</span><span class="sxs-lookup"><span data-stu-id="174b0-130">This means that a time zone that should be defined in the registry and that is required for an application to execute successfully may be absent.</span></span> <span data-ttu-id="174b0-131">Sans la prise en charge pour la sérialisation de fuseau horaire et la désérialisation, ne vous reste plus qu’à gérer résultant <xref:System.TimeZoneNotFoundException> en mettant fin à l’application.</span><span class="sxs-lookup"><span data-stu-id="174b0-131">Without support for time zone serialization and deserialization, you have little choice but to handle the resulting <xref:System.TimeZoneNotFoundException> by ending the application.</span></span> <span data-ttu-id="174b0-132">Toutefois, à l’aide de fuseau horaire sérialisation et la désérialisation, vous pouvez gérer inattendus <xref:System.TimeZoneNotFoundException> en restaurant le fuseau horaire requis à partir d’une chaîne sérialisée et l’application continue de s’exécuter.</span><span class="sxs-lookup"><span data-stu-id="174b0-132">However, by using time zone serialization and deserialization, you can handle an unexpected <xref:System.TimeZoneNotFoundException> by restoring the required time zone from a serialized string, and the application will continue to run.</span></span>
+
+<span data-ttu-id="174b0-133">L’exemple suivant crée et sérialise un fuseau horaire Standard Central personnalisé.</span><span class="sxs-lookup"><span data-stu-id="174b0-133">The following example creates and serializes a custom Central Standard Time zone.</span></span> <span data-ttu-id="174b0-134">Ensuite, il essaie de récupérer le fuseau horaire Standard Central à partir du Registre.</span><span class="sxs-lookup"><span data-stu-id="174b0-134">It then tries to retrieve the Central Standard Time zone from the registry.</span></span> <span data-ttu-id="174b0-135">Si l’opération de récupération lève soit une <xref:System.TimeZoneNotFoundException> ou <xref:System.InvalidTimeZoneException>, le Gestionnaire d’exceptions désérialise le fuseau horaire.</span><span class="sxs-lookup"><span data-stu-id="174b0-135">If the retrieval operation throws either a <xref:System.TimeZoneNotFoundException> or an <xref:System.InvalidTimeZoneException>, the exception handler deserializes the time zone.</span></span>
+
+[!code-csharp[System.TimeZone2.Serialization.2#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Serialization.2/cs/Serialization2.cs#1)]
+[!code-vb[System.TimeZone2.Serialization.2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Serialization.2/vb/Serialization2.vb#1)]
+
+### <a name="storing-a-serialized-string-and-restoring-it-when-needed"></a><span data-ttu-id="174b0-136">Le stockage d’une chaîne sérialisée et la restauration en cas de besoin</span><span class="sxs-lookup"><span data-stu-id="174b0-136">Storing a serialized string and restoring it when needed</span></span>
+
+<span data-ttu-id="174b0-137">Les exemples précédents ont stocké des informations de fuseau horaire à une variable de chaîne et restaurées.</span><span class="sxs-lookup"><span data-stu-id="174b0-137">The previous examples have stored time zone information to a string variable and restored it when needed.</span></span> <span data-ttu-id="174b0-138">Toutefois, la chaîne qui contient l’heure sérialisée des informations de zone peuvent être stockées dans un support de stockage, tel qu’un fichier externe, un fichier de ressources incorporé dans l’application ou le Registre.</span><span class="sxs-lookup"><span data-stu-id="174b0-138">However, the string that contains serialized time zone information can itself be stored in some storage medium, such as an external file, a resource file embedded in the application, or the registry.</span></span> <span data-ttu-id="174b0-139">(Notez que les informations sur les fuseaux horaires personnalisés doivent être stockées en dehors des clés de fuseau horaire du système dans le Registre).</span><span class="sxs-lookup"><span data-stu-id="174b0-139">(Note that information about custom time zones should be stored apart from the system's time zone keys in the registry.)</span></span>
+
+<span data-ttu-id="174b0-140">Stockage d’une chaîne de fuseau horaire sérialisé de cette manière sépare également la routine de création de fuseau horaire à partir de l’application elle-même.</span><span class="sxs-lookup"><span data-stu-id="174b0-140">Storing a serialized time zone string in this manner also separates the time zone creation routine from the application itself.</span></span> <span data-ttu-id="174b0-141">Par exemple, une routine de création de fuseau horaire peut exécuter et créer un fichier de données qui contient des informations de fuseau horaire historiques qu’une application peut utiliser.</span><span class="sxs-lookup"><span data-stu-id="174b0-141">For example, a time zone creation routine can execute and create a data file that contains historical time zone information that an application can use.</span></span> <span data-ttu-id="174b0-142">Le fichier de données peut ensuite être installé avec l’application et elle peut être ouverte et un ou plusieurs de ses zones de temps peuvent être désérialisé lorsque l’application en a besoin.</span><span class="sxs-lookup"><span data-stu-id="174b0-142">The data file can be then be installed with the application, and it can be opened and one or more of its time zones can be deserialized when the application requires them.</span></span>
+
+<span data-ttu-id="174b0-143">Pour obtenir un exemple qui utilise une ressource incorporée pour stocker les données de fuseau horaire sérialisées, consultez [Comment : enregistrer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) et [Comment : restaurer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).</span><span class="sxs-lookup"><span data-stu-id="174b0-143">For an example that uses an embedded resource to store serialized time zone data, see [How to: Save time zones to an embedded resource](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) and [How to: Restore time zones from an embedded resource](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="174b0-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="174b0-144">See also</span></span>
+
+[<span data-ttu-id="174b0-145">Dates, heures et fuseaux horaires</span><span class="sxs-lookup"><span data-stu-id="174b0-145">Dates, times, and time zones</span></span>](../../../docs/standard/datetime/index.md)

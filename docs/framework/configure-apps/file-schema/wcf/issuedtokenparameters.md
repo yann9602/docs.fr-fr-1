@@ -1,28 +1,37 @@
 ---
-title: "&lt;issuedTokenParameters&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;issuedTokenParameters&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ef68585054d61de8c25b7e3effd1d72063d4589c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;issuedTokenParameters&gt;
-Indique les paramètres d'un jeton de sécurité émis dans un scénario de sécurité fédéré.  
+# <a name="ltissuedtokenparametersgt"></a><span data-ttu-id="3e5da-102">&lt;issuedTokenParameters&gt;</span><span class="sxs-lookup"><span data-stu-id="3e5da-102">&lt;issuedTokenParameters&gt;</span></span>
+<span data-ttu-id="3e5da-103">Indique les paramètres d'un jeton de sécurité émis dans un scénario de sécurité fédéré.</span><span class="sxs-lookup"><span data-stu-id="3e5da-103">Specifies the parameters for a security token issued in a Federated security scenario.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="3e5da-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="3e5da-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="3e5da-105">\<liaisons ></span><span class="sxs-lookup"><span data-stu-id="3e5da-105">\<bindings></span></span>  
+<span data-ttu-id="3e5da-106">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="3e5da-106">\<customBinding></span></span>  
+<span data-ttu-id="3e5da-107">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="3e5da-107">\<binding></span></span>  
+<span data-ttu-id="3e5da-108">\<sécurité ></span><span class="sxs-lookup"><span data-stu-id="3e5da-108">\<security></span></span>  
+<span data-ttu-id="3e5da-109">\<issuedTokenParameters ></span><span class="sxs-lookup"><span data-stu-id="3e5da-109">\<issuedTokenParameters></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="3e5da-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e5da-110">Syntax</span></span>  
   
+```xml  
 <issuedTokenParameters   
       DefaultMessageSecurityVersion="System.ServiceModel.MessageSecurityVersion"  
       inclusionMode="AlwaysToInitiator/AlwaysToRecipient/Never/Once"  
@@ -40,50 +49,50 @@ Indique les paramètres d'un jeton de sécurité émis dans un scénario de séc
 </issuedTokenParameters>  
 ```  
   
-## Type  
+## <a name="type"></a><span data-ttu-id="3e5da-111">Type</span><span class="sxs-lookup"><span data-stu-id="3e5da-111">Type</span></span>  
  `Type`  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="3e5da-112">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="3e5da-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="3e5da-113">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="3e5da-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="3e5da-114">Attributs</span><span class="sxs-lookup"><span data-stu-id="3e5da-114">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|defaultMessageSecurityVersion|Spécifie les versions des caractéristiques de sécurité \(WS\-Security, WS\-Trust, WS\-Secure Conversation et WS\-Security Policy\) devant être prises en charge par la liaison.  Cette valeur est de type <xref:System.ServiceModel.MessageSecurityVersion>.|  
-|inclusionMode|Indique les spécifications d'inclusion de jeton.  Cet attribut est de type <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>.|  
-|keySize|Entier qui spécifie la taille de clé de jeton.  La valeur par défaut est 256.|  
-|keyType|Valeur correcte de <xref:System.IdentityModel.Tokens.SecurityKeyType> indiquant le type de clé.  La valeur par défaut est `SymmetricKey`.|  
-|tokenType|Chaîne indiquant le type de jeton.  La valeur par défaut est « http:\/\/docs.oasis\-open.org\/wss\/oasis\-wss\-saml\-token\-profile\-1.1\#SAML ».|  
+|<span data-ttu-id="3e5da-115">Attribut</span><span class="sxs-lookup"><span data-stu-id="3e5da-115">Attribute</span></span>|<span data-ttu-id="3e5da-116">Description</span><span class="sxs-lookup"><span data-stu-id="3e5da-116">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="3e5da-117">defaultMessageSecurityVersion</span><span class="sxs-lookup"><span data-stu-id="3e5da-117">defaultMessageSecurityVersion</span></span>|<span data-ttu-id="3e5da-118">Spécifie les versions des caractéristiques de sécurité (WS-Security, WS-Trust, WS-Secure Conversation et WS-Security Policy) devant être prises en charge par la liaison.</span><span class="sxs-lookup"><span data-stu-id="3e5da-118">Specifies the versions of the security specifications, (WS-Security, WS-Trust, WS-Secure Conversation and WS-Security Policy) that must be supported by the binding.</span></span> <span data-ttu-id="3e5da-119">Cette valeur est de type <xref:System.ServiceModel.MessageSecurityVersion>.</span><span class="sxs-lookup"><span data-stu-id="3e5da-119">This value is of type <xref:System.ServiceModel.MessageSecurityVersion>.</span></span>|  
+|<span data-ttu-id="3e5da-120">inclusionMode</span><span class="sxs-lookup"><span data-stu-id="3e5da-120">inclusionMode</span></span>|<span data-ttu-id="3e5da-121">Indique les spécifications d'inclusion de jeton.</span><span class="sxs-lookup"><span data-stu-id="3e5da-121">Specifies the token inclusion requirements.</span></span> <span data-ttu-id="3e5da-122">Cet attribut est de type <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>.</span><span class="sxs-lookup"><span data-stu-id="3e5da-122">This attribute is of type <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>.</span></span>|  
+|<span data-ttu-id="3e5da-123">keySize</span><span class="sxs-lookup"><span data-stu-id="3e5da-123">keySize</span></span>|<span data-ttu-id="3e5da-124">Entier qui spécifie la taille de clé de jeton.</span><span class="sxs-lookup"><span data-stu-id="3e5da-124">An integer that specifies the token key size.</span></span> <span data-ttu-id="3e5da-125">La valeur par défaut est 256.</span><span class="sxs-lookup"><span data-stu-id="3e5da-125">The default value is 256.</span></span>|  
+|<span data-ttu-id="3e5da-126">keyType</span><span class="sxs-lookup"><span data-stu-id="3e5da-126">keyType</span></span>|<span data-ttu-id="3e5da-127">Valeur correcte de <xref:System.IdentityModel.Tokens.SecurityKeyType> indiquant le type de clé.</span><span class="sxs-lookup"><span data-stu-id="3e5da-127">A valid value of <xref:System.IdentityModel.Tokens.SecurityKeyType> that specifies the key type.</span></span> <span data-ttu-id="3e5da-128">La valeur par défaut est `SymmetricKey`.</span><span class="sxs-lookup"><span data-stu-id="3e5da-128">The default is `SymmetricKey`.</span></span>|  
+|<span data-ttu-id="3e5da-129">tokenType</span><span class="sxs-lookup"><span data-stu-id="3e5da-129">tokenType</span></span>|<span data-ttu-id="3e5da-130">Chaîne indiquant le type de jeton.</span><span class="sxs-lookup"><span data-stu-id="3e5da-130">A string that specifies the token type.</span></span> <span data-ttu-id="3e5da-131">La valeur par défaut est « http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML ».</span><span class="sxs-lookup"><span data-stu-id="3e5da-131">The default is "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML".</span></span>|  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="3e5da-132">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="3e5da-132">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="3e5da-133">Élément</span><span class="sxs-lookup"><span data-stu-id="3e5da-133">Element</span></span>|<span data-ttu-id="3e5da-134">Description</span><span class="sxs-lookup"><span data-stu-id="3e5da-134">Description</span></span>|  
 |-------------|-----------------|  
-|[\<additionalRequestParameters\>](../../../../../docs/framework/configure-apps/file-schema/wcf/additionalrequestparameters-element.md)|Collection d'éléments de configuration indiquant des paramètres de demande supplémentaires.|  
-|[\<claimTypeRequirements\>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Spécifie une collection de types de revendications requis.<br /><br /> Dans un scénario fédéré, les services déclarent les spécifications relatives aux informations d'identification entrantes.  Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini.  Chaque élément de la collection indique les types de revendications requis et facultatifs censés apparaître dans les informations d'identification fédérées.|  
-|[\<issuer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer-of-issuedtokenparameters.md)|Élément de configuration qui spécifie le point de terminaison émettant le jeton actuel.|  
-|[\<issuerMetadata\>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata-of-issuedtokenparameters.md)|Élément de configuration qui spécifie l'adresse de point de terminaison correspondant aux métadonnées de l'émetteur de jeton.|  
+|[<span data-ttu-id="3e5da-135">\<additionalRequestParameters ></span><span class="sxs-lookup"><span data-stu-id="3e5da-135">\<additionalRequestParameters></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/additionalrequestparameters-element.md)|<span data-ttu-id="3e5da-136">Collection d’éléments de configuration indiquant des paramètres de demande supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="3e5da-136">A collection of configuration elements that specify additional request parameters.</span></span>|  
+|[<span data-ttu-id="3e5da-137">\<claimTypeRequirements ></span><span class="sxs-lookup"><span data-stu-id="3e5da-137">\<claimTypeRequirements></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|<span data-ttu-id="3e5da-138">Spécifie une collection de types de revendications requis.</span><span class="sxs-lookup"><span data-stu-id="3e5da-138">Specifies a collection of required claim types.</span></span><br /><br /> <span data-ttu-id="3e5da-139">Dans un scénario fédéré, les services déclarent les spécifications relatives aux informations d'identification entrantes.</span><span class="sxs-lookup"><span data-stu-id="3e5da-139">In a federated scenario, services state the requirements on incoming credentials.</span></span> <span data-ttu-id="3e5da-140">Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini.</span><span class="sxs-lookup"><span data-stu-id="3e5da-140">For example, the incoming credentials must possess a certain set of claim types.</span></span> <span data-ttu-id="3e5da-141">Chaque élément de la collection indique les types de revendications requis et facultatifs censés apparaître dans les informations d’identification fédérées.</span><span class="sxs-lookup"><span data-stu-id="3e5da-141">Each element in this collection specifies the types of required and optional claims expected to appear in a federated credential.</span></span>|  
+|[<span data-ttu-id="3e5da-142">\<l’émetteur ></span><span class="sxs-lookup"><span data-stu-id="3e5da-142">\<issuer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer-of-issuedtokenparameters.md)|<span data-ttu-id="3e5da-143">Élément de configuration qui spécifie le point de terminaison émettant le jeton actuel.</span><span class="sxs-lookup"><span data-stu-id="3e5da-143">A configuration element that specifies the endpoint that issues the current token.</span></span>|  
+|[<span data-ttu-id="3e5da-144">\<issuerMetadata ></span><span class="sxs-lookup"><span data-stu-id="3e5da-144">\<issuerMetadata></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata-of-issuedtokenparameters.md)|<span data-ttu-id="3e5da-145">Élément de configuration qui spécifie l'adresse de point de terminaison correspondant aux métadonnées de l'émetteur de jeton.</span><span class="sxs-lookup"><span data-stu-id="3e5da-145">A configuration element that specifies the endpoint address of the token issuer's metadata.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="3e5da-146">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="3e5da-146">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="3e5da-147">Élément</span><span class="sxs-lookup"><span data-stu-id="3e5da-147">Element</span></span>|<span data-ttu-id="3e5da-148">Description</span><span class="sxs-lookup"><span data-stu-id="3e5da-148">Description</span></span>|  
 |-------------|-----------------|  
-|[\<secureConversationBootstrap\>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.|  
-|[\<sécurité\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Spécifie les options de sécurité d'une liaison personnalisée.|  
+|[<span data-ttu-id="3e5da-149">\<secureConversationBootstrap ></span><span class="sxs-lookup"><span data-stu-id="3e5da-149">\<secureConversationBootstrap></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|<span data-ttu-id="3e5da-150">Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.</span><span class="sxs-lookup"><span data-stu-id="3e5da-150">Specifies the default values used for initiating a secure conversation service.</span></span>|  
+|[<span data-ttu-id="3e5da-151">\<sécurité ></span><span class="sxs-lookup"><span data-stu-id="3e5da-151">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|<span data-ttu-id="3e5da-152">Spécifie les options de sécurité d’une liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="3e5da-152">Specifies the security options for a custom binding.</span></span>|  
   
-## Voir aussi  
- <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>   
- <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>   
- <xref:System.ServiceModel.Configuration.SecurityElementBase.IssuedTokenParameters%2A>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)   
- [Comment : créer une liaison personnalisée à l'aide de SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)   
- [Custom Binding Security](../../../../../docs/framework/wcf/samples/custom-binding-security.md)   
- [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [Fédération et jetons émis](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)   
- [Fonctionnalités de sécurité avec des liaisons personnalisées](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)   
- [Fédération et jetons émis](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+## <a name="see-also"></a><span data-ttu-id="3e5da-153">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3e5da-153">See Also</span></span>  
+ <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>  
+ <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>  
+ <xref:System.ServiceModel.Configuration.SecurityElementBase.IssuedTokenParameters%2A>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [<span data-ttu-id="3e5da-154">Liaisons</span><span class="sxs-lookup"><span data-stu-id="3e5da-154">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="3e5da-155">Extension de liaisons</span><span class="sxs-lookup"><span data-stu-id="3e5da-155">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [<span data-ttu-id="3e5da-156">Liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="3e5da-156">Custom Bindings</span></span>](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [<span data-ttu-id="3e5da-157">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="3e5da-157">\<customBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [<span data-ttu-id="3e5da-158">Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement</span><span class="sxs-lookup"><span data-stu-id="3e5da-158">How to: Create a Custom Binding Using the SecurityBindingElement</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [<span data-ttu-id="3e5da-159">Sécurité de liaison personnalisée</span><span class="sxs-lookup"><span data-stu-id="3e5da-159">Custom Binding Security</span></span>](../../../../../docs/framework/wcf/samples/custom-binding-security.md)  
+ [<span data-ttu-id="3e5da-160">L’authentification et identité de Service</span><span class="sxs-lookup"><span data-stu-id="3e5da-160">Service Identity and Authentication</span></span>](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [<span data-ttu-id="3e5da-161">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="3e5da-161">Federation and Issued Tokens</span></span>](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
+ [<span data-ttu-id="3e5da-162">Fonctionnalités de sécurité avec des liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="3e5da-162">Security Capabilities with Custom Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
+ [<span data-ttu-id="3e5da-163">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="3e5da-163">Federation and Issued Tokens</span></span>](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)

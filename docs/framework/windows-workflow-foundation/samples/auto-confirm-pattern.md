@@ -1,47 +1,51 @@
 ---
-title: "Mod&#232;le de confirmation automatique | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Modèle de confirmation automatique"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 668aec65-78d3-4636-9c7b-deed643a18f9
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 30aa268fbfa8a6f59491de30dbde6508ccdd7a68
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Mod&#232;le de confirmation automatique
-Cet exemple est composé de trois scénarios qui s'exécutent pour illustrer une activité `AutoConfirmScope` personnalisée.Le premier exemple présente l'exécution réussie d'une séquence de quatre activités compensables où la deuxième et la troisième sont imbriqués dans un `AutoConfirmScope`.Le deuxième exemple présente la même séquence avec une exception qui se produit après l'exécution du quatrième <xref:System.Activities.Statements.CompensableActivity>.Le troisième scénario présente la même séquence avec une exception qui se produit dans `AutoConfirmScope` une fois le deuxième <xref:System.Activities.Statements.CompensableActivity> terminé.  
+# <a name="auto-confirm-pattern"></a><span data-ttu-id="c8477-102">Modèle de confirmation automatique</span><span class="sxs-lookup"><span data-stu-id="c8477-102">Auto-Confirm Pattern</span></span>
+<span data-ttu-id="c8477-103">Cet exemple est composé de trois scénarios qui s'exécutent pour illustrer une activité `AutoConfirmScope` personnalisée.</span><span class="sxs-lookup"><span data-stu-id="c8477-103">This sample consists of three scenarios that run illustrating a custom `AutoConfirmScope` activity.</span></span> <span data-ttu-id="c8477-104">Le premier exemple présente l'exécution réussie d'une séquence de quatre activités compensables où la deuxième et la troisième sont imbriqués dans un `AutoConfirmScope`.</span><span class="sxs-lookup"><span data-stu-id="c8477-104">The first sample shows the successful execution of a sequence of four compensable activities where the second and third are nested in an `AutoConfirmScope`.</span></span> <span data-ttu-id="c8477-105">Le deuxième exemple présente la même séquence avec une exception qui se produit après l'exécution du quatrième <xref:System.Activities.Statements.CompensableActivity>.</span><span class="sxs-lookup"><span data-stu-id="c8477-105">The second sample shows the same sequence with an exception occurring after the execution of the fourth <xref:System.Activities.Statements.CompensableActivity>.</span></span> <span data-ttu-id="c8477-106">Le troisième scénario présente la même séquence avec une exception qui se produit dans `AutoConfirmScope` une fois le deuxième <xref:System.Activities.Statements.CompensableActivity> terminé.</span><span class="sxs-lookup"><span data-stu-id="c8477-106">The third scenario shows the same sequence with an exception occurring in the `AutoConfirmScope` after the second <xref:System.Activities.Statements.CompensableActivity> completes.</span></span>  
   
- L'exemple illustre le modèle de confirmation automatique où toutes les activités compensables enfants sont confirmées une fois l'étendue terminée avec succès.Ce modèle définit la durée de vie de toutes les activités compensables enfants, lorsqu'elles ne peuvent plus être compensées ou confirmées.  
+ <span data-ttu-id="c8477-107">L'exemple illustre le modèle de confirmation automatique où toutes les activités compensables enfants sont confirmées une fois l'étendue terminée avec succès.</span><span class="sxs-lookup"><span data-stu-id="c8477-107">The sample demonstrates the auto-confirm pattern where all child compensable activities are confirmed upon successful completion of the scope.</span></span> <span data-ttu-id="c8477-108">Ce modèle définit la durée de vie de toutes les activités compensables enfants, lorsqu'elles ne peuvent plus être compensées ou confirmées.</span><span class="sxs-lookup"><span data-stu-id="c8477-108">This pattern defines the lifetime of all child compensable activities, as they can no longer be compensated or confirmed.</span></span>  
   
- L'étendue est composée d'un <xref:System.Activities.Statements.TryCatch> où <xref:System.Activities.Statements.TryCatch.Try%2A> est un <xref:System.Activities.Statements.CompensableActivity> interne.Le corps spécifié par l'utilisateur d'`AutoConfirmScope` est le corps du <xref:System.Activities.Statements.CompensableActivity> interne.Lorsque ce <xref:System.Activities.Statements.CompensableActivity> interne se termine, il produit un <xref:System.Activities.Statements.CompensationToken> comme argument de sortie.`AutoConfirmScope` utilise un <xref:System.Activities.Statements.TryCatch.Finally%2A> pour vérifier si le jeton a été produit, et si tel est le cas, il confirme ensuite le <xref:System.Activities.Statements.CompensableActivity> interne.Le <xref:System.Activities.Statements.CompensableActivity> interne appelle la compensation par défaut pour toutes les activités compensables qui peuvent exister dans son corps.  
+ <span data-ttu-id="c8477-109">L'étendue est composée d'un <xref:System.Activities.Statements.TryCatch> où <xref:System.Activities.Statements.TryCatch.Try%2A> est un <xref:System.Activities.Statements.CompensableActivity> interne.</span><span class="sxs-lookup"><span data-stu-id="c8477-109">The scope consists of a <xref:System.Activities.Statements.TryCatch> where the <xref:System.Activities.Statements.TryCatch.Try%2A> is an internal <xref:System.Activities.Statements.CompensableActivity>.</span></span> <span data-ttu-id="c8477-110">Le corps spécifié par l'utilisateur d'`AutoConfirmScope` est le corps du <xref:System.Activities.Statements.CompensableActivity> interne.</span><span class="sxs-lookup"><span data-stu-id="c8477-110">The user-specified body of the `AutoConfirmScope` is the body of the inner <xref:System.Activities.Statements.CompensableActivity>.</span></span> <span data-ttu-id="c8477-111">Lorsque ce <xref:System.Activities.Statements.CompensableActivity> interne se termine, il produit un <xref:System.Activities.Statements.CompensationToken> comme argument de sortie.</span><span class="sxs-lookup"><span data-stu-id="c8477-111">When this internal <xref:System.Activities.Statements.CompensableActivity> completes, it produces a <xref:System.Activities.Statements.CompensationToken> as an out-argument.</span></span> <span data-ttu-id="c8477-112">`AutoConfirmScope` utilise un <xref:System.Activities.Statements.TryCatch.Finally%2A> pour vérifier si le jeton a été produit, et si tel est le cas, il confirme ensuite le <xref:System.Activities.Statements.CompensableActivity> interne.</span><span class="sxs-lookup"><span data-stu-id="c8477-112">The `AutoConfirmScope` uses a <xref:System.Activities.Statements.TryCatch.Finally%2A> to check whether the token has been produced and if it has then it confirms the inner <xref:System.Activities.Statements.CompensableActivity>.</span></span> <span data-ttu-id="c8477-113">Le <xref:System.Activities.Statements.CompensableActivity> interne appelle la compensation par défaut pour toutes les activités compensables qui peuvent exister dans son corps.</span><span class="sxs-lookup"><span data-stu-id="c8477-113">The inner <xref:System.Activities.Statements.CompensableActivity> invokes the default compensation for any compensable activities that may exist in its body.</span></span>  
   
- Le premier scénario illustre l'exécution réussie du workflow. Il montre que la deuxième et la troisième activités compensables sont déjà confirmées lorsque le workflow se termine et que la première et la quatrième sont confirmées.Cela produit un ordre de confirmation de trois, deux, quatre et un.  
+ <span data-ttu-id="c8477-114">Le premier scénario illustre l'exécution réussie du workflow. Il montre que la deuxième et la troisième activités compensables sont déjà confirmées lorsque le workflow se termine et que la première et la quatrième sont confirmées.</span><span class="sxs-lookup"><span data-stu-id="c8477-114">The first scenario shows successful execution of the workflow and demonstrates that the second and third compensable activities are already confirmed when the workflow completes and the first and fourth are confirmed.</span></span> <span data-ttu-id="c8477-115">Cela produit un ordre de confirmation de trois, deux, quatre et un.</span><span class="sxs-lookup"><span data-stu-id="c8477-115">This produces a confirmation order of three, two, four, and one.</span></span>  
   
- Le deuxième scénario présente une exception une fois les quatre activités compensables terminées.Étant donné que la deuxième et la troisième activités compensables sont déjà confirmées, elles ne sont pas affectées, mais les activités une et quatre sont compensées.Cela produit la confirmation de la troisième activité, la confirmation de la deuxième activité, la compensation de la quatrième activité et la compensation de la première activité.  
+ <span data-ttu-id="c8477-116">Le deuxième scénario présente une exception une fois les quatre activités compensables terminées.</span><span class="sxs-lookup"><span data-stu-id="c8477-116">The second scenario shows an exception after the four compensable activities have completed.</span></span> <span data-ttu-id="c8477-117">Étant donné que la deuxième et la troisième activités compensables sont déjà confirmées, elles ne sont pas affectées, mais les activités une et quatre sont compensées.</span><span class="sxs-lookup"><span data-stu-id="c8477-117">Because compensable activities two and three are already confirmed they are unaffected but one and four are compensated.</span></span> <span data-ttu-id="c8477-118">Cela produit la confirmation de la troisième activité, la confirmation de la deuxième activité, la compensation de la quatrième activité et la compensation de la première activité.</span><span class="sxs-lookup"><span data-stu-id="c8477-118">This produces confirm three, confirm two, compensate four and compensate one.</span></span>  
   
- Le dernier scénario présente l'échec de l'exécution de `AutoConfirmScope`.Dans ce scénario, une exception se produit une fois le deuxième <xref:System.Activities.Statements.CompensableActivity> terminé.Étant donné que la troisième et la quatrième activités compensables ne se sont pas exécutées, elles ne sont pas affectées.Étant donné que l'étendue ne s'est pas terminée avec succès, le deuxième <xref:System.Activities.Statements.CompensableActivity> n'est pas confirmé.Cela produit un ordre de compensation de deux, puis un.  
+ <span data-ttu-id="c8477-119">Le dernier scénario présente l'échec de l'exécution de `AutoConfirmScope`.</span><span class="sxs-lookup"><span data-stu-id="c8477-119">The final scenario shows unsuccessful execution of the `AutoConfirmScope`.</span></span> <span data-ttu-id="c8477-120">Dans ce scénario, une exception se produit une fois le deuxième <xref:System.Activities.Statements.CompensableActivity> terminé.</span><span class="sxs-lookup"><span data-stu-id="c8477-120">In this scenario, an exception occurs after the completion of the second <xref:System.Activities.Statements.CompensableActivity>.</span></span> <span data-ttu-id="c8477-121">Étant donné que la troisième et la quatrième activités compensables ne se sont pas exécutées, elles ne sont pas affectées.</span><span class="sxs-lookup"><span data-stu-id="c8477-121">Because the third and fourth compensable activities have not executed, they are unaffected.</span></span> <span data-ttu-id="c8477-122">Étant donné que l'étendue ne s'est pas terminée avec succès, le deuxième <xref:System.Activities.Statements.CompensableActivity> n'est pas confirmé.</span><span class="sxs-lookup"><span data-stu-id="c8477-122">Because the scope did not complete successfully, the second <xref:System.Activities.Statements.CompensableActivity> does not get confirmed.</span></span> <span data-ttu-id="c8477-123">Cela produit un ordre de compensation de deux, puis un.</span><span class="sxs-lookup"><span data-stu-id="c8477-123">This produces and compensation order of two then one.</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="c8477-124">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="c8477-124">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution AutoConfirmSample.sln.  
+1.  <span data-ttu-id="c8477-125">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution AutoConfirmSample.sln.</span><span class="sxs-lookup"><span data-stu-id="c8477-125">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the AutoConfirmSample.sln solution file.</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+2.  <span data-ttu-id="c8477-126">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="c8477-126">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  Pour exécuter la solution, appuyez sur Ctrl\+F5.  
+3.  <span data-ttu-id="c8477-127">Pour exécuter la solution, appuyez sur Ctrl+F5.</span><span class="sxs-lookup"><span data-stu-id="c8477-127">To run the solution, press CTRL+F5.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="c8477-128">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="c8477-128">The samples may already be installed on your machine.</span></span> <span data-ttu-id="c8477-129">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="c8477-129">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="c8477-130">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="c8477-130">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="c8477-131">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="c8477-131">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Scenario\Compensation\AutoConfirm`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Compensation\AutoConfirm`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="c8477-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c8477-132">See Also</span></span>

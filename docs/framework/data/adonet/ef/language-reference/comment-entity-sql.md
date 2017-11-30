@@ -1,48 +1,46 @@
 ---
-title: "-- (Commentaire) (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: -- (Commentaire) (Entity SQL)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5d9de735-2099-47f1-b7e7-60856f494924
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 1961542e615bbbd99bbc517bdd7d649be3f3ef07
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# -- (Commentaire) (Entity SQL)
-Les requêtes [!INCLUDE[esql](../../../../../../includes/esql-md.md)] peuvent contenir des commentaires. Deux tirets \(`--`\) marquent le début d'une ligne de commentaire.  
+# <a name="---comment-entity-sql"></a><span data-ttu-id="4d7cd-102">-- (Commentaire) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="4d7cd-102">-- (Comment) (Entity SQL)</span></span>
+<span data-ttu-id="4d7cd-103">Les requêtes[!INCLUDE[esql](../../../../../../includes/esql-md.md)] peuvent contenir des commentaires.</span><span class="sxs-lookup"><span data-stu-id="4d7cd-103">[!INCLUDE[esql](../../../../../../includes/esql-md.md)] queries can contain comments.</span></span> <span data-ttu-id="4d7cd-104">Deux tirets (`--`) marquent le début d'une ligne de commentaire.</span><span class="sxs-lookup"><span data-stu-id="4d7cd-104">Two dashes (`--`) start a comment line.</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="4d7cd-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4d7cd-105">Syntax</span></span>  
   
 ```  
-  
 -- text_of_comment  
 ```  
   
-## Arguments  
+## <a name="arguments"></a><span data-ttu-id="4d7cd-106">Arguments</span><span class="sxs-lookup"><span data-stu-id="4d7cd-106">Arguments</span></span>  
  `text_of_comment`  
- Chaîne de caractères contenant le texte du commentaire.  
+ <span data-ttu-id="4d7cd-107">Chaîne de caractères contenant le texte du commentaire.</span><span class="sxs-lookup"><span data-stu-id="4d7cd-107">Is the character string that contains the text of the comment.</span></span>  
   
-## Exemple  
- La requête Entity SQL ci\-dessous montre comment utiliser les commentaires. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
+## <a name="example"></a><span data-ttu-id="4d7cd-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="4d7cd-108">Example</span></span>  
+ <span data-ttu-id="4d7cd-109">La requête Entity SQL ci-dessous montre comment utiliser les commentaires.</span><span class="sxs-lookup"><span data-stu-id="4d7cd-109">The following Entity SQL query demonstrates how to use comments.</span></span> <span data-ttu-id="4d7cd-110">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="4d7cd-110">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="4d7cd-111">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="4d7cd-111">To compile and run this query, follow these steps:</span></span>  
   
-1.  Suivez la procédure indiquée dans [Procédure : exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1.  <span data-ttu-id="4d7cd-112">Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="4d7cd-112">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
   
-2.  Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
+2.  <span data-ttu-id="4d7cd-113">Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="4d7cd-113">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#COMMENT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#comment)]  
   
-## Voir aussi  
- [Vue d'ensemble d'Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)   
- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a><span data-ttu-id="4d7cd-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4d7cd-114">See Also</span></span>  
+ [<span data-ttu-id="4d7cd-115">Vue d’ensemble de Entity SQL</span><span class="sxs-lookup"><span data-stu-id="4d7cd-115">Entity SQL Overview</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
+ [<span data-ttu-id="4d7cd-116">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="4d7cd-116">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

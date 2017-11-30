@@ -1,25 +1,28 @@
 ---
-title: "TcpTransportBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: TcpTransportBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 33bbc1e5-44e4-4ee3-b7b5-801dc78956e4
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 180e954661319cb32edfd3180418fe9b1571ea5c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# TcpTransportBindingElement
-TcpTransportBindingElement  
+# <a name="tcptransportbindingelement"></a><span data-ttu-id="2bcb7-102">TcpTransportBindingElement</span><span class="sxs-lookup"><span data-stu-id="2bcb7-102">TcpTransportBindingElement</span></span>
+<span data-ttu-id="2bcb7-103">TcpTransportBindingElement</span><span class="sxs-lookup"><span data-stu-id="2bcb7-103">TcpTransportBindingElement</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="2bcb7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2bcb7-104">Syntax</span></span>  
   
 ```  
 class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement  
@@ -31,45 +34,45 @@ class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement
 };  
 ```  
   
-## Méthodes  
- La classe TcpTransportBindingElement ne définit pas de méthode.  
+## <a name="methods"></a><span data-ttu-id="2bcb7-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="2bcb7-105">Methods</span></span>  
+ <span data-ttu-id="2bcb7-106">La classe TcpTransportBindingElement ne définit pas de méthode.</span><span class="sxs-lookup"><span data-stu-id="2bcb7-106">The TcpTransportBindingElement class does not define any methods.</span></span>  
   
-## Propriétés  
- La classe TcpTransportBindingElement a les propriétés suivantes :  
+## <a name="properties"></a><span data-ttu-id="2bcb7-107">Propriétés</span><span class="sxs-lookup"><span data-stu-id="2bcb7-107">Properties</span></span>  
+ <span data-ttu-id="2bcb7-108">La classe TcpTransportBindingElement a les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="2bcb7-108">The TcpTransportBindingElement class has the following properties:</span></span>  
   
-### ConnectionPoolSettings  
- Type de données : TcpConnectionPoolSettings  
+### <a name="connectionpoolsettings"></a><span data-ttu-id="2bcb7-109">ConnectionPoolSettings</span><span class="sxs-lookup"><span data-stu-id="2bcb7-109">ConnectionPoolSettings</span></span>  
+ <span data-ttu-id="2bcb7-110">Type de données : TcpConnectionPoolSettings</span><span class="sxs-lookup"><span data-stu-id="2bcb7-110">Data type: TcpConnectionPoolSettings</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="2bcb7-111">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="2bcb7-111">Access type: Read-only</span></span>  
   
- Paramètres de pool de connexions.  
+ <span data-ttu-id="2bcb7-112">Paramètres de pool de connexions.</span><span class="sxs-lookup"><span data-stu-id="2bcb7-112">The connection pool settings.</span></span>  
   
-### ListenBacklog  
- Type de données : sint32  
+### <a name="listenbacklog"></a><span data-ttu-id="2bcb7-113">ListenBacklog</span><span class="sxs-lookup"><span data-stu-id="2bcb7-113">ListenBacklog</span></span>  
+ <span data-ttu-id="2bcb7-114">Type de données : sint32</span><span class="sxs-lookup"><span data-stu-id="2bcb7-114">Data type: sint32</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="2bcb7-115">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="2bcb7-115">Access type: Read-only</span></span>  
   
- Nombre maximal de demandes de connexion en file d'attente pouvant être en attente.  
+ <span data-ttu-id="2bcb7-116">Nombre maximal de demandes de connexion en file d'attente pouvant être en attente.</span><span class="sxs-lookup"><span data-stu-id="2bcb7-116">The maximum number of queued connection requests that can be pending.</span></span>  
   
-### PortSharingEnabled  
- Type de données : booléen  
+### <a name="portsharingenabled"></a><span data-ttu-id="2bcb7-117">PortSharingEnabled</span><span class="sxs-lookup"><span data-stu-id="2bcb7-117">PortSharingEnabled</span></span>  
+ <span data-ttu-id="2bcb7-118">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="2bcb7-118">Data type: boolean</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="2bcb7-119">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="2bcb7-119">Access type: Read-only</span></span>  
   
- Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion.  
+ <span data-ttu-id="2bcb7-120">Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion.</span><span class="sxs-lookup"><span data-stu-id="2bcb7-120">A boolean value that specifies whether TCP port sharing is enabled for this connection.</span></span>  
   
-### TeredoEnabled  
- Type de données : booléen  
+### <a name="teredoenabled"></a><span data-ttu-id="2bcb7-121">TeredoEnabled</span><span class="sxs-lookup"><span data-stu-id="2bcb7-121">TeredoEnabled</span></span>  
+ <span data-ttu-id="2bcb7-122">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="2bcb7-122">Data type: boolean</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="2bcb7-123">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="2bcb7-123">Access type: Read-only</span></span>  
   
- Valeur booléenne qui spécifie si Teredo \(technologie d'adressage de clients placés derrière des pare\-feu\) est activé.  
+ <span data-ttu-id="2bcb7-124">Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé.</span><span class="sxs-lookup"><span data-stu-id="2bcb7-124">A boolean value that specifies whether Teredo (a technology for addressing clients that are behind firewalls) is enabled.</span></span>  
   
-## Spécifications  
+## <a name="requirements"></a><span data-ttu-id="2bcb7-125">Spécifications</span><span class="sxs-lookup"><span data-stu-id="2bcb7-125">Requirements</span></span>  
   
-|MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|<span data-ttu-id="2bcb7-126">MOF</span><span class="sxs-lookup"><span data-stu-id="2bcb7-126">MOF</span></span>|<span data-ttu-id="2bcb7-127">Déclaré dans Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="2bcb7-127">Declared in Servicemodel.mof.</span></span>|  
+|---------|-----------------------------------|  
+|<span data-ttu-id="2bcb7-128">Espace de noms</span><span class="sxs-lookup"><span data-stu-id="2bcb7-128">Namespace</span></span>|<span data-ttu-id="2bcb7-129">Défini dans root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="2bcb7-129">Defined in root\ServiceModel</span></span>|  
   
-## Voir aussi  
+## <a name="see-also"></a><span data-ttu-id="2bcb7-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2bcb7-130">See Also</span></span>  
  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>

@@ -1,42 +1,46 @@
 ---
-title: "Glossaire Windows Workflow Foundation pour .NET Framework&#160;4.5 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WF [WF], glossaire"
-  - "Windows Workflow Foundation [WF], glossaire"
+title: "Glossaire Windows Workflow Foundation pour .NET Framework 4.5"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Workflow Foundation [WF], glossary
+- WF [WF], glossary
 ms.assetid: ab682b2f-3779-45ca-b831-b7c03d7dbb3a
-caps.latest.revision: 259
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 259
+caps.latest.revision: "259"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c0c1e6fa7eee64283dce20b24a1a957f1d2d8f8f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Glossaire Windows Workflow Foundation pour .NET Framework&#160;4.5
-Les termes suivants sont utilisés dans la documentation de Windows Workflow Foundation.  
+# <a name="windows-workflow-foundation-glossary-for-net-framework-45"></a><span data-ttu-id="8fc9d-102">Glossaire Windows Workflow Foundation pour .NET Framework 4.5</span><span class="sxs-lookup"><span data-stu-id="8fc9d-102">Windows Workflow Foundation Glossary for .NET Framework 4.5</span></span>
+<span data-ttu-id="8fc9d-103">Les termes suivants sont utilisés dans la documentation de Windows Workflow Foundation.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-103">The following terms are used in the Windows Workflow Foundation documentation.</span></span>  
   
-## Termes  
+## <a name="terms"></a><span data-ttu-id="8fc9d-104">Termes</span><span class="sxs-lookup"><span data-stu-id="8fc9d-104">Terms</span></span>  
   
-|Terme|Définition|  
-|-----------|----------------|  
-|activité|Unité de comportement de programme dans Windows Workflow Foundation.Les activités simples peuvent être décomposées en activités plus complexes.|  
-|action d'activité|Structure de données utilisée pour exposer des rappels pour l'exécution de workflows et d'activités.|  
-|argument|Définit le flux de données dans et hors d'une activité.Chaque argument a une direction spécifiée : dans, hors ou dans\/hors.Ils représentent les paramètres d'entrée, de sortie et d'entrée\/sortie de l'activité.|  
-|signet|Point auquel une activité peut être suspendue et attendre sa reprise.|  
-|compensation|Groupe d'actions conçu pour annuler ou atténuer l'effet d'un travail précédent.|  
-|corrélation|Mécanisme d'acheminement de messages vers une instance de service ou de workflow.|  
-|expression|Construction qui accepte un ou plusieurs arguments, effectue une opération sur ces arguments et retourne une valeur unique.Les expressions peuvent être utilisées partout où une activité peut l'être également.|  
-|organigramme|Paradigme de modélisation célèbre qui représente les composants d'un programme sous forme de symboles liés entre eux par des flèches directionnelles.Dans .NET Framework 4, les workflows peuvent être modélisés en tant qu'organigrammes à l'aide de l'activité Flowchart.|  
-|processus de longue durée|Unité d'exécution d'un programme qui ne retourne pas les résultats immédiatement et peut se prolonger au\-delà de plusieurs redémarrages du système.|  
-|persistance|Enregistrement de l'état d'un workflow ou d'un service sur un support durable, afin qu'il puisse être déchargé de la mémoire ou récupéré après une défaillance du système.|  
-|ordinateur d'état|Paradigme de modélisation célèbre qui représente les composants d'un programme en tant qu'états individuels liés entre eux par des transitions d'état pilotés par événement.Les workflows peuvent être modélisés comme ordinateurs d'état à l'aide de l'activité StateMachine.|  
-|substance|Représente un groupe de signets associés sous un identificateur commun et permet au runtime de prendre des décisions quant à la validité ou à la date de prochaine validité de la reprise d'un signet particulier.|  
-|convertisseur de type|Un type CLR peut être associé à un ou plusieurs types System.ComponentModel.TypeConverter dérivés qui permettent la conversion d'instances de type CLR en instances d'autres types.Un convertisseur de type est associé à un type CLR à l'aide de l'attribut System.ComponentModel.TypeConverterAttribute.Un TypeConverterAttribute peut être spécifié directement sur le type CLR ou sur une propriété.Un convertisseur de type spécifié sur une propriété a toujours priorité sur un convertisseur de type spécifié sur le type CLR de la propriété.|  
-|variable|Représente le stockage de certaines données qui doivent être enregistrées en vue d'un accès ultérieur.|  
-|workflow|Activité unique ou arborescence d'activités appelée par un processus hôte.|  
-|XAML|Langage XAML \(eXtensible Application Markup Language\)|
+|<span data-ttu-id="8fc9d-105">Terme</span><span class="sxs-lookup"><span data-stu-id="8fc9d-105">Term</span></span>|<span data-ttu-id="8fc9d-106">Définition</span><span class="sxs-lookup"><span data-stu-id="8fc9d-106">Definition</span></span>|  
+|----------|----------------|  
+|<span data-ttu-id="8fc9d-107">activité</span><span class="sxs-lookup"><span data-stu-id="8fc9d-107">activity</span></span>|<span data-ttu-id="8fc9d-108">Unité de comportement de programme dans Windows Workflow Foundation.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-108">A unit of program behavior in Windows Workflow Foundation.</span></span> <span data-ttu-id="8fc9d-109">Les activités simples peuvent être décomposées en activités plus complexes.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-109">Single activities can be composed together into more complex activities.</span></span>|  
+|<span data-ttu-id="8fc9d-110">action d'activité</span><span class="sxs-lookup"><span data-stu-id="8fc9d-110">activity action</span></span>|<span data-ttu-id="8fc9d-111">Structure de données utilisée pour exposer des rappels pour l'exécution de workflows et d'activités.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-111">A data structure used to expose callbacks for workflow and activity execution.</span></span>|  
+|<span data-ttu-id="8fc9d-112">argument</span><span class="sxs-lookup"><span data-stu-id="8fc9d-112">argument</span></span>|<span data-ttu-id="8fc9d-113">Définit le flux de données dans et hors d'une activité.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-113">Defines the data flow into and out of an activity.</span></span> <span data-ttu-id="8fc9d-114">Chaque argument a une direction spécifiée : dans, hors ou dans/hors. Ils représentent les paramètres d'entrée, de sortie et d'entrée/sortie de l'activité.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-114">Each argument has a specified direction: in, out, or in/out. These represent the input, output, and input/output parameters of the activity.</span></span>|  
+|<span data-ttu-id="8fc9d-115">signet</span><span class="sxs-lookup"><span data-stu-id="8fc9d-115">bookmark</span></span>|<span data-ttu-id="8fc9d-116">Point auquel une activité peut être suspendue et attendre sa reprise.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-116">The point at which an activity can pause and wait to be resumed.</span></span>|  
+|<span data-ttu-id="8fc9d-117">compensation</span><span class="sxs-lookup"><span data-stu-id="8fc9d-117">compensation</span></span>|<span data-ttu-id="8fc9d-118">Groupe d'actions conçu pour annuler ou atténuer l'effet d'un travail précédent.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-118">A group of actions designed to undo or mitigate the effect of previously completed work.</span></span>|  
+|<span data-ttu-id="8fc9d-119">corrélation</span><span class="sxs-lookup"><span data-stu-id="8fc9d-119">correlation</span></span>|<span data-ttu-id="8fc9d-120">Mécanisme d'acheminement de messages vers une instance de service ou de workflow.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-120">The mechanism for routing messages to a workflow or service instance.</span></span>|  
+|<span data-ttu-id="8fc9d-121">expression</span><span class="sxs-lookup"><span data-stu-id="8fc9d-121">expression</span></span>|<span data-ttu-id="8fc9d-122">Construction qui accepte un ou plusieurs arguments, effectue une opération sur ces arguments et retourne une valeur unique.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-122">A construct that takes in one or more arguments, performs an operation on the arguments and returns a single value.</span></span> <span data-ttu-id="8fc9d-123">Les expressions peuvent être utilisées partout où une activité peut l'être également.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-123">Expressions can be used anywhere an activity can be used.</span></span>|  
+|<span data-ttu-id="8fc9d-124">organigramme</span><span class="sxs-lookup"><span data-stu-id="8fc9d-124">flowchart</span></span>|<span data-ttu-id="8fc9d-125">Paradigme de modélisation célèbre qui représente les composants d'un programme sous forme de symboles liés entre eux par des flèches directionnelles.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-125">A well-known modeling paradigm that represents program components as symbols linked together with directional arrows.</span></span>  <span data-ttu-id="8fc9d-126">Dans le .NET Framework 4, les workflows peuvent être modélisés en tant qu'organigrammes à l'aide de l'activité Flowchart.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-126">In the .NET Framework 4, workflows can be modeled as flowcharts using the Flowchart activity.</span></span>|  
+|<span data-ttu-id="8fc9d-127">processus de longue durée</span><span class="sxs-lookup"><span data-stu-id="8fc9d-127">long-running process</span></span>|<span data-ttu-id="8fc9d-128">Unité d'exécution d'un programme qui ne retourne pas les résultats immédiatement et peut se prolonger au-delà de plusieurs redémarrages du système.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-128">A unit of program execution that does not return immediately and may span system restarts.</span></span>|  
+|<span data-ttu-id="8fc9d-129">persistance</span><span class="sxs-lookup"><span data-stu-id="8fc9d-129">persistence</span></span>|<span data-ttu-id="8fc9d-130">Enregistrement de l'état d'un workflow ou d'un service sur un support durable, afin qu'il puisse être déchargé de la mémoire ou récupéré après une défaillance du système.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-130">Saving the state of a workflow or service to a durable medium, so that it can be unloaded from memory or recovered after a system failure.</span></span>|  
+|<span data-ttu-id="8fc9d-131">ordinateur d'état</span><span class="sxs-lookup"><span data-stu-id="8fc9d-131">state machine</span></span>|<span data-ttu-id="8fc9d-132">Paradigme de modélisation célèbre qui représente les composants d'un programme en tant qu'états individuels liés entre eux par des transitions d'état pilotés par événement.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-132">A well-known modeling paradigm that represents program components as individual states linked together with event-driven state transitions.</span></span>  <span data-ttu-id="8fc9d-133">Les workflows peuvent être modélisés comme ordinateurs d'état à l'aide de l'activité StateMachine.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-133">Workflows can be modeled as state machines using the StateMachine activity.</span></span>|  
+|<span data-ttu-id="8fc9d-134">substance</span><span class="sxs-lookup"><span data-stu-id="8fc9d-134">substance</span></span>|<span data-ttu-id="8fc9d-135">Représente un groupe de signets associés sous un identificateur commun et permet au runtime de prendre des décisions quant à la validité ou à la date de prochaine validité de la reprise d'un signet particulier.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-135">Represents a group of related bookmarks under a common identifier and allows the runtime to make decisions about whether a particular bookmark resumption is valid or may become valid.</span></span>|  
+|<span data-ttu-id="8fc9d-136">convertisseur de type</span><span class="sxs-lookup"><span data-stu-id="8fc9d-136">type converter</span></span>|<span data-ttu-id="8fc9d-137">Un type CLR peut être associé à un ou plusieurs types System.ComponentModel.TypeConverter dérivés qui permettent la conversion d'instances de type CLR en instances d'autres types.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-137">A CLR type can be associated with one or more System.ComponentModel.TypeConverter derived types that enable converting instances of the CLR type to and from instances of other types.</span></span> <span data-ttu-id="8fc9d-138">Un convertisseur de type est associé à un type CLR à l'aide de l'attribut System.ComponentModel.TypeConverterAttribute.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-138">A type converterr is associated with a CLR type using the System.ComponentModel.TypeConverterAttribute attribute.</span></span>  <span data-ttu-id="8fc9d-139">Un TypeConverterAttribute peut être spécifié directement sur le type CLR ou sur une propriété.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-139">A TypeConverterAttribute can be specified directly on the CLR type or on a property.</span></span> <span data-ttu-id="8fc9d-140">Un convertisseur de type spécifié sur une propriété a toujours priorité sur un convertisseur de type spécifié sur le type CLR de la propriété.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-140">A type converter specified on a property always takes precedence over a type converter specified on the CLR type of the property.</span></span>|  
+|<span data-ttu-id="8fc9d-141">variable</span><span class="sxs-lookup"><span data-stu-id="8fc9d-141">variable</span></span>|<span data-ttu-id="8fc9d-142">Représente le stockage de certaines données qui doivent être enregistrées en vue d'un accès ultérieur.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-142">Represents the storage of some data that must be saved and accessed later.</span></span>|  
+|<span data-ttu-id="8fc9d-143">flux de travail</span><span class="sxs-lookup"><span data-stu-id="8fc9d-143">workflow</span></span>|<span data-ttu-id="8fc9d-144">Activité unique ou arborescence d'activités appelée par un processus hôte.</span><span class="sxs-lookup"><span data-stu-id="8fc9d-144">A single activity or tree of activities invoked by a host process.</span></span>|  
+|<span data-ttu-id="8fc9d-145">XAML</span><span class="sxs-lookup"><span data-stu-id="8fc9d-145">XAML</span></span>|<span data-ttu-id="8fc9d-146">Langage XAML (eXtensible Application Markup Language)</span><span class="sxs-lookup"><span data-stu-id="8fc9d-146">eXtensible Application Markup Language</span></span>|

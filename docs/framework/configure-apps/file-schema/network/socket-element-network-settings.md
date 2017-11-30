@@ -1,104 +1,105 @@
 ---
-title: "&lt;socket&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/socket"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#socket"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<socket> (élément)"
-  - "socket (élément)"
+title: "&lt;socket&gt; élément (paramètres réseau)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/socket
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#socket
+helpviewer_keywords:
+- <socket> element
+- socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-caps.latest.revision: 21
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 3d1adc163e889a0de6ad27347c8f122ac26d3524
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;socket&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau)
-Spécifie si les opérations de socket utilisent des ports de terminaison.  
+# <a name="ltsocketgt-element-network-settings"></a><span data-ttu-id="68a09-102">&lt;socket&gt; élément (paramètres réseau)</span><span class="sxs-lookup"><span data-stu-id="68a09-102">&lt;socket&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="68a09-103">Spécifie si les opérations de socket utilisent des ports de terminaison.</span><span class="sxs-lookup"><span data-stu-id="68a09-103">Specifies whether socket operations use completion ports.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="68a09-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="68a09-104">\<configuration></span></span>  
+<span data-ttu-id="68a09-105">\<System.NET ></span><span class="sxs-lookup"><span data-stu-id="68a09-105">\<system.net></span></span>  
+<span data-ttu-id="68a09-106">\<Paramètres ></span><span class="sxs-lookup"><span data-stu-id="68a09-106">\<settings></span></span>  
+<span data-ttu-id="68a09-107">\<Socket ></span><span class="sxs-lookup"><span data-stu-id="68a09-107">\<socket></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="68a09-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="68a09-108">Syntax</span></span>  
   
-      <socket  
+```xml  
+<socket  
   alwaysUseCompletionPortsForConnect="true|false"  
   alwaysUseCompletionPortsForAccept="true|false"  
-  ipProtectionLevel ="EdgeRestricted|Restricted|Unrestricted|Unspecified"  
-/socket>  
+  ipProtectionLevel="EdgeRestricted|Restricted|Unrestricted|Unspecified"  
+/>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="68a09-109">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="68a09-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="68a09-110">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="68a09-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="68a09-111">Attributs</span><span class="sxs-lookup"><span data-stu-id="68a09-111">Attributes</span></span>  
   
-|**Attribut**|**Description**|  
-|------------------|---------------------|  
-|`alwaysUseCompletionPortsForAccept`|Indique si le socket doit toujours utiliser des ports de terminaison pour les appels à la méthode Accept.  La valeur par défaut est `false`.|  
-|`alwaysUseCompletionPortsForConnect`|Indique si le socket doit toujours utiliser des ports de terminaison pour les appels à la méthode Connect.  La valeur par défaut est `false`.|  
-|`ipProtectionLevel`|Spécifie le <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> par défaut à utiliser pour un socket.  La valeur par défaut dépend de la version de Windows.|  
+|<span data-ttu-id="68a09-112">**Attribut**</span><span class="sxs-lookup"><span data-stu-id="68a09-112">**Attribute**</span></span>|<span data-ttu-id="68a09-113">**Description**</span><span class="sxs-lookup"><span data-stu-id="68a09-113">**Description**</span></span>|  
+|-------------------|---------------------|  
+|`alwaysUseCompletionPortsForAccept`|<span data-ttu-id="68a09-114">Indique si le socket doit toujours utiliser des ports de terminaison pour accepter les appels de méthode.</span><span class="sxs-lookup"><span data-stu-id="68a09-114">Indicates whether the socket should always use completion ports for Accept method calls.</span></span> <span data-ttu-id="68a09-115">La valeur par défaut est `false`.</span><span class="sxs-lookup"><span data-stu-id="68a09-115">The default value is `false`.</span></span>|  
+|`alwaysUseCompletionPortsForConnect`|<span data-ttu-id="68a09-116">Indique si le socket doit toujours utiliser des ports de terminaison pour les appels de méthode de connexion.</span><span class="sxs-lookup"><span data-stu-id="68a09-116">Indicates whether the socket should always use completion ports for Connect method calls.</span></span> <span data-ttu-id="68a09-117">La valeur par défaut est `false`.</span><span class="sxs-lookup"><span data-stu-id="68a09-117">The default value is `false`.</span></span>|  
+|`ipProtectionLevel`|<span data-ttu-id="68a09-118">Spécifie la valeur par défaut <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> à utiliser pour un socket.</span><span class="sxs-lookup"><span data-stu-id="68a09-118">Specifies the default <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> to use for a socket.</span></span> <span data-ttu-id="68a09-119">La valeur par défaut dépend de la version de Windows.</span><span class="sxs-lookup"><span data-stu-id="68a09-119">The default value depends on the version of Windows.</span></span>|  
   
-### Éléments enfants  
- Aucun.  
+### <a name="child-elements"></a><span data-ttu-id="68a09-120">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="68a09-120">Child Elements</span></span>  
+ <span data-ttu-id="68a09-121">Aucun.</span><span class="sxs-lookup"><span data-stu-id="68a09-121">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="68a09-122">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="68a09-122">Parent Elements</span></span>  
   
-|**Élément**|**Description**|  
+|<span data-ttu-id="68a09-123">**Élément**</span><span class="sxs-lookup"><span data-stu-id="68a09-123">**Element**</span></span>|<span data-ttu-id="68a09-124">**Description**</span><span class="sxs-lookup"><span data-stu-id="68a09-124">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[paramètres](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Configure les options réseau de base pour l'espace de noms <xref:System.Net>.|  
+|[<span data-ttu-id="68a09-125">Paramètres</span><span class="sxs-lookup"><span data-stu-id="68a09-125">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="68a09-126">Configure les options réseau de base pour l’espace de noms <xref:System.Net>.</span><span class="sxs-lookup"><span data-stu-id="68a09-126">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
   
-## Notes  
- Les attributs `alwaysUseCompletionPortsForConnect` et `alwaysUseCompletionPortsForAccept` sont utilisés pour spécifier le comportement par défaut concernant l'utilisation de ports de terminaison par les classes dans <xref:System.Net.Sockets?displayProperty=fullName>.namespace.  Les ports de terminaison sont recommandés pour les applications serveur hautement performantes.  
+## <a name="remarks"></a><span data-ttu-id="68a09-127">Remarques</span><span class="sxs-lookup"><span data-stu-id="68a09-127">Remarks</span></span>  
+ <span data-ttu-id="68a09-128">Le `alwaysUseCompletionPortsForAccept` et `alwaysUseCompletionPortsForConnect` attributs sont utilisés pour spécifier le comportement par défaut concernant l’utilisation de ports de terminaison par les classes dans le <xref:System.Net.Sockets?displayProperty=nameWithType>.namespace.</span><span class="sxs-lookup"><span data-stu-id="68a09-128">The `alwaysUseCompletionPortsForAccept` and `alwaysUseCompletionPortsForConnect` attributes are used to specify the default behavior regarding the use of completion ports by the classes in the <xref:System.Net.Sockets?displayProperty=nameWithType>.namespace.</span></span> <span data-ttu-id="68a09-129">Ports de terminaison sont recommandés pour les applications de serveur hautes performances.</span><span class="sxs-lookup"><span data-stu-id="68a09-129">Completion ports are recommended for high performance server applications.</span></span>  
   
- La valeur par défaut pour les attributs `alwaysUseCompletionPortsForAccept` et `alwaysUseCompletionPortsForConnect` est **false**.  
+ <span data-ttu-id="68a09-130">La valeur par défaut pour le `alwaysUseCompletionPortsForAccept` et `alwaysUseCompletionPortsForConnect` attributs est **false**.</span><span class="sxs-lookup"><span data-stu-id="68a09-130">The default value for the `alwaysUseCompletionPortsForAccept` and `alwaysUseCompletionPortsForConnect` attributes is **false**.</span></span>  
   
- La propriété <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A> peut être utilisée pour obtenir la valeur actuelle de l'attribut `alwaysUseCompletionPortsForAccept` de fichiers de configuration applicables.  La propriété <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect%2A> peut être utilisée pour obtenir la valeur actuelle de l'attribut `alwaysUseCompletionPortsForConnect` de fichiers de configuration applicables.  
+ <span data-ttu-id="68a09-131">Le <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A> peut être utilisé pour obtenir la valeur actuelle de la `alwaysUseCompletionPortsForAccept` attribut à partir des fichiers de configuration applicables.</span><span class="sxs-lookup"><span data-stu-id="68a09-131">The <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A> can be used to get the current value of the `alwaysUseCompletionPortsForAccept` attribute from applicable configuration files.</span></span> <span data-ttu-id="68a09-132">Le <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect%2A> peut être utilisé pour obtenir la valeur actuelle de la `alwaysUseCompletionPortsForConnect` attribut à partir des fichiers de configuration applicables.</span><span class="sxs-lookup"><span data-stu-id="68a09-132">The <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect%2A> can be used to get the current value of the `alwaysUseCompletionPortsForConnect` attribute from applicable configuration files.</span></span>  
   
- L'attribut `ipProtectionLevel` spécifie le <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> par défaut à utiliser pour un socket.  La propriété <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> permet la configuration d'une restriction pour un socket IPv6 à une portée spécifiée, telle que les adresses avec le même préfixe de lien local ou site local.  Cette option permet aux applications de placer des restrictions d'accès sur les sockets IPv6.  Ces restrictions permettent à une application qui s'exécute sur un réseau local privé de se renforcer facilement et efficacement contre les attaques externes.  Cette option étend ou limite la portée d'un socket d'écoute, en permettant l'accès illimité des utilisateurs privés et publics lorsque cela s'avère nécessaire ou en restreignant uniquement l'accès au même site, comme requis.  
+ <span data-ttu-id="68a09-133">Le `ipProtectionLevel` attribut spécifie la valeur par défaut <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> à utiliser pour un socket.</span><span class="sxs-lookup"><span data-stu-id="68a09-133">The `ipProtectionLevel` attribute specifies the default <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> to use for a socket.</span></span> <span data-ttu-id="68a09-134">Le <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> propriété permet la configuration d’une restriction pour un socket IPv6 à une portée spécifiée, telles que les adresses avec le même lien locales préfixe ou de site local.</span><span class="sxs-lookup"><span data-stu-id="68a09-134">The <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> property enables configuration of a restriction for an IPv6 socket to a specified scope, such as addresses with the same link local or site local prefix.</span></span> <span data-ttu-id="68a09-135">Cette option permet aux applications de placer des restrictions d’accès sur les sockets IPv6.</span><span class="sxs-lookup"><span data-stu-id="68a09-135">This option enables applications to place access restrictions on IPv6 sockets.</span></span> <span data-ttu-id="68a09-136">Ces restrictions permettent à une application qui s'exécute sur un réseau local privé de se renforcer facilement et efficacement contre les attaques externes.</span><span class="sxs-lookup"><span data-stu-id="68a09-136">Such restrictions enable an application running on a private LAN to simply and robustly harden itself against external attacks.</span></span> <span data-ttu-id="68a09-137">Cette option élargit ou limite la portée d’un socket en écoute, permettant l’accès illimité des utilisateurs publics et privés le cas échéant, ou restreindre l’accès au même site, en fonction des besoins.</span><span class="sxs-lookup"><span data-stu-id="68a09-137">This option widens or narrows the scope of a listening socket, enabling unrestricted access from public and private users when appropriate, or restricting access only to the same site, as required.</span></span>  
   
- Ce paramètre d'attribut `ipProtectionLevel` affecte le trafic entrant initial uniquement :  
+ <span data-ttu-id="68a09-138">Cela `ipProtectionLevel` paramètre d’attribut affecte uniquement le trafic entrant initial :</span><span class="sxs-lookup"><span data-stu-id="68a09-138">This `ipProtectionLevel` attribute setting affects only initial incoming traffic:</span></span>  
   
--   Serveur TCP qui écoute des connexions entrantes sur un socket.  
+-   <span data-ttu-id="68a09-139">Un serveur TCP à l’écoute les connexions entrantes sur un socket.</span><span class="sxs-lookup"><span data-stu-id="68a09-139">A TCP server listening for incoming connections on a socket.</span></span>  
   
--   Application UDP qui reçoit un paquet sur un socket.  
+-   <span data-ttu-id="68a09-140">Application UDP qui reçoit un paquet sur un socket.</span><span class="sxs-lookup"><span data-stu-id="68a09-140">A UDP application receiving a packet on a socket.</span></span>  
   
- Ce paramètre de configuration n'affecte pas les connexions TCP déjà établies \(le trafic n'est pas restreint dans les deux directions\) et n'affecte pas une application qui envoie des paquets UDP.  
+ <span data-ttu-id="68a09-141">Ce paramètre de configuration n’affecte pas les connexions TCP déjà établies (le trafic n’est pas restreint dans les deux directions) et n’affecte pas une application envoie des paquets UDP.</span><span class="sxs-lookup"><span data-stu-id="68a09-141">This configuration setting does not affect already established TCP connections (traffic is unrestricted in both directions) and does not affect an application sending UDP packets.</span></span>  
   
- Les valeurs possibles pour le paramètre de l'attribut `ipProtectionLevel` correspondent aux niveaux de protection définis spécifiés dans l'énumération <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> comme suit :  
+ <span data-ttu-id="68a09-142">Les valeurs possibles pour le `ipProtectionLevel` paramètre d’attribut correspondent aux niveaux de protection définis spécifiés dans le <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> énumération comme suit :</span><span class="sxs-lookup"><span data-stu-id="68a09-142">The possible values for the `ipProtectionLevel` attribute setting correspond with the defined protection levels specified in the <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> enumeration as follows:</span></span>  
   
-|||  
+|<span data-ttu-id="68a09-143">**Valeur d’attribut**</span><span class="sxs-lookup"><span data-stu-id="68a09-143">**Attribute Value**</span></span>|<span data-ttu-id="68a09-144">**Description**</span><span class="sxs-lookup"><span data-stu-id="68a09-144">**Description**</span></span>|  
 |-|-|  
-|**Valeur d'attribut**|**Description**|  
-|EdgeRestricted|Le niveau de protection IP est limité à un périmètre donné.  Cette valeur peut être utilisée par les applications conçues pour fonctionner sur Internet.  Ce paramètre n'autorise pas la traversée du traducteur d'adresses réseau \(NAT\) à l'aide de l'implémentation de Windows Teredo.  Ces applications peuvent contourner les pare\-feux IPv4 ; elles doivent donc être renforcées contre les attaques Internet dirigées sur le port ouvert.  Sous Windows Server 2003 et Windows XP, la valeur par défaut pour le niveau de protection IP sur un socket est Périmètre limité.|  
-|Restricted|Le niveau de protection IP est limité.  Cette valeur peut être utilisée par les applications intranet qui n'implémentent pas de scénarios Internet.  Ces applications ne sont généralement pas testées ou renforcées contre les attaques Internet.  Ce paramètre limitera uniquement le trafic reçu aux liens locaux.|  
-|Non restreint|Le niveau de protection IP est illimité.  Cette valeur peut être utilisée par les applications conçues pour fonctionner sur Internet, notamment les applications qui tirent parti des fonctions de traversée NAT IPv6 intégrées à Windows \(Teredo, par exemple\).  Ces applications peuvent contourner les pare\-feux IPv4 ; elles doivent donc être renforcées contre les attaques Internet dirigées sur le port ouvert.  Sous Windows Server 2008 R2 et Windows Vista, la valeur par défaut pour le niveau de protection IP sur un socket est illimitée.|  
-|Non spécifié|Le niveau de protection IP n'est pas spécifié.  Sous Windows 7 et Windows Server 2008 R2, la valeur par défaut pour le niveau de protection IP sur un socket n'est pas spécifiée.|  
+|<span data-ttu-id="68a09-145">EdgeRestricted</span><span class="sxs-lookup"><span data-stu-id="68a09-145">EdgeRestricted</span></span>|<span data-ttu-id="68a09-146">Le niveau de protection IP est limité à un périmètre.</span><span class="sxs-lookup"><span data-stu-id="68a09-146">The IP protection level is edge restricted.</span></span> <span data-ttu-id="68a09-147">Cette valeur peut être utilisée par les applications conçues pour fonctionner sur Internet.</span><span class="sxs-lookup"><span data-stu-id="68a09-147">This value would be used by applications designed to operate across the Internet.</span></span> <span data-ttu-id="68a09-148">Ce paramètre n’autorise pas de parcours de traduction d’adresses réseau (NAT) à l’aide de l’implémentation de Windows Teredo.</span><span class="sxs-lookup"><span data-stu-id="68a09-148">This setting does not allow Network Address Translation (NAT) traversal using the Windows Teredo implementation.</span></span> <span data-ttu-id="68a09-149">Ces applications peuvent contourner les pare-feux IPv4, donc les applications doivent être protégées contre les attaques Internet dirigées vers le port ouvert.</span><span class="sxs-lookup"><span data-stu-id="68a09-149">These applications may bypass IPv4 firewalls, so applications must be hardened against Internet attacks directed at the opened port.</span></span> <span data-ttu-id="68a09-150">Sur Windows Server 2003 et Windows XP, la valeur par défaut pour le niveau de Protection IP sur un socket est limité à un périmètre.</span><span class="sxs-lookup"><span data-stu-id="68a09-150">On Windows Server 2003 and Windows XP, the default value for the IP Protection level on a socket is edge restricted.</span></span>|  
+|<span data-ttu-id="68a09-151">Restreint</span><span class="sxs-lookup"><span data-stu-id="68a09-151">Restricted</span></span>|<span data-ttu-id="68a09-152">Le niveau de protection IP est limité.</span><span class="sxs-lookup"><span data-stu-id="68a09-152">The IP protection level is restricted.</span></span> <span data-ttu-id="68a09-153">Cette valeur peut être utilisée par les applications intranet qui n’implémentent pas de scénarios Internet.</span><span class="sxs-lookup"><span data-stu-id="68a09-153">This value would be used by intranet applications that do not implement Internet scenarios.</span></span> <span data-ttu-id="68a09-154">Ces applications sont généralement pas testées ou renforcées contre les attaques de type Internet.</span><span class="sxs-lookup"><span data-stu-id="68a09-154">These applications are generally not tested or hardened against Internet-style attacks.</span></span> <span data-ttu-id="68a09-155">Ce paramètre limite le trafic reçu aux liens locaux uniquement.</span><span class="sxs-lookup"><span data-stu-id="68a09-155">This setting will limit the received traffic to link-local only.</span></span>|  
+|<span data-ttu-id="68a09-156">Non restreint</span><span class="sxs-lookup"><span data-stu-id="68a09-156">Unrestricted</span></span>|<span data-ttu-id="68a09-157">Le niveau de protection IP est illimité.</span><span class="sxs-lookup"><span data-stu-id="68a09-157">The IP protection level is unrestricted.</span></span> <span data-ttu-id="68a09-158">Cette valeur peut être utilisée par les applications conçues pour fonctionner sur Internet, notamment les applications qui tirent parti des fonctionnalités de traversée NAT IPv6 intégrées à Windows (Teredo, par exemple).</span><span class="sxs-lookup"><span data-stu-id="68a09-158">This value would be used by applications designed to operate across the Internet, including applications taking advantage of IPv6 NAT traversal capabilities built into Windows (Teredo, for example).</span></span> <span data-ttu-id="68a09-159">Ces applications peuvent contourner les pare-feux IPv4, donc les applications doivent être protégées contre les attaques Internet dirigées vers le port ouvert.</span><span class="sxs-lookup"><span data-stu-id="68a09-159">These applications may bypass IPv4 firewalls, so applications must be hardened against Internet attacks directed at the opened port.</span></span> <span data-ttu-id="68a09-160">Sur Windows Server 2008 R2 et Windows Vista, la valeur par défaut pour le niveau de Protection IP sur un socket est illimitée.</span><span class="sxs-lookup"><span data-stu-id="68a09-160">On Windows Server 2008 R2 and Windows Vista, the default value for the IP Protection level on a socket is unrestricted.</span></span>|  
+|<span data-ttu-id="68a09-161">Non spécifié</span><span class="sxs-lookup"><span data-stu-id="68a09-161">Unspecified</span></span>|<span data-ttu-id="68a09-162">Le niveau de protection IP n’est pas spécifié.</span><span class="sxs-lookup"><span data-stu-id="68a09-162">The IP protection level is unspecified.</span></span> <span data-ttu-id="68a09-163">Sur Windows 7 et Windows Server 2008 R2, la valeur par défaut pour le niveau de Protection IP sur un socket n’est pas spécifiée.</span><span class="sxs-lookup"><span data-stu-id="68a09-163">On Windows 7 and Windows Server 2008 R2, the default value for the IP Protection level on a socket is unspecified.</span></span>|  
   
- La valeur par défaut pour l'attribut `ipProtectionLevel` est **Non spécifié**.  
+ <span data-ttu-id="68a09-164">La valeur par défaut pour le `ipProtectionLevel` attribut est **Unspecified**.</span><span class="sxs-lookup"><span data-stu-id="68a09-164">The default value for the `ipProtectionLevel` attribute is **Unspecified**.</span></span>  
   
- La propriété <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> peut être utilisée pour obtenir la valeur actuelle de l'attribut `ipProtectionLevel` de fichiers de configuration applicables.  
+ <span data-ttu-id="68a09-165">Le <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> propriété peut être utilisée pour obtenir la valeur actuelle de la `ipProtectionLevel` attribut à partir des fichiers de configuration applicables.</span><span class="sxs-lookup"><span data-stu-id="68a09-165">The <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> property can be used to get the current value of the `ipProtectionLevel` attribute from applicable configuration files.</span></span>  
   
-## Fichiers de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l'application ou dans le fichier de configuration machine \(Machine.config\).  
+## <a name="configuration-files"></a><span data-ttu-id="68a09-166">Fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="68a09-166">Configuration Files</span></span>  
+ <span data-ttu-id="68a09-167">Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="68a09-167">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## Exemple  
- L'exemple de code suivant indique comment spécifier que les ports de terminaison doivent être utilisés et que le <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> par défaut ne doit pas être restreint.  
+## <a name="example"></a><span data-ttu-id="68a09-168">Exemple</span><span class="sxs-lookup"><span data-stu-id="68a09-168">Example</span></span>  
+ <span data-ttu-id="68a09-169">L’exemple suivant montre comment spécifier que les ports de terminaison doivent être utilisés et que la valeur par défaut <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> doit être non restreint.</span><span class="sxs-lookup"><span data-stu-id="68a09-169">The following example shows how to specify that completion ports should be used and that the default <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> should be unrestricted.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <settings>  
@@ -112,10 +113,10 @@ Spécifie si les opérations de socket utilisent des ports de terminaison.
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Net?displayProperty=fullName>   
- <xref:System.Net.Configuration.SocketElement?displayProperty=fullName>   
- <xref:System.Net.Sockets?displayProperty=fullName>   
- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName>   
- <xref:System.Net.Sockets.SocketOptionName?displayProperty=fullName>   
- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="68a09-170">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="68a09-170">See Also</span></span>  
+ <xref:System.Net?displayProperty=nameWithType>  
+ <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType>  
+ [<span data-ttu-id="68a09-171">Schéma des paramètres réseau</span><span class="sxs-lookup"><span data-stu-id="68a09-171">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

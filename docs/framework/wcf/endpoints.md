@@ -1,60 +1,62 @@
 ---
-title: "Points de terminaison Windows Communication Foundation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "points de terminaison (WCF)"
+title: Points de terminaison Windows Communication Foundation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: endpoints [WCF]
 ms.assetid: bd0c310f-dd9f-4081-9be2-3db5909850b6
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4ac3d1f16d860ea01217d0d1d35d0588da0c8d87
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Points de terminaison Windows Communication Foundation
-Toute communication avec un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] se produit par l'intermédiaire des *points de terminaison* du service.  Les points de terminaison fournissent au client l'accès aux fonctionnalités offertes par un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
+# <a name="windows-communication-foundation-endpoints"></a><span data-ttu-id="4c1e8-102">Points de terminaison Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="4c1e8-102">Windows Communication Foundation Endpoints</span></span>
+<span data-ttu-id="4c1e8-103">Toutes les communications avec un [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service s’effectue via le *points de terminaison* du service.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-103">All communication with a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service occurs through the *endpoints* of the service.</span></span> <span data-ttu-id="4c1e8-104">Les points de terminaison fournissent au client l'accès aux fonctionnalités offertes par un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4c1e8-104">Endpoints provide clients access to the functionality that a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service offers.</span></span>  
   
- Pour obtenir une vue d'ensemble de la création d'un point de terminaison, consultez [Vue d'ensemble de la création de points de terminaison](../../../docs/framework/wcf/endpoint-creation-overview.md).  Chaque point de terminaison contient :  
+ <span data-ttu-id="4c1e8-105">Pour une vue d’ensemble sur la création d’un point de terminaison, consultez [vue d’ensemble de la création de point de terminaison](../../../docs/framework/wcf/endpoint-creation-overview.md).</span><span class="sxs-lookup"><span data-stu-id="4c1e8-105">For an overview about how to create an endpoint, see [Endpoint Creation Overview](../../../docs/framework/wcf/endpoint-creation-overview.md).</span></span> <span data-ttu-id="4c1e8-106">Chaque point de terminaison contient :</span><span class="sxs-lookup"><span data-stu-id="4c1e8-106">Each endpoint contains:</span></span>  
   
--   Une adresse qui indique où rechercher le point de terminaison.  
+-   <span data-ttu-id="4c1e8-107">Une adresse qui indique où rechercher le point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-107">An address that indicates where to find the endpoint.</span></span>  
   
--   Une liaison qui spécifie comment un client peut communiquer avec le point de terminaison.  
+-   <span data-ttu-id="4c1e8-108">Une liaison qui spécifie comment un client peut communiquer avec le point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-108">A binding that specifies how a client can communicate with the endpoint.</span></span>  
   
--   Un contrat qui identifie les méthodes disponibles.  
+-   <span data-ttu-id="4c1e8-109">Un contrat qui identifie les méthodes disponibles.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-109">A contract that identifies the methods available.</span></span>  
   
- Pour obtenir une description de la manière dont les parties individuelles d'un point de terminaison sont spécifiées, consultez :  
+ <span data-ttu-id="4c1e8-110">Pour obtenir une description de la manière dont les parties individuelles d'un point de terminaison sont spécifiées, consultez :</span><span class="sxs-lookup"><span data-stu-id="4c1e8-110">For descriptions about how to specify these individual parts of an endpoint, see:</span></span>  
   
--   [Spécification d'une adresse de point de terminaison](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
+-   [<span data-ttu-id="4c1e8-111">Spécification d’une adresse de point de terminaison</span><span class="sxs-lookup"><span data-stu-id="4c1e8-111">Specifying an Endpoint Address</span></span>](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
   
--   [Utilisation de liaisons pour configurer des services et des clients](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
+-   [<span data-ttu-id="4c1e8-112">Utilisation de liaisons pour configurer des services et des clients</span><span class="sxs-lookup"><span data-stu-id="4c1e8-112">Using Bindings to Configure Services and Clients</span></span>](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
   
--   [Conception et implémentation de services](../../../docs/framework/wcf/designing-and-implementing-services.md)  
+-   [<span data-ttu-id="4c1e8-113">Conception et implémentation de services</span><span class="sxs-lookup"><span data-stu-id="4c1e8-113">Designing and Implementing Services</span></span>](../../../docs/framework/wcf/designing-and-implementing-services.md)  
   
-## Dans cette section  
- [Vue d'ensemble de la création de points de terminaison](../../../docs/framework/wcf/endpoint-creation-overview.md)  
- Décrit la structure d'un point de terminaison et explique comment définir un point de terminaison dans la configuration et dans le code, ainsi que la manière d'utiliser les points de terminaison par défaut, les liaisons et les comportements fournis par le runtime.  
+## <a name="in-this-section"></a><span data-ttu-id="4c1e8-114">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="4c1e8-114">In This Section</span></span>  
+ [<span data-ttu-id="4c1e8-115">Vue d’ensemble de la création de points de terminaison</span><span class="sxs-lookup"><span data-stu-id="4c1e8-115">Endpoint Creation Overview</span></span>](../../../docs/framework/wcf/endpoint-creation-overview.md)  
+ <span data-ttu-id="4c1e8-116">Décrit la structure d’un point de terminaison et explique comment définir un point de terminaison dans la configuration et dans le code, ainsi que la manière d’utiliser les points de terminaison par défaut, les liaisons et les comportements fournis par le runtime.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-116">Describes the structure of an endpoint and outlines how to define an endpoint in configuration and in code, as well as how to use the default endpoints, bindings, and behaviors provided by the runtime.</span></span>  
   
- [Spécification d'une adresse de point de terminaison](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
- Décrit comment la communication avec un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a lieu par l'intermédiaire des points de terminaison.  
+ [<span data-ttu-id="4c1e8-117">Spécification d’une adresse de point de terminaison</span><span class="sxs-lookup"><span data-stu-id="4c1e8-117">Specifying an Endpoint Address</span></span>](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
+ <span data-ttu-id="4c1e8-118">Décrit comment la communication avec un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a lieu par l'intermédiaire des points de terminaison.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-118">Describes how communication with a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service occurs through endpoints.</span></span>  
   
- [Comment : créer un point de terminaison de service dans la configuration.](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
- Montre comment créer un point de terminaison de service dans la configuration.  
+ [<span data-ttu-id="4c1e8-119">Comment : créer un point de terminaison de Service dans la Configuration</span><span class="sxs-lookup"><span data-stu-id="4c1e8-119">How to: Create a Service Endpoint in Configuration</span></span>](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
+ <span data-ttu-id="4c1e8-120">Montre comment créer un point de terminaison de service dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-120">Demonstrates how to create a service endpoint in configuration.</span></span>  
   
- [Comment : créer un point de terminaison de service dans le code](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
- Montre comment créer un point de terminaison de service dans le code.  
+ [<span data-ttu-id="4c1e8-121">Comment : créer un point de terminaison de Service dans le Code</span><span class="sxs-lookup"><span data-stu-id="4c1e8-121">How to: Create a Service Endpoint in Code</span></span>](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
+ <span data-ttu-id="4c1e8-122">Montre comment créer un point de terminaison de service dans le code.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-122">Demonstrates how to create a service endpoint in code.</span></span>  
   
- [Publication de points de terminaison de métadonnées](../../../docs/framework/wcf/publishing-metadata-endpoints.md)  
- Montre comment publier des métadonnées en publiant des points de terminaison de métadonnées dans la configuration et dans le code.  
+ [<span data-ttu-id="4c1e8-123">Publication de points de terminaison de métadonnées</span><span class="sxs-lookup"><span data-stu-id="4c1e8-123">Publishing Metadata Endpoints</span></span>](../../../docs/framework/wcf/publishing-metadata-endpoints.md)  
+ <span data-ttu-id="4c1e8-124">Montre comment publier des métadonnées en publiant des points de terminaison de métadonnées dans la configuration et dans le code.</span><span class="sxs-lookup"><span data-stu-id="4c1e8-124">Demonstrates how to publish metadata by publishing metadata endpoints in configuration and in code.</span></span>  
   
-## Référence  
+## <a name="reference"></a><span data-ttu-id="4c1e8-125">Référence</span><span class="sxs-lookup"><span data-stu-id="4c1e8-125">Reference</span></span>  
  <xref:System.ServiceModel.EndpointAddress>  
   
-## Rubriques connexes  
- [Cycle de vie de la programmation de base](../../../docs/framework/wcf/basic-programming-lifecycle.md)
+## <a name="related-sections"></a><span data-ttu-id="4c1e8-126">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="4c1e8-126">Related Sections</span></span>  
+ [<span data-ttu-id="4c1e8-127">Cycle de vie de la programmation de base</span><span class="sxs-lookup"><span data-stu-id="4c1e8-127">Basic Programming Lifecycle</span></span>](../../../docs/framework/wcf/basic-programming-lifecycle.md)

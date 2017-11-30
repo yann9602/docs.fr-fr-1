@@ -1,73 +1,76 @@
 ---
-title: "Notifications de requ&#234;te dans SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Notifications de requête dans SQL Server"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 854407d2e6d1341d5917cc78664c1f653e55fa35
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Notifications de requ&#234;te dans SQL Server
-Basées sur l'infrastructure Service Broker, les notifications de requête permettent de notifier des applications en cas de modification de données.  Cette fonction est particulièrement utile pour les applications qui génèrent un cache d'informations à partir d'une base de données, telles que les applications Web, et qui doivent être informées en cas de modification des données sources.  
+# <a name="query-notifications-in-sql-server"></a><span data-ttu-id="3bc7d-102">Notifications de requête dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="3bc7d-102">Query Notifications in SQL Server</span></span>
+<span data-ttu-id="3bc7d-103">Basées sur l'infrastructure Service Broker, les notifications de requête permettent de notifier des applications en cas de modification de données.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-103">Built upon the Service Broker infrastructure, query notifications allow applications to be notified when data has changed.</span></span> <span data-ttu-id="3bc7d-104">Cette fonction est particulièrement utile pour les applications qui génèrent un cache d'informations à partir d'une base de données, telles que les applications Web, et qui doivent être informées en cas de modification des données sources.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-104">This feature is particularly useful for applications that provide a cache of information from a database, such as a Web application, and need to be notified when the source data is changed.</span></span>  
   
- ADO.NET vous permet d'implémenter les notifications de requête de trois manières :  
+ <span data-ttu-id="3bc7d-105">ADO.NET vous permet d'implémenter les notifications de requête de trois manières :</span><span class="sxs-lookup"><span data-stu-id="3bc7d-105">There are three ways you can implement query notifications using ADO.NET:</span></span>  
   
-1.  L'implémentation de bas niveau est assurée par la classe `SqlNotificationRequest` qui expose les fonctionnalités côté serveur, vous permettant d'exécuter une commande avec une demande de notification.  
+1.  <span data-ttu-id="3bc7d-106">L'implémentation de bas niveau est assurée par la classe `SqlNotificationRequest` qui expose les fonctionnalités côté serveur, vous permettant d'exécuter une commande avec une demande de notification.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-106">The low-level implementation is provided by the `SqlNotificationRequest` class that exposes server-side functionality, enabling you to execute a command with a notification request.</span></span>  
   
-2.  L'implémentation de haut niveau est assurée par la classe `SqlDependency` qui fournit une abstraction de haut niveau des fonctionnalités de notification entre l'application source et SQL Server, ce qui vous permet d'utiliser une dépendance pour détecter des modifications au niveau serveur.  Généralement, il s'agit de la manière la plus simple et la plus efficace, pour des applications clientes managées, d'exploiter la fonctionnalité de notification de SQL Server en utilisant le fournisseur de données .NET Framework pour SQL Server.  
+2.  <span data-ttu-id="3bc7d-107">L'implémentation de haut niveau est assurée par la classe `SqlDependency` qui fournit une abstraction de haut niveau des fonctionnalités de notification entre l'application source et SQL Server, ce qui vous permet d'utiliser une dépendance pour détecter des modifications au niveau serveur.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-107">The high-level implementation is provided by the `SqlDependency` class, which is a class that provides a high-level abstraction of notification functionality between the source application and SQL Server, enabling you to use a dependency to detect changes in the server.</span></span> <span data-ttu-id="3bc7d-108">Généralement, il s'agit de la manière la plus simple et la plus efficace, pour des applications clientes managées, d'exploiter la fonctionnalité de notification de SQL Server en utilisant le fournisseur de données .NET Framework pour SQL Server.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-108">In most cases, this is the simplest and most effective way to leverage SQL Server notifications capability by managed client applications using the .NET Framework Data Provider for SQL Server.</span></span>  
   
-3.  En outre, les applications Web créées à l'aide d'ASP.NET 2.0 ou version ultérieure peuvent utiliser les classes d'assistance `SqlCacheDependency`.  
+3.  <span data-ttu-id="3bc7d-109">En outre, les applications Web créées à l'aide d'ASP.NET 2.0 ou version ultérieure peuvent utiliser les classes d'assistance `SqlCacheDependency`.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-109">In addition, Web applications built using ASP.NET 2.0 or later can use the `SqlCacheDependency` helper classes.</span></span>  
   
- Les notifications de requête sont utilisées pour les applications qui doivent actualiser des affichages ou des caches suite à l'apport de modifications aux données sous\-jacentes.  Microsoft SQL Server permet aux applications .NET Framework d'envoyer une commande à SQL Server et de demander la génération d'une notification si l'exécution de cette commande produit des ensembles de résultats différents de ceux extraits initialement.  Les notifications générées au niveau du serveur sont envoyées via des files d'attente pour être traitées ultérieurement.  
+ <span data-ttu-id="3bc7d-110">Les notifications de requête sont utilisées pour les applications qui doivent actualiser des affichages ou des caches suite à l'apport de modifications aux données sous-jacentes.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-110">Query notifications are used for applications that need to refresh displays or caches in response to changes in underlying data.</span></span> <span data-ttu-id="3bc7d-111">Microsoft SQL Server permet aux applications .NET Framework d'envoyer une commande à SQL Server et de demander la génération d'une notification si l'exécution de cette commande produit des ensembles de résultats différents de ceux extraits initialement.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-111">Microsoft SQL Server allows .NET Framework applications to send a command to SQL Server and request notification if executing the same command would produce result sets different from those initially retrieved.</span></span> <span data-ttu-id="3bc7d-112">Les notifications générées au niveau du serveur sont envoyées via des files d'attente pour être traitées ultérieurement.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-112">Notifications generated at the server are sent through queues to be processed later.</span></span>  
   
- Vous pouvez configurer des notifications pour les instructions SELECT et EXECUTE.  Avec une instruction EXECUTE, SQL Server enregistre une notification pour la commande exécutée et non l'instruction EXECUTE elle\-même.  La commande doit répondre aux spécifications et aux limitations d'une instruction SELECT.  Lorsqu'une commande qui enregistre une notification contient plusieurs instructions, le moteur de base de données crée une notification pour chaque instruction du lot.  
+ <span data-ttu-id="3bc7d-113">Vous pouvez configurer des notifications pour les instructions SELECT et EXECUTE.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-113">You can set up notifications for SELECT and EXECUTE statements.</span></span> <span data-ttu-id="3bc7d-114">Avec une instruction EXECUTE, SQL Server enregistre une notification pour la commande exécutée et non l'instruction EXECUTE elle-même.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-114">When using an EXECUTE statement, SQL Server registers a notification for the command executed rather than the EXECUTE statement itself.</span></span> <span data-ttu-id="3bc7d-115">La commande doit répondre aux spécifications et aux limitations d'une instruction SELECT.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-115">The command must meet the requirements and limitations for a SELECT statement.</span></span> <span data-ttu-id="3bc7d-116">Lorsqu'une commande qui enregistre une notification contient plusieurs instructions, le moteur de base de données crée une notification pour chaque instruction du lot.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-116">When a command that registers a notification contains more than one statement, the Database Engine creates a notification for each statement in the batch.</span></span>  
   
- Si vous développez une application où vous avez besoin de notifications fiables à la fraction de seconde près quand des données sont modifiées, consultez les sections **Planification d'une stratégie efficace de notifications de requête** et **Alternatives aux notifications de requête** dans la rubrique [Planification des notifications](http://go.microsoft.com/fwlink/?LinkId=211984) de la documentation en ligne de SQL Server.  Pour plus d'informations sur les notifications de requête et Service Broker de SQL Server, voir les liens aux rubriques ci\-dessous dans la documentation en ligne de SQL Server.  
+ <span data-ttu-id="3bc7d-117">Si vous développez une application où vous avez besoin des notifications de seconde fiable lorsque les données modifiées, consultez les sections **planification d’une stratégie de Notifications de requête efficace** et **Alternatives à la requête Notifications** dans les [planification des Notifications](http://go.microsoft.com/fwlink/?LinkId=211984) rubrique dans la documentation en ligne de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-117">If you are developing an application where you need reliable sub-second notifications when data changes, review the sections **Planning an Efficient Query Notifications Strategy** and **Alternatives to Query Notifications** in the [Planning for Notifications](http://go.microsoft.com/fwlink/?LinkId=211984) topic in SQL Server Books Online.</span></span> <span data-ttu-id="3bc7d-118">Pour plus d'informations sur les notifications de requête et Service Broker de SQL Server, voir les liens aux rubriques ci-dessous dans la documentation en ligne de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-118">For more information about Query Notifications and SQL Server Service Broker, see the following links to topics in SQL Server Books Online.</span></span>  
   
- **Documentation en ligne de SQL Server**  
+ <span data-ttu-id="3bc7d-119">**Documentation en ligne de SQL Server**</span><span class="sxs-lookup"><span data-stu-id="3bc7d-119">**SQL Server Books Online**</span></span>  
   
--   [Utilisation des notifications de requête](http://msdn.microsoft.com/library/ms175110.aspx)  
+-   [<span data-ttu-id="3bc7d-120">À l’aide de Notifications de requête</span><span class="sxs-lookup"><span data-stu-id="3bc7d-120">Using Query Notifications</span></span>](http://msdn.microsoft.com/library/ms175110.aspx)  
   
--   [Création d'une requête pour la notification](http://msdn.microsoft.com/library/ms181122.aspx)  
+-   [<span data-ttu-id="3bc7d-121">Création d’une requête de Notification</span><span class="sxs-lookup"><span data-stu-id="3bc7d-121">Creating a Query for Notification</span></span>](http://msdn.microsoft.com/library/ms181122.aspx)  
   
--   [Service Broker](http://msdn.microsoft.com/library/bb522889.aspx)  
+-   [<span data-ttu-id="3bc7d-122">Service Broker</span><span class="sxs-lookup"><span data-stu-id="3bc7d-122">Service Broker</span></span>](http://msdn.microsoft.com/library/bb522889.aspx)  
   
--   [Centre d'informations du développeur Service Broker](http://msdn.microsoft.com/library/ms166100.aspx)  
+-   [<span data-ttu-id="3bc7d-123">Centre d’informations du développeur Service Broker</span><span class="sxs-lookup"><span data-stu-id="3bc7d-123">Service Broker Developer InfoCenter</span></span>](http://msdn.microsoft.com/library/ms166100.aspx)  
   
--   [Développement \(Service Broker\)](http://msdn.microsoft.com/library/bb522908.aspx)  
+-   [<span data-ttu-id="3bc7d-124">Développement (Service Broker)</span><span class="sxs-lookup"><span data-stu-id="3bc7d-124">Development (Service Broker)</span></span>](http://msdn.microsoft.com/library/bb522908.aspx)  
   
-## Dans cette section  
- [Activation des notifications de requête](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md)  
- Explique comment utiliser des notifications de requête incluant les exigences relatives à leur utilisation et à leur activation.  
+## <a name="in-this-section"></a><span data-ttu-id="3bc7d-125">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="3bc7d-125">In This Section</span></span>  
+ [<span data-ttu-id="3bc7d-126">Activation des Notifications de requête</span><span class="sxs-lookup"><span data-stu-id="3bc7d-126">Enabling Query Notifications</span></span>](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md)  
+ <span data-ttu-id="3bc7d-127">Explique comment utiliser des notifications de requête incluant les exigences relatives à leur utilisation et à leur activation.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-127">Discusses how to use query notifications, including the requirements for enabling and using them.</span></span>  
   
- [SqlDependency dans une application ASP.NET ](../../../../../docs/framework/data/adonet/sql/sqldependency-in-an-aspnet-app.md)  
- Montre comment utiliser les notifications de requête à partir d'une application ASP.NET.  
+ [<span data-ttu-id="3bc7d-128">SqlDependency dans une Application ASP.NET</span><span class="sxs-lookup"><span data-stu-id="3bc7d-128">SqlDependency in an ASP.NET Application</span></span>](../../../../../docs/framework/data/adonet/sql/sqldependency-in-an-aspnet-app.md)  
+ <span data-ttu-id="3bc7d-129">Montre comment utiliser les notifications de requête à partir d'une application ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-129">Demonstrates how to use query notifications from an ASP.NET application.</span></span>  
   
- [Détection des modifications à l'aide de SqlDependency](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
- Montre comment détecter lorsque les résultats de la requête seront différents de ceux reçus à l'origine.  
+ [<span data-ttu-id="3bc7d-130">Détection des modifications avec SqlDependency</span><span class="sxs-lookup"><span data-stu-id="3bc7d-130">Detecting Changes with SqlDependency</span></span>](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
+ <span data-ttu-id="3bc7d-131">Montre comment détecter lorsque les résultats de la requête seront différents de ceux reçus à l'origine.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-131">Demonstrates how to detect when query results will be different from those originally received.</span></span>  
   
- [Exécution de SqlCommand avec un SqlNotificationRequest](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
- Illustre la configuration d'un objet <xref:System.Data.SqlClient.SqlCommand> pour travailler avec une notification de requête.  
+ [<span data-ttu-id="3bc7d-132">Exécution de SqlCommand avec un SqlNotificationRequest</span><span class="sxs-lookup"><span data-stu-id="3bc7d-132">SqlCommand Execution with a SqlNotificationRequest</span></span>](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
+ <span data-ttu-id="3bc7d-133">Illustre la configuration d'un objet <xref:System.Data.SqlClient.SqlCommand> pour travailler avec une notification de requête.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-133">Demonstrates configuring a <xref:System.Data.SqlClient.SqlCommand> object to work with a query notification.</span></span>  
   
-## Référence  
+## <a name="reference"></a><span data-ttu-id="3bc7d-134">Référence</span><span class="sxs-lookup"><span data-stu-id="3bc7d-134">Reference</span></span>  
  <xref:System.Data.Sql.SqlNotificationRequest>  
- Décrit la classe <xref:System.Data.Sql.SqlNotificationRequest> et tous ses membres.  
+ <span data-ttu-id="3bc7d-135">Décrit la classe <xref:System.Data.Sql.SqlNotificationRequest> et tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-135">Describes the <xref:System.Data.Sql.SqlNotificationRequest> class and all of its members.</span></span>  
   
  <xref:System.Data.SqlClient.SqlDependency>  
- Décrit la classe <xref:System.Data.SqlClient.SqlDependency> et tous ses membres.  
+ <span data-ttu-id="3bc7d-136">Décrit la classe <xref:System.Data.SqlClient.SqlDependency> et tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-136">Describes the <xref:System.Data.SqlClient.SqlDependency> class and all of its members.</span></span>  
   
  <xref:System.Web.Caching.SqlCacheDependency>  
- Décrit la classe <xref:System.Web.Caching.SqlCacheDependency> et tous ses membres.  
+ <span data-ttu-id="3bc7d-137">Décrit la classe <xref:System.Web.Caching.SqlCacheDependency> et tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3bc7d-137">Describes the <xref:System.Web.Caching.SqlCacheDependency> class and all of its members.</span></span>  
   
-## Voir aussi  
- [SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="3bc7d-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3bc7d-138">See Also</span></span>  
+ [<span data-ttu-id="3bc7d-139">SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="3bc7d-139">SQL Server and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/sql/index.md)  
+ [<span data-ttu-id="3bc7d-140">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="3bc7d-140">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

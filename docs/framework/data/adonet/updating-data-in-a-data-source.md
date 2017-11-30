@@ -1,28 +1,34 @@
 ---
-title: "Mise &#224; jour des donn&#233;es dans une source de donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Mise à jour des données dans une source de données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 91e6a5f2b956816b5e001701a7fbe4a40e7866e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mise &#224; jour des donn&#233;es dans une source de donn&#233;es
-Les instructions SQL qui modifient les données \(comme INSERT, UPDATE ou DELETE\) ne retournent pas de ligne.  De même, de nombreuses procédures stockées effectuent une action mais ne retournent pas de ligne.  Pour exécuter des commandes qui ne retournent pas de ligne, créez un objet **Command** avec la commande SQL appropriée et un objet **Connection** incluant tous les **Parameters** requis.  Exécutez la commande avec la méthode **ExecuteNonQuery** de l'objet **Command**.  
+# <a name="updating-data-in-a-data-source"></a><span data-ttu-id="b3aac-102">Mise à jour des données dans une source de données</span><span class="sxs-lookup"><span data-stu-id="b3aac-102">Updating Data in a Data Source</span></span>
+<span data-ttu-id="b3aac-103">Les instructions SQL qui modifient les données (comme INSERT, UPDATE ou DELETE) ne retournent pas de ligne.</span><span class="sxs-lookup"><span data-stu-id="b3aac-103">SQL statements that modify data (such as INSERT, UPDATE, or DELETE) do not return rows.</span></span> <span data-ttu-id="b3aac-104">De même, de nombreuses procédures stockées effectuent une action mais ne retournent pas de ligne.</span><span class="sxs-lookup"><span data-stu-id="b3aac-104">Similarly, many stored procedures perform an action but do not return rows.</span></span> <span data-ttu-id="b3aac-105">Pour exécuter des commandes qui ne retournent pas de lignes, créez un **commande** objet avec la commande SQL appropriée et un **connexion**, y compris tout **paramètres**.</span><span class="sxs-lookup"><span data-stu-id="b3aac-105">To execute commands that do not return rows, create a **Command** object with the appropriate SQL command and a **Connection**, including any required **Parameters**.</span></span> <span data-ttu-id="b3aac-106">Exécutez la commande avec le **ExecuteNonQuery** méthode de la **commande** objet.</span><span class="sxs-lookup"><span data-stu-id="b3aac-106">Execute the command with the **ExecuteNonQuery** method of the **Command** object.</span></span>  
   
- La méthode **ExecuteNonQuery** retourne un entier qui représente le nombre de lignes affectées par l'instruction ou la procédure stockée exécutée.  Si plusieurs instructions sont exécutées, la valeur retournée est la somme des enregistrements affectés par toutes ces instructions.  
+ <span data-ttu-id="b3aac-107">Le **ExecuteNonQuery** méthode retourne un entier qui représente le nombre de lignes affectées par l’instruction ou la procédure stockée qui a été exécutée.</span><span class="sxs-lookup"><span data-stu-id="b3aac-107">The **ExecuteNonQuery** method returns an integer that represents the number of rows affected by the statement or stored procedure that was executed.</span></span> <span data-ttu-id="b3aac-108">Si plusieurs instructions sont exécutées, la valeur retournée est la somme des enregistrements affectés par toutes ces instructions.</span><span class="sxs-lookup"><span data-stu-id="b3aac-108">If multiple statements are executed, the value returned is the sum of the records affected by all of the statements executed.</span></span>  
   
-## Exemple  
- L'exemple de code suivant exécute une instruction INSERT pour insérer un enregistrement dans une base de données à l'aide de **ExecuteNonQuery**.  
+## <a name="example"></a><span data-ttu-id="b3aac-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="b3aac-109">Example</span></span>  
+ <span data-ttu-id="b3aac-110">L’exemple de code suivant exécute une instruction INSERT pour insérer un enregistrement dans une base de données à l’aide **ExecuteNonQuery**.</span><span class="sxs-lookup"><span data-stu-id="b3aac-110">The following code example executes an INSERT statement to insert a record into a database using **ExecuteNonQuery**.</span></span>  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -46,9 +52,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- L'exemple de code suivant exécute la procédure stockée créée par l'exemple de code dans [Exécution d'opérations de catalogue](../../../../docs/framework/data/adonet/performing-catalog-operations.md).  Aucune ligne n'est retournée par la procédure stockée, la méthode **ExecuteNonQuery** est donc utilisée mais la procédure stockée reçoit un paramètre d'entrée et retourne un paramètre de sortie et une valeur de retour.  
+ <span data-ttu-id="b3aac-111">L’exemple de code suivant exécute la procédure stockée créée par l’exemple de code dans [exécution d’opérations de catalogue](../../../../docs/framework/data/adonet/performing-catalog-operations.md).</span><span class="sxs-lookup"><span data-stu-id="b3aac-111">The following code example executes the stored procedure created by the sample code in [Performing Catalog Operations](../../../../docs/framework/data/adonet/performing-catalog-operations.md).</span></span> <span data-ttu-id="b3aac-112">Aucuns lignes ne sont retournées par la procédure stockée, donc la **ExecuteNonQuery** méthode est utilisée, mais la procédure stockée reçoit un paramètre d’entrée et retourne un paramètre de sortie et une valeur de retour.</span><span class="sxs-lookup"><span data-stu-id="b3aac-112">No rows are returned by the stored procedure, so the **ExecuteNonQuery** method is used, but the stored procedure does receive an input parameter and returns an output parameter and a return value.</span></span>  
   
- Pour l'objet <xref:System.Data.OleDb.OleDbCommand>, le paramètre **ReturnValue** doit être d'abord ajouté à la collection **Parameters**.  
+ <span data-ttu-id="b3aac-113">Pour le <xref:System.Data.OleDb.OleDbCommand> objet, le **ReturnValue** paramètre doit être ajouté à la **paramètres** collection premier.</span><span class="sxs-lookup"><span data-stu-id="b3aac-113">For the <xref:System.Data.OleDb.OleDbCommand> object, the **ReturnValue** parameter must be added to the **Parameters** collection first.</span></span>  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -95,8 +101,8 @@ Int32 categoryID = (Int32) command.Parameters["@Identity"].Value;
 Int32 rowCount = (Int32) command.Parameters["@RowCount"].Value;  
 ```  
   
-## Voir aussi  
- [Utilisation de commandes pour modifier des données](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)   
- [Mise à jour de sources de données avec des DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)   
- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="b3aac-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b3aac-114">See Also</span></span>  
+ [<span data-ttu-id="b3aac-115">À l’aide des commandes pour modifier des données</span><span class="sxs-lookup"><span data-stu-id="b3aac-115">Using Commands to Modify Data</span></span>](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+ [<span data-ttu-id="b3aac-116">Mise à jour de sources de données avec des DataAdapters</span><span class="sxs-lookup"><span data-stu-id="b3aac-116">Updating Data Sources with DataAdapters</span></span>](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
+ [<span data-ttu-id="b3aac-117">Commandes et paramètres</span><span class="sxs-lookup"><span data-stu-id="b3aac-117">Commands and Parameters</span></span>](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [<span data-ttu-id="b3aac-118">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="b3aac-118">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

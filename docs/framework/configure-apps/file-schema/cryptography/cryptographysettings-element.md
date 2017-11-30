@@ -1,67 +1,68 @@
 ---
-title: "&lt;cryptographySettings&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptographySettings"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<cryptographySettings> (élément)"
-  - "cryptographySettings (élément)"
+title: "&lt;cryptographySettings&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptographySettings
+helpviewer_keywords:
+- cryptographySettings element
+- <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 0f023dbc3049f558acfc0fb83056f462d390fa7b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;cryptographySettings&gt;, &#233;l&#233;ment
-Contient des paramètres de chiffrement.  
+# <a name="ltcryptographysettingsgt-element"></a><span data-ttu-id="f0d50-102">&lt;cryptographySettings&gt; élément</span><span class="sxs-lookup"><span data-stu-id="f0d50-102">&lt;cryptographySettings&gt; Element</span></span>
+<span data-ttu-id="f0d50-103">Contient des paramètres de chiffrement.</span><span class="sxs-lookup"><span data-stu-id="f0d50-103">Contains cryptography settings.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="f0d50-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="f0d50-104">\<configuration></span></span>  
+<span data-ttu-id="f0d50-105">\<mscorlib ></span><span class="sxs-lookup"><span data-stu-id="f0d50-105">\<mscorlib></span></span>  
+<span data-ttu-id="f0d50-106">\<cryptographySettings ></span><span class="sxs-lookup"><span data-stu-id="f0d50-106">\<cryptographySettings></span></span>  
   
+## <a name="syntax"></a><span data-ttu-id="f0d50-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f0d50-107">Syntax</span></span>  
+  
+```xml  
+      <cryptographySettings>   
+</cryptographySettings>  
 ```  
   
-      <cryptographySettings>   
-</crytopgraphySettings>  
-```  
+## <a name="attributes-and-elements"></a><span data-ttu-id="f0d50-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="f0d50-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="f0d50-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="f0d50-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+### <a name="attributes"></a><span data-ttu-id="f0d50-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="f0d50-110">Attributes</span></span>  
+ <span data-ttu-id="f0d50-111">Aucun</span><span class="sxs-lookup"><span data-stu-id="f0d50-111">None.</span></span>  
   
-### Attributs  
- Aucun.  
+### <a name="child-elements"></a><span data-ttu-id="f0d50-112">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="f0d50-112">Child Elements</span></span>  
   
-### Éléments enfants  
-  
-|Élément|Description|  
+|<span data-ttu-id="f0d50-113">Élément</span><span class="sxs-lookup"><span data-stu-id="f0d50-113">Element</span></span>|<span data-ttu-id="f0d50-114">Description</span><span class="sxs-lookup"><span data-stu-id="f0d50-114">Description</span></span>|  
 |-------------|-----------------|  
-|[\<cryptoNameMapping\>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|Contient les mises en correspondance des classes avec les noms conviviaux.|  
-|[\<oidMap\>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Contient les mises en correspondance des OID \(Object IDentifier\) ASN.1 avec les classes.|  
+|[<span data-ttu-id="f0d50-115">\<cryptoNameMapping ></span><span class="sxs-lookup"><span data-stu-id="f0d50-115">\<cryptoNameMapping></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|<span data-ttu-id="f0d50-116">Contient des mappages de classes à des noms conviviaux.</span><span class="sxs-lookup"><span data-stu-id="f0d50-116">Contains mappings of classes to friendly names.</span></span>|  
+|[<span data-ttu-id="f0d50-117">\<oidMap ></span><span class="sxs-lookup"><span data-stu-id="f0d50-117">\<oidMap></span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|<span data-ttu-id="f0d50-118">Contient les mappages de d’identificateur d’objet ASN.1 aux classes.</span><span class="sxs-lookup"><span data-stu-id="f0d50-118">Contains ASN.1 object identifier (OID) mappings to classes.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="f0d50-119">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="f0d50-119">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="f0d50-120">Élément</span><span class="sxs-lookup"><span data-stu-id="f0d50-120">Element</span></span>|<span data-ttu-id="f0d50-121">Description</span><span class="sxs-lookup"><span data-stu-id="f0d50-121">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`mscorlib`|Contient l'élément `cryptographySettings`.|  
+|`configuration`|<span data-ttu-id="f0d50-122">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f0d50-122">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`mscorlib`|<span data-ttu-id="f0d50-123">Contient le `cryptographySettings` élément.</span><span class="sxs-lookup"><span data-stu-id="f0d50-123">Contains the `cryptographySettings` element.</span></span>|  
   
-## Exemple  
- L'exemple suivant montre comment utiliser l'élément **\<cryptographySettings\>** pour qu'il contienne les mises en correspondance des noms de chiffrement et les mises en correspondance des OID.  Cet exemple configure le runtime de sorte que [System.Security.Cryptography.HashAlgorithm.Create](frlrfSystemSecurityCryptographyHashAlgorithmClassCreateTopic) retourne un objet `MyHashClass` et que la classe `MyCryptoClass` soit associée à l'OID 1.3.36.2.1.  
+## <a name="example"></a><span data-ttu-id="f0d50-124">Exemple</span><span class="sxs-lookup"><span data-stu-id="f0d50-124">Example</span></span>  
+ <span data-ttu-id="f0d50-125">L’exemple suivant montre comment utiliser le  **\<cryptographySettings >** élément doit contenir les mappages de noms de chiffrement et les mappages de l’OID.</span><span class="sxs-lookup"><span data-stu-id="f0d50-125">The following example shows how use the **\<cryptographySettings>** element to contain cryptography name mappings and OID mappings.</span></span> <span data-ttu-id="f0d50-126">Cet exemple configure l’exécution afin que <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> retourne un `MyHashClass` objet et la `MyCryptoClass` classe correspond à l’OID 1.3.36.2.1.</span><span class="sxs-lookup"><span data-stu-id="f0d50-126">This example configures the runtime so that <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> returns a `MyHashClass` object and the `MyCryptoClass` class maps to the object identifier 1.3.36.2.1.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <mscorlib>  
       <cryptographySettings>  
@@ -85,7 +86,7 @@ Contient des paramètres de chiffrement.
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)   
- [Services de chiffrement](../../../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a><span data-ttu-id="f0d50-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f0d50-127">See Also</span></span>  
+ [<span data-ttu-id="f0d50-128">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="f0d50-128">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="f0d50-129">Schéma des paramètres de chiffrement</span><span class="sxs-lookup"><span data-stu-id="f0d50-129">Cryptography Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
+ [<span data-ttu-id="f0d50-130">Services de chiffrement</span><span class="sxs-lookup"><span data-stu-id="f0d50-130">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)

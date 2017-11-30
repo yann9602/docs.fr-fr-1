@@ -5,32 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- CLR ETW events, logging
+helpviewer_keywords: CLR ETW events, logging
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: aebeb1bb1257599cc3fb9b8be7bf2595ccca0f13
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f996cf730acc355f3bf13287b79581d23e4e6a5b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="controlling-net-framework-logging"></a>Contrôle de l'enregistrement .NET Framework
-Vous pouvez utiliser le suivi d'événements pour Windows (ETW) pour enregistrer les événements du Common Language Runtime (CLR). Vous pouvez créer et afficher des traces à l'aide des outils suivants :  
+# <a name="controlling-net-framework-logging"></a><span data-ttu-id="b358c-102">Contrôle de l'enregistrement .NET Framework</span><span class="sxs-lookup"><span data-stu-id="b358c-102">Controlling .NET Framework Logging</span></span>
+<span data-ttu-id="b358c-103">Vous pouvez utiliser le suivi d'événements pour Windows (ETW) pour enregistrer les événements du Common Language Runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="b358c-103">You can use event tracing for Windows (ETW) to record common language runtime (CLR) events.</span></span> <span data-ttu-id="b358c-104">Vous pouvez créer et afficher des traces à l'aide des outils suivants :</span><span class="sxs-lookup"><span data-stu-id="b358c-104">You can create and view traces by using the following tools:</span></span>  
   
--   Outils en ligne de commande [Logman](http://go.microsoft.com/fwlink/?LinkId=150916) et [Tracerpt](http://go.microsoft.com/fwlink/?LinkId=150919) qui sont inclus dans le système d’exploitation Windows.  
+-   <span data-ttu-id="b358c-105">Outils en ligne de commande [Logman](http://go.microsoft.com/fwlink/?LinkId=150916) et [Tracerpt](http://go.microsoft.com/fwlink/?LinkId=150919) qui sont inclus dans le système d’exploitation Windows.</span><span class="sxs-lookup"><span data-stu-id="b358c-105">The [Logman](http://go.microsoft.com/fwlink/?LinkId=150916) and [Tracerpt](http://go.microsoft.com/fwlink/?LinkId=150919) command-line tools, which are included with the Windows operating system.</span></span>  
   
--   Outils en ligne de commande [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) du [Windows Performance Toolkit](http://msdn.microsoft.com/library/windows/hardware/hh162945.aspx). Pour plus d’informations sur Xperf, consultez le [blog des performances de Windows](http://go.microsoft.com/fwlink/?LinkId=179509).  
+-   <span data-ttu-id="b358c-106">Outils en ligne de commande [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) du [Windows Performance Toolkit](http://msdn.microsoft.com/library/windows/hardware/hh162945.aspx).</span><span class="sxs-lookup"><span data-stu-id="b358c-106">The [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) tools in the [Windows Performance Toolkit](http://msdn.microsoft.com/library/windows/hardware/hh162945.aspx).</span></span> <span data-ttu-id="b358c-107">Pour plus d’informations sur Xperf, consultez le [blog des performances de Windows](http://go.microsoft.com/fwlink/?LinkId=179509).</span><span class="sxs-lookup"><span data-stu-id="b358c-107">For more information about Xperf, see the [Windows Performance blog](http://go.microsoft.com/fwlink/?LinkId=179509).</span></span>  
   
- Pour capturer des informations sur les événements du CLR, le fournisseur du CLR doit être installé sur votre ordinateur. Pour confirmer que le fournisseur est bien installé, tapez `logman query providers` à l'invite de commandes. La liste des fournisseurs est affichée. Cette liste doit contenir une entrée pour le fournisseur du CLR, comme suit.  
+ <span data-ttu-id="b358c-108">Pour capturer des informations sur les événements du CLR, le fournisseur du CLR doit être installé sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="b358c-108">To capture CLR event information, the CLR provider must be installed on your computer.</span></span> <span data-ttu-id="b358c-109">Pour confirmer que le fournisseur est bien installé, tapez `logman query providers` à l'invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="b358c-109">To confirm that the provider is installed, type `logman query providers` at the command prompt.</span></span> <span data-ttu-id="b358c-110">La liste des fournisseurs est affichée.</span><span class="sxs-lookup"><span data-stu-id="b358c-110">A list of providers is displayed.</span></span> <span data-ttu-id="b358c-111">Cette liste doit contenir une entrée pour le fournisseur du CLR, comme suit.</span><span class="sxs-lookup"><span data-stu-id="b358c-111">This list should contain an entry for the CLR provider, as follows.</span></span>  
   
 ```  
 Provider                                 GUID  
@@ -38,87 +35,86 @@ Provider                                 GUID
 .NET Common Language Runtime    {E13C0D23-CCBC-4E12-931B-D9CC2EEE27E4}.  
 ```  
   
- Si le fournisseur du CLR n’apparaît pas dans la liste, vous pouvez l’installer sur Windows Vista et les systèmes d’exploitation ultérieurs à l’aide de l’outil en ligne de commande Windows [Wevtutil](http://go.microsoft.com/fwlink/?LinkID=150915). Ouvrez la fenêtre d'invite de commandes en tant qu'administrateur. Remplacez le répertoire de l’invite par le dossier [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] (%WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET version>\). Ce dossier contient le fichier ETW.man du CLR. À l'invite de commandes, tapez la commande suivante pour installer le fournisseur du CLR.  
+ <span data-ttu-id="b358c-112">Si le fournisseur du CLR n’apparaît pas dans la liste, vous pouvez l’installer sur Windows Vista et les systèmes d’exploitation ultérieurs à l’aide de l’outil en ligne de commande Windows [Wevtutil](http://go.microsoft.com/fwlink/?LinkID=150915).</span><span class="sxs-lookup"><span data-stu-id="b358c-112">If the CLR provider is not listed, you can install it on Windows Vista and later operating systems by using the Windows [Wevtutil](http://go.microsoft.com/fwlink/?LinkID=150915) command-line tool.</span></span> <span data-ttu-id="b358c-113">Ouvrez la fenêtre d'invite de commandes en tant qu'administrateur.</span><span class="sxs-lookup"><span data-stu-id="b358c-113">Open the Command Prompt window as an administrator.</span></span> <span data-ttu-id="b358c-114">Remplacez le répertoire de l’invite par le dossier [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] (%WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET version>\).</span><span class="sxs-lookup"><span data-stu-id="b358c-114">Change the prompt directory to the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] folder (%WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET version>\ ).</span></span> <span data-ttu-id="b358c-115">Ce dossier contient le fichier ETW.man du CLR.</span><span class="sxs-lookup"><span data-stu-id="b358c-115">This folder contains the CLR-ETW.man file.</span></span> <span data-ttu-id="b358c-116">À l'invite de commandes, tapez la commande suivante pour installer le fournisseur du CLR.</span><span class="sxs-lookup"><span data-stu-id="b358c-116">At the command prompt, type the following command to install the CLR provider:</span></span>  
   
  `wevtutil im CLR-ETW.man`  
   
-## <a name="capturing-clr-etw-events"></a>Capture des événements ETW du CLR  
- Vous pouvez utiliser les outils en ligne de commande [Logman](http://go.microsoft.com/fwlink/?LinkId=150916) et [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) pour capturer des événements ETW, et les outils [Tracerpt](http://go.microsoft.com/fwlink/?LinkId=150919) et [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) pour décoder les événements Trace.  
+## <a name="capturing-clr-etw-events"></a><span data-ttu-id="b358c-117">Capture des événements ETW du CLR</span><span class="sxs-lookup"><span data-stu-id="b358c-117">Capturing CLR ETW Events</span></span>  
+ <span data-ttu-id="b358c-118">Vous pouvez utiliser les outils en ligne de commande [Logman](http://go.microsoft.com/fwlink/?LinkId=150916) et [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) pour capturer des événements ETW, et les outils [Tracerpt](http://go.microsoft.com/fwlink/?LinkId=150919) et [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) pour décoder les événements Trace.</span><span class="sxs-lookup"><span data-stu-id="b358c-118">You can use the [Logman](http://go.microsoft.com/fwlink/?LinkId=150916) and [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) command-line tools to capture ETW events, and the [Tracerpt](http://go.microsoft.com/fwlink/?LinkId=150919) and [Xperf](http://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) tools to decode the trace events.</span></span>  
   
- Pour activer la journalisation, un utilisateur doit spécifier trois éléments :  
+ <span data-ttu-id="b358c-119">Pour activer la journalisation, un utilisateur doit spécifier trois éléments :</span><span class="sxs-lookup"><span data-stu-id="b358c-119">To turn on logging, a user must specify three things:</span></span>  
   
--   Le fournisseur vers lequel communiquer.  
+-   <span data-ttu-id="b358c-120">Le fournisseur vers lequel communiquer.</span><span class="sxs-lookup"><span data-stu-id="b358c-120">The provider to communicate to.</span></span>  
   
--   Un nombre 64 bits qui représente un jeu de mots clés. Chaque mot clé représente un jeu d'événements que le fournisseur peut activer. Le nombre représente un jeu combiné de mots clés à activer.  
+-   <span data-ttu-id="b358c-121">Un nombre 64 bits qui représente un jeu de mots clés.</span><span class="sxs-lookup"><span data-stu-id="b358c-121">A 64-bit number that represents a set of keywords.</span></span> <span data-ttu-id="b358c-122">Chaque mot clé représente un jeu d'événements que le fournisseur peut activer.</span><span class="sxs-lookup"><span data-stu-id="b358c-122">Each keyword represents a set of events that the provider can turn on.</span></span> <span data-ttu-id="b358c-123">Le nombre représente un jeu combiné de mots clés à activer.</span><span class="sxs-lookup"><span data-stu-id="b358c-123">The number represents a combined set of keywords to turn on.</span></span>  
   
--   Un petit nombre représentant le niveau (commentaires) à journaliser. Le niveau 1 est le moins détaillé, et le niveau 5 est le plus détaillé. Le niveau 0 est une valeur par défaut dont la signification est spécifique au fournisseur.  
+-   <span data-ttu-id="b358c-124">Un petit nombre représentant le niveau (commentaires) à journaliser.</span><span class="sxs-lookup"><span data-stu-id="b358c-124">A small number representing the level (verbosity) to log at.</span></span> <span data-ttu-id="b358c-125">Le niveau 1 est le moins détaillé, et le niveau 5 est le plus détaillé.</span><span class="sxs-lookup"><span data-stu-id="b358c-125">Level 1 is the least verbose, and level 5 is the most verbose.</span></span> <span data-ttu-id="b358c-126">Le niveau 0 est une valeur par défaut dont la signification est spécifique au fournisseur.</span><span class="sxs-lookup"><span data-stu-id="b358c-126">Level 0 is a default whose meaning is provider-specific.</span></span>  
   
-#### <a name="to-capture-clr-etw-events-using-logman"></a>Pour capturer les événements ETW du CLR à l'aide de Logman  
+#### <a name="to-capture-clr-etw-events-using-logman"></a><span data-ttu-id="b358c-127">Pour capturer les événements ETW du CLR à l'aide de Logman</span><span class="sxs-lookup"><span data-stu-id="b358c-127">To capture CLR ETW events using Logman</span></span>  
   
-1.  À l'invite de commandes, tapez :  
+1.  <span data-ttu-id="b358c-128">À l'invite de commandes, tapez :</span><span class="sxs-lookup"><span data-stu-id="b358c-128">At the command prompt, type:</span></span>  
   
      `logman start clrevents -p {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4} 0x1CCBD 0x5 -ets -ct perf`  
   
-     où :  
+     <span data-ttu-id="b358c-129">où :</span><span class="sxs-lookup"><span data-stu-id="b358c-129">where:</span></span>  
   
-    -   Le paramètre `-p` identifie le GUID du fournisseur.  
+    -   <span data-ttu-id="b358c-130">Le paramètre `-p` identifie le GUID du fournisseur.</span><span class="sxs-lookup"><span data-stu-id="b358c-130">The `-p` parameter identifies the provider GUID.</span></span>  
   
-    -   `0x1CCBD` spécifie les catégories d'événements qui seront déclenchés.  
+    -   <span data-ttu-id="b358c-131">`0x1CCBD` spécifie les catégories d'événements qui seront déclenchés.</span><span class="sxs-lookup"><span data-stu-id="b358c-131">`0x1CCBD` specifies the categories of events that will be raised.</span></span>  
   
-    -   `0x5` définit le niveau de la journalisation (dans ce cas, détaillé (5)).  
+    -   <span data-ttu-id="b358c-132">`0x5` définit le niveau de la journalisation (dans ce cas, détaillé (5)).</span><span class="sxs-lookup"><span data-stu-id="b358c-132">`0x5` sets the level of logging (in this case, verbose (5)).</span></span>  
   
-    -   Le paramètre `-ets` indique à Logman d'envoyer des commandes aux sessions de suivi d'événements.  
+    -   <span data-ttu-id="b358c-133">Le paramètre `-ets` indique à Logman d'envoyer des commandes aux sessions de suivi d'événements.</span><span class="sxs-lookup"><span data-stu-id="b358c-133">The `-ets` parameter instructs Logman to send commands to event tracing sessions.</span></span>  
   
-    -   Le paramètre `-ct perf` indique que la fonction `QueryPerformanceCounter` sera utilisée pour enregistrer l'horodatage de chaque événement.  
+    -   <span data-ttu-id="b358c-134">Le paramètre `-ct perf` indique que la fonction `QueryPerformanceCounter` sera utilisée pour enregistrer l'horodatage de chaque événement.</span><span class="sxs-lookup"><span data-stu-id="b358c-134">The `-ct perf` parameter specifies that the `QueryPerformanceCounter` function will be used to log the time stamp for each event.</span></span>  
   
-2.  Pour arrêter de journaliser les événements, tapez :  
+2.  <span data-ttu-id="b358c-135">Pour arrêter de journaliser les événements, tapez :</span><span class="sxs-lookup"><span data-stu-id="b358c-135">To stop logging the events, type:</span></span>  
   
      `logman stop clrevents -ets`  
   
-     Cette commande crée un fichier de suivi binaire nommé clrevents.etl.  
+     <span data-ttu-id="b358c-136">Cette commande crée un fichier de suivi binaire nommé clrevents.etl.</span><span class="sxs-lookup"><span data-stu-id="b358c-136">This command creates a binary trace file named clrevents.etl.</span></span>  
   
-#### <a name="to-capture-clr-etw-events-using-xperf"></a>Pour capturer les événements ETW du CLR à l'aide de Xperf  
+#### <a name="to-capture-clr-etw-events-using-xperf"></a><span data-ttu-id="b358c-137">Pour capturer les événements ETW du CLR à l'aide de Xperf</span><span class="sxs-lookup"><span data-stu-id="b358c-137">To capture CLR ETW events using Xperf</span></span>  
   
-1.  À l'invite de commandes, tapez :  
+1.  <span data-ttu-id="b358c-138">À l'invite de commandes, tapez :</span><span class="sxs-lookup"><span data-stu-id="b358c-138">At the command prompt, type:</span></span>  
   
      `xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:5 -f clrevents.etl`  
   
-     où le GUID est le GUID du fournisseur ETW du CLR et `0x1CCBD:5` effectue le suivi de tous les éléments de niveaux 5 (détaillé) et inférieurs.  
+     <span data-ttu-id="b358c-139">où le GUID est le GUID du fournisseur ETW du CLR et `0x1CCBD:5` effectue le suivi de tous les éléments de niveaux 5 (détaillé) et inférieurs.</span><span class="sxs-lookup"><span data-stu-id="b358c-139">where the GUID is the CLR ETW provider GUID, and `0x1CCBD:5` traces everything at and below level 5 (verbose).</span></span>  
   
-2.  Pour arrêter le suivi, tapez :  
+2.  <span data-ttu-id="b358c-140">Pour arrêter le suivi, tapez :</span><span class="sxs-lookup"><span data-stu-id="b358c-140">To stop tracing, type:</span></span>  
   
      `Xperf -stop clr`  
   
-     Cette commande crée un fichier de suivi nommé clrevents.etl.  
+     <span data-ttu-id="b358c-141">Cette commande crée un fichier de suivi nommé clrevents.etl.</span><span class="sxs-lookup"><span data-stu-id="b358c-141">This command creates a trace file named clrevents.etl.</span></span>  
   
-## <a name="viewing-clr-etw-events"></a>Affichage des événements ETW du CLR  
- Utilisez les commandes répertoriées ci-dessous pour afficher les événements ETW du CLR. Pour obtenir une description des événements, consultez [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md).  
+## <a name="viewing-clr-etw-events"></a><span data-ttu-id="b358c-142">Affichage des événements ETW du CLR</span><span class="sxs-lookup"><span data-stu-id="b358c-142">Viewing CLR ETW Events</span></span>  
+ <span data-ttu-id="b358c-143">Utilisez les commandes répertoriées ci-dessous pour afficher les événements ETW du CLR.</span><span class="sxs-lookup"><span data-stu-id="b358c-143">Use the commands listed below to view the CLR ETW events.</span></span> <span data-ttu-id="b358c-144">Pour obtenir une description des événements, consultez [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md).</span><span class="sxs-lookup"><span data-stu-id="b358c-144">For a description of the events, see [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md).</span></span>  
   
-#### <a name="to-view-clr-etw-events-using-tracerpt"></a>Pour afficher les événements ETW du CLR à l'aide de Tracerpt  
+#### <a name="to-view-clr-etw-events-using-tracerpt"></a><span data-ttu-id="b358c-145">Pour afficher les événements ETW du CLR à l'aide de Tracerpt</span><span class="sxs-lookup"><span data-stu-id="b358c-145">To view CLR ETW events using Tracerpt</span></span>  
   
--   À l'invite de commandes, tapez :  
+-   <span data-ttu-id="b358c-146">À l'invite de commandes, tapez :</span><span class="sxs-lookup"><span data-stu-id="b358c-146">At the command prompt, type:</span></span>  
   
      `tracerpt clrevents.etl`  
   
-     Cette commande crée deux fichiers : dumpfile.xml et summary.txt. Le fichier dumpfile.xml répertorie tous les événements et le fichier summary.txt fournit un résumé des événements.  
+     <span data-ttu-id="b358c-147">Cette commande crée deux fichiers : dumpfile.xml et summary.txt.</span><span class="sxs-lookup"><span data-stu-id="b358c-147">This command creates two files: dumpfile.xml and summary.txt.</span></span> <span data-ttu-id="b358c-148">Le fichier dumpfile.xml répertorie tous les événements et le fichier summary.txt fournit un résumé des événements.</span><span class="sxs-lookup"><span data-stu-id="b358c-148">The dumpfile.xml file lists all the events, and summary.txt provides a summary of the events.</span></span>  
   
-#### <a name="to-view-clr-etw-events-using-xperf"></a>Pour afficher les événements ETW du CLR à l'aide de Xperf  
+#### <a name="to-view-clr-etw-events-using-xperf"></a><span data-ttu-id="b358c-149">Pour afficher les événements ETW du CLR à l'aide de Xperf</span><span class="sxs-lookup"><span data-stu-id="b358c-149">To view CLR ETW events using Xperf</span></span>  
   
--   À l'invite de commandes, tapez :  
+-   <span data-ttu-id="b358c-150">À l'invite de commandes, tapez :</span><span class="sxs-lookup"><span data-stu-id="b358c-150">At the command prompt, type:</span></span>  
   
      `xperf clrevents.etl`  
   
-     Cette commande ouvre la visionneuse de fichiers ETL de Xperf. Dans cette visionneuse, les événements CLR s’affichent dans la vue **Événements génériques**. Pour afficher une grille de données d’événements catégorisée par type, sélectionnez une plage horaire dans cette vue, puis cliquez avec le bouton droit et sélectionnez **Résumé**.  
+     <span data-ttu-id="b358c-151">Cette commande ouvre la visionneuse de fichiers ETL de Xperf.</span><span class="sxs-lookup"><span data-stu-id="b358c-151">This command opens the Xperf ETL file viewer.</span></span> <span data-ttu-id="b358c-152">Dans cette visionneuse, les événements CLR s’affichent dans la vue **Événements génériques**.</span><span class="sxs-lookup"><span data-stu-id="b358c-152">In this viewer, the CLR events show up in the **Generic Events** view.</span></span> <span data-ttu-id="b358c-153">Pour afficher une grille de données d’événements catégorisée par type, sélectionnez une plage horaire dans cette vue, puis cliquez avec le bouton droit et sélectionnez **Résumé**.</span><span class="sxs-lookup"><span data-stu-id="b358c-153">To display a data grid of events categorized by type, select a region of time in this view, and then right-click and select **Summary**.</span></span>  
   
-#### <a name="to-convert-the-etl-file-to-a-comma-separated-value-file"></a>Pour convertir le fichier .etl en fichier .csv  
+#### <a name="to-convert-the-etl-file-to-a-comma-separated-value-file"></a><span data-ttu-id="b358c-154">Pour convertir le fichier .etl en fichier .csv</span><span class="sxs-lookup"><span data-stu-id="b358c-154">To convert the .etl file to a comma-separated value file</span></span>  
   
--   À l'invite de commandes, tapez :  
+-   <span data-ttu-id="b358c-155">À l'invite de commandes, tapez :</span><span class="sxs-lookup"><span data-stu-id="b358c-155">At the command prompt, type:</span></span>  
   
      `xperf -i clrevents.etl -f clrevents.csv`  
   
-     Cette commande indique à Xperf d’effectuer un dump des événements dans un fichier de valeurs séparées par des virgules (.csv) que vous pouvez consulter. Étant donné que des événements différents ont des champs différents, ce fichier .csv contient plusieurs lignes d'en-têtes avant les données. Le premier champ de chaque ligne correspond au type d'événement, qui indique l'en-tête à utiliser pour déterminer le reste des champs.  
+     <span data-ttu-id="b358c-156">Cette commande indique à Xperf d’effectuer un dump des événements dans un fichier de valeurs séparées par des virgules (.csv) que vous pouvez consulter.</span><span class="sxs-lookup"><span data-stu-id="b358c-156">This command causes XPerf to dump the events as a comma separated value (CSV) file that you can view.</span></span> <span data-ttu-id="b358c-157">Étant donné que des événements différents ont des champs différents, ce fichier .csv contient plusieurs lignes d'en-têtes avant les données.</span><span class="sxs-lookup"><span data-stu-id="b358c-157">Because different events have different fields, this CSV file is contains more than one header line before the data.</span></span> <span data-ttu-id="b358c-158">Le premier champ de chaque ligne correspond au type d'événement, qui indique l'en-tête à utiliser pour déterminer le reste des champs.</span><span class="sxs-lookup"><span data-stu-id="b358c-158">The first field of every line is the event type, which indicates which header should be used to determine the rest of the fields.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Windows Performance Toolkit](http://go.microsoft.com/fwlink/?LinkID=161141)   
- [Événements ETW dans le Common Language Runtime](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
-
+## <a name="see-also"></a><span data-ttu-id="b358c-159">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b358c-159">See Also</span></span>  
+ [<span data-ttu-id="b358c-160">Windows Performance Toolkit</span><span class="sxs-lookup"><span data-stu-id="b358c-160">Windows Performance Toolkit</span></span>](http://go.microsoft.com/fwlink/?LinkID=161141)  
+ [<span data-ttu-id="b358c-161">Événements ETW dans le Common Language Runtime</span><span class="sxs-lookup"><span data-stu-id="b358c-161">ETW Events in the Common Language Runtime</span></span>](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

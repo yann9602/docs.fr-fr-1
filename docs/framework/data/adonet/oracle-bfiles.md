@@ -1,44 +1,47 @@
 ---
-title: "BFILE Oracle | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: BFILE Oracle
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f48bd85559d55d9a1190310bcf13cd4a68625011
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# BFILE Oracle
-Le fournisseur de données .NET Framework pour Oracle inclut la classe <xref:System.Data.OracleClient.OracleBFile> qui est utilisée pour opérer avec le type de données <xref:System.Data.OracleClient.OracleType> Oracle.  
+# <a name="oracle-bfiles"></a><span data-ttu-id="98528-102">BFILE Oracle</span><span class="sxs-lookup"><span data-stu-id="98528-102">Oracle BFILEs</span></span>
+<span data-ttu-id="98528-103">Le fournisseur de données .NET Framework pour Oracle inclut la classe <xref:System.Data.OracleClient.OracleBFile> qui est utilisée pour opérer avec le type de données <xref:System.Data.OracleClient.OracleType.BFile> Oracle.</span><span class="sxs-lookup"><span data-stu-id="98528-103">The .NET Framework Data Provider for Oracle includes the <xref:System.Data.OracleClient.OracleBFile> class, which is used to work with the Oracle <xref:System.Data.OracleClient.OracleType.BFile> data type.</span></span>  
   
- Le type de données **BFILE** Oracle est un type de données **LOB** Oracle contenant une référence à des données binaires ayant une taille maximale de 4 giga\-octets.  Un type de données **BFILE** Oracle diffère d'autres types de données **LOB** Oracle par ses données stockées dans un fichier physique du système d'exploitation et non sur le serveur.  Notez que le type de données **BFILE** fournit un accès en lecture seule aux données.  
+ <span data-ttu-id="98528-104">Oracle **BFILE** type de données est Oracle **LOB** type de données qui contient une référence à des données binaires d’une taille maximale de 4 giga-octets.</span><span class="sxs-lookup"><span data-stu-id="98528-104">The Oracle **BFILE** data type is an Oracle **LOB** data type that contains a reference to binary data with a maximum size of 4 gigabytes.</span></span> <span data-ttu-id="98528-105">Oracle **BFILE** Oracle diffère d’autres **LOB** les types de données par ses données stockées dans un fichier physique dans le système d’exploitation au lieu de sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="98528-105">An Oracle **BFILE** differs from other Oracle **LOB** data types in that its data is stored in a physical file in the operating system instead of on the server.</span></span> <span data-ttu-id="98528-106">Notez que la **BFILE** type de données fournit un accès en lecture seule aux données.</span><span class="sxs-lookup"><span data-stu-id="98528-106">Note that the **BFILE** data type provides read-only access to data.</span></span>  
   
- Autres caractéristiques du type de données **BFILE** qui le distinguent du type de données **LOB** :  
+ <span data-ttu-id="98528-107">Autres caractéristiques d’un **BFILE** type de données qui le distinguent un **LOB** type de données :</span><span class="sxs-lookup"><span data-stu-id="98528-107">Other characteristics of a **BFILE** data type that distinguish it from a **LOB** data type are that it:</span></span>  
   
--   Il contient des données non structurées.  
+-   <span data-ttu-id="98528-108">Il contient des données non structurées.</span><span class="sxs-lookup"><span data-stu-id="98528-108">Contains unstructured data.</span></span>  
   
--   Il prend en charge la fragmentation côté serveur.  
+-   <span data-ttu-id="98528-109">Il prend en charge la fragmentation côté serveur.</span><span class="sxs-lookup"><span data-stu-id="98528-109">Supports server-side chunking.</span></span>  
   
--   Il utilise une sémantique de copie de référence.  Par exemple, si vous effectuez une opération de copie sur un type de données **BFILE**, seule l'adresse **BFILE** \(qui est une référence au fichier\) est copiée.  Les données du fichier ne sont pas copiées.  
+-   <span data-ttu-id="98528-110">Il utilise une sémantique de copie de référence.</span><span class="sxs-lookup"><span data-stu-id="98528-110">Uses reference copy semantics.</span></span> <span data-ttu-id="98528-111">Par exemple, si vous effectuez une opération de copie sur un **BFILE**, seule la **BFILE** (qui est une référence au fichier) est copiée.</span><span class="sxs-lookup"><span data-stu-id="98528-111">For example, if you perform a copy operation on a **BFILE**, only the **BFILE** locator (which is a reference to the file) is copied.</span></span> <span data-ttu-id="98528-112">Les données du fichier ne sont pas copiées.</span><span class="sxs-lookup"><span data-stu-id="98528-112">The data in the file is not copied.</span></span>  
   
- Le type de données **BFILE** doit être utilisé pour référencer les LOB de grande taille, qu'il n'est en conséquence pas pratique de stocker dans la base de données.  Par rapport au type de données **LOB**, l'utilisation du type de données **BFILE** exige un temps système supplémentaire au niveau de la communication, du serveur et du client.  Il est plus efficace d'accéder à un type **BFILE** si vous avez uniquement besoin d'obtenir un petit volume de données.  Il est plus efficace d'accéder à des LOB résidant en mémoire si vous avez besoin d'obtenir l'objet entier.  
+ <span data-ttu-id="98528-113">Le **BFILE** type de données doit être utilisé pour référencer les LOB de grande taille et par conséquent, pas pratique de stocker dans la base de données.</span><span class="sxs-lookup"><span data-stu-id="98528-113">The **BFILE** data type should be used for referencing LOBs that are large in size, and therefore, not practical to store in the database.</span></span> <span data-ttu-id="98528-114">Davantage de surcharge client, serveur et de communication intervient lorsque vous utilisez un **BFILE** type de données par rapport à la **LOB** type de données.</span><span class="sxs-lookup"><span data-stu-id="98528-114">More client, server, and communication overhead is involved when using a **BFILE** data type compared with the **LOB** data type.</span></span> <span data-ttu-id="98528-115">Il est plus efficace d’accéder à un **BFILE** si vous devez uniquement obtenir une petite quantité de données.</span><span class="sxs-lookup"><span data-stu-id="98528-115">It is more efficient to access a **BFILE** if you only need to obtain a small amount of data.</span></span> <span data-ttu-id="98528-116">Il est plus efficace d'accéder à des LOB résidant en mémoire si vous avez besoin d'obtenir l'objet entier.</span><span class="sxs-lookup"><span data-stu-id="98528-116">It is more efficient to access database-resident LOBs if you need to obtain the entire object.</span></span>  
   
- Chaque objet **OracleBFile** différent de NULL est associé à deux entités qui définissent l'emplacement du fichier physique sous\-jacent :  
+ <span data-ttu-id="98528-117">Chaque valeur non NULL **OracleBFile** objet est associé à deux entités qui définissent l’emplacement du fichier physique sous-jacent :</span><span class="sxs-lookup"><span data-stu-id="98528-117">Each non-NULL **OracleBFile** object is associated with two entities that define the location of the underlying physical file:</span></span>  
   
-1.  Un objet DIRECTORY Oracle, qui est un alias de base de données pour un répertoire du système de fichiers.  
+1.  <span data-ttu-id="98528-118">Un objet DIRECTORY Oracle, qui est un alias de base de données pour un répertoire du système de fichiers.</span><span class="sxs-lookup"><span data-stu-id="98528-118">An Oracle DIRECTORY object, which is a database alias for a directory in the file system, and</span></span>  
   
-2.  Le nom du fichier physique sous\-jacent, qui se trouve dans le répertoire associé à l'objet DIRECTORY.  
+2.  <span data-ttu-id="98528-119">Le nom du fichier physique sous-jacent, qui se trouve dans le répertoire associé à l'objet DIRECTORY.</span><span class="sxs-lookup"><span data-stu-id="98528-119">The file name of the underlying physical file, which is located in the directory associated with the DIRECTORY object.</span></span>  
   
-## Exemple  
- L'exemple C\# suivant montre comment créer un type **BFILE** dans une table Oracle, puis l'extraire sous la forme d'un objet **OracleBFile**.  L'exemple montre l'utilisation de l'objet <xref:System.Data.OracleClient.OracleDataReader> et des méthodes **OracleBFile** **Seek** et **Read**.  Notez que, pour utiliser cet exemple, vous devez commencer par créer un répertoire nommé « c:\\\\bfiles » et un fichier nommé « MyFile.jpg » sur le serveur Oracle.  
+## <a name="example"></a><span data-ttu-id="98528-120">Exemple</span><span class="sxs-lookup"><span data-stu-id="98528-120">Example</span></span>  
+ <span data-ttu-id="98528-121">L’exemple c# suivant montre comment vous pouvez créer un **BFILE** dans une table Oracle, puis l’extraire sous la forme d’un **OracleBFile** objet.</span><span class="sxs-lookup"><span data-stu-id="98528-121">The following C# example demonstrates how you can create a **BFILE** in an Oracle table and then retrieve it in the form of an **OracleBFile** object.</span></span> <span data-ttu-id="98528-122">L’exemple montre comment utiliser le <xref:System.Data.OracleClient.OracleDataReader> objet et la **OracleBFile** **recherche** et **en lecture** méthodes.</span><span class="sxs-lookup"><span data-stu-id="98528-122">The example demonstrates using the <xref:System.Data.OracleClient.OracleDataReader> object and the **OracleBFile** **Seek** and **Read** methods.</span></span> <span data-ttu-id="98528-123">Notez que pour utiliser cet exemple, vous devez d’abord créer un répertoire nommé « c:\\\bfiles » et un fichier nommé « MyFile.jpg » sur le serveur Oracle.</span><span class="sxs-lookup"><span data-stu-id="98528-123">Note that in order to use this sample, you must first create a directory named "c:\\\bfiles" and file named "MyFile.jpg" on the Oracle server.</span></span>  
   
 ```csharp  
 using System;  
@@ -93,6 +96,6 @@ public class Sample
 }  
 ```  
   
-## Voir aussi  
- [Oracle et ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="98528-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="98528-124">See Also</span></span>  
+ [<span data-ttu-id="98528-125">Oracle et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="98528-125">Oracle and ADO.NET</span></span>](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
+ [<span data-ttu-id="98528-126">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="98528-126">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

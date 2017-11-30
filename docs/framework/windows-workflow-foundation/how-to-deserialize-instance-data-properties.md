@@ -1,40 +1,43 @@
 ---
-title: "Comment&#160;: d&#233;s&#233;rialiser des propri&#233;t&#233;s de donn&#233;es d&#39;instance | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : désérialiser des propriétés de données d'instance"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4c29c9c0151c253ec1e981413aea2d6d2a0672ac
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: d&#233;s&#233;rialiser des propri&#233;t&#233;s de donn&#233;es d&#39;instance
-Il peut y avoir des situations où un utilisateur ou un administrateur de workflow peut souhaiter examiner manuellement l'état d'une instance persistante de workflow.<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> fournit une vue de la table Instances qui expose les quatre colonnes suivantes :  
+# <a name="how-to-deserialize-instance-data-properties"></a><span data-ttu-id="220eb-102">Comment : désérialiser des propriétés de données d'instance</span><span class="sxs-lookup"><span data-stu-id="220eb-102">How to: Deserialize Instance Data Properties</span></span>
+<span data-ttu-id="220eb-103">Il peut y avoir des situations où un utilisateur ou un administrateur de workflow peut souhaiter examiner manuellement l'état d'une instance persistante de workflow.</span><span class="sxs-lookup"><span data-stu-id="220eb-103">There may be situations when a user or workflow administrator may want to manually inspect the state of a persisted workflow instance.</span></span> <span data-ttu-id="220eb-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> fournit une vue de la table Instances qui expose les quatre colonnes suivantes :</span><span class="sxs-lookup"><span data-stu-id="220eb-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> provides a view on the Instances table that exposes the following four columns:</span></span>  
   
--   ReadWritePrimitiveDataProperties  
+-   <span data-ttu-id="220eb-105">ReadWritePrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="220eb-105">ReadWritePrimitiveDataProperties</span></span>  
   
--   WriteOnlyPrimitiveDataProperties  
+-   <span data-ttu-id="220eb-106">WriteOnlyPrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="220eb-106">WriteOnlyPrimitiveDataProperties</span></span>  
   
--   ReadWriteComplexDataProperties  
+-   <span data-ttu-id="220eb-107">ReadWriteComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="220eb-107">ReadWriteComplexDataProperties</span></span>  
   
--   WriteOnlyComplexDataProperties  
+-   <span data-ttu-id="220eb-108">WriteOnlyComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="220eb-108">WriteOnlyComplexDataProperties</span></span>  
   
- Les propriétés des données primitives font référence aux propriétés dont les types .NET Framework sont considérés comme « communs » \(par exemple, Int32 et String\) alors que les propriétés des données complexes font référence à tous les autres types.Une énumération exacte des types primitifs figure plus loin dans cet exemple de code.  
+ <span data-ttu-id="220eb-109">Propriétés des données primitives font référence aux propriétés dont les types .NET Framework sont considérés comme « communs » (par exemple, Int32 et String), alors que les propriétés de données complexes font référence à tous les autres types.</span><span class="sxs-lookup"><span data-stu-id="220eb-109">Primitive data properties refer to properties whose .NET Framework types are considered to be "common" (for example, Int32 and String), while complex data properties refer to all other types.</span></span> <span data-ttu-id="220eb-110">Une énumération exacte des types primitifs figure plus loin dans cet exemple de code.</span><span class="sxs-lookup"><span data-stu-id="220eb-110">An exact enumeration of primitive types is found later in this code example.</span></span>  
   
- Les propriétés Read\/Write font référence aux propriétés retournées à l'exécution du workflow lorsqu'une instance est chargée.Les propriétés WriteOnly sont écrites dans la base de données et ne sont jamais relues.  
+ <span data-ttu-id="220eb-111">Les propriétés de lecture/écriture font référence aux propriétés retournées à l'exécution du workflow lorsqu'une instance est chargée.</span><span class="sxs-lookup"><span data-stu-id="220eb-111">Read/write properties refer to properties that are returned back to the Workflow Runtime when an instance is loaded.</span></span> <span data-ttu-id="220eb-112">Les propriétés WriteOnly sont écrites dans la base de données et ne sont jamais relues.</span><span class="sxs-lookup"><span data-stu-id="220eb-112">WriteOnly properties are written to the database and then never read again.</span></span>  
   
- Cet exemple fournit un code qui permet à un utilisateur de désérialiser des propriétés des données primitives.Pour un tableau d'octets lu à partir de la colonne ReadWritePrimitiveDataProperties ou WriteOnlyPrimitiveDataProperties, ce code convertira l'objet BLOB en un <xref:System.Collections.Generic.Dictionary%601> de type \<XName, objet\> où chaque paire de valeurs de clé représente un nom de propriété et sa valeur correspondante.  
+ <span data-ttu-id="220eb-113">Cet exemple fournit un code qui permet à un utilisateur de désérialiser des propriétés des données primitives.</span><span class="sxs-lookup"><span data-stu-id="220eb-113">This example provides code that enables a user to deserialize primitive data properties.</span></span> <span data-ttu-id="220eb-114">Un tableau d’octets lu à partir de la colonne soit l’ou WriteOnlyPrimitiveDataProperties, ce code convertira l’objet binaire volumineux (BLOB) dans un <xref:System.Collections.Generic.Dictionary%602> de type \<XName, objet > où chaque valeur de clé paire représente un nom de propriété et sa valeur correspondante.</span><span class="sxs-lookup"><span data-stu-id="220eb-114">Given a byte array read from either the ReadWritePrimitiveDataProperties or WriteOnlyPrimitiveDataProperties column, this code will convert the binary large object (BLOB) into a <xref:System.Collections.Generic.Dictionary%602> of type \<XName, object> where each key value pair represents a property name and its corresponding value.</span></span>  
   
- Cet exemple ne montre pas comment désérialiser les propriétés des données complexes, car cette opération n'est actuellement pas prise en charge.  
+ <span data-ttu-id="220eb-115">Cet exemple ne montre pas comment désérialiser les propriétés des données complexes, car cette opération n'est actuellement pas prise en charge.</span><span class="sxs-lookup"><span data-stu-id="220eb-115">This example does not demonstrate how to deserialize complex data properties because this is currently not a supported operation.</span></span>  
   
 ```  
-  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -252,5 +255,4 @@ namespace PropertyReader
         }  
     }  
 }  
-  
 ```

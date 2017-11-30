@@ -1,48 +1,51 @@
 ---
-title: "Service&#160;: &#233;couteurs de canal et canaux | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Service : écouteurs de canal et canaux"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8ccbe0e8-7e55-441d-80de-5765f67542fa
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f991ebe2be79313bbcf51b41944f84886b1a0b8d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Service&#160;: &#233;couteurs de canal et canaux
-Il existe trois catégories d'objets de canal : les canaux, les écouteurs de canal et les fabrications de canaux.Les canaux sont l'interface entre l'application et la pile de canaux.Les écouteurs de canal sont chargés de créer des canaux du côté réception \(ou écoute\), généralement en réponse à une nouvelle connexion ou un nouveau message entrant.Les fabrications de canaux sont chargées de créer des canaux du côté envoi afin d'initier la communication avec un point de terminaison.  
+# <a name="service-channel-listeners-and-channels"></a><span data-ttu-id="069ee-102">Service : écouteurs de canal et canaux</span><span class="sxs-lookup"><span data-stu-id="069ee-102">Service: Channel Listeners and Channels</span></span>
+<span data-ttu-id="069ee-103">Il existe trois catégories d'objets de canal : les canaux, les écouteurs de canal et les fabrications de canaux.</span><span class="sxs-lookup"><span data-stu-id="069ee-103">There are three categories of channel objects: channels, channel listeners and channel factories.</span></span> <span data-ttu-id="069ee-104">Les canaux sont l'interface entre l'application et la pile de canaux.</span><span class="sxs-lookup"><span data-stu-id="069ee-104">Channels are the interface between the application and the channel stack.</span></span> <span data-ttu-id="069ee-105">Les écouteurs de canal sont chargés de créer des canaux du côté réception (ou écoute), généralement en réponse à une nouvelle connexion ou un nouveau message entrant.</span><span class="sxs-lookup"><span data-stu-id="069ee-105">Channel listeners are responsible for creating channels on the receive (or listen) side, typically in response to a new incoming message or connection.</span></span> <span data-ttu-id="069ee-106">Les fabrications de canaux sont chargées de créer des canaux du côté envoi afin d'initier la communication avec un point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="069ee-106">Channel factories are responsible for creating channels on the send side to initiate communication with an endpoint.</span></span>  
   
-## Écouteurs de canal et canaux  
- Les écouteurs de canal sont chargés de créer des canaux et de recevoir les messages de la couche inférieure ou du réseau.Les messages reçus sont remis à la couche supérieure à l'aide d'un canal créé par l'écouteur de canal.  
+## <a name="channel-listeners-and-channels"></a><span data-ttu-id="069ee-107">Écouteurs de canal et canaux</span><span class="sxs-lookup"><span data-stu-id="069ee-107">Channel Listeners and Channels</span></span>  
+ <span data-ttu-id="069ee-108">Les écouteurs de canal sont chargés de créer des canaux et de recevoir les messages de la couche inférieure ou du réseau.</span><span class="sxs-lookup"><span data-stu-id="069ee-108">Channel listeners are responsible for creating channels and receiving messages from the layer below or from the network.</span></span> <span data-ttu-id="069ee-109">Les messages reçus sont remis à la couche supérieure à l'aide d'un canal créé par l'écouteur de canal.</span><span class="sxs-lookup"><span data-stu-id="069ee-109">Received messages are delivered to the layer above using a channel that is created by the channel listener.</span></span>  
   
- Le diagramme suivant illustre le processus de réception des messages et de leur remise à la couche supérieure.  
+ <span data-ttu-id="069ee-110">Le diagramme suivant illustre le processus de réception des messages et de leur remise à la couche supérieure.</span><span class="sxs-lookup"><span data-stu-id="069ee-110">The following diagram illustrates the process of receiving messages and delivering them to the layer above.</span></span>  
   
- ![Écouteurs de canal et canaux](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure1highlevelc.gif "wcfc\_WCFChannelsigure1HighLevelc")  
-Écouteur de canal recevant des messages et les remettant à la couche supérieure par le biais de canaux.  
+ <span data-ttu-id="069ee-111">![Écouteurs de canal et canaux](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure1highlevelc.gif "wcfc_WCFChannelsigure1HighLevelc")</span><span class="sxs-lookup"><span data-stu-id="069ee-111">![Channel listeners and channels](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure1highlevelc.gif "wcfc_WCFChannelsigure1HighLevelc")</span></span>  
+<span data-ttu-id="069ee-112">Écouteur de canal recevant des messages et les remettant à la couche supérieure par le biais de canaux.</span><span class="sxs-lookup"><span data-stu-id="069ee-112">A channel listener receiving messages and delivering to the layer above through channels.</span></span>  
   
- Le processus peut être modelé conceptuellement comme une file d'attente à l'intérieur de chaque canal, bien que l'implémentation n'utilise pas obligatoirement de file d'attente.L'écouteur de canal est chargé de recevoir les messages de la couche inférieure ou du réseau et de les mettre dans la file d'attente.Le canal est chargé d'obtenir des messages de la file d'attente et de les transmettre à la couche supérieure lorsque celle\-ci demande un message, par exemple en appelant `Receive` sur le canal.  
+ <span data-ttu-id="069ee-113">Le processus peut être modelé conceptuellement comme une file d'attente à l'intérieur de chaque canal, bien que l'implémentation n'utilise pas obligatoirement de file d'attente.</span><span class="sxs-lookup"><span data-stu-id="069ee-113">The process can be conceptually modeled as a queue inside each channel although the implementation may not actually use a queue.</span></span> <span data-ttu-id="069ee-114">L'écouteur de canal est chargé de recevoir les messages de la couche inférieure ou du réseau et de les mettre dans la file d'attente.</span><span class="sxs-lookup"><span data-stu-id="069ee-114">The channel listener is responsible for receiving messages from the layer below or the network and putting them in the queue.</span></span> <span data-ttu-id="069ee-115">Le canal est chargé d'obtenir des messages de la file d'attente et de les transmettre à la couche supérieure lorsque celle-ci demande un message, par exemple en appelant `Receive` sur le canal.</span><span class="sxs-lookup"><span data-stu-id="069ee-115">The channel is responsible for getting messages from the queue and handing them to the layer above when that layer asks for a message, for example by calling `Receive` on the channel.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit des assistants de classe de base pour ce processus.\(Pour obtenir un diagramme des classes d'assistance de canal mentionnées dans cette rubrique, consultez [Vue d'ensemble du modèle de canal](../../../../docs/framework/wcf/extending/channel-model-overview.md).\)  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="069ee-116"> fournit des assistants de classe de base pour ce processus.</span><span class="sxs-lookup"><span data-stu-id="069ee-116"> provides base class helpers for this process.</span></span> <span data-ttu-id="069ee-117">(Pour un diagramme des classes d’assistance canal décrites dans cette rubrique, consultez [vue d’ensemble du modèle de canal](../../../../docs/framework/wcf/extending/channel-model-overview.md).)</span><span class="sxs-lookup"><span data-stu-id="069ee-117">(For a diagram of the channel helper classes discussed in this topic, see [Channel Model Overview](../../../../docs/framework/wcf/extending/channel-model-overview.md).)</span></span>  
   
--   La classe <xref:System.ServiceModel.Channels.CommunicationObject> implémente <xref:System.ServiceModel.ICommunicationObject> et applique l'ordinateur d'état décrit à l'étape 2 de [Développement de canaux](../../../../docs/framework/wcf/extending/developing-channels.md).  
+-   <span data-ttu-id="069ee-118">Le <xref:System.ServiceModel.Channels.CommunicationObject> la classe implémente <xref:System.ServiceModel.ICommunicationObject> et applique la machine à états décrite à l’étape 2 de [développement canaux](../../../../docs/framework/wcf/extending/developing-channels.md).</span><span class="sxs-lookup"><span data-stu-id="069ee-118">The <xref:System.ServiceModel.Channels.CommunicationObject> class implements <xref:System.ServiceModel.ICommunicationObject> and enforces the state machine described in step 2 of [Developing Channels](../../../../docs/framework/wcf/extending/developing-channels.md).</span></span>  
   
--   La classe <xref:System.ServiceModel.Channels.ChannelManagerBase> implémente un objet <xref:System.ServiceModel.Channels.CommunicationObject> et fournit une classe de base unifiée pour <xref:System.ServiceModel.Channels.ChannelFactoryBase> et <xref:System.ServiceModel.Channels.ChannelListenerBase>.La classe <xref:System.ServiceModel.Channels.ChannelManagerBase> fonctionne avec <xref:System.ServiceModel.Channels.ChannelBase>, qui est une classe de base implémentant <xref:System.ServiceModel.Channels.IChannel>.  
+-   <span data-ttu-id="069ee-119">Le <xref:System.ServiceModel.Channels.ChannelManagerBase> la classe implémente <xref:System.ServiceModel.Channels.CommunicationObject> et fournit une classe de base unifiée pour <xref:System.ServiceModel.Channels.ChannelFactoryBase> et <xref:System.ServiceModel.Channels.ChannelListenerBase>.</span><span class="sxs-lookup"><span data-stu-id="069ee-119">The <xref:System.ServiceModel.Channels.ChannelManagerBase> class implements <xref:System.ServiceModel.Channels.CommunicationObject> and provides a unified base class for <xref:System.ServiceModel.Channels.ChannelFactoryBase> and <xref:System.ServiceModel.Channels.ChannelListenerBase>.</span></span> <span data-ttu-id="069ee-120">La classe <xref:System.ServiceModel.Channels.ChannelManagerBase> fonctionne avec <xref:System.ServiceModel.Channels.ChannelBase>, qui est une classe de base implémentant <xref:System.ServiceModel.Channels.IChannel>.</span><span class="sxs-lookup"><span data-stu-id="069ee-120">The <xref:System.ServiceModel.Channels.ChannelManagerBase> class works in conjunction with <xref:System.ServiceModel.Channels.ChannelBase>, which is a base class that implements <xref:System.ServiceModel.Channels.IChannel>.</span></span>  
   
--   La classe ``<xref:System.ServiceModel.Channels.ChannelFactoryBase> implémente les objets <xref:System.ServiceModel.Channels.ChannelManagerBase> et<xref:System.ServiceModel.Channels.IChannelFactory>, et consolide les surcharges de `CreateChannel` dans une méthode abstraite `OnCreateChannel`.  
+-   <span data-ttu-id="069ee-121">Le ''<xref:System.ServiceModel.Channels.ChannelFactoryBase> la classe implémente <xref:System.ServiceModel.Channels.ChannelManagerBase> et <xref:System.ServiceModel.Channels.IChannelFactory> et regroupe les `CreateChannel` les surcharges en une seule `OnCreateChannel` méthode abstraite.</span><span class="sxs-lookup"><span data-stu-id="069ee-121">The``<xref:System.ServiceModel.Channels.ChannelFactoryBase> class implements <xref:System.ServiceModel.Channels.ChannelManagerBase> and <xref:System.ServiceModel.Channels.IChannelFactory> and consolidates the `CreateChannel` overloads into one `OnCreateChannel` abstract method.</span></span>  
   
--   La classe <xref:System.ServiceModel.Channels.ChannelListenerBase> implémente <xref:System.ServiceModel.Channels.IChannelListener>.Elle se charge de la gestion d'état de base.  
+-   <span data-ttu-id="069ee-122">Le <xref:System.ServiceModel.Channels.ChannelListenerBase> la classe implémente <xref:System.ServiceModel.Channels.IChannelListener>.</span><span class="sxs-lookup"><span data-stu-id="069ee-122">The <xref:System.ServiceModel.Channels.ChannelListenerBase> class implements <xref:System.ServiceModel.Channels.IChannelListener>.</span></span> <span data-ttu-id="069ee-123">Elle se charge de la gestion d'état de base.</span><span class="sxs-lookup"><span data-stu-id="069ee-123">It takes care of basic state management.</span></span>  
   
- La discussion qui suit s'appuie sur l'exemple [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md).  
+ <span data-ttu-id="069ee-124">La discussion suivante est basée sur le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="069ee-124">The following discussion is based upon the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
   
-## Création d'un écouteur de canal  
- L'élément ``UdpChannelListener implémenté par l'exemple dérive de la classe <xref:System.ServiceModel.Channels.ChannelListenerBase>.Il utilise un socket UDP unique pour recevoir des datagrammes.La méthode `OnOpen` reçoit des données à l'aide du socket UDP dans une boucle asynchrone.Les données sont ensuite converties en messages à l'aide du système d'encodage de message :  
+## <a name="creating-a-channel-listener"></a><span data-ttu-id="069ee-125">Création d'un écouteur de canal</span><span class="sxs-lookup"><span data-stu-id="069ee-125">Creating a Channel Listener</span></span>  
+ <span data-ttu-id="069ee-126">Le « UdpChannelListener l’exemple implémente dérive la <xref:System.ServiceModel.Channels.ChannelListenerBase> classe.</span><span class="sxs-lookup"><span data-stu-id="069ee-126">The``UdpChannelListener that the sample implements derives from the <xref:System.ServiceModel.Channels.ChannelListenerBase> class.</span></span> <span data-ttu-id="069ee-127">Il utilise un socket UDP unique pour recevoir des datagrammes.</span><span class="sxs-lookup"><span data-stu-id="069ee-127">It uses a single UDP socket to receive datagrams.</span></span> <span data-ttu-id="069ee-128">La méthode `OnOpen` reçoit des données à l'aide du socket UDP dans une boucle asynchrone.</span><span class="sxs-lookup"><span data-stu-id="069ee-128">The `OnOpen` method receives data using the UDP socket in an asynchronous loop.</span></span> <span data-ttu-id="069ee-129">Les données sont ensuite converties en messages à l'aide du système d'encodage de message :</span><span class="sxs-lookup"><span data-stu-id="069ee-129">The data are then converted into messages using the message encoding system:</span></span>  
   
 ```  
 message = UdpConstants.MessageEncoder.ReadMessage(  
@@ -51,7 +54,7 @@ message = UdpConstants.MessageEncoder.ReadMessage(
 );  
 ```  
   
- Étant donné que le même canal de datagramme représente des messages qui arrivent de plusieurs sources, l'`UdpChannelListener` est un écouteur Singleton.Il y a, au plus, un objet <xref:System.ServiceModel.Channels.IChannel>`` actif associé à cet écouteur à la fois.L'exemple en génère un autre uniquement si un canal retourné par la méthode <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> est disposé par la suite.Lorsqu'un message est reçu, il est mis en file d'attente dans ce canal singleton.  
+ <span data-ttu-id="069ee-130">Étant donné que le même canal de datagramme représente des messages qui arrivent de plusieurs sources, l'`UdpChannelListener` est un écouteur Singleton.</span><span class="sxs-lookup"><span data-stu-id="069ee-130">Because the same datagram channel represents messages that arrive from a number of sources, the `UdpChannelListener` is a singleton listener.</span></span> <span data-ttu-id="069ee-131">Il existe à la plupart d’une active <xref:System.ServiceModel.Channels.IChannel>'' associé à cet écouteur à la fois.</span><span class="sxs-lookup"><span data-stu-id="069ee-131">There is at most one active <xref:System.ServiceModel.Channels.IChannel>``associated with this listener at a time.</span></span> <span data-ttu-id="069ee-132">L'exemple en génère un autre uniquement si un canal retourné par la méthode <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> est disposé par la suite.</span><span class="sxs-lookup"><span data-stu-id="069ee-132">The sample generates another one only if a channel that is returned by the <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> method is subsequently disposed.</span></span> <span data-ttu-id="069ee-133">Lorsqu'un message est reçu, il est mis en file d'attente dans ce canal singleton.</span><span class="sxs-lookup"><span data-stu-id="069ee-133">When a message is received, it is enqueued into this singleton channel.</span></span>  
   
-### UdpInputChannel  
- La classe `UdpInputChannel` implémente <xref:System.ServiceModel.Channels.IInputChannel>.Elle se compose d'une file d'attente de messages entrants remplie par le socket de `UdpChannelListener`.Ces messages sont extraits de la file d'attente par la méthode <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A>.
+### <a name="udpinputchannel"></a><span data-ttu-id="069ee-134">UdpInputChannel</span><span class="sxs-lookup"><span data-stu-id="069ee-134">UdpInputChannel</span></span>  
+ <span data-ttu-id="069ee-135">Le `UdpInputChannel` la classe implémente <xref:System.ServiceModel.Channels.IInputChannel>.</span><span class="sxs-lookup"><span data-stu-id="069ee-135">The `UdpInputChannel` class implements <xref:System.ServiceModel.Channels.IInputChannel>.</span></span> <span data-ttu-id="069ee-136">Elle se compose d'une file d'attente de messages entrants remplie par le socket de `UdpChannelListener`.</span><span class="sxs-lookup"><span data-stu-id="069ee-136">It consists of a queue of incoming messages that is populated by the `UdpChannelListener`'s socket.</span></span> <span data-ttu-id="069ee-137">Ces messages sont extraits de la file d'attente par la méthode <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A>.</span><span class="sxs-lookup"><span data-stu-id="069ee-137">These messages are dequeued by the <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> method.</span></span>

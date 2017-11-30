@@ -1,37 +1,40 @@
 ---
-title: "Volatile Queued Communication | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Volatile Queued Communication
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0d012f64-51c7-41d0-8e18-c756f658ee3d
-caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a7e6bb57245e9877fe337b86a03565d0197b0084
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Volatile Queued Communication
-Cet exemple montre comment procéder à la communication de messages volatils mis en file d'attente sur le transport MSMQ \(Message Queuing\).Il utilise <xref:System.ServiceModel.NetMsmqBinding>.Dans le cas présent, le service est une application console auto\-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente.  
+# <a name="volatile-queued-communication"></a><span data-ttu-id="eaea1-102">Volatile Queued Communication</span><span class="sxs-lookup"><span data-stu-id="eaea1-102">Volatile Queued Communication</span></span>
+<span data-ttu-id="eaea1-103">Cet exemple montre comment procéder à la communication de messages volatils mis en file d'attente sur le transport MSMQ (Message Queuing).</span><span class="sxs-lookup"><span data-stu-id="eaea1-103">This sample demonstrates how to perform volatile queued communication over the Message Queuing (MSMQ) transport.</span></span> <span data-ttu-id="eaea1-104">Il utilise <xref:System.ServiceModel.NetMsmqBinding>.</span><span class="sxs-lookup"><span data-stu-id="eaea1-104">This sample uses <xref:System.ServiceModel.NetMsmqBinding>.</span></span> <span data-ttu-id="eaea1-105">Dans le cas présent, le service est une application console auto-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente.</span><span class="sxs-lookup"><span data-stu-id="eaea1-105">The service in this case is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent en fin de rubrique.  
+>  <span data-ttu-id="eaea1-106">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="eaea1-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente.Cela signifie que le client envoie ses messages à cette file d'attente.Le service reçoit ensuite ces messages de la file d'attente.Par conséquent, il n'est pas nécessaire que le service et le client s'exécutent simultanément pour communiquer à l'aide d'une file d'attente.  
+ <span data-ttu-id="eaea1-107">Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente.</span><span class="sxs-lookup"><span data-stu-id="eaea1-107">In queued communication, the client communicates to the service using a queue.</span></span> <span data-ttu-id="eaea1-108">Cela signifie que le client envoie ses messages à cette file d'attente.</span><span class="sxs-lookup"><span data-stu-id="eaea1-108">More precisely, the client sends messages to a queue.</span></span> <span data-ttu-id="eaea1-109">Le service reçoit des messages de la file d'attente.</span><span class="sxs-lookup"><span data-stu-id="eaea1-109">The service receives messages from the queue.</span></span> <span data-ttu-id="eaea1-110">Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.</span><span class="sxs-lookup"><span data-stu-id="eaea1-110">The service and client therefore, do not have to be running at the same time to communicate using a queue.</span></span>  
   
- Lorsque vous envoyez un message sans assurances, MSMQ fait seulement de son mieux pour remettre le message, contrairement aux assurances Exactly Once selon lesquelles MSMQ garantit que le message est remis ou, s'il ne peut pas être remis, vous fait savoir que le message ne peut pas être remis.  
+ <span data-ttu-id="eaea1-111">Lorsque vous envoyez un message sans assurances, MSMQ fait seulement de son mieux pour remettre le message, contrairement aux assurances Exactly Once selon lesquelles MSMQ garantit que le message est remis ou, s'il ne peut pas être remis, vous fait savoir que le message ne peut pas être remis.</span><span class="sxs-lookup"><span data-stu-id="eaea1-111">When you send a message with no assurances, MSMQ only makes a best effort to deliver the message, unlike with Exactly Once assurances where MSMQ ensures that the message gets delivered or, if it cannot be delivered, lets you know that the message cannot be delivered.</span></span>  
   
- Dans certains scénarios, vous pouvez envoyer un message volatil sans assurances sur une file d'attente, lorsque la remise en temps opportun est plus importante que la perte des messages.Les messages volatils ne survivent pas aux pannes du gestionnaire de files d'attente.Par conséquent si le gestionnaire de files d'attente tombe en panne, la file d'attente non transactionnelle utilisée pour stocker des messages volatils survit mais pas les messages eux\-mêmes car ils ne sont pas stockés sur le disque.  
+ <span data-ttu-id="eaea1-112">Dans certains scénarios, vous pouvez envoyer un message volatil sans assurances sur une file d'attente, lorsque la remise en temps opportun est plus importante que la perte des messages.</span><span class="sxs-lookup"><span data-stu-id="eaea1-112">In certain scenarios, you may want to send a volatile message with no assurances over a queue, when timely delivery is more important than losing messages.</span></span> <span data-ttu-id="eaea1-113">Les messages volatils ne survivent pas aux pannes du gestionnaire de files d'attente.</span><span class="sxs-lookup"><span data-stu-id="eaea1-113">Volatile messages do not survive queue manager crashes.</span></span> <span data-ttu-id="eaea1-114">Par conséquent si le gestionnaire de files d'attente tombe en panne, la file d'attente non transactionnelle utilisée pour stocker des messages volatils survit mais pas les messages eux-mêmes car ils ne sont pas stockés sur le disque.</span><span class="sxs-lookup"><span data-stu-id="eaea1-114">Therefore if the queue manager crashes, the non-transactional queue used to store volatile messages survives but the messages themselves do not because the messages are not stored on the disk.</span></span>  
   
 > [!NOTE]
->  Vous ne pouvez pas envoyer de messages volatils sans assurances dans l'étendue d'une transaction à l'aide de MSMQ.Vous devez également créer une file d'attente non transactionnelle pour envoyer des messages volatils.  
+>  <span data-ttu-id="eaea1-115">Vous ne pouvez pas envoyer de messages volatils sans assurances dans l'étendue d'une transaction à l'aide de MSMQ.</span><span class="sxs-lookup"><span data-stu-id="eaea1-115">You cannot send volatile messages with no assurances within the scope of a transaction using MSMQ.</span></span> <span data-ttu-id="eaea1-116">Vous devez également créer une file d'attente non transactionnelle pour envoyer des messages volatils.</span><span class="sxs-lookup"><span data-stu-id="eaea1-116">You also must create a non-transactional queue to send volatile messages.</span></span>  
   
- Le contrat de service dans cet exemple est `IStockTicker`, qui définit les services unidirectionnels les mieux adaptés à une utilisation avec mise en file d'attente.  
+ <span data-ttu-id="eaea1-117">Le contrat de service dans cet exemple est `IStockTicker`, qui définit les services unidirectionnels les mieux adaptés à une utilisation avec mise en file d'attente.</span><span class="sxs-lookup"><span data-stu-id="eaea1-117">The service contract in this sample is `IStockTicker` that defines one-way services that are best suited for use with queuing.</span></span>  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -40,10 +43,9 @@ public interface IStockTicker
     [OperationContract(IsOneWay = true)]  
     void StockTick(string symbol, float price);  
 }  
-  
 ```  
   
- L'opération de service affiche le symbole de cotation et le cours des titres boursiers, comme le montre l'exemple de code suivant :  
+ <span data-ttu-id="eaea1-118">L'opération de service affiche le symbole de cotation et le cours des titres boursiers, comme le montre l'exemple de code suivant :</span><span class="sxs-lookup"><span data-stu-id="eaea1-118">The service operation displays the stock ticker symbol and price, as shown in the following sample code:</span></span>  
   
 ```  
 public class StockTickerService : IStockTicker  
@@ -54,10 +56,9 @@ public class StockTickerService : IStockTicker
      }  
      …  
 }  
-  
 ```  
   
- Le service est auto\-hébergé.Lors de l'utilisation du transport MSMQ, la file d'attente utilisée doit être créée au préalable.Cela peut s'effectuer manuellement ou via le code.Dans cet exemple, le service contient du code pour vérifier pour l'existence de la file d'attente et la créer si besoin.Le nom de la file d'attente est lu depuis le fichier de configuration.L'adresse de base est utilisée par l'[Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer le proxy pour le service.  
+ <span data-ttu-id="eaea1-119">Le service est auto-hébergé.</span><span class="sxs-lookup"><span data-stu-id="eaea1-119">The service is self hosted.</span></span> <span data-ttu-id="eaea1-120">Lors de l'utilisation du transport MSMQ, la file d'attente utilisée doit être créée au préalable.</span><span class="sxs-lookup"><span data-stu-id="eaea1-120">When using the MSMQ transport, the queue used must be created in advance.</span></span> <span data-ttu-id="eaea1-121">Cela peut s'effectuer manuellement ou via le code.</span><span class="sxs-lookup"><span data-stu-id="eaea1-121">This can be done manually or through code.</span></span> <span data-ttu-id="eaea1-122">Dans cet exemple, le service contient du code pour vérifier pour l'existence de la file d'attente et la créer si besoin.</span><span class="sxs-lookup"><span data-stu-id="eaea1-122">In this sample, the service contains code to check for the existence of the queue and create it if required.</span></span> <span data-ttu-id="eaea1-123">Le nom de la file d'attente est lu depuis le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="eaea1-123">The queue name is read from the configuration file.</span></span> <span data-ttu-id="eaea1-124">L’adresse de base est utilisée par le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour générer le proxy pour le service.</span><span class="sxs-lookup"><span data-stu-id="eaea1-124">The base address is used by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the proxy for the service.</span></span>  
   
 ```  
 // Host the service within this EXE console application.  
@@ -86,17 +87,16 @@ public static void Main()
         serviceHost.Close();  
     }  
 }  
-  
 ```  
   
- Le nom de la file d'attente MSMQ est spécifié dans la section appSettings du fichier de configuration.Le point de terminaison pour le service est défini dans la section system.serviceModel du fichier de configuration et spécifie la liaison `netMsmqBinding`.  
+ <span data-ttu-id="eaea1-125">Le nom de la file d'attente MSMQ est spécifié dans la section appSettings du fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="eaea1-125">The MSMQ queue name is specified in the appSettings section of the configuration file.</span></span> <span data-ttu-id="eaea1-126">Le point de terminaison pour le service est défini dans la section system.serviceModel du fichier de configuration et spécifie la liaison `netMsmqBinding`.</span><span class="sxs-lookup"><span data-stu-id="eaea1-126">The endpoint for the service is defined in the system.serviceModel section of the configuration file and specifies the `netMsmqBinding` binding.</span></span>  
   
 > [!NOTE]
->  Le nom de la file d'attente comprend un point \(.\) pour l'ordinateur local et des barre obliques inverses dans son chemin d'accès lors de la création d'une file d'attente à l'aide de <xref:System.Messaging>.L'adresse du point de terminaison [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] spécifie un modèle net.msmq: et utilise « localhost » pour l'ordinateur local et des barres obliques dans son chemin d'accès.  
+>  <span data-ttu-id="eaea1-127">Le nom de la file d'attente comprend un point (.) pour l'ordinateur local et des barre obliques inverses dans son chemin d'accès lors de la création d'une file d'attente à l'aide de <xref:System.Messaging>.</span><span class="sxs-lookup"><span data-stu-id="eaea1-127">The queue name uses a dot (.) for the local machine and backslash separators in its path when creating a queue using <xref:System.Messaging>.</span></span> <span data-ttu-id="eaea1-128">L'adresse du point de terminaison [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] spécifie un modèle net.msmq: et utilise « localhost » pour l'ordinateur local et des barres obliques dans son chemin d'accès.</span><span class="sxs-lookup"><span data-stu-id="eaea1-128">The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] endpoint address specifies a net.msmq: scheme, uses "localhost" for the local machine and forward slashes in its path.</span></span>  
   
- Les assurances et la durabilité ou la volatilité des messages sont également spécifiées dans la configuration.  
+ <span data-ttu-id="eaea1-129">Les assurances et la durabilité ou la volatilité des messages sont également spécifiées dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="eaea1-129">The assurances and durability or volatility of messages are also specified in the configuration.</span></span>  
   
-```  
+```xml  
 <appSettings>  
   <!-- use appSetting to configure MSMQ queue name -->  
   <add key="queueName" value=".\private$\ServiceModelSamplesVolatile" />  
@@ -125,10 +125,9 @@ public static void Main()
   </bindings>  
   ...  
 </system.serviceModel>  
-  
 ```  
   
- Étant donné que l'exemple envoie des messages mis en file d'attente en utilisant une file d'attente non transactionnelle, les messages traités ne peuvent pas être envoyés à la file d'attente.  
+ <span data-ttu-id="eaea1-130">Étant donné que l'exemple envoie des messages mis en file d'attente en utilisant une file d'attente non transactionnelle, les messages traités ne peuvent pas être envoyés à la file d'attente.</span><span class="sxs-lookup"><span data-stu-id="eaea1-130">Because the sample sends queued messages by using a non-transactional queue, transacted messages cannot be sent to the queue.</span></span>  
   
 ```  
 // Create a client.  
@@ -145,10 +144,9 @@ for (int i = 0; i < 10; i++)
   
 //Closing the client gracefully cleans up resources.  
 client.Close();  
-  
 ```  
   
- Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent à la fois sur la console du service et du client.Vous pouvez voir le service recevoir des messages du client.Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.Vous pouvez exécuter le client, l'arrêter, puis démarrer le service et il recevra encore ses messages.  
+ <span data-ttu-id="eaea1-131">Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives.</span><span class="sxs-lookup"><span data-stu-id="eaea1-131">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="eaea1-132">Vous pouvez voir le service recevoir des messages du client.</span><span class="sxs-lookup"><span data-stu-id="eaea1-132">You can see the service receive messages from the client.</span></span> <span data-ttu-id="eaea1-133">Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.</span><span class="sxs-lookup"><span data-stu-id="eaea1-133">Press ENTER in each console window to shut down the service and client.</span></span> <span data-ttu-id="eaea1-134">Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.</span><span class="sxs-lookup"><span data-stu-id="eaea1-134">Note that because queuing is in use, the client and service do not have to be up and running at the same time.</span></span> <span data-ttu-id="eaea1-135">Vous pouvez exécuter le client, l'arrêter, puis démarrer le service et il recevra encore ses messages.</span><span class="sxs-lookup"><span data-stu-id="eaea1-135">You can run the client, shut it down, and then start up the service and it still receives its messages.</span></span>  
   
 ```  
 The service is ready.  
@@ -166,21 +164,21 @@ Stock Tick zzz8:43.32
 Stock Tick zzz9:43.3  
 ```  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="eaea1-136">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="eaea1-136">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="eaea1-137">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="eaea1-137">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="eaea1-138">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="eaea1-138">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions indiquées dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  <span data-ttu-id="eaea1-139">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="eaea1-139">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
- Avec <xref:System.ServiceModel.NetMsmqBinding>, la sécurité du transport est activée par défaut.Il y a deux propriétés pertinentes pour la sécurité de transport MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> et <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`.Pour que MSMQ fournisse la fonction d'authentification et de signature, il doit faire partie d'un domaine et l'option d'intégration d'Active Directory doit être installée pour MSMQ.Si vous exécutez cet exemple sur un ordinateur qui ne satisfait pas ces critères vous recevez une erreur.  
+ <span data-ttu-id="eaea1-140">Avec <xref:System.ServiceModel.NetMsmqBinding>, la sécurité du transport est activée par défaut.</span><span class="sxs-lookup"><span data-stu-id="eaea1-140">By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled.</span></span> <span data-ttu-id="eaea1-141">Il existe deux propriétés pertinentes pour la sécurité de transport MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> et <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` par défaut, le mode d’authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`.</span><span class="sxs-lookup"><span data-stu-id="eaea1-141">There are two pertinent properties for MSMQ transport security, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`.</span></span> <span data-ttu-id="eaea1-142">Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine et l’option d’intégration d’Active Directory doit être installée pour MSMQ.</span><span class="sxs-lookup"><span data-stu-id="eaea1-142">For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed.</span></span> <span data-ttu-id="eaea1-143">Si vous exécutez cet exemple sur un ordinateur qui ne satisfait pas ces critères vous recevez une erreur.</span><span class="sxs-lookup"><span data-stu-id="eaea1-143">If you run this sample on a computer that does not satisfy these criteria you receive an error.</span></span>  
   
-### Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail ou sans intégration Active Directory  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a><span data-ttu-id="eaea1-144">Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail ou sans intégration Active Directory</span><span class="sxs-lookup"><span data-stu-id="eaea1-144">To run the sample on a computer joined to a workgroup or without active directory integration</span></span>  
   
-1.  Si votre ordinateur ne fait pas partie d'un domaine ou ne dispose pas de l'intégration Active Directory, désactivez la sécurité de transport en affectant au mode d'authentification et au niveau de protection la valeur `None` comme indiqué dans l'exemple de code de configuration suivant :  
+1.  <span data-ttu-id="eaea1-145">Si votre ordinateur ne fait pas partie d'un domaine ou ne dispose pas de l'intégration Active Directory, désactivez la sécurité de transport en affectant au mode d'authentification et au niveau de protection la valeur `None` comme indiqué dans l'exemple de code de configuration suivant :</span><span class="sxs-lookup"><span data-stu-id="eaea1-145">If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration code:</span></span>  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
         <services>  
           <service name="Microsoft.ServiceModel.Samples.StockTickerService"  
@@ -223,21 +221,20 @@ Stock Tick zzz9:43.3
         </behaviors>  
   
       </system.serviceModel>  
-  
     ```  
   
-2.  Assurez\-vous de modifier la configuration sur le serveur et le client avant d'exécuter l'exemple.  
+2.  <span data-ttu-id="eaea1-146">Assurez-vous de modifier la configuration sur le serveur et le client avant d'exécuter l'exemple.</span><span class="sxs-lookup"><span data-stu-id="eaea1-146">Ensure that you change the configuration on both the server and the client before you run the sample.</span></span>  
   
     > [!NOTE]
-    >  L'affectation de `None` à `security mode` revient à affecter `None` à la sécurité <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> et `Message`.  
+    >  <span data-ttu-id="eaea1-147">L'affectation de `security mode` à `None` revient à affecter <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> à la sécurité <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, `Message` et `None`.</span><span class="sxs-lookup"><span data-stu-id="eaea1-147">Setting `security mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, and `Message` security to `None`.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="eaea1-148">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="eaea1-148">The samples may already be installed on your computer.</span></span> <span data-ttu-id="eaea1-149">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="eaea1-149">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="eaea1-150">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="eaea1-150">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="eaea1-151">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="eaea1-151">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Volatile`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Volatile`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="eaea1-152">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="eaea1-152">See Also</span></span>

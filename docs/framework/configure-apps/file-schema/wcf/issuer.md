@@ -1,28 +1,38 @@
 ---
-title: "&lt;issuer&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;émetteur&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8c49c6ae-fa1a-4179-a84b-613c3216dcde
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dcd85443a802db2b6f2e0b1823dd6cb60ed8f705
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;issuer&gt;
-Spécifie le service d'émission de jeton de sécurité \(STS\) qui émet des jetons de sécurité.  
+# <a name="ltissuergt"></a><span data-ttu-id="b311f-102">&lt;émetteur&gt;</span><span class="sxs-lookup"><span data-stu-id="b311f-102">&lt;issuer&gt;</span></span>
+<span data-ttu-id="b311f-103">Spécifie le service d'émission de jeton de sécurité (STS) qui émet des jetons de sécurité.</span><span class="sxs-lookup"><span data-stu-id="b311f-103">Specifies the Security Token Service (STS) that issues security tokens.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="b311f-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="b311f-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="b311f-105">\<liaisons ></span><span class="sxs-lookup"><span data-stu-id="b311f-105">\<bindings></span></span>  
+<span data-ttu-id="b311f-106">\<wsFederationHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="b311f-106">\<wsFederationHttpBinding></span></span>  
+<span data-ttu-id="b311f-107">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="b311f-107">\<binding></span></span>  
+<span data-ttu-id="b311f-108">\<sécurité ></span><span class="sxs-lookup"><span data-stu-id="b311f-108">\<security></span></span>  
+<span data-ttu-id="b311f-109">\<message ></span><span class="sxs-lookup"><span data-stu-id="b311f-109">\<message></span></span>  
+<span data-ttu-id="b311f-110">\<l’émetteur ></span><span class="sxs-lookup"><span data-stu-id="b311f-110">\<issuer></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="b311f-111">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b311f-111">Syntax</span></span>  
   
+```xml  
 <issuer address="Uri" >  
    <headers>  
       <add name="String"  
@@ -43,35 +53,35 @@ Spécifie le service d'émission de jeton de sécurité \(STS\) qui émet des je
 </issuer>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="b311f-112">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="b311f-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="b311f-113">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="b311f-113">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="b311f-114">Attributs</span><span class="sxs-lookup"><span data-stu-id="b311f-114">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|address|Chaîne requise.  URL du service STS.|  
+|<span data-ttu-id="b311f-115">Attribut</span><span class="sxs-lookup"><span data-stu-id="b311f-115">Attribute</span></span>|<span data-ttu-id="b311f-116">Description</span><span class="sxs-lookup"><span data-stu-id="b311f-116">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="b311f-117">address</span><span class="sxs-lookup"><span data-stu-id="b311f-117">address</span></span>|<span data-ttu-id="b311f-118">Chaîne requise.</span><span class="sxs-lookup"><span data-stu-id="b311f-118">Required string.</span></span> <span data-ttu-id="b311f-119">URL du service STS.</span><span class="sxs-lookup"><span data-stu-id="b311f-119">The URL of the STS.</span></span>|  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="b311f-120">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="b311f-120">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="b311f-121">Élément</span><span class="sxs-lookup"><span data-stu-id="b311f-121">Element</span></span>|<span data-ttu-id="b311f-122">Description</span><span class="sxs-lookup"><span data-stu-id="b311f-122">Description</span></span>|  
 |-------------|-----------------|  
-|[\<en\-têtes\>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Collection d'en\-têtes d'adresse de points de terminaison pouvant être créée par le générateur.|  
-|[\<identité\>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Lors de l'utilisation d'un jeton émis, spécifie des paramètres qui permettent au client d'authentifier le serveur.|  
+|[<span data-ttu-id="b311f-123">\<en-têtes ></span><span class="sxs-lookup"><span data-stu-id="b311f-123">\<headers></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|<span data-ttu-id="b311f-124">Collection d’en-têtes d’adresse de points de terminaison pouvant être créée par le générateur.</span><span class="sxs-lookup"><span data-stu-id="b311f-124">A collection of address headers for the endpoints that the builder can create.</span></span>|  
+|[<span data-ttu-id="b311f-125">\<identité ></span><span class="sxs-lookup"><span data-stu-id="b311f-125">\<identity></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|<span data-ttu-id="b311f-126">Lors de l'utilisation d'un jeton émis, spécifie des paramètres qui permettent au client d'authentifier le serveur.</span><span class="sxs-lookup"><span data-stu-id="b311f-126">When using an issued token, specifies settings that enable the client to authenticate the server.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="b311f-127">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="b311f-127">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="b311f-128">Élément</span><span class="sxs-lookup"><span data-stu-id="b311f-128">Element</span></span>|<span data-ttu-id="b311f-129">Description</span><span class="sxs-lookup"><span data-stu-id="b311f-129">Description</span></span>|  
 |-------------|-----------------|  
-|[\<message\>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Définit les paramètres de sécurité au niveau du message pour l'élément [\<wsFederationHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).|  
+|[<span data-ttu-id="b311f-130">\<message ></span><span class="sxs-lookup"><span data-stu-id="b311f-130">\<message></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|<span data-ttu-id="b311f-131">Définit les paramètres de la sécurité au niveau du message pour le [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) élément.</span><span class="sxs-lookup"><span data-stu-id="b311f-131">Defines the settings for the message-level security for the [\<wsFederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) element.</span></span>|  
   
-## Voir aussi  
- <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>   
- <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.Issuer%2A>   
- <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>   
- [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [Fédération et jetons émis](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)   
- [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [Fédération et jetons émis](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)   
- [Fonctionnalités de sécurité avec des liaisons personnalisées](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)   
- [Fédération et jetons émis](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+## <a name="see-also"></a><span data-ttu-id="b311f-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b311f-132">See Also</span></span>  
+ <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>  
+ <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.Issuer%2A>  
+ <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>  
+ [<span data-ttu-id="b311f-133">L’authentification et identité de Service</span><span class="sxs-lookup"><span data-stu-id="b311f-133">Service Identity and Authentication</span></span>](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [<span data-ttu-id="b311f-134">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="b311f-134">Federation and Issued Tokens</span></span>](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
+ [<span data-ttu-id="b311f-135">L’authentification et identité de Service</span><span class="sxs-lookup"><span data-stu-id="b311f-135">Service Identity and Authentication</span></span>](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [<span data-ttu-id="b311f-136">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="b311f-136">Federation and Issued Tokens</span></span>](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
+ [<span data-ttu-id="b311f-137">Fonctionnalités de sécurité avec des liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="b311f-137">Security Capabilities with Custom Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
+ [<span data-ttu-id="b311f-138">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="b311f-138">Federation and Issued Tokens</span></span>](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)

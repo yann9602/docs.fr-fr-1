@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - MDAs (managed debugging assistants), CER calls
 - virtualCERCall MDA
@@ -22,33 +16,32 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 334900cbcc04cb1883b93a6bac17309add9ec159
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f3f0c06eef7524c18e252ade9122d8c9cb3c2f8c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="virtualcercall-mda"></a>virtualCERCall (MDA)
-L’Assistant Débogage managé `virtualCERCall` est activé comme un avertissement indiquant qu’un site d’appel dans un graphique des appels d’une région d’exécution limitée fait référence à une cible virtuelle, c’est-à-dire un appel virtuel à une méthode virtuelle non finale ou un appel à l’aide d’une interface. Le CLR (Common Language Runtime) ne peut pas prédire la méthode de destination de ces appels uniquement à partir du langage intermédiaire et de l’analyse des métadonnées. En conséquence, l’arborescence des appels ne peut pas être préparée dans le cadre du graphique d’une région d’exécution limitée et les interruptions de threads dans cette sous-arborescence ne peuvent pas être automatiquement bloquées. Cet Assistant Débogage managé vous avertit des cas où il peut s’avérer nécessaire d’étendre une région d’exécution limitée en utilisant des appels explicites à la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> dès que les informations supplémentaires requises pour calculer la cible de l’appel sont connues au moment de l’exécution.  
+# <a name="virtualcercall-mda"></a><span data-ttu-id="5516a-102">virtualCERCall (MDA)</span><span class="sxs-lookup"><span data-stu-id="5516a-102">virtualCERCall MDA</span></span>
+<span data-ttu-id="5516a-103">L’Assistant Débogage managé `virtualCERCall` est activé comme un avertissement indiquant qu’un site d’appel dans un graphique des appels d’une région d’exécution limitée fait référence à une cible virtuelle, c’est-à-dire un appel virtuel à une méthode virtuelle non finale ou un appel à l’aide d’une interface.</span><span class="sxs-lookup"><span data-stu-id="5516a-103">The `virtualCERCall` managed debugging assistant (MDA) is activated as a warning indicating that a call site within a constrained execution region (CER) call graph refers to a virtual target, that is, a virtual call to a non-final virtual method or a call using an interface.</span></span> <span data-ttu-id="5516a-104">Le CLR (Common Language Runtime) ne peut pas prédire la méthode de destination de ces appels uniquement à partir du langage intermédiaire et de l’analyse des métadonnées.</span><span class="sxs-lookup"><span data-stu-id="5516a-104">The common language runtime (CLR) cannot predict the destination method of these calls from the intermediate language and metadata analysis alone.</span></span> <span data-ttu-id="5516a-105">En conséquence, l’arborescence des appels ne peut pas être préparée dans le cadre du graphique d’une région d’exécution limitée et les interruptions de threads dans cette sous-arborescence ne peuvent pas être automatiquement bloquées.</span><span class="sxs-lookup"><span data-stu-id="5516a-105">As a result, the call tree cannot be prepared as part of the CER graph and thread aborts in that subtree cannot be automatically blocked.</span></span> <span data-ttu-id="5516a-106">Cet Assistant Débogage managé vous avertit des cas où il peut s’avérer nécessaire d’étendre une région d’exécution limitée en utilisant des appels explicites à la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> dès que les informations supplémentaires requises pour calculer la cible de l’appel sont connues au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="5516a-106">This MDA warns of cases where a CER might need to be extended by using explicit calls to the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> method once the additional information required to compute the call target is known at run time.</span></span>  
   
-## <a name="symptoms"></a>Symptômes  
- Des régions d’exécution limitée ne s’exécutent pas lors de l’interruption d’un thread ou du déchargement d’un domaine d’application.  
+## <a name="symptoms"></a><span data-ttu-id="5516a-107">Symptômes</span><span class="sxs-lookup"><span data-stu-id="5516a-107">Symptoms</span></span>  
+ <span data-ttu-id="5516a-108">Des régions d’exécution limitée ne s’exécutent pas lors de l’interruption d’un thread ou du déchargement d’un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="5516a-108">CERs that do not run when a thread is aborted or an application domain is unloaded.</span></span>  
   
-## <a name="cause"></a>Cause  
- Une région d’exécution limitée contient un appel à une méthode virtuelle qui ne peut pas être préparée automatiquement.  
+## <a name="cause"></a><span data-ttu-id="5516a-109">Cause</span><span class="sxs-lookup"><span data-stu-id="5516a-109">Cause</span></span>  
+ <span data-ttu-id="5516a-110">Une région d’exécution limitée contient un appel à une méthode virtuelle qui ne peut pas être préparée automatiquement.</span><span class="sxs-lookup"><span data-stu-id="5516a-110">A CER contains a call to a virtual method that cannot be prepared automatically.</span></span>  
   
-## <a name="resolution"></a>Résolution  
- Appelez <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> pour la méthode virtuelle.  
+## <a name="resolution"></a><span data-ttu-id="5516a-111">Résolution</span><span class="sxs-lookup"><span data-stu-id="5516a-111">Resolution</span></span>  
+ <span data-ttu-id="5516a-112">Appelez <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> pour la méthode virtuelle.</span><span class="sxs-lookup"><span data-stu-id="5516a-112">Call <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> for the virtual method.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
- Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="5516a-113">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="5516a-113">Effect on the Runtime</span></span>  
+ <span data-ttu-id="5516a-114">Cet Assistant Débogage managé n'a aucun effet sur le CLR.</span><span class="sxs-lookup"><span data-stu-id="5516a-114">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a><span data-ttu-id="5516a-115">Sortie</span><span class="sxs-lookup"><span data-stu-id="5516a-115">Output</span></span>  
   
 ```  
 Method 'MethodWithCer', while executing within a constrained execution region, makes a call  
@@ -61,7 +54,7 @@ declaringType name="VirtualCERCall+MyClass"
     callsite name="MethodWithCer" offset="0x0024"  
 ```  
   
-## <a name="configuration"></a>Configuration  
+## <a name="configuration"></a><span data-ttu-id="5516a-116">Configuration</span><span class="sxs-lookup"><span data-stu-id="5516a-116">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -71,7 +64,7 @@ declaringType name="VirtualCERCall+MyClass"
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a><span data-ttu-id="5516a-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="5516a-117">Example</span></span>  
   
 ```  
 class MyClass  
@@ -111,8 +104,7 @@ void MethodWithCer(MyClass object)
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-
+## <a name="see-also"></a><span data-ttu-id="5516a-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5516a-118">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [<span data-ttu-id="5516a-119">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="5516a-119">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [<span data-ttu-id="5516a-120">Marshaling d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="5516a-120">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)

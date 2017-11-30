@@ -1,60 +1,63 @@
 ---
-title: "Impl&#233;mentation du mod&#232;le de contr&#244;le ScrollItem d’UI Automation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "modèles de contrôle, élément de défilement"
-  - "Automation d’interface utilisateur, contrôle ScrollItem"
-  - "ScrollItem (modèle de contrôle)"
+title: "Implémentation du modèle de contrôle ScrollItem d'UI Automation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- control patterns, Scroll Item
+- UI Automation, Scroll Item control pattern
+- Scroll Item control pattern
 ms.assetid: 903bab5c-80c1-44d7-bdc2-0a418893b987
-caps.latest.revision: 16
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 92c3b4fad775dcd04299e18da126107d8fbb4471
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Impl&#233;mentation du mod&#232;le de contr&#244;le ScrollItem d’UI Automation
+# <a name="implementing-the-ui-automation-scrollitem-control-pattern"></a><span data-ttu-id="b6a0f-102">Implémentation du modèle de contrôle ScrollItem d’UI Automation</span><span class="sxs-lookup"><span data-stu-id="b6a0f-102">Implementing the UI Automation ScrollItem Control Pattern</span></span>
 > [!NOTE]
->  Cette documentation est destinée aux développeurs .NET Framework qui veulent utiliser managé [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes définies dans le <xref:System.Windows.Automation> espace de noms. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  <span data-ttu-id="b6a0f-103">Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="b6a0f-104">Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span><span class="sxs-lookup"><span data-stu-id="b6a0f-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- Cette rubrique présente les conventions de mise en œuvre et la <xref:System.Windows.Automation.Provider.IScrollItemProvider>, notamment des informations sur les propriétés, méthodes et événements. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
+ <span data-ttu-id="b6a0f-105">Cette rubrique présente les conventions de mise en œuvre et la <xref:System.Windows.Automation.Provider.IScrollItemProvider>, notamment des informations sur les propriétés, méthodes et événements.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-105">This topic introduces guidelines and conventions for implementing the <xref:System.Windows.Automation.Provider.IScrollItemProvider>, including information about properties, methods, and events.</span></span> <span data-ttu-id="b6a0f-106">Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-106">Links to additional references are listed at the end of the topic.</span></span>  
   
- Le <xref:System.Windows.Automation.ScrollItemPattern> du modèle de contrôle est utilisé pour prendre en charge les contrôles enfants individuels de conteneurs qui implémentent <xref:System.Windows.Automation.Provider.IScrollProvider>. Ce modèle de contrôle agit comme un canal de communication entre un contrôle enfant et son conteneur pour garantir que le conteneur est en mesure de modifier le contenu (ou la zone) actuellement visible dans sa fenêtre d’affichage pour afficher le contrôle enfant. Pour obtenir des exemples de contrôles qui implémentent ce modèle de contrôle, consultez la page [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ <span data-ttu-id="b6a0f-107">Le <xref:System.Windows.Automation.ScrollItemPattern> modèle de contrôle est utilisé pour prendre en charge les contrôles enfants individuels des conteneurs qui implémentent <xref:System.Windows.Automation.Provider.IScrollProvider>.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-107">The <xref:System.Windows.Automation.ScrollItemPattern> control pattern is used to support individual child controls of containers that implement <xref:System.Windows.Automation.Provider.IScrollProvider>.</span></span> <span data-ttu-id="b6a0f-108">Ce modèle de contrôle agit comme un canal de communication entre un contrôle enfant et son conteneur pour garantir que le conteneur est en mesure de modifier le contenu (ou la zone) actuellement visible dans sa fenêtre d’affichage pour afficher le contrôle enfant.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-108">This control pattern acts as a communication channel between a child control and its container to ensure that the container can change the currently visible content (or region) within its viewport to display the child control.</span></span> <span data-ttu-id="b6a0f-109">Pour obtenir des exemples de contrôles qui implémentent ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span><span class="sxs-lookup"><span data-stu-id="b6a0f-109">For examples of controls that implement this control pattern, see [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span></span>  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
- Quand vous implémentez le modèle de contrôle Scroll Item, notez les conventions et recommandations suivantes :  
+## <a name="implementation-guidelines-and-conventions"></a><span data-ttu-id="b6a0f-110">Conventions et recommandations en matière d'implémentation</span><span class="sxs-lookup"><span data-stu-id="b6a0f-110">Implementation Guidelines and Conventions</span></span>  
+ <span data-ttu-id="b6a0f-111">Quand vous implémentez le modèle de contrôle Scroll Item, notez les conventions et recommandations suivantes :</span><span class="sxs-lookup"><span data-stu-id="b6a0f-111">When implementing the Scroll Item control pattern, note the following guidelines and conventions:</span></span>  
   
--   Les éléments contenus dans un contrôle Window ou Canvas ne sont pas tenus d’implémenter l’interface IScrollItemProvider. Comme alternative, toutefois, ils doivent exposer un emplacement valide pour le <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>. Ainsi, une application cliente UI Automation utilise le <xref:System.Windows.Automation.ScrollPattern> méthodes de modèle dans le conteneur pour afficher l’élément enfant du contrôle.  
+-   <span data-ttu-id="b6a0f-112">Les éléments contenus dans un contrôle Window ou Canvas ne sont pas tenus d’implémenter l’interface IScrollItemProvider.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-112">Items contained within a Window or Canvas control are not required to implement the IScrollItemProvider interface.</span></span> <span data-ttu-id="b6a0f-113">En guise d’alternative, toutefois, ils doivent exposer un emplacement valide pour le <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-113">As an alternative, however, they must expose a valid location for the <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>.</span></span> <span data-ttu-id="b6a0f-114">Ainsi, une application du client UI Automation à utiliser le <xref:System.Windows.Automation.ScrollPattern> sur le conteneur pour afficher l’élément enfant, les méthodes de modèle de contrôle.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-114">This will allow a UI Automation client application to use the <xref:System.Windows.Automation.ScrollPattern> control pattern methods on the container to display the child item.</span></span>  
   
 <a name="Required_Members_for_IScrollItemProvider"></a>   
-## <a name="required-members-for-iscrollitemprovider"></a>Membres requis pour IScrollItemProvider  
- La méthode suivante est requise pour l’implémentation de l’interface IScrollProvider.  
+## <a name="required-members-for-iscrollitemprovider"></a><span data-ttu-id="b6a0f-115">Membres requis pour IScrollItemProvider</span><span class="sxs-lookup"><span data-stu-id="b6a0f-115">Required Members for IScrollItemProvider</span></span>  
+ <span data-ttu-id="b6a0f-116">La méthode suivante est requise pour l’implémentation de l’interface IScrollProvider.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-116">The following method is required for implementing the IScrollProvider interface.</span></span>  
   
-|Membres nécessaires|Type de membre|Notes|  
+|<span data-ttu-id="b6a0f-117">Membres nécessaires</span><span class="sxs-lookup"><span data-stu-id="b6a0f-117">Required members</span></span>|<span data-ttu-id="b6a0f-118">Type de membre</span><span class="sxs-lookup"><span data-stu-id="b6a0f-118">Member type</span></span>|<span data-ttu-id="b6a0f-119">Remarques</span><span class="sxs-lookup"><span data-stu-id="b6a0f-119">Notes</span></span>|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IScrollItemProvider.ScrollIntoView%2A>|-(Méthode)|Aucun|  
+|<xref:System.Windows.Automation.Provider.IScrollItemProvider.ScrollIntoView%2A>|<span data-ttu-id="b6a0f-120">-(Méthode)</span><span class="sxs-lookup"><span data-stu-id="b6a0f-120">-   Method</span></span>|<span data-ttu-id="b6a0f-121">Aucune</span><span class="sxs-lookup"><span data-stu-id="b6a0f-121">None</span></span>|  
   
- Ce modèle de contrôle n’est associé à aucune propriété ni à aucun événement.  
+ <span data-ttu-id="b6a0f-122">Ce modèle de contrôle n’est associé à aucune propriété ni à aucun événement.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-122">This control pattern has no associated properties or events.</span></span>  
   
 <a name="Exceptions"></a>   
-## <a name="exceptions"></a>Exceptions  
- Les fournisseurs doivent lever les exceptions suivantes.  
+## <a name="exceptions"></a><span data-ttu-id="b6a0f-123">Exceptions</span><span class="sxs-lookup"><span data-stu-id="b6a0f-123">Exceptions</span></span>  
+ <span data-ttu-id="b6a0f-124">Les fournisseurs doivent lever les exceptions suivantes.</span><span class="sxs-lookup"><span data-stu-id="b6a0f-124">Providers must throw the following exceptions.</span></span>  
   
-|Type d'exception|Condition|  
+|<span data-ttu-id="b6a0f-125">Type d'exception</span><span class="sxs-lookup"><span data-stu-id="b6a0f-125">Exception Type</span></span>|<span data-ttu-id="b6a0f-126">Condition</span><span class="sxs-lookup"><span data-stu-id="b6a0f-126">Condition</span></span>|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|Si un élément ne peut pas être l’objet d’un défilement dans la vue :<br /><br /> -   <xref:System.Windows.Automation.ScrollItemPattern.ScrollIntoView%2A>|  
+|<xref:System.InvalidOperationException>|<span data-ttu-id="b6a0f-127">Si un élément ne peut pas être l’objet d’un défilement dans la vue :</span><span class="sxs-lookup"><span data-stu-id="b6a0f-127">If an item cannot be scrolled into view:</span></span><br /><br /> -   <xref:System.Windows.Automation.ScrollItemPattern.ScrollIntoView%2A>|  
   
-## <a name="see-also"></a>Voir aussi  
- [Présentation des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [Prise en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [Modèles de contrôle UI Automation pour les Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [Vue d’ensemble d’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
- [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+## <a name="see-also"></a><span data-ttu-id="b6a0f-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b6a0f-128">See Also</span></span>  
+ [<span data-ttu-id="b6a0f-129">Vue d’ensemble du modèles contrôle UI Automation</span><span class="sxs-lookup"><span data-stu-id="b6a0f-129">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="b6a0f-130">Prise en charge des modèles de contrôle dans un fournisseur UI Automation</span><span class="sxs-lookup"><span data-stu-id="b6a0f-130">Support Control Patterns in a UI Automation Provider</span></span>](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [<span data-ttu-id="b6a0f-131">Modèles de contrôle UI Automation pour les Clients</span><span class="sxs-lookup"><span data-stu-id="b6a0f-131">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="b6a0f-132">Vue d’ensemble d’arborescence UI Automation</span><span class="sxs-lookup"><span data-stu-id="b6a0f-132">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="b6a0f-133">Utiliser la mise en cache dans UI Automation</span><span class="sxs-lookup"><span data-stu-id="b6a0f-133">Use Caching in UI Automation</span></span>](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

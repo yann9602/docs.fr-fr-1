@@ -1,53 +1,57 @@
 ---
-title: "Cr&#233;ation d&#39;un DataTable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Création d'un DataTable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 923d19e9539c6d93f3714efcdaa6fe7a5da843ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Cr&#233;ation d&#39;un DataTable
-Un objet <xref:System.Data.DataTable>, qui représente une table de données relationnelles en mémoire, peut être créé et utilisé de façon indépendante. Il peut également être utilisé par d'autres objets .NET Framework, la plupart du temps comme membre d'un objet <xref:System.Data.DataSet>.  
+# <a name="creating-a-datatable"></a><span data-ttu-id="e8032-102">Création d'un DataTable</span><span class="sxs-lookup"><span data-stu-id="e8032-102">Creating a DataTable</span></span>
+<span data-ttu-id="e8032-103">Un objet <xref:System.Data.DataTable>, qui représente une table de données relationnelles en mémoire, peut être créé et utilisé de façon indépendante. Il peut également être utilisé par d'autres objets .NET Framework, la plupart du temps comme membre d'un objet <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="e8032-103">A <xref:System.Data.DataTable>, which represents one table of in-memory relational data, can be created and used independently, or can be used by other .NET Framework objects, most commonly as a member of a <xref:System.Data.DataSet>.</span></span>  
   
- Vous pouvez créer un objet **DataTable** en utilisant le constructeur **DataTable** approprié.  Vous pouvez l'ajouter au **DataSet** à l'aide de la méthode **Add** afin de l'ajouter à la collection **Tables** de l'objet **DataTable**.  
+ <span data-ttu-id="e8032-104">Vous pouvez créer un **DataTable** objet en respectant **DataTable** constructeur.</span><span class="sxs-lookup"><span data-stu-id="e8032-104">You can create a **DataTable** object by using the appropriate **DataTable** constructor.</span></span> <span data-ttu-id="e8032-105">Vous pouvez l’ajouter à la **DataSet** à l’aide de la **ajouter** méthode à ajouter à la **DataTable** l’objet **Tables** collection.</span><span class="sxs-lookup"><span data-stu-id="e8032-105">You can add it to the **DataSet** by using the **Add** method to add it to the **DataTable** object's **Tables** collection.</span></span>  
   
- Vous pouvez également créer des objets **DataTable** dans un **DataSet** à l'aide de la méthode **Fill** ou **FillSchema** de l'objet **DataAdapter** ou à partir d'un schéma XML prédéfini ou déduit à l'aide de la méthode **ReadXml**, **ReadXmlSchema** ou **InferXmlSchema** du **DataSet**.  Notez qu'une fois que vous avez ajouté un **DataTable** comme membre de la collection **Tables** d'un **DataSet**, vous ne pouvez pas l'ajouter à la collection de tables d'un autre **DataSet**.  
+ <span data-ttu-id="e8032-106">Vous pouvez également créer **DataTable** objets au sein d’un **DataSet** à l’aide de la **remplir** ou **FillSchema** méthodes de la  **DataAdapter** objet, ou à partir d’un prédéfini ou déduit XML schema à l’aide de la **ReadXml**, **ReadXmlSchema**, ou **InferXmlSchema** méthodes de la **DataSet**.</span><span class="sxs-lookup"><span data-stu-id="e8032-106">You can also create **DataTable** objects within a **DataSet** by using the **Fill** or **FillSchema** methods of the **DataAdapter** object, or from a predefined or inferred XML schema using the **ReadXml**, **ReadXmlSchema**, or **InferXmlSchema** methods of the **DataSet**.</span></span> <span data-ttu-id="e8032-107">Notez que, après avoir ajouté un **DataTable** en tant que membre de la **Tables** collection d’un **DataSet**, vous ne pouvez l’ajouter à la collection de tables de toutes les autres **DataSet**.</span><span class="sxs-lookup"><span data-stu-id="e8032-107">Note that after you have added a **DataTable** as a member of the **Tables** collection of one **DataSet**, you cannot add it to the collection of tables of any other **DataSet**.</span></span>  
   
- Lorsque vous créez un **DataTable**, celui\-ci ne possède pas encore de schéma \(structure\).  Pour définir le schéma de la table, vous devez créer et ajouter des objets <xref:System.Data.DataColumn> à la collection **Columns** de la table.  Vous pouvez également définir une colonne de clé primaire pour la table et créer et ajouter des objets **Constraint** à la collection **Constraints** de la table.  Après avoir défini le schéma d'un **DataTable**, vous pouvez ajouter des lignes de données à la table en ajoutant des objets **DataRow** à la collection **Rows** de la table.  
+ <span data-ttu-id="e8032-108">Lorsque vous créez un **DataTable**, il ne possède pas de schéma (autrement dit, une structure).</span><span class="sxs-lookup"><span data-stu-id="e8032-108">When you first create a **DataTable**, it does not have a schema (that is, a structure).</span></span> <span data-ttu-id="e8032-109">Pour définir le schéma de la table, vous devez créer et ajouter <xref:System.Data.DataColumn> des objets sur le **colonnes** collection de la table.</span><span class="sxs-lookup"><span data-stu-id="e8032-109">To define the schema of the table, you must create and add <xref:System.Data.DataColumn> objects to the **Columns** collection of the table.</span></span> <span data-ttu-id="e8032-110">Vous pouvez également définir une colonne de clé primaire pour la table et créer et ajouter **contrainte** des objets sur le **contraintes** collection de la table.</span><span class="sxs-lookup"><span data-stu-id="e8032-110">You can also define a primary key column for the table, and create and add **Constraint** objects to the **Constraints** collection of the table.</span></span> <span data-ttu-id="e8032-111">Après avoir défini le schéma pour un **DataTable**, vous pouvez ajouter des lignes de données à la table en ajoutant **DataRow** des objets sur le **lignes** collection de la table.</span><span class="sxs-lookup"><span data-stu-id="e8032-111">After you have defined the schema for a **DataTable**, you can add rows of data to the table by adding **DataRow** objects to the **Rows** collection of the table.</span></span>  
   
- Lors de la création d'un **DataTable**, il n'est pas nécessaire que vous fournissiez une valeur pour la propriété <xref:System.Data.DataTable.TableName%2A>. Vous pouvez définir cette propriété ultérieurement ou la laisser vide.  Néanmoins, lorsque vous ajoutez à un **DataSet** une table sans valeur **TableName**, un nom incrémentiel par défaut, Table*N*, est attribué à cette table. Ce nom est « Table » pour Table0.  
+ <span data-ttu-id="e8032-112">Vous n’êtes pas obligé de fournir une valeur pour le <xref:System.Data.DataTable.TableName%2A> propriété lorsque vous créez un **DataTable**; vous pouvez spécifier la propriété à un autre moment, ou vous pouvez la laisser vide.</span><span class="sxs-lookup"><span data-stu-id="e8032-112">You are not required to supply a value for the <xref:System.Data.DataTable.TableName%2A> property when you create a **DataTable**; you can specify the property at another time, or you can leave it empty.</span></span> <span data-ttu-id="e8032-113">Toutefois, lorsque vous ajoutez une table sans un **TableName** valeur un **DataSet**, la table a un nom incrémentiel par défaut de la Table*N*, en commençant par « Table » pour Table0.</span><span class="sxs-lookup"><span data-stu-id="e8032-113">However, when you add a table without a **TableName** value to a **DataSet**, the table will be given an incremental default name of Table*N*, starting with "Table" for Table0.</span></span>  
   
 > [!NOTE]
->  Il est recommandé d'éviter d'utiliser la convention d'affectation de noms « Table*N* » lorsque vous fournissez une valeur **TableName** car le nom fourni peut entrer en conflit avec un nom de table par défaut existant du **DataSet**.  Si le nom fourni existe déjà, une exception est levée.  
+>  <span data-ttu-id="e8032-114">Nous vous recommandons d’éviter le « Table*N*« convention d’affectation de noms lorsque vous fournissez un **TableName** valeur, car le nom fourni peut entrer en conflit avec un nom de table par défaut existant dans le **jeu de données** .</span><span class="sxs-lookup"><span data-stu-id="e8032-114">We recommend that you avoid the "Table*N*" naming convention when you supply a **TableName** value, because the name you supply may conflict with an existing default table name in the **DataSet**.</span></span> <span data-ttu-id="e8032-115">Si le nom fourni existe déjà, une exception est levée.</span><span class="sxs-lookup"><span data-stu-id="e8032-115">If the supplied name already exists, an exception is thrown.</span></span>  
   
- L'exemple suivant crée une instance d'un objet **DataTable** et lui attribue le nom « Customers ».  
+ <span data-ttu-id="e8032-116">L’exemple suivant crée une instance d’un **DataTable** de l’objet et lui attribue le nom « Customers ».</span><span class="sxs-lookup"><span data-stu-id="e8032-116">The following example creates an instance of a **DataTable** object and assigns it the name "Customers."</span></span>  
   
 ```vb  
 Dim workTable as DataTable = New DataTable("Customers")  
-  
 ```  
   
 ```csharp  
 DataTable workTable = new DataTable("Customers");  
 ```  
   
- L'exemple suivant crée une instance d'un **DataTable** en l'ajoutant à la collection **Tables** d'un **DataSet**.  
+ <span data-ttu-id="e8032-117">L’exemple suivant crée une instance d’un **DataTable** en l’ajoutant à la **Tables** collection d’un **DataSet**.</span><span class="sxs-lookup"><span data-stu-id="e8032-117">The following example creates an instance of a **DataTable** by adding it to the **Tables** collection of a **DataSet**.</span></span>  
   
 ```vb  
 Dim customers As DataSet = New DataSet  
 Dim customersTable As DataTable = _  
    customers.Tables.Add("CustomersTable")  
-  
 ```  
   
 ```csharp  
@@ -55,11 +59,11 @@ DataSet customers = new DataSet();
 DataTable customersTable = customers.Tables.Add("CustomersTable");  
 ```  
   
-## Voir aussi  
- <xref:System.Data.DataTable>   
- <xref:System.Data.DataTableCollection>   
- [DataTable, objets](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)   
- [Remplissage d'un DataSet à partir d'un DataAdapter](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)   
- [Chargement d'un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)   
- [Chargement des informations de schéma d'un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="e8032-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e8032-118">See Also</span></span>  
+ <xref:System.Data.DataTable>  
+ <xref:System.Data.DataTableCollection>  
+ [<span data-ttu-id="e8032-119">DataTables</span><span class="sxs-lookup"><span data-stu-id="e8032-119">DataTables</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
+ [<span data-ttu-id="e8032-120">Remplissage d’un DataSet à partir d’un DataAdapter</span><span class="sxs-lookup"><span data-stu-id="e8032-120">Populating a DataSet from a DataAdapter</span></span>](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)  
+ [<span data-ttu-id="e8032-121">Chargement d’un DataSet à partir de XML</span><span class="sxs-lookup"><span data-stu-id="e8032-121">Loading a DataSet from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [<span data-ttu-id="e8032-122">Chargement des informations de schéma d’un DataSet à partir de XML</span><span class="sxs-lookup"><span data-stu-id="e8032-122">Loading DataSet Schema Information from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
+ [<span data-ttu-id="e8032-123">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="e8032-123">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

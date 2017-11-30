@@ -7,46 +7,39 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 17770f43d04916ae55b1b62010c8b43e0e4c95e3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1b9769d4e3936e127407f68de81f9b5b5da4fbc0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="pnrp-clouds"></a>Nuages PNRP
-Un « cloud » PNRP représente un ensemble de nœuds qui peuvent communiquer entre eux via le réseau. Le terme « cloud » est un synonyme de « maille d’homologue ».  
+# <a name="pnrp-clouds"></a><span data-ttu-id="98675-102">Nuages PNRP</span><span class="sxs-lookup"><span data-stu-id="98675-102">PNRP Clouds</span></span>
+<span data-ttu-id="98675-103">Un « cloud » PNRP représente un ensemble de nœuds qui peuvent communiquer entre eux via le réseau.</span><span class="sxs-lookup"><span data-stu-id="98675-103">A PNRP "cloud" represents a set of nodes that can communicate with each other through the network.</span></span> <span data-ttu-id="98675-104">Le terme « cloud » est un synonyme de « maille d’homologue ».</span><span class="sxs-lookup"><span data-stu-id="98675-104">The term "cloud" is synonymous with "peer mesh" and "peer-to-peer graph".</span></span>  
   
- La communication entre les nœuds ne doit jamais se faire entre différents clouds. Une instance <xref:System.Net.PeerToPeer.Cloud> est identifiée par son nom, qui respecte la casse. Il est possible de connecter un même pair ou nœud à plusieurs clouds.  
+ <span data-ttu-id="98675-105">La communication entre les nœuds ne doit jamais se faire entre différents clouds.</span><span class="sxs-lookup"><span data-stu-id="98675-105">Communication between nodes should never cross from one cloud to another.</span></span> <span data-ttu-id="98675-106">Une instance <xref:System.Net.PeerToPeer.Cloud> est identifiée par son nom, qui respecte la casse.</span><span class="sxs-lookup"><span data-stu-id="98675-106">A <xref:System.Net.PeerToPeer.Cloud> instance is uniquely identified by its name, which is case-sensitive.</span></span> <span data-ttu-id="98675-107">Il est possible de connecter un même pair ou nœud à plusieurs clouds.</span><span class="sxs-lookup"><span data-stu-id="98675-107">A single peer or node may be connected to more than one cloud.</span></span>  
   
- Les clouds sont très liés aux interfaces réseau.  Sur un ordinateur multirésident comprenant deux cartes réseau connectées à différents sous-réseaux, trois clouds sont retournés : un pour chacune des adresses link-local par interface, et un cloud global.  
+ <span data-ttu-id="98675-108">Les clouds sont très liés aux interfaces réseau.</span><span class="sxs-lookup"><span data-stu-id="98675-108">Clouds are tied very closely to network interfaces.</span></span>  <span data-ttu-id="98675-109">Sur un ordinateur multirésident comprenant deux cartes réseau connectées à différents sous-réseaux, trois clouds sont retournés : un pour chacune des adresses link-local par interface, et un cloud global.</span><span class="sxs-lookup"><span data-stu-id="98675-109">On a multi-homed machine with two network cards attached to different subnets, three clouds will be returned: one for each of the link local addresses per interface, and a single global scope cloud.</span></span>  
   
- PNRP utilise trois « étendues » cloud, où chaque étendue représente un regroupement d’ordinateurs capables de se trouver les uns les autres :  
+ <span data-ttu-id="98675-110">PNRP utilise trois « étendues » cloud, où chaque étendue représente un regroupement d’ordinateurs capables de se trouver les uns les autres :</span><span class="sxs-lookup"><span data-stu-id="98675-110">PNRP uses three cloud "scopes", in which a scope is a grouping of computers that are able to find each other:</span></span>  
   
--   Le cloud global correspond à l’étendue d’adresse IPv6 globale et aux adresses globales, et représente tous les ordinateurs du réseau Internet IPv6. Il n’existe qu’un seul cloud global.  
+-   <span data-ttu-id="98675-111">Le cloud global correspond à l’étendue d’adresse IPv6 globale et aux adresses globales, et représente tous les ordinateurs du réseau Internet IPv6.</span><span class="sxs-lookup"><span data-stu-id="98675-111">The global cloud corresponds to the global IPv6 address scope and global addresses and represents all the computers on the entire IPv6 Internet.</span></span> <span data-ttu-id="98675-112">Il n’existe qu’un seul cloud global.</span><span class="sxs-lookup"><span data-stu-id="98675-112">There is only a single global cloud.</span></span>  
   
--   Le cloud link-local correspond à l’étendue d’adresse IPv6 link-local et aux adresses link-local. Un cloud link-local correspond à une liaison spécifique, qui est généralement identique à celle du sous-réseau connecté localement. Il peut y avoir plusieurs clouds link-local.  
+-   <span data-ttu-id="98675-113">Le cloud link-local correspond à l’étendue d’adresse IPv6 link-local et aux adresses link-local.</span><span class="sxs-lookup"><span data-stu-id="98675-113">The link-local cloud corresponds to the link-local IPv6 address scope and link-local addresses.</span></span> <span data-ttu-id="98675-114">Un cloud link-local correspond à une liaison spécifique, qui est généralement identique à celle du sous-réseau connecté localement.</span><span class="sxs-lookup"><span data-stu-id="98675-114">A link-local cloud is for a specific link, which is typically the same as the locally attached subnet.</span></span> <span data-ttu-id="98675-115">Il peut y avoir plusieurs clouds link-local.</span><span class="sxs-lookup"><span data-stu-id="98675-115">There can be multiple link-local clouds.</span></span>  
   
- Un troisième cloud, le cloud spécifique au site, correspond à l’étendue d’adresses IPv6 de site et aux adresses locales de site. Ce cloud est désormais déprécié, même s’il est toujours pris en charge dans PNRP.  
+ <span data-ttu-id="98675-116">Un troisième cloud, le cloud spécifique au site, correspond à l’étendue d’adresses IPv6 de site et aux adresses locales de site.</span><span class="sxs-lookup"><span data-stu-id="98675-116">A third cloud, the site-specific cloud, corresponds to the site IPv6 address scope and site-local addresses.</span></span> <span data-ttu-id="98675-117">Ce cloud est désormais déprécié, même s’il est toujours pris en charge dans PNRP.</span><span class="sxs-lookup"><span data-stu-id="98675-117">This cloud has been deprecated, although it is still supported in PNRP.</span></span>  
   
-## <a name="clouds"></a>Clouds  
- Les clouds PNRP sont représentés par des instances de la classe <xref:System.Net.PeerToPeer.Cloud>. Les groupes de cloud utilisant un pair sont représentés par des instances de la classe énumérable <xref:System.Net.PeerToPeer.CloudCollection>. Les collections de clouds PNRP connues du pair actuel peuvent être obtenues en appelant la méthode statique <xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A>.  
+## <a name="clouds"></a><span data-ttu-id="98675-118">Clouds</span><span class="sxs-lookup"><span data-stu-id="98675-118">Clouds</span></span>  
+ <span data-ttu-id="98675-119">Les clouds PNRP sont représentés par des instances de la classe <xref:System.Net.PeerToPeer.Cloud>.</span><span class="sxs-lookup"><span data-stu-id="98675-119">PNRP clouds are represented by instances of the <xref:System.Net.PeerToPeer.Cloud> class.</span></span> <span data-ttu-id="98675-120">Les groupes de cloud utilisant un pair sont représentés par des instances de la classe énumérable <xref:System.Net.PeerToPeer.CloudCollection>.</span><span class="sxs-lookup"><span data-stu-id="98675-120">Groups of clouds used a peer are represented by instances of the enumerable <xref:System.Net.PeerToPeer.CloudCollection> class.</span></span> <span data-ttu-id="98675-121">Les collections de clouds PNRP connues du pair actuel peuvent être obtenues en appelant la méthode statique <xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A>.</span><span class="sxs-lookup"><span data-stu-id="98675-121">Collections of PNRP clouds known to the current peer can be obtained by calling the static <xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A> method.</span></span>  
   
- Chaque cloud porte un nom unique, constitué d’une chaîne Unicode de 256 caractères. Le nom des clouds, ainsi que l’étendue mentionnée plus haut, sont utilisés pour construire des instances uniques de la classe Cloud. Ces instances peuvent être sérialisées et reconstruites en vue d’une utilisation régulière.  
+ <span data-ttu-id="98675-122">Chaque cloud porte un nom unique, constitué d’une chaîne Unicode de 256 caractères.</span><span class="sxs-lookup"><span data-stu-id="98675-122">Individual clouds have unique names, represented as a 256 character Unicode string.</span></span> <span data-ttu-id="98675-123">Le nom des clouds, ainsi que l’étendue mentionnée plus haut, sont utilisés pour construire des instances uniques de la classe Cloud.</span><span class="sxs-lookup"><span data-stu-id="98675-123">These names, along with the above-mentioned scope, are used to construct unique instances of the Cloud class.</span></span> <span data-ttu-id="98675-124">Ces instances peuvent être sérialisées et reconstruites en vue d’une utilisation régulière.</span><span class="sxs-lookup"><span data-stu-id="98675-124">These instances can be serialized and reconstructed for persistent usage.</span></span>  
   
- Une fois qu’une instance Cloud est créée ou obtenue, les noms de pairs peuvent y être inscrits pour créer une maille d’homologues connus.  
+ <span data-ttu-id="98675-125">Une fois qu’une instance Cloud est créée ou obtenue, les noms de pairs peuvent y être inscrits pour créer une maille d’homologues connus.</span><span class="sxs-lookup"><span data-stu-id="98675-125">Once a Cloud instance is created or obtained, peer names can be registered with it to create a mesh of known peers.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.PeerToPeer.Cloud>   
- [Peer Name Resolution Protocol](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)
-
+## <a name="see-also"></a><span data-ttu-id="98675-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="98675-126">See Also</span></span>  
+ <xref:System.Net.PeerToPeer.Cloud>  
+ [<span data-ttu-id="98675-127">Peer Name Resolution Protocol</span><span class="sxs-lookup"><span data-stu-id="98675-127">Peer Name Resolution Protocol</span></span>](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)

@@ -1,31 +1,35 @@
 ---
-title: "Activit&#233;s personnalis&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Activités personnalisées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5cde06b3-51b2-4e46-900d-11140bae77f4
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b62275e6dd5977fbf789d32a7c89d5f1c99cf567
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Activit&#233;s personnalis&#233;es
-Cette section contient des exemples qui illustrent la création d'activités personnalisées dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+# <a name="custom-activities"></a><span data-ttu-id="ae371-102">Activités personnalisées</span><span class="sxs-lookup"><span data-stu-id="ae371-102">Custom Activities</span></span>
+<span data-ttu-id="ae371-103">Cette section contient des exemples qui illustrent la création d'activités personnalisées dans [!INCLUDE[wf](../../../../includes/wf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="ae371-103">This section contains samples that demonstrate how to create custom activities in [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
   
-## Dans cette section  
- [Code\-Bodied](../../../../docs/framework/windows-workflow-foundation/samples/code-bodied.md)  
- Contient des exemples d'activités personnalisées créées de façon déclarative dans le code.  
+## <a name="in-this-section"></a><span data-ttu-id="ae371-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="ae371-104">In This Section</span></span>  
+ [<span data-ttu-id="ae371-105">Pulvérisés de code</span><span class="sxs-lookup"><span data-stu-id="ae371-105">Code-Bodied</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/code-bodied.md)  
+ <span data-ttu-id="ae371-106">Contient des exemples d'activités personnalisées créées de façon déclarative dans le code.</span><span class="sxs-lookup"><span data-stu-id="ae371-106">Contains custom activity samples created declaratively in code.</span></span>  
   
- [Composite](../../../../docs/framework/windows-workflow-foundation/samples/composite.md)  
- Contient des exemples d'activités personnalisées composées d'autres activités.  
+ [<span data-ttu-id="ae371-107">Composite</span><span class="sxs-lookup"><span data-stu-id="ae371-107">Composite</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/composite.md)  
+ <span data-ttu-id="ae371-108">Contient des exemples d'activités personnalisées composées d'autres activités.</span><span class="sxs-lookup"><span data-stu-id="ae371-108">Contains custom activity samples composed of other activities.</span></span>  
   
- [Concepteurs d'activités personnalisées](../../../../docs/framework/windows-workflow-foundation/samples/custom-activity-designers.md)  
- Contient des exemples d'activités qui utilisent des concepteurs personnalisés pour l'affichage dans le concepteur de workflow.  
+ [<span data-ttu-id="ae371-109">Concepteurs d’activités personnalisées</span><span class="sxs-lookup"><span data-stu-id="ae371-109">Custom Activity Designers</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/custom-activity-designers.md)  
+ <span data-ttu-id="ae371-110">Contient des exemples d'activités qui utilisent des concepteurs personnalisés pour l'affichage dans le concepteur de workflow.</span><span class="sxs-lookup"><span data-stu-id="ae371-110">Contains activity samples that use custom designers for display in the workflow designer.</span></span>  
   
- [Validation](../../../../docs/framework/windows-workflow-foundation/samples/validation.md)  
- Contient des exemples qui illustrent la validation d'activité au moment du design.
+ [<span data-ttu-id="ae371-111">Validation</span><span class="sxs-lookup"><span data-stu-id="ae371-111">Validation</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/validation.md)  
+ <span data-ttu-id="ae371-112">Contient des exemples qui illustrent la validation d’activité au moment du design.</span><span class="sxs-lookup"><span data-stu-id="ae371-112">Contains samples that demonstrate design-time activity validation.</span></span>

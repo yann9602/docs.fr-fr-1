@@ -1,31 +1,35 @@
 ---
-title: "Persistance | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Persistance
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 79c14759-9f87-458a-b339-beec8300e339
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b8ed4a3c92aecc63aceb14c0bc3b0b08ade8c25c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Persistance
-Cette section contient des exemples qui illustrent la façon de rendre des workflows persistants sur un support durable dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+# <a name="persistence"></a><span data-ttu-id="542e4-102">Persistance</span><span class="sxs-lookup"><span data-stu-id="542e4-102">Persistence</span></span>
+<span data-ttu-id="542e4-103">Cette section contient des exemples qui illustrent la façon de rendre des workflows persistants sur un support durable dans [!INCLUDE[wf](../../../../includes/wf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="542e4-103">This section contains samples that demonstrate persisting workflows to a durable medium in [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
   
-## Dans cette section  
- [Persistance d'une application de workflow](../../../../docs/framework/windows-workflow-foundation/samples/persisting-a-workflow-application.md)  
- Montre comment exécuter un <xref:System.Activities.WorkflowApplication>, le décharger lorsqu'il devient inactif et le recharger pour continuer son exécution.  
+## <a name="in-this-section"></a><span data-ttu-id="542e4-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="542e4-104">In This Section</span></span>  
+ [<span data-ttu-id="542e4-105">Persistance d’une Application de Workflow</span><span class="sxs-lookup"><span data-stu-id="542e4-105">Persisting a Workflow Application</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/persisting-a-workflow-application.md)  
+ <span data-ttu-id="542e4-106">Montre comment exécuter un <xref:System.Activities.WorkflowApplication>, le décharger lorsqu'il devient inactif et le recharger pour continuer son exécution.</span><span class="sxs-lookup"><span data-stu-id="542e4-106">Demonstrates how to run a <xref:System.Activities.WorkflowApplication>, unload it when it goes idle, and then reload it to continue its execution.</span></span>  
   
- [Configuration intégrée](../../../../docs/framework/windows-workflow-foundation/samples/built-in-configuration.md)  
- Illustre l'utilisation et la configuration du magasin d'instances de workflow SQL.  
+ [<span data-ttu-id="542e4-107">Configuration intégrée</span><span class="sxs-lookup"><span data-stu-id="542e4-107">Built-in Configuration</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/built-in-configuration.md)  
+ <span data-ttu-id="542e4-108">Illustre l'utilisation et la configuration du magasin d'instances de workflow SQL.</span><span class="sxs-lookup"><span data-stu-id="542e4-108">Demonstrates the use and configuration of the SQL workflow instance store.</span></span>  
   
- [SQLStoreExtensibility](../../../../docs/framework/windows-workflow-foundation/samples/sqlstoreextensibility.md)  
- Illustre l'utilisation et la configuration de propriétés promues dans le magasin d'instances de workflow SQL.  
+ [<span data-ttu-id="542e4-109">SQLStoreExtensibility</span><span class="sxs-lookup"><span data-stu-id="542e4-109">SQLStoreExtensibility</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/sqlstoreextensibility.md)  
+ <span data-ttu-id="542e4-110">Illustre l'utilisation et la configuration de propriétés promues dans le magasin d'instances de workflow SQL.</span><span class="sxs-lookup"><span data-stu-id="542e4-110">Demonstrates the use and configuration of promoted properties in the SQL workflow instance store.</span></span>  
   
- [Activité de promotion de propriétés](../../../../docs/framework/windows-workflow-foundation/samples/property-promotion-activity.md)  
- Cet exemple fournit une solution de bout en bout qui intègre la fonctionnalité Promotion de <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> directement dans l'interface de création de workflow.
+ [<span data-ttu-id="542e4-111">Activité de Promotion de propriété</span><span class="sxs-lookup"><span data-stu-id="542e4-111">Property Promotion Activity</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/property-promotion-activity.md)  
+ <span data-ttu-id="542e4-112">Cet exemple fournit une solution de bout en bout qui intègre la fonctionnalité Promotion de <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> directement dans l'interface de création de workflow.</span><span class="sxs-lookup"><span data-stu-id="542e4-112">This sample provides an end-to-end solution which integrates the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Promotion feature directly into the Workflow Authoring experience.</span></span>

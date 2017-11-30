@@ -7,45 +7,38 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 11d20e346bba9ae6300f88c5d5bf48f99ec27904
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c5b4bcf0a7a7d23dd54fad36b341e3ed241975b3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="peer-names-and-pnrp-ids"></a>Noms d’homologues et ID PNRP
-Un nom de pair représente un point de terminaison pour la communication. Il peut s’agir d’un ordinateur, d’un utilisateur, d’un groupe, d’un service ou de tout autre élément associé à un pair pouvant être résolu en une adresse IPv6. Le protocole PNRP utilise le nom de pair statistiquement unique pour la création d’un ID PNRP, qui est utilisé pour identifier les membres du cloud.  
+# <a name="peer-names-and-pnrp-ids"></a><span data-ttu-id="8c065-102">Noms d’homologues et ID PNRP</span><span class="sxs-lookup"><span data-stu-id="8c065-102">Peer Names and PNRP IDs</span></span>
+<span data-ttu-id="8c065-103">Un nom de pair représente un point de terminaison pour la communication. Il peut s’agir d’un ordinateur, d’un utilisateur, d’un groupe, d’un service ou de tout autre élément associé à un pair pouvant être résolu en une adresse IPv6.</span><span class="sxs-lookup"><span data-stu-id="8c065-103">A Peer Name represents an endpoint for communication, which can be a computer, a user, a group, a service, or anything associated with a Peer that can be resolved to an IPv6 address.</span></span> <span data-ttu-id="8c065-104">Le protocole PNRP utilise le nom de pair statistiquement unique pour la création d’un ID PNRP, qui est utilisé pour identifier les membres du cloud.</span><span class="sxs-lookup"><span data-stu-id="8c065-104">The Peer Name Resolution Protocol (PNRP) takes the statistically unique Peer Name for the creation of a PNRP ID, which is used to identify cloud members.</span></span>  
   
-## <a name="peer-names"></a>Noms de pairs  
- Les noms de pairs peuvent être inscrits comme étant sécurisés ou non sécurisés. Les noms non sécurisés sont de simples chaînes de texte qui peuvent faire l’objet d’une usurpation d’identité, puisque n’importe qui peut inscrire une duplication d’un nom non sécurisé. Il est préférable d’utiliser les noms non sécurisés au sein de réseaux privés ou protégés. Les noms sécurisés sont protégés par un certificat et une signature numérique. Seul l’éditeur d’origine est en mesure de prouver sa propriété d’un nom sécurisé.  
+## <a name="peer-names"></a><span data-ttu-id="8c065-105">Noms de pairs</span><span class="sxs-lookup"><span data-stu-id="8c065-105">Peer Names</span></span>  
+ <span data-ttu-id="8c065-106">Les noms de pairs peuvent être inscrits comme étant sécurisés ou non sécurisés.</span><span class="sxs-lookup"><span data-stu-id="8c065-106">Peer names can be registered as unsecured or secured.</span></span> <span data-ttu-id="8c065-107">Les noms non sécurisés sont de simples chaînes de texte qui peuvent faire l’objet d’une usurpation d’identité, puisque n’importe qui peut inscrire une duplication d’un nom non sécurisé.</span><span class="sxs-lookup"><span data-stu-id="8c065-107">Unsecured names are just text strings that are subject to spoofing, as anyone can register a duplicate unsecured name.</span></span> <span data-ttu-id="8c065-108">Il est préférable d’utiliser les noms non sécurisés au sein de réseaux privés ou protégés.</span><span class="sxs-lookup"><span data-stu-id="8c065-108">Unsecured names are best used in private or otherwise protected networks.</span></span> <span data-ttu-id="8c065-109">Les noms sécurisés sont protégés par un certificat et une signature numérique.</span><span class="sxs-lookup"><span data-stu-id="8c065-109">Secured names are protected with a certificate and a digital signature.</span></span> <span data-ttu-id="8c065-110">Seul l’éditeur d’origine est en mesure de prouver sa propriété d’un nom sécurisé.</span><span class="sxs-lookup"><span data-stu-id="8c065-110">Only the original publisher will be able to prove ownership of a secured name.</span></span>  
   
- La combinaison d’un cloud et d’une étendue fournit un environnement relativement sécurisé pour les pairs qui participent à des activités PNRP. Toutefois, l’utilisation d’un nom de pair sécurisé ne garantit pas la sécurité de l’ensemble de l’application réseau. La sécurité d’une application dépend de son implémentation.  
+ <span data-ttu-id="8c065-111">La combinaison d’un cloud et d’une étendue fournit un environnement relativement sécurisé pour les pairs qui participent à des activités PNRP.</span><span class="sxs-lookup"><span data-stu-id="8c065-111">The combination of cloud and scope provides a reasonably secure environment for peers that participate in PNRP activity.</span></span> <span data-ttu-id="8c065-112">Toutefois, l’utilisation d’un nom de pair sécurisé ne garantit pas la sécurité de l’ensemble de l’application réseau.</span><span class="sxs-lookup"><span data-stu-id="8c065-112">However, using a secured peer name does not ensure the overall security of the networking application.</span></span> <span data-ttu-id="8c065-113">La sécurité d’une application dépend de son implémentation.</span><span class="sxs-lookup"><span data-stu-id="8c065-113">Security of the application is implementation-dependent.</span></span>  
   
- Les noms de pairs sécurisés sont inscrits uniquement par leur propriétaire et sont protégés par un chiffrement à clé publique. Un nom de pair sécurisé est considéré comme appartenant à l’entité pair qui contient la clé privée correspondante. La propriété peut être prouvée via l’adresse pair certifiée, qui est signée à l’aide de la clé privée. Un utilisateur malveillant ne peut pas feindre la propriété d’un nom de pair sans disposer de la clé privée correspondante.  
+ <span data-ttu-id="8c065-114">Les noms de pairs sécurisés sont inscrits uniquement par leur propriétaire et sont protégés par un chiffrement à clé publique.</span><span class="sxs-lookup"><span data-stu-id="8c065-114">Secured peer names are only registered by their owner and are protected with public key cryptography.</span></span> <span data-ttu-id="8c065-115">Un nom de pair sécurisé est considéré comme appartenant à l’entité pair qui contient la clé privée correspondante.</span><span class="sxs-lookup"><span data-stu-id="8c065-115">A secured peer name is considered owned by the peer entity having the corresponding private key.</span></span> <span data-ttu-id="8c065-116">La propriété peut être prouvée via l’adresse pair certifiée, qui est signée à l’aide de la clé privée.</span><span class="sxs-lookup"><span data-stu-id="8c065-116">Ownership can be proved via the certified peer address (CPA), which is signed using the private key.</span></span> <span data-ttu-id="8c065-117">Un utilisateur malveillant ne peut pas feindre la propriété d’un nom de pair sans disposer de la clé privée correspondante.</span><span class="sxs-lookup"><span data-stu-id="8c065-117">A malicious user cannot forge ownership of a peer name without the corresponding private key.</span></span>  
   
-## <a name="pnrp-ids"></a>ID PNRP  
- ![ID PNRP](../../../docs/framework/network-programming/media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")  
+## <a name="pnrp-ids"></a><span data-ttu-id="8c065-118">ID PNRP</span><span class="sxs-lookup"><span data-stu-id="8c065-118">PNRP IDs</span></span>  
+ <span data-ttu-id="8c065-119">![ID PNRP](../../../docs/framework/network-programming/media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")</span><span class="sxs-lookup"><span data-stu-id="8c065-119">![PNRP ID](../../../docs/framework/network-programming/media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")</span></span>  
   
- Les ID PNRP sont formés des composants suivants :  
+ <span data-ttu-id="8c065-120">Les ID PNRP sont formés des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="8c065-120">PNRP IDs are composed of the following:</span></span>  
   
--   Les 128 bits d’ordre haut (appelés ID pair à pair (P2P)) correspondent au hachage d’un nom de pair attribué au point de terminaison. Le nom de pair est au format suivant : *Autorité.Classifieur*. Pour les noms sécurisés, *l’autorité* correspond au hachage SHA1 de la clé publique du nom de pair en caractères hexadécimaux. Pour les noms non sécurisés, *l’autorité* correspond au caractère « 0 ». Le *classifieur* est une chaîne qui identifie l’application. Aucun classifieur de nom de pair ne peut dépasser les 149 caractères, terminateur `null` compris.  
+-   <span data-ttu-id="8c065-121">Les 128 bits d’ordre haut (appelés ID pair à pair (P2P)) correspondent au hachage d’un nom de pair attribué au point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="8c065-121">The high-order 128 bits, known as the peer-to-peer (P2P) ID, are a hash of a peer name assigned to the endpoint.</span></span> <span data-ttu-id="8c065-122">Le nom de pair est au format suivant : *Autorité.Classifieur*.</span><span class="sxs-lookup"><span data-stu-id="8c065-122">The peer name has the following format: *Authority.Classifier*.</span></span> <span data-ttu-id="8c065-123">Pour les noms sécurisés, *l’autorité* correspond au hachage SHA1 de la clé publique du nom de pair en caractères hexadécimaux.</span><span class="sxs-lookup"><span data-stu-id="8c065-123">For secured names, *Authority* is the Secure Hash Algorithm 1 (SHA1) hash of the public key of the peer name in hexadecimal characters.</span></span> <span data-ttu-id="8c065-124">Pour les noms non sécurisés, *l’autorité* correspond au caractère « 0 ».</span><span class="sxs-lookup"><span data-stu-id="8c065-124">For unsecured names, the *Authority* is the single character "0".</span></span> <span data-ttu-id="8c065-125">Le *classifieur* est une chaîne qui identifie l’application.</span><span class="sxs-lookup"><span data-stu-id="8c065-125">*Classifier* is a string that identifies the application.</span></span> <span data-ttu-id="8c065-126">Aucun classifieur de nom de pair ne peut dépasser les 149 caractères, terminateur `null` compris.</span><span class="sxs-lookup"><span data-stu-id="8c065-126">No peer name classifier can be greater than 149 characters long, including the `null` terminator.</span></span>  
   
--   Les 128 bits d’ordre bas sont utilisés pour l’emplacement du service, qui est un nombre généré qui identifie les différentes instances du même ID P2P dans un même cloud.  
+-   <span data-ttu-id="8c065-127">Les 128 bits d’ordre bas sont utilisés pour l’emplacement du service, qui est un nombre généré qui identifie les différentes instances du même ID P2P dans un même cloud.</span><span class="sxs-lookup"><span data-stu-id="8c065-127">The low-order 128 bits are used for the Service Location, which is a generated number that identifies different instances of the same P2P ID in the same cloud.</span></span>  
   
- Cette combinaison d’ID P2P et de l’emplacement du service permet à plusieurs ID PNRP d’être inscrits à partir d’un même ordinateur.  
+ <span data-ttu-id="8c065-128">Cette combinaison d’ID P2P et de l’emplacement du service permet à plusieurs ID PNRP d’être inscrits à partir d’un même ordinateur.</span><span class="sxs-lookup"><span data-stu-id="8c065-128">This combination of P2P ID and Service Location allows multiple PNRP IDs to be registered from a single computer.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.PeerToPeer.PeerName>   
+## <a name="see-also"></a><span data-ttu-id="8c065-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8c065-129">See Also</span></span>  
+ <xref:System.Net.PeerToPeer.PeerName>  
  <xref:System.Net.PeerToPeer>
-

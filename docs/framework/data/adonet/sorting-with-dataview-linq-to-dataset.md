@@ -1,91 +1,97 @@
 ---
-title: "Tri avec DataView (LINQ to DataSet) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Tri avec DataView (LINQ to DataSet)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 885b3b7b-51c1-42b3-bb29-b925f4f69a6f
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 5ce75aba79af617b7c3b342a25f2ac8f8ab0f672
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Tri avec DataView (LINQ to DataSet)
-La possibilité de trier des données en utilisant des critères spécifiques, puis de les présenter à un client via un contrôle d'interface utilisateur, est un important aspect de la liaison de données.  <xref:System.Data.DataView> propose plusieurs manières de trier les données et de retourner des sous\-ensembles de lignes de données triés suivant des critères de tri spécifiques.  Outre ses capacités de tri basé sur chaîne, <xref:System.Data.DataView> vous donne la possibilité d'utiliser des expressions [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] pour les critères de tri. Les expressions [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] permettent des opérations de tri bien plus complexes et puissantes que le tri basé sur chaîne.  Cette rubrique décrit les deux approches du tri à l'aide de <xref:System.Data.DataView>.  
+# <a name="sorting-with-dataview-linq-to-dataset"></a><span data-ttu-id="ea404-102">Tri avec DataView (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="ea404-102">Sorting with DataView (LINQ to DataSet)</span></span>
+<span data-ttu-id="ea404-103">La possibilité de trier des données en utilisant des critères spécifiques, puis de les présenter à un client via un contrôle d’interface utilisateur, est un important aspect de la liaison de données.</span><span class="sxs-lookup"><span data-stu-id="ea404-103">The ability to sort data based on specific criteria and then present the data to a client through a UI control is an important aspect of data binding.</span></span> <span data-ttu-id="ea404-104"><xref:System.Data.DataView> propose plusieurs manières de trier les données et de retourner des sous-ensembles de lignes de données triés suivant des critères de tri spécifiques.</span><span class="sxs-lookup"><span data-stu-id="ea404-104"><xref:System.Data.DataView> provides several ways to sort data and return data rows ordered by specific ordering criteria.</span></span> <span data-ttu-id="ea404-105">En plus de sa chaîne-en fonction des fonctionnalités, de tri <xref:System.Data.DataView> vous permet également d’utiliser [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] expressions pour les critères de tri.</span><span class="sxs-lookup"><span data-stu-id="ea404-105">In addition to its string-based sorting capabilities, <xref:System.Data.DataView> also enables you to use [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] expressions for the sorting criteria.</span></span> [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]<span data-ttu-id="ea404-106">les expressions permettent des opérations de tri beaucoup plus complexes et puissantes que le tri basé sur chaîne.</span><span class="sxs-lookup"><span data-stu-id="ea404-106"> expressions allow for much more complex and powerful sorting operations than string-based sorting.</span></span> <span data-ttu-id="ea404-107">Cette rubrique décrit les deux approches du tri à l'aide de <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="ea404-107">This topic describes both approaches to sorting using <xref:System.Data.DataView>.</span></span>  
   
-## Création d'un DataView à partir d'une requête avec des informations de tri  
- Un objet <xref:System.Data.DataView> peut être créé à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  Si cette requête contient une clause <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.OrderByDescending%2A>, <xref:System.Linq.Enumerable.ThenBy%2A> ou <xref:System.Linq.Enumerable.ThenByDescending%2A>, les expressions de ces clauses servent de base pour trier les données dans le <xref:System.Data.DataView>.  Par exemple, si la requête contient les clauses `Order By…` et `Then By…`, le <xref:System.Data.DataView> résultant trie les données selon les deux colonnes spécifiées.  
+## <a name="creating-dataview-from-a-query-with-sorting-information"></a><span data-ttu-id="ea404-108">Création d'un DataView à partir d'une requête avec des informations de tri</span><span class="sxs-lookup"><span data-stu-id="ea404-108">Creating DataView from a Query with Sorting Information</span></span>  
+ <span data-ttu-id="ea404-109">Un objet <xref:System.Data.DataView> peut être créé à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].</span><span class="sxs-lookup"><span data-stu-id="ea404-109">A <xref:System.Data.DataView> object can be created from a [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] query.</span></span> <span data-ttu-id="ea404-110">Si cette requête contient un <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.OrderByDescending%2A>, <xref:System.Linq.Enumerable.ThenBy%2A>, ou <xref:System.Linq.Enumerable.ThenByDescending%2A> clause les expressions de ces clauses sont utilisées comme base pour trier les données dans le <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="ea404-110">If that query contains an <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.OrderByDescending%2A>, <xref:System.Linq.Enumerable.ThenBy%2A>, or <xref:System.Linq.Enumerable.ThenByDescending%2A> clause the expressions in these clauses are used as the basis for sorting the data in the <xref:System.Data.DataView>.</span></span> <span data-ttu-id="ea404-111">Par exemple, si la requête contient le `Order By…`et `Then By…` clauses, résultant <xref:System.Data.DataView> trie les données par les deux colonnes spécifiées.</span><span class="sxs-lookup"><span data-stu-id="ea404-111">For example, if the query contains the `Order By…`and `Then By…` clauses, the resulting <xref:System.Data.DataView> would order the data by both columns specified.</span></span>  
   
- Le tri basé sur une expression offre un tri plus puissant et plus complexe que le tri basé sur chaîne.  Notez que les tris basés sur chaîne et sur une expression s'excluent mutuellement.  Si le <xref:System.Data.DataView.Sort%2A> basé sur chaîne après la création d'un <xref:System.Data.DataView> à partir d'une requête, le filtre basé sur une expression déduit de la requête est supprimé et ne peut pas être réinitialisé.  
+ <span data-ttu-id="ea404-112">Le tri basé sur une expression offre un tri plus puissant et plus complexe que le tri basé sur chaîne.</span><span class="sxs-lookup"><span data-stu-id="ea404-112">Expression-based sorting offers more powerful and complex sorting than the simpler string-based sorting.</span></span> <span data-ttu-id="ea404-113">Notez que les tris basés sur chaîne et sur une expression s'excluent mutuellement.</span><span class="sxs-lookup"><span data-stu-id="ea404-113">Note that string-based and expression-based sorting are mutually exclusive.</span></span> <span data-ttu-id="ea404-114">Si le <xref:System.Data.DataView.Sort%2A> basé sur chaîne après la création d'un <xref:System.Data.DataView> à partir d'une requête, le filtre basé sur une expression déduit de la requête est supprimé et ne peut pas être réinitialisé.</span><span class="sxs-lookup"><span data-stu-id="ea404-114">If the string-based <xref:System.Data.DataView.Sort%2A> is set after a <xref:System.Data.DataView> is created from a query, the expression-based filter inferred from the query is cleared and cannot be reset.</span></span>  
   
- L'index d'un <xref:System.Data.DataView> est construit à la fois lors de la création du <xref:System.Data.DataView> et lorsque l'une des informations de tri ou de filtrage est modifiée.  Vous obtenez des performances optimales en fournissant des critères de tri dans la requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] à partir de laquelle le <xref:System.Data.DataView> est créé et en ne modifiant pas ultérieurement les informations de tri.  Pour plus d'informations, consultez [Performances des DataView](../../../../docs/framework/data/adonet/dataview-performance.md).  
+ <span data-ttu-id="ea404-115">L'index d'un <xref:System.Data.DataView> est construit à la fois lors de la création du <xref:System.Data.DataView> et lorsque l'une des informations de tri ou de filtrage est modifiée.</span><span class="sxs-lookup"><span data-stu-id="ea404-115">The index for a <xref:System.Data.DataView> is built both when the <xref:System.Data.DataView> is created and when any of the sorting or filtering information is modified.</span></span> <span data-ttu-id="ea404-116">Vous obtenez des performances optimales en fournissant des critères de tri dans la requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] à partir de laquelle le <xref:System.Data.DataView> est créé et en ne modifiant pas ultérieurement les informations de tri.</span><span class="sxs-lookup"><span data-stu-id="ea404-116">You get the best performance by supplying sorting criteria in the [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] query that the <xref:System.Data.DataView> is created from and not modifying the sorting information, later.</span></span> <span data-ttu-id="ea404-117">Pour plus d’informations, consultez [DataView Performance](../../../../docs/framework/data/adonet/dataview-performance.md).</span><span class="sxs-lookup"><span data-stu-id="ea404-117">For more information, see [DataView Performance](../../../../docs/framework/data/adonet/dataview-performance.md).</span></span>  
   
 > [!NOTE]
->  Dans la plupart des cas, les expressions utilisées pour le tri ne doivent pas avoir d'effets secondaires et doivent être déterministes.  De plus, les expressions ne doivent pas contenir de logique dépendant d'un nombre défini d'exécutions, parce que les opérations de tri doivent pouvoir être exécutées de façon illimitée.  
+>  <span data-ttu-id="ea404-118">Dans la plupart des cas, les expressions utilisées pour le tri ne doivent pas avoir d'effets secondaires et doivent être déterministes.</span><span class="sxs-lookup"><span data-stu-id="ea404-118">In most cases, the expressions used for sorting should not have side effects and must be deterministic.</span></span> <span data-ttu-id="ea404-119">De plus, les expressions ne doivent pas contenir de logique dépendant d'un nombre défini d'exécutions, parce que les opérations de tri doivent pouvoir être exécutées de façon illimitée.</span><span class="sxs-lookup"><span data-stu-id="ea404-119">Also, the expressions should not contain any logic that depends on a set number of executions, because the sorting operations might be executed any number of times.</span></span>  
   
-### Exemple  
- L'exemple suivant interroge la table SalesOrderHeader et trie les lignes retournées par date de commande ; crée un <xref:System.Data.DataView> à partir de cette requête, et lie le <xref:System.Data.DataView> à une <xref:System.Windows.Forms.BindingSource>.  
+### <a name="example"></a><span data-ttu-id="ea404-120">Exemple</span><span class="sxs-lookup"><span data-stu-id="ea404-120">Example</span></span>  
+ <span data-ttu-id="ea404-121">L'exemple suivant interroge la table SalesOrderHeader et trie les lignes retournées par date de commande ; crée un <xref:System.Data.DataView> à partir de cette requête, et lie le <xref:System.Data.DataView> à une <xref:System.Windows.Forms.BindingSource>.</span><span class="sxs-lookup"><span data-stu-id="ea404-121">The following example queries the SalesOrderHeader table and orders the returned rows by the order date; creates a <xref:System.Data.DataView> from that query; and binds the <xref:System.Data.DataView> to a <xref:System.Windows.Forms.BindingSource>.</span></span>  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryOrderBy](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromqueryorderby)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryOrderBy](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromqueryorderby)]  
   
-### Exemple  
- L'exemple suivant interroge la table SalesOrderHeader et trie la ligne retournée par montant total dû ; crée un <xref:System.Data.DataView> à partir de cette requête, et lie le <xref:System.Data.DataView> à une <xref:System.Windows.Forms.BindingSource>.  
+### <a name="example"></a><span data-ttu-id="ea404-122">Exemple</span><span class="sxs-lookup"><span data-stu-id="ea404-122">Example</span></span>  
+ <span data-ttu-id="ea404-123">L'exemple suivant interroge la table SalesOrderHeader et trie la ligne retournée par montant total dû ; crée un <xref:System.Data.DataView> à partir de cette requête, et lie le <xref:System.Data.DataView> à une <xref:System.Windows.Forms.BindingSource>.</span><span class="sxs-lookup"><span data-stu-id="ea404-123">The following example queries the SalesOrderHeader table and orders the returned row by total amount due; creates a <xref:System.Data.DataView> from that query; and binds the <xref:System.Data.DataView> to a <xref:System.Windows.Forms.BindingSource>.</span></span>  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryOrderBy2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromqueryorderby2)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryOrderBy2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromqueryorderby2)]  
   
-### Exemple  
- L'exemple suivant interroge la table SalesOrderDetail et trie les lignes retournées par quantité commandée, puis par ID de commande ; crée un <xref:System.Data.DataView> à partir de cette requête, et lie le <xref:System.Data.DataView> à une <xref:System.Windows.Forms.BindingSource>.  
+### <a name="example"></a><span data-ttu-id="ea404-124">Exemple</span><span class="sxs-lookup"><span data-stu-id="ea404-124">Example</span></span>  
+ <span data-ttu-id="ea404-125">L'exemple suivant interroge la table SalesOrderDetail et trie les lignes retournées par quantité commandée, puis par ID de commande ; crée un <xref:System.Data.DataView> à partir de cette requête, et lie le <xref:System.Data.DataView> à une <xref:System.Windows.Forms.BindingSource>.</span><span class="sxs-lookup"><span data-stu-id="ea404-125">The following example queries the SalesOrderDetail table and orders the returned rows by order quantity and then by sales order ID; creates a <xref:System.Data.DataView> from that query; and binds the <xref:System.Data.DataView> to a <xref:System.Windows.Forms.BindingSource>.</span></span>  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryOrderByThenBy](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromqueryorderbythenby)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryOrderByThenBy](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromqueryorderbythenby)]  
   
-## Utilisation de la propriété de tri basé sur chaîne  
- La fonctionnalité de tri basé sur chaîne existante de <xref:System.Data.DataView> fonctionne toujours avec [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].   Après qu'un <xref:System.Data.DataView> a été créé à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], vous pouvez utiliser la propriété <xref:System.Data.DataView.Sort%2A> pour définir le tri du <xref:System.Data.DataView>.  
+## <a name="using-the-string-based-sort-property"></a><span data-ttu-id="ea404-126">Utilisation de la propriété de tri basé sur chaîne</span><span class="sxs-lookup"><span data-stu-id="ea404-126">Using the String-Based Sort Property</span></span>  
+ <span data-ttu-id="ea404-127">La fonctionnalité de tri basé sur chaîne existante de <xref:System.Data.DataView> fonctionne toujours avec [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. </span><span class="sxs-lookup"><span data-stu-id="ea404-127">The string-based sorting functionality of <xref:System.Data.DataView> still works with [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].</span></span> <span data-ttu-id="ea404-128">Après qu'un <xref:System.Data.DataView> a été créé à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], vous pouvez utiliser la propriété <xref:System.Data.DataView.Sort%2A> pour définir le tri du <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="ea404-128">After a <xref:System.Data.DataView> has been created from a [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] query, you can use the <xref:System.Data.DataView.Sort%2A> property to set the sorting on the <xref:System.Data.DataView>.</span></span>  
   
- Les fonctionnalités de tri basé sur chaîne et sur une expression s'excluent mutuellement.  La définition de la propriété <xref:System.Data.DataView.Sort%2A> efface le tri basé sur des expressions hérité de la requête à partir de laquelle le <xref:System.Data.DataView> a été créé.  
+ <span data-ttu-id="ea404-129">Les fonctionnalités de tri basé sur chaîne et sur une expression s'excluent mutuellement.</span><span class="sxs-lookup"><span data-stu-id="ea404-129">The string-based and expression-based sorting functionality are mutually exclusive.</span></span> <span data-ttu-id="ea404-130">La définition de la propriété <xref:System.Data.DataView.Sort%2A> efface le tri basé sur des expressions hérité de la requête à partir de laquelle le <xref:System.Data.DataView> a été créé.</span><span class="sxs-lookup"><span data-stu-id="ea404-130">Setting the <xref:System.Data.DataView.Sort%2A> property will clear the expression-based sort inherited from the query that the <xref:System.Data.DataView> was created from.</span></span>  
   
- Pour plus d'informations sur le filtrage <xref:System.Data.DataView.Sort%2A> basé sur chaîne, voir [Tri et filtrage de données](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
+ <span data-ttu-id="ea404-131">Pour plus d’informations sur basé sur chaîne <xref:System.Data.DataView.Sort%2A> le filtrage, consultez [de tri et de filtrage des données](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).</span><span class="sxs-lookup"><span data-stu-id="ea404-131">For more information about string-based <xref:System.Data.DataView.Sort%2A> filtering, see [Sorting and Filtering Data](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).</span></span>  
   
-### Exemple  
- L'exemple suivant crée un <xref:System.Data.DataView> à partir de la table Contact, puis trie les lignes par nom par ordre décroissant, puis les prénoms par ordre croissant :  
+### <a name="example"></a><span data-ttu-id="ea404-132">Exemple</span><span class="sxs-lookup"><span data-stu-id="ea404-132">Example</span></span>  
+ <span data-ttu-id="ea404-133">L'exemple suivant crée un <xref:System.Data.DataView> à partir de la table Contact, puis trie les lignes par nom par ordre décroissant, puis les prénoms par ordre croissant :</span><span class="sxs-lookup"><span data-stu-id="ea404-133">The follow example creates a <xref:System.Data.DataView> from the Contact table and sorts the rows by last name in descending order, then first name in ascending order:</span></span>  
   
  [!code-csharp[DP DataView Samples#LDVStringSort](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvstringsort)]
  [!code-vb[DP DataView Samples#LDVStringSort](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvstringsort)]  
   
-### Exemple  
- L'exemple suivant interroge la table Contact pour extraire les noms commençant par la lettre « S ».  Un <xref:System.Data.DataView> est créé à partir de cette requête et lié à un objet <xref:System.Windows.Forms.BindingSource>.  
+### <a name="example"></a><span data-ttu-id="ea404-134">Exemple</span><span class="sxs-lookup"><span data-stu-id="ea404-134">Example</span></span>  
+ <span data-ttu-id="ea404-135">L'exemple suivant interroge la table Contact pour extraire les noms commençant par la lettre « S ».</span><span class="sxs-lookup"><span data-stu-id="ea404-135">The following example queries the Contact table for last names that start with the letter "S".</span></span>  <span data-ttu-id="ea404-136">Un <xref:System.Data.DataView> est créé à partir de cette requête et lié à un objet <xref:System.Windows.Forms.BindingSource>.</span><span class="sxs-lookup"><span data-stu-id="ea404-136">A <xref:System.Data.DataView> is created from that query and bound to a <xref:System.Windows.Forms.BindingSource> object.</span></span>  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquerystringsort)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquerystringsort)]  
   
-## Suppression du tri  
- Les informations de tri d'un <xref:System.Data.DataView> peuvent être supprimées une fois qu'il a été défini à l'aide de la propriété <xref:System.Data.DataView.Sort%2A>.  Il existe deux façons de supprimer les informations de tri d'un <xref:System.Data.DataView> :  
+## <a name="clearing-the-sort"></a><span data-ttu-id="ea404-137">Suppression du tri</span><span class="sxs-lookup"><span data-stu-id="ea404-137">Clearing the Sort</span></span>  
+ <span data-ttu-id="ea404-138">Les informations de tri d'un <xref:System.Data.DataView> peuvent être supprimées une fois qu'il a été défini à l'aide de la propriété <xref:System.Data.DataView.Sort%2A>.</span><span class="sxs-lookup"><span data-stu-id="ea404-138">The sorting information on a <xref:System.Data.DataView> can be cleared after it has been set using the <xref:System.Data.DataView.Sort%2A> property.</span></span> <span data-ttu-id="ea404-139">Il existe deux façons de supprimer les informations de tri d'un <xref:System.Data.DataView> :</span><span class="sxs-lookup"><span data-stu-id="ea404-139">There are two ways to clear the sorting information in <xref:System.Data.DataView>:</span></span>  
   
--   Affectez à la propriété <xref:System.Data.DataView.Sort%2A> la valeur `null`.  
+-   <span data-ttu-id="ea404-140">Affectez à la propriété <xref:System.Data.DataView.Sort%2A> la valeur `null`.</span><span class="sxs-lookup"><span data-stu-id="ea404-140">Set the <xref:System.Data.DataView.Sort%2A> property to `null`.</span></span>  
   
--   Définissez la propriété <xref:System.Data.DataView.Sort%2A> en tant que chaîne vide.  
+-   <span data-ttu-id="ea404-141">Définissez la propriété <xref:System.Data.DataView.Sort%2A> en tant que chaîne vide.</span><span class="sxs-lookup"><span data-stu-id="ea404-141">Set the <xref:System.Data.DataView.Sort%2A> property to an empty string.</span></span>  
   
-### Exemple  
- L'exemple suivant crée un <xref:System.Data.DataView> à partir d'une requête, puis supprime le tri en définissant la propriété <xref:System.Data.DataView.Sort%2A> en tant que chaîne vide :  
+### <a name="example"></a><span data-ttu-id="ea404-142">Exemple</span><span class="sxs-lookup"><span data-stu-id="ea404-142">Example</span></span>  
+ <span data-ttu-id="ea404-143">L'exemple suivant crée un <xref:System.Data.DataView> à partir d'une requête, puis supprime le tri en définissant la propriété <xref:System.Data.DataView.Sort%2A> en tant que chaîne vide :</span><span class="sxs-lookup"><span data-stu-id="ea404-143">The following example creates a <xref:System.Data.DataView> from a query and clears the sorting by setting the <xref:System.Data.DataView.Sort%2A> property to an empty string:</span></span>  
   
  [!code-csharp[DP DataView Samples#LDVClearSort](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvclearsort)]
  [!code-vb[DP DataView Samples#LDVClearSort](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvclearsort)]  
   
-### Exemple  
- L'exemple suivant crée une table <xref:System.Data.DataView> à partir de la table Contact, puis définit la propriété <xref:System.Data.DataView.Sort%2A> pour effectuer un tri des noms par ordre décroissant :  Les informations de tri sont ensuite effacées en définissant la propriété <xref:System.Data.DataView.Sort%2A> sur `null` :  
+### <a name="example"></a><span data-ttu-id="ea404-144">Exemple</span><span class="sxs-lookup"><span data-stu-id="ea404-144">Example</span></span>  
+ <span data-ttu-id="ea404-145">L'exemple suivant crée une table <xref:System.Data.DataView> à partir de la table Contact, puis définit la propriété <xref:System.Data.DataView.Sort%2A> pour effectuer un tri des noms par ordre décroissant :</span><span class="sxs-lookup"><span data-stu-id="ea404-145">The following example creates a <xref:System.Data.DataView> from the Contact table and sets the <xref:System.Data.DataView.Sort%2A> property to sort by last name in descending order.</span></span> <span data-ttu-id="ea404-146">Les informations de tri sont ensuite effacées en définissant la propriété <xref:System.Data.DataView.Sort%2A> sur `null` :</span><span class="sxs-lookup"><span data-stu-id="ea404-146">The sorting information is then cleared by setting the <xref:System.Data.DataView.Sort%2A> property to `null`:</span></span>  
   
  [!code-csharp[DP DataView Samples#LDVClearSort2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvclearsort2)]
  [!code-vb[DP DataView Samples#LDVClearSort2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvclearsort2)]  
   
-## Voir aussi  
- [Liaison de données et LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)   
- [Filtrage avec DataView](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)   
- [Sorting Data](../../../../ocs/visual-basic/programming-guide/concepts/linq/sorting-data.md)
+## <a name="see-also"></a><span data-ttu-id="ea404-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ea404-147">See Also</span></span>  
+ [<span data-ttu-id="ea404-148">Liaison de données et LINQ to DataSet</span><span class="sxs-lookup"><span data-stu-id="ea404-148">Data Binding and LINQ to DataSet</span></span>](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)  
+ [<span data-ttu-id="ea404-149">Filtrage avec DataView</span><span class="sxs-lookup"><span data-stu-id="ea404-149">Filtering with DataView</span></span>](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)  
+ [<span data-ttu-id="ea404-150">Tri des données</span><span class="sxs-lookup"><span data-stu-id="ea404-150">Sorting Data</span></span>](http://msdn.microsoft.com/library/6d76e2d7-b418-49b5-ac78-2bcd61169c48)

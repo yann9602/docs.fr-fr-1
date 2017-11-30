@@ -1,33 +1,36 @@
 ---
-title: "Configuration Channel Factory | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Configuration Channel Factory
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3b749493-bd8a-4ccb-893e-5948901a1486
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a79a5c4997403f018ba34aea65e4c9fadab29443
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Configuration Channel Factory
-Cet exemple couvre l'utilisation du <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.Le <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> permet une gestion centralisée de la configuration du client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Celle\-ci peut également être utile dans les scénarios où la configuration est sélectionnée ou modifiée après le chargement du domaine d'application.  
+# <a name="configuration-channel-factory"></a><span data-ttu-id="efbad-102">Configuration Channel Factory</span><span class="sxs-lookup"><span data-stu-id="efbad-102">Configuration Channel Factory</span></span>
+<span data-ttu-id="efbad-103">Cet exemple couvre l'utilisation du <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.</span><span class="sxs-lookup"><span data-stu-id="efbad-103">This sample covers the usage of the <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.</span></span> <span data-ttu-id="efbad-104">Le <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> permet une gestion centralisée de la configuration du client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="efbad-104">The <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> allows central management of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client configuration.</span></span> <span data-ttu-id="efbad-105">Celle-ci peut également être utile dans les scénarios où la configuration est sélectionnée ou modifiée après le chargement du domaine d'application.</span><span class="sxs-lookup"><span data-stu-id="efbad-105">This can also be useful in scenarios in which configuration is selected or changed after the application domain load time.</span></span>  
   
-## Démonstrations  
+## <a name="demonstrates"></a><span data-ttu-id="efbad-106">Démonstrations</span><span class="sxs-lookup"><span data-stu-id="efbad-106">Demonstrates</span></span>  
  <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>  
   
-## Discussion  
- Cet exemple montre comment utiliser <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> pour ajouter un fichier de configuration particulier à une application cliente, sans avoir à utiliser le fichier de configuration de l'application par défaut.  
+## <a name="discussion"></a><span data-ttu-id="efbad-107">Discussion</span><span class="sxs-lookup"><span data-stu-id="efbad-107">Discussion</span></span>  
+ <span data-ttu-id="efbad-108">Cet exemple montre comment utiliser <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> pour ajouter un fichier de configuration particulier à une application cliente, sans avoir à utiliser le fichier de configuration de l'application par défaut.</span><span class="sxs-lookup"><span data-stu-id="efbad-108">This sample shows how to use <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> to add a particular configuration file to a client application, without having to use the default application configuration file.</span></span>  
   
- Cet exemple est composé de deux projets.Le premier projet est un service simple qui s'exécute pour répondre aux messages provenant des clients.Le deuxième projet est une application cliente qui génère deux objets <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> à l'aide d'un <xref:System.Configuration.ExeConfigurationFileMap> pour le fichier de configuration Test.config et les utilise pour communiquer avec le service.Les deux clients communiquent avec le service à l'aide de la configuration spécifiée dans Test.config.  
+ <span data-ttu-id="efbad-109">Cet exemple est composé de deux projets.</span><span class="sxs-lookup"><span data-stu-id="efbad-109">The sample consists of two projects.</span></span> <span data-ttu-id="efbad-110">Le premier projet est un service simple qui s'exécute pour répondre aux messages provenant des clients.</span><span class="sxs-lookup"><span data-stu-id="efbad-110">The first project is a simple service that runs to reply to messages coming from the clients.</span></span> <span data-ttu-id="efbad-111">Le deuxième projet est une application cliente qui génère deux objets <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> à l'aide d'un <xref:System.Configuration.ExeConfigurationFileMap> pour le fichier de configuration Test.config et les utilise pour communiquer avec le service.</span><span class="sxs-lookup"><span data-stu-id="efbad-111">The second project is a client application that builds two <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> objects using a <xref:System.Configuration.ExeConfigurationFileMap> for the Test.config configuration file and uses them to communicate with the service.</span></span> <span data-ttu-id="efbad-112">Les deux clients communiquent avec le service à l'aide de la configuration spécifiée dans Test.config.</span><span class="sxs-lookup"><span data-stu-id="efbad-112">Both clients communicate with the service using the configuration specified in Test.config.</span></span>  
   
- Le code suivant ajoute un fichier de configuration personnalisé à une application cliente.  
+ <span data-ttu-id="efbad-113">Le code suivant ajoute un fichier de configuration personnalisé à une application cliente.</span><span class="sxs-lookup"><span data-stu-id="efbad-113">The following code adds a custom configuration file to a client application.</span></span>  
   
 ```  
 ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();  
@@ -36,26 +39,25 @@ Configuration newConfiguration = ConfigurationManager.OpenMappedExeConfiguration
   
 ConfigurationChannelFactory<ICalculatorChannel> factory1 = new ConfigurationChannelFactory<ICalculatorChannel>("endpoint1", newConfiguration, new EndpointAddress("http://localhost:8000/servicemodelsamples/service"));  
 ICalculatorChannel client1 = factory1.CreateChannel();  
-  
 ```  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="efbad-114">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="efbad-114">To set up, build, and run the sample</span></span>  
   
-1.  Ouvrez [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec les privilèges d'administrateur.  
+1.  <span data-ttu-id="efbad-115">Ouvrez [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec les privilèges d'administrateur.</span><span class="sxs-lookup"><span data-stu-id="efbad-115">Open [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] with administrator privileges.</span></span>  
   
-2.  Cliquez avec le bouton droit sur la solution ConfigurationChannelFactory \(2 projets\) et sélectionnez **Propriétés**.  
+2.  <span data-ttu-id="efbad-116">Avec le bouton droit de la solution ConfigurationChannelFactory (2 projets), puis sélectionnez **propriétés**.</span><span class="sxs-lookup"><span data-stu-id="efbad-116">Right-click the ConfigurationChannelFactory solution (2 projects) and then select **Properties**.</span></span>  
   
-3.  Dans **Propriétés communes**, sélectionnez **Projet de démarrage**, puis cliquez sur **Plusieurs projets de démarrage**.  
+3.  <span data-ttu-id="efbad-117">Dans **propriétés communes**, sélectionnez **projet de démarrage**, puis cliquez sur **plusieurs projets de démarrage**.</span><span class="sxs-lookup"><span data-stu-id="efbad-117">In **Common Properties**, select **Startup Project**, and then click **Multiple startup projects**.</span></span>  
   
-4.  Déplacez le projet **Service** vers le début de la liste, avec l'**action de démarrage**, puis déplacez le projet **Client** après le projet **Service**, toujours avec l'**action de démarrage**, de sorte que le projet **Client** soit exécuté après le projet **Service**.  
+4.  <span data-ttu-id="efbad-118">Déplacer le **Service** de projet vers le début de la liste, avec la **Action 'Start'**, puis déplacez le **Client** projet après le **Service**projet, également avec la **Action 'Start'**, donc le **Client** projet est exécuté après le **Service** projet.</span><span class="sxs-lookup"><span data-stu-id="efbad-118">Move the **Service** project to the beginning of the list, with the **Action ‘Start’**, and then move the **Client** project after the **Service** project, also with the **Action ‘Start’**, so the **Client** project is executed after the **Service** project.</span></span>  
   
-5.  Cliquez sur **OK**, puis appuyez sur F5 \(ou CTRL\+F5\) pour exécuter l'exemple.  
+5.  <span data-ttu-id="efbad-119">Cliquez sur **OK**, puis appuyez sur F5 (ou CTRL + F5) pour exécuter l’exemple.</span><span class="sxs-lookup"><span data-stu-id="efbad-119">Click **OK**, and then press F5 (or CTRL+F5) to run the sample.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="efbad-120">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="efbad-120">The samples may already be installed on your machine.</span></span> <span data-ttu-id="efbad-121">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="efbad-121">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="efbad-122">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="efbad-122">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="efbad-123">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="efbad-123">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Services\ConfigurationChannelFactory`
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigurationChannelFactory`

@@ -1,41 +1,44 @@
 ---
-title: "Cr&#233;ation d&#39;activit&#233;s de contr&#244;le de flux personnalis&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Création d'activités de contrôle de flux personnalisées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 27f409f6-2d1d-4cfb-9765-93eb2ad667d5
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 12b5c8db096c0261041c29385b0ebe2e1569078c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Cr&#233;ation d&#39;activit&#233;s de contr&#244;le de flux personnalis&#233;es
-Le .Net Framework contient diverses activités de contrôle de flux dont le fonctionnement est similaire à celui de structures de programmation abstraite \(telles que <xref:System.Activities.Statements.Flowchart>\) ou aux instructions de programmation standard \(telles que <xref:System.Activities.Statements.If>\).Cette rubrique décrit l'architecture d'un des exemples de projet, [ForEach non générique](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md).  
+# <a name="creating-custom-flow-control-activities"></a><span data-ttu-id="8ce5c-102">Création d'activités de contrôle de flux personnalisées</span><span class="sxs-lookup"><span data-stu-id="8ce5c-102">Creating custom flow control activities</span></span>
+<span data-ttu-id="8ce5c-103">Le .Net Framework contient diverses activités de contrôle de flux dont le fonctionnement est similaire à celui de structures de programmation abstraite (telles que <xref:System.Activities.Statements.Flowchart>) ou aux instructions de programmation standard (telles que <xref:System.Activities.Statements.If>).</span><span class="sxs-lookup"><span data-stu-id="8ce5c-103">The .Net Framework contains a variety of flow-control activities that function similarly to abstract programming structures (such as <xref:System.Activities.Statements.Flowchart>)   or to standard programming statements (such as <xref:System.Activities.Statements.If>).</span></span> <span data-ttu-id="8ce5c-104">Cette rubrique décrit l’architecture de l’un des exemples de projets, [ForEach Non générique](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md).</span><span class="sxs-lookup"><span data-stu-id="8ce5c-104">This topic discusses the architecture of one of the sample projects, [Non-Generic ForEach](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md).</span></span>  
   
-## Création de la classe personnalisée  
- Étant donné que la classe ForEach non générique devra planifier des activités enfants, elle devra dériver de <xref:System.Activities.NativeActivity>, puisque les activités qui dérivent de <xref:System.Workflow.Activities.CodeActivity> ne disposent pas de cette fonctionnalité.  
+## <a name="creating-the-custom-class"></a><span data-ttu-id="8ce5c-105">Création de la classe personnalisée</span><span class="sxs-lookup"><span data-stu-id="8ce5c-105">Creating the custom class</span></span>  
+ <span data-ttu-id="8ce5c-106">Étant donné que la classe ForEach non générique devra planifier des activités enfants, elle devra dériver de <xref:System.Activities.NativeActivity>, puisque les activités qui dérivent de <xref:System.Workflow.Activities.CodeActivity> ne disposent pas de cette fonctionnalité.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-106">Since the Non-Generic ForEach class will need to schedule child activities, it will need to derive from <xref:System.Activities.NativeActivity>, since activities that derive from <xref:System.Workflow.Activities.CodeActivity> do not have this functionality.</span></span>  
   
 ```  
 public sealed class ForEach : NativeActivity  
     {  
-  
 ```  
   
- La classe personnalisée requiert que plusieurs membres stockent les données utilisées par l'activité et fournissent des fonctionnalités permettant d'exécuter les activités enfants de l'activité.Ces membres incluent :  
+ <span data-ttu-id="8ce5c-107">La classe personnalisée requiert que plusieurs membres stockent les données utilisées par l'activité et fournissent des fonctionnalités permettant d'exécuter les activités enfants de l'activité.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-107">The custom class requires several members to store data being used by the activity, and to provide functionality to execute the activity’s child activities.</span></span> <span data-ttu-id="8ce5c-108">Ces membres incluent :</span><span class="sxs-lookup"><span data-stu-id="8ce5c-108">These members include:</span></span>  
   
--   `valueEnumerator` : la <xref:System.Activities.Variable%601> non publique de type <xref:System.Collections.IEnumerator> utilisée pour itérer sur les collections d'éléments.Ce membre est de type <xref:System.Activities.Variable%601>, car il est utilisé en interne dans l'activité, plutôt qu'un argument ou une propriété publique, qui serait utilisé si cet objet avait une origine externe à l'activité.  
+-   <span data-ttu-id="8ce5c-109">`valueEnumerator` : la <xref:System.Activities.Variable%601> non publique de type <xref:System.Collections.IEnumerator> utilisée pour itérer sur les collections d'éléments.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-109">`valueEnumerator`: The non-public <xref:System.Activities.Variable%601> of type <xref:System.Collections.IEnumerator> used to iterate over the collection of items.</span></span> <span data-ttu-id="8ce5c-110">Ce membre est de type <xref:System.Activities.Variable%601>, car il est utilisé en interne dans l'activité, plutôt qu'un argument ou une propriété publique, qui serait utilisé si cet objet avait une origine externe à l'activité.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-110">This member is of type <xref:System.Activities.Variable%601> because it is used internally in the activity, rather than an argument or public property, which would be used if this object were to have an origin outside the activity.</span></span>  
   
--   `OnChildComplete` : la propriété <xref:System.Activities.CompletionCallback> publique exécutée lorsque chaque enfant termine l'exécution.Ce membre est défini comme une propriété CLR, puisque sa valeur ne changera pas dans les différentes instances de l'activité.  
+-   <span data-ttu-id="8ce5c-111">`OnChildComplete` : la propriété <xref:System.Activities.CompletionCallback> publique exécutée lorsque chaque enfant termine l'exécution.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-111">`OnChildComplete`: The public <xref:System.Activities.CompletionCallback> property that executes when each child completes execution.</span></span> <span data-ttu-id="8ce5c-112">Ce membre est défini comme une propriété CLR, puisque sa valeur ne changera pas dans les différentes instances de l'activité.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-112">This member is defined as a CLR property, since its value will not change for different instances of the activity.</span></span>  
   
--   `Values` : la collection d'entrées utilisée pour les itérations de l'activité enfant.Ce membre est de type <xref:System.Activities.InArgument%601>, puisque l'origine des données est extérieure à l'activité, mais le contenu des collection n'est pas supposé changer au cours de l'exécution de l'activité.Si l'activité nécessitait que la fonctionnalité modifie le contenu de cette collection au cours de l'exécution de l'activité \(pour ajouter ou supprimer des activités, par exemple\), ce membre aurait été défini comme <xref:System.Activities.ActivityAction>, qui aurait ensuite été évalué lors de chaque accès, de sorte que l'activité ait accès aux modifications.  
+-   <span data-ttu-id="8ce5c-113">`Values` : la collection d'entrées utilisée pour les itérations de l'activité enfant.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-113">`Values`: The collection of inputs used for the iterations of the child activity.</span></span> <span data-ttu-id="8ce5c-114">Ce membre est de type <xref:System.Activities.InArgument%601>, puisque l'origine des données est extérieure à l'activité, mais le contenu des collection n'est pas supposé changer au cours de l'exécution de l'activité.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-114">This member is of type <xref:System.Activities.InArgument%601>, since the origin of the data is outside the activity, but the contents of the collection is not expected to change during the execution of the activity.</span></span> <span data-ttu-id="8ce5c-115">Si l'activité nécessitait que la fonctionnalité modifie le contenu de cette collection au cours de l'exécution de l'activité (pour ajouter ou supprimer des activités, par exemple), ce membre aurait été défini comme <xref:System.Activities.ActivityAction>, qui aurait ensuite été évalué lors de chaque accès, de sorte que l'activité ait accès aux modifications.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-115">If the activity needed the functionality to change the contents of this collection while the activity was executing (to add or remove activities, for instance), this member would have been defined as an <xref:System.Activities.ActivityAction>, which then would have been evaluated every time it was accessed, so that changes would be available to the activity.</span></span>  
   
--   `Body` : ce membre définit l'activité à exécuter pour chaque élément de la collection `Values`.Ce membre est défini comme <xref:System.Activities.ActivityAction> de sorte qu'il est évalué chaque fois qu'on y accède.  
+-   <span data-ttu-id="8ce5c-116">`Body` : ce membre définit l'activité à exécuter pour chaque élément de la collection `Values`.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-116">`Body`: This member defines the activity to be executed for each item in the `Values` collection.</span></span> <span data-ttu-id="8ce5c-117">Ce membre est défini comme <xref:System.Activities.ActivityAction> de sorte qu'il est évalué chaque fois qu'on y accède.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-117">This member is defined as an <xref:System.Activities.ActivityAction> so that it is evaluated every time it is accessed.</span></span>  
   
--   `Execute` : cette méthode utilise les membres non publics `InternalExecute`, `OnForEachComplete` et `GetStateAndExecute` pour planifier l'exécution et assigner le gestionnaire d'achèvement de l'activité enfant défini dans le membre de corps.  
+-   <span data-ttu-id="8ce5c-118">`Execute` : cette méthode utilise les membres non publics `InternalExecute`, `OnForEachComplete` et `GetStateAndExecute` pour planifier l'exécution et assigner le gestionnaire d'achèvement de l'activité enfant défini dans le membre de corps.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-118">`Execute`: This method uses the `InternalExecute`, `OnForEachComplete`, and `GetStateAndExecute` non-public members to schedule the execution and assign the completion handler of the child activity defined in the Body member.</span></span>  
   
--   `CacheMetadata` : ce membre fournit au runtime les informations dont il a besoin pour exécuter l'activité.Par défaut, la méthode `CacheMetadata` d'une activité indique au runtime tous les membres publics de l'activité, mais puisque cette activité utilise des membres privés pour certaines fonctionnalités, elle doit signaler leur existence au runtime de telle sorte qu'il en soit informé.Dans ce cas, la fonction `CacheMetadata` est remplacée afin que le membre `valueEnumerator` soit accessible.Ce membre crée également un argument pour les valeurs de l'activité afin qu'elles puissent être passées dans l'activité au cours de l'exécution.
+-   <span data-ttu-id="8ce5c-119">`CacheMetadata` : ce membre fournit au runtime les informations dont il a besoin pour exécuter l'activité.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-119">`CacheMetadata`: This member provides the runtime with the information it needs to execute the activity.</span></span> <span data-ttu-id="8ce5c-120">Par défaut, la méthode `CacheMetadata` d'une activité indique au runtime tous les membres publics de l'activité, mais puisque cette activité utilise des membres privés pour certaines fonctionnalités, elle doit signaler leur existence au runtime de telle sorte qu'il en soit informé.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-120">By default, an activity’s `CacheMetadata` method will inform the runtime of all public members of the activity, but since this activity uses private members for some functionality, it needs to inform the runtime of their existence so that the runtime can be aware of them.</span></span> <span data-ttu-id="8ce5c-121">Dans ce cas, la fonction `CacheMetadata` est remplacée afin que le membre `valueEnumerator` soit accessible.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-121">In this case, the `CacheMetadata` function is overridden so that the private `valueEnumerator` member can be accessed.</span></span> <span data-ttu-id="8ce5c-122">Ce membre crée également un argument pour les valeurs de l'activité afin qu'elles puissent être passées dans l'activité au cours de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="8ce5c-122">This member also creates an argument for the values for the activity so that they can be passed in to the activity during execution.</span></span>

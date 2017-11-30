@@ -1,23 +1,26 @@
 ---
-title: "Transactions pass&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Transactions passées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: efeb0167-2014-4c08-b07a-44885bf80a66
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d264e37a43c63206b38380a432a4e059dc69e0d5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Transactions pass&#233;es
-Nom du compteur : Transactions passées  
+# <a name="transactions-flowed"></a><span data-ttu-id="27a87-102">Transactions passées</span><span class="sxs-lookup"><span data-stu-id="27a87-102">Transactions Flowed</span></span>
+<span data-ttu-id="27a87-103">Nom du compteur : Transactions passées</span><span class="sxs-lookup"><span data-stu-id="27a87-103">Counter Name: Transactions Flowed</span></span>  
   
-## Description  
- Nombre de transactions passées à cette opération.  Ce compteur est incrémenté pour tout message envoyé à l'opération qui contient un ID de transaction.
+## <a name="description"></a><span data-ttu-id="27a87-104">Description</span><span class="sxs-lookup"><span data-stu-id="27a87-104">Description</span></span>  
+ <span data-ttu-id="27a87-105">Nombre de transactions passées à cette opération.</span><span class="sxs-lookup"><span data-stu-id="27a87-105">Number of transactions flowed to this operation.</span></span> <span data-ttu-id="27a87-106">Ce compteur est incrémenté pour tout message envoyé à l'opération qui contient un ID de transaction.</span><span class="sxs-lookup"><span data-stu-id="27a87-106">This counter is incremented for any message that is sent to the operation and contains a transaction ID.</span></span>

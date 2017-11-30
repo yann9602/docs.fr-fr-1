@@ -1,61 +1,64 @@
 ---
-title: "Mappages de types de donn&#233;es OLE&#160;DB | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Mappages de types de données OLE DB"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 04bcb259-59d3-4fd7-894d-4f0dd0c68069
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 350364c92d6159313d8fae6d6f9986a5e581d89c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mappages de types de donn&#233;es OLE&#160;DB
-Le tableau suivant présente le type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] déduit pour les types de données du fournisseur de données .NET Framework pour ADO et OLE DB \(<xref:System.Data.OleDb>\).  Les méthodes d'accesseur typé pour le <xref:System.Data.OleDb.OleDbDataReader> sont également répertoriées.  
+# <a name="ole-db-data-type-mappings"></a><span data-ttu-id="0627a-102">Mappages de types de données OLE DB</span><span class="sxs-lookup"><span data-stu-id="0627a-102">OLE DB Data Type Mappings</span></span>
+<span data-ttu-id="0627a-103">Le tableau suivant présente le type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] déduit pour les types de données du fournisseur de données .NET Framework pour ADO et OLE DB (<xref:System.Data.OleDb>).</span><span class="sxs-lookup"><span data-stu-id="0627a-103">The following table shows the inferred [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] type for data types from the .NET Framework Data Provider for ADO and OLE DB (<xref:System.Data.OleDb>).</span></span> <span data-ttu-id="0627a-104">Méthodes d’accesseur typées pour les <xref:System.Data.OleDb.OleDbDataReader> sont également répertoriés.</span><span class="sxs-lookup"><span data-stu-id="0627a-104">The typed accessor methods for the <xref:System.Data.OleDb.OleDbDataReader> are also listed.</span></span>  
   
-|Type ADO|Type OLE DB|Type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]|Accesseur typé [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]|  
+|<span data-ttu-id="0627a-105">Type ADO</span><span class="sxs-lookup"><span data-stu-id="0627a-105">ADO type</span></span>|<span data-ttu-id="0627a-106">Type OLE DB</span><span class="sxs-lookup"><span data-stu-id="0627a-106">OLE DB type</span></span>|<span data-ttu-id="0627a-107">Type [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0627a-107">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] type</span></span>|<span data-ttu-id="0627a-108">Accesseur typé [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0627a-108">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typed accessor</span></span>|  
 |--------------|-----------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|  
-|adBigInt|DBTYPE\_I8|Int64|GetInt64\(\)|  
-|adBinary|DBTYPE\_BYTES|Byte\[\]|GetBytes\(\)|  
-|adBoolean|DBTYPE\_BOOL|Boolean|GetBoolean\(\)|  
-|adBSTR|DBTYPE\_BSTR|Chaîne|GetString\(\)|  
-|adChapter|DBTYPE\_HCHAPTER|Pris en charge dans le `DataReader`.  Consultez [Extraction de données à l'aide d'un DataReader](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md).|GetValue\(\)|  
-|adChar|DBTYPE\_STR|Chaîne|GetString\(\)|  
-|adCurrency|DBTYPE\_CY|Decimal|GetDecimal\(\)|  
-|adDate|DBTYPE\_DATE|DateTime|GetDateTime\(\)|  
-|adDBDate|DBTYPE\_DBDATE|DateTime|GetDateTime\(\)|  
-|adDBTime|DBTYPE\_DBTIME|DateTime|GetDateTime\(\)|  
-|adDBTimeStamp|DBTYPE\_DBTIMESTAMP|DateTime|GetDateTime\(\)|  
-|adDecimal|DBTYPE\_DECIMAL|Decimal|GetDecimal\(\)|  
-|adDouble|DBTYPE\_R8|Double|GetDouble\(\)|  
-|adError|DBTYPE\_ERROR|ExternalException|GetValue\(\)|  
-|adFileTime|DBTYPE\_FILETIME|DateTime|GetDateTime\(\)|  
-|adGUID|DBTYPE\_GUID|Guid|GetGuid\(\)|  
-|adIDispatch|DBTYPE\_IDISPATCH \*|Objet|GetValue\(\)|  
-|adInteger|DBTYPE\_I4|Int32|GetInt32\(\)|  
-|adIUnknown|DBTYPE\_IUNKNOWN \*|Objet|GetValue\(\)|  
-|adNumeric|DBTYPE\_NUMERIC|Decimal|GetDecimal\(\)|  
-|adPropVariant|DBTYPE\_PROPVARIANT|Objet|GetValue\(\)|  
-|adSingle|DBTYPE\_R4|Single|GetFloat\(\)|  
-|adSmallInt|DBTYPE\_I2|Int16|GetInt16\(\)|  
-|adTinyInt|DBTYPE\_I1|Byte|GetByte\(\)|  
-|adUnsignedBigInt|DBTYPE\_UI8|UInt64|GetValue\(\)|  
-|adUnsignedInt|DBTYPE\_UI4|UInt32|GetValue\(\)|  
-|adUnsignedSmallInt|DBTYPE\_UI2|UInt16|GetValue\(\)|  
-|adUnsignedTinyInt|DBTYPE\_UI1|Byte|GetByte\(\)|  
-|adVariant|DBTYPE\_VARIANT|Objet|GetValue\(\)|  
-|adWChar|DBTYPE\_WSTR|Chaîne|GetString\(\)|  
-|adUserDefined|DBTYPE\_UDT|non pris en charge||  
-|adVarNumeric|DBTYPE\_VARNUMERIC|non pris en charge||  
+|<span data-ttu-id="0627a-109">adBigInt</span><span class="sxs-lookup"><span data-stu-id="0627a-109">adBigInt</span></span>|<span data-ttu-id="0627a-110">DBTYPE_I8</span><span class="sxs-lookup"><span data-stu-id="0627a-110">DBTYPE_I8</span></span>|<span data-ttu-id="0627a-111">Int64</span><span class="sxs-lookup"><span data-stu-id="0627a-111">Int64</span></span>|<span data-ttu-id="0627a-112">GetInt64()</span><span class="sxs-lookup"><span data-stu-id="0627a-112">GetInt64()</span></span>|  
+|<span data-ttu-id="0627a-113">adBinary</span><span class="sxs-lookup"><span data-stu-id="0627a-113">adBinary</span></span>|<span data-ttu-id="0627a-114">DBTYPE_BYTES</span><span class="sxs-lookup"><span data-stu-id="0627a-114">DBTYPE_BYTES</span></span>|<span data-ttu-id="0627a-115">Byte[]</span><span class="sxs-lookup"><span data-stu-id="0627a-115">Byte[]</span></span>|<span data-ttu-id="0627a-116">GetBytes()</span><span class="sxs-lookup"><span data-stu-id="0627a-116">GetBytes()</span></span>|  
+|<span data-ttu-id="0627a-117">adBoolean</span><span class="sxs-lookup"><span data-stu-id="0627a-117">adBoolean</span></span>|<span data-ttu-id="0627a-118">DBTYPE_BOOL</span><span class="sxs-lookup"><span data-stu-id="0627a-118">DBTYPE_BOOL</span></span>|<span data-ttu-id="0627a-119">Boolean</span><span class="sxs-lookup"><span data-stu-id="0627a-119">Boolean</span></span>|<span data-ttu-id="0627a-120">GetBoolean()</span><span class="sxs-lookup"><span data-stu-id="0627a-120">GetBoolean()</span></span>|  
+|<span data-ttu-id="0627a-121">adBSTR</span><span class="sxs-lookup"><span data-stu-id="0627a-121">adBSTR</span></span>|<span data-ttu-id="0627a-122">DBTYPE_BSTR</span><span class="sxs-lookup"><span data-stu-id="0627a-122">DBTYPE_BSTR</span></span>|<span data-ttu-id="0627a-123">Chaîne</span><span class="sxs-lookup"><span data-stu-id="0627a-123">String</span></span>|<span data-ttu-id="0627a-124">GetString()</span><span class="sxs-lookup"><span data-stu-id="0627a-124">GetString()</span></span>|  
+|<span data-ttu-id="0627a-125">adChapter</span><span class="sxs-lookup"><span data-stu-id="0627a-125">adChapter</span></span>|<span data-ttu-id="0627a-126">DBTYPE_HCHAPTER</span><span class="sxs-lookup"><span data-stu-id="0627a-126">DBTYPE_HCHAPTER</span></span>|<span data-ttu-id="0627a-127">Pris en charge dans le `DataReader`.</span><span class="sxs-lookup"><span data-stu-id="0627a-127">Supported through the `DataReader`.</span></span> <span data-ttu-id="0627a-128">Consultez [la récupération des données à l’aide d’un DataReader](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md).</span><span class="sxs-lookup"><span data-stu-id="0627a-128">See [Retrieving Data Using a DataReader](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md).</span></span>|<span data-ttu-id="0627a-129">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-129">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-130">adChar</span><span class="sxs-lookup"><span data-stu-id="0627a-130">adChar</span></span>|<span data-ttu-id="0627a-131">DBTYPE_STR</span><span class="sxs-lookup"><span data-stu-id="0627a-131">DBTYPE_STR</span></span>|<span data-ttu-id="0627a-132">Chaîne</span><span class="sxs-lookup"><span data-stu-id="0627a-132">String</span></span>|<span data-ttu-id="0627a-133">GetString()</span><span class="sxs-lookup"><span data-stu-id="0627a-133">GetString()</span></span>|  
+|<span data-ttu-id="0627a-134">adCurrency</span><span class="sxs-lookup"><span data-stu-id="0627a-134">adCurrency</span></span>|<span data-ttu-id="0627a-135">DBTYPE_CY</span><span class="sxs-lookup"><span data-stu-id="0627a-135">DBTYPE_CY</span></span>|<span data-ttu-id="0627a-136">Decimal</span><span class="sxs-lookup"><span data-stu-id="0627a-136">Decimal</span></span>|<span data-ttu-id="0627a-137">GetDecimal()</span><span class="sxs-lookup"><span data-stu-id="0627a-137">GetDecimal()</span></span>|  
+|<span data-ttu-id="0627a-138">adDate</span><span class="sxs-lookup"><span data-stu-id="0627a-138">adDate</span></span>|<span data-ttu-id="0627a-139">DBTYPE_DATE</span><span class="sxs-lookup"><span data-stu-id="0627a-139">DBTYPE_DATE</span></span>|<span data-ttu-id="0627a-140">DateTime</span><span class="sxs-lookup"><span data-stu-id="0627a-140">DateTime</span></span>|<span data-ttu-id="0627a-141">GetDateTime()</span><span class="sxs-lookup"><span data-stu-id="0627a-141">GetDateTime()</span></span>|  
+|<span data-ttu-id="0627a-142">adDBDate</span><span class="sxs-lookup"><span data-stu-id="0627a-142">adDBDate</span></span>|<span data-ttu-id="0627a-143">DBTYPE_DBDATE</span><span class="sxs-lookup"><span data-stu-id="0627a-143">DBTYPE_DBDATE</span></span>|<span data-ttu-id="0627a-144">DateTime</span><span class="sxs-lookup"><span data-stu-id="0627a-144">DateTime</span></span>|<span data-ttu-id="0627a-145">GetDateTime()</span><span class="sxs-lookup"><span data-stu-id="0627a-145">GetDateTime()</span></span>|  
+|<span data-ttu-id="0627a-146">adDBTime</span><span class="sxs-lookup"><span data-stu-id="0627a-146">adDBTime</span></span>|<span data-ttu-id="0627a-147">DBTYPE_DBTIME</span><span class="sxs-lookup"><span data-stu-id="0627a-147">DBTYPE_DBTIME</span></span>|<span data-ttu-id="0627a-148">DateTime</span><span class="sxs-lookup"><span data-stu-id="0627a-148">DateTime</span></span>|<span data-ttu-id="0627a-149">GetDateTime()</span><span class="sxs-lookup"><span data-stu-id="0627a-149">GetDateTime()</span></span>|  
+|<span data-ttu-id="0627a-150">adDBTimeStamp</span><span class="sxs-lookup"><span data-stu-id="0627a-150">adDBTimeStamp</span></span>|<span data-ttu-id="0627a-151">DBTYPE_DBTIMESTAMP</span><span class="sxs-lookup"><span data-stu-id="0627a-151">DBTYPE_DBTIMESTAMP</span></span>|<span data-ttu-id="0627a-152">DateTime</span><span class="sxs-lookup"><span data-stu-id="0627a-152">DateTime</span></span>|<span data-ttu-id="0627a-153">GetDateTime()</span><span class="sxs-lookup"><span data-stu-id="0627a-153">GetDateTime()</span></span>|  
+|<span data-ttu-id="0627a-154">adDecimal</span><span class="sxs-lookup"><span data-stu-id="0627a-154">adDecimal</span></span>|<span data-ttu-id="0627a-155">DBTYPE_DECIMAL</span><span class="sxs-lookup"><span data-stu-id="0627a-155">DBTYPE_DECIMAL</span></span>|<span data-ttu-id="0627a-156">Decimal</span><span class="sxs-lookup"><span data-stu-id="0627a-156">Decimal</span></span>|<span data-ttu-id="0627a-157">GetDecimal()</span><span class="sxs-lookup"><span data-stu-id="0627a-157">GetDecimal()</span></span>|  
+|<span data-ttu-id="0627a-158">adDouble</span><span class="sxs-lookup"><span data-stu-id="0627a-158">adDouble</span></span>|<span data-ttu-id="0627a-159">DBTYPE_R8</span><span class="sxs-lookup"><span data-stu-id="0627a-159">DBTYPE_R8</span></span>|<span data-ttu-id="0627a-160">Double</span><span class="sxs-lookup"><span data-stu-id="0627a-160">Double</span></span>|<span data-ttu-id="0627a-161">GetDouble()</span><span class="sxs-lookup"><span data-stu-id="0627a-161">GetDouble()</span></span>|  
+|<span data-ttu-id="0627a-162">adError</span><span class="sxs-lookup"><span data-stu-id="0627a-162">adError</span></span>|<span data-ttu-id="0627a-163">DBTYPE_ERROR</span><span class="sxs-lookup"><span data-stu-id="0627a-163">DBTYPE_ERROR</span></span>|<span data-ttu-id="0627a-164">ExternalException</span><span class="sxs-lookup"><span data-stu-id="0627a-164">ExternalException</span></span>|<span data-ttu-id="0627a-165">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-165">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-166">adFileTime</span><span class="sxs-lookup"><span data-stu-id="0627a-166">adFileTime</span></span>|<span data-ttu-id="0627a-167">DBTYPE_FILETIME</span><span class="sxs-lookup"><span data-stu-id="0627a-167">DBTYPE_FILETIME</span></span>|<span data-ttu-id="0627a-168">DateTime</span><span class="sxs-lookup"><span data-stu-id="0627a-168">DateTime</span></span>|<span data-ttu-id="0627a-169">GetDateTime()</span><span class="sxs-lookup"><span data-stu-id="0627a-169">GetDateTime()</span></span>|  
+|<span data-ttu-id="0627a-170">adGUID</span><span class="sxs-lookup"><span data-stu-id="0627a-170">adGUID</span></span>|<span data-ttu-id="0627a-171">DBTYPE_GUID</span><span class="sxs-lookup"><span data-stu-id="0627a-171">DBTYPE_GUID</span></span>|<span data-ttu-id="0627a-172">Guid</span><span class="sxs-lookup"><span data-stu-id="0627a-172">Guid</span></span>|<span data-ttu-id="0627a-173">GetGuid()</span><span class="sxs-lookup"><span data-stu-id="0627a-173">GetGuid()</span></span>|  
+|<span data-ttu-id="0627a-174">adIDispatch</span><span class="sxs-lookup"><span data-stu-id="0627a-174">adIDispatch</span></span>|<span data-ttu-id="0627a-175">DBTYPE_IDISPATCH *</span><span class="sxs-lookup"><span data-stu-id="0627a-175">DBTYPE_IDISPATCH *</span></span>|<span data-ttu-id="0627a-176">Objet</span><span class="sxs-lookup"><span data-stu-id="0627a-176">Object</span></span>|<span data-ttu-id="0627a-177">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-177">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-178">adInteger</span><span class="sxs-lookup"><span data-stu-id="0627a-178">adInteger</span></span>|<span data-ttu-id="0627a-179">DBTYPE_I4</span><span class="sxs-lookup"><span data-stu-id="0627a-179">DBTYPE_I4</span></span>|<span data-ttu-id="0627a-180">Int32</span><span class="sxs-lookup"><span data-stu-id="0627a-180">Int32</span></span>|<span data-ttu-id="0627a-181">GetInt32()</span><span class="sxs-lookup"><span data-stu-id="0627a-181">GetInt32()</span></span>|  
+|<span data-ttu-id="0627a-182">adIUnknown</span><span class="sxs-lookup"><span data-stu-id="0627a-182">adIUnknown</span></span>|<span data-ttu-id="0627a-183">DBTYPE_IUNKNOWN *</span><span class="sxs-lookup"><span data-stu-id="0627a-183">DBTYPE_IUNKNOWN *</span></span>|<span data-ttu-id="0627a-184">Objet</span><span class="sxs-lookup"><span data-stu-id="0627a-184">Object</span></span>|<span data-ttu-id="0627a-185">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-185">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-186">adNumeric</span><span class="sxs-lookup"><span data-stu-id="0627a-186">adNumeric</span></span>|<span data-ttu-id="0627a-187">DBTYPE_NUMERIC</span><span class="sxs-lookup"><span data-stu-id="0627a-187">DBTYPE_NUMERIC</span></span>|<span data-ttu-id="0627a-188">Decimal</span><span class="sxs-lookup"><span data-stu-id="0627a-188">Decimal</span></span>|<span data-ttu-id="0627a-189">GetDecimal()</span><span class="sxs-lookup"><span data-stu-id="0627a-189">GetDecimal()</span></span>|  
+|<span data-ttu-id="0627a-190">adPropVariant</span><span class="sxs-lookup"><span data-stu-id="0627a-190">adPropVariant</span></span>|<span data-ttu-id="0627a-191">DBTYPE_PROPVARIANT</span><span class="sxs-lookup"><span data-stu-id="0627a-191">DBTYPE_PROPVARIANT</span></span>|<span data-ttu-id="0627a-192">Objet</span><span class="sxs-lookup"><span data-stu-id="0627a-192">Object</span></span>|<span data-ttu-id="0627a-193">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-193">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-194">adSingle</span><span class="sxs-lookup"><span data-stu-id="0627a-194">adSingle</span></span>|<span data-ttu-id="0627a-195">DBTYPE_R4</span><span class="sxs-lookup"><span data-stu-id="0627a-195">DBTYPE_R4</span></span>|<span data-ttu-id="0627a-196">Single</span><span class="sxs-lookup"><span data-stu-id="0627a-196">Single</span></span>|<span data-ttu-id="0627a-197">GetFloat()</span><span class="sxs-lookup"><span data-stu-id="0627a-197">GetFloat()</span></span>|  
+|<span data-ttu-id="0627a-198">adSmallInt</span><span class="sxs-lookup"><span data-stu-id="0627a-198">adSmallInt</span></span>|<span data-ttu-id="0627a-199">DBTYPE_I2</span><span class="sxs-lookup"><span data-stu-id="0627a-199">DBTYPE_I2</span></span>|<span data-ttu-id="0627a-200">Int16</span><span class="sxs-lookup"><span data-stu-id="0627a-200">Int16</span></span>|<span data-ttu-id="0627a-201">GetInt16()</span><span class="sxs-lookup"><span data-stu-id="0627a-201">GetInt16()</span></span>|  
+|<span data-ttu-id="0627a-202">adTinyInt</span><span class="sxs-lookup"><span data-stu-id="0627a-202">adTinyInt</span></span>|<span data-ttu-id="0627a-203">DBTYPE_I1</span><span class="sxs-lookup"><span data-stu-id="0627a-203">DBTYPE_I1</span></span>|<span data-ttu-id="0627a-204">Byte</span><span class="sxs-lookup"><span data-stu-id="0627a-204">Byte</span></span>|<span data-ttu-id="0627a-205">GetByte()</span><span class="sxs-lookup"><span data-stu-id="0627a-205">GetByte()</span></span>|  
+|<span data-ttu-id="0627a-206">adUnsignedBigInt</span><span class="sxs-lookup"><span data-stu-id="0627a-206">adUnsignedBigInt</span></span>|<span data-ttu-id="0627a-207">DBTYPE_UI8</span><span class="sxs-lookup"><span data-stu-id="0627a-207">DBTYPE_UI8</span></span>|<span data-ttu-id="0627a-208">UInt64</span><span class="sxs-lookup"><span data-stu-id="0627a-208">UInt64</span></span>|<span data-ttu-id="0627a-209">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-209">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-210">adUnsignedInt</span><span class="sxs-lookup"><span data-stu-id="0627a-210">adUnsignedInt</span></span>|<span data-ttu-id="0627a-211">DBTYPE_UI4</span><span class="sxs-lookup"><span data-stu-id="0627a-211">DBTYPE_UI4</span></span>|<span data-ttu-id="0627a-212">UInt32</span><span class="sxs-lookup"><span data-stu-id="0627a-212">UInt32</span></span>|<span data-ttu-id="0627a-213">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-213">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-214">adUnsignedSmallInt</span><span class="sxs-lookup"><span data-stu-id="0627a-214">adUnsignedSmallInt</span></span>|<span data-ttu-id="0627a-215">DBTYPE_UI2</span><span class="sxs-lookup"><span data-stu-id="0627a-215">DBTYPE_UI2</span></span>|<span data-ttu-id="0627a-216">UInt16</span><span class="sxs-lookup"><span data-stu-id="0627a-216">UInt16</span></span>|<span data-ttu-id="0627a-217">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-217">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-218">adUnsignedTinyInt</span><span class="sxs-lookup"><span data-stu-id="0627a-218">adUnsignedTinyInt</span></span>|<span data-ttu-id="0627a-219">DBTYPE_UI1</span><span class="sxs-lookup"><span data-stu-id="0627a-219">DBTYPE_UI1</span></span>|<span data-ttu-id="0627a-220">Byte</span><span class="sxs-lookup"><span data-stu-id="0627a-220">Byte</span></span>|<span data-ttu-id="0627a-221">GetByte()</span><span class="sxs-lookup"><span data-stu-id="0627a-221">GetByte()</span></span>|  
+|<span data-ttu-id="0627a-222">adVariant</span><span class="sxs-lookup"><span data-stu-id="0627a-222">adVariant</span></span>|<span data-ttu-id="0627a-223">DBTYPE_VARIANT</span><span class="sxs-lookup"><span data-stu-id="0627a-223">DBTYPE_VARIANT</span></span>|<span data-ttu-id="0627a-224">Objet</span><span class="sxs-lookup"><span data-stu-id="0627a-224">Object</span></span>|<span data-ttu-id="0627a-225">GetValue()</span><span class="sxs-lookup"><span data-stu-id="0627a-225">GetValue()</span></span>|  
+|<span data-ttu-id="0627a-226">adWChar</span><span class="sxs-lookup"><span data-stu-id="0627a-226">adWChar</span></span>|<span data-ttu-id="0627a-227">DBTYPE_WSTR</span><span class="sxs-lookup"><span data-stu-id="0627a-227">DBTYPE_WSTR</span></span>|<span data-ttu-id="0627a-228">Chaîne</span><span class="sxs-lookup"><span data-stu-id="0627a-228">String</span></span>|<span data-ttu-id="0627a-229">GetString()</span><span class="sxs-lookup"><span data-stu-id="0627a-229">GetString()</span></span>|  
+|<span data-ttu-id="0627a-230">adUserDefined</span><span class="sxs-lookup"><span data-stu-id="0627a-230">adUserDefined</span></span>|<span data-ttu-id="0627a-231">DBTYPE_UDT</span><span class="sxs-lookup"><span data-stu-id="0627a-231">DBTYPE_UDT</span></span>|<span data-ttu-id="0627a-232">non pris en charge</span><span class="sxs-lookup"><span data-stu-id="0627a-232">not supported</span></span>||  
+|<span data-ttu-id="0627a-233">adVarNumeric</span><span class="sxs-lookup"><span data-stu-id="0627a-233">adVarNumeric</span></span>|<span data-ttu-id="0627a-234">DBTYPE_VARNUMERIC</span><span class="sxs-lookup"><span data-stu-id="0627a-234">DBTYPE_VARNUMERIC</span></span>|<span data-ttu-id="0627a-235">non pris en charge</span><span class="sxs-lookup"><span data-stu-id="0627a-235">not supported</span></span>||  
   
- \* Pour les types OLE DB `DBTYPE_IUNKNOWN` et `DBTYPE_IDISPATCH`, la référence d'objet est une représentation marshalée du pointeur.  
+ <span data-ttu-id="0627a-236">\*Pour les types OLE DB `DBTYPE_IUNKNOWN` et `DBTYPE_IDISPATCH`, la référence d’objet est une représentation marshalée du pointeur.</span><span class="sxs-lookup"><span data-stu-id="0627a-236">\* For the OLE DB types `DBTYPE_IUNKNOWN` and `DBTYPE_IDISPATCH`, the object reference is a marshaled representation of the pointer.</span></span>  
   
-## Voir aussi  
- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="0627a-237">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0627a-237">See Also</span></span>  
+ [<span data-ttu-id="0627a-238">Extraction et modification de données dans ADO.NET</span><span class="sxs-lookup"><span data-stu-id="0627a-238">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [<span data-ttu-id="0627a-239">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="0627a-239">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

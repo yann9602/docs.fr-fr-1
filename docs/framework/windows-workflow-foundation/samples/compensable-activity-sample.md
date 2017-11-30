@@ -1,37 +1,41 @@
 ---
-title: "Exemple d&#39;activit&#233; compensable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Exemple d'activité compensable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 58f4898c-b2b8-44a4-9a73-3bef4da6d5ba
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b8d7fb5650a8927016e0deebc07a68a8145496db
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Exemple d&#39;activit&#233; compensable
-Cet exemple montre comment utiliser l'activité `CompensableActivity` pour définir le travail à faire pour une action donnée pendant une exécution normale et le travail qui doit être fait pour compenser cette action, si nécessaire ultérieurement.La première partie de l'exemple montre comment les unités de travail compensable peuvent être définies dans [!INCLUDE[wf](../../../../includes/wf-md.md)] à l'aide d'une activité `CompensableActivity` et comment elles sont exécutées avec succès.La deuxième partie de l'exemple montre comment ces mêmes unités de travail compensable se chargent automatiquement de la compensation lorsqu'un événement inattendu est atteint et que l'instance de workflow est annulée.  
+# <a name="compensable-activity-sample"></a><span data-ttu-id="cde0a-102">Exemple d'activité compensable</span><span class="sxs-lookup"><span data-stu-id="cde0a-102">Compensable Activity Sample</span></span>
+<span data-ttu-id="cde0a-103">Cet exemple montre comment utiliser l'activité `CompensableActivity` pour définir le travail à faire pour une action donnée pendant une exécution normale et le travail qui doit être fait pour compenser cette action, si nécessaire ultérieurement.</span><span class="sxs-lookup"><span data-stu-id="cde0a-103">This sample demonstrates how to use the `CompensableActivity` activity to define the work to be done for a given action during normal execution and the work that is necessary to be done to compensate that action, if necessary at a later time.</span></span>  <span data-ttu-id="cde0a-104">La première partie de l'exemple montre comment les unités de travail compensable peuvent être définies dans [!INCLUDE[wf](../../../../includes/wf-md.md)] à l'aide d'une activité `CompensableActivity` et comment elles sont exécutées avec succès.</span><span class="sxs-lookup"><span data-stu-id="cde0a-104">The first part of the sample shows how units of compensable work can be defined in [!INCLUDE[wf](../../../../includes/wf-md.md)] using a `CompensableActivity` activity and how they are executed in a successful run.</span></span>  <span data-ttu-id="cde0a-105">La deuxième partie de l'exemple montre comment ces mêmes unités de travail compensable se chargent automatiquement de la compensation lorsqu'un événement inattendu est atteint et que l'instance de workflow est annulée.</span><span class="sxs-lookup"><span data-stu-id="cde0a-105">The second part of the sample shows how the same units of compensable work automatically take care of compensation when an unexpected event is hit and the workflow instance is canceled.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="cde0a-106">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="cde0a-106">To set up, build, and run the sample</span></span>  
   
-1.  À l'aide de Visual Studio 2010, ouvrez CompensableActivity.sln.  
+1.  <span data-ttu-id="cde0a-107">À l'aide de Visual Studio 2010, ouvrez CompensableActivity.sln.</span><span class="sxs-lookup"><span data-stu-id="cde0a-107">Using Visual Studio 2010, open the CompensableActivity.sln.</span></span>  
   
-2.  Générez la solution en appuyant sur Ctrl\+Maj\+B.  
+2.  <span data-ttu-id="cde0a-108">Générez la solution en appuyant sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="cde0a-108">Build the solution by pressing CTRL+SHIFT+B.</span></span>  
   
-3.  Exécutez l'application en appuyant sur F5.  
+3.  <span data-ttu-id="cde0a-109">Exécutez l'application en appuyant sur F5.</span><span class="sxs-lookup"><span data-stu-id="cde0a-109">Run the application by pressing F5.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="cde0a-110">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="cde0a-110">The samples may already be installed on your machine.</span></span> <span data-ttu-id="cde0a-111">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="cde0a-111">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="cde0a-112">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="cde0a-112">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="cde0a-113">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="cde0a-113">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Compensation\BasicCompensableActivity`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Compensation\BasicCompensableActivity`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="cde0a-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cde0a-114">See Also</span></span>

@@ -1,33 +1,35 @@
 ---
-title: "Fournisseur Entity Framework (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Services de données WCF, fournisseurs"
+title: "Fournisseur Entity Framework (services de données WCF)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: WCF Data Services, providers
 ms.assetid: 650b5eb6-c71d-4dc1-8b64-b6beaf752114
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f2ce54596cbfebd1a4b0a81819b34c6ffcddfb88
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Fournisseur Entity Framework (WCF Data Services)
-Comme [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], ADO.NET Entity Framework est basé sur Entity Data Model qui est un type de modèle de relation d'entité.  Entity Framework traduit des opérations en fonction de son implémentation d'Entity Data Model, le *modèle conceptuel*, en des opérations équivalentes sur une source de données.  Cela fait d'Entity Framework un fournisseur idéal pour les services de données basés sur les données relationnelles, et toute base de données dont le fournisseur de données prend en charge Entity Framework peut être utilisée avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  Pour une liste des sources de données qui prennent actuellement en charge Entity Framework, consultez [Fournisseurs tiers pour Entity Framework](http://go.microsoft.com/fwlink/?LinkId=143699).  
+# <a name="entity-framework-provider-wcf-data-services"></a><span data-ttu-id="40fa4-102">Fournisseur Entity Framework (services de données WCF)</span><span class="sxs-lookup"><span data-stu-id="40fa4-102">Entity Framework Provider (WCF Data Services)</span></span>
+<span data-ttu-id="40fa4-103">Comme [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], ADO.NET Entity Framework est basé sur Entity Data Model qui est un type de modèle de relation d'entité.</span><span class="sxs-lookup"><span data-stu-id="40fa4-103">Like [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], the ADO.NET Entity Framework is based on the Entity Data Model, which is a type of entity-relationship model.</span></span> <span data-ttu-id="40fa4-104">Entity Framework traduit des opérations par rapport à son implémentation de l’Entity Data Model, qui est appelé le *modèle conceptuel*, en opérations équivalentes sur une source de données.</span><span class="sxs-lookup"><span data-stu-id="40fa4-104">The Entity Framework translates operations against its implementation of the Entity Data Model, which is called the *conceptual model*, into equivalent operations against a data source.</span></span> <span data-ttu-id="40fa4-105">Cela fait d'Entity Framework un fournisseur idéal pour les services de données basés sur les données relationnelles, et toute base de données dont le fournisseur de données prend en charge Entity Framework peut être utilisée avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span><span class="sxs-lookup"><span data-stu-id="40fa4-105">This makes the Entity Framework an ideal provider for data services that are based on relational data, and any database that has a data provider that supports the Entity Framework can be used with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span></span> <span data-ttu-id="40fa4-106">Pour obtenir la liste des sources de données qui prennent en charge Entity Framework, consultez [des fournisseurs tiers pour Entity Framework](http://go.microsoft.com/fwlink/?LinkId=143699).</span><span class="sxs-lookup"><span data-stu-id="40fa4-106">For a list of the data sources that currently support the Entity Framework, see [Third-Party Providers for the Entity Framework](http://go.microsoft.com/fwlink/?LinkId=143699).</span></span>  
   
- Dans un modèle conceptuel, le conteneur d'entités est la racine du service.  Vous devez définir un modèle conceptuel dans Entity Framework avant que les données puissent être exposées par un service de données.  Pour plus d'informations, consultez [Procédure : créer un service de données à l'aide d'une source de données ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).  
+ <span data-ttu-id="40fa4-107">Dans un modèle conceptuel, le conteneur d'entités est la racine du service.</span><span class="sxs-lookup"><span data-stu-id="40fa4-107">In a conceptual model, the entity container is the root of the service.</span></span> <span data-ttu-id="40fa4-108">Vous devez définir un modèle conceptuel dans Entity Framework avant que les données puissent être exposées par un service de données.</span><span class="sxs-lookup"><span data-stu-id="40fa4-108">You must define a conceptual model in the Entity Framework before the data can be exposed by a data service.</span></span> <span data-ttu-id="40fa4-109">Pour plus d’informations, consultez [procédure : création d’un Service de données à l’aide d’une Source de données ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="40fa4-109">For more information, see [How to: Create a Data Service Using an ADO.NET Entity Framework Data Source](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).</span></span>  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] prend en charge le modèle d'accès concurrentiel optimiste en vous permettant de définir un jeton d'accès concurrentiel pour une entité.  Ce jeton d'accès concurrentiel, qui inclut une ou plusieurs propriétés de l'entité, est utilisé par le service de données pour déterminer si une modification a eu lieu dans les données demandées, mises à jour ou supprimées.  Lorsque les valeurs du jeton obtenues de l'eTag dans la demande diffèrent des valeurs actuelles de l'entité, le service de données déclenche une exception.  Pour indiquer qu'une propriété fait partie du jeton d'accès concurrentiel, vous devez appliquer l'attribut `ConcurrencyMode="Fixed"` dans le modèle de données défini par le fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)].  Le jeton d'accès concurrentiel ne peut inclure aucune propriété de clé ou de navigation. Pour plus d'informations, consultez [Mise à jour du service de données](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="40fa4-110">prend en charge le modèle d’accès concurrentiel optimiste en vous permettant de définir un jeton d’accès concurrentiel pour une entité.</span><span class="sxs-lookup"><span data-stu-id="40fa4-110"> supports the optimistic concurrency model by enabling you to define a concurrency token for an entity.</span></span> <span data-ttu-id="40fa4-111">Ce jeton d'accès concurrentiel, qui inclut une ou plusieurs propriétés de l'entité, est utilisé par le service de données pour déterminer si une modification a eu lieu dans les données demandées, mises à jour ou supprimées.</span><span class="sxs-lookup"><span data-stu-id="40fa4-111">This concurrency token, which includes one or more properties of the entity, is used by the data service to determine whether a change has occurred in the data that is being requested, updated, or deleted.</span></span> <span data-ttu-id="40fa4-112">Lorsque les valeurs du jeton obtenues de l'eTag dans la demande diffèrent des valeurs actuelles de l'entité, le service de données déclenche une exception.</span><span class="sxs-lookup"><span data-stu-id="40fa4-112">When token values obtained from the eTag in the request differ from the current values of the entity, an exception is raised by the data service.</span></span> <span data-ttu-id="40fa4-113">Pour indiquer qu'une propriété fait partie du jeton d'accès concurrentiel, vous devez appliquer l'attribut `ConcurrencyMode="Fixed"` dans le modèle de données défini par le fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)].</span><span class="sxs-lookup"><span data-stu-id="40fa4-113">To indicate that a property is part of the concurrency token, you must apply the attribute `ConcurrencyMode="Fixed"` in the data model defined by the [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] provider.</span></span> <span data-ttu-id="40fa4-114">Le jeton d'accès concurrentiel ne peut pas inclure une propriété de clé ou de navigation.</span><span class="sxs-lookup"><span data-stu-id="40fa4-114">The concurrency token cannot include a key property or a navigation property.</span></span> <span data-ttu-id="40fa4-115">Pour plus d’informations, consultez [mise à jour du Service de données](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="40fa4-115">For more information, see [Updating the Data Service](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).</span></span>  
   
- Pour en savoir plus sur Entity Framework, consultez [Vue d'ensemble d'Entity Framework](../../../../docs/framework/data/adonet/ef/overview.md).  
+ <span data-ttu-id="40fa4-116">Pour en savoir plus sur Entity Framework, consultez [présentation d’Entity Framework](../../../../docs/framework/data/adonet/ef/overview.md).</span><span class="sxs-lookup"><span data-stu-id="40fa4-116">To learn more about the Entity Framework, see [Entity Framework Overview](../../../../docs/framework/data/adonet/ef/overview.md).</span></span>  
   
-## Voir aussi  
- [fournisseurs de services de données](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)   
- [Fournisseur de réflexion](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)   
- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a><span data-ttu-id="40fa4-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="40fa4-117">See Also</span></span>  
+ [<span data-ttu-id="40fa4-118">Fournisseurs de Services de données</span><span class="sxs-lookup"><span data-stu-id="40fa4-118">Data Services Providers</span></span>](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
+ [<span data-ttu-id="40fa4-119">Fournisseur de réflexion</span><span class="sxs-lookup"><span data-stu-id="40fa4-119">Reflection Provider</span></span>](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)  
+ [<span data-ttu-id="40fa4-120">Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="40fa4-120">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)

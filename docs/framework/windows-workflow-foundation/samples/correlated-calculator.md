@@ -1,45 +1,49 @@
 ---
-title: "Calculatrice corr&#233;l&#233;e | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Calculatrice corrélée"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c365166e-6552-49a4-bf17-9f4e597d4d41
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9d0d3c03b946a1f3805ea6e229e4019540b58286
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Calculatrice corr&#233;l&#233;e
-Cet exemple montre comment utiliser les activités de messagerie \(<xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply>\) dans le concepteur avec une corrélation basée sur le contenu selon un paramètre dans le message.Dans ce scénario, les opérations de la calculatrice sont dans un convoi parallèle.Une instance et une corrélation \(selon `CalculatorId`\) sont toutes deux créées lorsque le premier message est envoyé au workflow et les messages suivants avec le même `CalculatorId` sont distribués à cette instance jusqu'à l'appel de l'opération de réinitialisation.Le client est implémenté comme une application WPF qui utilise un proxy client basé sur du code pour communiquer avec le service.  
+# <a name="correlated-calculator"></a><span data-ttu-id="7c650-102">Calculatrice corrélée</span><span class="sxs-lookup"><span data-stu-id="7c650-102">Correlated Calculator</span></span>
+<span data-ttu-id="7c650-103">Cet exemple montre comment utiliser les activités de messagerie (<xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply>) dans le concepteur avec une corrélation basée sur le contenu selon un paramètre dans le message.</span><span class="sxs-lookup"><span data-stu-id="7c650-103">This sample demonstrates how to use the messaging activities (<xref:System.ServiceModel.Activities.Receive> and <xref:System.ServiceModel.Activities.SendReply>) in the designer with content-based correlation based on a parameter in the message.</span></span> <span data-ttu-id="7c650-104">Dans ce scénario, les opérations de la calculatrice sont dans un convoi parallèle.</span><span class="sxs-lookup"><span data-stu-id="7c650-104">In this scenario, the operations of the calculator are in a parallel convoy.</span></span> <span data-ttu-id="7c650-105">Une instance et une corrélation (selon `CalculatorId`) sont toutes deux créées lorsque le premier message est envoyé au workflow et les messages suivants avec le même `CalculatorId` sont distribués à cette instance jusqu'à l'appel de l'opération de réinitialisation.</span><span class="sxs-lookup"><span data-stu-id="7c650-105">Both an instance and a correlation (based on `CalculatorId`) are created when the first message is sent to the workflow, and subsequent messages with the same `CalculatorId` are dispatched to that instance until the Reset operation is called.</span></span> <span data-ttu-id="7c650-106">Le client est implémenté comme une application WPF qui utilise un proxy client basé sur du code pour communiquer avec le service.</span><span class="sxs-lookup"><span data-stu-id="7c650-106">The client is implemented as a WPF application that uses a code-based client proxy to communicate with the service.</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="7c650-107">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="7c650-107">To use this sample</span></span>  
   
-1.  Démarrez [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] avec des autorisations élevées, ouvrez le fichier solution For.sln.  
+1.  <span data-ttu-id="7c650-108">Démarrez [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] avec des autorisations élevées, ouvrez le fichier solution For.sln.</span><span class="sxs-lookup"><span data-stu-id="7c650-108">Start [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] in elevated permissions, open the For.sln solution file.</span></span>  
   
-    1.  Naviguez jusqu'au dossier qui contient [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+    1.  <span data-ttu-id="7c650-109">Naviguez jusqu'au dossier qui contient [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7c650-109">Navigate to the folder that contains [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-    2.  Cliquez avec le bouton droit sur Devenv.exe et sélectionnez **Exécuter en tant qu'administrateur**.  
+    2.  <span data-ttu-id="7c650-110">Cliquez sur Devenv.exe et sélectionnez **exécuter en tant qu’administrateur**.</span><span class="sxs-lookup"><span data-stu-id="7c650-110">Right-click Devenv.exe and select **Run as administrator**.</span></span>  
   
-2.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution CorrelatedCalculator.sln.  
+2.  <span data-ttu-id="7c650-111">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution CorrelatedCalculator.sln.</span><span class="sxs-lookup"><span data-stu-id="7c650-111">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the CorrelatedCalculator.sln solution file.</span></span>  
   
-3.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+3.  <span data-ttu-id="7c650-112">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="7c650-112">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-4.  Pour exécuter le projet de service, appuyez sur CTRL\+F5.  
+4.  <span data-ttu-id="7c650-113">Pour exécuter le projet de service, appuyez sur CTRL+F5.</span><span class="sxs-lookup"><span data-stu-id="7c650-113">To run the service project, press CTRL+F5.</span></span>  
   
-5.  Une fois que le service est prêt et qu'il écoute les messages, dans l'Explorateur de solutions, cliquez avec le bouton droit sur le projet Client et exécutez\-le.  
+5.  <span data-ttu-id="7c650-114">Une fois que le service est prêt et qu'il écoute les messages, dans l'Explorateur de solutions, cliquez avec le bouton droit sur le projet Client et exécutez-le.</span><span class="sxs-lookup"><span data-stu-id="7c650-114">Once the service is ready and listening for messages, in Solution Explorer, right-click the Client project and run it.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="7c650-115">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="7c650-115">The samples may already be installed on your machine.</span></span> <span data-ttu-id="7c650-116">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="7c650-116">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="7c650-117">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="7c650-117">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="7c650-118">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="7c650-118">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Scenario\Services\CorellatedCalculator`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\CorellatedCalculator`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="7c650-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7c650-119">See Also</span></span>

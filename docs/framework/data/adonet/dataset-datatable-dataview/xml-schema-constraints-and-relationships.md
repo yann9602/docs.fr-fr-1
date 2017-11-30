@@ -1,32 +1,35 @@
 ---
-title: "Contraintes et relations de sch&#233;ma XML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Contraintes et relations du schéma XML"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 165bc2bc-60a1-40e0-9b89-7c68ef979079
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a324c3b7f24d3395382067ea5581313af58e13f0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Contraintes et relations de sch&#233;ma XML
-Dans un schéma en langage XSD \(XML Schema Definition\), vous pouvez spécifier des contraintes \(unique, key et keyref\) et des relations \(à l'aide de l'annotation **msdata:Relationship**\).  Cette rubrique explique comment les contraintes et relations spécifiées dans un schéma XML sont interprétées pour générer l'objet <xref:System.Data.DataSet>.  
+# <a name="xml-schema-constraints-and-relationships"></a><span data-ttu-id="92b20-102">Contraintes et relations du schéma XML</span><span class="sxs-lookup"><span data-stu-id="92b20-102">XML Schema Constraints and Relationships</span></span>
+<span data-ttu-id="92b20-103">Dans un schéma de langage (XSD XML) de définition de schéma XML, vous pouvez spécifier des contraintes (unique, contraintes key et keyref) et des relations (à l’aide de la **msdata : Relationship** annotation).</span><span class="sxs-lookup"><span data-stu-id="92b20-103">In an XML Schema definition language (XSD) schema, you can specify constraints (unique, key, and keyref constraints) and relationships (using the **msdata:Relationship** annotation).</span></span> <span data-ttu-id="92b20-104">Cette rubrique explique comment les contraintes et relations spécifiées dans un schéma XML sont interprétées pour générer l'objet <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="92b20-104">This topic explains how the constraints and relationships specified in an XML Schema are interpreted to generate the <xref:System.Data.DataSet>.</span></span>  
   
- En règle générale, dans un schéma XML, vous spécifiez l'annotation **msdata:Relationship** si vous souhaitez générer uniquement des relations dans le **DataSet**.  Pour plus d'informations, consultez [Génération des relations d'un DataSet à partir d'un schéma XSD \(XML Schema Definition\)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md).  Vous spécifiez des contraintes \(unique, key et keyref\) si vous souhaitez générer des contraintes dans le **DataSet**.  Notez que les contraintes key et keyref peuvent aussi servir à générer des relations, comme expliqué plus loin dans cette rubrique.  
+ <span data-ttu-id="92b20-105">En général, dans un schéma XML, vous spécifiez la **msdata : Relationship** annotation si vous souhaitez générer uniquement des relations dans le **DataSet**.</span><span class="sxs-lookup"><span data-stu-id="92b20-105">In general, in an XML Schema, you specify the **msdata:Relationship** annotation if you want to generate only relationships in the **DataSet**.</span></span> <span data-ttu-id="92b20-106">Pour plus d’informations, consultez [génération de Relations d’un DataSet à partir de XSD (XML Schema)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md).</span><span class="sxs-lookup"><span data-stu-id="92b20-106">For more information, see [Generating DataSet Relations from XML Schema (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md).</span></span> <span data-ttu-id="92b20-107">Vous spécifiez des contraintes (unique, key et keyref) si vous souhaitez générer des contraintes dans la **DataSet**.</span><span class="sxs-lookup"><span data-stu-id="92b20-107">You specify constraints (unique, key, and keyref) if you want to generate constraints in the **DataSet**.</span></span> <span data-ttu-id="92b20-108">Notez que les contraintes key et keyref peuvent aussi servir à générer des relations, comme expliqué plus loin dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="92b20-108">Note that the key and keyref constraints are also used to generate relationships, as explained later in this topic.</span></span>  
   
-## Génération d'une relation à partir des contraintes key et keyref  
- Au lieu de spécifier l'annotation **msdata:Relationship**, vous pouvez spécifier des contraintes key et keyref qui servent, lors du processus de mappage du schéma XML, à générer non seulement les contraintes, mais aussi la relation au sein du **DataSet**.  Toutefois, si vous spécifiez `msdata:ConstraintOnly="true"` dans l'élément **keyref**, le **DataSet** n'inclura que les contraintes, et pas la relation.  
+## <a name="generating-a-relationship-from-key-and-keyref-constraints"></a><span data-ttu-id="92b20-109">Génération d'une relation à partir des contraintes key et keyref</span><span class="sxs-lookup"><span data-stu-id="92b20-109">Generating a Relationship from key and keyref Constraints</span></span>  
+ <span data-ttu-id="92b20-110">Au lieu de spécifier le **msdata : Relationship** annotation, vous pouvez spécifier des contraintes key et keyref, qui sont utilisés pendant le processus de mappage de schéma XML pour générer les contraintes, mais aussi la relation dans le  **Jeu de données**.</span><span class="sxs-lookup"><span data-stu-id="92b20-110">Instead of specifying the **msdata:Relationship** annotation, you can specify key and keyref constraints, which are used during the XML Schema mapping process to generate not only the constraints but also the relationship in the **DataSet**.</span></span> <span data-ttu-id="92b20-111">Toutefois, si vous spécifiez `msdata:ConstraintOnly="true"` dans les **keyref** élément, le **DataSet** n’inclura que les contraintes et n’inclut pas la relation.</span><span class="sxs-lookup"><span data-stu-id="92b20-111">However, if you specify `msdata:ConstraintOnly="true"` in the **keyref** element, the **DataSet** will include only the constraints and will not include the relationship.</span></span>  
   
- L'exemple suivant représente un schéma XML comprenant les éléments **Order** et **OrderDetail**, non imbriqués.  Le schéma spécifie également des contraintes key et keyref.  
+ <span data-ttu-id="92b20-112">L’exemple suivant montre un schéma XML qui inclut **commande** et **OrderDetail** éléments qui ne sont pas imbriqués.</span><span class="sxs-lookup"><span data-stu-id="92b20-112">The following example shows an XML Schema that includes **Order** and **OrderDetail** elements, which are not nested.</span></span> <span data-ttu-id="92b20-113">Le schéma spécifie également des contraintes key et keyref.</span><span class="sxs-lookup"><span data-stu-id="92b20-113">The schema also specifies key and keyref constraints.</span></span>  
   
-```  
+```xml  
 <xs:schema id="MyDataSet" xmlns=""   
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -66,7 +69,7 @@ Dans un schéma en langage XSD \(XML Schema Definition\), vous pouvez spécifier
 </xs:schema>  
 ```  
   
- Le **DataSet** généré au cours du processus de mappage du schéma XML comprend les tables **Order** et **OrderDetail**.  En outre, le **DataSet** inclut des relations et des contraintes.  L'exemple suivant illustre ces relations et contraintes.  Notez que le schéma ne spécifie pas l'annotation **msdata:Relationship**, mais que des contraintes key et keyref sont utilisées pour générer la relation.  
+ <span data-ttu-id="92b20-114">Le **DataSet** qui est généré pendant le schéma XML inclut des processus de mappage du **commande** et **OrderDetail** tables.</span><span class="sxs-lookup"><span data-stu-id="92b20-114">The **DataSet** that is generated during the XML Schema mapping process includes the **Order** and **OrderDetail** tables.</span></span> <span data-ttu-id="92b20-115">En outre, le **DataSet** inclut des relations et contraintes.</span><span class="sxs-lookup"><span data-stu-id="92b20-115">In addition, the **DataSet** includes relationships and constraints.</span></span> <span data-ttu-id="92b20-116">L'exemple suivant illustre ces relations et contraintes.</span><span class="sxs-lookup"><span data-stu-id="92b20-116">The following example shows these relationships and constraints.</span></span> <span data-ttu-id="92b20-117">Notez que le schéma ne spécifie pas le **msdata : Relationship** annotation ; au lieu de cela, les contraintes key et keyref sont utilisées pour générer la relation.</span><span class="sxs-lookup"><span data-stu-id="92b20-117">Note that the schema does not specify the **msdata:Relationship** annotation; instead, the key and keyref constraints are used to generate the relation.</span></span>  
   
 ```  
 ....ConstraintName: OrderNumberKey  
@@ -92,9 +95,9 @@ Dans un schéma en langage XSD \(XML Schema Definition\), vous pouvez spécifier
 ..Nested: False  
 ```  
   
- Dans l'exemple de schéma précédent, les éléments **Order** et **OrderDetail** ne sont pas imbriqués.  Ils le sont dans l'exemple qui suit.  Toutefois, aucune annotation **msdata:Relationship** n'étant spécifiée, une relation implicite est supposée exister.  Pour plus d'informations, consultez [Mapper les relations implicites entre les éléments imbriqués d'un schéma](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md).  Le schéma spécifie également des contraintes key et keyref.  
+ <span data-ttu-id="92b20-118">Dans l’exemple de schéma précédent, le **commande** et **OrderDetail** éléments ne sont pas imbriqués.</span><span class="sxs-lookup"><span data-stu-id="92b20-118">In the previous schema example, the **Order** and **OrderDetail** elements are not nested.</span></span> <span data-ttu-id="92b20-119">Ils le sont dans l'exemple qui suit.</span><span class="sxs-lookup"><span data-stu-id="92b20-119">In the following schema example, these elements are nested.</span></span> <span data-ttu-id="92b20-120">Toutefois, aucune **msdata : Relationship** annotation est spécifiée ; par conséquent, une relation implicite est supposée.</span><span class="sxs-lookup"><span data-stu-id="92b20-120">However, no **msdata:Relationship** annotation is specified; therefore, an implicit relation is assumed.</span></span> <span data-ttu-id="92b20-121">Pour plus d’informations, consultez [mappage implicite des Relations entre imbriqués éléments de schéma](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md).</span><span class="sxs-lookup"><span data-stu-id="92b20-121">For more information, see [Map Implicit Relations Between Nested Schema Elements](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md).</span></span> <span data-ttu-id="92b20-122">Le schéma spécifie également des contraintes key et keyref.</span><span class="sxs-lookup"><span data-stu-id="92b20-122">The schema also specifies key and keyref constraints.</span></span>  
   
-```  
+```xml  
 <xs:schema id="MyDataSet" xmlns=""   
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -136,14 +139,14 @@ Dans un schéma en langage XSD \(XML Schema Definition\), vous pouvez spécifier
 </xs:schema>  
 ```  
   
- Le **DataSet** obtenu suite au processus de mappage du schéma XML comprend deux tables :  
+ <span data-ttu-id="92b20-123">Le **DataSet** résultant du processus de mappage du schéma XML comprend deux tables :</span><span class="sxs-lookup"><span data-stu-id="92b20-123">The **DataSet** resulting from the XML Schema mapping process includes two tables:</span></span>  
   
 ```  
 Order(OrderNumber, EmpNumber, Order_Id)  
 OrderDetail(OrderNumber, ItemNumber, Order_Id)  
 ```  
   
- Le **DataSet** comprend également les deux relations \(l'une basée sur l'annotation **msdata:relationship**, l'autre sur les contraintes key et keyref\), ainsi que diverses contraintes.  L'exemple suivant illustre ces relations et contraintes.  
+ <span data-ttu-id="92b20-124">Le **DataSet** inclut également les deux relations (une basée sur le **msdata : Relationship** annotation et l’autre selon les contraintes key et keyref) ainsi que diverses contraintes.</span><span class="sxs-lookup"><span data-stu-id="92b20-124">The **DataSet** also includes the two relationships (one based on the **msdata:relationship** annotation and the other based on the key and keyref constraints) and various constraints.</span></span> <span data-ttu-id="92b20-125">L'exemple suivant illustre ces relations et contraintes.</span><span class="sxs-lookup"><span data-stu-id="92b20-125">The following example shows the relations and constraints.</span></span>  
   
 ```  
 ..RelationName: Order_OrderDetail  
@@ -191,8 +194,8 @@ OrderDetail(OrderNumber, ItemNumber, Order_Id)
 ..RelatedColumns: OrderNumber  
 ```  
   
- Si une contrainte keyref faisant référence à une table imbriquée contient l'annotation **msdata:IsNested\="true"**, le **DataSet** crée une seule relation imbriquée, basée sur la contrainte keyref et la contrainte unique\/key connexe.  
+ <span data-ttu-id="92b20-126">Si une contrainte keyref faisant référence à une table imbriquée contient la **msdata : IsNested = « true »** annotation, le **DataSet** créera une seule relation imbriquée qui est basée sur la contrainte keyref et la contrainte de clé unique/connexe.</span><span class="sxs-lookup"><span data-stu-id="92b20-126">If a keyref constraint referring to a nested table contains the **msdata:IsNested="true"** annotation, the **DataSet** will create a single nested relationship that is based on the keyref constraint and the related unique/key constraint.</span></span>  
   
-## Voir aussi  
- [Dérivation de la structure relationnelle d'un DataSet à partir d'un schéma XML \(XSD\)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="92b20-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="92b20-127">See Also</span></span>  
+ [<span data-ttu-id="92b20-128">Structure relationnelle des DataSet qui dérivent de schéma XML (XSD)</span><span class="sxs-lookup"><span data-stu-id="92b20-128">Deriving DataSet Relational Structure from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ [<span data-ttu-id="92b20-129">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="92b20-129">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

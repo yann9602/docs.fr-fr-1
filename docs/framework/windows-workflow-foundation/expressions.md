@@ -1,31 +1,35 @@
 ---
-title: "Expressions [.NET Framework 4] | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Expressions1
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: faf9e70cbe2c2a035874e5514ac04cf0f291661b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Expressions [.NET Framework 4]
-Une expression [!INCLUDE[wf](../../../includes/wf-md.md)] est toute activité qui retourne un résultat.Toutes les activités d'expression dérivent indirectement de <xref:System.Activities.Activity%601>, qui contient une propriété <xref:System.Activities.OutArgument> nommée <xref:System.Activities.Activity%601.Result%2A> comme valeur de retour de l'activité.[!INCLUDE[wf1](../../../includes/wf1-md.md)] est fourni avec une large gamme d'activités d'expressions, simples comme <xref:System.Activities.Expressions.VariableValue%601> et <xref:System.Activities.Expressions.VariableReference%601>, qui permettent d'accéder à une variable de workflow unique via des activités d'opérateur, ou complexes telles que <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> qui permettent d'accéder à la totalité du langage Visual Basic pour produire le résultat.Des activités d'expressions supplémentaires peuvent être créées en dérivant de <xref:System.Activities.CodeActivity%601> ou <xref:System.Activities.NativeActivity%601>.  
+# <a name="expressions"></a><span data-ttu-id="0406c-102">Expressions</span><span class="sxs-lookup"><span data-stu-id="0406c-102">Expressions</span></span>
+<span data-ttu-id="0406c-103">Une expression [!INCLUDE[wf](../../../includes/wf-md.md)] est toute activité qui retourne un résultat.</span><span class="sxs-lookup"><span data-stu-id="0406c-103">A [!INCLUDE[wf](../../../includes/wf-md.md)] expression is any activity that returns a result.</span></span> <span data-ttu-id="0406c-104">Toutes les activités d'expression dérivent indirectement de <xref:System.Activities.Activity%601>, qui contient une propriété <xref:System.Activities.OutArgument> nommée <xref:System.Activities.Activity%601.Result%2A> comme valeur de retour de l'activité.</span><span class="sxs-lookup"><span data-stu-id="0406c-104">All expression activities derive indirectly from <xref:System.Activities.Activity%601>, which contains an <xref:System.Activities.OutArgument> property named <xref:System.Activities.Activity%601.Result%2A> as the activity’s return value.</span></span> [!INCLUDE[wf1](../../../includes/wf1-md.md)]<span data-ttu-id="0406c-105"> est fourni avec une large gamme d'activités d'expressions, simples comme <xref:System.Activities.Expressions.VariableValue%601> et <xref:System.Activities.Expressions.VariableReference%601>, qui permettent d'accéder à une variable de workflow unique via des activités d'opérateur, ou complexes telles que <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> qui permettent d'accéder à la totalité du langage Visual Basic pour produire le résultat.</span><span class="sxs-lookup"><span data-stu-id="0406c-105"> ships with a wide range of expression activities from simple ones like <xref:System.Activities.Expressions.VariableValue%601> and <xref:System.Activities.Expressions.VariableReference%601>, which provide access to single workflow variable through operator activities, to complex activities such as <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> that offer access to the full breadth of Visual Basic language to produce the result.</span></span> <span data-ttu-id="0406c-106">Des activités d'expressions supplémentaires peuvent être créées en dérivant de <xref:System.Activities.CodeActivity%601> ou <xref:System.Activities.NativeActivity%601>.</span><span class="sxs-lookup"><span data-stu-id="0406c-106">Additional expression activities can be created by deriving from <xref:System.Activities.CodeActivity%601> or <xref:System.Activities.NativeActivity%601>.</span></span>  
   
-## Utilisation d'expressions  
- Le concepteur de workflow utilise <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pour les expressions dans les projets Visual Basic, et <xref:Microsoft.CSharp.Activities.CSharpValue%601> et <xref:Microsoft.CSharp.Activities.CSharpReference%601> pour les expressions dans les projets de workflow C\#.  
+## <a name="using-expressions"></a><span data-ttu-id="0406c-107">Utilisation d'expressions</span><span class="sxs-lookup"><span data-stu-id="0406c-107">Using Expressions</span></span>  
+ <span data-ttu-id="0406c-108">Le concepteur de workflow utilise <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pour les expressions dans les projets Visual Basic, et <xref:Microsoft.CSharp.Activities.CSharpValue%601> et <xref:Microsoft.CSharp.Activities.CSharpReference%601> pour les expressions dans les projets de workflow C#.</span><span class="sxs-lookup"><span data-stu-id="0406c-108">Workflow designer uses <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> for all expressions in Visual Basic projects, and <xref:Microsoft.CSharp.Activities.CSharpValue%601> and <xref:Microsoft.CSharp.Activities.CSharpReference%601> for expressions in C# workflow projects.</span></span>  
   
 > [!NOTE]
->  La prise en charge des expressions C\# dans les projets de workflow a été introduite dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Expressions C\#](../../../docs/framework/windows-workflow-foundation//csharp-expressions.md).  
+>  <span data-ttu-id="0406c-109">La prise en charge des expressions C# dans les projets de workflow a été introduite dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0406c-109">Support for C# expressions in workflow projects was introduced in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="0406c-110">[Expressions c#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="0406c-110"> [C# Expressions](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).</span></span>  
   
- Les workflows produits par le concepteur sont enregistrés en XAML, où les expressions s'affichent entre crochets, comme dans l'exemple suivant.  
+ <span data-ttu-id="0406c-111">Les workflows produits par le concepteur sont enregistrés en XAML, où les expressions s'affichent entre crochets, comme dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="0406c-111">Workflows produced by designer are saved in XAML, where expressions appear enclosed in square brackets, as in the following example.</span></span>  
   
-```  
+```xml  
 <Sequence xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">  
   <Sequence.Variables>  
     <Variable x:TypeArguments="x:Int32" Default="1" Name="a" />  
@@ -42,10 +46,9 @@ Une expression [!INCLUDE[wf](../../../includes/wf-md.md)] est toute activité qu
     </Assign.Value>  
   </Assign>  
 </Sequence>  
-  
 ```  
   
- Lors de la définition d'un workflow dans le code, toutes les activités d'expressions peuvent être utilisées.L'exemple suivant illustre l'utilisation d'une composition d'activités d'opérateur pour ajouter trois nombres.  
+ <span data-ttu-id="0406c-112">Lors de la définition d'un workflow dans le code, toutes les activités d'expressions peuvent être utilisées.</span><span class="sxs-lookup"><span data-stu-id="0406c-112">When defining a workflow in code, any expression activities can be used.</span></span> <span data-ttu-id="0406c-113">L'exemple suivant illustre l'utilisation d'une composition d'activités d'opérateur pour ajouter trois nombres.</span><span class="sxs-lookup"><span data-stu-id="0406c-113">The following example shows the usage of a composition of operator activities to add three numbers.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -72,10 +75,9 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
- Le même workflow peut être exprimé d'une manière plus compacte en utilisant des expressions lambda C\#, comme indiqué dans l'exemple suivant.  
+ <span data-ttu-id="0406c-114">Le même workflow peut être exprimé d'une manière plus compacte en utilisant des expressions lambda C#, comme indiqué dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="0406c-114">The same workflow can be expressed more compactly by using C# lambda expressions, as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -94,10 +96,9 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
- Le workflow peut également être exprimé à l'aide des activités d'expressions Visual Basic, comme indiqué dans l'exemple suivant.  
+ <span data-ttu-id="0406c-115">Le workflow peut également être exprimé à l'aide des activités d'expressions Visual Basic, comme indiqué dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="0406c-115">The workflow can also be expressed by using Visual Basic expression activities, as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -116,11 +117,10 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
-## Extension d'expressions disponibles avec les activités d'expressions personnalisées  
- Les expressions dans [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] sont extensibles, ce qui permet la création d'activités d'expressions supplémentaires.L'exemple suivant affiche une activité qui retourne une somme de trois valeurs entières.  
+## <a name="extending-available-expressions-with-custom-expression-activities"></a><span data-ttu-id="0406c-116">Extension d'expressions disponibles avec les activités d'expressions personnalisées</span><span class="sxs-lookup"><span data-stu-id="0406c-116">Extending Available Expressions with Custom Expression Activities</span></span>  
+ <span data-ttu-id="0406c-117">Les expressions dans [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] sont extensibles, ce qui permet la création d'activités d'expressions supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="0406c-117">Expressions in [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] are extensible allowing for additional expression activities to be created.</span></span> <span data-ttu-id="0406c-118">L'exemple suivant affiche une activité qui retourne une somme de trois valeurs entières.</span><span class="sxs-lookup"><span data-stu-id="0406c-118">The following example shows an activity that returns a sum of three integer values.</span></span>  
   
 ```  
 using System;  
@@ -147,7 +147,7 @@ namespace ExpressionsDemo
 }  
 ```  
   
- Avec cette nouvelle activité, vous pouvez réécrire le workflow précédent qui a ajouté trois valeurs comme indiqué dans l'exemple suivant.  
+ <span data-ttu-id="0406c-119">Avec cette nouvelle activité, vous pouvez réécrire le workflow précédent qui a ajouté trois valeurs comme indiqué dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="0406c-119">With this new activity you can rewrite the previous workflow that added three values as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -172,7 +172,6 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] l'utilisation d'expressions dans le code, consultez [Création de workflows, d'activités et d'expressions à l'aide du code impératif](../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md).
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="0406c-120">utilisation d’expressions dans le code, consultez [création de Workflows, des activités et des Expressions à l’aide d’impératif Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span><span class="sxs-lookup"><span data-stu-id="0406c-120"> using expressions in code, see [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span></span>

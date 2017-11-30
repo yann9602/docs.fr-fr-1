@@ -1,28 +1,32 @@
 ---
-title: "Programmation de l&#39;arborescence des &#233;l&#233;ments de mod&#232;le | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Programmation de l’arborescence des éléments de modèle"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0229efde-19ac-4bdc-a187-c6227a7bd1a5
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 18de9d7f9cedc40a6c143a4dae5567c9acf2cf88
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Programmation de l&#39;arborescence des &#233;l&#233;ments de mod&#232;le
-Cet exemple montre comment parcourir l'arborescence <xref:System.Activities.Presentation.Model.ModelItem> à l'aide de la liaison de données déclarative à partir de l'arborescence de [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)].  
+# <a name="programming-model-item-tree"></a><span data-ttu-id="9c337-102">Programmation de l’arborescence des éléments de modèle</span><span class="sxs-lookup"><span data-stu-id="9c337-102">Programming Model Item Tree</span></span>
+<span data-ttu-id="9c337-103">Cet exemple montre comment parcourir l'arborescence <xref:System.Activities.Presentation.Model.ModelItem> à l'aide de la liaison de données déclarative à partir de l'arborescence de [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9c337-103">This sample demonstrates how to navigate the <xref:System.Activities.Presentation.Model.ModelItem> tree using declarative data binding from the [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] Tree View.</span></span>  
   
-## Détails de l'exemple  
- L'arborescence <xref:System.Activities.Presentation.Model.ModelItem> est l'abstraction utilisée par l'infrastructure du [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] pour exposer les données relatives à l'instance sous\-jacente en cours de modification.L'illustration suivante est une description des différentes couches d'infrastructure dans le [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)].  
+## <a name="sample-details"></a><span data-ttu-id="9c337-104">Détails de l'exemple</span><span class="sxs-lookup"><span data-stu-id="9c337-104">Sample Details</span></span>  
+ <span data-ttu-id="9c337-105">L'arborescence <xref:System.Activities.Presentation.Model.ModelItem> est l'abstraction utilisée par l'infrastructure du [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] pour exposer les données relatives à l'instance sous-jacente en cours de modification.</span><span class="sxs-lookup"><span data-stu-id="9c337-105">The <xref:System.Activities.Presentation.Model.ModelItem> tree is the abstraction that is used by the [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] infrastructure to expose the data about the underlying instance being edited.</span></span> <span data-ttu-id="9c337-106">L'illustration suivante est une description des différentes couches d'infrastructure dans le [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9c337-106">The following illustration is a depiction of the various layers of infrastructure within the [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)].</span></span>  
   
- ![Architecture du concepteur de flux de travail](../../../../docs/framework/windows-workflow-foundation/samples/media/workflowdesignerarch.JPG "WorkflowDesignerArch")  
+ <span data-ttu-id="9c337-107">![Architecture du Concepteur de flux de travail](../../../../docs/framework/windows-workflow-foundation/samples/media/workflowdesignerarch.JPG "WorkflowDesignerArch")</span><span class="sxs-lookup"><span data-stu-id="9c337-107">![Workflow Designer Architecture](../../../../docs/framework/windows-workflow-foundation/samples/media/workflowdesignerarch.JPG "WorkflowDesignerArch")</span></span>  
   
- Un <xref:System.Activities.Presentation.Model.ModelItem> se compose d'un pointeur vers la valeur sous\-jacente, ainsi que d'une collection d'objets <xref:System.Activities.Presentation.Model.ModelProperty>.Un objet <xref:System.Activities.Presentation.Model.ModelProperty>, quant à lui, se compose de données telles que le nom et le type de la propriété, puis d'un pointeur vers la valeur qui, à son tout, est un autre <xref:System.Activities.Presentation.Model.ModelItem>.Un convertisseur de valeurs est utilisé pour manipuler certains des <xref:System.Activities.Presentation.Model.ModelItem> retournés à partir d'un <xref:System.Activities.Presentation.Model.ModelProperty> pour les faire apparaître correctement dans l'arborescence.L'exemple montre ensuite comment effectuer une programmation de façon impérative sur l'arborescence <xref:System.Activities.Presentation.Model.ModelItem> à l'aide de la syntaxe impérative.  
+ <span data-ttu-id="9c337-108">Un <xref:System.Activities.Presentation.Model.ModelItem> se compose d'un pointeur vers la valeur sous-jacente, ainsi que d'une collection d'objets <xref:System.Activities.Presentation.Model.ModelProperty>.</span><span class="sxs-lookup"><span data-stu-id="9c337-108">A <xref:System.Activities.Presentation.Model.ModelItem> consists of a pointer to the underlying value, as well as a collection of <xref:System.Activities.Presentation.Model.ModelProperty> objects.</span></span> <span data-ttu-id="9c337-109">Un objet <xref:System.Activities.Presentation.Model.ModelProperty>, quant à lui, se compose de données telles que le nom et le type de la propriété, puis d'un pointeur vers la valeur qui, à son tout, est un autre <xref:System.Activities.Presentation.Model.ModelItem>.</span><span class="sxs-lookup"><span data-stu-id="9c337-109">A <xref:System.Activities.Presentation.Model.ModelProperty> object in turn, consists of data such as the name and type of the property and then a pointer to the value, which in turn, is another <xref:System.Activities.Presentation.Model.ModelItem>.</span></span> <span data-ttu-id="9c337-110">Un convertisseur de valeurs est utilisé pour manipuler certains des <xref:System.Activities.Presentation.Model.ModelItem> retournés à partir d'un <xref:System.Activities.Presentation.Model.ModelProperty> pour les faire apparaître correctement dans l'arborescence.</span><span class="sxs-lookup"><span data-stu-id="9c337-110">A value converter is used to manipulate some of the <xref:System.Activities.Presentation.Model.ModelItem>s returned from a <xref:System.Activities.Presentation.Model.ModelProperty> to make them appear correctly in the tree view.</span></span> <span data-ttu-id="9c337-111">L'exemple montre ensuite comment effectuer une programmation de façon impérative sur l'arborescence <xref:System.Activities.Presentation.Model.ModelItem> à l'aide de la syntaxe impérative.</span><span class="sxs-lookup"><span data-stu-id="9c337-111">The sample then demonstrates how to imperatively program against the <xref:System.Activities.Presentation.Model.ModelItem> tree using the imperative syntax, as seen in the following example.</span></span>  
   
 ```csharp  
 ModelItem mi = wd.Context.Services.GetService<ModelService>().Root;  
@@ -30,29 +34,28 @@ ModelProperty mp = mi.Properties["Activities"];
 mp.Collection.Add(new Persist());  
 ModelItem justAdded = mp.Collection.Last();  
 justAdded.Properties["DisplayName"].SetValue("new name");  
-  
 ```  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="9c337-112">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="9c337-112">To use this sample</span></span>  
   
-1.  Ouvrez la solution ProgrammingModelItemTree.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1.  <span data-ttu-id="9c337-113">Ouvrez la solution ProgrammingModelItemTree.sln dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9c337-113">Open the ProgrammingModelItemTree.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  Générez la solution en sélectionnant **Générer la solution** dans le menu **Générer**.  
+2.  <span data-ttu-id="9c337-114">Générez la solution en sélectionnant **générer la Solution** à partir de la **générer** menu.</span><span class="sxs-lookup"><span data-stu-id="9c337-114">Build the solution by selecting **Build Solution** from the **Build** menu.</span></span>  
   
-3.  Appuyez sur F5 pour exécuter l'application.Le formulaire [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] s'affiche alors.  
+3.  <span data-ttu-id="9c337-115">Appuyez sur F5 pour exécuter l'application.</span><span class="sxs-lookup"><span data-stu-id="9c337-115">Press F5 to run the application.</span></span> <span data-ttu-id="9c337-116">Le formulaire [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] s'affiche alors.</span><span class="sxs-lookup"><span data-stu-id="9c337-116">The [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] form is then displayed.</span></span>  
   
-4.  Cliquez sur le bouton **Charger WF** pour charger <xref:System.Activities.Presentation.Model.ModelItem> et le lier à l'arborescence.  
+4.  <span data-ttu-id="9c337-117">Cliquez sur le **charger WF** bouton Charger le <xref:System.Activities.Presentation.Model.ModelItem> et la lier à l’arborescence.</span><span class="sxs-lookup"><span data-stu-id="9c337-117">Click the **Load WF** button to load the <xref:System.Activities.Presentation.Model.ModelItem> and bind it to the tree view.</span></span>  
   
-5.  Un clic sur le bouton **Modifier l'arborescence des éléments de modèle** exécute le code précédent pour ajouter un élément à l'arborescence et définir une propriété.  
+5.  <span data-ttu-id="9c337-118">En cliquant sur le **arborescence d’éléments de modèle de modification** bouton exécute le code précédent pour ajouter un élément dans l’arborescence et définir une propriété.</span><span class="sxs-lookup"><span data-stu-id="9c337-118">Clicking the **Change Model Item Tree** button executes the preceding code to add an item into the tree and set a property.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="9c337-119">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="9c337-119">The samples may already be installed on your computer.</span></span> <span data-ttu-id="9c337-120">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="9c337-120">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="9c337-121">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="9c337-121">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="9c337-122">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="9c337-122">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\Designer\ProgrammingModelItemTree`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\ProgrammingModelItemTree`  
   
-## Voir aussi  
+## <a name="see-also"></a><span data-ttu-id="9c337-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9c337-123">See Also</span></span>  
  <xref:System.Windows.Data.IValueConverter>

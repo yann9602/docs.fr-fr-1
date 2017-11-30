@@ -1,71 +1,73 @@
 ---
-title: "Activit&#233; Wait For Input | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Activité Wait For Input"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d58c344e-9ee8-4ce2-b199-75b3fe45237f
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d4e9df410f5f8e6c95baa5ce5fdc9b2d339a190f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Activit&#233; Wait For Input
-Cet exemple montre comment créer des signets nommés dans un workflow.[!INCLUDE[wf](../../../../includes/wf-md.md)] ne fournit pas d'activité pour la création déclarative de signet.Par conséquent, lorsque vous souhaitez créer un signet dans votre workflow, vous devez écrire une activité personnalisée pour ce faire.L'activité `WaitForInput` définie dans cet exemple fournit cette fonctionnalité afin que les utilisateurs puissent créer des signets de façon déclarative dans un workflow.  
+# <a name="wait-for-input-activity"></a><span data-ttu-id="d24c8-102">Activité Wait For Input</span><span class="sxs-lookup"><span data-stu-id="d24c8-102">Wait For Input Activity</span></span>
+<span data-ttu-id="d24c8-103">Cet exemple montre comment créer des signets nommés dans un workflow.</span><span class="sxs-lookup"><span data-stu-id="d24c8-103">This sample demonstrates how to create named bookmarks in a workflow.</span></span> [!INCLUDE[wf](../../../../includes/wf-md.md)]<span data-ttu-id="d24c8-104"> ne fournit pas d'activité pour la création déclarative de signet.</span><span class="sxs-lookup"><span data-stu-id="d24c8-104"> does not provide an activity for declarative bookmark creation.</span></span> <span data-ttu-id="d24c8-105">Par conséquent, lorsque vous souhaitez créer un signet dans votre workflow, vous devez écrire une activité personnalisée pour ce faire.</span><span class="sxs-lookup"><span data-stu-id="d24c8-105">Therefore, when you want to create a bookmark in your workflow, you must write a custom activity that creates it.</span></span> <span data-ttu-id="d24c8-106">L'activité `WaitForInput` définie dans cet exemple fournit cette fonctionnalité afin que les utilisateurs puissent créer des signets de façon déclarative dans un workflow.</span><span class="sxs-lookup"><span data-stu-id="d24c8-106">The `WaitForInput` activity defined in this sample provides this functionality, so that users can create bookmarks declaratively within a workflow.</span></span>  
   
-## Projets dans cet exemple  
+## <a name="projects-in-this-sample"></a><span data-ttu-id="d24c8-107">Projets dans cet exemple</span><span class="sxs-lookup"><span data-stu-id="d24c8-107">Projects in this sample</span></span>  
   
-||||  
+|<span data-ttu-id="d24c8-108">**Nom du projet**</span><span class="sxs-lookup"><span data-stu-id="d24c8-108">**Project Name**</span></span>|<span data-ttu-id="d24c8-109">**Description**</span><span class="sxs-lookup"><span data-stu-id="d24c8-109">**Description**</span></span>|<span data-ttu-id="d24c8-110">**Fichiers principaux**</span><span class="sxs-lookup"><span data-stu-id="d24c8-110">**Main Files**</span></span>|  
 |-|-|-|  
-|**Nom du projet**|**Description**|**Fichiers principaux**|  
-|WaitForInput|Contient l'activité `WaitForInput` et son concepteur|WaitForInput.cs<br /><br /> Définition de l'activité `WaitForInput`.|  
-|||WaitForInputDesigner.xaml<br /><br /> Concepteur personnalisé pour l'activité `WaitForInput`.|  
-|||TypeToFirstGenericArgumentConverter.cs<br /><br /> Convertisseur de type WPF utilisé pour mettre à jour le type générique de l'activité dans le concepteur.|  
-|WaitForInputTestClient|Exemple d'application cliente qui configure et exécute un workflow à l'aide de plusieurs activités WaitForInput utilisant le concepteur de workflow.|Sequence1.xaml<br /><br /> Workflow séquentiel qui utilise l'activité `WaitForInput`.|  
-|||Program.cs<br /><br /> Exécute une instance du workflow définie dans Sequence1.xaml.|  
+|<span data-ttu-id="d24c8-111">WaitForInput</span><span class="sxs-lookup"><span data-stu-id="d24c8-111">WaitForInput</span></span>|<span data-ttu-id="d24c8-112">Contient l'activité `WaitForInput` et son concepteur</span><span class="sxs-lookup"><span data-stu-id="d24c8-112">Contains `WaitForInput` activity and its designer</span></span>|<span data-ttu-id="d24c8-113">WaitForInput.cs</span><span class="sxs-lookup"><span data-stu-id="d24c8-113">WaitForInput.cs</span></span><br /><br /> <span data-ttu-id="d24c8-114">Définition de l'activité `WaitForInput`.</span><span class="sxs-lookup"><span data-stu-id="d24c8-114">`WaitForInput` activity definition.</span></span>|  
+|||<span data-ttu-id="d24c8-115">WaitForInputDesigner.xaml</span><span class="sxs-lookup"><span data-stu-id="d24c8-115">WaitForInputDesigner.xaml</span></span><br /><br /> <span data-ttu-id="d24c8-116">Concepteur personnalisé pour l'activité `WaitForInput`.</span><span class="sxs-lookup"><span data-stu-id="d24c8-116">Custom designer for the `WaitForInput` activity.</span></span>|  
+|||<span data-ttu-id="d24c8-117">TypeToFirstGenericArgumentConverter.cs</span><span class="sxs-lookup"><span data-stu-id="d24c8-117">TypeToFirstGenericArgumentConverter.cs</span></span><br /><br /> <span data-ttu-id="d24c8-118">Convertisseur de type WPF utilisé pour mettre à jour le type générique de l'activité dans le concepteur.</span><span class="sxs-lookup"><span data-stu-id="d24c8-118">WPF type converter used to update the generic type of the activity in the designer.</span></span>|  
+|<span data-ttu-id="d24c8-119">WaitForInputTestClient</span><span class="sxs-lookup"><span data-stu-id="d24c8-119">WaitForInputTestClient</span></span>|<span data-ttu-id="d24c8-120">Exemple d'application cliente qui configure et exécute un workflow à l'aide de plusieurs activités WaitForInput utilisant le concepteur de workflow.</span><span class="sxs-lookup"><span data-stu-id="d24c8-120">Sample client application that configures and runs a workflow using several WaitForInput activities using the workflow designer.</span></span>|<span data-ttu-id="d24c8-121">Sequence1.xaml</span><span class="sxs-lookup"><span data-stu-id="d24c8-121">Sequence1.xaml</span></span><br /><br /> <span data-ttu-id="d24c8-122">Workflow séquentiel qui utilise l'activité `WaitForInput`.</span><span class="sxs-lookup"><span data-stu-id="d24c8-122">A sequential workflow that uses the `WaitForInput` activity.</span></span>|  
+|||<span data-ttu-id="d24c8-123">Program.cs</span><span class="sxs-lookup"><span data-stu-id="d24c8-123">Program.cs</span></span><br /><br /> <span data-ttu-id="d24c8-124">Exécute une instance du workflow définie dans Sequence1.xaml.</span><span class="sxs-lookup"><span data-stu-id="d24c8-124">Runs an instance of the workflow defined in Sequence1.xaml.</span></span>|  
   
-## Activité WaitForInput  
- L'activité `WaitForInput` crée un signet nommé dans un workflow.Le signet attend un signal et reçoit des données de son type configuré.Une fois le signet repris, les données passées dans le workflow sont disponibles via la propriété `Result`.  
+## <a name="waitforinput-activity"></a><span data-ttu-id="d24c8-125">Activité WaitForInput</span><span class="sxs-lookup"><span data-stu-id="d24c8-125">WaitForInput Activity</span></span>  
+ <span data-ttu-id="d24c8-126">L'activité `WaitForInput` crée un signet nommé dans un workflow.</span><span class="sxs-lookup"><span data-stu-id="d24c8-126">The `WaitForInput` activity creates a named bookmark in a workflow.</span></span> <span data-ttu-id="d24c8-127">Le signet attend un signal et reçoit des données de son type configuré.</span><span class="sxs-lookup"><span data-stu-id="d24c8-127">The bookmark waits for a signal and receives data of its configured type.</span></span> <span data-ttu-id="d24c8-128">Une fois le signet repris, les données passées dans le workflow sont disponibles via la propriété `Result`.</span><span class="sxs-lookup"><span data-stu-id="d24c8-128">After the bookmark is resumed the data passed into the workflow is available through the `Result` property.</span></span>  
   
- L'activité `WaitForInput` dérive de la classe <xref:System.Activities.NativeActivity> parce qu'elle doit créer des signets, qui sont accessibles uniquement via la classe <xref:System.Activities.NativeActivityContext>.  
+ <span data-ttu-id="d24c8-129">L'activité `WaitForInput` dérive de la classe <xref:System.Activities.NativeActivity> parce qu'elle doit créer des signets, qui sont accessibles uniquement via la classe <xref:System.Activities.NativeActivityContext>.</span><span class="sxs-lookup"><span data-stu-id="d24c8-129">The `WaitForInput` activity derives from the <xref:System.Activities.NativeActivity> class because it must create bookmarks, which are only accessible through the <xref:System.Activities.NativeActivityContext> class.</span></span>  
   
- Trois attributs sont appliqués à l'activité pour la liaison d'un concepteur, l'ajout de la fonctionnalité d'argument générique qui peut être mise à jour et l'affectation au type générique par défaut de la valeur de chaîne.L'activité a également les arguments répertoriés dans le tableau suivant.  
+ <span data-ttu-id="d24c8-130">Trois attributs sont appliqués à l'activité pour la liaison d'un concepteur, l'ajout de la fonctionnalité d'argument générique qui peut être mise à jour et l'affectation au type générique par défaut de la valeur de chaîne.</span><span class="sxs-lookup"><span data-stu-id="d24c8-130">The activity has three attributes applied to it for binding a designer, adding the generic argument feature that can be updated, and setting the default generic type to string.</span></span> <span data-ttu-id="d24c8-131">L’activité a également les arguments répertoriés dans le tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="d24c8-131">The activity also has the arguments  listed in the following table.</span></span>  
   
-||||  
+|<span data-ttu-id="d24c8-132">**Nom**</span><span class="sxs-lookup"><span data-stu-id="d24c8-132">**Name**</span></span>|<span data-ttu-id="d24c8-133">**Type**</span><span class="sxs-lookup"><span data-stu-id="d24c8-133">**Type**</span></span>|<span data-ttu-id="d24c8-134">**Description**</span><span class="sxs-lookup"><span data-stu-id="d24c8-134">**Description**</span></span>|  
 |-|-|-|  
-|**Nom**|**Type**|**Description**|  
-|TResult|Argument générique \(TResult\)|Type du signet.Il s'agit du type des données à passer au signet lors de la reprise.|  
-|BookmarkName|InArgument\<chaîne\>|Nom du signet.|  
-|Résultat|InArgument\<TResult\>|Données passées à l'activité lorsque le signet est repris.|  
+|<span data-ttu-id="d24c8-135">TResult</span><span class="sxs-lookup"><span data-stu-id="d24c8-135">TResult</span></span>|<span data-ttu-id="d24c8-136">Argument générique (TResult)</span><span class="sxs-lookup"><span data-stu-id="d24c8-136">Generic argument (TResult)</span></span>|<span data-ttu-id="d24c8-137">Type du signet.</span><span class="sxs-lookup"><span data-stu-id="d24c8-137">Type of the bookmark.</span></span> <span data-ttu-id="d24c8-138">Il s'agit du type des données à passer au signet lors de la reprise.</span><span class="sxs-lookup"><span data-stu-id="d24c8-138">This is the type of the data to be passed to the bookmark when resumed.</span></span>|  
+|<span data-ttu-id="d24c8-139">BookmarkName</span><span class="sxs-lookup"><span data-stu-id="d24c8-139">BookmarkName</span></span>|<span data-ttu-id="d24c8-140">InArgument\<chaîne ></span><span class="sxs-lookup"><span data-stu-id="d24c8-140">InArgument\<string></span></span>|<span data-ttu-id="d24c8-141">Nom du signet.</span><span class="sxs-lookup"><span data-stu-id="d24c8-141">Name of the bookmark.</span></span>|  
+|<span data-ttu-id="d24c8-142">Résultat</span><span class="sxs-lookup"><span data-stu-id="d24c8-142">Result</span></span>|<span data-ttu-id="d24c8-143">InArgument\<TResult ></span><span class="sxs-lookup"><span data-stu-id="d24c8-143">InArgument\<TResult></span></span>|<span data-ttu-id="d24c8-144">Données passées à l'activité lorsque le signet est repris.</span><span class="sxs-lookup"><span data-stu-id="d24c8-144">Data passed to the activity when the bookmark is resumed.</span></span>|  
   
-## Concepteur d'activités WaitForInput  
- Le concepteur d'activités `WaitForInput` est implémenté dans le fichier WaitForInputDesigner.xaml.L'activité `WaitForInput` et son concepteur sont inclus dans le même assembly.Le graphique suivant affiche l'activité `WaitForInput` dans la boîte à outils dans une catégorie qui a le même nom que l'assembly.  
+## <a name="waitforinput-activity-designer"></a><span data-ttu-id="d24c8-145">Concepteur d'activités WaitForInput</span><span class="sxs-lookup"><span data-stu-id="d24c8-145">WaitForInput activity designer</span></span>  
+ <span data-ttu-id="d24c8-146">Le concepteur d'activités `WaitForInput` est implémenté dans le fichier WaitForInputDesigner.xaml.</span><span class="sxs-lookup"><span data-stu-id="d24c8-146">The `WaitForInput` activity designer is implemented in the WaitForInputDesigner.xaml file.</span></span> <span data-ttu-id="d24c8-147">L'activité `WaitForInput` et son concepteur sont inclus dans le même assembly.</span><span class="sxs-lookup"><span data-stu-id="d24c8-147">The `WaitForInput` activity and its designer are included in the same assembly.</span></span> <span data-ttu-id="d24c8-148">Le graphique suivant affiche l'activité `WaitForInput` dans la boîte à outils dans une catégorie qui a le même nom que l'assembly.</span><span class="sxs-lookup"><span data-stu-id="d24c8-148">The following graphic shows the `WaitForInput` activity in the toolbox within a category that has the same name as the assembly.</span></span>  
   
- ![Capture d'écran de la boîte à outils WaitForInput](../../../../docs/framework/windows-workflow-foundation/samples/media/waitforinputtoolbox.jpg "WaitForInputToolbox")  
+ <span data-ttu-id="d24c8-149">![Capture d’écran de la boîte à outils WaitForInput](../../../../docs/framework/windows-workflow-foundation/samples/media/waitforinputtoolbox.jpg "WaitForInputToolbox")</span><span class="sxs-lookup"><span data-stu-id="d24c8-149">![WaitForInput toolbox screenshot](../../../../docs/framework/windows-workflow-foundation/samples/media/waitforinputtoolbox.jpg "WaitForInputToolbox")</span></span>  
   
- Le graphique suivant affiche le concepteur `WaitForInput`.Étant donné que l'activité `WaitForInput` est très basique, le concepteur permet de définir tous ses arguments directement sur l'aire du concepteur.  
+ <span data-ttu-id="d24c8-150">Le graphique suivant affiche le concepteur `WaitForInput`.</span><span class="sxs-lookup"><span data-stu-id="d24c8-150">The following graphic shows the `WaitForInput` designer.</span></span> <span data-ttu-id="d24c8-151">Étant donné que l'activité `WaitForInput` est très basique, le concepteur permet de définir tous ses arguments directement sur l'aire du concepteur.</span><span class="sxs-lookup"><span data-stu-id="d24c8-151">Because, the `WaitForInput` activity is very basic, the designer allows setting all its arguments directly in the designer surface.</span></span>  
   
- ![Concepteur de l'activité WaitForInput](../../../../docs/framework/windows-workflow-foundation/samples/media/waitforinputdesigner.jpg "WaitForInputDesigner")  
+ <span data-ttu-id="d24c8-152">![Concepteur d’activités WaitForInput](../../../../docs/framework/windows-workflow-foundation/samples/media/waitforinputdesigner.jpg "WaitForInputDesigner")</span><span class="sxs-lookup"><span data-stu-id="d24c8-152">![WaitForInput Activity Designer](../../../../docs/framework/windows-workflow-foundation/samples/media/waitforinputdesigner.jpg "WaitForInputDesigner")</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="d24c8-153">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="d24c8-153">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier WaitForInput.sln.  
+1.  <span data-ttu-id="d24c8-154">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier WaitForInput.sln.</span><span class="sxs-lookup"><span data-stu-id="d24c8-154">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the WaitForInput.sln file.</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+2.  <span data-ttu-id="d24c8-155">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="d24c8-155">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  Pour démarrer l'exemple sans débogage, appuyez sur CTRL\+F5.  
+3.  <span data-ttu-id="d24c8-156">Pour démarrer l'exemple sans débogage, appuyez sur CTRL+F5.</span><span class="sxs-lookup"><span data-stu-id="d24c8-156">To start the sample without debugging, press CTRL+F5.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="d24c8-157">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="d24c8-157">The samples may already be installed on your machine.</span></span> <span data-ttu-id="d24c8-158">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="d24c8-158">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="d24c8-159">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="d24c8-159">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="d24c8-160">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="d24c8-160">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\WaitForInput`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\WaitForInput`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="d24c8-161">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d24c8-161">See Also</span></span>

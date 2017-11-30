@@ -1,63 +1,66 @@
 ---
-title: "Introduction &#224; l&#39;extensibilit&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "extensibilité (WCF)"
-  - "WCF [WCF], extensibilité"
-  - "Windows Communication Foundation [WCF], extensibilité"
+title: "Introduction à l'extensibilité"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF [WCF], extensibility
+- Windows Communication Foundation [WCF], extensibility
+- extensibility [WCF]
 ms.assetid: ef56c251-d63c-4b3f-944f-b0c67bfb0f68
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0b53ec29f973760237133003c2f582e1a33a9f83
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Introduction &#224; l&#39;extensibilit&#233;
-Le modèle d'application [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] est conçu pour répondre en grande partie aux spécifications de communication de toute application distribuée.  Néanmoins, il existe des situations qui ne sont pas prises en charge par le modèle d'application par défaut et les implémentations fournies par le système.  Le modèle d'extensibilité de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] est destiné à prendre en charge des scénarios personnalisés en vous permettant de modifier le comportement du système à tout niveau, et même de remplacer le modèle d'application dans son intégralité.  Cette rubrique présente les différentes zones d'extension et fournit des informations détaillées sur chacune d'elles.  
+# <a name="introduction-to-extensibility"></a><span data-ttu-id="9affc-102">Introduction à l'extensibilité</span><span class="sxs-lookup"><span data-stu-id="9affc-102">Introduction to Extensibility</span></span>
+<span data-ttu-id="9affc-103">Le modèle d'application [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] est conçu pour répondre en grande partie aux spécifications de communication de toute application distribuée.</span><span class="sxs-lookup"><span data-stu-id="9affc-103">The [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] application model is designed to solve the greater part of the communication requirements of any distributed application.</span></span> <span data-ttu-id="9affc-104">Néanmoins, il existe des situations qui ne sont pas prises en charge par le modèle d'application par défaut et les implémentations fournies par le système.</span><span class="sxs-lookup"><span data-stu-id="9affc-104">But there are always scenarios that the default application model and system-provided implementations do not support.</span></span> <span data-ttu-id="9affc-105">Le modèle d'extensibilité de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] est destiné à prendre en charge des scénarios personnalisés en vous permettant de modifier le comportement du système à tout niveau, et même de remplacer le modèle d'application dans son intégralité.</span><span class="sxs-lookup"><span data-stu-id="9affc-105">The [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] extensibility model is intended to support custom scenarios by enabling you to modify system behavior at every level, even to the point of replacing the entire application model.</span></span> <span data-ttu-id="9affc-106">Cette rubrique présente les différentes zones d'extension et fournit des informations détaillées sur chacune d'elles.</span><span class="sxs-lookup"><span data-stu-id="9affc-106">This topic outlines the various areas of extension and points to more information about each.</span></span>  
   
-## Zones à étendre  
- Vous pouvez étendre les zones suivantes :  
+## <a name="areas-to-extend"></a><span data-ttu-id="9affc-107">Zones à étendre</span><span class="sxs-lookup"><span data-stu-id="9affc-107">Areas to Extend</span></span>  
+ <span data-ttu-id="9affc-108">Vous pouvez étendre les zones suivantes :</span><span class="sxs-lookup"><span data-stu-id="9affc-108">You can extend:</span></span>  
   
--   Le runtime de l'application.  Cela permet d'étendre la distribution et le traitement des messages pour l'application.  Dans ce cadre, vous pouvez également étendre le système de sécurité, le système de métadonnées, le système de sérialisation, ainsi que les liaisons et éléments de liaison qui connectent l'application au système de canaux sous\-jacent.  
+-   <span data-ttu-id="9affc-109">Le runtime de l'application.</span><span class="sxs-lookup"><span data-stu-id="9affc-109">The application runtime.</span></span> <span data-ttu-id="9affc-110">Cela permet d'étendre la distribution et le traitement des messages pour l'application.</span><span class="sxs-lookup"><span data-stu-id="9affc-110">This extends the dispatching and the processing of messages for the application.</span></span> <span data-ttu-id="9affc-111">Dans ce cadre, vous pouvez également étendre le système de sécurité, le système de métadonnées, le système de sérialisation, ainsi que les liaisons et éléments de liaison qui connectent l'application au système de canaux sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="9affc-111">This area also includes extending the security system, the metadata system, the serialization system, and the bindings and binding elements that connect the application with the underlying channel system.</span></span>  
   
--   Le canal et le runtime du canal.  Cela permet d'étendre le système qui fonctionne au niveau du message, en fournissant la prise en charge du protocole, du transport et de l'encodage.  
+-   <span data-ttu-id="9affc-112">Le canal et le runtime du canal.</span><span class="sxs-lookup"><span data-stu-id="9affc-112">The channel and channel runtime.</span></span> <span data-ttu-id="9affc-113">Cela permet d'étendre le système qui fonctionne au niveau du message, en fournissant la prise en charge du protocole, du transport et de l'encodage.</span><span class="sxs-lookup"><span data-stu-id="9affc-113">This extends the system that functions at the message level, providing protocol, transport, and encoding support.</span></span>  
   
--   Le runtime de l'hôte.  Cela permet d'étendre la relation du domaine de l'application d'hébergement avec le runtime du canal de l'application.  
+-   <span data-ttu-id="9affc-114">Le runtime de l'hôte.</span><span class="sxs-lookup"><span data-stu-id="9affc-114">The host runtime.</span></span> <span data-ttu-id="9affc-115">Cela permet d'étendre la relation du domaine de l'application d'hébergement avec le runtime du canal de l'application.</span><span class="sxs-lookup"><span data-stu-id="9affc-115">This extends the relationship of the hosting application domain to the channel and application runtime.</span></span>  
   
-### Extension du runtime de l'application  
- Dans les applications [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], les messages destinés à un canal correspondant doivent être distingués des messages destinés à l'application elle\-même.  Les messages de canaux prennent en charge des fonctionnalités relatives aux canaux, comme l'établissement d'une conversation sécurisée ou d'une session fiable.  Ces messages ne sont pas disponibles pour le runtime de l'application. Ils sont traités avant que la couche Application ne soit impliquée.  
+### <a name="extending-the-application-runtime"></a><span data-ttu-id="9affc-116">Extension du runtime de l'application</span><span class="sxs-lookup"><span data-stu-id="9affc-116">Extending the Application Runtime</span></span>  
+ <span data-ttu-id="9affc-117">Dans les applications [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], les messages destinés à un canal correspondant doivent être distingués des messages destinés à l'application elle-même.</span><span class="sxs-lookup"><span data-stu-id="9affc-117">In [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] applications, there is a distinction between messages that are destined for a corresponding channel and messages that are destined for the application itself.</span></span> <span data-ttu-id="9affc-118">Les messages de canaux prennent en charge des fonctionnalités relatives aux canaux, comme l'établissement d'une conversation sécurisée ou d'une session fiable.</span><span class="sxs-lookup"><span data-stu-id="9affc-118">Channel messages support some channel-related functionality, such as establishing a secure conversation or establishing a reliable session.</span></span> <span data-ttu-id="9affc-119">Ces messages ne sont pas disponibles pour le runtime de l'application. Ils sont traités avant que la couche Application ne soit impliquée.</span><span class="sxs-lookup"><span data-stu-id="9affc-119">These messages are not available to the application runtime; they are processed before the application layer is involved.</span></span>  
   
- Les messages d'application contiennent des données destinées à une opération de client ou de service que vous ou votre client a créée.  Ces messages sont disponibles pour le système d'extension de niveau application sous la forme de message ou d'objet, en fonction de vos besoins.  
+ <span data-ttu-id="9affc-120">Les messages d'application contiennent des données destinées à une opération de client ou de service que vous ou votre client a créée.</span><span class="sxs-lookup"><span data-stu-id="9affc-120">Application messages contain data that is destined for a client or service operation that you or your customer has created.</span></span> <span data-ttu-id="9affc-121">Ces messages sont disponibles pour le système d'extension de niveau application sous la forme de message ou d'objet, en fonction de vos besoins.</span><span class="sxs-lookup"><span data-stu-id="9affc-121">These messages are available to the application-level extension system in message or object form, depending upon your needs.</span></span>  
   
- Tous les messages passent par le système de canaux. Seuls les messages d'application sont passés entre le système de canaux et l'application.  Pour créer de nouvelles fonctionnalités de niveau canal, vous devez étendre le système de canaux.  Pour créer de nouvelles fonctionnalités de niveau application, vous devez étendre le runtime du service ou du client \(respectivement, répartiteurs et fabrications de canaux\).  [!INCLUDE[crabout](../../../includes/crabout-md.md)] l'extension du runtime de l'application, consultez [Extension de ServiceHost et de la couche de modèle de service](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+ <span data-ttu-id="9affc-122">Tous les messages passent par le système de canaux. Seuls les messages d'application sont passés entre le système de canaux et l'application.</span><span class="sxs-lookup"><span data-stu-id="9affc-122">All messages pass through the channel system; only application messages are passed from the channel system into the application.</span></span> <span data-ttu-id="9affc-123">Pour créer de nouvelles fonctionnalités de niveau canal, vous devez étendre le système de canaux.</span><span class="sxs-lookup"><span data-stu-id="9affc-123">To create new channel-level functionality, you must extend the channel system.</span></span> <span data-ttu-id="9affc-124">Pour créer de nouvelles fonctionnalités de niveau application, vous devez étendre le runtime du service ou du client (respectivement, répartiteurs et fabrications de canaux).</span><span class="sxs-lookup"><span data-stu-id="9affc-124">To create new application-level functionality, you must extend the service or client runtime (dispatchers and channel factories, respectively).</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="9affc-125">extension de l’exécution de l’application, consultez [extension de ServiceHost et de la couche de modèle de Service](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-125"> extending the application runtime, see [Extending ServiceHost and the Service Model Layer](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).</span></span>  
   
-#### Extension de la sécurité  
- Pour créer des mécanismes de sécurité personnalisés comme des jetons et des informations d'identification, vous devez étendre le système de sécurité.  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Extension de la sécurité](../../../docs/framework/wcf/extending/extending-security.md).  
+#### <a name="extending-security"></a><span data-ttu-id="9affc-126">Extension de la sécurité</span><span class="sxs-lookup"><span data-stu-id="9affc-126">Extending Security</span></span>  
+ <span data-ttu-id="9affc-127">Pour créer des mécanismes de sécurité personnalisés comme des jetons et des informations d'identification, vous devez étendre le système de sécurité.</span><span class="sxs-lookup"><span data-stu-id="9affc-127">To build custom security mechanisms such as tokens and credentials, you must extend the security system.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9affc-128">[Extension de la sécurité](../../../docs/framework/wcf/extending/extending-security.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-128"> [Extending Security](../../../docs/framework/wcf/extending/extending-security.md).</span></span>  
   
-#### Extension des métadonnées  
- Pour exposer vos métadonnées différemment de ce qui est prévu par défaut, vous devez étendre le système de métadonnées.  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Extension du système de métadonnées](../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
+#### <a name="extending-metadata"></a><span data-ttu-id="9affc-129">Extension des métadonnées</span><span class="sxs-lookup"><span data-stu-id="9affc-129">Extending Metadata</span></span>  
+ <span data-ttu-id="9affc-130">Pour exposer vos métadonnées différemment de ce qui est prévu par défaut, vous devez étendre le système de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="9affc-130">To expose your metadata in differently than the default, you must extend the metadata system.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9affc-131">[Extension du système de métadonnées](../../../docs/framework/wcf/extending/extending-the-metadata-system.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-131"> [Extending the Metadata System](../../../docs/framework/wcf/extending/extending-the-metadata-system.md).</span></span>  
   
-#### Extension de la sérialisation  
- Pour créer des encodeurs personnalisés, proposer des substituts de données ou pour tout autre travail impliquant la personnalisation des données transférées, vous devez étendre le système de sérialisation.  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Extension des encodeurs et des sérialiseurs](../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md).  
+#### <a name="extending-serialization"></a><span data-ttu-id="9affc-132">Extension de la sérialisation</span><span class="sxs-lookup"><span data-stu-id="9affc-132">Extending Serialization</span></span>  
+ <span data-ttu-id="9affc-133">Pour créer des encodeurs personnalisés, proposer des substituts de données ou pour tout autre travail impliquant la personnalisation des données transférées, vous devez étendre le système de sérialisation.</span><span class="sxs-lookup"><span data-stu-id="9affc-133">To build custom encoders, provide data surrogates, or other work involving the customization of transferred data, you must extend the serialization system.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9affc-134">[Extension des encodeurs et sérialiseurs](../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-134"> [Extending Encoders and Serializers](../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md).</span></span>  
   
-#### Extension de liaisons  
- Pour associer des canaux de transport ou de protocole à la couche Application, vous devez étendre le système de liaison.  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Extension de liaisons](../../../docs/framework/wcf/extending/extending-bindings.md).  
+#### <a name="extending-bindings"></a><span data-ttu-id="9affc-135">Extension de liaisons</span><span class="sxs-lookup"><span data-stu-id="9affc-135">Extending Bindings</span></span>  
+ <span data-ttu-id="9affc-136">Pour associer des canaux de transport ou de protocole à la couche Application, vous devez étendre le système de liaison.</span><span class="sxs-lookup"><span data-stu-id="9affc-136">To associate transport or protocol channels with the application layer, you must extend the binding system.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9affc-137">[Extension de liaisons](../../../docs/framework/wcf/extending/extending-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-137"> [Extending Bindings](../../../docs/framework/wcf/extending/extending-bindings.md).</span></span>  
   
-### Extension du système de canaux  
- Pour créer des canaux qui prennent en charge des fonctionnalités de transport ou de protocole personnalisées, consultez [Extension de la couche du canal](../../../docs/framework/wcf/extending/extending-the-channel-layer.md).  
+### <a name="extending-the-channel-system"></a><span data-ttu-id="9affc-138">Extension du système de canaux</span><span class="sxs-lookup"><span data-stu-id="9affc-138">Extending the Channel System</span></span>  
+ <span data-ttu-id="9affc-139">Pour créer des canaux qui prennent en charge les transports personnalisés ou des fonctionnalités de protocole, consultez [extension de la couche de canal](../../../docs/framework/wcf/extending/extending-the-channel-layer.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-139">To create channels that support custom transports or protocol functionality, see [Extending the Channel Layer](../../../docs/framework/wcf/extending/extending-the-channel-layer.md).</span></span>  
   
-### Extension du système d'hébergement de service  
- Pour modifier le modèle d'application à l'échelle du service, vous devez étendre la classe <xref:System.ServiceModel.ServiceHostBase?displayProperty=fullName>.  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Extension de ServiceHost et de la couche de modèle de service](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).  
+### <a name="extending-the-service-hosting-system"></a><span data-ttu-id="9affc-140">Extension du système d'hébergement de service</span><span class="sxs-lookup"><span data-stu-id="9affc-140">Extending the Service Hosting System</span></span>  
+ <span data-ttu-id="9affc-141">Pour modifier le modèle d'application à l'échelle du service, vous devez étendre la classe <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9affc-141">To modify the service-wide application model, you must extend <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType> class.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9affc-142">[Extension ServiceHost et la couche de modèle de Service](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-142"> [Extending ServiceHost and the Service Model Layer](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md).</span></span>  
   
- Pour modifier la relation entre le domaine de l'application d'hébergement et l'hôte de service, vous devez étendre la classe <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=fullName>.  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Extension de l'hébergement à l'aide de ServiceHostFactory](../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md).  
+ <span data-ttu-id="9affc-143">Pour modifier la relation entre le domaine de l'application d'hébergement et l'hôte de service, vous devez étendre la classe <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9affc-143">To modify the relationship between the hosting application domain and the service host, you must extend the <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=nameWithType> class.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9affc-144">[Extension de l’hébergement à l’aide de ServiceHostFactory](../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md).</span><span class="sxs-lookup"><span data-stu-id="9affc-144"> [Extending Hosting Using ServiceHostFactory](../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md).</span></span>  
   
-## Voir aussi  
- [Extension de WCF](../../../docs/framework/wcf/extending/extending-wcf.md)
+## <a name="see-also"></a><span data-ttu-id="9affc-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9affc-145">See Also</span></span>  
+ [<span data-ttu-id="9affc-146">Extension de WCF</span><span class="sxs-lookup"><span data-stu-id="9affc-146">Extending WCF</span></span>](../../../docs/framework/wcf/extending/extending-wcf.md)

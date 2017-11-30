@@ -1,23 +1,26 @@
 ---
-title: "Behavior, classe | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Behavior, classe
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 75d117f5-87f9-40fb-84c6-9e2fef6da6af
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: aca1cf32934313fafcca49d9beeb55bbf114fa13
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Behavior, classe
-## Syntaxe  
+# <a name="behavior-class"></a><span data-ttu-id="420bb-102">Behavior, classe</span><span class="sxs-lookup"><span data-stu-id="420bb-102">Behavior class</span></span>
+## <a name="syntax"></a><span data-ttu-id="420bb-103">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="420bb-103">Syntax</span></span>  
   
 ```  
 class Behavior  
@@ -26,24 +29,24 @@ class Behavior
 };  
 ```  
   
-## Méthodes  
- La classe Behavior ne définit aucune méthode.  
+## <a name="methods"></a><span data-ttu-id="420bb-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="420bb-104">Methods</span></span>  
+ <span data-ttu-id="420bb-105">La classe Behavior ne définit aucune méthode.</span><span class="sxs-lookup"><span data-stu-id="420bb-105">The Behavior class does not define any methods.</span></span>  
   
-## Propriétés  
- La classe Behavior dispose de la propriété suivante :  
+## <a name="properties"></a><span data-ttu-id="420bb-106">Propriétés</span><span class="sxs-lookup"><span data-stu-id="420bb-106">Properties</span></span>  
+ <span data-ttu-id="420bb-107">La classe Behavior dispose de la propriété suivante :</span><span class="sxs-lookup"><span data-stu-id="420bb-107">The Behavior class has the following property:</span></span>  
   
-### Type  
- Type de données : chaîne  
+### <a name="type"></a><span data-ttu-id="420bb-108">Type</span><span class="sxs-lookup"><span data-stu-id="420bb-108">Type</span></span>  
+ <span data-ttu-id="420bb-109">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="420bb-109">Data type: string</span></span>  
   
- Type d'accès : lecture seule  
+ <span data-ttu-id="420bb-110">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="420bb-110">Access type: Read-only</span></span>  
   
- Type de comportement.  
+ <span data-ttu-id="420bb-111">Type de comportement.</span><span class="sxs-lookup"><span data-stu-id="420bb-111">The type of the behavior.</span></span>  
   
-## Spécifications  
+## <a name="requirements"></a><span data-ttu-id="420bb-112">Spécifications</span><span class="sxs-lookup"><span data-stu-id="420bb-112">Requirements</span></span>  
   
-|MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|<span data-ttu-id="420bb-113">MOF</span><span class="sxs-lookup"><span data-stu-id="420bb-113">MOF</span></span>|<span data-ttu-id="420bb-114">Déclaré dans Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="420bb-114">Declared in Servicemodel.mof.</span></span>|  
+|---------|-----------------------------------|  
+|<span data-ttu-id="420bb-115">Espace de noms</span><span class="sxs-lookup"><span data-stu-id="420bb-115">Namespace</span></span>|<span data-ttu-id="420bb-116">Défini dans root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="420bb-116">Defined in root\ServiceModel</span></span>|  
   
-## Voir aussi  
+## <a name="see-also"></a><span data-ttu-id="420bb-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="420bb-117">See Also</span></span>  
  <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A>
