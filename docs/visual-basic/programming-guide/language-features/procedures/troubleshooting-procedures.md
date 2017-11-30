@@ -1,160 +1,143 @@
 ---
-title: "Procédures de dépannage (Visual Basic) | Documents Microsoft"
+title: "Procédures de dépannage (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - troubleshooting Visual Basic, procedures
-- procedures, troubleshooting
+- procedures [Visual Basic], troubleshooting
 - Visual Basic code, procedures
 - troubleshooting procedures
-- procedures, about procedures
+- procedures [Visual Basic], about procedures
 ms.assetid: 525721e8-2e02-4f75-b5d8-6b893462cf2b
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a5445d6da982e4eea5b1047505e4bee3380ed472
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b838644baa5ad10f1deb917cff5751a0f625fca6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="troubleshooting-procedures-visual-basic"></a>Procédures de dépannage (Visual Basic)
-Cette page répertorie quelques problèmes courants qui peuvent se produire lorsque vous travaillez avec des procédures.  
+# <a name="troubleshooting-procedures-visual-basic"></a><span data-ttu-id="39d49-102">Procédures de dépannage (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="39d49-102">Troubleshooting Procedures (Visual Basic)</span></span>
+<span data-ttu-id="39d49-103">Cette page répertorie certains problèmes courants qui peuvent se produire lorsque vous travaillez avec des procédures.</span><span class="sxs-lookup"><span data-stu-id="39d49-103">This page lists some common problems that can occur when working with procedures.</span></span>  
   
-## <a name="returning-an-array-type-from-a-function-procedure"></a>Retourner un Type de tableau à partir d’une procédure (fonction)  
- Si un `Function` procédure retourne un type de données de tableau, vous ne pouvez pas utiliser le `Function` nom pour stocker des valeurs dans les éléments du tableau. Si vous tentez cette opération, le compilateur interprète comme un appel à la `Function`. L’exemple suivant génère des erreurs du compilateur.  
+## <a name="returning-an-array-type-from-a-function-procedure"></a><span data-ttu-id="39d49-104">Retour d’un Type de tableau à partir d’une procédure (fonction)</span><span class="sxs-lookup"><span data-stu-id="39d49-104">Returning an Array Type from a Function Procedure</span></span>  
+ <span data-ttu-id="39d49-105">Si un `Function` procédure retourne un type de données de tableau, vous ne pouvez pas utiliser le `Function` nom pour stocker des valeurs dans les éléments du tableau.</span><span class="sxs-lookup"><span data-stu-id="39d49-105">If a `Function` procedure returns an array data type, you cannot use the `Function` name to store values in the elements of the array.</span></span> <span data-ttu-id="39d49-106">Si vous tentez cette opération, le compilateur l’interprète comme un appel à la `Function`.</span><span class="sxs-lookup"><span data-stu-id="39d49-106">If you attempt to do this, the compiler interprets it as a call to the `Function`.</span></span> <span data-ttu-id="39d49-107">L’exemple suivant génère des erreurs du compilateur.</span><span class="sxs-lookup"><span data-stu-id="39d49-107">The following example generates compiler errors.</span></span>  
   
  `Function allOnes(ByVal n As Integer) As Integer()`  
   
  `For i As Integer = 1 To n - 1`  
   
- `' The following statement generates a`   `COMPILER ERROR`  `.`  
+ <span data-ttu-id="39d49-108">`' The following statement generates a`   `COMPILER ERROR`  `.`</span><span class="sxs-lookup"><span data-stu-id="39d49-108">`' The following statement generates a`   `COMPILER ERROR`  `.`</span></span>  
   
  `allOnes(i) = 1`  
   
  `Next i`  
   
- `' The following statement generates a`   `COMPILER ERROR`  `.`  
+ <span data-ttu-id="39d49-109">`' The following statement generates a`   `COMPILER ERROR`  `.`</span><span class="sxs-lookup"><span data-stu-id="39d49-109">`' The following statement generates a`   `COMPILER ERROR`  `.`</span></span>  
   
  `Return allOnes()`  
   
  `End Function`  
   
- L’instruction `allOnes(i) = 1` génère une erreur du compilateur parce qu’elle semble appeler `allOnes` avec un argument de type de données incorrect (un singleton `Integer` au lieu d’un `Integer` tableau). L’instruction `Return allOnes()` génère une erreur du compilateur parce qu’elle semble appeler `allOnes` sans aucun argument.  
+ <span data-ttu-id="39d49-110">L’instruction `allOnes(i) = 1` génère une erreur du compilateur parce qu’elle semble appeler `allOnes` avec un argument de type de données incorrect (un singleton `Integer` au lieu d’un `Integer` tableau).</span><span class="sxs-lookup"><span data-stu-id="39d49-110">The statement `allOnes(i) = 1` generates a compiler error because it appears to call `allOnes` with an argument of the wrong data type (a singleton `Integer` instead of an `Integer` array).</span></span> <span data-ttu-id="39d49-111">L’instruction `Return allOnes()` génère une erreur du compilateur parce qu’elle semble appeler `allOnes` sans argument.</span><span class="sxs-lookup"><span data-stu-id="39d49-111">The statement `Return allOnes()` generates a compiler error because it appears to call `allOnes` with no argument.</span></span>  
   
- **Approche correcte :** pour être en mesure de modifier les éléments d’un tableau qui doit être retourné, définir un tableau interne en tant que variable locale. L’exemple suivant compile sans erreur.  
+ <span data-ttu-id="39d49-112">**Approche correcte :** pour être en mesure de modifier les éléments d’un tableau qui doit être retourné, définir un tableau interne comme une variable locale.</span><span class="sxs-lookup"><span data-stu-id="39d49-112">**Correct Approach:** To be able to modify the elements of an array that is to be returned, define an internal array as a local variable.</span></span> <span data-ttu-id="39d49-113">L’exemple suivant compile sans erreur.</span><span class="sxs-lookup"><span data-stu-id="39d49-113">The following example compiles without error.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#66;](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#66](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
   
-## <a name="argument-not-being-modified-by-procedure-call"></a>Argument non modifié par un appel de procédure  
- Si vous souhaitez autoriser une procédure modifier un élément de programmation sous-jacent d’un argument dans le code appelant, vous devez le passer par référence. Mais une procédure peut accéder aux éléments d’un argument de type référence même si vous le passez par valeur.  
+## <a name="argument-not-being-modified-by-procedure-call"></a><span data-ttu-id="39d49-114">Argument non modifié par un appel de procédure</span><span class="sxs-lookup"><span data-stu-id="39d49-114">Argument Not Being Modified by Procedure Call</span></span>  
+ <span data-ttu-id="39d49-115">Si vous souhaitez autoriser une procédure modifier un élément de programmation sous-jacent d’un argument dans le code appelant, vous devez le passer par référence.</span><span class="sxs-lookup"><span data-stu-id="39d49-115">If you intend to allow a procedure to change a programming element underlying an argument in the calling code, you must pass it by reference.</span></span> <span data-ttu-id="39d49-116">Mais une procédure peut accéder aux éléments d’un argument de type référence même si vous le passez par valeur.</span><span class="sxs-lookup"><span data-stu-id="39d49-116">But a procedure can access the elements of a reference type argument even if you pass it by value.</span></span>  
   
--   **Sous-jacent Variable**. Pour permettre à la procédure de remplacer la valeur de l’élément variable sous-jacent lui-même, la procédure doit déclarer le paramètre [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). En outre, le code appelant ne doit pas mettre l’argument entre parenthèses, parce qui remplace le `ByRef` mécanisme de transmission.  
+-   <span data-ttu-id="39d49-117">**Sous-jacent Variable**.</span><span class="sxs-lookup"><span data-stu-id="39d49-117">**Underlying Variable**.</span></span> <span data-ttu-id="39d49-118">Pour autoriser la procédure pour remplacer la valeur de l’élément variable sous-jacent lui-même, la procédure doit déclarer le paramètre [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md).</span><span class="sxs-lookup"><span data-stu-id="39d49-118">To allow the procedure to replace the value of the underlying variable element itself, the procedure must declare the parameter [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md).</span></span> <span data-ttu-id="39d49-119">En outre, le code appelant ne devez pas placer l’argument entre parenthèses, car qui remplace le `ByRef` mécanisme de transmission.</span><span class="sxs-lookup"><span data-stu-id="39d49-119">Also, the calling code must not enclose the argument in parentheses, because that would override the `ByRef` passing mechanism.</span></span>  
   
--   **Référence des éléments de Type**. Si vous déclarez un paramètre [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md), la procédure ne peut pas modifier l’élément variable sous-jacent lui-même. Toutefois, si l’argument est un type référence, la procédure peut modifier les membres de l’objet sur lequel il pointe, même si elle ne peut pas remplacer la valeur de la variable. Par exemple, si l’argument est une variable tableau, la procédure ne peut pas affecter un nouveau tableau à elle, mais elle peut modifier un ou plusieurs de ses éléments. Les éléments modifiés sont réfléchis dans la variable tableau sous-jacente dans le code appelant.  
+-   <span data-ttu-id="39d49-120">**Référence des éléments de Type**.</span><span class="sxs-lookup"><span data-stu-id="39d49-120">**Reference Type Elements**.</span></span> <span data-ttu-id="39d49-121">Si vous déclarez un paramètre [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md), la procédure ne peut pas modifier l’élément variable sous-jacent lui-même.</span><span class="sxs-lookup"><span data-stu-id="39d49-121">If you declare a parameter [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md), the procedure cannot modify the underlying variable element itself.</span></span> <span data-ttu-id="39d49-122">Toutefois, si l’argument est un type référence, la procédure peut modifier les membres de l’objet sur lequel il pointe, même si elle ne peut pas remplacer la valeur de la variable.</span><span class="sxs-lookup"><span data-stu-id="39d49-122">However, if the argument is a reference type, the procedure can modify the members of the object to which it points, even though it cannot replace the variable's value.</span></span> <span data-ttu-id="39d49-123">Par exemple, si l’argument est une variable tableau, la procédure ne peut pas affecter un nouveau tableau à celui-ci, mais elle peut modifier un ou plusieurs de ses éléments.</span><span class="sxs-lookup"><span data-stu-id="39d49-123">For example, if the argument is an array variable, the procedure cannot assign a new array to it, but it can change one or more of its elements.</span></span> <span data-ttu-id="39d49-124">Les éléments modifiés sont répercutées dans la variable tableau sous-jacente dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="39d49-124">The changed elements are reflected in the underlying array variable in the calling code.</span></span>  
   
- L’exemple suivant définit deux procédures qui acceptent une variable tableau par valeur et opèrent sur ses éléments. Procédure `increase` ajoute simplement la valeur&1; à chaque élément. Procédure `replace` assigne un nouveau tableau au paramètre `a()` , puis l’ajoute à chaque élément. Cependant, la réassignation n’affecte pas la variable tableau sous-jacente dans le code appelant, car `a()` est déclarée `ByVal`.  
+ <span data-ttu-id="39d49-125">L’exemple suivant définit deux procédures qui acceptent une variable tableau par valeur et opèrent sur ses éléments.</span><span class="sxs-lookup"><span data-stu-id="39d49-125">The following example defines two procedures that take an array variable by value and operate on its elements.</span></span> <span data-ttu-id="39d49-126">Procédure `increase` ajoute simplement 1 à chaque élément.</span><span class="sxs-lookup"><span data-stu-id="39d49-126">Procedure `increase` simply adds one to each element.</span></span> <span data-ttu-id="39d49-127">Procédure `replace` assigne un nouveau tableau au paramètre `a()` , puis ajoute 1 à chaque élément.</span><span class="sxs-lookup"><span data-stu-id="39d49-127">Procedure `replace` assigns a new array to the parameter `a()` and then adds one to each element.</span></span> <span data-ttu-id="39d49-128">Toutefois, la réaffectation n’affecte pas la variable tableau sous-jacente dans le code appelant, car `a()` est déclaré `ByVal`.</span><span class="sxs-lookup"><span data-stu-id="39d49-128">However, the reassignment does not affect the underlying array variable in the calling code because `a()` is declared `ByVal`.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#35;](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
   
- [!code-vb[VbVbcnProcedures&#38;](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
+ [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
   
- L’exemple suivant effectue des appels à `increase` et `replace`.  
+ <span data-ttu-id="39d49-129">L’exemple suivant appelle `increase` et `replace`.</span><span class="sxs-lookup"><span data-stu-id="39d49-129">The following example makes calls to `increase` and `replace`.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#37;](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
   
- Le premier `MsgBox` appel affiche « après Increase (n) : 11, 21, 31, 41 ». Étant donné que `n` est un type référence, `increase` peut modifier ses membres, même s’il est passé `ByVal`.  
+ <span data-ttu-id="39d49-130">Le premier `MsgBox` appel affiche « après Increase (n) : 11, 21, 31, 41 ».</span><span class="sxs-lookup"><span data-stu-id="39d49-130">The first `MsgBox` call displays "After increase(n): 11, 21, 31, 41".</span></span> <span data-ttu-id="39d49-131">Étant donné que `n` est un type référence, `increase` peut modifier ses membres, même s’il est passé `ByVal`.</span><span class="sxs-lookup"><span data-stu-id="39d49-131">Because `n` is a reference type, `increase` can change its members, even though it is passed `ByVal`.</span></span>  
   
- La seconde `MsgBox` appel affiche « après Replace (n) : 11, 21, 31, 41 ». Étant donné que `n` est passée `ByVal`, `replace` ne peut pas modifier la variable `n` en lui assignant un nouveau tableau. Lors de la `replace` crée la nouvelle instance de tableau `k` et l’assigne à la variable locale `a`, il perd la référence à `n` passée par le code appelant. Lorsqu’il incrémente les membres de `a`, seul le tableau local `k` est affecté.  
+ <span data-ttu-id="39d49-132">La seconde `MsgBox` appel affiche « après Replace (n) : 11, 21, 31, 41 ».</span><span class="sxs-lookup"><span data-stu-id="39d49-132">The second `MsgBox` call displays "After replace(n): 11, 21, 31, 41".</span></span> <span data-ttu-id="39d49-133">Étant donné que `n` est passé `ByVal`, `replace` ne peut pas modifier la variable `n` en lui assignant un nouveau tableau.</span><span class="sxs-lookup"><span data-stu-id="39d49-133">Because `n` is passed `ByVal`, `replace` cannot modify the variable `n` by assigning a new array to it.</span></span> <span data-ttu-id="39d49-134">Lorsque `replace` crée la nouvelle instance de tableau `k` et l’assigne à la variable locale `a`, il perd la référence à `n` transmis par le code appelant.</span><span class="sxs-lookup"><span data-stu-id="39d49-134">When `replace` creates the new array instance `k` and assigns it to the local variable `a`, it loses the reference to `n` passed in by the calling code.</span></span> <span data-ttu-id="39d49-135">Lorsqu’il incrémente les membres de `a`, seul le tableau local `k` est affectée.</span><span class="sxs-lookup"><span data-stu-id="39d49-135">When it increments the members of `a`, only the local array `k` is affected.</span></span>  
   
- **Approche correcte :** pour être en mesure de modifier un élément de variable sous-jacent lui-même, passer par référence. L’exemple suivant montre la modification dans la déclaration de `replace` qui lui permet de remplacer un tableau par un autre dans le code appelant.  
+ <span data-ttu-id="39d49-136">**Approche correcte :** pour être en mesure de modifier un élément de variable sous-jacent lui-même, le passer par référence.</span><span class="sxs-lookup"><span data-stu-id="39d49-136">**Correct Approach:** To be able to modify an underlying variable element itself, pass it by reference.</span></span> <span data-ttu-id="39d49-137">L’exemple suivant montre la modification dans la déclaration de `replace` qui lui permet de remplacer un tableau avec un autre dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="39d49-137">The following example shows the change in the declaration of `replace` that allows it to replace one array with another in the calling code.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#64;](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
+ [!code-vb[VbVbcnProcedures#64](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
   
-## <a name="unable-to-define-an-overload"></a>Impossible de définir une surcharge  
- Si vous souhaitez définir une version surchargée d’une procédure, vous devez utiliser le même nom mais une signature différente. Si le compilateur ne peut pas différencier votre déclaration d’une surcharge avec la même signature, il génère une erreur.  
+## <a name="unable-to-define-an-overload"></a><span data-ttu-id="39d49-138">Impossible de définir une surcharge</span><span class="sxs-lookup"><span data-stu-id="39d49-138">Unable to Define an Overload</span></span>  
+ <span data-ttu-id="39d49-139">Si vous souhaitez définir une version surchargée d’une procédure, vous devez utiliser le même nom mais une signature différente.</span><span class="sxs-lookup"><span data-stu-id="39d49-139">If you want to define an overloaded version of a procedure, you must use the same name but a different signature.</span></span> <span data-ttu-id="39d49-140">Si le compilateur ne peut pas différencier votre déclaration d’une surcharge avec la même signature, il génère une erreur.</span><span class="sxs-lookup"><span data-stu-id="39d49-140">If the compiler cannot differentiate your declaration from an overload with the same signature, it generates an error.</span></span>  
   
- Le *signature* d’une procédure est déterminée par le nom de la procédure et la liste de paramètres. Chaque surcharge doit avoir le même nom que les autres surcharges, mais doit être différent de tous les dans au moins un des autres composants de la signature. Pour plus d’informations, consultez [surcharge de procédure](./procedure-overloading.md).  
+ <span data-ttu-id="39d49-141">Le *signature* d’une procédure est déterminée par le nom de la procédure et la liste de paramètres.</span><span class="sxs-lookup"><span data-stu-id="39d49-141">The *signature* of a procedure is determined by the procedure name and the parameter list.</span></span> <span data-ttu-id="39d49-142">Chaque surcharge doit avoir le même nom que toutes les autres surcharges, mais doit différer de toutes les dans au moins un des autres composants de la signature.</span><span class="sxs-lookup"><span data-stu-id="39d49-142">Each overload must have the same name as all the other overloads but must differ from all of them in at least one of the other components of the signature.</span></span> <span data-ttu-id="39d49-143">Pour plus d’informations, consultez [surcharge de procédure](./procedure-overloading.md).</span><span class="sxs-lookup"><span data-stu-id="39d49-143">For more information, see [Procedure Overloading](./procedure-overloading.md).</span></span>  
   
- Les éléments suivants, même si elles se rapportent à la liste de paramètres, ne sont pas des composants de la signature d’une procédure :  
+ <span data-ttu-id="39d49-144">Les éléments suivants, même si elles se rapportent à la liste de paramètres ne sont pas les composants de la signature d’une procédure :</span><span class="sxs-lookup"><span data-stu-id="39d49-144">The following items, even though they pertain to the parameter list, are not components of a procedure's signature:</span></span>  
   
--   Mots clés de modificateur de procédure, tel que `Public`, `Shared`, et`Static`  
+-   <span data-ttu-id="39d49-145">Mots clés de modificateur de procédure, tel que `Public`, `Shared`, et`Static`</span><span class="sxs-lookup"><span data-stu-id="39d49-145">Procedure modifier keywords, such as `Public`, `Shared`, and `Static`</span></span>  
   
--   Noms de paramètres  
+-   <span data-ttu-id="39d49-146">Noms de paramètres</span><span class="sxs-lookup"><span data-stu-id="39d49-146">Parameter names</span></span>  
   
--   Mots clés de modificateur de paramètre, tel que `ByRef` et`Optional`  
+-   <span data-ttu-id="39d49-147">Mots clés de modificateur de paramètre, telles que `ByRef` et`Optional`</span><span class="sxs-lookup"><span data-stu-id="39d49-147">Parameter modifier keywords, such as `ByRef` and `Optional`</span></span>  
   
--   Le type de données de la valeur de retour (à l’exception d’un opérateur de conversion)  
+-   <span data-ttu-id="39d49-148">Le type de données de la valeur de retour (à l’exception d’un opérateur de conversion)</span><span class="sxs-lookup"><span data-stu-id="39d49-148">The data type of the return value (except for a conversion operator)</span></span>  
   
- Vous ne pouvez pas surcharger une procédure en faisant varier uniquement un ou plusieurs des éléments précédents.  
+ <span data-ttu-id="39d49-149">Vous ne pouvez pas surcharger une procédure en faisant varier uniquement un ou plusieurs des éléments précédents.</span><span class="sxs-lookup"><span data-stu-id="39d49-149">You cannot overload a procedure by varying only one or more of the preceding items.</span></span>  
   
- **Approche correcte :** pour pouvoir définir une surcharge de procédure, vous devez varier la signature. Étant donné que vous devez utiliser le même nom, vous devez varier le nombre, l’ordre ou les types de données des paramètres. Dans une procédure générique, vous pouvez varier le nombre de paramètres de type. Un opérateur de conversion ([CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md)), vous pouvez modifier le type de retour.  
+ <span data-ttu-id="39d49-150">**Approche correcte :** pour pouvoir définir une surcharge de procédure, vous devez varier la signature.</span><span class="sxs-lookup"><span data-stu-id="39d49-150">**Correct Approach:** To be able to define a procedure overload, you must vary the signature.</span></span> <span data-ttu-id="39d49-151">Étant donné que vous devez utiliser le même nom, vous devez varier le nombre, l’ordre ou les types de données des paramètres.</span><span class="sxs-lookup"><span data-stu-id="39d49-151">Because you must use the same name, you must vary the number, order, or data types of the parameters.</span></span> <span data-ttu-id="39d49-152">Dans une procédure générique, vous pouvez varier le nombre de paramètres de type.</span><span class="sxs-lookup"><span data-stu-id="39d49-152">In a generic procedure, you can vary the number of type parameters.</span></span> <span data-ttu-id="39d49-153">Un opérateur de conversion ([CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md)), vous pouvez varier le type de retour.</span><span class="sxs-lookup"><span data-stu-id="39d49-153">In a conversion operator ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md)), you can vary the return type.</span></span>  
   
-### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>Surcharge de résolution en option et les Arguments ParamArray  
- Si vous surchargez une procédure avec un ou plusieurs [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) paramètres ou un [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) paramètre, vous devez éviter de dupliquer de la *surcharges implicites*. Pour plus d’informations, consultez [considérations dans les procédures](./considerations-in-overloading-procedures.md).  
+### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a><span data-ttu-id="39d49-154">Surcharge de résolution en option et les Arguments ParamArray</span><span class="sxs-lookup"><span data-stu-id="39d49-154">Overload Resolution with Optional and ParamArray Arguments</span></span>  
+ <span data-ttu-id="39d49-155">Si vous surchargez une procédure avec un ou plusieurs [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) paramètres ou un [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) paramètre, vous devez éviter de dupliquer de la *surcharges implicites*.</span><span class="sxs-lookup"><span data-stu-id="39d49-155">If you are overloading a procedure with one or more [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) parameters or a [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parameter, you must avoid duplicating any of the *implicit overloads*.</span></span> <span data-ttu-id="39d49-156">Pour plus d’informations, consultez [considérations relatives à la surcharge de procédures](./considerations-in-overloading-procedures.md).</span><span class="sxs-lookup"><span data-stu-id="39d49-156">For information, see [Considerations in Overloading Procedures](./considerations-in-overloading-procedures.md).</span></span>  
   
-## <a name="calling-a-wrong-version-of-an-overloaded-procedure"></a>Appel d’une Version incorrecte d’une procédure surchargée  
- Si une procédure dispose de plusieurs versions surchargées, vous devez être familiarisé avec toutes leurs listes de paramètres et comprendre comment [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] résout les appels parmi les surcharges. Dans le cas contraire, vous pouvez appeler une surcharge différent de celui prévu.  
+## <a name="calling-a-wrong-version-of-an-overloaded-procedure"></a><span data-ttu-id="39d49-157">Appel d’une Version incorrecte d’une procédure surchargée</span><span class="sxs-lookup"><span data-stu-id="39d49-157">Calling a Wrong Version of an Overloaded Procedure</span></span>  
+ <span data-ttu-id="39d49-158">Si une procédure possède plusieurs versions surchargées, vous devez être familiarisé avec toutes leurs listes de paramètres et comprendre comment [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] résout les appels parmi les surcharges.</span><span class="sxs-lookup"><span data-stu-id="39d49-158">If a procedure has several overloaded versions, you should be familiar with all their parameter lists and understand how [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] resolves calls among the overloads.</span></span> <span data-ttu-id="39d49-159">Dans le cas contraire, vous pouvez appeler une surcharge autre que celui prévu.</span><span class="sxs-lookup"><span data-stu-id="39d49-159">Otherwise you could call an overload other than the intended one.</span></span>  
   
- Lorsque vous avez identifié la surcharge à appeler, veillez à respecter les règles suivantes :  
+ <span data-ttu-id="39d49-160">Lorsque vous avez identifié la surcharge à appeler, veillez à respecter les règles suivantes :</span><span class="sxs-lookup"><span data-stu-id="39d49-160">When you have determined which overload you want to call, be careful to observe the following rules:</span></span>  
   
--   Fournissez le nombre correct d’arguments et dans l’ordre correct.  
+-   <span data-ttu-id="39d49-161">Fournissez le nombre correct d’arguments et dans le bon ordre.</span><span class="sxs-lookup"><span data-stu-id="39d49-161">Supply the correct number of arguments, and in the correct order.</span></span>  
   
--   Dans l’idéal, vos arguments doivent avoir les mêmes types de données exacts que les paramètres correspondants. Dans tous les cas, le type de données de chaque argument doit s’étendre à celui de son paramètre correspondant. Cela est vrai même avec la [Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md) la valeur `Off`. Si une surcharge requiert une conversion restrictive de votre liste d’arguments, cette surcharge n’est pas susceptible d’être appelée.  
+-   <span data-ttu-id="39d49-162">Dans l’idéal, vos arguments doivent avoir les mêmes types de données exacts que les paramètres correspondants.</span><span class="sxs-lookup"><span data-stu-id="39d49-162">Ideally, your arguments should have the exact same data types as the corresponding parameters.</span></span> <span data-ttu-id="39d49-163">Dans tous les cas, le type de données de chaque argument doit s’étendre à celui de son paramètre correspondant.</span><span class="sxs-lookup"><span data-stu-id="39d49-163">In any case, the data type of each argument must widen to that of its corresponding parameter.</span></span> <span data-ttu-id="39d49-164">Cela est vrai même avec le [Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md) la valeur `Off`.</span><span class="sxs-lookup"><span data-stu-id="39d49-164">This is true even with the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) set to `Off`.</span></span> <span data-ttu-id="39d49-165">Si une surcharge requiert une conversion restrictive à partir de votre liste d’arguments, cette surcharge n’est pas éligible pour être appelée.</span><span class="sxs-lookup"><span data-stu-id="39d49-165">If an overload requires any narrowing conversion from your argument list, that overload is not eligible to be called.</span></span>  
   
--   Si vous fournissez des arguments qui requièrent l’extension, vérifiez les types de données aussi proche que possible pour les types de données de paramètre correspondant. Si deux ou plusieurs surcharges acceptent vos types de données d’argument, le compilateur résout votre appel à la surcharge qui demande le moins importante.  
+-   <span data-ttu-id="39d49-166">Si vous fournissez des arguments qui requièrent l’extension, vérifiez les types de données aussi proche que possible pour les types de données de paramètre correspondant.</span><span class="sxs-lookup"><span data-stu-id="39d49-166">If you supply arguments that require widening, make their data types as close as possible to the corresponding parameter data types.</span></span> <span data-ttu-id="39d49-167">Si deux ou plusieurs surcharges acceptent vos types de données d’argument, le compilateur résout votre appel à la surcharge qui demande le moins importante.</span><span class="sxs-lookup"><span data-stu-id="39d49-167">If two or more overloads accept your argument data types, the compiler resolves your call to the overload that calls for the least amount of widening.</span></span>  
   
- Vous pouvez réduire les risques d’incompatibilité de type de données à l’aide de la [CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md) mot clé de conversion lors de la préparation de vos arguments.  
+ <span data-ttu-id="39d49-168">Vous pouvez réduire les risques d’incompatibilité de type de données à l’aide de la [CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md) mot clé de conversion lors de la préparation de vos arguments.</span><span class="sxs-lookup"><span data-stu-id="39d49-168">You can reduce the chance of data type mismatches by using the [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) conversion keyword when preparing your arguments.</span></span>  
   
-### <a name="overload-resolution-failure"></a>Échec de résolution de surcharge  
- Lorsque vous appelez une procédure surchargée, le compilateur tente de conserver une seule des surcharges. Si elle réussit, il résout l’appel à cette surcharge. S’il élimine toutes les surcharges, ou si elle ne peut pas réduire les surcharges admissibles à un seul candidat, il génère une erreur.  
+### <a name="overload-resolution-failure"></a><span data-ttu-id="39d49-169">Échec de résolution de surcharge</span><span class="sxs-lookup"><span data-stu-id="39d49-169">Overload Resolution Failure</span></span>  
+ <span data-ttu-id="39d49-170">Lorsque vous appelez une procédure surchargée, le compilateur tente de conserver une seule des surcharges.</span><span class="sxs-lookup"><span data-stu-id="39d49-170">When you call an overloaded procedure, the compiler attempts to eliminate all but one of the overloads.</span></span> <span data-ttu-id="39d49-171">Si elle réussit, il résout l’appel à cette surcharge.</span><span class="sxs-lookup"><span data-stu-id="39d49-171">If it succeeds, it resolves the call to that overload.</span></span> <span data-ttu-id="39d49-172">S’il élimine toutes les surcharges, ou si elle ne peut pas réduire les surcharges admissibles à un seul candidat, il génère une erreur.</span><span class="sxs-lookup"><span data-stu-id="39d49-172">If it eliminates all the overloads, or if it cannot reduce the eligible overloads to a single candidate, it generates an error.</span></span>  
   
- L’exemple suivant illustre le processus de résolution de surcharge.  
+ <span data-ttu-id="39d49-173">L’exemple suivant illustre le processus de résolution de surcharge.</span><span class="sxs-lookup"><span data-stu-id="39d49-173">The following example illustrates the overload resolution process.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#62;](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
+ [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
   
- [!code-vb[VbVbcnProcedures&#63;](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
+ [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
   
- Dans le premier appel, le compilateur élimine la première surcharge parce que le type du premier argument (`Short`) restreint au type du paramètre correspondant (`Byte`). Il élimine ensuite la troisième surcharge parce que chaque argument de type dans la deuxième surcharge (`Short` et `Single`) s’étend au type correspondant dans la troisième surcharge (`Integer` et `Single`). La deuxième surcharge requérant une extension moins importante, donc le compilateur utilise pour l’appel.  
+ <span data-ttu-id="39d49-174">Dans le premier appel, le compilateur élimine la première surcharge, car le type du premier argument (`Short`) restreint au type du paramètre correspondant (`Byte`).</span><span class="sxs-lookup"><span data-stu-id="39d49-174">In the first call, the compiler eliminates the first overload because the type of the first argument (`Short`) narrows to the type of the corresponding parameter (`Byte`).</span></span> <span data-ttu-id="39d49-175">Il élimine ensuite la troisième surcharge, car chaque argument de type dans la deuxième surcharge (`Short` et `Single`) s’étend au type correspondant dans la troisième surcharge (`Integer` et `Single`).</span><span class="sxs-lookup"><span data-stu-id="39d49-175">It then eliminates the third overload because each argument type in the second overload (`Short` and `Single`) widens to the corresponding type in the third overload (`Integer` and `Single`).</span></span> <span data-ttu-id="39d49-176">La deuxième surcharge requiert une extension moins importante, par conséquent, le compilateur l’utilise pour l’appel.</span><span class="sxs-lookup"><span data-stu-id="39d49-176">The second overload requires less widening, so the compiler uses it for the call.</span></span>  
   
- Dans le deuxième appel, le compilateur ne peut pas supprimer les surcharges en fonction restrictives. Il élimine la troisième surcharge pour la même raison que le premier appel, car il peut appeler la deuxième surcharge moyennant une extension moins importante des types d’arguments. Toutefois, le compilateur ne peut pas résoudre entre les premier et deuxième surcharges. Chacune possède un type de paramètre défini qui s’étend au type correspondant dans l’autre (`Byte` à `Short`, mais `Single` à `Double`). Par conséquent, le compilateur génère une erreur de résolution de surcharge.  
+ <span data-ttu-id="39d49-177">Dans le deuxième appel, le compilateur ne peut pas supprimer les surcharges en fonction des conversions restrictives lors.</span><span class="sxs-lookup"><span data-stu-id="39d49-177">In the second call, the compiler cannot eliminate any of the overloads on the basis of narrowing.</span></span> <span data-ttu-id="39d49-178">Il élimine la troisième surcharge pour la même raison que dans le premier appel, car elle peut appeler la deuxième surcharge avec une extension moins importante des types d’arguments.</span><span class="sxs-lookup"><span data-stu-id="39d49-178">It eliminates the third overload for the same reason as in the first call, because it can call the second overload with less widening of the argument types.</span></span> <span data-ttu-id="39d49-179">Toutefois, le compilateur ne peut pas résoudre entre les surcharges de la première et deuxième.</span><span class="sxs-lookup"><span data-stu-id="39d49-179">However, the compiler cannot resolve between the first and second overloads.</span></span> <span data-ttu-id="39d49-180">Chacune a un type de paramètre défini qui s’étend au type correspondant dans l’autre (`Byte` à `Short`, mais `Single` à `Double`).</span><span class="sxs-lookup"><span data-stu-id="39d49-180">Each has one defined parameter type that widens to the corresponding type in the other (`Byte` to `Short`, but `Single` to `Double`).</span></span> <span data-ttu-id="39d49-181">Par conséquent, le compilateur génère une erreur de résolution de surcharge.</span><span class="sxs-lookup"><span data-stu-id="39d49-181">The compiler therefore generates an overload resolution error.</span></span>  
   
- **Approche correcte :** pour être en mesure d’appeler une procédure surchargée sans ambiguïté, utilisez [CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md) pour faire correspondre les types de données d’argument pour les types de paramètres. L’exemple suivant montre un appel à `z` qui force la résolution sur la deuxième surcharge.  
+ <span data-ttu-id="39d49-182">**Approche correcte :** pour être en mesure d’appeler une procédure surchargée sans ambiguïté, utilisez [CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md) pour faire correspondre les types de données d’argument pour les types de paramètres.</span><span class="sxs-lookup"><span data-stu-id="39d49-182">**Correct Approach:** To be able to call an overloaded procedure without ambiguity, use [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) to match the argument data types to the parameter types.</span></span> <span data-ttu-id="39d49-183">L’exemple suivant montre un appel à `z` qui force la résolution sur la deuxième surcharge.</span><span class="sxs-lookup"><span data-stu-id="39d49-183">The following example shows a call to `z` that forces resolution to the second overload.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#65;](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
+ [!code-vb[VbVbcnProcedures#65](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
   
-### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>Surcharge de résolution en option et les Arguments ParamArray  
- Si deux surcharges d’une procédure ont des signatures identiques, mais que le dernier paramètre est déclaré [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) dans un et [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) dans l’autre, le compilateur résout un appel à cette procédure en fonction de la correspondance la plus proche. Pour plus d’informations, consultez [résolution de surcharge](./overload-resolution.md).  
+### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a><span data-ttu-id="39d49-184">Surcharge de résolution en option et les Arguments ParamArray</span><span class="sxs-lookup"><span data-stu-id="39d49-184">Overload Resolution with Optional and ParamArray Arguments</span></span>  
+ <span data-ttu-id="39d49-185">Si deux surcharges d’une procédure ont des signatures identiques, mais que le dernier paramètre est déclaré [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) dans un et [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) dans l’autre, le compilateur résout un appel à cette procédure en fonction de la correspondance la plus proche.</span><span class="sxs-lookup"><span data-stu-id="39d49-185">If two overloads of a procedure have identical signatures except that the last parameter is declared [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) in one and [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) in the other, the compiler resolves a call to that procedure according to the closest match.</span></span> <span data-ttu-id="39d49-186">Pour plus d’informations, consultez [résolution de surcharge](./overload-resolution.md).</span><span class="sxs-lookup"><span data-stu-id="39d49-186">For more information, see [Overload Resolution](./overload-resolution.md).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Procédures](./index.md)   
- [Procédures Sub](./sub-procedures.md)   
- [Procédures Function](./function-procedures.md)   
- [Procédures de propriété](./property-procedures.md)   
- [Procédures d’opérateur](./operator-procedures.md)   
- [Arguments et paramètres de procédure](./procedure-parameters-and-arguments.md)   
- [Surcharge de procédure](./procedure-overloading.md)   
- [Considérations sur les surcharges de procédures](./considerations-in-overloading-procedures.md)   
- [Résolution de surcharge](./overload-resolution.md)
+## <a name="see-also"></a><span data-ttu-id="39d49-187">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="39d49-187">See Also</span></span>  
+ [<span data-ttu-id="39d49-188">Procédures</span><span class="sxs-lookup"><span data-stu-id="39d49-188">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="39d49-189">Procédures Sub</span><span class="sxs-lookup"><span data-stu-id="39d49-189">Sub Procedures</span></span>](./sub-procedures.md)  
+ [<span data-ttu-id="39d49-190">Procédures Function</span><span class="sxs-lookup"><span data-stu-id="39d49-190">Function Procedures</span></span>](./function-procedures.md)  
+ [<span data-ttu-id="39d49-191">Procédures de propriété</span><span class="sxs-lookup"><span data-stu-id="39d49-191">Property Procedures</span></span>](./property-procedures.md)  
+ [<span data-ttu-id="39d49-192">Procédures d’opérateur</span><span class="sxs-lookup"><span data-stu-id="39d49-192">Operator Procedures</span></span>](./operator-procedures.md)  
+ [<span data-ttu-id="39d49-193">Paramètres et arguments d’une procédure</span><span class="sxs-lookup"><span data-stu-id="39d49-193">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="39d49-194">Surcharge de procédure</span><span class="sxs-lookup"><span data-stu-id="39d49-194">Procedure Overloading</span></span>](./procedure-overloading.md)  
+ [<span data-ttu-id="39d49-195">Considérations sur les surcharges de procédures</span><span class="sxs-lookup"><span data-stu-id="39d49-195">Considerations in Overloading Procedures</span></span>](./considerations-in-overloading-procedures.md)  
+ [<span data-ttu-id="39d49-196">Résolution de surcharge</span><span class="sxs-lookup"><span data-stu-id="39d49-196">Overload Resolution</span></span>](./overload-resolution.md)

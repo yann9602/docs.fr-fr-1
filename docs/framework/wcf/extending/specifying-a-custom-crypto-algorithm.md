@@ -1,32 +1,35 @@
 ---
-title: "Sp&#233;cification d&#39;un algorithme de chiffrement personnalis&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Spécification d'un algorithme de chiffrement personnalisé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 630457e4d1b30fe2a9439c3a41af5da92606c55a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Sp&#233;cification d&#39;un algorithme de chiffrement personnalis&#233;
-WCF vous permet de spécifier un algorithme de chiffrement personnalité pour le chiffrement des données ou le calcul de signatures numériques.  Voici les étapes qui permettent d'effectuer cette opération :  
+# <a name="specifying-a-custom-crypto-algorithm"></a><span data-ttu-id="3e7c1-102">Spécification d'un algorithme de chiffrement personnalisé</span><span class="sxs-lookup"><span data-stu-id="3e7c1-102">Specifying a Custom Crypto Algorithm</span></span>
+<span data-ttu-id="3e7c1-103">WCF vous permet de spécifier un algorithme de chiffrement personnalité pour le chiffrement des données ou le calcul de signatures numériques.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-103">WCF allows you to specify a custom crypto algorithm to use when encrypting data or computing digital signatures.</span></span> <span data-ttu-id="3e7c1-104">Voici les étapes qui permettent d'effectuer cette opération :</span><span class="sxs-lookup"><span data-stu-id="3e7c1-104">This is done by the following steps:</span></span>  
   
-1.  Dériver une classe de <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
+1.  <span data-ttu-id="3e7c1-105">Dériver une classe de <xref:System.ServiceModel.Security.SecurityAlgorithmSuite></span><span class="sxs-lookup"><span data-stu-id="3e7c1-105">Derive a class from <xref:System.ServiceModel.Security.SecurityAlgorithmSuite></span></span>  
   
-2.  Enregistrer l'algorithme  
+2.  <span data-ttu-id="3e7c1-106">Enregistrer l'algorithme</span><span class="sxs-lookup"><span data-stu-id="3e7c1-106">Register the algorithm</span></span>  
   
-3.  Configurez la liaison avec la classe dérivée <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.  
+3.  <span data-ttu-id="3e7c1-107">Configurez la liaison avec la classe dérivée <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-107">Configure the binding with the <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-derived class.</span></span>  
   
-## Dériver une classe de SecurityAlgorithmSuite  
- La classe <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> est une classe de base abstraite qui vous permet de spécifier l'algorithme à utiliser pour plusieurs opérations liées à la sécurité.  Par exemple, calculer un hachage pour une signature numérique ou chiffrer un message.  Le code suivant montre comment dériver une classe à partir de <xref:System.ServiceModel.Security.SecurityAlgorithm> :  
+## <a name="derive-a-class-from-securityalgorithmsuite"></a><span data-ttu-id="3e7c1-108">Dériver une classe de SecurityAlgorithmSuite</span><span class="sxs-lookup"><span data-stu-id="3e7c1-108">Derive a class from SecurityAlgorithmSuite</span></span>  
+ <span data-ttu-id="3e7c1-109">La classe <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> est une classe de base abstraite qui vous permet de spécifier l'algorithme à utiliser pour plusieurs opérations liées à la sécurité.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-109">The <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> is an abstract base class that allows you to specify the algorithm to use when performing various security related operations.</span></span> <span data-ttu-id="3e7c1-110">Par exemple, calculer un hachage pour une signature numérique ou chiffrer un message.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-110">For example, computing a hash for a digital signature or encrypting a message.</span></span> <span data-ttu-id="3e7c1-111">Le code suivant montre comment dériver une classe à partir de <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> :</span><span class="sxs-lookup"><span data-stu-id="3e7c1-111">The following code shows how to derive a class from <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:</span></span>  
   
 ```csharp  
 public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite  
@@ -91,11 +94,10 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
             return length >= 128 && length <= 256;  
         }  
     }  
-  
 ```  
   
-## Enregistrer l'algorithme personnalisé  
- L'enregistrement peut être effectué dans un fichier de configuration ou en code impératif.  L'enregistrement d'un algorithme personnalisé s'effectue en créant un mappage entre une classe qui implémente un fournisseur de service de chiffrement et un alias.  L'alias est ensuite mappé sur un URI qui est utilisé pour spécifier l'algorithme dans la liaison du service WCF.  L'extrait de configuration suivant illustre la méthode d'enregistrement d'un algorithme personnalisé :  
+## <a name="register-the-custom-algorithm"></a><span data-ttu-id="3e7c1-112">Enregistrer l'algorithme personnalisé</span><span class="sxs-lookup"><span data-stu-id="3e7c1-112">Register the Custom Algorithm</span></span>  
+ <span data-ttu-id="3e7c1-113">L'enregistrement peut être effectué dans un fichier de configuration ou en code impératif.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-113">Registration can be done in a configuration file or in imperative code.</span></span> <span data-ttu-id="3e7c1-114">L'enregistrement d'un algorithme personnalisé s'effectue en créant un mappage entre une classe qui implémente un fournisseur de service de chiffrement et un alias.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-114">Registering a custom algorithm is done by creating a mapping between a class that implements a crypto service provider and an alias.</span></span> <span data-ttu-id="3e7c1-115">L'alias est ensuite mappé sur un URI qui est utilisé pour spécifier l'algorithme dans la liaison du service WCF.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-115">The alias is then mapped to a URI which is used when specifying the algorithm in the WCF service’s binding.</span></span> <span data-ttu-id="3e7c1-116">L'extrait de configuration suivant illustre la méthode d'enregistrement d'un algorithme personnalisé :</span><span class="sxs-lookup"><span data-stu-id="3e7c1-116">The following configuration snippet illustrates how to register a custom algorithm in config:</span></span>  
   
 ```xml  
 <configuration>  
@@ -111,33 +113,30 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
         </cryptographySettings>  
     </mscorlib>  
 </configuration>  
-  
 ```  
   
- La section sous l'élément \<`cryptoClasses`\> crée le mappage entre SHA256CryptoServiceProvider et l'alias « SHA256CSP ».  L'élément \<[nameEntry](assetId:///nameEntry?qualifyHint=False&amp;autoUpgrade=True)\> crée le mappage entre l'alias « SHA256CSP »  et l'URL spécifiée \(http:\/\/constoso.com\/CustomAlgorithms\/CustomHashAlgorithm\).  
+ <span data-ttu-id="3e7c1-117">La section sous le <`cryptoClasses`> élément crée le mappage entre le SHA256CryptoServiceProvider et l’alias « SHA256CSP ».</span><span class="sxs-lookup"><span data-stu-id="3e7c1-117">The section under the <`cryptoClasses`> element creates the mapping between the SHA256CryptoServiceProvider and the alias "SHA256CSP".</span></span> <span data-ttu-id="3e7c1-118">Le <`nameEntry`> élément crée le mappage entre l’alias « SHA256CSP » et l’URL spécifiée (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm).</span><span class="sxs-lookup"><span data-stu-id="3e7c1-118">The <`nameEntry`> element creates the mapping between the "SHA256CSP" alias and the specified URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm ).</span></span>  
   
- Pour enregistrer l'algorithme personnalisé en code, utilisez la méthode [M:System.Security.Cryptography.CryptoConfig.AddAlgorithm\(System.Type, System.String\<xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm%2A> System.String[])?qualifyHint=False&autoUpgrade=True.  Cette méthode crée ces deux mappages.  L'exemple suivant illustre l'appel de cette méthode :  
+ <span data-ttu-id="3e7c1-119">Pour enregistrer l’algorithme personnalisé dans le code, utilisez le <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm%2A> System.String[])?qualifyHint=False & mise à niveau automatique = True (méthode).</span><span class="sxs-lookup"><span data-stu-id="3e7c1-119">To register the custom algorithm in code use the <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm%2A> System.String[])?qualifyHint=False&autoUpgrade=True method.</span></span> <span data-ttu-id="3e7c1-120">Cette méthode crée ces deux mappages.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-120">This method creates both mappings.</span></span> <span data-ttu-id="3e7c1-121">L'exemple suivant illustre l'appel de cette méthode :</span><span class="sxs-lookup"><span data-stu-id="3e7c1-121">The following example shows how to call this method:</span></span>  
   
 ```  
 // Register the custom URI string defined for the hashAlgorithm in MyCustomAlgorithmSuite class to create the   
 // SHA256CryptoServiceProvider hash algorithm object.  
 CryptoConfig.AddAlgorithm(typeof(SHA256CryptoServiceProvider), "http://constoso.com/CustomAlgorithms/CustomHashAlgorithm");  
-  
 ```  
   
-## Configurer la liaison  
- Vous pouvez configurer la liaison en spécifiant la classe personnalisée dérivée de <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> dans les paramètres de liaison, comme indiqué dans l'extrait de code suivant :  
+## <a name="configure-the-binding"></a><span data-ttu-id="3e7c1-122">Configurer la liaison</span><span class="sxs-lookup"><span data-stu-id="3e7c1-122">Configure the Binding</span></span>  
+ <span data-ttu-id="3e7c1-123">Vous pouvez configurer la liaison en spécifiant la classe personnalisée dérivée de <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> dans les paramètres de liaison, comme indiqué dans l'extrait de code suivant :</span><span class="sxs-lookup"><span data-stu-id="3e7c1-123">You configure the binding by specifying the custom <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-derived class in the binding settings as shown in the following code snippet:</span></span>  
   
 ```csharp  
 WSHttpBinding binding = new WSHttpBinding();  
             binding.Security.Message.AlgorithmSuite = new MyCustomAlgorithmSuite();  
-  
 ```  
   
- Pour obtenir un exemple de code complet, consultez l'exemple [Agilité de chiffrement dans sécurité WCF](../../../../docs/framework/wcf/samples/cryptographic-agility-in-wcf-security.md).  
+ <span data-ttu-id="3e7c1-124">Pour obtenir un exemple de code complet, consultez la [agilité de chiffrement dans sécurité WCF](../../../../docs/framework/wcf/samples/cryptographic-agility-in-wcf-security.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="3e7c1-124">For a complete code example, see the [Cryptographic Agility in WCF Security](../../../../docs/framework/wcf/samples/cryptographic-agility-in-wcf-security.md) sample.</span></span>  
   
-## Voir aussi  
- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Sécurisation de services](../../../../docs/framework/wcf/securing-services.md)   
- [Vue d'ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
+## <a name="see-also"></a><span data-ttu-id="3e7c1-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3e7c1-125">See Also</span></span>  
+ [<span data-ttu-id="3e7c1-126">Sécurisation des Services et Clients</span><span class="sxs-lookup"><span data-stu-id="3e7c1-126">Securing Services and Clients</span></span>](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="3e7c1-127">Sécurisation de services</span><span class="sxs-lookup"><span data-stu-id="3e7c1-127">Securing Services</span></span>](../../../../docs/framework/wcf/securing-services.md)  
+ [<span data-ttu-id="3e7c1-128">Vue d’ensemble de la sécurité</span><span class="sxs-lookup"><span data-stu-id="3e7c1-128">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [<span data-ttu-id="3e7c1-129">Concepts de sécurité</span><span class="sxs-lookup"><span data-stu-id="3e7c1-129">Security Concepts</span></span>](../../../../docs/framework/wcf/feature-details/security-concepts.md)

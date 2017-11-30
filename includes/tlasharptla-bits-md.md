@@ -1,1 +1,1 @@
-Service de transfert intelligent en arrière-plan (BITS) Microsoft
+<span data-ttu-id="32c0b-101">Service de transfert intelligent en arrière-plan (BITS) Microsoft</span><span class="sxs-lookup"><span data-stu-id="32c0b-101">Microsoft Background Intelligent Transfer Service (BITS)</span></span>

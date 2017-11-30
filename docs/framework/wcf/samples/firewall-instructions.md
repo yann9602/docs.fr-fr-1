@@ -1,100 +1,100 @@
 ---
-title: "Instructions sur les pare-feu | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: Instructions sur les pare-feu
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-caps.latest.revision: 32
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 32
+caps.latest.revision: "32"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0aac3a161b0482bad1a32f5223d2031402a632cc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Instructions sur les pare-feu
-Pour que les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fonctionnent, vous devez activer plusieurs ports ou programmes dans le pare\-feu.Un grand nombre d'exemples communique en utilisant des ports contenus dans la plage 8000\-8003, ainsi que le port 9000.Le pare\-feu est activé par défaut et empêche l'accès à ces ports.Pour activer le pare\-feu pour les exemples, exécutez l'une des procédures suivantes, selon vos besoins et votre environnement de sécurité :  
+# <a name="firewall-instructions"></a><span data-ttu-id="3d320-102">Instructions sur les pare-feu</span><span class="sxs-lookup"><span data-stu-id="3d320-102">Firewall Instructions</span></span>
+<span data-ttu-id="3d320-103">Pour que les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fonctionnent, vous devez activer plusieurs ports ou programmes dans le pare-feu.</span><span class="sxs-lookup"><span data-stu-id="3d320-103">You must enable several ports or programs in the firewall so that the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples can function.</span></span> <span data-ttu-id="3d320-104">Un grand nombre d'exemples communique en utilisant des ports contenus dans la plage 8000-8003, ainsi que le port 9000.</span><span class="sxs-lookup"><span data-stu-id="3d320-104">Many of the samples communicate by using ports in the range 8000-8003, and port 9000.</span></span> <span data-ttu-id="3d320-105">Le pare-feu est activé par défaut et empêche l'accès à ces ports.</span><span class="sxs-lookup"><span data-stu-id="3d320-105">The firewall is turned on by default and prevents access to these ports.</span></span> <span data-ttu-id="3d320-106">Pour activer le pare-feu pour les exemples, exécutez l'une des procédures suivantes, selon vos besoins et votre environnement de sécurité :</span><span class="sxs-lookup"><span data-stu-id="3d320-106">To enable the firewall for the samples, complete one of the following procedures, depending on your requirements and security environment:</span></span>  
   
--   Option 1: Activation interactive des exemples en cours d'exécution.N'apportez aucune modification à l'avance à votre configuration de pare\-feu et lancez la création et l'exécution des exemples.Lorsqu'un exemple est exécuté, une boîte de dialogue **Alerte de sécurité Windows** apparaît.L'exemple de programme en question peut ensuite être ajouté interactivement à une liste non bloquée.Dans le cadre de cette procédure, vous devrez peut\-être redémarrer l'exemple.  
+-   <span data-ttu-id="3d320-107">Option 1: Activation interactive des exemples en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="3d320-107">Option 1: Interactively enable samples while running.</span></span> <span data-ttu-id="3d320-108">N'apportez aucune modification à l'avance à votre configuration de pare-feu et lancez la création et l'exécution des exemples.</span><span class="sxs-lookup"><span data-stu-id="3d320-108">Make no advance changes to your firewall configuration and proceed to start building and running the samples.</span></span> <span data-ttu-id="3d320-109">Lorsqu’un exemple est exécuté, un **alerte de sécurité Windows** boîte de dialogue s’affiche.</span><span class="sxs-lookup"><span data-stu-id="3d320-109">When a sample is run, a **Windows Security Alert** dialog box appears.</span></span> <span data-ttu-id="3d320-110">L'exemple de programme en question peut ensuite être ajouté interactivement à une liste non bloquée.</span><span class="sxs-lookup"><span data-stu-id="3d320-110">The sample program in question can then be added interactively to an unblocked list.</span></span> <span data-ttu-id="3d320-111">Dans le cadre de cette procédure, vous devrez peut-être redémarrer l'exemple.</span><span class="sxs-lookup"><span data-stu-id="3d320-111">With this procedure, you may have to then restart the sample.</span></span>  
   
--   Option 2: Activation des exemples de programmes à l'avance.Démarrez l'applet **Pare\-feu Windows \- Panneau de configuration** et activez les exemples de programmes que vous projetez d'exécuter.Vous devez générer en premier les programmes afin que les fichiers exécutables existent.Vous trouverez des instructions plus détaillées dans la procédure suivante.  
+-   <span data-ttu-id="3d320-112">Option 2: Activation des exemples de programmes à l'avance.</span><span class="sxs-lookup"><span data-stu-id="3d320-112">Option 2: Enable sample programs in advance.</span></span> <span data-ttu-id="3d320-113">Démarrer le **le panneau de configuration pare-feu Windows** applet et activer les exemples de programmes que vous projetez d’exécuter.</span><span class="sxs-lookup"><span data-stu-id="3d320-113">Start the **Windows Firewall Control Panel** applet and enable the sample programs you plan to run.</span></span> <span data-ttu-id="3d320-114">Vous devez générer en premier les programmes afin que les fichiers exécutables existent.</span><span class="sxs-lookup"><span data-stu-id="3d320-114">You must build the programs first so the executable files exist.</span></span> <span data-ttu-id="3d320-115">Vous trouverez des instructions plus détaillées dans la procédure suivante.</span><span class="sxs-lookup"><span data-stu-id="3d320-115">You can find more detailed instructions in the following procedure.</span></span>  
   
--   Option 3: Activation d'une plage de ports à l'avance.Lancez l'applet **Pare\-feu Windows** **Panneau de configuration** et activez les ports 80, 443, 8000\-8003 et 9000 \(ports utilisés par les exemples\).Vous trouverez des instructions plus détaillées dans la procédure suivante.Cette option est moins sécurisée que les autres, car elle permet à tout programme d'utiliser ces ports, et non aux exemples uniquement.  
+-   <span data-ttu-id="3d320-116">Option 3: Activation d'une plage de ports à l'avance.</span><span class="sxs-lookup"><span data-stu-id="3d320-116">Option 3: Enable a port range in advance.</span></span> <span data-ttu-id="3d320-117">Démarrer le **pare-feu Windows** **le panneau de configuration** applet et activez les ports 80, 443, 8000-8003 et 9000, qui sont utilisées dans les exemples.</span><span class="sxs-lookup"><span data-stu-id="3d320-117">Start the **Windows Firewall** **Control Panel** applet and enable ports 80, 443, 8000-8003 and 9000, which are used by the samples.</span></span> <span data-ttu-id="3d320-118">Vous trouverez des instructions plus détaillées dans la procédure suivante.</span><span class="sxs-lookup"><span data-stu-id="3d320-118">You can find more detailed instructions in the following procedure.</span></span> <span data-ttu-id="3d320-119">Cette option est moins sécurisée que les autres, car elle permet à tout programme d'utiliser ces ports, et non aux exemples uniquement.</span><span class="sxs-lookup"><span data-stu-id="3d320-119">This option is less secure than the others because it allows any program to use these ports, not just the samples.</span></span>  
   
- Si vous ne savez pas quelle procédure utiliser, choisissez la première option.Si vous utilisez le pare\-feu d'un autre fournisseur, vous devrez peut\-être apporter des modifications semblables.  
+ <span data-ttu-id="3d320-120">Si vous ne savez pas quelle procédure utiliser, choisissez la première option.</span><span class="sxs-lookup"><span data-stu-id="3d320-120">If you are unsure of which procedure to use, choose the first option.</span></span> <span data-ttu-id="3d320-121">Si vous utilisez le pare-feu d'un autre fournisseur, vous devrez peut-être apporter des modifications semblables.</span><span class="sxs-lookup"><span data-stu-id="3d320-121">If you are running a firewall from another vendor, you might need to make similar changes.</span></span>  
   
 > [!IMPORTANT]
->  La modification de votre configuration de pare\-feu affecte votre sécurité.Il est recommandé d'enregistrer les modifications apportées et de les supprimer lorsque vous n'utilisez plus les exemples.  
+>  <span data-ttu-id="3d320-122">La modification de votre configuration de pare-feu affecte votre sécurité.</span><span class="sxs-lookup"><span data-stu-id="3d320-122">Changing your firewall configuration affects your security.</span></span> <span data-ttu-id="3d320-123">Il est recommandé d'enregistrer les modifications apportées et de les supprimer lorsque vous n'utilisez plus les exemples.</span><span class="sxs-lookup"><span data-stu-id="3d320-123">It is recommended that you record the changes you make and remove them when you are finished working with the samples.</span></span>  
   
-### Pour activer à l'avance les programmes d'exemples  
+### <a name="to-enable-samples-programs-in-advance"></a><span data-ttu-id="3d320-124">Pour activer à l'avance les programmes d'exemples</span><span class="sxs-lookup"><span data-stu-id="3d320-124">To enable samples programs in advance</span></span>  
   
-1.  Créez un exemple.  
+1.  <span data-ttu-id="3d320-125">Créez un exemple.</span><span class="sxs-lookup"><span data-stu-id="3d320-125">Build the sample.</span></span>  
   
-2.  Cliquez sur **Démarrer**, sur **Exécuter** et tapez `firewall.cpl`.Cela permet d'ouvrir l'applet **Pare\-feu Windows \- Panneau de configuration**.  
+2.  <span data-ttu-id="3d320-126">Cliquez sur **Démarrer**, cliquez sur **exécuter**et le type `firewall.cpl`.</span><span class="sxs-lookup"><span data-stu-id="3d320-126">Click **Start**, click **Run**, and type `firewall.cpl`.</span></span> <span data-ttu-id="3d320-127">Cette opération ouvre le **le panneau de configuration pare-feu Windows** applet.</span><span class="sxs-lookup"><span data-stu-id="3d320-127">This opens the **Windows Firewall Control Panel** applet.</span></span>  
   
     > [!NOTE]
-    >  Pour exécuter des exemples qui requièrent la capacité de communiquer via le Pare\-feu Windows, vous devez disposer des autorisations nécessaires pour modifier les paramètres du Pare\-feu Windows.Si certains paramètres du pare\-feu ne sont pas disponibles et que votre ordinateur est connecté à un domaine, il est possible que votre administrateur système contrôle ces paramètres au moyen d'une stratégie de groupe.  
+    >  <span data-ttu-id="3d320-128">Pour exécuter des exemples qui requièrent la capacité de communiquer via le Pare-feu Windows, vous devez disposer des autorisations nécessaires pour modifier les paramètres du Pare-feu Windows.</span><span class="sxs-lookup"><span data-stu-id="3d320-128">You must have permission to change the Firewall settings to run samples that require the ability to communicate through the Windows Firewall.</span></span> <span data-ttu-id="3d320-129">Si certains paramètres du pare-feu ne sont pas disponibles et que votre ordinateur est connecté à un domaine, il est possible que votre administrateur système contrôle ces paramètres au moyen d'une stratégie de groupe.</span><span class="sxs-lookup"><span data-stu-id="3d320-129">If some firewall settings are unavailable and your computer is connected to a domain, your system administrator might be controlling these settings through Group Policy.</span></span>  
   
-3.  Effectuez l'une des étapes suivantes, selon votre système d'exploitation, pour autoriser un programme via le Pare\-feu Windows :  
+3.  <span data-ttu-id="3d320-130">Effectuez l'une des étapes suivantes, selon votre système d'exploitation, pour autoriser un programme via le Pare-feu Windows :</span><span class="sxs-lookup"><span data-stu-id="3d320-130">Complete one of the following operating specific steps to allow a program through the Windows Firewall:</span></span>  
   
-    -   Sur Windows 7 ou Windows Server 2008 R2, cliquez sur **Autoriser un programme ou une fonctionnalité via le Pare\-feu Windows**.Cliquez sur **Modifier les paramètres**, puis sur **Autoriser un autre programme**.  
+    -   <span data-ttu-id="3d320-131">Dans Windows 7 ou Windows Server 2008 r2, cliquez sur **autoriser un programme ou une fonctionnalité via le pare-feu Windows**.</span><span class="sxs-lookup"><span data-stu-id="3d320-131">On Windows 7 or Windows Server 2008 r2, click **Allow a program or feature through Windows Firewall**.</span></span> <span data-ttu-id="3d320-132">Cliquez sur **modifier les paramètres**, autoriser **un autre programme en cours...** .</span><span class="sxs-lookup"><span data-stu-id="3d320-132">Click **Change Settings**, Allow **Another Program…**.</span></span>  
   
-    -   Sur [!INCLUDE[wv](../../../../includes/wv-md.md)] ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], cliquez sur **Autoriser un programme via le Pare\-feu Windows**.  
+    -   <span data-ttu-id="3d320-133">Sur [!INCLUDE[wv](../../../../includes/wv-md.md)] ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], cliquez sur **autoriser un programme via le pare-feu Windows**.</span><span class="sxs-lookup"><span data-stu-id="3d320-133">On [!INCLUDE[wv](../../../../includes/wv-md.md)] or [!INCLUDE[lserver](../../../../includes/lserver-md.md)], click **Allow a program through Windows Firewall**.</span></span>  
   
-4.  Cliquez sur **Ajouter un programme** dans l'onglet **Exceptions**.  
+4.  <span data-ttu-id="3d320-134">Sur le **Exceptions** , cliquez sur **ajouter un programme**.</span><span class="sxs-lookup"><span data-stu-id="3d320-134">On the **Exceptions** tab, click **Add Program**.</span></span>  
   
-5.  Cliquez sur le bouton **Parcourir** et sélectionnez le fichier exécutable de l'exemple que vous projetez d'exécuter.  
+5.  <span data-ttu-id="3d320-135">Cliquez sur le **Parcourir** bouton et sélectionnez le fichier exécutable de l’exemple que vous projetez d’exécuter.</span><span class="sxs-lookup"><span data-stu-id="3d320-135">Click the **Browse** button and select the executable file of the sample you plan to run.</span></span>  
   
-6.  Répétez des étapes 4 et 5 jusqu'à ce que vous ayez ajouté les fichiers exécutables de tous les exemples que vous souhaitez exécuter.  
+6.  <span data-ttu-id="3d320-136">Répétez les étapes 4 et 5 jusqu'à ce que vous avez ajouté les fichiers exécutables de tous les exemples que vous projetez d’exécuter.</span><span class="sxs-lookup"><span data-stu-id="3d320-136">Repeat steps 4 and 5 until you have added the executable files of all the samples you plan to run.</span></span>  
   
-7.  Cliquez sur **OK** pour fermer l'applet de pare\-feu.  
+7.  <span data-ttu-id="3d320-137">Cliquez sur **OK** pour fermer l’applet de pare-feu.</span><span class="sxs-lookup"><span data-stu-id="3d320-137">Click **OK** to close the firewall applet.</span></span>  
   
-### Pour activer une plage de ports à l'avance  
+### <a name="to-enable-a-port-range-in-advance"></a><span data-ttu-id="3d320-138">Pour activer une plage de ports à l'avance</span><span class="sxs-lookup"><span data-stu-id="3d320-138">To enable a port range in advance</span></span>  
   
-1.  Cliquez sur **Démarrer**, sur **Exécuter** et tapez `firewall.cpl`.Cela permet d'ouvrir l'applet **Pare\-feu Windows \- Panneau de configuration**.  
+1.  <span data-ttu-id="3d320-139">Cliquez sur **Démarrer**, cliquez sur **exécuter**et le type `firewall.cpl`.</span><span class="sxs-lookup"><span data-stu-id="3d320-139">Click **Start**, click **Run**, and type `firewall.cpl`.</span></span> <span data-ttu-id="3d320-140">Cette opération ouvre le **le panneau de configuration pare-feu Windows** applet.</span><span class="sxs-lookup"><span data-stu-id="3d320-140">This opens the **Windows Firewall Control Panel** applet.</span></span>  
   
-2.  Sur Windows 7 ou Windows Server 2008 R2, procédez comme suit.  
+2.  <span data-ttu-id="3d320-141">Sur Windows 7 ou Windows Server 2008 R2, procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="3d320-141">On Windows 7 or Windows Server 2008 R2, follow these steps.</span></span>  
   
-    1.  Cliquez sur **Paramètres avancés** dans la colonne de gauche de la fenêtre Pare\-feu Windows.  
+    1.  <span data-ttu-id="3d320-142">Cliquez sur **paramètres avancés** dans la colonne de gauche de la fenêtre Pare-feu Windows.</span><span class="sxs-lookup"><span data-stu-id="3d320-142">Click **Advanced settings** in the left column of the Windows Firewall window.</span></span>  
   
-    2.  Cliquez sur **Règles de trafic entrant** dans la colonne de gauche.  
+    2.  <span data-ttu-id="3d320-143">Cliquez sur **règles de trafic entrant** dans la colonne de gauche.</span><span class="sxs-lookup"><span data-stu-id="3d320-143">Click **Inbound Rules** in the left column.</span></span>  
   
-    3.  Cliquez sur **Nouvelle règle** dans la colonne de droite.  
+    3.  <span data-ttu-id="3d320-144">Cliquez sur **nouvelles règles** dans la colonne de droite.</span><span class="sxs-lookup"><span data-stu-id="3d320-144">Click **New Rules** in the right column.</span></span>  
   
-    4.  Sélectionnez **Port** et cliquez sur **Suivant**.  
+    4.  <span data-ttu-id="3d320-145">Sélectionnez **Port** et cliquez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="3d320-145">Select **Port** and click **next**.</span></span>  
   
-    5.  Sélectionnez **TCP** et entrez `8000, 8001, 8002, 8003, 9000, 80, 443` dans le champ **Ports locaux spécifiques**.  
+    5.  <span data-ttu-id="3d320-146">Sélectionnez **TCP** et entrez `8000, 8001, 8002, 8003, 9000, 80, 443` dans les **ports locaux spécifiques** champ.</span><span class="sxs-lookup"><span data-stu-id="3d320-146">Select **TCP** and enter `8000, 8001, 8002, 8003, 9000, 80, 443` in the **Specific local ports** field.</span></span>  
   
-    6.  Cliquez sur **Suivant**.  
+    6.  <span data-ttu-id="3d320-147">Cliquez sur **Suivant**.</span><span class="sxs-lookup"><span data-stu-id="3d320-147">Click **Next**.</span></span>  
   
-    7.  Sélectionnez **Autoriser la connexion** et cliquez sur **Suivant**.  
+    7.  <span data-ttu-id="3d320-148">Sélectionnez **autoriser la connexion**, puis cliquez sur **suivant** .</span><span class="sxs-lookup"><span data-stu-id="3d320-148">Select **Allow the connection**, and click **Next** .</span></span>  
   
-    8.  Sélectionnez **Domaine** et **Privé**, pus cliquez sur **Suivant**.  
+    8.  <span data-ttu-id="3d320-149">Sélectionnez **domaine** et **privé**, puis cliquez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="3d320-149">Select **Domain** and **Private**, and click **Next**.</span></span>  
   
-    9. Nommez cette règle `WCF-WF 4.0 Samples` et cliquez sur **Terminer**.  
+    9. <span data-ttu-id="3d320-150">Nommez cette règle `WCF-WF 4.0 Samples`, puis cliquez sur **Terminer**.</span><span class="sxs-lookup"><span data-stu-id="3d320-150">Name this rule `WCF-WF 4.0 Samples`, and click **Finish**.</span></span>  
   
-    10. Cliquez sur **Règles de trafic sortant** et répétez les étapes c à h.  
+    10. <span data-ttu-id="3d320-151">Cliquez sur **règles de trafic sortant** et répétez les étapes c à h.</span><span class="sxs-lookup"><span data-stu-id="3d320-151">Click **Outbound Rules** and repeat steps c to h.</span></span>  
   
-3.  Sur [!INCLUDE[wv](../../../../includes/wv-md.md)] ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], procédez comme suit.  
+3.  <span data-ttu-id="3d320-152">Sur [!INCLUDE[wv](../../../../includes/wv-md.md)] ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], procédez comme suit.</span><span class="sxs-lookup"><span data-stu-id="3d320-152">On [!INCLUDE[wv](../../../../includes/wv-md.md)] or [!INCLUDE[lserver](../../../../includes/lserver-md.md)], follow these steps.</span></span>  
   
-    1.  Cliquez sur **Autoriser un programme via le Pare\-feu Windows**.  
+    1.  <span data-ttu-id="3d320-153">Cliquez sur **autoriser un programme via le pare-feu Windows**.</span><span class="sxs-lookup"><span data-stu-id="3d320-153">Click **Allow a program through Windows Firewall**.</span></span>  
   
-    2.  Cliquez sur **Ajouter un port** dans l'onglet **Exceptions**.  
+    2.  <span data-ttu-id="3d320-154">Sur le **Exceptions** , cliquez sur **ajouter un Port**.</span><span class="sxs-lookup"><span data-stu-id="3d320-154">On the **Exceptions** tab, click **Add Port**.</span></span>  
   
-    3.  Entrez un nom et le numéro de port 8000, puis sélectionnez l'option **TCP**.  
+    3.  <span data-ttu-id="3d320-155">Entrez un nom, entrez le numéro de port 8000, puis sélectionnez le **TCP** option.</span><span class="sxs-lookup"><span data-stu-id="3d320-155">Enter a name, enter 8000 as the port number, and select the **TCP** option.</span></span>  
   
-    4.  Cliquez sur le bouton **Modifier l'étendue**, sélectionnez l'option **Mon réseau** \(sous\-réseau\) et cliquez sur **OK**.  
+    4.  <span data-ttu-id="3d320-156">Cliquez sur le **modifier l’étendue** bouton, sélectionnez le **mon réseau** seule option disponible (sous-réseau), puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="3d320-156">Click the **Change Scope** button, select the **My Network** (subnet) only option, and click **OK**.</span></span>  
   
-    5.  Répétez les étapes b à d pour les ports 8001, 8002, 8003, 9000, 80 et 443.  
+    5.  <span data-ttu-id="3d320-157">Répétez les étapes b à d pour les ports 8001, 8002, 8003, 9000, 80 et 443.</span><span class="sxs-lookup"><span data-stu-id="3d320-157">Repeat steps b to d for ports 8001, 8002, 8003, 9000, 80, and 443.</span></span>  
   
-4.  Cliquez sur **OK** pour fermer l'applet de pare\-feu.  
+4.  <span data-ttu-id="3d320-158">Cliquez sur **OK** pour fermer l’applet de pare-feu.</span><span class="sxs-lookup"><span data-stu-id="3d320-158">Click **OK** to close the firewall applet.</span></span>  
   
 > [!NOTE]
->  Supprimez toutes les exceptions de pare\-feu une fois que vous n'utilisez plus les exemples.Pour cela, ouvrez l'applet **Pare\-feu Windows \- Panneau de configuration** et supprimez tous programmes ou entrées de port ajoutés par les procédures précédentes.
+>  <span data-ttu-id="3d320-159">Supprimez toutes les exceptions de pare-feu une fois que vous n'utilisez plus les exemples.</span><span class="sxs-lookup"><span data-stu-id="3d320-159">Remove any firewall exceptions when you are finished working with the samples.</span></span> <span data-ttu-id="3d320-160">Pour ce faire, ouvrez le **le panneau de configuration pare-feu Windows** applet et supprimez tous les programmes ou entrées qui ont été ajoutées par les procédures précédentes de port.</span><span class="sxs-lookup"><span data-stu-id="3d320-160">To do so, open the **Windows Firewall Control Panel** applet and remove any programs or port entries that were added by the previous procedures.</span></span>
