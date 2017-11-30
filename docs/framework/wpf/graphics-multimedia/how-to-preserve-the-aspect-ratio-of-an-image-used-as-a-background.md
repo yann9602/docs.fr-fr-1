@@ -1,51 +1,54 @@
 ---
-title: "Comment&#160;: conserver les proportions d&#39;une image utilis&#233;e comme arri&#232;re-plan | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "proportions des images d'arrière-plan, conserver"
-  - "images d'arrière-plan, conserver les proportions"
-  - "pinceaux, conserver les proportions des images d'arrière-plan"
+title: "Comment : conserver les proportions d'une image utilisée comme arrière-plan"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- aspect ratios of background images [WPF], preserving
+- brushes [WPF], preserving aspect ratios of background images
+- background images [WPF], preserving aspect ratios
 ms.assetid: 28c39478-13d7-4011-80a3-8b9cc3e54478
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a34377403a55ba42d9d3f2946ef26ea48982f5d9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: conserver les proportions d&#39;une image utilis&#233;e comme arri&#232;re-plan
-Cet exemple montre comment utiliser la propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> d'un <xref:System.Windows.Media.ImageBrush> pour conserver les [proportions](GTMT) de l'image.  
+# <a name="how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background"></a><span data-ttu-id="23313-102">Comment : conserver les proportions d'une image utilisée comme arrière-plan</span><span class="sxs-lookup"><span data-stu-id="23313-102">How to: Preserve the Aspect Ratio of an Image Used as a Background</span></span>
+<span data-ttu-id="23313-103">Cet exemple montre comment utiliser le <xref:System.Windows.Media.TileBrush.Stretch%2A> propriété d’un <xref:System.Windows.Media.ImageBrush> afin de conserver les proportions de l’image.</span><span class="sxs-lookup"><span data-stu-id="23313-103">This example shows how to use the <xref:System.Windows.Media.TileBrush.Stretch%2A> property of an <xref:System.Windows.Media.ImageBrush> in order to preserve the aspect ratio of the image.</span></span>  
   
- Par défaut, lorsque vous utilisez un <xref:System.Windows.Media.ImageBrush> pour peindre une zone, son contenu s'étire pour remplir complètement la zone de sortie.  Lorsque la zone de sortie et l'image ont des [proportions](GTMT) différentes, l'image est déformée par cet étirement.  
+ <span data-ttu-id="23313-104">Par défaut, lorsque vous utilisez un <xref:System.Windows.Media.ImageBrush> pour peindre une zone, son contenu s’étire pour remplir complètement la zone de sortie.</span><span class="sxs-lookup"><span data-stu-id="23313-104">By default, when you use an <xref:System.Windows.Media.ImageBrush> to paint an area, its content stretches to completely fill the output area.</span></span> <span data-ttu-id="23313-105">Lorsque la zone de sortie et l’image ont des proportions différentes, l’image est déformée par cet étirement.</span><span class="sxs-lookup"><span data-stu-id="23313-105">When the output area and the image have different aspect ratios, the image is distorted by this stretching.</span></span>  
   
- Pour qu'un <xref:System.Windows.Media.ImageBrush> conserve les proportions de son image, affectez à la propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> la valeur <xref:System.Windows.Media.Stretch> ou <xref:System.Windows.Media.Stretch>.  
+ <span data-ttu-id="23313-106">Pour rendre un <xref:System.Windows.Media.ImageBrush> conserve les proportions de son image, affectez le <xref:System.Windows.Media.TileBrush.Stretch%2A> propriété <xref:System.Windows.Media.Stretch.Uniform> ou <xref:System.Windows.Media.Stretch.UniformToFill>.</span><span class="sxs-lookup"><span data-stu-id="23313-106">To make an <xref:System.Windows.Media.ImageBrush> preserve the aspect ratio of its image, set the <xref:System.Windows.Media.TileBrush.Stretch%2A> property to <xref:System.Windows.Media.Stretch.Uniform> or <xref:System.Windows.Media.Stretch.UniformToFill>.</span></span>  
   
-## Exemple  
- L'exemple suivant utilise deux objets <xref:System.Windows.Media.ImageBrush> pour peindre deux rectangles.  Chaque rectangle fait 300 par 150 [pixels](GTMT) et chacun contient une image de 300 par 300 pixels.  La propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> du premier pinceau a la valeur <xref:System.Windows.Media.Stretch> et la propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> du deuxième pinceau a la valeur <xref:System.Windows.Media.Stretch>.  
+## <a name="example"></a><span data-ttu-id="23313-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="23313-107">Example</span></span>  
+ <span data-ttu-id="23313-108">L’exemple suivant utilise deux <xref:System.Windows.Media.ImageBrush> objets pour peindre deux rectangles.</span><span class="sxs-lookup"><span data-stu-id="23313-108">The following example uses two <xref:System.Windows.Media.ImageBrush> objects to paint two rectangles.</span></span> <span data-ttu-id="23313-109">Chaque rectangle est de 300 par 150 pixels et chacun contient une image de 300 par 300 pixels.</span><span class="sxs-lookup"><span data-stu-id="23313-109">Each rectangle is 300 by 150 pixels and each contains a 300 by 300 pixel image.</span></span> <span data-ttu-id="23313-110">Le <xref:System.Windows.Media.TileBrush.Stretch%2A> du premier pinceau est définie sur <xref:System.Windows.Media.Stretch.Uniform>et le <xref:System.Windows.Media.TileBrush.Stretch%2A> du deuxième pinceau est définie sur <xref:System.Windows.Media.Stretch.UniformToFill>.</span><span class="sxs-lookup"><span data-stu-id="23313-110">The <xref:System.Windows.Media.TileBrush.Stretch%2A> property of the first brush is set to <xref:System.Windows.Media.Stretch.Uniform>, and the <xref:System.Windows.Media.TileBrush.Stretch%2A> property of the second brush is set to <xref:System.Windows.Media.Stretch.UniformToFill>.</span></span>  
   
  [!code-csharp[UsingImageBrush_snip#ImageBrushStretchModesExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/UsingImageBrush_snip/CSharp/StretchModes.cs#imagebrushstretchmodesexamplewholepage)]  
   
- L'illustration suivante montre la sortie du premier pinceau, dont le paramètre <xref:System.Windows.Media.TileBrush.Stretch%2A> a la valeur <xref:System.Windows.Media.Stretch>.  
+ <span data-ttu-id="23313-111">L’illustration suivante montre la sortie du premier pinceau, ce qui a un <xref:System.Windows.Media.TileBrush.Stretch%2A> paramètre <xref:System.Windows.Media.Stretch.Uniform>.</span><span class="sxs-lookup"><span data-stu-id="23313-111">The following illustration shows the output of the first brush, which has a <xref:System.Windows.Media.TileBrush.Stretch%2A> setting of <xref:System.Windows.Media.Stretch.Uniform>.</span></span>  
   
- ![ImageBrush avec étirement Uniform](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-imagebrushuniformstretch.png "graphicsmm\_ImageBrushUniformStretch")  
+ <span data-ttu-id="23313-112">![ImageBrush avec étirement Uniform](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-imagebrushuniformstretch.jpg "graphicsmm_ImageBrushUniformStretch")</span><span class="sxs-lookup"><span data-stu-id="23313-112">![ImageBrush with Uniform stretching](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-imagebrushuniformstretch.jpg "graphicsmm_ImageBrushUniformStretch")</span></span>  
   
- L'illustration suivante montre la sortie du deuxième pinceau, dont le paramètre <xref:System.Windows.Media.TileBrush.Stretch%2A> a la valeur <xref:System.Windows.Media.Stretch>.  
+ <span data-ttu-id="23313-113">L’illustration suivante montre la sortie du deuxième pinceau, ce qui a un <xref:System.Windows.Media.TileBrush.Stretch%2A> paramètre <xref:System.Windows.Media.Stretch.UniformToFill>.</span><span class="sxs-lookup"><span data-stu-id="23313-113">The next illustration shows the output of the second brush, which has a <xref:System.Windows.Media.TileBrush.Stretch%2A> setting of <xref:System.Windows.Media.Stretch.UniformToFill>.</span></span>  
   
- ![ImageBrush avec étirement UniformToFill](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-imagebrushuniformtofillstretch.png "graphicsmm\_ImageBrushUniformToFillStretch")  
+ <span data-ttu-id="23313-114">![ImageBrush avec étirement UniformToFill](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-imagebrushuniformtofillstretch.jpg "graphicsmm_ImageBrushUniformToFillStretch")</span><span class="sxs-lookup"><span data-stu-id="23313-114">![ImageBrush with UniformToFill stretching](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-imagebrushuniformtofillstretch.jpg "graphicsmm_ImageBrushUniformToFillStretch")</span></span>  
   
- Notez que la propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> se comporte de la même manière pour les autres objets <xref:System.Windows.Media.TileBrush>, c'est\-à\-dire pour <xref:System.Windows.Media.DrawingBrush> et <xref:System.Windows.Media.VisualBrush>.  Pour plus d'informations sur <xref:System.Windows.Media.ImageBrush> et les autres objets <xref:System.Windows.Media.TileBrush>, consultez [Peinture avec des objets d'image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
+ <span data-ttu-id="23313-115">Notez que la <xref:System.Windows.Media.TileBrush.Stretch%2A> propriété se comporte comme pour les autres <xref:System.Windows.Media.TileBrush> des objets, autrement dit, pour <xref:System.Windows.Media.DrawingBrush> et <xref:System.Windows.Media.VisualBrush>.</span><span class="sxs-lookup"><span data-stu-id="23313-115">Note that the <xref:System.Windows.Media.TileBrush.Stretch%2A> property behaves identically for the other <xref:System.Windows.Media.TileBrush> objects, that is, for <xref:System.Windows.Media.DrawingBrush> and <xref:System.Windows.Media.VisualBrush>.</span></span> <span data-ttu-id="23313-116">Pour plus d’informations sur <xref:System.Windows.Media.ImageBrush> et l’autre <xref:System.Windows.Media.TileBrush> , consultez [peinture avec des Images, des dessins et des éléments visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).</span><span class="sxs-lookup"><span data-stu-id="23313-116">For more information about <xref:System.Windows.Media.ImageBrush> and the other <xref:System.Windows.Media.TileBrush> objects, see [Painting with Images, Drawings, and Visuals](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).</span></span>  
   
- Notez également que, même si la propriété <xref:System.Windows.Media.TileBrush.Stretch%2A> semble spécifier la façon dont le contenu <xref:System.Windows.Media.TileBrush> s'étire pour s'adapter à sa zone de sortie, elle spécifie en fait la façon dont le contenu <xref:System.Windows.Media.TileBrush> s'étire pour remplir sa mosaïque de base.  Pour plus d'informations, consultez <xref:System.Windows.Media.TileBrush>.  
+ <span data-ttu-id="23313-117">Notez également que, bien que le <xref:System.Windows.Media.TileBrush.Stretch%2A> propriété s’affiche, indiquez comment la <xref:System.Windows.Media.TileBrush> contenu s’étire pour s’ajuster à sa zone de sortie, elle spécifie en fait la <xref:System.Windows.Media.TileBrush> contenu s’étire pour remplir sa mosaïque de base.</span><span class="sxs-lookup"><span data-stu-id="23313-117">Note also that, although the <xref:System.Windows.Media.TileBrush.Stretch%2A> property appears to specify how the <xref:System.Windows.Media.TileBrush> content stretches to fit its output area, it actually specifies how the <xref:System.Windows.Media.TileBrush> content stretches to fill its base tile.</span></span> <span data-ttu-id="23313-118">Pour plus d'informations, consultez <xref:System.Windows.Media.TileBrush>.</span><span class="sxs-lookup"><span data-stu-id="23313-118">For more information, see <xref:System.Windows.Media.TileBrush>.</span></span>  
   
- Cet exemple de code fait partie d'un exemple plus complet fourni pour la classe <xref:System.Windows.Media.ImageBrush>.  Pour l'exemple complet, consultez [ImageBrush, exemple](http://go.microsoft.com/fwlink/?LinkID=160005).  
+ <span data-ttu-id="23313-119">Cet exemple de code fait partie d’un exemple plus complet fourni pour la <xref:System.Windows.Media.ImageBrush> classe.</span><span class="sxs-lookup"><span data-stu-id="23313-119">This code example is part of a larger example that is provided for the <xref:System.Windows.Media.ImageBrush> class.</span></span> <span data-ttu-id="23313-120">Pour obtenir un exemple complet, consultez [ImageBrush, exemple](http://go.microsoft.com/fwlink/?LinkID=160005).</span><span class="sxs-lookup"><span data-stu-id="23313-120">For the complete sample, see [ImageBrush Sample](http://go.microsoft.com/fwlink/?LinkID=160005).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Media.TileBrush>   
- [Peinture avec des objets d'image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+## <a name="see-also"></a><span data-ttu-id="23313-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="23313-121">See Also</span></span>  
+ <xref:System.Windows.Media.TileBrush>  
+ [<span data-ttu-id="23313-122">Peinture avec des images, des dessins et des objets visuels</span><span class="sxs-lookup"><span data-stu-id="23313-122">Painting with Images, Drawings, and Visuals</span></span>](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

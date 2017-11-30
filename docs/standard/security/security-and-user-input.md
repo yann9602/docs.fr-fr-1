@@ -1,71 +1,69 @@
 ---
-title: "S&#233;curit&#233; et entr&#233;es d&#39;utilisateur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "sécurité du code, entrée d'utilisateur"
-  - "codage sécurisé, entrée d'utilisateur"
-  - "sécurité (.NET Framework), entrée d'utilisateur"
-  - "entrée d'utilisateur, sécurité"
+title: "Sécurité et entrées d'utilisateur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- security [.NET Framework], user input
+- user input, security
+- secure coding, user input
+- code security, user input
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-caps.latest.revision: 7
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "7"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 804b91cdda1316bc0a3081c8353493faf8869b4f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# S&#233;curit&#233; et entr&#233;es d&#39;utilisateur
-Les données utilisateur, qui correspondent à n'importe quelles entrées \(données provenant d'une demande Web ou URL, entrées dans les contrôles d'une application Microsoft Windows Forms etc.\), peuvent nuire au code car il arrive souvent que ces données soient utilisées directement comme paramètres pour appeler d'autre code.  Cette situation est semblable aux appels effectués dans votre code par du code nuisible avec des paramètres étranges, et les mêmes précautions doivent être observées.  Les entrées de l'utilisateur sont en fait plus difficiles à sécuriser car il n'existe pas de frame de pile pour détecter la présence de données potentiellement non fiables.  
+# <a name="security-and-user-input"></a><span data-ttu-id="86884-102">Sécurité et entrées d'utilisateur</span><span class="sxs-lookup"><span data-stu-id="86884-102">Security and User Input</span></span>
+<span data-ttu-id="86884-103">Les données utilisateurs, quel que soit le type d’entrée (données d’une demande web ou URL, entrée de commandes d’une application Windows Forms, etc.), peuvent affecter négativement le code, dans la mesure où ces données sont souvent utilisées directement en tant que paramètres pour appeler un autre code.</span><span class="sxs-lookup"><span data-stu-id="86884-103">User data, which is any kind of input (data from a Web request or URL, input to controls of a Microsoft Windows Forms application, and so on), can adversely influence code because often that data is used directly as parameters to call other code.</span></span> <span data-ttu-id="86884-104">Cette situation, similaire à l’appel de votre code par du code malveillant à l’aide de paramètres étranges, nécessite les mêmes précautions.</span><span class="sxs-lookup"><span data-stu-id="86884-104">This situation is analogous to malicious code calling your code with strange parameters, and the same precautions should be taken.</span></span> <span data-ttu-id="86884-105">En réalité, une entrée utilisateur est plus difficile à sécuriser, car il n’existe aucune frame de pile permettant de détecter la présence de données potentiellement non fiables.</span><span class="sxs-lookup"><span data-stu-id="86884-105">User input is actually harder to make safe because there is no stack frame to trace the presence of the potentially untrusted data.</span></span>  
   
- Ces données comptent parmi les bogues de sécurité les plus difficiles et les plus subtiles à détecter car même si elles peuvent exister dans du code apparemment sans rapport avec la sécurité, elles correspondent à une passerelle permettant de transmettre les données incorrectes à d'autre code.  Pour rechercher ces bogues, suivez n'importe quel type de données d'entrée, imaginez l'éventail des valeurs possibles, puis considérez si le code confronté à ces données peut traiter tous ces cas.  Vous pouvez corriger ces bogues en vérifiant les plages et en rejetant toutes les entrées que le code ne peut pas traiter.  
+ <span data-ttu-id="86884-106">Il s’agit des bogues de sécurité les plus subtils et les plus difficiles à identifier car, bien qu’ils peuvent apparaître dans du code en apparence non lié à la sécurité, ils constituent une passerelle permettant de transférer des données incorrectes vers d’autres codes.</span><span class="sxs-lookup"><span data-stu-id="86884-106">These are among the subtlest and hardest security bugs to find because, although they can exist in code that is seemingly unrelated to security, they are a gateway to pass bad data through to other code.</span></span> <span data-ttu-id="86884-107">Pour rechercher ces bogues, suivez tout type de données d’entrée, imaginez la fourchette de valeurs possibles, et déterminez si le code traitant ces données peut traiter l’ensemble des cas.</span><span class="sxs-lookup"><span data-stu-id="86884-107">To look for these bugs, follow any kind of input data, imagine what the range of possible values might be, and consider whether the code seeing this data can handle all those cases.</span></span> <span data-ttu-id="86884-108">Pour corriger ces bogues, procédez à une vérification de plage, puis rejetez toute entrée ne pouvant pas être traitée par le code.</span><span class="sxs-lookup"><span data-stu-id="86884-108">You can fix these bugs through range checking and rejecting any input the code cannot handle.</span></span>  
   
- Certaines considérations importantes relatives aux données utilisateur sont notamment les suivantes :  
+ <span data-ttu-id="86884-109">Voici quelques considérations importantes associées aux données utilisateurs :</span><span class="sxs-lookup"><span data-stu-id="86884-109">Some important considerations involving user data include the following:</span></span>  
   
--   Toutes les données utilisateur dans une réponse de serveur s'exécutent dans le contexte du site du serveur sur le client.  Si votre serveur Web prend des données utilisateur et les insère dans la page Web retournée, il peut, par exemple, inclure une balise **\<script\>** et s'exécuter comme depuis le serveur.  
+-   <span data-ttu-id="86884-110">Toutes les données utilisateur d’une réponse de serveur s’exécutent dans le contexte du site du serveur sur le client.</span><span class="sxs-lookup"><span data-stu-id="86884-110">Any user data in a server response runs in the context of the server's site on the client.</span></span> <span data-ttu-id="86884-111">Si votre serveur web utilise des données utilisateur qu’il insère dans la page web renvoyée, il peut, par exemple, inclure une balise **\<script>** et l’exécuter comme si l’opération était effectuée par le serveur.</span><span class="sxs-lookup"><span data-stu-id="86884-111">If your Web server takes user data and inserts it into the returned Web page, it might, for example, include a **\<script>** tag and run as if from the server.</span></span>  
   
--   N'oubliez pas que le client peut demander n'importe quelle URL.  
+-   <span data-ttu-id="86884-112">N’oubliez pas que le client peut demander toute URL.</span><span class="sxs-lookup"><span data-stu-id="86884-112">Remember that the client can request any URL.</span></span>  
   
--   Considérez des chemins d'accès non valides ou délicats :  
+-   <span data-ttu-id="86884-113">Tenez compte des chemins d’accès délicats ou non valides :</span><span class="sxs-lookup"><span data-stu-id="86884-113">Consider tricky or invalid paths:</span></span>  
   
-    -   ..\\ , des chemins d'accès particulièrement longs ;  
+    -   <span data-ttu-id="86884-114">..\ , des chemins d’accès extrêmement longs.</span><span class="sxs-lookup"><span data-stu-id="86884-114">..\ , extremely long paths.</span></span>  
   
-    -   l'utilisation de caractères génériques \(\*\) ;  
+    -   <span data-ttu-id="86884-115">Utilisation de caractères génériques (*).</span><span class="sxs-lookup"><span data-stu-id="86884-115">Use of wild card characters (*).</span></span>  
   
-    -   l'expansion de jeton \(%token%\) ;  
+    -   <span data-ttu-id="86884-116">Expansion de jeton (%token%).</span><span class="sxs-lookup"><span data-stu-id="86884-116">Token expansion (%token%).</span></span>  
   
-    -   des formes étranges de chemins d'accès dont la signification est particulière ;  
+    -   <span data-ttu-id="86884-117">Formes étranges de chemins d’accès présentant une signification spécifique.</span><span class="sxs-lookup"><span data-stu-id="86884-117">Strange forms of paths with special meaning.</span></span>  
   
-    -   l'alternance de noms de flux de systèmes de fichier comme par exemple `filename::$DATA` ;  
+    -   <span data-ttu-id="86884-118">Autres noms de flux de système de fichiers, comme `filename::$DATA`.</span><span class="sxs-lookup"><span data-stu-id="86884-118">Alternate file system stream names such as `filename::$DATA`.</span></span>  
   
-    -   des versions courtes de noms de fichiers comme par exemple `longfi~1` pour `longfilename` ;  
+    -   <span data-ttu-id="86884-119">Versions courtes de noms de fichiers, comme `longfi~1` pour `longfilename`.</span><span class="sxs-lookup"><span data-stu-id="86884-119">Short versions of file names such as `longfi~1` for `longfilename`.</span></span>  
   
--   N'oubliez pas que Eval\(userdata\) peut faire n'importe quoi.  
+-   <span data-ttu-id="86884-120">N’oubliez pas que la commande Eval(userdata) peut effectuer tout type d’action.</span><span class="sxs-lookup"><span data-stu-id="86884-120">Remember that Eval(userdata) can do anything.</span></span>  
   
--   Méfiez\-vous de la liaison tardive à un nom qui inclut des données utilisateur.  
+-   <span data-ttu-id="86884-121">Méfiez-vous de toute liaison tardive vers un nom comprenant des données utilisateur.</span><span class="sxs-lookup"><span data-stu-id="86884-121">Be wary of late binding to a name that includes some user data.</span></span>  
   
--   Si vous traitez des données Web, considérez les différentes formes d'échappement qui sont autorisées, y compris :  
+-   <span data-ttu-id="86884-122">Si vous traitez des données web, tenez compte des différents types d’échappements autorisés, notamment des suivants :</span><span class="sxs-lookup"><span data-stu-id="86884-122">If you are dealing with Web data, consider the various forms of escapes that are permissible, including:</span></span>  
   
-    -   échappements hexadécimaux \(%nn\) ;  
+    -   <span data-ttu-id="86884-123">Échappements haxadécimaux (%nn).</span><span class="sxs-lookup"><span data-stu-id="86884-123">Hexadecimal escapes (%nn).</span></span>  
   
-    -   échappements Unicode \(%nnn\) ;  
+    -   <span data-ttu-id="86884-124">Échappements Unicode (%nnn).</span><span class="sxs-lookup"><span data-stu-id="86884-124">Unicode escapes (%nnn).</span></span>  
   
-    -   échappements très long UTF\-8 \(%nn%nn\) ;  
+    -   <span data-ttu-id="86884-125">Échappements UTF-8 longs (%nn%nn).</span><span class="sxs-lookup"><span data-stu-id="86884-125">Overlong UTF-8 escapes (%nn%nn).</span></span>  
   
-    -   doubles échappements \(%nn devient %mmnn, où %mm correspond à l'échappement de '%'\) ;  
+    -   <span data-ttu-id="86884-126">Doubles échappements (%nn devient %mmnn, où %mm est l’échappement de %).</span><span class="sxs-lookup"><span data-stu-id="86884-126">Double escapes (%nn becomes %mmnn, where %mm is the escape for '%').</span></span>  
   
--   Méfiez\-vous des noms d'utilisateur qui peuvent avoir plus d'un format canonique ;  par exemple, dans Microsoft Windows 2000, vous pouvez souvent utiliser soit la forme MONDOMAINE\\*nom\_utilisateur*, soit la forme *nom\_utilisateur*@mondomaine.exemple.com.  
+-   <span data-ttu-id="86884-127">Méfiez-vous des noms utilisateur pouvant présenter plusieurs formats canoniques.</span><span class="sxs-lookup"><span data-stu-id="86884-127">Be wary of user names that might have more than one canonical format.</span></span> <span data-ttu-id="86884-128">Par exemple, bien souvent, vous pouvez utiliser le format MONDOMAINE\\*nomutilisateur* ou le format *nomutilisateur*@mydomain.example.com.</span><span class="sxs-lookup"><span data-stu-id="86884-128">For example, you can often use either the MYDOMAIN\\*username* form or the *username*@mydomain.example.com form.</span></span>  
   
-## Voir aussi  
- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="86884-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="86884-129">See Also</span></span>  
+ [<span data-ttu-id="86884-130">Instructions de codage sécurisé</span><span class="sxs-lookup"><span data-stu-id="86884-130">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

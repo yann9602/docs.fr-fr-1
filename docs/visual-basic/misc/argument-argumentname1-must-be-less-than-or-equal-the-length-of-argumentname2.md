@@ -1,22 +1,25 @@
 ---
-title: "L’argument &#39;&lt;nom_argument1&gt;&#39; doit &#234;tre inf&#233;rieur ou &#233;gal &#224; la longueur de l’argument &#39;&lt;nom_argument2&gt;&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
+title: "Argument &#39; &lt;nom_argument1&gt;&#39; doit être inférieure ou égale la longueur d’argument &#39;&lt; nom_argument2&gt;&#39;"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
 ms.assetid: 55a2401f-a44d-4671-b35e-878f48594162
-caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ccd628042f934fa6b16e014b0a8887c534772c62
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# L’argument &#39;&lt;nom_argument1&gt;&#39; doit &#234;tre inf&#233;rieur ou &#233;gal &#224; la longueur de l’argument &#39;&lt;nom_argument2&gt;&#39;
-La longueur d’un argument fourni dépasse la longueur de l’argument qu’il remplace.  
+# <a name="argument-39ltargumentname1gt39-must-be-less-than-or-equal-the-length-of-argument-39ltargumentname2gt39"></a><span data-ttu-id="69e42-102">Argument &#39; &lt;nom_argument1&gt;&#39; doit être inférieure ou égale la longueur d’argument &#39;&lt; nom_argument2&gt;&#39;</span><span class="sxs-lookup"><span data-stu-id="69e42-102">Argument &#39;&lt;argumentname1&gt;&#39; must be less than or equal the length of argument &#39;&lt;argumentname2&gt;&#39;</span></span>
+<span data-ttu-id="69e42-103">La longueur d’un argument fourni dépasse la longueur de l’argument qu’il remplace.</span><span class="sxs-lookup"><span data-stu-id="69e42-103">The length of a supplied argument exceeds the length of the argument it is replacing.</span></span>  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="69e42-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="69e42-104">To correct this error</span></span>  
   
--   Faites en sorte que la longueur du premier argument soit inférieure ou égale à celle du second argument.  
+-   <span data-ttu-id="69e42-105">Faites en sorte que la longueur du premier argument soit inférieure ou égale à celle du second argument.</span><span class="sxs-lookup"><span data-stu-id="69e42-105">Make the length of the first argument less than or equal to the length of the second argument.</span></span>  
   
-## Voir aussi  
- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a><span data-ttu-id="69e42-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="69e42-106">See Also</span></span>  
+ [<span data-ttu-id="69e42-107">Types d’erreurs</span><span class="sxs-lookup"><span data-stu-id="69e42-107">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)

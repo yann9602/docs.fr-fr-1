@@ -1,102 +1,100 @@
 ---
-title: "Conception des propri&#233;t&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "règles de conception de membres, propriétés"
-  - "Propriétés (.NET Framework), les règles de conception"
+title: "Conception des propriétés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- member design guidelines, properties
+- properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 477b3b69ce1b8a3bb160e8e120885239e3d99e56
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Conception des propri&#233;t&#233;s
-Bien que les propriétés sont techniquement très similaires aux méthodes, ils sont très différents en termes de leurs scénarios d’utilisation. Ils doivent être considérés comme des champs intelligents. Ils ont la syntaxe d’appel de champs et la souplesse des méthodes.  
+# <a name="property-design"></a><span data-ttu-id="15ce6-102">Conception des propriétés</span><span class="sxs-lookup"><span data-stu-id="15ce6-102">Property Design</span></span>
+<span data-ttu-id="15ce6-103">Bien que les propriétés sont techniquement très semblables aux méthodes, ils sont très différents en termes de leurs scénarios d’utilisation.</span><span class="sxs-lookup"><span data-stu-id="15ce6-103">Although properties are technically very similar to methods, they are quite different in terms of their usage scenarios.</span></span> <span data-ttu-id="15ce6-104">Ils doivent être considérés comme des champs intelligents.</span><span class="sxs-lookup"><span data-stu-id="15ce6-104">They should be seen as smart fields.</span></span> <span data-ttu-id="15ce6-105">Ils ont la syntaxe d’appel de champs et la flexibilité des méthodes.</span><span class="sxs-lookup"><span data-stu-id="15ce6-105">They have the calling syntax of fields, and the flexibility of methods.</span></span>  
   
- **✓ faire** créer des propriétés get\-only si l’appelant ne doit pas être en mesure de modifier la valeur de la propriété.  
+ <span data-ttu-id="15ce6-106">**✓ FAIRE** créer des propriétés get-only si l’appelant ne doit pas être en mesure de modifier la valeur de la propriété.</span><span class="sxs-lookup"><span data-stu-id="15ce6-106">**✓ DO** create get-only properties if the caller should not be able to change the value of the property.</span></span>  
   
- N’oubliez pas qu’en l’absence du type de la propriété est un type référence mutable, la valeur de propriété peut être modifiée même si la propriété est get\-only.  
+ <span data-ttu-id="15ce6-107">Gardez à l’esprit ce cas le type de la propriété est un type référence mutable, la valeur de propriété peut être modifiée même si la propriété est get-only.</span><span class="sxs-lookup"><span data-stu-id="15ce6-107">Keep in mind that if the type of the property is a mutable reference type, the property value can be changed even if the property is get-only.</span></span>  
   
- **X ne pas** fournissent uniquement des propriétés ou des propriétés avec la méthode setter ayant la plus large d’accessibilité de l’accesseur Get.  
+ <span data-ttu-id="15ce6-108">**X ne sont pas** fournissent des propriétés ou propriétés à définir uniquement avec la méthode setter ayant le plus large d’accessibilité de l’accesseur Get.</span><span class="sxs-lookup"><span data-stu-id="15ce6-108">**X DO NOT** provide set-only properties or properties with the setter having broader accessibility than the getter.</span></span>  
   
- Par exemple, n’utilisez pas de propriétés avec un setter public et un accesseur Get protégé.  
+ <span data-ttu-id="15ce6-109">Par exemple, n’utilisez pas de propriétés avec un accesseur Set public et un accesseur Get protégé.</span><span class="sxs-lookup"><span data-stu-id="15ce6-109">For example, do not use properties with a public setter and a protected getter.</span></span>  
   
- Si l’accesseur Get de propriété ne peut pas être fourni, implémenter les fonctionnalités en tant que méthode. Pensez à commencer avec le nom de la méthode `Set` et suivez avec ce que vous avez appellerait la propriété. Par exemple, <xref:System.AppDomain> possède une méthode appelée `SetCachePath` au lieu d’avoir une propriété uniquement appelée `CachePath`.  
+ <span data-ttu-id="15ce6-110">Si l’accesseur Get de propriété ne peut pas être fourni, implémenter la fonctionnalité en tant que méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="15ce6-110">If the property getter cannot be provided, implement the functionality as a method instead.</span></span> <span data-ttu-id="15ce6-111">Pensez à démarrer avec le nom de la méthode `Set` et suivez avec ce que vous avez appellerait la propriété.</span><span class="sxs-lookup"><span data-stu-id="15ce6-111">Consider starting the method name with `Set` and follow with what you would have named the property.</span></span> <span data-ttu-id="15ce6-112">Par exemple, <xref:System.AppDomain> possède une méthode appelée `SetCachePath` au lieu d’avoir une propriété de jeu uniquement appelée `CachePath`.</span><span class="sxs-lookup"><span data-stu-id="15ce6-112">For example, <xref:System.AppDomain> has a method called `SetCachePath` instead of having a set-only property called `CachePath`.</span></span>  
   
- **✓ faire** fournissent des valeurs par défaut raisonnables pour toutes les propriétés, garantissant que les valeurs par défaut n’entraînent pas une faille de sécurité ou du code très inefficace.  
+ <span data-ttu-id="15ce6-113">**✓ FAIRE** fournissent des valeurs par défaut raisonnables pour toutes les propriétés, garantissant que les valeurs par défaut n’entraînent pas une faille de sécurité ou du code très inefficace.</span><span class="sxs-lookup"><span data-stu-id="15ce6-113">**✓ DO** provide sensible default values for all properties, ensuring that the defaults do not result in a security hole or terribly inefficient code.</span></span>  
   
- **✓ faire** permettent d’être définies dans n’importe quel ordre, même si cela aboutit à un état temporaire non valide de l’objet.  
+ <span data-ttu-id="15ce6-114">**✓ FAIRE** permettent d’être définie dans n’importe quel ordre, même si cela aboutit à un état temporaire non valide de l’objet.</span><span class="sxs-lookup"><span data-stu-id="15ce6-114">**✓ DO** allow properties to be set in any order even if this results in a temporary invalid state of the object.</span></span>  
   
- Il est courant pour les deux ou plusieurs propriétés être liés à un point où des valeurs d’une propriété peuvent être non valides d’après les valeurs des autres propriétés sur le même objet. Dans ce cas, les exceptions qui résultent de l’état non valide doivent être reportées jusqu'à ce que les propriétés de corrélation sont réellement conjointement par l’objet.  
+ <span data-ttu-id="15ce6-115">Il est courant pour les deux ou plusieurs propriétés être reliés entre eux à un point où des valeurs d’une propriété peuvent être non valides, étant donné les valeurs des autres propriétés sur le même objet.</span><span class="sxs-lookup"><span data-stu-id="15ce6-115">It is common for two or more properties to be interrelated to a point where some values of one property might be invalid given the values of other properties on the same object.</span></span> <span data-ttu-id="15ce6-116">Dans ce cas, les exceptions résultant de l’état non valide doivent être différées jusqu'à ce que les propriétés liées entre elles sont réellement utilisées ensemble par l’objet.</span><span class="sxs-lookup"><span data-stu-id="15ce6-116">In such cases, exceptions resulting from the invalid state should be postponed until the interrelated properties are actually used together by the object.</span></span>  
   
- **✓ faire** conserver la valeur précédente si un accesseur Set de propriété lève une exception.  
+ <span data-ttu-id="15ce6-117">**✓ FAIRE** conserver la valeur précédente si un accesseur Set de propriété lève une exception.</span><span class="sxs-lookup"><span data-stu-id="15ce6-117">**✓ DO** preserve the previous value if a property setter throws an exception.</span></span>  
   
- **X éviter** lever des exceptions à partir des accesseurs Get de propriété.  
+ <span data-ttu-id="15ce6-118">**X Évitez** lever des exceptions à partir des accesseurs Get de propriété.</span><span class="sxs-lookup"><span data-stu-id="15ce6-118">**X AVOID** throwing exceptions from property getters.</span></span>  
   
- Accesseurs Get de propriété doivent être des opérations simples et ne doivent pas les conditions préalables. Si un accesseur Get peut lever une exception, il doit probablement être modifiée pour une méthode. Notez que cette règle ne s’applique pas aux indexeurs, où les exceptions à la suite valider les arguments devrait.  
+ <span data-ttu-id="15ce6-119">Accesseurs Get de propriété doit être des opérations simples et ne doit pas avoir toutes les conditions préalables.</span><span class="sxs-lookup"><span data-stu-id="15ce6-119">Property getters should be simple operations and should not have any preconditions.</span></span> <span data-ttu-id="15ce6-120">Si un accesseur Get peut lever une exception, il doit probablement être modifiée pour être une méthode.</span><span class="sxs-lookup"><span data-stu-id="15ce6-120">If a getter can throw an exception, it should probably be redesigned to be a method.</span></span> <span data-ttu-id="15ce6-121">Notez que cette règle ne s’applique pas à des indexeurs, où devrait exceptions à la suite de valider les arguments.</span><span class="sxs-lookup"><span data-stu-id="15ce6-121">Notice that this rule does not apply to indexers, where we do expect exceptions as a result of validating the arguments.</span></span>  
   
-### Conception de propriétés indexées  
- Une propriété indexée est une propriété spéciale qui peut avoir des paramètres et peut être appelée avec une syntaxe spéciale semblable à l’indexation de tableau.  
+### <a name="indexed-property-design"></a><span data-ttu-id="15ce6-122">Conception de la propriété indexée</span><span class="sxs-lookup"><span data-stu-id="15ce6-122">Indexed Property Design</span></span>  
+ <span data-ttu-id="15ce6-123">Une propriété indexée est une propriété spéciale qui peut avoir des paramètres et peut être appelée avec une syntaxe spéciale semblable à l’indexation de tableau.</span><span class="sxs-lookup"><span data-stu-id="15ce6-123">An indexed property is a special property that can have parameters and can be called with special syntax similar to array indexing.</span></span>  
   
- Les propriétés indexées sont couramment appelées les indexeurs. Indexeurs doivent être utilisées uniquement dans les API qui donnent accès aux éléments d’une collection logique. Par exemple, une chaîne est un ensemble de caractères et l’indexeur sur <xref:System.String?displayProperty=fullName> a été ajouté pour accéder à ses caractères.  
+ <span data-ttu-id="15ce6-124">Les propriétés indexées sont communément appelé indexeurs.</span><span class="sxs-lookup"><span data-stu-id="15ce6-124">Indexed properties are commonly referred to as indexers.</span></span> <span data-ttu-id="15ce6-125">Les indexeurs doivent être utilisés uniquement dans les API qui donnent accès aux éléments d’une collection logique.</span><span class="sxs-lookup"><span data-stu-id="15ce6-125">Indexers should be used only in APIs that provide access to items in a logical collection.</span></span> <span data-ttu-id="15ce6-126">Par exemple, une chaîne est un ensemble de caractères et que l’indexeur sur <xref:System.String?displayProperty=nameWithType> a été ajouté à accéder à ses caractères.</span><span class="sxs-lookup"><span data-stu-id="15ce6-126">For example, a string is a collection of characters, and the indexer on <xref:System.String?displayProperty=nameWithType> was added to access its characters.</span></span>  
   
- **✓ envisagez** des indexeurs pour fournir l’accès aux données stockées dans un tableau interne.  
+ <span data-ttu-id="15ce6-127">**✓ Envisagez** des indexeurs pour fournir l’accès aux données stockées dans un tableau interne.</span><span class="sxs-lookup"><span data-stu-id="15ce6-127">**✓ CONSIDER** using indexers to provide access to data stored in an internal array.</span></span>  
   
- **✓ envisagez** fournir des indexeurs sur les types représentant des collections d’éléments.  
+ <span data-ttu-id="15ce6-128">**✓ Envisagez** fournir des indexeurs sur les types de collections d’éléments.</span><span class="sxs-lookup"><span data-stu-id="15ce6-128">**✓ CONSIDER** providing indexers on types representing collections of items.</span></span>  
   
- **X éviter** à l’aide des propriétés avec plusieurs paramètres indexées.  
+ <span data-ttu-id="15ce6-129">**X Évitez** à l’aide des propriétés avec plusieurs paramètres indexées.</span><span class="sxs-lookup"><span data-stu-id="15ce6-129">**X AVOID** using indexed properties with more than one parameter.</span></span>  
   
- Si la conception requiert plusieurs paramètres, reconsidérez si la propriété représente vraiment un accesseur à une collection logique. Si elle n’est pas le cas, utilisez plutôt les méthodes. Pensez à commencer avec le nom de la méthode `Get` ou `Set`.  
+ <span data-ttu-id="15ce6-130">Si la conception requiert plusieurs paramètres, reconsidérez si la propriété représente réellement un accesseur à une collection logique.</span><span class="sxs-lookup"><span data-stu-id="15ce6-130">If the design requires multiple parameters, reconsider whether the property really represents an accessor to a logical collection.</span></span> <span data-ttu-id="15ce6-131">Si elle n’est pas le cas, utilisez à la place des méthodes.</span><span class="sxs-lookup"><span data-stu-id="15ce6-131">If it does not, use methods instead.</span></span> <span data-ttu-id="15ce6-132">Pensez à démarrer avec le nom de la méthode `Get` ou `Set`.</span><span class="sxs-lookup"><span data-stu-id="15ce6-132">Consider starting the method name with `Get` or `Set`.</span></span>  
   
- **X éviter** indexeurs avec les types de paramètres autres que <xref:System.Int32?displayProperty=fullName>, <xref:System.Int64?displayProperty=fullName>, <xref:System.String?displayProperty=fullName>, <xref:System.Object?displayProperty=fullName>, ou d’un enum.  
+ <span data-ttu-id="15ce6-133">**X Évitez** indexeurs avec les types de paramètres autres que <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType>, <xref:System.String?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>, ou d’un enum.</span><span class="sxs-lookup"><span data-stu-id="15ce6-133">**X AVOID** indexers with parameter types other than <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType>, <xref:System.String?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>, or an enum.</span></span>  
   
- Si le design nécessite d’autres types de paramètres, est important si l’API représente réellement un accesseur à une collection logique. Si elle n’est pas le cas, utilisez une méthode. Pensez à commencer avec le nom de la méthode `Get` ou `Set`.  
+ <span data-ttu-id="15ce6-134">Si la conception nécessite d’autres types de paramètres, est important si l’API représente réellement un accesseur à une collection logique.</span><span class="sxs-lookup"><span data-stu-id="15ce6-134">If the design requires other types of parameters, strongly reevaluate whether the API really represents an accessor to a logical collection.</span></span> <span data-ttu-id="15ce6-135">Si elle n’est pas le cas, utilisez une méthode.</span><span class="sxs-lookup"><span data-stu-id="15ce6-135">If it does not, use a method.</span></span> <span data-ttu-id="15ce6-136">Pensez à démarrer avec le nom de la méthode `Get` ou `Set`.</span><span class="sxs-lookup"><span data-stu-id="15ce6-136">Consider starting the method name with `Get` or `Set`.</span></span>  
   
- **✓ faire** utilisent le nom `Item` pour les propriétés indexées, sauf s’il existe un nom plus \(par exemple, consultez le <xref:System.String.Chars%2A> propriété sur `System.String`\).  
+ <span data-ttu-id="15ce6-137">**✓ FAIRE** utiliser le nom `Item` pour des propriétés indexées, sauf s’il existe un meilleur nom (par exemple, consultez la <xref:System.String.Chars%2A> propriété sur `System.String`).</span><span class="sxs-lookup"><span data-stu-id="15ce6-137">**✓ DO** use the name `Item` for indexed properties unless there is an obviously better name (e.g., see the <xref:System.String.Chars%2A> property on `System.String`).</span></span>  
   
- En c\#, les indexeurs par défaut nommé « Item ». Le <xref:System.Runtime.CompilerServices.IndexerNameAttribute> peut être utilisé pour personnaliser ce nom.  
+ <span data-ttu-id="15ce6-138">En c#, les indexeurs sont par défaut nommé « Item ».</span><span class="sxs-lookup"><span data-stu-id="15ce6-138">In C#, indexers are by default named Item.</span></span> <span data-ttu-id="15ce6-139">Le <xref:System.Runtime.CompilerServices.IndexerNameAttribute> peut être utilisé pour personnaliser ce nom.</span><span class="sxs-lookup"><span data-stu-id="15ce6-139">The <xref:System.Runtime.CompilerServices.IndexerNameAttribute> can be used to customize this name.</span></span>  
   
- **X ne pas** fournir à la fois un indexeur et des méthodes qui sont sémantiquement équivalentes.  
+ <span data-ttu-id="15ce6-140">**X ne sont pas** fournissent à la fois un indexeur et des méthodes qui sont sémantiquement équivalents.</span><span class="sxs-lookup"><span data-stu-id="15ce6-140">**X DO NOT** provide both an indexer and methods that are semantically equivalent.</span></span>  
   
- **X ne pas** fournissent plusieurs familles d’indexeurs surchargés dans un type.  
+ <span data-ttu-id="15ce6-141">**X ne sont pas** fournissent plusieurs familles d’indexeurs surchargés dans un type.</span><span class="sxs-lookup"><span data-stu-id="15ce6-141">**X DO NOT** provide more than one family of overloaded indexers in one type.</span></span>  
   
- Ceci est renforcé par le compilateur c\#.  
+ <span data-ttu-id="15ce6-142">Elle est appliquée par le compilateur c#.</span><span class="sxs-lookup"><span data-stu-id="15ce6-142">This is enforced by the C# compiler.</span></span>  
   
- **X ne pas** différent de l’utilisation des propriétés indexées.  
+ <span data-ttu-id="15ce6-143">**X ne sont pas** différent de l’utilisation des propriétés indexées.</span><span class="sxs-lookup"><span data-stu-id="15ce6-143">**X DO NOT** use nondefault indexed properties.</span></span>  
   
- Ceci est renforcé par le compilateur c\#.  
+ <span data-ttu-id="15ce6-144">Elle est appliquée par le compilateur c#.</span><span class="sxs-lookup"><span data-stu-id="15ce6-144">This is enforced by the C# compiler.</span></span>  
   
-### Événements de Notification de modification de propriété  
- Il est parfois utile de fournir un événement notifier l’utilisateur des modifications apportées à une valeur de propriété. Par exemple, `System.Windows.Forms.Control` déclenche un `TextChanged` événement après la valeur de son `Text` propriété a changé.  
+### <a name="property-change-notification-events"></a><span data-ttu-id="15ce6-145">Événements de Notification de modification de propriété</span><span class="sxs-lookup"><span data-stu-id="15ce6-145">Property Change Notification Events</span></span>  
+ <span data-ttu-id="15ce6-146">Il est parfois utile de fournir un événement de notification à l’utilisateur des modifications dans une valeur de propriété.</span><span class="sxs-lookup"><span data-stu-id="15ce6-146">Sometimes it is useful to provide an event notifying the user of changes in a property value.</span></span> <span data-ttu-id="15ce6-147">Par exemple, `System.Windows.Forms.Control` déclenche un `TextChanged` événement après la valeur de son `Text` propriété a changé.</span><span class="sxs-lookup"><span data-stu-id="15ce6-147">For example, `System.Windows.Forms.Control` raises a `TextChanged` event after the value of its `Text` property has changed.</span></span>  
   
- **✓ envisagez** déclenchement modifier les événements de notification lorsque les valeurs de propriété dans les API de niveau supérieur \(généralement concepteur composants\) sont modifiés.  
+ <span data-ttu-id="15ce6-148">**✓ Envisagez** modifier les déclenchement d’événements de notification lorsque les valeurs de propriété dans les API de niveau supérieur (composants de concepteur généralement) sont modifiés.</span><span class="sxs-lookup"><span data-stu-id="15ce6-148">**✓ CONSIDER** raising change notification events when property values in high-level APIs (usually designer components) are modified.</span></span>  
   
- S’il existe un bon scénario d’un utilisateur de savoir quand une propriété d’un objet change, l’objet doit déclencher un événement de notification de modification de la propriété.  
+ <span data-ttu-id="15ce6-149">S’il existe un bon scénario d’un utilisateur de savoir quand une propriété d’un objet change, l’objet doit déclencher un événement de notification de modification de la propriété.</span><span class="sxs-lookup"><span data-stu-id="15ce6-149">If there is a good scenario for a user to know when a property of an object is changing, the object should raise a change notification event for the property.</span></span>  
   
- Toutefois, il est peu de chances d’être sérieusement le traitement de déclencher des événements pour les API de bas niveau tels que les types de base ou des collections. Par exemple, <xref:System.Collections.Generic.List%601> ne déclenchera pas ces événements lorsqu’un nouvel élément est ajouté à la liste et le `Count` de propriété est modifiée.  
+ <span data-ttu-id="15ce6-150">Toutefois, il est peu de chances d’être intéressant le traitement de déclencher des événements pour les API de bas niveau tels que les types de base ou des collections.</span><span class="sxs-lookup"><span data-stu-id="15ce6-150">However, it is unlikely to be worth the overhead to raise such events for low-level APIs such as base types or collections.</span></span> <span data-ttu-id="15ce6-151">Par exemple, <xref:System.Collections.Generic.List%601> ne déclenchera pas ces événements quand un nouvel élément est ajouté à la liste et le `Count` de propriété est modifiée.</span><span class="sxs-lookup"><span data-stu-id="15ce6-151">For example, <xref:System.Collections.Generic.List%601> would not raise such events when a new item is added to the list and the `Count` property changes.</span></span>  
   
- **✓ envisagez** déclenchement modifier les événements de notification lorsque la valeur d’une propriété modifiée par l’intermédiaire des forces extérieures.  
+ <span data-ttu-id="15ce6-152">**✓ Envisagez** déclenchement modifier les événements de notification lorsque la valeur d’une propriété modifiée via la force externe.</span><span class="sxs-lookup"><span data-stu-id="15ce6-152">**✓ CONSIDER** raising change notification events when the value of a property changes via external forces.</span></span>  
   
- Si une valeur de propriété est modifiée par une force externe \(de façon différente en appelant des méthodes sur l’objet\), déclencher des événements indiquent au développeur que la valeur change et a été modifié. Un bon exemple est le `Text` propriété d’un contrôle de zone de texte. Lorsque l’utilisateur tape du texte dans un `TextBox`, la valeur de propriété change automatiquement.  
+ <span data-ttu-id="15ce6-153">Si une valeur de propriété change via une force externe (d’une manière différente en appelant des méthodes sur l’objet), déclencher des événements indiquent au développeur que la valeur change et qu’il a été modifié.</span><span class="sxs-lookup"><span data-stu-id="15ce6-153">If a property value changes via some external force (in a way other than by calling methods on the object), raise events indicate to the developer that the value is changing and has changed.</span></span> <span data-ttu-id="15ce6-154">Un bon exemple est le `Text` propriété d’un contrôle de zone de texte.</span><span class="sxs-lookup"><span data-stu-id="15ce6-154">A good example is the `Text` property of a text box control.</span></span> <span data-ttu-id="15ce6-155">Lorsque l’utilisateur tape du texte dans un `TextBox`, la valeur de propriété change automatiquement.</span><span class="sxs-lookup"><span data-stu-id="15ce6-155">When the user types text in a `TextBox`, the property value automatically changes.</span></span>  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ <span data-ttu-id="15ce6-156">*Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*</span><span class="sxs-lookup"><span data-stu-id="15ce6-156">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [Framework Design Guidelines : Conventions, langages et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison\-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ <span data-ttu-id="15ce6-157">*Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*</span><span class="sxs-lookup"><span data-stu-id="15ce6-157">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## Voir aussi  
- [Règles de conception de membres](../../../docs/standard/design-guidelines/member.md)   
- [Instructions de conception d’infrastructure](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a><span data-ttu-id="15ce6-158">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="15ce6-158">See Also</span></span>  
+ [<span data-ttu-id="15ce6-159">Règles de conception de membres</span><span class="sxs-lookup"><span data-stu-id="15ce6-159">Member Design Guidelines</span></span>](../../../docs/standard/design-guidelines/member.md)  
+ [<span data-ttu-id="15ce6-160">Règles de conception de .NET Framework</span><span class="sxs-lookup"><span data-stu-id="15ce6-160">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)

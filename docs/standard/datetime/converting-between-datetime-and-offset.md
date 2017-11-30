@@ -1,128 +1,141 @@
 ---
-title: "Conversion entre DateTime et DateTimeOffset | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "convertir des valeurs DateTime et DateTimeOffset"
-  - "convertir des heures"
-  - "Date (type de données), convertir"
-  - "dates (.NET Framework), convertir"
-  - "DateTime (structure), convertir"
-  - "DateTimeOffset (structure), convertir"
-  - "conversions en heure locale"
-  - "fuseaux horaires (.NET Framework), conversions"
-  - "temps UTC, convertir"
+title: Conversion entre DateTime et DateTimeOffset
+ms.custom: 
+ms.date: 04/10/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DateTime structure, converting
+- time zones [.NET Framework], conversions
+- UTC times, converting
+- DateTimeOffset structure, converting
+- converting DateTimeOffset and DateTime values
+- dates [.NET Framework], converting
+- converting times
+- Date data type, converting
+- local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 35923fb89d6ca2edb3453db61386f0cd23047278
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Conversion entre DateTime et DateTimeOffset
-Même si la structure <xref:System.DateTimeOffset> assure un niveau de prise en charge des fuseaux horaires supérieur à celui de la structure <xref:System.DateTime>, les paramètres <xref:System.DateTime> sont plus fréquemment utilisés dans les appels de méthode.  La capacité à convertir des valeurs <xref:System.DateTimeOffset> en valeurs <xref:System.DateTime> et vice versa revêt de ce fait une importance particulière.  Cette rubrique indique comment effectuer ces conversions de manière à conserver autant d'informations sur les fuseaux horaires que possible.  
-  
+# <a name="converting-between-datetime-and-datetimeoffset"></a><span data-ttu-id="ab1b2-102">Conversion entre DateTime et DateTimeOffset</span><span class="sxs-lookup"><span data-stu-id="ab1b2-102">Converting between DateTime and DateTimeOffset</span></span>
+
+<span data-ttu-id="ab1b2-103">Bien que le <xref:System.DateTimeOffset> structure fournit une plus grande des fuseaux horaires que le <xref:System.DateTime> structure, <xref:System.DateTime> paramètres sont plus fréquemment utilisés dans les appels de méthode.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-103">Although the <xref:System.DateTimeOffset> structure provides a greater degree of time zone awareness than the <xref:System.DateTime> structure, <xref:System.DateTime> parameters are used more commonly in method calls.</span></span> <span data-ttu-id="ab1b2-104">Pour cette raison, la capacité à convertir <xref:System.DateTimeOffset> valeurs <xref:System.DateTime> les valeurs et vice versa, est particulièrement important.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-104">Because of this, the ability to convert <xref:System.DateTimeOffset> values to <xref:System.DateTime> values and vice versa is particularly important.</span></span> <span data-ttu-id="ab1b2-105">Cette rubrique montre comment effectuer ces conversions de manière à conserver les informations de fuseau horaire que possible.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-105">This topic shows how to perform these conversions in a way that preserves as much time zone information as possible.</span></span>
+
 > [!NOTE]
->  Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> présentent des restrictions lors de la représentation d'heures dans des fuseaux horaires.  Avec sa propriété <xref:System.DateTime.Kind%2A>, <xref:System.DateTime> ne peut refléter que l'heure UTC et le fuseau horaire local du système.  <xref:System.DateTimeOffset> reflète un décalage par rapport à l'heure UTC, mais ne reflète pas le fuseau horaire réel auquel ce décalage appartient.  Pour plus d'informations sur les valeurs d'heure et la prise en charge des fuseaux horaires, consultez [Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md).  
-  
-## Conversions de DateTime en DateTimeOffset  
- La structure <xref:System.DateTimeOffset> propose deux méthodes de conversion de <xref:System.DateTime> en <xref:System.DateTimeOffset> qui se prêtent à la plupart des conversions :  
-  
--   Le constructeur <xref:System.DateTimeOffset.%23ctor%2A>, qui crée un objet <xref:System.DateTimeOffset> sur la base d'une valeur <xref:System.DateTime>.  
-  
--   L'opérateur de conversion implicite, qui vous permet d'assigner une valeur <xref:System.DateTime> à un objet <xref:System.DateTimeOffset>.  
-  
- Pour les valeurs <xref:System.DateTime> locales et UTC, la propriété <xref:System.DateTimeOffset.Offset%2A> de la valeur <xref:System.DateTimeOffset> résultante indique le décalage par rapport à l'heure UTC ou au fuseau horaire local.  Par exemple, le code suivant convertit une heure UTC dans sa valeur <xref:System.DateTimeOffset> équivalente.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#1)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#1)]  
-  
- Dans ce cas, le décalage de la variable `utcTime2` est 00:00.  De même, le code suivant convertit une heure locale en sa valeur <xref:System.DateTimeOffset> équivalente.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#2)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#2)]  
-  
- Pour les valeurs <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> a la valeur <xref:System.DateTimeKind?displayProperty=fullName>, ces deux méthodes de conversion génèrent toutefois une valeur <xref:System.DateTimeOffset> dont le décalage correspond au fuseau horaire local.  Cela est montré dans l'exemple suivant, exécuté dans le fuseau horaire U.S. Pacific Standard Time.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#3)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#3)]  
-  
- Si la valeur <xref:System.DateTime> indique la date et l'heure dans autre chose que le fuseau horaire local ou l'heure UTC, vous pouvez la convertir en valeur <xref:System.DateTimeOffset> et conserver ses informations sur les fuseaux horaires en appelant le constructeur <xref:System.DateTimeOffset.%23ctor%2A> surchargé.  L'exemple suivant instancie un objet <xref:System.DateTimeOffset> qui indique l'heure du Centre \(des États\-Unis\).  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#4)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#4)]  
-  
- Le deuxième paramètre passé à cette surcharge de constructeur, un objet <xref:System.TimeSpan> qui représente le décalage de l'heure par rapport à l'heure UTC, doit être récupéré en appelant la méthode <xref:System.TimeZoneInfo.GetUtcOffset%28System.DateTime%29?displayProperty=fullName> du fuseau horaire correspondant à l'heure.  Le seul paramètre de la méthode a la valeur <xref:System.DateTime> qui représente la date et l'heure à convertir.  Si le fuseau horaire prend en charge l'heure d'été, ce paramètre permet alors à la méthode de déterminer le décalage correspondant à la date et à l'heure données.  
-  
-## Conversions de DateTimeOffset en DateTime  
- La propriété <xref:System.DateTimeOffset.DateTime%2A> permet le plus souvent de convertir <xref:System.DateTimeOffset> en <xref:System.DateTime>.  Elle retourne toutefois une valeur <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> a la valeur <xref:System.DateTimeKind>, comme illustré dans l'exemple suivant.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#5)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#5)]  
-  
- En d'autres termes, toutes les informations sur la relation de la valeur <xref:System.DateTimeOffset> par rapport à l'heure UTC sont perdues lors de la conversion lorsque la propriété <xref:System.DateTimeOffset.DateTime%2A> est utilisée.  Cela influe sur les valeurs <xref:System.DateTimeOffset> qui correspondent à l'heure UTC ou à l'heure locale du système, car la structure <xref:System.DateTimeOffset.DateTime%2A> n'indique que les deux fuseaux horaires de sa propriété <xref:System.DateTime.Kind%2A>.  
-  
- Pour conserver autant d'informations sur les fuseaux horaires que possible lorsque vous convertissez une valeur <xref:System.DateTimeOffset> en valeur <xref:System.DateTime>, vous pouvez utiliser les propriétés <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=fullName> et <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=fullName>.  
-  
-### Conversion d'une heure UTC  
- Pour indiquer qu'une valeur <xref:System.DateTimeOffset.DateTime%2A> convertie est l'heure UTC, vous pouvez récupérer la valeur à partir de la propriété <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=fullName>.  Elle diffère de la propriété <xref:System.DateTimeOffset.DateTime%2A> de deux façons :  
-  
--   Elle retourne une valeur <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> a la valeur <xref:System.DateTimeKind>.  
-  
--   Si la propriété <xref:System.DateTimeOffset.Offset%2A> n'a pas la valeur <xref:System.TimeSpan.Zero?displayProperty=fullName>, elle convertit l'heure en heure UTC.  
-  
+> <span data-ttu-id="ab1b2-106">À la fois le <xref:System.DateTime> et <xref:System.DateTimeOffset> types présentent des restrictions lors de la représentation d’heures dans des fuseaux horaires.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-106">Both the <xref:System.DateTime> and the <xref:System.DateTimeOffset> types have some limitations when representing times in time zones.</span></span> <span data-ttu-id="ab1b2-107">Avec son <xref:System.DateTime.Kind%2A> propriété <xref:System.DateTime> est en mesure de refléter le temps universel coordonné (UTC) et fuseau horaire local du système.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-107">With its <xref:System.DateTime.Kind%2A> property, <xref:System.DateTime> is able to reflect only Coordinated Universal Time (UTC) and the system's local time zone.</span></span> <span data-ttu-id="ab1b2-108"><xref:System.DateTimeOffset>reflète un temps de décalage à l’heure UTC, mais il ne reflète pas le fuseau horaire réel auquel ce décalage appartient.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-108"><xref:System.DateTimeOffset> reflects a time's offset from UTC, but it does not reflect the actual time zone to which that offset belongs.</span></span> <span data-ttu-id="ab1b2-109">Pour plus d’informations sur les valeurs d’heure et la prise en charge des fuseaux horaires, consultez [Choosing Between DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md).</span><span class="sxs-lookup"><span data-stu-id="ab1b2-109">For details about time values and support for time zones, see [Choosing Between DateTime, DateTimeOffset, TimeSpan, and TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md).</span></span>
+
+## <a name="conversions-from-datetime-to-datetimeoffset"></a><span data-ttu-id="ab1b2-110">Conversions de DateTime en DateTimeOffset</span><span class="sxs-lookup"><span data-stu-id="ab1b2-110">Conversions from DateTime to DateTimeOffset</span></span>
+
+<span data-ttu-id="ab1b2-111">Le <xref:System.DateTimeOffset> structure fournit deux méthodes <xref:System.DateTime> à <xref:System.DateTimeOffset> conversion qui conviennent à la plupart des conversions :</span><span class="sxs-lookup"><span data-stu-id="ab1b2-111">The <xref:System.DateTimeOffset> structure provides two equivalent ways to perform <xref:System.DateTime> to <xref:System.DateTimeOffset> conversion that are suitable for most conversions:</span></span>
+
+* <span data-ttu-id="ab1b2-112">Le <xref:System.DateTimeOffset.%23ctor%2A> constructeur, ce qui crée un <xref:System.DateTimeOffset> objet basé sur un <xref:System.DateTime> valeur.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-112">The <xref:System.DateTimeOffset.%23ctor%2A> constructor, which creates a new <xref:System.DateTimeOffset> object based on a <xref:System.DateTime> value.</span></span>
+
+* <span data-ttu-id="ab1b2-113">L’opérateur de conversion implicite, qui vous permet d’affecter un <xref:System.DateTime> valeur un <xref:System.DateTimeOffset> objet.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-113">The implicit conversion operator, which allows you to assign a <xref:System.DateTime> value to a <xref:System.DateTimeOffset> object.</span></span>
+
+<span data-ttu-id="ab1b2-114">Heure UTC et local <xref:System.DateTime> valeurs, le <xref:System.DateTimeOffset.Offset%2A> propriété des résultats de <xref:System.DateTimeOffset> valeur reflète précisément le décalage de fuseau UTC ou l’heure locale.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-114">For UTC and local <xref:System.DateTime> values, the <xref:System.DateTimeOffset.Offset%2A> property of the resulting <xref:System.DateTimeOffset> value accurately reflects the UTC or local time zone offset.</span></span> <span data-ttu-id="ab1b2-115">Par exemple, le code suivant convertit une heure UTC en son équivalent <xref:System.DateTimeOffset> valeur.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-115">For example, the following code converts a UTC time to its equivalent <xref:System.DateTimeOffset> value.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#1)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#1)]
+
+<span data-ttu-id="ab1b2-116">Dans ce cas, le décalage de la variable `utcTime2` est 00:00.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-116">In this case, the offset of the `utcTime2` variable is 00:00.</span></span> <span data-ttu-id="ab1b2-117">De même, le code suivant convertit une heure locale en son équivalent <xref:System.DateTimeOffset> valeur.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-117">Similarly, the following code converts a local time to its equivalent <xref:System.DateTimeOffset> value.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#2)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#2)]
+
+<span data-ttu-id="ab1b2-118">Toutefois, pour <xref:System.DateTime> dont les valeurs <xref:System.DateTime.Kind%2A> propriété est <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>, ces deux méthodes de conversion produisent un <xref:System.DateTimeOffset> valeur dont le décalage du fuseau horaire local.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-118">However, for <xref:System.DateTime> values whose <xref:System.DateTime.Kind%2A> property is <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>, these two conversion methods produce a <xref:System.DateTimeOffset> value whose offset is that of the local time zone.</span></span> <span data-ttu-id="ab1b2-119">Cela est illustré dans l’exemple suivant, qui se déroule dans le fuseau horaire Pacifique (É.-U.).</span><span class="sxs-lookup"><span data-stu-id="ab1b2-119">This is shown in the following example, which is run in the U.S. Pacific Standard Time zone.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#3)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#3)]
+
+<span data-ttu-id="ab1b2-120">Si le <xref:System.DateTime> valeur reflète la date et l’heure dans un élément autre que le fuseau horaire local ou l’heure UTC, vous pouvez le convertir en un <xref:System.DateTimeOffset> valeur et conserver ses informations de fuseau horaire en appelant surchargées <xref:System.DateTimeOffset.%23ctor%2A> constructeur.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-120">If the <xref:System.DateTime> value reflects the date and time in something other than the local time zone or UTC, you can convert it to a <xref:System.DateTimeOffset> value and preserve its time zone information by calling the overloaded <xref:System.DateTimeOffset.%23ctor%2A> constructor.</span></span> <span data-ttu-id="ab1b2-121">Par exemple, l’exemple suivant instancie un <xref:System.DateTimeOffset> objet reflétant centrale.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-121">For example, the following example instantiates a <xref:System.DateTimeOffset> object that reflects Central Standard Time.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#4)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#4)]
+
+<span data-ttu-id="ab1b2-122">Le deuxième paramètre de cette surcharge de constructeur, un <xref:System.TimeSpan> objet qui représente l’offset d’heure à l’heure UTC, doit être récupéré en appelant le <xref:System.TimeZoneInfo.GetUtcOffset%28System.DateTime%29?displayProperty=nameWithType> méthode du fuseau horaire correspondant de l’heure.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-122">The second parameter to this constructor overload, a <xref:System.TimeSpan> object that represents the time's offset from UTC, should be retrieved by calling the <xref:System.TimeZoneInfo.GetUtcOffset%28System.DateTime%29?displayProperty=nameWithType> method of the time's corresponding time zone.</span></span> <span data-ttu-id="ab1b2-123">Le paramètre de la méthode unique est la <xref:System.DateTime> valeur qui représente la date et l’heure à convertir.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-123">The method's single parameter is the <xref:System.DateTime> value that represents the date and time to be converted.</span></span> <span data-ttu-id="ab1b2-124">Si le fuseau horaire prend en charge l’heure d’été, ce paramètre permet à la méthode de déterminer le décalage approprié pour cette date et cette heure particulières.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-124">If the time zone supports daylight saving time, this parameter allows the method to determine the appropriate offset for that particular date and time.</span></span>
+
+## <a name="conversions-from-datetimeoffset-to-datetime"></a><span data-ttu-id="ab1b2-125">Conversions de DateTimeOffset vers DateTime</span><span class="sxs-lookup"><span data-stu-id="ab1b2-125">Conversions from DateTimeOffset to DateTime</span></span>
+
+<span data-ttu-id="ab1b2-126">Le <xref:System.DateTimeOffset.DateTime%2A> propriété est couramment utilisée pour effectuer <xref:System.DateTimeOffset> à <xref:System.DateTime> conversion.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-126">The <xref:System.DateTimeOffset.DateTime%2A> property is most commonly used to perform <xref:System.DateTimeOffset> to <xref:System.DateTime> conversion.</span></span> <span data-ttu-id="ab1b2-127">Toutefois, elle retourne un <xref:System.DateTime> dont la valeur <xref:System.DateTime.Kind%2A> propriété <xref:System.DateTimeKind.Unspecified>, comme l’illustre l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-127">However, it returns a <xref:System.DateTime> value whose <xref:System.DateTime.Kind%2A> property is <xref:System.DateTimeKind.Unspecified>, as the following example illustrates.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#5)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#5)]
+
+<span data-ttu-id="ab1b2-128">Cela signifie que toutes les informations sur le <xref:System.DateTimeOffset> relation de valeur au format UTC est perdue lors de la conversion lorsque la <xref:System.DateTimeOffset.DateTime%2A> propriété est utilisée.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-128">This means that any information about the <xref:System.DateTimeOffset> value's relationship to UTC is lost by the conversion when the <xref:System.DateTimeOffset.DateTime%2A> property is used.</span></span> <span data-ttu-id="ab1b2-129">Cela affecte <xref:System.DateTimeOffset> les valeurs qui correspondent à l’heure UTC ou à l’heure du système local, car le <xref:System.DateTimeOffset.DateTime%2A> structure reflète uniquement les deux fuseaux horaires dans son <xref:System.DateTime.Kind%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-129">This affects <xref:System.DateTimeOffset> values that correspond to UTC time or to the system's local time because the <xref:System.DateTimeOffset.DateTime%2A> structure reflects only those two time zones in its <xref:System.DateTime.Kind%2A> property.</span></span>
+
+<span data-ttu-id="ab1b2-130">Pour conserver les informations de fuseau horaire que possible lorsque vous convertissez un <xref:System.DateTimeOffset> à un <xref:System.DateTime> valeur, vous pouvez utiliser la <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> propriétés.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-130">To preserve as much time zone information as possible when converting a <xref:System.DateTimeOffset> to a <xref:System.DateTime> value, you can use the <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> and <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> properties.</span></span>
+
+### <a name="converting-a-utc-time"></a><span data-ttu-id="ab1b2-131">Conversion d’une heure UTC</span><span class="sxs-lookup"><span data-stu-id="ab1b2-131">Converting a UTC time</span></span>
+
+<span data-ttu-id="ab1b2-132">Pour indiquer qu’un texte converti <xref:System.DateTimeOffset.DateTime%2A> valeur est l’heure UTC, vous pouvez récupérer la valeur de la <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> propriété.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-132">To indicate that a converted <xref:System.DateTimeOffset.DateTime%2A> value is the UTC time, you can retrieve the value of the <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="ab1b2-133">Il diffère de la <xref:System.DateTimeOffset.DateTime%2A> propriété de deux manières :</span><span class="sxs-lookup"><span data-stu-id="ab1b2-133">It differs from the <xref:System.DateTimeOffset.DateTime%2A> property in two ways:</span></span>
+
+* <span data-ttu-id="ab1b2-134">Elle retourne un <xref:System.DateTime> dont la valeur <xref:System.DateTime.Kind%2A> propriété est <xref:System.DateTimeKind.Utc>.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-134">It returns a <xref:System.DateTime> value whose <xref:System.DateTime.Kind%2A> property is <xref:System.DateTimeKind.Utc>.</span></span>
+
+* <span data-ttu-id="ab1b2-135">Si le <xref:System.DateTimeOffset.Offset%2A> différente de la valeur de la propriété <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, elle convertit l’heure au format UTC.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-135">If the <xref:System.DateTimeOffset.Offset%2A> property value does not equal <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, it converts the time to UTC.</span></span>
+
 > [!NOTE]
->  Si votre application exige que les valeurs <xref:System.DateTime> converties identifient de manière univoque un point unique dans le temps, vous devez alors envisager d'utiliser la propriété <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=fullName> pour gérer toutes les conversions de <xref:System.DateTimeOffset> en <xref:System.DateTime>.  
-  
- Le code suivant utilise la propriété <xref:System.DateTimeOffset.UtcDateTime%2A> pour convertir une valeur <xref:System.DateTimeOffset> dont le décalage équivaut à <xref:System.TimeSpan.Zero?displayProperty=fullName> en valeur <xref:System.DateTime>.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#6)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#6)]  
-  
- Le code suivant utilise la propriété <xref:System.DateTimeOffset.UtcDateTime%2A> pour effectuer une conversion de fuseau horaire et une conversion de type sur une valeur <xref:System.DateTimeOffset>.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#12](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#12)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#12)]  
-  
-### Conversion d'une heure locale  
- Pour indiquer qu'une valeur <xref:System.DateTimeOffset> représente l'heure locale, vous pouvez passer la valeur <xref:System.DateTime> retournée par la propriété <xref:System.DateTimeOffset.DateTime%2A?displayProperty=fullName> à la méthode <xref:System.DateTime.SpecifyKind%2A> `static` \(`Shared` dans Visual Basic\).  La méthode retourne la date et l'heure qui lui ont été passées par son premier paramètre, mais elle affecte la valeur spécifiée par son deuxième paramètre à la propriété <xref:System.DateTime.Kind%2A>.  Le code suivant utilise la méthode <xref:System.DateTime.SpecifyKind%2A> lors de la conversion d'une valeur <xref:System.DateTimeOffset> dont le décalage correspond à celui du fuseau horaire local.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#7)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#7)]  
-  
- Vous pouvez également utiliser la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=fullName> pour convertir une valeur <xref:System.DateTimeOffset> en valeur <xref:System.DateTime> locale.  La propriété <xref:System.DateTime.Kind%2A> de la valeur <xref:System.DateTime> retournée à la valeur <xref:System.DateTimeKind>.  Le code suivant utilise la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=fullName> lors de la conversion d'une valeur <xref:System.DateTimeOffset> dont le décalage correspond à celui du fuseau horaire local.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#10)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#10)]  
-  
- Lorsque vous récupérez une valeur <xref:System.DateTime> à l'aide de la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=fullName>, l'accesseur `get` de la propriété convertit d'abord la valeur <xref:System.DateTimeOffset> en heure UTC, puis il la convertit en heure locale en appelant la méthode <xref:System.DateTimeOffset.ToLocalTime%2A>.  En d'autres termes, vous pouvez récupérer une valeur à partir de la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=fullName> pour effectuer simultanément une conversion de fuseau horaire et une conversion de type.  Cela signifie également que les règles d'ajustement du fuseau horaire local sont appliquées lors de la conversion.  Le code suivant illustre l'utilisation de la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=fullName> pour effectuer une conversion de fuseau horaire et une conversion de type.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#11)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#11)]  
-  
-### Méthode de conversion à usage général  
- L'exemple suivant définit une méthode nommée `ConvertFromDateTimeOffset` qui convertit des valeurs <xref:System.DateTimeOffset> en valeurs <xref:System.DateTime>.  En fonction de son décalage, elle détermine si la valeur <xref:System.DateTimeOffset> est une heure UTC, une heure locale ou toute autre heure et elle définit en conséquence la propriété <xref:System.DateTime.Kind%2A> de la valeur de date et d'heure retournée.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#8](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#8)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#8)]  
-  
- L'exemple suivant appelle la méthode `ConvertFromDateTimeOffset` pour convertir des valeurs <xref:System.DateTimeOffset> qui représentent une heure UTC, une heure locale et une heure dans le fuseau horaire U.S. Central Standard Time.  
-  
- [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#9](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#9)]
- [!code-vb[System.DateTimeOffset.Conceptual.Conversions#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#9)]  
-  
- Notez que ce code part de deux hypothèses qui, selon l'application et la source de ses valeurs de date et d'heure, risquent de ne pas toujours être valides :  
-  
--   Il part du principe qu'une valeur de date et d'heure dont le décalage a la valeur <xref:System.TimeSpan.Zero?displayProperty=fullName> représente l'heure UTC.  En fait, l'heure UTC n'est pas une heure dans un fuseau horaire donné, mais l'heure par rapport à laquelle les heures des fuseaux horaires dans le monde sont normalisées.  Les fuseaux horaires peuvent également avoir un décalage de <xref:System.TimeSpan.Zero>.  
-  
--   Il part du principe qu'une date et une heure dont le décalage équivaut à celui du fuseau horaire local représente le fuseau horaire local.  Comme les valeurs de date et d'heure sont dissociées de leur fuseau horaire d'origine, cela peut ne pas être le cas ; la date et l'heure peuvent provenir d'un autre fuseau horaire ayant le même décalage.  
-  
-## Voir aussi  
- [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)
+> <span data-ttu-id="ab1b2-136">Si votre application nécessite que converti <xref:System.DateTime> valeurs identifient sans ambiguïté un point unique dans le temps, vous devez envisager d’utiliser le <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> propriété pour gérer toutes les <xref:System.DateTimeOffset> à <xref:System.DateTime> conversions.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-136">If your application requires that converted <xref:System.DateTime> values unambiguously identify a single point in time, you should consider using the <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> property to handle all <xref:System.DateTimeOffset> to <xref:System.DateTime> conversions.</span></span>
+
+<span data-ttu-id="ab1b2-137">Le code suivant utilise la <xref:System.DateTimeOffset.UtcDateTime%2A> propriété pour convertir un <xref:System.DateTimeOffset> valeur dont l’offset est égal à <xref:System.TimeSpan.Zero?displayProperty=nameWithType> à un <xref:System.DateTime> valeur.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-137">The following code uses the <xref:System.DateTimeOffset.UtcDateTime%2A> property to convert a <xref:System.DateTimeOffset> value whose offset equals <xref:System.TimeSpan.Zero?displayProperty=nameWithType> to a <xref:System.DateTime> value.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#6)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#6)]
+
+<span data-ttu-id="ab1b2-138">Le code suivant utilise la <xref:System.DateTimeOffset.UtcDateTime%2A> propriété pour effectuer une conversion de fuseau horaire et une conversion de type sur un <xref:System.DateTimeOffset> valeur.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-138">The following code uses the <xref:System.DateTimeOffset.UtcDateTime%2A> property to perform both a time zone conversion and a type conversion on a <xref:System.DateTimeOffset> value.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#12](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#12)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#12)]
+
+### <a name="converting-a-local-time"></a><span data-ttu-id="ab1b2-139">Conversion d’une heure locale</span><span class="sxs-lookup"><span data-stu-id="ab1b2-139">Converting a local time</span></span>
+
+<span data-ttu-id="ab1b2-140">Pour indiquer qu’un <xref:System.DateTimeOffset> valeur représente l’heure locale, vous pouvez passer le <xref:System.DateTime> valeur retournée par la <xref:System.DateTimeOffset.DateTime%2A?displayProperty=nameWithType> propriété le `static` (`Shared` en Visual Basic) <xref:System.DateTime.SpecifyKind%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="ab1b2-140">To indicate that a <xref:System.DateTimeOffset> value represents the local time, you can pass the <xref:System.DateTime> value returned by the <xref:System.DateTimeOffset.DateTime%2A?displayProperty=nameWithType> property to the `static` (`Shared` in Visual Basic) <xref:System.DateTime.SpecifyKind%2A> method.</span></span> <span data-ttu-id="ab1b2-141">La méthode retourne la date et l’heure passée comme premier paramètre, mais définit le <xref:System.DateTime.Kind%2A> propriété à la valeur spécifiée par son deuxième paramètre.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-141">The method returns the date and time passed to it as its first parameter, but sets the <xref:System.DateTime.Kind%2A> property to the value specified by its second parameter.</span></span> <span data-ttu-id="ab1b2-142">Le code suivant utilise la <xref:System.DateTime.SpecifyKind%2A> méthode lorsque vous convertissez un <xref:System.DateTimeOffset> valeur dont le décalage correspond à celui du fuseau horaire local.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-142">The following code uses the <xref:System.DateTime.SpecifyKind%2A> method when converting a <xref:System.DateTimeOffset> value whose offset corresponds to that of the local time zone.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#7)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#7)]
+
+<span data-ttu-id="ab1b2-143">Vous pouvez également utiliser le <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> propriété pour convertir un <xref:System.DateTimeOffset> valeur dans une variable locale <xref:System.DateTime> valeur.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-143">You can also use the <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> property to convert a <xref:System.DateTimeOffset> value to a local <xref:System.DateTime> value.</span></span> <span data-ttu-id="ab1b2-144">Le <xref:System.DateTime.Kind%2A> propriété retourné <xref:System.DateTime> valeur est <xref:System.DateTimeKind.Local>.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-144">The <xref:System.DateTime.Kind%2A> property of the returned <xref:System.DateTime> value is <xref:System.DateTimeKind.Local>.</span></span> <span data-ttu-id="ab1b2-145">Le code suivant utilise la <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> propriété lorsque vous convertissez un <xref:System.DateTimeOffset> valeur dont le décalage correspond à celui du fuseau horaire local.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-145">The following code uses the <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> property when converting a <xref:System.DateTimeOffset> value whose offset corresponds to that of the local time zone.</span></span> 
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#10)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#10)]
+
+<span data-ttu-id="ab1b2-146">Lorsque vous récupérez un <xref:System.DateTime> valeur à l’aide de la <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> propriété, de la propriété `get` accesseur convertit d’abord la <xref:System.DateTimeOffset> valeur au format UTC, puis la convertit en heure locale en appelant le <xref:System.DateTimeOffset.ToLocalTime%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="ab1b2-146">When you retrieve a <xref:System.DateTime> value using the <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> property, the property's `get` accessor first converts the <xref:System.DateTimeOffset> value to UTC, then converts it to local time by calling the <xref:System.DateTimeOffset.ToLocalTime%2A> method.</span></span> <span data-ttu-id="ab1b2-147">Cela signifie que vous pouvez récupérer une valeur à partir de la <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> propriété pour effectuer une conversion de fuseau horaire en même temps que vous effectuez une conversion de type.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-147">This means that you can retrieve a value from the <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> property to perform a time zone conversion at the same time that you perform a type conversion.</span></span> <span data-ttu-id="ab1b2-148">Cela signifie également que les règles d’ajustement du fuseau horaire local sont appliquées lors de la conversion.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-148">It also means that the local time zone's adjustment rules are applied in performing the conversion.</span></span> <span data-ttu-id="ab1b2-149">Le code suivant illustre l’utilisation de la <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> pour effectuer une conversion de fuseau horaire et un type de propriété.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-149">The following code illustrates the use of the <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> property to perform both a type and a time zone conversion.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#11)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#11)]
+
+### <a name="a-general-purpose-conversion-method"></a><span data-ttu-id="ab1b2-150">Une méthode de conversion à usage général</span><span class="sxs-lookup"><span data-stu-id="ab1b2-150">A general-purpose conversion method</span></span>
+
+<span data-ttu-id="ab1b2-151">L’exemple suivant définit une méthode nommée `ConvertFromDateTimeOffset` qui convertit <xref:System.DateTimeOffset> valeurs <xref:System.DateTime> valeurs.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-151">The following example defines a method named `ConvertFromDateTimeOffset` that converts <xref:System.DateTimeOffset> values to <xref:System.DateTime> values.</span></span> <span data-ttu-id="ab1b2-152">En fonction de son décalage, elle détermine si le <xref:System.DateTimeOffset> valeur est une heure UTC, une heure locale ou un autre moment et définit la date renvoyée et la valeur d’heure <xref:System.DateTime.Kind%2A> propriété en conséquence.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-152">Based on its offset, it determines whether the <xref:System.DateTimeOffset> value is a UTC time, a local time, or some other time, and defines the returned date and time value's <xref:System.DateTime.Kind%2A> property accordingly.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#8](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#8)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#8)]
+
+<span data-ttu-id="ab1b2-153">L’exemple suivant appelle la `ConvertFromDateTimeOffset` méthode pour convertir <xref:System.DateTimeOffset> valeurs qui représentent une heure UTC, une heure locale et une heure aux États-Unis. horaire Centre des États-Unis.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-153">The follow example calls the `ConvertFromDateTimeOffset` method to convert <xref:System.DateTimeOffset> values that represent a UTC time, a local time, and a time in the U.S. Central Standard Time zone.</span></span>
+
+[!code-csharp[System.DateTimeOffset.Conceptual.Conversions#9](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#9)]
+[!code-vb[System.DateTimeOffset.Conceptual.Conversions#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#9)]
+
+<span data-ttu-id="ab1b2-154">Notez que ce code part de deux hypothèses qui, selon l’application et la source de ses valeurs de date et d’heure, peuvent ne pas toujours être valides :</span><span class="sxs-lookup"><span data-stu-id="ab1b2-154">Note that this code makes two assumptions that, depending on the application and the source of its date and time values, may not always be valid:</span></span>
+
+* <span data-ttu-id="ab1b2-155">Il part du principe qu’une date et heure de valeur dont le décalage est <xref:System.TimeSpan.Zero?displayProperty=nameWithType> représente l’heure UTC.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-155">It assumes that a date and time value whose offset is <xref:System.TimeSpan.Zero?displayProperty=nameWithType> represents UTC.</span></span> <span data-ttu-id="ab1b2-156">En fait, l’heure UTC n’est pas une heure dans un fuseau horaire particulier, mais l’heure par rapport à laquelle les heures des fuseaux horaires du monde sont normalisées.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-156">In fact, UTC is not a time in a particular time zone, but the time in relation to which the times in the world's time zones are standardized.</span></span> <span data-ttu-id="ab1b2-157">Fuseaux horaires peuvent également avoir un décalage de <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-157">Time zones can also have an offset of <xref:System.TimeSpan.Zero>.</span></span>
+
+* <span data-ttu-id="ab1b2-158">Il suppose qu’une date et une heure dont le décalage est égal à celui du fuseau horaire local représentent le fuseau horaire local.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-158">It assumes that a date and time whose offset equals that of the local time zone represents the local time zone.</span></span> <span data-ttu-id="ab1b2-159">Étant donné que les valeurs de date et d’heure sont dissociées de leur fuseau horaire d’origine, cela peut ne pas être le cas ; la date et l’heure peuvent provenir d’un autre fuseau horaire affichant le même décalage.</span><span class="sxs-lookup"><span data-stu-id="ab1b2-159">Because date and time values are disassociated from their original time zone, this may not be the case; the date and time can have originated in another time zone with the same offset.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="ab1b2-160">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ab1b2-160">See also</span></span>
+
+[<span data-ttu-id="ab1b2-161">Dates, heures et fuseaux horaires</span><span class="sxs-lookup"><span data-stu-id="ab1b2-161">Dates, times, and time zones</span></span>](../../../docs/standard/datetime/index.md)
