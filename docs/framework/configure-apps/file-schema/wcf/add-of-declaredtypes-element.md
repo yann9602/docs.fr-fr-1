@@ -1,33 +1,40 @@
 ---
-title: "&lt;add&gt;, &#233;l&#233;ment de &lt;declaredTypes&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Contrats de données"
-  - "DataContractAttribute"
-  - "DataContractSerializer"
-  - "dataContractSerializer (élément)"
+title: "&lt;add&gt;, élément de &lt;declaredTypes&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data contracts
+- dataContractSerializer element
+- DataContractSerializer
+- DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 699d18b4c49d2915724309d96d4ad501b98601eb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;add&gt;, &#233;l&#233;ment de &lt;declaredTypes&gt;
-Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSerializer> pendant la désérialisation.  Chaque type déclaré inclut les types connus qui seront renvoyés comme champ ou propriété du type déclaré.  
+# <a name="ltaddgt-of-ltdeclaredtypesgt-element"></a>&lt;add&gt;, élément de &lt;declaredTypes&gt;
+Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSerializer> pendant la désérialisation. Chaque type déclaré inclut les types connus qui seront renvoyés comme champ ou propriété du type déclaré.  
   
-## Syntaxe  
+ system.runtime.serialization  
+\<dataContractSerializer >  
+\<declaredTypes >  
+\<Ajouter > de \<declaredTypes >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <add type="String">  
    <knownType type="String">  
        <parameter index="Integer"  
@@ -36,38 +43,38 @@ Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSe
 </add>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|type|Attribut de chaîne requis.<br /><br /> Indique le nom du type \(espace de noms compris\), celui de l'assembly, le numéro de version, la culture et le jeton de clé publique.|  
+|---------------|-----------------|  
+|type|Attribut de chaîne requis.<br /><br /> Indique le nom du type (espace de noms compris), celui de l'assembly, le numéro de version, la culture et le jeton de clé publique.|  
   
-### Éléments enfants  
-  
-|Élément|Description|  
-|-------------|-----------------|  
-|[\<knownType\>](../../../../../docs/framework/configure-apps/file-schema/wcf/knowntype.md)|Spécifie le type connu correspondant au type déclaré en cours d'ajout.  Si le type déclaré est un type générique, vous devez également ajouter un élément de paramètre à l'élément `<knownType>` pour spécifier le paramètre générique utilisé pour renvoyer le type connu.|  
-  
-### Éléments parents  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<declaredTypes\>](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|Contient les types qui requièrent des types connus pendant la désérialisation effectuée par le <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[\<knownType >](../../../../../docs/framework/configure-apps/file-schema/wcf/knowntype.md)|Spécifie le type connu correspondant au type déclaré en cours d'ajout. Si le type déclaré est un type générique, vous devez également ajouter un élément de paramètre à l'élément `<knownType>` pour spécifier le paramètre générique utilisé pour renvoyer le type connu.|  
   
-## Notes  
- Pour plus d'informations sur les types connus, consultez [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) et <xref:System.Runtime.Serialization.DataContractSerializer>.  
+### <a name="parent-elements"></a>Éléments parents  
   
- Pour obtenir un exemple d'utilisation de cet élément, consultez [\<dataContractSerializer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md).  
+|Élément|Description|  
+|-------------|-----------------|  
+|[\<declaredTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|Contient les types qui requièrent des types connus pendant la désérialisation effectuée par le <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+  
+## <a name="remarks"></a>Remarques  
+ Pour plus d’informations sur les types connus, consultez [Types connus de contrat de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) et <xref:System.Runtime.Serialization.DataContractSerializer>.  
+  
+ Consultez le [ \<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) pour obtenir un exemple d’utilisation de cet élément.  
   
 > [!NOTE]
->  Si vous ajoutez le type <xref:System.Object> comme `<declaredType>`, une <xref:System.Configuration.ConfigurationErrorsException> est levée.  Ceci est dû au fait que le type <xref:System.Object> ne peut pas être utilisé comme type déclaré dans la configuration.  
+>  Si vous ajoutez le type <xref:System.Object> comme `<declaredType>`, une <xref:System.Configuration.ConfigurationErrorsException> est levée. Ceci est dû au fait que le type <xref:System.Object> ne peut pas être utilisé comme type déclaré dans la configuration.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-```  
+```xml  
 <add type="MyCompany.Library.Shape,   
            MyAssembly, Version=2.0.0.0, Culture=neutral,  
            PublicKeyToken=XXXXXX, processorArchitecture=MSIL">  
@@ -78,8 +85,8 @@ Ajoute un type utilisé par le <xref:System.Runtime.Serialization.DataContractSe
 </add>  
 ```  
   
-## Voir aussi  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)   
- [\<dataContractSerializer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)   
- [\<add\> of \<declaredTypes\>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ [Types connus de contrat de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
+ [\<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)  
+ [\<Ajouter > de \<declaredTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)

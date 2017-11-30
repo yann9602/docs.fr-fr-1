@@ -1,33 +1,39 @@
 ---
-title: "Modification des objets DataView | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Modification des DataViews
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 697a3991-b660-4a5a-8a54-1a2304ff158e
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0a8478e9b21c6c2abdc02677305e468109e7b9fe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Modification des objets DataView
-Vous pouvez utiliser l'objet <xref:System.Data.DataView> pour ajouter, supprimer ou modifier des lignes de données dans la table sous\-jacente.  La possibilité d'utiliser le **DataView** pour modifier des données dans la table sous\-jacente est contrôlée par la définition d'une de ses trois propriétés de type booléen.  Ces propriétés sont <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A> et <xref:System.Data.DataView.AllowDelete%2A>.  Par défaut, elles ont la valeur **true**.  
+# <a name="modifying-dataviews"></a>Modification des DataViews
+Vous pouvez utiliser l'objet <xref:System.Data.DataView> pour ajouter, supprimer ou modifier des lignes de données dans la table sous-jacente. La possibilité d’utiliser le **DataView** pour modifier les données dans la table sous-jacente est contrôlé en définissant une des trois propriétés booléennes de la **DataView**. Ces propriétés sont <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A> et <xref:System.Data.DataView.AllowDelete%2A>. Ils sont définis sur **true** par défaut.  
   
- Si **AllowNew** a la valeur **true**, vous pouvez utiliser la méthode <xref:System.Data.DataView.AddNew%2A> du **DataView** pour créer un nouvel objet <xref:System.Data.DataRowView>.  Notez qu'une nouvelle ligne n'est effectivement ajoutée à l'objet <xref:System.Data.DataTable> sous\-jacent qu'après l'appel de la méthode <xref:System.Data.DataRowView.EndEdit%2A> du **DataRowView**.  Si la méthode <xref:System.Data.DataRowView.CancelEdit%2A> du **DataRowView** est appelée, la nouvelle ligne est ignorée.  Notez également que vous ne pouvez modifier qu'un **DataRowView** à la fois.  Si vous appelez la méthode **AddNew** ou **BeginEdit** du **DataRowView** alors qu'une ligne en attente existe, la méthode **EndEdit** est implicitement appelée sur cette ligne.  Lorsque la méthode **EndEdit** est appelée, les modifications sont apportées au **DataTable** sous\-jacent et pourront ensuite être validées ou refusées à l'aide des méthodes **AcceptChanges** ou **RejectChanges** de l'objet **DataTable**, **DataSet** ou **DataRow**.  Si **AllowNew** a la valeur **false**, une exception est levée si vous appelez la méthode **AddNew** du **DataRowView**.  
+ Si **AllowNew** est **true**, vous pouvez utiliser la <xref:System.Data.DataView.AddNew%2A> méthode de la **DataView** pour créer un nouveau <xref:System.Data.DataRowView>. Notez qu’une nouvelle ligne n’est pas en réalité ajoutées à sous-jacent <xref:System.Data.DataTable> jusqu'à ce que le <xref:System.Data.DataRowView.EndEdit%2A> méthode de la **DataRowView** est appelée. Si le <xref:System.Data.DataRowView.CancelEdit%2A> méthode de la **DataRowView** est appelée, la nouvelle ligne est ignorée. Notez également que vous pouvez modifier qu’un seul **DataRowView** à la fois. Si vous appelez le **AddNew** ou **BeginEdit** méthode de la **DataRowView** alors qu’une ligne en attente existe, **EndEdit** est implicitement appelée sur le ligne en attente. Lorsque **EndEdit** est appelée, les modifications sont appliquées à l’objet sous-jacent **DataTable** et pourront ensuite être validées ou refusées à l’aide de la **AcceptChanges** ou  **RejectChanges** méthodes de la **DataTable**, **DataSet**, ou **DataRow** objet. Si **AllowNew** est **false**, une exception est levée si vous appelez le **AddNew** méthode de la **DataRowView**.  
   
- Si **AllowEdit** a la valeur **true**, vous pouvez modifier le contenu d'un **DataRow** via le **DataRowView**.  Vous pouvez confirmer les modifications à apporter à la ligne sous\-jacente en utilisant **DataRowView.EndEdit** ou refuser ces modifications à l'aide de **DataRowView.CancelEdit**.  Notez que vous ne pouvez modifier qu'une seule ligne à la fois.  Si vous appelez la méthode **AddNew** ou **BeginEdit** du **DataRowView** alors qu'une ligne en attente existe, la méthode **EndEdit** est implicitement appelée sur cette ligne.  Lorsque la méthode **EndEdit** est appelée, les modifications proposées sont placées dans la version de ligne **Current** du **DataRow** sous\-jacent et pourront ensuite être validées ou refusées à l'aide de la méthode **AcceptChanges** ou **RejectChanges** de l'objet **DataTable**, **DataSet** ou **DataRow**.  Si **AllowEdit** a la valeur **false**, une exception est levée si vous tentez de modifier une valeur du **DataView**.  
+ Si **AllowEdit** est **true**, vous pouvez modifier le contenu d’un **DataRow** via la **DataRowView**. Vous pouvez confirmer les modifications apportées à la ligne sous-jacente en utilisant **DataRowView.EndEdit** ou rejeter les modifications à l’aide de **DataRowView.CancelEdit**. Notez que vous ne pouvez modifier qu'une seule ligne à la fois. Si vous appelez le **AddNew** ou **BeginEdit** méthodes de la **DataRowView** alors qu’une ligne en attente existe, **EndEdit** est implicitement appelée sur la ligne en attente. Lorsque **EndEdit** est appelée, les modifications proposées sont placées dans le **actuel** version de ligne de l’objet sous-jacent **DataRow** et pourront ensuite être validées ou refusées à l’aide de la  **AcceptChanges** ou **RejectChanges** méthodes de la **DataTable**, **DataSet**, ou **DataRow** objet. Si **AllowEdit** est **false**, une exception est levée si vous tentez de modifier une valeur dans la **DataView**.  
   
- Lorsqu'un **DataRowView** existant est en cours de modification, les événements du **DataTable** sous\-jacent seront toujours déclenchés avec les modifications proposées.  Notez que si vous appelez **EndEdit** ou **CancelEdit** sur le **DataRow** sous\-jacent, les changements en attente seront appliqués ou annulés, que la méthode **EndEdit** ou **CancelEdit** soit ou non appelée sur le **DataRowView**.  
+ Lorsqu’un existant **DataRowView** est en cours de modification, les événements de l’objet sous-jacent **DataTable** seront toujours déclenchés avec les modifications proposées. Notez que si vous appelez **EndEdit** ou **CancelEdit** sur sous-jacent **DataRow**, en attente seront appliquées ou annulées indépendamment du fait que des modifications  **EndEdit** ou **CancelEdit** est appelée sur le **DataRowView**.  
   
- Si **AllowDelete** a la valeur **true**, vous pouvez supprimer des lignes du **DataView** à l'aide de la méthode **Delete** de l'objet **DataView** ou **DataRowView**, et les lignes sont supprimées du **DataTable** sous\-jacent.  Vous pouvez par la suite valider ou refuser les suppressions à l'aide de **AcceptChanges** ou de **RejectChanges** respectivement.  Si **AllowDelete** a la valeur **false**, une exception est levée si vous appelez la méthode **Delete** du **DataView** ou du **DataRowView**.  
+ Si **AllowDelete** est **true**, vous pouvez supprimer des lignes à partir de la **DataView** à l’aide de la **supprimer** méthode de la **DataView**  ou **DataRowView** objet, les lignes sont supprimées de sous-jacent **DataTable**. Vous pouvez ultérieurement valider ou refuser les suppressions à l’aide de **AcceptChanges** ou **RejectChanges** respectivement. Si **AllowDelete** est **false**, une exception est levée si vous appelez le **supprimer** méthode de la **DataView** ou  **DataRowView**.  
   
- L'exemple de code suivant désactive la possibilité de supprimer des lignes à l'aide du **DataView** et ajoute une nouvelle ligne à la table sous\-jacente à l'aide du **DataView**.  
+ L’exemple de code suivant désactive à l’aide de la **DataView** pour supprimer les lignes et ajoute une nouvelle ligne à la table sous-jacente à l’aide du **DataView**.  
   
 ```vb  
 Dim custTable As DataTable = custDS.Tables("Customers")  
@@ -40,7 +46,6 @@ Dim newDRV As DataRowView = custView.AddNew()
 newDRV("CustomerID") = "ABCDE"  
 newDRV("CompanyName") = "ABC Products"  
 newDRV.EndEdit()  
-  
 ```  
   
 ```csharp  
@@ -56,9 +61,9 @@ newDRV["CompanyName"] = "ABC Products";
 newDRV.EndEdit();  
 ```  
   
-## Voir aussi  
- <xref:System.Data.DataTable>   
- <xref:System.Data.DataView>   
- <xref:System.Data.DataRowView>   
- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Data.DataTable>  
+ <xref:System.Data.DataView>  
+ <xref:System.Data.DataRowView>  
+ [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

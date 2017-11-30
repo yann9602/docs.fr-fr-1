@@ -1,32 +1,35 @@
 ---
-title: "Durable Instance Context | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Durable Instance Context
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 540f6b6fe7795eb958afd84695865fd2e4271175
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Durable Instance Context
-Cet exemple montre comment personnaliser l'exécution [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] afin d'activer des contextes d'instance fiables.Il utilise SQL Server 2005 comme magasin de sauvegarde \(SQL Server 2005 Express dans ce cas précis\).Toutefois, il permet également d'accéder aux mécanismes de stockage personnalisés.  
+# <a name="durable-instance-context"></a>Durable Instance Context
+Cet exemple montre comment personnaliser l'exécution [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] afin d'activer des contextes d'instance fiables. Il utilise SQL Server 2005 comme magasin de sauvegarde (SQL Server 2005 Express dans ce cas précis). Toutefois, il permet également d'accéder aux mécanismes de stockage personnalisés.  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Cet exemple implique l'extension de la couche de canal et de la couche de modèle de service de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Par conséquent, il est nécessaire de comprendre les concepts sous\-jacents avant d'aborder les détails de l'implémentation.  
+ Cet exemple implique l'extension de la couche de canal et de la couche de modèle de service de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Par conséquent, il est nécessaire de comprendre les concepts sous-jacents avant d'aborder les détails de l'implémentation.  
   
- Les contextes d'instance fiables se trouvent souvent dans des scénarios réels.Une application de panier d'achat par exemple, permet de suspendre le processus d'achat et de le poursuivre ultérieurement.De cette façon, lorsque nous visitons le panier d'achat le jour suivant, le contexte d'origine est restauré.Il est important de noter que l'application de panier d'achat \(sur le serveur\) ne conserve pas l'instance correspondante en cas de déconnexion.À la place, elle rend son état persistant dans un média de stockage fiable et l'utilise lors de la construction d'une nouvelle instance pour le contexte restauré.Par conséquent l'instance de service qui peut servir pour le même contexte n'est pas la même que l'instance précédente \(autrement dit, elle n'a pas la même adresse mémoire\).  
+ Les contextes d'instance fiables se trouvent souvent dans des scénarios réels. Une application de panier d'achat par exemple, permet de suspendre le processus d'achat et de le poursuivre ultérieurement. De cette façon, lorsque nous visitons le panier d'achat le jour suivant, le contexte d'origine est restauré. Il est important de noter que l'application de panier d'achat (sur le serveur) ne conserve pas l'instance correspondante en cas de déconnexion. À la place, elle rend son état persistant dans un média de stockage fiable et l'utilise lors de la construction d'une nouvelle instance pour le contexte restauré. Par conséquent l'instance de service qui peut servir pour le même contexte n'est pas la même que l'instance précédente (autrement dit, elle n'a pas la même adresse mémoire).  
   
- Le contexte d'instance fiable est rendu possible par un petit protocole qui échange un ID de contexte entre le client et le service.Cet ID de contexte est créé sur le client et est transmis au service.Lorsque l'instance de service est créée, l'exécution du service essaie de charger l'état persistant qui correspond à cet ID de contexte à partir d'un stockage persistant \(par défaut, il s'agit d'une base de données SQL Server 2005\).Si aucun état n'est disponible, la nouvelle instance a son état par défaut.L'implémentation de service utilise un attribut personnalisé pour marquer les opérations qui modifient l'état de l'implémentation de service afin que l'exécution puisse enregistrer l'instance de service après les avoir appelées.  
+ Le contexte d'instance fiable est rendu possible par un petit protocole qui échange un ID de contexte entre le client et le service. Cet ID de contexte est créé sur le client et est transmis au service. Lorsque l'instance de service est créée, l'exécution du service essaie de charger l'état persistant qui correspond à cet ID de contexte à partir d'un stockage persistant (par défaut, il s'agit d'une base de données SQL Server 2005). Si aucun état n'est disponible, la nouvelle instance a son état par défaut. L'implémentation de service utilise un attribut personnalisé pour marquer les opérations qui modifient l'état de l'implémentation de service afin que l'exécution puisse enregistrer l'instance de service après les avoir appelées.  
   
  Dans la description précédente, on distingue clairement deux étapes permettant d'atteindre cet objectif :  
   
@@ -34,10 +37,10 @@ Cet exemple montre comment personnaliser l'exécution [!INCLUDE[indigo1](../../.
   
 2.  Modification du comportement local du service afin d'implémenter la logique d'instanciation personnalisée.  
   
- La première étape mentionnée affectant les messages sur le câble, elle doit être implémentée sous forme d'un canal personnalisé et être raccordée à la couche de canal.La dernière affecte uniquement le comportement local du service et peut par conséquent être implémentée en étendant plusieurs points d'extensibilité.Chacune des extensions suivantes est traitée dans les sections ci\-après.  
+ La première étape mentionnée affectant les messages sur le câble, elle doit être implémentée sous forme d'un canal personnalisé et être raccordée à la couche de canal. La dernière affecte uniquement le comportement local du service et peut par conséquent être implémentée en étendant plusieurs points d'extensibilité. Chacune des extensions suivantes est traitée dans les sections ci-après.  
   
-## Canal InstanceContext fiable  
- La première chose à examiner est une extension de la couche de canal.La première étape de l'écriture d'un canal personnalisé consiste à déterminer la structure de communication du canal.Un nouveau protocole de câble étant introduit, le canal doit fonctionner avec la quasi\-totalité des autres canaux de la pile.Par conséquent, il doit prendre en charge l'ensemble des modèles d'échange de messages.Toutefois, la fonctionnalité principale du canal est la même, quelle que soit sa structure de communication.Plus précisément, du côté client il doit écrire l'ID de contexte dans les messages, et du côté service il doit lire cet ID de contexte à partir des messages et le passer aux niveaux supérieurs.De ce fait, une classe `DurableInstanceContextChannelBase` est créée et agit en tant que classe de base abstraite pour toutes les implémentations de canal de contexte d'instance fiable.Cette classe contient les fonctions de gestion de machine d'état courantes ainsi que deux membres protégés afin d'appliquer et de lire les informations de contexte vers et à partir des messages.  
+## <a name="durable-instancecontext-channel"></a>Canal InstanceContext fiable  
+ La première chose à examiner est une extension de la couche de canal. La première étape de l'écriture d'un canal personnalisé consiste à déterminer la structure de communication du canal. Un nouveau protocole de câble étant introduit, le canal doit fonctionner avec la quasi-totalité des autres canaux de la pile. Par conséquent, il doit prendre en charge l'ensemble des modèles d'échange de messages. Toutefois, la fonctionnalité principale du canal est la même, quelle que soit sa structure de communication. Plus précisément, du côté client il doit écrire l'ID de contexte dans les messages, et du côté service il doit lire cet ID de contexte à partir des messages et le passer aux niveaux supérieurs. De ce fait, une classe `DurableInstanceContextChannelBase` est créée et agit en tant que classe de base abstraite pour toutes les implémentations de canal de contexte d'instance fiable. Cette classe contient les fonctions de gestion de machine d'état courantes ainsi que deux membres protégés afin d'appliquer et de lire les informations de contexte vers et à partir des messages.  
   
 ```  
 class DurableInstanceContextChannelBase  
@@ -54,13 +57,13 @@ class DurableInstanceContextChannelBase
 }  
 ```  
   
- Ces deux méthodes utilisent des implémentations `IContextManager` pour écrire et lire l'ID de contexte vers ou à partir du message \(`IContextManager` est une interface personnalisée permettant de définir le contrat de tous les gestionnaires de contexte\). Le canal peut inclure l'ID de contexte dans un en\-tête SOAP personnalisé ou dans un en\-tête cookie HTTP.Chaque implémentation de gestionnaire de contexte hérite de la classe `ContextManagerBase` qui contient les fonctionnalités communes de tous les gestionnaires de contexte.La méthode `GetContextId` de cette classe permet de générer l'ID de contexte à partir du client.Lorsqu'un ID de contexte est généré pour la première fois, cette méthode l'enregistre dans un fichier texte dont le nom est construit par l'adresse du point de terminaison distant \(les caractères de nom de fichier non valides dans les URI classiques sont remplacés par des caractères @\).  
+ Ces deux méthodes utilisent des implémentations `IContextManager` pour écrire et lire l'ID de contexte vers ou à partir du message  (`IContextManager` est une interface personnalisée permettant de définir le contrat de tous les gestionnaires de contexte). Le canal peut inclure l'ID de contexte dans un en-tête SOAP personnalisé ou dans un en-tête cookie HTTP. Chaque implémentation de gestionnaire de contexte hérite de la classe `ContextManagerBase` qui contient les fonctionnalités communes de tous les gestionnaires de contexte. La méthode `GetContextId` de cette classe permet de générer l'ID de contexte à partir du client. Lorsqu'un ID de contexte est généré pour la première fois, cette méthode l'enregistre dans un fichier texte dont le nom est construit par l'adresse du point de terminaison distant (les caractères de nom de fichier non valides dans les URI classiques sont remplacés par des caractères @).  
   
- Par la suite, lorsque l'ID de contexte est requis pour le même point de terminaison distant, il vérifie si un fichier approprié existe.Si c'est le cas, il lit l'ID de contexte et retourne.Sinon, il retourne un ID de contexte généré récemment et l'enregistre dans un fichier.Avec la configuration par défaut, ces fichiers sont placés dans un répertoire appelé ContextStore, qui réside dans le répertoire temporaire de l'utilisateur actuel.Toutefois, cet emplacement est configurable à l'aide de l'élément de liaison.  
+ Par la suite, lorsque l'ID de contexte est requis pour le même point de terminaison distant, il vérifie si un fichier approprié existe. Si c'est le cas, il lit l'ID de contexte et retourne. Sinon, il retourne un ID de contexte généré récemment et l'enregistre dans un fichier. Avec la configuration par défaut, ces fichiers sont placés dans un répertoire appelé ContextStore, qui réside dans le répertoire temporaire de l'utilisateur actuel. Toutefois, cet emplacement est configurable à l'aide de l'élément de liaison.  
   
- Le mécanisme utilisé pour transporter l'ID de contexte est configurable.Il peut être écrit dans l'en\-tête cookie HTTP ou dans un en\-tête SOAP personnalisé.L'approche utilisant l'en\-tête SOAP personnalisé permet d'utiliser ce protocole avec des protocoles non HTTP \(par exemple, TCP ou canaux nommés\).Les deux classes `MessageHeaderContextManager` et `HttpCookieContextManager` implémentent ces deux options.  
+ Le mécanisme utilisé pour transporter l'ID de contexte est configurable. Il peut être écrit dans l'en-tête cookie HTTP ou dans un en-tête SOAP personnalisé. L'approche utilisant l'en-tête SOAP personnalisé permet d'utiliser ce protocole avec des protocoles non HTTP (par exemple, TCP ou canaux nommés). Les deux classes `MessageHeaderContextManager` et `HttpCookieContextManager` implémentent ces deux options.  
   
- Elles écrivent l'ID de contexte dans le message de manière appropriée.Par exemple, la classe `MessageHeaderContextManager` l'écrit dans un en\-tête SOAP de la méthode `WriteContext`.  
+ Elles écrivent l'ID de contexte dans le message de manière appropriée. Par exemple, la classe `MessageHeaderContextManager` l'écrit dans un en-tête SOAP de la méthode `WriteContext`.  
   
 ```  
 public override void WriteContext(Message message)  
@@ -77,7 +80,7 @@ public override void WriteContext(Message message)
 }   
 ```  
   
- Les méthodes `ApplyContext` et `ReadContextId` de la classe `DurableInstanceContextChannelBase` appellent `IContextManager.ReadContext` et `IContextManager.WriteContext`, respectivement.Toutefois, ces gestionnaires de contexte ne sont pas directement créés par la classe `DurableInstanceContextChannelBase`.Cette tâche est accomplie par la classe `ContextManagerFactory`.  
+ Les méthodes `ApplyContext` et `ReadContextId` de la classe `DurableInstanceContextChannelBase` appellent `IContextManager.ReadContext` et `IContextManager.WriteContext`, respectivement. Toutefois, ces gestionnaires de contexte ne sont pas directement créés par la classe `DurableInstanceContextChannelBase`. Cette tâche est accomplie par la classe `ContextManagerFactory`.  
   
 ```  
 IContextManager contextManager =  
@@ -86,15 +89,15 @@ IContextManager contextManager =
                 this.endpointAddress);  
 ```  
   
- La méthode `ApplyContext` est appelée par les canaux d'envoi.Elle injecte l'ID de contexte dans les messages sortants.La méthode `ReadContextId` est appelée par les canaux de réception.Cette méthode garantit que l'ID de contexte est disponible dans les messages entrants et l'ajoute à la collection `Properties` de la classe `Message`.Elle lève également une exception `CommunicationException` en cas d'échec de lecture de l'ID de contexte et provoque donc l'abandon du canal.  
+ La méthode `ApplyContext` est appelée par les canaux d'envoi. Elle injecte l'ID de contexte dans les messages sortants. La méthode `ReadContextId` est appelée par les canaux de réception. Cette méthode garantit que l'ID de contexte est disponible dans les messages entrants et l'ajoute à la collection `Properties` de la classe `Message`. Elle lève également une exception `CommunicationException` en cas d'échec de lecture de l'ID de contexte et provoque donc l'abandon du canal.  
   
 ```  
 message.Properties.Add(DurableInstanceContextUtility.ContextIdProperty, contextId);  
 ```  
   
- Avant de poursuivre, il est important de comprendre l'utilisation de la collection `Properties` dans la classe `Message`.En général, cette collection `Properties` est utilisée lors du passage des données des niveaux inférieurs aux niveaux supérieurs de la couche de canal.De cette manière, les données souhaitées peuvent être fournies aux niveaux supérieurs de façon cohérente, quels que soient les détails du protocole.En d'autres termes, la couche de canal peut envoyer et recevoir l'ID de contexte sous forme d'un en\-tête SOAP ou d'un en\-tête cookie HTTP.Mais il n'est pas nécessaire que les niveaux supérieurs connaissent ces détails car la couche de canal rend ces informations disponibles dans la collection `Properties`.  
+ Avant de poursuivre, il est important de comprendre l'utilisation de la collection `Properties` dans la classe `Message`. En général, cette collection `Properties` est utilisée lors du passage des données des niveaux inférieurs aux niveaux supérieurs de la couche de canal. De cette manière, les données souhaitées peuvent être fournies aux niveaux supérieurs de façon cohérente, quels que soient les détails du protocole. En d'autres termes, la couche de canal peut envoyer et recevoir l'ID de contexte sous forme d'un en-tête SOAP ou d'un en-tête cookie HTTP. Mais il n'est pas nécessaire que les niveaux supérieurs connaissent ces détails car la couche de canal rend ces informations disponibles dans la collection `Properties`.  
   
- La classe `DurableInstanceContextChannelBase` étant maintenant en place, l'ensemble des dix interfaces nécessaires \(IOutputChannel, IInputChannel, IOutputSessionChannel, IInputSessionChannel, IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, IDuplexChannel, IDuplexSessionChannel\) doivent être implémentées.Elles ressemblent à chaque modèle d'échange de messages disponible \(datagramme, simplex, duplex et leurs variantes de session\).Chacune de ces implémentations hérite de la classe de base précédemment décrite et appelle `ApplyContext` et `ReadContexId` de manière appropriée.Par exemple, `DurableInstanceContextOutputChannel`, qui implémente l'interface IOutputChannel, appelle la méthode `ApplyContext` de chaque méthode qui envoie les messages.  
+ La classe `DurableInstanceContextChannelBase` étant maintenant en place, l'ensemble des dix interfaces nécessaires (IOutputChannel, IInputChannel, IOutputSessionChannel, IInputSessionChannel, IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, IDuplexChannel, IDuplexSessionChannel) doivent être implémentées. Elles ressemblent à chaque modèle d'échange de messages disponible (datagramme, simplex, duplex et leurs variantes de session). Chacune de ces implémentations hérite de la classe de base précédemment décrite et appelle `ApplyContext` et `ReadContexId` de manière appropriée. Par exemple, `DurableInstanceContextOutputChannel`, qui implémente l'interface IOutputChannel, appelle la méthode `ApplyContext` de chaque méthode qui envoie les messages.  
   
 ```  
 public void Send(Message message, TimeSpan timeout)  
@@ -116,7 +119,7 @@ public Message Receive(TimeSpan timeout)
 }  
 ```  
   
- En outre, ces implémentations de canal délèguent les appels de méthode au canal inférieur dans la pile de canaux.Toutefois, les variantes de session ont une logique de base permettant de s'assurer que l'ID de contexte est envoyé et est lu uniquement pour le premier message qui provoque la création de la session.  
+ En outre, ces implémentations de canal délèguent les appels de méthode au canal inférieur dans la pile de canaux. Toutefois, les variantes de session ont une logique de base permettant de s'assurer que l'ID de contexte est envoyé et est lu uniquement pour le premier message qui provoque la création de la session.  
   
 ```  
 if (isFirstMessage)  
@@ -127,10 +130,10 @@ if (isFirstMessage)
 }  
 ```  
   
- Ces implémentations de canal sont ensuite ajoutées de manière appropriée à l'exécution du canal [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par les classes `DurableInstanceContextBindingElement` et `DurableInstanceContextBindingElementSection`.Pour plus d'informations sur les éléments de liaison et les sections d'élément de liaison, consultez [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md).  
+ Ces implémentations de canal sont ensuite ajoutées de manière appropriée à l'exécution du canal [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par les classes `DurableInstanceContextBindingElement` et `DurableInstanceContextBindingElementSection`. Consultez le [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) exemple de documentation pour plus d’informations sur les éléments de liaison et de sections d’élément de liaison de canal.  
   
-## Extensions de la couche de modèle de service  
- Maintenant que l'ID de contexte a traversé la couche de canal, le comportement de service peut être implémenté afin de personnaliser l'instanciation.Dans cet exemple, un gestionnaire de stockage est utilisé pour charger et enregistrer l'état à partir de ou vers le magasin persistant.Comme expliqué précédemment, cet exemple fournit un gestionnaire de stockage qui utilise le SQL Server 2005 comme magasin de sauvegarde.Toutefois, il est également possible d'ajouter des mécanismes de stockage personnalisés à cette extension.Pour ce faire, une interface publique est déclarée et doit être implémentée par tous les gestionnaires de stockage.  
+## <a name="service-model-layer-extensions"></a>Extensions de la couche de modèle de service  
+ Maintenant que l'ID de contexte a traversé la couche de canal, le comportement de service peut être implémenté afin de personnaliser l'instanciation. Dans cet exemple, un gestionnaire de stockage est utilisé pour charger et enregistrer l'état à partir de ou vers le magasin persistant. Comme expliqué précédemment, cet exemple fournit un gestionnaire de stockage qui utilise le SQL Server 2005 comme magasin de sauvegarde. Toutefois, il est également possible d'ajouter des mécanismes de stockage personnalisés à cette extension. Pour ce faire, une interface publique est déclarée et doit être implémentée par tous les gestionnaires de stockage.  
   
 ```  
 public interface IStorageManager  
@@ -140,7 +143,7 @@ public interface IStorageManager
 }  
 ```  
   
- La classe `SqlServerStorageManager` contient l'implémentation `IStorageManager` par défaut.Dans sa méthode `SaveInstance`, l'objet donné est sérialisé à l'aide de XmlSerializer et est enregistré dans la base de données SQL Server.  
+ La classe `SqlServerStorageManager` contient l'implémentation `IStorageManager` par défaut. Dans sa méthode `SaveInstance`, l'objet donné est sérialisé à l'aide de XmlSerializer et est enregistré dans la base de données SQL Server.  
   
 ```  
 XmlSerializer serializer = new XmlSerializer(state.GetType());  
@@ -175,7 +178,7 @@ using (SqlConnection connection = new SqlConnection(GetConnectionString()))
 }  
 ```  
   
- Dans la méthode `GetInstance`, les données sérialisées sont lues pour un ID de contexte donné, et l'objet construit à partir de celui\-ci est retourné à l'appelant.  
+ Dans la méthode `GetInstance`, les données sérialisées sont lues pour un ID de contexte donné, et l'objet construit à partir de celui-ci est retourné à l'appelant.  
   
 ```  
 object data;  
@@ -202,7 +205,7 @@ if (data != null)
 }  
 ```  
   
- Les utilisateurs de ces gestionnaires de stockage ne sont pas supposés les instancier directement.Ils utilisent la classe `StorageManagerFactory`, qui abstrait à partir des détails de création de gestionnaire de stockage.Cette classe possède le membre statique `GetStorageManager` qui crée une instance d'un type de gestionnaire de stockage donné.Si le paramètre de type est `null`, cette méthode crée une instance de la classe `SqlServerStorageManager` par défaut et la retourne.Elle valide également le type donné afin de s'assurer qu'il implémente l'interface `IStorageManager`.  
+ Les utilisateurs de ces gestionnaires de stockage ne sont pas supposés les instancier directement. Ils utilisent la classe `StorageManagerFactory`, qui abstrait à partir des détails de création de gestionnaire de stockage. Cette classe possède le membre statique `GetStorageManager` qui crée une instance d'un type de gestionnaire de stockage donné. Si le paramètre de type est `null`, cette méthode crée une instance de la classe `SqlServerStorageManager` par défaut et la retourne. Elle valide également le type donné afin de s'assurer qu'il implémente l'interface `IStorageManager`.  
   
 ```  
 public static IStorageManager GetStorageManager(Type storageManagerType)  
@@ -234,19 +237,19 @@ else
 }   
 ```  
   
- L'infrastructure nécessaire pour lire et écrire des instances à partir du stockage persistant est implémentée.Les étapes nécessaires pour modifier le comportement de service doivent maintenant être effectuées.  
+ L'infrastructure nécessaire pour lire et écrire des instances à partir du stockage persistant est implémentée. Les étapes nécessaires pour modifier le comportement de service doivent maintenant être effectuées.  
   
- La première étape de ce processus consiste à enregistrer l'ID de contexte, qui a traversé la couche de canal jusqu'au InstanceContext actuel.InstanceContext est un composant d'exécution qui sert de lien entre le répartiteur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et l'instance de service.Il permet de fournir un comportement et un état supplémentaires à l'instance de service.Cet aspect est essentiel car dans la communication de session, l'ID de contexte est envoyé uniquement avec le premier message.  
+ La première étape de ce processus consiste à enregistrer l'ID de contexte, qui a traversé la couche de canal jusqu'au InstanceContext actuel. InstanceContext est un composant d'exécution qui sert de lien entre le répartiteur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et l'instance de service. Il permet de fournir un comportement et un état supplémentaires à l'instance de service. Cet aspect est essentiel car dans la communication de session, l'ID de contexte est envoyé uniquement avec le premier message.  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] permet d'étendre son composant d'exécution InstanceContext en ajoutant un nouvel état et un nouveau comportement à l'aide de son modèle d'objet extensible.Le modèle d'objet extensible est utilisé dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour étendre des classes d'exécution existantes avec de nouvelles fonctionnalités ou pour ajouter de nouvelles fonctionnalités d'état à un objet.Le modèle d'objet extensible comporte trois interfaces : IExtensibleObject\<T\>, IExtension\<T\> et IExtensionCollection\<T\>.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] permet d'étendre son composant d'exécution InstanceContext en ajoutant un nouvel état et un nouveau comportement à l'aide de son modèle d'objet extensible. Le modèle d'objet extensible est utilisé dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour étendre des classes d'exécution existantes avec de nouvelles fonctionnalités ou pour ajouter de nouvelles fonctionnalités d'état à un objet. Il existe trois interfaces dans le modèle d’objet extensible - IExtensibleObject\<T >, IExtension\<T > et IExtensionCollection\<T > :  
   
--   L'interface IExtensibleObject\<T\> est implémentée par des objets permettant des extensions qui personnalisent leurs fonctionnalités.  
+-   Le IExtensibleObject\<T > interface est implémentée par des objets permettant des extensions qui personnalisent leurs fonctionnalités.  
   
--   L'interface IExtension\<T\> est implémentée par des objets qui sont des extensions de classes de type T.  
+-   IExtension\<T > interface est implémentée par les objets qui sont des extensions de classes de type T.  
   
--   L'interface IExtensionCollection\<T\> est une collection de IExtensions qui permet de récupérer les IExtensions par leur type.  
+-   La IExtensionCollection\<T > interface est une collection de IExtensions qui permet de récupérer les IExtensions par leur type.  
   
- Par conséquent, vous devez créer une classe InstanceContextExtension qui implémente l'interface IExtension et définit l'état requis pour enregistrer l'ID de contexte.Cette classe fournit également l'état permettant de conserver le gestionnaire de stockage utilisé.Une fois que le nouvel état est enregistré, il ne doit pas être possible de le modifier.L'état est donc fourni et enregistré dans l'instance au moment de sa construction et n'est ensuite accessible qu'en lecture seule.  
+ Par conséquent, vous devez créer une classe InstanceContextExtension qui implémente l'interface IExtension et définit l'état requis pour enregistrer l'ID de contexte. Cette classe fournit également l'état permettant de conserver le gestionnaire de stockage utilisé. Une fois que le nouvel état est enregistré, il ne doit pas être possible de le modifier. L'état est donc fourni et enregistré dans l'instance au moment de sa construction et n'est ensuite accessible qu'en lecture seule.  
   
 ```  
 // Constructor  
@@ -284,9 +287,9 @@ public void Initialize(InstanceContext instanceContext, Message message)
 }  
 ```  
   
- Comme décrit précédemment, l'ID de contexte est lu à partir de la collection `Properties` de la classe `Message`, puis il est passé au constructeur de la classe d'extension.Cette étape montre comment les informations peuvent être échangées entre les couches de façon cohérente.  
+ Comme décrit précédemment, l'ID de contexte est lu à partir de la collection `Properties` de la classe `Message`, puis il est passé au constructeur de la classe d'extension. Cette étape montre comment les informations peuvent être échangées entre les couches de façon cohérente.  
   
- L'étape importante suivante consiste à substituer le processus de création d'instance de service.[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] permet d'implémenter des comportements d'instanciation personnalisés et de les raccorder à l'exécution à l'aide de l'interface IInstanceProvider.Pour ce faire, la nouvelle classe `InstanceProvider` est implémentée.Dans le constructeur, le type de service attendu du fournisseur d'instances est accepté.Il est par la suite utilisé pour créer des instances.Dans l'implémentation `GetInstance`, une instance d'un gestionnaire de stockage est créée afin de rechercher une instance persistante.Si elle retourne `null`, une nouvelle instance du type de service est instanciée et retournée à l'appelant.  
+ L'étape importante suivante consiste à substituer le processus de création d'instance de service. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] permet d'implémenter des comportements d'instanciation personnalisés et de les raccorder à l'exécution à l'aide de l'interface IInstanceProvider. Pour ce faire, la nouvelle classe `InstanceProvider` est implémentée. Dans le constructeur, le type de service attendu du fournisseur d'instances est accepté. Il est par la suite utilisé pour créer des instances. Dans l'implémentation `GetInstance`, une instance d'un gestionnaire de stockage est créée afin de rechercher une instance persistante. Si elle retourne `null`, une nouvelle instance du type de service est instanciée et retournée à l'appelant.  
   
 ```  
 public object GetInstance(InstanceContext instanceContext, Message message)  
@@ -310,11 +313,11 @@ public object GetInstance(InstanceContext instanceContext, Message message)
 }  
 ```  
   
- L'étape importante suivante consiste à  installer les classes `InstanceContextExtension`, `InstanceContextInitializer` et `InstanceProvider` dans l'exécution de modèle de service.Un attribut personnalisé peut être utilisé pour marquer les classes d'implémentation de service afin d'installer le comportement.`DurableInstanceContextAttribute` contient l'implémentation pour cet attribut et implémente l'interface `IServiceBehavior` afin d'étendre l'ensemble de l'exécution du service.  
+ L'étape importante suivante consiste à  installer les classes `InstanceContextExtension`, `InstanceContextInitializer` et `InstanceProvider` dans l'exécution de modèle de service. Un attribut personnalisé peut être utilisé pour marquer les classes d'implémentation de service afin d'installer le comportement. `DurableInstanceContextAttribute` contient l'implémentation pour cet attribut et implémente l'interface `IServiceBehavior` afin d'étendre l'ensemble de l'exécution du service.  
   
- Cette classe possède une propriété qui accepte le type du gestionnaire de stockage à utiliser.De cette manière, l'implémentation permet aux utilisateurs de spécifier leur propre implémentation `IStorageManager` comme paramètre de cet attribut.  
+ Cette classe possède une propriété qui accepte le type du gestionnaire de stockage à utiliser. De cette manière, l'implémentation permet aux utilisateurs de spécifier leur propre implémentation `IStorageManager` comme paramètre de cet attribut.  
   
- Dans l'implémentation `ApplyDispatchBehavior`, le `InstanceContextMode` de l'attribut `ServiceBehavior` actuel est vérifié.Si cette propriété a pour valeur Singleton, l'activation de l'instanciation fiable n'est pas possible et une exception `InvalidOperationException` est levée pour notifier l'hôte.  
+ Dans l'implémentation `ApplyDispatchBehavior`, le `InstanceContextMode` de l'attribut `ServiceBehavior` actuel est vérifié. Si cette propriété a pour valeur Singleton, l'activation de l'instanciation fiable n'est pas possible et une exception `InvalidOperationException` est levée pour notifier l'hôte.  
   
 ```  
 ServiceBehaviorAttribute serviceBehavior =  
@@ -357,15 +360,15 @@ foreach (ChannelDispatcherBase cdb in serviceHostBase.ChannelDispatchers)
   
  En résumé des étapes effectuées jusqu'à présent, cet exemple a produit un canal qui a activé le protocole de câble personnalisé pour l'échange d'ID de contexte personnalisé et il remplace également le comportement d'instanciation par défaut afin de charger les instances à partir du stockage persistant.  
   
- Il reste donc à enregistrer l'instance de service dans le stockage persistant.Comme indiqué précédemment, les fonctionnalités requises pour enregistrer l'état dans une implémentation `IStorageManager` existent déjà.Nous devons maintenant les intégrer à l'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Un autre attribut est requis et est applicable aux méthodes de la classe d'implémentation de service.Cet attribut est supposé s'appliquer aux méthodes qui modifient l'état de l'instance de service.  
+ Il reste donc à enregistrer l'instance de service dans le stockage persistant. Comme indiqué précédemment, les fonctionnalités requises pour enregistrer l'état dans une implémentation `IStorageManager` existent déjà. Nous devons maintenant les intégrer à l'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Un autre attribut est requis et est applicable aux méthodes de la classe d'implémentation de service. Cet attribut est supposé s'appliquer aux méthodes qui modifient l'état de l'instance de service.  
   
- La classe `SaveStateAttribute` implémente ces fonctionnalités.Elle implémente également la classe `IOperationBehavior` afin de modifier l'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour chaque opération.Lorsqu'une méthode est marquée avec cet attribut, l'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] appelle la méthode `ApplyBehavior` pendant la construction du `DispatchOperation` approprié.Cette implémentation de méthode comporte une seule ligne de code :  
+ La classe `SaveStateAttribute` implémente ces fonctionnalités. Elle implémente également la classe `IOperationBehavior` afin de modifier l'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour chaque opération. Lorsqu'une méthode est marquée avec cet attribut, l'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] appelle la méthode `ApplyBehavior` pendant la construction du `DispatchOperation` approprié. Cette implémentation de méthode comporte une seule ligne de code :  
   
 ```  
 dispatch.Invoker = new OperationInvoker(dispatch.Invoker);  
 ```  
   
- Cette instruction crée une instance de type `OperationInvoker` et l'assigne à la propriété `Invoker` du `DispatchOperation` en cours de construction.La classe `OperationInvoker` est un wrapper pour le demandeur d'opération par défaut créé pour `DispatchOperation`.Cette classe implémente l'interface `IOperationInvoker`.Dans l'implémentation de méthode `Invoke`, l'appel de méthode réel est délégué au demandeur d'opération interne.Toutefois, avant de retourner les résultats, le gestionnaire de stockage du `InstanceContext` est utilisé pour enregistrer l'instance de service.  
+ Cette instruction crée une instance de type `OperationInvoker` et l'assigne à la propriété `Invoker` du `DispatchOperation` en cours de construction. La classe `OperationInvoker` est un wrapper pour le demandeur d'opération par défaut créé pour `DispatchOperation`. Cette classe implémente l'interface `IOperationInvoker`. Dans l'implémentation de méthode `Invoke`, l'appel de méthode réel est délégué au demandeur d'opération interne. Toutefois, avant de retourner les résultats, le gestionnaire de stockage du `InstanceContext` est utilisé pour enregistrer l'instance de service.  
   
 ```  
 object result = innerOperationInvoker.Invoke(instance,  
@@ -380,8 +383,8 @@ extension.StorageManager.SaveInstance(extension.ContextId, instance);
 return result;  
 ```  
   
-## Utilisation de l'extension  
- Les extensions de la couche de canal et de la couche de modèle de service étant effectuées, elles peuvent maintenant être utilisées dans les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Les services doivent ajouter le canal dans la pile de canaux à l'aide d'une liaison personnalisée, puis marquer les classes d'implémentation de service avec les attributs appropriés.  
+## <a name="using-the-extension"></a>Utilisation de l'extension  
+ Les extensions de la couche de canal et de la couche de modèle de service étant effectuées, elles peuvent maintenant être utilisées dans les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Les services doivent ajouter le canal dans la pile de canaux à l'aide d'une liaison personnalisée, puis marquer les classes d'implémentation de service avec les attributs appropriés.  
   
 ```  
 [DurableInstanceContext]  
@@ -398,9 +401,9 @@ public class ShoppingCart : IShoppingCart
  }  
 ```  
   
- Les applications clientes doivent ajouter DurableInstanceContextChannel dans la pile de canaux à l'aide d'une liaison personnalisée.Pour configurer le canal de façon déclarative dans le fichier de configuration, la section d'élément de liaison doit être ajoutée à la collection d'extensions d'élément de liaison.  
+ Les applications clientes doivent ajouter DurableInstanceContextChannel dans la pile de canaux à l'aide d'une liaison personnalisée. Pour configurer le canal de façon déclarative dans le fichier de configuration, la section d'élément de liaison doit être ajoutée à la collection d'extensions d'élément de liaison.  
   
-```  
+```xml  
 <system.serviceModel>  
  <extensions>  
    <bindingElementExtensions>  
@@ -412,7 +415,7 @@ type="Microsoft.ServiceModel.Samples.DurableInstanceContextBindingElementSection
   
  L'élément de liaison peut maintenant être utilisé avec une liaison personnalisée à l'instar des autres éléments de liaison standard :  
   
-```  
+```xml  
 <bindings>  
  <customBinding>  
    <binding name="TextOverHttp">  
@@ -425,14 +428,14 @@ type="Microsoft.ServiceModel.Samples.DurableInstanceContextBindingElementSection
 </bindings>  
 ```  
   
-## Conclusion  
+## <a name="conclusion"></a>Conclusion  
  Cet exemple a montré comment créer un canal de protocole personnalisé et comment personnaliser le comportement de service permettant de l'activer.  
   
- L'extension peut encore être améliorée en permettant aux utilisateurs de spécifier l'implémentation `IStorageManager` à l'aide d'une section de configuration.Cela permet de modifier le magasin de sauvegarde sans avoir à recompiler le code de service.  
+ L'extension peut encore être améliorée en permettant aux utilisateurs de spécifier l'implémentation `IStorageManager` à l'aide d'une section de configuration. Cela permet de modifier le magasin de sauvegarde sans avoir à recompiler le code de service.  
   
- En outre, vous pouvez essayer d'implémenter une classe \(par exemple, `StateBag`\) qui encapsule l'état de l'instance.Cette classe est chargée de rendre l'état persistant chaque fois qu'il change.De cette manière, vous pouvez éviter d'utiliser l'attribut `SaveState` et travailler de manière plus précise \(par exemple, vous pouvez rendre l'état persistant lorsqu'il est réellement modifié plutôt que de l'enregistrer chaque fois qu'une méthode avec l'attribut `SaveState` est appelée\).  
+ En outre, vous pouvez essayer d'implémenter une classe (par exemple, `StateBag`) qui encapsule l'état de l'instance. Cette classe est chargée de rendre l'état persistant chaque fois qu'il change. De cette manière, vous pouvez éviter d'utiliser l'attribut `SaveState` et travailler de manière plus précise (par exemple, vous pouvez rendre l'état persistant lorsqu'il est réellement modifié plutôt que de l'enregistrer chaque fois qu'une méthode avec l'attribut `SaveState` est appelée).  
   
- Lorsque vous exécutez l'exemple, la sortie suivante s'affiche.Le client ajoute deux éléments à son panier d'achat puis place la liste d'éléments dans celui\-ci à partir du service.Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
+ Lorsque vous exécutez l'exemple, la sortie suivante s'affiche. Le client ajoute deux éléments à son panier d'achat puis place la liste d'éléments dans celui-ci à partir du service. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
   
 ```  
 Enter the name of the product: apples  
@@ -445,26 +448,26 @@ Press ENTER to shut down client
 ```  
   
 > [!NOTE]
->  La reconstruction du service remplace le fichier de base de données.Pour observer l'état conservé sur plusieurs exécutions de l'exemple, ne reconstruisez pas l'exemple d'une exécution à l'autre.  
+>  La reconstruction du service remplace le fichier de base de données. Pour observer l'état conservé sur plusieurs exécutions de l'exemple, ne reconstruisez pas l'exemple d'une exécution à l'autre.  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée dans la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Pour générer la solution, suivez les instructions indiquées dans la rubrique [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions indiquées dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
->  Vous devez exécuter SQL Server 2005 ou SQL Express 2005 pour exécuter cet exemple.Si vous exécutez SQL Server 2005, vous devez modifier la configuration de la chaîne de connexion du service.Lors de l'exécution sur plusieurs ordinateurs, SQL Server est uniquement requis sur l'ordinateur serveur.  
+>  Vous devez exécuter SQL Server 2005 ou SQL Express 2005 pour exécuter cet exemple. Si vous exécutez SQL Server 2005, vous devez modifier la configuration de la chaîne de connexion du service. Lors de l'exécution sur plusieurs ordinateurs, SQL Server est uniquement requis sur l'ordinateur serveur.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

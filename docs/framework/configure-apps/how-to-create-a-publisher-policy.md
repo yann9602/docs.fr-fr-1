@@ -1,45 +1,43 @@
 ---
-title: "Comment&#160;: cr&#233;er une strat&#233;gie d&#39;&#233;diteur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Global Assembly Cache (GAC), assembly de stratégie d'éditeur"
-  - "Global Assembly Cache, assembly de stratégie d'éditeur"
-  - "assembly de stratégie d'éditeur"
-  - "fichiers de stratégie d'éditeur"
+title: "Comment : créer une stratégie d'éditeur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- publisher policy assembly
+- publisher policy files
+- GAC (global assembly cache), publisher policy assembly
+- global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-caps.latest.revision: 15
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 430426e3662582bd904bc088a362e9d7ed331c11
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er une strat&#233;gie d&#39;&#233;diteur
-Les fournisseurs d'assemblys peuvent établir que les applications utilisent une nouvelle version en incluant un fichier de stratégie d'éditeur contenant l'assembly mis à jour.  Le fichier de stratégie de l'éditeur spécifie la redirection de l'assembly et les paramètres de base de code et utilise le même format que le fichier de configuration d'une application.  Le fichier de stratégie de l'éditeur est compilé dans un assembly et placé dans le Global Assembly Cache.  
+# <a name="how-to-create-a-publisher-policy"></a>Comment : créer une stratégie d'éditeur
+Les fournisseurs d’assemblys peuvent indiquer que les applications doivent utiliser une version plus récente d’un assembly en incluant un fichier de stratégie de serveur de publication avec l’assembly mis à niveau. Le fichier de stratégie d’éditeur spécifie la redirection d’assembly et les paramètres de base de code et utilise le même format comme un fichier de configuration. Le fichier de stratégie d’éditeur est compilé dans un assembly et placé dans le global assembly cache.  
   
- La création d'une stratégie de l'éditeur comporte trois étapes :  
+ Il existe trois étapes impliquées dans la création d’une stratégie d’éditeur :  
   
-1.  Créez un fichier de stratégie de l'éditeur.  
+1.  Créez un fichier de stratégie du serveur de publication.  
   
-2.  Créez un assembly de stratégie d'éditeur.  
+2.  Créer un assembly de stratégie d’éditeur.  
   
-3.  Ajoutez l'assembly de stratégie d'éditeur au Global Assembly Cache.  
+3.  Ajoutez l’assembly de stratégie du serveur de publication dans le global assembly cache.  
   
- Le schéma d'une stratégie de l'éditeur est décrit dans [Redirection des versions d'assemblys](../../../docs/framework/configure-apps/redirect-assembly-versions.md).  L'exemple suivant illustre un fichier de stratégie de l'éditeur qui redirige une version de `myAssembly` vers une autre.  
+ Le schéma de la stratégie d’éditeur est décrit dans [redirection des Versions d’Assembly](../../../docs/framework/configure-apps/redirect-assembly-versions.md). L’exemple suivant montre un éditeur de fichier de stratégie qui redirige une version de `myAssembly` à un autre.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -56,67 +54,67 @@ Les fournisseurs d'assemblys peuvent établir que les applications utilisent une
 </configuration>  
 ```  
   
- Pour savoir comment spécifier une base de code, consultez [Spécification de l'emplacement de l'assembly](../../../docs/framework/configure-apps/specify-assembly-location.md).  
+ Pour savoir comment spécifier une base de code, consultez [spécifiant l’emplacement d’un Assembly](../../../docs/framework/configure-apps/specify-assembly-location.md).  
   
-## Création de l'assembly de stratégie d'éditeur  
- Utilisez l'utilitaire [Assembly Linker \(Al.exe\)](../../../docs/framework/tools/al-exe-assembly-linker.md) pour créer l'assembly de stratégie d'éditeur.  
+## <a name="creating-the-publisher-policy-assembly"></a>Création de l’Assembly de stratégie d’éditeur  
+ Utilisez le [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) pour créer l’assembly de stratégie du serveur de publication.  
   
-#### Pour créer un assembly de stratégie d'éditeur  
+#### <a name="to-create-a-publisher-policy-assembly"></a>Pour créer un assembly de stratégie d’éditeur  
   
-1.  Tapez la commande suivante à l'invite de commande :  
+1.  Tapez la commande suivante à l’invite de commandes :  
   
-     **al \/link:** *publisherPolicyFile* **\/out:** *publisherPolicyAssemblyFile* **\/keyfile:** *keyPairFile* **\/platform:** *processorArchitecture*  
+     **Al /link :** *publisherPolicyFile* **/out :** *publisherPolicyAssemblyFile* **/keyfile :**  *keyPairFile* **/platform :** *processorArchitecture*  
   
      Dans cette commande :  
   
-    -   L'argument *publisherPolicyFile* est le nom du fichier de stratégie de l'éditeur.  
+    -   Le *publisherPolicyFile* argument est le nom du fichier de stratégie de serveur de publication.  
   
-    -   L'argument *publisherPolicyAssemblyFile* est le nom de l'assembly de stratégie d'éditeur qui résulte de cette commande.  Le nom de fichier de l'assembly doit suivre le format suivant :  
+    -   Le *publisherPolicyAssemblyFile* argument est le nom de l’assembly de stratégie d’éditeur qui résulte de cette commande. Le nom de fichier d’assembly doit suivre le format :  
   
-         **policy.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
+         **stratégie.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
   
-    -   L'argument *keyPairFile* est le nom du fichier contenant la paire de clés.  Vous devez signer l'assembly et l'assembly de stratégie d'éditeur avec la même paire de clés.  
+    -   Le *keyPairFile* argument est le nom du fichier contenant la paire de clés. Vous devez signer l’assembly et l’assembly de stratégie d’éditeur avec la même paire de clés.  
   
-    -   L'argument *processorArchitecture* identifie la plateforme ciblée par un assembly spécifique au processeur.  
+    -   Le *processorArchitecture* argument identifie la plateforme ciblée par un assembly spécifique au processeur.  
   
         > [!NOTE]
-        >  La possibilité de cibler une architecture de processeur spécifique est une nouveauté du .NET Framework version 2.0.  
+        >  La possibilité de cibler une architecture de processeur spécifique est nouvelle dans .NET Framework version 2.0.  
   
-     La commande suivante crée un assembly de stratégie d'éditeur appelé `policy.1.0.myAssembly` à partir d'un fichier de stratégie d'éditeur appelé `pub.config`, assigne un nom fort à l'assembly à l'aide de la paire de clés qui se trouve dans le fichier `sgKey.snk` et indique que l'assembly cible l'architecture de processeur x86.  
+     La commande suivante crée un assembly de stratégie d’éditeur appelé `policy.1.0.myAssembly` à partir d’un fichier de stratégie d’éditeur appelé `pub.config`, assigne un nom fort à l’assembly à l’aide de la paire de clés dans le `sgKey.snk` de fichiers et spécifie que l’assembly cible la x86 architecture de processeur.  
   
     ```  
     al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86  
     ```  
   
-     L'assembly de stratégie d'éditeur doit correspondre à l'architecture de processeur de l'assembly auquel il s'applique.  Ainsi, si la valeur <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> de votre assembly est <xref:System.Reflection.ProcessorArchitecture>, l'assembly de stratégie d'éditeur de cet assembly doit être créé avec `/platform:anycpu`.  Vous devez fournir un assembly de stratégie d'éditeur distinct pour chaque assembly spécifique au processeur.  
+     L’assembly de stratégie du serveur de publication doit correspondre à l’architecture de processeur de l’assembly auquel il s’applique. Par conséquent, si votre assembly a un <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> valeur <xref:System.Reflection.ProcessorArchitecture.MSIL>, l’assembly de stratégie d’éditeur pour cet assembly doit être créé avec `/platform:anycpu`. Vous devez fournir un distinct assembly de stratégie d’éditeur pour chaque assembly spécifique au processeur.  
   
-     Du fait de cette règle, pour modifier l'architecture de processeur d'un assembly, vous devez modifier le composant majeur ou mineur du numéro de version afin de pouvoir fournir un nouvel assembly de stratégie d'éditeur avec l'architecture de processeur correcte.  L'ancien assembly de stratégie d'éditeur ne peut pas assurer la maintenance de votre assembly une fois que celui\-ci a une architecture de processeur différente.  
+     Une conséquence de cette règle est que pour modifier l’architecture de processeur pour un assembly, vous devez modifier le composant majeure ou mineure du numéro de version, afin que vous pouvez fournir un nouvel assembly de stratégie de serveur de publication avec l’architecture de processeur correcte. L’ancien assembly de stratégie d’éditeur ne peut pas traiter votre assembly une fois que votre assembly possède une architecture de processeur différente.  
   
-     Cela implique également que l'éditeur de liens version 2.0 ne peut pas être utilisé pour créer un assembly de stratégie d'éditeur pour un assembly compilé à l'aide de versions précédentes du .NET Framework, car l'architecture de processeur est toujours spécifiée.  
+     Une autre conséquence est que l’éditeur de liens version 2.0 ne peut pas être utilisé pour créer un assembly de stratégie d’éditeur pour un assembly compilé à l’aide de versions antérieures du .NET Framework, car elle spécifie toujours architecture de processeur.  
   
-## Ajout de l'assembly de stratégie d'éditeur au Global Assembly Cache  
- Utilisez l'[outil Global Assembly Cache Tool \(Gacutil.exe\)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pour ajouter l'assembly de stratégie d'éditeur au Global Assembly Cache.  
+## <a name="adding-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Ajout de l’Assembly de stratégie de serveur de publication dans le Global Assembly Cache  
+ Utilisez le [l’outil Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pour ajouter l’assembly de stratégie de serveur de publication dans le global assembly cache.  
   
-#### Pour ajouter l'assembly de stratégie d'éditeur au Global Assembly Cache  
+#### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Pour ajouter l’assembly de stratégie de serveur de publication dans le global assembly cache  
   
-1.  Tapez la commande suivante à l'invite de commande :  
+1.  Tapez la commande suivante à l’invite de commandes :  
   
-     **gacutil \/i**  *publisherPolicyAssemblyFile*  
+     **gacutil /i***publisherPolicyAssemblyFile*   
   
-     La commande suivante ajoute `policy.1.0.myAssembly.dll` au Global Assembly Cache.  
+     La commande suivante ajoute `policy.1.0.myAssembly.dll` dans le global assembly cache.  
   
     ```  
     gacutil /i policy.1.0.myAssembly.dll  
     ```  
   
     > [!IMPORTANT]
-    >  L'assembly de stratégie d'éditeur ne peut pas être ajouté au Global Assembly Cache à moins que le fichier de stratégie d'éditeur d'origine se trouve dans le même répertoire que l'assembly.  
+    >  L’assembly de stratégie d’éditeur ne peut pas être ajouté dans le global assembly cache, sauf si le fichier de stratégie de serveur de publication d’origine se trouve dans le même répertoire que l’assembly.  
   
-## Voir aussi  
- [Programmation à l'aide d'assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)   
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
- [Configuration d'applications](../../../docs/framework/configure-apps/index.md)   
- [Configuring .NET Framework Apps](http://msdn.microsoft.com/fr-fr/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)   
- [Schéma des paramètres d'exécution](../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)  
+ [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+ [Configuration d'applications](../../../docs/framework/configure-apps/index.md)  
+ [Configuration des applications .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
+ [Schéma des paramètres d’exécution](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)  
  [Redirection des versions d'assemblys](../../../docs/framework/configure-apps/redirect-assembly-versions.md)

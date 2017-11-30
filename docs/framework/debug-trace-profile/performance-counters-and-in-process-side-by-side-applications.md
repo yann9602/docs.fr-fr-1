@@ -5,31 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - performance counters
 - performance counters,and in-process side-by-side applications
 - performance,.NET Framework applications
 - performance monitoring,counters
 ms.assetid: 6888f9be-c65b-4b03-a07b-df7ebdee2436
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 713aa3a870c42014de01d6782d7452ab60792cc4
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 16c43545b24f8c0290bfe993d91b7e4203ac11fa
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="performance-counters-and-in-process-side-by-side-applications"></a>Compteurs de performance et applications côte à côte in-process
 À l’aide de l’Analyseur de performances (Perfmon.exe), il est possible de différencier les compteurs de performance pour chaque runtime. Cette rubrique décrit la modification du Registre nécessaire pour activer cette fonctionnalité.  
@@ -59,7 +55,8 @@ ms.lasthandoff: 08/21/2017
   
  L’exemple suivant montre comment modifier la valeur `ProcessNameFormat` par programmation.  
   
- [!code-csharp[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/cs/regsetting1.cs#1)] [!code-vb[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/vb/regsetting1.vb#1)]  
+ [!code-csharp[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/cs/regsetting1.cs#1)]
+ [!code-vb[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/vb/regsetting1.vb#1)]  
   
  Quand vous modifiez cette clé de Registre, Perfmon.exe affiche les noms des applications qui ciblent le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] en tant que *application*_`p`*ID_processus* \_ `r` *ID_runtime*, où *application* est le nom de l’application, *ID_processus* est l’identificateur de processus de l’application et *ID_runtime* est un identificateur du Common Language Runtime. Par exemple, si une application nommée MonApp.exe charge deux instances du Common Language Runtime, Perfmon.exe peut identifier une instance comme MonApp_p1416_r10 et la deuxième comme MonApp_p3160_r10. L’identificateur de runtime lève uniquement l’ambiguïté liée aux runtimes dans un processus ; il ne fournit aucune autre information sur le runtime. (Par exemple, l’ID de runtime n’a aucun lien avec la version ou la référence SKU du runtime.)  
   
@@ -69,4 +66,3 @@ ms.lasthandoff: 08/21/2017
 >  L’identificateur de processus élimine l’ambiguïté liée à la résolution de deux applications du même nom qui utilisent des versions antérieures du runtime. Aucun identificateur de runtime n’est nécessaire pour les versions antérieures, car les versions précédentes du Common Language Runtime ne prennent pas en charge les scénarios côte à côte.  
   
  Si le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] n’est pas présent ou a été désinstallé, la définition de la clé de Registre n’a aucun effet. Cela signifie que deux applications portant le même nom continueront d’apparaître dans Perfmon.exe comme *application* et *application#1* (par exemple, **MonApp** et **MonApp#1**).
-

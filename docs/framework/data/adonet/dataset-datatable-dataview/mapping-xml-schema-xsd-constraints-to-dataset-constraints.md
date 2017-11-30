@@ -1,54 +1,57 @@
 ---
-title: "Mappage de contraintes de sch&#233;ma XML (XSD) &#224; des contraintes de DataSet | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 9ac8e64c02d96450d41233cfbe65e1db839df9e7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Mappage de contraintes de sch&#233;ma XML (XSD) &#224; des contraintes de DataSet
-Le langage XSD \(XML Schema Definition\) permet la spécification de contraintes sur les éléments et attributs qu'il définit.  Lors du mappage d'un schéma XML au schéma relationnel d'un objet <xref:System.Data.DataSet>, les contraintes du schéma XML sont mappées aux contraintes relationnelles appropriées sur les tables et les colonnes contenues dans le **DataSet**.  
+# <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet
+Le langage XSD (XML Schema Definition) permet la spécification de contraintes sur les éléments et attributs qu'il définit. Lors du mappage d’un schéma XML au schéma relationnel d’un <xref:System.Data.DataSet>, contraintes de schéma XML sont mappées aux contraintes relationnelles appropriées sur les tables et colonnes dans le **DataSet**.  
   
  Cette section présente le mappage des contraintes de schéma XML suivantes :  
   
--   contrainte unique spécifiée à l'aide de l'élément **unique** ;  
+-   Contrainte unique spécifiée à l’aide de la **unique** élément.  
   
--   contrainte de clé spécifiée à l'aide de l'élément **key** ;  
+-   La contrainte de clé spécifiée à l’aide de la **clé** élément.  
   
--   contrainte de référence à une clé spécifiée à l'aide de l'élément **keyref**.  
+-   La contrainte keyref spécifiée à l’aide de la **keyref** élément.  
   
- En utilisant une contrainte sur un élément ou un attribut, vous spécifiez certaines restrictions sur les valeurs de l'élément dans toute instance du document.  Par exemple, une contrainte de clé sur un élément enfant **CustomerID** d'un élément **Customer** dans le schéma indique que les valeurs de l'élément enfant **CustomerID** doivent être uniques dans toute instance du document et que les valeurs null ne sont pas autorisées.  
+ En utilisant une contrainte sur un élément ou un attribut, vous spécifiez certaines restrictions sur les valeurs de l'élément dans toute instance du document. Par exemple, une contrainte de clé sur un **CustomerID** élément enfant d’un **client** élément dans le schéma indique que les valeurs de la **CustomerID** élément enfant doit être unique dans toute instance du document, et que les valeurs null ne sont pas autorisés.  
   
- Des contraintes peuvent également être spécifiées entre les éléments et les attributs figurant dans un document afin d'établir une relation dans ce document.  Les contraintes key et keyref sont utilisées dans le schéma pour spécifier les contraintes au sein du document, créant ainsi une relation entre éléments et attributs du document.  
+ Des contraintes peuvent également être spécifiées entre les éléments et les attributs figurant dans un document afin d'établir une relation dans ce document. Les contraintes key et keyref sont utilisées dans le schéma pour spécifier les contraintes au sein du document, créant ainsi une relation entre éléments et attributs du document.  
   
  Le processus de mappage convertit ces contraintes de schéma en contraintes appropriées sur les tables créées dans le **DataSet**.  
   
-## Dans cette section  
- [Mapper des contraintes de schéma XML \(XSD\) uniques sur des contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Décrit les éléments de schéma XML qui servent à créer des contraintes uniques dans un **DataSet**.  
+## <a name="in-this-section"></a>Dans cette section  
+ [Mapper des contraintes uniques de schéma XML (XSD) aux contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ Décrit les éléments de schéma XML utilisés pour créer des contraintes uniques dans un **DataSet**.  
   
- [Mapper des contraintes de schéma XML \(XSD\) key sur des contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-key-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Décrit les éléments de schéma XML qui servent à créer des contraintes de clé \(contraintes uniques où les valeurs null ne sont pas autorisées\) dans un **DataSet**.  
+ [Clé de mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-key-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ Décrit les éléments de schéma XML utilisés pour créer des contraintes de clé (contraintes uniques où les valeurs null ne sont pas autorisées) dans un **DataSet**.  
   
- [Mapper des contraintes de schéma XML \(XSD\) keyref sur des contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Décrit les éléments de schéma XML qui servent à créer des contraintes keyref \(clé étrangère\) dans un **DataSet**.  
+ [Mapper keyref de schéma XML (XSD) aux contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ Décrit les éléments de schéma XML utilisés pour créer des contraintes (clé étrangère) dans keyref un **DataSet**.  
   
-## Rubriques connexes  
- [Dérivation de la structure relationnelle d'un DataSet à partir d'un schéma XML \(XSD\)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
- Décrit la structure relationnelle, ou schéma, d'un **DataSet** créé à partir d'un schéma XSD.  
+## <a name="related-sections"></a>Rubriques connexes  
+ [Structure relationnelle des DataSet qui dérivent de schéma XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ Décrit la structure relationnelle, ou schéma, d’un **DataSet** qui est créé à partir du schéma XSD.  
   
- [Génération des relations d'un DataSet à partir d'un schéma XSD \(XML Schema Definition\)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- Décrit les éléments de schéma XML qui servent à créer des relations entre les colonnes de table dans un **DataSet**.  
+ [Génération des Relations d’un DataSet à partir de schéma XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ Décrit les éléments de schéma XML utilisés pour créer des relations entre les colonnes de table dans un **DataSet**.  
   
-## Voir aussi  
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

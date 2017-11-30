@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 76883fd9702e475bd6afd9629fb4702ca42395d4
-ms.openlocfilehash: 61eaf6ba83b94724555ca3fee53e3a4d538ee11a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 5fa93919bfc6f7f078fd2de4653e8b9e878a84fc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltwebhttpbindinggt"></a>&lt;webHttpBinding&gt;
 Définit un élément de liaison utilisé pour configurer des points de terminaison pour les services Web [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] qui répondent aux requêtes HTTP au lieu de messages SOAP.  
@@ -104,11 +102,10 @@ Définit un élément de liaison utilisé pour configurer des points de terminai
  Le support de [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] pour la syndication et l'intégration ASP.AJAX est construit au sommet du modèle de programmation Web. Pour plus d’informations sur le modèle, consultez [modèle de programmation WCF Web HTTP](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.WebHttpBinding>   
- <xref:System.ServiceModel.Configuration.WebHttpBindingElement>   
- [Modèle de programmation HTTP Web WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)   
- [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.WebHttpBinding>  
+ <xref:System.ServiceModel.Configuration.WebHttpBindingElement>  
+ [Modèle de programmation HTTP Web WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
+ [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<liaison >](../../../../../docs/framework/misc/binding.md)
-

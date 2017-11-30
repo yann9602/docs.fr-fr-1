@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - protocols, HTTP
 - sending data, HTTP
@@ -24,19 +19,18 @@ helpviewer_keywords:
 - HTTP, about HTTP
 - HttpWebRequest class, sending and receiving data
 ms.assetid: 985fe5d8-eb71-4024-b361-41fbdc1618d8
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 124e383efbe6cf6bb459d013b9689bf5da287cf1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 701ff252380ef93dbe3668c8aca73f08a8425d6b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="http"></a>HTTP
-Avec les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebResponse>, .NET Framework offre une prise en charge complète du protocole HTTP sur lequel repose la majeure partie du trafic Internet global. Ces classes, dérivées de <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse>, sont retournées par défaut dès que la méthode statique <xref:System.Net.WebRequest.Create%2A?displayProperty=fullName> détecte un URI commençant par « http » ou « https ». Dans la plupart des cas, les classes **WebRequest** et **WebResponse** fournissent tous les éléments nécessaires pour effectuer une demande mais, si vous avez besoin d’un accès aux fonctionnalités spécifiques à HTTP exposées en tant que propriétés, vous pouvez effectuer un cast du type de ces classes en **HttpWebRequest** ou **HttpWebResponse**.  
+Le .NET Framework fournit la prise en charge complète pour le protocole HTTP, ce qui constitue la majeure partie du trafic Internet, avec la <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebResponse> classes. Ces classes, dérivées de <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse>, sont retournées par défaut dès que la méthode statique <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> détecte un URI commençant par « http » ou « https ». Dans la plupart des cas, les classes **WebRequest** et **WebResponse** fournissent tous les éléments nécessaires pour effectuer une demande mais, si vous avez besoin d’un accès aux fonctionnalités spécifiques à HTTP exposées en tant que propriétés, vous pouvez effectuer un cast du type de ces classes en **HttpWebRequest** ou **HttpWebResponse**.  
   
  **HttpWebRequest** et **HttpWebResponse** encapsulent une transaction de demande et réponse HTTP standard et fournissent l’accès aux en-têtes HTTP communs. Ces classes prennent également en charge la plupart des fonctionnalités HTTP 1.1, y compris le traitement « pipeline », l’envoi et la réception des données en bloc, l’authentification, la pré-authentification, le chiffrement, la prise en charge de proxy, la validation du certificat de serveur et la gestion des connexions. Les en-têtes personnalisés et les en-têtes non fournis par le biais de propriétés peuvent être stockés dans la propriété **Headers** qui permet d’y accéder.  
   
@@ -47,7 +41,6 @@ Avec les classes <xref:System.Net.HttpWebRequest> et <xref:System.Net.HttpWebRes
  Les applications obtiennent des erreurs de protocole HTTP quand elles interceptent un <xref:System.Net.WebException> avec un <xref:System.Net.WebException.Status%2A> défini à la valeur <xref:System.Net.WebExceptionStatus>. La propriété <xref:System.Net.WebException.Response%2A> contient la **WebResponse** envoyée par le serveur et indique l’erreur HTTP rencontrée.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Accès à Internet via un proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)   
- [Utilisation de protocoles d’application](../../../docs/framework/network-programming/using-application-protocols.md)   
+ [Accès à Internet via un proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
+ [Utilisation de protocoles d’application](../../../docs/framework/network-programming/using-application-protocols.md)  
  [Guide pratique pour accéder aux propriétés spécifiques à HTTP](../../../docs/framework/network-programming/how-to-access-http-specific-properties.md)
-

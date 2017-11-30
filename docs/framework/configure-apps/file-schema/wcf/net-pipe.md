@@ -1,28 +1,33 @@
 ---
-title: "&lt;net.pipe&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;NET.pipe&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6a0f0318-f8f6-466c-9fae-199d7274a82e
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5d68c2113b08065f7ec74ae68d7f0b5918cab0aa
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;net.pipe&gt;
+# <a name="ltnetpipegt"></a>&lt;NET.pipe&gt;
 Spécifie les paramètres de configuration du service d'activation du canal nommé, qui gère la durée de vie de la connexion du canal nommé et les demandes d'activation qui arrivent par des canaux nommés.  
   
-## Syntaxe  
+ \<system.serviceModel.activation >  
+\<NET.PIPE >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <configuration>  
    <system.serviceModel.activation>  
        <net.pipe maxPendingAccepts="Integer"  
@@ -45,31 +50,31 @@ Spécifie les paramètres de configuration du service d'activation du canal nomm
 </configuration>  
 ```  
   
-## Type  
+## <a name="type"></a>Type  
  `Type`  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`maxPendingAccepts`|Entier qui spécifie le nombre maximal de threads d'acceptation simultanés en attente sur le point de terminaison d'écoute du service de partage.  La valeur par défaut est 2.|  
-|`maxPendingConnections`|Entier qui définit le nombre maximal de connexions qui peuvent attendre la distribution.  La valeur par défaut est 100.|  
-|`receiveTimeout`|<xref:System.Timespan> qui spécifie le délai d'attente pour lire les données d'encadrement et effectuer la distribution de la connexion à partir des connexions sous\-jacentes.  La valeur par défaut est « 00:00:10 ».|  
+|---------------|-----------------|  
+|`maxPendingAccepts`|Entier qui spécifie le nombre maximal de threads d'acceptation simultanés en attente sur le point de terminaison d'écoute du service de partage. La valeur par défaut est 2.|  
+|`maxPendingConnections`|Entier qui définit le nombre maximal de connexions qui peuvent attendre la distribution. La valeur par défaut est 100.|  
+|`receiveTimeout`|`TimeSpan` qui spécifie le délai d'attente pour lire les données d'encadrement et effectuer la distribution de la connexion à partir des connexions sous-jacentes. La valeur par défaut est « 00:00:10 ».|  
   
-### Éléments enfants  
-  
-|Élément|Description|  
-|-------------|-----------------|  
-|[\<allowAccounts\>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Collection d'éléments de configuration qui contiennent un attribut `securityIdentifier` permettant de spécifier les comptes d'utilisateurs correspondant aux processus qui hébergent des services [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] et qui disposent d'un accès de connexion au service de partage.|  
-  
-### Éléments parents  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<system.serviceModel.activation\>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|Contient les paramètres de configuration du processus de l'écouteur SMSvcHost.exe.|  
+|[\<allowAccounts >](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Collection d'éléments de configuration qui contiennent un attribut `securityIdentifier` permettant de spécifier les comptes d'utilisateurs correspondant aux processus qui hébergent des services [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] et qui disposent d'un accès de connexion au service de partage.|  
   
-## Voir aussi  
+### <a name="parent-elements"></a>Éléments parents  
+  
+|Élément|Description|  
+|-------------|-----------------|  
+|[\<system.serviceModel.activation>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|Contient les paramètres de configuration du processus de l'écouteur SMSvcHost.exe.|  
+  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Activation.Configuration.NetPipeSection>

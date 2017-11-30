@@ -1,0 +1,49 @@
+---
+title: IEnumIDENTITY_ATTRIBUTE, interface
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+api_name: IEnumIDENTITY_ATTRIBUTE
+api_location: fusion.dll
+api_type: COM
+f1_keywords: IEnumIDENTITY_ATTRIBUTE
+helpviewer_keywords: IEnumIDENTITY_ATTRIBUTE interface [.NET Framework fusion]
+ms.assetid: c2ec2748-e9ae-4e1b-80db-6fcec5cb81a1
+topic_type: apiref
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: f88e400556421e0908e0a0b115f66ec3221124c2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
+---
+# <a name="ienumidentityattribute-interface"></a>IEnumIDENTITY_ATTRIBUTE, interface
+Sert d’énumérateur pour les attributs de l’objet de code dans la portée actuelle.  
+  
+## <a name="methods"></a>Méthodes  
+  
+|Méthode|Description|  
+|------------|-----------------|  
+|`IEnumIDENTITY_ATTRIBUTE::Clone`|Obtient un pointeur d’interface vers un nouveau `IEnumIDENTITY_ATTRIBUTE` qui contient les mêmes membres que ce `IEnumIDENTITY_ATTRIBUTE`.|  
+|`IEnumIDENTITY_ATTRIBUTE::CurrentIntoBuffer`|Écrit les données contenues dans les éléments de ce `IEnumIDENTITY_ATTRIBUTE` dans la mémoire tampon de données spécifié.|  
+|`IEnumIDENTITY_ATTRIBUTE::Next`|Obtient le nombre spécifié d’attributs, en commençant à la position actuelle.|  
+|`IEnumIDENTITY_ATTRIBUTE::Reset`|Déplace le pointeur d’instruction au début de cette `IEnumIDENTITY_ATTRIBUTE`.|  
+|`IEnumIDENTITY_ATTRIBUTE::Skip`|Déplace le pointeur d’instruction par le nombre spécifié d’éléments, en commençant à la position actuelle.|  
+  
+## <a name="requirements"></a>Spécifications  
+ **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
+  
+ **En-tête :** Isolation.h  
+  
+ **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+  
+## <a name="see-also"></a>Voir aussi  
+ [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)

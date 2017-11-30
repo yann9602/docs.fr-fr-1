@@ -1,25 +1,28 @@
 ---
-title: "PrivacyNoticeBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: PrivacyNoticeBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0cf110b1-e25b-4d67-986b-10cb04dc4826
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f79a71fe039add2969fab826e1f5ec2f00bee00c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# PrivacyNoticeBindingElement
+# <a name="privacynoticebindingelement"></a>PrivacyNoticeBindingElement
 PrivacyNoticeBindingElement  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class PrivacyNoticeBindingElement : BindingElement  
@@ -29,31 +32,31 @@ class PrivacyNoticeBindingElement : BindingElement
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe PrivacyNoticeBindingElement ne définit pas de méthode.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe PrivacyNoticeBindingElement a les propriétés suivantes :  
   
-### PrivacyNoticeVersion  
+### <a name="privacynoticeversion"></a>PrivacyNoticeVersion  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
  Version de l'avis de confidentialité.  
   
-### Url  
+### <a name="url"></a>URL  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  URL d'emplacement de l'avis de confidentialité.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Channels.PrivacyNoticeBindingElement>

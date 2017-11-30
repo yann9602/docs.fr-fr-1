@@ -1,28 +1,31 @@
 ---
-title: "One-Way | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: One-Way
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 05dbd465345f3b0cd9506f581f1a779f834c50fe
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# One-Way
-Cet exemple présente un contact de service avec des opérations de service monodirectionnelles.Le client n'attend pas que les opérations de service se terminent comme c'est le cas avec les opérations de service bidirectionnelles.Cet exemple est basé sur [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) et utilise la liaison `wsHttpBinding`.Le service dans cet exemple est une application console auto\-hébergée vous permettant d'observer le service qui reçoit et traite des demandes.Le client est également une application console.  
+# <a name="one-way"></a>One-Way
+Cet exemple présente un contact de service avec des opérations de service monodirectionnelles. Le client n'attend pas que les opérations de service se terminent comme c'est le cas avec les opérations de service bidirectionnelles. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md) et utilise le `wsHttpBinding` liaison. Le service dans cet exemple est une application console auto-hébergée vous permettant d'observer le service qui reçoit et traite des demandes. Le client est également une application console.  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Pour créer un contrat de service monodirectionnel, définissez votre contrat de service, appliquez la classe <xref:System.ServiceModel.OperationContractAttribute> à chaque opération et affectez `true` à <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A>, tel qu'indiqué dans l'exemple de code suivant :  
+ Pour créer un contrat de service monodirectionnel, définissez votre contrat de service, appliquez la classe <xref:System.ServiceModel.OperationContractAttribute> à chaque opération et affectez <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> à `true`, tel qu'indiqué dans l'exemple de code suivant :  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -37,7 +40,6 @@ public interface IOneWayCalculator
     [OperationContract(IsOneWay = true)]  
     void Divide(double n1, double n2);  
 }  
-  
 ```  
   
  Pour montrer que le client n'attend pas que les opérations de service se terminent, le code de service dans cet exemple implémente un délai de cinq secondes, tel qu'indiqué dans l'exemple de code suivant :  
@@ -58,14 +60,13 @@ public class CalculatorService : IOneWayCalculator
     }  
     ...  
 }  
-  
 ```  
   
  Lorsque le client appelle le service, l'appel retourne sans attendre que l'opération de service se termine.  
   
- Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives.Vous pouvez voir le service recevoir des messages du client.Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
+ Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives. Vous pouvez voir le service recevoir des messages du client. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
   
- Le client s'arrête avant le service, ce qui montre qu'un client n'attend pas que les opérations de service monodirectionnelles se terminent.La sortie du client se présente comme suit :  
+ Le client s'arrête avant le service, ce qui montre qu'un client n'attend pas que les opérations de service monodirectionnelles se terminent. La sortie du client se présente comme suit :  
   
 ```  
 Add(100,15.99)  
@@ -74,7 +75,6 @@ Multiply(9,81.25)
 Divide(22,7)  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
  La sortie du service se présente comme suit :  
@@ -91,30 +91,29 @@ Processing Add(100,15.99) - result: 115.99
 Processing Subtract(145,76.54) - result: 68.46  
 Processing Multiply(9,81.25) - result: 731.25  
 Processing Divide(22,7) - result: 3.14285714285714  
-  
 ```  
   
 > [!NOTE]
->  HTTP est, par définition, un protocole de demande\/réponse ; lorsqu'une demande est effectuée, une réponse est retournée.Cela se vérifie même pour une opération de service monodirectionnelle qui est exposée sur HTTP.Lorsque l'opération est appelée, le service retourne un code d'état HTTP 202 avant que l'opération de service s'exécute.Ce code d'état signifie que la demande a été acceptée pour traitement, mais que le traitement n'est pas encore terminé.Le client qui a appelé l'opération se bloque jusqu'à ce qu'il reçoive la réponse 202 du service.Cela peut provoquer des comportements inattendus lorsque plusieurs messages unidirectionnels sont envoyés à l'aide d'une liaison configurée pour utiliser des sessions.La liaison `wsHttpBinding` utilisée dans cet exemple est configurée pour utiliser des sessions par défaut pour établir un contexte de sécurité.Par défaut, les messages d'une session sont assurés d'arriver dans l'ordre dans lequel ils sont envoyés.De ce fait, lorsque le deuxième message d'une session est envoyé, il n'est pas traité tant que le premier message ne l'a pas été.Il en résulte que le client ne reçoit pas de réponse 202 pour un message tant que le traitement du message précédent n'est pas terminé.Par conséquent, le client se bloque à chaque appel d'opération suivant.Pour éviter ce comportement, cet exemple configure l'exécution pour distribuer les messages simultanément aux différentes instances pour traitement.L'exemple définit <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> à `PerCall` afin que chaque message puisse être traité par une autre instance.<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> est défini à `Multiple` pour permettre à plusieurs threads de distribuer des messages simultanément.  
+>  HTTP est, par définition, un protocole de demande/réponse ; lorsqu'une demande est effectuée, une réponse est retournée. Cela se vérifie même pour une opération de service monodirectionnelle qui est exposée sur HTTP. Lorsque l'opération est appelée, le service retourne un code d'état HTTP 202 avant que l'opération de service s'exécute. Ce code d'état signifie que la demande a été acceptée pour traitement, mais que le traitement n'est pas encore terminé. Le client qui a appelé l'opération se bloque jusqu'à ce qu'il reçoive la réponse 202 du service. Cela peut provoquer des comportements inattendus lorsque plusieurs messages unidirectionnels sont envoyés à l'aide d'une liaison configurée pour utiliser des sessions. La liaison `wsHttpBinding` utilisée dans cet exemple est configurée pour utiliser des sessions par défaut pour établir un contexte de sécurité. Par défaut, les messages d'une session sont assurés d'arriver dans l'ordre dans lequel ils sont envoyés. De ce fait, lorsque le deuxième message d'une session est envoyé, il n'est pas traité tant que le premier message ne l'a pas été. Il en résulte que le client ne reçoit pas de réponse 202 pour un message tant que le traitement du message précédent n'est pas terminé. Par conséquent, le client se bloque à chaque appel d'opération suivant. Pour éviter ce comportement, cet exemple configure l'exécution pour distribuer les messages simultanément aux différentes instances pour traitement. L'exemple définit <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> à `PerCall` afin que chaque message puisse être traité par une autre instance. <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> est défini à `Multiple` pour permettre à plusieurs threads de distribuer des messages simultanément.  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée dans la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions indiquées dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
->  Exécutez le service avant le client et arrêtez le client avant le service.Cela évite au client de lever une exception lorsqu'il ne parvient pas à fermer la session de sécurité correctement du fait que le service a été arrêté.  
+>  Exécutez le service avant le client et arrêtez le client avant le service. Cela évite au client de lever une exception lorsqu'il ne parvient pas à fermer la session de sécurité correctement du fait que le service a été arrêté.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: c4644dd1-dead-48ff-abeb-7bffae69a6ac
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: c6c1b72048f1f7cb421e5a19d34c2c2dea5463ce
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="validating-issuer-name-registry"></a>Validation du registre des noms d'émetteurs
 Le Registre de validation de nom d'émetteur (VINR) pour Windows Identity Foundation permet aux applications d'une architecture mutualisée de garantir qu'un jeton entrant a été publié par un locataire et un fournisseur d'identité approuvés. Cette fonctionnalité est particulièrement utile pour les applications partagée qui utilisent Microsoft Azure Active Directory car tous les jetons publiés par Microsoft Azure AD sont archivés avec le même certificat. Pour différencier les demandes de plusieurs locataires qui utilisent le même certificat, et par conséquent disposent de la même empreinte numérique, votre application doit rendre persistant le nom de l'émetteur pour chaque locataire pour exécuter la logique de validation. Le VINR fournit cette fonctionnalité, et il vous permet également d'ajouter une logique de validation personnalisée ou de stocker les données de Registre de l'émetteur dans les emplacements autres que le fichier de configuration. L'extension peut être ajoutée au pipeline WIF de votre application ou elle peut être utilisée de manière indépendante.  
@@ -37,4 +35,3 @@ Le Registre de validation de nom d'émetteur (VINR) pour Windows Identity Founda
 -   **Nom de l’émetteur et validation du jeton pour les applications multi-locataires** : valide le jeton entrant en vérifiant le nom de l’émetteur (locataire) et en déterminant si le jeton a été signé avec un certificat valide du fournisseur d’identité.  
   
 -   **Extensibilité pour la logique de validation personnalisée et les magasins de données** : fournit l’extensibilité pour insérer votre propre logique de validation et spécifier un magasin de données autre que le fichier de configuration par défaut.
-

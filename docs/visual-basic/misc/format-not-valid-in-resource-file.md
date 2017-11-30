@@ -1,39 +1,22 @@
 ---
-title: Format non valide dans le fichier de ressources | Documents Microsoft
-ms.date: 2015-07-20
+title: Format non valide dans le fichier de ressources
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vbrID325
+f1_keywords: vbrID325
 ms.assetid: e986ab45-e3ce-430e-8704-5882e5da1104
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6d9332c5a346ea17736d17812930bbae376d8f88
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: ab126e3ac030e855659d5e4a02e523eefb7860e7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="format-not-valid-in-resource-file"></a>Format non valide dans le fichier de ressources
-Un fichier de ressources dans votre projet ne suit pas le format standard d’un fichier de ressources Windows ou il existe une incompatibilité entre le fichier de ressources et le [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] projet.  
+Un fichier de ressources de votre projet ne suit pas le format standard d’un fichier de ressources Windows ou il existe une incompatibilité entre le fichier de ressources et le projet [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] .  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   

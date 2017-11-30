@@ -1,35 +1,33 @@
 ---
-title: "Expression does not produce a value | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30491"
-  - "bc30491"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30491"
+title: Cette expression ne produit pas de valeur
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30491
+- bc30491
+helpviewer_keywords: BC30491
 ms.assetid: 8399d7ae-bc0a-49e6-81dc-2e7229708bc9
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 32cbfdaaf70fbf44b798a83c0e550966570dea39
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Expression does not produce a value
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Vous avez tenté d'utiliser une expression qui ne produit aucune valeur dans un contexte produisant des valeurs, tel que l'appel d'une instruction `Sub` dans un contexte où une fonction `Function` est attendue.  
+# <a name="expression-does-not-produce-a-value"></a>Cette expression ne produit pas de valeur
+Vous avez tenté d’utiliser une expression qui ne produit pas une valeur dans un contexte produisant des valeurs, telles que d’appeler un `Sub` dans un contexte où une `Function` est attendu.  
   
- **ID d'erreur :** BC30491  
+ **ID d’erreur :** BC30491  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Remplacez l'expression par une expression produisant une valeur.  
+-   Modifier l’expression une qui génère une valeur.  
   
-## Voir aussi  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Voir aussi  
+ [Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md)

@@ -1,31 +1,22 @@
 ---
 title: "Vue d’ensemble des attributs (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 1449f69b-c063-41de-8d89-f0bbdcf96ac6
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0464de06390a9899cbe312b16cbad41d0b6639eb
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: f1d5399da42b224908fa9c23893eec5d424dd685
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="attributes-overview-visual-basic"></a>Vue d’ensemble des attributs (Visual Basic)
 Les attributs fournissent une méthode puissante permettant d’associer des métadonnées ou des informations déclaratives avec du code (assemblys, types, méthodes, propriétés, etc.). Une fois associé à une entité de programme, l’attribut peut être interrogé à l’exécution à l’aide d’une technique appelée *réflexion*. Pour plus d’informations, consultez la page [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md).  
@@ -51,7 +42,7 @@ Les attributs fournissent une méthode puissante permettant d’associer des mé
 End Class  
 ```  
   
- Une méthode avec l’attribut <xref:System.Runtime.InteropServices.DllImportAttribute> est déclaré comme suit :  
+ Une méthode avec l’attribut <xref:System.Runtime.InteropServices.DllImportAttribute> est déclarée comme suit :  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -161,7 +152,6 @@ Module: CLSCompliant(True)>
 -   [Informations relatives à l’appelant (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)   
- [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
+ [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)  
+ [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
  [Attributs](https://msdn.microsoft.com/library/5x6cd29c)
-

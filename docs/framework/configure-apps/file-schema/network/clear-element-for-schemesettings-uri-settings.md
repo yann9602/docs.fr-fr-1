@@ -1,74 +1,75 @@
 ---
-title: "&lt;clear&gt;, &#233;l&#233;ment de schemeSettings (param&#232;tres d&#39;URI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "&lt;Désactivez&gt; , élément de schemeSettings (paramètres d’Uri)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 65098332-ce61-4542-ab8d-e7dc0257d31f
-caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: a2a4841635b5d6bcaa49d024dd92241573473036
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;clear&gt;, &#233;l&#233;ment de schemeSettings (param&#232;tres d&#39;URI)
-Efface tous les paramètres de schémas existants.  
+# <a name="ltcleargt-element-for-schemesettings-uri-settings"></a>&lt;Désactivez&gt; , élément de schemeSettings (paramètres d’Uri)
+Efface tous les paramètres de modèle existant.  
   
-## Syntaxe  
+ \<configuration>  
+\<URI >  
+\<schemeSettings >  
+\<Désactivez >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <clear/>  
-  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
+ Aucun  
+  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments enfants  
- Aucun.  
-  
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<schemeSettings\>, élément \(paramètres d'URI\)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Spécifie comment un <xref:System.Uri> sera analysé pour des schémas spécifiques.|  
+|[\<schemeSettings, élément (paramètres d’Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
   
-## Notes  
- Par défaut, la classe <xref:System.Uri?displayProperty=fullName> n'échappe pas les délimiteurs de chemin d'accès encodés de pourcentage avant d'exécuter la compression de chemin d'accès.  Cela a été implémenté comme mécanisme de sécurité contre des attaques telles que les suivantes :  
+## <a name="remarks"></a>Remarques  
+ Par défaut, le <xref:System.Uri?displayProperty=nameWithType> pour cent de classe n’échappe pas encodée séparateurs de chemin d’accès avant d’exécuter la compression de chemin d’accès. Cela a été implémenté en tant que mécanisme de sécurité contre les attaques comme suit :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Si cet URI est passé à des modules qui ne gèrent pas correctement les caractères encodés de pourcentage, il pourrait provoquer l'exécution de la commande suivante par le serveur :  
+ Si cet URI est passé à des modules ne gère ne pas % correctement les caractères encodés, elle peut entraîner la commande suivante, exécutée par le serveur :  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Pour cette raison, la classe <xref:System.Uri?displayProperty=fullName> place en premier les délimiteurs de chemin d'accès hors d'une séquence d'échappement puis applique la compression des chemin d'accès.  Le résultat du passage de l'URL malveillante ci\-dessus au constructeur de classe <xref:System.Uri?displayProperty=fullName> provoque l'URI suivant :  
+ Pour cette raison, <xref:System.Uri?displayProperty=nameWithType> première séparateurs de chemin d’accès n’échappe pas de classe, puis applique la compression de chemin d’accès. Le résultat du passage de l’URL malveillante ci-dessus pour <xref:System.Uri?displayProperty=nameWithType> classe constructeur se traduit par l’URI suivant :  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Ce comportement par défaut peut être modifié pour échapper des délimiteurs de chemin d'accès encodés en pourcentage à l'aide de l'option de configuration schemeSettings pour un modèle spécifique.  
+ Ce comportement par défaut peut être modifié pour ne pas les délimiteurs de chemin d’accès codé en pourcentage échapper à l’aide de l’option de configuration schemeSettings pour un modèle spécifique.  
   
-## Fichiers de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l'application ou dans le fichier de configuration machine \(Machine.config\).  
+## <a name="configuration-files"></a>Fichiers de configuration  
+ Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## Exemple  
- L'exemple de code suivant présente une configuration utilisée par la classe <xref:System.Uri> qui efface tous les paramètres de schémas, puis ajoute une prise en charge visant à ne pas placer dans une séquence d'échappement les délimiteurs de chemin d'accès encodés en pourcentage pour le schéma HTTP.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre une configuration utilisée par la <xref:System.Uri> classe qui efface tous les paramètres de modèle, puis ajoute la prise en charge pour l’échappement ne pas les séparateurs de chemin d’accès encodés en pourcentage pour le schéma http.  
   
-```  
+```xml  
 <configuration>  
   <uri>  
     <schemeSettings>  
@@ -79,11 +80,11 @@ Efface tous les paramètres de schémas existants.
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Configuration.SchemeSettingElement?displayProperty=fullName>   
- <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=fullName>   
- <xref:System.Configuration.UriSection?displayProperty=fullName>   
- <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=fullName>   
- <xref:System.GenericUriParserOptions?displayProperty=fullName>   
- <xref:System.Uri?displayProperty=fullName>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
+ <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
+ <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
+ <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>  
+ <xref:System.GenericUriParserOptions?displayProperty=nameWithType>  
+ <xref:System.Uri?displayProperty=nameWithType>  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

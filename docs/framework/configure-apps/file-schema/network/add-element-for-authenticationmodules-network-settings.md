@@ -1,76 +1,78 @@
 ---
-title: "&lt;add&gt;, &#233;l&#233;ment d&#39;authenticationModules (param&#232;tres r&#233;seau) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#add"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/authenticationModules/add"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<add> (élément), authenticationModules"
-  - "<authenticationModules>, add (élément)"
-  - "add (élément), authenticationModules"
-  - "authenticationModules, add (élément)"
+title: "&lt;ajouter&gt; , élément pour authenticationModules (paramètres réseau)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#add
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/authenticationModules/add
+helpviewer_keywords:
+- authenticationModules, add element
+- add element, authenticationModules
+- <authenticationModules>, add element
+- <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
-caps.latest.revision: 15
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 60909a738afbe2ec14d0f67846b06578a7393601
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;add&gt;, &#233;l&#233;ment d&#39;authenticationModules (param&#232;tres r&#233;seau)
-Ajoute un module d'authentification à l'application.  
+# <a name="ltaddgt-element-for-authenticationmodules-network-settings"></a>&lt;ajouter&gt; , élément pour authenticationModules (paramètres réseau)
+Ajoute un module d’authentification à l’application.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.NET >  
+\<authenticationModules >  
+\<add>  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
-      <add   
-   type = "client type", System, Version="version number", Culture="culture", PublicKeyToken="token"   
+```xml  
+<add
+  type="type_fullname, assembly_fullname"   
 />  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |**Attribut**|**Description**|  
-|------------------|---------------------|  
-|`type`|Nom de classe et spécifications du module qui implémente l'authentification.|  
+|-------------------|---------------------|  
+|`type`|Le nom de type qualifié complet (indiqué par le <xref:System.Type.FullName%2A> propriété) et le nom de l’assembly (indiqué par le <xref:System.Reflection.Assembly.FullName%2A> propriété), séparés par une virgule.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Spécifie les modules qui servent à authentifier les demandes réseau.|  
+|[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les demandes du réseau.|  
   
-## Notes  
- L'élément `add` ajoute un module d'authentification à la fin de la liste des modules d'authentification inscrits.  Les modules d'authentification sont appelés dans l'ordre dans lequel ils ont été ajoutés à la liste.  
+## <a name="remarks"></a>Remarques  
+ Le `add` élément ajoute un module d’authentification à la fin de la liste des modules d’authentification inscrits. Modules d’authentification sont appelés dans l’ordre dans lequel ils ont été ajoutés à la liste.  
   
- La valeur pour l'attribut `type` doit comprendre un nom de DLL valide et le nom de classe correspondant, séparés par une virgule.  
+ La valeur de la `type` attribut doit être un nom de type valide et le nom de l’assembly correspondant, séparés par une virgule.  
   
-## Fichiers de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l'application ou dans le fichier de configuration machine \(Machine.config\).  
+## <a name="configuration-files"></a>Fichiers de configuration  
+ Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## Exemple  
- L'exemple de code suivant active les modules d'authentification par défaut.  Vous devez remplacer les valeurs de Version et de PublicKeyToken par les valeurs correctes pour le module spécifié.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant active les modules d’authentification par défaut. Vous devez remplacer les valeurs de Version et de PublicKeyToken par les valeurs correctes pour le module spécifié.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
         <authenticationModules>  
@@ -89,7 +91,7 @@ Ajoute un module d'authentification à l'application.
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Net.IAuthenticationModule>   
- <xref:System.Net.AuthenticationManager>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Net.IAuthenticationModule>  
+ <xref:System.Net.AuthenticationManager>  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

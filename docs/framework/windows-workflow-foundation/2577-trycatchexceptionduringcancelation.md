@@ -1,38 +1,42 @@
 ---
-title: "2577 - TryCatchExceptionDuringCancelation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 2577 - TryCatchExceptionDuringCancelation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 35ee9f55-227f-4566-bcb4-4c7c75dea85b
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2a4bc0d9ab45fe8e2f025c651fce137d6a4255bc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 2577 - TryCatchExceptionDuringCancelation
-## Propriétés  
+# <a name="2577---trycatchexceptionduringcancelation"></a>2577 - TryCatchExceptionDuringCancelation
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
 |ID|2577|  
 |Mots clés|WFActivities|  
 |Niveau|Avertissement|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Débogage|  
+|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
   
-## Description  
+## <a name="description"></a>Description  
  Indique qu'une activité enfant de l'activité TryCatch a levé une exception durant l'annulation.  
   
-## Message  
+## <a name="message"></a>Message  
  Une activité enfant de l'activité TryCatch « %1 » a levé une exception durant l'annulation.  
   
-## Détails  
+## <a name="details"></a>Détails  
   
 |Nom d'élément de données|Type d'élément de données|Description|  
-|------------------------------|-------------------------------|-----------------|  
+|--------------------|--------------------|-----------------|  
 |DisplayName|xs:string|Nom complet de l'activité.|  
 |AppDomain|xs:string|Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.|

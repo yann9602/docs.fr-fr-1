@@ -11,16 +11,15 @@ helpviewer_keywords:
 - WF [WF]
 - Windows Workflow Foundation [WF]
 ms.assetid: 9a23ea6b-d600-483e-89cd-8889cfec5f66
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: d01680c038f075db4bdb9151a86d51820615a068
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="windows-workflow-foundation"></a>Windows Workflow Foundation
 Cette section décrit le modèle de programmation, exemples et outils du [!INCLUDE[wf](../../../includes/wf-md.md)].  
@@ -55,4 +54,3 @@ Cette section décrit le modèle de programmation, exemples et outils du [!INCLU
   
  [Exemples Windows Workflow](../../../docs/framework/windows-workflow-foundation/samples/index.md)  
  Contient des exemples d’applications qui illustrent les scénarios et fonctionnalités WF.
-

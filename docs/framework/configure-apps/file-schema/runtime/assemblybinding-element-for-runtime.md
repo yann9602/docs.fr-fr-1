@@ -1,74 +1,74 @@
 ---
-title: "&lt;assemblyBinding&gt;, &#233;l&#233;ment de &lt;runtime&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<assemblyBinding> (élément)"
-  - "assemblyBinding (élément)"
-  - "balises conteneurs, <assemblyBinding> (élément)"
+title: "&lt;assemblyBinding&gt; , élément pour &lt;runtime&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding
+helpviewer_keywords:
+- <assemblyBinding> element
+- assemblyBinding element
+- container tags, <assemblyBinding> element
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
-caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: fdf2bc90c496c9906b5d31bad0065e01bdb47942
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;assemblyBinding&gt;, &#233;l&#233;ment de &lt;runtime&gt;
+# <a name="ltassemblybindinggt-element-for-ltruntimegt"></a>&lt;assemblyBinding&gt; , élément pour &lt;runtime&gt;
 Contient des informations à propos de la redirection des versions d'assemblys et de l'emplacement de ces derniers.  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+\<assemblyBinding >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
-        <assemblyBinding    
+```xml  
+      <assemblyBinding    
    xmlns="urn:schemas-microsoft-com:asm.v1" appliesTo="v1.0.3705">  
 </assemblyBinding>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|**xmlns**|Attribut requis.<br /><br /> Spécifie l'espace de noms XML requis pour la liaison d'assembly.  Utilisez la chaîne « urn:schemas\-microsoft\-com:asm.v1 » comme valeur.|  
-|**appliesTo**|Spécifie la version du runtime à laquelle s'applique la redirection d'assembly .NET Framework.  Cet attribut facultatif utilise un numéro de version .NET Framework pour indiquer la version à laquelle il s'applique.  Si aucun attribut **appliesTo** n'est spécifié, l'élément **\<assemblyBinding\>** s'applique à toutes les versions du .NET Framework.  L'attribut **appliesTo** a été introduit dans le .NET Framework 1.1, il est ignoré dans le .NET Framework 1.0.  Cela signifie que tous les éléments **\<assemblyBinding\>** sont pris en compte dans .NET Framework 1.0, même si un attribut **appliesTo** est spécifié.|  
+|---------------|-----------------|  
+|**xmlns**|Attribut requis.<br /><br /> Spécifie l'espace de noms XML requis pour la liaison d'assembly. Utilisez la chaîne « urn:schemas-microsoft-com:asm.v1 » comme valeur.|  
+|**appliesTo**|Spécifie la version du runtime à laquelle s'applique la redirection d'assembly .NET Framework. Cet attribut facultatif utilise un numéro de version .NET Framework pour indiquer la version à laquelle il s'applique. Si l’attribut **appliesTo** n’est pas spécifié, l’élément **\<assemblyBinding>** s’applique à toutes les versions du .NET Framework. Le **appliesTo** attribut a été introduit dans .NET Framework version 1.1 ; il est ignoré par le .NET Framework version 1.0. Cela signifie que tous les éléments **\<assemblyBinding>** sont appliqués lors de l’utilisation du .NET Framework 1.0, même si un attribut **appliesTo** est spécifié.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<dependentAssembly\>](../../../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md)|Encapsule la stratégie de liaison et l'emplacement d'un assembly.  Utilisez une balise **\<dependentAssembly\>** pour chaque assembly.|  
-|[\<probing\>](../../../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md)|Spécifie les sous\-répertoires interrogés par le Common Language Runtime lors du chargement des assemblys.|  
-|[\<publisherPolicy\>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md)|Spécifie si le runtime applique la stratégie de l'éditeur.|  
-|[\<qualifyAssembly\>](../../../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md)|Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quand un nom partiel est utilisé.|  
+|[\<dependentAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md)|Encapsule la stratégie de liaison et l’emplacement d’un assembly. Utilisez une  **\<dependentAssembly >** balise pour chaque assembly.|  
+|[\<probing>](../../../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md)|Spécifie les sous-répertoires interrogés par le Common Language Runtime lors du chargement des assemblys.|  
+|[\<publisherPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md)|Spécifie si le runtime applique la stratégie de l'éditeur.|  
+|[\<qualifyAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md)|Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quand un nom partiel est utilisé.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant montre comment rediriger une version d'assembly vers une autre et fournir une base de code.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -86,9 +86,9 @@ Contient des informations à propos de la redirection des versions d'assemblys e
 </configuration>  
 ```  
   
- L'exemple suivant montre comment utiliser l'attribut **appliesTo** pour rediriger la liaison d'un assembly .NET Framework.  
+ L’exemple suivant montre comment utiliser le **appliesTo** attribut pour rediriger la liaison d’un assembly .NET Framework.  
   
-```  
+```xml  
 <runtime>  
    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1" appliesTo="v1.0.3705">  
       <dependentAssembly>   
@@ -99,7 +99,7 @@ Contient des informations à propos de la redirection des versions d'assemblys e
 </runtime>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Redirection des versions d'assemblys](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

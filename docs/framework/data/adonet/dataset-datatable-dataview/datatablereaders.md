@@ -1,35 +1,38 @@
 ---
-title: "DataTableReaders | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: DataTableReaders
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 97546ae2-0e42-4d26-961d-e0b244d81ded
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: ed9094a036262bac2e101e7b4268aac2e66a0d10
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# DataTableReaders
+# <a name="datatablereaders"></a>DataTableReaders
 L'objet <xref:System.Data.DataTableReader> présente le contenu d'un objet <xref:System.Data.DataTable> ou d'un objet <xref:System.Data.DataSet> sous la forme d'un ou plusieurs jeux de résultats en lecture seule et en avant uniquement.  
   
- Lorsque vous créez un **DataTableReader** à partir d'un **DataTable**, l'objet **DataTableReader** obtenu contient un jeu de résultats contenant les mêmes données que le **DataTable** à partir duquel il a été créé, à l'exception des lignes marquées comme supprimées.  La colonne se présente dans le même ordre que le **DataTable** original.  
+ Lorsque vous créez un **DataTableReader** d’un **DataTable**, résultant **DataTableReader** objet contient un jeu de résultats avec les mêmes données que le  **DataTable** à partir de laquelle il a été créé, à l’exception de toutes les lignes qui ont été marquées comme supprimées. Les colonnes apparaissent dans le même ordre que l’original **DataTable**.  
   
- Un **DataTableReader** peut contenir plusieurs jeux de résultats s'il a été créé par un appel à la méthode <xref:System.Data.DataSet.CreateDataReader%2A>.  Les résultats sont présentés dans le même ordre que les **DataTables** dans la collection <xref:System.Data.DataSet.Tables%2A> de l'objet **DataSet**.  
+ A **DataTableReader** peut contenir plusieurs jeux de résultats s’il a été créé en appelant <xref:System.Data.DataSet.CreateDataReader%2A>. Les résultats sont dans le même ordre que les **DataTables** dans les **DataSet** l’objet <xref:System.Data.DataSet.Tables%2A> collection.  
   
-## Dans cette section  
- [Création d'un DataReader](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-datareader.md)  
- Explique comment créer un objet **DataTableReader**.  
+## <a name="in-this-section"></a>Dans cette section  
+ [Création d’un DataReader](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-datareader.md)  
+ Explique comment créer un **DataTableReader** objet.  
   
- [Navigation DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/navigating-datatables.md)  
- Décrit l'utilisation de la méthode **Read** pour se déplacer dans le contenu d'un **DataTableReader**.  
+ [Navigation dans les tables de données](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/navigating-datatables.md)  
+ Décrit l’utilisation de la **en lecture** méthode pour parcourir le contenu d’un **DataTableReader**.  
   
-## Voir aussi  
- [Extraction et modification de données dans ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Extraction et modification de données dans ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

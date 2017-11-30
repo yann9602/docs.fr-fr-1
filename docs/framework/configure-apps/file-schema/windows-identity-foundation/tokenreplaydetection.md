@@ -1,58 +1,66 @@
 ---
-title: "&lt;tokenReplayDetection&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;tokenReplayDetection&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ac3f588e-5f75-4275-b969-2d492ecc3b47
-caps.latest.revision: 6
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 5
+caps.latest.revision: "6"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: f95d200f74621a40d2987acf68bc554df8d17ab6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;tokenReplayDetection&gt;
-Active la détection du jeton par reconstitution et spécifie le moment d'expiration pour les jetons.  
+# <a name="lttokenreplaydetectiongt"></a>&lt;tokenReplayDetection&gt;
+Active la détection de relecture de jetons et spécifie le délai d’expiration pour les jetons.  
   
-## Syntaxe  
+ \<system.identityModel >  
+\<identityConfiguration >  
+\<tokenReplayDetection >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <tokenReplayDetection enabled=xs:boolean expirationPeriod=TimeSpan>  
-    </tokenReplayDetection>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <tokenReplayDetection enabled=xs:boolean expirationPeriod=TimeSpan>  
+    </tokenReplayDetection>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## Type  
+## <a name="type"></a>Type  
  <xref:System.IdentityModel.Configuration.TokenReplayDetectionElement>  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|activé|Valeur qui spécifie si un jeton relire la détection est activée ; « true » pour activer la détection du jeton par reconstitution.|  
-|expirationPeriod|<xref:System.TimeSpan> qui spécifie la quantité maximale de temps avant qu'un élément soit considéré comme expiré et supprimé du cache.  Pour plus d'informations sur la spécification des valeurs d' <xref:System.TimeSpan> , consultez [Timespan Values](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_TimespanValues).|  
+|---------------|-----------------|  
+|enabled|Une valeur qui spécifie si la détection de relecture de jetons est activée ; « true » pour activer le jeton de la détection de relecture.|  
+|expirationPeriod|Un <xref:System.TimeSpan> qui spécifie la durée maximale avant un élément est considéré comme expiré et supprimé du cache.  Pour plus d’informations sur la façon de spécifier <xref:System.TimeSpan> valeurs, consultez [valeurs Timespan](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md).|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ None  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Spécifie des paramètres d'identité au niveau de le service.|  
-|[\<securityTokenHandlerConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Fournit la configuration pour une collection de gestionnaires de jetons de sécurité.|  
+|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Spécifie les paramètres d’identité au niveau du service.|  
+|[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Fournit des gestionnaires de jetons de configuration pour une collection de sécurité.|  
   
-## Notes  
- Un élément d' `<tokenReplayDetection>` peut être spécifié au niveau de le service sous l'élément d' `<identityConfiguration>` ou sur la collection de gestionnaire de jetons de sécurité de niveau à l'élément d' `<securityTokenHandlerConfiguration>` .  Les paramètres définis pour une collection de jetons substituent ceux spécifiés dans le service.  
+## <a name="remarks"></a>Remarques  
+ A `<tokenReplayDetection>` élément peut être spécifié au niveau du service sous le `<identityConfiguration>` élément ou sur le niveau de regroupement de gestionnaire de jetons de sécurité sous le `<securityTokenHandlerConfiguration>` élément. Paramètres sur une collection de gestionnaire de jetons remplacent celles spécifiées sur le service.  
   
- Le type du cache du jeton par reconstitution est spécifié par [\<tokenReplayCache\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) l'élément.
+ Le type du cache de relecture de jetons est spécifié par le [ \<tokenReplayCache >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) élément.

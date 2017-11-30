@@ -1,25 +1,31 @@
 ---
-title: "Rechercher la valeur maximale dans une s&#233;quence num&#233;rique | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : rechercher la valeur maximale dans une séquence numérique"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 70d7c058-0280-4815-a008-6f290093591a
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 06c8d2b2eedc2d3684ef44f028cd73e80a8da5cc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Rechercher la valeur maximale dans une s&#233;quence num&#233;rique
+# <a name="find-the-maximum-value-in-a-numeric-sequence"></a>Comment : rechercher la valeur maximale dans une séquence numérique
 Utilisez l'opérateur <xref:System.Linq.Enumerable.Max%2A> pour rechercher la valeur la plus élevée dans une séquence de valeurs numériques.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant recherche la date la plus récente d'embauche parmi tous les employés.  
   
  Si vous exécutez cette requête sur l'exemple de base de données Northwind, vous obtenez le résultat suivant : `11/15/1994 12:00:00 AM`.  
@@ -27,7 +33,7 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Max%2A> pour rechercher la va
  [!code-csharp[DLinqQueryExamples#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#6)]
  [!code-vb[DLinqQueryExamples#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#6)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant recherche les unités dont le stock est le plus élevé parmi tous les produits.  
   
  Si vous exécutez cette requête sur l'exemple de base de données Northwind, vous obtenez le résultat suivant : `125`.  
@@ -35,8 +41,8 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Max%2A> pour rechercher la va
  [!code-csharp[DLinqQueryExamples#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#7)]
  [!code-vb[DLinqQueryExamples#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#7)]  
   
-## Exemple  
- L'exemple suivant utilise Max pour rechercher les `Products` dont le prix unitaire est le plus élevé dans chaque catégorie.  Les résultats sont ensuite répertoriés par catégorie.  
+## <a name="example"></a>Exemple  
+ L'exemple suivant utilise Max pour rechercher les `Products` dont le prix unitaire est le plus élevé dans chaque catégorie. Les résultats sont ensuite répertoriés par catégorie.  
   
  [!code-csharp[DLinqQueryExamples#8](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#8)]
  [!code-vb[DLinqQueryExamples#8](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#8)]  
@@ -75,6 +81,6 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Max%2A> pour rechercher la va
   
  `Carnarvon Tigers`  
   
-## Voir aussi  
- [Requêtes d'agrégation](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)   
- [Téléchargement d'exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+## <a name="see-also"></a>Voir aussi  
+ [Requêtes d’agrégation](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
+ [Téléchargement d’exemples de base de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
