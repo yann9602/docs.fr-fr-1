@@ -1,60 +1,59 @@
 ---
-title: "How to: Hide a Variable with the Same Name as Your Variable (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "qualification, of element names"
-  - "declarations, elements"
-  - "element names, qualification"
-  - "references, declared elements"
-  - "declaration statements, declared elements"
-  - "declaring elements"
-  - "referencing declared elements"
-  - "declared elements, referencing"
-  - "declared elements, about declared elements"
+title: "Comment : masquer une variable portant le même nom que votre variable (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- qualification [Visual Basic], of element names
+- declarations [Visual Basic], elements
+- element names [Visual Basic], qualification
+- references [Visual Basic], declared elements
+- declaration statements [Visual Basic], declared elements
+- declaring elements [Visual Basic]
+- referencing declared elements [Visual Basic]
+- declared elements [Visual Basic], referencing
+- declared elements [Visual Basic], about declared elements
 ms.assetid: e39c0752-f19f-4d2e-a453-00df1b5fc7ee
-caps.latest.revision: 25
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: af031f3ef134b2a509922e6ada28aa5b2b80d641
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Hide a Variable with the Same Name as Your Variable (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Vous pouvez masquer une variable en l'*occultant*, c'est\-à\-dire en la redéfinissant avec une variable du même nom.  Vous pouvez occulter la variable à masquer de deux manières :  
+# <a name="how-to-hide-a-variable-with-the-same-name-as-your-variable-visual-basic"></a>Comment : masquer une variable portant le même nom que votre variable (Visual Basic)
+Vous pouvez masquer une variable par *occultation* il, autrement dit, en le redéfinissant avec une variable du même nom. Vous pouvez occulter la variable que vous souhaitez masquer de deux manières :  
   
--   **Occultation par l'intermédiaire de la portée.** Vous pouvez l'occulter par l'intermédiaire de la portée en la redéclarant dans une sous\-région de la région contenant la variable à masquer.  
+-   **Occultation par portée.** Vous pouvez l’occulter par étendue en redéclarant dans une sous-région de la région contenant la variable que vous souhaitez masquer.  
   
--   **Occultation par héritage.** Si la variable à masquer est définie au niveau de la classe, vous pouvez l'occulter par l'intermédiaire de l'héritage en la rédeclarant avec le mot clé [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md) dans une classe dérivée.  
+-   **Occultation par héritage.** Si la variable que vous souhaitez masquer est définie au niveau de la classe, vous pouvez l’occulter par héritage en redéclarant avec le [ombres](../../../../visual-basic/language-reference/modifiers/shadows.md) mot clé dans une classe dérivée.  
   
-## Deux manières de masquer une variable  
+## <a name="two-ways-to-hide-a-variable"></a>Deux manières de masquer une Variable  
   
-#### Pour masquer une variable en l'occultant par l'intermédiaire de la portée  
+#### <a name="to-hide-a-variable-by-shadowing-it-through-scope"></a>Pour masquer une variable par elle occultation par portée  
   
-1.  Déterminez la région qui définit la variable à masquer et déterminez une sous\-région dans laquelle la redéfinir avec votre variable.  
+1.  Déterminer la région qui définit la variable que vous souhaitez masquer et déterminez une sous-région dans laquelle la redéfinir avec votre variable.  
   
-    |Région de variable|Sous\-région autorisée pour la redéfinir|  
-    |------------------------|----------------------------------------------|  
-    |Module|Classe dans le module|  
-    |Classe|Sous\-classe dans la classe<br /><br /> Procédure dans la classe|  
+    |Région de variable|Sous-région autorisée pour la redéfinir|  
+    |-----------------------|-------------------------------------------|  
+    |Module|Une classe dans le module|  
+    |Classe|Une sous-classe de la classe<br /><br /> Une procédure au sein de la classe|  
   
-     Vous ne pouvez pas redéfinir de variable de procédure dans un bloc au sein de cette procédure, par exemple dans une construction `If`...`End If` ou une boucle `For`.  
+     Vous ne pouvez pas redéfinir une variable de procédure dans un bloc de cette procédure, par exemple dans un `If`... `End If` construction ou une `For` boucle.  
   
-2.  Créez la sous\-région si elle n'existe pas déjà.  
+2.  Créez la sous-région si elle n’existe pas déjà.  
   
-3.  Dans la sous\-région, écrivez à une [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) qui déclare la variable occultante.  
+3.  Dans la sous-région, écrivez un [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) qui déclare la variable occultation.  
   
-     Lorsque le code à l'intérieur de la sous\-région fait référence au nom de variable, le compilateur résout la référence à la variable occultante.  
+     Lorsque le code à l’intérieur de la sous-région fait référence au nom de variable, le compilateur résout la référence à la variable d’occultation.  
   
-     L'exemple suivant illustre l'occultation par l'intermédiaire de la portée, ainsi qu'une référence qui outrepasse l'occultation.  
+     L’exemple suivant illustre l’occultation par portée, ainsi que d’une référence qui outrepasse l’occultation.  
   
     ```  
     Module shadowByScope  
@@ -76,21 +75,21 @@ Vous pouvez masquer une variable en l'*occultant*, c'est\-à\-dire en la redéfi
     End Module  
     ```  
   
-     L'exemple précédent déclare la variable `num` à la fois au niveau du module et au niveau de la procédure \(dans la procédure `show`\).  La variable locale `num` occulte la variable de niveau module `num` dans `show` ; par conséquent, la variable locale a la valeur 2.  Toutefois, il n'existe aucune variable locale pour occulter `num` dans la procédure `useModuleLevelNum`.  Par conséquent, `useModuleLevelNum` définit la valeur de la variable au niveau du module à 1.  
+     L’exemple précédent déclare la variable `num` à la fois au niveau du module et au niveau de la procédure (dans la procédure `show`). La variable locale `num` occulte la variable au niveau du module `num` dans `show`, de sorte que la variable locale est définie sur 2. Toutefois, il n’existe aucune variable locale pour les clichés instantanés `num` dans le `useModuleLevelNum` procédure. Par conséquent, `useModuleLevelNum` définit la valeur de la variable au niveau du module à 1.  
   
-     L'appel `MsgBox` à l'intérieur de `show` outrepasse le mécanisme d'occultation en qualifiant `num` avec le nom du module.  Par conséquent, il affiche la variable au niveau du module au lieu de la variable locale.  
+     Le `MsgBox` d’appeler dans `show` ignore le mécanisme d’occultation en qualifiant `num` avec le nom du module. Par conséquent, il affiche la variable au niveau du module au lieu de la variable locale.  
   
-#### Pour masquer une variable en l'occultant par l'intermédiaire de l'héritage  
+#### <a name="to-hide-a-variable-by-shadowing-it-through-inheritance"></a>Pour masquer une variable en l’occultation par héritage  
   
-1.  Assurez\-vous que la variable à masquer est déclarée dans une classe et au niveau de la classe \(en dehors de toute procédure\).  Sinon, vous ne pouvez pas l'occulter par héritage.  
+1.  Assurez-vous que la variable que vous souhaitez masquer est déclarée dans une classe et au niveau de la classe (en dehors de toute procédure). Dans le cas contraire, vous ne peut pas la masquer via l’héritage.  
   
-2.  Définissez une classe dérivée de la classe de la variable s'il n'en n'existe pas déjà une.  
+2.  Définissez une classe dérivée à partir de la classe de la variable, si elle n’existe pas déjà.  
   
-3.  À l'intérieur de la classe dérivée, écrivez une instruction `Dim` qui déclare votre variable.  Incluez le mot clé [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md) dans la déclaration.  
+3.  À l’intérieur de la classe dérivée, écrivez une `Dim` instruction déclare votre variable. Inclure le [ombres](../../../../visual-basic/language-reference/modifiers/shadows.md) mot clé dans la déclaration.  
   
-     Lorsque le code de la classe dérivée fait référence au nom de la variable, le compilateur résout la référence à votre variable.  
+     Lorsque le code de la classe dérivée fait référence au nom de variable, le compilateur résout la référence à la variable.  
   
-     L'exemple suivant illustre l'occultation par l'intermédiaire de l'héritage.  Il effectue deux références, une qui accède à la variable occultante et une qui outrepasse l'occultation.  
+     L’exemple suivant illustre l’occultation par héritage. Il effectue deux références, qui accède à la variable occultation et une qui outrepasse l’occultation.  
   
     ```  
     Public Class shadowBaseClass  
@@ -107,17 +106,17 @@ Vous pouvez masquer une variable en l'*occultant*, c'est\-à\-dire en la redéfi
     End Class  
     ```  
   
-     L'exemple précédent déclare la variable `shadowString` dans la classe de base et la masque dans la classe dérivée.  La procédure `showStrings` dans la classe dérivée affiche la version occultante de la chaîne lorsque le nom `shadowString` n'est pas qualifié.  Elle affiche ensuite la version occultée lorsque `shadowString` est qualifié avec le mot clé `MyBase`.  
+     L’exemple précédent déclare la variable `shadowString` dans la classe de base et la masque dans la classe dérivée. La procédure `showStrings` dans la classe dérivée affiche la version de masquage de la chaîne lorsque le nom `shadowString` n’est pas qualifié. Il affiche ensuite la version occultée lorsque `shadowString` est qualifié avec le `MyBase` (mot clé).  
   
-## Programmation fiable  
- L'occultation introduit plusieurs versions d'une variable avec le même nom.  Lorsqu'une instruction de code fait référence au nom de la variable, la version vers laquelle le compilateur résout la référence dépend de plusieurs facteurs, tels que l'emplacement de l'instruction de code et la présence d'une chaîne qualifiante.  Cela peut augmenter le risque de référence à une version non souhaitée d'une variable occultée.  Vous pouvez réduire ce risque en qualifiant complètement toutes les références à une variable occultée.  
+## <a name="robust-programming"></a>Programmation fiable  
+ L’occultation introduit plusieurs versions d’une variable portant le même nom. Lorsqu’une instruction de code fait référence au nom de variable, la version à laquelle le compilateur résout la référence dépend de facteurs tels que l’emplacement de l’instruction de code et la présence d’une chaîne qualifiante. Cela peut augmenter le risque de faire référence à une version non souhaitée d’une variable occultée. Vous pouvez réduire ce risque en qualifier complètement toutes les références à une variable occultée.  
   
-## Voir aussi  
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)   
- [Differences Between Shadowing and Overriding](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md)   
- [How to: Hide an Inherited Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)   
- [How to: Access a Variable Hidden by a Derived Class](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)   
- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)   
- [Me, My, MyBase, and MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)   
- [Inheritance Basics](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+## <a name="see-also"></a>Voir aussi  
+ [Références aux éléments déclarés](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ [Occultation dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)  
+ [Différences entre l'occultation et la substitution](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md)  
+ [Guide pratique : masquer une variable héritée](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)  
+ [Guide pratique : accéder à une variable masquée par une classe dérivée](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)  
+ [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)  
+ [Me, My, MyBase et MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
+ [Éléments fondamentaux de l’héritage](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

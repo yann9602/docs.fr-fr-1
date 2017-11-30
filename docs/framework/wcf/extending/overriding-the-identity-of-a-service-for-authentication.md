@@ -1,23 +1,29 @@
 ---
-title: "Substitution de l&#39;identit&#233; d&#39;un service pour l&#39;authentification | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Substitution de l'identité d'un service pour l'authentification"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6a3125504326f2cb129fef6f1f3e01dba577f599
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Substitution de l&#39;identit&#233; d&#39;un service pour l&#39;authentification
-Généralement, vous n'avez pas besoin de définir l'identité sur un service car la sélection d'un type d'informations d'identification du client impose le type d'identité exposé dans les métadonnées du service. Par exemple, le code de configuration suivant utilise le [ <> \> ](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) et affecte le `clientCredentialType` attribut Windows.  
+# <a name="overriding-the-identity-of-a-service-for-authentication"></a>Substitution de l'identité d'un service pour l'authentification
+Généralement, vous n'avez pas besoin de définir l'identité sur un service car la sélection d'un type d'informations d'identification du client impose le type d'identité exposé dans les métadonnées du service. Par exemple, le code de configuration suivant utilise le [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) et affecte le `clientCredentialType` à Windows d’attribut.  
   
   
   
@@ -25,10 +31,10 @@ Généralement, vous n'avez pas besoin de définir l'identité sur un service ca
   
   
   
- Pour un exemple d’application qui illustre la définition de l’identité, consultez [exemple](../../../../docs/framework/wcf/samples/service-identity-sample.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]identité de service, consultez [l’identité du Service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pour un exemple d’application qui illustre la définition de l’identité, consultez [exemple](../../../../docs/framework/wcf/samples/service-identity-sample.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]identité de service, consultez [l’identité du Service et l’authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ## <a name="kerberos-authentication-and-identity"></a>Authentification et identité Kerberos  
- Par défaut, lorsqu’un service est configuré pour utiliser les informations d’identification Windows, un [ <> \> ](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) élément contenant un [ <> \> ](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) ou [ <> \> ](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) élément est généré dans le fichier WSDL. Si le service s’exécute sous le `LocalSystem`, `LocalService`, ou `NetworkService` compte, un service de nom principal (SPN) est généré par défaut sous la forme de `host/` \< *nom d’hôte*> car ces comptes ont accès aux données SPN de l’ordinateur. Si le service s’exécute sous un compte différent, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] génère un UPN sous la forme de *nom d’utilisateur*>@<*domainName*`>`. Cela est dû au fait que l'authentification Kerberos requiert qu'un UPN ou SPN soit fourni au client pour authentifier le service.  
+ Par défaut, lorsqu’un service est configuré pour utiliser les informations d’identification Windows, un [ \<identité >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) élément contenant un [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) ou [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) élément est généré dans le WSDL. Si le service s’exécute sous le `LocalSystem`, `LocalService`, ou `NetworkService` compte, un service de nom principal (SPN) est généré par défaut sous la forme de `host/` \< *nom d’hôte*>, car ces comptes ont accès aux données SPN de l’ordinateur. Si le service s’exécute sous un compte différent, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] génère un UPN sous la forme de \< *nom d’utilisateur*>@<*domainName*`>`. Cela est dû au fait que l'authentification Kerberos requiert qu'un UPN ou SPN soit fourni au client pour authentifier le service.  
   
  Vous pouvez également utiliser l'outil Setspn.exe pour inscrire un SPN supplémentaire avec un compte de service dans un domaine. Vous pouvez ensuite utiliser le SPN comme identité du service. Pour télécharger l’outil, consultez [Windows 2000 Resource Kit Tool : Setspn.exe](http://go.microsoft.com/fwlink/?LinkId=91752). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]l’outil, consultez [présentation de Setspn](http://go.microsoft.com/fwlink/?LinkId=61374).  
   
@@ -54,7 +60,7 @@ Généralement, vous n'avez pas besoin de définir l'identité sur un service ca
   
 -   Si vous utilisez Kerberos direct (également appelé « one-shot »), l'authentification échoue.  
   
-### <a name="using-the-identity-element-in-configuration"></a>À l’aide de la <> \> élément de Configuration  
+### <a name="using-the-identity-element-in-configuration"></a>À l’aide de la \<identité > élément de Configuration  
  Si vous remplacez le type d'informations d'identification du client dans la liaison présentée précédemment par Certificate`,` le fichier WSDL généré contient alors un certificat X.509 sérialisé pour la valeur d'identité, comme illustré dans le code suivant. Il s'agit de la valeur par défaut pour tous les types d'informations d'identification du client autres que Windows.  
   
   
@@ -70,5 +76,5 @@ Généralement, vous n'avez pas besoin de définir l'identité sur un service ca
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : créer un vérificateur d’identité Client personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)   
- [L’authentification et l’identité du Service](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+ [Comment : créer un vérificateur d’identité Client personnalisés](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ [L’authentification et identité de Service](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)

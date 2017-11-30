@@ -1,30 +1,34 @@
 ---
-title: "Proc&#233;dure&#160;: cr&#233;er un magasin d&#39;instances personnalis&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : créer un magasin d'instances personnalisé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 593c4e9d-8a49-4e12-8257-cee5e6b4c075
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c383d3af92ba2f76f8ba09bc194220c170beaa0b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: cr&#233;er un magasin d&#39;instances personnalis&#233;
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] contient <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, un magasin d'instance qui utilise SQL Server pour rendre les données de workflow persistantes.  Si votre application est requise pour la persistance des données de workflow sur un autre support, tel qu'une autre base de données ou un système de fichiers, vous pouvez implémenter un magasin d'instances personnalisé.  Un magasin d'instances personnalisé est créé en étendant la classe abstraite <xref:System.Runtime.DurableInstancing.InstanceStore> et en implémentant les méthodes nécessaires pour l'implémentation.  Pour une implémentation complète d'un magasin d'instances personnalisé, consultez l'exemple [Processus d'achat d'entreprise](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md).  
+# <a name="how-to-create-a-custom-instance-store"></a>Procédure : créer un magasin d'instances personnalisé
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] contient <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, un magasin d'instance qui utilise SQL Server pour rendre les données de workflow persistantes. Si votre application est requise pour la persistance des données de workflow sur un autre support, tel qu'une autre base de données ou un système de fichiers, vous pouvez implémenter un magasin d'instances personnalisé. Un magasin d'instances personnalisé est créé en étendant la classe abstraite <xref:System.Runtime.DurableInstancing.InstanceStore> et en implémentant les méthodes nécessaires pour l'implémentation. Pour une implémentation complète d’un magasin d’instances personnalisé, consultez la [processus d’achat d’entreprise](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) exemple.  
   
-## Implémentation de la méthode BeginTryCommand  
- <xref:System.Runtime.DurableInstancing.InstanceStore.BeginTryCommand%2A> est envoyé au magasin d'instances par le moteur de persistance.  Le type du paramètre `command` indique la commande qui est exécutée ; ce paramètre peut être des types suivants :  
+## <a name="implementing-the-begintrycommand-method"></a>Implémentation de la méthode BeginTryCommand  
+ <xref:System.Runtime.DurableInstancing.InstanceStore.BeginTryCommand%2A> est envoyé au magasin d'instances par le moteur de persistance. Le type du paramètre `command` indique la commande qui est exécutée ; ce paramètre peut être des types suivants :  
   
--   <xref:System.Activities.DurableInstancing.SaveWorkflowCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'un workflow doit être rendu persistant sur le support de stockage.  Les données de persistance de workflow sont fournies à la méthode dans le membre <xref:System.Activities.DurableInstancing.SaveWorkflowCommand.InstanceData%2A> du paramètre `command` .  
+-   <xref:System.Activities.DurableInstancing.SaveWorkflowCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'un workflow doit être rendu persistant sur le support de stockage. Les données de persistance de workflow sont fournies à la méthode dans le membre <xref:System.Activities.DurableInstancing.SaveWorkflowCommand.InstanceData%2A> du paramètre `command` .  
   
--   <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'un workflow doit être chargé à partir du support de stockage.  l'ID d'instance du workflow à charger est fourni à la méthode dans le paramètre `instanceId` de la propriété <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceView%2A> du paramètre `context`.  
+-   <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'un workflow doit être chargé à partir du support de stockage. l'ID d'instance du workflow à charger est fourni à la méthode dans le paramètre `instanceId` de la propriété <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceView%2A> du paramètre `context`.  
   
--   <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'un <xref:System.ServiceModel.Activities.WorkflowServiceHost> doit être enregistré en tant que propriétaire de verrou.  L'ID d'instance du workflow actuel doit être fourni au magasin d'instances à l'aide de la méthode <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.BindInstanceOwner%2A> du paramètre `context`.  
+-   <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'un <xref:System.ServiceModel.Activities.WorkflowServiceHost> doit être enregistré en tant que propriétaire de verrou. L'ID d'instance du workflow actuel doit être fourni au magasin d'instances à l'aide de la méthode <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.BindInstanceOwner%2A> du paramètre `context`.  
   
      L'extrait de code suivant montre comment implémenter la commande CreateWorkflowOwner pour assigner un propriétaire de verrou explicite.  
   
@@ -44,10 +48,9 @@ caps.handback.revision: 11
                                    createCommand,  
                                    TimeSpan.FromSeconds(30)).InstanceOwner;  
     childInstance.AddInitialInstanceValues(new Dictionary<XName, object>() { { WorkflowHostTypeName, WFInstanceScopeName } });  
-  
     ```  
   
--   <xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsque l'ID d'instance d'un propriétaire de verrou peut être supprimé du magasin d'instances.  Comme avec <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand>, l'ID du propriétaire du verrou doit être fourni par l'application.  
+-   <xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsque l'ID d'instance d'un propriétaire de verrou peut être supprimé du magasin d'instances. Comme avec <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand>, l'ID du propriétaire du verrou doit être fourni par l'application.  
   
      L'extrait de code suivant montre comment libérer un verrou à l'aide de <xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand>.  
   
@@ -72,10 +75,9 @@ caps.handback.revision: 11
             store.DefaultInstanceOwner = null;  
         }  
     }  
-  
     ```  
   
-     La méthode ci\-dessus doit être appelée dans un bloc Try\/Catch lorsqu'une instance enfant est exécutée.  
+     La méthode ci-dessus doit être appelée dans un bloc Try/Catch lorsqu'une instance enfant est exécutée.  
   
     ```  
     try  
@@ -90,14 +92,13 @@ caps.handback.revision: 11
     {  
         FreeHandleAndDeleteOwner(store, ownerHandle);  
     }  
-  
     ```  
   
--   <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'une instance de workflow doit être chargée à l'aide de la clé d'instance du workflow.  L'ID de la clé d'instance peut être déterminé à l'aide du paramètre <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand.LookupInstanceKey%2A> de la commande.  
+-   <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand> : Le moteur de persistance envoie cette commande au magasin d'instances lorsqu'une instance de workflow doit être chargée à l'aide de la clé d'instance du workflow. L'ID de la clé d'instance peut être déterminé à l'aide du paramètre <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand.LookupInstanceKey%2A> de la commande.  
   
--   <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> : Le moteur de persistance envoie cette commande au magasin d'instances pour récupérer des paramètres d'activation des workflows persistants afin qu'un hôte de workflow puisse ensuite charger les workflows.  Cette commande est envoyée par le moteur en réponse au magasin d'instances qui déclenche <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> à l'hôte lorsqu'il localise une instance qui peut être activée.  Le magasin d'instances doit être interrogé pour déterminer s'il existe des workflows qui peuvent être activés.  
+-   <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> : Le moteur de persistance envoie cette commande au magasin d'instances pour récupérer des paramètres d'activation des workflows persistants afin qu'un hôte de workflow puisse ensuite charger les workflows. Cette commande est envoyée par le moteur en réponse au magasin d'instances qui déclenche <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> à l'hôte lorsqu'il localise une instance qui peut être activée. Le magasin d'instances doit être interrogé pour déterminer s'il existe des workflows qui peuvent être activés.  
   
--   <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> : Le moteur de persistance envoie cette commande au magasin d'instances pour charger les instances de workflow exécutables.  Cette commande est envoyée par le moteur en réponse au magasin d'instances qui déclenche <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> à l'hôte lorsqu'il localise une instance qui peut être exécutée.  Le magasin d'instances doit interroger les workflows qui peuvent être exécutés.  L'extrait de code suivant montre comment interroger un magasin d'instances pour les workflows qui peuvent être exécutés ou activés.  
+-   <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> : Le moteur de persistance envoie cette commande au magasin d'instances pour charger les instances de workflow exécutables. Cette commande est envoyée par le moteur en réponse au magasin d'instances qui déclenche <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> à l'hôte lorsqu'il localise une instance qui peut être exécutée. Le magasin d'instances doit interroger les workflows qui peuvent être exécutés. L'extrait de code suivant montre comment interroger un magasin d'instances pour les workflows qui peuvent être exécutés ou activés.  
   
     ```  
     public void PollForEvents()  
@@ -135,10 +136,9 @@ caps.handback.revision: 11
             }  
         }  
     }  
-  
     ```  
   
-     Dans l'extrait de code ci\-dessus, le magasin d'instances interroge les événements disponibles et examine chacun d'eux pour déterminer s'il s'agit d'un événement <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent>.  Le cas échéant, <xref:System.Runtime.DurableInstancing.InstanceStore.SignalEvent%2A> est appelé pour signaler à l'hôte d'envoyer une commande au magasin d'instances.  L'extrait de code suivant illustre une implémentation d'un gestionnaire pour cette commande.  
+     Dans l'extrait de code ci-dessus, le magasin d'instances interroge les événements disponibles et examine chacun d'eux pour déterminer s'il s'agit d'un événement <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent>. Le cas échéant, <xref:System.Runtime.DurableInstancing.InstanceStore.SignalEvent%2A> est appelé pour signaler à l'hôte d'envoyer une commande au magasin d'instances.  L'extrait de code suivant illustre une implémentation d'un gestionnaire pour cette commande.  
   
     ```  
     If (command is TryLoadRunnableWorkflowCommand)  
@@ -227,19 +227,17 @@ caps.handback.revision: 11
             break;  
         }  
     }  
-  
     ```  
   
-     Dans l'extrait de code ci\-dessus, le magasin d'instances recherche les instances exécutables.  Si une instance est trouvée, elle est liée au contexte d'exécution et chargée.  
+     Dans l'extrait de code ci-dessus, le magasin d'instances recherche les instances exécutables. Si une instance est trouvée, elle est liée au contexte d'exécution et chargée.  
   
-## Utilisation d'un magasin d'instances personnalisé  
- Pour implémenter un magasin d'instances personnalisé, assignez une instance du magasin d'instances à <xref:System.Activities.WorkflowApplication.InstanceStore%2A>, et implémentez la méthode <xref:System.Activities.WorkflowApplication.PersistableIdle%2A>.  Consultez le didacticiel [Procédure : créer et exécuter un workflow de longue durée](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md) pour plus de détails.  
+## <a name="using-a-custom-instance-store"></a>Utilisation d'un magasin d'instances personnalisé  
+ Pour implémenter un magasin d'instances personnalisé, assignez une instance du magasin d'instances à <xref:System.Activities.WorkflowApplication.InstanceStore%2A>, et implémentez la méthode <xref:System.Activities.WorkflowApplication.PersistableIdle%2A>.  Consultez le [Comment : créer et exécuter un Workflow de longue durée](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md) didacticiel pour plus de détails.  
   
-## Exemple de magasin d'instances  
- L'exemple de code ci\-dessous est une implémentation complète de magasin d'instances, extraite de l'exemple [Processus d'achat d'entreprise](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md).  Ce magasin d'instances rend des données de workflow persistantes dans un fichier à l'aide du XML.  
+## <a name="a-sample-instance-store"></a>Exemple de magasin d'instances  
+ L’exemple de code suivant est une implémentation de magasin instance terminée, obtenue à partir du [processus d’achat d’entreprise](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) exemple. Ce magasin d'instances rend des données de workflow persistantes dans un fichier à l'aide du XML.  
   
 ```  
-  
 using System;  
 using System.Activities.DurableInstancing;  
 using System.Collections.Generic;  
@@ -400,5 +398,4 @@ namespace Microsoft.Samples.WF.PurchaseProcess
         }  
     }  
 }  
-  
 ```

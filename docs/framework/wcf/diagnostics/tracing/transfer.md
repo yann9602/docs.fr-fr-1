@@ -1,59 +1,62 @@
 ---
-title: "Transf&#233;rer | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Transférer"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 40cd80b2b4e2f949b92f4c89cde6b271a502d047
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Transf&#233;rer
+# <a name="transfer"></a>Transférer
 Cette rubrique décrit le transfert dans le modèle de suivi d'activité [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
   
-## Définition d'un transfert  
- Les transferts entre activités représentent des liens de causalité entre événements dans les activités connexes dans des points de terminaison.  Deux activités sont liées à des transferts lorsqu'un contrôle circule entre ces activités, par exemple, un appel de méthode qui traverse des limites d'activité.  Dans [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)], lorsque des octets sont entrants sur le service, l'activité Écouter est transférée à l'activité Recevoir des octets où l'objet de message est créé.  Pour obtenir une liste de scénarios de suivi de bout en bout, et leur conception d'activité et de suivi respective, consultez [Scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md).  
+## <a name="transfer-definition"></a>Définition d'un transfert  
+ Les transferts entre activités représentent des liens de causalité entre événements dans les activités connexes dans des points de terminaison. Deux activités sont liées à des transferts lorsqu'un contrôle circule entre ces activités, par exemple, un appel de méthode qui traverse des limites d'activité. Dans [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)], lorsque des octets sont entrants sur le service, l'activité Écouter est transférée à l'activité Recevoir des octets où l'objet de message est créé. Pour obtenir la liste de scénarios de suivi de bout en bout et leur activité correspondante et le suivi de conception, consultez [les scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md).  
   
  Pour émettre des suivis de transfert, appliquez le paramètre `ActivityTracing` sur la source de suivi, tel que le montre le code de configuration suivant.  
   
-```  
+```xml  
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing">  
 ```  
   
-## Utilisation du suivi Transfert pour corréler des activités dans des points de terminaison  
- Les activités et transferts permettent à l'utilisateur de rechercher de manière probabiliste la cause première d'une erreur.  Par exemple, si nous transférons des données entre les activités M et N, dans les composants M et N, et qu'un incident se produit en N juste après le transfert vers M, il est possible de conclure que le problème provient du passage de données de N vers M.  
+## <a name="using-transfer-to-correlate-activities-within-endpoints"></a>Utilisation du suivi Transfert pour corréler des activités dans des points de terminaison  
+ Les activités et transferts permettent à l'utilisateur de rechercher de manière probabiliste la cause première d'une erreur. Par exemple, si nous transférons des données entre les activités M et N, dans les composants M et N, et qu'un incident se produit en N juste après le transfert vers M, il est possible de conclure que le problème provient du passage de données de N vers M.  
   
- Un suivi de transfert est émis de l'activité M vers l'activité N, lorsqu'il existe un flux de contrôle entre M et N.  Par exemple, N exécute une tâche pour M à cause d'un appel de méthode franchissant les limites des activités.  N existe peut\-être déjà ou a été créé.  N est généré par M lorsque N est une nouvelle activité qui exécute une tâche pour M.  
+ Un suivi de transfert est émis de l'activité M vers l'activité N, lorsqu'il existe un flux de contrôle entre M et N. Par exemple, N exécute une tâche pour M à cause d'un appel de méthode franchissant les limites des activités. N existe peut-être déjà ou a été créé. N est généré par M lorsque N est une nouvelle activité qui exécute une tâche pour M.  
   
- Un transfert de M à N ne peut pas être suivi d'un transfert réciproque de N à M.  Cela est dû au fait que M peut générer une tâche dans N sans assurer le suivi de l'exécution de cette tâche par N.  En fait, M peut se terminer avant que N n'ait achevé sa tâche.  C'est le cas pour l'activité « Ouvrir ServiceHost » \(M\) qui génère les activités Écouteur \(N\), puis s'arrête.  Un transfert de N à M indique que N a achevé la tâche liée à M.  
+ Un transfert de M à N peut pas être suivi d'un transfert réciproque de N à M. Cela est dû au fait que M peut générer une tâche dans N sans assurer le suivi de l'exécution de cette tâche par N. En fait, M peut se terminer avant que N n’ait achevé sa tâche. Cela se produit dans l’activité « Ouvrir ServiceHost » (M) qui génère les activités d’écouteur (N), puis se termine. Un transfert de N à M indique que N a achevé la tâche liée à M.  
   
- N peut continuer à effectuer d'autres traitements non liés à M, par exemple, une activité d'authentificateur existante \(N\) qui continue à recevoir des demandes de connexion \(M\) provenant de différentes activités de connexion.  
+ N peut continuer à effectuer d'autres traitements non liés à M, par exemple, une activité d'authentificateur existante (N) qui continue à recevoir des demandes de connexion (M) provenant de différentes activités de connexion.  
   
- Il n'existe pas forcément de relation d'imbrication entre les activités M et N.  Cela peut se produire pour deux raisons.  Si l'activité M ne surveille pas le traitement réel effectué dans N bien qu'il ait initié ce traitement.  D'autre part, lorsque N existe déjà.  
+ Il n'existe pas nécessairement de relation d'imbrication entre les activités M et N, et ce pour deux raisons : d'une part si l'activité M ne surveille pas le traitement réel effectué dans N bien qu'il ait initié ce traitement, d'autre part si N existe déjà.  
   
-## Exemples de transferts  
- Deux exemples de transferts sont présentés ci\-dessous.  
+## <a name="example-of-transfers"></a>Exemples de transferts  
+ Deux exemples de transferts sont présentés ci-dessous.  
   
--   Lorsque vous créez un hôte de service, le constructeur prend le contrôle à partir du code appelant, ou le code appelant est transféré au constructeur.  Lorsque le constructeur a terminé de s'exécuter, il retourne le contrôle au code appelant, ou le constructeur est transféré au code appelant.  C'est le cas d'une relation imbriquée.  
+-   Lorsque vous créez un hôte de service, le constructeur prend le contrôle à partir du code appelant, ou le code appelant est transféré au constructeur. Lorsque le constructeur a terminé de s'exécuter, il retourne le contrôle au code appelant, ou le constructeur est transféré au code appelant. C'est le cas d'une relation imbriquée.  
   
--   Lorsqu'un écouteur commence à traiter des données de transport, il crée un nouveau thread et remet à l'activité Recevoir des octets le contexte de traitement approprié, c'est\-à\-dire en passant le contrôle et les données.  Lorsque ce thread a fini de traiter la demande, l'activité Recevoir des octets ne repasse aucune donnée à l'écouteur.  Dans ce cas, la nouvelle activité de thread fait l'objet d'un transfert entrant mais pas d'un transfert sortant.  Les deux activités sont liées mais pas imbriquées.  
+-   Lorsqu'un écouteur commence à traiter des données de transport, il crée un nouveau thread et remet à l'activité Recevoir des octets le contexte de traitement approprié, c'est-à-dire en passant le contrôle et les données. Lorsque ce thread a fini de traiter la demande, l'activité Recevoir des octets ne repasse aucune donnée à l'écouteur. Dans ce cas, la nouvelle activité de thread fait l'objet d'un transfert entrant mais pas d'un transfert sortant. Les deux activités sont liées mais pas imbriquées.  
   
-## Séquence de transfert d'activité  
+## <a name="activity-transfer-sequence"></a>Séquence de transfert d'activité  
  Une séquence de transfert d'activité bien formée comprend les étapes suivantes.  
   
 1.  Commencer une nouvelle activité, qui consiste à sélectionner un nouveau gAId  
   
 2.  Émettre un suivi de transfert vers ce nouveau gAId à partir de l'ID d'activité actuel  
   
-3.  Définir le nouvel ID dans le stockage local des threads \(TLS\)  
+3.  Définir le nouvel ID dans le stockage local des threads (TLS)  
   
 4.  Émettre un suivi de démarrage pour indiquer le début de la nouvelle activité  
   
@@ -65,12 +68,12 @@ Cette rubrique décrit le transfert dans le modèle de suivi d'activité [!INCLU
   
 8.  Affecter au TLS l'ancien gAId  
   
- L'exemple de code suivant montre comment procéder.  Cet exemple suppose qu'un appel bloquant est effectué lors du transfert vers la nouvelle activité, et inclut des suivis de suspension\/reprise.  
+ L'exemple de code suivant montre comment procéder. Cet exemple suppose qu'un appel bloquant est effectué lors du transfert vers la nouvelle activité, et inclut des suivis de suspension/reprise.  
   
 ```  
 // 0. Create a trace source  
-TraceSource ts = new TraceSource(“myTS”);  
-// 1. remember existing (“ambient”) activity for clean up  
+TraceSource ts = new TraceSource("myTS");  
+// 1. remember existing ("ambient") activity for clean up  
 Guid oldGuid = Trace.CorrelationManager.ActivityId;  
 // this will be our new activity  
 Guid newGuid = Guid.NewGuid();   
@@ -98,8 +101,8 @@ Trace.CorrelationManager.ActivityId = oldGuid;
 ts.TraceEvent(TraceEventType.Resume, 667, "Resume: Activity " + i-1);  
 ```  
   
-## Voir aussi  
- [Configuration du suivi](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)   
- [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)   
- [Scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)   
- [Service Trace Viewer Tool \(SvcTraceViewer.exe\)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+## <a name="see-also"></a>Voir aussi  
+ [Configuration du traçage](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+ [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
+ [Scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
+ [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)

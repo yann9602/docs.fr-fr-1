@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,23 +13,20 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: 5bb9b6a2-7b57-4aea-8809-32b28bc73e88
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6a6b97bf8ce9075ee5fc8877fed65bd4a23f1ce5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: a8313a6b06387f6fd0a5f95191ea57bdf034c372
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/21/2017
 ---
 # <a name="etw-events-in-the-common-language-runtime"></a>Événements ETW dans le Common Language Runtime
 Le CLR (Common Language Runtime) fournit des informations de diagnostic utiles pour le suivi d’événements pour Windows (ETW) par le biais d’une grande variété d’événements de débogage et de profilage. Les événements ETW du CLR tirent parti du système de suivi Windows (ETW) pour améliorer la prise en charge du profilage et du débogage déjà proposée par le common language runtime.  
   
  Vous trouverez des informations supplémentaires sur ETW dans l’article [Améliorez le débogage et l’optimisation des performances avec ETW](http://go.microsoft.com/fwlink/?LinkID=161142) sur MSDN. Des informations relatives à Xperf sont disponibles à la page [Windows Performance Toolkit - Xperf](http://go.microsoft.com/fwlink/?LinkID=161144) du blog NTDebugging.  
-  
- D’autres outils ETW du CLR seront fournis sur le [site web CodePlex](http://go.microsoft.com/fwlink/?LinkID=111138) dès qu’ils seront disponibles.  
   
  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] ou version ultérieure est nécessaire pour tous les événements décrits dans les rubriques d’événements. Le système d’exploitation Windows Vista est le client minimal pris en charge, et Windows Server 2008 est le serveur minimal pris en charge.  
   
@@ -49,4 +45,3 @@ Le CLR (Common Language Runtime) fournit des informations de diagnostic utiles p
   
 ## <a name="see-also"></a>Voir aussi  
  [Événements ETW dans le .NET Framework](../../../docs/framework/performance/etw-events.md)
-
