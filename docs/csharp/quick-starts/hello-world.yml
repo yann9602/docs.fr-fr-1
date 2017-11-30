@@ -1,165 +1,39 @@
-### YamlMime:YamlDocument
 documentType: Tutorial
-title: 'Hello C#'
+title: Hello C#
 metadata:
-  title: "Hello C#. Votre première introduction au langage\_C#."
-  description: 'Dans ce didacticiel, vous allez utiliser votre navigateur pour découvrir C# de manière interactive. Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur.'
+  title: "Hello C#. Votre première introduction au langage C#."
+  description: "Dans ce guide de démarrage rapide, vous utiliserez votre navigateur pour en savoir plus c# interactive. Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur."
   audience: Developer
   level: Beginner
   nextTutorialHref: numbers-in-csharp
-  nextTutorialTitle: 'Numbers in C#'
+  nextTutorialTitle: Nombres en C#
   displayType: two-column
   interactive: csharp
+  ms.custom: mvc
 items:
-  - durationInMinutes: 1
-    content: "Ce didacticiel vous explique comment utiliser C# de manière interactive à l’aide de votre navigateur et afficher les résultats de la compilation et de l’exécution de votre code. Il contient une série de leçons qui commencent par un programme « Hello World ». Ces leçons présentent les concepts de base du langage\_C#.\n"
-  - title: 'Exécuter votre premier programme C#'
-    durationInMinutes: 2
-    content: "Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nFélicitations\_! Vous avez exécuté votre premier programme C#. Il s’agit d’un programme simple qui affiche le message « Hello World! ». Il a utilisé la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pour afficher ce message. `Console` est un type qui représente la fenêtre de console. `WriteLine` est une méthode du type `Console` qui affiche une ligne de texte sur cette console de texte.\n\nPoursuivons notre exploration. Le reste de cette leçon explore l’utilisation du type `string`, qui représente du texte en C#. À l’instar du type `Console`, le type `string` propose différentes méthodes. La méthode `string` fonctionne avec du texte. \n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
-  - title: Déclarer et utiliser des variables
-    durationInMinutes: 3
-    content: |
-      Votre premier programme a affiché la `string` « Hello World! » à l’écran. 
-
-      > [!TIP]
-      > Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans la fenêtre interactive pour identifier les corrections à apporter.
-      > Cet exercice vous aidera à mieux comprendre la structure du code C#. 
-
-      Votre premier programme est limité à l’affichage d’un seul message. Vous pouvez écrire d’autres programmes plus utiles à l’aide de **variables**. Une **variable** est un symbole que vous pouvez utiliser pour exécuter le même code avec des valeurs différentes. Pratiquons ensemble ! Remplacez le code que vous avez écrit dans la fenêtre interactive par le code suivant :
-
-      ```csharp
-      string aFriend = "Bill";
-      Console.WriteLine(aFriend);
-      ```
-
-      La première ligne déclare une variable, `aFriend`, et lui assigne une valeur, « Bill ». La deuxième ligne affiche le nom.
-
-      Vous pouvez assigner des valeurs différentes à toute variable que vous déclarez. Vous pouvez remplacer le nom par celui d’un de vos amis. Dans la fenêtre interactive, ajoutez ces deux lignes après le code que vous avez déjà ajouté :
-
-      ```csharp
-      aFriend = "Maria";
-      Console.WriteLine(aFriend);
-      ```
-
-      Notez que la même ligne de code affiche deux messages différents, selon la valeur stockée dans la variable `aFriend`.
-
-      Vous avez peut-être également remarqué que le mot « Hello » manque dans les deux derniers messages. Nous allons résoudre ce problème maintenant.  Modifiez les lignes qui affichent le message comme suit :
-
-      ```csharp
-      Console.WriteLine("Hello " + aFriend);
-      ```
-
-      Cliquez de nouveau sur **Exécuter** pour afficher les résultats.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Utiliser des chaînes
-    durationInMinutes: 5
-    content: |
-      Votre dernière modification a été notre introduction à ce que vous pouvez faire avec des chaînes. Poursuivons notre exploration.
-
-      Le signe `+` fait référence à un opérateur en C#. Quand il est appliqué à des chaînes comme `firstString + secondString`, une nouvelle chaîne incluant le texte de la première chaîne suivi du texte de la deuxième chaîne est créée. C’est ce que l’on appelle une *concaténation de chaîne*. Vous pouvez combiner un nombre quelconque de chaînes, y compris des variables de chaîne.  Écrivez ce code :
-
-      ```csharp
-      string firstFriend = "Maria";
-      string secondFriend = "Sage";
-      Console.WriteLine("My friends are " + firstFriend + " and " + secondFriend);
-      ```
-
-      À mesure que vous vous familiarisez avec les chaînes, vous pouvez rechercher la longueur d’une chaîne à l’aide de `Length`. `Length` est une **propriété** de chaîne qui retourne le nombre de caractères de la chaîne. Ajoutez le code suivant en bas de la fenêtre interactive :
-
-      ```csharp
-      Console.WriteLine("The name " + firstFriend + " has " + firstFriend.Length + " letters.");
-      Console.WriteLine("The name " + secondFriend + " has " + secondFriend.Length + " letters.");
-      ```
-
-      > [!TIP]
-      > L’heure est venue d’explorer par vous-même. Vous avez appris que `Console.WriteLine()` écrit du texte dans l’écran. Vous avez également appris à déclarer des variables et à concaténer des chaînes. Pratiquez à votre gré dans la fenêtre interactive. Écrivez d’autres messages. Créez des chaînes à l’aide de l’opérateur `+`.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Autres méthodes de chaînes
-    durationInMinutes: 5
-    content: |
-      Vous utilisez une **méthode**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, pour afficher les messages. Une **méthode** est un bloc de code qui implémente une action. Elle porte un nom pour vous permettre d’y accéder facilement. 
-
-      Le type `string` propose de nombreuses méthodes utiles. Examinons la méthode <xref:System.String.Trim%2A> ainsi que les méthodes associées <xref:System.String.TrimStart%2A> et <xref:System.String.TrimEnd%2A>. Ces méthodes suppriment les espaces de début et de fin :
-
-      ```csharp
-      string message = "      Hello World!       ";
-      Console.WriteLine("[" + message + "]");
-
-      string trimmedMessage = message.TrimStart();
-      Console.WriteLine("[" + trimmedMessage + "]");
-
-      trimmedMessage = message.TrimEnd();
-      Console.WriteLine("[" + trimmedMessage + "]");
-
-      trimmedMessage = message.Trim();
-      Console.WriteLine("[" + trimmedMessage + "]");
-      ```
-
-      Cet exemple met en avant quelques concepts importants concernant l’utilisation de chaînes. Les méthodes utilisant des chaînes retournent des objets de chaîne au lieu d’apporter des modifications. Vous pouvez observer que chaque appel à une méthode `Trim` retourne une nouvelle chaîne, mais que le message d’origine n’est pas modifié.
-
-      Il existe d’autres méthodes disponibles pour utiliser des chaînes. Par exemple, vous avez probablement déjà utilisé une commande de recherche et remplacement dans un éditeur ou un traitement de texte. La méthode <xref:System.String.Replace%2A> fonctionne de manière similaire dans une `string`. Elle recherche une sous-chaîne et la remplace par un autre texte. La méthode <xref:System.String.Replace%2A> accepte deux **paramètres**. Il s’agit des chaînes entre parenthèses. La première chaîne correspond au texte à rechercher. La deuxième chaîne correspond au texte qui le remplacera. Essayez par vous-même. Ajoutez le code suivant :
-
-      ```csharp
-      string message = "Hello World!";
-      Console.WriteLine(message);
-      message = message.Replace("Hello", "Greetings");
-      Console.WriteLine(message);
-      ```
-
-      Deux autres méthodes utiles permettent de mettre une chaîne tout en majuscules ou en minuscules. Exécutez le code suivant :
-
-      ```csharp
-      string message = "Hello World!";
-      Console.WriteLine(message);
-      Console.WriteLine(message.ToUpper());
-      Console.WriteLine(message.ToLower());
-      ```
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Rechercher des chaînes
-    durationInMinutes: 10
-    content: |
-      L’autre partie d’une opération de *recherche et remplacement* consiste à rechercher du texte dans une chaîne. Vous pouvez utiliser la méthode <xref:System.String.Contains%2A> pour effectuer des recherches. Elle vous indique si une chaîne contient une sous-chaîne. Exécutez le code suivant pour explorer <xref:System.String.Contains%2A> :
-
-      ```csharp
-      string message = "You say goodbye, and I say hello";
-      Console.WriteLine(message.Contains("goodbye"));
-      Console.WriteLine(message.Contains("greetings"));
-      ```
-
-      La méthode <xref:System.String.Contains%2A> retourne une valeur **booléenne** qui indique si la chaîne recherchée a été trouvée. Un **booléen** stocke une valeur `true` ou `false`. Vous en saurez plus sur les valeurs **booléennes** dans une leçon ultérieure.
-
-      ***Test***
-
-      Il existe deux méthodes similaires, <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A>, qui permettent également de rechercher des sous-chaînes dans une chaîne. Elles recherchent une sous-chaîne au début ou à la fin de la chaîne. Essayez de modifier l’exemple précédent pour utiliser <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A> au lieu de <xref:System.String.Contains%2A>. Recherchez « You » ou « goodbye » au début d’une chaîne. Recherchez « hello » ou « goodbye » à la fin d’une chaîne.
-
-      > [!Note]
-      > Faites attention à la ponctuation quand vous recherchez du texte à la fin d’une chaîne. Si la chaîne se termine par un point, vous devez rechercher une chaîne qui se termine par un point.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Terminer le test
-    durationInMinutes: 3
-    content: |
-      Avez-vous obtenu un résultat similaire à celui-ci ?
-
-      ```csharp
-      string message = "You say goodbye, and I say hello";
-      Console.WriteLine(message.StartsWith("You"));
-      Console.WriteLine(message.StartsWith("goodbye"));
-
-      Console.WriteLine(message.EndsWith("hello"));
-      Console.WriteLine(message.EndsWith("goodbye"));
-      ```
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - content: |
-      Vous avez terminé le didacticiel « Hello C# ».
-
-      Pour plus d’informations sur l’utilisation du type `string`, consultez la rubrique du [Guide de programmation C#](../programming-guide/index.md) sur les [chaînes](../programming-guide/strings/index.md).
+- durationInMinutes: 1
+  content: "Ce guide de démarrage rapide vous apprend c# de manière interactive, à l’aide de votre navigateur et afficher les résultats de la compilation et exécution de votre code en c#. Il contient une série de leçons qui commencent par un programme « Hello World ». Ces leçons présentent les concepts de base du langage C#.\n"
+  ms.openlocfilehash: 2089af6dbf418c87dfd28e1a2a8cf2814b40df6c
+  ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 11/22/2017
+- title: "Exécuter votre premier programme C#"
+  durationInMinutes: 2
+  content: "Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nFélicitations ! Vous avez exécuté votre premier programme C#. Il s’agit d’un programme simple qui affiche le message « Hello World! ». Il a utilisé la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pour afficher ce message. `Console` est un type qui représente la fenêtre de console. `WriteLine` est une méthode du type `Console` qui affiche une ligne de texte sur cette console de texte.\n\nPoursuivons notre exploration. Le reste de cette leçon explore l’utilisation du type `string`, qui représente du texte en C#. À l’instar du type `Console`, le type `string` propose différentes méthodes. La méthode `string` fonctionne avec du texte. \n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: "Déclarer et utiliser des variables"
+  durationInMinutes: 3
+  content: "Votre premier programme a affiché la `string` « Hello World! » à l’écran. \n\n> [!TIP]\n> Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans la fenêtre interactive pour identifier les corrections à apporter.\n> Cet exercice vous aidera à mieux comprendre la structure du code C#. \n\nVotre premier programme est limité à l’affichage d’un seul message. Vous pouvez écrire d’autres programmes plus utiles à l’aide de **variables**. Une **variable** est un symbole que vous pouvez utiliser pour exécuter le même code avec des valeurs différentes. Pratiquons ensemble ! Remplacez le code que vous avez écrit dans la fenêtre interactive par le code suivant :\n\n```csharp\nstring aFriend = \"Bill\";\nConsole.WriteLine(aFriend);\n```\n\nLa première ligne déclare une variable, `aFriend`, et lui assigne une valeur, « Bill ». La deuxième ligne affiche le nom.\n\nVous pouvez assigner des valeurs différentes à toute variable que vous déclarez. Vous pouvez remplacer le nom par celui d’un de vos amis. Dans la fenêtre interactive, ajoutez ces deux lignes après le code que vous avez déjà ajouté :\n\n```csharp\naFriend = \"Maria\";\nConsole.WriteLine(aFriend);\n```\n\nNotez que la même ligne de code affiche deux messages différents, selon la valeur stockée dans la variable `aFriend`.\n\nVous avez peut-être également remarqué que le mot « Hello » manque dans les deux derniers messages. Nous allons résoudre ce problème maintenant.  Modifiez les lignes qui affichent le message comme suit :\n\n```csharp\nConsole.WriteLine(\"Hello \" + aFriend);\n```\n\nCliquez de nouveau sur **Exécuter** pour afficher les résultats.\n\nMesure que nous avançons, création de chaînes pour imprimer à l’aide de `+` devient alors lourde. Interpolation de chaîne vous permet d’assembler des chaînes d’une manière plus concise et lisible.\n\nSi vous ajoutez un `$` avant les guillemets lors de l’ouverture de la chaîne, vous pouvez inclure des expressions de chaîne, comme le `aFriend` variable, à l’intérieur de la chaîne dans les accolades.\n\n\n```csharp\nConsole.WriteLine($\"Hello {aFriend}\");\n```\n\nCliquez de nouveau sur **Exécuter** pour afficher les résultats.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: "Utiliser des chaînes"
+  durationInMinutes: 5
+  content: "Votre dernière modification a été notre introduction à ce que vous pouvez faire avec des chaînes. Poursuivons notre exploration.\n\nLe signe `+` fait référence à un opérateur en C#. Quand il est appliqué à des chaînes comme `firstString + secondString`, une nouvelle chaîne incluant le texte de la première chaîne suivi du texte de la deuxième chaîne est créée. C’est ce que l’on appelle une *concaténation de chaîne*. Vous pouvez combiner un nombre quelconque de chaînes, y compris des variables de chaîne.  Écrivez ce code :\n\n```csharp\nstring firstFriend = \"Maria\";\nstring secondFriend = \"Sage\";\nConsole.WriteLine($\"My friends are {firstFriend} and {secondFriend}\");\n```\n\nÀ mesure que vous vous familiarisez avec les chaînes, vous pouvez rechercher la longueur d’une chaîne à l’aide de `Length`. `Length` est une **propriété** de chaîne qui retourne le nombre de caractères de la chaîne. Ajoutez le code suivant en bas de la fenêtre interactive :\n\n```csharp\nConsole.WriteLine($\"The name {firstFriend} has {firstFriend.Length} letters.\");\nConsole.WriteLine($\"The name {secondFriend} has {secondFriend.Length} letters.\");\n```\n\n> [!TIP]\n> L’heure est venue d’explorer par vous-même. Vous avez appris que `Console.WriteLine()` écrit du texte dans l’écran. Vous avez également appris à déclarer des variables et à concaténer des chaînes. Pratiquez à votre gré dans la fenêtre interactive. Écrivez d’autres messages. Créez des chaînes à l’aide de l’opérateur `+`.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: "Autres méthodes de chaînes"
+  durationInMinutes: 5
+  content: "Vous utilisez une **méthode**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, pour afficher les messages. Une **méthode** est un bloc de code qui implémente une action. Elle porte un nom pour vous permettre d’y accéder facilement. \n\nLe type `string` propose de nombreuses méthodes utiles. Examinons la méthode <xref:System.String.Trim%2A> ainsi que les méthodes associées <xref:System.String.TrimStart%2A> et <xref:System.String.TrimEnd%2A>. Ces méthodes suppriment les espaces de début et de fin :\n\n```csharp\nstring message = \"      Hello World!       \";\nConsole.WriteLine($\"[{message}]\");\n\nstring trimmedMessage = message.TrimStart();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n\ntrimmedMessage = message.TrimEnd();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n\ntrimmedMessage = message.Trim();\nConsole.WriteLine($\"[{trimmedMessage}]\");\n```\n\nCet exemple met en avant quelques concepts importants concernant l’utilisation de chaînes. Les méthodes utilisant des chaînes retournent des objets de chaîne au lieu d’apporter des modifications. Vous pouvez observer que chaque appel à une méthode `Trim` retourne une nouvelle chaîne, mais que le message d’origine n’est pas modifié.\n\nIl existe d’autres méthodes disponibles pour utiliser des chaînes. Par exemple, vous avez probablement déjà utilisé une commande de recherche et remplacement dans un éditeur ou un traitement de texte. La méthode <xref:System.String.Replace%2A> fonctionne de manière similaire dans une `string`. Elle recherche une sous-chaîne et la remplace par un autre texte. La méthode <xref:System.String.Replace%2A> accepte deux **paramètres**. Il s’agit des chaînes entre parenthèses. La première chaîne correspond au texte à rechercher. La deuxième chaîne correspond au texte qui le remplacera. Essayez par vous-même. Ajoutez le code suivant :\n\n```csharp\nstring message = \"Hello World!\";\nConsole.WriteLine(message);\nmessage = message.Replace(\"Hello\", \"Greetings\");\nConsole.WriteLine(message);\n```\n\nDeux autres méthodes utiles permettent de mettre une chaîne tout en majuscules ou en minuscules. Exécutez le code suivant :\n\n```csharp\nstring message = \"Hello World!\";\nConsole.WriteLine(message);\nConsole.WriteLine(message.ToUpper());\nConsole.WriteLine(message.ToLower());\n```\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: "Rechercher des chaînes"
+  durationInMinutes: 10
+  content: "L’autre partie d’une opération de *recherche et remplacement* consiste à rechercher du texte dans une chaîne. Vous pouvez utiliser la méthode <xref:System.String.Contains%2A> pour effectuer des recherches. Elle vous indique si une chaîne contient une sous-chaîne. Exécutez le code suivant pour explorer <xref:System.String.Contains%2A> :\n\n```csharp\nstring message = \"You say goodbye, and I say hello\";\nConsole.WriteLine(message.Contains(\"goodbye\"));\nConsole.WriteLine(message.Contains(\"greetings\"));\n```\n\nLa méthode <xref:System.String.Contains%2A> retourne une valeur **booléenne** qui indique si la chaîne recherchée a été trouvée. Un **booléen** stocke une valeur `true` ou `false`. Vous en saurez plus sur les valeurs **booléennes** dans une leçon ultérieure.\n\n***Test***\n\nIl existe deux méthodes similaires, <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A>, qui permettent également de rechercher des sous-chaînes dans une chaîne. Elles recherchent une sous-chaîne au début ou à la fin de la chaîne. Essayez de modifier l’exemple précédent pour utiliser <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A> au lieu de <xref:System.String.Contains%2A>. Recherchez « You » ou « goodbye » au début d’une chaîne. Recherchez « hello » ou « goodbye » à la fin d’une chaîne.\n\n> [!Note]\n> Faites attention à la ponctuation quand vous recherchez du texte à la fin d’une chaîne. Si la chaîne se termine par un point, vous devez rechercher une chaîne qui se termine par un point.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Terminer le test
+  durationInMinutes: 3
+  content: "Avez-vous obtenu un résultat similaire à celui-ci ?\n\n```csharp\nstring message = \"You say goodbye, and I say hello\";\nConsole.WriteLine(message.StartsWith(\"You\"));\nConsole.WriteLine(message.StartsWith(\"goodbye\"));\n\nConsole.WriteLine(message.EndsWith(\"hello\"));\nConsole.WriteLine(message.EndsWith(\"goodbye\"));\n```\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- content: "Vous avez terminé le démarrage rapide de « Hello c# ».\n\nVous pouvez continuer ces Démarrages rapides sur votre propre environnement de développement. La rubrique .NET [prise en main de 10 minutes](https://www.microsoft.com/net/core) a des instructions pour configurer votre environnement de développement local. Ensuite, continuez [numéros en C#](numbers-in-chsarp-local.md) dans votre environnement local.\n\nPour plus d’informations sur l’utilisation du type `string`, consultez la rubrique du [Guide de programmation C#](../programming-guide/index.md) sur les [chaînes](../programming-guide/strings/index.md).\n"

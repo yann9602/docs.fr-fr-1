@@ -1,30 +1,21 @@
 ---
 title: "Guide pratique pour créer des assemblys friend non signés (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 854df39394ef10bf2404fb3f762586fb102fba7b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 967436204ab0824a510c12dc4c6e288d91d7dfa0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Guide pratique pour créer des assemblys friend non signés (C#)
 Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui ne sont pas signés.  
@@ -108,9 +99,8 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
  Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence est que <xref:System.Security.Permissions.StrongNameIdentityPermission> peut demander des autorisations de sécurité pour exécuter une section de code particulière, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des membres et types `internal`.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)   
- [Assemblys friend (C++)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)   
- [Guide pratique pour créer des assemblys friend signés (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)   
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+ [Assemblys friend (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [Comment : créer des assemblys Friend signés (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
  [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
-

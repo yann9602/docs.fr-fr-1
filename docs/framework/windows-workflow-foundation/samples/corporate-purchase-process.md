@@ -12,11 +12,11 @@ caps.latest.revision: "12"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: ea3814fe187fb721771b6ce09a5fa0ff95558852
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: cd5b8749ef2637dd1e9616257b5321ae7504dedd
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="corporate-purchase-process"></a>Processus d'achat d'entreprise
 Cet exemple montre comment créer un processus d'achat basé sur des appels d'offres très simples avec sélection automatique de la meilleure proposition. Il combine <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601> et <xref:System.Activities.Statements.ForEach%601> ainsi qu'une activité personnalisée pour créer un workflow qui représente le processus.  
@@ -180,6 +180,4 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
   
 -   **Afficher l’appel d’offres**: affiche le contenu d’un appel d’offres existant. Les fournisseurs peuvent soumettre leurs propositions (s'ils y sont invités ou si l'appel d'offres n'est pas terminé).  
   
--   **Se connecter en tant que**: l’utilisateur peut accéder à l’appel d’offres à l’aide de différentes identités en sélectionnant le participant voulu dans le **afficher en tant que** zone de liste déroulante dans la grille des appels d’offres actifs.  
-  
-## <a name="see-also"></a>Voir aussi
+-   **Se connecter en tant que**: l’utilisateur peut accéder à l’appel d’offres à l’aide de différentes identités en sélectionnant le participant voulu dans le **afficher en tant que** zone de liste déroulante dans la grille des appels d’offres actifs.

@@ -1,41 +1,22 @@
 ---
 title: "ushort (référence C#)"
-ms.date: 2017-03-14
+ms.date: 03/14/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - ushort
 - ushort_CSharpKeyword
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- ushort keyword [C#]
+helpviewer_keywords: ushort keyword [C#]
 ms.assetid: 1a7dbaae-b7a0-4111-872a-c88a6d3981ac
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 83fa657303e8392997b04b7d80cdbcdbf39de887
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2b067a2ffd0fbffe06dc5c9f2a9910c9563eec4b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ushort-c-reference"></a>ushort (référence C#)
 
@@ -43,22 +24,26 @@ Le mot clé `ushort` indique un type de données intégral qui stocke des valeu
   
 |Type|Plage|Taille|Type .NET Framework|  
 |----------|-----------|----------|-------------------------|  
-|`ushort`|0 à 65 535|Entier 16 bits non signé|<xref:System.UInt16?displayProperty=fullName>|  
+|`ushort`|0 à 65 535|Entier 16 bits non signé|<xref:System.UInt16?displayProperty=nameWithType>|  
   
 ## <a name="literals"></a>Littéraux  
 
-Vous pouvez déclarer et initialiser une variable `ushort` en lui assignant un littéral décimal, un littéral hexadécimal ou un littéral binaire (à compter de C# 7). Si le littéral entier est en dehors de la plage de `ushort` (autrement dit, s’il est inférieur à <xref:System.UInt16.MinValue?displayProperty=fullName> ou supérieur à <xref:System.UInt16.MaxValue?displayProperty=fullName>), une erreur de compilation se produit.
+Vous pouvez déclarer et initialiser une variable `ushort` en lui assignant un littéral décimal, un littéral hexadécimal ou un littéral binaire (à compter de C# 7). Si le littéral entier est en dehors de la plage autorisée pour le type `ushort` (autrement dit, s’il est inférieur à <xref:System.UInt16.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.UInt16.MaxValue?displayProperty=nameWithType>), une erreur de compilation se produit.
 
 Dans l’exemple suivant, les entiers égaux à 65 034 représentés comme des littéraux décimaux, hexadécimaux et binaires sont implicitement convertis à partir de valeurs [int](../../../csharp/language-reference/keywords/int.md) en `ushort`.    
   
-[!code-cs[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShort)]  
+[!code-csharp[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShort)]  
 
 > [!NOTE] 
 > Vous utilisez le préfixe `0x` ou `0X` pour désigner un littéral hexadécimal, et le préfixe `0b` ou `0B` pour désigner un littéral binaire. Les littéraux décimaux n’ont pas de préfixe.
 
-À compter de C# 7, vous pouvez également utiliser le caractère de soulignement, `_`, comme séparateur numérique pour améliorer la lisibilité, comme dans l’exemple suivant.
+À partir de C# 7, quelques fonctionnalités ont été ajoutées améliorer la lisibilité. 
+ - C# 7.0 permet l’utilisation d’un caractère de soulignement `_`, comme un séparateur de chiffre.
+ - 7.2 c# permet `_` à utiliser comme séparateur de chiffres pour un littéral binaire ou en hexadécimal, après le préfixe. Un littéral décimal n’est pas autorisé à avoir un trait de soulignement.
 
-[!code-cs[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShortS)]  
+Certains exemples sont présentés ci-dessous.
+
+[!code-csharp[UShort](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UShortS)]  
  
 ## <a name="compiler-overload-resolution"></a>Résolution de surcharge du compilateur
   
@@ -123,12 +108,11 @@ ushort y = (ushort)3.0;
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.UInt16>   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
- [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
+ <xref:System.UInt16>  
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)  
+ [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)  
+ [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+ [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
  [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
-

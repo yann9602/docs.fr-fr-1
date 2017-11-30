@@ -1,45 +1,27 @@
 ---
 title: "Guide pratique pour utiliser les fonctionnalités de la documentation XML (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: eb647a275a5cd5fac2316706591440d9792861b3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: eeee77db523bc0ad97f425d4ba8076ae5740dfe8
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-the-xml-documentation-features-c-programming-guide"></a>Guide pratique pour utiliser les fonctionnalités de la documentation XML (Guide de programmation C#)
 L’exemple suivant montre un type qui a été documenté.  
   
 ## <a name="example"></a>Exemple  
- [!code-cs[csProgGuideDocComments#15](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/how-to-use-the-xml-documentation-features_1.cs)]  
+ [!code-csharp[csProgGuideDocComments#15](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/how-to-use-the-xml-documentation-features_1.cs)]  
   
  **// Ce fichier .xml a été généré avec l’exemple de code précédent.**  
 **\<?xml version="1.0"?>**  
@@ -52,7 +34,7 @@ L’exemple suivant montre un type qui a été documenté.
  **\<summary>**  
  **Insérer ici les informations récapitulatives relatives à la classe.\</summary>**  
  **\<remarks>**  
- **Des commentaires plus longs peuvent être associés à un type ou à un membre**   
+ **Un commentaire plus long peut être associé à un type ou membre**  
  **grâce à la balise remarks\</remarks>**  
  **\</member>**  
  **\<member name="F:SomeClass.m_Name">**  
@@ -60,14 +42,14 @@ L’exemple suivant montre un type qui a été documenté.
  **Stocke la propriété name\</summary>**  
  **\</member>**  
  **\<member name="M:SomeClass.#ctor">**  
- **\<summary>Le constructeur de classe.\</summary>**   
+ **\<Résumé > le constructeur de classe.  \< /summary >**  
  **\</member>**  
  **\<member name="M:SomeClass.SomeMethod(System.String)">**  
  **\<summary>**  
  **Description de la méthode SomeMethod.\</summary>**  
  **\<param name="s"> Insérer ici la description du paramètre s.\</param>**  
  **\<seealso cref="T:System.String">**  
- **Vous pouvez utiliser l’attribut cref sur n’importe quelle balise pour référencer un type ou un membre**   
+ **Vous pouvez utiliser l’attribut cref sur n’importe quelle balise pour faire référence à un type ou membre**  
  **et le compilateur vérifiera que cette référence existe. \</seealso>**  
  **\</member>**  
  **\<member name="M:SomeClass.SomeOtherMethod">**  
@@ -116,7 +98,6 @@ L’exemple suivant montre un type qui a été documenté.
         >  Le fichier XML ne fournit pas des informations complètes sur le type et les membres (par exemple, il ne contient pas d’informations sur le type). Pour obtenir des informations complètes sur un type ou sur un membre, le fichier de documentation doit être utilisé avec la réflexion sur le type ou sur le membre.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [/doc (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [/doc (Options du compilateur c#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
  [Commentaires sur la documentation XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
-

@@ -1,12 +1,9 @@
 ---
 title: Cast et conversions de types (Guide de programmation C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - type conversion [C#]
 - data type conversion [C#]
@@ -15,29 +12,14 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-caps.latest.revision: 52
+caps.latest.revision: "52"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 8729677b0c7bee60f0ebeb07439b1c0e71508aa8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
-ms.openlocfilehash: f5844cab81f194b9301a394117e92305eaa45e62
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Cast et conversions de types (Guide de programmation C#)
 C# est typé statiquement au moment de la compilation. Ainsi, quand une variable est déclarée, elle ne peut plus être redéclarée ou utilisée pour stocker des valeurs d’un autre type, sauf si ce type peut être converti au type de la variable. Par exemple, il est impossible de convertir un entier en chaîne arbitraire. Après avoir déclaré `i` comme entier, vous ne pouvez donc pas lui assigner la chaîne « Hello » comme le montre le code suivant.  
@@ -60,7 +42,7 @@ i = "Hello"; // Error: "Cannot implicitly convert type 'string' to 'int'"
 ## <a name="implicit-conversions"></a>Conversions implicites  
  Pour les types numériques intégrés, une conversion implicite peut être effectuée quand la valeur à stocker peut tenir dans la variable sans être tronquée ni arrondie. Par exemple, une variable de type [long](../../../csharp/language-reference/keywords/long.md) (entier sur 8 octets) peut stocker n’importe quelle valeur stockée par un [int](../../../csharp/language-reference/keywords/int.md) (4 octets sur un ordinateur 32 bits). Dans l’exemple suivant, le compilateur convertit implicitement la valeur à droite en type `long` avant de l’assigner à `bigNum`.  
   
- [!code-cs[csProgGuideTypes#34](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_1.cs)]  
+ [!code-csharp[csProgGuideTypes#34](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_1.cs)]  
   
  Pour obtenir la liste complète de toutes les conversions numériques implicites, consultez [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
   
@@ -74,7 +56,7 @@ Base b = d; // Always OK.
 ## <a name="explicit-conversions"></a>Conversions explicites  
  Toutefois, si une conversion ne peut pas être réalisée sans risque de perte d’informations, le compilateur exige une conversion explicite, aussi appelée *cast*. Un cast est une façon d’informer explicitement le compilateur que vous prévoyez de faire la conversion et que vous savez qu’une perte de données peut se produire. Pour effectuer un cast, spécifiez le type voulu entre parenthèses devant la valeur ou la variable à convertir. Le programme suivant effectue un cast d’un [double](../../../csharp/language-reference/keywords/double.md) en [int](../../../csharp/language-reference/keywords/int.md). Le programme ne se compile pas sans le cast.  
   
- [!code-cs[csProgGuideTypes#2](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_2.cs)]  
+ [!code-csharp[csProgGuideTypes#2](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_2.cs)]  
   
  Pour obtenir la liste des conversions numériques explicites autorisées, consultez [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md).  
   
@@ -99,7 +81,7 @@ Giraffe g2 = (Giraffe) a;
 ## <a name="type-conversion-exceptions-at-run-time"></a>Exceptions de conversion de type au moment de l’exécution  
  Dans certaines conversions de types référence, le compilateur ne peut pas déterminer si un cast sera valide. Il est possible qu’une opération cast dont la compilation fonctionne échoue au moment de l’exécution. Comme l’illustre l’exemple suivant, un cast de type qui échoue au moment de l’exécution provoque la levée d’une exception <xref:System.InvalidCastException>.  
   
- [!code-cs[csProgGuideTypes#41](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_3.cs)]  
+ [!code-csharp[csProgGuideTypes#41](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_3.cs)]  
   
  C# fournit les opérateurs [is](../../../csharp/language-reference/keywords/is.md) et [as](../../../csharp/language-reference/keywords/as.md) pour vous permettre de tester la compatibilité avant d’effectuer réellement un cast. Pour plus d’informations, consultez [Guide pratique pour effectuer sans risque un cast à l’aide des opérateurs as et is](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md).  
   
@@ -107,13 +89,12 @@ Giraffe g2 = (Giraffe) a;
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
 
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Types](../../../csharp/programming-guide/types/index.md)   
- [(), opérateur](../../../csharp/language-reference/operators/invocation-operator.md)   
- [explicit](../../../csharp/language-reference/keywords/explicit.md)   
- [implicit](../../../csharp/language-reference/keywords/implicit.md)   
- [Opérateurs de conversion](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)   
- [Conversion de type généralisée](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)   
- [Conversion d’un type exporté](http://msdn.microsoft.com/en-us/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Types](../../../csharp/programming-guide/types/index.md)  
+ [(), opérateur](../../../csharp/language-reference/operators/invocation-operator.md)  
+ [explicit](../../../csharp/language-reference/keywords/explicit.md)  
+ [implicit](../../../csharp/language-reference/keywords/implicit.md)  
+ [Opérateurs de conversion](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)  
+ [Conversion de Type généralisée](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)  
+ [Conversion de Type exporté](http://msdn.microsoft.com/en-us/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)  
  [Guide pratique pour convertir une chaîne en nombre](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)
-

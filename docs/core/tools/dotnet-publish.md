@@ -1,21 +1,17 @@
 ---
 title: Commande dotnet publish - Interface CLI .NET Core
 description: "La commande dotnet publish publie votre projet .NET Core dans un répertoire."
-keywords: "dotnet-publish, CLI, commande CLI, .NET Core"
-author: blackdwarf
+author: mairaw
 ms.author: mairaw
-ms.date: 08/12/2017
+ms.date: 09/01/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: f2ef275a-7c5e-430a-8c30-65f52af62771
+ms.openlocfilehash: d59ba8cf74a63c7d4a2234989477b5778fa0148f
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: db6e527a6132be0b6362c68945bb68884f5ad619
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -78,7 +74,7 @@ Force la résolution de toutes les dépendances même si la dernière restaurati
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `--manifest <PATH_TO_MANIFEST_FILE>`
 
@@ -94,11 +90,12 @@ N’effectue pas de restauration implicite à l’exécution de la commande.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Spécifie le chemin du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
+Spécifie le chemin d’accès du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
+Si un chemin d’accès relatif est fournie, le répertoire de sortie généré par rapport à l’emplacement du fichier projet, pas au répertoire de travail actuel.
 
 `--self-contained`
 
-Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. Si un identificateur de runtime est spécifié, sa valeur par défaut est `true`. Pour plus d’informations sur les différents types de déploiement, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
+Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. Si un identificateur de runtime est spécifié, sa valeur par défaut est `true`. Pour plus d’informations sur les différents types de déploiement, consultez [déploiement d’application .NET Core](../deploying/index.md).
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
@@ -124,7 +121,7 @@ Publie l’application pour le [framework cible](../../standard/frameworks.md) s
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `--manifest <PATH_TO_MANIFEST_FILE>`
 
@@ -132,7 +129,8 @@ Spécifie un ou plusieurs [manifestes cibles](../deploying/runtime-store.md) à 
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Spécifie le chemin du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
+Spécifie le chemin d’accès du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
+Si un chemin d’accès relatif est fournie, le répertoire de sortie généré par rapport à l’emplacement du fichier projet, pas au répertoire de travail actuel.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
@@ -170,4 +168,3 @@ Publier l’application actuelle à l’aide du framework `netcoreapp1.1` et du 
 
 * [Frameworks cibles](../../standard/frameworks.md)
 * [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
-

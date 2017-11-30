@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
+ms.openlocfilehash: 390d08332113a50b363bdbb71921bafd7e33e87d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
-ms.openlocfilehash: 7b51317b570fcabfe1847685a97c6deab32dcc5c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/04/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="porting-to-net-core---libraries"></a>Portage vers .NET Core - Bibliothèques
 
 Cet article décrit le portage de code de bibliothèque vers .NET Core dans le but de l’exécuter sur plusieurs plateformes.
@@ -25,7 +23,8 @@ Cet article décrit le portage de code de bibliothèque vers .NET Core dans le b
 
 Cet article suppose que vous :
 
-- utilisez Visual Studio 2017 ou une version ultérieure (.NET Core n’est pas pris en charge dans les versions antérieures de Visual Studio) ;
+- utilisez Visual Studio 2017 ou une version ultérieure
+  - .NET core n’est pas pris en charge dans les versions antérieures de Visual Studio
 - comprenez le [processus de portage recommandé](index.md) ;
 - avez résolu les problèmes des [dépendances tierces](third-party-deps.md).
 
@@ -56,7 +55,7 @@ Le fait qu’une technologie ou une API ne soit pas implémentée pour le moment
 
 Les AppDomains isolent les applications les unes des autres. Ils requièrent la prise en charge du runtime et sont généralement assez onéreux. Ils ne sont pas implémentés dans .NET Core. Nous ne prévoyons pas d’ajouter cette fonctionnalité par la suite. Pour l’isolation du code, nous recommandons d’utiliser des processus distincts ou des conteneurs à la place. Pour le chargement dynamique d’assemblys, nous recommandons la nouvelle classe <xref:System.Runtime.Loader.AssemblyLoadContext>.
 
-Pour faciliter la migration du code à partir de .NET Framework, nous avons exposé quelques-unes des API <xref:System.AppDomain> dans .NET Core. Certaines API fonctionnent normalement (par exemple, <xref:System.AppDomain.UnhandledException?displayProperty=fullName>), certains membres ne font rien (par exemple, <xref:System.AppDomain.SetCachePath%2A>) et d’autres lèvent <xref:System.PlatformNotSupportedException> (par exemple, <xref:System.AppDomain.CreateDomain%2A>). Vérifiez les types que vous utilisez par rapport à la [source de référence `System.AppDomain`](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs) dans le [référentiel GitHub dotnet/corefx](https://github.com/dotnet/corefx), en veillant à sélectionner la branche correspondant à la version que vous avez implémentée.
+Pour faciliter la migration du code à partir de .NET Framework, nous avons exposé quelques-unes des API <xref:System.AppDomain> dans .NET Core. Certaines API fonctionnent normalement (par exemple, <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>), certains membres ne font rien (par exemple, <xref:System.AppDomain.SetCachePath%2A>) et d’autres lèvent <xref:System.PlatformNotSupportedException> (par exemple, <xref:System.AppDomain.CreateDomain%2A>). Vérifiez les types que vous utilisez par rapport à la [source de référence `System.AppDomain`](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs) dans le [référentiel GitHub dotnet/corefx](https://github.com/dotnet/corefx), en veillant à sélectionner la branche correspondant à la version que vous avez implémentée.
 
 ### <a name="remoting"></a>Communication à distance
 
@@ -197,4 +196,3 @@ En définitive, le travail de portage dépend fortement de la structuration du c
 1. Sélectionnez la couche suivante de code à porter et répétez les étapes précédentes.
 
 Si vous commencez par la base de votre bibliothèque et que vous vous déplacez vers l’extérieur en testant chaque couche au fur et à mesure, le portage devient un processus systématique où les problèmes sont isolés sur une seule couche de code à la fois.
-

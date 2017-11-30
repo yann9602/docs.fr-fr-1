@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: bba8d77cda7538bf008dc0f510f9279d3c695c3d
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: fa2e5ecbf41dc2a8cd90aabc6f7291db597e657e
-ms.openlocfilehash: 4c1c0e4ed1b1222abbcd104b2c10a44b1b99be8d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/17/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -48,7 +47,7 @@ Le seul cas où la commande `dotnet` est utilisée seule est l’exécution d’
 
 `--additionaldeps <PATH>`
 
-Chemin du fichier *deps.json* supplémentaire.
+Chemin d’accès à d’autres *deps.json* fichier.
 
 `--additionalprobingpath <PATH>`
 
@@ -187,6 +186,8 @@ Restaurez les dépendances d’une application donnée :
 
 `dotnet restore`
 
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 Générez un projet et ses dépendances dans un répertoire donné :
 
 `dotnet build`
@@ -208,4 +209,3 @@ Spécifie l’emplacement de l’index de service que doit utiliser l’hôte pa
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
 Spécifie si les données concernant l’utilisation des outils .NET Core doivent être collectées et envoyées à Microsoft. Définie sur `true` pour ne pas adhérer à la fonctionnalité de télémétrie (valeurs acceptées : `1`, `yes` ou `false`) ; définie sur `true` pour adhérer aux fonctionnalités de télémétrie (valeurs acceptées : `false`, `0` ou `no`). Si elle n’est pas définie, la valeur par défaut est `false`, et la fonctionnalité de télémétrie est active.
-

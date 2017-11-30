@@ -1,45 +1,51 @@
 ---
-title: "Managed Threading Best Practices | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "threading [.NET Framework], design guidelines"
-  - "threading [.NET Framework], best practices"
-  - "managed threading"
+title: "Meilleures pratiques pour le threading managé"
+ms.custom: 
+ms.date: 11/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- threading [.NET Framework], design guidelines
+- threading [.NET Framework], best practices
+- managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-caps.latest.revision: 19
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: e396bb1f6a710e49e311ca1526a7aae9bca7bf90
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Managed Threading Best Practices
-Le multithreading exige une programmation attentive.  Vous pouvez réduire la complexité pour la plupart des tâches en mettant les demandes en file d'attente pour une exécution par un thread du pool.  Cette rubrique traite des situations les plus difficiles telles que la coordination du travail de plusieurs threads ou la gestion des threads qui bloquent.  
+# <a name="managed-threading-best-practices"></a>Meilleures pratiques pour le threading managé
+Le multithreading nécessite une programmation attentive. Pour réduire la complexité de la plupart des tâches, il vous suffit de mettre en file d’attente les requêtes à exécuter par les threads d’un pool de threads. Cet article vous permet de remédier aux situations plus complexes, telles que la coordination du travail de plusieurs threads ou la gestion des threads bloqués.  
   
 > [!NOTE]
->  Dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], la bibliothèque parallèle de tâches et PLINQ fournissent des API qui réduisent en partie la complexité et les risques de la programmation multithread.  Pour plus d'informations, consultez [Parallel Programming](../../../docs/standard/parallel-programming/index.md).  
+> À compter de .NET Framework 4, la bibliothèque parallèle de tâches et PLINQ fournissent des API qui réduire la complexité et les risques de la programmation multithread. Pour plus d’informations, consultez [programmation parallèle dans .NET](../../../docs/standard/parallel-programming/index.md).  
   
-## Interblocages et conditions de concurrence critique  
- Le multithreading résout les problèmes de débit et de réactivité, mais ce faisant il introduit de nouveaux problèmes : les interblocages et les conditions de concurrence critique.  
+## <a name="deadlocks-and-race-conditions"></a>Interblocages et conditions de concurrence  
+ Le multithreading résout les problèmes de débit et de réactivité, mais, ce faisant, occasionne de nouveaux problèmes : les interblocages et les conditions de concurrence.  
   
-### Interblocages  
- Un interblocage se produit lorsque l'un des deux threads essaie de verrouiller une ressource que l'autre thread a déjà verrouillée.  Aucun thread ne peut avancer.  
+### <a name="deadlocks"></a>Interblocages (deadlocks)  
+ Un interblocage se produit lorsque chacun des deux threads tente de verrouiller une ressource déjà verrouillée par l’autre thread. Aucun des deux threads ne peut donc poursuivre l’exécution.  
   
- De nombreuses méthodes des classes de thread managé fournissent des délais pour vous aider à détecter des interblocages.  Par exemple, le code suivant tente d'acquérir un verrou sur l'instance actuelle.  Si ce verrou n'est pas obtenu en 300 millisecondes, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=fullName> retourne **false**.  
+ De nombreuses méthodes des classes de threading managé fournissent des délais d’expiration conçus pour faciliter la détection des interblocages. Par exemple, le code suivant tente d’acquérir un verrou sur un objet nommé `lockObject`. Si le verrou n’est pas obtenu en 300 millisecondes, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> retourne `false`.  
   
 ```vb  
 If Monitor.TryEnter(lockObject, 300) Then  
     Try  
         ' Place code protected by the Monitor here.  
     Finally  
-        Monitor.Exit(Me)  
+        Monitor.Exit(lockObject)  
     End Try  
 Else  
     ' Code to execute if the attempt times out.  
@@ -52,7 +58,7 @@ if (Monitor.TryEnter(lockObject, 300)) {
         // Place code protected by the Monitor here.  
     }  
     finally {  
-        Monitor.Exit(this);  
+        Monitor.Exit(lockObject);  
     }  
 }  
 else {  
@@ -60,67 +66,67 @@ else {
 }  
 ```  
   
-### Conditions de concurrence critique  
- Une condition de concurrence critique est une bogue qui se produit lorsque le résultat d'un programme dépend du premier des threads, parmi au moins deux threads, qui atteint un bloc de code particulier.  L'exécution répétée du programme produit des résultats différents, et il est impossible de prédire le résultat d'une exécution donnée.  
+### <a name="race-conditions"></a>Conditions de concurrence  
+ Une condition de concurrence est un bogue qui survient lorsque le résultat d’un programme dépend du thread qui atteint le premier un bloc de code spécifique. L’exécution du programme à plusieurs reprises produit des résultats différents, et le résultat d’une exécution donnée n’est donc pas prévisible.  
   
- Un exemple simple de condition de concurrence critique est l'incrémentation d'un champ.  Supposons qu'une classe possède un champ **static** privé \(**Shared** en Visual Basic\) qui est incrémenté à chaque création d'une instance de la classe à l'aide de code tel que `objCt++;` \(C\#\) ou `objCt += 1` \(Visual Basic\).  Cette opération nécessite le chargement dans un registre de la valeur à partir de `objCt`, l'incrémentation de cette valeur et son stockage dans `objCt`.  
+ Un exemple simple de condition de concurrence correspond à l’incrémentation d’un champ. Supposons qu’une classe comporte un champ **static** privé (**Shared** en Visual Basic) qui est incrémenté chaque fois qu’une instance de la classe est créée, à l’aide d’un code tel que `objCt++;` (C#) ou `objCt += 1` (Visual Basic). Cette opération nécessite le chargement de la valeur de `objCt` dans un registre, l’incrémentation de la valeur, puis son stockage dans `objCt`.  
   
- Dans une application multithread, un thread qui a chargé et incrémenté la valeur peut être interrompu par un autre thread qui effectue les trois étapes ; lorsque le premier thread reprend l'exécution et stocke sa valeur, il remplace `objCt` sans tenir compte du fait que la valeur a changé entre\-temps.  
+ Dans une application multithread, il est possible qu’un thread ayant chargé et incrémenté la valeur soit devancé par un autre thread qui exécute ces trois étapes ; lorsque le premier thread reprend l’exécution et stocke sa valeur, il remplace alors la valeur de `objCt` sans tenir compte du fait qu’elle a changé dans l’intervalle.  
   
- Cette condition de concurrence critique particulière est évitée facilement en utilisant des méthodes de la classe <xref:System.Threading.Interlocked>, comme <xref:System.Threading.Interlocked.Increment%2A?displayProperty=fullName>.  Pour plus d'informations sur d'autres techniques permettant de synchroniser des données entre plusieurs threads, consultez [Synchronisation des données pour le multithreading](../../../docs/standard/threading/synchronizing-data-for-multithreading.md).  
+ Cette condition de concurrence critique est facile à éviter en utilisant des méthodes de la <xref:System.Threading.Interlocked> class, telle que <xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType>. Pour découvrir d’autres techniques de synchronisation des données entre plusieurs threads, consultez l’article [Synchronisation des données pour le multithreading](../../../docs/standard/threading/synchronizing-data-for-multithreading.md).  
   
- Les conditions de concurrence critique peuvent également se produire lorsque vous synchronisez les activités de plusieurs threads.  Chaque fois que vous écrivez une ligne de code, vous devez anticiper ce qui peut se produire si un thread était interrompu avant l'exécution de la ligne \(ou avant les instructions machine individuelles qui composent la ligne\), et qu'un autre thread prenne le relais.  
+ Des conditions de concurrence peuvent également survenir lorsque vous synchronisez les activités de plusieurs threads. Chaque fois que vous écrivez une ligne de code, vous devez prendre en compte ce qui peut se produire si un thread est devancé par un autre thread avant d’avoir exécuté la ligne (ou avant toute instruction machine individuelle composant la ligne).  
   
-## Nombre de processeurs  
- La plupart des ordinateurs ont désormais plusieurs processeurs \(également appelés cœurs\), même des petits appareils tels que les tablettes et les téléphones.  Si vous savez que vous développez un logiciel qui s'exécutera également sur des ordinateurs à un seul processeur, vous devez être conscient que le multithreading résout différents problèmes pour les ordinateurs à un seul processeur et les ordinateurs multiprocesseurs.  
+## <a name="number-of-processors"></a>Nombre de processeurs  
+ La plupart des ordinateurs sont désormais équipés de plusieurs processeurs (également appelés cœurs), y compris les petits appareils, tels que les tablettes et les téléphones. Si vous développez des logiciels également destinés à s’exécuter sur des ordinateurs monoprocesseur, vous devez savoir que le multithreading résout différents problèmes pour les ordinateurs monoprocesseur et multiprocesseur.  
   
-### Ordinateurs multiprocesseurs  
- Le multithreading fournit un débit supérieur.  Dix processeurs peuvent effectuer dix fois plus de travail qu'un seul processeur, mais uniquement si le travail est divisé de telle sorte que les dix processeurs puissent travailler simultanément ; les threads fournissent un moyen facile de diviser le travail et de tirer parti de la puissance de traitement supplémentaire.  Si vous utilisez le multithreading sur un ordinateur multiprocesseur :  
+### <a name="multiprocessor-computers"></a>Ordinateurs multiprocesseur  
+ Le multithreading offre un débit plus élevé. Dix processeurs peuvent effectuer dix fois le travail d’un seul processeur, mais uniquement si ce travail est divisé afin que les dix processeurs puissent le traiter simultanément. Les threads offrent un moyen simple de diviser le travail et d’exploiter la puissance de traitement supplémentaire. Si vous utilisez le multithreading sur un ordinateur multiprocesseur :  
   
--   Le nombre de threads qui peuvent s'exécuter simultanément est limité par le nombre de processeurs.  
+-   Le nombre de threads pouvant s’exécuter simultanément est limité par le nombre de processeurs.  
   
--   Un thread d'arrière\-plan s'exécute uniquement lorsque le nombre de threads de premier plan est inférieur au nombre de processeurs.  
+-   Un thread d’arrière-plan s’exécute uniquement lorsque le nombre de threads de premier plan qui s’exécutent est inférieur au nombre de processeurs.  
   
--   Lorsque vous appelez la méthode <xref:System.Threading.Thread.Start%2A?displayProperty=fullName> sur un thread, ce thread peut ou ne peut pas démarrer son exécution immédiatement selon le nombre de processeurs et le nombre de threads qui attendent actuellement de s'exécuter.  
+-   Lorsque vous appelez le <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> méthode sur un thread, ce thread peut ou peut ne pas démarrer l’exécuter immédiatement, selon le nombre de processeurs et le nombre de threads actuellement en attente d’exécution.  
   
--   Les conditions de concurrence critique peuvent se produire non seulement du fait de l'interruption inattendue des threads mais parce que deux threads qui s'exécutent sur des processeurs différents s'acheminent peut\-être vers le même bloc de code.  
+-   Des conditions de concurrence peuvent survenir, non seulement lorsque des threads sont devancés de manière inattendue, mais également parce que deux threads qui s’exécutent sur différents processeurs risquent d’entrer en concurrence pour atteindre le même bloc de code.  
   
-### Ordinateurs à processeurs uniques  
- Le multithreading fournit une plus grande réactivité à l'utilisateur de l'ordinateur et utilise le temps d'inactivité pour les tâches en arrière\-plan.  Si vous utilisez le multithreading sur un ordinateur à processeur unique :  
+### <a name="single-processor-computers"></a>Ordinateurs monoprocesseur  
+ Le multithreading offre une meilleure réactivité à l’utilisateur de l’ordinateur et utilise la durée d’inactivité pour les tâches en arrière-plan. Si vous utilisez le multithreading sur un ordinateur monoprocesseur :  
   
--   Seul un thread s'exécute à tout moment.  
+-   Un seul thread s’exécute à tout moment.  
   
--   Un thread en arrière\-plan s'exécute uniquement lorsque le thread utilisateur principal est inactif.  Un thread en premier plan qui s'exécute constamment prive les threads en arrière\-plan de temps processeur.  
+-   Un thread d’arrière-plan s’exécute uniquement lorsque le thread utilisateur principal est inactif. Un thread de premier plan qui s’exécute constamment prive les threads d’arrière-plan de temps processeur.  
   
--   Lorsque vous appelez la méthode <xref:System.Threading.Thread.Start%2A?displayProperty=fullName> sur un thread, ce thread ne s'exécute pas tant que le thread en cours ne cède pas ou n'est pas interrompu par le système d'exploitation.  
+-   Lorsque vous appelez le <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> méthode sur un thread, ce thread ne pas s’exécute jusqu'à ce que le thread en cours génère ou est devancé par le système d’exploitation.  
   
--   Les conditions de concurrence critique se produisent généralement parce que le programmeur n'a pas anticipé le fait qu'un thread peut être interrompu à un moment délicat, ce qui permet parfois à un autre thread de parvenir au bloc de code le premier.  
+-   Les conditions de concurrence surviennent généralement parce que le programmeur n’a pas anticipé le fait qu’un thread puisse être devancé à un moment inopportun, ce qui permet parfois à un autre thread d’atteindre un bloc de code le premier.  
   
-## Membres statiques et constructeurs statiques  
- Une classe n'est pas initialisée tant que l'exécution de son constructeur de classe \(constructeur `static` en C\#, `Shared Sub New` dans Visual Basic\) n'est pas terminée.  Pour empêcher l'exécution de code sur un type non initialisé, le Common Language Runtime bloque tous les appels d'autres threads aux membres `static` de la classe \(membres `Shared` dans Visual Basic\) jusqu'à ce que l'exécution du constructeur de classe soit terminée.  
+## <a name="static-members-and-static-constructors"></a>Membres static et constructeurs static  
+ Une classe n’est pas initialisée tant que son constructeur de classe (constructeur `static` en C#, `Shared Sub New` en Visual Basic) n’a pas fini de s’exécuter. Pour empêcher l’exécution de code sur un type qui n’est pas initialisé, le common language runtime bloque tous les appels d’autres threads aux membres `static` de la classe (membres `Shared` en Visual Basic) jusqu’à la fin de l’exécution du constructeur de classe.  
   
- Par exemple, si un constructeur de classe démarre un nouveau thread et que la procédure de thread appelle un membre `static` de la classe, le nouveau thread se bloque jusqu'à ce que le constructeur de classe ait terminé.  
+ Par exemple, si un constructeur de classe démarre un nouveau thread, et que la procédure de thread appelle un membre `static` de la classe, le nouveau thread se bloque jusqu’à la fin du constructeur de classe.  
   
- Cela s'applique à tout type pouvant disposer d'un constructeur `static`.  
+ Cela s’applique à n’importe quel type pouvant comporter un constructeur `static`.  
   
-## Recommandations générales  
- Observez les recommandations suivantes lors de l'utilisation de plusieurs threads :  
+## <a name="general-recommendations"></a>Recommandations générales  
+ Lorsque vous utilisez plusieurs threads, tenez compte des recommandations suivantes :  
   
--   N'utilisez pas <xref:System.Threading.Thread.Abort%2A?displayProperty=fullName> pour mettre fin à d'autres threads.  L'appel à **Abort** sur un autre thread revient à lever une exception sur ce thread, sans savoir à quel point ce thread est parvenu dans son traitement.  
+-   N’utilisez pas <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> pour mettre fin à d’autres threads. L’appel de la méthode **Abort** sur un autre thread équivaut à lever une exception sur ce dernier sans connaître le stade précis du traitement atteint par ce thread.  
   
--   N'utilisez pas  <xref:System.Threading.Thread.Suspend%2A?displayProperty=fullName> et <xref:System.Threading.Thread.Resume%2A?displayProperty=fullName> pour synchroniser les activités de plusieurs threads.  Utilisez <xref:System.Threading.Mutex>, <xref:System.Threading.ManualResetEvent>, <xref:System.Threading.AutoResetEvent> et <xref:System.Threading.Monitor>.  
+-   N’utilisez pas <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> et <xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType> pour synchroniser les activités de plusieurs threads. Utilisez <xref:System.Threading.Mutex>, <xref:System.Threading.ManualResetEvent>, <xref:System.Threading.AutoResetEvent>, et <xref:System.Threading.Monitor>.  
   
--   Ne contrôlez pas l'exécution des threads de travail à partir de votre programme principal \(en utilisant des événements, par exemple\).  À la place, concevez votre programme de telle sorte que les threads de travail soient chargés d'attendre que du travail soit disponible, d'exécuter ce travail et de notifier les autres parties de votre programme une fois terminé.  Si vos threads de travail ne provoquent pas de blocage, utilisez des threads du pool de threads.  <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=fullName> est utile dans les cas où les threads de travail se bloquent.  
+-   Ne contrôlez pas l’exécution des threads de travail à partir de votre programme principal (à l’aide d’événements, par exemple). Concevez plutôt votre programme pour que les threads de travail soient chargés d’attendre que le travail devienne disponible, d’exécuter ce travail, puis d’en informer les autres parties de votre programme lorsqu’ils ont terminé. Si vos threads de travail ne se bloquent pas, envisagez d’utiliser les threads d’un pool de threads. <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType>est utile dans les situations où les threads de travail se bloquent.  
   
--   N'utilisez pas de types comme objets lock.  Autrement dit, évitez les codes tels que `lock(typeof(X))` en C\# ou `SyncLock(GetType(X))` dans Visual Basic, ou l'utilisation de <xref:System.Threading.Monitor.Enter%2A?displayProperty=fullName> avec des objets <xref:System.Type>.  Pour un type donné, il existe une seule instance de <xref:System.Type?displayProperty=fullName> par domaine d'application.  Si le type sur lequel vous acquérez un verrou est public, tout code, autre que le vôtre, peut acquérir des verrous sur celui\-ci, ce qui entraîne des interblocages.  Pour plus d'informations, consultez [Reliability Best Practices](../../../docs/framework/performance/reliability-best-practices.md).  
+-   N’utilisez pas de types en tant qu’objets de verrou. Autrement dit, évitez comme code `lock(typeof(X))` en c# ou `SyncLock(GetType(X))` en Visual Basic, ou l’utilisation de <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> avec <xref:System.Type> objets. Pour un type donné, il existe une seule instance de <xref:System.Type?displayProperty=nameWithType> par domaine d’application. Si le type sur lequel vous utilisez un verrou est public, un code différent du vôtre peut utiliser des verrous sur ce type, entraînant ainsi des interblocages. Pour découvrir les autres problèmes, consultez l’article [Meilleures pratiques pour la fiabilité](../../../docs/framework/performance/reliability-best-practices.md).  
   
--   Soyez vigilants lors du verrouillage d'instances, par exemple `lock(this)` en C\# ou `SyncLock(Me)` dans Visual Basic.  Si un autre code de votre application, externe au type, acquiert un verrou sur l'objet, des interblocages peuvent se produire.  
+-   Procédez avec précaution lorsque vous utilisez des verrous sur des instances, par exemple `lock(this)` en C# ou `SyncLock(Me)` en Visual Basic. Si un autre code de votre application, externe au type, utilise un verrou sur l’objet, des interblocages risquent de se produire.  
   
--   Veillez à ce qu'un thread qui est entré dans un moniteur quitte toujours ce moniteur, même si une exception se produit tandis que le thread se trouve dans le moniteur.  L'instruction C\# [lock](../Topic/lock%20Statement%20\(C%23%20Reference\).md) et l'instruction Visual Basic [SyncLock](../../../ocs/visual-basic/language-reference/statements/synclock-statement.md) fournissent ce comportement automatiquement en se servant d'un bloc **finally** pour garantir l'appel à <xref:System.Threading.Monitor.Exit%2A?displayProperty=fullName>.  Si vous ne pouvez pas garantir l'appel à **Exit**, envisagez de changer votre design afin d'utiliser **Mutex**.  Un mutex est libéré automatiquement lorsque le thread qui le possède prend fin.  
+-   Assurez-vous qu’un thread entré dans un moniteur quitte toujours ce dernier, même si une exception se produit pendant que le thread se trouve dans le moniteur. C# [verrou](~/docs/csharp/language-reference/keywords/lock-statement.md) instruction et Visual Basic [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) instruction fournissent ce comportement d’automatiquement, en utilisant un **enfin** bloc pour garantir que <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> est appelé. Si vous n’êtes pas en mesure de garantir l’appel de la méthode **Exit**, vous pouvez modifier votre conception de façon à utiliser **Mutex**. Un mutex est automatiquement libéré lorsque le thread auquel il appartient a terminé.  
   
--   Utilisez plusieurs threads pour des tâches qui nécessitent des ressources différentes, et évitez d'assigner plusieurs threads à une seule ressource.  Par exemple, toutes les tâches d'E\/S ont intérêt à posséder leur propre thread, car ce thread bloquera lors des opérations d'E\/S empêchant ainsi l'exécution d'autres threads.  Les entrées d'utilisateur sont une autre ressource qui tire profit d'un thread dédié.  Sur un ordinateur à un seul processeur, une tâche qui implique des calculs intensifs cohabite avec les entrées d'utilisateur et avec des tâches d'E\/S, mais les tâches consommant beaucoup de calcul entrent en concurrence.  
+-   Utilisez plusieurs threads pour les tâches qui nécessitent des ressources différentes, et évitez d’attribuer plusieurs threads à une même ressource. Par exemple, vous tirerez avantage du fait que les tâches impliquant des E/S disposent de leur propre thread, car ce thread se bloquera lors des opérations d’E/S et permettra ainsi à d’autres threads de s’exécuter. L’entrée utilisateur est une autre ressource tirant profit d’un thread dédié. Sur un ordinateur monoprocesseur, une tâche qui exige de multiples calculs coexiste avec l’entrée utilisateur et avec les tâches qui impliquent des E/S, mais plusieurs tâches nécessitant de nombreux calculs entrent en concurrence les unes avec les autres.  
   
--   Envisagez l'utilisation des méthodes de la classe <xref:System.Threading.Interlocked> pour les modifications d'état simples, plutôt que l'instruction `lock` \(`SyncLock` en Visual Basic\).  L'instruction `lock` est un bon outil à usage général, mais la classe <xref:System.Threading.Interlocked> fournit de meilleures performances pour les mises à jour qui doivent être atomiques.  En interne, il exécute un préfixe de verrouillage seul s'il n'y a aucun conflit.  Lors de la révision du code, recherchez le code correspondant à celui illustré dans les exemples suivants.  Dans le premier exemple, une variable d'état est incrémentée :  
+-   Envisagez d’utiliser les méthodes de la <xref:System.Threading.Interlocked> classe pour les modifications d’état simple, au lieu d’utiliser le `lock` instruction (`SyncLock` en Visual Basic). Le `lock` instruction est un bon outil à usage général, mais la <xref:System.Threading.Interlocked> classe fournit de meilleures performances pour les mises à jour qui doivent être atomiques. En interne, elle exécute un seul préfixe de verrou s’il n’existe aucun conflit. Lors des phases de révision du code, examinez le code semblable à celui des exemples ci-dessous. Dans le premier exemple, une variable d’état est incrémentée :  
   
     ```vb  
     SyncLock lockObject  
@@ -135,7 +141,7 @@ else {
     }  
     ```  
   
-     Vous pouvez améliorer les performances à l'aide de la méthode <xref:System.Threading.Interlocked.Increment%2A> au lieu de l'instruction `lock`, comme suit :  
+     Vous pouvez améliorer les performances à l’aide de la <xref:System.Threading.Interlocked.Increment%2A> méthode à la place de la `lock` instruction, comme suit :  
   
     ```vb  
     System.Threading.Interlocked.Increment(myField)  
@@ -146,9 +152,9 @@ else {
     ```  
   
     > [!NOTE]
-    >  Dans le .NET Framework version 2.0, la méthode <xref:System.Threading.Interlocked.Add%2A> fournit des mises à jour atomiques dans les incréments supérieurs à 1.  
+    >  Dans le .NET Framework version 2.0, le <xref:System.Threading.Interlocked.Add%2A> méthode fournit des mises à jour atomiques dans les incréments supérieurs à 1.  
   
-     Dans le deuxième exemple, une variable de type référence est mise à jour uniquement s'il s'agit d'une référence null \(`Nothing` en Visual Basic\).  
+     Dans le second exemple, une variable de type référence est uniquement mise à jour s’il s’agit d’une référence null (`Nothing` en Visual Basic).  
   
     ```vb  
     If x Is Nothing Then  
@@ -173,7 +179,7 @@ else {
     }  
     ```  
   
-     Les performances peuvent être améliorées en utilisant à la place la méthode <xref:System.Threading.Interlocked.CompareExchange%2A>, comme suit :  
+     Performances peuvent être améliorées en utilisant la <xref:System.Threading.Interlocked.CompareExchange%2A> méthode à la place, comme suit :  
   
     ```vb  
     System.Threading.Interlocked.CompareExchange(x, y, Nothing)  
@@ -184,19 +190,19 @@ else {
     ```  
   
     > [!NOTE]
-    >  Dans le .NET Framework version 2.0, la méthode <xref:System.Threading.Interlocked.CompareExchange%2A> a une surcharge générique qui peut être utilisée pour le remplacement de type sécurisé de tout type référence.  
+    >  Dans le .NET Framework version 2.0, le <xref:System.Threading.Interlocked.CompareExchange%2A> méthode a une surcharge générique qui peut être utilisée pour le remplacement de type sécurisé de tout type référence.  
   
-## Recommandations pour les bibliothèques de classes  
- Tenez compte des indications suivantes lors de la conception de bibliothèques de classes pour le multithreading :  
+## <a name="recommendations-for-class-libraries"></a>Recommandations relatives aux bibliothèques de classes  
+ Lorsque vous concevez des bibliothèques de classes pour le multithreading, tenez compte des recommandations suivantes :  
   
--   Évitez le besoin de synchronisation, si possible.  C'est particulièrement vrai dans le cas de code très utilisé.  Par exemple, un algorithme peut être ajusté pour tolérer une condition de concurrence critique plutôt que de l'éliminer.  Une synchronisation inutile diminue les performances et entraîne des possibilités d'interblocage et de conditions de concurrence critique.  
+-   Dans la mesure du possible, évitez toute nécessité de synchronisation. Cette consigne s’applique tout particulièrement pour le code très sollicité. Par exemple, un algorithme peut être ajusté de façon à tolérer une condition de concurrence plutôt que de l’éliminer. Une synchronisation inutile dégrade les performances et entraîne un risque d’interblocages et de conditions de concurrence.  
   
--   Rendez les données statiques \(`Shared` en Visual Basic\) thread\-safe par défaut.  
+-   Définissez les données static (`Shared` en Visual Basic) comme thread-safe par défaut.  
   
--   Ne rendez pas les données d'instance thread\-safe par défaut.  L'ajout de verrous pour créer du code thread\-safe diminue les performances, augmente les conflits de verrouillage et entraîne des possibilités d'interblocages.  Dans les modèles d'application courants, un seul thread à la fois exécute le code utilisateur, ce qui réduit le besoin de sécurité des threads.  Pour cette raison, les bibliothèques de classes .NET Framework ne sont pas thread\-safe par défaut.  
+-   Ne définissez pas les données d’instance comme thread-safe par défaut. L’ajout de verrous pour créer un code thread-safe diminue les performances, multiplie les conflits de verrou et occasionne un risque d’interblocages. Dans les modèles d’application communs, le code utilisateur n’est exécuté que par un seul thread à la fois, ce qui minimise la nécessité d’une cohérence de thread. C’est la raison pour laquelle les bibliothèques de classes .NET Framework ne sont pas thread-safe par défaut.  
   
--   Évitez de fournir des méthodes statiques qui modifient l'état statique.  Dans les scénarios de serveur courants, l'état statique est partagé par plusieurs demandes, ce qui signifie que plusieurs threads peuvent exécuter ce code en même temps.  Cela entraîne la possibilité de bogues liés aux threads.  Envisagez d'utiliser un modèle de design qui encapsule des données dans des instances qui ne sont pas partagées par plusieurs demandes.  En outre, si les données statiques sont synchronisées, les appels entre les méthodes statiques qui altèrent l'état peuvent entraîner des interblocages ou une synchronisation redondante, ce qui a une incidence néfaste sur les performances.  
+-   Évitez de fournir des méthodes statiques qui modifient l’état statique. Dans les scénarios de serveur courants, l’état statique est partagé entre les requêtes, ce qui signifie que plusieurs threads peuvent exécuter ce code en même temps. Ceci occasionne un risque de bogues de threading. Envisagez d’utiliser un modèle de conception qui encapsule les données dans des instances non partagées entre les requêtes. En outre, si les données static sont synchronisées, les appels entre les méthodes statiques qui modifient l’état peuvent entraîner des interblocages ou une synchronisation redondante et dégrader ainsi les performances.  
   
-## Voir aussi  
- [Threading](../../../docs/standard/threading/index.md)   
- [Threads and Threading](../../../docs/standard/threading/threads-and-threading.md)
+## <a name="see-also"></a>Voir aussi  
+ [Thread](../../../docs/standard/threading/index.md)  
+ [Threads et threading](../../../docs/standard/threading/threads-and-threading.md)

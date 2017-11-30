@@ -1,12 +1,9 @@
 ---
 title: Common Language Runtime (CLR)
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - compiling source code, runtime functionality
@@ -21,16 +18,14 @@ helpviewer_keywords:
 - source code execution
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
-caps.latest.revision: 24
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: dc103d1fc853cd98f899e75d08dbfaf4dd9230d0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98c9e59342c1a336fc6889464fce529feebc2414
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="common-language-runtime-clr"></a>Common Language Runtime (CLR)
 Le .NET Framework fournit un environnement d'exécution, appelé le Common Language Runtime, qui exécute le code et offre des services qui simplifient le processus de développement.  
@@ -81,7 +76,7 @@ Le .NET Framework fournit un environnement d'exécution, appelé le Common Lang
 |4|4|  
 |4.5 (y compris 4.5.1 et 4.5.2)|4|  
 |4.6 (y compris 4.6.1 et 4.6.2)|4|
-|4.7|4|  
+|4.7 (y compris 4.7.1)|4|  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
@@ -94,4 +89,3 @@ Le .NET Framework fournit un environnement d'exécution, appelé le Common Lang
   
 ## <a name="see-also"></a>Voir aussi  
  [Versions et dépendances](../../docs/framework/migration-guide/versions-and-dependencies.md)
-

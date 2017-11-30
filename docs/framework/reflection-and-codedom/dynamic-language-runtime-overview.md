@@ -1,12 +1,11 @@
 ---
-title: Vue d'ensemble du Dynamic Language Runtime
+title: "Vue d’ensemble du Dynamic Language Runtime | Microsoft Docs"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,16 +14,15 @@ helpviewer_keywords:
 - DLR
 - IronRuby
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: b62a737a5106c64d08a342365867c460075011b5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0f6bfc54a3a597325da153852710a0b22871b54e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="dynamic-language-runtime-overview"></a>Vue d'ensemble du Dynamic Language Runtime
 Le *Dynamic Language Runtime* (DLR) est un environnement d’exécution ajoutant au Common Language Runtime (CLR) un ensemble de services pour les langages dynamiques. Le DLR simplifie le développement de langages dynamiques à exécuter sur le .NET Framework et l’ajout de fonctionnalités dynamiques aux langages typés statiquement.  
@@ -102,9 +100,8 @@ Architecture du DLR
  Pour plus d’informations sur la façon d’utiliser la version Open Source du DLR afin d’ajouter le comportement dynamique à un langage, ou sur la façon d’utiliser un langage dynamique avec le .NET Framework, consultez la documentation sur le site web de [CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Dynamic.ExpandoObject>   
- <xref:System.Dynamic.DynamicObject>   
- [Common Language Runtime](../../../docs/standard/clr.md)   
- [Expression Trees](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)   
+ <xref:System.Dynamic.ExpandoObject>  
+ <xref:System.Dynamic.DynamicObject>  
+ [Common Language Runtime](../../../docs/standard/clr.md)  
+ [Arborescences de l’expression](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
  [Procédure pas à pas : création et utilisation d’objets dynamiques](~/docs/csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
-

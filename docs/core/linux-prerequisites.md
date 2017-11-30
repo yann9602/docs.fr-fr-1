@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
+ms.openlocfilehash: 04fdf26e150e6d489c0641588563f69f24835615
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 1b0379156f44b0a3e765f8d832c7a1ca74ee3598
-ms.openlocfilehash: d9da6ea27293e95e36ff8edc42ef8bafbc86c8ec
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/08/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="prerequisites-for-net-core-on-linux"></a>Prérequis pour .NET Core sur Linux
 
 Cet article montre les dépendances nécessaires pour développer des applications .NET Core sur Linux. Les distributions/versions Linux et les dépendances prises en charge ci-après s’appliquent aux deux façons de développer des applications .NET Core sur Linux :
@@ -64,33 +62,35 @@ Consultez [.NET Core 1.x - Versions des systèmes d’exploitation prises en cha
 
 ## <a name="linux-distribution-dependencies"></a>Dépendances des distributions Linux
 
+Les éléments suivants sont destinés à être des exemples. Les noms et les versions exactes peuvent varier légèrement sur votre distribution Linux de choix.
+
 ### <a name="ubuntu"></a>Ubuntu
 
 Les distributions Ubuntu nécessitent l’installation des bibliothèques suivantes :
 
 * libunwind8
-* libunwind8-dev
-* gettext
-* libicu-dev
-* liblttng-ust-dev
-* libcurl4-openssl-dev
-* libssl-dev
-* uuid-dev
-* unzip
+* liblttng-ust0
+* libcurl3
+* libssl1.0.0
+* libuuid1
+* libkrb5
+* zlib1g
+* libicu52 (pour 14.X)
+* libicu55 (pour 16.X)
+* libicu57 (pour 17.X)
 
 ### <a name="centos"></a>CentOS
 
 Les distributions CentOS nécessitent l’installation des bibliothèques suivantes :
 
-* deltarpm
-* epel-release
-* unzip
 * libunwind
-* gettext
-* libcurl-devel
-* openssl-devel
+* lttng-ust
+* libcurl
+* bibliothèques OpenSSL
+* libuuid
+* krb5-libs
+* libicu
 * zlib
-* libicu-devel
 
 Pour plus d’informations sur les dépendances, consultez [Applications Linux autonomes](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md) (en anglais).
 
@@ -105,7 +105,7 @@ Sur Linux, il existe deux choix pour le package de programme d’installation :
 
 ### <a name="scripting-installs-with-the-net-core-installer-script"></a>Script d’installation avec le script de programme d’installation de .NET Core
 
-Les scripts `dotnet-install` sont utilisés pour effectuer une installation non administrateur de la chaîne d’outils CLI et du runtime partagé. Vous pouvez télécharger les scripts à partir du [référentiel GitHub sur les outils CLI](https://github.com/dotnet/cli/tree/rel/1.0.0/scripts/obtain).
+Les scripts `dotnet-install` sont utilisés pour effectuer une installation non administrateur de la chaîne d’outils CLI et du runtime partagé. Vous pouvez télécharger le script à partir de : https://dot.net/v1/dotnet-install.sh
 
 Le script bash du programme d’installation est utilisé dans les scénarios d’automatisation et dans les installations non administratives. Comme ce script lit également les commutateurs PowerShell, ces derniers peuvent être utilisés avec le script sur les systèmes Linux/OS X.
 
@@ -633,4 +633,3 @@ Pour installer .NET Core 2.x pour openSUSE ou .NET Core 1.x pour openSUSE (64 bi
 > En cas de problème avec l’installation de .NET Core 2.x sur une distribution/version Linux prise en charge, consultez la rubrique correspondante traitant des [problèmes connus avec la version 2.0](https://github.com/dotnet/core/tree/master/release-notes/2.0). 
 >
 > En cas de problème avec l’installation de .NET Core 1.x sur une distribution/version Linux prise en charge, consultez la rubrique correspondante traitant des [problèmes connus avec la version 1.0.0](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md) ou des [problèmes connus avec la version 1.0.1](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md).
-

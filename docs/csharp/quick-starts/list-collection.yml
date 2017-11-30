@@ -1,159 +1,37 @@
-### YamlMime:YamlDocument
 documentType: Tutorial
-title: 'Collections en C#'
+title: Collections en C#
 metadata:
-  title: 'Collections en C#. Apprenez à utiliser des séquences et des collections en C#.'
-  description: 'Dans ce didacticiel, vous allez utiliser votre navigateur pour découvrir C# de manière interactive. Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur.'
+  title: "Collections en C#. Apprenez à utiliser des séquences et des collections en C#."
+  description: "Dans ce didacticiel, vous allez utiliser votre navigateur pour découvrir C# de manière interactive. Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur."
   audience: Developer
+  ms.custom: mvc
   level: Beginner
   displayType: two-column
   interactive: csharp
 items:
-  - durationInMinutes: 1
-    content: |
-      Ce didacticiel vous explique comment utiliser C# de manière interactive à l’aide de votre navigateur et afficher les résultats de la compilation et de l’exécution de votre code. Il contient une série de leçons sur la création, la modification et l’exploration de collections et tableaux.
-  - title: Créer des listes
-    durationInMinutes: 2
-    content: |
-      Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive (remplacez « <name> » par votre nom) et cliquez sur le bouton **Exécuter** :
-
-      ```csharp
-      var names = new List<string> { "<name>", "Ana", "Felipe" };
-      foreach (var name in names)
-      {
-        Console.WriteLine($"Hello {name.ToUpper()}!");
-      }
-      ```
-
-      Vous venez de créer une liste de chaînes, d’ajouter trois noms à cette liste et d’afficher les noms tout en majuscules. Vous utilisez des concepts que vous avez appris dans des Démarrages rapides précédents pour lire la liste en boucle.
-
-      Le code permettant d’afficher les noms utilise des **chaînes interpolées**.  Quand vous faites précéder une `string` du caractère `$`, vous pouvez incorporer le code C# dans la déclaration de chaîne. La chaîne réelle remplace ce code C# par la valeur qu’elle génère. Dans cet exemple, elle remplace `{name.ToUpper()}` par chaque nom, converti en majuscules, car vous avez appelé la méthode <xref:System.String.ToUpper%2A>.
-
-      Continuons notre exploration.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Modifier le contenu de la liste
-    durationInMinutes: 3
-    content: |
-      La collection que vous avez créée utilise le type <xref:System.Collections.Generic.List%601>. Ce type stocke les séquences d’éléments. Vous spécifiez le type des éléments entre crochets angulaires.
-
-      Un aspect important du type <xref:System.Collections.Generic.List%601> est qu’il peut augmenter ou diminuer, ce qui vous permet d’ajouter ou de supprimer des éléments. Ajoutez le code suivant sous le code que vous avez déjà écrit :
-
-      ```csharp
-      Console.WriteLine();
-      names.Add("Maria");
-      names.Add("Bill");
-      names.Remove("Ana");
-      foreach (var name in names)
-      {
-        Console.WriteLine($"Hello {name.ToUpper()}!");
-      }
-      ```
-
-      Vous avez ajouté deux noms supplémentaires à la fin de la liste. Vous en avez également supprimé un.
-
-      La <xref:System.Collections.Generic.List%601> vous permet en outre de faire référence à des éléments individuels par **index**. Vous accédez aux éléments à l’aide des jetons `[` et `]`. Ajoutez le code suivant sous ce que vous avez déjà écrit et effectuez un essai :
-
-      ```csharp
-      Console.WriteLine($"My name is {names[0]}.");
-      Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
-      ```
-
-      Vous n’êtes pas autorisé à accéder au-delà de la fin de la liste. Vous pouvez vérifier la longueur de la liste à l’aide de la propriété <xref:System.Collections.Generic.List%601.Count%2A>. Ajoutez-y le code suivant pour effectuer un essai :
-
-      ```csharp
-      Console.WriteLine($"The list has {names.Count} people in it");
-      ```
-
-      Cliquez de nouveau sur **Exécuter** pour afficher les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Trier les listes et y effectuer des recherches
-    durationInMinutes: 5
-    content: |
-      Nos exemples utilisent des listes relativement petites, mais vos applications peuvent souvent générer des listes contenant beaucoup plus d’éléments, qui se comptent parfois même en milliers. Pour rechercher des éléments dans ces collections plus volumineuses, vous devez rechercher différents éléments dans la liste. La méthode <xref:System.Collections.Generic.List%601.IndexOf%2A> recherche un élément et retourne l’index de ce dernier. Effectuez un essai pour observer son fonctionnement.  Ajoutez le code suivant sous ce que vous avez écrit jusque-là :
-
-      ```csharp
-      var index = names.IndexOf("Felipe");
-      if (index != -1)
-        Console.WriteLine($"The name {names[index]} is at index {index}");
-
-      var notFound = names.IndexOf("Not Found");
-        Console.WriteLine($"When an item is not found, IndexOf returns {notFound}");
-      ```
-
-      Étant donné que vous pouvez ne pas savoir si un élément figure dans la liste, vous devriez toujours vérifier l’index retourné par <xref:System.Collections.Generic.List%601.IndexOf%2A>. S’il indique -1, l’élément est introuvable.
-
-      Il est également possible de trier les éléments de la liste. La méthode <xref:System.Collections.Generic.List%601.Sort%2A> trie tous les éléments de la liste dans l’ordre normal (par ordre alphabétique dans le cas de chaînes). Ajoutez le code et exécutez-le de nouveau :
-
-      ```csharp
-      names.Sort();
-      foreach (var name in names)
-      {
-        Console.WriteLine($"Hello {name.ToUpper()}!");
-      }
-      ```
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Listes d’autres types
-    durationInMinutes: 5
-    content: |
-      Vous avez jusqu'à présent utilisé le type `string` dans les listes. Nous allons maintenant créer une <xref:System.Collections.Generic.List%601> en utilisant un autre type. Commençons par créer un ensemble de nombres. Supprimez le code que vous avez écrit jusque-là et remplacez-le par celui-ci :
-
-      ```csharp
-      var fibonacciNumbers = new List<int> {1, 1};
-      ```
-
-      Cela crée une liste d’entiers et définit les deux premiers entiers sur la valeur 1. Il s’agit des deux premières valeurs d’une *séquence Fibonacci* (séquence de nombres). Chaque nombre Fibonacci suivant correspond à la somme des deux nombres précédents. Ajoutez le code suivant :
-
-      ```csharp
-      var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
-      var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
-
-      fibonacciNumbers.Add(previous + previous2);
-
-      foreach(var item in fibonacciNumbers)
-          Console.WriteLine(item);
-      ```
-
-      Cliquez sur **Exécuter** pour afficher les résultats.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Test
-    durationInMinutes: 10
-    content: |
-      Vérifiez si vous pouvez mettre en pratique certaines des leçons apprises ici et d’autres leçons antérieures. Approfondissez à partir de ce que vous avez créé jusqu'à présent avec les nombres de Fibonacci. Essayez d’écrire le code pour générer les 20 premiers nombres de la séquence.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Terminer le test
-    durationInMinutes: 3
-    content: |
-      Avez-vous obtenu un résultat similaire à celui-ci ?
-
-      ```csharp
-      var fibonacciNumbers = new List<int> {1, 1};
-
-      while (fibonacciNumbers.Count < 20)
-      {
-          var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
-          var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
-          
-          fibonacciNumbers.Add(previous + previous2);
-      }
-      foreach(var item in fibonacciNumbers)
-          Console.WriteLine(item);
-      ```
-
-      À chaque itération de la boucle, vous sélectionnez les deux derniers entiers de la liste, les additionner et ajoutez la valeur obtenue à la liste. La boucle se répète jusqu'à ce que vous ayez ajouté 20 éléments à la liste.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - content: |
-      Vous avez terminé ce didacticiel sur les listes.
-
-      Pour plus d’informations sur l’utilisation du type `List`, consultez la rubrique du [Guide .NET](../../standard/index.md) sur les [collections](../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.
+- durationInMinutes: 1
+  content: "Ce guide de démarrage rapide vous apprend c# de manière interactive, à l’aide de votre navigateur pour écrire du code c# et de voir les résultats de la compilation et exécution de votre code. Il contient une série de leçons sur la création, la modification et l’exploration de collections et tableaux.\n"
+  ms.openlocfilehash: e00cf6badcbd39cc1e9320095169d86efb9cad8f
+  ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 11/22/2017
+- title: "Créer des listes"
+  durationInMinutes: 2
+  content: "Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive (remplacez « <name> » par votre nom) et cliquez sur le bouton **Exécuter** :\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nVous venez de créer une liste de chaînes, d’ajouter trois noms à cette liste et d’afficher les noms tout en majuscules. Vous utilisez des concepts que vous avez appris dans des Démarrages rapides précédents pour lire la liste en boucle.\n\nLe code permettant d’afficher les noms utilise des **chaînes interpolées**.  Quand vous faites précéder une `string` du caractère `$`, vous pouvez incorporer le code C# dans la déclaration de chaîne. La chaîne réelle remplace ce code C# par la valeur qu’elle génère. Dans cet exemple, elle remplace `{name.ToUpper()}` par chaque nom, converti en majuscules, car vous avez appelé la méthode <xref:System.String.ToUpper%2A>.\n\nContinuons notre exploration.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Modifier le contenu de la liste
+  durationInMinutes: 3
+  content: "La collection que vous avez créée utilise le type <xref:System.Collections.Generic.List%601>. Ce type stocke les séquences d’éléments. Vous spécifiez le type des éléments entre crochets angulaires.\n\nUn aspect important du type <xref:System.Collections.Generic.List%601> est qu’il peut augmenter ou diminuer, ce qui vous permet d’ajouter ou de supprimer des éléments. Ajoutez le code suivant sous le code que vous avez déjà écrit :\n\n```csharp\nConsole.WriteLine();\nnames.Add(\"Maria\");\nnames.Add(\"Bill\");\nnames.Remove(\"Ana\");\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nVous avez ajouté deux noms supplémentaires à la fin de la liste. Vous en avez également supprimé un.\n\nLa <xref:System.Collections.Generic.List%601> vous permet en outre de faire référence à des éléments individuels par **index**. Vous accédez aux éléments à l’aide des jetons `[` et `]`. Ajoutez le code suivant sous ce que vous avez déjà écrit et effectuez un essai :\n\n```csharp\nConsole.WriteLine($\"My name is {names[0]}.\");\nConsole.WriteLine($\"I've added {names[2]} and {names[3]} to the list.\");\n```\n\nVous n’êtes pas autorisé à accéder au-delà de la fin de la liste. Vous pouvez vérifier la longueur de la liste à l’aide de la propriété <xref:System.Collections.Generic.List%601.Count%2A>. Ajoutez-y le code suivant pour effectuer un essai :\n\n```csharp\nConsole.WriteLine($\"The list has {names.Count} people in it\");\n```\n\nCliquez de nouveau sur **Exécuter** pour afficher les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Trier les listes et y effectuer des recherches
+  durationInMinutes: 5
+  content: "Nos exemples utilisent des listes relativement petites, mais vos applications peuvent souvent générer des listes contenant beaucoup plus d’éléments, qui se comptent parfois même en milliers. Pour rechercher des éléments dans ces collections plus volumineuses, vous devez rechercher différents éléments dans la liste. La méthode <xref:System.Collections.Generic.List%601.IndexOf%2A> recherche un élément et retourne l’index de ce dernier. Effectuez un essai pour observer son fonctionnement.  Ajoutez le code suivant sous ce que vous avez écrit jusque-là :\n\n```csharp\nvar index = names.IndexOf(\"Felipe\");\nif (index != -1)\n  Console.WriteLine($\"The name {names[index]} is at index {index}\");\n\nvar notFound = names.IndexOf(\"Not Found\");\n  Console.WriteLine($\"When an item is not found, IndexOf returns {notFound}\");\n```\n\nÉtant donné que vous pouvez ne pas savoir si un élément figure dans la liste, vous devriez toujours vérifier l’index retourné par <xref:System.Collections.Generic.List%601.IndexOf%2A>. S’il indique -1, l’élément est introuvable.\n\nIl est également possible de trier les éléments de la liste. La méthode <xref:System.Collections.Generic.List%601.Sort%2A> trie tous les éléments de la liste dans l’ordre normal (par ordre alphabétique dans le cas de chaînes). Ajoutez le code et exécutez-le de nouveau :\n\n```csharp\nnames.Sort();\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: "Listes d’autres types"
+  durationInMinutes: 5
+  content: "Vous avez jusqu'à présent utilisé le type `string` dans les listes. Nous allons maintenant créer une <xref:System.Collections.Generic.List%601> en utilisant un autre type. Commençons par créer un ensemble de nombres. Supprimez le code que vous avez écrit jusque-là et remplacez-le par celui-ci :\n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n```\n\nCela crée une liste d’entiers et définit les deux premiers entiers sur la valeur 1. Il s’agit des deux premières valeurs d’une *séquence Fibonacci* (séquence de nombres). Chaque nombre Fibonacci suivant correspond à la somme des deux nombres précédents. Ajoutez le code suivant :\n\n```csharp\nvar previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\nvar previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n\nfibonacciNumbers.Add(previous + previous2);\n\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nCliquez sur **Exécuter** pour afficher les résultats.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Test
+  durationInMinutes: 10
+  content: "Vérifiez si vous pouvez mettre en pratique certaines des leçons apprises ici et d’autres leçons antérieures. Approfondissez à partir de ce que vous avez créé jusqu'à présent avec les nombres de Fibonacci. Essayez d’écrire le code pour générer les 20 premiers nombres de la séquence.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Terminer le test
+  durationInMinutes: 3
+  content: "Avez-vous obtenu un résultat similaire à celui-ci ?\n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n\nwhile (fibonacciNumbers.Count < 20)\n{\n    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\n    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n    \n    fibonacciNumbers.Add(previous + previous2);\n}\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nÀ chaque itération de la boucle, vous sélectionnez les deux derniers entiers de la liste, les additionner et ajoutez la valeur obtenue à la liste. La boucle se répète jusqu'à ce que vous ayez ajouté 20 éléments à la liste.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- content: "Vous avez terminé le démarrage rapide de liste. Ce démarrage rapide est le démarrage rapide interactif final. Vous pouvez continuer à ces Démarrages rapides sur votre propre environnement de développement. La rubrique .NET [prise en main de 10 minutes](https://www.microsoft.com/net/core) a des instructions pour configurer votre environnement de développement local. Ensuite, continuez [Introduction aux classes](introduction-to-classes.md) dans votre environnement local.\n\nPour plus d’informations sur l’utilisation du type `List`, consultez la rubrique du [Guide .NET](../../standard/index.md) sur les [collections](../../standard/collections/index.md). Vous allez également en découvrir plus sur de nombreux autres types de collection.\0"

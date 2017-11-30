@@ -6,12 +6,11 @@ ms.author: mairaw
 ms.date: 08/15/2016
 ms.topic: article
 ms.prod: .net
+ms.openlocfilehash: fa001492aa76c4690faca23cb2a1e0467a857a6d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: fe2c7ff4055779a000b68a68333f3e4d06381410
-ms.openlocfilehash: aa06ff8253f22c5c867d4ba12c0a132269e04a97
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Choix entre .NET Core et .NET Framework pour les applications serveur
 
@@ -19,9 +18,9 @@ Il existe deux implémentations pour générer des applications serveur avec .NE
 
 Utilisez .NET Core pour votre application serveur quand :
 
-* Vous avez des besoins multiplateformes.
-* Vous ciblez des microservices.
-* Vous utilisez des conteneurs Docker.
+* vous avez des besoins multiplateformes ;
+* vous ciblez des microservices ;
+* vous utilisez des conteneurs Docker ;
 * Vous avez besoin de systèmes scalables et hautes performances.
 * Vous avez besoin de versions .NET côte à côte par application.
 
@@ -40,7 +39,7 @@ Les sections suivantes donnent une explication plus détaillée des raisons indi
 
 Si votre application (web/service) doit s’exécuter sur plusieurs plateformes (Windows, Linux et macOS), utilisez .NET Core.
 
-.NET Core prend en charge les systèmes d’exploitation précédemment mentionnés comme station de travail de développement. Visual Studio fournit un environnement de développement intégré (IDE) pour Windows et Mac. Vous pouvez également utiliser Visual Studio Code, qui s’exécute sur macOS, Linux et Windows. Visual Studio Code prend en charge .NET Core, notamment IntelliSense et le débogage. La plupart des éditeurs tiers, tels que Sublime, Emacs et VI, fonctionnent avec .NET Core. Ces éditeurs tiers obtiennent l’éditeur IntelliSense en utilisant [Omnisharp](http://www.omnisharp.net/). Vous pouvez aussi vous affranchir des éditeurs de code et utiliser directement les [outils CLI .NET Core](../core/tools/index.md), disponibles pour toutes les plateformes prises en charge.
+.NET Core prend en charge les systèmes d’exploitation précédemment mentionnés comme station de travail de développement. Visual Studio fournit un environnement de développement intégré (IDE) pour Windows et macOS. Vous pouvez également utiliser Visual Studio Code, qui s’exécute sur macOS, Linux et Windows. Visual Studio Code prend en charge .NET Core, notamment IntelliSense et le débogage. La plupart des éditeurs tiers, tels que Sublime, Emacs et VI, fonctionnent avec .NET Core. Ces éditeurs tiers obtiennent l’éditeur IntelliSense en utilisant [Omnisharp](http://www.omnisharp.net/). Vous pouvez aussi vous affranchir des éditeurs de code et utiliser directement les [outils CLI .NET Core](../core/tools/index.md), disponibles pour toutes les plateformes prises en charge.
 
 ### <a name="microservices-architecture"></a>Architecture en microservices
 
@@ -66,7 +65,7 @@ Niveau de performance et scalabilité sont particulièrement pertinents pour les
 
 Pour installer des applications avec des dépendances sur différentes versions de .NET, nous vous recommandons .NET Core. .NET Core permet d’installer côte à côte différentes versions du runtime .NET Core sur le même ordinateur. Ainsi, plusieurs services peuvent cohabiter sur le même serveur, chacun d’eux sur sa propre version de .NET Core. De plus, les risques et les coûts liés aux opérations informatiques et aux mises à niveau des applications s’en trouvent réduits.
 
-## <a name="when-to-choose-net-framework"></a>Quand choisir le .NET Framework
+## <a name="when-to-choose-net-framework"></a>Quand choisir .NET Framework
 
 .NET Core offre des avantages significatifs pour les nouvelles applications et les nouveaux modèles d’application. Toutefois, le .NET Framework continue d’être le choix naturel pour de nombreux scénarios existants et en tant que tel. Le .NET Framework n’est pas remplacé par .NET Core pour toutes les applications serveur.
 
@@ -107,10 +106,9 @@ En plus de la feuille de route officielle, il existe d’autres frameworks à po
 Certaines plateformes Microsoft ou tierces ne prennent pas en charge .NET Core. Par exemple, certains services Azure, tels que Service Fabric Stateful Reliable Services et Service Fabric Reliable Actors, exigent .NET Framework. D’autres services fournissent un SDK qui n’est pas encore utilisable sur .NET Core. Il s’agit d’une circonstance transitoire, car tous les services Azure utilisent .NET Core. En attendant, vous pouvez toujours utiliser l’API REST équivalente au lieu du SDK client.
 
 ## <a name="see-also"></a>Voir aussi
- [Choisir entre ASP.NET et ASP.NET Core](/aspnet/core/choose-aspnet-framework)   
- [Guide .NET Core](../core/index.md)   
- [Portage depuis .NET Framework vers .NET Core](../core/porting/index.md)   
- [Guide de .NET Framework sur Docker](../framework/docker/index.md)   
- [Vue d’ensemble des composants .NET](components.md)   
+ [Choisissez entre ASP.NET et ASP.NET Core](/aspnet/core/choose-aspnet-framework)  
+ [Guide .NET Core](../core/index.md)  
+ [Portage depuis .NET Framework vers .NET Core](../core/porting/index.md)  
+ [Guide de .NET Framework sur Docker](../framework/docker/index.md)  
+ [Vue d’ensemble des composants .NET](components.md)  
  [Microservices .NET. Architecture pour les applications .NET en conteneurs](microservices-architecture/index.md)
-

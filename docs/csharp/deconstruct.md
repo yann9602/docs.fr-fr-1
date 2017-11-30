@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 2bb94b3f1f4966ed44b2a5d4f14dfeee29707059
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e626eeb1f3de2716e1ffe4fcbec1c16558e5bf0e
+ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Déconstruction de tuples et d’autres types #
 
@@ -34,7 +34,7 @@ Des fonctionnalités C# intégrées prennent en charge la déconstruction des tu
 var (name, address, city, zip) = contact.GetAddressInfo();
 ```
 
-Il existe deux façons de déconstruire un tuple :
+Il existe trois façons de décomposer un tuple :
 
 - Vous pouvez déclarer explicitement le type de chaque champ entre des parenthèses. L’exemple suivant utilise cette approche pour déconstruire un tuple de 3 éléments retourné par la méthode `QueryCityData`.
 
@@ -50,9 +50,15 @@ Il existe deux façons de déconstruire un tuple :
 
     Ceci est assez fastidieux et n’est pas recommandé.
 
+- Enfin, vous pouvez décomposer le tuple dans les variables qui ont déjà été déclarés.
+
+    [!code-csharp[Deconstruction-Declared](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple5.cs#1)]
+
 Notez que vous ne pouvez pas spécifier un type spécifique en dehors des parenthèses, même si tous les champs du tuple ont le même type. Cela génère l’erreur du compilateur CS8136, « La déconstruction de 'var (...)' form interdit un type spécifique pour 'var'.».
 
 Notez que vous devez également affecter chaque élément du tuple à une variable. Si vous omettez des éléments, le compilateur génère l’erreur CS8132, « Impossible de déconstruire un tuple de « x » éléments en « y » variables ».
+
+Notez que vous ne pouvez pas mélanger des déclarations et des assignations aux variables existantes sur le côté gauche d’un déploiement. Le compilateur génère l’erreur CS8184, « une destruction Impossible de mélanger les déclarations et les expressions sur la partie gauche. » Lorsque les membres incluent des variables qui vient d’être déclarés et existantes.
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>Déconstruction d’éléments d’un tuple en ignorant des éléments
 

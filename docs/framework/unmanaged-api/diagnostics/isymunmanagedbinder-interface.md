@@ -19,11 +19,11 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5061ce28c4a09f445267c99420bf1942d99076bf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 00b0b5ee330a606ae7417185a804f3d37ab6664a
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="isymunmanagedbinder-interface"></a>ISymUnmanagedBinder, interface
 Représente un classeur de symboles pour le code non managé.  
@@ -35,8 +35,8 @@ Représente un classeur de symboles pour le code non managé.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetReaderForFile (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|Une interface de métadonnées et un nom de fichier, retourne le correct <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> structure qui lit les symboles de débogage associés au module.|  
-|[GetReaderFromStream (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|Une interface de métadonnées et un flux qui contient le magasin de symboles, retourne le correct <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> symboles de structure qui lira le débogage à partir du magasin de symboles donné.|  
+|[GetReaderForFile (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|Une interface de métadonnées et un nom de fichier, retourne le correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure qui lit les symboles de débogage associés au module.|  
+|[GetReaderFromStream (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|Une interface de métadonnées et un flux qui contient le magasin de symboles, retourne le correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure qui lira le débogage des symboles à partir du magasin de symboles donné.|  
   
 ## <a name="requirements"></a>Spécifications  
  **En-tête :** CorSym.idl, CorSym.h  

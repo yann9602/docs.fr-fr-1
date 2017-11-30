@@ -1,22 +1,21 @@
 ---
 title: "Gestion automatique de la mémoire et garbage collection"
-description: "Gestion automatique de la mémoire et garbage collection"
+description: "Découvrez la mémoire automatique gestion est un des services que le Common Language Runtime fournit au cours d’exécution managé."
 keywords: .NET, .NET Core
-author: stevehoag
-ms.author: shoag
+author: dotnet-bot
+ms.author: dotnetcontent
 ms.date: 07/22/2016
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d095b0b6-2454-4e23-80b4-c9e8a447116c
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 36423ac3248b14a9bb95611d5997d06b927fa88e
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 30bcf08ebb4e05706d5b25e2f805474dd1ee428e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="automatic-memory-management-and-garbage-collection"></a>Gestion automatique de la mémoire et garbage collection
 
 La gestion automatique de la mémoire est un des services que le Common Language Runtime fournit au cours de l'exécution managée. Le Garbage collector du Common Language Runtime gère l’allocation et la libération de mémoire pour une application. Les développeurs n’ont donc plus à écrire du code pour exécuter leurs tâches de gestion de mémoire lors du développement d’applications managées. La gestion automatique de la mémoire permet d'éliminer des problèmes fréquents tels que l'oubli de libération d'un objet ou les fuites de mémoire ou encore les tentatives d'accès à la mémoire à la recherche d'un objet qui a déjà été libéré. Cette section décrit la façon dont le « garbage collector » alloue et libère la mémoire.
@@ -56,5 +55,4 @@ Pour la majorité des objets créés par votre application, vous pouvez laisser 
 [System.GC](xref:System.GC)
 
 [Garbage collection dans le .NET](index.md)
-
 

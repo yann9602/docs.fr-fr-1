@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 519b910a-6efe-4394-9b81-0546aa3e7462
+ms.openlocfilehash: c3955951c0367e1933342172c1bc1888fb58f60c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: a7af88d8d7b19e201c0f7829915e817daa61c838
-ms.openlocfilehash: 243c924826a54907840b337a91cf1e5d19cff985
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/08/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="create-a-custom-template-for-dotnet-new"></a>Créer un modèle personnalisé pour dotnet new
 
 Ce didacticiel vous montre comment effectuer les opérations suivantes :
@@ -41,7 +39,7 @@ Si vous souhaitez utiliser l’exemple téléchargé avec une distribution à pa
 
 ## <a name="create-a-template-from-a-project"></a>Créer un modèle à partir d’un projet
 
-Utilisez un projet existant dont vous savez qu’il peut être compilé et exécuté, ou créez un projet d’application console dans un dossier de votre disque dur. Ce didacticiel suppose que le dossier de projet porte le nom *GarciaSoftware.ConsoleTemplate.CSharp* et qu’il est stocké à l’emplacement *Documents/Templates* dans le profil de l’utilisateur. Le nom du modèle de projet du didacticiel est au format *\<nom de la société>.\<type de modèle>.\<langage de programmation>*, mais vous êtes libre de nommer votre projet et votre modèle comme vous le souhaitez.
+Utilisez un projet existant que vous avez confirmé compile et s’exécute ou créer un nouveau projet d’application console dans un dossier sur votre disque dur. Ce didacticiel suppose que le dossier de projet porte le nom *GarciaSoftware.ConsoleTemplate.CSharp* et qu’il est stocké à l’emplacement *Documents/Templates* dans le profil de l’utilisateur. Le nom du modèle de projet du didacticiel est au format *\<nom de la société>.\<type de modèle>.\<langage de programmation>*, mais vous êtes libre de nommer votre projet et votre modèle comme vous le souhaitez.
 
 1. Ajoutez un dossier nommé *.template.config* à la racine du projet.
 1. Dans le dossier *.template.config*, créez un fichier *template.json* pour configurer votre modèle. Pour obtenir plus d’informations et connaître les définitions de membre du fichier *template.json*, consultez la rubrique [Modèles personnalisés pour dotnet new](../tools/custom-templates.md#templatejson) et le schéma [*template.json* dans le magasin de schémas JSON](http://json.schemastore.org/template).
@@ -219,4 +217,3 @@ dotnet new -u C:/Users/<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate
 [Dépôt GitHub dotnet/dotnet-template-samples](https://github.com/dotnet/dotnet-template-samples)  
 [Guide pratique pour créer vos propres modèles pour dotnet new](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)  
 [Schéma *template.json* dans le magasin de schémas JSON](http://json.schemastore.org/template)  
-

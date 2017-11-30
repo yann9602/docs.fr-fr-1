@@ -1,34 +1,35 @@
 ---
-title: "Proc&#233;dure&#160;: effectuer une transformation XSLT &#224; l&#39;aide d&#39;un assembly | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Procédure : effectuer une transformation XSLT à l'aide d'un assembly"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: f236296d604bc465973d17d63883e7b212b7f02d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: effectuer une transformation XSLT &#224; l&#39;aide d&#39;un assembly
-Le compilateur XSLT \(xsltc.exe\) compile des feuilles de style XSLT et génère un assembly.  L'assembly peut être passé directement dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=fullName>.  
+# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Procédure : effectuer une transformation XSLT à l'aide d'un assembly
+Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère un assembly. L'assembly peut être passé directement dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>.  
   
-### Pour copier les fichiers XML et XSLT sur votre ordinateur local  
+### <a name="to-copy-the-xml-and-xslt-files-to-your-local-computer"></a>Pour copier les fichiers XML et XSLT sur votre ordinateur local  
   
--   Copiez le fichier XSLT sur votre ordinateur local et nommez\-le Transform.xsl.  
+-   Copiez le fichier XSLT sur votre ordinateur local et nommez-le Transform.xsl.  
   
-    ```  
+    ```xml  
     <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
       xmlns:msxsl="urn:schemas-microsoft-com:xslt"  
       xmlns:user="urn:my-scripts">  
@@ -93,9 +94,9 @@ Le compilateur XSLT \(xsltc.exe\) compile des feuilles de style XSLT et génère
     </xsl:stylesheet>  
     ```  
   
--   Copiez le fichier XML sur votre ordinateur local et nommez\-le `books.xml`.  
+-   Copiez le fichier XML sur votre ordinateur local et nommez-le `books.xml`.  
   
-    ```  
+    ```xml  
     <?xml version="1.0"?>  
     <catalog>  
        <book id="bk101">  
@@ -136,9 +137,9 @@ Le compilateur XSLT \(xsltc.exe\) compile des feuilles de style XSLT et génère
     </catalog>  
     ```  
   
-### Pour compiler la feuille de style avec le script activé.  
+### <a name="to-compile-the-style-sheet-with-the-script-enabled"></a>Pour compiler la feuille de style avec le script activé.  
   
-1.  L'exécution de la commande suivante depuis la ligne de commande crée deux assemblys nommés `Transform.dll` et `Transform_Script1.dll` \(C'est le comportement par défaut.  Sauf spécification contraire, le nom de la classe et de l'assembly est par défaut celui de la feuille de style principale\) :  
+1.  L'exécution de la commande suivante depuis la ligne de commande crée deux assemblys nommés `Transform.dll` et `Transform_Script1.dll` (C'est le comportement par défaut. Sauf spécification contraire, le nom de la classe et de l'assembly est par défaut celui de la feuille de style principale) :  
   
     ```  
     xsltc /settings:script+ Transform.xsl  
@@ -150,11 +151,11 @@ Le compilateur XSLT \(xsltc.exe\) compile des feuilles de style XSLT et génère
 xsltc /settings:script+ /class:Transform Transform.xsl  
 ```  
   
-### Pour inclure l'assembly compilé comme référence lorsque vous compilez votre code.  
+### <a name="to-include-the-compiled-assembly-as-a-reference-when-you-compile-your-code"></a>Pour inclure l'assembly compilé comme référence lorsque vous compilez votre code.  
   
 1.  Vous pouvez inclure un assembly dans Visual Studio en ajoutant une référence dans l'Explorateur de solutions ou à partir de la ligne de commande.  
   
-2.  Pour la ligne de commande en C\#, utilisez la syntaxe suivante :  
+2.  Pour la ligne de commande en C#, utilisez la syntaxe suivante :  
   
     ```  
     csc myCode.cs /r:system.dll;system.xml.dll;Transform.dll  
@@ -166,7 +167,7 @@ xsltc /settings:script+ /class:Transform Transform.xsl
     vbc myCode.vb /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
-### Pour utiliser l'assembly compilé dans votre code.  
+### <a name="to-use-the-compiled-assembly-in-your-code"></a>Pour utiliser l'assembly compilé dans votre code.  
   
 1.  L'exemple suivant montre comment exécuter la transformation XSLT à l'aide de la feuille de style compilée.  
   
@@ -185,10 +186,10 @@ xslt.Load(typeof(Transform))
 xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))  
 ```  
   
- dans l'exemple ci\-dessus.  Pour plus d'informations sur la méthode Assembly.Load, voir <xref:System.Reflection.Assembly.Load%2A>.  
+ dans l'exemple ci-dessus. Pour plus d'informations sur la méthode Assembly.Load, voir <xref:System.Reflection.Assembly.Load%2A>.  
   
-## Voir aussi  
- <xref:System.Xml.Xsl.XslCompiledTransform>   
- [XSLT Compiler \(xsltc.exe\)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)   
- [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)   
- [Génération à partir de la ligne de commande avec csc.exe](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Xml.Xsl.XslCompiledTransform>  
+ [Compilateur XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+ [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
+ [Génération à partir de la ligne de commande avec csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

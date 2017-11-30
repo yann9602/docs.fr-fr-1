@@ -1,30 +1,21 @@
 ---
 title: "Guide pratique pour créer des assemblys friend signés (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 79f5ff0615a572db162906c698c47196c6f045da
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e9d56602eaffe73ff301ade95aaebeabab663be6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>Guide pratique pour créer des assemblys friend signés (C#)
 Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayant des noms forts. Les deux assemblys doivent avoir des noms forts. Bien que les deux assemblys dans cet exemple utilisent les mêmes clés, vous pouvez utiliser des clés différentes pour deux assemblys.  
@@ -106,12 +97,11 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayan
  Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence est que <xref:System.Security.Permissions.StrongNameIdentityPermission> peut demander des autorisations de sécurité pour exécuter une section de code particulière, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des membres et types `internal`.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)   
- [Assemblys friend (C++)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)   
- [Guide pratique pour créer des assemblys friend non signés (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)   
- [/keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)   
- [Sn.exe (Outil Strong Name Tool)](https://msdn.microsoft.com/library/k5b5tt23)   
- [Création et utilisation d’assemblys avec nom fort](https://msdn.microsoft.com/library/xwb8f617)   
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+ [Assemblys friend (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [Comment : créer des assemblys Friend non signés (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
+ [/keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)  
+ [Sn.exe (outil Strong Name)](https://msdn.microsoft.com/library/k5b5tt23)  
+ [Création et utilisation d’assemblys avec nom fort](https://msdn.microsoft.com/library/xwb8f617)  
  [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
-

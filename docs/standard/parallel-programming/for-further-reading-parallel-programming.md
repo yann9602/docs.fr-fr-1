@@ -1,36 +1,38 @@
 ---
-title: "For Further Reading (Parallel Programming) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "tasks, further reading"
+title: "Pour obtenir des informations supplémentaires (programmation parallèle)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: tasks, further reading
 ms.assetid: 98aee307-dde6-4cad-bb58-078497b8064f
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 5a2477458273e5beef6b67069dce7e818906b8b6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# For Further Reading (Parallel Programming)
+# <a name="for-further-reading-parallel-programming"></a>Pour obtenir des informations supplémentaires (programmation parallèle)
 Les ressources suivantes contiennent des informations supplémentaires sur la programmation parallèle dans le .NET Framework :  
   
--   Le [Centre de développement pour le calcul parallèle \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160570) sur le site Web MSDN contient des liens vers du contenu et des publications de forum récents à propos de la programmation parallèle en .NET Framework et en C\+\+ natif.  
+-   Le [Parallel Computing Developer Center](http://go.microsoft.com/fwlink/?LinkID=160570) sur le site Web MSDN site propose des liens vers le contenu le plus récent et publications du forum sur la programmation parallèle dans le .NET Framework et en C++ natif.  
   
--   Le [blog Programmation parallèle avec .NET](http://go.microsoft.com/fwlink/?LinkID=169627) \(éventuellement en anglais\) sur le site des blogs MSDN contient de nombreux articles détaillés à propos de la programmation parallèle dans le .NET Framework.  
+-   Le [programmation parallèle avec .NET blog](http://go.microsoft.com/fwlink/?LinkID=169627) sur le site Web MSDN site blog contient de nombreux articles détaillés sur la programmation parallèle dans le .NET Framework.  
   
--   Le [blog du Visualiseur concurrentiel](http://go.microsoft.com/fwlink/?LinkID=169630) sur le site des blogs MSDN concerne le nouvel outil de profilage de performances inclus dans certaines éditions de [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
+-   Le [blog du visualiseur concurrentiel](http://go.microsoft.com/fwlink/?LinkID=169630) sur le blog MSDN site couvre le nouvel outil qui est incluse dans certaines éditions de profilage des performances [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
   
--   Le [forum sur les extensions parallèles](http://go.microsoft.com/fwlink/?LinkID=169628) sur le site des forums MSDN est l'endroit où vous pouvez poser et répondre à des questions concernant la programmation parallèle.  
+-   Le [Forum sur les Extensions parallèles](http://go.microsoft.com/fwlink/?LinkID=169628) sur le site Web MSDN site forums est l’emplacement de questions et réponses sur la programmation parallèle.  
   
--   La page [Exemples d'extensions parallèles \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=165717) sur le site Web de la Galerie de code MSDN contient de nombreux exemples qui illustrent des techniques de programmation parallèle intermédiaires et avancées.  
+-   Le [exemples d’Extensions parallèles](http://go.microsoft.com/fwlink/?LinkID=165717) page sur le site Web MSDN Code Gallery contient de nombreux exemples qui illustrent des techniques de programmation parallèles intermédiaires et avancées.  
   
-## Voir aussi  
- [Parallel Programming](../../../docs/standard/parallel-programming/index.md)   
- [Modèles de programmation parallèle : présentation et application des modèles parallèles avec le .NET Framework 4 \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=185142)
+## <a name="see-also"></a>Voir aussi  
+ [Programmation parallèle](../../../docs/standard/parallel-programming/index.md)  
+ [Modèles de programmation parallèle : présentation et application des modèles parallèles avec le .NET Framework 4 (page éventuellement en anglais)](http://go.microsoft.com/fwlink/?LinkID=185142)

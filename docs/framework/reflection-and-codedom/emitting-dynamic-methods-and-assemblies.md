@@ -1,12 +1,11 @@
 ---
 title: "Émission d'assemblys et de méthodes dynamiques"
 ms.custom: 
-ms.date: 03/30/2017
+ms.date: 08/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,17 +14,14 @@ helpviewer_keywords:
 - metadata, emit interfaces
 - reflection emit, overview
 - assemblies [.NET Framework], emitting dynamic assemblies
-ms.assetid: 8e8e2631-62fd-40e7-a8ee-0039b06749bc
-caps.latest.revision: 18
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 91b0cc4614834f2ad8f7b54d9364d484ca9a6990
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c28a5b71a93ea5159adc73316771d490dbe0db87
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Émission d'assemblys et de méthodes dynamiques
 Cette section décrit un ensemble de types managés dans l'espace de noms <xref:System.Reflection.Emit>, qui permettent à un compilateur ou à un outil d'émettre des métadonnées et du langage MSIL (Microsoft Intermediate Language) au moment de l'exécution et de générer éventuellement un fichier exécutable portable sur le disque. Les moteurs de script et les compilateurs sont les principaux utilisateurs de cet espace de noms. Dans cette section, la fonctionnalité fournies par l'espace de noms <xref:System.Reflection.Emit> est appelée émission de réflexion.  
@@ -48,9 +44,22 @@ Cette section décrit un ensemble de types managés dans l'espace de noms <xref:
   
  Une autre ressource utile pour travailler avec les métadonnées et MSIL est la documentation de la Common Language Infrastructure (CLI), en particulier "Partie II : définition et sémantique des métadonnées" et "Partie III : jeu d'instructions de CIL". La documentation est disponible en ligne sur [MSDN](http://go.microsoft.com/fwlink/?LinkID=65555) et sur le [site web Ecma](http://go.microsoft.com/fwlink/?LinkId=116487).  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Problèmes de sécurité dans l’émission de réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
- Décrit les problèmes de sécurité liés à la création d'assemblys dynamiques en utilisant l'émission de réflexion.  
+## <a name="in-this-section"></a>Dans cette section
+  
+[Émettre des problèmes de sécurité dans la réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
+Décrit les problèmes de sécurité liés à la création d'assemblys dynamiques en utilisant l'émission de réflexion.  
+
+[Comment : définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)   
+Montre comment exécuter une méthode dynamique simple et une méthode dynamique est lié à une instance d’une classe.
+
+[Comment : définir un type générique avec la réflexion émettre](how-to-define-a-generic-type-with-reflection-emit.md)   
+Montre comment créer un type générique simple avec deux paramètres de type, comment appliquer une classe, interface et les contraintes spéciales aux paramètres de type et comment créer memers qui utilisent des paramètres de type de la classe comme types de paramètres et types de retour.
+
+[Comment : définir une méthode générique avec la réflexion émettre](how-to-define-a-generic-method-with-reflection-emit.md)   
+Montre comment créer, émettre et appeler une méthode générique simple.
+
+[Assemblys pouvant être collectés pour la génération de type dynamique](collectible-assemblies.md)   
+Introduit les assemblys pouvant être collectés, qui sont des assemblys dynamiques qui peuvent être déchargés sans décharger le domaine d’application dans lequel ils ont été créés.
   
 ## <a name="reference"></a>Référence  
  <xref:System.Reflection.Emit.OpCodes>  
@@ -70,5 +79,4 @@ Cette section décrit un ensemble de types managés dans l'espace de noms <xref:
  Explique comment explorer les métadonnées et le code managé.  
   
  [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- Donne une vue d'ensemble des assemblys dans le .NET Framework.
-
+ Fournit une vue d’ensemble des assemblys dans les implémentations de .NET.

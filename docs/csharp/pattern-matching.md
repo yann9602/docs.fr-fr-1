@@ -9,14 +9,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
+ms.openlocfilehash: 0c77c3c3da9983d20cdd86db18f60f83b86b07ea
+ms.sourcegitcommit: 281070dee88db86ec3bb4634d5f558d1a4e159dd
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cf17b68514ff263b784bcb42d2015d27015328d9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/11/2017
 ---
-
 # <a name="pattern-matching"></a>Critères spéciaux #
 
 Les modèles vérifient qu’une valeur a une certaine *forme* et peuvent *extraire* des informations de la valeur quand celle-ci a la forme correspondante. Les critères spéciaux offrent une syntaxe plus concise pour les algorithmes que vous utilisez déjà aujourd’hui. Vous pouvez déjà créer des algorithmes de critères spéciaux à l’aide de la syntaxe existante. Pour cela, vous écrivez des instructions `if` ou `switch` qui testent une valeur. Ensuite, quand ces instructions correspondent, vous extrayez et utilisez les informations de cette valeur. Les nouveaux éléments de syntaxe étendent les instructions que vous connaissez déjà : `is` et `switch`. Ces nouvelles extensions permettent à la fois de tester une valeur et d’extraire les informations de cette valeur.
@@ -33,7 +31,7 @@ Tout au long de cet exemple, comparez ce code avec le même code structuré comm
 
 Au lieu de commencer avec une définition de forme abstraite et d’ajouter ensuite différentes classes de formes spécifiques, écrivez d’abord les définitions de données simples pour chacune des formes géométriques :
 
-[!code-csharp[ShapeDefinitions](../../samples/csharp/PatternMatching/Shapes.cs#01_ShapeDefinitions "Définitions de formes")]
+[!code-csharp[ShapeDefinitions](../../samples/csharp/PatternMatching/Shapes.cs#01_ShapeDefinitions "Shape definitions")]
 
 À partir de ces structures, écrivez une méthode qui calcule la surface d’une forme.
 
@@ -41,13 +39,13 @@ Au lieu de commencer avec une définition de forme abstraite et d’ajouter ensu
 
 Avant C# 7, vous deviez tester chaque type dans une série d’instructions `if` et `is` :
 
-[!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Modèle de type standard avec is")]
+[!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
 
 Le code ci-dessus est une expression standard du *modèle de type* : vous testez une variable pour déterminer son type et vous effectuez une action différente en fonction de ce type.
 
 Vous pouvez simplifier ce code en ajoutant des extensions à l’expression `is` pour assigner une variable si le test réussit :
 
-[!code-csharp[IsPatternExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#03_IsPatternExpression "Expression de modèle is")]
+[!code-csharp[IsPatternExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#03_IsPatternExpression "is pattern expression")]
 
 Dans cette version mise à jour, l’expression `is` teste la variable et l’assigne à une nouvelle variable du type approprié. Remarquez également que cette version inclut le type `Rectangle`, qui est un `struct`. La nouvelle expression `is` peut être utilisée avec des types valeur et des types référence.
 
@@ -70,12 +68,12 @@ Au fil du temps, vous aurez peut-être besoin de prendre en charge d’autres ty
 L’instruction `switch` standard était une expression de modèle, qui prenait en charge le modèle de constante.
 Vous pouviez comparer une variable à n’importe quelle constante utilisée dans une instruction `case` :
 
-[!code-csharp[ClassicSwitch](../../samples/csharp/PatternMatching/GeometricUtilities.cs#04_ClassicSwitch "Instruction switch standard")]
+[!code-csharp[ClassicSwitch](../../samples/csharp/PatternMatching/GeometricUtilities.cs#04_ClassicSwitch "Classic switch statement")]
 
 Le seul modèle pris en charge par l’instruction `switch` était le modèle de constante. De plus, il était limité aux types numériques et au type `string`.
 Ces restrictions ayant été supprimées, vous pouvez maintenant écrire une instruction `switch` en utilisant le modèle de type :
 
-[!code-csharp[Modèle de type switch](../../samples/csharp/PatternMatching/GeometricUtilities.cs#05_SwitchTypePattern "Calcul avec l’expression switch")]
+[!code-csharp[Switch Type Pattern](../../samples/csharp/PatternMatching/GeometricUtilities.cs#05_SwitchTypePattern "Compute with `switch` expression")]
 
 L’instruction de critères spéciaux `switch` utilise une syntaxe qui est familière aux développeurs ayant utilisé l’instruction `switch` de style C standard. Chaque instruction `case` est évaluée, et le code en-dessous de la condition qui correspond à la variable d’entrée est exécuté. L’exécution du code ne continue pas d’une expression case à la suivante, car la syntaxe de l’instruction `case` nécessite que chaque `case` se termine par un `break`, `return` ou `goto`.
 
@@ -93,7 +91,7 @@ Notez que l’expression case `default` est exécutée uniquement si aucune autr
 
 Vous pouvez créer des expressions case spéciales pour les formes de surface 0 en ajoutant une clause `when` dans l’étiquette `case`. Un carré avec une longueur de côté de 0, ou un cercle de rayon 0, a une surface égale à 0. Vous spécifiez cette condition en ajoutant une clause `when` dans l’étiquette `case` :  
 
-[!code-csharp[ComputeDegenerateShapes](../../samples/csharp/PatternMatching/GeometricUtilities.cs#07_ComputeDegenerateShapes "Calcul des formes de surface 0")]
+[!code-csharp[ComputeDegenerateShapes](../../samples/csharp/PatternMatching/GeometricUtilities.cs#07_ComputeDegenerateShapes "Compute shapes with 0 area")]
 
 Cette modification illustre quelques points importants relatifs à la nouvelle syntaxe. Tout d’abord, plusieurs étiquettes `case` peuvent être appliquées à une même section `switch`. Le bloc d’instructions est exécuté quand l’une de ces étiquettes est `true`. Dans ce cas, si l’expression `switch` est un cercle ou un carré de surface 0, la méthode retourne la constante 0.
 
@@ -104,21 +102,42 @@ Toutefois, il est impossible de déterminer *laquelle* de ces variables a été 
 
 Après avoir ajouté ces formes de surface 0, ajoutez deux autres types de formes, un rectangle et un triangle :
 
-[!code-csharp[AddRectangleAndTriangle](../../samples/csharp/PatternMatching/GeometricUtilities.cs#09_AddRectangleAndTriangle "Ajouter un rectangle et un triangle")]
+[!code-csharp[AddRectangleAndTriangle](../../samples/csharp/PatternMatching/GeometricUtilities.cs#09_AddRectangleAndTriangle "Add rectangle and triangle")]
 
  Avec cet ensemble de modifications, vous avez ajouté des étiquettes `case` pour l’expression case dégénérée, ainsi que des étiquettes et des blocs pour chacune des nouvelles formes. 
 
 Enfin, vous pouvez ajouter une expression case `null` pour garantir que l’argument n’est pas `null` :
 
-[!code-csharp[NullCase](../../samples/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Ajouter une expression case null")]
+[!code-csharp[NullCase](../../samples/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
 
 Le comportement spécial pour le modèle `null` est intéressant, car la constante `null` du modèle n’a pas de type, mais elle peut être convertie en un type référence ou un type Nullable. Plutôt que de convertir une valeur `null` en un type quelconque, le langage définit qu’une valeur `null` ne correspond à aucun modèle de type, quel que soit le type de la variable au moment de la compilation. En raison de ce comportement, le nouveau modèle de type basé sur `switch` est cohérent par rapport à l’instruction `is` : les instructions `is` retournent toujours `false` quand la valeur vérifiée est `null`. Il s’avère aussi plus simple : une fois que vous avez vérifié le type, vous n’avez pas besoin d’effectuer de contrôle de valeur null supplémentaire. Vous pouvez le constater par le fait qu’aucun contrôle de valeur null ne figure dans les blocs d’expression case des exemples ci-dessus : ces contrôles ne sont pas nécessaires dans la mesure où la correspondance du modèle de type est l’assurance d’une valeur non null.
 
+## <a name="var-declarations-in-case-expressions"></a>`var`les déclarations dans `case` expressions
+
+L’introduction de `var` comme l’une des expressions de correspondance présente de nouvelles règles pour la correspondance au modèle.
+
+La première règle est que le `var` déclaration suit les règles d’inférence de type normal : le type est déduit que le type statique de l’expression de switch. À partir de cette règle, le type correspond toujours.
+
+La deuxième règle est qu’un `var` déclaration n’a pas le contrôle de valeur null qui incluent d’autres expressions de modèle de type. Cela signifie que la variable peut être null, et un contrôle de valeur null est nécessaire dans ce cas.
+
+Ces deux règles signifient que dans de nombreux cas, un `var` déclaration dans un `case` les mêmes conditions que correspond à l’expression une `default` expression.
+Étant donné que tous les cas non définis par défaut sont préférée à la `default` cas, le `default` cas ne sera jamais exécutée.
+
+> [!NOTE]
+> Le compilateur n’émet pas d’un avertissement dans les cas où un `default` cas a été écrit, mais ne sera jamais exécutée. Cela est cohérent avec actuel `switch` comportement de l’instruction où tous les cas possibles ont été répertoriés.
+
+La troisième règle présente utilise où un `var` cas peut être utile. Imaginez que vous effectuez une correspondance de modèle où l’entrée est une chaîne et que vous recherchez des valeurs de la commande connue. Vous pouvez écrire quelque chose comme :
+
+[!code-csharp[VarCaseExpression](../../samples/csharp/PatternMatching/Program.cs#VarCaseExpression "use a var case expression to filter white space")]
+
+Le `var` correspond à la casse `null`, une chaîne vide ou n’importe quelle chaîne qui contient uniquement des espaces. Notez que le code précédent utilise la `?.` opérateur pour vous assurer qu’elle ne lève pas accidentellement un <xref:System.NullReferenceException>. Le `default` cas gère toutes les autres valeurs de chaîne qui ne sont pas compris par cet analyseur de la commande.
+
+Il s’agit d’un exemple où vous souhaitez prendre en compte un `var` expression qui est différent de celui à partir de cas un `default` expression.
+
 ## <a name="conclusions"></a>Conclusions
 
-Les *constructions de critères spéciaux* vous permettent de gérer facilement le flux de contrôle entre différents types et variables qui ne sont pas liés par une hiérarchie d’héritage. Vous pouvez également contrôler la logique pour utiliser n’importe quelle condition testée sur la variable. Ces constructions permettent d’utiliser les modèles et les idiomes dont vous aurez davantage besoin à mesure que vous créez d’autres applications distribuées, où les données et les méthodes qui les manipulent sont séparées. Vous remarquerez que les structs de formes utilisées dans cet exemple ne contiennent pas de méthodes, mais uniquement des propriétés en lecture seule.
+Les *constructions de critères spéciaux* vous permettent de gérer facilement le flux de contrôle entre différents types et variables qui ne sont pas liés par une hiérarchie d’héritage. Vous pouvez également contrôler la logique pour utiliser n’importe quelle condition testée sur la variable. Ces constructions permettent d’utiliser les modèles et les idiomes dont vous aurez davantage besoin à mesure que vous créez d’autres applications distribuées, où les données et les méthodes qui les manipulent sont séparées. Vous remarquerez que les structures de formes utilisées dans cet exemple ne contiennent pas de méthodes, mais uniquement des propriétés en lecture seule.
 Les critères spéciaux peuvent être utilisés avec tous les types de données. Vous écrivez des expressions qui examinent l’objet et vous prenez des décisions de flux de contrôle en fonction de ces conditions.
 
 Comparez le code de cet exemple avec la conception qui résulterait de la création d’une hiérarchie de classes pour une `Shape` abstraite et des formes dérivées spécifiques, chacune avec sa propre implémentation d’une méthode virtuelle pour calculer la surface. Les expressions de critères spéciaux vous seront souvent d’une grande utilité quand vous manipulerez des données et souhaiterez gérer les questions de stockage de données de façon distincte des questions de comportement.
-
 

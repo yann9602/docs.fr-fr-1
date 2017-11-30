@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 564a683d-352b-4e57-8bac-b466529daf6b
+ms.openlocfilehash: 467ba18f8e032b9b3b8f480d4b10c92d0d7ba3b9
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0a8185c21e129c91b2c3ecb1f74f8ce2f75c5db9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="strongly-typed-delegates"></a>Délégués fortement typés
 
 [Précédent](delegate-class.md)
@@ -30,7 +28,7 @@ Dans la pratique, cela conduirait à la création de types délégués chaque fo
 
 Heureusement, cela n’est pas nécessaire. Le framework .NET Core contient plusieurs types que vous pouvez réutiliser chaque fois que vous avez besoin de types délégués. Il s’agit de définitions [génériques](programming-guide/generics/index.md). Vous pouvez ainsi déclarer des personnalisations quand vous avez besoin de nouvelles déclarations de méthode. 
 
-Le premier de ces types est le type @System.Action et plusieurs variantes :
+Le premier de ces types est le type <xref:System.Action> et plusieurs variantes :
 
 ```csharp
 public delegate void Action();
@@ -41,7 +39,7 @@ public delegate void Action<in T1, in T2>(T1 arg1, T2 arg2);
 
 Le modificateur `in` sur l’argument de type générique est traité dans l’article sur la covariance.
 
-Il existe des variantes du délégué `Action` qui contiennent jusqu’à 16 arguments comme @System.Action%6016.
+Il existe des variations de la `Action` délégué contenant jusqu'à 16 arguments comme <xref:System.Action%6016>.
 Il est important que ces définitions utilisent différents arguments génériques pour chacun des arguments de délégués : cela offre une flexibilité maximale. Les arguments de méthode ne doivent pas obligatoirement être du même type, mais il peuvent l’être.
 
 Utilisez l’un des types `Action` pour tout type délégué ayant un type de retour void.
@@ -57,12 +55,12 @@ public delegate TResult Func<in T1, in T2, out TResult>(T1 arg1, T2 arg2);
 
 Le modificateur `out` sur l’argument de type générique de résultat est traité dans l’article sur la covariance.
 
-Il existe des variantes du délégué `Func` qui contiennent jusqu’à 16 arguments d’entrée comme @System.Func%6017.
+Il existe des variations de la `Func` délégué avec les arguments d’entrée jusqu'à 16, tel que <xref:System.Func%6017>.
 Par convention, le type du résultat est toujours le dernier paramètre de type dans toutes les déclarations `Func`.
 
 Utilisez l’un des types `Func` pour tout type délégué qui retourne une valeur.
 
-Il existe aussi un type @System.Predicate%601 spécialisé pour un délégué qui retourne un test sur une valeur unique :
+Il est également spécialisé <xref:System.Predicate%601> type pour un délégué qui retourne un test sur une valeur unique :
 
 ```csharp
 public delegate bool Predicate<in T>(T obj);
@@ -85,4 +83,3 @@ Cela devrait vous procurer un gain de temps et réduire le nombre de nouveaux ty
 Dans l’article suivant, vous verrez plusieurs schémas d’utilisation courants des délégués.
 
 [Suivant](delegates-patterns.md)
-

@@ -12,11 +12,11 @@ caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: c988f41966f6e7bbd87fc4552de15b28117ecde5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 681b96d24288cc1a86c9c4525e31ed67f1a18331
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="expressions"></a>Expressions
 Cet exemple montre comment utiliser des expressions de base dans un workflow. Il se compose d'un workflow qui calcule des statistiques de salaires de base pour deux employés d'une société fictive. Deux classes, `Employee` et `SalaryStats`, sont définies dans Employee.cs et SalaryStats.cs. Ces classes sont utilisées dans un workflow qui montre comment effectuer des opérations arithmétiques et de chaîne simples sur les propriétés de variables de types complexes.  
@@ -41,6 +41,4 @@ Cet exemple montre comment utiliser des expressions de base dans un workflow. Il
 >   
 >  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Expressions`  
-  
-## <a name="see-also"></a>Voir aussi
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Expressions`

@@ -12,11 +12,11 @@ caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: b5fc8834fb72163a615633d81232e25768683278
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 085c52d94db5af12a022fa353a80d69534bfe219
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="transaction-convoy-scope"></a>Étendue du convoi des transactions
 Cet exemple montre comment créer un modèle d'activité de messagerie de convoi parallèle conjointement avec un <xref:System.ServiceModel.Activities.TransactedReceiveScope> pour modéliser un protocole où un certain nombre d'opérations peuvent se produire dans n'importe quel ordre dans le cadre de la même transaction. Cet exemple montre également comment un <xref:System.ServiceModel.Activities.TransactedReceiveScope> crée automatiquement une transaction lorsque aucune transaction n'est passée au serveur, de sorte que le client n'utilise aucune transaction.  
@@ -50,6 +50,4 @@ Cet exemple montre comment créer un modèle d'activité de messagerie de convoi
 >   
 >  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedConvoyScope`  
-  
-## <a name="see-also"></a>Voir aussi
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedConvoyScope`

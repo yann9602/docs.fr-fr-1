@@ -1,30 +1,21 @@
 ---
 title: "Vue d’ensemble de LINQ to XML (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 1c66e87ecc72bf711dfda33cd7c0ea35f126c1e7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e85e61b29b9a97469c84abba4e4149b1967e601f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="linq-to-xml-overview-c"></a>Vue d’ensemble de LINQ to XML (C#)
 Le langage XML a été largement adopté comme méthode pour mettre en forme des données dans de nombreux contextes. Par exemple, on trouve du code XML sur le Web, dans les fichiers de configuration, dans les fichiers Microsoft Office Word et dans les bases de données.  
@@ -81,7 +72,7 @@ select item;
 -   utiliser une combinaison de ces fonctionnalités pour transformer des arborescences XML d'une forme à une autre.  
   
 ## <a name="creating-xml-trees"></a>Création d'arborescences XML  
- L'un des principaux avantages liés à la programmation avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tient à la facilité de création d'arborescences XML. Par exemple, pour créer une petite arborescence XML, vous pouvez écrire du code comme suit :  
+ Un des principaux avantages de la programmation avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est qu’il est facile de créer des arborescences XML. Par exemple, pour créer une petite arborescence XML, vous pouvez écrire du code comme suit :  
   
 ```csharp  
 XElement contacts =  
@@ -105,6 +96,5 @@ new XElement("Contacts",
  Pour plus d’informations, consultez [Création d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Linq>   
+ <xref:System.Xml.Linq>  
  [Bien démarrer (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
-

@@ -1,29 +1,23 @@
 ---
 title: "Éléments obsolètes dans la bibliothèque de classes .NET Framework"
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - obsolete [.NET Framework]
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 4560988445b91939deef84211a1c8c13ed938560
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7afe9496ca116ed0c330c4ff9e7c3a855249cf14
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Éléments obsolètes dans la bibliothèque de classes .NET Framework
 Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et membres de type qui fournissent de nouvelles fonctionnalités. Les types existants et leurs membres évoluent aussi. Par exemple, certains types deviennent moins importants quand la technologie qu'ils prennent en charge est remplacée par une nouvelle, tandis que certaines méthodes sont remplacées par de nouvelles méthodes qui sont soit plus pratiques, soit plus complètes.  
@@ -67,7 +61,7 @@ Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et
   
 |Version du .NET Framework|Chaîne `version`|
 |-|-|  
-|4.7|v4.0|  
+|4.7 (y compris 4.7.1)|v4.0|  
 |4.6 (y compris 4.6.1 et 4.6.2)|v4.0|  
 |4.5 (y compris 4.5.1 et 4.5.2)|v4.0|  
 |4|v4.0|  
@@ -92,4 +86,3 @@ Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et
   
 ## <a name="see-also"></a>Voir aussi  
  [\<supportedRuntime>, élément](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
-

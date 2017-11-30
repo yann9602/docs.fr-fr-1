@@ -1,244 +1,38 @@
-### YamlMime:YamlDocument
 documentType: Tutorial
-title: 'Nombres en C#'
+title: Nombres en C#
 metadata:
-  title: 'Nombres en C#'
-  description: 'Dans ce didacticiel sur les types numériques, vous allez utiliser votre navigateur pour découvrir C# de manière interactive. Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur.'
+  title: Nombres en C#
+  description: "Dans ce guide de démarrage rapide sur les types numériques, vous utiliserez votre navigateur pour en savoir plus c# interactive. Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur."
   audience: Developer
+  ms.custom: mvc
   level: Beginner
   nextTutorialHref: branches-and-loops
-  nextTutorialTitle: 'Branches and loops in C#'
+  nextTutorialTitle: Branches et des boucles en c#
   displayType: two-column
   interactive: csharp
 items:
-  - durationInMinutes: 1
-    content: "Ce didacticiel vous fait découvrir les types de nombre en C# de manière interactive à l’aide de votre navigateur et vous explique comment afficher les résultats de la compilation et de l’exécution de votre code. Il contient une série de leçons pour explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage\_C#.\n"
-  - title: Explorer les mathématiques avec des entiers
-    durationInMinutes: 4
-    content: |
-      Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :
-
-      ```csharp
-      int a = 18;
-      int b = 6;
-      int c = a + b;
-      Console.WriteLine(c);
-      ```
-
-      Vous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type `int` représente un **entier**, qui peut être positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :
-
-      - `-` pour la soustraction
-      - `*` pour la multiplication
-      - `/` pour la division
-
-      > [!TIP]
-      > Ce didacticiel vous permet d’explorer son contenu à votre rythme en modifiant le code que vous avez écrit dans la fenêtre interactive. Il fournit des exemples que vous pouvez mettre en pratique à chaque étape.
-
-      Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **Exécuter**.
-
-      Soustraction :
-
-      ```csharp
-      int c = a - b;
-      ```
-
-      Multiplication :
-
-      ```csharp
-      int c = a * b;
-      ```
-
-      Division : 
-
-      ```csharp
-      int c = a / b;
-      ```
-
-      Vous pouvez également, si vous le souhaitez, effectuer des essais en réalisant plusieurs opérations mathématiques dans la même ligne.
-
-      > [!TIP]
-      > Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans la fenêtre interactive pour identifier les corrections à apporter.
-      > Cet exercice vous aidera à mieux comprendre la structure du code C#.     
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Explorer l’ordre des opérations
-    durationInMinutes: 7
-    content: |
-      Le langage C# définit la priorité des différentes opérations mathématiques avec à l’aide de règles cohérentes avec les règles mathématiques que vous avez apprises.
-      La multiplication et la division ont priorité sur l’addition et la soustraction.
-      Explorez cet ordre de priorité en exécutant le code suivant dans la fenêtre interactive :
-
-      ```csharp
-      int a = 5;
-      int b = 4;
-      int c = 2;
-      int d = a + b * c;
-      Console.WriteLine(d);
-      ```
-
-      La sortie montre que la multiplication est effectuée avant l’addition.
-
-      Vous pouvez appliquer un ordre de calcul différent en mettant entre parenthèses la ou les opérations à exécuter en premier :
-
-      ```csharp
-      int a = 5;
-      int b = 4;
-      int c = 2;
-      int d = (a  + b) * c;
-      Console.WriteLine(d);
-      ```
-
-      Pratiquez en combinant plusieurs opérations différentes. Remplacez la quatrième ligne ci-dessus par un contenu similaire à ce qui suit :
-
-      ```csharp
-      int d = (a + b) - 6 * c + (12 * 4) / 3 + 12;
-      ```
-
-      Vous avez peut-être observé un comportement intéressant des entiers. La division d’entiers produit toujours un résultat entier, même quand le résultat mathématique devrait inclure une partie décimale ou fractionnée.
-
-      Si vous n’avez pas observé ce comportement, essayez ce qui suit :
-
-      ```csharp
-      int a = 7;
-      int b = 4;
-      int c = 3;
-      int d = (a  + b) / c;
-      Console.WriteLine(d);
-      ```
-
-      Cliquez de nouveau sur **Exécuter** pour afficher les résultats.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Explorer la précision et les limites des entiers
-    durationInMinutes: 5
-    content: |
-      Ce dernier exemple a montré que la division d’entiers tronque le résultat.
-      Vous pouvez obtenir le **reste** à l’aide de l’opérateur **modulo**, à savoir le caractère `%` :
-
-      ```csharp
-      int a = 7;
-      int b = 4;
-      int c = 3;
-      int d = (a  + b) / c;
-      int e = (a + b) % c;
-      Console.WriteLine("quotient: " + d);
-      Console.WriteLine("remainder: " + e);
-      ```
-
-      Le type d’entier C# diffère des entiers mathématiques d’une autre manière : le type `int` a des limites minimale et maximale. Exécutez ce code dans la fenêtre interactive pour afficher ces limites :
-
-      ```csharp
-      int max = int.MaxValue;
-      int min = int.MinValue;
-      Console.WriteLine("The range of integers is " + min + " to " + max);
-      ```
-
-      Si un calcul produit une valeur qui dépasse ces limites, vous obtenez une condition de **dépassement négatif** ou **dépassement positif**. La réponse affichée indique la plage (d’une limite à l’autre). Ajoutez ces deux lignes dans la fenêtre interactive pour afficher un exemple :
-
-      ```csharp
-      int what = max + 3;
-      Console.WriteLine("An example of overflow: " + what);
-      ```
-
-      Notez que la réponse est très proche de l’entier minimal (négatif). Il en est de même pour `min + 2`. L’addition a produit un **dépassement négatif** des valeurs autorisées pour les entiers.
-      La réponse est un très grand nombre négatif, car un dépassement négatif « inclut » de la plus grande valeur d’entier possible à la plus petite.
-
-      Il existe d’autres types numériques avec une précision et des limites différentes que vous pouvez utiliser quand le type `int` ne répond pas à vos besoins. Nous les explorerons à l’étape suivante.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Utiliser le type double
-    durationInMinutes: 5
-    content: |
-      Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. Un nombre **à virgule flottante** est utile pour représenter de très grand ou petits nombres non intégraux. La **double précision** signifie que ces nombres sont stockés avec une précision supérieure à la **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision.
-      Explorons ce type double. Exécutez le code suivant dans la fenêtre interactive et observez le résultat :
-
-      ```csharp
-      double a = 5;
-      double b = 4;
-      double c = 2;
-      double d = (a  + b) / c;
-      Console.WriteLine(d);
-      ```
-
-      Notez que la réponse inclut la partie décimale du quotient. Essayez avec une expression légèrement plus complexe utilisant des doubles :
-
-      ```csharp
-      double a = 19;
-      double b = 23;
-      double c = 8;
-      double d = (a  + b) / c;
-      Console.WriteLine(d);
-      ```
-
-      La plage d’une valeur double est nettement supérieure à celle de valeurs entières. Exécutez le code suivant dans la fenêtre interactive :
-
-      ```csharp
-      double max = double.MaxValue;
-      double min = double.MinValue;
-      Console.WriteLine("The range of double is " + min + " to " + max);
-      ```
-
-      Ces valeurs s’affichent sous forme de notation scientifique. Le nombre à gauche du `E` est le nombre significatif. Le nombre à droite est l’exposant, en puissance de 10. En interne, ces nombres sont représentés de manière similaire, mais sous forme binaire. Une partie représente les chiffres binaires significatifs.
-      L’autre partie représente l’endroit où placer la virgule binaire (analogue à une virgule décimale) par rapport à ces chiffres significatifs.
-
-      Tout comme les nombres décimaux en mathématiques, les doubles en C# peuvent présenter des erreurs d’arrondi. Exécutez le code suivant :
-
-      ```csharp
-      double third = 1.0 / 3.0;
-      Console.WriteLine(third);
-      ```
-
-      Vous savez que la valeur extensible `0.3` ne correspond pas exactement à `1/3`.
-
-      ***Test***
-
-      Effectuez d’autres calculs avec des grands nombres, des petits nombres, des multiplications et des divisions à l’aide du type `double`.  Effectuez des calculs plus complexes.
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Utiliser des types de virgule fixe
-    durationInMinutes: 8
-    content: |
-      Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il existe un autre type à découvrir : le type `decimal`. Le type `decimal` a une plage plus petite, mais une précision supérieure à celle du type `double`. Le terme **virgule fixe** signifie que la virgule décimale (ou virgule binaire) ne se déplace pas. Étudions cela d’un peu plus près :
-
-      ```csharp
-      decimal min = decimal.MinValue;
-      decimal max = decimal.MaxValue;
-      Console.WriteLine("The range of the decimal type is " + min + " to " + max);
-      ```
-
-      Notez que la plage est plus petite que celle du type `double`. Vous pouvez observer la plus haute précision du type décimal en exécutant le code suivant :
-
-      ```csharp
-      double a = 1.0;
-      double b = 3.0;
-      Console.WriteLine(a / b);
-
-      decimal c = 1.0M;
-      decimal d = 3.0M;
-      Console.WriteLine(c / d);
-      ```
-
-      Le suffixe `M` des nombres permet d’indiquer comment une constante doit utiliser le type `decimal`.
-
-      Notez que le calcul utilisant le type décimal a plus de chiffres à droite de la virgule décimale. 
-
-      ***Test***
-
-      Maintenant que vous avez vu les différents types numériques, écrivez un code qui calcule la surface d’un cercle avec un rayon de 2,5 pouces. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : C# contient une constante pour PI, à savoir `Math.PI`, que vous pouvez utiliser pour cette valeur. 
-
-      > [!NOTE]
-      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
-  - title: Terminer le test
-    durationInMinutes: 1
-    content: |
-      Vous avez terminé le didacticiel « Nombres en C# ». Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :
-
-      [Tableau des types intégraux](../language-reference/keywords/integral-types-table.md)   
-      [Tableau des types virgule flottante](../language-reference/keywords/floating-point-types-table.md)   
-      [Tableau des types intégrés](../language-reference/keywords/built-in-types-table.md)   
-      [Tableau des conversions numériques implicites](../language-reference/keywords/implicit-numeric-conversions-table.md)   
-      [Tableau des conversions numériques explicites](../language-reference/keywords/explicit-numeric-conversions-table.md)
+- durationInMinutes: 1
+  content: "Ce guide de démarrage rapide vous apprend sur les types de nombres en c# de manière interactive, à l’aide de votre navigateur et afficher les résultats de la compilation et exécution de votre code en c#. Il contient une série de leçons pour explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage C#.\n"
+  ms.openlocfilehash: bc859589078d1e2d16145125a80e738837c1ebf9
+  ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 11/22/2017
+- title: "Explorer les mathématiques avec des entiers"
+  durationInMinutes: 4
+  content: "Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :\n\n```csharp\nint a = 18;\nint b = 6;\nint c = a + b;\nConsole.WriteLine(c);\n```\n\nVous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type `int` représente un **entier**, qui peut être positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :\n\n- `-` pour la soustraction\n- `*` pour la multiplication\n- `/` pour la division\n\n> [!TIP]\n> Tout au long de ce guide de démarrage rapide, vous pouvez Explorer à votre rythme en modifiant le code que vous avez écrit dans la fenêtre interactive. Ce guide de démarrage rapide fournit des exemples que vous pouvez essayer à chaque étape.\n\nCommencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **Exécuter**.\n\nSoustraction :\n\n```csharp\nint c = a - b;\n```\n\nMultiplication :\n\n```csharp\nint c = a * b;\n```\n\nDivision : \n\n```csharp\nint c = a / b;\n```\n\nVous pouvez également, si vous le souhaitez, effectuer des essais en réalisant plusieurs opérations mathématiques dans la même ligne.\n\n> [!TIP]\n> Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans la fenêtre interactive pour identifier les corrections à apporter.\n> Cet exercice vous aidera à mieux comprendre la structure du code C#.     \n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: "Explorer l’ordre des opérations"
+  durationInMinutes: 7
+  content: "Le langage C# définit la priorité des différentes opérations mathématiques avec à l’aide de règles cohérentes avec les règles mathématiques que vous avez apprises.\nLa multiplication et la division ont priorité sur l’addition et la soustraction.\nExplorez cet ordre de priorité en exécutant le code suivant dans la fenêtre interactive :\n\n```csharp\nint a = 5;\nint b = 4;\nint c = 2;\nint d = a + b * c;\nConsole.WriteLine(d);\n```\n\nLa sortie montre que la multiplication est effectuée avant l’addition.\n\nVous pouvez appliquer un ordre de calcul différent en mettant entre parenthèses la ou les opérations à exécuter en premier :\n\n```csharp\nint a = 5;\nint b = 4;\nint c = 2;\nint d = (a  + b) * c;\nConsole.WriteLine(d);\n```\n\nPratiquez en combinant plusieurs opérations différentes. Remplacez la quatrième ligne ci-dessus par un contenu similaire à ce qui suit :\n\n```csharp\nint d = (a + b) - 6 * c + (12 * 4) / 3 + 12;\n```\n\nVous avez peut-être observé un comportement intéressant des entiers. Division d’entier toujours produit un résultat entier, même lorsque le résultat à inclure une partie décimale ou fractionnaire souhaitées.\n\nSi vous n’avez pas observé ce comportement, essayez ce qui suit :\n\n```csharp\nint a = 7;\nint b = 4;\nint c = 3;\nint d = (a  + b) / c;\nConsole.WriteLine(d);\n```\n\nCliquez de nouveau sur **Exécuter** pour afficher les résultats.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: "Explorer la précision et les limites des entiers"
+  durationInMinutes: 5
+  content: "Ce dernier exemple a montré que la division d’entiers tronque le résultat.\nVous pouvez obtenir le **reste** à l’aide de l’opérateur **modulo**, à savoir le caractère `%` :\n\n```csharp\nint a = 7;\nint b = 4;\nint c = 3;\nint d = (a  + b) / c;\nint e = (a + b) % c;\nConsole.WriteLine($\"quotient: {d}\");\nConsole.WriteLine($\"remainder: {e}\");\n```\n\nLe type d’entier C# diffère des entiers mathématiques d’une autre manière : le type `int` a des limites minimale et maximale. Exécutez ce code dans la fenêtre interactive pour afficher ces limites :\n\n```csharp\nint max = int.MaxValue;\nint min = int.MinValue;\nConsole.WriteLine($\"The range of integers is {min} to {max}\");\n```\n\nSi un calcul produit une valeur qui dépasse ces limites, vous obtenez une condition de **dépassement négatif** ou **dépassement positif**. La réponse affichée indique la plage (d’une limite à l’autre). Ajoutez ces deux lignes dans la fenêtre interactive pour afficher un exemple :\n\n```csharp\nint what = max + 3;\nConsole.WriteLine($\"An example of overflow: {what}\");\n```\n\nNotez que la réponse est très proche de l’entier minimal (négatif). Il en est de même pour `min + 2`. L’addition a produit un **dépassement négatif** des valeurs autorisées pour les entiers.\nLa réponse est un très grand nombre négatif, car un dépassement négatif « inclut » de la plus grande valeur d’entier possible à la plus petite.\n\nIl existe d’autres types numériques avec une précision et des limites différentes que vous pouvez utiliser quand le type `int` ne répond pas à vos besoins. Nous les explorerons à l’étape suivante.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Utiliser le type double
+  durationInMinutes: 5
+  content: "Le type numérique `double` représente un nombre à virgule flottante double précision. Ces termes vous sont peut-être inconnus. A **à virgule flottante** nombre est utile pour représenter des nombres non intégral qui peuvent être très grande ou petite dans l’ordre de grandeur. La **double précision** signifie que ces nombres sont stockés avec une précision supérieure à la **simple précision**. Sur les ordinateurs modernes, les nombres double précision sont généralement plus utilisés que les nombres simple précision.\nExplorons ce type double. Exécutez le code suivant dans la fenêtre interactive et observez le résultat :\n\n```csharp\ndouble a = 5;\ndouble b = 4;\ndouble c = 2;\ndouble d = (a  + b) / c;\nConsole.WriteLine(d);\n```\n\nNotez que la réponse inclut la partie décimale du quotient. Essayez avec une expression légèrement plus complexe utilisant des doubles :\n\n```csharp\ndouble a = 19;\ndouble b = 23;\ndouble c = 8;\ndouble d = (a  + b) / c;\nConsole.WriteLine(d);\n```\n\nLa plage d’une valeur double est nettement supérieure à celle de valeurs entières. Exécutez le code suivant dans la fenêtre interactive :\n\n```csharp\ndouble max = double.MaxValue;\ndouble min = double.MinValue;\nConsole.WriteLine($\"The range of double is {min} to {max}\");\n```\n\nCes valeurs sont imprimés dans la notation scientifique. Le nombre à gauche de la `E` est la mantisse. Le nombre à droite est l’exposant, en puissance de 10. \n\nTout comme les nombres décimaux en mathématiques, les doubles en C# peuvent présenter des erreurs d’arrondi. Exécutez le code suivant :\n\n```csharp\ndouble third = 1.0 / 3.0;\nConsole.WriteLine(third);\n```\n\nVous savez que la valeur extensible `0.3` ne correspond pas exactement à `1/3`.\n\n***Test***\n\nEffectuez d’autres calculs avec des grands nombres, des petits nombres, des multiplications et des divisions à l’aide du type `double`.  Effectuez des calculs plus complexes.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Utiliser des types de virgule fixe
+  durationInMinutes: 8
+  content: "Vous avez vu les types numériques de base en C#, à savoir les entiers et les doubles.  Il existe un autre type à découvrir : le type `decimal`. Le `decimal` type a une plage plus petite, mais une précision supérieure que `double`. Le terme **virgule fixe** signifie que la virgule décimale (ou virgule binaire) ne se déplace pas. Étudions cela d’un peu plus près :\n\n```csharp\ndecimal min = decimal.MinValue;\ndecimal max = decimal.MaxValue;\nConsole.WriteLine($\"The range of the decimal type is {min} to {max}\");\n```\n\nNotez que la plage est plus petite que celle du type `double`. Vous pouvez observer la plus haute précision du type décimal en exécutant le code suivant :\n\n```csharp\ndouble a = 1.0;\ndouble b = 3.0;\nConsole.WriteLine(a / b);\n\ndecimal c = 1.0M;\ndecimal d = 3.0M;\nConsole.WriteLine(c / d);\n```\n\nLe suffixe `M` des nombres permet d’indiquer comment une constante doit utiliser le type `decimal`.\n\nNotez que le calcul utilisant le type décimal a plus de chiffres à droite de la virgule décimale. \n\n***Test***\n\nMaintenant que vous avez vu les différents types numériques, écrivez un code qui calcule la surface d’un cercle avec un rayon de 2,5 pouces. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Un seul indicateur : c# contient une constante de PI, <xref:System.Math.PI?displayProperty=nameWithType> que vous pouvez utiliser pour cette valeur. \n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Terminer le test
+  durationInMinutes: 1
+  content: "Vous avez terminé le démarrage rapide de « numéros dans c# ». \n\nVous pouvez continuer ces Démarrages rapides sur votre propre environnement de développement. La rubrique .NET [prise en main de 10 minutes](https://www.microsoft.com/net/core) a des instructions pour configurer votre environnement de développement local. Ensuite, continuez [Branches et des boucles](branches-and-loops-local.md) dans votre environnement local.\n\nPour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :\n\n[Tableau des types intégraux](../language-reference/keywords/integral-types-table.md)   \n[Tableau des types virgule flottante](../language-reference/keywords/floating-point-types-table.md)   \n[Tableau des types intégrés](../language-reference/keywords/built-in-types-table.md)   \n[Tableau des conversions numériques implicites](../language-reference/keywords/implicit-numeric-conversions-table.md)   \n[Tableau des conversions numériques explicites](../language-reference/keywords/explicit-numeric-conversions-table.md)\n"

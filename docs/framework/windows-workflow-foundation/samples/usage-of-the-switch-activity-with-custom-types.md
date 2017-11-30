@@ -12,14 +12,14 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: a8a4418c582d00f1163305ce5d63c63c198dbc30
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 57a6a15f648f83a60f3ac402443c3c5e4aecfcd4
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="usage-of-the-switch-activity-with-custom-types"></a>Utilisation de l'activité Switch avec des types personnalisés
-Cet exemple explique comment activer un <!--zz <xref:System.Activities. Statements.Switch`1>--> `xref:System.Activities` Statements.Switch`1?qualifyHint=False&autoUpgrade=True activity to evaluate a user-defined complex type at runtime. In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable. Traditionally, a `commutateur ' instruction opère sur une expression qui peut être évaluée statiquement. Par exemple, en C#, cela signifie que seuls des types primitifs, tels que <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, et des types énumération sont pris en charge.  
+Cet exemple montre comment permettre à une activité <xref:System.Activities.Statements.Switch%601> d'évaluer un type complexe défini par l'utilisateur au moment de l'exécution. Dans les langages de programmation procéduraux traditionnels, un [commutateur](http://go.microsoft.com/fwlink/?LinkId=180521) instruction sélectionne une logique d’exécution en fonction de l’évaluation conditionnelle d’une variable. D'ordinaire, une instruction `switch` opère sur une expression qui peut être évaluée statiquement. Par exemple, en C#, cela signifie que seuls des types primitifs, tels que <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, et des types énumération sont pris en charge.  
   
  Pour permettre la commutation sur une classe personnalisée, la logique doit être implémentée pour évaluer les valeurs du type complexe personnalisé au moment de l'exécution. Cet exemple montre comment permettre la commutation sur un type complexe personnalisé nommé `Person`.  
   

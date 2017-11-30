@@ -1,55 +1,37 @@
 ---
 title: "Méthodes d’extension (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - methods [C#], adding to existing types
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-caps.latest.revision: 35
+caps.latest.revision: "35"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 30058a461dddb872e76bef574273c62910e8b2c8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: d74c1d0760d4e776c2cf4c7dea1dac060c85a83c
-ms.openlocfilehash: 657f9ebfba5d6f49d3a88cb1cf790e4a0134a007
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 Les méthodes d'extension vous permettent d'« ajouter » des méthodes à des types existants sans créer un type dérivé, ni recompiler ou modifier le type d'origine. Les méthodes d'extension sont un type particulier de méthode statique appelées comme s'il s'agissait de méthodes d'instance sur le type étendu. Pour le code client écrit en C#, F# et Visual Basic, il n’y a aucune différence apparente lors de l’appel entre une méthode d’extension et les méthodes qui sont réellement définies dans un type.  
   
- Les méthodes d’extension les plus courantes sont les opérateurs de requête standard [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] qui ajoutent des fonctionnalités de requête aux types <xref:System.Collections.IEnumerable?displayProperty=fullName> et <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> existants. Pour utiliser les opérateurs de requête standard, introduisez-les d'abord dans la portée avec une directive `using System.Linq`. Puis, tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601> semble avoir des méthodes d'instance telles que <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>, etc. Vous pouvez consulter ces méthodes supplémentaires dans la saisie semi-automatique des instructions IntelliSense quand vous tapez un « point » après une instance d’un type <xref:System.Collections.Generic.IEnumerable%601> tel que <xref:System.Collections.Generic.List%601> ou <xref:System.Array>.  
+ Les méthodes d’extension les plus courantes sont les opérateurs de requête standard [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] qui ajoutent des fonctionnalités de requête aux types <xref:System.Collections.IEnumerable?displayProperty=nameWithType> et <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> existants. Pour utiliser les opérateurs de requête standard, introduisez-les d'abord dans la portée avec une directive `using System.Linq`. Puis, tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601> semble avoir des méthodes d'instance telles que <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>, etc. Vous pouvez consulter ces méthodes supplémentaires dans la saisie semi-automatique des instructions IntelliSense quand vous tapez un « point » après une instance d’un type <xref:System.Collections.Generic.IEnumerable%601> tel que <xref:System.Collections.Generic.List%601> ou <xref:System.Array>.  
   
  L'exemple suivant indique comment appeler la méthode `OrderBy` d'opérateur de requête standard sur un tableau d'entiers. L'expression entre parenthèses est une expression lambda. De nombreux opérateurs de requête standard prennent des expressions lambda comme paramètres, mais ce n’est pas requis pour les méthodes d’extension. Pour plus d’informations, consultez [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
- [!code-cs[csProgGuideExtensionMethods#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_1.cs)]  
+ [!code-csharp[csProgGuideExtensionMethods#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_1.cs)]  
   
  Les méthodes d’extension sont définies comme méthodes statiques mais sont appelées en utilisant la syntaxe de méthode d’instance. Leur premier paramètre spécifie les types sur lesquels la méthode s’applique et le paramètre est précédé du modificateur [this](../../../csharp/language-reference/keywords/this.md). Les méthodes d'extension sont uniquement dans la portée lorsque vous importez explicitement l'espace de noms dans votre code source avec une directive `using`.  
   
- L'exemple suivant présente une méthode d'extension définie pour la classe <xref:System.String?displayProperty=fullName>. Notez qu'elle est définie à l'intérieur d'une classe statique, non imbriquée et non générique :  
+ L'exemple suivant présente une méthode d'extension définie pour la classe <xref:System.String?displayProperty=nameWithType>. Notez qu'elle est définie à l'intérieur d'une classe statique, non imbriquée et non générique :  
   
- [!code-cs[csProgGuideExtensionMethods#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_2.cs)]  
+ [!code-csharp[csProgGuideExtensionMethods#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_2.cs)]  
   
  La méthode d'extension `WordCount` peut être mise à portée avec cette directive `using` :  
   
@@ -89,7 +71,7 @@ using System.Linq;
   
  Lorsque le compilateur ne trouve pas de méthode d’instance avec une signature correspondante, il crée une liaison avec une méthode d’extension correspondante, s’il en existe une.  
   
- [!code-cs[csProgGuideExtensionMethods#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_3.cs)]  
+ [!code-csharp[csProgGuideExtensionMethods#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_3.cs)]  
   
 ## <a name="general-guidelines"></a>Indications générales  
  En général, nous vous recommandons d'implémenter des méthodes d'extension modérément et uniquement lorsque cela est nécessaire. Dès que cela est possible, le code client qui doit étendre un type existant doit le faire en créant un type dérivé du type existant. Pour plus d’informations, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
@@ -105,12 +87,11 @@ using System.Linq;
  Pour une bibliothèque de classes que vous avez implémentée, vous ne devez pas utiliser de méthodes d'extension pour éviter d'incrémenter le numéro de version d'un assembly. Si vous souhaitez ajouter une fonctionnalité importante à une bibliothèque dont le code source vous appartient, vous devez suivre les directives .NET Framework standard relatives à la gestion de version des assemblys. Pour plus d’informations, consultez [Versioning des assemblys](https://msdn.microsoft.com/library/51ket42z).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Exemples de programmation parallèle (il s’agit de nombreux exemples de méthodes d’extension)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)   
- [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)   
- [Vue d’ensemble des opérateurs de requête standard](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)   
- [Conversion rules for Instance parameters and their impact](http://go.microsoft.com/fwlink/?LinkId=112385)   
- [Extension methods Interoperability between languages](http://go.microsoft.com/fwlink/?LinkId=112386)   
- [Extension methods and Curried Delegates](http://go.microsoft.com/fwlink/?LinkId=112387)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Exemples de programmation parallèle (notamment les nombreux exemples de méthodes d’extension)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
+ [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+ [Vue d’ensemble des opérateurs de requête standard](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
+ [Règles de conversion d’instances paramètres et leur impact](http://go.microsoft.com/fwlink/?LinkId=112385)  
+ [Méthodes d’extension l’interopérabilité entre les langages](http://go.microsoft.com/fwlink/?LinkId=112386)  
+ [Méthodes d’extension et délégués curryfiés](http://go.microsoft.com/fwlink/?LinkId=112387)  
  [Extension method Binding and Error reporting](http://go.microsoft.com/fwlink/?LinkId=112388)
-

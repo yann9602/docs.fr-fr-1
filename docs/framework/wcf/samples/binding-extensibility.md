@@ -13,18 +13,19 @@ caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 61c8ae647012c5f1fffe5cf65c63b64cde62af1b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 251d89af938b4bf104ddb86689b2573856386d75
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="binding-extensibility"></a>Extensibilité des liaisons
+
 Cette section contient des exemples qui illustrent la liaison personnalisée dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
  <xref:System.ServiceModel.NetHttpBinding>  
  Montre comment implémenter une liaison qui empile <xref:System.ServiceModel.Channels.HttpTransportBindingElement> ou le <xref:System.ServiceModel.Channels.HttpsTransportBindingElement> au-dessus du <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>.  
   
- <!--zz <xref:System.ServiceModel.WSStreamedHttpBinding> --> `System.ServiceModel.WSStreamedHttpBinding` 
- Montre comment créer une liaison conçue pour prendre en charge des scénarios de diffusion en continu lorsque le transport HTTP est utilisé.
+ [WSStreamedHttpBinding](wsstreamedhttpbinding.md)  
+ Montre comment créer une liaison conçue pour prendre en charge des scénarios de diffusion en continu lorsque le transport HTTP est utilisé.  

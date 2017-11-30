@@ -10,12 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
+ms.openlocfilehash: 38e9d8955c99c7fb3ee6347af70037d3da08ff39
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
-ms.openlocfilehash: df8733c5c4532dc188ceb95d7bf236bcd2182b9f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="methods"></a>Méthodes #
 
@@ -88,11 +87,11 @@ Vous pouvez appeler une méthode en utilisant à la fois des arguments positionn
  <a name="inherited"></a>
  ##<a name="inherited-and-overridden-methods"></a>Méthodes hérités et remplacées ##
 
-En plus des membres qui sont définis explicitement dans un type, un type hérite des membres définis dans ses classes de base. Étant donné que tous les types du système de types managés héritent directement ou indirectement de la classe @System.Object, tous les types héritent de ses membres, comme @System.Object.Equals(System.Object), @System.Object.GetType et @System.Object.ToString. L’exemple suivant définit une classe `Person`, instancie deux objets `Person` et appelle la méthode `Person.Equals` pour déterminer si les deux objets sont égaux. La méthode `Equals` n’est cependant pas définie dans la classe `Person` ; elle est héritée de @System.Object.
+En plus des membres qui sont définis explicitement dans un type, un type hérite des membres définis dans ses classes de base. Étant donné que tous les types dans le système de type managé héritent directement ou indirectement le <xref:System.Object> (classe), tous les types d’héritent de ses membres, tels que <xref:System.Object.Equals(System.Object)>, <xref:System.Object.GetType>, et <xref:System.Object.ToString>. L’exemple suivant définit une classe `Person`, instancie deux objets `Person` et appelle la méthode `Person.Equals` pour déterminer si les deux objets sont égaux. La méthode `Equals` n’est cependant pas définie dans la classe `Person` ; elle est héritée de <xref:System.Object>.
 
 [!code-csharp[csSnippets.Methods#104](../../samples/snippets/csharp/concepts/methods/inherited1.cs#104)]
 
-Vous pouvez remplacer des membres hérités par des types en utilisant le mot clé `override` et en fournissant une implémentation de la méthode remplacée. La signature de la méthode doit être identique à celle de la méthode remplacée. L’exemple suivant est semblable au précédent, sauf qu’il remplace la méthode @Object.Equals(System.Object). (Il remplace aussi la méthode @Object.GetHashCode, car les deux méthodes sont destinées à fournir des résultats cohérents.)
+Vous pouvez remplacer des membres hérités par des types en utilisant le mot clé `override` et en fournissant une implémentation de la méthode remplacée. La signature de méthode doit être identique à celui de la méthode substituée. L’exemple suivant est semblable au précédent, à ceci près qu’elle remplace le <xref:System.Object.Equals(System.Object)> (méthode). (Il remplace aussi la méthode <xref:System.Object.GetHashCode>, car les deux méthodes sont destinées à fournir des résultats cohérents.)
 
 [!code-csharp[csSnippets.Methods#105](../../samples/snippets/csharp/concepts/methods/overridden1.cs#105)]
 
@@ -196,7 +195,7 @@ Pour utiliser une valeur retournée à partir d'une méthode, la méthode d'appe
 
 L'utilisation d'une variable locale, dans cet exemple, `result`, pour stocker une valeur est facultative. Elle peut favoriser la lisibilité du code ou s'avérer nécessaire si vous avez besoin de stocker la valeur d'origine de l'argument pour la portée entière de la méthode.
 
-Vous voulez parfois que votre méthode retourne plusieurs valeurs. À compter de C# 7.0, vous pouvez faire cela facilement en utilisant des *types tuple* et des *littéraux de tuple*. Le type tuple définit les types de données des éléments du tuple. Les littéraux de tuple fournissent les valeurs réelles du tuple retourné. Dans l’exemple suivant, `(string, string, string, int)` définit le type tuple qui est retourné par la méthode `GetPersonalInfo`. L’expression `(per.FirstName, per.MiddleName, per.LastName, per.Age)` est le littéral de tuple ; la méthode retourne le prénom, le deuxième prénom et le nom, ainsi que l’âge pour un objet `PersonInfo`.
+Vous voulez parfois que votre méthode retourne plusieurs valeurs. À compter de C# 7.0, vous pouvez faire cela facilement en utilisant des *types tuple* et des *littéraux de tuple*. Le type tuple définit les types de données des éléments du tuple. Les littéraux de tuple fournissent les valeurs réelles du tuple retourné. Dans l’exemple suivant, `(string, string, string, int)` définit le type de tuple retourné par le `GetPersonalInfo` (méthode). L’expression `(per.FirstName, per.MiddleName, per.LastName, per.Age)` est le littéral de tuple ; la méthode retourne le prénom, le deuxième prénom et le nom, ainsi que l’âge pour un objet `PersonInfo`.
 
 ```csharp
 public (string, string, string, int) GetPersonalInfo(string id)
@@ -264,7 +263,7 @@ Si vous marquez une méthode avec le modificateur [async](language-reference/key
 > [!NOTE]
 > Une méthode async retourne à l'appelant quand elle rencontre le premier objet await qui n'est pas encore terminé ou quand elle atteint la fin de la méthode async, selon la première éventualité.
 
-Une méthode async peut avoir un type de retour @System.Threading.Tasks.Task, <TResult>, @System.Threading.Tasks.Task ou `void`. Le type de retour `void` est essentiellement utilisé pour définir les gestionnaires d’événements, où un type de retour `void` est obligatoire. Une méthode async qui retourne `void` ne peut pas être attendue, et l’appelant d’une méthode retournant void ne peut intercepter aucune exception levée par la méthode. C# 7, une fois publié, facilitera cette restriction pour permettre à une méthode async de [retourner n’importe quel type similaire à une tâche](https://github.com/ljw1004/roslyn/blob/features/async-return/docs/specs/feature%20-%20arbitrary%20async%20returns.md).
+Une méthode async peut avoir un type de retour de <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, ou `void`. Le type de retour `void` est essentiellement utilisé pour définir les gestionnaires d’événements, où un type de retour `void` est obligatoire. Une méthode async qui retourne `void` ne peut pas être attendue, et l’appelant d’une méthode retournant void ne peut intercepter aucune exception levée par la méthode. C# 7, une fois publié, facilitera cette restriction pour permettre à une méthode async de [retourner n’importe quel type similaire à une tâche](https://github.com/ljw1004/roslyn/blob/features/async-return/docs/specs/feature%20-%20arbitrary%20async%20returns.md).
 
 Dans l’exemple suivant, `DelayAsync` est une méthode async contenant une instruction return qui retourne un entier. Comme il s’agit d’une méthode async, la déclaration de sa méthode doit avoir un type de retour `Task<int>`. Comme le type de retour est `Task<int>`, l’évaluation de l’expression `await` dans `DoSomethingAsync` produit un entier, comme l’instruction `int result = await delayTask` suivante le montre.
 
@@ -295,7 +294,7 @@ Si la méthode retourne `void` ou est une méthode async, alors le corps de la m
 
 Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actif est mémorisé pour que l’appelant puisse demander l’élément suivant dans la séquence.
 
-Le type de retour d’un itérateur peut être @System.Collections.IEnumerable, @System.Collections.Generic.IEnumerable%601, @System.Collections.IEnumerator ou @System.Collections.Generic.IEnumerator%601.
+Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>ou <xref:System.Collections.Generic.IEnumerator%601>.
 
 Pour plus d’informations, consultez [Itérateurs](programming-guide/concepts/iterators.md).
 
@@ -309,4 +308,3 @@ Pour plus d’informations, consultez [Itérateurs](programming-guide/concepts/i
 [out](language-reference/keywords/out.md)   
 [ref](language-reference/keywords/ref.md)   
 [Passage de paramètres](programming-guide/classes-and-structs/passing-parameters.md)
-

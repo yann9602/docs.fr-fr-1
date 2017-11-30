@@ -5,29 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - in-process side-by-side execution
 - side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: fa65be2eee481e20231bacb5d0861fa3d2c03f92
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5ad204e06868b21ac6f37bbdf02d29670a284496
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="in-process-side-by-side-execution"></a>Exécution côte à côte in-process
 Depuis [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR (Common Language Runtime) dans un processus unique. Par défaut, les composants COM managés s’exécutent avec la version du .NET Framework avec laquelle ils ont été générés, indépendamment de la version du .NET Framework chargée pour le processus.  
@@ -47,7 +40,7 @@ Depuis [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouv
   
 -   **Développeurs d’applications**. L’hébergement côte à côte n’a presque aucun effet sur les développeurs d’applications. Par défaut, les applications sont toujours exécutées avec la version du .NET Framework avec laquelle elles ont été créées. Cela n’a pas changé. Toutefois, les développeurs peuvent substituer ce comportement et demander à l’application de s’exécuter sous une version plus récente du .NET Framework (consultez le [scénario 2](#scenarios)).  
   
--   **Consommateurs et développeurs de bibliothèques**. L’hébergement côte à côte ne résout pas les problèmes de compatibilité rencontrés par les développeurs de bibliothèques. Une bibliothèque chargée directement par une application, soit via une référence directe soit via un appel <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>, continue d’utiliser le runtime du <xref:System.AppDomain> dans lequel elle est chargée. Vous devez tester vos bibliothèques sur toutes les versions du .NET Framework que vous souhaitez prendre en charge. Si une application est compilée à l’aide du runtime [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] mais inclut une bibliothèque créée à l’aide d’un runtime antérieur, cette bibliothèque utilisera également le runtime [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Toutefois, si vous possédez une application générée à l’aide d’un runtime antérieur et une bibliothèque créée à l’aide de [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], vous devez forcer votre application à utiliser également [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] (consultez le [scénario 3](#scenarios)).  
+-   **Consommateurs et développeurs de bibliothèques**. L’hébergement côte à côte ne résout pas les problèmes de compatibilité rencontrés par les développeurs de bibliothèques. Une bibliothèque chargée directement par une application, soit via une référence directe soit via un appel <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>, continue d’utiliser le runtime du <xref:System.AppDomain> dans lequel elle est chargée. Vous devez tester vos bibliothèques sur toutes les versions du .NET Framework que vous souhaitez prendre en charge. Si une application est compilée à l’aide du runtime [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] mais inclut une bibliothèque créée à l’aide d’un runtime antérieur, cette bibliothèque utilisera également le runtime [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Toutefois, si vous possédez une application générée à l’aide d’un runtime antérieur et une bibliothèque créée à l’aide de [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], vous devez forcer votre application à utiliser également [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] (consultez le [scénario 3](#scenarios)).  
   
 -   **Développeurs de composants COM managés**. Dans le passé, les composants COM managés étaient automatiquement exécutés à l’aide de la version la plus récente du runtime installée sur l’ordinateur. Vous pouvez maintenant exécuter les composants COM avec la version du runtime avec laquelle ils ont été créés.  
   
@@ -189,6 +182,5 @@ int _tmain(int argc, _TCHAR* argv[])
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [\<startup>, élément](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)   
+ [\<démarrage > élément](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)  
  [\<supportedRuntime>, élément](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
-

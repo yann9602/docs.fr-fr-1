@@ -1,15 +1,12 @@
 ---
 title: "Arguments nommés et facultatifs (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - namedParameter_CSharpKeyword
 - cs_namedParameter
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - parameters [C#], named
 - named arguments [C#]
@@ -19,29 +16,14 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e6fceb569a79b5988171f06ae6c09d86b5fc667d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 0dc2fcee3903b80816c98bab47e2b9a2e5ef78b0
-ms.openlocfilehash: a7f05e3e0b19bf6457989f8db2b46741cf6b28c1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Arguments nommés et facultatifs (Guide de programmation C#)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] introduit des arguments nommés et facultatifs. Les *arguments nommés* vous permettent de spécifier un argument pour un paramètre particulier en associant l’argument avec le nom du paramètre plutôt qu’avec la position du paramètre dans la liste de paramètres. Les *arguments facultatifs* vous permettent d’omettre des arguments pour certains paramètres. Les deux techniques peuvent être utilisées avec les méthodes, les indexeurs, les constructeurs et les délégués.  
@@ -51,30 +33,39 @@ ms.lasthandoff: 08/28/2017
  La combinaison de paramètres nommés et facultatifs vous permet de fournir des arguments uniquement pour certains paramètres d’une liste de paramètres facultatifs. Cette fonctionnalité facilite considérablement les appels aux interfaces COM telles que les API Microsoft Office Automation.  
   
 ## <a name="named-arguments"></a>Arguments nommés  
- Avec les arguments nommés, vous n’avez plus à mémoriser ou à rechercher l’ordre des paramètres dans les listes de paramètres des méthodes appelées. Vous pouvez spécifier le paramètre de chaque argument par son nom. Par exemple, vous pouvez appeler une fonction qui calcule l’indice de masse corporelle (IMC) à l’aide de la méthode standard consistant à envoyer les arguments du poids et de la taille par position, dans l’ordre défini par la fonction.  
+ Avec les arguments nommés, vous n’avez plus à mémoriser ou à rechercher l’ordre des paramètres dans les listes de paramètres des méthodes appelées. Vous pouvez spécifier le paramètre de chaque argument par son nom. Par exemple, une fonction qui imprime les détails de la commande (par exemple, le nom du vendeur, nom de produits et le numéro de l’ordre) peut être appelée de la manière standard en envoyant des arguments par position, dans l’ordre défini par la fonction.
   
- `CalculateBMI(123, 64);`  
+ `PrintOrderDetails("Gift Shop", 31, "Red Mug");`
   
- Si vous ne vous souvenez pas de l’ordre des paramètres, mais que vous connaissez leur nom, vous pouvez envoyer les arguments dans l’ordre que vous voulez (le poids ou la taille en premier).  
+ Si vous ne vous souvenez pas l’ordre des paramètres mais que vous connaissez leurs noms, vous pouvez envoyer les arguments dans n’importe quel ordre.  
   
- `CalculateBMI(weight: 123, height: 64);`  
+ `PrintOrderDetails(orderNum: 31, productName: "Red Mug", sellerName: "Gift Shop");`
   
- `CalculateBMI(height: 64, weight: 123);`  
+ `PrintOrderDetails(productName: "Red Mug", sellerName: "Gift Shop", orderNum: 31);`
   
- Les arguments nommés améliorent également la lisibilité de votre code en identifiant ce que chaque argument représente.  
+ Les arguments nommés améliorent également la lisibilité de votre code en identifiant ce que chaque argument représente. Dans la méthode de l’exemple ci-dessous, le `sellerName` ne peut pas être null ou un espace blanc. À la fois comme `sellerName` et `productName` sont des types de chaînes, au lieu d’envoyer des arguments par position, il est judicieux d’utiliser des arguments nommés pour lever l’ambiguïté entre les deux et réduire les risques de confusion pour toute personne lisant le code.
   
- Un argument nommé peut suivre des arguments de position, comme illustré ici.  
+ Arguments nommés, lorsqu’il est utilisé avec des arguments de position, sont valides tant que 
+
+- ils n’êtes pas suivis par les arguments de position, ou
+
+ `PrintOrderDetails("Gift Shop", 31, productName: "Red Mug");`
+
+- _en commençant par C# 7.2_, ils sont utilisés dans la position correcte. Dans l’exemple ci-dessous, le paramètre `orderNum` est à la position correcte, mais elle n’est pas explicitement nommée.
+
+ `PrintOrderDetails(sellerName: "Gift Shop", 31, productName: "Red Mug");`
   
- `CalculateBMI(123, height: 64);`  
-  
- À l’inverse, un argument de position ne peut pas suivre un argument nommé. Par exemple, l’instruction suivante provoque une erreur du compilateur.  
-  
- `//CalculateBMI(weight: 123, 64);`  
+ Toutefois, d’ordre des arguments nommés ne sont pas valides si elles sont suivies par les arguments de position.
+
+ ```csharp
+ // This generates CS1738: Named argument specifications must appear after all fixed arguments have been specified.
+ PrintOrderDetails(productName: "Red Mug", 31, "Gift Shop");
+ ```
   
 ## <a name="example"></a>Exemple  
- Le code suivant implémente les exemples de cette section.  
+ Le code suivant implémente les exemples de cette section, ainsi que d’autres plus supplémentaires.  
   
- [!code-cs[csProgGuideNamedAndOptional#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_1.cs)]  
+ [!code-csharp[csProgGuideNamedAndOptional#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_1.cs)]  
   
 ## <a name="optional-arguments"></a>Arguments facultatifs  
  La définition d’une méthode, d’un constructeur, d’un indexeur ou d’un délégué peut spécifier que ses paramètres sont obligatoires ou facultatifs. Chaque appel doit fournir des arguments pour tous les paramètres obligatoires, mais peut omettre les arguments des paramètres facultatifs.  
@@ -89,7 +80,7 @@ ms.lasthandoff: 08/28/2017
   
  Les paramètres facultatifs sont définis à la fin de la liste de paramètres, après tous les paramètres obligatoires. Si l’appelant fournit un argument pour l’un des paramètres d’une série de paramètres facultatifs, il doit fournir des arguments pour tous les paramètres facultatifs précédents. Les intervalles séparés par des virgules ne sont pas autorisés dans la liste d’arguments. Par exemple, dans le code suivant, la méthode d’instance `ExampleMethod` est définie avec un paramètre obligatoire et deux paramètres facultatifs.  
   
- [!code-cs[csProgGuideNamedAndOptional#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_2.cs)]  
+ [!code-csharp[csProgGuideNamedAndOptional#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_2.cs)]  
   
  L’appel suivant à `ExampleMethod` provoque une erreur du compilateur, car un argument est fourni pour le troisième paramètre, mais pas pour le deuxième.  
   
@@ -110,7 +101,7 @@ Paramètres facultatifs dans ExampleMethod
 ## <a name="example"></a>Exemple  
  Dans l’exemple suivant, le constructeur associé à `ExampleClass` a un seul paramètre, qui est facultatif. La méthode d’instance `ExampleMethod` a un paramètre obligatoire (`required`) et deux paramètres facultatifs (`optionalstr` et `optionalint`). Le code dans `Main` montre les différentes façons dont le constructeur et la méthode peuvent être appelés.  
   
- [!code-cs[csProgGuideNamedAndOptional#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_3.cs)]  
+ [!code-csharp[csProgGuideNamedAndOptional#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_3.cs)]  
   
 ## <a name="com-interfaces"></a>Interfaces COM  
  Avec la prise en charge des objets dynamiques et d’autres améliorations, les arguments nommés et facultatifs améliorent nettement l’interopérabilité avec les API COM, telles que les API Office Automation.  
@@ -122,11 +113,11 @@ Paramètres AutoFormat
   
  Dans C# 3.0 et les versions antérieures, un argument est obligatoire pour chaque paramètre, comme indiqué dans l’exemple suivant.  
   
- [!code-cs[csProgGuideNamedAndOptional#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_4.cs)]  
+ [!code-csharp[csProgGuideNamedAndOptional#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_4.cs)]  
   
  Toutefois, vous pouvez considérablement simplifier l’appel à `AutoFormat` en utilisant les arguments nommés et facultatifs introduits dans C# 4.0. Les paramètres nommés et facultatifs vous permettent d’omettre l’argument d’un paramètre obligatoire si vous ne souhaitez pas modifier la valeur par défaut du paramètre. Dans l’appel suivant, une valeur est spécifiée pour un seul des sept paramètres.  
   
- [!code-cs[csProgGuideNamedAndOptional#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_5.cs)]  
+ [!code-csharp[csProgGuideNamedAndOptional#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_5.cs)]  
   
  Pour plus d’informations et obtenir des exemples, consultez [Guide pratique pour utiliser des arguments nommés et facultatifs dans la programmation Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md) et [Guide pratique pour accéder aux objets Office Interop à l’aide des fonctionnalités Visual C#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md).  
   
@@ -143,8 +134,7 @@ Paramètres AutoFormat
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide pratique pour utiliser des arguments nommés et facultatifs dans la programmation Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)   
- [Utilisation du type dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)   
- [Utilisation de constructeurs](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)   
+ [Comment : utiliser des arguments nommés et facultatifs dans la programmation Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)  
+ [Utilisation du type dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
+ [Utilisation de constructeurs](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)  
  [Utilisation d’indexeurs](../../../csharp/programming-guide/indexers/using-indexers.md)
-

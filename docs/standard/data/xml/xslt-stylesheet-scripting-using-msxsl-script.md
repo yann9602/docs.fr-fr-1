@@ -1,90 +1,91 @@
 ---
-title: "&#201;criture de scripts de feuille de style&#160;XSLT &#224; l&#39;aide de &lt;msxsl:script&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XSLT Stylesheet Scripting à l’aide de &lt;msxsl : script&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 35f24c0a033748917b465510d4f70b75946a0a74
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &#201;criture de scripts de feuille de style&#160;XSLT &#224; l&#39;aide de &lt;msxsl:script&gt;
+# <a name="xslt-stylesheet-scripting-using-ltmsxslscriptgt"></a>XSLT Stylesheet Scripting à l’aide de &lt;msxsl : script&gt;
 La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`.  
   
 > [!NOTE]
->  La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  Vous pouvez effectuer des transformations XSLT \(Extensible Stylesheet Language Transformation\) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
+>  La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Consultez [à l’aide de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) pour plus d’informations.  
   
- La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`.  Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL \(Microsoft Intermediate Language\) par son enveloppement dans une définition de classe et n'engendre aucune perte des performances.  
+ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par son enveloppement dans une définition de classe et n'engendre aucune perte des performances.  
   
- L'élément `<msxsl:script>` est défini ci\-après :  
+ L'élément `<msxsl:script>` est défini ci-après :  
   
-```  
+```xml  
 <msxsl:script language = "language-name" implements-prefix = "prefix of user namespace"> </msxsl:script>  
 ```  
   
  où `msxsl` est un préfixe lié à l'espace de noms `urn:schemas-microsoft-com:xslt`.  
   
- L'attribut `language` n'est pas obligatoire mais, s'il est spécifié, sa valeur doit être l'une des suivantes : C\#, VB, JScript, JavaScript, VisualBasic ou CSharp.  Lorsqu'il n'est pas spécifié, le langage par défaut est JScript.  Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
+ L'attribut `language` n'est pas obligatoire mais, s'il est spécifié, sa valeur doit être l'une des suivantes : C#, VB, JScript, JavaScript, VisualBasic ou CSharp. Lorsqu'il n'est pas spécifié, le langage par défaut est JScript. Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
   
- L'attribut `implements-prefix` est obligatoire.  Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script.  La valeur de cet attribut est le préfixe qui représente l'espace de noms.  Cet espace de noms peut être défini à un endroit d'une feuille de style.  
+ L'attribut `implements-prefix` est obligatoire. Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script. La valeur de cet attribut est le préfixe qui représente l'espace de noms. Cet espace de noms peut être défini à un endroit d'une feuille de style.  
   
  Dans la mesure où l'élément `msxsl:script` appartient à l'espace de noms `urn:schemas-microsoft-com:xslt`, la feuille de style doit inclure la déclaration d'espaces de noms `xmlns:msxsl=urn:schemas-microsoft-com:xslt`.  
   
- Si l'appelant du script ne possède pas l'autorisation d'accès [UnmanagedCode](frlrfSystemSecurityPermissionsSecurityPermissionFlagClassTopic), le script dans une feuille de style ne se compilera jamais et l'appel à <xref:System.Xml.Xsl.XslTransform.Load%2A> échouera.  
+ Si l’appelant du script n’a pas <xref:System.Security.Permissions.SecurityPermissionFlag> autorisation, d’accès, puis le script dans une feuille de style ne se compilera jamais et l’appel à <xref:System.Xml.Xsl.XslTransform.Load%2A> échouera.  
   
  Si l'appelant possède une autorisation `UnmanagedCode`, le script se compile, mais les opérations autorisées sont dépendantes des preuves fournies au moment du chargement.  
   
- Si vous utilisez l'une des méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prennent un objet <xref:System.Xml.XmlReader> ou un objet <xref:System.Xml.XPath.XPathNavigator> pour charger la feuille de style, vous devez utiliser la surcharge <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prend un paramètre <xref:System.Security.Policy.Evidence>.  Pour fournir des preuves, l'appelant doit avoir l'autorisation [ControlEvidence](frlrfSystemSecurityPermissionsSecurityPermissionFlagClassTopic) pour fournir `Evidence` à l'assembly script.  Si l'appelant n'a pas cette autorisation, il peut attribuer la valeur `null` au paramètre `Evidence`.  Cela entraîne l'échec de la fonction <xref:System.Xml.Xsl.XslTransform.Load%2A> si le script n'est pas trouvé.  L'autorisation `ControlEvidence` est considérée comme une autorisation très puissante qui ne doit être accordée qu'au code d'un niveau de confiance élevé.  
+ Si vous utilisez l'une des méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prennent un objet <xref:System.Xml.XmlReader> ou un objet <xref:System.Xml.XPath.XPathNavigator> pour charger la feuille de style, vous devez utiliser la surcharge <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prend un paramètre <xref:System.Security.Policy.Evidence>. Pour fournir des preuves, l’appelant doit avoir <xref:System.Security.Permissions.SecurityPermissionFlag> autorisation fournir `Evidence` pour l’assembly de script. Si l'appelant n'a pas cette autorisation, il peut attribuer la valeur `Evidence` au paramètre `null`. Cela entraîne l'échec de la fonction <xref:System.Xml.Xsl.XslTransform.Load%2A> si le script n'est pas trouvé. L'autorisation `ControlEvidence` est considérée comme une autorisation très puissante qui ne doit être accordée qu'au code d'un niveau de confiance élevé.  
   
- Pour obtenir la preuve de votre assembly, utilisez `this.GetType().Assembly.Evidence`.  Pour obtenir la preuve d'un URI \(Uniform Resource Identifier\), utilisez `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)`.  
+ Pour obtenir la preuve de votre assembly, utilisez `this.GetType().Assembly.Evidence`. Pour obtenir la preuve d'un URI (Uniform Resource Identifier), utilisez `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)`.  
   
- Si vous utilisez les méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prennent un objet <xref:System.Xml.XmlResolver> mais aucun `Evidence`, la zone de sécurité pour l'assembly prend la valeur Confiance totale par défaut.  Pour plus d'informations, voir <xref:System.Security.SecurityZone> et [Jeux d'autorisations nommés](http://msdn.microsoft.com/fr-fr/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).  
+ Si vous utilisez les méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui prennent un objet <xref:System.Xml.XmlResolver> mais aucun `Evidence`, la zone de sécurité pour l'assembly prend la valeur Confiance totale par défaut. Pour plus d’informations, consultez <xref:System.Security.SecurityZone> et [jeux d’autorisations nommés](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).  
   
- Les fonctions peuvent être déclarées dans l'élément `msxsl:script`.  Le tableau suivant montre les espaces de noms qui sont pris en charge par défaut.  Vous pouvez utiliser des classes en dehors des espaces de noms répertoriés.  Toutefois, ces classes doivent être qualifiées complètes.  
+ Les fonctions peuvent être déclarées dans l'élément `msxsl:script`. Le tableau suivant montre les espaces de noms qui sont pris en charge par défaut. Vous pouvez utiliser des classes en dehors des espaces de noms répertoriés. Toutefois, ces classes doivent être qualifiées complètes.  
   
 |Espaces de noms par défaut|Description|  
-|--------------------------------|-----------------|  
+|------------------------|-----------------|  
 |System|Classe système.|  
 |System.Collection|Classes de collection.|  
 |System.Text|Classes de texte.|  
 |System.Text.RegularExpressions|Classes d'expressions régulières.|  
 |System.Xml|Classes XML principales.|  
 |System.Xml.Xsl|Classes XSLT.|  
-|System.Xml.XPath|Classes XML Path Language \(XPath\).|  
-|Microsoft.VisualBasic|Classes pour les scripts Microsoft Visual Basic.|  
+|System.Xml.XPath|Classes XML Path Language (XPath).|  
+|Microsoft.VisualBasic|Classes de scripts Microsoft Visual Basic.|  
   
- Lorsqu'une fonction est déclarée, elle est contenue dans un bloc de script.  Les feuilles de style peuvent contenir plusieurs blocs de scripts, chacun fonctionnant indépendamment des autres.  Ainsi, si vous êtes en cours d'exécution dans un bloc de script, vous ne pouvez pas appeler une fonction que vous avez définie dans un autre bloc de script, sauf si elle est déclarée comme possédant le même espace de noms et le même langage de script.  Puisque chaque bloc de script peut être écrit dans son propre langage et que le bloc est analysé en fonction des règles grammaticales de cet analyseur de langage, vous devez utiliser la syntaxe correcte pour la langue utilisée.  Par exemple, il n'est pas correct d'utiliser un nœud de commentaire XML `<!-- an XML comment -->` dans un bloc de script C\#.  
+ Lorsqu'une fonction est déclarée, elle est contenue dans un bloc de script. Les feuilles de style peuvent contenir plusieurs blocs de scripts, chacun fonctionnant indépendamment des autres. Ainsi, si vous êtes en cours d'exécution dans un bloc de script, vous ne pouvez pas appeler une fonction que vous avez définie dans un autre bloc de script, sauf si elle est déclarée comme possédant le même espace de noms et le même langage de script. Puisque chaque bloc de script peut être écrit dans son propre langage et que le bloc est analysé en fonction des règles grammaticales de cet analyseur de langage, vous devez utiliser la syntaxe correcte pour la langue utilisée. Par exemple, il n'est pas correct d'utiliser un nœud de commentaire XML `<!-- an XML comment -->` dans un bloc de script C#.  
   
- Les arguments fournis et les valeurs de retour définies par les fonctions du script doivent être l'un des types définis par le World Wide Web Consortium \(W3C\), XPath ou XSLT.  Le tableau suivant illustre les types W3C correspondants, les classes .NET Framework équivalentes \(Type\), et précise si le type W3C est un XPath ou XSLT.  
+ Les arguments fournis et les valeurs de retour définies par les fonctions du script doivent être l’un des types définis par le World Wide Web Consortium (W3C), XPath ou XSLT. Le tableau suivant présente les types W3C correspondants, le .NET Framework équivalentes (Type) des classes, et si le type de la W3C est un type XPath ou XSLT.  
   
-|Type|Classe équivalente .NET Framework \(type\)|Type XPath ou type XSLT|  
-|----------|------------------------------------------------|-----------------------------|  
+|Type|Classe équivalente .NET Framework (Type)|Type XPath ou type XSLT|  
+|----------|----------------------------------------------|-----------------------------|  
 |Chaîne|System.String|XPath|  
 |Boolean|System.Boolean|XPath|  
 |Nombre|System.Double|XPath|  
 |Fragment d'arborescence résultat|System.Xml.XPath.XPathNavigator|XSLT|  
 |Collection de nœuds|System.Xml.XPath.XPathNodeIterator|XPath|  
   
- Si la fonction de script utilise l'un des types numériques suivants : Int16, UInt16, Int32, UInt32, Int64, UInt64, Single ou Decimal, ils deviennent Double, ce qui effectue un mappage sur le nombre de type XPath W3C.  Tous les autres types deviennent une chaîne à l'aide de la méthode `ToString`.  
+ Si la fonction de script utilise l'un des types numériques suivants : Int16, UInt16, Int32, UInt32, Int64, UInt64, Single ou Decimal, ils deviennent Double, ce qui effectue un mappage sur le nombre de type XPath W3C. Tous les autres types deviennent une chaîne à l'aide de la méthode `ToString`.  
   
- Si la fonction de script utilise un type différent de ceux mentionnés ci\-avant ou si la fonction ne se compile pas lorsque la feuille de style est chargée dans l'objet <xref:System.Xml.Xsl.XslTransform>, une exception est levée.  
+ Si la fonction de script utilise un type différent de ceux mentionnés ci-avant ou si la fonction ne se compile pas lorsque la feuille de style est chargée dans l'objet <xref:System.Xml.Xsl.XslTransform>, une exception est levée.  
   
- Lors de l'utilisation de l'élément  `msxsl:script`, il est vivement recommandé de placer le script \(quel que soit son langage\) dans une section CDATA.  Par exemple, le langage XML suivant illustre le modèle de la section CDATA dans laquelle est placé votre code.  
+ Lorsque vous utilisez la `msxsl:script` élément, il est fortement recommandé que le script, quel que soit le langage, être placé dans une section CDATA. Par exemple, le langage XML suivant illustre le modèle de la section CDATA dans laquelle est placé votre code.  
   
-```  
+```xml  
 <msxsl:script implements-prefix='yourprefix' language='CSharp'>  
     <![CDATA[  
     ... your code here ...  
@@ -92,9 +93,9 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
 </msxsl:script>  
 ```  
   
- Il est vivement recommandé de placer tout le contenu du script dans une section CDATA car les opérateurs, les identificateurs ou les délimiteurs d'un langage donné peuvent être mal interprétés en tant que XML.  L'exemple suivant illustre l'utilisation de l'opérateur AND logique dans le script.  
+ Il est vivement recommandé de placer tout le contenu du script dans une section CDATA car les opérateurs, les identificateurs ou les délimiteurs d'un langage donné peuvent être mal interprétés en tant que XML. L'exemple suivant illustre l'utilisation de l'opérateur AND logique dans le script.  
   
-```  
+```xml  
 <msxsl:script implements-prefix='yourprefix' language='CSharp>  
     public string book(string abc, string xyz)  
     {  if ((abc== abc)&&(abc== xyz)) return bar+xyz;  
@@ -103,9 +104,9 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
 </msxsl:script>  
 ```  
   
- Cela lève une exception car les signes &amp; ne font pas l'objet d'un échappement.  Le document est chargé en tant que XML et aucun traitement spécial n'est appliqué au texte entre les balises d'élément  `msxsl:script`.  
+ Cela lève une exception car les signes & ne font pas l'objet d'un échappement. Le document est chargé en tant que XML et aucun traitement spécial n’est appliqué au texte entre les `msxsl:script` balises d’élément.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
   
 ```vb  
@@ -138,7 +139,6 @@ Public Class Sample
     writer.Close()  
   End Sub   
 End Class  
-  
 ```  
   
 ```csharp  
@@ -173,10 +173,10 @@ public class Sample
 }  
 ```  
   
-## Entrée  
+## <a name="input"></a>Entrée  
  number.xml  
   
-```  
+```xml  
 <?xml version='1.0'?>  
 <data>  
   <circle>  
@@ -190,7 +190,7 @@ public class Sample
   
  calc.xsl  
   
-```  
+```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
     xmlns:msxsl="urn:schemas-microsoft-com:xslt"  
     xmlns:user="urn:my-scripts">  
@@ -221,9 +221,9 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-## Sortie  
+## <a name="output"></a>Sortie  
   
-```  
+```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  
   <circle>  
     <radius>12</radius>  
@@ -236,5 +236,5 @@ public class Sample
 </circles>    
 ```  
   
-## Voir aussi  
- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+## <a name="see-also"></a>Voir aussi  
+ [XslTransform Class Implements the XSLT Processor](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

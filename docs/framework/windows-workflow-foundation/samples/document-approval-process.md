@@ -12,11 +12,11 @@ caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 52c36870134006eafaaf64824969c5314459d2c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: b3b436d1f01e1ddb2f8f8058acfbbbdc7dcae12f
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="document-approval-process"></a>Processus d'approbation des documents
 Cet exemple illustre l'utilisation conjointe de nombreuses fonctionnalités [!INCLUDE[wf](../../../../includes/wf-md.md)] et [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Ensemble, elles implémentent un scénario de processus d'approbation des documents. Une application cliente peut soumettre des documents pour approbation et approuver des documents. Une application du responsable des approbations existe pour faciliter les communications entre les clients et mettre en vigueur les règles du processus d'approbation. Le processus d'approbation est un workflow qui peut exécuter plusieurs types d'approbation. Il existe des activités pour obtenir une approbation unique, une approbation de quorum (pourcentage de l'ensemble d'approbateurs) et un processus d'approbation complexe qui se compose d'une approbation unique et de quorum dans une séquence.  
@@ -155,6 +155,4 @@ Cet exemple illustre l'utilisation conjointe de nombreuses fonctionnalités [!IN
   
 ##### <a name="to-clean-up"></a>Pour nettoyer  
   
-1.  À partir d'une invite de commandes [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], naviguez jusqu'au dossier DocumentApprovalProcess et exécutez Cleanup.cmd.  
-  
-## <a name="see-also"></a>Voir aussi
+1.  À partir d'une invite de commandes [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], naviguez jusqu'au dossier DocumentApprovalProcess et exécutez Cleanup.cmd.

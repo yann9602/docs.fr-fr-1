@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: 9eb5be38549711717c11767332bfc84920ea927a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: 55329bed71be21a787d6e77d8c0ea67d607676b8
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -46,7 +45,7 @@ La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans 
 
 Les projets de test doivent également spécifier le lanceur de tests. Pour ce faire, vous pouvez utiliser un élément `<PackageReference>` ordinaire, comme indiqué dans l’exemple de fichier projet suivant :
 
-[!code-xml[Modèle XUnit de base](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
+[!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
 ## <a name="arguments"></a>Arguments
 
@@ -84,7 +83,7 @@ Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Po
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
@@ -142,7 +141,7 @@ Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Po
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
@@ -212,12 +211,11 @@ Les expressions peuvent être associées à des opérateurs conditionnels :
 | <code>&#124;</code>      | OU       |
 | `&`      | AND      |
 
-Vous pouvez inclure des expressions entre parenthèses lorsque vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).
+Vous pouvez placer des expressions entre parenthèses lorsque vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).
 
 Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
 ## <a name="see-also"></a>Voir aussi
 
- [Frameworks et cibles](../../standard/frameworks.md)   
+ [Frameworks et cibles](../../standard/frameworks.md)  
  [Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)
-

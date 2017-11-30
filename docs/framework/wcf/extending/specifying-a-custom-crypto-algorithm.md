@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 630457e4d1b30fe2a9439c3a41af5da92606c55a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: 3b6057076f750d6ad5f8e5de00bc907ac9bf08c2
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>Spécification d'un algorithme de chiffrement personnalisé
 WCF vous permet de spécifier un algorithme de chiffrement personnalité pour le chiffrement des données ou le calcul de signatures numériques. Voici les étapes qui permettent d'effectuer cette opération :  
@@ -117,7 +117,7 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
   
  La section sous le <`cryptoClasses`> élément crée le mappage entre le SHA256CryptoServiceProvider et l’alias « SHA256CSP ». Le <`nameEntry`> élément crée le mappage entre l’alias « SHA256CSP » et l’URL spécifiée (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm).  
   
- Pour enregistrer l’algorithme personnalisé dans le code, utilisez le <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm%2A> System.String[])?qualifyHint=False & mise à niveau automatique = True (méthode). Cette méthode crée ces deux mappages. L'exemple suivant illustre l'appel de cette méthode :  
+ Pour enregistrer l'algorithme personnalisé en code, utilisez la méthode <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])>. Cette méthode crée ces deux mappages. L'exemple suivant illustre l'appel de cette méthode :  
   
 ```  
 // Register the custom URI string defined for the hashAlgorithm in MyCustomAlgorithmSuite class to create the   

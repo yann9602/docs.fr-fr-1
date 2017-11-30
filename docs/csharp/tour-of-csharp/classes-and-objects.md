@@ -10,12 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
+ms.openlocfilehash: 37e04e918ead283f474899a9421aee2140ab7c11
+ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c71aee3dbfb6544973e1527955ca03deb6b569f3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="classes-and-objects"></a>Classes et objets
 
@@ -74,12 +73,14 @@ Chaque membre d’une classe a une accessibilité associée, qui contrôle les r
     - Accès limité à la classe conteneur ou aux classes dérivées de la classe conteneur
 * `private`
     - Accès limité à cette classe
+* `private protected`
+    - Accès limité à la classe de conteneur ou les classes dérivées du au sein de type contenant le même assembly
 
 ## <a name="type-parameters"></a>Paramètres de type
 
 Une définition de classe peut spécifier un jeu de paramètres de type en faisant suivre le nom de classe par une liste de noms de paramètre de type entre crochets. Les paramètres de type peuvent ensuite être utilisés dans le corps des déclarations de classe pour définir les membres de la classe. Dans l’exemple suivant, les paramètres de type de `Pair` sont `TFirst` et `TSecond` :
 
-[!code-csharp[Paire](../../../samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]
+[!code-csharp[Pair](../../../samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]
 
 Un type de classe déclaré pour prendre des paramètres de type est appelé un *type de classe générique*. Les types struct, interface et délégué peuvent également être génériques.
 Lorsque la classe générique est utilisée, des arguments de type doivent être fournis pour chacun des paramètres de type :
@@ -140,7 +141,7 @@ Un *paramètre de sortie* est utilisé pour passer des arguments par référence
 
 [!code-csharp[OutExample](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
 
-Un *tableau de paramètres* autorise le passage d’un nombre variable d’arguments à une méthode. Un tableau de paramètres est déclaré avec le modificateur `params`. Seul le dernier paramètre d’une méthode peut être un tableau de paramètres, et le type d’un tableau de paramètres doit être un type tableau unidimensionnel. Les méthodes Write et WriteLine de la classe `@System.Console` sont de bons exemples d’utilisation des tableaux de paramètres. Vous les déclarez de la façon suivante.
+Un *tableau de paramètres* autorise le passage d’un nombre variable d’arguments à une méthode. Un tableau de paramètres est déclaré avec le modificateur `params`. Seul le dernier paramètre d’une méthode peut être un tableau de paramètres, et le type d’un tableau de paramètres doit être un type tableau unidimensionnel. Les méthodes Write et WriteLine de la classe <xref:System.Console?displayProperty=nameWithType> sont de bons exemples d’utilisation des tableaux de paramètres. Vous les déclarez de la façon suivante.
 
 [!code-csharp[ConsoleExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
 
@@ -172,7 +173,7 @@ Une méthode déclarée sans un modificateur statique est une *méthode d’inst
 
 La classe `Entity` suivante a à la fois des statiques et des membres d’instance.
 
-[!code-csharp[Entité](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]
+[!code-csharp[Entity](../../../samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]
 
 Chaque instance `Entity` contient un numéro de série (et probablement d’autres informations qui ne sont pas indiquées ici). Le constructeur `Entity` (qui est similaire à une méthode d’instance) initialise la nouvelle instance avec le numéro de série suivant. Étant donné que le constructeur est un membre d’instance, il est autorisé à accéder à la fois au champ d’instance `serialNo` et au champ statique `nextSerialNo`.
 
@@ -301,4 +302,3 @@ L’instruction `using` fournit une meilleure approche pour la destruction d’o
 >[!div class="step-by-step"]
 [Précédent](statements.md)
 [Suivant](structs.md)
-

@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - 64-bit applications [C++]
 - 64-bit programming [C++]
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
-caps.latest.revision: 53
+caps.latest.revision: "53"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 1ee85512cde0ce50e6a5c34cc5f6acc531c24bc0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9930b44e8ab711f319140e43ad0a36d5d78a7ffb
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="64-bit-applications"></a>Applications 64 bits
 Lorsque vous compilez une application, vous pouvez spécifier si elle doit être exécutée sur un système d'exploitation Windows 64 bits comme une application native ou sous WOW64 (Windows 32 bits sur Windows 64 bits). WOW64 est un environnement de compatibilité qui permet à une application 32 bits de s'exécuter sur un système 64 bits. WOW64 est inclus dans toutes les versions 64 bits du système d'exploitation Windows.  
@@ -48,7 +46,7 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
   
 -   Code renvoyant `IntPtr` à `Int32`.  
   
- Pour plus d'informations sur le portage d'une application 32 bits destinée à s'exécuter sur le CLR 64 bits, consultez [Migration du code managé 32 bits vers du code managé 64 bits](http://go.microsoft.com/fwlink/?LinkId=150542) dans la Bibliothèque MSDN.  
+ Pour plus d’informations sur la façon de porter une application 32 bits s’exécuter sur le CLR 64 bits, consultez [Code managé de migration de 32 bits à 64 bits](https://msdn.microsoft.com/library/ms973190.aspx).  
   
 ## <a name="general-64-bit-programming-information"></a>Informations générales sur la programmation 64 bits  
  Pour obtenir des informations générales sur la programmation 64 bits, consultez les documents suivants :  
@@ -73,5 +71,4 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
 ## <a name="determining-the-status-of-an-exe-file-or-dll-file"></a>Détermination de l'état d'un fichier .exe ou .dll  
  Pour déterminer si un fichier .exe ou .dll est destiné à être exécuté uniquement sur une plateforme spécifique ou sous WOW64, utilisez [CorFlags.exe (Outil de conversion CorFlags)](../../docs/framework/tools/corflags-exe-corflags-conversion-tool.md) sans options. Vous pouvez également utiliser CorFlags.exe pour modifier l'état de plateforme d'un fichier .exe ou .dll. L'en-tête CLR (ou en-tête COM+ Runtime) d'un assembly Visual Studio possède un numéro de version de runtime majeur ayant 2 pour valeur et un numéro de version de runtime mineur ayant 5 pour valeur. Les applications dont la version de runtime mineure est définie à 0 sont traitées comme des applications héritées et sont toujours exécutées sous WOW64.  
   
- Pour interroger par programme un fichier .exe ou .dll pour voir s'il est destiné à être exécuté uniquement sur une plateforme spécifique ou sous WOW64, utilisez la méthode <xref:System.Reflection.Module.GetPEKind%2A?displayProperty=fullName>.
-
+ Pour interroger par programme un fichier .exe ou .dll pour voir s'il est destiné à être exécuté uniquement sur une plateforme spécifique ou sous WOW64, utilisez la méthode <xref:System.Reflection.Module.GetPEKind%2A?displayProperty=nameWithType>.

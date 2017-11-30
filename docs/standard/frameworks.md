@@ -1,23 +1,19 @@
 ---
 title: Versions cibles de .NET Framework
 description: "Découvrez les frameworks cibles pour les applications et bibliothèques .NET Core."
-keywords: .NET, .NET Core, framework, TFM
 author: richlander
 ms.author: mairaw
-ms.date: 08/25/2017
+ms.date: 09/22/2017
 ms.topic: article
+ms.custom: updateeachrelease
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 6ef56a2e-593d-497b-925a-1e25bb6df2e6
+ms.openlocfilehash: 20152a951f11b1b923209b56b31663a9a8a81587
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 18b2f7a1c0857abb5f7e09a39ca120b521ba4ddc
-ms.openlocfilehash: 7f25cdd52cf5249d3b201978eacb98aaa4a74fa9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="target-frameworks"></a>Versions cibles de .NET Framework
 
 Quand vous ciblez un framework dans une application ou une bibliothèque, vous spécifiez l’ensemble d’API que vous souhaitez rendre accessibles à l’application ou à la bibliothèque. Vous spécifiez le framework cible dans votre fichier projet à l’aide des monikers du framework cible (TFM).
@@ -34,11 +30,11 @@ Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et 
 
 Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](~/docs/standard/net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker du framework cible est un format de jeton standardisé pour la spécification du framework cible d’une bibliothèque ou d’une application .NET. 
 
-| Framework cible      | Dernière version | Moniker du Framework cible | Version .NET Standard | Métapackage |
-| :-------------------: | :------------: | :----------------------------: | :-------------------: | :---------: |
-| .NET Standard         | 2.0.0          | netstandard2.0                 | N/A                   | [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) |
-| Application .NET Core | 2.0.0          | netcoreapp2.0                  | 2.0                   | [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) |
-| .NET Framework        | 4.7            | net47                          | 1,5                   | N/A |
+| Framework cible      | Dernière version | Moniker du Framework cible | Implémenté <br/> Version .NET Standard |
+| :-------------------: | :------------: | :----------------------------: | :-------------------------------------: |
+| .NET Standard         | 2.0            | netstandard2.0                 | N/A                                     |
+| Application .NET Core | 2.0            | netcoreapp2.0                  | 2.0                                     |
+| .NET Framework        | 4.7.1          | net471                         | 2.0                                     |
 
 ## <a name="supported-target-framework-versions"></a>Versions de framework cible prises en charge
 
@@ -48,7 +44,7 @@ Un framework cible est généralement référencé par un TFM. Le tableau suivan
 | -------------------------- | --- |
 | .NET Standard              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0 |
 | .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0 |
-| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47 |
+| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471 |
 | Windows Store              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
 | .NET Micro Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
@@ -143,4 +139,3 @@ Les frameworks cibles suivants sont dépréciés. Les packages ciblant ces frame
 [dotnet/standard GitHub repository](https://github.com/dotnet/standard) (Dépôt GitHub dotnet/standard)  
 [NuGet Tools GitHub Repository](https://github.com/joelverhagen/NuGetTools) (Dépôt GitHub des outils NuGet)  
 [Framework Profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (Profils de framework dans .NET)
-

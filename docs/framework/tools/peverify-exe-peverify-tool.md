@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - portable executable files, PEVerify
 - verifying MSIL and metadata
@@ -23,16 +17,15 @@ helpviewer_keywords:
 - PEverify.exe
 - PE files, PEVerify
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 855a1122eb4507912adca80878f78258b37d202d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 01606ede139ef370817926df1dd82bcbfcbabafd
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (outil PEVerify)
 L’outil PEVerify Tool permet aux développeurs générant du langage MSIL (Microsoft Intermediate Language) (tels que des développeurs de moteurs de script, writers de compilateur, etc.) de déterminer si leur code MSIL et les métadonnées qui y sont associées répondent aux exigences de sécurité de type. Certains compilateurs génèrent du code de type sécurisé vérifié uniquement si vous évitez d'utiliser certaines constructions de langage. Si, en tant que développeur, vous utilisez ce type de compilateur, vous pouvez souhaiter vérifier que vous n'avez pas compromis la sécurité de type de votre code. Vous pouvez dans ce cas exécuter l'outil PEVerify Tool sur vos fichiers pour vérifier le langage MSIL et les métadonnées.  
@@ -136,8 +129,7 @@ peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Outils](../../../docs/framework/tools/index.md)   
- [NIB : Écriture de code de type sécurisé vérifié](http://msdn.microsoft.com/en-us/d18f10ef-3b48-4f47-8726-96714021547b)   
- [Sécurité de type et sécurité](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)   
+ [Outils](../../../docs/framework/tools/index.md)  
+ [NIB : Écriture de Code de Type sécurisé](http://msdn.microsoft.com/en-us/d18f10ef-3b48-4f47-8726-96714021547b)  
+ [Sécurité de type et sécurité](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)  
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

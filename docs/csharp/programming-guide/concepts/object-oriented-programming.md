@@ -1,27 +1,18 @@
 ---
 title: "Programmation orientée objet (C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 4a7f30293bb2d50981353badfb7e373b60dcfeec
+ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: de06921840f06f36d8600b9567986644f58c6ad5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="object-oriented-programming-c"></a>Programmation orientée objet (C#)
 C# offre une prise en charge complète de la programmation orientée objet, y compris l’encapsulation, l’héritage et le polymorphisme.  
@@ -242,7 +233,8 @@ Container.Nested nestedInstance = new Container.Nested()
 |[private](../../../csharp/language-reference/keywords/private.md)|Seul le code de la même classe peut accéder au type ou au membre.|  
 |[protected](../../../csharp/language-reference/keywords/protected.md)|Seul le code de la même classe ou d'une classe dérivée peut accéder au type ou au membre.|  
 |[internal](../../../csharp/language-reference/keywords/internal.md)|Tout code du même assembly, mais pas d'un autre assembly, peut accéder au type ou au membre.|  
-|`protected internal`|Tout code du même assembly ou toute classe dérivée dans un autre assembly peut accéder au type ou au membre.|  
+|[protégée interne](../../../csharp/language-reference/keywords/protected-internal.md)|Tout code du même assembly ou toute classe dérivée dans un autre assembly peut accéder au type ou au membre.|  
+|[protégé privé](../../../csharp/language-reference/keywords/private-protected.md)|Le type ou membre accessibles par le code dans la même classe ou dans une classe dérivée dans l’assembly de la classe de base.|  
   
  Pour plus d’informations, consultez [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
@@ -449,4 +441,3 @@ class SampleClass
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-

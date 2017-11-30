@@ -9,14 +9,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7fff0f61-ac23-42f0-9661-72a7240a4456
+ms.openlocfilehash: ad34faa0c2577bd5e3a0ba339b19a9ad387e015a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6830cc46994aa44d46a9c862efff525142578003
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Vue d’ensemble générale des modifications des outils .NET Core
 
 Ce document décrit les modifications associées de passage de *project.json* à MSBuild et au système de projet *csproj*, avec des informations sur les modifications apportées aux couches d’outils .NET Core et à l’implémentation des commandes de l’interface CLI. Ces modifications ont été apportées lors du lancement du Kit de développement logiciel (SDK) .NET Core 1.0 et de Visual Studio 2017 le 7 mars 2017 (consultez [l’annonce](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-net-core-tools-1-0/)), mais ont été à l’origine implémentées avec le lancement de la préversion 3 du Kit SDK .NET Core.
@@ -36,7 +34,7 @@ Commençons par un rappel rapide de l’organisation en couches de Preview 2, c
 
 ![Architecture générale des outils Preview 2](media/cli-msbuild-architecture/p2-arch.png)
 
-L’organisation en couches des outils est assez simple. En bas, nous avons les outils en ligne de commande .NET Core qui constituent la base. Tous les autres outils généraux tels que Visual Studio ou Visual Studio Code dépendent de l’interface de ligne de commande et s’appuient sur celle-ci pour générer des projets, restaurer des dépendances, etc. Cela signifie que, par exemple, si Visual Studio souhaite effectuer une opération de restauration, il appelle la commande `dotnet restore` dans l’interface de ligne de commande. 
+L’organisation en couches des outils est assez simple. En bas, nous avons les outils en ligne de commande .NET Core qui constituent la base. Tous les autres outils généraux tels que Visual Studio ou Visual Studio Code dépendent de l’interface de ligne de commande et s’appuient sur celle-ci pour générer des projets, restaurer des dépendances, etc. Cela signifie que, par exemple, si vous souhaitiez de Visual Studio effectuer une opération de restauration, il serait appellent `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) dans l’interface CLI. 
 
 Avec le passage au nouveau système de projet, le schéma précédent change : 
 
@@ -47,7 +45,7 @@ La principale différence est que l’interface de ligne de commande n’est plu
 > [!NOTE]
 > Une « cible » est un terme MSBuild qui indique une opération nommée que MSBuild peut appeler. Elle est généralement associée à une ou plusieurs tâches qui exécutent une logique que la cible est supposée effectuer. MSBuild prend en charge plusieurs cibles prédéfinies telles que `Copy` ou `Execute`, et permet aussi aux utilisateurs d’écrire leurs propres tâches à l’aide de code managé et de définir des cibles pour exécuter ces tâches. Pour plus d’informations, consultez [Tâches MSBuild](/visualstudio/msbuild/msbuild-tasks). 
 
-Tous les ensembles d’outils utilisent désormais le composant SDK partagé et ses cibles, interface de ligne de commande incluse. Par exemple, la prochaine version de Visual Studio n’appellera pas la commande `dotnet restore` pour restaurer les dépendances des projets .NET Core, mais utilisera directement la cible « Restore ». Comme il s’agit de cibles de MSBuild, vous pouvez également utiliser MSBuild sous forme brute pour les exécuter à l’aide de la commande [dotnet msbuild](dotnet-msbuild.md). 
+Tous les ensembles d’outils utilisent désormais le composant SDK partagé et ses cibles, interface de ligne de commande incluse. Par exemple, la prochaine version de Visual Studio n’appellera pas dans `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) de commande pour restaurer les dépendances pour les projets .NET Core, il utilise directement la cible de « Restore ». Comme il s’agit de cibles de MSBuild, vous pouvez également utiliser MSBuild sous forme brute pour les exécuter à l’aide de la commande [dotnet msbuild](dotnet-msbuild.md). 
 
 ### <a name="cli-commands"></a>Commandes CLI
 Le composant SDK partagé signifie que la plupart des commandes CLI existantes ont été réimplémentées comme cibles et tâches MSBuild. Que cela signifie-t-il pour les commandes CLI et votre utilisation de l’ensemble d’outils ? 
@@ -74,3 +72,4 @@ Cette commande publie une application dans un dossier `pub` à l’aide de la co
 
 La principale exception à cette règle sont les commandes `new` et `run`, car elles n’ont pas été implémentées comme cibles de MSBuild.
 
+<a name="dotnet-restore-note"></a> [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

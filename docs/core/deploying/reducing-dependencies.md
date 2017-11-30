@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 916251e3-87f9-4eee-81ec-94076215e6fa
+ms.openlocfilehash: e09b6f9124ec7614ab2e847d686435d74b00b336
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 23d83f0402e35bc4bed31ef59a6fff0e28e01d35
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="reducing-package-dependencies-with-projectjson"></a>Réduction des dépendances de package avec project.json
 
 Cet article décrit ce que vous devez savoir sur la réduction de vos dépendances de package lors de la création de bibliothèques `project.json`. À la fin de cet article, vous saurez comment composer votre bibliothèque de sorte qu’elle utilise seulement les dépendances dont elle a besoin. 
@@ -32,11 +30,12 @@ Cependant, il est probable que votre bibliothèque n’utilise pas chaque packag
 Il n’existe actuellement aucune commande `dotnet` officielle qui réduit les références de package.  Vous devez donc le faire manuellement.  Le processus général se présente comme suit :
 
 1. Faites référence à `NETStandard.Library` version `1.6.0` dans une section `dependencies` de votre fichier `project.json`.
-2. Restaurer les packages avec `dotnet restore` à partir de la ligne de commande.
+2. Restaurer les packages avec `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) à partir de la ligne de commande.
 3. Parcourez le fichier `project.lock.json` et recherchez la section `NETSTandard.Library`.  Elle est au début du fichier.
 4. Copiez tous les packages répertoriés sous `dependencies`.
 5. Supprimez la référence à `.NETStandard.Library` et remplacez-la par les packages copiés.
 6. Supprimez les références aux packages dont vous n’avez pas besoin.
+
 
 Vous pouvez déterminer les packages dont vous n’avez pas besoin de l’une des façons suivantes :
 
@@ -61,7 +60,7 @@ Pour réduire cette bibliothèque, vous commencez par le fichier `project.json` 
 }
 ```
 
-Ensuite, vous restaurez les packages avec `dotnet restore`, vous examinez le fichier `project.lock.json` et vous recherchez tous les packages restaurés pour `NETSTandard.Library`.
+Ensuite, vous restaurez les packages avec `dotnet restore` ([voir la Remarque](#dotnet-restore-note)), inspecter la `project.lock.json` de fichiers et rechercher tous les packages restaurés pour `NETSTandard.Library`.
 
 Voici à quoi ressemble la section appropriée du fichier `project.lock.json` quand vous ciblez `netstandard1.0` :
 
@@ -158,3 +157,5 @@ Voici ce à quoi un package réduit peut ressembler :
 
 Il a maintenant un encombrement moindre que s’il dépendait du métapackage `NETStandard.Library`.
 
+<a name="dotnet-restore-note"></a>
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

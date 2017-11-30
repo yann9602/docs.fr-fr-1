@@ -3,16 +3,15 @@ title: Commande dotnet-add reference - Interface CLI .NET Core
 description: "La commande dotnet add reference est une option pratique pour ajouter des références entre projets."
 author: mairaw
 ms.author: mairaw
-ms.date: 08/13/2017
+ms.date: 09/19/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: 9c6b0f434a9d6b1431e375ec6a437497aaddfc61
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: 18e3ce22c1b9a4506b2690262d8d0c4e13a58ed1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-add-reference"></a>dotnet-add reference
 
@@ -42,7 +41,7 @@ La commande `dotnet add reference` est une option pratique pour ajouter des réf
 
 `PROJECT`
 
-Spécifie le nom du fichier projet. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actif.
+Spécifie le nom du fichier projet. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel.
 
 `PROJECT_REFERENCES`
 
@@ -52,7 +51,7 @@ Références entre projets (P2P) à ajouter. Spécifiez un ou plusieurs projets.
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `-f|--framework <FRAMEWORK>`
 
@@ -64,7 +63,7 @@ Ajouter une référence de projet :
 
 `dotnet add app/app.csproj reference lib/lib.csproj`
 
-Ajouter plusieurs références de projet :
+Ajoutez plusieurs références de projet au projet dans le répertoire actif :
 
 `dotnet add reference lib1/lib1.csproj lib2/lib2.csproj`
 
