@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - authentication [.NET Framework], classes
 - IAuthenticationModule interface
@@ -26,16 +21,15 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a26811b5dd62e30b371af88bc79d06843ef58d05
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f44bef7804e9101b2d1bc50ba53f3fc7a5fa90ee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="internet-authentication"></a>Authentification Internet
 Les classes <xref:System.Net> prennent en charge divers mécanismes d’authentification client, parmi lesquels les méthodes d’authentification Internet standard (de base, Digest, Negotiate, NTLM et Kerberos) et les méthodes personnalisées que vous pouvez créer.  
@@ -46,7 +40,7 @@ Les classes <xref:System.Net> prennent en charge divers mécanismes d’authenti
   
  La classe **CredentialCache** stocke un ensemble d’informations d’identification pour diverses ressources web. Quand la méthode <xref:System.Net.CredentialCache.GetCredential%2A> est appelée, **CredentialCache** retourne l’ensemble approprié d’informations d’identification, qui est déterminé par l’URI de la ressource web et le schéma d’authentification demandé. La classe **CredentialCache** est appropriée pour les applications qui utilisent diverses ressources Internet avec des schémas d’authentification différents, car elle peut stocker toutes les informations d’identification et les fournir en réponse à une demande.  
   
- Quand une ressource Internet fait une demande d’authentification, la méthode <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=fullName> envoie <xref:System.Net.WebRequest> à **AuthenticationManager** en même temps que la demande des informations d’identification. La demande est ensuite authentifiée selon le processus suivant :  
+ Quand une ressource Internet fait une demande d’authentification, la méthode <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType> envoie <xref:System.Net.WebRequest> à **AuthenticationManager** en même temps que la demande des informations d’identification. La demande est ensuite authentifiée selon le processus suivant :  
   
 1.  **AuthenticationManager** appelle la méthode <xref:System.Net.IAuthenticationModule.Authenticate%2A> sur chacun des modules d’authentification inscrits, dans l’ordre de leur inscription. **AuthenticationManager** utilise le premier module qui ne retourne pas la valeur **Null** pour effectuer le processus d’authentification. Ce processus peut varier en fonction du type de module d’authentification utilisé.  
   
@@ -55,7 +49,6 @@ Les classes <xref:System.Net> prennent en charge divers mécanismes d’authenti
  Certains schémas d’authentification authentifient un utilisateur sans faire de demande de ressource au préalable. Une application peut gagner du temps en effectuant une pré-authentification de la ressource, ce qui évite au moins un aller-retour avec le serveur. Elle peut aussi effectuer l’authentification au démarrage du programme pour être plus réactive avec l’utilisateur ultérieurement. Les schémas d’authentification qui peuvent utiliser la pré-authentification ont leur propriété <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> définie sur **true**.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Authentification de base et authentification Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)   
- [Authentification NTLM et Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)   
+ [Base et authentification Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
+ [Authentification NTLM et Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
  [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)
-

@@ -1,27 +1,22 @@
 ---
-title: "Comment : rechercher tous les nœuds dans un Namespace (Visual Basic) | Documents Microsoft"
+title: "Comment : rechercher tous les nœuds dans un Namespace (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4216ba0ab8c8026705a82f505807fb4b1f31e424
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 8664d29e27673e1ad08d3d72b29d8dc9c711a9fb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a>Comment : rechercher tous les nœuds dans un Namespace (Visual Basic)
 Vous pouvez filtrer sur l'espace de noms de chaque élément ou attribut afin de rechercher les nœuds dans cet espace de noms particulier.  
@@ -68,7 +63,7 @@ Nodes in the http://www.adventure-works.com namespace
 ## <a name="example"></a>Exemple  
  Le fichier XML auquel accède cette requête contient des commandes fournisseur dans deux espaces de noms différents. La requête crée une nouvelle arborescence avec uniquement les éléments de l’un des espaces de noms.  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : consolidé les bons de commande](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichiers XML : Commandes fournisseur consolidées](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -125,4 +120,3 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi  
  [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
-

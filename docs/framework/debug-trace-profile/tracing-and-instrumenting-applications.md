@@ -5,15 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - tracing [.NET Framework]
 - debugging [.NET Framework], instrumentation
@@ -23,19 +20,18 @@ helpviewer_keywords:
 - performance monitoring, tracing code
 - Trace class, instrumentation for .NET applications
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 899776c29fc0d0c6a43f28c089c51b9695a1ef6f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 932fef22681aeb2a68d7852884127155757e4099
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Traçage et instrumentation d'applications
-Le traçage vous permet de surveiller le fonctionnement de votre application pendant son exécution. Vous pouvez ajouter l'instrumentation de traçage et de débogage à votre application .NET Framework au moment du développement, et utiliser cette instrumentation pendant le développement de l'application et après son déploiement. Utilisez les classes <xref:System.Diagnostics.Trace?displayProperty=fullName>, <xref:System.Diagnostics.Debug?displayProperty=fullName> et <xref:System.Diagnostics.TraceSource?displayProperty=fullName> pour enregistrer les informations relatives aux erreurs et à l'exécution de l'application dans des journaux, des fichiers texte ou d'autres appareils en vue d'une analyse ultérieure.  
+Le traçage vous permet de surveiller le fonctionnement de votre application pendant son exécution. Vous pouvez ajouter l'instrumentation de traçage et de débogage à votre application .NET Framework au moment du développement, et utiliser cette instrumentation pendant le développement de l'application et après son déploiement. Utilisez les classes <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType> et <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> pour enregistrer les informations relatives aux erreurs et à l'exécution de l'application dans des journaux, des fichiers texte ou d'autres appareils en vue d'une analyse ultérieure.  
   
  Le terme *instrumentation* fait référence à la capacité de surveiller ou de mesurer le niveau de performance d’un produit et de diagnostiquer les erreurs éventuelles. En programmation, c'est la capacité d'une application à incorporer les éléments suivants :  
   
@@ -126,7 +122,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  Choisissez avec soin les endroits où vous allez placer les instructions de trace qui seront utilisées au moment de l'exécution. Vous devez déterminer quelles informations de traçage seront les plus utiles dans une application déployée afin que tous les scénarios de traçage probables soient traités de manière adéquate. Les applications utilisant la fonctionnalité de traçage étant très diverses, il n'existe pas d'instructions générales pour placer stratégiquement des instructions de trace. Pour plus d’informations sur la façon de placer des instructions de suivi, consultez [Guide pratique pour ajouter des instructions de suivi au code d’application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md).  
   
 ## <a name="output-from-tracing"></a>Sortie de trace  
- La sortie de suivi est collectée par des objets appelés *écouteurs*. Un écouteur est un objet qui reçoit la sortie de trace et qui l'écrit dans une cible de sortie (généralement une fenêtre, un journal ou un fichier texte). Quand un écouteur de la trace est créé, il est en principe ajouté à la collection <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=fullName>, ce qui permet à l'écouteur de recevoir toutes les données de sortie de trace.  
+ La sortie de suivi est collectée par des objets appelés *écouteurs*. Un écouteur est un objet qui reçoit la sortie de trace et qui l'écrit dans une cible de sortie (généralement une fenêtre, un journal ou un fichier texte). Quand un écouteur de la trace est créé, il est en principe ajouté à la collection <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>, ce qui permet à l'écouteur de recevoir toutes les données de sortie de trace.  
   
  Les informations de traçage sont toujours écrites au moins dans la cible de sortie <xref:System.Diagnostics.Trace> par défaut (<xref:System.Diagnostics.DefaultTraceListener>). Si, pour une raison quelconque, vous avez supprimé l'écouteur <xref:System.Diagnostics.DefaultTraceListener> sans avoir ajouté d'autres écouteurs à la collection <xref:System.Diagnostics.Trace.Listeners%2A>, vous ne recevrez plus de messages de trace. Pour plus d’informations, consultez [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
   
@@ -154,15 +150,14 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  Si vous ne désactivez pas le traçage et le débogage avant de déployer votre application ASP.NET, celle-ci peut dévoiler des informations exploitables par un programme malveillant. Pour plus d’informations, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md), [Compilation et génération](/visualstudio/ide/compiling-and-building-in-visual-studio) et [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md). Vous pouvez également configurer le débogage via IIS (Internet Information Services).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Diagnostics.Trace>   
- <xref:System.Diagnostics.TraceSource>   
- [Contrats de code](../../../docs/framework/debug-trace-profile/code-contracts.md)   
- [Types de projets C#, F# et Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)   
- [Guide pratique pour ajouter des instructions de suivi au code d’application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)   
- [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)   
- [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)   
- [Guide pratique pour créer et initialiser des sources de suivi](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)   
- [Guide pratique pour utiliser un TraceSource et des filtres avec des écouteurs de suivi](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)   
- [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)   
+ <xref:System.Diagnostics.Trace>  
+ <xref:System.Diagnostics.TraceSource>  
+ [Contrats de code](../../../docs/framework/debug-trace-profile/code-contracts.md)  
+ [Types de projets C#, F# et Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)  
+ [Comment : ajouter des instructions de traçage au Code d’Application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
+ [Comment : effectuer une compilation conditionnelle avec Trace et Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
+ [Comment : créer, initialiser et configurer des commutateurs de traçage](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
+ [Comment : créer et initialiser les Sources de Trace](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
+ [Comment : utiliser des TraceSource et des filtres avec des écouteurs de traçage](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)  
+ [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
  [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)
-

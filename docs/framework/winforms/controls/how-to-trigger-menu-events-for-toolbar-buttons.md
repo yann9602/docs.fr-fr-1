@@ -1,41 +1,46 @@
 ---
-title: "Comment&#160;: d&#233;clencher des &#233;v&#233;nements de menu pour les boutons de barre d&#39;outils | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "exemples (Windows Forms), barres d'outils"
-  - "ToolBar (contrôle Windows Forms), gestionnaires d'événements Click"
-  - "ToolBar (contrôle Windows Forms), coder les événements Click du bouton"
-  - "barres d'outils (Windows Forms), gestionnaires d'événements Click"
+title: "Guide pratique pour déclencher des événements de menu pour les boutons de barre d'outils"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- examples [Windows Forms], toolbars
+- ToolBar control [Windows Forms], click event handlers
+- ToolBar control [Windows Forms], coding button click events
+- toolbars [Windows Forms], click event handlers
 ms.assetid: 98374f70-993d-4ca4-89fb-48fea6ce5b45
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 80d28bdb85a91ddd3129e7e0fab443f81ba9ecef
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;clencher des &#233;v&#233;nements de menu pour les boutons de barre d&#39;outils
+# <a name="how-to-trigger-menu-events-for-toolbar-buttons"></a>Guide pratique pour déclencher des événements de menu pour les boutons de barre d'outils
 > [!NOTE]
 >  Le contrôle <xref:System.Windows.Forms.ToolStrip> remplace le contrôle <xref:System.Windows.Forms.ToolBar> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.ToolBar> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  
   
- Si votre Windows Form contient un contrôle <xref:System.Windows.Forms.ToolBar> avec des boutons de barre d'outils, vous voudrez savoir sur quel bouton clique l'utilisateur.  
+ Si votre Windows Form contient un <xref:System.Windows.Forms.ToolBar> contrôle avec des boutons de barre d’outils, vous devez savoir sur quel bouton l’utilisateur a cliqué.  
   
- Vous pouvez évaluer la propriété <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> de la classe <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> sur l'événement <xref:System.Windows.Forms.ToolBar.ButtonClick> du contrôle <xref:System.Windows.Forms.ToolBar>.  Dans l'exemple ci\-dessous, une boîte de message indiquant sur quel bouton l'utilisateur a cliqué s'affiche.  Pour plus d'informations, consultez [MessageBox, classe](frlrfSystemWindowsFormsMessageBoxClassTopic).  
+ Sur le <xref:System.Windows.Forms.ToolBar.ButtonClick> l’événement de la <xref:System.Windows.Forms.ToolBar> (contrôle), vous pouvez évaluer la <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> propriété de la <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> classe. Dans l’exemple ci-dessous, une boîte de message s’affiche, indiquant sur quel bouton l’utilisateur a cliqué. Pour plus d'informations, consultez <xref:System.Windows.Forms.MessageBox>.  
   
- L'exemple ci\-dessous suppose qu'un contrôle <xref:System.Windows.Forms.ToolBar> a été ajouté à un Windows Form.  
+ L’exemple suivant suppose un <xref:System.Windows.Forms.ToolBar> contrôle a été ajouté à un Windows Form.  
   
-### Pour prendre en charge l'événement Click dans une barre d'outils  
+### <a name="to-handle-the-click-event-on-a-toolbar"></a>Pour gérer l’événement de clic sur une barre d’outils  
   
-1.  Dans une procédure, ajoutez des boutons de barre d'outils au contrôle <xref:System.Windows.Forms.ToolBar>.  
+1.  Dans une procédure, ajoutez des boutons de barre d’outils pour la <xref:System.Windows.Forms.ToolBar> contrôle.  
   
     ```vb  
     Public Sub ToolBarConfig()  
@@ -47,7 +52,6 @@ caps.handback.revision: 15
     ' Add the event handler delegate.  
        AddHandler ToolBar1.ButtonClick, AddressOf Me.ToolBar1_ButtonClick  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -60,7 +64,6 @@ caps.handback.revision: 15
        toolBar1.ButtonClick +=   
           new ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);  
     }  
-  
     ```  
   
     ```cpp  
@@ -77,10 +80,10 @@ caps.handback.revision: 15
        }  
     ```  
   
-2.  Ajoutez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.ToolBar.ButtonClick> du contrôle <xref:System.Windows.Forms.ToolBar>.  Utilisez une instruction switch Case et la classe <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> pour identifier le bouton de barre d'outils sur lequel l'utilisateur a cliqué.  En fonction du bouton identifié, affichez une boîte de message appropriée.  
+2.  Ajouter un gestionnaire d’événements pour le <xref:System.Windows.Forms.ToolBar> du contrôle <xref:System.Windows.Forms.ToolBar.ButtonClick> événement. Utilisez une instruction switch case et la <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> classe pour déterminer le bouton de barre d’outils que vous avez cliqué. Sur cette base, affichez une boîte de message appropriée.  
   
     > [!NOTE]
-    >  Une boîte de message est utilisée uniquement comme espace réservé dans cet exemple.  Vous pouvez ajouter du code supplémentaire à exécuter lorsque l'utilisateur clique sur les boutons de barre d'outils.  
+    >  Dans cet exemple, une boîte de message est utilisée seulement en tant qu’espace réservé. Vous pouvez ajouter tout autre code à exécuter quand l’utilisateur clique sur les boutons de la barre d’outils.  
   
     ```vb  
     Protected Sub ToolBar1_ButtonClick(ByVal sender As Object, _  
@@ -96,7 +99,6 @@ caps.handback.revision: 15
            MessageBox.Show("Third toolbar button clicked")  
        End Select  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -118,7 +120,6 @@ caps.handback.revision: 15
              break;  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -143,8 +144,8 @@ caps.handback.revision: 15
        }  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ToolBar>   
- [Comment : ajouter des boutons à un contrôle ToolBar](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)   
- [Comment : définir une icône pour un bouton de barre d'outils](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ToolBar>  
+ [Guide pratique pour ajouter des boutons à un contrôle ToolBar](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)  
+ [Guide pratique pour définir une icône pour un bouton de barre d’outils](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
  [ToolBar, contrôle](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)

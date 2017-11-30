@@ -1,38 +1,44 @@
 ---
-title: "Comment&#160;: inspecter ou modifier des param&#232;tres | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : inspecter ou modifier des paramètres"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ab6c0ac7-aac4-45ba-93d6-a0e9afd1756f
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 71e96dc3cf448b2e67b8a039f28a12df8360c76a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: inspecter ou modifier des param&#232;tres
-Vous pouvez inspecter ou modifier les messages entrants ou sortants pour une seule opération sur un [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] objet client ou un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service en implémentant le <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=fullName> interface et en l’insérant dans l’exécution du client ou du service. En général, un comportement d'opération est utilisé pour ajouter des inspecteurs de paramètre pour une seule opération ; d'autres comportements peuvent être utilisés pour fournir un accès aisé à l'exécution à une échelle plus grande. Pour plus d’informations, consultez [Clients extension](../../../../docs/framework/wcf/extending/extending-clients.md) et [répartiteurs extension](../../../../docs/framework/wcf/extending/extending-dispatchers.md).  
+# <a name="how-to-inspect-or-modify-parameters"></a>Comment : inspecter ou modifier des paramètres
+Vous pouvez inspecter ou modifier les messages entrants ou sortants d'une seule opération sur un objet client [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ou un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] en implémentant l'interface <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType> et en l'insérant dans l'exécution du client ou du service. En général, un comportement d'opération est utilisé pour ajouter des inspecteurs de paramètre pour une seule opération ; d'autres comportements peuvent être utilisés pour fournir un accès aisé à l'exécution à une échelle plus grande. Pour plus d’informations, consultez [étendant les Clients](../../../../docs/framework/wcf/extending/extending-clients.md) et [extension des répartiteurs](../../../../docs/framework/wcf/extending/extending-dispatchers.md).  
   
 ### <a name="inspecting-or-modifying-parameters"></a>Inspection ou modification de paramètres  
   
-1.  Implémentez la <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=fullName> interface.  
+1.  Implémentez l'interface <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType>.  
   
-2.  Implémentez un <xref:System.ServiceModel.Description.IOperationBehavior?displayProperty=fullName>, <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName>, <xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=fullName> ou <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=fullName> (en fonction de la portée requise) pour ajouter votre inspecteur de paramètre soit la <xref:System.ServiceModel.Dispatcher.ClientOperation.ParameterInspectors%2A?displayProperty=fullName> ou <xref:System.ServiceModel.Dispatcher.DispatchOperation.ParameterInspectors%2A?displayProperty=fullName> propriétés.  
+2.  Implémentez un <xref:System.ServiceModel.Description.IOperationBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType> ou <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> (en fonction de la portée requise) pour ajouter votre inspecteur de paramètre aux propriétés <xref:System.ServiceModel.Dispatcher.ClientOperation.ParameterInspectors%2A?displayProperty=nameWithType> ou <xref:System.ServiceModel.Dispatcher.DispatchOperation.ParameterInspectors%2A?displayProperty=nameWithType>.  
   
-3.  Insérez votre comportement avant d’appeler <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=fullName> ou <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=fullName> méthode sur le <xref:System.ServiceModel.ChannelFactory%601?displayProperty=fullName>. Pour plus d’informations, consultez [configuration et extension de l’exécution des comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
+3.  Insérez votre comportement avant d'appeler <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> ou la méthode <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> sur <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. Pour plus d’informations, consultez [configuration et l’extension de l’exécution des comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
   
 ## <a name="example"></a>Exemple  
  Les exemples de code suivants affichent, dans l'ordre :  
   
 -   Une implémentation de l'inspecteur de paramètre  
   
--   L’implémentation de comportement qui insère l’inspecteur de paramètre à l’aide un <xref:System.ServiceModel.Description.IOperationBehavior?displayProperty=fullName>, <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName>et un <xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=fullName>.  
+-   L'implémentation de comportement qui insère l'inspecteur de paramètre à l'aide de <xref:System.ServiceModel.Description.IOperationBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> et <xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>  
   
 -   Un fichier de configuration qui charge et exécute le comportement de point de terminaison dans une application cliente pour insérer l'inspecteur de paramètre sur le client  
   
@@ -42,9 +48,7 @@ Vous pouvez inspecter ou modifier les messages entrants ou sortants pour une seu
  [!code-csharp[Interceptors#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#5)]
  [!code-vb[Interceptors#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#5)]  
   
- <!-- TODO: review snippet reference [!code[Interceptors#3](../../../../samples/snippets/common/VS_Snippets_CFX/interceptors/common/client.exe.config#3)]  -->
- <!-- TODO: review snippet reference [!code-csharp[Interceptors#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[Interceptors#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/client.exe.config#3)]  -->  
+ [!code-xml[Interceptors#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Configuration et extension de l’exécution des comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

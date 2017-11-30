@@ -1,47 +1,46 @@
 ---
-title: "&lt;code&gt; (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "code XML tag"
-  - "<code> XML tag"
+title: '&lt;code&gt; (Visual Basic)'
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- code XML tag
+- <code> XML tag
 ms.assetid: 925e5342-be05-45f2-bf66-7398bbd6710e
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a7c1d8ab3db0c36c6a2935b9ffbef15e87df5ebc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;code&gt; (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Indique que le texte contient plusieurs lignes de code.  
+# <a name="ltcodegt-visual-basic"></a>&lt;code&gt; (Visual Basic)
+Indique que le texte est plusieurs lignes de code.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```xml  
 <code>content</code>  
 ```  
   
-#### Paramètres  
+#### <a name="parameters"></a>Paramètres  
  `content`  
  Texte à marquer comme étant du code.  
   
-## Notes  
- Utilisez les balises `<code>` pour indiquer plusieurs lignes comme étant du code.  Utilisez [\<c\>](../../../visual-basic/language-reference/xmldoc/c.md) pour indiquer que le texte d'une description doit être marqué comme étant du code.  
+## <a name="remarks"></a>Remarques  
+ Utilisez le `<code>` balise pour indiquer plusieurs lignes comme du code. Utilisez [\<c>](../../../visual-basic/language-reference/xmldoc/c.md) pour indiquer que le texte d’une description doit être marqué comme étant du code.  
   
- Compilez avec [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour traiter les commentaires de documentation et les placer dans un fichier.  
+ Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
-## Exemple  
- Cet exemple utilise la balise \<code\> pour inclure l'exemple de code pour utiliser le champ `ID`.  
+## <a name="example"></a>Exemple  
+ Cet exemple utilise le \<code > balise à inclure l’exemple de code pour l’utilisation de la `ID` champ.  
   
  [!code-vb[VbVbcnXmlDocComments#2](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/code_1.vb)]  
   
-## Voir aussi  
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a>Voir aussi  
+ [Étiquettes XML pour les commentaires](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

@@ -1,43 +1,46 @@
 ---
-title: "Comment&#160;: d&#233;finir le format du contr&#244;le NumericUpDown Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "NumericUpDown (contrôle Windows Forms), mettre en forme les valeurs"
-  - "contrôles up-down, mettre en forme les valeurs numériques"
+title: "Comment : définir le format du contrôle NumericUpDown Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- NumericUpDown control [Windows Forms], formatting values
+- up-down controls [Windows Forms], formatting numeric values
 ms.assetid: fa7c5557-6bfb-45b2-975d-8887b23b0ba0
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 001cc32aa9e1f31695f3b349480b6dd5154b31a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;finir le format du contr&#244;le NumericUpDown Windows Forms
-Vous pouvez configurer l'affichage des valeurs dans le contrôle <xref:System.Windows.Forms.NumericUpDown> Windows Forms.  La propriété <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> détermine le nombre de chiffres devant apparaître après la virgule décimale ; la valeur par défaut est 0.  La propriété <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> détermine si un séparateur doit être inséré tous les trois chiffres décimaux ; la valeur par défaut est `false`.  Si la propriété <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> a la valeur `true`, le contrôle affiche les valeurs au format hexadécimal à la place du format décimal ; la valeur par défaut est `false`.  
+# <a name="how-to-set-the-format-for-the-windows-forms-numericupdown-control"></a>Comment : définir le format du contrôle NumericUpDown Windows Forms
+Vous pouvez configurer la façon dont les valeurs sont affichées dans les Windows Forms <xref:System.Windows.Forms.NumericUpDown> contrôle. Le <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> propriété détermine le nombre de chiffres s’affichent après la virgule décimale ; la valeur par défaut est 0. Le <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> propriété détermine si un séparateur doit être inséré entre tous les trois chiffres décimaux ; la valeur par défaut est `false`. Le contrôle peut afficher des valeurs au format hexadécimal au lieu du format décimal, si le <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> est définie sur `true`; la valeur par défaut est `false`.  
   
-### Pour définir le format de la valeur numérique  
+### <a name="to-format-the-numeric-value"></a>Pour mettre en forme la valeur numérique  
   
--   Affichez une valeur décimale en affectant à la propriété <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> un entier et à la propriété <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> la valeur `true` ou `false`.  
+-   Afficher une valeur décimale en définissant le <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> propriété à un entier et la <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> propriété `true` ou `false`.  
   
     ```vb  
     NumericUpDown1.DecimalPlaces = 2  
     NumericUpDown1.ThousandsSeparator = True  
-  
     ```  
   
     ```csharp  
     numericUpDown1.DecimalPlaces = 2;  
     numericUpDown1.ThousandsSeparator = true;  
-  
     ```  
   
     ```cpp  
@@ -47,16 +50,14 @@ Vous pouvez configurer l'affichage des valeurs dans le contrôle <xref:System.Wi
   
      ou  
   
--   Affichez une valeur hexadécimale en affectant à la propriété <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> la valeur `true`.  
+-   Afficher une valeur hexadécimale en définissant le <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> propriété `true`.  
   
     ```vb  
     NumericUpDown1.Hexadecimal = True  
-  
     ```  
   
     ```csharp  
     numericUpDown1.Hexadecimal = true;  
-  
     ```  
   
     ```cpp  
@@ -64,9 +65,9 @@ Vous pouvez configurer l'affichage des valeurs dans le contrôle <xref:System.Wi
     ```  
   
     > [!NOTE]
-    >  Même si la valeur est affichée dans le formulaire au format hexadécimal, tous les tests que vous effectuerez sur la propriété <xref:System.Windows.Forms.NumericUpDown.Value%2A> porteront sur sa valeur décimale.  
+    >  Même si la valeur est affichée sur le formulaire au format hexadécimal, les tests sont effectués sur le <xref:System.Windows.Forms.NumericUpDown.Value%2A> propriété Testez sa valeur décimale.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.NumericUpDown>   
- [NumericUpDown, contrôle](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)   
- [Vue d'ensemble du contrôle NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.NumericUpDown>  
+ [NumericUpDown, contrôle](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)  
+ [Vue d’ensemble du contrôle NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)

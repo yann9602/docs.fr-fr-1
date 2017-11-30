@@ -1,37 +1,29 @@
 ---
-title: "Comment : écrire des requêtes sur du code XML dans les espaces de noms (Visual Basic) | Documents Microsoft"
+title: "Comment : écrire des requêtes sur du code XML dans les espaces de noms (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 7d4131b5-3288-414f-b77c-b2edc2a1f465
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5af26b7ec0a2ab465917cd0ee62f65a97f5f0e40
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 5708a2a162132262722f390842f59c9c6a6838e4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>Comment : écrire des requêtes sur du code XML dans les espaces de noms (Visual Basic)
-Pour écrire des requêtes sur du code XML qui se trouve dans un espace de noms, vous devez utiliser <xref:System.Xml.Linq.XName>objets qui ont l’espace de noms correct.</xref:System.Xml.Linq.XName>  
+Pour écrire des requêtes sur du code XML qui est dans un espace de noms, vous devez utiliser des objets <xref:System.Xml.Linq.XName> qui ont l'espace de noms correct.  
   
  Dans Visual Basic, l'approche la plus courante consiste à définir un espace de noms global, puis à utiliser des littéraux XML et des propriétés XML qui emploient l'espace de noms global. Vous pouvez définir un espace de noms par défaut global, auquel cas les éléments dans les littéraux XML seront par défaut dans l'espace de noms. En guise d'alternative, vous pouvez définir un espace de noms global avec un préfixe, puis utiliser le préfixe selon les besoins dans les littéraux XML et les propriétés XML. Comme avec d'autres formes de code XML, les attributs ne sont jamais dans aucun espace de noms par défaut.  
   
- Le premier ensemble d’exemples dans cette rubrique montre comment créer une arborescence XML dans un espace de noms par défaut. Le second ensemble illustre comment créer une arborescence XML dans un espace de noms avec un préfixe.  
+ Le premier ensemble d’exemples de cette rubrique montre comment créer une arborescence XML dans un espace de noms par défaut. Le second ensemble illustre la création d’une arborescence XML dans un espace de noms avec un préfixe.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant crée une arborescence XML qui est dans un espace de noms par défaut. Il récupère ensuite une collection d'éléments.  

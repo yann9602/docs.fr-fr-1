@@ -1,33 +1,39 @@
 ---
-title: "Comment&#160;: cr&#233;er un flux Atom de base | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : créer un flux Atom de base"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 6e0cacc1-9b11-4665-adb7-577a62626fd6
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d395e286bb42cb8533f7a8d62a8fdd68fd2b9204
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er un flux Atom de base
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vous permet de créer un service qui expose un flux de syndication.Cette rubrique explique comment créer un service de syndication qui expose un flux de syndication Atom.  
+# <a name="how-to-create-a-basic-atom-feed"></a>Comment : créer un flux Atom de base
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] vous permet de créer un service qui expose un flux de syndication. Cette rubrique explique comment créer un service de syndication qui expose un flux de syndication Atom.  
   
-### Pour créer un service de syndication de base  
+### <a name="to-create-a-basic-syndication-service"></a>Pour créer un service de syndication de base  
   
-1.  Définissez un contrat de service utilisant une interface marquée avec l'attribut <xref:System.ServiceModel.Web.WebGetAttribute>.Chaque opération exposée comme un flux de syndication doit retourner un objet <xref:System.ServiceModel.Syndication.Atom10FeedFormatter>.  
+1.  Définissez un contrat de service utilisant une interface marquée avec l'attribut <xref:System.ServiceModel.Web.WebGetAttribute>. Chaque opération exposée comme un flux de syndication doit retourner un objet <xref:System.ServiceModel.Syndication.Atom10FeedFormatter>.  
   
      [!code-csharp[htAtomBasic#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#0)]
      [!code-vb[htAtomBasic#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Toutes les opérations du service qui appliquent <xref:System.ServiceModel.Web.WebGetAttribute> sont mappées aux demandes HTTP GET.Pour mapper votre opération à une méthode HTTP différente, utilisez <xref:System.ServiceModel.Web.WebInvokeAttribute> à la place.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Procédure : créer un service Web HTTP WCF de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
+    >  Toutes les opérations du service qui appliquent <xref:System.ServiceModel.Web.WebGetAttribute> sont mappées aux demandes HTTP GET. Pour mapper votre opération à une méthode HTTP différente, utilisez <xref:System.ServiceModel.Web.WebInvokeAttribute> à la place. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Comment : créer un Service Web HTTP de WCF de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
   
 2.  Implémentez le contrat de service.  
   
@@ -54,7 +60,7 @@ caps.handback.revision: 14
      [!code-csharp[htAtomBasic#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#5)]
      [!code-vb[htAtomBasic#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#5)]  
   
-### Pour héberger le service  
+### <a name="to-host-the-service"></a>Pour héberger le service  
   
 1.  Créez un objet <xref:System.ServiceModel.Web.WebServiceHost>.  
   
@@ -66,13 +72,13 @@ caps.handback.revision: 14
      [!code-csharp[htAtomBasic#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#8)]
      [!code-vb[htAtomBasic#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#8)]  
   
-### Pour appeler GetBlog\(\) avec un HTTP GET  
+### <a name="to-call-getblog-with-an-http-get"></a>Pour appeler GetBlog() avec un HTTP GET  
   
-1.  Ouvrez Internet Explorer, tapez l'URL suivante et appuyez sur ENTRÉE : http:\/\/localhost:8000\/BlogService\/GetBlog  
+1.  Ouvrez Internet Explorer, tapez l'URL suivante et appuyez sur ENTRÉE : http://localhost:8000/BlogService/GetBlog  
   
-     L'URL contient l'adresse de base du service \(http:\/\/localhost:8000\/BlogService\), l'adresse relative du point de terminaison et l'opération de service à appeler.  
+     L'URL contient l'adresse de base du service (http://localhost:8000/BlogService), l'adresse relative du point de terminaison et l'opération de service à appeler.  
   
-### Pour appeler GetBlog\(\) à partir d'un code  
+### <a name="to-call-getblog-from-code"></a>Pour appeler GetBlog() à partir d'un code  
   
 1.  Créez un <xref:System.Xml.XmlReader> avec l'adresse de base et la méthode que vous appelez.  
   
@@ -91,15 +97,15 @@ caps.handback.revision: 14
      [!code-csharp[htAtomBasic#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/snippets.cs#11)]
      [!code-vb[htAtomBasic#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/snippets.vb#11)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Les éléments suivants représentent l'intégralité du code pour cet exemple.  
   
  [!code-csharp[htAtomBasic#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#12)]
  [!code-vb[htAtomBasic#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#12)]  
   
-## Compilation du code  
+## <a name="compiling-the-code"></a>Compilation du code  
  Lors de la compilation du code précédent, référencez System.ServiceModel.dll et System.ServiceModel.Web.dll.  
   
-## Voir aussi  
- <xref:System.ServiceModel.WebHttpBinding>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.WebHttpBinding>  
  <xref:System.ServiceModel.Web.WebGetAttribute>

@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 523ec4fd2c8d19dc9086e417fa99c89a619caa71
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c6d70fd560cb7b164460eb3882cac88ed733d788
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltmethodgt-element-net-native"></a>&lt;Method&gt;, élément (.NET Native)
 Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.  
@@ -87,7 +85,7 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
  Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`. Utilisez plutôt l’attribut `Activate` de l’élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md), [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md), [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) ou [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md).  
   
 ## <a name="example"></a>Exemple  
- La méthode `Stringify` dans l'exemple suivant est une méthode de mise en forme à usage général qui utilise la réflexion pour convertir un objet sous forme de chaîne. En plus d'appeler la méthode `ToString` par défaut de l'objet, la méthode peut produire une chaîne de résultat mise en forme en passant à la méthode `ToString` d'un objet une chaîne de format et/ou une implémentation <xref:System.IFormatProvider>. Elle peut également appeler l'une des surcharges <xref:System.Convert.ToString%2A?displayProperty=fullName> qui convertit un nombre au format binaire, hexadécimale ou octale.  
+ La méthode `Stringify` dans l'exemple suivant est une méthode de mise en forme à usage général qui utilise la réflexion pour convertir un objet sous forme de chaîne. En plus d'appeler la méthode `ToString` par défaut de l'objet, la méthode peut produire une chaîne de résultat mise en forme en passant à la méthode `ToString` d'un objet une chaîne de format et/ou une implémentation <xref:System.IFormatProvider>. Elle peut également appeler l'une des surcharges <xref:System.Convert.ToString%2A?displayProperty=nameWithType> qui convertit un nombre au format binaire, hexadécimale ou octale.  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  
   
@@ -156,8 +154,7 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)   
- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
+ [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
+ [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
  [\<MethodInstantiation>, élément](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)
-

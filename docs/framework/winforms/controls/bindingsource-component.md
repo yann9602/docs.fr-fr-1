@@ -1,35 +1,36 @@
 ---
-title: "Composant BindingSource | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "BindingSource (composant Windows Forms)"
-  - "liaison de données, Windows Forms"
-  - "Windows Forms, contrôle de liaison de données"
+title: Composant BindingSource
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data binding [Windows Forms], Windows Forms
+- Windows Forms, data binding control
+- BindingSource component [Windows Forms]
 ms.assetid: 3e2faf4c-f5b8-4fa6-9fbc-f59c37ec2fb9
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 006cafafdf8e3c3f4da77394d6155fa52e113b58
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Composant BindingSource
-Encapsulates a data source for binding to controls.  
+# <a name="bindingsource-component"></a>Composant BindingSource
+Encapsule une source de données pour la liaison à des contrôles.  
   
- Le composant <xref:System.Windows.Forms.BindingSource> remplit deux fonctions.  Tout d'abord, il fournit une couche d'indirection lors de la liaison des contrôles sur un formulaire de données.  Vous devez pour cela lier le composant <xref:System.Windows.Forms.BindingSource> à votre source de données, puis lier les contrôles sur votre formulaire au composant <xref:System.Windows.Forms.BindingSource>.  Toute interaction supplémentaire avec les données, y compris la navigation, le tri, le filtrage et la mise à jour, est effectuée en appelant le composant <xref:System.Windows.Forms.BindingSource>.  
+ Le composant <xref:System.Windows.Forms.BindingSource> remplit deux fonctions. Tout d'abord, il fournit une couche d'indirection lors de la liaison des contrôles sur un formulaire de données. Vous devez pour cela lier le composant <xref:System.Windows.Forms.BindingSource> à votre source de données, puis lier les contrôles sur votre formulaire au composant <xref:System.Windows.Forms.BindingSource>. Toute interaction supplémentaire avec les données, y compris la navigation, le tri, le filtrage et la mise à jour, est effectuée en appelant le composant <xref:System.Windows.Forms.BindingSource>.  
   
- Ensuite, le composant <xref:System.Windows.Forms.BindingSource> peut agir comme source de données fortement typée.  L'ajout d'un type au composant <xref:System.Windows.Forms.BindingSource> avec la méthode <xref:System.Windows.Forms.BindingSource.Add%2A> crée une liste de ce type.  
+ Ensuite, le composant <xref:System.Windows.Forms.BindingSource> peut agir comme source de données fortement typée. L'ajout d'un type au composant <xref:System.Windows.Forms.BindingSource> avec la méthode <xref:System.Windows.Forms.BindingSource.Add%2A> crée une liste de ce type.  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Vue d'ensemble du composant BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)  
  Présente les concepts généraux du composant <xref:System.Windows.Forms.BindingSource>, qui vous permet de lier une source de données à un contrôle.  
   
@@ -39,7 +40,7 @@ Encapsulates a data source for binding to controls.
  [Comment : trier et filtrer des données ADO.NET avec le composant BindingSource Windows Forms](../../../../docs/framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)  
  Illustre comment utiliser le composant <xref:System.Windows.Forms.BindingSource> pour appliquer des tris et des filtres aux données affichées.  
   
- [Comment : établir une liaison à un service Web à l'aide du BindingSource Windows Forms](../../../../docs/framework/winforms/controls/how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource.md)  
+ [Comment : établir une liaison à un service Web à l’aide du BindingSource Windows Forms](../../../../docs/framework/winforms/controls/how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource.md)  
  Montre comment utiliser le composant <xref:System.Windows.Forms.BindingSource> pour établir une liaison à un service web.  
   
  [Comment : gérer des erreurs et des exceptions qui se produisent avec Databinding](../../../../docs/framework/winforms/controls/how-to-handle-errors-and-exceptions-that-occur-with-databinding.md)  
@@ -66,15 +67,15 @@ Encapsulates a data source for binding to controls.
  [Comment : partager des données liées entre des formulaires à l'aide du composant BindingSource](../../../../docs/framework/winforms/controls/how-to-share-bound-data-across-forms-using-the-bindingsource-component.md)  
  Montre comment utiliser <xref:System.Windows.Forms.BindingSource> pour lier plusieurs formulaires à la même source de données.  
   
-## Référence  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.BindingSource>  
  Fournit la documentation de référence pour le composant <xref:System.Windows.Forms.BindingSource>.  
   
  <xref:System.Windows.Forms.BindingNavigator>  
  Fournit la documentation de référence pour le contrôle <xref:System.Windows.Forms.BindingNavigator>.  
   
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [Liaison de données Windows Forms](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
- Contient des liens vers des rubriques décrivant l'architecture de liaison de données Windows Forms.  
+ Contient des liens vers des rubriques décrivant l’architecture de liaison de données Windows Forms.  
   
- Consultez également [Liaison de contrôles à des données dans Visual Studio](../Topic/Bind%20controls%20to%20data%20in%20Visual%20Studio.md).
+ Consultez également [Liaison de contrôles à des données dans Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio).

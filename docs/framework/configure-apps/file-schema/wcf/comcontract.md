@@ -1,28 +1,33 @@
 ---
-title: "&lt;comContract&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;comContract&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b22c8d0b72d4dfc63eb5fa9afa073f993f75418e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;comContract&gt;
-Spécifie un contrat de service d'intégration COM\+.  
+# <a name="ltcomcontractgt"></a>&lt;comContract&gt;
+Spécifie un contrat de service d'intégration COM+.  
   
-## Syntaxe  
+ \<système. ServiceModel >  
+\<comContracts >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <comContracts>  
   <comContract  
       contract="string"  
@@ -48,36 +53,36 @@ Spécifie un contrat de service d'intégration COM\+.
 </comContracts>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
+|---------------|-----------------|  
 |contrat|Chaîne qui contient le type de contrat.|  
 |name|Chaîne qui contient le type de nom.|  
 |namespace|Chaîne qui contient l'espace de noms du contrat.|  
-|requiresSession|Valeur booléenne qui spécifie si le contrat ne peut être utilisé que sur des liaisons de session.  Lorsque le service est initialisé, l'exécution d'intégration garantit que ce paramètre est cohérent avec le type de liaison à utiliser.  Une exception est générée en cas de conflit avec une ou plusieurs liaisons du contrat.  Si cette propriété a la valeur `false`, qu'un canal unidirectionnel est utilisé et qu'un paramètre \[out\] est présent, une exception est également levée.|  
+|requiresSession|Valeur booléenne qui spécifie si le contrat ne peut être utilisé que sur des liaisons de session. Lorsque le service est initialisé, l'exécution d'intégration garantit que ce paramètre est cohérent avec le type de liaison à utiliser. Une exception est générée en cas de conflit avec une ou plusieurs liaisons du contrat. Si cette propriété a la valeur `false`, qu'un canal unidirectionnel est utilisé et qu'un paramètre [out] est présent, une exception est également levée.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |persistableTypes|Tous les types persistants.|  
-|userDefinedTypes|Collection de types définis par l'utilisateur \(UDT\) à inclure dans le contrat de service.|  
-|exposedMethods|Collection de méthodes COM\+ exposées lorsque l'interface sur un composant COM\+ est exposée en tant que service Web.|  
+|userDefinedTypes|Collection de types définis par l'utilisateur (UDT) à inclure dans le contrat de service.|  
+|exposedMethods|Collection de méthodes COM+ exposées lorsque l’interface sur un composant COM+ est exposée en tant que service Web.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |comContracts|Contient une collection d'éléments `comContract`.|  
   
-## Notes  
- Les contrats de service d'intégration COM\+ sont actuellement restreints à l'espace de noms "http:\/\/tempuri.org" et le nom de contrat est dérivé de l'interface COM de prise en charge.  Toutefois, vous pouvez spécifier des alternatives à l'aide de la section `comContracts`, ainsi que l'élément `comContract` dans le fichier de configuration.  Par exemple, vous pouvez utiliser la configuration suivante pour spécifier l'espace de noms, le nom de contrat et les types définis par l'utilisateur à inclure, ainsi que d'autres paramètres pour un contrat de service.  
+## <a name="remarks"></a>Remarques  
+ Contrats de service d’intégration COM + sont actuellement restreints à l’espace de noms « http://tempuri.org » et le nom de contrat est dérivé de l’interface COM de prise en charge. Toutefois, vous pouvez spécifier des alternatives à l'aide de la section `comContracts`, ainsi que l'élément `comContract` dans le fichier de configuration. Par exemple, vous pouvez utiliser la configuration suivante pour spécifier l'espace de noms, le nom de contrat et les types définis par l'utilisateur à inclure, ainsi que d'autres paramètres pour un contrat de service.  
   
-```  
+```xml  
 <comContracts>  
   <comContract  
       contract="{5163B1E7-F0CF-4B6A-9A02-4AB654F34284}"  
@@ -95,10 +100,10 @@ Spécifie un contrat de service d'intégration COM\+.
   
  Lorsque le service est initialisé, les espaces de noms et les noms de contrat spécifiés sont appliqués aux descriptions de service générées.  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.ComContractElementCollection>   
- <xref:System.ServiceModel.Configuration.ComContractElementCollection>   
- <xref:System.ServiceModel.Configuration.ComContractElement>   
- [\<comContracts\>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)   
- [Intégration à des applications COM\+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)   
- [Comment : configurer des paramètres de service COM\+](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.Configuration.ComContractElementCollection>  
+ <xref:System.ServiceModel.Configuration.ComContractElementCollection>  
+ <xref:System.ServiceModel.Configuration.ComContractElement>  
+ [\<comContracts >](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
+ [Intégration à des Applications COM +](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
+ [Comment : configurer les paramètres de Service COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

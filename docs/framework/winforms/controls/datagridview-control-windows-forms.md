@@ -1,43 +1,44 @@
 ---
-title: "DataGridView, contr&#244;le (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "données (Windows Forms), afficher sous forme de tableau"
-  - "grilles de données"
-  - "présentation des données"
-  - "DataGridView (contrôle Windows Forms)"
-  - "groupes de données (Windows Forms), afficher dans le contrôle DataGridView"
-  - "groupes de données (Windows Forms), interface utilisateur"
-  - "contrôles de grille (Windows Forms)"
-  - "tables (Windows Forms)"
-  - "données sous forme de tableau, afficher sur les Windows Forms"
-  - "Windows Forms, afficher les données"
+title: "DataGridView, contrôle (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- tables [Windows Forms]
+- data grids [Windows Forms
+- data [Windows Forms], displaying in tabular format
+- grid controls [Windows Forms]
+- datasets [Windows Forms], user interface
+- Windows Forms, displaying data
+- data presentation
+- tabular data [Windows Forms], displaying on Windows Forms
+- datasets [Windows Forms], displaying in DataGridView control
+- DataGridView control [Windows Forms]
 ms.assetid: dbee73f2-bba6-4874-9389-cd21d44309be
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 08a0cc15cff39bb936a78db95c73568aa643d0b6
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# DataGridView, contr&#244;le (Windows Forms)
-Le contrôle `DataGridView` offre un moyen puissant et flexible d'afficher des données sous forme de tableau.  Vous pouvez utiliser le contrôle `DataGridView` pour afficher des vues en lecture seule d'une petite quantité de données ou vous pouvez le mettre à l'échelle pour afficher des vues modifiables de groupes de données très volumineux.  
+# <a name="datagridview-control-windows-forms"></a>DataGridView, contrôle (Windows Forms)
+Le contrôle `DataGridView` offre un moyen puissant et flexible d'afficher des données sous forme de tableau. Vous pouvez utiliser le contrôle `DataGridView` pour afficher des vues en lecture seule d'une petite quantité de données ou vous pouvez le mettre à l'échelle pour afficher des vues modifiables de groupes de données très volumineux.  
   
- Vous pouvez étendre le contrôle `DataGridView` de plusieurs façons pour générer des comportements personnalisés dans vos applications.  Par exemple, vous pouvez spécifier par programmation vos propres algorithmes de tri et vous pouvez créer vos propres types de cellules.  Vous pouvez facilement personnaliser l'apparence du contrôle `DataGridView` en choisissant parmi plusieurs propriétés.  Vous pouvez utiliser plusieurs types de magasins de données comme source de données ou utiliser le contrôle `DataGridView` sans le lier à aucune source de données.  
+ Vous pouvez étendre le contrôle `DataGridView` de plusieurs façons pour générer des comportements personnalisés dans vos applications. Par exemple, vous pouvez spécifier par programmation vos propres algorithmes de tri et vous pouvez créer vos propres types de cellules. Vous pouvez facilement personnaliser l'apparence du contrôle `DataGridView` en choisissant parmi plusieurs propriétés. Vous pouvez utiliser plusieurs types de magasins de données comme source de données ou utiliser le contrôle `DataGridView` sans le lier à aucune source de données.  
   
  Les rubriques de cette section décrivent les concepts et techniques que vous pouvez utiliser pour générer des fonctionnalités `DataGridView` dans vos applications.  
   
-## Dans cette section  
- [Vue d'ensemble du contrôle DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)  
+## <a name="in-this-section"></a>Dans cette section  
+ [Vue d’ensemble du contrôle DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)  
  Fournit des rubriques qui décrivent l'architecture et les principaux concepts du contrôle Windows Forms `DataGridView`.  
   
  [Fonctionnalités par défaut du contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/default-functionality-in-the-windows-forms-datagridview-control.md)  
@@ -64,7 +65,7 @@ Le contrôle `DataGridView` offre un moyen puissant et flexible d'afficher des d
  [Saisie de données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)  
  Fournit des rubriques qui décrivent comment modifier la façon dont les utilisateurs ajoutent et modifient des données dans le contrôle.  
   
- [Sélection et utilisation du Presse\-papiers avec le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/selection-and-clipboard-use-with-the-windows-forms-datagridview-control.md)  
+ [Sélection et utilisation du Presse-papiers avec le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/selection-and-clipboard-use-with-the-windows-forms-datagridview-control.md)  
  Fournit des rubriques qui décrivent les fonctionnalités de sélection de cellules, de lignes et de colonnes dans le contrôle.  
   
  [Programmation avec les cellules, lignes et colonnes dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/programming-with-cells-rows-and-columns-in-the-datagrid.md)  
@@ -82,14 +83,14 @@ Le contrôle `DataGridView` offre un moyen puissant et flexible d'afficher des d
  [Différences entre les contrôles DataGridView et DataGrid Windows Forms](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)  
  Décrit dans quelle mesure le contrôle `DataGridView` améliore et remplace le contrôle <xref:System.Windows.Forms.DataGrid>.  
   
- Consultez également [Utilisation du concepteur avec le contrôle DataGridView Windows Forms](http://msdn.microsoft.com/library/ms171593\(v=vs.110\)).  
+ Consultez également [à l’aide du concepteur avec le contrôle DataGridView Windows Forms](http://msdn.microsoft.com/library/ms171593\(v=vs.110\)).  
   
-## Référence  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit la documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   
  <xref:System.Windows.Forms.BindingSource>  
- Fournit la documentation de référence pour le composant <xref:System.Windows.Forms.BindingSource>.  Le contrôle <xref:System.Windows.Forms.DataGridView> et le composant <xref:System.Windows.Forms.BindingSource> sont conçus pour fonctionner étroitement ensemble.  
+ Fournit la documentation de référence pour le composant <xref:System.Windows.Forms.BindingSource>. Le contrôle <xref:System.Windows.Forms.DataGridView> et le composant <xref:System.Windows.Forms.BindingSource> sont conçus pour fonctionner étroitement ensemble.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

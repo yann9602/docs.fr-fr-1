@@ -1,71 +1,69 @@
 ---
-title: "S&#233;curit&#233; et entr&#233;es d&#39;utilisateur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "sécurité du code, entrée d'utilisateur"
-  - "codage sécurisé, entrée d'utilisateur"
-  - "sécurité (.NET Framework), entrée d'utilisateur"
-  - "entrée d'utilisateur, sécurité"
+title: "Sécurité et entrées d'utilisateur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- security [.NET Framework], user input
+- user input, security
+- secure coding, user input
+- code security, user input
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-caps.latest.revision: 7
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "7"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 804b91cdda1316bc0a3081c8353493faf8869b4f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# S&#233;curit&#233; et entr&#233;es d&#39;utilisateur
-Les données utilisateur, qui correspondent à n'importe quelles entrées \(données provenant d'une demande Web ou URL, entrées dans les contrôles d'une application Microsoft Windows Forms etc.\), peuvent nuire au code car il arrive souvent que ces données soient utilisées directement comme paramètres pour appeler d'autre code.  Cette situation est semblable aux appels effectués dans votre code par du code nuisible avec des paramètres étranges, et les mêmes précautions doivent être observées.  Les entrées de l'utilisateur sont en fait plus difficiles à sécuriser car il n'existe pas de frame de pile pour détecter la présence de données potentiellement non fiables.  
+# <a name="security-and-user-input"></a>Sécurité et entrées d'utilisateur
+Les données utilisateurs, quel que soit le type d’entrée (données d’une demande web ou URL, entrée de commandes d’une application Windows Forms, etc.), peuvent affecter négativement le code, dans la mesure où ces données sont souvent utilisées directement en tant que paramètres pour appeler un autre code. Cette situation, similaire à l’appel de votre code par du code malveillant à l’aide de paramètres étranges, nécessite les mêmes précautions. En réalité, une entrée utilisateur est plus difficile à sécuriser, car il n’existe aucune frame de pile permettant de détecter la présence de données potentiellement non fiables.  
   
- Ces données comptent parmi les bogues de sécurité les plus difficiles et les plus subtiles à détecter car même si elles peuvent exister dans du code apparemment sans rapport avec la sécurité, elles correspondent à une passerelle permettant de transmettre les données incorrectes à d'autre code.  Pour rechercher ces bogues, suivez n'importe quel type de données d'entrée, imaginez l'éventail des valeurs possibles, puis considérez si le code confronté à ces données peut traiter tous ces cas.  Vous pouvez corriger ces bogues en vérifiant les plages et en rejetant toutes les entrées que le code ne peut pas traiter.  
+ Il s’agit des bogues de sécurité les plus subtils et les plus difficiles à identifier car, bien qu’ils peuvent apparaître dans du code en apparence non lié à la sécurité, ils constituent une passerelle permettant de transférer des données incorrectes vers d’autres codes. Pour rechercher ces bogues, suivez tout type de données d’entrée, imaginez la fourchette de valeurs possibles, et déterminez si le code traitant ces données peut traiter l’ensemble des cas. Pour corriger ces bogues, procédez à une vérification de plage, puis rejetez toute entrée ne pouvant pas être traitée par le code.  
   
- Certaines considérations importantes relatives aux données utilisateur sont notamment les suivantes :  
+ Voici quelques considérations importantes associées aux données utilisateurs :  
   
--   Toutes les données utilisateur dans une réponse de serveur s'exécutent dans le contexte du site du serveur sur le client.  Si votre serveur Web prend des données utilisateur et les insère dans la page Web retournée, il peut, par exemple, inclure une balise **\<script\>** et s'exécuter comme depuis le serveur.  
+-   Toutes les données utilisateur d’une réponse de serveur s’exécutent dans le contexte du site du serveur sur le client. Si votre serveur web utilise des données utilisateur qu’il insère dans la page web renvoyée, il peut, par exemple, inclure une balise **\<script>** et l’exécuter comme si l’opération était effectuée par le serveur.  
   
--   N'oubliez pas que le client peut demander n'importe quelle URL.  
+-   N’oubliez pas que le client peut demander toute URL.  
   
--   Considérez des chemins d'accès non valides ou délicats :  
+-   Tenez compte des chemins d’accès délicats ou non valides :  
   
-    -   ..\\ , des chemins d'accès particulièrement longs ;  
+    -   ..\ , des chemins d’accès extrêmement longs.  
   
-    -   l'utilisation de caractères génériques \(\*\) ;  
+    -   Utilisation de caractères génériques (*).  
   
-    -   l'expansion de jeton \(%token%\) ;  
+    -   Expansion de jeton (%token%).  
   
-    -   des formes étranges de chemins d'accès dont la signification est particulière ;  
+    -   Formes étranges de chemins d’accès présentant une signification spécifique.  
   
-    -   l'alternance de noms de flux de systèmes de fichier comme par exemple `filename::$DATA` ;  
+    -   Autres noms de flux de système de fichiers, comme `filename::$DATA`.  
   
-    -   des versions courtes de noms de fichiers comme par exemple `longfi~1` pour `longfilename` ;  
+    -   Versions courtes de noms de fichiers, comme `longfi~1` pour `longfilename`.  
   
--   N'oubliez pas que Eval\(userdata\) peut faire n'importe quoi.  
+-   N’oubliez pas que la commande Eval(userdata) peut effectuer tout type d’action.  
   
--   Méfiez\-vous de la liaison tardive à un nom qui inclut des données utilisateur.  
+-   Méfiez-vous de toute liaison tardive vers un nom comprenant des données utilisateur.  
   
--   Si vous traitez des données Web, considérez les différentes formes d'échappement qui sont autorisées, y compris :  
+-   Si vous traitez des données web, tenez compte des différents types d’échappements autorisés, notamment des suivants :  
   
-    -   échappements hexadécimaux \(%nn\) ;  
+    -   Échappements haxadécimaux (%nn).  
   
-    -   échappements Unicode \(%nnn\) ;  
+    -   Échappements Unicode (%nnn).  
   
-    -   échappements très long UTF\-8 \(%nn%nn\) ;  
+    -   Échappements UTF-8 longs (%nn%nn).  
   
-    -   doubles échappements \(%nn devient %mmnn, où %mm correspond à l'échappement de '%'\) ;  
+    -   Doubles échappements (%nn devient %mmnn, où %mm est l’échappement de %).  
   
--   Méfiez\-vous des noms d'utilisateur qui peuvent avoir plus d'un format canonique ;  par exemple, dans Microsoft Windows 2000, vous pouvez souvent utiliser soit la forme MONDOMAINE\\*nom\_utilisateur*, soit la forme *nom\_utilisateur*@mondomaine.exemple.com.  
+-   Méfiez-vous des noms utilisateur pouvant présenter plusieurs formats canoniques. Par exemple, bien souvent, vous pouvez utiliser le format MONDOMAINE\\*nomutilisateur* ou le format *nomutilisateur*@mydomain.example.com.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)

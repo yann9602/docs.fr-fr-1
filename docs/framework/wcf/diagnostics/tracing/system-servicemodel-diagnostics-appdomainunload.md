@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Diagnostics.AppDomainUnload | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Diagnostics.AppDomainUnload
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d3901f94-db06-4309-8e24-afdec5eeb102
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 88ddd1e8b5c24d8dfda63d97d2912b94f5a177b0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Diagnostics.AppDomainUnload
+# <a name="systemservicemodeldiagnosticsappdomainunload"></a>System.ServiceModel.Diagnostics.AppDomainUnload
 System.ServiceModel.Diagnostics.AppDomainUnload  
   
-## Description  
+## <a name="description"></a>Description  
  AppDomain est en cours de déchargement.  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

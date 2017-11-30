@@ -1,30 +1,33 @@
 ---
-title: "Comment&#160;: h&#233;berger un service WCF dans IIS | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "Comment : héberger un service WCF dans IIS"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4fb3957543d6a0fcf3b375f9cb43ae089ac9d600
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: h&#233;berger un service WCF dans IIS
-Cette rubrique décrit les étapes de base requises pour créer un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] hébergé dans les services IIS (Internet Information Services). Dans cette rubrique, on suppose que vous connaissez IIS et que vous comprenez la manière d'utiliser l'outil d'administration IIS pour créer et gérer des applications IIS. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]IIS, voir [Internet Information Services](http://go.microsoft.com/fwlink/?LinkId=132449) A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service qui s’exécute dans l’environnement IIS tire pleinement parti des fonctionnalités IIS, telles que le recyclage de processus, arrêt inactif, surveillance de l’intégrité de processus et l’activation basée sur un message. Cette option d'hébergement requiert que les services IIS soient configurés correctement, mais n'exige pas l'écriture d'un code d'hébergement dans le cadre de l'application. Vous pouvez utiliser l'hébergement IIS uniquement avec un transport HTTP.  
+# <a name="how-to-host-a-wcf-service-in-iis"></a>Comment : héberger un service WCF dans IIS
+Cette rubrique décrit les étapes de base requises pour créer un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] hébergé dans les services IIS (Internet Information Services). Dans cette rubrique, on suppose que vous connaissez IIS et que vous comprenez la manière d'utiliser l'outil d'administration IIS pour créer et gérer des applications IIS. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]IIS voir [Internet Information Services](http://go.microsoft.com/fwlink/?LinkId=132449). Un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] exécuté dans l'environnement IIS tire totalement parti des fonctionnalités IIS telles que le recyclage de processus, l'arrêt en cas d'inactivité, le contrôle d'état de processus et l'activation basée sur message. Cette option d'hébergement requiert que les services IIS soient configurés correctement, mais n'exige pas l'écriture d'un code d'hébergement dans le cadre de l'application. Vous pouvez utiliser l'hébergement IIS uniquement avec un transport HTTP.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Comment [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] interagissent, consultez [Services WCF et ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]configuration de la sécurité, consultez [sécurité](../../../../docs/framework/wcf/feature-details/security.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Comment [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] interagir, consultez [Services WCF et ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]configuration de la sécurité, consultez [sécurité](../../../../docs/framework/wcf/feature-details/security.md).  
   
- Pour la copie de la source de cet exemple, consultez la page [d’hébergement à l’aide en ligne de Code IIS](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md).  
+ Pour la copie de la source de cet exemple, consultez [d’hébergement à l’aide en ligne de Code IIS](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md).  
   
 ### <a name="to-create-a-service-hosted-by-iis"></a>Pour créer un service hébergé par IIS  
   
@@ -44,14 +47,14 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
   
 6.  Ajoutez les instructions using suivantes en tête du fichier Service.cs.  
   
-    ```  
+    ```csharp  
     using System;  
     using System.ServiceModel;  
     ```  
   
 7.  Ajoutez la déclaration d'espace de noms suivante à la suite des instructions using.  
   
-    ```  
+    ```csharp  
     namespace Microsoft.ServiceModel.Samples  
     {  
     }  
@@ -69,47 +72,22 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
   
 10. Créez un fichier nommé « Web.config » dans le répertoire de l'application et ajoutez le code de configuration suivant dans le fichier. Au moment de l'exécution, l'infrastructure [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise les informations pour construire un point de terminaison avec lequel les applications clientes peuvent communiquer.  
   
-    ```xml  
-    <?xml version="1.0" encoding="utf-8" ?>  
-    <configuration>  
-      <system.serviceModel>  
-        <services>  
-          <!-- This section is optional with the default configuration  
-            model introduced in .NET Framework 4 -->  
-          <service name="Microsoft.ServiceModel.Samples.CalculatorService">  
+     [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]      
   
-            <!-- This endpoint is exposed at the base address provided by host:                                        http://localhost/servicemodelsamples/service.svc  -->  
-            <endpoint address=""  
-                      binding="wsHttpBinding"  
-                      contract="Microsoft.ServiceModel.Samples.ICalculator" />  
-  
-            <!-- The mex endpoint is exposed at http://localhost/servicemodelsamples/service.svc/mex -->  
-            <endpoint address="mex"  
-                      binding="mexHttpBinding"  
-                      contract="IMetadataExchange" />  
-          </service>  
-        </services>  
-      </system.serviceModel>  
-  
-    </configuration>  
-  
-    ```  
-  
-     L'exemple spécifie explicitement les points de terminaison dans le fichier de configuration. Si vous n'ajoutez pas de points de terminaison au service, le runtime ajoute les points de terminaison par défaut. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]consultez la page points de terminaison, les liaisons et les comportements par défaut [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les Services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+     L'exemple spécifie explicitement les points de terminaison dans le fichier de configuration. Si vous n'ajoutez pas de points de terminaison au service, le runtime ajoute les points de terminaison par défaut. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]voir de points de terminaison, les liaisons et comportements par défaut [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [simplifié la Configuration des Services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 11. Pour vous assurer que le service est hébergé correctement, ouvrez une instance d'Internet Explorer et naviguez jusqu'à l'URL du service : `http://localhost/IISHostedCalc/Service.svc`  
   
 ## <a name="example"></a>Exemple  
  L'intégralité du code pour le service de calculatrice hébergé IIS est présentée ci-dessous.  
   
- [!code-csharp[C_HowTo_HostInIIS#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#1)]
- [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)]  
-  
- <!-- TODO: review snippet reference [!code[c_HowTo_HostInIIS#100](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  -->  
+ [!code-csharp[C_HowTo_HostInIIS#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#1)] 
+ [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)] 
+ [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Hébergement dans Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)   
- [Services d’hébergement](../../../../docs/framework/wcf/hosting-services.md)   
- [Services WCF et ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)   
- [Sécurité](../../../../docs/framework/wcf/feature-details/security.md)   
+ [Hébergement dans Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [Hébergement de services](../../../../docs/framework/wcf/hosting-services.md)  
+ [Services WCF et ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)  
+ [Sécurité](../../../../docs/framework/wcf/feature-details/security.md)  
  [Fonctionnalités d’hébergement de Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201276)

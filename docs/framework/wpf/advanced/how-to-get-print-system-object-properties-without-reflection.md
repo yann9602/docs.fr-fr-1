@@ -1,49 +1,54 @@
 ---
-title: "Comment&#160;: obtenir les propri&#233;t&#233;s de l&#39;objet de syst&#232;me d&#39;impression sans r&#233;flexion | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PrintSystemObject, obtenir les propriétés"
+title: "Comment : obtenir les propriétés de l'objet de système d'impression sans réflexion"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: PrintSystemObject [WPF], getting properties
 ms.assetid: 43560f28-183d-41c1-b9d1-de7c2552273e
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2f6015d25ee8868fe9b4c6dcf3bf145d413521e1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: obtenir les propri&#233;t&#233;s de l&#39;objet de syst&#232;me d&#39;impression sans r&#233;flexion
-L'utilisation de la réflexion pour détailler les propriétés \(et les types de ces propriétés\) sur un objet peut ralentir les performances de l'application.  L'espace de noms <xref:System.Printing.IndexedProperties> permet d'obtenir ces informations à l'aide de la réflexion.  
+# <a name="how-to-get-print-system-object-properties-without-reflection"></a>Comment : obtenir les propriétés de l'objet de système d'impression sans réflexion
+À l’aide de la réflexion pour détailler les propriétés (et les types de ces propriétés) sur un objet peut ralentir les performances de l’application. Le <xref:System.Printing.IndexedProperties> espace de noms fournit un moyen d’obtenir ces informations à l’aide de la réflexion.  
   
-## Exemple  
- Les étapes de cette procédure sont les suivantes :  
+## <a name="example"></a>Exemple  
+ Les étapes de cette procédure sont les suivantes.  
   
-1.  Créer une instance du type.  Dans l'exemple ci\-dessous, le type est le type <xref:System.Printing.PrintQueue> fourni avec [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)], mais un code presque identique doit fonctionner pour les types que vous dérivez de <xref:System.Printing.PrintSystemObject>.  
+1.  Créez une instance du type. Dans l’exemple ci-dessous, le type est le <xref:System.Printing.PrintQueue> type qui est fourni avec [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)], mais un code presque identique doit fonctionner pour les types que vous dérivez de <xref:System.Printing.PrintSystemObject>.  
   
-2.  Créez un <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> à partir de la <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A> du type.  La propriété <xref:System.Collections.DictionaryEntry.Value%2A> de chaque entrée dans ce dictionnaire est un objet de l'un des types dérivés de <xref:System.Printing.IndexedProperties.PrintProperty>.  
+2.  Créer un <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> à partir du type <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A>. Le <xref:System.Collections.DictionaryEntry.Value%2A> propriété de chaque entrée de ce dictionnaire est un objet de l’un des types dérivés de <xref:System.Printing.IndexedProperties.PrintProperty>.  
   
-3.  Énumérer les membres du dictionnaire.  Pour chacun d'eux, procédez comme suit.  
+3.  Énumérer les membres du dictionnaire. Pour chacun d’eux, procédez comme suit.  
   
-4.  Effectuez un cast de la valeur de chaque entrée sur <xref:System.Printing.IndexedProperties.PrintProperty> et utilisez\-le pour créer un objet <xref:System.Printing.IndexedProperties.PrintProperty>.  
+4.  Cast jusqu'à la valeur de chaque entrée à <xref:System.Printing.IndexedProperties.PrintProperty> et l’utiliser pour créer un <xref:System.Printing.IndexedProperties.PrintProperty> objet.  
   
-5.  Récupérez le type de <xref:System.Printing.IndexedProperties.PrintProperty.Value%2A> de chaque objet <xref:System.Printing.IndexedProperties.PrintProperty>.  
+5.  Obtenir le type de la <xref:System.Printing.IndexedProperties.PrintProperty.Value%2A> de chacune de la <xref:System.Printing.IndexedProperties.PrintProperty> objet.  
   
  [!code-csharp[GetPrintObjectPropertyTypesWithoutReflection#ShowPropertyTypesWithoutReflection](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GetPrintObjectPropertyTypesWithoutReflection/CSharp/Program.cs#showpropertytypeswithoutreflection)]
  [!code-vb[GetPrintObjectPropertyTypesWithoutReflection#ShowPropertyTypesWithoutReflection](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GetPrintObjectPropertyTypesWithoutReflection/visualbasic/program.vb#showpropertytypeswithoutreflection)]  
   
-## Voir aussi  
- <xref:System.Printing.IndexedProperties.PrintProperty>   
- <xref:System.Printing.PrintSystemObject>   
- <xref:System.Printing.IndexedProperties>   
- <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>   
- <xref:System.Printing.LocalPrintServer>   
- <xref:System.Printing.PrintQueue>   
- <xref:System.Collections.DictionaryEntry>   
- [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [Vue d'ensemble de l'impression](../../../../docs/framework/wpf/advanced/printing-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Printing.IndexedProperties.PrintProperty>  
+ <xref:System.Printing.PrintSystemObject>  
+ <xref:System.Printing.IndexedProperties>  
+ <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>  
+ <xref:System.Printing.LocalPrintServer>  
+ <xref:System.Printing.PrintQueue>  
+ <xref:System.Collections.DictionaryEntry>  
+ [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Vue d’ensemble de l’impression](../../../../docs/framework/wpf/advanced/printing-overview.md)

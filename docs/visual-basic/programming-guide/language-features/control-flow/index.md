@@ -1,45 +1,27 @@
 ---
 title: "Flux de contrôle en Visual Basic"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - statements [Visual Basic], control flow
-- control flow
-- control structures
-- structures, control
-- conditional statements, control flow
+- control flow [Visual Basic]
+- control structures [Visual Basic]
+- structures [Visual Basic], control
+- conditional statements [Visual Basic], control flow
 ms.assetid: 5623ef47-52b1-4202-befd-9af36422ec6f
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a764732919c32499a062c9136c261539334688cb
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 6ce0cb7cba8f05b488d47f99da51b0b5de75eb15
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="control-flow-in-visual-basic"></a>Flux de contrôle en Visual Basic
 Lorsqu’un programme n’est pas réglé, il traite ses instructions du début à la fin. L’écriture de certains programmes très simples peut comprendre uniquement ce flux unidirectionnel. Toutefois, la puissance et l’utilité d’un langage de programmation proviennent de la possibilité de modifier l’ordre d’exécution grâce à des instructions de contrôle et à des boucles.  
@@ -62,4 +44,3 @@ Lorsqu’un programme n’est pas réglé, il traite ses instructions du début 
 ## <a name="related-sections"></a>Rubriques connexes  
  [Liste des flux de contrôle](../../../../visual-basic/language-reference/keywords/control-flow-summary.md)  
  Fournit des liens vers des pages d’informations de référence du langage à ce sujet.
-

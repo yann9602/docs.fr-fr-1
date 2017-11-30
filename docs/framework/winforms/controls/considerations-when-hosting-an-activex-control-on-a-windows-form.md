@@ -1,45 +1,46 @@
 ---
-title: "Consid&#233;rations sur l&#39;h&#233;bergement d&#39;un contr&#244;le ActiveX dans un Windows Form | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ActiveX (contrôles Windows Forms), ajouter"
-  - "ActiveX (contrôles Windows Forms), héberger"
-  - "contrôles Windows Forms, contrôles ActiveX"
-  - "Windows Forms, contrôles ActiveX"
-  - "Windows Forms, héberger des contrôles ActiveX"
+title: "Considérations sur l'hébergement d'un contrôle ActiveX dans un Windows Form"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms controls, ActiveX controls
+- ActiveX controls [Windows Forms], hosting
+- Windows Forms, ActiveX controls
+- Windows Forms, hosting ActiveX controls
+- ActiveX controls [Windows Forms], adding
 ms.assetid: 2509302d-a74e-484f-9890-2acdbfa67a68
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3ec828ca0b2bd8231d0baca72bf97bef566f2651
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Consid&#233;rations sur l&#39;h&#233;bergement d&#39;un contr&#244;le ActiveX dans un Windows Form
-Bien que les Windows Forms aient été optimisés pour l'hébergement de contrôles Windows Forms, il est toujours possible d'y inclure des contrôles ActiveX.  Prenez les éléments suivants en compte lors de la planification d'une application qui utilise des contrôles ActiveX :  
+# <a name="considerations-when-hosting-an-activex-control-on-a-windows-form"></a>Considérations sur l'hébergement d'un contrôle ActiveX dans un Windows Form
+Bien que les Windows Forms aient été optimisés pour héberger des contrôles Windows Forms, vous pouvez néanmoins utiliser des contrôles ActiveX. Gardez à l’esprit les considérations suivantes lors de la planification d’une application qui utilise des contrôles ActiveX :  
   
--   **Sécurité** Le Common Language Runtime a été optimisé sur le plan de la Sécurité d'Accès du Code.  Les applications recourant aux Windows Forms peuvent s'exécuter sans problème dans un environnement de niveau de confiance total et, dans un environnement de niveau de confiance partiel, avec la plupart des fonctionnalités disponibles.  L'hébergement des contrôles Windows Forms dans un navigateur ne présente aucun problème.  Toutefois, les contrôles ActiveX dans les Windows Forms ne peuvent pas tirer parti de ces améliorations de sécurité.  L'exécution d'un contrôle ActiveX requiert une autorisation de code non managé, définie avec la propriété <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=fullName>.  Pour plus d'informations sur la sécurité et l'autorisation de code non managé, consultez la classe [SecurityPermissionAttribute](frlrfSystemSecurityPermissionsSecurityPermissionAttributeClassTopic).  
+-   **Sécurité** : le common language runtime a été amélioré en ce qui concerne la sécurité d’accès du code. Les applications recourant aux Windows Forms peuvent fonctionner sans problème dans un environnement totalement fiable et dans un environnement partiellement fiable avec la plupart des fonctionnalités disponibles. Les contrôles Windows Forms peuvent être hébergés dans un navigateur sans aucune complication. Cependant, les contrôles ActiveX dans les Windows Forms ne tirent pas parti de ces améliorations de sécurité. Exécution d’un contrôle ActiveX nécessite une autorisation de code non managé, qui est définie avec la <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType> propriété. Pour plus d’informations sur la sécurité et l’autorisation de code non managé, consultez <xref:System.Security.Permissions.SecurityPermissionAttribute>.  
   
--   **Coût total de propriété \(TCO, Total Cost of Ownership\)** Les contrôles ActiveX ajoutés à un Windows Form sont déployés sur ce Windows Form dans son intégralité, ce qui est susceptible d'accroître considérablement la taille du ou des fichiers créés.  En outre, l'utilisation de contrôles ActiveX sur des Windows Forms exige une écriture dans le Registre.  Les répercussions sur l'ordinateur de l'utilisateur sont donc plus grandes qu'avec des Windows Forms, qui ne nécessitent pas d'écriture dans le Registre.  
-  
-    > [!NOTE]
-    >  L'utilisation d'un contrôle ActiveX requiert l'utilisation d'un wrapper COM Interop.  Pour plus d'informations, consultez [Interopérabilité COM en Visual Basic et Visual C\#](../Topic/COM%20Interoperability%20in%20.NET%20Framework%20Applications%20\(Visual%20Basic\).md).  
+-   **Coût total de possession** : les contrôles ActiveX ajoutés à un Windows Form sont déployés dans leur intégralité avec ce Windows Form, ce qui peut accroître considérablement la taille des fichiers créés. En outre, l’utilisation de contrôles ActiveX sur des Windows Forms nécessite l’écriture dans le Registre. Ceci est plus invasif sur l’ordinateur d’un utilisateur que les contrôles Windows Forms, qui ne le nécessitent pas.  
   
     > [!NOTE]
-    >  Si le nom d'un membre du contrôle ActiveX correspond à un nom défini dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], l'importateur de contrôles ActiveX fera précéder le nom du membre de **Ctl** lors de la création de la classe dérivée <xref:System.Windows.Forms.AxHost>.  Par exemple, si votre contrôle ActiveX comporte un membre nommé **Layout**, il est renommé **CtlLayout** dans la classe dérivée de AxHost, car l'événement **Layout** est défini dans [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+    >  L’utilisation d’un contrôle ActiveX nécessite l’utilisation d’un wrapper COM interop. Pour plus d’informations, consultez [Interopérabilité COM en Visual Basic et Visual C#](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
-## Voir aussi  
- [Comment : ajouter des contrôles ActiveX aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)   
- [Sécurité d'accès du code](../../../../docs/framework/misc/code-access-security.md)   
- [Controls and Programmable Objects Compared in Various Languages and Libraries](http://msdn.microsoft.com/fr-fr/021f2a1b-8247-4348-a5ad-e1d9ab23004b)   
- [Placement de contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)   
- [contrôles Windows Forms](../../../../docs/framework/winforms/controls/index.md)
+    > [!NOTE]
+    >  Si le nom d’un membre du contrôle ActiveX correspond à un nom défini dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], l’importateur de contrôles ActiveX fera précéder le nom du membre avec **Ctl** lorsqu’il crée le <xref:System.Windows.Forms.AxHost> classe dérivée. Par exemple, si votre contrôle ActiveX a un membre nommé **Layout**, il est renommé **CtlLayout** dans la classe dérivée de AxHost, car l’événement **Layout** est défini dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+  
+## <a name="see-also"></a>Voir aussi  
+ [Guide pratique pour ajouter des contrôles ActiveX aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
+ [Sécurité d’accès du code](../../../../docs/framework/misc/code-access-security.md)  
+ [Comparaison des contrôles et des objets programmables dans divers langages et bibliothèques](http://msdn.microsoft.com/en-us/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
+ [Placement de contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)  
+ [Contrôles Windows Forms](../../../../docs/framework/winforms/controls/index.md)

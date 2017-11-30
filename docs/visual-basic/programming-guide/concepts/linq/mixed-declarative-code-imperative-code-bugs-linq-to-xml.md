@@ -1,39 +1,30 @@
 ---
-title: "Déclarative en Code impératif bogues mixtes Code (LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Bogues du Code impératif de Code déclaratif (LINQ to XML) mixtes (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: f12b1ab4-bb92-4b92-a648-0525e45b3ce7
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 08edcabc3f0238c499f87c713f205ee5a517a1ea
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 2d5d50b5444a9aca429eb5ddb682cd23c468a1e3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-visual-basic"></a>Déclarative Code/bogues mixtes Code impératif (LINQ to XML) (Visual Basic)
-[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] contient diverses méthodes qui vous permettent de modifier directement une arborescence XML. Vous pouvez ajouter des éléments, supprimer des éléments, modifier le contenu d'un élément, ajouter des attributs, et ainsi de suite. Cette interface de programmation est décrite dans [modification d’arborescences XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). Si vous parcourez l’un des axes, tels que <xref:System.Xml.Linq.XContainer.Elements%2A>et que vous modifiez l’arborescence XML à mesure que vous parcourez l’axe, vous pouvez vous retrouver avec des bogues étranges.</xref:System.Xml.Linq.XContainer.Elements%2A>  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contient diverses méthodes qui vous permettent de modifier directement une arborescence XML. Vous pouvez ajouter des éléments, supprimer des éléments, modifier le contenu d'un élément, ajouter des attributs, et ainsi de suite. Cette interface de programmation est décrite dans [modification d’arborescences XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). Si vous itérez au sein de l'un des axes, tels que <xref:System.Xml.Linq.XContainer.Elements%2A>, et que vous modifiez l'arborescence XML à mesure que vous parcourez l'axe, vous pouvez constater des bogues étranges.  
   
  Ce problème porte parfois le nom de « problème Halloween ».  
   
 ## <a name="definition-of-the-problem"></a>Définition du problème  
- Lorsque vous écrivez du code qui itère au sein d’une collection avec LINQ, vous écrivez du code dans un style déclaratif. Cela correspond davantage à décrire *que* souhaité, plutôt que *comment* vous souhaitez obtenir. Si vous écrivez du code qui 1) obtient le premier élément, 2) le teste pour une certaine condition, 3) le modifie et 4) le replace dans la liste, il s'agit de code impératif. Vous indiquez à l’ordinateur *comment* à faire ce que vous voulez faire.  
+ Lorsque vous écrivez du code qui itère au sein d’une collection avec LINQ, vous écrivez du code dans un style déclaratif. Cela correspond davantage à décrire *ce que* vous voulez obtenir, plutôt que *comment* vous voulez l’obtenir. Si vous écrivez du code qui 1) obtient le premier élément, 2) le teste pour une certaine condition, 3) le modifie et 4) le replace dans la liste, il s'agit de code impératif. Vous indiquez à l’ordinateur *comment* faire ce que vous voulez faire.  
   
  Le mélange de ces styles de code dans la même opération entraîne des problèmes. Considérez ce qui suit :  
   
@@ -66,7 +57,7 @@ Next
   
  Ce code entre dans une boucle infinie. L'instruction `foreach` itère au sein de l'axe `Elements()` et ajoute de nouveaux éléments à l'élément `doc`. Elle finit par itérer également au sein des éléments qu'elle vient d'ajouter. Et puisqu'elle alloue de nouveaux objets à chaque itération de la boucle, elle finira par consommer toute la mémoire disponible.  
   
- Vous pouvez résoudre ce problème en extrayant la collection en mémoire à l’aide du <xref:System.Linq.Enumerable.ToList%2A>opérateur de requête standard, comme suit :</xref:System.Linq.Enumerable.ToList%2A>  
+ Vous pouvez résoudre ce problème en extrayant la collection en mémoire à l'aide de l'opérateur de requête standard <xref:System.Linq.Enumerable.ToList%2A>, comme suit :  
   
 ```vb  
 Dim root As XElement = _  
@@ -121,7 +112,7 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
- La solution consiste à nouveau à appeler <xref:System.Linq.Enumerable.ToList%2A>afin de matérialiser la collection, comme suit :</xref:System.Linq.Enumerable.ToList%2A>  
+ La solution consiste à nouveau à appeler <xref:System.Linq.Enumerable.ToList%2A> afin de matérialiser la collection, comme suit :  
   
 ```vb  
 Dim root As XElement = _  
@@ -142,7 +133,7 @@ Console.WriteLine(root)
 <Root />  
 ```  
   
- Sinon, vous pouvez éliminer l’itération en appelant <xref:System.Xml.Linq.XElement.RemoveAll%2A>sur l’élément parent :</xref:System.Xml.Linq.XElement.RemoveAll%2A>  
+ En guise d'alternative, vous pouvez éliminer l'itération en appelant <xref:System.Xml.Linq.XElement.RemoveAll%2A> sur l'élément parent :  
   
 ```vb  
 Dim root As XElement = _  
@@ -195,5 +186,4 @@ Console.WriteLine(newRoot)
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to XML (Visual Basic) de la programmation avancée](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
-
+ [Avancées programmation LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

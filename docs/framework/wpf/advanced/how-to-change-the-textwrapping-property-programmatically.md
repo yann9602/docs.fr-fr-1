@@ -1,35 +1,41 @@
 ---
-title: "Comment&#160;: modifier la propri&#233;t&#233; TextWrapping par programmation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "documents, modifier la propriété TextWrapping par programmation"
-  - "TextWrapping (propriété), modifier par programmation"
+title: "Guide pratique pour changer la propriété TextWrapping par programmation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- documents [WPF], changing TextWrapping property programmatically
+- TextWrapping property [WPF], changing programmatically
 ms.assetid: 30d25554-4c82-4df9-a8d6-35683a4a13bb
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 74ddcf55c8918602ecac866913f2007da143f443
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: modifier la propri&#233;t&#233; TextWrapping par programmation
-## Exemple  
- L'exemple de code suivant indique comment modifier par programmation la valeur de la propriété <xref:System.Windows.Controls.TextBlock.TextWrapping%2A>.  
+# <a name="how-to-change-the-textwrapping-property-programmatically"></a>Guide pratique pour changer la propriété TextWrapping par programmation
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant montre comment modifier la valeur de la <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> propriété par programmation.  
   
- Trois éléments <xref:System.Windows.Controls.Button> sont placés dans un élément <xref:System.Windows.Controls.StackPanel> de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Chaque événement <xref:System.Windows.Controls.Primitives.ButtonBase.Click> d'un <xref:System.Windows.Controls.Button> correspond à un gestionnaire d'événements dans le code.  Les gestionnaires d'événements utilisent le même nom que la valeur <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> qu'ils appliqueront à `txt2` lors d'un clic sur le bouton.  En outre, le texte dans `txt1` \(un <xref:System.Windows.Controls.TextBlock> non affiché dans le code [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]\) est mis à jour pour répercuter la modification dans la propriété.  
+ Trois <xref:System.Windows.Controls.Button> éléments sont placés dans un <xref:System.Windows.Controls.StackPanel> élément [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Chaque <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement pour un <xref:System.Windows.Controls.Button> correspond à un gestionnaire d’événements dans le code. Les gestionnaires d’événements utilisent le même nom que le <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> valeur s’appliquera à `txt2` lorsque le bouton est activé. En outre, le texte de `txt1` (un <xref:System.Windows.Controls.TextBlock> ne pas indiqué dans le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]) est mis à jour pour refléter les modifications de la propriété.  
   
- [!code-xml[TextWrapProperty#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextWrapProperty/VisualBasic/Pane1.xaml#1)]  
+ [!code-xaml[TextWrapProperty#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextWrapProperty/VisualBasic/Pane1.xaml#1)]  
   
  [!code-csharp[TextWrapProperty#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextWrapProperty/CSharp/Window1.xaml.cs#2)]
  [!code-vb[TextWrapProperty#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextWrapProperty/VisualBasic/Pane1.xaml.vb#2)]  
   
-## Voir aussi  
- <xref:System.Windows.Controls.TextBlock.TextWrapping%2A>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Controls.TextBlock.TextWrapping%2A>  
  <xref:System.Windows.TextWrapping>

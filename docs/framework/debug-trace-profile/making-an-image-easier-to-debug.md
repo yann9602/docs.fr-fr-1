@@ -5,30 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - images [.NET Framework], debugging
 - executable image for debugging
 - debugging [.NET Framework], executable images for
 ms.assetid: 7d90ea7a-150f-4f97-98a7-f9c26541b9a3
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e844cde5f33c1accb8addf953b5a72415f4dc301
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 46a9c11f3545e5d2b9f91572a87ee2614810e4d0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="making-an-image-easier-to-debug"></a>Simplification du débogage d'une image
 Lors de la compilation de code non managé, vous pouvez configurer une image exécutable pour le débogage en définissant des commutateurs ou des options de ligne de commande de l’IDE. Par exemple, vous pouvez utiliser l’option de ligne de commande /**Zi** dans Visual C++ pour lui demander de produire des fichiers de symboles de débogage (extension de fichier .pdb). De même, l’option de ligne de commande /**Od** indique au compilateur de désactiver l’optimisation. Le code résultant s’exécute plus lentement, mais il est plus facile à déboguer quand c’est nécessaire.  
@@ -59,7 +52,7 @@ AllowOptimize=0
 >  Dans le .NET Framework version 2.0, le compilateur JIT génère toujours des informations de suivi, quelle que soit la valeur de `GenerateTrackingInfo` ; la valeur de `AllowOptimize` a cependant toujours un effet. Quand vous utilisez le générateur d’images natives [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) pour précompiler l’image native sans optimisation, le fichier .ini doit être présent dans le dossier cible avec `AllowOptimize=0` quand Ngen.exe s’exécute. Si vous avez précompilé un assembly sans optimisation, vous devez supprimer le code précompilé à l’aide de l’option **/uninstall**de NGen.exe avant de réexécuter Ngen.exe pour précompiler le code avec optimisation. Si le fichier .ini n’est pas présent dans le dossier, Ngen.exe précompile par défaut le code avec optimisation.  
   
 > [!NOTE]
->  <xref:System.Diagnostics.DebuggableAttribute?displayProperty=fullName> contrôle les paramètres pour un assembly. **DebuggableAttribute** comprend deux champs qui enregistrent les paramètres spécifiant si le compilateur JIT doit optimiser et/ou générer des informations de suivi. Dans le .NET Framework version 2.0, le compilateur JIT génère toujours des informations de suivi.  
+>  <xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> contrôle les paramètres pour un assembly. **DebuggableAttribute** comprend deux champs qui enregistrent les paramètres spécifiant si le compilateur JIT doit optimiser et/ou générer des informations de suivi. Dans le .NET Framework version 2.0, le compilateur JIT génère toujours des informations de suivi.  
   
 > [!NOTE]
 >  Pour une version commerciale, les compilateurs ne définissent rien pour **DebuggableAttribute**. Le comportement par défaut du compilateur JIT est de générer du code machine avec les performances les plus élevées, mais le plus difficile à déboguer. L’activation du suivi dans JIT diminue légèrement les performances, tandis que la désactivation de l’optimisation les réduit considérablement.  
@@ -71,7 +64,6 @@ AllowOptimize=0
 >  Dans la version 1.0 du .NET Framework, le compilateur Microsoft Visual C++ ajoute **DebuggableAttribute** quand les options du compilateur **/clr** et **/Zi** sont spécifiées. Dans la version 1.1 du .NET Framework, vous devez ajouter **DebugabbleAttribute** manuellement dans votre code ou en utilisant l’option de l’éditeur de liens **/ASSEMBLYDEBUG**.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Débogage, traçage et profilage](../../../docs/framework/debug-trace-profile/index.md)   
- [Activation du débogage JIT-attach](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)   
+ [Débogage, traçage et profilage](../../../docs/framework/debug-trace-profile/index.md)  
+ [Activation du débogage juste-à-temps](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
  [Activation du profilage](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)
-

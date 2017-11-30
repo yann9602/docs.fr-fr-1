@@ -1,35 +1,30 @@
 ---
-title: "Comment : écrire un LINQ vers la méthode d’axe XML (Visual Basic) | Documents Microsoft"
+title: "Comment : écrire un LINQ vers la méthode d’axe XML (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: b676f025-a24c-4076-8713-aa809b2b8ce0
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6749c2eee72cdc24c5dc3957e00a8bab54ce226b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: d0c0c61514e6f51b060c3ccd431920c3a9adc418
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>Comment : écrire un LINQ vers la méthode d’axe XML (Visual Basic)
 Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML. Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs. Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise deux méthodes d’extension. La première méthode d’extension, `GetXPath`, opère sur <xref:System.Xml.Linq.XObject>et retourne une expression XPath qui, lors de l’évaluation renvoie le nœud ou l’attribut.</xref:System.Xml.Linq.XObject> La deuxième méthode d’extension, `Find`, opère sur <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement> Elle retourne une collection de <xref:System.Xml.Linq.XAttribute>objets et <xref:System.Xml.Linq.XElement>qui contiennent du texte spécifié.</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XAttribute>  
+ L’exemple suivant utilise deux méthodes d’extension. La première méthode d'extension, `GetXPath`, opère sur <xref:System.Xml.Linq.XObject> et retourne une expression XPath qui, après évaluation, retourne le nœud ou l'attribut. La deuxième méthode d'extension, `Find`, opère sur <xref:System.Xml.Linq.XElement>. Elle retourne une collection d'objets <xref:System.Xml.Linq.XAttribute> et <xref:System.Xml.Linq.XElement> qui contiennent du texte spécifié.  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -231,4 +226,3 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi  
  [Techniques de requêtes (LINQ to XML) avancées (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
-

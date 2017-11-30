@@ -1,36 +1,42 @@
 ---
-title: "Comment&#160;: rendre persistantes et restaurer les propri&#233;t&#233;s de port&#233;e application d&#39;une session d&#39;application &#224; l&#39;autre | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "propriétés de portée application, assurer la persistance"
-  - "propriétés de portée application, restaurer"
-  - "assurer la persistance des propriétés de portée application"
-  - "propriétés, assurer la persistance"
-  - "propriétés, restaurer"
-  - "restaurer des propriétés de portée application"
+title: "Comment : rendre persistantes et restaurer les propriétés de portée application d'une session d'application à l'autre"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- application-scope properties [WPF], persisting
+- persisting application-scope properties [WPF]
+- properties [WPF], persisting
+- restoring application-scope properties [WPF]
+- properties [WPF], restoring
+- application-scope properties [WPF], restoring
 ms.assetid: 55d5904a-f444-4eb5-abd3-6bc74dd14226
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6a7a2d3f2ee1be613cf10efe913b21d4b04912c9
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: rendre persistantes et restaurer les propri&#233;t&#233;s de port&#233;e application d&#39;une session d&#39;application &#224; l&#39;autre
-Cet exemple indique comment rendre des propriétés de portée application persistantes lorsqu'une application s'arrête, et comment restaurer des propriétés de portée application lorsqu'une application est ensuite relancée.  
+# <a name="how-to-persist-and-restore-application-scope-properties-across-application-sessions"></a>Comment : rendre persistantes et restaurer les propriétés de portée application d'une session d'application à l'autre
+Cet exemple montre comment rendre persistantes les propriétés de l’étendue de l’application lorsqu’une application s’arrête et comment restaurer des propriétés de portée application lorsqu’une application est ensuite lancement.  
   
-## Exemple  
- L'application rend des propriétés de portée application persistantes au, et les restaure du stockage isolé.  Le stockage isolé est une zone de stockage protégée qui peut être utilisée sans risque par les applications sans autorisation d'accès aux fichiers.  
+## <a name="example"></a>Exemple  
+ L’application rend persistantes les propriétés de portée application pour et les restaure du stockage isolé. Le stockage isolé est une zone de stockage protégée qui peut être utilisée sans risque par les applications sans autorisation d’accès de fichier.  
   
- [!code-xml[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesXAML1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml#persistrestoreappscopepropertiesxaml1)]  
-[!code-xml[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesXAML2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml#persistrestoreappscopepropertiesxaml2)]  
+ [!code-xaml[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesXAML1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml#persistrestoreappscopepropertiesxaml1)]  
+[!code-xaml[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesXAML2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml#persistrestoreappscopepropertiesxaml2)]  
   
  [!code-csharp[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml.cs#persistrestoreappscopepropertiescodebehind1)]
  [!code-vb[HOWTOApplicationModelSnippets#PersistRestoreAppScopePropertiesCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/visualbasic/application.xaml.vb#persistrestoreappscopepropertiescodebehind1)]  

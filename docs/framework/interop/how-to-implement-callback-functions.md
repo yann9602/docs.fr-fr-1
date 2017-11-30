@@ -1,34 +1,30 @@
 ---
-title: "Guide pratique pour implémenter des fonctions de rappel"
+title: "Comment : implémenter des fonctions de rappel"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- callback function, implementing
+- csharp
+- vb
+- cpp
+helpviewer_keywords: callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d4382c956bf3d56426be485897cdda75453b4910
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5be0dbb6666da88897ceedf0757e2af720705a07
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-implement-callback-functions"></a>Guide pratique pour implémenter des fonctions de rappel
+# <a name="how-to-implement-callback-functions"></a>Comment : implémenter des fonctions de rappel
 La procédure et l'exemple suivants montrent comment une application managée peut, à l'aide de l'appel de code non managé, imprimer la valeur de handle de chaque fenêtre sur l'ordinateur local. En particulier, ils utilisent la fonction **EnumWindows** pour parcourir la liste des fenêtres et une fonction de rappel managée (nommée CallBack) pour imprimer la valeur du handle des fenêtres.  
   
 ### <a name="to-implement-a-callback-function"></a>Pour implémenter une fonction de rappel  
@@ -141,6 +137,5 @@ int main()
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Fonctions de rappel](../../../docs/framework/interop/callback-functions.md)   
+ [Fonctions de rappel](../../../docs/framework/interop/callback-functions.md)  
  [Appel à une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md)
-

@@ -1,114 +1,115 @@
 ---
-title: "Comment&#160;: mettre en forme le contr&#244;le DataGrid Windows Forms &#224; l&#39;aide du concepteur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "couleurs, appliquer aux contrôles DataGrid"
-  - "colonnes (Windows Forms), contrôles DataGrid"
-  - "DataGrid (contrôle Windows Forms), styles par défaut"
-  - "DataGrid (contrôle Windows Forms), mettre en forme"
-  - "mettre en forme (Windows Forms)"
-  - "tables (Windows Forms), mettre en forme dans le contrôle DataGrid"
+title: "Comment : mettre en forme le contrôle DataGrid Windows Forms à l'aide du concepteur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- columns [Windows Forms], DataGrid controls
+- colors [Windows Forms], applying to DataGrid controls
+- DataGrid control [Windows Forms], formatting
+- DataGrid control [Windows Forms], default styles
+- tables [Windows Forms], formatting in DataGrid control
+- formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: da36f4f79d0016249dead686f305e1b93defceda
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: mettre en forme le contr&#244;le DataGrid Windows Forms &#224; l&#39;aide du concepteur
+# <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Comment : mettre en forme le contrôle DataGrid Windows Forms à l'aide du concepteur
 > [!NOTE]
->  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  Pour plus d'informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- L'application de différentes couleurs aux parties d'un contrôle <xref:System.Windows.Forms.DataGrid> peut faciliter la lecture et l'interprétation des informations.  La couleur peut être appliquée aux lignes et aux colonnes.  Les lignes et les colonnes peuvent également être masquées ou affichées, selon vos besoins.  
+ Appliquant différentes couleurs aux différentes parties d’un <xref:System.Windows.Forms.DataGrid> contrôle permettent de rendre les informations qu’elle contient plus facile à lire et interpréter. Couleur peut être appliquée en lignes et colonnes. Lignes et colonnes peuvent également être masquées ou affichées à votre convenance.  
   
- La mise en forme du contrôle <xref:System.Windows.Forms.DataGrid> présente trois aspects essentiels :  
+ Il existe trois aspects essentiels de la mise en forme la <xref:System.Windows.Forms.DataGrid> contrôle :  
   
--   Vous pouvez définir des propriétés pour établir un style par défaut dans lequel les données seront affichées.  
+-   Vous pouvez définir des propriétés pour établir un style par défaut dans lequel les données sont affichées.  
   
--   À partir de cette base, vous pouvez ensuite personnaliser la façon dont certaines tables sont affichées lors de l'exécution.  
+-   À partir de cette base, vous pouvez ensuite personnaliser la façon de que certaines tables sont affichées au moment de l’exécution.  
   
--   Enfin, vous pouvez modifier les colonnes qui sont affichées dans la grille de données, ainsi que les couleurs et autres éléments de mise en forme affichés.  
+-   Enfin, vous pouvez modifier les colonnes qui sont affichées dans la grille de données, ainsi que les couleurs et autres mises en forme qui est affiché.  
   
- La première étape de la mise en forme d'une grille de données consiste à définir les propriétés de <xref:System.Windows.Forms.DataGrid>.  Le choix de la couleur et de la mise en forme constitue une base à partir de laquelle vous pouvez apporter des modifications en fonction des tables et des colonnes de données affichées.  
+ En guise d’étape initiale dans une grille de données de mise en forme, vous pouvez définir les propriétés de la <xref:System.Windows.Forms.DataGrid> lui-même. Ces options de couleur et le format forment une base à partir de laquelle vous pouvez ensuite modifier selon les tables et les colonnes affichées.  
   
- La procédure suivante requiert un projet d'**application Windows** avec un formulaire qui contient un contrôle <xref:System.Windows.Forms.DataGrid>.  Pour plus d'informations sur la configuration d'un tel projet, consultez [How to: Create a Windows Application Project](http://msdn.microsoft.com/fr-fr/b2f93fed-c635-4705-8d0e-cf079a264efa) et [Comment : ajouter des contrôles à des Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  Dans [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], par défaut, le contrôle <xref:System.Windows.Forms.DataGrid> ne se trouve pas dans la **boîte à outils**.  Pour plus d'informations, consultez [How to: Add Items to the Toolbox](http://msdn.microsoft.com/fr-fr/458e119e-17fe-450b-b889-e31c128bd7e0).  
+ La procédure suivante requiert un **Application Windows** projet avec un formulaire contenant un <xref:System.Windows.Forms.DataGrid> contrôle. Pour plus d’informations sur la configuration d’un tel projet, consultez [Comment : créer un projet d’Application Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa) et [Comment : ajouter des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). Dans [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], le <xref:System.Windows.Forms.DataGrid> contrôle n’est pas dans le **boîte à outils** par défaut. Pour plus d’informations, consultez [Comment : ajouter des éléments à la boîte à outils](http://msdn.microsoft.com/en-us/458e119e-17fe-450b-b889-e31c128bd7e0).  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
-### Pour établir un style par défaut pour le contrôle DataGrid  
+### <a name="to-establish-a-default-style-for-the-datagrid-control"></a>Pour établir un style par défaut pour le contrôle DataGrid  
   
 1.  Sélectionnez le contrôle <xref:System.Windows.Forms.DataGrid>.  
   
-2.  Dans la fenêtre **Propriétés**, définissez les propriétés suivantes, si nécessaire.  
+2.  Dans le **propriétés** fenêtre, définissez les propriétés suivantes, selon le cas.  
   
     |Propriété|Description|  
-    |---------------|-----------------|  
-    |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|La propriété `BackColor` définit la couleur des lignes paires de la grille.  Lorsque vous affectez une couleur différente à la propriété <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>, cette couleur est affectée à une ligne sur deux \(lignes 1, 3, 5, etc.\).|  
-    |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|Couleur d'arrière\-plan des lignes paires de la grille \(lignes 0, 2, 4, 6, etc.\).|  
-    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|Tandis que les propriétés <xref:System.Windows.Forms.DataGrid.BackColor%2A> et <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> déterminent la couleur des lignes de la grille, la propriété <xref:System.Windows.Forms.DataGrid.BackgroundColor%2A> détermine la couleur de la zone en dehors de la zone de lignes, laquelle est visible uniquement lorsque vous faites défiler la grille vers le bas ou lorsque cette dernière contient seulement quelques lignes.|  
-    |<xref:System.Windows.Forms.DataGrid.BorderStyle%2A>|Style de bordure de la grille, parmi les valeurs <xref:System.Windows.Forms.BorderStyle> proposées.|  
-    |<xref:System.Windows.Forms.DataGrid.CaptionBackColor%2A>|Couleur d'arrière\-plan du titre de la fenêtre de la grille, qui s'affiche juste au\-dessus de la grille.|  
-    |<xref:System.Windows.Forms.DataGrid.CaptionFont%2A>|Police du titre situé au\-dessus de la grille.|  
-    |<xref:System.Windows.Forms.DataGrid.CaptionForeColor%2A>|Couleur d'arrière\-plan du titre de la fenêtre de la grille.|  
-    |<xref:System.Windows.Forms.Control.Font%2A>|Police utilisée pour afficher le texte de la grille.|  
-    |<xref:System.Windows.Forms.DataGrid.ForeColor%2A>|Couleur de la police utilisée par les données des lignes de la grille.|  
-    |<xref:System.Windows.Forms.DataGrid.GridLineColor%2A>|Couleur des lignes de la grille de données.|  
-    |<xref:System.Windows.Forms.DataGrid.GridLineStyle%2A>|Style des lignes séparant les cellules de la grille, parmi les valeurs <xref:System.Windows.Forms.DataGridLineStyle> proposées.|  
-    |<xref:System.Windows.Forms.DataGrid.HeaderBackColor%2A>|Couleur d'arrière\-plan des en\-têtes de ligne et de colonne.|  
-    |<xref:System.Windows.Forms.DataGrid.HeaderFont%2A>|Police utilisée pour les en\-têtes de colonne.|  
-    |<xref:System.Windows.Forms.DataGrid.HeaderForeColor%2A>|Couleur de premier plan des en\-têtes de colonne de la grille, comprenant le texte de l'en\-tête de colonne et les symboles \+ \(plus\) et \- \(moins\) qui permettent de développer et de réduire les lignes lorsque plusieurs tables connexes sont affichées.|  
-    |<xref:System.Windows.Forms.DataGrid.LinkColor%2A>|Couleur du texte de tous les liens de la grille de données, notamment les liens vers les tables enfant, le nom des relations, etc.|  
-    |<xref:System.Windows.Forms.DataGrid.ParentRowsBackColor%2A>|Dans une table enfant, il s'agit de la couleur d'arrière\-plan des lignes parentes.|  
-    |<xref:System.Windows.Forms.DataGrid.ParentRowsForeColor%2A>|Dans une table enfant, il s'agit de la couleur de premier plan des lignes parentes.|  
-    |<xref:System.Windows.Forms.DataGrid.ParentRowsLabelStyle%2A>|Détermine si les noms des tables et des colonnes s'affichent dans la ligne parente, par le biais de l'énumération <xref:System.Windows.Forms.DataGridParentRowsLabelStyle>.|  
-    |<xref:System.Windows.Forms.DataGrid.PreferredColumnWidth%2A>|Largeur par défaut \(en pixels\) des colonnes de la grille.  Définissez cette propriété avant de réinitialiser les propriétés <xref:System.Windows.Forms.DataGrid.DataSource%2A> et <xref:System.Windows.Forms.DataGrid.DataMember%2A> \(séparément ou via la méthode <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>\) ; sinon, la propriété n'aura pas d'effet.<br /><br /> La propriété ne peut pas avoir une valeur inférieure à 0.|  
-    |<xref:System.Windows.Forms.DataGrid.PreferredRowHeight%2A>|Hauteur \(en pixels\) des lignes de la grille.  Définissez cette propriété avant de réinitialiser les propriétés <xref:System.Windows.Forms.DataGrid.DataSource%2A> et <xref:System.Windows.Forms.DataGrid.DataMember%2A> \(séparément ou via la méthode <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>\) ; sinon, la propriété n'aura pas d'effet.<br /><br /> La propriété ne peut pas avoir une valeur inférieure à 0.|  
-    |<xref:System.Windows.Forms.DataGrid.RowHeaderWidth%2A>|Largeur des en\-têtes de ligne de la grille.|  
-    |<xref:System.Windows.Forms.DataGrid.SelectionBackColor%2A>|Lorsqu'une ligne ou une cellule est sélectionnée, il s'agit de la couleur d'arrière\-plan.|  
-    |<xref:System.Windows.Forms.DataGrid.SelectionForeColor%2A>|Lorsqu'une ligne ou une cellule est sélectionnée, il s'agit de la couleur de premier plan.|  
+    |--------------|-----------------|  
+    |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|Le `BackColor` propriété définit la couleur des lignes paires de la grille. Lorsque vous définissez le <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> sur une couleur différente, chaque ligne est définie sur cette nouvelle couleur (lignes 1, 3, 5 et ainsi de suite).|  
+    |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|La couleur d’arrière-plan des lignes paires de la grille (lignes 0, 2, 4, 6 et ainsi de suite).|  
+    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|Alors que le <xref:System.Windows.Forms.DataGrid.BackColor%2A> et <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> propriétés détermine la couleur des lignes dans la grille, le <xref:System.Windows.Forms.DataGrid.BackgroundColor%2A> propriété détermine la couleur de la zone en dehors de la zone de ligne, qui est visible uniquement lorsque vous faites défiler la grille vers le bas, ou si seules quelques lignes sont contenus dans la grille.|  
+    |<xref:System.Windows.Forms.DataGrid.BorderStyle%2A>|Style de bordure de la grille, parmi les <xref:System.Windows.Forms.BorderStyle> valeurs d’énumération.|  
+    |<xref:System.Windows.Forms.DataGrid.CaptionBackColor%2A>|La couleur d’arrière-plan de la légende de la fenêtre de la grille qui s’affiche juste au-dessus de la grille.|  
+    |<xref:System.Windows.Forms.DataGrid.CaptionFont%2A>|La police de la légende en haut de la grille.|  
+    |<xref:System.Windows.Forms.DataGrid.CaptionForeColor%2A>|La couleur d’arrière-plan de la légende de la fenêtre de la grille.|  
+    |<xref:System.Windows.Forms.Control.Font%2A>|La police utilisée pour afficher le texte dans la grille.|  
+    |<xref:System.Windows.Forms.DataGrid.ForeColor%2A>|La couleur de la police utilisée par les données dans les lignes de la grille de données.|  
+    |<xref:System.Windows.Forms.DataGrid.GridLineColor%2A>|La couleur du quadrillage de la grille de données.|  
+    |<xref:System.Windows.Forms.DataGrid.GridLineStyle%2A>|Le style des lignes séparant les cellules de la grille, parmi les <xref:System.Windows.Forms.DataGridLineStyle> valeurs d’énumération.|  
+    |<xref:System.Windows.Forms.DataGrid.HeaderBackColor%2A>|La couleur d’arrière-plan des en-têtes de ligne et colonne.|  
+    |<xref:System.Windows.Forms.DataGrid.HeaderFont%2A>|La police utilisée pour les en-têtes de colonne.|  
+    |<xref:System.Windows.Forms.DataGrid.HeaderForeColor%2A>|La couleur de premier plan des en-têtes de colonnes de la grille, y compris le texte d’en-tête de colonne et le signe plus (+) et le signe moins (-) glyphes développer et réduire les lignes lorsque plusieurs tables connexes sont affichés.|  
+    |<xref:System.Windows.Forms.DataGrid.LinkColor%2A>|La couleur du texte de tous les liens dans la grille de données, y compris des liens vers les tables enfants, le nom de la relation et ainsi de suite.|  
+    |<xref:System.Windows.Forms.DataGrid.ParentRowsBackColor%2A>|Dans une table enfant, il s’agit de la couleur d’arrière-plan des lignes parentes.|  
+    |<xref:System.Windows.Forms.DataGrid.ParentRowsForeColor%2A>|Dans une table enfant, il s’agit de la couleur de premier plan des lignes parentes.|  
+    |<xref:System.Windows.Forms.DataGrid.ParentRowsLabelStyle%2A>|Détermine si les noms de table et de colonne sont affichées dans la ligne parente, à l’aide de la <xref:System.Windows.Forms.DataGridParentRowsLabelStyle> énumération.|  
+    |<xref:System.Windows.Forms.DataGrid.PreferredColumnWidth%2A>|Largeur par défaut (en pixels) des colonnes de la grille. Définissez cette propriété avant de réinitialiser le <xref:System.Windows.Forms.DataGrid.DataSource%2A> et <xref:System.Windows.Forms.DataGrid.DataMember%2A> propriétés (soit séparément, ou via le <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> méthode), ou la propriété n’a aucun effet.<br /><br /> La propriété ne peut pas être définie sur une valeur inférieure à 0.|  
+    |<xref:System.Windows.Forms.DataGrid.PreferredRowHeight%2A>|La hauteur de ligne (en pixels) des lignes dans la grille. Définissez cette propriété avant de réinitialiser le <xref:System.Windows.Forms.DataGrid.DataSource%2A> et <xref:System.Windows.Forms.DataGrid.DataMember%2A> propriétés (soit séparément, ou via le <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> méthode), ou la propriété n’a aucun effet.<br /><br /> La propriété ne peut pas être définie sur une valeur inférieure à 0.|  
+    |<xref:System.Windows.Forms.DataGrid.RowHeaderWidth%2A>|La largeur des en-têtes de lignes de la grille.|  
+    |<xref:System.Windows.Forms.DataGrid.SelectionBackColor%2A>|Lorsqu’une ligne ou une cellule est sélectionnée, il s’agit de la couleur d’arrière-plan.|  
+    |<xref:System.Windows.Forms.DataGrid.SelectionForeColor%2A>|Lorsqu’une ligne ou une cellule est sélectionnée, il s’agit de la couleur de premier plan.|  
   
     > [!NOTE]
-    >  Lorsque vous personnalisez les couleurs des contrôles, une couleur mal choisie \(par exemple, rouge et vert\) peut rendre le contrôle inaccessible.  Utilisez les couleurs de la palette **Couleurs système** afin d'éviter ce problème.  
+    >  Lorsque vous personnalisez les couleurs des contrôles, il est possible rendre le contrôle inaccessible en raison de la couleur est mal choisie (par exemple, rouge et vert). Utiliser les couleurs disponibles sur le **couleurs système** palette pour éviter ce problème.  
   
-     La procédure suivante requiert un contrôle <xref:System.Windows.Forms.DataGrid> lié à une table de données.  Pour plus d'informations, consultez [Comment : lier le contrôle DataGrid Windows Forms à une source de données](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
+     La procédure suivante requiert un <xref:System.Windows.Forms.DataGrid> contrôle lié à une table de données. Pour plus d’informations, consultez [Comment : lier le contrôle DataGrid Windows Forms à une Source de données](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
   
-### Pour définir le style de table et de colonne d'une table de données au moment du design  
+### <a name="to-set-the-table-and-column-style-of-a-data-table-at-design-time"></a>Pour définir le style de table et de colonne d’une table de données au moment du design  
   
-1.  Sélectionnez le contrôle <xref:System.Windows.Forms.DataGrid> sur votre formulaire.  
+1.  Sélectionnez le <xref:System.Windows.Forms.DataGrid> contrôle de votre formulaire.  
   
-2.  Dans la fenêtre **Propriétés**, sélectionnez la propriété <xref:System.Windows.Forms.DataGrid.TableStyles%2A>, puis cliquez sur le **bouton de sélection** \(![Capture d'écran VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\).  
+2.  Dans le **propriétés** fenêtre, sélectionnez le <xref:System.Windows.Forms.DataGrid.TableStyles%2A> propriété et cliquez sur le **points de suspension** (![capture d’écran de VisualStudioEllipsesButton] (../../../../docs/framework/winforms/media/vbellipsesbutton.png " vbEllipsesButton")) bouton.  
   
-3.  Dans la boîte de dialogue **Éditeur de collections DataGridTableStyle**, cliquez sur **Ajouter** pour ajouter un style de table à la collection.  
+3.  Dans le **éditeur de collections DataGridTableStyle** boîte de dialogue, cliquez sur **ajouter** pour ajouter un style de table à la collection.  
   
-     Dans l'**éditeur de collections DataGridTableStyle**, vous pouvez ajouter et supprimer des styles de table, définir les propriétés d'affichage et de mise en forme, ainsi que définir le nom de mappage des styles de table.  
+     Avec la **éditeur de collections DataGridTableStyle**, vous pouvez ajouter et supprimer les styles de tableau, définir l’affichage des propriétés de disposition et de jeu le mappage de nom pour les styles de table.  
   
-4.  Affectez à la propriété <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> le nom du mappage de chaque style de table.  
+4.  Définir le <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> propriété le nom de mappage pour chaque style de table.  
   
-     Le nom de mappage est utilisé pour spécifier quel style de table doit être utilisé avec quelle table.  
+     Le nom de mappage est utilisé pour spécifier le style de table doit être utilisé avec la table.  
   
-5.  Dans l'**éditeur de collections DataGridTableStyle**, sélectionnez la propriété <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>, puis cliquez sur le bouton de sélection \(![Capture d'écran VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\).  
+5.  Dans le **éditeur de collections DataGridTableStyle**, sélectionnez le <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> propriété et cliquez sur le bouton de sélection (![capture d’écran de VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton ")).  
   
-6.  Dans la boîte de dialogue **Éditeur de collections DataGridTableStyle**, ajoutez des styles de colonne au style de table que vous avez créé.  
+6.  Dans le **éditeur de collections DataGridColumnStyle** boîte de dialogue zone, ajouter des styles de colonne pour le style de table que vous avez créé.  
   
-     Dans l'**éditeur de collections DataGridTableStyle**, vous pouvez ajouter et supprimer des styles de colonne, définir les propriétés d'affichage et de mise en forme, ainsi que définir le nom de mappage et les chaînes de mise en forme des colonnes de données.  
+     Avec la **éditeur de collections DataGridColumnStyle**, vous pouvez ajouter et supprimer des styles de colonne, définir les propriétés d’affichage et de disposition et définir le nom de mappage et les chaînes de mise en forme des colonnes de données.  
   
     > [!NOTE]
-    >  Pour plus d'informations sur la mise en forme des chaînes, consultez [Mise en forme des types](../../../../docs/standard/base-types/formatting-types.md).  
+    >  Pour plus d’informations sur la mise en forme des chaînes, consultez [mise en forme des Types](../../../../docs/standard/base-types/formatting-types.md).  
   
-## Voir aussi  
- <xref:System.Windows.Forms.GridTableStylesCollection>   
- <xref:System.Windows.Forms.GridColumnStylesCollection>   
- <xref:System.Windows.Forms.DataGrid>   
- [Comment : supprimer ou masquer des colonnes dans le contrôle DataGrid Windows Forms](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.GridTableStylesCollection>  
+ <xref:System.Windows.Forms.GridColumnStylesCollection>  
+ <xref:System.Windows.Forms.DataGrid>  
+ [Guide pratique pour supprimer ou masquer des colonnes dans le contrôle DataGrid Windows Forms](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)  
  [DataGrid, contrôle](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)

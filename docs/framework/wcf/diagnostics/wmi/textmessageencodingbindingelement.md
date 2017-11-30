@@ -1,25 +1,28 @@
 ---
-title: "TextMessageEncodingBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: TextMessageEncodingBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 885e2d7a-3436-4093-bc5f-0a404c62acdc
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6e1eccbaae35a16fe4fb133296698d347c190e94
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# TextMessageEncodingBindingElement
+# <a name="textmessageencodingbindingelement"></a>TextMessageEncodingBindingElement
 TextMessageEncodingBindingElement  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class TextMessageEncodingBindingElement : MessageEncodingBindingElement  
@@ -31,45 +34,45 @@ class TextMessageEncodingBindingElement : MessageEncodingBindingElement
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe TextMessageEncodingBindingElement ne définit pas de méthodes.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe TextMessageEncodingBindingElement a les propriétés suivantes :  
   
-### Encodage  
+### <a name="encoding"></a>Encodage  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison.  
   
-### MaxReadPoolSize  
+### <a name="maxreadpoolsize"></a>MaxReadPoolSize  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
  Entier qui définit combien de messages peuvent être lus de manière simultanée sans allouer de nouveaux lecteurs.  
   
-### MaxWritePoolSize  
+### <a name="maxwritepoolsize"></a>MaxWritePoolSize  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
  Entier qui définit combien de messages peuvent être envoyés simultanément sans allouer de nouveaux enregistreurs.  
   
-### ReaderQuotas  
+### <a name="readerquotas"></a>ReaderQuotas  
  Type de données : XmlDictionaryReaderQuotas  
   
  Type d'accès : lecture seule  
   
  Quotas des lecteurs.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>

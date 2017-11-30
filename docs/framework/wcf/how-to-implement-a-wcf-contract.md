@@ -1,32 +1,34 @@
 ---
-title: "Comment&#160;: impl&#233;menter un contrat de service Windows Communication Foundation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "contrats de service (WCF), implémenter"
+title: "Comment : implémenter un contrat de service Windows Communication Foundation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: service contracts [WCF], implementing
 ms.assetid: d5ab51ba-61ae-403e-b3c8-e2669e326806
-caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 38
+caps.latest.revision: "38"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6c8ef9d97d9ed76175c0ca4c4d5ba40ca401f8f6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: impl&#233;menter un contrat de service Windows Communication Foundation
-Il s'agit de la deuxième des six tâches requises pour créer un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] de base et un client pouvant appeler le service.  Pour disposer d'une vue d'ensemble des six tâches, consultez la rubrique [Didacticiel de mise en route](../../../docs/framework/wcf/getting-started-tutorial.md).  
+# <a name="how-to-implement-a-windows-communication-foundation-service-contract"></a>Comment : implémenter un contrat de service Windows Communication Foundation
+Il s'agit de la deuxième des six tâches requises pour créer un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] de base et un client pouvant appeler le service. Pour une vue d’ensemble des tâches, consultez la [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) rubrique.  
   
- L'étape suivante pour créer une application WCF consiste à implémenter l'interface de service.  Cela implique la création d'une classe appelée `CalculatorService` qui implémente l'interface `ICalculator` définie par l'utilisateur.  
+ L'étape suivante pour créer une application WCF consiste à implémenter l'interface de service. Cela implique la création d'une classe appelée `CalculatorService` qui implémente l'interface `ICalculator` définie par l'utilisateur.  
   
-### Pour implémenter un contrat de service WCF  
+### <a name="to-implement-a-wcf-service-contract"></a>Pour implémenter un contrat de service WCF  
   
 1.  Ouvrez le fichier Service1.cs ou Service1.vb et ajoutez le code suivant :  
   
@@ -77,10 +79,9 @@ Il s'agit de la deuxième des six tâches requises pour créer un service [!INCL
             }  
         }  
     }  
-  
     ```  
   
-    ```  
+    ```vb
     ‘Service1.vb  
     Imports System  
     Imports System.ServiceModel  
@@ -127,10 +128,10 @@ Il s'agit de la deuxième des six tâches requises pour créer un service [!INCL
   
      Chaque méthode implémente l'opération de calculatrice et écrit du texte dans la console pour faciliter le test.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Le code suivant affiche à la fois l'interface qui définit le contrat et l'implémentation de l'interface.  
   
-```  
+```csharp
 // IService1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -154,10 +155,9 @@ namespace GettingStartedLib
             double Divide(double n1, double n2);  
         }  
 }  
-  
 ```  
   
-```  
+```csharp
 // Service1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -204,10 +204,9 @@ namespace GettingStartedLib
         }  
     }  
 }  
-  
 ```  
   
-```  
+```vb
 ‘IService.vb  
 Imports System  
 Imports System.ServiceModel  
@@ -229,7 +228,7 @@ Namespace GettingStartedLib
 End Namespace  
 ```  
   
-```  
+```vb
 Imports System  
 Imports System.ServiceModel  
   
@@ -273,11 +272,11 @@ Namespace GettingStartedLib
 End Namespace  
 ```  
   
- Le contrat de service est créé et implémenté.  Générez la solution pour vous assurer qu'il n'y a pas d'erreurs de compilation, puis poursuivez avec [Comment : héberger et exécuter un service de base](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md) pour exécuter le service.  Pour obtenir des informations de dépannage, consultez [Dépannage du didacticiel de mise en route](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).  
+ Le contrat de service est créé et implémenté. Générez la solution pour vous assurer il n’y a aucune erreur de compilation, puis passez à [Comment : héberger et exécuter un Service de base](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md) pour exécuter le service. Pour des informations de dépannage, consultez [dépannage Getting Started Tutorial](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).  
   
-## Compilation du code  
- Si vous utilisez Visual Studio, dans le menu Générer, cliquez sur Générer la solution \(ou appuyez sur Ctrl\+Maj\+B\).  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Si vous utilisez Visual Studio, dans le menu Générer sur Générer la Solution (ou appuyez sur CTRL + MAJ + B).  
   
-## Voir aussi  
- [Getting Started](../../../docs/framework/wcf/samples/getting-started-sample.md)   
- [Self\-Host](../../../docs/framework/wcf/samples/self-host.md)
+## <a name="see-also"></a>Voir aussi  
+ [Prise en main](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [L’auto-hébergement](../../../docs/framework/wcf/samples/self-host.md)

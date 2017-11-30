@@ -1,54 +1,48 @@
 ---
-title: "Sch&#233;ma d&#39;annotations | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "documents, annotations"
-  - "Microsoft Annotations Framework"
-  - "XSD (XML Schema Definition)"
+title: "Schéma d'annotations"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XML schema definition (XSD)
+- Microsoft Annotations Framework [WPF]
+- documents [WPF], annotations
 ms.assetid: a893442b-e220-4603-bf6a-b01fefcb4b37
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4a68b8966e72339a6bf5929661cf89f7f8a0b07c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Sch&#233;ma d&#39;annotations
-Cette rubrique décrit la définition de schéma XML \(XSD\) utilisée par Microsoft Annotations Framework pour enregistrer et récupérer des données d'annotation de l'utilisateur.  
+# <a name="annotations-schema"></a>Schéma d'annotations
+Cette rubrique décrit la définition XSD (définition de schéma XML) utilisée par Microsoft Annotations Framework pour enregistrer et récupérer les données d’annotation de l’utilisateur.  
   
- [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] [sérialise](GTMT) des données d'annotation à partir d'une représentation interne dans un format XML.  Le format XML utilisé pour cette conversion est décrit par le schéma XSD d'[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)].  Le schéma définit le format XML indépendant de l'implémentation qui peut être utilisé pour échanger des données d'annotation entre applications.  
+ [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] sérialise les données d’annotation d’une représentation interne au format XML.  Le format XML utilisé pour cette conversion est décrit par le schéma XSD d’[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)].  Le schéma définit le format XML indépendant de l’implémentation que vous pouvez utiliser pour échanger des données d’annotation entre applications.  
   
- La définition du schéma XML d'[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] est constituée de deux sous\-schémas :  
+ La définition de schéma XML d’[!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] comprend deux sous-schémas :  
   
--   Le schéma principal XML des annotations \(schéma principal\)  
+-   le schéma principal XML des annotations (schéma principal) ;  
   
--   Le schéma de base XML des annotations \(schéma de base\)  
+-   le schéma de base XML des annotations (schéma de base).  
   
- Le schéma principal définit la structure XML primaire d'une <xref:System.Windows.Annotations.Annotation>.  La majorité des éléments XML définis dans le schéma principal correspondent à des types de l'espace de noms <xref:System.Windows.Annotations>.  Le schéma principal expose trois points d'extension qui permettent aux applications d'ajouter leurs propres données XML.  Ces points d'extension incluent les <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart> et le "contenu".  \(Les éléments de contenu sont fournis sous la forme d'une liste <xref:System.Xml.XmlElement>.\)  
+ Le schéma principal définit la structure XML primaire d’une <xref:System.Windows.Annotations.Annotation>.  La plupart des éléments XML définis dans le schéma principal correspondent aux types dans les <xref:System.Windows.Annotations> espace de noms.  Le schéma principal expose trois points d’extension qui permettent aux applications d’ajouter leurs propres données XML.  Ces points d’extension incluent le <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>et « Content ».  (Contenu d’éléments sont fournis sous la forme d’un <xref:System.Xml.XmlElement> liste.)  
   
- Le schéma de base décrit dans cette rubrique définit les extensions pour <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart> et les types de contenu inclus avec la version initiale de [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].  
-  
- Cette rubrique contient les sections suivantes :  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
--   [Schéma principal XML des annotations](#CoreSchema)  
-  
--   [Schéma de base XML des annotations](#BaseSchema)  
-  
--   [Exemple de XML créé par des annotations XmlStreamStore](#SampleXML)  
+ Le schéma de Base décrites dans cette rubrique définit les extensions pour le <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>et les types de contenu inclus avec l’initiale [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] release.  
   
 <a name="CoreSchema"></a>   
-## Schéma principal XML des annotations  
- Le schéma principal XML des annotations définit la structure XML utilisée pour stocker des objets <xref:System.Windows.Annotations.Annotation>.  
+## <a name="annotations-xml-core-schema"></a>Schéma principal XML des annotations  
+ Le schéma principal XML des Annotations définit la structure XML qui est utilisée pour stocker <xref:System.Windows.Annotations.Annotation> objets.  
   
-```  
+```xml  
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"  
             blockDefault="#all"  
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
@@ -197,10 +191,10 @@ Cette rubrique décrit la définition de schéma XML \(XSD\) utilisée par Micro
 ```  
   
 <a name="BaseSchema"></a>   
-## Schéma de base XML des annotations  
- Le schéma de base définit la structure XML pour les trois éléments abstraits définis dans le schéma principal – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart> et <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.  
+## <a name="annotations-xml-base-schema"></a>Schéma de base XML des annotations  
+ Le schéma de Base définit la structure XML pour les trois éléments abstraits définis dans le schéma principal – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, et <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.  
   
-```  
+```xml  
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"  
      blockDefault="#all"  
      xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
@@ -508,10 +502,10 @@ Cette rubrique décrit la définition de schéma XML \(XSD\) utilisée par Micro
 ```  
   
 <a name="SampleXML"></a>   
-## Exemple de XML créé par des annotations XmlStreamStore  
- Le XML qui suit affiche la sortie d'un Annotations <xref:System.Windows.Annotations.Storage.XmlStreamStore> et l'organisation d'un fichier d'exemple qui contient trois annotations \- une surbrillance, un texte remarque collante, et une remarque du bâton de l'encre.  
+## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a>Exemple de code XML créé par des annotations XmlStreamStore  
+ Le code XML suivant montre la sortie d’une annotation <xref:System.Windows.Annotations.Storage.XmlStreamStore> et l’organisation d’un exemple de fichier qui contient trois annotations - une surbrillance-pense-bête de texte et une remarque du bâton d’encre.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <anc:Annotations  
      xmlns:anc="http://schemas.microsoft.com/windows/annotations/2003/11/core"  
@@ -597,10 +591,10 @@ Cette rubrique décrit la définition de schéma XML \(XSD\) utilisée par Micro
 </anc:Annotations>  
 ```  
   
-## Voir aussi  
- <xref:System.Windows.Annotations>   
- <xref:System.Windows.Annotations.Storage>   
- <xref:System.Windows.Annotations.Annotation>   
- <xref:System.Windows.Annotations.Storage.AnnotationStore>   
- <xref:System.Windows.Annotations.Storage.XmlStreamStore>   
- [Vue d'ensemble des annotations](../../../../docs/framework/wpf/advanced/annotations-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Annotations>  
+ <xref:System.Windows.Annotations.Storage>  
+ <xref:System.Windows.Annotations.Annotation>  
+ <xref:System.Windows.Annotations.Storage.AnnotationStore>  
+ <xref:System.Windows.Annotations.Storage.XmlStreamStore>  
+ [Vue d’ensemble des annotations](../../../../docs/framework/wpf/advanced/annotations-overview.md)

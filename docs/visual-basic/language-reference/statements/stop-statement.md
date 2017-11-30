@@ -1,53 +1,51 @@
 ---
-title: "Stop Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Stop"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "breakpoints, Stop statements"
-  - "Stop statements, syntax"
-  - "Stop statements"
-  - "execution, suspending"
-  - "processing, interrupting"
-  - "processes, interrupting"
-  - "execution, stopping"
+title: Stop, instruction (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Stop
+helpviewer_keywords:
+- breakpoints, Stop statements
+- Stop statements [Visual Basic], syntax
+- Stop statements [Visual Basic]
+- execution [Visual Basic], suspending
+- processing, interrupting
+- processes, interrupting
+- execution [Visual Basic], stopping
 ms.assetid: c9a9fde0-d649-4662-9bef-bd0146ebc2a7
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d4b7f04214234837a86bf0c77c0d7b6934e2babd
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Stop Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Interrompt l'exécution.  
+# <a name="stop-statement-visual-basic"></a>Stop, instruction (Visual Basic)
+Suspend l’exécution.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 Stop  
 ```  
   
-## Notes  
- Vous pouvez placer des instructions `Stop` n'importe où dans les procédures afin d'en interrompre l'exécution.  Utiliser l'instruction `Stop` revient à placer un point d'arrêt dans le code.  
+## <a name="remarks"></a>Remarques  
+ Vous pouvez placer `Stop` instructions n’importe où dans les procédures pour suspendre l’exécution. À l’aide de la `Stop` instruction est similaire à la configuration d’un point d’arrêt dans le code.  
   
- L'instruction `Stop` interrompt l'exécution, mais contrairement à `End`, elle ne ferme pas les fichiers et n'efface pas les variables, sauf si elle est placée dans un fichier exécutable \(.exe\) compilé.  
+ Le `Stop` instruction interrompt l’exécution, mais contrairement à `End`, il ne pas fermer tous les fichiers ou effacer toutes les variables, sauf si elle est placée dans un fichier exécutable compilé (.exe).  
   
 > [!NOTE]
->  Si l'instruction `Stop` figure dans le code qui s'exécute en dehors de l'environnement de développement intégré \(IDE, Integrated Development Environment\), le débogueur est appelé.  C'est le cas quel que soit le mode de compilation du code \(mode débogage ou mode commercial\).  
+>  Si la `Stop` est rencontrée dans le code qui s’exécute en dehors de l’environnement de développement intégré (IDE), le débogueur est appelé. Cela est vrai quel que soit le si le code a été compilé en mode débogage ou de la vente au détail.  
   
-## Exemple  
- Cet exemple utilise l'instruction `Stop` pour suspendre l'exécution à chaque itération de la boucle `For...Next`.  
+## <a name="example"></a>Exemple  
+ Cet exemple utilise le `Stop` instruction pour suspendre l’exécution à chaque itération du `For...Next` boucle.  
   
  [!code-vb[VbVbalrStatements#56](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/stop-statement_1.vb)]  
   
-## Voir aussi  
- [End Statement](../../../visual-basic/language-reference/statements/end-statement.md)
+## <a name="see-also"></a>Voir aussi  
+ [End (instruction)](../../../visual-basic/language-reference/statements/end-statement.md)

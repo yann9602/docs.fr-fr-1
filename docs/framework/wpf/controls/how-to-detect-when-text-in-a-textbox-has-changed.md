@@ -1,52 +1,58 @@
 ---
-title: "Comment&#160;: d&#233;tecter la modification du texte figurant dans un TextBox | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "détecter une modification du texte"
-  - "modification du texte, détecter"
-  - "TextBox (contrôle), détecter une modification du texte"
+title: "Comment : détecter la modification du texte figurant dans un TextBox"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- TextBox control [WPF], detecting text change
+- text change [WPF], detecting
+- detecting text change [WPF]
 ms.assetid: 1c39ee14-e37f-49fb-a0d1-a9824ca13584
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 92fc8995ab75cc25bac3bb21b1646052822c3721
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;tecter la modification du texte figurant dans un TextBox
-Cet exemple illustre une façon d'utiliser l'événement <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> pour exécuter une méthode lorsque le texte d'un contrôle <xref:System.Windows.Controls.TextBox> change.  
+# <a name="how-to-detect-when-text-in-a-textbox-has-changed"></a>Comment : détecter la modification du texte figurant dans un TextBox
+Cet exemple montre une manière d’utiliser la <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> événement pour exécuter une méthode chaque fois que le texte dans un <xref:System.Windows.Controls.TextBox> contrôle a changé.  
   
- Dans la classe code\-behind du langage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui contient le contrôle <xref:System.Windows.Controls.TextBox> dont vous souhaitez suivre les modifications, insérez une méthode à appeler à chaque fois que l'événement <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> se déclenche.  Cette méthode doit comporter une signature correspondant à celle attendue par le délégué <xref:System.Windows.Controls.TextChangedEventHandler>.  
+ Dans la classe code-behind pour la [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui contient le <xref:System.Windows.Controls.TextBox> contrôle que vous souhaitez analyser pour les modifications, insérez une méthode à appeler lorsque le <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> se déclenche des événements.  Cette méthode doit avoir une signature qui correspond à celle attendue par le <xref:System.Windows.Controls.TextChangedEventHandler> déléguer.  
   
- Le gestionnaire d'événements est appelé lorsque le contenu du contrôle <xref:System.Windows.Controls.TextBox> est modifié \(par un utilisateur ou par programme\).  
+ Le Gestionnaire d’événements est appelé chaque fois que le contenu de la <xref:System.Windows.Controls.TextBox> contrôle sont modifiés par un utilisateur ou par programme.  
   
- **Remarque :** cet événement se déclenche lorsque le contrôle <xref:System.Windows.Controls.TextBox> est créé et rempli initialement de texte.  
+ **Remarque :** cet événement déclenche lorsque la <xref:System.Windows.Controls.TextBox> contrôle est créée et remplie initialement avec le texte.  
   
-## Exemple  
- Dans le langage [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] qui définit votre contrôle <xref:System.Windows.Controls.TextBox>, spécifiez l'attribut <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> avec une valeur qui correspond au nom de la méthode du gestionnaire d'événements.  
+## <a name="example"></a>Exemple  
+ Dans le [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] qui définit votre <xref:System.Windows.Controls.TextBox> contrôler, spécifiez la <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> attribut avec une valeur qui correspond au nom méthode du Gestionnaire d’événements.  
   
- [!code-xml[TextBox_MiscCode#_TextChangedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
+ [!code-xaml[TextBox_MiscCode#_TextChangedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
   
-## Exemple  
- Dans la classe code\-behind du langage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui contient le contrôle <xref:System.Windows.Controls.TextBox> dont vous souhaitez suivre les modifications, insérez une méthode à appeler à chaque fois que l'événement <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> se déclenche.  Cette méthode doit comporter une signature correspondant à celle attendue par le délégué <xref:System.Windows.Controls.TextChangedEventHandler>.  
+## <a name="example"></a>Exemple  
+ Dans la classe code-behind pour la [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui contient le <xref:System.Windows.Controls.TextBox> contrôle que vous souhaitez analyser pour les modifications, insérez une méthode à appeler lorsque le <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> se déclenche des événements.  Cette méthode doit avoir une signature qui correspond à celle attendue par le <xref:System.Windows.Controls.TextChangedEventHandler> déléguer.  
   
  [!code-csharp[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_textchangedeventhandler)]
  [!code-vb[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textchangedeventhandler)]  
   
- Le gestionnaire d'événements est appelé lorsque le contenu du contrôle <xref:System.Windows.Controls.TextBox> est modifié \(par un utilisateur ou par programme\).  
+ Le Gestionnaire d’événements est appelé chaque fois que le contenu de la <xref:System.Windows.Controls.TextBox> contrôle sont modifiés par un utilisateur ou par programme.  
   
- **Remarque :** cet événement se déclenche lorsque le contrôle <xref:System.Windows.Controls.TextBox> est créé et rempli initialement de texte.  
+ **Remarque :** cet événement déclenche lorsque la <xref:System.Windows.Controls.TextBox> contrôle est créée et remplie initialement avec le texte.  
   
  Commentaires  
   
-## Voir aussi  
- <xref:System.Windows.Controls.TextChangedEventArgs>   
- [Vue d'ensemble de TextBox](../../../../docs/framework/wpf/controls/textbox-overview.md)   
- [Vue d'ensemble de RichTextBox](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Controls.TextChangedEventArgs>  
+ [Vue d’ensemble de TextBox](../../../../docs/framework/wpf/controls/textbox-overview.md)  
+ [Vue d’ensemble de RichTextBox](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

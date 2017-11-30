@@ -1,85 +1,87 @@
 ---
-title: "&lt;module&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#module"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/module"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<module> (élément)"
-  - "module (élément)"
+title: "&lt;module&gt; élément (paramètres réseau)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#module
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/module
+helpviewer_keywords:
+- module element
+- <module> element
 ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
-caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: a039f6ed985997c5557659abd299fe0fc7699a1b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;module&gt;, &#233;l&#233;ment (param&#232;tres r&#233;seau)
+# <a name="ltmodulegt-element-network-settings"></a>&lt;module&gt; élément (paramètres réseau)
 Ajoute un nouveau module proxy à l'application.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.NET >  
+\<defaultProxy >  
+\<module >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
-      <module   
-   type = "name", System, Version="version number", Culture="culture", PublicKeyToken="token" "   
+```xml  
+<module   
+  type="type_fullname, assembly_fullname"   
 />  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |**Attribut**|**Description**|  
-|------------------|---------------------|  
-|`type`|Nom et spécifications du module qui implémente le proxy.|  
+|-------------------|---------------------|  
+|`type`|Le nom de type qualifié complet (indiqué par le <xref:System.Type.FullName%2A> propriété) et le nom de l’assembly (indiqué par le <xref:System.Reflection.Assembly.FullName%2A> propriété), séparés par des virgules, qui implémente le proxy.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP \(Hypertext Transfer Protocol\).|  
+|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
-## Notes  
- L'élément `module` inscrit les classes proxy qui implémentent l'interface <xref:System.Net.IWebProxy>.  Une fois la classe proxy inscrite, `module` peut être utilisé pour demander des informations via le proxy pris en charge.  
+## <a name="remarks"></a>Remarques  
+ Le `module` élément inscrit les classes proxy qui implémentent la <xref:System.Net.IWebProxy> interface. Après l’inscription de la classe proxy, `module` peut être utilisé pour demander des informations via le proxy pris en charge.  
   
- La valeur de l'attribut `type` doit correspondre au nom d'une bibliothèque de liens dynamiques \(DLL\) valide et au nom de classe du module.  
+ La valeur de la `type` attribut doit être le nom de classe du module et le nom de la bibliothèque de liens dynamiques (DLL) correspondant.  
   
-## Fichiers de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l'application ou dans le fichier de configuration machine \(Machine.config\).  
+## <a name="configuration-files"></a>Fichiers de configuration  
+ Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## Exemple  
- L'exemple de code suivant inscrit une classe proxy personnalisée.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant inscrit une classe proxy personnalisé.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <defaultProxy>  
       <module  
-        type = "Test.CustomWebProxy, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"  
+        type="Test.CustomWebProxy, TestProxy, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b23a5c561934e385"  
       />  
     </defaultProxy>  
   </system.net>  
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Net.IWebProxy?displayProperty=fullName>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Net.IWebProxy?displayProperty=nameWithType>  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

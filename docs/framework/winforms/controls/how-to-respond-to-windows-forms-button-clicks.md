@@ -1,42 +1,47 @@
 ---
-title: "Comment&#160;: r&#233;pondre &#224; un clic du contr&#244;le Button Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "bouton (contrôle Windows Forms), réponse à un clic"
-  - "boutons, répondre aux événements Click"
-  - "événements Click, contrôle bouton"
-  - "événements Click, répondre à"
-  - "double-clics"
-  - "événements (Windows Forms), événements Click"
-  - "exemples (Windows Forms), contrôles"
-  - "MouseDown (événement)"
+title: "Comment : répondre à un clic du contrôle Button Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- buttons [Windows Forms], responding to Click events
+- events [Windows Forms], Click events
+- Click event [Windows Forms], Button control
+- MouseDown event
+- Button control [Windows Forms], click response
+- double-clicks
+- examples [Windows Forms], controls
+- Click event [Windows Forms], responding to
 ms.assetid: 7a4951bd-369c-4662-b246-28ad83eda484
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 923eb7d1b1b5b442ce897619253a958019b239a7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: r&#233;pondre &#224; un clic du contr&#244;le Button Windows Forms
-Le contrôle <xref:System.Windows.Forms.Button> Windows Forms est principalement employé pour exécuter du code lorsque l'utilisateur clique dessus.  
+# <a name="how-to-respond-to-windows-forms-button-clicks"></a>Comment : répondre à un clic du contrôle Button Windows Forms
+L’utilisation de base des Windows Forms <xref:System.Windows.Forms.Button> contrôle consiste à exécuter du code lorsque le bouton est activé.  
   
- Le fait de cliquer sur un contrôle <xref:System.Windows.Forms.Button> génère également un certain nombre d'événements, tels que <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown> et <xref:System.Windows.Forms.Control.MouseUp>.  Si vous avez l'intention d'attacher des gestionnaires d'événements à ces événements connexes, veillez à ce que leurs actions respectives ne soient pas conflictuelles.  Par exemple, si le fait de cliquer sur le bouton efface les informations que l'utilisateur a entrées dans une zone de texte, le passage du pointeur ne doit plus entraîner l'affichage d'une info\-bulle contenant les informations qui ont été effacées.  
+ En cliquant sur un <xref:System.Windows.Forms.Button> contrôle génère également un nombre d’événements, tels que les <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown>, et <xref:System.Windows.Forms.Control.MouseUp> événements. Si vous souhaitez attacher des gestionnaires d’événements pour ces événements connexes, veillez à ce que leurs actions ne sont pas en conflit. Par exemple, si vous cliquez sur le bouton efface les informations que l’utilisateur a tapé dans une zone de texte, suspendant le pointeur de la souris sur le bouton ne doit pas afficher une info-bulle contenant ces informations inexistante pour l’instant.  
   
- Si l'utilisateur tente de double\-cliquer sur le contrôle <xref:System.Windows.Forms.Button>, chaque clic sera traité séparément, et cela parce que le contrôle ne prend pas en charge l'événement double\-clic.  
+ Si l’utilisateur tente de double-cliquer sur le <xref:System.Windows.Forms.Button> (contrôle), chaque clic sera traité séparément ; autrement dit, le contrôle ne prend pas en charge l’événement de double-clic.  
   
-### Pour répondre au clic d'un bouton  
+### <a name="to-respond-to-a-button-click"></a>Pour répondre à un clic de bouton  
   
--   Dans le `Click`  du bouton <xref:System.EventHandler>, écrivez le code à exécuter.  `Button1_Click`  doit être lié au contrôle.  Pour plus d'informations, consultez [Comment : créer des gestionnaires d'événements pour les Windows Forms au moment de l'exécution](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
+-   Dans du bouton `Click` <xref:System.EventHandler> écrire le code à exécuter. `Button1_Click`doit être lié au contrôle. Pour plus d’informations, consultez [Comment : créer des gestionnaires d’événements à exécuter pour les Windows Forms](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -51,7 +56,7 @@ Le contrôle <xref:System.Windows.Forms.Button> Windows Forms est principalement
     }  
     ```  
   
-    ```cpp#  
+    ```cpp  
     private:  
        void button1_Click(System::Object ^ sender,  
           System::EventArgs ^ e)  
@@ -60,7 +65,7 @@ Le contrôle <xref:System.Windows.Forms.Button> Windows Forms est principalement
        }  
     ```  
   
-## Voir aussi  
- [Vue d'ensemble du contrôle Button](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)   
- [Méthodes de sélection du contrôle Button Windows Forms](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Vue d'ensemble du contrôle Button](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
+ [Méthodes de sélection du contrôle Button Windows Forms](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
  [Button, contrôle](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)

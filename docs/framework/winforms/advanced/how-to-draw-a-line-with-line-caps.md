@@ -1,47 +1,51 @@
 ---
-title: "Comment&#160;: dessiner une ligne avec des embouts de ligne | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "tracer des lignes, embouts de ligne"
-  - "dessiner, lignes"
-  - "lignes, dessiner"
-  - "stylets, tracer des lignes"
+title: "Comment : dessiner une ligne avec des embouts de ligne"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- drawing [Windows Forms], lines
+- lines [Windows Forms], drawing
+- pens [Windows Forms], drawing lines
+- drawing lines [Windows Forms], line caps
 ms.assetid: eb68c3e1-c400-4886-8a04-76978a429cb6
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1e2d5a5aba4a7634e0ea8480aa9744a5a7b9721d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: dessiner une ligne avec des embouts de ligne
-Vous pouvez dessiner le début ou la fin d'une ligne avec l'une des différentes formes appelées extrémités de ligne.  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] prend en charge plusieurs extrémités de ligne, telles que rond, carré, losange et pointe de flèche.  
+# <a name="how-to-draw-a-line-with-line-caps"></a>Comment : dessiner une ligne avec des embouts de ligne
+Vous pouvez dessiner le début ou la fin d’une ligne dans une des différentes formes appelées des embouts de ligne. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]prend en charge plusieurs embouts de ligne, telles que rond, carré, losange et pointe de flèche.  
   
-## Exemple  
- Vous pouvez spécifier des embouts de ligne pour le début d'une ligne \(embout de début\), la fin d'une ligne \(embout de fin\), ou les pointillés d'une ligne discontinue \(embout pointillé\).  
+## <a name="example"></a>Exemple  
+ Vous pouvez spécifier des embouts de ligne pour le début d’une ligne (embout de début), à la fin d’une ligne (extrémité de fin) ou les tirets d’une ligne en pointillés (embout pointillé).  
   
- L'exemple suivant dessine une ligne avec une pointe de flèche à une extrémité et un embout rond à l'autre extrémité.  L'illustration montre la ligne résultante :  
+ L’exemple suivant dessine une ligne avec une pointe de flèche à une extrémité et une extrémité arrondie à l’autre extrémité. L’illustration montre la ligne résultante :  
   
- ![Stylets](../../../../docs/framework/winforms/advanced/media/pens4.png "pens4")  
+ ![Stylets](../../../../docs/framework/winforms/advanced/media/pens4.gif "pens4")  
   
  [!code-csharp[System.Drawing.UsingAPen#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#71)]
  [!code-vb[System.Drawing.UsingAPen#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#71)]  
   
-## Compilation du code  
+## <a name="compiling-the-code"></a>Compilation du code  
   
--   Créez un Windows Form et gérez l'événement <xref:System.Windows.Forms.Control.Paint> du formulaire.  Collez l'exemple de code dans le gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint> en passant `e` en tant que <xref:System.Windows.Forms.PaintEventArgs>.  
+-   Créer un Windows Form et gérer du formulaire <xref:System.Windows.Forms.Control.Paint> événement. Collez l’exemple de code dans le <xref:System.Windows.Forms.Control.Paint> Gestionnaire d’événements en passant `e` comme <xref:System.Windows.Forms.PaintEventArgs>.  
   
-## Voir aussi  
- <xref:System.Drawing.Pen?displayProperty=fullName>   
- <xref:System.Drawing.Drawing2D.LineCap?displayProperty=fullName>   
- [Graphiques et dessins dans les Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Drawing.Pen?displayProperty=nameWithType>  
+ <xref:System.Drawing.Drawing2D.LineCap?displayProperty=nameWithType>  
+ [Graphiques et dessins dans Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [Utilisation d'un stylet pour dessiner des lignes et des formes](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)

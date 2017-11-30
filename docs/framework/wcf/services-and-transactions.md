@@ -1,29 +1,31 @@
 ---
-title: "Services et transactions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrats de service (WCF), conception de services et de transactions"
+title: Services et transactions
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7a206ff3d82378e825cd612a6564366ef1e07977
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Services et transactions
-Les applications [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] peuvent initier une transaction à partir d'un client et coordonner la transaction dans l'opération de service.Les clients peuvent initier une transaction et appeler plusieurs opérations de service et s'assurer que les opérations de service sont validées ou annulées en tant qu'unité unique.  
+# <a name="services-and-transactions"></a>Services et transactions
+Les applications [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] peuvent initier une transaction à partir d'un client et coordonner la transaction dans l'opération de service. Les clients peuvent initier une transaction et appeler plusieurs opérations de service et s'assurer que les opérations de service sont validées ou annulées en tant qu'unité unique.  
   
- Vous pouvez activer le comportement de transaction dans le contrat de service en spécifiant un <xref:System.ServiceModel.ServiceBehaviorAttribute> et en définissant ses propriétés <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> et <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pour les opérations de service qui requièrent des transactions clientes.Le paramètre <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> détermine si la transaction dans laquelle la méthode s'exécute est automatiquement effectuée si aucune exception non prise en charge n'est levée.[!INCLUDE[crabout](../../../includes/crabout-md.md)] ces attributs, consultez [Attributs de transaction ServiceModel](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
+ Vous pouvez activer le comportement de transaction dans le contrat de service en spécifiant un <xref:System.ServiceModel.ServiceBehaviorAttribute> et en définissant ses propriétés <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> et <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pour les opérations de service qui requièrent des transactions clientes. Le paramètre <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> spécifie si la transaction dans laquelle la méthode s'exécute est automatiquement effectuée si aucune exception non prise en charge n'est levée. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Ces attributs, consultez [attributs de Transaction ServiceModel](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
   
- Le travail effectué dans les opérations de service et géré par un gestionnaire de ressources, tel que l'enregistrement des mises à jour de base de données, fait partie de la transaction du client.  
+ Le travail effectué dans les opérations de service et géré par un gestionnaire de ressources, tel que l’enregistrement des mises à jour de base de données, fait partie de la transaction du client.  
   
  L'exemple suivant illustre l'utilisation des attributs <xref:System.ServiceModel.ServiceBehaviorAttribute> et <xref:System.ServiceModel.OperationBehaviorAttribute> pour contrôler le comportement de transaction du côté service.  
   
@@ -66,9 +68,9 @@ public class CalculatorService: ICalculatorLog
 }  
 ```  
   
- Vous pouvez activer les transactions et le flux de transactions en configurant des liaisons de client et de service pour utiliser le protocole WS\-AtomicTransaction, et affecter à l'élément [\<transactionFlow\>](../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) la valeur `true`, comme illustré dans l'exemple de configuration suivant.  
+ Vous pouvez activer les transactions et les transactions passent en configurant le client et que les liaisons pour utiliser le protocole WS-AtomicTransaction et paramètre de service le [ \<transactionFlow >](../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) élément `true`, comme indiqué dans l’exemple de configuration.  
   
-```  
+```xml  
 <client>  
     <endpoint address="net.tcp://localhost/ServiceModelSamples/service"   
           binding="netTcpBinding"   
@@ -95,7 +97,7 @@ using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Require
 }  
 ```  
   
-## Voir aussi  
- [Prise en charge transactionnelle dans System.ServiceModel](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)   
- [Modèles de transaction](../../../docs/framework/wcf/feature-details/transaction-models.md)   
- [WS Transaction Flow](../../../docs/framework/wcf/samples/ws-transaction-flow.md)
+## <a name="see-also"></a>Voir aussi  
+ [Prise en charge transactionnelle dans System.ServiceModel](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)  
+ [Modèles de transaction](../../../docs/framework/wcf/feature-details/transaction-models.md)  
+ [Flux de Transaction WS](../../../docs/framework/wcf/samples/ws-transaction-flow.md)

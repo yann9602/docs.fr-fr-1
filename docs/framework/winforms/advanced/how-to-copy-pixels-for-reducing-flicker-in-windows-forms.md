@@ -1,42 +1,46 @@
 ---
-title: "Comment&#160;: copier des pixels pour r&#233;duire le scintillement dans les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "transfert de blocs de bits"
-  - "bitblt"
-  - "scintillement"
-  - "scintillement, réduire dans les Windows Forms"
-  - "graphiques, copier"
-  - "graphiques, réduire le scintillement"
-  - "pixels, copier"
+title: "Comment : copier des pixels pour réduire le scintillement dans les Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- bitblt
+- graphics [Windows Forms], copying
+- flicker [Windows Forms], reducing in Windows Forms
+- graphics [Windows Forms], reducing flicker
+- pixels [Windows Forms], copying
+- flicker
+- bit-block transfer
 ms.assetid: 33b76910-13a3-4521-be98-5c097341ae3b
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8ed463b41d3c2a51b0f9be3d4ddabfd2d54a3c07
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: copier des pixels pour r&#233;duire le scintillement dans les Windows Forms
-Lorsque vous animez un graphique simple, les utilisateurs peuvent parfois être exposés à un scintillement ou à d'autres effets visuels indésirables.  Une façon de limiter ce problème consiste à utiliser un processus « bitblt » sur le graphique.  Bitblt représente le « transfert par bloc de bits » des données couleur d'un rectangle de pixels d'origine vers un rectangle de pixels de destination.  
+# <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>Comment : copier des pixels pour réduire le scintillement dans les Windows Forms
+Lorsque vous animez un graphique simple, les utilisateurs peuvent parfois être scintillement ou autres effets visuels indésirables. Un pour limiter ce problème consiste à utiliser un processus « bitblt » sur le graphique. BitBlt représente le « bloc de bits transfert » des données de couleur à partir d’un rectangle d’origine de pixels à un rectangle de destination de pixels.  
   
- Avec les Windows Forms, le processus bitblt s'effectue à l'aide de la méthode <xref:System.Drawing.Graphics.CopyFromScreen%2A> de la classe <xref:System.Drawing.Graphics>.  Dans les paramètres de la méthode, vous spécifiez la source et de destination \(en tant que points\), la taille de la zone à copier et l'objet Graphics utilisé pour dessiner la nouvelle forme.  
+ Avec Windows Forms, le processus bitblt s’effectue à l’aide de la <xref:System.Drawing.Graphics.CopyFromScreen%2A> méthode de la <xref:System.Drawing.Graphics> classe. Dans les paramètres de la méthode, vous spécifiez la source et destination (en tant que points), la taille de la zone à copier et l’objet graphics utilisé pour dessiner la nouvelle forme.  
   
- Dans l'exemple ci\-dessous, une forme est dessinée sur le formulaire dans son gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint>.  Ensuite, la méthode <xref:System.Drawing.Graphics.CopyFromScreen%2A> est utilisée pour dupliquer la forme.  
+ Dans l’exemple ci-dessous, une forme est dessinée sur le formulaire dans son <xref:System.Windows.Forms.Control.Paint> Gestionnaire d’événements. Ensuite, la <xref:System.Drawing.Graphics.CopyFromScreen%2A> méthode est utilisée pour dupliquer la forme.  
   
 > [!NOTE]
->  L'affectation à la propriété <xref:System.Windows.Forms.Control.DoubleBuffered%2A> du formulaire de la valeur `true` permettra de mettre deux fois en mémoire tampon le code de graphiques figurant dans l'événement <xref:System.Windows.Forms.Control.Paint>.  Cela ne permettra pas d'améliorer les performances de façon significative lors de l'utilisation du code ci\-dessous, mais vous pourrez en tenir compte lorsque vous utiliserez du code plus complexe pour la manipulation graphique.  
+>  Définition du formulaire <xref:System.Windows.Forms.Control.DoubleBuffered%2A> propriété `true` permettront à code de graphiques dans le <xref:System.Windows.Forms.Control.Paint> événement est de double tampon. Alors que cela ne disposent pas des gains de performance notable lorsque vous utilisez le code ci-dessous, le problème est à prendre en compte lorsque vous travaillez avec le code de manipulation de graphiques plus complexe.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```vb  
 Private Sub Form1_Paint(ByVal sender As Object, ByVal e As _  
@@ -50,7 +54,6 @@ Private Sub Form1_Paint(ByVal sender As Object, ByVal e As _
         e.Graphics.CopyFromScreen(New Point(10, 10), New Point _  
              (100, 100), New Size(70, 70))  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -66,12 +69,12 @@ private void Form1_Paint(System.Object sender,
 }  
 ```  
   
-## Compilation du code  
- Le code ci\-dessus est exécuté dans le gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint> du formulaire afin que les graphiques persistent si le formulaire est redessiné.  Par conséquent, vous ne devez pas appeler de méthodes graphiques dans le gestionnaire d'événements <xref:System.Windows.Forms.Form.Load>, car les dessins ne seront pas redessinés si le formulaire est redimensionné ou masqué par un autre formulaire.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Le code ci-dessus est exécuté sous la forme <xref:System.Windows.Forms.Control.Paint> Gestionnaire d’événements afin que les graphiques persistent si le formulaire est redessiné. Par conséquent, n’appelez pas de méthodes graphiques dans le <xref:System.Windows.Forms.Form.Load> Gestionnaire d’événements, car le contenu dessiné ne sera pas redessiné si le formulaire est redimensionné ou masqué par une autre forme.  
   
-## Voir aussi  
- <xref:System.Drawing.CopyPixelOperation>   
- <xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.Control.OnPaint%2A?displayProperty=fullName>   
- [Graphiques et dessins dans les Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Drawing.CopyPixelOperation>  
+ <xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.Control.OnPaint%2A?displayProperty=nameWithType>  
+ [Graphiques et dessins dans Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [Utilisation d'un stylet pour dessiner des lignes et des formes](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)

@@ -1,45 +1,49 @@
 ---
-title: "Comment&#160;: cr&#233;er des travaux d&#39;impression Windows Forms standard | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "imprimer (Visual Basic), dans les applications Windows"
-  - "imprimer (Windows Forms)"
-  - "imprimer (Windows Forms), créer des travaux d'impression"
+title: "Comment : créer des travaux d'impression Windows Forms standard"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- printing [Windows Forms]
+- printing [Windows Forms], creating print jobs
+- printing [Visual Basic], in Windows applications
 ms.assetid: 03342b90-9cfe-40b2-838b-b479a13c5dea
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c2b0ce30f76fe7f8cbdc156c4a8ff5abffafae10
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er des travaux d&#39;impression Windows Forms standard
-L'élément clé de l'impression dans les Windows Forms est le composant <xref:System.Drawing.Printing.PrintDocument>, et plus spécialement l'événement <xref:System.Drawing.Printing.PrintDocument.PrintPage>.  En écrivant du code pour gérer l'événement <xref:System.Drawing.Printing.PrintDocument.PrintPage>, vous pouvez spécifier les éléments à imprimer et les modalités d'impression.  
+# <a name="how-to-create-standard-windows-forms-print-jobs"></a>Comment : créer des travaux d'impression Windows Forms standard
+La base de l’impression dans les Windows Forms est la <xref:System.Drawing.Printing.PrintDocument> composant, plus spécifiquement, le <xref:System.Drawing.Printing.PrintDocument.PrintPage> événement. En écrivant du code pour gérer les <xref:System.Drawing.Printing.PrintDocument.PrintPage> événement, vous pouvez spécifier les éléments à imprimer et l’imprimer.  
   
-### Pour créer un travail d'impression  
+### <a name="to-create-a-print-job"></a>Pour créer un travail d’impression  
   
-1.  Ajoutez le composant <xref:System.Drawing.Printing.PrintDocument> au formulaire.  
+1.  Ajouter un <xref:System.Drawing.Printing.PrintDocument> à votre formulaire.  
   
-2.  Écrivez du code pour gérer l'événement <xref:System.Drawing.Printing.PrintDocument.PrintPage>.  
+2.  Écrivez du code pour gérer l’événement <xref:System.Drawing.Printing.PrintDocument.PrintPage>.  
   
-     Vous devez coder votre propre logique d'impression.  En outre, vous devez spécifier le type d'élément à imprimer.  
+     Vous devez coder votre propre logique d’impression. En outre, vous devez spécifier l’élément à imprimer.  
   
-     Dans l'exemple de code ci\-dessous, un exemple de graphisme sous la forme d'un rectangle rouge est créé dans le gestionnaire d'événements <xref:System.Drawing.Printing.PrintDocument.PrintPage> pour représenter l'élément à imprimer.  
+     Dans l’exemple de code suivant, un exemple de graphisme sous la forme d’un rectangle rouge est créé dans le <xref:System.Drawing.Printing.PrintDocument.PrintPage> Gestionnaire d’événements à l’élément à imprimer.  
   
     ```vb  
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
        e.Graphics.FillRectangle(Brushes.Red, New Rectangle(500, 500, 500, 500))  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -49,7 +53,6 @@ L'élément clé de l'impression dans les Windows Forms est le composant <xref:S
        e.Graphics.FillRectangle(Brushes.Red,   
          new Rectangle(500, 500, 500, 500));  
     }  
-  
     ```  
   
     ```cpp  
@@ -62,13 +65,12 @@ L'élément clé de l'impression dans les Windows Forms est le composant <xref:S
        }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] et [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] et [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
   
     ```csharp  
     this.printDocument1.PrintPage += new  
        System.Drawing.Printing.PrintPageEventHandler  
        (this.printDocument1_PrintPage);  
-  
     ```  
   
     ```cpp  
@@ -77,13 +79,13 @@ L'élément clé de l'impression dans les Windows Forms est le composant <xref:S
        (this, &Form1::printDocument1_PrintPage);  
     ```  
   
-     Il est possible que vous souhaitiez également écrire du code pour les événements <xref:System.Drawing.Printing.PrintDocument.BeginPrint> et <xref:System.Drawing.Printing.PrintDocument.EndPrint>, en incluant éventuellement un nombre entier représentant le nombre total de pages à imprimer, nombre qui est décrémenté à mesure que les pages s'impriment.  
+     Vous pouvez également écrire du code pour le <xref:System.Drawing.Printing.PrintDocument.BeginPrint> et <xref:System.Drawing.Printing.PrintDocument.EndPrint> événements, en incluant éventuellement un entier représentant le nombre total de pages à imprimer qui est décrémenté à mesure que chaque page est imprimée.  
   
     > [!NOTE]
-    >  Vous pouvez ajouter un composant <xref:System.Windows.Forms.PrintDialog> au formulaire pour offrir aux utilisateurs une interface utilisateur claire et efficace.  La définition de la propriété <xref:System.Windows.Forms.PrintDialog.Document%2A> du composant <xref:System.Windows.Forms.PrintDialog> vous permet de définir des propriétés relatives au document d'impression utilisé dans votre formulaire.  Pour plus d'informations sur le composant <xref:System.Windows.Forms.PrintDialog>, consultez [PrintDialog, composant](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md).  
+    >  Vous pouvez ajouter un <xref:System.Windows.Forms.PrintDialog> à votre formulaire pour fournir une interface propre et efficace de l’utilisateur (IU) à vos utilisateurs. Définition de la <xref:System.Windows.Forms.PrintDialog.Document%2A> propriété de la <xref:System.Windows.Forms.PrintDialog> permet de composant vous permet de définir les propriétés relatives à l’impression de documents vous travaillez sur votre formulaire. Pour plus d’informations sur la <xref:System.Windows.Forms.PrintDialog> composant, consultez [du composant PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md).  
   
-     Pour plus d'informations sur les spécificités des travaux d'impression Windows Forms, et notamment la création d'un travail d'impression par programme, consultez <xref:System.Drawing.Printing.PrintPageEventArgs>.  
+     Pour plus d’informations sur les spécificités des Windows Forms, les travaux d’impression, y compris la création d’un travail d’impression par programmation, consultez <xref:System.Drawing.Printing.PrintPageEventArgs>.  
   
-## Voir aussi  
- <xref:System.Drawing.Printing.PrintDocument>   
- [Prise en charge de l'impression dans les Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Drawing.Printing.PrintDocument>  
+ [Prise en charge de l’impression dans les Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

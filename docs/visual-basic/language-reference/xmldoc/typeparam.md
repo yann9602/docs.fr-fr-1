@@ -1,51 +1,50 @@
 ---
-title: "&lt;typeparam&gt; (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "typeparam XML tag"
-  - "<typeparam> XML tag"
+title: '&lt;typeparam&gt; (Visual Basic)'
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- typeparam XML tag
+- <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b654fe6fc93642693730256b523fee999aa55937
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;typeparam&gt; (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
+# <a name="lttypeparamgt-visual-basic"></a>&lt;typeparam&gt; (Visual Basic)
 Définit un nom de paramètre de type et une description.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```xml  
 <typeparam name="name">description</typeparam>  
 ```  
   
-#### Paramètres  
+#### <a name="parameters"></a>Paramètres  
  `name`  
- Nom du paramètre de type.  Mettez le nom entre guillemets doubles \(" "\).  
+ Nom du paramètre de type. Mettez le nom entre guillemets doubles (" ").  
   
  `description`  
  Description du paramètre de type.  
   
-## Notes  
- Utilisez la balise `<typeparam>` dans le commentaire d'un type générique ou une déclaration de membre générique pour décrire l'un des paramètres de type.  
+## <a name="remarks"></a>Remarques  
+ Utilisez le `<typeparam>` balise dans le commentaire pour un type générique ou une déclaration de membre générique décrire l’un des paramètres de type.  
   
- Compilez avec [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour traiter les commentaires de documentation et les placer dans un fichier.  
+ Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
-## Exemple  
- Cet exemple utilise la balise `<typeparam>` pour décrire le paramètre `id`.  
+## <a name="example"></a>Exemple  
+ Cet exemple utilise le `<typeparam>` balises pour décrire le `id` paramètre.  
   
  [!code-vb[VbVbcnXmlDocComments#8](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/typeparam_1.vb)]  
   
-## Voir aussi  
- [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a>Voir aussi  
+ [Étiquettes XML pour les commentaires](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

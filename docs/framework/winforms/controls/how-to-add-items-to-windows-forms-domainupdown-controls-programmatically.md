@@ -1,41 +1,44 @@
 ---
-title: "Comment&#160;: ajouter par programme des &#233;l&#233;ments aux contr&#244;les DomainUpDown Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DomainUpDown (contrôle Windows Forms), ajouter des éléments à"
-  - "contrôle toupie, ajouter des éléments"
+title: "Comment : ajouter par programme des éléments aux contrôles DomainUpDown Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- spin button control [Windows Forms], adding items
+- DomainUpDown control [Windows Forms], adding items to
 ms.assetid: fd31d314-33eb-4181-90f8-d32ed0c4e072
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: aaa6c58afa8dd39151f7e19890a6e933d82d049d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ajouter par programme des &#233;l&#233;ments aux contr&#244;les DomainUpDown Windows Forms
-Vous pouvez ajouter des éléments au contrôle <xref:System.Windows.Forms.DomainUpDown> Windows Forms dans le code.  Appelez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> ou <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> de la classe <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> pour ajouter des éléments à la propriété <xref:System.Windows.Forms.DomainUpDown.Items%2A> du contrôle.  La méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> ajoute un élément à la fin d'une collection, tandis que la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> l'ajoute à la position spécifiée.  
+# <a name="how-to-add-items-to-windows-forms-domainupdown-controls-programmatically"></a>Comment : ajouter par programme des éléments aux contrôles DomainUpDown Windows Forms
+Vous pouvez ajouter des éléments pour les Windows Forms <xref:System.Windows.Forms.DomainUpDown> contrôle dans le code. Appelez le <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> ou <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> méthode de la <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> classe pour ajouter des éléments du contrôle <xref:System.Windows.Forms.DomainUpDown.Items%2A> propriété. Le <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> méthode ajoute un élément à la fin d’une collection, tandis que le <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> méthode ajoute un élément à la position spécifiée.  
   
-### Pour ajouter un nouvel élément  
+### <a name="to-add-a-new-item"></a>Pour ajouter un nouvel élément  
   
-1.  À l'aide de la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A>, ajoutez un élément à la fin de la liste des éléments.  
+1.  Utilisez la <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> méthode pour ajouter un élément à la fin de la liste des éléments.  
   
     ```vb  
     DomainUpDown1.Items.Add("noodles")  
-  
     ```  
   
     ```csharp  
     domainUpDown1.Items.Add("noodles");  
-  
     ```  
   
     ```cpp  
@@ -44,18 +47,16 @@ Vous pouvez ajouter des éléments au contrôle <xref:System.Windows.Forms.Domai
   
      ou  
   
-2.  À l'aide de la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A>, insérez un élément dans la liste à la position que vous spécifiez.  
+2.  Utilisez la <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> méthode pour insérer un élément dans la liste à une position spécifiée.  
   
     ```vb  
     ' Inserts an item at the third position in the list  
     DomainUpDown1.Items.Insert(2, "rice")  
-  
     ```  
   
     ```csharp  
     // Inserts an item at the third position in the list  
     domainUpDown1.Items.Insert(2, "rice");  
-  
     ```  
   
     ```cpp  
@@ -63,9 +64,9 @@ Vous pouvez ajouter des éléments au contrôle <xref:System.Windows.Forms.Domai
     domainUpDown1->Items->Insert(2, "rice");  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DomainUpDown>   
- <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A?displayProperty=fullName>   
- <xref:System.Collections.ArrayList.Insert%2A?displayProperty=fullName>   
- [DomainUpDown, contrôle](../../../../docs/framework/winforms/controls/domainupdown-control-windows-forms.md)   
- [Vue d'ensemble du contrôle DomainUpDown](../../../../docs/framework/winforms/controls/domainupdown-control-overview-windows-forms.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.DomainUpDown>  
+ <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A?displayProperty=nameWithType>  
+ <xref:System.Collections.ArrayList.Insert%2A?displayProperty=nameWithType>  
+ [DomainUpDown, contrôle](../../../../docs/framework/winforms/controls/domainupdown-control-windows-forms.md)  
+ [Vue d’ensemble du contrôle DomainUpDown](../../../../docs/framework/winforms/controls/domainupdown-control-overview-windows-forms.md)

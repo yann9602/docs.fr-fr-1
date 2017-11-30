@@ -1,46 +1,52 @@
 ---
-title: "Comment&#160;: r&#233;pertorier les formats de donn&#233;es dans un objet de donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "formats de données (WPF), répertorier"
-  - "classe DataFormats (WPF)"
-  - "glisser-déplacer (WPF), répertorier des formats de données"
+title: "Comment : répertorier les formats de données dans un objet de données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- drag-and-drop [WPF], listing data formats
+- DataFormats class [WPF]
+- data formats [WPF], listing
 ms.assetid: 18e7ba4b-ccef-4815-ae2d-3a32891010c0
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ef5657aefdf1c229b4f1749881cce1148435a8d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: r&#233;pertorier les formats de donn&#233;es dans un objet de donn&#233;es
-Les exemples suivants indiquent comment utiliser les surcharges de méthode <xref:System.Windows.DataObject.GetFormats%2A> pour obtenir un tableau de chaînes qui désigne chaque format de données disponible dans un objet de données.  
+# <a name="how-to-list-the-data-formats-in-a-data-object"></a>Comment : répertorier les formats de données dans un objet de données
+Les exemples suivants montrent comment utiliser le <xref:System.Windows.DataObject.GetFormats%2A> surcharges de méthode obtient un tableau de chaînes qui désigne chaque format de données qui est disponible dans un objet de données.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-### Description  
- L'exemple de code suivant utilise la surcharge <xref:System.Windows.DataObject.GetFormats%2A> pour obtenir un tableau de chaînes qui désigne tous les formats de données disponibles dans un objet de données \(formats natifs et convertibles automatiquement\).  
+### <a name="description"></a>Description  
+ L’exemple de code suivant utilise la <xref:System.Windows.DataObject.GetFormats%2A> surcharge pour obtenir un tableau de chaînes qui dénote tous les formats de données disponibles dans un objet de données (natif et convertibles automatiquement).  
   
-### Code  
+### <a name="code"></a>Code  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getalldataformats)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_getalldataformats)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-### Description  
- L'exemple de code suivant utilise la surcharge <xref:System.Windows.DataObject.GetFormats%2A> pour obtenir un tableau de chaînes qui désigne uniquement les formats de données disponibles dans un objet de données \(les formats de données convertibles automatiquement sont filtrés\).  
+### <a name="description"></a>Description  
+ L’exemple de code suivant utilise la <xref:System.Windows.DataObject.GetFormats%2A> surcharge pour obtenir un tableau de chaînes qui désigne uniquement les formats de données disponibles dans un objet de données (données convertibles automatiquement les formats sont filtrés).  
   
-### Code  
+### <a name="code"></a>Code  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats_NativeOnly](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getalldataformats_nativeonly)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_GetAllDataFormats_NativeOnly](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_getalldataformats_nativeonly)]  
   
-## Voir aussi  
- <xref:System.Windows.IDataObject>   
- [Vue d'ensemble du glisser\-déplacer](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.IDataObject>  
+ [Vue d'ensemble du glisser-déplacer](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

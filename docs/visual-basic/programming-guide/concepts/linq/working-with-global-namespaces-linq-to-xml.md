@@ -1,30 +1,22 @@
 ---
-title: Utilisation des espaces de noms globaux (Visual Basic) (LINQ to XML) | Documents Microsoft
+title: Utilisation d'espaces de noms globaux (Visual Basic) (LINQ to XML)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 0a8064d5-e02f-4315-ad48-6deaa443a2f0
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e20d0c0b670d63ebe2be137a48dc1a1a9a861b9f
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 376a6d2dfbca22fb8efc6395f478839d716e14d4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="working-with-global-namespaces-visual-basic-linq-to-xml"></a>Utilisation d'espaces de noms globaux (Visual Basic) (LINQ to XML)
 Une des principales fonctionnalités des littéraux XML en Visual Basic est la capacité à déclarer des espaces de noms XML à l’aide de la `Imports` instruction. Grâce à cette fonctionnalité, vous pouvez déclarer un espace de noms XML qui utilise un préfixe ou déclarer un espace de noms XML par défaut.  
@@ -33,12 +25,12 @@ Une des principales fonctionnalités des littéraux XML en Visual Basic est la c
   
  Vous pouvez déclarer des espaces de noms globaux au niveau du projet. Vous pouvez également déclarer des espaces de noms globaux au niveau du module, ce qui substitue les espaces de noms globaux au niveau du projet. Pour finir, vous pouvez substituer des espaces de noms globaux dans un littéral XML.  
   
- Lors de l'utilisation de littéraux XML ou de propriétés XML qui se trouvent dans des espaces de noms déclarés globalement, vous pouvez afficher le nom développé des littéraux ou des propriétés XML en plaçant le curseur de souris au-dessus d'eux dans Visual Studio. Le nom développé s’affiche alors dans une info-bulle.  
+ Lors de l'utilisation de littéraux XML ou de propriétés XML qui se trouvent dans des espaces de noms déclarés globalement, vous pouvez afficher le nom développé des littéraux ou des propriétés XML en plaçant le curseur de souris au-dessus d'eux dans Visual Studio. Le nom développé s'affiche alors dans une info-bulle.  
   
- Vous pouvez obtenir un <xref:System.Xml.Linq.XNamespace>objet qui correspond à un espace de noms global à l’aide de la `GetXmlNamespace` méthode.</xref:System.Xml.Linq.XNamespace>  
+ Vous pouvez obtenir un objet <xref:System.Xml.Linq.XNamespace> qui correspond à un espace de noms global à l'aide de la méthode `GetXmlNamespace`.  
   
 ## <a name="examples-of-global-namespaces"></a>Exemples d'espaces de noms globaux  
- L’exemple suivant déclare un espace de noms global par défaut à l’aide de la `Imports` instruction, puis utilise un littéral XML pour initialiser un <xref:System.Xml.Linq.XElement>objet dans cet espace de noms :</xref:System.Xml.Linq.XElement>  
+ L'exemple suivant déclare un espace de noms global par défaut à l'aide de l'instruction `Imports`, puis il utilise un littéral XML pour initialiser un objet <xref:System.Xml.Linq.XElement> dans cet espace de noms :  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -194,7 +186,7 @@ End Module
 ```  
   
 ## <a name="xnamespace-and-global-namespaces"></a>XNamespace et espaces de noms globaux  
- Vous pouvez obtenir un <xref:System.Xml.Linq.XNamespace>à l’aide de la `GetXmlNamespace` méthode :</xref:System.Xml.Linq.XNamespace>  
+ Vous pouvez obtenir un objet <xref:System.Xml.Linq.XNamespace> à l'aide de la méthode `GetXmlNamespace` :  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  

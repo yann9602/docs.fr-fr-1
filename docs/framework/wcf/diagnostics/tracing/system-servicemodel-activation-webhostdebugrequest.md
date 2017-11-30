@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Activation.WebHostDebugRequest | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Activation.WebHostDebugRequest
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 632d8084-f492-47bd-a40d-f9281c130149
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f8b4c295afdd0bc8470cf7bc12702c345c7c70c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Activation.WebHostDebugRequest
+# <a name="systemservicemodelactivationwebhostdebugrequest"></a>System.ServiceModel.Activation.WebHostDebugRequest
 System.ServiceModel.Activation.WebHostDebugRequest  
   
-## Description  
+## <a name="description"></a>Description  
  La demande concerne le verbe DEBUG.  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

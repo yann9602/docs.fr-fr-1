@@ -1,22 +1,25 @@
 ---
-title: "R&#233;f&#233;rence des classes WMI | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Référence des classes WMI"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b95a51f5-8251-4619-ae05-7de88cb90f9a
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ee03f0c567f2b154eaf2e7fdf608b093cfbe2d1e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# R&#233;f&#233;rence des classes WMI
+# <a name="wmi-class-reference"></a>Référence des classes WMI
 Cette section répertorie toutes les classes WMI exposées par le fournisseur WMI [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
   
 ## <a name="accessing-wmi-instances"></a>Accès aux instances WMI  
@@ -85,7 +88,7 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [NamedPipeTransportBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/namedpipetransportbindingelement.md)  
   
- [OneWayBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/onewaybindingelement.md)  
+ [Élément OneWayBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/onewaybindingelement.md)  
   
  « Classe opération »  
   
@@ -105,9 +108,9 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [PrivacyNoticeBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/privacynoticebindingelement.md)  
   
- [ReliableSessionBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/reliablesessionbindingelement.md)  
+ [Élément ReliableSessionBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/reliablesessionbindingelement.md)  
   
- [SecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/securitybindingelement.md)  
+ [Élément SecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/securitybindingelement.md)  
   
  [Service](../../../../../docs/framework/wcf/diagnostics/wmi/service.md)  
   
@@ -155,7 +158,7 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [Élément TransportBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transportbindingelement.md)  
   
- [TransportSecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transportsecuritybindingelement.md)  
+ [Élément TransportSecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transportsecuritybindingelement.md)  
   
  [UseManagedPresentationBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/usemanagedpresentationbindingelement.md)  
   

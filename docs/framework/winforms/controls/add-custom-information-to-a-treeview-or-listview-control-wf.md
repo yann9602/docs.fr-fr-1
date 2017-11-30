@@ -1,37 +1,40 @@
 ---
-title: "Comment&#160;: ajouter des informations personnalis&#233;es &#224; un contr&#244;le TreeView ou ListView (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ListItem"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "exemples (Windows Forms), ListView (contrôle)"
-  - "exemples (Windows Forms), TreeView (contrôle)"
-  - "ListView (contrôle Windows Forms), ajouter des informations personnalisées"
-  - "Tag (propriété)"
-  - "TreeView (contrôle Windows Forms), ajouter des informations personnalisées"
+title: "Comment : ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+f1_keywords: ListItem
+helpviewer_keywords:
+- examples [Windows Forms], TreeView control
+- examples [Windows Forms], ListView control
+- ListView control [Windows Forms], adding custom information
+- TreeView control [Windows Forms], adding custom information
 ms.assetid: 68be11de-1d5b-430e-901f-cfbe48d14b19
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0e7086e52992f575781449e5dc2a83c3443f558d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ajouter des informations personnalis&#233;es &#224; un contr&#244;le TreeView ou ListView (Windows Forms)
-Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Forms.TreeView> Windows Forms ou un élément dérivé dans un contrôle <xref:System.Windows.Forms.ListView>.  La dérivation vous permet d'ajouter tous les champs qui vous sont nécessaires ainsi que des méthodes et des constructeurs personnalisés pour la gestion de ce nœud ou de cet élément dérivé.  Cette fonctionnalité permet notamment d'attacher un objet Customer à chaque nœud d'arborescence ou chaque élément de liste.  Les exemples qui vous sont donnés portent sur un contrôle <xref:System.Windows.Forms.TreeView>, mais les techniques décrites peuvent également s'appliquer à un contrôle <xref:System.Windows.Forms.ListView>.  
+# <a name="how-to-add-custom-information-to-a-treeview-or-listview-control-windows-forms"></a>Comment : ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)
+Vous pouvez créer un nœud dérivé dans un Windows Forms <xref:System.Windows.Forms.TreeView> contrôle ou un élément dérivé dans un <xref:System.Windows.Forms.ListView> contrôle. La dérivation vous permet d’ajouter les champs dont vous avez besoin, ainsi que des méthodes et des constructeurs personnalisés pour traiter les champs. Une utilisation de cette fonctionnalité consiste à attacher un objet Customer à chaque élément de liste ou nœud de l’arborescence. Ces exemples sont pour un <xref:System.Windows.Forms.TreeView> contrôle, mais la même approche peut être utilisé pour un <xref:System.Windows.Forms.ListView> contrôle.  
   
-### Pour dériver un nœud d'arborescence  
+### <a name="to-derive-a-tree-node"></a>Pour dériver un nœud d’arborescence  
   
--   Créez une classe de nœud dérivée de la classe <xref:System.Windows.Forms.TreeNode>, laquelle contient un champ personnalisé pour l'enregistrement d'un chemin de fichier.  
+-   Créer une nouvelle classe de nœud, dérivée de la <xref:System.Windows.Forms.TreeNode> (classe), qui comporte un champ personnalisé pour enregistrer un chemin d’accès de fichier.  
   
     ```vb  
     Class myTreeNode  
@@ -45,7 +48,6 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
           Me.Text = fp.Substring(fp.LastIndexOf("\"))  
        End Sub  
     End Class  
-  
     ```  
   
     ```csharp  
@@ -59,7 +61,6 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
           this.Text = fp.Substring(fp.LastIndexOf("\\"));  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -76,11 +77,11 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
     };  
     ```  
   
-### Pour utiliser un nœud d'arborescence dérivé  
+### <a name="to-use-a-derived-tree-node"></a>Pour utiliser un nœud d’arborescence dérivé  
   
-1.  Vous pouvez utiliser le nouveau nœud d'arborescence dérivé en tant que paramètre dans des appels de fonction.  
+1.  Vous pouvez utiliser le nouveau nœud d’arborescence dérivé en tant que paramètre pour les appels de fonction.  
   
-     Dans l'exemple ci\-dessous, le chemin défini pour l'emplacement du fichier texte est le dossier Mes documents.  La plupart des ordinateurs exécutant le système d'exploitation Windows disposent, en effet, de ce dossier.  Ceci permet également aux utilisateurs disposant de niveaux d'accès minimaux au système d'exécuter l'application en toute sécurité.  
+     Dans l’exemple ci-dessous, le chemin d’accès défini pour l’emplacement du fichier texte est le dossier Mes documents. En effet, vous pouvez supposer que la plupart des ordinateurs exécutant le système d’exploitation Windows incluent ce répertoire. Cela permet également aux utilisateurs avec des niveaux d’accès minimum au système d’exécuter l’application en toute sécurité.  
   
     ```vb  
     ' You should replace the bold text file   
@@ -88,7 +89,6 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
     TreeView1.Nodes.Add(New myTreeNode (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.Personal) _  
        & "\ TextFile.txt ") )  
-  
     ```  
   
     ```csharp  
@@ -98,7 +98,6 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
     treeView1.Nodes.Add(new myTreeNode (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.Personal) _  
        + @"\TextFile.txt") );  
-  
     ```  
   
     ```cpp  
@@ -110,7 +109,7 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
        "\\TextFile.txt")));  
     ```  
   
-2.  Si le nœud d'arborescence vous est passé et que son type est celui de la classe <xref:System.Windows.Forms.TreeNode>, vous devrez effectuer un cast vers votre classe dérivée.  Le « casting » est une conversion explicite d'un type d'objet vers un autre.  Pour plus d'informations sur le casting, consultez [Implicit and Explicit Conversions](../Topic/Implicit%20and%20Explicit%20Conversions%20\(Visual%20Basic\).md) \([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]\), [\(\), opérateur](../Topic/\(\)%20Operator%20\(C%23%20Reference\).md) \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]\) ou [Opérateur de cast : \(\)](../../../../amples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/spec_withstructure-xps/_rels/.rels) \([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\).  
+2.  Si vous sont passés au nœud d’arbre et elle est tapée comme une <xref:System.Windows.Forms.TreeNode> de classe, vous devez effectuer un cast vers votre classe dérivée. Le cast est une conversion explicite d’un type d’objet vers un autre. Pour plus d’informations sur le cast, consultez [Conversions implicites et explicites](~/docs/visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) ([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]), [() Opérateur](~/docs/csharp/language-reference/operators/invocation-operator.md) ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]) ou [Opérateur de cast : ()](/cpp/cpp/cast-operator-parens) ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]).  
   
     ```vb  
     Public Sub TreeView1_AfterSelect(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TreeView1.AfterSelect  
@@ -118,7 +117,6 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
        mynode = CType(e.node, myTreeNode)  
        MessageBox.Show("Node selected is " & mynode.filepath)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -128,7 +126,6 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
        myTreeNode myNode = (myTreeNode)e.Node;  
        MessageBox.Show("Node selected is " + myNode.FilePath);  
     }  
-  
     ```  
   
     ```cpp  
@@ -142,6 +139,6 @@ Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Form
        }  
     ```  
   
-## Voir aussi  
- [TreeView, contrôle](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)   
- [ListView, contrôle](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)
+## <a name="see-also"></a>Voir aussi  
+ [TreeView, contrôle](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
+ [Contrôle ListView](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)

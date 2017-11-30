@@ -1,34 +1,30 @@
 ---
-title: "Comment : récupérer un seul attribut (LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Comment : récupérer un seul attribut (LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 11b938d7-c011-4048-900e-8b9183c41c94
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 35f477ead2bdcfdf78781459f93a755dbc89e5cc
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 08b9b2bed60f5818db9c494047ade576e8526bb7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-retrieve-a-single-attribute-linq-to-xml-visual-basic"></a>Comment : récupérer un seul attribut (LINQ to XML) (Visual Basic)
 Cette rubrique explique comment récupérer un seul attribut d'un élément, étant donné le nom de l'attribut. Ceci est utile pour écrire des expressions de requête où vous souhaitez rechercher un élément qui possède un attribut particulier.  
   
- Le <xref:System.Xml.Linq.XElement.Attribute%2A>Procédé de la <xref:System.Xml.Linq.XElement>classe retourne la <xref:System.Xml.Linq.XAttribute>avec le nom spécifié.</xref:System.Xml.Linq.XAttribute> </xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XElement.Attribute%2A>  
+ La méthode <xref:System.Xml.Linq.XElement.Attribute%2A> de la classe <xref:System.Xml.Linq.XElement> retourne l'objet <xref:System.Xml.Linq.XAttribute> avec le nom spécifié.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise le <xref:System.Xml.Linq.XElement.Attribute%2A>méthode.</xref:System.Xml.Linq.XElement.Attribute%2A>  
+ L'exemple suivant utilise la méthode <xref:System.Xml.Linq.XElement.Attribute%2A>.  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -51,7 +47,7 @@ work
 ```  
   
 ## <a name="example"></a>Exemple  
- Si vous souhaitez récupérer la valeur de l’attribut, vous pouvez le convertir, comme vous le feriez avec <xref:System.Xml.Linq.XElement>objets.</xref:System.Xml.Linq.XElement> Cela est illustré par l'exemple suivant.  
+ Si vous souhaitez récupérer la valeur de l'attribut vous pouvez le convertir, comme vous le feriez avec des objets <xref:System.Xml.Linq.XElement>. Cela est illustré par l'exemple suivant.  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -73,7 +69,7 @@ home
 work  
 ```  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]provides explicit cast operators for the <xref:System.Xml.Linq.XAttribute> class to `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, and `GUID?`.</xref:System.Xml.Linq.XAttribute>  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit des opérateurs de conversion explicites pour la classe <xref:System.Xml.Linq.XAttribute> vers `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID` et `GUID?`.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant illustre le même code pour un attribut qui est dans un espace de noms. Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  

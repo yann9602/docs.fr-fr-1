@@ -5,24 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 5757894a63ed556413147b8ef8c85c2d31ef11a5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migration à partir du .NET Framework 1.1
 [!INCLUDE[win7](../../../includes/win7-md.md)] et les versions ultérieures du système d’exploitation Windows ne prennent pas en charge [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)]. Ainsi, les applications qui ciblent [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] ne s’exécutent pas sans modification sur [!INCLUDE[win7](../../../includes/win7-md.md)] ou les versions ultérieures du système d’exploitation. Cette rubrique décrit les étapes nécessaires pour exécuter une application qui cible [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] sur [!INCLUDE[win7](../../../includes/win7-md.md)] et les versions ultérieures du système d’exploitation Windows. Pour plus d'informations sur [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)] et [!INCLUDE[win8](../../../includes/win8-md.md)], consultez [Exécution des applications .NET Framework 1.1 sous Windows 8 et versions ultérieures](../../../docs/framework/install/run-net-framework-1-1-apps.md).  
@@ -75,4 +73,3 @@ ms.lasthandoff: 07/28/2017
  L'impact des types et membres déconseillés est quelque peu différent pour les applications de reciblées et les applications recompilées. L'utilisation de types et membres obsolètes n'affectera pas une application reciblée, sauf si le type ou le membre obsolète a été supprimé physiquement de son assembly. Recompiler une application qui utilise des types ou des membres obsolètes entraîne généralement un avertissement du compilateur plutôt qu'une erreur du compilateur. Toutefois, dans certains cas, cela entraîne une erreur du compilateur, et le code qui utilise le type ou le membre obsolète ne se compile pas correctement. Dans ce cas, vous devez réécrire le code source qui appelle le type ou membre obsolète avant de recompiler votre application. Pour plus d'informations sur les types et membres obsolètes, consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md).  
   
  Pour évaluer l’impact de types et membres déconseillés depuis la mise en production de [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md). Passez en revue les listes de types et membres obsolètes pour le [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] et le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].
-

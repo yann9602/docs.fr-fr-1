@@ -1,38 +1,39 @@
 ---
-title: "Comment&#160;: d&#233;tecter lorsque le pointeur de la souris est sur un ToolStripItem | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "souris, détecter un mouvement sur les barres d'outils"
-  - "barres d'outils (Windows Forms), détecter le mouvement de la souris"
-  - "ToolStrip (contrôle Windows Forms), détecter le mouvement de la souris"
-  - "ToolStripItem (classe), détecter le mouvement de la souris"
+title: "Comment : détecter lorsque le pointeur de la souris est sur un ToolStripItem"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- toolbars [Windows Forms], detecting mouse movement
+- ToolStrip control [Windows Forms], detecting mouse movement
+- ToolStripItem class [Windows Forms], detecting mouse movement
+- mouse [Windows Forms], detecting movement on toolbars
 ms.assetid: d38b5082-aba7-4f6c-841b-bd9714e307fd
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 633b92bf6da837b3727001c621548fa58b230102
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;tecter lorsque le pointeur de la souris est sur un ToolStripItem
-Utilisez la procédure suivante pour détecter si le pointeur de la souris se trouve sur <xref:System.Windows.Forms.ToolStripItem>.  
+# <a name="how-to-detect-when-the-mouse-pointer-is-over-a-toolstripitem"></a>Comment : détecter lorsque le pointeur de la souris est sur un ToolStripItem
+Utilisez la procédure suivante pour détecter lorsque le pointeur de la souris est sur un <xref:System.Windows.Forms.ToolStripItem>.  
   
-### Pour détecter si le pointeur se trouve sur un ToolStripItem  
+### <a name="to-detect-when-the-pointer-is-over-a-toolstripitem"></a>Détecter lorsque le pointeur est sur un ToolStripItem  
   
--   Utilisez la propriété <xref:System.Windows.Forms.ToolStripItem.Selected%2A> pour les éléments dans lesquels <xref:System.Windows.Forms.ToolStripItem.CanSelect%2A> a la valeur `true`.  
+-   Utilisez le <xref:System.Windows.Forms.ToolStripItem.Selected%2A> propriété des éléments dans laquelle <xref:System.Windows.Forms.ToolStripItem.CanSelect%2A> est `true`.  
   
-     Cela vous empêchera de devoir synchroniser les événements <xref:System.Windows.Forms.ToolStripItem.MouseEnter> et <xref:System.Windows.Forms.ToolStripItem.MouseLeave>.  
+     Cela vous empêchera d’avoir à synchroniser le <xref:System.Windows.Forms.ToolStripItem.MouseEnter> et <xref:System.Windows.Forms.ToolStripItem.MouseLeave> les événements.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ToolStripItem>   
- <xref:System.Windows.Forms.ToolStripItem.Selected%2A>   
- [Vue d'ensemble du contrôle ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ToolStripItem>  
+ <xref:System.Windows.Forms.ToolStripItem.Selected%2A>  
+ [Vue d’ensemble du contrôle ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)

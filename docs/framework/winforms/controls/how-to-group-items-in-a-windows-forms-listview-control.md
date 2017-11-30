@@ -1,72 +1,76 @@
 ---
-title: "Comment&#160;: grouper des &#233;l&#233;ments dans un contr&#244;le ListView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "regroupement"
-  - "groupes"
-  - "groupes, dans des contrôles Windows Forms"
-  - "Liste (vues), regrouper des éléments"
-  - "listes, regrouper des éléments"
-  - "ListView (contrôle Windows Forms), regrouper des éléments"
+title: "Comment : grouper des éléments dans un contrôle ListView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ListView control [Windows Forms], grouping items
+- lists [Windows Forms], grouping items
+- grouping
+- list views [Windows Forms], grouping items
+- groups
+- groups [Windows Forms], in Windows Forms controls
 ms.assetid: 610416a1-8da4-436c-af19-5f19e654769b
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c22134513c2c6a3ff2bc621e68f546b7bcc93ba9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: grouper des &#233;l&#233;ments dans un contr&#244;le ListView Windows Forms
-À l'aide de la fonctionnalité de regroupement du contrôle <xref:System.Windows.Forms.ListView>, vous pouvez afficher des jeux d'éléments liés dans les groupes.  Ces groupes sont séparés à l'écran par des en\-têtes de groupes horizontaux qui contiennent les titres des groupes.  Vous pouvez utiliser des groupes <xref:System.Windows.Forms.ListView> pour faciliter la navigation dans les longues listes en regroupant les éléments par ordre alphabétique, par date ou par tout autre regroupement logique.  L'image suivante présente des éléments regroupés.  
+# <a name="how-to-group-items-in-a-windows-forms-listview-control"></a>Comment : grouper des éléments dans un contrôle ListView Windows Forms
+Avec la fonctionnalité de regroupement du <xref:System.Windows.Forms.ListView> (contrôle), vous pouvez afficher des jeux d’éléments liés dans les groupes. Ces groupes sont séparés sur l’écran par des en-têtes de groupe horizontal qui contiennent les titres de groupe. Vous pouvez utiliser <xref:System.Windows.Forms.ListView> groupes pour faciliter la navigation dans les longues listes en regroupant les éléments par ordre alphabétique, par date, ou par tout autre regroupement logique. L’illustration suivante montre certains éléments groupés.  
   
  ![Groupes ListView](../../../../docs/framework/winforms/controls/media/listviewgroups.gif "ListViewGroups")  
 Éléments ListView regroupés  
   
- Pour activer le regroupement, vous devez tout d'abord créer un ou plusieurs groupes, dans le concepteur ou par programme.  Après avoir défini un groupe, vous pouvez assigner des éléments <xref:System.Windows.Forms.ListView> aux groupes.  Vous pouvez également déplacer par programme des éléments d'un groupe à un autre.  
+ Pour activer le regroupement, vous devez d’abord créer un ou plusieurs groupes dans le concepteur ou par programme. Après avoir défini un groupe, vous pouvez affecter <xref:System.Windows.Forms.ListView> éléments à des groupes. Vous pouvez également déplacer des éléments d’un groupe à un autre par programmation.  
   
 > [!NOTE]
->  Les groupes <xref:System.Windows.Forms.ListView> sont disponibles uniquement sur [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] lorsque votre application appelle la méthode <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=fullName>.  Sur les systèmes d'exploitation antérieurs, tout code concernant les groupes est sans effet et les groupes n'apparaissent pas.  Pour plus d'informations, consultez <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName>.  
+>  <xref:System.Windows.Forms.ListView>les groupes sont disponibles uniquement sur [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] lorsque votre application appelle la <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> (méthode). Sur les systèmes d’exploitation antérieurs, tout code concernant les groupes n’a aucun effet et les groupes n’apparaîtront pas. Pour plus d'informations, consultez <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>.  
   
-### Pour ajouter des groupes  
+### <a name="to-add-groups"></a>Pour ajouter des groupes  
   
 1.  Utilisez la méthode <xref:System.Windows.Forms.ListViewGroupCollection.Add%2A> de la collection <xref:System.Windows.Forms.ListView.Groups%2A>.  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#21)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#21)]  
   
-### Pour supprimer des groupes  
+### <a name="to-remove-groups"></a>Pour supprimer des groupes  
   
-1.  Utilisez la méthode <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A> ou <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> de la collection <xref:System.Windows.Forms.ListView.Groups%2A>.  
+1.  Utilisez le <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A> ou <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> méthode de la <xref:System.Windows.Forms.ListView.Groups%2A> collection.  
   
-     La méthode <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A> supprime un seul groupe, alors que la méthode <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> supprime tous les groupes de la liste.  
+     Le <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A> méthode supprime un groupe unique ; le <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> méthode supprime tous les groupes de la liste.  
   
     > [!NOTE]
-    >  La suppression d'un groupe ne supprime pas les éléments de ce groupe.  
+    >  Suppression d’un groupe ne supprime pas les éléments dans ce groupe.  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#22](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#22)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#22](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#22)]  
   
-### Pour assigner des éléments aux groupes ou déplacer des éléments entre des groupes  
+### <a name="to-assign-items-to-groups-or-move-items-between-groups"></a>Pour assigner des éléments aux groupes ou déplacer des éléments entre les groupes  
   
-1.  Définissez la propriété <xref:System.Windows.Forms.ListViewItem.Group%2A?displayProperty=fullName> des éléments.  
+1.  Définir le <xref:System.Windows.Forms.ListViewItem.Group%2A?displayProperty=nameWithType> propriété des éléments individuels.  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#23](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#23)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#23](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#23)]  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ListView>   
- <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.ListViewGroup>   
- [ListView, contrôle](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)   
- [Vue d'ensemble du contrôle ListView](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)   
- [Windows XP Features and Windows Forms Controls](http://msdn.microsoft.com/fr-fr/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)   
- [Comment : ajouter et supprimer des éléments avec le contrôle ListView Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ListView>  
+ <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.ListViewGroup>  
+ [Contrôle ListView](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
+ [Vue d’ensemble du contrôle ListView](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)  
+ [Fonctionnalités de Windows XP et contrôles Windows Forms](http://msdn.microsoft.com/en-us/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)  
+ [Guide pratique pour ajouter et supprimer des éléments avec le contrôle ListView Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)

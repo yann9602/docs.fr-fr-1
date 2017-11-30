@@ -1,80 +1,83 @@
 ---
-title: "Comment&#160;: modifier l&#39;apparence du contr&#244;le TabControl Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "boutons, afficher les onglets sous forme de"
-  - "icônes, afficher sur des onglets"
-  - "TabControl (contrôle Windows Forms), modifier l'apparence de la page"
-  - "onglets, contrôler l'aspect"
+title: "Comment : modifier l'apparence du contrôle TabControl Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- icons [Windows Forms], displaying on tabs
+- TabControl control [Windows Forms], changing page appearance
+- tabs [Windows Forms], controlling appearance
+- buttons [Windows Forms], displaying tabs as
 ms.assetid: 7c6cc443-ed62-4d26-b94d-b8913b44f773
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b244930f0837d3b1d548e0f7a8c77dd80e1ce039
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: modifier l&#39;apparence du contr&#244;le TabControl Windows Forms
-Vous pouvez modifier l'apparence des onglets dans les Windows Forms à l'aide des propriétés des objets <xref:System.Windows.Forms.TabControl> et <xref:System.Windows.Forms.TabPage> qui constituent les différents onglets du contrôle.  En définissant ces propriétés, vous pouvez afficher des images sur les onglets, obtenir un affichage vertical des onglets à la place de l'affichage horizontal, afficher plusieurs rangées d'onglets et activer ou désactiver les onglets par programme.  
+# <a name="how-to-change-the-appearance-of-the-windows-forms-tabcontrol"></a>Comment : modifier l'apparence du contrôle TabControl Windows Forms
+Vous pouvez modifier l’apparence des onglets dans les Windows Forms à l’aide des propriétés de la <xref:System.Windows.Forms.TabControl> et <xref:System.Windows.Forms.TabPage> objets qui composent les différents onglets du contrôle. En définissant ces propriétés, vous pouvez afficher des images sur les onglets, afficher les onglets verticalement plutôt que horizontalement, affichent plusieurs lignes d’onglets et activer ou désactiver les onglets par programmation.  
   
-### Pour afficher une icône dans le titre d'un onglet  
+### <a name="to-display-an-icon-on-the-label-part-of-a-tab"></a>Pour afficher une icône sur la partie de l’étiquette d’un onglet  
   
-1.  Ajoutez un contrôle <xref:System.Windows.Forms.ImageList> au formulaire.  
+1.  Ajouter un <xref:System.Windows.Forms.ImageList> contrôle au formulaire.  
   
-2.  Ajoutez des images à la liste d'images.  
+2.  Ajouter des images à la liste d’images.  
   
-     Pour plus d'informations sur les listes d'images, consultez [ImageList, composant](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) et [Comment : ajouter ou supprimer des images avec le composant ImageList Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  
+     Pour plus d’informations sur les listes d’images, consultez [composant ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) et [Comment : ajouter ou supprimer des Images avec le composant ImageList Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  
   
-3.  Affectez à la propriété <xref:System.Windows.Forms.TabControl.ImageList%2A> de <xref:System.Windows.Forms.TabControl> le contrôle <xref:System.Windows.Forms.ImageList>.  
+3.  Définir le <xref:System.Windows.Forms.TabControl.ImageList%2A> propriété de la <xref:System.Windows.Forms.TabControl> à la <xref:System.Windows.Forms.ImageList> contrôle.  
   
-4.  Affectez à la propriété <xref:System.Windows.Forms.TabPage.ImageIndex%2A> de <xref:System.Windows.Forms.TabPage> l'index d'une image appropriée dans la liste.  
+4.  Définir le <xref:System.Windows.Forms.TabPage.ImageIndex%2A> propriété de la <xref:System.Windows.Forms.TabPage> à l’index d’une image appropriée dans la liste.  
   
-### Pour créer plusieurs rangées d'onglets  
+### <a name="to-create-multiple-rows-of-tabs"></a>Pour créer plusieurs lignes d’onglets  
   
-1.  Ajoutez le nombre de pages d'onglets que vous souhaitez.  
+1.  Ajoutez le nombre de pages d’onglets.  
   
-2.  Affectez à la propriété <xref:System.Windows.Forms.TabControl.Multiline%2A> de <xref:System.Windows.Forms.TabControl> la valeur `true`.  
+2.  Définir le <xref:System.Windows.Forms.TabControl.Multiline%2A> propriété de la <xref:System.Windows.Forms.TabControl> à `true`.  
   
-3.  Si les onglets ne sont pas encore affichés en plusieurs rangées, définissez la propriété <xref:System.Windows.Forms.Control.Width%2A> de <xref:System.Windows.Forms.TabControl> de telle sorte que sa valeur soit inférieure à la largeur de tous les onglets.  
+3.  Si les onglets n’apparaissent pas déjà de plusieurs lignes, définissez la <xref:System.Windows.Forms.Control.Width%2A> propriété de la <xref:System.Windows.Forms.TabControl> pour être plus restrictif que tous les onglets.  
   
-### Pour disposer les onglets sur le côté du contrôle  
+### <a name="to-arrange-tabs-on-the-side-of-the-control"></a>Pour réorganiser les onglets sur le côté du contrôle  
   
--   Affectez à la propriété <xref:System.Windows.Forms.TabControl.Alignment%2A> de <xref:System.Windows.Forms.TabControl> la valeur <xref:System.Windows.Forms.TabAlignment> ou <xref:System.Windows.Forms.TabAlignment>.  
+-   Définir le <xref:System.Windows.Forms.TabControl.Alignment%2A> propriété de la <xref:System.Windows.Forms.TabControl> à <xref:System.Windows.Forms.TabAlignment.Left> ou <xref:System.Windows.Forms.TabAlignment.Right>.  
   
-### Pour activer ou désactiver par programmation tous les contrôles sur un onglet  
+### <a name="to-programmatically-enable-or-disable-all-controls-on-a-tab"></a>Pour activer ou désactiver tous les contrôles sur un onglet par programme  
   
-1.  Affectez à la propriété <xref:System.Windows.Forms.TabPage.Enabled%2A> de <xref:System.Windows.Forms.TabPage> la valeur `true` ou `false`.  
+1.  Définir le <xref:System.Windows.Forms.TabPage.Enabled%2A> propriété de la <xref:System.Windows.Forms.TabPage> à `true` ou `false`.  
   
     ```vb  
     TabPage1.Enabled = False  
-  
     ```  
   
     ```csharp  
     tabPage1.Enabled = false;  
-  
     ```  
   
     ```cpp  
     tabPage1->Enabled = false;  
     ```  
   
-### Pour afficher les onglets sous forme de boutons  
+### <a name="to-display-tabs-as-buttons"></a>Pour afficher les onglets sous forme de boutons  
   
--   Affectez à la propriété <xref:System.Windows.Forms.TabControl.Appearance%2A> de <xref:System.Windows.Forms.TabControl> la valeur <xref:System.Windows.Forms.TabAppearance> ou <xref:System.Windows.Forms.TabAppearance>.  
+-   Définir le <xref:System.Windows.Forms.TabControl.Appearance%2A> propriété de la <xref:System.Windows.Forms.TabControl> à <xref:System.Windows.Forms.TabAppearance.Buttons> ou <xref:System.Windows.Forms.TabAppearance.FlatButtons>.  
   
-## Voir aussi  
- [TabControl, contrôle](../../../../docs/framework/winforms/controls/tabcontrol-control-windows-forms.md)   
- [Vue d'ensemble du contrôle TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)   
- [Comment : ajouter un contrôle à une page d'onglet](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)   
- [Comment : désactiver les pages d'onglets](../../../../docs/framework/winforms/controls/how-to-disable-tab-pages.md)   
- [Comment : ajouter et supprimer des onglets avec le contrôle TabControl Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
+## <a name="see-also"></a>Voir aussi  
+ [TabControl, contrôle](../../../../docs/framework/winforms/controls/tabcontrol-control-windows-forms.md)  
+ [Vue d’ensemble du contrôle TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)  
+ [Guide pratique pour ajouter un contrôle à une page d'onglet](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)  
+ [Guide pratique pour désactiver les pages d'onglets](../../../../docs/framework/winforms/controls/how-to-disable-tab-pages.md)  
+ [Guide pratique pour ajouter et supprimer des onglets avec le contrôle TabControl Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)

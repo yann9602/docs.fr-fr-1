@@ -1,45 +1,49 @@
 ---
-title: "Rendu d&#39;un contr&#244;le Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles personnalisés (Windows Forms), ressources graphiques"
-  - "contrôles personnalisés (Windows Forms), invalidation et peinture"
-  - "contrôles personnalisés (Windows Forms), rendu"
-  - "OnPaintBackground (méthode), appeler dans les contrôles personnalisés Windows Forms"
+title: "Rendu d'un contrôle Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- custom controls [Windows Forms], rendering
+- OnPaintBackground method [Windows Forms], invoking in Windows Forms custom controls
+- custom controls [Windows Forms], graphics resources
+- custom controls [Windows Forms], invalidation and painting
 ms.assetid: aae8e1e6-4786-432b-a15e-f4c44760d302
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 07e75bd44ab960744224c2d2d2cf2e53c42860fa
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Rendu d&#39;un contr&#244;le Windows Forms
-Le rendu désigne le processus de création d'une représentation visuelle sur l'écran de l'utilisateur.  Windows Forms utilise [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] \(la nouvelle bibliothèque de graphiques Windows\) pour le rendu.  Les classes managées qui donnent accès à [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] se trouvent dans l'espace de noms <xref:System.Drawing?displayProperty=fullName> et ses sous\-espaces de noms.  
+# <a name="rendering-a-windows-forms-control"></a>Rendu d'un contrôle Windows Forms
+Le rendu désigne le processus de création d’une représentation visuelle sur l’écran d’un utilisateur. Windows Forms utilise [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (la nouvelle bibliothèque de graphiques Windows) pour le rendu. Les classes managées qui donnent accès aux [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] se trouvent dans le <xref:System.Drawing?displayProperty=nameWithType> espace de noms et ses sous-espaces de noms.  
   
  Les éléments suivants sont impliqués dans le rendu du contrôle :  
   
--   Fonctionnalités de dessin fournies par la classe de base <xref:System.Windows.Forms.Control?displayProperty=fullName>.  
+-   Fonctionnalités de dessin fournies par la classe de base <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.  
   
--   Éléments essentiels de la bibliothèque de graphiques [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)].  
+-   Les éléments essentiels de la [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] bibliothèque de graphiques.  
   
--   Géométrie de la région de dessin.  
+-   La géométrie de la zone de dessin.  
   
--   Procédure permettant de libérer les ressources graphiques.  
+-   La procédure pour libérer les ressources graphiques.  
   
-## Fonctionnalités de dessin fournies par le contrôle  
- La classe de base <xref:System.Windows.Forms.Control> fournit des fonctionnalités de dessin à l'aide de son événement <xref:System.Windows.Forms.Control.Paint>.  Un contrôle déclenche l'événement <xref:System.Windows.Forms.Control.Paint> chaque fois qu'il doit mettre à jour son affichage.  Pour plus d'informations sur les événements dans le .NET Framework, consultez [Gestion et déclenchement d'événements](../../../../docs/standard/events/index.md).  
+## <a name="drawing-functionality-provided-by-control"></a>La fonctionnalité fournie par le contrôle de dessin  
+ La classe de base <xref:System.Windows.Forms.Control> fournit les fonctionnalités de dessin via son <xref:System.Windows.Forms.Control.Paint> événement. Un contrôle déclenche la <xref:System.Windows.Forms.Control.Paint> événement chaque fois qu’il a besoin mettre à jour son affichage. Pour plus d’informations sur les événements dans le .NET Framework, consultez [gestion et déclenchement d’événements](../../../../docs/standard/events/index.md).  
   
- La classe de données d'événement de l'événement <xref:System.Windows.Forms.Control.Paint>, <xref:System.Windows.Forms.PaintEventArgs>, contient les données nécessaires pour le dessin d'un contrôle, c'est\-à\-dire un handle d'un objet de graphiques et d'un objet de rectangle qui représente la région à dessiner.  Ces objets sont affichés en gras dans le fragment de code suivant.  
+ Les données d’événement de classe pour le <xref:System.Windows.Forms.Control.Paint> événement, <xref:System.Windows.Forms.PaintEventArgs>, contient les données nécessaires pour dessiner un contrôle, un handle vers un objet graphics et un objet rectangle qui représente la région à dessiner. Ces objets sont affichés en gras dans le fragment de code suivant.  
   
 ```vb  
 Public Class PaintEventArgs  
@@ -67,9 +71,9 @@ public System.Drawing.Graphics Graphics {get;}
 }  
 ```  
   
- <xref:System.Drawing.Graphics> est une classe managée qui encapsule les fonctionnalités de dessin, telles qu'elles sont décrites dans l'explication de [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)], plus loin dans cette rubrique.  <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> est une instance de la classe <xref:System.Drawing.Rectangle> et définit la zone disponible dans laquelle un contrôle peut être dessiné.  Un développeur de contrôles peut calculer <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> à l'aide de la propriété <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> d'un contrôle, comme décrit dans l'explication de la géométrie, plus loin dans cette rubrique.  
+ <xref:System.Drawing.Graphics>est une classe managée qui encapsule les fonctionnalités de dessin, tel que décrit dans la discussion de [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] plus loin dans cette rubrique. Le <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> est une instance de la <xref:System.Drawing.Rectangle> structurer et définit la zone disponible dans laquelle un contrôle peut être dessiné. Un développeur de contrôles peut calculer la <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> à l’aide de la <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> propriété d’un contrôle, comme décrit dans la discussion de géométrie plus loin dans cette rubrique.  
   
- Un contrôle doit fournir une logique de rendu en substituant la méthode <xref:System.Windows.Forms.Control.OnPaint%2A> qu'il hérite de <xref:System.Windows.Forms.Control>.  <xref:System.Windows.Forms.Control.OnPaint%2A> obtient l'accès à un objet Graphics et à un rectangle dans lequel dessiner via les propriétés <xref:System.Drawing.Design.PaintValueEventArgs.Graphics%2A> et <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> de l'instance <xref:System.Windows.Forms.PaintEventArgs> qui lui est passée.  
+ Un contrôle doit fournir la logique de rendu en substituant la <xref:System.Windows.Forms.Control.OnPaint%2A> méthode qu’il hérite <xref:System.Windows.Forms.Control>. <xref:System.Windows.Forms.Control.OnPaint%2A>Obtient l’accès à un objet graphics et un rectangle à dessiner via la <xref:System.Drawing.Design.PaintValueEventArgs.Graphics%2A> et <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> propriétés de la <xref:System.Windows.Forms.PaintEventArgs> instance lui est passé.  
   
 ```vb  
 Protected Overridable Sub OnPaint(pe As PaintEventArgs)  
@@ -79,12 +83,12 @@ Protected Overridable Sub OnPaint(pe As PaintEventArgs)
 protected virtual void OnPaint(PaintEventArgs pe);  
 ```  
   
- La méthode <xref:System.Windows.Forms.Control.OnPaint%2A> de la classe <xref:System.Windows.Forms.Control> de base n'implémente aucune fonctionnalité de dessin, mais appelle simplement les délégués d'événement inscrits auprès de l'événement <xref:System.Windows.Forms.Control.Paint>.  Lorsque vous substituez <xref:System.Windows.Forms.Control.OnPaint%2A>, vous devez généralement appeler la méthode <xref:System.Windows.Forms.Control.OnPaint%2A> de la classe de base de sorte que les délégués inscrits reçoivent l'événement <xref:System.Windows.Forms.Control.Paint>.  Cependant, les contrôles qui peignent la totalité de leur surface ne doivent pas appeler la méthode <xref:System.Windows.Forms.Control.OnPaint%2A> de la classe de base, car cela entraîne du scintillement.  Pour obtenir un exemple de substitution de l'événement <xref:System.Windows.Forms.Control.OnPaint%2A>, consultez le [Comment : créer un contrôle Windows Forms qui affiche la progression](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
+ Le <xref:System.Windows.Forms.Control.OnPaint%2A> (méthode) de la base de <xref:System.Windows.Forms.Control> classe n’implémente pas toutes les fonctionnalités de dessin, mais appelle simplement les délégués d’événements qui sont enregistrés avec le <xref:System.Windows.Forms.Control.Paint> événement. Lorsque vous substituez <xref:System.Windows.Forms.Control.OnPaint%2A>, vous devez généralement appeler le <xref:System.Windows.Forms.Control.OnPaint%2A> méthode de la classe de base afin que les délégués inscrits reçoivent le <xref:System.Windows.Forms.Control.Paint> événement. Toutefois, les contrôles qui peignent la totalité de leur surface ne doivent pas appeler de la classe de base <xref:System.Windows.Forms.Control.OnPaint%2A>, car cela entraîne le scintillement. Pour obtenir un exemple de substitution de la <xref:System.Windows.Forms.Control.OnPaint%2A> événements, consultez la [Comment : créer un Windows Forms que montre progression du contrôle](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
 > [!NOTE]
->  N'appelez pas <xref:System.Windows.Forms.Control.OnPaint%2A> directement à partir de votre contrôle. Appelez plutôt la méthode <xref:System.Windows.Forms.Control.Invalidate%2A> \(héritée de <xref:System.Windows.Forms.Control>\) ou toute autre méthode appelant <xref:System.Windows.Forms.Control.Invalidate%2A>.  La méthode <xref:System.Windows.Forms.Control.Invalidate%2A> appelle à son tour <xref:System.Windows.Forms.Control.OnPaint%2A>.  La méthode <xref:System.Windows.Forms.Control.Invalidate%2A> est surchargée et, selon les arguments fournis à <xref:System.Windows.Forms.Control.Invalidate%2A> `e`, un contrôle redessine une partie ou la totalité de sa zone d'affichage.  
+>  N’appelez pas <xref:System.Windows.Forms.Control.OnPaint%2A> directement à partir de votre contrôle ; au lieu de cela, appelez le <xref:System.Windows.Forms.Control.Invalidate%2A> (méthode) (héritée de <xref:System.Windows.Forms.Control>) ou une autre méthode qui appelle <xref:System.Windows.Forms.Control.Invalidate%2A>. Le <xref:System.Windows.Forms.Control.Invalidate%2A> méthode appelle à son tour <xref:System.Windows.Forms.Control.OnPaint%2A>. Le <xref:System.Windows.Forms.Control.Invalidate%2A> méthode est surchargée et, selon les arguments fournis à <xref:System.Windows.Forms.Control.Invalidate%2A> `e`, un contrôle redessine une partie ou la totalité de sa zone de l’écran.  
   
- La classe <xref:System.Windows.Forms.Control> de base définit une autre méthode utile pour le dessin : la méthode <xref:System.Windows.Forms.Control.OnPaintBackground%2A>.  
+ La base de <xref:System.Windows.Forms.Control> classe définit une autre méthode qui est utile pour le dessin, le <xref:System.Windows.Forms.Control.OnPaintBackground%2A> (méthode).  
   
 ```vb  
 Protected Overridable Sub OnPaintBackground(pevent As PaintEventArgs)  
@@ -94,25 +98,25 @@ Protected Overridable Sub OnPaintBackground(pevent As PaintEventArgs)
 protected virtual void OnPaintBackground(PaintEventArgs pevent);  
 ```  
   
- <xref:System.Windows.Forms.Control.OnPaintBackground%2A> peint l'arrière\-plan \(et donc la forme\) de la fenêtre et sa rapidité est garantie, alors que <xref:System.Windows.Forms.Control.OnPaint%2A> peint les détails et peut être plus lent, car les demandes de peinture individuelles sont combinées dans un événement <xref:System.Windows.Forms.Control.Paint> qui couvre toutes les zones à redessiner.  Il est possible d'appeler <xref:System.Windows.Forms.Control.OnPaintBackground%2A> si, par exemple, vous souhaitez dessiner un arrière\-plan en couleurs dégradées pour votre contrôle.  
+ <xref:System.Windows.Forms.Control.OnPaintBackground%2A>peint l’arrière-plan (et donc la forme) de la fenêtre et est garanti être rapide, tout en <xref:System.Windows.Forms.Control.OnPaint%2A> peint les détails et peut être plus lent, car les demandes de peinture individuelles sont combinées en une seule <xref:System.Windows.Forms.Control.Paint> événement qui couvre tous les domaines qui doivent être redessiné. Vous souhaiterez peut-être appeler le <xref:System.Windows.Forms.Control.OnPaintBackground%2A> si, par exemple, vous souhaitez dessiner un arrière-plan dégradé de couleur pour votre contrôle.  
   
- Alors que <xref:System.Windows.Forms.Control.OnPaintBackground%2A> possède une nomenclature de type événement et prend le même argument que la méthode `OnPaint`, <xref:System.Windows.Forms.Control.OnPaintBackground%2A> n'est pas une véritable méthode d'événements.  Il n'existe aucun événement `PaintBackground` et <xref:System.Windows.Forms.Control.OnPaintBackground%2A> n'appelle pas de délégués d'événements.  Lors de la substitution de la méthode <xref:System.Windows.Forms.Control.OnPaintBackground%2A>, une classe dérivée n'est pas obligée d'appeler la méthode <xref:System.Windows.Forms.Control.OnPaintBackground%2A> de sa classe de base.  
+ Alors que <xref:System.Windows.Forms.Control.OnPaintBackground%2A> possède une nomenclature de type événement et prend le même argument que la `OnPaint` (méthode), <xref:System.Windows.Forms.Control.OnPaintBackground%2A> n’est pas une véritable méthode d’événements. Il est sans `PaintBackground` événement et <xref:System.Windows.Forms.Control.OnPaintBackground%2A> n’appelle pas de délégués d’événements. Lors de la substitution du <xref:System.Windows.Forms.Control.OnPaintBackground%2A> méthode, une classe dérivée n’est pas requise pour appeler le <xref:System.Windows.Forms.Control.OnPaintBackground%2A> méthode de sa classe de base.  
   
-## Concepts de base de GDI\+  
- La classe <xref:System.Drawing.Graphics> fournit des méthodes pour le dessin de diverses formes, telles que des cercles, des triangles, des arcs et des ellipses, ainsi que des méthodes pour l'affichage de texte.  L'espace de noms <xref:System.Drawing?displayProperty=fullName> et ses sous\-espaces de noms contiennent des classes qui encapsulent des éléments graphiques, tels que des formes \(cercles, rectangles, arcs, etc.\), des couleurs, des polices, des pinceaux, etc.  Pour plus d'informations sur [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)], consultez [Utilisation de classes graphiques managées](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md).  Les qualités indispensables de [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] sont également décrites dans le [Comment : créer un contrôle Windows Forms qui affiche la progression](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
+## <a name="gdi-basics"></a>Principes de base GDI +  
+ La <xref:System.Drawing.Graphics> classe fournit des méthodes pour dessiner des formes différentes telles que des cercles, des triangles, des arcs et des ellipses, ainsi que des méthodes pour afficher du texte. Le <xref:System.Drawing?displayProperty=nameWithType> espace de noms et ses sous-espaces de noms contiennent des classes qui encapsulent des éléments graphiques tels que les formes (cercles, rectangles, arcs, etc.), couleurs, polices, pinceaux et ainsi de suite. Pour plus d’informations sur [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)], consultez [à l’aide des Classes managées graphiques](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md). L’essentiel de [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] sont également décrites dans le [Comment : créer un Windows Forms que montre progression du contrôle](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
-## Géométrie de la région de dessin  
- La propriété <xref:System.Windows.Forms.Control.ClientRectangle%2A> d'un contrôle spécifie la région rectangulaire mise à la disposition du contrôle sur l'écran de l'utilisateur, alors que la propriété <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> de <xref:System.Windows.Forms.PaintEventArgs> spécifie la zone réellement peinte.  \(N'oubliez pas que la peinture est effectuée dans la méthode <xref:System.Windows.Forms.Control.Paint> qui prend comme argument une instance de <xref:System.Windows.Forms.PaintEventArgs>.\)  Il se peut qu'un contrôle ne doive peindre qu'une partie de sa zone disponible, comme c'est le cas lorsqu'une petite section de l'affichage du contrôle est modifiée.  Dans ce cas, un développeur de contrôles doit calculer le rectangle réel dans lequel effectuer le dessin et le passer à <xref:System.Windows.Forms.Control.Invalidate%2A>.  Les versions surchargées de <xref:System.Windows.Forms.Control.Invalidate%2A> qui prend un <xref:System.Drawing.Rectangle> ou <xref:System.Drawing.Region> comme argument utilisent cet argument pour générer la propriété <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> de <xref:System.Windows.Forms.PaintEventArgs>.  
+## <a name="geometry-of-the-drawing-region"></a>Géométrie de la zone de dessin  
+ Le <xref:System.Windows.Forms.Control.ClientRectangle%2A> propriété d’un contrôle spécifie la région rectangulaire disponible pour le contrôle sur l’écran de l’utilisateur, tandis que la <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> propriété du <xref:System.Windows.Forms.PaintEventArgs> spécifie la zone réellement peinte. (N’oubliez pas que peinture est effectuée le <xref:System.Windows.Forms.Control.Paint> méthode événements qui prend un <xref:System.Windows.Forms.PaintEventArgs> instance comme argument). Un contrôle devra peut-être peindre uniquement une partie de sa zone disponible, comme dans le cas lorsqu’une petite section de modifications d’affichage du contrôle. Dans ce cas, un développeur de contrôles doit calculer le rectangle réel pour dessiner dans et passer à <xref:System.Windows.Forms.Control.Invalidate%2A>. Les versions surchargées de <xref:System.Windows.Forms.Control.Invalidate%2A> qui prennent un <xref:System.Drawing.Rectangle> ou <xref:System.Drawing.Region> en tant qu’argument utilisent cet argument pour générer la <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> propriété du <xref:System.Windows.Forms.PaintEventArgs>.  
   
- Le fragment de code suivant montre la manière dont le contrôle personnalisé `FlashTrackBar` calcule la zone rectangulaire dans laquelle dessiner.  La variable `client` indique la propriété <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>.  Pour l'exemple complet, consultez [Comment : créer un contrôle Windows Forms qui affiche la progression](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
+ Fragment du code suivant montre comment la `FlashTrackBar` contrôle personnalisé calcule la zone rectangulaire à dessiner. Le `client` variable désigne le <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> propriété. Pour obtenir un exemple complet, consultez [Comment : créer un Windows Forms que montre progression du contrôle](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#6](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#6)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#6](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#6)]  
   
-## Libération des ressources graphiques  
- Les objets graphiques sont coûteux, car ils utilisent les ressources système.  De tels objets incluent des instances de la classe <xref:System.Drawing.Graphics?displayProperty=fullName> aussi bien que des instances de <xref:System.Drawing.Brush?displayProperty=fullName>, <xref:System.Drawing.Pen?displayProperty=fullName> et d'autres classes de graphiques.  Veillez à ne créer une ressource graphique qu'en cas de nécessité et à la libérer dès que vous avez terminé de l'utiliser.  Si vous créez un type qui implémente l'interface <xref:System.IDisposable>, appelez sa méthode <xref:System.IDisposable.Dispose%2A> lorsque vous avez terminé de l'utiliser afin de libérer des ressources.  
+## <a name="freeing-graphics-resources"></a>Libération des ressources graphiques  
+ Objets graphiques sont coûteux, car ils utilisent des ressources système. Ces objets incluent des instances de la <xref:System.Drawing.Graphics?displayProperty=nameWithType> classe ainsi que les instances de <xref:System.Drawing.Brush?displayProperty=nameWithType>, <xref:System.Drawing.Pen?displayProperty=nameWithType>et d’autres classes de graphiques. Il est important de créer une ressource graphique uniquement lorsque vous en avez besoin et libérer dès que vous avez fini de l’utiliser. Si vous créez un type qui implémente le <xref:System.IDisposable> l’interface, appelez sa <xref:System.IDisposable.Dispose%2A> méthode lorsque vous avez terminé de l’utiliser afin de libérer des ressources.  
   
- Le fragment de code suivant montre comment le contrôle personnalisé `FlashTrackBar` crée et libère une ressource <xref:System.Drawing.Brush>.  Pour le code source complet, consultez [Comment : créer un contrôle Windows Forms qui affiche la progression](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
+ Fragment du code suivant montre comment la `FlashTrackBar` contrôle personnalisé crée et libère un <xref:System.Drawing.Brush> ressource. Pour le code source complet, consultez [Comment : créer un Windows Forms que montre progression du contrôle](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#5)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#5)]  
@@ -123,5 +127,5 @@ protected virtual void OnPaintBackground(PaintEventArgs pevent);
  [!code-csharp[System.Windows.Forms.FlashTrackBar#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#3)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#3)]  
   
-## Voir aussi  
- [Comment : créer un contrôle Windows Forms qui affiche la progression](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md)
+## <a name="see-also"></a>Voir aussi  
+ [Guide pratique pour créer un contrôle Windows Forms qui affiche la progression](../../../../docs/framework/winforms/controls/how-to-create-a-windows-forms-control-that-shows-progress.md)

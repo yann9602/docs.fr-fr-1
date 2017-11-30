@@ -1,52 +1,55 @@
 ---
-title: "Comment&#160;: utiliser les &#233;l&#233;ments de contenu de flux | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "documents, éléments de contenu de flux"
-  - "éléments de contenu de flux"
+title: "Guide pratique pour utiliser les éléments de contenu de flux"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- flow content elements [WPF]
+- documents [WPF], flow content elements
 ms.assetid: 70fa11cd-5fa7-4872-a1cc-04d80f1132be
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c1350a380e97631ac290e57de64fec696535fecc
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: utiliser les &#233;l&#233;ments de contenu de flux
-L'exemple suivant montre l'utilisation déclarative de différents éléments de contenu de flux et d'attributs associés.  Les éléments et attributs sont les suivants :  
+# <a name="how-to-use-flow-content-elements"></a>Guide pratique pour utiliser les éléments de contenu de flux
+L’exemple suivant illustre l’utilisation déclarative de différents éléments de contenu de flux et les attributs associés.  Parmi les éléments et attributs illustrés figurent :  
   
--   Élément <xref:System.Windows.Documents.Bold>  
+-   <xref:System.Windows.Documents.Bold> (élément)  
   
 -   Attribut <xref:System.Windows.Documents.Block.BreakPageBefore%2A>  
   
 -   Attribut <xref:System.Windows.Documents.TextElement.FontSize%2A>  
   
--   Élément <xref:System.Windows.Documents.Italic>  
+-   <xref:System.Windows.Documents.Italic> (élément)  
   
--   Élément <xref:System.Windows.Documents.LineBreak>  
+-   <xref:System.Windows.Documents.LineBreak> (élément)  
   
--   Élément <xref:System.Windows.Documents.List>  
+-   <xref:System.Windows.Documents.List> (élément)  
   
--   Élément <xref:System.Windows.Documents.ListItem>  
+-   <xref:System.Windows.Documents.ListItem> (élément)  
   
--   Élément <xref:System.Windows.Documents.Paragraph>  
+-   <xref:System.Windows.Documents.Paragraph> (élément)  
   
--   Élément <xref:System.Windows.Documents.Run>  
+-   <xref:System.Windows.Documents.Run> (élément)  
   
--   Élément <xref:System.Windows.Documents.Section>  
+-   <xref:System.Windows.Documents.Section> (élément)  
   
--   Élément <xref:System.Windows.Documents.Span>  
+-   <xref:System.Windows.Documents.Span> (élément)  
   
--   Attribut <xref:System.Windows.Documents.Typography.Variants%2A> \(exposant et indice\)  
+-   <xref:System.Windows.Documents.Typography.Variants%2A>attribut (exposant et indice)  
   
--   Élément <xref:System.Windows.Documents.Underline>  
+-   <xref:System.Windows.Documents.Underline> (élément)  
   
-## Exemple  
- [!code-xml[FlowDocInlineSnippets#_InlineElementsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocInlineSnippets/CS/document.xaml#_inlineelementsxaml)]
+## <a name="example"></a>Exemple  
+ [!code-xaml[FlowDocInlineSnippets#_InlineElementsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocInlineSnippets/CS/document.xaml#_inlineelementsxaml)]

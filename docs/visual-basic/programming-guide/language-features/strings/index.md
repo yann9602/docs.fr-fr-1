@@ -1,42 +1,24 @@
 ---
 title: "Chaînes en Visual Basic"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic code, strings
 - strings [Visual Basic], Visual Basic
 ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 05cb6db768779895ebf3e57a0feb7bb58c65fc2a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: ffa6e015339387746b0cc1c4e5d3c2b84f84720e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="strings-in-visual-basic"></a>Chaînes en Visual Basic
 Cette section décrit les concepts de base de l’utilisation de chaînes en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
@@ -62,4 +44,3 @@ Cette section décrit les concepts de base de l’utilisation de chaînes en [!I
   
 ## <a name="see-also"></a>Voir aussi  
  [Fonctionnalités du langage Visual Basic](../../../../visual-basic/programming-guide/language-features/index.md)
-

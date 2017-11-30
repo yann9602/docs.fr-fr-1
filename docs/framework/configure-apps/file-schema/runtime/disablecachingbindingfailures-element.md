@@ -1,84 +1,86 @@
 ---
-title: "&lt;disableCachingBindingFailures&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCachingBindingFailures"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCachingBindingFailures"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<disableCachingBindingFailures> (élément)"
-  - "assemblys (.NET Framework), mettre en cache les échecs de liaison"
-  - "mettre en cache les échecs de liaison d'assemblys"
-  - "disableCachingBindingFailures (élément)"
+title: "&lt;disableCachingBindingFailures&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCachingBindingFailures
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCachingBindingFailures
+helpviewer_keywords:
+- assemblies [.NET Framework],caching binding failures
+- caching assembly binding failures
+- <disableCachingBindingFailures> element
+- disableCachingBindingFailures element
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
-caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 25d504afd7945718f08dd5f2bf92d7ea33037a11
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;disableCachingBindingFailures&gt;, &#233;l&#233;ment
-Spécifie s'il faut désactiver la mise en cache des échecs de liaison qui se produisent parce que l'assembly n'a pas été détecté.  
+# <a name="ltdisablecachingbindingfailuresgt-element"></a>&lt;disableCachingBindingFailures&gt; élément
+Spécifie s’il faut désactiver la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison.  
   
-## Syntaxe  
+ \<configuration > élément  
+\<runtime > élément  
+\<disableCachingBindingFailures >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <disableCachingBindingFailures enabled="0|1"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|activé|Attribut requis.<br /><br /> Spécifie s'il faut désactiver la mise en cache des échecs de liaison qui se produisent parce que l'assembly n'a pas été détecté.|  
+|---------------|-----------------|  
+|enabled|Attribut requis.<br /><br /> Spécifie s’il faut désactiver la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|0|Ne désactivez pas la mise en cache des échecs de liaison qui se produisent parce que l'assembly était introuvable par détection.  Il s'agit du comportement de liaison par défaut introduit avec .NET Framework version 2.0.|  
-|1|Désactivez la mise en cache des échecs de liaison qui se produisent parce que l'assembly était introuvable par détection.  Ce paramètre rétablit le comportement de liaison du .NET Framework version 1.1.|  
+|-----------|-----------------|  
+|0|Ne désactivez pas la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison. Il s’agit du comportement de liaison par défaut en commençant par le .NET Framework version 2.0.|  
+|1|Désactiver la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison. Ce paramètre rétablit le comportement de liaison de la version 1.1 du .NET Framework.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Notes  
- Si vous démarrez le .NET Framework version 2.0, le comportement par défaut du chargement d'assemblys est de mettre en cache toutes les défaillances de liaison et de chargement.  Autrement dit, si une tentative de chargement d'un assembly échoue, les demandes ultérieures de chargement du même assembly échouent immédiatement, sans aucune tentative de localisation de l'assembly.  Cet élément désactive ce comportement par défaut pour les échecs de liaison qui se produisent parce que l'assembly n'a pas pu être trouvé dans le chemin d'accès de détection.  Ces défaillances lèvent <xref:System.IO.FileNotFoundException>.  
+## <a name="remarks"></a>Remarques  
+ À compter de .NET Framework version 2.0, le comportement par défaut pour le chargement des assemblys est pour mettre en cache tous les de liaison et d’échecs de chargement. Autrement dit, si une tentative de chargement d’un assembly échoue, les demandes ultérieures à charger le même assembly échouent immédiatement, sans aucune tentative de localiser l’assembly. Cet élément désactive ce comportement par défaut pour les échecs de liaison qui se produisent parce que l’assembly est introuvable dans le chemin d’accès de détection. Ces défaillances lèvent <xref:System.IO.FileNotFoundException>.  
   
- Quelques défaillances de liaison et de chargement ne sont pas affectées par cet élément et sont toujours mises en cache.  Ces défaillances se produisent parce que l'assembly a été trouvé mais n'a pas pu être chargé.  Ils lèvent <xref:System.BadImageFormatException> ou <xref:System.IO.FileLoadException>.  La liste suivante inclut quelques exemples de ces défaillances.  
+ Une liaison et les échecs de chargement ne sont pas affectés par cet élément et sont toujours mis en cache. Ces défaillances se produisent parce que l’assembly a été trouvé, mais ne peut pas être chargé. Elles lèvent <xref:System.BadImageFormatException> ou <xref:System.IO.FileLoadException>. La liste suivante comprend quelques exemples de ces défaillances.  
   
--   Si vous essayez de charger un fichier qui n'est pas un assembly valide, les tentatives suivantes de chargement de l'assembly échoueront même si le fichier incorrect est remplacé par l'assembly correct.  
+-   Si vous tentez de charger un fichier n’est pas un assembly valide, les tentatives suivantes pour charger l’assembly échoue même si le fichier incorrect est remplacé par l’assembly approprié.  
   
--   Si vous essayez de charger un assembly verrouillé par le fichier système, les tentatives suivantes de chargement de l'assembly échoueront même après que l'assembly soit lancée par le fichier système.  
+-   Si vous essayez de charger un assembly qui est verrouillé par le système de fichiers, les tentatives suivantes pour charger l’assembly échoue même une fois que l’assembly est libéré par le système de fichiers.  
   
--   Si une ou plusieurs versions de l'assembly que vous essayez de charger sont dans le chemin d'accès d'interrogation, mais la version spécifique que vous demandez n'est pas parmi eux, les tentatives suivantes pour charger cette version échoueront même si la version correcte est déplacée dans le chemin d'accès d'interrogation.  
+-   Si une ou plusieurs versions de l’assembly que vous essayez de charger est dans le chemin d’accès de détection, mais la version spécifique, que vous avez demandée n’est pas entre eux, les tentatives suivantes pour charger cette version échoue même si la version correcte est déplacée dans le chemin d’accès de détection.  
   
-## Exemple  
- L'exemple de code suivant indique comment désactiver la mise en cache des défaillances de liaison d'assembly qui se produisent parce que l'assembly est resté introuvable lors de la détection.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment désactiver la mise en cache des échecs de liaison d’assembly qui se produisent, car l’assembly est introuvable par la détection.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <disableCachingBindingFailures enabled="1" />  
@@ -86,7 +88,7 @@ Spécifie s'il faut désactiver la mise en cache des échecs de liaison qui se p
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Méthode de localisation des assemblys par le runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

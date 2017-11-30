@@ -1,66 +1,70 @@
 ---
-title: "Comment&#160;: trier et filtrer des donn&#233;es ADO.NET avec le composant BindingSource Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ADO.NET (Windows Forms)"
-  - "BindingSource (composant Windows Forms), trier et filtrer les données"
-  - "données (Windows Forms), filtrer"
-  - "données (Windows Forms), trier"
-  - "trier les données, ADO.NET"
-  - "filtrer (Windows Forms), ADO.NET"
-  - "trier les données"
+title: "Comment : trier et filtrer des données ADO.NET avec le composant BindingSource Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- sorting data
+- data sorting [Windows Forms], ADO.NET
+- data [Windows Forms], filtering
+- BindingSource component [Windows Forms], sorting and filtering data
+- filtering [Windows Forms], ADO.NET
+- data [Windows Forms], sorting
+- ADO.NET [Windows Forms]
 ms.assetid: 6c206daf-d706-4602-9dbe-435343052063
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 46947e314394d56b5ef0439f33910bb493012db3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: trier et filtrer des donn&#233;es ADO.NET avec le composant BindingSource Windows Forms
-Vous pouvez exposer les fonctions de tri et de filtrage du contrôle <xref:System.Windows.Forms.BindingSource> à l'aide des propriétés <xref:System.Windows.Forms.BindingSource.Sort%2A> et <xref:System.Windows.Forms.BindingSource.Filter%2A>.  Vous pouvez appliquer le tri simple lorsque la source de données sous\-jacente est un <xref:System.ComponentModel.IBindingList>, et vous pouvez appliquer le filtrage et le tri avancé lorsque la source de données est un <xref:System.ComponentModel.IBindingListView>.  La propriété <xref:System.Windows.Forms.BindingSource.Sort%2A> requiert la syntaxe [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] standard : une chaîne représentant le nom d'une colonne de données dans la source de données suivie de `ASC` ou `DESC` pour indiquer si la liste doit être triée dans l'ordre croissant ou décroissant.  Vous pouvez définir un tri avancé ou un tri sur plusieurs colonnes en séparant chaque colonne par une virgule.  La propriété <xref:System.Windows.Forms.BindingSource.Filter%2A> adopte une expression sous forme de chaîne.  
+# <a name="how-to-sort-and-filter-adonet-data-with-the-windows-forms-bindingsource-component"></a>Comment : trier et filtrer des données ADO.NET avec le composant BindingSource Windows Forms
+Vous pouvez exposer le tri et filtrage de <xref:System.Windows.Forms.BindingSource> contrôler via le <xref:System.Windows.Forms.BindingSource.Sort%2A> et <xref:System.Windows.Forms.BindingSource.Filter%2A> propriétés. Vous pouvez appliquer un tri simple lorsque la source de données sous-jacente est une <xref:System.ComponentModel.IBindingList>, et vous pouvez appliquer le filtrage et tri avancé lorsque la source de données est un <xref:System.ComponentModel.IBindingListView>. Le <xref:System.Windows.Forms.BindingSource.Sort%2A> propriété requiert standard [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] syntaxe : une chaîne représentant le nom d’une colonne de données dans la source de données suivie `ASC` ou `DESC` pour indiquer si la liste doit être triée dans l’ordre croissant ou décroissant. Vous pouvez définir le tri avancé ou un tri sur plusieurs colonnes en séparant chaque colonne avec un séparateur de virgule. Le <xref:System.Windows.Forms.BindingSource.Filter%2A> propriété prend une expression de chaîne.  
   
 > [!NOTE]
->  Le stockage d'informations sensibles, par exemple, un mot de passe, dans la chaîne de connexion peut affecter la sécurité de votre application.  L'utilisation de l'authentification Windows \(également appelée sécurité intégrée\) offre un moyen plus sûr de contrôler l'accès à une base de données.  Pour plus d'informations, consultez [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
+>  Le stockage d'informations sensibles (telles qu'un mot de passe) dans la chaîne de connexion peut affecter la sécurité de votre application. L'utilisation de l'authentification Windows (également appelée sécurité intégrée) offre un moyen plus sûr de contrôler l'accès à une base de données. Pour plus d’informations, consultez [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
   
-### Pour filtrer des données à l'aide de BindingSource  
+### <a name="to-filter-data-with-the-bindingsource"></a>Pour filtrer les données avec le composant BindingSource  
   
--   Affectez à la propriété <xref:System.Windows.Forms.BindingSource.Filter%2A> l'expression souhaitée.  
+-   Définir le <xref:System.Windows.Forms.BindingSource.Filter%2A> propriété expression que vous souhaitez utiliser.  
   
-     Dans l'exemple de code suivant, l'expression est un nom de colonne suivi de la valeur souhaitée pour cette colonne.  
+     Dans l’exemple de code suivant, l’expression est un nom de colonne suivi par la valeur souhaitée pour la colonne.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#11)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#11)]  
   
-### Pour trier des données à l'aide de BindingSource  
+### <a name="to-sort-data-with-the-bindingsource"></a>Pour trier les données avec le composant BindingSource  
   
-1.  Affectez à la propriété <xref:System.Windows.Forms.BindingSource.Sort%2A> le nom de colonne souhaité suivi de `ASC` ou `DESC` pour indiquer l'ordre croissant ou décroissant.  
+1.  Définir le <xref:System.Windows.Forms.BindingSource.Sort%2A> propriété le nom de colonne que vous souhaitez suivi `ASC` ou `DESC` pour indiquer l’ordre croissant ou décroissant.  
   
-2.  Séparez les différentes colonnes par une virgule.  
+2.  Séparez plusieurs colonnes par une virgule.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#12)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#12)]  
   
-## Exemple  
- L'exemple de code suivant charge des données à partir de la table Customers de l'exemple de base de données Northwind dans un contrôle <xref:System.Windows.Forms.DataGridView>, puis filtre et tri les données affichées.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant charge des données à partir de la table Customers de la base de données Northwind dans un <xref:System.Windows.Forms.DataGridView> contrôler, puis filtre et trie les données affichées.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#1)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#1)]  
   
-## Compilation du code  
- Pour exécuter cet exemple, collez le code dans un formulaire contenant <xref:System.Windows.Forms.BindingSource> nommé `BindingSource1` et <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1`.  Gérez l'événement <xref:System.Windows.Forms.Form.Load> pour le formulaire et appelez `InitializeSortedFilteredBindingSource` dans la méthode du gestionnaire d'événements de chargement.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Pour exécuter cet exemple, collez le code dans un formulaire contenant un <xref:System.Windows.Forms.BindingSource> nommé `BindingSource1` et un <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1`. Gérer les <xref:System.Windows.Forms.Form.Load> événement pour le formulaire et appelez `InitializeSortedFilteredBindingSource` dans la méthode de gestionnaire d’événements de charge.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.BindingSource.Sort%2A>   
- <xref:System.Windows.Forms.BindingSource.Filter%2A>   
- [Comment : installer des exemples de bases de données](../Topic/How%20to:%20Install%20Sample%20Databases.md)   
- [Composant BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.BindingSource.Sort%2A>  
+ <xref:System.Windows.Forms.BindingSource.Filter%2A>  
+ [Guide pratique pour installer des exemples de bases de données](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)  
+ [BindingSource, composant](../../../../docs/framework/winforms/controls/bindingsource-component.md)

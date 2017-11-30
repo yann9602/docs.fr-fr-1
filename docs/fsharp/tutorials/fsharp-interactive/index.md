@@ -1,6 +1,6 @@
 ---
 title: "Informations de référence sur F# Interactive (fsi.exe)"
-description: "Informations de référence sur F# Interactive (fsi.exe)"
+description: "Découvrez comment F # Interactive (fsi.exe) est utilisée pour exécuter du code F # interactive sur la console ou pour exécuter des scripts F #."
 keywords: visual f#, f#, programmation fonctionnelle
 author: cartermp
 ms.author: phcart
@@ -10,14 +10,13 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 36af8d1b-dc08-4a37-9497-d23c0a0ac11c
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 87980bada62b568ec8795ab3566089f1bb510652
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: bcf3fe052f305f29ae4cf618d93759bd911e0078
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
-# <a name="interactive-programming-with-f"></a>Programmation interactive avec F# #
+# <a name="interactive-programming-with-f"></a>Programmation interactive avec F# #
 
 > [!NOTE]
 Cet article ne traite pour le moment que de l’expérience Windows.  Il va être réécrit.
@@ -27,7 +26,7 @@ Le lien des informations de référence sur les API pointe vers MSDN.  Les infor
 
 F# Interactive (fsi.exe) est utilisé pour exécuter le code F# de manière interactive sur la console ou pour exécuter des scripts F#. En d'autres termes, F# interactive exécute un REPL (Read, Evaluate, Print Loop) pour le langage F#.
 
-Pour exécuter F# Interactive à partir de la console, exécutez fsi.exe.  Vous trouverez fsi.exe dans « c:\Program Files (x86)\Microsoft SDKs\F#\<version>\Framework\<version>\ ». Pour plus d’informations sur les options de ligne de commande disponibles, consultez [Options de F# Interactive](fsharp-interactive-options.md).
+Pour exécuter F# Interactive à partir de la console, exécutez fsi.exe.  Vous trouverez fsi.exe dans « c:\Program fichiers (x86) \Microsoft SDKs\F#\<version > \Framework\<version >\". Pour plus d’informations sur les options de ligne de commande disponibles, consultez [Options de F# Interactive](fsharp-interactive-options.md).
 
 Pour exécuter F# Interactive par l’intermédiaire de Visual Studio, vous pouvez cliquer sur le bouton de barre d’outils approprié intitulé **F# Interactive** ou utiliser les touches **Ctrl+Alt+F**. La fenêtre interactive, fenêtre Outil exécutant une session F# Interactive, s'affiche. Vous pouvez aussi sélectionner le code à exécuter dans la fenêtre interactive et appuyer sur la combinaison de touches **Alt+Entrée**. F# Interactive démarre dans une fenêtre Outil nommée **F# Interactive**. Lorsque vous utilisez cette combinaison de touches, assurez-vous que la fenêtre de l'éditeur a le focus.
 
@@ -44,7 +43,7 @@ Si vous avez un projet ouvert qui fait référence à des bibliothèques, vous p
 Vous pouvez contrôler les arguments de ligne de commande F# Interactive (options) en réglant les paramètres. Dans le menu **Outils**, sélectionnez **Options**, puis développez **Outils F#**. Les deux paramètres que vous pouvez changer sont les options F# Interactive et le paramètre **F# Interactive 64 bits**, qui n’est pertinent que si vous exécutez F# Interactive sur un ordinateur 64 bits. Ce paramètre détermine si vous souhaitez exécuter la version 64 bits dédiée de fsi.exe ou fsianycpu.exe, qui utilise l'architecture de l'ordinateur pour déterminer s'il doit s'exécuter comme processus 32 bits ou 64 bits.
 
 
-## <a name="scripting-with-f"></a>Écriture de scripts avec F# #
+## <a name="scripting-with-f"></a>Écriture de scripts avec F# #
 Les scripts utilisent l’extension de fichier **.fsx** ou **.fsscript**. Au lieu de compiler le code source et d’exécuter par la suite l’assembly compilé, vous pouvez simplement exécuter **fsi.exe** et spécifier le nom de fichier du script du code source F# ; F# Interactive lit alors le code et l’exécute en temps réel.
 
 

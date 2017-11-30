@@ -5,31 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - pinning, interop marshaling
 - copying, interop marshaling
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b6f5c54ba65f44e01cc95094f7fa4027c587e8a1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 8e25d9a7bffdf0a3e8f68639dc0442ccf62a4412
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="copying-and-pinning"></a>copie et épinglage
 Lors du marshaling des données, le marshaleur d’interopérabilité peut copier ou épingler les données qui sont marshalées. La copie des données déplace une copie des données d’un emplacement de mémoire vers un autre emplacement de mémoire. L’illustration suivante montre les différences entre la copie d’un type valeur et la copie d’un type passé par référence à partir de la mémoire managée vers la mémoire non managée.  
@@ -88,13 +81,12 @@ Types référence passés par valeur et par référence
 > [!CAUTION]
 >  Quand une chaîne est passée par valeur, l’appelé ne doit jamais changer la référence passée par le marshaleur. Sinon, il risque d’endommager le tas managé.  
   
- Quand <xref:System.String?displayProperty=fullName> est passé par référence, le marshaleur copie le contenu de la chaîne dans une mémoire tampon secondaire avant d’effectuer l’appel. Il copie ensuite le contenu de la mémoire tampon dans une nouvelle chaîne au retour de l’appel. Cette technique garantit que la chaîne managée non modifiable demeure inchangée.  
+ Quand <xref:System.String?displayProperty=nameWithType> est passé par référence, le marshaleur copie le contenu de la chaîne dans une mémoire tampon secondaire avant d’effectuer l’appel. Il copie ensuite le contenu de la mémoire tampon dans une nouvelle chaîne au retour de l’appel. Cette technique garantit que la chaîne managée non modifiable demeure inchangée.  
   
- Quand <xref:System.Text.StringBuilder?displayProperty=fullName> est passé par valeur, le marshaleur passe une référence à la mémoire tampon interne de **StringBuilder** directement à l’appelant. L’appelant et l’appelé doivent s’entendre sur la taille de la mémoire tampon. L’appelant est chargé de créer un **StringBuilder** de longueur adéquate. L’appelé doit prendre les précautions nécessaires pour garantir le non-débordement de la mémoire tampon. **StringBuilder** fait exception à la règle qui veut que les types référence passés par valeur sont passés comme paramètres en entrée par défaut. Il est toujours passé comme paramètre en entrée/sortie.  
+ Quand <xref:System.Text.StringBuilder?displayProperty=nameWithType> est passé par valeur, le marshaleur passe une référence à la mémoire tampon interne de **StringBuilder** directement à l’appelant. L’appelant et l’appelé doivent s’entendre sur la taille de la mémoire tampon. L’appelant est chargé de créer un **StringBuilder** de longueur adéquate. L’appelé doit prendre les précautions nécessaires pour garantir le non-débordement de la mémoire tampon. **StringBuilder** fait exception à la règle qui veut que les types référence passés par valeur sont passés comme paramètres en entrée par défaut. Il est toujours passé comme paramètre en entrée/sortie.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comportement de marshaling par défaut](../../../docs/framework/interop/default-marshaling-behavior.md)   
- [Gestion de la mémoire avec le marshaleur d’interopérabilité](http://msdn.microsoft.com/en-us/417206ce-ee3e-4619-9529-0c0b686c7bee)   
- [Attributs directionnels](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)   
- [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-
+ [Comportement de marshaling par défaut](../../../docs/framework/interop/default-marshaling-behavior.md)  
+ [Gestion de la mémoire avec le marshaleur d’interopérabilité](http://msdn.microsoft.com/en-us/417206ce-ee3e-4619-9529-0c0b686c7bee)  
+ [Attributs directionnels](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
+ [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)

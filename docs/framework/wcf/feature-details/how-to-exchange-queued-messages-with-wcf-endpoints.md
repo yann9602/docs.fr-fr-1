@@ -1,29 +1,35 @@
 ---
-title: "Comment&#160;: &#233;changer des messages en file d&#39;attente avec des points de terminaison WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : échanger des messages en file d'attente avec des points de terminaison WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4b52fe96bc88f09b807640dedcc54a8468dc26e0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: &#233;changer des messages en file d&#39;attente avec des points de terminaison WCF
+# <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Comment : échanger des messages en file d'attente avec des points de terminaison WCF
 Les files d'attente garantissent une messagerie fiable entre un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], même si le service n'est pas disponible au moment de la communication. Les procédures ci-dessous indiquent comment garantir une communication durable entre un client et un service en utilisant la liaison mise en file d'attente standard lors de l'implémentation du service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- Cette section explique comment utiliser <xref:System.ServiceModel.NetMsmqBinding> pour la communication en file d’attente entre un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client et un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.  
+ Cette section explique comment utiliser <xref:System.ServiceModel.NetMsmqBinding> pour la communication mise en file d'attente entre un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
 ### <a name="to-use-queuing-in-a-wcf-service"></a>Pour utiliser la mise en file d'attente dans un service WCF  
   
-1.  Définir un contrat de service à l’aide d’une interface marquée avec la <xref:System.ServiceModel.ServiceContractAttribute>. Marquez les opérations dans l’interface qui font partie du contrat de service avec le <xref:System.ServiceModel.OperationContractAttribute> et définissez-les comme unidirectionnelles car aucune réponse à la méthode est retournée. Le code ci-dessous fournit un exemple de contrat de service et sa définition d'opération.  
+1.  Définissez un contrat de service utilisant une interface marquée avec <xref:System.ServiceModel.ServiceContractAttribute>. Marquez les opérations dans l'interface qui font partie du contrat de service avec <xref:System.ServiceModel.OperationContractAttribute> et définissez-les comme unidirectionnelles car aucune réponse n'est retournée à la méthode. Le code ci-dessous fournit un exemple de contrat de service et sa définition d'opération.  
   
      [!code-csharp[S_Msmq_Transacted#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#1)]
      [!code-vb[S_Msmq_Transacted#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#1)]  
@@ -38,18 +44,18 @@ Les files d'attente garantissent une messagerie fiable entre un client et un ser
      [!code-csharp[S_Msmq_Transacted#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#3)]
      [!code-vb[S_Msmq_Transacted#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#3)]  
   
-     Notez que la <xref:System.ServiceModel.OperationBehaviorAttribute> placés sur le `SubmitPurchaseOrder` (méthode). Cela indique que cette opération doit être appelée au sein d’une transaction et que la transaction se termine automatiquement à la fin de la méthode.  
+     Notez <xref:System.ServiceModel.OperationBehaviorAttribute> qui est placé sur la méthode `SubmitPurchaseOrder`. Cela indique que cette opération doit être appelée au sein d'une transaction et que la transaction se termine automatiquement à la fin de la méthode.  
   
-4.  Créer une file d’attente transactionnelle à l’aide de <xref:System.Messaging>. Vous pouvez éventuellement décider de créer la file d'attente à l'aide de la console MMC (Microsoft Management Console) MSMQ (Microsoft Message Queuing). Dans ce cas, assurez-vous de créer une file d’attente transactionnelle.  
+4.  Créez une file d'attente transactionnelle en utilisant <xref:System.Messaging>. Vous pouvez éventuellement décider de créer la file d'attente à l'aide de la console MMC (Microsoft Management Console) MSMQ (Microsoft Message Queuing). Dans ce cas, assurez-vous de créer une file d’attente transactionnelle.  
   
      [!code-csharp[S_Msmq_Transacted#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#4)]
      [!code-vb[S_Msmq_Transacted#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#4)]  
   
-5.  Définir un <xref:System.ServiceModel.Description.ServiceEndpoint> de configuration qui spécifie l’adresse de service et utilise la norme <xref:System.ServiceModel.NetMsmqBinding> liaison. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]à l’aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] configuration, consultez la page [configuration d’Applications Windows Communication Foundation](http://msdn.microsoft.com/fr-fr/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+5.  Définissez un <xref:System.ServiceModel.Description.ServiceEndpoint> dans la configuration qui spécifie l'adresse de service et utilise la liaison <xref:System.ServiceModel.NetMsmqBinding> standard. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]à l’aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] configuration, consultez [configuration d’Applications Windows Communication Foundation](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
   
   
   
-6.  Créer un hôte pour le `OrderProcessing` à l’aide du service <xref:System.ServiceModel.ServiceHost> qui lit les messages de la file d’attente et les traite. Ouvrez l'hôte de service pour rendre le service disponible. Affichez un message qui indique à l'utilisateur d'appuyer sur une touche quelconque pour terminer le service. Appelez `ReadLine` pour attendre l'appui sur la touche, puis fermez le service.  
+6.  Créez un hôte pour le service `OrderProcessing` à l'aide de <xref:System.ServiceModel.ServiceHost> qui lit les messages de la file d'attente et les traite. Ouvrez l'hôte de service pour rendre le service disponible. Affichez un message qui indique à l'utilisateur d'appuyer sur une touche quelconque pour terminer le service. Appelez `ReadLine` pour attendre l'appui sur la touche, puis fermez le service.  
   
      [!code-csharp[S_Msmq_Transacted#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#6)]
      [!code-vb[S_Msmq_Transacted#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#6)]  
@@ -62,7 +68,7 @@ Les files d'attente garantissent une messagerie fiable entre un client et un ser
     svcutil http://localhost:8000/ServiceModelSamples/service  
     ```  
   
-2.  Définir un <xref:System.ServiceModel.Description.ServiceEndpoint> de configuration qui spécifie l’adresse et utilise la norme <xref:System.ServiceModel.NetMsmqBinding> de liaison, comme illustré dans l’exemple suivant.  
+2.  Définissez un <xref:System.ServiceModel.Description.ServiceEndpoint> dans la configuration qui spécifie l'adresse et utilise la liaison <xref:System.ServiceModel.NetMsmqBinding> standard, comme illustré dans l'exemple suivant.  
   
   
   
@@ -88,12 +94,12 @@ Les files d'attente garantissent une messagerie fiable entre un client et un ser
   
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.NetMsmqBinding>   
- [Liaison MSMQ transactionnelles](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)   
- [Queuing dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)   
- [Comment : échanger des Messages avec des points de terminaison WCF et les Applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)   
- [Windows Communication Foundation pour Message Queuing](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)   
- [Installation de Message Queuing (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)   
- [Intégration Message Queuing exemples de liaisons](http://msdn.microsoft.com/fr-fr/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)   
- [Message Queuing à Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)   
+ <xref:System.ServiceModel.NetMsmqBinding>  
+ [Liaison MSMQ transactionnelles](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)  
+ [Queuing dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
+ [Comment : échanger des Messages avec des points de terminaison WCF et les Applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ [Windows Communication Foundation à Message Queuing](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
+ [Installation de Message Queuing (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
+ [Exemples de Message Queuing liaison d’intégration](http://msdn.microsoft.com/en-us/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)  
+ [Message Queuing à Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
  [Sécurité de message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

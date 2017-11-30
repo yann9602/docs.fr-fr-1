@@ -5,30 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - performance, .NET Framework applications
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c67018df35816b38828e548a88d25efe16d6a15a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 2e21b1f92c6694c6572d4651e94964e5d2d93c51
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
 Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l’[Analyseur de performances](http://technet.microsoft.com/library/cc749249.aspx).  
@@ -137,7 +130,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Nombre de collections de la génération 0**|Affiche le nombre de fois où les objets de la génération 0 (les objets les plus récents, les derniers alloués) ont été récupérés par le garbage collector depuis le démarrage de l'application.<br /><br /> Un garbage collection de la génération 0 se produit lorsque la mémoire disponible dans la génération 0 n'est pas suffisante pour répondre à une demande d'allocation. Ce compteur s'incrémente à la fin de chaque garbage collection de la génération 0. Un garbage collection d'une génération supérieure inclut tous les garbage collection des générations inférieures. Ce compteur est explicitement incrémenté quand un garbage collection d'une génération supérieure (génération 1 ou 2) se produit.<br /><br /> Ce compteur affiche la dernière valeur observée. La valeur du compteur **_Global\_** n’est pas exacte et doit être ignorée.|  
 |**Nombre de collections de la génération 1**|Affiche le nombre de fois où les objets de la génération 1 ont été récupérés par le garbage collector depuis le démarrage de l'application.<br /><br /> Ce compteur s'incrémente à la fin de chaque garbage collection de la génération 1. Un garbage collection d'une génération supérieure inclut tous les garbage collection des générations inférieures. Ce compteur est explicitement incrémenté quand un garbage collection d'une génération supérieure (génération 2) se produit.<br /><br /> Ce compteur affiche la dernière valeur observée. La valeur du compteur **_Global\_** n’est pas exacte et doit être ignorée.|  
 |**Nombre de collections de la génération 2**|Affiche le nombre de fois où les objets de la génération 2 ont été récupérés par le garbage collector depuis le démarrage de l'application. Ce compteur s'incrémente à la fin de chaque garbage collection de la génération 2 (garbage collection complet).<br /><br /> Ce compteur affiche la dernière valeur observée. La valeur du compteur **_Global\_** n’est pas exacte et doit être ignorée.|  
-|**Nombre GC induit**|Affiche le nombre maximal de fois où un garbage collection a été effectué en raison d'un appel explicite à <xref:System.GC.Collect%2A?displayProperty=fullName>. Il est recommandé de laisser le récupérateur de mémoire déterminer la fréquence de ses collections.|  
+|**Nombre GC induit**|Affiche le nombre maximal de fois où un garbage collection a été effectué en raison d'un appel explicite à <xref:System.GC.Collect%2A?displayProperty=nameWithType>. Il est recommandé de laisser le récupérateur de mémoire déterminer la fréquence de ses collections.|  
 |**Nombre d’objets épinglés**|Affiche le nombre d’objets épinglés rencontrés lors du dernier garbage collection. Un objet épinglé est un objet que le garbage collector ne peut pas déplacer dans la mémoire. Ce compteur effectue le suivi des objets épinglés uniquement dans les tas récupérés par le garbage collector. Par exemple, un garbage collection de la génération 0 ne comptabilise que les objets épinglés dans le tas de la génération 0.|  
 |**Nombre de blocs de synchronisation utilisés**|Affiche le nombre de blocs de synchronisation actuellement utilisés. Les blocs de synchronisation sont des structures de données par objet qui sont allouées au stockage d'informations de synchronisation. Ils contiennent des références faibles aux objets managés et doivent être analysés par le garbage collector. Les blocs de synchronisation ne servent pas uniquement à stocker des informations de synchronisation ; ils peuvent aussi stocker des métadonnées COM Interop. Ce compteur indique les problèmes de performance liés à un usage intensif de primitives de synchronisation.|  
 |**Nombre total d’octets validés**|Affiche la quantité de mémoire virtuelle, exprimée en octets, qui est actuellement validée par le garbage collector. La mémoire validée représente la mémoire physique pour laquelle un espace a été réservé dans le fichier d’échange du disque.|  
@@ -267,6 +260,5 @@ for (int i = 0; i < Array.Length; i++)
 |**Total de vérifications à l’exécution**|Affiche le nombre total de vérifications de sécurité d'accès du code à l'exécution effectuées depuis le démarrage de l'application. Les vérifications de sécurité d'accès du code à l'exécution sont effectuées quand un appelant demande une autorisation particulière. La vérification à l'exécution se produit à chaque appel par l'appelant, en examinant la pile de threads actuelle de l'appelant. Utilisé avec le compteur **Épaisseur de la pile**, ce compteur indique la diminution de performances due aux vérifications de sécurité.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Compteurs de performance](../../../docs/framework/debug-trace-profile/performance-counters.md)   
+ [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md)  
  [Profilage d’exécution](../../../docs/framework/debug-trace-profile/runtime-profiling.md)
-

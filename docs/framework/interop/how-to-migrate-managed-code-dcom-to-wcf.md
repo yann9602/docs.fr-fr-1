@@ -1,32 +1,25 @@
 ---
-title: "Guide pratique pour migrer DCOM de code managé vers WCF"
+title: "Comment : migrer DCOM de code managé vers WCF"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2d6077b9d5be8866aa22b884f61ad49f48ee9b0a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: af401cafe0740dcd9a313ae9143f9772605137d3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Guide pratique pour migrer DCOM de code managé vers WCF
+# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Comment : migrer DCOM de code managé vers WCF
 Pour des raisons de sécurité, il est recommandé d'utiliser Windows Communication Foundation (WCF) plutôt que le modèle DCOM pour les appels de code managé entre serveurs et clients dans un environnement distribué. Cet article explique comment migrer du code DCOM vers WCF pour les scénarios suivants.  
   
 -   Le service distant retourne un objet par valeur au client  
@@ -437,8 +430,7 @@ if (sessionBoundObject.GetCurrentValue() == "Hello")
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md)   
- [Conception et implémentation de services](../../../docs/framework/wcf/designing-and-implementing-services.md)   
- [Génération de clients](../../../docs/framework/wcf/building-clients.md)   
+ [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Conception et implémentation de services](../../../docs/framework/wcf/designing-and-implementing-services.md)  
+ [Génération de clients](../../../docs/framework/wcf/building-clients.md)  
  [Services duplex](../../../docs/framework/wcf/feature-details/duplex-services.md)
-

@@ -1,38 +1,43 @@
 ---
-title: "Comment&#160;: cr&#233;er une liaison personnalis&#233;e &#224; l’aide de SecurityBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "sécurité [WCF], création de liaisons personnalisées"
+title: "Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-caps.latest.revision: 19
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 0042ae642d8e3a5936c316921b2f9377a0eac17a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er une liaison personnalis&#233;e &#224; l’aide de SecurityBindingElement
+# <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] contient plusieurs liaisons fournies par le système qui peuvent être configurées mais qui n'offrent pas une souplesse complète lors de la configuration de toutes les options de sécurité prises en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Cette rubrique montre comment créer une liaison personnalisée directement à partir d’éléments de liaison individuels et met en évidence certains des paramètres de sécurité qui peuvent être spécifiés lors de la création d’une liaison de ce type. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Création de liaisons personnalisées, consultez [extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md).  
   
 > [!WARNING]
->  <xref:System.ServiceModel.Channels.SecurityBindingElement> ne prend pas en charge le <xref:System.ServiceModel.Channels.IDuplexSessionChannel> forme, qui est la forme de canal par défaut utilisée par le protocole TCP de canal de transport lorsque <xref:System.ServiceModel.TransferMode> a <xref:System.ServiceModel.TransferMode.Buffered>. Vous devez définir <xref:System.ServiceModel.TransferMode> à <xref:System.ServiceModel.TransferMode.Streamed> afin d’utiliser <xref:System.ServiceModel.Channels.SecurityBindingElement> dans ce scénario.  
+>  <xref:System.ServiceModel.Channels.SecurityBindingElement> ne prend pas en charge la forme de canal <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, qui est la forme de canal par défaut utilisée par le transport TCP lorsque <xref:System.ServiceModel.TransferMode> a la valeur <xref:System.ServiceModel.TransferMode.Buffered>. Vous devez définir <xref:System.ServiceModel.TransferMode> à <xref:System.ServiceModel.TransferMode.Streamed> pour utiliser <xref:System.ServiceModel.Channels.SecurityBindingElement> dans ce scénario.  
   
 ## <a name="creating-a-custom-binding"></a>Création d’une liaison personnalisée  
- Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] toutes les liaisons sont composées de *éléments de liaison*. Chaque élément de liaison dérive le <xref:System.ServiceModel.Channels.BindingElement> classe. Pour les liaisons fournies par le système standard, les éléments de liaison sont créés et configurés automatiquement, bien que vous puissiez personnaliser quelques paramètres de propriétés.  
+ Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] toutes les liaisons sont composées de *éléments de liaison*. Chaque élément de liaison dérive de la classe <xref:System.ServiceModel.Channels.BindingElement>. Pour les liaisons fournies par le système standard, les éléments de liaison sont créés et configurés automatiquement, bien que vous puissiez personnaliser quelques paramètres de propriétés.  
   
- En revanche, pour créer une liaison personnalisée, les éléments de liaison sont créés et configurés et un <xref:System.ServiceModel.Channels.CustomBinding> est créé à partir d’éléments de liaison.  
+ En revanche, pour créer une liaison personnalisée, les éléments de liaison sont créés et configurés, puis une <xref:System.ServiceModel.Channels.CustomBinding> est créée à partir des éléments de liaison.  
   
- Pour ce faire, vous ajoutez les éléments de liaison individuels à une collection représentée par une instance de la <xref:System.ServiceModel.Channels.BindingElementCollection> de classe, puis définissez la `Elements` propriété de la `CustomBinding` égale à cet objet. Vous devez ajouter les éléments de liaison dans l’ordre suivant : flux de transaction, session fiable, sécurité, duplex composite, unidirectionnel, sécurité de flux de données, encodage de message et transport. Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison.  
+ Pour ce faire, vous ajoutez les éléments de liaison individuels à une collection représentée par une instance de la classe <xref:System.ServiceModel.Channels.BindingElementCollection>, puis vous affectez à la propriété `Elements` de `CustomBinding` une valeur égale à cet objet. Vous devez ajouter les éléments de liaison dans l'ordre suivant : flux de transaction, session fiable, sécurité, duplex composite, unidirectionnel, sécurité de flux de données, encodage de message et transport. Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison.  
   
 ## <a name="securitybindingelement"></a>SecurityBindingElement  
- Trois éléments de liaison se rapportent à la sécurité de niveau message, qui dérivent de la <xref:System.ServiceModel.Channels.SecurityBindingElement> classe. Les trois sont <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, et <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Le <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> est utilisé pour fournir la sécurité en mode mixte. Les deux autres éléments sont utilisés lorsque la couche message fournit la sécurité.  
+ Trois éléments de liaison concernent la sécurité au niveau des messages et tous sont dérivés de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>. Il s'agit de <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> et <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Le <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> est utilisé pour assurer une sécurité en mode mixte. Les deux autres éléments sont utilisés lorsque la couche message fournit la sécurité.  
   
  D'autres classes sont utilisées lorsque la sécurité au niveau du transport est assurée :  
   
@@ -87,33 +92,33 @@ caps.handback.revision: 19
   
 #### <a name="to-create-a-custom-binding-that-uses-a-symmetricsecuritybindingelement"></a>Pour créer une liaison personnalisée qui utilise SymmetricSecurityBindingElement  
   
-1.  Créez une instance de la <xref:System.ServiceModel.Channels.BindingElementCollection> classe avec le nom `outputBec`.  
+1.  Créez une instance de la classe <xref:System.ServiceModel.Channels.BindingElementCollection> portant le nom `outputBec`.  
   
-2.  Appelez la méthode statique `M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement(true)`, qui retourne une instance de la <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> classe.  
+2.  Appelez la méthode statique `M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement(true)`, qui retourne une instance de la classe <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
-3.  Ajouter la <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> à la collection (`outputBec`) en appelant le `Add` procédé de la <xref:System.Collections.ObjectModel.Collection%601> de <xref:System.ServiceModel.Channels.BindingElement> (classe).  
+3.  Ajoutez <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> à la collection (`outputBec`) en appelant la méthode `Add` de <xref:System.Collections.ObjectModel.Collection%601> de la classe <xref:System.ServiceModel.Channels.BindingElement>.  
   
-4.  Créez une instance de la <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> de classe et l’ajouter à la collection (`outputBec`). Cela spécifie l’encodage utilisé par la liaison.  
+4.  Créez une instance de la classe <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> et ajoutez-la à la collection (`outputBec`). Cela spécifie l'encodage utilisé par la liaison.  
   
-5.  Créer un <xref:System.ServiceModel.Channels.HttpTransportBindingElement> et l’ajouter à la collection (`outputBec`). Cela indique que la liaison utilise le transport HTTP.  
+5.  Créez un <xref:System.ServiceModel.Channels.HttpTransportBindingElement> et ajoutez-le à la collection `outputBec`. Cela indique que la liaison utilise le transport HTTP.  
   
-6.  Créer une liaison personnalisée en créant une instance de la <xref:System.ServiceModel.Channels.CustomBinding> classe et en passant la collection `outputBec` au constructeur.  
+6.  Créez une liaison personnalisée en créant une instance de la classe <xref:System.ServiceModel.Channels.CustomBinding> et en passant la collection `outputBec` au constructeur.  
   
-7.  La liaison personnalisée résultante partage un grand nombre des caractéristiques comme la norme <xref:System.ServiceModel.WSHttpBinding>. Elle spécifie la sécurité au niveau du message et les informations d'identification Windows, mais désactive les sessions sécurisées, requiert que les informations d'identification du service soient spécifiées hors bande, et ne chiffre pas de signature. La dernière peut être contrôlée que par la définition du <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A> la propriété comme indiqué à l’étape 4. Les deux autres peuvent être contrôlées à l'aide de paramètres sur la liaison standard.  
+7.  La liaison personnalisée résultante partage un grand nombre des caractéristiques de <xref:System.ServiceModel.WSHttpBinding>. Elle spécifie la sécurité au niveau du message et les informations d'identification Windows, mais désactive les sessions sécurisées, requiert que les informations d'identification du service soient spécifiées hors bande, et ne chiffre pas de signature. La dernière ne peut être contrôlée que par la définition de la propriété <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A>, tel qu'indiqué à l'étape 4. Les deux autres peuvent être contrôlées à l'aide de paramètres sur la liaison standard.  
   
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
- L’exemple suivant illustre une fonction complète permettant de créer une liaison personnalisée qui utilise un <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
+ L'exemple suivant fournit une fonction complète permettant de créer une liaison personnalisée qui utilise <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
 ### <a name="code"></a>Code  
  [!code-csharp[c_CustomBinding#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#20)]
  [!code-vb[c_CustomBinding#20](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_custombinding/vb/source.vb#20)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.Channels.SecurityBindingElement>   
- <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>   
- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md)   
+ <xref:System.ServiceModel.Channels.SecurityBindingElement>  
+ <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
+ <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [Extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons fournies par le système](../../../../docs/framework/wcf/system-provided-bindings.md)

@@ -1,39 +1,43 @@
 ---
-title: "Comment&#160;: remplir une forme avec une couleur unie | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "couleurs, ajouter aux formes"
-  - "formes, remplir"
+title: "Comment : remplir une forme avec une couleur unie"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- colors [Windows Forms], adding to shapes
+- shapes [Windows Forms], filling
 ms.assetid: 06088b31-bac9-4ef3-9ebe-06c2c764d6df
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: eb3e160392a903083386d9942f8e2cfe31ee89a4
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: remplir une forme avec une couleur unie
-Pour remplir une forme avec une couleur unie, créez un objet <xref:System.Drawing.SolidBrush>, puis passez cet objet <xref:System.Drawing.SolidBrush> en tant qu'argument à l'une des méthodes de remplissage de la classe <xref:System.Drawing.Graphics>.  L'exemple suivant montre comment remplir une ellipse avec la couleur rouge.  
+# <a name="how-to-fill-a-shape-with-a-solid-color"></a>Comment : remplir une forme avec une couleur unie
+Pour remplir une forme avec une couleur unie, créez un <xref:System.Drawing.SolidBrush> de l’objet, puis passez-le <xref:System.Drawing.SolidBrush> objet en tant qu’argument à une des méthodes de remplissage de la <xref:System.Drawing.Graphics> classe. L’exemple suivant montre comment remplir une ellipse avec la couleur rouge.  
   
-## Exemple  
- Dans le code suivant, le constructeur <xref:System.Drawing.SolidBrush.%23ctor%2A> prend un objet <xref:System.Drawing.Color> en tant que son seul argument.  Les valeurs utilisées par la méthode <xref:System.Drawing.Color.FromArgb%2A> représente les composants alpha, rouge, vert et bleu de la couleur.  Chacune de ces valeurs doit être comprise entre 0 et 255.  Le premier 255 indique que la couleur est complètement opaque, le deuxième 255 indique que le composant rouge est à intensité complète.  Les deux zéros indiquent que les composants vert et bleu en tous deux une intensité de 0.  
+## <a name="example"></a>Exemple  
+ Dans le code suivant, le <xref:System.Drawing.SolidBrush.%23ctor%2A> constructeur accepte un <xref:System.Drawing.Color> objet comme seul argument. Les valeurs utilisées par la <xref:System.Drawing.Color.FromArgb%2A> méthode représentent les composants alphanumériques, rouges, verts et bleus de la couleur. Chacune de ces valeurs doit être comprise entre 0 et 255. Le premier 255 indique que la couleur est entièrement opaque, et le deuxième 255 indique que le composant rouge est à intensité complète. Les deux zéros indiquent que les composants verts et bleus ont une intensité de 0.  
   
- Les quatre nombres \(0, 0, 100, 60\) passés à la méthode <xref:System.Drawing.Graphics.FillEllipse%2A> spécifient l'emplacement et la taille du rectangle englobant de l'ellipse.  Le rectangle a un coin supérieur gauche de \(0, 0\), une largeur de 100 et une hauteur de 60.  
+ Les quatre nombres (0, 0, 100, 60) passés à la <xref:System.Drawing.Graphics.FillEllipse%2A> méthode spécifier l’emplacement et la taille du rectangle englobant de l’ellipse. Le rectangle a un coin supérieur gauche de (0, 0), une largeur de 100 et une hauteur de 60.  
   
  [!code-csharp[System.Drawing.UsingABrush#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.UsingABrush#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#11)]  
   
-## Compilation du code  
- L'exemple précédent est destiné à une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre du gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint>.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ L'exemple précédent est conçu pour une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre du gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint>.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Utilisation d'un pinceau pour remplir des formes](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)

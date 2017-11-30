@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - MDAs (managed debugging assistants), invalid apartment state
 - managed debugging assistants (MDAs), invalid apartment state
@@ -24,16 +18,15 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - COM apartment states
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f42a2b840a0cf678cfc2a06be0e9ed252c355a2a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 71634018e42ad66fdd2d03d0b0d496394cde801e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="invalidapartmentstatechange-mda"></a>Assistant Débogage managé invalidApartmentStateChange
 L’Assistant Débogage managé `invalidApartmentStateChange` est activé par l’un des deux problèmes suivants :  
@@ -50,7 +43,7 @@ L’Assistant Débogage managé `invalidApartmentStateChange` est activé par l�
   
 ## <a name="cause"></a>Cause  
   
--   Le thread a été précédemment initialisé à un état de cloisonnement COM différent. Notez que l’état de cloisonnement d’un thread peut être défini explicitement ou implicitement. Les opérations explicites incluent la propriété <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=fullName> et les méthodes <xref:System.Threading.Thread.SetApartmentState%2A> et <xref:System.Threading.Thread.TrySetApartmentState%2A>. <xref:System.Threading.ApartmentState.MTA> est implicitement affecté à un thread créé à l’aide de la méthode <xref:System.Threading.Thread.Start%2A>, à moins que <xref:System.Threading.Thread.SetApartmentState%2A> ne soit appelé avant le démarrage du thread. De même, la valeur <xref:System.Threading.ApartmentState.MTA> est implicitement affectée au thread principal de l’application, à moins que l’attribut <xref:System.STAThreadAttribute> ne soit spécifié sur la méthode principale.  
+-   Le thread a été précédemment initialisé à un état de cloisonnement COM différent. Notez que l’état de cloisonnement d’un thread peut être défini explicitement ou implicitement. Les opérations explicites incluent la propriété <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> et les méthodes <xref:System.Threading.Thread.SetApartmentState%2A> et <xref:System.Threading.Thread.TrySetApartmentState%2A>. <xref:System.Threading.ApartmentState.MTA> est implicitement affecté à un thread créé à l’aide de la méthode <xref:System.Threading.Thread.Start%2A>, à moins que <xref:System.Threading.Thread.SetApartmentState%2A> ne soit appelé avant le démarrage du thread. De même, la valeur <xref:System.Threading.ApartmentState.MTA> est implicitement affectée au thread principal de l’application, à moins que l’attribut <xref:System.STAThreadAttribute> ne soit spécifié sur la méthode principale.  
   
 -   La méthode `CoUninitialize` (ou la méthode `CoInitializeEx`) avec un modèle de concurrence différent est appelée sur le thread.  
   
@@ -93,7 +86,6 @@ namespace ApartmentStateMDA
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)

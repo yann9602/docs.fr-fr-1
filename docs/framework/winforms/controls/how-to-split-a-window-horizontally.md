@@ -1,37 +1,41 @@
 ---
-title: "Comment&#160;: fractionner une fen&#234;tre horizontalement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "SplitContainer (contrôle Windows Forms), fractionnement horizontal"
-  - "fenêtres fractionnées, modifier l'orientation du fractionnement"
-  - "fenêtres fractionnées, horizontale"
-  - "fenêtres, fractionner horizontalement"
+title: "Comment : fractionner une fenêtre horizontalement"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- SplitContainer control [Windows Forms], horizontal splitter
+- splitter windows [Windows Forms], changing splitter orientation
+- splitter windows [Windows Forms], horizontal
+- windows [Windows Forms], splitting horizontally
 ms.assetid: a1f74f29-048c-4723-85fa-b9d375ab8f4b
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 02133cc38221b23ea1e2b14bfd0bbcf1987ab532
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: fractionner une fen&#234;tre horizontalement
-L'exemple de code suivant fait en sorte que le séparateur qui divise le contrôle <xref:System.Windows.Forms.SplitContainer> soit horizontal.  
+# <a name="how-to-split-a-window-horizontally"></a>Comment : fractionner une fenêtre horizontalement
+L’exemple de code suivant rend le séparateur qui divise le <xref:System.Windows.Forms.SplitContainer> horizontal du contrôle.  
   
 > [!NOTE]
->  La propriété <xref:System.Windows.Forms.SplitContainer.Orientation%2A> du contrôle <xref:System.Windows.Forms.SplitContainer> détermine la direction du séparateur et non du contrôle lui\-même.  
+>  Le <xref:System.Windows.Forms.SplitContainer.Orientation%2A> propriété de la <xref:System.Windows.Forms.SplitContainer> contrôle détermine la direction du séparateur et non du contrôle lui-même.  
   
-### Pour fractionner une fenêtre horizontalement  
+### <a name="to-split-a-window-horizontally"></a>Pour fractionner une fenêtre horizontalement  
   
-1.  Dans une procédure, affectez à la propriété <xref:System.Windows.Forms.SplitContainer.Orientation%2A> du contrôle <xref:System.Windows.Forms.SplitContainer> la valeur <xref:System.Windows.Forms.Orientation>.  
+1.  Dans une procédure, affectez le <xref:System.Windows.Forms.SplitContainer.Orientation%2A> propriété de la <xref:System.Windows.Forms.SplitContainer> le contrôle à <xref:System.Windows.Forms.Orientation.Horizontal>.  
   
     ```vb  
     Sub ShowSplitContainer()  
@@ -44,7 +48,6 @@ L'exemple de code suivant fait en sorte que le séparateur qui divise le contrô
         splitContainer1.Orientation = Orientation.Horizontal  
         Controls.Add(splitContainer1)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -62,6 +65,6 @@ L'exemple de code suivant fait en sorte que le séparateur qui divise le contrô
     }  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.SplitContainer>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.SplitContainer>  
  [SplitContainer, contrôle](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)

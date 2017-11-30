@@ -1,25 +1,28 @@
 ---
-title: "Acc&#233;der &#224; un OperationContext &#224; partir d&#39;un service de workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Accéder à un OperationContext à partir d'un service de workflow"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 11a6a1efad59ba5b9f3a143277909b63a5fe5e05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Acc&#233;der &#224; un OperationContext &#224; partir d&#39;un service de workflow
-Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de workflow, vous devez implémenter l'interface <xref:System.ServiceModel.Activities.IReceiveMessageCallback> dans une propriété d'exécution personnalisée.Remplacez la méthode <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False&autoUpgrade=True passée à <xref:System.ServiceModel.OperationContext>.Cette rubrique vous aidera à implémenter cette propriété d'exécution pour récupérer un en\-tête personnalisé, ainsi qu'une activité personnalisée qui affichera cette propriété à  <xref:System.ServiceModel.Activities.Receive> au moment de l'exécution.L'activité personnalisée implémentera le même comportement qu'une activité <xref:System.ServiceModel.Activities.Sequence>, excepté lorsqu'un <xref:System.ServiceModel.Activities.Receive> est placé à l'intérieur,  <xref:System.ServiceModel.Activities.IReceiveMessageCallback> sera appelé et l'information  <xref:System.ServiceModel.OperationContext> sera récupérée.Cette rubrique explique également comment accéder à <xref:System.ServiceModel.OperationContext> côté client pour ajouter des en\-têtes sortants via l'interface <xref:System.ServiceModel.Activities.ISendMessageCallback>.  
+# <a name="accessing-operationcontext-from-a-workflow-service"></a>Accéder à un OperationContext à partir d'un service de workflow
+Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de workflow, vous devez implémenter l'interface <xref:System.ServiceModel.Activities.IReceiveMessageCallback> dans une propriété d'exécution personnalisée. Remplacer la <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False & mise à niveau automatique = True méthode qui est passée à la <xref:System.ServiceModel.OperationContext>. Cette rubrique vous aidera à implémenter cette propriété d'exécution pour récupérer un en-tête personnalisé, ainsi qu'une activité personnalisée qui affichera cette propriété à  <xref:System.ServiceModel.Activities.Receive> au moment de l'exécution.  L’activité personnalisée implémentera le même comportement qu’un <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` activité, excepté lorsqu’un <xref:System.ServiceModel.Activities.Receive> est placé à l’intérieur, le <xref:System.ServiceModel.Activities.IReceiveMessageCallback> sera appelé et le <xref:System.ServiceModel.OperationContext> les informations seront récupérées.  Cette rubrique explique également comment accéder à <xref:System.ServiceModel.OperationContext> côté client pour ajouter des en-têtes sortants via l'interface <xref:System.ServiceModel.Activities.ISendMessageCallback>.  
   
-### Implémenter IReceiveMessageCallback côté service  
+### <a name="implement-the-service-side-ireceivemessagecallback"></a>Implémenter IReceiveMessageCallback côté service  
   
 1.  Créez une solution [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] vide.  
   
@@ -54,12 +57,11 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                 }  
             }  
     }  
-  
     ```  
   
-     Ce code utilise le <xref:System.ServiceModel.OperationContext> passé dans la méthode pour accéder aux en\-têtes du message entrant.  
+     Ce code utilise le <xref:System.ServiceModel.OperationContext> passé dans la méthode pour accéder aux en-têtes du message entrant.  
   
-### Implémenter une activité native côté service pour ajouter l'implémentation de IReceiveMessageCallback à NativeActivityContext  
+### <a name="implement-a-service-side-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a>Implémenter une activité native côté service pour ajouter l'implémentation de IReceiveMessageCallback à NativeActivityContext  
   
 1.  Ajoutez une nouvelle classe dérivée de <xref:System.Activities.NativeActivity> nommée `ReceiveInstanceIdScope`.  
   
@@ -73,7 +75,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
             Variable<int> currentIndex;  
             CompletionCallback onChildComplete;  
     }  
-  
     ```  
   
 3.  Implémenter le constructeur  
@@ -87,7 +88,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                 this.currentIndex = new Variable<int>();  
             }  
     }  
-  
     ```  
   
 4.  Implémentez les propriétés `Activities` et `Variables`.  
@@ -102,7 +102,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
     {  
         get { return this.variables; }  
     }  
-  
     ```  
   
 5.  Substituer la méthode <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
@@ -115,7 +114,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
         //add the private implementation variable: currentIndex   
         metadata.AddImplementationVariable(this.currentIndex);  
     }  
-  
     ```  
   
 6.  Substituer la méthode <xref:System.Activities.NativeActivity.Execute%2A>  
@@ -152,12 +150,11 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                 //increment the currentIndex  
                 this.currentIndex.Set(context, ++currentActivityIndex);  
             }  
-  
     ```  
   
-### Implémenter le service de workflow  
+### <a name="implement-the-workflow-service"></a>Implémenter le service de workflow  
   
-1.  Ouvrez la classe `Program` existante.  
+1.  Ouvrir `Program` classe.  
   
 2.  Définissez les constantes suivantes :  
   
@@ -167,7 +164,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
        const string addr = "http://localhost:8080/Service";  
        static XName contract = XName.Get("IService", "http://tempuri.org");  
     }  
-  
     ```  
   
 3.  Ajoutez une méthode statique nommée `GetWorkflowService` qui crée le service de workflow.  
@@ -206,7 +202,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                     }  
                 };  
             }  
-  
     ```  
   
 4.  Dans la méthode `Main` existante, hébergez le service de workflow.  
@@ -227,10 +222,9 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                     host.Close();  
                 }  
             }  
-  
     ```  
   
-### Implémenter ISendMessageCallback côté client  
+### <a name="implement-the-client-side-isendmessagecallback"></a>Implémenter ISendMessageCallback côté client  
   
 1.  Ajoutez à la solution une nouvelle application console nommée `Service`.  
   
@@ -257,12 +251,11 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                 operationContext.OutgoingMessageHeaders.Add(MessageHeader.CreateHeader(HeaderName, HeaderNS, this.InstanceId));  
             }  
         }  
-  
     ```  
   
-     Ce code utilise le <xref:System.ServiceModel.OperationContext> passé dans la méthode pour ajouter un en\-tête personnalisé au message entrant.  
+     Ce code utilise le <xref:System.ServiceModel.OperationContext> passé dans la méthode pour ajouter un en-tête personnalisé au message entrant.  
   
-### Implémenter une activité native côté client pour ajouter l'implémentation ISendMessageCallback côté client à NativeActivityContext  
+### <a name="implement-a-client-side-native-activity-to-add-the-client-side-isendmessagecallback-implementation-to-the-nativeactivitycontext"></a>Implémenter une activité native côté client pour ajouter l'implémentation ISendMessageCallback côté client à NativeActivityContext  
   
 1.  Ajoutez une nouvelle classe dérivée de <xref:System.Activities.NativeActivity> nommée `SendInstanceIdScope`.  
   
@@ -276,7 +269,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
             Variable<int> currentIndex;  
             CompletionCallback onChildComplete;  
     }  
-  
     ```  
   
 3.  Implémenter le constructeur  
@@ -289,7 +281,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                 this.variables = new Collection<Variable>();  
                 this.currentIndex = new Variable<int>();  
             }  
-  
     ```  
   
 4.  Implémentez les propriétés `Activities` et `Variables`.  
@@ -304,7 +295,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
     {  
         get { return this.variables; }  
     }  
-  
     ```  
   
 5.  Substituer la méthode <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
@@ -317,7 +307,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
         //add the private implementation variable: currentIndex   
         metadata.AddImplementationVariable(this.currentIndex);  
     }  
-  
     ```  
   
 6.  Substituer la méthode <xref:System.Activities.NativeActivity.Execute%2A>  
@@ -385,10 +374,9 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                 //increment the currentIndex  
                 this.currentIndex.Set(context, ++currentActivityIndex);  
             }  
-  
     ```  
   
-### Implémenter un client de workflow  
+### <a name="implement-a-workflow-client"></a>Implémenter un client de workflow  
   
 1.  Créez un projet d'application console nommé `Client`.  
   
@@ -458,7 +446,6 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
                     }  
                 };  
             }  
-  
     ```  
   
 4.  Ajoutez le code d'hébergement suivant à la méthode `Main()`.  
@@ -472,11 +459,10 @@ Pour accéder à <xref:System.ServiceModel.OperationContext> dans un service de 
        Console.WriteLine("Press [ENTER] to exit");  
        Console.ReadLine();  
     }  
-  
     ```  
   
-## Exemple  
- L'intégralité du code source utilisé dans cette rubrique est présentée ci\-dessous.  
+## <a name="example"></a>Exemple  
+ L'intégralité du code source utilisé dans cette rubrique est présentée ci-dessous.  
   
 ```  
 // ReceiveInstanceIdScope.cs  
@@ -561,7 +547,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -595,7 +580,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -671,7 +655,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
     }  
   
 }  
-  
 ```  
   
 ```  
@@ -699,7 +682,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -785,7 +767,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -864,12 +845,11 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
  Commentaires facultatifs.  
   
-## Voir aussi  
- [Services de workflow](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [Accès à OperationContext](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)   
- [Création de workflows, d'activités et d'expressions à l'aide du code impératif](../../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## <a name="see-also"></a>Voir aussi  
+ [Services de workflow](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [L’accès à OperationContext](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
+ [Création de workflows, d’activités et d’expressions à l’aide du code impératif](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

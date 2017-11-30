@@ -1,25 +1,29 @@
 ---
-title: "Concepteurs composites personnalis&#233;s&#160;- Pr&#233;sentateur d&#39;&#233;l&#233;ments de workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Concepteurs composites personnalisés - Présentateur d'éléments de workflow"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3fa40a7a864ae65d15d787f5dec58a8da7b8e9a0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Concepteurs composites personnalis&#233;s&#160;- Pr&#233;sentateur d&#39;&#233;l&#233;ments de workflow
-Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de clé dans le modèle de programmation de concepteur WF qui permet la création d'une « zone de dépôt » où une activité arbitraire peut être placée.Cet exemple montre comment générer un concepteur d'activités qui fait apparaître une telle « zone de dépôt ».  
+# <a name="custom-composite-designers---workflow-item-presenter"></a>Concepteurs composites personnalisés - Présentateur d'éléments de workflow
+Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de clé dans le modèle de programmation concepteur WF qui permet la création d’une « zone de dépôt » où une activité arbitraire peut être placée. Cet exemple montre comment générer un concepteur d’activités qui fait apparaître telle « zone de dépôt. »  
   
  Cet exemple illustre les opérations suivantes :  
   
-## Démonstrations  
+## <a name="demonstrates"></a>Démonstrations  
   
 -   Création d'un concepteur d'activités personnalisées avec un <xref:System.Activities.Presentation.WorkflowItemPresenter>.  
   
@@ -27,7 +31,7 @@ Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de cl
   
 -   Programmation de la boîte à outils réhébergée de façon déclarative et impérative.  
   
-## Détails de l'exemple  
+## <a name="sample-details"></a>Détails de l'exemple  
  Le code de cet exemple illustre les points suivants :  
   
 -   Le concepteur d'activités personnalisées est généré pour la classe `SimpleNativeActivity`.  
@@ -68,23 +72,23 @@ Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de cl
 </sap:ActivityDesigner>  
 ```  
   
- Notez l'utilisation de la liaison de données WPF pour lier à `ModelItem.Body`.`ModelItem` est la propriété sur <xref:System.Activities.Presentation.WorkflowElementDesigner> qui fait référence à l'objet sous\-jacent pour lequel le concepteur est utilisé, dans ce cas, **SimpleNativeActivity**.  
+ Notez l'utilisation de la liaison de données WPF pour lier à `ModelItem.Body`. `ModelItem`est la propriété sur <xref:System.Activities.Presentation.ActivityDesigner> qui fait référence à l’objet sous-jacent, le concepteur est utilisé, dans ce cas, **SimpleNativeActivity**.  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-setup-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
 1.  Ouvrez la solution dans [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
 2.  Appuyez sur F5 pour compiler et exécuter l'application.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemPresenter`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemPresenter`  
   
-## Voir aussi  
- <xref:System.Activities.Presentation.WorkflowItemPresenter>   
- [Développement d'applications avec Workflow Designer](../Topic/Developing%20Applications%20with%20the%20Workflow%20Designer.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Activities.Presentation.WorkflowItemPresenter>  
+ [Développement d’applications avec le Concepteur de flux de travail](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)

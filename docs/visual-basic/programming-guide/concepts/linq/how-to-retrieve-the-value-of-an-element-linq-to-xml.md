@@ -1,34 +1,30 @@
 ---
-title: "Comment : récupérer la valeur d’un élément (LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Comment : récupérer la valeur d’un élément (LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 76b9b2a5-b3ba-49da-ba74-82100e1bd21c
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d38928df51006a8db9417d34ccbe6cd03091db66
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: e688872ea514e822a81b4b3e285ad0d0aa8a0f17
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>Comment : récupérer la valeur d’un élément (LINQ to XML) (Visual Basic)
-Cette rubrique montre comment obtenir la valeur d'éléments. Il existe deux façons de procéder. Un des moyens consiste à convertir un <xref:System.Xml.Linq.XElement>ou un <xref:System.Xml.Linq.XAttribute>vers le type souhaité.</xref:System.Xml.Linq.XAttribute> </xref:System.Xml.Linq.XElement> L'opérateur de conversion explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié et l'affecte à votre variable. Vous pouvez également utiliser le <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>propriété ou <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=fullName>propriété.</xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=fullName> </xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>  
+Cette rubrique montre comment obtenir la valeur d'éléments. Il existe deux façons de procéder. L'un des moyens consiste à convertir un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute> vers le type souhaité. L'opérateur de conversion explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié et l'affecte à votre variable. En guise d'alternative, vous pouvez utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> ou <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType>.  
   
- Avec Visual Basic, la meilleure approche consiste à utiliser le <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>propriété.</xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>  
+ Avec Visual Basic, la meilleure approche consiste à utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Exemple  
- Pour récupérer la valeur d’un élément, vous suffit de convertir la <xref:System.Xml.Linq.XElement>objet vers le type souhaité.</xref:System.Xml.Linq.XElement> Vous pouvez toujours convertir un élément en chaîne, comme suit :  
+ Pour récupérer la valeur d'un élément, il vous suffit de convertir l'objet <xref:System.Xml.Linq.XElement> vers le type souhaité. Vous pouvez toujours convertir un élément en chaîne, comme suit :  
   
 ```vb  
 Dim e As XElement = <StringElement>abcde</StringElement>  
@@ -38,7 +34,7 @@ Console.WriteLine("Value of e:" & e.Value)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <StringElement>abcde</StringElement>  
 Value of e:abcde  
 ```  
@@ -54,17 +50,17 @@ Console.WriteLine("Value of e:" & CInt(e))
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <Age>44</Age>  
 Value of e:44  
 ```  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]provides explicit cast operators for the following data types: `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, and `GUID?`.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit des opérateurs de cast explicites pour les types de données suivants : `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID` et `GUID?`.  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]fournit les mêmes opérateurs de cast pour <xref:System.Xml.Linq.XAttribute>objets.</xref:System.Xml.Linq.XAttribute>  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit les mêmes opérateurs de conversion pour les objets <xref:System.Xml.Linq.XAttribute>.  
   
 ## <a name="example"></a>Exemple  
- Vous pouvez utiliser le <xref:System.Xml.Linq.XElement.Value%2A>propriété pour récupérer le contenu d’un élément :</xref:System.Xml.Linq.XElement.Value%2A>  
+ Vous pouvez utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A> pour récupérer le contenu d'un élément :  
   
 ```vb  
 Dim e As XElement = <StringElement>abcde</StringElement>  
@@ -74,13 +70,13 @@ Console.WriteLine("Value of e:" & e.Value)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <StringElement>abcde</StringElement>  
 Value of e:abcde  
 ```  
   
 ## <a name="example"></a>Exemple  
- Parfois, vous souhaitez récupérer la valeur d'un élément sans être certain qu'il existe. Dans ce cas, lorsque vous affectez l’élément converti vers un type nullable (soit `string` ou l’un des types nullable dans le [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]), si l’élément n’existe pas assigné variable est simplement définie à `Nothing`. Le code suivant montre que l’élément peut ou ne pas existe, il est plus facile à utiliser la conversion plutôt que d’utiliser le <xref:System.Xml.Linq.XElement.Value%2A>propriété.</xref:System.Xml.Linq.XElement.Value%2A>  
+ Parfois, vous souhaitez récupérer la valeur d'un élément sans être certain qu'il existe. Dans ce cas, lorsque vous assignez l’élément casté à un type Nullable (`string` ou l’un des types Nullable du [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), si l’élément n’existe pas, la variable assignée est définie sur `Nothing`. Le code suivant montre que lorsqu'il n'est pas certain que l'élément existe, il est plus simple d'utiliser la conversion que la propriété <xref:System.Xml.Linq.XElement.Value%2A>.  
   
 ```vb  
 Dim root As XElement = <Root>  
