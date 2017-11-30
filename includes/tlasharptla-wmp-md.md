@@ -1,1 +1,1 @@
-Lecteur Windows Media Microsoft
+<span data-ttu-id="09687-101">Lecteur Windows Media Microsoft</span><span class="sxs-lookup"><span data-stu-id="09687-101">Microsoft Windows Media Player</span></span>

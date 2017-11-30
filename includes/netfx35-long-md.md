@@ -1,1 +1,1 @@
-.NET Framework version 3.5
+<span data-ttu-id="e4026-101">.NET Framework version 3.5</span><span class="sxs-lookup"><span data-stu-id="e4026-101">.NET Framework version 3.5</span></span>

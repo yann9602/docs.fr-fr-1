@@ -1,1 +1,1 @@
-Active Accessibility
+<span data-ttu-id="ecca8-101">Active Accessibility</span><span class="sxs-lookup"><span data-stu-id="ecca8-101">Active Accessibility</span></span>

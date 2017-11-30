@@ -1,117 +1,123 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: h&#233;bergement d&#39;un contr&#244;le ActiveX dans WPF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles ActiveX (interopérabilité WPF)"
-  - "héberger des contrôles ActiveX"
+title: "Procédure pas à pas : hébergement d'un contrôle ActiveX dans WPF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ActiveX controls [WPF interoperability]
+- hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-caps.latest.revision: 30
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 25944b3dd28c0bce2646c06ec424b54acc8b8a1e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: h&#233;bergement d&#39;un contr&#244;le ActiveX dans WPF
-Pour permettre une interaction améliorée avec les navigateurs, vous pouvez utiliser des contrôles [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] dans votre application basée sur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Cette procédure pas à pas montre comment vous pouvez héberger le [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] en tant que contrôle sur une page [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+# <a name="walkthrough-hosting-an-activex-control-in-wpf"></a><span data-ttu-id="e91c8-102">Procédure pas à pas : hébergement d'un contrôle ActiveX dans WPF</span><span class="sxs-lookup"><span data-stu-id="e91c8-102">Walkthrough: Hosting an ActiveX Control in WPF</span></span>
+<span data-ttu-id="e91c8-103">Pour permettre une interaction améliorée avec les navigateurs, vous pouvez utiliser [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] des contrôles dans votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-application basée sur.</span><span class="sxs-lookup"><span data-stu-id="e91c8-103">To enable improved interaction with browsers, you can use [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] controls in your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-based application.</span></span> <span data-ttu-id="e91c8-104">Cette procédure pas à pas montre comment vous pouvez héberger le [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] comme un contrôle sur un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] page.</span><span class="sxs-lookup"><span data-stu-id="e91c8-104">This walkthrough demonstrates how you can host the [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] as a control on a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] page.</span></span>  
   
- Cette procédure pas à pas illustre les tâches suivantes :  
+ <span data-ttu-id="e91c8-105">Cette procédure pas à pas décrit notamment les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="e91c8-105">Tasks illustrated in this walkthrough include:</span></span>  
   
--   création du projet ;  
+-   <span data-ttu-id="e91c8-106">Création du projet.</span><span class="sxs-lookup"><span data-stu-id="e91c8-106">Creating the project.</span></span>  
   
--   Création du contrôle ActiveX.  
+-   <span data-ttu-id="e91c8-107">Création du contrôle ActiveX.</span><span class="sxs-lookup"><span data-stu-id="e91c8-107">Creating the ActiveX control.</span></span>  
   
--   Hébergement du contrôle ActiveX sur une page WPF.  
+-   <span data-ttu-id="e91c8-108">Hébergement du contrôle ActiveX sur une Page WPF.</span><span class="sxs-lookup"><span data-stu-id="e91c8-108">Hosting the ActiveX control on a WPF Page.</span></span>  
   
- Lorsque vous aurez complété cette procédure pas à pas, vous comprendrez comment utiliser des contrôles [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] dans votre application basée sur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+ <span data-ttu-id="e91c8-109">Lorsque vous avez terminé cette procédure pas à pas, vous saurez comment utiliser [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] des contrôles dans votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-application basée sur.</span><span class="sxs-lookup"><span data-stu-id="e91c8-109">When you have completed this walkthrough, you will understand how to use [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] controls in your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-based application.</span></span>  
   
-## Composants requis  
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
+## <a name="prerequisites"></a><span data-ttu-id="e91c8-110">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="e91c8-110">Prerequisites</span></span>  
+ <span data-ttu-id="e91c8-111">Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="e91c8-111">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] installé sur l'ordinateur où [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] est installé.  
+-   [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)]<span data-ttu-id="e91c8-112">installé sur l’ordinateur où [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] est installé.</span><span class="sxs-lookup"><span data-stu-id="e91c8-112"> installed on the computer where [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] is installed.</span></span>  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]<span data-ttu-id="e91c8-113">.</span><span class="sxs-lookup"><span data-stu-id="e91c8-113">.</span></span>  
   
-## Création du projet  
+## <a name="creating-the-project"></a><span data-ttu-id="e91c8-114">Création du projet</span><span class="sxs-lookup"><span data-stu-id="e91c8-114">Creating the Project</span></span>  
   
-#### Pour créer et paramétrer le projet  
+#### <a name="to-create-and-set-up-the-project"></a><span data-ttu-id="e91c8-115">Pour créer et configurer le projet</span><span class="sxs-lookup"><span data-stu-id="e91c8-115">To create and set up the project</span></span>  
   
-1.  Créez un projet d'application WPF nommé `HostingAxInWpf`.  
+1.  <span data-ttu-id="e91c8-116">Créez un projet d’Application WPF nommé `HostingAxInWpf`.</span><span class="sxs-lookup"><span data-stu-id="e91c8-116">Create a WPF Application project named `HostingAxInWpf`.</span></span>  
   
-2.  Ajoutez un projet de bibliothèque de contrôles Windows Forms à la solution, puis nommez le projet `WmpAxLib`.  
+2.  <span data-ttu-id="e91c8-117">Ajouter un projet de bibliothèque de contrôles Windows Forms à la solution et nommez le projet `WmpAxLib`.</span><span class="sxs-lookup"><span data-stu-id="e91c8-117">Add a Windows Forms Control Library project to the solution, and name the project `WmpAxLib`.</span></span>  
   
-3.  Dans le projet WmpAxLib, ajoutez une référence à l'assembly de Lecteur Windows Media nommé wmp.dll.  
+3.  <span data-ttu-id="e91c8-118">Dans le projet WmpAxLib, ajoutez une référence à l’assembly de lecteur Windows Media nommé wmp.dll.</span><span class="sxs-lookup"><span data-stu-id="e91c8-118">In the WmpAxLib project, add a reference to the Windows Media Player assembly, which is named wmp.dll.</span></span>  
   
-4.  Ouvrez la **Boîte à outils**.  
+4.  <span data-ttu-id="e91c8-119">Ouvrez le **boîte à outils**.</span><span class="sxs-lookup"><span data-stu-id="e91c8-119">Open the **Toolbox**.</span></span>  
   
-5.  Cliquez avec le bouton droit sur **Boîte à outils**, puis cliquez sur **Choisir les éléments**.  
+5.  <span data-ttu-id="e91c8-120">Avec le bouton droit dans le **boîte à outils**, puis cliquez sur **choisir des éléments de**.</span><span class="sxs-lookup"><span data-stu-id="e91c8-120">Right-click in the **Toolbox**, and then click **Choose Items**.</span></span>  
   
-6.  Cliquez sur l'onglet **Composants COM**, sélectionnez le contrôle **Lecteur Windows Media**, puis cliquez sur **OK**.  
+6.  <span data-ttu-id="e91c8-121">Cliquez sur le **des composants COM** onglet, sélectionnez le **le lecteur Windows Media** contrôler, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="e91c8-121">Click the **COM Components** tab, select the **Windows Media Player** control, and then click **OK**.</span></span>  
   
-     Le contrôle de Lecteur Windows Media est ajouté à la **Boîte à outils**.  
+     <span data-ttu-id="e91c8-122">Le contrôle Windows Media Player est ajouté à la **boîte à outils**.</span><span class="sxs-lookup"><span data-stu-id="e91c8-122">The Windows Media Player control is added to the **Toolbox**.</span></span>  
   
-7.  Dans l'Explorateur de solutions, cliquez avec le bouton droit sur le fichier **UserControl1**, puis cliquez sur **Renommer**.  
+7.  <span data-ttu-id="e91c8-123">Dans l’Explorateur de solutions, cliquez sur le **UserControl1** de fichiers, puis cliquez sur **renommer**.</span><span class="sxs-lookup"><span data-stu-id="e91c8-123">In Solution Explorer, right-click the **UserControl1** file, and then click **Rename**.</span></span>  
   
-8.  Modifiez le nom en `WmpAxControl.vb` ou `WmpAxControl.cs`, selon le langage.  
+8.  <span data-ttu-id="e91c8-124">Remplacez le nom par `WmpAxControl.vb` ou `WmpAxControl.cs`, selon le langage.</span><span class="sxs-lookup"><span data-stu-id="e91c8-124">Change the name to `WmpAxControl.vb` or `WmpAxControl.cs`, depending on the language.</span></span>  
   
-9. Si vous êtes invités à renommer toutes les références, cliquez sur **Oui**.  
+9. <span data-ttu-id="e91c8-125">Si vous êtes invité à renommer toutes les références, cliquez sur **Oui**.</span><span class="sxs-lookup"><span data-stu-id="e91c8-125">If you are prompted to rename all references, click **Yes**.</span></span>  
   
-## Création du contrôle ActiveX  
- [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] génère automatiquement une classe wrapper <xref:System.Windows.Forms.AxHost> pour un contrôle [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] lorsque le contrôle est ajouté à une aire de conception.  La procédure suivante crée un assembly managé nommé AxInterop.WMPLib.dll.  
+## <a name="creating-the-activex-control"></a><span data-ttu-id="e91c8-126">Création du contrôle ActiveX</span><span class="sxs-lookup"><span data-stu-id="e91c8-126">Creating the ActiveX Control</span></span>  
+ [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]<span data-ttu-id="e91c8-127">génère automatiquement un <xref:System.Windows.Forms.AxHost> classe wrapper pour un [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] contrôle lorsque le contrôle est ajouté à une aire de conception.</span><span class="sxs-lookup"><span data-stu-id="e91c8-127"> automatically generates an <xref:System.Windows.Forms.AxHost> wrapper class for a [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] control when the control is added to a design surface.</span></span> <span data-ttu-id="e91c8-128">La procédure suivante crée un assembly managé nommé AxInterop.WMPLib.dll.</span><span class="sxs-lookup"><span data-stu-id="e91c8-128">The following procedure creates a managed assembly named AxInterop.WMPLib.dll.</span></span>  
   
-#### Pour créer le contrôle ActiveX  
+#### <a name="to-create-the-activex-control"></a><span data-ttu-id="e91c8-129">Pour créer le contrôle ActiveX</span><span class="sxs-lookup"><span data-stu-id="e91c8-129">To create the ActiveX control</span></span>  
   
-1.  Ouvrez WmpAxControl.cs ou WmpAxControl.vb dans le Concepteur Windows Forms.  
+1.  <span data-ttu-id="e91c8-130">Ouvrez WmpAxControl.cs ou WmpAxControl.vb dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="e91c8-130">Open WmpAxControl.vb or WmpAxControl.cs in the Windows Forms Designer.</span></span>  
   
-2.  Dans la **Boîte à outils**, ajoutez le contrôle de Lecteur Windows Media à l'aire de conception.  
+2.  <span data-ttu-id="e91c8-131">À partir de la **boîte à outils**, ajoutez le contrôle de lecteur Windows Media à l’aire de conception.</span><span class="sxs-lookup"><span data-stu-id="e91c8-131">From the **Toolbox**, add the Windows Media Player control to the design surface.</span></span>  
   
-3.  Dans la fenêtre Propriétés, attribuez la valeur <xref:System.Windows.Forms.DockStyle> à la propriété <xref:System.Windows.Forms.Control.Dock%2A> du contrôle du Lecteur Windows Media.  
+3.  <span data-ttu-id="e91c8-132">Dans la fenêtre Propriétés, définissez la valeur du contrôle Lecteur Windows Media <xref:System.Windows.Forms.Control.Dock%2A> propriété <xref:System.Windows.Forms.DockStyle.Fill>.</span><span class="sxs-lookup"><span data-stu-id="e91c8-132">In the Properties window, set the value of the Windows Media Player control's <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
   
-4.  Générez le projet de bibliothèque de contrôles WmpAxLib.  
+4.  <span data-ttu-id="e91c8-133">Générez le projet de bibliothèque de contrôles WmpAxLib.</span><span class="sxs-lookup"><span data-stu-id="e91c8-133">Build the WmpAxLib control library project.</span></span>  
   
-## Hébergement du contrôle ActiveX sur une page WPF  
+## <a name="hosting-the-activex-control-on-a-wpf-page"></a><span data-ttu-id="e91c8-134">Hébergement du contrôle ActiveX sur une Page WPF</span><span class="sxs-lookup"><span data-stu-id="e91c8-134">Hosting the ActiveX Control on a WPF Page</span></span>  
   
-#### Pour héberger le contrôle ActiveX  
+#### <a name="to-host-the-activex-control"></a><span data-ttu-id="e91c8-135">Pour héberger le contrôle ActiveX</span><span class="sxs-lookup"><span data-stu-id="e91c8-135">To host the ActiveX control</span></span>  
   
-1.  Dans le projet HostingAxInWpf, ajoutez une référence à l'assembly d'interopérabilité [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] généré.  
+1.  <span data-ttu-id="e91c8-136">Dans le projet HostingAxInWpf, ajoutez une référence à généré [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] assembly d’interopérabilité.</span><span class="sxs-lookup"><span data-stu-id="e91c8-136">In the HostingAxInWpf project, add a reference to the generated [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)] interoperability assembly.</span></span>  
   
-     Cet assembly est nommé AxInterop.WMPLib.dll et a été ajouté au dossier Debug du projet WmpAxLib lorsque vous avez importé le contrôle du Lecteur Windows Media.  
+     <span data-ttu-id="e91c8-137">Cet assembly est nommé AxInterop.WMPLib.dll et a été ajouté au dossier Debug du projet WmpAxLib lorsque vous avez importé le contrôle du lecteur Windows Media.</span><span class="sxs-lookup"><span data-stu-id="e91c8-137">This assembly is named AxInterop.WMPLib.dll and was added to the Debug folder of the WmpAxLib project when you imported the Windows Media Player control.</span></span>  
   
-2.  Ajoutez une référence à l'assembly WindowsFormsIntegration, nommé WindowsFormsIntegration.dll.  
+2.  <span data-ttu-id="e91c8-138">Ajoutez une référence à l’assembly WindowsFormsIntegration, nommé WindowsFormsIntegration.dll.</span><span class="sxs-lookup"><span data-stu-id="e91c8-138">Add a reference to the WindowsFormsIntegration assembly, which is named WindowsFormsIntegration.dll.</span></span>  
   
-3.  Ajoutez une référence à l'assembly [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nommé System.Windows.Forms.dll.  
+3.  <span data-ttu-id="e91c8-139">Ajoutez une référence à la [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] assembly nommé System.Windows.Forms.dll.</span><span class="sxs-lookup"><span data-stu-id="e91c8-139">Add a reference to the [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] assembly, which is named System.Windows.Forms.dll.</span></span>  
   
-4.  Ouvrez MainWindow.xaml dans le Concepteur WPF.  
+4.  <span data-ttu-id="e91c8-140">Ouvrez MainWindow.xaml dans le Concepteur WPF.</span><span class="sxs-lookup"><span data-stu-id="e91c8-140">Open MainWindow.xaml in the WPF Designer.</span></span>  
   
-5.  Nommez l'élément <xref:System.Windows.Controls.Grid> `grid1`.  
+5.  <span data-ttu-id="e91c8-141">Nom de la <xref:System.Windows.Controls.Grid> élément `grid1`.</span><span class="sxs-lookup"><span data-stu-id="e91c8-141">Name the <xref:System.Windows.Controls.Grid> element `grid1`.</span></span>  
   
-     [!code-xml[HostingAxInWpf#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml#1)]  
+     [!code-xaml[HostingAxInWpf#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml#1)]  
   
-6.  En mode Design ou XAML, sélectionnez l'élément <xref:System.Windows.Window>.  
+6.  <span data-ttu-id="e91c8-142">En mode Création ou la vue XAML, sélectionnez le <xref:System.Windows.Window> élément.</span><span class="sxs-lookup"><span data-stu-id="e91c8-142">In Design view or XAML view, select the <xref:System.Windows.Window> element.</span></span>  
   
-7.  Dans la fenêtre Propriétés, cliquez sur l'onglet **Événements**.  
+7.  <span data-ttu-id="e91c8-143">Dans la fenêtre Propriétés, cliquez sur le **événements** onglet.</span><span class="sxs-lookup"><span data-stu-id="e91c8-143">In the Properties window, click the **Events** tab.</span></span>  
   
-8.  Double\-cliquez sur l'événement <xref:System.Windows.FrameworkElement.Loaded>.  
+8.  <span data-ttu-id="e91c8-144">Double-cliquez sur le <xref:System.Windows.FrameworkElement.Loaded> événement.</span><span class="sxs-lookup"><span data-stu-id="e91c8-144">Double-click the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span>  
   
-9. Insérez le code suivant pour gérer l'événement <xref:System.Windows.FrameworkElement.Loaded>.  
+9. <span data-ttu-id="e91c8-145">Insérez le code suivant pour gérer les <xref:System.Windows.FrameworkElement.Loaded> événement.</span><span class="sxs-lookup"><span data-stu-id="e91c8-145">Insert the following code to handle the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span>  
   
-     Ce code crée une instance du contrôle <xref:System.Windows.Forms.Integration.WindowsFormsHost> et ajoute une instance du contrôle `AxWindowsMediaPlayer` en tant qu'enfant.  
+     <span data-ttu-id="e91c8-146">Ce code crée une instance de la <xref:System.Windows.Forms.Integration.WindowsFormsHost> contrôler et ajoute une instance de la `AxWindowsMediaPlayer` contrôle enfant.</span><span class="sxs-lookup"><span data-stu-id="e91c8-146">This code creates an instance of the <xref:System.Windows.Forms.Integration.WindowsFormsHost> control and adds an instance of the `AxWindowsMediaPlayer` control as its child.</span></span>  
   
      [!code-csharp[HostingAxInWpf#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml.cs#11)]
      [!code-vb[HostingAxInWpf#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HostingAxInWpf/VisualBasic/HostingAxInWpf/window1.xaml.vb#11)]  
   
-10. Appuyez sur F5 pour générer et exécuter l'application.  
+10. <span data-ttu-id="e91c8-147">Appuyez sur F5 pour générer et exécuter l'application.</span><span class="sxs-lookup"><span data-stu-id="e91c8-147">Press F5 to build and run the application.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [Concepteur WPF](http://msdn.microsoft.com/fr-fr/c6c65214-8411-4e16-b254-163ed4099c26)   
- [Procédure pas à pas : hébergement d'un contrôle composite Windows Forms dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)   
- [Procédure pas à pas : hébergement d'un contrôle composite WPF dans les Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="e91c8-148">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e91c8-148">See Also</span></span>  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [<span data-ttu-id="e91c8-149">Concepteur WPF</span><span class="sxs-lookup"><span data-stu-id="e91c8-149">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [<span data-ttu-id="e91c8-150">Procédure pas à pas : hébergement d'un contrôle composite Windows Forms dans WPF</span><span class="sxs-lookup"><span data-stu-id="e91c8-150">Walkthrough: Hosting a Windows Forms Composite Control in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)  
+ [<span data-ttu-id="e91c8-151">Procédure pas à pas : Hébergement d'un contrôle composite WPF dans Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e91c8-151">Walkthrough: Hosting a WPF Composite Control in Windows Forms</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

@@ -1,35 +1,27 @@
 ---
-title: "Comment : interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9773f1fc5a17957cb77a0f14e12a2f61e67d73c3
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 30ff1afe31b2dd23e7e9618093a8b1d383b5d713
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Comment : interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)
-Parfois, les fichiers qui ont le même nom peuvent se trouver dans plusieurs dossiers. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment interroger ces noms de fichier dupliqué sous un dossier racine spécifié. Le deuxième exemple montre comment rechercher des fichiers dont la taille et l’heure de création correspondre également.  
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a><span data-ttu-id="a6320-102">Comment : interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a6320-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="a6320-103">Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom.</span><span class="sxs-lookup"><span data-stu-id="a6320-103">Sometimes files that have the same name may be located in more than one folder.</span></span> <span data-ttu-id="a6320-104">Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm.</span><span class="sxs-lookup"><span data-stu-id="a6320-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span></span> <span data-ttu-id="a6320-105">Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié.</span><span class="sxs-lookup"><span data-stu-id="a6320-105">This example shows how to query for such duplicate file names under a specified root folder.</span></span> <span data-ttu-id="a6320-106">Le deuxième exemple montre comment rechercher des fichiers dont la taille et l’heure de création correspondent également.</span><span class="sxs-lookup"><span data-stu-id="a6320-106">The second example shows how to query for files whose size and creation times also match.</span></span>  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a><span data-ttu-id="a6320-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="a6320-107">Example</span></span>  
   
 ```vb  
 Module QueryDuplicateFileNames  
@@ -115,11 +107,11 @@ Module QueryDuplicateFileNames
 End Module  
 ```  
   
- La première requête utilise une clé simple pour déterminer une correspondance ; elle recherche des fichiers qui ont le même nom mais dont le contenu peut être différent. La deuxième requête utilise une clé composée pour comparer trois propriétés de la <xref:System.IO.FileInfo>objet.</xref:System.IO.FileInfo> Cette requête est beaucoup plus susceptible de trouver les fichiers qui ont le même nom et le contenu similaire ou identique.  
+ <span data-ttu-id="a6320-108">La première requête utilise une clé simple pour déterminer une correspondance ; elle trouve les fichiers qui ont le même nom mais dont le contenu peut être différent.</span><span class="sxs-lookup"><span data-stu-id="a6320-108">The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different.</span></span> <span data-ttu-id="a6320-109">La deuxième requête utilise une clé composée à comparer à trois propriétés de l’objet <xref:System.IO.FileInfo>.</span><span class="sxs-lookup"><span data-stu-id="a6320-109">The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object.</span></span> <span data-ttu-id="a6320-110">Cette requête est beaucoup plus susceptible de trouver les fichiers ayant le même nom et un contenu similaire ou identique.</span><span class="sxs-lookup"><span data-stu-id="a6320-110">This query is much more likely to find files that have the same name and similar or identical content.</span></span>  
   
-## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+## <a name="compiling-the-code"></a><span data-ttu-id="a6320-111">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="a6320-111">Compiling the Code</span></span>  
+ <span data-ttu-id="a6320-112">Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.</span><span class="sxs-lookup"><span data-stu-id="a6320-112">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
- [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="a6320-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a6320-113">See Also</span></span>  
+ [<span data-ttu-id="a6320-114">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a6320-114">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
+ [<span data-ttu-id="a6320-115">LINQ et répertoires de fichiers (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a6320-115">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

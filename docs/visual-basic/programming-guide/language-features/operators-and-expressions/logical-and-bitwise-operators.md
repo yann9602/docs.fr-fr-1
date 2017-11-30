@@ -1,70 +1,69 @@
 ---
-title: "Logical and Bitwise Operators in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "short-circuiting"
-  - "Boolean expressions"
-  - "logical operators, Boolean expressions"
-  - "operators [Visual Basic], logical"
-  - "AndAlso operator"
-  - "Not operator [Visual Basic], Boolean expressions"
-  - "Xor operator [Visual Basic], Boolean expressions"
-  - "And operator [Visual Basic], logical operators"
-  - "logical operators"
-  - "expressions [Visual Basic], Boolean"
-  - "Or operator, logical operators"
-  - "Visual Basic code, operators"
-  - "short-circuiting, logical operators"
-  - "logical operators, short-circuiting"
-  - "Visual Basic code, expressions"
-  - "logical operators, binary"
-  - "OrElse operator [Visual Basic]"
-  - "logical operators, unary"
+title: "Opérateurs de bits et opérateurs logiques en Visual Basic"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- short-circuiting
+- Boolean expressions
+- logical operators [Visual Basic], Boolean expressions
+- operators [Visual Basic], logical
+- AndAlso operator [Visual Basic]
+- Not operator [Visual Basic], Boolean expressions
+- Xor operator [Visual Basic], Boolean expressions
+- And operator [Visual Basic], logical operators
+- logical operators [Visual Basic]
+- expressions [Visual Basic], Boolean
+- Or operator [Visual Basic], logical operators
+- Visual Basic code, operators
+- short-circuiting [Visual Basic], logical operators
+- logical operators [Visual Basic], short-circuiting
+- Visual Basic code, expressions
+- logical operators [Visual Basic], binary
+- OrElse operator [Visual Basic]
+- logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ba48f722a11e93f82ae99aa407c3096a964e5ddd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Logical and Bitwise Operators in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Les opérateurs logiques comparent des expressions `Boolean` et retournent un résultat `Boolean`.  Les opérateurs `And`, `Or`, `AndAlso`, `OrElse` et `Xor` sont *binaires* parce qu'ils prennent deux opérandes, tandis que l'opérateur `Not` est *unaire* parce qu'il prend un seul opérande.  Certains de ces opérateurs peuvent également exécuter des opérations logiques de bits sur des valeurs intégrales.  
+# <a name="logical-and-bitwise-operators-in-visual-basic"></a><span data-ttu-id="e1f5f-102">Opérateurs de bits et opérateurs logiques en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e1f5f-102">Logical and Bitwise Operators in Visual Basic</span></span>
+<span data-ttu-id="e1f5f-103">Comparent des opérateurs logiques `Boolean` expressions et retournent un `Boolean` résultat.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-103">Logical operators compare `Boolean` expressions and return a `Boolean` result.</span></span> <span data-ttu-id="e1f5f-104">Le `And`, `Or`, `AndAlso`, `OrElse`, et `Xor` opérateurs sont *binaire* parce qu’ils prennent deux opérandes, tandis que la `Not` opérateur est *unaire* parce qu’il prend un seul opérande.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-104">The `And`, `Or`, `AndAlso`, `OrElse`, and `Xor` operators are *binary* because they take two operands, while the `Not` operator is *unary* because it takes a single operand.</span></span> <span data-ttu-id="e1f5f-105">Certains de ces opérateurs peuvent également effectuer des opérations logiques au niveau du bit sur des valeurs intégrales.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-105">Some of these operators can also perform bitwise logical operations on integral values.</span></span>  
   
-## Opérateur logique unaire  
- L'[Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md) effectue une *négation* logique sur une expression `Boolean`.  Il retourne l'opposé logique de son opérande.  Si l'expression a la valeur `True`, `Not` retourne `False` ; si elle a la valeur `False`, `Not` retourne `True`.  L'exemple suivant illustre ce comportement.  
+## <a name="unary-logical-operator"></a><span data-ttu-id="e1f5f-106">Opérateur logique unaire</span><span class="sxs-lookup"><span data-stu-id="e1f5f-106">Unary Logical Operator</span></span>  
+ <span data-ttu-id="e1f5f-107">Le [pas d’opérateur](../../../../visual-basic/language-reference/operators/not-operator.md) effectue logique *négation* sur un `Boolean` expression.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-107">The [Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md) performs logical *negation* on a `Boolean` expression.</span></span> <span data-ttu-id="e1f5f-108">Il donne le contraire logique de son opérande.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-108">It yields the logical opposite of its operand.</span></span> <span data-ttu-id="e1f5f-109">Si l’expression prend la valeur `True`, puis `Not` retourne `False`; si l’expression prend la valeur `False`, puis `Not` retourne `True`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-109">If the expression evaluates to `True`, then `Not` returns `False`; if the expression evaluates to `False`, then `Not` returns `True`.</span></span> <span data-ttu-id="e1f5f-110">L'exemple suivant illustre ce comportement.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-110">The following example illustrates this.</span></span>  
   
  [!code-vb[VbVbalrOperators#77](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_1.vb)]  
   
-## Opérateurs logiques binaires  
- L'[And Operator](../../../../visual-basic/language-reference/operators/and-operator.md) effectue une *conjonction* logique sur deux expressions `Boolean`.  Si les deux expressions ont la valeur `True`, `And` retourne `True`.  Si au moins l'une des expressions a la valeur `False`, `And` retourne `False`.  
+## <a name="binary-logical-operators"></a><span data-ttu-id="e1f5f-111">Opérateurs logiques binaires</span><span class="sxs-lookup"><span data-stu-id="e1f5f-111">Binary Logical Operators</span></span>  
+ <span data-ttu-id="e1f5f-112">Le [opérateur et](../../../../visual-basic/language-reference/operators/and-operator.md) effectue logique *conjonction* sur deux `Boolean` expressions.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-112">The [And Operator](../../../../visual-basic/language-reference/operators/and-operator.md) performs logical *conjunction* on two `Boolean` expressions.</span></span> <span data-ttu-id="e1f5f-113">Si les deux expressions ont `True`, puis `And` retourne `True`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-113">If both expressions evaluate to `True`, then `And` returns `True`.</span></span> <span data-ttu-id="e1f5f-114">Si au moins l’une des expressions a la valeur `False`, puis `And` retourne `False`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-114">If at least one of the expressions evaluates to `False`, then `And` returns `False`.</span></span>  
   
- L'[Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md) effectue une *disjonction* ou une *inclusion* logique sur deux expressions `Boolean`.  Si l'une des deux expressions a la valeur `True`, ou encore si elles ont toutes les deux la valeur `True`, `Or` retourne `True`.  Si aucune expression n'a la valeur `True`, `Or` retourne `False`.  
+ <span data-ttu-id="e1f5f-115">Le [ou opérateur](../../../../visual-basic/language-reference/operators/or-operator.md) effectue logique *disjonction* ou *inclusion* sur deux `Boolean` expressions.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-115">The [Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md) performs logical *disjunction* or *inclusion* on two `Boolean` expressions.</span></span> <span data-ttu-id="e1f5f-116">Si des expressions a la valeur `True`, ou les deux ont la valeur `True`, puis `Or` retourne `True`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-116">If either expression evaluates to `True`, or both evaluate to `True`, then `Or` returns `True`.</span></span> <span data-ttu-id="e1f5f-117">Si aucune expression `True`, `Or` retourne `False`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-117">If neither expression evaluates to `True`, `Or` returns `False`.</span></span>  
   
- L'[Xor Operator](../../../../visual-basic/language-reference/operators/xor-operator.md) effectue une *exclusion* logique sur deux expressions `Boolean`.  Si une seule expression a la valeur `True`, `Xor` retourne `True`.  Si les deux expressions ont la valeur `True` ou la valeur `False`, `Xor` retourne `False`.  
+ <span data-ttu-id="e1f5f-118">Le [opérateur Xor](../../../../visual-basic/language-reference/operators/xor-operator.md) effectue logique *exclusion* sur deux `Boolean` expressions.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-118">The [Xor Operator](../../../../visual-basic/language-reference/operators/xor-operator.md) performs logical *exclusion* on two `Boolean` expressions.</span></span> <span data-ttu-id="e1f5f-119">Si une seule expression `True`, mais pas les deux, `Xor` retourne `True`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-119">If exactly one expression evaluates to `True`, but not both, `Xor` returns `True`.</span></span> <span data-ttu-id="e1f5f-120">Si les deux expressions ont `True` ou les deux ont la valeur `False`, `Xor` retourne `False`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-120">If both expressions evaluate to `True` or both evaluate to `False`, `Xor` returns `False`.</span></span>  
   
- L'exemple suivant illustre les opérateurs `And`, `Or` et `Xor`.  
+ <span data-ttu-id="e1f5f-121">L’exemple suivant illustre la `And`, `Or`, et `Xor` opérateurs.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-121">The following example illustrates the `And`, `Or`, and `Xor` operators.</span></span>  
   
  [!code-vb[VbVbalrOperators#78](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_2.vb)]  
   
-## Opérations logiques de court\-circuit  
- L'[AndAlso Operator](../../../../visual-basic/language-reference/operators/andalso-operator.md) est très similaire à l'opérateur `And`, car il effectue également une conjonction logique sur deux expressions `Boolean`.  La différence principale entre les deux est que `AndAlso` se comporte comme un *court\-circuit*.  Si la première expression d'une expression `AndAlso` a la valeur `False`, la deuxième expression n'est pas évaluée, car elle ne peut pas modifier le résultat final et `AndAlso` retourne `False`.  
+## <a name="short-circuiting-logical-operations"></a><span data-ttu-id="e1f5f-122">Opérations logiques de court-circuit</span><span class="sxs-lookup"><span data-stu-id="e1f5f-122">Short-Circuiting Logical Operations</span></span>  
+ <span data-ttu-id="e1f5f-123">Le [opérateur AndAlso](../../../../visual-basic/language-reference/operators/andalso-operator.md) est très similaire à la `And` (opérateur), car il effectue également une conjonction logique sur deux `Boolean` expressions.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-123">The [AndAlso Operator](../../../../visual-basic/language-reference/operators/andalso-operator.md) is very similar to the `And` operator, in that it also performs logical conjunction on two `Boolean` expressions.</span></span> <span data-ttu-id="e1f5f-124">La principale différence entre les deux est que `AndAlso` expose *de court-circuit* comportement.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-124">The key difference between the two is that `AndAlso` exhibits *short-circuiting* behavior.</span></span> <span data-ttu-id="e1f5f-125">Si la première expression dans une `AndAlso` expression renvoie la valeur `False`, puis la seconde expression n’est pas évaluée, car elle ne peut pas modifier le résultat final, et `AndAlso` retourne `False`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-125">If the first expression in an `AndAlso` expression evaluates to `False`, then the second expression is not evaluated because it cannot alter the final result, and `AndAlso` returns `False`.</span></span>  
   
- De même, l'[OrElse Operator](../../../../visual-basic/language-reference/operators/orelse-operator.md) effectue une disjonction logique de court\-circuit sur deux expressions `Boolean`.  Si la première expression d'une expression `OrElse` a la valeur `True`, la deuxième expression n'est pas évaluée, car elle ne peut pas modifier le résultat final et `OrElse` retourne `True`.  
+ <span data-ttu-id="e1f5f-126">De même, la [opérateur OrElse](../../../../visual-basic/language-reference/operators/orelse-operator.md) effectue une disjonction logique sur deux court-circuit `Boolean` expressions.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-126">Similarly, the [OrElse Operator](../../../../visual-basic/language-reference/operators/orelse-operator.md) performs short-circuiting logical disjunction on two `Boolean` expressions.</span></span> <span data-ttu-id="e1f5f-127">Si la première expression dans une `OrElse` expression renvoie la valeur `True`, puis la seconde expression n’est pas évaluée, car elle ne peut pas modifier le résultat final, et `OrElse` retourne `True`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-127">If the first expression in an `OrElse` expression evaluates to `True`, then the second expression is not evaluated because it cannot alter the final result, and `OrElse` returns `True`.</span></span>  
   
-### Compromis de court\-circuit  
- Un court\-circuit peut améliorer les performances en n'évaluant pas une expression qui ne peut pas modifier le résultat de l'opération logique.  Toutefois, si cette expression exécute des actions supplémentaires, le court\-circuit les ignore.  Par exemple, si l'expression inclut un appel à une procédure `Function`, cette procédure n'est pas appelée si l'expression est court\-circuitée, et le code supplémentaire contenu dans la `Function` ne s'exécute pas.  Par conséquent, la fonction peut ne s'exécuter qu'occasionnellement et ne pas être testée correctement.  Il est également possible que la logique de programme dépende du code dans la `Function`.  
+### <a name="short-circuiting-trade-offs"></a><span data-ttu-id="e1f5f-128">Compromis de court-circuit</span><span class="sxs-lookup"><span data-stu-id="e1f5f-128">Short-Circuiting Trade-Offs</span></span>  
+ <span data-ttu-id="e1f5f-129">Court-circuit peut améliorer les performances en n’évaluant ne pas une expression qui ne peut pas modifier le résultat de l’opération logique.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-129">Short-circuiting can improve performance by not evaluating an expression that cannot alter the result of the logical operation.</span></span> <span data-ttu-id="e1f5f-130">Toutefois, si cette expression effectue des actions supplémentaires, le court-circuit les ignore ces actions.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-130">However, if that expression performs additional actions, short-circuiting skips those actions.</span></span> <span data-ttu-id="e1f5f-131">Par exemple, si l’expression inclut un appel à une `Function` procédure, que procédure n’est pas appelée si l’expression est court-circuitée, et le code supplémentaire contenu dans le `Function` ne s’exécute pas.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-131">For example, if the expression includes a call to a `Function` procedure, that procedure is not called if the expression is short-circuited, and any additional code contained in the `Function` does not run.</span></span> <span data-ttu-id="e1f5f-132">Par conséquent, la fonction peut s’exécuter qu’occasionnellement et ne peut pas être testée correctement.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-132">Therefore, the function might run only occasionally, and might not be tested correctly.</span></span> <span data-ttu-id="e1f5f-133">Ou la logique du programme peut dépendre du code dans le `Function`.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-133">Or the program logic might depend on the code in the `Function`.</span></span>  
   
- L'exemple suivant illustre la différence entre `And`, `Or` et leurs équivalents de court\-circuit.  
+ <span data-ttu-id="e1f5f-134">L’exemple suivant illustre la différence entre `And`, `Or`et leurs équivalents de court-circuit.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-134">The following example illustrates the difference between `And`, `Or`, and their short-circuiting counterparts.</span></span>  
   
  [!code-vb[VbVbalrOperators#81](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_3.vb)]  
   
@@ -72,42 +71,42 @@ Les opérateurs logiques comparent des expressions `Boolean` et retournent un r�
   
  [!code-vb[VbVbalrOperators#79](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_5.vb)]  
   
- Dans l'exemple précédent, notez que du code important dans `checkIfValid()` ne s'exécute pas lorsque l'appel est court\-circuité.  La première instruction `If` appelle `checkIfValid()` bien que `12 > 45` retourne `False`, parce que `And` n'effectue pas de court\-circuit.  La deuxième instruction `If` n'appelle pas `checkIfValid()` parce que si `12 > 45` retourne `False`, `AndAlso` court\-circuite la deuxième expression.  La troisième instruction `If` appelle `checkIfValid()` bien que `12 < 45` retourne `True`, parce que `Or` n'effectue pas de court\-circuit.  La quatrième instruction `If` n'appelle pas `checkIfValid()` parce que si `12 < 45` retourne `True`, `OrElse` court\-circuite la deuxième expression.  
+ <span data-ttu-id="e1f5f-135">Dans l’exemple précédent, notez que du code important dans `checkIfValid()` ne s’exécute pas lorsque l’appel est court-circuité.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-135">In the preceding example, note that some important code inside `checkIfValid()` does not run when the call is short-circuited.</span></span> <span data-ttu-id="e1f5f-136">La première `If` instruction appelle `checkIfValid()` bien `12 > 45` retourne `False`, car `And` n’effectue pas de court-circuit.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-136">The first `If` statement calls `checkIfValid()` even though `12 > 45` returns `False`, because `And` does not short-circuit.</span></span> <span data-ttu-id="e1f5f-137">La seconde `If` instruction n’appelle pas `checkIfValid()`, car lorsque `12 > 45` retourne `False`, `AndAlso` court-circuite la deuxième expression.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-137">The second `If` statement does not call `checkIfValid()`, because when `12 > 45` returns `False`, `AndAlso` short-circuits the second expression.</span></span> <span data-ttu-id="e1f5f-138">La troisième `If` instruction appelle `checkIfValid()` bien `12 < 45` retourne `True`, car `Or` n’effectue pas de court-circuit.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-138">The third `If` statement calls `checkIfValid()` even though `12 < 45` returns `True`, because `Or` does not short-circuit.</span></span> <span data-ttu-id="e1f5f-139">La quatrième `If` instruction n’appelle pas `checkIfValid()`, car lorsque `12 < 45` retourne `True`, `OrElse` court-circuite la deuxième expression.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-139">The fourth `If` statement does not call `checkIfValid()`, because when `12 < 45` returns `True`, `OrElse` short-circuits the second expression.</span></span>  
   
-## Opérateurs de bits  
- Les opérations de bits évaluent deux valeurs intégrales sous forme binaire \(base 2\).  Elles comparent les bits à des positions correspondantes, puis assignent des valeurs en fonction de la comparaison.  L'exemple suivant illustre l'opérateur `And`.  
+## <a name="bitwise-operations"></a><span data-ttu-id="e1f5f-140">Opérations de bits</span><span class="sxs-lookup"><span data-stu-id="e1f5f-140">Bitwise Operations</span></span>  
+ <span data-ttu-id="e1f5f-141">Opérations de bits évaluent deux valeurs intégrales sous forme binaire (base 2).</span><span class="sxs-lookup"><span data-stu-id="e1f5f-141">Bitwise operations evaluate two integral values in binary (base 2) form.</span></span> <span data-ttu-id="e1f5f-142">Elles comparent les bits aux positions correspondantes et puis assignent des valeurs en fonction de la comparaison.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-142">They compare the bits at corresponding positions and then assign values based on the comparison.</span></span> <span data-ttu-id="e1f5f-143">L’exemple suivant illustre la `And` opérateur.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-143">The following example illustrates the `And` operator.</span></span>  
   
  [!code-vb[VbVbalrConcepts#2](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/logical-and-bitwise-operators_6.vb)]  
   
- L'exemple précédent affecte à `x` la valeur de 1.  Cette opération se produit pour les raisons suivantes :  
+ <span data-ttu-id="e1f5f-144">L’exemple précédent définit la valeur de `x` à 1.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-144">The preceding example sets the value of `x` to 1.</span></span> <span data-ttu-id="e1f5f-145">Cela se produit pour les raisons suivantes :</span><span class="sxs-lookup"><span data-stu-id="e1f5f-145">This happens for the following reasons:</span></span>  
   
--   Les valeurs sont traitées comme des valeurs binaires :  
+-   <span data-ttu-id="e1f5f-146">Les valeurs sont traitées en tant que binaire :</span><span class="sxs-lookup"><span data-stu-id="e1f5f-146">The values are treated as binary:</span></span>  
   
-     3 sous forme binaire \= 011  
+     <span data-ttu-id="e1f5f-147">3 sous forme binaire = 011</span><span class="sxs-lookup"><span data-stu-id="e1f5f-147">3 in binary form = 011</span></span>  
   
-     5 sous forme binaire \= 101  
+     <span data-ttu-id="e1f5f-148">5 sous forme binaire = 101</span><span class="sxs-lookup"><span data-stu-id="e1f5f-148">5 in binary form = 101</span></span>  
   
--   L'opérateur `And` compare les représentations binaires par position binaire \(bit\).  Si les deux bits d'une position donnée correspondent à 1, une valeur égale à 1 est placée à cette position dans le résultat.  Si l'un des deux bits est 0, une valeur égale à 0 est placée à cette position dans le résultat.  Dans l'exemple précédent, cette procédure fonctionne comme suit :  
+-   <span data-ttu-id="e1f5f-149">Le `And` opérateur compare les représentations binaires par position binaire (bit).</span><span class="sxs-lookup"><span data-stu-id="e1f5f-149">The `And` operator compares the binary representations, one binary position (bit) at a time.</span></span> <span data-ttu-id="e1f5f-150">Si les deux bits à une position donnée sont 1, 1 est placé à cette position dans le résultat.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-150">If both bits at a given position are 1, then a 1 is placed in that position in the result.</span></span> <span data-ttu-id="e1f5f-151">Si des bits est 0, 0 est placé à cette position dans le résultat.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-151">If either bit is 0, then a 0 is placed in that position in the result.</span></span> <span data-ttu-id="e1f5f-152">Dans l’exemple précédent cela fonctionne comme suit :</span><span class="sxs-lookup"><span data-stu-id="e1f5f-152">In the preceding example this works out as follows:</span></span>  
   
-     011 \(3 sous forme binaire\)  
+     <span data-ttu-id="e1f5f-153">011 (3 sous forme binaire)</span><span class="sxs-lookup"><span data-stu-id="e1f5f-153">011 (3 in binary form)</span></span>  
   
-     101 \(5 sous forme binaire\)  
+     <span data-ttu-id="e1f5f-154">101 (5 sous forme binaire)</span><span class="sxs-lookup"><span data-stu-id="e1f5f-154">101 (5 in binary form)</span></span>  
   
-     001 \(le résultat sous forme binaire\)  
+     <span data-ttu-id="e1f5f-155">001 (le résultat sous forme binaire)</span><span class="sxs-lookup"><span data-stu-id="e1f5f-155">001 (The result, in binary form)</span></span>  
   
--   Le résultat est traité comme une valeur décimale.  La valeur 001 est la représentation binaire de 1, donc `x` \= 1.  
+-   <span data-ttu-id="e1f5f-156">Le résultat est traité comme séparateur décimal.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-156">The result is treated as decimal.</span></span> <span data-ttu-id="e1f5f-157">La valeur 001 est la représentation binaire de 1, donc `x` = 1.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-157">The value 001 is the binary representation of 1, so `x` = 1.</span></span>  
   
- L'opération `Or` de bits est semblable, mais un 1 est assigné au bit de résultat si un ou les deux bits comparés ont la valeur 1.  `Xor` assigne un 1 au bit de résultat si exactement l'un des bits comparés \(pas les deux\) a la valeur 1.  `Not` prend un opérande unique et inverse tous les bits, notamment le bit de signe, et assigne cette valeur au résultat.  Ainsi, pour les nombres positifs signés, `Not` retourne toujours une valeur négative, et pour les nombres négatifs, `Not` retourne toujours une valeur positive ou nulle.  
+ <span data-ttu-id="e1f5f-158">L’opérateur de bits `Or` opération est similaire, à ceci près que 1 est assigné au bit de résultat si un ou les deux bits comparés est 1.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-158">The bitwise `Or` operation is similar, except that a 1 is assigned to the result bit if either or both of the compared bits is 1.</span></span> <span data-ttu-id="e1f5f-159">`Xor`assigne un 1 au bit de résultat si exactement l’un des bits comparés (pas les deux) est 1.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-159">`Xor` assigns a 1 to the result bit if exactly one of the compared bits (not both) is 1.</span></span> <span data-ttu-id="e1f5f-160">`Not`accepte un opérande unique et inverse tous les bits, y compris le bit de signe et assigne la valeur au résultat.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-160">`Not` takes a single operand and inverts all the bits, including the sign bit, and assigns that value to the result.</span></span> <span data-ttu-id="e1f5f-161">Cela signifie que pour les nombres positifs signés, `Not` retourne toujours une valeur négative et pour les nombres négatifs, `Not` retourne toujours une valeur positive ou zéro.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-161">This means that for signed positive numbers, `Not` always returns a negative value, and for negative numbers, `Not` always returns a positive or zero value.</span></span>  
   
- Les opérateurs `AndAlso` et `OrElse` ne prennent pas en charge les opérations de bits.  
+ <span data-ttu-id="e1f5f-162">Le `AndAlso` et `OrElse` opérateurs ne prennent pas en charge les opérations de bits.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-162">The `AndAlso` and `OrElse` operators do not support bitwise operations.</span></span>  
   
 > [!NOTE]
->  Les opérations de bits ne peuvent être effectuées que sur des types intégraux.  Les valeurs de virgule flottante doivent être converties en types intégraux avant de poursuivre une opération de bits.  
+>  <span data-ttu-id="e1f5f-163">Les opérations au niveau du bit peuvent être effectuées sur les types intégraux uniquement.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-163">Bitwise operations can be performed on integral types only.</span></span> <span data-ttu-id="e1f5f-164">Valeurs à virgule flottante doivent être converties en types intégraux avant de poursuivre l’opération au niveau du bit.</span><span class="sxs-lookup"><span data-stu-id="e1f5f-164">Floating-point values must be converted to integral types before bitwise operation can proceed.</span></span>  
   
-## Voir aussi  
- [Logical\/Bitwise Operators](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   
- [Boolean Expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)   
- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)   
- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)   
- [Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)   
- [Efficient Combination of Operators](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)
+## <a name="see-also"></a><span data-ttu-id="e1f5f-165">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e1f5f-165">See Also</span></span>  
+ [<span data-ttu-id="e1f5f-166">Opérateurs logiques/de bits (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e1f5f-166">Logical/Bitwise Operators (Visual Basic)</span></span>](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
+ [<span data-ttu-id="e1f5f-167">Expressions booléennes</span><span class="sxs-lookup"><span data-stu-id="e1f5f-167">Boolean Expressions</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)  
+ [<span data-ttu-id="e1f5f-168">Opérateurs arithmétiques en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e1f5f-168">Arithmetic Operators in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)  
+ [<span data-ttu-id="e1f5f-169">Opérateurs de comparaison en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e1f5f-169">Comparison Operators in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)  
+ [<span data-ttu-id="e1f5f-170">Opérateurs de concaténation dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e1f5f-170">Concatenation Operators in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)  
+ [<span data-ttu-id="e1f5f-171">Association efficace d’opérateurs</span><span class="sxs-lookup"><span data-stu-id="e1f5f-171">Efficient Combination of Operators</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)

@@ -1,73 +1,71 @@
 ---
-title: "Private (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Private"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Private keyword"
-  - "Private keyword, syntax"
+title: Private (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Private
+helpviewer_keywords:
+- Private keyword [Visual Basic]
+- Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 07450c2a5443bf6bc147cad2cfc779072bfc363b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Private (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Spécifie qu'un ou plusieurs éléments de programmation déclarés sont uniquement accessibles à partir de leur contexte de déclaration, y compris à partir des types contenus.  
+# <a name="private-visual-basic"></a><span data-ttu-id="2e420-102">Private (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2e420-102">Private (Visual Basic)</span></span>
+<span data-ttu-id="2e420-103">Spécifie qu’un ou plusieurs éléments de programmation déclarés sont accessibles uniquement à partir de leur contexte de déclaration, y compris à partir des types contenus.</span><span class="sxs-lookup"><span data-stu-id="2e420-103">Specifies that one or more declared programming elements are accessible only from within their declaration context, including from within any contained types.</span></span>  
   
-## Notes  
- Si un élément de programmation représente des fonctionnalités exclusives ou contient des données confidentielles, vous souhaitez généralement limiter son accès aussi strictement que possible.  Vous obtenez une limitation maximale en autorisant uniquement le module, la classe ou la structure qui le définit à y avoir accès.  Pour limiter l'accès à un élément de cette manière, vous pouvez le déclarer avec `Private`.  
+## <a name="remarks"></a><span data-ttu-id="2e420-104">Remarques</span><span class="sxs-lookup"><span data-stu-id="2e420-104">Remarks</span></span>  
+ <span data-ttu-id="2e420-105">Si un élément de programmation représente des fonctionnalités exclusives ou contient des données confidentielles, vous souhaitez généralement limiter son accès aussi strictement que possible.</span><span class="sxs-lookup"><span data-stu-id="2e420-105">If a programming element represents proprietary functionality, or contains confidential data, you usually want to limit access to it as strictly as possible.</span></span> <span data-ttu-id="2e420-106">Vous obtenez une limitation maximale en autorisant uniquement le module, classe ou structure qui le définit pour y accéder.</span><span class="sxs-lookup"><span data-stu-id="2e420-106">You achieve the maximum limitation by allowing only the module, class, or structure that defines it to access it.</span></span> <span data-ttu-id="2e420-107">Pour limiter l’accès à un élément de cette façon, vous pouvez déclarer avec `Private`.</span><span class="sxs-lookup"><span data-stu-id="2e420-107">To limit access to an element in this way, you can declare it with `Private`.</span></span>  
   
-## Règles  
+## <a name="rules"></a><span data-ttu-id="2e420-108">Règles</span><span class="sxs-lookup"><span data-stu-id="2e420-108">Rules</span></span>  
   
--   **Contexte de déclaration.** Vous pouvez utiliser `Private` seulement au niveau du module.  Cela signifie que le contexte de déclaration pour un élément `Private` doit être un module, une classe ou une structure et ne peut pas être un fichier source, un espace de noms ou une procédure.  
+-   <span data-ttu-id="2e420-109">**Contexte de déclaration.**</span><span class="sxs-lookup"><span data-stu-id="2e420-109">**Declaration Context.**</span></span> <span data-ttu-id="2e420-110">Vous pouvez utiliser `Private` seulement au niveau du module.</span><span class="sxs-lookup"><span data-stu-id="2e420-110">You can use `Private` only at module level.</span></span> <span data-ttu-id="2e420-111">Cela signifie que le contexte de déclaration pour un `Private` élément doit être un module, classe ou structure et ne peut pas être un fichier source, un espace de noms, une interface ou une procédure.</span><span class="sxs-lookup"><span data-stu-id="2e420-111">This means the declaration context for a `Private` element must be a module, class, or structure, and cannot be a source file, namespace, interface, or procedure.</span></span>  
   
-## Comportement  
+## <a name="behavior"></a><span data-ttu-id="2e420-112">Comportement</span><span class="sxs-lookup"><span data-stu-id="2e420-112">Behavior</span></span>  
   
--   **Niveau d'accès.** Tout le code d'un contexte de déclaration peut accéder à ses éléments `Private`.  Cela inclut le code dans un type contenu, tel qu'une classe imbriquée ou une expression d'assignation dans une énumération.  Aucun code à l'extérieur du contexte de déclaration ne peut accéder à ses éléments `Private`.  
+-   <span data-ttu-id="2e420-113">**Niveau d’accès.**</span><span class="sxs-lookup"><span data-stu-id="2e420-113">**Access Level.**</span></span> <span data-ttu-id="2e420-114">Tout le code dans un contexte de déclaration peut accéder à ses `Private` éléments.</span><span class="sxs-lookup"><span data-stu-id="2e420-114">All code within a declaration context can access its `Private` elements.</span></span> <span data-ttu-id="2e420-115">Cela inclut le code au sein d’un type de relation contenant-contenu, comme une classe imbriquée ou une expression d’assignation dans une énumération.</span><span class="sxs-lookup"><span data-stu-id="2e420-115">This includes code within a contained type, such as a nested class or an assignment expression in an enumeration.</span></span> <span data-ttu-id="2e420-116">Aucun code en dehors du contexte de déclaration ne peut accéder à ses `Private` éléments.</span><span class="sxs-lookup"><span data-stu-id="2e420-116">No code outside of the declaration context can access its `Private` elements.</span></span>  
   
--   **Modificateurs d'accès.** Les mots clés qui spécifient le niveau d'accès portent le nom de *modificateurs d'accès*.  Pour obtenir une comparaison entre les modificateurs d'accès, consultez [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+-   <span data-ttu-id="2e420-117">**Modificateurs d’accès.**</span><span class="sxs-lookup"><span data-stu-id="2e420-117">**Access Modifiers.**</span></span> <span data-ttu-id="2e420-118">Les mots clés qui spécifient le niveau d’accès sont appelés *les modificateurs d’accès*.</span><span class="sxs-lookup"><span data-stu-id="2e420-118">The keywords that specify access level are called *access modifiers*.</span></span> <span data-ttu-id="2e420-119">Pour obtenir une comparaison des modificateurs d’accès, consultez [niveaux en Visual Basic d’accès](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="2e420-119">For a comparison of the access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
- Le modificateur `Private` peut être utilisé dans les contextes suivants :  
+ <span data-ttu-id="2e420-120">Le modificateur `Private` peut être utilisé dans les contextes suivants :</span><span class="sxs-lookup"><span data-stu-id="2e420-120">The `Private` modifier can be used in these contexts:</span></span>  
   
- [Class, instruction](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [<span data-ttu-id="2e420-121">Class (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-121">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Const, instruction](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [<span data-ttu-id="2e420-122">Const (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-122">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare, instruction](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [<span data-ttu-id="2e420-123">Declare (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-123">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [Delegate, instruction](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [<span data-ttu-id="2e420-124">Delegate (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-124">Delegate Statement</span></span>](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [Dim, instruction](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="2e420-125">Dim (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-125">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Enum, instruction](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [<span data-ttu-id="2e420-126">Enum (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-126">Enum Statement</span></span>](../../../visual-basic/language-reference/statements/enum-statement.md)  
   
- [Event, instruction](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [<span data-ttu-id="2e420-127">Event (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-127">Event Statement</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function, instruction](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="2e420-128">Function (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-128">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Interface, instruction](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [<span data-ttu-id="2e420-129">Interface (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-129">Interface Statement</span></span>](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Property, instruction](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="2e420-130">Property (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-130">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Structure, instruction](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [<span data-ttu-id="2e420-131">Structure (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-131">Structure Statement</span></span>](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [Sub, instruction](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="2e420-132">Sub (instruction)</span><span class="sxs-lookup"><span data-stu-id="2e420-132">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## Voir aussi  
- [Public](../../../visual-basic/language-reference/modifiers/public.md)   
- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)   
- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)   
- [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [Procedures](../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a><span data-ttu-id="2e420-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2e420-133">See Also</span></span>  
+ [<span data-ttu-id="2e420-134">Public</span><span class="sxs-lookup"><span data-stu-id="2e420-134">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)  
+ [<span data-ttu-id="2e420-135">Protected</span><span class="sxs-lookup"><span data-stu-id="2e420-135">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)  
+ [<span data-ttu-id="2e420-136">Friend</span><span class="sxs-lookup"><span data-stu-id="2e420-136">Friend</span></span>](../../../visual-basic/language-reference/modifiers/friend.md)  
+ [<span data-ttu-id="2e420-137">Niveaux d’accès dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="2e420-137">Access levels in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [<span data-ttu-id="2e420-138">Procédures</span><span class="sxs-lookup"><span data-stu-id="2e420-138">Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [<span data-ttu-id="2e420-139">Structures</span><span class="sxs-lookup"><span data-stu-id="2e420-139">Structures</span></span>](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [<span data-ttu-id="2e420-140">Objets et classes</span><span class="sxs-lookup"><span data-stu-id="2e420-140">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

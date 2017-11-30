@@ -1,61 +1,63 @@
 ---
-title: "Styles et mod&#232;les ToolTip | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate (WPF), Info-bulle"
-  - "éléments (WPF), Info-bulle"
-  - "états (WPF), Info-bulle"
-  - "styles (WPF), Info-bulle"
-  - "modèles (WPF), Info-bulle"
-  - "ToolTip (WPF), styles et modèles"
+title: "Styles et modèles ToolTip"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- parts [WPF], ToolTip
+- styles [WPF], ToolTip
+- states [WPF], ToolTip
+- ToolTip [WPF], styles and templates
+- ControlTemplate [WPF], ToolTip
+- templates [WPF], ToolTip
 ms.assetid: 405fe385-4de9-49ee-a448-d8f4d1f740dd
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ec946e7982983519a317ee1936e8584eef63479c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Styles et mod&#232;les ToolTip
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ToolTip>.  Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour donner une apparence unique au contrôle.  Pour plus d'informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+# <a name="tooltip-styles-and-templates"></a><span data-ttu-id="5f1c5-102">Styles et modèles ToolTip</span><span class="sxs-lookup"><span data-stu-id="5f1c5-102">ToolTip Styles and Templates</span></span>
+<span data-ttu-id="5f1c5-103">Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.ToolTip> contrôle.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.ToolTip> control.</span></span> <span data-ttu-id="5f1c5-104">Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner une apparence unique au contrôle.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="5f1c5-105">Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span><span class="sxs-lookup"><span data-stu-id="5f1c5-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## Éléments de ToolTip  
- Le contrôle <xref:System.Windows.Controls.ToolTip> ne comporte pas de composants nommés.  
+## <a name="tooltip-parts"></a><span data-ttu-id="5f1c5-106">Parties de l’info-bulle</span><span class="sxs-lookup"><span data-stu-id="5f1c5-106">ToolTip Parts</span></span>  
+ <span data-ttu-id="5f1c5-107">Le <xref:System.Windows.Controls.ToolTip> contrôle n’a pas de composants nommés.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-107">The <xref:System.Windows.Controls.ToolTip> control does not have any named parts.</span></span>  
   
-## États de ToolTip  
- Le tableau ci\-dessous répertorie les états visuels du contrôle <xref:System.Windows.Controls.ToolTip>.  
+## <a name="tooltip-states"></a><span data-ttu-id="5f1c5-108">États de l’info-bulle</span><span class="sxs-lookup"><span data-stu-id="5f1c5-108">ToolTip States</span></span>  
+ <span data-ttu-id="5f1c5-109">Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.ToolTip> contrôle.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-109">The following table lists the visual states for the <xref:System.Windows.Controls.ToolTip> control.</span></span>  
   
-||||  
+|<span data-ttu-id="5f1c5-110">Nom VisualState</span><span class="sxs-lookup"><span data-stu-id="5f1c5-110">VisualState Name</span></span>|<span data-ttu-id="5f1c5-111">Nom VisualStateGroup</span><span class="sxs-lookup"><span data-stu-id="5f1c5-111">VisualStateGroup Name</span></span>|<span data-ttu-id="5f1c5-112">Description</span><span class="sxs-lookup"><span data-stu-id="5f1c5-112">Description</span></span>|  
 |-|-|-|  
-|Nom VisualState|Nom VisualStateGroup|Description|  
-|Closed|OpenStates|État par défaut.|  
-|Ouvrez .|OpenStates|<xref:System.Windows.Controls.ToolTip> est visible.|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|<span data-ttu-id="5f1c5-113">Closed</span><span class="sxs-lookup"><span data-stu-id="5f1c5-113">Closed</span></span>|<span data-ttu-id="5f1c5-114">OpenStates</span><span class="sxs-lookup"><span data-stu-id="5f1c5-114">OpenStates</span></span>|<span data-ttu-id="5f1c5-115">État par défaut.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-115">The default state.</span></span>|  
+|<span data-ttu-id="5f1c5-116">Ouvrir</span><span class="sxs-lookup"><span data-stu-id="5f1c5-116">Open</span></span>|<span data-ttu-id="5f1c5-117">OpenStates</span><span class="sxs-lookup"><span data-stu-id="5f1c5-117">OpenStates</span></span>|<span data-ttu-id="5f1c5-118">Le <xref:System.Windows.Controls.ToolTip> est visible.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-118">The <xref:System.Windows.Controls.ToolTip> is visible.</span></span>|  
+|<span data-ttu-id="5f1c5-119">Valide</span><span class="sxs-lookup"><span data-stu-id="5f1c5-119">Valid</span></span>|<span data-ttu-id="5f1c5-120">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="5f1c5-120">ValidationStates</span></span>|<span data-ttu-id="5f1c5-121">Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-121">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="5f1c5-122">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="5f1c5-122">InvalidFocused</span></span>|<span data-ttu-id="5f1c5-123">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="5f1c5-123">ValidationStates</span></span>|<span data-ttu-id="5f1c5-124">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-124">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="5f1c5-125">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="5f1c5-125">InvalidUnfocused</span></span>|<span data-ttu-id="5f1c5-126">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="5f1c5-126">ValidationStates</span></span>|<span data-ttu-id="5f1c5-127">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-127">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## ToolTip ControlTemplate, exemple  
- L'exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.ToolTip>.  
+## <a name="tooltip-controltemplate-example"></a><span data-ttu-id="5f1c5-128">Info-bulle ControlTemplate, exemple</span><span class="sxs-lookup"><span data-stu-id="5f1c5-128">ToolTip ControlTemplate Example</span></span>  
+ <span data-ttu-id="5f1c5-129">L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.ToolTip> contrôle.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-129">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.ToolTip> control.</span></span>  
   
- [!code-xml[ControlTemplateExamples#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tooltip.xaml#tooltip)]  
+ [!code-xaml[ControlTemplateExamples#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tooltip.xaml#tooltip)]  
   
- L'exemple précédent utilise une ou plusieurs des ressources suivantes.  
+ <span data-ttu-id="5f1c5-130">L’exemple précédent utilise une ou plusieurs des ressources suivantes.</span><span class="sxs-lookup"><span data-stu-id="5f1c5-130">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Pour l'exemple complet, consultez          [Style avec ControlTemplates, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160041) .  
+ <span data-ttu-id="5f1c5-131">Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041) (Exemple de style avec ControlTemplates).</span><span class="sxs-lookup"><span data-stu-id="5f1c5-131">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="5f1c5-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5f1c5-132">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="5f1c5-133">Styles et modèles Control</span><span class="sxs-lookup"><span data-stu-id="5f1c5-133">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="5f1c5-134">Personnalisation des contrôles</span><span class="sxs-lookup"><span data-stu-id="5f1c5-134">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="5f1c5-135">Application d’un style et création de modèles</span><span class="sxs-lookup"><span data-stu-id="5f1c5-135">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="5f1c5-136">Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="5f1c5-136">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

@@ -1,47 +1,29 @@
 ---
-title: "Expression lambda ne sera pas être supprimée de ce gestionnaire d’événements | Documents Microsoft"
-ms.date: 2015-07-20
+title: "L’expression lambda ne sera pas supprimée de ce gestionnaire d’événements"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc42326
 - vbc42326
-dev_langs:
-- VB
-helpviewer_keywords:
-- BC42326
+helpviewer_keywords: BC42326
 ms.assetid: 63214dc6-0112-4245-8ebf-7c9e8f5a5782
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bdf7ad8f8a116c818e72d67150d72d0c96a4dc3b
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 1a4c57d1f8f41d2d9ebb645d3f2628c32a2c4e4c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a>L’expression lambda ne sera pas supprimée de ce gestionnaire d’événements
-L’expression lambda ne sera pas supprimée de ce gestionnaire d’événements. Assignez l’expression lambda à une variable et utilisez la variable pour ajouter et supprimer l’événement.  
+# <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a><span data-ttu-id="073b3-102">L’expression lambda ne sera pas supprimée de ce gestionnaire d’événements</span><span class="sxs-lookup"><span data-stu-id="073b3-102">Lambda expression will not be removed from this event handler</span></span>
+<span data-ttu-id="073b3-103">Une expression lambda ne sera pas supprimée ce gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="073b3-103">Lambda expression will not be removed from this event handler.</span></span> <span data-ttu-id="073b3-104">Assignez l’expression lambda à une variable et utilisez la variable pour ajouter et supprimer l’événement.</span><span class="sxs-lookup"><span data-stu-id="073b3-104">Assign the lambda expression to a variable and use the variable to add and remove the event.</span></span>  
   
- Lorsque les expressions lambda sont utilisées avec les gestionnaires d’événements, vous ne voyez pas le comportement attendu. Le compilateur génère une nouvelle méthode pour chaque définition d’expression lambda, même si elles sont identiques. Par conséquent, le code suivant affiche `False`.  
+ <span data-ttu-id="073b3-105">Lorsque les expressions lambda sont utilisées avec les gestionnaires d’événements, vous ne pouvez pas voir le comportement attendu.</span><span class="sxs-lookup"><span data-stu-id="073b3-105">When lambda expressions are used with event handlers, you may not see the behavior you expect.</span></span> <span data-ttu-id="073b3-106">Le compilateur génère une nouvelle méthode pour chaque définition d’expression lambda, même si elles sont identiques.</span><span class="sxs-lookup"><span data-stu-id="073b3-106">The compiler generates a new method for each lambda expression definition, even if they are identical.</span></span> <span data-ttu-id="073b3-107">Par conséquent, le code suivant affiche `False`.</span><span class="sxs-lookup"><span data-stu-id="073b3-107">Therefore, the following code displays `False`.</span></span>  
   
 ```vb  
 Module Module1  
@@ -57,7 +39,7 @@ Module Module1
 End Module  
 ```  
   
- Lorsque les expressions lambda sont utilisées avec les gestionnaires d’événements, cela peut entraîner des résultats inattendus. Dans l’exemple suivant, l’expression lambda ajoutée par `AddHandler` n’est pas supprimé par la `RemoveHandler` instruction.  
+ <span data-ttu-id="073b3-108">Lorsque les expressions lambda sont utilisées avec les gestionnaires d’événements, cela peut entraîner des résultats inattendus.</span><span class="sxs-lookup"><span data-stu-id="073b3-108">When lambda expressions are used with event handlers, this may cause unexpected results.</span></span> <span data-ttu-id="073b3-109">Dans l’exemple suivant, l’expression lambda ajoutée par `AddHandler` n’est pas supprimée par le `RemoveHandler` instruction.</span><span class="sxs-lookup"><span data-stu-id="073b3-109">In the following example, the lambda expression added by `AddHandler` is not removed by the `RemoveHandler` statement.</span></span>  
   
 ```vb  
 Module Module1  
@@ -78,13 +60,13 @@ Module Module1
 End Module  
 ```  
   
- Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou considérer les avertissements comme des erreurs, consultez la page [configuration d’avertissements en Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ <span data-ttu-id="073b3-110">Par défaut, ce message est un avertissement.</span><span class="sxs-lookup"><span data-stu-id="073b3-110">By default, this message is a warning.</span></span> <span data-ttu-id="073b3-111">Pour plus d’informations sur le masquage des avertissements ou considérer les avertissements comme des erreurs, consultez [configuration des avertissements en Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span><span class="sxs-lookup"><span data-stu-id="073b3-111">For more information about how to hide warnings or treat warnings as errors, see [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
   
- **ID d’erreur :** BC42326  
+ <span data-ttu-id="073b3-112">**ID d’erreur :** BC42326</span><span class="sxs-lookup"><span data-stu-id="073b3-112">**Error ID:** BC42326</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="073b3-113">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="073b3-113">To correct this error</span></span>  
   
--   Pour éviter l’avertissement et supprimer l’expression lambda, assignez l’expression lambda à une variable et utilisez la variable à la fois dans le `AddHandler` et `RemoveHandler` instructions, comme indiqué dans l’exemple suivant.  
+-   <span data-ttu-id="073b3-114">Pour éviter l’avertissement et supprimer l’expression lambda, assignez l’expression lambda à une variable et utilisez la variable à la fois dans le `AddHandler` et `RemoveHandler` instructions, comme indiqué dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="073b3-114">To avoid the warning and remove the lambda expression, assign the lambda expression to a variable and use the variable in both the `AddHandler` and `RemoveHandler` statements, as shown in the following example.</span></span>  
   
 ```vb  
 Module Module1  
@@ -108,7 +90,7 @@ Module Module1
 End Module  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)   
- [Conversion simplifiée des délégués](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)   
- [Événements](../../../visual-basic/programming-guide/language-features/events/index.md)
+## <a name="see-also"></a><span data-ttu-id="073b3-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="073b3-115">See Also</span></span>  
+ [<span data-ttu-id="073b3-116">Expressions lambda</span><span class="sxs-lookup"><span data-stu-id="073b3-116">Lambda Expressions</span></span>](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
+ [<span data-ttu-id="073b3-117">Conversion simplifiée des délégués</span><span class="sxs-lookup"><span data-stu-id="073b3-117">Relaxed Delegate Conversion</span></span>](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)  
+ [<span data-ttu-id="073b3-118">Événements</span><span class="sxs-lookup"><span data-stu-id="073b3-118">Events</span></span>](../../../visual-basic/programming-guide/language-features/events/index.md)

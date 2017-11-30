@@ -1,1 +1,1 @@
-Concepteur O/R
+<span data-ttu-id="fcaad-101">Concepteur O/R</span><span class="sxs-lookup"><span data-stu-id="fcaad-101">O/R Designer</span></span>

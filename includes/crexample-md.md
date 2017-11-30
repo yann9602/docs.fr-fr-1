@@ -1,1 +1,1 @@
-Pour obtenir un exemple de
+<span data-ttu-id="1a048-101">Pour obtenir un exemple de</span><span class="sxs-lookup"><span data-stu-id="1a048-101">For an example of</span></span>

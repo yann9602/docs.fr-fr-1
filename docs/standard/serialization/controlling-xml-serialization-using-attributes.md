@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - classes, serializing
 - XML serialization, examples
@@ -23,24 +21,23 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: c00ceea5e9700b0e964b799684eea743c540992d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e921402980b1382761dd25d9cbbabda6b2c6a038
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="controlling-xml-serialization-using-attributes"></a>Contrôle de la sérialisation XML à l'aide d'attributs
-Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes. Pour plus d’informations sur la création d’un flux de données XML différent, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).  
+# <a name="controlling-xml-serialization-using-attributes"></a><span data-ttu-id="878fc-102">Contrôle de la sérialisation XML à l'aide d'attributs</span><span class="sxs-lookup"><span data-stu-id="878fc-102">Controlling XML Serialization Using Attributes</span></span>
+<span data-ttu-id="878fc-103">Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes.</span><span class="sxs-lookup"><span data-stu-id="878fc-103">Attributes can be used to control the XML serialization of an object or to create an alternate XML stream from the same set of classes.</span></span> <span data-ttu-id="878fc-104">Pour plus d’informations sur la création d’un flux de données XML différent, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).</span><span class="sxs-lookup"><span data-stu-id="878fc-104">For more details about creating an alternate XML stream, see [How to: Specify an Alternate Element Name for an XML Stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).</span></span>  
   
 > [!NOTE]
->  Si le code XML généré doit se conformer à la section 5 du document World Wide Web Consortium (www.w3.org) intitulé « Simple Object Access Protocol (SOAP) 1.1 », utilisez les attributs répertoriés dans [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
+>  <span data-ttu-id="878fc-105">Si le code XML généré doit se conformer à la section 5 du document World Wide Web Consortium (www.w3.org) intitulé « Simple Object Access Protocol (SOAP) 1.1 », utilisez les attributs répertoriés dans [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).</span><span class="sxs-lookup"><span data-stu-id="878fc-105">If the XML generated must conform to section 5 of the World Wide Web Consortium (www.w3.org) document titled "Simple Object Access Protocol (SOAP) 1.1," use the attributes listed in [Attributes That Control Encoded SOAP Serialization](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).</span></span>  
   
- Par défaut, un nom d'élément XML est déterminé par le nom de la classe ou du membre. Dans une classe simple nommée `Book`, un champ nommé `ISBN` génère une balise d’élément XML \<ISBN>, comme illustré dans l’exemple suivant.  
+ <span data-ttu-id="878fc-106">Par défaut, un nom d'élément XML est déterminé par le nom de la classe ou du membre.</span><span class="sxs-lookup"><span data-stu-id="878fc-106">By default, an XML element name is determined by the class or member name.</span></span> <span data-ttu-id="878fc-107">Dans une classe simple nommée `Book`, un champ nommé `ISBN` génère une balise d’élément XML \<ISBN>, comme illustré dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="878fc-107">In a simple class named `Book`, a field named `ISBN` will produce an XML element tag \<ISBN>, as shown in the following example.</span></span>  
   
 ```vb  
 Public Class Book  
@@ -61,7 +58,7 @@ public class Book
 // <ISBN>1234567890</ISBN>.  
 ```  
   
- Ce comportement par défaut peut être modifié si vous souhaitez donner un nouveau nom à l'élément. Le code suivant affiche la manière dont un attribut active cette option en définissant la propriété <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> d'un <xref:System.Xml.Serialization.XmlElementAttribute>.  
+ <span data-ttu-id="878fc-108">Ce comportement par défaut peut être modifié si vous souhaitez donner un nouveau nom à l'élément.</span><span class="sxs-lookup"><span data-stu-id="878fc-108">This default behavior can be changed if you want to give the element a new name.</span></span> <span data-ttu-id="878fc-109">Le code suivant affiche la manière dont un attribut active cette option en définissant la propriété <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> d'un <xref:System.Xml.Serialization.XmlElementAttribute>.</span><span class="sxs-lookup"><span data-stu-id="878fc-109">The following code shows how an attribute enables this by setting the <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> property of a <xref:System.Xml.Serialization.XmlElementAttribute>.</span></span>  
   
 ```vb  
 Public Class TaxRates  
@@ -77,12 +74,12 @@ public class TaxRates{
 }  
 ```  
   
- Pour plus d’informations sur les attributs, consultez [Attributs](../../../docs/standard/attributes/index.md). Pour obtenir une liste complète des attributs qui contrôlent la sérialisation XML, consultez [Attributs qui contrôlent la sérialisation XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md).  
+ <span data-ttu-id="878fc-110">Pour plus d’informations sur les attributs, consultez [Attributs](../../../docs/standard/attributes/index.md).</span><span class="sxs-lookup"><span data-stu-id="878fc-110">For more information about attributes, see [Attributes](../../../docs/standard/attributes/index.md).</span></span> <span data-ttu-id="878fc-111">Pour obtenir une liste complète des attributs qui contrôlent la sérialisation XML, consultez [Attributs qui contrôlent la sérialisation XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md).</span><span class="sxs-lookup"><span data-stu-id="878fc-111">For a list of attributes that control XML serialization, see [Attributes That Control XML Serialization](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md).</span></span>  
   
-## <a name="controlling-array-serialization"></a>Contrôle de la sérialisation de tableau  
- Les attributs <xref:System.Xml.Serialization.XmlArrayAttribute> et <xref:System.Xml.Serialization.XmlArrayItemAttribute> sont conçus pour contrôler la sérialisation de tableaux. À l'aide de ces attributs, vous pouvez contrôler le type de données de nom d'élément, d'espace de noms et de schéma XML (XSD) (comme défini dans le document du World Wide Web Consortium [www.w3.org] intitulé « XML Schema Part 2: Datatypes »). Vous pouvez également spécifier les types qui peuvent être inclus dans un tableau.  
+## <a name="controlling-array-serialization"></a><span data-ttu-id="878fc-112">Contrôle de la sérialisation de tableau</span><span class="sxs-lookup"><span data-stu-id="878fc-112">Controlling Array Serialization</span></span>  
+ <span data-ttu-id="878fc-113">Les attributs <xref:System.Xml.Serialization.XmlArrayAttribute> et <xref:System.Xml.Serialization.XmlArrayItemAttribute> sont conçus pour contrôler la sérialisation de tableaux.</span><span class="sxs-lookup"><span data-stu-id="878fc-113">The <xref:System.Xml.Serialization.XmlArrayAttribute> and the <xref:System.Xml.Serialization.XmlArrayItemAttribute> attributes are designed to control the serialization of arrays.</span></span> <span data-ttu-id="878fc-114">À l'aide de ces attributs, vous pouvez contrôler le type de données de nom d'élément, d'espace de noms et de schéma XML (XSD) (comme défini dans le document du World Wide Web Consortium [www.w3.org] intitulé « XML Schema Part 2: Datatypes »).</span><span class="sxs-lookup"><span data-stu-id="878fc-114">Using these attributes, you can control the element name, namespace, and XML Schema (XSD) data type (as defined in the World Wide Web Consortium [www.w3.org] document titled "XML Schema Part 2: Datatypes").</span></span> <span data-ttu-id="878fc-115">Vous pouvez également spécifier les types qui peuvent être inclus dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="878fc-115">You can also specify the types that can be included in an array.</span></span>  
   
- <xref:System.Xml.Serialization.XmlArrayAttribute> détermine les propriétés de l'élément XML englobant obtenu lorsqu'un tableau est sérialisé. Par exemple, la sérialisation du tableau suivant génère par défaut un élément XML nommé `Employees`. L'élément `Employees` contient une série d'éléments nommée d'après le type de tableau `Employee`.  
+ <span data-ttu-id="878fc-116"><xref:System.Xml.Serialization.XmlArrayAttribute> détermine les propriétés de l'élément XML englobant obtenu lorsqu'un tableau est sérialisé.</span><span class="sxs-lookup"><span data-stu-id="878fc-116">The <xref:System.Xml.Serialization.XmlArrayAttribute> will determine the properties of the enclosing XML element that results when an array is serialized.</span></span> <span data-ttu-id="878fc-117">Par exemple, la sérialisation du tableau suivant génère par défaut un élément XML nommé `Employees`.</span><span class="sxs-lookup"><span data-stu-id="878fc-117">For example, by default, serializing the array below will result in an XML element named `Employees`.</span></span> <span data-ttu-id="878fc-118">L'élément `Employees` contient une série d'éléments nommée d'après le type de tableau `Employee`.</span><span class="sxs-lookup"><span data-stu-id="878fc-118">The `Employees` element will contain a series of elements named after the array type `Employee`.</span></span>  
   
 ```vb  
 Public Class Group  
@@ -102,7 +99,7 @@ public class Employee{
 }  
 ```  
   
- Une instance sérialisée peut se présenter comme suit.  
+ <span data-ttu-id="878fc-119">Une instance sérialisée peut se présenter comme suit.</span><span class="sxs-lookup"><span data-stu-id="878fc-119">A serialized instance might resemble the following.</span></span>  
   
 ```xml  
 <Group>  
@@ -114,7 +111,7 @@ public class Employee{
 </Group>  
 ```  
   
- En appliquant un <xref:System.Xml.Serialization.XmlArrayAttribute>, vous pouvez modifier le nom de l'élément XML, comme suit.  
+ <span data-ttu-id="878fc-120">En appliquant un <xref:System.Xml.Serialization.XmlArrayAttribute>, vous pouvez modifier le nom de l'élément XML, comme suit.</span><span class="sxs-lookup"><span data-stu-id="878fc-120">By applying a <xref:System.Xml.Serialization.XmlArrayAttribute>, you can change the name of the XML element, as follows.</span></span>  
   
 ```vb  
 Public Class Group  
@@ -130,7 +127,7 @@ public class Group{
 }  
 ```  
   
- Le code XML obtenu peut se présenter comme suit.  
+ <span data-ttu-id="878fc-121">Le code XML obtenu peut se présenter comme suit.</span><span class="sxs-lookup"><span data-stu-id="878fc-121">The resulting XML might resemble the following.</span></span>  
   
 ```xml  
 <Group>  
@@ -141,7 +138,7 @@ public class Group{
 </TeamMembers>  
 ```  
   
- En revanche, <xref:System.Xml.Serialization.XmlArrayItemAttribute> contrôle la manière dont les éléments contenus dans le tableau sont sérialisés. Notez que l'attribut est appliqué au champ retournant le tableau.  
+ <span data-ttu-id="878fc-122">En revanche, <xref:System.Xml.Serialization.XmlArrayItemAttribute> contrôle la manière dont les éléments contenus dans le tableau sont sérialisés.</span><span class="sxs-lookup"><span data-stu-id="878fc-122">The <xref:System.Xml.Serialization.XmlArrayItemAttribute>, on the other hand, controls how the items contained in the array are serialized.</span></span> <span data-ttu-id="878fc-123">Notez que l'attribut est appliqué au champ retournant le tableau.</span><span class="sxs-lookup"><span data-stu-id="878fc-123">Note that the attribute is applied to the field returning the array.</span></span>  
   
 ```vb  
 Public Class Group  
@@ -157,7 +154,7 @@ public class Group{
 }  
 ```  
   
- Le code XML obtenu peut se présenter comme suit.  
+ <span data-ttu-id="878fc-124">Le code XML obtenu peut se présenter comme suit.</span><span class="sxs-lookup"><span data-stu-id="878fc-124">The resulting XML might resemble the following.</span></span>  
   
 ```xml  
 <Group>  
@@ -167,8 +164,8 @@ public class Group{
 </Group>  
 ```  
   
-## <a name="serializing-derived-classes"></a>Sérialisation de classes dérivées  
- <xref:System.Xml.Serialization.XmlArrayItemAttribute> permet également de sérialiser des classes dérivées. Par exemple, une autre classe nommée `Manager`, dérivée de `Employee`, peut être ajoutée à l'exemple précédent. Si vous n'appliquez pas <xref:System.Xml.Serialization.XmlArrayItemAttribute>, le code ne pourra pas s'exécuter car le type de classe dérivée ne sera pas reconnu. Pour résoudre ce problème, appliquez l'attribut deux fois, en définissant à chaque fois la propriété <xref:System.Xml.Serialization.XmlArrayItemAttribute.Type%2A> pour chaque type acceptable (type de base et dérivé).  
+## <a name="serializing-derived-classes"></a><span data-ttu-id="878fc-125">Sérialisation de classes dérivées</span><span class="sxs-lookup"><span data-stu-id="878fc-125">Serializing Derived Classes</span></span>  
+ <span data-ttu-id="878fc-126"><xref:System.Xml.Serialization.XmlArrayItemAttribute> permet également de sérialiser des classes dérivées.</span><span class="sxs-lookup"><span data-stu-id="878fc-126">Another use of the <xref:System.Xml.Serialization.XmlArrayItemAttribute> is to allow the serialization of derived classes.</span></span> <span data-ttu-id="878fc-127">Par exemple, une autre classe nommée `Manager`, dérivée de `Employee`, peut être ajoutée à l'exemple précédent.</span><span class="sxs-lookup"><span data-stu-id="878fc-127">For example, another class named `Manager` that derives from `Employee` can be added to the previous example.</span></span> <span data-ttu-id="878fc-128">Si vous n'appliquez pas <xref:System.Xml.Serialization.XmlArrayItemAttribute>, le code ne pourra pas s'exécuter car le type de classe dérivée ne sera pas reconnu.</span><span class="sxs-lookup"><span data-stu-id="878fc-128">If you do not apply the <xref:System.Xml.Serialization.XmlArrayItemAttribute>, the code will fail at run time because the derived class type will not be recognized.</span></span> <span data-ttu-id="878fc-129">Pour résoudre ce problème, appliquez l'attribut deux fois, en définissant à chaque fois la propriété <xref:System.Xml.Serialization.XmlArrayItemAttribute.Type%2A> pour chaque type acceptable (type de base et dérivé).</span><span class="sxs-lookup"><span data-stu-id="878fc-129">To remedy this, apply the attribute twice, each time setting the <xref:System.Xml.Serialization.XmlArrayItemAttribute.Type%2A> property for each acceptable type (base and derived).</span></span>  
   
 ```vb  
 Public Class Group  
@@ -199,7 +196,7 @@ public class Manager:Employee{
 }  
 ```  
   
- Une instance sérialisée peut se présenter comme suit.  
+ <span data-ttu-id="878fc-130">Une instance sérialisée peut se présenter comme suit.</span><span class="sxs-lookup"><span data-stu-id="878fc-130">A serialized instance might resemble the following.</span></span>  
   
 ```xml  
 <Group>  
@@ -215,8 +212,8 @@ public class Manager:Employee{
 </Group>  
 ```  
   
-## <a name="serializing-an-array-as-a-sequence-of-elements"></a>Sérialisation d'un tableau sous forme de séquence d'éléments  
- Vous pouvez également sérialiser un tableau sous forme de séquence en deux dimensions d'éléments XML en appliquant <xref:System.Xml.Serialization.XmlElementAttribute> au champ retournant le tableau suivant.  
+## <a name="serializing-an-array-as-a-sequence-of-elements"></a><span data-ttu-id="878fc-131">Sérialisation d'un tableau sous forme de séquence d'éléments</span><span class="sxs-lookup"><span data-stu-id="878fc-131">Serializing an Array as a Sequence of Elements</span></span>  
+ <span data-ttu-id="878fc-132">Vous pouvez également sérialiser un tableau sous forme de séquence en deux dimensions d'éléments XML en appliquant <xref:System.Xml.Serialization.XmlElementAttribute> au champ retournant le tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="878fc-132">You can also serialize an array as a flat sequence of XML elements by applying a <xref:System.Xml.Serialization.XmlElementAttribute> to the field returning the array as follows.</span></span>  
   
 ```vb  
 Public Class Group  
@@ -232,7 +229,7 @@ public class Group{
 }  
 ```  
   
- Une instance sérialisée peut se présenter comme suit.  
+ <span data-ttu-id="878fc-133">Une instance sérialisée peut se présenter comme suit.</span><span class="sxs-lookup"><span data-stu-id="878fc-133">A serialized instance might resemble the following.</span></span>  
   
 ```xml  
 <Group>  
@@ -248,20 +245,20 @@ public class Group{
 </Group>  
 ```  
   
- Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé. (Pour plus d’informations sur l’utilisation de l’outil, consultez [Outil XML Schema Definition et sérialisation XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md).) Lorsqu'aucun attribut n'est appliqué au champ, le schéma décrit l'élément de la manière suivante.  
+ <span data-ttu-id="878fc-134">Pour différencier les deux flux de données XML, vous pouvez également utiliser l'outil XML Schema Definition pour générer des fichiers de document de schéma XML (XSD) à partir du code compilé.</span><span class="sxs-lookup"><span data-stu-id="878fc-134">Another way to differentiate the two XML streams is to use the XML Schema Definition tool to generate the XML Schema (XSD) document files from the compiled code.</span></span> <span data-ttu-id="878fc-135">(Pour plus d’informations sur l’utilisation de l’outil, consultez [Outil XML Schema Definition et sérialisation XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md).) Lorsqu'aucun attribut n'est appliqué au champ, le schéma décrit l'élément de la manière suivante.</span><span class="sxs-lookup"><span data-stu-id="878fc-135">(For more details on using the tool, see [The XML Schema Definition Tool and XML Serialization](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md).) When no attribute is applied to the field, the schema describes the element in the following manner.</span></span>  
   
 ```xml  
 <xs:element minOccurs="0" maxOccurs ="1" name="Employees" type="ArrayOfEmployee" />  
 ```  
   
- Lorsque <xref:System.Xml.Serialization.XmlElementAttribute> est appliqué au champ, le schéma obtenu décrit l'élément comme suit.  
+ <span data-ttu-id="878fc-136">Lorsque <xref:System.Xml.Serialization.XmlElementAttribute> est appliqué au champ, le schéma obtenu décrit l'élément comme suit.</span><span class="sxs-lookup"><span data-stu-id="878fc-136">When the <xref:System.Xml.Serialization.XmlElementAttribute> is applied to the field, the resulting schema describes the element as follows.</span></span>  
   
 ```xml  
 <xs:element minOccurs="0" maxOccurs="unbounded" name="Employees" type="Employee" />   
 ```  
   
-## <a name="serializing-an-arraylist"></a>Sérialisation d'un ArrayList  
- La classe <xref:System.Collections.ArrayList> peut contenir une collection d'objets divers. Par conséquent, vous pouvez utiliser un <xref:System.Collections.ArrayList> plus souvent qu'un tableau. Au lieu de créer un champ qui retourne un tableau d'objets typés, vous pouvez cependant créer un champ qui retourne un <xref:System.Collections.ArrayList> unique. Toutefois, comme avec les tableaux, vous devez indiquer à <xref:System.Xml.Serialization.XmlSerializer> les types d'objets que contient l'<xref:System.Collections.ArrayList>. Pour ce faire, assignez plusieurs instances de <xref:System.Xml.Serialization.XmlElementAttribute> à ce champ, comme illustré dans l'exemple suivant.  
+## <a name="serializing-an-arraylist"></a><span data-ttu-id="878fc-137">Sérialisation d'un ArrayList</span><span class="sxs-lookup"><span data-stu-id="878fc-137">Serializing an ArrayList</span></span>  
+ <span data-ttu-id="878fc-138">La classe <xref:System.Collections.ArrayList> peut contenir une collection d'objets divers.</span><span class="sxs-lookup"><span data-stu-id="878fc-138">The <xref:System.Collections.ArrayList> class can contain a collection of diverse objects.</span></span> <span data-ttu-id="878fc-139">Par conséquent, vous pouvez utiliser un <xref:System.Collections.ArrayList> plus souvent qu'un tableau.</span><span class="sxs-lookup"><span data-stu-id="878fc-139">You can therefore use a <xref:System.Collections.ArrayList> much as you use an array.</span></span> <span data-ttu-id="878fc-140">Au lieu de créer un champ qui retourne un tableau d'objets typés, vous pouvez cependant créer un champ qui retourne un <xref:System.Collections.ArrayList> unique.</span><span class="sxs-lookup"><span data-stu-id="878fc-140">Instead of creating a field that returns an array of typed objects, however, you can create a field that returns a single <xref:System.Collections.ArrayList>.</span></span> <span data-ttu-id="878fc-141">Toutefois, comme avec les tableaux, vous devez indiquer à <xref:System.Xml.Serialization.XmlSerializer> les types d'objets que contient l'<xref:System.Collections.ArrayList>.</span><span class="sxs-lookup"><span data-stu-id="878fc-141">However, as with arrays, you must inform the <xref:System.Xml.Serialization.XmlSerializer> of the types of objects the <xref:System.Collections.ArrayList> contains.</span></span> <span data-ttu-id="878fc-142">Pour ce faire, assignez plusieurs instances de <xref:System.Xml.Serialization.XmlElementAttribute> à ce champ, comme illustré dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="878fc-142">To accomplish this, assign multiple instances of the <xref:System.Xml.Serialization.XmlElementAttribute> to the field, as shown in the following example.</span></span>  
   
 ```vb  
 Public Class Group  
@@ -279,12 +276,12 @@ public class Group{
 }  
 ```  
   
-## <a name="controlling-serialization-of-classes-using-xmlrootattribute-and-xmltypeattribute"></a>Contrôle de la sérialisation de classes à l'aide de XmlRootAttribute et XmlTypeAttribute  
- Il est possible d'appliquer deux attributs à une seule et même classe : <xref:System.Xml.Serialization.XmlRootAttribute> et <xref:System.Xml.Serialization.XmlTypeAttribute>. Ces attributs sont très semblables. <xref:System.Xml.Serialization.XmlRootAttribute> peut être appliqué à une seule classe : celle qui, une fois sérialisée, représente l'élément ouvrant et fermant du document XML, c'est-à-dire l'élément racine. En revanche, <xref:System.Xml.Serialization.XmlTypeAttribute> peut être appliqué à n'importe quelle classe, y compris la classe racine.  
+## <a name="controlling-serialization-of-classes-using-xmlrootattribute-and-xmltypeattribute"></a><span data-ttu-id="878fc-143">Contrôle de la sérialisation de classes à l'aide de XmlRootAttribute et XmlTypeAttribute</span><span class="sxs-lookup"><span data-stu-id="878fc-143">Controlling Serialization of Classes Using XmlRootAttribute and XmlTypeAttribute</span></span>  
+ <span data-ttu-id="878fc-144">Il est possible d'appliquer deux attributs à une seule et même classe : <xref:System.Xml.Serialization.XmlRootAttribute> et <xref:System.Xml.Serialization.XmlTypeAttribute>.</span><span class="sxs-lookup"><span data-stu-id="878fc-144">There are two attributes that can be applied to a class (and only a class): <xref:System.Xml.Serialization.XmlRootAttribute> and <xref:System.Xml.Serialization.XmlTypeAttribute>.</span></span> <span data-ttu-id="878fc-145">Ces attributs sont très semblables.</span><span class="sxs-lookup"><span data-stu-id="878fc-145">These attributes are very similar.</span></span> <span data-ttu-id="878fc-146"><xref:System.Xml.Serialization.XmlRootAttribute> peut être appliqué à une seule classe : celle qui, une fois sérialisée, représente l'élément ouvrant et fermant du document XML, c'est-à-dire l'élément racine.</span><span class="sxs-lookup"><span data-stu-id="878fc-146">The <xref:System.Xml.Serialization.XmlRootAttribute> can be applied to only one class: the class that, when serialized, represents the XML document's opening and closing element—in other words, the root element.</span></span> <span data-ttu-id="878fc-147">En revanche, <xref:System.Xml.Serialization.XmlTypeAttribute> peut être appliqué à n'importe quelle classe, y compris la classe racine.</span><span class="sxs-lookup"><span data-stu-id="878fc-147">The <xref:System.Xml.Serialization.XmlTypeAttribute>, on the other hand, can be applied to any class, including the root class.</span></span>  
   
- Par exemple, la classe `Group` correspond à la classe racine dans les exemples précédents, et tous ses champs et propriétés publics deviennent les éléments XML recherchés dans le document XML. Par conséquent, il ne peut y avoir qu'une seule classe racine. En appliquant <xref:System.Xml.Serialization.XmlRootAttribute>, vous pouvez contrôler le flux de données XML généré par <xref:System.Xml.Serialization.XmlSerializer>. Par exemple, vous pouvez modifier le nom de l'élément et l'espace de noms.  
+ <span data-ttu-id="878fc-148">Par exemple, la classe `Group` correspond à la classe racine dans les exemples précédents, et tous ses champs et propriétés publics deviennent les éléments XML recherchés dans le document XML.</span><span class="sxs-lookup"><span data-stu-id="878fc-148">For example, in the previous examples, the `Group` class is the root class, and all its public fields and properties become the XML elements found in the XML document.</span></span> <span data-ttu-id="878fc-149">Par conséquent, il ne peut y avoir qu'une seule classe racine.</span><span class="sxs-lookup"><span data-stu-id="878fc-149">Therefore, there can be only one root class.</span></span> <span data-ttu-id="878fc-150">En appliquant <xref:System.Xml.Serialization.XmlRootAttribute>, vous pouvez contrôler le flux de données XML généré par <xref:System.Xml.Serialization.XmlSerializer>.</span><span class="sxs-lookup"><span data-stu-id="878fc-150">By applying the <xref:System.Xml.Serialization.XmlRootAttribute>, you can control the XML stream generated by the <xref:System.Xml.Serialization.XmlSerializer>.</span></span> <span data-ttu-id="878fc-151">Par exemple, vous pouvez modifier le nom de l'élément et l'espace de noms.</span><span class="sxs-lookup"><span data-stu-id="878fc-151">For example, you can change the element name and namespace.</span></span>  
   
- <xref:System.Xml.Serialization.XmlTypeAttribute> vous permet de contrôler le schéma du code XML généré. Cette fonction est utile lorsque vous devez publier le schéma via un service Web XML. L'exemple suivant applique <xref:System.Xml.Serialization.XmlTypeAttribute> et <xref:System.Xml.Serialization.XmlRootAttribute> à la même classe.  
+ <span data-ttu-id="878fc-152"><xref:System.Xml.Serialization.XmlTypeAttribute> vous permet de contrôler le schéma du code XML généré.</span><span class="sxs-lookup"><span data-stu-id="878fc-152">The <xref:System.Xml.Serialization.XmlTypeAttribute> allows you to control the schema of the generated XML.</span></span> <span data-ttu-id="878fc-153">Cette fonction est utile lorsque vous devez publier le schéma via un service Web XML.</span><span class="sxs-lookup"><span data-stu-id="878fc-153">This capability is useful when you need to publish the schema through an XML Web service.</span></span> <span data-ttu-id="878fc-154">L'exemple suivant applique <xref:System.Xml.Serialization.XmlTypeAttribute> et <xref:System.Xml.Serialization.XmlRootAttribute> à la même classe.</span><span class="sxs-lookup"><span data-stu-id="878fc-154">The following example applies both the <xref:System.Xml.Serialization.XmlTypeAttribute> and the <xref:System.Xml.Serialization.XmlRootAttribute> to the same class.</span></span>  
   
 ```vb  
 <XmlRoot("NewGroupName"), _  
@@ -302,13 +299,13 @@ public class Group{
 }  
 ```  
   
- Si cette classe est compilée et que l'outil XML Schema Definition est utilisé pour générer son schéma, vous obtenez le code XML suivant qui décrit `Group`.  
+ <span data-ttu-id="878fc-155">Si cette classe est compilée et que l'outil XML Schema Definition est utilisé pour générer son schéma, vous obtenez le code XML suivant qui décrit `Group`.</span><span class="sxs-lookup"><span data-stu-id="878fc-155">If this class is compiled, and the XML Schema Definition tool is used to generate its schema, you would find the following XML describing `Group`.</span></span>  
   
 ```xml  
 <xs:element name="NewGroupName" type="NewTypeName">  
 ```  
   
- En revanche, si vous deviez sérialiser une instance de la classe, vous obtiendriez uniquement `NewGroupName` dans le document XML.  
+ <span data-ttu-id="878fc-156">En revanche, si vous deviez sérialiser une instance de la classe, vous obtiendriez uniquement `NewGroupName` dans le document XML.</span><span class="sxs-lookup"><span data-stu-id="878fc-156">In contrast, if you were to serialize an instance of the class, only `NewGroupName` would be found in the XML document.</span></span>  
   
 ```xml  
 <NewGroupName>  
@@ -316,15 +313,14 @@ public class Group{
 </NewGroupName>  
 ```  
   
-## <a name="preventing-serialization-with-the-xmlignoreattribute"></a>Empêcher la sérialisation avec XmlIgnoreAttribute  
- Dans certains cas, une propriété ou un champ public ne doit pas être sérialisé. Par exemple, un champ ou une propriété peut servir à contenir des métadonnées. Dans de tels cas, appliquez <xref:System.Xml.Serialization.XmlIgnoreAttribute> au champ ou à la propriété pour que <xref:System.Xml.Serialization.XmlSerializer> puisse l'ignorer.  
+## <a name="preventing-serialization-with-the-xmlignoreattribute"></a><span data-ttu-id="878fc-157">Empêcher la sérialisation avec XmlIgnoreAttribute</span><span class="sxs-lookup"><span data-stu-id="878fc-157">Preventing Serialization with the XmlIgnoreAttribute</span></span>  
+ <span data-ttu-id="878fc-158">Dans certains cas, une propriété ou un champ public ne doit pas être sérialisé.</span><span class="sxs-lookup"><span data-stu-id="878fc-158">There might be situations when a public property or field does not need to be serialized.</span></span> <span data-ttu-id="878fc-159">Par exemple, un champ ou une propriété peut servir à contenir des métadonnées.</span><span class="sxs-lookup"><span data-stu-id="878fc-159">For example, a field or property could be used to contain metadata.</span></span> <span data-ttu-id="878fc-160">Dans de tels cas, appliquez <xref:System.Xml.Serialization.XmlIgnoreAttribute> au champ ou à la propriété pour que <xref:System.Xml.Serialization.XmlSerializer> puisse l'ignorer.</span><span class="sxs-lookup"><span data-stu-id="878fc-160">In such cases, apply the <xref:System.Xml.Serialization.XmlIgnoreAttribute> to the field or property and the <xref:System.Xml.Serialization.XmlSerializer> will skip over it.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Attributs qui contrôlent la sérialisation XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)   
- [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)   
- [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
- [Exemples de sérialisation XML](../../../docs/standard/serialization/examples-of-xml-serialization.md)   
- [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)   
- [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
- [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-
+## <a name="see-also"></a><span data-ttu-id="878fc-161">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="878fc-161">See Also</span></span>  
+ [<span data-ttu-id="878fc-162">Attributs qui contrôlent la sérialisation XML</span><span class="sxs-lookup"><span data-stu-id="878fc-162">Attributes That Control XML Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
+ [<span data-ttu-id="878fc-163">Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP</span><span class="sxs-lookup"><span data-stu-id="878fc-163">Attributes That Control Encoded SOAP Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
+ [<span data-ttu-id="878fc-164">Introduction à la sérialisation XML</span><span class="sxs-lookup"><span data-stu-id="878fc-164">Introducing XML Serialization</span></span>](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+ [<span data-ttu-id="878fc-165">Exemples de sérialisation XML</span><span class="sxs-lookup"><span data-stu-id="878fc-165">Examples of XML Serialization</span></span>](../../../docs/standard/serialization/examples-of-xml-serialization.md)  
+ [<span data-ttu-id="878fc-166">Guide pratique pour spécifier un nom d’élément différent pour un flux XML</span><span class="sxs-lookup"><span data-stu-id="878fc-166">How to: Specify an Alternate Element Name for an XML Stream</span></span>](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+ [<span data-ttu-id="878fc-167">Guide pratique pour sérialiser un objet</span><span class="sxs-lookup"><span data-stu-id="878fc-167">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="878fc-168">Guide pratique pour désérialiser un objet</span><span class="sxs-lookup"><span data-stu-id="878fc-168">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

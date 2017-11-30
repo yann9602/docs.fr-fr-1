@@ -8,21 +8,20 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 83da65d17d927e6afa8c669d5a3123d458246b31
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 79d7aef2cf374acc4380fac6009615f75eaf1e81
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="xml-schema-definition-tool-xsdexe"></a>Outil XML Schema Definition (Xsd.exe)
-L'outil XML Schema Definition Tool (Xsd.exe) génère des classes du Common Language Runtime et du schéma XML à partir de fichiers XDR, XML et XSD ou de classes figurant dans un assembly de runtime.  
+# <a name="xml-schema-definition-tool-xsdexe"></a><span data-ttu-id="cd7c5-102">Outil XML Schema Definition (Xsd.exe)</span><span class="sxs-lookup"><span data-stu-id="cd7c5-102">XML Schema Definition Tool (Xsd.exe)</span></span>
+<span data-ttu-id="cd7c5-103">L'outil XML Schema Definition Tool (Xsd.exe) génère des classes du Common Language Runtime et du schéma XML à partir de fichiers XDR, XML et XSD ou de classes figurant dans un assembly de runtime.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-103">The XML Schema Definition (Xsd.exe) tool generates XML schema or common language runtime classes from XDR, XML, and XSD files, or from classes in a runtime assembly.</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="cd7c5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cd7c5-104">Syntax</span></span>  
   
 ```  
 xsd file.xdr [/outputdir:directory][/parameters:file.xml]  
@@ -34,72 +33,72 @@ xsd file.xsd {/classes | /dataset} [/element:element]
 xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/parameters:file.xml]  
 ```  
   
-## <a name="argument"></a>Argument  
+## <a name="argument"></a><span data-ttu-id="cd7c5-105">Argument</span><span class="sxs-lookup"><span data-stu-id="cd7c5-105">Argument</span></span>  
   
-|Argument|Description|  
+|<span data-ttu-id="cd7c5-106">Argument</span><span class="sxs-lookup"><span data-stu-id="cd7c5-106">Argument</span></span>|<span data-ttu-id="cd7c5-107">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-107">Description</span></span>|  
 |--------------|-----------------|  
-|*file.extension*|Spécifie le fichier d'entrée à convertir. Vous devez spécifier l’une des extensions suivantes : .xdr, .xml, .xsd, .dll ou .exe.<br /><br /> Si vous spécifiez un fichier de schéma XDR (extension .xdr), Xsd.exe convertit alors le schéma XDR en schéma XSD. Le fichier de sortie porte le même nom que celui du schéma XDR, mais son extension est .xsd.<br /><br /> Si vous spécifiez un fichier XML (extension .xml), Xsd.exe déduit alors un schéma à partir des données d'un fichier et génère un schéma XSD. Le fichier de sortie porte le même nom que celui du fichier XML, mais son extension est .xsd.<br /><br /> Si vous spécifiez un fichier de schéma XML (extension .xsd), Xsd.exe génère alors du code source pour les objets de runtime correspondant au schéma XML.<br /><br /> Si vous spécifiez un fichier d'assembly de runtime (extension .exe ou .dll), Xsd.exe génère alors des schémas pour un ou plusieurs types de cet assembly. Vous pouvez utiliser l'option `/type` pour spécifier les types pour lesquels générer des schémas. Les schémas de sortie sont nommés schema0.xsd, schema1.xsd, et ainsi de suite. Xsd.exe génère plusieurs schémas uniquement dans le cas où les types indiqués spécifieraient un espace de noms à l'aide de l'attribut personnalisé `XMLRoot`.|  
+|<span data-ttu-id="cd7c5-108">*file.extension*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-108">*file.extension*</span></span>|<span data-ttu-id="cd7c5-109">Spécifie le fichier d'entrée à convertir.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-109">Specifies the input file to convert.</span></span> <span data-ttu-id="cd7c5-110">Vous devez spécifier l’une des extensions suivantes : .xdr, .xml, .xsd, .dll ou .exe.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-110">You must specify the extensionas one of the following: .xdr, .xml, .xsd, .dll, or .exe.</span></span><br /><br /> <span data-ttu-id="cd7c5-111">Si vous spécifiez un fichier de schéma XDR (extension .xdr), Xsd.exe convertit alors le schéma XDR en schéma XSD.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-111">If you specify an XDR schema file (.xdr extension), Xsd.exe converts the XDR schema to an XSD schema.</span></span> <span data-ttu-id="cd7c5-112">Le fichier de sortie porte le même nom que celui du schéma XDR, mais son extension est .xsd.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-112">The output file has the same name as the XDR schema, but with the .xsd extension.</span></span><br /><br /> <span data-ttu-id="cd7c5-113">Si vous spécifiez un fichier XML (extension .xml), Xsd.exe déduit alors un schéma à partir des données d'un fichier et génère un schéma XSD.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-113">If you specify an XML file (.xml extension), Xsd.exe infers a schema from the data in the file and produces an XSD schema.</span></span> <span data-ttu-id="cd7c5-114">Le fichier de sortie porte le même nom que celui du fichier XML, mais son extension est .xsd.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-114">The output file has the same name as the XML file, but with the .xsd extension.</span></span><br /><br /> <span data-ttu-id="cd7c5-115">Si vous spécifiez un fichier de schéma XML (extension .xsd), Xsd.exe génère alors du code source pour les objets de runtime correspondant au schéma XML.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-115">If you specify an XML schema file (.xsd extension), Xsd.exe generates source code for runtime objects that correspond to the XML schema.</span></span><br /><br /> <span data-ttu-id="cd7c5-116">Si vous spécifiez un fichier d'assembly de runtime (extension .exe ou .dll), Xsd.exe génère alors des schémas pour un ou plusieurs types de cet assembly.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-116">If you specify a runtime assembly file (.exe or .dll extension), Xsd.exe generates schemas for one or more types in that assembly.</span></span> <span data-ttu-id="cd7c5-117">Vous pouvez utiliser l'option `/type` pour spécifier les types pour lesquels générer des schémas.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-117">You can use the `/type` option to specify the types for which to generate schemas.</span></span> <span data-ttu-id="cd7c5-118">Les schémas de sortie sont nommés schema0.xsd, schema1.xsd, et ainsi de suite.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-118">The output schemas are named schema0.xsd, schema1.xsd, and so on.</span></span> <span data-ttu-id="cd7c5-119">Xsd.exe génère plusieurs schémas uniquement dans le cas où les types indiqués spécifieraient un espace de noms à l'aide de l'attribut personnalisé `XMLRoot`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-119">Xsd.exe produces multiple schemas only if the given types specify a namespace using the `XMLRoot` custom attribute.</span></span>|  
   
-## <a name="general-options"></a>Options générales  
+## <a name="general-options"></a><span data-ttu-id="cd7c5-120">Options générales</span><span class="sxs-lookup"><span data-stu-id="cd7c5-120">General Options</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="cd7c5-121">Option</span><span class="sxs-lookup"><span data-stu-id="cd7c5-121">Option</span></span>|<span data-ttu-id="cd7c5-122">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-122">Description</span></span>|  
 |------------|-----------------|  
-|**/h**[**elp**]|Affiche la syntaxe et les options de commande de l'outil.|  
-|**/o**[**utputdir**]**:***répertoire*|Spécifie le répertoire des fichiers de sortie. Cet argument ne peut être spécifié qu'à une seule reprise. La valeur par défaut correspond au répertoire actif.|  
-|**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
-|**/P[arameters]:** *fichier.xml*|Options de lecture pour différents modes d'opération à partir du fichier .xml spécifié. La forme abrégée est '/p:'. Pour plus d'informations, consultez la section Notes qui suit.|  
+|<span data-ttu-id="cd7c5-123">**/h**[**elp**]</span><span class="sxs-lookup"><span data-stu-id="cd7c5-123">**/h**[**elp**]</span></span>|<span data-ttu-id="cd7c5-124">Affiche la syntaxe et les options de commande de l'outil.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-124">Displays command syntax and options for the tool.</span></span>|  
+|<span data-ttu-id="cd7c5-125">**/o**[**utputdir**]**:***répertoire*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-125">**/o**[**utputdir**]**:***directory*</span></span>|<span data-ttu-id="cd7c5-126">Spécifie le répertoire des fichiers de sortie.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-126">Specifies the directory for output files.</span></span> <span data-ttu-id="cd7c5-127">Cet argument ne peut être spécifié qu'à une seule reprise.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-127">This argument can appear only once.</span></span> <span data-ttu-id="cd7c5-128">La valeur par défaut correspond au répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-128">The default is the current directory.</span></span>|  
+|<span data-ttu-id="cd7c5-129">**/?**</span><span class="sxs-lookup"><span data-stu-id="cd7c5-129">**/?**</span></span>|<span data-ttu-id="cd7c5-130">Affiche la syntaxe et les options de commande de l'outil.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-130">Displays command syntax and options for the tool.</span></span>|  
+|<span data-ttu-id="cd7c5-131">**/P[arameters]:** *fichier.xml*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-131">**/P[arameters]:** *file.xml*</span></span>|<span data-ttu-id="cd7c5-132">Options de lecture pour différents modes d'opération à partir du fichier .xml spécifié.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-132">Read options for various operation modes from the specified .xml file.</span></span> <span data-ttu-id="cd7c5-133">La forme abrégée est '/p:'.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-133">The short form is '/p:'.</span></span> <span data-ttu-id="cd7c5-134">Pour plus d'informations, consultez la section Notes qui suit.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-134">For more information, see the following Remarks section.</span></span>|  
   
-## <a name="xsd-file-options"></a>Options de fichier XSD  
- Vous ne devez spécifier qu'une seule des options suivantes pour les fichiers .xsd.  
+## <a name="xsd-file-options"></a><span data-ttu-id="cd7c5-135">Options de fichier XSD</span><span class="sxs-lookup"><span data-stu-id="cd7c5-135">XSD File Options</span></span>  
+ <span data-ttu-id="cd7c5-136">Vous ne devez spécifier qu'une seule des options suivantes pour les fichiers .xsd.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-136">You must specify only one of the following options for .xsd files.</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="cd7c5-137">Option</span><span class="sxs-lookup"><span data-stu-id="cd7c5-137">Option</span></span>|<span data-ttu-id="cd7c5-138">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-138">Description</span></span>|  
 |------------|-----------------|  
-|**/c**[**lasses**]|Génère des classes correspondant au schéma spécifié. Pour lire les données XML dans l’objet, utilisez la méthode `System.Xml.Serialization.XmlSerializer.Deserializer`.|  
-|**/d**[**ataset**]|Génère une classe dérivée de <xref:System.Data.DataSet> qui correspond au schéma spécifié. Pour lire les données XML dans la classe dérivée, utilisez la méthode `System.Data.DataSet.ReadXml`.|  
+|<span data-ttu-id="cd7c5-139">**/c**[**lasses**]</span><span class="sxs-lookup"><span data-stu-id="cd7c5-139">**/c**[**lasses**]</span></span>|<span data-ttu-id="cd7c5-140">Génère des classes correspondant au schéma spécifié.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-140">Generates classes that correspond to the specified schema.</span></span> <span data-ttu-id="cd7c5-141">Pour lire les données XML dans l’objet, utilisez la méthode `System.Xml.Serialization.XmlSerializer.Deserializer`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-141">To read XML data into the object, use the `System.Xml.Serialization.XmlSerializer.Deserializer` method.</span></span>|  
+|<span data-ttu-id="cd7c5-142">**/d**[**ataset**]</span><span class="sxs-lookup"><span data-stu-id="cd7c5-142">**/d**[**ataset**]</span></span>|<span data-ttu-id="cd7c5-143">Génère une classe dérivée de <xref:System.Data.DataSet> qui correspond au schéma spécifié.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-143">Generates a class derived from <xref:System.Data.DataSet> that corresponds to the specified schema.</span></span> <span data-ttu-id="cd7c5-144">Pour lire les données XML dans la classe dérivée, utilisez la méthode `System.Data.DataSet.ReadXml`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-144">To read XML data into the derived class, use the `System.Data.DataSet.ReadXml` method.</span></span>|  
   
- Vous pouvez également spécifier les options suivantes pour les fichiers .xsd.  
+ <span data-ttu-id="cd7c5-145">Vous pouvez également spécifier les options suivantes pour les fichiers .xsd.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-145">You can also specify any of the following options for .xsd files.</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="cd7c5-146">Option</span><span class="sxs-lookup"><span data-stu-id="cd7c5-146">Option</span></span>|<span data-ttu-id="cd7c5-147">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-147">Description</span></span>|  
 |------------|-----------------|  
-|**/e**[**lement**]**:***élément*|Spécifie l'élément figurant dans le schéma pour lequel générer du code. Tous les éléments sont par défaut tapés. Vous pouvez spécifier cet argument à plusieurs reprises.|  
-|**/enableDataBinding**|Implémente l'interface <xref:System.ComponentModel.INotifyPropertyChanged> sur tous les types générés pour activer la liaison de données. La forme abrégée est `/edb`.|  
-|**/enableLinqDataSet**|(Forme abrégée : `/eld`.) Spécifie que le DataSet généré peut être interrogé par rapport à l'utilisation de LINQ to DataSet. Cette option est utilisée lorsque l'option  /dataset est également spécifiée. Pour plus d’informations, consultez [Présentation de LINQ to DataSet](../../../docs/framework/data/adonet/linq-to-dataset-overview.md) et [Interrogation de datasets typés](../../../docs/framework/data/adonet/querying-typed-datasets.md). Pour plus d’informations sur l’utilisation de LINQ, consultez [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).|  
-|**/f**[**ields**]|Génère des champs plutôt que des propriétés. Par défaut, des propriétés sont générées.|  
-|**/l**[**anguage**]**:***langage*|Spécifie le langage de programmation à utiliser. Vous avez le choix entre `CS` (C#, qui est la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#). Vous pouvez également spécifier un nom qualifié complet pour une classe implémentant <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName>.|  
-|**/n**[**amespace**]**:***espace de noms*|Spécifie l'espace de noms du runtime pour les types générés. L'espace de noms par défaut est `Schemas`.|  
-|**/nologo**|Supprime la bannière.|  
-|**/order**|Génère des identificateurs d'ordre explicites sur les membres de particule.|  
-|**/o[ut]:** *nom_répertoire*|Spécifie le répertoire de sortie dans lequel placer les fichiers. La valeur par défaut correspond au répertoire actif.|  
-|**/u**[**ri**]**:***uri*|Spécifie l'URI des éléments figurant dans le schéma pour lequel générer du code. S'il existe, cet URI s'applique à tous les éléments spécifiés avec l'option `/element`.|  
+|<span data-ttu-id="cd7c5-148">**/e**[**lement**]**:***élément*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-148">**/e**[**lement**]**:***element*</span></span>|<span data-ttu-id="cd7c5-149">Spécifie l'élément figurant dans le schéma pour lequel générer du code.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-149">Specifies the element in the schema to generate code for.</span></span> <span data-ttu-id="cd7c5-150">Tous les éléments sont par défaut tapés.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-150">By default all elements are typed.</span></span> <span data-ttu-id="cd7c5-151">Vous pouvez spécifier cet argument à plusieurs reprises.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-151">You can specify this argument more than once.</span></span>|  
+|<span data-ttu-id="cd7c5-152">**/enableDataBinding**</span><span class="sxs-lookup"><span data-stu-id="cd7c5-152">**/enableDataBinding**</span></span>|<span data-ttu-id="cd7c5-153">Implémente l'interface <xref:System.ComponentModel.INotifyPropertyChanged> sur tous les types générés pour activer la liaison de données.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-153">Implements the <xref:System.ComponentModel.INotifyPropertyChanged> interface on all generated types to enable data binding.</span></span> <span data-ttu-id="cd7c5-154">La forme abrégée est `/edb`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-154">The short form is `/edb`.</span></span>|  
+|<span data-ttu-id="cd7c5-155">**/enableLinqDataSet**</span><span class="sxs-lookup"><span data-stu-id="cd7c5-155">**/enableLinqDataSet**</span></span>|<span data-ttu-id="cd7c5-156">(Forme abrégée : `/eld`.) Spécifie que le DataSet généré peut être interrogé par rapport à l'utilisation de LINQ to DataSet.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-156">(Short form: `/eld`.) Specifies that the generated DataSet can be queried against using LINQ to DataSet.</span></span> <span data-ttu-id="cd7c5-157">Cette option est utilisée lorsque l'option  /dataset est également spécifiée.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-157">This option is used when the /dataset option is also specified.</span></span> <span data-ttu-id="cd7c5-158">Pour plus d’informations, consultez [Présentation de LINQ to DataSet](../../../docs/framework/data/adonet/linq-to-dataset-overview.md) et [Interrogation de datasets typés](../../../docs/framework/data/adonet/querying-typed-datasets.md).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-158">For more information, see [LINQ to DataSet Overview](../../../docs/framework/data/adonet/linq-to-dataset-overview.md) and [Querying Typed DataSets](../../../docs/framework/data/adonet/querying-typed-datasets.md).</span></span> <span data-ttu-id="cd7c5-159">Pour plus d’informations sur l’utilisation de LINQ, consultez [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-159">For general information about using LINQ, see [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).</span></span>|  
+|<span data-ttu-id="cd7c5-160">**/f**[**ields**]</span><span class="sxs-lookup"><span data-stu-id="cd7c5-160">**/f**[**ields**]</span></span>|<span data-ttu-id="cd7c5-161">Génère des champs plutôt que des propriétés.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-161">Generates fields instead of properties.</span></span> <span data-ttu-id="cd7c5-162">Par défaut, des propriétés sont générées.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-162">By default, properties are generated.</span></span>|  
+|<span data-ttu-id="cd7c5-163">**/l**[**anguage**]**:***langage*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-163">**/l**[**anguage**]**:***language*</span></span>|<span data-ttu-id="cd7c5-164">Spécifie le langage de programmation à utiliser.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-164">Specifies the programming language to use.</span></span> <span data-ttu-id="cd7c5-165">Vous avez le choix entre `CS` (C#, qui est la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-165">Choose from `CS` (C#, which is the default), `VB` (Visual Basic), `JS` (JScript), or `VJS` (Visual J#).</span></span> <span data-ttu-id="cd7c5-166">Vous pouvez également spécifier un nom qualifié complet pour une classe implémentant <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-166">You can also specify a fully qualified name for a class implementing <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType></span></span>|  
+|<span data-ttu-id="cd7c5-167">**/n**[**amespace**]**:***espace de noms*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-167">**/n**[**amespace**]**:***namespace*</span></span>|<span data-ttu-id="cd7c5-168">Spécifie l'espace de noms du runtime pour les types générés.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-168">Specifies the runtime namespace for the generated types.</span></span> <span data-ttu-id="cd7c5-169">L'espace de noms par défaut est `Schemas`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-169">The default namespace is `Schemas`.</span></span>|  
+|<span data-ttu-id="cd7c5-170">**/nologo**</span><span class="sxs-lookup"><span data-stu-id="cd7c5-170">**/nologo**</span></span>|<span data-ttu-id="cd7c5-171">Supprime la bannière.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-171">Suppresses the banner.</span></span>|  
+|<span data-ttu-id="cd7c5-172">**/order**</span><span class="sxs-lookup"><span data-stu-id="cd7c5-172">**/order**</span></span>|<span data-ttu-id="cd7c5-173">Génère des identificateurs d'ordre explicites sur les membres de particule.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-173">Generates explicit order identifiers on all particle members.</span></span>|  
+|<span data-ttu-id="cd7c5-174">**/o[ut]:** *nom_répertoire*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-174">**/o[ut]:** *directoryName*</span></span>|<span data-ttu-id="cd7c5-175">Spécifie le répertoire de sortie dans lequel placer les fichiers.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-175">Specifies the output directory to place the files in.</span></span> <span data-ttu-id="cd7c5-176">La valeur par défaut correspond au répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-176">The default is the current directory.</span></span>|  
+|<span data-ttu-id="cd7c5-177">**/u**[**ri**]**:***uri*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-177">**/u**[**ri**]**:***uri*</span></span>|<span data-ttu-id="cd7c5-178">Spécifie l'URI des éléments figurant dans le schéma pour lequel générer du code.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-178">Specifies the URI for the elements in the schema to generate code for.</span></span> <span data-ttu-id="cd7c5-179">S'il existe, cet URI s'applique à tous les éléments spécifiés avec l'option `/element`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-179">This URI, if present, applies to all elements specified with the `/element` option.</span></span>|  
   
-## <a name="dll-and-exe-file-options"></a>Options de fichier DLL et EXE  
+## <a name="dll-and-exe-file-options"></a><span data-ttu-id="cd7c5-180">Options de fichier DLL et EXE</span><span class="sxs-lookup"><span data-stu-id="cd7c5-180">DLL and EXE File Options</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="cd7c5-181">Option</span><span class="sxs-lookup"><span data-stu-id="cd7c5-181">Option</span></span>|<span data-ttu-id="cd7c5-182">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-182">Description</span></span>|  
 |------------|-----------------|  
-|**/t**[**ype**]**:***nom_type*|Spécifie le nom du type pour lequel créer un schéma. Vous pouvez spécifier plusieurs arguments pour le type. Si *nom_type* ne spécifie pas d’espace de noms, Xsd.exe établit une correspondance entre tous les types de l’assembly et le type spécifié. Si *nom_type* spécifie un espace de noms, une correspondance est établie uniquement avec ce type. Si *nom_type* se termine par un astérisque (\*), l’outil établit une correspondance avec tous les types commençant par la chaîne qui précède \*. Si vous omettez l'option `/type`, Xsd.exe génère alors des schémas pour tous les types de l'assembly.|  
+|<span data-ttu-id="cd7c5-183">**/t**[**ype**]**:***nom_type*</span><span class="sxs-lookup"><span data-stu-id="cd7c5-183">**/t**[**ype**]**:***typename*</span></span>|<span data-ttu-id="cd7c5-184">Spécifie le nom du type pour lequel créer un schéma.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-184">Specifies the name of the type to create a schema for.</span></span> <span data-ttu-id="cd7c5-185">Vous pouvez spécifier plusieurs arguments pour le type.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-185">You can specify multiple type arguments.</span></span> <span data-ttu-id="cd7c5-186">Si *nom_type* ne spécifie pas d’espace de noms, Xsd.exe établit une correspondance entre tous les types de l’assembly et le type spécifié.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-186">If *typename* does not specify a namespace, Xsd.exe matches all types in the assembly with the specified type.</span></span> <span data-ttu-id="cd7c5-187">Si *nom_type* spécifie un espace de noms, une correspondance est établie uniquement avec ce type.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-187">If *typename* specifies a namespace, only that type is matched.</span></span> <span data-ttu-id="cd7c5-188">Si *nom_type* se termine par un astérisque (\*), l’outil établit une correspondance avec tous les types commençant par la chaîne qui précède \*.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-188">If *typename* ends with an asterisk character (\*), the tool matches all types that start with the string preceding the \*.</span></span> <span data-ttu-id="cd7c5-189">Si vous omettez l'option `/type`, Xsd.exe génère alors des schémas pour tous les types de l'assembly.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-189">If you omit the `/type` option, Xsd.exe generates schemas for all types in the assembly.</span></span>|  
   
-## <a name="remarks"></a>Remarques  
- Le tableau suivant affiche les opérations que Xsd.exe exécute.  
+## <a name="remarks"></a><span data-ttu-id="cd7c5-190">Remarques</span><span class="sxs-lookup"><span data-stu-id="cd7c5-190">Remarks</span></span>  
+ <span data-ttu-id="cd7c5-191">Le tableau suivant affiche les opérations que Xsd.exe exécute.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-191">The following table shows the operations that Xsd.exe performs.</span></span>  
   
- De XDR en XSD  
- Génère un schéma XML à partir d'un fichier de schéma XDR (XML-Data-Reduced). XDR est l'un des premiers formats de schéma XML.  
+ <span data-ttu-id="cd7c5-192">De XDR en XSD</span><span class="sxs-lookup"><span data-stu-id="cd7c5-192">XDR to XSD</span></span>  
+ <span data-ttu-id="cd7c5-193">Génère un schéma XML à partir d'un fichier de schéma XDR (XML-Data-Reduced).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-193">Generates an XML schema from an XML-Data-Reduced schema file.</span></span> <span data-ttu-id="cd7c5-194">XDR est l'un des premiers formats de schéma XML.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-194">XDR is an early XML-based schema format.</span></span>  
   
- De XML en XSD  
- Génère un schéma XML à partir d'un fichier XML.  
+ <span data-ttu-id="cd7c5-195">De XML en XSD</span><span class="sxs-lookup"><span data-stu-id="cd7c5-195">XML to XSD</span></span>  
+ <span data-ttu-id="cd7c5-196">Génère un schéma XML à partir d'un fichier XML.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-196">Generates an XML schema from an XML file.</span></span>  
   
- De XSD en DataSet  
- Génère des classes <xref:System.Data.DataSet> de Common Language Runtime à partir d'un fichier de schéma XSD. Les classes générées proposent un modèle objet riche aux données XML régulières.  
+ <span data-ttu-id="cd7c5-197">De XSD en DataSet</span><span class="sxs-lookup"><span data-stu-id="cd7c5-197">XSD to DataSet</span></span>  
+ <span data-ttu-id="cd7c5-198">Génère des classes <xref:System.Data.DataSet> de Common Language Runtime à partir d'un fichier de schéma XSD.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-198">Generates common language runtime <xref:System.Data.DataSet> classes from an XSD schema file.</span></span> <span data-ttu-id="cd7c5-199">Les classes générées proposent un modèle objet riche aux données XML régulières.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-199">The generated classes provide a rich object model for regular XML data.</span></span>  
   
- De XSD en classes  
- Génère des classes de runtime à partir d'un fichier de schéma XSD. Les classes générées peuvent être associées à <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> pour lire et écrire du code XML conforme au schéma.  
+ <span data-ttu-id="cd7c5-200">De XSD en classes</span><span class="sxs-lookup"><span data-stu-id="cd7c5-200">XSD to Classes</span></span>  
+ <span data-ttu-id="cd7c5-201">Génère des classes de runtime à partir d'un fichier de schéma XSD.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-201">Generates runtime classes from an XSD schema file.</span></span> <span data-ttu-id="cd7c5-202">Les classes générées peuvent être associées à <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> pour lire et écrire du code XML conforme au schéma.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-202">The generated classes can be used in conjunction with <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> to read and write XML code that follows the schema.</span></span>  
   
- De classes en XSD  
- Génère un schéma XML à partir d'un ou de plusieurs types dans un fichier d'assembly de runtime. Le schéma généré définit le format XML utilisé par `System.Xml.Serialization.XmlSerializer`.  
+ <span data-ttu-id="cd7c5-203">De classes en XSD</span><span class="sxs-lookup"><span data-stu-id="cd7c5-203">Classes to XSD</span></span>  
+ <span data-ttu-id="cd7c5-204">Génère un schéma XML à partir d'un ou de plusieurs types dans un fichier d'assembly de runtime.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-204">Generates an XML schema from a type or types in a runtime assembly file.</span></span> <span data-ttu-id="cd7c5-205">Le schéma généré définit le format XML utilisé par `System.Xml.Serialization.XmlSerializer`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-205">The generated schema defines the XML format used by `System.Xml.Serialization.XmlSerializer`.</span></span>  
   
- Xsd.exe vous permet uniquement de manipuler les schémas XML conformes au langage XSD (XML Schema Definition) proposé par W3C (World Wide Web Consortium). Pour plus d'informations sur la proposition XSD ou la norme XML, consultez le site Web http://w3.org.  
+ <span data-ttu-id="cd7c5-206">Xsd.exe vous permet uniquement de manipuler les schémas XML conformes au langage XSD (XML Schema Definition) proposé par W3C (World Wide Web Consortium).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-206">Xsd.exe only allows you to manipulate XML schemas that follow the XML Schema Definition (XSD) language proposed by the World Wide Web Consortium (W3C).</span></span> <span data-ttu-id="cd7c5-207">Pour plus d'informations sur la proposition XSD ou la norme XML, consultez le site Web http://w3.org.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-207">For more information on the XML Schema Definition proposal or the XML standard, see http://w3.org.</span></span>  
   
-## <a name="setting-options-with-an-xml-file"></a>Définition d'options avec un fichier XML  
- À l’aide du commutateur `/parameters`, vous pouvez spécifier un fichier XML qui définit plusieurs options. Les options que vous pouvez définir dépendent de votre utilisation de l'outil XSD.exe. Les choix incluent la génération de schémas, la génération de fichiers de code ou la génération de fichiers de code qui incluent des fonctionnalités `DataSet`. Par exemple, vous pouvez définir l'élément `<assembly\>` sur le nom d'un fichier exécutable (.exe) ou d'un fichier bibliothèque de types (.dll) lors de la génération d'un schéma, mais pas lors de la génération d'un fichier de code. Le code XML suivant indique comment utiliser l'élément `<generateSchemas\>` avec un fichier exécutable spécifié :  
+## <a name="setting-options-with-an-xml-file"></a><span data-ttu-id="cd7c5-208">Définition d'options avec un fichier XML</span><span class="sxs-lookup"><span data-stu-id="cd7c5-208">Setting Options with an XML File</span></span>  
+ <span data-ttu-id="cd7c5-209">À l’aide du commutateur `/parameters`, vous pouvez spécifier un fichier XML qui définit plusieurs options.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-209">By using the `/parameters` switch, you can specify a single XML file that sets various options.</span></span> <span data-ttu-id="cd7c5-210">Les options que vous pouvez définir dépendent de votre utilisation de l'outil XSD.exe.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-210">The options you can set depend on how you are using the XSD.exe tool.</span></span> <span data-ttu-id="cd7c5-211">Les choix incluent la génération de schémas, la génération de fichiers de code ou la génération de fichiers de code qui incluent des fonctionnalités `DataSet`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-211">Choices include generating schemas, generating code files, or generating code files that include `DataSet` features.</span></span> <span data-ttu-id="cd7c5-212">Par exemple, vous pouvez définir l'élément `<assembly\>` sur le nom d'un fichier exécutable (.exe) ou d'un fichier bibliothèque de types (.dll) lors de la génération d'un schéma, mais pas lors de la génération d'un fichier de code.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-212">For example, you can set the `<assembly\>` element to the name of an executable (.exe) or type library (.dll) file when generating a schema, but not when generating a code file.</span></span> <span data-ttu-id="cd7c5-213">Le code XML suivant indique comment utiliser l'élément `<generateSchemas\>` avec un fichier exécutable spécifié :</span><span class="sxs-lookup"><span data-stu-id="cd7c5-213">The following XML shows how to use the `<generateSchemas\>` element with a specified executable:</span></span>  
   
 ```xml  
 <!-- This is in a file named GenerateSchemas.xml. -->  
@@ -110,11 +109,11 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 </xsd>  
 ```  
   
- Si le code XML précédent est contenu dans un fichier nommé GenerateSchemas.xml, utilisez le commutateur `/parameters` en tapant ce qui suit dans une invite de commandes et en appuyant sur Entrée :  
+ <span data-ttu-id="cd7c5-214">Si le code XML précédent est contenu dans un fichier nommé GenerateSchemas.xml, utilisez le commutateur `/parameters` en tapant ce qui suit dans une invite de commandes et en appuyant sur Entrée :</span><span class="sxs-lookup"><span data-stu-id="cd7c5-214">If the preceding XML is contained in a file named GenerateSchemas.xml, then use the `/parameters` switch by typing the following at a command prompt and pressing ENTER:</span></span>  
   
  `xsd /p:GenerateSchemas.xml`  
   
- En revanche, si vous générez un schéma pour un seul type trouvé dans l'assembly, vous pouvez utiliser le code XML suivant :  
+ <span data-ttu-id="cd7c5-215">En revanche, si vous générez un schéma pour un seul type trouvé dans l'assembly, vous pouvez utiliser le code XML suivant :</span><span class="sxs-lookup"><span data-stu-id="cd7c5-215">On the other hand, if you are generating a schema for a single type found in the assembly, you can use the following XML:</span></span>  
   
 ```xml  
 <!-- This is in a file named GenerateSchemaFromType.xml. -->  
@@ -125,20 +124,20 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 </xsd>  
 ```  
   
- Mais pour utiliser le code précédent, vous devez également fournir le nom de l'assembly à l'invite de commandes. Tapez ce qui suit lors d'une invite de commandes (à condition que le fichier XML se nomme GenerateSchemaFromType.xml) :  
+ <span data-ttu-id="cd7c5-216">Mais pour utiliser le code précédent, vous devez également fournir le nom de l'assembly à l'invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-216">But to use preceding code, you must also supply the name of the assembly at the command prompt.</span></span> <span data-ttu-id="cd7c5-217">Tapez ce qui suit lors d'une invite de commandes (à condition que le fichier XML se nomme GenerateSchemaFromType.xml) :</span><span class="sxs-lookup"><span data-stu-id="cd7c5-217">Type the following at a command prompt (presuming the XML file is named GenerateSchemaFromType.xml):</span></span>  
   
  `xsd /p:GenerateSchemaFromType.xml ConsoleApplication1.exe`  
   
- Vous ne devez spécifier qu'une seule des options suivantes pour l'élément `\<generateSchemas>`.  
+ <span data-ttu-id="cd7c5-218">Vous ne devez spécifier qu'une seule des options suivantes pour l'élément `\<generateSchemas>`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-218">You must specify only one of the following options for the `\<generateSchemas>` element.</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="cd7c5-219">Élément</span><span class="sxs-lookup"><span data-stu-id="cd7c5-219">Element</span></span>|<span data-ttu-id="cd7c5-220">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-220">Description</span></span>|  
 |-------------|-----------------|  
-|\<assembly>|Spécifie un assembly à partir duquel générer le schéma.|  
-|\<type>|Spécifie un type trouvé dans un assembly pour lequel générer un schéma.|  
-|\<xml>|Spécifie un fichier XML pour lequel générer un schéma.|  
-|\<xdr>|Spécifie un fichier XDR pour lequel générer un schéma.|  
+|<span data-ttu-id="cd7c5-221">\<assembly></span><span class="sxs-lookup"><span data-stu-id="cd7c5-221">\<assembly></span></span>|<span data-ttu-id="cd7c5-222">Spécifie un assembly à partir duquel générer le schéma.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-222">Specifies an assembly to generate the schema from.</span></span>|  
+|<span data-ttu-id="cd7c5-223">\<type></span><span class="sxs-lookup"><span data-stu-id="cd7c5-223">\<type></span></span>|<span data-ttu-id="cd7c5-224">Spécifie un type trouvé dans un assembly pour lequel générer un schéma.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-224">Specifies a type found in an assembly to generate a schema for.</span></span>|  
+|<span data-ttu-id="cd7c5-225">\<xml></span><span class="sxs-lookup"><span data-stu-id="cd7c5-225">\<xml></span></span>|<span data-ttu-id="cd7c5-226">Spécifie un fichier XML pour lequel générer un schéma.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-226">Specifies an XML file to generate a schema for.</span></span>|  
+|<span data-ttu-id="cd7c5-227">\<xdr></span><span class="sxs-lookup"><span data-stu-id="cd7c5-227">\<xdr></span></span>|<span data-ttu-id="cd7c5-228">Spécifie un fichier XDR pour lequel générer un schéma.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-228">Specifies an XDR file to generate a schema for.</span></span>|  
   
- Pour générer un fichier de code, utilisez l'élément `<generateClasses\>`. L'exemple suivant génère un fichier de code. Notez que deux attributs sont également indiqués, ils vous permettent de définir le langage de programmation et l'espace de noms du fichier généré.  
+ <span data-ttu-id="cd7c5-229">Pour générer un fichier de code, utilisez l'élément `<generateClasses\>`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-229">To generate a code file, use the `<generateClasses\>` element.</span></span> <span data-ttu-id="cd7c5-230">L'exemple suivant génère un fichier de code.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-230">The following example generates a code file.</span></span> <span data-ttu-id="cd7c5-231">Notez que deux attributs sont également indiqués, ils vous permettent de définir le langage de programmation et l'espace de noms du fichier généré.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-231">Note that two attributes are also shown that allow you to set the programming language and namespace of the generated file.</span></span>  
   
 ```xml  
 <xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>  
@@ -148,23 +147,23 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 <!-- For example: xsd /p:genClasses mySchema.xsd -->  
 ```  
   
- Les options que vous pouvez définir pour l'élément `\<generateClasses>` incluent les éléments suivants.  
+ <span data-ttu-id="cd7c5-232">Les options que vous pouvez définir pour l'élément `\<generateClasses>` incluent les éléments suivants.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-232">Options you can set for the `\<generateClasses>` element include the following.</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="cd7c5-233">Élément</span><span class="sxs-lookup"><span data-stu-id="cd7c5-233">Element</span></span>|<span data-ttu-id="cd7c5-234">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-234">Description</span></span>|  
 |-------------|-----------------|  
-|\<element>|Spécifie un élément dans le fichier .xsd pour lequel générer du code.|  
-|\<schemaImporterExtensions>|Spécifie un type dérivé de la classe <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension>.|  
-|\<schema>|Spécifie un fichier de schéma XML pour lequel générer du code.  Vous pouvez spécifier plusieurs fichiers de schéma XML en utilisant plusieurs éléments \<schema>.|  
+|<span data-ttu-id="cd7c5-235">\<element></span><span class="sxs-lookup"><span data-stu-id="cd7c5-235">\<element></span></span>|<span data-ttu-id="cd7c5-236">Spécifie un élément dans le fichier .xsd pour lequel générer du code.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-236">Specifies an element in the .xsd file to generate code for.</span></span>|  
+|<span data-ttu-id="cd7c5-237">\<schemaImporterExtensions></span><span class="sxs-lookup"><span data-stu-id="cd7c5-237">\<schemaImporterExtensions></span></span>|<span data-ttu-id="cd7c5-238">Spécifie un type dérivé de la classe <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension>.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-238">Specifies a type derived from the <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> class.</span></span>|  
+|<span data-ttu-id="cd7c5-239">\<schema></span><span class="sxs-lookup"><span data-stu-id="cd7c5-239">\<schema></span></span>|<span data-ttu-id="cd7c5-240">Spécifie un fichier de schéma XML pour lequel générer du code.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-240">Specifies a XML Schema file to generate code for.</span></span>  <span data-ttu-id="cd7c5-241">Vous pouvez spécifier plusieurs fichiers de schéma XML en utilisant plusieurs éléments \<schema>.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-241">Multiple XML Schema files can be specified using multiple \<schema> elements.</span></span>|  
   
- Le tableau suivant affiche les attributs qui peuvent également être utilisés avec l'élément `<generateClasses\>`.  
+ <span data-ttu-id="cd7c5-242">Le tableau suivant affiche les attributs qui peuvent également être utilisés avec l'élément `<generateClasses\>`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-242">The following table shows the attributes that can also be used with the `<generateClasses\>` element.</span></span>  
   
-|Attribut|Description|  
+|<span data-ttu-id="cd7c5-243">Attribut</span><span class="sxs-lookup"><span data-stu-id="cd7c5-243">Attribute</span></span>|<span data-ttu-id="cd7c5-244">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-244">Description</span></span>|  
 |---------------|-----------------|  
-|language|Spécifie le langage de programmation à utiliser. Vous avez le choix entre `CS` (C#, la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#). Vous pouvez également spécifier un nom qualifié complet pour une classe qui implémente <xref:System.CodeDom.Compiler.CodeDomProvider>.|  
-|namespace|Spécifie l'espace de noms pour le code généré. L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).|  
-|options|L’une des valeurs suivantes : `none`, `properties` (génère des propriétés au lieu de champs publics), `order` ou `enableDataBinding` (consultez les commutateurs `/order` et `/enableDataBinding` dans la section Options de fichier XSD précédente).|  
+|<span data-ttu-id="cd7c5-245">language</span><span class="sxs-lookup"><span data-stu-id="cd7c5-245">language</span></span>|<span data-ttu-id="cd7c5-246">Spécifie le langage de programmation à utiliser.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-246">Specifies the programming language to use.</span></span> <span data-ttu-id="cd7c5-247">Vous avez le choix entre `CS` (C#, la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-247">Choose from `CS` (C#, the default), `VB` (Visual Basic), `JS` (JScript), or `VJS` (Visual J#).</span></span> <span data-ttu-id="cd7c5-248">Vous pouvez également spécifier un nom qualifié complet pour une classe qui implémente <xref:System.CodeDom.Compiler.CodeDomProvider>.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-248">You can also specify a fully qualified name for a class that implements <xref:System.CodeDom.Compiler.CodeDomProvider>.</span></span>|  
+|<span data-ttu-id="cd7c5-249">namespace</span><span class="sxs-lookup"><span data-stu-id="cd7c5-249">namespace</span></span>|<span data-ttu-id="cd7c5-250">Spécifie l'espace de noms pour le code généré.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-250">Specifies the namespace for the generated code.</span></span> <span data-ttu-id="cd7c5-251">L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-251">The namespace must conform to CLR standards (for example, no spaces or backslash characters).</span></span>|  
+|<span data-ttu-id="cd7c5-252">options</span><span class="sxs-lookup"><span data-stu-id="cd7c5-252">options</span></span>|<span data-ttu-id="cd7c5-253">L’une des valeurs suivantes : `none`, `properties` (génère des propriétés au lieu de champs publics), `order` ou `enableDataBinding` (consultez les commutateurs `/order` et `/enableDataBinding` dans la section Options de fichier XSD précédente).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-253">One of the following values: `none`, `properties` (generates properties instead of public fields), `order`, or `enableDataBinding` (see the `/order` and `/enableDataBinding` switches in the preceding XSD File Options section.</span></span>|  
   
- Vous pouvez également contrôler comment le code `DataSet` est généré à l'aide de l'élément `<generateDataSets\>`. Le code XML suivant spécifie que le code généré utilise des structures `DataSet` (telles que la classe <xref:System.Data.DataTable>) pour créer le code Visual Basic correspondant à un élément donné. Les structures DataSet générées prendront en charge les requêtes LINQ.  
+ <span data-ttu-id="cd7c5-254">Vous pouvez également contrôler comment le code `DataSet` est généré à l'aide de l'élément `<generateDataSets\>`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-254">You can also control how `DataSet` code is generated by using the `<generateDataSets\>` element.</span></span> <span data-ttu-id="cd7c5-255">Le code XML suivant spécifie que le code généré utilise des structures `DataSet` (telles que la classe <xref:System.Data.DataTable>) pour créer le code Visual Basic correspondant à un élément donné.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-255">The following XML specifies that the generated codeuses `DataSet` structures (such as the <xref:System.Data.DataTable> class) to create Visual Basic code for a specified element.</span></span> <span data-ttu-id="cd7c5-256">Les structures DataSet générées prendront en charge les requêtes LINQ.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-256">The generated DataSet structures will support LINQ queries.</span></span>  
   
  `<xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>`  
   
@@ -174,21 +173,21 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
   
  `</xsd>`  
   
- Les options que vous pouvez définir pour l'élément `<generateDataSet\>` incluent les éléments suivants.  
+ <span data-ttu-id="cd7c5-257">Les options que vous pouvez définir pour l'élément `<generateDataSet\>` incluent les éléments suivants.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-257">Options you can set for the `<generateDataSet\>` element include the following.</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="cd7c5-258">Élément</span><span class="sxs-lookup"><span data-stu-id="cd7c5-258">Element</span></span>|<span data-ttu-id="cd7c5-259">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-259">Description</span></span>|  
 |-------------|-----------------|  
-|\<schema>|Spécifie un fichier de schéma XML pour lequel générer du code. Vous pouvez spécifier plusieurs fichiers de schéma XML en utilisant plusieurs éléments \<schema>.|  
+|<span data-ttu-id="cd7c5-260">\<schema></span><span class="sxs-lookup"><span data-stu-id="cd7c5-260">\<schema></span></span>|<span data-ttu-id="cd7c5-261">Spécifie un fichier de schéma XML pour lequel générer du code.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-261">Specifies an XML Schema file to generate code for.</span></span> <span data-ttu-id="cd7c5-262">Vous pouvez spécifier plusieurs fichiers de schéma XML en utilisant plusieurs éléments \<schema>.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-262">Multiple XML Schema files can be specified using multiple \<schema> elements.</span></span>|  
   
- Le tableau suivant affiche les attributs qui peuvent être utilisés avec l'élément `<generateDataSet\>`.  
+ <span data-ttu-id="cd7c5-263">Le tableau suivant affiche les attributs qui peuvent être utilisés avec l'élément `<generateDataSet\>`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-263">The following table shows the attributes that can be used with the `<generateDataSet\>` element.</span></span>  
   
-|Attribut|Description|  
+|<span data-ttu-id="cd7c5-264">Attribut</span><span class="sxs-lookup"><span data-stu-id="cd7c5-264">Attribute</span></span>|<span data-ttu-id="cd7c5-265">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-265">Description</span></span>|  
 |---------------|-----------------|  
-|enableLinqDataSet|Spécifie que le DataSet généré peut être interrogé par rapport à l'utilisation de LINQ to DataSet. La valeur par défaut est false.|  
-|language|Spécifie le langage de programmation à utiliser. Vous avez le choix entre `CS` (C#, la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#). Vous pouvez également spécifier un nom qualifié complet pour une classe qui implémente <xref:System.CodeDom.Compiler.CodeDomProvider>.|  
-|namespace|Spécifie l'espace de noms pour le code généré. L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).|  
+|<span data-ttu-id="cd7c5-266">enableLinqDataSet</span><span class="sxs-lookup"><span data-stu-id="cd7c5-266">enableLinqDataSet</span></span>|<span data-ttu-id="cd7c5-267">Spécifie que le DataSet généré peut être interrogé par rapport à l'utilisation de LINQ to DataSet.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-267">Specifies that the generated DataSet can be queried against using LINQ to DataSet.</span></span> <span data-ttu-id="cd7c5-268">La valeur par défaut est false.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-268">The default value is false.</span></span>|  
+|<span data-ttu-id="cd7c5-269">language</span><span class="sxs-lookup"><span data-stu-id="cd7c5-269">language</span></span>|<span data-ttu-id="cd7c5-270">Spécifie le langage de programmation à utiliser.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-270">Specifies the programming language to use.</span></span> <span data-ttu-id="cd7c5-271">Vous avez le choix entre `CS` (C#, la valeur par défaut), `VB` (Visual Basic), `JS` (JScript) ou `VJS` (Visual J#).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-271">Choose from `CS` (C#, the default), `VB` (Visual Basic), `JS` (JScript), or `VJS` (Visual J#).</span></span> <span data-ttu-id="cd7c5-272">Vous pouvez également spécifier un nom qualifié complet pour une classe qui implémente <xref:System.CodeDom.Compiler.CodeDomProvider>.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-272">You can also specify a fully qualified name for a class that implements <xref:System.CodeDom.Compiler.CodeDomProvider>.</span></span>|  
+|<span data-ttu-id="cd7c5-273">namespace</span><span class="sxs-lookup"><span data-stu-id="cd7c5-273">namespace</span></span>|<span data-ttu-id="cd7c5-274">Spécifie l'espace de noms pour le code généré.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-274">Specifies the namespace for the generated code.</span></span> <span data-ttu-id="cd7c5-275">L'espace de noms doit se conformer aux normes CLR (par exemple, aucun espace ou barre oblique inverse).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-275">The namespace must conform to CLR standards (for example, no spaces or backslash characters).</span></span>|  
   
- Vous pouvez définir certains attributs sur l'élément `<xsd\>` de niveau supérieur. Ces options peuvent être utilisées avec n'importe lequel des éléments enfants (`<generateSchemas\>`, `<generateClasses\>` ou `<generateDataSet\>`). Le code XML suivant génère le code pour un élément nommé "IDItems" dans le répertoire de sortie nommé "MyOutputDirectory".  
+ <span data-ttu-id="cd7c5-276">Vous pouvez définir certains attributs sur l'élément `<xsd\>` de niveau supérieur.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-276">There are attributes that you can set on the top level `<xsd\>` element.</span></span> <span data-ttu-id="cd7c5-277">Ces options peuvent être utilisées avec n'importe lequel des éléments enfants (`<generateSchemas\>`, `<generateClasses\>` ou `<generateDataSet\>`).</span><span class="sxs-lookup"><span data-stu-id="cd7c5-277">These options can be used with any of the child elements (`<generateSchemas\>`, `<generateClasses\>` or `<generateDataSet\>`).</span></span> <span data-ttu-id="cd7c5-278">Le code XML suivant génère le code pour un élément nommé "IDItems" dans le répertoire de sortie nommé "MyOutputDirectory".</span><span class="sxs-lookup"><span data-stu-id="cd7c5-278">The following XML code generates code for an element named "IDItems" in the output directory named "MyOutputDirectory".</span></span>  
   
 ```xml  
 <xsd xmlns='http://microsoft.com/dotnet/tools/xsd/' output='MyOutputDirectory'>  
@@ -198,45 +197,44 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 </xsd>  
 ```  
   
- Le tableau suivant affiche les attributs qui peuvent également être utilisés avec l'élément `\<xsd>`.  
+ <span data-ttu-id="cd7c5-279">Le tableau suivant affiche les attributs qui peuvent également être utilisés avec l'élément `\<xsd>`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-279">The following table shows the attributes that can also be used with the `\<xsd>` element.</span></span>  
   
-|Attribut|Description|  
+|<span data-ttu-id="cd7c5-280">Attribut</span><span class="sxs-lookup"><span data-stu-id="cd7c5-280">Attribute</span></span>|<span data-ttu-id="cd7c5-281">Description</span><span class="sxs-lookup"><span data-stu-id="cd7c5-281">Description</span></span>|  
 |---------------|-----------------|  
-|sortie|Le nom d'un répertoire dans lequel le schéma généré ou le fichier de code sera placé.|  
-|nologo|Supprime la bannière. A la valeur `true` ou `false`.|  
-|help|Affiche la syntaxe et les options de commande de l'outil. A la valeur `true` ou `false`.|  
+|<span data-ttu-id="cd7c5-282">sortie</span><span class="sxs-lookup"><span data-stu-id="cd7c5-282">output</span></span>|<span data-ttu-id="cd7c5-283">Le nom d'un répertoire dans lequel le schéma généré ou le fichier de code sera placé.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-283">The name of a directory where the generated schema or code file will be placed.</span></span>|  
+|<span data-ttu-id="cd7c5-284">nologo</span><span class="sxs-lookup"><span data-stu-id="cd7c5-284">nologo</span></span>|<span data-ttu-id="cd7c5-285">Supprime la bannière.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-285">Suppresses the banner.</span></span> <span data-ttu-id="cd7c5-286">A la valeur `true` ou `false`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-286">Set to `true` or `false`.</span></span>|  
+|<span data-ttu-id="cd7c5-287">help</span><span class="sxs-lookup"><span data-stu-id="cd7c5-287">help</span></span>|<span data-ttu-id="cd7c5-288">Affiche la syntaxe et les options de commande de l'outil.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-288">Displays command syntax and options for the tool.</span></span> <span data-ttu-id="cd7c5-289">A la valeur `true` ou `false`.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-289">Set to `true` or `false`.</span></span>|  
   
-## <a name="examples"></a>Exemples  
- La commande suivante génère un schéma XML à partir de `myFile.xdr` et l'enregistre dans le répertoire actif.  
+## <a name="examples"></a><span data-ttu-id="cd7c5-290">Exemples</span><span class="sxs-lookup"><span data-stu-id="cd7c5-290">Examples</span></span>  
+ <span data-ttu-id="cd7c5-291">La commande suivante génère un schéma XML à partir de `myFile.xdr` et l'enregistre dans le répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-291">The following command generates an XML schema from `myFile.xdr` and saves it to the current directory.</span></span>  
   
 ```  
 xsd myFile.xdr   
 ```  
   
- La commande suivante génère un schéma XML à partir de `myFile.xml` et l'enregistre dans le répertoire spécifié.  
+ <span data-ttu-id="cd7c5-292">La commande suivante génère un schéma XML à partir de `myFile.xml` et l'enregistre dans le répertoire spécifié.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-292">The following command generates an XML schema from `myFile.xml` and saves it to the specified directory.</span></span>  
   
 ```  
 xsd myFile.xml /outputdir:myOutputDir  
 ```  
   
- La commande suivante génère un groupe de données qui correspond au schéma spécifié dans le langage C# et le sauvegarde comme `XSDSchemaFile.cs` dans le répertoire actif.  
+ <span data-ttu-id="cd7c5-293">La commande suivante génère un groupe de données qui correspond au schéma spécifié dans le langage C# et le sauvegarde comme `XSDSchemaFile.cs` dans le répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-293">The following command generates a data set that corresponds to the specified schema in the C# language and saves it as `XSDSchemaFile.cs` in the current directory.</span></span>  
   
 ```  
 xsd /dataset /language:CS XSDSchemaFile.xsd  
 ```  
   
- La commande suivante génère des schémas XML pour tous les types de l'assembly `myAssembly.dll` et les enregistre sous `schema0.xsd` dans le répertoire actif.  
+ <span data-ttu-id="cd7c5-294">La commande suivante génère des schémas XML pour tous les types de l'assembly `myAssembly.dll` et les enregistre sous `schema0.xsd` dans le répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="cd7c5-294">The following command generates XML schemas for all types in the assembly `myAssembly.dll` and saves them as `schema0.xsd` in the current directory.</span></span>  
   
 ```  
 xsd myAssembly.dll    
 ```  
   
-## <a name="see-also"></a>Voir aussi  
+## <a name="see-also"></a><span data-ttu-id="cd7c5-295">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cd7c5-295">See Also</span></span>  
  <xref:System.Data.DataSet>  
- <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName>   
- [Outils](../../../docs/framework/tools/index.md)      
- [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)   
- [Vue d’ensemble de LINQ to DataSet](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)   
- [Interrogation de datasets typés](../../../docs/framework/data/adonet/querying-typed-datasets.md)   
- [LINQ (Language Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)
-
+ <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>  
+ <span data-ttu-id="cd7c5-296">[Outils](../../../docs/framework/tools/index.md)    </span><span class="sxs-lookup"><span data-stu-id="cd7c5-296">[Tools](../../../docs/framework/tools/index.md)    </span></span>  
+ [<span data-ttu-id="cd7c5-297">Invites de commandes</span><span class="sxs-lookup"><span data-stu-id="cd7c5-297">Command Prompts</span></span>](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
+ [<span data-ttu-id="cd7c5-298">LINQ to DataSet présentation</span><span class="sxs-lookup"><span data-stu-id="cd7c5-298">LINQ to DataSet Overview</span></span>](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
+ [<span data-ttu-id="cd7c5-299">Interrogation de DataSets typés</span><span class="sxs-lookup"><span data-stu-id="cd7c5-299">Querying Typed DataSets</span></span>](../../../docs/framework/data/adonet/querying-typed-datasets.md)  
+ [<span data-ttu-id="cd7c5-300">LINQ (Language Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="cd7c5-300">LINQ (Language-Integrated Query)</span></span>](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)

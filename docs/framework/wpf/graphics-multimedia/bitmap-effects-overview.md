@@ -1,78 +1,80 @@
 ---
-title: "Vue d&#39;ensemble des effets bitmap | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "effets bitmap"
+title: Vue d'ensemble des effets bitmap
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: bitmap effects [WPF]
 ms.assetid: 23cb338e-4b59-4b52-b294-96431f9c9568
-caps.latest.revision: 34
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 31
+caps.latest.revision: "34"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 76b767fd210deed536b4452dc6d7bb505f5bd3e7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble des effets bitmap
-Les effets bitmap permettent aux concepteurs et développeurs d'appliquer des effets visuels au contenu [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] rendu.  Par exemple, les effets bitmap vous permettent d'appliquer facilement un effet <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> ou un effet flou à une image ou un bouton.  
+# <a name="bitmap-effects-overview"></a><span data-ttu-id="c0c5f-102">Vue d'ensemble des effets bitmap</span><span class="sxs-lookup"><span data-stu-id="c0c5f-102">Bitmap Effects Overview</span></span>
+<span data-ttu-id="c0c5f-103">Les effets bitmap permettent aux concepteurs et aux développeurs d’appliquer des effets visuels au contenu [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] représenté.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-103">Bitmap effects enable designers and developers to apply visual effects to rendered [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] content.</span></span> <span data-ttu-id="c0c5f-104">Par exemple, les effets bitmap autorisent vous permet d’appliquer facilement un <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> effet ou un effet de flou à une image ou un bouton.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-104">For example, bitmap effects allow you to easily apply a <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> effect or a blur effect to an image or a button.</span></span>  
   
 > [!IMPORTANT]
->  Dans le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] et les versions ultérieures, la classe <xref:System.Windows.Media.Effects.BitmapEffect> est obsolète.  Si vous essayez d'utiliser la classe <xref:System.Windows.Media.Effects.BitmapEffect>, vous obtiendrez une exception obsolète.  L'alternative non obsolète à la classe<xref:System.Windows.Media.Effects.BitmapEffect> est la classe <xref:System.Windows.Media.Effects.Effect>.  Dans la plupart des cas, la classe <xref:System.Windows.Media.Effects.Effect> est nettement plus rapide.  
+>  <span data-ttu-id="c0c5f-105">Dans le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] ou version ultérieure, la <xref:System.Windows.Media.Effects.BitmapEffect> classe est obsolète.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-105">In the [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] or later, the <xref:System.Windows.Media.Effects.BitmapEffect> class is obsolete.</span></span> <span data-ttu-id="c0c5f-106">Si vous essayez d’utiliser le <xref:System.Windows.Media.Effects.BitmapEffect> (classe), vous obtiendrez une exception obsolète.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-106">If you try to use the <xref:System.Windows.Media.Effects.BitmapEffect> class, you will get an obsolete exception.</span></span> <span data-ttu-id="c0c5f-107">L’alternative non obsolète pour le <xref:System.Windows.Media.Effects.BitmapEffect> classe est la <xref:System.Windows.Media.Effects.Effect> classe.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-107">The non-obsolete alternative to the <xref:System.Windows.Media.Effects.BitmapEffect> class is the <xref:System.Windows.Media.Effects.Effect> class.</span></span> <span data-ttu-id="c0c5f-108">Dans la plupart des cas, la <xref:System.Windows.Media.Effects.Effect> classe est considérablement plus rapide.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-108">In most situations, the <xref:System.Windows.Media.Effects.Effect> class is significantly faster.</span></span>  
   
-   
+  
   
 <a name="wpf_effects"></a>   
-## Effets bitmap WPF  
- Les effets bitmap \(objet <xref:System.Windows.Media.Effects.BitmapEffect>\) sont des opérations de traitement de pixels simples.  Un effet bitmap prend un <xref:System.Windows.Media.Imaging.BitmapSource> comme entrée et produit un nouveau <xref:System.Windows.Media.Imaging.BitmapSource> après avoir appliqué l'effet, tel qu'un flou ou une ombre portée.  Chaque effet bitmap expose des propriétés qui peuvent contrôler les propriétés de filtrage, telles que <xref:System.Windows.Media.Effects.BlurBitmapEffect.Radius%2A> de <xref:System.Windows.Media.Effects.BlurBitmapEffect>.  
+## <a name="wpf-bitmap-effects"></a><span data-ttu-id="c0c5f-109">Effets bitmap WPF</span><span class="sxs-lookup"><span data-stu-id="c0c5f-109">WPF Bitmap Effects</span></span>  
+ <span data-ttu-id="c0c5f-110">Effets bitmap (<xref:System.Windows.Media.Effects.BitmapEffect> objet) sont des opérations de traitement de pixels simple.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-110">Bitmap effects (<xref:System.Windows.Media.Effects.BitmapEffect> object) are simple pixel processing operations.</span></span> <span data-ttu-id="c0c5f-111">Un effet bitmap prend un <xref:System.Windows.Media.Imaging.BitmapSource> comme entrée et produit un nouveau <xref:System.Windows.Media.Imaging.BitmapSource> après avoir appliqué l’effet, par exemple un flou ou une ombre portée.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-111">A bitmap effect takes a <xref:System.Windows.Media.Imaging.BitmapSource> as an input and produces a new <xref:System.Windows.Media.Imaging.BitmapSource> after applying the effect, such as a blur or drop shadow.</span></span> <span data-ttu-id="c0c5f-112">Chaque effet bitmap expose les propriétés qui peuvent contrôler les propriétés de filtrage, tel que <xref:System.Windows.Media.Effects.BlurBitmapEffect.Radius%2A> de <xref:System.Windows.Media.Effects.BlurBitmapEffect>.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-112">Each bitmap effect exposes properties that can control the filtering properties, such as <xref:System.Windows.Media.Effects.BlurBitmapEffect.Radius%2A> of <xref:System.Windows.Media.Effects.BlurBitmapEffect>.</span></span>  
   
- Dans certains cas, dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], les effets peuvent être définis comme propriétés sur des objets <xref:System.Windows.Media.Visual> actifs, tels qu'un <xref:System.Windows.Controls.Button> ou <xref:System.Windows.Controls.TextBox>.  Le traitement de pixels est appliqué et restitué au moment de l'exécution.  Dans ce cas, au moment du rendu, un <xref:System.Windows.Media.Visual> est converti automatiquement à son <xref:System.Windows.Media.Imaging.BitmapSource> équivalent et acheminé comme entrée au <xref:System.Windows.Media.Effects.BitmapEffect>.  La sortie remplace le comportement de rendu par défaut de l'objet <xref:System.Windows.Media.Visual>.  C'est pourquoi les objets <xref:System.Windows.Media.Effects.BitmapEffect> forcent le rendu des visuels uniquement dans les logiciels, c.\-à\-d.  sans aucune accélération matérielle sur les visuels lorsque des effets sont appliqués.  
+ <span data-ttu-id="c0c5f-113">Comme un cas particulier, dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], effets peuvent être définis en tant que propriétés sur live <xref:System.Windows.Media.Visual> objets, tels qu’un <xref:System.Windows.Controls.Button> ou <xref:System.Windows.Controls.TextBox>.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-113">As a special case, in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], effects can be set as properties on live <xref:System.Windows.Media.Visual> objects, such as a <xref:System.Windows.Controls.Button> or <xref:System.Windows.Controls.TextBox>.</span></span> <span data-ttu-id="c0c5f-114">Le traitement de pixels est appliqué et restitué au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-114">The pixel processing is applied and rendered at run-time.</span></span> <span data-ttu-id="c0c5f-115">Dans ce cas, au moment du rendu, un <xref:System.Windows.Media.Visual> est automatiquement convertie en son <xref:System.Windows.Media.Imaging.BitmapSource> équivalent est transmis comme entrée pour le <xref:System.Windows.Media.Effects.BitmapEffect>.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-115">In this case, at the time of rendering, a <xref:System.Windows.Media.Visual> is automatically converted to its <xref:System.Windows.Media.Imaging.BitmapSource> equivalent and is fed as input to the <xref:System.Windows.Media.Effects.BitmapEffect>.</span></span> <span data-ttu-id="c0c5f-116">La sortie remplace le <xref:System.Windows.Media.Visual> comportement de rendu par défaut de l’objet.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-116">The output replaces the <xref:System.Windows.Media.Visual> object's default rendering behavior.</span></span> <span data-ttu-id="c0c5f-117">C’est pourquoi <xref:System.Windows.Media.Effects.BitmapEffect> objets forcent les éléments visuels pour effectuer le rendu dans le logiciel seulement, c'est-à-dire sans accélération matérielle sur les visuels lorsque des effets sont appliqués.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-117">This is why <xref:System.Windows.Media.Effects.BitmapEffect> objects force visuals to render in software only i.e. no hardware acceleration on visuals when effects are applied.</span></span>  
   
--   <xref:System.Windows.Media.Effects.BlurBitmapEffect> simule un objet qui s'affiche hors du focus.  
+-   <span data-ttu-id="c0c5f-118"><xref:System.Windows.Media.Effects.BlurBitmapEffect>simule un objet qui s’affiche hors du focus.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-118"><xref:System.Windows.Media.Effects.BlurBitmapEffect> simulates an object that appears out-of-focus.</span></span>  
   
--   <xref:System.Windows.Media.Effects.OuterGlowBitmapEffect> crée un halo de couleur autour du périmètre d'un objet.  
+-   <span data-ttu-id="c0c5f-119"><xref:System.Windows.Media.Effects.OuterGlowBitmapEffect>Crée un halo de couleur autour du périmètre d’un objet.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-119"><xref:System.Windows.Media.Effects.OuterGlowBitmapEffect> creates a halo of color around the perimeter of an object.</span></span>  
   
--   <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> crée une ombre derrière un objet.  
+-   <span data-ttu-id="c0c5f-120"><xref:System.Windows.Media.Effects.DropShadowBitmapEffect>Crée une ombre derrière un objet.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-120"><xref:System.Windows.Media.Effects.DropShadowBitmapEffect> creates a shadow behind an object.</span></span>  
   
--   <xref:System.Windows.Media.Effects.BevelBitmapEffect> crée un biseau qui déclenche la surface d'une image d'après une courbe spécifiée.  
+-   <span data-ttu-id="c0c5f-121"><xref:System.Windows.Media.Effects.BevelBitmapEffect>Crée un biseau qui déclenche la surface d’une image selon une courbe spécifiée.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-121"><xref:System.Windows.Media.Effects.BevelBitmapEffect> creates a bevel which raises the surface of an image according to a specified curve.</span></span>  
   
--   <xref:System.Windows.Media.Effects.EmbossBitmapEffect> crée un placage de relief pour un <xref:System.Windows.Media.Visual> afin de donner une impression de profondeur et de texture comme avec une source de lumière artificielle.  
-  
-> [!NOTE]
->  Les effets bitmap [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sont restitués en mode logiciel.  Tout objet qui applique un effet est également restitué dans le logiciel.  Les performances sont les plus dégradées lors de l'utilisation d'effets bitmap sur de grands visuels ou de l'animation de propriétés d'un effet bitmap.  Il ne s'agit pas de vous dire de ne pas utiliser du tout les effets bitmap de cette façon, mais vous devez être prudent et effectuer des tests approfondis pour garantir que vos utilisateurs obtiennent l'expérience que vous attendez.  
+-   <span data-ttu-id="c0c5f-122"><xref:System.Windows.Media.Effects.EmbossBitmapEffect>Crée un placage de relief un <xref:System.Windows.Media.Visual> pour donner une impression de profondeur et de texture à partir d’une source de lumière artificielle.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-122"><xref:System.Windows.Media.Effects.EmbossBitmapEffect> creates a bump mapping of a <xref:System.Windows.Media.Visual> to give the impression of depth and texture from an artificial light source.</span></span>  
   
 > [!NOTE]
->  Les effets bitmap de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ne prennent pas en charge l'exécution de confiance partielle.  Une application doit avoir des autorisations de confiance totale pour utiliser des effets bitmap.  
+>  <span data-ttu-id="c0c5f-123">Les effets bitmap [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sont restitués en mode logiciel.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-123">[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] bitmap effects are rendered in software mode.</span></span> <span data-ttu-id="c0c5f-124">Tout objet qui applique un effet est également rendu dans le logiciel.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-124">Any object that applies an effect will also be rendered in software.</span></span> <span data-ttu-id="c0c5f-125">Les performances se dégradent le plus lors de l’utilisation des effets Bitmap sur les grands visuels ou de l’animation de propriétés d’un effet Bitmap.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-125">Performance is degraded the most when using Bitmap effects on large visuals or animating properties of a Bitmap effect.</span></span> <span data-ttu-id="c0c5f-126">Cela ne signifie ne pas que ne vous ne devez pas utiliser les effets Bitmap de cette façon du tout, mais que vous devez les utiliser avec précaution et effectuer des tests approfondis pour vous assurer que vos utilisateurs obtiennent l’expérience que vous attendez.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-126">This is not to say that you should not use Bitmap effects in this way at all, but you should use caution and test thoroughly to ensure that your users are getting the experience you expect.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="c0c5f-127">Les effets bitmap [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ne gèrent pas l’exécution en mode confiance partielle.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-127">[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] bitmap effects do not support partial trust execution.</span></span> <span data-ttu-id="c0c5f-128">Une application doit avoir des autorisations de confiance totale pour utiliser des effets bitmap.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-128">An application must have full trust permissions to use bitmap effects.</span></span>  
   
 <a name="applyeffects"></a>   
-## Comment appliquer un effet  
- <xref:System.Windows.Media.Effects.BitmapEffect> est une propriété sur <xref:System.Windows.Media.Visual>.  Par conséquent, l'application d'effets aux visuels, tels qu'un <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Image>, <xref:System.Windows.Media.DrawingVisual>ou <xref:System.Windows.UIElement>, est aussi simple que la définition d'une propriété.  <xref:System.Windows.UIElement.BitmapEffect%2A> peut avoir pour valeur un objet <xref:System.Windows.Media.Effects.BitmapEffect> unique ou plusieurs effets peuvent être chaînés à l'aide de l'objet <xref:System.Windows.Media.Effects.BitmapEffectGroup>.  
+## <a name="how-to-apply-an-effect"></a><span data-ttu-id="c0c5f-129">Guide d’application d’un effet</span><span class="sxs-lookup"><span data-stu-id="c0c5f-129">How to Apply an Effect</span></span>  
+ <span data-ttu-id="c0c5f-130"><xref:System.Windows.Media.Effects.BitmapEffect>est une propriété de <xref:System.Windows.Media.Visual>.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-130"><xref:System.Windows.Media.Effects.BitmapEffect> is a property on <xref:System.Windows.Media.Visual>.</span></span> <span data-ttu-id="c0c5f-131">Par conséquent, application d’effets visuels, comme un <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Image>, <xref:System.Windows.Media.DrawingVisual>, ou <xref:System.Windows.UIElement>, est aussi simple que la définition d’une propriété.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-131">Therefore applying effects to Visuals, such as a <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Image>, <xref:System.Windows.Media.DrawingVisual>, or <xref:System.Windows.UIElement>, is as easy as setting a property.</span></span> <span data-ttu-id="c0c5f-132"><xref:System.Windows.UIElement.BitmapEffect%2A>peut être défini sur un seul <xref:System.Windows.Media.Effects.BitmapEffect> objet ou plusieurs effets peuvent être chaînés à l’aide de la <xref:System.Windows.Media.Effects.BitmapEffectGroup> objet.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-132"><xref:System.Windows.UIElement.BitmapEffect%2A> can be set to a single <xref:System.Windows.Media.Effects.BitmapEffect> object or multiple effects can be chained by using the <xref:System.Windows.Media.Effects.BitmapEffectGroup> object.</span></span>  
   
- L'exemple suivant montre comment appliquer un <xref:System.Windows.Media.Effects.BitmapEffect> en [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
+ <span data-ttu-id="c0c5f-133">L’exemple suivant montre comment appliquer un <xref:System.Windows.Media.Effects.BitmapEffect> dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c0c5f-133">The following example demonstrates how to apply a <xref:System.Windows.Media.Effects.BitmapEffect> in [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span>  
   
- [!code-xml[EffectsGallery_snip#BlurSimpleExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EffectsGallery_snip/CSharp/blursimpleexample.xaml#blursimpleexampleinline)]  
+ [!code-xaml[EffectsGallery_snip#BlurSimpleExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EffectsGallery_snip/CSharp/blursimpleexample.xaml#blursimpleexampleinline)]  
   
- L'exemple suivant montre comment appliquer un <xref:System.Windows.Media.Effects.BitmapEffect> dans le code.  
+ <span data-ttu-id="c0c5f-134">L’exemple suivant montre comment appliquer un <xref:System.Windows.Media.Effects.BitmapEffect> dans le code.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-134">The following example demonstrates how to apply a <xref:System.Windows.Media.Effects.BitmapEffect> in code.</span></span>  
   
  [!code-csharp[EffectsGallery_snip#CodeBehindBlurCodeBehindExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EffectsGallery_snip/CSharp/blurcodebehindexample.xaml.cs#codebehindblurcodebehindexampleinline)]  
   
 > [!NOTE]
->  Lorsqu'un <xref:System.Windows.Media.Effects.BitmapEffect> est appliqué à un conteneur de disposition, tel que <xref:System.Windows.Controls.DockPanel> ou <xref:System.Windows.Controls.Canvas>, l'effet est appliqué à l'arborescence visuelle de l'élément ou du visuel, y compris tous ses éléments enfants.  
+>  <span data-ttu-id="c0c5f-135">Lorsqu’un <xref:System.Windows.Media.Effects.BitmapEffect> est appliquée à un conteneur de disposition, telle que <xref:System.Windows.Controls.DockPanel> ou <xref:System.Windows.Controls.Canvas>, l’effet est appliqué à l’arborescence d’éléments visuels de l’élément ou un élément visuel, y compris tous ses éléments enfants.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-135">When a <xref:System.Windows.Media.Effects.BitmapEffect> is applied to a layout container, such as <xref:System.Windows.Controls.DockPanel> or <xref:System.Windows.Controls.Canvas>, the effect is applied to the visual tree of the element or visual, including all of its child elements.</span></span>  
   
 <a name="customeffects"></a>   
-## Création d'effets personnalisés  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit également des interfaces non managées pour créer des effets personnalisés qui peuvent être utilisés dans les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] managées.  Pour obtenir une documentation de référence supplémentaire sur la création d'effets bitmap personnalisés, consultez la documentation [Effet de bitmap WPF non managé](_wibe_lh).  
+## <a name="creating-custom-effects"></a><span data-ttu-id="c0c5f-136">Création d'effets personnalisés</span><span class="sxs-lookup"><span data-stu-id="c0c5f-136">Creating Custom Effects</span></span>  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="c0c5f-137"> fournit également des interfaces non managées pour créer des effets personnalisés qui peuvent être utilisés dans les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] managées.</span><span class="sxs-lookup"><span data-stu-id="c0c5f-137"> also provides unmanaged interfaces to create custom effects that can be used in managed [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications.</span></span> <span data-ttu-id="c0c5f-138">Pour des documents de référence supplémentaires pour la création d’effets bitmap personnalisés, consultez la documentation [Effet bitmap WPF non managé](https://msdn.microsoft.com/library/ms735092.aspx).</span><span class="sxs-lookup"><span data-stu-id="c0c5f-138">For additional reference material for creating custom bitmap effects, see the [Unmanaged WPF Bitmap Effect](https://msdn.microsoft.com/library/ms735092.aspx) documentation.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Media.Effects.BitmapEffectGroup>   
- <xref:System.Windows.Media.Effects.BitmapEffectInput>   
- <xref:System.Windows.Media.Effects.BitmapEffectCollection>   
- [Unmanaged WPF Bitmap Effect](_wibe_lh)   
- [Vue d'ensemble de la création d'images](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)   
- [Sécurité](../../../../docs/framework/wpf/security-wpf.md)   
- [Vue d'ensemble du rendu graphique de WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)   
- [Graphiques 2D et acquisition d'images](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+## <a name="see-also"></a><span data-ttu-id="c0c5f-139">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c0c5f-139">See Also</span></span>  
+ <xref:System.Windows.Media.Effects.BitmapEffectGroup>  
+ <xref:System.Windows.Media.Effects.BitmapEffectInput>  
+ <xref:System.Windows.Media.Effects.BitmapEffectCollection>  
+ [<span data-ttu-id="c0c5f-140">Effet de Bitmap WPF non managé</span><span class="sxs-lookup"><span data-stu-id="c0c5f-140">Unmanaged WPF Bitmap Effect</span></span>](https://msdn.microsoft.com/library/ms735092.aspx)  
+ [<span data-ttu-id="c0c5f-141">Vue d’ensemble de la création d’images</span><span class="sxs-lookup"><span data-stu-id="c0c5f-141">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [<span data-ttu-id="c0c5f-142">Sécurité</span><span class="sxs-lookup"><span data-stu-id="c0c5f-142">Security</span></span>](../../../../docs/framework/wpf/security-wpf.md)  
+ [<span data-ttu-id="c0c5f-143">Vue d’ensemble du rendu graphique de WPF</span><span class="sxs-lookup"><span data-stu-id="c0c5f-143">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
+ [<span data-ttu-id="c0c5f-144">Graphiques 2D et acquisition d'images</span><span class="sxs-lookup"><span data-stu-id="c0c5f-144">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)

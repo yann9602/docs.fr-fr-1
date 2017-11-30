@@ -1,44 +1,50 @@
 ---
-title: "Comment&#160;: effectuer un test de positionnement &#224; l&#39;aide d&#39;un conteneur h&#244;te Win32 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "tests de positionnement, utiliser des conteneurs hôtes Win32"
-  - "objets visuels, tests de positionnement sur"
-  - "conteneurs hôtes Win32, tests de positionnement en utilisant"
+title: "Comment : effectuer un test de positionnement à l'aide d'un conteneur hôte Win32"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- hit tests [WPF], using Win32 host containers
+- visual objects [WPF], hit tests on
+- Win32 host containers [WPF], hit tests using
 ms.assetid: 9491f7f3-d8ba-4573-a888-2f064d1349dc
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9a5cb77a53cbb106593b70d618bab67ef816e901
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: effectuer un test de positionnement &#224; l&#39;aide d&#39;un conteneur h&#244;te Win32
-Vous pouvez créer des objets visuels dans une fenêtre [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] en fournissant un conteneur de fenêtre hôte pour les objets visuels.  Pour assurer la gestion des événements pour les objets visuels contenus, vous devez traiter les messages passés à la boucle de filtre de messages du conteneur de fenêtre hôte.  Consultez [Didacticiel : hébergement d'objets visuels dans une application Win32](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md) pour plus d'informations sur l'hébergement d'objets visuels dans une fenêtre [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  
+# <a name="how-to-hit-test-using-a-win32-host-container"></a><span data-ttu-id="d6047-102">Comment : effectuer un test de positionnement à l'aide d'un conteneur hôte Win32</span><span class="sxs-lookup"><span data-stu-id="d6047-102">How to: Hit Test Using a Win32 Host Container</span></span>
+<span data-ttu-id="d6047-103">Vous pouvez créer des objets visuels dans un [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] fenêtre en fournissant un hôte de conteneur de fenêtre pour les objets visuels.</span><span class="sxs-lookup"><span data-stu-id="d6047-103">You can create visual objects within a [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] window by providing a host window container for the visual objects.</span></span> <span data-ttu-id="d6047-104">Pour assurer la gestion des événements des objets visuels du conteneur, vous devez traiter les messages transmis à la boucle de filtre de messages du conteneur de fenêtre hôte.</span><span class="sxs-lookup"><span data-stu-id="d6047-104">To provide event handling for the contained visual objects you process the messages passed to the host window container’s message filter loop.</span></span> <span data-ttu-id="d6047-105">Reportez-vous à [didacticiel : hébergeant des objets dans une Application Win32 Visual](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md) pour plus d’informations sur l’hébergement d’objets visuels dans un [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre.</span><span class="sxs-lookup"><span data-stu-id="d6047-105">Refer to [Tutorial: Hosting Visual Objects in a Win32 Application](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md) for more information on how to host visual objects in a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] window.</span></span>  
   
-## Exemple  
- Le code suivant montre comment configurer des gestionnaires d'événement de souris pour une fenêtre [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] utilisée en tant que conteneur hôte pour des objets visuels.  
+## <a name="example"></a><span data-ttu-id="d6047-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="d6047-106">Example</span></span>  
+ <span data-ttu-id="d6047-107">Le code suivant montre comment définir des gestionnaires d’événements de souris pour un [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre qui est utilisé comme un conteneur d’hôte pour des objets visuels.</span><span class="sxs-lookup"><span data-stu-id="d6047-107">The following code shows how to set up mouse event handlers for a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] window that is used as a host container for visual objects.</span></span>  
   
  [!code-csharp[VisualsHitTesting#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyWindow.cs#103)]
  [!code-vb[VisualsHitTesting#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyWindow.vb#103)]  
   
- L'exemple suivant montre comment configurer un [test de positionnement](GTMT) en réponse à l'interception d'événements de souris spécifiques.  
+ <span data-ttu-id="d6047-108">L’exemple suivant montre comment configurer un test de positionnement en réponse à intercepter des événements de souris spécifiques.</span><span class="sxs-lookup"><span data-stu-id="d6047-108">The following example shows how to set up a hit test in response to trapping specific mouse events.</span></span>  
   
  [!code-csharp[VisualsHitTesting#104](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyCircle.cs#104)]
  [!code-vb[VisualsHitTesting#104](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyCircle.vb#104)]  
   
- L'objet <xref:System.Windows.Interop.HwndSource> présente le contenu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] dans une fenêtre [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]. La valeur de la propriété <xref:System.Windows.Interop.HwndSource.RootVisual%2A> de l'objet <xref:System.Windows.Interop.HwndSource> représente le nœud supérieur de la hiérarchie de l'[arborescence d'éléments visuels](GTMT).  
+ <span data-ttu-id="d6047-109">Le <xref:System.Windows.Interop.HwndSource> présente [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] de contenu dans un [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] fenêtre.</span><span class="sxs-lookup"><span data-stu-id="d6047-109">The <xref:System.Windows.Interop.HwndSource> object presents [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] content within a [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] window.</span></span> <span data-ttu-id="d6047-110">La valeur de la <xref:System.Windows.Interop.HwndSource.RootVisual%2A> propriété de la <xref:System.Windows.Interop.HwndSource> objet représente le nœud supérieur dans la hiérarchie d’arborescence d’éléments visuels.</span><span class="sxs-lookup"><span data-stu-id="d6047-110">The value of the <xref:System.Windows.Interop.HwndSource.RootVisual%2A> property of the <xref:System.Windows.Interop.HwndSource> object represents the top-most node in the visual tree hierarchy.</span></span>  
   
- Pour obtenir l'exemple complet relatif aux objets de test de positionnement à l'aide d'un conteneur hôte Win32, consultez [Test de positionnement avec interopérabilité Win32, exemple](http://go.microsoft.com/fwlink/?LinkID=159995).  
+ <span data-ttu-id="d6047-111">Pour l’exemple complet sur le test de positionnement des objets à l’aide d’un conteneur hôte Win32, consultez [Test de positionnement avec interopérabilité Win32, exemple](http://go.microsoft.com/fwlink/?LinkID=159995).</span><span class="sxs-lookup"><span data-stu-id="d6047-111">For the complete sample on hit testing objects using a Win32 host container, see [Hit Test with Win32 Interoperation Sample](http://go.microsoft.com/fwlink/?LinkID=159995).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Interop.HwndSource>   
- [Test de positionnement dans la couche visuelle](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)   
- [Didacticiel : hébergement d'objets visuels dans une application Win32](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)
+## <a name="see-also"></a><span data-ttu-id="d6047-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d6047-112">See Also</span></span>  
+ <xref:System.Windows.Interop.HwndSource>  
+ [<span data-ttu-id="d6047-113">Test de positionnement dans la couche visuelle</span><span class="sxs-lookup"><span data-stu-id="d6047-113">Hit Testing in the Visual Layer</span></span>](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
+ [<span data-ttu-id="d6047-114">Didacticiel : hébergement d’objets visuels dans une application Win32</span><span class="sxs-lookup"><span data-stu-id="d6047-114">Tutorial: Hosting Visual Objects in a Win32 Application</span></span>](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)

@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - XML serialization, examples
 - arrays, serializing
@@ -21,22 +19,21 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 3f3fd8ce07b5b23d92c3ced93c733ec0c0f7680c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 874836c83fbe681692260be03efed3aec85dcfe4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="examples-of-xml-serialization"></a>Exemples de sérialisation XML
-La sérialisation XML peut prendre plusieurs formes, de la plus simple à la plus complexe. Par exemple, vous pouvez sérialiser une classe qui se compose simplement de champs et de propriétés publics, comme illustré dans [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Les exemples de code suivants abordent différents scénarios avancés, y compris la manière d'utiliser la sérialisation XML pour générer un flux de données XML qui se conforme à un document de schéma XML (XSD) spécifique.  
+# <a name="examples-of-xml-serialization"></a><span data-ttu-id="3ab74-102">Exemples de sérialisation XML</span><span class="sxs-lookup"><span data-stu-id="3ab74-102">Examples of XML Serialization</span></span>
+<span data-ttu-id="3ab74-103">La sérialisation XML peut prendre plusieurs formes, de la plus simple à la plus complexe.</span><span class="sxs-lookup"><span data-stu-id="3ab74-103">XML serialization can take more than one form, from simple to complex.</span></span> <span data-ttu-id="3ab74-104">Par exemple, vous pouvez sérialiser une classe qui se compose simplement de champs et de propriétés publics, comme illustré dans [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md).</span><span class="sxs-lookup"><span data-stu-id="3ab74-104">For example, you can serialize a class that simply consists of public fields and properties, as shown in [Introducing XML Serialization](../../../docs/standard/serialization/introducing-xml-serialization.md).</span></span> <span data-ttu-id="3ab74-105">Les exemples de code suivants abordent différents scénarios avancés, y compris la manière d'utiliser la sérialisation XML pour générer un flux de données XML qui se conforme à un document de schéma XML (XSD) spécifique.</span><span class="sxs-lookup"><span data-stu-id="3ab74-105">The following code examples address various advanced scenarios, including how to use XML serialization to generate an XML stream that conforms to a specific XML Schema (XSD) document.</span></span>  
   
-## <a name="serializing-a-dataset"></a>Sérialisation d'un DataSet  
- En plus de sérialiser une instance d'une classe publique, une instance d'un <xref:System.Data.DataSet> peut également être sérialisée, comme illustré dans l'exemple de code suivant.  
+## <a name="serializing-a-dataset"></a><span data-ttu-id="3ab74-106">Sérialisation d'un DataSet</span><span class="sxs-lookup"><span data-stu-id="3ab74-106">Serializing a DataSet</span></span>  
+ <span data-ttu-id="3ab74-107">En plus de sérialiser une instance d'une classe publique, une instance d'un <xref:System.Data.DataSet> peut également être sérialisée, comme illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="3ab74-107">Besides serializing an instance of a public class, an instance of a <xref:System.Data.DataSet> can also be serialized, as shown in the following code example.</span></span>  
   
 ```vb  
 Private Sub SerializeDataSet(filename As String)  
@@ -82,8 +79,8 @@ private void SerializeDataSet(string filename){
 }  
 ```  
   
-## <a name="serializing-an-xmlelement-and-xmlnode"></a>Sérialisation de XmlElement et XmlNode  
- Vous pouvez également sérialiser les instances d'une classe <xref:System.Xml.XmlElement> ou <xref:System.Xml.XmlNode>, comme illustré dans l'exemple de code suivant.  
+## <a name="serializing-an-xmlelement-and-xmlnode"></a><span data-ttu-id="3ab74-108">Sérialisation de XmlElement et XmlNode</span><span class="sxs-lookup"><span data-stu-id="3ab74-108">Serializing an XmlElement and XmlNode</span></span>  
+ <span data-ttu-id="3ab74-109">Vous pouvez également sérialiser les instances d'une classe <xref:System.Xml.XmlElement> ou <xref:System.Xml.XmlNode>, comme illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="3ab74-109">You can also serialize instances of a <xref:System.Xml.XmlElement> or <xref:System.Xml.XmlNode> class, as shown in the following code example.</span></span>  
   
 ```vb  
 private Sub SerializeElement(filename As String)  
@@ -130,8 +127,8 @@ private void SerializeNode(string filename){
 }  
 ```  
   
-## <a name="serializing-a-class-that-contains-a-field-returning-a-complex-object"></a>Sérialisation d'une classe qui contient un champ retournant un objet complexe  
- Si une propriété ou un champ retourne un objet complexe (tel qu’un tableau ou une instance de classe), [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) le convertit en élément imbriqué dans le document XML principal. Par exemple, la première classe de l'exemple de code ci-dessous retourne une instance de la deuxième classe.  
+## <a name="serializing-a-class-that-contains-a-field-returning-a-complex-object"></a><span data-ttu-id="3ab74-110">Sérialisation d'une classe qui contient un champ retournant un objet complexe</span><span class="sxs-lookup"><span data-stu-id="3ab74-110">Serializing a Class that Contains a Field Returning a Complex Object</span></span>  
+ <span data-ttu-id="3ab74-111">Si une propriété ou un champ retourne un objet complexe (tel qu’un tableau ou une instance de classe), [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) le convertit en élément imbriqué dans le document XML principal.</span><span class="sxs-lookup"><span data-stu-id="3ab74-111">If a property or field returns a complex object (such as an array or a class instance), the [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) converts it to an element nested within the main XML document.</span></span> <span data-ttu-id="3ab74-112">Par exemple, la première classe de l'exemple de code ci-dessous retourne une instance de la deuxième classe.</span><span class="sxs-lookup"><span data-stu-id="3ab74-112">For example, the first class in the following code example returns an instance of the second class.</span></span>  
   
 ```vb  
 Public Class PurchaseOrder  
@@ -154,7 +151,7 @@ public class Address
 }  
 ```  
   
- Le résultat XML sérialisé peut se présenter comme suit.  
+ <span data-ttu-id="3ab74-113">Le résultat XML sérialisé peut se présenter comme suit.</span><span class="sxs-lookup"><span data-stu-id="3ab74-113">The serialized XML output might resemble the following.</span></span>  
   
 ```xml  
 <PurchaseOrder>  
@@ -164,8 +161,8 @@ public class Address
 </PurchaseOrder>  
 ```  
   
-## <a name="serializing-an-array-of-objects"></a>Sérialisation d'un tableau d'objets  
- Vous pouvez également sérialiser un champ qui retourne un tableau d'objets, comme illustré dans l'exemple de code suivant.  
+## <a name="serializing-an-array-of-objects"></a><span data-ttu-id="3ab74-114">Sérialisation d'un tableau d'objets</span><span class="sxs-lookup"><span data-stu-id="3ab74-114">Serializing an Array of Objects</span></span>  
+ <span data-ttu-id="3ab74-115">Vous pouvez également sérialiser un champ qui retourne un tableau d'objets, comme illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="3ab74-115">You can also serialize a field that returns an array of objects, as shown in the following code example.</span></span>  
   
 ```vb  
 Public Class PurchaseOrder  
@@ -191,7 +188,7 @@ public class Item
 }  
 ```  
   
- L'instance de classe sérialisée peut se présenter comme suit, si deux éléments sont commandés.  
+ <span data-ttu-id="3ab74-116">L'instance de classe sérialisée peut se présenter comme suit, si deux éléments sont commandés.</span><span class="sxs-lookup"><span data-stu-id="3ab74-116">The serialized class instance might resemble the following, if two items are ordered.</span></span>  
   
 ```xml  
 <PurchaseOrder xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
@@ -208,8 +205,8 @@ public class Item
 </PurchaseOrder>  
 ```  
   
-## <a name="serializing-a-class-that-implements-the-icollection-interface"></a>Sérialisation d'une classe qui implémente l'interface ICollection  
- Vous pouvez créer vos propres classes de collection en implémentant l'interface <xref:System.Collections.ICollection> et utiliser <xref:System.Xml.Serialization.XmlSerializer> pour sérialiser les instances de ces classes. Notez que lorsqu'une classe implémente l'interface <xref:System.Collections.ICollection>, seule la collection que contient cette classe est sérialisée. Tous les champs ou propriétés publics ajoutés à la classe ne sont pas sérialisés. La classe doit inclure une méthode **Add** et une propriété **Item** (indexeur C#) à sérialiser.  
+## <a name="serializing-a-class-that-implements-the-icollection-interface"></a><span data-ttu-id="3ab74-117">Sérialisation d'une classe qui implémente l'interface ICollection</span><span class="sxs-lookup"><span data-stu-id="3ab74-117">Serializing a Class that Implements the ICollection Interface</span></span>  
+ <span data-ttu-id="3ab74-118">Vous pouvez créer vos propres classes de collection en implémentant l'interface <xref:System.Collections.ICollection> et utiliser <xref:System.Xml.Serialization.XmlSerializer> pour sérialiser les instances de ces classes.</span><span class="sxs-lookup"><span data-stu-id="3ab74-118">You can create your own collection classes by implementing the <xref:System.Collections.ICollection> interface, and use the <xref:System.Xml.Serialization.XmlSerializer> to serialize instances of these classes.</span></span> <span data-ttu-id="3ab74-119">Notez que lorsqu'une classe implémente l'interface <xref:System.Collections.ICollection>, seule la collection que contient cette classe est sérialisée.</span><span class="sxs-lookup"><span data-stu-id="3ab74-119">Note that when a class implements the <xref:System.Collections.ICollection> interface, only the collection contained by the class is serialized.</span></span> <span data-ttu-id="3ab74-120">Tous les champs ou propriétés publics ajoutés à la classe ne sont pas sérialisés.</span><span class="sxs-lookup"><span data-stu-id="3ab74-120">Any public properties or fields added to the class will not be serialized.</span></span> <span data-ttu-id="3ab74-121">La classe doit inclure une méthode **Add** et une propriété **Item** (indexeur C#) à sérialiser.</span><span class="sxs-lookup"><span data-stu-id="3ab74-121">The class must include an **Add** method and an **Item** property (C# indexer) to be serialized.</span></span>  
   
 ```vb  
 Imports System  
@@ -366,16 +363,16 @@ public class Employee{
 }  
 ```  
   
-## <a name="purchase-order-example"></a>Exemple de bon de commande  
- Vous pouvez couper et coller l'exemple de code suivant dans un fichier texte renommé avec une extension de nom de fichier en .cs ou .vb. Utilisez le compilateur C# ou Visual Basic pour compiler le fichier. Puis exécutez-le à l'aide du nom du fichier exécutable.  
+## <a name="purchase-order-example"></a><span data-ttu-id="3ab74-122">Exemple de bon de commande</span><span class="sxs-lookup"><span data-stu-id="3ab74-122">Purchase Order Example</span></span>  
+ <span data-ttu-id="3ab74-123">Vous pouvez couper et coller l'exemple de code suivant dans un fichier texte renommé avec une extension de nom de fichier en .cs ou .vb.</span><span class="sxs-lookup"><span data-stu-id="3ab74-123">You can cut and paste the following example code into a text file renamed with a .cs or .vb file name extension.</span></span> <span data-ttu-id="3ab74-124">Utilisez le compilateur C# ou Visual Basic pour compiler le fichier.</span><span class="sxs-lookup"><span data-stu-id="3ab74-124">Use the C# or Visual Basic compiler to compile the file.</span></span> <span data-ttu-id="3ab74-125">Puis exécutez-le à l'aide du nom du fichier exécutable.</span><span class="sxs-lookup"><span data-stu-id="3ab74-125">Then run it using the name of the executable.</span></span>  
   
- Cet exemple utilise un scénario simple pour illustrer comment l'instance d'un objet est créée et sérialisée dans un flux de données de fichier à l'aide de la méthode <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>. Le flux de données XML est enregistré dans un fichier, qui est ensuite relu et reconstruit dans une copie de l'objet d'origine à l'aide de la méthode <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>.  
+ <span data-ttu-id="3ab74-126">Cet exemple utilise un scénario simple pour illustrer comment l'instance d'un objet est créée et sérialisée dans un flux de données de fichier à l'aide de la méthode <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>.</span><span class="sxs-lookup"><span data-stu-id="3ab74-126">This example uses a simple scenario to demonstrate how an instance of an object is created and serialized into a file stream using the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> method.</span></span> <span data-ttu-id="3ab74-127">Le flux de données XML est enregistré dans un fichier, qui est ensuite relu et reconstruit dans une copie de l'objet d'origine à l'aide de la méthode <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>.</span><span class="sxs-lookup"><span data-stu-id="3ab74-127">The XML stream is saved to a file, and the same file is then read back and reconstructed into a copy of the original object using the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method.</span></span>  
   
- Dans cet exemple, une classe nommée `PurchaseOrder` est sérialisée puis désérialisée. Une deuxième classe nommée `Address` est également incluse car le champ public nommé `ShipTo` doit avoir la valeur `Address`. De la même façon, une classe `OrderedItem` est incluse car un tableau d'objets `OrderedItem` doit avoir pour valeur le champ `OrderedItems`. Enfin, une classe nommée `Test` contient le code qui sérialise et désérialise les classes.  
+ <span data-ttu-id="3ab74-128">Dans cet exemple, une classe nommée `PurchaseOrder` est sérialisée puis désérialisée.</span><span class="sxs-lookup"><span data-stu-id="3ab74-128">In this example, a class named `PurchaseOrder` is serialized and then deserialized.</span></span> <span data-ttu-id="3ab74-129">Une deuxième classe nommée `Address` est également incluse car le champ public nommé `ShipTo` doit avoir la valeur `Address`.</span><span class="sxs-lookup"><span data-stu-id="3ab74-129">A second class named `Address` is also included because the public field named `ShipTo` must be set to an `Address`.</span></span> <span data-ttu-id="3ab74-130">De la même façon, une classe `OrderedItem` est incluse car un tableau d'objets `OrderedItem` doit avoir pour valeur le champ `OrderedItems`.</span><span class="sxs-lookup"><span data-stu-id="3ab74-130">Similarly, an `OrderedItem` class is included because an array of `OrderedItem` objects must be set to the `OrderedItems` field.</span></span> <span data-ttu-id="3ab74-131">Enfin, une classe nommée `Test` contient le code qui sérialise et désérialise les classes.</span><span class="sxs-lookup"><span data-stu-id="3ab74-131">Finally, a class named `Test` contains the code that serializes and deserializes the classes.</span></span>  
   
- La méthode `CreatePO` crée les objets de classe `PurchaseOrder`, `Address`et `OrderedItem` et définit les valeurs de champs publics. La méthode construit également une instance de la classe <xref:System.Xml.Serialization.XmlSerializer> utilisée pour sérialiser et désérialiser `PurchaseOrder`. Notez que le code passe au constructeur le type de la classe qui sera sérialisée. Le code crée également un `FileStream` utilisé pour écrire le flux XML dans un document XML.  
+ <span data-ttu-id="3ab74-132">La méthode `CreatePO` crée les objets de classe `PurchaseOrder`, `Address`et `OrderedItem` et définit les valeurs de champs publics.</span><span class="sxs-lookup"><span data-stu-id="3ab74-132">The `CreatePO` method creates the `PurchaseOrder`, `Address`, and `OrderedItem` class objects, and sets the public field values.</span></span> <span data-ttu-id="3ab74-133">La méthode construit également une instance de la classe <xref:System.Xml.Serialization.XmlSerializer> utilisée pour sérialiser et désérialiser `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="3ab74-133">The method also constructs an instance of the <xref:System.Xml.Serialization.XmlSerializer> class that is used to serialize and deserialize the `PurchaseOrder`.</span></span> <span data-ttu-id="3ab74-134">Notez que le code passe au constructeur le type de la classe qui sera sérialisée.</span><span class="sxs-lookup"><span data-stu-id="3ab74-134">Note that the code passes the type of the class that will be serialized to the constructor.</span></span> <span data-ttu-id="3ab74-135">Le code crée également un `FileStream` utilisé pour écrire le flux XML dans un document XML.</span><span class="sxs-lookup"><span data-stu-id="3ab74-135">The code also creates a `FileStream` that is used to write the XML stream to an XML document.</span></span>  
   
- La méthode `ReadPo` est un peu plus simple. Elle crée juste des objets à désérialiser et lit leurs valeurs. Comme avec la méthode `CreatePo`, vous devez tout d'abord construire un <xref:System.Xml.Serialization.XmlSerializer>, en passant au constructeur le type de la classe à désérialiser. De même, un <xref:System.IO.FileStream> est requis pour lire le document XML. Pour désérialiser les objets, appelez la méthode <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> avec le <xref:System.IO.FileStream> en tant qu'argument. L'objet désérialisé doit être converti en une variable d'objet de type `PurchaseOrder`. Le code lit ensuite les valeurs du `PurchaseOrder` désérialisé. Notez que vous pouvez également lire le fichier PO.xml créé pour consulter le résultat XML réel.  
+ <span data-ttu-id="3ab74-136">La méthode `ReadPo` est un peu plus simple.</span><span class="sxs-lookup"><span data-stu-id="3ab74-136">The `ReadPo` method is a little simpler.</span></span> <span data-ttu-id="3ab74-137">Elle crée juste des objets à désérialiser et lit leurs valeurs.</span><span class="sxs-lookup"><span data-stu-id="3ab74-137">It just creates objects to deserialize and reads out their values.</span></span> <span data-ttu-id="3ab74-138">Comme avec la méthode `CreatePo`, vous devez tout d'abord construire un <xref:System.Xml.Serialization.XmlSerializer>, en passant au constructeur le type de la classe à désérialiser.</span><span class="sxs-lookup"><span data-stu-id="3ab74-138">As with the `CreatePo` method, you must first construct a <xref:System.Xml.Serialization.XmlSerializer>, passing the type of the class to be deserialized to the constructor.</span></span> <span data-ttu-id="3ab74-139">De même, un <xref:System.IO.FileStream> est requis pour lire le document XML.</span><span class="sxs-lookup"><span data-stu-id="3ab74-139">Also, a <xref:System.IO.FileStream> is required to read the XML document.</span></span> <span data-ttu-id="3ab74-140">Pour désérialiser les objets, appelez la méthode <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> avec le <xref:System.IO.FileStream> en tant qu'argument.</span><span class="sxs-lookup"><span data-stu-id="3ab74-140">To deserialize the objects, call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method with the <xref:System.IO.FileStream> as an argument.</span></span> <span data-ttu-id="3ab74-141">L'objet désérialisé doit être converti en une variable d'objet de type `PurchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="3ab74-141">The deserialized object must be cast to an object variable of type `PurchaseOrder`.</span></span> <span data-ttu-id="3ab74-142">Le code lit ensuite les valeurs du `PurchaseOrder` désérialisé.</span><span class="sxs-lookup"><span data-stu-id="3ab74-142">The code then reads the values of the deserialized `PurchaseOrder`.</span></span> <span data-ttu-id="3ab74-143">Notez que vous pouvez également lire le fichier PO.xml créé pour consulter le résultat XML réel.</span><span class="sxs-lookup"><span data-stu-id="3ab74-143">Note that you can also read the PO.xml file that is created to see the actual XML output.</span></span>  
   
 ```vb  
 Imports System  
@@ -747,7 +744,7 @@ public class Test
 }  
 ```  
   
- Le résultat XML peut se présenter comme suit.  
+ <span data-ttu-id="3ab74-144">Le résultat XML peut se présenter comme suit.</span><span class="sxs-lookup"><span data-stu-id="3ab74-144">The XML output might resemble the following.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -774,11 +771,10 @@ public class Test
 </PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
- [Contrôle de la sérialisation XML à l’aide d’attributs](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)   
- [Attributs qui contrôlent la sérialisation XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)   
- [XmlSerializer, classe](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)   
- [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
- [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-
+## <a name="see-also"></a><span data-ttu-id="3ab74-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3ab74-145">See Also</span></span>  
+ [<span data-ttu-id="3ab74-146">Introduction à la sérialisation XML</span><span class="sxs-lookup"><span data-stu-id="3ab74-146">Introducing XML Serialization</span></span>](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+ [<span data-ttu-id="3ab74-147">Contrôle de la sérialisation XML à l’aide d’attributs</span><span class="sxs-lookup"><span data-stu-id="3ab74-147">Controlling XML Serialization Using Attributes</span></span>](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
+ [<span data-ttu-id="3ab74-148">Attributs qui contrôlent la sérialisation XML</span><span class="sxs-lookup"><span data-stu-id="3ab74-148">Attributes That Control XML Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
+ [<span data-ttu-id="3ab74-149">Classe XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="3ab74-149">XmlSerializer Class</span></span>](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)  
+ [<span data-ttu-id="3ab74-150">Guide pratique pour sérialiser un objet</span><span class="sxs-lookup"><span data-stu-id="3ab74-150">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="3ab74-151">Guide pratique pour désérialiser un objet</span><span class="sxs-lookup"><span data-stu-id="3ab74-151">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

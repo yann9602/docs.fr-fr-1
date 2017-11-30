@@ -1,24 +1,26 @@
 ---
-title: "La variable de contr&#244;le de boucle de type &#39;&lt;nom_type&gt;&#39; n’impl&#233;mente pas l’interface &#39;System.IComparable&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrArgument_IComparable2"
+title: "Boucle de la variable de contrôle de type &#39; &lt;typename&gt;&#39; n’implémente pas le &#39; System.IComparable &#39; interface"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrArgument_IComparable2
 ms.assetid: 8dba1270-380a-4f05-8bad-1031e6a9cc90
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: daf475d05edd3a520644aef23ba40e054ba95c6d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# La variable de contr&#244;le de boucle de type &#39;&lt;nom_type&gt;&#39; n’impl&#233;mente pas l’interface &#39;System.IComparable&#39;
-Une variable est d’un type qui n’implémente pas l’interface `System.IComparable`.`System.IComparable` doit être implémentée par un type valeur ou une classe.  
+# <a name="loop-control-variable-of-type-39lttypenamegt39-does-not-implement-the-39systemicomparable39-interface"></a><span data-ttu-id="6da89-102">Boucle de la variable de contrôle de type &#39; &lt;typename&gt;&#39; n’implémente pas le &#39; System.IComparable &#39; interface</span><span class="sxs-lookup"><span data-stu-id="6da89-102">Loop control variable of type &#39;&lt;typename&gt;&#39; does not implement the &#39;System.IComparable&#39; interface</span></span>
+<span data-ttu-id="6da89-103">Une variable est d’un type qui n’implémente pas l’interface `System.IComparable` .</span><span class="sxs-lookup"><span data-stu-id="6da89-103">A variable is of a type that does not implement the `System.IComparable` interface.</span></span> <span data-ttu-id="6da89-104">`System.IComparable` doit être implémentée par un type valeur ou une classe.</span><span class="sxs-lookup"><span data-stu-id="6da89-104">`System.IComparable` must be implemented by a value type or a class.</span></span>  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="6da89-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="6da89-105">To correct this error</span></span>  
   
-1.  Vérifiez que la variable est un type valeur.  
+1.  <span data-ttu-id="6da89-106">Vérifiez que la variable est un type valeur.</span><span class="sxs-lookup"><span data-stu-id="6da89-106">Ensure that the variable is a value type.</span></span>  
   
-## Voir aussi  
+## <a name="see-also"></a><span data-ttu-id="6da89-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6da89-107">See Also</span></span>  
  <xref:System.IComparable>

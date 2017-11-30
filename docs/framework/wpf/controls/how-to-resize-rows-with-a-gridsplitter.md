@@ -1,48 +1,51 @@
 ---
-title: "Comment&#160;: redimensionner des lignes avec un GridSplitter | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "lignes de grille, redimensionner"
-  - "GridSplitter (contrôle), redimensionner des lignes de grille"
-  - "redimensionner des lignes de grille"
+title: "Comment : redimensionner des lignes avec un GridSplitter"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- resizing grid rows [WPF]
+- grid rows [WPF], resizing
+- GridSplitter control [WPF], resizing grid rows
 ms.assetid: 2413a9f2-1d81-46ed-95cb-95ec8233eea2
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6621cc0048270b97c42ff4c4e646b0ddd9ca3477
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: redimensionner des lignes avec un GridSplitter
-Cet exemple montre comment utiliser un <xref:System.Windows.Controls.GridSplitter> horizontal pour redistribuer l'espace entre deux lignes dans une <xref:System.Windows.Controls.Grid> sans modifier les dimensions de la <xref:System.Windows.Controls.Grid>.  
+# <a name="how-to-resize-rows-with-a-gridsplitter"></a><span data-ttu-id="d1327-102">Comment : redimensionner des lignes avec un GridSplitter</span><span class="sxs-lookup"><span data-stu-id="d1327-102">How to: Resize Rows with a GridSplitter</span></span>
+<span data-ttu-id="d1327-103">Cet exemple montre comment utiliser une horizontale <xref:System.Windows.Controls.GridSplitter> pour redistribuer l’espace entre les deux lignes dans un <xref:System.Windows.Controls.Grid> sans modifier les dimensions de la <xref:System.Windows.Controls.Grid>.</span><span class="sxs-lookup"><span data-stu-id="d1327-103">This example shows how to use a horizontal <xref:System.Windows.Controls.GridSplitter> to redistribute the space between two rows in a <xref:System.Windows.Controls.Grid> without changing the dimensions of the <xref:System.Windows.Controls.Grid>.</span></span>  
   
-## Exemple  
- **Comment créer un GridSplitter qui chevauche le bord d'une ligne**  
+## <a name="example"></a><span data-ttu-id="d1327-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="d1327-104">Example</span></span>  
+ <span data-ttu-id="d1327-105">**Comment créer un GridSplitter qui chevauche le bord d’une ligne**</span><span class="sxs-lookup"><span data-stu-id="d1327-105">**How to create a GridSplitter that overlays the edge of a row**</span></span>  
   
- Pour spécifier un <xref:System.Windows.Controls.GridSplitter> qui redimensionne les lignes adjacentes dans une <xref:System.Windows.Controls.Grid>, affectez à la [propriété attachée](GTMT) <xref:System.Windows.Controls.Grid.Row%2A> l'une des lignes que vous souhaitez redimensionner.  Si votre <xref:System.Windows.Controls.Grid> a plusieurs colonnes, définissez la propriété attachée <xref:System.Windows.Controls.Grid.ColumnSpan%2A> pour spécifier le nombre de colonnes.  Puis, affectez à <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> la valeur <xref:System.Windows.VerticalAlignment> ou <xref:System.Windows.VerticalAlignment> \(l'alignement défini dépend des deux lignes que vous souhaitez redimensionner\).  Enfin, affectez à la propriété <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> la valeur <xref:System.Windows.HorizontalAlignment>.  
+ <span data-ttu-id="d1327-106">Pour spécifier un <xref:System.Windows.Controls.GridSplitter> qui redimensionne les lignes adjacentes dans une <xref:System.Windows.Controls.Grid>, définissez le <xref:System.Windows.Controls.Grid.Row%2A> propriété attachée à une des lignes que vous voulez redimensionner.</span><span class="sxs-lookup"><span data-stu-id="d1327-106">To specify a <xref:System.Windows.Controls.GridSplitter> that resizes adjacent rows in a <xref:System.Windows.Controls.Grid>, set the <xref:System.Windows.Controls.Grid.Row%2A> attached property to one of the rows that you want to resize.</span></span> <span data-ttu-id="d1327-107">Si votre <xref:System.Windows.Controls.Grid> a plusieurs colonnes, définissez la <xref:System.Windows.Controls.Grid.ColumnSpan%2A> propriété attachée pour spécifier le nombre de colonnes.</span><span class="sxs-lookup"><span data-stu-id="d1327-107">If your <xref:System.Windows.Controls.Grid> has more than one column, set the <xref:System.Windows.Controls.Grid.ColumnSpan%2A> attached property to specify the number of columns.</span></span> <span data-ttu-id="d1327-108">Définissez ensuite la <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> à <xref:System.Windows.VerticalAlignment.Top> ou <xref:System.Windows.VerticalAlignment.Bottom> (l’alignement défini dépend des deux lignes que vous souhaitez redimensionner).</span><span class="sxs-lookup"><span data-stu-id="d1327-108">Then set the <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> to <xref:System.Windows.VerticalAlignment.Top> or <xref:System.Windows.VerticalAlignment.Bottom> (which alignment you set depends on which two rows you want to resize).</span></span> <span data-ttu-id="d1327-109">Enfin, définissez la <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> propriété <xref:System.Windows.HorizontalAlignment.Stretch>.</span><span class="sxs-lookup"><span data-stu-id="d1327-109">Finally, set the <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> property to <xref:System.Windows.HorizontalAlignment.Stretch>.</span></span>  
   
- L'exemple suivant montre comment définir un <xref:System.Windows.Controls.GridSplitter> horizontal qui redimensionne des lignes adjacentes.  
+ <span data-ttu-id="d1327-110">L’exemple suivant montre comment définir une horizontale <xref:System.Windows.Controls.GridSplitter> qui redimensionne les lignes adjacentes.</span><span class="sxs-lookup"><span data-stu-id="d1327-110">The following example shows how to define a horizontal <xref:System.Windows.Controls.GridSplitter> that resizes adjacent rows.</span></span>  
   
- [!code-xml[GridSplitterRowColumn#GridSplitterRowOverlay](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterrowoverlay)]  
+ [!code-xaml[GridSplitterRowColumn#GridSplitterRowOverlay](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterrowoverlay)]  
   
- Un <xref:System.Windows.Controls.GridSplitter> qui n'occupe pas sa propre ligne peut être masqué par d'autres contrôles dans la <xref:System.Windows.Controls.Grid>.  Pour plus d'informations sur la manière d'éviter ce problème, consultez [Vérifier qu'un GridSplitter est visible](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md).  
+ <span data-ttu-id="d1327-111">A <xref:System.Windows.Controls.GridSplitter> qui n’occupe pas sa propre ligne peut être masqué par d’autres contrôles dans le <xref:System.Windows.Controls.Grid>.</span><span class="sxs-lookup"><span data-stu-id="d1327-111">A <xref:System.Windows.Controls.GridSplitter> that does not occupy its own row may be obscured by other controls in the <xref:System.Windows.Controls.Grid>.</span></span> <span data-ttu-id="d1327-112">Pour plus d’informations sur la manière d’éviter ce problème, consultez la page [Vérifier qu’un GridSplitter est visible](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md).</span><span class="sxs-lookup"><span data-stu-id="d1327-112">For more information about how to prevent this issue, see [Make Sure That a GridSplitter Is Visible](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md).</span></span>  
   
- **Comment créer un GridSplitter qui occupe une ligne**  
+ <span data-ttu-id="d1327-113">**Comment créer un GridSplitter qui occupe une ligne**</span><span class="sxs-lookup"><span data-stu-id="d1327-113">**How to create a GridSplitter that occupies a row**</span></span>  
   
- Pour spécifier un <xref:System.Windows.Controls.GridSplitter> qui occupe une ligne dans une <xref:System.Windows.Controls.Grid>, affectez à la [propriété attachée](GTMT) <xref:System.Windows.Controls.Grid.Row%2A> l'une des lignes que vous souhaitez redimensionner.  Si votre <xref:System.Windows.Controls.Grid> a plusieurs colonnes, affectez à la propriété attachée <xref:System.Windows.Controls.Grid.ColumnSpan%2A> le nombre de colonnes.  Puis, affectez à <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> la valeur <xref:System.Windows.VerticalAlignment>, affectez à la propriété <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> la valeur <xref:System.Windows.HorizontalAlignment>, et affectez à la <xref:System.Windows.Controls.RowDefinition.Height%2A> de la ligne qui contient le <xref:System.Windows.Controls.GridSplitter> la valeur <xref:System.Windows.GridLength.Auto%2A>.  
+ <span data-ttu-id="d1327-114">Pour spécifier un <xref:System.Windows.Controls.GridSplitter> qui occupe une ligne dans un <xref:System.Windows.Controls.Grid>, définissez le <xref:System.Windows.Controls.Grid.Row%2A> propriété attachée à une des lignes que vous voulez redimensionner.</span><span class="sxs-lookup"><span data-stu-id="d1327-114">To specify a <xref:System.Windows.Controls.GridSplitter> that occupies a row in a <xref:System.Windows.Controls.Grid>, set the <xref:System.Windows.Controls.Grid.Row%2A> attached property to one of the rows that you want to resize.</span></span> <span data-ttu-id="d1327-115">Si votre <xref:System.Windows.Controls.Grid> a plusieurs colonnes, définissez la <xref:System.Windows.Controls.Grid.ColumnSpan%2A> propriété attachée au nombre de colonnes.</span><span class="sxs-lookup"><span data-stu-id="d1327-115">If your <xref:System.Windows.Controls.Grid> has more than one column, set the <xref:System.Windows.Controls.Grid.ColumnSpan%2A> attached property to the number of columns.</span></span> <span data-ttu-id="d1327-116">Puis définissez la <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> à <xref:System.Windows.VerticalAlignment.Center>, définissez le <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> propriété <xref:System.Windows.HorizontalAlignment.Stretch>et définissez la <xref:System.Windows.Controls.RowDefinition.Height%2A> de la ligne qui contient le <xref:System.Windows.Controls.GridSplitter> à <xref:System.Windows.GridLength.Auto%2A>.</span><span class="sxs-lookup"><span data-stu-id="d1327-116">Then set the <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> to <xref:System.Windows.VerticalAlignment.Center>, set the <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> property to <xref:System.Windows.HorizontalAlignment.Stretch>, and set the <xref:System.Windows.Controls.RowDefinition.Height%2A> of the row that contains the <xref:System.Windows.Controls.GridSplitter> to <xref:System.Windows.GridLength.Auto%2A>.</span></span>  
   
- L'exemple suivant montre comment définir un <xref:System.Windows.Controls.GridSplitter> horizontal qui occupe une ligne et redimensionne les lignes de chaque côté.  
+ <span data-ttu-id="d1327-117">L’exemple suivant montre comment définir une horizontale <xref:System.Windows.Controls.GridSplitter> qui occupe une ligne et redimensionne les lignes de chaque côté de celui-ci.</span><span class="sxs-lookup"><span data-stu-id="d1327-117">The following example shows how to define a horizontal <xref:System.Windows.Controls.GridSplitter> that occupies a row and resizes the rows on either side of it.</span></span>  
   
- [!code-xml[GridSplitterRowColumn#GridSplitterEntireRowPart1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart1)]  
-[!code-xml[GridSplitterRowColumn#GridSplitterEntireRowPart2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart2)]  
+ [!code-xaml[GridSplitterRowColumn#GridSplitterEntireRowPart1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart1)]  
+[!code-xaml[GridSplitterRowColumn#GridSplitterEntireRowPart2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart2)]  
   
-## Voir aussi  
- <xref:System.Windows.Controls.GridSplitter>   
- [Rubriques Comment](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="d1327-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d1327-118">See Also</span></span>  
+ <xref:System.Windows.Controls.GridSplitter>  
+ [<span data-ttu-id="d1327-119">Guides pratiques</span><span class="sxs-lookup"><span data-stu-id="d1327-119">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)

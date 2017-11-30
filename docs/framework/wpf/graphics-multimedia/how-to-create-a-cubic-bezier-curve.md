@@ -1,47 +1,49 @@
 ---
-title: "Comment&#160;: cr&#233;er une courbe de B&#233;zier cubique | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "courbes de Bézier, cubiques"
-  - "créer, courbes de Bézier cubiques"
-  - "courbes de Bézier cubiques"
-  - "courbes, de Bézier cubiques"
-  - "graphiques, courbes de Bézier cubiques"
+title: "Comment : créer une courbe de Bézier cubique"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- curves [WPF], cubic Bezier
+- Bezier curves [WPF], cubic
+- graphics [WPF], cubic Bezier curves
+- cubic Bezier curves [WPF]
 ms.assetid: 450a3a77-7c57-48b0-a008-0f6051add980
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 35d4fad0634586d5d0c6ea85f276d6e76edb3f63
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er une courbe de B&#233;zier cubique
-Cet exemple montre comment créer une courbe de Bézier cubique.  Pour créer une courbe de Bézier cubique, utilisez les classes <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure> et <xref:System.Windows.Media.BezierSegment>.  Pour afficher la géométrie résultante, utilisez un élément <xref:System.Windows.Shapes.Path> ou utilisez\-le avec un <xref:System.Windows.Media.GeometryDrawing> ou un <xref:System.Windows.Media.DrawingContext>.  Dans les exemples suivants, une courbe de Bézier cubique est tracée de \(10, 100\) à \(300, 100\).  La courbe a des points de contrôle \(100, 0\) et \(200, 200\).  
+# <a name="how-to-create-a-cubic-bezier-curve"></a><span data-ttu-id="6afe3-102">Comment : créer une courbe de Bézier cubique</span><span class="sxs-lookup"><span data-stu-id="6afe3-102">How to: Create a Cubic Bezier Curve</span></span>
+<span data-ttu-id="6afe3-103">Cet exemple montre comment créer une courbe de Bézier cubique.</span><span class="sxs-lookup"><span data-stu-id="6afe3-103">This example shows how to create a cubic Bezier curve.</span></span> <span data-ttu-id="6afe3-104">Pour créer une courbe de Bézier cubique, utilisez le <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, et <xref:System.Windows.Media.BezierSegment> classes.</span><span class="sxs-lookup"><span data-stu-id="6afe3-104">To create a cubic Bezier curve, use the <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, and <xref:System.Windows.Media.BezierSegment> classes.</span></span>  <span data-ttu-id="6afe3-105">Pour afficher la géométrie résultante, utilisez un <xref:System.Windows.Shapes.Path> élément, ou l’utiliser avec un <xref:System.Windows.Media.GeometryDrawing> ou <xref:System.Windows.Media.DrawingContext>.</span><span class="sxs-lookup"><span data-stu-id="6afe3-105">To display the resulting geometry, use a <xref:System.Windows.Shapes.Path> element, or use it with a <xref:System.Windows.Media.GeometryDrawing> or a <xref:System.Windows.Media.DrawingContext>.</span></span> <span data-ttu-id="6afe3-106">Dans les exemples suivants, une courbe de Bézier cubique est tracée de (10, 100) à (300, 100).</span><span class="sxs-lookup"><span data-stu-id="6afe3-106">In the following examples, a cubic Bezier curve is drawn from (10, 100) to (300, 100).</span></span> <span data-ttu-id="6afe3-107">La courbe a des points de contrôle de (100, 0) et (200, 200).</span><span class="sxs-lookup"><span data-stu-id="6afe3-107">The curve has control points of (100, 0) and (200, 200).</span></span>  
   
-## Exemple  
- \[xaml\]  
+## <a name="example"></a><span data-ttu-id="6afe3-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="6afe3-108">Example</span></span>  
+ <span data-ttu-id="6afe3-109">[xaml]</span><span class="sxs-lookup"><span data-stu-id="6afe3-109">[xaml]</span></span>  
   
- Dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], vous pouvez utiliser la syntaxe de balise abrégée pour décrire un chemin d'accès.  
+ <span data-ttu-id="6afe3-110">Dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], vous pouvez utiliser la syntaxe de balise abrégée pour décrire un chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="6afe3-110">In [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], you may use abbreviated markup syntax to describe a path.</span></span>  
   
- [!code-xml[GeometrySample#53](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/geometryattributesyntaxexample.xaml#53)]  
+ [!code-xaml[GeometrySample#53](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/geometryattributesyntaxexample.xaml#53)]  
   
- \[xaml\]  
+ <span data-ttu-id="6afe3-111">[xaml]</span><span class="sxs-lookup"><span data-stu-id="6afe3-111">[xaml]</span></span>  
   
- Dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez également tracer une courbe de Bézier cubique à l'aide de balises d'objet.  L'exemple suivant est équivalent à l'exemple [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] précédent.  
+ <span data-ttu-id="6afe3-112">Dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez également dessiner une courbe de Bézier cubique à l’aide de balises d’objet.</span><span class="sxs-lookup"><span data-stu-id="6afe3-112">In [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], you can also draw a cubic Bezier curve using object tags.</span></span> <span data-ttu-id="6afe3-113">L'exemple suivant est équivalent à l’exemple [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] précédent.</span><span class="sxs-lookup"><span data-stu-id="6afe3-113">The following is equivalent to the previous [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] example.</span></span>  
   
- [!code-xml[GeometrySample#33](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#33)]  
+ [!code-xaml[GeometrySample#33](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#33)]  
   
- Cet exemple est extrait d'un exemple plus complet ; pour l'obtenir, consultez [Géométries, exemple](http://go.microsoft.com/fwlink/?LinkID=159989).  
+ <span data-ttu-id="6afe3-114">Cet exemple fait partie d’un exemple plus vaste ; pour l’exemple complet, consultez [Géométries, exemple](http://go.microsoft.com/fwlink/?LinkID=159989).</span><span class="sxs-lookup"><span data-stu-id="6afe3-114">This example is part of larger sample; for the complete sample, see the [Geometries Sample](http://go.microsoft.com/fwlink/?LinkID=159989).</span></span>  
   
-## Voir aussi  
- [Créer un arc elliptique](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-an-elliptical-arc.md)   
- [Créer un LineSegment dans un PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)   
- [Create a Cubic Bezier Curve](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-cubic-bezier-curve.md)   
- [Créer une courbe de Bézier quadratique](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-quadratic-bezier-curve.md)
+## <a name="see-also"></a><span data-ttu-id="6afe3-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6afe3-115">See Also</span></span>  
+ [<span data-ttu-id="6afe3-116">Créer un arc elliptique</span><span class="sxs-lookup"><span data-stu-id="6afe3-116">Create an Elliptical Arc</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-an-elliptical-arc.md)  
+ [<span data-ttu-id="6afe3-117">Créer un LineSegment dans une PathGeometry</span><span class="sxs-lookup"><span data-stu-id="6afe3-117">Create a LineSegment in a PathGeometry</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)  
+ [<span data-ttu-id="6afe3-118">Créer une courbe de Bézier cubique</span><span class="sxs-lookup"><span data-stu-id="6afe3-118">Create a Cubic Bezier Curve</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-cubic-bezier-curve.md)  
+ [<span data-ttu-id="6afe3-119">Créer une courbe de Bézier quadratique</span><span class="sxs-lookup"><span data-stu-id="6afe3-119">Create a Quadratic Bezier Curve</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-quadratic-bezier-curve.md)

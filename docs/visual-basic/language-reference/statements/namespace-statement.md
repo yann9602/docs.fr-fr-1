@@ -1,36 +1,34 @@
 ---
-title: "Namespace Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Namespace"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "namespaces, root"
-  - "Namespace statement"
-  - "namespaces, nested"
-  - "declaring namespaces, syntax"
-  - "namespaces, declaring"
-  - "root namespaces"
-  - "declarations, namespaces"
+title: Namespace, instruction
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Namespace
+helpviewer_keywords:
+- namespaces [Visual Basic], root
+- Namespace statement [Visual Basic]
+- namespaces [Visual Basic], nested
+- declaring namespaces [Visual Basic], syntax
+- namespaces [Visual Basic], declaring
+- root namespaces
+- declarations [Visual Basic], namespaces
 ms.assetid: a31fbd95-9ace-4c3d-bbb1-51222a2272b2
-caps.latest.revision: 39
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 39
+caps.latest.revision: "39"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9863286a8eda2559ab678c77a81cc7d6063c3e3d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Namespace Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Déclare le nom d'un espace de noms et provoque la compilation du code source qui suit la déclaration dans cet espace de noms.  
+# <a name="namespace-statement"></a><span data-ttu-id="615b8-102">Namespace, instruction</span><span class="sxs-lookup"><span data-stu-id="615b8-102">Namespace Statement</span></span>
+<span data-ttu-id="615b8-103">Déclare le nom d’un espace de noms et oblige le code source qui suit la déclaration à être compilé dans cet espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-103">Declares the name of a namespace and causes the source code that follows the declaration to be compiled within that namespace.</span></span>  
   
-## Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="615b8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="615b8-104">Syntax</span></span>  
   
 ```  
 Namespace [Global.] { name | name.name }  
@@ -38,68 +36,68 @@ Namespace [Global.] { name | name.name }
 End Namespace  
 ```  
   
-## Composants  
- Global  
- Facultatif.  Vous permet de définir un espace de noms hors de l'espace de noms racine de votre projet.  Consultez [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).  
+## <a name="parts"></a><span data-ttu-id="615b8-105">Composants</span><span class="sxs-lookup"><span data-stu-id="615b8-105">Parts</span></span>  
+ <span data-ttu-id="615b8-106">Global</span><span class="sxs-lookup"><span data-stu-id="615b8-106">Global</span></span>  
+ <span data-ttu-id="615b8-107">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="615b8-107">Optional.</span></span> <span data-ttu-id="615b8-108">Vous permet de définir un espace de noms en dehors de l’espace de noms racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="615b8-108">Allows you to define a namespace out of the root namespace of your project.</span></span> <span data-ttu-id="615b8-109">Consultez [espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="615b8-109">See [Namespaces in Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).</span></span>  
   
  `name`  
- Obligatoire.  Nom univoque d'identification de l'espace de noms.  Doit être un identificateur Visual Basic valide.  Pour plus d'informations, consultez [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ <span data-ttu-id="615b8-110">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="615b8-110">Required.</span></span> <span data-ttu-id="615b8-111">Un nom unique qui identifie l’espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-111">A unique name that identifies the namespace.</span></span> <span data-ttu-id="615b8-112">Doit être un identificateur Visual Basic valid.</span><span class="sxs-lookup"><span data-stu-id="615b8-112">Must be a valid Visual Basic identifier.</span></span> <span data-ttu-id="615b8-113">Pour plus d’informations, consultez [noms d’élément déclaré](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span><span class="sxs-lookup"><span data-stu-id="615b8-113">For more information, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>  
   
  `componenttypes`  
- Facultatif.  Éléments qui composent l'espace de noms.  Ceux\-ci incluent, mais n'est pas limitée à, des énumérations, des structures, des interfaces, des classes, des modules, des délégués, et d'autres espaces de noms.  
+ <span data-ttu-id="615b8-114">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="615b8-114">Optional.</span></span> <span data-ttu-id="615b8-115">Éléments qui composent l’espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-115">Elements that make up the namespace.</span></span> <span data-ttu-id="615b8-116">Cela inclut, mais ne sont pas limités à, énumérations, structures, interfaces, classes, modules, délégués et autres espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-116">These include, but are not limited to, enumerations, structures, interfaces, classes, modules, delegates, and other namespaces.</span></span>  
   
  `End Namespace`  
- Met fin à un bloc `Namespace`.  
+ <span data-ttu-id="615b8-117">Met fin à une `Namespace` bloc.</span><span class="sxs-lookup"><span data-stu-id="615b8-117">Terminates a `Namespace` block.</span></span>  
   
-## Notes  
- Les espaces de noms sont utilisés comme un système d'organisation.  Ils permettent de classer et de présenter des éléments de programmation exposés à d'autres programmes et applications.  notez qu'un espace de noms n'est pas un *type* dans le sens qu'une classe ou ne vous structure pas être\-ne peut pas déclarer un élément de programmation pour avoir le type de données d'un espace de noms.  
+## <a name="remarks"></a><span data-ttu-id="615b8-118">Remarques</span><span class="sxs-lookup"><span data-stu-id="615b8-118">Remarks</span></span>  
+ <span data-ttu-id="615b8-119">Espaces de noms sont utilisés comme un système d’organisation.</span><span class="sxs-lookup"><span data-stu-id="615b8-119">Namespaces are used as an organizational system.</span></span> <span data-ttu-id="615b8-120">Ils permettent de classer et de présenter les éléments de programmation qui sont exposés à d’autres programmes et les applications.</span><span class="sxs-lookup"><span data-stu-id="615b8-120">They provide a way to classify and present programming elements that are exposed to other programs and applications.</span></span> <span data-ttu-id="615b8-121">Notez qu’un espace de noms n’est pas un *type* dans le sens où une classe ou une structure, vous ne pouvez pas déclarer un élément de programmation comme ayant le type de données d’un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-121">Note that a namespace is not a *type* in the sense that a class or structure is—you cannot declare a programming element to have the data type of a namespace.</span></span>  
   
- Tous les éléments de programmation déclarés après une instruction `Namespace` appartiennent à cet espace de noms.  Visual Basic continue à compiler les éléments dans le dernier espace de noms déclaré jusqu'à ce qu'il rencontre une instruction `End Namespace` ou une autre instruction `Namespace`.  
+ <span data-ttu-id="615b8-122">Tous les éléments de programmation déclarés après une `Namespace` instruction appartiennent à cet espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-122">All programming elements declared after a `Namespace` statement belong to that namespace.</span></span> <span data-ttu-id="615b8-123">Visual Basic continue à compiler les éléments dans l’espace de noms déclaré dernière jusqu'à ce qu’il rencontre un `End Namespace` instruction ou une autre `Namespace` instruction.</span><span class="sxs-lookup"><span data-stu-id="615b8-123">Visual Basic continues to compile elements into the last declared namespace until it encounters either an `End Namespace` statement or another `Namespace` statement.</span></span>  
   
- Si un espace de noms est déjà défini, même à l'extérieur de votre projet, vous pouvez y ajouter des éléments de programmation.  Pour ce faire, vous utilisez une instruction d' `Namespace` pour exécuter Visual Basic pour compiler des éléments dans cet espace de noms.  
+ <span data-ttu-id="615b8-124">Si un espace de noms est déjà définie, même en dehors de votre projet, vous pouvez ajouter des éléments de programmation à ce dernier.</span><span class="sxs-lookup"><span data-stu-id="615b8-124">If a namespace is already defined, even outside your project, you can add programming elements to it.</span></span> <span data-ttu-id="615b8-125">Pour ce faire, vous utilisez un `Namespace` instruction pour indiquer à Visual Basic pour compiler les éléments dans cet espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-125">To do this, you use a `Namespace` statement to direct Visual Basic to compile elements into that namespace.</span></span>  
   
- Vous pouvez utiliser une instruction `Namespace` uniquement au niveau du fichier ou de l'espace de noms.  Cela signifie que le *contexte de déclaration* pour un espace de noms doit être un fichier source ou un autre espace de noms, et ne peut pas être une classe, une structure, un module, une interface ou une procédure.  Pour plus d'informations, consultez [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ <span data-ttu-id="615b8-126">Vous pouvez utiliser un `Namespace` instruction uniquement au niveau du fichier ou l’espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-126">You can use a `Namespace` statement only at the file or namespace level.</span></span> <span data-ttu-id="615b8-127">Cela signifie que la *contexte de déclaration* pour un espace de noms doit être un fichier source ou un autre espace de noms et qu’il ne peut pas être une classe, structure, module, interface ou une procédure.</span><span class="sxs-lookup"><span data-stu-id="615b8-127">This means the *declaration context* for a namespace must be a source file or another namespace, and cannot be a class, structure, module, interface, or procedure.</span></span> <span data-ttu-id="615b8-128">Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="615b8-128">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
   
- Vous pouvez déclarer un espace de noms dans un autre.  Aucune limite stricte n'est appliquée aux niveaux d'imbrication que vous pouvez déclarer, mais n'oubliez pas qu'e tout autre code qui accède aux éléments déclarés dans l'espace de noms le plus profond doit utiliser une chaîne de qualification qui contient tout les noms d'espace de noms dans la hiérarchie d'imbrication.  
+ <span data-ttu-id="615b8-129">Vous pouvez déclarer un espace de noms dans une autre.</span><span class="sxs-lookup"><span data-stu-id="615b8-129">You can declare one namespace within another.</span></span> <span data-ttu-id="615b8-130">Il n’existe aucune limite stricte pour les niveaux d’imbrication, vous pouvez déclarer, mais rappelez-vous que tout autre code qui accède aux éléments déclarés dans l’espace de noms plus profond, elle doit utiliser une chaîne de qualification qui contient tous les noms d’espace de noms dans la hiérarchie d’imbrication.</span><span class="sxs-lookup"><span data-stu-id="615b8-130">There is no strict limit to the levels of nesting you can declare, but remember that when other code accesses the elements declared in the innermost namespace, it must use a qualification string that contains all the namespace names in the nesting hierarchy.</span></span>  
   
-## Niveau d'accès  
- Les espaces de noms sont traités comme s'ils ont un niveau d'accès d' `Public` .  Un espace de noms peut être accessible à partir du code depuis n'importe quel emplacement dans le même projet, dans d'autres projets qui référencent le projet et dans un assembly généré à partir du projet.  
+## <a name="access-level"></a><span data-ttu-id="615b8-131">Niveau d’accès</span><span class="sxs-lookup"><span data-stu-id="615b8-131">Access Level</span></span>  
+ <span data-ttu-id="615b8-132">Espaces de noms sont traités comme s’ils ont une `Public` niveau d’accès.</span><span class="sxs-lookup"><span data-stu-id="615b8-132">Namespaces are treated as if they have a `Public` access level.</span></span> <span data-ttu-id="615b8-133">Un espace de noms est accessible à partir du code n’importe où dans le même projet, à partir d’autres projets faisant référence au projet et à partir de tout assembly généré à partir du projet.</span><span class="sxs-lookup"><span data-stu-id="615b8-133">A namespace can be accessed from code anywhere in the same project, from other projects that reference the project, and from any assembly built from the project.</span></span>  
   
- Les éléments de programmation déclarés au niveau de l'espace de noms, c'est\-à\-dire dans un espace de noms mais pas à l'intérieur d'un autre élément, peuvent disposer d'un accès `Public` ou `Friend`.  S'il n'est pas spécifié, le niveau d'accès de cet élément prend par défaut la valeur `Friend`.  Les éléments que vous pouvez déclarer au niveau de l'espace de noms sont les classes, structures, modules, interfaces, énumérations et délégués.  Pour plus d'informations, consultez [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ <span data-ttu-id="615b8-134">Les éléments de programmation déclarés au niveau de l’espace de noms, c'est-à-dire dans un espace de noms mais pas à l’intérieur d’un autre élément, peuvent avoir `Public` ou `Friend` accès.</span><span class="sxs-lookup"><span data-stu-id="615b8-134">Programming elements declared at namespace level, meaning in a namespace but not inside any other element, can have `Public` or `Friend` access.</span></span> <span data-ttu-id="615b8-135">Si non spécifié, le niveau d’accès de cet élément prend `Friend` par défaut.</span><span class="sxs-lookup"><span data-stu-id="615b8-135">If unspecified, the access level of such an element uses `Friend` by default.</span></span> <span data-ttu-id="615b8-136">Les éléments que vous pouvez déclarer au niveau de l’espace de noms incluent des classes, structures, modules, interfaces, énumérations et délégués.</span><span class="sxs-lookup"><span data-stu-id="615b8-136">Elements you can declare at namespace level include classes, structures, modules, interfaces, enumerations, and delegates.</span></span> <span data-ttu-id="615b8-137">Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="615b8-137">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
   
-## L'espace de noms racine  
- Tous les espaces de noms contenus dans votre projet sont basés sur un *espace de noms racine*.  Visual Studio assigne votre nom de projet en tant qu'espace de noms racine par défaut pour l'ensemble du code de votre projet.  Par exemple, si votre projet est nommé `Payroll`, ses éléments de programmation appartiennent à l'espace de noms `Payroll`.  Si vous déclarez `Namespace funding`, le nom complet de cet espace de noms est `Payroll.funding`.  
+## <a name="root-namespace"></a><span data-ttu-id="615b8-138">Racine Namespace</span><span class="sxs-lookup"><span data-stu-id="615b8-138">Root Namespace</span></span>  
+ <span data-ttu-id="615b8-139">Tous les noms d’espace de noms dans votre projet sont basés sur un *espace de noms racine*.</span><span class="sxs-lookup"><span data-stu-id="615b8-139">All namespace names in your project are based on a *root namespace*.</span></span> <span data-ttu-id="615b8-140">Visual Studio définit le nom de votre projet comme espace de noms racine par défaut pour l’ensemble du code de votre projet.</span><span class="sxs-lookup"><span data-stu-id="615b8-140">Visual Studio assigns your project name as the default root namespace for all code in your project.</span></span> <span data-ttu-id="615b8-141">Par exemple, si votre projet est nommé `Payroll`, ses éléments de programmation appartiennent à l’espace de noms `Payroll`.</span><span class="sxs-lookup"><span data-stu-id="615b8-141">For example, if your project is named `Payroll`, its programming elements belong to namespace `Payroll`.</span></span> <span data-ttu-id="615b8-142">Si vous déclarez `Namespace funding`, le nom complet de cet espace de noms est `Payroll.funding`.</span><span class="sxs-lookup"><span data-stu-id="615b8-142">If you declare `Namespace funding`, the full name of that namespace is `Payroll.funding`.</span></span>  
   
- Si vous souhaitez spécifier un espace de noms existant dans une instruction `Namespace`, comme dans l'exemple de classe de liste générique, vous pouvez affecter une valeur null à votre espace de noms racine.  Pour ce faire, cliquez sur **Propriétés du projet** dans le menu **Projet**, puis supprimez l'entrée **Espace de noms racine** afin que la zone soit vide.  Si vous ne le faites pas dans l'exemple de classe de liste générique, le compilateur Visual Basic prend `System.Collections.Generic` comme nouvel espace de noms dans le projet `Payroll`, avec le nom complet `Payroll.System.Collections.Generic`.  
+ <span data-ttu-id="615b8-143">Si vous souhaitez spécifier un espace de noms dans un `Namespace` instruction, comme dans l’exemple de classe de liste générique, vous pouvez définir votre espace de noms racine à une valeur null.</span><span class="sxs-lookup"><span data-stu-id="615b8-143">If you want to specify an existing namespace in a `Namespace` statement, such as in the generic list class example, you can set your root namespace to a null value.</span></span> <span data-ttu-id="615b8-144">Pour ce faire, cliquez sur **propriétés du projet** à partir de la **projet** menu et puis désactivez la **espace de noms racine** entrée afin que la zone est vide.</span><span class="sxs-lookup"><span data-stu-id="615b8-144">To do this, click **Project Properties** from the **Project** menu and then clear the **Root namespace** entry so that the box is empty.</span></span> <span data-ttu-id="615b8-145">Si vous ne l’avez pas dans l’exemple de classe de liste générique, le compilateur Visual Basic prend `System.Collections.Generic` comme un espace de noms dans le projet `Payroll`, avec le nom complet du `Payroll.System.Collections.Generic`.</span><span class="sxs-lookup"><span data-stu-id="615b8-145">If you did not do this in the generic list class example, the Visual Basic compiler would take `System.Collections.Generic` as a new namespace within project `Payroll`, with the full name of `Payroll.System.Collections.Generic`.</span></span>  
   
- Vous pouvez également utiliser le mot clé `Global` pour faire référence aux éléments des espaces de noms définis à l'extérieur de votre projet.  Cela vous permet de conserver votre nom de projet comme espace de noms racine.  Cela réduit également le risque de fusion involontaire de vos éléments de programmation avec ceux des espaces de noms existants.  Pour plus d'informations, consultez « mot clé global la section de noms qualifiés complets » dans [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).  
+ <span data-ttu-id="615b8-146">Vous pouvez également utiliser le `Global` (mot clé) pour faire référence à des éléments des espaces de noms définis à l’extérieur de votre projet.</span><span class="sxs-lookup"><span data-stu-id="615b8-146">Alternatively, you can use the `Global` keyword to refer to elements of namespaces defined outside your project.</span></span> <span data-ttu-id="615b8-147">Cela vous permet de conserver le nom de votre projet en tant que l’espace de noms racine.</span><span class="sxs-lookup"><span data-stu-id="615b8-147">Doing so lets you retain your project name as the root namespace.</span></span> <span data-ttu-id="615b8-148">Cela réduit le risque de fusion involontaire de vos éléments de programmation avec des espaces de noms existants.</span><span class="sxs-lookup"><span data-stu-id="615b8-148">This reduces the chance of unintentionally merging your programming elements together with those of existing namespaces.</span></span> <span data-ttu-id="615b8-149">Pour plus d’informations, consultez la section « Global (mot clé) de noms qualifiés complets » dans [espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="615b8-149">For more information, see the "Global Keyword in Fully Qualified Names" section in [Namespaces in Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).</span></span>  
   
- le mot clé d' `Global` peut également être utilisé dans une instruction de l'espace de noms.  Cela vous permet de définir un espace de noms hors de l'espace de noms racine de votre projet.  Pour plus d'informations, consultez « mot clé global la section de l'espace de noms instructions » dans [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).  
+ <span data-ttu-id="615b8-150">Le `Global` mot clé peut également être utilisé dans une instruction Namespace.</span><span class="sxs-lookup"><span data-stu-id="615b8-150">The `Global` keyword can also be used in a Namespace statement.</span></span> <span data-ttu-id="615b8-151">pour définir un espace de noms hors de l’espace de noms racine de votre projet.</span><span class="sxs-lookup"><span data-stu-id="615b8-151">This lets you define a namespace out of the root namespace of your project.</span></span> <span data-ttu-id="615b8-152">Pour plus d’informations, consultez la section « Mot clé Global dans instructions Namespace » dans [espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="615b8-152">For more information, see the "Global Keyword in Namespace Statements" section in [Namespaces in Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).</span></span>  
   
- **résoudre.** L'espace de noms racine peut provoquer des concaténations inattendues des noms d'espace de noms.  Si vous créez une référence aux espaces de noms définis à l'extérieur de votre projet, le compilateur Visual Basic peut les interpréter comme des espaces de noms imbriqués dans votre espace de noms racine.  Dans ce cas, le compilateur ne reconnaît pas les types qui ont déjà été définis dans les espaces de noms externes.  Pour éviter ceci, définit l'espace de noms racine à une valeur NULL comme décrit dans « espace de noms racine, » ou utilise le mot clé d' `Global` pour accéder aux éléments des espaces de noms externes.  
+ <span data-ttu-id="615b8-153">**Résolution des problèmes.**</span><span class="sxs-lookup"><span data-stu-id="615b8-153">**Troubleshooting.**</span></span> <span data-ttu-id="615b8-154">L’espace de noms racine peut provoquer des concaténations inattendues des noms d’espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-154">The root namespace can lead to unexpected concatenations of namespace names.</span></span> <span data-ttu-id="615b8-155">Si vous faites référence aux espaces de noms définis à l’extérieur de votre projet, le compilateur Visual Basic peut les interpréter comme des espaces de noms imbriqués dans l’espace de noms racine.</span><span class="sxs-lookup"><span data-stu-id="615b8-155">If you make reference to namespaces defined outside your project, the Visual Basic compiler can construe them as nested namespaces in the root namespace.</span></span> <span data-ttu-id="615b8-156">Dans ce cas, le compilateur ne reconnaît pas les types qui ont déjà été définis dans les espaces de noms externe.</span><span class="sxs-lookup"><span data-stu-id="615b8-156">In such a case, the compiler does not recognize any types that have been already defined in the external namespaces.</span></span> <span data-ttu-id="615b8-157">Pour éviter ce problème, définissez votre espace de noms racine à une valeur null, comme décrit dans « Namespace racine », ou utiliser le `Global` mot clé pour accéder aux éléments des espaces de noms externe.</span><span class="sxs-lookup"><span data-stu-id="615b8-157">To avoid this, either set your root namespace to a null value as described in "Root Namespace," or use the `Global` keyword to access elements of external namespaces.</span></span>  
   
-## Attributs et modificateurs  
- Vous ne pouvez pas appliquer d'attributs à un espace de noms.  Un attribut fournit des informations aux métadonnées de l'assembly, qui ne sont pas explicites pour les classifieurs source tels que les espaces de noms.  
+## <a name="attributes-and-modifiers"></a><span data-ttu-id="615b8-158">Attributs et les modificateurs</span><span class="sxs-lookup"><span data-stu-id="615b8-158">Attributes and Modifiers</span></span>  
+ <span data-ttu-id="615b8-159">Vous ne pouvez pas appliquer des attributs à un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-159">You cannot apply attributes to a namespace.</span></span> <span data-ttu-id="615b8-160">Un attribut fournit des informations aux métadonnées de l’assembly, qui n’est pas significatif pour les classifieurs source tels que des espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-160">An attribute contributes information to the assembly's metadata, which is not meaningful for source classifiers such as namespaces.</span></span>  
   
- Vous ne pouvez pas appliquer de modificateurs d'accès ou de procédure, ou d'autres modificateurs, à un espace de noms.  L'espace de noms n'étant pas un type, ces modificateurs ne sont pas explicites.  
+ <span data-ttu-id="615b8-161">Impossible d’appliquer l’accès ou les modificateurs de procédure ou d’autres modificateurs, à un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-161">You cannot apply any access or procedure modifiers, or any other modifiers, to a namespace.</span></span> <span data-ttu-id="615b8-162">Comme il n’est pas un type, ces modificateurs ne sont pas significatifs.</span><span class="sxs-lookup"><span data-stu-id="615b8-162">Because it is not a type, these modifiers are not meaningful.</span></span>  
   
-## Exemple  
- L'exemple suivant déclare deux espaces de noms, l'un imbriqué dans l'autre.  
+## <a name="example"></a><span data-ttu-id="615b8-163">Exemple</span><span class="sxs-lookup"><span data-stu-id="615b8-163">Example</span></span>  
+ <span data-ttu-id="615b8-164">L’exemple suivant déclare deux espaces de noms, un imbriqué dans l’autre.</span><span class="sxs-lookup"><span data-stu-id="615b8-164">The following example declares two namespaces, one nested in the other.</span></span>  
   
  [!code-vb[VbVbalrStatements#43](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_1.vb)]  
   
-## Exemple  
- L'exemple suivant déclare plusieurs espaces de noms imbriqués sur une seule ligne, et est équivalent à l'exemple précédent.  
+## <a name="example"></a><span data-ttu-id="615b8-165">Exemple</span><span class="sxs-lookup"><span data-stu-id="615b8-165">Example</span></span>  
+ <span data-ttu-id="615b8-166">L’exemple suivant déclare plusieurs espaces de noms imbriqués sur une seule ligne, et elle est équivalente à l’exemple précédent.</span><span class="sxs-lookup"><span data-stu-id="615b8-166">The following example declares multiple nested namespaces on a single line, and it is equivalent to the previous example.</span></span>  
   
  [!code-vb[VbVbalrStatements#41](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_2.vb)]  
   
-## Exemple  
- L'exemple suivant accède à la classe définie dans les précédents exemples.  
+## <a name="example"></a><span data-ttu-id="615b8-167">Exemple</span><span class="sxs-lookup"><span data-stu-id="615b8-167">Example</span></span>  
+ <span data-ttu-id="615b8-168">L’exemple suivant accède à la classe définie dans les exemples précédents.</span><span class="sxs-lookup"><span data-stu-id="615b8-168">The following example accesses the class defined in the previous examples.</span></span>  
   
  [!code-vb[VbVbalrStatements#42](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_3.vb)]  
   
-## Exemple  
- L'exemple suivant définit la structure d'une nouvelle classe de liste générique et l'ajoute à l'espace de noms <xref:System.Collections.Generic?displayProperty=fullName>.  
+## <a name="example"></a><span data-ttu-id="615b8-169">Exemple</span><span class="sxs-lookup"><span data-stu-id="615b8-169">Example</span></span>  
+ <span data-ttu-id="615b8-170">L’exemple suivant définit la structure d’une nouvelle classe de liste générique et l’ajoute à la <xref:System.Collections.Generic?displayProperty=nameWithType> espace de noms.</span><span class="sxs-lookup"><span data-stu-id="615b8-170">The following example defines the skeleton of a new generic list class and adds it to the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Namespace System.Collections.Generic  
@@ -110,7 +108,7 @@ Namespace System.Collections.Generic
 End Namespace  
 ```  
   
-## Voir aussi  
- [Imports Statement \(.NET Namespace and Type\)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
- [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
+## <a name="see-also"></a><span data-ttu-id="615b8-171">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="615b8-171">See Also</span></span>  
+ [<span data-ttu-id="615b8-172">Imports (instruction) (espace de noms et type .NET)</span><span class="sxs-lookup"><span data-stu-id="615b8-172">Imports Statement (.NET Namespace and Type)</span></span>](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [<span data-ttu-id="615b8-173">Noms d’éléments déclarés</span><span class="sxs-lookup"><span data-stu-id="615b8-173">Declared Element Names</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [<span data-ttu-id="615b8-174">Espaces de noms dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="615b8-174">Namespaces in Visual Basic</span></span>](../../../visual-basic/programming-guide/program-structure/namespaces.md)

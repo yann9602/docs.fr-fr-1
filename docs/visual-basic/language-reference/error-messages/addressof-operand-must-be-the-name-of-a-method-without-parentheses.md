@@ -1,57 +1,39 @@
 ---
-title: "L’opérande &quot;AddressOf&quot; doit être le nom d’une méthode (sans parenthèses) | Documents Microsoft"
-ms.date: 2015-07-20
+title: "&#39; AddressOf &#39; opérande doit être le nom d’une méthode (sans parenthèses)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vbc30577
 - bc30577
-dev_langs:
-- VB
-helpviewer_keywords:
-- BC30577
+helpviewer_keywords: BC30577
 ms.assetid: c2c55640-5c61-4e66-97a4-4322020c6001
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 04103fe23ee55bb751d9604ef74614edeead8886
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 02c996f1c94250526982e35395288b07db619db7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="39addressof39-operand-must-be-the-name-of-a-method-without-parentheses"></a>L’opérande 'AddressOf' doit être le nom d’une méthode (sans parenthèses)
-L’opérateur `AddressOf` crée une instance de délégué de procédure qui fait référence à une procédure spécifique. La syntaxe est la suivante.  
+# <a name="39addressof39-operand-must-be-the-name-of-a-method-without-parentheses"></a><span data-ttu-id="e7347-102">&#39; AddressOf &#39; opérande doit être le nom d’une méthode (sans parenthèses)</span><span class="sxs-lookup"><span data-stu-id="e7347-102">&#39;AddressOf&#39; operand must be the name of a method (without parentheses)</span></span>
+<span data-ttu-id="e7347-103">L’opérateur `AddressOf` crée une instance de délégué de procédure qui fait référence à une procédure spécifique.</span><span class="sxs-lookup"><span data-stu-id="e7347-103">The `AddressOf` operator creates a procedure delegate instance that references a specific procedure.</span></span> <span data-ttu-id="e7347-104">La syntaxe est la suivante.</span><span class="sxs-lookup"><span data-stu-id="e7347-104">The syntax is as follows.</span></span>  
   
- `AddressOf` `procedurename`  
+ <span data-ttu-id="e7347-105">`AddressOf` `procedurename`</span><span class="sxs-lookup"><span data-stu-id="e7347-105">`AddressOf` `procedurename`</span></span>  
   
- Vous avez inséré des parenthèses autour de l’argument qui suit `AddressOf`, où aucune n’est nécessaire.  
+ <span data-ttu-id="e7347-106">Vous avez inséré des parenthèses autour de l’argument qui suit `AddressOf`, où aucune n’est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="e7347-106">You inserted parentheses around the argument following `AddressOf`, where none are needed.</span></span>  
   
- **ID d’erreur :** BC30577  
+ <span data-ttu-id="e7347-107">**ID d’erreur :** BC30577</span><span class="sxs-lookup"><span data-stu-id="e7347-107">**Error ID:** BC30577</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="e7347-108">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="e7347-108">To correct this error</span></span>  
   
-1.  Supprimez les parenthèses autour de l’argument qui suit `AddressOf`.  
+1.  <span data-ttu-id="e7347-109">Supprimez les parenthèses autour de l’argument qui suit `AddressOf`.</span><span class="sxs-lookup"><span data-stu-id="e7347-109">Remove the parentheses around the argument following `AddressOf`.</span></span>  
   
-2.  Assurez-vous que l’argument est un nom de méthode.  
+2.  <span data-ttu-id="e7347-110">Assurez-vous que l’argument est un nom de méthode.</span><span class="sxs-lookup"><span data-stu-id="e7347-110">Make sure the argument is a method name.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [AddressOf (opérateur)](../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Délégués](../../../visual-basic/programming-guide/language-features/delegates/index.md)
+## <a name="see-also"></a><span data-ttu-id="e7347-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e7347-111">See Also</span></span>  
+ [<span data-ttu-id="e7347-112">AddressOf (opérateur)</span><span class="sxs-lookup"><span data-stu-id="e7347-112">AddressOf Operator</span></span>](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [<span data-ttu-id="e7347-113">Délégués</span><span class="sxs-lookup"><span data-stu-id="e7347-113">Delegates</span></span>](../../../visual-basic/programming-guide/language-features/delegates/index.md)

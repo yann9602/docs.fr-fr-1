@@ -1,66 +1,65 @@
 ---
-title: "Differences Between Properties and Variables in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "property values"
-  - "variables [Visual Basic]"
-  - "Visual Basic code, procedures"
-  - "values, properties"
-  - "variables [Visual Basic], definition"
-  - "Visual Basic code, variables"
-  - "Visual Basic code, properties"
-  - "properties [Visual Basic], values"
-  - "properties [Visual Basic], defined"
-  - "variables [Visual Basic], and properties"
-  - "properties [Visual Basic], and variables"
+title: "Différences entre les propriétés et les variables en Visual Basic"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- property values [Visual Basic]
+- variables [Visual Basic]
+- Visual Basic code, procedures
+- values [Visual Basic], properties
+- variables [Visual Basic], definition
+- Visual Basic code, variables
+- Visual Basic code, properties
+- properties [Visual Basic], values
+- properties [Visual Basic], defined
+- variables [Visual Basic], and properties
+- properties [Visual Basic], and variables
 ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: cb30972e2b49a7005749f57c0223b9fa493cde52
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Differences Between Properties and Variables in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Les variables et propriétés représentent toutes deux des valeurs auxquelles vous pouvez accéder.  Toutefois, elles sont différentes en termes de stockage et d'implémentation.  
+# <a name="differences-between-properties-and-variables-in-visual-basic"></a><span data-ttu-id="8b456-102">Différences entre les propriétés et les variables en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8b456-102">Differences Between Properties and Variables in Visual Basic</span></span>
+<span data-ttu-id="8b456-103">Variables et propriétés représentent les valeurs auxquelles vous pouvez accéder.</span><span class="sxs-lookup"><span data-stu-id="8b456-103">Variables and properties both represent values that you can access.</span></span> <span data-ttu-id="8b456-104">Toutefois, il existe des différences dans le stockage et l’implémentation.</span><span class="sxs-lookup"><span data-stu-id="8b456-104">However, there are differences in storage and implementation.</span></span>  
   
-## Variables  
- Une *variable* correspond directement à un emplacement de mémoire.  Vous définissez une variable avec une instruction de déclaration unique.  Une variable peut être une *variable locale*, définie à l'intérieur d'une procédure et disponible uniquement dans cette procédure, ou ce peut être une *variable membre*, définie par l'utilisateur dans un module, une classe ou une structure, mais pas à l'intérieur d'une procédure.  Une variable membre porte également le nom de *champ*.  
+## <a name="variables"></a><span data-ttu-id="8b456-105">Variables</span><span class="sxs-lookup"><span data-stu-id="8b456-105">Variables</span></span>  
+ <span data-ttu-id="8b456-106">A *variable* correspond directement à un emplacement de mémoire.</span><span class="sxs-lookup"><span data-stu-id="8b456-106">A *variable* corresponds directly to a memory location.</span></span> <span data-ttu-id="8b456-107">Vous définissez une variable avec une instruction de déclaration unique.</span><span class="sxs-lookup"><span data-stu-id="8b456-107">You define a variable with a single declaration statement.</span></span> <span data-ttu-id="8b456-108">Une variable peut être un *variable locale*, défini à l’intérieur d’une procédure et disponible uniquement dans cette procédure, ou il peut être un *variable membre*, définis dans un module, classe ou structure, mais pas à l’intérieur d’une procédure.</span><span class="sxs-lookup"><span data-stu-id="8b456-108">A variable can be a *local variable*, defined inside a procedure and available only within that procedure, or it can be a *member variable*, defined in a module, class, or structure but not inside any procedure.</span></span> <span data-ttu-id="8b456-109">Une variable membre est également appelée un *champ*.</span><span class="sxs-lookup"><span data-stu-id="8b456-109">A member variable is also called a *field*.</span></span>  
   
-## Propriétés  
- Une *propriété* est un élément de données défini sur un module, une classe ou une structure.  Vous définissez une propriété avec un bloc de code placé entre les instructions `Property` et `End Property`.  Le bloc de code contient une procédure `Get`, une procédure `Set`, ou les deux.  Ces procédures sont nommées *procédures property* ou *accesseurs de propriété*.  Outre la récupération ou le stockage de la valeur de la propriété, ils peuvent également effectuer des actions personnalisées, telles que la mise à jour d'un compteur d'accès.  
+## <a name="properties"></a><span data-ttu-id="8b456-110">Propriétés</span><span class="sxs-lookup"><span data-stu-id="8b456-110">Properties</span></span>  
+ <span data-ttu-id="8b456-111">A *propriété* est un élément de données défini sur un module, classe ou structure.</span><span class="sxs-lookup"><span data-stu-id="8b456-111">A *property* is a data element defined on a module, class, or structure.</span></span> <span data-ttu-id="8b456-112">Vous définissez une propriété avec un bloc de code entre les `Property` et `End Property` instructions.</span><span class="sxs-lookup"><span data-stu-id="8b456-112">You define a property with a code block between the `Property` and `End Property` statements.</span></span> <span data-ttu-id="8b456-113">Le bloc de code contient un `Get` procédure, un `Set` procédure, ou les deux.</span><span class="sxs-lookup"><span data-stu-id="8b456-113">The code block contains a `Get` procedure, a `Set` procedure, or both.</span></span> <span data-ttu-id="8b456-114">Ces procédures sont appelées *procédures de propriété* ou *les accesseurs de propriété*.</span><span class="sxs-lookup"><span data-stu-id="8b456-114">These procedures are called *property procedures* or *property accessors*.</span></span> <span data-ttu-id="8b456-115">En plus de la récupération ou le stockage de la valeur de propriété, ils peuvent également effectuer des actions personnalisées, telles que la mise à jour d’un compteur d’accès.</span><span class="sxs-lookup"><span data-stu-id="8b456-115">In addition to retrieving or storing the property's value, they can also perform custom actions, such as updating an access counter.</span></span>  
   
-## Différences  
- Le tableau suivant présente certaines différences importantes entre les variables et les propriétés.  
+## <a name="differences"></a><span data-ttu-id="8b456-116">Différences</span><span class="sxs-lookup"><span data-stu-id="8b456-116">Differences</span></span>  
+ <span data-ttu-id="8b456-117">Le tableau suivant présente des différences importantes entre les variables et propriétés.</span><span class="sxs-lookup"><span data-stu-id="8b456-117">The following table shows some important differences between variables and properties.</span></span>  
   
-|Point de différence|Variable|Propriété|  
-|-------------------------|--------------|---------------|  
-|Déclaration|Instruction de déclaration unique|Série d'instructions dans un bloc de code|  
-|Implémentation|Emplacement de stockage unique|Code exécutable \(procédures property\)|  
-|Stockage|Associé directement à la valeur de la variable|En général le stockage interne n'est pas disponible en dehors du module ou de la classe conteneur de la propriété.<br /><br /> La valeur de propriété peut ou ne peut pas exister en tant qu'élément <sup>1</sup> stocké|  
-|Code exécutable|Aucun|Doit posséder au moins une procédure|  
-|Accès en lecture et en écriture|Lecture\/écriture ou lecture seule|Lecture\/écriture, lecture seule ou écriture seule|  
-|Actions personnalisées \(en plus de l'acceptation ou du retour d'une valeur\)|Impossible|Peut être exécuté dans le cadre de la définition ou de la récupération de la valeur d'une propriété|  
+|<span data-ttu-id="8b456-118">Point de différence</span><span class="sxs-lookup"><span data-stu-id="8b456-118">Point of difference</span></span>|<span data-ttu-id="8b456-119">Variable</span><span class="sxs-lookup"><span data-stu-id="8b456-119">Variable</span></span>|<span data-ttu-id="8b456-120">Propriété</span><span class="sxs-lookup"><span data-stu-id="8b456-120">Property</span></span>|  
+|-------------------------|--------------|--------------|  
+|<span data-ttu-id="8b456-121">Déclaration</span><span class="sxs-lookup"><span data-stu-id="8b456-121">Declaration</span></span>|<span data-ttu-id="8b456-122">Instruction de déclaration unique</span><span class="sxs-lookup"><span data-stu-id="8b456-122">Single declaration statement</span></span>|<span data-ttu-id="8b456-123">Série d’instructions dans un bloc de code</span><span class="sxs-lookup"><span data-stu-id="8b456-123">Series of statements in a code block</span></span>|  
+|<span data-ttu-id="8b456-124">Implémentation</span><span class="sxs-lookup"><span data-stu-id="8b456-124">Implementation</span></span>|<span data-ttu-id="8b456-125">Emplacement de stockage unique</span><span class="sxs-lookup"><span data-stu-id="8b456-125">Single storage location</span></span>|<span data-ttu-id="8b456-126">Code exécutable (procédures de propriété)</span><span class="sxs-lookup"><span data-stu-id="8b456-126">Executable code (property procedures)</span></span>|  
+|<span data-ttu-id="8b456-127">Stockage</span><span class="sxs-lookup"><span data-stu-id="8b456-127">Storage</span></span>|<span data-ttu-id="8b456-128">Directement associée à la valeur de la variable</span><span class="sxs-lookup"><span data-stu-id="8b456-128">Directly associated with variable's value</span></span>|<span data-ttu-id="8b456-129">Est généralement pas disponible en dehors de la classe ou le module conteneur de la propriété de stockage interne</span><span class="sxs-lookup"><span data-stu-id="8b456-129">Typically has internal storage not available outside the property's containing class or module</span></span><br /><br /> <span data-ttu-id="8b456-130">Valeur de propriété peut ou peut ne pas exister en tant qu’un élément stocké <sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="8b456-130">Property's value might or might not exist as a stored element <sup>1</sup></span></span>|  
+|<span data-ttu-id="8b456-131">Code exécutable</span><span class="sxs-lookup"><span data-stu-id="8b456-131">Executable code</span></span>|<span data-ttu-id="8b456-132">None</span><span class="sxs-lookup"><span data-stu-id="8b456-132">None</span></span>|<span data-ttu-id="8b456-133">Doit avoir au moins une procédure</span><span class="sxs-lookup"><span data-stu-id="8b456-133">Must have at least one procedure</span></span>|  
+|<span data-ttu-id="8b456-134">Accès en lecture et écriture</span><span class="sxs-lookup"><span data-stu-id="8b456-134">Read and write access</span></span>|<span data-ttu-id="8b456-135">En lecture/écriture ou en lecture seule</span><span class="sxs-lookup"><span data-stu-id="8b456-135">Read/write or read-only</span></span>|<span data-ttu-id="8b456-136">En lecture/écriture, en lecture seule ou en écriture seule</span><span class="sxs-lookup"><span data-stu-id="8b456-136">Read/write, read-only, or write-only</span></span>|  
+|<span data-ttu-id="8b456-137">Actions personnalisées (en plus l’acceptation ou le renvoi de valeur)</span><span class="sxs-lookup"><span data-stu-id="8b456-137">Custom actions (in addition to accepting or returning value)</span></span>|<span data-ttu-id="8b456-138">N’est pas possible</span><span class="sxs-lookup"><span data-stu-id="8b456-138">Not possible</span></span>|<span data-ttu-id="8b456-139">Peut être effectuée dans le cadre de la définition ou la récupération de valeur de propriété</span><span class="sxs-lookup"><span data-stu-id="8b456-139">Can be performed as part of setting or retrieving property value</span></span>|  
   
- <sup>1</sup> contrairement à une variable, la valeur d'une propriété ne peut pas correspondre directement à un élément unique de stockage.  Le stockage peut être fractionné par commodité ou sécurité, ou la valeur peut être stockée dans un formulaire chiffré.  Dans ces cas, la procédure `Get` assemblerait les éléments ou déchiffrerait la valeur stockée, et la procédure `Set` chiffrerait la nouvelle valeur ou la diviserait dans le stockage constitutif.  Une valeur de propriété peut être éphémère, comme l'heure du jour, dans ce cas la procédure `Get` la calcule à la volée chaque fois que vous accédez à la propriété.  
+ <span data-ttu-id="8b456-140"><sup>1</sup> Contrairement à une variable, la valeur d’une propriété ne peut pas correspondre directement à un seul élément de stockage.</span><span class="sxs-lookup"><span data-stu-id="8b456-140"><sup>1</sup> Unlike a variable, the value of a property might not correspond directly to a single item of storage.</span></span> <span data-ttu-id="8b456-141">Le stockage peut être fractionné par commodité ou sécurité, ou la valeur peut être stockée sous forme chiffrée.</span><span class="sxs-lookup"><span data-stu-id="8b456-141">The storage might be split into pieces for convenience or security, or the value might be stored in an encrypted form.</span></span> <span data-ttu-id="8b456-142">Dans ce cas le `Get` procédure serait assembler les éléments ou de déchiffrer la valeur stockée et le `Set` procédure permet de chiffrer la nouvelle valeur ou fractionner dans le stockage constitutif.</span><span class="sxs-lookup"><span data-stu-id="8b456-142">In these cases the `Get` procedure would assemble the pieces or decrypt the stored value, and the `Set` procedure would encrypt the new value or split it into the constituent storage.</span></span> <span data-ttu-id="8b456-143">Une valeur de propriété peut être éphémère, comme l’heure du jour, auquel cas la `Get` procédure calcule à la volée chaque fois que vous accédez à la propriété.</span><span class="sxs-lookup"><span data-stu-id="8b456-143">A property value might be ephemeral, like time of day, in which case the `Get` procedure would calculate it on the fly each time you access the property.</span></span>  
   
-## Voir aussi  
- [Procédures de propriété](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md)   
- [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md)   
- [How to: Create a Property](../../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-property.md)   
- [How to: Declare a Property with Mixed Access Levels](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)   
- [How to: Call a Property Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-a-property-procedure.md)   
- [How to: Declare and Call a Default Property in Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)   
- [How to: Put a Value in a Property](../../../../visual-basic/programming-guide/language-features/procedures/how-to-put-a-value-in-a-property.md)   
- [How to: Get a Value from a Property](../../../../visual-basic/programming-guide/language-features/procedures/how-to-get-a-value-from-a-property.md)
+## <a name="see-also"></a><span data-ttu-id="8b456-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8b456-144">See Also</span></span>  
+ [<span data-ttu-id="8b456-145">Procédures de propriété</span><span class="sxs-lookup"><span data-stu-id="8b456-145">Property Procedures</span></span>](./property-procedures.md)  
+ [<span data-ttu-id="8b456-146">Paramètres et arguments d’une procédure</span><span class="sxs-lookup"><span data-stu-id="8b456-146">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="8b456-147">Property (instruction)</span><span class="sxs-lookup"><span data-stu-id="8b456-147">Property Statement</span></span>](../../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="8b456-148">Dim (instruction)</span><span class="sxs-lookup"><span data-stu-id="8b456-148">Dim Statement</span></span>](../../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="8b456-149">Guide pratique : créer une propriété</span><span class="sxs-lookup"><span data-stu-id="8b456-149">How to: Create a Property</span></span>](./how-to-create-a-property.md)  
+ [<span data-ttu-id="8b456-150">Guide pratique : déclarer une propriété avec des niveaux d’accès mixtes</span><span class="sxs-lookup"><span data-stu-id="8b456-150">How to: Declare a Property with Mixed Access Levels</span></span>](./how-to-declare-a-property-with-mixed-access-levels.md)  
+ [<span data-ttu-id="8b456-151">Guide pratique : appeler une procédure de propriété</span><span class="sxs-lookup"><span data-stu-id="8b456-151">How to: Call a Property Procedure</span></span>](./how-to-call-a-property-procedure.md)  
+ [<span data-ttu-id="8b456-152">Comment : déclarer et appeler une propriété par défaut en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8b456-152">How to: Declare and Call a Default Property in Visual Basic</span></span>](./how-to-declare-and-call-a-default-property.md)  
+ [<span data-ttu-id="8b456-153">Guide pratique : placer une valeur dans une propriété</span><span class="sxs-lookup"><span data-stu-id="8b456-153">How to: Put a Value in a Property</span></span>](./how-to-put-a-value-in-a-property.md)  
+ [<span data-ttu-id="8b456-154">Guide pratique : obtenir une valeur d’une propriété</span><span class="sxs-lookup"><span data-stu-id="8b456-154">How to: Get a Value from a Property</span></span>](./how-to-get-a-value-from-a-property.md)

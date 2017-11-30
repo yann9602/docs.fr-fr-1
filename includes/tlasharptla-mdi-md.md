@@ -1,1 +1,1 @@
-interface multidocument (MDI)
+<span data-ttu-id="7ace7-101">interface multidocument (MDI)</span><span class="sxs-lookup"><span data-stu-id="7ace7-101">multiple-document interface (MDI)</span></span>

@@ -1,1 +1,1 @@
-.NET pour les applications Windows 8.x Store
+<span data-ttu-id="7674a-101">.NET pour les applications Windows 8.x Store</span><span class="sxs-lookup"><span data-stu-id="7674a-101">.NET for Windows 8.x Store apps</span></span>

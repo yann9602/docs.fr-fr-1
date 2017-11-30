@@ -1,106 +1,89 @@
 ---
-title: "Constantes et énumérations (Visual Basic) | Documents Microsoft"
-ms.date: 2015-07-20
+title: "Constantes et énumérations (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - enumerations [Visual Basic]
-- constants
-- constants, list of
+- constants [Visual Basic]
+- constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e37ef2e3c51e96e85cb214054195016e69d52382
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 9fd298cc504f9e4faf5205e53ebbf2ee355a21b3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="constants-and-enumerations-visual-basic"></a>Constantes et énumérations (Visual Basic)
-[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]fournit plusieurs constantes et énumérations pour les développeurs prédéfinies. Les constantes stockent des valeurs qui demeurent constantes lors de l’exécution d’une application. Les énumérations offrent un moyen pratique pour travailler avec des ensembles de constantes connexes et d’associer des valeurs constantes avec des noms.  
+# <a name="constants-and-enumerations-visual-basic"></a><span data-ttu-id="19b17-102">Constantes et énumérations (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="19b17-102">Constants and Enumerations (Visual Basic)</span></span>
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="19b17-103">fournit un nombre de constantes prédéfinies et des énumérations pour les développeurs.</span><span class="sxs-lookup"><span data-stu-id="19b17-103"> supplies a number of predefined constants and enumerations for developers.</span></span> <span data-ttu-id="19b17-104">Constantes stockent des valeurs qui restent constants pendant l’exécution d’une application.</span><span class="sxs-lookup"><span data-stu-id="19b17-104">Constants store values that remain constant throughout the execution of an application.</span></span> <span data-ttu-id="19b17-105">Les énumérations offrent un moyen pratique de travailler avec des ensembles de constantes connexes et d’associer des valeurs de constantes à des noms.</span><span class="sxs-lookup"><span data-stu-id="19b17-105">Enumerations provide a convenient way to work with sets of related constants, and to associate constant values with names.</span></span>  
   
-## <a name="constants"></a>Constantes  
+## <a name="constants"></a><span data-ttu-id="19b17-106">Constantes</span><span class="sxs-lookup"><span data-stu-id="19b17-106">Constants</span></span>  
   
-### <a name="conditional-compilation-constants"></a>Constantes de compilation conditionnelle  
- Le tableau suivant répertorie les constantes prédéfinies disponibles pour la compilation conditionnelle.  
+### <a name="conditional-compilation-constants"></a><span data-ttu-id="19b17-107">Constantes de Compilation conditionnelle</span><span class="sxs-lookup"><span data-stu-id="19b17-107">Conditional Compilation Constants</span></span>  
+ <span data-ttu-id="19b17-108">Le tableau suivant répertorie les constantes prédéfinies disponibles pour la compilation conditionnelle.</span><span class="sxs-lookup"><span data-stu-id="19b17-108">The following table lists the predefined constants available for conditional compilation.</span></span>  
   
-|**Constante**|**Description**|  
+|<span data-ttu-id="19b17-109">**Constante**</span><span class="sxs-lookup"><span data-stu-id="19b17-109">**Constant**</span></span>|<span data-ttu-id="19b17-110">**Description**</span><span class="sxs-lookup"><span data-stu-id="19b17-110">**Description**</span></span>|  
 |---|---|  
-|`CONFIG`|Chaîne qui correspond à la valeur actuelle de la **Configuration de la Solution Active** zone le **Configuration Manager**.|  
-|`DEBUG`|A `Boolean` valeur peut être définie dans le **propriétés du projet** boîte de dialogue. Par défaut, la configuration de débogage pour un projet définit `DEBUG`. Lors de la `DEBUG` est défini, <xref:System.Diagnostics.Debug>les méthodes de classe génèrent un résultat vers la **sortie** fenêtre.</xref:System.Diagnostics.Debug> Lorsqu’il n’est pas défini, <xref:System.Diagnostics.Debug>les méthodes de classe ne sont pas compilées et aucune sortie de débogage n’est généré.</xref:System.Diagnostics.Debug>|  
-|`TARGET`|Chaîne représentant le type de sortie pour le projet ou le paramètre de la ligne de commande **/target** option. Les valeurs possibles de `TARGET` sont :<br /><br /> -« winexe » pour une application Windows.<br />-« exe » pour une application console.<br />-« bibliothèque » pour une bibliothèque de classes.<br />-« module » pour un module.<br />-La **/target** option peut être définie dans le [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] environnement de développement intégré. Pour plus d’informations, consultez [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
-|`TRACE`|A `Boolean` valeur peut être définie dans le **propriétés du projet** boîte de dialogue. Par défaut, toutes les configurations pour un projet définissent `TRACE`. Lors de la `TRACE` est défini, <xref:System.Diagnostics.Trace>les méthodes de classe génèrent un résultat vers la **sortie** fenêtre.</xref:System.Diagnostics.Trace> Lorsqu’il n’est pas défini, <xref:System.Diagnostics.Trace>classe les méthodes ne sont pas compilées et aucun `Trace` sortie est générée.</xref:System.Diagnostics.Trace>|  
-|`VBC_VER`|Un nombre représentant le [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] version, dans *principales*.* secondaire* format. Numéro de version de [!INCLUDE[vbprvblong](../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)] est 8.0.|  
+|`CONFIG`|<span data-ttu-id="19b17-111">Chaîne qui correspond à la valeur actuelle de la **Configuration de la Solution Active** zone le **Configuration Manager**.</span><span class="sxs-lookup"><span data-stu-id="19b17-111">A string that corresponds to the current setting of the **Active Solution Configuration** box in the **Configuration Manager**.</span></span>|  
+|`DEBUG`|<span data-ttu-id="19b17-112">A `Boolean` valeur peut être définie dans le **propriétés du projet** boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="19b17-112">A `Boolean` value that can be set in the **Project Properties** dialog box.</span></span> <span data-ttu-id="19b17-113">Par défaut, la configuration du débogage pour un projet définit `DEBUG`.</span><span class="sxs-lookup"><span data-stu-id="19b17-113">By default, the Debug configuration for a project defines `DEBUG`.</span></span> <span data-ttu-id="19b17-114">Lorsque `DEBUG` est défini, <xref:System.Diagnostics.Debug> méthodes de la classe génèrent un résultat vers la **sortie** fenêtre.</span><span class="sxs-lookup"><span data-stu-id="19b17-114">When `DEBUG` is defined, <xref:System.Diagnostics.Debug> class methods generate output to the **Output** window.</span></span> <span data-ttu-id="19b17-115">Lorsqu’il n’est pas défini, <xref:System.Diagnostics.Debug> méthodes de classe ne sont pas compilées et aucune sortie de débogage n’est généré.</span><span class="sxs-lookup"><span data-stu-id="19b17-115">When it is not defined, <xref:System.Diagnostics.Debug> class methods are not compiled and no Debug output is generated.</span></span>|  
+|`TARGET`|<span data-ttu-id="19b17-116">Chaîne représentant le type de sortie pour le projet ou le paramètre de la ligne de commande **/target** option.</span><span class="sxs-lookup"><span data-stu-id="19b17-116">A string representing the output type for the project or the setting of the command-line **/target** option.</span></span> <span data-ttu-id="19b17-117">Les valeurs possibles de `TARGET` sont :</span><span class="sxs-lookup"><span data-stu-id="19b17-117">The possible values of `TARGET` are:</span></span><br /><br /> <span data-ttu-id="19b17-118">-« winexe » pour une application Windows.</span><span class="sxs-lookup"><span data-stu-id="19b17-118">-   "winexe" for a Windows application.</span></span><br /><span data-ttu-id="19b17-119">-« exe » pour une application console.</span><span class="sxs-lookup"><span data-stu-id="19b17-119">-   "exe" for a console application.</span></span><br /><span data-ttu-id="19b17-120">-« bibliothèque » pour une bibliothèque de classes.</span><span class="sxs-lookup"><span data-stu-id="19b17-120">-   "library" for a class library.</span></span><br /><span data-ttu-id="19b17-121">-« module » pour un module.</span><span class="sxs-lookup"><span data-stu-id="19b17-121">-   "module" for a module.</span></span><br /><span data-ttu-id="19b17-122">-La **/target** option peut être définie dans le [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] environnement de développement intégré.</span><span class="sxs-lookup"><span data-stu-id="19b17-122">-   The **/target** option may be set in the [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] integrated development environment.</span></span> <span data-ttu-id="19b17-123">Pour plus d’informations, consultez [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).</span><span class="sxs-lookup"><span data-stu-id="19b17-123">For more information, see [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).</span></span>|  
+|`TRACE`|<span data-ttu-id="19b17-124">A `Boolean` valeur peut être définie dans le **propriétés du projet** boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="19b17-124">A `Boolean` value that can be set in the **Project Properties** dialog box.</span></span> <span data-ttu-id="19b17-125">Par défaut, toutes les configurations pour un projet définissent `TRACE`.</span><span class="sxs-lookup"><span data-stu-id="19b17-125">By default, all configurations for a project define `TRACE`.</span></span> <span data-ttu-id="19b17-126">Lorsque `TRACE` est défini, <xref:System.Diagnostics.Trace> méthodes de la classe génèrent un résultat vers la **sortie** fenêtre.</span><span class="sxs-lookup"><span data-stu-id="19b17-126">When `TRACE` is defined, <xref:System.Diagnostics.Trace> class methods generate output to the **Output** window.</span></span> <span data-ttu-id="19b17-127">Lorsqu’il n’est pas défini, <xref:System.Diagnostics.Trace> classe les méthodes ne sont pas compilées et aucun `Trace` sortie est générée.</span><span class="sxs-lookup"><span data-stu-id="19b17-127">When it is not defined, <xref:System.Diagnostics.Trace> class methods are not compiled and no `Trace` output is generated.</span></span>|  
+|`VBC_VER`|<span data-ttu-id="19b17-128">Un nombre représentant le [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] version, dans *majeure*. *mineure* format.</span><span class="sxs-lookup"><span data-stu-id="19b17-128">A number representing the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] version, in *major*.*minor* format.</span></span> <span data-ttu-id="19b17-129">Le numéro de version [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] est 8.0.</span><span class="sxs-lookup"><span data-stu-id="19b17-129">The version number for [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] is 8.0.</span></span>|  
   
-### <a name="print-and-display-constants"></a>Constantes d’impression et affichage  
- Lorsque vous appelez d’impression et fonctions d’affichage, vous pouvez utiliser les constantes suivantes dans votre code à la place des valeurs réelles.  
+### <a name="print-and-display-constants"></a><span data-ttu-id="19b17-130">Constantes d’impression et affichage</span><span class="sxs-lookup"><span data-stu-id="19b17-130">Print and Display Constants</span></span>  
+ <span data-ttu-id="19b17-131">Lorsque vous appelez impression et fonctions d’affichage, vous pouvez utiliser les constantes suivantes dans votre code à la place des valeurs réelles.</span><span class="sxs-lookup"><span data-stu-id="19b17-131">When you call print and display functions, you can use the following constants in your code in place of the actual values.</span></span>  
   
-|**Constante**|**Description**|  
+|<span data-ttu-id="19b17-132">**Constante**</span><span class="sxs-lookup"><span data-stu-id="19b17-132">**Constant**</span></span>|<span data-ttu-id="19b17-133">**Description**</span><span class="sxs-lookup"><span data-stu-id="19b17-133">**Description**</span></span>|  
 |---|---|  
-|`vbCrLf`|Combinaison de caractères retour chariot de transport.|  
-|`vbCr`|Caractère de retour chariot.|  
-|`vbLf`|Caractère de saut de ligne.|  
-|`vbNewLine`|Caractère de saut de ligne.|  
-|`vbNullChar`|Caractère null.|  
-|`vbNullString`|Différent d’une chaîne de longueur nulle ( » ») ; utilisé pour l’appel de procédures externes.|  
-|`vbObjectError`|Numéro d'erreur. Les numéros d’erreur définis par l’utilisateur doivent être supérieures à cette valeur. Exemple :<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
-|`vbTab`|Caractère de tabulation.|  
-|`vbBack`|Caractère de retour arrière.|  
-|`vbFormFeed`|Non utilisé dans Microsoft Windows.|  
-|`vbVerticalTab`|Non utilisé dans Microsoft Windows.|  
+|`vbCrLf`|<span data-ttu-id="19b17-134">Combinaison de caractères retour chariot de transport.</span><span class="sxs-lookup"><span data-stu-id="19b17-134">Carriage return/linefeed character combination.</span></span>|  
+|`vbCr`|<span data-ttu-id="19b17-135">Caractère de retour chariot.</span><span class="sxs-lookup"><span data-stu-id="19b17-135">Carriage return character.</span></span>|  
+|`vbLf`|<span data-ttu-id="19b17-136">Caractère de saut de ligne.</span><span class="sxs-lookup"><span data-stu-id="19b17-136">Linefeed character.</span></span>|  
+|`vbNewLine`|<span data-ttu-id="19b17-137">Caractère de saut de ligne.</span><span class="sxs-lookup"><span data-stu-id="19b17-137">Newline character.</span></span>|  
+|`vbNullChar`|<span data-ttu-id="19b17-138">Caractère null.</span><span class="sxs-lookup"><span data-stu-id="19b17-138">Null character.</span></span>|  
+|`vbNullString`|<span data-ttu-id="19b17-139">Différent d’une chaîne de longueur nulle ( » ») ; utilisé pour appeler des procédures externes.</span><span class="sxs-lookup"><span data-stu-id="19b17-139">Not the same as a zero-length string (""); used for calling external procedures.</span></span>|  
+|`vbObjectError`|<span data-ttu-id="19b17-140">Numéro d'erreur.</span><span class="sxs-lookup"><span data-stu-id="19b17-140">Error number.</span></span> <span data-ttu-id="19b17-141">Numéros d’erreur définis par l’utilisateur doivent être supérieures à cette valeur.</span><span class="sxs-lookup"><span data-stu-id="19b17-141">User-defined error numbers should be greater than this value.</span></span> <span data-ttu-id="19b17-142">Exemple :</span><span class="sxs-lookup"><span data-stu-id="19b17-142">For example:</span></span><br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
+|`vbTab`|<span data-ttu-id="19b17-143">Caractère de tabulation.</span><span class="sxs-lookup"><span data-stu-id="19b17-143">Tab character.</span></span>|  
+|`vbBack`|<span data-ttu-id="19b17-144">Caractère de retour arrière.</span><span class="sxs-lookup"><span data-stu-id="19b17-144">Backspace character.</span></span>|  
+|`vbFormFeed`|<span data-ttu-id="19b17-145">Pas utilisé dans Microsoft Windows.</span><span class="sxs-lookup"><span data-stu-id="19b17-145">Not used in Microsoft Windows.</span></span>|  
+|`vbVerticalTab`|<span data-ttu-id="19b17-146">Non utilisé dans Microsoft Windows.</span><span class="sxs-lookup"><span data-stu-id="19b17-146">Not useful in Microsoft Windows.</span></span>|  
   
-## <a name="enumerations"></a>Énumérations  
- Le tableau suivant répertorie et décrit les énumérations fournies par [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+## <a name="enumerations"></a><span data-ttu-id="19b17-147">Énumérations</span><span class="sxs-lookup"><span data-stu-id="19b17-147">Enumerations</span></span>  
+ <span data-ttu-id="19b17-148">Le tableau suivant répertorie et décrit les énumérations fournies par [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span><span class="sxs-lookup"><span data-stu-id="19b17-148">The following table lists and describes the enumerations provided by [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span>  
   
-|Énumération|Description|  
+|<span data-ttu-id="19b17-149">Énumération</span><span class="sxs-lookup"><span data-stu-id="19b17-149">Enumeration</span></span>|<span data-ttu-id="19b17-150">Description</span><span class="sxs-lookup"><span data-stu-id="19b17-150">Description</span></span>|  
 |---|---|  
-|<xref:Microsoft.VisualBasic.AppWinStyle></xref:Microsoft.VisualBasic.AppWinStyle>|Indique le style de fenêtre à utiliser pour le programme appelé lors de l’appel du <xref:Microsoft.VisualBasic.Interaction.Shell%2A>fonction.</xref:Microsoft.VisualBasic.Interaction.Shell%2A>|  
-|<xref:Microsoft.VisualBasic.AudioPlayMode></xref:Microsoft.VisualBasic.AudioPlayMode>|Indique comment lire des sons lors de l’appel des méthodes audio.|  
-|<xref:Microsoft.VisualBasic.ApplicationServices.BuiltInRole></xref:Microsoft.VisualBasic.ApplicationServices.BuiltInRole>|Indique le type de rôle à vérifier lors de l’appel du <xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>méthode.</xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
-|<xref:Microsoft.VisualBasic.CallType></xref:Microsoft.VisualBasic.CallType>|Indique le type de procédure qui est appelée lors de l’appel du <xref:Microsoft.VisualBasic.Interaction.CallByName%2A>fonction.</xref:Microsoft.VisualBasic.Interaction.CallByName%2A>|  
-|<xref:Microsoft.VisualBasic.CompareMethod></xref:Microsoft.VisualBasic.CompareMethod>|Indique comment comparer des chaînes lors de l’appel des fonctions de comparaison.|  
-|<xref:Microsoft.VisualBasic.DateFormat></xref:Microsoft.VisualBasic.DateFormat>|Indique comment afficher les dates lors de l’appel du <xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>fonction.</xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>|  
-|<xref:Microsoft.VisualBasic.DateInterval></xref:Microsoft.VisualBasic.DateInterval>|Indique comment déterminer et mettre en forme les intervalles de date pendant l’appel des fonctions de date.|  
-|<xref:Microsoft.VisualBasic.FileIO.DeleteDirectoryOption></xref:Microsoft.VisualBasic.FileIO.DeleteDirectoryOption>|Spécifie l’action à entreprendre lorsqu’un répertoire à supprimer contient des fichiers ou répertoires.|  
-|<xref:Microsoft.VisualBasic.DueDate></xref:Microsoft.VisualBasic.DueDate>|Indique quand les paiements doivent être lors de l’appel de méthodes financières.|  
-|<xref:Microsoft.VisualBasic.FileIO.FieldType></xref:Microsoft.VisualBasic.FileIO.FieldType>|Indique si les champs de texte sont délimités ou à largeur fixe.|  
-|<xref:Microsoft.VisualBasic.FileAttribute></xref:Microsoft.VisualBasic.FileAttribute>|Indique les attributs de fichier à utiliser lors de l’appel de fonctions d’accès au fichier.|  
-|<xref:Microsoft.VisualBasic.FirstDayOfWeek></xref:Microsoft.VisualBasic.FirstDayOfWeek>|Indique le premier jour de la semaine à utiliser lors de l’appel des fonctions de date.|  
-|<xref:Microsoft.VisualBasic.FirstWeekOfYear></xref:Microsoft.VisualBasic.FirstWeekOfYear>|Indique la première semaine de l’année à utiliser lors de l’appel des fonctions de date.|  
-|<xref:Microsoft.VisualBasic.MsgBoxResult></xref:Microsoft.VisualBasic.MsgBoxResult>|Indique le bouton a été activé dans une boîte de message retournée par la <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>fonction.</xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>|  
-|<xref:Microsoft.VisualBasic.MsgBoxStyle></xref:Microsoft.VisualBasic.MsgBoxStyle>|Indique les boutons à afficher lors de l’appel du <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>fonction.</xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>|  
-|<xref:Microsoft.VisualBasic.OpenAccess></xref:Microsoft.VisualBasic.OpenAccess>|Indique comment ouvrir un fichier lors de l’appel de fonctions d’accès au fichier.|  
-|<xref:Microsoft.VisualBasic.OpenMode></xref:Microsoft.VisualBasic.OpenMode>|Indique comment ouvrir un fichier lors de l’appel de fonctions d’accès au fichier.|  
-|<xref:Microsoft.VisualBasic.OpenShare></xref:Microsoft.VisualBasic.OpenShare>|Indique comment ouvrir un fichier lors de l’appel de fonctions d’accès au fichier.|  
-|<xref:Microsoft.VisualBasic.FileIO.RecycleOption></xref:Microsoft.VisualBasic.FileIO.RecycleOption>|Indique si un fichier doit être supprimé définitivement ou placé dans la Corbeille.|  
-|<xref:Microsoft.VisualBasic.FileIO.SearchOption></xref:Microsoft.VisualBasic.FileIO.SearchOption>|Spécifie s’il faut rechercher tous les ou uniquement les répertoires de niveau supérieur.|  
-|<xref:Microsoft.VisualBasic.TriState></xref:Microsoft.VisualBasic.TriState>|Indique un `Boolean` valeur ou si la valeur par défaut doit être utilisée lors de l’appel des fonctions de mise en forme de nombre.|  
-|<xref:Microsoft.VisualBasic.FileIO.UICancelOption></xref:Microsoft.VisualBasic.FileIO.UICancelOption>|Spécifie ce qui doit être effectuée si l’utilisateur clique sur **Annuler** lors d’une opération.|  
-|<xref:Microsoft.VisualBasic.FileIO.UIOption></xref:Microsoft.VisualBasic.FileIO.UIOption>|Spécifie s’il faut afficher une boîte de dialogue de progression lors de la copie, la suppression ou déplacement de fichiers ou répertoires.|  
-|<xref:Microsoft.VisualBasic.VariantType></xref:Microsoft.VisualBasic.VariantType>|Indique le type d’un objet variant, retourné par la <xref:Microsoft.VisualBasic.Information.VarType%2A>fonction.</xref:Microsoft.VisualBasic.Information.VarType%2A>|  
-|<xref:Microsoft.VisualBasic.VbStrConv></xref:Microsoft.VisualBasic.VbStrConv>|Indique le type de conversion à effectuer lors de l’appel du <xref:Microsoft.VisualBasic.Strings.StrConv%2A>fonction.</xref:Microsoft.VisualBasic.Strings.StrConv%2A>|  
+|<xref:Microsoft.VisualBasic.AppWinStyle>|<span data-ttu-id="19b17-151">Indique le style de fenêtre à utiliser pour le programme appelé lors de l’appel du <xref:Microsoft.VisualBasic.Interaction.Shell%2A> (fonction).</span><span class="sxs-lookup"><span data-stu-id="19b17-151">Indicates the window style to use for the invoked program when calling the <xref:Microsoft.VisualBasic.Interaction.Shell%2A> function.</span></span>|  
+|<xref:Microsoft.VisualBasic.AudioPlayMode>|<span data-ttu-id="19b17-152">Indique comment lire des sons lors de l’appel de méthodes audio.</span><span class="sxs-lookup"><span data-stu-id="19b17-152">Indicates how to play sounds when calling audio methods.</span></span>|  
+|<xref:Microsoft.VisualBasic.ApplicationServices.BuiltInRole>|<span data-ttu-id="19b17-153">Indique le type de rôle à vérifier lors de l’appel du <xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="19b17-153">Indicates the type of role to check when calling the <xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A> method.</span></span>|  
+|<xref:Microsoft.VisualBasic.CallType>|<span data-ttu-id="19b17-154">Indique le type de procédure appelée lors de l’appel du <xref:Microsoft.VisualBasic.Interaction.CallByName%2A> (fonction).</span><span class="sxs-lookup"><span data-stu-id="19b17-154">Indicates the type of procedure being invoked when calling the <xref:Microsoft.VisualBasic.Interaction.CallByName%2A> function.</span></span>|  
+|<xref:Microsoft.VisualBasic.CompareMethod>|<span data-ttu-id="19b17-155">Indique comment comparer des chaînes lors de l’appel des fonctions de comparaison.</span><span class="sxs-lookup"><span data-stu-id="19b17-155">Indicates how to compare strings when calling comparison functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.DateFormat>|<span data-ttu-id="19b17-156">Indique comment afficher les dates lors de l’appel du <xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A> (fonction).</span><span class="sxs-lookup"><span data-stu-id="19b17-156">Indicates how to display dates when calling the <xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A> function.</span></span>|  
+|<xref:Microsoft.VisualBasic.DateInterval>|<span data-ttu-id="19b17-157">Indique comment déterminer et mettre en forme les intervalles de date pendant l’appel des fonctions de date.</span><span class="sxs-lookup"><span data-stu-id="19b17-157">Indicates how to determine and format date intervals when calling date-related functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.FileIO.DeleteDirectoryOption>|<span data-ttu-id="19b17-158">Spécifie l’action à entreprendre lorsqu’un répertoire à supprimer contient des fichiers ou répertoires.</span><span class="sxs-lookup"><span data-stu-id="19b17-158">Specifies what should be done when a directory that is to be deleted contains files or directories.</span></span>|  
+|<xref:Microsoft.VisualBasic.DueDate>|<span data-ttu-id="19b17-159">Indique quand les paiements doivent être lors de l’appel de méthodes financières.</span><span class="sxs-lookup"><span data-stu-id="19b17-159">Indicates when payments are due when calling financial methods.</span></span>|  
+|<xref:Microsoft.VisualBasic.FileIO.FieldType>|<span data-ttu-id="19b17-160">Indique si les champs de texte sont délimités ou à largeur fixe.</span><span class="sxs-lookup"><span data-stu-id="19b17-160">Indicates whether text fields are delimited or fixed-width.</span></span>|  
+|<xref:Microsoft.VisualBasic.FileAttribute>|<span data-ttu-id="19b17-161">Indique les attributs de fichier à utiliser lors de l’appel de fonctions d’accès au fichier.</span><span class="sxs-lookup"><span data-stu-id="19b17-161">Indicates the file attributes to use when calling file-access functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.FirstDayOfWeek>|<span data-ttu-id="19b17-162">Indique le premier jour de la semaine à utiliser lors de l’appel des fonctions de date.</span><span class="sxs-lookup"><span data-stu-id="19b17-162">Indicates the first day of the week to use when calling date-related functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.FirstWeekOfYear>|<span data-ttu-id="19b17-163">Indique la première semaine de l’année à utiliser lors de l’appel des fonctions de date.</span><span class="sxs-lookup"><span data-stu-id="19b17-163">Indicates the first week of the year to use when calling date-related functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.MsgBoxResult>|<span data-ttu-id="19b17-164">Indique le bouton qui a été enfoncé dans une boîte de message, retourné par la fonction <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>.</span><span class="sxs-lookup"><span data-stu-id="19b17-164">Indicates which button was pressed on a message box, returned by the <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> function.</span></span>|  
+|<xref:Microsoft.VisualBasic.MsgBoxStyle>|<span data-ttu-id="19b17-165">Indique les boutons à afficher lors de l’appel de la fonction <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>.</span><span class="sxs-lookup"><span data-stu-id="19b17-165">Indicates which buttons to display when calling the <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> function.</span></span>|  
+|<xref:Microsoft.VisualBasic.OpenAccess>|<span data-ttu-id="19b17-166">Indique comment ouvrir un fichier lors de l’appel de fonctions d’accès au fichier.</span><span class="sxs-lookup"><span data-stu-id="19b17-166">Indicates how to open a file when calling file-access functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.OpenMode>|<span data-ttu-id="19b17-167">Indique comment ouvrir un fichier lors de l’appel de fonctions d’accès au fichier.</span><span class="sxs-lookup"><span data-stu-id="19b17-167">Indicates how to open a file when calling file-access functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.OpenShare>|<span data-ttu-id="19b17-168">Indique comment ouvrir un fichier lors de l’appel de fonctions d’accès au fichier.</span><span class="sxs-lookup"><span data-stu-id="19b17-168">Indicates how to open a file when calling file-access functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.FileIO.RecycleOption>|<span data-ttu-id="19b17-169">Spécifie si un fichier doit être supprimé définitivement ou placé dans la Corbeille.</span><span class="sxs-lookup"><span data-stu-id="19b17-169">Specifies whether a file should be deleted permanently or placed in the Recycle Bin.</span></span>|  
+|<xref:Microsoft.VisualBasic.FileIO.SearchOption>|<span data-ttu-id="19b17-170">Spécifie s’il faut rechercher tout ou uniquement les répertoires de niveau supérieur.</span><span class="sxs-lookup"><span data-stu-id="19b17-170">Specifies whether to search all or only top-level directories.</span></span>|  
+|<xref:Microsoft.VisualBasic.TriState>|<span data-ttu-id="19b17-171">Indique un `Boolean` valeur ou si la valeur par défaut doit être utilisée lors de l’appel des fonctions de mise en forme de nombre.</span><span class="sxs-lookup"><span data-stu-id="19b17-171">Indicates a `Boolean` value or whether the default should be used when calling number-formatting functions.</span></span>|  
+|<xref:Microsoft.VisualBasic.FileIO.UICancelOption>|<span data-ttu-id="19b17-172">Spécifie l’action à effectuer si l’utilisateur clique sur **Annuler** lors d’une opération.</span><span class="sxs-lookup"><span data-stu-id="19b17-172">Specifies what should be done if the user clicks **Cancel** during an operation.</span></span>|  
+|<xref:Microsoft.VisualBasic.FileIO.UIOption>|<span data-ttu-id="19b17-173">Spécifie s’il faut ou non afficher une boîte de dialogue de progression lors de la copie, la suppression ou déplacement de fichiers ou répertoires.</span><span class="sxs-lookup"><span data-stu-id="19b17-173">Specifies whether or not to show a progress dialog when copying, deleting, or moving files or directories.</span></span>|  
+|<xref:Microsoft.VisualBasic.VariantType>|<span data-ttu-id="19b17-174">Indique le type d’un objet variant, retourné par la <xref:Microsoft.VisualBasic.Information.VarType%2A> (fonction).</span><span class="sxs-lookup"><span data-stu-id="19b17-174">Indicates the type of a variant object, returned by the <xref:Microsoft.VisualBasic.Information.VarType%2A> function.</span></span>|  
+|<xref:Microsoft.VisualBasic.VbStrConv>|<span data-ttu-id="19b17-175">Indique le type de conversion à exécuter lors de l’appel de la fonction <xref:Microsoft.VisualBasic.Strings.StrConv%2A>.</span><span class="sxs-lookup"><span data-stu-id="19b17-175">Indicates which type of conversion to perform when calling the <xref:Microsoft.VisualBasic.Strings.StrConv%2A> function.</span></span>|  
   
-## <a name="see-also"></a>Voir aussi  
- [Référence du langage Visual Basic](../../visual-basic/language-reference/index.md)   
- [Visual Basic](../../visual-basic/index.md)   
- [Vue d’ensemble des constantes](../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)   
- [Vue d’ensemble des énumérations](../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
+## <a name="see-also"></a><span data-ttu-id="19b17-176">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="19b17-176">See Also</span></span>  
+ [<span data-ttu-id="19b17-177">Informations de référence sur le langage Visual Basic</span><span class="sxs-lookup"><span data-stu-id="19b17-177">Visual Basic Language Reference</span></span>](../../visual-basic/language-reference/index.md)  
+ [<span data-ttu-id="19b17-178">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="19b17-178">Visual Basic</span></span>](../../visual-basic/index.md)  
+ [<span data-ttu-id="19b17-179">Vue d’ensemble des constantes</span><span class="sxs-lookup"><span data-stu-id="19b17-179">Constants Overview</span></span>](../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)  
+ [<span data-ttu-id="19b17-180">Vue d’ensemble des énumérations</span><span class="sxs-lookup"><span data-stu-id="19b17-180">Enumerations Overview</span></span>](../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)

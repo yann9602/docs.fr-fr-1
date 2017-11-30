@@ -1,32 +1,28 @@
 ---
-title: "Comment : filtrer sur un élément facultatif (Visual Basic) | Documents Microsoft"
+title: "Comment : filtrer sur un élément facultatif (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a74b76ad-6889-4185-a189-d6ef2c63841e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5a02df0f6f9d8ea0821b0af2a1af164c518e7b27
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 32183a26a02640c655030eff18d62329fb1c125a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Comment : filtrer sur un élément facultatif (Visual Basic)
-Parfois, vous souhaitez appliquer un filtrage sur un élément sans être certain qu'il existe dans votre document XML. La recherche doit être exécutée de telle sorte que, si l'élément particulier ne possède pas l'élément enfant, aucune exception de référence Null ne soit déclenchée suite au filtrage. Dans l'exemple suivant, l'élément `Child5` ne possède pas d'élément enfant `Type`, mais la requête s'exécute tout de même correctement.  
+# <a name="how-to-filter-on-an-optional-element-visual-basic"></a><span data-ttu-id="f52a2-102">Comment : filtrer sur un élément facultatif (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f52a2-102">How to: Filter on an Optional Element (Visual Basic)</span></span>
+<span data-ttu-id="f52a2-103">Parfois, vous souhaitez appliquer un filtrage sur un élément sans être certain qu'il existe dans votre document XML.</span><span class="sxs-lookup"><span data-stu-id="f52a2-103">Sometimes you want to filter for an element even though you are not sure it exists in your XML document.</span></span> <span data-ttu-id="f52a2-104">La recherche doit être exécutée de telle sorte que, si l'élément particulier ne possède pas l'élément enfant, aucune exception de référence Null ne soit déclenchée suite au filtrage.</span><span class="sxs-lookup"><span data-stu-id="f52a2-104">The search should be executed so that if the particular element does not have the child element, you do not trigger a null reference exception by filtering for it.</span></span> <span data-ttu-id="f52a2-105">Dans l'exemple suivant, l'élément `Child5` ne possède pas d'élément enfant `Type`, mais la requête s'exécute tout de même correctement.</span><span class="sxs-lookup"><span data-stu-id="f52a2-105">In the following example, the `Child5` element does not have a `Type` child element, but the query still executes correctly.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple utilise le <xref:System.Xml.Linq.Extensions.Elements%2A>méthode d’extension.</xref:System.Xml.Linq.Extensions.Elements%2A>  
+## <a name="example"></a><span data-ttu-id="f52a2-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="f52a2-106">Example</span></span>  
+ <span data-ttu-id="f52a2-107">Cet exemple utilise la méthode d'extension <xref:System.Xml.Linq.Extensions.Elements%2A>.</span><span class="sxs-lookup"><span data-stu-id="f52a2-107">This example uses the <xref:System.Xml.Linq.Extensions.Elements%2A> extension method.</span></span>  
   
 ```vb  
 Dim root As XElement = _   
@@ -61,7 +57,7 @@ For Each str In cList
 Next  
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="f52a2-108">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="f52a2-108">This code produces the following output:</span></span>  
   
 ```  
 Child One Text  
@@ -69,8 +65,8 @@ Child Two Text
 Child Four Text  
 ```  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+## <a name="example"></a><span data-ttu-id="f52a2-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="f52a2-109">Example</span></span>  
+ <span data-ttu-id="f52a2-110">L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="f52a2-110">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="f52a2-111">Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="f52a2-111">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -111,7 +107,7 @@ Module Module1
 End Module  
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="f52a2-112">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="f52a2-112">This code produces the following output:</span></span>  
   
 ```  
 Child One Text  
@@ -119,13 +115,13 @@ Child Two Text
 Child Four Text  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=fullName>   
- <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName></xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>   
- <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName></xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>   
- [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)   
- [Propriété d’axe enfant XML](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)   
- [Propriété d’axe d’attribut XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)   
- [Propriété de valeur XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)   
- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Opérations de projection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+## <a name="see-also"></a><span data-ttu-id="f52a2-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f52a2-113">See Also</span></span>  
+ <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>  
+ <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>  
+ <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="f52a2-114">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f52a2-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)  
+ [<span data-ttu-id="f52a2-115">Propriété d’axe enfant XML</span><span class="sxs-lookup"><span data-stu-id="f52a2-115">XML Child Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
+ [<span data-ttu-id="f52a2-116">Propriété d’axe d’attribut XML</span><span class="sxs-lookup"><span data-stu-id="f52a2-116">XML Attribute Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)  
+ [<span data-ttu-id="f52a2-117">Propriété de valeur XML</span><span class="sxs-lookup"><span data-stu-id="f52a2-117">XML Value Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)  
+ [<span data-ttu-id="f52a2-118">Vue d’ensemble des opérateurs de requête standard (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f52a2-118">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="f52a2-119">Opérations de projection (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f52a2-119">Projection Operations (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)

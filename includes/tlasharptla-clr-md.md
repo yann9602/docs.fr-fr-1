@@ -1,1 +1,1 @@
-Common Language Runtime (CLR)
+<span data-ttu-id="38229-101">Common Language Runtime (CLR)</span><span class="sxs-lookup"><span data-stu-id="38229-101">common language runtime (CLR)</span></span>

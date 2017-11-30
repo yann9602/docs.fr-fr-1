@@ -1,73 +1,72 @@
 ---
-title: "Declared Element Characteristics (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "declared elements, lifetime"
-  - "access levels, declared elements"
-  - "declared elements, scope"
-  - "visibility, declared elements"
-  - "elements, programming"
-  - "scope, declared elements"
-  - "lifetime, declared elements"
-  - "declared elements, access level"
-  - "data types [Visual Basic], declared elements"
-  - "declared elements, visibility"
+title: "Caractéristiques d'éléments déclarés (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- declared elements [Visual Basic], lifetime
+- access levels, declared elements
+- declared elements [Visual Basic], scope
+- visibility [Visual Basic], declared elements
+- elements [Visual Basic], programming
+- scope [Visual Basic], declared elements
+- lifetime [Visual Basic], declared elements
+- declared elements [Visual Basic], access level
+- data types [Visual Basic], declared elements
+- declared elements [Visual Basic], visibility
 ms.assetid: 1bc40fb8-b67c-4428-90a4-76b630ae2583
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 26ee27d3a1d085c6ab45ae850dbdac700aa208a9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Declared Element Characteristics (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Une *caractéristique* d'un élément déclaré est un aspect de cet élément qui détermine l'interaction du code avec ce dernier.  Chaque élément déclaré possède une ou plusieurs des caractéristiques suivantes qui lui sont associées :  
+# <a name="declared-element-characteristics-visual-basic"></a><span data-ttu-id="fe3c8-102">Caractéristiques d'éléments déclarés (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fe3c8-102">Declared Element Characteristics (Visual Basic)</span></span>
+<span data-ttu-id="fe3c8-103">A *caractéristique* d’un élément déclaré est un aspect de cet élément qui détermine comment le code peut interagir avec lui.</span><span class="sxs-lookup"><span data-stu-id="fe3c8-103">A *characteristic* of a declared element is an aspect of that element that affects how code can interact with it.</span></span> <span data-ttu-id="fe3c8-104">Chaque élément déclaré a un ou plusieurs des caractéristiques suivantes associées :</span><span class="sxs-lookup"><span data-stu-id="fe3c8-104">Every declared element has one or more of the following characteristics associated with it:</span></span>  
   
--   *Type de données* — les valeurs possibles de l'élément et le mode de stockage de ces valeurs.  Pour plus d'informations, consultez [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md).  
+-   <span data-ttu-id="fe3c8-105">*Type de données* — les valeurs de l’élément peut contenir, et comment il stocke ces valeurs.</span><span class="sxs-lookup"><span data-stu-id="fe3c8-105">*Data type* — the values the element can hold, and how it stores those values.</span></span> <span data-ttu-id="fe3c8-106">Pour plus d’informations, consultez [des Types de données](../../../../visual-basic/language-reference/data-types/data-type-summary.md).</span><span class="sxs-lookup"><span data-stu-id="fe3c8-106">For more information, see [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md).</span></span>  
   
--   *Durée de vie* — la période d'exécution pendant laquelle il est possible d'utiliser l'élément.  Pour plus d'informations, consultez [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
+-   <span data-ttu-id="fe3c8-107">*Durée de vie* : la période de temps d’exécution au cours de laquelle l’élément est disponible pour utilisation.</span><span class="sxs-lookup"><span data-stu-id="fe3c8-107">*Lifetime* — the period of execution time during which the element is available for use.</span></span> <span data-ttu-id="fe3c8-108">Pour plus d’informations, consultez [durée de vie dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).</span><span class="sxs-lookup"><span data-stu-id="fe3c8-108">For more information, see [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).</span></span>  
   
--   *Portée* — l'ensemble du code qui peut faire référence à l'élément sans qualifier son nom.  Pour plus d'informations, consultez [How to: Control the Scope of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).  
+-   <span data-ttu-id="fe3c8-109">*Étendue* : l’ensemble du code qui peut faire référence à l’élément sans qualifier son nom.</span><span class="sxs-lookup"><span data-stu-id="fe3c8-109">*Scope* — the set of all code that can refer to the element without qualifying its name.</span></span> <span data-ttu-id="fe3c8-110">Pour plus d’informations, consultez [Comment : contrôler la portée d’une Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).</span><span class="sxs-lookup"><span data-stu-id="fe3c8-110">For more information, see [How to: Control the Scope of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).</span></span>  
   
--   *Niveau d'accès* — l'autorisation pour le code d'utiliser l'élément.  Pour plus d'informations, consultez [How to: Control the Availability of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).  
+-   <span data-ttu-id="fe3c8-111">*Niveau d’accès* , l’autorisation pour le code d’utiliser l’élément.</span><span class="sxs-lookup"><span data-stu-id="fe3c8-111">*Access level* — the permission for code to make use of the element.</span></span> <span data-ttu-id="fe3c8-112">Pour plus d’informations, consultez [Comment : contrôler la disponibilité d’une Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).</span><span class="sxs-lookup"><span data-stu-id="fe3c8-112">For more information, see [How to: Control the Availability of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).</span></span>  
   
-## Caractéristiques des éléments  
- Le tableau suivant répertorie les éléments déclarés et les caractéristiques qui s'appliquent à chacun d'eux.  
+## <a name="characteristics-of-the-elements"></a><span data-ttu-id="fe3c8-113">Caractéristiques des éléments</span><span class="sxs-lookup"><span data-stu-id="fe3c8-113">Characteristics of the Elements</span></span>  
+ <span data-ttu-id="fe3c8-114">Le tableau suivant présente les éléments déclarés et les caractéristiques qui s’appliquent à chacun d’eux.</span><span class="sxs-lookup"><span data-stu-id="fe3c8-114">The following table shows the declared elements and the characteristics that apply to each one.</span></span>  
   
-|Élément|Type de données|Durée de vie|Portée <sup>1</sup>|Niveau d'accès|  
-|-------------|---------------------|------------------|-------------------------|--------------------|  
-|Variable|Oui|Oui|Oui|Oui|  
-|Constante|Oui|Non|Oui|Oui|  
-|Énumération|Oui|Non|Oui|Oui|  
-|Structure|Non|Non|Oui|Oui|  
-|Propriété|Oui|Oui|Oui|Oui|  
-|Méthode|Non|Oui|Oui|Oui|  
-|Procédure \(`Sub` ou `Function`\)|Non|Oui|Oui|Oui|  
-|Paramètre de procédure|Oui|Oui|Oui|Non|  
-|Retour de fonction|Oui|Oui|Oui|Non|  
-|Opérateur|Oui|Non|Oui|Oui|  
-|Interface|Non|Non|Oui|Oui|  
-|Classe|Non|Non|Oui|Oui|  
-|Événement|Non|Non|Oui|Oui|  
-|Délégué|Non|Non|Oui|Oui|  
+|<span data-ttu-id="fe3c8-115">Élément</span><span class="sxs-lookup"><span data-stu-id="fe3c8-115">Element</span></span>|<span data-ttu-id="fe3c8-116">Type de données</span><span class="sxs-lookup"><span data-stu-id="fe3c8-116">Data Type</span></span>|<span data-ttu-id="fe3c8-117">Durée de vie</span><span class="sxs-lookup"><span data-stu-id="fe3c8-117">Lifetime</span></span>|<span data-ttu-id="fe3c8-118">Étendue <sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="fe3c8-118">Scope <sup>1</sup></span></span>|<span data-ttu-id="fe3c8-119">Niveau d’accès</span><span class="sxs-lookup"><span data-stu-id="fe3c8-119">Access Level</span></span>|  
+|-------------|---------------|--------------|------------------------|------------------|  
+|<span data-ttu-id="fe3c8-120">Variable</span><span class="sxs-lookup"><span data-stu-id="fe3c8-120">Variable</span></span>|<span data-ttu-id="fe3c8-121">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-121">Yes</span></span>|<span data-ttu-id="fe3c8-122">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-122">Yes</span></span>|<span data-ttu-id="fe3c8-123">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-123">Yes</span></span>|<span data-ttu-id="fe3c8-124">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-124">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-125">Constante</span><span class="sxs-lookup"><span data-stu-id="fe3c8-125">Constant</span></span>|<span data-ttu-id="fe3c8-126">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-126">Yes</span></span>|<span data-ttu-id="fe3c8-127">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-127">No</span></span>|<span data-ttu-id="fe3c8-128">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-128">Yes</span></span>|<span data-ttu-id="fe3c8-129">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-129">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-130">Énumération</span><span class="sxs-lookup"><span data-stu-id="fe3c8-130">Enumeration</span></span>|<span data-ttu-id="fe3c8-131">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-131">Yes</span></span>|<span data-ttu-id="fe3c8-132">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-132">No</span></span>|<span data-ttu-id="fe3c8-133">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-133">Yes</span></span>|<span data-ttu-id="fe3c8-134">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-134">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-135">Structure</span><span class="sxs-lookup"><span data-stu-id="fe3c8-135">Structure</span></span>|<span data-ttu-id="fe3c8-136">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-136">No</span></span>|<span data-ttu-id="fe3c8-137">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-137">No</span></span>|<span data-ttu-id="fe3c8-138">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-138">Yes</span></span>|<span data-ttu-id="fe3c8-139">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-139">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-140">Propriété</span><span class="sxs-lookup"><span data-stu-id="fe3c8-140">Property</span></span>|<span data-ttu-id="fe3c8-141">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-141">Yes</span></span>|<span data-ttu-id="fe3c8-142">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-142">Yes</span></span>|<span data-ttu-id="fe3c8-143">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-143">Yes</span></span>|<span data-ttu-id="fe3c8-144">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-144">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-145">Méthode</span><span class="sxs-lookup"><span data-stu-id="fe3c8-145">Method</span></span>|<span data-ttu-id="fe3c8-146">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-146">No</span></span>|<span data-ttu-id="fe3c8-147">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-147">Yes</span></span>|<span data-ttu-id="fe3c8-148">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-148">Yes</span></span>|<span data-ttu-id="fe3c8-149">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-149">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-150">Procédure (`Sub` ou `Function`)</span><span class="sxs-lookup"><span data-stu-id="fe3c8-150">Procedure (`Sub` or `Function`)</span></span>|<span data-ttu-id="fe3c8-151">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-151">No</span></span>|<span data-ttu-id="fe3c8-152">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-152">Yes</span></span>|<span data-ttu-id="fe3c8-153">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-153">Yes</span></span>|<span data-ttu-id="fe3c8-154">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-154">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-155">Paramètre de procédure</span><span class="sxs-lookup"><span data-stu-id="fe3c8-155">Procedure parameter</span></span>|<span data-ttu-id="fe3c8-156">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-156">Yes</span></span>|<span data-ttu-id="fe3c8-157">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-157">Yes</span></span>|<span data-ttu-id="fe3c8-158">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-158">Yes</span></span>|<span data-ttu-id="fe3c8-159">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-159">No</span></span>|  
+|<span data-ttu-id="fe3c8-160">Retour de fonction</span><span class="sxs-lookup"><span data-stu-id="fe3c8-160">Function return</span></span>|<span data-ttu-id="fe3c8-161">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-161">Yes</span></span>|<span data-ttu-id="fe3c8-162">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-162">Yes</span></span>|<span data-ttu-id="fe3c8-163">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-163">Yes</span></span>|<span data-ttu-id="fe3c8-164">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-164">No</span></span>|  
+|<span data-ttu-id="fe3c8-165">Opérateur</span><span class="sxs-lookup"><span data-stu-id="fe3c8-165">Operator</span></span>|<span data-ttu-id="fe3c8-166">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-166">Yes</span></span>|<span data-ttu-id="fe3c8-167">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-167">No</span></span>|<span data-ttu-id="fe3c8-168">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-168">Yes</span></span>|<span data-ttu-id="fe3c8-169">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-169">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-170">Interface</span><span class="sxs-lookup"><span data-stu-id="fe3c8-170">Interface</span></span>|<span data-ttu-id="fe3c8-171">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-171">No</span></span>|<span data-ttu-id="fe3c8-172">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-172">No</span></span>|<span data-ttu-id="fe3c8-173">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-173">Yes</span></span>|<span data-ttu-id="fe3c8-174">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-174">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-175">Classe</span><span class="sxs-lookup"><span data-stu-id="fe3c8-175">Class</span></span>|<span data-ttu-id="fe3c8-176">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-176">No</span></span>|<span data-ttu-id="fe3c8-177">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-177">No</span></span>|<span data-ttu-id="fe3c8-178">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-178">Yes</span></span>|<span data-ttu-id="fe3c8-179">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-179">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-180">Événement</span><span class="sxs-lookup"><span data-stu-id="fe3c8-180">Event</span></span>|<span data-ttu-id="fe3c8-181">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-181">No</span></span>|<span data-ttu-id="fe3c8-182">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-182">No</span></span>|<span data-ttu-id="fe3c8-183">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-183">Yes</span></span>|<span data-ttu-id="fe3c8-184">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-184">Yes</span></span>|  
+|<span data-ttu-id="fe3c8-185">Délégué</span><span class="sxs-lookup"><span data-stu-id="fe3c8-185">Delegate</span></span>|<span data-ttu-id="fe3c8-186">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-186">No</span></span>|<span data-ttu-id="fe3c8-187">Non</span><span class="sxs-lookup"><span data-stu-id="fe3c8-187">No</span></span>|<span data-ttu-id="fe3c8-188">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-188">Yes</span></span>|<span data-ttu-id="fe3c8-189">Oui</span><span class="sxs-lookup"><span data-stu-id="fe3c8-189">Yes</span></span>|  
   
- La portée <sup>1</sup> est parfois connue sous le nom de *visibilité*.  
+ <span data-ttu-id="fe3c8-190"><sup>1</sup> étendue est parfois appelée *visibilité*.</span><span class="sxs-lookup"><span data-stu-id="fe3c8-190"><sup>1</sup> Scope is sometimes referred to as *visibility*.</span></span>  
   
-## Voir aussi  
- [Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)   
- [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)   
- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
- [Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Déclaration de variable](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+## <a name="see-also"></a><span data-ttu-id="fe3c8-191">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fe3c8-191">See Also</span></span>  
+ [<span data-ttu-id="fe3c8-192">Éléments déclarés</span><span class="sxs-lookup"><span data-stu-id="fe3c8-192">Declared Elements</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)  
+ [<span data-ttu-id="fe3c8-193">Noms d’éléments déclarés</span><span class="sxs-lookup"><span data-stu-id="fe3c8-193">Declared Element Names</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [<span data-ttu-id="fe3c8-194">Références aux éléments déclarés</span><span class="sxs-lookup"><span data-stu-id="fe3c8-194">References to Declared Elements</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ [<span data-ttu-id="fe3c8-195">Durée de vie dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="fe3c8-195">Lifetime in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
+ [<span data-ttu-id="fe3c8-196">Portée dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="fe3c8-196">Scope in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
+ [<span data-ttu-id="fe3c8-197">Niveaux d’accès dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="fe3c8-197">Access levels in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [<span data-ttu-id="fe3c8-198">Types de données</span><span class="sxs-lookup"><span data-stu-id="fe3c8-198">Data Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [<span data-ttu-id="fe3c8-199">Déclaration de variable</span><span class="sxs-lookup"><span data-stu-id="fe3c8-199">Variable Declaration</span></span>](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

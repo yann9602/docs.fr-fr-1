@@ -1,1 +1,1 @@
-COM (Component Object Model)
+<span data-ttu-id="2eb95-101">COM (Component Object Model)</span><span class="sxs-lookup"><span data-stu-id="2eb95-101">Component Object Model (COM)</span></span>

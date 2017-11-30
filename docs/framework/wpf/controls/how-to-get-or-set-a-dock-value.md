@@ -1,35 +1,41 @@
 ---
-title: "Comment&#160;: obtenir ou d&#233;finir une valeur Dock | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "valeurs Dock, obtenir"
-  - "valeurs Dock, définir"
+title: "Comment : obtenir ou définir une valeur Dock"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Dock values [WPF], setting
+- Dock values [WPF], getting
 ms.assetid: fcf4ab8a-c7cd-4835-8d04-de1c999ab4a8
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8ca4d7e753282a7c1d2236a70535e10d5109cd3c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: obtenir ou d&#233;finir une valeur Dock
-L'exemple suivant montre comment assigner une valeur <xref:System.Windows.Controls.Dock> à un objet.  L'exemple utilise les méthodes <xref:System.Windows.Controls.DockPanel.GetDock%2A> et <xref:System.Windows.Controls.DockPanel.SetDock%2A> du <xref:System.Windows.Controls.DockPanel>.  
+# <a name="how-to-get-or-set-a-dock-value"></a><span data-ttu-id="7751e-102">Comment : obtenir ou définir une valeur Dock</span><span class="sxs-lookup"><span data-stu-id="7751e-102">How to: Get or Set a Dock Value</span></span>
+<span data-ttu-id="7751e-103">L’exemple suivant montre comment affecter un <xref:System.Windows.Controls.Dock> valeur pour un objet.</span><span class="sxs-lookup"><span data-stu-id="7751e-103">The following example shows how to assign a <xref:System.Windows.Controls.Dock> value for an object.</span></span> <span data-ttu-id="7751e-104">L’exemple utilise le <xref:System.Windows.Controls.DockPanel.GetDock%2A> et <xref:System.Windows.Controls.DockPanel.SetDock%2A> méthodes de <xref:System.Windows.Controls.DockPanel>.</span><span class="sxs-lookup"><span data-stu-id="7751e-104">The example uses the <xref:System.Windows.Controls.DockPanel.GetDock%2A> and <xref:System.Windows.Controls.DockPanel.SetDock%2A> methods of <xref:System.Windows.Controls.DockPanel>.</span></span>  
   
-## Exemple  
- L'exemple crée une instance de l'élément <xref:System.Windows.Controls.TextBlock>, `txt1` et assigne une valeur <xref:System.Windows.Controls.Dock> de `Top` à l'aide de la méthode <xref:System.Windows.Controls.DockPanel.SetDock%2A> de <xref:System.Windows.Controls.DockPanel>.  Il ajoute ensuite la valeur de la propriété <xref:System.Windows.Controls.Dock> au <xref:System.Windows.Controls.TextBlock.Text%2A> de l'élément <xref:System.Windows.Controls.TextBlock> à l'aide de la méthode <xref:System.Windows.Controls.DockPanel.GetDock%2A>.  Pour finir, l'exemple ajoute l'élément <xref:System.Windows.Controls.TextBlock> au <xref:System.Windows.Controls.DockPanel>, `dp1` parent.  
+## <a name="example"></a><span data-ttu-id="7751e-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="7751e-105">Example</span></span>  
+ <span data-ttu-id="7751e-106">L’exemple crée une instance de la <xref:System.Windows.Controls.TextBlock> élément, `txt1`et assigne un <xref:System.Windows.Controls.Dock> valeur `Top` à l’aide de la <xref:System.Windows.Controls.DockPanel.SetDock%2A> méthode de <xref:System.Windows.Controls.DockPanel>.</span><span class="sxs-lookup"><span data-stu-id="7751e-106">The example creates an instance of the <xref:System.Windows.Controls.TextBlock> element, `txt1`, and assigns a <xref:System.Windows.Controls.Dock> value of `Top` by using the <xref:System.Windows.Controls.DockPanel.SetDock%2A> method of <xref:System.Windows.Controls.DockPanel>.</span></span> <span data-ttu-id="7751e-107">Il ajoute ensuite la valeur de la <xref:System.Windows.Controls.Dock> propriété le <xref:System.Windows.Controls.TextBlock.Text%2A> de la <xref:System.Windows.Controls.TextBlock> élément à l’aide de la <xref:System.Windows.Controls.DockPanel.GetDock%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="7751e-107">It then appends the value of the <xref:System.Windows.Controls.Dock> property to the <xref:System.Windows.Controls.TextBlock.Text%2A> of the <xref:System.Windows.Controls.TextBlock> element by using the <xref:System.Windows.Controls.DockPanel.GetDock%2A> method.</span></span> <span data-ttu-id="7751e-108">Enfin, l’exemple ajoute le <xref:System.Windows.Controls.TextBlock> élément vers le parent <xref:System.Windows.Controls.DockPanel>, `dp1`.</span><span class="sxs-lookup"><span data-stu-id="7751e-108">Finally, the example adds the <xref:System.Windows.Controls.TextBlock> element to the parent <xref:System.Windows.Controls.DockPanel>, `dp1`.</span></span>  
   
  [!code-csharp[DockPanelSetDock#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DockPanelSetDock/CSharp/DockPanel_SetDock.cs#1)]
  [!code-vb[DockPanelSetDock#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DockPanelSetDock/VisualBasic/DockPanel_SetDock.vb#1)]  
   
-## Voir aussi  
- <xref:System.Windows.Controls.DockPanel>   
- <xref:System.Windows.Controls.DockPanel.GetDock%2A>   
- <xref:System.Windows.Controls.DockPanel.SetDock%2A>   
- [Vue d'ensemble de Panel](../../../../docs/framework/wpf/controls/panels-overview.md)
+## <a name="see-also"></a><span data-ttu-id="7751e-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7751e-109">See Also</span></span>  
+ <xref:System.Windows.Controls.DockPanel>  
+ <xref:System.Windows.Controls.DockPanel.GetDock%2A>  
+ <xref:System.Windows.Controls.DockPanel.SetDock%2A>  
+ [<span data-ttu-id="7751e-110">Vue d’ensemble de Panel</span><span class="sxs-lookup"><span data-stu-id="7751e-110">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)
