@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - wrapper classes
 - COM interop, COM wrappers
@@ -22,37 +16,35 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0c83cae510d695dc05b2cc6a71fdef7b5244a2ea
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 733d7f3e56b8ed704003ca9d6c2aa858c713df93
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="com-wrappers"></a>Wrappers COM
-COM diffère du modèle objet .NET Framework sur plusieurs points importants :  
+# <a name="com-wrappers"></a><span data-ttu-id="7c388-102">Wrappers COM</span><span class="sxs-lookup"><span data-stu-id="7c388-102">COM Wrappers</span></span>
+<span data-ttu-id="7c388-103">COM diffère du modèle objet .NET Framework sur plusieurs points importants :</span><span class="sxs-lookup"><span data-stu-id="7c388-103">COM differs from the .NET Framework object model in several important ways:</span></span>  
   
--   Les clients des objets COM doivent gérer la durée de vie de ces objets ; le common language runtime gère la durée de vie des objets dans son environnement.  
+-   <span data-ttu-id="7c388-104">Les clients des objets COM doivent gérer la durée de vie de ces objets ; le common language runtime gère la durée de vie des objets dans son environnement.</span><span class="sxs-lookup"><span data-stu-id="7c388-104">Clients of COM objects must manage the lifetime of those objects; the common language runtime manages the lifetime of objects in its environment.</span></span>  
   
--   Les clients des objets COM déterminent si un service est disponible en demandant une interface qui fournit ce service et en récupérant le cas échéant un pointeur d’interface en retour. Les clients des objets .NET peuvent obtenir une description de la fonctionnalité d’un objet par l’intermédiaire de la réflexion.  
+-   <span data-ttu-id="7c388-105">Les clients des objets COM déterminent si un service est disponible en demandant une interface qui fournit ce service et en récupérant le cas échéant un pointeur d’interface en retour.</span><span class="sxs-lookup"><span data-stu-id="7c388-105">Clients of COM objects discover whether a service is available by requesting an interface that provides that service and getting back an interface pointer, or not.</span></span> <span data-ttu-id="7c388-106">Les clients des objets .NET peuvent obtenir une description de la fonctionnalité d’un objet par l’intermédiaire de la réflexion.</span><span class="sxs-lookup"><span data-stu-id="7c388-106">Clients of .NET objects can obtain a description of an object's functionality using reflection.</span></span>  
   
--   Les objets NET résident dans la mémoire managée par l’environnement d’exécution .NET Framework. Celui-ci peut déplacer des objets dans la mémoire en vue d’améliorer les performances et mettre à jour toutes les références aux objets qu’il déplace. Les clients non managés, ayant obtenu un pointeur désignant un objet, s’attendent à ce que cet objet reste au même emplacement. Ces clients ne disposent d’aucun mécanisme leur permettant d’utiliser un objet dont l’emplacement n’est pas fixe.  
+-   <span data-ttu-id="7c388-107">Les objets NET résident dans la mémoire managée par l’environnement d’exécution .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7c388-107">NET objects reside in memory managed by the .NET Framework execution environment.</span></span> <span data-ttu-id="7c388-108">Celui-ci peut déplacer des objets dans la mémoire en vue d’améliorer les performances et mettre à jour toutes les références aux objets qu’il déplace.</span><span class="sxs-lookup"><span data-stu-id="7c388-108">The execution environment can move objects around in memory for performance reasons and update all references to the objects it moves.</span></span> <span data-ttu-id="7c388-109">Les clients non managés, ayant obtenu un pointeur désignant un objet, s’attendent à ce que cet objet reste au même emplacement.</span><span class="sxs-lookup"><span data-stu-id="7c388-109">Unmanaged clients, having obtained a pointer to an object, rely on the object to remain at the same location.</span></span> <span data-ttu-id="7c388-110">Ces clients ne disposent d’aucun mécanisme leur permettant d’utiliser un objet dont l’emplacement n’est pas fixe.</span><span class="sxs-lookup"><span data-stu-id="7c388-110">These clients have no mechanism for dealing with an object whose location is not fixed.</span></span>  
   
- Pour surmonter ces différences, le runtime fournit des classes wrapper pour faire croire aux clients à la fois managés et non managés qu’ils appellent des objets dans leur environnement respectif. Chaque fois que votre client managé appelle une méthode sur un objet COM, le runtime crée un [wrapper RCW (Runtime Callable Wrapper)](../../../docs/framework/interop/runtime-callable-wrapper.md). Les wrappers RCW permettent, entre autres, de gommer les différences entre les mécanismes de référence managé et non managé. Le runtime crée également un [wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md) pour inverser le processus, permettant ainsi à un client COM d’appeler de façon transparente une méthode sur un objet .NET. Ainsi que le montre l’illustration suivante, la perspective du code appelant détermine la classe wrapper créée par le runtime.  
+ <span data-ttu-id="7c388-111">Pour surmonter ces différences, le runtime fournit des classes wrapper pour faire croire aux clients à la fois managés et non managés qu’ils appellent des objets dans leur environnement respectif.</span><span class="sxs-lookup"><span data-stu-id="7c388-111">To overcome these differences, the runtime provides wrapper classes to make both managed and unmanaged clients think they are calling objects within their respective environment.</span></span> <span data-ttu-id="7c388-112">Chaque fois que votre client managé appelle une méthode sur un objet COM, le runtime crée un [wrapper RCW (Runtime Callable Wrapper)](../../../docs/framework/interop/runtime-callable-wrapper.md).</span><span class="sxs-lookup"><span data-stu-id="7c388-112">Whenever your managed client calls a method on a COM object, the runtime creates a [runtime callable wrapper](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW).</span></span> <span data-ttu-id="7c388-113">Les wrappers RCW permettent, entre autres, de gommer les différences entre les mécanismes de référence managé et non managé.</span><span class="sxs-lookup"><span data-stu-id="7c388-113">RCWs abstract the differences between managed and unmanaged reference mechanisms, among other things.</span></span> <span data-ttu-id="7c388-114">Le runtime crée également un [wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md) pour inverser le processus, permettant ainsi à un client COM d’appeler de façon transparente une méthode sur un objet .NET.</span><span class="sxs-lookup"><span data-stu-id="7c388-114">The runtime also creates a [COM callable wrapper](../../../docs/framework/interop/com-callable-wrapper.md) (CCW) to reverse the process, enabling a COM client to seamlessly call a method on a .NET object.</span></span> <span data-ttu-id="7c388-115">Ainsi que le montre l’illustration suivante, la perspective du code appelant détermine la classe wrapper créée par le runtime.</span><span class="sxs-lookup"><span data-stu-id="7c388-115">As the following illustration shows, the perspective of the calling code determines which wrapper class the runtime creates.</span></span>  
   
- ![Vue d’ensemble du wrapper COM](../../../docs/framework/interop/media/bidirectional.gif "bidirectionnelle")  
-Vue d'ensemble du wrapper COM  
+ <span data-ttu-id="7c388-116">![Vue d’ensemble du wrapper COM](../../../docs/framework/interop/media/bidirectional.gif "bidirectionnelle")</span><span class="sxs-lookup"><span data-stu-id="7c388-116">![COM wrapper overview](../../../docs/framework/interop/media/bidirectional.gif "bidirectional")</span></span>  
+<span data-ttu-id="7c388-117">Vue d'ensemble du wrapper COM</span><span class="sxs-lookup"><span data-stu-id="7c388-117">COM wrapper overview</span></span>  
   
- Dans la plupart des cas, les wrappers RCW ou CCW standard générés par le runtime assurent un marshaling adéquat pour les appels qui franchissent la limite séparant COM du .NET Framework. En utilisant des attributs personnalisés, vous pouvez facultativement définir la façon dont le runtime représente le code managé et non managé.  
+ <span data-ttu-id="7c388-118">Dans la plupart des cas, les wrappers RCW ou CCW standard générés par le runtime assurent un marshaling adéquat pour les appels qui franchissent la limite séparant COM du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7c388-118">In most cases, the standard RCW or CCW generated by the runtime provides adequate marshaling for calls that cross the boundary between COM and the .NET Framework.</span></span> <span data-ttu-id="7c388-119">En utilisant des attributs personnalisés, vous pouvez facultativement définir la façon dont le runtime représente le code managé et non managé.</span><span class="sxs-lookup"><span data-stu-id="7c388-119">Using custom attributes, you can optionally adjust the way the runtime represents managed and unmanaged code.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)   
- [Wrapper RCW (Runtime Callable Wrapper)](../../../docs/framework/interop/runtime-callable-wrapper.md)   
- [Wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md)   
- [Personnalisation de wrappers standard](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)   
- [Guide pratique pour personnaliser les wrappers RCW (Runtime Callable Wrapper)](http://msdn.microsoft.com/en-us/4a4bb3da-4d60-4517-99f2-78d46a681732)
-
+## <a name="see-also"></a><span data-ttu-id="7c388-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7c388-120">See Also</span></span>  
+ [<span data-ttu-id="7c388-121">Interopérabilité COM avancée</span><span class="sxs-lookup"><span data-stu-id="7c388-121">Advanced COM Interoperability</span></span>](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
+ [<span data-ttu-id="7c388-122">Wrapper pouvant être appelé par le runtime</span><span class="sxs-lookup"><span data-stu-id="7c388-122">Runtime Callable Wrapper</span></span>](../../../docs/framework/interop/runtime-callable-wrapper.md)  
+ [<span data-ttu-id="7c388-123">Wrapper CCW (COM Callable Wrapper)</span><span class="sxs-lookup"><span data-stu-id="7c388-123">COM Callable Wrapper</span></span>](../../../docs/framework/interop/com-callable-wrapper.md)  
+ [<span data-ttu-id="7c388-124">Personnalisation de Wrappers Standard</span><span class="sxs-lookup"><span data-stu-id="7c388-124">Customizing Standard Wrappers</span></span>](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
+ [<span data-ttu-id="7c388-125">Guide pratique pour personnaliser les wrappers RCW (Runtime Callable Wrapper)</span><span class="sxs-lookup"><span data-stu-id="7c388-125">How to: Customize Runtime Callable Wrappers</span></span>](http://msdn.microsoft.com/en-us/4a4bb3da-4d60-4517-99f2-78d46a681732)

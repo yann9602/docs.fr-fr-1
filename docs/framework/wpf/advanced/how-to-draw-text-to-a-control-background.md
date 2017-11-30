@@ -1,40 +1,43 @@
 ---
-title: "Comment&#160;: dessiner du texte sur l&#39;arri&#232;re-plan d&#39;un contr&#244;le | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "arrière-plans, dessiner du texte dans"
-  - "contrôles, dessiner du texte sur les arrière-plans"
-  - "dessiner, texte sur les arrière-plans de contrôles"
-  - "texte, dessiner sur les arrière-plans de contrôles"
-  - "typographie, dessiner du texte sur les arrière-plans de contrôles"
+title: "Guide pratique pour dessiner du texte sur l’arrière-plan d’un contrôle"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [WPF], drawing text to backgrounds
+- text [WPF], drawing to control backgrounds
+- drawing [WPF], text to control backgrounds
+- backgrounds [WPF], drawing text to
+- typography [WPF], drawing text to control backgrounds
 ms.assetid: 686d8fba-f61c-4974-a871-c635d67a7f69
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f0c98422e337678e68a8e4b72979635e8c867b4f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: dessiner du texte sur l&#39;arri&#232;re-plan d&#39;un contr&#244;le
-Vous pouvez attirer directement le texte à l'arrière\-plan d'un contrôle en convertissant une chaîne de texte en objet <xref:System.Windows.Media.FormattedText>, et attirer ensuite l'objet au <xref:System.Windows.Media.DrawingContext> du contrôle.  Vous pouvez également utiliser cette technique pour attirer à l'arrière\-plan d'objets dérivés de <xref:System.Windows.Controls.Panel>, tels que <xref:System.Windows.Controls.Canvas> et <xref:System.Windows.Controls.StackPanel>.  
+# <a name="how-to-draw-text-to-a-control39s-background"></a><span data-ttu-id="be1af-102">Guide pratique pour dessiner du texte sur l’arrière-plan d’un contrôle</span><span class="sxs-lookup"><span data-stu-id="be1af-102">How to: Draw Text to a Control&#39;s Background</span></span>
+<span data-ttu-id="be1af-103">Vous pouvez dessiner du texte directement à l’arrière-plan d’un contrôle en convertissant une chaîne de texte à un <xref:System.Windows.Media.FormattedText> de l’objet et le dessin du contrôle <xref:System.Windows.Media.DrawingContext>.</span><span class="sxs-lookup"><span data-stu-id="be1af-103">You can draw text directly to the background of a control by converting a text string to a <xref:System.Windows.Media.FormattedText> object, and then drawing the object to the control's <xref:System.Windows.Media.DrawingContext>.</span></span> <span data-ttu-id="be1af-104">Vous pouvez également utiliser cette technique pour attirer à l’arrière-plan d’objets dérivés de <xref:System.Windows.Controls.Panel>, tel que <xref:System.Windows.Controls.Canvas> et <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="be1af-104">You can also use this technique for drawing to the background of objects derived from <xref:System.Windows.Controls.Panel>, such as <xref:System.Windows.Controls.Canvas> and <xref:System.Windows.Controls.StackPanel>.</span></span>  
   
- ![Contrôles affichant le texte en arrière&#45;plan](../../../../docs/framework/wpf/advanced/media/drawtext2background01.png "DrawText2Background01")  
-Exemple de contrôles avec les arrière\-plan de texte personnalisés  
+ <span data-ttu-id="be1af-105">![Contrôles affichant le texte en arrière-plan](../../../../docs/framework/wpf/advanced/media/drawtext2background01.png "DrawText2Background01")</span><span class="sxs-lookup"><span data-stu-id="be1af-105">![Controls displaying text as background](../../../../docs/framework/wpf/advanced/media/drawtext2background01.png "DrawText2Background01")</span></span>  
+<span data-ttu-id="be1af-106">Exemple de contrôles avec des arrière-plans de texte personnalisés</span><span class="sxs-lookup"><span data-stu-id="be1af-106">Example of controls with custom text backgrounds</span></span>  
   
-## Exemple  
- Pour attirer à l'arrière\-plan d'un contrôle, créez un objet <xref:System.Windows.Media.DrawingBrush> et attirez le texte converti sur le <xref:System.Windows.Media.DrawingContext>de l'objet.  Puis, assignez le nouveau <xref:System.Windows.Media.DrawingBrush> à la propriété d'arrière\-plan du contrôle.  
+## <a name="example"></a><span data-ttu-id="be1af-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="be1af-107">Example</span></span>  
+ <span data-ttu-id="be1af-108">Pour dessiner à l’arrière-plan d’un contrôle, créez un <xref:System.Windows.Media.DrawingBrush> de l’objet et de dessiner le texte converti à l’objet <xref:System.Windows.Media.DrawingContext>.</span><span class="sxs-lookup"><span data-stu-id="be1af-108">To draw to the background of a control, create a new <xref:System.Windows.Media.DrawingBrush> object and draw the converted text to the object's <xref:System.Windows.Media.DrawingContext>.</span></span> <span data-ttu-id="be1af-109">Ensuite, assignez le nouveau <xref:System.Windows.Media.DrawingBrush> à la propriété du contrôle en arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="be1af-109">Then, assign the new <xref:System.Windows.Media.DrawingBrush> to the control's background property.</span></span>  
   
- L'exemple de code suivant montre comment créer un objet <xref:System.Windows.Media.FormattedText> et attirer à l'arrière\-plan d'un objet <xref:System.Windows.Controls.Label> et <xref:System.Windows.Controls.Button>.  
+ <span data-ttu-id="be1af-110">L’exemple de code suivant montre comment créer un <xref:System.Windows.Media.FormattedText> de l’objet et dessiner à l’arrière-plan d’un <xref:System.Windows.Controls.Label> et <xref:System.Windows.Controls.Button> objet.</span><span class="sxs-lookup"><span data-stu-id="be1af-110">The following code example shows how to create a <xref:System.Windows.Media.FormattedText> object and draw to the background of a <xref:System.Windows.Controls.Label> and <xref:System.Windows.Controls.Button> object.</span></span>  
   
  [!code-csharp[DrawTextToControlBackground#DrawTextToControlBackground1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawTextToControlBackground/CSHARP/Window1.xaml.cs#drawtexttocontrolbackground1)]  
   
-## Voir aussi  
- <xref:System.Windows.Media.FormattedText>   
- [Dessin du texte mis en forme](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)
+## <a name="see-also"></a><span data-ttu-id="be1af-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="be1af-111">See Also</span></span>  
+ <xref:System.Windows.Media.FormattedText>  
+ [<span data-ttu-id="be1af-112">Dessin du texte mis en forme</span><span class="sxs-lookup"><span data-stu-id="be1af-112">Drawing Formatted Text</span></span>](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)

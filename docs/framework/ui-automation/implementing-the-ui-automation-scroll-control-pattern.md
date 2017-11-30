@@ -1,85 +1,88 @@
 ---
-title: "Implementing the UI Automation Scroll Control Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "UI Automation, Scroll control pattern"
-  - "control patterns, Scroll"
-  - "Scroll control pattern"
+title: "Implémentation du modèle de contrôle Scroll d'UI Automation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UI Automation, Scroll control pattern
+- control patterns, Scroll
+- Scroll control pattern
 ms.assetid: 73d64242-6cbb-424c-92dd-dc69530b7899
-caps.latest.revision: 23
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: b9f38bbe185013c498a7ecf98bbf915b35c2d791
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing the UI Automation Scroll Control Pattern
+# <a name="implementing-the-ui-automation-scroll-control-pattern"></a><span data-ttu-id="df8dc-102">Implémentation du modèle de contrôle Scroll d’UI Automation</span><span class="sxs-lookup"><span data-stu-id="df8dc-102">Implementing the UI Automation Scroll Control Pattern</span></span>
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  <span data-ttu-id="df8dc-103">Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="df8dc-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="df8dc-104">Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span><span class="sxs-lookup"><span data-stu-id="df8dc-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IScrollProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
+ <span data-ttu-id="df8dc-105">Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IScrollProvider>, notamment des informations sur les événements et les propriétés.</span><span class="sxs-lookup"><span data-stu-id="df8dc-105">This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.IScrollProvider>, including information about events and properties.</span></span> <span data-ttu-id="df8dc-106">Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.</span><span class="sxs-lookup"><span data-stu-id="df8dc-106">Links to additional references are listed at the end of the topic.</span></span>  
   
- Le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> permet de prendre en charge un contrôle qui agit comme un conteneur à défilement pour une collection d’objets enfants. Le contrôle n’est pas tenu d’utiliser les barres de défilement pour prendre en charge les fonctionnalités de défilement, bien que ce soit généralement le cas.  
+ <span data-ttu-id="df8dc-107">Le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> permet de prendre en charge un contrôle qui agit comme un conteneur à défilement pour une collection d’objets enfants.</span><span class="sxs-lookup"><span data-stu-id="df8dc-107">The <xref:System.Windows.Automation.ScrollPattern> control pattern is used to support a control that acts as a scrollable container for a collection of child objects.</span></span> <span data-ttu-id="df8dc-108">Le contrôle n’est pas tenu d’utiliser les barres de défilement pour prendre en charge les fonctionnalités de défilement, bien que ce soit généralement le cas.</span><span class="sxs-lookup"><span data-stu-id="df8dc-108">The control is not required to use scrollbars to support the scrolling functionality, although it commonly does.</span></span>  
   
- ![Contrôle du défilement sans barres de défilement.](../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA\_ScrollPattern\_Without\_Scrollbars")  
-Exemple d’un contrôle de défilement qui n’utilise pas les barres de défilement  
+ <span data-ttu-id="df8dc-109">![Contrôle du défilement sans barres de défilement. ] (../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")</span><span class="sxs-lookup"><span data-stu-id="df8dc-109">![Scroll control without scrollbars.](../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")</span></span>  
+<span data-ttu-id="df8dc-110">Exemple d’un contrôle de défilement qui n’utilise pas les barres de défilement</span><span class="sxs-lookup"><span data-stu-id="df8dc-110">Example of a Scrolling Control that Does Not Use Scrollbars</span></span>  
   
- Pour obtenir des exemples de contrôles implémentant ce contrôle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ <span data-ttu-id="df8dc-111">Pour obtenir des exemples de contrôles implémentant ce contrôle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span><span class="sxs-lookup"><span data-stu-id="df8dc-111">For examples of controls that implement this control, see [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span></span>  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## Conventions et directives d'implémentation  
- Quand vous implémentez le modèle de contrôle Scroll, notez les conventions et recommandations suivantes :  
+## <a name="implementation-guidelines-and-conventions"></a><span data-ttu-id="df8dc-112">Conventions et directives d'implémentation</span><span class="sxs-lookup"><span data-stu-id="df8dc-112">Implementation Guidelines and Conventions</span></span>  
+ <span data-ttu-id="df8dc-113">Quand vous implémentez le modèle de contrôle Scroll, notez les conventions et recommandations suivantes :</span><span class="sxs-lookup"><span data-stu-id="df8dc-113">When implementing the Scroll control pattern, note the following guidelines and conventions:</span></span>  
   
--   Les enfants de ce contrôle doivent implémenter <xref:System.Windows.Automation.Provider.IScrollItemProvider>.  
+-   <span data-ttu-id="df8dc-114">Les enfants de ce contrôle doivent implémenter <xref:System.Windows.Automation.Provider.IScrollItemProvider>.</span><span class="sxs-lookup"><span data-stu-id="df8dc-114">The children of this control must implement <xref:System.Windows.Automation.Provider.IScrollItemProvider>.</span></span>  
   
--   Les barres de défilement d’un contrôle conteneur ne prennent pas en charge le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern>. Elles doivent prendre en charge le modèle de contrôle <xref:System.Windows.Automation.RangeValuePattern> à la place.  
+-   <span data-ttu-id="df8dc-115">Les barres de défilement d’un contrôle conteneur ne prennent pas en charge le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> .</span><span class="sxs-lookup"><span data-stu-id="df8dc-115">The scrollbars of a container control do not support the <xref:System.Windows.Automation.ScrollPattern> control pattern.</span></span> <span data-ttu-id="df8dc-116">Elles doivent prendre en charge le modèle de contrôle <xref:System.Windows.Automation.RangeValuePattern> à la place.</span><span class="sxs-lookup"><span data-stu-id="df8dc-116">They must support the <xref:System.Windows.Automation.RangeValuePattern> control pattern instead.</span></span>  
   
--   Lorsque le défilement est mesuré sous forme de pourcentage, toutes les valeurs ou quantités liées à la graduation du défilement doivent être normalisées dans une plage de 0 à 100.  
+-   <span data-ttu-id="df8dc-117">Lorsque le défilement est mesuré sous forme de pourcentage, toutes les valeurs ou quantités liées à la graduation du défilement doivent être normalisées dans une plage de 0 à 100.</span><span class="sxs-lookup"><span data-stu-id="df8dc-117">When scrolling is measured in percentages, all values or amounts related to scroll graduation must be normalized to a range of 0 to 100.</span></span>  
   
--   Les propriétés <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> et <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> sont indépendantes de <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>.  
+-   <span data-ttu-id="df8dc-118">Les propriétés<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> et <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> sont indépendantes de <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>.</span><span class="sxs-lookup"><span data-stu-id="df8dc-118"><xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> and <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> are independent of the <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>.</span></span>  
   
--   Si <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> \= `false` alors <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> doit avoir la valeur 100 % et <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> la valeur <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>. De la même façon, si <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> \= `false` alors <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> doit avoir la valeur 100 % et <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> la valeur <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>. Cela permet au client UI Automation d’utiliser ces valeurs de propriété dans la méthode <xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> tout en évitant une [condition de concurrence critique](http://support.microsoft.com/default.aspx?scid=kb;en-us;317723) si une direction de défilement qui n’intéresse pas le client est activée.  
+-   <span data-ttu-id="df8dc-119">Si <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> = `false` alors <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> doit avoir la valeur 100 % et <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> la valeur <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>.</span><span class="sxs-lookup"><span data-stu-id="df8dc-119">If <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> = `false` then <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> should be set to 100% and <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> should be set to <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>.</span></span> <span data-ttu-id="df8dc-120">De la même façon, si <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> = `false` alors <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> doit avoir la valeur 100 % et <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> la valeur <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>.</span><span class="sxs-lookup"><span data-stu-id="df8dc-120">Likewise, if <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> = `false` then <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> should be set to 100 percent and <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> should be set to <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>.</span></span> <span data-ttu-id="df8dc-121">Cela permet au client UI Automation d’utiliser ces valeurs de propriété dans la méthode <xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> tout en évitant une [condition de concurrence critique](http://support.microsoft.com/default.aspx?scid=kb;en-us;317723) si une direction de défilement qui n’intéresse pas le client est activée.</span><span class="sxs-lookup"><span data-stu-id="df8dc-121">This allows a UI Automation client to use these property values within the <xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> method while avoiding a [race condition](http://support.microsoft.com/default.aspx?scid=kb;en-us;317723) if a direction the client is not interested in scrolling becomes activated.</span></span>  
   
--   <xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> est spécifique aux paramètres régionaux. Le paramètre HorizontalScrollPercent \= 100.0 doit définir l’emplacement de défilement du contrôle sur l’équivalent de sa position la plus à droite pour des langues telles que le français qui sont lues de gauche à droite. Par ailleurs, pour des langues telles que l’arabe, qui sont lues de droite à gauche, le paramètre HorizontalScrollPercent \= 100.0 doit définir l’emplacement de défilement sur la position la plus à gauche.  
+-   <span data-ttu-id="df8dc-122"><xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> est spécifique aux paramètres régionaux.</span><span class="sxs-lookup"><span data-stu-id="df8dc-122"><xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> is locale-specific.</span></span> <span data-ttu-id="df8dc-123">Le paramètre HorizontalScrollPercent = 100.0 doit définir l’emplacement de défilement du contrôle sur l’équivalent de sa position la plus à droite pour des langues telles que le français qui sont lues de gauche à droite.</span><span class="sxs-lookup"><span data-stu-id="df8dc-123">Setting HorizontalScrollPercent = 100.0 must set the scrolling location of the control to the equivalent of its rightmost position for languages such as English that read left to right.</span></span> <span data-ttu-id="df8dc-124">Par ailleurs, pour des langues telles que l’arabe, qui sont lues de droite à gauche, le paramètre HorizontalScrollPercent = 100.0 doit définir l’emplacement de défilement sur la position la plus à gauche.</span><span class="sxs-lookup"><span data-stu-id="df8dc-124">Alternately, for languages such as Arabic that read right to left, setting HorizontalScrollPercent = 100.0 must set the scroll location to the leftmost position.</span></span>  
   
 <a name="Required_Members_for_IScrollProvider"></a>   
-## Membres requis pour IScrollProvider  
- Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d'<xref:System.Windows.Automation.Provider.IScrollProvider>.  
+## <a name="required-members-for-iscrollprovider"></a><span data-ttu-id="df8dc-125">Membres requis pour IScrollProvider</span><span class="sxs-lookup"><span data-stu-id="df8dc-125">Required Members for IScrollProvider</span></span>  
+ <span data-ttu-id="df8dc-126">Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.IScrollProvider>.</span><span class="sxs-lookup"><span data-stu-id="df8dc-126">The following properties and methods are required for implementing <xref:System.Windows.Automation.Provider.IScrollProvider>.</span></span>  
   
-|Membre requis|Type de membre|Notes|  
-|-------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|Méthode|Aucun|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|Méthode|None|  
+|<span data-ttu-id="df8dc-127">Membre requis</span><span class="sxs-lookup"><span data-stu-id="df8dc-127">Required member</span></span>|<span data-ttu-id="df8dc-128">Type de membre</span><span class="sxs-lookup"><span data-stu-id="df8dc-128">Member type</span></span>|<span data-ttu-id="df8dc-129">Remarques</span><span class="sxs-lookup"><span data-stu-id="df8dc-129">Notes</span></span>|  
+|---------------------|-----------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|<span data-ttu-id="df8dc-130">Propriété</span><span class="sxs-lookup"><span data-stu-id="df8dc-130">Property</span></span>|<span data-ttu-id="df8dc-131">Aucun</span><span class="sxs-lookup"><span data-stu-id="df8dc-131">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|<span data-ttu-id="df8dc-132">Propriété</span><span class="sxs-lookup"><span data-stu-id="df8dc-132">Property</span></span>|<span data-ttu-id="df8dc-133">Aucun</span><span class="sxs-lookup"><span data-stu-id="df8dc-133">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|<span data-ttu-id="df8dc-134">Propriété</span><span class="sxs-lookup"><span data-stu-id="df8dc-134">Property</span></span>|<span data-ttu-id="df8dc-135">Aucun</span><span class="sxs-lookup"><span data-stu-id="df8dc-135">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|<span data-ttu-id="df8dc-136">Propriété</span><span class="sxs-lookup"><span data-stu-id="df8dc-136">Property</span></span>|<span data-ttu-id="df8dc-137">Aucun</span><span class="sxs-lookup"><span data-stu-id="df8dc-137">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|<span data-ttu-id="df8dc-138">Propriété</span><span class="sxs-lookup"><span data-stu-id="df8dc-138">Property</span></span>|<span data-ttu-id="df8dc-139">Aucun</span><span class="sxs-lookup"><span data-stu-id="df8dc-139">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|<span data-ttu-id="df8dc-140">Propriété</span><span class="sxs-lookup"><span data-stu-id="df8dc-140">Property</span></span>|<span data-ttu-id="df8dc-141">Aucune</span><span class="sxs-lookup"><span data-stu-id="df8dc-141">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|<span data-ttu-id="df8dc-142">Méthode</span><span class="sxs-lookup"><span data-stu-id="df8dc-142">Method</span></span>|<span data-ttu-id="df8dc-143">Aucune</span><span class="sxs-lookup"><span data-stu-id="df8dc-143">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|<span data-ttu-id="df8dc-144">Méthode</span><span class="sxs-lookup"><span data-stu-id="df8dc-144">Method</span></span>|<span data-ttu-id="df8dc-145">Aucune</span><span class="sxs-lookup"><span data-stu-id="df8dc-145">None</span></span>|  
   
- Ce modèle de contrôle n’est associé à aucun événement.  
+ <span data-ttu-id="df8dc-146">Ce modèle de contrôle n’est associé aucun événement.</span><span class="sxs-lookup"><span data-stu-id="df8dc-146">This control pattern has no associated events.</span></span>  
   
 <a name="Exceptions"></a>   
-## Exceptions  
- Les fournisseurs doivent lever les exceptions suivantes.  
+## <a name="exceptions"></a><span data-ttu-id="df8dc-147">Exceptions</span><span class="sxs-lookup"><span data-stu-id="df8dc-147">Exceptions</span></span>  
+ <span data-ttu-id="df8dc-148">Les fournisseurs doivent lever les exceptions suivantes.</span><span class="sxs-lookup"><span data-stu-id="df8dc-148">Providers must throw the following exceptions.</span></span>  
   
-|Type d'exception|Condition|  
-|----------------------|---------------|  
-|<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> lève cette exception si un contrôle prend en charge les valeurs <xref:System.Windows.Automation.ScrollAmount> exclusivement pour le défilement horizontal ou vertical, mais qu’une valeur <xref:System.Windows.Automation.ScrollAmount> est passée.|  
-|<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> lève cette exception quand une valeur ne pouvant pas être convertie en valeur double est passée.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> lève cette exception quand une valeur supérieure à 100 ou inférieure à 0 est passée \(sauf \-1 qui est équivalent à <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>\).|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> et <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> lèvent cette exception lors d’une tentative de défilement dans une direction non prise en charge.|  
+|<span data-ttu-id="df8dc-149">Type d'exception</span><span class="sxs-lookup"><span data-stu-id="df8dc-149">Exception Type</span></span>|<span data-ttu-id="df8dc-150">Condition</span><span class="sxs-lookup"><span data-stu-id="df8dc-150">Condition</span></span>|  
+|--------------------|---------------|  
+|<xref:System.ArgumentException>|<span data-ttu-id="df8dc-151"><xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> lève cette exception si un contrôle prend en charge les valeurs <xref:System.Windows.Automation.ScrollAmount.SmallIncrement> exclusivement pour le défilement horizontal ou vertical, mais qu’une valeur <xref:System.Windows.Automation.ScrollAmount.LargeIncrement> est passée.</span><span class="sxs-lookup"><span data-stu-id="df8dc-151"><xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> throws this exception if a control supports <xref:System.Windows.Automation.ScrollAmount.SmallIncrement> values exclusively for horizontal or vertical scrolling, but a <xref:System.Windows.Automation.ScrollAmount.LargeIncrement> value is passed in.</span></span>|  
+|<xref:System.ArgumentException>|<span data-ttu-id="df8dc-152"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> lève cette exception quand une valeur ne pouvant pas être convertie en valeur double est passée.</span><span class="sxs-lookup"><span data-stu-id="df8dc-152"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> throws this exception when a value that cannot be converted to a double is passed in.</span></span>|  
+|<xref:System.ArgumentOutOfRangeException>|<span data-ttu-id="df8dc-153"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> lève cette exception quand une valeur supérieure à 100 ou inférieure à 0 est passée (sauf -1 qui est équivalent à <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>).</span><span class="sxs-lookup"><span data-stu-id="df8dc-153"><xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> throws this exception when a value greater than 100 or less than 0 is passed in (except -1 which is equivalent to <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>).</span></span>|  
+|<xref:System.InvalidOperationException>|<span data-ttu-id="df8dc-154"><xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> et <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> lèvent cette exception lors d’une tentative de défilement dans une direction non prise en charge.</span><span class="sxs-lookup"><span data-stu-id="df8dc-154">Both <xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> and <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> throw this exception when an attempt is made to scroll in an unsupported direction.</span></span>|  
   
-## Voir aussi  
- [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [UI Automation Control Patterns for Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
- [Use Caching in UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+## <a name="see-also"></a><span data-ttu-id="df8dc-155">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="df8dc-155">See Also</span></span>  
+ [<span data-ttu-id="df8dc-156">Vue d’ensemble du modèles contrôle UI Automation</span><span class="sxs-lookup"><span data-stu-id="df8dc-156">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="df8dc-157">Prise en charge des modèles de contrôle dans un fournisseur UI Automation</span><span class="sxs-lookup"><span data-stu-id="df8dc-157">Support Control Patterns in a UI Automation Provider</span></span>](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [<span data-ttu-id="df8dc-158">Modèles de contrôle UI Automation pour les Clients</span><span class="sxs-lookup"><span data-stu-id="df8dc-158">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="df8dc-159">Vue d’ensemble d’arborescence UI Automation</span><span class="sxs-lookup"><span data-stu-id="df8dc-159">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="df8dc-160">Utiliser la mise en cache dans UI Automation</span><span class="sxs-lookup"><span data-stu-id="df8dc-160">Use Caching in UI Automation</span></span>](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

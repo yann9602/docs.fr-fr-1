@@ -1,78 +1,78 @@
 ---
-title: "Guide de la documentation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "WCF (WCF), documentation"
-  - "Windows Communication Foundation (WCF), documentation"
+title: Guide de la documentation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF [WCF], documentation
+- Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-caps.latest.revision: 36
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 36
+caps.latest.revision: "36"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c2117434fcfe258179348618a8f9d4acbcda3c41
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Guide de la documentation
-Les indications fournies dans cette rubrique concernent la documentation [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].Les documents liés sont des points de départ recommandés regroupés en fonction d'intérêts et de niveaux d'expertise spécifiques.  
+# <a name="guide-to-the-documentation"></a><span data-ttu-id="07f8b-102">Guide de la documentation</span><span class="sxs-lookup"><span data-stu-id="07f8b-102">Guide to the Documentation</span></span>
+<span data-ttu-id="07f8b-103">Les indications fournies dans cette rubrique concernent la documentation [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="07f8b-103">Provided here is guidance about the [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] documentation.</span></span> <span data-ttu-id="07f8b-104">Les documents liés sont des points de départ recommandés regroupés en fonction d'intérêts et de niveaux d'expertise spécifiques.</span><span class="sxs-lookup"><span data-stu-id="07f8b-104">The linked documents are recommended starting points grouped according to specific interests and levels of expertise.</span></span>  
   
- Pour installer une version autonome de la documentation et une visionneuse de l'aide, téléchargez le [Kit de développement logiciel Microsoft Windows SDK version 7.1](http://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409).  
+ <span data-ttu-id="07f8b-105">Pour installer une version autonome d’une visionneuse d’aide et de la documentation, téléchargez le [Microsoft Windows SDK v 7.1](http://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409).</span><span class="sxs-lookup"><span data-stu-id="07f8b-105">To install a stand-alone version of the documentation and a Help viewer, download the [Microsoft Windows SDK v 7.1](http://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409).</span></span>  
   
-## Nouveautés concernant la programmation WCF \(Windows Communication Foundation\)  
+## <a name="new-to-windows-communication-foundation-programming"></a><span data-ttu-id="07f8b-106">Nouveautés concernant la programmation WCF (Windows Communication Foundation)</span><span class="sxs-lookup"><span data-stu-id="07f8b-106">New to Windows Communication Foundation Programming</span></span>  
   
--   Si vous êtes novice dans la programmation à l'aide de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] et que vous souhaitez simplement obtenir des exemples d'applications qui fonctionnent, consultez les rubriques répertoriées dans [Exemples Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md).  
+-   <span data-ttu-id="07f8b-107">Si vous débutez en programmation avec [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] et que vous souhaitez simplement voir des exemples d’applications, consultez les rubriques répertoriées dans [exemples Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-107">If you are new to programming with [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] and you just want to see sample applications that work, see the topics listed in [Windows Communication Foundation Samples](../../../docs/framework/wcf/samples/index.md).</span></span>  
   
--   Pour accéder à un didacticiel présentant les étapes de base de la création d'un client et d'un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez [Didacticiel de mise en route](../../../docs/framework/wcf/getting-started-tutorial.md).  
+-   <span data-ttu-id="07f8b-108">Pour obtenir un didacticiel qui vous guide à travers les étapes de base de création d’un [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service et le client, consultez [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-108">For a tutorial that walks through the basic steps of creating a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service and client, see [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md).</span></span>  
   
--   Si vous vous intéressez aux concepts sous\-jacents de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez les rubriques de la section [Vue d'ensemble conceptuelle](../../../docs/framework/wcf/conceptual-overview.md).  
+-   <span data-ttu-id="07f8b-109">Si vous êtes intéressé par les concepts qui sous-tendent [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez les rubriques de la [vue d’ensemble conceptuelle](../../../docs/framework/wcf/conceptual-overview.md) section.</span><span class="sxs-lookup"><span data-stu-id="07f8b-109">If you are interested in the concepts behind [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], see the topics in the [Conceptual Overview](../../../docs/framework/wcf/conceptual-overview.md) section.</span></span>  
   
--   Pour consulter des exemples graphiques de configurations de sécurité client\/serveur, consultez [Scénarios de sécurité courants](../../../docs/framework/wcf/feature-details/common-security-scenarios.md).  
+-   <span data-ttu-id="07f8b-110">Pour obtenir des exemples de graphiques de configurations de sécurité client/serveur, consultez [des scénarios de sécurité courants](../../../docs/framework/wcf/feature-details/common-security-scenarios.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-110">To see graphic examples of client/server security configurations, see [Common Security Scenarios](../../../docs/framework/wcf/feature-details/common-security-scenarios.md).</span></span>  
   
-## Programmation approfondie  
+## <a name="programming-in-depth"></a><span data-ttu-id="07f8b-111">Programmation approfondie</span><span class="sxs-lookup"><span data-stu-id="07f8b-111">Programming In-Depth</span></span>  
   
--   Si vous avez le niveau requis pour développer une application, consultez [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md).  
+-   <span data-ttu-id="07f8b-112">Si vous êtes prêt à commencer à développer une application, consultez [programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-112">If you are ready to start developing an application, see [Basic WCF Programming](../../../docs/framework/wcf/basic-wcf-programming.md).</span></span>  
   
--   Si vous recherchez des informations sur une fonction ou une fonctionnalité spécifique de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez les rubriques sous [Informations détaillées sur les fonctionnalités de WCF](../../../docs/framework/wcf/feature-details/index.md).  
+-   <span data-ttu-id="07f8b-113">Si vous recherchez des conseils pour une fonctionnalité particulière ou d’une capacité de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez les rubriques sous [détails sur les fonctionnalités de WCF](../../../docs/framework/wcf/feature-details/index.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-113">If you are looking for guidance about a particular feature or capability of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], see the topics under [WCF Feature Details](../../../docs/framework/wcf/feature-details/index.md).</span></span>  
   
--   Si vous souhaitez étendre ou adapter [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] à vos besoins spécifiques, consultez [Extension de WCF](../../../docs/framework/wcf/extending/extending-wcf.md).  
+-   <span data-ttu-id="07f8b-114">Si vous souhaitez étendre ou personnaliser [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] selon vos besoins, consultez [extension de WCF](../../../docs/framework/wcf/extending/extending-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-114">If you would like to extend or customize [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] to suit your requirements, see [Extending WCF](../../../docs/framework/wcf/extending/extending-wcf.md).</span></span>  
   
--   Pour plus d'informations sur les outils permettant de créer et de déboguer des applications [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez [Outils de Windows Communication Foundation](../../../docs/framework/wcf/tools.md).  
+-   <span data-ttu-id="07f8b-115">Pour plus d’informations sur les outils qui aident à créer et déboguer [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] les applications, consultez [outils Windows Communication Foundation](../../../docs/framework/wcf/tools.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-115">For information about the tools that help to create and debug [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] applications, see [Windows Communication Foundation Tools](../../../docs/framework/wcf/tools.md).</span></span>  
   
--   La configuration à l'aide de fichiers XML est l'une des principales méthodes de programmation des clients et des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].Pour obtenir de la documentation de référence concernant les éléments XML utilisés dans les fichiers de configuration, consultez [Schéma de configuration WCF](../../../docs/framework/configure-apps/file-schema/wcf/index.md).  
+-   <span data-ttu-id="07f8b-116">La configuration à l'aide de fichiers XML est l'une des principales méthodes de programmation des clients et des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="07f8b-116">Configuration using XML files is a primary way of programming [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services and clients.</span></span> <span data-ttu-id="07f8b-117">Pour la documentation de référence pour les éléments XML utilisés dans les fichiers de configuration, consultez [schéma de Configuration WCF](../../../docs/framework/configure-apps/file-schema/wcf/index.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-117">For reference documentation for the XML elements used in configuration files, see [WCF Configuration Schema](../../../docs/framework/configure-apps/file-schema/wcf/index.md).</span></span>  
   
-## Résolution des problèmes  
- Pour plus d'informations sur la résolution de problèmes [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] courants, consultez [Démarrage rapide de la résolution des problèmes WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md).  
+## <a name="troubleshooting"></a><span data-ttu-id="07f8b-118">Résolution des problèmes</span><span class="sxs-lookup"><span data-stu-id="07f8b-118">Troubleshooting</span></span>  
+ <span data-ttu-id="07f8b-119">Pour plus d’informations sur la résolution des problèmes courants [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] des problèmes, consultez [démarrage rapide de résolution des problèmes WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-119">For information about troubleshooting common [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] problems, see [WCF Troubleshooting Quickstart](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md).</span></span>  
   
-## Utilisation de WCF \(Windows Communication Foundation\) avec d'autres technologies  
+## <a name="using-windows-communication-foundation-with-other-technologies"></a><span data-ttu-id="07f8b-120">Utilisation de WCF (Windows Communication Foundation) avec d'autres technologies</span><span class="sxs-lookup"><span data-stu-id="07f8b-120">Using Windows Communication Foundation with Other Technologies</span></span>  
   
--   Pour créer un service qui communique avec les clients ASP.NET, consultez [Comment : configurer le service WCF pour interagir avec des clients du service Web ASP.NET](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md).  
+-   <span data-ttu-id="07f8b-121">Pour créer un service qui communique avec les clients d’ASP.NET, consultez [Comment : configurer le Service WCF pour assurer l’interopérabilité avec les Clients de Service Web ASP.NET](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-121">To create a service that communicates with ASP.NET clients, see [How to: Configure WCF Service to Interoperate with ASP.NET Web Service Clients](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md).</span></span>  
   
--   L'intégration avec [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Remoting est expliquée dans [Migration d'applications .NET Remoting vers WCF](../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md).  
+-   <span data-ttu-id="07f8b-122">Intégration avec [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] la communication à distance est expliquée dans [migration d’Applications .NET Remoting à WCF](../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-122">Integration with [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] remoting is explained in [Migrating .NET Remoting Applications to WCF](../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md).</span></span>  
   
--   Pour intégrer une application COM\+ existante avec un client ou un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez [Vue d'ensemble de l'intégration à des applications COM\+](../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md).  
+-   <span data-ttu-id="07f8b-123">Pour intégrer une application COM + existante avec un [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service ou client, consultez [intégrant la vue d’ensemble des Applications COM +](../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-123">To integrate an existing COM+ application with a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service or client, see [Integrating with COM+ Applications Overview](../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md).</span></span>  
   
--   Pour intégrer une application COM existante avec un client ou un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez [Intégration à des applications COM](../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md).  
+-   <span data-ttu-id="07f8b-124">Pour intégrer une application COM avec un [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service ou client, consultez [intégration à des Applications COM](../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-124">To integrate an existing COM application with a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service or client, see [Integrating with COM Applications](../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md).</span></span>  
   
--   Pour intégrer une application MSMQ existante avec un client ou un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez [Comment : échanger des messages en file d'attente avec des points de terminaison WCF](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md) et [Comment : échanger des messages avec des points de terminaison WCF et des applications Message Queuing](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
+-   <span data-ttu-id="07f8b-125">Pour intégrer une application MSMQ existante avec un [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service ou client, consultez [Comment : Exchange en file d’attente des Messages avec des points de terminaison WCF](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md) et [Comment : échanger des Messages avec les points de terminaison WCF et Message Queuing Applications](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-125">To integrate an existing MSMQ application with a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service or client, see [How to: Exchange Queued Messages with WCF Endpoints](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md) and [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).</span></span>  
   
--   Pour utiliser les services IIS \(Internet Information Services\) afin d'héberger un service, consultez [Hébergement de services](../../../docs/framework/wcf/hosting-services.md).  
+-   <span data-ttu-id="07f8b-126">Pour utiliser Internet Information Services (IIS) pour héberger un service, consultez [Services d’hébergement](../../../docs/framework/wcf/hosting-services.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-126">To use Internet Information Services (IIS) to host a service, see [Hosting Services](../../../docs/framework/wcf/hosting-services.md).</span></span>  
   
--   Pour utiliser [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] afin de consommer un service WSE \(Web Services Extensions\) 3.0, consultez [Comment : accéder à un service WSE 3.0](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).  
+-   <span data-ttu-id="07f8b-127">Pour utiliser [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] pour consommer un service Web Services Extensions (WSE) 3.0, consultez [Comment : accéder à un Service de 3.0 WSE](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-127">To use [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] to consume a Web Services Extensions (WSE) 3.0 service, see [How to: Access a WSE 3.0 Service](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).</span></span>  
   
-## WS\-\* Protocoles pris en charge dans WCF \(Windows Communication Foundation\)  
- Pour consulter la liste des protocoles pris en charge dans les liaisons fournies par le système, consultez [Protocoles de services Web pris en charge par des liaisons d'interopérabilité fournies par le système](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md).Pour consulter la liste de liaisons fournies par le système, consultez [Liaisons fournies par le système](../../../docs/framework/wcf/system-provided-bindings.md).  
+## <a name="ws--protocols-supported-in-windows-communication-foundation"></a><span data-ttu-id="07f8b-128">WS-* Protocoles pris en charge dans WCF (Windows Communication Foundation)</span><span class="sxs-lookup"><span data-stu-id="07f8b-128">WS-* Protocols Supported in Windows Communication Foundation</span></span>  
+ <span data-ttu-id="07f8b-129">Pour obtenir une liste des protocoles pris en charge dans les liaisons fournies par le système, consultez [Web Services protocoles pris en charge par les liaisons d’interopérabilité fournies par](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-129">To see a list of protocols supported in the system-provided bindings, see [Web Services Protocols Supported by System-Provided Interoperability Bindings](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md).</span></span> <span data-ttu-id="07f8b-130">Pour obtenir la liste des liaisons fournies par le système, consultez [les liaisons fournies](../../../docs/framework/wcf/system-provided-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="07f8b-130">To see the list of system-provided bindings, see [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md).</span></span>  
   
-## Voir aussi  
- [Exemples Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)   
- [Vue d'ensemble conceptuelle](../../../docs/framework/wcf/conceptual-overview.md)   
- [Indications et meilleures pratiques](../../../docs/framework/wcf/guidelines-and-best-practices.md)   
- [Génération de clients](../../../docs/framework/wcf/building-clients.md)
+## <a name="see-also"></a><span data-ttu-id="07f8b-131">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="07f8b-131">See Also</span></span>  
+ [<span data-ttu-id="07f8b-132">Exemples Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="07f8b-132">Windows Communication Foundation Samples</span></span>](../../../docs/framework/wcf/samples/index.md)  
+ [<span data-ttu-id="07f8b-133">Vue d’ensemble conceptuelle</span><span class="sxs-lookup"><span data-stu-id="07f8b-133">Conceptual Overview</span></span>](../../../docs/framework/wcf/conceptual-overview.md)  
+ [<span data-ttu-id="07f8b-134">Conseils et bonnes pratiques</span><span class="sxs-lookup"><span data-stu-id="07f8b-134">Guidelines and Best Practices</span></span>](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
+ [<span data-ttu-id="07f8b-135">Génération de clients</span><span class="sxs-lookup"><span data-stu-id="07f8b-135">Building Clients</span></span>](../../../docs/framework/wcf/building-clients.md)

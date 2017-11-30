@@ -1,29 +1,32 @@
 ---
-title: "Message Queuing to Windows Communication Foundation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Message Queuing to Windows Communication Foundation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
-caps.latest.revision: 34
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 34
+caps.latest.revision: "34"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a57e8d4f03406f975d0788d3ad085985478d59e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Message Queuing to Windows Communication Foundation
-Cet exemple montre comment une application MSMQ \(Message Queuing\) peut envoyer un message MSMQ à un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].Le service est une application console auto\-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente.  
+# <a name="message-queuing-to-windows-communication-foundation"></a><span data-ttu-id="87db5-102">Message Queuing to Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="87db5-102">Message Queuing to Windows Communication Foundation</span></span>
+<span data-ttu-id="87db5-103">Cet exemple montre comment une application MSMQ (Message Queuing) peut envoyer un message MSMQ à un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="87db5-103">This sample demonstrates how a Message Queuing (MSMQ) application can send an MSMQ message to a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service.</span></span> <span data-ttu-id="87db5-104">Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.</span><span class="sxs-lookup"><span data-stu-id="87db5-104">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  
   
- Le contrat de service est `IOrderProcessor`, qui définit un service monodirectionnel pouvant être utilisé avec des files d'attente.Un message MSMQ n'ayant pas d'en\-tête Action, il n'est donc pas possible de mapper automatiquement des messages MSMQ différents aux contrats d'opération.Par conséquent, il ne peut y avoir qu'un seul contrat d'opération.Si vous souhaitez définir plusieurs contrats d'opération pour le service, l'application doit fournir des informations sur l'en\-tête dans le message MSMQ \(par exemple, l'étiquette ou correlationID\) qui peut être utilisé pour déterminer le contrat d'opération à distribuer.Cela est illustré dans [Custom Demux](../../../../docs/framework/wcf/samples/custom-demux.md).  
+ <span data-ttu-id="87db5-105">Le contrat de service est `IOrderProcessor`, qui définit un service monodirectionnel qui peut être utilisé avec des files d'attente.</span><span class="sxs-lookup"><span data-stu-id="87db5-105">The service contract is `IOrderProcessor`, which defines a one-way service that is suitable for use with queues.</span></span> <span data-ttu-id="87db5-106">Un message MSMQ n'ayant pas d'en-tête Action, il n'est donc pas possible de mapper automatiquement des messages MSMQ différents aux contrats d'opération.</span><span class="sxs-lookup"><span data-stu-id="87db5-106">An MSMQ message does not have an Action header, so it is not possible to map different MSMQ messages to operation contracts automatically.</span></span> <span data-ttu-id="87db5-107">Par conséquent, il ne peut y avoir qu'un seul contrat d'opération.</span><span class="sxs-lookup"><span data-stu-id="87db5-107">Therefore, there can be only one operation contract.</span></span> <span data-ttu-id="87db5-108">Si vous souhaitez définir plusieurs contrats d'opération pour le service, l'application doit fournir des informations sur l'en-tête dans le message MSMQ (par exemple, l'étiquette ou correlationID) qui peut être utilisé pour déterminer le contrat d'opération à distribuer.</span><span class="sxs-lookup"><span data-stu-id="87db5-108">If you want to define more than one operation contract for the service, the application must provide information as to which header in the MSMQ message (for example, the label or correlationID) can be used to decide which operation contract to dispatch.</span></span> <span data-ttu-id="87db5-109">Cela est illustré dans le [personnalisé Demux](../../../../docs/framework/wcf/samples/custom-demux.md).</span><span class="sxs-lookup"><span data-stu-id="87db5-109">This is demonstrated in the [Custom Demux](../../../../docs/framework/wcf/samples/custom-demux.md).</span></span>  
   
- Le message MSMQ ne contient pas d'informations concernant les en\-têtes qui sont mappés à différents paramètres du contrat d'opération.Le paramètre est de type <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>\(`MsmqMessage<T>`\), lequel contient le message MSMQ sous\-jacent.Le type "T" dans la classe <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>\(`MsmqMessage<T>`\) représente les données sérialisées dans le corps du message MSMQ.Dans cet exemple, le type `PurchaseOrder` est sérialisé dans le corps du message MSMQ.  
+ <span data-ttu-id="87db5-110">Le message MSMQ ne contient pas d'informations concernant les en-têtes qui sont mappés à différents paramètres du contrat d'opération.</span><span class="sxs-lookup"><span data-stu-id="87db5-110">The MSMQ message does not contain information as to which headers are mapped to the different parameters of the operation contract.</span></span> <span data-ttu-id="87db5-111">Le paramètre est de type <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), lequel contient le message MSMQ sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="87db5-111">The parameter is of type <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), which contains the underlying MSMQ message.</span></span> <span data-ttu-id="87db5-112">Le type "T" dans la classe <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) représente les données sérialisées dans le corps du message MSMQ.</span><span class="sxs-lookup"><span data-stu-id="87db5-112">The type "T" in the <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) class represents the data that is serialized into the MSMQ message body.</span></span> <span data-ttu-id="87db5-113">Dans cet exemple, le type `PurchaseOrder` est sérialisé dans le corps du message MSMQ.</span><span class="sxs-lookup"><span data-stu-id="87db5-113">In this sample, the `PurchaseOrder` type is serialized into the MSMQ message body.</span></span>  
   
- L'exemple de code suivant présente le contrat de service du service du traitement des commandes.  
+ <span data-ttu-id="87db5-114">L'exemple de code suivant présente le contrat de service du service du traitement des commandes.</span><span class="sxs-lookup"><span data-stu-id="87db5-114">The following sample code shows the service contract of the order processing service.</span></span>  
   
 ```  
 // Define a service contract.  
@@ -34,10 +37,9 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, Action = "*")]  
     void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg);  
 }  
-  
 ```  
   
- Le service est auto\-hébergé.Lorsque vous utilisez MSMQ, vous devez créer au préalable la file d'attente utilisée.Cela peut s'effectuer manuellement ou via le code.Dans cet exemple, le service vérifie l'existence de la file d'attente et la crée, si nécessaire.Le nom de la file d'attente est lu depuis le fichier de configuration.  
+ <span data-ttu-id="87db5-115">Le service est auto-hébergé.</span><span class="sxs-lookup"><span data-stu-id="87db5-115">The service is self hosted.</span></span> <span data-ttu-id="87db5-116">Lorsque vous utilisez MSMQ, vous devez créer au préalable la file d'attente utilisée.</span><span class="sxs-lookup"><span data-stu-id="87db5-116">When using MSMQ, the queue used must be created in advance.</span></span> <span data-ttu-id="87db5-117">Cela peut s'effectuer manuellement ou via le code.</span><span class="sxs-lookup"><span data-stu-id="87db5-117">This can be done manually or through code.</span></span> <span data-ttu-id="87db5-118">Dans cet exemple, le service vérifie l'existence de la file d'attente et la crée, si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="87db5-118">In this sample, the service checks for the existence of the queue and creates it if required.</span></span> <span data-ttu-id="87db5-119">Le nom de la file d'attente est lu depuis le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="87db5-119">The queue name is read from the configuration file.</span></span>  
   
 ```  
 public static void Main()  
@@ -50,10 +52,9 @@ public static void Main()
         MessageQueue.Create(queueName, true);  
     …  
 }  
-  
 ```  
   
- Le service crée et ouvre <xref:System.ServiceModel.ServiceHost> pour `OrderProcessorService`, tel qu'indiqué dans l'exemple de code suivant.  
+ <span data-ttu-id="87db5-120">Le service crée et ouvre <xref:System.ServiceModel.ServiceHost> pour `OrderProcessorService`, tel qu'indiqué dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="87db5-120">The service creates and opens a <xref:System.ServiceModel.ServiceHost> for the `OrderProcessorService`, as shown in the following sample code.</span></span>  
   
 ```  
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))  
@@ -64,22 +65,20 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
     Console.ReadLine();  
     serviceHost.Close();  
 }  
-  
 ```  
   
- Le nom de file d'attente MSMQ est spécifié dans une section appSettings du fichier de configuration, tel qu'indiqué dans l'exemple de configuration suivant.  
+ <span data-ttu-id="87db5-121">Le nom de file d'attente MSMQ est spécifié dans une section appSettings du fichier de configuration, tel qu'indiqué dans l'exemple de configuration suivant.</span><span class="sxs-lookup"><span data-stu-id="87db5-121">The MSMQ queue name is specified in an appSettings section of the configuration file, as shown in the following sample configuration.</span></span>  
   
 > [!NOTE]
->  Le nom de la file d'attente utilise un point \(.\) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès.L'adresse du point de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spécifie un schéma msmq.formatname et utilise « localhost » pour l'ordinateur local.L'adresse de la file d'attente pour les règles d'adressage de chaque nom de format MSMQ suit le schéma msmq.formatname.  
+>  <span data-ttu-id="87db5-122">Le nom de la file d'attente utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès.</span><span class="sxs-lookup"><span data-stu-id="87db5-122">The queue name uses a dot (.) for the local computer and backslash separators in its path.</span></span> <span data-ttu-id="87db5-123">L'adresse du point de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spécifie un schéma msmq.formatname et utilise « localhost » pour l'ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="87db5-123">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] endpoint address specifies a msmq.formatname scheme, and uses localhost for the local computer.</span></span> <span data-ttu-id="87db5-124">L'adresse de la file d'attente pour les règles d'adressage de chaque nom de format MSMQ suit le schéma msmq.formatname.</span><span class="sxs-lookup"><span data-stu-id="87db5-124">The address of the queue for each MSMQ Format Name addressing guidelines follows the msmq.formatname scheme.</span></span>  
   
-```  
+```xml  
 <appSettings>  
     <add key="orderQueueName" value=".\private$\Orders" />  
 </appSettings>  
-  
 ```  
   
- L'application cliente est une application MSMQ qui utilise la méthode <xref:System.Messaging.MessageQueue.Send%2A> pour envoyer un message fiable et transactionnel à la file d'attente, tel qu'indiqué dans l'exemple de code suivant.  
+ <span data-ttu-id="87db5-125">L'application cliente est une application MSMQ qui utilise la méthode <xref:System.Messaging.MessageQueue.Send%2A> pour envoyer un message fiable et transactionnel à la file d'attente, tel qu'indiqué dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="87db5-125">The client application is an MSMQ application that uses the <xref:System.Messaging.MessageQueue.Send%2A> method to send a durable and transactional message to the queue, as shown in the following sample code.</span></span>  
   
 ```  
 //Connect to the queue.  
@@ -119,53 +118,52 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
 Console.WriteLine("Placed the order:{0}", po);  
 Console.WriteLine("Press <ENTER> to terminate client.");  
 Console.ReadLine();  
-  
 ```  
   
- Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent à la fois dans les fenêtres de console du service et du client.Vous pouvez voir le service recevoir des messages du client.Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.Par exemple, vous pouvez exécuter le client, l'arrêtez, puis démarrer le service et il recevra toujours ses messages.  
+ <span data-ttu-id="87db5-126">Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives.</span><span class="sxs-lookup"><span data-stu-id="87db5-126">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="87db5-127">Vous pouvez voir le service recevoir des messages du client.</span><span class="sxs-lookup"><span data-stu-id="87db5-127">You can see the service receive messages from the client.</span></span> <span data-ttu-id="87db5-128">Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.</span><span class="sxs-lookup"><span data-stu-id="87db5-128">Press ENTER in each console window to shut down the service and client.</span></span> <span data-ttu-id="87db5-129">Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.</span><span class="sxs-lookup"><span data-stu-id="87db5-129">Note that because queuing is in use, the client and service do not have to be up and running at the same time.</span></span> <span data-ttu-id="87db5-130">Par exemple, vous pouvez exécuter le client, l'arrêtez, puis démarrer le service et il recevra toujours ses messages.</span><span class="sxs-lookup"><span data-stu-id="87db5-130">For example, you could run the client, shut it down, and then start up the service and it would still receive its messages.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-setup-build-and-run-the-sample"></a><span data-ttu-id="87db5-131">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="87db5-131">To setup, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="87db5-132">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="87db5-132">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Si le service est exécuté en premier, il vérifie que la file d'attente existe.Si la file d'attente n'existe pas, le service en crée une.Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ.Procédez comme suit pour créer une file d'attente dans Windows 2008 :  
+2.  <span data-ttu-id="87db5-133">Si le service est exécuté en premier, il vérifie que la file d'attente existe.</span><span class="sxs-lookup"><span data-stu-id="87db5-133">If the service is run first, it will check to ensure that the queue is present.</span></span> <span data-ttu-id="87db5-134">Si la file d'attente n'existe pas, le service en crée une.</span><span class="sxs-lookup"><span data-stu-id="87db5-134">If the queue is not present, the service will create one.</span></span> <span data-ttu-id="87db5-135">Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ.</span><span class="sxs-lookup"><span data-stu-id="87db5-135">You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager.</span></span> <span data-ttu-id="87db5-136">Procédez comme suit pour créer une file d'attente dans Windows 2008 :</span><span class="sxs-lookup"><span data-stu-id="87db5-136">Follow these steps to create a queue in Windows 2008.</span></span>  
   
-    1.  Ouvrez le Gestionnaire de serveur dans [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
+    1.  <span data-ttu-id="87db5-137">Ouvrez le Gestionnaire de serveur dans [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="87db5-137">Open Server Manager in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
   
-    2.  Développez l'onglet **Fonctionnalités**.  
+    2.  <span data-ttu-id="87db5-138">Développez le **fonctionnalités** onglet.</span><span class="sxs-lookup"><span data-stu-id="87db5-138">Expand the **Features** tab.</span></span>  
   
-    3.  Cliquez avec le bouton droit sur **Files d'attente de messages privées**, puis cliquez sur **Nouveau**, **File d'attente privée**.  
+    3.  <span data-ttu-id="87db5-139">Avec le bouton droit **files d’attente de messages privées**, puis sélectionnez **nouveau**, **file d’attente privée**.</span><span class="sxs-lookup"><span data-stu-id="87db5-139">Right-click **Private Message Queues**, and select **New**, **Private Queue**.</span></span>  
   
-    4.  Activez la case à cocher **Transactionnelle**.  
+    4.  <span data-ttu-id="87db5-140">Vérifiez le **transactionnel** boîte.</span><span class="sxs-lookup"><span data-stu-id="87db5-140">Check the **Transactional** box.</span></span>  
   
-    5.  Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d'attente.  
+    5.  <span data-ttu-id="87db5-141">Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.</span><span class="sxs-lookup"><span data-stu-id="87db5-141">Enter `ServiceModelSamplesTransacted` as the name of the new queue.</span></span>  
   
-3.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  <span data-ttu-id="87db5-142">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="87db5-142">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-4.  Pour exécuter l'exemple dans une configuration à un seul ordinateur, conformez\-vous instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  <span data-ttu-id="87db5-143">Pour exécuter l’exemple dans une configuration sur un seul ordinateur, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="87db5-143">To run the sample in a single- computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-### Pour exécuter l'exemple sur plusieurs ordinateurs  
+### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="87db5-144">Pour exécuter l'exemple sur plusieurs ordinateurs</span><span class="sxs-lookup"><span data-stu-id="87db5-144">To run the sample across computers</span></span>  
   
-1.  Copiez les fichiers programme du service figurant dans le dossier \\service\\bin\\ \(situé dans le dossier correspondant à votre langue\) sur l'ordinateur de service.  
+1.  <span data-ttu-id="87db5-145">Copiez les fichiers programme du service figurant dans le dossier \service\bin\ (situé dans le dossier correspondant à votre langue) sur l'ordinateur de service.</span><span class="sxs-lookup"><span data-stu-id="87db5-145">Copy the service program files from the \service\bin\ folder, under the language-specific folder, to the service computer.</span></span>  
   
-2.  Copiez les fichiers programme du client du dossier \\client\\bin\\ \(situé dans le dossier correspondant à votre langue\) sur l'ordinateur client.  
+2.  <span data-ttu-id="87db5-146">Copiez les fichiers programme du client du dossier \client\bin\ (situé dans le dossier correspondant à votre langue) sur l'ordinateur client.</span><span class="sxs-lookup"><span data-stu-id="87db5-146">Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client computer.</span></span>  
   
-3.  Dans le fichier Client.exe.config, dans orderQueueName, remplacez « . » par le nom de l'ordinateur de service.  
+3.  <span data-ttu-id="87db5-147">Dans le fichier Client.exe.config, dans orderQueueName, remplacez « . » par le nom de l'ordinateur de service.</span><span class="sxs-lookup"><span data-stu-id="87db5-147">In the Client.exe.config file, change the orderQueueName to specify the service computer name instead of ".".</span></span>  
   
-4.  Sur l'ordinateur de service, lancez Service.exe à partir d'une invite de commandes.  
+4.  <span data-ttu-id="87db5-148">Sur l'ordinateur de service, lancez Service.exe à partir d'une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="87db5-148">On the service computer, launch Service.exe from a command prompt.</span></span>  
   
-5.  Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes.  
+5.  <span data-ttu-id="87db5-149">Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="87db5-149">On the client computer, launch Client.exe from a command prompt.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="87db5-150">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="87db5-150">The samples may already be installed on your computer.</span></span> <span data-ttu-id="87db5-151">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="87db5-151">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="87db5-152">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="87db5-152">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="87db5-153">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="87db5-153">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MsmqToWcf`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MsmqToWcf`  
   
-## Voir aussi  
- [Files d'attente dans WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)   
- [Comment : échanger des messages avec des points de terminaison WCF et des applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)   
- [Message Queuing \(page pouvant être en anglais\)](http://go.microsoft.com/fwlink/?LinkId=94968)
+## <a name="see-also"></a><span data-ttu-id="87db5-154">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="87db5-154">See Also</span></span>  
+ [<span data-ttu-id="87db5-155">Files d’attente dans WCF</span><span class="sxs-lookup"><span data-stu-id="87db5-155">Queues in WCF</span></span>](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
+ [<span data-ttu-id="87db5-156">Comment : échanger des Messages avec des points de terminaison WCF et les Applications Message Queuing</span><span class="sxs-lookup"><span data-stu-id="87db5-156">How to: Exchange Messages with WCF Endpoints and Message Queuing Applications</span></span>](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ [<span data-ttu-id="87db5-157">Message Queuing</span><span class="sxs-lookup"><span data-stu-id="87db5-157">Message Queuing</span></span>](http://go.microsoft.com/fwlink/?LinkId=94968)

@@ -1,44 +1,44 @@
 ---
-title: "Vue d&#39;ensemble du contr&#244;le ComboBox (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ComboBox"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "zones de liste déroulante, à propos des zones de liste déroulante"
-  - "ComboBox (contrôle Windows Forms), à propos du contrôle ComboBox"
-  - "listes déroulantes, ComboBox (contrôle)"
-  - "listes déroulantes, Windows Forms"
+title: "Vue d'ensemble du contrôle ComboBox (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ComboBox
+helpviewer_keywords:
+- drop-down lists [Windows Forms], Windows Forms
+- ComboBox control [Windows Forms], about ComboBox control
+- drop-down lists [Windows Forms], ComboBox control
+- combo boxes [Windows Forms], about combo boxes
 ms.assetid: a58b393f-a614-45d1-8961-857a024b5acd
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 979a410020ab6e3a1f2c15dcee52b062eb00c1ac
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble du contr&#244;le ComboBox (Windows Forms)
-Le contrôle <xref:System.Windows.Forms.ComboBox> Windows Forms permet d'afficher des données dans une zone de liste déroulante fixe.  Par défaut, le contrôle <xref:System.Windows.Forms.ComboBox> comporte deux parties. Dans la partie supérieure figure une zone de texte dans laquelle l'utilisateur peut taper le nom d'un élément de la liste.  La seconde partie comprend une zone de liste dans laquelle l'utilisateur peut sélectionner un élément.  Pour plus d'informations sur d'autres styles de zone de liste déroulante, consultez [Utilisation d'un contrôle ComboBox Windows Forms à la place d'un contrôle ListBox](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md).  
+# <a name="combobox-control-overview-windows-forms"></a><span data-ttu-id="5aeec-102">Vue d'ensemble du contrôle ComboBox (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="5aeec-102">ComboBox Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="5aeec-103">Windows Forms <xref:System.Windows.Forms.ComboBox> contrôle est utilisé pour afficher des données dans une zone de liste déroulante modifiable.</span><span class="sxs-lookup"><span data-stu-id="5aeec-103">The Windows Forms <xref:System.Windows.Forms.ComboBox> control is used to display data in a drop-down combo box.</span></span> <span data-ttu-id="5aeec-104">Par défaut, le <xref:System.Windows.Forms.ComboBox> contrôle s’affiche en deux parties : la partie supérieure est une zone de texte qui permet à l’utilisateur à taper un élément de liste.</span><span class="sxs-lookup"><span data-stu-id="5aeec-104">By default, the <xref:System.Windows.Forms.ComboBox> control appears in two parts: the top part is a text box that allows the user to type a list item.</span></span> <span data-ttu-id="5aeec-105">La deuxième partie est une zone de liste qui affiche une liste d’éléments à partir de laquelle l’utilisateur peut sélectionner un.</span><span class="sxs-lookup"><span data-stu-id="5aeec-105">The second part is a list box that displays a list of items from which the user can select one.</span></span> <span data-ttu-id="5aeec-106">Pour plus d’informations sur d’autres styles de zone de liste déroulante, consultez [quand utiliser un contrôle ComboBox Instead of un contrôle ListBox Windows Forms](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md).</span><span class="sxs-lookup"><span data-stu-id="5aeec-106">For more information on other styles of combo box, see [When to Use a Windows Forms ComboBox Instead of a ListBox](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md).</span></span>  
   
- La propriété <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> retourne un entier correspondant à l'élément de liste sélectionné.  Vous pouvez modifier par programme l'élément sélectionné en changeant la valeur de la propriété <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> dans le code ; l'élément de liste correspondant apparaîtra dans la zone de texte de la zone de liste déroulante.  Si aucun élément n'est sélectionné, la valeur de <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> est \-1.  Si le premier élément de la liste est sélectionné, la valeur de <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> est 0.  La propriété <xref:System.Windows.Forms.ComboBox.SelectedItem%2A> est similaire à la propriété <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>, à cela près qu'elle retourne l'élément lui\-même, en général une valeur de chaîne.  La propriété <xref:System.Windows.Forms.ComboBox.ObjectCollection.Count%2A> indique le nombre d'éléments contenus dans la liste et la valeur de la propriété <xref:System.Windows.Forms.ComboBox.ObjectCollection.Count%2A> est toujours supérieure d'une unité à celle de la plus haute valeur de <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>, car la propriété <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> est numérotée à partir de zéro.  
+ <span data-ttu-id="5aeec-107">Le <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> propriété retourne une valeur entière qui correspond à l’élément sélectionné.</span><span class="sxs-lookup"><span data-stu-id="5aeec-107">The <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> property returns an integer value that corresponds to the selected list item.</span></span> <span data-ttu-id="5aeec-108">Vous pouvez modifier par programme l’élément sélectionné en modifiant le <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> de valeur dans le code ; l’élément correspondant dans la liste s’affiche dans la zone de texte de la zone de liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="5aeec-108">You can programmatically change the selected item by changing the <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> value in code; the corresponding item in the list will appear in the text box portion of the combo box.</span></span> <span data-ttu-id="5aeec-109">Si aucun élément n’est sélectionné, le <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> valeur est -1.</span><span class="sxs-lookup"><span data-stu-id="5aeec-109">If no item is selected, the <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> value is -1.</span></span> <span data-ttu-id="5aeec-110">Si le premier élément dans la liste est sélectionné, puis le <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> valeur est 0.</span><span class="sxs-lookup"><span data-stu-id="5aeec-110">If the first item in the list is selected, then the <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> value is 0.</span></span> <span data-ttu-id="5aeec-111">Le <xref:System.Windows.Forms.ComboBox.SelectedItem%2A> propriété est similaire à <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> , mais retourne l’élément lui-même, en général une valeur de chaîne.</span><span class="sxs-lookup"><span data-stu-id="5aeec-111">The <xref:System.Windows.Forms.ComboBox.SelectedItem%2A> property is similar to <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> , but returns the item itself, usually a string value.</span></span> <span data-ttu-id="5aeec-112">Le <xref:System.Windows.Forms.ComboBox.ObjectCollection.Count%2A> propriété reflète le nombre d’éléments dans la liste et la valeur de la <xref:System.Windows.Forms.ComboBox.ObjectCollection.Count%2A> la propriété a toujours une plus de la plus élevée possible <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> , car la valeur <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> est de base zéro.</span><span class="sxs-lookup"><span data-stu-id="5aeec-112">The <xref:System.Windows.Forms.ComboBox.ObjectCollection.Count%2A> property reflects the number of items in the list, and the value of the <xref:System.Windows.Forms.ComboBox.ObjectCollection.Count%2A> property is always one more than the largest possible <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> value because <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> is zero-based.</span></span>  
   
- Pour ajouter ou supprimer des éléments dans un contrôle <xref:System.Windows.Forms.ComboBox>, utilisez la méthode <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Insert%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Clear%2A> ou <xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>.  Vous pouvez également ajouter des éléments à la liste en utilisant la propriété <xref:System.Windows.Forms.ComboBox.Items%2A> dans le concepteur.  
+ <span data-ttu-id="5aeec-113">Pour ajouter ou supprimer des éléments dans un <xref:System.Windows.Forms.ComboBox> contrôler, utilisez le <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Insert%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Clear%2A> ou <xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="5aeec-113">To add or delete items in a <xref:System.Windows.Forms.ComboBox> control, use the <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Insert%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Clear%2A> or <xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A> method.</span></span> <span data-ttu-id="5aeec-114">Vous pouvez également ajouter des éléments à la liste à l’aide de la <xref:System.Windows.Forms.ComboBox.Items%2A> propriété dans le concepteur.</span><span class="sxs-lookup"><span data-stu-id="5aeec-114">Alternatively, you can add items to the list by using the <xref:System.Windows.Forms.ComboBox.Items%2A> property in the designer.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ComboBox>   
- [Vue d'ensemble du contrôle ListBox](../../../../docs/framework/winforms/controls/listbox-control-overview-windows-forms.md)   
- [Utilisation d'un contrôle ComboBox Windows Forms à la place d'un contrôle ListBox](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)   
- [Comment : ajouter et supprimer des éléments d'un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)   
- [Comment : trier le contenu d'un contrôle ComboBox, CheckedListBox ou ListBox Windows Forms](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)   
- [Comment : accéder à des éléments spécifiques d'un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms](../../../../docs/framework/winforms/controls/access-specific-items-in-a-wf-combobox-listbox-or-checkedlistbox.md)   
- [Comment : lier un contrôle ComboBox ou ListBox Windows Forms aux données](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)   
- [Contrôles Windows Forms utilisés pour l'affichage de listes d'options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)   
- [Comment : créer une table de correspondance pour un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms](../../../../docs/framework/winforms/controls/create-a-lookup-table-for-a-wf-combobox-listbox.md)
+## <a name="see-also"></a><span data-ttu-id="5aeec-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5aeec-115">See Also</span></span>  
+ <xref:System.Windows.Forms.ComboBox>  
+ [<span data-ttu-id="5aeec-116">Vue d'ensemble du contrôle ListBox</span><span class="sxs-lookup"><span data-stu-id="5aeec-116">ListBox Control Overview</span></span>](../../../../docs/framework/winforms/controls/listbox-control-overview-windows-forms.md)  
+ [<span data-ttu-id="5aeec-117">Utilisation d'un contrôle ComboBox Windows Forms à la place d'un contrôle ListBox</span><span class="sxs-lookup"><span data-stu-id="5aeec-117">When to Use a Windows Forms ComboBox Instead of a ListBox</span></span>](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)  
+ [<span data-ttu-id="5aeec-118">Guide pratique pour ajouter et supprimer des éléments d'un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="5aeec-118">How to: Add and Remove Items from a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)  
+ [<span data-ttu-id="5aeec-119">Guide pratique pour trier le contenu d'un contrôle ComboBox, CheckedListBox ou ListBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="5aeec-119">How to: Sort the Contents of a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)  
+ [<span data-ttu-id="5aeec-120">Guide pratique pour accéder à des éléments spécifiques d'un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="5aeec-120">How to: Access Specific Items in a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>](../../../../docs/framework/winforms/controls/access-specific-items-in-a-wf-combobox-listbox-or-checkedlistbox.md)  
+ [<span data-ttu-id="5aeec-121">Guide pratique pour lier un contrôle ComboBox ou ListBox Windows Forms aux données</span><span class="sxs-lookup"><span data-stu-id="5aeec-121">How to: Bind a Windows Forms ComboBox or ListBox Control to Data</span></span>](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)  
+ [<span data-ttu-id="5aeec-122">Contrôles Windows Forms utilisés pour l’affichage de listes d’options</span><span class="sxs-lookup"><span data-stu-id="5aeec-122">Windows Forms Controls Used to List Options</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
+ [<span data-ttu-id="5aeec-123">Guide pratique pour créer une table de correspondance pour un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms</span><span class="sxs-lookup"><span data-stu-id="5aeec-123">How to: Create a Lookup Table for a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>](../../../../docs/framework/winforms/controls/create-a-lookup-table-for-a-wf-combobox-listbox.md)

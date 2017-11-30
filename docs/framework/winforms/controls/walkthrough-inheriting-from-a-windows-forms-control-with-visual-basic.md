@@ -1,75 +1,75 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: h&#233;ritage &#224; partir d&#39;un contr&#244;le Windows Forms &#224; l&#39;aide de Visual&#160;Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles personnalisés (Windows Forms), héritage"
-  - "héritage, contrôle"
-  - "héritage, contrôles personnalisés"
-  - "héritage, procédures pas à pas"
-  - "contrôles Windows Forms, héritage"
+title: "Procédure pas à pas : héritage à partir d'un contrôle Windows Forms à l'aide de Visual Basic"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: vb
+helpviewer_keywords:
+- inheritance [Windows Forms], custom controls
+- inheritance [Windows Forms], control
+- Windows Forms controls, inheritance
+- inheritance [Windows Forms], walkthroughs
+- custom controls [Windows Forms], inheritance
 ms.assetid: fb58d7c8-b702-4478-ad31-b00cae118882
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0625695933b776b8cdbe5488adc116723b930dd0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: h&#233;ritage &#224; partir d&#39;un contr&#244;le Windows Forms &#224; l&#39;aide de Visual&#160;Basic
-Avec [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], vous pouvez créer des contrôles personnalisés puissants par le biais de l'*héritage*.  L'héritage vous permet de créer des contrôles qui conservent toutes les fonctionnalités inhérentes des contrôles Windows Forms standard, mais qui intègrent également des fonctionnalités personnalisées.  Dans cette procédure, vous allez créer un contrôle hérité simple, appelé `ValueButton`.  Ce bouton héritera des fonctionnalités du contrôle Windows Forms standard <xref:System.Windows.Forms.Button>, et exposera une propriété personnalisée appelée `ButtonValue`.  
+# <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a><span data-ttu-id="12375-102">Procédure pas à pas : héritage à partir d'un contrôle Windows Forms à l'aide de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="12375-102">Walkthrough: Inheriting from a Windows Forms Control with Visual Basic</span></span>
+<span data-ttu-id="12375-103">Avec [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], vous pouvez créer des contrôles personnalisés puissants grâce à *l’héritage*.</span><span class="sxs-lookup"><span data-stu-id="12375-103">With [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], you can create powerful custom controls through *inheritance*.</span></span> <span data-ttu-id="12375-104">L’héritage vous permet de créer des contrôles qui conservent toutes les fonctionnalités inhérentes des contrôles Windows Forms standard, tout en intégrant des fonctionnalités personnalisées.</span><span class="sxs-lookup"><span data-stu-id="12375-104">Through inheritance you are able to create controls that retain all of the inherent functionality of standard Windows Forms controls but also incorporate custom functionality.</span></span> <span data-ttu-id="12375-105">Dans cette procédure pas à pas, vous allez créer un contrôle hérité simple appelé `ValueButton`.</span><span class="sxs-lookup"><span data-stu-id="12375-105">In this walkthrough, you will create a simple inherited control called `ValueButton`.</span></span> <span data-ttu-id="12375-106">Ce bouton hérite des fonctionnalités de Windows Forms standard <xref:System.Windows.Forms.Button> contrôler et expose une propriété personnalisée nommée `ButtonValue`.</span><span class="sxs-lookup"><span data-stu-id="12375-106">This button will inherit functionality from the standard Windows Forms <xref:System.Windows.Forms.Button> control, and will expose a custom property called `ButtonValue`.</span></span>  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="12375-107">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="12375-107">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="12375-108">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="12375-108">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="12375-109">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="12375-109">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-## Création du projet  
- Lorsque vous créez un projet, vous spécifiez son nom pour définir l'espace de noms racine, le nom de l'assembly ainsi que celui du projet et vous avez la garantie que le composant par défaut sera placé dans l'espace de noms adéquat.  
+## <a name="creating-the-project"></a><span data-ttu-id="12375-110">Création du projet</span><span class="sxs-lookup"><span data-stu-id="12375-110">Creating the Project</span></span>  
+ <span data-ttu-id="12375-111">Lorsque vous créez un nouveau projet, vous spécifiez son nom afin de définir l’espace de noms racine, le nom de l’assembly et le nom de projet, et de vous assurer que le composant par défaut sera placé dans l’espace de noms approprié.</span><span class="sxs-lookup"><span data-stu-id="12375-111">When you create a new project, you specify its name in order to set the root namespace, assembly name, and project name, and to ensure that the default component will be in the correct namespace.</span></span>  
   
-#### Pour créer la bibliothèque de contrôles ValueButtonLib et le contrôle ValueButton  
+#### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a><span data-ttu-id="12375-112">Pour créer la bibliothèque de contrôles ValueButtonLib et le contrôle ValueButton</span><span class="sxs-lookup"><span data-stu-id="12375-112">To create the ValueButtonLib control library and the ValueButton control</span></span>  
   
-1.  Dans le menu **Fichier**, pointez sur **Nouveau**, puis cliquez sur **Projet** pour ouvrir la boîte de dialogue **Nouveau projet**.  
+1.  <span data-ttu-id="12375-113">Dans le menu **Fichier**, pointez sur **Nouveau**, puis cliquez sur **Projet** pour ouvrir la boîte de dialogue **Nouveau projet**.</span><span class="sxs-lookup"><span data-stu-id="12375-113">On the **File** menu, point to **New** and then click **Project** to open the **New Project** dialog box.</span></span>  
   
-2.  Sélectionnez le modèle de projet **Bibliothèque de contrôles Windows Forms** à partir de la liste de projets [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], puis tapez `ValueButtonLib` dans la zone **Nom**.  
+2.  <span data-ttu-id="12375-114">Dans la liste des projets [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], sélectionnez le modèle de projet **Bibliothèque de contrôles Windows Forms**, puis saisissez `ValueButtonLib` dans le champ **Nom**.</span><span class="sxs-lookup"><span data-stu-id="12375-114">Select the **Windows Forms Control Library** project template from the list of [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] projects, and type `ValueButtonLib` in the **Name** box.</span></span>  
   
-     Le nom de projet, `ValueButtonLib`, est également assigné à l'espace de noms racine par défaut.  L'espace de noms racine sert à qualifier le nom des composants de l'assembly.  Par exemple, si deux assemblys contiennent des composants nommés `ValueButton`, vous pouvez spécifier votre composant `ValueButton` à l'aide de `ValueButtonLib.ValueButton`.  Pour plus d'informations, consultez [Espaces de noms dans Visual Basic](../Topic/Namespaces%20in%20Visual%20Basic.md).  
+     <span data-ttu-id="12375-115">Le nom du projet, `ValueButtonLib`, est également assigné à l’espace de noms racine par défaut.</span><span class="sxs-lookup"><span data-stu-id="12375-115">The project name, `ValueButtonLib`, is also assigned to the root namespace by default.</span></span> <span data-ttu-id="12375-116">L’espace de noms racine est utilisé pour qualifier les noms des composants dans l’assembly.</span><span class="sxs-lookup"><span data-stu-id="12375-116">The root namespace is used to qualify the names of components in the assembly.</span></span> <span data-ttu-id="12375-117">Par exemple, si deux assemblies contiennent des composants nommés `ValueButton`, vous pouvez spécifier votre composant `ValueButton` à l’aide de `ValueButtonLib.ValueButton`.</span><span class="sxs-lookup"><span data-stu-id="12375-117">For example, if two assemblies provide components named `ValueButton`, you can specify your `ValueButton` component using `ValueButtonLib.ValueButton`.</span></span> <span data-ttu-id="12375-118">Pour plus d’informations, consultez l’article [Espaces de noms dans Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="12375-118">For more information, see [Namespaces in Visual Basic](~/docs/visual-basic/programming-guide/program-structure/namespaces.md).</span></span>  
   
-3.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur **UserControl1.vb**, puis cliquez sur **Renommer** dans le menu contextuel.  Remplacez le nom de fichier par `ValueButton.vb`.  Cliquez sur le bouton **Oui** à la question de savoir si vous souhaitez renommer toutes les références à l'élément de code "UserControl1".  
+3.  <span data-ttu-id="12375-119">Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **UserControl1.vb**, puis sélectionnez **Renommer** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="12375-119">In **Solution Explorer**, right-click **UserControl1.vb**, then choose **Rename** from the shortcut menu.</span></span> <span data-ttu-id="12375-120">Remplacez le nom de fichier par `ValueButton.vb`.</span><span class="sxs-lookup"><span data-stu-id="12375-120">Change the file name to `ValueButton.vb`.</span></span> <span data-ttu-id="12375-121">Cliquez sur le bouton **Oui** lorsque l’on vous demande si vous souhaitez renommer toutes les références à l’élément de code « UserControl1 ».</span><span class="sxs-lookup"><span data-stu-id="12375-121">Click the **Yes** button when you are asked if you want to rename all references to the code element 'UserControl1'.</span></span>  
   
-4.  Dans l'**Explorateur de solutions**, cliquez sur le bouton **Afficher tous les fichiers**.  
+4.  <span data-ttu-id="12375-122">Dans l’**Explorateur de solutions**, cliquez sur le bouton **Afficher tous les fichiers**.</span><span class="sxs-lookup"><span data-stu-id="12375-122">In **Solution Explorer**, click the **Show All Files** button.</span></span>  
   
-5.  Ouvrez le nœud **ValueButton.vb** pour afficher le fichier de code généré par le concepteur, **ValueButton.Designer.vb**.  Ouvrez ce fichier dans l'**éditeur de code**.  
+5.  <span data-ttu-id="12375-123">Ouvrez le nœud **ValueButton.vb** pour afficher le fichier de code généré par le concepteur, **ValueButton.Designer.vb**.</span><span class="sxs-lookup"><span data-stu-id="12375-123">Open the **ValueButton.vb** node to display the designer-generated code file, **ValueButton.Designer.vb**.</span></span> <span data-ttu-id="12375-124">Ouvrez ce fichier dans **l’éditeur de code**.</span><span class="sxs-lookup"><span data-stu-id="12375-124">Open this file in the **Code Editor**.</span></span>  
   
-6.  Localisez l'instruction `Class`, `Partial Public Class ValueButton`, puis modifiez le type dont hérite ce contrôle en remplaçant <xref:System.Windows.Forms.UserControl> par <xref:System.Windows.Forms.Button>.  Cela permet à votre contrôle hérité d'hériter toutes les fonctionnalités du contrôle <xref:System.Windows.Forms.Button>.  
+6.  <span data-ttu-id="12375-125">Recherchez le `Class` instruction, `Partial Public Class ValueButton`et modifier le type à partir duquel ce contrôle hérite <xref:System.Windows.Forms.UserControl> à <xref:System.Windows.Forms.Button>.</span><span class="sxs-lookup"><span data-stu-id="12375-125">Locate the `Class` statement, `Partial Public Class ValueButton`, and change the type from which this control inherits from <xref:System.Windows.Forms.UserControl> to <xref:System.Windows.Forms.Button>.</span></span> <span data-ttu-id="12375-126">Cela permet à votre contrôle d’hériter de toutes les fonctionnalités de la <xref:System.Windows.Forms.Button> contrôle.</span><span class="sxs-lookup"><span data-stu-id="12375-126">This allows your inherited control to inherit all the functionality of the <xref:System.Windows.Forms.Button> control.</span></span>  
   
-7.  Localisez la méthode `InitializeComponent` et supprimez la ligne qui assigne la propriété <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A>.  Cette propriété n'existe pas dans le contrôle <xref:System.Windows.Forms.Button>.  
+7.  <span data-ttu-id="12375-127">Recherchez le `InitializeComponent` (méthode) et supprimer la ligne qui assigne la <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="12375-127">Locate the `InitializeComponent` method and remove the line that assigns the <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> property.</span></span> <span data-ttu-id="12375-128">Cette propriété n’existe pas dans le <xref:System.Windows.Forms.Button> contrôle.</span><span class="sxs-lookup"><span data-stu-id="12375-128">This property does not exist in the <xref:System.Windows.Forms.Button> control.</span></span>  
   
-8.  Dans le menu **Fichier**, choisissez **Enregistrer tout** pour enregistrer le projet.  
+8.  <span data-ttu-id="12375-129">Dans le menu **Fichier**, sélectionnez **Enregistrer tout** pour enregistrer le projet.</span><span class="sxs-lookup"><span data-stu-id="12375-129">From the **File** menu, choose **Save All** to save the project.</span></span>  
   
-     Remarquez qu'il n'y a plus de concepteur visuel disponible.  Étant donné que le contrôle <xref:System.Windows.Forms.Button> définit sa propre apparence, vous ne pouvez pas la modifier dans le concepteur.  Sa représentation graphique sera exactement la même que celle de la classe dont il hérite \(à savoir, <xref:System.Windows.Forms.Button>\), sauf si elle est modifiée dans le code.  
+     <span data-ttu-id="12375-130">Notez que plus aucun concepteur visuel n’est disponible.</span><span class="sxs-lookup"><span data-stu-id="12375-130">Note that a visual designer is no longer available.</span></span> <span data-ttu-id="12375-131">Étant donné que le <xref:System.Windows.Forms.Button> contrôle effectue sa propre peinture, vous ne pouvez pas modifier son apparence dans le concepteur.</span><span class="sxs-lookup"><span data-stu-id="12375-131">Because the <xref:System.Windows.Forms.Button> control does its own painting, you are unable to modify its appearance in the designer.</span></span> <span data-ttu-id="12375-132">Représentation visuelle sera exactement le même que celui de la classe, elle hérite (autrement dit, <xref:System.Windows.Forms.Button>), sauf si la modification dans le code.</span><span class="sxs-lookup"><span data-stu-id="12375-132">Its visual representation will be exactly the same as that of the class it inherits from (that is, <xref:System.Windows.Forms.Button>) unless modified in the code.</span></span>  
   
 > [!NOTE]
->  Vous pouvez encore ajouter des composants qui n'ont pas d'éléments d'interface utilisateur à l'aire de conception.  
+>  <span data-ttu-id="12375-133">Vous pouvez toujours ajouter sur l’aide de conception des composants n’ayant aucun élément d’interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="12375-133">You can still add components, which have no UI elements, to the design surface.</span></span>  
   
-## Ajout d'une propriété à un contrôle hérité  
- Entre autres usages, les contrôles Windows Forms hérités peuvent être employés pour créer des contrôles identiques en apparence aux contrôles Windows Forms standard, mais exposant des propriétés personnalisées.  Dans cette section, vous ajouterez à votre contrôle une propriété appelée `ButtonValue`.  
+## <a name="adding-a-property-to-your-inherited-control"></a><span data-ttu-id="12375-134">Ajout d’une propriété à votre contrôle hérité</span><span class="sxs-lookup"><span data-stu-id="12375-134">Adding a Property to Your Inherited Control</span></span>  
+ <span data-ttu-id="12375-135">Les contrôles Windows Forms hérités permettent notamment de créer des contrôles ayant la même apparence et le même comportement (aspect) que les contrôles Windows Forms standard, mais qui exposent des propriétés personnalisées.</span><span class="sxs-lookup"><span data-stu-id="12375-135">One possible use of inherited Windows Forms controls is the creation of controls that are identical in appearance and behavior (look and feel) to standard Windows Forms controls, but expose custom properties.</span></span> <span data-ttu-id="12375-136">Dans cette section, vous allez ajouter une propriété appelée `ButtonValue` à votre contrôle.</span><span class="sxs-lookup"><span data-stu-id="12375-136">In this section, you will add a property called `ButtonValue` to your control.</span></span>  
   
-#### Pour ajouter la propriété Value  
+#### <a name="to-add-the-value-property"></a><span data-ttu-id="12375-137">Pour ajouter la propriété Valeur</span><span class="sxs-lookup"><span data-stu-id="12375-137">To add the Value property</span></span>  
   
-1.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur **ValueButton.vb**, puis cliquez sur **Afficher le code** dans le menu contextuel.  
+1.  <span data-ttu-id="12375-138">Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **ValueButton.vb**, puis cliquez sur **Afficher le code** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="12375-138">In **Solution Explorer**, right-click **ValueButton.vb**, and then click **View Code** from the shortcut menu.</span></span>  
   
-2.  Recherchez l'instruction `Public Class ValueButton`.  Immédiatement sous cette instruction, tapez le code suivant :  
+2.  <span data-ttu-id="12375-139">Recherchez l’instruction `Public Class ValueButton`.</span><span class="sxs-lookup"><span data-stu-id="12375-139">Locate the `Public Class ValueButton` statement.</span></span> <span data-ttu-id="12375-140">Juste en dessous de cette instruction, saisissez le code suivant :</span><span class="sxs-lookup"><span data-stu-id="12375-140">Immediately beneath this statement, type the following code:</span></span>  
   
-     \[Visual Basic\]  
-  
-    ```  
+    ```vb  
     ' Creates the private variable that will store the value of your   
     ' property.  
     Private varValue as integer  
@@ -86,80 +86,78 @@ Avec [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], vous pouvez créer d
     End Property  
     ```  
   
-     Ce code définit les méthodes par lesquelles la propriété `ButtonValue` est stockée et récupérée.  L'instruction `Get` définit comme valeur de retour la valeur stockée dans la variable privée `varValue`, et l'instruction `Set` définit la valeur de la variable privée à l'aide du mot clé `Value`.  
+     <span data-ttu-id="12375-141">Ce code définit les méthodes utilisées pour stocker et récupérer la propriété `ButtonValue`.</span><span class="sxs-lookup"><span data-stu-id="12375-141">This code sets the methods by which the `ButtonValue` property is stored and retrieved.</span></span> <span data-ttu-id="12375-142">L’instruction `Get` définit la valeur retournée à la valeur stockée dans la variable privée `varValue`et l’instruction `Set` définit la valeur de la variable privée à l’aide du mot clé `Value`.</span><span class="sxs-lookup"><span data-stu-id="12375-142">The `Get` statement sets the value returned to the value that is stored in the private variable `varValue`, and the `Set` statement sets the value of the private variable by use of the `Value` keyword.</span></span>  
   
-3.  Dans le menu **Fichier**, choisissez **Enregistrer tout** pour enregistrer le projet.  
+3.  <span data-ttu-id="12375-143">Dans le menu **Fichier**, sélectionnez **Enregistrer tout** pour enregistrer le projet.</span><span class="sxs-lookup"><span data-stu-id="12375-143">From the **File** menu, choose **Save All** to save the project.</span></span>  
   
-## Test du contrôle  
- Les contrôles ne sont pas des projets autonomes ; ils doivent être hébergés dans un conteneur.  Pour tester votre contrôle, vous devez spécifier un projet de test dans lequel il s'exécutera.  Vous devez également rendre votre contrôle accessible au projet de test en le générant \(en le compilant\).  Dans cette section, vous allez générer un contrôle et le tester dans un Windows Form.  
+## <a name="testing-your-control"></a><span data-ttu-id="12375-144">Test de votre contrôle</span><span class="sxs-lookup"><span data-stu-id="12375-144">Testing Your Control</span></span>  
+ <span data-ttu-id="12375-145">Les contrôles ne sont pas des projets autonomes ; ils doivent être hébergés dans un conteneur.</span><span class="sxs-lookup"><span data-stu-id="12375-145">Controls are not stand-alone projects; they must be hosted in a container.</span></span> <span data-ttu-id="12375-146">Pour tester votre contrôle, vous devez fournir un projet de test dans lequel il sera exécuté.</span><span class="sxs-lookup"><span data-stu-id="12375-146">In order to test your control, you must provide a test project for it to run in.</span></span> <span data-ttu-id="12375-147">Vous devez également rendre votre contrôle accessible au projet de test en le générant (compilant).</span><span class="sxs-lookup"><span data-stu-id="12375-147">You must also make your control accessible to the test project by building (compiling) it.</span></span> <span data-ttu-id="12375-148">Dans cette section, vous allez générer votre contrôle et le tester dans un environnement Windows Form.</span><span class="sxs-lookup"><span data-stu-id="12375-148">In this section, you will build your control and test it in a Windows Form.</span></span>  
   
-#### Pour générer le contrôle  
+#### <a name="to-build-your-control"></a><span data-ttu-id="12375-149">Pour générer votre contrôle</span><span class="sxs-lookup"><span data-stu-id="12375-149">To build your control</span></span>  
   
-1.  Dans le menu **Générer**, cliquez sur **Générer la solution**.  
+1.  <span data-ttu-id="12375-150">Dans le menu **Générer** , cliquez sur **Générer la solution**.</span><span class="sxs-lookup"><span data-stu-id="12375-150">On the **Build** menu, click **Build Solution**.</span></span>  
   
-     Cette opération devrait s'effectuer sans engendrer d'erreur de compilation ni d'avertissement.  
+     <span data-ttu-id="12375-151">L’opération doit s’exécuter sans aucun avertissement ou erreur de compilation.</span><span class="sxs-lookup"><span data-stu-id="12375-151">The build should be successful with no compiler errors or warnings.</span></span>  
   
-#### Pour créer un projet de test  
+#### <a name="to-create-a-test-project"></a><span data-ttu-id="12375-152">Pour créer un projet de test</span><span class="sxs-lookup"><span data-stu-id="12375-152">To create a test project</span></span>  
   
-1.  Dans le menu **Fichier**, pointez sur **Ajouter**, puis cliquez sur **Nouveau projet** pour ouvrir la boîte de dialogue **Ajouter un nouveau projet**.  
+1.  <span data-ttu-id="12375-153">Dans le menu **Fichier**, pointez vers**Ajouter**, puis cliquez sur **Nouveau projet** pour ouvrir la boîte de dialogue **Ajouter un nouveau projet**.</span><span class="sxs-lookup"><span data-stu-id="12375-153">On the **File** menu, point to **Add** and then click **New Project** to open the **Add New Project** dialog box.</span></span>  
   
-2.  Sélectionnez le nœud de projets [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] puis cliquez sur **Application Windows Forms**.  
+2.  <span data-ttu-id="12375-154">Sélectionnez le nœud de projets [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], puis cliquez sur **Application Windows Forms**.</span><span class="sxs-lookup"><span data-stu-id="12375-154">Select the [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] projects node, and click **Windows Forms Application**.</span></span>  
   
-3.  Dans la zone **Nom**, tapez `Test`.  
+3.  <span data-ttu-id="12375-155">Dans la zone **Nom**, tapez `Test`.</span><span class="sxs-lookup"><span data-stu-id="12375-155">In the **Name** box, type `Test`.</span></span>  
   
-4.  Dans l'**Explorateur de solutions**, cliquez sur le bouton **Afficher tous les fichiers**.  
+4.  <span data-ttu-id="12375-156">Dans l’**Explorateur de solutions**, cliquez sur le bouton **Afficher tous les fichiers**.</span><span class="sxs-lookup"><span data-stu-id="12375-156">In **Solution Explorer**, click the **Show All Files** button.</span></span>  
   
-5.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud **Références** de votre projet test, puis sélectionnez **Ajouter une référence** dans le menu contextuel afin d'afficher la boîte de dialogue **Ajouter une référence**.  
+5.  <span data-ttu-id="12375-157">Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur le nœud **Références** de votre projet de test, puis sélectionnez **Ajouter une référence** dans le menu contextuel pour afficher la boîte de dialogue **Ajouter une référence**.</span><span class="sxs-lookup"><span data-stu-id="12375-157">In **Solution Explorer**, right-click the **References** node for your test project, then select **Add Reference** from the shortcut menu to display the **Add Reference** dialog box.</span></span>  
   
-6.  Cliquez sur l'onglet **Projets**.  
+6.  <span data-ttu-id="12375-158">Cliquez sur l’onglet **Projets**.</span><span class="sxs-lookup"><span data-stu-id="12375-158">Click the **Projects** tab.</span></span>  
   
-7.  Cliquez sur l'onglet **Projets**.  Votre projet `ValueButtonLib` est répertorié sous **Nom du projet**.  Double\-cliquez sur le projet pour ajouter la référence au projet de test.  
+7.  <span data-ttu-id="12375-159">Cliquez sur l’onglet intitulé **Projets**.</span><span class="sxs-lookup"><span data-stu-id="12375-159">Click the tab labeled **Projects**.</span></span> <span data-ttu-id="12375-160">Votre projet `ValueButtonLib` s’affiche sous **Nom du projet**.</span><span class="sxs-lookup"><span data-stu-id="12375-160">Your `ValueButtonLib` project will be listed under **Project Name**.</span></span> <span data-ttu-id="12375-161">Double-cliquez sur le projet pour ajouter la référence au projet de test.</span><span class="sxs-lookup"><span data-stu-id="12375-161">Double-click the project to add the reference to the test project.</span></span>  
   
-8.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur **Test** et sélectionnez **Générer**.  
+8.  <span data-ttu-id="12375-162">Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Test**, puis sélectionnez **Générer**.</span><span class="sxs-lookup"><span data-stu-id="12375-162">In **Solution Explorer,** right-click **Test** and select **Build**.</span></span>  
   
-#### Pour ajouter votre contrôle au formulaire  
+#### <a name="to-add-your-control-to-the-form"></a><span data-ttu-id="12375-163">Pour ajouter votre contrôle au formulaire</span><span class="sxs-lookup"><span data-stu-id="12375-163">To add your control to the form</span></span>  
   
-1.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur **Form1.vb** et sélectionnez **Concepteur de vues** dans le menu contextuel.  
+1.  <span data-ttu-id="12375-164">Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Form1.vb** et sélectionnez **Concepteur de vues** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="12375-164">In **Solution Explorer**, right-click **Form1.vb** and choose **View Designer** from the shortcut menu.</span></span>  
   
-2.  Dans la **boîte à outils**, cliquez sur **Composants ValueButtonLib**.  Double\-cliquez sur **ValueButton**.  
+2.  <span data-ttu-id="12375-165">Dans la **boîte à outils**, cliquez sur **Composants ValueButtonLib**.</span><span class="sxs-lookup"><span data-stu-id="12375-165">In the **Toolbox**, click **ValueButtonLib Components**.</span></span> <span data-ttu-id="12375-166">Double-cliquez sur **ValueButton**.</span><span class="sxs-lookup"><span data-stu-id="12375-166">Double-click **ValueButton**.</span></span>  
   
-     Un contrôle **ValueButton** apparaît dans le formulaire.  
+     <span data-ttu-id="12375-167">Un élément **ValueButton** apparaît sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="12375-167">A **ValueButton** appears on the form.</span></span>  
   
-3.  Cliquez avec le bouton droit sur **ValueButton** et sélectionnez **Propriétés** dans son menu contextuel.  
+3.  <span data-ttu-id="12375-168">Cliquez avec le bouton droit sur l’élément **ValueButton** et sélectionnez **Propriétés** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="12375-168">Right-click the **ValueButton** and select **Properties** from the shortcut menu.</span></span>  
   
-4.  Dans la fenêtre **Propriétés**, examinez les propriétés de ce contrôle.  Notez qu'elles sont identiques à celles qui sont exposées par un bouton standard, à cela près qu'il existe une propriété supplémentaire, `ButtonValue`.  
+4.  <span data-ttu-id="12375-169">Dans la fenêtre **Propriété**, examinez les propriétés de ce contrôle.</span><span class="sxs-lookup"><span data-stu-id="12375-169">In the **Properties** window, examine the properties of this control.</span></span> <span data-ttu-id="12375-170">Notez qu’elles sont identiques aux propriétés exposées par un bouton standard, à la différence près qu’il y a une propriété en plus, `ButtonValue`.</span><span class="sxs-lookup"><span data-stu-id="12375-170">Note that they are identical to the properties exposed by a standard button, except that there is an additional property, `ButtonValue`.</span></span>  
   
-5.  Affectez à la propriété `ButtonValue` la valeur `5`.  
+5.  <span data-ttu-id="12375-171">Affectez à la propriété `ButtonValue` la valeur `5`.</span><span class="sxs-lookup"><span data-stu-id="12375-171">Set the `ButtonValue` property to `5`.</span></span>  
   
-6.  Sous l'onglet **Tous les Windows Forms** de la **Boîte à outils**, double\-cliquez sur **Étiquette** pour ajouter un contrôle <xref:System.Windows.Forms.Label> au formulaire.  
+6.  <span data-ttu-id="12375-172">Sur le **tous les Windows Forms** onglet de la **boîte à outils**, double-cliquez sur **étiquette** pour ajouter un <xref:System.Windows.Forms.Label> à votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="12375-172">On the **All Windows Forms** tab of the **Toolbox**, double-click **Label** to add a <xref:System.Windows.Forms.Label> control to your form.</span></span>  
   
-7.  Amenez l'étiquette au centre du formulaire.  
+7.  <span data-ttu-id="12375-173">Déplacez l’étiquette au centre du formulaire.</span><span class="sxs-lookup"><span data-stu-id="12375-173">Relocate the label to the center of the form.</span></span>  
   
-8.  Double\-cliquez sur `ValueButton1`.  
+8.  <span data-ttu-id="12375-174">Double-cliquez sur `ValueButton1`.</span><span class="sxs-lookup"><span data-stu-id="12375-174">Double-click `ValueButton1`.</span></span>  
   
-     L'**éditeur de code** s'ouvre à l'événement `ValueButton1_Click`.  
+     <span data-ttu-id="12375-175">**L’éditeur de code** s’ouvre à l’événement `ValueButton1_Click`.</span><span class="sxs-lookup"><span data-stu-id="12375-175">The **Code Editor** opens to the `ValueButton1_Click` event.</span></span>  
   
-9. Tapez la ligne de code suivante.  
+9. <span data-ttu-id="12375-176">Saisissez la ligne de code suivante.</span><span class="sxs-lookup"><span data-stu-id="12375-176">Type the following line of code.</span></span>  
   
-     \[Visual Basic\]  
-  
-    ```  
+    ```vb  
     Label1.Text = CStr(ValueButton1.ButtonValue)  
     ```  
   
-10. Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur **Test**, puis sélectionnez **Définir comme projet de démarrage** dans le menu contextuel.  
+10. <span data-ttu-id="12375-177">Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Test** et sélectionnez **Définir comme projet de démarrage** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="12375-177">In **Solution Explorer**, right-click **Test**, and choose **Set as Startup Project** from the shortcut menu.</span></span>  
   
-11. Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**.  
+11. <span data-ttu-id="12375-178">Dans le menu **Déboguer**, sélectionnez **Démarrer le débogage**.</span><span class="sxs-lookup"><span data-stu-id="12375-178">From the **Debug** menu, select **Start Debugging**.</span></span>  
   
-     `Form1` apparaît.  
+     <span data-ttu-id="12375-179">`Form1` s’affiche.</span><span class="sxs-lookup"><span data-stu-id="12375-179">`Form1` appears.</span></span>  
   
-12. Cliquez sur `Valuebutton1`.  
+12. <span data-ttu-id="12375-180">Cliquez sur `Valuebutton1`.</span><span class="sxs-lookup"><span data-stu-id="12375-180">Click `Valuebutton1`.</span></span>  
   
-     Le chiffre « 5 » est affiché dans `Label1` pour indiquer que la propriété `ButtonValue` de votre contrôle hérité a été passée à `Label1` via la méthode `ValueButton1_Click`.  Votre contrôle `ValueButton` hérite ainsi de toutes les fonctionnalités du bouton Windows Forms standard, mais expose une propriété personnalisée supplémentaire.  
+     <span data-ttu-id="12375-181">Le chiffre « 5 » s’affiche dans `Label1`, ce qui prouve que la propriété `ButtonValue` de votre contrôle hérité a été définie sur `Label1` via la méthode `ValueButton1_Click`.</span><span class="sxs-lookup"><span data-stu-id="12375-181">The numeral '5' is displayed in `Label1`, demonstrating that the `ButtonValue` property of your inherited control has been passed to `Label1` through the `ValueButton1_Click` method.</span></span> <span data-ttu-id="12375-182">Par conséquent, votre contrôle `ValueButton` hérite de toutes les fonctionnalités du bouton Windows Forms standard, mais expose en outre une propriété personnalisée supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="12375-182">Thus your `ValueButton` control inherits all the functionality of the standard Windows Forms button, but exposes an additional, custom property.</span></span>  
   
-## Voir aussi  
- [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)   
- [Comment : afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)   
- [Développement de contrôles Windows Forms personnalisés avec le .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)   
- [NOT IN BUILD: Inheritance in Visual Basic](http://msdn.microsoft.com/fr-fr/e5e6e240-ed31-4657-820c-079b7c79313c)   
- [Component Authoring Walkthroughs](../Topic/Component%20Authoring%20Walkthroughs.md)
+## <a name="see-also"></a><span data-ttu-id="12375-183">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="12375-183">See Also</span></span>  
+ [<span data-ttu-id="12375-184">Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="12375-184">Walkthrough: Authoring a Composite Control with Visual Basic</span></span>](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
+ [<span data-ttu-id="12375-185">Comment : afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils</span><span class="sxs-lookup"><span data-stu-id="12375-185">How to: Display a Control in the Choose Toolbox Items Dialog Box</span></span>](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)  
+ [<span data-ttu-id="12375-186">Développement de contrôles Windows Forms personnalisés avec le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="12375-186">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
+ [<span data-ttu-id="12375-187">Principes fondamentaux de l’héritage (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="12375-187">Inheritance basics (Visual Basic)</span></span>](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
+ [<span data-ttu-id="12375-188">Procédures pas à pas de la création de composants</span><span class="sxs-lookup"><span data-stu-id="12375-188">Component Authoring Walkthroughs</span></span>](http://msdn.microsoft.com/library/c414cca9-2489-4208-8b38-954586d91c13)

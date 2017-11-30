@@ -1,81 +1,60 @@
 ---
-title: "Migration de .NET&#160;Remoting vers&#160;WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Migration de .NET Remoting vers WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 228a6faca43ed121de59ed35c5a186294b41d147
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/21/2017
 ---
-# Migration de .NET&#160;Remoting vers&#160;WCF
-Cet article décrit comment migrer une application .NET Remoting vers Windows Communication Foundation \(WCF\).  Il compare d'abord les concepts similaires entre ces deux produits, puis explique comment transposer plusieurs scénarios Remoting courants dans WCF.  
+# <a name="migrating-from-net-remoting-to-wcf"></a><span data-ttu-id="a15c2-102">Migration de .NET Remoting vers WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-102">Migrating from .NET Remoting to WCF</span></span>
+<span data-ttu-id="a15c2-103">Cet article décrit comment migrer une application .NET Remoting vers Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="a15c2-103">This article describes how to migrate an application that uses .NET Remoting to use Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="a15c2-104">Il compare d'abord les concepts similaires entre ces deux produits, puis explique comment transposer plusieurs scénarios Remoting courants dans WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-104">It compares similar concepts between these products and then describes how to accomplish several common Remoting scenarios in WCF.</span></span>  
   
- .NET Remoting est un produit hérité qui est uniquement pris en charge à des fins de compatibilité descendante.  Il n'est pas sécurisé dans les environnements de confiance mixte en raison de son incapacité à préserver les niveaux de confiance distincts entre le client et le serveur.  Par exemple, vous ne devez jamais exposer un point de terminaison .NET Remoting à Internet ou à des clients non approuvés.  Nous vous recommandons de migrer les applications Remoting existantes vers des technologies plus récentes qui offrent davantage de sécurité.  Si l'application utilise uniquement le protocole HTTP et qu'elle repose sur une conception RESTful, nous recommandons l'API Web ASP.NET.  Pour plus d'informations, consultez l'API Web ASP.NET.  Si l'application est basée sur SOAP ou qu'elle nécessite des protocoles non\-HTTP \(comme TCP\), nous recommandons WCF.  
+ <span data-ttu-id="a15c2-105">.NET Remoting est un produit hérité qui est uniquement pris en charge à des fins de compatibilité descendante.</span><span class="sxs-lookup"><span data-stu-id="a15c2-105">.NET Remoting is a legacy product that is supported only for backward compatibility.</span></span> <span data-ttu-id="a15c2-106">Il n'est pas sécurisé dans les environnements de confiance mixte en raison de son incapacité à préserver les niveaux de confiance distincts entre le client et le serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-106">It is not secure across mixed-trust environments because it cannot maintain the separate trust levels between client and server.</span></span> <span data-ttu-id="a15c2-107">Par exemple, vous ne devez jamais exposer un point de terminaison .NET Remoting à Internet ou à des clients non approuvés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-107">For example, you should never expose a .NET Remoting endpoint to the Internet or to untrusted clients.</span></span> <span data-ttu-id="a15c2-108">Nous vous recommandons de migrer les applications Remoting existantes vers des technologies plus récentes qui offrent davantage de sécurité.</span><span class="sxs-lookup"><span data-stu-id="a15c2-108">We recommend existing Remoting applications be migrated to newer and more secure technologies.</span></span> <span data-ttu-id="a15c2-109">Si l'application utilise uniquement le protocole HTTP et qu'elle repose sur une conception RESTful, nous recommandons l'API Web ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="a15c2-109">If the application’s design uses only HTTP and is RESTful, we recommend ASP.NET Web API.</span></span> <span data-ttu-id="a15c2-110">Pour plus d'informations, consultez l'API Web ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="a15c2-110">For more information, see ASP.NET Web API.</span></span> <span data-ttu-id="a15c2-111">Si l'application est basée sur SOAP ou qu'elle nécessite des protocoles non-HTTP (comme TCP), nous recommandons WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-111">If the application is based on SOAP or requires non-Http protocols such as TCP, we recommend WCF.</span></span>  
+
+## <a name="comparing-net-remoting-to-wcf"></a><span data-ttu-id="a15c2-112">Comparaison de .NET Remoting à WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-112">Comparing .NET Remoting to WCF</span></span>  
+ <span data-ttu-id="a15c2-113">Cette section compare les blocs de construction de base de .NET Remoting à leurs équivalents WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-113">This section compares the basic building blocks of .NET Remoting with their WCF equivalents.</span></span> <span data-ttu-id="a15c2-114">Ces blocs de construction seront utilisés par la suite pour créer des scénarios client-serveur courants dans WCF. Le graphique suivant résume les principales similitudes et différences entre .NET Remoting et WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-114">We will use these building blocks later to create some common client-server scenarios in WCF.The following chart summarizes the main similarities and differences between .NET Remoting and WCF.</span></span>  
   
--   [Comparaison de .NET Remoting à WCF](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Compare_Top)  
-  
-    -   [Comparaison de l'implémentation serveur](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Server_Comp)  
-  
-    -   [Comparaison de l'implémentation client](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Client_Comp)  
-  
-    -   [Utilisation de la sérialisation](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Serialization_Usage)  
-  
-    -   [Fonctionnalités de gestion des exceptions](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Exception_Handling)  
-  
-    -   [Considérations relatives à la sécurité](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Security_Considerations)  
-  
--   [Migration vers WCF](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Migrating_Top)  
-  
-    -   [Pourquoi effectuer la migration de Remoting vers WCF ?](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Why_Migrate)  
-  
-    -   [Recommandations en matière de migration](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Migration_Recommendations)  
-  
-    -   [Scénarios de migration](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Migration_Scenarios)  
-  
--   [Résumé](../../../docs/framework/wcf/migrating-from-net-remoting-to-wcf.md#Summary)  
-  
-<a name="Compare_Top"></a>   
-## Comparaison de .NET Remoting à WCF  
- Cette section compare les blocs de construction de base de .NET Remoting à leurs équivalents WCF.  Ces blocs de construction seront utilisés par la suite pour créer des scénarios client\-serveur courants dans WCF. Le graphique suivant résume les principales similitudes et différences entre .NET Remoting et WCF.  
-  
-||.NET Remoting|WCF|  
+||<span data-ttu-id="a15c2-115">.NET Remoting</span><span class="sxs-lookup"><span data-stu-id="a15c2-115">.NET Remoting</span></span>|<span data-ttu-id="a15c2-116">WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-116">WCF</span></span>|  
 |-|-------------------|---------|  
-|Type de serveur|Sous\-classe MarshalByRefObject|Marquer avec l'attribut \[ServiceContract\]|  
-|Opérations de service|Méthodes publiques sur le type de serveur|Marquer avec l'attribut \[OperationContract\]|  
-|Sérialisation|ISerializable ou \[Serializable\]|DataContractSerializer ou XmlSerializer|  
-|Objets passés|Par valeur ou par référence|Par valeur uniquement|  
-|Erreurs\/exceptions|Toute exception sérialisable|FaultContract\<TDetail\>|  
-|Objets proxy clients|Proxys transparents fortement typés créés automatiquement à partir de MarshalByRefObjects|Proxys fortement typés générés à la demande à l'aide de ChannelFactory\<TChannel\>|  
-|Plateforme requise|Le client et le serveur doivent utiliser un système d'exploitation Microsoft et .NET|Multiplateforme|  
-|Format de message|Privé|Normalisé \(SOAP, WS\-\*, etc.\)|  
+|<span data-ttu-id="a15c2-117">Type de serveur</span><span class="sxs-lookup"><span data-stu-id="a15c2-117">Server type</span></span>|<span data-ttu-id="a15c2-118">Sous-classe MarshalByRefObject</span><span class="sxs-lookup"><span data-stu-id="a15c2-118">Subclass MarshalByRefObject</span></span>|<span data-ttu-id="a15c2-119">Marquer avec l'attribut [ServiceContract]</span><span class="sxs-lookup"><span data-stu-id="a15c2-119">Mark with [ServiceContract] attribute</span></span>|  
+|<span data-ttu-id="a15c2-120">Opérations de service</span><span class="sxs-lookup"><span data-stu-id="a15c2-120">Service operations</span></span>|<span data-ttu-id="a15c2-121">Méthodes publiques sur le type de serveur</span><span class="sxs-lookup"><span data-stu-id="a15c2-121">Public methods on server type</span></span>|<span data-ttu-id="a15c2-122">Marquer avec l'attribut [OperationContract]</span><span class="sxs-lookup"><span data-stu-id="a15c2-122">Mark with [OperationContract] attribute</span></span>|  
+|<span data-ttu-id="a15c2-123">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="a15c2-123">Serialization</span></span>|<span data-ttu-id="a15c2-124">ISerializable ou [Serializable]</span><span class="sxs-lookup"><span data-stu-id="a15c2-124">ISerializable or [Serializable]</span></span>|<span data-ttu-id="a15c2-125">DataContractSerializer ou XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="a15c2-125">DataContractSerializer or XmlSerializer</span></span>|  
+|<span data-ttu-id="a15c2-126">Objets passés</span><span class="sxs-lookup"><span data-stu-id="a15c2-126">Objects passed</span></span>|<span data-ttu-id="a15c2-127">Par valeur ou par référence</span><span class="sxs-lookup"><span data-stu-id="a15c2-127">By-value or by-reference</span></span>|<span data-ttu-id="a15c2-128">Par valeur uniquement</span><span class="sxs-lookup"><span data-stu-id="a15c2-128">By-value only</span></span>|  
+|<span data-ttu-id="a15c2-129">Erreurs/exceptions</span><span class="sxs-lookup"><span data-stu-id="a15c2-129">Errors/exceptions</span></span>|<span data-ttu-id="a15c2-130">Toute exception sérialisable</span><span class="sxs-lookup"><span data-stu-id="a15c2-130">Any serializable exception</span></span>|<span data-ttu-id="a15c2-131">FaultContract\<TDetail ></span><span class="sxs-lookup"><span data-stu-id="a15c2-131">FaultContract\<TDetail></span></span>|  
+|<span data-ttu-id="a15c2-132">Objets proxy clients</span><span class="sxs-lookup"><span data-stu-id="a15c2-132">Client proxy objects</span></span>|<span data-ttu-id="a15c2-133">Proxys transparents fortement typés créés automatiquement à partir de MarshalByRefObjects</span><span class="sxs-lookup"><span data-stu-id="a15c2-133">Strongly typed transparent proxies are created automatically from MarshalByRefObjects</span></span>|<span data-ttu-id="a15c2-134">Proxys fortement typés générés à la demande à l’aide de ChannelFactory\<TChannel ></span><span class="sxs-lookup"><span data-stu-id="a15c2-134">Strongly typed proxies are generated on-demand using ChannelFactory\<TChannel></span></span>|  
+|<span data-ttu-id="a15c2-135">Plateforme requise</span><span class="sxs-lookup"><span data-stu-id="a15c2-135">Platform required</span></span>|<span data-ttu-id="a15c2-136">Le client et le serveur doivent utiliser un système d'exploitation Microsoft et .NET</span><span class="sxs-lookup"><span data-stu-id="a15c2-136">Both client and server must use Microsoft OS and .NET</span></span>|<span data-ttu-id="a15c2-137">Multiplateforme</span><span class="sxs-lookup"><span data-stu-id="a15c2-137">Cross-platform</span></span>|  
+|<span data-ttu-id="a15c2-138">Format de message</span><span class="sxs-lookup"><span data-stu-id="a15c2-138">Message format</span></span>|<span data-ttu-id="a15c2-139">Privé</span><span class="sxs-lookup"><span data-stu-id="a15c2-139">Private</span></span>|<span data-ttu-id="a15c2-140">Normalisé (SOAP, WS-*, etc.)</span><span class="sxs-lookup"><span data-stu-id="a15c2-140">Industry standards (SOAP, WS-*, etc.)</span></span>|  
   
-<a name="Server_Comp"></a>   
-### Comparaison de l'implémentation serveur  
+### <a name="server-implementation-comparison"></a><span data-ttu-id="a15c2-141">Comparaison de l'implémentation serveur</span><span class="sxs-lookup"><span data-stu-id="a15c2-141">Server Implementation Comparison</span></span>  
   
-#### Création d'un serveur dans .NET Remoting  
- Les types de serveur .NET Remoting doivent dériver de MarshalByRefObject et définir des méthodes que le client peut appeler, comme celle\-ci :  
+#### <a name="creating-a-server-in-net-remoting"></a><span data-ttu-id="a15c2-142">Création d'un serveur dans .NET Remoting</span><span class="sxs-lookup"><span data-stu-id="a15c2-142">Creating a Server in .NET Remoting</span></span>  
+ <span data-ttu-id="a15c2-143">Les types de serveur .NET Remoting doivent dériver de MarshalByRefObject et définir des méthodes que le client peut appeler, comme celle-ci :</span><span class="sxs-lookup"><span data-stu-id="a15c2-143">.NET Remoting server types must derive from MarshalByRefObject and define methods the client can call, like the following:</span></span>  
   
-```  
+```csharp
 public class RemotingServer : MarshalByRefObject  
 {  
     public Customer GetCustomer(int customerId) { … }  
 }  
 ```  
   
- Les méthodes publiques de ce type de serveur constituent le contrat public à disposition des clients.  Il n'y a pas de séparation entre l'interface publique du serveur et son implémentation : un seul type gère les deux.  
+ <span data-ttu-id="a15c2-144">Les méthodes publiques de ce type de serveur constituent le contrat public à disposition des clients.</span><span class="sxs-lookup"><span data-stu-id="a15c2-144">The public methods of this server type become the public contract available to clients.</span></span>  <span data-ttu-id="a15c2-145">Il n'y a pas de séparation entre l'interface publique du serveur et son implémentation : un seul type gère les deux.</span><span class="sxs-lookup"><span data-stu-id="a15c2-145">There is no separation between the server’s public interface and its implementation – one type handles both.</span></span>  
   
- Une fois le type de serveur défini, il peut être mis à disposition des clients, comme dans l'exemple suivant :  
+ <span data-ttu-id="a15c2-146">Une fois le type de serveur défini, il peut être mis à disposition des clients, comme dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-146">Once the server type has been defined, it can be made available to clients, like in the following example:</span></span>  
   
-```  
+```csharp
 TcpChannel channel = new TcpChannel(8080);  
 ChannelServices.RegisterChannel(channel, ensureSecurity : true);  
 RemotingConfiguration.RegisterWellKnownServiceType(  
@@ -84,36 +63,34 @@ RemotingConfiguration.RegisterWellKnownServiceType(
     WellKnownObjectMode.Singleton);  
 Console.WriteLine("RemotingServer is running.  Press ENTER to terminate...");  
 Console.ReadLine();  
-  
 ```  
   
- Vous pouvez mettre à disposition le type Remoting en tant que serveur de plusieurs façons, notamment à l'aide de fichiers de configuration.  Il s'agit là d'un exemple parmi d'autres.  
+ <span data-ttu-id="a15c2-147">Vous pouvez mettre à disposition le type Remoting en tant que serveur de plusieurs façons, notamment à l'aide de fichiers de configuration.</span><span class="sxs-lookup"><span data-stu-id="a15c2-147">There are many ways to make the Remoting type available as a server, including using configuration files.</span></span> <span data-ttu-id="a15c2-148">Il s'agit là d'un exemple parmi d'autres.</span><span class="sxs-lookup"><span data-stu-id="a15c2-148">This is just one example.</span></span>  
   
-#### Création d'un serveur dans WCF  
- L'étape équivalente dans WCF implique la création de deux types : le « contrat de service » public et l'implémentation concrète.  Le premier type est déclaré en tant qu'interface marquée avec \[ServiceContract\].  Les méthodes à disposition des clients sont marquées avec \[OperationContract\] :  
+#### <a name="creating-a-server-in-wcf"></a><span data-ttu-id="a15c2-149">Création d'un serveur dans WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-149">Creating a Server in WCF</span></span>  
+ <span data-ttu-id="a15c2-150">L'étape équivalente dans WCF implique la création de deux types : le « contrat de service » public et l'implémentation concrète.</span><span class="sxs-lookup"><span data-stu-id="a15c2-150">The equivalent step in WCF involves creating two types -- the public "service contract" and the concrete implementation.</span></span> <span data-ttu-id="a15c2-151">Le premier type est déclaré en tant qu'interface marquée avec [ServiceContract].</span><span class="sxs-lookup"><span data-stu-id="a15c2-151">The first is declared as an interface marked with [ServiceContract].</span></span> <span data-ttu-id="a15c2-152">Les méthodes à disposition des clients sont marquées avec [OperationContract] :</span><span class="sxs-lookup"><span data-stu-id="a15c2-152">Methods available to clients are marked with [OperationContract]:</span></span>  
   
-```  
+```csharp
 [ServiceContract]  
 public interface IWCFServer  
 {  
     [OperationContract]  
     Customer GetCustomer(int customerId);  
 }  
-  
 ```  
   
- L'implémentation du serveur est définie dans une classe concrète distincte, comme dans l'exemple suivant :  
+ <span data-ttu-id="a15c2-153">L'implémentation du serveur est définie dans une classe concrète distincte, comme dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-153">The server’s implementation is defined in a separate concrete class, like in the following example:</span></span>  
   
-```  
+```csharp
 public class WCFServer : IWCFServer  
 {  
     public Customer GetCustomer(int customerId) { … }  
 }  
 ```  
   
- Une fois ces types définis, le serveur WCF peut être mis à disposition des clients, comme dans l'exemple suivant :  
+ <span data-ttu-id="a15c2-154">Une fois ces types définis, le serveur WCF peut être mis à disposition des clients, comme dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-154">Once these types have been defined, the WCF server can be made available to clients, like in the following example:</span></span>  
   
-```  
+```csharp
 NetTcpBinding binding = new NetTcpBinding();  
 Uri baseAddress = new Uri("net.tcp://localhost:8000/wcfserver");  
   
@@ -128,27 +105,25 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
     Console.WriteLine();  
     Console.ReadLine();  
 }  
-  
 ```  
   
 > [!NOTE]
->  TCP est utilisé dans les deux exemples pour qu'ils soient les plus semblables possible.  Consultez les procédures pas à pas des scénarios figurant plus loin dans cette rubrique pour obtenir des exemples d'utilisation du protocole HTTP.  
+>  <span data-ttu-id="a15c2-155">TCP est utilisé dans les deux exemples pour qu'ils soient les plus semblables possible.</span><span class="sxs-lookup"><span data-stu-id="a15c2-155">TCP is used in both examples to keep them as similar as possible.</span></span> <span data-ttu-id="a15c2-156">Consultez les procédures pas à pas des scénarios figurant plus loin dans cette rubrique pour obtenir des exemples d'utilisation du protocole HTTP.</span><span class="sxs-lookup"><span data-stu-id="a15c2-156">Refer to the scenario walk-throughs later in this topic for examples using HTTP.</span></span>  
   
- Vous pouvez configurer et héberger des services WCF de plusieurs façons.  Cet exemple, qui illustre ce que l'on appelle l'auto\-hébergement, n'est qu'un exemple parmi d'autres.  Pour plus d'informations, consultez les rubriques suivantes :  
+ <span data-ttu-id="a15c2-157">Vous pouvez configurer et héberger des services WCF de plusieurs façons.</span><span class="sxs-lookup"><span data-stu-id="a15c2-157">There are many ways to configure and to host WCF services.</span></span> <span data-ttu-id="a15c2-158">Cet exemple, qui illustre ce que l'on appelle l'auto-hébergement, n'est qu'un exemple parmi d'autres.</span><span class="sxs-lookup"><span data-stu-id="a15c2-158">This is just one example, known as "self-hosted".</span></span> <span data-ttu-id="a15c2-159">Pour plus d’informations, consultez les rubriques suivantes :</span><span class="sxs-lookup"><span data-stu-id="a15c2-159">For more information, see the following topics:</span></span>  
   
--   [Comment : définir un contrat de service](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
+-   [<span data-ttu-id="a15c2-160">Guide pratique pour définir un contrat de service</span><span class="sxs-lookup"><span data-stu-id="a15c2-160">How to: Define a Service Contract</span></span>](how-to-define-a-wcf-service-contract.md)  
   
--   [Configuration des services à l'aide de fichiers de configuration](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
+-   [<span data-ttu-id="a15c2-161">Configuration des services à l’aide de fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="a15c2-161">Configuring Services Using Configuration Files</span></span>](configuring-services-using-configuration-files.md)  
   
--   [Hébergement de services](../../../docs/framework/wcf/hosting-services.md)  
+-   [<span data-ttu-id="a15c2-162">Hébergement de services</span><span class="sxs-lookup"><span data-stu-id="a15c2-162">Hosting Services</span></span>](hosting-services.md)  
   
-<a name="Client_Comp"></a>   
-### Comparaison de l'implémentation client  
+### <a name="client-implementation-comparison"></a><span data-ttu-id="a15c2-163">Comparaison de l'implémentation client</span><span class="sxs-lookup"><span data-stu-id="a15c2-163">Client Implementation Comparison</span></span>  
   
-#### Création d'un client dans .NET Remoting  
- Une fois un objet serveur .NET Remoting mis à disposition, il peut être consommé par des clients, comme dans l'exemple suivant :  
+#### <a name="creating-a-client-in-net-remoting"></a><span data-ttu-id="a15c2-164">Création d'un client dans .NET Remoting</span><span class="sxs-lookup"><span data-stu-id="a15c2-164">Creating a Client in .NET Remoting</span></span>  
+ <span data-ttu-id="a15c2-165">Une fois un objet serveur .NET Remoting mis à disposition, il peut être consommé par des clients, comme dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-165">Once a .NET Remoting server object has been made available, it can be consumed by clients, like in the following example:</span></span>  
   
-```  
+```csharp
 TcpChannel channel = new TcpChannel();  
 ChannelServices.RegisterChannel(channel, ensureSecurity : true);  
 RemotingServer server = (RemotingServer)Activator.GetObject(  
@@ -160,12 +135,12 @@ Console.WriteLine(String.Format("Customer {0} {1} received.",
                                  customer.FirstName, customer.LastName));  
 ```  
   
- L'instance de RemotingServer retournée à partir d'Activator.GetObject\(\) est désignée sous le terme de « proxy transparent ». Elle implémente l'API publique pour le type RemotingServer sur le client, mais toutes les méthodes appellent l'objet serveur en cours d'exécution dans un ordinateur ou un processus différent.  
+ <span data-ttu-id="a15c2-166">L'instance de RemotingServer retournée à partir d'Activator.GetObject() est désignée sous le terme de « proxy transparent ».</span><span class="sxs-lookup"><span data-stu-id="a15c2-166">The RemotingServer instance returned from Activator.GetObject() is known as a "transparent proxy."</span></span> <span data-ttu-id="a15c2-167">Elle implémente l'API publique pour le type RemotingServer sur le client, mais toutes les méthodes appellent l'objet serveur en cours d'exécution dans un ordinateur ou un processus différent.</span><span class="sxs-lookup"><span data-stu-id="a15c2-167">It implements the public API for the RemotingServer type on the client, but all the methods call the server object running in a different process or machine.</span></span>  
   
-#### Création d'un client dans WCF  
- L'étape équivalente dans WCF implique l'utilisation d'une fabrique de canaux pour créer explicitement le proxy.  Comme dans Remoting, l'objet proxy peut être utilisé pour appeler des opérations sur le serveur, ce qu'illustre l'exemple suivant :  
+#### <a name="creating-a-client-in-wcf"></a><span data-ttu-id="a15c2-168">Création d'un client dans WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-168">Creating a Client in WCF</span></span>  
+ <span data-ttu-id="a15c2-169">L'étape équivalente dans WCF implique l'utilisation d'une fabrique de canaux pour créer explicitement le proxy.</span><span class="sxs-lookup"><span data-stu-id="a15c2-169">The equivalent step in WCF involves using a channel factory to create the proxy explicitly.</span></span> <span data-ttu-id="a15c2-170">Comme dans Remoting, l'objet proxy peut être utilisé pour appeler des opérations sur le serveur, ce qu'illustre l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-170">Like Remoting, the proxy object can be used to invoke operations on the server, like in the following example:</span></span>  
   
-```  
+```csharp
 NetTcpBinding binding = new NetTcpBinding();  
 String url = "net.tcp://localhost:8000/wcfserver";  
 EndpointAddress address = new EndpointAddress(url);  
@@ -178,32 +153,31 @@ Console.WriteLine(String.Format("  Customer {0} {1} received.",
                     customer.FirstName, customer.LastName));  
 ```  
   
- Cet exemple montre la programmation au niveau du canal, car elle présente plus de similitudes avec l'exemple Remoting.  Il est aussi possible de suivre l'approche **Ajouter une référence de service** dans Visual Studio. Celle\-ci génère du code, ce qui simplifie la programmation du client.  Pour plus d'informations, consultez les rubriques suivantes :  
+ <span data-ttu-id="a15c2-171">Cet exemple montre la programmation au niveau du canal, car elle présente plus de similitudes avec l'exemple Remoting.</span><span class="sxs-lookup"><span data-stu-id="a15c2-171">This example shows programming at the channel level because it is most similar to the Remoting example.</span></span> <span data-ttu-id="a15c2-172">Est également disponible le **ajouter une référence de Service** approche dans Visual Studio qui génère du code pour simplifier la programmation du client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-172">Also available is the **Add Service Reference** approach in Visual Studio that generates code to simplify client programming.</span></span> <span data-ttu-id="a15c2-173">Pour plus d’informations, consultez les rubriques suivantes :</span><span class="sxs-lookup"><span data-stu-id="a15c2-173">For more information, see the following topics:</span></span>  
   
--   [Programmation au niveau du canal client](../../../docs/framework/wcf/extending/client-channel-level-programming.md)  
+-   [<span data-ttu-id="a15c2-174">Programmation au niveau du canal client</span><span class="sxs-lookup"><span data-stu-id="a15c2-174">Client Channel-Level Programming</span></span>](./extending/client-channel-level-programming.md)  
   
--   [How to: Add, Update, or Remove a Service Reference](../Topic/How%20to:%20Add,%20Update,%20or%20Remove%20a%20Service%20Reference.md)  
+-   [<span data-ttu-id="a15c2-175">Comment : ajouter, mettre à jour ou supprimer une référence de Service</span><span class="sxs-lookup"><span data-stu-id="a15c2-175">How to: Add, Update, or Remove a Service Reference</span></span>](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   
-<a name="Serialization_Usage"></a>   
-### Utilisation de la sérialisation  
- Bien que .NET Remoting et WCF utilisent tous deux la sérialisation pour envoyer des objets entre le client et le serveur, il existe des différences importantes :  
+### <a name="serialization-usage"></a><span data-ttu-id="a15c2-176">Utilisation de la sérialisation</span><span class="sxs-lookup"><span data-stu-id="a15c2-176">Serialization Usage</span></span>  
+ <span data-ttu-id="a15c2-177">Bien que .NET Remoting et WCF utilisent tous deux la sérialisation pour envoyer des objets entre le client et le serveur, il existe des différences importantes :</span><span class="sxs-lookup"><span data-stu-id="a15c2-177">Both .NET Remoting and WCF use serialization to send objects between client and server, but they differ in these important ways:</span></span>  
   
-1.  Les conventions et sérialiseurs utilisés pour indiquer les éléments à sérialiser ne sont pas les mêmes.  
+1.  <span data-ttu-id="a15c2-178">Les conventions et sérialiseurs utilisés pour indiquer les éléments à sérialiser ne sont pas les mêmes.</span><span class="sxs-lookup"><span data-stu-id="a15c2-178">They use different serializers and conventions to indicate what to serialize.</span></span>  
   
-2.  .NET Remoting prend en charge la sérialisation « par référence ». Celle\-ci permet d'accéder à une méthode ou à une propriété située sur une couche et d'exécuter du code sur l'autre couche, au\-delà des limites de sécurité.  Cette fonctionnalité présente des failles de sécurité. C'est l'une des principales raisons pour lesquelles les points de terminaison Remoting ne doivent jamais être exposés à des clients non approuvés.  
+2.  <span data-ttu-id="a15c2-179">.NET Remoting prend en charge la sérialisation « par référence ». Celle-ci permet d'accéder à une méthode ou à une propriété située sur une couche et d'exécuter du code sur l'autre couche, au-delà des limites de sécurité.</span><span class="sxs-lookup"><span data-stu-id="a15c2-179">.NET Remoting supports "by reference" serialization that allows method or property access on one tier to execute code on the other tier, which is across security boundaries.</span></span> <span data-ttu-id="a15c2-180">Cette fonctionnalité présente des failles de sécurité. C'est l'une des principales raisons pour lesquelles les points de terminaison Remoting ne doivent jamais être exposés à des clients non approuvés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-180">This capability exposes security vulnerabilities and is one of the main reasons why Remoting endpoints should never be exposed to untrusted clients.</span></span>  
   
-3.  La sérialisation utilisée par Remoting fonctionne par exclusion \(les éléments à ne pas sérialiser sont exclus explicitement\), tandis que la sérialisation WCF fonctionne par inclusion \(les éléments à sérialiser sont marqués explicitement\).  
+3.  <span data-ttu-id="a15c2-181">La sérialisation utilisée par Remoting fonctionne par exclusion (les éléments à ne pas sérialiser sont exclus explicitement), tandis que la sérialisation WCF fonctionne par inclusion (les éléments à sérialiser sont marqués explicitement).</span><span class="sxs-lookup"><span data-stu-id="a15c2-181">Serialization used by Remoting is opt-out (explicitly exclude what not to serialize) and WCF serialization is opt-in (explicitly mark which members to serialize).</span></span>  
   
-#### Sérialisation dans .NET Remoting  
- .NET Remoting prend en charge deux méthodes pour sérialiser et désérialiser des objets entre le client et le serveur :  
+#### <a name="serialization-in-net-remoting"></a><span data-ttu-id="a15c2-182">Sérialisation dans .NET Remoting</span><span class="sxs-lookup"><span data-stu-id="a15c2-182">Serialization in .NET Remoting</span></span>  
+ <span data-ttu-id="a15c2-183">.NET Remoting prend en charge deux méthodes pour sérialiser et désérialiser des objets entre le client et le serveur :</span><span class="sxs-lookup"><span data-stu-id="a15c2-183">.NET Remoting supports two ways to serialize and deserialize objects between the client and server:</span></span>  
   
--   *Par valeur* : les valeurs de l'objet sont sérialisées au\-delà des limites de chaque couche et une instance de cet objet est créée sur l'autre couche.  Tous les appels aux méthodes ou aux propriétés de cette nouvelle instance s'exécutent uniquement au niveau local et n'affectent pas la couche ou l'objet d'origine.  
+-   <span data-ttu-id="a15c2-184">*Par valeur* : les valeurs de l’objet sont sérialisées au-delà des limites de couche, et une nouvelle instance de cet objet est créée sur l’autre couche.</span><span class="sxs-lookup"><span data-stu-id="a15c2-184">*By value* – the values of the object are serialized across tier boundaries, and a new instance of that object is created on the other tier.</span></span> <span data-ttu-id="a15c2-185">Tous les appels aux méthodes ou aux propriétés de cette nouvelle instance s'exécutent uniquement au niveau local et n'affectent pas la couche ou l'objet d'origine.</span><span class="sxs-lookup"><span data-stu-id="a15c2-185">Any calls to methods or properties of that new instance execute only locally and do not affect the original object or tier.</span></span>  
   
--   *Par référence* : une « référence d'objet » spéciale est sérialisée au\-delà des limites de chaque couche.  Quand une couche interagit avec les méthodes ou les propriétés de cet objet, elle communique avec l'objet d'origine situé sur la couche d'origine.  Les objets par référence peuvent circuler dans les deux sens : du serveur au client ou du client au serveur.  
+-   <span data-ttu-id="a15c2-186">*Par référence* – une « référence d’objet » spéciale est sérialisée au-delà des limites de la couche.</span><span class="sxs-lookup"><span data-stu-id="a15c2-186">*By reference* – a special "object reference" is serialized across tier boundaries.</span></span> <span data-ttu-id="a15c2-187">Quand une couche interagit avec les méthodes ou les propriétés de cet objet, elle communique avec l'objet d'origine situé sur la couche d'origine.</span><span class="sxs-lookup"><span data-stu-id="a15c2-187">When one tier interacts with methods or properties of that object, it communicates back to the original object on the original tier.</span></span> <span data-ttu-id="a15c2-188">Les objets par référence peuvent circuler dans les deux sens : du serveur au client ou du client au serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-188">By-reference objects can flow in either direction – server to client, or client to server.</span></span>  
   
- Les types par valeur dans Remoting sont marqués avec l'attribut \[Serializable\] ou implémentent ISerializable, comme dans l'exemple suivant :  
+ <span data-ttu-id="a15c2-189">Les types par valeur dans Remoting sont marqués avec l'attribut [Serializable] ou implémentent ISerializable, comme dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-189">By-value types in Remoting are marked with the [Serializable] attribute or implement ISerializable, like in the following example:</span></span>  
   
-```  
+```csharp
 [Serializable]  
 public class RemotingCustomer  
 {  
@@ -213,9 +187,9 @@ public class RemotingCustomer
 }  
 ```  
   
- Les types par référence dérivent de la classe MarshalByRefObject, comme dans l'exemple suivant :  
+ <span data-ttu-id="a15c2-190">Les types par référence dérivent de la classe MarshalByRefObject, comme dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-190">By-reference types derive from the MarshalByRefObject class, like in the following example:</span></span>  
   
-```  
+```csharp
 public class RemotingCustomerReference : MarshalByRefObject  
 {  
     public string FirstName { get; set; }  
@@ -224,12 +198,12 @@ public class RemotingCustomerReference : MarshalByRefObject
 }  
 ```  
   
- Il est extrêmement important de comprendre les implications des objets par référence de Remoting.  Si une couche \(client ou serveur\) envoie un objet par référence à l'autre couche, tous les appels de méthode s'exécutent sur la couche qui possède l'objet.  Par exemple, un client appelant des méthodes sur un objet par référence retourné par le serveur exécute le code sur le serveur.  De même, un serveur appelant des méthodes sur un objet par référence fourni par le client exécute le code sur le client.  Pour cette raison, il est recommandé d'utiliser .NET Remoting uniquement dans des environnements entièrement fiables.  Le fait d'exposer un point de terminaison .NET Remoting public à des clients non approuvés rend un serveur Remoting vulnérable aux attaques.  
+ <span data-ttu-id="a15c2-191">Il est extrêmement important de comprendre les implications des objets par référence de Remoting.</span><span class="sxs-lookup"><span data-stu-id="a15c2-191">It is extremely important to understand the implications of Remoting’s by-reference objects.</span></span> <span data-ttu-id="a15c2-192">Si une couche (client ou serveur) envoie un objet par référence à l'autre couche, tous les appels de méthode s'exécutent sur la couche qui possède l'objet.</span><span class="sxs-lookup"><span data-stu-id="a15c2-192">If either tier (client or server) sends a by-reference object to the other tier, all method calls execute back on the tier owning the object.</span></span> <span data-ttu-id="a15c2-193">Par exemple, un client appelant des méthodes sur un objet par référence retourné par le serveur exécute le code sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-193">For example, a client calling methods on a by-reference object returned by the server will execute code on the server.</span></span> <span data-ttu-id="a15c2-194">De même, un serveur appelant des méthodes sur un objet par référence fourni par le client exécute le code sur le client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-194">Similarly, a server calling methods on a by-reference object provided by the client will execute code back on the client.</span></span> <span data-ttu-id="a15c2-195">Pour cette raison, il est recommandé d'utiliser .NET Remoting uniquement dans des environnements entièrement fiables.</span><span class="sxs-lookup"><span data-stu-id="a15c2-195">For this reason, the use of .NET Remoting is recommended only within fully-trusted environments.</span></span> <span data-ttu-id="a15c2-196">Le fait d'exposer un point de terminaison .NET Remoting public à des clients non approuvés rend un serveur Remoting vulnérable aux attaques.</span><span class="sxs-lookup"><span data-stu-id="a15c2-196">Exposing a public .NET Remoting endpoint to untrusted clients will make a Remoting server vulnerable to attack.</span></span>  
   
-#### Sérialisation dans WCF  
- WCF prend uniquement en charge la sérialisation par valeur.  La méthode la plus couramment employée pour définir un type à échanger entre le client et le serveur est semblable à celle présentée dans l'exemple suivant :  
+#### <a name="serialization-in-wcf"></a><span data-ttu-id="a15c2-197">Sérialisation dans WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-197">Serialization in WCF</span></span>  
+ <span data-ttu-id="a15c2-198">WCF prend uniquement en charge la sérialisation par valeur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-198">WCF supports only by-value serialization.</span></span> <span data-ttu-id="a15c2-199">La méthode la plus couramment employée pour définir un type à échanger entre le client et le serveur est semblable à celle présentée dans l'exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-199">The most common way to define a type to exchange between client and server is like in the following example:</span></span>  
   
-```  
+```csharp
 [DataContract]  
 public class WCFCustomer  
 {  
@@ -244,26 +218,25 @@ public class WCFCustomer
 }  
 ```  
   
- L'attribut \[DataContract\] identifie ce type comme pouvant être sérialisé et désérialisé entre le client et le serveur.  L'attribut \[DataMember\] identifie les propriétés ou les champs individuels à sérialiser.  
+ <span data-ttu-id="a15c2-200">L'attribut [DataContract] identifie ce type comme pouvant être sérialisé et désérialisé entre le client et le serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-200">The [DataContract] attribute identifies this type as one that can be serialized and deserialized between client and server.</span></span> <span data-ttu-id="a15c2-201">L'attribut [DataMember] identifie les propriétés ou les champs individuels à sérialiser.</span><span class="sxs-lookup"><span data-stu-id="a15c2-201">The [DataMember] attribute identifies the individual properties or fields to serialize.</span></span>  
   
- Quand WCF envoie un objet d'une couche à l'autre, il sérialise uniquement les valeurs et crée une instance de l'objet sur l'autre couche.  Les interactions avec les valeurs de l'objet s'effectuent uniquement au niveau local ; contrairement aux objets par référence .NET Remoting, aucune communication n'a lieu avec l'autre couche.  Pour plus d'informations, consultez les rubriques suivantes :  
+ <span data-ttu-id="a15c2-202">Quand WCF envoie un objet d'une couche à l'autre, il sérialise uniquement les valeurs et crée une instance de l'objet sur l'autre couche.</span><span class="sxs-lookup"><span data-stu-id="a15c2-202">When WCF sends an object across tiers, it serializes only the values and creates a new instance of the object on the other tier.</span></span> <span data-ttu-id="a15c2-203">Les interactions avec les valeurs de l'objet s'effectuent uniquement au niveau local ; contrairement aux objets par référence .NET Remoting, aucune communication n'a lieu avec l'autre couche.</span><span class="sxs-lookup"><span data-stu-id="a15c2-203">Any interactions with the values of the object occur only locally – they do not communicate with the other tier the way .NET Remoting by-reference objects do.</span></span> <span data-ttu-id="a15c2-204">Pour plus d’informations, consultez les rubriques suivantes :</span><span class="sxs-lookup"><span data-stu-id="a15c2-204">For more information, see the following topics:</span></span>  
   
--   [Sérialisation et désérialisation](../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)  
+-   [<span data-ttu-id="a15c2-205">Sérialisation et désérialisation</span><span class="sxs-lookup"><span data-stu-id="a15c2-205">Serialization and Deserialization</span></span>](./feature-details/serialization-and-deserialization.md)  
   
--   [Sérialisation dans Windows Communication Foundation](http://msdn.microsoft.com/magazine/cc163569.aspx)  
+-   [<span data-ttu-id="a15c2-206">Sérialisation dans Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="a15c2-206">Serialization in Windows Communication Foundation</span></span>](http://msdn.microsoft.com/magazine/cc163569.aspx)  
   
-<a name="Exception_Handling"></a>   
-### Fonctionnalités de gestion des exceptions  
+### <a name="exception-handling-capabilities"></a><span data-ttu-id="a15c2-207">Fonctionnalités de gestion des exceptions</span><span class="sxs-lookup"><span data-stu-id="a15c2-207">Exception Handling Capabilities</span></span>  
   
-#### Exceptions dans .NET Remoting  
- Les exceptions levées par un serveur Remoting sont sérialisées, envoyées au client et levées localement sur le client comme n'importe quelle autre exception.  Vous pouvez créer des exceptions personnalisées en définissant une sous\-classe du type Exception et en la marquant avec \[Serializable\].  La plupart des exceptions d'infrastructure étant déjà marquées de cette manière, elles peuvent être levées par le serveur, sérialisées et levées à nouveau sur le client.  Bien que cette conception présente des avantages lors du développement, il est possible que des informations côté serveur soient transmises par inadvertance au client.  C'est l'une des nombreuses raisons pour lesquelles Remoting doit uniquement être utilisé dans des environnements entièrement fiables.  
+#### <a name="exceptions-in-net-remoting"></a><span data-ttu-id="a15c2-208">Exceptions dans .NET Remoting</span><span class="sxs-lookup"><span data-stu-id="a15c2-208">Exceptions in .NET Remoting</span></span>  
+ <span data-ttu-id="a15c2-209">Les exceptions levées par un serveur Remoting sont sérialisées, envoyées au client et levées localement sur le client comme n'importe quelle autre exception.</span><span class="sxs-lookup"><span data-stu-id="a15c2-209">Exceptions thrown by a Remoting server are serialized, sent to the client, and thrown locally on the client like any other exception.</span></span> <span data-ttu-id="a15c2-210">Vous pouvez créer des exceptions personnalisées en définissant une sous-classe du type Exception et en la marquant avec [Serializable].</span><span class="sxs-lookup"><span data-stu-id="a15c2-210">Custom exceptions can be created by sub-classing the Exception type and marking it with [Serializable].</span></span>   <span data-ttu-id="a15c2-211">La plupart des exceptions d'infrastructure étant déjà marquées de cette manière, elles peuvent être levées par le serveur, sérialisées et levées à nouveau sur le client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-211">Most framework exceptions are already marked in this way, allowing most to be thrown by the server, serialized, and re-thrown on the client.</span></span> <span data-ttu-id="a15c2-212">Bien que cette conception présente des avantages lors du développement, il est possible que des informations côté serveur soient transmises par inadvertance au client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-212">Though this design is convenient during development, server-side information can inadvertently be disclosed to the client.</span></span> <span data-ttu-id="a15c2-213">C'est l'une des nombreuses raisons pour lesquelles Remoting doit uniquement être utilisé dans des environnements entièrement fiables.</span><span class="sxs-lookup"><span data-stu-id="a15c2-213">This is one of many reasons Remoting should be used only in fully-trusted environments.</span></span>  
   
-#### Exceptions et erreurs dans WCF  
- Pour éviter la divulgation inopportune d'informations, WCF n'autorise pas le serveur à retourner des types d'exceptions arbitraires au client.  Si une opération de service lève une exception inattendue, un FaultException à usage général est levé sur le client.  Bien que cette exception ne comprenne pas d'informations sur la raison ou l'emplacement du problème, elle suffit à certaines applications.  Pour communiquer des informations d'erreur plus détaillées au client, les applications doivent définir un contrat d'erreur.  
+#### <a name="exceptions-and-faults-in-wcf"></a><span data-ttu-id="a15c2-214">Exceptions et erreurs dans WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-214">Exceptions and Faults in WCF</span></span>  
+ <span data-ttu-id="a15c2-215">Pour éviter la divulgation inopportune d'informations, WCF n'autorise pas le serveur à retourner des types d'exceptions arbitraires au client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-215">WCF does not allow arbitrary exception types to be returned from the server to the client because it could lead to inadvertent information disclosure.</span></span> <span data-ttu-id="a15c2-216">Si une opération de service lève une exception inattendue, un FaultException à usage général est levé sur le client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-216">If a service operation throws an unexpected exception, it causes a general purpose FaultException to be thrown on the client.</span></span> <span data-ttu-id="a15c2-217">Bien que cette exception ne comprenne pas d'informations sur la raison ou l'emplacement du problème, elle suffit à certaines applications.</span><span class="sxs-lookup"><span data-stu-id="a15c2-217">This exception does not carry any information why or where the problem occurred, and for some applications this is sufficient.</span></span> <span data-ttu-id="a15c2-218">Pour communiquer des informations d'erreur plus détaillées au client, les applications doivent définir un contrat d'erreur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-218">Applications that need to communicate richer error information to the client do this by defining a fault contract.</span></span>  
   
- Pour cela, vous devez d'abord créer un type \[DataContract\] qui contiendra les informations d'erreur.  
+ <span data-ttu-id="a15c2-219">Pour cela, vous devez d'abord créer un type [DataContract] qui contiendra les informations d'erreur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-219">To do this, first create a [DataContract] type to carry the fault information.</span></span>  
   
-```  
+```csharp
 [DataContract]  
 public class CustomerServiceFault  
 {  
@@ -275,9 +248,9 @@ public class CustomerServiceFault
 }  
 ```  
   
- Spécifiez le contrat d'erreur à utiliser pour chaque opération de service.  
+ <span data-ttu-id="a15c2-220">Spécifiez le contrat d'erreur à utiliser pour chaque opération de service.</span><span class="sxs-lookup"><span data-stu-id="a15c2-220">Specify the fault contract to use for each service operation.</span></span>  
   
-```  
+```csharp
 [ServiceContract]  
 public interface IWCFServer  
 {  
@@ -287,9 +260,9 @@ public interface IWCFServer
 }  
 ```  
   
- Le serveur signale les conditions d'erreur en levant un FaultException.  
+ <span data-ttu-id="a15c2-221">Le serveur signale les conditions d'erreur en levant un FaultException.</span><span class="sxs-lookup"><span data-stu-id="a15c2-221">The server reports error conditions by throwing a FaultException.</span></span>  
   
-```  
+```csharp
 throw new FaultException<CustomerServiceFault>(  
     new CustomerServiceFault() {   
         CustomerId = customerId,   
@@ -297,9 +270,9 @@ throw new FaultException<CustomerServiceFault>(
     });  
 ```  
   
- Chaque fois que le client effectue une demande au serveur, il peut intercepter les erreurs comme des exceptions normales.  
+ <span data-ttu-id="a15c2-222">Chaque fois que le client effectue une demande au serveur, il peut intercepter les erreurs comme des exceptions normales.</span><span class="sxs-lookup"><span data-stu-id="a15c2-222">And whenever the client makes a request to the server, it can catch faults as normal exceptions.</span></span>  
   
-```  
+```csharp
 try  
 {  
     Customer customer = server.GetCustomer(-1);  
@@ -309,70 +282,64 @@ catch (FaultException<CustomerServiceFault> fault)
     Console.WriteLine(String.Format("Fault received: {0}",  
     fault.Detail.ErrorMessage));  
 }  
-  
 ```  
   
- Pour plus d'informations sur les contrats d'erreur, consultez <xref:System.ServiceModel.FaultException>.  
+ <span data-ttu-id="a15c2-223">Pour plus d'informations sur les contrats d'erreur, consultez <xref:System.ServiceModel.FaultException>.</span><span class="sxs-lookup"><span data-stu-id="a15c2-223">For more information about fault contracts, see <xref:System.ServiceModel.FaultException>.</span></span>  
   
-<a name="Security_Considerations"></a>   
-### Considérations relatives à la sécurité  
+### <a name="security-considerations"></a><span data-ttu-id="a15c2-224">Considérations relatives à la sécurité</span><span class="sxs-lookup"><span data-stu-id="a15c2-224">Security Considerations</span></span>  
   
-#### Sécurité dans .NET Remoting  
- Certains canaux .NET Remoting prennent en charge des fonctionnalités de sécurité telles que l'authentification et le chiffrement au niveau de la couche du canal \(IPC et TCP\).  Le canal HTTP s'appuie sur les services Internet \(IIS\) pour procéder à l'authentification et au chiffrement.  Toutefois, vous devez considérer .NET Remoting comme un protocole de communication non sécurisé et l'utiliser uniquement dans des environnements entièrement fiables.  N'exposez jamais un point de terminaison Remoting public à Internet ou à des clients non approuvés.  
+#### <a name="security-in-net-remoting"></a><span data-ttu-id="a15c2-225">Sécurité dans .NET Remoting</span><span class="sxs-lookup"><span data-stu-id="a15c2-225">Security in .NET Remoting</span></span>  
+ <span data-ttu-id="a15c2-226">Certains canaux .NET Remoting prennent en charge des fonctionnalités de sécurité telles que l'authentification et le chiffrement au niveau de la couche du canal (IPC et TCP).</span><span class="sxs-lookup"><span data-stu-id="a15c2-226">Some .NET Remoting channels support security features such as authentication and encryption at the channel layer (IPC and TCP).</span></span> <span data-ttu-id="a15c2-227">Le canal HTTP s'appuie sur les services Internet (IIS) pour procéder à l'authentification et au chiffrement.</span><span class="sxs-lookup"><span data-stu-id="a15c2-227">The HTTP channel relies on Internet Information Services (IIS) for both authentication and encryption.</span></span> <span data-ttu-id="a15c2-228">Toutefois, vous devez considérer .NET Remoting comme un protocole de communication non sécurisé et l'utiliser uniquement dans des environnements entièrement fiables.</span><span class="sxs-lookup"><span data-stu-id="a15c2-228">Despite this support, you should consider .NET Remoting an unsecure communication protocol and use it only within fully-trusted environments.</span></span> <span data-ttu-id="a15c2-229">N'exposez jamais un point de terminaison Remoting public à Internet ou à des clients non approuvés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-229">Never expose a public Remoting endpoint to the Internet or untrusted clients.</span></span>  
   
-#### Sécurité dans WCF  
- WCF a été conçu dans une optique de sécurité, en partie pour résoudre les types de vulnérabilités associées à .NET Remoting.  Outre la sécurité au niveau du transport et des messages, WCF offre de nombreuses options en ce qui concerne l'authentification, l'autorisation, le chiffrement, etc.  Pour plus d'informations, consultez les rubriques suivantes :  
+#### <a name="security-in-wcf"></a><span data-ttu-id="a15c2-230">Sécurité dans WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-230">Security in WCF</span></span>  
+ <span data-ttu-id="a15c2-231">WCF a été conçu dans une optique de sécurité, en partie pour résoudre les types de vulnérabilités associées à .NET Remoting.</span><span class="sxs-lookup"><span data-stu-id="a15c2-231">WCF was designed with security in mind, in part to address the kinds of vulnerabilities found in .NET Remoting.</span></span> <span data-ttu-id="a15c2-232">Outre la sécurité au niveau du transport et des messages, WCF offre de nombreuses options en ce qui concerne l'authentification, l'autorisation, le chiffrement, etc.</span><span class="sxs-lookup"><span data-stu-id="a15c2-232">WCF offers security at both the transport and message level, and offers many options for authentication, authorization, encryption, and so on.</span></span> <span data-ttu-id="a15c2-233">Pour plus d’informations, consultez les rubriques suivantes :</span><span class="sxs-lookup"><span data-stu-id="a15c2-233">For more information, see the following topics:</span></span>  
   
--   [Sécurité](../../../docs/framework/wcf/feature-details/security.md)  
+-   [<span data-ttu-id="a15c2-234">Sécurité</span><span class="sxs-lookup"><span data-stu-id="a15c2-234">Security</span></span>](./feature-details/security.md)  
   
--   [Conseils en matière de sécurité dans WCF](http://wcfsecurity.codeplex.com/)  
+-   [<span data-ttu-id="a15c2-235">Guide de sécurité WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-235">WCF Security Guidance</span></span>](./feature-details/security-guidance-and-best-practices.md)  
   
-<a name="Migrating_Top"></a>   
-## Migration vers WCF  
+## <a name="migrating-to-wcf"></a><span data-ttu-id="a15c2-236">Migration vers WCF</span><span class="sxs-lookup"><span data-stu-id="a15c2-236">Migrating to WCF</span></span>  
   
-<a name="Why_Migrate"></a>   
-### Pourquoi effectuer la migration de Remoting vers WCF ?  
+### <a name="why-migrate-from-remoting-to-wcf"></a><span data-ttu-id="a15c2-237">Pourquoi effectuer la migration de Remoting vers WCF ?</span><span class="sxs-lookup"><span data-stu-id="a15c2-237">Why Migrate from Remoting to WCF?</span></span>  
   
--   **.NET Remoting est un produit hérité.** Conformément à la description donnée dans [.NET Remoting](http://msdn.microsoft.com/library/vstudio/72x4h507\(v=vs.100\).aspx), ce produit hérité n'est pas recommandé pour les nouveaux projets de développement.  Dans le cas d'applications nouvelles et existantes, il est recommandé d'utiliser WCF ou l'API Web ASP.NET.  
+-   <span data-ttu-id="a15c2-238">**.NET remoting est un produit hérité.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-238">**.NET Remoting is a legacy product.**</span></span> <span data-ttu-id="a15c2-239">Comme décrit dans [.NET Remoting](http://msdn.microsoft.com/library/vstudio/72x4h507\(v=vs.100\).aspx), il est considéré comme un produit hérité et n’est pas recommandé pour un nouveau développement.</span><span class="sxs-lookup"><span data-stu-id="a15c2-239">As described in [.NET Remoting](http://msdn.microsoft.com/library/vstudio/72x4h507\(v=vs.100\).aspx), it is considered a legacy product and is not recommended for new development.</span></span> <span data-ttu-id="a15c2-240">Dans le cas d'applications nouvelles et existantes, il est recommandé d'utiliser WCF ou l'API Web ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="a15c2-240">WCF or ASP.NET Web API are recommended for new and existing applications.</span></span>  
   
--   **WCF utilise des normes multiplateformes.** Conçu pour mettre en avant l'interopérabilité multiplateforme, WCF prend en charge de nombreuses normes \(SOAP, WS\-Security, WS\-Trust, etc.\).  Un service WCF peut interagir avec des clients en cours d'exécution sur des systèmes d'exploitation autres que Windows.  Remoting est principalement conçu pour les environnements dans lesquels le serveur et les applications clientes exécutent .NET Framework sur un système d'exploitation Windows.  
+-   <span data-ttu-id="a15c2-241">**WCF utilise des normes multiplateformes.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-241">**WCF uses cross-platform standards.**</span></span> <span data-ttu-id="a15c2-242">Conçu pour mettre en avant l'interopérabilité multiplateforme, WCF prend en charge de nombreuses normes (SOAP, WS-Security, WS-Trust, etc.).</span><span class="sxs-lookup"><span data-stu-id="a15c2-242">WCF was designed with cross-platform interoperability in mind and supports many industry standards (SOAP, WS-Security, WS-Trust, etc.).</span></span> <span data-ttu-id="a15c2-243">Un service WCF peut interagir avec des clients en cours d'exécution sur des systèmes d'exploitation autres que Windows.</span><span class="sxs-lookup"><span data-stu-id="a15c2-243">A WCF service can interoperate with clients running on operating systems other than Windows.</span></span> <span data-ttu-id="a15c2-244">Remoting est principalement conçu pour les environnements dans lesquels le serveur et les applications clientes exécutent .NET Framework sur un système d'exploitation Windows.</span><span class="sxs-lookup"><span data-stu-id="a15c2-244">Remoting was designed primarily for environments where both the server and client applications run using the .NET framework on a Windows operating system.</span></span>  
   
--   **WCF intègre des mesures de sécurité.** Conçu dans un souci de sécurité, WCF offre de nombreuses options en ce qui concerne l'authentification, la sécurité au niveau du transport, la sécurité au niveau des messages, etc.  S'il facilite l'interopérabilité des applications, Remoting n'est pas conçu pour assurer la sécurité dans les environnements non approuvés.  De par sa conception, WCF fonctionne dans les environnements approuvés et non approuvés.  
+-   <span data-ttu-id="a15c2-245">**WCF a la sécurité intégrée.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-245">**WCF has built-in security.**</span></span> <span data-ttu-id="a15c2-246">Conçu dans un souci de sécurité, WCF offre de nombreuses options en ce qui concerne l'authentification, la sécurité au niveau du transport, la sécurité au niveau des messages, etc. S'il facilite l'interopérabilité des applications, Remoting n'est pas conçu pour assurer la sécurité dans les environnements non approuvés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-246">WCF was designed with security in mind and offers many options for authentication, transport level security, message level security, etc. Remoting was designed to make it easy for applications to interoperate but was not designed to be secure in non-trusted environments.</span></span> <span data-ttu-id="a15c2-247">De par sa conception, WCF fonctionne dans les environnements approuvés et non approuvés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-247">WCF was designed to work in both trusted and non-trusted environments.</span></span>  
   
-<a name="Migration_Recommendations"></a>   
-### Recommandations en matière de migration  
- Voici les étapes recommandées pour effectuer la migration de Remoting vers WCF :  
+### <a name="migration-recommendations"></a><span data-ttu-id="a15c2-248">Recommandations en matière de migration</span><span class="sxs-lookup"><span data-stu-id="a15c2-248">Migration Recommendations</span></span>  
+ <span data-ttu-id="a15c2-249">Voici les étapes recommandées pour effectuer la migration de Remoting vers WCF :</span><span class="sxs-lookup"><span data-stu-id="a15c2-249">The following are the recommended steps to migrate from .NET Remoting to WCF:</span></span>  
   
--   **Créer le contrat de service.** Définissez vos types d'interface de service et marquez\-les avec l'attribut \[ServiceContract\]. Marquez toutes les méthodes que les clients peuvent appeler avec \[OperationContract\].  
+-   <span data-ttu-id="a15c2-250">**Créer le contrat de service.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-250">**Create the service contract.**</span></span> <span data-ttu-id="a15c2-251">Définissez vos types d'interface de service et marquez-les avec l'attribut [ServiceContract]. Marquez toutes les méthodes que les clients peuvent appeler avec [OperationContract].</span><span class="sxs-lookup"><span data-stu-id="a15c2-251">Define your service interface types, and mark them with the [ServiceContract] attribute.Mark all the methods the clients will be allowed to call with [OperationContract].</span></span>  
   
--   **Créer le contrat de données.** Définissez les types de données échangées entre le serveur et le client, puis marquez\-les avec l'attribut \[DataContract\].  Marquez tous les champs et propriétés que le client pourra utiliser avec \[DataMember\].  
+-   <span data-ttu-id="a15c2-252">**Créer le contrat de données.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-252">**Create the data contract.**</span></span> <span data-ttu-id="a15c2-253">Définissez les types de données échangées entre le serveur et le client, puis marquez-les avec l'attribut [DataContract].</span><span class="sxs-lookup"><span data-stu-id="a15c2-253">Define the data types that will be exchanged between server and client, and mark them with the [DataContract] attribute.</span></span> <span data-ttu-id="a15c2-254">Marquez tous les champs et propriétés que le client pourra utiliser avec [DataMember].</span><span class="sxs-lookup"><span data-stu-id="a15c2-254">Mark all the fields and properties the client will be allowed to use with [DataMember].</span></span>  
   
--   **Créer le contrat d'erreur \(facultatif\).** Créez les types échangés entre le client et le serveur en cas d'erreurs.  Marquez ces types avec \[DataContract\] et \[DataMember\] pour les rendre sérialisables.  Concernant les opérations de service marquées avec \[OperationContract\], marquez\-les aussi avec \[FaultContract\] pour indiquer les erreurs qu'elles peuvent retourner.  
+-   <span data-ttu-id="a15c2-255">**Créer le contrat d’erreur (facultatif).**</span><span class="sxs-lookup"><span data-stu-id="a15c2-255">**Create the fault contract (optional).**</span></span> <span data-ttu-id="a15c2-256">Créez les types échangés entre le client et le serveur en cas d'erreurs.</span><span class="sxs-lookup"><span data-stu-id="a15c2-256">Create the types that will be exchanged between server and client when errors are encountered.</span></span> <span data-ttu-id="a15c2-257">Marquez ces types avec [DataContract] et [DataMember] pour les rendre sérialisables.</span><span class="sxs-lookup"><span data-stu-id="a15c2-257">Mark these types with [DataContract] and [DataMember] to make them serializable.</span></span> <span data-ttu-id="a15c2-258">Concernant les opérations de service marquées avec [OperationContract], marquez-les aussi avec [FaultContract] pour indiquer les erreurs qu'elles peuvent retourner.</span><span class="sxs-lookup"><span data-stu-id="a15c2-258">For all service operations you marked with [OperationContract], also mark them with [FaultContract] to indicate which errors they may return.</span></span>  
   
--   **Configurer et héberger le service.** Une fois le contrat de service créé, l'étape suivante consiste à configurer une liaison pour exposer le service à un point de terminaison.  Pour plus d'informations, consultez [Points de terminaison : adresses, liaisons et contrats](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md).  
+-   <span data-ttu-id="a15c2-259">**Configurer et héberger le service.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-259">**Configure and host the service.**</span></span> <span data-ttu-id="a15c2-260">Une fois le contrat de service créé, l’étape suivante consiste à configurer une liaison pour exposer le service à un point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="a15c2-260">Once the service contract has been created, the next step is to configure a binding to expose the service at an endpoint.</span></span> <span data-ttu-id="a15c2-261">Pour plus d’informations, consultez [points de terminaison : adresses, liaisons et contrats](./feature-details/endpoints-addresses-bindings-and-contracts.md).</span><span class="sxs-lookup"><span data-stu-id="a15c2-261">For more information, see [Endpoints: Addresses, Bindings, and Contracts](./feature-details/endpoints-addresses-bindings-and-contracts.md).</span></span>  
   
- À l'issue de la migration d'une application Remoting vers WCF, il est toujours important de supprimer les dépendances à .NET Remoting.  Cela permet de s'assurer que toutes les vulnérabilités de Remoting sont supprimées de l'application.  Notamment :  
+ <span data-ttu-id="a15c2-262">À l'issue de la migration d'une application Remoting vers WCF, il est toujours important de supprimer les dépendances à .NET Remoting.</span><span class="sxs-lookup"><span data-stu-id="a15c2-262">Once a Remoting application has been migrated to WCF, it is still important to remove dependencies on .NET Remoting.</span></span> <span data-ttu-id="a15c2-263">Cela permet de s'assurer que toutes les vulnérabilités de Remoting sont supprimées de l'application.</span><span class="sxs-lookup"><span data-stu-id="a15c2-263">This ensures that any Remoting vulnerabilities are removed from the application.</span></span> <span data-ttu-id="a15c2-264">Notamment :</span><span class="sxs-lookup"><span data-stu-id="a15c2-264">These steps include the following:</span></span>  
   
--   **Cesser d'utiliser MarshalByRefObject.** Le type MarshalByRefObject concerne uniquement Remoting et n'est pas utilisé par WCF.  Les types d'applications qui définissent des sous\-classes de MarshalByRefObject doivent être supprimés ou modifiés.  Le type MarshalByRefObject concerne uniquement Remoting et n'est pas utilisé par WCF.  Les types d'applications qui définissent des sous\-classes de MarshalByRefObject doivent être supprimés ou modifiés.  
+-   <span data-ttu-id="a15c2-265">**Cesser d’utiliser MarshalByRefObject.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-265">**Discontinue use of MarshalByRefObject.**</span></span> <span data-ttu-id="a15c2-266">Le type MarshalByRefObject concerne uniquement Remoting et n’est pas utilisé par WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-266">The MarshalByRefObject type exists only for Remoting and is not used by WCF.</span></span> <span data-ttu-id="a15c2-267">Les types d'applications qui définissent des sous-classes de MarshalByRefObject doivent être supprimés ou modifiés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-267">Any application types that sub-class MarshalByRefObject should be removed or changed.</span></span> <span data-ttu-id="a15c2-268">Le type MarshalByRefObject concerne uniquement Remoting et n'est pas utilisé par WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-268">The MarshalByRefObject type exists only for Remoting and is not used by WCF.</span></span> <span data-ttu-id="a15c2-269">Les types d’applications qui définissent des sous-classes de MarshalByRefObject doivent être supprimés ou modifiés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-269">Any application types that sub-class MarshalByRefObject should be removed or changed.</span></span>  
   
--   **Cesser d'utiliser \[Serializable\] et ISerializable.** Conçus à l'origine pour sérialiser les types dans les environnements fiables, l'attribut \[Serializable\] et l'interface ISerializable sont utilisés par Remoting.  La sérialisation WCF s'appuie sur les types marqués avec \[DataContract\] et \[DataMember\].  Les types de données utilisés par une application doivent être modifiés afin d'utiliser \[DataContract\] et non l'interface ISerializable ou \[Serializable\].  Conçus à l'origine pour sérialiser les types dans les environnements fiables, l'attribut \[Serializable\] et l'interface ISerializable sont utilisés par Remoting.  La sérialisation WCF s'appuie sur les types marqués avec \[DataContract\] et \[DataMember\].  Les types de données utilisés par une application doivent être modifiés afin d'utiliser \[DataContract\] et non l'interface ISerializable ou \[Serializable\].  
+-   <span data-ttu-id="a15c2-270">**Cesser d’utiliser [Serializable] et ISerializable.**</span><span class="sxs-lookup"><span data-stu-id="a15c2-270">**Discontinue use of [Serializable] and ISerializable.**</span></span> <span data-ttu-id="a15c2-271">Conçus à l'origine pour sérialiser les types dans les environnements fiables, l'attribut [Serializable] et l'interface ISerializable sont utilisés par Remoting.</span><span class="sxs-lookup"><span data-stu-id="a15c2-271">The [Serializable] attribute and ISerializable interface were originally designed to serialize types within trusted environments, and they are used by Remoting.</span></span> <span data-ttu-id="a15c2-272">La sérialisation WCF s'appuie sur les types marqués avec [DataContract] et [DataMember].</span><span class="sxs-lookup"><span data-stu-id="a15c2-272">WCF serialization relies on types being marked with [DataContract] and [DataMember].</span></span> <span data-ttu-id="a15c2-273">Les types de données utilisés par une application doivent être modifiés afin d'utiliser [DataContract] et non l'interface ISerializable ou [Serializable].</span><span class="sxs-lookup"><span data-stu-id="a15c2-273">Data types used by an application should be modified to use [DataContract] and not to use ISerializable or [Serializable].</span></span> <span data-ttu-id="a15c2-274">Conçus à l'origine pour sérialiser les types dans les environnements fiables, l'attribut [Serializable] et l'interface ISerializable sont utilisés par Remoting.</span><span class="sxs-lookup"><span data-stu-id="a15c2-274">The [Serializable] attribute and ISerializable interface were originally designed to serialize types within trusted environments, and they are used by Remoting.</span></span> <span data-ttu-id="a15c2-275">La sérialisation WCF s'appuie sur les types marqués avec [DataContract] et [DataMember].</span><span class="sxs-lookup"><span data-stu-id="a15c2-275">WCF serialization relies on types being marked with [DataContract] and [DataMember].</span></span> <span data-ttu-id="a15c2-276">Les types de données utilisés par une application doivent être modifiés afin d'utiliser [DataContract] et non l'interface ISerializable ou [Serializable].</span><span class="sxs-lookup"><span data-stu-id="a15c2-276">Data types used by an application should be modified to use [DataContract] and not to use ISerializable or [Serializable].</span></span>  
   
-<a name="Migration_Scenarios"></a>   
-### Scénarios de migration  
- Nous allons à présent voir comment transposer des scénarios Remoting courants suivants dans WCF :  
+### <a name="migration-scenarios"></a><span data-ttu-id="a15c2-277">Scénarios de migration</span><span class="sxs-lookup"><span data-stu-id="a15c2-277">Migration Scenarios</span></span>  
+ <span data-ttu-id="a15c2-278">Nous allons à présent voir comment transposer des scénarios Remoting courants suivants dans WCF :</span><span class="sxs-lookup"><span data-stu-id="a15c2-278">Now let’s see how to accomplish the following common Remoting scenarios in WCF:</span></span>  
   
-1.  Le serveur retourne un objet par valeur au client  
+1.  <span data-ttu-id="a15c2-279">Le serveur retourne un objet par valeur au client</span><span class="sxs-lookup"><span data-stu-id="a15c2-279">Server returns an object by-value to the client</span></span>  
   
-2.  Le serveur retourne un objet par référence au client  
+2.  <span data-ttu-id="a15c2-280">Le serveur retourne un objet par référence au client</span><span class="sxs-lookup"><span data-stu-id="a15c2-280">Server returns an object by-reference to the client</span></span>  
   
-3.  Le client envoie un objet par valeur au serveur  
+3.  <span data-ttu-id="a15c2-281">Le client envoie un objet par valeur au serveur</span><span class="sxs-lookup"><span data-stu-id="a15c2-281">Client sends an object by-value to the server</span></span>  
   
 > [!NOTE]
->  L'envoi d'un objet par référence du client vers le serveur n'est pas autorisé dans WCF.  
+>  <span data-ttu-id="a15c2-282">L'envoi d'un objet par référence du client vers le serveur n'est pas autorisé dans WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-282">Sending an object by-reference from the client to the server is not allowed in WCF.</span></span>  
   
- Quand vous lisez ces scénarios, tenez compte du fait que nos interfaces de ligne de base pour .NET Remoting ressemblent à l'exemple suivant.  L'implémentation de .NET Remoting n'est pas importante ici, car notre objectif est de montrer comment utiliser WCF pour implémenter des fonctionnalités équivalentes.  
+ <span data-ttu-id="a15c2-283">Quand vous lisez ces scénarios, tenez compte du fait que nos interfaces de ligne de base pour .NET Remoting ressemblent à l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="a15c2-283">When reading through these scenarios, assume our baseline interfaces for .NET Remoting look like the following example.</span></span> <span data-ttu-id="a15c2-284">L'implémentation de .NET Remoting n'est pas importante ici, car notre objectif est de montrer comment utiliser WCF pour implémenter des fonctionnalités équivalentes.</span><span class="sxs-lookup"><span data-stu-id="a15c2-284">The .NET Remoting implementation is not important here because we want to illustrate only how to use WCF to implement equivalent functionality.</span></span>  
   
-```  
+```csharp
 public class RemotingServer : MarshalByRefObject  
 {  
     // Demonstrates server returning object by-value  
@@ -384,71 +351,70 @@ public class RemotingServer : MarshalByRefObject
     // Demonstrates client passing object to server by-value  
     public bool UpdateCustomer(Customer customer) {…}  
 }  
-  
 ```  
   
-#### Scénario 1 : service retournant un objet par valeur  
- Ce scénario présente un serveur qui retourne un objet par valeur au client.  WCF retourne toujours les objets du serveur par valeur. Les étapes suivantes décrivent donc la création d'un service WCF normal.  
+#### <a name="scenario-1-service-returns-an-object-by-value"></a><span data-ttu-id="a15c2-285">Scénario 1 : service retournant un objet par valeur</span><span class="sxs-lookup"><span data-stu-id="a15c2-285">Scenario 1: Service Returns an Object by Value</span></span>  
+ <span data-ttu-id="a15c2-286">Ce scénario présente un serveur qui retourne un objet par valeur au client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-286">This scenario demonstrates a server returning an object to the client by value.</span></span> <span data-ttu-id="a15c2-287">WCF retourne toujours les objets du serveur par valeur. Les étapes suivantes décrivent donc la création d'un service WCF normal.</span><span class="sxs-lookup"><span data-stu-id="a15c2-287">WCF always returns objects from the server by value, so the following steps simply describe how to build a normal WCF service.</span></span>  
   
-1.  Commencez par définir une interface publique pour le service WCF et marquez\-la avec l'attribut \[ServiceContract\].  \[OperationContract\] nous permet d'identifier les méthodes côté serveur qui seront appelées par notre client.  
+1.  <span data-ttu-id="a15c2-288">Commencez par définir une interface publique pour le service WCF et marquez-la avec l'attribut [ServiceContract].</span><span class="sxs-lookup"><span data-stu-id="a15c2-288">Start by defining a public interface for the WCF service and mark it with the [ServiceContract] attribute.</span></span> <span data-ttu-id="a15c2-289">[OperationContract] nous permet d'identifier les méthodes côté serveur qui seront appelées par notre client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-289">We use [OperationContract] to identify the server-side methods our client will call.</span></span>  
   
-    ```  
-    [ServiceContract]  
-    public interface ICustomerService  
-    {  
-        [OperationContract]  
-        Customer GetCustomer(int customerId);  
+   ```csharp
+   [ServiceContract]  
+   public interface ICustomerService  
+   {  
+       [OperationContract]  
+       Customer GetCustomer(int customerId);  
   
-        [OperationContract]  
-        bool UpdateCustomer(Customer customer);  
-    }  
-    ```  
+       [OperationContract]  
+       bool UpdateCustomer(Customer customer);  
+   }  
+   ```  
   
-2.  L'étape suivante consiste à créer le contrat de données pour ce service.  Pour cela, nous créons des classes \(et non des interfaces\) marquées avec l'attribut \[DataContract\].  Les propriétés ou champs individuels qui doivent être visibles au client et au serveur sont marqués avec \[DataMember\].  Pour autoriser les types dérivés, nous devons les identifier à l'aide de l'attribut \[KnownType\].  Les seuls types dont WCF autorise la sérialisation ou la désérialisation pour ce service sont ceux contenus dans l'interface de service et ces « types connus ».  Toute tentative visant à échanger un autre type ne figurant pas dans cette liste sera rejetée.  
+2.  <span data-ttu-id="a15c2-290">L'étape suivante consiste à créer le contrat de données pour ce service.</span><span class="sxs-lookup"><span data-stu-id="a15c2-290">The next step is to create the data contract for this service.</span></span> <span data-ttu-id="a15c2-291">Pour cela, nous créons des classes (et non des interfaces) marquées avec l'attribut [DataContract].</span><span class="sxs-lookup"><span data-stu-id="a15c2-291">We do this by creating classes (not interfaces) marked with the [DataContract] attribute.</span></span> <span data-ttu-id="a15c2-292">Les propriétés ou champs individuels qui doivent être visibles au client et au serveur sont marqués avec [DataMember].</span><span class="sxs-lookup"><span data-stu-id="a15c2-292">The individual properties or fields we want visible to both client and server are marked with [DataMember].</span></span> <span data-ttu-id="a15c2-293">Pour autoriser les types dérivés, nous devons les identifier à l'aide de l'attribut [KnownType].</span><span class="sxs-lookup"><span data-stu-id="a15c2-293">If we want derived types to be allowed, we must use the [KnownType] attribute to identify them.</span></span> <span data-ttu-id="a15c2-294">Les seuls types dont WCF autorise la sérialisation ou la désérialisation pour ce service sont ceux contenus dans l'interface de service et ces « types connus ».</span><span class="sxs-lookup"><span data-stu-id="a15c2-294">The only types WCF will allow to be serialized or deserialized for this service are those in the service interface and these "known types".</span></span> <span data-ttu-id="a15c2-295">Toute tentative visant à échanger un autre type ne figurant pas dans cette liste sera rejetée.</span><span class="sxs-lookup"><span data-stu-id="a15c2-295">Attempting to exchange any other type not in this list will be rejected.</span></span>  
   
-    ```  
-    [DataContract]  
-    [KnownType(typeof(PremiumCustomer))]  
-    public class Customer  
-    {  
-        [DataMember]  
-        public string FirstName { get; set; }  
+   ```csharp
+   [DataContract]  
+   [KnownType(typeof(PremiumCustomer))]  
+   public class Customer  
+   {  
+       [DataMember]  
+       public string FirstName { get; set; }  
   
-        [DataMember]  
-        public string LastName { get; set; }  
+       [DataMember]  
+       public string LastName { get; set; }  
   
-        [DataMember]  
-        public int CustomerId { get; set; }  
-    }  
+       [DataMember]  
+       public int CustomerId { get; set; }  
+   }  
   
-    [DataContract]  
-    public class PremiumCustomer : Customer   
-    {  
-        [DataMember]  
-        public int AccountId { get; set; }  
-    }  
-    ```  
+   [DataContract]  
+   public class PremiumCustomer : Customer   
+   {  
+       [DataMember]  
+       public int AccountId { get; set; }  
+   }  
+   ```  
   
-3.  Ensuite, nous devons fournir l'implémentation de l'interface de service.  
+3.  <span data-ttu-id="a15c2-296">Ensuite, nous devons fournir l'implémentation de l'interface de service.</span><span class="sxs-lookup"><span data-stu-id="a15c2-296">Next, we provide the implementation for the service interface.</span></span>  
   
-    ```  
-    public class CustomerService : ICustomerService  
-    {  
-        public Customer GetCustomer(int customerId)  
-        {  
-            // read from database  
-        }  
+   ```csharp  
+   public class CustomerService : ICustomerService  
+   {  
+       public Customer GetCustomer(int customerId)  
+       {  
+           // read from database  
+       }  
   
-        public bool UpdateCustomer(Customer customer)  
-        {  
-            // write to database  
-        }  
-    }  
-    ```  
+       public bool UpdateCustomer(Customer customer)  
+       {  
+           // write to database  
+       }  
+   }  
+   ```  
   
-4.  Pour exécuter le service WCF, nous devons déclarer un point de terminaison qui expose cette interface de service à une URL spécifique à l'aide d'une liaison WCF spécifique.  Pour cela, il suffit généralement d'ajouter les sections suivantes au fichier web.config du projet serveur.  
+4.  <span data-ttu-id="a15c2-297">Pour exécuter le service WCF, nous devons déclarer un point de terminaison qui expose cette interface de service à une URL spécifique à l'aide d'une liaison WCF spécifique.</span><span class="sxs-lookup"><span data-stu-id="a15c2-297">To run the WCF service, we need to declare an endpoint that exposes that service interface at a specific URL using a specific WCF binding.</span></span> <span data-ttu-id="a15c2-298">Pour cela, il suffit généralement d'ajouter les sections suivantes au fichier web.config du projet serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-298">This is typically done by adding the following sections to the server project’s web.config file.</span></span>  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.serviceModel>  
         <services>  
@@ -462,18 +428,18 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-5.  Le service WCF peut ensuite être démarré à l'aide du code suivant :  
+5.  <span data-ttu-id="a15c2-299">Le service WCF peut ensuite être démarré à l'aide du code suivant :</span><span class="sxs-lookup"><span data-stu-id="a15c2-299">The WCF service can then be started with the following code:</span></span>  
   
-    ```  
-    ServiceHost customerServiceHost = new ServiceHost(typeof(CustomerService));  
-        customerServiceHost.Open();  
-    ```  
+   ```csharp
+   ServiceHost customerServiceHost = new ServiceHost(typeof(CustomerService));  
+       customerServiceHost.Open();  
+   ```  
   
-     Quand ServiceHost démarre, il utilise le fichier web.config pour établir le contrat, la liaison et le point de terminaison appropriés.  Pour plus d'informations sur les fichiers de configuration, consultez [Configuration des services à l'aide de fichiers de configuration](../../../docs/framework/wcf/configuring-services-using-configuration-files.md).  On parle d'auto\-hébergement pour désigner ce type de démarrage du serveur.  Pour en savoir plus sur les autres options d'hébergement des services WCF, consultez [Hébergement de services](../../../docs/framework/wcf/hosting-services.md).  
+     <span data-ttu-id="a15c2-300">Quand ServiceHost démarre, il utilise le fichier web.config pour établir le contrat, la liaison et le point de terminaison appropriés.</span><span class="sxs-lookup"><span data-stu-id="a15c2-300">When this ServiceHost is started, it uses the web.config file to establish the proper contract, binding and endpoint.</span></span> <span data-ttu-id="a15c2-301">Pour plus d’informations sur les fichiers de configuration, consultez [fichiers de configuration des Services à l’aide de la Configuration](./configuring-services-using-configuration-files.md).</span><span class="sxs-lookup"><span data-stu-id="a15c2-301">For more information about configuration files, see [Configuring Services Using Configuration Files](./configuring-services-using-configuration-files.md).</span></span> <span data-ttu-id="a15c2-302">On parle d'auto-hébergement pour désigner ce type de démarrage du serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-302">This style of starting the server is known as self-hosting.</span></span> <span data-ttu-id="a15c2-303">Pour en savoir plus sur les autres options d’hébergement de services WCF, consultez [Services d’hébergement](./hosting-services.md).</span><span class="sxs-lookup"><span data-stu-id="a15c2-303">To learn more about other choices for hosting WCF services, see [Hosting Services](./hosting-services.md).</span></span>  
   
-6.  Le fichier app.config du projet client doit déclarer les informations de liaison correspondante pour le point de terminaison du service.  Pour cela, la solution la plus simple consiste à utiliser **Ajouter une référence de service** qui met automatiquement à jour le fichier app.config.  Vous pouvez également ajouter manuellement ces mêmes modifications.  
+6.  <span data-ttu-id="a15c2-304">Le fichier app.config du projet client doit déclarer les informations de liaison correspondante pour le point de terminaison du service.</span><span class="sxs-lookup"><span data-stu-id="a15c2-304">The client project’s app.config must declare matching binding information for the service’s endpoint.</span></span> <span data-ttu-id="a15c2-305">Pour ce faire dans Visual Studio le plus simple consiste à utiliser **ajouter une référence de Service**, ce qui met automatiquement à jour le fichier app.config.</span><span class="sxs-lookup"><span data-stu-id="a15c2-305">The easiest way to do this in Visual Studio is to use **Add Service Reference**, which will automatically update the app.config file.</span></span> <span data-ttu-id="a15c2-306">Vous pouvez également ajouter manuellement ces mêmes modifications.</span><span class="sxs-lookup"><span data-stu-id="a15c2-306">Alternatively, these same changes can be added manually.</span></span>  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.serviceModel>  
         <client>  
@@ -486,102 +452,102 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-     Pour plus d'informations sur l'utilisation d'**Ajouter une référence de service**, consultez [How to: Add, Update, or Remove a Service Reference](../Topic/How%20to:%20Add,%20Update,%20or%20Remove%20a%20Service%20Reference.md).  
+     <span data-ttu-id="a15c2-307">Pour plus d’informations sur l’utilisation de **ajouter une référence de Service**, consultez [Comment : ajouter, mettre à jour ou supprimer une référence de Service](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference).</span><span class="sxs-lookup"><span data-stu-id="a15c2-307">For more information about using **Add Service Reference**, see [How to: Add, Update, or Remove a Service Reference](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference).</span></span>  
   
-7.  Nous pouvons maintenant appeler le service WCF à partir du client.  Pour cela, nous créons une fabrique de canaux pour ce service, nous demandons un canal, puis nous appelons directement la méthode que nous voulons sur ce canal.  Si nous pouvons procéder de la sorte, c'est parce que le canal implémente l'interface du service et qu'il gère pour nous la logique sous\-jacente des demandes\/réponses.  La valeur de retour de cet appel de méthode est la copie désérialisée de la réponse du serveur.  
+7.  <span data-ttu-id="a15c2-308">Nous pouvons maintenant appeler le service WCF à partir du client.</span><span class="sxs-lookup"><span data-stu-id="a15c2-308">Now we can call the WCF service from the client.</span></span> <span data-ttu-id="a15c2-309">Pour cela, nous créons une fabrique de canaux pour ce service, nous demandons un canal, puis nous appelons directement la méthode que nous voulons sur ce canal.</span><span class="sxs-lookup"><span data-stu-id="a15c2-309">We do this by creating a channel factory for that service, asking it for a channel, and directly calling the method we want on that channel.</span></span> <span data-ttu-id="a15c2-310">Si nous pouvons procéder de la sorte, c'est parce que le canal implémente l'interface du service et qu'il gère pour nous la logique sous-jacente des demandes/réponses.</span><span class="sxs-lookup"><span data-stu-id="a15c2-310">We can do this because the channel implements the service’s interface and handles the underlying request/reply logic for us.</span></span> <span data-ttu-id="a15c2-311">La valeur de retour de cet appel de méthode est la copie désérialisée de la réponse du serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-311">The return value from that method call is the deserialized copy of the server’s response.</span></span>  
   
-    ```  
-    ChannelFactory<ICustomerService> factory =  
-        new ChannelFactory<ICustomerService>("customerservice");  
-    ICustomerService service = factory.CreateChannel();  
-    Customer customer = service.GetCustomer(42);  
-    Console.WriteLine(String.Format("  Customer {0} {1} received.",  
-            customer.FirstName, customer.LastName));  
-    ```  
+   ```csharp
+   ChannelFactory<ICustomerService> factory =  
+       new ChannelFactory<ICustomerService>("customerservice");  
+   ICustomerService service = factory.CreateChannel();  
+   Customer customer = service.GetCustomer(42);  
+   Console.WriteLine(String.Format("  Customer {0} {1} received.",  
+           customer.FirstName, customer.LastName));  
+   ```  
   
- Les objets retournés par WCF du serveur au client sont toujours par valeur.  Les objets sont des copies désérialisées des données envoyées par le serveur.  Le client peut appeler des méthodes sur ces copies locales sans aucun risque d'appeler le code serveur via des rappels.  
+ <span data-ttu-id="a15c2-312">Les objets retournés par WCF du serveur au client sont toujours par valeur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-312">Objects returned by WCF from the server to the client are always by value.</span></span> <span data-ttu-id="a15c2-313">Les objets sont des copies désérialisées des données envoyées par le serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-313">The objects are deserialized copies of the data sent by the server.</span></span> <span data-ttu-id="a15c2-314">Le client peut appeler des méthodes sur ces copies locales sans aucun risque d'appeler le code serveur via des rappels.</span><span class="sxs-lookup"><span data-stu-id="a15c2-314">The client can call methods on these local copies without any danger of invoking server code through callbacks.</span></span>  
   
-#### Scénario 2 : serveur retournant un objet par référence  
- Ce scénario présente un serveur qui fournit un objet au client par référence.  Dans .NET Remoting, ceci est géré automatiquement pour n'importe quel type dérivé de MarshalByRefObject, qui est sérialisé par référence.  Autoriser plusieurs clients à avoir des objets côté serveur de session indépendants est un exemple de ce scénario.  Comme mentionné précédemment, les objets retournés par un service WCF sont toujours des objets par valeur. Il n'y a donc pas d'équivalent direct à un objet par référence, mais vous pouvez obtenir des résultats semblables à la sémantique par référence en utilisant un objet <xref:System.ServiceModel.EndpointAddress10>.  Il s'agit d'un objet par valeur sérialisable qui peut être utilisé par le client pour obtenir un objet par référence de session sur le serveur.  Cela permet la prise en charge de plusieurs clients avec des objets côté serveur de session indépendants.  
+#### <a name="scenario-2-server-returns-an-object-by-reference"></a><span data-ttu-id="a15c2-315">Scénario 2 : serveur retournant un objet par référence</span><span class="sxs-lookup"><span data-stu-id="a15c2-315">Scenario 2: Server Returns an Object By Reference</span></span>  
+ <span data-ttu-id="a15c2-316">Ce scénario présente un serveur qui fournit un objet au client par référence.</span><span class="sxs-lookup"><span data-stu-id="a15c2-316">This scenario demonstrates the server providing an object to the client by reference.</span></span> <span data-ttu-id="a15c2-317">Dans .NET Remoting, ceci est géré automatiquement pour n'importe quel type dérivé de MarshalByRefObject, qui est sérialisé par référence.</span><span class="sxs-lookup"><span data-stu-id="a15c2-317">In .NET Remoting, this is handled automatically for any type derived from MarshalByRefObject, which is serialized by-reference.</span></span> <span data-ttu-id="a15c2-318">Autoriser plusieurs clients à avoir des objets côté serveur de session indépendants est un exemple de ce scénario.</span><span class="sxs-lookup"><span data-stu-id="a15c2-318">An example of this scenario is allowing multiple clients to have independent sessionful server-side objects.</span></span> <span data-ttu-id="a15c2-319">Comme mentionné précédemment, les objets retournés par un service WCF sont toujours des objets par valeur. Il n'y a donc pas d'équivalent direct à un objet par référence, mais vous pouvez obtenir des résultats semblables à la sémantique par référence en utilisant un objet <xref:System.ServiceModel.EndpointAddress10>.</span><span class="sxs-lookup"><span data-stu-id="a15c2-319">As previously mentioned, objects returned by a WCF service are always by value, so there is no direct equivalent of a by-reference object, but it is possible to achieve something similar to by-reference semantics using an <xref:System.ServiceModel.EndpointAddress10> object.</span></span> <span data-ttu-id="a15c2-320">Il s'agit d'un objet par valeur sérialisable qui peut être utilisé par le client pour obtenir un objet par référence de session sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-320">This is a serializable by-value object that can be used by the client to obtain a sessionful by-reference object on the server.</span></span> <span data-ttu-id="a15c2-321">Cela permet la prise en charge de plusieurs clients avec des objets côté serveur de session indépendants.</span><span class="sxs-lookup"><span data-stu-id="a15c2-321">This enables the scenario of having multiple clients with independent sessionful server-side objects.</span></span>  
   
-1.  Tout d'abord, nous devons définir un contrat de service WCF qui correspond à l'objet de session proprement dit.  
+1.  <span data-ttu-id="a15c2-322">Tout d'abord, nous devons définir un contrat de service WCF qui correspond à l'objet de session proprement dit.</span><span class="sxs-lookup"><span data-stu-id="a15c2-322">First, we need to define a WCF service contract that corresponds to the sessionful object itself.</span></span>  
   
-    ```  
-    [ServiceContract(SessionMode = SessionMode.Allowed)]  
-        public interface ISessionBoundObject  
-        {  
-            [OperationContract]  
-            string GetCurrentValue();  
+   ```csharp
+   [ServiceContract(SessionMode = SessionMode.Allowed)]  
+       public interface ISessionBoundObject  
+       {  
+           [OperationContract]  
+           string GetCurrentValue();  
   
-            [OperationContract]  
-            void SetCurrentValue(string value);  
-        }  
-    ```  
+           [OperationContract]  
+           void SetCurrentValue(string value);  
+       }  
+   ```  
   
     > [!TIP]
-    >  Notez que l'objet de session est marqué avec \[ServiceContract\], ce qui en fait une interface de service WCF normale.  Le fait de définir la propriété SessionMode indique qu'il s'agit d'un service de session.  Dans WCF, une session est une façon de mettre en corrélation plusieurs messages envoyés entre deux points de terminaison.  Cela signifie qu'une fois qu'un client obtient une connexion à ce service, une session est établie entre le client et le serveur.  Le client utilise une seule instance de l'objet côté serveur pour toutes ses interactions au sein de cette session unique.  
+    >  <span data-ttu-id="a15c2-323">Notez que l'objet de session est marqué avec [ServiceContract], ce qui en fait une interface de service WCF normale.</span><span class="sxs-lookup"><span data-stu-id="a15c2-323">Notice that the sessionful object is marked with [ServiceContract], making it a normal WCF service interface.</span></span> <span data-ttu-id="a15c2-324">Le fait de définir la propriété SessionMode indique qu'il s'agit d'un service de session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-324">Setting the SessionMode property indicates it will be a sessionful service.</span></span> <span data-ttu-id="a15c2-325">Dans WCF, une session est une façon de mettre en corrélation plusieurs messages envoyés entre deux points de terminaison.</span><span class="sxs-lookup"><span data-stu-id="a15c2-325">In WCF, a session is a way of correlating multiple messages sent between two endpoints.</span></span> <span data-ttu-id="a15c2-326">Cela signifie qu'une fois qu'un client obtient une connexion à ce service, une session est établie entre le client et le serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-326">This means that once a client obtains a connection to this service, a session will be established between the client and the server.</span></span> <span data-ttu-id="a15c2-327">Le client utilise une seule instance de l'objet côté serveur pour toutes ses interactions au sein de cette session unique.</span><span class="sxs-lookup"><span data-stu-id="a15c2-327">The client will use a single unique instance of the server-side object for all its interactions within this single session.</span></span>  
   
-2.  Nous devons ensuite fournir l'implémentation de l'interface du service.  En spécifiant \[ServiceBehavior\] et en définissant InstanceContextMode, nous indiquons à WCF que nous souhaitons utiliser une instance unique de ce type pour chaque session.  
+2.  <span data-ttu-id="a15c2-328">Nous devons ensuite fournir l'implémentation de l'interface du service.</span><span class="sxs-lookup"><span data-stu-id="a15c2-328">Next, we need to provide the implementation of this service interface.</span></span> <span data-ttu-id="a15c2-329">En spécifiant [ServiceBehavior] et en définissant InstanceContextMode, nous indiquons à WCF que nous souhaitons utiliser une instance unique de ce type pour chaque session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-329">By denoting it with [ServiceBehavior] and setting the InstanceContextMode, we tell WCF we want to use a unique instance of this type for an each session.</span></span>  
   
-    ```  
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
-        public class MySessionBoundObject : ISessionBoundObject  
-        {  
-            private string _value;  
+   ```csharp
+   [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
+       public class MySessionBoundObject : ISessionBoundObject  
+       {  
+           private string _value;  
   
-            public string GetCurrentValue()  
-            {  
-                return _value;  
-            }  
+           public string GetCurrentValue()  
+           {  
+               return _value;  
+           }  
   
-            public void SetCurrentValue(string val)  
-            {  
-                _value = val;  
-            }  
+           public void SetCurrentValue(string val)  
+           {  
+               _value = val;  
+           }  
   
-        }  
-    ```  
+       }  
+   ```  
   
-3.  Nous devons à présent trouver le moyen d'obtenir une instance de cet objet de session.  Pour cela, nous créons une autre interface de service WCF qui retourne un objet EndpointAddress10.  Il s'agit d'une forme sérialisable d'un point de terminaison que le client peut utiliser pour créer l'objet de session.  
+3.  <span data-ttu-id="a15c2-330">Nous devons à présent trouver le moyen d'obtenir une instance de cet objet de session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-330">Now we need a way to obtain an instance of this sessionful object.</span></span> <span data-ttu-id="a15c2-331">Pour cela, nous créons une autre interface de service WCF qui retourne un objet EndpointAddress10.</span><span class="sxs-lookup"><span data-stu-id="a15c2-331">We do this by creating another WCF service interface that returns an EndpointAddress10 object.</span></span> <span data-ttu-id="a15c2-332">Il s'agit d'une forme sérialisable d'un point de terminaison que le client peut utiliser pour créer l'objet de session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-332">This is a serializable form of an endpoint that the client can use to create the sessionful object.</span></span>  
   
-    ```  
-    [ServiceContract]  
-        public interface ISessionBoundFactory  
-        {  
-            [OperationContract]  
-            EndpointAddress10 GetInstanceAddress();  
-        }  
-    ```  
+   ```csharp
+   [ServiceContract]  
+       public interface ISessionBoundFactory  
+       {  
+           [OperationContract]  
+           EndpointAddress10 GetInstanceAddress();  
+       }  
+   ```  
   
-     Puis nous implémentons ce service WCF :  
+     <span data-ttu-id="a15c2-333">Puis nous implémentons ce service WCF :</span><span class="sxs-lookup"><span data-stu-id="a15c2-333">And we implement this WCF service:</span></span>  
   
-    ```  
-    public class SessionBoundFactory : ISessionBoundFactory  
-        {  
-            public static ChannelFactory<ISessionBoundObject> _factory =   
-                new ChannelFactory<ISessionBoundObject>("sessionbound");  
+   ```csharp
+   public class SessionBoundFactory : ISessionBoundFactory  
+       {  
+           public static ChannelFactory<ISessionBoundObject> _factory =   
+               new ChannelFactory<ISessionBoundObject>("sessionbound");  
+ 
+           public SessionBoundFactory()  
+           {  
+           }  
   
-            public SessionBoundFactory()  
-            {  
-            }  
+           public EndpointAddress10 GetInstanceAddress()  
+           {  
+               IClientChannel channel = (IClientChannel)_factory.CreateChannel();  
+               return EndpointAddress10.FromEndpointAddress(channel.RemoteAddress);  
+           }  
+       }  
+   ```  
   
-            public EndpointAddress10 GetInstanceAddress()  
-            {  
-                IClientChannel channel = (IClientChannel)_factory.CreateChannel();  
-                return EndpointAddress10.FromEndpointAddress(channel.RemoteAddress);  
-            }  
-        }  
-    ```  
+     <span data-ttu-id="a15c2-334">Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-334">This implementation maintains a singleton channel factory to create sessionful objects.</span></span> <span data-ttu-id="a15c2-335">Quand GetInstanceAddress() est appelé, il crée un canal et un objet EndpointAddress10 qui pointe vers l'adresse distante associée à ce canal.</span><span class="sxs-lookup"><span data-stu-id="a15c2-335">When GetInstanceAddress() is called, it creates a channel and creates an EndpointAddress10 object that effectively points to the remote address associated with this channel.</span></span> <span data-ttu-id="a15c2-336">EndpointAddress10 est simplement un type de données qui peut être retourné au client par valeur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-336">EndpointAddress10 is simply a data type that can be returned to the client by-value.</span></span>  
   
-     Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand GetInstanceAddress\(\) est appelé, il crée un canal et un objet EndpointAddress10 qui pointe vers l'adresse distante associée à ce canal.  EndpointAddress10 est simplement un type de données qui peut être retourné au client par valeur.  
+4.  <span data-ttu-id="a15c2-337">Pour modifier le fichier de configuration du serveur, nous devons effectuer les deux tâches suivantes, comme le montre l'exemple ci-dessous :</span><span class="sxs-lookup"><span data-stu-id="a15c2-337">We need to modify the server’s configuration file by doing the following two things as shown in the example below:</span></span>  
   
-4.  Pour modifier le fichier de configuration du serveur, nous devons effectuer les deux tâches suivantes, comme le montre l'exemple ci\-dessous :  
+    1.  <span data-ttu-id="a15c2-338">Déclarez un \<client > section qui décrit le point de terminaison pour l’objet de session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-338">Declare a \<client> section that describes the endpoint for the sessionful object.</span></span> <span data-ttu-id="a15c2-339">Cette opération est nécessaire, car le serveur joue également le rôle de client dans cette situation.</span><span class="sxs-lookup"><span data-stu-id="a15c2-339">This is necessary because the server also acts as a client in this situation.</span></span>  
   
-    1.  Déclarez une section \<client\> qui décrit le point de terminaison de l'objet de session.  Cette opération est nécessaire, car le serveur joue également le rôle de client dans cette situation.  
+    2.  <span data-ttu-id="a15c2-340">Déclarez les points de terminaison pour la fabrique et l'objet de session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-340">Declare endpoints for the factory and sessionful object.</span></span> <span data-ttu-id="a15c2-341">Cette opération est nécessaire afin de permettre au client de communiquer avec les points de terminaison du service pour acquérir l'objet EndpointAddress10 et créer le canal de session.</span><span class="sxs-lookup"><span data-stu-id="a15c2-341">This is necessary to allow the client to communicate with the service endpoints to acquire the EndpointAddress10 and to create the sessionful channel.</span></span>  
   
-    2.  Déclarez les points de terminaison pour la fabrique et l'objet de session.  Cette opération est nécessaire afin de permettre au client de communiquer avec les points de terminaison du service pour acquérir l'objet EndpointAddress10 et créer le canal de session.  
-  
-    ```  
+    ```xml  
     <configuration>  
       <system.serviceModel>  
          <client>  
@@ -590,7 +556,6 @@ public class RemotingServer : MarshalByRefObject
                     binding="netTcpBinding"  
                     contract="Shared.ISessionBoundObject"/>  
         </client>  
-  
         <services>  
           <service name="Server.CustomerService">  
             <endpoint address="http://localhost:8083/CustomerService"  
@@ -612,19 +577,19 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-     Ensuite, nous pouvons démarrer ces services :  
+     <span data-ttu-id="a15c2-342">Ensuite, nous pouvons démarrer ces services :</span><span class="sxs-lookup"><span data-stu-id="a15c2-342">And then we can start these services:</span></span>  
   
-    ```  
-    ServiceHost factoryHost = new ServiceHost(typeof(SessionBoundFactory));  
-    factoryHost.Open();  
+   ```csharp
+   ServiceHost factoryHost = new ServiceHost(typeof(SessionBoundFactory));  
+   factoryHost.Open();  
   
-    ServiceHost sessionHost = new ServiceHost(typeof(MySessionBoundObject));  
-    sessionHost.Open();  
-    ```  
+   ServiceHost sessionHost = new ServiceHost(typeof(MySessionBoundObject));  
+   sessionHost.Open();  
+   ```  
   
-5.  Nous configurons le client en déclarant ces mêmes points de terminaison dans le fichier app.config de son projet.  
+5.  <span data-ttu-id="a15c2-343">Nous configurons le client en déclarant ces mêmes points de terminaison dans le fichier app.config de son projet.</span><span class="sxs-lookup"><span data-stu-id="a15c2-343">We configure the client by declaring these same endpoints in its project’s app.config file.</span></span>  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.serviceModel>  
         <client>  
@@ -645,73 +610,72 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-6.  Pour créer et utiliser cet objet de session, le client doit effectuer les opérations suivantes :  
+6.  <span data-ttu-id="a15c2-344">Pour créer et utiliser cet objet de session, le client doit effectuer les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="a15c2-344">In order to create and use this sessionful object, the client must do the following steps:</span></span>  
   
-    1.  Créer un canal jusqu'au service ISessionBoundFactory  
+    1.  <span data-ttu-id="a15c2-345">Créer un canal jusqu'au service ISessionBoundFactory</span><span class="sxs-lookup"><span data-stu-id="a15c2-345">Create a channel to the ISessionBoundFactory service.</span></span>  
   
-    2.  Utiliser ce canal pour appeler ce service afin d'obtenir un objet EndpointAddress10  
+    2.  <span data-ttu-id="a15c2-346">Utiliser ce canal pour appeler ce service afin d'obtenir un objet EndpointAddress10</span><span class="sxs-lookup"><span data-stu-id="a15c2-346">Use that channel to invoke that service to obtain an EndpointAddress10.</span></span>  
   
-    3.  Utiliser l'objet EndpointAddress10 pour créer un canal et obtenir un objet de session  
+    3.  <span data-ttu-id="a15c2-347">Utiliser l'objet EndpointAddress10 pour créer un canal et obtenir un objet de session</span><span class="sxs-lookup"><span data-stu-id="a15c2-347">Use the EndpointAddress10 to create a channel to obtain a sessionful object.</span></span>  
   
-    4.  Interagir avec l'objet de session pour montrer qu'il s'agit de la même instance sur plusieurs appels  
+    4.  <span data-ttu-id="a15c2-348">Interagir avec l'objet de session pour montrer qu'il s'agit de la même instance sur plusieurs appels</span><span class="sxs-lookup"><span data-stu-id="a15c2-348">Interact with the sessionful object to demonstrate it remains the same instance across multiple calls.</span></span>  
   
-    ```  
-    ChannelFactory<ISessionBoundFactory> channelFactory =   
-        new ChannelFactory<ISessionBoundFactory>("factory");  
-    ISessionBoundFactory sessionFactory = channelFactory.CreateChannel();  
+   ```csharp
+   ChannelFactory<ISessionBoundFactory> channelFactory =   
+       new ChannelFactory<ISessionBoundFactory>("factory");  
+   ISessionBoundFactory sessionFactory = channelFactory.CreateChannel();  
   
-    EndpointAddress10 address1 = sessionFactory.GetInstanceAddress();  
-    EndpointAddress10 address2 = sessionFactory.GetInstanceAddress();  
+   EndpointAddress10 address1 = sessionFactory.GetInstanceAddress();  
+   EndpointAddress10 address2 = sessionFactory.GetInstanceAddress();  
   
-    ChannelFactory<ISessionBoundObject> sessionObjectFactory1 =   
-        new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),   
-                                                address1.ToEndpointAddress());  
-    ChannelFactory<ISessionBoundObject> sessionObjectFactory2 =   
-        new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),   
-                                                address2.ToEndpointAddress());  
+   ChannelFactory<ISessionBoundObject> sessionObjectFactory1 =   
+       new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),   
+                                               address1.ToEndpointAddress());  
+   ChannelFactory<ISessionBoundObject> sessionObjectFactory2 =   
+       new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),   
+                                               address2.ToEndpointAddress());  
   
-    ISessionBoundObject sessionInstance1 = sessionObjectFactory1.CreateChannel();  
-    ISessionBoundObject sessionInstance2 = sessionObjectFactory2.CreateChannel();  
+   ISessionBoundObject sessionInstance1 = sessionObjectFactory1.CreateChannel();  
+   ISessionBoundObject sessionInstance2 = sessionObjectFactory2.CreateChannel();  
   
-    sessionInstance1.SetCurrentValue("Hello");  
-    sessionInstance2.SetCurrentValue("World");  
+   sessionInstance1.SetCurrentValue("Hello");  
+   sessionInstance2.SetCurrentValue("World");  
   
-    if (sessionInstance1.GetCurrentValue() == "Hello" &&  
-        sessionInstance2.GetCurrentValue() == "World")  
-    {  
-        Console.WriteLine("sessionful server object works as expected");  
-    }  
-    ```  
+   if (sessionInstance1.GetCurrentValue() == "Hello" &&  
+       sessionInstance2.GetCurrentValue() == "World")  
+   {  
+       Console.WriteLine("sessionful server object works as expected");  
+   }  
+   ```  
   
- WCF retourne toujours les objets par valeur, mais il est possible de prendre en charge l'équivalent de la sémantique par référence en utilisant l'objet EndpointAddress10.  Le client peut ainsi demander une instance de service WCF de session avec laquelle il peut ensuite interagir comme n'importe quel autre service WCF.  
+ <span data-ttu-id="a15c2-349">WCF retourne toujours les objets par valeur, mais il est possible de prendre en charge l'équivalent de la sémantique par référence en utilisant l'objet EndpointAddress10.</span><span class="sxs-lookup"><span data-stu-id="a15c2-349">WCF always returns objects by value, but it is possible to support the equivalent of by-reference semantics through the use of EndpointAddress10.</span></span> <span data-ttu-id="a15c2-350">Le client peut ainsi demander une instance de service WCF de session avec laquelle il peut ensuite interagir comme n'importe quel autre service WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-350">This permits the client to request a sessionful WCF service instance, after which it can interact with it like any other WCF service.</span></span>  
   
-#### Scénario 3 : envoi par le client au serveur d'une instance par valeur  
- Ce scénario présente un client qui envoie une instance d'objet non primitif au serveur par valeur.  Étant donné que WCF envoie uniquement les objets par valeur, ce scénario illustre une utilisation normale de WCF.  
+#### <a name="scenario-3-client-sends-server-a-by-value-instance"></a><span data-ttu-id="a15c2-351">Scénario 3 : envoi par le client au serveur d'une instance par valeur</span><span class="sxs-lookup"><span data-stu-id="a15c2-351">Scenario 3: Client Sends Server a By-Value Instance</span></span>  
+ <span data-ttu-id="a15c2-352">Ce scénario présente un client qui envoie une instance d'objet non primitif au serveur par valeur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-352">This scenario demonstrates the client sending a non-primitive object instance to the server by value.</span></span> <span data-ttu-id="a15c2-353">Étant donné que WCF envoie uniquement les objets par valeur, ce scénario illustre une utilisation normale de WCF.</span><span class="sxs-lookup"><span data-stu-id="a15c2-353">Because WCF only sends objects by value, this scenario demonstrates normal WCF usage.</span></span>  
   
-1.  Utilisez le même service WCF que celui du scénario 1.  
+1.  <span data-ttu-id="a15c2-354">Utilisez le même service WCF que celui du scénario 1.</span><span class="sxs-lookup"><span data-stu-id="a15c2-354">Use the same WCF Service from Scenario 1.</span></span>  
   
-2.  Utilisez le client pour créer un objet par valeur \(Customer\), créez un canal pour communiquer avec le service ICustomerService, puis envoyez\-lui l'objet.  
+2.  <span data-ttu-id="a15c2-355">Utilisez le client pour créer un objet par valeur (Customer), créez un canal pour communiquer avec le service ICustomerService, puis envoyez-lui l'objet.</span><span class="sxs-lookup"><span data-stu-id="a15c2-355">Use the client to create a new by-value object (Customer), create a channel to communicate with the ICustomerService service, and send the object to it.</span></span>  
   
-    ```  
-    ChannelFactory<ICustomerService> factory =  
-        new ChannelFactory<ICustomerService>("customerservice");  
-    ICustomerService service = factory.CreateChannel();  
-    PremiumCustomer customer = new PremiumCustomer {   
-    FirstName = "Bob",   
-    LastName = "Jones",   
-    CustomerId = 43,   
-    AccountId = 99};  
-    bool success = service.UpdateCustomer(customer);  
-    Console.WriteLine(String.Format("  Server returned {0}.", success));  
-    ```  
+   ```csharp
+   ChannelFactory<ICustomerService> factory =  
+       new ChannelFactory<ICustomerService>("customerservice");  
+   ICustomerService service = factory.CreateChannel();  
+   PremiumCustomer customer = new PremiumCustomer {   
+   FirstName = "Bob",   
+   LastName = "Jones",   
+   CustomerId = 43,   
+   AccountId = 99};  
+   bool success = service.UpdateCustomer(customer);  
+   Console.WriteLine(String.Format("  Server returned {0}.", success));  
+   ```  
   
-     L'objet Customer est sérialisé, puis envoyé au service où il est désérialisé en nouvelle copie de cet objet.  
+     <span data-ttu-id="a15c2-356">L'objet Customer est sérialisé, puis envoyé au service où il est désérialisé en nouvelle copie de cet objet.</span><span class="sxs-lookup"><span data-stu-id="a15c2-356">The customer object will be serialized, and sent to the server, where it is deserialized into a new copy of that object.</span></span>  
   
     > [!NOTE]
-    >  Ce code illustre également l'envoi d'un type dérivé \(PremiumCustomer\).  L'interface de service attend un objet Customer, mais l'attribut \[KnownType\] sur la classe Customer indique que PremiumCustomer est également autorisé.  Les tentatives de WCF de sérialisation ou de désérialisation de tout autre type via cette interface de service échouent.  
+    >  <span data-ttu-id="a15c2-357">Ce code illustre également l'envoi d'un type dérivé (PremiumCustomer).</span><span class="sxs-lookup"><span data-stu-id="a15c2-357">This code also illustrates sending a derived type (PremiumCustomer).</span></span> <span data-ttu-id="a15c2-358">L'interface de service attend un objet Customer, mais l'attribut [KnownType] sur la classe Customer indique que PremiumCustomer est également autorisé.</span><span class="sxs-lookup"><span data-stu-id="a15c2-358">The service interface expects a Customer object, but the [KnownType] attribute on the Customer class indicated PremiumCustomer was also allowed.</span></span> <span data-ttu-id="a15c2-359">Les tentatives de WCF de sérialisation ou de désérialisation de tout autre type via cette interface de service échouent.</span><span class="sxs-lookup"><span data-stu-id="a15c2-359">WCF will fail any attempt to serialize or deserialize any other type through this service interface.</span></span>  
   
- Dans WCF, les données sont normalement échangées par valeur.  Cela garantit que l'appel de méthodes sur l'un de ces objets de données s'exécute uniquement au niveau local \(le code sur l'autre couche n'est pas appelé\).  Bien qu'il soit possible d'arriver à une solution permettant de retourner des objets par référence *à partir du* serveur, il n'est pas possible pour un client de passer un objet par référence *au* serveur.  Une conversation entre un client et un serveur peut être effectuée dans WCF à l'aide d'un service duplex.  Pour plus d'informations, consultez [Services duplex](../../../docs/framework/wcf/feature-details/duplex-services.md).  
+ <span data-ttu-id="a15c2-360">Dans WCF, les données sont normalement échangées par valeur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-360">Normal WCF exchanges of data are by value.</span></span> <span data-ttu-id="a15c2-361">Cela garantit que l'appel de méthodes sur l'un de ces objets de données s'exécute uniquement au niveau local (le code sur l'autre couche n'est pas appelé).</span><span class="sxs-lookup"><span data-stu-id="a15c2-361">This guarantees that invoking methods on one of these data objects executes only locally – it will not invoke code on the other tier.</span></span> <span data-ttu-id="a15c2-362">Bien qu’il soit possible d’obtenir une chose comme des objets par référence retournés *de* le serveur, il n’est pas possible pour un client de passer un objet par référence *à* le serveur.</span><span class="sxs-lookup"><span data-stu-id="a15c2-362">While it is possible to achieve something like by-reference objects returned *from* the server, it is not possible for a client to pass a by-reference object *to* the server.</span></span> <span data-ttu-id="a15c2-363">Une conversation entre un client et un serveur peut être effectuée dans WCF à l'aide d'un service duplex.</span><span class="sxs-lookup"><span data-stu-id="a15c2-363">A scenario that requires a conversation back and forth between client and server can be achieved in WCF using a duplex service.</span></span> <span data-ttu-id="a15c2-364">Pour plus d’informations, consultez [Services Duplex](./feature-details/duplex-services.md).</span><span class="sxs-lookup"><span data-stu-id="a15c2-364">For more information, see [Duplex Services](./feature-details/duplex-services.md).</span></span>  
   
-<a name="Summary"></a>   
-## Résumé  
- .NET Remoting est une infrastructure de communication destinée à être utilisée uniquement dans des environnements entièrement fiables.  Il s'agit d'un produit hérité qui est uniquement pris en charge à des fins de compatibilité descendante.  Il ne doit pas être utilisé pour développer de nouvelles applications.  À l'inverse, WCF a été conçu dans une optique de sécurité et est recommandé pour les applications nouvelles et existantes.  Microsoft recommande de migrer les applications Remoting existantes vers WCF ou l'API Web ASP.NET.
+## <a name="summary"></a><span data-ttu-id="a15c2-365">Résumé</span><span class="sxs-lookup"><span data-stu-id="a15c2-365">Summary</span></span>  
+ <span data-ttu-id="a15c2-366">.NET Remoting est une infrastructure de communication destinée à être utilisée uniquement dans des environnements entièrement fiables.</span><span class="sxs-lookup"><span data-stu-id="a15c2-366">.NET Remoting is a communication framework intended to be used only within fully-trusted environments.</span></span> <span data-ttu-id="a15c2-367">Il s'agit d'un produit hérité qui est uniquement pris en charge à des fins de compatibilité descendante.</span><span class="sxs-lookup"><span data-stu-id="a15c2-367">It is a legacy product and supported only for backward compatibility.</span></span> <span data-ttu-id="a15c2-368">Il ne doit pas être utilisé pour développer de nouvelles applications.</span><span class="sxs-lookup"><span data-stu-id="a15c2-368">It should not be used to build new applications.</span></span> <span data-ttu-id="a15c2-369">À l'inverse, WCF a été conçu dans une optique de sécurité et est recommandé pour les applications nouvelles et existantes.</span><span class="sxs-lookup"><span data-stu-id="a15c2-369">Conversely, WCF was designed with security in mind and is recommended for new and existing applications.</span></span> <span data-ttu-id="a15c2-370">Microsoft recommande de migrer les applications Remoting existantes vers WCF ou l'API Web ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="a15c2-370">Microsoft recommends that existing Remoting applications be migrated to use WCF or ASP.NET Web API instead.</span></span>

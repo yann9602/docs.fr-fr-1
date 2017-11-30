@@ -1,70 +1,71 @@
 ---
-title: "Comment&#160;: cr&#233;er des contr&#244;les pour des Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), créer"
-  - "contrôles personnalisés (Windows Forms), créer"
-  - "UserControl (classe), Windows Forms"
+title: "Comment : créer des contrôles pour des Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [Windows Forms], creating
+- UserControl class [Windows Forms], Windows Forms
+- custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f42ee49a4690c23a563740993e721207d5dedea0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er des contr&#244;les pour des Windows Forms
-Un contrôle représente un lien graphique entre l'utilisateur et le programme.  Un contrôle peut fournir ou traiter des données, accepter des données entrées par l'utilisateur, répondre à des événements ou exécuter diverses fonctions mettant en relation l'utilisateur et l'application.  Un contrôle est essentiellement un composant doté d'une interface graphique ; il peut donc exécuter n'importe quelle fonction exécutée par un composant, mais aussi offrir une interaction avec l'utilisateur.  Les contrôles sont créés pour remplir certaines fonctions spécifiques et leur création n'est ni plus ni moins qu'une autre tâche de programmation.  Gardez cela présent à l'esprit en prenant connaissance de la procédure suivante qui constitue une vue d'ensemble du processus de création de contrôles.  Des liens vous renvoient à des informations supplémentaires sur certaines étapes de la procédure.  
+# <a name="how-to-author-controls-for-windows-forms"></a><span data-ttu-id="6b5d4-102">Comment : créer des contrôles pour des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6b5d4-102">How to: Author Controls for Windows Forms</span></span>
+<span data-ttu-id="6b5d4-103">Un contrôle désigne un lien graphique entre l’utilisateur et le programme.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-103">A control represents a graphical link between the user and the program.</span></span> <span data-ttu-id="6b5d4-104">Un contrôle peut fournir ou traiter des données, accepter des entrées d’utilisateur, répondre à des événements ou effectuer de nombreuses autres fonctions afin de connecter l’utilisateur et l’application.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-104">A control can provide or process data, accept user input, respond to events, or perform any number of other functions that connect the user and the application.</span></span> <span data-ttu-id="6b5d4-105">Un contrôle étant essentiellement un composant doté d’une interface graphique, il peut servir n’importe quelle fonction d’un composant, mais aussi fournir une interaction utilisateur.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-105">Because a control is essentially a component with a graphical interface, it can serve any function that a component does, as well as provide user interaction.</span></span> <span data-ttu-id="6b5d4-106">Les contrôles sont utilisés à des fins spécifiques, et la création de contrôles représente simplement une autre tâche de programmation.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-106">Controls are created to serve specific purposes, and authoring controls is just another programming task.</span></span> <span data-ttu-id="6b5d4-107">Dans cette optique, les étapes suivantes constituent une vue d’ensemble du processus de création de contrôle.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-107">With that in mind, the following steps represent an overview of the control authoring process.</span></span> <span data-ttu-id="6b5d4-108">Les liens renvoient vers des informations supplémentaires concernant les étapes individuelles.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-108">Links provide additional information on the individual steps.</span></span>  
   
 > [!NOTE]
->  Si vous souhaitez créer un contrôle personnalisé à utiliser sur les Web Forms, consultez [Developing Custom ASP.NET Server Controls](../Topic/Developing%20Custom%20ASP.NET%20Server%20Controls.md).  
+>  <span data-ttu-id="6b5d4-109">Si vous souhaitez créer un contrôle personnalisé à utiliser sur des Web Forms, consultez [Développement de contrôles serveur ASP.NET personnalisés](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-109">If you want to author a custom control to use on Web Forms, see [Developing Custom ASP.NET Server Controls](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef).</span></span>  
 >   
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="6b5d4-110">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-110">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="6b5d4-111">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="6b5d4-111">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="6b5d4-112">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-112">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### Pour créer un contrôle  
+### <a name="to-author-a-control"></a><span data-ttu-id="6b5d4-113">Pour créer un contrôle</span><span class="sxs-lookup"><span data-stu-id="6b5d4-113">To author a control</span></span>  
   
-1.  Définissez la tâche que le contrôle doit accomplir et le rôle qu'il est appelé à jouer dans votre application.  Les facteurs à prendre en compte sont les suivants :  
+1.  <span data-ttu-id="6b5d4-114">Déterminez ce que votre contrôle devra accomplir ou le rôle qu’il jouera dans votre application.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-114">Determine what you want your control to accomplish, or what part it will play in your application.</span></span> <span data-ttu-id="6b5d4-115">Tenez compte des facteurs suivants :</span><span class="sxs-lookup"><span data-stu-id="6b5d4-115">Factors to consider are:</span></span>  
   
-    -   De quel type d'interface graphique avez\-vous besoin ?  
+    -   <span data-ttu-id="6b5d4-116">De quel type d’interface graphique avez-vous besoin ?</span><span class="sxs-lookup"><span data-stu-id="6b5d4-116">What kind of graphical interface do you need?</span></span>  
   
-    -   Quelles interactions avec l'utilisateur ce contrôle gérera\-t\-il ?  
+    -   <span data-ttu-id="6b5d4-117">Quelles interactions utilisateur spécifiques ce contrôle gérera-t-il ?</span><span class="sxs-lookup"><span data-stu-id="6b5d4-117">What specific user interactions will this control handle?</span></span>  
   
-    -   Les fonctionnalités dont vous avez besoin sont\-elles fournies par des contrôles existant déjà ?  
+    -   <span data-ttu-id="6b5d4-118">La fonctionnalité dont vous avez besoin est-elle fournie par des contrôles existants ?</span><span class="sxs-lookup"><span data-stu-id="6b5d4-118">Is the functionality you need provided by any existing controls?</span></span>  
   
-    -   Pouvez\-vous obtenir les fonctionnalités dont vous avez besoin en combinant plusieurs contrôles Windows Forms ?  
+    -   <span data-ttu-id="6b5d4-119">Pouvez-vous obtenir la fonctionnalité dont vous avez besoin en combinant plusieurs contrôles Windows Forms ?</span><span class="sxs-lookup"><span data-stu-id="6b5d4-119">Can you get the functionality you need by combining several Windows Forms controls?</span></span>  
   
-2.  Si vous avez besoin d'un modèle objet pour votre contrôle, déterminez la façon dont les fonctionnalités seront distribuées à l'intérieur de ce modèle et répartissez\-les entre le contrôle et les éventuels sous\-objets.  Un modèle objet peut s'avérer utile si vous prévoyez de créer un contrôle complexe ou si vous souhaitez incorporer plusieurs fonctionnalités.  
+2.  <span data-ttu-id="6b5d4-120">Si vous avez besoin d’un modèle d’objet pour votre contrôle, déterminez comment la fonctionnalité sera distribuée dans tout le modèle d’objet et répartissez-la entre le contrôle et les éventuels sous-objets.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-120">If you need an object model for your control, determine how functionality will be distributed throughout the object model, and divide up functionality between the control and any subobjects.</span></span> <span data-ttu-id="6b5d4-121">Un modèle d’objet peut être utile si vous prévoyez un contrôle complexe ou si vous souhaitez incorporer plusieurs fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-121">An object model may be useful if you are planning a complex control, or want to incorporate several functionalities.</span></span>  
   
-3.  Déterminez le type du contrôle \(par exemple, contrôle utilisateur, contrôle personnalisé ou contrôle Windows Forms hérité\) répondant à vos besoins.  Pour plus d'informations, consultez [Recommandations relatives au type du contrôle](../../../../docs/framework/winforms/controls/control-type-recommendations.md) et [Variétés de contrôles personnalisés](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md).  
+3.  <span data-ttu-id="6b5d4-122">Déterminez le type de contrôle (par exemple, contrôle utilisateur, contrôle personnalisé, contrôle Windows Forms hérité) dont vous avez besoin.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-122">Determine the type of control (for example, user control, custom control, inherited Windows Forms control) you need.</span></span> <span data-ttu-id="6b5d4-123">Pour plus d’informations, consultez [Recommandations relatives au type du contrôle](../../../../docs/framework/winforms/controls/control-type-recommendations.md) et [Variétés de contrôles personnalisés](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-123">For details, see [Control Type Recommendations](../../../../docs/framework/winforms/controls/control-type-recommendations.md) and [Varieties of Custom Controls](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md).</span></span>  
   
-4.  Présentez les fonctionnalités sous forme de propriétés, de méthodes et d'événements du contrôle et de ses sous\-objets ou structures secondaires et assignez les niveaux d'accès appropriés \(par exemple, public, protégé, etc.\).  
+4.  <span data-ttu-id="6b5d4-124">Présentez les fonctionnalités en tant que propriétés, méthodes et événements du contrôle et de ses sous-objets ou structures secondaires, et assignez des niveaux d’accès appropriés (par exemple, public, protégé, etc.).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-124">Express functionality as properties, methods, and events of the control and its subobjects or subsidiary structures, and assign appropriate access levels (for example, public, protected, and so on).</span></span>  
   
-5.  Si vous avez besoin de peinture personnalisée pour votre contrôle, ajoutez à ce dernier le code requis.  Pour plus d'informations, consultez [Peinture et rendu personnalisés des contrôles](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md).  
+5.  <span data-ttu-id="6b5d4-125">Si vous avez besoin d’une peinture personnalisée pour votre contrôle, ajoutez du code.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-125">If you need custom painting for your control, add code for it.</span></span> <span data-ttu-id="6b5d4-126">Pour plus d’informations, consultez [Peinture et rendu personnalisés des contrôles](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-126">For details, see [Custom Control Painting and Rendering](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md).</span></span>  
   
-6.  Si votre contrôle hérite de <xref:System.Windows.Forms.UserControl>, vous pouvez tester son comportement à l'exécution en générant le projet de contrôle et en l'exécutant dans le **conteneur de test UserControl**.  Pour plus d'informations, consultez [Comment : tester le comportement d'un UserControl au moment de l'exécution](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
+6.  <span data-ttu-id="6b5d4-127">Si votre contrôle hérite <xref:System.Windows.Forms.UserControl>, vous pouvez tester son comportement d’exécution par la génération du projet de contrôle et de son exécution dans le **conteneur de Test UserControl**.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-127">If your control inherits from <xref:System.Windows.Forms.UserControl>, you can test its runtime behavior by building the control project and running it in the **UserControl Test Container**.</span></span> <span data-ttu-id="6b5d4-128">Pour plus d’informations, consultez l’article [Comment : tester le comportement d’un UserControl au moment de l’exécution](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-128">For more information, see [How to: Test the Run-Time Behavior of a UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).</span></span>  
   
-7.  Vous pouvez également tester et déboguer votre contrôle en créant un nouveau projet, tel qu'une application Windows, et en le plaçant dans un conteneur.  Ce processus est montré dans le cadre de [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md).  
+7.  <span data-ttu-id="6b5d4-129">Vous pouvez également tester et déboguer votre contrôle en créant un projet, comme une application Windows, et en le plaçant dans un conteneur.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-129">You can also test and debug your control by creating a new project, such as a Windows Application, and placing it into a container.</span></span> <span data-ttu-id="6b5d4-130">Ce processus est présenté dans [Procédure pas à pas : création d’un contrôle composite à l’aide de Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-130">This process is demonstrated as part of [Walkthrough: Authoring a Composite Control with Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md).</span></span>  
   
-8.  Chaque fois que vous créez une fonctionnalité, ajoutez des options à votre projet test afin de pouvoir tester la nouvelle fonctionnalité.  
+8.  <span data-ttu-id="6b5d4-131">À chaque ajout de fonctionnalité, ajoutez des fonctionnalités à votre projet de test pour tester cette nouvelle fonctionnalité.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-131">As you add each feature, add features to your test project to exercise the new functionality.</span></span>  
   
-9. Répétez la procédure en affinant le design.  
+9. <span data-ttu-id="6b5d4-132">Répétez l’opération en affinant le design.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-132">Repeat, refining the design.</span></span>  
   
-10. Empaquetez le contrôle et déployez\-le.  Pour plus d'informations, consultez [Déploiement d'applications, de services et de composants](../Topic/Deploying%20Applications,%20Services,%20and%20Components.md).  
+10. <span data-ttu-id="6b5d4-133">Empaquetez et déployez votre contrôle.</span><span class="sxs-lookup"><span data-stu-id="6b5d4-133">Package and deploy your control.</span></span> <span data-ttu-id="6b5d4-134">Pour plus d’informations, consultez [Déploiement d’applications, de services et de composants](https://msdn.microsoft.com/library/wtzawcsz).</span><span class="sxs-lookup"><span data-stu-id="6b5d4-134">For details, see [Deploying Applications, Services, and Components](https://msdn.microsoft.com/library/wtzawcsz).</span></span>  
   
-## Voir aussi  
- [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)   
- [Procédure pas à pas : héritage à partir d'un contrôle Windows Forms à l'aide de Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)   
- [Comment : hériter de la classe UserControl](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)   
- [Comment : hériter de la classe du contrôle](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-control-class.md)   
- [Comment : hériter de contrôles Windows Forms existants](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)   
- [Comment : tester le comportement d'un UserControl au moment de l'exécution](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)   
- [Variétés de contrôles personnalisés](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)
+## <a name="see-also"></a><span data-ttu-id="6b5d4-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6b5d4-135">See Also</span></span>  
+ [<span data-ttu-id="6b5d4-136">Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6b5d4-136">Walkthrough: Authoring a Composite Control with Visual Basic</span></span>](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
+ [<span data-ttu-id="6b5d4-137">Procédure pas à pas : héritage à partir d'un contrôle Windows Forms à l'aide de Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6b5d4-137">Walkthrough: Inheriting from a Windows Forms Control with Visual Basic</span></span>](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)  
+ [<span data-ttu-id="6b5d4-138">Comment : hériter de la classe UserControl</span><span class="sxs-lookup"><span data-stu-id="6b5d4-138">How to: Inherit from the UserControl Class</span></span>](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)  
+ [<span data-ttu-id="6b5d4-139">Guide pratique pour hériter de la classe du contrôle</span><span class="sxs-lookup"><span data-stu-id="6b5d4-139">How to: Inherit from the Control Class</span></span>](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-control-class.md)  
+ [<span data-ttu-id="6b5d4-140">Guide pratique pour hériter de contrôles Windows Forms existants</span><span class="sxs-lookup"><span data-stu-id="6b5d4-140">How to: Inherit from Existing Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)  
+ [<span data-ttu-id="6b5d4-141">Comment : tester le comportement d’un UserControl au moment de l’exécution</span><span class="sxs-lookup"><span data-stu-id="6b5d4-141">How to: Test the Run-Time Behavior of a UserControl</span></span>](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)  
+ [<span data-ttu-id="6b5d4-142">Variétés de contrôles personnalisés</span><span class="sxs-lookup"><span data-stu-id="6b5d4-142">Varieties of Custom Controls</span></span>](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)

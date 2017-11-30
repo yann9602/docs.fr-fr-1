@@ -1,55 +1,58 @@
 ---
-title: "Suivi de workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Suivi de workflow
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4332b93175f4cb751ba88c7d2b05e4b462de7748
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Suivi de workflow
-Le suivi de workflow offre une méthode de capture des informations de diagnostic à l'aide d'écouteurs de suivi .NET Framework.Le suivi peut être activé si un problème a été détecté dans l'application, puis désactivé de nouveau une fois le problème résolu.Deux méthodes s'offrent à vous pour activer le suivi de débogage pour les flux de travail.Vous pouvez le configurer à l'aide de la visionneuse de suivi d'événements ou bien utiliser l'objet <xref:System.Diagnostics> pour envoyer des événements de suivi à un fichier.  
+# <a name="workflow-tracing"></a><span data-ttu-id="4ad70-102">Suivi de workflow</span><span class="sxs-lookup"><span data-stu-id="4ad70-102">Workflow Tracing</span></span>
+<span data-ttu-id="4ad70-103">Le suivi de workflow offre une méthode de capture des informations de diagnostic à l'aide d'écouteurs de suivi .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4ad70-103">Workflow tracing offers a way to capture diagnostic information using .NET Framework trace listeners.</span></span> <span data-ttu-id="4ad70-104">Le suivi peut être activé si un problème a été détecté dans l'application, puis désactivé de nouveau une fois le problème résolu.</span><span class="sxs-lookup"><span data-stu-id="4ad70-104">Tracing can be enabled if a problem is detected with the application and then disabled again once the problem is resolved.</span></span> <span data-ttu-id="4ad70-105">Deux méthodes s'offrent à vous pour activer le suivi de débogage pour les flux de travail.</span><span class="sxs-lookup"><span data-stu-id="4ad70-105">There are two ways you could enable debug tracing for workflows.</span></span> <span data-ttu-id="4ad70-106">Vous pouvez le configurer à l'aide de la visionneuse de suivi d'événements ou bien utiliser l'objet <xref:System.Diagnostics> pour envoyer des événements de suivi à un fichier.</span><span class="sxs-lookup"><span data-stu-id="4ad70-106">You can configure it using the Event Trace viewer or you can use <xref:System.Diagnostics> to send trace events to a file.</span></span>  
   
-## Activation du suivi de débogage dans ETW  
- Pour activer le suivi à l'aide d'ETW, activez le canal de débogage dans l'Observateur d'événements :  
+## <a name="enabling-debug-tracing-in-etw"></a><span data-ttu-id="4ad70-107">Activation du suivi de débogage dans ETW</span><span class="sxs-lookup"><span data-stu-id="4ad70-107">Enabling Debug Tracing in ETW</span></span>  
+ <span data-ttu-id="4ad70-108">Pour activer le suivi à l'aide d'ETW, activez le canal de débogage dans l'Observateur d'événements :</span><span class="sxs-lookup"><span data-stu-id="4ad70-108">To enable tracing using ETW, enable the Debug channel in Event Viewer:</span></span>  
   
-1.  Dans l'Observateur d'événements, naviguez vers le nœud des journaux d'analyse et de débogage.  
+1.  <span data-ttu-id="4ad70-109">Dans l'Observateur d'événements, naviguez vers le nœud des journaux d'analyse et de débogage.</span><span class="sxs-lookup"><span data-stu-id="4ad70-109">Navigate to analytic and debug logs node in Event Viewer.</span></span>  
   
-2.  Dans l'arborescence de l'Observateur d'événements, naviguez vers **Observateur d'événements\-\>Journaux des applications et des services\-\>Microsoft\-\>Windows\-\>Serveur d'applications\-Applications**.Cliquez avec le bouton droit sur **Serveur d'applications\-Applications** et sélectionnez **Afficher\-\>Afficher les journaux d'analyse et de débogage**.Cliquez avec le bouton droit sur **Débogage** et sélectionnez **Activer le journal**.  
+2.  <span data-ttu-id="4ad70-110">Dans l’arborescence de commandes dans l’Observateur d’événements, accédez à **Applications -> l’Observateur d’événements et journaux des Services -> Microsoft -> Windows -> serveur d’applications-Applications**.</span><span class="sxs-lookup"><span data-stu-id="4ad70-110">In the tree view in Event Viewer, navigate to **Event Viewer->Applications and Services Logs->Microsoft->Windows->Application Server-Applications**.</span></span> <span data-ttu-id="4ad70-111">Avec le bouton droit **serveur d’applications-Applications** et sélectionnez **Affichage -> Afficher les journaux d’analyse et de débogage**.</span><span class="sxs-lookup"><span data-stu-id="4ad70-111">Right-click **Application Server-Applications** and select **View->Show Analytic and Debug Logs**.</span></span> <span data-ttu-id="4ad70-112">Avec le bouton droit **déboguer** et sélectionnez **activer le journal**.</span><span class="sxs-lookup"><span data-stu-id="4ad70-112">Right-click **Debug** and select **Enable Log**.</span></span>  
   
-3.  Lorsqu'un flux de travail exécute le débogage et qu'un suivi est émis vers le canal de débogage ETW, le suivi peut être affiché dans l'Observateur d'événements.Naviguez vers **Observateur d'événements\-\>Journaux des applications et des services\-\>Microsoft\-\>Windows\-\>Serveur d'applications\-Applications**.Cliquez avec le bouton droit sur **Débogage** et sélectionnez **Actualiser**.  
+3.  <span data-ttu-id="4ad70-113">Lorsqu'un flux de travail exécute le débogage et qu'un suivi est émis vers le canal de débogage ETW, le suivi peut être affiché dans l'Observateur d'événements.</span><span class="sxs-lookup"><span data-stu-id="4ad70-113">When a workflow runs the debug and traces are emitted to ETW debug channel, they can be viewed in the Event Viewer.</span></span> <span data-ttu-id="4ad70-114">Accédez à **Applications -> l’Observateur d’événements et journaux des Services -> Microsoft -> Windows -> serveur d’applications-Applications**.</span><span class="sxs-lookup"><span data-stu-id="4ad70-114">Navigate to **Event Viewer->Applications and Services Logs->Microsoft->Windows->Application Server-Applications**.</span></span> <span data-ttu-id="4ad70-115">Avec le bouton droit **déboguer** et sélectionnez **Actualiser**.</span><span class="sxs-lookup"><span data-stu-id="4ad70-115">Right-click **Debug** and select **Refresh**.</span></span>  
   
-4.  La taille de la mémoire tampon de trace analytique par défaut est de 4 kilo\-octet \(Ko\) seulement. Il est recommandé d'augmenter la taille à 32 Ko.Pour ce faire, effectuez les étapes suivantes.  
+4.  <span data-ttu-id="4ad70-116">La taille de la mémoire tampon de trace analytique par défaut est de 4 kilo-octet (Ko) seulement. Il est recommandé d'augmenter la taille à 32 Ko.</span><span class="sxs-lookup"><span data-stu-id="4ad70-116">The default analytic trace buffer size is only 4 kilobytes (KB); it is recommended to increase the size to 32 KB.</span></span> <span data-ttu-id="4ad70-117">Pour ce faire, effectuez les étapes suivantes.</span><span class="sxs-lookup"><span data-stu-id="4ad70-117">To do this, perform the following steps.</span></span>  
   
-    1.  Exécutez la commande suivante dans le répertoire de l'infrastructure actuelle \(par exemple, C:\\Windows\\Microsoft.NET\\Framework\\v4.0.21203\) : `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`  
+    1.  <span data-ttu-id="4ad70-118">Exécutez la commande suivante dans le répertoire de l'infrastructure actuelle (par exemple, C:\Windows\Microsoft.NET\Framework\v4.0.21203) : `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`</span><span class="sxs-lookup"><span data-stu-id="4ad70-118">Execute the following command in the current framework directory (for example, C:\Windows\Microsoft.NET\Framework\v4.0.21203): `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`</span></span>  
   
-    2.  Remplacez la valeur \<bufferSize\> du fichier Windows.ApplicationServer.Applications.man par 32.  
+    2.  <span data-ttu-id="4ad70-119">Modifier la \<bufferSize > valeur dans le fichier Windows.ApplicationServer.applications.man par 32.</span><span class="sxs-lookup"><span data-stu-id="4ad70-119">Change the \<bufferSize> value in the Windows.ApplicationServer.Applications.man file to 32.</span></span>  
   
-        ```  
+        ```xml  
         <channel name="Microsoft-Windows-Application Server-Applications/Analytic" chid="ANALYTIC_CHANNEL" symbol="ANALYTIC_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ANALYTIC_CHANNEL.message)" >  
                     <publishing>  
                       <bufferSize>32</bufferSize>  
                     </publishing>  
                   </channel>  
-  
         ```  
   
-    3.  Exécutez la commande suivante dans le répertoire de l'infrastructure actuelle \(par exemple, C:\\Windows\\Microsoft.NET\\Framework\\v4.0.21203\) : `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`  
+    3.  <span data-ttu-id="4ad70-120">Exécutez la commande suivante dans le répertoire de l'infrastructure actuelle (par exemple, C:\Windows\Microsoft.NET\Framework\v4.0.21203) : `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`</span><span class="sxs-lookup"><span data-stu-id="4ad70-120">Execute the following command in the current framework directory (for example, C:\Windows\Microsoft.NET\Framework\v4.0.21203): `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`</span></span>  
   
 > [!NOTE]
->  Si vous utilisez .NET Framework 4 Client Profile, vous devez d'abord enregistrer le manifeste ETW en exécutant la commande suivante à partir du répertoire du .NET Framework 4 : `ServiceModelReg.exe –i –c:etw`  
+>  <span data-ttu-id="4ad70-121">Si vous utilisez .NET Framework 4 Client Profile, vous devez tout d’abord enregistrer le manifeste ETW en exécutant la commande suivante à partir du répertoire .NET Framework 4 :`ServiceModelReg.exe –i –c:etw`</span><span class="sxs-lookup"><span data-stu-id="4ad70-121">If you are using the .NET Framework 4 Client Profile, you must first register the ETW manifest by running the following command from the .NET Framework 4 directory: `ServiceModelReg.exe –i –c:etw`</span></span>  
   
-## Activation du suivi de débogage à l'aide de System.Diagnostics  
- Ces écouteurs peuvent être configurés dans le fichier App.config de l'application de workflow ou le fichier Web.config pour un service de workflow.Dans cet exemple, un [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) \(en anglais\) est configuré pour enregistrer les informations de traçage dans le fichier MyTraceLog.txt du répertoire actif.  
+## <a name="enabling-debug-tracing-using-systemdiagnostics"></a><span data-ttu-id="4ad70-122">Activation du suivi de débogage à l'aide de System.Diagnostics</span><span class="sxs-lookup"><span data-stu-id="4ad70-122">Enabling Debug Tracing using System.Diagnostics</span></span>  
+ <span data-ttu-id="4ad70-123">Ces écouteurs peuvent être configurés dans le fichier App.config de l'application de workflow ou le fichier Web.config pour un service de workflow.</span><span class="sxs-lookup"><span data-stu-id="4ad70-123">These listeners can be configured in the App.config file of the workflow application, or the Web.config for a workflow service.</span></span> <span data-ttu-id="4ad70-124">Dans cet exemple, un [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) est configuré pour enregistrer les informations de traçage dans le fichier MyTraceLog.txt du répertoire en cours.</span><span class="sxs-lookup"><span data-stu-id="4ad70-124">In this example, a [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) is configured to save tracing information to the MyTraceLog.txt file in the current directory.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -75,6 +78,6 @@ Le suivi de workflow offre une méthode de capture des informations de diagnosti
 </configuration>  
 ```  
   
-## Voir aussi  
- [Analyse Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201273)   
- [Analyse d'applications avec AppFabric](http://go.microsoft.com/fwlink/?LinkId=201275)
+## <a name="see-also"></a><span data-ttu-id="4ad70-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4ad70-125">See Also</span></span>  
+ [<span data-ttu-id="4ad70-126">Analyse de Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="4ad70-126">Windows Server App Fabric Monitoring</span></span>](http://go.microsoft.com/fwlink/?LinkId=201273)  
+ [<span data-ttu-id="4ad70-127">Analyse des Applications avec AppFabric</span><span class="sxs-lookup"><span data-stu-id="4ad70-127">Monitoring Applications with App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkId=201275)

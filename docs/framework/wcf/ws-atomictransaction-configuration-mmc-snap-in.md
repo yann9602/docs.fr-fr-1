@@ -1,99 +1,102 @@
 ---
-title: "Composant logiciel enfichable MMC Configuration WS-AtomicTransaction | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 622a8b488a97041800d626566923095a770412f6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
-Le composant logiciel enfichable MMC Configuration WS\-AtomicTransaction est utilisé pour configurer une partie des paramètres WS\-AtomicTransaction sur les ordinateurs locaux et distants.  
+# <a name="ws-atomictransaction-configuration-mmc-snap-in"></a><span data-ttu-id="b8184-102">Composant logiciel enfichable MMC Configuration WS-AtomicTransaction</span><span class="sxs-lookup"><span data-stu-id="b8184-102">WS-AtomicTransaction Configuration MMC Snap-in</span></span>
+<span data-ttu-id="b8184-103">Le composant logiciel enfichable MMC Configuration WS-AtomicTransaction est utilisé pour configurer une partie des paramètres WS-AtomicTransaction sur les ordinateurs locaux et distants.</span><span class="sxs-lookup"><span data-stu-id="b8184-103">The WS-AtomicTransaction Configuration MMC Snap-in is used to configure a portion of the WS-AtomicTransaction settings on both local and remote machines.</span></span>  
   
-## Notes  
- Si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], vous pouvez accéder au composant logiciel enfichable MMC ; pour cela, naviguez jusqu'à **Panneau de configuration\/Outils d'administration\/Services de composants**, puis cliquez avec le bouton droit sur **Poste de travail**, et sélectionnez **Propriétés**.C'est le même emplacement que celui dans lequel vous pouvez configurer le MSDTC.Les options disponibles pour la configuration sont groupées sous l'onglet **WS\-AT**.  
+## <a name="remarks"></a><span data-ttu-id="b8184-104">Remarques</span><span class="sxs-lookup"><span data-stu-id="b8184-104">Remarks</span></span>  
+ <span data-ttu-id="b8184-105">Si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], le composant logiciel enfichable MMC peut être trouvé en accédant à **contrôle Panneau de configuration/Administrative Tools/Services de composants /**, avec le bouton droit **poste de travail**, et en sélectionnant **propriétés**.</span><span class="sxs-lookup"><span data-stu-id="b8184-105">If you are running [!INCLUDE[wxp](../../../includes/wxp-md.md)] or [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], the MMC snap-in can be found by navigating to **Control Panel/Administrative Tools/Component Services/**, right-clicking **My Computer**, and selecting **Properties**.</span></span> <span data-ttu-id="b8184-106">C'est le même emplacement que celui dans lequel vous pouvez configurer le MSDTC.</span><span class="sxs-lookup"><span data-stu-id="b8184-106">This is the same location where you can configure the MSDTC.</span></span> <span data-ttu-id="b8184-107">Les options disponibles pour la configuration sont groupées sous la **WS-AT** onglet.</span><span class="sxs-lookup"><span data-stu-id="b8184-107">Options available for configuration are grouped under the **WS-AT** tab.</span></span>  
   
- Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], le composant logiciel enfichable MMC est accessible en cliquant sur le bouton **Démarrer** et en tapant `dcomcnfg.exe` dans la zone **Rechercher**.Lorsque la console MMC est ouverte, naviguez jusqu'au nœud **Poste de travail\\Distributed Transaction Coordinator\\Local DTC**, cliquez avec le bouton droit et sélectionnez **Propriétés**.Les options disponibles pour la configuration sont groupées sous l'onglet **WS\-AT**.  
+ <span data-ttu-id="b8184-108">Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], le composant logiciel enfichable MMC sont accessibles en cliquant sur le **Démarrer** bouton, puis en tapant `dcomcnfg.exe` dans les **recherche** boîte.</span><span class="sxs-lookup"><span data-stu-id="b8184-108">If you are running Windows Vista or [!INCLUDE[lserver](../../../includes/lserver-md.md)], MMC snap-in can be found by clicking the **Start** button, and typing in `dcomcnfg.exe` in the **Search** box.</span></span> <span data-ttu-id="b8184-109">Lorsque la console MMC est ouverte, accédez à la **poste de travail\distributed Transaction Coordinator\Local DTC** nœud, cliquez droit et sélectionnez **propriétés**.</span><span class="sxs-lookup"><span data-stu-id="b8184-109">When the MMC is opened, navigate to the **My Computer\Distributed Transaction Coordinator\Local DTC** node, right click and select **Properties**.</span></span> <span data-ttu-id="b8184-110">Les options disponibles pour la configuration sont groupées sous la **WS-AT** onglet.</span><span class="sxs-lookup"><span data-stu-id="b8184-110">Options available for configuration are grouped under the **WS-AT** tab.</span></span>  
   
- Les étapes précédentes sont utilisées pour lancer le composant logiciel enfichable afin de configurer un ordinateur local.Si vous souhaitez configurer un ordinateur distant, vous devez rechercher son nom dans **Panneau de configuration\/Outils d'administration\/Services de composants\/**, et exécuter la même procédure si vous utilisez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)].Si vous utilisez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], suivez les étapes précédentes correspondantes pour Vista et [!INCLUDE[lserver](../../../includes/lserver-md.md)], mais utilisez le nœud **Distributed Transaction Coordinator\\Local DTC** sous le nœud de l'ordinateur distant.  
+ <span data-ttu-id="b8184-111">Les étapes précédentes sont utilisées pour lancer le composant logiciel enfichable afin de configurer un ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="b8184-111">The previous steps are used to launch the snap-in for configuring a local machine.</span></span> <span data-ttu-id="b8184-112">Si vous souhaitez configurer un ordinateur distant, vous devez rechercher le nom de l’ordinateur distant dans **contrôle Panneau de configuration/Administrative Tools/Services de composants /**et effectuer des étapes similaires, si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)].</span><span class="sxs-lookup"><span data-stu-id="b8184-112">If you want to configure a remote machine, you should locate the remote machine's name in **Control Panel/Administrative Tools/Component Services/**, and perform similar steps if you are running [!INCLUDE[wxp](../../../includes/wxp-md.md)] or [!INCLUDE[ws2003](../../../includes/ws2003-md.md)].</span></span> <span data-ttu-id="b8184-113">Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], suivez les étapes précédentes pour Vista et [!INCLUDE[lserver](../../../includes/lserver-md.md)], mais utilisez le **Distributed Transaction Coordinator\Local DTC** nœud sous le nœud de l’ordinateur distant.</span><span class="sxs-lookup"><span data-stu-id="b8184-113">If you are running Windows Vista or [!INCLUDE[lserver](../../../includes/lserver-md.md)], follow the previous steps for Vista and [!INCLUDE[lserver](../../../includes/lserver-md.md)], but use the **Distributed Transaction Coordinator\Local DTC** node under the remote computer's node.</span></span>  
   
- Pour utiliser l'interface utilisateur fournie par l'outil, vous devez enregistrer le fichier WsatUI.dll, situé à l'emplacement suivant :  
+ <span data-ttu-id="b8184-114">Pour utiliser l’interface utilisateur fournie par l’outil, vous devez enregistrer le fichier WsatUI.dll, situé à l’emplacement suivant :</span><span class="sxs-lookup"><span data-stu-id="b8184-114">To use the user interface provided by the tool, you have to register the WsatUI.dll file, which is located at the following path,</span></span>  
   
- **%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v6.0\\Bin\\WsatUI.dll**  
+ <span data-ttu-id="b8184-115">**%ProgramFiles%\Microsoft SDKs\Windows\v6.0\Bin\WsatUI.dll**</span><span class="sxs-lookup"><span data-stu-id="b8184-115">**%PROGRAMFILES%\Microsoft SDKs\Windows\v6.0\Bin\WsatUI.dll**</span></span>  
   
- L'inscription peut être faite par la commande suivante.  
+ <span data-ttu-id="b8184-116">L'inscription peut être faite par la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="b8184-116">The registration can be done by the following command.</span></span>  
   
 ```Output  
 regasm.exe /codebase WsatUI.dll  
 ```  
   
- Vous pouvez utiliser cet outil pour modifier les paramètres de base WS\-AtomicTransaction.Par exemple, vous pouvez activer et désactiver le support de protocole de WS\-AtomicTransaction, configurer les ports HTTP pour WS\-AT, lier un certificat SSL au port HTTP, configurer des certificats en spécifiant les noms de sujet correspondants, sélectionner le mode de suivi et définir la valeur par défaut et les délais d'attente maximum.  
+ <span data-ttu-id="b8184-117">Vous pouvez utiliser cet outil pour modifier les paramètres de base WS-AtomicTransaction.</span><span class="sxs-lookup"><span data-stu-id="b8184-117">You can use this tool to modify the basic WS-AtomicTransaction settings.</span></span> <span data-ttu-id="b8184-118">Par exemple, vous pouvez activer et désactiver le support de protocole de WS-AtomicTransaction, configurer les ports HTTP pour WS-AT, lier un certificat SSL au port HTTP, configurer des certificats en spécifiant les noms de sujet correspondants, sélectionner le mode de suivi et définir la valeur par défaut et les délais d'attente maximum.</span><span class="sxs-lookup"><span data-stu-id="b8184-118">For example, you can enable and disable the WS-AtomicTransaction protocol support, configure the HTTP ports for WS-AT, bind an SSL Certificate to the HTTP port, configure certificates by specifying certificate subject names, select the Tracing mode and set default and maximum timeouts.</span></span>  
   
- Si vous devez configurer uniquement le support WS\-AtomicTransaction sur l'ordinateur local, vous pouvez utiliser la version de ligne de commande de cet outil.[!INCLUDE[crabout](../../../includes/crabout-md.md)] l'outil en ligne de commande, consultez la rubrique de [Utilitaire de configuration WS\-AtomicTransaction \(wsatConfig.exe\)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md).  
+ <span data-ttu-id="b8184-119">Si vous devez configurer uniquement le support WS-AtomicTransaction sur l'ordinateur local, vous pouvez utiliser la version de ligne de commande de cet outil.</span><span class="sxs-lookup"><span data-stu-id="b8184-119">If you must configure WS-AtomicTransaction support on the local machine only, you can use the command line version of this tool.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="b8184-120">l’outil de ligne de commande, consultez le [l’utilitaire de Configuration WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) rubrique.</span><span class="sxs-lookup"><span data-stu-id="b8184-120"> the command line tool, see the [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) topic.</span></span>  
   
- Sachez que le composant logiciel enfichable MMC et l'outil de ligne de commande ne prennent pas en charge la configuration de tous les paramètres WS\-AT.Ces paramètres ne peuvent être modifiés qu'en modifiant directement le registre.[!INCLUDE[crabout](../../../includes/crabout-md.md)] ces paramètres du Registre, consultez [Configuration de la prise en charge WS\-Atomic Transaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
+ <span data-ttu-id="b8184-121">Sachez que le composant logiciel enfichable MMC et l'outil de ligne de commande ne prennent pas en charge la configuration de tous les paramètres WS-AT.</span><span class="sxs-lookup"><span data-stu-id="b8184-121">You should be aware that both the MMC Snap-in and the command-line tool do not support configuring all WS-AT settings.</span></span> <span data-ttu-id="b8184-122">Ces paramètres ne peuvent être modifiés qu'en modifiant directement le registre.</span><span class="sxs-lookup"><span data-stu-id="b8184-122">These settings can be edited only by modifying the registry directly.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="b8184-123">Ces paramètres de Registre, consultez [configuration prise en charge de WS-Atomic Transaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).</span><span class="sxs-lookup"><span data-stu-id="b8184-123"> these registry settings, see [Configuring WS-Atomic Transaction Support](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).</span></span>  
   
-### Description de l'interface utilisateur  
- **Activer le support réseau WS\-Atomic Transaction** :  
+### <a name="user-interface-description"></a><span data-ttu-id="b8184-124">Description de l'interface utilisateur</span><span class="sxs-lookup"><span data-stu-id="b8184-124">User Interface Description</span></span>  
+ <span data-ttu-id="b8184-125">**Activer la prise en charge du réseau WS-Atomic Transaction**:</span><span class="sxs-lookup"><span data-stu-id="b8184-125">**Enable WS-Atomic Transaction Network Support**:</span></span>  
   
- Lorsque vous sélectionnez ou désélectionnez cette case à cocher, cela active ou désactive tous les composants d'interface utilisateur de ce composant logiciel enfichable.  
+ <span data-ttu-id="b8184-126">Lorsque vous sélectionnez ou désélectionnez cette case à cocher, cela active ou désactive tous les composants d'interface utilisateur de ce composant logiciel enfichable.</span><span class="sxs-lookup"><span data-stu-id="b8184-126">Toggling this checkbox enables or disables all the GUI components of this snap-in.</span></span>  
   
- Avant d'activer cette case à cocher, vous devez vous assurer que l'accès au réseau DTC est activé \(communications entrantes ou sortantes, ou encore les deux\).Cette valeur peut être vérifiée sous l'onglet **Sécurité** du composant logiciel enfichable MSDTC.  
+ <span data-ttu-id="b8184-127">Avant d'activer cette case à cocher, vous devez vous assurer que l'accès au réseau DTC est activé (communications entrantes ou sortantes, ou encore les deux).</span><span class="sxs-lookup"><span data-stu-id="b8184-127">Before you check this box, you should make sure that Network DTC Access is enabled with inbound or outbound communication, or both.</span></span> <span data-ttu-id="b8184-128">Cette valeur peut être vérifiée dans le **sécurité** onglet du composant logiciel enfichable MSDTC.</span><span class="sxs-lookup"><span data-stu-id="b8184-128">This value can be verified in the **Security** Tab of the MSDTC snap-in.</span></span>  
   
-#### Zone de groupe Réseau  
- Vous pouvez spécifier le port HTTPS et des paramètres de sécurité supplémentaires, tels que le chiffrement SSL dans le groupe Réseau.Ce groupe est désactivé \(grisé\) si les transactions réseau DTC ne sont pas activées.  
+#### <a name="network-group-box"></a><span data-ttu-id="b8184-129">Zone de groupe Réseau</span><span class="sxs-lookup"><span data-stu-id="b8184-129">Network Group Box</span></span>  
+ <span data-ttu-id="b8184-130">Vous pouvez spécifier le port HTTPS et des paramètres de sécurité supplémentaires, tels que le chiffrement SSL dans le groupe Réseau.</span><span class="sxs-lookup"><span data-stu-id="b8184-130">You can specify the HTTPS port and additional security settings such as SSL encryption in the Network group.</span></span> <span data-ttu-id="b8184-131">Ce groupe est désactivé (grisé) si les transactions réseau DTC ne sont pas activées.</span><span class="sxs-lookup"><span data-stu-id="b8184-131">This group is disabled (grayed out) if DTC Network Transactions are not enabled.</span></span>  
   
- **Port HTTPS**  
+ <span data-ttu-id="b8184-132">**Port HTTPS**</span><span class="sxs-lookup"><span data-stu-id="b8184-132">**HTTPS Port**</span></span>  
   
- C'est la valeur du port HTTPS utilisée pour WS\-AT.Cette valeur doit être un nombre compris dans la plage 1\-65535 \(pour représenter un port valide\).La modification du port HTTP modifie la configuration du service HTTP, ce qui signifie que l'adresse de service WS\-AT utilisée précédemment est libérée et qu'une nouvelle adresse de service WS\-AT est enregistrée sur la base du nouveau port.De plus, le port que vous venez de sélectionner est chiffré avec le certificat sélectionné pour le chiffrement SSL.  
-  
-> [!NOTE]
->  Si vous avez déjà activé le pare\-feu avant d'exécuter cet outil, le port est enregistré automatiquement dans la liste d'exceptions.Si le pare\-feu est désactivé avant l'exécution de cet outil, aucun élément supplémentaire n'est configuré concernant le pare\-feu.  
-  
- Si vous activez le pare\-feu après avoir configuré WS\-AT, vous devez réexécuter cet outil et fournir le numéro de port à l'aide de ce paramètre.Si vous désactivez le pare\-feu après la configuration, WS\-AT continue à fonctionner sans entrée supplémentaire.  
-  
- **Certificat de point de terminaison**  
-  
- Si vous cliquez sur le bouton **Sélectionner**, cela affiche la liste des certificats actuellement disponibles sur l'ordinateur local ; l'utilisateur peut ainsi sélectionner le certificat pouvant être utilisé pour le chiffrement SSL.Les certificats doivent posséder une clé privée.Si ce n'est pas le cas, un message d'erreur s'affiche.  
+ <span data-ttu-id="b8184-133">C'est la valeur du port HTTPS utilisée pour WS-AT.</span><span class="sxs-lookup"><span data-stu-id="b8184-133">This is the value of the HTTPS port used for WS-AT.</span></span> <span data-ttu-id="b8184-134">Cette valeur doit être un nombre compris dans la plage 1-65535 (pour représenter un port valide).</span><span class="sxs-lookup"><span data-stu-id="b8184-134">The value must be a number in the range 1-65535 (as to represent a valid port).</span></span> <span data-ttu-id="b8184-135">La modification du port HTTP modifie la configuration du service HTTP, ce qui signifie que l'adresse de service WS-AT utilisée précédemment est libérée et qu'une nouvelle adresse de service WS-AT est enregistrée sur la base du nouveau port.</span><span class="sxs-lookup"><span data-stu-id="b8184-135">Changing the HTTP Port modifies the HTTP Service Configuration, which means that the previously used WS-AT Service Address is released, and a new WS-AT Service Address is registered based on the new port.</span></span> <span data-ttu-id="b8184-136">De plus, le port que vous venez de sélectionner est chiffré avec le certificat sélectionné pour le chiffrement SSL.</span><span class="sxs-lookup"><span data-stu-id="b8184-136">In addition, the newly selected port is encrypted with the currently selected certificate for SSL Encryption.</span></span>  
   
 > [!NOTE]
->  Lorsque vous définissez un certificat SSL pour un port sélectionné, vous remplacez le certificat SSL d'origine associé à ce port, le cas échéant.  
+>  <span data-ttu-id="b8184-137">Si vous avez déjà activé le pare-feu avant d'exécuter cet outil, le port est enregistré automatiquement dans la liste d'exceptions.</span><span class="sxs-lookup"><span data-stu-id="b8184-137">If you have already enabled the firewall before running this tool, the port is automatically registered in the exception list.</span></span> <span data-ttu-id="b8184-138">Si le pare-feu est désactivé avant l'exécution de cet outil, aucun élément supplémentaire n'est configuré concernant le pare-feu.</span><span class="sxs-lookup"><span data-stu-id="b8184-138">If the firewall is disabled before running this tool, nothing additional is configured regarding the firewall.</span></span>  
   
- **Comptes autorisés**  
+ <span data-ttu-id="b8184-139">Si vous activez le pare-feu après avoir configuré WS-AT, vous devez réexécuter cet outil et fournir le numéro de port à l'aide de ce paramètre.</span><span class="sxs-lookup"><span data-stu-id="b8184-139">If you enable the firewall after configuring WS-AT, you must run this tool again and supply the port number using this parameter.</span></span> <span data-ttu-id="b8184-140">Si vous désactivez le pare-feu après la configuration, WS-AT continue à fonctionner sans entrée supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="b8184-140">If you disable the firewall after configuring, WS-AT continues to work without additional input.</span></span>  
   
- Si vous cliquez sur le bouton **Sélectionner**, l'éditeur de la liste de contrôle d'accès Windows est appelé ; vous pouvez y spécifier l'utilisateur ou le groupe autorisé à participer à WS\-AtomicTransaction en activant la zone **Autoriser** ou **Refuser** dans le groupe d'autorisations **Participer**.  
+ <span data-ttu-id="b8184-141">**Certificat de point de terminaison**</span><span class="sxs-lookup"><span data-stu-id="b8184-141">**Endpoint Certificate**</span></span>  
   
- **Certificats autorisés**  
-  
- Si vous cliquez sur le bouton **Sélectionner**, la liste des certificats actuellement disponibles sur LocalMachine s'affiche.Vous pouvez sélectionner ensuite les identités de certificat autorisées à participer à WS\-AtomicTransaction.  
-  
-#### Zone de groupe Délai d'attente  
- La zone de groupe **Délai d'attente** permet de spécifier le délai d'attente par défaut maximal applicable à WS\-Atomic Transaction.Les valeurs valides de délai d'attente sortant sont comprises entre 1 et 3 600.Les valeurs valides de délai d'attente entrant sont comprises entre 0 et 3 600.  
-  
-#### Zone de groupe Suivi et journalisation  
- La zone de groupe **Suivi et journalisation** permet de configurer le niveau souhaité de suivi et de journalisation.  
-  
- Si vous cliquez sur le bouton **Options**, une page est appelée, dans laquelle vous pouvez spécifier des paramètres supplémentaires.  
-  
- La zone de liste déroulante **Niveau de suivi** permet de sélectionner une valeur parmi les valeurs valides de l'énumération <xref:System.Diagnostics.TraceLevel>.Vous pouvez également utiliser les cases à cocher pour spécifier si vous souhaitez exécuter le suivi des activités, la propagation d'activité ou le rassemblement d'informations d'identification personnelles \(PII\).  
-  
- Vous pouvez également spécifier des sessions de journalisation dans la zone de groupe **Session de journalisation**.  
+ <span data-ttu-id="b8184-142">En cliquant sur le **sélectionnez** bouton affiche une liste avec les certificats actuellement disponibles sur l’ordinateur Local, ce qui permet de l’utilisateur de sélectionner le certificat qui peut être utilisé pour le chiffrement SSL.</span><span class="sxs-lookup"><span data-stu-id="b8184-142">Clicking the **Select** button displays a list with the currently available certificates on the Local Machine, allowing the user to select the certificate that can be used for SSL encryption.</span></span> <span data-ttu-id="b8184-143">Les certificats doivent posséder une clé privée.</span><span class="sxs-lookup"><span data-stu-id="b8184-143">The certificates must have a private key.</span></span> <span data-ttu-id="b8184-144">Si ce n'est pas le cas, un message d'erreur s'affiche.</span><span class="sxs-lookup"><span data-stu-id="b8184-144">Otherwise, you receive an error message.</span></span>  
   
 > [!NOTE]
->  Lorsqu'un autre consommateur de suivi utilise le fournisseur de suivi WS\-AT, vous ne pouvez pas créer de nouvelle session de journalisation pour les événements de suivi.Toute tentative de configuration de la journalisation pendant cette période aboutit à l'affichage du message d'erreur suivant : Impossible d'activer le fournisseur.Code d'erreur :1  
+>  <span data-ttu-id="b8184-145">Lorsque vous définissez un certificat SSL pour un port sélectionné, vous remplacez le certificat SSL d’origine associé à ce port, le cas échéant.</span><span class="sxs-lookup"><span data-stu-id="b8184-145">When you set an SSL certificate for a selected port, you overwrite the original SSL certificate associated with that port if one exists.</span></span>  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] le suivi et la journalisation, consultez [Administration et diagnostics](../../../docs/framework/wcf/diagnostics/index.md).  
+ <span data-ttu-id="b8184-146">**Comptes autorisés**</span><span class="sxs-lookup"><span data-stu-id="b8184-146">**Authorized Accounts**</span></span>  
   
-## Voir aussi  
- [Configuration de la prise en charge WS\-Atomic Transaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)   
- [Utilitaire de configuration WS\-AtomicTransaction \(wsatConfig.exe\)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)   
- [Administration et diagnostics](../../../docs/framework/wcf/diagnostics/index.md)
+ <span data-ttu-id="b8184-147">En cliquant sur le **sélectionnez** bouton appelle l’éditeur de liste de contrôle d’accès Windows, où vous pouvez spécifier l’utilisateur ou le groupe qui peut participer à WS-AtomicTransaction en activant le **autoriser** ou **Deny** zone le **participer** groupe d’autorisations.</span><span class="sxs-lookup"><span data-stu-id="b8184-147">Clicking the **Select** button invokes the Windows Access Control List editor, where you can specify the user or group that can participate in WS-Atomic transactions by checking the **Allow** or **Deny** box in the **Participate** permission group.</span></span>  
+  
+ <span data-ttu-id="b8184-148">**Certificats autorisés**</span><span class="sxs-lookup"><span data-stu-id="b8184-148">**Authorized Certificates**</span></span>  
+  
+ <span data-ttu-id="b8184-149">En cliquant sur le **sélectionnez** bouton affiche la liste des certificats actuellement disponibles sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="b8184-149">Clicking the **Select** button displays a list of currently available certificates on the LocalMachine.</span></span> <span data-ttu-id="b8184-150">Vous pouvez sélectionner ensuite les identités de certificat autorisées à participer à WS-AtomicTransaction.</span><span class="sxs-lookup"><span data-stu-id="b8184-150">You can then select which certificate identities are allowed to participate in WS-Atomic transactions.</span></span>  
+  
+#### <a name="timeout-group-box"></a><span data-ttu-id="b8184-151">Zone de groupe Délai d'attente</span><span class="sxs-lookup"><span data-stu-id="b8184-151">Timeout Group Box</span></span>  
+ <span data-ttu-id="b8184-152">Le **délai d’attente** zone de groupe vous permet de spécifier le délai d’attente par défaut et maximale pour une transaction WS-Atomic.</span><span class="sxs-lookup"><span data-stu-id="b8184-152">The **Timeout** group box allows you to specify the default and maximum timeout for a WS-Atomic transaction.</span></span> <span data-ttu-id="b8184-153">Les valeurs valides de délai d'attente sortant sont comprises entre 1 et 3 600.</span><span class="sxs-lookup"><span data-stu-id="b8184-153">A valid value for outgoing timeout is between 1 and 3600.</span></span> <span data-ttu-id="b8184-154">Les valeurs valides de délai d'attente entrant sont comprises entre 0 et 3 600.</span><span class="sxs-lookup"><span data-stu-id="b8184-154">A valid value for incoming timeout is between 0 and 3600.</span></span>  
+  
+#### <a name="tracing-and-logging-group-box"></a><span data-ttu-id="b8184-155">Zone de groupe Suivi et journalisation</span><span class="sxs-lookup"><span data-stu-id="b8184-155">Tracing and Logging Group Box</span></span>  
+ <span data-ttu-id="b8184-156">Le **suivi et de journalisation** zone de groupe vous permet de configurer les souhaité de suivi et le niveau de journalisation.</span><span class="sxs-lookup"><span data-stu-id="b8184-156">The **Tracing and Logging** group Box allows you to configure the desired tracing and logging level.</span></span>  
+  
+ <span data-ttu-id="b8184-157">En cliquant sur le **Options** bouton appelle une page où vous pouvez spécifier des paramètres supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="b8184-157">Clicking the **Options** button invokes a page where you can specify additional settings.</span></span>  
+  
+ <span data-ttu-id="b8184-158">Le **au niveau de Trace** zone de liste déroulante vous permet de choisir parmi les valeurs valides de le <xref:System.Diagnostics.TraceLevel> énumération.</span><span class="sxs-lookup"><span data-stu-id="b8184-158">The **Trace Level** combination box allows you to choose from any valid value of the <xref:System.Diagnostics.TraceLevel> enumeration.</span></span> <span data-ttu-id="b8184-159">Vous pouvez également utiliser les cases à cocher pour spécifier si vous souhaitez exécuter le suivi des activités, la propagation d'activité ou le rassemblement d'informations d'identification personnelles (PII).</span><span class="sxs-lookup"><span data-stu-id="b8184-159">You can also use the checkboxes to specify if you want to perform activity tracing, activity propagation or collect personal identifiable information.</span></span>  
+  
+ <span data-ttu-id="b8184-160">Vous pouvez également spécifier des sessions de journalisation dans le **Session de journalisation** zone de groupe.</span><span class="sxs-lookup"><span data-stu-id="b8184-160">You can also specify logging sessions in the **Logging Session** group box.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="b8184-161">Lorsqu'un autre consommateur de suivi utilise le fournisseur de suivi WS-AT, vous ne pouvez pas créer de nouvelle session de journalisation pour les événements de suivi.</span><span class="sxs-lookup"><span data-stu-id="b8184-161">When another trace consumer is using the WS-AT trace provider, you cannot create a new logging session for trace events.</span></span> <span data-ttu-id="b8184-162">Toute tentative de configuration de la journalisation pendant cette période aboutit à l'affichage du message d'erreur suivant : Impossible d'activer le fournisseur.</span><span class="sxs-lookup"><span data-stu-id="b8184-162">Any attempt to configure logging during this time results in the error message "Failed to enable provider.</span></span> <span data-ttu-id="b8184-163">Code d'erreur :1</span><span class="sxs-lookup"><span data-stu-id="b8184-163">Error code: 1".</span></span>  
+  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="b8184-164">le suivi et la journalisation, consultez [Administration et Diagnostics](../../../docs/framework/wcf/diagnostics/index.md).</span><span class="sxs-lookup"><span data-stu-id="b8184-164"> tracing and logging, see [Administration and Diagnostics](../../../docs/framework/wcf/diagnostics/index.md).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="b8184-165">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b8184-165">See Also</span></span>  
+ [<span data-ttu-id="b8184-166">Configuration prise en charge de WS-Atomic Transaction</span><span class="sxs-lookup"><span data-stu-id="b8184-166">Configuring WS-Atomic Transaction Support</span></span>](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)  
+ [<span data-ttu-id="b8184-167">Utilitaire de configuration WS-AtomicTransaction (wsatConfig.exe)</span><span class="sxs-lookup"><span data-stu-id="b8184-167">WS-AtomicTransaction Configuration Utility (wsatConfig.exe)</span></span>](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
+ [<span data-ttu-id="b8184-168">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="b8184-168">Administration and Diagnostics</span></span>](../../../docs/framework/wcf/diagnostics/index.md)

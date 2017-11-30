@@ -1,96 +1,96 @@
 ---
-title: "Styles et mod&#232;les ComboBox | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ComboBox (WPF), styles et modèles"
-  - "ControlTemplate (WPF), ComboBox"
-  - "éléments (WPF), ComboBox"
-  - "états (WPF), ComboBox"
-  - "styles (WPF), ComboBox"
-  - "modèles (WPF), ComboBox"
+title: "Styles et modèles ComboBox"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ComboBox [WPF], styles and templates
+- states [WPF], ComboBox
+- ControlTemplate [WPF], ComboBox
+- styles [WPF], ComboBox
+- templates [WPF], ComboBox
+- parts [WPF], ComboBox
 ms.assetid: b0662fa1-16d7-4320-b26b-c1804e565a44
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bd89d2150b2623a749614ab01aa767997dc4bdf3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Styles et mod&#232;les ComboBox
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ComboBox>.  Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour donner une apparence unique au contrôle.  Pour plus d'informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+# <a name="combobox-styles-and-templates"></a><span data-ttu-id="30bed-102">Styles et modèles ComboBox</span><span class="sxs-lookup"><span data-stu-id="30bed-102">ComboBox Styles and Templates</span></span>
+<span data-ttu-id="30bed-103">Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.ComboBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="30bed-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.ComboBox> control.</span></span> <span data-ttu-id="30bed-104">Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner une apparence unique au contrôle.</span><span class="sxs-lookup"><span data-stu-id="30bed-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="30bed-105">Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span><span class="sxs-lookup"><span data-stu-id="30bed-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## Composants de ComboBox  
- Le tableau ci\-dessous répertorie les composants nommés du contrôle <xref:System.Windows.Controls.ComboBox>.  
+## <a name="combobox-parts"></a><span data-ttu-id="30bed-106">Parties de la zone de liste déroulante</span><span class="sxs-lookup"><span data-stu-id="30bed-106">ComboBox Parts</span></span>  
+ <span data-ttu-id="30bed-107">Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.ComboBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="30bed-107">The following table lists the named parts for the <xref:System.Windows.Controls.ComboBox> control.</span></span>  
   
-||||  
+|<span data-ttu-id="30bed-108">Élément</span><span class="sxs-lookup"><span data-stu-id="30bed-108">Part</span></span>|<span data-ttu-id="30bed-109">Type</span><span class="sxs-lookup"><span data-stu-id="30bed-109">Type</span></span>|<span data-ttu-id="30bed-110">Description</span><span class="sxs-lookup"><span data-stu-id="30bed-110">Description</span></span>|  
 |-|-|-|  
-|Élément|Type|Description|  
-|PART\_EditableTextBox|<xref:System.Windows.Controls.TextBox>|Contient le texte de <xref:System.Windows.Controls.ComboBox>.|  
-|PART\_Popup|<xref:System.Windows.Controls.Primitives.Popup>|Menu déroulant qui contient les éléments de la zone de liste déroulante.|  
+|<span data-ttu-id="30bed-111">PART_EditableTextBox</span><span class="sxs-lookup"><span data-stu-id="30bed-111">PART_EditableTextBox</span></span>|<xref:System.Windows.Controls.TextBox>|<span data-ttu-id="30bed-112">Contient le texte de la <xref:System.Windows.Controls.ComboBox>.</span><span class="sxs-lookup"><span data-stu-id="30bed-112">Contains the text of the <xref:System.Windows.Controls.ComboBox>.</span></span>|  
+|<span data-ttu-id="30bed-113">PART_Popup</span><span class="sxs-lookup"><span data-stu-id="30bed-113">PART_Popup</span></span>|<xref:System.Windows.Controls.Primitives.Popup>|<span data-ttu-id="30bed-114">La liste déroulante qui contient les éléments dans la zone de liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="30bed-114">The drop-down that contains the items in the combo box.</span></span>|  
   
- Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate> pour <xref:System.Windows.Controls.ComboBox>, votre modèle peut contenir un <xref:System.Windows.Controls.ItemsPresenter> dans un <xref:System.Windows.Controls.ScrollViewer>.  \(Le <xref:System.Windows.Controls.ItemsPresenter> affiche chaque élément de <xref:System.Windows.Controls.ComboBox> ; <xref:System.Windows.Controls.ScrollViewer> active le défilement dans le contrôle.\)  Si <xref:System.Windows.Controls.ItemsPresenter> n'est pas l'enfant direct du <xref:System.Windows.Controls.ScrollViewer>, vous devez attribuer à <xref:System.Windows.Controls.ItemsPresenter> le nom `ItemsPresenter`.  
+ <span data-ttu-id="30bed-115">Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate> pour un <xref:System.Windows.Controls.ComboBox>, votre modèle peut contenir un <xref:System.Windows.Controls.ItemsPresenter> au sein d’un <xref:System.Windows.Controls.ScrollViewer>.</span><span class="sxs-lookup"><span data-stu-id="30bed-115">When you create a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.ComboBox>, your template might contain an <xref:System.Windows.Controls.ItemsPresenter> within a <xref:System.Windows.Controls.ScrollViewer>.</span></span> <span data-ttu-id="30bed-116">(Le <xref:System.Windows.Controls.ItemsPresenter> affiche chaque élément dans le <xref:System.Windows.Controls.ComboBox>; le <xref:System.Windows.Controls.ScrollViewer> permet le défilement dans le contrôle).</span><span class="sxs-lookup"><span data-stu-id="30bed-116">(The <xref:System.Windows.Controls.ItemsPresenter> displays each item in the <xref:System.Windows.Controls.ComboBox>; the <xref:System.Windows.Controls.ScrollViewer> enables scrolling within the control).</span></span>  <span data-ttu-id="30bed-117">Si le <xref:System.Windows.Controls.ItemsPresenter> n’est pas l’enfant direct de la <xref:System.Windows.Controls.ScrollViewer>, vous devez donner le <xref:System.Windows.Controls.ItemsPresenter> le nom, `ItemsPresenter`.</span><span class="sxs-lookup"><span data-stu-id="30bed-117">If the <xref:System.Windows.Controls.ItemsPresenter> is not the direct child of the <xref:System.Windows.Controls.ScrollViewer>, you must give the <xref:System.Windows.Controls.ItemsPresenter> the name, `ItemsPresenter`.</span></span>  
   
-## États de ComboBox  
- Le tableau ci\-dessous répertorie les états du contrôle <xref:System.Windows.Controls.ComboBox>.  
+## <a name="combobox-states"></a><span data-ttu-id="30bed-118">États de ComboBox</span><span class="sxs-lookup"><span data-stu-id="30bed-118">ComboBox States</span></span>  
+ <span data-ttu-id="30bed-119">Le tableau suivant répertorie les États de la <xref:System.Windows.Controls.ComboBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="30bed-119">The following table lists the states for the <xref:System.Windows.Controls.ComboBox> control.</span></span>  
   
-||||  
+|<span data-ttu-id="30bed-120">Nom VisualState</span><span class="sxs-lookup"><span data-stu-id="30bed-120">VisualState Name</span></span>|<span data-ttu-id="30bed-121">Nom VisualStateGroup</span><span class="sxs-lookup"><span data-stu-id="30bed-121">VisualStateGroup Name</span></span>|<span data-ttu-id="30bed-122">Description</span><span class="sxs-lookup"><span data-stu-id="30bed-122">Description</span></span>|  
 |-|-|-|  
-|Nom VisualState|Nom VisualStateGroup|Description|  
-|Normal|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
-|MouseOver|CommonStates|Le pointeur de la souris se trouve sur le contrôle <xref:System.Windows.Controls.ComboBox>.|  
-|Focused|FocusStates|Le contrôle a le focus.|  
-|Unfocused|FocusStates|Le contrôle n'a pas le focus.|  
-|FocusedDropDown|FocusStates|Le menu déroulant du contrôle <xref:System.Windows.Controls.ComboBox> a le focus.|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
-|Editable|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> est `true`.|  
-|Uneditable|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> est `false`.|  
+|<span data-ttu-id="30bed-123">Normale</span><span class="sxs-lookup"><span data-stu-id="30bed-123">Normal</span></span>|<span data-ttu-id="30bed-124">CommonStates</span><span class="sxs-lookup"><span data-stu-id="30bed-124">CommonStates</span></span>|<span data-ttu-id="30bed-125">État par défaut.</span><span class="sxs-lookup"><span data-stu-id="30bed-125">The default state.</span></span>|  
+|<span data-ttu-id="30bed-126">Désactivé</span><span class="sxs-lookup"><span data-stu-id="30bed-126">Disabled</span></span>|<span data-ttu-id="30bed-127">CommonStates</span><span class="sxs-lookup"><span data-stu-id="30bed-127">CommonStates</span></span>|<span data-ttu-id="30bed-128">Le contrôle est désactivé.</span><span class="sxs-lookup"><span data-stu-id="30bed-128">The control is disabled.</span></span>|  
+|<span data-ttu-id="30bed-129">MouseOver</span><span class="sxs-lookup"><span data-stu-id="30bed-129">MouseOver</span></span>|<span data-ttu-id="30bed-130">CommonStates</span><span class="sxs-lookup"><span data-stu-id="30bed-130">CommonStates</span></span>|<span data-ttu-id="30bed-131">Le pointeur de la souris est sur le <xref:System.Windows.Controls.ComboBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="30bed-131">The mouse pointer is over the <xref:System.Windows.Controls.ComboBox> control.</span></span>|  
+|<span data-ttu-id="30bed-132">Avec focus</span><span class="sxs-lookup"><span data-stu-id="30bed-132">Focused</span></span>|<span data-ttu-id="30bed-133">FocusStates</span><span class="sxs-lookup"><span data-stu-id="30bed-133">FocusStates</span></span>|<span data-ttu-id="30bed-134">Le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-134">The control has focus.</span></span>|  
+|<span data-ttu-id="30bed-135">Sans focus</span><span class="sxs-lookup"><span data-stu-id="30bed-135">Unfocused</span></span>|<span data-ttu-id="30bed-136">FocusStates</span><span class="sxs-lookup"><span data-stu-id="30bed-136">FocusStates</span></span>|<span data-ttu-id="30bed-137">Le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-137">The control does not have focus.</span></span>|  
+|<span data-ttu-id="30bed-138">FocusedDropDown</span><span class="sxs-lookup"><span data-stu-id="30bed-138">FocusedDropDown</span></span>|<span data-ttu-id="30bed-139">FocusStates</span><span class="sxs-lookup"><span data-stu-id="30bed-139">FocusStates</span></span>|<span data-ttu-id="30bed-140">La liste déroulante pour la <xref:System.Windows.Controls.ComboBox> a le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-140">The drop-down for the <xref:System.Windows.Controls.ComboBox> has focus.</span></span>|  
+|<span data-ttu-id="30bed-141">Valide</span><span class="sxs-lookup"><span data-stu-id="30bed-141">Valid</span></span>|<span data-ttu-id="30bed-142">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="30bed-142">ValidationStates</span></span>|<span data-ttu-id="30bed-143">Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.</span><span class="sxs-lookup"><span data-stu-id="30bed-143">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="30bed-144">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="30bed-144">InvalidFocused</span></span>|<span data-ttu-id="30bed-145">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="30bed-145">ValidationStates</span></span>|<span data-ttu-id="30bed-146">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-146">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="30bed-147">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="30bed-147">InvalidUnfocused</span></span>|<span data-ttu-id="30bed-148">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="30bed-148">ValidationStates</span></span>|<span data-ttu-id="30bed-149">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-149">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
+|<span data-ttu-id="30bed-150">Modifiable</span><span class="sxs-lookup"><span data-stu-id="30bed-150">Editable</span></span>|<span data-ttu-id="30bed-151">EditStates</span><span class="sxs-lookup"><span data-stu-id="30bed-151">EditStates</span></span>|<span data-ttu-id="30bed-152">La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="30bed-152">The <xref:System.Windows.Controls.ComboBox.IsEditable%2A> property is `true`.</span></span>|  
+|<span data-ttu-id="30bed-153">Non modifiables</span><span class="sxs-lookup"><span data-stu-id="30bed-153">Uneditable</span></span>|<span data-ttu-id="30bed-154">EditStates</span><span class="sxs-lookup"><span data-stu-id="30bed-154">EditStates</span></span>|<span data-ttu-id="30bed-155">La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="30bed-155">The <xref:System.Windows.Controls.ComboBox.IsEditable%2A> property is `false`.</span></span>|  
   
-## Composants de ComboBoxItem  
- Le contrôle <xref:System.Windows.Controls.ComboBoxItem> ne comporte pas de composants nommés.  
+## <a name="comboboxitem-parts"></a><span data-ttu-id="30bed-156">Composants de ComboBoxItem</span><span class="sxs-lookup"><span data-stu-id="30bed-156">ComboBoxItem Parts</span></span>  
+ <span data-ttu-id="30bed-157">Le <xref:System.Windows.Controls.ComboBoxItem> contrôle n’a pas de composants nommés.</span><span class="sxs-lookup"><span data-stu-id="30bed-157">The <xref:System.Windows.Controls.ComboBoxItem> control does not have any named parts.</span></span>  
   
-## États de ComboBoxItem  
- Le tableau ci\-dessous répertorie les états du contrôle <xref:System.Windows.Controls.ComboBoxItem>.  
+## <a name="comboboxitem-states"></a><span data-ttu-id="30bed-158">États de ComboBoxItem</span><span class="sxs-lookup"><span data-stu-id="30bed-158">ComboBoxItem States</span></span>  
+ <span data-ttu-id="30bed-159">Le tableau suivant répertorie les États de la <xref:System.Windows.Controls.ComboBoxItem> contrôle.</span><span class="sxs-lookup"><span data-stu-id="30bed-159">The following table lists the states for the <xref:System.Windows.Controls.ComboBoxItem> control.</span></span>  
   
-||||  
+|<span data-ttu-id="30bed-160">Nom VisualState</span><span class="sxs-lookup"><span data-stu-id="30bed-160">VisualState Name</span></span>|<span data-ttu-id="30bed-161">Nom VisualStateGroup</span><span class="sxs-lookup"><span data-stu-id="30bed-161">VisualStateGroup Name</span></span>|<span data-ttu-id="30bed-162">Description</span><span class="sxs-lookup"><span data-stu-id="30bed-162">Description</span></span>|  
 |-|-|-|  
-|Nom VisualState|Nom VisualStateGroup|Description|  
-|Normal|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
-|MouseOver|CommonStates|Le pointeur de la souris se trouve sur le contrôle <xref:System.Windows.Controls.ComboBox>.|  
-|Focused|FocusStates|Le contrôle a le focus.|  
-|Unfocused|FocusStates|Le contrôle n'a pas le focus.|  
-|Sélectionné|SelectionStates|L'élément est actuellement sélectionné.|  
-|Non sélectionné|SelectionStates|L'élément n'est pas sélectionné.|  
-|SelectedUnfocused|SelectionStates|L'élément est sélectionné, mais n'a pas focus.|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|<span data-ttu-id="30bed-163">Normale</span><span class="sxs-lookup"><span data-stu-id="30bed-163">Normal</span></span>|<span data-ttu-id="30bed-164">CommonStates</span><span class="sxs-lookup"><span data-stu-id="30bed-164">CommonStates</span></span>|<span data-ttu-id="30bed-165">État par défaut.</span><span class="sxs-lookup"><span data-stu-id="30bed-165">The default state.</span></span>|  
+|<span data-ttu-id="30bed-166">Désactivé</span><span class="sxs-lookup"><span data-stu-id="30bed-166">Disabled</span></span>|<span data-ttu-id="30bed-167">CommonStates</span><span class="sxs-lookup"><span data-stu-id="30bed-167">CommonStates</span></span>|<span data-ttu-id="30bed-168">Le contrôle est désactivé.</span><span class="sxs-lookup"><span data-stu-id="30bed-168">The control is disabled.</span></span>|  
+|<span data-ttu-id="30bed-169">MouseOver</span><span class="sxs-lookup"><span data-stu-id="30bed-169">MouseOver</span></span>|<span data-ttu-id="30bed-170">CommonStates</span><span class="sxs-lookup"><span data-stu-id="30bed-170">CommonStates</span></span>|<span data-ttu-id="30bed-171">Le pointeur de la souris est sur le <xref:System.Windows.Controls.ComboBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="30bed-171">The mouse pointer is over the <xref:System.Windows.Controls.ComboBox> control.</span></span>|  
+|<span data-ttu-id="30bed-172">Avec focus</span><span class="sxs-lookup"><span data-stu-id="30bed-172">Focused</span></span>|<span data-ttu-id="30bed-173">FocusStates</span><span class="sxs-lookup"><span data-stu-id="30bed-173">FocusStates</span></span>|<span data-ttu-id="30bed-174">Le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-174">The control has focus.</span></span>|  
+|<span data-ttu-id="30bed-175">Sans focus</span><span class="sxs-lookup"><span data-stu-id="30bed-175">Unfocused</span></span>|<span data-ttu-id="30bed-176">FocusStates</span><span class="sxs-lookup"><span data-stu-id="30bed-176">FocusStates</span></span>|<span data-ttu-id="30bed-177">Le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-177">The control does not have focus.</span></span>|  
+|<span data-ttu-id="30bed-178">Selected</span><span class="sxs-lookup"><span data-stu-id="30bed-178">Selected</span></span>|<span data-ttu-id="30bed-179">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="30bed-179">SelectionStates</span></span>|<span data-ttu-id="30bed-180">L’élément est sélectionné.</span><span class="sxs-lookup"><span data-stu-id="30bed-180">The item is currently selected.</span></span>|  
+|<span data-ttu-id="30bed-181">Non sélectionné</span><span class="sxs-lookup"><span data-stu-id="30bed-181">Unselected</span></span>|<span data-ttu-id="30bed-182">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="30bed-182">SelectionStates</span></span>|<span data-ttu-id="30bed-183">L’élément n’est pas sélectionné.</span><span class="sxs-lookup"><span data-stu-id="30bed-183">The item is not selected.</span></span>|  
+|<span data-ttu-id="30bed-184">SelectedUnfocused</span><span class="sxs-lookup"><span data-stu-id="30bed-184">SelectedUnfocused</span></span>|<span data-ttu-id="30bed-185">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="30bed-185">SelectionStates</span></span>|<span data-ttu-id="30bed-186">L’élément est sélectionné mais n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-186">The item is selected, but does not have focus.</span></span>|  
+|<span data-ttu-id="30bed-187">Valide</span><span class="sxs-lookup"><span data-stu-id="30bed-187">Valid</span></span>|<span data-ttu-id="30bed-188">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="30bed-188">ValidationStates</span></span>|<span data-ttu-id="30bed-189">Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.</span><span class="sxs-lookup"><span data-stu-id="30bed-189">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="30bed-190">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="30bed-190">InvalidFocused</span></span>|<span data-ttu-id="30bed-191">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="30bed-191">ValidationStates</span></span>|<span data-ttu-id="30bed-192">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-192">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="30bed-193">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="30bed-193">InvalidUnfocused</span></span>|<span data-ttu-id="30bed-194">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="30bed-194">ValidationStates</span></span>|<span data-ttu-id="30bed-195">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="30bed-195">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## ComboBox ControlTemplate, exemple  
- L'exemple suivant indique comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.ComboBox> et ses types associés.  
+## <a name="combobox-controltemplate-example"></a><span data-ttu-id="30bed-196">ComboBox ControlTemplate, exemple</span><span class="sxs-lookup"><span data-stu-id="30bed-196">ComboBox ControlTemplate Example</span></span>  
+ <span data-ttu-id="30bed-197">L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.ComboBox> contrôle et les types associés.</span><span class="sxs-lookup"><span data-stu-id="30bed-197">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.ComboBox> control and associated types.</span></span>  
   
- [!code-xml[ControlTemplateExamples#ComboBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#combobox)]  
+ [!code-xaml[ControlTemplateExamples#ComboBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#combobox)]  
   
- L'exemple précédent utilise une ou plusieurs des ressources suivantes.  
+ <span data-ttu-id="30bed-198">L’exemple précédent utilise une ou plusieurs des ressources suivantes.</span><span class="sxs-lookup"><span data-stu-id="30bed-198">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Pour l'exemple complet, consultez          [Style avec ControlTemplates, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160041) .  
+ <span data-ttu-id="30bed-199">Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041) (Exemple de style avec ControlTemplates).</span><span class="sxs-lookup"><span data-stu-id="30bed-199">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="30bed-200">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="30bed-200">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="30bed-201">Styles et modèles Control</span><span class="sxs-lookup"><span data-stu-id="30bed-201">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="30bed-202">Personnalisation des contrôles</span><span class="sxs-lookup"><span data-stu-id="30bed-202">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="30bed-203">Application d’un style et création de modèles</span><span class="sxs-lookup"><span data-stu-id="30bed-203">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="30bed-204">Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="30bed-204">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

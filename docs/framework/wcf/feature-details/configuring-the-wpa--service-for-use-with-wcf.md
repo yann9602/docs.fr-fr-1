@@ -1,46 +1,49 @@
 ---
-title: "Configuration du service d&#39;activation de processus de Windows pour son utilisation dans Windows Communication Foundation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 49a6e009b763ad75143e9ad301b257ec148b5839
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Configuration du service d&#39;activation de processus de Windows pour son utilisation dans Windows Communication Foundation
-Cette rubrique décrit les étapes requises pour configurer le service d'activation de processus de Windows \(également appelé service WAS\) dans [!INCLUDE[wv](../../../../includes/wv-md.md)] pour héberger des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui ne communiquent pas sur des protocoles réseau HTTP.Les sections suivantes définissent les étapes pour cette configuration :  
+# <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a><span data-ttu-id="e34d0-102">Configuration du service d'activation de processus de Windows pour son utilisation dans Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="e34d0-102">Configuring the Windows Process Activation Service for Use with Windows Communication Foundation</span></span>
+<span data-ttu-id="e34d0-103">Cette rubrique décrit les étapes requises pour configurer le service d'activation de processus de Windows (également appelé service WAS) dans [!INCLUDE[wv](../../../../includes/wv-md.md)] pour héberger des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui ne communiquent pas sur des protocoles réseau HTTP.</span><span class="sxs-lookup"><span data-stu-id="e34d0-103">This topic describes the steps required to set up Windows Process Activation Service (also known as WAS) in [!INCLUDE[wv](../../../../includes/wv-md.md)] to host [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services that do not communicate over HTTP network protocols.</span></span> <span data-ttu-id="e34d0-104">Les sections suivantes définissent les étapes pour cette configuration :</span><span class="sxs-lookup"><span data-stu-id="e34d0-104">The following sections outline the steps for this configuration:</span></span>  
   
--   Installez \(ou vérifiez l'installation\) les composants d'activation [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requis.  
+-   <span data-ttu-id="e34d0-105">Installez (ou vérifiez l'installation) les composants d'activation [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requis.</span><span class="sxs-lookup"><span data-stu-id="e34d0-105">Install (or confirm the installation of) the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] activation components required.</span></span>  
   
--   Créez un site WAS avec les liaisons de protocole réseau que vous souhaitez utiliser ou ajoutez un nouveau protocole qui crée une liaison vers un site existant.  
+-   <span data-ttu-id="e34d0-106">Créez un site WAS avec les liaisons de protocole réseau que vous souhaitez utiliser ou ajoutez un nouveau protocole qui crée une liaison vers un site existant.</span><span class="sxs-lookup"><span data-stu-id="e34d0-106">Create a WAS site with the network protocol bindings you wish to use, or add a new protocol binding to an existing site.</span></span>  
   
--   Créez une application pour héberger vos services et permettre à cette application d'utiliser les protocoles réseau requis.  
+-   <span data-ttu-id="e34d0-107">Créez une application pour héberger vos services et permettre à cette application d'utiliser les protocoles réseau requis.</span><span class="sxs-lookup"><span data-stu-id="e34d0-107">Create an application to host your services and enable that application to use the required network protocols.</span></span>  
   
--   Générez un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui expose un point de terminaison non http.  
+-   <span data-ttu-id="e34d0-108">Générez un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui expose un point de terminaison non http.</span><span class="sxs-lookup"><span data-stu-id="e34d0-108">Build a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that exposes a non-HTTP endpoint.</span></span>  
   
-## Configuration d'un site avec des liaisons non HTTP  
- Pour utiliser une liaison non HTTP avec le service WAS, la liaison de site doit être ajoutée à la configuration WAS.Le magasin de configurations pour le service WAS est le fichier applicationHost.config situé dans le répertoire %windir%\\system32\\inetsrv\\config.Ce magasin de configurations est partagé à la fois par le service WAS et le service IIS 7.0.  
+## <a name="configuring-a-site-with-non-http-bindings"></a><span data-ttu-id="e34d0-109">Configuration d'un site avec des liaisons non HTTP</span><span class="sxs-lookup"><span data-stu-id="e34d0-109">Configuring a Site with Non-HTTP bindings</span></span>  
+ <span data-ttu-id="e34d0-110">Pour utiliser une liaison non HTTP avec le service WAS, la liaison de site doit être ajoutée à la configuration WAS.</span><span class="sxs-lookup"><span data-stu-id="e34d0-110">To use a non-HTTP binding with WAS, the site binding must be added to the WAS configuration.</span></span> <span data-ttu-id="e34d0-111">Le magasin de configurations pour le service WAS est le fichier applicationHost.config situé dans le répertoire %windir%\system32\inetsrv\config.</span><span class="sxs-lookup"><span data-stu-id="e34d0-111">The configuration store for WAS is the applicationHost.config file, located in the %windir%\system32\inetsrv\config directory.</span></span> <span data-ttu-id="e34d0-112">Ce magasin de configurations est partagé à la fois par le service WAS et le service IIS 7.0.</span><span class="sxs-lookup"><span data-stu-id="e34d0-112">This configuration store is shared by both WAS and IIS 7.0.</span></span>  
   
- applicationHost.config est un fichier texte XML qui peut être ouvert avec un éditeur de texte standard \(tel que le Bloc\-notes\).Toutefois, l'outil de configuration de la ligne de commande [!INCLUDE[iisver](../../../../includes/iisver-md.md)] \(appcmd.exe\) est la meilleure méthode pour ajouter des liaisons de site non HTTP.  
+ <span data-ttu-id="e34d0-113">applicationHost.config est un fichier texte XML qui peut être ouvert avec un éditeur de texte standard (tel que le Bloc-notes).</span><span class="sxs-lookup"><span data-stu-id="e34d0-113">applicationHost.config is an XML text file that can be opened with any standard text editor (such as Notepad).</span></span> <span data-ttu-id="e34d0-114">Toutefois, l'outil de configuration de la ligne de commande [!INCLUDE[iisver](../../../../includes/iisver-md.md)] (appcmd.exe) est la meilleure méthode pour ajouter des liaisons de site non HTTP.</span><span class="sxs-lookup"><span data-stu-id="e34d0-114">However, the [!INCLUDE[iisver](../../../../includes/iisver-md.md)] command-line configuration tool (appcmd.exe) is the preferred way to add non-HTTP site bindings.</span></span>  
   
- La commande suivante ajoute une liaison de site net.tcp au site Web par défaut à l'aide de appcmd.exe \(cette commande est entrée comme une ligne unique\).  
+ <span data-ttu-id="e34d0-115">La commande suivante ajoute une liaison de site net.tcp au site Web par défaut à l'aide de appcmd.exe (cette commande est entrée comme une ligne unique).</span><span class="sxs-lookup"><span data-stu-id="e34d0-115">The following command adds a net.tcp site binding to the default Web site using appcmd.exe (this command is entered as a single line).</span></span>  
   
 ```  
 appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']  
 ```  
   
- Cette commande ajoute la nouvelle liaison net.tcp au site Web par défaut en ajoutant la ligne indiquée ci\-dessous au fichier applicationHost.config.  
+ <span data-ttu-id="e34d0-116">Cette commande ajoute la nouvelle liaison net.tcp au site Web par défaut en ajoutant la ligne indiquée ci-dessous au fichier applicationHost.config.</span><span class="sxs-lookup"><span data-stu-id="e34d0-116">This command adds the new net.tcp binding to the default Web site by adding the line indicated below to the applicationHost.config file.</span></span>  
   
-```  
+```xml  
 <sites>  
     <site name="Default Web Site" id="1">  
         <bindings>  
@@ -52,18 +55,18 @@ appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInf
 </sites>  
 ```  
   
-## Activation de l'utilisation des protocoles non HTTP par une application  
- Vous pouvez activer ou désactiver des protocoles réseau individuels au niveau de l'application.La commande suivante montre comment activer à la fois les protocoles HTTP et net.tcp pour une application qui s'exécute dans le `Default Web Site`.  
+## <a name="enabling-an-application-to-use-non-http-protocols"></a><span data-ttu-id="e34d0-117">Activation de l'utilisation des protocoles non HTTP par une application</span><span class="sxs-lookup"><span data-stu-id="e34d0-117">Enabling an Application to Use Non-HTTP Protocols</span></span>  
+ <span data-ttu-id="e34d0-118">Vous pouvez activer ou désactiver le réseau individuelles, protocolsat niveau de l’application.</span><span class="sxs-lookup"><span data-stu-id="e34d0-118">You can enable or disable individual network protocolsat the application level.</span></span> <span data-ttu-id="e34d0-119">La commande suivante montre comment activer à la fois les protocoles HTTP et net.tcp pour une application qui s'exécute dans le `Default Web Site`.</span><span class="sxs-lookup"><span data-stu-id="e34d0-119">The following command illustrates how to enable both the HTTP and net.tcp protocols for an application that runs in the `Default Web Site`.</span></span>  
   
 ```  
 appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp  
 ```  
   
- La liste des protocoles actifs peut être aussi  définie dans l'élément \<applicationDefaults\> de la configuration XML du site stocké dans ApplicationHost.config.  
+ <span data-ttu-id="e34d0-120">La liste des protocoles actifs permettre également être définie dans le \<applicationDefaults > élément de la configuration du site XML stockée dans ApplicationHost.config.</span><span class="sxs-lookup"><span data-stu-id="e34d0-120">The list of enabled protocols can also be set in the \<applicationDefaults> element of the site’s XML configuration stored in ApplicationHost.config.</span></span>  
   
- Le code XML suivant issu du fichier applicationHost.config illustre un site lié à la fois à des protocoles HTTP et non HTTP.La configuration supplémentaire requise pour la prise en charge de protocoles non HTTP est appelée avec des commentaires.  
+ <span data-ttu-id="e34d0-121">Le code XML suivant issu du fichier applicationHost.config illustre un site lié à la fois à des protocoles HTTP et non HTTP.</span><span class="sxs-lookup"><span data-stu-id="e34d0-121">The following XML code from applicationHost.config illustrates a site bound to both HTTP and non-HTTP protocols.</span></span> <span data-ttu-id="e34d0-122">La configuration supplémentaire requise pour la prise en charge de protocoles non HTTP est appelée avec des commentaires.</span><span class="sxs-lookup"><span data-stu-id="e34d0-122">The additional configuration required to support non-HTTP protocols is called out with comments.</span></span>  
   
-```  
+```xml  
 <sites>  
     <site name="Default Web Site" id="1">  
     <application path="/">  
@@ -90,19 +93,19 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
 </sites>  
 ```  
   
- Si vous tentez d'activer un service en utilisant WAS pour l'activation non\-HTTP et vous n'avez pas installé et configuré WAS, l'erreur suivante s'affiche :  
+ <span data-ttu-id="e34d0-123">Si vous tentez d'activer un service en utilisant WAS pour l'activation non-HTTP et vous n'avez pas installé et configuré WAS, l'erreur suivante s'affiche :</span><span class="sxs-lookup"><span data-stu-id="e34d0-123">If you attempt to activate a service using WAS for Non-HTTP activation and you have not installed and configured WAS you may see the following error:</span></span>  
   
 ```Output  
-[InvalidOperationException : le protocole « net.tcp » n'a pas d'implémentation de type HostedTransportConfiguration enregistrée.]   System.ServiceModel.AsyncResult.End(IAsyncResult result) +15778592   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result) +15698937   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, Boolean flowContext) +265   System.ServiceModel.Activation.HttpModule.ProcessRequest(Object sender, EventArgs e) +227   System.Web.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +80   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +171  
+[InvalidOperationException: The protocol 'net.tcp' does not have an implementation of HostedTransportConfiguration type registered.]   System.ServiceModel.AsyncResult.End(IAsyncResult result) +15778592   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result) +15698937   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, Boolean flowContext) +265   System.ServiceModel.Activation.HttpModule.ProcessRequest(Object sender, EventArgs e) +227   System.Web.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +80   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +171  
 ```  
   
- Si cette erreur s'affiche, assurez\-vous que WAS pour l'activation non HTTP est installé et configuré correctement.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Comment : installer et configurer des composants d'activation WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
+ <span data-ttu-id="e34d0-124">Si cette erreur s'affiche, assurez-vous que WAS pour l'activation non HTTP est installé et configuré correctement.</span><span class="sxs-lookup"><span data-stu-id="e34d0-124">If you see this error ensure WAS for Non-HTTP Activation is installed and configured properly.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="e34d0-125">[Comment : installer et configurer les composants d’Activation WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).</span><span class="sxs-lookup"><span data-stu-id="e34d0-125"> [How to: Install and Configure WCF Activation Components](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).</span></span>  
   
-## Génération d'un service WCF qui utilise le service WAS pour l'activation non HTTP  
- Une fois que vous effectuez les étapes pour installer et configurer le service WAS \(voir [Comment : installer et configurer des composants d'activation WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)\), la configuration d'un service pour utiliser le service WAS pour l'activation est semblable à la configuration d'un service hébergé dans IIS.  
+## <a name="building-a-wcf-service-that-uses-was-for-non-http-activation"></a><span data-ttu-id="e34d0-126">Génération d'un service WCF qui utilise le service WAS pour l'activation non HTTP</span><span class="sxs-lookup"><span data-stu-id="e34d0-126">Building a WCF Service That Uses WAS for Non-HTTP activation</span></span>  
+ <span data-ttu-id="e34d0-127">Une fois que vous effectuez les étapes pour installer et configurer le service WAS (consultez [Comment : installer et configurer les composants d’Activation WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), configuration d’un service pour utiliser les services WAS pour l’activation est similaire à la configuration d’un service hébergé dans IIS.</span><span class="sxs-lookup"><span data-stu-id="e34d0-127">Once you perform the steps to install and configure WAS (see [How to: Install and Configure WCF Activation Components](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), configuring a service to use WAS for activation is similar to configuring a service that is hosted in IIS.</span></span>  
   
- Pour des instructions détaillées sur la génération d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] activé WAS, consultez [Comment : héberger un service WCF dans WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
+ <span data-ttu-id="e34d0-128">Pour obtenir des instructions détaillées sur la création d’un objet activé par le service WAS [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de service, consultez [Comment : héberger un Service WCF dans WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).</span><span class="sxs-lookup"><span data-stu-id="e34d0-128">For detailed instructions about building a WAS-activated [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, see [How to: Host a WCF Service in WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).</span></span>  
   
-## Voir aussi  
- [Hébergement dans le service d'activation de processus de Windows \(WAS, Windows Process Activation Service\)](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)   
- [Fonctionnalités d'hébergement de Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a><span data-ttu-id="e34d0-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e34d0-129">See Also</span></span>  
+ [<span data-ttu-id="e34d0-130">Hébergement dans le service d’activation des processus Windows</span><span class="sxs-lookup"><span data-stu-id="e34d0-130">Hosting in Windows Process Activation Service</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
+ [<span data-ttu-id="e34d0-131">Fonctionnalités d’hébergement de Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="e34d0-131">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)

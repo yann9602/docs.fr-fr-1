@@ -1,57 +1,57 @@
 ---
-title: "Comment&#160;: modifier des colonnes et des lignes dans un contr&#244;le TableLayoutPanel | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "net.ComponentModel.StyleCollectionEditor"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "colonnes (Windows Forms), modifier"
-  - "lignes (Windows Forms), modifier"
-  - "TableLayoutPanel (contrôle Windows Forms), modifier"
+title: "Comment : modifier des colonnes et des lignes dans un contrôle TableLayoutPanel"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: net.ComponentModel.StyleCollectionEditor
+helpviewer_keywords:
+- columns [Windows Forms], editing
+- TableLayoutPanel control [Windows Forms], editing
+- rows [Windows Forms], editing
 ms.assetid: c367ed43-40dc-49eb-9e0f-ba70e83dfec0
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 84dbcfcbad30f9ef08548874c5e68ed658aa0914
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: modifier des colonnes et des lignes dans un contr&#244;le TableLayoutPanel
-Vous pouvez utiliser l'éditeur de collections du contrôle <xref:System.Windows.Forms.TableLayoutPanel>, appelé la boîte de dialogue **Styles de ligne et de colonne**, pour modifier les lignes et colonnes de vos contrôles.  
+# <a name="how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control"></a><span data-ttu-id="cd66b-102">Comment : modifier des colonnes et des lignes dans un contrôle TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="cd66b-102">How to: Edit Columns and Rows in a TableLayoutPanel Control</span></span>
+<span data-ttu-id="cd66b-103">Vous pouvez utiliser l’éditeur de collections de la <xref:System.Windows.Forms.TableLayoutPanel> contrôle, appelée la **Styles de ligne et colonne** boîte de dialogue pour modifier les lignes et colonnes de vos contrôles.</span><span class="sxs-lookup"><span data-stu-id="cd66b-103">You can use the collection editor of the <xref:System.Windows.Forms.TableLayoutPanel> control, called the **Column and Row Styles** dialog box, to edit the rows and columns of your controls.</span></span>  
   
 > [!NOTE]
->  Si vous souhaitez qu'un contrôle couvre plusieurs lignes ou colonnes, définissez les propriétés `RowSpan` et `ColumnSpan` sur le contrôle.  Pour plus d'informations, consultez [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).  
+>  <span data-ttu-id="cd66b-104">Si vous voulez un contrôle couvre plusieurs lignes ou colonnes, définissez la `RowSpan` et `ColumnSpan` propriétés sur le contrôle.</span><span class="sxs-lookup"><span data-stu-id="cd66b-104">If you want a control to span multiple rows or columns, set the `RowSpan` and `ColumnSpan` properties on the control.</span></span> <span data-ttu-id="cd66b-105">Pour plus d'informations, consultez [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).</span><span class="sxs-lookup"><span data-stu-id="cd66b-105">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).</span></span>  
 >   
->  Si vous souhaitez aligner un contrôle dans une cellule, ou si vous souhaitez étirer un contrôle dans une cellule, utilisez la propriété <xref:System.Windows.Forms.Control.Anchor%2A> du contrôle.  Pour plus d'informations, consultez [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).  
+>  <span data-ttu-id="cd66b-106">Si vous souhaitez aligner un contrôle dans une cellule, ou si vous souhaitez un contrôle à étendre dans une cellule, utilisez du contrôle <xref:System.Windows.Forms.Control.Anchor%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="cd66b-106">If you want to align a control within a cell, or if you want a control to stretch within a cell, use the control's <xref:System.Windows.Forms.Control.Anchor%2A> property.</span></span> <span data-ttu-id="cd66b-107">Pour plus d'informations, consultez [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).</span><span class="sxs-lookup"><span data-stu-id="cd66b-107">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).</span></span>  
 >   
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="cd66b-108">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="cd66b-108">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="cd66b-109">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="cd66b-109">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="cd66b-110">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="cd66b-110">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### Pour modifier des lignes et des colonnes  
+### <a name="to-edit-rows-and-columns"></a><span data-ttu-id="cd66b-111">Pour modifier les lignes et colonnes</span><span class="sxs-lookup"><span data-stu-id="cd66b-111">To edit rows and columns</span></span>  
   
-1.  Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **Boîte à outils** vers votre formulaire.  
+1.  <span data-ttu-id="cd66b-112">Faites glisser un <xref:System.Windows.Forms.TableLayoutPanel> contrôle depuis la **boîte à outils** vers votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="cd66b-112">Drag a <xref:System.Windows.Forms.TableLayoutPanel> control from the **Toolbox** onto your form.</span></span>  
   
-2.  Cliquez sur le glyphe \(![Glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) de la balise active du contrôle  <xref:System.Windows.Forms.TableLayoutPanel>, puis sélectionnez **Modifier les lignes et les colonnes** pour ouvrir la boîte de dialogue **Styles de ligne et de colonne**.  Vous pouvez également cliquer avec le bouton droit sur le contrôle <xref:System.Windows.Forms.TableLayoutPanel> et sélectionner **Modifier les lignes et les colonnes** dans le menu contextuel.  
+2.  <span data-ttu-id="cd66b-113">Cliquez sur le <xref:System.Windows.Forms.TableLayoutPanel> glyphe de balise active du contrôle (![glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) et sélectionnez **modifier les lignes et colonnes** pour ouvrir le  **Styles de ligne et colonne** boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="cd66b-113">Click the <xref:System.Windows.Forms.TableLayoutPanel> control's smart tag glyph (![Smart Tag Glyph](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) and select **Edit Rows and Columns** to open the **Column and Row Styles** dialog box.</span></span> <span data-ttu-id="cd66b-114">Vous pouvez également avec le bouton droit sur le <xref:System.Windows.Forms.TableLayoutPanel> de contrôle et sélectionnez **modifier les lignes et colonnes** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="cd66b-114">You can also right click on the <xref:System.Windows.Forms.TableLayoutPanel> control and select **Edit Rows and Columns** from the shortcut menu.</span></span>  
   
-3.  Pour ajouter ou supprimer des colonnes, sélectionnez **Colonnes** dans la zone de liste déroulante **Type de membre**.  
+3.  <span data-ttu-id="cd66b-115">Pour ajouter ou supprimer des colonnes, sélectionnez **colonnes** à partir de la **type de membre** zone de liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="cd66b-115">To add or remove columns, select **Columns** from the **Member type** drop-down list box.</span></span>  
   
-4.  Pour ajouter ou supprimer des lignes, sélectionnez **Lignes** dans la zone de liste déroulante **Type de membre**.  
+4.  <span data-ttu-id="cd66b-116">Pour ajouter ou supprimer des lignes, sélectionnez **lignes** à partir de la **type de membre** zone de liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="cd66b-116">To add or remove rows, select **Rows** from the **Member type** drop-down list box.</span></span>  
   
-5.  Cliquez sur le bouton **Ajouter** pour ajouter une ligne ou colonne à la fin de la liste **Membre**.  
+5.  <span data-ttu-id="cd66b-117">Cliquez sur le **ajouter** pour ajouter une ligne ou une colonne à la fin de la **membre** liste.</span><span class="sxs-lookup"><span data-stu-id="cd66b-117">Click the **Add** button to add a row or column to the end of the **Member** list.</span></span>  
   
-6.  Cliquez sur le bouton **Insérer** pour ajouter une ligne ou une colonne devant l'élément sélectionné actuellement dans la liste.  
+6.  <span data-ttu-id="cd66b-118">Cliquez sur le **insérer** pour ajouter une ligne ou une colonne avant l’élément actuellement sélectionné dans la liste.</span><span class="sxs-lookup"><span data-stu-id="cd66b-118">Click the **Insert** button to add a row or column before the currently selected item in the list.</span></span>  
   
-7.  Si vous ajoutez une ligne ou colonne, sélectionnez le **Type de taille** pour la nouvelle ligne ou colonne.  Pour plus d'informations, consultez <xref:System.Windows.Forms.SizeType>.  
+7.  <span data-ttu-id="cd66b-119">Si vous ajoutez une ligne ou colonne, sélectionnez le **Type de taille** pour la nouvelle ligne ou la colonne.</span><span class="sxs-lookup"><span data-stu-id="cd66b-119">If you are adding a row or column, select the **Size Type** for the new row or column.</span></span> <span data-ttu-id="cd66b-120">Pour plus d'informations, consultez <xref:System.Windows.Forms.SizeType>.</span><span class="sxs-lookup"><span data-stu-id="cd66b-120">For more information, see <xref:System.Windows.Forms.SizeType>.</span></span>  
   
-8.  Pour supprimer une ligne ou une colonne, cliquez sur le bouton **Supprimer** pour supprimer l'élément sélectionné actuellement dans la liste **Membre**.  
+8.  <span data-ttu-id="cd66b-121">Pour supprimer une ligne ou colonne, cliquez sur le **supprimer** bouton pour supprimer l’élément actuellement sélectionné dans le **membre** liste.</span><span class="sxs-lookup"><span data-stu-id="cd66b-121">To remove a row or column, click the **Remove** button to delete the currently selected item in the **Member** list.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.SizeType>   
- [TableLayoutPanel, contrôle](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="cd66b-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cd66b-122">See Also</span></span>  
+ <xref:System.Windows.Forms.SizeType>  
+ [<span data-ttu-id="cd66b-123">TableLayoutPanel, contrôle</span><span class="sxs-lookup"><span data-stu-id="cd66b-123">TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)

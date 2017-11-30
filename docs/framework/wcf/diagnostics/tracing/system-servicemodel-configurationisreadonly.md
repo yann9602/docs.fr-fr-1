@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.ConfigurationIsReadOnly | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.ConfigurationIsReadOnly
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a6734380-8ecf-454a-ab45-8832d6a27871
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a56451b2ec000c7fed6cfc6b8b37d10b0e983b47
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.ConfigurationIsReadOnly
-System.ServiceModel.ConfigurationIsReadOnly  
+# <a name="systemservicemodelconfigurationisreadonly"></a><span data-ttu-id="6c1a5-102">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="6c1a5-102">System.ServiceModel.ConfigurationIsReadOnly</span></span>
+<span data-ttu-id="6c1a5-103">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="6c1a5-103">System.ServiceModel.ConfigurationIsReadOnly</span></span>  
   
-## Description  
- La configuration est en lecture seule.  
+## <a name="description"></a><span data-ttu-id="6c1a5-104">Description</span><span class="sxs-lookup"><span data-stu-id="6c1a5-104">Description</span></span>  
+ <span data-ttu-id="6c1a5-105">La configuration est en lecture seule.</span><span class="sxs-lookup"><span data-stu-id="6c1a5-105">The configuration is read-only.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="6c1a5-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6c1a5-106">See Also</span></span>  
+ [<span data-ttu-id="6c1a5-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="6c1a5-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="6c1a5-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="6c1a5-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="6c1a5-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="6c1a5-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

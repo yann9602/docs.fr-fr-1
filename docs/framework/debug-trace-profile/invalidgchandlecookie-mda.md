@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - MDAs (managed debugging assistants), invalid cookies
 - cookies, invalid
@@ -21,36 +15,35 @@ helpviewer_keywords:
 - InvalidGCHandleCookie MDA
 - invalid cookies
 ms.assetid: 613ad742-3c11-401d-a6b3-893ceb8de4f8
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fca1d010fd206de931cc057bc735179808686b51
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 4757298a382085c1ffebc9a04e41eea81c31941b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="invalidgchandlecookie-mda"></a>Assistant Débogage managé invalidGCHandleCookie
-L’Assistant Débogage managé `invalidGCHandleCookie` est activé quand une tentative de conversion d’un cookie <xref:System.IntPtr> non valide en un <xref:System.Runtime.InteropServices.GCHandle> est effectuée.  
+# <a name="invalidgchandlecookie-mda"></a><span data-ttu-id="09e82-102">Assistant Débogage managé invalidGCHandleCookie</span><span class="sxs-lookup"><span data-stu-id="09e82-102">invalidGCHandleCookie MDA</span></span>
+<span data-ttu-id="09e82-103">L’Assistant Débogage managé `invalidGCHandleCookie` est activé quand une tentative de conversion d’un cookie <xref:System.IntPtr> non valide en un <xref:System.Runtime.InteropServices.GCHandle> est effectuée.</span><span class="sxs-lookup"><span data-stu-id="09e82-103">The `invalidGCHandleCookie` managed debugging assistant (MDA) is activated when a conversion from an invalid <xref:System.IntPtr> cookie to a <xref:System.Runtime.InteropServices.GCHandle> is attempted.</span></span>  
   
-## <a name="symptoms"></a>Symptômes  
- Comportement indéfini tel que les violations d’accès et l’altération de la mémoire lors des tentatives d’utilisation ou de récupération d’un <xref:System.Runtime.InteropServices.GCHandle> à partir d’un <xref:System.IntPtr>.  
+## <a name="symptoms"></a><span data-ttu-id="09e82-104">Symptômes</span><span class="sxs-lookup"><span data-stu-id="09e82-104">Symptoms</span></span>  
+ <span data-ttu-id="09e82-105">Comportement indéfini tel que les violations d’accès et l’altération de la mémoire lors des tentatives d’utilisation ou de récupération d’un <xref:System.Runtime.InteropServices.GCHandle> à partir d’un <xref:System.IntPtr>.</span><span class="sxs-lookup"><span data-stu-id="09e82-105">Undefined behavior such as access violations and memory corruption while attempting to use or retrieve a <xref:System.Runtime.InteropServices.GCHandle> from an <xref:System.IntPtr>.</span></span>  
   
-## <a name="cause"></a>Cause  
- Le cookie est probablement non valide, car il n’a pas été initialement créé à partir d’un <xref:System.Runtime.InteropServices.GCHandle>, représente un <xref:System.Runtime.InteropServices.GCHandle> qui a déjà été libéré, est un cookie pour un <xref:System.Runtime.InteropServices.GCHandle> dans un domaine d’application différent ou a été marshalé en code natif en tant que <xref:System.Runtime.InteropServices.GCHandle>, mais retourné au CLR en tant qu’<xref:System.IntPtr>, où une tentative de cast a été effectuée.  
+## <a name="cause"></a><span data-ttu-id="09e82-106">Cause</span><span class="sxs-lookup"><span data-stu-id="09e82-106">Cause</span></span>  
+ <span data-ttu-id="09e82-107">Le cookie est probablement non valide, car il n’a pas été initialement créé à partir d’un <xref:System.Runtime.InteropServices.GCHandle>, représente un <xref:System.Runtime.InteropServices.GCHandle> qui a déjà été libéré, est un cookie pour un <xref:System.Runtime.InteropServices.GCHandle> dans un domaine d’application différent ou a été marshalé en code natif en tant que <xref:System.Runtime.InteropServices.GCHandle>, mais retourné au CLR en tant qu’<xref:System.IntPtr>, où une tentative de cast a été effectuée.</span><span class="sxs-lookup"><span data-stu-id="09e82-107">The cookie is probably invalid because it was not originally created from a <xref:System.Runtime.InteropServices.GCHandle>, represents a <xref:System.Runtime.InteropServices.GCHandle> that has already been freed, is a cookie to a <xref:System.Runtime.InteropServices.GCHandle> in a different application domain, or was marshaled to native code as a <xref:System.Runtime.InteropServices.GCHandle> but passed back into the CLR as an <xref:System.IntPtr>, where a cast was attempted.</span></span>  
   
-## <a name="resolution"></a>Résolution  
- Spécifiez un cookie <xref:System.IntPtr> valide pour le <xref:System.Runtime.InteropServices.GCHandle>.  
+## <a name="resolution"></a><span data-ttu-id="09e82-108">Résolution</span><span class="sxs-lookup"><span data-stu-id="09e82-108">Resolution</span></span>  
+ <span data-ttu-id="09e82-109">Spécifiez un cookie <xref:System.IntPtr> valide pour le <xref:System.Runtime.InteropServices.GCHandle>.</span><span class="sxs-lookup"><span data-stu-id="09e82-109">Specify a valid <xref:System.IntPtr> cookie for the <xref:System.Runtime.InteropServices.GCHandle>.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
- Quand cet Assistant Débogage managé est activé, le débogueur n’est plus en mesure de suivre les racines vers leurs objets, car les valeurs du cookie retournées sont différentes de celles retournées lorsque l’Assistant Débogage managé n’est pas activé.  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="09e82-110">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="09e82-110">Effect on the Runtime</span></span>  
+ <span data-ttu-id="09e82-111">Quand cet Assistant Débogage managé est activé, le débogueur n’est plus en mesure de suivre les racines vers leurs objets, car les valeurs du cookie retournées sont différentes de celles retournées lorsque l’Assistant Débogage managé n’est pas activé.</span><span class="sxs-lookup"><span data-stu-id="09e82-111">When this MDA is enabled, the debugger is no longer able to trace the roots back to their objects because the cookie values passed back are different from the ones returned when the MDA is not enabled.</span></span>  
   
-## <a name="output"></a>Sortie  
- La valeur du cookie <xref:System.IntPtr> non valide est signalée.  
+## <a name="output"></a><span data-ttu-id="09e82-112">Sortie</span><span class="sxs-lookup"><span data-stu-id="09e82-112">Output</span></span>  
+ <span data-ttu-id="09e82-113">La valeur du cookie <xref:System.IntPtr> non valide est signalée.</span><span class="sxs-lookup"><span data-stu-id="09e82-113">The invalid <xref:System.IntPtr> cookie value is reported.</span></span>  
   
-## <a name="configuration"></a>Configuration  
+## <a name="configuration"></a><span data-ttu-id="09e82-114">Configuration</span><span class="sxs-lookup"><span data-stu-id="09e82-114">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -60,8 +53,7 @@ L’Assistant Débogage managé `invalidGCHandleCookie` est activé quand une te
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.GCHandle.FromIntPtr%2A>   
- <xref:System.Runtime.InteropServices.GCHandle>   
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-
+## <a name="see-also"></a><span data-ttu-id="09e82-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="09e82-115">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.GCHandle.FromIntPtr%2A>  
+ <xref:System.Runtime.InteropServices.GCHandle>  
+ [<span data-ttu-id="09e82-116">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="09e82-116">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

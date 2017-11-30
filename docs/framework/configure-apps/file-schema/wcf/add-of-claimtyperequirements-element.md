@@ -1,60 +1,70 @@
 ---
-title: "&lt;add&gt;, &#233;l&#233;ment de &lt;claimTypeRequirements&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;add&gt;, élément de &lt;claimTypeRequirements&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3234cd45-1478-468e-8b19-5c50815c4786
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0b814f7db727cba289ae6f9eba1b0c6532b52ebb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;add&gt;, &#233;l&#233;ment de &lt;claimTypeRequirements&gt;
-Spécifie les types de revendications requis et facultatifs censés apparaître dans les informations d'identification fédérées.  Par exemple, les services déclarent les spécifications relatives aux informations d'identification entrantes devant posséder un certain jeu de types de revendications.  
+# <a name="ltaddgt-of-ltclaimtyperequirementsgt-element"></a><span data-ttu-id="7bb5d-102">&lt;add&gt;, élément de &lt;claimTypeRequirements&gt;</span><span class="sxs-lookup"><span data-stu-id="7bb5d-102">&lt;add&gt; of &lt;claimTypeRequirements&gt; element</span></span>
+<span data-ttu-id="7bb5d-103">Spécifie les types de revendications requis et facultatifs censés apparaître dans les informations d'identification fédérées.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-103">Specifies the types of required and optional claims expected to appear in the federated credential.</span></span> <span data-ttu-id="7bb5d-104">Par exemple, les services déclarent les exigences relatives aux informations d’identification entrantes devant posséder un certain jeu de types de revendications.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-104">For example, services state the requirements on incoming credentials, which must possess a certain set of claim types.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="7bb5d-105">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-105">\<system.ServiceModel></span></span>  
+<span data-ttu-id="7bb5d-106">\<liaisons ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-106">\<bindings></span></span>  
+<span data-ttu-id="7bb5d-107">\<wsFederatedBinding ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-107">\<wsFederatedBinding></span></span>  
+<span data-ttu-id="7bb5d-108">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-108">\<binding></span></span>  
+<span data-ttu-id="7bb5d-109">\<sécurité ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-109">\<security></span></span>  
+<span data-ttu-id="7bb5d-110">\<message ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-110">\<message></span></span>  
+<span data-ttu-id="7bb5d-111">\<claimTypeRequirements ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-111">\<claimTypeRequirements></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="7bb5d-112">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7bb5d-112">Syntax</span></span>  
   
+```xml  
 <claimTypeRequirements>  
       <add claimType="URI"  
         isOptional="Boolean" />  
 </claimTypeRequirements>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="7bb5d-113">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="7bb5d-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="7bb5d-114">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="7bb5d-115">Attributs</span><span class="sxs-lookup"><span data-stu-id="7bb5d-115">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|claimType|URI définissant le type d'une revendication.  Par exemple, pour acheter un produit d'un site Web, l'utilisateur doit présenter une carte de crédit valide avec limite de crédit suffisante.  Le type de revendication est l'URI de la carte de crédit.|  
-|isOptional|Valeur booléenne indiquant si l'opération concerne une revendication facultative.  Affectez à cet attribut la valeur `false` si c'est une revendication requise.<br /><br /> Vous pouvez utiliser cet attribut lorsque le service demande certaines informations sans pour autant les exiger.  Par exemple, si vous décidez que l'utilisateur doit indiquer ses prénom, nom et adresse mais pas forcément son numéro de téléphone.|  
+|<span data-ttu-id="7bb5d-116">Attribut</span><span class="sxs-lookup"><span data-stu-id="7bb5d-116">Attribute</span></span>|<span data-ttu-id="7bb5d-117">Description</span><span class="sxs-lookup"><span data-stu-id="7bb5d-117">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="7bb5d-118">claimType</span><span class="sxs-lookup"><span data-stu-id="7bb5d-118">claimType</span></span>|<span data-ttu-id="7bb5d-119">URI définissant le type d'une revendication.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-119">A URI that defines the type of a claim.</span></span> <span data-ttu-id="7bb5d-120">Par exemple, pour acheter un produit d'un site Web, l'utilisateur doit présenter une carte de crédit valide avec limite de crédit suffisante.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-120">For example, to purchase a product from a Web site, the user must present a valid credit card with sufficient credit limit.</span></span> <span data-ttu-id="7bb5d-121">Le type de revendication est l'URI de la carte de crédit.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-121">The claim type would be the credit card URI.</span></span>|  
+|<span data-ttu-id="7bb5d-122">isOptional</span><span class="sxs-lookup"><span data-stu-id="7bb5d-122">isOptional</span></span>|<span data-ttu-id="7bb5d-123">Valeur booléenne indiquant si l'opération concerne une revendication facultative.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-123">A Boolean value that specifies if this is for an optional claim.</span></span> <span data-ttu-id="7bb5d-124">Affectez à cet attribut la valeur `false` si c'est une revendication requise.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-124">Set this attribute to `false` if this is a required claim.</span></span><br /><br /> <span data-ttu-id="7bb5d-125">Vous pouvez utiliser cet attribut lorsque le service demande certaines informations sans pour autant les exiger.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-125">You can use this attribute when the service asks for some information but does not require it.</span></span> <span data-ttu-id="7bb5d-126">Par exemple, si vous décidez que l'utilisateur doit indiquer ses prénom, nom et adresse mais pas forcément son numéro de téléphone.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-126">For example, if you require the user to enter his/her first name, last name and address, but decide that phone number is optional.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="7bb5d-127">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="7bb5d-127">Child Elements</span></span>  
+ <span data-ttu-id="7bb5d-128">Aucun.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-128">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="7bb5d-129">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="7bb5d-129">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="7bb5d-130">Élément</span><span class="sxs-lookup"><span data-stu-id="7bb5d-130">Element</span></span>|<span data-ttu-id="7bb5d-131">Description</span><span class="sxs-lookup"><span data-stu-id="7bb5d-131">Description</span></span>|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements\>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|Spécifie une collection de types de revendications requis.  Chaque élément est de type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.<br /><br /> Dans un scénario fédéré, les services déclarent les spécifications relatives aux informations d'identification entrantes.  Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini.  Chaque élément de la collection indique les types de revendications requis et facultatifs censés apparaître dans les informations d'identification fédérées.|  
+|[<span data-ttu-id="7bb5d-132">\<claimTypeRequirements ></span><span class="sxs-lookup"><span data-stu-id="7bb5d-132">\<claimTypeRequirements></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|<span data-ttu-id="7bb5d-133">Spécifie une collection de types de revendications requis.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-133">Specifies a collection of required claim types.</span></span> <span data-ttu-id="7bb5d-134">Chaque élément est de type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-134">Each element is of type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.</span></span><br /><br /> <span data-ttu-id="7bb5d-135">Dans un scénario fédéré, les services déclarent les spécifications relatives aux informations d'identification entrantes.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-135">In a federated scenario, services state the requirements on incoming credentials.</span></span> <span data-ttu-id="7bb5d-136">Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-136">For example, the incoming credentials must possess a certain set of claim types.</span></span> <span data-ttu-id="7bb5d-137">Chaque élément de la collection indique les types de revendications requis et facultatifs censés apparaître dans les informations d’identification fédérées.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-137">Each element in this collection specifies the types of required and optional claims expected to appear in a federated credential.</span></span>|  
   
-## Notes  
- Dans un scénario fédéré, les services déclarent les spécifications relatives aux informations d'identification entrantes.  Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini.  Cette spécification est explicitée dans une stratégie de sécurité.  Lorsqu'un client requiert des informations d'identification à partir d'un service fédéré \(CardSpace, par exemple\), il indique ces spécifications dans une demande de jeton \(RequestSecurityToken\) afin que le service fédéré puisse publier ces informations et répondre aux spécifications.  
+## <a name="remarks"></a><span data-ttu-id="7bb5d-138">Remarques</span><span class="sxs-lookup"><span data-stu-id="7bb5d-138">Remarks</span></span>  
+ <span data-ttu-id="7bb5d-139">Dans un scénario fédéré, les services déclarent les exigences relatives aux informations d’identification entrantes.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-139">In a federated scenario, services state the requirements on incoming credentials.</span></span> <span data-ttu-id="7bb5d-140">Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-140">For example, the incoming credentials must possess a certain set of claim types.</span></span> <span data-ttu-id="7bb5d-141">Cette spécification est explicitée dans une stratégie de sécurité.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-141">This requirement is manifested in a security policy.</span></span> <span data-ttu-id="7bb5d-142">Lorsqu’un client requiert des informations d’identification à partir d’un service fédéré (CardSpace, par exemple), il indique ces exigences dans une demande de jeton (RequestSecurityToken) afin que le service fédéré puisse publier ces informations et répondre aux exigences.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-142">When a client requests credentials from a federated service (for example, CardSpace), it puts the requirements into a token request (RequestSecurityToken) so that the federated service can issue the credentials that satisfy the requirements accordingly.</span></span>  
   
-## Exemple  
- La configuration suivante ajoute deux spécifications de type de revendication à une liaison de sécurité.  
+## <a name="example"></a><span data-ttu-id="7bb5d-143">Exemple</span><span class="sxs-lookup"><span data-stu-id="7bb5d-143">Example</span></span>  
+ <span data-ttu-id="7bb5d-144">La configuration suivante ajoute deux exigences de type de revendication à une liaison de sécurité.</span><span class="sxs-lookup"><span data-stu-id="7bb5d-144">The following configuration adds two claim type requirements to a security binding.</span></span>  
   
-```  
+```xml  
 <bindings>  
     <wsFederationHttpBinding>  
       <binding name="myFederatedBinding">  
@@ -74,9 +84,9 @@ optional="true" />
 </bindings>  
 ```  
   
-## Voir aussi  
- <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>   
- <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>   
- <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.ClaimTypeRequirements%2A>   
- <xref:System.ServiceModel.Configuration.ClaimTypeElementCollection>   
+## <a name="see-also"></a><span data-ttu-id="7bb5d-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7bb5d-145">See Also</span></span>  
+ <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>  
+ <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>  
+ <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.ClaimTypeRequirements%2A>  
+ <xref:System.ServiceModel.Configuration.ClaimTypeElementCollection>  
  <xref:System.ServiceModel.Configuration.ClaimTypeElement>

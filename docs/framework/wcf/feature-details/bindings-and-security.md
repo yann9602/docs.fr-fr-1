@@ -1,239 +1,242 @@
 ---
-title: "Liaisons et s&#233;curit&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "liaisons (WCF)"
-  - "liaisons (WCF), sécurité"
-  - "sécurité WCF"
-  - "Windows Communication Foundation, sécurité"
+title: "Liaisons et sécurité"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- bindings [WCF], security
+- WCF security
+- Windows Communication Foundation, security
+- bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-caps.latest.revision: 42
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 42
+caps.latest.revision: "42"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 9a6ba021688094afcbbb176cf03fb3e4b4c10df7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Liaisons et s&#233;curit&#233;
-Les liaisons fournies par le système incluses avec [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] permettent de programmer rapidement des applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].À une exception près, la méthode de sécurité par défaut de toutes les liaisons est activée.Cette rubrique vous permet de sélectionner la liaison appropriée à vos besoins de sécurité.  
+# <a name="bindings-and-security"></a><span data-ttu-id="d2a66-102">Liaisons et sécurité</span><span class="sxs-lookup"><span data-stu-id="d2a66-102">Bindings and Security</span></span>
+<span data-ttu-id="d2a66-103">Les liaisons fournies par le système incluses avec [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] permettent de programmer rapidement des applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d2a66-103">The system-provided bindings included with [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] offer a quick way to program [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] applications.</span></span> <span data-ttu-id="d2a66-104">À une exception près, la méthode de sécurité par défaut de toutes les liaisons est activée.</span><span class="sxs-lookup"><span data-stu-id="d2a66-104">With one exception, all the bindings have a default security scheme enabled.</span></span> <span data-ttu-id="d2a66-105">Cette rubrique vous permet de sélectionner la liaison appropriée à vos besoins de sécurité.</span><span class="sxs-lookup"><span data-stu-id="d2a66-105">This topic helps you select the right binding for your security needs.</span></span>  
   
- Pour une vue d'ensemble de la sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], consultez [Vue d'ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md).[!INCLUDE[crabout](../../../../includes/crabout-md.md)] la programmation [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide de liaisons, consultez [Programmation de la sécurité dans WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).  
+ <span data-ttu-id="d2a66-106">Pour une vue d’ensemble de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sécurité, consultez [vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-106">For an overview of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security, see [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="d2a66-107">programmation [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l’aide de liaisons, consultez [de programmation de sécurité de WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-107"> programming [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] using bindings, see [Programming WCF Security](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).</span></span>  
   
- Si vous avez déjà sélectionné une liaison, de plus amples informations sur les comportements au moment de l'exécution associés sont disponibles dans [Comportements de sécurité](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).  
+ <span data-ttu-id="d2a66-108">Si vous avez déjà sélectionné une liaison, vous pouvez trouver plus d’informations sur les comportements d’exécution qui sont associés à la sécurité dans [comportements de sécurité](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-108">If you have already selected a binding, you can find out more about the run-time behaviors that are associated with security in [Security Behaviors](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).</span></span>  
   
- Certaines fonctions de sécurité ne sont pas programmables à l'aide des liaisons fournies par le système.Pour davantage de contrôle à l'aide d'une liaison personnalisée, consultez [Fonctionnalités de sécurité avec des liaisons personnalisées](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
+ <span data-ttu-id="d2a66-109">Certaines fonctions de sécurité ne sont pas programmables à l’aide des liaisons fournies par le système.</span><span class="sxs-lookup"><span data-stu-id="d2a66-109">Some security functions are not programmable using the system-provided bindings.</span></span> <span data-ttu-id="d2a66-110">Pour plus de contrôle à l’aide d’une liaison personnalisée, consultez [les fonctionnalités de sécurité avec des liaisons personnalisées](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-110">For more control using a custom binding, see [Security Capabilities with Custom Bindings](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).</span></span>  
   
-## Fonctions de sécurité des liaisons  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] inclut un certain nombre de liaisons fournies par le système qui répondent à la plupart des besoins.Si une liaison spécifique ne suffit pas, vous pouvez également créer une liaison personnalisée.Pour obtenir une liste des liaisons fournies par le système, consultez [Liaisons fournies par le système](../../../../docs/framework/wcf/system-provided-bindings.md).[!INCLUDE[crabout](../../../../includes/crabout-md.md)] les liaisons personnalisées, consultez [Liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+## <a name="security-functions-of-bindings"></a><span data-ttu-id="d2a66-111">Fonctions de sécurité des liaisons</span><span class="sxs-lookup"><span data-stu-id="d2a66-111">Security Functions of Bindings</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="d2a66-112"> inclut un certain nombre de liaisons fournies par le système qui répondent à la plupart des besoins.</span><span class="sxs-lookup"><span data-stu-id="d2a66-112"> includes a number of system-provided bindings that meet most needs.</span></span> <span data-ttu-id="d2a66-113">Si une liaison spécifique ne suffit pas, vous pouvez également créer une liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="d2a66-113">If a particular binding does not suffice, you can also create a custom binding.</span></span> <span data-ttu-id="d2a66-114">Pour obtenir la liste des liaisons fournies par le système, consultez [les liaisons fournies](../../../../docs/framework/wcf/system-provided-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-114">For a list of system-provided bindings, see [System-Provided Bindings](../../../../docs/framework/wcf/system-provided-bindings.md).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="d2a66-115">liaisons personnalisées, consultez [des liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-115"> custom bindings, see [Custom Bindings](../../../../docs/framework/wcf/extending/custom-bindings.md).</span></span>  
   
- Chaque liaison dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] comporte deux formulaires : l'un en tant qu'API et l'autre en tant qu'élément XML utilisé dans un fichier de configuration.Par exemple, `WSHttpBinding` \(API\) a un équivalent dans [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
+ <span data-ttu-id="d2a66-116">Chaque liaison dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] comporte deux formulaires : l'un en tant qu'API et l'autre en tant qu'élément XML utilisé dans un fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="d2a66-116">Every binding in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] has two forms: as an API and as an XML element used in a configuration file.</span></span> <span data-ttu-id="d2a66-117">Par exemple, le `WSHttpBinding` (API) possède un équivalent le [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-117">For example, the `WSHttpBinding` (API) has a counterpart in the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>  
   
- La section suivante répertorie ces deux formulaires pour chaque de liaison et récapitule les fonctionnalités de sécurité.  
+ <span data-ttu-id="d2a66-118">La section suivante répertorie ces deux formulaires pour chaque de liaison et récapitule les fonctionnalités de sécurité.</span><span class="sxs-lookup"><span data-stu-id="d2a66-118">The following section lists both forms for each binding and summarizes the security features.</span></span>  
   
-### BasicHttp  
- Dans le code, utilisez la classe <xref:System.ServiceModel.BasicHttpBinding> ; dans la configuration, utilisez [\<basicHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
+### <a name="basichttp"></a><span data-ttu-id="d2a66-119">BasicHttp</span><span class="sxs-lookup"><span data-stu-id="d2a66-119">BasicHttp</span></span>  
+ <span data-ttu-id="d2a66-120">Dans le code, utilisez la <xref:System.ServiceModel.BasicHttpBinding> classe ; dans la configuration, utilisez la [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-120">In code, use the <xref:System.ServiceModel.BasicHttpBinding> class; in configuration, use the [\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).</span></span>  
   
- Cette liaison est conçue pour être utilisées avec une vaste gamme de technologies existantes, dont les suivantes :  
+ <span data-ttu-id="d2a66-121">Cette liaison est conçue pour être utilisées avec une vaste gamme de technologies existantes, dont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-121">This binding is designed for use with a range of existing technologies, including the following:</span></span>  
   
--   Services Web ASP.NET \(ASMX\), version 1.  
+-   <span data-ttu-id="d2a66-122">Services Web ASP.NET (ASMX), version 1.</span><span class="sxs-lookup"><span data-stu-id="d2a66-122">ASP.NET Web services (ASMX), version 1.</span></span>  
   
--   Applications WSE \(Web Service Enhancements\).  
+-   <span data-ttu-id="d2a66-123">Applications WSE (Web Service Enhancements).</span><span class="sxs-lookup"><span data-stu-id="d2a66-123">Web Service Enhancements (WSE) applications.</span></span>  
   
--   Basic Profile tel que défini dans la spécification WS\-I \(Web Services Interoperability\), \([http:\/\/go.microsoft.com\/fwlink\/?LinkId\=38955](http://go.microsoft.com/fwlink/?LinkId=38955)\) \(page pouvant être en anglais\).  
+-   <span data-ttu-id="d2a66-124">Basic Profile tel que défini dans l’interopérabilité des Services Web (WS-I) spécification ([http://go.microsoft.com/fwlink/?LinkId=38955](http://go.microsoft.com/fwlink/?LinkId=38955)).</span><span class="sxs-lookup"><span data-stu-id="d2a66-124">Basic Profile as defined in the Web Services Interoperability (WS-I) specification ([http://go.microsoft.com/fwlink/?LinkId=38955](http://go.microsoft.com/fwlink/?LinkId=38955)).</span></span>  
   
--   Profil de sécurité de base tel que défini dans WS\-I.  
+-   <span data-ttu-id="d2a66-125">Profil de sécurité de base tel que défini dans WS-I.</span><span class="sxs-lookup"><span data-stu-id="d2a66-125">Basic security profile as defined in WS-I.</span></span>  
   
- Par défaut, cette liaison n'est pas sécurisée.Elle est conçue pour interagir avec les services ASMX.Lorsque la sécurité est activée, la liaison fournit une interopérabilité transparente avec les mécanismes de sécurité IIS \(Internet Information Services\), tels que l'authentification de base, Digest et la sécurité Windows intégrée.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Vue d'ensemble de la sécurité des transports](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).Cette liaison prend en charge les fonctionnalités suivantes :  
+ <span data-ttu-id="d2a66-126">Par défaut, cette liaison n'est pas sécurisée.</span><span class="sxs-lookup"><span data-stu-id="d2a66-126">By default, this binding is not secure.</span></span> <span data-ttu-id="d2a66-127">Elle est conçue pour interagir avec les services ASMX.</span><span class="sxs-lookup"><span data-stu-id="d2a66-127">It is designed to interoperate with ASMX services.</span></span> <span data-ttu-id="d2a66-128">Lorsque la sécurité est activée, la liaison fournit une interopérabilité transparente avec les mécanismes de sécurité IIS (Internet Information Services), tels que l’authentification de base, Digest et la sécurité Windows intégrée.</span><span class="sxs-lookup"><span data-stu-id="d2a66-128">When security is enabled, the binding is designed for seamless interoperation with Internet Information Services (IIS) security mechanisms, such as basic authentication, digest, and integrated Windows security.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-129">[Vue d’ensemble de la sécurité de transport](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-129"> [Transport Security Overview](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).</span></span> <span data-ttu-id="d2a66-130">Cette liaison prend en charge les fonctionnalités suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-130">This binding supports the following:</span></span>  
   
--   Sécurité du transport HTTPS.  
+-   <span data-ttu-id="d2a66-131">Sécurité du transport HTTPS.</span><span class="sxs-lookup"><span data-stu-id="d2a66-131">HTTPS transport security.</span></span>  
   
--   Authentification de base HTTP.  
+-   <span data-ttu-id="d2a66-132">Authentification de base HTTP.</span><span class="sxs-lookup"><span data-stu-id="d2a66-132">HTTP basic authentication.</span></span>  
   
--   WS\-Security.  
+-   <span data-ttu-id="d2a66-133">WS-Security.</span><span class="sxs-lookup"><span data-stu-id="d2a66-133">WS-Security.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.BasicHttpSecurity>, <xref:System.ServiceModel.BasicHttpMessageSecurity>, <xref:System.ServiceModel.BasicHttpMessageCredentialType> et <xref:System.ServiceModel.BasicHttpSecurityMode>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-134"> <xref:System.ServiceModel.BasicHttpSecurity>, <xref:System.ServiceModel.BasicHttpMessageSecurity>, <xref:System.ServiceModel.BasicHttpMessageCredentialType> et <xref:System.ServiceModel.BasicHttpSecurityMode>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-134"> <xref:System.ServiceModel.BasicHttpSecurity>, <xref:System.ServiceModel.BasicHttpMessageSecurity>, <xref:System.ServiceModel.BasicHttpMessageCredentialType>, and <xref:System.ServiceModel.BasicHttpSecurityMode>.</span></span>  
   
-### WSHttpBinding  
- Dans le code, utilisez la classe <xref:System.ServiceModel.WSHttpBinding> ; dans la configuration, utilisez [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
+### <a name="wshttpbinding"></a><span data-ttu-id="d2a66-135">WSHttpBinding</span><span class="sxs-lookup"><span data-stu-id="d2a66-135">WSHttpBinding</span></span>  
+ <span data-ttu-id="d2a66-136">Dans le code, utilisez la <xref:System.ServiceModel.WSHttpBinding> classe ; dans la configuration, utilisez la [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-136">In code, use the <xref:System.ServiceModel.WSHttpBinding> class; in configuration, use the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>  
   
- Par défaut, cette liaison implémente la spécification WS\-Security et fournit l'interopérabilité avec les services qui implémentent les spécifications WS\-\*.Elle prend en charge les fonctionnalités suivantes :  
+ <span data-ttu-id="d2a66-137">Par défaut, cette liaison implémente la spécification WS-Security et fournit l’interopérabilité avec les services qui implémentent les spécifications WS-*.</span><span class="sxs-lookup"><span data-stu-id="d2a66-137">By default, this binding implements the WS-Security specification and provides interoperability with services that implement the WS-* specifications.</span></span> <span data-ttu-id="d2a66-138">Elle prend en charge les fonctionnalités suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-138">It supports the following:</span></span>  
   
--   Sécurité du transport HTTPS.  
+-   <span data-ttu-id="d2a66-139">Sécurité du transport HTTPS.</span><span class="sxs-lookup"><span data-stu-id="d2a66-139">HTTPS transport security.</span></span>  
   
--   WS\-Security.  
+-   <span data-ttu-id="d2a66-140">WS-Security.</span><span class="sxs-lookup"><span data-stu-id="d2a66-140">WS-Security.</span></span>  
   
--   Protection du transport HTTPS avec sécurité des informations d'identification de message SOAP permettant d'authentifier l'appelant.  
+-   <span data-ttu-id="d2a66-141">Protection du transport HTTPS avec sécurité des informations d'identification de message SOAP permettant d'authentifier l'appelant.</span><span class="sxs-lookup"><span data-stu-id="d2a66-141">HTTPS transport protection with SOAP message credential security for authenticating the caller.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.WSHttpSecurity>, <xref:System.ServiceModel.MessageSecurityOverHttp>, <xref:System.ServiceModel.MessageCredentialType>, <xref:System.ServiceModel.SecurityMode>, <xref:System.ServiceModel.HttpTransportSecurity>, <xref:System.ServiceModel.HttpClientCredentialType> et <xref:System.ServiceModel.HttpProxyCredentialType>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-142"> <xref:System.ServiceModel.WSHttpSecurity>, <xref:System.ServiceModel.MessageSecurityOverHttp>, <xref:System.ServiceModel.MessageCredentialType>, <xref:System.ServiceModel.SecurityMode>, <xref:System.ServiceModel.HttpTransportSecurity>, <xref:System.ServiceModel.HttpClientCredentialType> et <xref:System.ServiceModel.HttpProxyCredentialType>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-142"> <xref:System.ServiceModel.WSHttpSecurity>, <xref:System.ServiceModel.MessageSecurityOverHttp>, <xref:System.ServiceModel.MessageCredentialType>, <xref:System.ServiceModel.SecurityMode>, <xref:System.ServiceModel.HttpTransportSecurity>, <xref:System.ServiceModel.HttpClientCredentialType>, and <xref:System.ServiceModel.HttpProxyCredentialType>.</span></span>  
   
-### WSDualHttpBinding  
- Dans le code, utilisez la classe <xref:System.ServiceModel.WSDualHttpBinding> ; dans la configuration, utilisez [\<wsDualHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
+### <a name="wsdualhttpbinding"></a><span data-ttu-id="d2a66-143">WSDualHttpBinding</span><span class="sxs-lookup"><span data-stu-id="d2a66-143">WSDualHttpBinding</span></span>  
+ <span data-ttu-id="d2a66-144">Dans le code, utilisez la <xref:System.ServiceModel.WSDualHttpBinding> classe ; dans la configuration, utilisez la [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-144">In code, use the <xref:System.ServiceModel.WSDualHttpBinding> class; in configuration, use the [\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).</span></span>  
   
- Cette liaison est conçue pour activer des applications de service duplex.Elle implémente la spécification WS\-Security pour la sécurité de transfert basée sur les messages.La sécurité de transport n'est pas disponible.Par défaut, elle fournit les fonctionnalités suivantes :  
+ <span data-ttu-id="d2a66-145">Cette liaison est conçue pour activer des applications de service duplex.</span><span class="sxs-lookup"><span data-stu-id="d2a66-145">This binding is designed to enable duplex service applications.</span></span> <span data-ttu-id="d2a66-146">Elle implémente la spécification WS-Security pour la sécurité de transfert basée sur les messages.</span><span class="sxs-lookup"><span data-stu-id="d2a66-146">This binding implements the WS-Security specification for message-based transfer security.</span></span> <span data-ttu-id="d2a66-147">La sécurité de transport n'est pas disponible.</span><span class="sxs-lookup"><span data-stu-id="d2a66-147">Transport security is not available.</span></span> <span data-ttu-id="d2a66-148">Par défaut, elle fournit les fonctionnalités suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-148">By default, it provides the following features:</span></span>  
   
--   Implémente WS\-Reliable Messaging pour la fiabilité.  
+-   <span data-ttu-id="d2a66-149">Implémente WS-Reliable Messaging pour la fiabilité.</span><span class="sxs-lookup"><span data-stu-id="d2a66-149">Implements WS-Reliable Messaging for reliability.</span></span>  
   
--   Implémente WS\-Security pour l'authentification et la sécurité de transfert.  
+-   <span data-ttu-id="d2a66-150">Implémente WS-Security pour l'authentification et la sécurité de transfert.</span><span class="sxs-lookup"><span data-stu-id="d2a66-150">Implements WS-Security for transfer security and authentication.</span></span>  
   
--   Utilise HTTP pour la remise de messages.  
+-   <span data-ttu-id="d2a66-151">Utilise HTTP pour la remise de messages.</span><span class="sxs-lookup"><span data-stu-id="d2a66-151">Uses HTTP for message delivery.</span></span>  
   
--   Utilise l'encodage de message Text\/XML.  
+-   <span data-ttu-id="d2a66-152">Utilise l'encodage de message Text/XML.</span><span class="sxs-lookup"><span data-stu-id="d2a66-152">Uses text/XML message encoding.</span></span>  
   
- À l'aide de WS\-Security \(sécurité au niveau de la couche de message\), la liaison vous permet de configurer les paramètres suivants :  
+ <span data-ttu-id="d2a66-153">À l'aide de WS-Security (sécurité au niveau de la couche de message), la liaison vous permet de configurer les paramètres suivants :</span><span class="sxs-lookup"><span data-stu-id="d2a66-153">Using WS-Security (message-layer security), the binding allows you to configure the following parameters:</span></span>  
   
--   La suite algorithmique de sécurité afin de déterminer l'algorithme de chiffrement.  
+-   <span data-ttu-id="d2a66-154">La suite algorithmique de sécurité afin de déterminer l'algorithme de chiffrement.</span><span class="sxs-lookup"><span data-stu-id="d2a66-154">The security algorithm suite to determine the cryptographic algorithm.</span></span>  
   
--   Options de liaison pour les éléments suivants :  
+-   <span data-ttu-id="d2a66-155">Options de liaison pour les éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="d2a66-155">Binding options for the following:</span></span>  
   
-    -   Fourniture des informations d'identification de service disponibles hors bande au niveau du client.  
+    -   <span data-ttu-id="d2a66-156">Fourniture des informations d'identification de service disponibles hors bande au niveau du client.</span><span class="sxs-lookup"><span data-stu-id="d2a66-156">Providing service credentials available out-of-band at the client.</span></span>  
   
-    -   Fourniture des informations d'identification de service négociées à partir du service dans le cadre de l'installation des canaux.  
+    -   <span data-ttu-id="d2a66-157">Fourniture des informations d'identification de service négociées à partir du service dans le cadre de l'installation des canaux.</span><span class="sxs-lookup"><span data-stu-id="d2a66-157">Providing service credentials negotiated from the service as part of channel setup.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.WSDualHttpSecurity> et <xref:System.ServiceModel.WSDualHttpSecurityMode>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-158"><xref:System.ServiceModel.WSDualHttpSecurity> et <xref:System.ServiceModel.WSDualHttpSecurityMode>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-158"> <xref:System.ServiceModel.WSDualHttpSecurity> and <xref:System.ServiceModel.WSDualHttpSecurityMode>.</span></span>  
   
-### NetTcpBinding  
- Dans le code, utilisez la classe <xref:System.ServiceModel.NetTcpBinding> ; dans la configuration, utilisez [\<netTcpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
+### <a name="nettcpbinding"></a><span data-ttu-id="d2a66-159">NetTcpBinding</span><span class="sxs-lookup"><span data-stu-id="d2a66-159">NetTcpBinding</span></span>  
+ <span data-ttu-id="d2a66-160">Dans le code, utilisez la <xref:System.ServiceModel.NetTcpBinding> classe ; dans la configuration, utilisez la [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-160">In code, use the <xref:System.ServiceModel.NetTcpBinding> class; in configuration, use the [\<netTcpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).</span></span>  
   
- Cette liaison est optimisée pour la communication d'un ordinateur à l'autre.Par défaut, elle présente les caractéristiques suivantes :  
+ <span data-ttu-id="d2a66-161">Cette liaison est optimisée pour la communication d’un ordinateur à l’autre.</span><span class="sxs-lookup"><span data-stu-id="d2a66-161">This binding is optimized for cross-machine communication.</span></span> <span data-ttu-id="d2a66-162">Par défaut, elle présente les caractéristiques suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-162">By default, it has the following characteristics:</span></span>  
   
--   Elle implémente la sécurité au niveau de la couche de transport.  
+-   <span data-ttu-id="d2a66-163">Elle implémente la sécurité au niveau de la couche de transport.</span><span class="sxs-lookup"><span data-stu-id="d2a66-163">Implements transport-layer security.</span></span>  
   
--   Elle tire parti de la sécurité Windows pour l'authentification et la sécurité de transfert.  
+-   <span data-ttu-id="d2a66-164">Elle tire parti de la sécurité Windows pour l'authentification et la sécurité de transfert.</span><span class="sxs-lookup"><span data-stu-id="d2a66-164">Leverages Windows security for transfer security and authentication.</span></span>  
   
--   Elle utilise TCP pour le transport.  
+-   <span data-ttu-id="d2a66-165">Elle utilise TCP pour le transport.</span><span class="sxs-lookup"><span data-stu-id="d2a66-165">Uses TCP for transport.</span></span>  
   
--   Elle implémente l'encodage de message binaire.  
+-   <span data-ttu-id="d2a66-166">Elle implémente l'encodage de message binaire.</span><span class="sxs-lookup"><span data-stu-id="d2a66-166">Implements binary message encoding.</span></span>  
   
--   Elle implémente WS\-Reliable Messaging.  
+-   <span data-ttu-id="d2a66-167">Elle implémente WS-Reliable Messaging.</span><span class="sxs-lookup"><span data-stu-id="d2a66-167">Implements WS-Reliable Messaging.</span></span>  
   
- Les options disponibles sont les suivantes :  
+ <span data-ttu-id="d2a66-168">Les options disponibles sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-168">Options include the following:</span></span>  
   
--   Sécurité au niveau de la couche de message \(à l'aide de WS\-Security\).  
+-   <span data-ttu-id="d2a66-169">Sécurité au niveau de la couche de message (à l'aide de WS-Security).</span><span class="sxs-lookup"><span data-stu-id="d2a66-169">Message-layer security (using WS-Security).</span></span>  
   
--   Sécurité de transport à l'aide des informations d'identification du message : confidentialité et intégrité fournies par TLS \(Transport Layer Security\), informations d'identification pour l'autorisation fournies par WS\-Security.  
+-   <span data-ttu-id="d2a66-170">Sécurité de transport à l'aide des informations d'identification du message : confidentialité et intégrité fournies par TLS (Transport Layer Security), informations d'identification pour l'autorisation fournies par WS-Security.</span><span class="sxs-lookup"><span data-stu-id="d2a66-170">Transport security with message credential—confidentiality and integrity provided by Transport Layer Security (TLS) over TCP, and credentials for authorization provided by WS-Security.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetTcpSecurity>, <xref:System.ServiceModel.TcpTransportSecurity>, <xref:System.ServiceModel.TcpClientCredentialType>, <xref:System.ServiceModel.MessageSecurityOverTcp> et <xref:System.ServiceModel.MessageCredentialType>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-171"> <xref:System.ServiceModel.NetTcpSecurity>, <xref:System.ServiceModel.TcpTransportSecurity>, <xref:System.ServiceModel.TcpClientCredentialType>, <xref:System.ServiceModel.MessageSecurityOverTcp> et <xref:System.ServiceModel.MessageCredentialType>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-171"> <xref:System.ServiceModel.NetTcpSecurity>, <xref:System.ServiceModel.TcpTransportSecurity>, <xref:System.ServiceModel.TcpClientCredentialType>, <xref:System.ServiceModel.MessageSecurityOverTcp>, and <xref:System.ServiceModel.MessageCredentialType>.</span></span>  
   
-### NetNamedPipeBinding  
- Dans le code, utilisez la classe <xref:System.ServiceModel.NetNamedPipeBinding> ; dans la configuration, utilisez [\<netNamedPipeBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).  
+### <a name="netnamedpipebinding"></a><span data-ttu-id="d2a66-172">NetNamedPipeBinding</span><span class="sxs-lookup"><span data-stu-id="d2a66-172">NetNamedPipeBinding</span></span>  
+ <span data-ttu-id="d2a66-173">Dans le code, utilisez la <xref:System.ServiceModel.NetNamedPipeBinding> classe ; dans la configuration, utilisez la [ \<netNamedPipeBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-173">In code, use the <xref:System.ServiceModel.NetNamedPipeBinding> class; in configuration, use the [\<netNamedPipeBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).</span></span>  
   
- Cette liaison est optimisée pour la communication interprocessus \(généralement sur le même ordinateur\).Par défaut, elle présente les caractéristiques suivantes :  
+ <span data-ttu-id="d2a66-174">Cette liaison est optimisée pour la communication interprocessus (généralement sur le même ordinateur).</span><span class="sxs-lookup"><span data-stu-id="d2a66-174">This binding is optimized for cross-process communication (usually on the same machine).</span></span> <span data-ttu-id="d2a66-175">Par défaut, elle présente les caractéristiques suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-175">By default, this binding has the following characteristics:</span></span>  
   
--   Elle utilise la sécurité de transport pour l'authentification et le transfert de messages.  
+-   <span data-ttu-id="d2a66-176">Elle utilise la sécurité de transport pour l'authentification et le transfert de messages.</span><span class="sxs-lookup"><span data-stu-id="d2a66-176">Uses transport security for message transfer and authentication.</span></span>  
   
--   Elle utilise des canaux nommés pour la remise de messages.  
+-   <span data-ttu-id="d2a66-177">Elle utilise des canaux nommés pour la remise de messages.</span><span class="sxs-lookup"><span data-stu-id="d2a66-177">Uses named pipes for message delivery.</span></span>  
   
--   Elle implémente l'encodage de message binaire.  
+-   <span data-ttu-id="d2a66-178">Elle implémente l'encodage de message binaire.</span><span class="sxs-lookup"><span data-stu-id="d2a66-178">Implements binary message encoding.</span></span>  
   
--   Chiffrement et signature des messages  
+-   <span data-ttu-id="d2a66-179">Chiffrement et signature des messages</span><span class="sxs-lookup"><span data-stu-id="d2a66-179">Encryption and message signing.</span></span>  
   
- Les options disponibles sont les suivantes :  
+ <span data-ttu-id="d2a66-180">Les options disponibles sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-180">Options include the following:</span></span>  
   
--   Authentification à l'aide de la sécurité Windows.  
+-   <span data-ttu-id="d2a66-181">Authentification à l'aide de la sécurité Windows.</span><span class="sxs-lookup"><span data-stu-id="d2a66-181">Authentication using Windows security.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetNamedPipeSecurity>, <xref:System.ServiceModel.NetNamedPipeSecurityMode> et <xref:System.ServiceModel.NamedPipeTransportSecurity>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-182"> <xref:System.ServiceModel.NetNamedPipeSecurity>, <xref:System.ServiceModel.NetNamedPipeSecurityMode> et <xref:System.ServiceModel.NamedPipeTransportSecurity>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-182"> <xref:System.ServiceModel.NetNamedPipeSecurity>, <xref:System.ServiceModel.NetNamedPipeSecurityMode>, and <xref:System.ServiceModel.NamedPipeTransportSecurity>.</span></span>  
   
-### MsmqIntegrationBinding  
- Dans le code, utilisez la classe <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ; dans la configuration, utilisez [\<msmqIntegrationBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).  
+### <a name="msmqintegrationbinding"></a><span data-ttu-id="d2a66-183">MsmqIntegrationBinding</span><span class="sxs-lookup"><span data-stu-id="d2a66-183">MsmqIntegrationBinding</span></span>  
+ <span data-ttu-id="d2a66-184">Dans le code, utilisez la <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> classe ; dans la configuration, utilisez la [ \<msmqIntegrationBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-184">In code, use the <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> class; in configuration, use the [\<msmqIntegrationBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).</span></span>  
   
- Cette liaison est optimisée pour créer des services et des clients [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui interagissent avec les points de terminaison MSMQ \(Microsoft Message Queuing\) non\-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ <span data-ttu-id="d2a66-185">Cette liaison est optimisée pour créer des services et des clients [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui interagissent avec les points de terminaison MSMQ (Microsoft Message Queuing) non-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d2a66-185">This binding is optimized for creating [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] clients and services that interoperate with non-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Microsoft Message Queuing (MSMQ) endpoints.</span></span>  
   
- Par défaut, elle utilise la sécurité de transport et fournit les caractéristiques de sécurité suivantes :  
+ <span data-ttu-id="d2a66-186">Par défaut, elle utilise la sécurité de transport et fournit les caractéristiques de sécurité suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-186">By default, this binding uses transport security and provides the following security characteristics:</span></span>  
   
--   La sécurité peut être désactivée \(None\).  
+-   <span data-ttu-id="d2a66-187">La sécurité peut être désactivée (None).</span><span class="sxs-lookup"><span data-stu-id="d2a66-187">Security can be disabled (None).</span></span>  
   
--   Sécurité de transport MSMQ \(Transport\).  
+-   <span data-ttu-id="d2a66-188">Sécurité de transport MSMQ (Transport).</span><span class="sxs-lookup"><span data-stu-id="d2a66-188">MSMQ transport security (Transport).</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetMsmqSecurity> et <xref:System.ServiceModel.NetMsmqSecurityMode>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-189"><xref:System.ServiceModel.NetMsmqSecurity> et <xref:System.ServiceModel.NetMsmqSecurityMode>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-189"> <xref:System.ServiceModel.NetMsmqSecurity> and <xref:System.ServiceModel.NetMsmqSecurityMode>.</span></span>  
   
-### NetMsmqBinding  
- Dans le code, utilisez la classe <xref:System.ServiceModel.NetMsmqBinding> ; dans la configuration, utilisez [\<netMsmqBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).  
+### <a name="netmsmqbinding"></a><span data-ttu-id="d2a66-190">NetMsmqBinding</span><span class="sxs-lookup"><span data-stu-id="d2a66-190">NetMsmqBinding</span></span>  
+ <span data-ttu-id="d2a66-191">Dans le code, utilisez la <xref:System.ServiceModel.NetMsmqBinding> classe ; dans la configuration, utilisez la [ \<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-191">In code, use the <xref:System.ServiceModel.NetMsmqBinding> class; in configuration, use the [\<netMsmqBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).</span></span>  
   
- Cette liaison est prévue pour être utilisée dans le cadre de la création de services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui requièrent la prise en charge des message en file d'attente MSMQ.  
+ <span data-ttu-id="d2a66-192">Cette liaison est prévue pour être utilisée dans le cadre de la création de services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui requièrent la prise en charge des message en file d'attente MSMQ.</span><span class="sxs-lookup"><span data-stu-id="d2a66-192">This binding is intended for use when creating [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services that require MSMQ queued message support.</span></span>  
   
- Par défaut, elle utilise la sécurité de transport et fournit les caractéristiques de sécurité suivantes :  
+ <span data-ttu-id="d2a66-193">Par défaut, elle utilise la sécurité de transport et fournit les caractéristiques de sécurité suivantes :</span><span class="sxs-lookup"><span data-stu-id="d2a66-193">By default, this binding uses transport security and provides the following security characteristics:</span></span>  
   
--   La sécurité peut être désactivée \(None\).  
+-   <span data-ttu-id="d2a66-194">La sécurité peut être désactivée (None).</span><span class="sxs-lookup"><span data-stu-id="d2a66-194">Security can be disabled (None).</span></span>  
   
--   Sécurité de transport MSMQ \(Transport\).  
+-   <span data-ttu-id="d2a66-195">Sécurité de transport MSMQ (Transport).</span><span class="sxs-lookup"><span data-stu-id="d2a66-195">MSMQ transport security (Transport).</span></span>  
   
--   Sécurité des messages SOAP \(Message\).  
+-   <span data-ttu-id="d2a66-196">Sécurité des messages SOAP (Message).</span><span class="sxs-lookup"><span data-stu-id="d2a66-196">SOAP-based message security (Message).</span></span>  
   
--   Transport simultané et sécurité des messages \(Both\).  
+-   <span data-ttu-id="d2a66-197">Transport simultané et sécurité des messages (Both).</span><span class="sxs-lookup"><span data-stu-id="d2a66-197">Simultaneous Transport and Message security (Both).</span></span>  
   
--   Types d'informations d'identification du client pris en charge : None, Windows, UserName, Certificate, IssuedToken.  
+-   <span data-ttu-id="d2a66-198">Types d'informations d'identification du client pris en charge : None, Windows, UserName, Certificate, IssuedToken.</span><span class="sxs-lookup"><span data-stu-id="d2a66-198">Client Credential Types supported: None, Windows, UserName, Certificate, IssuedToken.</span></span>  
   
- L'information d'identification <xref:System.ServiceModel.MessageCredentialType> est uniquement prise en charge lorsque le mode de sécurité a la valeur <xref:System.ServiceModel.NetMsmqSecurityMode> ou <xref:System.ServiceModel.NetMsmqSecurityMode>.  
+ <span data-ttu-id="d2a66-199">L'information d'identification <xref:System.ServiceModel.MessageCredentialType.Certificate> est uniquement prise en charge lorsque le mode de sécurité a la valeur <xref:System.ServiceModel.NetMsmqSecurityMode.Both> ou <xref:System.ServiceModel.NetMsmqSecurityMode.Message>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-199">The <xref:System.ServiceModel.MessageCredentialType.Certificate> credential is supported only when the security mode is set to either <xref:System.ServiceModel.NetMsmqSecurityMode.Both> or <xref:System.ServiceModel.NetMsmqSecurityMode.Message>.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.MessageSecurityOverMsmq> et <xref:System.ServiceModel.MsmqTransportSecurity>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-200"><xref:System.ServiceModel.MessageSecurityOverMsmq> et <xref:System.ServiceModel.MsmqTransportSecurity>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-200"> <xref:System.ServiceModel.MessageSecurityOverMsmq> and <xref:System.ServiceModel.MsmqTransportSecurity>.</span></span>  
   
-### WSFederationHttpBinding  
- Dans le code, utilisez la classe <xref:System.ServiceModel.WSFederationHttpBinding> ; dans la configuration, utilisez [\<wsFederationHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+### <a name="wsfederationhttpbinding"></a><span data-ttu-id="d2a66-201">WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="d2a66-201">WSFederationHttpBinding</span></span>  
+ <span data-ttu-id="d2a66-202">Dans le code, utilisez la <xref:System.ServiceModel.WSFederationHttpBinding> classe ; dans la configuration, utilisez la [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-202">In code, use the <xref:System.ServiceModel.WSFederationHttpBinding> class; in configuration, use the [\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).</span></span>  
   
- Par défaut, cette liaison utilise WS\-Security \(sécurité au niveau de la couche de message\).  
+ <span data-ttu-id="d2a66-203">Par défaut, cette liaison utilise WS-Security (sécurité au niveau de la couche de message).</span><span class="sxs-lookup"><span data-stu-id="d2a66-203">By default, this binding uses WS-Security (message-layer security).</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Fédération](../../../../docs/framework/wcf/feature-details/federation.md), <xref:System.ServiceModel.WSFederationHttpSecurity> et <xref:System.ServiceModel.WSFederationHttpSecurityMode>.  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-204">[Fédération](../../../../docs/framework/wcf/feature-details/federation.md), <xref:System.ServiceModel.WSFederationHttpSecurity>, et <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span><span class="sxs-lookup"><span data-stu-id="d2a66-204"> [Federation](../../../../docs/framework/wcf/feature-details/federation.md), <xref:System.ServiceModel.WSFederationHttpSecurity>, and <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span></span>  
   
-## Liaisons personnalisées  
- Si aucune des liaisons fournies par le système ne répondent à vos besoins, vous pouvez créer une liaison personnalisée à l'aide d'un élément de liaison de sécurité personnalisé.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Fonctionnalités de sécurité avec des liaisons personnalisées](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
+## <a name="custom-bindings"></a><span data-ttu-id="d2a66-205">Liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="d2a66-205">Custom Bindings</span></span>  
+ <span data-ttu-id="d2a66-206">Si aucune des liaisons fournies par le système ne répondent à vos besoins, vous pouvez créer une liaison personnalisée à l’aide d’un élément de liaison de sécurité personnalisé.</span><span class="sxs-lookup"><span data-stu-id="d2a66-206">If none of the system-provided bindings meets you requirements, you can create a custom binding with a custom security binding element.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-207">[Les fonctionnalités de sécurité avec des liaisons personnalisées](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-207"> [Security Capabilities with Custom Bindings](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).</span></span>  
   
-## Options de liaison  
- Le tableau suivant récapitule les fonctionnalités offertes par le paramètre de mode de sécurité défini ; autrement dit, il répertorie les fonctionnalités disponibles lorsque le mode de sécurité a la valeur `Transport`, `Message`ou `TransportWithMessageCredential`.Utilisez\-le pour rechercher les fonctionnalités de sécurité que votre application requiert.  
+## <a name="binding-choices"></a><span data-ttu-id="d2a66-208">Options de liaison</span><span class="sxs-lookup"><span data-stu-id="d2a66-208">Binding Choices</span></span>  
+ <span data-ttu-id="d2a66-209">Le tableau suivant récapitule les fonctionnalités offertes par le paramètre de mode de sécurité défini ; autrement dit, il répertorie les fonctionnalités disponibles lorsque le mode de sécurité a la valeur `Transport`, `Message`ou `TransportWithMessageCredential`.</span><span class="sxs-lookup"><span data-stu-id="d2a66-209">The following table summarizes the features offered in the security mode setting, that is, it lists the features available when the security mode is set to `Transport`, `Message`, or `TransportWithMessageCredential`.</span></span> <span data-ttu-id="d2a66-210">Utilisez-le pour rechercher les fonctionnalités de sécurité que votre application requiert.</span><span class="sxs-lookup"><span data-stu-id="d2a66-210">Use this table to help you find the security features your application requires.</span></span>  
   
-|Paramètre|Fonctionnalités|  
-|---------------|---------------------|  
-|Transport|Authentification du serveur<br /><br /> Authentification du client<br /><br /> Sécurité point à point<br /><br /> Interopérabilité<br /><br /> Accélération matérielle<br /><br /> Haut débit<br /><br /> Pare\-feu sécurisé<br /><br /> Applications à latence élevée<br /><br /> Rechiffrement sur des sauts multiples|  
-|Message|Authentification du serveur<br /><br /> Authentification du client<br /><br /> Sécurité de bout en bout<br /><br /> Interopérabilité<br /><br /> Revendications enrichies<br /><br /> Fédération<br /><br /> Authentification multifacteur<br /><br /> Jetons personnalisés<br /><br /> Service de notaire\/horodatage<br /><br /> Applications à latence élevée<br /><br /> Persistance des signatures de message|  
-|TransportWithMessageCredential|Authentification du serveur<br /><br /> Authentification du client<br /><br /> Sécurité point à point<br /><br /> Interopérabilité<br /><br /> Accélération matérielle<br /><br /> Haut débit<br /><br /> Revendications client enrichies<br /><br /> Fédération<br /><br /> Authentification multifacteur<br /><br /> Jetons personnalisés<br /><br /> Pare\-feu sécurisé<br /><br /> Applications à latence élevée<br /><br /> Rechiffrement sur des sauts multiples|  
+|<span data-ttu-id="d2a66-211">Paramètre</span><span class="sxs-lookup"><span data-stu-id="d2a66-211">Setting</span></span>|<span data-ttu-id="d2a66-212">Fonctionnalités</span><span class="sxs-lookup"><span data-stu-id="d2a66-212">Features</span></span>|  
+|-------------|--------------|  
+|<span data-ttu-id="d2a66-213">Transport</span><span class="sxs-lookup"><span data-stu-id="d2a66-213">Transport</span></span>|<span data-ttu-id="d2a66-214">Authentification du serveur</span><span class="sxs-lookup"><span data-stu-id="d2a66-214">Server authentication</span></span><br /><br /> <span data-ttu-id="d2a66-215">Authentification du client</span><span class="sxs-lookup"><span data-stu-id="d2a66-215">Client authentication</span></span><br /><br /> <span data-ttu-id="d2a66-216">Sécurité point à point</span><span class="sxs-lookup"><span data-stu-id="d2a66-216">Point-to-point security</span></span><br /><br /> <span data-ttu-id="d2a66-217">Interopérabilité</span><span class="sxs-lookup"><span data-stu-id="d2a66-217">Interoperability</span></span><br /><br /> <span data-ttu-id="d2a66-218">Accélération matérielle</span><span class="sxs-lookup"><span data-stu-id="d2a66-218">Hardware acceleration</span></span><br /><br /> <span data-ttu-id="d2a66-219">Haut débit</span><span class="sxs-lookup"><span data-stu-id="d2a66-219">High throughput</span></span><br /><br /> <span data-ttu-id="d2a66-220">Pare-feu sécurisé</span><span class="sxs-lookup"><span data-stu-id="d2a66-220">Secure firewall</span></span><br /><br /> <span data-ttu-id="d2a66-221">Applications à latence élevée</span><span class="sxs-lookup"><span data-stu-id="d2a66-221">High-latency applications</span></span><br /><br /> <span data-ttu-id="d2a66-222">Rechiffrement sur des sauts multiples</span><span class="sxs-lookup"><span data-stu-id="d2a66-222">Re-encryption across multiple hops</span></span>|  
+|<span data-ttu-id="d2a66-223">Message</span><span class="sxs-lookup"><span data-stu-id="d2a66-223">Message</span></span>|<span data-ttu-id="d2a66-224">Authentification du serveur</span><span class="sxs-lookup"><span data-stu-id="d2a66-224">Server authentication</span></span><br /><br /> <span data-ttu-id="d2a66-225">Authentification du client</span><span class="sxs-lookup"><span data-stu-id="d2a66-225">Client authentication</span></span><br /><br /> <span data-ttu-id="d2a66-226">Sécurité de bout en bout</span><span class="sxs-lookup"><span data-stu-id="d2a66-226">End-to-end security</span></span><br /><br /> <span data-ttu-id="d2a66-227">Interopérabilité</span><span class="sxs-lookup"><span data-stu-id="d2a66-227">Interoperability</span></span><br /><br /> <span data-ttu-id="d2a66-228">Revendications enrichies</span><span class="sxs-lookup"><span data-stu-id="d2a66-228">Rich claims</span></span><br /><br /> <span data-ttu-id="d2a66-229">Fédération</span><span class="sxs-lookup"><span data-stu-id="d2a66-229">Federation</span></span><br /><br /> <span data-ttu-id="d2a66-230">Authentification multifacteur</span><span class="sxs-lookup"><span data-stu-id="d2a66-230">Multifactor authentication</span></span><br /><br /> <span data-ttu-id="d2a66-231">Jetons personnalisés</span><span class="sxs-lookup"><span data-stu-id="d2a66-231">Custom tokens</span></span><br /><br /> <span data-ttu-id="d2a66-232">Service de notaire/horodatage</span><span class="sxs-lookup"><span data-stu-id="d2a66-232">Notary/timestamp service</span></span><br /><br /> <span data-ttu-id="d2a66-233">Applications à latence élevée</span><span class="sxs-lookup"><span data-stu-id="d2a66-233">High-latency applications</span></span><br /><br /> <span data-ttu-id="d2a66-234">Persistance des signatures de message</span><span class="sxs-lookup"><span data-stu-id="d2a66-234">Persistence of message signatures</span></span>|  
+|<span data-ttu-id="d2a66-235">TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="d2a66-235">TransportWithMessageCredential</span></span>|<span data-ttu-id="d2a66-236">Authentification du serveur</span><span class="sxs-lookup"><span data-stu-id="d2a66-236">Server authentication</span></span><br /><br /> <span data-ttu-id="d2a66-237">Authentification du client</span><span class="sxs-lookup"><span data-stu-id="d2a66-237">Client authentication</span></span><br /><br /> <span data-ttu-id="d2a66-238">Sécurité point à point</span><span class="sxs-lookup"><span data-stu-id="d2a66-238">Point-to-point security</span></span><br /><br /> <span data-ttu-id="d2a66-239">Interopérabilité</span><span class="sxs-lookup"><span data-stu-id="d2a66-239">Interoperability</span></span><br /><br /> <span data-ttu-id="d2a66-240">Accélération matérielle</span><span class="sxs-lookup"><span data-stu-id="d2a66-240">Hardware acceleration</span></span><br /><br /> <span data-ttu-id="d2a66-241">Haut débit</span><span class="sxs-lookup"><span data-stu-id="d2a66-241">High throughput</span></span><br /><br /> <span data-ttu-id="d2a66-242">Revendications client enrichies</span><span class="sxs-lookup"><span data-stu-id="d2a66-242">Rich client claims</span></span><br /><br /> <span data-ttu-id="d2a66-243">Fédération</span><span class="sxs-lookup"><span data-stu-id="d2a66-243">Federation</span></span><br /><br /> <span data-ttu-id="d2a66-244">Authentification multifacteur</span><span class="sxs-lookup"><span data-stu-id="d2a66-244">Multifactor authentication</span></span><br /><br /> <span data-ttu-id="d2a66-245">Jetons personnalisés</span><span class="sxs-lookup"><span data-stu-id="d2a66-245">Custom tokens</span></span><br /><br /> <span data-ttu-id="d2a66-246">Pare-feu sécurisé</span><span class="sxs-lookup"><span data-stu-id="d2a66-246">Secure firewall</span></span><br /><br /> <span data-ttu-id="d2a66-247">Applications à latence élevée</span><span class="sxs-lookup"><span data-stu-id="d2a66-247">High-latency applications</span></span><br /><br /> <span data-ttu-id="d2a66-248">Rechiffrement sur des sauts multiples</span><span class="sxs-lookup"><span data-stu-id="d2a66-248">Re-encryption across multiple hops</span></span>|  
   
- Le tableau suivant répertorie les liaisons qui prennent en charge les divers paramètres de mode.Sélectionnez dans le tableau la liaison à utiliser pour créer votre point de terminaison de service.  
+ <span data-ttu-id="d2a66-249">Le tableau suivant répertorie les liaisons qui prennent en charge les divers paramètres de mode.</span><span class="sxs-lookup"><span data-stu-id="d2a66-249">The following table lists the bindings that support the various mode settings.</span></span> <span data-ttu-id="d2a66-250">Sélectionnez dans le tableau la liaison à utiliser pour créer votre point de terminaison de service.</span><span class="sxs-lookup"><span data-stu-id="d2a66-250">Select a binding from the table to use to create your service endpoint.</span></span>  
   
-|Liaison|Prise en charge du mode Transport|Prise en charge du mode Message|Prise en charge de TransportWithMessageCredential|  
-|-------------|---------------------------------------|-------------------------------------|-------------------------------------------------------|  
-|`BasicHttpBinding`|Oui|Oui|Oui|  
-|`WSHttpBinding`|Oui|Oui|Oui|  
-|`WSDualHttpBinding`|Non|Oui|Non|  
-|`NetTcpBinding`|Oui|Oui|Oui|  
-|`NetNamedPipeBinding`|Oui|Non|Non|  
-|`NetMsmqBinding`|Oui|Oui|Non|  
-|`MsmqIntegrationBinding`|Oui|Non|Non|  
-|`wsFederationHttpBinding`|Non|Oui|Oui|  
+|<span data-ttu-id="d2a66-251">Binding</span><span class="sxs-lookup"><span data-stu-id="d2a66-251">Binding</span></span>|<span data-ttu-id="d2a66-252">Prise en charge du mode Transport</span><span class="sxs-lookup"><span data-stu-id="d2a66-252">Transport mode support</span></span>|<span data-ttu-id="d2a66-253">Prise en charge du mode Message</span><span class="sxs-lookup"><span data-stu-id="d2a66-253">Message mode support</span></span>|<span data-ttu-id="d2a66-254">Prise en charge de TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="d2a66-254">TransportWithMessageCredential support</span></span>|  
+|-------------|----------------------------|--------------------------|--------------------------------------------|  
+|`BasicHttpBinding`|<span data-ttu-id="d2a66-255">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-255">Yes</span></span>|<span data-ttu-id="d2a66-256">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-256">Yes</span></span>|<span data-ttu-id="d2a66-257">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-257">Yes</span></span>|  
+|`WSHttpBinding`|<span data-ttu-id="d2a66-258">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-258">Yes</span></span>|<span data-ttu-id="d2a66-259">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-259">Yes</span></span>|<span data-ttu-id="d2a66-260">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-260">Yes</span></span>|  
+|`WSDualHttpBinding`|<span data-ttu-id="d2a66-261">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-261">No</span></span>|<span data-ttu-id="d2a66-262">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-262">Yes</span></span>|<span data-ttu-id="d2a66-263">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-263">No</span></span>|  
+|`NetTcpBinding`|<span data-ttu-id="d2a66-264">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-264">Yes</span></span>|<span data-ttu-id="d2a66-265">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-265">Yes</span></span>|<span data-ttu-id="d2a66-266">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-266">Yes</span></span>|  
+|`NetNamedPipeBinding`|<span data-ttu-id="d2a66-267">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-267">Yes</span></span>|<span data-ttu-id="d2a66-268">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-268">No</span></span>|<span data-ttu-id="d2a66-269">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-269">No</span></span>|  
+|`NetMsmqBinding`|<span data-ttu-id="d2a66-270">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-270">Yes</span></span>|<span data-ttu-id="d2a66-271">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-271">Yes</span></span>|<span data-ttu-id="d2a66-272">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-272">No</span></span>|  
+|`MsmqIntegrationBinding`|<span data-ttu-id="d2a66-273">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-273">Yes</span></span>|<span data-ttu-id="d2a66-274">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-274">No</span></span>|<span data-ttu-id="d2a66-275">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-275">No</span></span>|  
+|`wsFederationHttpBinding`|<span data-ttu-id="d2a66-276">Non</span><span class="sxs-lookup"><span data-stu-id="d2a66-276">No</span></span>|<span data-ttu-id="d2a66-277">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-277">Yes</span></span>|<span data-ttu-id="d2a66-278">Oui</span><span class="sxs-lookup"><span data-stu-id="d2a66-278">Yes</span></span>|  
   
-## Informations d'identification de transport dans les liaisons  
- Le tableau suivant répertorie les types d'informations d'identification du client disponibles lors de l'utilisation de `BasicHttpBinding` ou `WSHttpBinding` en mode de sécurité Transport.  
+## <a name="transport-credentials-in-bindings"></a><span data-ttu-id="d2a66-279">Informations d'identification de transport dans les liaisons</span><span class="sxs-lookup"><span data-stu-id="d2a66-279">Transport Credentials in Bindings</span></span>  
+ <span data-ttu-id="d2a66-280">Le tableau suivant répertorie les types d'informations d'identification du client disponibles lors de l'utilisation de `BasicHttpBinding` ou `WSHttpBinding` en mode de sécurité Transport.</span><span class="sxs-lookup"><span data-stu-id="d2a66-280">The following table lists the client credential types available when using either `BasicHttpBinding` or `WSHttpBinding` in transport security mode.</span></span>  
   
-|Type|Description|  
+|<span data-ttu-id="d2a66-281">Type</span><span class="sxs-lookup"><span data-stu-id="d2a66-281">Type</span></span>|<span data-ttu-id="d2a66-282">Description</span><span class="sxs-lookup"><span data-stu-id="d2a66-282">Description</span></span>|  
 |----------|-----------------|  
-|None|Spécifie que le client n'a pas besoin de présenter d'information d'identification.Cela se traduit en un client anonyme.|  
-|Basic|Authentification de base.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] la RFC 2617 \- Authentification HTTP : authentification de base et Digest, disponible à l'adresse [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=84023](http://go.microsoft.com/fwlink/?LinkId=84023) \(page pouvant être en anglais\).|  
-|Digest|Authentification Digest.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] la RFC 2617 \- Authentification HTTP : authentification de base et Digest, disponible à l'adresse [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=84023](http://go.microsoft.com/fwlink/?LinkId=84023) \(page pouvant être en anglais\).|  
-|NTLM|Authentification NTLM \(NT LAN Manager\).|  
-|Windows|Authentification Windows.|  
-|Certificate|Authentification effectuée à l'aide d'un certificat.|  
-|IssuedToken|Autorise le service à imposer que le client soit authentifié à l'aide d'un jeton émis par un service d'émission de jeton de sécurité ou par [!INCLUDE[infocard](../../../../includes/infocard-md.md)].[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|<span data-ttu-id="d2a66-283">None</span><span class="sxs-lookup"><span data-stu-id="d2a66-283">None</span></span>|<span data-ttu-id="d2a66-284">Spécifie que le client n'a pas besoin de présenter d'informations d'identification.</span><span class="sxs-lookup"><span data-stu-id="d2a66-284">Specifies that the client does not need to present any credential.</span></span> <span data-ttu-id="d2a66-285">Cela se traduit en un client anonyme.</span><span class="sxs-lookup"><span data-stu-id="d2a66-285">This translates to an anonymous client.</span></span>|  
+|<span data-ttu-id="d2a66-286">Basic</span><span class="sxs-lookup"><span data-stu-id="d2a66-286">Basic</span></span>|<span data-ttu-id="d2a66-287">Authentification de base.</span><span class="sxs-lookup"><span data-stu-id="d2a66-287">Basic authentication.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-288">RFC 2617 – authentification HTTP : Authentification de base et Digest, disponible à l’adresse [http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023).</span><span class="sxs-lookup"><span data-stu-id="d2a66-288"> RFC 2617 – HTTP Authentication: Basic and Digest Authentication, available at [http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023).</span></span>|  
+|<span data-ttu-id="d2a66-289">Digest</span><span class="sxs-lookup"><span data-stu-id="d2a66-289">Digest</span></span>|<span data-ttu-id="d2a66-290">Authentification Digest.</span><span class="sxs-lookup"><span data-stu-id="d2a66-290">Digest authentication.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-291">RFC 2617 – authentification HTTP : Authentification de base et Digest, disponible à l’adresse [http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023).</span><span class="sxs-lookup"><span data-stu-id="d2a66-291"> RFC 2617 – HTTP Authentication: Basic and Digest Authentication, available at [http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023).</span></span>|  
+|<span data-ttu-id="d2a66-292">NTLM</span><span class="sxs-lookup"><span data-stu-id="d2a66-292">NTLM</span></span>|<span data-ttu-id="d2a66-293">Authentification NTLM (NT LAN Manager).</span><span class="sxs-lookup"><span data-stu-id="d2a66-293">NT LAN Manager (NTLM) authentication.</span></span>|  
+|<span data-ttu-id="d2a66-294">Windows</span><span class="sxs-lookup"><span data-stu-id="d2a66-294">Windows</span></span>|<span data-ttu-id="d2a66-295">Authentification Windows.</span><span class="sxs-lookup"><span data-stu-id="d2a66-295">Windows authentication.</span></span>|  
+|<span data-ttu-id="d2a66-296">Certificat</span><span class="sxs-lookup"><span data-stu-id="d2a66-296">Certificate</span></span>|<span data-ttu-id="d2a66-297">Authentification effectuée à l'aide d'un certificat.</span><span class="sxs-lookup"><span data-stu-id="d2a66-297">Authentication performed using a certificate.</span></span>|  
+|<span data-ttu-id="d2a66-298">IssuedToken</span><span class="sxs-lookup"><span data-stu-id="d2a66-298">IssuedToken</span></span>|<span data-ttu-id="d2a66-299">Autorise le service à imposer que le client soit authentifié à l'aide d'un jeton émis par un service d'émission de jeton de sécurité ou par [!INCLUDE[infocard](../../../../includes/infocard-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d2a66-299">Allows the service to require that the client be authenticated using a token issued by a security token service or by [!INCLUDE[infocard](../../../../includes/infocard-md.md)].</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="d2a66-300">[Fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).</span><span class="sxs-lookup"><span data-stu-id="d2a66-300"> [Federation and Issued Tokens](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).</span></span>|  
   
-### Informations d'identification du client de message dans les liaisons  
- Le tableau suivant répertorie les types d'informations d'identification du client disponibles lors de l'utilisation d'une liaison en mode de sécurité Message.  
+### <a name="message-client-credentials-in-bindings"></a><span data-ttu-id="d2a66-301">Informations d’identification du client de message dans les liaisons</span><span class="sxs-lookup"><span data-stu-id="d2a66-301">Message Client Credentials in Bindings</span></span>  
+ <span data-ttu-id="d2a66-302">Le tableau suivant répertorie les types d'informations d'identification du client disponibles lors de l'utilisation d'une liaison en mode de sécurité Message.</span><span class="sxs-lookup"><span data-stu-id="d2a66-302">The following table lists the client credential types available when using a binding in Message security mode.</span></span>  
   
-|Type|Description|  
+|<span data-ttu-id="d2a66-303">Type</span><span class="sxs-lookup"><span data-stu-id="d2a66-303">Type</span></span>|<span data-ttu-id="d2a66-304">Description</span><span class="sxs-lookup"><span data-stu-id="d2a66-304">Description</span></span>|  
 |----------|-----------------|  
-|Aucune|Autorise le service à interagir avec des clients anonymes.|  
-|Authentification Windows|Autorise les échanges de messages SOAP à se produire sous le contexte authentifié d'une information d'identification Windows.|  
-|UserName|Autorise le service à imposer que le client soit authentifié à l'aide d'une information d'identification de nom d'utilisateur.Notez que lorsque le mode de sécurité a la valeur `TransportWithMessageCredential`, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne prend pas en charge l'envoi d'un condensé du mot de passe ou la dérivation de clés à l'aide du mot de passe, ainsi que l'utilisation de ces clés pour le mode de sécurité Message.De ce fait, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s'assure que le transport est sécurisé lors de l'utilisation d'informations d'identification de nom d'utilisateur.|  
-|Certificat|Autorise le service à imposer que le client soit authentifié à l'aide d'un certificat.|  
-|IssuedToken|Autorise le service à utiliser un service d'émission de jeton de sécurité afin de fournir un jeton personnalisé.|  
+|<span data-ttu-id="d2a66-305">None</span><span class="sxs-lookup"><span data-stu-id="d2a66-305">None</span></span>|<span data-ttu-id="d2a66-306">Autorise le service à interagir avec des clients anonymes.</span><span class="sxs-lookup"><span data-stu-id="d2a66-306">Allows the service to interact with anonymous clients.</span></span>|  
+|<span data-ttu-id="d2a66-307">Windows</span><span class="sxs-lookup"><span data-stu-id="d2a66-307">Windows</span></span>|<span data-ttu-id="d2a66-308">Autorise les échanges de messages SOAP à se produire sous le contexte authentifié d'une information d'identification Windows.</span><span class="sxs-lookup"><span data-stu-id="d2a66-308">Allows SOAP message exchanges to be made under the authenticated context of a Windows credential.</span></span>|  
+|<span data-ttu-id="d2a66-309">Nom d'utilisateur</span><span class="sxs-lookup"><span data-stu-id="d2a66-309">UserName</span></span>|<span data-ttu-id="d2a66-310">Autorise le service à imposer que le client soit authentifié à l'aide d'une information d'identification de nom d'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="d2a66-310">Allows the service to require that the client be authenticated using a user name credential.</span></span> <span data-ttu-id="d2a66-311">Notez que lorsque le mode de sécurité a la valeur `TransportWithMessageCredential`, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne prend pas en charge l'envoi d'un condensé du mot de passe ou la dérivation de clés à l'aide du mot de passe, ainsi que l'utilisation de ces clés pour le mode de sécurité Message.</span><span class="sxs-lookup"><span data-stu-id="d2a66-311">Note that when the security mode is set to `TransportWithMessageCredential`, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not support sending a password digest or deriving keys using password and using such keys for Message mode security.</span></span> <span data-ttu-id="d2a66-312">De ce fait, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s'assure que le transport est sécurisé lors de l'utilisation d'informations d'identification de nom d'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="d2a66-312">As such, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] enforces that the transport is secured when using user name credentials.</span></span>|  
+|<span data-ttu-id="d2a66-313">Certificat</span><span class="sxs-lookup"><span data-stu-id="d2a66-313">Certificate</span></span>|<span data-ttu-id="d2a66-314">Autorise le service à exiger une authentification du client via un certificat.</span><span class="sxs-lookup"><span data-stu-id="d2a66-314">Allows the service to require that the client be authenticated using a certificate.</span></span>|  
+|<span data-ttu-id="d2a66-315">IssuedToken</span><span class="sxs-lookup"><span data-stu-id="d2a66-315">IssuedToken</span></span>|<span data-ttu-id="d2a66-316">Autorise le service à utiliser un service d'émission de jeton de sécurité afin de fournir un jeton personnalisé.</span><span class="sxs-lookup"><span data-stu-id="d2a66-316">Allows the service to use a security token service to supply a custom token.</span></span>|  
   
-## Voir aussi  
- [Vue d'ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Sélection d'un type d'informations d'identification](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)   
- [Fonctionnalités de sécurité avec des liaisons personnalisées](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)   
- [Comportements de sécurité](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [Modèle de sécurité pour Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="d2a66-317">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d2a66-317">See Also</span></span>  
+ [<span data-ttu-id="d2a66-318">Vue d’ensemble de la sécurité</span><span class="sxs-lookup"><span data-stu-id="d2a66-318">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [<span data-ttu-id="d2a66-319">Sécurisation des Services et Clients</span><span class="sxs-lookup"><span data-stu-id="d2a66-319">Securing Services and Clients</span></span>](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="d2a66-320">Sélection d’un Type d’informations d’identification</span><span class="sxs-lookup"><span data-stu-id="d2a66-320">Selecting a Credential Type</span></span>](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [<span data-ttu-id="d2a66-321">Fonctionnalités de sécurité avec des liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="d2a66-321">Security Capabilities with Custom Bindings</span></span>](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
+ [<span data-ttu-id="d2a66-322">Comportements de sécurité</span><span class="sxs-lookup"><span data-stu-id="d2a66-322">Security Behaviors</span></span>](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [<span data-ttu-id="d2a66-323">Modèle de sécurité pour Windows Server AppFabric</span><span class="sxs-lookup"><span data-stu-id="d2a66-323">Security Model for Windows Server App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

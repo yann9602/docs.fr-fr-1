@@ -1,39 +1,39 @@
 ---
-title: "Vue d&#39;ensemble du contr&#244;le Panel (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Panel"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "regrouper les contrôles, Panel (contrôle)"
-  - "Panel (contrôle Windows Forms), à propos du contrôle Panel"
+title: "Vue d'ensemble du contrôle Panel (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: Panel
+helpviewer_keywords:
+- grouping controls [Windows Forms], Panel control
+- Panel control [Windows Forms], about Panel control
 ms.assetid: b6b83636-2c39-4dad-89d6-f0fa41049a74
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 62adba598f59b4662bfb4c51b868bad1aa2e53b2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble du contr&#244;le Panel (Windows Forms)
-Les contrôles <xref:System.Windows.Forms.Panel> Windows Forms permettent de fournir un mode de groupement identifiable pour les autres contrôles.  Les zones sont principalement utilisées pour diviser un formulaire par fonctions.  Prenons l'exemple d'un formulaire de commande spécifiant des options de courrier, telles que le nom du service de messagerie rapide à utiliser.  Pour l'utilisateur, le fait que toutes ces options soient regroupées dans un panneau est un indice visuel logique.  Au moment du design, tous les contrôles peuvent être déplacés facilement ; si vous déplacez le contrôle <xref:System.Windows.Forms.Panel>, tous les contrôles qu'il contient sont également déplacés.  Les contrôles regroupés dans un panneau sont accessibles au moyen de sa propriété <xref:System.Windows.Forms.Control.Controls%2A>.  Cette propriété retourne une collection d'instances <xref:System.Windows.Forms.Control> ; ainsi, vous devrez généralement effectuer un cast d'un contrôle récupéré de cette façon en son type spécifique.  
+# <a name="panel-control-overview-windows-forms"></a><span data-ttu-id="94832-102">Vue d'ensemble du contrôle Panel (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="94832-102">Panel Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="94832-103">Windows Forms <xref:System.Windows.Forms.Panel> contrôles sont utilisés pour fournir un groupement identifiable pour d’autres contrôles.</span><span class="sxs-lookup"><span data-stu-id="94832-103">Windows Forms <xref:System.Windows.Forms.Panel> controls are used to provide an identifiable grouping for other controls.</span></span> <span data-ttu-id="94832-104">En règle générale, vous utilisez les panneaux pour diviser un formulaire par fonction.</span><span class="sxs-lookup"><span data-stu-id="94832-104">Typically, you use panels to subdivide a form by function.</span></span> <span data-ttu-id="94832-105">Par exemple, peut avoir un bon de commande qui spécifie les options de distribution telles que le lendemain à utiliser.</span><span class="sxs-lookup"><span data-stu-id="94832-105">For example, you may have an order form that specifies mailing options such as which overnight carrier to use.</span></span> <span data-ttu-id="94832-106">Toutes les options dans un volet de regroupement donne à l’utilisateur une aide visuelle logique.</span><span class="sxs-lookup"><span data-stu-id="94832-106">Grouping all options in a panel gives the user a logical visual cue.</span></span> <span data-ttu-id="94832-107">Au moment du design tous les contrôles peuvent être déplacés facilement — lorsque vous déplacez le <xref:System.Windows.Forms.Panel> contrôler, tous ses contrôles contenus déplacent, trop.</span><span class="sxs-lookup"><span data-stu-id="94832-107">At design time all the controls can be moved easily — when you move the <xref:System.Windows.Forms.Panel> control, all its contained controls move, too.</span></span> <span data-ttu-id="94832-108">Les contrôles regroupés dans un panneau de configuration est accessible via son <xref:System.Windows.Forms.Control.Controls%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="94832-108">The controls grouped in a panel can be accessed through its <xref:System.Windows.Forms.Control.Controls%2A> property.</span></span> <span data-ttu-id="94832-109">Cette propriété retourne une collection de <xref:System.Windows.Forms.Control> instances, donc vous devez généralement effectuer un cast d’un contrôle récupérés qu’à son type spécifique.</span><span class="sxs-lookup"><span data-stu-id="94832-109">This property returns a collection of <xref:System.Windows.Forms.Control> instances, so you will typically need to cast a control retrieved this way to its specific type.</span></span>  
   
-## Panel et GroupBox  
- Le contrôle <xref:System.Windows.Forms.Panel> est similaire au contrôle <xref:System.Windows.Forms.GroupBox> ; toutefois, seul le contrôle <xref:System.Windows.Forms.Panel> peut disposer de barres de défilement et seul le contrôle <xref:System.Windows.Forms.GroupBox> peut afficher une légende.  
+## <a name="panel-versus-groupbox"></a><span data-ttu-id="94832-110">Panneau par rapport à la zone de groupe</span><span class="sxs-lookup"><span data-stu-id="94832-110">Panel Versus GroupBox</span></span>  
+ <span data-ttu-id="94832-111">Le <xref:System.Windows.Forms.Panel> contrôle est semblable à la <xref:System.Windows.Forms.GroupBox> contrôle ; Toutefois, uniquement les <xref:System.Windows.Forms.Panel> contrôle peut avoir des barres de défilement et uniquement le <xref:System.Windows.Forms.GroupBox> contrôle affiche une légende.</span><span class="sxs-lookup"><span data-stu-id="94832-111">The <xref:System.Windows.Forms.Panel> control is similar to the <xref:System.Windows.Forms.GroupBox> control; however, only the <xref:System.Windows.Forms.Panel> control can have scroll bars, and only the <xref:System.Windows.Forms.GroupBox> control displays a caption.</span></span>  
   
-## Propriétés de clé  
- Pour afficher des barres de défilement, affectez à la propriété <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> la valeur `true`.  Vous pouvez également personnaliser l'apparence de la zone en définissant les propriétés <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.BackgroundImage%2A> et <xref:System.Windows.Forms.Panel.BorderStyle%2A>.  Pour plus d'informations sur les propriétés <xref:System.Windows.Forms.Control.BackColor%2A> et <xref:System.Windows.Forms.Control.BackgroundImage%2A>, consultez [Comment : définir l'arrière\-plan d'un contrôle Panel](../../../../docs/framework/winforms/controls/how-to-set-the-background-of-a-windows-forms-panel.md).  La propriété <xref:System.Windows.Forms.Panel.BorderStyle%2A> détermine si la zone est entourée d'une bordure invisible \(<xref:System.Windows.Forms.BorderStyle>\), d'une simple ligne \(<xref:System.Windows.Forms.BorderStyle>\) ou d'une ligne ombrée \(<xref:System.Windows.Forms.BorderStyle>\).  
+## <a name="key-properties"></a><span data-ttu-id="94832-112">Principales propriétés</span><span class="sxs-lookup"><span data-stu-id="94832-112">Key Properties</span></span>  
+ <span data-ttu-id="94832-113">Pour afficher les barres de défilement, définissez la <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="94832-113">To display scroll bars, set the <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> property to `true`.</span></span> <span data-ttu-id="94832-114">Vous pouvez également personnaliser l’apparence du panneau en définissant le <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.BackgroundImage%2A>, et <xref:System.Windows.Forms.Panel.BorderStyle%2A> propriétés.</span><span class="sxs-lookup"><span data-stu-id="94832-114">You can also customize the appearance of the panel by setting the <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.BackgroundImage%2A>, and <xref:System.Windows.Forms.Panel.BorderStyle%2A> properties.</span></span> <span data-ttu-id="94832-115">Pour plus d’informations sur la <xref:System.Windows.Forms.Control.BackColor%2A> et <xref:System.Windows.Forms.Control.BackgroundImage%2A> propriétés, consultez [Comment : définir l’arrière-plan d’un panneau](../../../../docs/framework/winforms/controls/how-to-set-the-background-of-a-windows-forms-panel.md).</span><span class="sxs-lookup"><span data-stu-id="94832-115">For more information on the <xref:System.Windows.Forms.Control.BackColor%2A> and <xref:System.Windows.Forms.Control.BackgroundImage%2A> properties, see [How to: Set the Background of a Panel](../../../../docs/framework/winforms/controls/how-to-set-the-background-of-a-windows-forms-panel.md).</span></span> <span data-ttu-id="94832-116">Le <xref:System.Windows.Forms.Panel.BorderStyle%2A> propriété détermine si le panneau de configuration est décrite par aucune bordure visible (<xref:System.Windows.Forms.BorderStyle.None>), une simple ligne (<xref:System.Windows.Forms.BorderStyle.FixedSingle>), ou d’une ligne ombrée (<xref:System.Windows.Forms.BorderStyle.Fixed3D>).</span><span class="sxs-lookup"><span data-stu-id="94832-116">The <xref:System.Windows.Forms.Panel.BorderStyle%2A> property determines if the panel is outlined with no visible border (<xref:System.Windows.Forms.BorderStyle.None>), a plain line (<xref:System.Windows.Forms.BorderStyle.FixedSingle>), or a shadowed line (<xref:System.Windows.Forms.BorderStyle.Fixed3D>).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Panel>   
- [GroupBox, contrôle](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)   
- [Comment : grouper les contrôles avec le contrôle Panel Windows Forms à l'aide du concepteur](../../../../docs/framework/winforms/controls/group-controls-with-wf-panel-control-using-the-designer.md)   
- [Comment : définir l'arrière\-plan d'un contrôle Panel Windows Forms à l'aide du concepteur](../../../../docs/framework/winforms/controls/how-to-set-the-background-of-a-windows-forms-panel-using-the-designer.md)
+## <a name="see-also"></a><span data-ttu-id="94832-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="94832-117">See Also</span></span>  
+ <xref:System.Windows.Forms.Panel>  
+ [<span data-ttu-id="94832-118">GroupBox, contrôle</span><span class="sxs-lookup"><span data-stu-id="94832-118">GroupBox Control</span></span>](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)  
+ [<span data-ttu-id="94832-119">Guide pratique pour grouper les contrôles avec le contrôle Panel Windows Forms à l'aide du concepteur</span><span class="sxs-lookup"><span data-stu-id="94832-119">How to: Group Controls with the Windows Forms Panel Control Using the Designer</span></span>](../../../../docs/framework/winforms/controls/group-controls-with-wf-panel-control-using-the-designer.md)  
+ [<span data-ttu-id="94832-120">Guide pratique pour définir l'arrière-plan d'un contrôle Panel Windows Forms à l'aide du concepteur</span><span class="sxs-lookup"><span data-stu-id="94832-120">How to: Set the Background of a Windows Forms Panel Using the Designer</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-background-of-a-windows-forms-panel-using-the-designer.md)

@@ -5,26 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 523ec4fd2c8d19dc9086e417fa99c89a619caa71
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c6d70fd560cb7b164460eb3882cac88ed733d788
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ltmethodgt-element-net-native"></a>&lt;Method&gt;, élément (.NET Native)
-Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.  
+# <a name="ltmethodgt-element-net-native"></a><span data-ttu-id="0eb09-102">&lt;Method&gt;, élément (.NET Native)</span><span class="sxs-lookup"><span data-stu-id="0eb09-102">&lt;Method&gt; Element (.NET Native)</span></span>
+<span data-ttu-id="0eb09-103">Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-103">Applies runtime reflection policy to a constructor or method.</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="0eb09-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0eb09-104">Syntax</span></span>  
   
 ```xml  
 <Method Name="method_name"  
@@ -33,71 +31,71 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
         Dynamic="policy_type" />  
 ```  
   
-## <a name="attributes-and-elements"></a>Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="0eb09-105">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="0eb09-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="0eb09-106">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="0eb09-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a><span data-ttu-id="0eb09-107">Attributs</span><span class="sxs-lookup"><span data-stu-id="0eb09-107">Attributes</span></span>  
   
-|Attribut|Type d'attribut|Description|  
+|<span data-ttu-id="0eb09-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="0eb09-108">Attribute</span></span>|<span data-ttu-id="0eb09-109">Type d'attribut</span><span class="sxs-lookup"><span data-stu-id="0eb09-109">Attribute type</span></span>|<span data-ttu-id="0eb09-110">Description</span><span class="sxs-lookup"><span data-stu-id="0eb09-110">Description</span></span>|  
 |---------------|--------------------|-----------------|  
-|`Name`|Général|Attribut requis. Spécifie le nom de la méthode.|  
-|`Signature`|Général|Attribut facultatif. Spécifie la signature de la méthode. Si plusieurs paramètres sont présents, ils sont séparés par des virgules. Par exemple, l'élément `<Method>` suivant définit la stratégie pour la méthode <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29>.<br /><br /> `<Type Name="System.DateTime">    <Method Name="ToString" Signature="System.String,System.IFormatProvider"            Dynamic="Required" /> </Type>`<br /><br /> Si l'attribut est absent, la directive runtime s'applique à toutes les surcharges de la méthode.|  
-|`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur une méthode ou l'énumération de celle-ci, mais ne permet pas d'effectuer un appel dynamique au moment de l'exécution.|  
-|`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à un constructeur ou à une méthode au moment de l'exécution pour activer la programmation dynamique. Cette stratégie garantit que le membre peut être appelé dynamiquement au moment de l'exécution.|  
+|`Name`|<span data-ttu-id="0eb09-111">Général</span><span class="sxs-lookup"><span data-stu-id="0eb09-111">General</span></span>|<span data-ttu-id="0eb09-112">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="0eb09-112">Required attribute.</span></span> <span data-ttu-id="0eb09-113">Spécifie le nom de la méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-113">Specifies the method name.</span></span>|  
+|`Signature`|<span data-ttu-id="0eb09-114">Général</span><span class="sxs-lookup"><span data-stu-id="0eb09-114">General</span></span>|<span data-ttu-id="0eb09-115">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="0eb09-115">Optional attribute.</span></span> <span data-ttu-id="0eb09-116">Spécifie la signature de la méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-116">Specifies the method signature.</span></span> <span data-ttu-id="0eb09-117">Si plusieurs paramètres sont présents, ils sont séparés par des virgules.</span><span class="sxs-lookup"><span data-stu-id="0eb09-117">If multiple parameters are present, they are separated by commas.</span></span> <span data-ttu-id="0eb09-118">Par exemple, l'élément `<Method>` suivant définit la stratégie pour la méthode <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29>.</span><span class="sxs-lookup"><span data-stu-id="0eb09-118">For example, the following `<Method>` element defines policy for the <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29> method.</span></span><br /><br /> `<Type Name="System.DateTime">    <Method Name="ToString" Signature="System.String,System.IFormatProvider"            Dynamic="Required" /> </Type>`<br /><br /> <span data-ttu-id="0eb09-119">Si l'attribut est absent, la directive runtime s'applique à toutes les surcharges de la méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-119">If the attribute is absent, the runtime directive applies to all overloads of the method.</span></span>|  
+|`Browse`|<span data-ttu-id="0eb09-120">Réflexion</span><span class="sxs-lookup"><span data-stu-id="0eb09-120">Reflection</span></span>|<span data-ttu-id="0eb09-121">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="0eb09-121">Optional attribute.</span></span> <span data-ttu-id="0eb09-122">Contrôle la demande d'informations sur une méthode ou l'énumération de celle-ci, mais ne permet pas d'effectuer un appel dynamique au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="0eb09-122">Controls querying for information about or enumerating a method but does not enable any dynamic invocation at run time.</span></span>|  
+|`Dynamic`|<span data-ttu-id="0eb09-123">Réflexion</span><span class="sxs-lookup"><span data-stu-id="0eb09-123">Reflection</span></span>|<span data-ttu-id="0eb09-124">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="0eb09-124">Optional attribute.</span></span> <span data-ttu-id="0eb09-125">Contrôle l'accès à un constructeur ou à une méthode au moment de l'exécution pour activer la programmation dynamique.</span><span class="sxs-lookup"><span data-stu-id="0eb09-125">Controls runtime access to a constructor or method to enable dynamic programming.</span></span> <span data-ttu-id="0eb09-126">Cette stratégie garantit que le membre peut être appelé dynamiquement au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="0eb09-126">This policy ensures that a member can be invoked dynamically at run time.</span></span>|  
   
-## <a name="name-attribute"></a>Name (attribut)  
+## <a name="name-attribute"></a><span data-ttu-id="0eb09-127">Name (attribut)</span><span class="sxs-lookup"><span data-stu-id="0eb09-127">Name attribute</span></span>  
   
-|Valeur|Description|  
+|<span data-ttu-id="0eb09-128">Valeur</span><span class="sxs-lookup"><span data-stu-id="0eb09-128">Value</span></span>|<span data-ttu-id="0eb09-129">Description</span><span class="sxs-lookup"><span data-stu-id="0eb09-129">Description</span></span>|  
 |-----------|-----------------|  
-|*nom_méthode*|Nom de la méthode. Le type de la méthode est défini par le [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) parent ou l’élément [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md).|  
+|<span data-ttu-id="0eb09-130">*nom_méthode*</span><span class="sxs-lookup"><span data-stu-id="0eb09-130">*method_name*</span></span>|<span data-ttu-id="0eb09-131">Nom de la méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-131">The method name.</span></span> <span data-ttu-id="0eb09-132">Le type de la méthode est défini par le [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) parent ou l’élément [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md).</span><span class="sxs-lookup"><span data-stu-id="0eb09-132">The type of the method is defined by the parent [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) or [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element.</span></span>|  
   
-## <a name="signature-attribute"></a>Attribut de signature  
+## <a name="signature-attribute"></a><span data-ttu-id="0eb09-133">Attribut de signature</span><span class="sxs-lookup"><span data-stu-id="0eb09-133">Signature attribute</span></span>  
   
-|Valeur|Description|  
+|<span data-ttu-id="0eb09-134">Valeur</span><span class="sxs-lookup"><span data-stu-id="0eb09-134">Value</span></span>|<span data-ttu-id="0eb09-135">Description</span><span class="sxs-lookup"><span data-stu-id="0eb09-135">Description</span></span>|  
 |-----------|-----------------|  
-|*signature_méthode*|Types de paramètre qui constituent la signature de la méthode. Si plusieurs paramètres sont présents, ils sont séparés par des virgules. Par exemple : `"System.String,System.Int32,System.Int32)"`. Les noms de type de paramètre doivent être qualifiés complets.|  
+|<span data-ttu-id="0eb09-136">*signature_méthode*</span><span class="sxs-lookup"><span data-stu-id="0eb09-136">*method_signature*</span></span>|<span data-ttu-id="0eb09-137">Types de paramètre qui constituent la signature de la méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-137">The parameter types that form the method signature.</span></span> <span data-ttu-id="0eb09-138">Si plusieurs paramètres sont présents, ils sont séparés par des virgules. Par exemple : `"System.String,System.Int32,System.Int32)"`.</span><span class="sxs-lookup"><span data-stu-id="0eb09-138">Multiple parameters are separated by commas, for example, `"System.String,System.Int32,System.Int32)"`.</span></span> <span data-ttu-id="0eb09-139">Les noms de type de paramètre doivent être qualifiés complets.</span><span class="sxs-lookup"><span data-stu-id="0eb09-139">Parameter type names should be fully qualified.</span></span>|  
   
-## <a name="all-other-attributes"></a>Tous les autres attributs  
+## <a name="all-other-attributes"></a><span data-ttu-id="0eb09-140">Tous les autres attributs</span><span class="sxs-lookup"><span data-stu-id="0eb09-140">All other attributes</span></span>  
   
-|Valeur|Description|  
+|<span data-ttu-id="0eb09-141">Valeur</span><span class="sxs-lookup"><span data-stu-id="0eb09-141">Value</span></span>|<span data-ttu-id="0eb09-142">Description</span><span class="sxs-lookup"><span data-stu-id="0eb09-142">Description</span></span>|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Paramètre à appliquer à ce type de stratégie. Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|<span data-ttu-id="0eb09-143">*paramètre_stratégie*</span><span class="sxs-lookup"><span data-stu-id="0eb09-143">*policy_setting*</span></span>|<span data-ttu-id="0eb09-144">Paramètre à appliquer à ce type de stratégie.</span><span class="sxs-lookup"><span data-stu-id="0eb09-144">The setting to apply to this policy type.</span></span> <span data-ttu-id="0eb09-145">Les valeurs possibles sont `Auto`, `Excluded`, `Included` et `Required`.</span><span class="sxs-lookup"><span data-stu-id="0eb09-145">Possible values are `Auto`, `Excluded`, `Included`, and `Required`.</span></span> <span data-ttu-id="0eb09-146">Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).</span><span class="sxs-lookup"><span data-stu-id="0eb09-146">For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).</span></span>|  
   
-### <a name="child-elements"></a>Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="0eb09-147">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="0eb09-147">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="0eb09-148">Élément</span><span class="sxs-lookup"><span data-stu-id="0eb09-148">Element</span></span>|<span data-ttu-id="0eb09-149">Description</span><span class="sxs-lookup"><span data-stu-id="0eb09-149">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Parameter>](../../../docs/framework/net-native/parameter-element-net-native.md)|Applique la stratégie au type de l’argument passé à une méthode.|  
-|[\<GenericParameter>](../../../docs/framework/net-native/genericparameter-element-net-native.md)|Applique la stratégie au type de paramètre d'un type ou d'une méthode générique.|  
-|[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode représentée par l'élément `<Method>` conteneur.|  
-|[\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)|Applique la stratégie au type représenté par un argument <xref:System.Type> passé à une méthode.|  
+|[<span data-ttu-id="0eb09-150">\<Parameter></span><span class="sxs-lookup"><span data-stu-id="0eb09-150">\<Parameter></span></span>](../../../docs/framework/net-native/parameter-element-net-native.md)|<span data-ttu-id="0eb09-151">Applique la stratégie au type de l’argument passé à une méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-151">Applies policy to the type of the argument passed to a method.</span></span>|  
+|[<span data-ttu-id="0eb09-152">\<GenericParameter></span><span class="sxs-lookup"><span data-stu-id="0eb09-152">\<GenericParameter></span></span>](../../../docs/framework/net-native/genericparameter-element-net-native.md)|<span data-ttu-id="0eb09-153">Applique la stratégie au type de paramètre d'un type ou d'une méthode générique.</span><span class="sxs-lookup"><span data-stu-id="0eb09-153">Applies policy to the parameter type of a generic type or method.</span></span>|  
+|[<span data-ttu-id="0eb09-154">\<ImpliesType></span><span class="sxs-lookup"><span data-stu-id="0eb09-154">\<ImpliesType></span></span>](../../../docs/framework/net-native/impliestype-element-net-native.md)|<span data-ttu-id="0eb09-155">Applique la stratégie à un type, si cette stratégie a été appliquée à la méthode représentée par l'élément `<Method>` conteneur.</span><span class="sxs-lookup"><span data-stu-id="0eb09-155">Applies policy to a type, if that policy has been applied to the method represented by the containing `<Method>` element.</span></span>|  
+|[<span data-ttu-id="0eb09-156">\<TypeParameter></span><span class="sxs-lookup"><span data-stu-id="0eb09-156">\<TypeParameter></span></span>](../../../docs/framework/net-native/typeparameter-element-net-native.md)|<span data-ttu-id="0eb09-157">Applique la stratégie au type représenté par un argument <xref:System.Type> passé à une méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-157">Applies policy to the type represented by a <xref:System.Type> argument passed to a method.</span></span>|  
   
-### <a name="parent-elements"></a>Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="0eb09-158">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="0eb09-158">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="0eb09-159">Élément</span><span class="sxs-lookup"><span data-stu-id="0eb09-159">Element</span></span>|<span data-ttu-id="0eb09-160">Description</span><span class="sxs-lookup"><span data-stu-id="0eb09-160">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie de réflexion à un type et à tous ses membres.|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit et à tous ses membres.|  
+|[<span data-ttu-id="0eb09-161">\<Type></span><span class="sxs-lookup"><span data-stu-id="0eb09-161">\<Type></span></span>](../../../docs/framework/net-native/type-element-net-native.md)|<span data-ttu-id="0eb09-162">Applique la stratégie de réflexion à un type et à tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="0eb09-162">Applies reflection policy to a type and all its members.</span></span>|  
+|[<span data-ttu-id="0eb09-163">\<TypeInstantiation></span><span class="sxs-lookup"><span data-stu-id="0eb09-163">\<TypeInstantiation></span></span>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|<span data-ttu-id="0eb09-164">Applique la stratégie de réflexion à un type générique construit et à tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="0eb09-164">Applies reflection policy to a constructed generic type and all its members.</span></span>|  
   
-## <a name="remarks"></a>Remarques  
- Un élément `<Method>` d'une méthode générique applique sa stratégie à toutes les instanciations qui n'ont pas leur propre stratégie.  
+## <a name="remarks"></a><span data-ttu-id="0eb09-165">Remarques</span><span class="sxs-lookup"><span data-stu-id="0eb09-165">Remarks</span></span>  
+ <span data-ttu-id="0eb09-166">Un élément `<Method>` d'une méthode générique applique sa stratégie à toutes les instanciations qui n'ont pas leur propre stratégie.</span><span class="sxs-lookup"><span data-stu-id="0eb09-166">A `<Method>` element of a generic method applies its policy to all instantiations that do not have their own policy.</span></span>  
   
- Vous pouvez utiliser l'attribut `Signature` pour spécifier la stratégie d'une surcharge de méthode particulière. Sinon, si l'attribut `Signature` est absent, la directive runtime s'applique à toutes les surcharges de la méthode.  
+ <span data-ttu-id="0eb09-167">Vous pouvez utiliser l'attribut `Signature` pour spécifier la stratégie d'une surcharge de méthode particulière.</span><span class="sxs-lookup"><span data-stu-id="0eb09-167">You can use the `Signature` attribute to specify policy for a particular method overload.</span></span> <span data-ttu-id="0eb09-168">Sinon, si l'attribut `Signature` est absent, la directive runtime s'applique à toutes les surcharges de la méthode.</span><span class="sxs-lookup"><span data-stu-id="0eb09-168">Otherwise, if the `Signature` attribute is absent, the runtime directive applies to all overloads of the method.</span></span>  
   
- Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`. Utilisez plutôt l’attribut `Activate` de l’élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md), [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md), [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) ou [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md).  
+ <span data-ttu-id="0eb09-169">Vous ne pouvez pas définir la stratégie de réflexion runtime d'un constructeur à l'aide de l'élément `<Method>`.</span><span class="sxs-lookup"><span data-stu-id="0eb09-169">You cannot define the runtime reflection policy for a constructor by using the `<Method>` element.</span></span> <span data-ttu-id="0eb09-170">Utilisez plutôt l’attribut `Activate` de l’élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md), [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md), [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) ou [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md).</span><span class="sxs-lookup"><span data-stu-id="0eb09-170">Instead, use the `Activate` attribute of the  [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md), [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md), [\<Type>](../../../docs/framework/net-native/type-element-net-native.md), or [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element.</span></span>  
   
-## <a name="example"></a>Exemple  
- La méthode `Stringify` dans l'exemple suivant est une méthode de mise en forme à usage général qui utilise la réflexion pour convertir un objet sous forme de chaîne. En plus d'appeler la méthode `ToString` par défaut de l'objet, la méthode peut produire une chaîne de résultat mise en forme en passant à la méthode `ToString` d'un objet une chaîne de format et/ou une implémentation <xref:System.IFormatProvider>. Elle peut également appeler l'une des surcharges <xref:System.Convert.ToString%2A?displayProperty=fullName> qui convertit un nombre au format binaire, hexadécimale ou octale.  
+## <a name="example"></a><span data-ttu-id="0eb09-171">Exemple</span><span class="sxs-lookup"><span data-stu-id="0eb09-171">Example</span></span>  
+ <span data-ttu-id="0eb09-172">La méthode `Stringify` dans l'exemple suivant est une méthode de mise en forme à usage général qui utilise la réflexion pour convertir un objet sous forme de chaîne.</span><span class="sxs-lookup"><span data-stu-id="0eb09-172">The `Stringify` method in the following example is a general-purpose formatting method that uses reflection to convert an object to its string representation.</span></span> <span data-ttu-id="0eb09-173">En plus d'appeler la méthode `ToString` par défaut de l'objet, la méthode peut produire une chaîne de résultat mise en forme en passant à la méthode `ToString` d'un objet une chaîne de format et/ou une implémentation <xref:System.IFormatProvider>.</span><span class="sxs-lookup"><span data-stu-id="0eb09-173">In addition to calling the object's default `ToString` method, the method can produce a formatted result string by passing an object's `ToString` method a format string, an <xref:System.IFormatProvider> implementation, or both.</span></span> <span data-ttu-id="0eb09-174">Elle peut également appeler l'une des surcharges <xref:System.Convert.ToString%2A?displayProperty=nameWithType> qui convertit un nombre au format binaire, hexadécimale ou octale.</span><span class="sxs-lookup"><span data-stu-id="0eb09-174">It can also call one of the <xref:System.Convert.ToString%2A?displayProperty=nameWithType> overloads that converts a number to its binary, hexadecimal, or octal representation.</span></span>  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  
   
- La méthode `Stringify` peut être appelée par du code comme suit :  
+ <span data-ttu-id="0eb09-175">La méthode `Stringify` peut être appelée par du code comme suit :</span><span class="sxs-lookup"><span data-stu-id="0eb09-175">The `Stringify` method can be called by code like the following:</span></span>  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  
   
- Toutefois, quand il est compilé avec .NET Native, l’exemple peut lever de nombreuses exceptions au moment de l’exécution, notamment les exceptions <xref:System.NullReferenceException> et [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). En effet, la méthode `Stringify` est principalement destinée à prendre en charge la mise en forme dynamique des types primitifs dans la bibliothèque de classes .NET Framework. Cependant, leurs métadonnées ne sont pas rendues disponibles par le fichier de directives par défaut. Toutefois, même quand leurs métadonnées sont rendues disponibles, l’exemple lève des exceptions [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md), car les implémentations `ToString` appropriées n’ont pas été incluses dans le code natif.  
+ <span data-ttu-id="0eb09-176">Toutefois, quand il est compilé avec .NET Native, l’exemple peut lever de nombreuses exceptions au moment de l’exécution, notamment les exceptions <xref:System.NullReferenceException> et [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). En effet, la méthode `Stringify` est principalement destinée à prendre en charge la mise en forme dynamique des types primitifs dans la bibliothèque de classes .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0eb09-176">However, when compiled with .NET Native, the example can throw an number of exceptions at runtime, including <xref:System.NullReferenceException> and [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) exceptions, This occurs because the `Stringify` method is intended primarily to support dynamically formatting the primitive types in the .NET Framework Class Library.</span></span> <span data-ttu-id="0eb09-177">Cependant, leurs métadonnées ne sont pas rendues disponibles par le fichier de directives par défaut.</span><span class="sxs-lookup"><span data-stu-id="0eb09-177">However, their metadata is not made available by the default directives file.</span></span> <span data-ttu-id="0eb09-178">Toutefois, même quand leurs métadonnées sont rendues disponibles, l’exemple lève des exceptions [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md), car les implémentations `ToString` appropriées n’ont pas été incluses dans le code natif.</span><span class="sxs-lookup"><span data-stu-id="0eb09-178">Even when their metadata is made available, however, the example throws [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) exceptions because the appropriate `ToString` implementations have not been include in the native code.</span></span>  
   
- Toutes ces exceptions peuvent être éliminées en utilisant l’élément [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) pour définir les types dont les métadonnées doivent être présentes, et en ajoutant des éléments `<Method>` pour garantir la présence de l’implémentation de surcharges de méthode pouvant être appelées de façon dynamique. Voici le fichier default.rd.xml qui élimine ces exceptions et qui permet à l'exemple de s'exécuter sans erreur.  
+ <span data-ttu-id="0eb09-179">Toutes ces exceptions peuvent être éliminées en utilisant l’élément [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) pour définir les types dont les métadonnées doivent être présentes, et en ajoutant des éléments `<Method>` pour garantir la présence de l’implémentation de surcharges de méthode pouvant être appelées de façon dynamique.</span><span class="sxs-lookup"><span data-stu-id="0eb09-179">These exceptions can all be eliminated by using the [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) element to define the types whose metadata must be present, and by adding `<Method>` elements to ensure that the implementation of method overloads that can be called dynamically is also present.</span></span> <span data-ttu-id="0eb09-180">Voici le fichier default.rd.xml qui élimine ces exceptions et qui permet à l'exemple de s'exécuter sans erreur.</span><span class="sxs-lookup"><span data-stu-id="0eb09-180">The following is the default.rd.xml file that eliminates these exceptions and allows the example to execute without error.</span></span>  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -155,9 +153,8 @@ Applique une stratégie de réflexion runtime à un constructeur ou à une méth
 </Directives>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)   
- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
- [\<MethodInstantiation>, élément](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)
-
+## <a name="see-also"></a><span data-ttu-id="0eb09-181">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0eb09-181">See Also</span></span>  
+ [<span data-ttu-id="0eb09-182">Guide de référence du fichier de configuration des directives runtime (rd.xml)</span><span class="sxs-lookup"><span data-stu-id="0eb09-182">Runtime Directives (rd.xml) Configuration File Reference</span></span>](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [<span data-ttu-id="0eb09-183">Éléments de directive runtime</span><span class="sxs-lookup"><span data-stu-id="0eb09-183">Runtime Directive Elements</span></span>](../../../docs/framework/net-native/runtime-directive-elements.md)  
+ [<span data-ttu-id="0eb09-184">Paramètres de stratégie de directive runtime</span><span class="sxs-lookup"><span data-stu-id="0eb09-184">Runtime Directive Policy Settings</span></span>](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
+ [<span data-ttu-id="0eb09-185">\<MethodInstantiation>, élément</span><span class="sxs-lookup"><span data-stu-id="0eb09-185">\<MethodInstantiation> Element</span></span>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)

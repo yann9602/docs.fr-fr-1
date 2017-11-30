@@ -1,34 +1,37 @@
 ---
-title: "Comment&#160;: animer la taille d&#39;un FrameworkElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "animation, FrameworkElement (taille)"
-  - "FrameworkElement, animer la taille de"
+title: "Comment : animer la taille d'un FrameworkElement"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- animation [WPF], FrameworkElement size
+- FrameworkElement [WPF], animating size of
 ms.assetid: d4cd5a13-c20d-4a6f-a2ba-14f2c9ce4cef
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 17882494e48c5d692c8a774e6d77408557976c71
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: animer la taille d&#39;un FrameworkElement
-Pour animer la taille d'un <xref:System.Windows.FrameworkElement>, vous pouvez animer ses propriétés <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A> ou utiliser un <xref:System.Windows.Media.ScaleTransform> animé.  
+# <a name="how-to-animate-the-size-of-a-frameworkelement"></a><span data-ttu-id="ddb32-102">Comment : animer la taille d'un FrameworkElement</span><span class="sxs-lookup"><span data-stu-id="ddb32-102">How to: Animate the Size of a FrameworkElement</span></span>
+<span data-ttu-id="ddb32-103">Pour animer la taille d’un <xref:System.Windows.FrameworkElement>, vous pouvez animer ses <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A> propriétés ou utilisez un animé <xref:System.Windows.Media.ScaleTransform>.</span><span class="sxs-lookup"><span data-stu-id="ddb32-103">To animate the size of a <xref:System.Windows.FrameworkElement>, you can either animate its <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties or use an animated <xref:System.Windows.Media.ScaleTransform>.</span></span>  
   
- L'exemple suivant anime la taille de deux boutons à l'aide de ces deux approches.  Un bouton est redimensionné en animant sa propriété <xref:System.Windows.FrameworkElement.Width%2A> et l'autre est redimensionné en animant un <xref:System.Windows.Media.ScaleTransform> appliqué à sa propriété <xref:System.Windows.UIElement.RenderTransform%2A>.  Chaque bouton contient du texte.  Au début, le texte apparaît de la même manière dans les deux boutons, mais lorsque les boutons sont redimensionnés, le texte du second bouton est déformé.  
+ <span data-ttu-id="ddb32-104">Dans l’exemple suivant réalise une animation de la taille des deux boutons à l’aide de ces deux approches.</span><span class="sxs-lookup"><span data-stu-id="ddb32-104">In the following example animates the size of two buttons using these two approaches.</span></span> <span data-ttu-id="ddb32-105">Un bouton est redimensionné en animation son <xref:System.Windows.FrameworkElement.Width%2A> propriété et l’autre est redimensionnée par l’animation un <xref:System.Windows.Media.ScaleTransform> appliquée à ses <xref:System.Windows.UIElement.RenderTransform%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="ddb32-105">One button is resized by animating its <xref:System.Windows.FrameworkElement.Width%2A> property and another is resized by animating a <xref:System.Windows.Media.ScaleTransform> applied to its <xref:System.Windows.UIElement.RenderTransform%2A> property.</span></span> <span data-ttu-id="ddb32-106">Chaque bouton contient du texte.</span><span class="sxs-lookup"><span data-stu-id="ddb32-106">Each button contains some text.</span></span> <span data-ttu-id="ddb32-107">Initialement, le texte est le même dans les deux boutons, mais que les boutons sont redimensionnés, le texte dans le deuxième bouton est déformé.</span><span class="sxs-lookup"><span data-stu-id="ddb32-107">Initially, the text appears the same in both buttons, but as the buttons are resized, the text in the second button becomes distorted.</span></span>  
   
-## Exemple  
- [!code-xml[transformanimations_snip#1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/transformanimations_snip/XAML/AnimatingSizeExample.xaml#1)]  
+## <a name="example"></a><span data-ttu-id="ddb32-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="ddb32-108">Example</span></span>  
+ [!code-xaml[transformanimations_snip#1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/transformanimations_snip/XAML/AnimatingSizeExample.xaml#1)]  
   
- Lorsque vous transformez un élément, tout l'élément et son contenu sont transformés.  Lorsque vous modifiez directement la taille d'un élément, comme dans le cas du premier bouton, le contenu de l'élément n'est pas redimensionné sauf si sa taille et sa position dépendent de la taille de l'élément parent.  
+ <span data-ttu-id="ddb32-109">Lorsque vous transformez un élément, l’élément tout entier et son contenu est transformés.</span><span class="sxs-lookup"><span data-stu-id="ddb32-109">When you transform an element, the entire element and its contents are transformed.</span></span> <span data-ttu-id="ddb32-110">Lorsque vous modifiez directement la taille d’un élément, comme dans le cas du premier bouton, contenu de l’élément n’est pas redimensionné à moins que leur taille et la position dépendent de la taille de leur élément parent.</span><span class="sxs-lookup"><span data-stu-id="ddb32-110">When you directly alter the size of an element, as in the case of the first button, the element's contents are not resized unless their size and position depend on the size of their parent element.</span></span>  
   
- L'animation de la taille d'un élément en appliquant une transformation animée à sa propriété <xref:System.Windows.UIElement.RenderTransform%2A> fournit de meilleures performances que si vous animez directement <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A>, parce que la propriété <xref:System.Windows.UIElement.RenderTransform%2A> ne déclenche pas de passe de disposition.  
+ <span data-ttu-id="ddb32-111">Animation de la taille d’un élément en appliquant une transformation animée à sa <xref:System.Windows.UIElement.RenderTransform%2A> propriété fournit de meilleures performances que sa <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A> directement, car le <xref:System.Windows.UIElement.RenderTransform%2A> propriété ne déclenche pas une passe de disposition.</span><span class="sxs-lookup"><span data-stu-id="ddb32-111">Animating the size of an element by applying an animated transform to its <xref:System.Windows.UIElement.RenderTransform%2A> property provides better performance than animated its <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> directly, because the <xref:System.Windows.UIElement.RenderTransform%2A> property does not trigger a layout pass.</span></span>  
   
- Pour plus d'informations sur l'animation de propriétés, consultez [Vue d'ensemble de l'animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  Pour plus d'informations sur les transformations, consultez [Vue d'ensemble des transformations](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).
+ <span data-ttu-id="ddb32-112">Pour plus d’informations sur les propriétés d’animation, consultez le [vue d’ensemble de l’Animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).</span><span class="sxs-lookup"><span data-stu-id="ddb32-112">For more information about animating properties, see the [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).</span></span> <span data-ttu-id="ddb32-113">Pour plus d’informations sur les transformations, consultez la [transforme une vue d’ensemble](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).</span><span class="sxs-lookup"><span data-stu-id="ddb32-113">For more information about transforms, see the [Transforms Overview](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).</span></span>

@@ -1,134 +1,141 @@
 ---
-title: "How to: Create and Run a Long Running Workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : créer et exécuter un workflow de longue durée"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
-caps.latest.revision: 40
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 40
+caps.latest.revision: "40"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4a266613b975065b37c176ec07ae404b5b17ddd7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# How to: Create and Run a Long Running Workflow
-L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md)] est la capacité de l'exécution à rendre persistants et à décharger les workflows inactifs dans une base de données. Les étapes de [Comment : exécuter un Workflow](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md) a présenté les bases de l’hébergement de workflow à l’aide d’une application console. Des exemples de démarrage de workflow, gestionnaires de cycle de vie de workflow et de reprise des signets ont été donnés. Pour illustrer la persistance de workflow efficacement, un hôte de workflow plus complexe est nécessaire, prenant en charge le démarrage et la reprise de plusieurs instances de workflow. Cette étape du didacticiel explique comment créer une application hôte de formulaire Windows qui prend en charge le démarrage et la reprise de plusieurs instances de workflow, la persistance de workflow, et constitue une base pour les fonctionnalités avancées telles que le suivi et le versioning qui sont expliquées dans les étapes suivantes du didacticiel.  
+# <a name="how-to-create-and-run-a-long-running-workflow"></a><span data-ttu-id="50b48-102">Procédure : créer et exécuter un workflow de longue durée</span><span class="sxs-lookup"><span data-stu-id="50b48-102">How to: Create and Run a Long Running Workflow</span></span>
+<span data-ttu-id="50b48-103">L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md)] est la capacité de l'exécution à rendre persistants et à décharger les workflows inactifs dans une base de données.</span><span class="sxs-lookup"><span data-stu-id="50b48-103">One of the central features of [!INCLUDE[wf](../../../includes/wf-md.md)] is the runtime’s ability to persist and unload idle workflows to a database.</span></span> <span data-ttu-id="50b48-104">Les étapes de [Comment : exécuter un Workflow](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) démontré les principes fondamentaux de l’hébergement de flux de travail à l’aide d’une application console.</span><span class="sxs-lookup"><span data-stu-id="50b48-104">The steps in [How to: Run a Workflow](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) demonstrated the basics of workflow hosting using a console application.</span></span> <span data-ttu-id="50b48-105">Des exemples de démarrage de workflow, gestionnaires de cycle de vie de workflow et de reprise des signets ont été donnés.</span><span class="sxs-lookup"><span data-stu-id="50b48-105">Examples were shown of starting workflows, workflow lifecycle handlers, and resuming bookmarks.</span></span> <span data-ttu-id="50b48-106">Pour illustrer la persistance de workflow efficacement, un hôte de workflow plus complexe est nécessaire, prenant en charge le démarrage et la reprise de plusieurs instances de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-106">In order to demonstrate workflow persistence effectively, a more complex workflow host is required that supports starting and resuming multiple workflow instances.</span></span> <span data-ttu-id="50b48-107">Cette étape du didacticiel explique comment créer une application hôte de formulaire Windows qui prend en charge le démarrage et la reprise de plusieurs instances de workflow, la persistance de workflow, et constitue une base pour les fonctionnalités avancées telles que le suivi et le versioning qui sont expliquées dans les étapes suivantes du didacticiel.</span><span class="sxs-lookup"><span data-stu-id="50b48-107">This step in the tutorial demonstrates how to create a Windows form host application that supports starting and resuming multiple workflow instances, workflow persistence, and provides a basis for the advanced features such as tracking and versioning that are demonstrated in subsequent tutorial steps.</span></span>  
   
 > [!NOTE]
->  Cette étape du didacticiel et les étapes suivantes utilisent les trois types de flux de travail à partir de [Comment : créer un Workflow](../../../docs/framework/windows-workflow-foundation//how-to-create-a-workflow.md). Si vous n’avez pas effectué les trois types, vous pouvez télécharger une version complète des étapes de [Windows Workflow Foundation (WF45) - didacticiel de mise en route](http://go.microsoft.com/fwlink/?LinkID=248976).  
+>  <span data-ttu-id="50b48-108">Cette étape du didacticiel et les étapes suivantes utilisent les trois types de flux de travail à partir de [Comment : créer un flux de travail](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md).</span><span class="sxs-lookup"><span data-stu-id="50b48-108">This tutorial step and the subsequent steps use all three workflow types from [How to: Create a Workflow](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md).</span></span> <span data-ttu-id="50b48-109">Si vous n’avez pas effectué les trois types, vous pouvez télécharger une version complète des étapes à partir de [Windows Workflow Foundation (WF45) - didacticiel de mise en route](http://go.microsoft.com/fwlink/?LinkID=248976).</span><span class="sxs-lookup"><span data-stu-id="50b48-109">If you did not complete all three types you can download a completed version of the steps from [Windows Workflow Foundation (WF45) - Getting Started Tutorial](http://go.microsoft.com/fwlink/?LinkID=248976).</span></span>  
   
 > [!NOTE]
->  Pour télécharger une version complète ou consulter une procédure pas à pas vidéo du didacticiel, consultez [Windows Workflow Foundation (WF45) - didacticiel de mise en route](http://go.microsoft.com/fwlink/?LinkID=248976).  
+>  <span data-ttu-id="50b48-110">Pour télécharger une version complète ou consulter une procédure pas à pas vidéo du didacticiel, consultez [Windows Workflow Foundation (WF45) - didacticiel de mise en route](http://go.microsoft.com/fwlink/?LinkID=248976).</span><span class="sxs-lookup"><span data-stu-id="50b48-110">To download a completed version or view a video walkthrough of the tutorial, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](http://go.microsoft.com/fwlink/?LinkID=248976).</span></span>  
   
-## <a name="in-this-topic"></a>Dans cette rubrique  
+## <a name="in-this-topic"></a><span data-ttu-id="50b48-111">Dans cette rubrique</span><span class="sxs-lookup"><span data-stu-id="50b48-111">In this topic</span></span>  
   
--   [Pour créer la base de données de persistance](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_CreatePersistenceDatabase)  
+-   [<span data-ttu-id="50b48-112">Pour créer la base de données de persistance</span><span class="sxs-lookup"><span data-stu-id="50b48-112">To create the persistence database</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_CreatePersistenceDatabase)  
   
--   [Pour ajouter la référence aux assemblys DurableInstancing](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_AddReference)  
+-   [<span data-ttu-id="50b48-113">Pour ajouter la référence aux assemblys DurableInstancing</span><span class="sxs-lookup"><span data-stu-id="50b48-113">To add the reference to the DurableInstancing assemblies</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddReference)  
   
--   [Pour créer le formulaire hôte de flux de travail](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_CreateForm)  
+-   [<span data-ttu-id="50b48-114">Pour créer le formulaire hôte de flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-114">To create the workflow host form</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_CreateForm)  
   
--   [Pour ajouter des propriétés et des méthodes d’assistance de l’écran](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods)  
+-   [<span data-ttu-id="50b48-115">Pour ajouter les propriétés et méthodes d’assistance de l’écran</span><span class="sxs-lookup"><span data-stu-id="50b48-115">To add the properties and helper methods of the form</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods)  
   
--   [Pour configurer le magasin d’instances, les gestionnaires de cycle de vie de workflow et les extensions](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_ConfigureWorkflowApplication)  
+-   [<span data-ttu-id="50b48-116">Pour configurer le magasin d’instances, les gestionnaires de cycle de vie de workflow et les extensions</span><span class="sxs-lookup"><span data-stu-id="50b48-116">To configure the instance store, workflow lifecycle handlers, and extensions</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_ConfigureWorkflowApplication)  
   
--   [Pour activer le démarrage et la reprise de plusieurs types de flux de travail](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_WorkflowVersionMap)  
+-   [<span data-ttu-id="50b48-117">Pour activer le démarrage et la reprise de plusieurs types de flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-117">To enable starting and resuming multiple workflow types</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_WorkflowVersionMap)  
   
--   [Pour démarrer un nouveau flux de travail](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_StartWorkflow)  
+-   [<span data-ttu-id="50b48-118">Pour démarrer un nouveau flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-118">To start a new workflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_StartWorkflow)  
   
--   [Pour reprendre un workflow](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_ResumeWorkflow)  
+-   [<span data-ttu-id="50b48-119">Pour reprendre un workflow</span><span class="sxs-lookup"><span data-stu-id="50b48-119">To resume a workflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_ResumeWorkflow)  
   
--   [Pour terminer un workflow](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_TerminateWorkflow)  
+-   [<span data-ttu-id="50b48-120">Pour mettre fin à un flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-120">To terminate a workflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_TerminateWorkflow)  
   
--   [Pour générer et exécuter l’application](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_BuildAndRun)  
+-   [<span data-ttu-id="50b48-121">Pour générer et exécuter l’application</span><span class="sxs-lookup"><span data-stu-id="50b48-121">To build and run the application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_BuildAndRun)  
   
-###  <a name="a-namebkmkcreatepersistencedatabasea-to-create-the-persistence-database"></a><a name="BKMK_CreatePersistenceDatabase"></a> Pour créer la base de données de persistance  
+###  <span data-ttu-id="50b48-122"><a name="BKMK_CreatePersistenceDatabase"></a>Pour créer la base de données de persistance</span><span class="sxs-lookup"><span data-stu-id="50b48-122"><a name="BKMK_CreatePersistenceDatabase"></a> To create the persistence database</span></span>  
   
-1.  Ouvrez SQL Server Management Studio et connectez-vous au serveur local, par exemple **. \SQLEXPRESS**. Cliquez sur le **bases de données** nœud sur le serveur local, puis sélectionnez **nouvelle base de données**. Nommez la nouvelle base de données **WF45GettingStartedTutorial**, acceptez toutes les autres valeurs et sélectionnez **OK**.  
+1.  <span data-ttu-id="50b48-123">Ouvrez SQL Server Management Studio et connectez-vous au serveur local, par exemple **. \SQLEXPRESS**.</span><span class="sxs-lookup"><span data-stu-id="50b48-123">Open SQL Server Management Studio and connect to the local server, for example **.\SQLEXPRESS**.</span></span> <span data-ttu-id="50b48-124">Cliquez sur le **bases de données** nœud sur le serveur local, puis sélectionnez **nouvelle base de données**.</span><span class="sxs-lookup"><span data-stu-id="50b48-124">Right-click the **Databases** node on the local server, and select **New Database**.</span></span> <span data-ttu-id="50b48-125">Nom de la nouvelle base de données **WF45GettingStartedTutorial**, acceptez toutes les autres valeurs, puis sélectionnez **OK**.</span><span class="sxs-lookup"><span data-stu-id="50b48-125">Name the new database **WF45GettingStartedTutorial**, accept all other values, and select **OK**.</span></span>  
   
     > [!NOTE]
-    >  Assurez-vous d’avoir **Create Database** autorisation sur le serveur local avant de créer la base de données.  
+    >  <span data-ttu-id="50b48-126">Assurez-vous d’avoir **Create Database** autorisation sur le serveur local avant de créer la base de données.</span><span class="sxs-lookup"><span data-stu-id="50b48-126">Ensure that you have **Create Database** permission on the local server before creating the database.</span></span>  
   
-2.  Choisissez **Open**, **fichier** à partir de le **fichier** menu. Accédez au dossier suivant : `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
+2.  <span data-ttu-id="50b48-127">Choisissez **ouvrir**, **fichier** à partir de la **fichier** menu.</span><span class="sxs-lookup"><span data-stu-id="50b48-127">Choose **Open**, **File** from the **File** menu.</span></span> <span data-ttu-id="50b48-128">Accédez au dossier suivant : `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`</span><span class="sxs-lookup"><span data-stu-id="50b48-128">Browse to the following folder: `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`</span></span>  
   
-     Sélectionnez les deux fichiers suivants et cliquez sur **Ouvrir**.  
+     <span data-ttu-id="50b48-129">Sélectionnez les deux fichiers suivants et cliquez sur **ouvrir**.</span><span class="sxs-lookup"><span data-stu-id="50b48-129">Select the following two files and click **Open**.</span></span>  
   
-    -   SqlWorkflowInstanceStoreLogic.sql  
+    -   <span data-ttu-id="50b48-130">SqlWorkflowInstanceStoreLogic.sql</span><span class="sxs-lookup"><span data-stu-id="50b48-130">SqlWorkflowInstanceStoreLogic.sql</span></span>  
   
-    -   SqlWorkflowInstanceStoreSchema.sql  
+    -   <span data-ttu-id="50b48-131">SqlWorkflowInstanceStoreSchema.sql</span><span class="sxs-lookup"><span data-stu-id="50b48-131">SqlWorkflowInstanceStoreSchema.sql</span></span>  
   
-3.  Choisissez **SqlWorkflowInstanceStoreSchema.sql** à partir de la **fenêtre** menu. Vérifiez que **WF45GettingStartedTutorial** est sélectionné dans le **bases de données disponibles** liste déroulante et choisissez **Execute** à partir de la **requête** menu.  
+3.  <span data-ttu-id="50b48-132">Choisissez **SqlWorkflowInstanceStoreSchema.sql** à partir de la **fenêtre** menu.</span><span class="sxs-lookup"><span data-stu-id="50b48-132">Choose **SqlWorkflowInstanceStoreSchema.sql** from the **Window** menu.</span></span> <span data-ttu-id="50b48-133">Vérifiez que **WF45GettingStartedTutorial** est sélectionné dans le **bases de données disponibles** liste déroulante et choisissez **Execute** à partir de la **requête**menu.</span><span class="sxs-lookup"><span data-stu-id="50b48-133">Ensure that **WF45GettingStartedTutorial** is selected in the **Available Databases** drop-down and choose **Execute** from the **Query** menu.</span></span>  
   
-4.  Choisissez **SqlWorkflowInstanceStoreLogic.sql** à partir de la **fenêtre** menu. Vérifiez que **WF45GettingStartedTutorial** est sélectionné dans le **bases de données disponibles** liste déroulante et choisissez **Execute** à partir de la **requête** menu.  
+4.  <span data-ttu-id="50b48-134">Choisissez **SqlWorkflowInstanceStoreLogic.sql** à partir de la **fenêtre** menu.</span><span class="sxs-lookup"><span data-stu-id="50b48-134">Choose **SqlWorkflowInstanceStoreLogic.sql** from the **Window** menu.</span></span> <span data-ttu-id="50b48-135">Vérifiez que **WF45GettingStartedTutorial** est sélectionné dans le **bases de données disponibles** liste déroulante et choisissez **Execute** à partir de la **requête**menu.</span><span class="sxs-lookup"><span data-stu-id="50b48-135">Ensure that **WF45GettingStartedTutorial** is selected in the **Available Databases** drop-down and choose **Execute** from the **Query** menu.</span></span>  
   
     > [!WARNING]
-    >  Il est important d'effectuer les deux étapes précédentes dans l'ordre approprié. Si les requêtes ne sont pas exécutées dans l'ordre, des erreurs se produisent et la base de données de persistance n'est pas configurée correctement.  
+    >  <span data-ttu-id="50b48-136">Il est important d'effectuer les deux étapes précédentes dans l'ordre approprié.</span><span class="sxs-lookup"><span data-stu-id="50b48-136">It is important to perform the previous two steps in the correct order.</span></span> <span data-ttu-id="50b48-137">Si les requêtes ne sont pas exécutées dans l'ordre, des erreurs se produisent et la base de données de persistance n'est pas configurée correctement.</span><span class="sxs-lookup"><span data-stu-id="50b48-137">If the queries are executed out of order, errors occur and the persistence database is not configured correctly.</span></span>  
   
-###  <a name="a-namebkmkaddreferencea-to-add-the-reference-to-the-durableinstancing-assemblies"></a><a name="BKMK_AddReference"></a> Pour ajouter la référence aux assemblys DurableInstancing  
+###  <span data-ttu-id="50b48-138"><a name="BKMK_AddReference"></a>Pour ajouter la référence aux assemblys DurableInstancing</span><span class="sxs-lookup"><span data-stu-id="50b48-138"><a name="BKMK_AddReference"></a> To add the reference to the DurableInstancing assemblies</span></span>  
   
-1.  Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et sélectionnez **Ajouter une référence**.  
+1.  <span data-ttu-id="50b48-139">Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et sélectionnez **ajouter une référence**.</span><span class="sxs-lookup"><span data-stu-id="50b48-139">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and select **Add Reference**.</span></span>  
   
-2.  Sélectionnez **assemblys** à partir de la **Ajouter une référence** liste et le type `DurableInstancing` dans les **Rechercher des assemblys** boîte. Cette opération filtre les assemblys et facilite la sélection des références souhaitées.  
+2.  <span data-ttu-id="50b48-140">Sélectionnez **assemblys** à partir de la **ajouter une référence** liste et tapez `DurableInstancing` dans le **rechercher des assemblys** boîte.</span><span class="sxs-lookup"><span data-stu-id="50b48-140">Select **Assemblies** from the **Add Reference** list, and type `DurableInstancing` into the **Search Assemblies** box.</span></span> <span data-ttu-id="50b48-141">Cette opération filtre les assemblys et facilite la sélection des références souhaitées.</span><span class="sxs-lookup"><span data-stu-id="50b48-141">This filters the assemblies and makes the desired references easier to select.</span></span>  
   
-3.  Cochez la case en regard de **System.Activities.DurableInstancing** et **System.Runtime.DurableInstancing** à partir de la **résultats de la recherche** liste, puis cliquez sur **OK**.  
+3.  <span data-ttu-id="50b48-142">Cochez la case en regard de **System.Activities.DurableInstancing** et **System.Runtime.DurableInstancing** à partir de la **résultats de la recherche** liste, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="50b48-142">Check the checkbox beside **System.Activities.DurableInstancing** and **System.Runtime.DurableInstancing** from the **Search Results** list, and click **OK**.</span></span>  
   
-###  <a name="a-namebkmkcreateforma-to-create-the-workflow-host-form"></a><a name="BKMK_CreateForm"></a> Pour créer le formulaire hôte de flux de travail  
+###  <span data-ttu-id="50b48-143"><a name="BKMK_CreateForm"></a>Pour créer le formulaire hôte de flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-143"><a name="BKMK_CreateForm"></a> To create the workflow host form</span></span>  
   
 > [!NOTE]
->  Les étapes de cette procédure expliquent comment ajouter et configurer le formulaire manuellement. Si vous le souhaitez, téléchargez les fichiers solution pour le didacticiel et ajoutez le formulaire rempli au projet. Pour télécharger les fichiers du didacticiel, consultez [Windows Workflow Foundation (WF45) - didacticiel de mise en route](http://go.microsoft.com/fwlink/?LinkID=248976). Une fois que les fichiers sont téléchargés, cliquez sur **NumberGuessWorkflowHost** et choisissez **Ajouter une référence**. Ajoutez une référence à **System.Windows.Forms** et **System.Drawing**. Ces références sont ajoutées automatiquement si vous ajoutez un nouveau formulaire à partir de la **Ajouter**, **un nouvel élément** menu, mais doivent être ajoutés manuellement lors de l’importation d’un formulaire. Une fois que les références sont ajoutées, cliquez sur **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **Ajouter**, **un élément existant**. Accédez à la `Form` dossier des fichiers de projet, sélectionnez **WorkflowHostForm.cs** (ou **WorkflowHostForm.vb**), puis cliquez sur **Ajouter**. Si vous choisissez d’importer le formulaire, puis passez à la section suivante, [pour ajouter des propriétés et des méthodes d’assistance du formulaire](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods).  
+>  <span data-ttu-id="50b48-144">Les étapes de cette procédure expliquent comment ajouter et configurer le formulaire manuellement.</span><span class="sxs-lookup"><span data-stu-id="50b48-144">The steps in this procedure describe how to add and configure the form manually.</span></span> <span data-ttu-id="50b48-145">Si vous le souhaitez, téléchargez les fichiers solution pour le didacticiel et ajoutez le formulaire rempli au projet.</span><span class="sxs-lookup"><span data-stu-id="50b48-145">If desired, you can download the solution files for the tutorial and add the completed form to the project.</span></span> <span data-ttu-id="50b48-146">Pour télécharger les fichiers du didacticiel, consultez [Windows Workflow Foundation (WF45) - didacticiel de mise en route](http://go.microsoft.com/fwlink/?LinkID=248976).</span><span class="sxs-lookup"><span data-stu-id="50b48-146">To download the tutorial files, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](http://go.microsoft.com/fwlink/?LinkID=248976).</span></span> <span data-ttu-id="50b48-147">Avec le bouton droit une fois que les fichiers sont téléchargés, **NumberGuessWorkflowHost** et choisissez **ajouter une référence**.</span><span class="sxs-lookup"><span data-stu-id="50b48-147">Once the files are downloaded, right-click **NumberGuessWorkflowHost** and choose **Add Reference**.</span></span> <span data-ttu-id="50b48-148">Ajoutez une référence à **System.Windows.Forms** et **System.Drawing**.</span><span class="sxs-lookup"><span data-stu-id="50b48-148">Add a reference to **System.Windows.Forms** and **System.Drawing**.</span></span> <span data-ttu-id="50b48-149">Ces références sont ajoutées automatiquement si vous ajoutez un nouveau formulaire à partir de la **ajouter**, **un nouvel élément** menu, mais doivent être ajoutés manuellement lors de l’importation d’un formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-149">These references are added automatically if you add a new form from the **Add**, **New Item** menu, but must be added manually when importing a form.</span></span> <span data-ttu-id="50b48-150">Avec le bouton droit une fois que les références sont ajoutées, **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **ajouter**, **élément existant**.</span><span class="sxs-lookup"><span data-stu-id="50b48-150">Once the references are added, right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Existing Item**.</span></span> <span data-ttu-id="50b48-151">Accédez à la `Form` dossier des fichiers de projet, sélectionnez **WorkflowHostForm.cs** (ou **WorkflowHostForm.vb**), puis cliquez sur **ajouter**.</span><span class="sxs-lookup"><span data-stu-id="50b48-151">Browse to the `Form` folder in the project files, select **WorkflowHostForm.cs** (or **WorkflowHostForm.vb**), and click **Add**.</span></span> <span data-ttu-id="50b48-152">Si vous choisissez d’importer le formulaire, puis passez à la section suivante, [pour ajouter les propriétés et méthodes d’assistance sous la forme](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods).</span><span class="sxs-lookup"><span data-stu-id="50b48-152">If you choose to import the form, then you can skip down to the next section, [To add the properties and helper methods of the form](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods).</span></span>  
   
-1.  Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **Ajouter**, **un nouvel élément**.  
+1.  <span data-ttu-id="50b48-153">Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **ajouter**, **un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="50b48-153">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **New Item**.</span></span>  
   
-2.  Dans la **installé** modèles, choisissez **Windows Form**, type `WorkflowHostForm` dans le **nom** puis cliquez sur **Ajouter**.  
+2.  <span data-ttu-id="50b48-154">Dans le **installé** modèles, choisissez **Windows Form**, type `WorkflowHostForm` dans les **nom** , puis cliquez sur **ajouter**.</span><span class="sxs-lookup"><span data-stu-id="50b48-154">In the **Installed** templates list, choose **Windows Form**, type `WorkflowHostForm` in the **Name** box, and click **Add**.</span></span>  
   
-3.  Configurez les propriétés suivantes sur le formulaire.  
+3.  <span data-ttu-id="50b48-155">Configurez les propriétés suivantes sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-155">Configure the following properties on the form.</span></span>  
   
-    |Propriété|Valeur|  
+    |<span data-ttu-id="50b48-156">Propriété</span><span class="sxs-lookup"><span data-stu-id="50b48-156">Property</span></span>|<span data-ttu-id="50b48-157">Valeur</span><span class="sxs-lookup"><span data-stu-id="50b48-157">Value</span></span>|  
     |--------------|-----------|  
-    |FormBorderStyle|FixedSingle|  
-    |MaximizeBox|False|  
-    |Taille|400, 420|  
+    |<span data-ttu-id="50b48-158">FormBorderStyle</span><span class="sxs-lookup"><span data-stu-id="50b48-158">FormBorderStyle</span></span>|<span data-ttu-id="50b48-159">FixedSingle</span><span class="sxs-lookup"><span data-stu-id="50b48-159">FixedSingle</span></span>|  
+    |<span data-ttu-id="50b48-160">MaximizeBox</span><span class="sxs-lookup"><span data-stu-id="50b48-160">MaximizeBox</span></span>|<span data-ttu-id="50b48-161">False</span><span class="sxs-lookup"><span data-stu-id="50b48-161">False</span></span>|  
+    |<span data-ttu-id="50b48-162">Taille</span><span class="sxs-lookup"><span data-stu-id="50b48-162">Size</span></span>|<span data-ttu-id="50b48-163">400, 420</span><span class="sxs-lookup"><span data-stu-id="50b48-163">400, 420</span></span>|  
   
-4.  Ajoutez les contrôles suivants au formulaire dans l'ordre spécifié et configurez les propriétés selon les instructions.  
+4.  <span data-ttu-id="50b48-164">Ajoutez les contrôles suivants au formulaire dans l'ordre spécifié et configurez les propriétés selon les instructions.</span><span class="sxs-lookup"><span data-stu-id="50b48-164">Add the following controls to the form in the order specified and configure the properties as directed.</span></span>  
   
-    |Contrôle|Propriété : valeur|  
+    |<span data-ttu-id="50b48-165">Contrôle</span><span class="sxs-lookup"><span data-stu-id="50b48-165">Control</span></span>|<span data-ttu-id="50b48-166">Propriété : valeur</span><span class="sxs-lookup"><span data-stu-id="50b48-166">Property: Value</span></span>|  
     |-------------|---------------------|  
-    |**Bouton**|Nom : NewGame<br /><br /> Emplacement : 13, 13<br /><br /> Taille : 75, 23<br /><br /> Texte : Nouvelle partie|  
-    |**Étiquette**|Emplacement : 94, 18<br /><br /> Texte : Deviner un nombre compris entre 1 et|  
-    |**Zone de liste déroulante**|Nom : NumberRange<br /><br /> DropDownStyle : DropDownList<br /><br /> Éléments : 10, 100 et 1000<br /><br /> Emplacement : 228, 12<br /><br /> Taille : 143, 21|  
-    |**Étiquette**|Emplacement : 13, 43<br /><br /> Texte : Type de flux de travail|  
-    |**Zone de liste déroulante**|Nom : WorkflowType<br /><br /> DropDownStyle : DropDownList<br /><br /> Éléments : StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow, SequentialNumberGuessWorkflow<br /><br /> Emplacement : 94, 40<br /><br /> Taille : 277, 21|  
-    |**Étiquette**|Nom : WorkflowVersion<br /><br /> Emplacement : 13, 362<br /><br /> Texte : Version de flux de travail|  
-    |**GroupBox**|Emplacement : 13, 67<br /><br /> Taille : 358, 287<br /><br /> Texte : jeu|  
+    |<span data-ttu-id="50b48-167">**Button**</span><span class="sxs-lookup"><span data-stu-id="50b48-167">**Button**</span></span>|<span data-ttu-id="50b48-168">Nom : NewGame</span><span class="sxs-lookup"><span data-stu-id="50b48-168">Name: NewGame</span></span><br /><br /> <span data-ttu-id="50b48-169">Emplacement : 13, 13</span><span class="sxs-lookup"><span data-stu-id="50b48-169">Location: 13, 13</span></span><br /><br /> <span data-ttu-id="50b48-170">Taille : 75, 23</span><span class="sxs-lookup"><span data-stu-id="50b48-170">Size: 75, 23</span></span><br /><br /> <span data-ttu-id="50b48-171">Texte : Nouvelle partie</span><span class="sxs-lookup"><span data-stu-id="50b48-171">Text: New Game</span></span>|  
+    |<span data-ttu-id="50b48-172">**Label**</span><span class="sxs-lookup"><span data-stu-id="50b48-172">**Label**</span></span>|<span data-ttu-id="50b48-173">Emplacement : 94, 18</span><span class="sxs-lookup"><span data-stu-id="50b48-173">Location: 94, 18</span></span><br /><br /> <span data-ttu-id="50b48-174">Texte : Deviner un nombre compris entre 1 et</span><span class="sxs-lookup"><span data-stu-id="50b48-174">Text: Guess a number from 1 to</span></span>|  
+    |<span data-ttu-id="50b48-175">**ComboBox**</span><span class="sxs-lookup"><span data-stu-id="50b48-175">**ComboBox**</span></span>|<span data-ttu-id="50b48-176">Nom : NumberRange</span><span class="sxs-lookup"><span data-stu-id="50b48-176">Name: NumberRange</span></span><br /><br /> <span data-ttu-id="50b48-177">DropDownStyle : DropDownList</span><span class="sxs-lookup"><span data-stu-id="50b48-177">DropDownStyle: DropDownList</span></span><br /><br /> <span data-ttu-id="50b48-178">Éléments : 10, 100 et 1000</span><span class="sxs-lookup"><span data-stu-id="50b48-178">Items: 10, 100, 1000</span></span><br /><br /> <span data-ttu-id="50b48-179">Emplacement : 228, 12</span><span class="sxs-lookup"><span data-stu-id="50b48-179">Location: 228, 12</span></span><br /><br /> <span data-ttu-id="50b48-180">Taille : 143, 21</span><span class="sxs-lookup"><span data-stu-id="50b48-180">Size: 143, 21</span></span>|  
+    |<span data-ttu-id="50b48-181">**Label**</span><span class="sxs-lookup"><span data-stu-id="50b48-181">**Label**</span></span>|<span data-ttu-id="50b48-182">Emplacement : 13, 43</span><span class="sxs-lookup"><span data-stu-id="50b48-182">Location: 13, 43</span></span><br /><br /> <span data-ttu-id="50b48-183">Texte : Type de flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-183">Text: Workflow type</span></span>|  
+    |<span data-ttu-id="50b48-184">**ComboBox**</span><span class="sxs-lookup"><span data-stu-id="50b48-184">**ComboBox**</span></span>|<span data-ttu-id="50b48-185">Nom : WorkflowType</span><span class="sxs-lookup"><span data-stu-id="50b48-185">Name: WorkflowType</span></span><br /><br /> <span data-ttu-id="50b48-186">DropDownStyle : DropDownList</span><span class="sxs-lookup"><span data-stu-id="50b48-186">DropDownStyle: DropDownList</span></span><br /><br /> <span data-ttu-id="50b48-187">Éléments : StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow, SequentialNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="50b48-187">Items: StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow, SequentialNumberGuessWorkflow</span></span><br /><br /> <span data-ttu-id="50b48-188">Emplacement : 94, 40</span><span class="sxs-lookup"><span data-stu-id="50b48-188">Location: 94, 40</span></span><br /><br /> <span data-ttu-id="50b48-189">Taille : 277, 21</span><span class="sxs-lookup"><span data-stu-id="50b48-189">Size: 277, 21</span></span>|  
+    |<span data-ttu-id="50b48-190">**Label**</span><span class="sxs-lookup"><span data-stu-id="50b48-190">**Label**</span></span>|<span data-ttu-id="50b48-191">Nom : WorkflowVersion</span><span class="sxs-lookup"><span data-stu-id="50b48-191">Name: WorkflowVersion</span></span><br /><br /> <span data-ttu-id="50b48-192">Emplacement : 13, 362</span><span class="sxs-lookup"><span data-stu-id="50b48-192">Location: 13, 362</span></span><br /><br /> <span data-ttu-id="50b48-193">Texte : Version de flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-193">Text: Workflow version</span></span>|  
+    |<span data-ttu-id="50b48-194">**GroupBox**</span><span class="sxs-lookup"><span data-stu-id="50b48-194">**GroupBox**</span></span>|<span data-ttu-id="50b48-195">Emplacement : 13, 67</span><span class="sxs-lookup"><span data-stu-id="50b48-195">Location: 13, 67</span></span><br /><br /> <span data-ttu-id="50b48-196">Taille : 358, 287</span><span class="sxs-lookup"><span data-stu-id="50b48-196">Size: 358, 287</span></span><br /><br /> <span data-ttu-id="50b48-197">Texte : jeu</span><span class="sxs-lookup"><span data-stu-id="50b48-197">Text: Game</span></span>|  
   
     > [!NOTE]
-    >  Lorsque vous ajoutez les contrôles suivants, placez-les dans la zone de groupe.  
+    >  <span data-ttu-id="50b48-198">Lorsque vous ajoutez les contrôles suivants, placez-les dans la zone de groupe.</span><span class="sxs-lookup"><span data-stu-id="50b48-198">When adding the following controls, put them into the GroupBox.</span></span>  
   
-    |Contrôle|Propriété : valeur|  
+    |<span data-ttu-id="50b48-199">Contrôle</span><span class="sxs-lookup"><span data-stu-id="50b48-199">Control</span></span>|<span data-ttu-id="50b48-200">Propriété : valeur</span><span class="sxs-lookup"><span data-stu-id="50b48-200">Property: Value</span></span>|  
     |-------------|---------------------|  
-    |**Étiquette**|Emplacement : 7, 20<br /><br /> Texte : Id d’Instance de flux de travail|  
-    |**Zone de liste déroulante**|Nom : ID d’instance<br /><br /> DropDownStyle : DropDownList<br /><br /> Emplacement : 121, 17<br /><br /> Taille : 227, 21|  
-    |**Étiquette**|Emplacement : 7, 47<br /><br /> Texte : deviner|  
-    |**Zone de texte**|Nom : deviner<br /><br /> Emplacement : 50, 44<br /><br /> Taille : 65, 20|  
-    |**Bouton**|Nom : EnterGuess<br /><br /> Emplacement : 121, 42<br /><br /> Taille : 75, 23<br /><br /> Texte : Entrez la proposition|  
-    |**Bouton**|Nom : QuitGame<br /><br /> Emplacement : 274, 42<br /><br /> Taille : 75, 23<br /><br /> Texte : quitter|  
-    |**Zone de texte**|Nom : WorkflowStatus<br /><br /> Emplacement : 10, 73<br /><br /> Multiline : True<br /><br /> ReadOnly : True<br /><br /> Barres de défilement : Vertical<br /><br /> Taille : 338, 208|  
+    |<span data-ttu-id="50b48-201">**Label**</span><span class="sxs-lookup"><span data-stu-id="50b48-201">**Label**</span></span>|<span data-ttu-id="50b48-202">Emplacement : 7, 20</span><span class="sxs-lookup"><span data-stu-id="50b48-202">Location: 7, 20</span></span><br /><br /> <span data-ttu-id="50b48-203">Texte : Id d’Instance de flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-203">Text: Workflow Instance Id</span></span>|  
+    |<span data-ttu-id="50b48-204">**ComboBox**</span><span class="sxs-lookup"><span data-stu-id="50b48-204">**ComboBox**</span></span>|<span data-ttu-id="50b48-205">Nom : InstanceId</span><span class="sxs-lookup"><span data-stu-id="50b48-205">Name: InstanceId</span></span><br /><br /> <span data-ttu-id="50b48-206">DropDownStyle : DropDownList</span><span class="sxs-lookup"><span data-stu-id="50b48-206">DropDownStyle: DropDownList</span></span><br /><br /> <span data-ttu-id="50b48-207">Emplacement : 121, 17</span><span class="sxs-lookup"><span data-stu-id="50b48-207">Location: 121, 17</span></span><br /><br /> <span data-ttu-id="50b48-208">Taille : 227, 21</span><span class="sxs-lookup"><span data-stu-id="50b48-208">Size: 227, 21</span></span>|  
+    |<span data-ttu-id="50b48-209">**Label**</span><span class="sxs-lookup"><span data-stu-id="50b48-209">**Label**</span></span>|<span data-ttu-id="50b48-210">Emplacement : 7, 47</span><span class="sxs-lookup"><span data-stu-id="50b48-210">Location: 7, 47</span></span><br /><br /> <span data-ttu-id="50b48-211">Texte : deviner</span><span class="sxs-lookup"><span data-stu-id="50b48-211">Text: Guess</span></span>|  
+    |<span data-ttu-id="50b48-212">**TextBox**</span><span class="sxs-lookup"><span data-stu-id="50b48-212">**TextBox**</span></span>|<span data-ttu-id="50b48-213">Nom : deviner</span><span class="sxs-lookup"><span data-stu-id="50b48-213">Name: Guess</span></span><br /><br /> <span data-ttu-id="50b48-214">Emplacement : 50, 44</span><span class="sxs-lookup"><span data-stu-id="50b48-214">Location: 50, 44</span></span><br /><br /> <span data-ttu-id="50b48-215">Taille : 65, 20</span><span class="sxs-lookup"><span data-stu-id="50b48-215">Size: 65, 20</span></span>|  
+    |<span data-ttu-id="50b48-216">**Button**</span><span class="sxs-lookup"><span data-stu-id="50b48-216">**Button**</span></span>|<span data-ttu-id="50b48-217">Nom : EnterGuess</span><span class="sxs-lookup"><span data-stu-id="50b48-217">Name: EnterGuess</span></span><br /><br /> <span data-ttu-id="50b48-218">Emplacement : 121, 42</span><span class="sxs-lookup"><span data-stu-id="50b48-218">Location: 121, 42</span></span><br /><br /> <span data-ttu-id="50b48-219">Taille : 75, 23</span><span class="sxs-lookup"><span data-stu-id="50b48-219">Size: 75, 23</span></span><br /><br /> <span data-ttu-id="50b48-220">Texte : Entrez la proposition</span><span class="sxs-lookup"><span data-stu-id="50b48-220">Text: Enter Guess</span></span>|  
+    |<span data-ttu-id="50b48-221">**Button**</span><span class="sxs-lookup"><span data-stu-id="50b48-221">**Button**</span></span>|<span data-ttu-id="50b48-222">Nom : QuitGame</span><span class="sxs-lookup"><span data-stu-id="50b48-222">Name: QuitGame</span></span><br /><br /> <span data-ttu-id="50b48-223">Emplacement : 274, 42</span><span class="sxs-lookup"><span data-stu-id="50b48-223">Location: 274, 42</span></span><br /><br /> <span data-ttu-id="50b48-224">Taille : 75, 23</span><span class="sxs-lookup"><span data-stu-id="50b48-224">Size: 75, 23</span></span><br /><br /> <span data-ttu-id="50b48-225">Texte : quitter</span><span class="sxs-lookup"><span data-stu-id="50b48-225">Text: Quit</span></span>|  
+    |<span data-ttu-id="50b48-226">**TextBox**</span><span class="sxs-lookup"><span data-stu-id="50b48-226">**TextBox**</span></span>|<span data-ttu-id="50b48-227">Nom : WorkflowStatus</span><span class="sxs-lookup"><span data-stu-id="50b48-227">Name: WorkflowStatus</span></span><br /><br /> <span data-ttu-id="50b48-228">Emplacement : 10, 73</span><span class="sxs-lookup"><span data-stu-id="50b48-228">Location: 10, 73</span></span><br /><br /> <span data-ttu-id="50b48-229">Multiline : True</span><span class="sxs-lookup"><span data-stu-id="50b48-229">Multiline: True</span></span><br /><br /> <span data-ttu-id="50b48-230">En lecture seule : True</span><span class="sxs-lookup"><span data-stu-id="50b48-230">ReadOnly: True</span></span><br /><br /> <span data-ttu-id="50b48-231">Barres de défilement : Vertical</span><span class="sxs-lookup"><span data-stu-id="50b48-231">ScrollBars: Vertical</span></span><br /><br /> <span data-ttu-id="50b48-232">Taille : 338, 208</span><span class="sxs-lookup"><span data-stu-id="50b48-232">Size: 338, 208</span></span>|  
   
-5.  Définir le **AcceptButton** propriété du formulaire **AcceptButton**.  
+5.  <span data-ttu-id="50b48-233">Définir le **AcceptButton** propriété du formulaire **EnterGuess**.</span><span class="sxs-lookup"><span data-stu-id="50b48-233">Set the **AcceptButton** property of the form to **EnterGuess**.</span></span>  
   
- L'exemple suivant illustre le formulaire terminé.  
+ <span data-ttu-id="50b48-234">L'exemple suivant illustre le formulaire terminé.</span><span class="sxs-lookup"><span data-stu-id="50b48-234">The following example illustrates the completed form.</span></span>  
   
- ![WorkflowHostForm Didacticiel Mise en route WF45](../../../docs/framework/windows-workflow-foundation//media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")  
+ <span data-ttu-id="50b48-235">![WF45 Prise en main de formulaire hôte de flux de travail didacticiel](../../../docs/framework/windows-workflow-foundation/media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")</span><span class="sxs-lookup"><span data-stu-id="50b48-235">![WF45 Getting Started Tutorial Workflow Host Form](../../../docs/framework/windows-workflow-foundation/media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")</span></span>  
   
-###  <a name="a-namebkmkaddhelpermethodsa-to-add-the-properties-and-helper-methods-of-the-form"></a><a name="BKMK_AddHelperMethods"></a> Pour ajouter des propriétés et des méthodes d’assistance de l’écran  
- La procédure de cette section permet d'ajouter des propriétés et des méthodes d'assistance à la classe de formulaire qui configure l'interface utilisateur du formulaire pour prendre en charge l'exécution et la reprise des workflows d'estimation.  
+###  <span data-ttu-id="50b48-236"><a name="BKMK_AddHelperMethods"></a>Pour ajouter les propriétés et méthodes d’assistance de l’écran</span><span class="sxs-lookup"><span data-stu-id="50b48-236"><a name="BKMK_AddHelperMethods"></a> To add the properties and helper methods of the form</span></span>  
+ <span data-ttu-id="50b48-237">La procédure de cette section permet d'ajouter des propriétés et des méthodes d'assistance à la classe de formulaire qui configure l'interface utilisateur du formulaire pour prendre en charge l'exécution et la reprise des workflows d'estimation.</span><span class="sxs-lookup"><span data-stu-id="50b48-237">The steps in this section add properties and helper methods to the form class that configure the UI of the form to support running and resuming number guess workflows.</span></span>  
   
-1.  Avec le bouton droit **WorkflowHostForm** dans **l’Explorateur de solutions** et choisissez **Afficher le Code**.  
+1.  <span data-ttu-id="50b48-238">Avec le bouton droit **WorkflowHostForm** dans **l’Explorateur de solutions** et choisissez **afficher le Code**.</span><span class="sxs-lookup"><span data-stu-id="50b48-238">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
-2.  Ajoutez les instructions `using` (ou `Imports`) suivantes au début du fichier avec les autres instructions `using` (ou `Imports`).  
+2.  <span data-ttu-id="50b48-239">Ajoutez les instructions `using` (ou `Imports`) suivantes au début du fichier avec les autres instructions `using` (ou `Imports`).</span><span class="sxs-lookup"><span data-stu-id="50b48-239">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>  
   
     ```vb  
     Imports System.Windows.Forms  
@@ -146,7 +153,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     using System.IO;  
     ```  
   
-3.  Ajoutez les déclarations de membre suivantes à la **WorkflowHostForm** (classe).  
+3.  <span data-ttu-id="50b48-240">Ajoutez les déclarations de membre suivantes à la **WorkflowHostForm** classe.</span><span class="sxs-lookup"><span data-stu-id="50b48-240">Add the following member declarations to the **WorkflowHostForm** class.</span></span>  
   
     ```vb  
     Const connectionString = "Server=.\SQLEXPRESS;Initial Catalog=WF45GettingStartedTutorial;Integrated Security=SSPI"  
@@ -161,9 +168,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     ```  
   
     > [!NOTE]
-    >  Si votre chaîne de connexion est différente, mettez à jour `connectionString` pour faire référence à votre base de données.  
+    >  <span data-ttu-id="50b48-241">Si votre chaîne de connexion est différente, mettez à jour `connectionString` pour faire référence à votre base de données.</span><span class="sxs-lookup"><span data-stu-id="50b48-241">If your connection string is different, update `connectionString` to refer to your database.</span></span>  
   
-4.  Ajoutez une propriété `WorkflowInstanceId` à la classe `WorkflowFormHost`.  
+4.  <span data-ttu-id="50b48-242">Ajoutez une propriété `WorkflowInstanceId` à la classe `WorkflowFormHost`.</span><span class="sxs-lookup"><span data-stu-id="50b48-242">Add a `WorkflowInstanceId` property to the `WorkflowFormHost` class.</span></span>  
   
     ```vb  
     Public ReadOnly Property WorkflowInstanceId() As Guid  
@@ -187,9 +194,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-     Le `InstanceId` zone de liste déroulante affiche une liste des ID d’instance de workflow persistantes et le `WorkflowInstanceId` propriété retourne le flux de travail actuellement sélectionné.  
+     <span data-ttu-id="50b48-243">Le `InstanceId` zone de liste déroulante affiche la liste des ID d’instance de workflow persistantes et le `WorkflowInstanceId` propriété retourne le flux de travail actuellement sélectionné.</span><span class="sxs-lookup"><span data-stu-id="50b48-243">The `InstanceId` combo box displays a list of persisted workflow instance ids, and the `WorkflowInstanceId` property returns the currently selected workflow.</span></span>  
   
-5.  Ajoutez un gestionnaire pour l'événement `Load` du formulaire. Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, cliquez sur le **événements** icône en haut de la **propriétés** fenêtre, puis double-cliquez sur **charge**.  
+5.  <span data-ttu-id="50b48-244">Ajoutez un gestionnaire pour l'événement `Load` du formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-244">Add a handler for the form `Load` event.</span></span> <span data-ttu-id="50b48-245">Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, cliquez sur le **événements** icône en haut de la **propriétés** fenêtre, puis double-cliquez sur **charge**.</span><span class="sxs-lookup"><span data-stu-id="50b48-245">To add the handler, switch to **Design View** for the form, click the **Events** icon at the top of the **Properties** window, and double-click **Load**.</span></span>  
   
     ```vb  
     Private Sub WorkflowHostForm_Load(sender As Object, e As EventArgs) Handles Me.Load  
@@ -204,7 +211,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-6.  Ajoutez le code suivant à `WorkflowHostForm_Load`.  
+6.  <span data-ttu-id="50b48-246">Ajoutez le code suivant à `WorkflowHostForm_Load`.</span><span class="sxs-lookup"><span data-stu-id="50b48-246">Add the following code to `WorkflowHostForm_Load`.</span></span>  
   
     ```vb  
     'Initialize the store and configure it so that it can be used for  
@@ -232,9 +239,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     ListPersistedWorkflows();  
     ```  
   
-     Lors du chargement du formulaire, `SqlWorkflowInstanceStore` est configuré, les zones de liste déroulante de plage et de type de workflow ont les valeurs par défaut, et les instances persistantes de workflow sont ajoutées à la zone de liste modifiable `InstanceId`.  
+     <span data-ttu-id="50b48-247">Lors du chargement du formulaire, `SqlWorkflowInstanceStore` est configuré, les zones de liste déroulante de plage et de type de workflow ont les valeurs par défaut, et les instances persistantes de workflow sont ajoutées à la zone de liste modifiable `InstanceId`.</span><span class="sxs-lookup"><span data-stu-id="50b48-247">When the form loads, the `SqlWorkflowInstanceStore` is configured, the range and workflow type combo boxes are set to default values, and the persisted workflow instances are added to the `InstanceId` combo box.</span></span>  
   
-7.  Ajoutez un gestionnaire `SelectedIndexChanged` pour `InstanceId`. Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, sélectionnez le `InstanceId` zone de liste déroulante, cliquez sur le **événements** icône en haut de la **propriétés** fenêtre, puis double-cliquez sur **SelectedIndexChanged**.  
+7.  <span data-ttu-id="50b48-248">Ajoutez un gestionnaire `SelectedIndexChanged` pour `InstanceId`.</span><span class="sxs-lookup"><span data-stu-id="50b48-248">Add a `SelectedIndexChanged` handler for `InstanceId`.</span></span> <span data-ttu-id="50b48-249">Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, sélectionnez le `InstanceId` zone de liste déroulante, cliquez sur le **événements** icône en haut de la **propriétés** fenêtre, et Double-cliquez sur **SelectedIndexChanged**.</span><span class="sxs-lookup"><span data-stu-id="50b48-249">To add the handler, switch to **Design View** for the form, select the `InstanceId` combo box, click the **Events** icon at the top of the **Properties** window, and double-click **SelectedIndexChanged**.</span></span>  
   
     ```vb  
     Private Sub InstanceId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InstanceId.SelectedIndexChanged  
@@ -249,7 +256,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-8.  Ajoutez le code suivant à `InstanceId_SelectedIndexChanged`. Chaque fois que l'utilisateur sélectionne un workflow à l'aide de la zone de liste modifiable, ce gestionnaire met à jour la fenêtre d'état.  
+8.  <span data-ttu-id="50b48-250">Ajoutez le code suivant à `InstanceId_SelectedIndexChanged`.</span><span class="sxs-lookup"><span data-stu-id="50b48-250">Add the following code to `InstanceId_SelectedIndexChanged`.</span></span> <span data-ttu-id="50b48-251">Chaque fois que l'utilisateur sélectionne un workflow à l'aide de la zone de liste modifiable, ce gestionnaire met à jour la fenêtre d'état.</span><span class="sxs-lookup"><span data-stu-id="50b48-251">Whenever the user selects a workflow by using the combo box this handler updates the status window.</span></span>  
   
     ```vb  
     If InstanceId.SelectedIndex = -1 Then  
@@ -299,7 +306,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-9. Ajoutez la méthode `ListPersistedWorkflows` suivante à la classe de formulaire.  
+9. <span data-ttu-id="50b48-252">Ajoutez la méthode `ListPersistedWorkflows` suivante à la classe de formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-252">Add the following `ListPersistedWorkflows` method to the form class.</span></span>  
   
     ```vb  
     Private Sub ListPersistedWorkflows()  
@@ -343,9 +350,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-     `ListPersistedWorkflows` interroge le magasin d'instances pour les instances persistantes de workflow, et ajoute les ID d'instance à la zone de liste modifiable `cboInstanceId`.  
+     <span data-ttu-id="50b48-253">`ListPersistedWorkflows` interroge le magasin d'instances pour les instances persistantes de workflow, et ajoute les ID d'instance à la zone de liste modifiable `cboInstanceId`.</span><span class="sxs-lookup"><span data-stu-id="50b48-253">`ListPersistedWorkflows` queries the instance store for persisted workflow instances, and adds the instance ids to the `cboInstanceId` combo box.</span></span>  
   
-10. Ajoutez la méthode `UpdateStatus` suivante et le délégué correspondant à la classe de formulaire. Cette méthode met à jour la fenêtre d'état du formulaire avec l'état du workflow en cours d'exécution.  
+10. <span data-ttu-id="50b48-254">Ajoutez la méthode `UpdateStatus` suivante et le délégué correspondant à la classe de formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-254">Add the following `UpdateStatus` method and corresponding delegate to the form class.</span></span> <span data-ttu-id="50b48-255">Cette méthode met à jour la fenêtre d'état du formulaire avec l'état du workflow en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="50b48-255">This method updates the status window on the form with the status of the currently running workflow.</span></span>  
   
     ```vb  
     Private Delegate Sub UpdateStatusDelegate(msg As String)  
@@ -392,7 +399,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-11. Ajoutez la méthode `GameOver` suivante et le délégué correspondant à la classe de formulaire. Lorsqu’un flux de travail est terminée, cette méthode met à jour l’interface Utilisateur du formulaire en supprimant l’id d’instance de flux de travail terminé à partir de la **InstanceId** zone de liste déroulante.  
+11. <span data-ttu-id="50b48-256">Ajoutez la méthode `GameOver` suivante et le délégué correspondant à la classe de formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-256">Add the following `GameOver` method and corresponding delegate to the form class.</span></span> <span data-ttu-id="50b48-257">Quand un flux de travail se termine, cette méthode met à jour l’interface utilisateur du formulaire en supprimant l’id d’instance de flux de travail terminé à partir de la **InstanceId** zone de liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="50b48-257">When a workflow completes, this method updates the form UI by removing the instance id of the completed workflow from the **InstanceId** combo box.</span></span>  
   
     ```vb  
     Private Delegate Sub GameOverDelegate()  
@@ -424,9 +431,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-###  <a name="a-namebkmkconfigureworkflowapplicationa-to-configure-the-instance-store-workflow-lifecycle-handlers-and-extensions"></a><a name="BKMK_ConfigureWorkflowApplication"></a> Pour configurer le magasin d’instances, les gestionnaires de cycle de vie de workflow et les extensions  
+###  <span data-ttu-id="50b48-258"><a name="BKMK_ConfigureWorkflowApplication"></a>Pour configurer le magasin d’instances, les gestionnaires de cycle de vie de workflow et les extensions</span><span class="sxs-lookup"><span data-stu-id="50b48-258"><a name="BKMK_ConfigureWorkflowApplication"></a> To configure the instance store, workflow lifecycle handlers, and extensions</span></span>  
   
-1.  Ajoutez une méthode `ConfigureWorkflowApplication` à la classe de formulaire.  
+1.  <span data-ttu-id="50b48-259">Ajoutez une méthode `ConfigureWorkflowApplication` à la classe de formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-259">Add a `ConfigureWorkflowApplication` method to the form class.</span></span>  
   
     ```vb  
     Private Sub ConfigureWorkflowApplication(wfApp As WorkflowApplication)  
@@ -440,9 +447,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-     Cette méthode configure `WorkflowApplication`, ajoute les extensions souhaitées, et ajoute des gestionnaires pour les événements de cycle de vie de workflow.  
+     <span data-ttu-id="50b48-260">Cette méthode configure `WorkflowApplication`, ajoute les extensions souhaitées, et ajoute des gestionnaires pour les événements de cycle de vie de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-260">This method configures the `WorkflowApplication`, adds the desired extensions, and adds handlers for the workflow lifecycle events.</span></span>  
   
-2.  Dans `ConfigureWorkflowApplication`, spécifiez le `SqlWorkflowInstanceStore` pour `WorkflowApplication`.  
+2.  <span data-ttu-id="50b48-261">Dans `ConfigureWorkflowApplication`, spécifiez le `SqlWorkflowInstanceStore` pour `WorkflowApplication`.</span><span class="sxs-lookup"><span data-stu-id="50b48-261">In `ConfigureWorkflowApplication`, specify the `SqlWorkflowInstanceStore` for the `WorkflowApplication`.</span></span>  
   
     ```vb  
     'Configure the persistence store.  
@@ -454,7 +461,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     wfApp.InstanceStore = store;  
     ```  
   
-3.  Ensuite, créez une instance de `StringWriter` et ajoutez-la à la collection `Extensions` de `WorkflowApplication`. Lorsqu’un `StringWriter` est ajoutée aux extensions, il capture toutes les `WriteLine` sortie d’activité. Lorsque le workflow devient inactif, la sortie de `WriteLine` peut être récupérée à partir de `StringWriter` et s'afficher sur le formulaire.  
+3.  <span data-ttu-id="50b48-262">Ensuite, créez une instance de `StringWriter` et ajoutez-la à la collection `Extensions` de `WorkflowApplication`.</span><span class="sxs-lookup"><span data-stu-id="50b48-262">Next, create a `StringWriter` instance and add it to the `Extensions` collection of the `WorkflowApplication`.</span></span> <span data-ttu-id="50b48-263">Lorsqu’un `StringWriter` est ajoutée aux extensions, il capture toutes les `WriteLine` sortie d’activité.</span><span class="sxs-lookup"><span data-stu-id="50b48-263">When a `StringWriter` is added to the extensions it captures all `WriteLine` activity output.</span></span> <span data-ttu-id="50b48-264">Lorsque le workflow devient inactif, la sortie de `WriteLine` peut être récupérée à partir de `StringWriter` et s'afficher sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-264">When the workflow becomes idle, the `WriteLine` output can be extracted from the `StringWriter` and displayed on the form.</span></span>  
   
     ```vb  
     'Add a StringWriter to the extensions. This captures the output  
@@ -470,7 +477,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     wfApp.Extensions.Add(sw);  
     ```  
   
-4.  Ajoutez le gestionnaire suivant pour l'événement `Completed`. Lorsqu'un workflow se termine correctement, le nombre de tours utilisés pour deviner le nombre est affiché dans la fenêtre d'état. Si le workflow se termine, les informations sur les exceptions qui ont provoqué l'arrêt sont affichées. À la fin du gestionnaire, la méthode `GameOver` est appelée, ce qui supprime le workflow terminé de la liste de workflow.  
+4.  <span data-ttu-id="50b48-265">Ajoutez le gestionnaire suivant pour l'événement `Completed`.</span><span class="sxs-lookup"><span data-stu-id="50b48-265">Add the following handler for the `Completed` event.</span></span> <span data-ttu-id="50b48-266">Lorsqu'un workflow se termine correctement, le nombre de tours utilisés pour deviner le nombre est affiché dans la fenêtre d'état.</span><span class="sxs-lookup"><span data-stu-id="50b48-266">When a workflow successfully completes, the number of turns taken to guess the number is displayed to the status window.</span></span> <span data-ttu-id="50b48-267">Si le workflow se termine, les informations sur les exceptions qui ont provoqué l'arrêt sont affichées.</span><span class="sxs-lookup"><span data-stu-id="50b48-267">If the workflow terminates, the exception information that caused the termination is displayed.</span></span> <span data-ttu-id="50b48-268">À la fin du gestionnaire, la méthode `GameOver` est appelée, ce qui supprime le workflow terminé de la liste de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-268">At the end of the handler the `GameOver` method is called, which removes the completed workflow from the workflow list.</span></span>  
   
     ```vb  
     wfApp.Completed = _  
@@ -511,7 +518,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     };  
     ```  
   
-5.  Ajoutez les gestionnaires `Aborted` et `OnUnhandledException` suivants. La méthode `GameOver` n'est pas appelée à partir du gestionnaire `Aborted`, car lorsqu'une instance du workflow est interrompue, elle ne se termine pas, et il est possible de reprendre l'instance ultérieurement.  
+5.  <span data-ttu-id="50b48-269">Ajoutez les gestionnaires `Aborted` et `OnUnhandledException` suivants.</span><span class="sxs-lookup"><span data-stu-id="50b48-269">Add the following `Aborted` and `OnUnhandledException` handlers.</span></span> <span data-ttu-id="50b48-270">La méthode `GameOver` n'est pas appelée à partir du gestionnaire `Aborted`, car lorsqu'une instance du workflow est interrompue, elle ne se termine pas, et il est possible de reprendre l'instance ultérieurement.</span><span class="sxs-lookup"><span data-stu-id="50b48-270">The `GameOver` method is not called from the `Aborted` handler because when a workflow instance is aborted, it does not terminate, and it is possible to resume the instance at a later time.</span></span>  
   
     ```vb  
     wfApp.Aborted = _  
@@ -549,7 +556,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     };  
     ```  
   
-6.  Ajoutez le gestionnaire `PersistableIdle` suivant. Ce gestionnaire extrait l'extension `StringWriter` ajoutée, récupère la sortie des activités `WriteLine`, et l'affiche dans la fenêtre d'état.  
+6.  <span data-ttu-id="50b48-271">Ajoutez le gestionnaire `PersistableIdle` suivant.</span><span class="sxs-lookup"><span data-stu-id="50b48-271">Add the following `PersistableIdle` handler.</span></span> <span data-ttu-id="50b48-272">Ce gestionnaire extrait l'extension `StringWriter` ajoutée, récupère la sortie des activités `WriteLine`, et l'affiche dans la fenêtre d'état.</span><span class="sxs-lookup"><span data-stu-id="50b48-272">This handler retrieves the `StringWriter` extension that was added, extracts the output from the `WriteLine` activities, and displays it in the status window.</span></span>  
   
     ```vb  
     wfApp.PersistableIdle = _  
@@ -576,9 +583,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     };  
     ```  
   
-     Le <xref:System.Activities.PersistableIdleAction> énumération a trois valeurs : <xref:System.Activities.PersistableIdleAction>, <xref:System.Activities.PersistableIdleAction>, et <xref:System.Activities.PersistableIdleAction>. <xref:System.Activities.PersistableIdleAction> entraîne la persistance du workflow, mais elle n’entraîne pas de décharger le flux de travail. <xref:System.Activities.PersistableIdleAction> provoque le flux de travail sont conservées et être déchargé.  
+     <span data-ttu-id="50b48-273">L'énumération <xref:System.Activities.PersistableIdleAction> a trois valeurs : <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist> et <xref:System.Activities.PersistableIdleAction.Unload>.</span><span class="sxs-lookup"><span data-stu-id="50b48-273">The <xref:System.Activities.PersistableIdleAction> enumeration has three values: <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist>, and <xref:System.Activities.PersistableIdleAction.Unload>.</span></span> <span data-ttu-id="50b48-274"><xref:System.Activities.PersistableIdleAction.Persist> entraîne la persistance du workflow, mais pas son déchargement.</span><span class="sxs-lookup"><span data-stu-id="50b48-274"><xref:System.Activities.PersistableIdleAction.Persist> causes the workflow to persist but it does not cause the workflow to unload.</span></span> <span data-ttu-id="50b48-275"><xref:System.Activities.PersistableIdleAction.Unload> entraîne la persistance du workflow et son déchargement.</span><span class="sxs-lookup"><span data-stu-id="50b48-275"><xref:System.Activities.PersistableIdleAction.Unload> causes the workflow to persist and be unloaded.</span></span>  
   
-     L'exemple suivant illustre la méthode `ConfigureWorkflowApplication` complète.  
+     <span data-ttu-id="50b48-276">L'exemple suivant illustre la méthode `ConfigureWorkflowApplication` complète.</span><span class="sxs-lookup"><span data-stu-id="50b48-276">The following example is the completed `ConfigureWorkflowApplication` method.</span></span>  
   
     ```vb  
     Private Sub ConfigureWorkflowApplication(wfApp As WorkflowApplication)  
@@ -693,12 +700,12 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-###  <a name="a-namebkmkworkflowversionmapa-to-enable-starting-and-resuming-multiple-workflow-types"></a><a name="BKMK_WorkflowVersionMap"></a> Pour activer le démarrage et la reprise de plusieurs types de flux de travail  
- Afin de reprendre une instance de workflow, l'hôte doit fournir la définition du workflow. Dans ce didacticiel il existe trois types de workflow, et les étapes suivantes présentent plusieurs versions de ces types. `WorkflowIdentity` offre un moyen pour une application hôte d'associer les informations d'identification à une instance persistante de workflow. Les étapes de cette section expliquent comment créer une classe utilitaire pour assister le mappage de l'identité de workflow d'une instance persistante de workflow à la définition correspondante de workflow. [!INCLUDE[crabout](../../../includes/crabout-md.md)]`WorkflowIdentity` et le contrôle de version, consultez la page [à l’aide de WorkflowIdentity et du Versioning](../../../docs/framework/windows-workflow-foundation//using-workflowidentity-and-versioning.md).  
+###  <span data-ttu-id="50b48-277"><a name="BKMK_WorkflowVersionMap"></a>Pour activer le démarrage et la reprise de plusieurs types de flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-277"><a name="BKMK_WorkflowVersionMap"></a> To enable starting and resuming multiple workflow types</span></span>  
+ <span data-ttu-id="50b48-278">Afin de reprendre une instance de workflow, l'hôte doit fournir la définition du workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-278">In order to resume a workflow instance, the host has to provide the workflow definition.</span></span> <span data-ttu-id="50b48-279">Dans ce didacticiel il existe trois types de workflow, et les étapes suivantes présentent plusieurs versions de ces types.</span><span class="sxs-lookup"><span data-stu-id="50b48-279">In this tutorial there are three workflow types, and subsequent tutorial steps introduce multiple versions of these types.</span></span> <span data-ttu-id="50b48-280">`WorkflowIdentity` offre un moyen pour une application hôte d'associer les informations d'identification à une instance persistante de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-280">`WorkflowIdentity` provides a way for a host application to associate identifying information with a persisted workflow instance.</span></span> <span data-ttu-id="50b48-281">Les étapes de cette section expliquent comment créer une classe utilitaire pour assister le mappage de l'identité de workflow d'une instance persistante de workflow à la définition correspondante de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-281">The steps in this section demonstrate how to create a utility class to assist with mapping the workflow identity from a persisted workflow instance to the corresponding workflow definition.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="50b48-282">`WorkflowIdentity` et le contrôle de version, consultez [à l’aide de WorkflowIdentity et du Versioning](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).</span><span class="sxs-lookup"><span data-stu-id="50b48-282"> `WorkflowIdentity` and versioning, see [Using WorkflowIdentity and Versioning](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).</span></span>  
   
-1.  Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **Ajouter**, **classe**. Type de `WorkflowVersionMap` dans le **nom** puis cliquez sur **Ajouter**.  
+1.  <span data-ttu-id="50b48-283">Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **ajouter**, **classe**.</span><span class="sxs-lookup"><span data-stu-id="50b48-283">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Class**.</span></span> <span data-ttu-id="50b48-284">Type `WorkflowVersionMap` dans les **nom** , puis cliquez sur **ajouter**.</span><span class="sxs-lookup"><span data-stu-id="50b48-284">Type `WorkflowVersionMap` into the **Name** box and click **Add**.</span></span>  
   
-2.  Ajoutez les instructions `using` (ou `Imports`) suivantes au début du fichier avec les autres instructions `using` (ou `Imports`).  
+2.  <span data-ttu-id="50b48-285">Ajoutez les instructions `using` (ou `Imports`) suivantes au début du fichier avec les autres instructions `using` (ou `Imports`).</span><span class="sxs-lookup"><span data-stu-id="50b48-285">Add the following `using` or `Imports` statements at the top of the file with the other `using` or `Imports` statements.</span></span>  
   
     ```vb  
     Imports NumberGuessWorkflowActivities  
@@ -710,7 +717,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     using System.Activities;  
     ```  
   
-3.  Remplacez la déclaration de classe `WorkflowVersionMap` par la déclaration suivante.  
+3.  <span data-ttu-id="50b48-286">Remplacez la déclaration de classe `WorkflowVersionMap` par la déclaration suivante.</span><span class="sxs-lookup"><span data-stu-id="50b48-286">Replace the `WorkflowVersionMap` class declaration with the following declaration.</span></span>  
   
     ```vb  
     Public Module WorkflowVersionMap  
@@ -808,11 +815,11 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-     `WorkflowVersionMap` contient trois identités de workflow mappées aux trois définitions de workflow de ce didacticiel et est utilisé dans les sections suivantes lorsque des workflow sont démarrés et repris.  
+     <span data-ttu-id="50b48-287">`WorkflowVersionMap` contient trois identités de workflow mappées aux trois définitions de workflow de ce didacticiel et est utilisé dans les sections suivantes lorsque des workflow sont démarrés et repris.</span><span class="sxs-lookup"><span data-stu-id="50b48-287">`WorkflowVersionMap` contains three workflow identities that map to the three workflow definitions from this tutorial and is used in the following sections when workflows are started and resumed.</span></span>  
   
-###  <a name="a-namebkmkstartworkflowa-to-start-a-new-workflow"></a><a name="BKMK_StartWorkflow"></a> Pour démarrer un nouveau flux de travail  
+###  <span data-ttu-id="50b48-288"><a name="BKMK_StartWorkflow"></a>Pour démarrer un nouveau flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-288"><a name="BKMK_StartWorkflow"></a> To start a new workflow</span></span>  
   
-1.  Ajoutez un gestionnaire `Click` pour `NewGame`. Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, puis double-cliquez sur `NewGame`. Un gestionnaire `NewGame_Click` est ajouté et l'affichage bascule en mode Code pour le formulaire. Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow est démarré.  
+1.  <span data-ttu-id="50b48-289">Ajoutez un gestionnaire `Click` pour `NewGame`.</span><span class="sxs-lookup"><span data-stu-id="50b48-289">Add a `Click` handler for `NewGame`.</span></span> <span data-ttu-id="50b48-290">Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, puis double-cliquez sur `NewGame`.</span><span class="sxs-lookup"><span data-stu-id="50b48-290">To add the handler, switch to **Design View** for the form, and double-click `NewGame`.</span></span> <span data-ttu-id="50b48-291">Un gestionnaire `NewGame_Click` est ajouté et l'affichage bascule en mode Code pour le formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-291">A `NewGame_Click` handler is added and the view switches to code view for the form.</span></span> <span data-ttu-id="50b48-292">Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow est démarré.</span><span class="sxs-lookup"><span data-stu-id="50b48-292">Whenever the user clicks this button a new workflow is started.</span></span>  
   
     ```vb  
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click  
@@ -827,7 +834,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-2.  Ajoutez le code suivant au gestionnaire de clics. Ce code crée un dictionnaire d'arguments d'entrée du workflow, indexés par nom d'argument. Ce dictionnaire a une entrée qui contient la plage du nombre généré de manière aléatoire extrait de la zone de liste modifiable de plage.  
+2.  <span data-ttu-id="50b48-293">Ajoutez le code suivant au gestionnaire de clics.</span><span class="sxs-lookup"><span data-stu-id="50b48-293">Add the following code to the click handler.</span></span> <span data-ttu-id="50b48-294">Ce code crée un dictionnaire d'arguments d'entrée du workflow, indexés par nom d'argument.</span><span class="sxs-lookup"><span data-stu-id="50b48-294">This code creates a dictionary of input arguments for the workflow, keyed by argument name.</span></span> <span data-ttu-id="50b48-295">Ce dictionnaire a une entrée qui contient la plage du nombre généré de manière aléatoire extrait de la zone de liste modifiable de plage.</span><span class="sxs-lookup"><span data-stu-id="50b48-295">This dictionary has one entry that contains the range of the randomly generated number retrieved from the range combo box.</span></span>  
   
     ```vb  
     Dim inputs As New Dictionary(Of String, Object)()  
@@ -839,7 +846,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     inputs.Add("MaxNumber", Convert.ToInt32(NumberRange.SelectedItem));  
     ```  
   
-3.  Ensuite, ajoutez le code suivant qui démarre le workflow. `WorkflowIdentity` et la définition de workflow correspondant au type de workflow sélectionné sont récupérés à l'aide de la classe d'assistance `WorkflowVersionMap`. Ensuite, une nouvelle instance `WorkflowApplication` est créée à l'aide de la définition de workflow, `WorkflowIdentity`, et du dictionnaire d'arguments d'entrée.  
+3.  <span data-ttu-id="50b48-296">Ensuite, ajoutez le code suivant qui démarre le workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-296">Next, add the following code that starts the workflow.</span></span> <span data-ttu-id="50b48-297">`WorkflowIdentity` et la définition de workflow correspondant au type de workflow sélectionné sont récupérés à l'aide de la classe d'assistance `WorkflowVersionMap`.</span><span class="sxs-lookup"><span data-stu-id="50b48-297">The `WorkflowIdentity` and workflow definition corresponding to the type of workflow selected are retrieved using the `WorkflowVersionMap` helper class.</span></span> <span data-ttu-id="50b48-298">Ensuite, une nouvelle instance `WorkflowApplication` est créée à l'aide de la définition de workflow, `WorkflowIdentity`, et du dictionnaire d'arguments d'entrée.</span><span class="sxs-lookup"><span data-stu-id="50b48-298">Next, a new `WorkflowApplication` instance is created using the workflow definition, `WorkflowIdentity`, and dictionary of input arguments.</span></span>  
   
     ```vb  
     Dim identity As WorkflowIdentity = Nothing  
@@ -881,7 +888,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     WorkflowApplication wfApp = new WorkflowApplication(wf, inputs, identity);  
     ```  
   
-4.  Ensuite, ajoutez le code suivant qui ajoute le workflow à la liste de workflow et affiche les informations de version du workflow sur le formulaire.  
+4.  <span data-ttu-id="50b48-299">Ensuite, ajoutez le code suivant qui ajoute le workflow à la liste de workflow et affiche les informations de version du workflow sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-299">Next, add the following code which adds the workflow to the workflow list and displays the workflow's version information on the form.</span></span>  
   
     ```vb  
     'Add the workflow to the list and display the version information.  
@@ -899,7 +906,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     WorkflowStarting = false;  
     ```  
   
-5.  Appelez `ConfigureWorkflowApplication` pour configurer le magasin d'instances, les extensions et les gestionnaires du cycle de vie de workflow pour cette instance `WorkflowApplication`.  
+5.  <span data-ttu-id="50b48-300">Appelez `ConfigureWorkflowApplication` pour configurer le magasin d'instances, les extensions et les gestionnaires du cycle de vie de workflow pour cette instance `WorkflowApplication`.</span><span class="sxs-lookup"><span data-stu-id="50b48-300">Call `ConfigureWorkflowApplication` to configure the instance store, extensions, and workflow lifecycle handlers for this `WorkflowApplication` instance.</span></span>  
   
     ```vb  
     'Configure the instance store, extensions, and   
@@ -913,7 +920,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     ConfigureWorkflowApplication(wfApp);  
     ```  
   
-6.  Pour finir, appelez `Run`.  
+6.  <span data-ttu-id="50b48-301">Pour finir, appelez `Run`.</span><span class="sxs-lookup"><span data-stu-id="50b48-301">Finally, call `Run`.</span></span>  
   
     ```vb  
     'Start the workflow.  
@@ -925,7 +932,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     wfApp.Run();  
     ```  
   
-     Cet exemple est le gestionnaire `NewGame_Click` terminé.  
+     <span data-ttu-id="50b48-302">Cet exemple est le gestionnaire `NewGame_Click` terminé.</span><span class="sxs-lookup"><span data-stu-id="50b48-302">The following example is the completed `NewGame_Click` handler.</span></span>  
   
     ```vb  
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click  
@@ -1005,9 +1012,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-###  <a name="a-namebkmkresumeworkflowa-to-resume-a-workflow"></a><a name="BKMK_ResumeWorkflow"></a> Pour reprendre un workflow  
+###  <span data-ttu-id="50b48-303"><a name="BKMK_ResumeWorkflow"></a>Pour reprendre un workflow</span><span class="sxs-lookup"><span data-stu-id="50b48-303"><a name="BKMK_ResumeWorkflow"></a> To resume a workflow</span></span>  
   
-1.  Ajoutez un gestionnaire `Click` pour `EnterGuess`. Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, puis double-cliquez sur `EnterGuess`. Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow reprend.  
+1.  <span data-ttu-id="50b48-304">Ajoutez un gestionnaire `Click` pour `EnterGuess`.</span><span class="sxs-lookup"><span data-stu-id="50b48-304">Add a `Click` handler for `EnterGuess`.</span></span> <span data-ttu-id="50b48-305">Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, puis double-cliquez sur `EnterGuess`.</span><span class="sxs-lookup"><span data-stu-id="50b48-305">To add the handler, switch to **Design View** for the form, and double-click `EnterGuess`.</span></span> <span data-ttu-id="50b48-306">Chaque fois que l'utilisateur clique sur ce bouton un nouveau workflow reprend.</span><span class="sxs-lookup"><span data-stu-id="50b48-306">Whenever the user clicks this button a workflow is resumed.</span></span>  
   
     ```vb  
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click  
@@ -1022,7 +1029,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-2.  Ajoutez le code suivant pour vous assurer qu'un workflow est sélectionné dans la liste de workflow, et que l'estimation de l'utilisateur est valide.  
+2.  <span data-ttu-id="50b48-307">Ajoutez le code suivant pour vous assurer qu'un workflow est sélectionné dans la liste de workflow, et que l'estimation de l'utilisateur est valide.</span><span class="sxs-lookup"><span data-stu-id="50b48-307">Add the following code to ensure that a workflow is selected in the workflow list, and that the user's guess is valid.</span></span>  
   
     ```vb  
     If WorkflowInstanceId = Guid.Empty Then  
@@ -1056,7 +1063,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-3.  Ensuite, récupérez `WorkflowApplicationInstance` de l'instance persistante de workflow. `WorkflowApplicationInstance` représente une instance persistante de workflow qui n'a pas encore été associée à une définition de workflow. `DefinitionIdentity` de `WorkflowApplicationInstance` contient `WorkflowIdentity` de l'instance persistante de workflow. Dans ce didacticiel, la classe utilitaire `WorkflowVersionMap` est utilisée pour mapper `WorkflowIdentity` à la définition appropriée de workflow. Une fois que la définition de workflow est récupérée, `WorkflowApplication` est créé, à l'aide de la définition appropriée de workflow.  
+3.  <span data-ttu-id="50b48-308">Ensuite, récupérez `WorkflowApplicationInstance` de l'instance persistante de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-308">Next, retrieve the `WorkflowApplicationInstance` of the persisted workflow instance.</span></span> <span data-ttu-id="50b48-309">`WorkflowApplicationInstance` représente une instance persistante de workflow qui n'a pas encore été associée à une définition de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-309">A `WorkflowApplicationInstance` represents a persisted workflow instance that has not yet been associated with a workflow definition.</span></span> <span data-ttu-id="50b48-310">`DefinitionIdentity` de `WorkflowApplicationInstance` contient `WorkflowIdentity` de l'instance persistante de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-310">The `DefinitionIdentity` of the `WorkflowApplicationInstance` contains the `WorkflowIdentity` of the persisted workflow instance.</span></span> <span data-ttu-id="50b48-311">Dans ce didacticiel, la classe utilitaire `WorkflowVersionMap` est utilisée pour mapper `WorkflowIdentity` à la définition appropriée de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-311">In this tutorial, the `WorkflowVersionMap` utility class is used to map the `WorkflowIdentity` to the correct workflow definition.</span></span> <span data-ttu-id="50b48-312">Une fois que la définition de workflow est récupérée, `WorkflowApplication` est créé, à l'aide de la définition appropriée de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-312">Once the workflow definition is retrieved, a `WorkflowApplication` is created, using the correct workflow definition.</span></span>  
   
     ```vb  
     Dim instance As WorkflowApplicationInstance = _  
@@ -1086,7 +1093,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
         new WorkflowApplication(wf, instance.DefinitionIdentity);  
     ```  
   
-4.  Une fois que `WorkflowApplication` est créé, configurez le magasin d'instances, les gestionnaires du cycle de vie de workflow et les extensions en appelant `ConfigureWorkflowApplication`. Ces étapes doivent être effectuées chaque fois qu'un nouveau`WorkflowApplication` est créé, et elles doivent être effectuées avant que l'instance de workflow ne soit chargée dans `WorkflowApplication`. Une fois que le workflow est chargé, il reprend à l'estimation de l'utilisateur.  
+4.  <span data-ttu-id="50b48-313">Une fois que `WorkflowApplication` est créé, configurez le magasin d'instances, les gestionnaires du cycle de vie de workflow et les extensions en appelant `ConfigureWorkflowApplication`.</span><span class="sxs-lookup"><span data-stu-id="50b48-313">Once the `WorkflowApplication` is created, configure the instance store, workflow lifecycle handlers, and extensions by calling `ConfigureWorkflowApplication`.</span></span> <span data-ttu-id="50b48-314">Ces étapes doivent être effectuées chaque fois qu'un nouveau`WorkflowApplication` est créé, et elles doivent être effectuées avant que l'instance de workflow ne soit chargée dans `WorkflowApplication`.</span><span class="sxs-lookup"><span data-stu-id="50b48-314">These steps must be done every time a new `WorkflowApplication` is created, and they must be done before the workflow instance is loaded into the `WorkflowApplication`.</span></span> <span data-ttu-id="50b48-315">Une fois que le workflow est chargé, il reprend à l'estimation de l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="50b48-315">After the workflow is loaded, it is resumed with the user's guess.</span></span>  
   
     ```vb  
     'Configure the extensions and lifecycle handlers.  
@@ -1114,7 +1121,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     wfApp.ResumeBookmark("EnterGuess", guess);  
     ```  
   
-5.  Enfin, effacez la zone de texte d'estimation et préparez le formulaire pour recevoir une autre estimation.  
+5.  <span data-ttu-id="50b48-316">Enfin, effacez la zone de texte d'estimation et préparez le formulaire pour recevoir une autre estimation.</span><span class="sxs-lookup"><span data-stu-id="50b48-316">Finally, clear the guess textbox and prepare the form to accept another guess.</span></span>  
   
     ```vb  
     'Clear the Guess textbox.  
@@ -1128,7 +1135,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     Guess.Focus();  
     ```  
   
-     Cet exemple est le gestionnaire `EnterGuess_Click` terminé.  
+     <span data-ttu-id="50b48-317">Cet exemple est le gestionnaire `EnterGuess_Click` terminé.</span><span class="sxs-lookup"><span data-stu-id="50b48-317">The following example is the completed `EnterGuess_Click` handler.</span></span>  
   
     ```vb  
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click  
@@ -1221,9 +1228,9 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-###  <a name="a-namebkmkterminateworkflowa-to-terminate-a-workflow"></a><a name="BKMK_TerminateWorkflow"></a> Pour terminer un workflow  
+###  <span data-ttu-id="50b48-318"><a name="BKMK_TerminateWorkflow"></a>Pour mettre fin à un flux de travail</span><span class="sxs-lookup"><span data-stu-id="50b48-318"><a name="BKMK_TerminateWorkflow"></a> To terminate a workflow</span></span>  
   
-1.  Ajoutez un gestionnaire `Click` pour `QuitGame`. Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, puis double-cliquez sur `QuitGame`. Chaque fois que l'utilisateur clique sur ce bouton le workflow actuellement sélectionné est terminé.  
+1.  <span data-ttu-id="50b48-319">Ajoutez un gestionnaire `Click` pour `QuitGame`.</span><span class="sxs-lookup"><span data-stu-id="50b48-319">Add a `Click` handler for `QuitGame`.</span></span> <span data-ttu-id="50b48-320">Pour ajouter le gestionnaire, basculez vers **mode** pour le formulaire, puis double-cliquez sur `QuitGame`.</span><span class="sxs-lookup"><span data-stu-id="50b48-320">To add the handler, switch to **Design View** for the form, and double-click `QuitGame`.</span></span> <span data-ttu-id="50b48-321">Chaque fois que l'utilisateur clique sur ce bouton le workflow actuellement sélectionné est terminé.</span><span class="sxs-lookup"><span data-stu-id="50b48-321">Whenever the user clicks this button the currently selected workflow is terminated.</span></span>  
   
     ```vb  
     Private Sub QuitGame_Click(sender As Object, e As EventArgs) Handles QuitGame.Click  
@@ -1238,7 +1245,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-2.  Ajoutez le code suivant au gestionnaire `QuitGame_Click`. Ce code vérifie d'abord qu'un workflow est sélectionné dans la liste de workflow. Ensuite, il charge l'instance persistante dans `WorkflowApplicationInstance`, utilise `DefinitionIdentity` pour déterminer la définition appropriée de workflow, puis initialise `WorkflowApplication`. Ensuite, les extensions et les gestionnaires de cycle de vie de workflow sont configurés avec un appel à `ConfigureWorkflowApplication`. Une fois que `WorkflowApplication` est configuré, il est chargé, puis `Terminate` est appelé.  
+2.  <span data-ttu-id="50b48-322">Ajoutez le code suivant au gestionnaire `QuitGame_Click`.</span><span class="sxs-lookup"><span data-stu-id="50b48-322">Add the following code to the `QuitGame_Click` handler.</span></span> <span data-ttu-id="50b48-323">Ce code vérifie d'abord qu'un workflow est sélectionné dans la liste de workflow.</span><span class="sxs-lookup"><span data-stu-id="50b48-323">This code first checks to ensure that a workflow is selected in the workflow list.</span></span> <span data-ttu-id="50b48-324">Ensuite, il charge l'instance persistante dans `WorkflowApplicationInstance`, utilise `DefinitionIdentity` pour déterminer la définition appropriée de workflow, puis initialise `WorkflowApplication`.</span><span class="sxs-lookup"><span data-stu-id="50b48-324">Then it loads the persisted instance into a `WorkflowApplicationInstance`, uses the `DefinitionIdentity` to determine the correct workflow definition, and then initializes the `WorkflowApplication`.</span></span> <span data-ttu-id="50b48-325">Ensuite, les extensions et les gestionnaires de cycle de vie de workflow sont configurés avec un appel à `ConfigureWorkflowApplication`.</span><span class="sxs-lookup"><span data-stu-id="50b48-325">Next the extensions and workflow lifecycle handlers are configured with a call to `ConfigureWorkflowApplication`.</span></span> <span data-ttu-id="50b48-326">Une fois que `WorkflowApplication` est configuré, il est chargé, puis `Terminate` est appelé.</span><span class="sxs-lookup"><span data-stu-id="50b48-326">Once the `WorkflowApplication` is configured, it is loaded, and then `Terminate` is called.</span></span>  
   
     ```vb  
     If WorkflowInstanceId = Guid.Empty Then  
@@ -1295,11 +1302,11 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     wfApp.Terminate("User resigns.");  
     ```  
   
-###  <a name="a-namebkmkbuildandruna-to-build-and-run-the-application"></a><a name="BKMK_BuildAndRun"></a> Pour générer et exécuter l’application  
+###  <span data-ttu-id="50b48-327"><a name="BKMK_BuildAndRun"></a>Pour générer et exécuter l’application</span><span class="sxs-lookup"><span data-stu-id="50b48-327"><a name="BKMK_BuildAndRun"></a> To build and run the application</span></span>  
   
-1.  Double-cliquez sur **Program.cs** (ou **Module1.vb**) dans **l’Explorateur de solutions** pour afficher le code.  
+1.  <span data-ttu-id="50b48-328">Double-cliquez sur **Program.cs** (ou **Module1.vb**) dans **l’Explorateur de solutions** pour afficher le code.</span><span class="sxs-lookup"><span data-stu-id="50b48-328">Double-click **Program.cs** (or **Module1.vb**) in **Solution Explorer** to display the code.</span></span>  
   
-2.  Ajoutez l'instruction `using` (ou `Imports`) suivante au début du fichier avec les autres instructions `using` (ou `Imports`).  
+2.  <span data-ttu-id="50b48-329">Ajoutez l'instruction `using` (ou `Imports`) suivante au début du fichier avec les autres instructions `using` (ou `Imports`).</span><span class="sxs-lookup"><span data-stu-id="50b48-329">Add the following `using` (or `Imports`) statement at the top of the file with the other `using` (or `Imports`) statements.</span></span>  
   
     ```vb  
     Imports System.Windows.Forms  
@@ -1309,7 +1316,7 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     using System.Windows.Forms;  
     ```  
   
-3.  Supprimez ou commentez le flux de travail existant qui héberge le code à partir de [Comment : exécuter un Workflow](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md), et remplacez-le par le code suivant.  
+3.  <span data-ttu-id="50b48-330">Supprimez ou commentez le code à partir d’hébergement de workflow existant [Comment : exécuter un Workflow](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)et remplacez-le par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="50b48-330">Remove or comment out the existing workflow hosting code from [How to: Run a Workflow](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md), and replace it with the following code.</span></span>  
   
     ```vb  
     Sub Main()  
@@ -1326,14 +1333,14 @@ L'une des fonctionnalités centrales de [!INCLUDE[wf](../../../includes/wf-md.md
     }  
     ```  
   
-4.  Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **propriétés**. Dans le **Application** spécifiez **Windows Application** pour la **type de sortie**. Cette étape est facultative, mais si elle n'est pas suivie, la fenêtre de console s'affiche en plus du formulaire.  
+4.  <span data-ttu-id="50b48-331">Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **propriétés**.</span><span class="sxs-lookup"><span data-stu-id="50b48-331">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Properties**.</span></span> <span data-ttu-id="50b48-332">Dans le **Application** onglet, spécifiez **Application Windows** pour le **type de sortie**.</span><span class="sxs-lookup"><span data-stu-id="50b48-332">In the **Application** tab, specify **Windows Application** for the **Output type**.</span></span> <span data-ttu-id="50b48-333">Cette étape est facultative, mais si elle n'est pas suivie, la fenêtre de console s'affiche en plus du formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-333">This step is optional, but if it is not followed the console window is displayed in addition to the form.</span></span>  
   
-5.  Appuyez sur Ctrl+Maj+B pour générer l'application.  
+5.  <span data-ttu-id="50b48-334">Appuyez sur Ctrl+Maj+B pour générer l'application.</span><span class="sxs-lookup"><span data-stu-id="50b48-334">Press Ctrl+Shift+B to build the application.</span></span>  
   
-6.  Vérifiez que **NumberGuessWorkflowHost** est défini comme application de démarrage, puis appuyez sur Ctrl + F5 pour démarrer l’application.  
+6.  <span data-ttu-id="50b48-335">Vérifiez que **NumberGuessWorkflowHost** est définie en tant que l’application de démarrage, puis appuyez sur Ctrl + F5 pour démarrer l’application.</span><span class="sxs-lookup"><span data-stu-id="50b48-335">Ensure that **NumberGuessWorkflowHost** is set as the startup application, and press Ctrl+F5 to start the application.</span></span>  
   
-7.  Sélectionnez une plage pour le jeu d’estimation et le type de flux de travail pour démarrer, cliquez sur **nouveau jeu**. Entrez une proposition dans la **estimation** puis cliquez sur **Go** pour soumettre votre proposition. Notez que la sortie des activités `WriteLine` s'affiche sur le formulaire.  
+7.  <span data-ttu-id="50b48-336">Sélectionnez une plage pour le jeu de devinettes et le type de flux de travail à démarrer, puis cliquez sur **nouveau jeu**.</span><span class="sxs-lookup"><span data-stu-id="50b48-336">Select a range for the guessing game and the type of workflow to start, and click **New Game**.</span></span> <span data-ttu-id="50b48-337">Entrez une proposition dans la **estimation** , puis cliquez sur **accédez** pour soumettre votre proposition.</span><span class="sxs-lookup"><span data-stu-id="50b48-337">Enter a guess in the **Guess** box and click **Go** to submit your guess.</span></span> <span data-ttu-id="50b48-338">Notez que la sortie des activités `WriteLine` s'affiche sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="50b48-338">Note that the output from the `WriteLine` activities is displayed on the form.</span></span>  
   
-8.  Démarrez plusieurs workflows à l’aide de différents types de workflow et plages de nombres, entrez des propositions et basculer entre les flux de travail en sélectionnant dans le **Id d’Instance de flux de travail** liste.  
+8.  <span data-ttu-id="50b48-339">Démarrer plusieurs flux de travail à l’aide de différents types de workflow et plages de nombres, entrez des propositions et basculer entre les flux de travail en sélectionnant à partir de la **Id d’Instance de flux de travail** liste.</span><span class="sxs-lookup"><span data-stu-id="50b48-339">Start several workflows using different workflow types and number ranges, enter some guesses, and switch between the workflows by selecting from the **Workflow Instance Id** list.</span></span>  
   
-     Notez que lorsque vous basculez vers un nouveau workflow, les propositions précédentes et la progression du workflow ne s'affichent pas dans la fenêtre d'état. En effet, l'état n'est pas disponible, car il n'est pas capturé ni enregistré. Dans l’étape suivante du didacticiel, [Comment : créer un Participant de suivi personnalisé](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-tracking-participant.md), vous créez un participant de suivi personnalisé qui enregistre ces informations.
+     <span data-ttu-id="50b48-340">Notez que lorsque vous basculez vers un nouveau workflow, les propositions précédentes et la progression du workflow ne s'affichent pas dans la fenêtre d'état.</span><span class="sxs-lookup"><span data-stu-id="50b48-340">Note that when you switch to a new workflow, the previous guesses and progress of the workflow are not displayed in the status window.</span></span> <span data-ttu-id="50b48-341">En effet, l'état n'est pas disponible, car il n'est pas capturé ni enregistré.</span><span class="sxs-lookup"><span data-stu-id="50b48-341">The reason the status is not available is because it is not captured and saved anywhere.</span></span> <span data-ttu-id="50b48-342">Dans l’étape suivante du didacticiel, [Comment : créer un Participant de suivi personnalisé](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md), vous créez un participant de suivi personnalisé qui enregistre ces informations.</span><span class="sxs-lookup"><span data-stu-id="50b48-342">In the next step of the tutorial, [How to: Create a Custom Tracking Participant](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md), you create a custom tracking participant that saves this information.</span></span>

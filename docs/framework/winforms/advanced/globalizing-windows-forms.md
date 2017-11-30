@@ -1,72 +1,73 @@
 ---
-title: "Globalisation des Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "applications globales, créer des Windows Forms"
-  - "globalisation (Windows Forms)"
-  - "localisation (Windows Forms)"
-  - "Windows Forms, globalisation"
-  - "applications universelles"
+title: Globalisation des Windows Forms
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, globalization
+- localization [Windows Forms]
+- globalization [Windows Forms]
+- world-ready applications
+- global applications [Windows Forms], creating Windows Forms
 ms.assetid: 72f6cd92-83be-45ec-aa37-9cb8e3ebc3c5
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4a111a600230bda529362ac19969a8a4b7d32916
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Globalisation des Windows Forms
-La *globalisation* est le processus de conception et de développement d'un produit logiciel qui fonctionne pour plusieurs cultures.  
+# <a name="globalizing-windows-forms"></a><span data-ttu-id="affba-102">Globalisation des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="affba-102">Globalizing Windows Forms</span></span>
+<span data-ttu-id="affba-103">*Globalisation* est le processus de conception et développement d’un produit logiciel qui fonctionne pour plusieurs cultures.</span><span class="sxs-lookup"><span data-stu-id="affba-103">*Globalization* is the process of designing and developing a software product that functions for multiple cultures.</span></span>  
   
-## Dans cette section  
- [Encodage et globalisation des applications Windows Forms](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md)  
- Décrit la prise en charge Unicode complète et ses implications.  
+## <a name="in-this-section"></a><span data-ttu-id="affba-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="affba-104">In This Section</span></span>  
+ [<span data-ttu-id="affba-105">Encodage et globalisation des applications Windows Forms</span><span class="sxs-lookup"><span data-stu-id="affba-105">Encoding and Windows Forms Globalization</span></span>](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md)  
+ <span data-ttu-id="affba-106">Décrit la prise en charge Unicode complète et ses implications.</span><span class="sxs-lookup"><span data-stu-id="affba-106">Describes full Unicode support and its implications.</span></span>  
   
- [Polices internationales pour les applications Windows Forms et les contrôles](../../../../docs/framework/winforms/advanced/international-fonts-in-windows-forms-and-controls.md)  
- Explique quand et comment sélectionner des polices pour l'affichage de caractères internationaux dans les Windows Forms.  
+ [<span data-ttu-id="affba-107">Polices internationales pour les applications Windows Forms et les contrôles</span><span class="sxs-lookup"><span data-stu-id="affba-107">International Fonts in Windows Forms and Controls</span></span>](../../../../docs/framework/winforms/advanced/international-fonts-in-windows-forms-and-controls.md)  
+ <span data-ttu-id="affba-108">Explique quand et comment sélectionner des polices pour l'affichage de caractères internationaux dans les Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="affba-108">Explains when and how to select fonts for display of international characters on Windows Forms.</span></span>  
   
- [Affichage des caractères asiatiques avec la propriété ImeMode](../../../../docs/framework/winforms/advanced/display-of-asian-characters-with-the-imemode-property.md)  
- Présente la propriété `ImeMode`, qui sert à contrôler le type d'entrée accepté par un Windows Form ou un contrôle.  
+ [<span data-ttu-id="affba-109">Affichage des caractères asiatiques avec la propriété ImeMode</span><span class="sxs-lookup"><span data-stu-id="affba-109">Display of Asian Characters with the ImeMode Property</span></span>](../../../../docs/framework/winforms/advanced/display-of-asian-characters-with-the-imemode-property.md)  
+ <span data-ttu-id="affba-110">Présente la propriété `ImeMode`, qui sert à contrôler le type d'entrée accepté par un Windows Form ou un contrôle.</span><span class="sxs-lookup"><span data-stu-id="affba-110">Introduces the `ImeMode` property, which is used to control the type of input a Windows Form or control accepts.</span></span>  
   
--   [Procédure pas à pas : téléchargement d'assemblys satellites à la demande avec l'API du déploiement ClickOnce à l'aide du concepteur](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))  
+-   <span data-ttu-id="affba-111">[Procédure pas à pas : téléchargement d’assemblys satellites à la demande avec l’API de déploiement ClickOnce à l’aide du concepteur](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-111">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API Using the Designer](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))</span></span>  
   
--   [Localisation des applications ClickOnce](http://msdn.microsoft.com/library/ms404266%20\(v=vs.110\))  
+-   <span data-ttu-id="affba-112">[Localisation des applications ClickOnce](http://msdn.microsoft.com/library/ms404266\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-112">[Localizing ClickOnce Applications](http://msdn.microsoft.com/library/ms404266\(v=vs.110\))</span></span>  
   
--   [Procédure pas à pas : téléchargement d'assemblys satellites à la demande avec l'API du déploiement ClickOnce](http://msdn.microsoft.com/library/ms404269\(v=vs.110\))  
+-   <span data-ttu-id="affba-113">[Procédure pas à pas : téléchargement d’assemblys satellites à la demande avec l’API de déploiement ClickOnce](http://msdn.microsoft.com/library/ms404269\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-113">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API](http://msdn.microsoft.com/library/ms404269\(v=vs.110\))</span></span>  
   
--   [Comment : définir la culture et la culture de l'interface utilisateur pour la globalisation des Windows Forms](http://msdn.microsoft.com/library/b28bx3bh%20\(v=vs.110\))  
+-   <span data-ttu-id="affba-114">[Comment : définir la Culture et la Culture d’interface utilisateur pour la globalisation des Windows Forms](http://msdn.microsoft.com/library/b28bx3bh\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-114">[How to: Set the Culture and UI Culture for Windows Forms Globalization](http://msdn.microsoft.com/library/b28bx3bh\(v=vs.110\))</span></span>  
   
--   [Comment : créer des Windows Forms et contrôles mis en miroir](http://msdn.microsoft.com/library/xwbz5ws0%20\(v=vs.110\))  
+-   <span data-ttu-id="affba-115">[Comment : créer des mises en miroir Windows Forms et les contrôles](http://msdn.microsoft.com/library/xwbz5ws0\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-115">[How to: Create Mirrored Windows Forms and Controls](http://msdn.microsoft.com/library/xwbz5ws0\(v=vs.110\))</span></span>  
   
--   [Comment : prendre en charge la localisation dans les Windows Forms à l'aide du redimensionnement automatique et du contrôle TableLayoutPanel](http://msdn.microsoft.com/library/1zkt8b33\(v=vs.110\))  
+-   <span data-ttu-id="affba-116">[Comment : prendre en charge la localisation dans les Windows Forms à l’aide du redimensionnement automatique et du contrôle TableLayoutPanel](http://msdn.microsoft.com/library/1zkt8b33\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-116">[How to: Support Localization on Windows Forms Using AutoSize and the TableLayoutPanel Control](http://msdn.microsoft.com/library/1zkt8b33\(v=vs.110\))</span></span>  
   
--   Consultez également [Procédure pas à pas : localisation de Windows Forms](http://msdn.microsoft.com/library/y99d1cd3%20\(v=vs.110\)).  
+-   <span data-ttu-id="affba-117">[Procédure pas à pas : Localisation de Windows Forms](http://msdn.microsoft.com/library/y99d1cd3\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-117">[Walkthrough: Localizing Windows Forms](http://msdn.microsoft.com/library/y99d1cd3\(v=vs.110\))</span></span>  
   
--   [Procédure pas à pas : création d'une présentation qui ajuste la proportion pour la localisation](http://msdn.microsoft.com/en-us/library/7k9fa71y%20\(v=vs.110\))  
+-   <span data-ttu-id="affba-118">[Procédure pas à pas : Création d’une présentation qui ajuste la Proportion pour la localisation](http://msdn.microsoft.com/en-us/library/7k9fa71y\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-118">[Walkthrough: Creating a Layout That Adjusts Proportion for Localization](http://msdn.microsoft.com/en-us/library/7k9fa71y\(v=vs.110\))</span></span>  
   
--   [Comment : créer des boîtes de message pour des Windows Forms bidirectionnelles](http://msdn.microsoft.com/library/k1689bxh%20\(v=vs.110\))  
+-   <span data-ttu-id="affba-119">[Comment : créer des boîtes de Message pour bidirectionnelle Windows Forms](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-119">[How to: Create Message Boxes for Bi-Directional Windows Forms](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))</span></span>  
   
--   [Procédure pas à pas : téléchargement d'assemblys satellites à la demande avec l'API du déploiement ClickOnce](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))  
+-   <span data-ttu-id="affba-120">[Procédure pas à pas : téléchargement d’assemblys satellites à la demande avec l’API de déploiement ClickOnce à l’aide du concepteur](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="affba-120">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API Using the Designer](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))</span></span>  
   
--   [Localisation des applications ClickOnce](http://msdn.microsoft.com/library/ms404266%20\(v\))  
+-   <span data-ttu-id="affba-121">[Localisation des applications ClickOnce](http://msdn.microsoft.com/library/ms404266\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="affba-121">[Localizing ClickOnce Applications](http://msdn.microsoft.com/library/ms404266\(v=vs.120\))</span></span>  
   
--   [Procédure pas à pas : téléchargement d'assemblys satellites à la demande avec l'API du déploiement ClickOnce](http://msdn.microsoft.com/library/ms404269\(v=vs.120\))  
+-   <span data-ttu-id="affba-122">[Procédure pas à pas : téléchargement d’assemblys satellites à la demande avec l’API de déploiement ClickOnce](http://msdn.microsoft.com/library/ms404269\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="affba-122">[Walkthrough: Downloading Satellite Assemblies on Demand with the ClickOnce Deployment API](http://msdn.microsoft.com/library/ms404269\(v=vs.120\))</span></span>  
   
-## Rubriques connexes  
+## <a name="related-sections"></a><span data-ttu-id="affba-123">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="affba-123">Related Sections</span></span>  
   
-1.  [Globalisation et localisation d'applications](http://msdn.microsoft.com/library/1021kkz0%20\(v=vs.110\))  
+1.  <span data-ttu-id="affba-124">[Globalisation et localisation d’applications](http://msdn.microsoft.com/library/1021kkz0\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-124">[Globalizing and Localizing Applications](http://msdn.microsoft.com/library/1021kkz0\(v=vs.110\))</span></span>  
   
-2.  [Globalisation d'applications](http://msdn.microsoft.com/library/eaa7b9c0%20\(v=vs.110\))  
+2.  <span data-ttu-id="affba-125">[Globalisation d’applications](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="affba-125">[Globalizing Applications](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.110\))</span></span>  
   
-3.  [Globalisation et localisation d'applications](http://msdn.microsoft.com/library/1021kkz0\(v=vs.120\))  
+3.  <span data-ttu-id="affba-126">[Globalisation et localisation d’applications](http://msdn.microsoft.com/library/1021kkz0\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="affba-126">[Globalizing and Localizing Applications](http://msdn.microsoft.com/library/1021kkz0\(v=vs.120\))</span></span>  
   
-4.  [Globalisation d'applications](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.120\))
+4.  <span data-ttu-id="affba-127">[Globalisation d’applications](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.120\))</span><span class="sxs-lookup"><span data-stu-id="affba-127">[Globalizing Applications](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.120\))</span></span>

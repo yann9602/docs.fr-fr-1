@@ -1,46 +1,39 @@
 ---
-title: "Guide pratique pour migrer DCOM de code managé vers WCF"
+title: "Comment : migrer DCOM de code managé vers WCF"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2d6077b9d5be8866aa22b884f61ad49f48ee9b0a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: af401cafe0740dcd9a313ae9143f9772605137d3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Guide pratique pour migrer DCOM de code managé vers WCF
-Pour des raisons de sécurité, il est recommandé d'utiliser Windows Communication Foundation (WCF) plutôt que le modèle DCOM pour les appels de code managé entre serveurs et clients dans un environnement distribué. Cet article explique comment migrer du code DCOM vers WCF pour les scénarios suivants.  
+# <a name="how-to-migrate-managed-code-dcom-to-wcf"></a><span data-ttu-id="dda7b-102">Comment : migrer DCOM de code managé vers WCF</span><span class="sxs-lookup"><span data-stu-id="dda7b-102">How to: Migrate Managed-Code DCOM to WCF</span></span>
+<span data-ttu-id="dda7b-103">Pour des raisons de sécurité, il est recommandé d'utiliser Windows Communication Foundation (WCF) plutôt que le modèle DCOM pour les appels de code managé entre serveurs et clients dans un environnement distribué.</span><span class="sxs-lookup"><span data-stu-id="dda7b-103">Windows Communication Foundation (WCF) is the recommended and secure choice over Distributed Component Object Model (DCOM) for managed code calls between servers and clients in a distributed environment.</span></span> <span data-ttu-id="dda7b-104">Cet article explique comment migrer du code DCOM vers WCF pour les scénarios suivants.</span><span class="sxs-lookup"><span data-stu-id="dda7b-104">This article shows how you to migrate code from DCOM to WCF for the following scenarios.</span></span>  
   
--   Le service distant retourne un objet par valeur au client  
+-   <span data-ttu-id="dda7b-105">Le service distant retourne un objet par valeur au client</span><span class="sxs-lookup"><span data-stu-id="dda7b-105">The remote service returns an object by-value to the client</span></span>  
   
--   Le client envoie un objet par valeur au service distant  
+-   <span data-ttu-id="dda7b-106">Le client envoie un objet par valeur au service distant</span><span class="sxs-lookup"><span data-stu-id="dda7b-106">The client sends an object by-value to the remote service</span></span>  
   
--   Le service distant retourne un objet par référence au client  
+-   <span data-ttu-id="dda7b-107">Le service distant retourne un objet par référence au client</span><span class="sxs-lookup"><span data-stu-id="dda7b-107">The remote service returns an object by-reference to the client</span></span>  
   
- Pour des raisons de sécurité, l'envoi d'un objet par référence à partir du client vers le service n'est pas autorisé dans WCF. Une conversation entre un client et un serveur peut être effectuée dans WCF à l'aide d'un service duplex.  Pour plus d’informations sur les services duplex, consultez [Services duplex](../../../docs/framework/wcf/feature-details/duplex-services.md).  
+ <span data-ttu-id="dda7b-108">Pour des raisons de sécurité, l'envoi d'un objet par référence à partir du client vers le service n'est pas autorisé dans WCF.</span><span class="sxs-lookup"><span data-stu-id="dda7b-108">For security reasons, sending an object by-reference from the client to the service is not allowed in WCF.</span></span> <span data-ttu-id="dda7b-109">Une conversation entre un client et un serveur peut être effectuée dans WCF à l'aide d'un service duplex.</span><span class="sxs-lookup"><span data-stu-id="dda7b-109">A scenario that requires a conversation back and forth between client and server can be achieved in WCF using a duplex service.</span></span>  <span data-ttu-id="dda7b-110">Pour plus d’informations sur les services duplex, consultez [Services duplex](../../../docs/framework/wcf/feature-details/duplex-services.md).</span><span class="sxs-lookup"><span data-stu-id="dda7b-110">For more information about duplex services, see [Duplex Services](../../../docs/framework/wcf/feature-details/duplex-services.md).</span></span>  
   
- Pour plus d’informations sur la création de services WCF et de clients pour ces services, consultez [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md), [Conception et implémentation de services](../../../docs/framework/wcf/designing-and-implementing-services.md) et [Génération de clients](../../../docs/framework/wcf/building-clients.md).  
+ <span data-ttu-id="dda7b-111">Pour plus d’informations sur la création de services WCF et de clients pour ces services, consultez [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md), [Conception et implémentation de services](../../../docs/framework/wcf/designing-and-implementing-services.md) et [Génération de clients](../../../docs/framework/wcf/building-clients.md).</span><span class="sxs-lookup"><span data-stu-id="dda7b-111">For more details about creating WCF services and clients for those services, see [Basic WCF Programming](../../../docs/framework/wcf/basic-wcf-programming.md), [Designing and Implementing Services](../../../docs/framework/wcf/designing-and-implementing-services.md), and [Building Clients](../../../docs/framework/wcf/building-clients.md).</span></span>  
   
-## <a name="dcom-example-code"></a>Exemple de code DCOM  
- Pour ces scénarios, les interfaces DCOM qui sont illustrées à l'aide de WCF possèdent la structure suivante :  
+## <a name="dcom-example-code"></a><span data-ttu-id="dda7b-112">Exemple de code DCOM</span><span class="sxs-lookup"><span data-stu-id="dda7b-112">DCOM example code</span></span>  
+ <span data-ttu-id="dda7b-113">Pour ces scénarios, les interfaces DCOM qui sont illustrées à l'aide de WCF possèdent la structure suivante :</span><span class="sxs-lookup"><span data-stu-id="dda7b-113">For these scenarios, the DCOM interfaces that are illustrated using WCF have the following structure:</span></span>  
   
 ```  
 [ComVisible(true)]  
@@ -63,8 +56,8 @@ public class Customer
 }  
 ```  
   
-## <a name="the-service-returns-an-object-by-value"></a>Le service retourne un objet par valeur  
- Pour ce scénario, vous effectuez un appel à un service et sa méthode renvoie un objet qui est passé par valeur du serveur au client. Ce scénario représente l'appel COM suivant :  
+## <a name="the-service-returns-an-object-by-value"></a><span data-ttu-id="dda7b-114">Le service retourne un objet par valeur</span><span class="sxs-lookup"><span data-stu-id="dda7b-114">The service returns an object by-value</span></span>  
+ <span data-ttu-id="dda7b-115">Pour ce scénario, vous effectuez un appel à un service et sa méthode renvoie un objet qui est passé par valeur du serveur au client.</span><span class="sxs-lookup"><span data-stu-id="dda7b-115">For this scenario, you make a call to a service and it method returns an object, which is passed by-value from the server to the client.</span></span> <span data-ttu-id="dda7b-116">Ce scénario représente l'appel COM suivant :</span><span class="sxs-lookup"><span data-stu-id="dda7b-116">This scenario represents the following COM call:</span></span>  
   
 ```  
 public interface IRemoteService  
@@ -73,10 +66,10 @@ public interface IRemoteService
 }  
 ```  
   
- Dans ce scénario, le client reçoit une copie désérialisée d'un objet à partir du service distant. Le client peut interagir avec cette copie locale sans effectuer de rappel au service.  En d'autres termes, le client a la garantie que le service ne sera impliqué en aucune façon quand les méthodes de la copie locale seront appelées. WCF retourne toujours les objets à partir du service par valeur. Les étapes suivantes décrivent donc la création d'un service WCF normal.  
+ <span data-ttu-id="dda7b-117">Dans ce scénario, le client reçoit une copie désérialisée d'un objet à partir du service distant.</span><span class="sxs-lookup"><span data-stu-id="dda7b-117">In this scenario, the client receives a deserialized copy of an object from the remote service.</span></span> <span data-ttu-id="dda7b-118">Le client peut interagir avec cette copie locale sans effectuer de rappel au service.</span><span class="sxs-lookup"><span data-stu-id="dda7b-118">The client can interact with this local copy without calling back to the service.</span></span>  <span data-ttu-id="dda7b-119">En d'autres termes, le client a la garantie que le service ne sera impliqué en aucune façon quand les méthodes de la copie locale seront appelées.</span><span class="sxs-lookup"><span data-stu-id="dda7b-119">In other words, the client is guaranteed the service will not be involved in any way when methods on the local copy are called.</span></span> <span data-ttu-id="dda7b-120">WCF retourne toujours les objets à partir du service par valeur. Les étapes suivantes décrivent donc la création d'un service WCF normal.</span><span class="sxs-lookup"><span data-stu-id="dda7b-120">WCF always returns objects from the service by value, so the following steps describe creating a regular WCF service.</span></span>  
   
-### <a name="step-1-define-the-wcf-service-interface"></a>Étape 1 : Définir l'interface du service WCF  
- Définissez une interface publique pour le service WCF et marquez-la avec l'attribut [<xref:System.ServiceModel.ServiceContractAttribute>].  Marquez les méthodes que vous souhaitez exposer aux clients avec l'attribut [<xref:System.ServiceModel.OperationContractAttribute>]. L'exemple suivant illustre l'utilisation de ces attributs pour identifier l'interface côté serveur et les méthodes d'interface qu'un client peut appeler. La méthode utilisée pour ce scénario est affichée en gras.  
+### <a name="step-1-define-the-wcf-service-interface"></a><span data-ttu-id="dda7b-121">Étape 1 : Définir l'interface du service WCF</span><span class="sxs-lookup"><span data-stu-id="dda7b-121">Step 1: Define the WCF service interface</span></span>  
+ <span data-ttu-id="dda7b-122">Définissez une interface publique pour le service WCF et marquez-la avec l'attribut [<xref:System.ServiceModel.ServiceContractAttribute>].</span><span class="sxs-lookup"><span data-stu-id="dda7b-122">Define a public interface for the WCF service and mark it with the [<xref:System.ServiceModel.ServiceContractAttribute>] attribute.</span></span>  <span data-ttu-id="dda7b-123">Marquez les méthodes que vous souhaitez exposer aux clients avec l'attribut [<xref:System.ServiceModel.OperationContractAttribute>].</span><span class="sxs-lookup"><span data-stu-id="dda7b-123">Mark the methods you want to expose to clients with the [<xref:System.ServiceModel.OperationContractAttribute>] attribute.</span></span> <span data-ttu-id="dda7b-124">L'exemple suivant illustre l'utilisation de ces attributs pour identifier l'interface côté serveur et les méthodes d'interface qu'un client peut appeler.</span><span class="sxs-lookup"><span data-stu-id="dda7b-124">The following example shows using these attributes to identify the server-side interface and interface methods a client can call.</span></span> <span data-ttu-id="dda7b-125">La méthode utilisée pour ce scénario est affichée en gras.</span><span class="sxs-lookup"><span data-stu-id="dda7b-125">The method used for this scenario is shown in bold.</span></span>  
   
 ```  
 using System.Runtime.Serialization;  
@@ -94,10 +87,10 @@ public interface ICustomerManager
 }  
 ```  
   
-### <a name="step-2-define-the-data-contract"></a>Étape 2 : Définir le contrat de données  
- Ensuite, vous devez créer un contrat de données pour le service, qui décrira comment les données seront échangées entre le service et ses clients.  Les classes décrites dans le contrat de données doivent être marquées avec l'attribut [<xref:System.Runtime.Serialization.DataContractAttribute>]. Les propriétés ou les champs qui doivent être visibles du client et du serveur doivent être marqués avec l'attribut [<xref:System.Runtime.Serialization.DataMemberAttribute>]. Si vous voulez que les types dérivés d'une classe du contrat de données soient autorisés, vous devez les identifier avec l'attribut [<xref:System.Runtime.Serialization.KnownTypeAttribute>]. WCF va uniquement sérialiser ou désérialiser les types de l'interface de service et les types identifiés comme connus. Si vous essayez d'utiliser un type qui n'est pas connu, une exception se produit.  
+### <a name="step-2-define-the-data-contract"></a><span data-ttu-id="dda7b-126">Étape 2 : Définir le contrat de données</span><span class="sxs-lookup"><span data-stu-id="dda7b-126">Step 2: Define the data contract</span></span>  
+ <span data-ttu-id="dda7b-127">Ensuite, vous devez créer un contrat de données pour le service, qui décrira comment les données seront échangées entre le service et ses clients.</span><span class="sxs-lookup"><span data-stu-id="dda7b-127">Next you should create a data contract for the service, which will describe how the data will be exchanged between the service and its clients.</span></span>  <span data-ttu-id="dda7b-128">Les classes décrites dans le contrat de données doivent être marquées avec l'attribut [<xref:System.Runtime.Serialization.DataContractAttribute>].</span><span class="sxs-lookup"><span data-stu-id="dda7b-128">Classes described in the data contract should be marked with the [<xref:System.Runtime.Serialization.DataContractAttribute>] attribute.</span></span> <span data-ttu-id="dda7b-129">Les propriétés ou les champs qui doivent être visibles du client et du serveur doivent être marqués avec l'attribut [<xref:System.Runtime.Serialization.DataMemberAttribute>]. Si vous voulez que les types dérivés d'une classe du contrat de données soient autorisés, vous devez les identifier avec l'attribut [<xref:System.Runtime.Serialization.KnownTypeAttribute>].</span><span class="sxs-lookup"><span data-stu-id="dda7b-129">The individual properties or fields you want visible to both client and server should be marked with the [<xref:System.Runtime.Serialization.DataMemberAttribute>] attribute.If you want types derived from a class in the data contract to be allowed, you must identify them with the [<xref:System.Runtime.Serialization.KnownTypeAttribute>] attribute.</span></span> <span data-ttu-id="dda7b-130">WCF va uniquement sérialiser ou désérialiser les types de l'interface de service et les types identifiés comme connus.</span><span class="sxs-lookup"><span data-stu-id="dda7b-130">WCF will only serialize or deserialize types in the service interface and types identified as known types.</span></span> <span data-ttu-id="dda7b-131">Si vous essayez d'utiliser un type qui n'est pas connu, une exception se produit.</span><span class="sxs-lookup"><span data-stu-id="dda7b-131">If you attempt to use a type that is not a known type, an exception will occur.</span></span>  
   
- Pour plus d’informations sur les contrats de données, consultez [Contrats de données](../../../docs/framework/wcf/samples/data-contracts.md).  
+ <span data-ttu-id="dda7b-132">Pour plus d’informations sur les contrats de données, consultez [Contrats de données](../../../docs/framework/wcf/samples/data-contracts.md).</span><span class="sxs-lookup"><span data-stu-id="dda7b-132">For more information about data contracts, see [Data Contracts](../../../docs/framework/wcf/samples/data-contracts.md).</span></span>  
   
 ```  
 [DataContract]  
@@ -136,8 +129,8 @@ public class Address
 }  
 ```  
   
-### <a name="step-3-implement-the-wcf-service"></a>Étape 3 : Implémenter le service WCF  
- Ensuite, vous devez implémenter la classe du service WCF qui implémente l'interface que vous avez définie à l'étape précédente.  
+### <a name="step-3-implement-the-wcf-service"></a><span data-ttu-id="dda7b-133">Étape 3 : Implémenter le service WCF</span><span class="sxs-lookup"><span data-stu-id="dda7b-133">Step 3: Implement the WCF service</span></span>  
+ <span data-ttu-id="dda7b-134">Ensuite, vous devez implémenter la classe du service WCF qui implémente l'interface que vous avez définie à l'étape précédente.</span><span class="sxs-lookup"><span data-stu-id="dda7b-134">Next, you should implement the WCF service class that implements the interface you defined in the previous step.</span></span>  
   
 ```  
 public class CustomerService: ICustomerManager    
@@ -153,8 +146,8 @@ public class CustomerService: ICustomerManager
 }  
 ```  
   
-### <a name="step-4-configure-the-service-and-the-client"></a>Étape 4 : Configurer le service et le client  
- Pour exécuter un service WCF, vous devez déclarer un point de terminaison qui expose cette interface de service à une URL spécifique à l'aide d'une liaison WCF spécifique. Une liaison spécifie les détails relatifs au transport, à l'encodage et au protocole pour que le serveur et les clients puissent communiquer. En général, vous ajoutez des liaisons au fichier de configuration du projet de service (web.config). Le code suivant illustre une entrée de liaison pour l'exemple de service :  
+### <a name="step-4-configure-the-service-and-the-client"></a><span data-ttu-id="dda7b-135">Étape 4 : Configurer le service et le client</span><span class="sxs-lookup"><span data-stu-id="dda7b-135">Step 4: Configure the service and the client</span></span>  
+ <span data-ttu-id="dda7b-136">Pour exécuter un service WCF, vous devez déclarer un point de terminaison qui expose cette interface de service à une URL spécifique à l'aide d'une liaison WCF spécifique.</span><span class="sxs-lookup"><span data-stu-id="dda7b-136">To run a WCF service, you need to declare an endpoint that exposes that service interface at a specific URL using a specific WCF binding.</span></span> <span data-ttu-id="dda7b-137">Une liaison spécifie les détails relatifs au transport, à l'encodage et au protocole pour que le serveur et les clients puissent communiquer.</span><span class="sxs-lookup"><span data-stu-id="dda7b-137">A binding specifies the transport, encoding and protocol details for the clients and server to communicate.</span></span> <span data-ttu-id="dda7b-138">En général, vous ajoutez des liaisons au fichier de configuration du projet de service (web.config).</span><span class="sxs-lookup"><span data-stu-id="dda7b-138">You typically add bindings to the service project’s configuration file (web.config).</span></span> <span data-ttu-id="dda7b-139">Le code suivant illustre une entrée de liaison pour l'exemple de service :</span><span class="sxs-lookup"><span data-stu-id="dda7b-139">The following shows a binding entry for the example service:</span></span>  
   
 ```xml  
 <configuration>  
@@ -170,7 +163,7 @@ public class CustomerService: ICustomerManager
 </configuration>  
 ```  
   
- Ensuite, vous devez configurer le client pour faire correspondre les informations de liaison spécifiées par le service. Pour ce faire, ajoutez le code suivant au fichier de configuration d'application (app.config) du client.  
+ <span data-ttu-id="dda7b-140">Ensuite, vous devez configurer le client pour faire correspondre les informations de liaison spécifiées par le service.</span><span class="sxs-lookup"><span data-stu-id="dda7b-140">Next, you need to configure the client to match the binding information specified by the service.</span></span> <span data-ttu-id="dda7b-141">Pour ce faire, ajoutez le code suivant au fichier de configuration d'application (app.config) du client.</span><span class="sxs-lookup"><span data-stu-id="dda7b-141">To do so, add the following to the client’s application configuration (app.config) file.</span></span>  
   
 ```xml  
 <configuration>  
@@ -184,16 +177,16 @@ public class CustomerService: ICustomerManager
 </configuration>  
 ```  
   
-### <a name="step-5-run-the-service"></a>Étape 5 : Exécuter le service  
- Enfin, vous pouvez automatiquement l'héberger dans une application console en ajoutant les lignes suivantes à l'application de service, puis en démarrant l'application. Pour plus d’informations sur les autres méthodes d’hébergement d’une application de service WCF, consultez [Services d’hébergement](../../../docs/framework/wcf/hosting-services.md).  
+### <a name="step-5-run-the-service"></a><span data-ttu-id="dda7b-142">Étape 5 : Exécuter le service</span><span class="sxs-lookup"><span data-stu-id="dda7b-142">Step 5: Run the service</span></span>  
+ <span data-ttu-id="dda7b-143">Enfin, vous pouvez automatiquement l'héberger dans une application console en ajoutant les lignes suivantes à l'application de service, puis en démarrant l'application.</span><span class="sxs-lookup"><span data-stu-id="dda7b-143">Finally, you can self-host it in a console application by adding the following lines to the service app, and starting the app.</span></span> <span data-ttu-id="dda7b-144">Pour plus d’informations sur les autres méthodes d’hébergement d’une application de service WCF, consultez [Services d’hébergement](../../../docs/framework/wcf/hosting-services.md).</span><span class="sxs-lookup"><span data-stu-id="dda7b-144">For more information about other ways to host a WCF service application, [Hosting Services](../../../docs/framework/wcf/hosting-services.md).</span></span>  
   
 ```  
 ServiceHost customerServiceHost = new ServiceHost(typeof(CustomerService));  
 customerServiceHost.Open();  
 ```  
   
-### <a name="step-6-call-the-service-from-the-client"></a>Étape 6 : Appeler le service depuis le client  
- Pour appeler le service depuis le client, vous devez créer une fabrique de canaux pour le service et demander un canal, ce qui vous permettra d'appeler directement la méthode `GetCustomer` depuis le client. Le canal implémente l'interface du service et gère la logique sous-jacente de demande/réponse à votre place.  La valeur de retour de cet appel de méthode est la copie désérialisée de la réponse du service.  
+### <a name="step-6-call-the-service-from-the-client"></a><span data-ttu-id="dda7b-145">Étape 6 : Appeler le service depuis le client</span><span class="sxs-lookup"><span data-stu-id="dda7b-145">Step 6: Call the service from the client</span></span>  
+ <span data-ttu-id="dda7b-146">Pour appeler le service depuis le client, vous devez créer une fabrique de canaux pour le service et demander un canal, ce qui vous permettra d'appeler directement la méthode `GetCustomer` depuis le client.</span><span class="sxs-lookup"><span data-stu-id="dda7b-146">To call the service from the client, you need to create a channel factory for the service, and request a channel, which will enable you to directly call the `GetCustomer` method directly from the client.</span></span> <span data-ttu-id="dda7b-147">Le canal implémente l'interface du service et gère la logique sous-jacente de demande/réponse à votre place.</span><span class="sxs-lookup"><span data-stu-id="dda7b-147">The channel implements the service’s interface and handles the underlying request/reply logic for you.</span></span>  <span data-ttu-id="dda7b-148">La valeur de retour de cet appel de méthode est la copie désérialisée de la réponse du service.</span><span class="sxs-lookup"><span data-stu-id="dda7b-148">The return value from that method call is the deserialized copy of the service response.</span></span>  
   
 ```  
 ChannelFactory<ICustomerManager> factory =   
@@ -202,10 +195,10 @@ ICustomerManager service = factory.CreateChannel();
 Customer customer = service.GetCustomer("Mary", "Smith");  
 ```  
   
-## <a name="the-client-sends-a-by-value-object-to-the-server"></a>Le client envoie un objet par valeur au serveur  
- Dans ce scénario, le client envoie un objet au serveur par valeur. Cela signifie que le serveur reçoit une copie désérialisée de l'objet.  Le serveur peut appeler des méthodes de cette copie et avoir la garantie qu'il n'y aura aucun rappel dans le code client. Comme mentionné précédemment, les échanges WCF de données normaux sont par valeur.  Cela garantit que l'appel de méthodes sur l'un de ces objets s'exécutera uniquement localement et n'appellera pas le code du client.  
+## <a name="the-client-sends-a-by-value-object-to-the-server"></a><span data-ttu-id="dda7b-149">Le client envoie un objet par valeur au serveur</span><span class="sxs-lookup"><span data-stu-id="dda7b-149">The client sends a by-value object to the server</span></span>  
+ <span data-ttu-id="dda7b-150">Dans ce scénario, le client envoie un objet au serveur par valeur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-150">In this scenario, the client sends an object to the server, by-value.</span></span> <span data-ttu-id="dda7b-151">Cela signifie que le serveur reçoit une copie désérialisée de l'objet.</span><span class="sxs-lookup"><span data-stu-id="dda7b-151">This means that the server will receive a deserialized copy of the object.</span></span>  <span data-ttu-id="dda7b-152">Le serveur peut appeler des méthodes de cette copie et avoir la garantie qu'il n'y aura aucun rappel dans le code client.</span><span class="sxs-lookup"><span data-stu-id="dda7b-152">The server can call methods on that copy and be guaranteed there is no callback into client code.</span></span> <span data-ttu-id="dda7b-153">Comme mentionné précédemment, les échanges WCF de données normaux sont par valeur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-153">As mentioned previously, normal WCF exchanges of data are by-value.</span></span>  <span data-ttu-id="dda7b-154">Cela garantit que l'appel de méthodes sur l'un de ces objets s'exécutera uniquement localement et n'appellera pas le code du client.</span><span class="sxs-lookup"><span data-stu-id="dda7b-154">This guarantees that calling methods on one of these objects executes locally only – it will not invoke code on the client.</span></span>  
   
- Ce scénario représente l'appel de méthode COM suivant :  
+ <span data-ttu-id="dda7b-155">Ce scénario représente l'appel de méthode COM suivant :</span><span class="sxs-lookup"><span data-stu-id="dda7b-155">This scenario represents the following COM method call:</span></span>  
   
 ```  
 public interface IRemoteService  
@@ -214,7 +207,7 @@ public interface IRemoteService
 }  
 ```  
   
- Ce scénario utilise la même interface de service et le même contrat de données que ceux du premier exemple. De plus, le client et le service seront configurés de la même façon. Dans cet exemple, un canal est créé pour envoyer l'objet et l'exécuter de la même façon. Toutefois, pour cet exemple, vous allez créer un client qui appelle le service, en passant un objet par valeur. La méthode de service que le client appelle dans le contrat de service est affichée en gras :  
+ <span data-ttu-id="dda7b-156">Ce scénario utilise la même interface de service et le même contrat de données que ceux du premier exemple.</span><span class="sxs-lookup"><span data-stu-id="dda7b-156">This scenario uses the same service interface and data contract as shown in the first example.</span></span> <span data-ttu-id="dda7b-157">De plus, le client et le service seront configurés de la même façon.</span><span class="sxs-lookup"><span data-stu-id="dda7b-157">In addition, the client and service will be configured in the same way.</span></span> <span data-ttu-id="dda7b-158">Dans cet exemple, un canal est créé pour envoyer l'objet et l'exécuter de la même façon.</span><span class="sxs-lookup"><span data-stu-id="dda7b-158">In this example, a channel is created to send the object and run the same way.</span></span> <span data-ttu-id="dda7b-159">Toutefois, pour cet exemple, vous allez créer un client qui appelle le service, en passant un objet par valeur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-159">However, for this example, you will create a client that calls the service, passing an object by-value.</span></span> <span data-ttu-id="dda7b-160">La méthode de service que le client appelle dans le contrat de service est affichée en gras :</span><span class="sxs-lookup"><span data-stu-id="dda7b-160">The service method the client will call in the service contract is shown in bold:</span></span>  
   
 ```  
 [ServiceContract]  
@@ -227,10 +220,10 @@ public interface ICustomerManager
 }  
 ```  
   
-### <a name="add-code-to-the-client-that-sends-a-by-value-object"></a>Ajouter le code au client qui envoie un objet par valeur  
- Le code suivant montre comment le client crée un nouvel objet Customer par valeur, et comment il crée un canal pour communiquer avec le service `ICustomerManager` et lui envoie l'objet Customer.  
+### <a name="add-code-to-the-client-that-sends-a-by-value-object"></a><span data-ttu-id="dda7b-161">Ajouter le code au client qui envoie un objet par valeur</span><span class="sxs-lookup"><span data-stu-id="dda7b-161">Add code to the client that sends a by-value object</span></span>  
+ <span data-ttu-id="dda7b-162">Le code suivant montre comment le client crée un nouvel objet Customer par valeur, et comment il crée un canal pour communiquer avec le service `ICustomerManager` et lui envoie l'objet Customer.</span><span class="sxs-lookup"><span data-stu-id="dda7b-162">The following code shows how the client creates a new by-value customer object, creates a channel to communicate with the `ICustomerManager` service, and sends the customer object to it.</span></span>  
   
- L'objet Customer sera sérialisé, puis envoyé au service, où il sera désérialisé par le service sous la forme d'une nouvelle copie de cet objet.  Toutes les méthodes que le service appelle sur cet objet seront uniquement exécutées localement sur le serveur. Il est important de noter que ce code montre l'envoi d'un type dérivé (`PremiumCustomer`).  Le contrat de service attend un objet `Customer`, mais le contrat de données du service utilise l'attribut [<xref:System.Runtime.Serialization.KnownTypeAttribute>] pour indiquer que `PremiumCustomer` est également autorisé.  Les tentatives de WCF de sérialisation ou de désérialisation de tout autre type via cette interface de service échoueront.  
+ <span data-ttu-id="dda7b-163">L'objet Customer sera sérialisé, puis envoyé au service, où il sera désérialisé par le service sous la forme d'une nouvelle copie de cet objet.</span><span class="sxs-lookup"><span data-stu-id="dda7b-163">The customer object will be serialized, and sent to the service, where it is deserialized by the service into a new copy of that object.</span></span>  <span data-ttu-id="dda7b-164">Toutes les méthodes que le service appelle sur cet objet seront uniquement exécutées localement sur le serveur. Il est important de noter que ce code montre l'envoi d'un type dérivé (`PremiumCustomer`).</span><span class="sxs-lookup"><span data-stu-id="dda7b-164">Any methods the service calls on this object will execute only locally on the server.It’s important to note that this code illustrates sending a derived type (`PremiumCustomer`).</span></span>  <span data-ttu-id="dda7b-165">Le contrat de service attend un objet `Customer`, mais le contrat de données du service utilise l'attribut [<xref:System.Runtime.Serialization.KnownTypeAttribute>] pour indiquer que `PremiumCustomer` est également autorisé.</span><span class="sxs-lookup"><span data-stu-id="dda7b-165">The service contract expects a `Customer` object, but the service data contract uses the [<xref:System.Runtime.Serialization.KnownTypeAttribute>] attribute to indicate that `PremiumCustomer` is also allowed.</span></span>  <span data-ttu-id="dda7b-166">Les tentatives de WCF de sérialisation ou de désérialisation de tout autre type via cette interface de service échoueront.</span><span class="sxs-lookup"><span data-stu-id="dda7b-166">WCF will fail attempts to serialize or deserialize any other type via this service interface.</span></span>  
   
 ```  
 PremiumCustomer customer = new PremiumCustomer();  
@@ -247,16 +240,16 @@ ICustomerManager customerManager = factory.CreateChannel();
 customerManager.StoreCustomer(customer);  
 ```  
   
-## <a name="the-service-returns-an-object-by-reference"></a>Le service retourne un objet par référence  
- Pour ce scénario, l'application cliente effectue un appel au service distant et la méthode retourne un objet qui est passé par référence à partir du service au client.  
+## <a name="the-service-returns-an-object-by-reference"></a><span data-ttu-id="dda7b-167">Le service retourne un objet par référence</span><span class="sxs-lookup"><span data-stu-id="dda7b-167">The service returns an object by reference</span></span>  
+ <span data-ttu-id="dda7b-168">Pour ce scénario, l'application cliente effectue un appel au service distant et la méthode retourne un objet qui est passé par référence à partir du service au client.</span><span class="sxs-lookup"><span data-stu-id="dda7b-168">For this scenario, the client app makes a call to the remote service and the method returns an object, which is passed by reference from the service to the client.</span></span>  
   
- Comme mentionné précédemment, les services WCF retournent toujours un objet par valeur.  Toutefois, vous pouvez obtenir un résultat similaire en utilisant la classe <xref:System.ServiceModel.EndpointAddress10>.  <xref:System.ServiceModel.EndpointAddress10> est un objet sérialisable par valeur qui peut être utilisé par le client pour obtenir un objet de session par référence sur le serveur.  
+ <span data-ttu-id="dda7b-169">Comme mentionné précédemment, les services WCF retournent toujours un objet par valeur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-169">As mentioned previously, WCF services always return object by value.</span></span>  <span data-ttu-id="dda7b-170">Toutefois, vous pouvez obtenir un résultat similaire en utilisant la classe <xref:System.ServiceModel.EndpointAddress10>.</span><span class="sxs-lookup"><span data-stu-id="dda7b-170">However, you can achieve a similar result by using the <xref:System.ServiceModel.EndpointAddress10> class.</span></span>  <span data-ttu-id="dda7b-171"><xref:System.ServiceModel.EndpointAddress10> est un objet sérialisable par valeur qui peut être utilisé par le client pour obtenir un objet de session par référence sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-171">The <xref:System.ServiceModel.EndpointAddress10> is a serializable by-value object that can be used by the client to obtain a sessionful by-reference object on the server.</span></span>  
   
- Le comportement de l'objet par référence dans WCF illustré dans ce scénario est différent du comportement dans DCOM.  Dans DCOM, le serveur peut renvoyer un objet par référence au client directement, et le client peut appeler les méthodes de l'objet, qui s'exécuteront sur le serveur.  Dans WCF, toutefois, l'objet retourné est toujours par valeur.  Le client doit prendre cet objet par valeur, représenté par <xref:System.ServiceModel.EndpointAddress10>, et l'utiliser pour créer son propre objet de session par référence.  Les appels de méthode du client sur l'objet de session s'exécutent sur le serveur. En d'autres termes, cet objet par référence dans WCF est un service WCF normal qui est configuré pour être de session.  
+ <span data-ttu-id="dda7b-172">Le comportement de l'objet par référence dans WCF illustré dans ce scénario est différent du comportement dans DCOM.</span><span class="sxs-lookup"><span data-stu-id="dda7b-172">The behavior of the by-reference object in WCF shown in this scenario is different than DCOM.</span></span>  <span data-ttu-id="dda7b-173">Dans DCOM, le serveur peut renvoyer un objet par référence au client directement, et le client peut appeler les méthodes de l'objet, qui s'exécuteront sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-173">In DCOM, the server can return a by-reference object to the client directly, and the client can call that object’s methods, which execute on the server.</span></span>  <span data-ttu-id="dda7b-174">Dans WCF, toutefois, l'objet retourné est toujours par valeur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-174">In WCF, however, the object returned is always by-value.</span></span>  <span data-ttu-id="dda7b-175">Le client doit prendre cet objet par valeur, représenté par <xref:System.ServiceModel.EndpointAddress10>, et l'utiliser pour créer son propre objet de session par référence.</span><span class="sxs-lookup"><span data-stu-id="dda7b-175">The client must take that by-value object, represented by <xref:System.ServiceModel.EndpointAddress10> and use it to create its own sessionful by-reference object.</span></span>  <span data-ttu-id="dda7b-176">Les appels de méthode du client sur l'objet de session s'exécutent sur le serveur. En d'autres termes, cet objet par référence dans WCF est un service WCF normal qui est configuré pour être de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-176">The client method calls on the sessionful object execute on the server.In other words, this by-reference object in WCF is a normal WCF service that is configured to be sessionful.</span></span>  
   
- Dans WCF, une session est une façon de mettre en corrélation plusieurs messages envoyés entre deux points de terminaison.  Cela signifie qu'une fois qu'un client obtient une connexion à ce service, une session est établie entre le client et le serveur.  Le client utilisera une seule instance de l'objet côté serveur pour toutes ses interactions au sein de cette session unique. Les contrats de session WCF sont similaires aux modèles de demande/réponse réseau orientés connexion.  
+ <span data-ttu-id="dda7b-177">Dans WCF, une session est une façon de mettre en corrélation plusieurs messages envoyés entre deux points de terminaison.</span><span class="sxs-lookup"><span data-stu-id="dda7b-177">In WCF, a session is a way of correlating multiple messages sent between two endpoints.</span></span>  <span data-ttu-id="dda7b-178">Cela signifie qu'une fois qu'un client obtient une connexion à ce service, une session est établie entre le client et le serveur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-178">This means that once a client obtains a connection to this service, a session will be established between the client and the server.</span></span>  <span data-ttu-id="dda7b-179">Le client utilisera une seule instance de l'objet côté serveur pour toutes ses interactions au sein de cette session unique.</span><span class="sxs-lookup"><span data-stu-id="dda7b-179">The client will use a single unique instance of the server-side object for all its interactions within this single session.</span></span> <span data-ttu-id="dda7b-180">Les contrats de session WCF sont similaires aux modèles de demande/réponse réseau orientés connexion.</span><span class="sxs-lookup"><span data-stu-id="dda7b-180">Sessionful WCF contracts are similar to connection-oriented network request/response patterns.</span></span>  
   
- Ce scénario est représenté par la méthode DCOM suivante.  
+ <span data-ttu-id="dda7b-181">Ce scénario est représenté par la méthode DCOM suivante.</span><span class="sxs-lookup"><span data-stu-id="dda7b-181">This scenario is represented by the following DCOM method.</span></span>  
   
 ```  
 public interface IRemoteService  
@@ -265,10 +258,10 @@ public interface IRemoteService
 }  
 ```  
   
-### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>Étape 1: Définir l'interface et l'implémentation du service de session WCF  
- Tout d'abord, définissez une interface de service WCF contenant l'objet de session.  
+### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a><span data-ttu-id="dda7b-182">Étape 1: Définir l'interface et l'implémentation du service de session WCF</span><span class="sxs-lookup"><span data-stu-id="dda7b-182">Step 1: Define the Sessionful WCF service interface and implementation</span></span>  
+ <span data-ttu-id="dda7b-183">Tout d'abord, définissez une interface de service WCF contenant l'objet de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-183">First, define a WCF service interface that contains the sessionful object.</span></span>  
   
- Dans ce code, l'objet de session est marqué avec l'attribut `ServiceContract`, qui l'identifie comme une interface de service WCF standard.  De plus, la propriété <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> est définie pour indiquer qu'il s'agira d'un service de session.  
+ <span data-ttu-id="dda7b-184">Dans ce code, l'objet de session est marqué avec l'attribut `ServiceContract`, qui l'identifie comme une interface de service WCF standard.</span><span class="sxs-lookup"><span data-stu-id="dda7b-184">In this code, the sessionful object is marked with the `ServiceContract` attribute, which identifies it as a regular WCF service interface.</span></span>  <span data-ttu-id="dda7b-185">De plus, la propriété <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> est définie pour indiquer qu'il s'agira d'un service de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-185">In addition, the <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> property is set to indicate it will be a sessionful service.</span></span>  
   
 ```  
 [ServiceContract(SessionMode = SessionMode.Allowed)]  
@@ -282,9 +275,9 @@ public interface ISessionBoundObject
 }  
 ```  
   
- Le code suivant montre l'implémentation du service.  
+ <span data-ttu-id="dda7b-186">Le code suivant montre l'implémentation du service.</span><span class="sxs-lookup"><span data-stu-id="dda7b-186">The following code shows the service implementation.</span></span>  
   
- Le service est marqué avec l'attribut [ServiceBehavior]. Sa propriété InstanceContextMode a la valeur InstanceContextMode.PerSessions pour indiquer qu'une instance unique de ce type doit être créée pour chaque session.  
+ <span data-ttu-id="dda7b-187">Le service est marqué avec l'attribut [ServiceBehavior]. Sa propriété InstanceContextMode a la valeur InstanceContextMode.PerSessions pour indiquer qu'une instance unique de ce type doit être créée pour chaque session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-187">The service is marked with the [ServiceBehavior] attribute, and its InstanceContextMode property set to InstanceContextMode.PerSessions to indicate that a unique instance of this type should be created for each session.</span></span>  
   
 ```  
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
@@ -305,8 +298,8 @@ public interface ISessionBoundObject
     }  
 ```  
   
-### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a>Étape 2 : Définir le service de fabrique WCF pour l'objet de session  
- Le service qui crée l'objet de session doit être défini et implémenté. Le code suivant montre comment procéder. Ce code crée un autre service WCF qui retourne un objet <xref:System.ServiceModel.EndpointAddress10>.  Il s'agit d'une forme sérialisable d'un point de terminaison qui peut être utilisée pour créer l'objet de session.  
+### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a><span data-ttu-id="dda7b-188">Étape 2 : Définir le service de fabrique WCF pour l'objet de session</span><span class="sxs-lookup"><span data-stu-id="dda7b-188">Step 2: Define the WCF factory service for the sessionful object</span></span>  
+ <span data-ttu-id="dda7b-189">Le service qui crée l'objet de session doit être défini et implémenté.</span><span class="sxs-lookup"><span data-stu-id="dda7b-189">The service that creates the sessionful object must be defined and implemented.</span></span> <span data-ttu-id="dda7b-190">Le code suivant montre comment procéder.</span><span class="sxs-lookup"><span data-stu-id="dda7b-190">The following code shows how to do this.</span></span> <span data-ttu-id="dda7b-191">Ce code crée un autre service WCF qui retourne un objet <xref:System.ServiceModel.EndpointAddress10>.</span><span class="sxs-lookup"><span data-stu-id="dda7b-191">This code creates another WCF service that returns an <xref:System.ServiceModel.EndpointAddress10> object.</span></span>  <span data-ttu-id="dda7b-192">Il s'agit d'une forme sérialisable d'un point de terminaison qui peut être utilisée pour créer l'objet de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-192">This is a serializable form of an endpoint the can use to create the session-full object.</span></span>  
   
 ```  
 [ServiceContract]  
@@ -317,7 +310,7 @@ public interface ISessionBoundObject
     }  
 ```  
   
- Voici l'implémentation de ce service. Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.  Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.   <xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.  
+ <span data-ttu-id="dda7b-193">Voici l'implémentation de ce service.</span><span class="sxs-lookup"><span data-stu-id="dda7b-193">Following is the implementation of this service.</span></span> <span data-ttu-id="dda7b-194">Cette implémentation gère une fabrique de canaux singleton pour créer des objets de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-194">This implementation maintains a singleton channel factory to create sessionful objects.</span></span>  <span data-ttu-id="dda7b-195">Quand `GetInstanceAddress` est appelé, il crée un canal et un objet <xref:System.ServiceModel.EndpointAddress10> qui pointe vers l'adresse distante associée à ce canal.</span><span class="sxs-lookup"><span data-stu-id="dda7b-195">When `GetInstanceAddress` is called, it creates a channel and creates an <xref:System.ServiceModel.EndpointAddress10> object that points to the remote address associated with this channel.</span></span>   <span data-ttu-id="dda7b-196"><xref:System.ServiceModel.EndpointAddress10> est un type de données qui peut être renvoyé au client par valeur.</span><span class="sxs-lookup"><span data-stu-id="dda7b-196"><xref:System.ServiceModel.EndpointAddress10> is a data type that can be returned to the client by-value.</span></span>  
   
 ```  
 public class SessionBoundFactory : ISessionBoundFactory  
@@ -337,14 +330,14 @@ public class SessionBoundFactory : ISessionBoundFactory
     }  
 ```  
   
-### <a name="step-3-configure-and-start-the-wcf-services"></a>Étape 3 : Configurer et démarrer les services WCF  
- Pour héberger ces services, vous devrez effectuer les ajouts suivants au fichier de configuration du serveur (web.config).  
+### <a name="step-3-configure-and-start-the-wcf-services"></a><span data-ttu-id="dda7b-197">Étape 3 : Configurer et démarrer les services WCF</span><span class="sxs-lookup"><span data-stu-id="dda7b-197">Step 3: Configure and start the WCF services</span></span>  
+ <span data-ttu-id="dda7b-198">Pour héberger ces services, vous devrez effectuer les ajouts suivants au fichier de configuration du serveur (web.config).</span><span class="sxs-lookup"><span data-stu-id="dda7b-198">To host these services, you will need to make the following additions to the server’s configuration file (web.config).</span></span>  
   
-1.  Ajoutez une section `<client>` qui décrive le point de terminaison de l'objet de session.  Dans ce scénario, le serveur agit comme un client et doit être configuré pour rendre ceci possible.  
+1.  <span data-ttu-id="dda7b-199">Ajoutez une section `<client>` qui décrive le point de terminaison de l'objet de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-199">Add a `<client>` section that describes the endpoint for the sessionful object.</span></span>  <span data-ttu-id="dda7b-200">Dans ce scénario, le serveur agit comme un client et doit être configuré pour rendre ceci possible.</span><span class="sxs-lookup"><span data-stu-id="dda7b-200">In this scenario, the server also acts as a client and must be configured to enable this.</span></span>  
   
-2.  Dans la section `<services>`, déclarez les points de terminaison de service pour la fabrique et l'objet de session.  Cela permet au client de communiquer avec les points de terminaison du service, d'acquérir <xref:System.ServiceModel.EndpointAddress10> et de créer le canal de session.  
+2.  <span data-ttu-id="dda7b-201">Dans la section `<services>`, déclarez les points de terminaison de service pour la fabrique et l'objet de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-201">In the `<services>` section, declare service endpoints for the factory and sessionful object.</span></span>  <span data-ttu-id="dda7b-202">Cela permet au client de communiquer avec les points de terminaison du service, d'acquérir <xref:System.ServiceModel.EndpointAddress10> et de créer le canal de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-202">This enables the client to communicate with the service endpoints, acquire the <xref:System.ServiceModel.EndpointAddress10> and create the sessionful channel.</span></span>  
   
- Voici un exemple de fichier de configuration avec ces paramètres :  
+ <span data-ttu-id="dda7b-203">Voici un exemple de fichier de configuration avec ces paramètres :</span><span class="sxs-lookup"><span data-stu-id="dda7b-203">Following is an example configuration file with these settings:</span></span>  
   
 ```xml  
 <configuration>  
@@ -372,7 +365,7 @@ public class SessionBoundFactory : ISessionBoundFactory
 </configuration>  
 ```  
   
- Ajoutez les lignes suivantes à une application console pour auto-héberger le service, puis démarrez l'application.  
+ <span data-ttu-id="dda7b-204">Ajoutez les lignes suivantes à une application console pour auto-héberger le service, puis démarrez l'application.</span><span class="sxs-lookup"><span data-stu-id="dda7b-204">Add the following lines to a console application, to self-host the service, and start the app.</span></span>  
   
 ```  
 ServiceHost factoryHost = new ServiceHost(typeof(SessionBoundFactory));  
@@ -383,8 +376,8 @@ typeof(MySessionBoundObject));
 sessionBoundServiceHost.Open();  
 ```  
   
-### <a name="step-4-configure-the-client-and-call-the-service"></a>Étape 4 : Configurer le client et appeler le service  
- Configurez le client pour communiquer avec les services WCF en ajoutant les entrées suivantes dans le fichier de configuration d'application du projet (app.config).  
+### <a name="step-4-configure-the-client-and-call-the-service"></a><span data-ttu-id="dda7b-205">Étape 4 : Configurer le client et appeler le service</span><span class="sxs-lookup"><span data-stu-id="dda7b-205">Step 4: Configure the client and call the service</span></span>  
+ <span data-ttu-id="dda7b-206">Configurez le client pour communiquer avec les services WCF en ajoutant les entrées suivantes dans le fichier de configuration d'application du projet (app.config).</span><span class="sxs-lookup"><span data-stu-id="dda7b-206">Configure the client to communicate with the WCF services by making the following entries in the project’s application configuration file (app.config).</span></span>  
   
 ```xml  
 <configuration>  
@@ -403,15 +396,15 @@ sessionBoundServiceHost.Open();
 </configuration>  
 ```  
   
- Pour appeler le service, ajoutez le code au client qui servira à effectuer ce qui suit :  
+ <span data-ttu-id="dda7b-207">Pour appeler le service, ajoutez le code au client qui servira à effectuer ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="dda7b-207">To call the service, add the code to the client to do the following:</span></span>  
   
-1.  Créer un canal vers le service `ISessionBoundFactory`.  
+1.  <span data-ttu-id="dda7b-208">Créer un canal vers le service `ISessionBoundFactory`.</span><span class="sxs-lookup"><span data-stu-id="dda7b-208">Create a channel to the `ISessionBoundFactory` service.</span></span>  
   
-2.  Utiliser le canal pour appeler le service `ISessionBoundFactory` et obtenir un objet <xref:System.ServiceModel.EndpointAddress10>.  
+2.  <span data-ttu-id="dda7b-209">Utiliser le canal pour appeler le service `ISessionBoundFactory` et obtenir un objet <xref:System.ServiceModel.EndpointAddress10>.</span><span class="sxs-lookup"><span data-stu-id="dda7b-209">Use the channel to invoke the `ISessionBoundFactory` service an obtain an <xref:System.ServiceModel.EndpointAddress10> bbject.</span></span>  
   
-3.  Utiliser <xref:System.ServiceModel.EndpointAddress10> pour créer un canal et obtenir un objet de session.  
+3.  <span data-ttu-id="dda7b-210">Utiliser <xref:System.ServiceModel.EndpointAddress10> pour créer un canal et obtenir un objet de session.</span><span class="sxs-lookup"><span data-stu-id="dda7b-210">Use the <xref:System.ServiceModel.EndpointAddress10> to create a channel to obtain a sessionful object.</span></span>  
   
-4.  Appeler les méthodes `SetCurrentValue` et `GetCurrentValue` pour montrer que la même instance d'objet est utilisée pour plusieurs appels.  
+4.  <span data-ttu-id="dda7b-211">Appeler les méthodes `SetCurrentValue` et `GetCurrentValue` pour montrer que la même instance d'objet est utilisée pour plusieurs appels.</span><span class="sxs-lookup"><span data-stu-id="dda7b-211">Call the `SetCurrentValue` and `GetCurrentValue` methods to demonstrate it remains the same object instance is used across multiple calls.</span></span>  
   
 ```  
 ChannelFactory<ISessionBoundFactory> factory =  
@@ -436,9 +429,8 @@ if (sessionBoundObject.GetCurrentValue() == "Hello")
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Programmation WCF de base](../../../docs/framework/wcf/basic-wcf-programming.md)   
- [Conception et implémentation de services](../../../docs/framework/wcf/designing-and-implementing-services.md)   
- [Génération de clients](../../../docs/framework/wcf/building-clients.md)   
- [Services duplex](../../../docs/framework/wcf/feature-details/duplex-services.md)
-
+## <a name="see-also"></a><span data-ttu-id="dda7b-212">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dda7b-212">See Also</span></span>  
+ [<span data-ttu-id="dda7b-213">Programmation WCF de base</span><span class="sxs-lookup"><span data-stu-id="dda7b-213">Basic WCF Programming</span></span>](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [<span data-ttu-id="dda7b-214">Conception et implémentation de services</span><span class="sxs-lookup"><span data-stu-id="dda7b-214">Designing and Implementing Services</span></span>](../../../docs/framework/wcf/designing-and-implementing-services.md)  
+ [<span data-ttu-id="dda7b-215">Génération de clients</span><span class="sxs-lookup"><span data-stu-id="dda7b-215">Building Clients</span></span>](../../../docs/framework/wcf/building-clients.md)  
+ [<span data-ttu-id="dda7b-216">Services duplex</span><span class="sxs-lookup"><span data-stu-id="dda7b-216">Duplex Services</span></span>](../../../docs/framework/wcf/feature-details/duplex-services.md)

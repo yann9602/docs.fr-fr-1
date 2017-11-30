@@ -1,91 +1,92 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: application de styles au contenu WPF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "interopérabilité (WDF)"
-  - "styles, contenu WPF"
-  - "concepteur WPF, appliquer un style à un contenu WPF"
+title: "Procédure pas à pas : application de styles au contenu WPF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WPF Designer [Windows Forms], styling WPF content
+- interoperability [WDF]
+- styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5ae28df17e17e81814cb8cba8b2630751707f354
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: application de styles au contenu WPF
-Cette procédure pas à pas montre comment appliquer des styles à un contrôle WPF \(Windows Presentation Foundation\) hébergé sur un Windows Form.  
+# <a name="walkthrough-styling-wpf-content"></a><span data-ttu-id="d1748-102">Procédure pas à pas : application de styles au contenu WPF</span><span class="sxs-lookup"><span data-stu-id="d1748-102">Walkthrough: Styling WPF Content</span></span>
+<span data-ttu-id="d1748-103">Cette procédure pas à pas montre comment appliquer des styles à un contrôle WPF (Windows Presentation Foundation) hébergé sur un Windows Form.</span><span class="sxs-lookup"><span data-stu-id="d1748-103">This walkthrough show you how to apply styling to a Windows Presentation Foundation (WPF) control hosted on a Windows Form.</span></span>  
   
- Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :  
+ <span data-ttu-id="d1748-104">Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="d1748-104">In this walkthrough, you perform the following tasks:</span></span>  
   
--   créer le projet ;  
+-   <span data-ttu-id="d1748-105">créer le projet ;</span><span class="sxs-lookup"><span data-stu-id="d1748-105">Create the project.</span></span>  
   
--   créer le type de contrôle WPF ;  
+-   <span data-ttu-id="d1748-106">créer le type de contrôle WPF ;</span><span class="sxs-lookup"><span data-stu-id="d1748-106">Create the WPF control type.</span></span>  
   
--   appliquer un style au contrôle WPF.  
-  
-> [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
-  
-## Composants requis  
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
-  
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)].  
-  
-## Création du projet  
- La première étape consiste à créer le projet Windows Forms.  
+-   <span data-ttu-id="d1748-107">appliquer un style au contrôle WPF.</span><span class="sxs-lookup"><span data-stu-id="d1748-107">Apply a style to the WPF control.</span></span>  
   
 > [!NOTE]
->  Lors de l'hébergement de contenu WPF, seuls les projets Visual Basic et C\# sont pris en charge.  
+>  <span data-ttu-id="d1748-108">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="d1748-108">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="d1748-109">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="d1748-109">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="d1748-110">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="d1748-110">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-#### Pour créer le projet  
+## <a name="prerequisites"></a><span data-ttu-id="d1748-111">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="d1748-111">Prerequisites</span></span>  
+ <span data-ttu-id="d1748-112">Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="d1748-112">You need the following components to complete this walkthrough:</span></span>  
   
--   Créez un projet d'application Windows Forms dans Visual Basic ou Visual C\# nommé `StylingWpfContent`.  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="d1748-113">.</span><span class="sxs-lookup"><span data-stu-id="d1748-113">.</span></span>  
   
-## Création des types de contrôles WPF  
- Une fois que vous avez ajouté un type de contrôle WPF au projet, vous pouvez l'héberger dans un contrôle <xref:System.Windows.Forms.Integration.ElementHost>.  
+## <a name="creating-the-project"></a><span data-ttu-id="d1748-114">Création du projet</span><span class="sxs-lookup"><span data-stu-id="d1748-114">Creating the Project</span></span>  
+ <span data-ttu-id="d1748-115">La première étape consiste à créer le projet Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="d1748-115">The first step is to create the Windows Forms project.</span></span>  
   
-#### Pour créer des types de contrôles WPF  
+> [!NOTE]
+>  <span data-ttu-id="d1748-116">Lors de l'hébergement de contenu WPF, seuls les projets Visual Basic et C# sont pris en charge.</span><span class="sxs-lookup"><span data-stu-id="d1748-116">When hosting WPF content, only C# and Visual Basic projects are supported.</span></span>  
   
-1.  Ajoutez un nouveau projet <xref:System.Windows.Controls.UserControl> WPF à la solution.  Utilisez le nom par défaut pour le type de contrôle, `UserControl1.xaml`.  Pour plus d'informations, consultez [Procédure pas à pas : création de contenu WPF sur les Windows Forms au moment du design](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
+#### <a name="to-create-the-project"></a><span data-ttu-id="d1748-117">Pour créer le projet</span><span class="sxs-lookup"><span data-stu-id="d1748-117">To create the project</span></span>  
   
-2.  En mode Design, assurez\-vous que `UserControl1` est sélectionné.  Pour plus d'informations, consultez [Comment : sélectionner et déplacer des éléments sur l'aire de conception](http://msdn.microsoft.com/fr-fr/54cb70b6-b35b-46e4-a0cc-65189399c474).  
+-   <span data-ttu-id="d1748-118">Créer un nouveau projet d’Application Windows Forms dans Visual Basic ou Visual c# nommé `StylingWpfContent`.</span><span class="sxs-lookup"><span data-stu-id="d1748-118">Create a new Windows Forms Application project in Visual Basic or Visual C# named `StylingWpfContent`.</span></span>  
   
-3.  Dans la fenêtre **Propriétés**, affectez la valeur `200` aux propriétés <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A>.  
+## <a name="creating-the-wpf-control-types"></a><span data-ttu-id="d1748-119">Création des types de contrôles WPF</span><span class="sxs-lookup"><span data-stu-id="d1748-119">Creating the WPF Control Types</span></span>  
+ <span data-ttu-id="d1748-120">Une fois que vous avez ajouté un type de contrôle WPF au projet, vous pouvez l'héberger dans un contrôle <xref:System.Windows.Forms.Integration.ElementHost>.</span><span class="sxs-lookup"><span data-stu-id="d1748-120">After you add a WPF control type to the project, you can host it in an <xref:System.Windows.Forms.Integration.ElementHost> control.</span></span>  
   
-4.  Ajoutez un contrôle <xref:System.Windows.Controls.Button?displayProperty=fullName> au <xref:System.Windows.Controls.UserControl> et affectez la valeur Annuler à la propriété <xref:System.Windows.Controls.ContentControl.Content%2A>.  
+#### <a name="to-create-wpf-control-types"></a><span data-ttu-id="d1748-121">Pour créer des types de contrôles WPF</span><span class="sxs-lookup"><span data-stu-id="d1748-121">To create WPF control types</span></span>  
   
-5.  Ajoutez un deuxième contrôle <xref:System.Windows.Controls.Button?displayProperty=fullName> au <xref:System.Windows.Controls.UserControl> et affectez la valeur OK à la propriété <xref:System.Windows.Controls.ContentControl.Content%2A>.  
+1.  <span data-ttu-id="d1748-122">Ajoutez un nouveau projet <xref:System.Windows.Controls.UserControl> WPF à la solution.</span><span class="sxs-lookup"><span data-stu-id="d1748-122">Add a new WPF <xref:System.Windows.Controls.UserControl> project to the solution.</span></span> <span data-ttu-id="d1748-123">Utilisez le nom par défaut pour le type de contrôle, `UserControl1.xaml`.</span><span class="sxs-lookup"><span data-stu-id="d1748-123">Use the default name for the control type, `UserControl1.xaml`.</span></span> <span data-ttu-id="d1748-124">Pour plus d’informations, consultez [procédure pas à pas : création WPF de contenu dans les Windows Forms au moment du Design](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span><span class="sxs-lookup"><span data-stu-id="d1748-124">For more information, see [Walkthrough: Creating New WPF Content on Windows Forms at Design Time](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).</span></span>  
   
-6.  Générez le projet.  
+2.  <span data-ttu-id="d1748-125">En mode Design, assurez-vous que `UserControl1` est sélectionné.</span><span class="sxs-lookup"><span data-stu-id="d1748-125">In Design view, make sure that `UserControl1` is selected.</span></span> <span data-ttu-id="d1748-126">Pour plus d’informations, consultez [Comment : sélectionner et déplacer des éléments sur l’aire de conception](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span><span class="sxs-lookup"><span data-stu-id="d1748-126">For more information, see [How to: Select and Move Elements on the Design Surface](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474).</span></span>  
   
-## Application d'un style à un contrôle WPF  
- Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son apparence et son comportement.  
+3.  <span data-ttu-id="d1748-127">Dans le **propriétés** fenêtre, définissez la valeur de la <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A> propriétés `200`.</span><span class="sxs-lookup"><span data-stu-id="d1748-127">In the **Properties** window, set the value of the <xref:System.Windows.FrameworkElement.Width%2A> and <xref:System.Windows.FrameworkElement.Height%2A> properties to `200`.</span></span>  
   
-#### Pour appliquer un style à un contrôle WPF  
+4.  <span data-ttu-id="d1748-128">Ajouter un <xref:System.Windows.Controls.Button?displayProperty=nameWithType> le contrôle à la <xref:System.Windows.Controls.UserControl> et définissez la valeur de la <xref:System.Windows.Controls.ContentControl.Content%2A> propriété **Annuler**.</span><span class="sxs-lookup"><span data-stu-id="d1748-128">Add a <xref:System.Windows.Controls.Button?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.ContentControl.Content%2A> property to **Cancel**.</span></span>  
   
-1.  Ouvrez `Form1` dans le Concepteur Windows Forms.  
+5.  <span data-ttu-id="d1748-129">Ajoutez un deuxième <xref:System.Windows.Controls.Button?displayProperty=nameWithType> le contrôle à la <xref:System.Windows.Controls.UserControl> et définissez la valeur de la <xref:System.Windows.Controls.ContentControl.Content%2A> propriété **OK**.</span><span class="sxs-lookup"><span data-stu-id="d1748-129">Add a second <xref:System.Windows.Controls.Button?displayProperty=nameWithType> control to the <xref:System.Windows.Controls.UserControl> and set the value of the <xref:System.Windows.Controls.ContentControl.Content%2A> property to **OK**.</span></span>  
   
-2.  Dans la **Boîte à outils**, double\-cliquez sur `UserControl1` pour créer une instance de `UserControl1` sur le formulaire.  
+6.  <span data-ttu-id="d1748-130">Générez le projet.</span><span class="sxs-lookup"><span data-stu-id="d1748-130">Build the project.</span></span>  
   
-     Une instance de `UserControl1` est hébergée dans un nouveau contrôle <xref:System.Windows.Forms.Integration.ElementHost> nommé `elementHost1`.  
+## <a name="applying-a-style-to-a-wpf-control"></a><span data-ttu-id="d1748-131">Application d'un style à un contrôle WPF</span><span class="sxs-lookup"><span data-stu-id="d1748-131">Applying a Style to a WPF Control</span></span>  
+ <span data-ttu-id="d1748-132">Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son apparence et son comportement.</span><span class="sxs-lookup"><span data-stu-id="d1748-132">You can apply different styling to a WPF control to change its appearance and behavior.</span></span>  
   
-3.  Dans le panneau des Smart Tags pour `elementHost1`, cliquez sur **Modifier le contenu hébergé** dans la liste déroulante.  
+#### <a name="to-apply-a-style-to-a-wpf-control"></a><span data-ttu-id="d1748-133">Pour appliquer un style à un contrôle WPF</span><span class="sxs-lookup"><span data-stu-id="d1748-133">To apply a style to a WPF control</span></span>  
   
-     `UserControl1` s'ouvre dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
+1.  <span data-ttu-id="d1748-134">Ouvrez `Form1` dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="d1748-134">Open `Form1` in the Windows Forms Designer.</span></span>  
   
-4.  En mode XAML, insérez le code XAML suivant après la balise d'ouverture `<UserControl>`.  
+2.  <span data-ttu-id="d1748-135">Dans le **boîte à outils**, double-cliquez sur `UserControl1` pour créer une instance de `UserControl1` sur le formulaire.</span><span class="sxs-lookup"><span data-stu-id="d1748-135">In the **Toolbox**, double-click `UserControl1` to create an instance of `UserControl1` on the form.</span></span>  
   
-     Ce code XAML crée un dégradé avec une bordure de dégradé contrastée.  Quand l'utilisateur clique sur le contrôle, les dégradés sont modifiés pour générer une apparence de bouton enfoncé.  Pour plus d'informations, consultez [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+     <span data-ttu-id="d1748-136">Une instance de `UserControl1` est hébergée dans un nouveau contrôle <xref:System.Windows.Forms.Integration.ElementHost> nommé `elementHost1`.</span><span class="sxs-lookup"><span data-stu-id="d1748-136">An instance of `UserControl1` is hosted in a new <xref:System.Windows.Forms.Integration.ElementHost> control named `elementHost1`.</span></span>  
+  
+3.  <span data-ttu-id="d1748-137">Dans le panneau des balises actives pour `elementHost1`, cliquez sur **modifier le contenu hébergé** dans la liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="d1748-137">In the smart tag panel for `elementHost1`, click **Edit Hosted Content** from the drop-down list.</span></span>  
+  
+     <span data-ttu-id="d1748-138">`UserControl1` s'ouvre dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d1748-138">`UserControl1` opens in the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>  
+  
+4.  <span data-ttu-id="d1748-139">En mode XAML, insérez le code XAML suivant après la balise d'ouverture `<UserControl>`.</span><span class="sxs-lookup"><span data-stu-id="d1748-139">In XAML view, insert the following XAML after the `<UserControl>` opening tag.</span></span>  
+  
+     <span data-ttu-id="d1748-140">Ce code XAML crée un dégradé avec une bordure de dégradé contrastée.</span><span class="sxs-lookup"><span data-stu-id="d1748-140">This XAML creates a gradient with a contrasting gradient border.</span></span> <span data-ttu-id="d1748-141">Quand l'utilisateur clique sur le contrôle, les dégradés sont modifiés pour générer une apparence de bouton enfoncé.</span><span class="sxs-lookup"><span data-stu-id="d1748-141">When the control is clicked, the gradients are changed to generate a pressed button look.</span></span> <span data-ttu-id="d1748-142">Pour plus d’informations, consultez [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span><span class="sxs-lookup"><span data-stu-id="d1748-142">For more information, see [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span></span>  
   
 ```xaml  
 <UserControl.Resources>  
@@ -135,34 +136,34 @@ Cette procédure pas à pas montre comment appliquer des styles à un contrôle 
 </UserControl.Resources>  
 ```  
   
-1.  Appliquez le style `SimpleButton` défini à l'étape précédente au bouton Annuler en insérant le code XAML suivant dans la balise `<Button>` du bouton Annuler.  
+1.  <span data-ttu-id="d1748-143">Appliquez le style `SimpleButton` défini à l'étape précédente au bouton Annuler en insérant le code XAML suivant dans la balise `<Button>` du bouton Annuler.</span><span class="sxs-lookup"><span data-stu-id="d1748-143">Apply the `SimpleButton` style defined in the previous step to the Cancel button by inserting the following XAML in the `<Button>` tag of the Cancel button.</span></span>  
   
     ```  
     Style="{StaticResource SimpleButton}  
     ```  
   
-     Votre déclaration de bouton ressemblera au code XAML suivant.  
+     <span data-ttu-id="d1748-144">Votre déclaration de bouton ressemblera au code XAML suivant.</span><span class="sxs-lookup"><span data-stu-id="d1748-144">Your button declaration will resemble the following XAML.</span></span>  
   
 ```xaml  
 <Button Height="23" Margin="41,52,98,0" Name="button1" VerticalAlignment="Top"  
                 Style="{StaticResource SimpleButton}">Cancel</Button>  
 ```  
   
-1.  Générez le projet.  
+1.  <span data-ttu-id="d1748-145">Générez le projet.</span><span class="sxs-lookup"><span data-stu-id="d1748-145">Build the project.</span></span>  
   
-2.  Ouvrez `Form1` dans le Concepteur Windows Forms.  
+2.  <span data-ttu-id="d1748-146">Ouvrez `Form1` dans le Concepteur Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="d1748-146">Open `Form1` in the Windows Forms Designer.</span></span>  
   
-3.  Le nouveau style est appliqué au contrôle de bouton.  
+3.  <span data-ttu-id="d1748-147">Le nouveau style est appliqué au contrôle de bouton.</span><span class="sxs-lookup"><span data-stu-id="d1748-147">The new style is applied to the button control.</span></span>  
   
-4.  Dans le menu **Débogage**, sélectionnez **Démarrer le débogage** pour exécuter l'application.  
+4.  <span data-ttu-id="d1748-148">À partir de la **déboguer** menu, sélectionnez **démarrer le débogage** pour exécuter l’application.</span><span class="sxs-lookup"><span data-stu-id="d1748-148">From the **Debug** menu, select **Start Debugging** to run the application.</span></span>  
   
-5.  Cliquez sur les boutons OK et Annuler et observez les différences.  
+5.  <span data-ttu-id="d1748-149">Cliquez sur les boutons OK et Annuler et observez les différences.</span><span class="sxs-lookup"><span data-stu-id="d1748-149">Click the OK and Cancel buttons and view the differences.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [Migration et interopérabilité](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)   
- [Utilisation de contrôles WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)   
- [Concepteur WPF](http://msdn.microsoft.com/fr-fr/c6c65214-8411-4e16-b254-163ed4099c26)   
- [Vue d'ensemble du langage XAML \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a><span data-ttu-id="d1748-150">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d1748-150">See Also</span></span>  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [<span data-ttu-id="d1748-151">Migration et interopérabilité</span><span class="sxs-lookup"><span data-stu-id="d1748-151">Migration and Interoperability</span></span>](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [<span data-ttu-id="d1748-152">Utilisation de contrôles WPF</span><span class="sxs-lookup"><span data-stu-id="d1748-152">Using WPF Controls</span></span>](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ [<span data-ttu-id="d1748-153">Concepteur WPF</span><span class="sxs-lookup"><span data-stu-id="d1748-153">WPF Designer</span></span>](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [<span data-ttu-id="d1748-154">Vue d’ensemble du langage XAML (WPF)</span><span class="sxs-lookup"><span data-stu-id="d1748-154">XAML Overview (WPF)</span></span>](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [<span data-ttu-id="d1748-155">Application d’un style et création de modèles</span><span class="sxs-lookup"><span data-stu-id="d1748-155">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)

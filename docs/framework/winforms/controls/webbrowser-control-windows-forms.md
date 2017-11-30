@@ -1,91 +1,92 @@
 ---
-title: "WebBrowser, contr&#244;le (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "pages Web, héberger dans des applications"
-  - "pages Web, contrôles Windows Forms"
-  - "WebBrowser (contrôle Windows Forms)"
+title: "WebBrowser, contrôle (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WebBrowser control [Windows Forms]
+- Web pages [Windows Forms], hosting in applications
+- Web pages [Windows Forms], Windows Forms controls
 ms.assetid: 12667861-5b5b-46bc-8fb5-675e25264c9f
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a0a87c1cd87b21b10404ae4a19ee931cc5f69ece
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# WebBrowser, contr&#244;le (Windows Forms)
-Le contrôle `WebBrowser` Windows Forms héberge des pages Web et fournit à votre application des fonctionnalités de navigation Web.  
+# <a name="webbrowser-control-windows-forms"></a><span data-ttu-id="67c12-102">WebBrowser, contrôle (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="67c12-102">WebBrowser Control (Windows Forms)</span></span>
+<span data-ttu-id="67c12-103">Windows Forms `WebBrowser` contrôle héberge des pages Web et fournit des fonctionnalités à votre application de navigation Web.</span><span class="sxs-lookup"><span data-stu-id="67c12-103">The Windows Forms `WebBrowser` control hosts Web pages and provides Web browsing capabilities to your application.</span></span>  
   
-## Dans cette section  
- [Vue d'ensemble du contrôle WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
- Décrit ce contrôle ainsi que ses principales fonctionnalités et propriétés.  
+## <a name="in-this-section"></a><span data-ttu-id="67c12-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="67c12-104">In This Section</span></span>  
+ [<span data-ttu-id="67c12-105">Vue d’ensemble du contrôle WebBrowser</span><span class="sxs-lookup"><span data-stu-id="67c12-105">WebBrowser Control Overview</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
+ <span data-ttu-id="67c12-106">Décrit ce contrôle et ses principales fonctionnalités et propriétés.</span><span class="sxs-lookup"><span data-stu-id="67c12-106">Explains what this control is and its key features and properties.</span></span>  
   
- [Sécurité WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-security.md)  
- Explique les problèmes de sécurité liés au contrôle.  
+ [<span data-ttu-id="67c12-107">Sécurité WebBrowser</span><span class="sxs-lookup"><span data-stu-id="67c12-107">WebBrowser Security</span></span>](../../../../docs/framework/winforms/controls/webbrowser-security.md)  
+ <span data-ttu-id="67c12-108">Explique les problèmes de sécurité liés au contrôle.</span><span class="sxs-lookup"><span data-stu-id="67c12-108">Explains security issues related to the control.</span></span>  
   
- [Comment : naviguer vers une URL avec un contrôle WebBrowser](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
- Montre comment utiliser le contrôle pour naviguer vers une URL spécifique.  
+ [<span data-ttu-id="67c12-109">Guide pratique pour naviguer vers une URL avec un contrôle WebBrowser</span><span class="sxs-lookup"><span data-stu-id="67c12-109">How to: Navigate to a URL with the WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
+ <span data-ttu-id="67c12-110">Montre comment utiliser le contrôle pour accéder à une URL spécifique.</span><span class="sxs-lookup"><span data-stu-id="67c12-110">Demonstrates how to use the control to navigate to a specific URL.</span></span>  
   
- [Comment : imprimer avec un contrôle WebBrowser](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)  
- Montre comment imprimer une page Web sans l'afficher.  
+ [<span data-ttu-id="67c12-111">Guide pratique pour imprimer avec un contrôle WebBrowser</span><span class="sxs-lookup"><span data-stu-id="67c12-111">How to: Print with a WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)  
+ <span data-ttu-id="67c12-112">Montre comment imprimer une page Web sans l’afficher.</span><span class="sxs-lookup"><span data-stu-id="67c12-112">Demonstrates how to print a Web page without displaying it.</span></span>  
   
- [Comment : ajouter des fonctionnalités de navigateur Web à une application Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
- Décrit comment initialiser le contrôle pour l'utiliser en tant que navigateur Web.  
+ [<span data-ttu-id="67c12-113">Guide pratique pour ajouter des fonctionnalités de navigateur Web à une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="67c12-113">How to: Add Web Browser Capabilities to a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
+ <span data-ttu-id="67c12-114">Décrit comment initialiser le contrôle pour une utilisation en tant qu’un navigateur Web.</span><span class="sxs-lookup"><span data-stu-id="67c12-114">Describes how to initialize the control for use as a Web browser.</span></span>  
   
- [Comment : créer une visionneuse de documents HTML dans une application Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
- Décrit comment initialiser le contrôle en vue de son utilisation en tant que visionneuse HTML.  
+ [<span data-ttu-id="67c12-115">Guide pratique pour créer une visionneuse de documents HTML dans une application Windows Forms</span><span class="sxs-lookup"><span data-stu-id="67c12-115">How to: Create an HTML Document Viewer in a Windows Forms Application</span></span>](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
+ <span data-ttu-id="67c12-116">Décrit comment initialiser le contrôle à utiliser comme une visionneuse HTML.</span><span class="sxs-lookup"><span data-stu-id="67c12-116">Describes how to initialize the control for use as an HTML viewer.</span></span>  
   
- [Comment : implémenter la communication bidirectionnelle entre le code DHTML et le code d'application cliente](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)  
- Décrit comment configurer la communication bidirectionnelle entre votre code d'application et DHTML dans une page Web hébergée par le contrôle.  
+ [<span data-ttu-id="67c12-117">Guide pratique pour implémenter la communication bidirectionnelle entre le code DHTML et le code d'application cliente</span><span class="sxs-lookup"><span data-stu-id="67c12-117">How to: Implement Two-Way Communication Between DHTML Code and Client Application Code</span></span>](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)  
+ <span data-ttu-id="67c12-118">Décrit comment configurer la communication bidirectionnelle entre votre application et votre code DHTML dans une page Web hébergée par le contrôle.</span><span class="sxs-lookup"><span data-stu-id="67c12-118">Describes how to set up two-way communication between your application code and DHTML in a Web page hosted by the control.</span></span>  
   
- [Utilisation du modèle objet de document HTML managé](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)  
- Fournit des rubriques qui décrivent comment manipuler ou créer des pages HTML hébergées par le contrôle <xref:System.Windows.Forms.WebBrowser>.  
+ [<span data-ttu-id="67c12-119">Utilisation du modèle DOM HTML managé</span><span class="sxs-lookup"><span data-stu-id="67c12-119">Using the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)  
+ <span data-ttu-id="67c12-120">Fournit des rubriques qui décrivent comment manipuler ou créer des pages HTML hébergées par le <xref:System.Windows.Forms.WebBrowser> contrôle.</span><span class="sxs-lookup"><span data-stu-id="67c12-120">Provides topics that describe how to manipulate or create HTML pages hosted by the <xref:System.Windows.Forms.WebBrowser> control.</span></span>  
   
-## Référence  
- <xref:System.Windows.Forms.WebBrowser>, classe  
- Décrit cette classe et propose des liens vers tous ses membres.  
+## <a name="reference"></a><span data-ttu-id="67c12-121">Référence</span><span class="sxs-lookup"><span data-stu-id="67c12-121">Reference</span></span>  
+ <span data-ttu-id="67c12-122">Classe <xref:System.Windows.Forms.WebBrowser></span><span class="sxs-lookup"><span data-stu-id="67c12-122"><xref:System.Windows.Forms.WebBrowser> class</span></span>  
+ <span data-ttu-id="67c12-123">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="67c12-123">Describes this class and has links to all its members.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ <span data-ttu-id="67c12-124">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="67c12-124">Describes this class and has links to all its members.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  
- Décrit ce délégué.  
+ <span data-ttu-id="67c12-125">Décrit ce délégué.</span><span class="sxs-lookup"><span data-stu-id="67c12-125">Describes this delegate.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserEncryptionLevel>  
- Décrit cette énumération et toutes ses valeurs.  
+ <span data-ttu-id="67c12-126">Décrit cette énumération et toutes ses valeurs.</span><span class="sxs-lookup"><span data-stu-id="67c12-126">Describes this enumeration and all its values.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ <span data-ttu-id="67c12-127">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="67c12-127">Describes this class and has links to all its members.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>  
- Décrit ce délégué.  
+ <span data-ttu-id="67c12-128">Décrit ce délégué.</span><span class="sxs-lookup"><span data-stu-id="67c12-128">Describes this delegate.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ <span data-ttu-id="67c12-129">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="67c12-129">Describes this class and has links to all its members.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>  
- Décrit ce délégué.  
+ <span data-ttu-id="67c12-130">Décrit ce délégué.</span><span class="sxs-lookup"><span data-stu-id="67c12-130">Describes this delegate.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ <span data-ttu-id="67c12-131">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="67c12-131">Describes this class and has links to all its members.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventHandler>  
- Décrit ce délégué.  
+ <span data-ttu-id="67c12-132">Décrit ce délégué.</span><span class="sxs-lookup"><span data-stu-id="67c12-132">Describes this delegate.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserReadyState>  
- Décrit cette énumération et toutes ses valeurs.  
+ <span data-ttu-id="67c12-133">Décrit cette énumération et toutes ses valeurs.</span><span class="sxs-lookup"><span data-stu-id="67c12-133">Describes this enumeration and all its values.</span></span>  
   
  <xref:System.Windows.Forms.WebBrowserRefreshOption>  
- Décrit cette énumération et toutes ses valeurs.  
+ <span data-ttu-id="67c12-134">Décrit cette énumération et toutes ses valeurs.</span><span class="sxs-lookup"><span data-stu-id="67c12-134">Describes this enumeration and all its values.</span></span>  
   
-## Voir aussi  
- [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="67c12-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="67c12-135">See Also</span></span>  
+ [<span data-ttu-id="67c12-136">Contrôles à utiliser dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="67c12-136">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

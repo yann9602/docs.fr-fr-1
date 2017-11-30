@@ -1,89 +1,92 @@
 ---
-title: "Utilisation de contrats de donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "classe DataContractAttribute"
-  - "WCF, données"
-  - "contrats de données (WCF)"
+title: "Utilisation de contrats de données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataContractAttribute class
+- WCF, data
+- data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 38
+caps.latest.revision: "38"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 258e7fd0235ffa67ee8c293831cb8230d48a894c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Utilisation de contrats de donn&#233;es
-Un *contrat de données* est un accord en bonne et due forme entre un service et un client qui décrit de manière abstraite les données à échanger. Autrement dit, pour communiquer, le client et le service n'ont pas besoin de partager les mêmes types, mais uniquement les mêmes contrats de données. Un contrat de données définit précisément, pour chaque type de paramètre ou de retour, les données qui doivent être sérialisées \(converties en données XML\) pour être échangées.  
+# <a name="using-data-contracts"></a><span data-ttu-id="62990-102">Utilisation de contrats de données</span><span class="sxs-lookup"><span data-stu-id="62990-102">Using Data Contracts</span></span>
+<span data-ttu-id="62990-103">Un *contrat de données* est un accord en bonne et due forme entre un service et un client qui décrit de manière abstraite les données à échanger.</span><span class="sxs-lookup"><span data-stu-id="62990-103">A *data contract* is a formal agreement between a service and a client that abstractly describes the data to be exchanged.</span></span> <span data-ttu-id="62990-104">Autrement dit, pour communiquer, le client et le service n'ont pas besoin de partager les mêmes types, mais uniquement les mêmes contrats de données.</span><span class="sxs-lookup"><span data-stu-id="62990-104">That is, to communicate, the client and the service do not have to share the same types, only the same data contracts.</span></span> <span data-ttu-id="62990-105">Un contrat de données définit précisément, pour chaque type de paramètre ou de retour, les données qui doivent être sérialisées (converties en données XML) pour être échangées.</span><span class="sxs-lookup"><span data-stu-id="62990-105">A data contract precisely defines, for each parameter or return type, what data is serialized (turned into XML) to be exchanged.</span></span>  
   
-## Principes de base des contrats de données  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise un moteur de sérialisation appelé par défaut Sérialiseur de contrat de données pour sérialiser et désérialiser des données \(les convertir vers ou à partir de code XML\). Tous les types primitifs du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], tels que les entiers et les chaînes, ainsi que certains types considérés comme primitifs, tels que <xref:System.DateTime> et <xref:System.Xml.XmlElement>, peuvent être sérialisés sans autre préparation et sont considérés comme ayant des contrats de données par défaut. De nombreux types du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ont également des contrats de données existants. Pour obtenir la liste complète des types sérialisables, consultez [Types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+## <a name="data-contract-basics"></a><span data-ttu-id="62990-106">Principes de base des contrats de données</span><span class="sxs-lookup"><span data-stu-id="62990-106">Data Contract Basics</span></span>  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="62990-107"> utilise un moteur de sérialisation appelé par défaut Sérialiseur de contrat de données pour sérialiser et désérialiser des données (les convertir vers ou à partir de code XML).</span><span class="sxs-lookup"><span data-stu-id="62990-107"> uses a serialization engine called the Data Contract Serializer by default to serialize and deserialize data (convert it to and from XML).</span></span> <span data-ttu-id="62990-108">Tous les types primitifs du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] , tels que les entiers et les chaînes, ainsi que certains types considérés comme primitifs, tels que <xref:System.DateTime> et <xref:System.Xml.XmlElement>, peuvent être sérialisés sans autre préparation et sont considérés comme ayant des contrats de données par défaut.</span><span class="sxs-lookup"><span data-stu-id="62990-108">All [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] primitive types, such as integers and strings, as well as certain types treated as primitives, such as <xref:System.DateTime> and <xref:System.Xml.XmlElement>, can be serialized with no other preparation and are considered as having default data contracts.</span></span> <span data-ttu-id="62990-109">De nombreux types du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ont également des contrats de données existants.</span><span class="sxs-lookup"><span data-stu-id="62990-109">Many [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] types also have existing data contracts.</span></span> <span data-ttu-id="62990-110">Pour obtenir la liste complète des types sérialisables, consultez [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).</span><span class="sxs-lookup"><span data-stu-id="62990-110">For a full list of serializable types, see [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).</span></span>  
   
- Vous devez définir un contrat de données pour les nouveaux types complexes que vous créez afin que ces derniers soient sérialisables. Par défaut, le <xref:System.Runtime.Serialization.DataContractSerializer> déduit le contrat de données et sérialise tous les types visibles publiquement. Toutes les propriétés et tous les champs publics en lecture\/écriture du type sont sérialisés. Vous pouvez supprimer des membres de la sérialisation en utilisant <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>. Vous pouvez également créer explicitement un contrat de données à l'aide des attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute>. Pour cela, il faut normalement appliquer l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> au type. Cet attribut peut être appliqué à des classes, des structures et des énumérations. Puis, l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> doit être appliqué à chaque membre du type de contrat de données pour indiquer qu'il s'agit d'un *membre de données*, c'est\-à\-dire qu'il doit être sérialisé.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Types sérialisables](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+ <span data-ttu-id="62990-111">Vous devez définir un contrat de données pour les nouveaux types complexes que vous créez afin que ces derniers soient sérialisables.</span><span class="sxs-lookup"><span data-stu-id="62990-111">New complex types that you create must have a data contract defined for them to be serializable.</span></span> <span data-ttu-id="62990-112">Par défaut, le <xref:System.Runtime.Serialization.DataContractSerializer> déduit le contrat de données et sérialise tous les types visibles publiquement.</span><span class="sxs-lookup"><span data-stu-id="62990-112">By default, the <xref:System.Runtime.Serialization.DataContractSerializer> infers the data contract and serializes all publicly visible types.</span></span> <span data-ttu-id="62990-113">Toutes les propriétés et tous les champs publics en lecture/écriture du type sont sérialisés.</span><span class="sxs-lookup"><span data-stu-id="62990-113">All public read/write properties and fields of the type are serialized.</span></span> <span data-ttu-id="62990-114">Vous pouvez supprimer des membres de la sérialisation en utilisant <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>.</span><span class="sxs-lookup"><span data-stu-id="62990-114">You can opt out members from serialization by using the <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>.</span></span> <span data-ttu-id="62990-115">Vous pouvez également créer explicitement un contrat de données à l'aide des attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> .</span><span class="sxs-lookup"><span data-stu-id="62990-115">You can also explicitly create a data contract by using <xref:System.Runtime.Serialization.DataContractAttribute> and <xref:System.Runtime.Serialization.DataMemberAttribute> attributes.</span></span> <span data-ttu-id="62990-116">Pour cela, il faut normalement appliquer l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> au type.</span><span class="sxs-lookup"><span data-stu-id="62990-116">This is normally done by applying the <xref:System.Runtime.Serialization.DataContractAttribute> attribute to the type.</span></span> <span data-ttu-id="62990-117">Cet attribut peut être appliqué à des classes, des structures et des énumérations.</span><span class="sxs-lookup"><span data-stu-id="62990-117">This attribute can be applied to classes, structures, and enumerations.</span></span> <span data-ttu-id="62990-118">Puis, l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> doit être appliqué à chaque membre du type de contrat de données pour indiquer qu'il s'agit d'un *membre de données*, c'est-à-dire qu'il doit être sérialisé.</span><span class="sxs-lookup"><span data-stu-id="62990-118">The <xref:System.Runtime.Serialization.DataMemberAttribute> attribute must then be applied to each member of the data contract type to indicate that it is a *data member*, that is, it should be serialized.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="62990-119">[Types sérialisables](../../../../docs/framework/wcf/feature-details/serializable-types.md).</span><span class="sxs-lookup"><span data-stu-id="62990-119"> [Serializable Types](../../../../docs/framework/wcf/feature-details/serializable-types.md).</span></span>  
   
-### Exemple  
- L'exemple suivant présente un contrat de service \(une interface\) auquel les attributs <xref:System.ServiceModel.ServiceContractAttribute> et <xref:System.ServiceModel.OperationContractAttribute> ont été explicitement appliqués. L'exemple montre que les types primitifs ne requièrent pas de contrat de données, contrairement au type complexe.  
+### <a name="example"></a><span data-ttu-id="62990-120">Exemple</span><span class="sxs-lookup"><span data-stu-id="62990-120">Example</span></span>  
+ <span data-ttu-id="62990-121">L'exemple suivant présente un contrat de service (une interface) auquel les attributs <xref:System.ServiceModel.ServiceContractAttribute> et <xref:System.ServiceModel.OperationContractAttribute> ont été explicitement appliqués.</span><span class="sxs-lookup"><span data-stu-id="62990-121">The following example shows a service contract (an interface) to which the <xref:System.ServiceModel.ServiceContractAttribute> and <xref:System.ServiceModel.OperationContractAttribute> attributes have been explicitly applied.</span></span> <span data-ttu-id="62990-122">L'exemple montre que les types primitifs ne requièrent pas de contrat de données, contrairement au type complexe.</span><span class="sxs-lookup"><span data-stu-id="62990-122">The example shows that primitive types do not require a data contract, while a complex type does.</span></span>  
   
  [!code-csharp[C_DataContract#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#1)]
  [!code-vb[C_DataContract#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#1)]  
   
- L'exemple suivant montre comment créer un contrat de données pour le type `MyTypes.PurchaseOrder` en appliquant les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> à la classe et à ses membres.  
+ <span data-ttu-id="62990-123">L'exemple suivant montre comment créer un contrat de données pour le type `MyTypes.PurchaseOrder` en appliquant les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> à la classe et à ses membres.</span><span class="sxs-lookup"><span data-stu-id="62990-123">The following example shows how a data contract for the `MyTypes.PurchaseOrder` type is created by applying the <xref:System.Runtime.Serialization.DataContractAttribute> and <xref:System.Runtime.Serialization.DataMemberAttribute> attributes to the class and its members.</span></span>  
   
  [!code-csharp[C_DataContract#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#2)]
  [!code-vb[C_DataContract#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#2)]  
   
-### Notes  
- Les remarques suivantes fournissent des éléments à prendre en compte lors de la création de contrats de données :  
+### <a name="notes"></a><span data-ttu-id="62990-124">Notes</span><span class="sxs-lookup"><span data-stu-id="62990-124">Notes</span></span>  
+ <span data-ttu-id="62990-125">Les remarques suivantes fournissent des éléments à prendre en compte lors de la création de contrats de données :</span><span class="sxs-lookup"><span data-stu-id="62990-125">The following notes provide items to consider when creating data contracts:</span></span>  
   
--   L'attribut <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> est honoré uniquement lorsqu'il est utilisé avec des types non marqués. Cela inclut les types qui ne sont pas marqués avec l'un des attributs <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute> ou <xref:System.Runtime.Serialization.EnumMemberAttribute>, ou qui sont marqués comme sérialisables par tout autre moyen \(par exemple, objet <xref:System.Xml.Serialization.IXmlSerializable>\).  
+-   <span data-ttu-id="62990-126">L'attribut <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> est honoré uniquement lorsqu'il est utilisé avec des types non marqués.</span><span class="sxs-lookup"><span data-stu-id="62990-126">The <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> attribute is only honored when used with unmarked types.</span></span> <span data-ttu-id="62990-127">Cela inclut les types qui ne sont pas marqués avec l'un des attributs <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>ou <xref:System.Runtime.Serialization.EnumMemberAttribute> , ou qui sont marqués comme sérialisables par tout autre moyen (par exemple, objet <xref:System.Xml.Serialization.IXmlSerializable>).</span><span class="sxs-lookup"><span data-stu-id="62990-127">This includes types that are not marked with one of the <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>, or <xref:System.Runtime.Serialization.EnumMemberAttribute> attributes, or marked as serializable by any other means (such as <xref:System.Xml.Serialization.IXmlSerializable>).</span></span>  
   
--   Vous pouvez appliquer l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> à des champs et à des propriétés.  
+-   <span data-ttu-id="62990-128">Vous pouvez appliquer l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> à des champs et à des propriétés.</span><span class="sxs-lookup"><span data-stu-id="62990-128">You can apply the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute to fields, and properties.</span></span>  
   
--   Les niveaux d'accessibilité des membres \(interne, privé, protégé ou public\) n'affectent en aucune façon le contrat de données.  
+-   <span data-ttu-id="62990-129">Les niveaux d'accessibilité des membres (interne, privé, protégé ou public) n'affectent en aucune façon le contrat de données.</span><span class="sxs-lookup"><span data-stu-id="62990-129">Member accessibility levels (internal, private, protected, or public) do not affect the data contract in any way.</span></span>  
   
--   L'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> est ignoré s'il est appliqué à des membres statiques.  
+-   <span data-ttu-id="62990-130">L'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> est ignoré s'il est appliqué à des membres statiques.</span><span class="sxs-lookup"><span data-stu-id="62990-130">The <xref:System.Runtime.Serialization.DataMemberAttribute> attribute is ignored if it is applied to static members.</span></span>  
   
--   Pendant la sérialisation, le code de propriété get est appelé pour que les membres de données de propriété obtiennent la valeur des propriétés à sérialiser.  
+-   <span data-ttu-id="62990-131">Pendant la sérialisation, le code de propriété get est appelé pour que les membres de données de propriété obtiennent la valeur des propriétés à sérialiser.</span><span class="sxs-lookup"><span data-stu-id="62990-131">During serialization, property-get code is called for property data members to get the value of the properties to be serialized.</span></span>  
   
--   Pendant la désérialisation, un objet non initialisé est d'abord créé, sans appeler de constructeur sur le type. Puis, tous les membres de données sont désérialisés.  
+-   <span data-ttu-id="62990-132">Pendant la désérialisation, un objet non initialisé est d'abord créé, sans appeler de constructeur sur le type.</span><span class="sxs-lookup"><span data-stu-id="62990-132">During deserialization, an uninitialized object is first created, without calling any constructors on the type.</span></span> <span data-ttu-id="62990-133">Puis, tous les membres de données sont désérialisés.</span><span class="sxs-lookup"><span data-stu-id="62990-133">Then all data members are deserialized.</span></span>  
   
--   Pendant la désérialisation, le code de propriété set est appelé pour que les membres de données de propriété attribuent aux propriétés la valeur désérialisée.  
+-   <span data-ttu-id="62990-134">Pendant la désérialisation, le code de propriété set est appelé pour que les membres de données de propriété attribuent aux propriétés la valeur désérialisée.</span><span class="sxs-lookup"><span data-stu-id="62990-134">During deserialization, property-set code is called for property data members to set the properties to the value being deserialized.</span></span>  
   
--   Pour qu'un contrat de données soit valide, il doit être possible de sérialiser tous ses membres de données. Pour obtenir la liste complète des types sérialisables, consultez [Types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+-   <span data-ttu-id="62990-135">Pour qu'un contrat de données soit valide, il doit être possible de sérialiser tous ses membres de données.</span><span class="sxs-lookup"><span data-stu-id="62990-135">For a data contract to be valid, it must be possible to serialize all of its data members.</span></span> <span data-ttu-id="62990-136">Pour obtenir la liste complète des types sérialisables, consultez [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).</span><span class="sxs-lookup"><span data-stu-id="62990-136">For a full list of serializable types, see [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).</span></span>  
   
-     Les types génériques sont gérés exactement de la même façon que les types non génériques. Les paramètres génériques n'ont pas d'exigences particulières. Considérons par exemple le type suivant.  
+     <span data-ttu-id="62990-137">Les types génériques sont gérés exactement de la même façon que les types non génériques.</span><span class="sxs-lookup"><span data-stu-id="62990-137">Generic types are handled in exactly the same way as non-generic types.</span></span> <span data-ttu-id="62990-138">Les paramètres génériques n'ont pas d'exigences particulières.</span><span class="sxs-lookup"><span data-stu-id="62990-138">There are no special requirements for generic parameters.</span></span> <span data-ttu-id="62990-139">Considérons par exemple le type suivant.</span><span class="sxs-lookup"><span data-stu-id="62990-139">For example, consider the following type.</span></span>  
   
  [!code-csharp[C_DataContract#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#3)]
  [!code-vb[C_DataContract#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#3)]  
   
- Ce type est sérialisable, que le type utilisé pour le paramètre de type générique \(`T`\) le soit ou non. Comme il doit être possible de sérialiser tous les membres de données, le type suivant est sérialisable uniquement si le paramètre de type générique l'est également, tel qu'indiqué dans le code suivant.  
+ <span data-ttu-id="62990-140">Ce type est sérialisable, que le type utilisé pour le paramètre de type générique (`T`) le soit ou non.</span><span class="sxs-lookup"><span data-stu-id="62990-140">This type is serializable whether the type used for the generic type parameter (`T`) is serializable or not.</span></span> <span data-ttu-id="62990-141">Comme il doit être possible de sérialiser tous les membres de données, le type suivant est sérialisable uniquement si le paramètre de type générique l'est également, tel qu'indiqué dans le code suivant.</span><span class="sxs-lookup"><span data-stu-id="62990-141">Because it must be possible to serialize all data members, the following type is serializable only if the generic type parameter is also serializable, as shown in the following code.</span></span>  
   
  [!code-csharp[C_DataContract#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#4)]
  [!code-vb[C_DataContract#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#4)]  
   
- Pour obtenir un exemple de code complet d’un service WCF qui définit un contrat de données, consultez l’exemple [Basic Data Contract](../../../../docs/framework/wcf/samples/basic-data-contract.md).  
+ <span data-ttu-id="62990-142">Pour obtenir un exemple de code complet d’un service WCF qui définit un contrat de données, consultez l’exemple [Basic Data Contract](../../../../docs/framework/wcf/samples/basic-data-contract.md) .</span><span class="sxs-lookup"><span data-stu-id="62990-142">For a complete code sample of a WCF service that defines a data contract see the [Basic Data Contract](../../../../docs/framework/wcf/samples/basic-data-contract.md) sample.</span></span>  
   
-## Voir aussi  
- <xref:System.Runtime.Serialization.DataMemberAttribute>   
- <xref:System.Runtime.Serialization.DataContractAttribute>   
- [Types sérialisables](../../../../docs/framework/wcf/feature-details/serializable-types.md)   
- [Noms de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-names.md)   
- [Équivalence de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)   
- [Classement des membres de données](../../../../docs/framework/wcf/feature-details/data-member-order.md)   
- [Types connus de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)   
- [Contrats de données à compatibilité ascendante](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)   
- [Contrôle de version des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)   
- [Rappels de sérialisation avec tolérance de version](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)   
- [Valeurs par défaut des membres de données](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)   
- [Types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)   
- [Comment : créer un contrat de données de base destiné à une classe ou une structure](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+## <a name="see-also"></a><span data-ttu-id="62990-143">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="62990-143">See Also</span></span>  
+ <xref:System.Runtime.Serialization.DataMemberAttribute>  
+ <xref:System.Runtime.Serialization.DataContractAttribute>  
+ [<span data-ttu-id="62990-144">Types sérialisables</span><span class="sxs-lookup"><span data-stu-id="62990-144">Serializable Types</span></span>](../../../../docs/framework/wcf/feature-details/serializable-types.md)  
+ [<span data-ttu-id="62990-145">Noms de contrat de données</span><span class="sxs-lookup"><span data-stu-id="62990-145">Data Contract Names</span></span>](../../../../docs/framework/wcf/feature-details/data-contract-names.md)  
+ [<span data-ttu-id="62990-146">Équivalence des contrats de données</span><span class="sxs-lookup"><span data-stu-id="62990-146">Data Contract Equivalence</span></span>](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
+ [<span data-ttu-id="62990-147">Ordre des membres de données</span><span class="sxs-lookup"><span data-stu-id="62990-147">Data Member Order</span></span>](../../../../docs/framework/wcf/feature-details/data-member-order.md)  
+ [<span data-ttu-id="62990-148">Types connus de contrat de données</span><span class="sxs-lookup"><span data-stu-id="62990-148">Data Contract Known Types</span></span>](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
+ [<span data-ttu-id="62990-149">Contrats de données à compatibilité ascendante</span><span class="sxs-lookup"><span data-stu-id="62990-149">Forward-Compatible Data Contracts</span></span>](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)  
+ [<span data-ttu-id="62990-150">Version des contrats de données</span><span class="sxs-lookup"><span data-stu-id="62990-150">Data Contract Versioning</span></span>](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
+ [<span data-ttu-id="62990-151">Rappels de sérialisation avec tolérance de version</span><span class="sxs-lookup"><span data-stu-id="62990-151">Version-Tolerant Serialization Callbacks</span></span>](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)  
+ [<span data-ttu-id="62990-152">Valeurs de données membre par défaut</span><span class="sxs-lookup"><span data-stu-id="62990-152">Data Member Default Values</span></span>](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)  
+ [<span data-ttu-id="62990-153">Types pris en charge par le sérialiseur de contrat de données</span><span class="sxs-lookup"><span data-stu-id="62990-153">Types Supported by the Data Contract Serializer</span></span>](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
+ [<span data-ttu-id="62990-154">Comment : créer un contrat de données de base pour une classe ou Structure</span><span class="sxs-lookup"><span data-stu-id="62990-154">How to: Create a Basic Data Contract for a Class or Structure</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Channels.PeerNodeOpened | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Channels.PeerNodeOpened
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 516d95c6-ed9d-4673-95ec-3661daba4959
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0a863b84f22db3ee23dcbdc11be70f2c5a520f4b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Channels.PeerNodeOpened
-Une nouvelle connexion de voisin a été ouverte avec succès.  
+# <a name="systemservicemodelchannelspeernodeopened"></a><span data-ttu-id="708f1-102">System.ServiceModel.Channels.PeerNodeOpened</span><span class="sxs-lookup"><span data-stu-id="708f1-102">System.ServiceModel.Channels.PeerNodeOpened</span></span>
+<span data-ttu-id="708f1-103">Une nouvelle connexion de voisin a été ouverte avec succès.</span><span class="sxs-lookup"><span data-stu-id="708f1-103">A new neighbor connection has successfully been opened.</span></span>  
   
-## Description  
- Ce suivi se produit après une tentative de connexion de voisin réussie.  
+## <a name="description"></a><span data-ttu-id="708f1-104">Description</span><span class="sxs-lookup"><span data-stu-id="708f1-104">Description</span></span>  
+ <span data-ttu-id="708f1-105">Ce suivi se produit après une tentative de connexion de voisin réussie.</span><span class="sxs-lookup"><span data-stu-id="708f1-105">This trace occurs after a successful neighbor connection attempt.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="708f1-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="708f1-106">See Also</span></span>  
+ [<span data-ttu-id="708f1-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="708f1-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="708f1-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="708f1-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="708f1-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="708f1-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

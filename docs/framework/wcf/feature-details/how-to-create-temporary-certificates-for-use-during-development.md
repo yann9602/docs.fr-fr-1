@@ -1,91 +1,94 @@
 ---
-title: "Comment&#160;: cr&#233;er des certificats temporaires &#224; utiliser au cours du d&#233;veloppement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "certificats [WCF], création de certificats temporaires"
-  - "certificats temporaires [WCF]"
+title: "Comment : créer des certificats temporaires à utiliser au cours du développement"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- certificates [WCF], creating temporary certificates
+- temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a1b386906c1d493a23d8a58f3540758d3ae0d26e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er des certificats temporaires &#224; utiliser au cours du d&#233;veloppement
-Lors du développement d'un service ou d'un client sécurisé à l'aide de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], il est souvent nécessaire de fournir un certificat X.509 à utiliser comme informations d'identification. Le certificat fait en général partie d'une chaîne de certificats dont l'autorité racine est présente dans le magasin d'Autorités de certification racines de confiance de l'ordinateur. Une chaîne de certificats vous permet de définir la portée d'un jeu de certificats où en général l'autorité racine provient de votre organisation ou votre division. Pour émuler ce scénario au moment du développement, vous pouvez créer deux certificats pour satisfaire les conditions de sécurité. Le premier est un certificat auto\-signé placé dans le magasin d'Autorités de certification racines de confiance. Le deuxième certificat est créé à partir du premier et placé dans le magasin personnel de l'emplacement de l'ordinateur local ou dans le magasin personnel de l'emplacement de l'utilisateur actif. Cette rubrique décrit les étapes permettant de créer ces deux certificats à l’aide de l’[outil de création de certificat \(MakeCert.exe\)](http://go.microsoft.com/fwlink/?LinkId=248185), fourni par le Kit de développement logiciel \(SDK\) [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+# <a name="how-to-create-temporary-certificates-for-use-during-development"></a><span data-ttu-id="36561-102">Comment : créer des certificats temporaires à utiliser au cours du développement</span><span class="sxs-lookup"><span data-stu-id="36561-102">How to: Create Temporary Certificates for Use During Development</span></span>
+<span data-ttu-id="36561-103">Lors du développement d'un service ou d'un client sécurisé à l'aide de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], il est souvent nécessaire de fournir un certificat X.509 à utiliser comme informations d'identification.</span><span class="sxs-lookup"><span data-stu-id="36561-103">When developing a secure service or client using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], it is often necessary to supply an X.509 certificate to be used as a credential.</span></span> <span data-ttu-id="36561-104">Le certificat fait en général partie d'une chaîne de certificats dont l'autorité racine est présente dans le magasin d'Autorités de certification racines de confiance de l'ordinateur.</span><span class="sxs-lookup"><span data-stu-id="36561-104">The certificate typically is part of a chain of certificates with a root authority found in the Trusted Root Certification Authorities store of the computer.</span></span> <span data-ttu-id="36561-105">Une chaîne de certificats vous permet de définir la portée d'un jeu de certificats où en général l'autorité racine provient de votre organisation ou votre division.</span><span class="sxs-lookup"><span data-stu-id="36561-105">Having a certificate chain enables you to scope a set of certificates where typically the root authority is from your organization or business unit.</span></span> <span data-ttu-id="36561-106">Pour émuler ce scénario au moment du développement, vous pouvez créer deux certificats pour satisfaire les conditions de sécurité.</span><span class="sxs-lookup"><span data-stu-id="36561-106">To emulate this at development time, you can create two certificates to satisfy the security requirements.</span></span> <span data-ttu-id="36561-107">Le premier est un certificat auto-signé placé dans le magasin d'Autorités de certification racines de confiance. Le deuxième certificat est créé à partir du premier et placé dans le magasin personnel de l'emplacement de l'ordinateur local ou dans le magasin personnel de l'emplacement de l'utilisateur actif.</span><span class="sxs-lookup"><span data-stu-id="36561-107">The first is a self-signed certificate that is placed in the Trusted Root Certification Authorities store, and the second certificate is created from the first and is placed in either the Personal store of the Local Machine location, or the Personal store of the Current User location.</span></span> <span data-ttu-id="36561-108">Cette rubrique décrit les étapes permettant de créer ces deux certificats à l’aide de l’ [outil de création de certificat (MakeCert.exe)](http://go.microsoft.com/fwlink/?LinkId=248185), fourni par le Kit de développement logiciel (SDK) [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="36561-108">This topic walks through the steps to create these two certificates using the [Certificate Creation Tool (MakeCert.exe)](http://go.microsoft.com/fwlink/?LinkId=248185), which is provided by the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK.</span></span>  
   
 > [!IMPORTANT]
->  Les certificats générés par l'outil de création de certification sont fournis uniquement à des fins de tests. Lorsque vous déployez un service ou un client, veillez à utiliser un certificat approprié fourni par une autorité de certification. Celui\-ci peut provenir d'un serveur de certificat [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] dans votre organisation ou d'un tiers.  
+>  <span data-ttu-id="36561-109">Les certificats générés par l'outil de création de certification sont fournis uniquement à des fins de tests.</span><span class="sxs-lookup"><span data-stu-id="36561-109">The certificates the Certification Creation tool generates are provided for testing purposes only.</span></span> <span data-ttu-id="36561-110">Lorsque vous déployez un service ou un client, veillez à utiliser un certificat approprié fourni par une autorité de certification.</span><span class="sxs-lookup"><span data-stu-id="36561-110">When deploying a service or client, be sure to use an appropriate certificate provided by a certification authority.</span></span> <span data-ttu-id="36561-111">Celui-ci peut provenir d'un serveur de certificat [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] dans votre organisation ou d'un tiers.</span><span class="sxs-lookup"><span data-stu-id="36561-111">This could either be from a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] certificate server in your organization or a third party.</span></span>  
 >   
->  Par défaut, l’[Makecert.exe \(Certificate Creation Tool\)](../Topic/Makecert.exe%20\(Certificate%20Creation%20Tool\).md) crée des certificats dont l’autorité racine est appelée « Agence Racine **».** Comme celle\-ci ne figure pas dans le magasin d'Autorités de certification racines de confiance, ces certificats ne sont pas sécurisés. La création d'un certificat auto\-signé placé dans le magasin d'Autorités de certification racines de confiance vous permet de créer un environnement de développement qui reproduit plus fidèlement votre environnement de déploiement.  
+>  <span data-ttu-id="36561-112">Par défaut, le [Makecert.exe (outil de création de certificat)](http://msdn.microsoft.com/library/b0343f8e-9c41-4852-a85c-f8a0c408cf0d) crée des certificats dont l’autorité racine est appelée « agence de racine**. »**</span><span class="sxs-lookup"><span data-stu-id="36561-112">By default, the [Makecert.exe (Certificate Creation Tool)](http://msdn.microsoft.com/library/b0343f8e-9c41-4852-a85c-f8a0c408cf0d) creates certificates whose root authority is called "Root Agency**."**</span></span> <span data-ttu-id="36561-113">Comme celle-ci ne figure pas dans le magasin d'Autorités de certification racines de confiance, ces certificats ne sont pas sécurisés.</span><span class="sxs-lookup"><span data-stu-id="36561-113">Because the "Root Agency" is not in the Trusted Root Certification Authorities store, this makes these certificates insecure.</span></span> <span data-ttu-id="36561-114">La création d'un certificat auto-signé placé dans le magasin d'Autorités de certification racines de confiance vous permet de créer un environnement de développement qui reproduit plus fidèlement votre environnement de déploiement.</span><span class="sxs-lookup"><span data-stu-id="36561-114">Creating a self-signed certificate that is placed in the Trusted Root Certification Authorities store enables you to create a development environment that more closely simulates your deployment environment.</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] la création et l’utilisation de certificats, consultez [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).[!INCLUDE[crabout](../../../../includes/crabout-md.md)] l’utilisation d’un certificat en tant qu’informations d’identification, consultez [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md). Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](http://go.microsoft.com/fwlink/?LinkId=88919) \(Vues d’ensemble et didacticiels relatifs à Authenticode\).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="36561-115"> la création et l’utilisation de certificats, consultez [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="36561-115"> creating and using certificates, see [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="36561-116"> l’utilisation d’un certificat en tant qu’informations d’identification, consultez [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).</span><span class="sxs-lookup"><span data-stu-id="36561-116"> using a certificate as a credential, see [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).</span></span> <span data-ttu-id="36561-117">Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](http://go.microsoft.com/fwlink/?LinkId=88919)(Vues d’ensemble et didacticiels relatifs à Authenticode).</span><span class="sxs-lookup"><span data-stu-id="36561-117">For a tutorial about using Microsoft Authenticode technology, see [Authenticode Overviews and Tutorials](http://go.microsoft.com/fwlink/?LinkId=88919).</span></span>  
   
-### Pour créer un certificat d'autorité racine auto\-signé et exporter la clé privée  
+### <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a><span data-ttu-id="36561-118">Pour créer un certificat d'autorité racine auto-signé et exporter la clé privée</span><span class="sxs-lookup"><span data-stu-id="36561-118">To create a self-signed root authority certificate and export the private key</span></span>  
   
-1.  Utilisez l'outil MakeCert.exe avec les commutateurs suivants :  
+1.  <span data-ttu-id="36561-119">Utilisez l'outil MakeCert.exe avec les commutateurs suivants :</span><span class="sxs-lookup"><span data-stu-id="36561-119">Use the MakeCert.exe tool with the following switches:</span></span>  
   
-    1.  `-n` `subjectName`. Spécifie le nom du sujet. La convention est de préfixer le nom du sujet avec "CN \= ", abréviation de « Common Name ».  
+    1.  <span data-ttu-id="36561-120">`-n` `subjectName`.</span><span class="sxs-lookup"><span data-stu-id="36561-120">`-n` `subjectName`.</span></span> <span data-ttu-id="36561-121">Spécifie le nom du sujet.</span><span class="sxs-lookup"><span data-stu-id="36561-121">Specifies the subject name.</span></span> <span data-ttu-id="36561-122">La convention est de préfixer le nom du sujet avec "CN = ", abréviation de « Common Name ».</span><span class="sxs-lookup"><span data-stu-id="36561-122">The convention is to prefix the subject name with "CN = " for "Common Name".</span></span>  
   
-    2.  `-r`. Spécifie que le certificat sera auto\-signé.  
+    2.  <span data-ttu-id="36561-123">`-r`.</span><span class="sxs-lookup"><span data-stu-id="36561-123">`-r`.</span></span> <span data-ttu-id="36561-124">Spécifie que le certificat sera auto-signé.</span><span class="sxs-lookup"><span data-stu-id="36561-124">Specifies that the certificate will be self-signed.</span></span>  
   
-    3.  `-sv` `privateKeyFile`. Spécifie le fichier qui contient le conteneur de clé privée.  
+    3.  <span data-ttu-id="36561-125">`-sv` `privateKeyFile`.</span><span class="sxs-lookup"><span data-stu-id="36561-125">`-sv` `privateKeyFile`.</span></span> <span data-ttu-id="36561-126">Spécifie le fichier qui contient le conteneur de clé privée.</span><span class="sxs-lookup"><span data-stu-id="36561-126">Specifies the file that contains the private key container.</span></span>  
   
-     Par exemple, la commande suivante crée un certificat auto\-signé avec un nom de sujet de "CN\=TempCA".  
+     <span data-ttu-id="36561-127">Par exemple, la commande suivante crée un certificat auto-signé avec un nom de sujet de "CN=TempCA".</span><span class="sxs-lookup"><span data-stu-id="36561-127">For example, the following command creates a self-signed certificate with a subject name of "CN=TempCA."</span></span>  
   
     ```  
     makecert -n "CN=TempCA" -r -sv TempCA.pvk TempCA.cer  
     ```  
   
-     Le système vous invite à fournir un mot de passe pour protéger la clé privée. Ce mot de passe est requis lors de la création d'un certificat signé par ce certificat racine.  
+     <span data-ttu-id="36561-128">Le système vous invite à fournir un mot de passe pour protéger la clé privée.</span><span class="sxs-lookup"><span data-stu-id="36561-128">You will be prompted to provide a password to protect the private key.</span></span> <span data-ttu-id="36561-129">Ce mot de passe est requis lors de la création d'un certificat signé par ce certificat racine.</span><span class="sxs-lookup"><span data-stu-id="36561-129">This password is required when creating a certificate signed by this root certificate.</span></span>  
   
-### Pour créer un nouveau certificat signé par un certificat d'autorité racine  
+### <a name="to-create-a-new-certificate-signed-by-a-root-authority-certificate"></a><span data-ttu-id="36561-130">Pour créer un nouveau certificat signé par un certificat d'autorité racine</span><span class="sxs-lookup"><span data-stu-id="36561-130">To create a new certificate signed by a root authority certificate</span></span>  
   
-1.  Utilisez l'outil MakeCert.exe avec les commutateurs suivants :  
+1.  <span data-ttu-id="36561-131">Utilisez l'outil MakeCert.exe avec les commutateurs suivants :</span><span class="sxs-lookup"><span data-stu-id="36561-131">Use the MakeCert.exe tool with the following switches:</span></span>  
   
-    1.  `-sk` `subjectKey`. Emplacement du conteneur de clé du sujet comportant la clé privée. Un conteneur de clé sera créé s'il n'en existe aucun. Si aucune des options \-sk ou \-sv n'est utilisée, un conteneur de clé appelé JoeSoft est créé par défaut.  
+    1.  <span data-ttu-id="36561-132">`-sk` `subjectKey`.</span><span class="sxs-lookup"><span data-stu-id="36561-132">`-sk` `subjectKey`.</span></span> <span data-ttu-id="36561-133">Emplacement du conteneur de clé du sujet comportant la clé privée.</span><span class="sxs-lookup"><span data-stu-id="36561-133">The location of the subject's key container that holds the private key.</span></span> <span data-ttu-id="36561-134">Un conteneur de clé sera créé s'il n'en existe aucun.</span><span class="sxs-lookup"><span data-stu-id="36561-134">If a key container does not exist, one is created.</span></span> <span data-ttu-id="36561-135">Si aucune des options -sk ou -sv n'est utilisée, un conteneur de clé appelé JoeSoft est créé par défaut.</span><span class="sxs-lookup"><span data-stu-id="36561-135">If neither of the -sk or -sv options is used, a key container called JoeSoft is created by default.</span></span>  
   
-    2.  `-n` `subjectName`. Spécifie le nom du sujet. La convention est de préfixer le nom du sujet avec "CN \= ", abréviation de « Common Name ».  
+    2.  <span data-ttu-id="36561-136">`-n` `subjectName`.</span><span class="sxs-lookup"><span data-stu-id="36561-136">`-n` `subjectName`.</span></span> <span data-ttu-id="36561-137">Spécifie le nom du sujet.</span><span class="sxs-lookup"><span data-stu-id="36561-137">Specifies the subject name.</span></span> <span data-ttu-id="36561-138">La convention est de préfixer le nom du sujet avec "CN = ", abréviation de « Common Name ».</span><span class="sxs-lookup"><span data-stu-id="36561-138">The convention is to prefix the subject name with "CN = " for "Common Name".</span></span>  
   
-    3.  `-iv` `issuerKeyFile`. Spécifie le fichier de clé privée de l'émetteur.  
+    3.  <span data-ttu-id="36561-139">`-iv` `issuerKeyFile`.</span><span class="sxs-lookup"><span data-stu-id="36561-139">`-iv` `issuerKeyFile`.</span></span> <span data-ttu-id="36561-140">Spécifie le fichier de clé privée de l'émetteur.</span><span class="sxs-lookup"><span data-stu-id="36561-140">Specifies the issuer's private key file.</span></span>  
   
-    4.  `-ic` `issuerCertFile`. Spécifie l'emplacement du certificat de l'émetteur.  
+    4.  <span data-ttu-id="36561-141">`-ic` `issuerCertFile`.</span><span class="sxs-lookup"><span data-stu-id="36561-141">`-ic` `issuerCertFile`.</span></span> <span data-ttu-id="36561-142">Spécifie l'emplacement du certificat de l'émetteur.</span><span class="sxs-lookup"><span data-stu-id="36561-142">Specifies the location of the issuer's certificate.</span></span>  
   
-     Par exemple, la commande suivante crée un certificat signé par le certificat d'autorité racine `TempCA` avec `"CN=SignedByCA"` comme nom de sujet qui utilise la clé privée de l'émetteur.  
+     <span data-ttu-id="36561-143">Par exemple, la commande suivante crée un certificat signé par le certificat d'autorité racine `TempCA` avec `"CN=SignedByCA"` comme nom de sujet qui utilise la clé privée de l'émetteur.</span><span class="sxs-lookup"><span data-stu-id="36561-143">For example, the following command creates a certificate signed by the `TempCA` root authority certificate with a subject name of `"CN=SignedByCA"` using the private key of the issuer.</span></span>  
   
     ```  
     makecert -sk SignedByCA -iv TempCA.pvk -n "CN=SignedByCA" -ic TempCA.cer SignedByCA.cer -sr currentuser -ss My  
     ```  
   
-## Installation d'un certificat dans le magasin d'Autorités de certification racines de confiance  
- Une fois qu'un certificat auto\-signé est créé, vous pouvez l'installer dans le magasin d'Autorités de certification racines de confiance. Tous les certificats signés à ce stade avec le certificat sont approuvés par l'ordinateur. Pour cette raison, supprimez le certificat du magasin dès que vous n'en avez plus besoin. Lorsque vous supprimez ce certificat d'autorité racine, tous les autres certificats ayant signé à l'aide de ce dernier ne sont plus autorisés. Les certificats d'autorité racines sont un simple mécanisme qui permet de définir la portée d'un groupe de certificats selon les besoins. Par exemple, dans les applications d'égal à égal, l'autorité racine n'est pas nécessaire le plus souvent dans la mesure où l'identité d'un individu est garantie par le certificat qu'il fournit.  
+## <a name="installing-a-certificate-in-the-trusted-root-certification-authorities-store"></a><span data-ttu-id="36561-144">Installation d'un certificat dans le magasin d'Autorités de certification racines de confiance</span><span class="sxs-lookup"><span data-stu-id="36561-144">Installing a Certificate in the Trusted Root Certification Authorities Store</span></span>  
+ <span data-ttu-id="36561-145">Une fois qu'un certificat auto-signé est créé, vous pouvez l'installer dans le magasin d'Autorités de certification racines de confiance.</span><span class="sxs-lookup"><span data-stu-id="36561-145">Once a self-signed certificate is created, you can install it in the Trusted Root Certification Authorities store.</span></span> <span data-ttu-id="36561-146">Tous les certificats signés à ce stade avec le certificat sont approuvés par l'ordinateur.</span><span class="sxs-lookup"><span data-stu-id="36561-146">Any certificates that are signed with the certificate at this point are trusted by the computer.</span></span> <span data-ttu-id="36561-147">Pour cette raison, supprimez le certificat du magasin dès que vous n'en avez plus besoin.</span><span class="sxs-lookup"><span data-stu-id="36561-147">For this reason, delete the certificate from the store as soon as you no longer need it.</span></span> <span data-ttu-id="36561-148">Lorsque vous supprimez ce certificat d'autorité racine, tous les autres certificats ayant signé à l'aide de ce dernier ne sont plus autorisés.</span><span class="sxs-lookup"><span data-stu-id="36561-148">When you delete this root authority certificate, all other certificates that signed with it become unauthorized.</span></span> <span data-ttu-id="36561-149">Les certificats d'autorité racines sont un simple mécanisme qui permet de définir la portée d'un groupe de certificats selon les besoins.</span><span class="sxs-lookup"><span data-stu-id="36561-149">Root authority certificates are simply a mechanism whereby a group of certificates can be scoped as necessary.</span></span> <span data-ttu-id="36561-150">Par exemple, dans les applications d'égal à égal, l'autorité racine n'est pas nécessaire le plus souvent dans la mesure où l'identité d'un individu est garantie par le certificat qu'il fournit.</span><span class="sxs-lookup"><span data-stu-id="36561-150">For example, in peer-to-peer applications, there is typically no need for a root authority because you simply trust the identity of an individual by its supplied certificate.</span></span>  
   
-#### Pour installer un certificat auto\-signé dans les Autorités de certification racines de confiance  
+#### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a><span data-ttu-id="36561-151">Pour installer un certificat auto-signé dans les Autorités de certification racines de confiance</span><span class="sxs-lookup"><span data-stu-id="36561-151">To install a self-signed certificate in the Trusted Root Certification Authorities</span></span>  
   
-1.  Ouvrez le composant logiciel enfichable Certificat.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+1.  <span data-ttu-id="36561-152">Ouvrez le composant logiciel enfichable Certificat.</span><span class="sxs-lookup"><span data-stu-id="36561-152">Open the certificate snap-in.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="36561-153">[Comment : afficher des certificats avec le composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).</span><span class="sxs-lookup"><span data-stu-id="36561-153"> [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).</span></span>  
   
-2.  Ouvrez le dossier pour stocker le certificat, soit **Ordinateur local**, soit **Utilisateur actuel**.  
+2.  <span data-ttu-id="36561-154">Ouvrez le dossier pour stocker le certificat, soit **Ordinateur local** , soit **Utilisateur actuel**.</span><span class="sxs-lookup"><span data-stu-id="36561-154">Open the folder to store the certificate, either the **Local Computer** or the **Current User**.</span></span>  
   
-3.  Ouvrez le dossier **Autorités de certification racines de confiance**.  
+3.  <span data-ttu-id="36561-155">Ouvrez le dossier **Autorités de certification racines de confiance** .</span><span class="sxs-lookup"><span data-stu-id="36561-155">Open the **Trusted Root Certification Authorities** folder.</span></span>  
   
-4.  Cliquez avec le bouton droit sur le dossier **Certificats** et cliquez sur **Toutes les tâches**, puis cliquez sur **Importer**.  
+4.  <span data-ttu-id="36561-156">Cliquez avec le bouton droit sur le dossier **Certificats** et cliquez sur **Toutes les tâches**, puis cliquez sur **Importer**.</span><span class="sxs-lookup"><span data-stu-id="36561-156">Right-click the **Certificates** folder and click **All Tasks**, then click **Import**.</span></span>  
   
-5.  Suivez les instructions de l'Assistant à l'écran pour importer TempCa.cer dans le magasin.  
+5.  <span data-ttu-id="36561-157">Suivez les instructions de l'Assistant à l'écran pour importer TempCa.cer dans le magasin.</span><span class="sxs-lookup"><span data-stu-id="36561-157">Follow the on-screen wizard instructions to import the TempCa.cer into the store.</span></span>  
   
-## Utilisation de certificats avec WCF  
- Une fois que vous avez configuré les certificats temporaires, vous pouvez les utiliser pour développer des solutions WCF qui spécifient des certificats comme un type d'informations d'identification du client. Par exemple, la configuration XML suivante spécifie la sécurité du message et un certificat comme type d'informations d'identification du client.  
+## <a name="using-certificates-with-wcf"></a><span data-ttu-id="36561-158">Utilisation de certificats avec WCF</span><span class="sxs-lookup"><span data-stu-id="36561-158">Using Certificates With WCF</span></span>  
+ <span data-ttu-id="36561-159">Une fois que vous avez configuré les certificats temporaires, vous pouvez les utiliser pour développer des solutions WCF qui spécifient des certificats comme un type d'informations d'identification du client.</span><span class="sxs-lookup"><span data-stu-id="36561-159">Once you have set up the temporary certificates, you can use them to develop WCF solutions that specify certificates as a client credential type.</span></span> <span data-ttu-id="36561-160">Par exemple, la configuration XML suivante spécifie la sécurité du message et un certificat comme type d'informations d'identification du client.</span><span class="sxs-lookup"><span data-stu-id="36561-160">For example, the following XML configuration specifies message security and a certificate as the client credential type.</span></span>  
   
-#### Pour spécifier un certificat comme type d'informations d'identification du client  
+#### <a name="to-specify-a-certificate-as-the-client-credential-type"></a><span data-ttu-id="36561-161">Pour spécifier un certificat comme type d'informations d'identification du client</span><span class="sxs-lookup"><span data-stu-id="36561-161">To specify a certificate as the client credential type</span></span>  
   
--   Dans le fichier de configuration d'un service, utilisez le XML suivant pour affecter au mode de sécurité la valeur Message, et au type d'informations d'identification du client la valeur Certificat.  
+-   <span data-ttu-id="36561-162">Dans le fichier de configuration d'un service, utilisez le XML suivant pour affecter au mode de sécurité la valeur Message, et au type d'informations d'identification du client la valeur Certificat.</span><span class="sxs-lookup"><span data-stu-id="36561-162">In the configuration file for a service, use the following XML to set the security mode to message, and the client credential type to certificate.</span></span>  
   
     ```xml  
     <bindings>       
@@ -97,13 +100,11 @@ Lors du développement d'un service ou d'un client sécurisé à l'aide de [!INC
         </binding>  
       </wsHttpBinding>  
     </bindings>  
-  
     ```  
   
- Dans le fichier de configuration d'un client, utilisez le XML suivant pour spécifier que le certificat est recherché dans le magasin de l'utilisateur, et qu'il peut être recherché dans le champ SubjectName en tapant la valeur « CohoWinery ».  
+ <span data-ttu-id="36561-163">Dans le fichier de configuration pour un client, utilisez le code XML suivant pour spécifier que le certificat est trouvé dans le magasin de l’utilisateur et sont accessibles via le champ SubjectName la valeur « CohoWinery ».</span><span class="sxs-lookup"><span data-stu-id="36561-163">In the configuration file for a client, use the following XML to specify that the certificate is found in the user’s store, and can be found by searching the SubjectName field for the value "CohoWinery."</span></span>  
   
 ```xml  
-  
 <behaviors>  
   <endpointBehaviors>  
     <behavior name="CertForClient">  
@@ -115,12 +116,12 @@ Lors du développement d'un service ou d'un client sécurisé à l'aide de [!INC
 </behaviors>  
 ```  
   
- Pour plus d’informations sur l’utilisation des certificats dans WCF, consultez [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ <span data-ttu-id="36561-164">Pour plus d’informations sur l’utilisation des certificats dans WCF, consultez [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="36561-164">For more information about using certificates in WCF, see [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>  
   
-## Sécurité .NET Framework  
- Veillez à supprimer tous les certificats d'autorité racines temporaires des dossiers **Autorités de certification racines de confiance** et **Personnel** en cliquant avec le bouton droit sur le certificat, en cliquant sur ensuite **Supprimer**.  
+## <a name="net-framework-security"></a><span data-ttu-id="36561-165">Sécurité .NET Framework</span><span class="sxs-lookup"><span data-stu-id="36561-165">.NET Framework Security</span></span>  
+ <span data-ttu-id="36561-166">Veillez à supprimer tous les certificats d'autorité racines temporaires des dossiers **Autorités de certification racines de confiance** et **Personnel** en cliquant avec le bouton droit sur le certificat, en cliquant sur ensuite **Supprimer**.</span><span class="sxs-lookup"><span data-stu-id="36561-166">Be sure to delete any temporary root authority certificates from the **Trusted Root Certification Authorities** and **Personal** folders by right-clicking the certificate, then clicking **Delete**.</span></span>  
   
-## Voir aussi  
- [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [Comment : afficher des certificats à l'aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)   
- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a><span data-ttu-id="36561-167">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="36561-167">See Also</span></span>  
+ [<span data-ttu-id="36561-168">Utilisation des certificats</span><span class="sxs-lookup"><span data-stu-id="36561-168">Working with Certificates</span></span>](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [<span data-ttu-id="36561-169">Comment : afficher des certificats avec le composant logiciel enfichable MMC</span><span class="sxs-lookup"><span data-stu-id="36561-169">How to: View Certificates with the MMC Snap-in</span></span>](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)  
+ [<span data-ttu-id="36561-170">Sécurisation des Services et Clients</span><span class="sxs-lookup"><span data-stu-id="36561-170">Securing Services and Clients</span></span>](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

@@ -1,47 +1,50 @@
 ---
-title: "UriTemplate Table Dispatcher, exemple | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: UriTemplate Table Dispatcher, exemple
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3b32975d-ba90-4c5c-83bc-2fbb48f11c0c
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3574183f0900c853bd3ff541aabc8fc6b7fcd157
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# UriTemplate Table Dispatcher, exemple
-La classe <xref:System.UriTemplateTable> fournit une structure de table associative de type dictionnaire pour utiliser un ensemble d'instances de <xref:System.UriTemplate>.Cet exemple illustre un moteur de distribution de base construit à l'aide d'`UriTemplateTable`, un scénario d'utilisation commun pour la classe `UriTemplateTable`.  
+# <a name="uritemplate-table-dispatcher-sample"></a><span data-ttu-id="6ade8-102">UriTemplate Table Dispatcher, exemple</span><span class="sxs-lookup"><span data-stu-id="6ade8-102">UriTemplate Table Dispatcher Sample</span></span>
+<span data-ttu-id="6ade8-103">La classe <xref:System.UriTemplateTable> fournit une structure de table associative de type dictionnaire permettant d'utiliser un ensemble d'instances d'<xref:System.UriTemplate>.</span><span class="sxs-lookup"><span data-stu-id="6ade8-103">The <xref:System.UriTemplateTable> class provides a dictionary-like associative table structure for working with a set of <xref:System.UriTemplate> instances.</span></span> <span data-ttu-id="6ade8-104">Cet exemple illustre un moteur de distribution de base construit à l'aide d'`UriTemplateTable`, un scénario d'utilisation commun pour la classe `UriTemplateTable`.</span><span class="sxs-lookup"><span data-stu-id="6ade8-104">This sample demonstrates a basic dispatching engine built using `UriTemplateTable`, a common usage scenario for the `UriTemplateTable` class.</span></span>  
   
- Cet exemple illustre les concepts clés suivants pour la classe `UriTemplateTable` :  
+ <span data-ttu-id="6ade8-105">Cet exemple illustre les concepts clés suivants pour la classe `UriTemplateTable` :</span><span class="sxs-lookup"><span data-stu-id="6ade8-105">This sample demonstrates the following key concepts for the `UriTemplateTable` class:</span></span>  
   
--   Association de délégués à des `UriTemplates` dans une `UriTemplateTable`.  
+-   <span data-ttu-id="6ade8-106">Association de délégués à des `UriTemplates` dans une `UriTemplateTable`.</span><span class="sxs-lookup"><span data-stu-id="6ade8-106">Associating delegates with `UriTemplates` in a `UriTemplateTable`.</span></span>  
   
--   Utilisation de <xref:System.UriTemplateTable.MatchSingle%2A> pour obtenir le délégué de gestionnaire correct pour un URI particulier.  
+-   <span data-ttu-id="6ade8-107">Utilisation de <xref:System.UriTemplateTable.MatchSingle%2A> pour obtenir le délégué de gestionnaire correct pour un URI particulier.</span><span class="sxs-lookup"><span data-stu-id="6ade8-107">Using <xref:System.UriTemplateTable.MatchSingle%2A> to obtain the correct handler delegate for a particular URI.</span></span>  
   
--   Appel du délégué de gestionnaire pour traiter la requête.  
+-   <span data-ttu-id="6ade8-108">Appel du délégué de gestionnaire pour traiter la requête.</span><span class="sxs-lookup"><span data-stu-id="6ade8-108">Invoking the handler delegate to process the request.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="6ade8-109">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="6ade8-109">To set up, build, and run the sample</span></span>  
   
-1.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1.  <span data-ttu-id="6ade8-110">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="6ade8-110">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-2.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+2.  <span data-ttu-id="6ade8-111">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="6ade8-111">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="6ade8-112">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="6ade8-112">The samples may already be installed on your machine.</span></span> <span data-ttu-id="6ade8-113">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="6ade8-113">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="6ade8-114">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="6ade8-114">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="6ade8-115">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="6ade8-115">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Web\UriTemplateDispatcher`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\UriTemplateDispatcher`  
   
-## Voir aussi  
- [UriTemplate Table](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)   
- [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)
+## <a name="see-also"></a><span data-ttu-id="6ade8-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ade8-116">See Also</span></span>  
+ [<span data-ttu-id="6ade8-117">UriTemplate Table</span><span class="sxs-lookup"><span data-stu-id="6ade8-117">UriTemplate Table</span></span>](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)  
+ [<span data-ttu-id="6ade8-118">UriTemplate</span><span class="sxs-lookup"><span data-stu-id="6ade8-118">UriTemplate</span></span>](../../../../docs/framework/wcf/samples/uritemplate-sample.md)

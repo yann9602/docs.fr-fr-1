@@ -1,55 +1,60 @@
 ---
-title: "Comment&#160;: ex&#233;cuter des proc&#233;dures &#224; intervalles d&#233;finis &#224; l&#39;aide du composant Timer Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "exemples (Windows Forms), minuteries"
-  - "initialisation, composants Timer"
-  - "procédures, intervalles de temps spécifiques"
-  - "Timer (composant Windows Forms), initialiser"
-  - "minuteries, intervalles entre les événements"
-  - "minuteries, reposant sur Windows"
+title: "Comment : exécuter des procédures à intervalles définis à l'aide du composant Timer Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- examples [Windows Forms], timers
+- timers [Windows Forms], event intervals
+- initialization [Windows Forms], Timer components
+- timers [Windows Forms], Windows-based
+- Timer component [Windows Forms], initializing
+- procedures [Windows Forms], specific time intervals
 ms.assetid: 8025247a-2de4-4d86-b8ab-a8cb8aeab2ea
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: af16d1e2c3ef683a6e3da4197a30af58d7758a0e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ex&#233;cuter des proc&#233;dures &#224; intervalles d&#233;finis &#224; l&#39;aide du composant Timer Windows Forms
-Il peut arriver que vous souhaitiez créer une procédure qui s'exécute à intervalles réguliers jusqu'à ce qu'une boucle soit terminée ou qu'un intervalle de temps spécifique soit écoulé.  Vous pouvez pour cela utiliser le composant <xref:System.Windows.Forms.Timer>.  
+# <a name="how-to-run-procedures-at-set-intervals-with-the-windows-forms-timer-component"></a><span data-ttu-id="84c40-102">Comment : exécuter des procédures à intervalles définis à l'aide du composant Timer Windows Forms</span><span class="sxs-lookup"><span data-stu-id="84c40-102">How to: Run Procedures at Set Intervals with the Windows Forms Timer Component</span></span>
+<span data-ttu-id="84c40-103">Il peut arriver que vous souhaitiez créer une procédure qui s'exécute à intervalles réguliers jusqu'à ce qu'une boucle soit terminée ou qu'un intervalle de temps spécifique soit écoulé.</span><span class="sxs-lookup"><span data-stu-id="84c40-103">You might sometimes want to create a procedure that runs at specific time intervals until a loop has finished or that runs when a set time interval has elapsed.</span></span> <span data-ttu-id="84c40-104">Vous pouvez pour cela utiliser le composant <xref:System.Windows.Forms.Timer>.</span><span class="sxs-lookup"><span data-stu-id="84c40-104">The <xref:System.Windows.Forms.Timer> component makes such a procedure possible.</span></span>  
   
- Ce composant est conçu pour un environnement Windows Forms.  Si vous avez besoin d'un minuteur adapté à un environnement serveur, consultez [Introduction to Server\-Based Timers](http://msdn.microsoft.com/fr-fr/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).  
+ <span data-ttu-id="84c40-105">Ce composant est conçu pour un environnement Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="84c40-105">This component is designed for a Windows Forms environment.</span></span> <span data-ttu-id="84c40-106">Si vous avez besoin d’un minuteur adapté à un environnement de serveur, consultez l’article [Introduction aux minuteurs serveur](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).</span><span class="sxs-lookup"><span data-stu-id="84c40-106">If you need a timer that is suitable for a server environment, see [Introduction to Server-Based Timers](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).</span></span>  
   
 > [!NOTE]
->  Il existe certaines limitations quand vous utilisez le composant <xref:System.Windows.Forms.Timer>.  Pour plus d'informations, consultez [Restrictions relatives à la propriété Interval du composant Timer Windows Forms](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md).  
+>  <span data-ttu-id="84c40-107">Il existe certaines limitations quand vous utilisez le composant <xref:System.Windows.Forms.Timer>.</span><span class="sxs-lookup"><span data-stu-id="84c40-107">There are some limitations when using the <xref:System.Windows.Forms.Timer> component.</span></span> <span data-ttu-id="84c40-108">Pour plus d’informations, consultez [Limitations de la propriété d’intervalle du composant Timer Windows Forms](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md).</span><span class="sxs-lookup"><span data-stu-id="84c40-108">For more information, see [Limitations of the Windows Forms Timer Component's Interval Property](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md).</span></span>  
   
-### Pour exécuter une procédure à intervalles spécifiques avec le composant Timer  
+### <a name="to-run-a-procedure-at-set-intervals-with-the-timer-component"></a><span data-ttu-id="84c40-109">Pour exécuter une procédure à intervalles spécifiques avec le composant Timer</span><span class="sxs-lookup"><span data-stu-id="84c40-109">To run a procedure at set intervals with the Timer component</span></span>  
   
-1.  Ajoutez un <xref:System.Windows.Forms.Timer> à votre formulaire.  Pour savoir comment effectuer cette tâche par programmation, consultez la section suivante.  [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] prend également en charge l'ajout de composants à un formulaire.  Consultez également [Comment : ajouter des contrôles sans interface utilisateur à des Windows Forms](http://msdn.microsoft.com/library/becyw7bz%20\(v=vs.110\)).  
+1.  <span data-ttu-id="84c40-110">Ajoutez un <xref:System.Windows.Forms.Timer> à votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="84c40-110">Add a <xref:System.Windows.Forms.Timer> to your form.</span></span> <span data-ttu-id="84c40-111">Pour savoir comment effectuer cette tâche par programmation, consultez la section suivante.</span><span class="sxs-lookup"><span data-stu-id="84c40-111">See the following Example section for an illustration of how to do this programmatically.</span></span> [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]<span data-ttu-id="84c40-112"> prend également en charge l'ajout de composants à un formulaire.</span><span class="sxs-lookup"><span data-stu-id="84c40-112"> also has support for adding components to a form.</span></span> <span data-ttu-id="84c40-113">Consultez également [Comment : ajouter aux Windows Forms de contrôles sans Interface utilisateur](http://msdn.microsoft.com/library/becyw7bz\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="84c40-113">Also see [How to: Add Controls Without a User Interface to Windows Forms](http://msdn.microsoft.com/library/becyw7bz\(v=vs.110\)).</span></span>  
   
-2.  Définissez la propriété <xref:System.Windows.Forms.Timer.Interval%2A> \(en millisecondes\) du minuteur.  Cette propriété détermine combien de temps s'écoulera avant la réexécution de la procédure.  
+2.  <span data-ttu-id="84c40-114">Définissez la propriété <xref:System.Windows.Forms.Timer.Interval%2A> (en millisecondes) du minuteur.</span><span class="sxs-lookup"><span data-stu-id="84c40-114">Set the <xref:System.Windows.Forms.Timer.Interval%2A> property (in milliseconds) for the timer.</span></span> <span data-ttu-id="84c40-115">Cette propriété détermine combien de temps s'écoulera avant la réexécution de la procédure.</span><span class="sxs-lookup"><span data-stu-id="84c40-115">This property determines how much time will pass before the procedure is run again.</span></span>  
   
     > [!NOTE]
-    >  Plus un événement de minuteur se produit souvent, plus il faut de temps processeur pour y répondre.  Cela peut ralentir les performances globales.  Ne définissez pas un intervalle plus petit que ce qui est nécessaire.  
+    >  <span data-ttu-id="84c40-116">Plus un événement de minuteur se produit souvent, plus il faut de temps processeur pour y répondre.</span><span class="sxs-lookup"><span data-stu-id="84c40-116">The more often a timer event occurs, the more processor time is used in responding to the event.</span></span> <span data-ttu-id="84c40-117">Cela peut ralentir les performances globales.</span><span class="sxs-lookup"><span data-stu-id="84c40-117">This can slow down overall performance.</span></span> <span data-ttu-id="84c40-118">Ne définissez pas un intervalle plus petit que ce qui est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="84c40-118">Do not set a smaller interval than you need.</span></span>  
   
-3.  Écrivez le code approprié dans le gestionnaire d'événements <xref:System.Windows.Forms.Timer.Tick>.  Le code que vous écrivez dans cet événement s'exécutera à l'intervalle spécifié dans la propriété <xref:System.Windows.Forms.Timer.Interval%2A>.  
+3.  <span data-ttu-id="84c40-119">Écrivez le code approprié dans le gestionnaire d'événements <xref:System.Windows.Forms.Timer.Tick>.</span><span class="sxs-lookup"><span data-stu-id="84c40-119">Write appropriate code in the <xref:System.Windows.Forms.Timer.Tick> event handler.</span></span> <span data-ttu-id="84c40-120">Le code que vous écrivez dans cet événement s'exécutera à l'intervalle spécifié dans la propriété <xref:System.Windows.Forms.Timer.Interval%2A>.</span><span class="sxs-lookup"><span data-stu-id="84c40-120">The code you write in this event will run at the interval specified in the <xref:System.Windows.Forms.Timer.Interval%2A> property.</span></span>  
   
-4.  Affectez la valeur <xref:System.Windows.Forms.Timer.Enabled%2A> à la propriété `true` pour démarrer le minuteur.  L'événement <xref:System.Windows.Forms.Timer.Tick> commencera à se produire et à exécuter votre procédure à l'intervalle indiqué.  
+4.  <span data-ttu-id="84c40-121">Affectez la valeur <xref:System.Windows.Forms.Timer.Enabled%2A> à la propriété `true` pour démarrer le minuteur.</span><span class="sxs-lookup"><span data-stu-id="84c40-121">Set the <xref:System.Windows.Forms.Timer.Enabled%2A> property to `true` to start the timer.</span></span> <span data-ttu-id="84c40-122">L'événement <xref:System.Windows.Forms.Timer.Tick> commencera à se produire et à exécuter votre procédure à l'intervalle indiqué.</span><span class="sxs-lookup"><span data-stu-id="84c40-122">The <xref:System.Windows.Forms.Timer.Tick> event will begin to occur, running your procedure at the set interval.</span></span>  
   
-5.  Au moment opportun, affectez la valeur `false` à la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> pour empêcher que la procédure soit réexécutée.  L'affectation de valeur `0` à l'intervalle n'entraîne pas l'arrêt du minuteur.  
+5.  <span data-ttu-id="84c40-123">Au moment opportun, affectez la valeur `false` à la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> pour empêcher que la procédure soit réexécutée.</span><span class="sxs-lookup"><span data-stu-id="84c40-123">At the appropriate time, set the <xref:System.Windows.Forms.Timer.Enabled%2A> property to `false` to stop the procedure from running again.</span></span> <span data-ttu-id="84c40-124">Si l’intervalle `0` n’entraîne pas l’arrêt du minuteur.</span><span class="sxs-lookup"><span data-stu-id="84c40-124">Setting the interval to `0` does not cause the timer to stop.</span></span>  
   
-## Exemple  
- Ce premier exemple de code effectue le suivi de l'heure par incréments d'une seconde.  Il utilise un <xref:System.Windows.Forms.Button>, un <xref:System.Windows.Forms.Label> et un composant <xref:System.Windows.Forms.Timer> sur un formulaire.  La propriété <xref:System.Windows.Forms.Timer.Interval%2A> prend la valeur 1 000 \(égal à une seconde\).  Dans l'événement <xref:System.Windows.Forms.Timer.Tick>, la légende de l'étiquette prend comme valeur l'heure actuelle.  En cas de clic sur le bouton, la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> prend la valeur `false` et le minuteur cesse de mettre à jour la légende de l'étiquette.  Dans l'exemple de code suivant, votre formulaire doit avoir un contrôle <xref:System.Windows.Forms.Button> nommé `Button1`, un contrôle <xref:System.Windows.Forms.Timer> nommé `Timer1` et un contrôle <xref:System.Windows.Forms.Label> nommé `Label1`.  
+## <a name="example"></a><span data-ttu-id="84c40-125">Exemple</span><span class="sxs-lookup"><span data-stu-id="84c40-125">Example</span></span>  
+ <span data-ttu-id="84c40-126">Ce premier exemple de code effectue le suivi de l'heure par incréments d'une seconde.</span><span class="sxs-lookup"><span data-stu-id="84c40-126">This first code example tracks the time of day in one-second increments.</span></span> <span data-ttu-id="84c40-127">Il utilise un <xref:System.Windows.Forms.Button>, un <xref:System.Windows.Forms.Label> et un composant <xref:System.Windows.Forms.Timer> sur un formulaire.</span><span class="sxs-lookup"><span data-stu-id="84c40-127">It uses a <xref:System.Windows.Forms.Button>, a <xref:System.Windows.Forms.Label>, and a <xref:System.Windows.Forms.Timer> component on a form.</span></span> <span data-ttu-id="84c40-128">La propriété <xref:System.Windows.Forms.Timer.Interval%2A> prend la valeur 1 000 (égal à une seconde).</span><span class="sxs-lookup"><span data-stu-id="84c40-128">The <xref:System.Windows.Forms.Timer.Interval%2A> property is set to 1000 (equal to one second).</span></span> <span data-ttu-id="84c40-129">Dans l'événement <xref:System.Windows.Forms.Timer.Tick>, la légende de l'étiquette prend comme valeur l'heure actuelle.</span><span class="sxs-lookup"><span data-stu-id="84c40-129">In the <xref:System.Windows.Forms.Timer.Tick> event, the label's caption is set to the current time.</span></span> <span data-ttu-id="84c40-130">En cas de clic sur le bouton, la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> prend la valeur `false` et le minuteur cesse de mettre à jour la légende de l'étiquette.</span><span class="sxs-lookup"><span data-stu-id="84c40-130">When the button is clicked, the <xref:System.Windows.Forms.Timer.Enabled%2A> property is set to `false`, stopping the timer from updating the label's caption.</span></span> <span data-ttu-id="84c40-131">L’exemple de code suivant requiert que vous disposez d’un formulaire avec un <xref:System.Windows.Forms.Button> contrôle nommé `Button1`, un <xref:System.Windows.Forms.Timer> contrôle nommé `Timer1`et un <xref:System.Windows.Forms.Label> contrôle nommé `Label1`.</span><span class="sxs-lookup"><span data-stu-id="84c40-131">The following code example requires that you have a form with a <xref:System.Windows.Forms.Button> control named `Button1`, a <xref:System.Windows.Forms.Timer> control named `Timer1`, and a <xref:System.Windows.Forms.Label> control named `Label1`.</span></span>  
   
 ```vb  
 Private Sub InitializeTimer()  
@@ -75,7 +80,6 @@ Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.Event
          Timer1.Enabled = True  
       End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -112,7 +116,6 @@ private void Button1_Click(object sender, EventArgs e)
     Timer1.Enabled = true;  
   }  
 }  
-  
 ```  
   
 ```cpp  
@@ -153,11 +156,10 @@ private:
          timer1->Enabled = true;  
       }  
    }  
-  
 ```  
   
-## Exemple  
- Ce deuxième exemple de code exécute une procédure toutes les 600 millisecondes jusqu'à ce qu'une boucle soit terminée.  Dans l'exemple de code suivant, votre formulaire doit avoir un contrôle <xref:System.Windows.Forms.Button> nommé `Button1`, un contrôle <xref:System.Windows.Forms.Timer> nommé `Timer1` et un contrôle <xref:System.Windows.Forms.Label> nommé `Label1`.  
+## <a name="example"></a><span data-ttu-id="84c40-132">Exemple</span><span class="sxs-lookup"><span data-stu-id="84c40-132">Example</span></span>  
+ <span data-ttu-id="84c40-133">Ce deuxième exemple de code exécute une procédure toutes les 600 millisecondes jusqu'à ce qu'une boucle soit terminée.</span><span class="sxs-lookup"><span data-stu-id="84c40-133">This second code example runs a procedure every 600 milliseconds until a loop has finished.</span></span> <span data-ttu-id="84c40-134">L’exemple de code suivant requiert que vous disposez d’un formulaire avec un <xref:System.Windows.Forms.Button> contrôle nommé `Button1`, un <xref:System.Windows.Forms.Timer> contrôle nommé `Timer1`et un <xref:System.Windows.Forms.Label> contrôle nommé `Label1`.</span><span class="sxs-lookup"><span data-stu-id="84c40-134">The following code example requires that you have a form with a <xref:System.Windows.Forms.Button> control named `Button1`, a <xref:System.Windows.Forms.Timer> control named `Timer1`, and a <xref:System.Windows.Forms.Label> control named `Label1`.</span></span>  
   
 ```vb  
 ' This variable will be the loop counter.  
@@ -182,7 +184,6 @@ Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Han
       Label1.Text = "Procedures Run: " & counter.ToString  
    End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -215,7 +216,6 @@ private void timer1_Tick(object sender, System.EventArgs e)
       label1.Text = "Procedures Run: " + counter.ToString();  
       }  
 }  
-  
 ```  
   
 ```cpp  
@@ -252,7 +252,7 @@ private:
    }  
 ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Timer>   
- [Timer, composant](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)   
- [Vue d'ensemble du composant Timer](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="84c40-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="84c40-135">See Also</span></span>  
+ <xref:System.Windows.Forms.Timer>  
+ [<span data-ttu-id="84c40-136">Timer, composant</span><span class="sxs-lookup"><span data-stu-id="84c40-136">Timer Component</span></span>](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
+ [<span data-ttu-id="84c40-137">Vue d’ensemble du composant Timer</span><span class="sxs-lookup"><span data-stu-id="84c40-137">Timer Component Overview</span></span>](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)

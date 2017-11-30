@@ -1,73 +1,76 @@
 ---
-title: "Implementing the UI Automation Transform Control Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "control patterns, Transform"
-  - "Transform control pattern"
-  - "UI Automation, Transform control pattern"
+title: "Implémentation du modèle de contrôle Transform d'UI Automation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- control patterns, Transform
+- Transform control pattern
+- UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
-caps.latest.revision: 14
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: df871c7f7214a6135db2493972dd76f41ce31aaa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing the UI Automation Transform Control Pattern
+# <a name="implementing-the-ui-automation-transform-control-pattern"></a><span data-ttu-id="13c90-102">Implémentation du modèle de contrôle Transform d’UI Automation</span><span class="sxs-lookup"><span data-stu-id="13c90-102">Implementing the UI Automation Transform Control Pattern</span></span>
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  <span data-ttu-id="13c90-103">Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="13c90-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="13c90-104">Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span><span class="sxs-lookup"><span data-stu-id="13c90-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- Cette rubrique présente les conventions et directives à respecter pour implémenter <xref:System.Windows.Automation.Provider.ITransformProvider>, notamment les informations sur les propriétés, les méthodes et les événements. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
+ <span data-ttu-id="13c90-105">Cette rubrique présente les conventions et directives à respecter pour implémenter <xref:System.Windows.Automation.Provider.ITransformProvider>, notamment les informations sur les propriétés, les méthodes et les événements.</span><span class="sxs-lookup"><span data-stu-id="13c90-105">This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.ITransformProvider>, including information about properties, methods, and events.</span></span> <span data-ttu-id="13c90-106">Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.</span><span class="sxs-lookup"><span data-stu-id="13c90-106">Links to additional references are listed at the end of the topic.</span></span>  
   
- Le modèle de contrôle <xref:System.Windows.Automation.TransformPattern> permet de prendre en charge des contrôles qui peuvent être déplacés, redimensionnés ou pivotés dans un espace à deux dimensions. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ <span data-ttu-id="13c90-107">Le modèle de contrôle <xref:System.Windows.Automation.TransformPattern> permet de prendre en charge des contrôles qui peuvent être déplacés, redimensionnés ou pivotés dans un espace à deux dimensions.</span><span class="sxs-lookup"><span data-stu-id="13c90-107">The <xref:System.Windows.Automation.TransformPattern> control pattern is used to support controls that can be moved, resized, or rotated within a two-dimensional space.</span></span> <span data-ttu-id="13c90-108">Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span><span class="sxs-lookup"><span data-stu-id="13c90-108">For examples of controls that implement this control pattern, see [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).</span></span>  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## Conventions et directives d'implémentation  
- Quand vous implémentez le modèle de contrôle Transform, notez les conventions et recommandations suivantes :  
+## <a name="implementation-guidelines-and-conventions"></a><span data-ttu-id="13c90-109">Conventions et directives d'implémentation</span><span class="sxs-lookup"><span data-stu-id="13c90-109">Implementation Guidelines and Conventions</span></span>  
+ <span data-ttu-id="13c90-110">Quand vous implémentez le modèle de contrôle Transform, notez les conventions et recommandations suivantes :</span><span class="sxs-lookup"><span data-stu-id="13c90-110">When implementing the Transform control pattern, note the following guidelines and conventions:</span></span>  
   
--   La prise en charge pour ce modèle de contrôle ne se limite pas aux objets sur le bureau. Ce modèle de contrôle doit également être pris en charge par les enfants d’un objet conteneur si les enfants peuvent être déplacés, redimensionnés et pivotés librement dans les limites du conteneur.  
+-   <span data-ttu-id="13c90-111">La prise en charge pour ce modèle de contrôle ne se limite pas aux objets sur le bureau.</span><span class="sxs-lookup"><span data-stu-id="13c90-111">Support for this control pattern is not limited to objects on the desktop.</span></span> <span data-ttu-id="13c90-112">Ce modèle de contrôle doit également être pris en charge par les enfants d’un objet conteneur si les enfants peuvent être déplacés, redimensionnés et pivotés librement dans les limites du conteneur.</span><span class="sxs-lookup"><span data-stu-id="13c90-112">This control pattern must also be supported by the children of a container object if the children can be moved, resized, or rotated freely within the boundaries of the container.</span></span>  
   
--   Il n’est pas possible de déplacer, redimensionner ni pivoter un objet de manière à ce que son emplacement résultant à l’écran soit complètement en dehors des coordonnées de son conteneur et, par conséquent, inaccessible via le clavier et la souris \(par exemple, quand une fenêtre de niveau supérieur est déplacée hors de l’écran ou qu’un objet enfant est déplacé en dehors des limites de la fenêtre d’affichage du conteneur\). Dans ce cas, l’objet est placé le plus près possible des coordonnées d’écran demandées avec les coordonnées en haut et à gauche substituées de façon à être incluses dans les limites du conteneur.  
+-   <span data-ttu-id="13c90-113">Il n’est pas possible de déplacer, redimensionner ni pivoter un objet de manière à ce que son emplacement résultant à l’écran soit complètement en dehors des coordonnées de son conteneur et, par conséquent, inaccessible via le clavier et la souris (par exemple, quand une fenêtre de niveau supérieur est déplacée hors de l’écran ou qu’un objet enfant est déplacé en dehors des limites de la fenêtre d’affichage du conteneur).</span><span class="sxs-lookup"><span data-stu-id="13c90-113">An object cannot be moved, resized, or rotated such that its resulting screen location would be completely outside the coordinates of its container and therefore inaccessible to the keyboard or mouse (for example, when a top-level window is moved off-screen or a child object is moved outside the boundaries of the container's viewport).</span></span> <span data-ttu-id="13c90-114">Dans ce cas, l’objet est placé le plus près possible des coordonnées d’écran demandées avec les coordonnées en haut et à gauche substituées de façon à être incluses dans les limites du conteneur.</span><span class="sxs-lookup"><span data-stu-id="13c90-114">In these cases, the object is placed as close to the requested screen coordinates as possible with the top or left coordinates overridden to be within the container boundaries.</span></span>  
   
--   Pour les systèmes à plusieurs écrans, si un objet est déplacé, redimensionné ou pivoté complètement en dehors des coordonnées d’écran du bureau combiné, l’objet est placé sur le moniteur principal, aussi près que possible des coordonnées demandées.  
+-   <span data-ttu-id="13c90-115">Pour les systèmes à plusieurs écrans, si un objet est déplacé, redimensionné ou pivoté complètement en dehors des coordonnées d’écran du bureau combiné, l’objet est placé sur le moniteur principal, aussi près que possible des coordonnées demandées.</span><span class="sxs-lookup"><span data-stu-id="13c90-115">For multi-monitor systems, if an object is moved, resized, or rotated completely outside the combined desktop screen coordinates, the object is placed on the primary monitor as close to the requested coordinates as possible.</span></span>  
   
--   Tous les paramètres et valeurs de propriété sont absolus et indépendants des paramètres régionaux.  
+-   <span data-ttu-id="13c90-116">Tous les paramètres et valeurs de propriété sont absolus et indépendants des paramètres régionaux.</span><span class="sxs-lookup"><span data-stu-id="13c90-116">All parameters and property values are absolute and independent of locale.</span></span>  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
-## Membres requis pour ITransformProvider  
- Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d'<xref:System.Windows.Automation.Provider.ITransformProvider>.  
+## <a name="required-members-for-itransformprovider"></a><span data-ttu-id="13c90-117">Membres requis pour ITransformProvider</span><span class="sxs-lookup"><span data-stu-id="13c90-117">Required Members for ITransformProvider</span></span>  
+ <span data-ttu-id="13c90-118">Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.ITransformProvider>.</span><span class="sxs-lookup"><span data-stu-id="13c90-118">The following properties and methods are required for implementing <xref:System.Windows.Automation.Provider.ITransformProvider>.</span></span>  
   
-|Membres nécessaires|Type de membre|Notes|  
-|-------------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanMove%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanResize%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanRotate%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A>|Méthode|Aucun|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A>|Méthode|Aucun|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A>|Méthode|None|  
+|<span data-ttu-id="13c90-119">Membres requis</span><span class="sxs-lookup"><span data-stu-id="13c90-119">Required members</span></span>|<span data-ttu-id="13c90-120">Type de membre</span><span class="sxs-lookup"><span data-stu-id="13c90-120">Member type</span></span>|<span data-ttu-id="13c90-121">Remarques</span><span class="sxs-lookup"><span data-stu-id="13c90-121">Notes</span></span>|  
+|----------------------|-----------------|-----------|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanMove%2A>|<span data-ttu-id="13c90-122">Propriété</span><span class="sxs-lookup"><span data-stu-id="13c90-122">Property</span></span>|<span data-ttu-id="13c90-123">Aucun</span><span class="sxs-lookup"><span data-stu-id="13c90-123">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanResize%2A>|<span data-ttu-id="13c90-124">Propriété</span><span class="sxs-lookup"><span data-stu-id="13c90-124">Property</span></span>|<span data-ttu-id="13c90-125">Aucun</span><span class="sxs-lookup"><span data-stu-id="13c90-125">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanRotate%2A>|<span data-ttu-id="13c90-126">Propriété</span><span class="sxs-lookup"><span data-stu-id="13c90-126">Property</span></span>|<span data-ttu-id="13c90-127">Aucune</span><span class="sxs-lookup"><span data-stu-id="13c90-127">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A>|<span data-ttu-id="13c90-128">Méthode</span><span class="sxs-lookup"><span data-stu-id="13c90-128">Method</span></span>|<span data-ttu-id="13c90-129">Aucune</span><span class="sxs-lookup"><span data-stu-id="13c90-129">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A>|<span data-ttu-id="13c90-130">Méthode</span><span class="sxs-lookup"><span data-stu-id="13c90-130">Method</span></span>|<span data-ttu-id="13c90-131">Aucune</span><span class="sxs-lookup"><span data-stu-id="13c90-131">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A>|<span data-ttu-id="13c90-132">Méthode</span><span class="sxs-lookup"><span data-stu-id="13c90-132">Method</span></span>|<span data-ttu-id="13c90-133">Aucune</span><span class="sxs-lookup"><span data-stu-id="13c90-133">None</span></span>|  
   
- Ce modèle de contrôle n’est associé à aucun événement.  
+ <span data-ttu-id="13c90-134">Ce modèle de contrôle n’est associé aucun événement.</span><span class="sxs-lookup"><span data-stu-id="13c90-134">This control pattern has no associated events.</span></span>  
   
 <a name="Exceptions"></a>   
-## Exceptions  
- Les fournisseurs doivent lever les exceptions suivantes.  
+## <a name="exceptions"></a><span data-ttu-id="13c90-135">Exceptions</span><span class="sxs-lookup"><span data-stu-id="13c90-135">Exceptions</span></span>  
+ <span data-ttu-id="13c90-136">Les fournisseurs doivent lever les exceptions suivantes.</span><span class="sxs-lookup"><span data-stu-id="13c90-136">Providers must throw the following exceptions.</span></span>  
   
-|Type d'exception|Condition|  
-|----------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> -   Si le <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> a la valeur false.|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> -   Si le <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> a la valeur false.|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> -   Si le <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> a la valeur false.|  
+|<span data-ttu-id="13c90-137">Type d'exception</span><span class="sxs-lookup"><span data-stu-id="13c90-137">Exception Type</span></span>|<span data-ttu-id="13c90-138">Condition</span><span class="sxs-lookup"><span data-stu-id="13c90-138">Condition</span></span>|  
+|--------------------|---------------|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> <span data-ttu-id="13c90-139">-If le <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> a la valeur false.</span><span class="sxs-lookup"><span data-stu-id="13c90-139">-   If the <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> is false.</span></span>|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> <span data-ttu-id="13c90-140">-If le <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> a la valeur false.</span><span class="sxs-lookup"><span data-stu-id="13c90-140">-   If the <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> is false.</span></span>|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> <span data-ttu-id="13c90-141">-If le <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> a la valeur false.</span><span class="sxs-lookup"><span data-stu-id="13c90-141">-   If the <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> is false.</span></span>|  
   
-## Voir aussi  
- [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [UI Automation Control Patterns for Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
- [Use Caching in UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+## <a name="see-also"></a><span data-ttu-id="13c90-142">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="13c90-142">See Also</span></span>  
+ [<span data-ttu-id="13c90-143">Vue d’ensemble du modèles contrôle UI Automation</span><span class="sxs-lookup"><span data-stu-id="13c90-143">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="13c90-144">Prise en charge des modèles de contrôle dans un fournisseur UI Automation</span><span class="sxs-lookup"><span data-stu-id="13c90-144">Support Control Patterns in a UI Automation Provider</span></span>](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [<span data-ttu-id="13c90-145">Modèles de contrôle UI Automation pour les Clients</span><span class="sxs-lookup"><span data-stu-id="13c90-145">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="13c90-146">Vue d’ensemble d’arborescence UI Automation</span><span class="sxs-lookup"><span data-stu-id="13c90-146">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="13c90-147">Utiliser la mise en cache dans UI Automation</span><span class="sxs-lookup"><span data-stu-id="13c90-147">Use Caching in UI Automation</span></span>](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

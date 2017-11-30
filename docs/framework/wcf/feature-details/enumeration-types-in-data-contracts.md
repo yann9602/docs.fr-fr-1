@@ -1,106 +1,111 @@
 ---
-title: "Types &#233;num&#233;ration dans les contrats de donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrats de données (WCF), types de l'énumération"
+title: "Types énumération dans les contrats de données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ea76ae136695ce2dc9eca0a9c7660e4e1ffe547d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Types &#233;num&#233;ration dans les contrats de donn&#233;es
-Les énumérations peuvent être exprimées dans le modèle de contrat de données.  Cette rubrique décrit plusieurs exemples qui expliquent le modèle de programmation.  
+# <a name="enumeration-types-in-data-contracts"></a><span data-ttu-id="71da6-102">Types énumération dans les contrats de données</span><span class="sxs-lookup"><span data-stu-id="71da6-102">Enumeration Types in Data Contracts</span></span>
+<span data-ttu-id="71da6-103">Les énumérations peuvent être exprimées dans le modèle de contrat de données.</span><span class="sxs-lookup"><span data-stu-id="71da6-103">Enumerations can be expressed in the data contract model.</span></span> <span data-ttu-id="71da6-104">Cette rubrique décrit plusieurs exemples qui expliquent le modèle de programmation.</span><span class="sxs-lookup"><span data-stu-id="71da6-104">This topic walks through several examples that explain the programming model.</span></span>  
   
-## Principes de base de l'énumération  
- Appliquer l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> au type constitue une façon d'utiliser des types énumération dans le modèle de contrat de données.  Vous devez appliquer ensuite l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute> à chaque membre qui doit être inclus dans le contrat de données.  
+## <a name="enumeration-basics"></a><span data-ttu-id="71da6-105">Principes de base de l'énumération</span><span class="sxs-lookup"><span data-stu-id="71da6-105">Enumeration Basics</span></span>  
+ <span data-ttu-id="71da6-106">Appliquer l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> au type constitue une façon d'utiliser des types énumération dans le modèle de contrat de données.</span><span class="sxs-lookup"><span data-stu-id="71da6-106">One way to use enumeration types in the data contract model is to apply the <xref:System.Runtime.Serialization.DataContractAttribute> attribute to the type.</span></span> <span data-ttu-id="71da6-107">Vous devez appliquer ensuite l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute> à chaque membre qui doit être inclus dans le contrat de données.</span><span class="sxs-lookup"><span data-stu-id="71da6-107">You must then apply the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute to each member that must be included in the data contract.</span></span>  
   
- L'exemple suivant illustre deux classes.  La première utilise l'énumération et la seconde définit l'énumération.  
+ <span data-ttu-id="71da6-108">L'exemple suivant illustre deux classes.</span><span class="sxs-lookup"><span data-stu-id="71da6-108">The following example shows two classes.</span></span> <span data-ttu-id="71da6-109">La première utilise l'énumération et la seconde définit l'énumération.</span><span class="sxs-lookup"><span data-stu-id="71da6-109">The first uses the enumeration and the second defines the enumeration.</span></span>  
   
  [!code-csharp[c_DataContractEnumerations#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractenumerations/cs/source.cs#1)]
  [!code-vb[c_DataContractEnumerations#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractenumerations/vb/source.vb#1)]  
   
- Une instance de la classe `Car` peut être envoyée ou reçue uniquement si le champ `condition` a l'une des valeurs `New`, `Used` ou `Rental`.  Si la `condition` a pour valeur `Broken` ou `Stolen`, une <xref:System.Runtime.Serialization.SerializationException> est levée.  
+ <span data-ttu-id="71da6-110">Une instance de la classe `Car` peut être envoyée ou reçue uniquement si le champ `condition` a l'une des valeurs `New`, `Used` ou `Rental`.</span><span class="sxs-lookup"><span data-stu-id="71da6-110">An instance of the `Car` class can be sent or received only if the `condition` field is set to one of the values `New`, `Used`, or `Rental`.</span></span> <span data-ttu-id="71da6-111">Si la `condition` a pour valeur `Broken` ou `Stolen`, une <xref:System.Runtime.Serialization.SerializationException> est levée.</span><span class="sxs-lookup"><span data-stu-id="71da6-111">If the `condition` is `Broken` or `Stolen`, a <xref:System.Runtime.Serialization.SerializationException> is thrown.</span></span>  
   
- Vous pouvez utiliser comme d'habitude les propriétés <xref:System.Runtime.Serialization.DataContractAttribute> \(<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> et <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>\) pour les contrats de données de l'énumération.  
+ <span data-ttu-id="71da6-112">Vous pouvez utiliser comme d'habitude les propriétés <xref:System.Runtime.Serialization.DataContractAttribute> (<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> et <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>) pour les contrats de données de l'énumération.</span><span class="sxs-lookup"><span data-stu-id="71da6-112">You can use the <xref:System.Runtime.Serialization.DataContractAttribute> properties (<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> and <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>) as usual for enumeration data contracts.</span></span>  
   
-### Valeurs de membre de l'énumération  
- En général, le contrat de données inclut des noms de membre de l'énumération, pas des valeurs numériques.  Toutefois, lors de l'utilisation du modèle de contrat de données, si le côté réception est un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le schéma exporté conserve les valeurs numériques.  Notez que ce n'est pas le cas lors de l'utilisation du [Utilisation de la classe XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
+### <a name="enumeration-member-values"></a><span data-ttu-id="71da6-113">Valeurs de membre de l'énumération</span><span class="sxs-lookup"><span data-stu-id="71da6-113">Enumeration Member Values</span></span>  
+ <span data-ttu-id="71da6-114">En général, le contrat de données inclut des noms de membre de l'énumération, pas des valeurs numériques.</span><span class="sxs-lookup"><span data-stu-id="71da6-114">Generally the data contract includes enumeration member names, not numerical values.</span></span> <span data-ttu-id="71da6-115">Toutefois, lors de l'utilisation du modèle de contrat de données, si le côté réception est un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le schéma exporté conserve les valeurs numériques.</span><span class="sxs-lookup"><span data-stu-id="71da6-115">However, when using the data contract model, if the receiving side is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client, the exported schema preserves the numerical values.</span></span> <span data-ttu-id="71da6-116">Notez que cela n’est pas le cas lorsque vous utilisez la [à l’aide de la classe XmlSerializer](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).</span><span class="sxs-lookup"><span data-stu-id="71da6-116">Note that this is not the case when using the [Using the XmlSerializer Class](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).</span></span>  
   
- Dans l'exemple précédent, si `condition` a la valeur `Used` et que les données sont sérialisées en XML, le XML résultant est `<condition>Used</condition>` et pas `<condition>1</condition>`.  Par conséquent, le contrat de données suivant est équivalent au contrat de données de `CarConditionEnum`.  
+ <span data-ttu-id="71da6-117">Dans l'exemple précédent, si `condition` a la valeur `Used` et que les données sont sérialisées en XML, le XML résultant est `<condition>Used</condition>` et pas `<condition>1</condition>`.</span><span class="sxs-lookup"><span data-stu-id="71da6-117">In the preceding example, if `condition` is set to `Used` and the data is serialized to XML, the resulting XML is `<condition>Used</condition>` and not `<condition>1</condition>`.</span></span> <span data-ttu-id="71da6-118">Par conséquent, le contrat de données suivant est équivalent au contrat de données de `CarConditionEnum`.</span><span class="sxs-lookup"><span data-stu-id="71da6-118">Therefore, the following data contract is equivalent to the data contract of `CarConditionEnum`.</span></span>  
   
  [!code-csharp[c_DataContractEnumerations#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractenumerations/cs/source.cs#2)]
  [!code-vb[c_DataContractEnumerations#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractenumerations/vb/source.vb#2)]  
   
- Par exemple, vous pouvez utiliser `CarConditionEnum` côté envoi et `CarConditionWithNumbers` côté réception.  Même si le côté envoi utilise la valeur « 1 » pour `Used` et le côté réception la valeur « 20 », la représentation XML est `<condition>Used</condition>` pour les deux côtés.  
+ <span data-ttu-id="71da6-119">Par exemple, vous pouvez utiliser `CarConditionEnum` côté envoi et `CarConditionWithNumbers` côté réception.</span><span class="sxs-lookup"><span data-stu-id="71da6-119">For example, you can use `CarConditionEnum` on the sending side and `CarConditionWithNumbers` on the receiving side.</span></span> <span data-ttu-id="71da6-120">Même si le côté envoi utilise la valeur « 1 » pour `Used` et le côté réception la valeur « 20 », la représentation XML est `<condition>Used</condition>` pour les deux côtés.</span><span class="sxs-lookup"><span data-stu-id="71da6-120">Although the sending side uses the value "1" for `Used` and the receiving side uses the value "20," the XML representation is `<condition>Used</condition>` for both sides.</span></span>  
   
- Pour qu'il soit inclus dans le contrat de données, vous devez appliquer l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.  Dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], vous pouvez toujours appliquer la valeur 0 \(zéro\) spéciale à une énumération, qui est également la valeur par défaut pour toute énumération.  Cependant, même cette valeur zéro spéciale ne peut pas être sérialisée sauf si elle est marquée avec l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.  
+ <span data-ttu-id="71da6-121">Pour qu'il soit inclus dans le contrat de données, vous devez appliquer l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.</span><span class="sxs-lookup"><span data-stu-id="71da6-121">To be included in the data contract, you must apply the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute.</span></span> <span data-ttu-id="71da6-122">Dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], vous pouvez toujours appliquer la valeur 0 (zéro) spéciale à une énumération, qui est également la valeur par défaut pour toute énumération.</span><span class="sxs-lookup"><span data-stu-id="71da6-122">In the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], you can always apply the special value 0 (zero) to an enumeration, which is also the default value for any enumeration.</span></span> <span data-ttu-id="71da6-123">Cependant, même cette valeur zéro spéciale ne peut pas être sérialisée sauf si elle est marquée avec l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.</span><span class="sxs-lookup"><span data-stu-id="71da6-123">However, even this special zero value cannot be serialized unless it is marked with the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute.</span></span>  
   
- Il existe deux exceptions :  
+ <span data-ttu-id="71da6-124">Il existe deux exceptions :</span><span class="sxs-lookup"><span data-stu-id="71da6-124">There are two exceptions to this:</span></span>  
   
--   Les énumérations d'indicateur \(traitées plus loin dans cette rubrique\).  
+-   <span data-ttu-id="71da6-125">Les énumérations d'indicateur (traitées plus loin dans cette rubrique).</span><span class="sxs-lookup"><span data-stu-id="71da6-125">Flag enumerations (discussed later in this topic).</span></span>  
   
--   Les membres de données de l'énumération dont la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> a la valeur `false` \(auquel cas l'énumération avec la valeur zéro est omise des données sérialisées\).  
+-   <span data-ttu-id="71da6-126">Les membres de données de l'énumération dont la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> a la valeur `false` (auquel cas l'énumération avec la valeur zéro est omise des données sérialisées).</span><span class="sxs-lookup"><span data-stu-id="71da6-126">Enumeration data members with the <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> property set to `false` (in which case, the enumeration with the value zero is omitted from the serialized data).</span></span>  
   
-### Personnalisation des valeurs de membre de l'énumération  
- Vous pouvez personnaliser la valeur de membre de l'énumération qui forme une partie du contrat de données en utilisant la propriété <xref:System.Runtime.Serialization.EnumMemberAttribute.Value%2A> de l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.  
+### <a name="customizing-enumeration-member-values"></a><span data-ttu-id="71da6-127">Personnalisation des valeurs de membre de l'énumération</span><span class="sxs-lookup"><span data-stu-id="71da6-127">Customizing Enumeration Member Values</span></span>  
+ <span data-ttu-id="71da6-128">Vous pouvez personnaliser la valeur de membre de l'énumération qui forme une partie du contrat de données en utilisant la propriété <xref:System.Runtime.Serialization.EnumMemberAttribute.Value%2A> de l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.</span><span class="sxs-lookup"><span data-stu-id="71da6-128">You can customize the enumeration member value that forms a part of the data contract by using the <xref:System.Runtime.Serialization.EnumMemberAttribute.Value%2A> property of the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute.</span></span>  
   
- Par exemple, le contrat de données suivant est également équivalent au contrat de données de `CarConditionEnum`.  
+ <span data-ttu-id="71da6-129">Par exemple, le contrat de données suivant est également équivalent au contrat de données de `CarConditionEnum`.</span><span class="sxs-lookup"><span data-stu-id="71da6-129">For example, the following data contract is also equivalent to the data contract of the `CarConditionEnum`.</span></span>  
   
  [!code-csharp[c_DataContractEnumerations#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractenumerations/cs/source.cs#3)]
  [!code-vb[c_DataContractEnumerations#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractenumerations/vb/source.vb#3)]  
   
- En cas de sérialisation, la valeur de `PreviouslyOwned` a la représentation XML `<condition>Used</condition>`.  
+ <span data-ttu-id="71da6-130">En cas de sérialisation, la valeur de `PreviouslyOwned` a la représentation XML `<condition>Used</condition>`.</span><span class="sxs-lookup"><span data-stu-id="71da6-130">When serialized, the value of `PreviouslyOwned` has the XML representation `<condition>Used</condition>`.</span></span>  
   
-## Énumérations simples  
- Vous pouvez également sérialiser des types énumération auxquels l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> n'a pas été appliqué.  Ces types énumération sont traités exactement comme indiqué précédemment, sauf que les membres \(qui n'ont pas l'attribut <xref:System.NonSerializedAttribute>\) sont traités comme si l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute> avait été appliqué.  Par exemple, l'énumération suivante contient implicitement un contrat de données équivalent à l'exemple `CarConditionEnum` précédent.  
+## <a name="simple-enumerations"></a><span data-ttu-id="71da6-131">Énumérations simples</span><span class="sxs-lookup"><span data-stu-id="71da6-131">Simple Enumerations</span></span>  
+ <span data-ttu-id="71da6-132">Vous pouvez également sérialiser des types énumération auxquels l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> n'a pas été appliqué.</span><span class="sxs-lookup"><span data-stu-id="71da6-132">You can also serialize enumeration types to which the <xref:System.Runtime.Serialization.DataContractAttribute> attribute has not been applied.</span></span> <span data-ttu-id="71da6-133">Ces types énumération sont traités exactement comme indiqué précédemment, sauf que les membres (qui n'ont pas l'attribut <xref:System.NonSerializedAttribute>) sont traités comme si l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute> avait été appliqué.</span><span class="sxs-lookup"><span data-stu-id="71da6-133">Such enumeration types are treated exactly as previously described, except that every member (that does not have the <xref:System.NonSerializedAttribute> attribute applied) is treated as if the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute has been applied.</span></span> <span data-ttu-id="71da6-134">Par exemple, l'énumération suivante contient implicitement un contrat de données équivalent à l'exemple `CarConditionEnum` précédent.</span><span class="sxs-lookup"><span data-stu-id="71da6-134">For example, the following enumeration implicitly has a data contract equivalent to the preceding `CarConditionEnum` example.</span></span>  
   
  [!code-csharp[c_DataContractEnumerations#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractenumerations/cs/source.cs#6)]
  [!code-vb[c_DataContractEnumerations#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractenumerations/vb/source.vb#6)]  
   
- Vous pouvez utiliser des énumérations simples lorsque vous n'avez pas besoin de personnaliser le nom du contrat de données et l'espace de noms de l'énumération, ainsi que les valeurs de membre de l'énumération.  
+ <span data-ttu-id="71da6-135">Vous pouvez utiliser des énumérations simples lorsque vous n'avez pas besoin de personnaliser le nom du contrat de données et l'espace de noms de l'énumération, ainsi que les valeurs de membre de l'énumération.</span><span class="sxs-lookup"><span data-stu-id="71da6-135">You can use simple enumerations when you do not need to customize the enumeration's data contract name and namespace and the enumeration member values.</span></span>  
   
-#### Note sur les énumérations simples  
- L'application de l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute> aux énumérations simples n'a aucun effet.  
+#### <a name="notes-on-simple-enumerations"></a><span data-ttu-id="71da6-136">Note sur les énumérations simples</span><span class="sxs-lookup"><span data-stu-id="71da6-136">Notes on Simple Enumerations</span></span>  
+ <span data-ttu-id="71da6-137">L'application de l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute> aux énumérations simples n'a aucun effet.</span><span class="sxs-lookup"><span data-stu-id="71da6-137">Applying the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute to simple enumerations has no effect.</span></span>  
   
- L'application de l'attribut <xref:System.SerializableAttribute> à l'énumération n'a aucun effet.  
+ <span data-ttu-id="71da6-138">L'application de l'attribut <xref:System.SerializableAttribute> à l'énumération n'a aucun effet.</span><span class="sxs-lookup"><span data-stu-id="71da6-138">It makes no difference whether or not the <xref:System.SerializableAttribute> attribute is applied to the enumeration.</span></span>  
   
- Le fait que la classe <xref:System.Runtime.Serialization.DataContractSerializer> honore l'attribut <xref:System.NonSerializedAttribute> appliqué aux membres de l'énumération est différent du comportement de <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> et de <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>.  Ces deux sérialiseurs ignorent l'attribut <xref:System.NonSerializedAttribute>.  
+ <span data-ttu-id="71da6-139">Le fait que la classe <xref:System.Runtime.Serialization.DataContractSerializer> honore l'attribut <xref:System.NonSerializedAttribute> appliqué aux membres de l'énumération est différent du comportement de <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> et de <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>.</span><span class="sxs-lookup"><span data-stu-id="71da6-139">The fact that the <xref:System.Runtime.Serialization.DataContractSerializer> class honors the <xref:System.NonSerializedAttribute> attribute applied to enumeration members is different from the behavior of the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> and the <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>.</span></span> <span data-ttu-id="71da6-140">Ces deux sérialiseurs ignorent l'attribut <xref:System.NonSerializedAttribute>.</span><span class="sxs-lookup"><span data-stu-id="71da6-140">Both of those serializers ignore the <xref:System.NonSerializedAttribute> attribute.</span></span>  
   
-## Énumérations d'indicateurs  
- Vous pouvez appliquer l'attribut <xref:System.FlagsAttribute> aux énumérations.  Dans ce cas, une liste de zéro ou plusieurs valeurs d'énumération peut être envoyée ou reçue simultanément.  
+## <a name="flag-enumerations"></a><span data-ttu-id="71da6-141">Énumérations d'indicateurs</span><span class="sxs-lookup"><span data-stu-id="71da6-141">Flag Enumerations</span></span>  
+ <span data-ttu-id="71da6-142">Vous pouvez appliquer l'attribut <xref:System.FlagsAttribute> aux énumérations.</span><span class="sxs-lookup"><span data-stu-id="71da6-142">You can apply the <xref:System.FlagsAttribute> attribute to enumerations.</span></span> <span data-ttu-id="71da6-143">Dans ce cas, une liste de zéro ou plusieurs valeurs d'énumération peut être envoyée ou reçue simultanément.</span><span class="sxs-lookup"><span data-stu-id="71da6-143">In that case, a list of zero or more enumeration values can be sent or received simultaneously.</span></span>  
   
- Pour cela, appliquez l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> à l'énumération d'indicateur, puis marquez tous les membres qui sont à la puissance de deux avec l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.  Notez que pour utiliser une énumération d'indicateur, la progression doit être une séquence ininterrompue à la puissance de 2 \(par exemple, 1, 2, 4, 8, 16, 32, 64\).  
+ <span data-ttu-id="71da6-144">Pour cela, appliquez l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> à l'énumération d'indicateur, puis marquez tous les membres qui sont à la puissance de deux avec l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>.</span><span class="sxs-lookup"><span data-stu-id="71da6-144">To do so, apply the <xref:System.Runtime.Serialization.DataContractAttribute> attribute to the flag enumeration and then mark all the members that are powers of two with the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute.</span></span> <span data-ttu-id="71da6-145">Notez que pour utiliser une énumération d'indicateur, la progression doit être une séquence ininterrompue à la puissance de 2 (par exemple, 1, 2, 4, 8, 16, 32, 64).</span><span class="sxs-lookup"><span data-stu-id="71da6-145">Note that to use a flag enumeration, the progression must be an uninterrupted sequence of powers of 2 (for example, 1, 2, 4, 8, 16, 32, 64).</span></span>  
   
- Les étapes suivantes s'appliquent à l'envoi de la valeur d'énumération d'un indicateur :  
+ <span data-ttu-id="71da6-146">Les étapes suivantes s'appliquent à l'envoi de la valeur d'énumération d'un indicateur :</span><span class="sxs-lookup"><span data-stu-id="71da6-146">The following steps apply to sending a flag's enumeration value:</span></span>  
   
-1.  Essayez de rechercher un membre de l'énumération \(auquel est appliqué l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>\) qui correspond à la valeur numérique.  Une fois trouvé, envoyez une liste qui contient seulement ce membre.  
+1.  <span data-ttu-id="71da6-147">Essayez de rechercher un membre de l'énumération (auquel est appliqué l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>) qui correspond à la valeur numérique.</span><span class="sxs-lookup"><span data-stu-id="71da6-147">Attempt to find an enumeration member (with the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute applied) that maps to the numeric value.</span></span> <span data-ttu-id="71da6-148">Une fois trouvé, envoyez une liste qui contient seulement ce membre.</span><span class="sxs-lookup"><span data-stu-id="71da6-148">If found, send a list that contains just that member.</span></span>  
   
-2.  Essayez de décomposer la valeur numérique en une somme de manière à obtenir des membres de l'énumération \(à chacun desquels est appliqué l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>\) qui correspondent à chaque partie de la somme.  Envoyez la liste de tous ces membres.  Notez que l'*algorithme gourmand* est utilisé pour rechercher cette somme, et donc il n'y a aucune garantie que la somme soit trouvée même si elle est présente.  Pour éviter ce problème, assurez\-vous que les valeurs numériques des membres de l'énumération sont à la puissance de deux.  
+2.  <span data-ttu-id="71da6-149">Essayez de décomposer la valeur numérique en une somme de manière à obtenir des membres de l'énumération (à chacun desquels est appliqué l'attribut <xref:System.Runtime.Serialization.EnumMemberAttribute>) qui correspondent à chaque partie de la somme.</span><span class="sxs-lookup"><span data-stu-id="71da6-149">Attempt to break the numeric value into a sum such that there are enumeration members (each with the <xref:System.Runtime.Serialization.EnumMemberAttribute> attribute applied) that map to each part of the sum.</span></span> <span data-ttu-id="71da6-150">Envoyez la liste de tous ces membres.</span><span class="sxs-lookup"><span data-stu-id="71da6-150">Send the list of all these members.</span></span> <span data-ttu-id="71da6-151">Notez que la *algorithme gourmand* est utilisé pour rechercher cette somme, et donc il n’existe aucune garantie que cette somme soit trouvée même si elle est présente.</span><span class="sxs-lookup"><span data-stu-id="71da6-151">Note that the *greedy algorithm* is used to find such a sum, and thus there is no guarantee that such a sum is found even if it is present.</span></span> <span data-ttu-id="71da6-152">Pour éviter ce problème, assurez-vous que les valeurs numériques des membres de l'énumération sont à la puissance de deux.</span><span class="sxs-lookup"><span data-stu-id="71da6-152">To avoid this problem, make sure that the numeric values of the enumeration members are powers of two.</span></span>  
   
-3.  Si les deux étapes précédentes échouent et que la valeur numérique est différente de zéro, levez une <xref:System.Runtime.Serialization.SerializationException>.  Si la valeur numérique est égale à zéro, envoyez la liste vide.  
+3.  <span data-ttu-id="71da6-153">Si les deux étapes précédentes échouent et que la valeur numérique est différente de zéro, levez une <xref:System.Runtime.Serialization.SerializationException>.</span><span class="sxs-lookup"><span data-stu-id="71da6-153">If the preceding two steps fail, and the numeric value is nonzero, throw a <xref:System.Runtime.Serialization.SerializationException>.</span></span> <span data-ttu-id="71da6-154">Si la valeur numérique est égale à zéro, envoyez la liste vide.</span><span class="sxs-lookup"><span data-stu-id="71da6-154">If the numeric value is zero, send the empty list.</span></span>  
   
-### Exemple  
- L'exemple d'énumération suivant peut être utilisé dans une opération d'indicateur.  
+### <a name="example"></a><span data-ttu-id="71da6-155">Exemple</span><span class="sxs-lookup"><span data-stu-id="71da6-155">Example</span></span>  
+ <span data-ttu-id="71da6-156">L'exemple d'énumération suivant peut être utilisé dans une opération d'indicateur.</span><span class="sxs-lookup"><span data-stu-id="71da6-156">The following enumeration example can be used in a flag operation.</span></span>  
   
  [!code-csharp[c_DataContractEnumerations#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractenumerations/cs/source.cs#4)]
  [!code-vb[c_DataContractEnumerations#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractenumerations/vb/source.vb#4)]  
   
- Les valeurs de l'exemple suivant sont sérialisées comme indiqué.  
+ <span data-ttu-id="71da6-157">Les valeurs de l'exemple suivant sont sérialisées comme indiqué.</span><span class="sxs-lookup"><span data-stu-id="71da6-157">The following example values are serialized as indicated.</span></span>  
   
  [!code-csharp[c_DataContractEnumerations#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractenumerations/cs/source.cs#5)]
  [!code-vb[c_DataContractEnumerations#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractenumerations/vb/source.vb#5)]  
   
-## Voir aussi  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)   
- [Spécification du transfert de données dans des contrats de service](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+## <a name="see-also"></a><span data-ttu-id="71da6-158">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="71da6-158">See Also</span></span>  
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ [<span data-ttu-id="71da6-159">À l’aide de contrats de données</span><span class="sxs-lookup"><span data-stu-id="71da6-159">Using Data Contracts</span></span>](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [<span data-ttu-id="71da6-160">Specifying Data Transfer in Service Contracts</span><span class="sxs-lookup"><span data-stu-id="71da6-160">Specifying Data Transfer in Service Contracts</span></span>](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

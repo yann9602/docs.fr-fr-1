@@ -1,61 +1,64 @@
 ---
-title: "Optimisation des performances&#160;: ressources d&#39;application | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ressources d'application, performances"
-  - "pinceaux, performances"
-  - "ressources, performances"
-  - "partager des pinceaux sans copier"
-  - "partager des ressources"
-  - "ressources statiques"
+title: "Optimisation des performances : ressources d'application"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application resources [WPF], performance
+- resources [WPF], performance
+- static resources [WPF]
+- sharing resources [WPF]
+- brushes [WPF], performance
+- sharing brushes without copying [WPF]
 ms.assetid: 62b88488-c08e-4804-b7de-a1c34fbe929c
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8ac462f3b49788fd909f9d9f4fc785db74704ff6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Optimisation des performances&#160;: ressources d&#39;application
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de partager des ressources d'application afin que vous puissiez prendre en charge une apparence cohérente ou un comportement à travers des éléments type semblables.  Cette rubrique fournit quelques recommandations dans ce domaine qui peut vous aider à améliorer les performances de vos applications.  
+# <a name="optimizing-performance-application-resources"></a><span data-ttu-id="29bd1-102">Optimisation des performances : ressources d'application</span><span class="sxs-lookup"><span data-stu-id="29bd1-102">Optimizing Performance: Application Resources</span></span>
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="29bd1-103">vous permet de partager des ressources d’application afin que vous pouvez prendre en charge une apparence cohérente ou un comportement sur les éléments de type semblables.</span><span class="sxs-lookup"><span data-stu-id="29bd1-103"> allows you to share application resources so that you can support a consistent look or behavior across similar-typed elements.</span></span> <span data-ttu-id="29bd1-104">Cette rubrique fournit quelques recommandations dans ce domaine qui peuvent vous aider à améliorent les performances de vos applications.</span><span class="sxs-lookup"><span data-stu-id="29bd1-104">This topic provides a few recommendations in this area that can help you improve the performance of your applications.</span></span>  
   
- Pour plus d'informations sur les ressources, consultez [Ressources XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ <span data-ttu-id="29bd1-105">Pour plus d’informations sur les ressources, consultez la page [Ressources XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).</span><span class="sxs-lookup"><span data-stu-id="29bd1-105">For more information on resources, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).</span></span>  
   
-## Partage de ressources  
- Si votre application utilise des contrôles personnalisés et définit des ressources dans un <xref:System.Windows.ResourceDictionary> \(ou nœud de ressources XAML\), il est recommandé que vous définissiez les ressources au niveau <xref:System.Windows.Application> ou de l'objet <xref:System.Windows.Window>, ou dans le thème par défaut pour les contrôles personnalisés.  La définition de ressources dans <xref:System.Windows.ResourceDictionary> d'un contrôle personnalisé impose un impact sur les performances pour chaque instance de ce contrôle.  Par exemple, si vous avez des opérations de pinceau intensives définies dans le cadre de la définition de ressource d'un contrôle personnalisé et de nombreuses instances du contrôle personnalisé, le jeu de travail de l'application augmentera considérablement.  
+## <a name="sharing-resources"></a><span data-ttu-id="29bd1-106">Partage de ressources</span><span class="sxs-lookup"><span data-stu-id="29bd1-106">Sharing resources</span></span>  
+ <span data-ttu-id="29bd1-107">Si votre application utilise des contrôles personnalisés et définit des ressources dans un <xref:System.Windows.ResourceDictionary> (ou nœud de ressources XAML), il est recommandé que vous définissiez les ressources situées sur le <xref:System.Windows.Application> ou <xref:System.Windows.Window> au niveau de l’objet, ou les définir dans le thème par défaut pour le contrôles personnalisés.</span><span class="sxs-lookup"><span data-stu-id="29bd1-107">If your application uses custom controls and defines resources in a <xref:System.Windows.ResourceDictionary> (or XAML Resources node), it is recommended that you either define the resources at the <xref:System.Windows.Application> or <xref:System.Windows.Window> object level, or define them in the default theme for the custom controls.</span></span> <span data-ttu-id="29bd1-108">Définition des ressources dans un contrôle personnalisé <xref:System.Windows.ResourceDictionary> impose un impact sur les performances pour chaque instance de ce contrôle.</span><span class="sxs-lookup"><span data-stu-id="29bd1-108">Defining resources in a custom control's <xref:System.Windows.ResourceDictionary> imposes a performance impact for every instance of that control.</span></span> <span data-ttu-id="29bd1-109">Par exemple, si vous avez les opérations exigeantes en performances pinceau définies dans le cadre de la définition de ressource d’un contrôle personnalisé et de nombreuses instances du contrôle personnalisé, plage de travail de l’application augmente considérablement.</span><span class="sxs-lookup"><span data-stu-id="29bd1-109">For example, if you have performance-intensive brush operations defined as part of the resource definition of a custom control and many instances of the custom control, the application's working set will increase significantly.</span></span>  
   
- Pour illustrer ce point, considérez les éléments suivants.  Admettons que vous développez un jeu de cartes à l'aide de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Pour la plupart des jeux de cartes, vous avez besoin de 52 cartes avec 52 faces différentes.  Vous décidez d'implémenter une carte de contrôle personnalisé et vous définissez 52 pinceaux \(chacun représentant une face de carte\) dans les ressources de votre carte de contrôle personnalisé.  Dans votre application principale, vous créez initialement 52 instances de cette carte de contrôle personnalisé.  Chaque instance de la carte de contrôle personnalisé génère 52 instances des objets <xref:System.Windows.Media.Brush>, ce qui vous donne un total de 52 \* 52 objets <xref:System.Windows.Media.Brush> dans votre application.  En déplaçant les pinceaux hors des ressources de la carte de contrôle personnalisé au niveau <xref:System.Windows.Application> ou de l'objet <xref:System.Windows.Window>, ou en les définissant dans le thème par défaut pour le contrôle personnalisé, vous réduisez le jeu de travail de l'application, puisque vous partagez maintenant les 52 pinceaux parmi 52 instances de la carte de contrôle.  
+ <span data-ttu-id="29bd1-110">Pour illustrer ce point, considérez les points suivants.</span><span class="sxs-lookup"><span data-stu-id="29bd1-110">To illustrate this point, consider the following.</span></span> <span data-ttu-id="29bd1-111">Supposons que vous développez un jeu de carte à l’aide [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="29bd1-111">Let's say you are developing a card game using [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="29bd1-112">Pour la plupart des jeux de cartes, vous devez 52 cartes avec 52 faces différentes.</span><span class="sxs-lookup"><span data-stu-id="29bd1-112">For most card games, you need 52 cards with 52 different faces.</span></span> <span data-ttu-id="29bd1-113">Vous décidez d’implémenter un contrôle personnalisé de carte et que vous définissez 52 pinceaux (chacun représentant une face de carte) dans les ressources de votre carte de contrôle personnalisé.</span><span class="sxs-lookup"><span data-stu-id="29bd1-113">You decide to implement a card custom control and you define 52 brushes (each representing a card face) in the resources of your card custom control.</span></span> <span data-ttu-id="29bd1-114">Dans votre application principale, vous créez initialement 52 instances de cette carte de contrôle personnalisé.</span><span class="sxs-lookup"><span data-stu-id="29bd1-114">In your main application, you initially create 52 instances of this card custom control.</span></span> <span data-ttu-id="29bd1-115">Chaque instance de la carte de contrôle personnalisé génère 52 instances de <xref:System.Windows.Media.Brush> objets, ce qui vous donne un total de 52 * 52 <xref:System.Windows.Media.Brush> objets dans votre application.</span><span class="sxs-lookup"><span data-stu-id="29bd1-115">Each instance of the card custom control generates 52 instances of <xref:System.Windows.Media.Brush> objects, which gives you a total of 52 * 52 <xref:System.Windows.Media.Brush> objects in your application.</span></span> <span data-ttu-id="29bd1-116">En déplaçant les pinceaux hors des ressources de contrôle personnalisé de carte à la <xref:System.Windows.Application> ou <xref:System.Windows.Window> niveau de l’objet, ou en les définissant dans le thème par défaut pour le contrôle personnalisé, vous réduisez la plage de travail de l’application, puisque vous partagez maintenant les 52 pinceaux parmi 52 d’instances de la carte de contrôle.</span><span class="sxs-lookup"><span data-stu-id="29bd1-116">By moving the brushes out of the card custom control resources to the <xref:System.Windows.Application> or <xref:System.Windows.Window> object level, or defining them in the default theme for the custom control, you reduce the working set of the application, since you are now sharing the 52 brushes among 52 instances of the card control.</span></span>  
   
-## Partage d'un pinceau sans copier  
- Si vous avez plusieurs éléments utilisant le même objet <xref:System.Windows.Media.Brush>, définissez le pinceau comme une ressource et référencez\-le, plutôt que de définir le pinceau inline dans [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].  Cette méthode créera une instance et la réutilisera, alors que la définition de pinceaux inline dans [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] crée une instance pour chaque élément.  
+## <a name="sharing-a-brush-without-copying"></a><span data-ttu-id="29bd1-117">Partage d’un pinceau sans copier</span><span class="sxs-lookup"><span data-stu-id="29bd1-117">Sharing a Brush without Copying</span></span>  
+ <span data-ttu-id="29bd1-118">Si vous avez plusieurs éléments à l’aide de la même <xref:System.Windows.Media.Brush> de l’objet, définissez le pinceau comme une ressource et référencez-le, plutôt que de définir le pinceau inline dans [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].</span><span class="sxs-lookup"><span data-stu-id="29bd1-118">If you have multiple elements using the same <xref:System.Windows.Media.Brush> object, define the brush as a resource and reference it, rather than defining the brush inline in [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].</span></span> <span data-ttu-id="29bd1-119">Cette méthode crée une instance et la réutiliser, tandis que la définition de pinceaux inline dans [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] crée une nouvelle instance pour chaque élément.</span><span class="sxs-lookup"><span data-stu-id="29bd1-119">This method will create one instance and reuse it, whereas defining brushes inline in [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] creates a new instance for each element.</span></span>  
   
- L'exemple de balise suivant illustre ce point :  
+ <span data-ttu-id="29bd1-120">Le balisage suivant illustre ce point :</span><span class="sxs-lookup"><span data-stu-id="29bd1-120">The following markup sample illustrates this point:</span></span>  
   
- [!code-xml[Performance#PerformanceSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
+ [!code-xaml[Performance#PerformanceSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
   
-## Utilisation de ressources statiques lorsque cela est possible  
- Une ressource statique fournit une valeur pour tout attribut de propriété XAML en recherchant une référence à une ressource déjà définie.  Le comportement de recherche pour cette ressource est analogue à recherche au moment de la compilation.  
+## <a name="use-static-resources-when-possible"></a><span data-ttu-id="29bd1-121">Utilisez les ressources statiques lorsque cela est Possible</span><span class="sxs-lookup"><span data-stu-id="29bd1-121">Use Static Resources when Possible</span></span>  
+ <span data-ttu-id="29bd1-122">Une ressource statique fournit une valeur pour tout attribut de propriété XAML en recherchant une référence à une ressource déjà définie.</span><span class="sxs-lookup"><span data-stu-id="29bd1-122">A static resource provides a value for any XAML property attribute by looking up a reference to an already defined resource.</span></span> <span data-ttu-id="29bd1-123">Comportement de recherche de cette ressource est analogue à la recherche au moment de la compilation.</span><span class="sxs-lookup"><span data-stu-id="29bd1-123">Lookup behavior for that resource is analogous to compile-time lookup.</span></span>  
   
- En revanche,  une ressource dynamique créera une expression temporaire pendant la compilation initiale et donc diffèrera la recherche de ressources jusqu'à ce que la valeur de ressource demandée soit réellement demandée pour construire un objet.  Le comportement de recherche pour cette ressource est analogue à la recherche au moment de l'exécution, qui entraîne un impact sur les performances.  Utilisez les ressources statiques quand cela est possible dans votre application, à l'aide de ressources dynamiques uniquement en cas de besoin.  
+ <span data-ttu-id="29bd1-124">Une ressource dynamique, quant à lui, est une expression temporaire pendant la compilation initiale et donc déférer recherche des ressources jusqu'à ce que la valeur de la ressource demandée est réellement nécessaire afin de construire un objet.</span><span class="sxs-lookup"><span data-stu-id="29bd1-124">A dynamic resource, on the other hand, will create a temporary expression during the initial compilation and thus defer lookup for resources until the requested resource value is actually required in order to construct an object.</span></span> <span data-ttu-id="29bd1-125">Comportement de recherche de cette ressource est analogue à la recherche au moment de l’exécution, qui impose un impact sur les performances.</span><span class="sxs-lookup"><span data-stu-id="29bd1-125">Lookup behavior for that resource is analogous to run-time lookup, which imposes a performance impact.</span></span> <span data-ttu-id="29bd1-126">Utilisez les ressources statiques autant que possible dans votre application, à l’aide de ressources dynamiques uniquement lorsque cela est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="29bd1-126">Use static resources whenever possible in your application, using dynamic resources only when necessary.</span></span>  
   
- L'exemple de balise suivant affiche l'utilisation des deux types de ressources :  
+ <span data-ttu-id="29bd1-127">L’exemple de balise suivant illustre l’utilisation de ces deux types de ressources :</span><span class="sxs-lookup"><span data-stu-id="29bd1-127">The following markup sample shows the use of both types of resources:</span></span>  
   
- [!code-xml[Performance#PerformanceSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
+ [!code-xaml[Performance#PerformanceSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
   
-## Voir aussi  
- [Optimisation des performances des applications WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
- [Planification des performances des applications](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)   
- [Tirer parti du matériel](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)   
- [Disposition et conception](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)   
- [Graphiques 2D et acquisition d'images](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)   
- [Comportement d'objets](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)   
- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)   
- [Liaison de données](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
- [Autres recommandations relatives aux performances](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+## <a name="see-also"></a><span data-ttu-id="29bd1-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="29bd1-128">See Also</span></span>  
+ [<span data-ttu-id="29bd1-129">Optimisation des performances des applications WPF</span><span class="sxs-lookup"><span data-stu-id="29bd1-129">Optimizing WPF Application Performance</span></span>](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
+ [<span data-ttu-id="29bd1-130">Planification des performances des applications</span><span class="sxs-lookup"><span data-stu-id="29bd1-130">Planning for Application Performance</span></span>](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
+ [<span data-ttu-id="29bd1-131">Tirer parti du matériel</span><span class="sxs-lookup"><span data-stu-id="29bd1-131">Taking Advantage of Hardware</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
+ [<span data-ttu-id="29bd1-132">Disposition et conception</span><span class="sxs-lookup"><span data-stu-id="29bd1-132">Layout and Design</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
+ [<span data-ttu-id="29bd1-133">Graphiques 2D et acquisition d'images</span><span class="sxs-lookup"><span data-stu-id="29bd1-133">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [<span data-ttu-id="29bd1-134">Comportement de l’objet</span><span class="sxs-lookup"><span data-stu-id="29bd1-134">Object Behavior</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ [<span data-ttu-id="29bd1-135">Text</span><span class="sxs-lookup"><span data-stu-id="29bd1-135">Text</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [<span data-ttu-id="29bd1-136">Liaison de données</span><span class="sxs-lookup"><span data-stu-id="29bd1-136">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="29bd1-137">Autres recommandations relatives aux performances</span><span class="sxs-lookup"><span data-stu-id="29bd1-137">Other Performance Recommendations</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

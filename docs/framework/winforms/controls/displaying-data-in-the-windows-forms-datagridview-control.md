@@ -1,86 +1,87 @@
 ---
-title: "Affichage des donn&#233;es dans le contr&#244;le DataGridView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "données (Windows Forms), afficher sous forme de tableau"
-  - "grilles de données, afficher les données"
-  - "DataGridView (contrôle Windows Forms), afficher les données"
-  - "afficher les données, grilles de données"
+title: "Affichage des données dans le contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data [Windows Forms], displaying in tabular format
+- data grids [Windows Forms], displaying data
+- displaying data [Windows Forms], data grids
+- DataGridView control [Windows Forms], displaying data
 ms.assetid: b170b52a-2ebd-4948-ac2f-e52d494cebb2
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 839a4fd8052578e32e4d46d10e07aa52a1f23d90
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Affichage des donn&#233;es dans le contr&#244;le DataGridView Windows Forms
-Le contrôle `DataGridView` est utilisé pour afficher des données de diverses sources de données externes.  Par ailleurs, vous pouvez ajouter des lignes et des colonnes au contrôle et le remplir manuellement de données.  
+# <a name="displaying-data-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="d629f-102">Affichage des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-102">Displaying Data in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="d629f-103">Le `DataGridView` contrôle est utilisé pour afficher des données à partir de diverses sources de données externes.</span><span class="sxs-lookup"><span data-stu-id="d629f-103">The `DataGridView` control is used to display data from a variety of external data sources.</span></span> <span data-ttu-id="d629f-104">Vous pouvez également ajouter des lignes et des colonnes au contrôle et remplir manuellement avec des données.</span><span class="sxs-lookup"><span data-stu-id="d629f-104">Alternatively, you can add rows and columns to the control and manually populate it with data.</span></span>  
   
- Lorsque vous liez le contrôle à une source de données, vous pouvez générer automatiquement des colonnes d'après le schéma de la source de données.  Si ces colonnes n'apparaissent pas exactement comme vous le souhaitez, vous pouvez les masquer, les supprimer ou les réorganiser.  Vous pouvez également ajouter des colonnes indépendantes pour afficher des données supplémentaires, qui ne proviennent pas de la source de données.  
+ <span data-ttu-id="d629f-105">Lorsque vous liez le contrôle à une source de données, vous pouvez générer des colonnes automatiquement en fonction du schéma de la source de données.</span><span class="sxs-lookup"><span data-stu-id="d629f-105">When you bind the control to a data source, you can generate columns automatically based on the schema of the data source.</span></span> <span data-ttu-id="d629f-106">Si ces colonnes n’apparaissent pas comme vous le souhaiteriez, vous pouvez masquer, supprimer ou réorganiser les.</span><span class="sxs-lookup"><span data-stu-id="d629f-106">If these columns do not appear just as you want them to, you can hide, remove, or rearrange them.</span></span> <span data-ttu-id="d629f-107">Vous pouvez également ajouter des colonnes indépendantes pour afficher des données supplémentaires qui ne provient pas de la source de données.</span><span class="sxs-lookup"><span data-stu-id="d629f-107">You can also add unbound columns to display supplemental data that does not come from the data source.</span></span>  
   
- En outre, vous pouvez afficher vos données dans des formats standard \(comme le format de devise\), ou personnaliser le format d'affichage afin de présenter vos données à votre convenance \(en modifiant la couleur d'arrière\-plan pour les chiffres négatifs, ou en remplaçant les valeurs de chaîne par des images correspondantes, par exemple\).  
+ <span data-ttu-id="d629f-108">En outre, vous pouvez afficher vos données à l’aide de formats standard (par exemple, le format de devise), ou vous pouvez personnaliser l’affichage de la mise en forme pour présenter vos données, toutefois vous devez (par exemple, la modification de la couleur d’arrière-plan pour les nombres négatifs, ou en remplaçant les valeurs de chaîne avec les images correspondantes).</span><span class="sxs-lookup"><span data-stu-id="d629f-108">Additionally, you can display your data using standard formats (such as currency format), or you can customize the display formatting to present your data however you need to (such as changing the background color for negative numbers, or replacing string values with corresponding images).</span></span>  
   
-## Dans cette section  
- [Modes d'affichage des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/data-display-modes-in-the-windows-forms-datagridview-control.md)  
- Décrit les options de remplissage du contrôle à l'aide de données.  
+## <a name="in-this-section"></a><span data-ttu-id="d629f-109">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="d629f-109">In This Section</span></span>  
+ [<span data-ttu-id="d629f-110">Modes d’affichage des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-110">Data Display Modes in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/data-display-modes-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="d629f-111">Décrit les options pour remplir le contrôle de données.</span><span class="sxs-lookup"><span data-stu-id="d629f-111">Describes the options for populating the control with data.</span></span>  
   
- [Mise en forme de données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/data-formatting-in-the-windows-forms-datagridview-control.md)  
- Décrit les options de mise en forme des valeurs d'affichage des cellules.  
+ [<span data-ttu-id="d629f-112">Mise en forme de données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-112">Data Formatting in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/data-formatting-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="d629f-113">Décrit les options de mise en forme des valeurs d’affichage de cellule.</span><span class="sxs-lookup"><span data-stu-id="d629f-113">Describes the options for formatting cell display values.</span></span>  
   
- [Procédure pas à pas : création d'un contrôle DataGridView Windows Forms non lié](../../../../docs/framework/winforms/controls/walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)  
- Montre comment remplir manuellement le contrôle avec des données.  
+ [<span data-ttu-id="d629f-114">Procédure pas à pas : création d’un contrôle DataGridView Windows Forms non lié</span><span class="sxs-lookup"><span data-stu-id="d629f-114">Walkthrough: Creating an Unbound Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="d629f-115">Décrit comment remplir manuellement le contrôle de données.</span><span class="sxs-lookup"><span data-stu-id="d629f-115">Describes how to manually populate the control with data.</span></span>  
   
- [Comment : lier des données au contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)  
- Décrit comment remplir le contrôle à l'aide de données en le liant à une `BindingSource` qui contient des informations extraites d'une base de données.  
+ [<span data-ttu-id="d629f-116">Guide pratique pour lier des données au contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-116">How to: Bind Data to the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="d629f-117">Explique comment remplir le contrôle de données en le liant à un `BindingSource` qui contient des informations extraites d’une base de données.</span><span class="sxs-lookup"><span data-stu-id="d629f-117">Describes how to populate the control with data by binding it to a `BindingSource` that contains information pulled from a database.</span></span>  
   
- [Comment : générer automatiquement des colonnes dans un contrôle DataGridView Windows Forms lié aux données](../../../../docs/framework/winforms/controls/autogenerate-columns-in-a-data-bound-wf-datagridview-control.md)  
- Décrit comment générer automatiquement des colonnes basées sur une source de données liée.  
+ [<span data-ttu-id="d629f-118">Guide pratique pour générer automatiquement des colonnes dans un contrôle DataGridView Windows Forms lié aux données</span><span class="sxs-lookup"><span data-stu-id="d629f-118">How to: Autogenerate Columns in a Data-Bound Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/autogenerate-columns-in-a-data-bound-wf-datagridview-control.md)  
+ <span data-ttu-id="d629f-119">Décrit comment générer automatiquement des colonnes basées sur une source de données liée.</span><span class="sxs-lookup"><span data-stu-id="d629f-119">Describes how to automatically generate columns based on a bound data source.</span></span>  
   
- [Comment : supprimer les colonnes générées automatiquement d'un contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/remove-autogenerated-columns-from-a-wf-datagridview-control.md)  
- Décrit comment masquer ou supprimer des colonnes générées automatiquement à partir d'une source de données liée.  
+ [<span data-ttu-id="d629f-120">Guide pratique pour supprimer les colonnes générées automatiquement d'un contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-120">How to: Remove Autogenerated Columns from a Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/remove-autogenerated-columns-from-a-wf-datagridview-control.md)  
+ <span data-ttu-id="d629f-121">Décrit comment masquer ou supprimer des colonnes générées automatiquement à partir d’une source de données liée.</span><span class="sxs-lookup"><span data-stu-id="d629f-121">Describes how to hide or delete columns generated automatically from a bound data source.</span></span>  
   
- [Comment : modifier l'ordre des colonnes dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md)  
- Décrit comment réorganiser des colonnes générées automatiquement à partir d'une source de données liée.  
+ [<span data-ttu-id="d629f-122">Guide pratique pour modifier l'ordre des colonnes dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-122">How to: Change the Order of Columns in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="d629f-123">Décrit comment réorganiser les colonnes générées automatiquement à partir d’une source de données liée.</span><span class="sxs-lookup"><span data-stu-id="d629f-123">Describes how to rearrange columns generated automatically from a bound data source.</span></span>  
   
- [Comment : ajouter une colonne indépendante à un contrôle DataGridView Windows Forms lié aux données](../../../../docs/framework/winforms/controls/unbound-column-to-a-data-bound-datagridview.md)  
- Explique comment compléter des données issues d'une source de données liée en affichant des colonnes supplémentaires non liées.  
+ [<span data-ttu-id="d629f-124">Guide pratique pour ajouter une colonne indépendante à un contrôle DataGridView Windows Forms lié aux données</span><span class="sxs-lookup"><span data-stu-id="d629f-124">How to: Add an Unbound Column to a Data-Bound Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/unbound-column-to-a-data-bound-datagridview.md)  
+ <span data-ttu-id="d629f-125">Décrit comment compléter des données à partir d’une source de données liée en affichant des colonnes supplémentaires non liées.</span><span class="sxs-lookup"><span data-stu-id="d629f-125">Describes how to supplement data from a bound data source by displaying additional, unbound columns.</span></span>  
   
- [Comment : lier des objets aux contrôles DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-bind-objects-to-windows-forms-datagridview-controls.md)  
- Décrit comment lier le contrôle à une collection d'objets arbitraires de sorte que chaque objet soit affiché dans sa propre ligne.  
+ [<span data-ttu-id="d629f-126">Comment : lier des objets aux contrôles DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-126">How to: Bind Objects to Windows Forms DataGridView Controls</span></span>](../../../../docs/framework/winforms/controls/how-to-bind-objects-to-windows-forms-datagridview-controls.md)  
+ <span data-ttu-id="d629f-127">Décrit comment lier le contrôle à une collection d’objets arbitraires de sorte que chaque objet s’affiche dans sa propre ligne.</span><span class="sxs-lookup"><span data-stu-id="d629f-127">Describes how to bind the control to a collection of arbitrary objects so that each object is displayed in its own row.</span></span>  
   
- [Comment : accéder à des objets liés à des lignes DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)  
- Décrit comment récupérer un objet lié à une ligne particulière du contrôle.  
+ [<span data-ttu-id="d629f-128">Comment : accéder à des objets liés à des lignes DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-128">How to: Access Objects Bound to Windows Forms DataGridView Rows</span></span>](../../../../docs/framework/winforms/controls/how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)  
+ <span data-ttu-id="d629f-129">Décrit comment récupérer un objet lié à une ligne particulière du contrôle.</span><span class="sxs-lookup"><span data-stu-id="d629f-129">Describes how to retrieve an object bound to a particular row of the control.</span></span>  
   
- [Procédure pas à pas : création d'un formulaire maître\/détail qui utilise deux contrôles DataGridView Windows Forms](../../../../docs/framework/winforms/controls/creating-a-master-detail-form-using-two-datagrids.md)  
- Décrit comment afficher des données provenant de deux tables de base de données connexes, afin que les valeurs affichées dans un contrôle `DataGridView` dépendent de la ligne actuellement sélectionnée dans un autre contrôle.  
+ [<span data-ttu-id="d629f-130">Procédure pas à pas : création d'un formulaire maître/détail qui utilise deux contrôles DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-130">Walkthrough: Creating a Master/Detail Form Using Two Windows Forms DataGridView Controls</span></span>](../../../../docs/framework/winforms/controls/creating-a-master-detail-form-using-two-datagridviews.md)  
+ <span data-ttu-id="d629f-131">Décrit comment afficher des données provenant de deux tables connexes de la base de données afin que les valeurs affichées dans un `DataGridView` contrôle dépendent de la ligne actuellement sélectionnée dans un autre contrôle.</span><span class="sxs-lookup"><span data-stu-id="d629f-131">Describes how to display data from two related database tables so that the values shown in one `DataGridView` control depend on the currently selected row in another control.</span></span>  
   
- [Comment : personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)  
- Décrit comment gérer l'événement <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=fullName> pour modifier l'apparence de cellules suivant les valeurs qu'elles contiennent.  
+ [<span data-ttu-id="d629f-132">Guide pratique pour personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-132">How to: Customize Data Formatting in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="d629f-133">Décrit comment gérer les <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> événement pour modifier l’apparence des cellules en fonction de leurs valeurs.</span><span class="sxs-lookup"><span data-stu-id="d629f-133">Describes how to handle the <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> event to change the appearance of cells depending on their values.</span></span>  
   
-## Référence  
+## <a name="reference"></a><span data-ttu-id="d629f-134">Référence</span><span class="sxs-lookup"><span data-stu-id="d629f-134">Reference</span></span>  
  <xref:System.Windows.Forms.DataGridView>  
- Fournit de la documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
+ <span data-ttu-id="d629f-135">Fournit la documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.</span><span class="sxs-lookup"><span data-stu-id="d629f-135">Provides reference documentation for the <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
- <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=fullName>  
- Fournit de la documentation de référence pour la propriété <xref:System.Windows.Forms.DataGridView.DataSource%2A>.  
+ <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>  
+ <span data-ttu-id="d629f-136">Fournit la documentation de référence pour le <xref:System.Windows.Forms.DataGridView.DataSource%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="d629f-136">Provides reference documentation for the <xref:System.Windows.Forms.DataGridView.DataSource%2A> property.</span></span>  
   
  <xref:System.Windows.Forms.BindingSource>  
- Fournit de la documentation de référence pour le composant <xref:System.Windows.Forms.BindingSource>.  
+ <span data-ttu-id="d629f-137">Fournit la documentation de référence pour le composant <xref:System.Windows.Forms.BindingSource>.</span><span class="sxs-lookup"><span data-stu-id="d629f-137">Provides reference documentation for the <xref:System.Windows.Forms.BindingSource> component.</span></span>  
   
-## Rubriques connexes  
- [Saisie de données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)  
- Fournit des rubriques qui décrivent comment modifier la manière avec laquelle les utilisateurs ajoutent et modifient des données dans le contrôle.  
+## <a name="related-sections"></a><span data-ttu-id="d629f-138">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="d629f-138">Related Sections</span></span>  
+ [<span data-ttu-id="d629f-139">Saisie de données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-139">Data Entry in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)  
+ <span data-ttu-id="d629f-140">Fournit des rubriques qui décrivent comment modifier la façon dont les utilisateurs ajoutent et modifient des données dans le contrôle.</span><span class="sxs-lookup"><span data-stu-id="d629f-140">Provides topics that describe how to change the way users add and modify data in the control.</span></span>  
   
-## Voir aussi  
- [DataGridView, contrôle](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)   
- [Types de colonnes dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="d629f-141">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d629f-141">See Also</span></span>  
+ [<span data-ttu-id="d629f-142">DataGridView, contrôle</span><span class="sxs-lookup"><span data-stu-id="d629f-142">DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
+ [<span data-ttu-id="d629f-143">Types de colonnes dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d629f-143">Column Types in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)

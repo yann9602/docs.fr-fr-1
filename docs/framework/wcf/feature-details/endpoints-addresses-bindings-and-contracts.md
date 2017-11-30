@@ -1,99 +1,102 @@
 ---
-title: "Points de terminaison&#160;: adresses, liaisons et contrats | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "points de terminaison (WCF)"
-  - "WCF (WCF), points de terminaison"
-  - "Windows Communication Foundation (WCF), points de terminaison"
+title: "Points de terminaison : adresses, liaisons et contrats"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- endpoints [WCF]
+- Windows Communication Foundation [WCF], endpoints
+- WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c1ee80307e0db82f4744970844754a910e81ca3b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Points de terminaison&#160;: adresses, liaisons et contrats
-Toute communication avec un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] se produit par l'intermédiaire des *points de terminaison* du service.Les points de terminaison fournissent aux clients l'accès aux fonctionnalités offertes par un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+# <a name="endpoints-addresses-bindings-and-contracts"></a><span data-ttu-id="69b7a-102">Points de terminaison : adresses, liaisons et contrats</span><span class="sxs-lookup"><span data-stu-id="69b7a-102">Endpoints: Addresses, Bindings, and Contracts</span></span>
+<span data-ttu-id="69b7a-103">Toutes les communications avec un [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service s’effectue via le *points de terminaison* du service.</span><span class="sxs-lookup"><span data-stu-id="69b7a-103">All communication with a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service occurs through the *endpoints* of the service.</span></span> <span data-ttu-id="69b7a-104">Les points de terminaison fournissent aux clients l'accès aux fonctionnalités offertes par un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="69b7a-104">Endpoints provide clients access to the functionality offered by a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
   
- Chaque point de terminaison se compose de quatre propriétés :  
+ <span data-ttu-id="69b7a-105">Chaque point de terminaison se compose de quatre propriétés :</span><span class="sxs-lookup"><span data-stu-id="69b7a-105">Each endpoint consists of four properties:</span></span>  
   
--   Une adresse qui indique où rechercher le point de terminaison.  
+-   <span data-ttu-id="69b7a-106">Une adresse qui indique où rechercher le point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="69b7a-106">An address that indicates where the endpoint can be found.</span></span>  
   
--   Une liaison qui spécifie comment un client peut communiquer avec le point de terminaison.  
+-   <span data-ttu-id="69b7a-107">Une liaison qui spécifie comment un client peut communiquer avec le point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="69b7a-107">A binding that specifies how a client can communicate with the endpoint.</span></span>  
   
--   Un contrat qui identifie les opérations disponibles.  
+-   <span data-ttu-id="69b7a-108">Un contrat qui identifie les opérations disponibles.</span><span class="sxs-lookup"><span data-stu-id="69b7a-108">A contract that identifies the operations available.</span></span>  
   
--   L'ensemble des comportements qui spécifient les détails d'implémentation locaux du point de terminaison.  
+-   <span data-ttu-id="69b7a-109">L'ensemble des comportements qui spécifient les détails d'implémentation locaux du point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="69b7a-109">A set of behaviors that specify local implementation details of the endpoint.</span></span>  
   
- Cette rubrique traite de cette structure de point de terminaison et explique comment elle est représenté dans le modèle objet [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ <span data-ttu-id="69b7a-110">Cette rubrique traite de cette structure de point de terminaison et explique comment elle est représenté dans le modèle objet [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="69b7a-110">This topic discusses this endpoint structure and explains how it is represented in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] object model.</span></span>  
   
-## Structure d'un point de terminaison  
- Chaque point de terminaison comprend les éléments suivants :  
+## <a name="the-structure-of-an-endpoint"></a><span data-ttu-id="69b7a-111">Structure d'un point de terminaison</span><span class="sxs-lookup"><span data-stu-id="69b7a-111">The Structure of an Endpoint</span></span>  
+ <span data-ttu-id="69b7a-112">Chaque point de terminaison comprend les éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="69b7a-112">Each endpoint consists of the following:</span></span>  
   
--   Adresse : l'adresse identifie le point de terminaison de manière unique et indique aux consommateurs potentiels l'emplacement du service.Elle est représentée dans le modèle objet [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par la classe <xref:System.ServiceModel.EndpointAddress>.Une classe <xref:System.ServiceModel.EndpointAddress> contient :  
+-   <span data-ttu-id="69b7a-113">Adresse : l'adresse identifie le point de terminaison de manière unique et indique aux consommateurs potentiels l'emplacement du service.</span><span class="sxs-lookup"><span data-stu-id="69b7a-113">Address: The address uniquely identifies the endpoint and tells potential consumers of the service where it is located.</span></span> <span data-ttu-id="69b7a-114">Elle est représentée dans le modèle objet [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par la classe <xref:System.ServiceModel.EndpointAddress>.</span><span class="sxs-lookup"><span data-stu-id="69b7a-114">It is represented in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] object model by the <xref:System.ServiceModel.EndpointAddress> class.</span></span> <span data-ttu-id="69b7a-115">Une classe <xref:System.ServiceModel.EndpointAddress> contient :</span><span class="sxs-lookup"><span data-stu-id="69b7a-115">An <xref:System.ServiceModel.EndpointAddress> class contains:</span></span>  
   
-    -   Une propriété <xref:System.ServiceModel.EndpointAddress.Uri%2A>, qui représente l'adresse du service.  
+    -   <span data-ttu-id="69b7a-116">Une propriété <xref:System.ServiceModel.EndpointAddress.Uri%2A>, qui représente l'adresse du service.</span><span class="sxs-lookup"><span data-stu-id="69b7a-116">A <xref:System.ServiceModel.EndpointAddress.Uri%2A> property, which represents the address of the service.</span></span>  
   
-    -   Une propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> qui représente l'identité de sécurité du service et une collection d'en\-tête de message facultatifs.Les en\-têtes de message facultatifs sont utilisés pour fournir des informations d'adressage supplémentaires et plus détaillées afin d'identifier le point de terminaison ou d'interagir avec lui.  
+    -   <span data-ttu-id="69b7a-117">Une propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> qui représente l'identité de sécurité du service et une collection d'en-tête de message facultatifs.</span><span class="sxs-lookup"><span data-stu-id="69b7a-117">An <xref:System.ServiceModel.EndpointAddress.Identity%2A> property, which represents the security identity of the service and a collection of optional message headers.</span></span> <span data-ttu-id="69b7a-118">Les en-têtes de message facultatifs sont utilisés pour fournir des informations d'adressage supplémentaires et plus détaillées afin d'identifier le point de terminaison ou d'interagir avec lui.</span><span class="sxs-lookup"><span data-stu-id="69b7a-118">The optional message headers are used to provide additional and more detailed addressing information to identify or interact with the endpoint.</span></span>  
   
-     [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Spécification d'une adresse de point de terminaison](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
+     [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="69b7a-119">[Spécification d’une adresse de point de terminaison](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).</span><span class="sxs-lookup"><span data-stu-id="69b7a-119"> [Specifying an Endpoint Address](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).</span></span>  
   
--   Liaison : la liaison spécifie le mode de communication avec le point de terminaison.Cela inclut :  
+-   <span data-ttu-id="69b7a-120">Liaison : la liaison spécifie le mode de communication avec le point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="69b7a-120">Binding: The binding specifies how to communicate with the endpoint.</span></span> <span data-ttu-id="69b7a-121">Cela inclut :</span><span class="sxs-lookup"><span data-stu-id="69b7a-121">This includes:</span></span>  
   
-    -   Le protocole de transport à utiliser \(par exemple, TCP ou HTTP\).  
+    -   <span data-ttu-id="69b7a-122">Le protocole de transport à utiliser (par exemple, TCP ou HTTP).</span><span class="sxs-lookup"><span data-stu-id="69b7a-122">The transport protocol to use (for example, TCP or HTTP).</span></span>  
   
-    -   L'encodage à utiliser pour les messages \(par exemple, texte ou binaire\).  
+    -   <span data-ttu-id="69b7a-123">L'encodage à utiliser pour les messages (par exemple, texte ou binaire).</span><span class="sxs-lookup"><span data-stu-id="69b7a-123">The encoding to use for the messages (for example, text or binary).</span></span>  
   
-    -   Les conditions de sécurité nécessaires \(par exemple, SSL ou la sécurité des messages SOAP\).  
+    -   <span data-ttu-id="69b7a-124">Les exigences de sécurité nécessaires (par exemple, SSL ou la sécurité des messages SOAP).</span><span class="sxs-lookup"><span data-stu-id="69b7a-124">The necessary security requirements (for example, SSL or SOAP message security).</span></span>  
   
-     [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Vue d'ensemble des liaisons WCF](../../../../docs/framework/wcf/bindings-overview.md).Une liaison est représentée dans le modèle objet [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par la classe de base abstraite <xref:System.ServiceModel.Channels.Binding>.Pour la plupart des scénarios, les utilisateurs peuvent utiliser l'une des liaisons fournies par le système.Pour plus d'informations, consultez [Liaisons fournies par le système](../../../../docs/framework/wcf/system-provided-bindings.md).  
+     [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="69b7a-125">[Vue d’ensemble des liaisons WCF](../../../../docs/framework/wcf/bindings-overview.md).</span><span class="sxs-lookup"><span data-stu-id="69b7a-125"> [WCF Bindings Overview](../../../../docs/framework/wcf/bindings-overview.md).</span></span> <span data-ttu-id="69b7a-126">Une liaison est représentée dans le modèle objet [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] par la classe de base abstraite <xref:System.ServiceModel.Channels.Binding>.</span><span class="sxs-lookup"><span data-stu-id="69b7a-126">A binding is represented in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] object model by the abstract base class <xref:System.ServiceModel.Channels.Binding>.</span></span> <span data-ttu-id="69b7a-127">Pour la plupart des scénarios, les utilisateurs peuvent utiliser l’une des liaisons fournies par le système.</span><span class="sxs-lookup"><span data-stu-id="69b7a-127">For most scenarios, users can use one of the system-provided bindings.</span></span> <span data-ttu-id="69b7a-128">Pour plus d’informations, consultez [les liaisons fournies](../../../../docs/framework/wcf/system-provided-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="69b7a-128">For more information, see [System-Provided Bindings](../../../../docs/framework/wcf/system-provided-bindings.md).</span></span>  
   
--   Contrats : le contrat de service définit les fonctionnalités que le point de terminaison expose au client.Un contrat spécifie :  
+-   <span data-ttu-id="69b7a-129">Contrats : le contrat de service définit les fonctionnalités que le point de terminaison expose au client.</span><span class="sxs-lookup"><span data-stu-id="69b7a-129">Contracts: The contract outlines what functionality the endpoint exposes to the client.</span></span> <span data-ttu-id="69b7a-130">Un contrat spécifie :</span><span class="sxs-lookup"><span data-stu-id="69b7a-130">A contract specifies:</span></span>  
   
-    -   Quelles opérations peuvent être appelées par un client.  
+    -   <span data-ttu-id="69b7a-131">Quelles opérations peuvent être appelées par un client.</span><span class="sxs-lookup"><span data-stu-id="69b7a-131">What operations can be called by a client.</span></span>  
   
-    -   Le format du message.  
+    -   <span data-ttu-id="69b7a-132">Le format du message.</span><span class="sxs-lookup"><span data-stu-id="69b7a-132">The form of the message.</span></span>  
   
-    -   Le type de paramètres d'entrée ou les données requis pour appeler l'opération.  
+    -   <span data-ttu-id="69b7a-133">Le type de paramètres d'entrée ou les données requis pour appeler l'opération.</span><span class="sxs-lookup"><span data-stu-id="69b7a-133">The type of input parameters or data required to call the operation.</span></span>  
   
-    -   Le type de traitement ou le message de réponse que le client peut attendre.  
+    -   <span data-ttu-id="69b7a-134">Le type de traitement ou le message de réponse que le client peut attendre.</span><span class="sxs-lookup"><span data-stu-id="69b7a-134">What type of processing or response message the client can expect.</span></span>  
   
-     Pour plus d'informations sur la définition d'un contrat, consultez [Conception de contrats de service](../../../../docs/framework/wcf/designing-service-contracts.md).  
+     <span data-ttu-id="69b7a-135">Pour plus d’informations sur la définition d’un contrat, consultez [concevoir des contrats de Service](../../../../docs/framework/wcf/designing-service-contracts.md).</span><span class="sxs-lookup"><span data-stu-id="69b7a-135">For more information about defining a contract, see [Designing Service Contracts](../../../../docs/framework/wcf/designing-service-contracts.md).</span></span>  
   
--   Comportements : vous pouvez utiliser des comportements de point de terminaison pour personnaliser le comportement local du point de terminaison du service.Les comportements de point de terminaison accomplissent ceci en participant au processus de génération d'une exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Un exemple de comportement de point de terminaison est la propriété <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> qui vous permet de spécifier une adresse d'écoute différente de l'adresse SOAP ou WSDL \(Web Services Description Language\).[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
+-   <span data-ttu-id="69b7a-136">Comportements : vous pouvez utiliser des comportements de point de terminaison pour personnaliser le comportement local du point de terminaison du service.</span><span class="sxs-lookup"><span data-stu-id="69b7a-136">Behaviors: You can use endpoint behaviors to customize the local behavior of the service endpoint.</span></span> <span data-ttu-id="69b7a-137">Les comportements de point de terminaison y parvenir en participant au processus de génération un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]runtime.</span><span class="sxs-lookup"><span data-stu-id="69b7a-137">Endpoint behaviors achieve this by participating in the process of building a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]runtime.</span></span> <span data-ttu-id="69b7a-138">Un exemple de comportement de point de terminaison est la propriété <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> qui vous permet de spécifier une adresse d'écoute différente de l'adresse SOAP ou WSDL (Web Services Description Language).</span><span class="sxs-lookup"><span data-stu-id="69b7a-138">An example of an endpoint behavior is the <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> property, which allows you to specify a different listening address than the SOAP or Web Services Description Language (WSDL) address.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="69b7a-139">[ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).</span><span class="sxs-lookup"><span data-stu-id="69b7a-139"> [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).</span></span>  
   
-## Définition des points de terminaison  
- L'adresse du point de terminaison pour un service peut être spécifiée de manière impérative en utilisant le code ou de façon déclarative par la configuration.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Comment : créer un point de terminaison de service dans la configuration.](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) et [Comment : créer un point de terminaison de service dans le code](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  
+## <a name="defining-endpoints"></a><span data-ttu-id="69b7a-140">Définition des points de terminaison</span><span class="sxs-lookup"><span data-stu-id="69b7a-140">Defining Endpoints</span></span>  
+ <span data-ttu-id="69b7a-141">L'adresse du point de terminaison pour un service peut être spécifiée de manière impérative en utilisant le code ou de façon déclarative par la configuration.</span><span class="sxs-lookup"><span data-stu-id="69b7a-141">You can specify the endpoint for a service either imperatively using code or declaratively through configuration.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="69b7a-142">[Comment : créer un point de terminaison de Service dans la Configuration](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) et [Comment : créer un point de terminaison de Service dans le Code](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).</span><span class="sxs-lookup"><span data-stu-id="69b7a-142"> [How to: Create a Service Endpoint in Configuration](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) and [How to: Create a Service Endpoint in Code](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).</span></span>  
   
-## Dans cette section  
- Cette section explique à quoi servent les liaisons, les points de terminaison et les adresses, indique comment configurer une liaison et un point de terminaison et montre comment utiliser le comportement `ClientVia` et la propriété `ListenUri`.  
+## <a name="in-this-section"></a><span data-ttu-id="69b7a-143">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="69b7a-143">In This Section</span></span>  
+ <span data-ttu-id="69b7a-144">Cette section explique à quoi servent les liaisons, les points de terminaison et les adresses, indique comment configurer une liaison et un point de terminaison et montre comment utiliser le comportement `ClientVia` et la propriété `ListenUri`.</span><span class="sxs-lookup"><span data-stu-id="69b7a-144">This section explains the purpose of bindings, endpoints, and addresses; shows how to configure a binding and an endpoint; and demonstrates how to use the `ClientVia` behavior and `ListenUri` property.</span></span>  
   
- [adresses](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)  
- Décrit comment les points de terminaison sont adressés dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ [<span data-ttu-id="69b7a-145">Adresses</span><span class="sxs-lookup"><span data-stu-id="69b7a-145">Addresses</span></span>](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)  
+ <span data-ttu-id="69b7a-146">Décrit comment les points de terminaison sont adressés dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="69b7a-146">Describes how endpoints are addressed in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
   
- [Liaisons](../../../../docs/framework/wcf/feature-details/bindings.md)  
- Décrit comment les liaisons sont utilisées pour spécifier le transport, l'encodage et les détails de protocole requis pour que les clients et les services puissent communiquer l'un l'autre.  
+ [<span data-ttu-id="69b7a-147">Liaisons</span><span class="sxs-lookup"><span data-stu-id="69b7a-147">Bindings</span></span>](../../../../docs/framework/wcf/feature-details/bindings.md)  
+ <span data-ttu-id="69b7a-148">Décrit comment les liaisons sont utilisées pour spécifier le transport, l'encodage et les détails de protocole requis pour que les clients et les services puissent communiquer l'un l'autre.</span><span class="sxs-lookup"><span data-stu-id="69b7a-148">Describes how bindings are used to specify the transport, encoding, and protocol details required for clients and services to communicate with each other.</span></span>  
   
- [Contrats](../../../../docs/framework/wcf/feature-details/contracts.md)  
- Décrit comment les contrats définissent les méthodes d'un service.  
+ [<span data-ttu-id="69b7a-149">Contrats</span><span class="sxs-lookup"><span data-stu-id="69b7a-149">Contracts</span></span>](../../../../docs/framework/wcf/feature-details/contracts.md)  
+ <span data-ttu-id="69b7a-150">Décrit comment les contrats définissent les méthodes d'un service.</span><span class="sxs-lookup"><span data-stu-id="69b7a-150">Describes how contracts define the methods of a service.</span></span>  
   
- [Comment : créer un point de terminaison de service dans la configuration.](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
- Décrit comment créer un point de terminaison de service dans la configuration.  
+ [<span data-ttu-id="69b7a-151">Comment : créer un point de terminaison de Service dans la Configuration</span><span class="sxs-lookup"><span data-stu-id="69b7a-151">How to: Create a Service Endpoint in Configuration</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
+ <span data-ttu-id="69b7a-152">Décrit comment créer un point de terminaison de service dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="69b7a-152">Describes how to create a service endpoint in configuration.</span></span>  
   
- [Comment : créer un point de terminaison de service dans le code](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
- Décrit comment créer un point de terminaison de service dans le code.  
+ [<span data-ttu-id="69b7a-153">Comment : créer un point de terminaison de Service dans le Code</span><span class="sxs-lookup"><span data-stu-id="69b7a-153">How to: Create a Service Endpoint in Code</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
+ <span data-ttu-id="69b7a-154">Décrit comment créer un point de terminaison de service dans le code.</span><span class="sxs-lookup"><span data-stu-id="69b7a-154">Describes how to create a service endpoint in code.</span></span>  
   
- [Comment : utiliser Svcutil.exe pour valider le code de service compilé](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
- Décrit comment détecter les erreurs dans les implémentations et les configurations d'un service sans héberger le service, à l'aide de [Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
+ [<span data-ttu-id="69b7a-155">Comment : utiliser Svcutil.exe pour valider le Code de Service compilé</span><span class="sxs-lookup"><span data-stu-id="69b7a-155">How to: Use Svcutil.exe to Validate Compiled Service Code</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
+ <span data-ttu-id="69b7a-156">Explique comment détecter les erreurs dans les configurations et les implémentations de service sans héberger le service en utilisant le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span><span class="sxs-lookup"><span data-stu-id="69b7a-156">Describes how to detect errors in service implementations and configurations without hosting the service using the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span>  
   
-## Voir aussi  
- [Configuration des services](../../../../docs/framework/wcf/configuring-services.md)   
- [Extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md)
+## <a name="see-also"></a><span data-ttu-id="69b7a-157">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="69b7a-157">See Also</span></span>  
+ [<span data-ttu-id="69b7a-158">Configuration des services</span><span class="sxs-lookup"><span data-stu-id="69b7a-158">Configuring Services</span></span>](../../../../docs/framework/wcf/configuring-services.md)  
+ [<span data-ttu-id="69b7a-159">Extension de liaisons</span><span class="sxs-lookup"><span data-stu-id="69b7a-159">Extending Bindings</span></span>](../../../../docs/framework/wcf/extending/extending-bindings.md)

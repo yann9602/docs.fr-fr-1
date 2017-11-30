@@ -1,48 +1,51 @@
 ---
-title: "Comment&#160;: appliquer des animations &#224; du texte | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "animation, texte"
-  - "typographie, animations"
+title: "Comment : appliquer des animations à du texte"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- typography [WPF], animations
+- animation [WPF], text
 ms.assetid: eec3d26c-0a21-420f-8012-671621c47089
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0298462db5897e955bf0a2551cca7fc81bb27d89
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: appliquer des animations &#224; du texte
-Les animations peuvent modifier l'affichage et l'apparence du texte dans votre application.  Les exemples suivants utilisent différents types d'animations pour affecter l'affichage du texte dans un contrôle <xref:System.Windows.Controls.TextBlock>.  
+# <a name="how-to-apply-animations-to-text"></a><span data-ttu-id="3bc17-102">Comment : appliquer des animations à du texte</span><span class="sxs-lookup"><span data-stu-id="3bc17-102">How to: Apply Animations to Text</span></span>
+<span data-ttu-id="3bc17-103">Les animations peuvent modifier l’affichage et l’apparence du texte dans votre application.</span><span class="sxs-lookup"><span data-stu-id="3bc17-103">Animations can alter the display and appearance of text in your application.</span></span> <span data-ttu-id="3bc17-104">Les exemples suivants utilisent différents types d’animations pour affecter l’affichage du texte dans un <xref:System.Windows.Controls.TextBlock> contrôle.</span><span class="sxs-lookup"><span data-stu-id="3bc17-104">The following examples use different types of animations to affect the display of text in a <xref:System.Windows.Controls.TextBlock> control.</span></span>  
   
-## Exemple  
- L'exemple suivant utilise <xref:System.Windows.Media.Animation.DoubleAnimation> pour animer la largeur du bloc de texte.  La valeur de largeur change pour passer de la largeur du bloc de texte à 0 sur une durée de 10 secondes, puis les valeurs de largeur sont inversées et la procédure continue.  Ce type d'animation crée un effet de balayage.  
+## <a name="example"></a><span data-ttu-id="3bc17-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="3bc17-105">Example</span></span>  
+ <span data-ttu-id="3bc17-106">L’exemple suivant utilise un <xref:System.Windows.Media.Animation.DoubleAnimation> pour animer la largeur du bloc de texte.</span><span class="sxs-lookup"><span data-stu-id="3bc17-106">The following example uses a <xref:System.Windows.Media.Animation.DoubleAnimation> to animate the width of the text block.</span></span> <span data-ttu-id="3bc17-107">La valeur de largeur change pour passer de la largeur du bloc de texte à 0 sur une durée de 10 secondes, puis les valeurs de largeur sont inversées et la procédure continue.</span><span class="sxs-lookup"><span data-stu-id="3bc17-107">The width value changes from the width of the text block to 0 over a duration of 10 seconds, and then reverses the width values and continues.</span></span> <span data-ttu-id="3bc17-108">Ce type d’animation crée un effet de balayage.</span><span class="sxs-lookup"><span data-stu-id="3bc17-108">This type of animation creates a wipe effect.</span></span>  
   
- [!code-xml[TextAnimationSample#TextAnimationSample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample1)]  
+ [!code-xaml[TextAnimationSample#TextAnimationSample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample1)]  
   
- L'exemple suivant utilise <xref:System.Windows.Media.Animation.DoubleAnimation> pour animer l'opacité du bloc de texte.  La valeur d'opacité passe de 1.0 à 0 sur une durée de 5 secondes, puis les valeurs d'opacité sont inversées et la procédure continue.  
+ <span data-ttu-id="3bc17-109">L’exemple suivant utilise un <xref:System.Windows.Media.Animation.DoubleAnimation> pour animer l’opacité du bloc de texte.</span><span class="sxs-lookup"><span data-stu-id="3bc17-109">The following example uses a <xref:System.Windows.Media.Animation.DoubleAnimation> to animate the opacity of the text block.</span></span> <span data-ttu-id="3bc17-110">La valeur d’opacité passe de 1.0 à 0 sur une durée de 5 secondes, puis les valeurs d’opacité sont inversées et la procédure continue.</span><span class="sxs-lookup"><span data-stu-id="3bc17-110">The opacity value changes from 1.0 to 0 over a duration of 5 seconds, and then reverses the opacity values and continues.</span></span>  
   
- [!code-xml[TextAnimationSample#TextAnimationSample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample2)]  
+ [!code-xaml[TextAnimationSample#TextAnimationSample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample2)]  
   
- La figure ci\-dessus montre l'effet du contrôle <xref:System.Windows.Controls.TextBlock> lorsque son opacité passe de `1.00` à `0.00` pendant l'intervalle de 5 secondes défini par <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.  
+ <span data-ttu-id="3bc17-111">Le diagramme suivant montre l’effet de la <xref:System.Windows.Controls.TextBlock> contrôle son opacité de `1.00` à `0.00` pendant l’intervalle de 5 secondes défini par le <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.</span><span class="sxs-lookup"><span data-stu-id="3bc17-111">The following diagram shows the effect of the <xref:System.Windows.Controls.TextBlock> control changing its opacity from `1.00` to `0.00` during the 5-second interval defined by the <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.</span></span>  
   
- ![Modification de l'opacité du texte de 1.00 à 0.00](../../../../docs/framework/wpf/advanced/media/fadedtext01.png "FadedText01")  
-Opacité du texte variant de 1.00 à 0.00  
+ <span data-ttu-id="3bc17-112">![Opacité de 1.00 à 0.00 du texte](../../../../docs/framework/wpf/advanced/media/fadedtext01.png "FadedText01")</span><span class="sxs-lookup"><span data-stu-id="3bc17-112">![Text changing opacity from 1.00 to 0.00](../../../../docs/framework/wpf/advanced/media/fadedtext01.png "FadedText01")</span></span>  
+<span data-ttu-id="3bc17-113">Opacité du texte variant de 1.00 à 0.00</span><span class="sxs-lookup"><span data-stu-id="3bc17-113">Text Opacity changing from 1.00 to 0.00</span></span>  
   
- L'exemple suivant utilise <xref:System.Windows.Media.Animation.ColorAnimation> pour animer la couleur de premier plan du bloc de texte.  La valeur de la couleur de premier plan passe d'une couleur à une autre sur une durée de 5 secondes, puis les valeurs de couleur sont inversées et la procédure continue.  
+ <span data-ttu-id="3bc17-114">L’exemple suivant utilise un <xref:System.Windows.Media.Animation.ColorAnimation> pour animer la couleur de premier plan du bloc de texte.</span><span class="sxs-lookup"><span data-stu-id="3bc17-114">The following example uses a <xref:System.Windows.Media.Animation.ColorAnimation> to animate the foreground color of the text block.</span></span> <span data-ttu-id="3bc17-115">La valeur de la couleur de premier plan passe d’une couleur à une autre sur une durée de 5 secondes, puis les valeurs de couleur sont inversées et la procédure continue.</span><span class="sxs-lookup"><span data-stu-id="3bc17-115">The foreground color value changes from one color to a second color over a duration of 5 seconds, and then reverses the color values and continues.</span></span>  
   
- [!code-xml[TextAnimationSample#TextAnimationSample3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample3)]  
+ [!code-xaml[TextAnimationSample#TextAnimationSample3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample3)]  
   
- L'exemple de code suivant utilise <xref:System.Windows.Media.Animation.DoubleAnimation> pour faire pivoter le bloc de texte.  Le bloc de texte effectue une rotation complète en 20 secondes, puis la procédure de rotation se répète.  
+ <span data-ttu-id="3bc17-116">L’exemple suivant utilise un <xref:System.Windows.Media.Animation.DoubleAnimation> pour faire pivoter le bloc de texte.</span><span class="sxs-lookup"><span data-stu-id="3bc17-116">The following example uses a <xref:System.Windows.Media.Animation.DoubleAnimation> to rotate the text block.</span></span> <span data-ttu-id="3bc17-117">Le bloc de texte effectue une rotation complète sur une durée de 20 secondes, puis la procédure de rotation se répète.</span><span class="sxs-lookup"><span data-stu-id="3bc17-117">The text block performs a full rotation over a duration of 20 seconds, and then continues to repeat the rotation.</span></span>  
   
- [!code-xml[TextAnimationSample#TextAnimationSample4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample4)]  
+ [!code-xaml[TextAnimationSample#TextAnimationSample4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample4)]  
   
-## Voir aussi  
- [Vue d'ensemble de l'animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+## <a name="see-also"></a><span data-ttu-id="3bc17-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3bc17-118">See Also</span></span>  
+ [<span data-ttu-id="3bc17-119">Vue d’ensemble de l’animation</span><span class="sxs-lookup"><span data-stu-id="3bc17-119">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

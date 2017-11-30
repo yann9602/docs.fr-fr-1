@@ -1,68 +1,72 @@
 ---
-title: "Comment&#160;: lire des m&#233;tadonn&#233;es d&#39;image | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "métadonnées, élément de propriété"
-  - "métadonnées, lire une image"
+title: "Comment : lire des métadonnées d'image"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- metadata [Windows Forms], property item
+- metadata [Windows Forms], reading image
 ms.assetid: 72ec0b31-0be7-444a-9575-1dbcb864e0be
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9df2866251e08b8989f8550d045b587c9de8d2cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: lire des m&#233;tadonn&#233;es d&#39;image
-Certains fichiers image contiennent des métadonnées que vous pouvez lire pour déterminer les fonctionnalités de l'image.  Par exemple, une photographie numérique peut contenir des métadonnées que vous pouvez lire pour déterminer la marque et le modèle de l'appareil photo utilisé pour capturer l'image.  Avec [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], vous pouvez lire des métadonnées existantes et écrire de nouvelles métadonnées dans des fichiers image.  
+# <a name="how-to-read-image-metadata"></a><span data-ttu-id="9c544-102">Comment : lire des métadonnées d'image</span><span class="sxs-lookup"><span data-stu-id="9c544-102">How to: Read Image Metadata</span></span>
+<span data-ttu-id="9c544-103">Certains fichiers image contiennent des métadonnées que vous pouvez lire pour déterminer les fonctionnalités de l’image.</span><span class="sxs-lookup"><span data-stu-id="9c544-103">Some image files contain metadata that you can read to determine features of the image.</span></span> <span data-ttu-id="9c544-104">Par exemple, une photographie numérique peut contenir des métadonnées que vous pouvez lire pour déterminer la marque et le modèle de l’appareil photo utilisé pour capturer l’image.</span><span class="sxs-lookup"><span data-stu-id="9c544-104">For example, a digital photograph might contain metadata that you can read to determine the make and model of the camera used to capture the image.</span></span> <span data-ttu-id="9c544-105">Avec [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], vous pouvez lire des métadonnées existantes et vous pouvez également écrire de nouvelles métadonnées dans des fichiers image.</span><span class="sxs-lookup"><span data-stu-id="9c544-105">With [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], you can read existing metadata, and you can also write new metadata to image files.</span></span>  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] stocke un élément individuel de métadonnées dans un objet <xref:System.Drawing.Imaging.PropertyItem>.  Vous pouvez lire la propriété <xref:System.Drawing.Image.PropertyItems%2A> d'un objet <xref:System.Drawing.Image> pour récupérer toutes les métadonnées d'un fichier.  La propriété <xref:System.Drawing.Image.PropertyItems%2A> retourne un tableau d'objets <xref:System.Drawing.Imaging.PropertyItem>.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="9c544-106">stocke un élément individuel de métadonnées dans un <xref:System.Drawing.Imaging.PropertyItem> objet.</span><span class="sxs-lookup"><span data-stu-id="9c544-106"> stores an individual piece of metadata in a <xref:System.Drawing.Imaging.PropertyItem> object.</span></span> <span data-ttu-id="9c544-107">Vous pouvez lire la <xref:System.Drawing.Image.PropertyItems%2A> propriété d’un <xref:System.Drawing.Image> objet à récupérer toutes les métadonnées à partir d’un fichier.</span><span class="sxs-lookup"><span data-stu-id="9c544-107">You can read the <xref:System.Drawing.Image.PropertyItems%2A> property of an <xref:System.Drawing.Image> object to retrieve all the metadata from a file.</span></span> <span data-ttu-id="9c544-108">Le <xref:System.Drawing.Image.PropertyItems%2A> propriété retourne un tableau de <xref:System.Drawing.Imaging.PropertyItem> objets.</span><span class="sxs-lookup"><span data-stu-id="9c544-108">The <xref:System.Drawing.Image.PropertyItems%2A> property returns an array of <xref:System.Drawing.Imaging.PropertyItem> objects.</span></span>  
   
- Un objet <xref:System.Drawing.Imaging.PropertyItem> contient les quatre propriétés suivantes : `Id`, `Value`, `Len` et `Type`.  
+ <span data-ttu-id="9c544-109">A <xref:System.Drawing.Imaging.PropertyItem> objet possède les quatre propriétés suivantes : `Id`, `Value`, `Len`, et `Type`.</span><span class="sxs-lookup"><span data-stu-id="9c544-109">A <xref:System.Drawing.Imaging.PropertyItem> object has the following four properties: `Id`, `Value`, `Len`, and `Type`.</span></span>  
   
-## Id  
- Balise identifiant la métadonnée.  Certaines valeurs pouvant être assignées à <xref:System.Drawing.Imaging.PropertyItem.Id%2A> sont présentées dans le tableau suivant.  
+## <a name="id"></a><span data-ttu-id="9c544-110">Id</span><span class="sxs-lookup"><span data-stu-id="9c544-110">Id</span></span>  
+ <span data-ttu-id="9c544-111">Une balise qui identifie l’élément de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="9c544-111">A tag that identifies the metadata item.</span></span> <span data-ttu-id="9c544-112">Certaines valeurs qui peuvent être affectés à <xref:System.Drawing.Imaging.PropertyItem.Id%2A> sont affichés dans le tableau suivant.</span><span class="sxs-lookup"><span data-stu-id="9c544-112">Some values that can be assigned to <xref:System.Drawing.Imaging.PropertyItem.Id%2A> are shown in the following table.</span></span>  
   
-|Valeur hexadécimale|Description|  
-|-------------------------|-----------------|  
-|0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|Titre de l'image<br /><br /> Fabricant de l'équipement<br /><br /> Modèle de l'équipement<br /><br /> ExifDTOriginal<br /><br /> Temps d'exposition Exif<br /><br /> Tableau de luminance<br /><br /> Tableau de chrominance|  
+|<span data-ttu-id="9c544-113">Valeur hexadécimale</span><span class="sxs-lookup"><span data-stu-id="9c544-113">Hexadecimal value</span></span>|<span data-ttu-id="9c544-114">Description</span><span class="sxs-lookup"><span data-stu-id="9c544-114">Description</span></span>|  
+|-----------------------|-----------------|  
+|<span data-ttu-id="9c544-115">0x0320</span><span class="sxs-lookup"><span data-stu-id="9c544-115">0x0320</span></span><br /><br /> <span data-ttu-id="9c544-116">0x010F</span><span class="sxs-lookup"><span data-stu-id="9c544-116">0x010F</span></span><br /><br /> <span data-ttu-id="9c544-117">0 x 0110</span><span class="sxs-lookup"><span data-stu-id="9c544-117">0x0110</span></span><br /><br /> <span data-ttu-id="9c544-118">0x9003</span><span class="sxs-lookup"><span data-stu-id="9c544-118">0x9003</span></span><br /><br /> <span data-ttu-id="9c544-119">0x829A</span><span class="sxs-lookup"><span data-stu-id="9c544-119">0x829A</span></span><br /><br /> <span data-ttu-id="9c544-120">0x5090</span><span class="sxs-lookup"><span data-stu-id="9c544-120">0x5090</span></span><br /><br /> <span data-ttu-id="9c544-121">0x5091</span><span class="sxs-lookup"><span data-stu-id="9c544-121">0x5091</span></span>|<span data-ttu-id="9c544-122">Titre de l’image</span><span class="sxs-lookup"><span data-stu-id="9c544-122">Image title</span></span><br /><br /> <span data-ttu-id="9c544-123">Fabricant de matériel</span><span class="sxs-lookup"><span data-stu-id="9c544-123">Equipment manufacturer</span></span><br /><br /> <span data-ttu-id="9c544-124">Modèle de matériel</span><span class="sxs-lookup"><span data-stu-id="9c544-124">Equipment model</span></span><br /><br /> <span data-ttu-id="9c544-125">ExifDTOriginal</span><span class="sxs-lookup"><span data-stu-id="9c544-125">ExifDTOriginal</span></span><br /><br /> <span data-ttu-id="9c544-126">Temps d’exposition EXIF</span><span class="sxs-lookup"><span data-stu-id="9c544-126">Exif exposure time</span></span><br /><br /> <span data-ttu-id="9c544-127">Tableau de luminance</span><span class="sxs-lookup"><span data-stu-id="9c544-127">Luminance table</span></span><br /><br /> <span data-ttu-id="9c544-128">Tableau de chrominance</span><span class="sxs-lookup"><span data-stu-id="9c544-128">Chrominance table</span></span>|  
   
-## Valeur  
- Tableau de valeurs.  Le format des valeurs est déterminé par la propriété <xref:System.Drawing.Imaging.PropertyItem.Type%2A>.  
+## <a name="value"></a><span data-ttu-id="9c544-129">Valeur</span><span class="sxs-lookup"><span data-stu-id="9c544-129">Value</span></span>  
+ <span data-ttu-id="9c544-130">Un tableau de valeurs.</span><span class="sxs-lookup"><span data-stu-id="9c544-130">An array of values.</span></span> <span data-ttu-id="9c544-131">Le format des valeurs est déterminé par le <xref:System.Drawing.Imaging.PropertyItem.Type%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="9c544-131">The format of the values is determined by the <xref:System.Drawing.Imaging.PropertyItem.Type%2A> property.</span></span>  
   
-## Len  
- Longueur \(en octets\) du tableau de valeurs sur lequel pointe la propriété <xref:System.Drawing.Imaging.PropertyItem.Value%2A>.  
+## <a name="len"></a><span data-ttu-id="9c544-132">Len</span><span class="sxs-lookup"><span data-stu-id="9c544-132">Len</span></span>  
+ <span data-ttu-id="9c544-133">La longueur (en octets) du tableau de valeurs vers lequel pointe le <xref:System.Drawing.Imaging.PropertyItem.Value%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="9c544-133">The length (in bytes) of the array of values pointed to by the <xref:System.Drawing.Imaging.PropertyItem.Value%2A> property.</span></span>  
   
-## Type  
- Type de données des valeurs dans le tableau vers lequel la propriété `Value` pointe.  Les formats indiqués par les valeurs de la propriété `Type` sont présentés dans le tableau suivant.  
+## <a name="type"></a><span data-ttu-id="9c544-134">Type</span><span class="sxs-lookup"><span data-stu-id="9c544-134">Type</span></span>  
+ <span data-ttu-id="9c544-135">Le type de données des valeurs dans le tableau vers lequel pointe le `Value` propriété.</span><span class="sxs-lookup"><span data-stu-id="9c544-135">The data type of the values in the array pointed to by the `Value` property.</span></span> <span data-ttu-id="9c544-136">Les formats indiqués par les `Type` des valeurs de propriété sont affichés dans le tableau suivant</span><span class="sxs-lookup"><span data-stu-id="9c544-136">The formats indicated by the `Type` property values are shown in the following table</span></span>  
   
-|Valeur numérique|Description|  
-|----------------------|-----------------|  
-|1|Un `Byte`|  
-|2|Tableau d'objets `Byte` encodés en ASCII|  
-|3|Entier 16 bits|  
-|4|Entier 32 bits|  
-|5|Tableau de deux objets `Byte` qui représentent un nombre rationnel|  
-|6|Non utilisé|  
-|7|Indéfini|  
-|8|Non utilisé|  
-|9|`SLong`|  
-|10|`SRational`|  
+|<span data-ttu-id="9c544-137">Valeur numérique</span><span class="sxs-lookup"><span data-stu-id="9c544-137">Numeric value</span></span>|<span data-ttu-id="9c544-138">Description</span><span class="sxs-lookup"><span data-stu-id="9c544-138">Description</span></span>|  
+|-------------------|-----------------|  
+|<span data-ttu-id="9c544-139">1</span><span class="sxs-lookup"><span data-stu-id="9c544-139">1</span></span>|<span data-ttu-id="9c544-140">`Byte`</span><span class="sxs-lookup"><span data-stu-id="9c544-140">A `Byte`</span></span>|  
+|<span data-ttu-id="9c544-141">2</span><span class="sxs-lookup"><span data-stu-id="9c544-141">2</span></span>|<span data-ttu-id="9c544-142">Un tableau de `Byte` objets encodés en ASCII</span><span class="sxs-lookup"><span data-stu-id="9c544-142">An array of `Byte` objects encoded as ASCII</span></span>|  
+|<span data-ttu-id="9c544-143">3</span><span class="sxs-lookup"><span data-stu-id="9c544-143">3</span></span>|<span data-ttu-id="9c544-144">Un entier 16 bits</span><span class="sxs-lookup"><span data-stu-id="9c544-144">A 16-bit integer</span></span>|  
+|<span data-ttu-id="9c544-145">4</span><span class="sxs-lookup"><span data-stu-id="9c544-145">4</span></span>|<span data-ttu-id="9c544-146">Un entier 32 bits</span><span class="sxs-lookup"><span data-stu-id="9c544-146">A 32-bit integer</span></span>|  
+|<span data-ttu-id="9c544-147">5</span><span class="sxs-lookup"><span data-stu-id="9c544-147">5</span></span>|<span data-ttu-id="9c544-148">Un tableau de deux `Byte` objets qui représentent un nombre rationnel</span><span class="sxs-lookup"><span data-stu-id="9c544-148">An array of two `Byte` objects that represent a rational number</span></span>|  
+|<span data-ttu-id="9c544-149">6</span><span class="sxs-lookup"><span data-stu-id="9c544-149">6</span></span>|<span data-ttu-id="9c544-150">Non utilisé</span><span class="sxs-lookup"><span data-stu-id="9c544-150">Not used</span></span>|  
+|<span data-ttu-id="9c544-151">7</span><span class="sxs-lookup"><span data-stu-id="9c544-151">7</span></span>|<span data-ttu-id="9c544-152">Non défini</span><span class="sxs-lookup"><span data-stu-id="9c544-152">Undefined</span></span>|  
+|<span data-ttu-id="9c544-153">8</span><span class="sxs-lookup"><span data-stu-id="9c544-153">8</span></span>|<span data-ttu-id="9c544-154">Non utilisé</span><span class="sxs-lookup"><span data-stu-id="9c544-154">Not used</span></span>|  
+|<span data-ttu-id="9c544-155">9</span><span class="sxs-lookup"><span data-stu-id="9c544-155">9</span></span>|`SLong`|  
+|<span data-ttu-id="9c544-156">10</span><span class="sxs-lookup"><span data-stu-id="9c544-156">10</span></span>|`SRational`|  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="9c544-157">Exemple</span><span class="sxs-lookup"><span data-stu-id="9c544-157">Example</span></span>  
   
-### Description  
- L'exemple de code suivant lit et affiche les sept métadonnées du fichier `FakePhoto.jpg`.  Le second élément de la propriété \(index 1\) dans la liste porte <xref:System.Drawing.Imaging.PropertyItem.Id%2A> 0x010F \(fabricant de l'équipement\) et <xref:System.Drawing.Imaging.PropertyItem.Type%2A> 2 \(tableau d'octets encodé en ASCII\).  L'exemple de code affiche la valeur de cet élément de propriété.  
+### <a name="description"></a><span data-ttu-id="9c544-158">Description</span><span class="sxs-lookup"><span data-stu-id="9c544-158">Description</span></span>  
+ <span data-ttu-id="9c544-159">L’exemple de code suivant lit et affiche les sept des métadonnées dans le fichier `FakePhoto.jpg`.</span><span class="sxs-lookup"><span data-stu-id="9c544-159">The following code example reads and displays the seven pieces of metadata in the file `FakePhoto.jpg`.</span></span> <span data-ttu-id="9c544-160">Le deuxième élément de propriété (index 1) dans la liste a <xref:System.Drawing.Imaging.PropertyItem.Id%2A> 0x010F (fabricant) et <xref:System.Drawing.Imaging.PropertyItem.Type%2A> 2 (tableau d’octets encodé en ASCII).</span><span class="sxs-lookup"><span data-stu-id="9c544-160">The second (index 1) property item in the list has <xref:System.Drawing.Imaging.PropertyItem.Id%2A> 0x010F (equipment manufacturer) and <xref:System.Drawing.Imaging.PropertyItem.Type%2A> 2 (ASCII-encoded byte array).</span></span> <span data-ttu-id="9c544-161">L’exemple de code affiche la valeur de cet élément de propriété.</span><span class="sxs-lookup"><span data-stu-id="9c544-161">The code example displays the value of that property item.</span></span>  
   
- Le code produit une sortie identique à ce qui suit :  
+ <span data-ttu-id="9c544-162">Le code produit un résultat similaire au suivant :</span><span class="sxs-lookup"><span data-stu-id="9c544-162">The code produces output similar to the following:</span></span>  
   
  `Property Item 0`  
   
@@ -122,13 +126,13 @@ Certains fichiers image contiennent des métadonnées que vous pouvez lire pour 
   
  `The equipment make is Northwind Camera.`  
   
-### Code  
+### <a name="code"></a><span data-ttu-id="9c544-163">Code</span><span class="sxs-lookup"><span data-stu-id="9c544-163">Code</span></span>  
  [!code-csharp[System.Drawing.WorkingWithImages#51](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#51)]
  [!code-vb[System.Drawing.WorkingWithImages#51](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#51)]  
   
-## Compilation du code  
- L'exemple précédent est destiné à une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre du gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint>.  Gérez l'événement <xref:System.Windows.Forms.Control.Paint> du formulaire et collez ce code dans le gestionnaire d'événements Paint.  Vous devez remplacer `FakePhoto.jpg` par un nom d'image et un chemin d'accès valides sur votre système, et importer l'espace de noms `System.Drawing.Imaging`.  
+## <a name="compiling-the-code"></a><span data-ttu-id="9c544-164">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="9c544-164">Compiling the Code</span></span>  
+ <span data-ttu-id="9c544-165">L'exemple précédent est conçu pour une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre du gestionnaire d'événements <xref:System.Windows.Forms.Control.Paint>.</span><span class="sxs-lookup"><span data-stu-id="9c544-165">The preceding example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span> <span data-ttu-id="9c544-166">Gérer du formulaire <xref:System.Windows.Forms.Control.Paint> événement et collez ce code dans le Gestionnaire d’événements de peinture.</span><span class="sxs-lookup"><span data-stu-id="9c544-166">Handle the form's <xref:System.Windows.Forms.Control.Paint> event and paste this code into the paint event handler.</span></span> <span data-ttu-id="9c544-167">Vous devez remplacer `FakePhoto.jpg` avec un nom de l’image et le chemin d’accès valide sur votre système et importer le `System.Drawing.Imaging` espace de noms.</span><span class="sxs-lookup"><span data-stu-id="9c544-167">You must replace `FakePhoto.jpg` with an image name and path valid on your system and import the `System.Drawing.Imaging` namespace.</span></span>  
   
-## Voir aussi  
- [Images, bitmaps et métafichiers](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)   
- [Utilisation des images, bitmaps, icônes et métafichiers](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
+## <a name="see-also"></a><span data-ttu-id="9c544-168">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9c544-168">See Also</span></span>  
+ [<span data-ttu-id="9c544-169">Images, bitmaps et métafichiers</span><span class="sxs-lookup"><span data-stu-id="9c544-169">Images, Bitmaps, and Metafiles</span></span>](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
+ [<span data-ttu-id="9c544-170">Utilisation des images, bitmaps, icônes et métafichiers</span><span class="sxs-lookup"><span data-stu-id="9c544-170">Working with Images, Bitmaps, Icons, and Metafiles</span></span>](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
