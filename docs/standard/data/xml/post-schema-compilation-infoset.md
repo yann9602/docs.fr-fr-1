@@ -1,49 +1,51 @@
 ---
-title: "Jeu d&#39;informations de post-compilation de sch&#233;ma | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Jeu d'informations de post-compilation de schéma"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 77fe1790a4ff2f910a740e969e458549f1fd9642
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Jeu d&#39;informations de post-compilation de sch&#233;ma
-La [recommandation du World Wide Web Consortium \(W3C\) sur le schéma XML](http://go.microsoft.com/fwlink/?linkid=45242) décrit le jeu d'informations qui doit être exposé pour la pré\-validation de schéma et la post\-compilation de schéma.  Le Modèle Objet du schéma \(SOM\) XML observe cette exposition avant et après l'appel à la méthode <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de l'objet <xref:System.Xml.Schema.XmlSchemaSet>.  
+# <a name="post-schema-compilation-infoset"></a><span data-ttu-id="48536-102">Jeu d'informations de post-compilation de schéma</span><span class="sxs-lookup"><span data-stu-id="48536-102">Post-Schema Compilation Infoset</span></span>
+<span data-ttu-id="48536-103">Le [recommandation du World Wide Web Consortium (W3C) XML Schema](http://go.microsoft.com/fwlink/?linkid=45242) décrit le jeu d’informations (infoset) qui doit être exposé pour la pré-validation de schéma et de post-compilation de schéma.</span><span class="sxs-lookup"><span data-stu-id="48536-103">The [World Wide Web Consortium (W3C) XML Schema Recommendation](http://go.microsoft.com/fwlink/?linkid=45242) discusses the information set (infoset) that must be exposed for pre-schema validation and post-schema compilation.</span></span> <span data-ttu-id="48536-104">Le Modèle Objet du schéma (SOM) XML observe cette exposition avant et après l'appel à la méthode <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de l'objet <xref:System.Xml.Schema.XmlSchemaSet>.</span><span class="sxs-lookup"><span data-stu-id="48536-104">The XML Schema Object Model (SOM) views this exposure before and after the <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> method of the <xref:System.Xml.Schema.XmlSchemaSet> is called.</span></span>  
   
- Le jeu d'informations de pré\-validation de schéma est généré pendant la modification du schéma.  Le jeu d'informations de post\-compilation de schéma est généré après l'appel à la méthode <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de l'objet <xref:System.Xml.Schema.XmlSchemaSet>, lors de la compilation du schéma et est exposé comme des propriétés.  
+ <span data-ttu-id="48536-105">Le jeu d'informations de pré-validation de schéma est généré pendant la modification du schéma.</span><span class="sxs-lookup"><span data-stu-id="48536-105">The pre-schema validation infoset is built during the editing of the schema.</span></span> <span data-ttu-id="48536-106">Le jeu d'informations de post-compilation de schéma est généré après l'appel à la méthode <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de l'objet <xref:System.Xml.Schema.XmlSchemaSet>, lors de la compilation du schéma et est exposé comme des propriétés.</span><span class="sxs-lookup"><span data-stu-id="48536-106">The post-schema compilation infoset is generated after the <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> method of the <xref:System.Xml.Schema.XmlSchemaSet> is called, during compilation of the schema, and is exposed as properties.</span></span>  
   
- Le SOM est le modèle d'objet qui représente les jeux d'informations de pré\-validation de schéma et de post\-compilation de schéma. Il est composé de classes dans l'espace de noms <xref:System.Xml.Schema?displayProperty=fullName>.  Toutes les propriétés de lecture et d'écriture des classes de l'espace de noms <xref:System.Xml.Schema> appartiennent au jeu d'informations de pré\-validation de schéma, alors que toutes les propriétés en lecture seule des classes de l'espace de noms <xref:System.Xml.Schema> appartiennent au jeu d'informations de post\-compilation de schéma.  Les propriétés suivantes, qui sont des propriétés des jeux d'informations de pré\-validation de schéma et de post\-compilation de schéma, constituent une exception à la règle.  
+ <span data-ttu-id="48536-107">Le SOM est le modèle d'objet qui représente les jeux d'informations de pré-validation de schéma et de post-compilation de schéma. Il est composé de classes dans l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="48536-107">The SOM is the object model that represents the pre-schema validation and post-schema compilation infosets; it consists of the classes in the <xref:System.Xml.Schema?displayProperty=nameWithType> namespace.</span></span> <span data-ttu-id="48536-108">Toutes les propriétés de lecture et d'écriture des classes de l'espace de noms <xref:System.Xml.Schema> appartiennent au jeu d'informations de pré-validation de schéma, alors que toutes les propriétés en lecture seule des classes de l'espace de noms <xref:System.Xml.Schema> appartiennent au jeu d'informations de post-compilation de schéma.</span><span class="sxs-lookup"><span data-stu-id="48536-108">All read and write properties of classes in the <xref:System.Xml.Schema> namespace belong to the pre-schema validation infoset, while all read-only properties of classes in the <xref:System.Xml.Schema> namespace belong to the post-schema compilation infoset.</span></span> <span data-ttu-id="48536-109">Les propriétés suivantes, qui sont des propriétés des jeux d'informations de pré-validation de schéma et de post-compilation de schéma, constituent une exception à la règle.</span><span class="sxs-lookup"><span data-stu-id="48536-109">The exception to this rule are the following properties, which are both pre-schema validation infoset and post-schema compilation infoset properties.</span></span>  
   
-|Classe|Propriété|  
-|------------|---------------|  
+|<span data-ttu-id="48536-110">Classe</span><span class="sxs-lookup"><span data-stu-id="48536-110">Class</span></span>|<span data-ttu-id="48536-111">Propriété</span><span class="sxs-lookup"><span data-stu-id="48536-111">Property</span></span>|  
+|-----------|--------------|  
 |<xref:System.Xml.Schema.XmlSchemaObject>|<xref:System.Xml.Schema.XmlSchemaObject.Parent%2A>|  
-|<xref:System.Xml.Schema.XmlSchema>|<xref:System.Xml.Schema.XmlSchema.AttributeFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.BlockDefault%2A>, <xref:System.Xml.Schema.XmlSchema.ElementFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.FinalDefault%2A>, <xref:System.Xml.Schema.XmlSchema.TargetNamespace%2A>|  
+|<xref:System.Xml.Schema.XmlSchema>|<span data-ttu-id="48536-112"><xref:System.Xml.Schema.XmlSchema.AttributeFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.BlockDefault%2A>, <xref:System.Xml.Schema.XmlSchema.ElementFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.FinalDefault%2A>, <xref:System.Xml.Schema.XmlSchema.TargetNamespace%2A></span><span class="sxs-lookup"><span data-stu-id="48536-112"><xref:System.Xml.Schema.XmlSchema.AttributeFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.BlockDefault%2A>, <xref:System.Xml.Schema.XmlSchema.ElementFormDefault%2A>, <xref:System.Xml.Schema.XmlSchema.FinalDefault%2A>, <xref:System.Xml.Schema.XmlSchema.TargetNamespace%2A></span></span>|  
 |<xref:System.Xml.Schema.XmlSchemaExternal>|<xref:System.Xml.Schema.XmlSchemaExternal.Schema%2A>|  
 |<xref:System.Xml.Schema.XmlSchemaAttributeGroup>|<xref:System.Xml.Schema.XmlSchemaAttributeGroup.AnyAttribute%2A>|  
-|<xref:System.Xml.Schema.XmlSchemaParticle>|<xref:System.Xml.Schema.XmlSchemaParticle.MaxOccurs%2A>, <xref:System.Xml.Schema.XmlSchemaParticle.MinOccurs%2A>|  
+|<xref:System.Xml.Schema.XmlSchemaParticle>|<span data-ttu-id="48536-113"><xref:System.Xml.Schema.XmlSchemaParticle.MaxOccurs%2A>, <xref:System.Xml.Schema.XmlSchemaParticle.MinOccurs%2A></span><span class="sxs-lookup"><span data-stu-id="48536-113"><xref:System.Xml.Schema.XmlSchemaParticle.MaxOccurs%2A>, <xref:System.Xml.Schema.XmlSchemaParticle.MinOccurs%2A></span></span>|  
 |<xref:System.Xml.Schema.XmlSchemaComplexType>|<xref:System.Xml.Schema.XmlSchemaComplexType.AnyAttribute%2A>|  
   
- Par exemple, les classes <xref:System.Xml.Schema.XmlSchemaElement> et <xref:System.Xml.Schema.XmlSchemaComplexType> ont des propriétés `BlockResolved` et `FinalResolved`.  Ces propriétés permettent de contenir les valeurs des propriétés `Block` et `Final` après validation et compilation du schéma.  `BlockResolved` et `FinalResolved` sont des propriétés en lecture seule qui font partie du jeu d'informations de post\-compilation de schéma.  
+ <span data-ttu-id="48536-114">Par exemple, les classes <xref:System.Xml.Schema.XmlSchemaElement> et <xref:System.Xml.Schema.XmlSchemaComplexType> ont des propriétés `BlockResolved` et `FinalResolved`.</span><span class="sxs-lookup"><span data-stu-id="48536-114">For example, the <xref:System.Xml.Schema.XmlSchemaElement> and <xref:System.Xml.Schema.XmlSchemaComplexType> classes both have `BlockResolved` and `FinalResolved` properties.</span></span> <span data-ttu-id="48536-115">Ces propriétés permettent de contenir les valeurs des propriétés `Block` et `Final` après validation et compilation du schéma.</span><span class="sxs-lookup"><span data-stu-id="48536-115">These properties are used to hold the values for the `Block` and `Final` properties after the schema has been compiled and validated.</span></span> <span data-ttu-id="48536-116">`BlockResolved` et `FinalResolved` sont des propriétés en lecture seule qui font partie du jeu d'informations de post-compilation de schéma.</span><span class="sxs-lookup"><span data-stu-id="48536-116">`BlockResolved` and `FinalResolved` are read-only properties that are part of the post-schema compilation infoset.</span></span>  
   
- L'exemple suivant montre la propriété <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> de la classe <xref:System.Xml.Schema.XmlSchemaElement> définie après la validation du schéma.  Avant la validation, la propriété contient une référence `null` et la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> est définie sur le nom du type en question.  Après la validation, la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> est résolue en un type valide et l'objet de type est disponible par l'intermédiaire de la propriété <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A>.  
+ <span data-ttu-id="48536-117">L'exemple suivant montre la propriété <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> de la classe <xref:System.Xml.Schema.XmlSchemaElement> définie après la validation du schéma.</span><span class="sxs-lookup"><span data-stu-id="48536-117">The following example shows the <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> property of the <xref:System.Xml.Schema.XmlSchemaElement> class set after validating the schema.</span></span> <span data-ttu-id="48536-118">Avant la validation, la propriété contient une référence `null` et la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> est définie sur le nom du type en question.</span><span class="sxs-lookup"><span data-stu-id="48536-118">Before validation, the property contains a `null` reference, and the <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> is set to the name of the type in question.</span></span> <span data-ttu-id="48536-119">Après la validation, la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> est résolue en un type valide et l'objet de type est disponible par l'intermédiaire de la propriété <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A>.</span><span class="sxs-lookup"><span data-stu-id="48536-119">After validation, the <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> is resolved to a valid type, and the type object is available through the <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> property.</span></span>  
   
  [!code-cpp[PsciSample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/PsciSample/CPP/PsciSample.cpp#1)]
  [!code-csharp[PsciSample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/PsciSample/CS/PsciSample.cs#1)]
  [!code-vb[PsciSample#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/PsciSample/VB/PsciSample.vb#1)]  
   
-## Voir aussi  
- [Modèle Objet du schéma \(SOM\) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
+## <a name="see-also"></a><span data-ttu-id="48536-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="48536-120">See Also</span></span>  
+ [<span data-ttu-id="48536-121">Modèle Objet du schéma (SOM) XML</span><span class="sxs-lookup"><span data-stu-id="48536-121">XML Schema Object Model (SOM)</span></span>](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)

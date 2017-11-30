@@ -1,33 +1,31 @@
 ---
-title: "Effet des espaces de noms sur le d&#233;veloppement des r&#233;f&#233;rences d&#39;entit&#233; avec les nouveaux nœuds contenant des &#233;l&#233;ments et attributs | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Effet des espaces de noms sur le développement des références d'entité avec les nouveaux nœuds contenant des éléments et attributs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 64359aee-aab0-4042-9a32-d19789af6ca7
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 39110a9b44e6efbe7ad0331cfdb4fbe6078e7cfc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Effet des espaces de noms sur le d&#233;veloppement des r&#233;f&#233;rences d&#39;entit&#233; avec les nouveaux nœuds contenant des &#233;l&#233;ments et attributs
-Le contenu d'une déclaration d'entité peut contenir pratiquement n'importe quel élément, c'est pourquoi il est possible qu'il comporte un élément tel que `<!ENTITY aname "<elem>test</elem>">`.  
+# <a name="namespace-affect-on-entity-reference-expansion-for-new-nodes-containing-elements-and-attributes"></a><span data-ttu-id="ba2d7-102">Effet des espaces de noms sur le développement des références d'entité avec les nouveaux nœuds contenant des éléments et attributs</span><span class="sxs-lookup"><span data-stu-id="ba2d7-102">Namespace Affect on Entity Reference Expansion for New Nodes Containing Elements and Attributes</span></span>
+<span data-ttu-id="ba2d7-103">Le contenu d'une déclaration d'entité peut contenir pratiquement n'importe quel élément, c'est pourquoi il est possible qu'il comporte un élément tel que `<!ENTITY aname "<elem>test</elem>">`.</span><span class="sxs-lookup"><span data-stu-id="ba2d7-103">Because the content of an entity declaration can contain almost anything, there is a possibility that the content could contain an element like `<!ENTITY aname "<elem>test</elem>">`.</span></span>  
   
- Lorsque le document XML est analysé, `&aname;` n'est pas développé avec son contenu de remplacement au moment de l'analyse.  Le développement XML n'a pas lieu car la résolution de l'espace de noms pour l'élément ne peut se produire tant que le nœud n'est pas placé dans le document.  Jusqu'alors, l'espace de noms figurant dans la portée n'est pas détectable.  Lorsque le nœud est placé dans le document, la résolution de l'espace de noms se produit et le contenu d'entité résultant est analysé dans ses nœuds adéquats.  
+ <span data-ttu-id="ba2d7-104">Lorsque le document XML est analysé, `&aname;` n'est pas développé avec son contenu de remplacement au moment de l'analyse.</span><span class="sxs-lookup"><span data-stu-id="ba2d7-104">When the XML is parsed, `&aname;` is not expanded with its replacement content at parse time.</span></span> <span data-ttu-id="ba2d7-105">Le développement XML n'a pas lieu car la résolution de l'espace de noms pour l'élément ne peut se produire tant que le nœud n'est pas placé dans le document.</span><span class="sxs-lookup"><span data-stu-id="ba2d7-105">The expansion of the XML is not done because resolution of the namespace for the element cannot occur until the node is placed in the document.</span></span> <span data-ttu-id="ba2d7-106">Jusqu'alors, l'espace de noms figurant dans la portée n'est pas détectable.</span><span class="sxs-lookup"><span data-stu-id="ba2d7-106">Until that time, there is no knowledge of what namespace is in scope.</span></span> <span data-ttu-id="ba2d7-107">Lorsque le nœud est placé dans le document, la résolution de l'espace de noms se produit et le contenu d'entité résultant est analysé dans ses nœuds adéquats.</span><span class="sxs-lookup"><span data-stu-id="ba2d7-107">When the node is put into the document, then the namespace resolution occurs, and the resulting entity content is parsed into its appropriate nodes.</span></span>  
   
 > [!NOTE]
->  Après que le développement a eu lieu sur un nœud de référence d'entité à peine créé, il ne peut se produire à nouveau.  C'est pourquoi les espaces de noms utilisés dans le texte de remplacement de l'élément sont liés au moment de la définition du nœud parent.  Toutefois, l'espace de noms peut être modifié pour des nœuds de référence d'entité existants lorsque vous les supprimez ou les insérez ailleurs ou bien pour des nœuds de référence d'entité clonés à l'aide de la méthode **CloneNode**.  
+>  <span data-ttu-id="ba2d7-108">Après que le développement a eu lieu sur un nœud de référence d'entité à peine créé, il ne peut se produire à nouveau.</span><span class="sxs-lookup"><span data-stu-id="ba2d7-108">Once the expansion occurs on a newly created entity reference node, it never reoccurs.</span></span> <span data-ttu-id="ba2d7-109">C'est pourquoi les espaces de noms utilisés dans le texte de remplacement de l'élément sont liés au moment de la définition du nœud parent.</span><span class="sxs-lookup"><span data-stu-id="ba2d7-109">Therefore, the namespaces used in the replacement text for the element are bound at the time that the parent node is set.</span></span> <span data-ttu-id="ba2d7-110">Toutefois, l’espace de noms peut être modifié pour des nœuds de référence d’entité existants lorsque vous supprimez et que vous les insérez ailleurs ou sur les nœuds de référence d’entité clonés à le **CloneNode** (méthode).</span><span class="sxs-lookup"><span data-stu-id="ba2d7-110">However, the namespace can be changed for existing entity reference nodes when you remove and insert them somewhere else, or on entity reference nodes that are cloned with the **CloneNode** method.</span></span>  
   
-## Voir aussi  
- [DOM \(Document Object Model\) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a><span data-ttu-id="ba2d7-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ba2d7-111">See Also</span></span>  
+ [<span data-ttu-id="ba2d7-112">Document Object Model (DOM) XML</span><span class="sxs-lookup"><span data-stu-id="ba2d7-112">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -1,51 +1,46 @@
 ---
 title: "Applicabilité des transformations fonctionnelles (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: c78107bd-b006-4574-a3d4-bbf808388ff3
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: c7196e128a6d61b2b28e955a79561db2b9a5e51b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b008bdef820b979e2aabd480e08a3bfa5ee5afa2
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="applicability-of-functional-transformation-c"></a>Applicabilité des transformations fonctionnelles (C#)
-Les transformations fonctionnelles pures sont applicables dans un large éventail de situations.  
+# <a name="applicability-of-functional-transformation-c"></a><span data-ttu-id="c3cff-102">Applicabilité des transformations fonctionnelles (C#)</span><span class="sxs-lookup"><span data-stu-id="c3cff-102">Applicability of Functional Transformation (C#)</span></span>
+<span data-ttu-id="c3cff-103">Les transformations fonctionnelles pures sont applicables dans un large éventail de situations.</span><span class="sxs-lookup"><span data-stu-id="c3cff-103">Pure functional transformations are applicable in a wide variety of situations.</span></span>  
   
- L'approche de transformation fonctionnelle convient tout particulièrement à l'interrogation et à la manipulation de données structurées : elle s'adapte donc parfaitement aux technologies LINQ. Toutefois, les transformations fonctionnelles ont un champ d'application beaucoup plus large que leur utilisation avec LINQ. Tout processus dont l'objectif principal consiste à transformer des données d'une forme vers une autre peut être considéré comme un candidat à la transformation fonctionnelle.  
+ <span data-ttu-id="c3cff-104">L'approche de transformation fonctionnelle convient tout particulièrement à l'interrogation et à la manipulation de données structurées : elle s'adapte donc parfaitement aux technologies LINQ.</span><span class="sxs-lookup"><span data-stu-id="c3cff-104">The functional transformation approach is ideally suited for querying and manipulating structured data; therefore it fits well with LINQ technologies.</span></span> <span data-ttu-id="c3cff-105">Toutefois, les transformations fonctionnelles ont un champ d'application beaucoup plus large que leur utilisation avec LINQ.</span><span class="sxs-lookup"><span data-stu-id="c3cff-105">However, functional transformation has a much wider applicability than use with LINQ.</span></span> <span data-ttu-id="c3cff-106">Tout processus dont l'objectif principal consiste à transformer des données d'une forme vers une autre peut être considéré comme un candidat à la transformation fonctionnelle.</span><span class="sxs-lookup"><span data-stu-id="c3cff-106">Any process where the main focus is on transforming data from one form to another should probably be considered as a candidate for functional transformation.</span></span>  
   
- Cette approche est applicable à de nombreux problèmes qui, de premier abord, pourraient sembler ne pas être de bons candidats. Utilisée avec ou séparément de LINQ, la transformation fonctionnelle doit être considérée pour les domaines suivants :  
+ <span data-ttu-id="c3cff-107">Cette approche est applicable à de nombreux problèmes qui, de premier abord, pourraient sembler ne pas être de bons candidats.</span><span class="sxs-lookup"><span data-stu-id="c3cff-107">This approach is applicable to many problems that might not appear at first glance to be a candidate.</span></span> <span data-ttu-id="c3cff-108">Utilisée avec ou séparément de LINQ, la transformation fonctionnelle doit être considérée pour les domaines suivants :</span><span class="sxs-lookup"><span data-stu-id="c3cff-108">Used in conjunction with or separately from LINQ, functional transformation should be considered for the following areas:</span></span>  
   
--   Documents XML. Les données de forme correcte de tout dialecte XML peuvent être manipulées aisément par le biais de la transformation fonctionnelle. Pour plus d’informations, consultez [Transformation fonctionnelle de données XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md).  
+-   <span data-ttu-id="c3cff-109">Documents XML.</span><span class="sxs-lookup"><span data-stu-id="c3cff-109">XML-based documents.</span></span> <span data-ttu-id="c3cff-110">Les données de forme correcte de tout dialecte XML peuvent être manipulées aisément par le biais de la transformation fonctionnelle.</span><span class="sxs-lookup"><span data-stu-id="c3cff-110">Well-formed data of any XML dialect can be easily manipulated through functional transformation.</span></span> <span data-ttu-id="c3cff-111">Pour plus d’informations, consultez [Transformation fonctionnelle de données XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md).</span><span class="sxs-lookup"><span data-stu-id="c3cff-111">For more information, see [Functional Transformation of XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md).</span></span>  
   
--   Autres formats de fichiers structurés. Des fichiers Windows.ini aux documents de texte clair, la plupart des fichiers ont une structure qui se prête à l'analyse et à la transformation.  
+-   <span data-ttu-id="c3cff-112">Autres formats de fichiers structurés.</span><span class="sxs-lookup"><span data-stu-id="c3cff-112">Other structured file formats.</span></span> <span data-ttu-id="c3cff-113">Des fichiers Windows.ini aux documents de texte clair, la plupart des fichiers ont une structure qui se prête à l'analyse et à la transformation.</span><span class="sxs-lookup"><span data-stu-id="c3cff-113">From Windows.ini files to plain text documents, most files have some structure that lends itself to analysis and transformation.</span></span>  
   
--   Protocoles de streaming de données. L'encodage et le décodage de données vers et à partir de protocoles de communication peuvent souvent être représentés par une transformation fonctionnelle simple.  
+-   <span data-ttu-id="c3cff-114">Protocoles de streaming de données.</span><span class="sxs-lookup"><span data-stu-id="c3cff-114">Data streaming protocols.</span></span> <span data-ttu-id="c3cff-115">L'encodage et le décodage de données vers et à partir de protocoles de communication peuvent souvent être représentés par une transformation fonctionnelle simple.</span><span class="sxs-lookup"><span data-stu-id="c3cff-115">Encoding data into and decoding data from communication protocols can often be represented by a simple functional transform.</span></span>  
   
--   Données de bases de données relationnelles et orientées objets. Les bases de données relationnelles et orientées objets, comme le code XML, sont des sources de données structurées largement utilisées.  
+-   <span data-ttu-id="c3cff-116">Données de bases de données relationnelles et orientées objets.</span><span class="sxs-lookup"><span data-stu-id="c3cff-116">RDBMS and OODBMS data.</span></span> <span data-ttu-id="c3cff-117">Les bases de données relationnelles et orientées objets, comme le code XML, sont des sources de données structurées largement utilisées.</span><span class="sxs-lookup"><span data-stu-id="c3cff-117">Relational and object-oriented databases, just like XML, are widely-used structured data sources.</span></span>  
   
--   Solutions mathématiques, statistiques et scientifiques. Ces champs tendent à manipuler de grands ensembles de données afin d'aider l'utilisateur à visualiser, évaluer ou résoudre des problèmes complexes.  
+-   <span data-ttu-id="c3cff-118">Solutions mathématiques, statistiques et scientifiques.</span><span class="sxs-lookup"><span data-stu-id="c3cff-118">Mathematic, statistic, and science solutions.</span></span> <span data-ttu-id="c3cff-119">Ces champs tendent à manipuler de grands ensembles de données afin d'aider l'utilisateur à visualiser, évaluer ou résoudre des problèmes complexes.</span><span class="sxs-lookup"><span data-stu-id="c3cff-119">These fields tend to manipulate large data sets to assist the user in visualizing, estimating, or actually solving non-trivial problems.</span></span>  
   
- Comme décrit dans [Refactorisation dans des fonctions pures (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md), l’utilisation de fonctions pures est un exemple de programmation fonctionnelle. Outre les avantages immédiats des fonctions pures, leur utilisation procure une expérience précieuse pour la résolution des problèmes du point de vue des transformations fonctionnelles. Cette approche peut également avoir un impact majeur sur la conception des programmes et des classes. Cela est particulièrement vrai lorsqu'un problème se prête à une solution de transformation de données, comme indiqué plus haut.  
+ <span data-ttu-id="c3cff-120">Comme décrit dans [Refactorisation dans des fonctions pures (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md), l’utilisation de fonctions pures est un exemple de programmation fonctionnelle.</span><span class="sxs-lookup"><span data-stu-id="c3cff-120">As described in [Refactoring Into Pure Functions (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md), using pure functions is an example of functional programming.</span></span> <span data-ttu-id="c3cff-121">Outre les avantages immédiats des fonctions pures, leur utilisation procure une expérience précieuse pour la résolution des problèmes du point de vue des transformations fonctionnelles.</span><span class="sxs-lookup"><span data-stu-id="c3cff-121">In additional to their immediate benefits, using pure functions provides valuable experience in thinking about problems from a functional transformation perspective.</span></span> <span data-ttu-id="c3cff-122">Cette approche peut également avoir un impact majeur sur la conception des programmes et des classes.</span><span class="sxs-lookup"><span data-stu-id="c3cff-122">This approach can also have major impact on program and class design.</span></span> <span data-ttu-id="c3cff-123">Cela est particulièrement vrai lorsqu'un problème se prête à une solution de transformation de données, comme indiqué plus haut.</span><span class="sxs-lookup"><span data-stu-id="c3cff-123">This is especially true when a problem lends itself to a data transformation solution as described above.</span></span>  
   
- Bien qu'elles dépassent la portée de ce didacticiel, les conceptions qui sont influencées par la perspective des transformations fonctionnelles tendent à être axées sur les processus plutôt que sur les objets en tant qu'acteurs, et la solution résultante tend à être implémentée en tant que séries de transformations à grande échelle plutôt que comme modifications d'état d'objet individuelles.  
+ <span data-ttu-id="c3cff-124">Bien qu'elles dépassent la portée de ce didacticiel, les conceptions qui sont influencées par la perspective des transformations fonctionnelles tendent à être axées sur les processus plutôt que sur les objets en tant qu'acteurs, et la solution résultante tend à être implémentée en tant que séries de transformations à grande échelle plutôt que comme modifications d'état d'objet individuelles.</span><span class="sxs-lookup"><span data-stu-id="c3cff-124">Although they are beyond the scope of this tutorial, designs that are influenced by the functional transformation perspective tend to center on processes more than on objects as actors, and the resulting solution tends to be implemented as series of large-scale transformations, rather than individual object state changes.</span></span>  
   
- Là encore, souvenez-vous que C# prend en charge les approches impératives et fonctionnelles. La meilleure conception pour votre application peut donc incorporer des éléments de ces deux approches.  
+ <span data-ttu-id="c3cff-125">Là encore, souvenez-vous que C# prend en charge les approches impératives et fonctionnelles. La meilleure conception pour votre application peut donc incorporer des éléments de ces deux approches.</span><span class="sxs-lookup"><span data-stu-id="c3cff-125">Again, remember that C# supports both imperative and functional approaches, so the best design for your application might incorporate elements of both.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Introduction aux transformations fonctionnelles pures (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
- [Transformation fonctionnelle de données XML (C#)](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md)   
- [Refactorisation dans des fonctions pures (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
-
+## <a name="see-also"></a><span data-ttu-id="c3cff-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c3cff-126">See Also</span></span>  
+ [<span data-ttu-id="c3cff-127">Introduction aux transformations fonctionnelles pures (C#)</span><span class="sxs-lookup"><span data-stu-id="c3cff-127">Introduction to Pure Functional Transformations (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
+ [<span data-ttu-id="c3cff-128">Transformation fonctionnelle XML (c#)</span><span class="sxs-lookup"><span data-stu-id="c3cff-128">Functional Transformation of XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/functional-transformation-of-xml.md)  
+ [<span data-ttu-id="c3cff-129">Refactorisation dans des fonctions pures (C#)</span><span class="sxs-lookup"><span data-stu-id="c3cff-129">Refactoring Into Pure Functions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

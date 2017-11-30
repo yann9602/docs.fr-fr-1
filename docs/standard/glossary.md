@@ -9,274 +9,271 @@ ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
+ms.openlocfilehash: a6546818eaeac3c32a6a9ddd7e64b1b0e0ea170f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 33b22ab80f9b4d42975f2c41c880543c615a3e01
-ms.openlocfilehash: c66f1b2b85d377c84712c0ad73682cdeeb7249fd
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/31/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="net-glossary"></a><span data-ttu-id="bf068-104">Glossaire .NET</span><span class="sxs-lookup"><span data-stu-id="bf068-104">.NET Glossary</span></span>
 
-# <a name="net-glossary"></a>Glossaire .NET
+<span data-ttu-id="bf068-105">L’objectif principal de ce glossaire est de préciser la signification de certains termes et acronymes qui apparaissent fréquemment dans la documentation .NET sans y être définis.</span><span class="sxs-lookup"><span data-stu-id="bf068-105">The primary goal of this glossary is to clarify meanings of selected terms and acronyms that appear frequently in the .NET documentation without definitions.</span></span>
 
-L’objectif principal de ce glossaire est de préciser la signification de certains termes et acronymes qui apparaissent fréquemment dans la documentation .NET sans y être définis.
+## <a name="aot"></a><span data-ttu-id="bf068-106">AOT</span><span class="sxs-lookup"><span data-stu-id="bf068-106">AOT</span></span>
 
-## <a name="aot"></a>AOT
+<span data-ttu-id="bf068-107">Compilateur Ahead Of Time.</span><span class="sxs-lookup"><span data-stu-id="bf068-107">Ahead-of-time compiler.</span></span>
 
-Compilateur Ahead Of Time.
+<span data-ttu-id="bf068-108">Semblable au compilateur [JIT](#jit), ce compilateur convertit également le langage [IL](#il) en code machine.</span><span class="sxs-lookup"><span data-stu-id="bf068-108">Similar to [JIT](#jit), this compiler also translates [IL](#il) to machine code.</span></span> <span data-ttu-id="bf068-109">Contrairement à la compilation JIT, la compilation AOT se produit avant que l’application ne soit exécutée et est généralement effectuée sur une autre machine.</span><span class="sxs-lookup"><span data-stu-id="bf068-109">In contrast to JIT compilation, AOT compilation happens before the application is executed and is usually performed on a different machine.</span></span> <span data-ttu-id="bf068-110">Étant donné que les chaînes d’outil AOT ne se compilent pas au moment de l’exécution, elles n’ont pas besoin de réduire le temps consacré à la compilation.</span><span class="sxs-lookup"><span data-stu-id="bf068-110">Because AOT tool chains don't compile at runtime, they don't have to minimize time spent compiling.</span></span> <span data-ttu-id="bf068-111">Ainsi, elles peuvent dédier plus de temps à l’optimisation.</span><span class="sxs-lookup"><span data-stu-id="bf068-111">That means they can spend more time optimizing.</span></span> <span data-ttu-id="bf068-112">Étant donné que le contexte d’AOT est l’ensemble de l’application, le compilateur AOT effectue également une liaison entre modules et une analyse de la totalité du programme, ce qui signifie que toutes les références sont suivies et qu’un seul exécutable est produit.</span><span class="sxs-lookup"><span data-stu-id="bf068-112">Since the context of AOT is the entire application, the AOT compiler also performs cross-module linking and whole-program analysis, which means that all references are followed and a single executable is produced.</span></span>
 
-Semblable au compilateur [JIT](#jit), ce compilateur convertit également le langage [IL](#il) en code machine. Contrairement à la compilation JIT, la compilation AOT se produit avant que l’application ne soit exécutée et est généralement effectuée sur une autre machine. Étant donné que les chaînes d’outil AOT ne se compilent pas au moment de l’exécution, elles n’ont pas besoin de réduire le temps consacré à la compilation. Ainsi, elles peuvent dédier plus de temps à l’optimisation. Étant donné que le contexte d’AOT est l’ensemble de l’application, le compilateur AOT effectue également une liaison entre modules et une analyse de la totalité du programme, ce qui signifie que toutes les références sont suivies et qu’un seul exécutable est produit.
+## <a name="aspnet"></a><span data-ttu-id="bf068-113">ASP.NET</span><span class="sxs-lookup"><span data-stu-id="bf068-113">ASP.NET</span></span> 
 
-## <a name="aspnet"></a>ASP.NET 
+<span data-ttu-id="bf068-114">Implémentation ASP.NET d’origine fournie avec .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="bf068-114">The original ASP.NET implementation that ships with the .NET Framework.</span></span>
 
-Implémentation ASP.NET d’origine fournie avec .NET Framework.
+<span data-ttu-id="bf068-115">ASP.NET est parfois un terme général qui désigne les deux implémentations d’ASP.NET, y compris ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-115">Sometimes ASP.NET is an umbrella term that refers to both ASP.NET implementations including ASP.NET Core.</span></span> <span data-ttu-id="bf068-116">C’est le contexte qui détermine la signification véhiculée par le terme.</span><span class="sxs-lookup"><span data-stu-id="bf068-116">The meaning that the term carries in any given instance is determined by context.</span></span> <span data-ttu-id="bf068-117">Reportez-vous à ASP.NET 4.x lorsque vous souhaitez indiquer clairement que vous n’utilisez pas ASP.NET pour les deux implémentations.</span><span class="sxs-lookup"><span data-stu-id="bf068-117">Refer to ASP.NET 4.x when you want to make it clear that you’re not using ASP.NET to mean both implementations.</span></span> 
 
-ASP.NET est parfois un terme général qui désigne les deux implémentations d’ASP.NET, y compris ASP.NET Core. C’est le contexte qui détermine la signification véhiculée par le terme. 
+<span data-ttu-id="bf068-118">Consultez [documentation ASP.NET](/aspnet/#pivot=aspnet).</span><span class="sxs-lookup"><span data-stu-id="bf068-118">See [ASP.NET documentation](/aspnet/#pivot=aspnet).</span></span>
 
-Consultez [ASP.NET](/aspnet/#pivot=aspnet).
+## <a name="aspnet-core"></a><span data-ttu-id="bf068-119">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="bf068-119">ASP.NET Core</span></span>
 
-## <a name="aspnet-core"></a>ASP.NET Core
+<span data-ttu-id="bf068-120">Implémentation multiplateforme, hautes performances et open source d’ASP.NET basée sur .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-120">A cross-platform, high-performance, open source implementation of ASP.NET built on .NET Core.</span></span>
 
-Implémentation multiplateforme, hautes performances et open source d’ASP.NET basée sur .NET Core.
+<span data-ttu-id="bf068-121">Consultez [documentation d’ASP.NET Core](/aspnet/#pivot=core).</span><span class="sxs-lookup"><span data-stu-id="bf068-121">See [ASP.NET Core documentation](/aspnet/#pivot=core).</span></span>
 
-Consultez [ASP.NET Core](/aspnet/#pivot=core).
+## <a name="assembly"></a><span data-ttu-id="bf068-122">assembly</span><span class="sxs-lookup"><span data-stu-id="bf068-122">assembly</span></span>
 
-## <a name="assembly"></a>assembly
+<span data-ttu-id="bf068-123">Fichier *.dll* qui contient une collection d’API pouvant être appelées par les applications ou d’autres assemblys.</span><span class="sxs-lookup"><span data-stu-id="bf068-123">A *.dll* file that contains a collection of APIs that can be called by apps or other assemblies.</span></span>
 
-Fichier *.dll* qui contient une collection d’API pouvant être appelées par les applications ou d’autres assemblys.
+<span data-ttu-id="bf068-124">Un assembly .NET est une collection de types.</span><span class="sxs-lookup"><span data-stu-id="bf068-124">A .NET assembly is a collection of types.</span></span> <span data-ttu-id="bf068-125">Un assembly inclut des interfaces, des classes, des structures, des énumérations et des délégués.</span><span class="sxs-lookup"><span data-stu-id="bf068-125">An assembly includes interfaces, classes, structures, enumerations, and delegates.</span></span>  <span data-ttu-id="bf068-126">Les assemblys qui se trouvent dans le dossier *bin* d’un projet sont parfois appelés *binaires*.</span><span class="sxs-lookup"><span data-stu-id="bf068-126">Assemblies in a project's *bin* folder are sometimes referred to as *binaries*.</span></span> <span data-ttu-id="bf068-127">Voir aussi [bibliothèque](#library).</span><span class="sxs-lookup"><span data-stu-id="bf068-127">See also [library](#library).</span></span>
 
-Un assembly .NET est une collection de types. Un assembly inclut des interfaces, des classes, des structures, des énumérations et des délégués.  Les assemblys qui se trouvent dans le dossier *bin* d’un projet sont parfois appelés *binaires*. Voir aussi [bibliothèque](#library).
+## <a name="clr"></a><span data-ttu-id="bf068-128">CLR</span><span class="sxs-lookup"><span data-stu-id="bf068-128">CLR</span></span>
 
-## <a name="clr"></a>CLR
+<span data-ttu-id="bf068-129">Common Language Runtime.</span><span class="sxs-lookup"><span data-stu-id="bf068-129">Common Language Runtime.</span></span>
 
-Common Language Runtime.
+<span data-ttu-id="bf068-130">La signification exacte dépend du contexte, mais ce terme fait généralement référence au runtime de .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="bf068-130">The exact meaning depends on the context, but this usually refers to the runtime of the .NET Framework.</span></span> <span data-ttu-id="bf068-131">Le CLR gère l’allocation et la gestion de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="bf068-131">The CLR handles memory allocation and management.</span></span> <span data-ttu-id="bf068-132">Le CLR est également une machine virtuelle qui non seulement exécute des applications, mais aussi génère et compile du code à la volée à l’aide d’un compilateur JIT.</span><span class="sxs-lookup"><span data-stu-id="bf068-132">The CLR is also a virtual machine that not only executes apps but also generates and compiles code on-the-fly using a JIT compiler.</span></span> <span data-ttu-id="bf068-133">L’implémentation CLR Microsoft actuelle est Windows uniquement.</span><span class="sxs-lookup"><span data-stu-id="bf068-133">The current Microsoft CLR implementation is Windows only.</span></span>
 
-La signification exacte dépend du contexte, mais ce terme fait généralement référence au runtime de .NET Framework. Le CLR gère l’allocation et la gestion de la mémoire. Le CLR est également une machine virtuelle qui non seulement exécute des applications, mais aussi génère et compile du code à la volée à l’aide d’un compilateur JIT. L’implémentation CLR Microsoft actuelle est Windows uniquement.
+## <a name="coreclr"></a><span data-ttu-id="bf068-134">CoreCLR</span><span class="sxs-lookup"><span data-stu-id="bf068-134">CoreCLR</span></span>
 
-## <a name="coreclr"></a>CoreCLR
+<span data-ttu-id="bf068-135">.NET Core Common Language Runtime.</span><span class="sxs-lookup"><span data-stu-id="bf068-135">.NET Core Common Language Runtime.</span></span>
 
-.NET Core Common Language Runtime.
+<span data-ttu-id="bf068-136">Ce CLR repose sur la même base de code que le CLR.</span><span class="sxs-lookup"><span data-stu-id="bf068-136">This CLR is built from the same code base as the CLR.</span></span> <span data-ttu-id="bf068-137">À l’origine, CoreCLR était le runtime de Silverlight et était conçu pour s’exécuter sur plusieurs plateformes, notamment Windows et OS X. CoreCLR fait désormais partie de .NET Core et représente une version simplifiée du CLR.</span><span class="sxs-lookup"><span data-stu-id="bf068-137">Originally, CoreCLR was the runtime of Silverlight and was designed to run on multiple platforms, specifically Windows and OS X. CoreCLR is now part of .NET Core and represents a simplified version of the CLR.</span></span> <span data-ttu-id="bf068-138">C’est toujours un runtime multiplateforme, qui prend désormais en charge de nombreuses distributions Linux.</span><span class="sxs-lookup"><span data-stu-id="bf068-138">It's still a cross platform runtime, now including support for many Linux distributions.</span></span> <span data-ttu-id="bf068-139">CoreCLR est également une machine virtuelle avec des capacités JIT et d’exécution de code.</span><span class="sxs-lookup"><span data-stu-id="bf068-139">CoreCLR is also a virtual machine with JIT and code execution capabilities.</span></span>
 
-Ce CLR repose sur la même base de code que le CLR. À l’origine, CoreCLR était le runtime de Silverlight et était conçu pour s’exécuter sur plusieurs plateformes, notamment Windows et OS X. CoreCLR fait désormais partie de .NET Core et représente une version simplifiée du CLR. C’est toujours un runtime multiplateforme, qui prend désormais en charge de nombreuses distributions Linux. CoreCLR est également une machine virtuelle avec des capacités JIT et d’exécution de code.
+## <a name="corefx"></a><span data-ttu-id="bf068-140">CoreFX</span><span class="sxs-lookup"><span data-stu-id="bf068-140">CoreFX</span></span>
 
-## <a name="corefx"></a>CoreFX
+<span data-ttu-id="bf068-141">Bibliothèque de classes de base .NET Core</span><span class="sxs-lookup"><span data-stu-id="bf068-141">.NET Core Base Class Library (BCL)</span></span>
 
-Bibliothèque de classes de base .NET Core
+<span data-ttu-id="bf068-142">Ensemble de bibliothèques qui comprend les espaces de noms System.* (et, dans une certaine mesure, Microsoft.*).</span><span class="sxs-lookup"><span data-stu-id="bf068-142">A set of libraries that comprise the System.* (and to a limited extent  Microsoft.*) namespaces.</span></span> <span data-ttu-id="bf068-143">La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-143">The BCL is a general purpose, lower-level framework that higher-level application frameworks, such as ASP.NET Core, build on.</span></span> <span data-ttu-id="bf068-144">Le code source de la bibliothèque de classes de base .NET Core se trouve dans le [dépôt CoreFX](https://github.com/dotnet/corefx).</span><span class="sxs-lookup"><span data-stu-id="bf068-144">The source code of the .NET Core BCL is contained in the [CoreFX repository](https://github.com/dotnet/corefx).</span></span> <span data-ttu-id="bf068-145">Toutefois, la plupart des API .NET Core étant également disponibles dans .NET Framework, vous pouvez considérer CoreFX comme une duplication (fork) de la bibliothèque de classes de base .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="bf068-145">However, the majority of the .NET Core APIs are also available in the .NET Framework, so you can think of CoreFX as a fork of the .NET Framework BCL.</span></span>
 
-Ensemble de bibliothèques qui comprend les espaces de noms System.* (et, dans une certaine mesure, Microsoft.*). La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core. Le code source de la bibliothèque de classes de base .NET Core se trouve dans le [dépôt CoreFX](https://github.com/dotnet/corefx). Toutefois, la plupart des API .NET Core étant également disponibles dans .NET Framework, vous pouvez considérer CoreFX comme une duplication (fork) de la bibliothèque de classes de base .NET Framework.
+## <a name="corert"></a><span data-ttu-id="bf068-146">CoreRT</span><span class="sxs-lookup"><span data-stu-id="bf068-146">CoreRT</span></span>
 
-## <a name="corert"></a>CoreRT
+<span data-ttu-id="bf068-147">Runtime .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-147">.NET Core runtime.</span></span>
 
-Runtime .NET Core.
+<span data-ttu-id="bf068-148">Contrairement à CLR/CoreCLR, CoreRT n’est pas une machine virtuelle, ce qui signifie qu’il n’inclut pas les fonctionnalités de génération et d’exécution de code à la volée en raison de l’absence d’un compilateur [JIT](#jit).</span><span class="sxs-lookup"><span data-stu-id="bf068-148">In contrast to the CLR/CoreCLR, CoreRT is not a virtual machine, which means it doesn't include the facilities to generate and run code on-the-fly because it doesn't include a [JIT](#jit).</span></span> <span data-ttu-id="bf068-149">Toutefois, il inclut le [GC](#gc) et les fonctionnalités RTTI (identification du type au moment de l’exécution) et de réflexion.</span><span class="sxs-lookup"><span data-stu-id="bf068-149">It does, however, include the [GC](#gc) and the ability for runtime type identification (RTTI) and reflection.</span></span> <span data-ttu-id="bf068-150">Toutefois, son système de type est conçu pour que les métadonnées de réflexion ne soient pas nécessaires.</span><span class="sxs-lookup"><span data-stu-id="bf068-150">However, its type system is designed so that metadata for reflection isn't required.</span></span> <span data-ttu-id="bf068-151">Cela permet d’avoir une chaîne d’outils [AOT](#aot) qui peut écarter les métadonnées superflues et (surtout) identifier le code que l’application n’utilise pas.</span><span class="sxs-lookup"><span data-stu-id="bf068-151">This enables having an [AOT](#aot) tool chain that can link away superfluous metadata and (more importantly) identify code that the app doesn't use.</span></span> <span data-ttu-id="bf068-152">CoreRT est en cours de développement.</span><span class="sxs-lookup"><span data-stu-id="bf068-152">CoreRT is in development.</span></span>
 
-Contrairement à CLR/CoreCLR, CoreRT n’est pas une machine virtuelle, ce qui signifie qu’il n’inclut pas les fonctionnalités de génération et d’exécution de code à la volée en raison de l’absence d’un compilateur [JIT](#jit). Toutefois, il inclut le [GC](#gc) et les fonctionnalités RTTI (identification du type au moment de l’exécution) et de réflexion. Toutefois, son système de type est conçu pour que les métadonnées de réflexion ne soient pas nécessaires. Cela permet d’avoir une chaîne d’outils [AOT](#aot) qui peut écarter les métadonnées superflues et (surtout) identifier le code que l’application n’utilise pas. CoreRT est en cours de développement.
+<span data-ttu-id="bf068-153">Consultez [Présentation de .NET Native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-153">See [Intro to .NET Native and CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)</span></span>
 
-Consultez [Présentation de .NET Native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).
+## <a name="ecosystem"></a><span data-ttu-id="bf068-154">écosystème</span><span class="sxs-lookup"><span data-stu-id="bf068-154">ecosystem</span></span>
 
-## <a name="ecosystem"></a>écosystème
+<span data-ttu-id="bf068-155">Tous les logiciels d’exécution, outils de développement et ressources de communautés qui permettent de générer et d’exécuter des applications pour une technologie donnée.</span><span class="sxs-lookup"><span data-stu-id="bf068-155">All of the runtime software, development tools, and community resources that are used to build and run applications for a given technology.</span></span>
 
-Tous les logiciels d’exécution, outils de développement et ressources de communautés qui permettent de générer et d’exécuter des applications pour une technologie donnée.
+<span data-ttu-id="bf068-156">Le terme « écosystème .NET » diffère des termes tels que « pile .NET » en ce sens qu’il inclut les bibliothèques et les applications tierces.</span><span class="sxs-lookup"><span data-stu-id="bf068-156">The term ".NET ecosystem" differs from similar terms such as ".NET stack" in its inclusion of third-party apps and libraries.</span></span> <span data-ttu-id="bf068-157">Voici un exemple dans une phrase :</span><span class="sxs-lookup"><span data-stu-id="bf068-157">Here's an example in a sentence:</span></span>
 
-Le terme « écosystème .NET » diffère des termes tels que « pile .NET » en ce sens qu’il inclut les bibliothèques et les applications tierces. Voici un exemple dans une phrase :
+- <span data-ttu-id="bf068-158">« L’objectif de [.NET Standard](#net-standard) est d’établir une meilleure uniformité dans l’écosystème .NET. »</span><span class="sxs-lookup"><span data-stu-id="bf068-158">"The motivation behind the [.NET Standard](#net-standard) is to establish greater uniformity in the .NET ecosystem."</span></span> 
 
-- « L’objectif de [.NET Standard](#net-standard) est d’établir une meilleure uniformité dans l’écosystème .NET. » 
+## <a name="framework"></a><span data-ttu-id="bf068-159">framework</span><span class="sxs-lookup"><span data-stu-id="bf068-159">framework</span></span>
 
-## <a name="framework"></a>framework
+<span data-ttu-id="bf068-160">En général, ensemble complet d’API qui facilite le développement et le déploiement d’applications basées sur une technologie particulière.</span><span class="sxs-lookup"><span data-stu-id="bf068-160">In general, a comprehensive collection of APIs that facilitates development and deployment of applications that are based on a particular technology.</span></span> <span data-ttu-id="bf068-161">Selon ce sens général, ASP.NET Core et Windows Forms sont des exemples de frameworks d’application.</span><span class="sxs-lookup"><span data-stu-id="bf068-161">In this general sense, ASP.NET Core and Windows Forms are examples of application frameworks.</span></span> <span data-ttu-id="bf068-162">Voir aussi [bibliothèque](#library).</span><span class="sxs-lookup"><span data-stu-id="bf068-162">See also [library](#library).</span></span>
 
-En général, ensemble complet d’API qui facilite le développement et le déploiement d’applications basées sur une technologie particulière. Selon ce sens général, ASP.NET Core et Windows Forms sont des exemples de frameworks d’application. Voir aussi [bibliothèque](#library).
+<span data-ttu-id="bf068-163">Le mot « framework » a une signification technique plus spécifique dans les termes suivants :</span><span class="sxs-lookup"><span data-stu-id="bf068-163">The word "framework" has a more specific technical meaning in the following terms:</span></span>
+* [<span data-ttu-id="bf068-164">.NET Framework</span><span class="sxs-lookup"><span data-stu-id="bf068-164">.NET Framework</span></span>](#net-framework)
+* [<span data-ttu-id="bf068-165">framework cible</span><span class="sxs-lookup"><span data-stu-id="bf068-165">target framework</span></span>](#target-framework)
+* [<span data-ttu-id="bf068-166">TFM (moniker de la version cible de .Net Framework)</span><span class="sxs-lookup"><span data-stu-id="bf068-166">TFM (target framework moniker)</span></span>](#tfm)
 
-Le mot « framework » a une signification technique plus spécifique dans les termes suivants :
-* [.NET Framework](#net-framework)
-* [framework cible](#target-framework)
-* [TFM (moniker de la version cible de .Net Framework)](#tfm)
+<span data-ttu-id="bf068-167">Dans la documentation existante, « framework » fait parfois référence à une [implémentation de .NET](#implementation-of-net).</span><span class="sxs-lookup"><span data-stu-id="bf068-167">In the existing documentation, "framework" sometimes refers to an [implementation of .NET](#implementation-of-net).</span></span> <span data-ttu-id="bf068-168">Par exemple, un article peut appeler .NET Core un framework.</span><span class="sxs-lookup"><span data-stu-id="bf068-168">For example, an article may call .NET Core a framework.</span></span> <span data-ttu-id="bf068-169">Nous envisageons d’éliminer de la documentation cet usage qui prête à confusion.</span><span class="sxs-lookup"><span data-stu-id="bf068-169">We plan to eliminate this confusing usage from the documentation.</span></span>
 
-Dans la documentation existante, « framework » fait parfois référence à une [implémentation de .NET](#implementation-of-net). Par exemple, un article peut appeler .NET Core un framework. Nous envisageons d’éliminer de la documentation cet usage qui prête à confusion.
+## <a name="gc"></a><span data-ttu-id="bf068-170">GC</span><span class="sxs-lookup"><span data-stu-id="bf068-170">GC</span></span>
 
-## <a name="gc"></a>GC
+<span data-ttu-id="bf068-171">Garbage collector.</span><span class="sxs-lookup"><span data-stu-id="bf068-171">Garbage collector.</span></span>
 
-Garbage collector.
+<span data-ttu-id="bf068-172">Le garbage collector est une implémentation de la gestion automatique de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="bf068-172">The garbage collector is an implementation of automatic memory management.</span></span>  <span data-ttu-id="bf068-173">Le GC libère la mémoire occupée par les objets qui ne sont plus en cours d’utilisation.</span><span class="sxs-lookup"><span data-stu-id="bf068-173">The GC frees memory occupied by objects that are no longer in use.</span></span> 
 
-Le garbage collector est une implémentation de la gestion automatique de la mémoire.  Le GC libère la mémoire occupée par les objets qui ne sont plus en cours d’utilisation. 
+<span data-ttu-id="bf068-174">Consultez [Nettoyage de la mémoire](garbage-collection/index.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-174">See [Garbage Collection](garbage-collection/index.md).</span></span>
 
-Consultez [Nettoyage de la mémoire](garbage-collection/index.md).
+## <a name="il"></a><span data-ttu-id="bf068-175">IL</span><span class="sxs-lookup"><span data-stu-id="bf068-175">IL</span></span>
 
-## <a name="il"></a>IL
+<span data-ttu-id="bf068-176">Langage intermédiaire.</span><span class="sxs-lookup"><span data-stu-id="bf068-176">Intermediate language.</span></span>
 
-Langage intermédiaire.
+<span data-ttu-id="bf068-177">Les langages .NET de haut niveau, tels que C#, se compilent en un jeu d’instructions indépendant du matériel, qui est appelé Langage intermédiaire (IL).</span><span class="sxs-lookup"><span data-stu-id="bf068-177">Higher-level .NET languages, such as C#, compile down to a hardware-agnostic instruction set, which is called Intermediate Language (IL).</span></span> <span data-ttu-id="bf068-178">IL est parfois appelé MSIL (Microsoft IL) ou CIL (Common IL).</span><span class="sxs-lookup"><span data-stu-id="bf068-178">IL is sometimes referred to as MSIL (Microsoft IL) or CIL (Common IL).</span></span>
 
-Les langages .NET de haut niveau, tels que C#, se compilent en un jeu d’instructions indépendant du matériel, qui est appelé Langage intermédiaire (IL). IL est parfois appelé MSIL (Microsoft IL) ou CIL (Common IL).
+## <a name="jit"></a><span data-ttu-id="bf068-179">JIT</span><span class="sxs-lookup"><span data-stu-id="bf068-179">JIT</span></span>
 
-## <a name="jit"></a>JIT
+<span data-ttu-id="bf068-180">Compilateur juste-à-temps.</span><span class="sxs-lookup"><span data-stu-id="bf068-180">Just-in-time compiler.</span></span>
 
-Compilateur juste-à-temps.
+<span data-ttu-id="bf068-181">Semblable au compilateur [AOT](#aot), ce compilateur convertit le langage [IL](#il) en code machine que le processeur comprend.</span><span class="sxs-lookup"><span data-stu-id="bf068-181">Similar to [AOT](#aot), this compiler translates [IL](#il) to machine code that the processor understands.</span></span> <span data-ttu-id="bf068-182">Contrairement à la compilation AOT, la compilation JIT se produit à la demande et est effectuée sur la machine sur laquelle le code doit s’exécuter.</span><span class="sxs-lookup"><span data-stu-id="bf068-182">Unlike AOT, JIT compilation happens on demand and is performed on the same machine that the code needs to run on.</span></span> <span data-ttu-id="bf068-183">Étant donné que la compilation JIT se produit pendant l’exécution de l’application, la compilation fait partie du temps d’exécution.</span><span class="sxs-lookup"><span data-stu-id="bf068-183">Since JIT compilation occurs during execution of the application, compile time is part of the run time.</span></span> <span data-ttu-id="bf068-184">Ainsi, les compilateurs JIT doivent trouver un équilibre entre le temps consacré à l’optimisation du code et les économies pouvant découler du code résultant.</span><span class="sxs-lookup"><span data-stu-id="bf068-184">Thus, JIT compilers have to balance time spent optimizing code against the savings that the resulting code can produce.</span></span> <span data-ttu-id="bf068-185">Toutefois, un compilateur JIT connaît le matériel réel et peut éviter aux développeurs d’avoir à transmettre différentes implémentations.</span><span class="sxs-lookup"><span data-stu-id="bf068-185">But a JIT knows the actual hardware and can free developers from having to ship different implementations.</span></span>
 
-Semblable au compilateur [AOT](#aot), ce compilateur convertit le langage [IL](#il) en code machine que le processeur comprend. Contrairement à la compilation AOT, la compilation JIT se produit à la demande et est effectuée sur la machine sur laquelle le code doit s’exécuter. Étant donné que la compilation JIT se produit pendant l’exécution de l’application, la compilation fait partie du temps d’exécution. Ainsi, les compilateurs JIT doivent trouver un équilibre entre le temps consacré à l’optimisation du code et les économies pouvant découler du code résultant. Toutefois, un compilateur JIT connaît le matériel réel et peut éviter aux développeurs d’avoir à transmettre différentes implémentations.
+## <a name="implementation-of-net"></a><span data-ttu-id="bf068-186">implémentation de .NET</span><span class="sxs-lookup"><span data-stu-id="bf068-186">implementation of .NET</span></span>
 
-## <a name="implementation-of-net"></a>implémentation de .NET
+<span data-ttu-id="bf068-187">Une implémentation de .NET inclut les composants suivants :</span><span class="sxs-lookup"><span data-stu-id="bf068-187">An implementation of .NET includes the following:</span></span>
 
-Une implémentation de .NET inclut les composants suivants :
+- <span data-ttu-id="bf068-188">Un ou plusieurs runtimes.</span><span class="sxs-lookup"><span data-stu-id="bf068-188">One or more runtimes.</span></span> <span data-ttu-id="bf068-189">Exemples : CLR, CoreCLR, CoreRT.</span><span class="sxs-lookup"><span data-stu-id="bf068-189">Examples: CLR, CoreCLR, CoreRT.</span></span>
+- <span data-ttu-id="bf068-190">Une bibliothèque de classes qui implémente une version de .NET Standard et qui peut inclure des API supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="bf068-190">A class library that implements a version of the .NET Standard and may include additional APIs.</span></span> <span data-ttu-id="bf068-191">Exemples : bibliothèque de classes de base .NET Framework, bibliothèque de classes de base .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-191">Examples: .NET Framework Base Class Library, .NET Core Base Class Library.</span></span>
+- <span data-ttu-id="bf068-192">Le cas échéant, un ou plusieurs frameworks d’application.</span><span class="sxs-lookup"><span data-stu-id="bf068-192">Optionally, one or more application frameworks.</span></span> <span data-ttu-id="bf068-193">Exemples : ASP.NET, Windows Forms et WPF) sont inclus dans .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="bf068-193">Examples: ASP.NET, Windows Forms, and WPF are included in the .NET Framework.</span></span>
+- <span data-ttu-id="bf068-194">Le cas échéant, des outils de développement.</span><span class="sxs-lookup"><span data-stu-id="bf068-194">Optionally, development tools.</span></span> <span data-ttu-id="bf068-195">Certains outils de développement sont partagés entre plusieurs implémentations.</span><span class="sxs-lookup"><span data-stu-id="bf068-195">Some development tools are shared among multiple implementations.</span></span>
 
-- Un ou plusieurs runtimes. Exemples : CLR, CoreCLR, CoreRT.
-- Une bibliothèque de classes qui implémente une version de .NET Standard et qui peut inclure des API supplémentaires. Exemples : bibliothèque de classes de base .NET Framework, bibliothèque de classes de base .NET Core.
-- Le cas échéant, un ou plusieurs frameworks d’application. Exemples : ASP.NET, Windows Forms et WPF) sont inclus dans .NET Framework.
-- Le cas échéant, des outils de développement. Certains outils de développement sont partagés entre plusieurs implémentations.
+<span data-ttu-id="bf068-196">Exemples d’implémentations de .NET :</span><span class="sxs-lookup"><span data-stu-id="bf068-196">Examples of .NET implementations:</span></span>
 
-Exemples d’implémentations de .NET :
+- [<span data-ttu-id="bf068-197">.NET Framework</span><span class="sxs-lookup"><span data-stu-id="bf068-197">.NET Framework</span></span>](#net-framework)
+- [<span data-ttu-id="bf068-198">.NET Core</span><span class="sxs-lookup"><span data-stu-id="bf068-198">.NET Core</span></span>](#net-core)
+- [<span data-ttu-id="bf068-199">Plateforme Windows universelle (UWP)</span><span class="sxs-lookup"><span data-stu-id="bf068-199">Universal Windows Platform (UWP)</span></span>](#uwp)
 
-- [.NET Framework](#net-framework)
-- [.NET Core](#net-core)
-- [Plateforme Windows universelle (UWP)](#uwp)
+## <a name="library"></a><span data-ttu-id="bf068-200">bibliothèque</span><span class="sxs-lookup"><span data-stu-id="bf068-200">library</span></span>
 
-## <a name="library"></a>bibliothèque
+<span data-ttu-id="bf068-201">Ensemble d’API que peuvent appeler les applications ou d’autres bibliothèques.</span><span class="sxs-lookup"><span data-stu-id="bf068-201">A collection of APIs that can be called by apps or other libraries.</span></span> <span data-ttu-id="bf068-202">Une bibliothèque .NET est composée d’un ou plusieurs [assemblys](#assembly).</span><span class="sxs-lookup"><span data-stu-id="bf068-202">A .NET library is composed of one or more [assemblies](#assembly).</span></span>
 
-Ensemble d’API que peuvent appeler les applications ou d’autres bibliothèques. Une bibliothèque .NET est composée d’un ou plusieurs [assemblys](#assembly).
+<span data-ttu-id="bf068-203">Les mots bibliothèque et [framework](#framework) sont souvent utilisés indifféremment.</span><span class="sxs-lookup"><span data-stu-id="bf068-203">The words library and [framework](#framework) are often used synonymously.</span></span>
 
-Les mots bibliothèque et [framework](#framework) sont souvent utilisés indifféremment.
+## <a name="metapackage"></a><span data-ttu-id="bf068-204">métapackage</span><span class="sxs-lookup"><span data-stu-id="bf068-204">metapackage</span></span>
 
-## <a name="metapackage"></a>métapackage
+<span data-ttu-id="bf068-205">Package NuGet ne disposant pas de sa propre bibliothèque, mais qui est simplement une liste de dépendances.</span><span class="sxs-lookup"><span data-stu-id="bf068-205">A NuGet package that has no library of its own but is only a list of dependencies.</span></span> <span data-ttu-id="bf068-206">Les packages inclus peuvent éventuellement établir l’API pour un framework cible.</span><span class="sxs-lookup"><span data-stu-id="bf068-206">The included packages can optionally establish the API for a target framework.</span></span>
 
-Package NuGet ne disposant pas de sa propre bibliothèque, mais qui est simplement une liste de dépendances. Les packages inclus peuvent éventuellement établir l’API pour un framework cible.
+<span data-ttu-id="bf068-207">Consultez [Packages, métapackages et frameworks](../core/packages.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-207">See [Packages, Metapackages and Frameworks](../core/packages.md)</span></span>
 
-Consultez [Packages, métapackages et frameworks](../core/packages.md).
+## <a name="mono"></a><span data-ttu-id="bf068-208">Mono</span><span class="sxs-lookup"><span data-stu-id="bf068-208">Mono</span></span>
 
-## <a name="mono"></a>Mono
+<span data-ttu-id="bf068-209">Mono est une implémentation de .NET qui est principalement utilisée quand un runtime réduit est requis.</span><span class="sxs-lookup"><span data-stu-id="bf068-209">Mono is a .NET implementation that is mainly used when a small runtime is required.</span></span> <span data-ttu-id="bf068-210">Ce runtime, qui alimente les applications Xamarin sur Android, Mac, iOS, tvOS et watchOS, est avant tout axé sur les applications qui requièrent un faible encombrement.</span><span class="sxs-lookup"><span data-stu-id="bf068-210">It is the runtime that powers Xamarin applications on Android, Mac, iOS, tvOS and watchOS and is focused primarily on apps that require a small footprint.</span></span>
 
-Mono est une implémentation de .NET qui est principalement utilisée quand un runtime réduit est requis. Ce runtime, qui alimente les applications Xamarin sur Android, Mac, iOS, tvOS et watchOS, est avant tout axé sur les applications qui requièrent un faible encombrement.
+<span data-ttu-id="bf068-211">Il prend en charge toutes les versions de .NET Standard publiées.</span><span class="sxs-lookup"><span data-stu-id="bf068-211">It supports all of the currently published .NET Standard versions.</span></span>
 
-Il prend en charge toutes les versions de .NET Standard publiées.
+<span data-ttu-id="bf068-212">Historiquement, Mono implémentait l’API plus volumineuse de .NET Framework et émulait certaines des fonctionnalités les plus populaires sur Unix.</span><span class="sxs-lookup"><span data-stu-id="bf068-212">Historically, Mono implemented the larger API of the .NET Framework and emulated some of the most popular capabilities on Unix.</span></span> <span data-ttu-id="bf068-213">Il est parfois utilisé pour exécuter des applications .NET qui s’appuient sur ces fonctionnalités sous Unix.</span><span class="sxs-lookup"><span data-stu-id="bf068-213">It is sometimes used to run .NET applications that rely on those capabilities on Unix.</span></span>
 
-Historiquement, Mono implémentait l’API plus volumineuse de .NET Framework et émulait certaines des fonctionnalités les plus populaires sur Unix. Il est parfois utilisé pour exécuter des applications .NET qui s’appuient sur ces fonctionnalités sous Unix.
+<span data-ttu-id="bf068-214">Mono est généralement utilisé avec un compilateur juste-à-temps, mais il comporte également un compilateur statique complet (compilation Ahead Of Time) qui est utilisé sur des plateformes comme iOS.</span><span class="sxs-lookup"><span data-stu-id="bf068-214">Mono is typically used with a just-in-time compiler, but it also features a full static compiler (ahead-of-time compilation) that is used on platforms like iOS.</span></span>
 
-Mono est généralement utilisé avec un compilateur juste-à-temps, mais il comporte également un compilateur statique complet (compilation Ahead Of Time) qui est utilisé sur des plateformes comme iOS.
+<span data-ttu-id="bf068-215">Pour en savoir plus sur Mono, consultez la [documentation Mono](http://www.mono-project.com/docs/).</span><span class="sxs-lookup"><span data-stu-id="bf068-215">To learn more about Mono, see the [Mono documentation](http://www.mono-project.com/docs/).</span></span>
 
-Pour en savoir plus sur Mono, consultez la [documentation Mono](http://www.mono-project.com/docs/).
+## <a name="net"></a><span data-ttu-id="bf068-216">.NET</span><span class="sxs-lookup"><span data-stu-id="bf068-216">.NET</span></span>
 
-## <a name="net"></a>.NET
+<span data-ttu-id="bf068-217">Terme générique désignant [.NET Standard](#net-standard), ainsi que toutes les charges de travail et les [implémentations de .NET](#implementation-of-net).</span><span class="sxs-lookup"><span data-stu-id="bf068-217">The umbrella term for [.NET Standard](#net-standard) and all [.NET implementations](#implementation-of-net) and workloads.</span></span> <span data-ttu-id="bf068-218">Toujours en majuscules, jamais « .Net ».</span><span class="sxs-lookup"><span data-stu-id="bf068-218">Always capitalized, never ".Net".</span></span>
 
-Terme générique désignant [.NET Standard](#net-standard), ainsi que toutes les charges de travail et les [implémentations de .NET](#implementation-of-net). Toujours en majuscules, jamais « .Net ».
+<span data-ttu-id="bf068-219">Consultez le [Guide de .NET](index.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-219">See the [.NET Guide](index.md)</span></span>
 
-Consultez le [Guide de .NET](index.md).
+## <a name="net-core"></a><span data-ttu-id="bf068-220">.NET Core</span><span class="sxs-lookup"><span data-stu-id="bf068-220">.NET Core</span></span> 
 
-## <a name="net-core"></a>.NET Core 
+<span data-ttu-id="bf068-221">Implémentation multiplateforme, hautes performances et open source de .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-221">A cross-platform, high-performance, open source implementation of .NET.</span></span> <span data-ttu-id="bf068-222">Inclut CoreCLR (Core Common Language Runtime), CoreRT (Core AOT Runtime, en cours de développement), la bibliothèque de classes de base et le SDK Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-222">Includes the Core Common Language Runtime (CoreCLR), the Core AOT Runtime (CoreRT, in development), the Core Base Class Library, and the Core SDK.</span></span>
 
-Implémentation multiplateforme, hautes performances et open source de .NET. Inclut CoreCLR (Core Common Language Runtime), CoreRT (Core AOT Runtime, en cours de développement), la bibliothèque de classes de base et le SDK Core.
+<span data-ttu-id="bf068-223">Consultez [.NET Core](../core/index.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-223">See [.NET Core](../core/index.md).</span></span>
 
-Consultez [.NET Core](../core/index.md).
+## <a name="net-core-cli"></a><span data-ttu-id="bf068-224">CLI .NET Core</span><span class="sxs-lookup"><span data-stu-id="bf068-224">.NET Core CLI</span></span>
 
-## <a name="net-core-cli"></a>CLI .NET Core
+<span data-ttu-id="bf068-225">Chaîne d’outils multiplateforme pour développer des applications .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-225">A cross-platform toolchain for developing .NET Core applications.</span></span>
 
-Chaîne d’outils multiplateforme pour développer des applications .NET Core.
+<span data-ttu-id="bf068-226">Consultez [Outils de l’interface de ligne de commande (CLI) de .NET Core](../core/tools/index.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-226">See [.NET Core command-line interface (CLI) tools](../core/tools/index.md).</span></span>
 
-Consultez [Outils de l’interface de ligne de commande (CLI) de .NET Core](../core/tools/index.md).
+## <a name="net-core-sdk"></a><span data-ttu-id="bf068-227">SDK .NET Core</span><span class="sxs-lookup"><span data-stu-id="bf068-227">.NET Core SDK</span></span>
 
-## <a name="net-core-sdk"></a>SDK .NET Core
+<span data-ttu-id="bf068-228">Ensemble de bibliothèques et d’outils qui permettent aux développeurs de créer des applications et des bibliothèques .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-228">A set of libraries and tools that allow developers to create .NET Core applications and libraries.</span></span> <span data-ttu-id="bf068-229">Inclut la [CLI .NET Core](#net-core-cli) pour la génération d’applications, les bibliothèques .NET Core et le runtime pour la génération et l’exécution d’applications et l’exécutable dotnet (*dotnet.exe*) qui exécute les commandes CLI et les applications.</span><span class="sxs-lookup"><span data-stu-id="bf068-229">Includes the [.NET Core CLI](#net-core-cli) for building apps, .NET Core libraries and runtime for building and running apps, and the dotnet executable (*dotnet.exe*) that runs CLI commands and runs applications.</span></span>
 
-Ensemble de bibliothèques et d’outils qui permettent aux développeurs de créer des applications et des bibliothèques .NET Core. Inclut la [CLI .NET Core](#net-core-cli) pour la génération d’applications, les bibliothèques .NET Core et le runtime pour la génération et l’exécution d’applications et l’exécutable dotnet (*dotnet.exe*) qui exécute les commandes CLI et les applications.
+<span data-ttu-id="bf068-230">Consultez [Vue d’ensemble du SDK .NET Core](../core/sdk.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-230">See [.NET Core SDK Overview](../core/sdk.md).</span></span>
 
-Consultez [Vue d’ensemble du SDK .NET Core](../core/sdk.md).
+## <a name="net-framework"></a><span data-ttu-id="bf068-231">.NET Framework</span><span class="sxs-lookup"><span data-stu-id="bf068-231">.NET Framework</span></span>
 
-## <a name="net-framework"></a>.NET Framework
+<span data-ttu-id="bf068-232">Implémentation de .NET qui s’exécute uniquement sur Windows.</span><span class="sxs-lookup"><span data-stu-id="bf068-232">An implementation of .NET that runs only on Windows.</span></span> <span data-ttu-id="bf068-233">Inclut le Common Language Runtime (CLR), la bibliothèque de classes de base et des bibliothèques de framework d’application telles qu’ASP.NET, Windows Forms et WPF.</span><span class="sxs-lookup"><span data-stu-id="bf068-233">Includes the Common Language Runtime (CLR), the Base Class Library, and application framework libraries such as ASP.NET, Windows Forms, and WPF.</span></span>
 
-Implémentation de .NET qui s’exécute uniquement sur Windows. Inclut le Common Language Runtime (CLR), la bibliothèque de classes de base et des bibliothèques de framework d’application telles qu’ASP.NET, Windows Forms et WPF.
+<span data-ttu-id="bf068-234">Consultez [Guide du .NET Framework](../framework/index.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-234">See [.NET Framework Guide](../framework/index.md).</span></span>
 
-Consultez [Guide du .NET Framework](../framework/index.md).
+## <a name="net-native"></a><span data-ttu-id="bf068-235">.NET Native</span><span class="sxs-lookup"><span data-stu-id="bf068-235">.NET Native</span></span>
 
-## <a name="net-native"></a>.NET Native
+<span data-ttu-id="bf068-236">Chaîne d’outils de compilateur qui génère du code natif Ahead Of Time (AOT), par opposition à juste-à-temps (JIT).</span><span class="sxs-lookup"><span data-stu-id="bf068-236">A compiler tool chain that produces native code ahead-of-time (AOT), as opposed to just-in-time (JIT).</span></span>
 
-Chaîne d’outils de compilateur qui génère du code natif Ahead Of Time (AOT), par opposition à juste-à-temps (JIT).
+<span data-ttu-id="bf068-237">La compilation se produit sur la machine du développeur, à l’image du fonctionnement d’un éditeur de liens et d’un compilateur C++.</span><span class="sxs-lookup"><span data-stu-id="bf068-237">Compilation happens on the developer's machine similar to the way a C++ compiler and linker works.</span></span> <span data-ttu-id="bf068-238">Elle supprime le code inutilisé et consacre plus de temps à l’optimisation du code.</span><span class="sxs-lookup"><span data-stu-id="bf068-238">It removes unused code and spends more time optimizing it.</span></span> <span data-ttu-id="bf068-239">Elle extrait le code des bibliothèques et le fusionne dans le fichier exécutable.</span><span class="sxs-lookup"><span data-stu-id="bf068-239">It extracts code from libraries and merges them into the executable.</span></span> <span data-ttu-id="bf068-240">Le résultat est un module unique qui représente l’application entière.</span><span class="sxs-lookup"><span data-stu-id="bf068-240">The result is a single module that represents the entire app.</span></span>
 
-La compilation se produit sur la machine du développeur, à l’image du fonctionnement d’un éditeur de liens et d’un compilateur C++. Elle supprime le code inutilisé et consacre plus de temps à l’optimisation du code. Elle extrait le code des bibliothèques et le fusionne dans le fichier exécutable. Le résultat est un module unique qui représente l’application entière.
+<span data-ttu-id="bf068-241">UWP fut le premier framework d’application pris en charge par .NET Native.</span><span class="sxs-lookup"><span data-stu-id="bf068-241">UWP was the first application framework supported by .NET Native.</span></span> <span data-ttu-id="bf068-242">De nos jours, nous prenons en charge la génération d’applications console natives pour Windows, macOS et Linux.</span><span class="sxs-lookup"><span data-stu-id="bf068-242">Now, we support building native console apps for Windows, macOS, and Linux.</span></span>
 
-UWP fut le premier framework d’application pris en charge par .NET Native. De nos jours, nous prenons en charge la génération d’applications console natives pour Windows, macOS et Linux.
+<span data-ttu-id="bf068-243">Consultez [Présentation de .NET Native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-243">See [Intro to .NET Native and CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)</span></span>
 
-Consultez [Présentation de .NET Native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).
+## <a name="net-standard"></a><span data-ttu-id="bf068-244">.NET Standard</span><span class="sxs-lookup"><span data-stu-id="bf068-244">.NET Standard</span></span>
 
-## <a name="net-standard"></a>.NET Standard
+<span data-ttu-id="bf068-245">Spécification formelle des API .NET disponibles dans chaque implémentation de .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-245">A formal specification of .NET APIs that are available in each .NET implementation.</span></span>
 
-Spécification formelle des API .NET disponibles dans chaque implémentation de .NET.
+<span data-ttu-id="bf068-246">La spécification .NET Standard est parfois appelée bibliothèque dans la documentation.</span><span class="sxs-lookup"><span data-stu-id="bf068-246">The .NET Standard specification is sometimes called a library in the documentation.</span></span> <span data-ttu-id="bf068-247">Comme une bibliothèque inclut des implémentations d’API, outre des spécifications (interfaces), il est trompeur d’appeler .NET Standard une « bibliothèque ».</span><span class="sxs-lookup"><span data-stu-id="bf068-247">Because a library includes API implementations, not only specifications (interfaces), it's misleading to call .NET Standard a "library."</span></span> <span data-ttu-id="bf068-248">Nous prévoyons de supprimer cette utilisation de la documentation, sauf en référence au nom du métapackage .NET Standard (`NETStandard.Library`).</span><span class="sxs-lookup"><span data-stu-id="bf068-248">We plan to eliminate that usage from the documentation, except in reference to the name of the .NET Standard metapackage (`NETStandard.Library`).</span></span>
 
-La spécification .NET Standard est parfois appelée bibliothèque dans la documentation. Comme une bibliothèque inclut des implémentations d’API, outre des spécifications (interfaces), il est trompeur d’appeler .NET Standard une « bibliothèque ». Nous prévoyons de supprimer cette utilisation de la documentation, sauf en référence au nom du métapackage .NET Standard (`NETStandard.Library`).
+<span data-ttu-id="bf068-249">Consultez [.NET Standard](net-standard.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-249">See [.NET Standard](net-standard.md).</span></span>
 
-Consultez [.NET Standard](net-standard.md).
+## <a name="ngen"></a><span data-ttu-id="bf068-250">NGEN</span><span class="sxs-lookup"><span data-stu-id="bf068-250">NGEN</span></span>
 
-## <a name="ngen"></a>NGEN
+<span data-ttu-id="bf068-251">Génération (d’images) native</span><span class="sxs-lookup"><span data-stu-id="bf068-251">Native (image) generation.</span></span>
 
-Génération (d’images) native
+<span data-ttu-id="bf068-252">Vous pouvez considérer cette technologie comme un compilateur JIT persistant.</span><span class="sxs-lookup"><span data-stu-id="bf068-252">You can think of this technology as a persistent JIT compiler.</span></span> <span data-ttu-id="bf068-253">Elle compile généralement le code sur la machine où le code est exécuté, mais la compilation se produit en règle générale au moment de l’installation.</span><span class="sxs-lookup"><span data-stu-id="bf068-253">It usually compiles code on the machine where the code is executed, but compilation typically occurs at install time.</span></span>
 
-Vous pouvez considérer cette technologie comme un compilateur JIT persistant. Elle compile généralement le code sur la machine où le code est exécuté, mais la compilation se produit en règle générale au moment de l’installation.
+## <a name="package"></a><span data-ttu-id="bf068-254">package</span><span class="sxs-lookup"><span data-stu-id="bf068-254">package</span></span>
 
-## <a name="package"></a>package
+<span data-ttu-id="bf068-255">Un package NuGet &mdash; ou simplement un package &mdash; est un fichier *.zip* qui comporte un ou plusieurs assemblys portant le même nom, ainsi que des métadonnées supplémentaires, telles que le nom de l’auteur.</span><span class="sxs-lookup"><span data-stu-id="bf068-255">A NuGet package &mdash; or just a package &mdash; is a *.zip* file with one or more assemblies of the same name along with additional metadata such as the author name.</span></span>
 
-Un package NuGet &mdash; ou simplement un package &mdash; est un fichier *.zip* qui comporte un ou plusieurs assemblys portant le même nom, ainsi que des métadonnées supplémentaires, telles que le nom de l’auteur.
+<span data-ttu-id="bf068-256">Le fichier *.zip* porte l’extension *.nupkg* et peut contenir des composants, tels que des fichiers *.dll* et des fichiers *.xml*, à utiliser avec plusieurs frameworks et versions.</span><span class="sxs-lookup"><span data-stu-id="bf068-256">The *.zip* file has a *.nupkg* extension and may contain assets, such as *.dll* files and *.xml* files, for use with multiple frameworks and versions.</span></span> <span data-ttu-id="bf068-257">Quand ils sont installés dans une application ou une bibliothèque, les composants appropriés sont sélectionnés en fonction du framework cible spécifié par l’application ou la bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="bf068-257">When installed in an app or library, the appropriate assets are selected based on the target framework specified by the app or library.</span></span> <span data-ttu-id="bf068-258">Les composants qui définissent l’interface se trouvent dans le dossier *ref*, tandis que les ressources qui définissent l’implémentation se trouvent dans le dossier *lib*.</span><span class="sxs-lookup"><span data-stu-id="bf068-258">The assets that define the interface are in the *ref* folder, and the assets that define the implementation are in the *lib* folder.</span></span>
 
-Le fichier *.zip* porte l’extension *.nupkg* et peut contenir des composants, tels que des fichiers *.dll* et des fichiers *.xml*, à utiliser avec plusieurs frameworks et versions. Quand ils sont installés dans une application ou une bibliothèque, les composants appropriés sont sélectionnés en fonction du framework cible spécifié par l’application ou la bibliothèque. Les composants qui définissent l’interface se trouvent dans le dossier *ref*, tandis que les ressources qui définissent l’implémentation se trouvent dans le dossier *lib*.
+## <a name="platform"></a><span data-ttu-id="bf068-259">platform</span><span class="sxs-lookup"><span data-stu-id="bf068-259">platform</span></span>
 
-## <a name="platform"></a>platform
+<span data-ttu-id="bf068-260">Système d’exploitation et le matériel sur lequel il s’exécute, tel que Windows, macOS, Linux, iOS et Android.</span><span class="sxs-lookup"><span data-stu-id="bf068-260">An operating system and the hardware it runs on, such as Windows, macOS, Linux, iOS, and Android.</span></span>
 
-Système d’exploitation et le matériel sur lequel il s’exécute, tel que Windows, macOS, Linux, iOS et Android.
+<span data-ttu-id="bf068-261">Voici quelques exemples d’utilisation dans des phrases :</span><span class="sxs-lookup"><span data-stu-id="bf068-261">Here are examples of usage in sentences:</span></span>
 
-Voici quelques exemples d’utilisation dans des phrases :
+- <span data-ttu-id="bf068-262">« .NET Core est une implémentation multiplateforme de .NET ».</span><span class="sxs-lookup"><span data-stu-id="bf068-262">".NET Core is a cross-platform implementation of .NET."</span></span> 
+- <span data-ttu-id="bf068-263">« Les profils de bibliothèque de classes portable représentent les plateformes Microsoft, alors que .NET Standard est indépendant de la plateforme. »</span><span class="sxs-lookup"><span data-stu-id="bf068-263">"PCL profiles represent Microsoft platforms, while the .NET Standard is agnostic to platform."</span></span>
 
-- « .NET Core est une implémentation multiplateforme de .NET ». 
-- « Les profils de bibliothèque de classes portable représentent les plateformes Microsoft, alors que .NET Standard est indépendant de la plateforme. »
+<span data-ttu-id="bf068-264">La documentation .NET utilise fréquemment « plateforme .NET » pour désigner soit une implémentation de .NET, soit la pile .NET y compris toutes les implémentations.</span><span class="sxs-lookup"><span data-stu-id="bf068-264">The .NET documentation frequently uses ".NET platform" to mean either an implementation of .NET or the .NET stack including all implementations.</span></span> <span data-ttu-id="bf068-265">Ces deux utilisations ayant tendance à être confondues avec la signification principale (système d’exploitation/matériel), nous envisageons de les supprimer de la documentation.</span><span class="sxs-lookup"><span data-stu-id="bf068-265">Both of these usages tend to get confused with the primary (OS/hardware) meaning, so we plan to eliminate these usages from the documentation.</span></span>
 
-La documentation .NET utilise fréquemment « plateforme .NET » pour désigner soit une implémentation de .NET, soit la pile .NET y compris toutes les implémentations. Ces deux utilisations ayant tendance à être confondues avec la signification principale (système d’exploitation/matériel), nous envisageons de les supprimer de la documentation.
+## <a name="runtime"></a><span data-ttu-id="bf068-266">runtime</span><span class="sxs-lookup"><span data-stu-id="bf068-266">runtime</span></span>
 
-## <a name="runtime"></a>runtime
+<span data-ttu-id="bf068-267">Environnement d’exécution d’un programme managé.</span><span class="sxs-lookup"><span data-stu-id="bf068-267">The execution environment for a managed program.</span></span>
 
-Environnement d’exécution d’un programme managé.
+<span data-ttu-id="bf068-268">Le système d’exploitation fait partie de l’environnement d’exécution, mais pas du runtime .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-268">The OS is part of the runtime environment but is not part of the .NET runtime.</span></span> <span data-ttu-id="bf068-269">Voici quelques exemples de runtimes .NET :</span><span class="sxs-lookup"><span data-stu-id="bf068-269">Here are some examples of .NET runtimes:</span></span>
 
-Le système d’exploitation fait partie de l’environnement d’exécution, mais pas du runtime .NET. Voici quelques exemples de runtimes .NET :
+- <span data-ttu-id="bf068-270">Common Language Runtime (CLR)</span><span class="sxs-lookup"><span data-stu-id="bf068-270">Common Language Runtime (CLR)</span></span>
+- <span data-ttu-id="bf068-271">Core Common Language Runtime (CoreCLR)</span><span class="sxs-lookup"><span data-stu-id="bf068-271">Core Common Language Runtime (CoreCLR)</span></span>
+- <span data-ttu-id="bf068-272">.NET Native (pour la plateforme Windows universelle)</span><span class="sxs-lookup"><span data-stu-id="bf068-272">.NET Native (for UWP)</span></span>
+- <span data-ttu-id="bf068-273">Runtime Mono</span><span class="sxs-lookup"><span data-stu-id="bf068-273">Mono runtime</span></span>
 
-- Common Language Runtime (CLR)
-- Core Common Language Runtime (CoreCLR)
-- .NET Native (pour la plateforme Windows universelle)
-- Runtime Mono
+<span data-ttu-id="bf068-274">Parfois, la documentation de .NET utilise « runtime » pour désigner une implémentation de .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-274">The .NET documentation sometimes uses "runtime" to mean an implementation of .NET.</span></span> <span data-ttu-id="bf068-275">Par exemple, dans les phrases suivantes, « runtime » doit être remplacé par « implémentation » :</span><span class="sxs-lookup"><span data-stu-id="bf068-275">For example, in the following sentences "runtime" should be replaced with "implementation":</span></span>
 
-Parfois, la documentation de .NET utilise « runtime » pour désigner une implémentation de .NET. Par exemple, dans les phrases suivantes, « runtime » doit être remplacé par « implémentation » :
+- <span data-ttu-id="bf068-276">« Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard. »</span><span class="sxs-lookup"><span data-stu-id="bf068-276">"The various .NET runtimes implement specific versions of .NET Standard."</span></span>
+- <span data-ttu-id="bf068-277">« Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. »</span><span class="sxs-lookup"><span data-stu-id="bf068-277">"Libraries that are intended to run on multiple runtimes should target this framework."</span></span> <span data-ttu-id="bf068-278">(s’applique à .NET Standard)</span><span class="sxs-lookup"><span data-stu-id="bf068-278">(referring to .NET Standard)</span></span>
+- <span data-ttu-id="bf068-279">« Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="bf068-279">"The various .NET runtimes implement specific versions of .NET Standard.</span></span> <span data-ttu-id="bf068-280">…</span><span class="sxs-lookup"><span data-stu-id="bf068-280">…</span></span> <span data-ttu-id="bf068-281">Chaque version du runtime .NET publie la version .NET Standard la plus élevée qu’elle prend en charge... »</span><span class="sxs-lookup"><span data-stu-id="bf068-281">Each .NET runtime version advertises the highest .NET Standard version it supports …"</span></span>
 
-- « Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard. »
-- « Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. » (s’applique à .NET Standard)
-- « Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard. … Chaque version du runtime .NET publie la version .NET Standard la plus élevée qu’elle prend en charge... »
+<span data-ttu-id="bf068-282">Nous envisageons de supprimer cette utilisation incohérente.</span><span class="sxs-lookup"><span data-stu-id="bf068-282">We plan to eliminate this inconsistent usage.</span></span> 
 
-Nous envisageons de supprimer cette utilisation incohérente. 
+## <a name="stack"></a><span data-ttu-id="bf068-283">pile</span><span class="sxs-lookup"><span data-stu-id="bf068-283">stack</span></span>
 
-## <a name="stack"></a>pile
+<span data-ttu-id="bf068-284">Ensemble de technologies de programmation qui sont utilisées conjointement pour générer et exécuter des applications.</span><span class="sxs-lookup"><span data-stu-id="bf068-284">A set of programming technologies that are used together to build and run applications.</span></span>
 
-Ensemble de technologies de programmation qui sont utilisées conjointement pour générer et exécuter des applications.
+<span data-ttu-id="bf068-285">L’expression « la pile .NET » fait référence à .NET Standard et à toutes les implémentations de .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-285">"The .NET stack" refers to the .NET Standard and all .NET implementations.</span></span> <span data-ttu-id="bf068-286">L’expression « une pile .NET » peut faire référence à une implémentation de .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-286">The phrase "a .NET stack" may refer to one implementation of .NET.</span></span> 
 
-L’expression « la pile .NET » fait référence à .NET Standard et à toutes les implémentations de .NET. L’expression « une pile .NET » peut faire référence à une implémentation de .NET. 
+## <a name="target-framework"></a><span data-ttu-id="bf068-287">version cible de .NET Framework</span><span class="sxs-lookup"><span data-stu-id="bf068-287">target framework</span></span>
 
-## <a name="target-framework"></a>version cible de .NET Framework
+<span data-ttu-id="bf068-288">Ensemble d’API sur lequel repose une bibliothèque ou une application .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-288">The collection of APIs that a .NET app or library relies on.</span></span>
 
-Ensemble d’API sur lequel repose une bibliothèque ou une application .NET.
+<span data-ttu-id="bf068-289">Une application ou une bibliothèque peut cibler une version de .NET Standard (par exemple, .NET Standard 2.0), qui est la spécification d’un ensemble standard d’API parmi toutes les implémentations de .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-289">An app or library can target a version of .NET Standard (for example, .NET Standard 2.0), which is specification for a standardized set of APIs across all .NET implementations.</span></span> <span data-ttu-id="bf068-290">Une application ou une bibliothèque peut également cibler une version d’une implémentation spécifique de .NET ; dans ce cas, elle a accès aux API spécifiques à l’implémentation.</span><span class="sxs-lookup"><span data-stu-id="bf068-290">An app or library can also target a version of a specific .NET implementation, in which case it gets access to implementation-specific APIs.</span></span> <span data-ttu-id="bf068-291">Par exemple, une application qui cible Xamarin.iOS accède aux wrappers d’API iOS fournis par Xamarin.</span><span class="sxs-lookup"><span data-stu-id="bf068-291">For example, an app that targets Xamarin.iOS gets access to Xamarin-provided iOS API wrappers.</span></span>
 
-Une application ou une bibliothèque peut cibler une version de .NET Standard (par exemple, .NET Standard 2.0), qui est la spécification d’un ensemble standard d’API parmi toutes les implémentations de .NET. Une application ou une bibliothèque peut également cibler une version d’une implémentation spécifique de .NET ; dans ce cas, elle a accès aux API spécifiques à l’implémentation. Par exemple, une application qui cible Xamarin.iOS accède aux wrappers d’API iOS fournis par Xamarin.
+<span data-ttu-id="bf068-292">Pour certains frameworks cibles (par exemple, .NET Framework), les API disponibles sont définies par les assemblys qu’une implémentation de .NET installe sur un système. Les API peuvent inclure des API de framework d’application (par exemple, ASP.NET ou WinForms).</span><span class="sxs-lookup"><span data-stu-id="bf068-292">For some target frameworks (for example, the .NET Framework) the available APIs are defined by the assemblies that a .NET implementation installs on a system, which may include application framework APIs (for example, ASP.NET, WinForms).</span></span> <span data-ttu-id="bf068-293">Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et .NET Core), les API de framework sont définies par les packages installés dans l’application ou la bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="bf068-293">For package-based target frameworks (such as .NET Standard and .NET Core), the framework APIs are defined by the packages installed in the app or library.</span></span> <span data-ttu-id="bf068-294">Dans ce cas, le framework cible spécifie implicitement un métapackage qui référence tous les packages constituant le framework.</span><span class="sxs-lookup"><span data-stu-id="bf068-294">In that case, the target framework implicitly specifies a metapackage that references all the packages that together make up the framework.</span></span>
 
-Pour certains frameworks cibles (par exemple, .NET Framework), les API disponibles sont définies par les assemblys qu’une implémentation de .NET installe sur un système. Les API peuvent inclure des API de framework d’application (par exemple, ASP.NET ou WinForms). Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et .NET Core), les API de framework sont définies par les packages installés dans l’application ou la bibliothèque. Dans ce cas, le framework cible spécifie implicitement un métapackage qui référence tous les packages constituant le framework.
+<span data-ttu-id="bf068-295">Consultez [Versions cibles de .NET Framework](frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-295">See [Target Frameworks](frameworks.md).</span></span>
 
-Consultez [Versions cibles de .NET Framework](frameworks.md).
+## <a name="tfm"></a><span data-ttu-id="bf068-296">TFM</span><span class="sxs-lookup"><span data-stu-id="bf068-296">TFM</span></span>
 
-## <a name="tfm"></a>TFM
+<span data-ttu-id="bf068-297">Moniker de la version cible de .Net Framework.</span><span class="sxs-lookup"><span data-stu-id="bf068-297">Target framework moniker.</span></span>
 
-Moniker de la version cible de .Net Framework.
+<span data-ttu-id="bf068-298">Format de jeton standardisé pour la spécification du framework cible d’une bibliothèque ou d’une application .NET.</span><span class="sxs-lookup"><span data-stu-id="bf068-298">A standardized token format for specifying the target framework of a .NET app or library.</span></span> <span data-ttu-id="bf068-299">Les frameworks cibles sont en général référencés par un nom court, tel que `net462`.</span><span class="sxs-lookup"><span data-stu-id="bf068-299">Target frameworks are typically referenced by a short name, such as `net462`.</span></span> <span data-ttu-id="bf068-300">Les TFM de forme longue (par exemple, .NETFramework,Version=4.6.2) existent, mais ne sont généralement pas utilisés pour spécifier un framework cible.</span><span class="sxs-lookup"><span data-stu-id="bf068-300">Long-form TFMs (such as .NETFramework,Version=4.6.2) exist but are not generally used to specify a target framework.</span></span>
 
-Format de jeton standardisé pour la spécification du framework cible d’une bibliothèque ou d’une application .NET. Les frameworks cibles sont en général référencés par un nom court, tel que `net462`. Les TFM de forme longue (par exemple, .NETFramework,Version=4.6.2) existent, mais ne sont généralement pas utilisés pour spécifier un framework cible.
+<span data-ttu-id="bf068-301">Consultez [Versions cibles de .NET Framework](frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="bf068-301">See [Target Frameworks](frameworks.md).</span></span>
 
-Consultez [Versions cibles de .NET Framework](frameworks.md).
+## <a name="uwp"></a><span data-ttu-id="bf068-302">UWP</span><span class="sxs-lookup"><span data-stu-id="bf068-302">UWP</span></span>
 
-## <a name="uwp"></a>UWP
+<span data-ttu-id="bf068-303">Plateforme Windows universelle.</span><span class="sxs-lookup"><span data-stu-id="bf068-303">Universal Windows Platform.</span></span>
 
-Plateforme Windows universelle.
+<span data-ttu-id="bf068-304">Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT).</span><span class="sxs-lookup"><span data-stu-id="bf068-304">An implementation of .NET that is used for building modern, touch-enabled Windows applications and software for the Internet of Things (IoT).</span></span> <span data-ttu-id="bf068-305">Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox.</span><span class="sxs-lookup"><span data-stu-id="bf068-305">It's designed to unify the different types of devices that you may want to target, including PCs, tablets, phablets, phones, and even the Xbox.</span></span> <span data-ttu-id="bf068-306">UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT).</span><span class="sxs-lookup"><span data-stu-id="bf068-306">UWP provides many services, such as a centralized app store, an execution environment (AppContainer), and a set of Windows APIs to use instead of Win32 (WinRT).</span></span> <span data-ttu-id="bf068-307">Les applications peuvent être écrites en C++, C#, VB.NET et JavaScript.</span><span class="sxs-lookup"><span data-stu-id="bf068-307">Apps can be written in C++, C#, VB.NET, and JavaScript.</span></span> <span data-ttu-id="bf068-308">Quand vous utilisez C# et VB.NET, les API .NET sont fournies par .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bf068-308">When using C# and VB.NET, the .NET APIs are provided by .NET Core.</span></span>
 
-Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C++, C#, VB.NET et JavaScript. Quand vous utilisez C# et VB.NET, les API .NET sont fournies par .NET Core.
+## <a name="see-also"></a><span data-ttu-id="bf068-309">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bf068-309">See also</span></span>
 
-## <a name="see-also"></a>Voir aussi
-
-[Guide de .NET](index.md)  
-[Guide du .NET Framework](../framework/index.md)  
-[.NET Core](../core/index.md)  
-[ASP.NET Overview](/aspnet/index#pivot=aspnet) (Vue d’ensemble d’ASP.NET)  
-[ASP.NET Core Overview](/aspnet/index#pivot=core) (Vue d’ensemble d’ASP.NET Core)  
-
+[<span data-ttu-id="bf068-310">Guide de .NET</span><span class="sxs-lookup"><span data-stu-id="bf068-310">.NET Guide</span></span>](index.md)  
+[<span data-ttu-id="bf068-311">Guide du .NET Framework</span><span class="sxs-lookup"><span data-stu-id="bf068-311">.NET Framework Guide</span></span>](../framework/index.md)  
+[<span data-ttu-id="bf068-312">.NET Core</span><span class="sxs-lookup"><span data-stu-id="bf068-312">.NET Core</span></span>](../core/index.md)  
+<span data-ttu-id="bf068-313">[ASP.NET Overview](/aspnet/index#pivot=aspnet) (Vue d’ensemble d’ASP.NET)</span><span class="sxs-lookup"><span data-stu-id="bf068-313">[ASP.NET Overview](/aspnet/index#pivot=aspnet)</span></span>  
+<span data-ttu-id="bf068-314">[ASP.NET Core Overview](/aspnet/index#pivot=core) (Vue d’ensemble d’ASP.NET Core)</span><span class="sxs-lookup"><span data-stu-id="bf068-314">[ASP.NET Core Overview](/aspnet/index#pivot=core)</span></span>  
 

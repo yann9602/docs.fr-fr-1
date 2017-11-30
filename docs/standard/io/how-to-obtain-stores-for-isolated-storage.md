@@ -1,64 +1,71 @@
 ---
-title: "Obtention de magasins | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "magasins, obtenir"
-  - "stockage de données à l’aide du stockage isolé, obtenir des magasins"
-  - "stockage isolé, obtenir des magasins"
-  - "magasins de données, obtenir"
-  - "stockage de données à l’aide du stockage isolé, obtenir des magasins"
+title: Obtention de magasins
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- stores, obtaining
+- storing data using isolated storage, obtaining stores
+- isolated storage, obtaining stores
+- data stores, obtaining
+- data storage using isolated storage, obtaining stores
 ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
-caps.latest.revision: 19
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: bb0b877aa0f4cee36bd1f8c1cea624cf9368fbaa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Obtention de magasins
-Un magasin isolé expose un système de fichiers virtuel dans un compartiment de données.  La classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile> fournit plusieurs méthodes pour interagir avec un magasin d'isolement.  Pour créer et extraire des magasins, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> propose trois méthodes statiques:  
+# <a name="how-to-obtain-stores-for-isolated-storage"></a><span data-ttu-id="bad1d-102">Obtention de magasins</span><span class="sxs-lookup"><span data-stu-id="bad1d-102">How to: Obtain Stores for Isolated Storage</span></span>
+<span data-ttu-id="bad1d-103">Un magasin isolé expose un système de fichiers virtuel dans un compartiment de données.</span><span class="sxs-lookup"><span data-stu-id="bad1d-103">An isolated store exposes a virtual file system within a data compartment.</span></span> <span data-ttu-id="bad1d-104">La <xref:System.IO.IsolatedStorage.IsolatedStorageFile> classe fournit plusieurs méthodes pour interagir avec un magasin isolé.</span><span class="sxs-lookup"><span data-stu-id="bad1d-104">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class supplies a number of methods for interacting with an isolated store.</span></span> <span data-ttu-id="bad1d-105">Pour créer et extraire des magasins, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> propose trois méthodes statiques :</span><span class="sxs-lookup"><span data-stu-id="bad1d-105">To create and retrieve stores, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> provides three static methods:</span></span>  
   
--   L'appel de <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> renvoie un stockage isolé par utilisateur et par assembly.  
+-   <span data-ttu-id="bad1d-106"><xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>Retourne un stockage isolé par utilisateur et par assembly.</span><span class="sxs-lookup"><span data-stu-id="bad1d-106"><xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> returns storage that is isolated by user and assembly.</span></span>  
   
--   L'appel de <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> renvoie un stockage isolé par domaine et par assembly.  
+-   <span data-ttu-id="bad1d-107"><xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>Retourne un stockage isolé par domaine et par assembly.</span><span class="sxs-lookup"><span data-stu-id="bad1d-107"><xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> returns storage that is isolated by domain and assembly.</span></span>  
   
-     Ces deux méthodes extraient un magasin qui appartient au code à partir duquel elles sont appelées.  
+     <span data-ttu-id="bad1d-108">Les deux méthodes récupèrent un magasin qui appartient au code à partir de laquelle elles sont appelées.</span><span class="sxs-lookup"><span data-stu-id="bad1d-108">Both methods retrieve a store that belongs to the code from which they are called.</span></span>  
   
--   La méthode statique <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> retourne un magasin isolé spécifié en passant une combinaison de paramètres de portée.  
+-   <span data-ttu-id="bad1d-109">La méthode statique <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> retourne un magasin isolé spécifié en passant une combinaison de paramètres de portée.</span><span class="sxs-lookup"><span data-stu-id="bad1d-109">The static method <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> returns an isolated store that is specified by passing in a combination of scope parameters.</span></span>  
   
- L'exemple de code suivant extrait un magasin qui est isolé par utilisateur, domaine et assembly.  
+ <span data-ttu-id="bad1d-110">Le code suivant retourne un magasin isolé par utilisateur, assembly et le domaine.</span><span class="sxs-lookup"><span data-stu-id="bad1d-110">The following code returns a store that is isolated by user, assembly, and domain.</span></span>  
   
  [!code-cpp[Conceptual.IsolatedStorage#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source6.cpp#6)]
  [!code-csharp[Conceptual.IsolatedStorage#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source6.cs#6)]
  [!code-vb[Conceptual.IsolatedStorage#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source6.vb#6)]  
   
- Vous pouvez utiliser la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> pour spécifier qu'un magasin doit se déplacer avec un profil d'utilisateur itinérant.  Pour savoir comment mettre cela en place, consultez [Types d'isolation](../../../docs/standard/io/types-of-isolation.md).  
+ <span data-ttu-id="bad1d-111">Vous pouvez utiliser la <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> méthode pour spécifier qu’un magasin doit se déplacer avec un profil utilisateur itinérant.</span><span class="sxs-lookup"><span data-stu-id="bad1d-111">You can use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> method to specify that a store should roam with a roaming user profile.</span></span> <span data-ttu-id="bad1d-112">Pour plus d’informations sur la façon de configurer ce paramètre, consultez [Types d’Isolation](../../../docs/standard/io/types-of-isolation.md).</span><span class="sxs-lookup"><span data-stu-id="bad1d-112">For details on how to set this up, see [Types of Isolation](../../../docs/standard/io/types-of-isolation.md).</span></span>  
   
- Par défaut, des magasins isolés obtenus à partir d'assemblys distincts sont des magasins différents.  Vous pouvez accéder au magasin d'un assembly ou d'un domaine différent en passant une preuve d'assembly ou de domaine distincte comme les deux derniers paramètres de la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  Ceci exige une autorisation pour accéder au stockage isolé par l'identité de domaine d'application.  Pour plus d'informations, consultez la surcharge de méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  
+ <span data-ttu-id="bad1d-113">Les magasins isolés obtenues dans des assemblys différents sont, par défaut, des magasins différents.</span><span class="sxs-lookup"><span data-stu-id="bad1d-113">Isolated stores obtained from within different assemblies are, by default, different stores.</span></span> <span data-ttu-id="bad1d-114">Vous pouvez accéder au magasin d’un domaine ou un autre assembly en passant la preuve d’assembly ou de domaine dans les paramètres de la <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="bad1d-114">You can access the store of a different assembly or domain by passing in the assembly or domain evidence in the parameters of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> method.</span></span> <span data-ttu-id="bad1d-115">Requiert l’autorisation pour accéder au stockage isolé par l’identité de domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="bad1d-115">This requires permission to access isolated storage by application domain identity.</span></span> <span data-ttu-id="bad1d-116">Pour plus d’informations, consultez le <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> surcharges de méthode.</span><span class="sxs-lookup"><span data-stu-id="bad1d-116">For more information, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> method overloads.</span></span>  
   
- La méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>, et <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> renvoie un nouvel objet <xref:System.IO.IsolatedStorage.IsolatedStorageFile>.  Pour déterminer le type d'isolement le mieux adapté à une situation, consultez [Types d'isolements](../../../docs/standard/io/types-of-isolation.md).  Quand vous possédez un fichier objet de stockage isolé, vous pouvez utiliser les méthodes de stockage isolé pour lire, écrire, créer et supprimer des fichiers et des répertoires de fichier.  
+ <span data-ttu-id="bad1d-117">Le <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>, et <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> méthodes retournent un <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objet.</span><span class="sxs-lookup"><span data-stu-id="bad1d-117">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>, and <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> methods return an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object.</span></span> <span data-ttu-id="bad1d-118">Pour vous aider à déterminer le type d’isolation le plus approprié à votre situation, consultez [Types d’Isolation](../../../docs/standard/io/types-of-isolation.md).</span><span class="sxs-lookup"><span data-stu-id="bad1d-118">To help you decide which isolation type is most appropriate for your situation, see [Types of Isolation](../../../docs/standard/io/types-of-isolation.md).</span></span> <span data-ttu-id="bad1d-119">Lorsque vous disposez d’un objet de fichier de stockage isolé, vous pouvez utiliser les méthodes de stockage isolé pour lire, écrire, créer et supprimer des fichiers et répertoires.</span><span class="sxs-lookup"><span data-stu-id="bad1d-119">When you have an isolated storage file object, you can use the isolated storage methods to read, write, create, and delete files and directories.</span></span>  
   
- Aucun mécanisme ne peut empêcher au code de passer un objet <xref:System.IO.IsolatedStorage.IsolatedStorageFile> au code dont l'accès est insuffisant pour obtenir lui\-même le magasin.  Les identités de domaine et d'assembly et les autorisations de stockage isolé ne sont vérifiées que lorsqu'une référence à un objet <xref:System.IO.IsolatedStorage.IsolatedStorage> est obtenue, généralement dans une méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> ou <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  La responsabilité de la protection de références aux objets <xref:System.IO.IsolatedStorage.IsolatedStorageFile> incombe, dès lors, au code qui utilise ces références.  
+ <span data-ttu-id="bad1d-120">Il n’existe aucun mécanisme qui empêche le code de passage une <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objet vers du code qui n’a pas de droits d’accès nécessaires pour obtenir le magasin lui-même.</span><span class="sxs-lookup"><span data-stu-id="bad1d-120">There is no mechanism that prevents code from passing an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object to code that does not have sufficient access to get the store itself.</span></span> <span data-ttu-id="bad1d-121">Les identités de domaine et d’assembly et les autorisations de stockage isolé sont vérifiées uniquement lorsqu’une référence à un <xref:System.IO.IsolatedStorage.IsolatedStorage> objet est obtenu en général, dans le <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>, ou <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="bad1d-121">Domain and assembly identities and isolated storage permissions are checked only when a reference to an <xref:System.IO.IsolatedStorage.IsolatedStorage> object is obtained, typically in the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>, or <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> method.</span></span> <span data-ttu-id="bad1d-122">Protection de références aux <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objets est, par conséquent, la responsabilité du code qui utilise ces références.</span><span class="sxs-lookup"><span data-stu-id="bad1d-122">Protecting references to <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objects is, therefore, the responsibility of the code that uses these references.</span></span>  
   
-## Exemple  
- L'exemple de code suivant fourni un exemple très simple d'une classe obtenant un magasin qui est isolé par utilisateur et par assembly.  Le code peut être modifié afin d'extraire un magasin qui est isolé par utilisateur, par domaine et par assembly en ajoutant <xref:System.IO.IsolatedStorage.IsolatedStorageScope?displayProperty=fullName> aux arguments passés par la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  
+## <a name="example"></a><span data-ttu-id="bad1d-123">Exemple</span><span class="sxs-lookup"><span data-stu-id="bad1d-123">Example</span></span>  
+ <span data-ttu-id="bad1d-124">Le code suivant fournit un exemple simple d’une classe obtenant un magasin isolé par utilisateur et par assembly.</span><span class="sxs-lookup"><span data-stu-id="bad1d-124">The following code provides a simple example of a class obtaining a store that is isolated by user and assembly.</span></span> <span data-ttu-id="bad1d-125">Le code peut être modifié afin d’extraire un magasin isolé par utilisateur, domaine et par assembly en ajoutant <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType> aux arguments qui la <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> passe de la méthode.</span><span class="sxs-lookup"><span data-stu-id="bad1d-125">The code can be changed to retrieve a store that is isolated by user, domain, and assembly by adding <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType> to the arguments that the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> method passes.</span></span>  
   
- Après l'exécution du code, vous pouvez confirmer qu'un magasin a été créé en tapant **StoreAdm \/LIST** à la ligne de commande.  Cela execute le [L'outil d'administration Isolated Storage \(Storeadm.exe\)](../../../docs/framework/tools/storeadm-exe-isolated-storage-tool.md) et liste tous les magasins isolés en cours pour l'utilisateur.  
+ <span data-ttu-id="bad1d-126">Une fois que vous exécutez le code, vous pouvez confirmer qu’un magasin a été créé en tapant **StoreAdm /LIST** à la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="bad1d-126">After you run the code, you can confirm that a store was created by typing **StoreAdm /LIST** at the command line.</span></span> <span data-ttu-id="bad1d-127">Cette commande exécute le [outil Isolated Storage (Storeadm.exe)](../../../docs/framework/tools/storeadm-exe-isolated-storage-tool.md) et répertorie tous les stocke les actuel isolé pour l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="bad1d-127">This runs the [Isolated Storage tool (Storeadm.exe)](../../../docs/framework/tools/storeadm-exe-isolated-storage-tool.md) and lists all the current isolated stores for the user.</span></span>  
   
  [!code-cpp[Conceptual.IsolatedStorage#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source6.cpp#7)]
  [!code-csharp[Conceptual.IsolatedStorage#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source6.cs#7)]
  [!code-vb[Conceptual.IsolatedStorage#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source6.vb#7)]  
   
-## Voir aussi  
- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>   
- <xref:System.IO.IsolatedStorage.IsolatedStorageScope>   
- [Stockage isolé](../../../docs/standard/io/isolated-storage.md)   
- [Types d'isolation](../../../docs/standard/io/types-of-isolation.md)   
- [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+## <a name="see-also"></a><span data-ttu-id="bad1d-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bad1d-128">See Also</span></span>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageScope>  
+ [<span data-ttu-id="bad1d-129">Stockage isolé</span><span class="sxs-lookup"><span data-stu-id="bad1d-129">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)  
+ [<span data-ttu-id="bad1d-130">Types d’isolation</span><span class="sxs-lookup"><span data-stu-id="bad1d-130">Types of Isolation</span></span>](../../../docs/standard/io/types-of-isolation.md)  
+ [<span data-ttu-id="bad1d-131">Assemblys dans le Common Language Runtime</span><span class="sxs-lookup"><span data-stu-id="bad1d-131">Assemblies in the Common Language Runtime</span></span>](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

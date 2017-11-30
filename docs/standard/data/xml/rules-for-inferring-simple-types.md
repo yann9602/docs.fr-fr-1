@@ -1,90 +1,88 @@
 ---
-title: "R&#232;gles relatives &#224; l&#39;inf&#233;rence de types simples | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Règles relatives à l'inférence de types simples"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 9a74d111720eb9436f0cd71fd5acef7ea10939c0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# R&#232;gles relatives &#224; l&#39;inf&#233;rence de types simples
-Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements.  
+# <a name="rules-for-inferring-simple-types"></a><span data-ttu-id="b3207-102">Règles relatives à l'inférence de types simples</span><span class="sxs-lookup"><span data-stu-id="b3207-102">Rules for Inferring Simple Types</span></span>
+<span data-ttu-id="b3207-103">Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le type de données pour les attributs et les éléments.</span><span class="sxs-lookup"><span data-stu-id="b3207-103">Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements.</span></span>  
   
- La classe <xref:System.Xml.Schema.XmlSchemaInference> déduit les types de données pour les attributs et les éléments comme types simples.  Cette section décrit les types déduits possibles, la manière dont plusieurs valeurs différentes sont rapprochées en un type simple et la manière dont les attributs de définition de schéma `xsi` sont gérés.  
+ <span data-ttu-id="b3207-104">La classe <xref:System.Xml.Schema.XmlSchemaInference> déduit les types de données pour les attributs et les éléments comme types simples.</span><span class="sxs-lookup"><span data-stu-id="b3207-104">The <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements as simple types.</span></span> <span data-ttu-id="b3207-105">Cette section décrit les types déduits possibles, la manière dont plusieurs valeurs différentes sont rapprochées en un type simple et la manière dont les attributs de définition de schéma `xsi` sont gérés.</span><span class="sxs-lookup"><span data-stu-id="b3207-105">This section describes the potential inferred types, how multiple differing values are reconciled to a single type, and how schema-defining `xsi` attributes are handled.</span></span>  
   
-## Types déduits  
- La classe <xref:System.Xml.Schema.XmlSchemaInference> déduit des valeurs d'éléments et d'attributs comme des types simples et inclut un type d'attribut dans le schéma qui en résulte.  Tous les types déduits sont des types simples.  Aucun type de base ni aucune facette n'est inclus dans le schéma résultant.  
+## <a name="inferred-types"></a><span data-ttu-id="b3207-106">Types déduits</span><span class="sxs-lookup"><span data-stu-id="b3207-106">Inferred Types</span></span>  
+ <span data-ttu-id="b3207-107">La classe <xref:System.Xml.Schema.XmlSchemaInference> déduit des valeurs d'éléments et d'attributs comme des types simples et inclut un type d'attribut dans le schéma qui en résulte.</span><span class="sxs-lookup"><span data-stu-id="b3207-107">The <xref:System.Xml.Schema.XmlSchemaInference> class infers element and attribute values as simple types and includes a type attribute in the resulting schema.</span></span> <span data-ttu-id="b3207-108">Tous les types déduits sont des types simples.</span><span class="sxs-lookup"><span data-stu-id="b3207-108">All inferred types are simple types.</span></span> <span data-ttu-id="b3207-109">Aucun type de base ni aucune facette n'est inclus dans le schéma résultant.</span><span class="sxs-lookup"><span data-stu-id="b3207-109">No base types or facets are included as part of the resulting schema.</span></span>  
   
- Les valeurs sont examinées individuellement, au fur et à mesure qu'elles sont rencontrées dans le document XML.  Le type est déduit pour une valeur au moment de son examen.  Si un type a été déduit pour un attribut ou un élément et si une valeur pour l'attribut ou l'élément est rencontrée, qui ne correspond pas au type actuellement déduit, la classe <xref:System.Xml.Schema.XmlSchemaInference> promeut le type pour chaque ensemble de règles.  Ces règles sont présentées dans la section Promotion de type, plus loin dans cette rubrique.  
+ <span data-ttu-id="b3207-110">Les valeurs sont examinées individuellement, au fur et à mesure qu'elles sont rencontrées dans le document XML.</span><span class="sxs-lookup"><span data-stu-id="b3207-110">Values are examined individually as they are encountered in the XML document.</span></span> <span data-ttu-id="b3207-111">Le type est déduit pour une valeur au moment de son examen.</span><span class="sxs-lookup"><span data-stu-id="b3207-111">The type is inferred for a value at the time it is examined.</span></span> <span data-ttu-id="b3207-112">Si un type a été déduit pour un attribut ou un élément et si une valeur pour l'attribut ou l'élément est rencontrée, qui ne correspond pas au type actuellement déduit, la classe <xref:System.Xml.Schema.XmlSchemaInference> promeut le type pour chaque ensemble de règles.</span><span class="sxs-lookup"><span data-stu-id="b3207-112">If a type has been inferred for an attribute or element, and a value for the attribute or element is encountered that does not match the currently inferred type, the <xref:System.Xml.Schema.XmlSchemaInference> class promotes the type for each of a set of rules.</span></span> <span data-ttu-id="b3207-113">Ces règles sont présentées dans la section Promotion de type, plus loin dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="b3207-113">These rules are discussed in the Type Promotion section, later in this topic.</span></span>  
   
- Le tableau suivant répertorie les types déduits possibles pour le schéma résultant.  
+ <span data-ttu-id="b3207-114">Le tableau suivant répertorie les types déduits possibles pour le schéma résultant.</span><span class="sxs-lookup"><span data-stu-id="b3207-114">The following table lists the possible inferred types for the resulting schema.</span></span>  
   
-|Type simple|Description|  
+|<span data-ttu-id="b3207-115">Type simple</span><span class="sxs-lookup"><span data-stu-id="b3207-115">Simple Type</span></span>|<span data-ttu-id="b3207-116">Description</span><span class="sxs-lookup"><span data-stu-id="b3207-116">Description</span></span>|  
 |-----------------|-----------------|  
-|boolean|True, false, 0, 1.|  
-|byte|Nombres entiers dans la plage comprise entre \-128 et 127.|  
-|unsignedByte|Nombres entiers dans la plage comprise entre 0 et 255.|  
-|short|Nombres entiers dans la plage comprise entre \-32768 et 32767.|  
-|unsignedShort|Nombres entiers dans la plage comprise entre 0 et 65535.|  
-|int|Nombres entiers dans la plage comprise entre \-2147483648 et 2147483647.|  
-|unsignedInt|Nombres entiers dans la plage comprise entre 0 et 4294967295.|  
-|long|Nombres entiers dans la plage comprise entre \-9223372036854775808 et 9223372036854775807.|  
-|unsignedLong|Nombres entiers dans la plage comprise entre 0 et 18446744073709551615.|  
-|entiers|Nombre de chiffres fini éventuellement précédé du préfixe « \- ».|  
-|decimal|Valeurs numériques avec une précision de 0 à 28 chiffres.|  
-|float|Décimales éventuellement suivies de « E » ou « e » et d'une valeur entière représentant l'exposant.  Les valeurs décimales peuvent s'inscrire dans la plage comprise entre \-16777216 et 16777216.  Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –149 et 104.<br /><br /> Float permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques.  Les valeurs spéciales pour float sont : 0, \-0, INF, \-INF, NaN.|  
-|double|Comme pour float, sinon que les valeurs décimales peuvent s'inscrire dans la plage comprise entre \-9007199254740992 et 9007199254740992. Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –1075 et 970.<br /><br /> Double permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques.  Les valeurs spéciales pour float sont : 0, \-0, INF, \-INF, NaN.|  
-|duration|Format de durée de W3C.|  
-|dateTime|Le format de date et d'heure de W3C.|  
-|heure|Le format d'heure de W3C.|  
-|date|Les valeurs d'année doivent être comprises entre 0001 et 9999.|  
-|gYearMonth|Format d'année et de mois du calendrier grégorien de W3C.|  
-|string|Un ou plusieurs caractères Unicode.|  
+|<span data-ttu-id="b3207-117">boolean</span><span class="sxs-lookup"><span data-stu-id="b3207-117">boolean</span></span>|<span data-ttu-id="b3207-118">True, false, 0, 1.</span><span class="sxs-lookup"><span data-stu-id="b3207-118">True, false, 0, 1.</span></span>|  
+|<span data-ttu-id="b3207-119">byte</span><span class="sxs-lookup"><span data-stu-id="b3207-119">byte</span></span>|<span data-ttu-id="b3207-120">Nombres entiers dans la plage comprise entre -128 et 127.</span><span class="sxs-lookup"><span data-stu-id="b3207-120">Integers in the range of –128 to 127.</span></span>|  
+|<span data-ttu-id="b3207-121">unsignedByte</span><span class="sxs-lookup"><span data-stu-id="b3207-121">unsignedByte</span></span>|<span data-ttu-id="b3207-122">Nombres entiers dans la plage comprise entre 0 et 255.</span><span class="sxs-lookup"><span data-stu-id="b3207-122">Integers in the range of 0 to 255.</span></span>|  
+|<span data-ttu-id="b3207-123">short</span><span class="sxs-lookup"><span data-stu-id="b3207-123">short</span></span>|<span data-ttu-id="b3207-124">Nombres entiers dans la plage comprise entre -32768 et 32767.</span><span class="sxs-lookup"><span data-stu-id="b3207-124">Integers in the range of –32768 to 32767.</span></span>|  
+|<span data-ttu-id="b3207-125">unsignedShort</span><span class="sxs-lookup"><span data-stu-id="b3207-125">unsignedShort</span></span>|<span data-ttu-id="b3207-126">Nombres entiers dans la plage comprise entre 0 et 65535.</span><span class="sxs-lookup"><span data-stu-id="b3207-126">Integers in the range of 0 to 65535.</span></span>|  
+|<span data-ttu-id="b3207-127">int</span><span class="sxs-lookup"><span data-stu-id="b3207-127">int</span></span>|<span data-ttu-id="b3207-128">Nombres entiers dans la plage comprise entre -2147483648 et 2147483647.</span><span class="sxs-lookup"><span data-stu-id="b3207-128">Integers in the range of –2147483648 to 2147483647.</span></span>|  
+|<span data-ttu-id="b3207-129">unsignedInt</span><span class="sxs-lookup"><span data-stu-id="b3207-129">unsignedInt</span></span>|<span data-ttu-id="b3207-130">Nombres entiers dans la plage comprise entre 0 et 4294967295.</span><span class="sxs-lookup"><span data-stu-id="b3207-130">Integers in the range of 0 to 4294967295.</span></span>|  
+|<span data-ttu-id="b3207-131">long</span><span class="sxs-lookup"><span data-stu-id="b3207-131">long</span></span>|<span data-ttu-id="b3207-132">Nombres entiers dans la plage comprise entre -9223372036854775808 et 9223372036854775807.</span><span class="sxs-lookup"><span data-stu-id="b3207-132">Integers in the range of –9223372036854775808 to 9223372036854775807.</span></span>|  
+|<span data-ttu-id="b3207-133">unsignedLong</span><span class="sxs-lookup"><span data-stu-id="b3207-133">unsignedLong</span></span>|<span data-ttu-id="b3207-134">Nombres entiers dans la plage comprise entre 0 et 18446744073709551615.</span><span class="sxs-lookup"><span data-stu-id="b3207-134">Integers in the range of 0 to 18446744073709551615.</span></span>|  
+|<span data-ttu-id="b3207-135">entiers</span><span class="sxs-lookup"><span data-stu-id="b3207-135">integer</span></span>|<span data-ttu-id="b3207-136">Nombre de chiffres fini éventuellement précédé du préfixe « - ».</span><span class="sxs-lookup"><span data-stu-id="b3207-136">A finite number of digits possibly prefixed with "-".</span></span>|  
+|<span data-ttu-id="b3207-137">decimal</span><span class="sxs-lookup"><span data-stu-id="b3207-137">decimal</span></span>|<span data-ttu-id="b3207-138">Valeurs numériques avec une précision de 0 à 28 chiffres.</span><span class="sxs-lookup"><span data-stu-id="b3207-138">Numerical values that contain from 0 to 28 digits of precision.</span></span>|  
+|<span data-ttu-id="b3207-139">float</span><span class="sxs-lookup"><span data-stu-id="b3207-139">float</span></span>|<span data-ttu-id="b3207-140">Décimales éventuellement suivies de « E » ou « e » et d'une valeur entière représentant l'exposant.</span><span class="sxs-lookup"><span data-stu-id="b3207-140">Decimals optionally followed by "E" or "e" followed by an integer value representing the exponent.</span></span> <span data-ttu-id="b3207-141">Les valeurs décimales peuvent s'inscrire dans la plage comprise entre -16777216 et 16777216.</span><span class="sxs-lookup"><span data-stu-id="b3207-141">Decimal values can be in the range of -16777216 to 16777216.</span></span> <span data-ttu-id="b3207-142">Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –149 et 104.</span><span class="sxs-lookup"><span data-stu-id="b3207-142">Exponent values can be in the range of –149 to 104.</span></span><br /><br /> <span data-ttu-id="b3207-143">Float permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques.</span><span class="sxs-lookup"><span data-stu-id="b3207-143">Float allows for special values to represent infinity and non-numeric values.</span></span> <span data-ttu-id="b3207-144">Les valeurs spéciales pour float sont : 0, -0, INF, -INF, NaN.</span><span class="sxs-lookup"><span data-stu-id="b3207-144">Special values for float are: 0, -0, INF, -INF, NaN.</span></span>|  
+|<span data-ttu-id="b3207-145">double</span><span class="sxs-lookup"><span data-stu-id="b3207-145">double</span></span>|<span data-ttu-id="b3207-146">Comme pour float, sinon que les valeurs décimales peuvent s'inscrire dans la plage comprise entre -9007199254740992 et 9007199254740992. Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –1075 et 970.</span><span class="sxs-lookup"><span data-stu-id="b3207-146">The same as float except decimal values can be in the range of -9007199254740992 to 9007199254740992, and exponent values can be in the range of –1075 to 970.</span></span><br /><br /> <span data-ttu-id="b3207-147">Double permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques.</span><span class="sxs-lookup"><span data-stu-id="b3207-147">Double allows for special values to represent infinity and non-numeric values.</span></span> <span data-ttu-id="b3207-148">Les valeurs spéciales pour float sont : 0, -0, INF, -INF, NaN.</span><span class="sxs-lookup"><span data-stu-id="b3207-148">Special values for float are: 0, -0, INF, -INF, NaN.</span></span>|  
+|<span data-ttu-id="b3207-149">duration</span><span class="sxs-lookup"><span data-stu-id="b3207-149">duration</span></span>|<span data-ttu-id="b3207-150">Format de durée de W3C.</span><span class="sxs-lookup"><span data-stu-id="b3207-150">The W3C duration format.</span></span>|  
+|<span data-ttu-id="b3207-151">dateTime</span><span class="sxs-lookup"><span data-stu-id="b3207-151">dateTime</span></span>|<span data-ttu-id="b3207-152">Le format de date et d'heure de W3C.</span><span class="sxs-lookup"><span data-stu-id="b3207-152">The W3C dateTime format.</span></span>|  
+|<span data-ttu-id="b3207-153">heure</span><span class="sxs-lookup"><span data-stu-id="b3207-153">time</span></span>|<span data-ttu-id="b3207-154">Le format d'heure de W3C.</span><span class="sxs-lookup"><span data-stu-id="b3207-154">The W3C time format.</span></span>|  
+|<span data-ttu-id="b3207-155">date</span><span class="sxs-lookup"><span data-stu-id="b3207-155">date</span></span>|<span data-ttu-id="b3207-156">Les valeurs d'année doivent être comprises entre 0001 et 9999.</span><span class="sxs-lookup"><span data-stu-id="b3207-156">Year values are restricted from 0001 to 9999.</span></span>|  
+|<span data-ttu-id="b3207-157">gYearMonth</span><span class="sxs-lookup"><span data-stu-id="b3207-157">gYearMonth</span></span>|<span data-ttu-id="b3207-158">Format d'année et de mois du calendrier grégorien de W3C.</span><span class="sxs-lookup"><span data-stu-id="b3207-158">The W3C Gregorian month and year format.</span></span>|  
+|<span data-ttu-id="b3207-159">string</span><span class="sxs-lookup"><span data-stu-id="b3207-159">string</span></span>|<span data-ttu-id="b3207-160">Un ou plusieurs caractères Unicode.</span><span class="sxs-lookup"><span data-stu-id="b3207-160">One or more Unicode characters.</span></span>|  
   
-## Promotion de type  
- La classe <xref:System.Xml.Schema.XmlSchemaInference> examine les valeurs d'attributs et d'éléments l'une après l'autre.  Au fur et à mesure que des valeurs sont rencontrées, le type non signé le plus restrictif est déduit.  Si un type a été déduit pour un attribut ou un élément et si une nouvelle valeur est rencontrée, qui ne correspond pas au type actuellement déduit, le type déduit est promu au rang de nouveau type qui s'applique au type actuellement déduit et à la nouvelle valeur.  La classe <xref:System.Xml.Schema.XmlSchemaInference> ne considère pas les valeurs précédentes lors de la promotion du type déduit.  
+## <a name="type-promotion"></a><span data-ttu-id="b3207-161">Promotion de type</span><span class="sxs-lookup"><span data-stu-id="b3207-161">Type Promotion</span></span>  
+ <span data-ttu-id="b3207-162">La classe <xref:System.Xml.Schema.XmlSchemaInference> examine les valeurs d'attributs et d'éléments l'une après l'autre.</span><span class="sxs-lookup"><span data-stu-id="b3207-162">The <xref:System.Xml.Schema.XmlSchemaInference> class examines attribute and element values one at a time.</span></span> <span data-ttu-id="b3207-163">Au fur et à mesure que des valeurs sont rencontrées, le type non signé le plus restrictif est déduit.</span><span class="sxs-lookup"><span data-stu-id="b3207-163">As values are encountered, the most restrictive, unsigned type is inferred.</span></span> <span data-ttu-id="b3207-164">Si un type a été déduit pour un attribut ou un élément et si une nouvelle valeur est rencontrée, qui ne correspond pas au type actuellement déduit, le type déduit est promu au rang de nouveau type qui s'applique au type actuellement déduit et à la nouvelle valeur.</span><span class="sxs-lookup"><span data-stu-id="b3207-164">If a type has been inferred for an attribute or element, and a new value is encountered that does not match the currently inferred type, the inferred type is promoted to a new type that applies to both the currently inferred type and the new value.</span></span> <span data-ttu-id="b3207-165">La classe <xref:System.Xml.Schema.XmlSchemaInference> ne considère pas les valeurs précédentes lors de la promotion du type déduit.</span><span class="sxs-lookup"><span data-stu-id="b3207-165">The <xref:System.Xml.Schema.XmlSchemaInference> class does consider previous values when promoting the inferred type.</span></span>  
   
- Examinons, par exemple, les fragments XML suivants de deux documents XML :  
+ <span data-ttu-id="b3207-166">Examinons, par exemple, les fragments XML suivants de deux documents XML :</span><span class="sxs-lookup"><span data-stu-id="b3207-166">For example, consider the following XML fragments from two XML documents:</span></span>  
   
  `<MyElement1 attr1="12" />`  
   
  `<MyElement1 attr1="52344" />`  
   
- Lorsque la première valeur `attr1` est rencontrée, le type de `attr1` est déduit comme `unsignedByte` sur la base de la valeur `12`.  Lorsque la seconde valeur `attr1` est rencontrée, le type est promu au rang de `unsignedShort` sur la base du type actuellement déduit de `unsignedByte` et de la valeur actuelle `52344`.  
+ <span data-ttu-id="b3207-167">Lorsque la première valeur `attr1` est rencontrée, le type de `attr1` est déduit comme `unsignedByte` sur la base de la valeur `12`.</span><span class="sxs-lookup"><span data-stu-id="b3207-167">When the first `attr1` value is encountered, the type of `attr1` is inferred as `unsignedByte` based on the value `12`.</span></span> <span data-ttu-id="b3207-168">Lorsque la seconde valeur `attr1` est rencontrée, le type est promu au rang de `unsignedShort` sur la base du type actuellement déduit de `unsignedByte` et de la valeur actuelle `52344`.</span><span class="sxs-lookup"><span data-stu-id="b3207-168">When the second `attr1` is encountered, the type is promoted to `unsignedShort` based on the currently inferred type of `unsignedByte` and the current value `52344`.</span></span>  
   
- Examinons, à présent, le code XML suivant de deux documents XML :  
+ <span data-ttu-id="b3207-169">Examinons, à présent, le code XML suivant de deux documents XML :</span><span class="sxs-lookup"><span data-stu-id="b3207-169">Now, consider the following XML from two XML documents:</span></span>  
   
  `<MyElement2 attr2="0" />`  
   
  `<MyElement2 attr2="true" />`  
   
- Lorsque la première valeur `attr2` est rencontrée, le type de `attr2` est déduit comme `unsignedByte` sur la base de la valeur `0`.  Lorsque la seconde valeur `attr2` est rencontrée, le type est promu au rang de `string` sur la base du type actuellement déduit de `unsignedByte` et de la valeur actuelle `true` parce que la classe <xref:System.Xml.Schema.XmlSchemaInference> prend en considération les valeurs précédents lors de la promotion du type déduit.  Toutefois, si les deux instances de `attr2` avaient été rencontrées dans le même document XML et pas dans deux documents XML différents, comme illustré ci\-avant, `attr2` aurait été déduit comme `boolean`.  
+ <span data-ttu-id="b3207-170">Lorsque la première valeur `attr2` est rencontrée, le type de `attr2` est déduit comme `unsignedByte` sur la base de la valeur `0`.</span><span class="sxs-lookup"><span data-stu-id="b3207-170">When the first `attr2` value is encountered, the type of `attr2` is inferred as `unsignedByte` based on the value `0`.</span></span> <span data-ttu-id="b3207-171">Lorsque la seconde valeur `attr2` est rencontrée, le type est promu au rang de `string` sur la base du type actuellement déduit de `unsignedByte` et de la valeur actuelle `true` parce que la classe <xref:System.Xml.Schema.XmlSchemaInference> prend en considération les valeurs précédents lors de la promotion du type déduit.</span><span class="sxs-lookup"><span data-stu-id="b3207-171">When the second `attr2` is encountered, the type is promoted to `string` based on the currently inferred type of `unsignedByte` and the current value `true` because the <xref:System.Xml.Schema.XmlSchemaInference> class does consider previous values when promoting the inferred type.</span></span> <span data-ttu-id="b3207-172">Toutefois, si les deux instances de `attr2` avaient été rencontrées dans le même document XML et pas dans deux documents XML différents, comme illustré ci-avant, `attr2` aurait été déduit comme `boolean`.</span><span class="sxs-lookup"><span data-stu-id="b3207-172">However, if both instances of `attr2` were encountered in the same XML document and not in two different XML documents as illustrated above, `attr2` would have been inferred as `boolean`.</span></span>  
   
-### Attributs ignorés de l'espace de noms de l'instance de schéma XML \(http:\/\/www.w3.org\/2001\/XMLSchema\-instance\)  
- Vous trouverez ci\-après les attributs de définition du schéma qui sont ignorés durant l'inférence de schéma.  
+### <a name="ignored-attributes-from-the-httpwwww3org2001xmlschema-instance-namespace"></a><span data-ttu-id="b3207-173">Attributs ignorés de l'espace de noms de l'instance de schéma XML (http://www.w3.org/2001/XMLSchema-instance)</span><span class="sxs-lookup"><span data-stu-id="b3207-173">Ignored Attributes from the http://www.w3.org/2001/XMLSchema-instance Namespace</span></span>  
+ <span data-ttu-id="b3207-174">Vous trouverez ci-après les attributs de définition du schéma qui sont ignorés durant l'inférence de schéma.</span><span class="sxs-lookup"><span data-stu-id="b3207-174">The following are schema-defining attributes that are ignored during schema inference.</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|`xsi:type`|Si un élément est rencontré avec un `xsi:type` spécifié, le `xsi:type` est ignoré.|  
-|`xsi:nil`|Si un élément avec un attribut `xsi:nil` est rencontré, sa déclaration d'élément dans le schéma déduit a la valeur `nillable="true"`.  Un élément dont un attribut `xsi:nil` a la valeur `true` ne peut pas avoir d'éléments enfants.|  
-|`xsi:schemaLocation`|Si `xsi:schemaLocation` est rencontré, il est ignoré.|  
-|`xsi:noNamespaceSchemaLocation`|Si `xsi:noNamespaceSchemaLocation` est rencontré, il est ignoré.|  
+|<span data-ttu-id="b3207-175">Attribut</span><span class="sxs-lookup"><span data-stu-id="b3207-175">Attribute</span></span>|<span data-ttu-id="b3207-176">Description</span><span class="sxs-lookup"><span data-stu-id="b3207-176">Description</span></span>|  
+|---------------|-----------------|  
+|`xsi:type`|<span data-ttu-id="b3207-177">Si un élément est rencontré avec un `xsi:type` spécifié, le `xsi:type` est ignoré.</span><span class="sxs-lookup"><span data-stu-id="b3207-177">If an element is encountered with `xsi:type` specified, the `xsi:type` is ignored.</span></span>|  
+|`xsi:nil`|<span data-ttu-id="b3207-178">Si un élément avec un attribut `xsi:nil` est rencontré, sa déclaration d'élément dans le schéma déduit a la valeur `nillable="true"`.</span><span class="sxs-lookup"><span data-stu-id="b3207-178">If an element with an `xsi:nil` attribute is encountered, its element declaration in the inferred schema has the value of `nillable="true"`.</span></span> <span data-ttu-id="b3207-179">Un élément dont un attribut `xsi:nil` a la valeur `true` ne peut pas avoir d'éléments enfants.</span><span class="sxs-lookup"><span data-stu-id="b3207-179">An element with an `xsi:nil` attribute set to `true` cannot have child elements.</span></span>|  
+|`xsi:schemaLocation`|<span data-ttu-id="b3207-180">Si `xsi:schemaLocation` est rencontré, il est ignoré.</span><span class="sxs-lookup"><span data-stu-id="b3207-180">If `xsi:schemaLocation` is encountered, it is ignored.</span></span>|  
+|`xsi:noNamespaceSchemaLocation`|<span data-ttu-id="b3207-181">Si `xsi:noNamespaceSchemaLocation` est rencontré, il est ignoré.</span><span class="sxs-lookup"><span data-stu-id="b3207-181">If `xsi:noNamespaceSchemaLocation` is encountered, it is ignored.</span></span>|  
   
-## Voir aussi  
- [Modèle Objet du schéma \(SOM\) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)   
- [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)   
- [Règles pour l'inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+## <a name="see-also"></a><span data-ttu-id="b3207-182">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b3207-182">See Also</span></span>  
+ [<span data-ttu-id="b3207-183">Modèle Objet du schéma (SOM) XML</span><span class="sxs-lookup"><span data-stu-id="b3207-183">XML Schema Object Model (SOM)</span></span>](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
+ [<span data-ttu-id="b3207-184">Inférence de schémas à partir de Documents XML</span><span class="sxs-lookup"><span data-stu-id="b3207-184">Inferring Schemas from XML Documents</span></span>](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+ [<span data-ttu-id="b3207-185">Règles pour l’inférence de Types de nœud de schéma et la Structure</span><span class="sxs-lookup"><span data-stu-id="b3207-185">Rules for Inferring Schema Node Types and Structure</span></span>](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)

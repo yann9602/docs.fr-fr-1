@@ -1,53 +1,55 @@
 ---
-title: "Inclusion ou importation de sch&#233;mas XML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Inclusion ou importation de schémas XML"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: d3b336b0ac4ca4fd02950a572404a117d4c193f2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Inclusion ou importation de sch&#233;mas XML
-Un schéma XML peut contenir des éléments `<xs:import />`, `<xs:include />` et `<xs:redefine />`.  Ces éléments de schéma réfèrent à d'autres schémas XML qui peuvent être utilisés pour compléter la structure du schéma où ils sont inclus ou importés.  Les classes <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> et <xref:System.Xml.Schema.XmlSchemaRedefine> sont mappées à ces éléments dans l'API SOM \(Schema Object Model\).  
+# <a name="including-or-importing-xml-schemas"></a><span data-ttu-id="c1956-102">Inclusion ou importation de schémas XML</span><span class="sxs-lookup"><span data-stu-id="c1956-102">Including or Importing XML Schemas</span></span>
+<span data-ttu-id="c1956-103">Un schéma XML peut contenir des éléments `<xs:import />`, `<xs:include />` et `<xs:redefine />`.</span><span class="sxs-lookup"><span data-stu-id="c1956-103">An XML schema may contain `<xs:import />`, `<xs:include />`, and `<xs:redefine />` elements.</span></span> <span data-ttu-id="c1956-104">Ces éléments de schéma réfèrent à d'autres schémas XML qui peuvent être utilisés pour compléter la structure du schéma où ils sont inclus ou importés.</span><span class="sxs-lookup"><span data-stu-id="c1956-104">These schema elements refer to other XML schemas that can be used to supplement the structure of the schema that includes or imports them.</span></span> <span data-ttu-id="c1956-105">Les classes <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> et <xref:System.Xml.Schema.XmlSchemaRedefine> sont mappées à ces éléments dans l'API SOM (Schema Object Model).</span><span class="sxs-lookup"><span data-stu-id="c1956-105">The <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> and <xref:System.Xml.Schema.XmlSchemaRedefine> classes, map to these elements in the Schema Object Model (SOM) API.</span></span>  
   
-## Inclusion ou importation d'un schéma XML  
- L'exemple de code suivant complète le schéma utilisateur créé dans la rubrique [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md) avec le schéma d'adresse.  Cette opération rend les types d'adresses disponibles dans le schéma utilisateur.  
+## <a name="including-or-importing-an-xml-schema"></a><span data-ttu-id="c1956-106">Inclusion ou importation d'un schéma XML</span><span class="sxs-lookup"><span data-stu-id="c1956-106">Including or Importing an XML Schema</span></span>  
+ <span data-ttu-id="c1956-107">L’exemple de code suivant complète le schéma utilisateur créé dans le [création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md) rubrique avec le schéma d’adresse.</span><span class="sxs-lookup"><span data-stu-id="c1956-107">The following code example supplements the customer schema created in the [Building XML Schemas](../../../../docs/standard/data/xml/building-xml-schemas.md) topic with the address schema.</span></span> <span data-ttu-id="c1956-108">Cette opération rend les types d'adresses disponibles dans le schéma utilisateur.</span><span class="sxs-lookup"><span data-stu-id="c1956-108">Supplementing the customer schema with the address schema makes address types available in the customer schema.</span></span>  
   
- Le schéma d'adresse peut être incorporé à l'aide d'éléments `<xs:include />` ou `<xs:import />` pour utiliser les composants du schéma d'adresse tels quels, ou à l'aide d'un élément `<xs:redefine />` pour modifier l'un quelconque de ses composants en fonction des besoins du schéma utilisateur.  Le schéma d'adresse ayant un `targetNamespace` différent de celui du schéma utilisateur, on utilise l'élément `<xs:import />` et donc la sémantique d'importation.  
+ <span data-ttu-id="c1956-109">Le schéma d'adresse peut être incorporé à l'aide d'éléments `<xs:include />` ou `<xs:import />` pour utiliser les composants du schéma d'adresse tels quels, ou à l'aide d'un élément `<xs:redefine />` pour modifier l'un quelconque de ses composants en fonction des besoins du schéma utilisateur.</span><span class="sxs-lookup"><span data-stu-id="c1956-109">The address schema can be incorporated using either `<xs:include />` or `<xs:import />` elements to use the components of the address schema as-is, or using an `<xs:redefine />` element to modify any of its components to suit the need of the customer schema.</span></span> <span data-ttu-id="c1956-110">Le schéma d'adresse ayant un `targetNamespace` différent de celui du schéma utilisateur, on utilise l'élément `<xs:import />` et donc la sémantique d'importation.</span><span class="sxs-lookup"><span data-stu-id="c1956-110">Because the address schema has a `targetNamespace` that is different from that of the customer schema, the `<xs:import />` element and therefore import semantics is used.</span></span>  
   
- L'exemple de code inclut le schéma d'adresse en plusieurs étapes comme suit.  
+ <span data-ttu-id="c1956-111">L'exemple de code inclut le schéma d'adresse en plusieurs étapes comme suit.</span><span class="sxs-lookup"><span data-stu-id="c1956-111">The code example includes the address schema in the following steps.</span></span>  
   
-1.  Il ajoute le schéma utilisateur et le schéma d'adresse à un nouvel objet <xref:System.Xml.Schema.XmlSchemaSet> puis les compile.  Les avertissements et erreurs de validation de schéma éventuellement rencontrés pendant la lecture ou la compilation des schémas sont traités par le délégué <xref:System.Xml.Schema.ValidationEventHandler>.  
+1.  <span data-ttu-id="c1956-112">Il ajoute le schéma utilisateur et le schéma d'adresse à un nouvel objet <xref:System.Xml.Schema.XmlSchemaSet> puis les compile.</span><span class="sxs-lookup"><span data-stu-id="c1956-112">Adds the customer schema and the address schema to a new <xref:System.Xml.Schema.XmlSchemaSet> object and then compiles them.</span></span> <span data-ttu-id="c1956-113">Les avertissements et erreurs de validation de schéma éventuellement rencontrés pendant la lecture ou la compilation des schémas sont traités par le délégué <xref:System.Xml.Schema.ValidationEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="c1956-113">Any schema validation warnings and errors encountered reading or compiling the schemas are handled by the <xref:System.Xml.Schema.ValidationEventHandler> delegate.</span></span>  
   
-2.  Il extrait les objets <xref:System.Xml.Schema.XmlSchema> compilés, tant pour le schéma utilisateur que pour le schéma d'adresse, de l'objet <xref:System.Xml.Schema.XmlSchemaSet> en effectuant une itération sur la propriété <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>.  Les schémas étant compilés, les propriétés PSCI \(Post\-Schema\-Compilation\-Infoset\) sont accessibles.  
+2.  <span data-ttu-id="c1956-114">Il extrait les objets <xref:System.Xml.Schema.XmlSchema> compilés, tant pour le schéma utilisateur que pour le schéma d'adresse, de l'objet <xref:System.Xml.Schema.XmlSchemaSet> en effectuant une itération sur la propriété <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>.</span><span class="sxs-lookup"><span data-stu-id="c1956-114">Retrieves the compiled <xref:System.Xml.Schema.XmlSchema> objects for both the customer and address schemas from the <xref:System.Xml.Schema.XmlSchemaSet> by iterating over the <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> property.</span></span> <span data-ttu-id="c1956-115">Les schémas étant compilés, les propriétés PSCI (Post-Schema-Compilation-Infoset) sont accessibles.</span><span class="sxs-lookup"><span data-stu-id="c1956-115">Because the schemas are compiled, Post-Schema-Compilation-Infoset (PSCI) properties are accessible.</span></span>  
   
-3.  Il crée un objet <xref:System.Xml.Schema.XmlSchemaImport>, définit la propriété <xref:System.Xml.Schema.XmlSchemaImport.Namespace%2A> de l'importation comme étant l'espace de noms du schéma d'adresse, définit la propriété <xref:System.Xml.Schema.XmlSchemaExternal.Schema%2A> de l'importation comme étant l'objet <xref:System.Xml.Schema.XmlSchema> du schéma d'adresse et ajoute l'importation à la propriété <xref:System.Xml.Schema.XmlSchema.Includes%2A> du schéma utilisateur.  
+3.  <span data-ttu-id="c1956-116">Il crée un objet <xref:System.Xml.Schema.XmlSchemaImport>, définit la propriété <xref:System.Xml.Schema.XmlSchemaImport.Namespace%2A> de l'importation comme étant l'espace de noms du schéma d'adresse, définit la propriété <xref:System.Xml.Schema.XmlSchemaExternal.Schema%2A> de l'importation comme étant l'objet <xref:System.Xml.Schema.XmlSchema> du schéma d'adresse et ajoute l'importation à la propriété <xref:System.Xml.Schema.XmlSchema.Includes%2A> du schéma utilisateur.</span><span class="sxs-lookup"><span data-stu-id="c1956-116">Creates an <xref:System.Xml.Schema.XmlSchemaImport> object, sets the <xref:System.Xml.Schema.XmlSchemaImport.Namespace%2A> property of the import to the namespace of the address schema, sets the <xref:System.Xml.Schema.XmlSchemaExternal.Schema%2A> property of the import to the <xref:System.Xml.Schema.XmlSchema> object of the address schema, and adds the import to the <xref:System.Xml.Schema.XmlSchema.Includes%2A> property of the customer schema.</span></span>  
   
-4.  Il retraite et compile l'objet <xref:System.Xml.Schema.XmlSchema> modifié du schéma utilisateur à l'aide des méthodes <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> et <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de la classe <xref:System.Xml.Schema.XmlSchemaSet> et écrit le résultat à la console.  
+4.  <span data-ttu-id="c1956-117">Il retraite et compile l'objet <xref:System.Xml.Schema.XmlSchema> modifié du schéma utilisateur à l'aide des méthodes <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> et <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> de la classe <xref:System.Xml.Schema.XmlSchemaSet> et écrit le résultat à la console.</span><span class="sxs-lookup"><span data-stu-id="c1956-117">Reprocesses and compiles the modified <xref:System.Xml.Schema.XmlSchema> object of the customer schema using the <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> and <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> methods of the <xref:System.Xml.Schema.XmlSchemaSet> class and writes it to the console.</span></span>  
   
-5.  Enfin, de manière récursive, il écrit à la console tous les schémas importés dans le schéma utilisateur en utilisant la propriété <xref:System.Xml.Schema.XmlSchema.Includes%2A> du schéma utilisateur.  La propriété <xref:System.Xml.Schema.XmlSchema.Includes%2A> fournit l'accès à toutes les inclusions, importations ou redéfinitions ajoutées à un schéma.  
+5.  <span data-ttu-id="c1956-118">Enfin, de manière récursive, il écrit à la console tous les schémas importés dans le schéma utilisateur en utilisant la propriété <xref:System.Xml.Schema.XmlSchema.Includes%2A> du schéma utilisateur.</span><span class="sxs-lookup"><span data-stu-id="c1956-118">Finally, recursively writes all of the schemas imported into the customer schema to the console using the <xref:System.Xml.Schema.XmlSchema.Includes%2A> property of the customer schema.</span></span> <span data-ttu-id="c1956-119">La propriété <xref:System.Xml.Schema.XmlSchema.Includes%2A> fournit l'accès à toutes les inclusions, importations ou redéfinitions ajoutées à un schéma.</span><span class="sxs-lookup"><span data-stu-id="c1956-119">The <xref:System.Xml.Schema.XmlSchema.Includes%2A> property provides access to all the includes, imports, or redefines added to a schema.</span></span>  
   
- Voici l'exemple de code complet et les schémas utilisateur et d'adresse écrits à la console.  
+ <span data-ttu-id="c1956-120">Voici l'exemple de code complet et les schémas utilisateur et d'adresse écrits à la console.</span><span class="sxs-lookup"><span data-stu-id="c1956-120">The following is the complete code example and the customer and address schemas written to the console.</span></span>  
   
  [!code-cpp[XmlSchemaImportExample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaImportExample/CPP/XmlSchemaImportExample.cpp#1)]
  [!code-csharp[XmlSchemaImportExample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaImportExample/CS/XmlSchemaImportExample.cs#1)]
  [!code-vb[XmlSchemaImportExample#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaImportExample/VB/XmlSchemaImportExample.vb#1)]  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema xmlns:tns="http://www.tempuri.org" targetNamespace="http://www.tempuri.org" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
   <xs:import namespace="http://www.example.com/IPO" />  
@@ -103,12 +105,12 @@ Un schéma XML peut contenir des éléments `<xs:import />`, `<xs:include />` e
 </schema>  
 ```  
   
- Pour plus d'informations sur les éléments `<xs:import />`, `<xs:include />`, and `<xs:redefine />` et les classes <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> et <xref:System.Xml.Schema.XmlSchemaRedefine>, consultez le [schéma XML du W3C](http://go.microsoft.com/fwlink/?LinkId=45242) et la documentation de référence de la classe d'espace de noms <xref:System.Xml.Schema?displayProperty=fullName>.  
+ <span data-ttu-id="c1956-121">Pour plus d’informations sur la `<xs:import />`, `<xs:include />`, et `<xs:redefine />` éléments et le <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> et <xref:System.Xml.Schema.XmlSchemaRedefine> des classes, consultez le [W3C XML Schema](http://go.microsoft.com/fwlink/?LinkId=45242) et <xref:System.Xml.Schema?displayProperty=nameWithType> documentation de référence de classe espace de noms.</span><span class="sxs-lookup"><span data-stu-id="c1956-121">For more information about the `<xs:import />`, `<xs:include />`, and `<xs:redefine />` elements and the <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> and <xref:System.Xml.Schema.XmlSchemaRedefine> classes, see the [W3C XML Schema](http://go.microsoft.com/fwlink/?LinkId=45242) and the <xref:System.Xml.Schema?displayProperty=nameWithType> namespace class reference documentation.</span></span>  
   
-## Voir aussi  
- [Vue d'ensemble du Modèle Objet du schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)   
- [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)   
- [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)   
- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)   
- [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)   
- [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
+## <a name="see-also"></a><span data-ttu-id="c1956-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c1956-122">See Also</span></span>  
+ [<span data-ttu-id="c1956-123">Vue d’ensemble du modèle objet schéma XML</span><span class="sxs-lookup"><span data-stu-id="c1956-123">XML Schema Object Model Overview</span></span>](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
+ [<span data-ttu-id="c1956-124">La lecture et écriture de schémas XML</span><span class="sxs-lookup"><span data-stu-id="c1956-124">Reading and Writing XML Schemas</span></span>](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
+ [<span data-ttu-id="c1956-125">Création de schémas XML</span><span class="sxs-lookup"><span data-stu-id="c1956-125">Building XML Schemas</span></span>](../../../../docs/standard/data/xml/building-xml-schemas.md)  
+ [<span data-ttu-id="c1956-126">Traversée de schémas XML</span><span class="sxs-lookup"><span data-stu-id="c1956-126">Traversing XML Schemas</span></span>](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
+ [<span data-ttu-id="c1956-127">Modification de schémas XML</span><span class="sxs-lookup"><span data-stu-id="c1956-127">Editing XML Schemas</span></span>](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
+ [<span data-ttu-id="c1956-128">XmlSchemaSet pour la Compilation du schéma</span><span class="sxs-lookup"><span data-stu-id="c1956-128">XmlSchemaSet for Schema Compilation</span></span>](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)

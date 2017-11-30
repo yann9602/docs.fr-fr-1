@@ -1,38 +1,43 @@
 ---
-title: "How to: Specify the Execution Mode in PLINQ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PLINQ queries, how to use execution mode"
+title: "Comment : spécifier le mode d'exécution en PLINQ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: PLINQ queries, how to use execution mode
 ms.assetid: e52ff26c-c5d3-4fab-9fec-c937fb387963
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 745ceae9832582c7b66a56075d128f9cf1c8ff69
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Specify the Execution Mode in PLINQ
-Cet exemple indique comment forcer PLINQ à ignorer sa méthode heuristique par défaut et paralléliser une requête indépendamment de sa forme.  
+# <a name="how-to-specify-the-execution-mode-in-plinq"></a><span data-ttu-id="63ab2-102">Comment : spécifier le mode d'exécution en PLINQ</span><span class="sxs-lookup"><span data-stu-id="63ab2-102">How to: Specify the Execution Mode in PLINQ</span></span>
+<span data-ttu-id="63ab2-103">Cet exemple montre comment forcer PLINQ à ignorer son approche par défaut et paralléliser une requête, quelle que soit la forme de la requête.</span><span class="sxs-lookup"><span data-stu-id="63ab2-103">This example shows how to force PLINQ to bypass its default heuristics and parallelize a query regardless of the query's shape.</span></span>  
   
 > [!WARNING]
->  Cet exemple est destiné à montrer l'utilisation et peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente.  Pour plus d'informations sur l'accélération, consultez [Understanding Speedup in PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+>  <span data-ttu-id="63ab2-104">Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente.</span><span class="sxs-lookup"><span data-stu-id="63ab2-104">This example is intended to demonstrate usage, and might not run faster than the equivalent sequential LINQ to Objects query.</span></span> <span data-ttu-id="63ab2-105">Pour plus d’informations sur l’accélération, consultez [fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).</span><span class="sxs-lookup"><span data-stu-id="63ab2-105">For more information about speedup, see [Understanding Speedup in PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).</span></span>  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="63ab2-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="63ab2-106">Example</span></span>  
  [!code-csharp[PLINQ#22](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#22)]
  [!code-vb[PLINQ#22](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#22)]  
   
- PLINQ est conçu pour exploiter des possibilités de parallélisation  Toutefois, l'exécution parallèle ne convient pas à toutes les requêtes.  Par exemple, lorsqu'une requête contient un délégué mono\-utilisateur qui exécute très peu de travail, une exécution séquentielle est en général plus rapide.  La raison en est la surcharge impliquée par l'activation de l'exécution parallèle, qui se révèle plus coûteuse que l'accélération obtenue.  Par conséquent, PLINQ ne parallélise pas automatiquement toutes les requêtes.  Il examine d'abord la forme de la requête et les différents opérateurs dont elle composée.  Sur la base de cette analyse, PLINQ, en mode d'exécution par défaut, peut décider d'exécuter certaines ou toutes les requêtes séquentiellement.  Toutefois, dans certains cas, vous pouvez en savoir plus sur votre requête que PLINQ n'est en mesure de déterminer d'après son analyse.  Par exemple, vous pouvez savoir qu'un délégué est très coûteux et que la requête bénéficiera assurément de la parallélisation.  Dans les tels cas, vous pouvez utiliser la méthode <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> et spécifier la valeur <xref:System.Linq.ParallelExecutionMode> pour indiquer à PLINQ de toujours exécuter la requête comme une requête parallèle.  
+ <span data-ttu-id="63ab2-107">PLINQ est conçu pour exploiter les possibilités de parallélisation.</span><span class="sxs-lookup"><span data-stu-id="63ab2-107">PLINQ is designed to exploit opportunities for parallelization.</span></span> <span data-ttu-id="63ab2-108">Toutefois, toutes les requêtes bénéficient de l’exécution en parallèle.</span><span class="sxs-lookup"><span data-stu-id="63ab2-108">However, not all queries benefit from parallel execution.</span></span> <span data-ttu-id="63ab2-109">Par exemple, lorsqu’une requête contient un délégué d’utilisateur unique qui est très peu de travail, la requête sera exécutée généralement plus rapide de manière séquentielle.</span><span class="sxs-lookup"><span data-stu-id="63ab2-109">For example, when a query contains a single user delegate that does very little work, the query will usually run faster sequentially.</span></span> <span data-ttu-id="63ab2-110">Il s’agit, car l’avantage de l’activation de l’exécution parallèle est plus coûteuse que l’accélération obtenue.</span><span class="sxs-lookup"><span data-stu-id="63ab2-110">This is because the overhead involved in enabling parallelizing execution is more expensive than the speedup that is obtained.</span></span> <span data-ttu-id="63ab2-111">Par conséquent, PLINQ ne pas parallélise automatiquement chaque requête.</span><span class="sxs-lookup"><span data-stu-id="63ab2-111">Therefore, PLINQ does not automatically parallelize every query.</span></span> <span data-ttu-id="63ab2-112">Il examine d’abord la forme de la requête et les différents opérateurs qui le composent.</span><span class="sxs-lookup"><span data-stu-id="63ab2-112">It first examines the shape of the query and the various operators that comprise it.</span></span> <span data-ttu-id="63ab2-113">En fonction de cette analyse, PLINQ en mode d’exécution par défaut peut décider à exécuter tout ou partie de la requête de manière séquentielle.</span><span class="sxs-lookup"><span data-stu-id="63ab2-113">Based on this analysis, PLINQ in the default execution mode may decide to execute some or all of the query sequentially.</span></span> <span data-ttu-id="63ab2-114">Toutefois, dans certains cas vous pouvez en savoir plus sur votre requête que PLINQ n’est pas en mesure de déterminer à partir de son analyse.</span><span class="sxs-lookup"><span data-stu-id="63ab2-114">However, in some cases you may know more about your query than PLINQ is able to determine from its analysis.</span></span> <span data-ttu-id="63ab2-115">Par exemple, vous savez qu’un délégué est très coûteux, et que la requête bénéficiera assurément de la parallélisation.</span><span class="sxs-lookup"><span data-stu-id="63ab2-115">For example, you may know that a delegate is very expensive, and that the query will definitely benefit from parallelization.</span></span> <span data-ttu-id="63ab2-116">Dans ce cas, vous pouvez utiliser la <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> (méthode) et spécifiez la <xref:System.Linq.ParallelExecutionMode.ForceParallelism> valeur pour indiquer à PLINQ de toujours exécuter la requête en parallèle.</span><span class="sxs-lookup"><span data-stu-id="63ab2-116">In such cases, you can use the <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> method and specify the <xref:System.Linq.ParallelExecutionMode.ForceParallelism> value to instruct PLINQ to always run the query as parallel.</span></span>  
   
-## Compilation du code  
- Copiez et collez ce code dans l'exemple de données PLINQ \([PLINQ Data Sample](../../../docs/standard/parallel-programming/plinq-data-sample.md)\) et appelez la méthode depuis `Main`.  
+## <a name="compiling-the-code"></a><span data-ttu-id="63ab2-117">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="63ab2-117">Compiling the Code</span></span>  
+ <span data-ttu-id="63ab2-118">Coupez et collez ce code dans le [données PLINQ, exemple](../../../docs/standard/parallel-programming/plinq-data-sample.md) et appelez la méthode à partir de `Main`.</span><span class="sxs-lookup"><span data-stu-id="63ab2-118">Cut and paste this code into the [PLINQ Data Sample](../../../docs/standard/parallel-programming/plinq-data-sample.md) and call the method from `Main`.</span></span>  
   
-## Voir aussi  
- <xref:System.Linq.ParallelEnumerable.AsSequential%2A>   
- [Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a><span data-ttu-id="63ab2-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="63ab2-119">See Also</span></span>  
+ <xref:System.Linq.ParallelEnumerable.AsSequential%2A>  
+ [<span data-ttu-id="63ab2-120">Parallel LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="63ab2-120">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

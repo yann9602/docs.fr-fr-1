@@ -1,67 +1,65 @@
 ---
-title: "R&#233;solution de feuilles de style&#160;XSLT externes et de documents | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Résolution de feuilles de style XSLT externes et de documents"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 920cfe3b-d525-4bb2-abf6-9431651f9cf9
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: a5e84935f9fff1f993a677d408287cd775269f03
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# R&#233;solution de feuilles de style&#160;XSLT externes et de documents
-Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments.  
+# <a name="resolving-external-xslt-style-sheets-and-documents"></a><span data-ttu-id="8f1fc-102">Résolution de feuilles de style XSLT externes et de documents</span><span class="sxs-lookup"><span data-stu-id="8f1fc-102">Resolving External XSLT Style Sheets and Documents</span></span>
+<span data-ttu-id="8f1fc-103">Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-103">There are several times during a transformation when you may need to resolve external resources.</span></span>  
   
 > [!NOTE]
->  La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  Vous pouvez effectuer des transformations XSLT \(Extensible Stylesheet Language Transformation\) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
+>  <span data-ttu-id="8f1fc-104">La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8f1fc-104">The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span> <span data-ttu-id="8f1fc-105">Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-105">You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
- Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments :  
+ <span data-ttu-id="8f1fc-106">Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments :</span><span class="sxs-lookup"><span data-stu-id="8f1fc-106">There are several times during a transformation when you may need to resolve external resources:</span></span>  
   
--   pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour localiser une feuille de style externe ;  
+-   <span data-ttu-id="8f1fc-107">pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour localiser une feuille de style externe ;</span><span class="sxs-lookup"><span data-stu-id="8f1fc-107">During the <xref:System.Xml.Xsl.XslTransform.Load%2A> to locate an external style sheet.</span></span>  
   
--   pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour résoudre tout élément `<xsl:include>` ou `<xsl:import>` trouvé dans la feuille de style ;  
+-   <span data-ttu-id="8f1fc-108">pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour résoudre tout élément `<xsl:include>` ou `<xsl:import>` trouvé dans la feuille de style ;</span><span class="sxs-lookup"><span data-stu-id="8f1fc-108">During <xref:System.Xml.Xsl.XslTransform.Load%2A> to resolve any `<xsl:include>` or `<xsl:import>` elements found in the style sheet.</span></span>  
   
--   pendant la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> pour résoudre toute fonction `document()`.  
+-   <span data-ttu-id="8f1fc-109">pendant la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> pour résoudre toute fonction `document()`.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-109">During <xref:System.Xml.Xsl.XslTransform.Transform%2A> to resolve any `document()` functions.</span></span>  
   
-## Utilisation de la classe XmlResolver  
- Si l'authentification est nécessaire pour accéder à une ressource réseau, utilisez les méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui ont un paramètre <xref:System.Xml.XmlResolver> à passer à l'objet <xref:System.Xml.XmlResolver> qui possède le jeu de propriétés d'informations d'identification nécessaire.  
+## <a name="using-the-xmlresolver-class"></a><span data-ttu-id="8f1fc-110">Utilisation de la classe XmlResolver</span><span class="sxs-lookup"><span data-stu-id="8f1fc-110">Using the XmlResolver Class</span></span>  
+ <span data-ttu-id="8f1fc-111">Si l'authentification est nécessaire pour accéder à une ressource réseau, utilisez les méthodes <xref:System.Xml.Xsl.XslTransform.Load%2A> qui ont un paramètre <xref:System.Xml.XmlResolver> à passer à l'objet <xref:System.Xml.XmlResolver> qui possède le jeu de propriétés d'informations d'identification nécessaire.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-111">If authentication is required to access a network resource, use the <xref:System.Xml.Xsl.XslTransform.Load%2A> methods that have an <xref:System.Xml.XmlResolver> parameter to pass the <xref:System.Xml.XmlResolver> object, which has the necessary credential properties set.</span></span>  
   
- Si vous souhaitez utiliser un objet <xref:System.Xml.XmlResolver> personnalisé ou si vous devez spécifier des informations d'identification différentes, le tableau suivant répertorie la tâche requise en fonction du moment où la ressource externe doit être résolue.  
+ <span data-ttu-id="8f1fc-112">Si vous souhaitez utiliser un objet <xref:System.Xml.XmlResolver> personnalisé ou si vous devez spécifier des informations d'identification différentes, le tableau suivant répertorie la tâche requise en fonction du moment où la ressource externe doit être résolue.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-112">If you have a custom <xref:System.Xml.XmlResolver> that you want to use, or if you need to specify different credentials, the following table lists the task required, depending on when the external resource needs resolution.</span></span>  
   
-|Processus devant être résolu|Tâche requise|  
-|----------------------------------|-------------------|  
-|Pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour localiser la feuille de style.|Spécifiez la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> surchargée qui prend comme paramètre un objet <xref:System.Xml.XmlResolver> si la feuille de style est sur une ressource qui nécessite des informations d'identification.|  
-|Pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour résoudre `<xsl:include>` ou `<xsl:import>`.|Spécifiez la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> surchargée qui prend comme paramètre <xref:System.Xml.XmlResolver>.  L'objet <xref:System.Xml.XmlResolver> est utilisé pour charger les feuilles de style référencées par les instructions `import` ou `include`.  Si vous passez `null`, les ressources externes ne sont pas résolues.|  
-|Lors d'une transformation pour résoudre toute fonction `document()`.|Spécifiez l'objet <xref:System.Xml.XmlResolver> durant la transformation en utilisant la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> qui prend un argument <xref:System.Xml.XmlResolver>.|  
+|<span data-ttu-id="8f1fc-113">Processus devant être résolu</span><span class="sxs-lookup"><span data-stu-id="8f1fc-113">What process requires resolution</span></span>|<span data-ttu-id="8f1fc-114">Tâche requise</span><span class="sxs-lookup"><span data-stu-id="8f1fc-114">Task required</span></span>|  
+|--------------------------------------|-------------------|  
+|<span data-ttu-id="8f1fc-115">Pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour localiser la feuille de style.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-115">During <xref:System.Xml.Xsl.XslTransform.Load%2A> to locate the style sheet.</span></span>|<span data-ttu-id="8f1fc-116">Spécifiez la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> surchargée qui prend comme paramètre un objet <xref:System.Xml.XmlResolver> si la feuille de style est sur une ressource qui nécessite des informations d'identification.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-116">Specify the overloaded <xref:System.Xml.Xsl.XslTransform.Load%2A> method that takes, as a parameter, an <xref:System.Xml.XmlResolver> if the style sheet is on a resource that requires credentials.</span></span>|  
+|<span data-ttu-id="8f1fc-117">Pendant la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> pour résoudre `<xsl:include>` ou `<xsl:import>`.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-117">During <xref:System.Xml.Xsl.XslTransform.Load%2A> to resolve `<xsl:include>` or `<xsl:import>`.</span></span>|<span data-ttu-id="8f1fc-118">Spécifiez la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> surchargée qui prend comme paramètre <xref:System.Xml.XmlResolver>.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-118">Specify the overloaded <xref:System.Xml.Xsl.XslTransform.Load%2A> method that takes, as a parameter, an <xref:System.Xml.XmlResolver>.</span></span> <span data-ttu-id="8f1fc-119">L'objet <xref:System.Xml.XmlResolver> est utilisé pour charger les feuilles de style référencées par les instructions `import` ou `include`.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-119">The <xref:System.Xml.XmlResolver> is used to load the style sheets referenced by the `import` or `include` statements.</span></span> <span data-ttu-id="8f1fc-120">Si vous passez `null`, les ressources externes ne sont pas résolues.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-120">If you pass in `null`, the external resources are not resolved.</span></span>|  
+|<span data-ttu-id="8f1fc-121">Lors d'une transformation pour résoudre toute fonction `document()`.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-121">During a transformation to resolve any `document()` functions.</span></span>|<span data-ttu-id="8f1fc-122">Spécifiez le <xref:System.Xml.XmlResolver> lors de la transformation à l’aide de la <xref:System.Xml.Xsl.XslTransform.Transform%2A> méthode qui accepte un <xref:System.Xml.XmlResolver> argument.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-122">Specify the <xref:System.Xml.XmlResolver> during the transformation by using the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method that takes an <xref:System.Xml.XmlResolver> argument.</span></span>|  
   
- La fonction  `document()` extrait d'autres ressources XML d'une feuille de style, en plus des données XML initiales fournies par le flux d'entrée.  Comme cette fonction permet l'inclusion de données XML qui peuvent se localiser ailleurs, un objet <xref:System.Xml.XmlResolver> avec une valeur `null` fournie à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> empêche la fonction `document()` de s'exécuter.  Si vous voulez utiliser la fonction `document()`, utilisez la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> qui prend un <xref:System.Xml.XmlResolver> comme paramètre, en plus d'avoir le jeu d'autorisations approprié.  
+ <span data-ttu-id="8f1fc-123">Le `document()` fonction extrait autres ressources XML d’une feuille de style, en plus les données XML initiales fournies par le flux d’entrée.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-123">The `document()` function retrieves other XML resources from a style sheet, in addition to the initial XML data provided by the input stream.</span></span> <span data-ttu-id="8f1fc-124">Comme cette fonction permet l'inclusion de données XML qui peuvent se localiser ailleurs, un objet <xref:System.Xml.XmlResolver> avec une valeur `null` fournie à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> empêche la fonction `document()` de s'exécuter.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-124">Since this function allows the inclusion of XML data that can be located elsewhere, an <xref:System.Xml.XmlResolver> with a `null` value supplied to the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method prevents the `document()` function from executing.</span></span> <span data-ttu-id="8f1fc-125">Si vous voulez utiliser la fonction `document()`, utilisez la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> qui prend un <xref:System.Xml.XmlResolver> comme paramètre, en plus d'avoir le jeu d'autorisations approprié.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-125">If you want to use the `document()` function, use the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method that takes an <xref:System.Xml.XmlResolver> as a parameter, in addition to having the appropriate permission set.</span></span>  
   
- Pour plus d'informations sur la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> et son utilisation de l'objet <xref:System.Xml.XmlResolver>, consultez <xref:System.Xml.Xsl.XslTransform.Load%28System.String%2CSystem.Xml.XmlResolver%29?displayProperty=fullName>.  
+ <span data-ttu-id="8f1fc-126">Pour plus d'informations sur la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> et son utilisation de l'objet <xref:System.Xml.XmlResolver>, consultez <xref:System.Xml.Xsl.XslTransform.Load%28System.String%2CSystem.Xml.XmlResolver%29?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-126">For more information on the <xref:System.Xml.Xsl.XslTransform.Load%2A> method and its use of the <xref:System.Xml.XmlResolver>, see <xref:System.Xml.Xsl.XslTransform.Load%28System.String%2CSystem.Xml.XmlResolver%29?displayProperty=nameWithType>.</span></span>  
   
- Lorsque la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> est appelée, les autorisations sont calculées par rapport aux preuves fournies au moment du chargement, et ce jeu d'autorisations est attribué à l'ensemble du processus de transformation.  Si la fonction `document()` tente d'initier une action qui nécessite des autorisations qui ne se trouvent pas dans le jeu, une exception est levée.  
+ <span data-ttu-id="8f1fc-127">Lorsque la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> est appelée, les autorisations sont calculées par rapport aux preuves fournies au moment du chargement, et ce jeu d'autorisations est attribué à l'ensemble du processus de transformation.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-127">When the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is called, permissions are calculated against the evidence provided at load time, and that permission set is assigned to the entire transformation process.</span></span> <span data-ttu-id="8f1fc-128">Si la fonction `document()` tente d'initier une action qui nécessite des autorisations qui ne se trouvent pas dans le jeu, une exception est levée.</span><span class="sxs-lookup"><span data-stu-id="8f1fc-128">If the `document()` function attempts to initiate an action that requires permissions not found in the set, an exception is thrown.</span></span>  
   
-## Voir aussi  
- [Transformations XSLT avec la classe XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)   
- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)   
- [Sorties à partir de XslTransform](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)   
- [Transformations XSLT sur différents magasins](../../../../docs/standard/data/xml/xslt-transformations-over-different-stores.md)   
- [XsltArgumentList pour les paramètres de feuille de style et les objets d'extension](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)   
- [Écriture de scripts de feuille de style XSLT à l'aide de \<msxsl:script\>](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)   
- [Prise en charge de la fonction msxsl:node\-set\(\)](../../../../docs/standard/data/xml/support-for-the-msxsl-node-set-function.md)   
- [XPathNavigator dans les transformations](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)   
- [XPathNodeIterator dans les transformations](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)   
- [Entrée XPathDocument dans XslTransform](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)   
- [Entrée XmlDataDocument dans XslTransform](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)   
- [Entrée XmlDocument dans XslTransform](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)
+## <a name="see-also"></a><span data-ttu-id="8f1fc-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8f1fc-129">See Also</span></span>  
+ [<span data-ttu-id="8f1fc-130">Transformations XSLT avec la classe XslTransform</span><span class="sxs-lookup"><span data-stu-id="8f1fc-130">XSLT Transformations with the XslTransform Class</span></span>](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [<span data-ttu-id="8f1fc-131">XslTransform Class Implements the XSLT Processor</span><span class="sxs-lookup"><span data-stu-id="8f1fc-131">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
+ [<span data-ttu-id="8f1fc-132">Sorties à partir de XslTransform</span><span class="sxs-lookup"><span data-stu-id="8f1fc-132">Outputs from an XslTransform</span></span>](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)  
+ [<span data-ttu-id="8f1fc-133">Transformations XSLT sur différents magasins</span><span class="sxs-lookup"><span data-stu-id="8f1fc-133">XSLT Transformations Over Different Stores</span></span>](../../../../docs/standard/data/xml/xslt-transformations-over-different-stores.md)  
+ [<span data-ttu-id="8f1fc-134">XsltArgumentList pour les paramètres de feuille de Style et les objets d’Extension</span><span class="sxs-lookup"><span data-stu-id="8f1fc-134">XsltArgumentList for Style Sheet Parameters and Extension Objects</span></span>](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)  
+ [<span data-ttu-id="8f1fc-135">XSLT Stylesheet Scripting à l’aide de \<msxsl : script ></span><span class="sxs-lookup"><span data-stu-id="8f1fc-135">XSLT Stylesheet Scripting Using \<msxsl:script></span></span>](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)  
+ [<span data-ttu-id="8f1fc-136">Prise en charge de la fonction msxsl :node-set()</span><span class="sxs-lookup"><span data-stu-id="8f1fc-136">Support for the msxsl:node-set() Function</span></span>](../../../../docs/standard/data/xml/support-for-the-msxsl-node-set-function.md)  
+ [<span data-ttu-id="8f1fc-137">XPathNavigator dans les Transformations</span><span class="sxs-lookup"><span data-stu-id="8f1fc-137">XPathNavigator in Transformations</span></span>](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
+ [<span data-ttu-id="8f1fc-138">XPathNodeIterator dans les Transformations</span><span class="sxs-lookup"><span data-stu-id="8f1fc-138">XPathNodeIterator in Transformations</span></span>](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
+ [<span data-ttu-id="8f1fc-139">Entrée XPathDocument dans XslTransform</span><span class="sxs-lookup"><span data-stu-id="8f1fc-139">XPathDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  
+ [<span data-ttu-id="8f1fc-140">Entrée XmlDataDocument dans XslTransform</span><span class="sxs-lookup"><span data-stu-id="8f1fc-140">XmlDataDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)  
+ [<span data-ttu-id="8f1fc-141">Entrée XmlDocument dans XslTransform</span><span class="sxs-lookup"><span data-stu-id="8f1fc-141">XmlDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)

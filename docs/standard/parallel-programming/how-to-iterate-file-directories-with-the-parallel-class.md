@@ -1,37 +1,42 @@
 ---
-title: "Comment&#160;: it&#233;rer les r&#233;pertoires de fichiers avec la classe parall&#232;le | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "boucles parallèles, comment itérer des répertoires"
+title: "Comment : itérer les répertoires de fichiers avec la classe parallèle"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: c21aadf70eaccafc8c8ec9c4efefff1c66abc6b5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: it&#233;rer les r&#233;pertoires de fichiers avec la classe parall&#232;le
-Dans de nombreux cas, l'itération de fichier est une opération qui peut facilement être parallélisée.  La rubrique [How to: Iterate File Directories with PLINQ](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md) indique le moyen le plus simple d'effectuer cette tâche dans de nombreux scénarios.  Toutefois, des problèmes peuvent se produire lorsque votre code doit traiter les nombreux types d'exceptions qui peuvent survenir lors de l'accès au système de fichiers.  L'exemple suivant indique une méthode pour faire face à ce problème.  Elle utilise une itération basée sur la pile pour parcourir tous les fichiers et dossiers d'un répertoire spécifié, et permet à votre code d'intercepter et de traiter diverses exceptions.  Évidemment, le choix du traitement des exceptions vous appartient.  
+# <a name="how-to-iterate-file-directories-with-the-parallel-class"></a><span data-ttu-id="0e759-102">Comment : itérer les répertoires de fichiers avec la classe parallèle</span><span class="sxs-lookup"><span data-stu-id="0e759-102">How to: Iterate File Directories with the Parallel Class</span></span>
+<span data-ttu-id="0e759-103">Dans de nombreux cas, le parcours de fichiers est une opération qui peut être facilement mis en parallèle.</span><span class="sxs-lookup"><span data-stu-id="0e759-103">In many cases, file iteration is an operation that can be easily parallelized.</span></span> <span data-ttu-id="0e759-104">La rubrique [Comment : itérer les répertoires de fichiers avec PLINQ](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md) montre la façon la plus simple pour effectuer cette tâche pour de nombreux scénarios.</span><span class="sxs-lookup"><span data-stu-id="0e759-104">The topic [How to: Iterate File Directories with PLINQ](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md) shows the easiest way to perform this task for many scenarios.</span></span> <span data-ttu-id="0e759-105">Toutefois, des problèmes peuvent se produire lorsque votre code doit traiter les nombreux types d’exceptions qui peuvent survenir lors de l’accès du système de fichiers.</span><span class="sxs-lookup"><span data-stu-id="0e759-105">However, complications can arise when your code has to deal with the many types of exceptions that can arise when accessing the file system.</span></span> <span data-ttu-id="0e759-106">L’exemple suivant présente une approche pour le problème.</span><span class="sxs-lookup"><span data-stu-id="0e759-106">The following example shows one approach to the problem.</span></span> <span data-ttu-id="0e759-107">Elle utilise une itération basée sur la pile pour parcourir tous les fichiers et dossiers situés sous un répertoire spécifié, et permet à votre code intercepter et gérer des exceptions différentes.</span><span class="sxs-lookup"><span data-stu-id="0e759-107">It uses a stack-based iteration to traverse all files and folders under a specified directory, and it enables your code to catch and handle various exceptions.</span></span> <span data-ttu-id="0e759-108">Bien entendu, la façon de gérer les exceptions vous revient.</span><span class="sxs-lookup"><span data-stu-id="0e759-108">Of course, the way that you handle the exceptions is up to you.</span></span>  
   
-## Exemple  
- L'exemple suivant itère les répertoires séquentiellement, mais traite les fichiers en parallèle.  Il s'agit probablement de la méthode la mieux adaptée si vous avez un ratio fichier\/répertoire élevé.  Il est également possible de paralléliser l'itération des répertoires et d'accéder à chaque fichier séquentiellement.  Ce n'est probablement pas très efficace de paralléliser les deux boucles sauf si vous ciblez spécifiquement un ordinateur doté d'un grand nombre de processeurs.  Toutefois, comme dans tous les cas, vous devez tester votre application de manière approfondie afin de déterminer la meilleure méthode.  
+## <a name="example"></a><span data-ttu-id="0e759-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="0e759-109">Example</span></span>  
+ <span data-ttu-id="0e759-110">L’exemple suivant itère les répertoires de manière séquentielle, mais traite les fichiers en parallèle.</span><span class="sxs-lookup"><span data-stu-id="0e759-110">The following example iterates the directories sequentially, but processes the files in parallel.</span></span> <span data-ttu-id="0e759-111">Ceci est probablement la meilleure approche lorsque vous disposez d’un rapport au répertoire de fichiers volumineux.</span><span class="sxs-lookup"><span data-stu-id="0e759-111">This is probably the best approach when you have a large file-to-directory ratio.</span></span> <span data-ttu-id="0e759-112">Il est également possible de paralléliser l’itération active et d’accéder à chaque fichier de manière séquentielle.</span><span class="sxs-lookup"><span data-stu-id="0e759-112">It is also possible to parallelize the directory iteration, and access each file sequentially.</span></span> <span data-ttu-id="0e759-113">Il n’est probablement pas efficace de paralléliser les boucles, sauf si vous ciblez spécifiquement un ordinateur avec un grand nombre de processeurs.</span><span class="sxs-lookup"><span data-stu-id="0e759-113">It is probably not efficient to parallelize both loops unless you are specifically targeting a machine with a large number of processors.</span></span> <span data-ttu-id="0e759-114">Toutefois, comme dans tous les cas, vous devez tester votre application minutieusement pour déterminer la meilleure approche.</span><span class="sxs-lookup"><span data-stu-id="0e759-114">However, as in all cases, you should test your application thoroughly to determine the best approach.</span></span>  
   
  [!code-csharp[TPL_Parallel#08](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallel_file.cs#08)]
  [!code-vb[TPL_Parallel#08](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/fileiteration08.vb#08)]  
   
- Dans cet exemple, les E\/S des fichiers sont exécutées en mode synchrone.  Si le nombre de fichiers est élevé ou si les connexions réseau sont lentes, il peut être préférable d'accéder aux fichiers en mode asynchrone.  Vous pouvez combiner les techniques d'E\/S asynchrones avec l'itération parallèle.  Pour plus d'informations, consultez [TPL and Traditional .NET Framework Asynchronous Programming](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md).  
+ <span data-ttu-id="0e759-115">Dans cet exemple, le fichier d’e/s est effectué de façon synchrone.</span><span class="sxs-lookup"><span data-stu-id="0e759-115">In this example, the file I/O is performed synchronously.</span></span> <span data-ttu-id="0e759-116">Lors du traitement des fichiers volumineux ou des connexions réseau lentes, il peut être préférable d’accéder aux fichiers de façon asynchrone.</span><span class="sxs-lookup"><span data-stu-id="0e759-116">When dealing with large files or slow network connections, it might be preferable to access the files asynchronously.</span></span> <span data-ttu-id="0e759-117">Vous pouvez combiner des techniques d’e/s asynchrones avec l’itération parallèle.</span><span class="sxs-lookup"><span data-stu-id="0e759-117">You can combine asynchronous I/O techniques with parallel iteration.</span></span> <span data-ttu-id="0e759-118">Pour plus d’informations, consultez [Bibliothèque parallèle de tâches (TPL) et programmation asynchrone](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md).</span><span class="sxs-lookup"><span data-stu-id="0e759-118">For more information, see [TPL and Traditional .NET Framework Asynchronous Programming](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md).</span></span>  
   
- L'exemple utilise la variable locale `fileCount` pour contenir un nombre total le nombre de fichiers traités.  Parce que la variable peut être accessible simultanément par plusieurs tâches, l'accès vers elle est synchronisée en appelant la méthode <xref:System.Threading.Interlocked.Add%2A?displayProperty=fullName>.  
+ <span data-ttu-id="0e759-119">L’exemple utilise le `fileCount` variable pour conserver un décompte du nombre total de fichiers traités.</span><span class="sxs-lookup"><span data-stu-id="0e759-119">The example uses the local `fileCount` variable to maintain a count of the total number of files processed.</span></span> <span data-ttu-id="0e759-120">Étant donné que la variable peut être accessibles simultanément par plusieurs tâches, l’accès lui est synchronisé en appelant le <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> (méthode).</span><span class="sxs-lookup"><span data-stu-id="0e759-120">Because the variable might be accessed concurrently by multiple tasks, access to it is synchronized by calling the <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> method.</span></span>  
   
- Notez que si une exception est levée dans le thread principal, l'exécution des threads démarrés par la méthode <xref:System.Threading.Tasks.Parallel.ForEach%2A> peut continuer.  Pour arrêter ces threads, vous pouvez définir une variable booléenne dans vos gestionnaires d'exceptions et vérifier sa valeur pour chaque itération de la boucle parallèle.  Si la valeur indique qu'une exception a été levée, utilisez la variable <xref:System.Threading.Tasks.ParallelLoopState> pour arrêter ou quitter la boucle.  Pour plus d'informations, consultez [How to: Stop or Break from a Parallel.For Loop](http://msdn.microsoft.com/fr-fr/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e).  
+ <span data-ttu-id="0e759-121">Notez que si une exception est levée sur le principal thread, les threads qui sont démarrés par le <xref:System.Threading.Tasks.Parallel.ForEach%2A> méthode peut continuer à s’exécuter.</span><span class="sxs-lookup"><span data-stu-id="0e759-121">Note that if an exception is thrown on the main thread, the threads that are started by the <xref:System.Threading.Tasks.Parallel.ForEach%2A> method might continue to run.</span></span> <span data-ttu-id="0e759-122">Pour arrêter ces threads, vous pouvez définir une variable booléenne dans vos gestionnaires d’exceptions et vérifier sa valeur sur chaque itération de la boucle parallèle.</span><span class="sxs-lookup"><span data-stu-id="0e759-122">To stop these threads, you can set a Boolean variable in your exception handlers, and check its value on each iteration of the parallel loop.</span></span> <span data-ttu-id="0e759-123">Si la valeur indique qu’une exception a été levée, utilisez la <xref:System.Threading.Tasks.ParallelLoopState> variable à l’arrêt ou à partir de la boucle.</span><span class="sxs-lookup"><span data-stu-id="0e759-123">If the value indicates that an exception has been thrown, use the <xref:System.Threading.Tasks.ParallelLoopState> variable to stop or break from the loop.</span></span> <span data-ttu-id="0e759-124">Pour plus d’informations, consultez [Comment : arrêter ou rompre une boucle Parallel.For](http://msdn.microsoft.com/en-us/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e).</span><span class="sxs-lookup"><span data-stu-id="0e759-124">For more information, see [How to: Stop or Break from a Parallel.For Loop](http://msdn.microsoft.com/en-us/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e).</span></span>  
   
-## Voir aussi  
- [Data Parallelism](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
+## <a name="see-also"></a><span data-ttu-id="0e759-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0e759-125">See Also</span></span>  
+ [<span data-ttu-id="0e759-126">Parallélisme de données</span><span class="sxs-lookup"><span data-stu-id="0e759-126">Data Parallelism</span></span>](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)

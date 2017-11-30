@@ -1,113 +1,181 @@
 ---
-title: "Meilleures pratiques pour les exceptions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "exceptions, meilleures pratiques"
+title: Meilleures pratiques pour les exceptions
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords: exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-caps.latest.revision: 28
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 87f9287c3714416ee5d6b63f3c9db311bb97b131
+ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/28/2017
 ---
-# Meilleures pratiques pour les exceptions
-Une application bien conçue gère les exceptions et les erreurs pour empêcher les incidents d'applications.  Cet article présente les meilleures pratiques pour la gestion et la création des exceptions.  
+# <a name="best-practices-for-exceptions"></a><span data-ttu-id="30ffa-102">Bonnes pratiques pour les exceptions</span><span class="sxs-lookup"><span data-stu-id="30ffa-102">Best practices for exceptions</span></span>
+
+<span data-ttu-id="30ffa-103">Une application bien conçue gère les exceptions et les erreurs pour empêcher les incidents d'applications.</span><span class="sxs-lookup"><span data-stu-id="30ffa-103">A well-designed app handles exceptions and errors to prevent app crashes.</span></span> <span data-ttu-id="30ffa-104">Cette section présente les bonnes pratiques pour la gestion et la création des exceptions.</span><span class="sxs-lookup"><span data-stu-id="30ffa-104">This section describes best practices for handling and creating exceptions.</span></span>
+
+## <a name="use-trycatchfinally-blocks"></a><span data-ttu-id="30ffa-105">Utiliser des blocs try/catch/finally</span><span class="sxs-lookup"><span data-stu-id="30ffa-105">Use try/catch/finally blocks</span></span>
+
+<span data-ttu-id="30ffa-106">Utilisez des blocs `try`/`catch`/`finally` autour du code susceptible de générer une exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-106">Use `try`/`catch`/`finally` blocks around code that can potentially generate an exception.</span></span> 
+
+<span data-ttu-id="30ffa-107">Dans les blocs `catch`, veillez à toujours classer les exceptions de la plus spécifique à la moins spécifique.</span><span class="sxs-lookup"><span data-stu-id="30ffa-107">In `catch` blocks, always order exceptions from the most specific to the least specific.</span></span>
+
+<span data-ttu-id="30ffa-108">Utilisez un bloc `finally` pour nettoyer les ressources, que la récupération soit possible ou non.</span><span class="sxs-lookup"><span data-stu-id="30ffa-108">Use a `finally` block to clean up resources, whether you can recover or not.</span></span>
+
+## <a name="handle-common-conditions-without-throwing-exceptions"></a><span data-ttu-id="30ffa-109">Gérer les conditions courantes sans lever d’exception</span><span class="sxs-lookup"><span data-stu-id="30ffa-109">Handle common conditions without throwing exceptions</span></span>
+
+<span data-ttu-id="30ffa-110">En ce qui concerne les conditions susceptibles de se produire, mais pouvant déclencher une exception, gérez-les de façon à éviter l’exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-110">For conditions that are likely to occur but might trigger an exception, consider handling them in a way that will avoid the exception.</span></span> <span data-ttu-id="30ffa-111">Par exemple, si vous essayez de fermer une connexion déjà fermée, vous obtenez une exception `InvalidOperationException`.</span><span class="sxs-lookup"><span data-stu-id="30ffa-111">For example, if you try to close a connection that is already closed, you'll get an `InvalidOperationException`.</span></span> <span data-ttu-id="30ffa-112">Vous pouvez l’éviter avec une instruction `if` qui permet de vérifier l’état de la connexion avant d’essayer de la fermer.</span><span class="sxs-lookup"><span data-stu-id="30ffa-112">You can avoid that by using an `if` statement to check the connection state before trying to close it.</span></span>
+
+[!code-cpp[Conceptual.Exception.Handling#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#2)]
+[!code-csharp[Conceptual.Exception.Handling#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#2)]
+[!code-vb[Conceptual.Exception.Handling#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#2)]  
+
+<span data-ttu-id="30ffa-113">Si vous ne vérifiez pas l’état de la connexion avant de la fermer, vous pouvez intercepter l’exception `InvalidOperationException`.</span><span class="sxs-lookup"><span data-stu-id="30ffa-113">If you don't check connection state before closing, you can catch the `InvalidOperationException` exception.</span></span>
+
+[!code-cpp[Conceptual.Exception.Handling#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#3)]
+[!code-csharp[Conceptual.Exception.Handling#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#3)]
+[!code-vb[Conceptual.Exception.Handling#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#3)]  
+
+<span data-ttu-id="30ffa-114">Le choix de la méthode dépend de la fréquence à laquelle l’événement doit se produire.</span><span class="sxs-lookup"><span data-stu-id="30ffa-114">The method to choose depends on how often you expect the event to occur.</span></span>
+
+- <span data-ttu-id="30ffa-115">Utilisez la gestion des exceptions si l'événement ne se produit pas très souvent, c'est-à-dire, si l'événement est véritablement exceptionnel et indique une erreur (telle qu'une fin de fichier inattendue).</span><span class="sxs-lookup"><span data-stu-id="30ffa-115">Use exception handling if the event doesn't occur very often, that is, if the event is truly exceptional and indicates an error (such as an unexpected end-of-file).</span></span> <span data-ttu-id="30ffa-116">Lorsque vous utilisez la gestion des exceptions, la quantité de code exécutée en situation normale est moindre.</span><span class="sxs-lookup"><span data-stu-id="30ffa-116">When you use exception handling, less code is executed in normal conditions.</span></span>
+
+- <span data-ttu-id="30ffa-117">Recherchez les conditions d’erreur dans le code si l’événement se produit régulièrement et peut être considéré comme faisant partie de l’exécution normale.</span><span class="sxs-lookup"><span data-stu-id="30ffa-117">Check for error conditions in code if the event happens routinely and could be considered part of normal execution.</span></span> <span data-ttu-id="30ffa-118">Quand vous recherchez les conditions d’erreur courantes, vous exécutez moins de code, car vous évitez les exceptions.</span><span class="sxs-lookup"><span data-stu-id="30ffa-118">When you check for common error conditions, less code is executed because you avoid exceptions.</span></span>
+
+## <a name="design-classes-so-that-exceptions-can-be-avoided"></a><span data-ttu-id="30ffa-119">Concevoir des classes pour éviter les exceptions</span><span class="sxs-lookup"><span data-stu-id="30ffa-119">Design classes so that exceptions can be avoided</span></span>
+
+<span data-ttu-id="30ffa-120">Une classe peut fournir des méthodes ou propriétés qui vous permettent d’éviter d’effectuer un appel susceptible de déclencher une exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-120">A class can provide methods or properties that enable you to avoid making a call that would trigger an exception.</span></span> <span data-ttu-id="30ffa-121">Par exemple, une classe <xref:System.IO.FileStream> fournit des méthodes qui permettent de déterminer si la fin du fichier a été atteinte.</span><span class="sxs-lookup"><span data-stu-id="30ffa-121">For example, a <xref:System.IO.FileStream> class provides methods that help determine whether the end of the file has been reached.</span></span> <span data-ttu-id="30ffa-122">Ces méthodes peuvent servir à éviter l’exception qui est levée si vous dépassez la fin du fichier pendant la lecture.</span><span class="sxs-lookup"><span data-stu-id="30ffa-122">These can be used to avoid the exception that is thrown if you read past the end of the file.</span></span> <span data-ttu-id="30ffa-123">L’exemple suivant montre comment lire un fichier jusqu’à la fin sans lever d’exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-123">The following example shows how to read to the end of a file without triggering an exception.</span></span>
+
+[!code-cpp[Conceptual.Exception.Handling#5](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#5)]
+[!code-csharp[Conceptual.Exception.Handling#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#5)]
+[!code-vb[Conceptual.Exception.Handling#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#5)]  
+
+<span data-ttu-id="30ffa-124">Un autre moyen d’éviter les exceptions est de retourner Null pour les cas d’erreur très répandus au lieu de lever une exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-124">Another way to avoid exceptions is to return null for extremely common error cases instead of throwing an exception.</span></span> <span data-ttu-id="30ffa-125">Un cas d'erreur très répandu peut être considéré comme un flux de contrôle normal.</span><span class="sxs-lookup"><span data-stu-id="30ffa-125">An extremely common error case can be considered normal flow of control.</span></span> <span data-ttu-id="30ffa-126">En retournant null dans ces cas-là, vous réduisez l'impact sur les performances d'une application.</span><span class="sxs-lookup"><span data-stu-id="30ffa-126">By returning null in these cases, you minimize the performance impact to an app.</span></span>
+
+## <a name="throw-exceptions-instead-of-returning-an-error-code"></a><span data-ttu-id="30ffa-127">Lever des exceptions au lieu de retourner un code d’erreur</span><span class="sxs-lookup"><span data-stu-id="30ffa-127">Throw exceptions instead of returning an error code</span></span>
+
+<span data-ttu-id="30ffa-128">Les exceptions font en sorte que les échecs ne passent pas inaperçus parce que l’appel du code n’a pas vérifié le code de retour.</span><span class="sxs-lookup"><span data-stu-id="30ffa-128">Exceptions ensure that failures do not go unnoticed because calling code didn't check a return code.</span></span> 
+
+## <a name="use-the-predefined-net-exception-types"></a><span data-ttu-id="30ffa-129">Utiliser les types d’exception .NET prédéfinis</span><span class="sxs-lookup"><span data-stu-id="30ffa-129">Use the predefined .NET exception types</span></span>
+
+<span data-ttu-id="30ffa-130">N'introduisez une nouvelle classe d'exception que quand aucune classe d'exception prédéfinie ne s'applique.</span><span class="sxs-lookup"><span data-stu-id="30ffa-130">Introduce a new exception class only when a predefined one doesn't apply.</span></span> <span data-ttu-id="30ffa-131">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="30ffa-131">For example:</span></span>
+
+- <span data-ttu-id="30ffa-132">Levez une exception <xref:System.InvalidOperationException> si un appel de jeu de propriétés ou de méthode n'est pas approprié étant donné l'état actuel de l'objet.</span><span class="sxs-lookup"><span data-stu-id="30ffa-132">Throw an <xref:System.InvalidOperationException> exception if a property set or method call is not appropriate given the object's current state.</span></span>
+
+- <span data-ttu-id="30ffa-133">Levez une exception <xref:System.ArgumentException> ou l’une des classes prédéfinies qui dérivent de <xref:System.ArgumentException> si des paramètres non valides sont passés.</span><span class="sxs-lookup"><span data-stu-id="30ffa-133">Throw an <xref:System.ArgumentException> exception or one of the predefined classes that derive from <xref:System.ArgumentException> if invalid parameters are passed.</span></span>
+
+## <a name="end-exception-class-names-with-the-word-exception"></a><span data-ttu-id="30ffa-134">Terminer les noms de classes d’exception par le mot `Exception`</span><span class="sxs-lookup"><span data-stu-id="30ffa-134">End exception class names with the word `Exception`</span></span>
+
+<span data-ttu-id="30ffa-135">Quand une exception personnalisée est nécessaire, nommez-la de manière appropriée et dérivez-la de la classe <xref:System.Exception>.</span><span class="sxs-lookup"><span data-stu-id="30ffa-135">When a custom exception is necessary, name it appropriately and derive it from the <xref:System.Exception> class.</span></span> <span data-ttu-id="30ffa-136">Exemple :</span><span class="sxs-lookup"><span data-stu-id="30ffa-136">For example:</span></span>
+
+[!code-cpp[Conceptual.Exception.Handling#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#4)]
+[!code-csharp[Conceptual.Exception.Handling#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#4)]
+[!code-vb[Conceptual.Exception.Handling#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#4)]  
+
+## <a name="include-three-constructors-in-custom-exception-classes"></a><span data-ttu-id="30ffa-137">Inclure trois constructeurs dans des classes d’exception personnalisées</span><span class="sxs-lookup"><span data-stu-id="30ffa-137">Include three constructors in custom exception classes</span></span>
+
+<span data-ttu-id="30ffa-138">Utilisez au moins les trois constructeurs communs pendant la création de vos propres classes d’exception : le constructeur par défaut, un constructeur qui prend un message de type chaîne et un constructeur qui prend un message de type chaîne et une exception interne.</span><span class="sxs-lookup"><span data-stu-id="30ffa-138">Use at least the three common constructors when creating your own exception classes: the default constructor, a constructor that takes a string message, and a constructor that takes a string message and an inner exception.</span></span>
+
+* <span data-ttu-id="30ffa-139"><xref:System.Exception.%23ctor>, qui utilise les valeurs par défaut.</span><span class="sxs-lookup"><span data-stu-id="30ffa-139"><xref:System.Exception.%23ctor>, which uses default values.</span></span>
   
-## Gestion des exceptions  
- La liste suivante contient des recommandations générales pour la gestion des exceptions dans votre application.  
+* <span data-ttu-id="30ffa-140"><xref:System.Exception.%23ctor%28System.String%29>, qui accepte un message de type chaîne.</span><span class="sxs-lookup"><span data-stu-id="30ffa-140"><xref:System.Exception.%23ctor%28System.String%29>, which accepts a string message.</span></span>  
   
--   Utilisez le code de gestion des exceptions \(blocs `try`\/`catch`\) correctement.  Vous pouvez également vérifier par programmation la présence d'une condition qui risque probablement de se produire sans le recours à la gestion des exceptions.  
+* <span data-ttu-id="30ffa-141"><xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, qui accepte un message de type chaîne et une exception interne.</span><span class="sxs-lookup"><span data-stu-id="30ffa-141"><xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, which accepts a string message and an inner exception.</span></span>  
   
-     **Vérifications par programmation**.  L'exemple suivant utilise une instruction `if` pour déterminer si une connexion est fermée.  Si ce n'est pas le cas, l'exemple ferme la connexion au lieu de lever une exception.  
+<span data-ttu-id="30ffa-142">Pour obtenir un exemple, consultez [Guide pratique : créer des exceptions définies par l’utilisateur](how-to-create-user-defined-exceptions.md).</span><span class="sxs-lookup"><span data-stu-id="30ffa-142">For an example, see [How to: Create User-Defined Exceptions](how-to-create-user-defined-exceptions.md).</span></span>
+
+## <a name="ensure-that-exception-data-is-available-when-code-executes-remotely"></a><span data-ttu-id="30ffa-143">Vérifier que les données d’exception sont disponibles quand le code s’exécute à distance</span><span class="sxs-lookup"><span data-stu-id="30ffa-143">Ensure that exception data is available when code executes remotely</span></span>
+
+<span data-ttu-id="30ffa-144">Quand vous créez des exceptions définies par l’utilisateur, vous devez vérifier que les métadonnées des exceptions sont disponibles pour le code qui s’exécute à distance.</span><span class="sxs-lookup"><span data-stu-id="30ffa-144">When you create user-defined exceptions, ensure that the metadata for the exceptions is available to code that is executing remotely.</span></span> 
+
+<span data-ttu-id="30ffa-145">Par exemple, sur des implémentations .NET qui prennent en charge les domaines d’application, les exceptions peuvent se produire entre les domaines d’application.</span><span class="sxs-lookup"><span data-stu-id="30ffa-145">For example, on .NET implementations that support App Domains, exceptions may occur across App domains.</span></span> <span data-ttu-id="30ffa-146">Supposons que le domaine d’application A crée le domaine d’application B, lequel exécute du code qui lève une exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-146">Suppose App Domain A creates App Domain B, which executes code that throws an exception.</span></span> <span data-ttu-id="30ffa-147">Pour que le domaine d’application A intercepte et gère l’exception correctement, il doit pouvoir trouver l’assembly qui contient l’exception levée par le domaine d’application B. Si le domaine d’application B lève une exception qui est contenue dans un assembly sous sa base d’application, mais pas sous la base d’application du domaine d’application A, le domaine d’application A ne peut pas trouver l’exception et le Common Language Runtime lève une exception <xref:System.IO.FileNotFoundException>.</span><span class="sxs-lookup"><span data-stu-id="30ffa-147">For App Domain A to properly catch and handle the exception, it must be able to find the assembly that contains the exception thrown by App Domain B. If App Domain B throws an exception that is contained in an assembly under its application base, but not under App Domain A's application base, App Domain A will not be able to find the exception, and the common language runtime will throw a <xref:System.IO.FileNotFoundException> exception.</span></span> <span data-ttu-id="30ffa-148">Pour éviter cette situation, vous pouvez déployer l'assembly qui contient les informations sur les exceptions de deux façons :</span><span class="sxs-lookup"><span data-stu-id="30ffa-148">To avoid this situation, you can deploy the assembly that contains the exception information in two ways:</span></span>
+
+- <span data-ttu-id="30ffa-149">Placez l'assembly dans une base d'application commune partagée par les deux domaines d'application.</span><span class="sxs-lookup"><span data-stu-id="30ffa-149">Put the assembly into a common application base shared by both app domains.</span></span>
+
+    <span data-ttu-id="30ffa-150">\- ou -</span><span class="sxs-lookup"><span data-stu-id="30ffa-150">\- or -</span></span>
+
+- <span data-ttu-id="30ffa-151">Si les domaines ne partagent pas une base d'application commune, signez l'assembly qui contient les informations sur les exceptions à l'aide d'un nom fort et déployez l'assembly dans le Global Assembly Cache.</span><span class="sxs-lookup"><span data-stu-id="30ffa-151">If the domains do not share a common application base, sign the assembly that contains the exception information with a strong name and deploy the assembly into the global assembly cache.</span></span>
+
+## <a name="include-a-localized-description-string-in-every-exception"></a><span data-ttu-id="30ffa-152">Inclure une chaîne de description localisée dans chaque exception</span><span class="sxs-lookup"><span data-stu-id="30ffa-152">Include a localized description string in every exception</span></span>
+
+<span data-ttu-id="30ffa-153">Le message d’erreur que l’utilisateur voit est dérivé de la chaîne de description de l’exception qui a été levée et non du nom de la classe d’exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-153">The error message that the user sees is derived from the description string of the exception that was thrown, and not from the name of the exception class.</span></span>
+
+## <a name="use-grammatically-correct-error-messages"></a><span data-ttu-id="30ffa-154">Utiliser des messages d’erreur grammaticalement corrects</span><span class="sxs-lookup"><span data-stu-id="30ffa-154">Use grammatically correct error messages</span></span>
+
+<span data-ttu-id="30ffa-155">Écrivez des phrases claires et insérez une ponctuation finale.</span><span class="sxs-lookup"><span data-stu-id="30ffa-155">Write clear sentences and include ending punctuation.</span></span> <span data-ttu-id="30ffa-156">Chaque phrase de la chaîne de description d'une exception doit se terminer par un point.</span><span class="sxs-lookup"><span data-stu-id="30ffa-156">Each sentence in a description string of an exception should end in a period.</span></span> <span data-ttu-id="30ffa-157">Par exemple, « la table du journal a débordé. »</span><span class="sxs-lookup"><span data-stu-id="30ffa-157">For example, "The log table has overflowed."</span></span> <span data-ttu-id="30ffa-158">est une chaîne de description appropriée.</span><span class="sxs-lookup"><span data-stu-id="30ffa-158">would be an appropriate description string.</span></span>
+
+## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a><span data-ttu-id="30ffa-159">Dans les exceptions personnalisées, fournir des propriétés supplémentaires si nécessaire</span><span class="sxs-lookup"><span data-stu-id="30ffa-159">In custom exceptions, provide additional properties as needed</span></span>
+
+<span data-ttu-id="30ffa-160">Fournissez des propriétés supplémentaires (autres que la chaîne de description) pour une exception uniquement s'il existe un scénario par programmation dans lequel les informations supplémentaires sont utiles.</span><span class="sxs-lookup"><span data-stu-id="30ffa-160">Provide additional properties for an exception (in addition to the description string) only when there's a programmatic scenario where the additional information is useful.</span></span> <span data-ttu-id="30ffa-161">Par exemple, la classe <xref:System.IO.FileNotFoundException> fournit la propriété <xref:System.IO.FileNotFoundException.FileName>.</span><span class="sxs-lookup"><span data-stu-id="30ffa-161">For example, the <xref:System.IO.FileNotFoundException> provides the <xref:System.IO.FileNotFoundException.FileName> property.</span></span>
+
+## <a name="place-throw-statements-so-that-the-stack-trace-will-be-helpful"></a><span data-ttu-id="30ffa-162">Placer des instructions throw pour que la trace de la pile soit utile</span><span class="sxs-lookup"><span data-stu-id="30ffa-162">Place throw statements so that the stack trace will be helpful</span></span>
+
+<span data-ttu-id="30ffa-163">La trace de la pile commence à l'instruction où l'exception est levée et se termine à l'instruction `catch` qui intercepte l'exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-163">The stack trace begins at the statement where the exception is thrown and ends at the `catch` statement that catches the exception.</span></span>
+
+## <a name="use-exception-builder-methods"></a><span data-ttu-id="30ffa-164">Utiliser des méthodes de générateur d’exceptions</span><span class="sxs-lookup"><span data-stu-id="30ffa-164">Use exception builder methods</span></span>
+
+<span data-ttu-id="30ffa-165">Il est fréquent qu'une classe lève la même exception à partir de différents endroits de son implémentation.</span><span class="sxs-lookup"><span data-stu-id="30ffa-165">It is common for a class to throw the same exception from different places in its implementation.</span></span> <span data-ttu-id="30ffa-166">Pour éviter un excès de code, utilisez des méthodes d'assistance qui créent une exception et la retournent.</span><span class="sxs-lookup"><span data-stu-id="30ffa-166">To avoid excessive code, use helper methods that create the exception and return it.</span></span> <span data-ttu-id="30ffa-167">Exemple :</span><span class="sxs-lookup"><span data-stu-id="30ffa-167">For example:</span></span>
+
+[!code-cpp[Conceptual.Exception.Handling#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#6)]
+[!code-csharp[Conceptual.Exception.Handling#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#6)]
+[!code-vb[Conceptual.Exception.Handling#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#6)]  
   
-     [!code-cpp[Conceptual.Exception.Handling#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#2)]
-     [!code-csharp[Conceptual.Exception.Handling#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#2)]
-     [!code-vb[Conceptual.Exception.Handling#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#2)]  
-  
-     **Gestion des exceptions**.  L'exemple suivant utilise un bloc `try`\/`catch` pour activer la connexion et lever une exception si la connexion n'est pas fermée.  
-  
-     [!code-cpp[Conceptual.Exception.Handling#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#3)]
-     [!code-csharp[Conceptual.Exception.Handling#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#3)]
-     [!code-vb[Conceptual.Exception.Handling#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#3)]  
-  
-     La méthode que vous choisissez dépend de la fréquence à laquelle l'événement se produit.  
-  
-    -   Utilisez la gestion des exceptions si l'événement ne se produit pas très souvent, c'est\-à\-dire, si l'événement est véritablement exceptionnel et indique une erreur \(telle qu'une fin de fichier inattendue\).  Lorsque vous utilisez la gestion des exceptions, la quantité de code exécutée en situation normale est moindre.  
-  
-    -   Utilisez la méthode par programmation pour rechercher les erreurs si l'événement se produit régulièrement et peut être considéré comme faisant partie de l'exécution normale.  Lorsque vous recherchez des erreurs par programmation, davantage de code est exécuté si une exception se produit.  
-  
--   Utilisez des blocs `try`\/`catch` autour du code susceptible de générer une exception, et utilisez un bloc `finally` pour nettoyer les ressources, au besoin.  Ainsi, l'instruction `try` génère l'exception, l'instruction `catch` la gère et l'instruction `finally` ferme ou libère les ressources qu'une exception se produise ou non.  
-  
--   Dans les blocs `catch`, veillez à toujours classer les exceptions de la plus spécifique à la moins spécifique.  Cette technique permet de gérer l'exception spécifique avant qu'elle ne passe à un bloc `catch` plus général.  
-  
-## Création et levée d'exceptions  
- La liste suivante contient des recommandations pour la création de vos propres exceptions et lorsqu'elles doivent être levées.  Pour plus d'informations, voir [Instructions de conception pour les Exceptions](../../../docs/standard/design-guidelines/exceptions.md).  
-  
--   Créez des classes de façon qu'une exception ne soit jamais levée en usage normal.  Par exemple, une classe <xref:System.IO.FileStream> fournit des méthodes qui permettent de déterminer si la fin du fichier a été atteinte.  Vous évitez ainsi l'exception qui est levée si vous dépassez la fin du fichier pendant la lecture.  L'exemple suivant montre comment lire le fichier jusqu'à la fin.  
-  
-     [!code-cpp[Conceptual.Exception.Handling#5](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#5)]
-     [!code-csharp[Conceptual.Exception.Handling#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#5)]
-     [!code-vb[Conceptual.Exception.Handling#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#5)]  
-  
--   Levez des exceptions au lieu de retourner un code d'erreur ou HRESULT.  
-  
--   Retourne null pour les cas d'erreur très répandus au lieu de lever une exception.  Un cas d'erreur très répandu peut être considéré comme un flux de contrôle normal.  En retournant null dans ces cas\-là, vous réduisez l'impact sur les performances d'une application.  
-  
--   Dans la plupart des cas, utilisez les types d'exception .NET Framework prédéfinis.  N'introduisez une nouvelle classe d'exception que quand aucune classe d'exception prédéfinie ne s'applique.  
-  
--   Levez une exception <xref:System.InvalidOperationException> si un appel de jeu de propriétés ou de méthode n'est pas approprié étant donné l'état actuel de l'objet.  
-  
--   Levez une exception <xref:System.ArgumentException> ou une classe dérivée de <xref:System.ArgumentException> si des paramètres incorrects sont passés.  
-  
--   Pour la plupart des applications, dérivez des exceptions personnalisées à partir de la classe <xref:System.Exception>.  La dérivation de la classe <xref:System.ApplicationException> n'apporte pas beaucoup d'avantages.  
-  
--   Terminez les noms de classes d'exception par le mot « Exception ».  Par exemple :  
-  
-     [!code-cpp[Conceptual.Exception.Handling#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#4)]
-     [!code-csharp[Conceptual.Exception.Handling#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#4)]
-     [!code-vb[Conceptual.Exception.Handling#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#4)]  
-  
--   En C\# et C\+\+, utilisez au moins les trois constructeurs communs lors de la création de vos propres classes d'exception : le constructeur par défaut, un constructeur qui prend un message de type chaîne, et un constructeur qui prend un message de type chaîne et une exception interne.  Pour obtenir un exemple, consultez [Comment : créer des exceptions définies par l'utilisateur](../../../docs/standard/exceptions/how-to-create-user-defined-exceptions.md).  
-  
-    1.  <xref:System.Exception.%23ctor>, qui utilise les valeurs par défaut.  
-  
-    2.  <xref:System.Exception.%23ctor%28System.String%29>, qui accepte un message de type chaîne.  
-  
-    3.  <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, qui accepte un message de type chaîne et une exception interne.  
-  
--   Lors de la création d'exceptions définies par l'utilisateur, vous devez vous assurer que les métadonnées des exceptions sont disponibles pour le code qui s'exécute à distance, y compris lorsque des exceptions se produisent à travers des domaines d'application.  Par exemple, supposons que le domaine d'application A crée le domaine d'application B, lequel exécute le code qui lève une exception.  Pour que le domaine d'application A intercepte et gère correctement l'exception, il doit pouvoir trouver l'assembly qui contient l'exception levée par le domaine d'application B.  Si le domaine d'application B lève une exception qui est contenue dans un assembly sous sa base d'application, mais pas sous la base d'application du domaine d'application A, ce dernier ne peut pas trouver l'exception et le Common Language Runtime lève une exception <xref:System.IO.FileNotFoundException>.  Pour éviter cette situation, vous pouvez déployer l'assembly qui contient les informations sur les exceptions de deux façons :  
-  
-    -   Placez l'assembly dans une base d'application commune partagée par les deux domaines d'application.  
-  
-         ou  
-  
-    -   Si les domaines ne partagent pas une base d'application commune, signez l'assembly qui contient les informations sur les exceptions à l'aide d'un nom fort et déployez l'assembly dans le Global Assembly Cache.  
-  
--   Insérez une chaîne de description localisée dans chaque exception.  Le message d'erreur que l'utilisateur voit est dérivé non pas de la classe d'exceptions mais de la chaîne de description de l'exception qui a été levée.  
-  
--   Créez des messages d'erreur corrects du point de vue de la syntaxe, y compris la ponctuation de fin.  Chaque phrase de la chaîne de description d'une exception doit se terminer par un point.  Par exemple, « Dépassement de la table du journal. » doit être une chaîne de description appropriée.  
-  
--   Fournissez des propriétés <xref:System.Exception> pour l'accès par programmation.  Fournissez des propriétés supplémentaires \(autres que la chaîne de description\) pour une exception uniquement s'il existe un scénario par programmation dans lequel les informations supplémentaires sont utiles.  Par exemple, la classe <xref:System.IO.FileNotFoundException> fournit la propriété <xref:System.IO.FileNotFoundException.FileName%2A>.  
-  
--   La trace de la pile commence à l'instruction où l'exception est levée et se termine à l'instruction `catch` qui intercepte l'exception.  N'oubliez pas ce fait au moment de déterminer l'endroit auquel vous devez placer une instruction `throw`.  
-  
--   Utilisez des méthodes de générateur d'exceptions.  Il est fréquent qu'une classe lève la même exception à partir de différents endroits de son implémentation.  Pour éviter un excès de code, utilisez des méthodes d'assistance qui créent une exception et la retournent.  Par exemple :  
-  
-     [!code-cpp[Conceptual.Exception.Handling#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#6)]
-     [!code-csharp[Conceptual.Exception.Handling#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#6)]
-     [!code-vb[Conceptual.Exception.Handling#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#6)]  
-  
-     Dans les autres cas, utilisez le constructeur d'exception pour générer l'exception.  Cette approche est plus appropriée pour les classes d'exceptions globales, telles que <xref:System.ArgumentException>.  
-  
--   Supprimez les résultats intermédiaires lorsque vous levez une exception.  Les appelants doivent supposer qu'il n'y a aucun effet secondaire quand une exception est levée à partir d'une méthode.  
-  
-## Voir aussi  
- [Exceptions](../../../docs/standard/exceptions/index.md)
+<span data-ttu-id="30ffa-168">Dans certains cas, il est plus approprié d’utiliser le constructeur de l’exception pour générer l’exception.</span><span class="sxs-lookup"><span data-stu-id="30ffa-168">In some cases, it's more appropriate to use the exception's constructor to build the exception.</span></span> <span data-ttu-id="30ffa-169">Un exemple est une classe d’exception global comme <xref:System.ArgumentException>.</span><span class="sxs-lookup"><span data-stu-id="30ffa-169">An example is a global exception class such as <xref:System.ArgumentException>.</span></span>
+
+## <a name="clean-up-intermediate-results-when-throwing-an-exception"></a><span data-ttu-id="30ffa-170">Nettoyer les résultats intermédiaires quand vous levez une exception</span><span class="sxs-lookup"><span data-stu-id="30ffa-170">Clean up intermediate results when throwing an exception</span></span>
+
+<span data-ttu-id="30ffa-171">Les appelants doivent supposer qu'il n'y a aucun effet secondaire quand une exception est levée à partir d'une méthode.</span><span class="sxs-lookup"><span data-stu-id="30ffa-171">Callers should be able to assume that there are no side effects when an exception is thrown from a method.</span></span> <span data-ttu-id="30ffa-172">Par exemple, si vous avez du code qui transfère de l’argent en le retirant d’un compte pour le déposer dans un autre, et qu’une exception est levée pendant l’exécution du transfert, vous ne voulez pas que le retrait reste en vigueur.</span><span class="sxs-lookup"><span data-stu-id="30ffa-172">For example, if you have code that transfers money by withdrawing from one account and depositing in another account, and an exception is thrown while executing the deposit, you don't want the withdrawal to remain in effect.</span></span>
+
+```csharp
+public void TransferFunds(Account from, Account to, decimal amount)
+{
+    from.Withdrawal(amount);
+    // If the deposit fails, the withdrawal shouldn't remain in effect. 
+    to.Deposit(amount);
+}
+```
+
+<span data-ttu-id="30ffa-173">Pour gérer cette situation, vous pouvez intercepter toutes les exceptions levées par la transaction de dépôt et annuler le retrait.</span><span class="sxs-lookup"><span data-stu-id="30ffa-173">One way to handle this situation is to catch any exceptions thrown by the deposit transaction and roll back the withdrawal.</span></span>
+
+```csharp
+private static void TransferFunds(Account from, Account to, decimal amount)
+{
+    string withdrawalTrxID = from.Withdrawal(amount);
+    try
+    {
+        to.Deposit(amount);
+    }
+    catch
+    {
+        from.RollbackTransaction(withdrawalTrxID);
+        throw;
+    }
+}
+```
+
+<span data-ttu-id="30ffa-174">Cet exemple illustre l’utilisation de `throw` pour lever de nouveau l’exception d’origine, ce qui peut permettre aux appelants de voir plus facilement la véritable cause du problème sans avoir à examiner la propriété <xref:System.Exception.InnerException>.</span><span class="sxs-lookup"><span data-stu-id="30ffa-174">This example illustrates the use of `throw` to re-throw the original exception, which can make it easier for callers to see the real cause of the problem without having to examine the <xref:System.Exception.InnerException> property.</span></span> <span data-ttu-id="30ffa-175">Vous pouvez aussi lever une nouvelle exception et inclure l’exception d’origine comme exception interne :</span><span class="sxs-lookup"><span data-stu-id="30ffa-175">An alternative is to throw a new exception and include the original exception as the inner exception:</span></span>
+
+```csharp
+catch (Exception ex)
+{
+    from.RollbackTransaction(withdrawalTrxID);
+    throw new Exception("Withdrawal failed", ex);
+}
+```
+
+## <a name="see-also"></a><span data-ttu-id="30ffa-176">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="30ffa-176">See Also</span></span>  
+[<span data-ttu-id="30ffa-177">Exceptions</span><span class="sxs-lookup"><span data-stu-id="30ffa-177">Exceptions</span></span>](index.md)

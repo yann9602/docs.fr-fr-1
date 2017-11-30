@@ -1,60 +1,63 @@
 ---
-title: "Cleaning Up Unmanaged Resources | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Close method"
-  - "Dispose method"
-  - "garbage collector"
-  - "garbage collection, unmanaged resources"
-  - "cleanup operations"
-  - "explicit cleanups"
-  - "unmanaged resource cleanup"
-  - "Finalize method"
+title: "Nettoyage de ressources non managées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Close method
+- Dispose method
+- garbage collector
+- garbage collection, unmanaged resources
+- cleanup operations
+- explicit cleanups
+- unmanaged resource cleanup
+- Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-caps.latest.revision: 19
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: c94a449edbbe38c4028e27fd946b66a054badf51
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Cleaning Up Unmanaged Resources
-Pour la majorité des objets créés par votre application, vous pouvez laisser au récupérateur de mémoire du .NET Framework le soin de gérer les tâches de gestion de mémoire.  Lorsque vous créez des objets qui incluent des ressources non managées, vous devez libérer explicitement ces ressources lorsque vous avez fini de les utiliser dans votre application.  Les types les plus courants de ressources non managées sont des objets qui encapsulent les ressources du système d'exploitation, telles que les fichiers, les fenêtres, les connexions réseau ou les connexions de bases de données.  Bien que le récupérateur de mémoire puisse assurer le suivi de la durée de vie d'un objet qui encapsule une ressource non managée, il ne sait pas comment libérer et nettoyer la ressource non managée.  
+# <a name="cleaning-up-unmanaged-resources"></a><span data-ttu-id="9ebff-102">Nettoyage de ressources non managées</span><span class="sxs-lookup"><span data-stu-id="9ebff-102">Cleaning Up Unmanaged Resources</span></span>
+<span data-ttu-id="9ebff-103">Pour la majorité des objets créés par votre application, vous pouvez vous fier. Garbage collector du NET pour gérer la gestion de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="9ebff-103">For the majority of the objects that your app creates, you can rely on .NET's garbage collector to handle memory management.</span></span> <span data-ttu-id="9ebff-104">Lorsque vous créez des objets qui incluent des ressources non managées, vous devez libérer explicitement ces ressources lorsque vous avez fini de les utiliser dans votre application.</span><span class="sxs-lookup"><span data-stu-id="9ebff-104">However, when you create objects that include unmanaged resources, you must explicitly release those resources when you finish using them in your app.</span></span> <span data-ttu-id="9ebff-105">Les types les plus courants de ressources non managées sont des objets qui encapsulent les ressources du système d'exploitation, telles que les fichiers, les fenêtres, les connexions réseau ou les connexions de bases de données.</span><span class="sxs-lookup"><span data-stu-id="9ebff-105">The most common types of unmanaged resource are objects that wrap operating system resources, such as files, windows, network connections, or database connections.</span></span> <span data-ttu-id="9ebff-106">Bien que le récupérateur de mémoire puisse assurer le suivi de la durée de vie d'un objet qui encapsule une ressource non managée, il ne sait pas comment libérer et nettoyer la ressource non managée.</span><span class="sxs-lookup"><span data-stu-id="9ebff-106">Although the garbage collector is able to track the lifetime of an object that encapsulates an unmanaged resource, it doesn't know how to release and clean up the unmanaged resource.</span></span>  
   
- Si vos types utilisent les ressources non managées, procédez comme suit :  
+ <span data-ttu-id="9ebff-107">Si vos types utilisent les ressources non managées, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="9ebff-107">If your types use unmanaged resources, you should do the following:</span></span>  
   
--   Implémentez le [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md).  Pour ce faire, vous devez fournir une implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> pour activer la version déterministe des ressources non managées.  Un consommateur de votre type appelle la méthode <xref:System.IDisposable.Dispose%2A> lorsque l'objet \(et les ressources qu'il utilise\) n'est plus nécessaire.  La méthode <xref:System.IDisposable.Dispose%2A> libère immédiatement les ressources non managées.  
+-   <span data-ttu-id="9ebff-108">Implémentez la [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md).</span><span class="sxs-lookup"><span data-stu-id="9ebff-108">Implement the [dispose pattern](../../../docs/standard/design-guidelines/dispose-pattern.md).</span></span> <span data-ttu-id="9ebff-109">Pour ce faire, vous devez fournir une implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> pour activer la version déterministe des ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="9ebff-109">This requires that you provide an <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation to enable the deterministic release of  unmanaged resources.</span></span> <span data-ttu-id="9ebff-110">Un consommateur de votre type appelle la méthode <xref:System.IDisposable.Dispose%2A> lorsque l'objet (et les ressources qu'il utilise) n'est plus nécessaire.</span><span class="sxs-lookup"><span data-stu-id="9ebff-110">A consumer of your type calls <xref:System.IDisposable.Dispose%2A> when the object (and the resources it uses) is no longer needed.</span></span> <span data-ttu-id="9ebff-111">La méthode <xref:System.IDisposable.Dispose%2A> libère immédiatement les ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="9ebff-111">The <xref:System.IDisposable.Dispose%2A> method immediately releases the unmanaged resources.</span></span>  
   
--   Prévoyez que vos ressources non managées soient libérées si un consommateur de votre type oublie d'appeler la méthode <xref:System.IDisposable.Dispose%2A>.  Il existe deux façons d'effectuer cette opération :  
+-   <span data-ttu-id="9ebff-112">Prévoyez que vos ressources non managées soient libérées si un consommateur de votre type oublie d'appeler la méthode <xref:System.IDisposable.Dispose%2A>.</span><span class="sxs-lookup"><span data-stu-id="9ebff-112">Provide for your unmanaged resources to be released in the event that a consumer of your type forgets to call <xref:System.IDisposable.Dispose%2A>.</span></span> <span data-ttu-id="9ebff-113">Il existe deux façons d'effectuer cette opération :</span><span class="sxs-lookup"><span data-stu-id="9ebff-113">There are two ways to do this:</span></span>  
   
-    -   Utilisez un handle sécurisé pour encapsuler votre ressource non managée.  Il s'agit de la technique recommandée.  Les handles sécurisés sont dérivés de la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=fullName> et incluent une méthode <xref:System.Object.Finalize%2A> fiable.  Lorsque vous utilisez un handle sécurisé, implémentez simplement l'interface <xref:System.IDisposable> et appelez la méthode <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> de votre handle sécurisé dans l'implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=fullName>.  Le finaliseur du handle sécurisé est appelé automatiquement par le récupérateur de mémoire si sa méthode <xref:System.IDisposable.Dispose%2A> n'est pas appelé.  
+    -   <span data-ttu-id="9ebff-114">Utilisez un handle sécurisé pour encapsuler votre ressource non managée.</span><span class="sxs-lookup"><span data-stu-id="9ebff-114">Use a safe handle to wrap your unmanaged resource.</span></span> <span data-ttu-id="9ebff-115">Il s'agit de la technique recommandée.</span><span class="sxs-lookup"><span data-stu-id="9ebff-115">This is the recommended technique.</span></span> <span data-ttu-id="9ebff-116">Les handles sécurisés sont dérivés de la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> et incluent une méthode <xref:System.Object.Finalize%2A> fiable.</span><span class="sxs-lookup"><span data-stu-id="9ebff-116">Safe handles are derived from the <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> class and include a robust <xref:System.Object.Finalize%2A> method.</span></span> <span data-ttu-id="9ebff-117">Lorsque vous utilisez un handle sécurisé, implémentez simplement l'interface <xref:System.IDisposable> et appelez la méthode <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> de votre handle sécurisé dans l'implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9ebff-117">When you use a safe handle, you simply implement the <xref:System.IDisposable> interface and call your safe handle's <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> method in your <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation.</span></span> <span data-ttu-id="9ebff-118">Le finaliseur du handle sécurisé est appelé automatiquement par le récupérateur de mémoire si sa méthode <xref:System.IDisposable.Dispose%2A> n'est pas appelé.</span><span class="sxs-lookup"><span data-stu-id="9ebff-118">The safe handle's finalizer is called automatically by the garbage collector if its <xref:System.IDisposable.Dispose%2A> method is not called.</span></span>  
   
-         — ou —  
+         <span data-ttu-id="9ebff-119">- ou -</span><span class="sxs-lookup"><span data-stu-id="9ebff-119">—or—</span></span>  
   
-    -   Remplacez la méthode <xref:System.Object.Finalize%2A?displayProperty=fullName>.  La finalisation active la version non déterministe des ressources non managées lorsque le consommateur d'un type n'appelle pas la méthode <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> pour les supprimer de manière déterministe.  Toutefois, comme la finalisation de l'objet peut s'avérer être une opération complexe et susceptible d'engendrer des erreurs, nous vous recommandons d'utiliser un handle sécurisé au lieu de fournir votre propre finaliseur.  
+    -   <span data-ttu-id="9ebff-120">Remplacez la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="9ebff-120">Override the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="9ebff-121">La finalisation active la version non déterministe des ressources non managées lorsque le consommateur d'un type n'appelle pas la méthode <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> pour les supprimer de manière déterministe.</span><span class="sxs-lookup"><span data-stu-id="9ebff-121">Finalization enables the non-deterministic release of unmanaged resources when the consumer of a type fails to call <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> to dispose of them deterministically.</span></span> <span data-ttu-id="9ebff-122">Toutefois, comme la finalisation de l'objet peut s'avérer être une opération complexe et susceptible d'engendrer des erreurs, nous vous recommandons d'utiliser un handle sécurisé au lieu de fournir votre propre finaliseur.</span><span class="sxs-lookup"><span data-stu-id="9ebff-122">However, because object finalization can be a complex and error-prone operation, we recommend that you use a safe handle instead of providing your own finalizer.</span></span>  
   
- Les consommateurs de votre type peuvent ensuite appeler directement votre implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> pour libérer la mémoire utilisée par les ressources non managées.  Lorsque vous implémentez correctement une méthode <xref:System.IDisposable.Dispose%2A>, la méthode <xref:System.Object.Finalize%2A> de votre handle sécurisé ou votre propre substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=fullName> devient un dispositif de protection pour nettoyer les ressources si la méthode <xref:System.IDisposable.Dispose%2A> n'est pas appelée.  
+ <span data-ttu-id="9ebff-123">Les consommateurs de votre type peuvent ensuite appeler directement votre implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> pour libérer la mémoire utilisée par les ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="9ebff-123">Consumers of your type can then call your <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation directly to free memory used by unmanaged resources.</span></span> <span data-ttu-id="9ebff-124">Lorsque vous implémentez correctement une méthode <xref:System.IDisposable.Dispose%2A>, la méthode <xref:System.Object.Finalize%2A> de votre handle sécurisé ou votre propre substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType> devient un dispositif de protection pour nettoyer les ressources si la méthode <xref:System.IDisposable.Dispose%2A> n'est pas appelée.</span><span class="sxs-lookup"><span data-stu-id="9ebff-124">When you properly implement a <xref:System.IDisposable.Dispose%2A> method, either your safe handle's <xref:System.Object.Finalize%2A> method or your own override of the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method becomes a safeguard to clean up resources in the event that the <xref:System.IDisposable.Dispose%2A> method is not called.</span></span>  
   
-## Dans cette section  
- [Implementing a Dispose Method](../../../docs/standard/garbage-collection/implementing-dispose.md)  
- Explique comment implémenter le [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md) pour libérer les ressources non managées.  
+## <a name="in-this-section"></a><span data-ttu-id="9ebff-125">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="9ebff-125">In This Section</span></span>  
+ [<span data-ttu-id="9ebff-126">Implémentation d’une méthode Dispose</span><span class="sxs-lookup"><span data-stu-id="9ebff-126">Implementing a Dispose Method</span></span>](../../../docs/standard/garbage-collection/implementing-dispose.md)  
+ <span data-ttu-id="9ebff-127">Décrit comment implémenter le [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md) pour libérer les ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="9ebff-127">Describes how to implement the [dispose pattern](../../../docs/standard/design-guidelines/dispose-pattern.md) for releasing unmanaged resources.</span></span>  
   
- [Using Objects That Implement IDisposable](../../../docs/standard/garbage-collection/using-objects.md)  
- Décrit comment les consommateurs d'un type vérifient que son implémentation de <xref:System.IDisposable.Dispose%2A> est appelée.  Pour ce faire, nous vous recommandons d'utiliser l'instruction `using` en C\# ou l'instruction `Using` en Visual Basic.  
+ [<span data-ttu-id="9ebff-128">Utilisation d’objets implémentant IDisposable</span><span class="sxs-lookup"><span data-stu-id="9ebff-128">Using Objects That Implement IDisposable</span></span>](../../../docs/standard/garbage-collection/using-objects.md)  
+ <span data-ttu-id="9ebff-129">Décrit comment les consommateurs d'un type vérifient que son implémentation de <xref:System.IDisposable.Dispose%2A> est appelée.</span><span class="sxs-lookup"><span data-stu-id="9ebff-129">Describes how consumers of a type ensure that its <xref:System.IDisposable.Dispose%2A> implementation is called.</span></span> <span data-ttu-id="9ebff-130">Pour ce faire, nous vous recommandons d'utiliser l'instruction `using` en C# ou l'instruction `Using` en Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="9ebff-130">We recommend using the C# `using` statement or the Visual Basic `Using` statement to do this.</span></span>  
   
-## Référence  
- <xref:System.IDisposable?displayProperty=fullName>  
- Définit la méthode <xref:System.IDisposable.Dispose%2A> pour libérer des ressources non managées.  
+## <a name="reference"></a><span data-ttu-id="9ebff-131">Référence</span><span class="sxs-lookup"><span data-stu-id="9ebff-131">Reference</span></span>  
+ <xref:System.IDisposable?displayProperty=nameWithType>  
+ <span data-ttu-id="9ebff-132">Définit la méthode <xref:System.IDisposable.Dispose%2A> pour libérer des ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="9ebff-132">Defines the <xref:System.IDisposable.Dispose%2A> method for releasing unmanaged resources.</span></span>  
   
- <xref:System.Object.Finalize%2A?displayProperty=fullName>  
- Prévoit la finalisation de l'objet si les ressources non managées ne sont pas libérées par la méthode <xref:System.IDisposable.Dispose%2A>.  
+ <xref:System.Object.Finalize%2A?displayProperty=nameWithType>  
+ <span data-ttu-id="9ebff-133">Prévoit la finalisation de l'objet si les ressources non managées ne sont pas libérées par la méthode <xref:System.IDisposable.Dispose%2A>.</span><span class="sxs-lookup"><span data-stu-id="9ebff-133">Provides for object finalization if unmanaged resources are not released by the <xref:System.IDisposable.Dispose%2A> method.</span></span>  
   
- <xref:System.GC.SuppressFinalize%2A?displayProperty=fullName>  
- Supprime la finalisation.  Cette méthode est généralement appelée à partir d'une méthode `Dispose` pour empêcher un finaliseur de s'exécuter.
+ <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>  
+ <span data-ttu-id="9ebff-134">Supprime la finalisation.</span><span class="sxs-lookup"><span data-stu-id="9ebff-134">Suppresses finalization.</span></span> <span data-ttu-id="9ebff-135">Cette méthode est généralement appelée à partir d'une méthode `Dispose` pour empêcher un finaliseur de s'exécuter.</span><span class="sxs-lookup"><span data-stu-id="9ebff-135">This method is customarily called from a `Dispose` method to prevent a finalizer from executing.</span></span>

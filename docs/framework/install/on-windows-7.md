@@ -1,39 +1,45 @@
 ---
 title: "Installer le .NET Framework sur Windows 7 SP1"
+ms.custom: updateeachrelease
 description: "Découvrez comment installer le .NET Framework sur Windows 7 SP1."
 author: rlander
 ms.author: mairaw
 keywords: .NET Framework, installer
-ms.date: 08/03/2017
+ms.date: 10/17/2017
 ms.topic: article
 ms.prod: .net-framework
+ms.openlocfilehash: ac9116da40618d9a6f4bc2bb5f031bd8ffeec7b3
+ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
 ms.translationtype: HT
-ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
-ms.openlocfilehash: a9ee34089237adf6fe1d277add72a9f36a49e11e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/27/2017
 ---
+# <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a><span data-ttu-id="8096a-104">Installer le .NET Framework sur Windows 7 SP1 et Windows Server 2008 R2</span><span class="sxs-lookup"><span data-stu-id="8096a-104">Install the .NET Framework on Windows 7 SP1 and Windows Server 2008 R2</span></span>
 
-# <a name="install-the-net-framework-on-windows-7-sp1"></a>Installer le .NET Framework sur Windows 7 SP1
+<span data-ttu-id="8096a-105">Le .NET Framework est requis pour exécuter des applications sur Windows.</span><span class="sxs-lookup"><span data-stu-id="8096a-105">The .NET Framework is required to run many applications on Windows.</span></span> <span data-ttu-id="8096a-106">Vous pouvez utiliser les instructions suivantes pour l’installer.</span><span class="sxs-lookup"><span data-stu-id="8096a-106">You can use the following instructions to install it.</span></span> <span data-ttu-id="8096a-107">Vous arrivées sur cette page après la tentative d’exécution d’une application et afficher la boîte de dialogue suivante sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="8096a-107">You may have arrived on this page after trying to run an application and seeing the following dialog on your machine.</span></span>
 
-Vous pouvez avoir besoin du .NET Framework pour exécuter une application sur Windows 7 SP1. Vous pouvez installer les versions les plus récentes prises en charge à l’aide des instructions suivantes. Les instructions dépendent de la version du .NET Framework dont vous avez besoin.
+![Cette application n’a pas pu être démarrée.](./media/this-application-could-not-be-started.png)
 
-## <a name="net-framework-47"></a>.NET Framework 4.7
+<span data-ttu-id="8096a-109">Ces instructions vous aideront à installer les versions du .NET Framework que vous avez besoin.</span><span class="sxs-lookup"><span data-stu-id="8096a-109">These instructions will help you install the .NET Framework versions you need.</span></span> <span data-ttu-id="8096a-110">Le [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) est la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="8096a-110">The [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) is the latest version.</span></span> <span data-ttu-id="8096a-111">Il est pris en charge sur Windows 7 et Windows Server 2008 R2 et est inclus avec le [mise à jour de Windows 10 automne créateurs](https://www.microsoft.com/software-download/windows10) et [Windows Server 2016 Version 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709).</span><span class="sxs-lookup"><span data-stu-id="8096a-111">It is supported on Windows 7 and Windows Server 2008 R2 and is included with the [Windows 10 Fall Creators Update](https://www.microsoft.com/software-download/windows10) and [Windows Server 2016 Version 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709).</span></span>
 
-Vous pouvez installer [.NET Framework 4.7](https://www.microsoft.com/net/download/framework) sur Windows 7.
+## <a name="net-framework-471"></a><span data-ttu-id="8096a-112">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="8096a-112">.NET Framework 4.7.1</span></span>
 
-.NET Framework 4.7 est inclus dans [Windows 10 Creators Update](https://www.microsoft.com/software-download/windows10).
+* [<span data-ttu-id="8096a-113">Télécharger le Kit de développement .NET Framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="8096a-113">Download the .NET Framework 4.7.1</span></span>](https://www.microsoft.com/net/framework/versions/net471?utm_source=ms-docs&utm_medium=referral)
 
-.NET Framework 4.7 prend en charge les applications conçues pour .NET Framework 4.0 ou ultérieur. Les autres versions du .NET Framework sont disponibles à partir de la page web [Télécharger le .NET Framework](https://www.microsoft.com/net/download/framework).
+<span data-ttu-id="8096a-114">Le [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) peut être utilisé pour exécuter des applications créées pour le .NET Framework 4.0 ou version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="8096a-114">The [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) can be used to run applications built for .NET Framework 4.0 or later.</span></span>
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a><span data-ttu-id="8096a-115">.NET Framework 3.5</span><span class="sxs-lookup"><span data-stu-id="8096a-115">.NET Framework 3.5</span></span>
 
-Le .NET Framework 3.5 est fourni avec Windows 7.
+<span data-ttu-id="8096a-116">Le [.NET Framework 3.5](https://www.microsoft.com/en-us/download/details.aspx?id=21) est inclus avec Windows 7.</span><span class="sxs-lookup"><span data-stu-id="8096a-116">The [.NET Framework 3.5](https://www.microsoft.com/en-us/download/details.aspx?id=21) is included with Windows 7.</span></span>
 
-.NET Framework 3.5 prend en charge les applications conçues pour .NET Framework 1.0 à 3.5.
+<span data-ttu-id="8096a-117">.NET Framework 3.5 prend en charge les applications conçues pour .NET Framework 1.0 à 3.5.</span><span class="sxs-lookup"><span data-stu-id="8096a-117">The .NET Framework 3.5 supports apps built for .NET Framework 1.0 through 3.5.</span></span>
 
-## <a name="help"></a>Aide
+## <a name="help"></a><span data-ttu-id="8096a-118">Help</span><span class="sxs-lookup"><span data-stu-id="8096a-118">Help</span></span>
 
-Vous pouvez [contacter Microsoft pour obtenir de l’aide](mailto:dotnet-install-help@microsoft.com?subject=Help installing .NET Framework) si vous ne pouvez installer la version correcte du .NET Framework.
+<span data-ttu-id="8096a-119">Vous pouvez [contacter Microsoft pour obtenir de l’aide](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help) si vous ne pouvez installer la version correcte du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="8096a-119">You can [contact Microsoft for help](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help) if you cannot get the correct version of the .NET Framework installed.</span></span>
 
+## <a name="see-also"></a><span data-ttu-id="8096a-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8096a-120">See also</span></span>
+
+<span data-ttu-id="8096a-121">[Télécharger le .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral) </span><span class="sxs-lookup"><span data-stu-id="8096a-121">[Download the .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral) </span></span>  
+<span data-ttu-id="8096a-122">[Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md) </span><span class="sxs-lookup"><span data-stu-id="8096a-122">[Troubleshoot blocked .NET Framework installations and uninstallations](troubleshoot-blocked-installations-and-uninstallations.md) </span></span>  
+[<span data-ttu-id="8096a-123">Installer le .NET Framework pour les développeurs</span><span class="sxs-lookup"><span data-stu-id="8096a-123">Install the .NET Framework for developers</span></span>](guide-for-developers.md)

@@ -1,53 +1,51 @@
 ---
-title: "D&#233;veloppement sans conservation des r&#233;f&#233;rences d&#39;entit&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Développement sans conservation des références d’entité"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 069d3b94a0269917400e75fdbe975ec39dcfdb71
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# D&#233;veloppement sans conservation des r&#233;f&#233;rences d&#39;entit&#233;
-Lorsqu'une référence d'entité est développée et remplacée par le texte qu'elle représente, le nœud **XmlEntityReference** n'est pas créé.  En revanche, la déclaration d'entité est analysée et les nœuds créés à partir du contenu de la déclaration sont copiés à la place de **XmlEntityReference**.  Par conséquent, dans l'exemple `&publisher;`, `&publisher;` n'est pas enregistré mais un nœud **XmlText** est créé.  
+# <a name="entity-references-are-expanded-and-not-preserved"></a><span data-ttu-id="a5875-102">Développement sans conservation des références d’entité</span><span class="sxs-lookup"><span data-stu-id="a5875-102">Entity References are Expanded and Not Preserved</span></span>
+<span data-ttu-id="a5875-103">Lors de la référence d’entité est développée et remplacée par le texte qu’elle représente, le **XmlEntityReference** nœud n’est pas créé.</span><span class="sxs-lookup"><span data-stu-id="a5875-103">When the entity reference is expanded and replaced by the text it represents, the **XmlEntityReference** node is not created.</span></span> <span data-ttu-id="a5875-104">Au lieu de cela, la déclaration d’entité est analysée et les nœuds créés à partir du contenu de la déclaration sont copiés à la place de la **XmlEntityReference**.</span><span class="sxs-lookup"><span data-stu-id="a5875-104">Instead, the entity declaration is parsed, and nodes created from the content in the declaration are copied in the place of the **XmlEntityReference**.</span></span> <span data-ttu-id="a5875-105">Par conséquent, dans le `&publisher;` exemple, le `&publisher;` n’est pas enregistré, mais au lieu de cela, une **XmlText** nœud est créé.</span><span class="sxs-lookup"><span data-stu-id="a5875-105">Therefore, in the `&publisher;` example, the `&publisher;` is not saved, but instead, an **XmlText** node is created.</span></span>  
   
- ![arborescence développée](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.png "xmlentityref\_expanded\_nodes")  
-Structure d'arborescence avec références d'entité développées  
+ <span data-ttu-id="a5875-106">![développé arborescence](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")</span><span class="sxs-lookup"><span data-stu-id="a5875-106">![expanded tree structure](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")</span></span>  
+<span data-ttu-id="a5875-107">Structure d’arborescence avec références d’entité développées</span><span class="sxs-lookup"><span data-stu-id="a5875-107">Tree structure for entity references that are expanded</span></span>  
   
- Les entités de caractère, telles que `B` ou `<`, ne sont pas conservées.  En revanche, elles sont toujours développées et représentées sous la forme de nœuds de texte.  
+ <span data-ttu-id="a5875-108">Les entités de caractère, telles que `B` ou `<`, ne sont pas conservées.</span><span class="sxs-lookup"><span data-stu-id="a5875-108">Character entities such as `B` or `<` are not preserved.</span></span> <span data-ttu-id="a5875-109">En revanche, elles sont toujours développées et représentées sous la forme de nœuds de texte.</span><span class="sxs-lookup"><span data-stu-id="a5875-109">Instead, they are always expanded and represented as text nodes.</span></span>  
   
- Pour préserver les nœuds **XmlEntityReference** ainsi que les nœuds enfants de la référence d'entité joints, affectez à l'indicateur **EntityHandling** la valeur **ExpandCharEntities**.  Sinon, conservez la valeur par défaut de l'indicateur **EntityHandling**, à savoir **ExpandEntities**.  Dans ce cas, le DOM ne comprendra pas de nœud de référence d'entité.  Ces nœuds sont remplacés par ceux qui constituent des copies des nœuds enfants de la déclaration d'entité.  
+ <span data-ttu-id="a5875-110">Pour conserver **XmlEntityReference** nœuds ainsi que les nœuds enfants de la référence d’entité joint, affectez le **EntityHandling** indicateur **ExpandCharEntities**.</span><span class="sxs-lookup"><span data-stu-id="a5875-110">To preserve **XmlEntityReference** nodes and child nodes of the entity reference attached to it, set the **EntityHandling** flag to **ExpandCharEntities**.</span></span> <span data-ttu-id="a5875-111">Sinon, laissez le **EntityHandling** indicateur la valeur par défaut, qui consiste à **ExpandEntities**.</span><span class="sxs-lookup"><span data-stu-id="a5875-111">Otherwise, leave the **EntityHandling** flag at the default, which is to **ExpandEntities**.</span></span> <span data-ttu-id="a5875-112">Dans ce cas, le DOM ne comprendra pas de nœud de référence d'entité.</span><span class="sxs-lookup"><span data-stu-id="a5875-112">In this case, you will not see entity reference nodes in the DOM.</span></span> <span data-ttu-id="a5875-113">Ces nœuds sont remplacés par ceux qui constituent des copies des nœuds enfants de la déclaration d'entité.</span><span class="sxs-lookup"><span data-stu-id="a5875-113">The nodes are replaced by the nodes that are copies of the child nodes of the entity declaration.</span></span>  
   
- La non\-conservation des références d'entité présente un effet pervers : lorsque le document est enregistré et passé à une autre application, cette application réceptrice ne sait pas que les nœuds ont été générés par une référence d'entité.  Toutefois, lorsque les références d'entité sont préservées, une application réceptrice voit une référence d'entité et lit les nœuds enfants.  Il est manifeste que les nœuds enfants représentent les informations qui figuraient dans la déclaration d'entité.  Par exemple, en théorie, le DOM possède la structure suivante s'il existe une conservation des références d'entité.  
+ <span data-ttu-id="a5875-114">La non-conservation des références d'entité présente un effet pervers : lorsque le document est enregistré et passé à une autre application, cette application réceptrice ne sait pas que les nœuds ont été générés par une référence d'entité.</span><span class="sxs-lookup"><span data-stu-id="a5875-114">One side effect of not preserving entity references is that when the document is saved and passed on to another application, the receiving application does not know that the nodes were generated by an entity reference.</span></span> <span data-ttu-id="a5875-115">Toutefois, lorsque les références d'entité sont préservées, une application réceptrice voit une référence d'entité et lit les nœuds enfants.</span><span class="sxs-lookup"><span data-stu-id="a5875-115">However, when entity references are preserved, a receiving application sees an entity reference and reads the child nodes.</span></span> <span data-ttu-id="a5875-116">Il est manifeste que les nœuds enfants représentent les informations qui figuraient dans la déclaration d'entité.</span><span class="sxs-lookup"><span data-stu-id="a5875-116">It is apparent that the child nodes represent the information that was in the entity declaration.</span></span> <span data-ttu-id="a5875-117">Par exemple, en théorie, le DOM possède la structure suivante s'il existe une conservation des références d'entité.</span><span class="sxs-lookup"><span data-stu-id="a5875-117">For example, the DOM theoretically has the following structure if entity references are preserved.</span></span>  
   
- XmlElement : éditeur  
+ <span data-ttu-id="a5875-118">XmlElement : éditeur</span><span class="sxs-lookup"><span data-stu-id="a5875-118">XmlElement: publisher</span></span>  
   
- XmlEntityReference : `&publisher;`  
+ <span data-ttu-id="a5875-119">XmlEntityReference : `&publisher;`</span><span class="sxs-lookup"><span data-stu-id="a5875-119">XmlEntityReference: `&publisher;`</span></span>  
   
- XmlText : Microsoft Press  
+ <span data-ttu-id="a5875-120">XmlText : Microsoft Press</span><span class="sxs-lookup"><span data-stu-id="a5875-120">XmlText: Microsoft Press</span></span>  
   
- Si des références d'entité sont développées dans le DOM \(ce qui constitue la méthode par défaut\), la structure possède ce type d'arborescence :  
+ <span data-ttu-id="a5875-121">Si des références d'entité sont développées dans le DOM (ce qui constitue la méthode par défaut), la structure possède ce type d'arborescence :</span><span class="sxs-lookup"><span data-stu-id="a5875-121">If entity references are expanded in the DOM, which is the default method, the structure has this type of tree:</span></span>  
   
- XmlElement : éditeur  
+ <span data-ttu-id="a5875-122">XmlElement : éditeur</span><span class="sxs-lookup"><span data-stu-id="a5875-122">XmlElement: publisher</span></span>  
   
- XmlText : Microsoft Press  
+ <span data-ttu-id="a5875-123">XmlText : Microsoft Press</span><span class="sxs-lookup"><span data-stu-id="a5875-123">XmlText: Microsoft Press</span></span>  
   
- Observez la disparition du nœud de référence d'entité ; l'application réceptrice ne peut pas déterminer que le nœud **XmlText** contenant « Microsoft Press » a été créé à partir d'une déclaration d'entité.  
+ <span data-ttu-id="a5875-124">Notez que le nœud de référence d’entité, et l’application de réception ne peut pas déterminer que le **XmlText** nœud contenant « Microsoft Press » a été créé à partir d’une déclaration d’entité.</span><span class="sxs-lookup"><span data-stu-id="a5875-124">Notice that the entity reference node is gone, and the receiving application cannot tell that the **XmlText** node containing "Microsoft Press" was created from an entity declaration.</span></span>  
   
- Si vous avez recours à un lecteur incapable de résoudre les entités, la méthode **Load** lève une exception lorsqu'elle rencontre une référence d'entité.  
+ <span data-ttu-id="a5875-125">Si vous utilisez un lecteur qui ne peut pas résoudre les entités, les **charge** méthode lève une exception lorsqu’elle rencontre une référence d’entité.</span><span class="sxs-lookup"><span data-stu-id="a5875-125">If you use a reader that cannot resolve entities, the **Load** method throws an exception when it encounters an entity reference.</span></span>  
   
-## Voir aussi  
- [DOM \(Document Object Model\) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a><span data-ttu-id="a5875-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a5875-126">See Also</span></span>  
+ [<span data-ttu-id="a5875-127">Document Object Model (DOM) XML</span><span class="sxs-lookup"><span data-stu-id="a5875-127">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

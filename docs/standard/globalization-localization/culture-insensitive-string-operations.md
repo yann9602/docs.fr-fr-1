@@ -1,40 +1,43 @@
 ---
-title: "Op&#233;rations de cha&#238;nes ind&#233;pendantes de la culture | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "comparaisons respectant la casse"
-  - "culture, opérations de chaînes indépendantes de la culture"
-  - "opérations de chaînes indépendantes de la culture"
-  - "opérations de chaînes dépendantes de la culture"
-  - "globalisation (.NET Framework), opérations de chaînes indépendantes de la culture"
-  - "localisation (.NET Framework), opérations de chaînes indépendantes de la culture"
-  - "chaînes (.NET Framework), opérations de chaînes indépendantes de la culture"
-  - "applications universelles, opérations de chaînes indépendantes de la culture"
+title: "Opérations de chaînes indépendantes de la culture"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- culture, culture-insensitive string operations
+- case-sensitive comparisons
+- globalization [.NET Framework], culture-insensitive string operations
+- strings [.NET Framework], culture-insensitive string operations
+- localization [.NET Framework], culture-insensitive string operations
+- world-ready applications, culture-insensitive string operations
+- culture-sensitive string operations
+- culture-insensitive string operations
 ms.assetid: e6e2bb94-a95d-44e2-b68c-cfdd1db77784
-caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: dddd46dc5d825738dd9d5038ae573910122953c8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Op&#233;rations de cha&#238;nes ind&#233;pendantes de la culture
-Les opérations de chaînes dépendantes de la culture peuvent présenter un avantage si vous créez des applications conçues pour afficher des résultats en fonction de la culture des utilisateurs.  Par défaut, les méthodes dépendantes de la culture obtiennent la culture à utiliser à partir de la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A> du thread.  
+# <a name="culture-insensitive-string-operations"></a><span data-ttu-id="bfa0c-102">Opérations de chaînes indépendantes de la culture</span><span class="sxs-lookup"><span data-stu-id="bfa0c-102">Culture-Insensitive String Operations</span></span>
+<span data-ttu-id="bfa0c-103">Les opérations de chaînes dépendantes de la culture peuvent présenter un avantage si vous créez des applications conçues pour afficher des résultats en fonction de la culture des utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-103">Culture-sensitive string operations can be an advantage if you are creating applications designed to display results to users on a per-culture basis.</span></span> <span data-ttu-id="bfa0c-104">Par défaut, les méthodes dépendantes de la culture obtiennent la culture à utiliser à partir de la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A> du thread.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-104">By default, culture-sensitive methods obtain the culture to use from the <xref:System.Globalization.CultureInfo.CurrentCulture%2A> property for the current thread.</span></span>  
   
- Cependant, les opérations de chaînes dépendantes de la culture ne correspondent pas toujours au comportement souhaité.  L'utilisation d'opérations dépendantes de la culture dans des scénarios où les résultats doivent être indépendants de la culture peut entraîner l'échec du code de l'application sur les cultures avec des mappages de casse personnalisés et des règles de tri.  Pour obtenir un exemple, consultez la section « Comparaisons de chaînes qui utilisent la culture actuelle » dans l'article [Meilleures pratiques pour l'utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md).  
+ <span data-ttu-id="bfa0c-105">Cependant, les opérations de chaînes dépendantes de la culture ne correspondent pas toujours au comportement souhaité.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-105">Note that culture-sensitive string operations are not always the desired behavior.</span></span> <span data-ttu-id="bfa0c-106">L'utilisation d'opérations dépendantes de la culture dans des scénarios où les résultats doivent être indépendants de la culture peut entraîner l'échec du code de l'application sur les cultures avec des mappages de casse personnalisés et des règles de tri.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-106">Using culture-sensitive operations when results should be independent of culture can cause application code to fail on cultures with custom case mappings and sorting rules.</span></span> <span data-ttu-id="bfa0c-107">Pour obtenir un exemple, consultez la section « Chaîne comparaisons qui utiliser la Culture en cours » dans le [meilleures pratiques pour l’utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md) l’article.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-107">For an example, see the "String Comparisons that Use the Current Culture" section in the [Best Practices for Using Strings](../../../docs/standard/base-types/best-practices-strings.md) article.</span></span>  
   
- La manière avec laquelle votre application utilise les résultats détermine si des opérations de chaînes sont dépendantes ou non de la culture.  Les opérations de chaînes qui affichent des résultats à l'utilisateur final doivent être généralement dépendantes de la culture.  Par exemple, si une application affiche une liste triée de chaînes localisées dans une zone de liste, l'application doit effectuer un tri dépendant de la culture.  
+ <span data-ttu-id="bfa0c-108">La manière avec laquelle votre application utilise les résultats détermine si des opérations de chaînes sont dépendantes ou non de la culture.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-108">Whether string operations should be culture-sensitive or culture-insensitive depends on how your application uses the results.</span></span> <span data-ttu-id="bfa0c-109">Les opérations de chaînes qui affichent des résultats à l'utilisateur final doivent être généralement dépendantes de la culture.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-109">String operations that display results to the user should typically be culture-sensitive.</span></span> <span data-ttu-id="bfa0c-110">Par exemple, si une application affiche une liste triée de chaînes localisées dans une zone de liste, l'application doit effectuer un tri dépendant de la culture.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-110">For example, if an application displays a sorted list of localized strings in a list box, the application should perform a culture-sensitive sort.</span></span>  
   
- Les résultats des opérations de chaînes qui sont utilisés en interne doivent être généralement indépendants de la culture.  En général, si l'application utilise des noms de fichiers, des formats de persistance ou des informations symboliques qui ne sont pas affichées, les résultats des opérations de chaînes ne doivent pas varier selon la culture.  Par exemple, si une application compare une chaîne pour déterminer si celle\-ci est une balise XML reconnue, la comparaison ne doit pas être dépendante de la culture.  Si une décision de sécurité est basée sur le résultat d'une opération de comparaison de chaînes ou de changement de casse, cette opération doit être indépendante de la culture pour garantir que le résultat n'est pas affecté par la valeur de <xref:System.Globalization.CultureInfo.CurrentCulture%2A>.  
+ <span data-ttu-id="bfa0c-111">Les résultats des opérations de chaînes qui sont utilisés en interne doivent être généralement indépendants de la culture.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-111">Results of string operations that are used internally should typically be culture-insensitive.</span></span> <span data-ttu-id="bfa0c-112">En général, si l'application utilise des noms de fichiers, des formats de persistance ou des informations symboliques qui ne sont pas affichées, les résultats des opérations de chaînes ne doivent pas varier selon la culture.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-112">In general, if the application is working with file names, persistence formats, or symbolic information that is not displayed to the user, results of string operations should not vary by culture.</span></span> <span data-ttu-id="bfa0c-113">Par exemple, si une application compare une chaîne pour déterminer si celle-ci est une balise XML reconnue, la comparaison ne doit pas être dépendante de la culture.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-113">For example, if an application compares a string to determine whether it is a recognized XML tag, the comparison should not be culture-sensitive.</span></span> <span data-ttu-id="bfa0c-114">Si une décision de sécurité est basée sur le résultat d'une opération de comparaison de chaînes ou de changement de casse, cette opération doit être indépendante de la culture pour garantir que le résultat n'est pas affecté par la valeur de <xref:System.Globalization.CultureInfo.CurrentCulture%2A>.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-114">In addition, if a security decision is based on the result of a string comparison or case change operation, the operation should be culture-insensitive to ensure that the result is not affected by the value of <xref:System.Globalization.CultureInfo.CurrentCulture%2A>.</span></span>  
   
- Que vous développiez ou non une application incluant du code pour gérer des problèmes de localisation et de globalisation, vous devez connaître les méthodes de .NET Framework qui retournent les résultats dépendants de la culture par défaut.  L'objectif de cette rubrique est d'illustrer d'une manière appropriée l'utilisation de ces méthodes lorsque votre application désire obtenir des résultats indépendants de la culture.  
+ <span data-ttu-id="bfa0c-115">Que vous développiez ou non une application incluant du code pour gérer des problèmes de localisation et de globalisation, vous devez connaître les méthodes de .NET Framework qui retournent les résultats dépendants de la culture par défaut.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-115">Whether or not you are developing an application that includes code to handle localization and globalization issues, you should be aware of the .NET Framework methods that retrieve culture-sensitive results by default.</span></span> <span data-ttu-id="bfa0c-116">L'objectif de cette rubrique est d'illustrer d'une manière appropriée l'utilisation de ces méthodes lorsque votre application désire obtenir des résultats indépendants de la culture.</span><span class="sxs-lookup"><span data-stu-id="bfa0c-116">The purpose of this topic is to illustrate the correct way for your applications to use these methods to obtain culture-insensitive results.</span></span>  
   
-## Voir aussi  
- [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)
+## <a name="see-also"></a><span data-ttu-id="bfa0c-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bfa0c-117">See Also</span></span>  
+ [<span data-ttu-id="bfa0c-118">Globalisation et localisation</span><span class="sxs-lookup"><span data-stu-id="bfa0c-118">Globalization and Localization</span></span>](../../../docs/standard/globalization-localization/index.md)

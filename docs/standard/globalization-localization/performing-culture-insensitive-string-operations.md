@@ -1,47 +1,50 @@
 ---
-title: "Ex&#233;cution d&#39;op&#233;rations de cha&#238;nes ind&#233;pendantes de la culture | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "mappages de casse"
-  - "mappages de casse personnalisés"
-  - "culture, règles de tri personnalisées"
-  - "règles de tri personnalisées"
-  - "opérations de chaînes indépendantes de la culture, options d’exécution"
-  - "culture, mappages de casse personnalisés"
-  - "opérations de chaînes indépendantes de la culture, surcharges de méthode"
+title: "Exécution d'opérations de chaînes indépendantes de la culture"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- case mappings
+- custom case mappings
+- culture, custom sorting rules
+- custom sorting rules
+- culture-insensitive string operations, options for performing
+- culture, custom case mappings
+- culture-insensitive string operations, method overloads
 ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
-caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: e703e9adc531b7d1695d3e9bbed61a2c0f62ad31
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Ex&#233;cution d&#39;op&#233;rations de cha&#238;nes ind&#233;pendantes de la culture
-La plupart des méthodes .NET Framework qui effectuent par défaut des opérations de chaînes dépendantes de la culture fournissent des surcharges de méthode qui vous permettent de spécifier explicitement la culture à utiliser en passant un paramètre  <xref:System.Globalization.CultureInfo>.  Ces surcharges vous permettent d'éliminer les différences culturelles des règles de tri et des mappages de casse et garantissent des résultats indépendants de la culture.  
+# <a name="performing-culture-insensitive-string-operations"></a><span data-ttu-id="13fd2-102">Exécution d'opérations de chaînes indépendantes de la culture</span><span class="sxs-lookup"><span data-stu-id="13fd2-102">Performing Culture-Insensitive String Operations</span></span>
+<span data-ttu-id="13fd2-103">La plupart des méthodes .NET Framework qui effectuent des opérations de chaînes dépendantes de la culture par défaut fournissent des surcharges de méthode qui vous permettent de spécifier explicitement la culture à utiliser en passant un <xref:System.Globalization.CultureInfo> paramètre.</span><span class="sxs-lookup"><span data-stu-id="13fd2-103">Most .NET Framework methods that perform culture-sensitive string operations by default provide method overloads that allow you to explicitly specify the culture to use by passing a <xref:System.Globalization.CultureInfo> parameter.</span></span> <span data-ttu-id="13fd2-104">Ces surcharges vous permettent d’éliminer les différences culturelles dans les règles de mappages et de tri de casse et de garantir des résultats indépendants de la culture.</span><span class="sxs-lookup"><span data-stu-id="13fd2-104">These overloads allow you to eliminate cultural variations in case mappings and sorting rules and guarantee culture-insensitive results.</span></span>  
   
- Cette section contient les rubriques suivantes qui montrent comment effectuer des opérations de chaînes indépendantes de la culture à l'aide des méthodes du .NET Framework dépendantes de la culture par défaut.  
+ <span data-ttu-id="13fd2-105">Cette section fournit les rubriques suivantes pour montrer comment exécuter des opérations de chaînes indépendantes de la culture à l’aide de méthodes .NET Framework qui sont dépendantes de la culture par défaut.</span><span class="sxs-lookup"><span data-stu-id="13fd2-105">This section provides the following topics to demonstrate how to perform culture-insensitive string operations using .NET Framework methods that are culture-sensitive by default.</span></span>  
   
-## Dans cette section  
- [Exécution de comparaisons de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)  
- Décrit comment utiliser les <xref:System.String.Compare%2A?displayProperty=fullName> et méthodes <xref:System.String.CompareTo%2A?displayProperty=fullName> pour exécuter des comparaisons de chaînes indépendantes de la culture.  
+## <a name="in-this-section"></a><span data-ttu-id="13fd2-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="13fd2-106">In This Section</span></span>  
+ [<span data-ttu-id="13fd2-107">Exécution de comparaisons de chaînes indépendantes de la culture</span><span class="sxs-lookup"><span data-stu-id="13fd2-107">Performing Culture-Insensitive String Comparisons</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)  
+ <span data-ttu-id="13fd2-108">Décrit comment utiliser le <xref:System.String.Compare%2A?displayProperty=nameWithType> et <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour effectuer des comparaisons de chaînes indépendantes de la culture.</span><span class="sxs-lookup"><span data-stu-id="13fd2-108">Describes how to use the <xref:System.String.Compare%2A?displayProperty=nameWithType> and <xref:System.String.CompareTo%2A?displayProperty=nameWithType> methods to perform culture-insensitive string comparisons.</span></span>  
   
- [Exécution de changements de casse indépendants de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md)  
- Décrit comment utiliser les méthodes <xref:System.String.ToUpper%2A?displayProperty=fullName>, <xref:System.String.ToLower%2A?displayProperty=fullName>, <xref:System.Char.ToUpper%2A?displayProperty=fullName>et <xref:System.Char.ToLower%2A?displayProperty=fullName> pour exécuter des changements de casse indépendants de la culture.  
+ [<span data-ttu-id="13fd2-109">Exécution de modifications de casse indépendantes de la culture</span><span class="sxs-lookup"><span data-stu-id="13fd2-109">Performing Culture-Insensitive Case Changes</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md)  
+ <span data-ttu-id="13fd2-110">Décrit comment utiliser le <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>, et <xref:System.Char.ToLower%2A?displayProperty=nameWithType> pour effectuer des changements de casse indépendants de la culture.</span><span class="sxs-lookup"><span data-stu-id="13fd2-110">Describes how to use the <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>, and <xref:System.Char.ToLower%2A?displayProperty=nameWithType> methods to perform culture-insensitive case changes.</span></span>  
   
- [Exécution d'opérations de chaînes indépendantes de la culture dans des collections](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md)  
- Explique comment utiliser la [classe CaseInsensitiveComparer](frlrfSystemCollectionsCaseInsensitiveComparerClassTopic), la classe <xref:System.Collections.CaseInsensitiveHashCodeProvider>, la [classe SortedList](frlrfSystemCollectionsSortedListClassTopic), la [méthode ArrayList.Sort](https://msdn.microsoft.com/en-us/library/system.collections.arraylist.sort.aspx) et la [méthode CollectionsUtil.CreateCaseInsensitiveHashtable](frlrfSystemCollectionsSpecializedCollectionsUtilClassCreateCaseInsensitiveHashtableTopic) pour effectuer des opérations indépendantes de la culture dans des collections.  
+ [<span data-ttu-id="13fd2-111">Exécution d’opérations de chaînes indépendantes de la culture dans des collections</span><span class="sxs-lookup"><span data-stu-id="13fd2-111">Performing Culture-Insensitive String Operations in Collections</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md)  
+ <span data-ttu-id="13fd2-112">Décrit comment utiliser le <xref:System.Collections.CaseInsensitiveComparer>, <xref:System.Collections.CaseInsensitiveHashCodeProvider> (classe), <xref:System.Collections.SortedList>, <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType> et <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType> pour effectuer des opérations indépendantes de la culture dans des collections.</span><span class="sxs-lookup"><span data-stu-id="13fd2-112">Describes how to use the <xref:System.Collections.CaseInsensitiveComparer>, <xref:System.Collections.CaseInsensitiveHashCodeProvider> class, <xref:System.Collections.SortedList>, <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType> and <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType> to perform culture-insensitive operations in collections.</span></span>  
   
- [Exécution d'opérations de chaînes indépendantes de la culture dans des tableaux](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md)  
- Décrit comment utiliser les méthodes <xref:System.Array.Sort%2A?displayProperty=fullName> et <xref:System.Array.BinarySearch%2A?displayProperty=fullName> pour exécuter des comparaisons indépendantes de la culture dans des tableaux.  
+ [<span data-ttu-id="13fd2-113">Exécution d’opérations de chaînes indépendantes de la culture dans des tableaux</span><span class="sxs-lookup"><span data-stu-id="13fd2-113">Performing Culture-Insensitive String Operations in Arrays</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md)  
+ <span data-ttu-id="13fd2-114">Décrit comment utiliser le <xref:System.Array.Sort%2A?displayProperty=nameWithType> et <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> pour effectuer des opérations indépendantes de la culture dans des tableaux.</span><span class="sxs-lookup"><span data-stu-id="13fd2-114">Describes how to use the <xref:System.Array.Sort%2A?displayProperty=nameWithType> and <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> methods to perform culture-insensitive operations in arrays.</span></span>  
   
-## Rubriques connexes  
- [Opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/culture-insensitive-string-operations.md)  
- Explique pourquoi vous devez tenir compte de la culture lorsque vous effectuez des opérations de chaînes et contient des instructions qui vous indiquent quand vous pouvez effectuer des opérations dépendantes de la culture et des opérations indépendantes de la culture.
+## <a name="related-sections"></a><span data-ttu-id="13fd2-115">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="13fd2-115">Related Sections</span></span>  
+ [<span data-ttu-id="13fd2-116">Opérations de chaînes indépendantes de la culture</span><span class="sxs-lookup"><span data-stu-id="13fd2-116">Culture-Insensitive String Operations</span></span>](../../../docs/standard/globalization-localization/culture-insensitive-string-operations.md)  
+ <span data-ttu-id="13fd2-117">Décrit pourquoi vous devez connaître la culture lorsque vous exécutez des opérations sur des chaînes et fournit des recommandations sur l’exécution d’opérations dépendantes de la culture et l’exécution d’opérations indépendantes de la culture.</span><span class="sxs-lookup"><span data-stu-id="13fd2-117">Describes why you should be aware of culture when performing operations on strings and provides guidelines for when to perform culture-sensitive operations and when to perform culture-insensitive operations.</span></span>

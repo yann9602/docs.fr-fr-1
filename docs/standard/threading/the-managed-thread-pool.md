@@ -1,151 +1,158 @@
 ---
-title: "The Managed Thread Pool | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "thread pooling [.NET Framework]"
-  - "thread pools [.NET Framework]"
-  - "threading [.NET Framework], thread pool"
-  - "threading [.NET Framework], pooling"
+title: "Pool de threads managés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- thread pooling [.NET Framework]
+- thread pools [.NET Framework]
+- threading [.NET Framework], thread pool
+- threading [.NET Framework], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
-caps.latest.revision: 24
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 38032fccce1a8f6f7cbcb3bbd3d3f9d008a74141
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# The Managed Thread Pool
-La classe <xref:System.Threading.ThreadPool> fournit à votre application un pool de threads de travail qui sont gérés par le système, ce qui vous permet de vous concentrer sur les tâches d'application plutôt que sur la gestion des threads.  Si vous avez des tâches courtes qui nécessitent un traitement en arrière\-plan, le pool de threads managés est un moyen simple de tirer parti de plusieurs threads.  Par exemple, avec [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] et versions ultérieures, vous pouvez créer des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601> qui effectuent des tâches asynchrones sur des threads du pool.  
+# <a name="the-managed-thread-pool"></a><span data-ttu-id="6ebcb-102">Pool de threads managés</span><span class="sxs-lookup"><span data-stu-id="6ebcb-102">The Managed Thread Pool</span></span>
+<span data-ttu-id="6ebcb-103">La classe <xref:System.Threading.ThreadPool> fournit à votre application un pool de threads de travail qui sont gérés par le système, ce qui vous permet de vous concentrer sur les tâches d'application plutôt que sur la gestion des threads.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-103">The <xref:System.Threading.ThreadPool> class provides your application with a pool of worker threads that are managed by the system, allowing you to concentrate on application tasks rather than thread management.</span></span> <span data-ttu-id="6ebcb-104">Si vous avez des tâches courtes qui nécessitent un traitement en arrière-plan, le pool de threads managés est un moyen simple de tirer parti de plusieurs threads.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-104">If you have short tasks that require background processing, the managed thread pool is an easy way to take advantage of multiple threads.</span></span> <span data-ttu-id="6ebcb-105">Par exemple, avec [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] et versions ultérieures, vous pouvez créer des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601> qui effectuent des tâches asynchrones sur des threads du pool.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-105">For example, beginning with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] you can create <xref:System.Threading.Tasks.Task> and <xref:System.Threading.Tasks.Task%601> objects, which perform asynchronous tasks on thread pool threads.</span></span>  
   
 > [!NOTE]
->  Dans [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)] et versions ultérieures, le débit du pool de threads a été considérablement amélioré dans trois domaines clés qui étaient considérés comme des goulots d'étranglement dans les versions précédentes de [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] : la mise en file d'attente des tâches, la distribution des threads de pool et la distribution des threads de terminaison d'E\/S.  Pour utiliser cette fonctionnalité, votre application doit cibler [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] ou version ultérieure.  
+>  <span data-ttu-id="6ebcb-106">Dans [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)] et versions ultérieures, le débit du pool de threads a été considérablement amélioré dans trois domaines clés qui étaient considérés comme des goulots d'étranglement dans les versions précédentes de [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] : la mise en file d'attente des tâches, la distribution des threads de pool et la distribution des threads de terminaison d'E/S.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-106">Starting with the [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], the throughput of the thread pool is significantly improved in three key areas that were identified as bottlenecks in previous releases of the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]: queuing tasks, dispatching thread pool threads, and dispatching I/O completion threads.</span></span> <span data-ttu-id="6ebcb-107">Pour utiliser cette fonctionnalité, votre application doit cibler [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] ou version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-107">To use this functionality, your application should target the [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] or later.</span></span>  
   
- Pour les tâches d'arrière\-plan qui interagissent avec l'interface utilisateur, .NET Framework version 2.0 fournit également la classe <xref:System.ComponentModel.BackgroundWorker>, qui communique à l'aide d'événements déclenchés sur le thread d'interface utilisateur.  
+ <span data-ttu-id="6ebcb-108">Pour les tâches d'arrière-plan qui interagissent avec l'interface utilisateur, .NET Framework version 2.0 fournit également la classe <xref:System.ComponentModel.BackgroundWorker>, qui communique à l'aide d'événements déclenchés sur le thread d'interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-108">For background tasks that interact with the user interface, the .NET Framework version 2.0 also provides the <xref:System.ComponentModel.BackgroundWorker> class, which communicates using events raised on the user interface thread.</span></span>  
   
- .NET Framework utilise des threads de pool pour de nombreux scénarios, y compris la terminaison d'E\/S asynchrones, les rappels Timer, les opérations d'attente inscrites, les appels de méthodes asynchrones utilisant des délégués et les connexions de sockets <xref:System.Net>.  
+ <span data-ttu-id="6ebcb-109">.NET Framework utilise des threads de pool pour de nombreux scénarios, y compris la terminaison d'E/S asynchrones, les rappels Timer, les opérations d'attente inscrites, les appels de méthodes asynchrones utilisant des délégués et les connexions de sockets <xref:System.Net>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-109">The .NET Framework uses thread pool threads for many purposes, including asynchronous I/O completion, timer callbacks, registered wait operations, asynchronous method calls using delegates, and <xref:System.Net> socket connections.</span></span>  
   
-## Quand ne pas utiliser les threads de pool  
- Il existe plusieurs scénarios dans lesquels il est préférable de créer et de gérer vos propres threads au lieu d'utiliser des threads de pool :  
+## <a name="when-not-to-use-thread-pool-threads"></a><span data-ttu-id="6ebcb-110">Quand ne pas utiliser les threads de pool</span><span class="sxs-lookup"><span data-stu-id="6ebcb-110">When Not to Use Thread Pool Threads</span></span>  
+ <span data-ttu-id="6ebcb-111">Il existe plusieurs scénarios dans lesquels il est préférable de créer et de gérer vos propres threads au lieu d'utiliser des threads de pool :</span><span class="sxs-lookup"><span data-stu-id="6ebcb-111">There are several scenarios in which it is appropriate to create and manage your own threads instead of using thread pool threads:</span></span>  
   
--   Si vous devez utiliser un thread de premier plan.  
+-   <span data-ttu-id="6ebcb-112">Si vous devez utiliser un thread de premier plan.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-112">You require a foreground thread.</span></span>  
   
--   Si un thread doit avoir une priorité particulière.  
+-   <span data-ttu-id="6ebcb-113">Si un thread doit avoir une priorité particulière.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-113">You require a thread to have a particular priority.</span></span>  
   
--   Si vous avez des tâches qui entraînent le blocage du thread pendant une longue durée.  Le pool de threads possède un nombre maximal de threads. Un grand nombre de threads de pool bloqués pourrait donc empêcher le démarrage des tâches.  
+-   <span data-ttu-id="6ebcb-114">Si vous avez des tâches qui entraînent le blocage du thread pendant une longue durée.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-114">You have tasks that cause the thread to block for long periods of time.</span></span> <span data-ttu-id="6ebcb-115">Le pool de threads possède un nombre maximal de threads. Un grand nombre de threads de pool bloqués pourrait donc empêcher le démarrage des tâches.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-115">The thread pool has a maximum number of threads, so a large number of blocked thread pool threads might prevent tasks from starting.</span></span>  
   
--   Vous devez placer les threads dans un thread unique cloisonné.  Tous les threads <xref:System.Threading.ThreadPool> se trouvent dans le multithread cloisonné.  
+-   <span data-ttu-id="6ebcb-116">Vous devez placer les threads dans un thread unique cloisonné.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-116">You need to place threads into a single-threaded apartment.</span></span> <span data-ttu-id="6ebcb-117">Tous les threads <xref:System.Threading.ThreadPool> se trouvent dans le multithread cloisonné.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-117">All <xref:System.Threading.ThreadPool> threads are in the multithreaded apartment.</span></span>  
   
--   Vous avez besoin d'une identité stable associée au thread ou avez besoin de dédier un thread à une tâche.  
+-   <span data-ttu-id="6ebcb-118">Vous avez besoin d'une identité stable associée au thread ou avez besoin de dédier un thread à une tâche.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-118">You need to have a stable identity associated with the thread, or to dedicate a thread to a task.</span></span>  
   
-## Caractéristiques du pool de threads  
- Les threads des pools de threads sont des threads d'arrière\-plan.  Voir [Foreground and Background Threads](../../../docs/standard/threading/foreground-and-background-threads.md).  Chaque thread utilise la taille de pile par défaut, s'exécute avec la priorité par défaut et se trouve dans le multithread cloisonné.  
+## <a name="thread-pool-characteristics"></a><span data-ttu-id="6ebcb-119">Caractéristiques du pool de threads</span><span class="sxs-lookup"><span data-stu-id="6ebcb-119">Thread Pool Characteristics</span></span>  
+ <span data-ttu-id="6ebcb-120">Les threads des pools de threads sont des threads d'arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-120">Thread pool threads are background threads.</span></span> <span data-ttu-id="6ebcb-121">Consultez [au premier plan et les Threads d’arrière-plan](../../../docs/standard/threading/foreground-and-background-threads.md).</span><span class="sxs-lookup"><span data-stu-id="6ebcb-121">See [Foreground and Background Threads](../../../docs/standard/threading/foreground-and-background-threads.md).</span></span> <span data-ttu-id="6ebcb-122">Chaque thread utilise la taille de pile par défaut, s'exécute avec la priorité par défaut et se trouve dans le multithread cloisonné.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-122">Each thread uses the default stack size, runs at the default priority, and is in the multithreaded apartment.</span></span>  
   
- Il n'y a qu'un seul pool de threads par processus.  
+ <span data-ttu-id="6ebcb-123">Il n'y a qu'un seul pool de threads par processus.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-123">There is only one thread pool per process.</span></span>  
   
-### Exceptions dans les threads de pool  
- Les exceptions non gérées sur les threads de pool entraînent la fin du processus.  Il existe trois exceptions à cette règle :  
+### <a name="exceptions-in-thread-pool-threads"></a><span data-ttu-id="6ebcb-124">Exceptions dans les threads de pool</span><span class="sxs-lookup"><span data-stu-id="6ebcb-124">Exceptions in Thread Pool Threads</span></span>  
+ <span data-ttu-id="6ebcb-125">Les exceptions non gérées sur les threads de pool entraînent la fin du processus.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-125">Unhandled exceptions on thread pool threads terminate the process.</span></span> <span data-ttu-id="6ebcb-126">Il existe trois exceptions à cette règle :</span><span class="sxs-lookup"><span data-stu-id="6ebcb-126">There are three exceptions to this rule:</span></span>  
   
--   Une <xref:System.Threading.ThreadAbortException> est levée dans un thread de pool, car <xref:System.Threading.Thread.Abort%2A> a été appelé.  
+-   <span data-ttu-id="6ebcb-127">Une <xref:System.Threading.ThreadAbortException> est levée dans un thread de pool, car <xref:System.Threading.Thread.Abort%2A> a été appelé.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-127">A <xref:System.Threading.ThreadAbortException> is thrown in a thread pool thread, because <xref:System.Threading.Thread.Abort%2A> was called.</span></span>  
   
--   Une <xref:System.AppDomainUnloadedException> est levée dans un thread de pool, car le domaine d'application est en cours de déchargement.  
+-   <span data-ttu-id="6ebcb-128">Une <xref:System.AppDomainUnloadedException> est levée dans un thread de pool, car le domaine d'application est en cours de déchargement.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-128">An <xref:System.AppDomainUnloadedException> is thrown in a thread pool thread, because the application domain is being unloaded.</span></span>  
   
--   Le common language runtime ou un processus hôte met fin au thread.  
+-   <span data-ttu-id="6ebcb-129">Le common language runtime ou un processus hôte met fin au thread.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-129">The common language runtime or a host process terminates the thread.</span></span>  
   
- Pour plus d'informations, voir [Exceptions in Managed Threads](../../../docs/standard/threading/exceptions-in-managed-threads.md).  
-  
-> [!NOTE]
->  Dans les versions 1.0 et 1.1 de .NET Framework, le common language runtime intercepte sans assistance les exceptions non gérées dans les threads de pool.  Cela peut endommager l'état de l'application et éventuellement provoquer le blocage des applications, ce qui peut être très difficile à déboguer.  
-  
-### Nombre maximal de threads dans un pool  
- Le nombre d'opérations pouvant être mises en file d'attente dans un pool de threads est limité uniquement par la mémoire disponible. Cependant, le pool de threads limite le nombre de threads pouvant être simultanément actifs dans le processus.  Dans [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] et versions ultérieures, la taille par défaut du pool de threads d'un processus dépend de plusieurs facteurs, dont la taille de l'espace d'adressage virtuel.  Un processus peut appeler la méthode <xref:System.Threading.ThreadPool.GetMaxThreads%2A> pour déterminer le nombre de threads.  
-  
- Vous pouvez contrôler le nombre maximal de threads à l'aide des méthodes <xref:System.Threading.ThreadPool.GetMaxThreads%2A> et <xref:System.Threading.ThreadPool.SetMaxThreads%2A>.  
+ <span data-ttu-id="6ebcb-130">Pour plus d’informations, consultez [Exceptions dans les Threads managés](../../../docs/standard/threading/exceptions-in-managed-threads.md).</span><span class="sxs-lookup"><span data-stu-id="6ebcb-130">For more information, see [Exceptions in Managed Threads](../../../docs/standard/threading/exceptions-in-managed-threads.md).</span></span>  
   
 > [!NOTE]
->  Dans les versions 1.0 et 1.1 de .NET Framework, la taille du pool de threads ne peut pas être définie à partir de code managé.  Le code qui héberge le common language runtime peut définir la taille à l'aide de `CorSetMaxThreads`, défini dans mscoree.h.  
+>  <span data-ttu-id="6ebcb-131">Dans les versions 1.0 et 1.1 de .NET Framework, le common language runtime intercepte sans assistance les exceptions non gérées dans les threads de pool.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-131">In the .NET Framework versions 1.0 and 1.1, the common language runtime silently traps unhandled exceptions in thread pool threads.</span></span> <span data-ttu-id="6ebcb-132">Cela peut endommager l'état de l'application et éventuellement provoquer le blocage des applications, ce qui peut être très difficile à déboguer.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-132">This might corrupt application state and eventually cause applications to hang, which might be very difficult to debug.</span></span>  
   
-### Valeurs minimales d'un pool de threads  
- Le pool de threads fournit de nouveaux threads de travail ou des threads de terminaison d'E\/S à la demande jusqu'à ce qu'il atteigne la valeur minimale spécifiée pour chaque catégorie.  Vous pouvez utiliser la méthode <xref:System.Threading.ThreadPool.GetMinThreads%2A> pour obtenir ces valeurs minimales.  
+### <a name="maximum-number-of-thread-pool-threads"></a><span data-ttu-id="6ebcb-133">Nombre maximal de threads dans un pool</span><span class="sxs-lookup"><span data-stu-id="6ebcb-133">Maximum Number of Thread Pool Threads</span></span>  
+ <span data-ttu-id="6ebcb-134">Le nombre d'opérations pouvant être mises en file d'attente dans un pool de threads est limité uniquement par la mémoire disponible. Cependant, le pool de threads limite le nombre de threads pouvant être simultanément actifs dans le processus.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-134">The number of operations that can be queued to the thread pool is limited only by available memory; however, the thread pool limits the number of threads that can be active in the process simultaneously.</span></span> <span data-ttu-id="6ebcb-135">Dans [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] et versions ultérieures, la taille par défaut du pool de threads d'un processus dépend de plusieurs facteurs, dont la taille de l'espace d'adressage virtuel.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-135">Beginning with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], the default size of the thread pool for a process depends on several factors, such as the size of the virtual address space.</span></span> <span data-ttu-id="6ebcb-136">Un processus peut appeler la méthode <xref:System.Threading.ThreadPool.GetMaxThreads%2A> pour déterminer le nombre de threads.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-136">A process can call the <xref:System.Threading.ThreadPool.GetMaxThreads%2A> method to determine the number of threads.</span></span>  
+  
+ <span data-ttu-id="6ebcb-137">Vous pouvez contrôler le nombre maximal de threads à l'aide des méthodes <xref:System.Threading.ThreadPool.GetMaxThreads%2A> et <xref:System.Threading.ThreadPool.SetMaxThreads%2A>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-137">You can control the maximum number of threads by using the <xref:System.Threading.ThreadPool.GetMaxThreads%2A> and <xref:System.Threading.ThreadPool.SetMaxThreads%2A> methods.</span></span>  
   
 > [!NOTE]
->  Quand la demande est faible, le nombre réel de threads du pool peut être inférieur aux valeurs minimales.  
+>  <span data-ttu-id="6ebcb-138">Dans les versions 1.0 et 1.1 de .NET Framework, la taille du pool de threads ne peut pas être définie à partir de code managé.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-138">In the .NET Framework versions 1.0 and 1.1, the size of the thread pool cannot be set from managed code.</span></span> <span data-ttu-id="6ebcb-139">Le code qui héberge le common language runtime peut définir la taille à l'aide de `CorSetMaxThreads`, défini dans mscoree.h.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-139">Code that hosts the common language runtime can set the size using `CorSetMaxThreads`, defined in mscoree.h.</span></span>  
   
- Quand une valeur minimale est atteinte, le pool de threads peut créer des threads supplémentaires ou attendre que certaines tâches soient terminées.  Dans [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et versions ultérieures, le pool de threads crée et détruit des threads de travail pour optimiser le débit, qui est défini comme le nombre de tâches exécutées par unité de temps.  Un nombre trop bas de threads peut ne pas permettre une utilisation optimale des ressources disponibles, tandis qu'un nombre trop élevé de threads peut augmenter les conflits de ressources.  
+### <a name="thread-pool-minimums"></a><span data-ttu-id="6ebcb-140">Valeurs minimales d'un pool de threads</span><span class="sxs-lookup"><span data-stu-id="6ebcb-140">Thread Pool Minimums</span></span>  
+ <span data-ttu-id="6ebcb-141">Le pool de threads fournit de nouveaux threads de travail ou des threads de terminaison d'E/S à la demande jusqu'à ce qu'il atteigne la valeur minimale spécifiée pour chaque catégorie.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-141">The thread pool provides new worker threads or I/O completion threads on demand until it reaches a specified minimum for each category.</span></span> <span data-ttu-id="6ebcb-142">Vous pouvez utiliser la méthode <xref:System.Threading.ThreadPool.GetMinThreads%2A> pour obtenir ces valeurs minimales.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-142">You can use the <xref:System.Threading.ThreadPool.GetMinThreads%2A> method to obtain these minimum values.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="6ebcb-143">Quand la demande est faible, le nombre réel de threads du pool peut être inférieur aux valeurs minimales.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-143">When demand is low, the actual number of thread pool threads can fall below the minimum values.</span></span>  
+  
+ <span data-ttu-id="6ebcb-144">Quand une valeur minimale est atteinte, le pool de threads peut créer des threads supplémentaires ou attendre que certaines tâches soient terminées.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-144">When a minimum is reached, the thread pool can create additional threads or wait until some tasks complete.</span></span> <span data-ttu-id="6ebcb-145">Dans [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et versions ultérieures, le pool de threads crée et détruit des threads de travail pour optimiser le débit, qui est défini comme le nombre de tâches exécutées par unité de temps.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-145">Beginning with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], the thread pool creates and destroys worker threads in order to optimize throughput, which is defined as the number of tasks that complete per unit of time.</span></span> <span data-ttu-id="6ebcb-146">Un nombre trop bas de threads peut ne pas permettre une utilisation optimale des ressources disponibles, tandis qu'un nombre trop élevé de threads peut augmenter les conflits de ressources.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-146">Too few threads might not make optimal use of available resources, whereas too many threads could increase resource contention.</span></span>  
   
 > [!CAUTION]
->  Vous pouvez utiliser la méthode <xref:System.Threading.ThreadPool.SetMinThreads%2A> pour augmenter le nombre minimal de threads inactifs.  Toutefois, une augmentation non nécessaire de ces valeurs peut entraîner des problèmes de performances.  Si vous démarrez trop de tâches en même temps, celles\-ci seront lentes.  Dans la plupart des cas, le pool de threads sera plus performant avec son propre algorithme d'allocation de threads.  
+>  <span data-ttu-id="6ebcb-147">Vous pouvez utiliser la méthode <xref:System.Threading.ThreadPool.SetMinThreads%2A> pour augmenter le nombre minimal de threads inactifs.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-147">You can use the <xref:System.Threading.ThreadPool.SetMinThreads%2A> method to increase the minimum number of idle threads.</span></span> <span data-ttu-id="6ebcb-148">Toutefois, une augmentation non nécessaire de ces valeurs peut entraîner des problèmes de performances.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-148">However, unnecessarily increasing these values can cause performance problems.</span></span> <span data-ttu-id="6ebcb-149">Si vous démarrez trop de tâches en même temps, celles-ci seront lentes.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-149">If too many tasks start at the same time, all of them might appear to be slow.</span></span> <span data-ttu-id="6ebcb-150">Dans la plupart des cas, le pool de threads sera plus performant avec son propre algorithme d'allocation de threads.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-150">In most cases the thread pool will perform better with its own algorithm for allocating threads.</span></span>  
   
-## Ignorer les vérifications de sécurité  
- Le pool de threads fournit également les méthodes <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=fullName> et <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=fullName>.  Ces méthodes ne doivent être utilisées que si vous êtes certain que la pile de l'appelant n'a pas fait l'objet de vérifications de sécurité effectuées pendant l'exécution de la tâche mise en file d'attente.  <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> et <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> capturent la pile de l'appelant, qui est fusionnée avec la pile du thread de pool quand le thread commence à exécuter une tâche.  Si une vérification de sécurité est requise, la pile entière doit être vérifiée.  Même si elle garantit une sécurité, cette vérification a un impact sur les performances.  
+## <a name="skipping-security-checks"></a><span data-ttu-id="6ebcb-151">Ignorer les vérifications de sécurité</span><span class="sxs-lookup"><span data-stu-id="6ebcb-151">Skipping Security Checks</span></span>  
+ <span data-ttu-id="6ebcb-152">Le pool de threads fournit également les méthodes <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> et <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-152">The thread pool also provides the <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType> and <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A?displayProperty=nameWithType> methods.</span></span> <span data-ttu-id="6ebcb-153">Ces méthodes ne doivent être utilisées que si vous êtes certain que la pile de l’appelant n’a pas fait l’objet de vérifications de sécurité effectuées pendant l’exécution de la tâche mise en file d’attente.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-153">Use these methods only when you are certain that the caller's stack is irrelevant to any security checks performed during the execution of the queued task.</span></span> <span data-ttu-id="6ebcb-154"><xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>et <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> capturent la pile de l’appelant, qui est fusionnée avec la pile du thread de pool lorsque le thread commence à exécuter une tâche.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-154"><xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> and <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> both capture the caller's stack, which is merged into the stack of the thread pool thread when the thread begins to execute a task.</span></span> <span data-ttu-id="6ebcb-155">Si une vérification de sécurité est requise, la pile entière doit être vérifiée.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-155">If a security check is required, the entire stack must be checked.</span></span> <span data-ttu-id="6ebcb-156">Même si elle garantit une sécurité, cette vérification a un impact sur les performances.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-156">Although the check provides safety, it also has a performance cost.</span></span>  
   
-## Utilisation du pool de threads  
- Dans [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et versions ultérieures, le moyen le plus simple d'utiliser le pool de threads est d'utiliser la [Task Parallel Library \(TPL\)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md).  Par défaut, les types de bibliothèque parallèle, tels que <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>, utilisent des threads de pool pour exécuter des tâches.  Vous pouvez également utiliser le pool de threads en appelant <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=fullName> depuis du code managé \(ou `CorQueueUserWorkItem` depuis du code non managé\) et en passant un délégué <xref:System.Threading.WaitCallback> représentant la méthode qui effectue la tâche.  Une autre façon d'utiliser le pool de threads est de mettre en file d'attente des éléments de travail associés à une opération d'attente en utilisant la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=fullName> et en passant un <xref:System.Threading.WaitHandle> qui, quand il est signalé ou quand il a expiré, appelle la méthode représentée par le délégué <xref:System.Threading.WaitOrTimerCallback>.  Les threads de pool sont utilisés pour appeler les méthodes de rappel.  
+## <a name="using-the-thread-pool"></a><span data-ttu-id="6ebcb-157">Utilisation du pool de threads</span><span class="sxs-lookup"><span data-stu-id="6ebcb-157">Using the Thread Pool</span></span>  
+ <span data-ttu-id="6ebcb-158">Compter les [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], le moyen le plus simple d’utiliser le pool de threads est d’utiliser le [bibliothèque parallèle de tâches (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md).</span><span class="sxs-lookup"><span data-stu-id="6ebcb-158">Beginning with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], the easiest way to use the thread pool is to use the [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md).</span></span> <span data-ttu-id="6ebcb-159">Par défaut, les types de bibliothèque parallèle, tels que <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>, utilisent des threads de pool pour exécuter des tâches.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-159">By default, parallel library types like <xref:System.Threading.Tasks.Task> and <xref:System.Threading.Tasks.Task%601> use thread pool threads to run tasks.</span></span> <span data-ttu-id="6ebcb-160">Vous pouvez également utiliser le pool de threads en appelant <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> depuis du code managé (ou `CorQueueUserWorkItem` depuis du code non managé) et en passant un délégué <xref:System.Threading.WaitCallback> représentant la méthode qui effectue la tâche.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-160">You can also use the thread pool by calling <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> from managed code (or `CorQueueUserWorkItem` from unmanaged code) and passing a <xref:System.Threading.WaitCallback> delegate representing the method that performs the task.</span></span> <span data-ttu-id="6ebcb-161">Une autre façon d'utiliser le pool de threads est de mettre en file d'attente des éléments de travail associés à une opération d'attente en utilisant la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> et en passant un <xref:System.Threading.WaitHandle> qui, quand il est signalé ou quand il a expiré, appelle la méthode représentée par le délégué <xref:System.Threading.WaitOrTimerCallback>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-161">Another way to use the thread pool is to queue work items that are related to a wait operation by using the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> method and passing a <xref:System.Threading.WaitHandle> that, when signaled or when timed out, calls the method represented by the <xref:System.Threading.WaitOrTimerCallback> delegate.</span></span> <span data-ttu-id="6ebcb-162">Les threads de pool sont utilisés pour appeler les méthodes de rappel.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-162">Thread pool threads are used to invoke callback methods.</span></span>  
   
-## Exemples de pool de threads  
- Les exemples de code de cette section illustrent le pool de threads à l'aide de la classe <xref:System.Threading.Tasks.Task>, de la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=fullName> et de la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=fullName>.  
+## <a name="threadpool-examples"></a><span data-ttu-id="6ebcb-163">Exemples de pool de threads</span><span class="sxs-lookup"><span data-stu-id="6ebcb-163">ThreadPool Examples</span></span>  
+ <span data-ttu-id="6ebcb-164">Les exemples de code de cette section illustrent le pool de threads à l'aide de la classe <xref:System.Threading.Tasks.Task>, de la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> et de la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-164">The code examples in this section demonstrate the thread pool by using the <xref:System.Threading.Tasks.Task> class, the <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> method, and the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> method.</span></span>  
   
--   [Exécution de tâches asynchrones avec la bibliothèque parallèle de tâches](#TaskParallelLibrary)  
+-   [<span data-ttu-id="6ebcb-165">Exécution de tâches asynchrones avec la bibliothèque parallèle de tâches</span><span class="sxs-lookup"><span data-stu-id="6ebcb-165">Executing Asynchronous Tasks with the Task Parallel Library</span></span>](#TaskParallelLibrary)  
   
--   [Exécution de code asynchrone avec QueueUserWorkItem](#ExecuteCodeWithQUWI)  
+-   [<span data-ttu-id="6ebcb-166">L’exécution de Code asynchrone avec QueueUserWorkItem</span><span class="sxs-lookup"><span data-stu-id="6ebcb-166">Executing Code Asynchronously with QueueUserWorkItem</span></span>](#ExecuteCodeWithQUWI)  
   
--   [Fourniture de données de tâche pour QueueUserWorkItem](#TaskDataForQUWI)  
+-   [<span data-ttu-id="6ebcb-167">Fourniture de données de tâche pour QueueUserWorkItem</span><span class="sxs-lookup"><span data-stu-id="6ebcb-167">Supplying Task Data for QueueUserWorkItem</span></span>](#TaskDataForQUWI)  
   
--   [Utilisation de RegisterWaitForSingleObject](#RegisterWaitForSingleObject)  
+-   [<span data-ttu-id="6ebcb-168">Utilisation de RegisterWaitForSingleObject</span><span class="sxs-lookup"><span data-stu-id="6ebcb-168">Using RegisterWaitForSingleObject</span></span>](#RegisterWaitForSingleObject)  
   
 <a name="TaskParallelLibrary"></a>   
-### Exécution de tâches asynchrones avec la bibliothèque parallèle de tâches  
- L'exemple suivant montre comment créer et utiliser un objet <xref:System.Threading.Tasks.Task> en appelant la méthode <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=fullName>.  Pour obtenir un exemple qui utilise la classe <xref:System.Threading.Tasks.Task%601> pour retourner une valeur à partir d'une tâche asynchrone, voir [How to: Return a Value from a Task](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md).  
+### <a name="executing-asynchronous-tasks-with-the-task-parallel-library"></a><span data-ttu-id="6ebcb-169">Exécution de tâches asynchrones avec la bibliothèque parallèle de tâches</span><span class="sxs-lookup"><span data-stu-id="6ebcb-169">Executing Asynchronous Tasks with the Task Parallel Library</span></span>  
+ <span data-ttu-id="6ebcb-170">L'exemple suivant montre comment créer et utiliser un objet <xref:System.Threading.Tasks.Task> en appelant la méthode <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-170">The following example shows how to create and use a <xref:System.Threading.Tasks.Task> object by calling the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="6ebcb-171">Pour obtenir un exemple qui utilise le <xref:System.Threading.Tasks.Task%601> classe pour retourner une valeur à partir d’une tâche asynchrone, consultez [Comment : retourner une valeur à partir d’une tâche](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md).</span><span class="sxs-lookup"><span data-stu-id="6ebcb-171">For an example that uses the <xref:System.Threading.Tasks.Task%601> class to return a value from an asynchronous task, see [How to: Return a Value from a Task](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md).</span></span>  
   
  [!code-csharp[System.Threading.Tasks.Task#01](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task/cs/startnew.cs#01)]
  [!code-vb[System.Threading.Tasks.Task#01](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task/vb/startnew.vb#01)]  
   
 <a name="ExecuteCodeWithQUWI"></a>   
-### Exécution de code asynchrone avec QueueUserWorkItem  
- L'exemple suivant met en file d'attente une tâche très simple représentée par la méthode `ThreadProc`, à l'aide de la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>.  
+### <a name="executing-code-asynchronously-with-queueuserworkitem"></a><span data-ttu-id="6ebcb-172">Exécution de code asynchrone avec QueueUserWorkItem</span><span class="sxs-lookup"><span data-stu-id="6ebcb-172">Executing Code Asynchronously with QueueUserWorkItem</span></span>  
+ <span data-ttu-id="6ebcb-173">L'exemple suivant met en file d'attente une tâche très simple représentée par la méthode `ThreadProc`, à l'aide de la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-173">The following example queues a very simple task, represented by the `ThreadProc` method, using the <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> method.</span></span>  
   
  [!code-cpp[Conceptual.ThreadPool#1](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.threadpool/cpp/source1.cpp#1)]
  [!code-csharp[Conceptual.ThreadPool#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.threadpool/cs/source1.cs#1)]
  [!code-vb[Conceptual.ThreadPool#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.threadpool/vb/source1.vb#1)]  
   
 <a name="TaskDataForQUWI"></a>   
-### Fourniture de données de tâche pour QueueUserWorkItem  
- L'exemple de code suivant utilise la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> pour mettre en file d'attente une tâche et fournir les données de cette tâche.  
+### <a name="supplying-task-data-for-queueuserworkitem"></a><span data-ttu-id="6ebcb-174">Fourniture de données de tâche pour QueueUserWorkItem</span><span class="sxs-lookup"><span data-stu-id="6ebcb-174">Supplying Task Data for QueueUserWorkItem</span></span>  
+ <span data-ttu-id="6ebcb-175">L'exemple de code suivant utilise la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> pour mettre en file d'attente une tâche et fournir les données de cette tâche.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-175">The following code example uses the <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> method to queue a task and supply the data for the task.</span></span>  
   
  [!code-cpp[Conceptual.ThreadPool#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.threadpool/cpp/source2.cpp#2)]
  [!code-csharp[Conceptual.ThreadPool#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.threadpool/cs/source2.cs#2)]
  [!code-vb[Conceptual.ThreadPool#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.threadpool/vb/source2.vb#2)]  
   
 <a name="RegisterWaitForSingleObject"></a>   
-### Utilisation de RegisterWaitForSingleObject  
- L'exemple suivant illustre plusieurs fonctionnalités de threading.  
+### <a name="using-registerwaitforsingleobject"></a><span data-ttu-id="6ebcb-176">Utilisation de RegisterWaitForSingleObject</span><span class="sxs-lookup"><span data-stu-id="6ebcb-176">Using RegisterWaitForSingleObject</span></span>  
+ <span data-ttu-id="6ebcb-177">L'exemple suivant illustre plusieurs fonctionnalités de threading.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-177">The following example demonstrates several threading features.</span></span>  
   
--   La mise en file d'attente d'une tâche en vue de son exécution par des threads <xref:System.Threading.ThreadPool>, avec la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>.  
+-   <span data-ttu-id="6ebcb-178">La mise en file d'attente d'une tâche en vue de son exécution par des threads <xref:System.Threading.ThreadPool>, avec la méthode <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-178">Queuing a task for execution by <xref:System.Threading.ThreadPool> threads, with the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> method.</span></span>  
   
--   La signalisation d'une tâche à exécuter avec <xref:System.Threading.AutoResetEvent>.  Voir [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md).  
+-   <span data-ttu-id="6ebcb-179">La signalisation d'une tâche à exécuter avec <xref:System.Threading.AutoResetEvent>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-179">Signaling a task to execute, with <xref:System.Threading.AutoResetEvent>.</span></span> <span data-ttu-id="6ebcb-180">Consultez [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md).</span><span class="sxs-lookup"><span data-stu-id="6ebcb-180">See [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md).</span></span>  
   
--   La gestion des délais d'expiration et des signaux avec un délégué <xref:System.Threading.WaitOrTimerCallback>.  
+-   <span data-ttu-id="6ebcb-181">La gestion des délais d'expiration et des signaux avec un délégué <xref:System.Threading.WaitOrTimerCallback>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-181">Handling both time-outs and signals with a <xref:System.Threading.WaitOrTimerCallback> delegate.</span></span>  
   
--   L'annulation d'une tâche mise en file d'attente avec <xref:System.Threading.RegisteredWaitHandle>.  
+-   <span data-ttu-id="6ebcb-182">L'annulation d'une tâche mise en file d'attente avec <xref:System.Threading.RegisteredWaitHandle>.</span><span class="sxs-lookup"><span data-stu-id="6ebcb-182">Canceling a queued task with <xref:System.Threading.RegisteredWaitHandle>.</span></span>  
   
  [!code-cpp[Conceptual.ThreadPool#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.threadpool/cpp/source3.cpp#3)]
  [!code-csharp[Conceptual.ThreadPool#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.threadpool/cs/source3.cs#3)]
  [!code-vb[Conceptual.ThreadPool#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.threadpool/vb/source3.vb#3)]  
   
-## Voir aussi  
- <xref:System.Threading.ThreadPool>   
- <xref:System.Threading.Tasks.Task>   
- <xref:System.Threading.Tasks.Task%601>   
- [Task Parallel Library \(TPL\)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)   
- [Task Parallel Library \(TPL\)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)   
- [How to: Return a Value from a Task](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)   
- [Threading Objects and Features](../../../docs/standard/threading/threading-objects-and-features.md)   
- [Threads and Threading](../../../docs/standard/threading/threads-and-threading.md)   
- [E\/S sur fichier asynchrones](../../../docs/standard/io/e-s-sur-fichier-asynchrones.md)   
- [Timers](../../../docs/standard/threading/timers.md)
+## <a name="see-also"></a><span data-ttu-id="6ebcb-183">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ebcb-183">See Also</span></span>  
+ <xref:System.Threading.ThreadPool>  
+ <xref:System.Threading.Tasks.Task>  
+ <xref:System.Threading.Tasks.Task%601>  
+ [<span data-ttu-id="6ebcb-184">La bibliothèque parallèle de tâches</span><span class="sxs-lookup"><span data-stu-id="6ebcb-184">Task Parallel Library (TPL)</span></span>](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
+ [<span data-ttu-id="6ebcb-185">La bibliothèque parallèle de tâches</span><span class="sxs-lookup"><span data-stu-id="6ebcb-185">Task Parallel Library (TPL)</span></span>](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
+ [<span data-ttu-id="6ebcb-186">Comment : retourner une valeur à partir d’une tâche</span><span class="sxs-lookup"><span data-stu-id="6ebcb-186">How to: Return a Value from a Task</span></span>](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)  
+ [<span data-ttu-id="6ebcb-187">Fonctionnalités et objets de threading</span><span class="sxs-lookup"><span data-stu-id="6ebcb-187">Threading Objects and Features</span></span>](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [<span data-ttu-id="6ebcb-188">Threads et threading</span><span class="sxs-lookup"><span data-stu-id="6ebcb-188">Threads and Threading</span></span>](../../../docs/standard/threading/threads-and-threading.md)  
+ [<span data-ttu-id="6ebcb-189">E/S sur fichier asynchrones</span><span class="sxs-lookup"><span data-stu-id="6ebcb-189">Asynchronous File I/O</span></span>](../../../docs/standard/io/asynchronous-file-i-o.md)  
+ [<span data-ttu-id="6ebcb-190">Minuteries</span><span class="sxs-lookup"><span data-stu-id="6ebcb-190">Timers</span></span>](../../../docs/standard/threading/timers.md)

@@ -1,42 +1,44 @@
 ---
-title: "Task Parallel Library (TPL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET, concurrency in"
-  - ".NET, parallel programming in"
-  - "Parallel Programming"
+title: "Bibliothèque parallèle de tâches"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- .NET, concurrency in
+- .NET, parallel programming in
+- Parallel Programming
 ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
-caps.latest.revision: 37
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 37
+caps.latest.revision: "37"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 0e1dcb10189405c368b3739020a7bfa875792184
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Task Parallel Library (TPL)
-La bibliothèque parallèle de tâches est un ensemble de types publics et d'API dans les espaces de noms <xref:System.Threading?displayProperty=fullName> et <xref:System.Threading.Tasks?displayProperty=fullName>.  L'objectif de la bibliothèque parallèle de tâches est d'accroître la productivité des développeurs en simplifiant le processus d'ajout du parallélisme et de l'accès concurrentiel aux applications.  La bibliothèque parallèle de tâches met à l'échelle dynamiquement le degré d'accès concurrentiel pour utiliser plus efficacement tous les processeurs disponibles.  De plus, la bibliothèque parallèle de tâches gère le partitionnement du travail, la planification de threads sur le <xref:System.Threading.ThreadPool>, la prise en charge de l'annulation, la gestion d'état et d'autres détails de bas niveau.  L'utilisation de la bibliothèque parallèle de tâches vous permet de maximiser les performances de votre code tout en vous concentrant sur le travail que votre programme doit accomplir.  
+# <a name="task-parallel-library-tpl"></a><span data-ttu-id="599a7-102">Bibliothèque parallèle de tâches</span><span class="sxs-lookup"><span data-stu-id="599a7-102">Task Parallel Library (TPL)</span></span>
+<span data-ttu-id="599a7-103">La bibliothèque parallèle de tâches est un ensemble de types publics et d'API dans les espaces de noms <xref:System.Threading?displayProperty=nameWithType> et <xref:System.Threading.Tasks?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="599a7-103">The Task Parallel Library (TPL) is a set of public types and APIs in the <xref:System.Threading?displayProperty=nameWithType> and <xref:System.Threading.Tasks?displayProperty=nameWithType> namespaces.</span></span> <span data-ttu-id="599a7-104">L'objectif de la bibliothèque parallèle de tâches est d'accroître la productivité des développeurs en simplifiant le processus d'ajout du parallélisme et de l'accès concurrentiel aux applications.</span><span class="sxs-lookup"><span data-stu-id="599a7-104">The purpose of the TPL is to make developers more productive by simplifying the process of adding parallelism and concurrency to applications.</span></span> <span data-ttu-id="599a7-105">La bibliothèque parallèle de tâches met à l'échelle dynamiquement le degré d'accès concurrentiel pour utiliser plus efficacement tous les processeurs disponibles.</span><span class="sxs-lookup"><span data-stu-id="599a7-105">The TPL scales the degree of concurrency dynamically to most efficiently use all the processors that are available.</span></span> <span data-ttu-id="599a7-106">De plus, la bibliothèque parallèle de tâches gère le partitionnement du travail, la planification de threads sur le <xref:System.Threading.ThreadPool>, la prise en charge de l'annulation, la gestion d'état et d'autres détails de bas niveau.</span><span class="sxs-lookup"><span data-stu-id="599a7-106">In addition, the TPL handles the partitioning of the work, the scheduling of threads on the <xref:System.Threading.ThreadPool>, cancellation support, state management, and other low-level details.</span></span> <span data-ttu-id="599a7-107">L'utilisation de la bibliothèque parallèle de tâches vous permet de maximiser les performances de votre code tout en vous concentrant sur le travail que votre programme doit accomplir.</span><span class="sxs-lookup"><span data-stu-id="599a7-107">By using TPL, you can maximize the performance of your code while focusing on the work that your program is designed to accomplish.</span></span>  
   
- À partir du [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], la bibliothèque parallèle de tâches est la meilleure méthode pour écrire le code multithread et parallèle.  Toutefois, tout le code est pas approprié pour la parallélisation ; par exemple, si une boucle exécute uniquement une petite quantité de travail sur chaque itération ou ne s'exécute que pour un nombre limité d'itérations, la charge mémoire de la parallélisation peut ralentir l'exécution du code.  En outre, comme tout code multithread, la parallélisation rend l'exécution du programme plus complexe.  Même si la bibliothèque parallèle de tâches simplifie les scénarios multithread, il est recommandé de connaître les notions fondamentales des concepts de threading, tels que les verrous, les interblocages et les conditions de concurrence critique, afin de pouvoir utiliser efficacement la bibliothèque parallèle de tâches.  
+ <span data-ttu-id="599a7-108">En commençant par le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], la bibliothèque parallèle de tâches est la meilleure façon d’écrire du code multithread et parallèle.</span><span class="sxs-lookup"><span data-stu-id="599a7-108">Starting with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], the TPL is the preferred way to write multithreaded and parallel code.</span></span> <span data-ttu-id="599a7-109">Toutefois, tout le code est pas approprié pour la parallélisation ; par exemple, si une boucle exécute uniquement une petite quantité de travail sur chaque itération ou ne s'exécute que pour un nombre limité d'itérations, la charge mémoire de la parallélisation peut ralentir l'exécution du code.</span><span class="sxs-lookup"><span data-stu-id="599a7-109">However, not all code is suitable for parallelization; for example, if a loop performs only a small amount of work on each iteration, or it doesn't run for many iterations, then the overhead of parallelization can cause the code to run more slowly.</span></span> <span data-ttu-id="599a7-110">En outre, comme tout code multithread, la parallélisation rend l'exécution du programme plus complexe.</span><span class="sxs-lookup"><span data-stu-id="599a7-110">Furthermore, parallelization like any multithreaded code adds complexity to your program execution.</span></span> <span data-ttu-id="599a7-111">Même si la bibliothèque parallèle de tâches simplifie les scénarios multithread, il est recommandé de connaître les notions fondamentales des concepts de threading, tels que les verrous, les interblocages et les conditions de concurrence critique, afin de pouvoir utiliser efficacement la bibliothèque parallèle de tâches.</span><span class="sxs-lookup"><span data-stu-id="599a7-111">Although the TPL simplifies multithreaded scenarios, we recommend that you have a basic understanding of threading concepts, for example, locks, deadlocks, and race conditions, so that you can use the TPL effectively.</span></span>  
   
-## Rubriques connexes  
+## <a name="related-topics"></a><span data-ttu-id="599a7-112">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="599a7-112">Related Topics</span></span>  
   
-|||  
+|<span data-ttu-id="599a7-113">Titre</span><span class="sxs-lookup"><span data-stu-id="599a7-113">Title</span></span>|<span data-ttu-id="599a7-114">Description</span><span class="sxs-lookup"><span data-stu-id="599a7-114">Description</span></span>|  
 |-|-|  
-|Titre|Description|  
-|[Data Parallelism](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|Décrit comment créer des boucles parallèles `for` et `foreach` \(`For` et `For Each` en Visual Basic\).|  
-|[Task Parallelism](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)|Décrit comment créer et exécuter implicitement des tâches à l'aide de <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=fullName> ou explicitement en utilisant des objets <xref:System.Threading.Tasks.Task> directement.|  
-|[Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)|Explique comment utiliser les composants de flux de données dans la bibliothèque de flux de données de TPL pour effectuer plusieurs opérations qui doivent communiquer entre elles ou pour traiter les données lorsqu'elles sont disponibles.|  
-|[Using TPL with Other Asynchronous Patterns](../../../docs/standard/parallel-programming/using-tpl-with-other-asynchronous-patterns.md)|Décrit comment utiliser la bibliothèque parallèle de tâches avec d'autres modèles asynchrones dans .NET.|  
-|[Potential Pitfalls in Data and Task Parallelism](../../../docs/standard/parallel-programming/potential-pitfalls-in-data-and-task-parallelism.md)|Décrit des pièges courants et la manière de les éviter.|  
-|[Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)|Décrit comment atteindre le parallélisme des données avec les requêtes LINQ.|  
-|[Parallel Programming](../../../docs/standard/parallel-programming/index.md)|Nœud de niveau supérieur pour la programmation parallèle .NET.|  
+|[<span data-ttu-id="599a7-115">Parallélisme de données</span><span class="sxs-lookup"><span data-stu-id="599a7-115">Data Parallelism</span></span>](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|<span data-ttu-id="599a7-116">Décrit comment créer des boucles parallèles `for` et `foreach` (`For` et `For Each` en Visual Basic).</span><span class="sxs-lookup"><span data-stu-id="599a7-116">Describes how to create parallel `for` and `foreach` loops (`For` and `For Each` in Visual Basic).</span></span>|  
+|[<span data-ttu-id="599a7-117">Programmation asynchrone basée sur les tâches</span><span class="sxs-lookup"><span data-stu-id="599a7-117">Task-based Asynchronous Programming</span></span>](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)|<span data-ttu-id="599a7-118">Décrit comment créer et exécuter implicitement des tâches à l'aide de <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> ou explicitement en utilisant des objets <xref:System.Threading.Tasks.Task> directement.</span><span class="sxs-lookup"><span data-stu-id="599a7-118">Describes how to create and run tasks implicitly by using <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> or explicitly by using <xref:System.Threading.Tasks.Task> objects directly.</span></span>|  
+|[<span data-ttu-id="599a7-119">Le flux de données</span><span class="sxs-lookup"><span data-stu-id="599a7-119">Dataflow</span></span>](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)|<span data-ttu-id="599a7-120">Explique comment utiliser les composants de flux de données dans la bibliothèque de flux de données de TPL pour effectuer plusieurs opérations qui doivent communiquer entre elles ou pour traiter les données lorsqu'elles sont disponibles.</span><span class="sxs-lookup"><span data-stu-id="599a7-120">Describes how to use the dataflow components in the TPL Dataflow Library to handle multiple operations that must communicate with one another or to process data as it becomes available.</span></span>|  
+|[<span data-ttu-id="599a7-121">Utilisation de la bibliothèque parallèle de tâches (TPL) avec d’autres modèles asynchrones</span><span class="sxs-lookup"><span data-stu-id="599a7-121">Using TPL with Other Asynchronous Patterns</span></span>](../../../docs/standard/parallel-programming/using-tpl-with-other-asynchronous-patterns.md)|<span data-ttu-id="599a7-122">Décrit comment utiliser la bibliothèque parallèle de tâches avec d’autres modèles asynchrones dans .NET.</span><span class="sxs-lookup"><span data-stu-id="599a7-122">Describes how to use TPL with other asynchronous patterns in .NET</span></span>|  
+|[<span data-ttu-id="599a7-123">Pièges potentiels dans le parallélisme des données et des tâches</span><span class="sxs-lookup"><span data-stu-id="599a7-123">Potential Pitfalls in Data and Task Parallelism</span></span>](../../../docs/standard/parallel-programming/potential-pitfalls-in-data-and-task-parallelism.md)|<span data-ttu-id="599a7-124">Décrit des pièges courants et la manière de les éviter.</span><span class="sxs-lookup"><span data-stu-id="599a7-124">Describes some common pitfalls and how to avoid them.</span></span>|  
+|[<span data-ttu-id="599a7-125">Parallel LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="599a7-125">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)|<span data-ttu-id="599a7-126">Décrit comment atteindre le parallélisme des données avec les requêtes LINQ.</span><span class="sxs-lookup"><span data-stu-id="599a7-126">Describes how to achieve data parallelism with LINQ queries.</span></span>|  
+|[<span data-ttu-id="599a7-127">Programmation parallèle</span><span class="sxs-lookup"><span data-stu-id="599a7-127">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)|<span data-ttu-id="599a7-128">Nœud de niveau supérieur pour la programmation parallèle .NET.</span><span class="sxs-lookup"><span data-stu-id="599a7-128">Top level node for .NET parallel programming.</span></span>|  
   
-## Voir aussi  
- [Exemples de programmation parallèle avec .NET Framework](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+## <a name="see-also"></a><span data-ttu-id="599a7-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="599a7-129">See Also</span></span>  
+ [<span data-ttu-id="599a7-130">Exemples de programmation parallèle avec .NET Framework</span><span class="sxs-lookup"><span data-stu-id="599a7-130">Samples for Parallel Programming with the .NET Framework</span></span>](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)

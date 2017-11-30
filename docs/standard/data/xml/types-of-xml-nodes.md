@@ -1,59 +1,57 @@
 ---
-title: "Types de nœuds XML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Types de nœuds XML"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 71d03b78-6898-4ce7-b0fc-1282573f31f7
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 3914a2c5c06a2cc73f14bc473984094b474d537e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Types de nœuds XML
-Quand un document XML est lu et chargé en mémoire sous la forme d'une arborescence de nœuds, le type de nœud des nœuds est déterminé lors de la création de ces derniers.  Le DOM \(Document Object Model\) XML propose plusieurs catégories de types de nœuds, déterminés par le World Wide Web Consortium \(W3C\) et répertoriés dans la section 1.1.1 The DOM Structure Model.  Le tableau suivant répertorie les types de nœuds et fournit, pour chaque type, l'objet qui lui est assigné ainsi qu'une brève description.  
+# <a name="types-of-xml-nodes"></a><span data-ttu-id="5ac65-102">Types de nœuds XML</span><span class="sxs-lookup"><span data-stu-id="5ac65-102">Types of XML Nodes</span></span>
+<span data-ttu-id="5ac65-103">Quand un document XML est lu et chargé en mémoire sous la forme d’une arborescence de nœuds, le type de nœud des nœuds est déterminé lors de la création de ces derniers.</span><span class="sxs-lookup"><span data-stu-id="5ac65-103">When an XML document is read into memory as a tree of nodes, the node types for the nodes are decided when the nodes are created.</span></span> <span data-ttu-id="5ac65-104">Le DOM (Document Object Model) XML propose plusieurs catégories de types de nœuds, déterminés par le World Wide Web Consortium (W3C) et répertoriés dans la section 1.1.1 The DOM Structure Model.</span><span class="sxs-lookup"><span data-stu-id="5ac65-104">The XML Document Object Model (DOM) has several kinds of node types, determined by the World Wide Web Consortium (W3C) and listed in section 1.1.1 The DOM Structure Model.</span></span> <span data-ttu-id="5ac65-105">Le tableau suivant répertorie les types de nœuds et fournit, pour chaque type, l'objet qui lui est assigné ainsi qu'une brève description.</span><span class="sxs-lookup"><span data-stu-id="5ac65-105">The following table lists the node types, the object assigned to that node type, and a short description of each.</span></span>  
   
-|Type de nœud DOM|Objet|Description|  
-|----------------------|-----------|-----------------|  
-|Document|[Classe XmlDocument](frlrfSystemXmlXmlDocumentClassTopic)|Conteneur de tous les nœuds de l'arborescence.  Également connu comme la racine du document, qui ne correspond pas toujours à l'élément racine.|  
-|DocumentFragment|[Classe XmlDocumentFragment](frlrfSystemXmlXmlDocumentFragmentClassTopic)|Sac temporaire contenant un ou plusieurs nœuds sans structure d'arborescence.|  
-|DocumentType ;|[Classe XmlDocumentType](frlrfSystemXmlXmlDocumentTypeClassTopic)|Représente le nœud `<!DOCTYPE…>`.|  
-|EntityReference|[Classe XmlEntityReference](frlrfSystemXmlXmlEntityReferenceClassTopic)|Représente le texte de référence d'entité non développé.|  
-|Élément|[Classe XmlElement](frlrfSystemXmlXmlElementClassTopic)|Représente un nœud d'élément.|  
-|Attr|[Classe XmlAttribute](frlrfSystemXmlXmlAttributeClassTopic)|Attribut d'un élément.|  
-|ProcessingInstruction ;|[Classe XmlProcessingInstruction](frlrfSystemXmlXmlProcessingInstructionClassTopic)|Nœud d'instruction de traitement.|  
-|Commentaire|[Classe XmlComment](frlrfSystemXmlXmlCommentClassTopic)|Nœud de commentaire.|  
-|Texte|[Classe XmlText](frlrfSystemXmlXmlTextClassTopic)|Texte appartenant à un élément ou attribut.|  
-|CDATASection.|[Classe XmlCDataSection](frlrfSystemXmlXmlCDataSectionClassTopic)|Représente CDATA.|  
-|Entité|[Classe XmlEntity](frlrfSystemXmlXmlEntityClassTopic)|Représente les déclarations `<!ENTITY…>` dans un document XML, soit à partir d'un sous\-ensemble de définitions de type de document \(DTD\) internes, soit à partir de DTD externes et d'entités de paramètre.|  
-|Notation|[Classe XmlNotation](frlrfSystemXmlXmlNotationClassTopic)|Représente une notation déclarée dans la DTD.|  
+|<span data-ttu-id="5ac65-106">Type de nœud DOM</span><span class="sxs-lookup"><span data-stu-id="5ac65-106">DOM node type</span></span>|<span data-ttu-id="5ac65-107">Objet</span><span class="sxs-lookup"><span data-stu-id="5ac65-107">Object</span></span>|<span data-ttu-id="5ac65-108">Description</span><span class="sxs-lookup"><span data-stu-id="5ac65-108">Description</span></span>|  
+|-------------------|------------|-----------------|  
+|<span data-ttu-id="5ac65-109">Document</span><span class="sxs-lookup"><span data-stu-id="5ac65-109">Document</span></span>|<xref:System.Xml.XmlDocument>|<span data-ttu-id="5ac65-110">Conteneur de tous les nœuds de l’arborescence.</span><span class="sxs-lookup"><span data-stu-id="5ac65-110">The container of all the nodes in the tree.</span></span> <span data-ttu-id="5ac65-111">Également connu comme la racine du document, qui ne correspond pas toujours à l'élément racine.</span><span class="sxs-lookup"><span data-stu-id="5ac65-111">It is also known as the document root, which is not always the same as the root element.</span></span>|  
+|<span data-ttu-id="5ac65-112">DocumentFragment</span><span class="sxs-lookup"><span data-stu-id="5ac65-112">DocumentFragment</span></span>|<xref:System.Xml.XmlDocumentFragment>|<span data-ttu-id="5ac65-113">Sac temporaire contenant un ou plusieurs nœuds sans structure d’arborescence.</span><span class="sxs-lookup"><span data-stu-id="5ac65-113">A temporary bag containing one or more nodes without any tree structure.</span></span>|  
+|<span data-ttu-id="5ac65-114">DocumentType ;</span><span class="sxs-lookup"><span data-stu-id="5ac65-114">DocumentType</span></span>|<xref:System.Xml.XmlDocumentType>|<span data-ttu-id="5ac65-115">Représente le nœud `<!DOCTYPE…>`.</span><span class="sxs-lookup"><span data-stu-id="5ac65-115">Represents the `<!DOCTYPE…>` node.</span></span>|  
+|<span data-ttu-id="5ac65-116">EntityReference</span><span class="sxs-lookup"><span data-stu-id="5ac65-116">EntityReference</span></span>|<xref:System.Xml.XmlEntityReference>|<span data-ttu-id="5ac65-117">Représente le texte de référence d’entité non développé.</span><span class="sxs-lookup"><span data-stu-id="5ac65-117">Represents the non-expanded entity reference text.</span></span>|  
+|<span data-ttu-id="5ac65-118">Élément</span><span class="sxs-lookup"><span data-stu-id="5ac65-118">Element</span></span>|<xref:System.Xml.XmlElement>|<span data-ttu-id="5ac65-119">Représente un nœud d'élément.</span><span class="sxs-lookup"><span data-stu-id="5ac65-119">Represents an element node.</span></span>|  
+|<span data-ttu-id="5ac65-120">Attr</span><span class="sxs-lookup"><span data-stu-id="5ac65-120">Attr</span></span>|<xref:System.Xml.XmlAttribute>|<span data-ttu-id="5ac65-121">Attribut d'un élément.</span><span class="sxs-lookup"><span data-stu-id="5ac65-121">Is an attribute of an element.</span></span>|  
+|<span data-ttu-id="5ac65-122">ProcessingInstruction ;</span><span class="sxs-lookup"><span data-stu-id="5ac65-122">ProcessingInstruction</span></span>|<xref:System.Xml.XmlProcessingInstruction>|<span data-ttu-id="5ac65-123">Nœud d'instruction de traitement.</span><span class="sxs-lookup"><span data-stu-id="5ac65-123">Is a processing instruction node.</span></span>|  
+|<span data-ttu-id="5ac65-124">Commentaire</span><span class="sxs-lookup"><span data-stu-id="5ac65-124">Comment</span></span>|<xref:System.Xml.XmlComment>|<span data-ttu-id="5ac65-125">Nœud de commentaire.</span><span class="sxs-lookup"><span data-stu-id="5ac65-125">A comment node.</span></span>|  
+|<span data-ttu-id="5ac65-126">Texte</span><span class="sxs-lookup"><span data-stu-id="5ac65-126">Text</span></span>|<xref:System.Xml.XmlText>|<span data-ttu-id="5ac65-127">Texte appartenant à un élément ou attribut.</span><span class="sxs-lookup"><span data-stu-id="5ac65-127">Text belonging to an element or attribute.</span></span>|  
+|<span data-ttu-id="5ac65-128">CDATASection.</span><span class="sxs-lookup"><span data-stu-id="5ac65-128">CDATASection</span></span>|<xref:System.Xml.XmlCDataSection>|<span data-ttu-id="5ac65-129">Représente CDATA.</span><span class="sxs-lookup"><span data-stu-id="5ac65-129">Represents CDATA.</span></span>|  
+|<span data-ttu-id="5ac65-130">Entité</span><span class="sxs-lookup"><span data-stu-id="5ac65-130">Entity</span></span>|<xref:System.Xml.XmlEntity>|<span data-ttu-id="5ac65-131">Représente les déclarations `<!ENTITY…>` dans un document XML, soit à partir d'un sous-ensemble de définitions de type de document (DTD) internes, soit à partir de DTD externes et d'entités de paramètre.</span><span class="sxs-lookup"><span data-stu-id="5ac65-131">Represents the `<!ENTITY…>` declarations in an XML document, either from an internal document type definition (DTD) subset or from external DTDs and parameter entities.</span></span>|  
+|<span data-ttu-id="5ac65-132">Notation</span><span class="sxs-lookup"><span data-stu-id="5ac65-132">Notation</span></span>|<xref:System.Xml.XmlNotation>|<span data-ttu-id="5ac65-133">Représente une notation déclarée dans la DTD.</span><span class="sxs-lookup"><span data-stu-id="5ac65-133">Represents a notation declared in the DTD.</span></span>|  
   
- Bien que dans la spécification W3C DOM Level 1, et plus particulièrement dans la section 1.2, Fundamental Interfaces, un attribut \(*attr*\) soit répertorié en tant que nœud, il n'est pas considéré comme un enfant d'un nœud d'élément.  
+ <span data-ttu-id="5ac65-134">Bien qu’un attribut (*attr*) est répertorié dans le W3C DOM Level 1 la section 1.2 Fundamental Interfaces en tant que nœud, il n'est pas considéré comme un enfant d’un nœud d’élément.</span><span class="sxs-lookup"><span data-stu-id="5ac65-134">Even though an attribute (*attr*) is listed in the W3C DOM Level 1 section 1.2 Fundamental Interfaces as a node, it is not considered a child of any element node.</span></span>  
   
- Le tableau suivant indique des types de nœuds supplémentaires non définis par le W3C, mais pouvant être utilisés dans le modèle objet Microsoft .NET Framework en tant qu'énumérations **XmlNodeType**.  Ce tableau ne comprend donc pas de colonne pour le type de nœud DOM correspondant à ces types de nœuds.  
+ <span data-ttu-id="5ac65-135">Le tableau suivant présente les types de nœuds supplémentaires non définis par le W3C, mais ils ne sont disponibles pour une utilisation dans le modèle objet Microsoft .NET Framework en tant que **XmlNodeType** énumérations.</span><span class="sxs-lookup"><span data-stu-id="5ac65-135">The following table shows additional node types not defined by the W3C, however they are available for use in the Microsoft .NET Framework object model as **XmlNodeType** enumerations.</span></span> <span data-ttu-id="5ac65-136">Ce tableau ne comprend donc pas de colonne pour le type de nœud DOM correspondant à ces types de nœuds.</span><span class="sxs-lookup"><span data-stu-id="5ac65-136">Therefore, there is no matching DOM node type column for these node types.</span></span>  
   
-|Type de nœud|Description|  
-|------------------|-----------------|  
-|<xref:System.Xml.XmlDeclaration>|Représente le nœud de déclaration `<?xml version="1.0"…>`.|  
-|<xref:System.Xml.XmlSignificantWhitespace>|Représente l'espace blanc significatif, qui est l'espace blanc dans du contenu mixte.|  
-|<xref:System.Xml.XmlWhitespace>|Représente l'espace blanc dans le contenu d'un élément.|  
-|EndElement|Est retourné lorsque **XmlReader** arrive à la fin d'un élément.<br /><br /> Exemple XML : **\<\/item\>**<br /><br /> Pour plus d'informations, voir [Énumération XmlNodeType](frlrfSystemXmlXmlNodeTypeClassTopic).|  
-|EndEntity|Est retourné quand **XmlReader** arrive à la fin d'un remplacement d'entité à la suite d'un appel à <xref:System.Xml.XmlReader.ResolveEntity%2A>.  Pour plus d'informations, voir [Énumération XmlNodeType](frlrfSystemXmlXmlNodeTypeClassTopic).|  
+|<span data-ttu-id="5ac65-137">Type de nœud</span><span class="sxs-lookup"><span data-stu-id="5ac65-137">Node type</span></span>|<span data-ttu-id="5ac65-138">Description</span><span class="sxs-lookup"><span data-stu-id="5ac65-138">Description</span></span>|  
+|---------------|-----------------|  
+|<xref:System.Xml.XmlDeclaration>|<span data-ttu-id="5ac65-139">Représente le nœud de déclaration `<?xml version="1.0"…>`.</span><span class="sxs-lookup"><span data-stu-id="5ac65-139">Represents the declaration node `<?xml version="1.0"…>`.</span></span>|  
+|<xref:System.Xml.XmlSignificantWhitespace>|<span data-ttu-id="5ac65-140">Représente l'espace blanc significatif, qui est l'espace blanc dans du contenu mixte.</span><span class="sxs-lookup"><span data-stu-id="5ac65-140">Represents significant white space, which is white space in mixed content.</span></span>|  
+|<xref:System.Xml.XmlWhitespace>|<span data-ttu-id="5ac65-141">Représente l'espace blanc dans le contenu d'un élément.</span><span class="sxs-lookup"><span data-stu-id="5ac65-141">Represents the white space in the content of an element.</span></span>|  
+|<span data-ttu-id="5ac65-142">EndElement</span><span class="sxs-lookup"><span data-stu-id="5ac65-142">EndElement</span></span>|<span data-ttu-id="5ac65-143">Retourné lorsque **XmlReader** arrive à la fin d’un élément.</span><span class="sxs-lookup"><span data-stu-id="5ac65-143">Returned when **XmlReader** gets to the end of an element.</span></span><br /><br /> <span data-ttu-id="5ac65-144">Exemple de fichier XML :  **\</Item >**</span><span class="sxs-lookup"><span data-stu-id="5ac65-144">Example XML: **\</item>**</span></span><br /><br /> <span data-ttu-id="5ac65-145">Pour plus d'informations, consultez <xref:System.Xml.XmlNodeType>.</span><span class="sxs-lookup"><span data-stu-id="5ac65-145">For more information, see <xref:System.Xml.XmlNodeType>.</span></span>|  
+|<span data-ttu-id="5ac65-146">EndEntity</span><span class="sxs-lookup"><span data-stu-id="5ac65-146">EndEntity</span></span>|<span data-ttu-id="5ac65-147">Retourné lorsque **XmlReader** arrive à la fin du remplacement d’entité à la suite d’un appel à <xref:System.Xml.XmlReader.ResolveEntity%2A>.</span><span class="sxs-lookup"><span data-stu-id="5ac65-147">Returned when **XmlReader** gets to the end of the entity replacement as a result of a call to <xref:System.Xml.XmlReader.ResolveEntity%2A>.</span></span> <span data-ttu-id="5ac65-148">Pour plus d'informations, consultez <xref:System.Xml.XmlNodeType>.</span><span class="sxs-lookup"><span data-stu-id="5ac65-148">For more information, see <xref:System.Xml.XmlNodeType>.</span></span>|  
   
- Pour afficher un exemple de code qui lit du code XML et utilise une construction Case sur les types de nœuds afin d'imprimer des informations sur le nœud et son contenu, voir [Propriété XmlSignificantWhitespace.NodeType](frlrfSystemXmlXmlSignificantWhitespaceClassNodeTypeTopic).  
+ <span data-ttu-id="5ac65-149">Pour afficher un exemple de code qui lit du XML et utilise une construction case sur les types de nœuds pour imprimer des informations sur le nœud et son contenu, consultez <xref:System.Xml.XmlSignificantWhitespace.NodeType%2A>.</span><span class="sxs-lookup"><span data-stu-id="5ac65-149">To view a code example that reads in XML and uses a case construct on the node types to print information about the node and its contents, see <xref:System.Xml.XmlSignificantWhitespace.NodeType%2A>.</span></span>  
   
- Pour plus d'informations sur la hiérarchie d'objets des types de nœuds et sur leurs noms d'objet équivalents, voir [Hiérarchie du DOM XML](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md).  Pour plus informations sur les objets créés dans l'arborescence de nœuds, voir [Mappage de la hiérarchie d'objets à des données XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).  
+ <span data-ttu-id="5ac65-150">Pour plus d’informations sur la hiérarchie d’objets des types de nœud et leurs noms d’objet équivalents, consultez [hiérarchie du modèle DOM (Document objet Model) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md).</span><span class="sxs-lookup"><span data-stu-id="5ac65-150">For more information on the object hierarchy of the node types and their equivalent object name, see [XML Document Object Model (DOM) Hierarchy](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md).</span></span> <span data-ttu-id="5ac65-151">Pour plus d’informations sur les objets créés dans l’arborescence de nœuds, consultez [mappage de la hiérarchie d’objets à des données XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).</span><span class="sxs-lookup"><span data-stu-id="5ac65-151">For more information on the objects created in the node tree, see [Mapping the Object Hierarchy to XML Data](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).</span></span>  
   
-## Voir aussi  
- [DOM \(Document Object Model\) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a><span data-ttu-id="5ac65-152">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5ac65-152">See Also</span></span>  
+ [<span data-ttu-id="5ac65-153">Document Object Model (DOM) XML</span><span class="sxs-lookup"><span data-stu-id="5ac65-153">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -1,82 +1,88 @@
 ---
-title: "Comment&#160;: v&#233;rifier que des cha&#238;nes sont dans un format d&#39;adresse de messagerie valide | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "expressions régulières, exemples"
-  - "entrée utilisateur, exemples"
-  - "Regex.IsMatch (méthode)"
-  - "expressions régulières (.NET Framework), exemples"
-  - "exemples (Visual Basic), chaînes"
-  - "IsValidEmail"
-  - "validation, chaînes de courrier électronique"
-  - "entrée, vérification"
-  - "chaînes (.NET Framework), exemples (Visual Basic)"
-  - "courrier électronique (.NET Framework), validation"
-  - "IsMatch (méthode)"
+title: "Comment : vérifier que des chaînes sont dans un format d'adresse de messagerie valide"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- regular expressions, examples
+- user input, examples
+- Regex.IsMatch method
+- regular expressions [.NET Framework], examples
+- examples [Visual Basic], strings
+- IsValidEmail
+- validation, e-mail strings
+- input, checking
+- strings [.NET Framework], examples [Visual Basic]
+- e-mail [.NET Framework], validating
+- IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-caps.latest.revision: 30
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 03623cc4086981dc321aafe3020dcd571b74d9bc
+ms.sourcegitcommit: 9c4b8d457ffb8d134c9d55c6d7682a0f22e2b9a8
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/20/2017
 ---
-# Comment&#160;: v&#233;rifier que des cha&#238;nes sont dans un format d&#39;adresse de messagerie valide
-L'exemple suivant utilise une expression régulière pour vérifier qu'une chaîne est dans un format d'adresse de messagerie valide.  
+# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a><span data-ttu-id="8ce5d-102">Comment : vérifier que des chaînes sont dans un format d'adresse de messagerie valide</span><span class="sxs-lookup"><span data-stu-id="8ce5d-102">How to: Verify that Strings Are in Valid Email Format</span></span>
+<span data-ttu-id="8ce5d-103">L'exemple suivant utilise une expression régulière pour vérifier qu'une chaîne est dans un format d'adresse de messagerie valide.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-103">The following example uses a regular expression to verify that a string is in valid email format.</span></span>  
   
-## Exemple  
- L'exemple définit une méthode `IsValidEmail` qui retourne la valeur `true` si la chaîne contient une adresse de messagerie valide et la valeur `false` dans le cas contraire, mais qui n'effectue aucune autre action.  
+## <a name="example"></a><span data-ttu-id="8ce5d-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="8ce5d-104">Example</span></span>  
+ <span data-ttu-id="8ce5d-105">L'exemple définit une méthode `IsValidEmail` qui retourne la valeur `true` si la chaîne contient une adresse de messagerie valide et la valeur `false` dans le cas contraire, mais qui n'effectue aucune autre action.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-105">The example defines an `IsValidEmail` method, which returns `true` if the string contains a valid email address and `false` if it does not, but takes no other action.</span></span>  
   
- Pour vérifier que l'adresse de messagerie est valide, la méthode `IsValidEmail` appelle la méthode <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.MatchEvaluator%29?displayProperty=fullName> avec le modèle d'expression régulière `(@)(.+)$` pour séparer le nom de domaine de l'adresse de messagerie. Le troisième paramètre est un délégué <xref:System.Text.RegularExpressions.MatchEvaluator> qui représente la méthode qui traite et remplace le texte correspondant. Le modèle d'expression régulière est interprété comme suit.  
+ <span data-ttu-id="8ce5d-106">Pour vérifier que l'adresse de messagerie est valide, la méthode `IsValidEmail` appelle la méthode <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.MatchEvaluator%29?displayProperty=nameWithType> avec le modèle d'expression régulière `(@)(.+)$` pour séparer le nom de domaine de l'adresse de messagerie.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-106">To verify that the email address is valid, the `IsValidEmail` method calls the <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.MatchEvaluator%29?displayProperty=nameWithType> method with the `(@)(.+)$` regular expression pattern to separate the domain name from the email address.</span></span> <span data-ttu-id="8ce5d-107">Le troisième paramètre est un délégué <xref:System.Text.RegularExpressions.MatchEvaluator> qui représente la méthode qui traite et remplace le texte correspondant.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-107">The third parameter is a <xref:System.Text.RegularExpressions.MatchEvaluator> delegate that represents the method that processes and replaces the matched text.</span></span> <span data-ttu-id="8ce5d-108">Le modèle d'expression régulière est interprété comme suit.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-108">The regular expression pattern is interpreted as follows.</span></span>  
   
-|Modèle|Description|  
-|------------|-----------------|  
-|`(@)`|Correspond à l'arobase \(@\). Il s'agit du premier groupe de capture.|  
-|`(.+)`|Correspond à une ou plusieurs occurrences d'un caractère quelconque. Il s'agit du deuxième groupe de capture.|  
-|`$`|Termine la correspondance à la fin de la chaîne.|  
+|<span data-ttu-id="8ce5d-109">Modèle</span><span class="sxs-lookup"><span data-stu-id="8ce5d-109">Pattern</span></span>|<span data-ttu-id="8ce5d-110">Description</span><span class="sxs-lookup"><span data-stu-id="8ce5d-110">Description</span></span>|  
+|-------------|-----------------|  
+|`(@)`|<span data-ttu-id="8ce5d-111">Correspond à l'arobase (@).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-111">Match the @ character.</span></span> <span data-ttu-id="8ce5d-112">Il s'agit du premier groupe de capture.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-112">This is the first capturing group.</span></span>|  
+|`(.+)`|<span data-ttu-id="8ce5d-113">Correspond à une ou plusieurs occurrences d'un caractère quelconque.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-113">Match one or more occurrences of any character.</span></span> <span data-ttu-id="8ce5d-114">Il s'agit du deuxième groupe de capture.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-114">This is the second capturing group.</span></span>|  
+|`$`|<span data-ttu-id="8ce5d-115">Termine la correspondance à la fin de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-115">End the match at the end of the string.</span></span>|  
   
- Le nom de domaine avec le caractère @ est passé à la méthode `DomainMapper`, qui utilise la classe <xref:System.Globalization.IdnMapping> pour convertir les caractères Unicode situés en dehors de la plage de caractères US\-ASCII au format Punycode. La méthode affecte également à l'indicateur `invalid` la valeur `True` si la méthode <xref:System.Globalization.IdnMapping.GetAscii%2A?displayProperty=fullName> détecte des caractères non valides dans le nom de domaine. La méthode retourne le nom de domaine Punycode précédé du symbole @ à la méthode `IsValidEmail`.  
+ <span data-ttu-id="8ce5d-116">Le nom de domaine avec le caractère @ est passé à la méthode `DomainMapper` , qui utilise la classe <xref:System.Globalization.IdnMapping> pour convertir les caractères Unicode situés en dehors de la plage de caractères US-ASCII au format Punycode.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-116">The domain name along with the @ character is passed to the `DomainMapper` method, which uses the <xref:System.Globalization.IdnMapping> class to translate Unicode characters that are outside the US-ASCII character range to Punycode.</span></span> <span data-ttu-id="8ce5d-117">La méthode affecte également à l'indicateur `invalid` la valeur `True` si la méthode <xref:System.Globalization.IdnMapping.GetAscii%2A?displayProperty=nameWithType> détecte des caractères non valides dans le nom de domaine.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-117">The method also sets the `invalid` flag to `True` if the <xref:System.Globalization.IdnMapping.GetAscii%2A?displayProperty=nameWithType> method detects any invalid characters in the domain name.</span></span> <span data-ttu-id="8ce5d-118">La méthode retourne le nom de domaine Punycode précédé du symbole @ à la méthode `IsValidEmail` .</span><span class="sxs-lookup"><span data-stu-id="8ce5d-118">The method returns the Punycode domain name preceded by the @ symbol to the `IsValidEmail` method.</span></span>  
   
- La méthode `IsValidEmail` appelle alors la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%29?displayProperty=fullName> pour vérifier que l'adresse est conforme à un modèle d'expression régulière.  
+ <span data-ttu-id="8ce5d-119">La méthode `IsValidEmail` appelle alors la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%29?displayProperty=nameWithType> pour vérifier que l'adresse est conforme à un modèle d'expression régulière.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-119">The `IsValidEmail` method then calls the <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%29?displayProperty=nameWithType> method to verify that the address conforms to a regular expression pattern.</span></span>  
   
- Notez que la méthode `IsValidEmail` n'effectue pas d'authentification pour valider l'adresse de messagerie. Elle détermine simplement si son format est valide pour une adresse de messagerie. En outre, la méthode `IsValidEmail` ne vérifie pas si le nom de domaine de premier niveau est un nom de domaine valide répertorié dans la [base de données des zones racines de l’IANA](https://www.iana.org/domains/root/db). Cela nécessite une opération de recherche. À la place, l'expression régulière vérifie simplement que le nom de domaine de niveau supérieur comprend entre deux et vingt\-quatre caractères ASCII, les premier et dernier caractères étant des caractères alphanumériques, les autres des caractères alphanumériques ou un trait d'union \(\-\).  
+ <span data-ttu-id="8ce5d-120">Notez que la méthode `IsValidEmail` n'effectue pas d'authentification pour valider l'adresse de messagerie.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-120">Note that the `IsValidEmail` method does not perform authentication to validate the email address.</span></span> <span data-ttu-id="8ce5d-121">Elle détermine simplement si son format est valide pour une adresse de messagerie.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-121">It merely determines whether its format is valid for an email address.</span></span> <span data-ttu-id="8ce5d-122">En outre, la méthode `IsValidEmail` ne vérifie pas si le nom de domaine de premier niveau est un nom de domaine valide répertorié dans la [base de données des zones racines de l’IANA](https://www.iana.org/domains/root/db). Cela nécessite une opération de recherche.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-122">In addition, the `IsValidEmail` method does not verify that the top-level domain name is a valid domain name listed at the [IANA Root Zone Database](https://www.iana.org/domains/root/db), which would require a look-up operation.</span></span> <span data-ttu-id="8ce5d-123">À la place, l'expression régulière vérifie simplement que le nom de domaine de niveau supérieur comprend entre deux et vingt-quatre caractères ASCII, les premier et dernier caractères étant des caractères alphanumériques, les autres des caractères alphanumériques ou un trait d'union (-).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-123">Instead, the regular expression merely verifies that the top-level domain name consists of between two and twenty-four ASCII characters, with alphanumeric first and last characters and the remaining characters being either alphanumeric or a hyphen (-).</span></span>  
   
  [!code-csharp[RegularExpressions.Examples.Email#7](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#7)]
  [!code-vb[RegularExpressions.Examples.Email#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#7)]  
   
- Dans cet exemple, le modèle d'expression régulière `^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$` est interprété de la manière indiquée dans le tableau ci\-dessous. Notez que l'expression régulière est compilée à l'aide de l'indicateur <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName>.  
+ <span data-ttu-id="8ce5d-124">Dans cet exemple, le modèle d'expression régulière ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`{}|~\w])*)(?<=[0-9a-z])@))(?([)([(\d{1,3}.){3}\d{1,3}])|(([0-9a-z][-0-9a-z]*[0-9a-z]*.)+[a-z0-9][-a-z0-9]{0,22}[a-z0-9]))$`\` est interprété de la manière indiquée dans le tableau ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-124">In this example, the regular expression pattern ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`{}|~\w])*)(?<=[0-9a-z])@))(?([)([(\d{1,3}.){3}\d{1,3}])|(([0-9a-z][-0-9a-z]*[0-9a-z]*.)+[a-z0-9][-a-z0-9]{0,22}[a-z0-9]))$`\` is interpreted as shown in the following table.</span></span> <span data-ttu-id="8ce5d-125">Notez que l'expression régulière est compilée à l'aide de l'indicateur <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-125">Note that the regular expression is compiled using the <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> flag.</span></span>  
   
-|Modèle|Description|  
-|------------|-----------------|  
-|`^`|Commence la recherche de correspondance au début de la chaîne.|  
-|`(?(")`|Détermine si le premier caractère est un guillemet.`(?(")` est le début d'une construction d'alternative.|  
-|`(?("")("".+?(?<!\\)""@)`|Si le premier caractère correspond à des guillemets, établit une correspondance avec des guillemets ouvrants suivis d'au moins une occurrence d'un caractère quelconque, suivie de guillemets fermants. Les guillemets fermants ne doivent pas être précédés d'une barre oblique inverse \(\\\).`(?<!` est le début d'une assertion de postanalyse négative de largeur nulle. La chaîne doit se terminer par un arobase \(@\).|  
-|`&#124;(([0-9a-z]`|Si le premier caractère n'est pas un guillemet, établit une correspondance avec un caractère alphabétique de a à z ou de A à Z \(la comparaison ne respecte pas la casse\) ou un chiffre \(de 0 à 9\).|  
-|`(\.(?!\.))`|Si le caractère suivant est un point, établit une correspondance avec un point. Dans le cas contraire, effectue une préanalyse du caractère suivant et continue la recherche de correspondances.`(?!\.)` est une assertion de préanalyse négative de largeur nulle qui empêche deux points consécutifs de s'afficher dans la partie locale d'une adresse de messagerie.|  
-|`&#124;[-!#\$%&'\*\+/=\?\^`\{\}\&#124;~\w]`|Si le caractère suivant n'est pas un point, établit une correspondance avec un caractère alphabétique quelconque ou l'un des caractères suivants : \-\!\#$%'\*\+\=?^\`{}&#124;~.|  
-|`((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^`\{\}\&#124;~\w])*`|Établit une correspondance avec le modèle d'alternative \(un point suivi d'un autre caractère qu'un point, ou l'un des caractères\) zéro, une ou plusieurs fois.|  
-|`@`|Correspond à l'arobase \(@\).|  
-|`(?<=[0-9a-z])`|Continue la recherche de correspondances si le caractère qui précède le caractère @ est compris entre A et Z, a et z, ou 0 et 9. La construction `(?<=[0-9a-z])` définit une assertion de postanalyse positive de largeur nulle.|  
-|`(?(\[)`|Vérifie si le caractère qui suit @ est un crochet ouvrant.|  
-|`(\[(\d{1,3}\.){3}\d{1,3}\])`|S'il s'agit d'un crochet ouvrant, établit une correspondance avec le crochet ouvrant suivi d'une adresse IP \(quatre ensembles de un à trois chiffres, chaque ensemble étant séparé par un point\) et d'un crochet fermant.|  
-|`&#124;(([0-9a-z][-\w]*[0-9a-z]*\.)+`|Si le caractère qui suit @ n'est pas un crochet ouvrant, établit une correspondance avec un caractère alphanumérique ayant une valeur comprise entre A et Z, a et z ou 0 et 9, suivi de zéro, une ou plusieurs occurrences d'un caractère alphabétique ou d'un trait d'union, suivi de zéro, un ou plusieurs caractères alphanumériques ayant une valeur comprise entre A et Z, a et z ou 0 et 9, suivi d'un point. Ce modèle peut être répété une ou plusieurs fois et doit être suivi du nom de domaine de niveau supérieur.|  
-|`[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))`|Le nom de domaine de niveau supérieur doit commencer et se terminer par un caractère alphanumérique \(compris entre a et z, A et Z ou 0 et 9\). Il peut également comprendre entre zéro et 22 caractères ASCII \(soit des caractères alphanumériques, soit des traits d'union\).|  
-|`$`|Termine la correspondance à la fin de la chaîne.|  
+|<span data-ttu-id="8ce5d-126">Modèle</span><span class="sxs-lookup"><span data-stu-id="8ce5d-126">Pattern</span></span>|<span data-ttu-id="8ce5d-127">Description</span><span class="sxs-lookup"><span data-stu-id="8ce5d-127">Description</span></span>|  
+|-------------|-----------------|  
+|`^`|<span data-ttu-id="8ce5d-128">Commence la recherche de correspondance au début de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-128">Begin the match at the start of the string.</span></span>|  
+|`(?(")`|<span data-ttu-id="8ce5d-129">Détermine si le premier caractère est un guillemet.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-129">Determine whether the first character is a quotation mark.</span></span> <span data-ttu-id="8ce5d-130">`(?(")` est le début d'une construction d'alternative.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-130">`(?(")` is the beginning of an alternation construct.</span></span>|  
+|`(?("")("".+?(?<!\\)""@)`|<span data-ttu-id="8ce5d-131">Si le premier caractère correspond à des guillemets, établit une correspondance avec des guillemets ouvrants suivis d'au moins une occurrence d'un caractère quelconque, suivie de guillemets fermants.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-131">If the first character is a quotation mark, match a beginning quotation mark followed by at least one occurrence of any character, followed by an ending quotation mark.</span></span> <span data-ttu-id="8ce5d-132">Les guillemets doubles fermants ne doit pas être précédé par une barre oblique inverse (\\).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-132">The ending quotation mark must not be preceded by a backslash character (\\).</span></span> <span data-ttu-id="8ce5d-133">`(?<!` est le début d'une assertion de postanalyse négative de largeur nulle.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-133">`(?<!` is the beginning of a zero-width negative lookbehind assertion.</span></span> <span data-ttu-id="8ce5d-134">La chaîne doit se terminer par un arobase (@).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-134">The string should conclude with an at sign (@).</span></span>|  
+|`&#124;(([0-9a-z]`|<span data-ttu-id="8ce5d-135">Si le premier caractère n'est pas un guillemet, établit une correspondance avec un caractère alphabétique de a à z ou de A à Z (la comparaison ne respecte pas la casse) ou un chiffre (de 0 à 9).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-135">If the first character is not a quotation mark, match any alphabetic character from a to z or A to Z (the comparison is case insensitive), or any numeric character from 0 to 9.</span></span>|  
+|`(\.(?!\.))`|<span data-ttu-id="8ce5d-136">Si le caractère suivant est un point, établit une correspondance avec un point.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-136">If the next character is a period, match it.</span></span> <span data-ttu-id="8ce5d-137">Dans le cas contraire, effectue une préanalyse du caractère suivant et continue la recherche de correspondances.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-137">If it is not a period, look ahead to the next character and continue the match.</span></span> <span data-ttu-id="8ce5d-138">`(?!\.)` est une assertion de préanalyse négative de largeur nulle qui empêche deux points consécutifs de s'afficher dans la partie locale d'une adresse de messagerie.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-138">`(?!\.)` is a zero-width negative lookahead assertion that prevents two consecutive periods from appearing in the local part of an email address.</span></span>|  
+|``&#124;[-!#\$%&'\*\+/=\?\^`{}\&#124;~\w]``|<span data-ttu-id="8ce5d-139">Si le caractère suivant n’est pas un point, établit une correspondance avec un caractère alphabétique quelconque ou l’un des caractères suivants : -!#$%'*+=?^\`{}&#124;~.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-139">If the next character is not a period, match any word character or one of the following characters: -!#$%'*+=?^\`{}&#124;~.</span></span>|  
+|``((\.(?!\.))&#124;[-!#\$%'\*\+/=\?\^`{}\&#124;~\w])*``|<span data-ttu-id="8ce5d-140">Établit une correspondance avec le modèle d'alternative (un point suivi d'un autre caractère qu'un point, ou l'un des caractères) zéro, une ou plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-140">Match the alternation pattern (a period followed by a non-period, or one of a number of characters) zero or more times.</span></span>|  
+|`@`|<span data-ttu-id="8ce5d-141">Correspond à l'arobase (@).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-141">Match the @ character.</span></span>|  
+|`(?<=[0-9a-z])`|<span data-ttu-id="8ce5d-142">Continue la recherche de correspondances si le caractère qui précède le caractère @ est compris entre A et Z, a et z, ou 0 et 9.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-142">Continue the match if the character that precedes the @ character is A through Z, a through z, or 0 through 9.</span></span> <span data-ttu-id="8ce5d-143">La construction `(?<=[0-9a-z])` définit une assertion de postanalyse positive de largeur nulle.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-143">The `(?<=[0-9a-z])` construct defines a zero-width positive lookbehind assertion.</span></span>|  
+|`(?(\[)`|<span data-ttu-id="8ce5d-144">Vérifie si le caractère qui suit @ est un crochet ouvrant.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-144">Check whether the character that follows @ is an opening bracket.</span></span>|  
+|`(\[(\d{1,3}\.){3}\d{1,3}\])`|<span data-ttu-id="8ce5d-145">S'il s'agit d'un crochet ouvrant, établit une correspondance avec le crochet ouvrant suivi d'une adresse IP (quatre ensembles de un à trois chiffres, chaque ensemble étant séparé par un point) et d'un crochet fermant.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-145">If it is an opening bracket, match the opening bracket followed by an IP address (four sets of one to three digits, with each set separated by a period) and a closing bracket.</span></span>|  
+|`&#124;(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+`|<span data-ttu-id="8ce5d-146">Si le caractère qui suit @ n’est pas un crochet ouvrant, correspondance un caractère alphanumérique avec une valeur de A-Z, a-z ou 0-9, suivi par zéro ou plusieurs occurrences d’un trait d’union, suivi par zéro ou un caractère alphanumérique avec une valeur de A-Z, a-z ou 0-9 , suivi d’un point.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-146">If the character that follows @ is not an opening bracket, match one alphanumeric character with a value of A-Z, a-z, or 0-9, followed by zero or more occurrences of a hyphen, followed by zero or one alphanumeric character with a value of A-Z, a-z, or 0-9, followed by a period.</span></span> <span data-ttu-id="8ce5d-147">Ce modèle peut être répété une ou plusieurs fois et doit être suivi du nom de domaine de niveau supérieur.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-147">This pattern can be repeated one or more times, and must be followed by the top-level domain name.</span></span>|  
+|`[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))`|<span data-ttu-id="8ce5d-148">Le nom de domaine de niveau supérieur doit commencer et se terminer par un caractère alphanumérique (compris entre a et z, A et Z ou 0 et 9).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-148">The top-level domain name must begin and end with an alphanumeric character (a-z, A-Z, and 0-9).</span></span> <span data-ttu-id="8ce5d-149">Il peut également comprendre entre zéro et 22 caractères ASCII (soit des caractères alphanumériques, soit des traits d'union).</span><span class="sxs-lookup"><span data-stu-id="8ce5d-149">It can also include from zero to 22 ASCII characters that are either alphanumeric or hyphens.</span></span>|  
+|`$`|<span data-ttu-id="8ce5d-150">Termine la correspondance à la fin de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-150">End the match at the end of the string.</span></span>|  
   
 > [!NOTE]
->  Au lieu d'utiliser une expression régulière pour valider une adresse de messagerie, vous pouvez recourir à la classe <xref:System.Net.Mail.MailAddress?displayProperty=fullName>. Pour déterminer si une adresse de messagerie est valide, transmettez l'adresse de messagerie au constructeur de classe <xref:System.Net.Mail.MailAddress.%23ctor%28System.String%29?displayProperty=fullName>.  
+>  <span data-ttu-id="8ce5d-151">Au lieu d'utiliser une expression régulière pour valider une adresse de messagerie, vous pouvez recourir à la classe <xref:System.Net.Mail.MailAddress?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-151">Instead of using a regular expression to validate an email address, you can use the <xref:System.Net.Mail.MailAddress?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="8ce5d-152">Pour déterminer si une adresse de messagerie est valide, transmettez l'adresse de messagerie au constructeur de classe <xref:System.Net.Mail.MailAddress.%23ctor%28System.String%29?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-152">To determine whether an email address is valid, pass the email address to the <xref:System.Net.Mail.MailAddress.%23ctor%28System.String%29?displayProperty=nameWithType> class constructor.</span></span>  
   
-## Compilation du code  
- Les méthodes `IsValidEmail` et `DomainMapper` peuvent être incluses dans une bibliothèque de méthodes utilitaires d'expression régulière ou peuvent être incluses en tant que méthodes d'instance ou statiques privées dans la classe d'application.  
+## <a name="compiling-the-code"></a><span data-ttu-id="8ce5d-153">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="8ce5d-153">Compiling the Code</span></span>  
+ <span data-ttu-id="8ce5d-154">Les méthodes `IsValidEmail` et `DomainMapper` peuvent être incluses dans une bibliothèque de méthodes utilitaires d'expression régulière ou peuvent être incluses en tant que méthodes d'instance ou statiques privées dans la classe d'application.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-154">The `IsValidEmail` and `DomainMapper` methods can be included in a library of regular expression utility methods, or they can be included as private static or instance methods in the application class.</span></span>  
   
- Pour les inclure dans une bibliothèque d'expressions régulières, copiez\-collez le code dans un projet de bibliothèque de classes Visual Studio. Vous pouvez aussi copier\-coller le code dans un fichier texte, puis le compiler depuis la ligne de commande à l'aide d'une commande semblable à celle\-ci \(en supposant que le nom du fichier de code source soit RegexUtilities.cs ou RegexUtilities.vb\) :  
+ <span data-ttu-id="8ce5d-155">Pour les inclure dans une bibliothèque d'expressions régulières, copiez-collez le code dans un projet de bibliothèque de classes Visual Studio. Vous pouvez aussi copier-coller le code dans un fichier texte, puis le compiler depuis la ligne de commande à l'aide d'une commande semblable à celle-ci (en supposant que le nom du fichier de code source soit RegexUtilities.cs ou RegexUtilities.vb) :</span><span class="sxs-lookup"><span data-stu-id="8ce5d-155">To include them in a regular expression library, either copy and paste the code into a Visual Studio Class Library project, or copy and paste it into a text file and compile it from the command line with a command like the following (assuming that the name of the source code file is RegexUtilities.cs or RegexUtilities.vb:</span></span>  
   
 ```csharp  
 csc /t:library RegexUtilities.cs  
@@ -86,18 +92,18 @@ csc /t:library RegexUtilities.cs
 vbc /t:library RegexUtilities.vb  
 ```  
   
- Vous pouvez également utiliser la méthode <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=fullName> pour inclure cette expression régulière dans une bibliothèque d'expressions régulières.  
+ <span data-ttu-id="8ce5d-156">Vous pouvez également utiliser la méthode <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> pour inclure cette expression régulière dans une bibliothèque d'expressions régulières.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-156">You can also use the <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> method to include this regular expression in a regular expression library.</span></span>  
   
- Si elles sont utilisées dans une bibliothèque d'expressions régulières, vous pouvez les appeler en utilisant un code semblable au suivant :  
+ <span data-ttu-id="8ce5d-157">Si elles sont utilisées dans une bibliothèque d'expressions régulières, vous pouvez les appeler en utilisant un code semblable au suivant :</span><span class="sxs-lookup"><span data-stu-id="8ce5d-157">If they are used in a regular expression library, you can call them by using code such as the following:</span></span>  
   
  [!code-csharp[RegularExpressions.Examples.Email#8](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#8)]
  [!code-vb[RegularExpressions.Examples.Email#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#8)]  
   
- En supposant que vous ayez créé une bibliothèque de classes nommée RegexUtilities.dll qui comprenne votre expression régulière de validation d'e\-mail, vous pouvez compiler cet exemple de l'une des manières suivantes :  
+ <span data-ttu-id="8ce5d-158">En supposant que vous ayez créé une bibliothèque de classes nommée RegexUtilities.dll qui comprenne votre expression régulière de validation d'e-mail, vous pouvez compiler cet exemple de l'une des manières suivantes :</span><span class="sxs-lookup"><span data-stu-id="8ce5d-158">Assuming you've created a class library named RegexUtilities.dll that includes your email validation regular expression, you can compile this example in either of the following ways:</span></span>  
   
--   Dans Visual Studio, en créant une application console et en ajoutant une référence à RegexUtilities.dll dans votre projet.  
+-   <span data-ttu-id="8ce5d-159">Dans Visual Studio, en créant une application console et en ajoutant une référence à RegexUtilities.dll dans votre projet.</span><span class="sxs-lookup"><span data-stu-id="8ce5d-159">In Visual Studio, by creating a Console Application and adding a reference to RegexUtilities.dll to your project.</span></span>  
   
--   À partir de la ligne de commande, en copiant\-collant le code source dans un fichier texte, puis en le compilant avec une commande semblable à la suivante \(en supposant que le nom du fichier de code source soit Example.cs ou Example.vb\) :  
+-   <span data-ttu-id="8ce5d-160">À partir de la ligne de commande, en copiant-collant le code source dans un fichier texte, puis en le compilant avec une commande semblable à la suivante (en supposant que le nom du fichier de code source soit Example.cs ou Example.vb) :</span><span class="sxs-lookup"><span data-stu-id="8ce5d-160">From the command line, by copying and pasting the source code into a text file and compiling it with a command like the following (assuming that the name of the source code file is Example.cs or Example.vb:</span></span>  
   
     ```csharp  
     csc Example.cs /r:RegexUtilities.dll  
@@ -107,5 +113,5 @@ vbc /t:library RegexUtilities.vb
     vbc Example.vb /r:RegexUtilities.dll  
     ```  
   
-## Voir aussi  
- [Expressions régulières du .NET Framework](../../../docs/standard/base-types/regular-expressions.md)
+## <a name="see-also"></a><span data-ttu-id="8ce5d-161">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8ce5d-161">See Also</span></span>  
+ [<span data-ttu-id="8ce5d-162">.NET Framework (expressions régulières)</span><span class="sxs-lookup"><span data-stu-id="8ce5d-162">.NET Framework Regular Expressions</span></span>](../../../docs/standard/base-types/regular-expressions.md)

@@ -1,54 +1,52 @@
 ---
-title: "Utilisation de la classe XslCompiledTransform | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Utilisation de la classe XslCompiledTransform
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f9b074f6-d6f4-49dd-a093-df510bf0cf7b
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 5a5c71a7796790343bf39de5bbfd03997c25d5f0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Utilisation de la classe XslCompiledTransform
-La classe <xref:System.Xml.Xsl.XslCompiledTransform> est le processeur XSLT dans Microsoft .NET Framework.  Cette classe est utilisée pour compiler des feuilles de style et exécuter des transformations XSLT.  
+# <a name="using-the-xslcompiledtransform-class"></a><span data-ttu-id="a0ddb-102">Utilisation de la classe XslCompiledTransform</span><span class="sxs-lookup"><span data-stu-id="a0ddb-102">Using the XslCompiledTransform Class</span></span>
+<span data-ttu-id="a0ddb-103">La classe <xref:System.Xml.Xsl.XslCompiledTransform> est le processeur XSLT dans Microsoft .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-103">The <xref:System.Xml.Xsl.XslCompiledTransform> class is the Microsoft .NET Framework XSLT processor.</span></span> <span data-ttu-id="a0ddb-104">Cette classe est utilisée pour compiler des feuilles de style et exécuter des transformations XSLT.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-104">This class is used to compile style sheets and execute XSLT transformations.</span></span>  
   
 > [!NOTE]
->  Bien que les performances globales de la classe <xref:System.Xml.Xsl.XslCompiledTransform> soient meilleures que celles de la classe <xref:System.Xml.Xsl.XslTransform>, la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslCompiledTransform> peut s'exécuter plus lentement que la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslTransform> la première fois qu'elle est appelée pour une transformation.  C'est parce que le fichier XSLT doit être compilé avant d'être chargé.  Pour plus d'informations, consultez la publication de blog suivante : [XslCompiledTransform plus lent que XslTransform ?](http://go.microsoft.com/fwlink/?LinkId=130590)  
+>  <span data-ttu-id="a0ddb-105">Bien que les performances globales de la classe <xref:System.Xml.Xsl.XslCompiledTransform> soient meilleures que celles de la classe <xref:System.Xml.Xsl.XslTransform>, la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslCompiledTransform> peut s'exécuter plus lentement que la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslTransform> la première fois qu'elle est appelée pour une transformation.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-105">Although the overall performance of the <xref:System.Xml.Xsl.XslCompiledTransform> class is better than the <xref:System.Xml.Xsl.XslTransform> class, the <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> method of the <xref:System.Xml.Xsl.XslCompiledTransform> class might perform more slowly than the <xref:System.Xml.Xsl.XslTransform.Load%2A> method of the <xref:System.Xml.Xsl.XslTransform> class the first time it is called on a transformation.</span></span> <span data-ttu-id="a0ddb-106">C'est parce que le fichier XSLT doit être compilé avant d'être chargé.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-106">This is because the XSLT file must be compiled before it is loaded.</span></span> <span data-ttu-id="a0ddb-107">Pour plus d’informations, consultez le blog suivant : [XslCompiledTransform plus lent que XslTransform ?](http://go.microsoft.com/fwlink/?LinkId=130590)</span><span class="sxs-lookup"><span data-stu-id="a0ddb-107">For more information, see the following blog post: [XslCompiledTransform Slower than XslTransform?](http://go.microsoft.com/fwlink/?LinkId=130590)</span></span>  
   
-## Dans cette section  
- [Entrées dans la classe XslCompiledTransform](../../../../docs/standard/data/xml/inputs-to-the-xslcompiledtransform-class.md)  
- Décrit les options d'entrée XSLT disponibles.  
+## <a name="in-this-section"></a><span data-ttu-id="a0ddb-108">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="a0ddb-108">In This Section</span></span>  
+ [<span data-ttu-id="a0ddb-109">Entrées de la classe XslCompiledTransform</span><span class="sxs-lookup"><span data-stu-id="a0ddb-109">Inputs to the XslCompiledTransform Class</span></span>](../../../../docs/standard/data/xml/inputs-to-the-xslcompiledtransform-class.md)  
+ <span data-ttu-id="a0ddb-110">Décrit les options d'entrée XSLT disponibles.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-110">Describes the available XSLT input options.</span></span>  
   
- [Options de sortie de la classe XslCompiledTransform](../../../../docs/standard/data/xml/output-options-on-the-xslcompiledtransform-class.md)  
- Décrit les options de sortie XSLT disponibles.  
+ [<span data-ttu-id="a0ddb-111">Options de sortie de la classe XslCompiledTransform</span><span class="sxs-lookup"><span data-stu-id="a0ddb-111">Output Options on the XslCompiledTransform Class</span></span>](../../../../docs/standard/data/xml/output-options-on-the-xslcompiledtransform-class.md)  
+ <span data-ttu-id="a0ddb-112">Décrit les options de sortie XSLT disponibles.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-112">Describes the available XSLT output options.</span></span>  
   
- [Résolution de ressources externes lors du traitement XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
- Présente l'utilisation de la classe <xref:System.Xml.XmlResolver> pour résoudre des ressources externes.  
+ [<span data-ttu-id="a0ddb-113">Résoudre des ressources externes lors du traitement XSLT</span><span class="sxs-lookup"><span data-stu-id="a0ddb-113">Resolving External Resources During XSLT Processing</span></span>](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
+ <span data-ttu-id="a0ddb-114">Présente l'utilisation de la classe <xref:System.Xml.XmlResolver> pour résoudre des ressources externes.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-114">Discusses using the <xref:System.Xml.XmlResolver> class to resolve external resources.</span></span>  
   
- [Extension de feuilles de style XSLT](../../../../docs/standard/data/xml/extending-xslt-style-sheets.md)  
- Présente la prise en charge des extensions XSLT.  
+ [<span data-ttu-id="a0ddb-115">Extension de feuilles de Style XSLT</span><span class="sxs-lookup"><span data-stu-id="a0ddb-115">Extending XSLT Style Sheets</span></span>](../../../../docs/standard/data/xml/extending-xslt-style-sheets.md)  
+ <span data-ttu-id="a0ddb-116">Présente la prise en charge des extensions XSLT.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-116">Discusses how XSLT extensions are supported.</span></span>  
   
 |||  
 |-|-|  
-|[Erreurs XSLT récupérables](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)|Répertorie chaque comportement discrétionnaire autorisé par la recommandation du World Wide Web Consortium \(W3C\) sur XSLT 1.0 et décrit la façon dont ces comportements sont gérés par la classe <xref:System.Xml.Xsl.XslCompiledTransform>.|  
-|[Procédure : transformation d'un fragment de nœud](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md)|Décrit comment transformer un fragment de nœud.|  
+|[<span data-ttu-id="a0ddb-117">Erreurs XSLT récupérables</span><span class="sxs-lookup"><span data-stu-id="a0ddb-117">Recoverable XSLT Errors</span></span>](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)|<span data-ttu-id="a0ddb-118">Répertorie chaque comportement discrétionnaire autorisé par la recommandation du World Wide Web Consortium (W3C) sur XSLT 1.0 et décrit la façon dont ces comportements sont gérés par la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-118">Lists discretionary behaviors allowed by the World Wide Web Consortium (W3C) XSLT 1.0 recommendation and describes how these behaviors are handled by the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>|  
+|[<span data-ttu-id="a0ddb-119">Comment : transformer un Fragment de nœud</span><span class="sxs-lookup"><span data-stu-id="a0ddb-119">How to: Transform a Node Fragment</span></span>](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md)|<span data-ttu-id="a0ddb-120">Décrit comment transformer un fragment de nœud.</span><span class="sxs-lookup"><span data-stu-id="a0ddb-120">Describes how to transform a node fragment.</span></span>|  
   
-## Rubriques connexes  
- [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
- Explique comment migrer du code à partir de la classe <xref:System.Xml.Xsl.XslTransform>  
+## <a name="related-sections"></a><span data-ttu-id="a0ddb-121">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="a0ddb-121">Related Sections</span></span>  
+ [<span data-ttu-id="a0ddb-122">Migration à partir de la classe XslTransform</span><span class="sxs-lookup"><span data-stu-id="a0ddb-122">Migrating From the XslTransform Class</span></span>](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
+ <span data-ttu-id="a0ddb-123">Explique comment migrer du code à partir de la classe <xref:System.Xml.Xsl.XslTransform></span><span class="sxs-lookup"><span data-stu-id="a0ddb-123">Discusses how to migrate code from the <xref:System.Xml.Xsl.XslTransform> class</span></span>  
   
-## Voir aussi  
- <xref:System.Xml.Xsl.XsltSettings>   
+## <a name="see-also"></a><span data-ttu-id="a0ddb-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a0ddb-124">See Also</span></span>  
+ <xref:System.Xml.Xsl.XsltSettings>  
  <xref:System.Xml.Xsl.XsltMessageEncounteredEventArgs>

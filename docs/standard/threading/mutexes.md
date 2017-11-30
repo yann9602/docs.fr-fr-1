@@ -1,64 +1,67 @@
 ---
-title: "Mutexes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "wait handles"
-  - "threading [.NET Framework], Mutex class"
-  - "Mutex class, about Mutex class"
-  - "threading [.NET Framework], cross-process synchronization"
+title: Mutex
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- wait handles
+- threading [.NET Framework], Mutex class
+- Mutex class, about Mutex class
+- threading [.NET Framework], cross-process synchronization
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
-caps.latest.revision: 15
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a1d69c1b943d15b9ad8c80b4d7dbafebc54990ab
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mutexes
-Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour fournir l'accès exclusif à une ressource.  La classe <xref:System.Threading.Mutex> utilise plus de ressources de système que la classe <xref:System.Threading.Monitor>, mais elle peut être marshalée à travers des limites de domaine d'application, elle peut être utilisée avec les attentes multiples, et elle peut être utilisée pour synchroniser des threads dans des processus différents.  Pour une comparaison de mécanismes de synchronisation managés, consultez [Overview of Synchronization Primitives](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
+# <a name="mutexes"></a><span data-ttu-id="486ab-102">Mutex</span><span class="sxs-lookup"><span data-stu-id="486ab-102">Mutexes</span></span>
+<span data-ttu-id="486ab-103">Vous pouvez utiliser un <xref:System.Threading.Mutex> objet pour fournir un accès exclusif à une ressource.</span><span class="sxs-lookup"><span data-stu-id="486ab-103">You can use a <xref:System.Threading.Mutex> object to provide exclusive access to a resource.</span></span> <span data-ttu-id="486ab-104">Le <xref:System.Threading.Mutex> classe utilise davantage de ressources système que le <xref:System.Threading.Monitor> classe, mais il peut être marshalés entre des limites de domaine d’application, il peut être utilisé avec les attentes multiples, et il peut être utilisé pour synchroniser des threads dans des processus différents.</span><span class="sxs-lookup"><span data-stu-id="486ab-104">The <xref:System.Threading.Mutex> class uses more system resources than the <xref:System.Threading.Monitor> class, but it can be marshaled across application domain boundaries, it can be used with multiple waits, and it can be used to synchronize threads in different processes.</span></span> <span data-ttu-id="486ab-105">Pour consulter une comparaison des mécanismes de synchronisation gérés, consultez [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md).</span><span class="sxs-lookup"><span data-stu-id="486ab-105">For a comparison of managed synchronization mechanisms, see [Overview of Synchronization Primitives](../../../docs/standard/threading/overview-of-synchronization-primitives.md).</span></span>  
   
- Pour des exemples de code, consultez la documentation de référence pour les constructeurs <xref:System.Threading.Mutex.%23ctor%2A>.  
+ <span data-ttu-id="486ab-106">Pour des exemples de code, consultez la documentation de référence pour le <xref:System.Threading.Mutex.%23ctor%2A> constructeurs.</span><span class="sxs-lookup"><span data-stu-id="486ab-106">For code examples, see the reference documentation for the <xref:System.Threading.Mutex.%23ctor%2A> constructors.</span></span>  
   
-## Utilisation de mutex  
- Un thread appelle la méthode <xref:System.Threading.WaitHandle.WaitOne%2A> d'un mutex pour demander la propriété.  L'appel est bloqué jusqu'à ce que le mutex soit disponible ou jusqu'à ce que l'intervalle de délai d'expiration facultatif s'écoule.  L'état d'un mutex est signalé si aucun thread ne le possède.  
+## <a name="using-mutexes"></a><span data-ttu-id="486ab-107">Utilisation de mutex</span><span class="sxs-lookup"><span data-stu-id="486ab-107">Using Mutexes</span></span>  
+ <span data-ttu-id="486ab-108">Un thread appelle la <xref:System.Threading.WaitHandle.WaitOne%2A> méthode d’un mutex pour demander la propriété.</span><span class="sxs-lookup"><span data-stu-id="486ab-108">A thread calls the <xref:System.Threading.WaitHandle.WaitOne%2A> method of a mutex to request ownership.</span></span> <span data-ttu-id="486ab-109">L’appel est bloqué jusqu'à ce que le mutex soit disponible, ou jusqu'à ce que le délai d’expiration facultatif s’écoule.</span><span class="sxs-lookup"><span data-stu-id="486ab-109">The call blocks until the mutex is available, or until the optional timeout interval elapses.</span></span> <span data-ttu-id="486ab-110">L’état d’un mutex est signalé si aucun thread ne le possède.</span><span class="sxs-lookup"><span data-stu-id="486ab-110">The state of a mutex is signaled if no thread owns it.</span></span>  
   
- Un thread libère un mutex en appelant sa méthode <xref:System.Threading.Mutex.ReleaseMutex%2A>.  Les mutex ont l'affinité du thread ; c'est\-à\-dire que le mutex peut être libéré uniquement par le thread qui le possède.  Si un thread libère un mutex qu'il ne possède pas, une <xref:System.ApplicationException> est levée dans le thread.  
+ <span data-ttu-id="486ab-111">Un thread libère un mutex en appelant son <xref:System.Threading.Mutex.ReleaseMutex%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="486ab-111">A thread releases a mutex by calling its <xref:System.Threading.Mutex.ReleaseMutex%2A> method.</span></span> <span data-ttu-id="486ab-112">Les mutex ont une affinité de thread. Cela signifie que le mutex ne peut être libéré que par le thread qui le possède.</span><span class="sxs-lookup"><span data-stu-id="486ab-112">Mutexes have thread affinity; that is, the mutex can be released only by the thread that owns it.</span></span> <span data-ttu-id="486ab-113">Si un thread libère un mutex qu’il ne possède pas le cas, un <xref:System.ApplicationException> est levée dans le thread.</span><span class="sxs-lookup"><span data-stu-id="486ab-113">If a thread releases a mutex it does not own, an <xref:System.ApplicationException> is thrown in the thread.</span></span>  
   
- Étant donné que la classe <xref:System.Threading.Mutex> dérive de <xref:System.Threading.WaitHandle>, vous pouvez également appeler les méthodes <xref:System.Threading.WaitHandle.WaitAll%2A> ou <xref:System.Threading.WaitHandle.WaitAny%2A> statiques de <xref:System.Threading.WaitHandle> pour demander la propriété d'un <xref:System.Threading.Mutex> dans la combinaison avec d'autres handles d'attente.  
+ <span data-ttu-id="486ab-114">Car le <xref:System.Threading.Mutex> dérive de la classe <xref:System.Threading.WaitHandle>, vous pouvez également appeler la méthode statique <xref:System.Threading.WaitHandle.WaitAll%2A> ou <xref:System.Threading.WaitHandle.WaitAny%2A> méthodes de <xref:System.Threading.WaitHandle> à demander la propriété d’un <xref:System.Threading.Mutex> en combinaison avec d’autres handles d’attente.</span><span class="sxs-lookup"><span data-stu-id="486ab-114">Because the <xref:System.Threading.Mutex> class derives from <xref:System.Threading.WaitHandle>, you can also call the static <xref:System.Threading.WaitHandle.WaitAll%2A> or <xref:System.Threading.WaitHandle.WaitAny%2A> methods of <xref:System.Threading.WaitHandle> to request ownership of a <xref:System.Threading.Mutex> in combination with other wait handles.</span></span>  
   
- Si un thread possède un <xref:System.Threading.Mutex>, ce thread peut spécifier le même <xref:System.Threading.Mutex> des appels d'attente\-demande répétés sans bloquer son exécution ; il doit libérer le <xref:System.Threading.Mutex> autant de fois en libérer la propriété.  
+ <span data-ttu-id="486ab-115">Si un thread possède un <xref:System.Threading.Mutex>, ce thread peut spécifier le même <xref:System.Threading.Mutex> dans les appels d’attente-demande répétés sans bloquer son exécution ; Toutefois, il doit libérer le <xref:System.Threading.Mutex> autant de fois pour libérer de la propriété.</span><span class="sxs-lookup"><span data-stu-id="486ab-115">If a thread owns a <xref:System.Threading.Mutex>, that thread can specify the same <xref:System.Threading.Mutex> in repeated wait-request calls without blocking its execution; however, it must release the <xref:System.Threading.Mutex> as many times to release ownership.</span></span>  
   
-## Mutex abandonnés  
- Si un thread se termine sans libérer de <xref:System.Threading.Mutex>, le mutex est dit abandonné.  Cela indique souvent une grave erreur de programmation car la ressource que le mutex protège peut être laissée dans un état incohérent.  Dans .NET Framework version 2.0, une <xref:System.Threading.AbandonedMutexException> est levée dans le thread suivant qui acquiert le mutex.  
+## <a name="abandoned-mutexes"></a><span data-ttu-id="486ab-116">Mutex abandonnés</span><span class="sxs-lookup"><span data-stu-id="486ab-116">Abandoned Mutexes</span></span>  
+ <span data-ttu-id="486ab-117">Si un thread se termine sans libérer un <xref:System.Threading.Mutex>, le mutex est dit abandonné.</span><span class="sxs-lookup"><span data-stu-id="486ab-117">If a thread terminates without releasing a <xref:System.Threading.Mutex>, the mutex is said to be abandoned.</span></span> <span data-ttu-id="486ab-118">Cela indique souvent une grave erreur de programmation, car la ressource que le mutex protège peut être laissée dans un état incohérent.</span><span class="sxs-lookup"><span data-stu-id="486ab-118">This often indicates a serious programming error because the resource the mutex is protecting might be left in an inconsistent state.</span></span> <span data-ttu-id="486ab-119">Dans le .NET Framework version 2.0, un <xref:System.Threading.AbandonedMutexException> est levée dans le thread suivant qui acquiert le mutex.</span><span class="sxs-lookup"><span data-stu-id="486ab-119">In the .NET Framework version 2.0, an <xref:System.Threading.AbandonedMutexException> is thrown in the next thread that acquires the mutex.</span></span>  
   
 > [!NOTE]
->  Dans .NET Framework versions 1.0 et 1.1, un <xref:System.Threading.Mutex> abandonné a pour valeur l'état signalé et le prochain thread en attente obtient la propriété.  Si aucun thread n'attend, le <xref:System.Threading.Mutex> reste dans un état signalé.  Aucune exception n'est levée.  
+>  <span data-ttu-id="486ab-120">Dans les versions de .NET Framework 1.0 et 1.1, un abandonné <xref:System.Threading.Mutex> est défini sur l’état signalé et la prochaine en attente obtient la propriété thread.</span><span class="sxs-lookup"><span data-stu-id="486ab-120">In the .NET Framework versions 1.0 and 1.1, an abandoned <xref:System.Threading.Mutex> is set to the signaled state and the next waiting thread gets ownership.</span></span> <span data-ttu-id="486ab-121">Si aucun thread n’est en attente, le <xref:System.Threading.Mutex> reste dans un état signalé.</span><span class="sxs-lookup"><span data-stu-id="486ab-121">If no thread is waiting, the <xref:System.Threading.Mutex> remains in a signaled state.</span></span> <span data-ttu-id="486ab-122">Aucune exception n'est levée.</span><span class="sxs-lookup"><span data-stu-id="486ab-122">No exception is thrown.</span></span>  
   
- Dans le cas d'un mutex à l'échelle du système, un mutex abandonné peut indiquer qu'une application s'est arrêtée soudainement \(par exemple, à l'aide du Gestionnaire des tâches de Windows\).  
+ <span data-ttu-id="486ab-123">Si le mutex est développé au niveau système, et qu’il est abandonné, cela peut indiquer qu’une application a été arrêtée soudainement (par exemple, à l’aide du Gestionnaire des tâches de Windows).</span><span class="sxs-lookup"><span data-stu-id="486ab-123">In the case of a system-wide mutex, an abandoned mutex might indicate that an application has been terminated abruptly (for example, by using Windows Task Manager).</span></span>  
   
-## Mutex locaux et système  
- Les mutex sont de deux types : les mutex locaux et les mutex de systèmes nommés.  Si vous créez un objet <xref:System.Threading.Mutex> à l'aide d'un constructeur qui accepte un nom, il est associé à un objet de système d'exploitation portant ce nom.  Les mutex de système nommé sont visibles dans la totalité du système d'exploitation et peuvent être utilisés pour synchroniser les activités de processus.  Vous pouvez créer plusieurs objets <xref:System.Threading.Mutex> qui représentent le même mutex de système nommé ; vous pouvez également utiliser la méthode <xref:System.Threading.Mutex.OpenExisting%2A> pour ouvrir un mutex de système nommé existant.  
+## <a name="local-and-system-mutexes"></a><span data-ttu-id="486ab-124">Mutex système et locaux</span><span class="sxs-lookup"><span data-stu-id="486ab-124">Local and System Mutexes</span></span>  
+ <span data-ttu-id="486ab-125">Il existe deux types de mutex : les mutex locaux et les mutex système nommés.</span><span class="sxs-lookup"><span data-stu-id="486ab-125">Mutexes are of two types: local mutexes and named system mutexes.</span></span> <span data-ttu-id="486ab-126">Si vous créez un <xref:System.Threading.Mutex> de l’objet à l’aide d’un constructeur qui accepte un nom, il est associé à un objet de système d’exploitation de ce nom.</span><span class="sxs-lookup"><span data-stu-id="486ab-126">If you create a <xref:System.Threading.Mutex> object using a constructor that accepts a name, it is associated with an operating-system object of that name.</span></span> <span data-ttu-id="486ab-127">Les mutex système nommés sont visibles partout dans le système d’exploitation, et peuvent être utilisés pour synchroniser les activités de processus.</span><span class="sxs-lookup"><span data-stu-id="486ab-127">Named system mutexes are visible throughout the operating system and can be used to synchronize the activities of processes.</span></span> <span data-ttu-id="486ab-128">Vous pouvez créer plusieurs <xref:System.Threading.Mutex> les objets qui représentent le même les mutex système nommé, et vous pouvez utiliser la <xref:System.Threading.Mutex.OpenExisting%2A> mutex système nommé de méthode pour ouvrir un existant.</span><span class="sxs-lookup"><span data-stu-id="486ab-128">You can create multiple <xref:System.Threading.Mutex> objects that represent the same named system mutex, and you can use the <xref:System.Threading.Mutex.OpenExisting%2A> method to open an existing named system mutex.</span></span>  
   
- Un mutex local existe uniquement dans le cadre du processus concerné.  Il peut être utilisé par tout thread du processus doté d'une référence à l'objet <xref:System.Threading.Mutex> local.  Chaque objet <xref:System.Threading.Mutex> constitue un mutex local séparé.  
+ <span data-ttu-id="486ab-129">Un mutex local existe uniquement dans votre processus.</span><span class="sxs-lookup"><span data-stu-id="486ab-129">A local mutex exists only within your process.</span></span> <span data-ttu-id="486ab-130">Il peut être utilisé par n’importe quel thread de votre processus qui a une référence à la variable locale <xref:System.Threading.Mutex> objet.</span><span class="sxs-lookup"><span data-stu-id="486ab-130">It can be used by any thread in your process that has a reference to the local <xref:System.Threading.Mutex> object.</span></span> <span data-ttu-id="486ab-131">Chaque <xref:System.Threading.Mutex> objet est un mutex local séparé.</span><span class="sxs-lookup"><span data-stu-id="486ab-131">Each <xref:System.Threading.Mutex> object is a separate local mutex.</span></span>  
   
-### Accéder à la sécurité du contrôle pour les mutex de système  
- .NET Framework version 2.0 fournit la capacité de demander et définir la sécurité du contrôle d'accès Windows pour les objets de système nommé.  La protection de mutex de système du moment de création est recommandée parce que les objets système sont globaux et par conséquent peuvent être verrouillés par code autre que votre propre code.  
+### <a name="access-control-security-for-system-mutexes"></a><span data-ttu-id="486ab-132">Sécurité du contrôle d'accès pour les mutex système</span><span class="sxs-lookup"><span data-stu-id="486ab-132">Access Control Security for System Mutexes</span></span>  
+ <span data-ttu-id="486ab-133">La version 2.0 de .NET Framework permet de demander et de définir la sécurité de contrôle d’accès Windows pour les objets système nommé.</span><span class="sxs-lookup"><span data-stu-id="486ab-133">The .NET Framework version 2.0 provides the ability to query and set Windows access control security for named system objects.</span></span> <span data-ttu-id="486ab-134">Il est recommandé de protéger les mutex système dès leur création, car les objets système sont globaux et peuvent donc être verrouillés par un code autre que le vôtre.</span><span class="sxs-lookup"><span data-stu-id="486ab-134">Protecting system mutexes from the moment of creation is recommended because system objects are global and therefore can be locked by code other than your own.</span></span>  
   
- Pour plus d'information sur la sécurité du contrôle d'accès pour mutex, consultez les classes <xref:System.Security.AccessControl.MutexSecurity> et <xref:System.Security.AccessControl.MutexAccessRule>, l'énumération <xref:System.Security.AccessControl.MutexRights>, les méthodes <xref:System.Threading.Mutex.GetAccessControl%2A>, <xref:System.Threading.Mutex.SetAccessControl%2A> et <xref:System.Threading.Mutex.OpenExisting%2A> de la classe <xref:System.Threading.Mutex> et le constructeur <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29>.  
+ <span data-ttu-id="486ab-135">Pour plus d’informations sur la sécurité de contrôle d’accès pour les mutex, consultez le <xref:System.Security.AccessControl.MutexSecurity> et <xref:System.Security.AccessControl.MutexAccessRule> classes, les <xref:System.Security.AccessControl.MutexRights> énumération, le <xref:System.Threading.Mutex.GetAccessControl%2A>, <xref:System.Threading.Mutex.SetAccessControl%2A>, et <xref:System.Threading.Mutex.OpenExisting%2A> méthodes de la <xref:System.Threading.Mutex> classe et le <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29> constructeur.</span><span class="sxs-lookup"><span data-stu-id="486ab-135">For information on access control security for mutexes, see the <xref:System.Security.AccessControl.MutexSecurity> and <xref:System.Security.AccessControl.MutexAccessRule> classes, the <xref:System.Security.AccessControl.MutexRights> enumeration, the <xref:System.Threading.Mutex.GetAccessControl%2A>, <xref:System.Threading.Mutex.SetAccessControl%2A>, and <xref:System.Threading.Mutex.OpenExisting%2A> methods of the <xref:System.Threading.Mutex> class, and the <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29> constructor.</span></span>  
   
-## Voir aussi  
- <xref:System.Threading.Mutex>   
- <xref:System.Threading.Mutex.%23ctor%2A>   
- <xref:System.Security.AccessControl.MutexSecurity>   
- <xref:System.Security.AccessControl.MutexAccessRule>   
- [Threading](../../../docs/standard/threading/index.md)   
- [Threading Objects and Features](../../../docs/standard/threading/threading-objects-and-features.md)   
- [Moniteurs](../Topic/Monitors.md)   
- [Threads and Threading](../../../docs/standard/threading/threads-and-threading.md)
+## <a name="see-also"></a><span data-ttu-id="486ab-136">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="486ab-136">See Also</span></span>  
+ <xref:System.Threading.Mutex>  
+ <xref:System.Threading.Mutex.%23ctor%2A>  
+ <xref:System.Security.AccessControl.MutexSecurity>  
+ <xref:System.Security.AccessControl.MutexAccessRule>  
+ [<span data-ttu-id="486ab-137">Thread</span><span class="sxs-lookup"><span data-stu-id="486ab-137">Threading</span></span>](../../../docs/standard/threading/index.md)  
+ [<span data-ttu-id="486ab-138">Fonctionnalités et objets de threading</span><span class="sxs-lookup"><span data-stu-id="486ab-138">Threading Objects and Features</span></span>](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [<span data-ttu-id="486ab-139">Moniteurs</span><span class="sxs-lookup"><span data-stu-id="486ab-139">Monitors</span></span>](http://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)  
+ [<span data-ttu-id="486ab-140">Threads et threading</span><span class="sxs-lookup"><span data-stu-id="486ab-140">Threads and Threading</span></span>](../../../docs/standard/threading/threads-and-threading.md)

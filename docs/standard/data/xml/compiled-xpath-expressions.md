@@ -1,39 +1,40 @@
 ---
-title: "Expressions XPath compil&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Expressions XPath compilées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 8f7b812d5d6f75e39e9eebcc003686ff88d009e9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Expressions XPath compil&#233;es
-Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath compilée retournée depuis la méthode statique <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou depuis la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
+# <a name="compiled-xpath-expressions"></a><span data-ttu-id="f9f64-102">Expressions XPath compilées</span><span class="sxs-lookup"><span data-stu-id="f9f64-102">Compiled XPath Expressions</span></span>
+<span data-ttu-id="f9f64-103">Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath compilée retournée depuis la méthode statique <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou depuis la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.</span><span class="sxs-lookup"><span data-stu-id="f9f64-103">An <xref:System.Xml.XPath.XPathExpression> object represents a compiled XPath query returned from either the static <xref:System.Xml.XPath.XPathExpression.Compile%2A> method of the <xref:System.Xml.XPath.XPathExpression> class or the <xref:System.Xml.XPath.XPathNavigator.Compile%2A> method of the <xref:System.Xml.XPath.XPathNavigator> class.</span></span>  
   
-## La classe XPathExpression  
- Une requête XPath compilée représentée par un objet <xref:System.Xml.XPath.XPathExpression> est utile si la même requête XPath doit être utilisée plusieurs fois.  
+## <a name="the-xpathexpression-class"></a><span data-ttu-id="f9f64-104">La classe XPathExpression</span><span class="sxs-lookup"><span data-stu-id="f9f64-104">The XPathExpression Class</span></span>  
+ <span data-ttu-id="f9f64-105">Une requête XPath compilée représentée par un objet <xref:System.Xml.XPath.XPathExpression> est utile si la même requête XPath doit être utilisée plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="f9f64-105">A compiled XPath query represented by an <xref:System.Xml.XPath.XPathExpression> object is useful if the same XPath query is being used more than once.</span></span>  
   
- Par exemple, lorsque la méthode <xref:System.Xml.XPath.XPathNavigator.Select%2A> doit être appelée plusieurs fois, au lieu d'utiliser chaque fois une chaîne représentant la requête XPath, utilisez la méthode <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> pour compiler et mettre en cache la requête XPath dans un objet <xref:System.Xml.XPath.XPathExpression> afin de pouvoir la réutiliser et d'améliorer ainsi les performances.  
+ <span data-ttu-id="f9f64-106">Par exemple, lorsque la méthode <xref:System.Xml.XPath.XPathNavigator.Select%2A> doit être appelée plusieurs fois, au lieu d'utiliser chaque fois une chaîne représentant la requête XPath, utilisez la méthode <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> pour compiler et mettre en cache la requête XPath dans un objet <xref:System.Xml.XPath.XPathExpression> afin de pouvoir la réutiliser et d'améliorer ainsi les performances.</span><span class="sxs-lookup"><span data-stu-id="f9f64-106">For example, when calling the <xref:System.Xml.XPath.XPathNavigator.Select%2A> method multiple times, instead of using a string representing the XPath query each time, use the <xref:System.Xml.XPath.XPathExpression.Compile%2A> method of the <xref:System.Xml.XPath.XPathExpression> class or the <xref:System.Xml.XPath.XPathNavigator.Compile%2A> method of the <xref:System.Xml.XPath.XPathNavigator> class to compile and cache the XPath query in an <xref:System.Xml.XPath.XPathExpression> object for reuse and improved performance.</span></span>  
   
- Une fois compilé, l'objet <xref:System.Xml.XPath.XPathExpression> peut être utilisé comme entrée des méthodes suivantes de la classe <xref:System.Xml.XPath.XPathNavigator> selon le type retourné par la requête XPath.  
+ <span data-ttu-id="f9f64-107">Une fois compilé, l'objet <xref:System.Xml.XPath.XPathExpression> peut être utilisé comme entrée des méthodes suivantes de la classe <xref:System.Xml.XPath.XPathNavigator> selon le type retourné par la requête XPath.</span><span class="sxs-lookup"><span data-stu-id="f9f64-107">Once compiled, the <xref:System.Xml.XPath.XPathExpression> object may be used as input to the following <xref:System.Xml.XPath.XPathNavigator> class methods depending on the type returned from the XPath query.</span></span>  
   
--   <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=fullName>  
+-   <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=nameWithType>  
   
--   <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=fullName>  
+-   <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=nameWithType>  
   
 -   <xref:System.Xml.XPath.XPathNavigator.Matches%2A>  
   
@@ -41,38 +42,38 @@ Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath 
   
 -   <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
- Le tableau suivant décrit chacun des types de retours XPath W3C, leurs équivalents Microsoft .NET Framework et les méthodes avec lesquelles l'objet <xref:System.Xml.XPath.XPathExpression> peut être utilisé selon le type de retour.  
+ <span data-ttu-id="f9f64-108">Le tableau suivant décrit chacun des types de retours XPath W3C, leurs équivalents Microsoft .NET Framework et les méthodes avec lesquelles l'objet <xref:System.Xml.XPath.XPathExpression> peut être utilisé selon le type de retour.</span><span class="sxs-lookup"><span data-stu-id="f9f64-108">The following table describes each of the W3C XPath return types, their Microsoft .NET Framework equivalencies, and what methods the <xref:System.Xml.XPath.XPathExpression> object may be used with based on its return type.</span></span>  
   
-|Type de retour XPath W3C|Type .NET Framework équivalent|Description|Méthodes|  
-|------------------------------|------------------------------------|-----------------|--------------|  
-|`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|Une collection non triée des nœuds sans doublons créés dans l'ordre du document.|<xref:System.Xml.XPath.XPathNavigator.Select%2A> ou <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
-|`Boolean`|<xref:System.Boolean>|Une valeur `true` ou `false`.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> ou<br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  
-|`Number`|<xref:System.Double>|Nombre à virgule flottante.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
-|`String`|<xref:System.String>|Séquence de caractères UCS.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
+|<span data-ttu-id="f9f64-109">Type de retour XPath W3C</span><span class="sxs-lookup"><span data-stu-id="f9f64-109">W3C XPath Return Type</span></span>|<span data-ttu-id="f9f64-110">Type .NET Framework équivalent</span><span class="sxs-lookup"><span data-stu-id="f9f64-110">.NET Framework Equivalent Type</span></span>|<span data-ttu-id="f9f64-111">Description</span><span class="sxs-lookup"><span data-stu-id="f9f64-111">Description</span></span>|<span data-ttu-id="f9f64-112">Méthodes</span><span class="sxs-lookup"><span data-stu-id="f9f64-112">Methods</span></span>|  
+|---------------------------|------------------------------------|-----------------|-------------|  
+|`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|<span data-ttu-id="f9f64-113">Une collection non triée des nœuds sans doublons créés dans l’ordre du document.</span><span class="sxs-lookup"><span data-stu-id="f9f64-113">An unordered collection of nodes without duplicates created in document order.</span></span>|<span data-ttu-id="f9f64-114"><xref:System.Xml.XPath.XPathNavigator.Select%2A> ou <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A></span><span class="sxs-lookup"><span data-stu-id="f9f64-114"><xref:System.Xml.XPath.XPathNavigator.Select%2A> or <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A></span></span>|  
+|`Boolean`|<xref:System.Boolean>|<span data-ttu-id="f9f64-115">Une valeur `true` ou `false`.</span><span class="sxs-lookup"><span data-stu-id="f9f64-115">A `true` or `false` value.</span></span>|<span data-ttu-id="f9f64-116"><xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> ou</span><span class="sxs-lookup"><span data-stu-id="f9f64-116"><xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> or</span></span><br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  
+|`Number`|<xref:System.Double>|<span data-ttu-id="f9f64-117">Nombre à virgule flottante.</span><span class="sxs-lookup"><span data-stu-id="f9f64-117">A floating-point number.</span></span>|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
+|`String`|<xref:System.String>|<span data-ttu-id="f9f64-118">Séquence de caractères UCS.</span><span class="sxs-lookup"><span data-stu-id="f9f64-118">A sequence of UCS characters.</span></span>|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
   
 > [!NOTE]
->  La méthode <xref:System.Xml.XPath.XPathNavigator.Matches%2A> accepte une expression XPath comme paramètre.  La méthode <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> retourne un objet <xref:System.Xml.XPath.XPathNavigator>, pas un des types de retours XPath W3C.  
+>  <span data-ttu-id="f9f64-119">La méthode <xref:System.Xml.XPath.XPathNavigator.Matches%2A> accepte une expression XPath comme paramètre.</span><span class="sxs-lookup"><span data-stu-id="f9f64-119">The <xref:System.Xml.XPath.XPathNavigator.Matches%2A> method accepts an XPath expression as its parameter.</span></span> <span data-ttu-id="f9f64-120">La méthode <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> retourne un objet <xref:System.Xml.XPath.XPathNavigator>, pas un des types de retours XPath W3C.</span><span class="sxs-lookup"><span data-stu-id="f9f64-120">The <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> method returns an <xref:System.Xml.XPath.XPathNavigator> object, not one of the W3C XPath return types.</span></span>  
   
-### La propriété ReturnType  
- Une fois qu'une requête XPath a été compilée dans un objet <xref:System.Xml.XPath.XPathExpression>, vous pouvez utiliser la propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> de l'objet <xref:System.Xml.XPath.XPathExpression> pour déterminer ce que retourne la requête XPath.  
+### <a name="the-returntype-property"></a><span data-ttu-id="f9f64-121">La propriété ReturnType</span><span class="sxs-lookup"><span data-stu-id="f9f64-121">The ReturnType Property</span></span>  
+ <span data-ttu-id="f9f64-122">Une fois qu'une requête XPath a été compilée dans un objet <xref:System.Xml.XPath.XPathExpression>, vous pouvez utiliser la propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> de l'objet <xref:System.Xml.XPath.XPathExpression> pour déterminer ce que retourne la requête XPath.</span><span class="sxs-lookup"><span data-stu-id="f9f64-122">After an XPath query has been compiled into an <xref:System.Xml.XPath.XPathExpression> object, you can use the <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> property of the <xref:System.Xml.XPath.XPathExpression> object to determine what the XPath query returns.</span></span>  
   
- La propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> retourne une des valeurs d'énumération <xref:System.Xml.XPath.XPathResultType> suivantes, représentant les types de retours XPath W3C.  
+ <span data-ttu-id="f9f64-123">La propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> retourne une des valeurs d'énumération <xref:System.Xml.XPath.XPathResultType> suivantes, représentant les types de retours XPath W3C.</span><span class="sxs-lookup"><span data-stu-id="f9f64-123">The <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> property returns one of the following <xref:System.Xml.XPath.XPathResultType> enumeration values representing the W3C XPath return types.</span></span>  
   
--   <xref:System.Xml.XPath.XPathResultType>  
+-   <xref:System.Xml.XPath.XPathResultType.Any>  
   
--   <xref:System.Xml.XPath.XPathResultType>  
+-   <xref:System.Xml.XPath.XPathResultType.Boolean>  
   
--   <xref:System.Xml.XPath.XPathResultType>  
+-   <xref:System.Xml.XPath.XPathResultType.Error>  
   
--   <xref:System.Xml.XPath.XPathResultType>  
+-   <xref:System.Xml.XPath.XPathResultType.Navigator>  
   
--   <xref:System.Xml.XPath.XPathResultType>  
+-   <xref:System.Xml.XPath.XPathResultType.NodeSet>  
   
--   <xref:System.Xml.XPath.XPathResultType>  
+-   <xref:System.Xml.XPath.XPathResultType.Number>  
   
--   <xref:System.Xml.XPath.XPathResultType>  
+-   <xref:System.Xml.XPath.XPathResultType.String>  
   
- L'exemple suivant utilise l'objet <xref:System.Xml.XPath.XPathExpression> pour retourner un nombre et une collection de nœuds à partir du fichier `books.xml`.  La propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> de chaque objet <xref:System.Xml.XPath.XPathExpression> ainsi que les résultats des méthodes <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> et <xref:System.Xml.XPath.XPathNavigator.Select%2A> sont écrits à la console.  
+ <span data-ttu-id="f9f64-124">L'exemple suivant utilise l'objet <xref:System.Xml.XPath.XPathExpression> pour retourner un nombre et une collection de nœuds à partir du fichier `books.xml`.</span><span class="sxs-lookup"><span data-stu-id="f9f64-124">The following example uses the <xref:System.Xml.XPath.XPathExpression> object to return a number and a node set from the `books.xml` file.</span></span> <span data-ttu-id="f9f64-125">La propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> de chaque objet <xref:System.Xml.XPath.XPathExpression> ainsi que les résultats des méthodes <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> et <xref:System.Xml.XPath.XPathNavigator.Select%2A> sont écrits à la console.</span><span class="sxs-lookup"><span data-stu-id="f9f64-125">The <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> property of each <xref:System.Xml.XPath.XPathExpression> object as well as the results from the <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> and <xref:System.Xml.XPath.XPathNavigator.Select%2A> methods are written to the console.</span></span>  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -114,24 +115,24 @@ nodes.MoveNext();
 Console.WriteLine(nodes.Current.Value);  
 ```  
   
- L'exemple prend le fichier `books.xml` comme entrée.  
+ <span data-ttu-id="f9f64-126">L'exemple prend le fichier `books.xml` comme entrée.</span><span class="sxs-lookup"><span data-stu-id="f9f64-126">The example takes the `books.xml` file as input.</span></span>  
   
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
-### Expressions XPath plus performantes  
- Pour obtenir des performances optimales, utilisez l'expression XPath la plus spécifique possible dans vos requêtes.  Par exemple, si le nœud `book` est un enfant du noeud `bookstore` et si le nœud `bookstore` est l'élément de niveau supérieur dans un document XML, il est plus rapide d'utiliser l'expression XPath `/bookstore/book` que `//book`.  L'expression XPath `//book` analysera en effet chaque nœud de l'arborescence XML en vue d'identifier les nœuds qui correspondent.  
+### <a name="higher-performance-xpath-expressions"></a><span data-ttu-id="f9f64-127">Expressions XPath plus performantes</span><span class="sxs-lookup"><span data-stu-id="f9f64-127">Higher Performance XPath Expressions</span></span>  
+ <span data-ttu-id="f9f64-128">Pour obtenir des performances optimales, utilisez l'expression XPath la plus spécifique possible dans vos requêtes.</span><span class="sxs-lookup"><span data-stu-id="f9f64-128">For better performance, use the most specific XPath expression possible in your queries.</span></span> <span data-ttu-id="f9f64-129">Par exemple, si le nœud `book` est un enfant du noeud `bookstore` et si le nœud `bookstore` est l'élément de niveau supérieur dans un document XML, il est plus rapide d'utiliser l'expression XPath `/bookstore/book` que `//book`.</span><span class="sxs-lookup"><span data-stu-id="f9f64-129">For example, if the `book` node is a child node of the `bookstore` node and the `bookstore` node is the top-most element in an XML document, using the XPath expression `/bookstore/book` is faster than using `//book`.</span></span> <span data-ttu-id="f9f64-130">L'expression XPath `//book` analysera en effet chaque nœud de l'arborescence XML en vue d'identifier les nœuds qui correspondent.</span><span class="sxs-lookup"><span data-stu-id="f9f64-130">The `//book` XPath expression will scan every node in the XML tree to identify matching nodes.</span></span>  
   
- De plus, l'utilisation des méthodes de navigation dans les nœuds fournies par la classe <xref:System.Xml.XPath.XPathNavigator> peut améliorer les performances par rapport aux méthodes de sélection fournies par la classe <xref:System.Xml.XPath.XPathNavigator> lorsque les critères de sélection sont simples.  Par exemple, si vous devez sélectionner le premier enfant du nœud actuel, il est plus rapide d'utiliser la méthode <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> que d'utiliser l'expression XPath `child::*[1]` et la méthode <xref:System.Xml.XPath.XPathNavigator.Select%2A>.  
+ <span data-ttu-id="f9f64-131">De plus, l'utilisation des méthodes de navigation dans les nœuds fournies par la classe <xref:System.Xml.XPath.XPathNavigator> peut améliorer les performances par rapport aux méthodes de sélection fournies par la classe <xref:System.Xml.XPath.XPathNavigator> lorsque les critères de sélection sont simples.</span><span class="sxs-lookup"><span data-stu-id="f9f64-131">Additionally, using the node set navigation methods supplied by the <xref:System.Xml.XPath.XPathNavigator> class may result in improved performance over the selection methods supplied by the <xref:System.Xml.XPath.XPathNavigator> class in cases where your selection criteria are simple.</span></span> <span data-ttu-id="f9f64-132">Par exemple, si vous devez sélectionner le premier enfant du nœud actuel, il est plus rapide d'utiliser la méthode <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> que d'utiliser l'expression XPath `child::*[1]` et la méthode <xref:System.Xml.XPath.XPathNavigator.Select%2A>.</span><span class="sxs-lookup"><span data-stu-id="f9f64-132">For example, if you need to select the first child of the current node, it is faster to use the <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A> method than to use the `child::*[1]` XPath expression and the <xref:System.Xml.XPath.XPathNavigator.Select%2A> method.</span></span>  
   
- Pour plus d'informations sur les méthodes de navigation dans les nœuds fournies par la classe <xref:System.Xml.XPath.XPathNavigator>, consultez [Navigation dans la collection de nœuds à l'aide de XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md).  
+ <span data-ttu-id="f9f64-133">Pour plus d’informations sur le nœud de définir des méthodes de navigation de la <xref:System.Xml.XPath.XPathNavigator> de classe, consultez [Node Set Navigation à l’aide de XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md).</span><span class="sxs-lookup"><span data-stu-id="f9f64-133">For more information about the node set navigation methods of the <xref:System.Xml.XPath.XPathNavigator> class, see [Node Set Navigation Using XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Xml.XmlDocument>   
- <xref:System.Xml.XPath.XPathDocument>   
- <xref:System.Xml.XPath.XPathNavigator>   
- [Traitement des données XML à l'aide du modèle de données XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)   
- [Sélection de données XML à l'aide de XPathNavigator](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)   
- [Évaluation d'expressions XPath à l'aide de XPathNavigator](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)   
- [Mise en correspondance de nœuds avec XPathNavigator](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)   
- [Types de nœuds reconnus avec les requêtes XPath](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)   
- [Requêtes et espaces de noms XPath](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
+## <a name="see-also"></a><span data-ttu-id="f9f64-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f9f64-134">See Also</span></span>  
+ <xref:System.Xml.XmlDocument>  
+ <xref:System.Xml.XPath.XPathDocument>  
+ <xref:System.Xml.XPath.XPathNavigator>  
+ [<span data-ttu-id="f9f64-135">Traitement des données XML à l’aide du modèle de données XPath</span><span class="sxs-lookup"><span data-stu-id="f9f64-135">Process XML Data Using the XPath Data Model</span></span>](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [<span data-ttu-id="f9f64-136">Sélectionnez les données XML à l’aide de XPathNavigator</span><span class="sxs-lookup"><span data-stu-id="f9f64-136">Select XML Data Using XPathNavigator</span></span>](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
+ [<span data-ttu-id="f9f64-137">Évaluer les Expressions XPath à l’aide de XPathNavigator</span><span class="sxs-lookup"><span data-stu-id="f9f64-137">Evaluate XPath Expressions using XPathNavigator</span></span>](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
+ [<span data-ttu-id="f9f64-138">Nœuds qui correspondent à l’aide de XPathNavigator</span><span class="sxs-lookup"><span data-stu-id="f9f64-138">Matching Nodes using XPathNavigator</span></span>](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)  
+ [<span data-ttu-id="f9f64-139">Types de nœuds reconnus avec les requêtes XPath</span><span class="sxs-lookup"><span data-stu-id="f9f64-139">Node Types Recognized with XPath Queries</span></span>](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)  
+ [<span data-ttu-id="f9f64-140">Espaces de noms et des requêtes XPath</span><span class="sxs-lookup"><span data-stu-id="f9f64-140">XPath Queries and Namespaces</span></span>](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)

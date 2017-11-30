@@ -1,68 +1,74 @@
 ---
-title: "Comment&#160;: impl&#233;menter un fournisseur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "modèle de design observateur (.NET Framework), implémentation des fournisseurs"
-  - "fournisseurs (.NET Framework), dans le modèle de design observateur"
-  - "observables (.NET Framework), dans le modèle de design observateur"
+title: "Comment : implémenter un fournisseur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- observer design pattern [.NET Framework], implementing providers
+- providers [.NET Framework], in observer design pattern
+- observables [.NET Framework], in observer design pattern
 ms.assetid: 790b5d8b-d546-40a6-beeb-151b574e5ee5
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: b9d8f96de8cb3d13568e755f1d5e885e0474d891
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: impl&#233;menter un fournisseur
-Le modèle de conception observateur requiert une division entre un fournisseur qui surveille les données et envoie des notifications, et un ou plusieurs observateurs, qui reçoivent les notifications \(rappels\) du fournisseur.  Cette rubrique explique comment créer un fournisseur.  Une rubrique connexe, [Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md), explique comment créer un observateur.  
+# <a name="how-to-implement-a-provider"></a><span data-ttu-id="005cf-102">Comment : implémenter un fournisseur</span><span class="sxs-lookup"><span data-stu-id="005cf-102">How to: Implement a Provider</span></span>
+<span data-ttu-id="005cf-103">Le modèle de conception observateur requiert une division entre un fournisseur qui surveille les données et envoie des notifications, et un ou plusieurs observateurs, qui reçoivent des notifications (rappels) à partir du fournisseur.</span><span class="sxs-lookup"><span data-stu-id="005cf-103">The observer design pattern requires a division between a provider, which monitors data and sends notifications, and one or more observers, which receive notifications (callbacks) from the provider.</span></span> <span data-ttu-id="005cf-104">Cette rubrique explique comment créer un fournisseur.</span><span class="sxs-lookup"><span data-stu-id="005cf-104">This topic discusses how to create a provider.</span></span> <span data-ttu-id="005cf-105">Une rubrique connexe, [Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md), explique comment créer un observateur.</span><span class="sxs-lookup"><span data-stu-id="005cf-105">A related topic, [How to: Implement an Observer](../../../docs/standard/events/how-to-implement-an-observer.md), discusses how to create an observer.</span></span>  
   
-### Pour créer un fournisseur  
+### <a name="to-create-a-provider"></a><span data-ttu-id="005cf-106">Pour créer un fournisseur</span><span class="sxs-lookup"><span data-stu-id="005cf-106">To create a provider</span></span>  
   
-1.  Définissez les données que le fournisseur est chargé d'envoyer aux observateurs.  Même si le fournisseur et les données qu'il envoie aux observateurs peuvent être un type unique, ils sont en général représentés par des types différents.  Par exemple, dans une application de surveillance de la température, la structure `Temperature` définit les données que le fournisseur \(représenté par la classe `TemperatureMonitor` définie à l'étape suivante\) surveille et auxquelles les observateurs s'abonnent.  
+1.  <span data-ttu-id="005cf-107">Définir les données que le fournisseur est chargé d’envoyer aux observateurs.</span><span class="sxs-lookup"><span data-stu-id="005cf-107">Define the data that the provider is responsible for sending to observers.</span></span> <span data-ttu-id="005cf-108">Bien que le fournisseur et les données qu’il envoie aux observateurs peuvent être un type unique, ils sont généralement représentées par différents types.</span><span class="sxs-lookup"><span data-stu-id="005cf-108">Although the provider and the data that it sends to observers can be a single type, they are generally represented by different types.</span></span> <span data-ttu-id="005cf-109">Par exemple, dans une application, de surveillance de la température le `Temperature` structure définit les données que le fournisseur (qui est représenté par le `TemperatureMonitor` classe définie dans l’étape suivante) surveille et auxquelles les observateurs s’abonner.</span><span class="sxs-lookup"><span data-stu-id="005cf-109">For example, in a temperature monitoring application, the `Temperature` structure defines the data that the provider (which is represented by the `TemperatureMonitor` class defined in the next step) monitors and to which observers subscribe.</span></span>  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/data.cs#1)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/data.vb#1)]  
   
-2.  Définissez le fournisseur de données, qui est un type qui implémente l'interface <xref:System.IObservable%601?displayProperty=fullName>.  L'argument de type générique du fournisseur est le type que le fournisseur envoie aux observateurs.  L'exemple suivant définit une classe `TemperatureMonitor`, qui est une implémentation <xref:System.IObservable%601?displayProperty=fullName> construite avec un argument de type générique de `Temperature`.  
+2.  <span data-ttu-id="005cf-110">Définir le fournisseur de données, qui est un type qui implémente le <xref:System.IObservable%601?displayProperty=nameWithType> interface.</span><span class="sxs-lookup"><span data-stu-id="005cf-110">Define the data provider, which is a type that implements the <xref:System.IObservable%601?displayProperty=nameWithType> interface.</span></span> <span data-ttu-id="005cf-111">Argument de type générique du fournisseur est le type que le fournisseur envoie aux observateurs.</span><span class="sxs-lookup"><span data-stu-id="005cf-111">The provider's generic type argument is the type that the provider sends to observers.</span></span> <span data-ttu-id="005cf-112">L’exemple suivant définit un `TemperatureMonitor` (classe), qui est un élément construit <xref:System.IObservable%601?displayProperty=nameWithType> mise en œuvre avec un argument de type générique `Temperature`.</span><span class="sxs-lookup"><span data-stu-id="005cf-112">The following example defines a `TemperatureMonitor` class, which is a constructed <xref:System.IObservable%601?displayProperty=nameWithType> implementation with a generic type argument of `Temperature`.</span></span>  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#2)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#2)]  
   
-3.  Déterminez comment le fournisseur stockera les références aux observateurs afin que chaque observateur puisse être averti, le cas échéant.  En règle générale, un objet de collection, tel qu'un objet <xref:System.Collections.Generic.List%601> générique est utilisé à cette fin.  L'exemple suivant définit un objet <xref:System.Collections.Generic.List%601> privé qui est instancié dans le constructeur de classe `TemperatureMonitor`.  
+3.  <span data-ttu-id="005cf-113">Déterminez comment le fournisseur stockera les références aux observateurs afin que chaque observateur puisse être averti lorsque cela est approprié.</span><span class="sxs-lookup"><span data-stu-id="005cf-113">Determine how the provider will store references to observers so that each observer can be notified when appropriate.</span></span> <span data-ttu-id="005cf-114">En règle générale, un objet de collection comme un type générique <xref:System.Collections.Generic.List%601> objet est utilisé à cet effet.</span><span class="sxs-lookup"><span data-stu-id="005cf-114">Most commonly, a collection object such as a generic <xref:System.Collections.Generic.List%601> object is used for this purpose.</span></span> <span data-ttu-id="005cf-115">L’exemple suivant définit un privé <xref:System.Collections.Generic.List%601> objet instancié dans le `TemperatureMonitor` constructeur de classe.</span><span class="sxs-lookup"><span data-stu-id="005cf-115">The following example defines a private <xref:System.Collections.Generic.List%601> object that is instantiated in the `TemperatureMonitor` class constructor.</span></span>  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#3)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#3)]  
   
-4.  Définissez une implémentation <xref:System.IDisposable> que le fournisseur peut retourner aux abonnés afin qu'ils puissent cesser de recevoir des notifications à tout moment.  L'exemple suivant définit une classe `Unsubscriber` imbriquée à laquelle est passée une référence à la collection d'abonnés et à l'abonné lorsque la classe est instanciée.  Ce code permet à l'abonné d'appeler l'implémentation <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> de l'objet pour se supprimer de la collection des abonnés.  
+4.  <span data-ttu-id="005cf-116">Définir un <xref:System.IDisposable> implémentation le fournisseur peut retourner aux abonnés afin qu’ils peuvent cesser de recevoir des notifications à tout moment.</span><span class="sxs-lookup"><span data-stu-id="005cf-116">Define an <xref:System.IDisposable> implementation that the provider can return to subscribers so that they can stop receiving notifications at any time.</span></span> <span data-ttu-id="005cf-117">L’exemple suivant définit une liste imbriquée `Unsubscriber` classe passée une référence à la collection d’abonnés et à l’abonné lorsque la classe est instanciée.</span><span class="sxs-lookup"><span data-stu-id="005cf-117">The following example defines a nested `Unsubscriber` class that is passed a reference to the subscribers collection and to the subscriber when the class is instantiated.</span></span> <span data-ttu-id="005cf-118">Ce code permet à l’abonné appeler l’objet <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implémentation à supprimer de la collection d’abonnés.</span><span class="sxs-lookup"><span data-stu-id="005cf-118">This code enables the subscriber to call the object's <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation to remove itself from the subscribers collection.</span></span>  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#4)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#4)]  
   
-5.  Implémentez la méthode <xref:System.IObservable%601.Subscribe%2A?displayProperty=fullName>.  Une référence à l'interface <xref:System.IObserver%601?displayProperty=fullName> est passée à la méthode et doit être stockée dans l'objet conçu dans ce but à l'étape 3.  La méthode doit ensuite retourner l'implémentation <xref:System.IDisposable> développée à l'étape 4.  L'exemple suivant illustre l'implémentation de la méthode <xref:System.IObservable%601.Subscribe%2A> dans la classe `TemperatureMonitor`.  
+5.  <span data-ttu-id="005cf-119">Implémentez la méthode <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="005cf-119">Implement the <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="005cf-120">La méthode est passée à la <xref:System.IObserver%601?displayProperty=nameWithType> de l’interface et doivent être stockées dans l’objet conçu à cet effet à l’étape 3.</span><span class="sxs-lookup"><span data-stu-id="005cf-120">The method is passed a reference to the <xref:System.IObserver%601?displayProperty=nameWithType> interface and should be stored in the object designed for that purpose in step 3.</span></span> <span data-ttu-id="005cf-121">La méthode doit ensuite retourner le <xref:System.IDisposable> implémentation développé à l’étape 4.</span><span class="sxs-lookup"><span data-stu-id="005cf-121">The method should then return the <xref:System.IDisposable> implementation developed in step 4.</span></span> <span data-ttu-id="005cf-122">L’exemple suivant illustre l’implémentation de la <xref:System.IObservable%601.Subscribe%2A> méthode dans la `TemperatureMonitor` classe.</span><span class="sxs-lookup"><span data-stu-id="005cf-122">The following example shows the implementation of the <xref:System.IObservable%601.Subscribe%2A> method in the `TemperatureMonitor` class.</span></span>  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#5)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#5)]  
   
-6.  Avertissez les observateurs si nécessaire en appelant leurs implémentations <xref:System.IObserver%601.OnNext%2A?displayProperty=fullName>, <xref:System.IObserver%601.OnError%2A?displayProperty=fullName> et <xref:System.IObserver%601.OnCompleted%2A?displayProperty=fullName>.  Dans certains cas, un fournisseur peut ne pas appeler la méthode <xref:System.IObserver%601.OnError%2A> lorsqu'une erreur se produit.  Par exemple, la méthode `GetTemperature` suivante simule un moniteur qui indique les données de température toutes les cinq secondes et notifie les observateurs si la température a changé d'au moins .1 degré depuis la lecture précédente.  Si le périphérique n'enregistre pas une température \(autrement dit, si sa valeur est null\), le fournisseur avertit les observateurs que la transmission est terminée.  Notez que, en plus d'appeler la méthode pour chaque méthode <xref:System.IObserver%601.OnCompleted%2A> de l'observateur, la méthode `GetTemperature` supprime la collection <xref:System.Collections.Generic.List%601>.  Dans ce cas, le fournisseur ne fait pas appel à la méthode <xref:System.IObserver%601.OnError%2A> de ses observateurs.  
+6.  <span data-ttu-id="005cf-123">Informer les observateurs si nécessaire en appelant leurs <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, et <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implémentations.</span><span class="sxs-lookup"><span data-stu-id="005cf-123">Notify observers as appropriate by calling their <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, and <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implementations.</span></span> <span data-ttu-id="005cf-124">Dans certains cas, un fournisseur ne peut pas appeler le <xref:System.IObserver%601.OnError%2A> méthode lorsqu’une erreur se produit.</span><span class="sxs-lookup"><span data-stu-id="005cf-124">In some cases, a provider may not call the <xref:System.IObserver%601.OnError%2A> method when an error occurs.</span></span> <span data-ttu-id="005cf-125">Par exemple, les éléments suivants `GetTemperature` méthode simule un moniteur qui lit les données de température toutes les cinq secondes et notifie les observateurs si la température a changé par au moins.1 degré depuis la lecture précédente.</span><span class="sxs-lookup"><span data-stu-id="005cf-125">For example, the following `GetTemperature` method simulates a monitor that reads temperature data every five seconds and notifies observers if the temperature has changed by at least .1 degree since the previous reading.</span></span> <span data-ttu-id="005cf-126">Si l’appareil ne signale pas une température (autrement dit, si sa valeur est null), le fournisseur notifie les observateurs que la transmission est terminée.</span><span class="sxs-lookup"><span data-stu-id="005cf-126">If the device does not report a temperature (that is, if its value is null), the provider notifies observers that the transmission is complete.</span></span> <span data-ttu-id="005cf-127">Notez que, en plus de l’appel de chaque observateur <xref:System.IObserver%601.OnCompleted%2A> (méthode), la `GetTemperature` méthode efface le <xref:System.Collections.Generic.List%601> collection.</span><span class="sxs-lookup"><span data-stu-id="005cf-127">Note that, in addition to calling each observer's <xref:System.IObserver%601.OnCompleted%2A> method, the `GetTemperature` method clears the <xref:System.Collections.Generic.List%601> collection.</span></span> <span data-ttu-id="005cf-128">Dans ce cas, le fournisseur ne met à aucun appel à la <xref:System.IObserver%601.OnError%2A> méthode de ses observateurs.</span><span class="sxs-lookup"><span data-stu-id="005cf-128">In this case, the provider makes no calls to the <xref:System.IObserver%601.OnError%2A> method of its observers.</span></span>  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#6)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#6)]  
   
-## Exemple  
- L'exemple suivant contient le code source complet pour définir une implémentation <xref:System.IObservable%601> pour une application de surveillance de la température.  Il inclut la structure `Temperature`, qui correspond aux données envoyées aux observateurs, et la classe `TemperatureMonitor`, qui est l'implémentation <xref:System.IObservable%601>.  
+## <a name="example"></a><span data-ttu-id="005cf-129">Exemple</span><span class="sxs-lookup"><span data-stu-id="005cf-129">Example</span></span>  
+ <span data-ttu-id="005cf-130">L’exemple suivant contient le code source complet permettant de définir un <xref:System.IObservable%601> implémentation pour une application de surveillance de la température.</span><span class="sxs-lookup"><span data-stu-id="005cf-130">The following example contains the complete source code for defining an <xref:System.IObservable%601> implementation for a temperature monitoring application.</span></span> <span data-ttu-id="005cf-131">Il inclut le `Temperature` structure des données envoyées aux observateurs, et la `TemperatureMonitor` (classe), qui est le <xref:System.IObservable%601> implémentation.</span><span class="sxs-lookup"><span data-stu-id="005cf-131">It includes the `Temperature` structure, which is the data sent to observers, and the `TemperatureMonitor` class, which is the <xref:System.IObservable%601> implementation.</span></span>  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#7)]
  [!code-vb[Conceptual.ObserverDesign.HowTo#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#7)]  
   
-## Voir aussi  
- <xref:System.IObservable%601>   
- [Modèle de design observateur](../../../docs/standard/events/observer-design-pattern.md)   
- [Comment : implémenter une méthode Observer](../../../docs/standard/events/how-to-implement-an-observer.md)   
- [Meilleures pratiques du modèle de design observateur](../../../docs/standard/events/observer-design-pattern-best-practices.md)
+## <a name="see-also"></a><span data-ttu-id="005cf-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="005cf-132">See Also</span></span>  
+ <xref:System.IObservable%601>  
+ [<span data-ttu-id="005cf-133">Modèle de conception Observateur</span><span class="sxs-lookup"><span data-stu-id="005cf-133">Observer Design Pattern</span></span>](../../../docs/standard/events/observer-design-pattern.md)  
+ [<span data-ttu-id="005cf-134">Guide pratique pour implémenter une méthode Observer</span><span class="sxs-lookup"><span data-stu-id="005cf-134">How to: Implement an Observer</span></span>](../../../docs/standard/events/how-to-implement-an-observer.md)  
+ [<span data-ttu-id="005cf-135">Meilleures pratiques du modèle de design observateur</span><span class="sxs-lookup"><span data-stu-id="005cf-135">Observer Design Pattern Best Practices</span></span>](../../../docs/standard/events/observer-design-pattern-best-practices.md)

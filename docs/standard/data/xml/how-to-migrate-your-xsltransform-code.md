@@ -1,104 +1,105 @@
 ---
-title: "Proc&#233;dure&#160;: migrer votre code XslTransform | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Procédure : migrer votre code XslTransform"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: f8a9e287e611e1cb1731c267702504637b23081b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: migrer votre code XslTransform
-Les nouvelles classes XSLT ont été conçues pour être très semblables aux classes existantes.  La classe <xref:System.Xml.Xsl.XslCompiledTransform> remplace la classe <xref:System.Xml.Xsl.XslTransform>.  Les feuilles de style sont compilées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.  Les transformations sont exécutées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  Les procédures suivantes illustrent des tâches XSLT communes et comparent le code des classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XslCompiledTransform>.  
+# <a name="how-to-migrate-your-xsltransform-code"></a><span data-ttu-id="ef9b0-102">Procédure : migrer votre code XslTransform</span><span class="sxs-lookup"><span data-stu-id="ef9b0-102">How to: Migrate Your XslTransform Code</span></span>
+<span data-ttu-id="ef9b0-103">Les nouvelles classes XSLT ont été conçues pour être très semblables aux classes existantes.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-103">The new XSLT classes have been designed to be very similar to the existing classes.</span></span> <span data-ttu-id="ef9b0-104">La classe <xref:System.Xml.Xsl.XslCompiledTransform> remplace la classe <xref:System.Xml.Xsl.XslTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-104">The <xref:System.Xml.Xsl.XslCompiledTransform> class replaces the <xref:System.Xml.Xsl.XslTransform> class.</span></span> <span data-ttu-id="ef9b0-105">Les feuilles de style sont compilées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-105">Style sheets are compiled using the <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> method.</span></span> <span data-ttu-id="ef9b0-106">Les transformations sont exécutées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-106">Transforms are executed using the <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> method.</span></span> <span data-ttu-id="ef9b0-107">Les procédures suivantes illustrent des tâches XSLT communes et comparent le code des classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-107">The following procedures show common XSLT tasks, and compare the code using the <xref:System.Xml.Xsl.XslTransform> class versus the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
-### Pour transformer un fichier et l'envoyer à un URI  
+### <a name="to-transform-a-file-and-output-to-a-uri"></a><span data-ttu-id="ef9b0-108">Pour transformer un fichier et l'envoyer à un URI</span><span class="sxs-lookup"><span data-stu-id="ef9b0-108">To transform a file and output to a URI</span></span>  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.  
+-   <span data-ttu-id="ef9b0-109">Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-109">Code using the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#9](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#9)]
      [!code-vb[XML_Migration#9](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#9)]  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
+-   <span data-ttu-id="ef9b0-110">Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-110">Code using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#10](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#10)]
      [!code-vb[XML_Migration#10](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#10)]  
   
-### Pour compiler une feuille de style et utiliser un programme de résolution avec des informations d'identification par défaut  
+### <a name="to-compile-a-style-sheet-and-use-a-resolver-with-default-credentials"></a><span data-ttu-id="ef9b0-111">Pour compiler une feuille de style et utiliser un programme de résolution avec des informations d'identification par défaut</span><span class="sxs-lookup"><span data-stu-id="ef9b0-111">To compile a style sheet and use a resolver with default credentials</span></span>  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.  
+-   <span data-ttu-id="ef9b0-112">Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-112">Code using the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#11](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#11)]
      [!code-vb[XML_Migration#11](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#11)]  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
+-   <span data-ttu-id="ef9b0-113">Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-113">Code using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#12](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#12)]
      [!code-vb[XML_Migration#12](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#12)]  
   
-### Pour utiliser un paramètre XSLT  
+### <a name="to-use-an-xslt-parameter"></a><span data-ttu-id="ef9b0-114">Pour utiliser un paramètre XSLT</span><span class="sxs-lookup"><span data-stu-id="ef9b0-114">To use an XSLT parameter</span></span>  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.  
+-   <span data-ttu-id="ef9b0-115">Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-115">Code using the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#13](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#13)]
      [!code-vb[XML_Migration#13](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#13)]  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
+-   <span data-ttu-id="ef9b0-116">Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-116">Code using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#14](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#14)]
      [!code-vb[XML_Migration#14](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#14)]  
   
-### Pour activer les scripts XSLT  
+### <a name="to-enable-xslt-scripting"></a><span data-ttu-id="ef9b0-117">Pour activer les scripts XSLT</span><span class="sxs-lookup"><span data-stu-id="ef9b0-117">To enable XSLT scripting</span></span>  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.  
+-   <span data-ttu-id="ef9b0-118">Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-118">Code using the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#15](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#15)]
      [!code-vb[XML_Migration#15](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#15)]  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
+-   <span data-ttu-id="ef9b0-119">Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-119">Code using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#16](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#16)]
      [!code-vb[XML_Migration#16](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#16)]  
   
-### Pour charger les résultats dans un objet DOM  
+### <a name="to-load-the-results-into-a-dom-object"></a><span data-ttu-id="ef9b0-120">Pour charger les résultats dans un objet DOM</span><span class="sxs-lookup"><span data-stu-id="ef9b0-120">To load the results into a DOM object</span></span>  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.  
+-   <span data-ttu-id="ef9b0-121">Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-121">Code using the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#19](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#19)]
      [!code-vb[XML_Migration#19](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#19)]  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
+-   <span data-ttu-id="ef9b0-122">Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-122">Code using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
     > [!NOTE]
-    >  La classe <xref:System.Xml.Xsl.XslCompiledTransform> n'a pas de méthode permettant de retourner les résultats de la transformation XSLT sous la forme d'un objet <xref:System.Xml.XmlReader>.  Cependant, vous pouvez envoyer la sortie vers un fichier XML et charger le fichier XML dans un autre objet.  
+    >  <span data-ttu-id="ef9b0-123">La classe <xref:System.Xml.Xsl.XslCompiledTransform> n'a pas de méthode permettant de retourner les résultats de la transformation XSLT sous la forme d'un objet <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-123">The <xref:System.Xml.Xsl.XslCompiledTransform> class does not have a method that returns the XSLT transformation results as an <xref:System.Xml.XmlReader> object.</span></span> <span data-ttu-id="ef9b0-124">Cependant, vous pouvez envoyer la sortie vers un fichier XML et charger le fichier XML dans un autre objet.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-124">However, you can output to an XML file and load the XML file into another object.</span></span>  
   
      [!code-csharp[XML_Migration#20](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#20)]
      [!code-vb[XML_Migration#20](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#20)]  
   
-### Pour envoyer les résultats vers un autre magasin de données  
+### <a name="to-stream-the-results-into-another-data-store"></a><span data-ttu-id="ef9b0-125">Pour envoyer les résultats vers un autre magasin de données</span><span class="sxs-lookup"><span data-stu-id="ef9b0-125">To stream the results into another data store</span></span>  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.  
+-   <span data-ttu-id="ef9b0-126">Code utilisant la classe <xref:System.Xml.Xsl.XslTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-126">Code using the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#17](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#17)]
      [!code-vb[XML_Migration#17](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#17)]  
   
--   Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
+-   <span data-ttu-id="ef9b0-127">Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="ef9b0-127">Code using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span>  
   
      [!code-csharp[XML_Migration#18](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#18)]
      [!code-vb[XML_Migration#18](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#18)]  
   
-## Voir aussi  
- [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)   
- [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+## <a name="see-also"></a><span data-ttu-id="ef9b0-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ef9b0-128">See Also</span></span>  
+ [<span data-ttu-id="ef9b0-129">Migration à partir de la classe XslTransform</span><span class="sxs-lookup"><span data-stu-id="ef9b0-129">Migrating From the XslTransform Class</span></span>](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
+ [<span data-ttu-id="ef9b0-130">À l’aide de la classe XslCompiledTransform</span><span class="sxs-lookup"><span data-stu-id="ef9b0-130">Using the XslCompiledTransform Class</span></span>](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)

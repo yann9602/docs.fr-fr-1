@@ -1,35 +1,38 @@
 ---
-title: "ManualResetEvent and ManualResetEventSlim | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "threading [.NET Framework], ManualResetEvent class"
-  - "ManualResetEvent class, about ManualResetEvent class"
+title: ManualResetEvent et ManualResetEventSlim
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- threading [.NET Framework], ManualResetEvent class
+- ManualResetEvent class, about ManualResetEvent class
 ms.assetid: 465fdcf9-ba24-4d8d-a43f-d983b7cb0cc6
-caps.latest.revision: 17
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: f663dd17b063f77e2f9ce6bd4bbd0f8859ba4116
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# ManualResetEvent and ManualResetEventSlim
-La classe <xref:System.Threading.ManualResetEvent?displayProperty=fullName> représente un événement du handle d'attente local qui doit être réinitialisé manuellement une fois signalé.  Cette classe représente un cas spécifique de la classe de base correspondante \(<xref:System.Threading.EventWaitHandle?displayProperty=fullName>\).  Consultez la documentation conceptuelle [EventWaitHandle](../../../docs/standard/threading/eventwaithandle.md) pour plus d'informations sur l'utilisation et les fonctions des événements à réinitialisation manuelle.  
+# <a name="manualresetevent-and-manualreseteventslim"></a><span data-ttu-id="505c2-102">ManualResetEvent et ManualResetEventSlim</span><span class="sxs-lookup"><span data-stu-id="505c2-102">ManualResetEvent and ManualResetEventSlim</span></span>
+<span data-ttu-id="505c2-103">La <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> classe représente un événement de handle d’attente local qui doit être réinitialisé manuellement une fois qu’il est signalé.</span><span class="sxs-lookup"><span data-stu-id="505c2-103">The <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> class represents a local wait handle event that must be reset manually after it is signaled.</span></span> <span data-ttu-id="505c2-104">Cette classe représente un cas spécial de sa classe de base, <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="505c2-104">This class represents a special case of its base class, <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType>.</span></span> <span data-ttu-id="505c2-105">Consultez la documentation conceptuelle de [EventWaitHandle](../../../docs/standard/threading/eventwaithandle.md) relative à l’utilisation et aux fonctionnalités des événements de réinitialisation manuelle.</span><span class="sxs-lookup"><span data-stu-id="505c2-105">See the [EventWaitHandle](../../../docs/standard/threading/eventwaithandle.md) conceptual documentation for the use and features of manual reset events.</span></span>  
   
- Un objet <xref:System.Threading.ManualResetEvent> reste signalé jusqu'à ce que sa méthode <xref:System.Threading.EventWaitHandle.Reset%2A?displayProperty=fullName> soit appelée.  Vous pouvez libérer n'importe quel nombre de threads en attente \(ou de threads en attente une fois l'événement signalé\) pendant que l'état de l'objet est Signalé.  <xref:System.Threading.ManualResetEvent> correspond à un appel de Win32 `CreateEvent`, en donnant la valeur `true` à l'argument `bManualReset`.  
+ <span data-ttu-id="505c2-106">A <xref:System.Threading.ManualResetEvent> objet reste signalé jusqu'à ce que son <xref:System.Threading.EventWaitHandle.Reset%2A?displayProperty=nameWithType> méthode est appelée.</span><span class="sxs-lookup"><span data-stu-id="505c2-106">A <xref:System.Threading.ManualResetEvent> object remains signaled until its <xref:System.Threading.EventWaitHandle.Reset%2A?displayProperty=nameWithType> method is called.</span></span> <span data-ttu-id="505c2-107">Lorsque l’état de l’objet est signalé, un nombre indéterminé de threads en attente, ou de threads attendant l’événement une fois celui-ci signalé, peuvent être libérés.</span><span class="sxs-lookup"><span data-stu-id="505c2-107">Any number of waiting threads, or threads that wait on the event after it has been signaled, can be released while the object's state is signaled.</span></span> <span data-ttu-id="505c2-108"><xref:System.Threading.ManualResetEvent>correspond à un Win32 `CreateEvent` appelez, en spécifiant `true` pour la `bManualReset` argument.</span><span class="sxs-lookup"><span data-stu-id="505c2-108"><xref:System.Threading.ManualResetEvent> corresponds to a Win32 `CreateEvent` call, specifying `true` for the `bManualReset` argument.</span></span>  
   
- Avec le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] vous pouvez utiliser la classe <xref:System.Threading.ManualResetEventSlim?displayProperty=fullName> pour de meilleures performances lorsque les temps d'attente sont supposés être très courts et, lorsque l'événement ne dépasse pas une limite de processus.  <xref:System.Threading.ManualResetEventSlim> utilise une rotation intensive pendant une courte période pendant qu'il attend l'événement soit signalé.  Lorsque les temps d'attente sont courts, la rotation peut être beaucoup moins coûteuse que l'utilisation de handles d'attente.  Toutefois, si l'événement n'est pas signalé avant un temps donné, <xref:System.Threading.ManualResetEventSlim> a recours à une attente de descripteur d'événement normale.  
+ <span data-ttu-id="505c2-109">Dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouvez utiliser la <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> classe pour de meilleures performances lorsque les temps d’attente sont supposés être très courts et lorsque l’événement ne dépasse pas une limite de processus.</span><span class="sxs-lookup"><span data-stu-id="505c2-109">In the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], you can use the <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> class for better performance when wait times are expected to be very short, and when the event does not cross a process boundary.</span></span> <span data-ttu-id="505c2-110"><xref:System.Threading.ManualResetEventSlim>utilise la rotation intensive pendant une courte période en attendant que l’événement soit signalé.</span><span class="sxs-lookup"><span data-stu-id="505c2-110"><xref:System.Threading.ManualResetEventSlim> uses busy spinning for a short time while it waits for the event to become signaled.</span></span> <span data-ttu-id="505c2-111">Lorsque les temps d’attente sont courts, la rotation peut s’avérer beaucoup moins coûteuse que les descripteurs d’attente.</span><span class="sxs-lookup"><span data-stu-id="505c2-111">When wait times are short, spinning can be much less expensive than waiting by using wait handles.</span></span> <span data-ttu-id="505c2-112">Toutefois, si l’événement n’est pas signalé dans un certain temps, <xref:System.Threading.ManualResetEventSlim> a recours à une attente de handle d’événement régulier.</span><span class="sxs-lookup"><span data-stu-id="505c2-112">However, if the event does not become signaled within a certain period of time, <xref:System.Threading.ManualResetEventSlim> resorts to a regular event handle wait.</span></span>  
   
-## Voir aussi  
- [Threading](../../../docs/standard/threading/index.md)   
- [Threading Objects and Features](../../../docs/standard/threading/threading-objects-and-features.md)   
- [Wait Handles](../Topic/Wait%20Handles.md)   
- [AutoResetEvent](../../../docs/standard/threading/autoresetevent.md)   
- [SpinWait](../../../docs/standard/threading/spinwait.md)   
- [Semaphore and SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)
+## <a name="see-also"></a><span data-ttu-id="505c2-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="505c2-113">See Also</span></span>  
+ [<span data-ttu-id="505c2-114">Thread</span><span class="sxs-lookup"><span data-stu-id="505c2-114">Threading</span></span>](../../../docs/standard/threading/index.md)  
+ [<span data-ttu-id="505c2-115">Fonctionnalités et objets de threading</span><span class="sxs-lookup"><span data-stu-id="505c2-115">Threading Objects and Features</span></span>](../../../docs/standard/threading/threading-objects-and-features.md)  
+ [<span data-ttu-id="505c2-116">Descripteurs d’attente</span><span class="sxs-lookup"><span data-stu-id="505c2-116">Wait Handles</span></span>](http://msdn.microsoft.com/library/48d10b6f-5fd7-407c-86ab-0179aef72489)  
+ [<span data-ttu-id="505c2-117">AutoResetEvent</span><span class="sxs-lookup"><span data-stu-id="505c2-117">AutoResetEvent</span></span>](../../../docs/standard/threading/autoresetevent.md)  
+ [<span data-ttu-id="505c2-118">SpinWait</span><span class="sxs-lookup"><span data-stu-id="505c2-118">SpinWait</span></span>](../../../docs/standard/threading/spinwait.md)  
+ [<span data-ttu-id="505c2-119">Semaphore et SemaphoreSlim</span><span class="sxs-lookup"><span data-stu-id="505c2-119">Semaphore and SemaphoreSlim</span></span>](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)

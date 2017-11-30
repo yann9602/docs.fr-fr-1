@@ -1,63 +1,64 @@
 ---
-title: "Comment&#160;: aligner un contr&#244;le sur les bords des formulaires au moment du design | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles personnalisés (Windows Forms), ancrer (à l'aide du concepteur)"
-  - "Dock (propriété), aligner les contrôles (à l'aide du concepteur)"
+title: "Comment : aligner un contrôle sur les bords des formulaires au moment du design"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- custom controls [Windows Forms], docking using designer
+- Dock property [Windows Forms], aligning controls (using designer)
 ms.assetid: 51f08998-5e3b-4330-be58-a4edd0eb60f4
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 86134902a6645d2c9bf7bcef2cf93bf543d8c9bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: aligner un contr&#244;le sur les bords des formulaires au moment du design
-Vous pouvez faire en sorte que votre contrôle s'aligne sur le bord de vos formulaires en définissant la <xref:System.Windows.Forms.Control.Dock%2A>.  Cette propriété désigne l'emplacement de votre contrôle dans le formulaire.  La propriété <xref:System.Windows.Forms.Control.Dock%2A> peut avoir les valeurs suivantes :  
+# <a name="how-to-align-a-control-to-the-edges-of-forms-at-design-time"></a><span data-ttu-id="4f976-102">Comment : aligner un contrôle sur les bords des formulaires au moment du design</span><span class="sxs-lookup"><span data-stu-id="4f976-102">How to: Align a Control to the Edges of Forms at Design Time</span></span>
+<span data-ttu-id="4f976-103">Vous pouvez aligner un contrôle sur le bord de vos formulaires en définissant le <xref:System.Windows.Forms.Control.Dock%2A>.</span><span class="sxs-lookup"><span data-stu-id="4f976-103">You can make your control align to the edge of your forms by setting the <xref:System.Windows.Forms.Control.Dock%2A>.</span></span> <span data-ttu-id="4f976-104">Cette propriété désigne l’emplacement de votre contrôle dans le formulaire.</span><span class="sxs-lookup"><span data-stu-id="4f976-104">This property designates where your control resides in the form.</span></span> <span data-ttu-id="4f976-105">La propriété <xref:System.Windows.Forms.Control.Dock%2A> peut avoir les valeurs suivantes :</span><span class="sxs-lookup"><span data-stu-id="4f976-105">The <xref:System.Windows.Forms.Control.Dock%2A> property can be set to the following values:</span></span>  
   
-|Paramètre|Effet sur votre contrôle|  
-|---------------|------------------------------|  
-|<xref:System.Windows.Forms.DockStyle>|S'ancre en bas du formulaire.|  
-|<xref:System.Windows.Forms.DockStyle>|Remplit tout l'espace restant dans le formulaire.|  
-|<xref:System.Windows.Forms.DockStyle>|S'ancre au côté gauche du formulaire.|  
-|<xref:System.Windows.Forms.DockStyle>|Ne s'ancre nulle part et apparaît à l'emplacement spécifié par son emplacement \(<xref:System.Windows.Forms.Control.Location%2A>\).|  
-|<xref:System.Windows.Forms.DockStyle>|S'ancre au côté droit du formulaire.|  
-|<xref:System.Windows.Forms.DockStyle>|S'ancre en haut du formulaire.|  
+|<span data-ttu-id="4f976-106">Paramètre</span><span class="sxs-lookup"><span data-stu-id="4f976-106">Setting</span></span>|<span data-ttu-id="4f976-107">Effet sur le contrôle</span><span class="sxs-lookup"><span data-stu-id="4f976-107">Effect on your control</span></span>|  
+|-------------|----------------------------|  
+|<xref:System.Windows.Forms.DockStyle.Bottom>|<span data-ttu-id="4f976-108">S'ancre en bas du formulaire.</span><span class="sxs-lookup"><span data-stu-id="4f976-108">Docks to the bottom of the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Fill>|<span data-ttu-id="4f976-109">Remplit tout l'espace restant dans le formulaire.</span><span class="sxs-lookup"><span data-stu-id="4f976-109">Fills all remaining space in the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Left>|<span data-ttu-id="4f976-110">S'ancre sur le côté gauche du formulaire.</span><span class="sxs-lookup"><span data-stu-id="4f976-110">Docks to the left side of the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.None>|<span data-ttu-id="4f976-111">Ne s’ancre nulle part et apparaît à l’emplacement spécifié par son <xref:System.Windows.Forms.Control.Location%2A>.</span><span class="sxs-lookup"><span data-stu-id="4f976-111">Does not dock anywhere, and it appears at the location specified by its <xref:System.Windows.Forms.Control.Location%2A>.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Right>|<span data-ttu-id="4f976-112">S'ancre sur le côté droit du formulaire.</span><span class="sxs-lookup"><span data-stu-id="4f976-112">Docks to the right side of the form.</span></span>|  
+|<xref:System.Windows.Forms.DockStyle.Top>|<span data-ttu-id="4f976-113">S'ancre en haut du formulaire.</span><span class="sxs-lookup"><span data-stu-id="4f976-113">Docks to the top of the form.</span></span>|  
   
- Ces valeurs peuvent également être définies dans le code.  Pour plus d'informations, consultez [Comment : aligner un contrôle sur les bords des formulaires](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms.md).  
+ <span data-ttu-id="4f976-114">Ces valeurs peuvent également être définies dans le code.</span><span class="sxs-lookup"><span data-stu-id="4f976-114">These values can also be set in code.</span></span> <span data-ttu-id="4f976-115">Pour plus d’informations, consultez [Comment : aligner un contrôle sur les bords des formulaires](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms.md).</span><span class="sxs-lookup"><span data-stu-id="4f976-115">For more information, see [How to: Align a Control to the Edges of Forms](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms.md).</span></span>  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  <span data-ttu-id="4f976-116">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="4f976-116">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="4f976-117">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="4f976-117">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="4f976-118">Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span><span class="sxs-lookup"><span data-stu-id="4f976-118">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### Pour définir la propriété Dock de votre contrôle au moment du design  
+### <a name="to-set-the-dock-property-for-your-control-at-design-time"></a><span data-ttu-id="4f976-119">Pour définir la propriété Dock de votre contrôle au moment du design</span><span class="sxs-lookup"><span data-stu-id="4f976-119">To set the Dock property for your control at design time</span></span>  
   
-1.  Dans le Concepteur Windows Forms, sélectionnez votre contrôle.  
+1.  <span data-ttu-id="4f976-120">Dans le Concepteur Windows Forms, sélectionnez votre contrôle.</span><span class="sxs-lookup"><span data-stu-id="4f976-120">In the Windows Forms Designer, select your control.</span></span>  
   
-2.  Dans la fenêtre **Propriétés**, cliquez sur la zone déroulante en regard de la propriété <xref:System.Windows.Forms.Control.Dock%2A>.  
+2.  <span data-ttu-id="4f976-121">Dans le **propriétés** fenêtre, cliquez sur la liste déroulante située en regard du <xref:System.Windows.Forms.Control.Dock%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="4f976-121">In the **Properties** window, click the drop-down box next to the <xref:System.Windows.Forms.Control.Dock%2A> property.</span></span>  
   
-     Une interface graphique représentant les six paramètres <xref:System.Windows.Forms.Control.Dock%2A> possibles s'affiche.  
+     <span data-ttu-id="4f976-122">Une interface graphique représentant les six possible <xref:System.Windows.Forms.Control.Dock%2A> paramètres s’affiche.</span><span class="sxs-lookup"><span data-stu-id="4f976-122">A graphical interface representing the six possible <xref:System.Windows.Forms.Control.Dock%2A> settings is displayed.</span></span>  
   
-3.  Choisissez le paramètre approprié.  
+3.  <span data-ttu-id="4f976-123">Choisissez le paramètre approprié.</span><span class="sxs-lookup"><span data-stu-id="4f976-123">Choose the appropriate setting.</span></span>  
   
-4.  Votre contrôle s'ancrera désormais de la manière spécifiée par ce paramètre.  
+4.  <span data-ttu-id="4f976-124">Votre contrôle s’ancre maintenant de la manière spécifiée par le paramètre.</span><span class="sxs-lookup"><span data-stu-id="4f976-124">Your control will now dock in the manner specified by the setting.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=fullName>   
- [Comment : aligner un contrôle sur les bords des formulaires](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms.md)   
- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide des lignes d'alignement \(SnapLines\)](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)   
- [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)   
- [Comment : ancrer et arrimer des contrôles enfants dans un contrôle TableLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)   
- [Comment : ancrer des contrôles enfants dans un contrôle FlowLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)   
- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)   
- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)   
- [Développement de contrôles Windows Forms au moment du design](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)
+## <a name="see-also"></a><span data-ttu-id="4f976-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4f976-125">See Also</span></span>  
+ <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="4f976-126">Guide pratique pour aligner un contrôle sur les bords des formulaires</span><span class="sxs-lookup"><span data-stu-id="4f976-126">How to: Align a Control to the Edges of Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms.md)  
+ [<span data-ttu-id="4f976-127">Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide des lignes d’alignement</span><span class="sxs-lookup"><span data-stu-id="4f976-127">Walkthrough: Arranging Controls on Windows Forms Using Snaplines</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ [<span data-ttu-id="4f976-128">Guide pratique pour ancrer des contrôles sur des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4f976-128">How to: Anchor Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)  
+ [<span data-ttu-id="4f976-129">Guide pratique pour ancrer et arrimer des contrôles enfants dans un contrôle TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="4f976-129">How to: Anchor and Dock Child Controls in a TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [<span data-ttu-id="4f976-130">Guide pratique pour ancrer des contrôles enfants dans un contrôle FlowLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="4f976-130">How to: Anchor and Dock Child Controls in a FlowLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
+ [<span data-ttu-id="4f976-131">Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide d’un TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="4f976-131">Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
+ [<span data-ttu-id="4f976-132">Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide d’un FlowLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="4f976-132">Walkthrough: Arranging Controls on Windows Forms Using a FlowLayoutPanel</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
+ [<span data-ttu-id="4f976-133">Développement de contrôles Windows Forms au moment du design</span><span class="sxs-lookup"><span data-stu-id="4f976-133">Developing Windows Forms Controls at Design Time</span></span>](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)

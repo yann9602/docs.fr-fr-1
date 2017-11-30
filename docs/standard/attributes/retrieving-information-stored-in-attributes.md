@@ -1,48 +1,55 @@
 ---
-title: "R&#233;cup&#233;ration des informations stock&#233;es dans les attributs | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "attributs (.NET Framework), récupérer"
-  - "instances multiples d'un attribut"
-  - "récupérer des attributs"
+title: "Récupération des informations stockées dans les attributs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- retrieving attributes
+- multiple attribute instances
+- attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 9d3fd9a5a49d65b37d2cdb5107e9c516a6df5847
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# R&#233;cup&#233;ration des informations stock&#233;es dans les attributs
-La récupération d'un attribut personnalisé est un processus simple.  Déclarez d'abord une instance de l'attribut que vous souhaitez récupérer.  Utilisez ensuite la méthode <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=fullName> pour initialiser le nouvel attribut sur la valeur de celui que vous souhaitez récupérer.  Une fois le nouvel attribut initialisé, vous utilisez simplement ses propriétés pour obtenir les valeurs.  
+# <a name="retrieving-information-stored-in-attributes"></a><span data-ttu-id="ef23e-102">Récupération des informations stockées dans les attributs</span><span class="sxs-lookup"><span data-stu-id="ef23e-102">Retrieving Information Stored in Attributes</span></span>
+<span data-ttu-id="ef23e-103">La récupération d’un attribut personnalisé est un processus simple.</span><span class="sxs-lookup"><span data-stu-id="ef23e-103">Retrieving a custom attribute is a simple process.</span></span> <span data-ttu-id="ef23e-104">Tout d’abord, déclarez une instance de l’attribut que vous souhaitez récupérer.</span><span class="sxs-lookup"><span data-stu-id="ef23e-104">First, declare an instance of the attribute you want to retrieve.</span></span> <span data-ttu-id="ef23e-105">Ensuite, utilisez la <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> méthode pour initialiser le nouvel attribut à la valeur de l’attribut que vous souhaitez récupérer.</span><span class="sxs-lookup"><span data-stu-id="ef23e-105">Then, use the <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> method to initialize the new attribute to the value of the attribute you want to retrieve.</span></span> <span data-ttu-id="ef23e-106">Une fois que le nouvel attribut est initialisé, vous utilisez simplement ses propriétés pour obtenir les valeurs.</span><span class="sxs-lookup"><span data-stu-id="ef23e-106">Once the new attribute is initialized, you simply use its properties to get the values.</span></span>  
   
 > [!IMPORTANT]
->  Cette rubrique décrit comment récupérer des attributs pour le code chargé dans le contexte d'exécution.  Pour récupérer des attributs pour le code chargé dans le contexte de réflexion uniquement, vous devez utiliser la classe <xref:System.Reflection.CustomAttributeData>, comme indiqué dans [Comment : charger des assemblys dans le contexte de réflexion uniquement](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+>  <span data-ttu-id="ef23e-107">Cette rubrique décrit comment récupérer des attributs pour le code chargé dans le contexte d’exécution.</span><span class="sxs-lookup"><span data-stu-id="ef23e-107">This topic describes how to retrieve attributes for code loaded into the execution context.</span></span> <span data-ttu-id="ef23e-108">Pour récupérer des attributs pour le code chargé dans le contexte de réflexion uniquement, vous devez utiliser le <xref:System.Reflection.CustomAttributeData> de classe, comme indiqué dans [Comment : charger des assemblys dans le contexte de Reflection](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).</span><span class="sxs-lookup"><span data-stu-id="ef23e-108">To retrieve attributes for code loaded into the reflection-only context, you must use the <xref:System.Reflection.CustomAttributeData> class, as shown in [How to: Load Assemblies into the Reflection-Only Context](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).</span></span>  
   
- Cette section décrit les méthodes de récupération des attributs suivantes :  
+ <span data-ttu-id="ef23e-109">Cette section décrit les méthodes suivantes pour récupérer les attributs :</span><span class="sxs-lookup"><span data-stu-id="ef23e-109">This section describes the following ways to retrieve attributes:</span></span>  
   
--   [Récupération d'une seule instance d'un attribut](#cpconretrievingsingleinstanceofattribute)  
+-   [<span data-ttu-id="ef23e-110">La récupération d’une seule instance d’un attribut</span><span class="sxs-lookup"><span data-stu-id="ef23e-110">Retrieving a single instance of an attribute</span></span>](#cpconretrievingsingleinstanceofattribute)  
   
--   [Récupération d'instances multiples d'un attribut appliqué à la même portée](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
+-   [<span data-ttu-id="ef23e-111">Récupération d’instances multiples d’un attribut appliqué à la même étendue</span><span class="sxs-lookup"><span data-stu-id="ef23e-111">Retrieving multiple instances of an attribute applied to the same scope</span></span>](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
   
--   [Récupération d'instances multiples d'un attribut appliqué à différentes portées](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
+-   [<span data-ttu-id="ef23e-112">Récupération d’instances multiples d’un attribut appliqué à différentes portées</span><span class="sxs-lookup"><span data-stu-id="ef23e-112">Retrieving multiple instances of an attribute applied to different scopes</span></span>](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
   
 <a name="cpconretrievingsingleinstanceofattribute"></a>   
-## Récupération d'une seule instance d'un attribut  
- Dans l'exemple suivant, le `DeveloperAttribute` \(décrit dans la section précédente\) est appliqué à la classe `MainApp` au niveau de la classe.  La méthode `GetAttribute` utilise **GetCustomAttribute** pour récupérer les valeurs enregistrées dans `DeveloperAttribute` au niveau de la classe avant de les afficher dans la console.  
+## <a name="retrieving-a-single-instance-of-an-attribute"></a><span data-ttu-id="ef23e-113">La récupération d’une seule Instance d’un attribut</span><span class="sxs-lookup"><span data-stu-id="ef23e-113">Retrieving a Single Instance of an Attribute</span></span>  
+ <span data-ttu-id="ef23e-114">Dans l’exemple suivant, la `DeveloperAttribute` (décrite dans la section précédente) est appliqué à la `MainApp` classe sur le niveau de la classe.</span><span class="sxs-lookup"><span data-stu-id="ef23e-114">In the following example, the `DeveloperAttribute` (described in the previous section) is applied to the `MainApp` class on the class level.</span></span> <span data-ttu-id="ef23e-115">Le `GetAttribute` utilise **GetCustomAttribute** pour récupérer les valeurs stockées dans `DeveloperAttribute` sur le niveau de la classe avant de les afficher dans la console.</span><span class="sxs-lookup"><span data-stu-id="ef23e-115">The `GetAttribute` method uses **GetCustomAttribute** to retrieve the values stored in `DeveloperAttribute` on the class level before displaying them to the console.</span></span>  
   
  [!code-cpp[Conceptual.Attributes.Usage#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#18)]
  [!code-csharp[Conceptual.Attributes.Usage#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#18)]
  [!code-vb[Conceptual.Attributes.Usage#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#18)]  
   
- Ce programme affiche le texte suivant lorsqu'il est exécuté.  
+ <span data-ttu-id="ef23e-116">Ce programme affiche le texte suivant lors de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="ef23e-116">This program displays the following text when executed.</span></span>  
   
 ```  
 The Name Attribute is: Joan Smith.  
@@ -50,42 +57,42 @@ The Level Attribute is: 42.
 The Reviewed Attribute is: True.  
 ```  
   
- Si l'attribut est introuvable, la méthode **GetCustomAttribute** initialise `MyAttribute` à une valeur null.  Cet exemple recherche une telle instance dans `MyAttribute` et informe l'utilisateur qu'aucun attribut n'a été trouvé.  Si le `DeveloperAttribute` est introuvable dans la portée de la classe, le message suivant s'affiche dans la console.  
+ <span data-ttu-id="ef23e-117">Si l’attribut est introuvable, la **GetCustomAttribute** méthode initialise `MyAttribute` à une valeur null.</span><span class="sxs-lookup"><span data-stu-id="ef23e-117">If the attribute is not found, the **GetCustomAttribute** method initializes `MyAttribute` to a null value.</span></span> <span data-ttu-id="ef23e-118">Cet exemple montre comment `MyAttribute` une telle instance et avertit l’utilisateur si aucun attribut n’est trouvé.</span><span class="sxs-lookup"><span data-stu-id="ef23e-118">This example checks `MyAttribute` for such an instance and notifies the user if no attribute is found.</span></span> <span data-ttu-id="ef23e-119">Si la `DeveloperAttribute` est introuvable dans la portée de classe, le message suivant s’affiche dans la console.</span><span class="sxs-lookup"><span data-stu-id="ef23e-119">If the `DeveloperAttribute` is not found in the class scope, the following message displays to the console.</span></span>  
   
 ```  
 The attribute was not found.   
 ```  
   
- Cet exemple suppose que la définition de l'attribut figure dans l'espace de noms en cours.  N'oubliez pas d'importer l'espace de noms dans lequel la définition de l'attribut réside si ce n'est pas l'espace de noms en cours.  
+ <span data-ttu-id="ef23e-120">Cet exemple suppose que la définition d’attribut est dans l’espace de noms actuel.</span><span class="sxs-lookup"><span data-stu-id="ef23e-120">This example assumes that the attribute definition is in the current namespace.</span></span> <span data-ttu-id="ef23e-121">N’oubliez pas d’importer l’espace de noms dans lequel se trouve la définition d’attribut s’il n’est pas dans l’espace de noms actuel.</span><span class="sxs-lookup"><span data-stu-id="ef23e-121">Remember to import the namespace in which the attribute definition resides if it is not in the current namespace.</span></span>  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtosamescope"></a>   
-## Récupération d'instances multiples d'un attribut appliqué à la même portée  
- Dans l'exemple précédent, la classe à inspecter et l'attribut spécifique à rechercher sont passés à <xref:System.Attribute.GetCustomAttribute%2A>.  Ce code fonctionne correctement uniquement si une instance d'un attribut est appliquée au niveau de la classe.  Cependant, si plusieurs instances d'un attribut sont appliquées au même niveau de classe, la méthode **GetCustomAttribute** ne récupère pas toutes les informations.  Dans les cas où plusieurs instances du même attribut seraient appliquées à la même portée, vous pouvez utiliser <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=fullName> pour placer toutes les instances d'un attribut dans un tableau.  Par exemple, si deux instances de `DeveloperAttribute` sont appliquées au niveau de la même classe, la méthode `GetAttribute` peut être modifiée pour afficher les informations trouvées dans les deux attributs.  N'oubliez pas que pour appliquer plusieurs attributs au même niveau, **true** doit être affecté à la propriété **AllowMultiple** dans l'<xref:System.AttributeUsageAttribute>.  
+## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-the-same-scope"></a><span data-ttu-id="ef23e-122">Récupération d’Instances multiples d’un attribut appliqué à la même étendue</span><span class="sxs-lookup"><span data-stu-id="ef23e-122">Retrieving Multiple Instances of an Attribute Applied to the Same Scope</span></span>  
+ <span data-ttu-id="ef23e-123">Dans l’exemple précédent, la classe à inspecter et l’attribut spécifique à rechercher sont passés à <xref:System.Attribute.GetCustomAttribute%2A>.</span><span class="sxs-lookup"><span data-stu-id="ef23e-123">In the previous example, the class to inspect and the specific attribute to find are passed to <xref:System.Attribute.GetCustomAttribute%2A>.</span></span> <span data-ttu-id="ef23e-124">Ce code fonctionne correctement uniquement si une instance d’un attribut est appliquée sur le niveau de la classe.</span><span class="sxs-lookup"><span data-stu-id="ef23e-124">That code works well if only one instance of an attribute is applied on the class level.</span></span> <span data-ttu-id="ef23e-125">Toutefois, si plusieurs instances d’un attribut sont appliquées au niveau de la même classe, la **GetCustomAttribute** méthode ne récupère pas toutes les informations.</span><span class="sxs-lookup"><span data-stu-id="ef23e-125">However, if multiple instances of an attribute are applied on the same class level, the **GetCustomAttribute** method does not retrieve all the information.</span></span> <span data-ttu-id="ef23e-126">Dans les cas où plusieurs instances du même attribut sont appliquées à la même portée, vous pouvez utiliser <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType> à placer toutes les instances d’un attribut dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="ef23e-126">In cases where multiple instances of the same attribute are applied to the same scope, you can use <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType> to place all instances of an attribute into an array.</span></span> <span data-ttu-id="ef23e-127">Par exemple, si deux instances de `DeveloperAttribute` sont appliquées au niveau de la même classe, la `GetAttribute` méthode peut être modifiée pour afficher les informations trouvées dans les deux attributs.</span><span class="sxs-lookup"><span data-stu-id="ef23e-127">For example, if two instances of `DeveloperAttribute` are applied on the class level of the same class, the `GetAttribute` method can be modified to display the information found in both attributes.</span></span> <span data-ttu-id="ef23e-128">N’oubliez pas d’appliquer plusieurs attributs au même niveau, l’attribut doit être défini avec la **AllowMultiple** propriété **true** dans le <xref:System.AttributeUsageAttribute>.</span><span class="sxs-lookup"><span data-stu-id="ef23e-128">Remember, to apply multiple attributes on the same level, the attribute must be defined with the **AllowMultiple** property set to **true** in the <xref:System.AttributeUsageAttribute>.</span></span>  
   
- L'exemple de code suivant montre comment utiliser la méthode **GetCustomAttributes** pour créer un tableau référençant toutes les instances de `DeveloperAttribute` dans les classes données.  Les valeurs de tous les attributs sont alors affichées dans la console.  
+ <span data-ttu-id="ef23e-129">L’exemple de code suivant montre comment utiliser le **GetCustomAttributes** méthode pour créer un tableau qui fait référence à toutes les instances de `DeveloperAttribute` dans les classes données.</span><span class="sxs-lookup"><span data-stu-id="ef23e-129">The following code example shows how to use the **GetCustomAttributes** method to create an array that references all instances of `DeveloperAttribute` in any given class.</span></span> <span data-ttu-id="ef23e-130">Les valeurs de tous les attributs sont ensuite affichés sur la console.</span><span class="sxs-lookup"><span data-stu-id="ef23e-130">The values of all attributes are then displayed to the console.</span></span>  
   
  [!code-cpp[Conceptual.Attributes.Usage#19](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#19)]
  [!code-csharp[Conceptual.Attributes.Usage#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#19)]
  [!code-vb[Conceptual.Attributes.Usage#19](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#19)]  
   
- Si aucun attribut n'a été trouvé, ce code alerte l'utilisateur.  Sinon, les informations contenues dans les deux instances de `DeveloperAttribute` sont affichées.  
+ <span data-ttu-id="ef23e-131">Si aucun attribut n’est trouvé, ce code avertit l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="ef23e-131">If no attributes are found, this code alerts the user.</span></span> <span data-ttu-id="ef23e-132">Dans le cas contraire, les informations contenues dans les deux instances de `DeveloperAttribute` s’affiche.</span><span class="sxs-lookup"><span data-stu-id="ef23e-132">Otherwise, the information contained in both instances of `DeveloperAttribute` is displayed.</span></span>  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes"></a>   
-## Récupération d'instances multiples d'un attribut appliqué à différentes portées  
- Les méthodes <xref:System.Attribute.GetCustomAttributes%2A> et <xref:System.Attribute.GetCustomAttribute%2A> n'effectuent pas de recherches dans une classe entière et retournent toutes les instances d'un attribut dans cette classe.  Elles recherchent plutôt uniquement une méthode ou un membre spécifié à un moment donné.  Si une classe a le même attribut appliqué à chaque membre et si vous souhaitez récupérer les valeurs dans tous les attributs appliqués à ces membres, vous devez fournir chaque méthode ou membre individuellement à **GetCustomAttributes** et **GetCustomAttribute**.  
+## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-different-scopes"></a><span data-ttu-id="ef23e-133">Récupération d’Instances multiples d’un attribut appliqué à différentes portées</span><span class="sxs-lookup"><span data-stu-id="ef23e-133">Retrieving Multiple Instances of an Attribute Applied to Different Scopes</span></span>  
+ <span data-ttu-id="ef23e-134">Le <xref:System.Attribute.GetCustomAttributes%2A> et <xref:System.Attribute.GetCustomAttribute%2A> méthodes ne pas rechercher une classe entière et retournent toutes les instances d’un attribut dans cette classe.</span><span class="sxs-lookup"><span data-stu-id="ef23e-134">The <xref:System.Attribute.GetCustomAttributes%2A> and <xref:System.Attribute.GetCustomAttribute%2A> methods do not search an entire class and return all instances of an attribute in that class.</span></span> <span data-ttu-id="ef23e-135">Elles recherchent plutôt qu’une seule méthode spécifiée ou membre à la fois.</span><span class="sxs-lookup"><span data-stu-id="ef23e-135">Rather, they search only one specified method or member at a time.</span></span> <span data-ttu-id="ef23e-136">Si vous avez une classe avec le même attribut appliqué à chaque membre et que vous souhaitez récupérer les valeurs de tous les attributs appliqués à ces membres, vous devez fournir chaque méthode ou membre individuellement à **GetCustomAttributes** et  **GetCustomAttribute**.</span><span class="sxs-lookup"><span data-stu-id="ef23e-136">If you have a class with the same attribute applied to every member and you want to retrieve the values in all the attributes applied to those members, you must supply every method or member individually to **GetCustomAttributes** and **GetCustomAttribute**.</span></span>  
   
- L'exemple de code suivant prend une classe comme paramètre et recherche le `DeveloperAttribute` \(précédemment défini\) au niveau de la classe et dans chaque méthode individuelle de cette classe.  
+ <span data-ttu-id="ef23e-137">L’exemple de code suivant prend une classe en tant que paramètre et recherche le `DeveloperAttribute` (définie précédemment) sur le niveau de la classe et sur chaque méthode individuelle de cette classe.</span><span class="sxs-lookup"><span data-stu-id="ef23e-137">The following code example takes a class as a parameter and searches for the `DeveloperAttribute` (defined previously) on the class level and on every individual method of that class.</span></span>  
   
  [!code-cpp[Conceptual.Attributes.Usage#20](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#20)]
  [!code-csharp[Conceptual.Attributes.Usage#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#20)]
  [!code-vb[Conceptual.Attributes.Usage#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#20)]  
   
- Si aucune instance du `DeveloperAttribute` n'est trouvée au niveau de la méthode ou de la classe, la méthode `GetAttribute` en informe l'utilisateur et affiche le nom de la méthode ou classe qui ne contient pas l'attribut.  Si un attribut est trouvé, les champs `Name`, `Level` et `Reviewed` sont affichés dans la console.  
+ <span data-ttu-id="ef23e-138">Si aucune instance de la `DeveloperAttribute` se trouvent sur le niveau méthode ou classe, le `GetAttribute` avertit l’utilisateur qui a trouvé aucun attribut de méthode et affiche le nom de la méthode ou classe qui ne contient pas l’attribut.</span><span class="sxs-lookup"><span data-stu-id="ef23e-138">If no instances of the `DeveloperAttribute` are found on the method level or class level, the `GetAttribute` method notifies the user that no attributes were found and displays the name of the method or class that does not contain the attribute.</span></span> <span data-ttu-id="ef23e-139">Si un attribut est trouvé, le `Name`, `Level`, et `Reviewed` champs sont affichés dans la console.</span><span class="sxs-lookup"><span data-stu-id="ef23e-139">If an attribute is found, the `Name`, `Level`, and `Reviewed` fields are displayed to the console.</span></span>  
   
- Vous pouvez utiliser les membres de la classe <xref:System.Type> pour obtenir chacune des méthodes et chacun des membres de la classe passée.  Cet exemple interroge d'abord l'objet **Type** pour obtenir les informations d'attribut au niveau de la classe.  Il utilise ensuite <xref:System.Type.GetMethods%2A?displayProperty=fullName> pour placer des instances de toutes les méthodes dans un tableau d'objets <xref:System.Reflection.MemberInfo?displayProperty=fullName> pour récupérer des informations d'attribut pour le niveau de méthode.  Vous pouvez également utiliser la méthode <xref:System.Type.GetProperties%2A?displayProperty=fullName> pour vérifier les attributs au niveau de la propriété ou <xref:System.Type.GetConstructors%2A?displayProperty=fullName> pour vérifier les attributs au niveau du constructeur.  
+ <span data-ttu-id="ef23e-140">Vous pouvez utiliser les membres de la <xref:System.Type> classe pour obtenir les méthodes individuelles et les membres de la classe passée.</span><span class="sxs-lookup"><span data-stu-id="ef23e-140">You can use the members of the <xref:System.Type> class to get the individual methods and members in the passed class.</span></span> <span data-ttu-id="ef23e-141">Cet exemple interroge d’abord le **Type** objet pour obtenir des informations d’attribut de niveau de la classe.</span><span class="sxs-lookup"><span data-stu-id="ef23e-141">This example first queries the **Type** object to get attribute information for the class level.</span></span> <span data-ttu-id="ef23e-142">Ensuite, il utilise <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> pour placer des instances de toutes les méthodes dans un tableau de <xref:System.Reflection.MemberInfo?displayProperty=nameWithType> objets pour récupérer les informations d’attribut de niveau de la méthode.</span><span class="sxs-lookup"><span data-stu-id="ef23e-142">Next, it uses <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> to place instances of all methods into an array of <xref:System.Reflection.MemberInfo?displayProperty=nameWithType> objects to retrieve attribute information for the method level.</span></span> <span data-ttu-id="ef23e-143">Vous pouvez également utiliser le <xref:System.Type.GetProperties%2A?displayProperty=nameWithType> méthode permettant de vérifier les attributs de niveau de la propriété ou <xref:System.Type.GetConstructors%2A?displayProperty=nameWithType> pour vérifier les attributs au niveau du constructeur.</span><span class="sxs-lookup"><span data-stu-id="ef23e-143">You can also use the <xref:System.Type.GetProperties%2A?displayProperty=nameWithType> method to check for attributes on the property level or <xref:System.Type.GetConstructors%2A?displayProperty=nameWithType> to check for attributes on the constructor level.</span></span>  
   
-## Voir aussi  
- <xref:System.Type?displayProperty=fullName>   
- <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=fullName>   
- <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=fullName>   
- [Attributs](../../../docs/standard/attributes/index.md)
+## <a name="see-also"></a><span data-ttu-id="ef23e-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ef23e-144">See Also</span></span>  
+ <xref:System.Type?displayProperty=nameWithType>  
+ <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>  
+ <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="ef23e-145">Attributs</span><span class="sxs-lookup"><span data-stu-id="ef23e-145">Attributes</span></span>](../../../docs/standard/attributes/index.md)

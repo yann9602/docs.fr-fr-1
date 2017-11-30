@@ -1,168 +1,179 @@
 ---
-title: "Impl&#233;mentation d&#39;une m&#233;thode Dispose | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/07/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Dispose (méthode)"
-  - "le garbage collection, la méthode Dispose"
+title: "Implémentation d’une méthode Dispose"
+ms.custom: 
+ms.date: 04/07/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Dispose method
+- garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-caps.latest.revision: 44
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 44
+caps.latest.revision: "44"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: b5a304c48a953b172cbcc3aa1c717a660298d36a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Impl&#233;mentation d&#39;une m&#233;thode Dispose
-Vous implémentez une méthode <xref:System.IDisposable.Dispose%2A> pour libérer les ressources non managées utilisées par votre application. Le récupérateur de mémoire du .NET Framework n’alloue ni ne libère de la mémoire non managée.  
+# <a name="implementing-a-dispose-method"></a><span data-ttu-id="5b2a1-102">Implémentation d’une méthode Dispose</span><span class="sxs-lookup"><span data-stu-id="5b2a1-102">Implementing a Dispose method</span></span>
+
+<span data-ttu-id="5b2a1-103">Vous implémentez un <xref:System.IDisposable.Dispose%2A> méthode pour libérer les ressources non managées utilisées par votre application.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-103">You implement a <xref:System.IDisposable.Dispose%2A> method to release unmanaged resources used by your application.</span></span> <span data-ttu-id="5b2a1-104">Le Garbage collector .NET n’alloue pas de mémoire non managée, et n’en libère pas non plus.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-104">The .NET garbage collector does not allocate or release unmanaged memory.</span></span>  
   
- Le modèle pour supprimer un objet, appelé un [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md), impose un ordre sur la durée de vie d’un objet. Le modèle de suppression est utilisé uniquement pour les objets qui accèdent à des ressources non managées, telles que les handles de fichiers et de canaux, les handles d’attente, les handles d’attente ou les pointeurs vers les blocs de mémoire non managée. Cela est dû au fait que le récupérateur de mémoire est très efficace pour récupérer les objets managés inutilisés, mais ne peut pas récupérer les objets non managés.  
+<span data-ttu-id="5b2a1-105">Le modèle pour supprimer un objet, appelé un [modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md), impose un ordre sur la durée de vie d’un objet.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-105">The pattern for disposing an object, referred to as a [dispose pattern](../../../docs/standard/design-guidelines/dispose-pattern.md), imposes order on the lifetime of an object.</span></span> <span data-ttu-id="5b2a1-106">Le modèle de suppression est utilisé uniquement pour les objets qui accèdent à des ressources non managées, telles que les handles de fichiers et de canaux, les handles d’attente, les handles d’attente ou les pointeurs vers les blocs de mémoire non managée.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-106">The dispose pattern is used only for objects that access unmanaged resources, such as file and pipe handles, registry handles, wait handles, or pointers to blocks of unmanaged memory.</span></span> <span data-ttu-id="5b2a1-107">Cela est dû au fait que le récupérateur de mémoire est très efficace pour récupérer les objets managés inutilisés, mais ne peut pas récupérer les objets non managés.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-107">This is because the garbage collector is very efficient at reclaiming unused managed objects, but it is unable to reclaim unmanaged objects.</span></span>  
   
- Le modèle de suppression comporte deux variantes :  
+<span data-ttu-id="5b2a1-108">Le modèle de suppression comporte deux variantes :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-108">The dispose pattern has two variations:</span></span>  
   
--   Vous encapsulez chaque ressource non managée utilisée par un type dans un handle sécurisé (autrement dit, dans une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=fullName>). Dans ce cas, vous implémentez l’interface <xref:System.IDisposable> et une méthode `Dispose(Boolean)` supplémentaire. Il s’agit de la variante recommandée. Elle ne requiert pas le remplacement de la méthode <xref:System.Object.Finalize%2A?displayProperty=fullName>.  
+* <span data-ttu-id="5b2a1-109">Vous encapsulez chaque ressource non managée utilisée par un type dans un handle sécurisé (autrement dit, dans une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>).</span><span class="sxs-lookup"><span data-stu-id="5b2a1-109">You wrap each unmanaged resource that a type uses in a safe handle (that is, in a class derived from <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>).</span></span> <span data-ttu-id="5b2a1-110">Dans ce cas, vous implémentez l'interface <xref:System.IDisposable> et une méthode `Dispose(Boolean)` supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-110">In this case, you implement the <xref:System.IDisposable> interface and an additional `Dispose(Boolean)` method.</span></span> <span data-ttu-id="5b2a1-111">Il s'agit de la variante recommandée. Elle ne requiert pas le remplacement de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-111">This is the recommended variation and doesn't require overriding the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method.</span></span>  
   
-    > [!NOTE]
-    >  L’espace de noms <xref:Microsoft.Win32.SafeHandles?displayProperty=fullName> fournit un ensemble de classes dérivées de <xref:System.Runtime.InteropServices.SafeHandle>, qui sont répertoriées dans la section [Utilisation des handles sécurisés](#SafeHandles). Si vous ne parvenez pas à trouver une classe qui convient pour libérer votre ressource non managée, vous pouvez implémenter votre propre sous-classe de <xref:System.Runtime.InteropServices.SafeHandle>.  
+  > [!NOTE]
+  > <span data-ttu-id="5b2a1-112">Le <xref:Microsoft.Win32.SafeHandles?displayProperty=nameWithType> espace de noms fournit un ensemble de classes dérivées de <xref:System.Runtime.InteropServices.SafeHandle>, qui sont répertoriées dans le [à l’aide de handles sécurisés](#SafeHandles) section.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-112">The <xref:Microsoft.Win32.SafeHandles?displayProperty=nameWithType> namespace provides a set of classes derived from <xref:System.Runtime.InteropServices.SafeHandle>, which are listed in the [Using safe handles](#SafeHandles) section.</span></span> <span data-ttu-id="5b2a1-113">Si vous ne parvenez pas à trouver une classe qui convient pour libérer votre ressource non managée, vous pouvez implémenter votre propre sous-classe de <xref:System.Runtime.InteropServices.SafeHandle>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-113">If you can't find a class that is suitable for releasing your unmanaged resource, you can implement your own subclass of <xref:System.Runtime.InteropServices.SafeHandle>.</span></span>  
   
--   Vous implémentez la <xref:System.IDisposable> interface et une autre `Dispose(Boolean)` (méthode), puis vous remplacez le <xref:System.Object.Finalize%2A?displayProperty=fullName> méthode. Vous devez remplacer <xref:System.Object.Finalize%2A> pour garantir que les ressources non managées sont supprimées si votre implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> n’est pas appelée par un consommateur de votre type. Si vous utilisez la technique recommandée présentée dans le point précédent, la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=fullName> effectue cette opération en votre nom.  
+* <span data-ttu-id="5b2a1-114">Vous implémentez l'interface <xref:System.IDisposable> et une méthode `Dispose(Boolean)` supplémentaire, puis vous remplacez la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-114">You implement the <xref:System.IDisposable> interface and an additional `Dispose(Boolean)` method, and you also override the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="5b2a1-115">Vous devez remplacer <xref:System.Object.Finalize%2A> pour vous assurer que les ressources non managées sont supprimées si votre implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> n'est pas appelée par un consommateur de votre type.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-115">You must override <xref:System.Object.Finalize%2A> to ensure that unmanaged resources are disposed of if your <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation is not called by a consumer of your type.</span></span> <span data-ttu-id="5b2a1-116">Si vous utilisez la technique recommandée présentée dans le point précédent, la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> effectue cette opération pour vous.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-116">If you use the recommended technique discussed in the previous bullet, the <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> class does this on your behalf.</span></span>  
   
- Pour garantir que les ressources sont toujours correctement nettoyées, une méthode <xref:System.IDisposable.Dispose%2A> doit pouvoir être appelée à plusieurs reprises sans lever d’exception.  
+<span data-ttu-id="5b2a1-117">Pour que les ressources soient toujours assurées d'être correctement nettoyées, une méthode <xref:System.IDisposable.Dispose%2A> doit pouvoir être appelée à plusieurs reprises sans lever d'exception.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-117">To help ensure that resources are always cleaned up appropriately, a <xref:System.IDisposable.Dispose%2A> method should be callable multiple times without throwing an exception.</span></span>  
+  
+<span data-ttu-id="5b2a1-118">L'exemple de code indiqué pour la méthode <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> affiche la façon dont un garbage collection agressif peut entraîner l'exécution d'un finaliseur pendant qu'un membre de l'objet demandé se trouve en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-118">The code example provided for the <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> method shows how aggressive garbage collection can cause a finalizer to run while a member of the reclaimed object is still executing.</span></span> <span data-ttu-id="5b2a1-119">Il est conseillé d'appeler la méthode <xref:System.GC.KeepAlive%2A> à la fin d'une méthode <xref:System.IDisposable.Dispose%2A> longue.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-119">It is a good idea to call the <xref:System.GC.KeepAlive%2A> method at the end of a lengthy <xref:System.IDisposable.Dispose%2A> method.</span></span>  
+  
+<a name="Dispose2"></a>
+## <a name="dispose-and-disposeboolean"></a><span data-ttu-id="5b2a1-120">Dispose() et Dispose(Boolean)</span><span class="sxs-lookup"><span data-stu-id="5b2a1-120">Dispose() and Dispose(Boolean)</span></span>  
+
+<span data-ttu-id="5b2a1-121">L'interface <xref:System.IDisposable> requiert l'implémentation d'une méthode unique sans paramètre, <xref:System.IDisposable.Dispose%2A>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-121">The <xref:System.IDisposable> interface requires the implementation of a single parameterless method, <xref:System.IDisposable.Dispose%2A>.</span></span> <span data-ttu-id="5b2a1-122">Toutefois, le modèle de suppression requiert deux méthodes `Dispose` à implémenter :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-122">However, the dispose pattern requires two `Dispose` methods to be implemented:</span></span>  
+  
+* <span data-ttu-id="5b2a1-123">Implémentation non virtuelle publique de (`NonInheritable` en Visual Basic) <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> qui n'a aucun paramètre.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-123">A public non-virtual (`NonInheritable` in Visual Basic) <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementation that has no parameters.</span></span>  
+  
+* <span data-ttu-id="5b2a1-124">Méthode virtuelle (`Overridable` en Visual Basic) `Dispose` dont la signature est :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-124">A protected virtual (`Overridable` in Visual Basic) `Dispose` method whose signature is:</span></span>  
+  
+  [!code-csharp[Conceptual.Disposable#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/dispose1.cs#8)]
+  [!code-vb[Conceptual.Disposable#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/dispose1.vb#8)]  
+  
+### <a name="the-dispose-overload"></a><span data-ttu-id="5b2a1-125">Surcharge de Dispose()</span><span class="sxs-lookup"><span data-stu-id="5b2a1-125">The Dispose() overload</span></span>
+
+<span data-ttu-id="5b2a1-126">Comme la méthode `NonInheritable` sans paramètre non virtuelle (`Dispose` en Visual Basic) publique est appelée par un consommateur de type, son objectif est de libérer les ressources non managées et d'indiquer que le finaliseur, s'il en existe un, ne doit pas s'exécuter.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-126">Because the public, non-virtual (`NonInheritable` in Visual Basic), parameterless `Dispose` method is called by a consumer of the type, its purpose is to free unmanaged resources and to indicate that the finalizer, if one is present, doesn't have to run.</span></span> <span data-ttu-id="5b2a1-127">De ce fait, son implémentation standard est la suivante :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-127">Because of this, it has a standard implementation:</span></span>  
+  
+[!code-csharp[Conceptual.Disposable#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/dispose1.cs#7)]
+[!code-vb[Conceptual.Disposable#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/dispose1.vb#7)]  
+  
+<span data-ttu-id="5b2a1-128">La méthode `Dispose` effectue le nettoyage de tous les objets, le récupérateur de mémoire n'a plus donc besoin d'appeler la remplacement de <xref:System.Object.Finalize%2A?displayProperty=nameWithType> des objets.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-128">The `Dispose` method performs all object cleanup, so the garbage collector no longer needs to call the objects' <xref:System.Object.Finalize%2A?displayProperty=nameWithType> override.</span></span> <span data-ttu-id="5b2a1-129">Par conséquent, l'appel à la méthode <xref:System.GC.SuppressFinalize%2A> empêche le récupérateur de mémoire d'exécuter le finaliseur.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-129">Therefore, the call to the <xref:System.GC.SuppressFinalize%2A> method prevents the garbage collector from running the finalizer.</span></span> <span data-ttu-id="5b2a1-130">Si le type n'a pas de finaliseur, l'appel à <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> n'a aucun effet.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-130">If the type has no finalizer, the call to <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> has no effect.</span></span> <span data-ttu-id="5b2a1-131">Notez que le travail réel de libération des ressources non managées est effectué par la deuxième surcharge de la méthode `Dispose`.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-131">Note that the actual work of releasing unmanaged resources is performed by the second overload of the `Dispose` method.</span></span>  
+  
+### <a name="the-disposeboolean-overload"></a><span data-ttu-id="5b2a1-132">Surcharge de Dispose(Boolean)</span><span class="sxs-lookup"><span data-stu-id="5b2a1-132">The Dispose(Boolean) overload</span></span>
+
+<span data-ttu-id="5b2a1-133">Dans la seconde surcharge, le *disposing* paramètre est un <xref:System.Boolean> qui indique si l’appel de méthode provient d’un <xref:System.IDisposable.Dispose%2A> (méthode) (sa valeur est `true`) ou d’un finaliseur (sa valeur est `false`).</span><span class="sxs-lookup"><span data-stu-id="5b2a1-133">In the second overload, the *disposing* parameter is a <xref:System.Boolean> that indicates whether the method call comes from a <xref:System.IDisposable.Dispose%2A> method (its value is `true`) or from a finalizer (its value is `false`).</span></span>  
+  
+<span data-ttu-id="5b2a1-134">Le corps de la méthode se compose de deux blocs de code :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-134">The body of the method consists of two blocks of code:</span></span>  
+  
+* <span data-ttu-id="5b2a1-135">Un bloc qui libère les ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-135">A block that frees unmanaged resources.</span></span> <span data-ttu-id="5b2a1-136">Ce bloc s'exécute indépendamment de la valeur du paramètre `disposing`.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-136">This block executes regardless of the value of the `disposing` parameter.</span></span>  
+  
+* <span data-ttu-id="5b2a1-137">Un bloc conditionnel qui libère les ressources managées.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-137">A conditional block that frees managed resources.</span></span> <span data-ttu-id="5b2a1-138">Ce bloc s'exécute si la valeur de `disposing` est `true`.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-138">This block executes if the value of `disposing` is `true`.</span></span> <span data-ttu-id="5b2a1-139">Les ressources managées qu'il libère peuvent inclure :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-139">The managed resources that it frees can include:</span></span>  
+  
+  <span data-ttu-id="5b2a1-140">**Objets managés qui implémentent <xref:System.IDisposable>.**</span><span class="sxs-lookup"><span data-stu-id="5b2a1-140">**Managed objects that implement <xref:System.IDisposable>.**</span></span> <span data-ttu-id="5b2a1-141">Le bloc conditionnel peut être utilisé pour appeler leur implémentation de <xref:System.IDisposable.Dispose%2A>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-141">The conditional block can be used to call their <xref:System.IDisposable.Dispose%2A> implementation.</span></span> <span data-ttu-id="5b2a1-142">Si vous avez utilisé un handle sécurisé pour encapsuler votre ressource non managée, vous devez appeler l'implémentation de <xref:System.Runtime.InteropServices.SafeHandle.Dispose%28System.Boolean%29?displayProperty=nameWithType> ici.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-142">If you have used a safe handle to wrap your unmanaged resource, you should call the <xref:System.Runtime.InteropServices.SafeHandle.Dispose%28System.Boolean%29?displayProperty=nameWithType> implementation here.</span></span>  
+  
+  <span data-ttu-id="5b2a1-143">**Objets managés qui consomment de grandes quantités de mémoire ou consomment des ressources rares.**</span><span class="sxs-lookup"><span data-stu-id="5b2a1-143">**Managed objects that consume large amounts of memory or consume scarce resources.**</span></span> <span data-ttu-id="5b2a1-144">La libération de ces objets explicitement dans la méthode `Dispose` les libère plus rapidement que s'ils ont été récupérés de façon non déterministe par le récupérateur de mémoire.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-144">Freeing these objects explicitly in the `Dispose` method releases them faster than if they were reclaimed non-deterministically by the garbage collector.</span></span>  
+  
+<span data-ttu-id="5b2a1-145">Si l’appel de la méthode vient d’un finaliseur (autrement dit, si *disposing* a la valeur `false`), seul le code qui libère les ressources non managées s’exécute.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-145">If the method call comes from a finalizer (that is, if *disposing* is `false`), only the code that frees unmanaged resources executes.</span></span> <span data-ttu-id="5b2a1-146">Étant donné que l'ordre dans lequel le récupérateur de mémoire détruit les objets managés pendant la finalisation n'est pas défini, l'appel de cette surcharge `Dispose` avec la valeur `false` empêche le finaliseur d'essayer de libérer les ressources managées qui peuvent avoir déjà été récupérées.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-146">Because the order in which the garbage collector destroys managed objects during finalization is not defined, calling this `Dispose` overload with a value of `false` prevents the finalizer from trying to release managed resources that may have already been reclaimed.</span></span>  
+  
+## <a name="implementing-the-dispose-pattern-for-a-base-class"></a><span data-ttu-id="5b2a1-147">Implémentation du modèle de suppression d'une classe de base</span><span class="sxs-lookup"><span data-stu-id="5b2a1-147">Implementing the dispose pattern for a base class</span></span>
+
+<span data-ttu-id="5b2a1-148">Si vous implémentez le modèle de suppression d'une classe de base, vous devez spécifier ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-148">If you implement the dispose pattern for a base class, you must provide the following:</span></span>  
   
 > [!IMPORTANT]
->  Si vous êtes un programmeur C++, n’implémentez pas la <xref:System.IDisposable.Dispose%2A> méthode. Au lieu de cela, suivez les instructions de la section « Destructeurs et finaliseurs » de [Comment : définir et consommer des Classes et des Structs (C + c++ / CLI)](../Topic/How%20to:%20Define%20and%20Consume%20Classes%20and%20Structs%20\(C++-CLI\).md). À compter de .NET Framework 2.0, le compilateur C++ prend en charge la suppression déterminable de ressources et n’autorise pas l’implémentation directe de la <xref:System.IDisposable.Dispose%2A> méthode.  
+> <span data-ttu-id="5b2a1-149">Vous devez implémenter ce modèle pour toutes les classes de base qui implémentent <xref:System.IDisposable.Dispose> et qui ne sont pas `sealed` (`NotInheritable` en Visual Basic).</span><span class="sxs-lookup"><span data-stu-id="5b2a1-149">You should implement this pattern for all base classes that implement <xref:System.IDisposable.Dispose> and are not `sealed` (`NotInheritable` in Visual Basic).</span></span>  
   
- L’exemple de code fourni pour la méthode <xref:System.GC.KeepAlive%2A?displayProperty=fullName> affiche la façon dont un garbage collection agressif peut entraîner l’exécution d’un finaliseur pendant qu’un membre de l’objet demandé est toujours en cours d’exécution. Il est judicieux d’appeler le <xref:System.GC.KeepAlive%2A> méthode à la fin d’une longue <xref:System.IDisposable.Dispose%2A> méthode.  
+* <span data-ttu-id="5b2a1-150">Une implémentation de <xref:System.IDisposable.Dispose%2A> qui appelle la méthode `Dispose(Boolean)`.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-150">A <xref:System.IDisposable.Dispose%2A> implementation that calls the `Dispose(Boolean)` method.</span></span>  
   
-<a name="Dispose2"></a>   
-## <a name="dispose-and-disposeboolean"></a>Dispose() et Dispose(Boolean)  
- L’interface <xref:System.IDisposable> exige l’implémentation d’une méthode unique sans paramètre, <xref:System.IDisposable.Dispose%2A>. Toutefois, le modèle de suppression requiert deux méthodes `Dispose` à implémenter :  
+* <span data-ttu-id="5b2a1-151">Une méthode `Dispose(Boolean)` qui effectue le travail réel de libération des ressources.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-151">A `Dispose(Boolean)` method that performs the actual work of releasing resources.</span></span>  
   
--   Implémentation non virtuelle publique de <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> (`NonInheritable` en Visual Basic) qui n’a aucun paramètre.  
+* <span data-ttu-id="5b2a1-152">Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-152">Either a class derived from <xref:System.Runtime.InteropServices.SafeHandle> that wraps your unmanaged resource (recommended), or an override to the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="5b2a1-153">La classe <xref:System.Runtime.InteropServices.SafeHandle> fournit un finaliseur qui vous permet de ne pas avoir à en coder un.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-153">The <xref:System.Runtime.InteropServices.SafeHandle> class provides a finalizer that frees you from having to code one.</span></span>  
   
--   Méthode virtuelle (`Overridable` en Visual Basic) `Dispose` dont la signature est :  
+<span data-ttu-id="5b2a1-154">Voici le modèle général d'implémentation du modèle de suppression d'une classe de base qui utilise un handle sécurisé.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-154">Here's the general pattern for implementing the dispose pattern for a base class that uses a safe handle.</span></span>  
   
-     [!code-csharp[Conceptual.Disposable#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/dispose1.cs#8)]
-     [!code-vb[Conceptual.Disposable#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/dispose1.vb#8)]  
-  
-### <a name="the-dispose-overload"></a>Surcharge de Dispose()  
- Comme la méthode `NonInheritable` sans paramètre non virtuelle (`Dispose` en Visual Basic) publique est appelée par un consommateur de type, son objectif est de libérer les ressources non managées et d'indiquer que le finaliseur, s'il en existe un, ne doit pas s'exécuter. De ce fait, son implémentation standard est la suivante :  
-  
- [!code-csharp[Conceptual.Disposable#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/dispose1.cs#7)]
- [!code-vb[Conceptual.Disposable#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/dispose1.vb#7)]  
-  
- La méthode `Dispose` effectue le nettoyage de tous les objets. Le Garbage collector n’a plus donc besoin d’appeler la substitution <xref:System.Object.Finalize%2A?displayProperty=fullName>des objets. Par conséquent, l’appel à la <xref:System.GC.SuppressFinalize%2A> méthode empêche le garbage collector de l’exécution du finaliseur. Si le type n’a aucun finaliseur, l’appel à <xref:System.GC.SuppressFinalize%2A?displayProperty=fullName> n’a aucun effet. Notez que le travail réel de libération des ressources non managées est effectué par la deuxième surcharge de la méthode `Dispose`.  
-  
-### <a name="the-disposeboolean-overload"></a>Surcharge de Dispose(Boolean)  
- Dans la seconde surcharge, le `disposing` le paramètre est un <xref:System.Boolean> qui indique si l’appel de méthode provient d’un <xref:System.IDisposable.Dispose%2A> (méthode) (sa valeur est `true`) ou d’un finaliseur (sa valeur est `false`).  
-  
- Le corps de la méthode se compose de deux blocs de code :  
-  
--   Un bloc qui libère les ressources non managées. Ce bloc s'exécute indépendamment de la valeur du paramètre `disposing`.  
-  
--   Un bloc conditionnel qui libère les ressources managées. Ce bloc s'exécute si la valeur de `disposing` est `true`. Les ressources managées qu'il libère peuvent inclure :  
-  
-     **Objets managés qui implémentent <xref:System.IDisposable>.**  
-     Le bloc conditionnel peut être utilisé pour appeler leur implémentation de <xref:System.IDisposable.Dispose%2A>. Si vous avez utilisé un handle sécurisé pour encapsuler votre ressource non managée, vous devez appeler le <xref:System.Runtime.InteropServices.SafeHandle.Dispose%28System.Boolean%29?displayProperty=fullName> implémentation ici.  
-  
-     **Objets managés qui consomment de grandes quantités de mémoire ou consomment des ressources rares.**  
-     La libération de ces objets explicitement dans la méthode `Dispose` les libère plus rapidement que s'ils ont été récupérés de façon non déterministe par le récupérateur de mémoire.  
-  
- Si l'appel de la méthode vient d'un finaliseur (autrement dit, si `disposing` est `false`), seul le code qui libère les ressources non managées s'exécute. Étant donné que l'ordre dans lequel le récupérateur de mémoire détruit les objets managés pendant la finalisation n'est pas défini, l'appel de cette surcharge `Dispose` avec la valeur `false` empêche le finaliseur d'essayer de libérer les ressources managées qui peuvent avoir déjà été récupérées.  
-  
-## <a name="implementing-the-dispose-pattern-for-a-base-class"></a>Implémentation du modèle de suppression d'une classe de base  
- Si vous implémentez le modèle de suppression d’une classe de base, vous devez spécifier ce qui suit :  
-  
-> [!IMPORTANT]
->  Vous devez implémenter ce modèle pour toutes les classes de base qui implémentent <xref:System.IDisposable> et ne sont pas `sealed` (`NotInheritable` en Visual Basic).  
-  
--   Une implémentation de <xref:System.IDisposable.Dispose%2A> qui appelle la méthode `Dispose(Boolean)`.  
-  
--   Une méthode `Dispose(Boolean)` qui effectue le travail réel de libération des ressources.  
-  
--   Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=fullName>. La classe <xref:System.Runtime.InteropServices.SafeHandle>fournit un finaliseur qui vous permet de ne pas avoir à en coder un.  
-  
- Voici le modèle général d’implémentation du modèle de suppression d’une classe de base qui utilise un handle sécurisé.  
-  
- [!code-csharp[System.IDisposable#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/base1.cs#3)]
- [!code-vb[System.IDisposable#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/base1.vb#3)]  
+[!code-csharp[System.IDisposable#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/base1.cs#3)]
+[!code-vb[System.IDisposable#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/base1.vb#3)]  
   
 > [!NOTE]
->  L’exemple précédent utilise un objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour illustrer le modèle, mais il est possible d’utiliser à la place n’importe quel objet dérivé de <xref:System.Runtime.InteropServices.SafeHandle>. Notez que l’exemple n’instancie pas correctement son objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>.  
+> <span data-ttu-id="5b2a1-155">L'exemple précédent utilise un objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour illustrer le modèle, mais il est possible d'utiliser à la place n'importe quel objet dérivé de <xref:System.Runtime.InteropServices.SafeHandle>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-155">The previous example uses a <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> object to illustrate the pattern; any object derived from <xref:System.Runtime.InteropServices.SafeHandle> could be used instead.</span></span> <span data-ttu-id="5b2a1-156">Notez que l'exemple n'instancie pas correctement son objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-156">Note that the example does not properly instantiate its <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> object.</span></span>  
   
- Voici le modèle général d’implémentation du modèle de suppression d’une classe de base qui remplace <xref:System.Object.Finalize%2A?displayProperty=fullName>.  
+<span data-ttu-id="5b2a1-157">Voici le modèle général d'implémentation du modèle de suppression d'une classe de base qui remplace <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-157">Here's the general pattern for implementing the dispose pattern for a base class that overrides <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.</span></span>  
   
- [!code-csharp[System.IDisposable#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/base2.cs#5)]
- [!code-vb[System.IDisposable#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/base2.vb#5)]  
-  
-> [!NOTE]
->  En c#, vous substituez <xref:System.Object.Finalize%2A?displayProperty=fullName> en définissant un [destructeur](../Topic/Destructors%20\(C%23%20Programming%20Guide\).md).  
-  
-## <a name="implementing-the-dispose-pattern-for-a-derived-class"></a>Implémentation du modèle de suppression d’une classe dérivée  
- Une classe dérivée d’une classe qui implémente l’interface <xref:System.IDisposable> ne doit pas implémenter <xref:System.IDisposable>, car l’implémentation de la classe de base de <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> est héritée par ses classes dérivées. À la place, pour implémenter le modèle de suppression d’une classe dérivée, vous fournissez ce qui suit :  
-  
--   Une méthode `protected``Dispose(Boolean)` qui substitue la méthode de la classe de base et effectue le travail réel de libération des ressources de la classe dérivée. Cette méthode doit également appeler la méthode `Dispose(Boolean)` de la classe de base et lui passer une valeur `true` pour l'argument `disposing`.  
-  
--   Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=fullName>. La classe <xref:System.Runtime.InteropServices.SafeHandle>fournit un finaliseur qui vous permet de ne pas avoir à en coder un. Si vous fournissez un finaliseur, il doit appeler la surcharge `Dispose(Boolean)` avec un argument égal à `disposing` `false`.  
-  
- Voici le modèle général d’implémentation du modèle de suppression d’une classe dérivée qui utilise un handle sécurisé :  
-  
- [!code-csharp[System.IDisposable#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/derived1.cs#4)]
- [!code-vb[System.IDisposable#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/derived1.vb#4)]  
+[!code-csharp[System.IDisposable#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/base2.cs#5)]
+[!code-vb[System.IDisposable#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/base2.vb#5)]  
   
 > [!NOTE]
->  L’exemple précédent utilise un objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour illustrer le modèle, mais il est possible d’utiliser à la place n’importe quel objet dérivé de <xref:System.Runtime.InteropServices.SafeHandle>. Notez que l’exemple n’instancie pas correctement son objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>.  
+> <span data-ttu-id="5b2a1-158">En c#, vous substituez <xref:System.Object.Finalize%2A?displayProperty=nameWithType> en définissant un [destructeur](~/docs/csharp/programming-guide/classes-and-structs/destructors.md).</span><span class="sxs-lookup"><span data-stu-id="5b2a1-158">In C#, you override <xref:System.Object.Finalize%2A?displayProperty=nameWithType> by defining a [destructor](~/docs/csharp/programming-guide/classes-and-structs/destructors.md).</span></span>  
   
- Voici le modèle général d’implémentation du modèle de suppression d’une classe dérivée qui remplace <xref:System.Object.Finalize%2A?displayProperty=fullName> :  
+## <a name="implementing-the-dispose-pattern-for-a-derived-class"></a><span data-ttu-id="5b2a1-159">Implémentation du modèle de suppression d’une classe dérivée</span><span class="sxs-lookup"><span data-stu-id="5b2a1-159">Implementing the dispose pattern for a derived class</span></span>
+
+<span data-ttu-id="5b2a1-160">Une classe dérivée d'une classe qui implémente l'interface <xref:System.IDisposable> ne doit pas implémenter <xref:System.IDisposable>, car l'implémentation de la classe de base de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> est héritée par les classes dérivées.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-160">A class derived from a class that implements the <xref:System.IDisposable> interface shouldn't implement <xref:System.IDisposable>, because the base class implementation of <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> is inherited by its derived classes.</span></span> <span data-ttu-id="5b2a1-161">À la place, pour implémenter le modèle de suppression d’une classe dérivée, vous fournissez ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-161">Instead, to implement the dispose pattern for a derived class, you provide the following:</span></span>  
   
- [!code-csharp[System.IDisposable#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/derived2.cs#6)]
- [!code-vb[System.IDisposable#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/derived2.vb#6)]  
+* <span data-ttu-id="5b2a1-162">Une méthode `protected``Dispose(Boolean)` qui substitue la méthode de la classe de base et effectue le travail réel de libération des ressources de la classe dérivée.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-162">A `protected``Dispose(Boolean)` method that overrides the base class method and performs the actual work of releasing the resources of the derived class.</span></span> <span data-ttu-id="5b2a1-163">Cette méthode doit également appeler la méthode `Dispose(Boolean)` de la classe de base et lui passer une valeur `true` pour l’argument *disposing*.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-163">This method should also call the `Dispose(Boolean)` method of the base class and pass it a value of `true` for the *disposing* argument.</span></span>  
+  
+* <span data-ttu-id="5b2a1-164">Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-164">Either a class derived from <xref:System.Runtime.InteropServices.SafeHandle> that wraps your unmanaged resource (recommended), or an override to the <xref:System.Object.Finalize%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="5b2a1-165">La classe <xref:System.Runtime.InteropServices.SafeHandle> fournit un finaliseur qui vous permet de ne pas avoir à en coder un.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-165">The <xref:System.Runtime.InteropServices.SafeHandle> class provides a finalizer that frees you from having to code one.</span></span> <span data-ttu-id="5b2a1-166">Si vous fournissez un finaliseur, il doit appeler la surcharge `Dispose(Boolean)` avec un argument *disposing* égal à `false`.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-166">If you do provide a finalizer, it should call the `Dispose(Boolean)` overload with a *disposing* argument of `false`.</span></span>  
+  
+<span data-ttu-id="5b2a1-167">Voici le modèle général d’implémentation du modèle de suppression d’une classe dérivée qui utilise un handle sécurisé :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-167">Here's the general pattern for implementing the dispose pattern for a derived class that uses a safe handle:</span></span>  
+  
+[!code-csharp[System.IDisposable#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/derived1.cs#4)]
+[!code-vb[System.IDisposable#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/derived1.vb#4)]  
   
 > [!NOTE]
->  En c#, vous substituez <xref:System.Object.Finalize%2A?displayProperty=fullName> en définissant un [destructeur](../Topic/Destructors%20\(C%23%20Programming%20Guide\).md).  
+> <span data-ttu-id="5b2a1-168">L'exemple précédent utilise un objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour illustrer le modèle, mais il est possible d'utiliser à la place n'importe quel objet dérivé de <xref:System.Runtime.InteropServices.SafeHandle>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-168">The previous example uses a <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> object to illustrate the pattern; any object derived from <xref:System.Runtime.InteropServices.SafeHandle> could be used instead.</span></span> <span data-ttu-id="5b2a1-169">Notez que l'exemple n'instancie pas correctement son objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-169">Note that the example does not properly instantiate its <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> object.</span></span>  
+  
+<span data-ttu-id="5b2a1-170">Voici le modèle général d'implémentation du modèle de suppression d'une classe dérivée qui remplace <xref:System.Object.Finalize%2A?displayProperty=nameWithType> :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-170">Here's the general pattern for implementing the dispose pattern for a derived class that overrides <xref:System.Object.Finalize%2A?displayProperty=nameWithType>:</span></span>  
+  
+[!code-csharp[System.IDisposable#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/derived2.cs#6)]
+[!code-vb[System.IDisposable#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/derived2.vb#6)]  
+  
+> [!NOTE]
+> <span data-ttu-id="5b2a1-171">En c#, vous substituez <xref:System.Object.Finalize%2A?displayProperty=nameWithType> en définissant un [destructeur](~/docs/csharp/programming-guide/classes-and-structs/destructors.md).</span><span class="sxs-lookup"><span data-stu-id="5b2a1-171">In C#, you override <xref:System.Object.Finalize%2A?displayProperty=nameWithType> by defining a [destructor](~/docs/csharp/programming-guide/classes-and-structs/destructors.md).</span></span>  
   
 <a name="SafeHandles"></a>   
-## <a name="using-safe-handles"></a>Utilisation des handles sécurisés  
- L’écriture de code pour le finaliseur d’un objet est une tâche complexe qui peut provoquer des problèmes si elle n’est pas effectuée correctement. Par conséquent, nous vous recommandons de construire des objets <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=fullName> au lieu d’implémenter un finaliseur.  
+## <a name="using-safe-handles"></a><span data-ttu-id="5b2a1-172">Utilisation des handles sécurisés</span><span class="sxs-lookup"><span data-stu-id="5b2a1-172">Using safe handles</span></span>
+
+<span data-ttu-id="5b2a1-173">L'écriture de code pour le finaliseur d'un objet est une tâche complexe qui peut provoquer des problèmes si elle n'est pas effectuée correctement.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-173">Writing code for an object's finalizer is a complex task that can cause problems if not done correctly.</span></span> <span data-ttu-id="5b2a1-174">Par conséquent, nous vous recommandons de construire des objets <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> au lieu d'implémenter un finaliseur.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-174">Therefore, we recommend that you construct <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> objects instead of implementing a finalizer.</span></span>  
   
- Les classes dérivées de la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=fullName> simplifient les problèmes de durée de vie des objets en assignant et en libérant des handles sans interruption. Elles contiennent un finaliseur critique dont le fonctionnement pendant le déchargement d'un domaine d'application est garanti. Pour plus d’informations sur les avantages de l’utilisation d’un handle sécurisé, consultez <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=fullName>. Les classes dérivées suivantes de l’espace de noms <xref:Microsoft.Win32.SafeHandles> fournissent des handles sécurisés :  
+<span data-ttu-id="5b2a1-175">Les classes dérivées de la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> simplifient les problèmes de durée de vie des objets en assignant et en libérant des handles sans interruption.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-175">Classes derived from the <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> class simplify object lifetime issues by assigning and releasing handles without interruption.</span></span> <span data-ttu-id="5b2a1-176">Elles contiennent un finaliseur critique dont le fonctionnement pendant le déchargement d'un domaine d'application est garanti.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-176">They contain a critical finalizer that is guaranteed to run while an application domain is unloading.</span></span> <span data-ttu-id="5b2a1-177">Pour plus d'informations sur les avantages de l'utilisation d'un handle sécurisé, consultez <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-177">For more information about the advantages of using a safe handle, see <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>.</span></span> <span data-ttu-id="5b2a1-178">Les classes dérivées suivantes de l'espace de noms <xref:Microsoft.Win32.SafeHandles> fournissent des handles sécurisés :</span><span class="sxs-lookup"><span data-stu-id="5b2a1-178">The following derived classes in the <xref:Microsoft.Win32.SafeHandles> namespace provide safe handles:</span></span>  
   
--   La classe <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>, <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle> et <xref:Microsoft.Win32.SafeHandles.SafePipeHandle>, pour les fichiers, les fichiers mappés en mémoire et les canaux.  
+* <span data-ttu-id="5b2a1-179">La classe <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>, <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle> et <xref:Microsoft.Win32.SafeHandles.SafePipeHandle>, pour les fichiers, les fichiers mappés en mémoire et les canaux.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-179">The <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>, <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle>, and <xref:Microsoft.Win32.SafeHandles.SafePipeHandle> class, for files, memory mapped files, and pipes.</span></span>  
   
--   La classe <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle>, pour les vues de la mémoire.  
+* <span data-ttu-id="5b2a1-180">La classe <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle>, pour les vues de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-180">The <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle> class, for memory views.</span></span>  
   
--   Les classes <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle>, <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle> et <xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle>, pour les constructions de chiffrement.  
+* <span data-ttu-id="5b2a1-181">Les classes <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle>, <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle> et <xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle> pour les constructions de chiffrement.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-181">The <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle>, <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle>, and <xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle> classes, for cryptography constructs.</span></span>  
   
--   La classe <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle>, pour les clés de Registre.  
+* <span data-ttu-id="5b2a1-182">La classe <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle> pour les clés de Registre.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-182">The <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle> class, for registry keys.</span></span>  
   
--   La classe <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>, pour les handles d’attente.  
+* <span data-ttu-id="5b2a1-183">La classe <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>, pour les handles d'attente.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-183">The <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> class, for wait handles.</span></span>  
   
 <a name="base"></a>   
-## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-base-class"></a>Utilisation d’un handle sécurisé pour implémenter le modèle de suppression d’une classe de base  
- L'exemple suivant illustre le modèle de suppression d'une classe de base, `DisposableStreamResource`, qui utilise un handle sécurisé pour encapsuler les ressources non managées. Il définit une classe `DisposableResource`qui utilise un <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour encapsuler un objet <xref:System.IO.Stream> qui représente un fichier ouvert. La méthode `DisposableResource` inclut également une seule propriété, `Size`, qui retourne le nombre total d'octets du flux de fichier.  
+## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-base-class"></a><span data-ttu-id="5b2a1-184">Utilisation d'un handle sécurisé pour implémenter le modèle de suppression d'une classe de base</span><span class="sxs-lookup"><span data-stu-id="5b2a1-184">Using a safe handle to implement the dispose pattern for a base class</span></span>
+
+<span data-ttu-id="5b2a1-185">L'exemple suivant illustre le modèle de suppression d'une classe de base, `DisposableStreamResource`, qui utilise un handle sécurisé pour encapsuler les ressources non managées.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-185">The following example illustrates the dispose pattern for a base class, `DisposableStreamResource`, that uses a safe handle to encapsulate unmanaged resources.</span></span> <span data-ttu-id="5b2a1-186">Il définit une classe `DisposableResource` qui utilise <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour encapsuler un objet <xref:System.IO.Stream> qui représente un fichier ouvert.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-186">It defines a `DisposableResource` class that uses a <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> to wrap a <xref:System.IO.Stream> object that represents an open file.</span></span> <span data-ttu-id="5b2a1-187">La méthode `DisposableResource` inclut également une seule propriété, `Size`, qui retourne le nombre total d'octets du flux de fichier.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-187">The `DisposableResource` method also includes a single property, `Size`, that returns the total number of bytes in the file stream.</span></span>  
   
- [!code-csharp[Conceptual.Disposable#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/base1.cs#9)]
- [!code-vb[Conceptual.Disposable#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/base1.vb#9)]  
+[!code-csharp[Conceptual.Disposable#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/base1.cs#9)]
+[!code-vb[Conceptual.Disposable#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/base1.vb#9)]  
   
 <a name="derived"></a>   
-## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-derived-class"></a>Utilisation d'un handle sécurisé pour implémenter le modèle de suppression d'une classe dérivée  
- L'exemple suivant illustre le modèle de suppression d'une classe dérivée, `DisposableStreamResource2`, qui hérite de la classe `DisposableStreamResource` présentée dans l'exemple précédent. La classe ajoute une méthode supplémentaire, `WriteFileInfo`, et utilise un objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour encapsuler le handle du fichier accessible en écriture.  
+## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-derived-class"></a><span data-ttu-id="5b2a1-188">Utilisation d'un handle sécurisé pour implémenter le modèle de suppression d'une classe dérivée</span><span class="sxs-lookup"><span data-stu-id="5b2a1-188">Using a safe handle to implement the dispose pattern for a derived class</span></span>
+
+<span data-ttu-id="5b2a1-189">L'exemple suivant illustre le modèle de suppression d'une classe dérivée, `DisposableStreamResource2`, qui hérite de la classe `DisposableStreamResource` présentée dans l'exemple précédent.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-189">The following example illustrates the dispose pattern for a derived class, `DisposableStreamResource2`, that inherits from the `DisposableStreamResource` class presented in the previous example.</span></span> <span data-ttu-id="5b2a1-190">La classe ajoute une méthode supplémentaire, `WriteFileInfo`, et utilise un objet <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> pour encapsuler le handle du fichier accessible en écriture.</span><span class="sxs-lookup"><span data-stu-id="5b2a1-190">The class adds an additional method, `WriteFileInfo`, and uses a <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> object to wrap the handle of the writable file.</span></span>  
   
- [!code-csharp[Conceptual.Disposable#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/derived1.cs#10)]
- [!code-vb[Conceptual.Disposable#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/derived1.vb#10)]  
+[!code-csharp[Conceptual.Disposable#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/derived1.cs#10)]
+[!code-vb[Conceptual.Disposable#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/derived1.vb#10)]  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.GC.SuppressFinalize%2A>   
- <xref:System.IDisposable>   
- <xref:System.IDisposable.Dispose%2A?displayProperty=fullName>   
- <xref:Microsoft.Win32.SafeHandles>   
- <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=fullName>   
- <xref:System.Object.Finalize%2A?displayProperty=fullName>   
- [Comment : définir et consommer des Classes et Structs (C + c++ / CLI)](../Topic/How%20to:%20Define%20and%20Consume%20Classes%20and%20Structs%20\(C++-CLI\).md)   
- [Modèle de suppression](../../../docs/standard/design-guidelines/dispose-pattern.md)
+## <a name="see-also"></a><span data-ttu-id="5b2a1-191">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5b2a1-191">See also</span></span>
+
+<span data-ttu-id="5b2a1-192"><xref:System.GC.SuppressFinalize%2A></span><span class="sxs-lookup"><span data-stu-id="5b2a1-192"><xref:System.GC.SuppressFinalize%2A></span></span>   
+<span data-ttu-id="5b2a1-193"><xref:System.IDisposable></span><span class="sxs-lookup"><span data-stu-id="5b2a1-193"><xref:System.IDisposable></span></span>   
+<span data-ttu-id="5b2a1-194"><xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="5b2a1-194"><xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType></span></span>   
+<span data-ttu-id="5b2a1-195"><xref:Microsoft.Win32.SafeHandles></span><span class="sxs-lookup"><span data-stu-id="5b2a1-195"><xref:Microsoft.Win32.SafeHandles></span></span>   
+<span data-ttu-id="5b2a1-196"><xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="5b2a1-196"><xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType></span></span>   
+<span data-ttu-id="5b2a1-197"><xref:System.Object.Finalize%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="5b2a1-197"><xref:System.Object.Finalize%2A?displayProperty=nameWithType></span></span>   
+<span data-ttu-id="5b2a1-198">[Comment : définir et consommer des Classes et Structs (C + c++ / CLI)](/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli) </span><span class="sxs-lookup"><span data-stu-id="5b2a1-198">[How to: Define and Consume Classes and Structs (C++/CLI)](/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli) </span></span>  
+[<span data-ttu-id="5b2a1-199">Modèle de suppression</span><span class="sxs-lookup"><span data-stu-id="5b2a1-199">Dispose Pattern</span></span>](../../../docs/standard/design-guidelines/dispose-pattern.md)

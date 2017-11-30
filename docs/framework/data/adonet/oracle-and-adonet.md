@@ -1,30 +1,36 @@
 ---
-title: "Oracle et ADO.NET | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Oracle et ADO.NET
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c615c985f885734800b471ee31451cfb8a4c8500
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Oracle et ADO.NET
+# <a name="oracle-and-adonet"></a><span data-ttu-id="067ce-102">Oracle et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="067ce-102">Oracle and ADO.NET</span></span>
 > [!NOTE]
->  Les types dans <xref:System.Data.OracleClient> sont déconseillés.  Les types restent pris en charge dans la version actuelle du .NET Framework, mais seront supprimés dans une version ultérieure.  Microsoft recommande l'utilisation d'un fournisseur Oracle tiers.  
+>  <span data-ttu-id="067ce-103">Les types dans <xref:System.Data.OracleClient> sont déconseillés.</span><span class="sxs-lookup"><span data-stu-id="067ce-103">The types in <xref:System.Data.OracleClient> are deprecated.</span></span> <span data-ttu-id="067ce-104">Les types restent pris en charge dans la version actuelle du .NET Framework, mais seront supprimés dans une version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="067ce-104">The types remain supported in the current version of.NET Framework but will be removed in a future release.</span></span> <span data-ttu-id="067ce-105">Microsoft recommande l'utilisation d'un fournisseur Oracle tiers.</span><span class="sxs-lookup"><span data-stu-id="067ce-105">Microsoft recommends that you use a third-party Oracle provider.</span></span>  
   
- Cette section décrit des fonctions et des comportements spécifiques au fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle.  
+ <span data-ttu-id="067ce-106">Cette section décrit des fonctions et des comportements spécifiques au fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle.</span><span class="sxs-lookup"><span data-stu-id="067ce-106">This section describes features and behaviors that are specific to the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for Oracle.</span></span>  
   
- Le fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle donne accès à une base de données Oracle utilisant l'interface OCI \(Oracle Call Interface\) fournie par le logiciel client Oracle.  La fonctionnalité du fournisseur de données est conçue pour être similaire à celle des fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)], OLE DB et ODBC.  
+ <span data-ttu-id="067ce-107">Le fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle donne accès à une base de données Oracle utilisant l'interface OCI (Oracle Call Interface) fournie par le logiciel client Oracle.</span><span class="sxs-lookup"><span data-stu-id="067ce-107">The [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for Oracle provides access to an Oracle database using the Oracle Call Interface (OCI) as provided by Oracle Client software.</span></span> <span data-ttu-id="067ce-108">La fonctionnalité du fournisseur de données est conçue pour être similaire à celle des fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)], OLE DB et ODBC.</span><span class="sxs-lookup"><span data-stu-id="067ce-108">The functionality of the data provider is designed to be similar to that of the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data providers for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)], OLE DB, and ODBC.</span></span>  
   
- Pour utiliser le fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle, une application doit faire référence à l'espace de noms <xref:System.Data.OracleClient> comme suit :  
+ <span data-ttu-id="067ce-109">Pour utiliser le fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle, une application doit faire référence à l'espace de noms <xref:System.Data.OracleClient> comme suit :</span><span class="sxs-lookup"><span data-stu-id="067ce-109">To use the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for Oracle, an application must reference the <xref:System.Data.OracleClient> namespace as follows:</span></span>  
   
 ```vb  
 Imports System.Data.OracleClient  
@@ -34,53 +40,53 @@ Imports System.Data.OracleClient
 using System.Data.OracleClient;  
 ```  
   
- Vous devez également inclure une référence à la DLL lorsque vous compilez votre code.  Par exemple, si vous compilez un programme C\#, votre ligne de commande doit inclure :  
+ <span data-ttu-id="067ce-110">Vous devez également inclure une référence à la DLL lorsque vous compilez votre code.</span><span class="sxs-lookup"><span data-stu-id="067ce-110">You also must include a reference to the DLL when you compile your code.</span></span> <span data-ttu-id="067ce-111">Par exemple, si vous compilez un programme C#, votre ligne de commande doit inclure :</span><span class="sxs-lookup"><span data-stu-id="067ce-111">For example, if you are compiling a C# program, your command line should include:</span></span>  
   
 ```  
 csc /r:System.Data.OracleClient.dll  
 ```  
   
-## Dans cette section  
- [Configuration requise](../../../../docs/framework/data/adonet/system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
- Décrit les exigences liées à l'utilisation du fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle et décrit un certain nombre de problèmes dont il faut être conscient lors de son utilisation.  
+## <a name="in-this-section"></a><span data-ttu-id="067ce-112">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="067ce-112">In This Section</span></span>  
+ [<span data-ttu-id="067ce-113">Configuration système requise</span><span class="sxs-lookup"><span data-stu-id="067ce-113">System Requirements</span></span>](../../../../docs/framework/data/adonet/system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
+ <span data-ttu-id="067ce-114">Décrit les exigences liées à l'utilisation du fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour Oracle et décrit un certain nombre de problèmes dont il faut être conscient lors de son utilisation.</span><span class="sxs-lookup"><span data-stu-id="067ce-114">Describes requirements for using the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for Oracle, and describes a number of issues to be aware when using it.</span></span>  
   
- [BFILE Oracle](../../../../docs/framework/data/adonet/oracle-bfiles.md)  
- Décrit la classe <xref:System.Data.OracleClient.OracleBFile> qui est utilisée pour travailler avec le type de données Oracle BFILE.  
+ [<span data-ttu-id="067ce-115">BFILE Oracle</span><span class="sxs-lookup"><span data-stu-id="067ce-115">Oracle BFILEs</span></span>](../../../../docs/framework/data/adonet/oracle-bfiles.md)  
+ <span data-ttu-id="067ce-116">Décrit la classe <xref:System.Data.OracleClient.OracleBFile> qui est utilisée pour travailler avec le type de données Oracle BFILE.</span><span class="sxs-lookup"><span data-stu-id="067ce-116">Describes the <xref:System.Data.OracleClient.OracleBFile> class, which is used to work with the Oracle BFILE data type.</span></span>  
   
- [LOB Oracle](../../../../docs/framework/data/adonet/oracle-lobs.md)  
- Décrit la classe <xref:System.Data.OracleClient.OracleLob> qui est utilisée pour travailler avec les types de données Oracle LOB.  
+ [<span data-ttu-id="067ce-117">LOB Oracle</span><span class="sxs-lookup"><span data-stu-id="067ce-117">Oracle LOBs</span></span>](../../../../docs/framework/data/adonet/oracle-lobs.md)  
+ <span data-ttu-id="067ce-118">Décrit la classe <xref:System.Data.OracleClient.OracleLob> qui est utilisée pour travailler avec les types de données Oracle LOB.</span><span class="sxs-lookup"><span data-stu-id="067ce-118">Describes the <xref:System.Data.OracleClient.OracleLob> class, which is used to work with Oracle LOB data types.</span></span>  
   
- [REF CURSOR Oracle](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
- Décrit la prise en charge pour le type de données Oracle REF CURSOR.  
+ [<span data-ttu-id="067ce-119">REF CURSOR Oracle</span><span class="sxs-lookup"><span data-stu-id="067ce-119">Oracle REF CURSORs</span></span>](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
+ <span data-ttu-id="067ce-120">Décrit la prise en charge pour le type de données Oracle REF CURSOR.</span><span class="sxs-lookup"><span data-stu-id="067ce-120">Describes support for the Oracle REF CURSOR data type.</span></span>  
   
- [OracleTypes](../../../../docs/framework/data/adonet/oracletypes.md)  
- Décrit les structures que vous pouvez utiliser pour travailler avec des types de données Oracle, notamment <xref:System.Data.OracleClient.OracleNumber> et <xref:System.Data.OracleClient.OracleString>.  
+ [<span data-ttu-id="067ce-121">OracleTypes</span><span class="sxs-lookup"><span data-stu-id="067ce-121">OracleTypes</span></span>](../../../../docs/framework/data/adonet/oracletypes.md)  
+ <span data-ttu-id="067ce-122">Décrit les structures que vous pouvez utiliser pour travailler avec des types de données Oracle, notamment <xref:System.Data.OracleClient.OracleNumber> et <xref:System.Data.OracleClient.OracleString>.</span><span class="sxs-lookup"><span data-stu-id="067ce-122">Describes structures you can use to work with Oracle data types, including <xref:System.Data.OracleClient.OracleNumber> and <xref:System.Data.OracleClient.OracleString>.</span></span>  
   
- [Séquences Oracle](../../../../docs/framework/data/adonet/oracle-sequences.md)  
- Décrit la prise en charge de l'extraction des valeurs de séquence Oracle générées par le serveur.  
+ [<span data-ttu-id="067ce-123">Séquences Oracle</span><span class="sxs-lookup"><span data-stu-id="067ce-123">Oracle Sequences</span></span>](../../../../docs/framework/data/adonet/oracle-sequences.md)  
+ <span data-ttu-id="067ce-124">Décrit la prise en charge de l'extraction des valeurs de séquence Oracle générées par le serveur.</span><span class="sxs-lookup"><span data-stu-id="067ce-124">Describes support for retrieving the server-generated key Oracle Sequence values.</span></span>  
   
- [Mappages de types de données Oracle](../../../../docs/framework/data/adonet/oracle-data-type-mappings.md)  
- Répertorie les types de données Oracle et leurs mappages sur le <xref:System.Data.OracleClient.OracleDataReader>.  
+ [<span data-ttu-id="067ce-125">Mappages de types de données Oracle</span><span class="sxs-lookup"><span data-stu-id="067ce-125">Oracle Data Type Mappings</span></span>](../../../../docs/framework/data/adonet/oracle-data-type-mappings.md)  
+ <span data-ttu-id="067ce-126">Répertorie les types de données Oracle et leurs mappages sur le <xref:System.Data.OracleClient.OracleDataReader>.</span><span class="sxs-lookup"><span data-stu-id="067ce-126">Lists Oracle data types and their mappings to the <xref:System.Data.OracleClient.OracleDataReader>.</span></span>  
   
- [Transactions distribuées Oracle](../../../../docs/framework/data/adonet/oracle-distributed-transactions.md)  
- Décrit la manière dont l'objet <xref:System.Data.OracleClient.OracleConnection> s'inscrit automatiquement dans une transaction distribuée existante s'il détermine qu'une transaction est active.  
+ [<span data-ttu-id="067ce-127">Transactions distribuées Oracle</span><span class="sxs-lookup"><span data-stu-id="067ce-127">Oracle Distributed Transactions</span></span>](../../../../docs/framework/data/adonet/oracle-distributed-transactions.md)  
+ <span data-ttu-id="067ce-128">Décrit la manière dont l'objet <xref:System.Data.OracleClient.OracleConnection> s'inscrit automatiquement dans une transaction distribuée existante s'il détermine qu'une transaction est active.</span><span class="sxs-lookup"><span data-stu-id="067ce-128">Describes how the <xref:System.Data.OracleClient.OracleConnection> object automatically enlists in an existing distributed transaction if it determines that a transaction is active.</span></span>  
   
-## Rubriques connexes  
- [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- Présente les procédés de codage sécurisé utilisés avec [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+## <a name="related-sections"></a><span data-ttu-id="067ce-129">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="067ce-129">Related Sections</span></span>  
+ [<span data-ttu-id="067ce-130">Sécurisation des applications ADO.NET</span><span class="sxs-lookup"><span data-stu-id="067ce-130">Securing ADO.NET Applications</span></span>](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ <span data-ttu-id="067ce-131">Présente les procédés de codage sécurisé utilisés avec [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].</span><span class="sxs-lookup"><span data-stu-id="067ce-131">Describes secure coding practices when using [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].</span></span>  
   
- [Objets DataSet, DataTable et DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- Explique comment créer et utiliser des `DataSets`, des `DataSets` typés, des `DataTables` et des `DataViews`..  
+ [<span data-ttu-id="067ce-132">DataSets, DataTables et DataViews</span><span class="sxs-lookup"><span data-stu-id="067ce-132">DataSets, DataTables, and DataViews</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ <span data-ttu-id="067ce-133">Explique comment créer et utiliser des `DataSets`, des `DataSets` typés, des `DataTables` et des `DataViews`.</span><span class="sxs-lookup"><span data-stu-id="067ce-133">Describes how to create and use `DataSets`, typed `DataSets`, `DataTables`, and `DataViews`.</span></span>  
   
- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- Décrit comment utiliser des données dans ADO.NET.  
+ [<span data-ttu-id="067ce-134">Extraction et modification de données dans ADO.NET</span><span class="sxs-lookup"><span data-stu-id="067ce-134">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ <span data-ttu-id="067ce-135">Décrit comment utiliser des données dans ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="067ce-135">Describes how to work with data in ADO.NET.</span></span>  
   
- [SQL Server et ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
- Décrit comment utiliser des fonctions et fonctionnalités spécifiques à [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].  
+ [<span data-ttu-id="067ce-136">SQL Server et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="067ce-136">SQL Server and ADO.NET</span></span>](../../../../docs/framework/data/adonet/sql/index.md)  
+ <span data-ttu-id="067ce-137">Décrit comment utiliser des fonctions et fonctionnalités spécifiques à [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="067ce-137">Describes how to work with features and functionality that are specific to [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].</span></span>  
   
- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
- Décrit des classes génériques qui vous permettent d'écrire du code indépendant du fournisseur dans [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+ [<span data-ttu-id="067ce-138">DbProviderFactories</span><span class="sxs-lookup"><span data-stu-id="067ce-138">DbProviderFactories</span></span>](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
+ <span data-ttu-id="067ce-139">Décrit des classes génériques qui vous permettent d'écrire du code indépendant du fournisseur dans [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].</span><span class="sxs-lookup"><span data-stu-id="067ce-139">Describes generic classes that allow you to write provider-independent code in [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].</span></span>  
   
-## Voir aussi  
- [ADO.NET](../../../../docs/framework/data/adonet/index.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="067ce-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="067ce-140">See Also</span></span>  
+ [<span data-ttu-id="067ce-141">ADO.NET</span><span class="sxs-lookup"><span data-stu-id="067ce-141">ADO.NET</span></span>](../../../../docs/framework/data/adonet/index.md)  
+ [<span data-ttu-id="067ce-142">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="067ce-142">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

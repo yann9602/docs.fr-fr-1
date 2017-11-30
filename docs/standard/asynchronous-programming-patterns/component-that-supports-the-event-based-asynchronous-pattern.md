@@ -1,262 +1,268 @@
 ---
-title: "Walkthrough: Implementing a Component That Supports the Event-based Asynchronous Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Event-based Asynchronous Pattern"
-  - "ProgressChangedEventArgs class"
-  - "BackgroundWorker component"
-  - "events [.NET Framework], asynchronous"
-  - "Asynchronous Pattern"
-  - "AsyncOperationManager class"
-  - "threading [.NET Framework], asynchronous features"
-  - "components [.NET Framework], asynchronous"
-  - "AsyncOperation class"
-  - "threading [Windows Forms], asynchronous features"
-  - "AsyncCompletedEventArgs class"
+title: "Procédure pas à pas : implémentation d’un composant qui prend en charge le modèle asynchrone basé sur des événements"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Event-based Asynchronous Pattern
+- ProgressChangedEventArgs class
+- BackgroundWorker component
+- events [.NET Framework], asynchronous
+- Asynchronous Pattern
+- AsyncOperationManager class
+- threading [.NET Framework], asynchronous features
+- components [.NET Framework], asynchronous
+- AsyncOperation class
+- threading [Windows Forms], asynchronous features
+- AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 150e4b27cc149774895574ddd196de5f9bc2acd8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Walkthrough: Implementing a Component That Supports the Event-based Asynchronous Pattern
-Si vous écrivez une classe avec certaines opérations pouvant entraîner d'importants retards, prévoyez de lui affecter des fonctionnalités asynchrones en implémentant [Event\-based Asynchronous Pattern Overview](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
+# <a name="walkthrough-implementing-a-component-that-supports-the-event-based-asynchronous-pattern"></a><span data-ttu-id="fce88-102">Procédure pas à pas : implémentation d’un composant qui prend en charge le modèle asynchrone basé sur des événements</span><span class="sxs-lookup"><span data-stu-id="fce88-102">Walkthrough: Implementing a Component That Supports the Event-based Asynchronous Pattern</span></span>
+<span data-ttu-id="fce88-103">Si vous écrivez une classe avec certaines opérations pouvant entraîner d’importants retards, pensez à lui affecter des fonctionnalités asynchrones en implémentant la [Event-based Asynchronous Pattern Overview](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).</span><span class="sxs-lookup"><span data-stu-id="fce88-103">If you are writing a class with some operations that may incur noticeable delays, consider giving it asynchronous functionality by implementing the [Event-based Asynchronous Pattern Overview](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).</span></span>  
   
- Cette procédure pas à pas illustre comment créer un composant qui implémente le modèle asynchrone basé sur des événements.  Il est implémenté à l'aide des classes d'assistance de l'espace de noms <xref:System.ComponentModel?displayProperty=fullName>, ce qui garantit que le composant fonctionne correctement sous tous les modèles d'application, notamment [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], les applications console et les applications Windows Forms.  Ce composant est également concevable avec un contrôle <xref:System.Windows.Forms.PropertyGrid> et vos propres concepteurs personnalisés.  
+ <span data-ttu-id="fce88-104">Cette procédure pas à pas montre comment créer un composant qui implémente le modèle asynchrone basé sur des événements.</span><span class="sxs-lookup"><span data-stu-id="fce88-104">This walkthrough illustrates how to create a component that implements the Event-based Asynchronous Pattern.</span></span> <span data-ttu-id="fce88-105">Il est implémenté à l’aide des classes d’assistance de la <xref:System.ComponentModel?displayProperty=nameWithType> espace de noms, ce qui garantit que le composant fonctionne correctement sous tout modèle d’application, y compris les [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], les applications Windows Forms et les applications de la Console.</span><span class="sxs-lookup"><span data-stu-id="fce88-105">It is implemented using helper classes from the <xref:System.ComponentModel?displayProperty=nameWithType> namespace, which ensures that the component works correctly under any application model, including [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], Console applications and Windows Forms applications.</span></span> <span data-ttu-id="fce88-106">Ce composant est également possible avec un <xref:System.Windows.Forms.PropertyGrid> contrôle et vos propres concepteurs personnalisés.</span><span class="sxs-lookup"><span data-stu-id="fce88-106">This component is also designable with a <xref:System.Windows.Forms.PropertyGrid> control and your own custom designers.</span></span>  
   
- Lorsque vous avez terminé, une application calcule des nombres premiers de manière asynchrone.  Votre application possède un thread d'interface utilisateur principal et un thread pour chaque calcul de nombre premier.  Bien que le fait de tester si un nombre élevé est un nombre premier puisse prendre beaucoup de temps, le thread d'interface utilisateur principal n'est pas interrompu par ce délai et le formulaire est réactif pendant les calculs.  Vous pouvez exécuter simultanément autant de calculs que vous le souhaitez et annuler des calculs en attente de manière sélective.  
+ <span data-ttu-id="fce88-107">Lorsque vous avez terminé, vous disposerez d’une application qui calcule les nombres premiers de manière asynchrone.</span><span class="sxs-lookup"><span data-stu-id="fce88-107">When you are through, you will have an application that computes prime numbers asynchronously.</span></span> <span data-ttu-id="fce88-108">Votre application aura un thread d’interface utilisateur principal d’utilisateur et un thread pour chaque calcul de nombres premiers.</span><span class="sxs-lookup"><span data-stu-id="fce88-108">Your application will have a main user interface (UI) thread and a thread for each prime number calculation.</span></span> <span data-ttu-id="fce88-109">Bien que les tests si un grand nombre est prime peut prendre un certain temps, le thread d’interface utilisateur ne sera pas interrompue par ce délai et le formulaire est réactif pendant les calculs.</span><span class="sxs-lookup"><span data-stu-id="fce88-109">Although testing whether a large number is prime can take a noticeable amount of time, the main UI thread will not be interrupted by this delay, and the form will be responsive during the calculations.</span></span> <span data-ttu-id="fce88-110">Vous serez en mesure d’exécuter comme beaucoup de calculs que vous le souhaitez simultanément et de manière sélective annulation des calculs.</span><span class="sxs-lookup"><span data-stu-id="fce88-110">You will be able to run as many calculations as you like concurrently and selectively cancel pending calculations.</span></span>  
   
- Cette procédure pas à pas illustre les tâches suivantes :  
+ <span data-ttu-id="fce88-111">Cette procédure pas à pas décrit notamment les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="fce88-111">Tasks illustrated in this walkthrough include:</span></span>  
   
--   Création du composant  
+-   <span data-ttu-id="fce88-112">Création du composant</span><span class="sxs-lookup"><span data-stu-id="fce88-112">Creating the Component</span></span>  
   
--   Définition des événements asynchrones et des délégués publics  
+-   <span data-ttu-id="fce88-113">Définition des délégués et événements asynchrones publics</span><span class="sxs-lookup"><span data-stu-id="fce88-113">Defining Public Asynchronous Events and Delegates</span></span>  
   
--   Définition des délégués privés  
+-   <span data-ttu-id="fce88-114">Définition des délégués privés</span><span class="sxs-lookup"><span data-stu-id="fce88-114">Defining Private Delegates</span></span>  
   
--   Implémentation des événements publics  
+-   <span data-ttu-id="fce88-115">Implémentation des événements publics</span><span class="sxs-lookup"><span data-stu-id="fce88-115">Implementing Public Events</span></span>  
   
--   Implémentation de la méthode d'achèvement  
+-   <span data-ttu-id="fce88-116">Implémentation de la méthode de saisie semi-automatique</span><span class="sxs-lookup"><span data-stu-id="fce88-116">Implementing the Completion Method</span></span>  
   
--   Implémentation des méthodes de travail  
+-   <span data-ttu-id="fce88-117">Implémentation des méthodes de travail</span><span class="sxs-lookup"><span data-stu-id="fce88-117">Implementing the Worker Methods</span></span>  
   
--   Implémentation des méthodes Start et Cancel  
+-   <span data-ttu-id="fce88-118">Implémentation des méthodes Start et Cancel</span><span class="sxs-lookup"><span data-stu-id="fce88-118">Implementing Start and Cancel Methods</span></span>  
   
- Pour copier le code dans cette rubrique sous forme de liste unique, consultez [How to: Implement a Component That Supports the Event\-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+ <span data-ttu-id="fce88-119">Pour copier le code dans cette rubrique sous forme de liste unique, consultez [Comment : implémenter un composant qui prend en charge le modèle asynchrone basé sur événement](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).</span><span class="sxs-lookup"><span data-stu-id="fce88-119">To copy the code in this topic as a single listing, see [How to: Implement a Component That Supports the Event-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).</span></span>  
   
-## Création du composant  
- La première étape consiste à créer le composant qui implémentera le modèle asynchrone basé sur des événements.  
+## <a name="creating-the-component"></a><span data-ttu-id="fce88-120">Création du composant</span><span class="sxs-lookup"><span data-stu-id="fce88-120">Creating the Component</span></span>  
+ <span data-ttu-id="fce88-121">La première étape consiste à créer le composant qui implémente le modèle asynchrone basé sur des événements.</span><span class="sxs-lookup"><span data-stu-id="fce88-121">The first step is to create the component that will implement the Event-based Asynchronous Pattern.</span></span>  
   
-#### Pour créer le composant  
+#### <a name="to-create-the-component"></a><span data-ttu-id="fce88-122">Pour créer le composant</span><span class="sxs-lookup"><span data-stu-id="fce88-122">To create the component</span></span>  
   
--   Créez une classe appelée `PrimeNumberCalculator` qui hérite de <xref:System.ComponentModel.Component>.  
+-   <span data-ttu-id="fce88-123">Créez une classe appelée `PrimeNumberCalculator` qui hérite de <xref:System.ComponentModel.Component>.</span><span class="sxs-lookup"><span data-stu-id="fce88-123">Create a class called `PrimeNumberCalculator` that inherits from <xref:System.ComponentModel.Component>.</span></span>  
   
-## Définition des événements asynchrones et des délégués publics  
- Votre composant communique avec les clients à l'aide des événements.  L'événement *MethodName*`Completed` avertit les clients de l'achèvement d'une tâche asynchrone, et l'événement *MethodName*`ProgressChanged` informe les clients de la progression d'une tâche asynchrone.  
+## <a name="defining-public-asynchronous-events-and-delegates"></a><span data-ttu-id="fce88-124">Définition des délégués et événements asynchrones publics</span><span class="sxs-lookup"><span data-stu-id="fce88-124">Defining Public Asynchronous Events and Delegates</span></span>  
+ <span data-ttu-id="fce88-125">Votre composant communique avec les clients à l’aide d’événements.</span><span class="sxs-lookup"><span data-stu-id="fce88-125">Your component communicates to clients using events.</span></span> <span data-ttu-id="fce88-126">Le *MethodName* `Completed` événement avertit les clients de l’achèvement d’une tâche asynchrone et la *MethodName* `ProgressChanged` événements informant les clients de la progression d’une tâche asynchrone.</span><span class="sxs-lookup"><span data-stu-id="fce88-126">The *MethodName*`Completed` event alerts clients to the completion of an asynchronous task, and the *MethodName*`ProgressChanged` event informs clients of the progress of an asynchronous task.</span></span>  
   
-#### Pour définir des événements asynchrones pour les clients de votre composant :  
+#### <a name="to-define-asynchronous-events-for-clients-of-your-component"></a><span data-ttu-id="fce88-127">Pour définir des événements asynchrones pour les clients de votre composant :</span><span class="sxs-lookup"><span data-stu-id="fce88-127">To define asynchronous events for clients of your component:</span></span>  
   
-1.  Importez les espaces de noms <xref:System.Threading?displayProperty=fullName> et <xref:System.Collections.Specialized?displayProperty=fullName> au début de votre fichier.  
+1.  <span data-ttu-id="fce88-128">Importer le <xref:System.Threading?displayProperty=nameWithType> et <xref:System.Collections.Specialized?displayProperty=nameWithType> espaces de noms en haut de votre fichier.</span><span class="sxs-lookup"><span data-stu-id="fce88-128">Import the <xref:System.Threading?displayProperty=nameWithType> and <xref:System.Collections.Specialized?displayProperty=nameWithType> namespaces at the top of your file.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#11](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#11)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#11](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#11)]  
   
-2.  Avant la définition de la classe  `PrimeNumberCalculator` , déclarez des délégués pour les événements de progression et d'achèvement.  
+2.  <span data-ttu-id="fce88-129">Avant du `PrimeNumberCalculator` définition, de la classe déclarer des délégués pour les événements de progression et d’achèvement.</span><span class="sxs-lookup"><span data-stu-id="fce88-129">Before the `PrimeNumberCalculator` class definition, declare delegates for progress and completion events.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#7](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#7)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#7](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#7)]  
   
-3.  Dans la définition de la classe  `PrimeNumberCalculator` , déclarez les événements destinés à signaler la progression et l'achèvement aux clients.  
+3.  <span data-ttu-id="fce88-130">Dans la `PrimeNumberCalculator` définition de classe, déclarez les événements pour signaler la progression et l’achèvement aux clients.</span><span class="sxs-lookup"><span data-stu-id="fce88-130">In the `PrimeNumberCalculator` class definition, declare events for reporting progress and completion to clients.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#8](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#8)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#8](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#8)]  
   
-4.  Après la définition de la classe  `PrimeNumberCalculator` , dérivez la classe  `CalculatePrimeCompletedEventArgs`  pour signaler le résultat de chaque calcul au gestionnaire d'événements du client pour l'événement `CalculatePrimeCompleted`.  En plus des propriétés `AsyncCompletedEventArgs`, cette classe permet au client de déterminer le nombre qui a été testé, s'il s'agit d'un nombre premier, et le premier diviseur s'il ne s'agit pas d'un nombre premier.  
+4.  <span data-ttu-id="fce88-131">Après le `PrimeNumberCalculator` définition de classe, dérivez la `CalculatePrimeCompletedEventArgs` classe pour signaler le résultat de chaque calcul au gestionnaire d’événements du client pour le `CalculatePrimeCompleted`.event.</span><span class="sxs-lookup"><span data-stu-id="fce88-131">After the `PrimeNumberCalculator` class definition, derive the `CalculatePrimeCompletedEventArgs` class for reporting the outcome of each calculation to the client's event handler for the `CalculatePrimeCompleted`.event.</span></span> <span data-ttu-id="fce88-132">Outre la `AsyncCompletedEventArgs` propriétés, cette classe permet au client déterminer le nombre qui a été testé, s’il est le premier et le premier diviseur Nouveautés si elle n’est pas principale.</span><span class="sxs-lookup"><span data-stu-id="fce88-132">In addition to the `AsyncCompletedEventArgs` properties, this class enables the client to determine what number was tested, whether it is prime, and what the first divisor is if it is not prime.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#6](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#6)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#6](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#6)]  
   
-## Point de contrôle  
- À présent, vous pouvez générer le composant.  
+## <a name="checkpoint"></a><span data-ttu-id="fce88-133">Point de contrôle</span><span class="sxs-lookup"><span data-stu-id="fce88-133">Checkpoint</span></span>  
+ <span data-ttu-id="fce88-134">À ce stade, vous pouvez générer le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-134">At this point, you can build the component.</span></span>  
   
-#### Pour tester votre composant :  
+#### <a name="to-test-your-component"></a><span data-ttu-id="fce88-135">Pour tester votre composant</span><span class="sxs-lookup"><span data-stu-id="fce88-135">To test your component</span></span>  
   
--   Compilez le composant.  
+-   <span data-ttu-id="fce88-136">Compilez le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-136">Compile the component.</span></span>  
   
-     Vous recevez deux avertissements du compilateur :  
+     <span data-ttu-id="fce88-137">Vous recevez deux avertissements du compilateur :</span><span class="sxs-lookup"><span data-stu-id="fce88-137">You will receive two compiler warnings:</span></span>  
   
     ```  
     warning CS0067: The event 'AsynchronousPatternExample.PrimeNumberCalculator.ProgressChanged' is never used  
     warning CS0067: The event 'AsynchronousPatternExample.PrimeNumberCalculator.CalculatePrimeCompleted' is never used  
     ```  
   
-     Ces avertissements seront effacés dans la section suivante.  
+     <span data-ttu-id="fce88-138">Ces avertissements seront effacés dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="fce88-138">These warnings will be cleared in the next section.</span></span>  
   
-## Définition des délégués privés  
- Les aspects asynchrones du composant  `PrimeNumberCalculator`  sont implémentés en interne avec un délégué spécial appelé <xref:System.Threading.SendOrPostCallback>.  <xref:System.Threading.SendOrPostCallback> représente une méthode de rappel qui s'exécute sur un thread <xref:System.Threading.ThreadPool>.  La méthode de rappel doit avoir une signature qui accepte un seul paramètre de type <xref:System.Object>, ce qui signifie que vous devrez passer l'état aux délégués dans une classe wrapper.  Pour plus d'informations, consultez <xref:System.Threading.SendOrPostCallback>.  
+## <a name="defining-private-delegates"></a><span data-ttu-id="fce88-139">Définition des délégués privés</span><span class="sxs-lookup"><span data-stu-id="fce88-139">Defining Private Delegates</span></span>  
+ <span data-ttu-id="fce88-140">Les aspects asynchrones de le `PrimeNumberCalculator` composant sont implémentés en interne avec un délégué spécial appelé un <xref:System.Threading.SendOrPostCallback>.</span><span class="sxs-lookup"><span data-stu-id="fce88-140">The asynchronous aspects of the `PrimeNumberCalculator` component are implemented internally with a special delegate known as a <xref:System.Threading.SendOrPostCallback>.</span></span> <span data-ttu-id="fce88-141">A <xref:System.Threading.SendOrPostCallback> représente une méthode de rappel qui s’exécute sur un <xref:System.Threading.ThreadPool> thread.</span><span class="sxs-lookup"><span data-stu-id="fce88-141">A <xref:System.Threading.SendOrPostCallback> represents a callback method that executes on a <xref:System.Threading.ThreadPool> thread.</span></span> <span data-ttu-id="fce88-142">La méthode de rappel doit avoir une signature qui accepte un seul paramètre de type <xref:System.Object>, ce qui signifie que vous devez passer l’état aux délégués dans une classe wrapper.</span><span class="sxs-lookup"><span data-stu-id="fce88-142">The callback method must have a signature that takes a single parameter of type <xref:System.Object>, which means you will need to pass state among delegates in a wrapper class.</span></span> <span data-ttu-id="fce88-143">Pour plus d'informations, consultez <xref:System.Threading.SendOrPostCallback>.</span><span class="sxs-lookup"><span data-stu-id="fce88-143">For more information, see <xref:System.Threading.SendOrPostCallback>.</span></span>  
   
-#### Pour implémenter le comportement asynchrone interne de votre composant :  
+#### <a name="to-implement-your-components-internal-asynchronous-behavior"></a><span data-ttu-id="fce88-144">Pour implémenter le comportement d’asynchrone interne de votre composant :</span><span class="sxs-lookup"><span data-stu-id="fce88-144">To implement your component's internal asynchronous behavior:</span></span>  
   
-1.  Déclarez et créez les délégués <xref:System.Threading.SendOrPostCallback> dans la classe  `PrimeNumberCalculator` .  Créez les objets <xref:System.Threading.SendOrPostCallback> dans une méthode utilitaire appelée  `InitializeDelegates`.  
+1.  <span data-ttu-id="fce88-145">Déclarez et créez le <xref:System.Threading.SendOrPostCallback> de délégués dans la `PrimeNumberCalculator` classe.</span><span class="sxs-lookup"><span data-stu-id="fce88-145">Declare and create the <xref:System.Threading.SendOrPostCallback> delegates in the `PrimeNumberCalculator` class.</span></span> <span data-ttu-id="fce88-146">Créer le <xref:System.Threading.SendOrPostCallback> objets dans une méthode utilitaire appellent `InitializeDelegates`.</span><span class="sxs-lookup"><span data-stu-id="fce88-146">Create the <xref:System.Threading.SendOrPostCallback> objects in a utility method called `InitializeDelegates`.</span></span>  
   
-     Vous aurez besoin de deux délégués : un pour signaler la progression au client, et un pour signaler l'achèvement au client.  
+     <span data-ttu-id="fce88-147">Vous aurez besoin de deux délégués : un pour signaler la progression au client et un pour signaler l’achèvement au client.</span><span class="sxs-lookup"><span data-stu-id="fce88-147">You will need two delegates: one for reporting progress to the client, and one for reporting completion to the client.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#9](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#9)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#9](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#9)]  
     [!code-csharp[System.ComponentModel.AsyncOperationManager#20](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#20)]
     [!code-vb[System.ComponentModel.AsyncOperationManager#20](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#20)]  
   
-2.  Appelez la méthode `InitializeDelegates` dans le constructeur de votre composant.  
+2.  <span data-ttu-id="fce88-148">Appelez le `InitializeDelegates` méthode dans le constructeur de votre composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-148">Call the `InitializeDelegates` method in your component's constructor.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#21](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#21)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#21](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#21)]  
   
-3.  Déclarez un délégué dans la classe `PrimeNumberCalculator` qui gère de manière asynchrone le travail effectif à réaliser.  Ce délégué encapsule la méthode de travail qui teste si un nombre est un nombre premier.  Le délégué accepte un paramètre <xref:System.ComponentModel.AsyncOperation> qui sera utilisé pour assurer le suivi de la durée de vie de l'opération asynchrone.  
+3.  <span data-ttu-id="fce88-149">Déclarez un délégué dans la `PrimeNumberCalculator` classe qui gère le travail à faire de façon asynchrone.</span><span class="sxs-lookup"><span data-stu-id="fce88-149">Declare a delegate in the `PrimeNumberCalculator` class that handles the actual work to be done asynchronously.</span></span> <span data-ttu-id="fce88-150">Ce délégué encapsule la méthode de travail qui teste si un nombre est un nombre premier.</span><span class="sxs-lookup"><span data-stu-id="fce88-150">This delegate wraps the worker method that tests whether a number is prime.</span></span> <span data-ttu-id="fce88-151">Le délégué accepte un <xref:System.ComponentModel.AsyncOperation> paramètre, qui sera utilisé pour effectuer le suivi de la durée de vie de l’opération asynchrone.</span><span class="sxs-lookup"><span data-stu-id="fce88-151">The delegate takes an <xref:System.ComponentModel.AsyncOperation> parameter, which will be used to track the lifetime of the asynchronous operation.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#22](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#22)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#22](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#22)]  
   
-4.  Créez une collection pour gérer les durées de vie d'opérations asynchrones en attente.  Le client a besoin d'une méthode de suivi des opérations au fur et à mesure qu'elles sont exécutées et achevées, et ce suivi est effectué en demandant au client de passer un jeton unique, ou un ID de tâche, lorsqu'il fait appel à la méthode asynchrone.  Le composant `PrimeNumberCalculator` doit conserver une trace de chaque appel en associant l'ID de tâche à l'appel correspondant.  Si le client passe un ID de tâche qui n'est pas unique, le composant `PrimeNumberCalculator` doit lever une exception.  
+4.  <span data-ttu-id="fce88-152">Créer un regroupement pour la gestion des durées de vie des opérations asynchrones en attente.</span><span class="sxs-lookup"><span data-stu-id="fce88-152">Create a collection for managing lifetimes of pending asynchronous operations.</span></span> <span data-ttu-id="fce88-153">Le client a besoin d’un moyen pour effectuer le suivi des opérations comme elles sont exécutées et achevées, et ce suivi est effectué en demandant au client de passer un jeton unique, ou un ID de tâche, lorsque le client effectue l’appel à la méthode asynchrone.</span><span class="sxs-lookup"><span data-stu-id="fce88-153">The client needs a way to track operations as they are executed and completed, and this tracking is done by requiring the client to pass a unique token, or task ID, when the client makes the call to the asynchronous method.</span></span> <span data-ttu-id="fce88-154">Le `PrimeNumberCalculator` composant doit effectuer le suivi de chaque appel en associant l’ID de tâche à l’appel correspondant.</span><span class="sxs-lookup"><span data-stu-id="fce88-154">The `PrimeNumberCalculator` component must keep track of each call by associating the task ID with its corresponding invocation.</span></span> <span data-ttu-id="fce88-155">Si le client passe un ID de tâche qui n’est pas unique, le `PrimeNumberCalculator` composant doit lever une exception.</span><span class="sxs-lookup"><span data-stu-id="fce88-155">If the client passes a task ID that is not unique, the `PrimeNumberCalculator` component must raise an exception.</span></span>  
   
-     Le composant `PrimeNumberCalculator` conserve une trace de l'ID de tâche en utilisant une classe de collection spéciale appelée <xref:System.Collections.Specialized.HybridDictionary>.  Dans la définition de classe, créez un <xref:System.Collections.Specialized.HybridDictionary> appelé  `userTokenToLifetime`.  
+     <span data-ttu-id="fce88-156">Le `PrimeNumberCalculator` composant effectue le suivi des ID de tâche à l’aide d’une classe de collection spéciale appelée un <xref:System.Collections.Specialized.HybridDictionary>.</span><span class="sxs-lookup"><span data-stu-id="fce88-156">The `PrimeNumberCalculator` component keeps track of task ID by using a special collection class called a <xref:System.Collections.Specialized.HybridDictionary>.</span></span> <span data-ttu-id="fce88-157">Dans la définition de classe, créez un <xref:System.Collections.Specialized.HybridDictionary> appelée `userTokenToLifetime`.</span><span class="sxs-lookup"><span data-stu-id="fce88-157">In the class definition, create a <xref:System.Collections.Specialized.HybridDictionary> called `userTokenToLifetime`.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#23](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#23)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#23](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#23)]  
   
-## Implémentation des événements publics  
- Les composants qui implémentent le modèle asynchrone basé sur des événements communiquent avec les clients à l'aide d'événements.  Ces événements sont appelés sur le thread approprié à l'aide de la classe <xref:System.ComponentModel.AsyncOperation>.  
+## <a name="implementing-public-events"></a><span data-ttu-id="fce88-158">Implémentation des événements publics</span><span class="sxs-lookup"><span data-stu-id="fce88-158">Implementing Public Events</span></span>  
+ <span data-ttu-id="fce88-159">Les composants qui implémentent le modèle asynchrone basé sur événement communiquent aux clients à l’aide d’événements.</span><span class="sxs-lookup"><span data-stu-id="fce88-159">Components that implement the Event-based Asynchronous Pattern communicate to clients using events.</span></span> <span data-ttu-id="fce88-160">Ces événements sont appelés sur le thread approprié à l’aide de la <xref:System.ComponentModel.AsyncOperation> classe.</span><span class="sxs-lookup"><span data-stu-id="fce88-160">These events are invoked on the proper thread with the help of the <xref:System.ComponentModel.AsyncOperation> class.</span></span>  
   
-#### Pour déclencher des événements aux clients de votre composant :  
+#### <a name="to-raise-events-to-your-components-clients"></a><span data-ttu-id="fce88-161">Pour déclencher des événements pour les clients de votre composant :</span><span class="sxs-lookup"><span data-stu-id="fce88-161">To raise events to your component's clients:</span></span>  
   
-1.  Implémentez des événements publics pour le signalement aux clients.  Vous aurez besoin d'un événement pour signaler la progression et d'un autre pour signaler l'achèvement.  
+1.  <span data-ttu-id="fce88-162">Implémenter des événements publics pour les clients de création de rapports.</span><span class="sxs-lookup"><span data-stu-id="fce88-162">Implement public events for reporting to clients.</span></span> <span data-ttu-id="fce88-163">Vous devez un événement pour signaler la progression et l’autre pour signaler l’achèvement.</span><span class="sxs-lookup"><span data-stu-id="fce88-163">You will need an event for reporting progress and one for reporting completion.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#24](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#24)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#24](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#24)]  
   
-## Implémentation de la méthode d'achèvement  
- Le délégué d'achèvement est la méthode que le comportement asynchrone libre de threads sous\-jacent appelle lorsque l'opération asynchrone se termine par un achèvement correct, une erreur ou une annulation.  Cet appel a lieu sur un thread arbitraire.  
+## <a name="implementing-the-completion-method"></a><span data-ttu-id="fce88-164">Implémentation de la méthode de saisie semi-automatique</span><span class="sxs-lookup"><span data-stu-id="fce88-164">Implementing the Completion Method</span></span>  
+ <span data-ttu-id="fce88-165">Le délégué d’achèvement est la méthode qui appelle le comportement asynchrone sous-jacente, libre de threads lorsque l’opération asynchrone se termine par la réussite, d’erreur ou d’annulation.</span><span class="sxs-lookup"><span data-stu-id="fce88-165">The completion delegate is the method that the underlying, free-threaded asynchronous behavior will invoke when the asynchronous operation ends by successful completion, error, or cancellation.</span></span> <span data-ttu-id="fce88-166">Cet appel a lieu sur un thread arbitraire.</span><span class="sxs-lookup"><span data-stu-id="fce88-166">This invocation happens on an arbitrary thread.</span></span>  
   
- Cette méthode correspond à la suppression de l'ID de tâche du client dans la collection interne de jetons de clients uniques.  Cette méthode met également fin à la durée de vie d'une opération asynchrone particulière en appelant la méthode <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> sur le <xref:System.ComponentModel.AsyncOperation> correspondant.  Cet appel déclenche l'événement d'achèvement sur le thread approprié au modèle d'application.  Une fois la méthode <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> appelée, cette instance de <xref:System.ComponentModel.AsyncOperation> ne peut plus être utilisée et toute tentative ultérieure visant à l'utiliser lèvera une exception.  
+ <span data-ttu-id="fce88-167">Cette méthode est où les ID de tâche du client est supprimé de la collection interne de jetons de clients uniques.</span><span class="sxs-lookup"><span data-stu-id="fce88-167">This method is where the client's task ID is removed from the internal collection of unique client tokens.</span></span> <span data-ttu-id="fce88-168">Cette méthode termine également la durée de vie d’une opération asynchrone particulière en appelant le <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> méthode sur le correspondant <xref:System.ComponentModel.AsyncOperation>.</span><span class="sxs-lookup"><span data-stu-id="fce88-168">This method also ends the lifetime of a particular asynchronous operation by calling the <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> method on the corresponding <xref:System.ComponentModel.AsyncOperation>.</span></span> <span data-ttu-id="fce88-169">Cet appel déclenche l’événement d’achèvement sur le thread qui est approprié pour le modèle d’application.</span><span class="sxs-lookup"><span data-stu-id="fce88-169">This call raises the completion event on the thread that is appropriate for the application model.</span></span> <span data-ttu-id="fce88-170">Après le <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> méthode est appelée, cette instance de <xref:System.ComponentModel.AsyncOperation> ne peut plus être utilisé, et toute tentative ultérieure de l’utiliser lèvera une exception.</span><span class="sxs-lookup"><span data-stu-id="fce88-170">After the <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> method is called, this instance of <xref:System.ComponentModel.AsyncOperation> can no longer be used, and any subsequent attempts to use it will throw an exception.</span></span>  
   
- La signature `CompletionMethod` doit contenir tout l'état nécessaire pour décrire le résultat de l'opération asynchrone.  Il contient l'état pour le nombre qui a été testé par cette opération asynchrone particulière, sait si le nombre est un nombre premier et contient la valeur de son premier diviseur s'il ne s'agit pas d'un nombre premier.  Elle contient également l'état décrivant toute exception levée et le <xref:System.ComponentModel.AsyncOperation> correspondant à cette tâche particulière.  
+ <span data-ttu-id="fce88-171">Le `CompletionMethod` signature doit contenir tout l’état nécessaire pour décrire le résultat de l’opération asynchrone.</span><span class="sxs-lookup"><span data-stu-id="fce88-171">The `CompletionMethod` signature must hold all state necessary to describe the outcome of the asynchronous operation.</span></span> <span data-ttu-id="fce88-172">Il possède un état pour le nombre qui a été testé par cette opération asynchrone particulière, si le nombre est premier et la valeur de son premier diviseur si elle n’est pas un nombre premier.</span><span class="sxs-lookup"><span data-stu-id="fce88-172">It holds state for the number that was tested by this particular asynchronous operation, whether the number is prime, and the value of its first divisor if it is not a prime number.</span></span> <span data-ttu-id="fce88-173">Il conserve également l’état décrivant toute exception qui s’est produite, et le <xref:System.ComponentModel.AsyncOperation> correspondant à cette tâche particulière.</span><span class="sxs-lookup"><span data-stu-id="fce88-173">It also holds state describing any exception that occurred, and the <xref:System.ComponentModel.AsyncOperation> corresponding to this particular task.</span></span>  
   
-#### Pour terminer une opération asynchrone :  
+#### <a name="to-complete-an-asynchronous-operation"></a><span data-ttu-id="fce88-174">Pour effectuer une opération asynchrone :</span><span class="sxs-lookup"><span data-stu-id="fce88-174">To complete an asynchronous operation:</span></span>  
   
--   Implémentez la méthode d'achèvement.  Elle accepte six paramètres qu'elle utilise pour remplir  `CalculatePrimeCompletedEventArgs` qui est retourné au client via le  `CalculatePrimeCompletedEventHandler` du client.  Elle supprime le jeton d'ID de tâche du client de la collection interne et met fin à la durée de vie de l'opération asynchrone en appelant <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>.  <xref:System.ComponentModel.AsyncOperation> marshale l'appel au thread ou au contexte approprié au modèle d'application.  
+-   <span data-ttu-id="fce88-175">Implémentez la méthode d’exécution.</span><span class="sxs-lookup"><span data-stu-id="fce88-175">Implement the completion method.</span></span> <span data-ttu-id="fce88-176">Elle accepte six paramètres qu’elle utilise pour remplir un `CalculatePrimeCompletedEventArgs` qui est retournée au client par le biais du client `CalculatePrimeCompletedEventHandler`.</span><span class="sxs-lookup"><span data-stu-id="fce88-176">It takes six parameters, which it uses to populate a `CalculatePrimeCompletedEventArgs` that is returned to the client through the client's `CalculatePrimeCompletedEventHandler`.</span></span> <span data-ttu-id="fce88-177">Elle supprime le jeton d’ID tâche du client à partir de la collection interne et il met fin à la durée de vie de l’opération asynchrone avec un appel à <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>.</span><span class="sxs-lookup"><span data-stu-id="fce88-177">It removes the client's task ID token from the internal collection, and it ends the asynchronous operation's lifetime with a call to <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>.</span></span> <span data-ttu-id="fce88-178">Le <xref:System.ComponentModel.AsyncOperation> marshale l’appel au thread ou contexte approprié pour le modèle d’application.</span><span class="sxs-lookup"><span data-stu-id="fce88-178">The <xref:System.ComponentModel.AsyncOperation> marshals the call to the thread or context that is appropriate for the application model.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#26](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#26)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#26](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#26)]  
   
-## Point de contrôle  
- À présent, vous pouvez générer le composant.  
+## <a name="checkpoint"></a><span data-ttu-id="fce88-179">Point de contrôle</span><span class="sxs-lookup"><span data-stu-id="fce88-179">Checkpoint</span></span>  
+ <span data-ttu-id="fce88-180">À ce stade, vous pouvez générer le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-180">At this point, you can build the component.</span></span>  
   
-#### Pour tester votre composant :  
+#### <a name="to-test-your-component"></a><span data-ttu-id="fce88-181">Pour tester votre composant</span><span class="sxs-lookup"><span data-stu-id="fce88-181">To test your component</span></span>  
   
--   Compilez le composant.  
+-   <span data-ttu-id="fce88-182">Compilez le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-182">Compile the component.</span></span>  
   
-     Vous recevrez un avertissement du compilateur :  
+     <span data-ttu-id="fce88-183">Vous recevrez un avertissement du compilateur :</span><span class="sxs-lookup"><span data-stu-id="fce88-183">You will receive one compiler warning:</span></span>  
   
     ```  
     warning CS0169: The private field 'AsynchronousPatternExample.PrimeNumberCalculator.workerDelegate' is never used  
     ```  
   
-     Cet avertissement sera résolu dans la section suivante.  
+     <span data-ttu-id="fce88-184">Cet avertissement sera résolu dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="fce88-184">This warning will be resolved in the next section.</span></span>  
   
-## Implémentation des méthodes de travail  
- Jusqu'à présent, vous avez implémenté le code asynchrone de prise en charge pour le composant `PrimeNumberCalculator`.  Maintenant, vous pouvez implémenter le code qui procède au travail effectif.  Vous implémenterez trois méthodes : `CalculateWorker`,  `BuildPrimeNumberList` et `IsPrime`.  Ensemble, `BuildPrimeNumberList` et `IsPrime` composent un algorithme connu appelé crible d'Ératosthène qui détermine si un nombre est un nombre premier en recherchant tous les nombres premiers jusqu'à la racine carrée du nombre test.  Si aucun diviseur n'est trouvé à ce stade, le nombre test est un nombre premier.  
+## <a name="implementing-the-worker-methods"></a><span data-ttu-id="fce88-185">Implémentation des méthodes de travail</span><span class="sxs-lookup"><span data-stu-id="fce88-185">Implementing the Worker Methods</span></span>  
+ <span data-ttu-id="fce88-186">Jusqu'à présent, vous avez implémenté le code asynchrone de prise en charge pour le `PrimeNumberCalculator` composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-186">So far, you have implemented the supporting asynchronous code for the `PrimeNumberCalculator` component.</span></span> <span data-ttu-id="fce88-187">Maintenant, vous pouvez implémenter le code qui effectue le travail.</span><span class="sxs-lookup"><span data-stu-id="fce88-187">Now you can implement the code that does the actual work.</span></span> <span data-ttu-id="fce88-188">Vous allez implémenter trois méthodes : `CalculateWorker`, `BuildPrimeNumberList`, et `IsPrime`.</span><span class="sxs-lookup"><span data-stu-id="fce88-188">You will implement three methods: `CalculateWorker`, `BuildPrimeNumberList`, and `IsPrime`.</span></span> <span data-ttu-id="fce88-189">Ensemble, `BuildPrimeNumberList` et `IsPrime` composent un algorithme connu appelé crible d’Ératosthène qui détermine si un nombre est un nombre premier en recherchant tous les nombres premiers jusqu'à la racine carrée du nombre test.</span><span class="sxs-lookup"><span data-stu-id="fce88-189">Together, `BuildPrimeNumberList` and `IsPrime` comprise a well-known algorithm called the Sieve of Eratosthenes, which determines if a number is prime by finding all the prime numbers up to the square root of the test number.</span></span> <span data-ttu-id="fce88-190">Si aucun diviseur n’est trouvées à ce stade, le numéro de test est un nombre premier.</span><span class="sxs-lookup"><span data-stu-id="fce88-190">If no divisors are found by that point, the test number is prime.</span></span>  
   
- Si ce composant était conçu pour une efficacité maximale, il rappellerait tous les nombres premiers découverts par divers appels pour différents nombres test.  Il rechercherait également des diviseurs simples tels 2, 3 et 5.  Cet exemple sert à montrer comment les opérations prenant du temps peuvent être exécutées de façon asynchrone, ces optimisations sont données à titre d'exercice.  
+ <span data-ttu-id="fce88-191">Si ce composant a été écrit pour une efficacité maximale, il serait n’oubliez pas de tous les nombres premiers découverts par divers appels pour différents nombres test.</span><span class="sxs-lookup"><span data-stu-id="fce88-191">If this component were written for maximum efficiency, it would remember all the prime numbers discovered by various invocations for different test numbers.</span></span> <span data-ttu-id="fce88-192">Il serait également vérifier diviseurs triviaux tels que 2, 3 et 5.</span><span class="sxs-lookup"><span data-stu-id="fce88-192">It would also check for trivial divisors like 2, 3, and 5.</span></span> <span data-ttu-id="fce88-193">L’objectif de cet exemple est d’illustrer les opérations longues comment peut être exécutée de façon asynchrone, toutefois, donc ces optimisations comme un exercice pour vous.</span><span class="sxs-lookup"><span data-stu-id="fce88-193">The intent of this example is to demonstrate how time-consuming operations can be executed asynchronously, however, so these optimizations are left as an exercise for you.</span></span>  
   
- La méthode `CalculateWorker` est encapsulée dans un délégué et est appelée de manière asynchrone avec un appel à `BeginInvoke`.  
+ <span data-ttu-id="fce88-194">Le `CalculateWorker` méthode est encapsulée dans un délégué et est appelée de façon asynchrone avec un appel à `BeginInvoke`.</span><span class="sxs-lookup"><span data-stu-id="fce88-194">The `CalculateWorker` method is wrapped in a delegate and is invoked asynchronously with a call to `BeginInvoke`.</span></span>  
   
 > [!NOTE]
->  Le rapport de progression est implémenté dans la méthode `BuildPrimeNumberList`.  Sur les ordinateurs rapides, les événements `ProgressChanged` peuvent être déclenchés à intervalles courts.  Le thread client sur lequel ces événements sont déclenchés doit être capable de gérer cette situation.  Le code de l'interface utilisateur peut être submergé de messages et incapable d'y faire face, ce qui provoque un blocage.  Pour obtenir un exemple d'interface utilisateur gérant cette situation, consultez [How to: Implement a Client of the Event\-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+>  <span data-ttu-id="fce88-195">Rapport de progression est implémenté dans le `BuildPrimeNumberList` (méthode).</span><span class="sxs-lookup"><span data-stu-id="fce88-195">Progress reporting is implemented in the `BuildPrimeNumberList` method.</span></span> <span data-ttu-id="fce88-196">Sur les ordinateurs rapides, `ProgressChanged` événements peuvent être déclenchés de suite.</span><span class="sxs-lookup"><span data-stu-id="fce88-196">On fast computers, `ProgressChanged` events can be raised in rapid succession.</span></span> <span data-ttu-id="fce88-197">Le thread client sur lequel ces événements sont déclenchés, doit être en mesure de gérer cette situation.</span><span class="sxs-lookup"><span data-stu-id="fce88-197">The client thread, on which these events are raised, must be able to handle this situation.</span></span> <span data-ttu-id="fce88-198">Code de l’interface utilisateur peut être submergé de messages et incapable de suivre, aboutissant à un blocage.</span><span class="sxs-lookup"><span data-stu-id="fce88-198">User interface code may be flooded with messages and unable to keep up, resulting in hanging behavior.</span></span> <span data-ttu-id="fce88-199">Pour un exemple d’interface utilisateur qui gère cette situation, consultez [Comment : implémenter un Client du modèle asynchrone basé sur événement](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).</span><span class="sxs-lookup"><span data-stu-id="fce88-199">For an example user interface that handles this situation, see [How to: Implement a Client of the Event-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).</span></span>  
   
-#### Pour exécuter le calcul de nombre premier de manière asynchrone :  
+#### <a name="to-execute-the-prime-number-calculation-asynchronously"></a><span data-ttu-id="fce88-200">Pour exécuter de façon asynchrone le calcul de nombres premiers :</span><span class="sxs-lookup"><span data-stu-id="fce88-200">To execute the prime number calculation asynchronously:</span></span>  
   
-1.  Implémentez la méthode utilitaire `TaskCanceled`.  Elle vérifie la collection de durées de vie de la tâche pour l'ID de tâche donné et retourne la valeur `true` si l'ID de tâche est introuvable.  
+1.  <span data-ttu-id="fce88-201">Implémentez la `TaskCanceled` méthode utilitaire.</span><span class="sxs-lookup"><span data-stu-id="fce88-201">Implement the `TaskCanceled` utility method.</span></span> <span data-ttu-id="fce88-202">Elle vérifie la collection de durée de vie de tâche pour l’ID de tâche donné et retourne `true` si l’ID de tâche est introuvable.</span><span class="sxs-lookup"><span data-stu-id="fce88-202">This checks the task lifetime collection for the given task ID, and returns `true` if the task ID is not found.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#32](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#32)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#32](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#32)]  
   
-2.  Implémentez la méthode `CalculateWorker`.  Elle accepte deux paramètres : un nombre à tester et une <xref:System.ComponentModel.AsyncOperation>.  
+2.  <span data-ttu-id="fce88-203">Implémentez la méthode `CalculateWorker`.</span><span class="sxs-lookup"><span data-stu-id="fce88-203">Implement the `CalculateWorker` method.</span></span> <span data-ttu-id="fce88-204">Elle accepte deux paramètres : un nombre à tester et qu’un <xref:System.ComponentModel.AsyncOperation>.</span><span class="sxs-lookup"><span data-stu-id="fce88-204">It takes two parameters: a number to test, and an <xref:System.ComponentModel.AsyncOperation>.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#27](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#27)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#27](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#27)]  
   
-3.  Implémentez `BuildPrimeNumberList`.  Elle accepte deux paramètres : le nombre à tester et une <xref:System.ComponentModel.AsyncOperation>.  Elle utilise <xref:System.ComponentModel.AsyncOperation> pour signaler la progression et les résultats incrémentiels.  Cela garantit que les gestionnaires d'événements du client sont appelés sur le thread ou le contexte approprié pour le modèle d'application.  Lorsque `BuildPrimeNumberList` trouve un nombre premier, celui\-ci est signalé comme un résultat incrémentiel au gestionnaire d'événements du client pour l'événement `ProgressChanged`.  Une classe dérivée de <xref:System.ComponentModel.ProgressChangedEventArgs>, appelée `CalculatePrimeProgressChangedEventArgs`, à laquelle une propriété appelée `LatestPrimeNumber` est ajoutée, est nécessaire.  
+3.  <span data-ttu-id="fce88-205">Implémentez `BuildPrimeNumberList`.</span><span class="sxs-lookup"><span data-stu-id="fce88-205">Implement `BuildPrimeNumberList`.</span></span> <span data-ttu-id="fce88-206">Elle accepte deux paramètres : le nombre à tester et un <xref:System.ComponentModel.AsyncOperation>.</span><span class="sxs-lookup"><span data-stu-id="fce88-206">It takes two parameters: the number to test, and an <xref:System.ComponentModel.AsyncOperation>.</span></span> <span data-ttu-id="fce88-207">Elle utilise le <xref:System.ComponentModel.AsyncOperation> pour signaler la progression et des résultats incrémentiels.</span><span class="sxs-lookup"><span data-stu-id="fce88-207">It uses the <xref:System.ComponentModel.AsyncOperation> to report progress and incremental results.</span></span> <span data-ttu-id="fce88-208">Cela garantit que les gestionnaires d’événements du client sont appelés sur le thread ou contexte approprié pour le modèle d’application.</span><span class="sxs-lookup"><span data-stu-id="fce88-208">This assures that the client's event handlers are called on the proper thread or context for the application model.</span></span> <span data-ttu-id="fce88-209">Lorsque `BuildPrimeNumberList` trouve un nombre premier, il est signalé comme un résultat incrémentiel au gestionnaire d’événements du client pour le `ProgressChanged` événement.</span><span class="sxs-lookup"><span data-stu-id="fce88-209">When `BuildPrimeNumberList` finds a prime number, it reports this as an incremental result to the client's event handler for the `ProgressChanged` event.</span></span> <span data-ttu-id="fce88-210">Cela requiert une classe dérivée de <xref:System.ComponentModel.ProgressChangedEventArgs>, appelé `CalculatePrimeProgressChangedEventArgs`, qui a une propriété appelée ajoutée `LatestPrimeNumber`.</span><span class="sxs-lookup"><span data-stu-id="fce88-210">This requires a class derived from <xref:System.ComponentModel.ProgressChangedEventArgs>, called `CalculatePrimeProgressChangedEventArgs`, which has one added property called `LatestPrimeNumber`.</span></span>  
   
-     La méthode `BuildPrimeNumberList` appelle aussi périodiquement la méthode `TaskCanceled` et s'arrête si la méthode retourne la valeur `true`.  
+     <span data-ttu-id="fce88-211">Le `BuildPrimeNumberList` méthode appelle périodiquement la `TaskCanceled` (méthode) et s’arrête si la méthode retourne `true`.</span><span class="sxs-lookup"><span data-stu-id="fce88-211">The `BuildPrimeNumberList` method also periodically calls the `TaskCanceled` method and exits if the method returns `true`.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#5)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#5)]  
   
-4.  Implémentez `IsPrime`.  Elle accepte trois paramètres : une liste de nombres premiers connus, le nombre à tester et un paramètre de sortie pour le premier diviseur trouvé.  Selon la liste de nombres premiers, elle détermine si le nombre test est un nombre premier.  
+4.  <span data-ttu-id="fce88-212">Implémentez `IsPrime`.</span><span class="sxs-lookup"><span data-stu-id="fce88-212">Implement `IsPrime`.</span></span> <span data-ttu-id="fce88-213">Elle accepte trois paramètres : une liste de nombres premiers connus, le nombre à tester et un paramètre de sortie pour le premier diviseur trouvé.</span><span class="sxs-lookup"><span data-stu-id="fce88-213">It takes three parameters: a list of known prime numbers, the number to test, and an output parameter for the first divisor found.</span></span> <span data-ttu-id="fce88-214">Étant donné la liste de nombres premiers, elle détermine si le nombre de tests est le premier.</span><span class="sxs-lookup"><span data-stu-id="fce88-214">Given the list of prime numbers, it determines if the test number is prime.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#28](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#28)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#28](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#28)]  
   
-5.  Dérivez `CalculatePrimeProgressChangedEventArgs` de <xref:System.ComponentModel.ProgressChangedEventArgs>.  Cette classe est nécessaire pour signaler des résultats incrémentiels au gestionnaire d'événements du client pour l'événement `ProgressChanged`.  Elle possède une propriété ajoutée appelée `LatestPrimeNumber`.  
+5.  <span data-ttu-id="fce88-215">Dériver `CalculatePrimeProgressChangedEventArgs` de <xref:System.ComponentModel.ProgressChangedEventArgs>.</span><span class="sxs-lookup"><span data-stu-id="fce88-215">Derive `CalculatePrimeProgressChangedEventArgs` from <xref:System.ComponentModel.ProgressChangedEventArgs>.</span></span> <span data-ttu-id="fce88-216">Cette classe est nécessaire pour signaler des résultats incrémentiels au gestionnaire d’événements du client pour le `ProgressChanged` événement.</span><span class="sxs-lookup"><span data-stu-id="fce88-216">This class is necessary for reporting incremental results to the client's event handler for the `ProgressChanged` event.</span></span> <span data-ttu-id="fce88-217">Il possède une propriété ajoutée appelée `LatestPrimeNumber`.</span><span class="sxs-lookup"><span data-stu-id="fce88-217">It has one added property called `LatestPrimeNumber`.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#29](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#29)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#29](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#29)]  
   
-## Point de contrôle  
- À présent, vous pouvez générer le composant.  
+## <a name="checkpoint"></a><span data-ttu-id="fce88-218">Point de contrôle</span><span class="sxs-lookup"><span data-stu-id="fce88-218">Checkpoint</span></span>  
+ <span data-ttu-id="fce88-219">À ce stade, vous pouvez générer le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-219">At this point, you can build the component.</span></span>  
   
-#### Pour tester votre composant :  
+#### <a name="to-test-your-component"></a><span data-ttu-id="fce88-220">Pour tester votre composant</span><span class="sxs-lookup"><span data-stu-id="fce88-220">To test your component</span></span>  
   
--   Compilez le composant.  
+-   <span data-ttu-id="fce88-221">Compilez le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-221">Compile the component.</span></span>  
   
-     Il reste alors à écrire les méthodes permettant de démarrer et d'annuler des opérations asynchrones, à savoir `CalculatePrimeAsync` et `CancelAsync`.  
+     <span data-ttu-id="fce88-222">Il reste à écrire est les méthodes pour démarrer et d’annuler des opérations asynchrones, `CalculatePrimeAsync` et `CancelAsync`.</span><span class="sxs-lookup"><span data-stu-id="fce88-222">All that remains to be written are the methods to start and cancel asynchronous operations, `CalculatePrimeAsync` and `CancelAsync`.</span></span>  
   
-## Implémentation des méthodes Start et Cancel  
- Vous démarrez la méthode de travail sur son propre thread en appelant `BeginInvoke` sur le délégué qui l'encapsule.  Pour gérer la durée de vie d'une opération asynchrone particulière, vous appelez la méthode <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> sur la classe d'assistance <xref:System.ComponentModel.AsyncOperationManager>.  Elle retourne une <xref:System.ComponentModel.AsyncOperation> qui marshale les appels sur les gestionnaires d'événements du client au thread ou au contexte approprié.  
+## <a name="implementing-the-start-and-cancel-methods"></a><span data-ttu-id="fce88-223">Implémenter les méthodes Start et Cancel</span><span class="sxs-lookup"><span data-stu-id="fce88-223">Implementing the Start and Cancel Methods</span></span>  
+ <span data-ttu-id="fce88-224">Démarrage de la méthode de travail sur son propre thread en appelant `BeginInvoke` sur le délégué qui l’encapsule.</span><span class="sxs-lookup"><span data-stu-id="fce88-224">You start the worker method on its own thread by calling `BeginInvoke` on the delegate that wraps it.</span></span> <span data-ttu-id="fce88-225">Pour gérer la durée de vie d’une opération asynchrone particulière, vous appelez le <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> méthode sur la <xref:System.ComponentModel.AsyncOperationManager> classe d’assistance.</span><span class="sxs-lookup"><span data-stu-id="fce88-225">To manage the lifetime of a particular asynchronous operation, you call the <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> method on the <xref:System.ComponentModel.AsyncOperationManager> helper class.</span></span> <span data-ttu-id="fce88-226">Cette opération retourne un <xref:System.ComponentModel.AsyncOperation>, qui marshale les appels sur les gestionnaires d’événements du client pour le thread ou contexte adéquat.</span><span class="sxs-lookup"><span data-stu-id="fce88-226">This returns an <xref:System.ComponentModel.AsyncOperation>, which marshals calls on the client's event handlers to the proper thread or context.</span></span>  
   
- Vous annulez une opération en attente particulière en appelant <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> sur son <xref:System.ComponentModel.AsyncOperation> correspondante.  Cela met fin à cette opération et tous les appels ultérieurs à son <xref:System.ComponentModel.AsyncOperation> lèveront une exception.  
+ <span data-ttu-id="fce88-227">Vous annulez une opération en attente de particulière en appelant <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> sur son <xref:System.ComponentModel.AsyncOperation>.</span><span class="sxs-lookup"><span data-stu-id="fce88-227">You cancel a particular pending operation by calling <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> on its corresponding <xref:System.ComponentModel.AsyncOperation>.</span></span> <span data-ttu-id="fce88-228">Cela met fin à cette opération et tous les appels suivants à son <xref:System.ComponentModel.AsyncOperation> lève une exception.</span><span class="sxs-lookup"><span data-stu-id="fce88-228">This ends that operation, and any subsequent calls to its <xref:System.ComponentModel.AsyncOperation> will throw an exception.</span></span>  
   
-#### Pour implémenter les fonctionnalités Start et Cancel :  
+#### <a name="to-implement-start-and-cancel-functionality"></a><span data-ttu-id="fce88-229">Pour implémenter le début et annuler des fonctionnalités :</span><span class="sxs-lookup"><span data-stu-id="fce88-229">To implement Start and Cancel functionality:</span></span>  
   
-1.  Implémentez la méthode `CalculatePrimeAsync`.  Assurez\-vous que le jeton \(ID de tâche\) fourni par le client est unique parmi tous les jetons représentant les tâches en attente.  Si le client passe un jeton qui n'est pas unique, `CalculatePrimeAsync` lève une exception.  Sinon, le jeton est ajouté à la collection d'ID de tâche.  
+1.  <span data-ttu-id="fce88-230">Implémentez la méthode `CalculatePrimeAsync`.</span><span class="sxs-lookup"><span data-stu-id="fce88-230">Implement the `CalculatePrimeAsync` method.</span></span> <span data-ttu-id="fce88-231">Assurez-vous que le jeton fourni par le client (ID de tâche) est unique parmi tous les jetons représentant actuellement en attente de tâches.</span><span class="sxs-lookup"><span data-stu-id="fce88-231">Make sure the client-supplied token (task ID) is unique with respect to all the tokens representing currently pending tasks.</span></span> <span data-ttu-id="fce88-232">Si le client passe un jeton non uniques, `CalculatePrimeAsync` lève une exception.</span><span class="sxs-lookup"><span data-stu-id="fce88-232">If the client passes in a non-unique token, `CalculatePrimeAsync` raises an exception.</span></span> <span data-ttu-id="fce88-233">Sinon, le jeton est ajouté à la collection d’ID de tâche.</span><span class="sxs-lookup"><span data-stu-id="fce88-233">Otherwise, the token is added to the task ID collection.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#3)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#3)]  
   
-2.  Implémentez la méthode `CancelAsync`.  Si le paramètre `taskId` existe dans la collection de jetons, il est supprimé.  Cela empêche l'exécution des tâches annulées qui n'ont pas démarré.  Si la tâche est en cours d'exécution, la méthode `BuildPrimeNumberList` s'arrête lorsqu'elle détecte que l'ID de tâche a été supprimé de la collection de durées de vie.  
+2.  <span data-ttu-id="fce88-234">Implémentez la méthode `CancelAsync`.</span><span class="sxs-lookup"><span data-stu-id="fce88-234">Implement the `CancelAsync` method.</span></span> <span data-ttu-id="fce88-235">Si le `taskId` paramètre existe dans la collection de jetons, il est supprimé.</span><span class="sxs-lookup"><span data-stu-id="fce88-235">If the `taskId` parameter exists in the token collection, it is removed.</span></span> <span data-ttu-id="fce88-236">Cela empêche les tâches annulées qui n’ont pas démarré à partir de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="fce88-236">This prevents canceled tasks that have not started from running.</span></span> <span data-ttu-id="fce88-237">Si la tâche est en cours d’exécution, le `BuildPrimeNumberList` méthode se termine lorsqu’il détecte que l’ID de tâche a été supprimé de la collection de la durée de vie.</span><span class="sxs-lookup"><span data-stu-id="fce88-237">If the task is running, the `BuildPrimeNumberList` method exits when it detects that the task ID has been removed from the lifetime collection.</span></span>  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#4)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#4)]  
   
-## Point de contrôle  
- À présent, vous pouvez générer le composant.  
+## <a name="checkpoint"></a><span data-ttu-id="fce88-238">Point de contrôle</span><span class="sxs-lookup"><span data-stu-id="fce88-238">Checkpoint</span></span>  
+ <span data-ttu-id="fce88-239">À ce stade, vous pouvez générer le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-239">At this point, you can build the component.</span></span>  
   
-#### Pour tester votre composant :  
+#### <a name="to-test-your-component"></a><span data-ttu-id="fce88-240">Pour tester votre composant</span><span class="sxs-lookup"><span data-stu-id="fce88-240">To test your component</span></span>  
   
--   Compilez le composant.  
+-   <span data-ttu-id="fce88-241">Compilez le composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-241">Compile the component.</span></span>  
   
- Le composant  `PrimeNumberCalculator`  est maintenant terminé et prêt à être utilisé.  
+ <span data-ttu-id="fce88-242">Le `PrimeNumberCalculator` composant est maintenant terminé et prêt à être utilisé.</span><span class="sxs-lookup"><span data-stu-id="fce88-242">The `PrimeNumberCalculator` component is now complete and ready to use.</span></span>  
   
- Pour obtenir un exemple de client qui utilise le composant `PrimeNumberCalculator`, consultez [How to: Implement a Client of the Event\-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+ <span data-ttu-id="fce88-243">Pour un exemple de client qui utilise le `PrimeNumberCalculator` composant, consultez [Comment : implémenter un Client du modèle asynchrone basé sur événement](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).</span><span class="sxs-lookup"><span data-stu-id="fce88-243">For an example client that uses the `PrimeNumberCalculator` component, see [How to: Implement a Client of the Event-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).</span></span>  
   
-## Étapes suivantes  
- Vous pouvez remplir cet exemple en écrivant `CalculatePrime`, l'équivalent synchrone de la méthode `CalculatePrimeAsync`.  Le composant `PrimeNumberCalculator` devient alors totalement conforme au modèle asynchrone basé sur des événements.  
+## <a name="next-steps"></a><span data-ttu-id="fce88-244">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="fce88-244">Next Steps</span></span>  
+ <span data-ttu-id="fce88-245">Vous pouvez remplir cet exemple en écrivant `CalculatePrime`, l’équivalent synchrone de `CalculatePrimeAsync` (méthode).</span><span class="sxs-lookup"><span data-stu-id="fce88-245">You can fill out this example by writing `CalculatePrime`, the synchronous equivalent of `CalculatePrimeAsync` method.</span></span> <span data-ttu-id="fce88-246">Cela facilitera la `PrimeNumberCalculator` entièrement compatible avec le modèle asynchrone basé sur des événements de composant.</span><span class="sxs-lookup"><span data-stu-id="fce88-246">This will make the `PrimeNumberCalculator` component fully compliant with the Event-based Asynchronous Pattern.</span></span>  
   
- Vous pouvez améliorer cet exemple en conservant la liste de tous les nombres premiers découverts par divers appels pour différents nombres test.  En utilisant cette approche, chaque tâche bénéficiera du travail effectué par les tâches précédentes.  Veillez à protéger cette liste par des zones `lock` afin que l'accès à la liste par différents threads soit sérialisé.  
+ <span data-ttu-id="fce88-247">Vous pouvez améliorer cet exemple en conservant la liste de tous les nombres premiers découverts par divers appels pour différents nombres test.</span><span class="sxs-lookup"><span data-stu-id="fce88-247">You can improve this example by retaining the list of all the prime numbers discovered by various invocations for different test numbers.</span></span> <span data-ttu-id="fce88-248">À l’aide de cette approche, chaque tâche bénéficiera du travail effectué par les tâches précédentes.</span><span class="sxs-lookup"><span data-stu-id="fce88-248">Using this approach, each task will benefit from the work done by previous tasks.</span></span> <span data-ttu-id="fce88-249">Veillez à protéger cette liste par `lock` régions, afin que l’accès à la liste par différents threads soit sérialisé.</span><span class="sxs-lookup"><span data-stu-id="fce88-249">Be careful to protect this list with `lock` regions, so access to the list by different threads is serialized.</span></span>  
   
- Vous pouvez également améliorer cet exemple en testant les diviseurs triviaux tels que 2, 3 et 5.  
+ <span data-ttu-id="fce88-250">Vous pouvez également améliorer cet exemple en testant les diviseurs triviaux tels que 2, 3 et 5.</span><span class="sxs-lookup"><span data-stu-id="fce88-250">You can also improve this example by testing for trivial divisors, like 2, 3, and 5.</span></span>  
   
-## Voir aussi  
- [Comment : exécuter une opération en arrière\-plan](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)   
- [Event\-based Asynchronous Pattern Overview](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)   
- [NOT IN BUILD: Multithreading in Visual Basic](http://msdn.microsoft.com/fr-fr/c731a50c-09c1-4468-9646-54c86b75d269)   
- [How to: Implement a Component That Supports the Event\-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)   
- [Multithreaded Programming with the Event\-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/multithreaded-programming-with-the-event-based-asynchronous-pattern.md)
+## <a name="see-also"></a><span data-ttu-id="fce88-251">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fce88-251">See Also</span></span>  
+ [<span data-ttu-id="fce88-252">Guide pratique pour exécuter une opération en arrière-plan</span><span class="sxs-lookup"><span data-stu-id="fce88-252">How to: Run an Operation in the Background</span></span>](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
+ [<span data-ttu-id="fce88-253">Vue d’ensemble du modèle asynchrone basé sur les événements</span><span class="sxs-lookup"><span data-stu-id="fce88-253">Event-based Asynchronous Pattern Overview</span></span>](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
+ [<span data-ttu-id="fce88-254">NOT IN BUILD : Multithreading en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="fce88-254">NOT IN BUILD: Multithreading in Visual Basic</span></span>](http://msdn.microsoft.com/en-us/c731a50c-09c1-4468-9646-54c86b75d269)  
+ [<span data-ttu-id="fce88-255">Guide pratique pour implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements</span><span class="sxs-lookup"><span data-stu-id="fce88-255">How to: Implement a Component That Supports the Event-based Asynchronous Pattern</span></span>](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)  
+ [<span data-ttu-id="fce88-256">Programmation multithread avec le modèle asynchrone basé sur les événements</span><span class="sxs-lookup"><span data-stu-id="fce88-256">Multithreaded Programming with the Event-based Asynchronous Pattern</span></span>](../../../docs/standard/asynchronous-programming-patterns/multithreaded-programming-with-the-event-based-asynchronous-pattern.md)

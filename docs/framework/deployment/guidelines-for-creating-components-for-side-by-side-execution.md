@@ -5,79 +5,71 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - side-by-side execution, multiple application versions
 - side-by-side execution, multiple component versions
 ms.assetid: 5c540161-6e40-42e9-be92-6175aee2c46a
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 054744612ec54861f675005a27a309e00024b242
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 246cd565cd9ab981a993fcbee588783ec4e4e8fb
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>Indications pour la création de composants pour l'exécution côte à côte
-Suivez ces recommandations générales pour créer des applications managées ou des composants conçus pour l'exécution côte à côte :  
+# <a name="guidelines-for-creating-components-for-side-by-side-execution"></a><span data-ttu-id="0c5fd-102">Indications pour la création de composants pour l'exécution côte à côte</span><span class="sxs-lookup"><span data-stu-id="0c5fd-102">Guidelines for Creating Components for Side-by-Side Execution</span></span>
+<span data-ttu-id="0c5fd-103">Suivez ces recommandations générales pour créer des applications managées ou des composants conçus pour l'exécution côte à côte :</span><span class="sxs-lookup"><span data-stu-id="0c5fd-103">Follow these general guidelines to create managed applications or components designed for side-by-side execution:</span></span>  
   
--   Associer l'identité de type à une version particulière d'un fichier.  
+-   <span data-ttu-id="0c5fd-104">Associer l'identité de type à une version particulière d'un fichier.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-104">Bind type identity to a particular version of a file.</span></span>  
   
-     Le CLR (Common Language Runtime) associe l'identité de type à une version de fichier particulière à l'aide d'assemblys avec un nom fort. Pour créer une application ou un composant pour l'exécution côte à côte, vous devez donner à tous les assemblys un nom fort. Cela crée une identité de type précise et garantit que toute résolution de type est dirigée vers le fichier approprié. Un assembly avec nom fort contient des informations sur la version, la culture et l'éditeur que le runtime utilise pour localiser le fichier approprié afin de répondre à une demande de liaison.  
+     <span data-ttu-id="0c5fd-105">Le CLR (Common Language Runtime) associe l'identité de type à une version de fichier particulière à l'aide d'assemblys avec un nom fort.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-105">The common language runtime binds type identity to a particular file version by using strong-named assemblies.</span></span> <span data-ttu-id="0c5fd-106">Pour créer une application ou un composant pour l'exécution côte à côte, vous devez donner à tous les assemblys un nom fort.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-106">To create an application or component for side-by-side execution, you must give all assemblies a strong name.</span></span> <span data-ttu-id="0c5fd-107">Cela crée une identité de type précise et garantit que toute résolution de type est dirigée vers le fichier approprié.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-107">This creates precise type identity and ensures that any type resolution is directed to the correct file.</span></span> <span data-ttu-id="0c5fd-108">Un assembly avec nom fort contient des informations sur la version, la culture et l'éditeur que le runtime utilise pour localiser le fichier approprié afin de répondre à une demande de liaison.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-108">A strong-named assembly contains version, culture, and publisher information that the runtime uses to locate the correct file to fulfill a binding request.</span></span>  
   
--   Utilisez un stockage prenant en compte la version.  
+-   <span data-ttu-id="0c5fd-109">Utilisez un stockage prenant en compte la version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-109">Use version-aware storage.</span></span>  
   
-     Le runtime utilise le Global Assembly Cache pour fournir un stockage prenant en compte la version. Le Global Assembly Cache est une structure de répertoire prenant en compte la version installée sur chaque ordinateur qui utilise le .NET Framework. Les assemblys installés dans le Global Assembly Cache ne sont pas remplacés quand une nouvelle version de cet assembly est installée.  
+     <span data-ttu-id="0c5fd-110">Le runtime utilise le Global Assembly Cache pour fournir un stockage prenant en compte la version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-110">The runtime uses the global assembly cache to provide version-aware storage.</span></span> <span data-ttu-id="0c5fd-111">Le Global Assembly Cache est une structure de répertoire prenant en compte la version installée sur chaque ordinateur qui utilise le .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-111">The global assembly cache is a version-aware directory structure installed on every computer that uses the .NET Framework.</span></span> <span data-ttu-id="0c5fd-112">Les assemblys installés dans le Global Assembly Cache ne sont pas remplacés quand une nouvelle version de cet assembly est installée.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-112">Assemblies installed in the global assembly cache are not overwritten when a new version of that assembly is installed.</span></span>  
   
--   Créez une application ou un composant qui s'exécute de manière isolée.  
+-   <span data-ttu-id="0c5fd-113">Créez une application ou un composant qui s'exécute de manière isolée.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-113">Create an application or component that runs in isolation.</span></span>  
   
-     Une application ou un composant qui s'exécute de manière isolée doit gérer les ressources de sorte à éviter des conflits quand deux instances de l'application ou du composant sont exécutées simultanément. L'application ou le composant doit également utiliser une structure de fichiers propre à la version.  
+     <span data-ttu-id="0c5fd-114">Une application ou un composant qui s'exécute de manière isolée doit gérer les ressources de sorte à éviter des conflits quand deux instances de l'application ou du composant sont exécutées simultanément.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-114">An application or component that runs in isolation must manage resources to avoid conflicts when two instances of the application or component are running simultaneously.</span></span> <span data-ttu-id="0c5fd-115">L'application ou le composant doit également utiliser une structure de fichiers propre à la version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-115">The application or component must also use a version-specific file structure.</span></span>  
   
-## <a name="application-and-component-isolation"></a>Isolement d'application et de composant  
- L'isolement est l'un des moyens permettant de correctement concevoir une application ou un composant pour l'exécution côte à côte. L'application ou le composant doit gérer toutes les ressources, en particulier l'E/S des fichiers, de manière isolée. Suivez ces instructions pour vous assurer que votre application ou composant s'exécute de manière isolée :  
+## <a name="application-and-component-isolation"></a><span data-ttu-id="0c5fd-116">Isolement d'application et de composant</span><span class="sxs-lookup"><span data-stu-id="0c5fd-116">Application and Component Isolation</span></span>  
+ <span data-ttu-id="0c5fd-117">L'isolement est l'un des moyens permettant de correctement concevoir une application ou un composant pour l'exécution côte à côte.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-117">One key to successfully designing an application or component for side-by-side execution is isolation.</span></span> <span data-ttu-id="0c5fd-118">L'application ou le composant doit gérer toutes les ressources, en particulier l'E/S des fichiers, de manière isolée.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-118">The application or component must manage all resources, particularly file I/O, in an isolated manner.</span></span> <span data-ttu-id="0c5fd-119">Suivez ces instructions pour vous assurer que votre application ou composant s'exécute de manière isolée :</span><span class="sxs-lookup"><span data-stu-id="0c5fd-119">Follow these guidelines to make sure your application or component runs in isolation:</span></span>  
   
--   Écrivez dans le Registre en tenant compte de la version. Stockez des valeurs dans des ruches ou des clés qui indiquent la version, et ne partagez pas des informations ou un état entre les versions d'un composant. Cela permet d'éviter que deux applications ou composants qui s'exécutent en même temps remplacent les informations.  
+-   <span data-ttu-id="0c5fd-120">Écrivez dans le Registre en tenant compte de la version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-120">Write to the registry in a version-specific way.</span></span> <span data-ttu-id="0c5fd-121">Stockez des valeurs dans des ruches ou des clés qui indiquent la version, et ne partagez pas des informations ou un état entre les versions d'un composant.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-121">Store values in hives or keys that indicate the version, and do not share information or state across versions of a component.</span></span> <span data-ttu-id="0c5fd-122">Cela permet d'éviter que deux applications ou composants qui s'exécutent en même temps remplacent les informations.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-122">This prevents two applications or components running at the same time from overwriting information.</span></span>  
   
--   Faites en sorte que les objets de noyau nommés soient propres à la version pour éviter une condition de concurrence. Par exemple, une condition de concurrence se produit quand deux sémaphores de deux versions de la même application s'attendent mutuellement.  
+-   <span data-ttu-id="0c5fd-123">Faites en sorte que les objets de noyau nommés soient propres à la version pour éviter une condition de concurrence.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-123">Make named kernel objects version-specific so that a race condition does not occur.</span></span> <span data-ttu-id="0c5fd-124">Par exemple, une condition de concurrence se produit quand deux sémaphores de deux versions de la même application s'attendent mutuellement.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-124">For example, a race condition occurs when two semaphores from two versions of the same application wait on each other.</span></span>  
   
--   Choisissez des noms de fichiers et répertoires qui prennent en compte la version. Cela signifie que les structures de fichiers doivent reposer sur les informations de version.  
+-   <span data-ttu-id="0c5fd-125">Choisissez des noms de fichiers et répertoires qui prennent en compte la version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-125">Make file and directory names version-aware.</span></span> <span data-ttu-id="0c5fd-126">Cela signifie que les structures de fichiers doivent reposer sur les informations de version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-126">This means that file structures should rely on version information.</span></span>  
   
--   Créez des comptes et groupes d'utilisateur en tenant compte de la version. Les comptes et groupes d'utilisateurs créés par une application doivent être identifiés par la version. Ne partagez pas les comptes et groupes d'utilisateurs entre les versions d'une application.  
+-   <span data-ttu-id="0c5fd-127">Créez des comptes et groupes d'utilisateur en tenant compte de la version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-127">Create user accounts and groups in a version-specific manner.</span></span> <span data-ttu-id="0c5fd-128">Les comptes et groupes d'utilisateurs créés par une application doivent être identifiés par la version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-128">User accounts and groups created by an application should be identified by version.</span></span> <span data-ttu-id="0c5fd-129">Ne partagez pas les comptes et groupes d'utilisateurs entre les versions d'une application.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-129">Do not share user accounts and groups between versions of an application.</span></span>  
   
-## <a name="installing-and-uninstalling-versions"></a>Installation et désinstallation de versions  
- Quand vous concevez une application pour l'exécution côte à côte, suivez ces indications concernant l'installation et la désinstallation des versions :  
+## <a name="installing-and-uninstalling-versions"></a><span data-ttu-id="0c5fd-130">Installation et désinstallation de versions</span><span class="sxs-lookup"><span data-stu-id="0c5fd-130">Installing and Uninstalling Versions</span></span>  
+ <span data-ttu-id="0c5fd-131">Quand vous concevez une application pour l'exécution côte à côte, suivez ces indications concernant l'installation et la désinstallation des versions :</span><span class="sxs-lookup"><span data-stu-id="0c5fd-131">When designing an application for side-by-side execution, follow these guidelines concerning installing and uninstalling versions:</span></span>  
   
--   Ne supprimez pas les informations du Registre qui peuvent être requises par d'autres applications s'exécutant sous une version différente du .NET Framework.  
+-   <span data-ttu-id="0c5fd-132">Ne supprimez pas les informations du Registre qui peuvent être requises par d'autres applications s'exécutant sous une version différente du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-132">Do not delete information from the registry that may be needed by other applications running under a different version of the .NET Framework.</span></span>  
   
--   Ne remplacez pas les informations du Registre qui peuvent être requises par d'autres applications s'exécutant sous une version différente du .NET Framework.  
+-   <span data-ttu-id="0c5fd-133">Ne remplacez pas les informations du Registre qui peuvent être requises par d'autres applications s'exécutant sous une version différente du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-133">Do not replace information in the registry that may be needed by other applications running under a different version of the .NET Framework.</span></span>  
   
--   N'annulez pas l'enregistrement de composants COM qui peuvent être requis par d'autres applications s'exécutant sous une version différente du .NET Framework.  
+-   <span data-ttu-id="0c5fd-134">N'annulez pas l'enregistrement de composants COM qui peuvent être requis par d'autres applications s'exécutant sous une version différente du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-134">Do not unregister COM components that may be needed by other applications running under a different version of the .NET Framework.</span></span>  
   
--   Ne modifiez pas **InprocServer32** ou d’autres entrées de Registre pour un serveur COM qui a déjà été enregistré.  
+-   <span data-ttu-id="0c5fd-135">Ne modifiez pas **InprocServer32** ou d’autres entrées de Registre pour un serveur COM qui a déjà été enregistré.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-135">Do not change **InprocServer32** or other registry entries for a COM server that was already registered.</span></span>  
   
--   Ne supprimez pas des comptes ou groupes d'utilisateur qui peuvent être requis par d'autres applications s'exécutant sous une version différente du .NET Framework.  
+-   <span data-ttu-id="0c5fd-136">Ne supprimez pas des comptes ou groupes d'utilisateur qui peuvent être requis par d'autres applications s'exécutant sous une version différente du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-136">Do not delete user accounts or groups that may be needed by other applications running under a different version of the .NET Framework.</span></span>  
   
--   N'ajoutez pas d'entrée dans le Registre qui contient un chemin d'accès sans version.  
+-   <span data-ttu-id="0c5fd-137">N'ajoutez pas d'entrée dans le Registre qui contient un chemin d'accès sans version.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-137">Do not add anything to the registry that contains an unversioned path.</span></span>  
   
-## <a name="file-version-number-and-assembly-version-number"></a>Numéro de version de fichier et numéro de version d'assembly  
- La version de fichier est une ressource de version Win32 qui n'est pas utilisée par le runtime. En général, vous mettez à jour la version de fichier même pour une mise à jour sur place. Deux fichiers identiques peuvent avoir des informations de version de fichier différentes, et deux fichiers différents peuvent avoir des informations de version de fichier identiques.  
+## <a name="file-version-number-and-assembly-version-number"></a><span data-ttu-id="0c5fd-138">Numéro de version de fichier et numéro de version d'assembly</span><span class="sxs-lookup"><span data-stu-id="0c5fd-138">File Version Number and Assembly Version Number</span></span>  
+ <span data-ttu-id="0c5fd-139">La version de fichier est une ressource de version Win32 qui n'est pas utilisée par le runtime.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-139">File version is a Win32 version resource that is not used by the runtime.</span></span> <span data-ttu-id="0c5fd-140">En général, vous mettez à jour la version de fichier même pour une mise à jour sur place.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-140">In general, you update the file version even for an in-place update.</span></span> <span data-ttu-id="0c5fd-141">Deux fichiers identiques peuvent avoir des informations de version de fichier différentes, et deux fichiers différents peuvent avoir des informations de version de fichier identiques.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-141">Two identical files can have different file version information, and two different files can have the same file version information.</span></span>  
   
- La version d'assembly est utilisée par le runtime pour la liaison d'assembly. Deux assemblys identiques avec des numéros de version différents sont traités comme deux assemblys différents par le runtime.  
+ <span data-ttu-id="0c5fd-142">La version d'assembly est utilisée par le runtime pour la liaison d'assembly.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-142">The assembly version is used by the runtime for assembly binding.</span></span> <span data-ttu-id="0c5fd-143">Deux assemblys identiques avec des numéros de version différents sont traités comme deux assemblys différents par le runtime.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-143">Two identical assemblies with different version numbers are treated as two different assemblies by the runtime.</span></span>  
   
- L’[outil Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) vous permet de remplacer un assembly quand seul le numéro de version de fichier est plus récent. Le programme d'installation ne remplace généralement pas un assembly, sauf si le numéro de version d'assembly est supérieur.  
+ <span data-ttu-id="0c5fd-144">L’[outil Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) vous permet de remplacer un assembly quand seul le numéro de version de fichier est plus récent.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-144">The [Global Assembly Cache tool (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) allows you to replace an assembly when only the file version number is newer.</span></span> <span data-ttu-id="0c5fd-145">Le programme d'installation ne remplace généralement pas un assembly, sauf si le numéro de version d'assembly est supérieur.</span><span class="sxs-lookup"><span data-stu-id="0c5fd-145">The installer generally does not install over an assembly unless the assembly version number is greater.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Exécution côte à côte](../../../docs/framework/deployment/side-by-side-execution.md)   
- [Comment : activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
-
+## <a name="see-also"></a><span data-ttu-id="0c5fd-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0c5fd-146">See Also</span></span>  
+ [<span data-ttu-id="0c5fd-147">Exécution de côte à côte</span><span class="sxs-lookup"><span data-stu-id="0c5fd-147">Side-by-Side Execution</span></span>](../../../docs/framework/deployment/side-by-side-execution.md)  
+ [<span data-ttu-id="0c5fd-148">Comment : activer et désactiver la redirection de liaison automatique</span><span class="sxs-lookup"><span data-stu-id="0c5fd-148">How to: Enable and Disable Automatic Binding Redirection</span></span>](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

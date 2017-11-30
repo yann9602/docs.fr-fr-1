@@ -1,125 +1,111 @@
 ---
 title: "Procédure pas à pas : création et utilisation d'objets dynamiques (C# et Visual Basic)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 dev_langs:
-- CSharp
+- csharp
+- vb
 helpviewer_keywords:
 - dynamic objects [Visual Basic]
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: ab1e245ed806cf0ea6346c76c6ade83273eed7be
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: d74c1d0760d4e776c2cf4c7dea1dac060c85a83c
-ms.openlocfilehash: 19701ede37845249cf4d50a34eb4ab487cdeb76b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Procédure pas à pas : création et utilisation d'objets dynamiques (C# et Visual Basic)
-Les objets dynamiques exposent des membres tels que les propriétés et les méthodes au moment de l’exécution et non lors de la compilation. Cela vous permet de créer des objets utilisables avec des structures qui ne correspondent pas à un type ou un format statique. Par exemple, vous pouvez utiliser un objet dynamique pour référencer le modèle DOM (Document Object Model) HTML, qui peut contenir n’importe quelle combinaison d’attributs et d’éléments de balisage HTML valides. Étant donné que chaque document HTML est unique, les membres d’un document HTML particulier sont déterminés au moment de l’exécution. L’une des méthodes courantes pour référencer un attribut d’un élément HTML consiste à passer le nom de l’attribut à la méthode `GetProperty` de l’élément. Pour référencer l’attribut `id` de l’élément HTML `<div id="Div1">`, vous obtenez d’abord une référence à l’élément `<div>`, puis utilisez `divElement.GetProperty("id")`. Si vous utilisez un objet dynamique, vous pouvez référencer l’attribut `id` comme `divElement.id`.  
+# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a><span data-ttu-id="f8eb2-102">Procédure pas à pas : création et utilisation d'objets dynamiques (C# et Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f8eb2-102">Walkthrough: Creating and Using Dynamic Objects (C# and Visual Basic)</span></span>
+
+<span data-ttu-id="f8eb2-103">Les objets dynamiques exposent des membres tels que les propriétés et les méthodes au moment de l’exécution et non lors de la compilation.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-103">Dynamic objects expose members such as properties and methods at run time, instead of in at compile time.</span></span> <span data-ttu-id="f8eb2-104">Cela vous permet de créer des objets utilisables avec des structures qui ne correspondent pas à un type ou un format statique.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-104">This enables you to create objects to work with structures that do not match a static type or format.</span></span> <span data-ttu-id="f8eb2-105">Par exemple, vous pouvez utiliser un objet dynamique pour référencer le modèle DOM (Document Object Model) HTML, qui peut contenir n’importe quelle combinaison d’attributs et d’éléments de balisage HTML valides.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-105">For example, you can use a dynamic object to reference the HTML Document Object Model (DOM), which can contain any combination of valid HTML markup elements and attributes.</span></span> <span data-ttu-id="f8eb2-106">Étant donné que chaque document HTML est unique, les membres d’un document HTML particulier sont déterminés au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-106">Because each HTML document is unique, the members for a particular HTML document are determined at run time.</span></span> <span data-ttu-id="f8eb2-107">L’une des méthodes courantes pour référencer un attribut d’un élément HTML consiste à passer le nom de l’attribut à la méthode `GetProperty` de l’élément.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-107">A common method to reference an attribute of an HTML element is to pass the name of the attribute to the `GetProperty` method of the element.</span></span> <span data-ttu-id="f8eb2-108">Pour référencer l’attribut `id` de l’élément HTML `<div id="Div1">`, vous obtenez d’abord une référence à l’élément `<div>`, puis utilisez `divElement.GetProperty("id")`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-108">To reference the `id` attribute of the HTML element `<div id="Div1">`, you first obtain a reference to the `<div>` element, and then use `divElement.GetProperty("id")`.</span></span> <span data-ttu-id="f8eb2-109">Si vous utilisez un objet dynamique, vous pouvez référencer l’attribut `id` comme `divElement.id`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-109">If you use a dynamic object, you can reference the `id` attribute as `divElement.id`.</span></span>  
   
- Les objets dynamiques permettent également d’accéder facilement aux langages dynamiques comme IronPython et IronRuby. Vous pouvez utiliser un objet dynamique pour faire référence à un script dynamique qui est interprété au moment de l’exécution.  
+ <span data-ttu-id="f8eb2-110">Les objets dynamiques permettent également d’accéder facilement aux langages dynamiques comme IronPython et IronRuby.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-110">Dynamic objects also provide convenient access to dynamic languages such as IronPython and IronRuby.</span></span> <span data-ttu-id="f8eb2-111">Vous pouvez utiliser un objet dynamique pour faire référence à un script dynamique qui est interprété au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-111">You can use a dynamic object to refer to a dynamic script that is interpreted at run time.</span></span>  
   
- Vous référencez un objet dynamique à l’aide de la liaison tardive. En C#, vous spécifiez le type d’un objet à liaison tardive comme `dynamic`. En [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], vous spécifiez le type d’un objet à liaison tardive comme `Object`. Pour plus d’informations, consultez [dynamic](../../../csharp/language-reference/keywords/dynamic.md) et [Liaison anticipée et liaison tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).  
+ <span data-ttu-id="f8eb2-112">Vous référencez un objet dynamique à l’aide de la liaison tardive.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-112">You reference a dynamic object by using late binding.</span></span> <span data-ttu-id="f8eb2-113">En C#, vous spécifiez le type d’un objet à liaison tardive comme `dynamic`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-113">In C#, you specify the type of a late-bound object as `dynamic`.</span></span> <span data-ttu-id="f8eb2-114">En [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], vous spécifiez le type d’un objet à liaison tardive comme `Object`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-114">In [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], you specify the type of a late-bound object as `Object`.</span></span> <span data-ttu-id="f8eb2-115">Pour plus d’informations, consultez [dynamic](../../../csharp/language-reference/keywords/dynamic.md) et [Liaison anticipée et liaison tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).</span><span class="sxs-lookup"><span data-stu-id="f8eb2-115">For more information, see [dynamic](../../../csharp/language-reference/keywords/dynamic.md) and [Early and Late Binding](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md).</span></span>  
   
- Vous pouvez créer des objets dynamiques personnalisés en utilisant les classes contenues dans l’espace de noms <xref:System.Dynamic?displayProperty=fullName>. Par exemple, vous pouvez créer un <xref:System.Dynamic.ExpandoObject> et spécifier les membres de cet objet au moment de l’exécution. Vous pouvez aussi créer votre propre type qui hérite de la classe <xref:System.Dynamic.DynamicObject>. Vous pouvez ensuite substituer les membres de la classe <xref:System.Dynamic.DynamicObject> pour fournir des fonctionnalités dynamiques au moment de l’exécution.  
+ <span data-ttu-id="f8eb2-116">Vous pouvez créer des objets dynamiques personnalisés en utilisant les classes contenues dans l’espace de noms <xref:System.Dynamic?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-116">You can create custom dynamic objects by using the classes in the <xref:System.Dynamic?displayProperty=nameWithType> namespace.</span></span> <span data-ttu-id="f8eb2-117">Par exemple, vous pouvez créer un <xref:System.Dynamic.ExpandoObject> et spécifier les membres de cet objet au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-117">For example, you can create an <xref:System.Dynamic.ExpandoObject> and specify the members of that object at run time.</span></span> <span data-ttu-id="f8eb2-118">Vous pouvez aussi créer votre propre type qui hérite de la classe <xref:System.Dynamic.DynamicObject>.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-118">You can also create your own type that inherits the <xref:System.Dynamic.DynamicObject> class.</span></span> <span data-ttu-id="f8eb2-119">Vous pouvez ensuite substituer les membres de la classe <xref:System.Dynamic.DynamicObject> pour fournir des fonctionnalités dynamiques au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-119">You can then override the members of the <xref:System.Dynamic.DynamicObject> class to provide run-time dynamic functionality.</span></span>  
   
- Dans cette procédure pas à pas, vous exécuterez les tâches suivantes :  
+ <span data-ttu-id="f8eb2-120">Dans cette procédure pas à pas, vous exécuterez les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="f8eb2-120">In this walkthrough you will perform the following tasks:</span></span>  
   
--   Créer un objet personnalisé qui expose dynamiquement le contenu d’un fichier texte comme propriétés d’un objet.  
+-   <span data-ttu-id="f8eb2-121">Créer un objet personnalisé qui expose dynamiquement le contenu d’un fichier texte comme propriétés d’un objet.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-121">Create a custom object that dynamically exposes the contents of a text file as properties of an object.</span></span>  
   
--   Créer un projet qui utilise une bibliothèque `IronPython`.  
+-   <span data-ttu-id="f8eb2-122">Créer un projet qui utilise une bibliothèque `IronPython`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-122">Create a project that uses an `IronPython` library.</span></span>  
   
-## <a name="prerequisites"></a>Conditions préalables  
- Pour effectuer cette procédure pas à pas, vous devez utiliser IronPython 2.6.1 pour .NET 4.0. Vous pouvez télécharger IronPython 2.6.1 pour .NET 4.0 sur le site [CodePlex](http://go.microsoft.com/fwlink/?LinkId=187223).  
+## <a name="prerequisites"></a><span data-ttu-id="f8eb2-123">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="f8eb2-123">Prerequisites</span></span>  
+<span data-ttu-id="f8eb2-124">Vous devez [IronPython](http://ironpython.net/) pour .NET effectuer cette procédure pas à pas.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-124">You need [IronPython](http://ironpython.net/) for .NET to complete this walkthrough.</span></span> <span data-ttu-id="f8eb2-125">Accédez à leurs [page de téléchargement](http://ironpython.net/download/) pour obtenir la version la plus récente.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-125">Go to their [Download page](http://ironpython.net/download/) to obtain the latest version.</span></span>
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="creating-a-custom-dynamic-object"></a>Création d’un objet dynamique personnalisé  
- Le premier projet que vous créez dans cette procédure pas à pas définit un objet dynamique personnalisé qui recherche dans le contenu d’un fichier texte. Le texte à rechercher est spécifié par le nom d’une propriété dynamique. Par exemple, si le code appelant spécifie `dynamicFile.Sample`, la classe dynamique retourne une liste générique de chaînes qui contient toutes les lignes du fichier qui commencent par « Sample ». La recherche respecte la casse. La classe dynamique prend également en charge deux arguments facultatifs. Le premier argument est une valeur enum de l’option de recherche qui spécifie que la classe dynamique doit rechercher des correspondances en début de ligne, en fin de ligne, ou n’importe où dans la ligne. Le deuxième argument spécifie que la classe dynamique doit supprimer des espaces à gauche et à droite dans chaque ligne avant d’effectuer la recherche. Par exemple, si le code appelant spécifie `dynamicFile.Sample(StringSearchOption.Contains)`, la classe dynamique recherche le terme « Sample » n’importe où dans une ligne. Si le code appelant spécifie `dynamicFile.Sample(StringSearchOption.StartsWith, false)`, la classe dynamique recherche le terme « Sample » au début de chaque ligne et ne supprime ni les espaces à droite, ni les espaces à gauche. Le comportement par défaut de la classe dynamique consiste à rechercher une correspondance au début de chaque ligne et à supprimer les espaces à gauche et à droite.  
+## <a name="creating-a-custom-dynamic-object"></a><span data-ttu-id="f8eb2-126">Création d’un objet dynamique personnalisé</span><span class="sxs-lookup"><span data-stu-id="f8eb2-126">Creating a Custom Dynamic Object</span></span>  
+ <span data-ttu-id="f8eb2-127">Le premier projet que vous créez dans cette procédure pas à pas définit un objet dynamique personnalisé qui recherche dans le contenu d’un fichier texte.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-127">The first project that you create in this walkthrough defines a custom dynamic object that searches the contents of a text file.</span></span> <span data-ttu-id="f8eb2-128">Le texte à rechercher est spécifié par le nom d’une propriété dynamique.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-128">Text to search for is specified by the name of a dynamic property.</span></span> <span data-ttu-id="f8eb2-129">Par exemple, si le code appelant spécifie `dynamicFile.Sample`, la classe dynamique retourne une liste générique de chaînes qui contient toutes les lignes du fichier qui commencent par « Sample ».</span><span class="sxs-lookup"><span data-stu-id="f8eb2-129">For example, if calling code specifies `dynamicFile.Sample`, the dynamic class returns a generic list of strings that contains all of the lines from the file that begin with "Sample".</span></span> <span data-ttu-id="f8eb2-130">La recherche respecte la casse.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-130">The search is case-insensitive.</span></span> <span data-ttu-id="f8eb2-131">La classe dynamique prend également en charge deux arguments facultatifs.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-131">The dynamic class also supports two optional arguments.</span></span> <span data-ttu-id="f8eb2-132">Le premier argument est une valeur enum de l’option de recherche qui spécifie que la classe dynamique doit rechercher des correspondances en début de ligne, en fin de ligne, ou n’importe où dans la ligne.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-132">The first argument is a search option enum value that specifies that the dynamic class should search for matches at the start of the line, the end of the line, or anywhere in the line.</span></span> <span data-ttu-id="f8eb2-133">Le deuxième argument spécifie que la classe dynamique doit supprimer des espaces à gauche et à droite dans chaque ligne avant d’effectuer la recherche.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-133">The second argument specifies that the dynamic class should trim leading and trailing spaces from each line before searching.</span></span> <span data-ttu-id="f8eb2-134">Par exemple, si le code appelant spécifie `dynamicFile.Sample(StringSearchOption.Contains)`, la classe dynamique recherche le terme « Sample » n’importe où dans une ligne.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-134">For example, if calling code specifies `dynamicFile.Sample(StringSearchOption.Contains)`, the dynamic class searches for "Sample" anywhere in a line.</span></span> <span data-ttu-id="f8eb2-135">Si le code appelant spécifie `dynamicFile.Sample(StringSearchOption.StartsWith, false)`, la classe dynamique recherche le terme « Sample » au début de chaque ligne et ne supprime ni les espaces à droite, ni les espaces à gauche.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-135">If calling code specifies `dynamicFile.Sample(StringSearchOption.StartsWith, false)`, the dynamic class searches for "Sample" at the start of each line, and does not remove leading and trailing spaces.</span></span> <span data-ttu-id="f8eb2-136">Le comportement par défaut de la classe dynamique consiste à rechercher une correspondance au début de chaque ligne et à supprimer les espaces à gauche et à droite.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-136">The default behavior of the dynamic class is to search for a match at the start of each line and to remove leading and trailing spaces.</span></span>  
   
-#### <a name="to-create-a-custom-dynamic-class"></a>Pour créer une classe dynamique personnalisée  
+#### <a name="to-create-a-custom-dynamic-class"></a><span data-ttu-id="f8eb2-137">Pour créer une classe dynamique personnalisée</span><span class="sxs-lookup"><span data-stu-id="f8eb2-137">To create a custom dynamic class</span></span>  
   
-1.  Démarrez [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
+1.  <span data-ttu-id="f8eb2-138">Démarrez [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].</span><span class="sxs-lookup"><span data-stu-id="f8eb2-138">Start [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].</span></span>  
   
-2.  Dans le menu **Fichier** , pointez sur **Nouveau** , puis cliquez sur **Projet**.  
+2.  <span data-ttu-id="f8eb2-139">Dans le menu **Fichier** , pointez sur **Nouveau** , puis cliquez sur **Projet**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-139">On the **File** menu, point to **New** and then click **Project**.</span></span>  
   
-3.  Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné. Sélectionnez **Application console** dans le volet **Modèles**. Dans la zone **Nom**, tapez `DynamicSample`, puis cliquez sur **OK**. Le nouveau projet est créé.  
+3.  <span data-ttu-id="f8eb2-140">Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-140">In the **New Project** dialog box, in the **Project Types** pane, make sure that **Windows** is selected.</span></span> <span data-ttu-id="f8eb2-141">Sélectionnez **Application console** dans le volet **Modèles**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-141">Select **Console Application** in the **Templates** pane.</span></span> <span data-ttu-id="f8eb2-142">Dans la zone **Nom**, tapez `DynamicSample`, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-142">In the **Name** box, type `DynamicSample`, and then click **OK**.</span></span> <span data-ttu-id="f8eb2-143">Le nouveau projet est créé.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-143">The new project is created.</span></span>  
   
-4.  Cliquez avec le bouton droit sur le projet DynamicSample, pointez sur **Ajouter**, puis cliquez sur **Classe**. Dans la zone **Nom**, tapez `ReadOnlyFile`, puis cliquez sur **OK**. Un nouveau fichier contenant la classe ReadOnlyFile est ajouté.  
+4.  <span data-ttu-id="f8eb2-144">Cliquez avec le bouton droit sur le projet DynamicSample, pointez sur **Ajouter**, puis cliquez sur **Classe**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-144">Right-click the DynamicSample project and point to **Add**, and then click **Class**.</span></span> <span data-ttu-id="f8eb2-145">Dans la zone **Nom**, tapez `ReadOnlyFile`, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-145">In the **Name** box, type `ReadOnlyFile`, and then click **OK**.</span></span> <span data-ttu-id="f8eb2-146">Un nouveau fichier contenant la classe ReadOnlyFile est ajouté.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-146">A new file is added that contains the ReadOnlyFile class.</span></span>  
   
-5.  En haut du fichier ReadOnlyFile.cs ou ReadOnlyFile.vb, ajoutez le code suivant pour importer les espaces de noms <xref:System.IO?displayProperty=fullName> et <xref:System.Dynamic?displayProperty=fullName>.  
+5.  <span data-ttu-id="f8eb2-147">En haut du fichier ReadOnlyFile.cs ou ReadOnlyFile.vb, ajoutez le code suivant pour importer les espaces de noms <xref:System.IO?displayProperty=nameWithType> et <xref:System.Dynamic?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-147">At the top of the ReadOnlyFile.cs or ReadOnlyFile.vb file, add the following code to import the <xref:System.IO?displayProperty=nameWithType> and <xref:System.Dynamic?displayProperty=nameWithType> namespaces.</span></span>  
   
-     [!code-cs[ProcédureVBdynamique1](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_1.cs)]
+     [!code-csharp[VbDynamicWalkthrough#1](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_1.cs)]
 
-     [!code-vb[ProcédureVBdynamique1](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_1.vb)]  
+     [!code-vb[VbDynamicWalkthrough#1](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_1.vb)]  
   
-6.  L’objet dynamique personnalisé utilise un enum pour déterminer les critères de recherche. Avant l’instruction de classe, ajoutez la définition d’enum suivante.  
+6.  <span data-ttu-id="f8eb2-148">L’objet dynamique personnalisé utilise un enum pour déterminer les critères de recherche.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-148">The custom dynamic object uses an enum to determine the search criteria.</span></span> <span data-ttu-id="f8eb2-149">Avant l’instruction de classe, ajoutez la définition d’enum suivante.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-149">Before the class statement, add the following enum definition.</span></span>  
   
-     [!code-cs[ProcédureVBdynamique2](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_2.cs)]
+     [!code-csharp[VbDynamicWalkthrough#2](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_2.cs)]
 
-     [!code-vb[ProcédureVBdynamique2](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_2.vb)]  
+     [!code-vb[VbDynamicWalkthrough#2](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_2.vb)]  
   
-7.  Mettez à jour l’instruction de classe de façon à hériter de la classe `DynamicObject`, comme indiqué dans l’exemple de code suivant.  
+7.  <span data-ttu-id="f8eb2-150">Mettez à jour l’instruction de classe de façon à hériter de la classe `DynamicObject`, comme indiqué dans l’exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-150">Update the class statement to inherit the `DynamicObject` class, as shown in the following code example.</span></span>  
   
-     [!code-cs[ProcédureVBdynamique3](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_3.cs)]
+     [!code-csharp[VbDynamicWalkthrough#3](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_3.cs)]
 
-     [!code-vb[ProcédureVBdynamique3](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_3.vb)]  
+     [!code-vb[VbDynamicWalkthrough#3](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_3.vb)]  
   
-8.  Ajoutez le code suivant à la classe `ReadOnlyFile` afin de définir un champ privé pour le chemin du fichier et un constructeur pour la classe `ReadOnlyFile`.  
+8.  <span data-ttu-id="f8eb2-151">Ajoutez le code suivant à la classe `ReadOnlyFile` afin de définir un champ privé pour le chemin du fichier et un constructeur pour la classe `ReadOnlyFile`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-151">Add the following code to the `ReadOnlyFile` class to define a private field for the file path and a constructor for the `ReadOnlyFile` class.</span></span>  
   
-     [!code-cs[ProcédureVBdynamique4](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_4.cs)]
+     [!code-csharp[VbDynamicWalkthrough#4](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_4.cs)]
      
-     [!code-vb[ProcédureVBdynamique4](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_4.vb)]  
+     [!code-vb[VbDynamicWalkthrough#4](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_4.vb)]  
   
-9. Ajoutez la méthode `GetPropertyValue` suivante à la classe `ReadOnlyFile`. La méthode `GetPropertyValue` prend les critères de recherche comme paramètre d’entrée et retourne les lignes d’un fichier texte qui correspondent aux critères de recherche. Les méthodes dynamiques fournies par la classe `ReadOnlyFile` appellent la méthode `GetPropertyValue` pour récupérer leurs résultats respectifs.  
+9. <span data-ttu-id="f8eb2-152">Ajoutez la méthode `GetPropertyValue` suivante à la classe `ReadOnlyFile`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-152">Add the following `GetPropertyValue` method to the `ReadOnlyFile` class.</span></span> <span data-ttu-id="f8eb2-153">La méthode `GetPropertyValue` prend les critères de recherche comme paramètre d’entrée et retourne les lignes d’un fichier texte qui correspondent aux critères de recherche.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-153">The `GetPropertyValue` method takes, as input, search criteria and returns the lines from a text file that match that search criteria.</span></span> <span data-ttu-id="f8eb2-154">Les méthodes dynamiques fournies par la classe `ReadOnlyFile` appellent la méthode `GetPropertyValue` pour récupérer leurs résultats respectifs.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-154">The dynamic methods provided by the `ReadOnlyFile` class call the `GetPropertyValue` method to retrieve their respective results.</span></span>  
   
-     [!code-cs[ProcédureVBdynamique5](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_5.cs)]
+     [!code-csharp[VbDynamicWalkthrough#5](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_5.cs)]
      
-     [!code-vb[ProcédureVBdynamique5](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_5.vb)]  
+     [!code-vb[VbDynamicWalkthrough#5](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_5.vb)]  
   
-10. Après la méthode `GetPropertyValue`, ajoutez le code suivant pour substituer la méthode <xref:System.Dynamic.DynamicObject.TryGetMember%2A> de la classe <xref:System.Dynamic.DynamicObject>. La méthode <xref:System.Dynamic.DynamicObject.TryGetMember%2A> est appelée quand un membre d’une classe dynamique est demandé et qu’aucun argument n’est spécifié. L’argument `binder` contient les informations relatives au membre référencé et l’argument `result` référence le résultat retourné pour le membre spécifié. La méthode <xref:System.Dynamic.DynamicObject.TryGetMember%2A> retourne une valeur booléenne qui retourne `true` si le membre demandé existe ; sinon, elle retourne la valeur `false`.  
+10. <span data-ttu-id="f8eb2-155">Après la méthode `GetPropertyValue`, ajoutez le code suivant pour substituer la méthode <xref:System.Dynamic.DynamicObject.TryGetMember%2A> de la classe <xref:System.Dynamic.DynamicObject>.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-155">After the `GetPropertyValue` method, add the following code to override the <xref:System.Dynamic.DynamicObject.TryGetMember%2A> method of the <xref:System.Dynamic.DynamicObject> class.</span></span> <span data-ttu-id="f8eb2-156">La méthode <xref:System.Dynamic.DynamicObject.TryGetMember%2A> est appelée quand un membre d’une classe dynamique est demandé et qu’aucun argument n’est spécifié.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-156">The <xref:System.Dynamic.DynamicObject.TryGetMember%2A> method is called when a member of a dynamic class is requested and no arguments are specified.</span></span> <span data-ttu-id="f8eb2-157">L’argument `binder` contient les informations relatives au membre référencé et l’argument `result` référence le résultat retourné pour le membre spécifié.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-157">The `binder` argument contains information about the referenced member, and the `result` argument references the result returned for the specified member.</span></span> <span data-ttu-id="f8eb2-158">La méthode <xref:System.Dynamic.DynamicObject.TryGetMember%2A> retourne une valeur booléenne qui retourne `true` si le membre demandé existe ; sinon, elle retourne la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-158">The <xref:System.Dynamic.DynamicObject.TryGetMember%2A> method returns a Boolean value that returns `true` if the requested member exists; otherwise it returns `false`.</span></span>  
   
-     [!code-cs[ProcédureVBdynamique6](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_6.cs)]
+     [!code-csharp[VbDynamicWalkthrough#6](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_6.cs)]
      
-     [!code-vb[ProcédureVBdynamique6](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_6.vb)]  
+     [!code-vb[VbDynamicWalkthrough#6](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_6.vb)]  
   
-11. Après la méthode `TryGetMember`, ajoutez le code suivant pour substituer la méthode <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> de la classe <xref:System.Dynamic.DynamicObject>. La méthode <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> est appelée quand un membre d’une classe dynamique est demandé avec des arguments. L’argument `binder` contient les informations relatives au membre référencé et l’argument `result` référence le résultat retourné pour le membre spécifié. L’argument `args` contient un tableau des arguments passés au membre. La méthode <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> retourne une valeur booléenne qui retourne `true` si le membre demandé existe ; sinon, elle retourne la valeur `false`.  
+11. <span data-ttu-id="f8eb2-159">Après la méthode `TryGetMember`, ajoutez le code suivant pour substituer la méthode <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> de la classe <xref:System.Dynamic.DynamicObject>.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-159">After the `TryGetMember` method, add the following code to override the <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> method of the <xref:System.Dynamic.DynamicObject> class.</span></span> <span data-ttu-id="f8eb2-160">La méthode <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> est appelée quand un membre d’une classe dynamique est demandé avec des arguments.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-160">The <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> method is called when a member of a dynamic class is requested with arguments.</span></span> <span data-ttu-id="f8eb2-161">L’argument `binder` contient les informations relatives au membre référencé et l’argument `result` référence le résultat retourné pour le membre spécifié.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-161">The `binder` argument contains information about the referenced member, and the `result` argument references the result returned for the specified member.</span></span> <span data-ttu-id="f8eb2-162">L’argument `args` contient un tableau des arguments passés au membre.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-162">The `args` argument contains an array of the arguments that are passed to the member.</span></span> <span data-ttu-id="f8eb2-163">La méthode <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> retourne une valeur booléenne qui retourne `true` si le membre demandé existe ; sinon, elle retourne la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-163">The <xref:System.Dynamic.DynamicObject.TryInvokeMember%2A> method returns a Boolean value that returns `true` if the requested member exists; otherwise it returns `false`.</span></span>  
   
-     La version personnalisée de la méthode `TryInvokeMember` s’attend à ce que le premier argument soit une valeur de l’enum `StringSearchOption` que vous avez défini dans une étape précédente. La méthode `TryInvokeMember` s’attend à ce que le deuxième argument soit une valeur booléenne. Si l’un des arguments ou les deux arguments sont des valeurs valides, ils sont passés à la méthode `GetPropertyValue` pour récupérer les résultats.  
+     <span data-ttu-id="f8eb2-164">La version personnalisée de la méthode `TryInvokeMember` s’attend à ce que le premier argument soit une valeur de l’enum `StringSearchOption` que vous avez défini dans une étape précédente.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-164">The custom version of the `TryInvokeMember` method expects the first argument to be a value from the `StringSearchOption` enum that you defined in a previous step.</span></span> <span data-ttu-id="f8eb2-165">La méthode `TryInvokeMember` s’attend à ce que le deuxième argument soit une valeur booléenne.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-165">The `TryInvokeMember` method expects the second argument to be a Boolean value.</span></span> <span data-ttu-id="f8eb2-166">Si l’un des arguments ou les deux arguments sont des valeurs valides, ils sont passés à la méthode `GetPropertyValue` pour récupérer les résultats.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-166">If one or both arguments are valid values, they are passed to the `GetPropertyValue` method to retrieve the results.</span></span>  
   
-     [!code-cs[ProcédureVBdynamique7](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_7.cs)]
+     [!code-csharp[VbDynamicWalkthrough#7](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_7.cs)]
      
-     [!code-vb[ProcédureVBdynamique7](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_7.vb)]  
+     [!code-vb[VbDynamicWalkthrough#7](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_7.vb)]  
   
-12. Enregistrez et fermez le fichier.  
+12. <span data-ttu-id="f8eb2-167">Enregistrez et fermez le fichier.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-167">Save and close the file.</span></span>  
   
-#### <a name="to-create-a-sample-text-file"></a>Pour créer un exemple de fichier texte  
+#### <a name="to-create-a-sample-text-file"></a><span data-ttu-id="f8eb2-168">Pour créer un exemple de fichier texte</span><span class="sxs-lookup"><span data-stu-id="f8eb2-168">To create a sample text file</span></span>  
   
-1.  Cliquez avec le bouton droit sur le projet DynamicSample, pointez sur **Ajouter**, puis cliquez sur **Nouvel élément**. Dans le volet **Modèles installés**, sélectionnez **Général**, puis sélectionnez le modèle **Fichier texte**. Laissez le nom par défaut TextFile1.txt dans la zone **Nom**, puis cliquez sur **Ajouter**. Un nouveau fichier texte est ajouté au projet.  
+1.  <span data-ttu-id="f8eb2-169">Cliquez avec le bouton droit sur le projet DynamicSample, pointez sur **Ajouter**, puis cliquez sur **Nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-169">Right-click the DynamicSample project and point to **Add**, and then click **New Item**.</span></span> <span data-ttu-id="f8eb2-170">Dans le volet **Modèles installés**, sélectionnez **Général**, puis sélectionnez le modèle **Fichier texte**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-170">In the **Installed Templates** pane, select **General**, and then select the **Text File** template.</span></span> <span data-ttu-id="f8eb2-171">Laissez le nom par défaut TextFile1.txt dans la zone **Nom**, puis cliquez sur **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-171">Leave the default name of TextFile1.txt in the **Name** box, and then click **Add**.</span></span> <span data-ttu-id="f8eb2-172">Un nouveau fichier texte est ajouté au projet.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-172">A new text file is added to the project.</span></span>  
   
-2.  Copiez le texte suivant dans le fichier TextFile1.txt.  
+2.  <span data-ttu-id="f8eb2-173">Copiez le texte suivant dans le fichier TextFile1.txt.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-173">Copy the following text to the TextFile1.txt file.</span></span>  
   
     ```  
     List of customers and suppliers  
@@ -136,60 +122,60 @@ Les objets dynamiques exposent des membres tels que les propriétés et les mét
     Customer: Koch, Paul  
     ```  
   
-3.  Enregistrez et fermez le fichier.  
+3.  <span data-ttu-id="f8eb2-174">Enregistrez et fermez le fichier.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-174">Save and close the file.</span></span>  
   
-#### <a name="to-create-a-sample-application-that-uses-the-custom-dynamic-object"></a>Pour créer un exemple d’application qui utilise l’objet dynamique personnalisé  
+#### <a name="to-create-a-sample-application-that-uses-the-custom-dynamic-object"></a><span data-ttu-id="f8eb2-175">Pour créer un exemple d’application qui utilise l’objet dynamique personnalisé</span><span class="sxs-lookup"><span data-stu-id="f8eb2-175">To create a sample application that uses the custom dynamic object</span></span>  
   
-1.  Dans l’**Explorateur de solutions**, double-cliquez sur le fichier Module1.vb si vous utilisez [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ou sur le fichier Program.cs si vous utilisez Visual C#.  
+1.  <span data-ttu-id="f8eb2-176">Dans l’**Explorateur de solutions**, double-cliquez sur le fichier Module1.vb si vous utilisez [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ou sur le fichier Program.cs si vous utilisez Visual C#.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-176">In **Solution Explorer**, double-click the Module1.vb file if you are using [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] or the Program.cs file if you are using Visual C#.</span></span>  
   
-2.  Ajoutez le code suivant à la procédure Main pour créer une instance de la classe `ReadOnlyFile` pour le fichier TextFile1.txt. Le code utilise la liaison tardive pour appeler des membres dynamiques et récupérer des lignes de texte qui contiennent la chaîne « Customer ».  
+2.  <span data-ttu-id="f8eb2-177">Ajoutez le code suivant à la procédure Main pour créer une instance de la classe `ReadOnlyFile` pour le fichier TextFile1.txt.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-177">Add the following code to the Main procedure to create an instance of the `ReadOnlyFile` class for the TextFile1.txt file.</span></span> <span data-ttu-id="f8eb2-178">Le code utilise la liaison tardive pour appeler des membres dynamiques et récupérer des lignes de texte qui contiennent la chaîne « Customer ».</span><span class="sxs-lookup"><span data-stu-id="f8eb2-178">The code uses late binding to call dynamic members and retrieve lines of text that contain the string "Customer".</span></span>  
   
-     [!code-cs[ProcédureVBdynamique8](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_8.cs)]
+     [!code-csharp[VbDynamicWalkthrough#8](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_8.cs)]
      
-     [!code-vb[ProcédureVBdynamique8](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_8.vb)]  
+     [!code-vb[VbDynamicWalkthrough#8](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_8.vb)]  
   
-3.  Enregistrez le fichier et appuyez sur CTRL+F5 pour générer et exécuter l’application.  
+3.  <span data-ttu-id="f8eb2-179">Enregistrez le fichier et appuyez sur CTRL+F5 pour générer et exécuter l’application.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-179">Save the file and press CTRL+F5 to build and run the application.</span></span>  
   
-## <a name="calling-a-dynamic-language-library"></a>Appel d’une bibliothèque dynamique de langage  
- Le projet suivant que vous créez dans cette procédure pas à pas permet d’accéder à une bibliothèque qui est écrite dans le langage dynamique IronPython. Avant de créer ce projet, IronPython 2.6.1 pour .NET 4.0 doit être installé. Vous pouvez télécharger IronPython 2.6.1 pour .NET 4.0 sur le site [CodePlex](http://go.microsoft.com/fwlink/?LinkId=187223).  
-  
-#### <a name="to-create-a-custom-dynamic-class"></a>Pour créer une classe dynamique personnalisée  
-  
-1.  Dans [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], dans le menu **Fichier**, pointez sur **Nouveau**, puis cliquez sur **Projet**.  
-  
-2.  Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné. Sélectionnez **Application console** dans le volet **Modèles**. Dans la zone **Nom**, tapez `DynamicIronPythonSample`, puis cliquez sur **OK**. Le nouveau projet est créé.  
-  
-3.  Si vous utilisez [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], cliquez avec le bouton droit sur le projet DynamicIronPythonSample, puis cliquez sur **Propriétés**. Cliquez sur l’onglet **Références**. Cliquez sur le bouton **Ajouter**. Si vous utilisez Visual C#, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Références**, puis cliquez sur **Ajouter une référence**.  
-  
-4.  Sous l’onglet **Parcourir**, naviguez jusqu’au dossier dans lequel sont installées les bibliothèques IronPython. Par exemple, C:\Program Files\IronPython 2.6 pour .NET 4.0. Sélectionnez les bibliothèques **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll** et **Microsoft.Dynamic.dll**. Cliquez sur **OK**.  
-  
-5.  Si vous utilisez [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], modifiez le fichier Module1.vb. Si vous utilisez Visual C#, modifiez le fichier Program.cs.  
-  
-6.  En haut du fichier, ajoutez le code suivant pour importer les espaces de noms `Microsoft.Scripting.Hosting` et `IronPython.Hosting` depuis les bibliothèques IronPython.  
-  
-     [!code-cs[ProcédureVBdynamiqueIronPython1](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_9.cs)]
-     
-     [!code-vb[ProcédureVBdynamiqueIronPython1](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_9.vb)]  
-  
-7.  Dans la méthode Main, ajoutez le code suivant pour créer un objet `Microsoft.Scripting.Hosting.ScriptRuntime` pour héberger les bibliothèques IronPython. L’objet `ScriptRuntime` charge le module de bibliothèque IronPython random.py.  
-  
-     [!code-cs[ProcédureVBdynamiqueIronPython2](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_10.cs)]
-     
-     [!code-vb[ProcédureVBdynamiqueIronPython2](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_10.vb)]  
-  
-8.  Une fois que le code a chargé le module random.py, ajoutez le code suivant pour créer un tableau d’entiers. Le tableau est passé à la méthode `shuffle` du module random.py, qui trie aléatoirement les valeurs dans le tableau.  
-  
-     [!code-cs[ProcédureVBdynamiqueIronPython3](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_11.cs)]
-     
-     [!code-vb[ProcédureVBdynamiqueIronPython3](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_11.vb)]  
-  
-9. Enregistrez le fichier et appuyez sur CTRL+F5 pour générer et exécuter l’application.  
-  
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Dynamic?displayProperty=fullName>   
- <xref:System.Dynamic.DynamicObject?displayProperty=fullName>   
- [Utilisation du type dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)   
- [Liaison anticipée et liaison tardive](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)   
- [dynamic](../../../csharp/language-reference/keywords/dynamic.md)   
- [Implémentation des interfaces dynamiques (blog externe)](http://go.microsoft.com/fwlink/?LinkId=230895)
+## <a name="calling-a-dynamic-language-library"></a><span data-ttu-id="f8eb2-180">Appel d’une bibliothèque dynamique de langage</span><span class="sxs-lookup"><span data-stu-id="f8eb2-180">Calling a Dynamic Language Library</span></span>  
 
+<span data-ttu-id="f8eb2-181">Le projet suivant que vous créez dans cette procédure pas à pas permet d’accéder à une bibliothèque qui est écrite dans le langage dynamique IronPython.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-181">The next project that you create in this walkthrough accesses a library that is written in the dynamic language IronPython.</span></span>
+  
+#### <a name="to-create-a-custom-dynamic-class"></a><span data-ttu-id="f8eb2-182">Pour créer une classe dynamique personnalisée</span><span class="sxs-lookup"><span data-stu-id="f8eb2-182">To create a custom dynamic class</span></span>  
+  
+1.  <span data-ttu-id="f8eb2-183">Dans [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], dans le menu **Fichier**, pointez sur **Nouveau**, puis cliquez sur **Projet**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-183">In [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], on the **File** menu, point to **New** and then click **Project**.</span></span>  
+  
+2.  <span data-ttu-id="f8eb2-184">Dans la boîte de dialogue **Nouveau projet**, dans le volet **Types de projets**, vérifiez que **Windows** est sélectionné.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-184">In the **New Project** dialog box, in the **Project Types** pane, make sure that **Windows** is selected.</span></span> <span data-ttu-id="f8eb2-185">Sélectionnez **Application console** dans le volet **Modèles**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-185">Select **Console Application** in the **Templates** pane.</span></span> <span data-ttu-id="f8eb2-186">Dans la zone **Nom**, tapez `DynamicIronPythonSample`, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-186">In the **Name** box, type `DynamicIronPythonSample`, and then click **OK**.</span></span> <span data-ttu-id="f8eb2-187">Le nouveau projet est créé.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-187">The new project is created.</span></span>  
+  
+3.  <span data-ttu-id="f8eb2-188">Si vous utilisez [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], cliquez avec le bouton droit sur le projet DynamicIronPythonSample, puis cliquez sur **Propriétés**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-188">If you are using [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], right-click the DynamicIronPythonSample project and then click **Properties**.</span></span> <span data-ttu-id="f8eb2-189">Cliquez sur l’onglet **Références**. Cliquez sur le bouton **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-189">Click the **References** tab. Click the **Add** button.</span></span> <span data-ttu-id="f8eb2-190">Si vous utilisez Visual C#, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Références**, puis cliquez sur **Ajouter une référence**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-190">If you are using Visual C#, in **Solution Explorer**, right-click the **References** folder and then click **Add Reference**.</span></span>  
+  
+4.  <span data-ttu-id="f8eb2-191">Sous l’onglet **Parcourir**, naviguez jusqu’au dossier dans lequel sont installées les bibliothèques IronPython.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-191">On the **Browse** tab, browse to the folder where the IronPython libraries are installed.</span></span> <span data-ttu-id="f8eb2-192">Par exemple, C:\Program Files\IronPython 2.6 pour .NET 4.0.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-192">For example, C:\Program Files\IronPython 2.6 for .NET 4.0.</span></span> <span data-ttu-id="f8eb2-193">Sélectionnez les bibliothèques **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll** et **Microsoft.Dynamic.dll**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-193">Select the **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll**, and **Microsoft.Dynamic.dll** libraries.</span></span> <span data-ttu-id="f8eb2-194">Cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-194">Click **OK**.</span></span>  
+  
+5.  <span data-ttu-id="f8eb2-195">Si vous utilisez [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], modifiez le fichier Module1.vb.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-195">If you are using [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], edit the Module1.vb file.</span></span> <span data-ttu-id="f8eb2-196">Si vous utilisez Visual C#, modifiez le fichier Program.cs.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-196">If you are using Visual C#, edit the Program.cs file.</span></span>  
+  
+6.  <span data-ttu-id="f8eb2-197">En haut du fichier, ajoutez le code suivant pour importer les espaces de noms `Microsoft.Scripting.Hosting` et `IronPython.Hosting` depuis les bibliothèques IronPython.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-197">At the top of the file, add the following code to import the `Microsoft.Scripting.Hosting` and `IronPython.Hosting` namespaces from the IronPython libraries.</span></span>  
+  
+     [!code-csharp[VbDynamicWalkthroughIronPython#1](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_9.cs)]
+     
+     [!code-vb[VbDynamicWalkthroughIronPython#1](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_9.vb)]  
+  
+7.  <span data-ttu-id="f8eb2-198">Dans la méthode Main, ajoutez le code suivant pour créer un objet `Microsoft.Scripting.Hosting.ScriptRuntime` pour héberger les bibliothèques IronPython.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-198">In the Main method, add the following code to create a new `Microsoft.Scripting.Hosting.ScriptRuntime` object to host the IronPython libraries.</span></span> <span data-ttu-id="f8eb2-199">L’objet `ScriptRuntime` charge le module de bibliothèque IronPython random.py.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-199">The `ScriptRuntime` object loads the IronPython library module random.py.</span></span>  
+  
+     [!code-csharp[VbDynamicWalkthroughIronPython#2](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_10.cs)]
+     
+     [!code-vb[VbDynamicWalkthroughIronPython#2](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_10.vb)]  
+  
+8.  <span data-ttu-id="f8eb2-200">Une fois que le code a chargé le module random.py, ajoutez le code suivant pour créer un tableau d’entiers.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-200">After the code to load the random.py module, add the following code to create an array of integers.</span></span> <span data-ttu-id="f8eb2-201">Le tableau est passé à la méthode `shuffle` du module random.py, qui trie aléatoirement les valeurs dans le tableau.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-201">The array is passed to the `shuffle` method of the random.py module, which randomly sorts the values in the array.</span></span>  
+  
+     [!code-csharp[VbDynamicWalkthroughIronPython#3](../../../csharp/programming-guide/types/codesnippet/CSharp/walkthrough-creating-and-using-dynamic-objects_11.cs)]
+     
+     [!code-vb[VbDynamicWalkthroughIronPython#3](../../../csharp/programming-guide/types/codesnippet/VisualBasic/walkthrough-creating-and-using-dynamic-objects_11.vb)]  
+  
+9. <span data-ttu-id="f8eb2-202">Enregistrez le fichier et appuyez sur CTRL+F5 pour générer et exécuter l’application.</span><span class="sxs-lookup"><span data-stu-id="f8eb2-202">Save the file and press CTRL+F5 to build and run the application.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="f8eb2-203">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f8eb2-203">See Also</span></span>  
+ <xref:System.Dynamic?displayProperty=nameWithType>  
+ <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>  
+ [<span data-ttu-id="f8eb2-204">Utilisation du type dynamic</span><span class="sxs-lookup"><span data-stu-id="f8eb2-204">Using Type dynamic</span></span>](../../../csharp/programming-guide/types/using-type-dynamic.md)  
+ [<span data-ttu-id="f8eb2-205">Liaison anticipée et liaison tardive</span><span class="sxs-lookup"><span data-stu-id="f8eb2-205">Early and Late Binding</span></span>](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
+ [<span data-ttu-id="f8eb2-206">dynamic</span><span class="sxs-lookup"><span data-stu-id="f8eb2-206">dynamic</span></span>](../../../csharp/language-reference/keywords/dynamic.md)  
+ [<span data-ttu-id="f8eb2-207">Implémentation des interfaces dynamiques (blog externe)</span><span class="sxs-lookup"><span data-stu-id="f8eb2-207">Implementing Dynamic Interfaces (external blog)</span></span>](http://go.microsoft.com/fwlink/?LinkId=230895)

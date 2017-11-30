@@ -1,12 +1,9 @@
 ---
 title: -link (Options du compilateur C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - /l compiler option [C#]
 - /link compiler option [C#]
@@ -17,34 +14,19 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 229bd7e6a7f3691bcb4e6c6dab6f9f36dc3d45f5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c08f2e7f13a51fb1a350acadff5224cfa8d61aaa
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="link-c-compiler-options"></a>/link (Options du compilateur C#)
-Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.  
+# <a name="link-c-compiler-options"></a><span data-ttu-id="a5894-102">/link (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="a5894-102">/link (C# Compiler Options)</span></span>
+<span data-ttu-id="a5894-103">Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.</span><span class="sxs-lookup"><span data-stu-id="a5894-103">Causes the compiler to make COM type information in the specified assemblies available to the project that you are currently compiling.</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="a5894-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a5894-104">Syntax</span></span>  
   
 ```console  
 /link:fileList  
@@ -52,63 +34,62 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
 /l:fileList  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a><span data-ttu-id="a5894-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="a5894-105">Arguments</span></span>  
  `fileList`  
- Obligatoire. Liste délimitée par des virgules des noms de fichiers d’assembly. Si le nom de fichier contient un espace, placez-le entre des guillemets.  
+ <span data-ttu-id="a5894-106">Obligatoire.</span><span class="sxs-lookup"><span data-stu-id="a5894-106">Required.</span></span> <span data-ttu-id="a5894-107">Liste délimitée par des virgules des noms de fichiers d’assembly.</span><span class="sxs-lookup"><span data-stu-id="a5894-107">Comma-delimited list of assembly file names.</span></span> <span data-ttu-id="a5894-108">Si le nom de fichier contient un espace, placez-le entre des guillemets.</span><span class="sxs-lookup"><span data-stu-id="a5894-108">If the file name contains a space, enclose the name in quotation marks.</span></span>  
   
-## <a name="remarks"></a>Notes  
- L’option `/link` vous permet de déployer une application qui a des informations de type incorporées. L’application peut ensuite utiliser des types dans un assembly de runtime qui implémentent les informations de type incorporées sans nécessiter une référence à l’assembly de runtime. Si différentes versions de l’assembly de runtime sont publiées, l’application qui contient les informations de type incorporées peut fonctionner avec les différentes versions sans devoir être recompilée. Pour un exemple, consultez [Procédure pas à pas : incorporation de types provenant d’assemblys managés](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21).  
+## <a name="remarks"></a><span data-ttu-id="a5894-109">Notes</span><span class="sxs-lookup"><span data-stu-id="a5894-109">Remarks</span></span>  
+ <span data-ttu-id="a5894-110">L’option `/link` vous permet de déployer une application qui a des informations de type incorporées.</span><span class="sxs-lookup"><span data-stu-id="a5894-110">The `/link` option enables you to deploy an application that has embedded type information.</span></span> <span data-ttu-id="a5894-111">L’application peut ensuite utiliser des types dans un assembly de runtime qui implémentent les informations de type incorporées sans nécessiter une référence à l’assembly de runtime.</span><span class="sxs-lookup"><span data-stu-id="a5894-111">The application can then use types in a runtime assembly that implement the embedded type information without requiring a reference to the runtime assembly.</span></span> <span data-ttu-id="a5894-112">Si différentes versions de l’assembly de runtime sont publiées, l’application qui contient les informations de type incorporées peut fonctionner avec les différentes versions sans devoir être recompilée.</span><span class="sxs-lookup"><span data-stu-id="a5894-112">If various versions of the runtime assembly are published, the application that contains the embedded type information can work with the various versions without having to be recompiled.</span></span> <span data-ttu-id="a5894-113">Pour un exemple, consultez [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).</span><span class="sxs-lookup"><span data-stu-id="a5894-113">For an example, see [Walkthrough: Embedding Types from Managed Assemblies](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).</span></span>  
   
- L’utilisation de l’option `/link` est particulièrement utile quand vous travaillez avec COM Interop. Vous pouvez incorporer des types COM afin que votre application ne nécessite plus un assembly PIA (Primary Interop Assembly) sur l’ordinateur cible. L’option `/link` indique au compilateur d’incorporer les informations de type COM provenant de l’assembly Interop référencé dans le code compilé résultant. Le type COM est identifié par la valeur du CLSID (GUID). Par conséquent, votre application peut s’exécuter sur un ordinateur cible où les mêmes types COM ont été installés avec les mêmes valeurs de CLSID. Les applications qui automatisent Microsoft Office sont un bon exemple. Étant donné que les applications comme Office gardent habituellement la même valeur de CLSID à travers différentes versions, votre application peut utiliser les types COM référencés dès lors que le .NET Framework 4 ou ultérieur est installé sur l’ordinateur cible, et que votre application utilise les méthodes, propriétés ou événements qui sont inclus dans les types COM référencés.  
+ <span data-ttu-id="a5894-114">L’utilisation de l’option `/link` est particulièrement utile quand vous travaillez avec COM Interop.</span><span class="sxs-lookup"><span data-stu-id="a5894-114">Using the `/link` option is especially useful when you are working with COM interop.</span></span> <span data-ttu-id="a5894-115">Vous pouvez incorporer des types COM afin que votre application ne nécessite plus un assembly PIA (Primary Interop Assembly) sur l’ordinateur cible.</span><span class="sxs-lookup"><span data-stu-id="a5894-115">You can embed COM types so that your application no longer requires a primary interop assembly (PIA) on the target computer.</span></span> <span data-ttu-id="a5894-116">L’option `/link` indique au compilateur d’incorporer les informations de type COM provenant de l’assembly Interop référencé dans le code compilé résultant.</span><span class="sxs-lookup"><span data-stu-id="a5894-116">The `/link` option instructs the compiler to embed the COM type information from the referenced interop assembly into the resulting compiled code.</span></span> <span data-ttu-id="a5894-117">Le type COM est identifié par la valeur du CLSID (GUID).</span><span class="sxs-lookup"><span data-stu-id="a5894-117">The COM type is identified by the CLSID (GUID) value.</span></span> <span data-ttu-id="a5894-118">Par conséquent, votre application peut s’exécuter sur un ordinateur cible où les mêmes types COM ont été installés avec les mêmes valeurs de CLSID.</span><span class="sxs-lookup"><span data-stu-id="a5894-118">As a result, your application can run on a target computer that has installed the same COM types with the same CLSID values.</span></span> <span data-ttu-id="a5894-119">Les applications qui automatisent Microsoft Office sont un bon exemple.</span><span class="sxs-lookup"><span data-stu-id="a5894-119">Applications that automate Microsoft Office are a good example.</span></span> <span data-ttu-id="a5894-120">Étant donné que les applications comme Office gardent habituellement la même valeur de CLSID à travers différentes versions, votre application peut utiliser les types COM référencés dès lors que le .NET Framework 4 ou ultérieur est installé sur l’ordinateur cible, et que votre application utilise les méthodes, propriétés ou événements qui sont inclus dans les types COM référencés.</span><span class="sxs-lookup"><span data-stu-id="a5894-120">Because applications like Office usually keep the same CLSID value across different versions, your application can use the referenced COM types as long as .NET Framework 4 or later is installed on the target computer and your application uses methods, properties, or events that are included in the referenced COM types.</span></span>  
   
- L’option `/link` incorpore seulement les interfaces, les structures et les délégués. L’incorporation de classes COM n’est pas prise en charge.  
+ <span data-ttu-id="a5894-121">L’option `/link` incorpore seulement les interfaces, les structures et les délégués.</span><span class="sxs-lookup"><span data-stu-id="a5894-121">The `/link` option embeds only interfaces, structures, and delegates.</span></span> <span data-ttu-id="a5894-122">L’incorporation de classes COM n’est pas prise en charge.</span><span class="sxs-lookup"><span data-stu-id="a5894-122">Embedding COM classes is not supported.</span></span>  
   
 > [!NOTE]
->  Quand vous créez une instance d’un type COM incorporé dans votre code, vous devez créer l’instance à l’aide de l’interface appropriée. Une tentative de création d’une instance d’un type COM incorporé à l’aide de la coclasse provoque une erreur.  
+>  <span data-ttu-id="a5894-123">Quand vous créez une instance d’un type COM incorporé dans votre code, vous devez créer l’instance à l’aide de l’interface appropriée.</span><span class="sxs-lookup"><span data-stu-id="a5894-123">When you create an instance of an embedded COM type in your code, you must create the instance by using the appropriate interface.</span></span> <span data-ttu-id="a5894-124">Une tentative de création d’une instance d’un type COM incorporé à l’aide de la coclasse provoque une erreur.</span><span class="sxs-lookup"><span data-stu-id="a5894-124">Attempting to create an instance of an embedded COM type by using the CoClass causes an error.</span></span>  
   
- Pour définir l’option `/link` dans [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], ajoutez une référence d’assembly et définissez la propriété `Embed Interop Types` sur **true**. La valeur par défaut pour la propriété `Embed Interop Types` est **false**.  
+ <span data-ttu-id="a5894-125">Pour définir l’option `/link` dans [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], ajoutez une référence d’assembly et définissez la propriété `Embed Interop Types` sur **true**.</span><span class="sxs-lookup"><span data-stu-id="a5894-125">To set the `/link` option in [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], add an assembly reference and set the `Embed Interop Types` property to **true**.</span></span> <span data-ttu-id="a5894-126">La valeur par défaut pour la propriété `Embed Interop Types` est **false**.</span><span class="sxs-lookup"><span data-stu-id="a5894-126">The default for the `Embed Interop Types` property is **false**.</span></span>  
   
- Si vous liez à un assembly COM (Assembly A) qui référence lui-même un autre assembly COM (Assembly B), vous devez également lier à l’Assembly B si une des conditions suivantes est vraie :  
+ <span data-ttu-id="a5894-127">Si vous liez à un assembly COM (Assembly A) qui référence lui-même un autre assembly COM (Assembly B), vous devez également lier à l’Assembly B si une des conditions suivantes est vraie :</span><span class="sxs-lookup"><span data-stu-id="a5894-127">If you link to a COM assembly (Assembly A) which itself references another COM assembly (Assembly B), you also have to link to Assembly B if either of the following is true:</span></span>  
   
--   Un type de l’Assembly A hérite d’un type ou implémente une interface de l’Assembly B.  
+-   <span data-ttu-id="a5894-128">Un type de l’Assembly A hérite d’un type ou implémente une interface de l’Assembly B.</span><span class="sxs-lookup"><span data-stu-id="a5894-128">A type from Assembly A inherits from a type or implements an interface from Assembly B.</span></span>  
   
--   Un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B est appelé.  
+-   <span data-ttu-id="a5894-129">Un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B est appelé.</span><span class="sxs-lookup"><span data-stu-id="a5894-129">A field, property, event, or method that has a return type or parameter type from Assembly B is invoked.</span></span>  
   
- Comme l’option [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) du compilateur, l’option `/link` du compilateur utilise le fichier réponse Csc.rsp, qui référence les assemblys [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] fréquemment utilisés. Utilisez l’option [/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.  
+ <span data-ttu-id="a5894-130">Comme l’option [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) du compilateur, l’option `/link` du compilateur utilise le fichier réponse Csc.rsp, qui référence les assemblys [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] fréquemment utilisés.</span><span class="sxs-lookup"><span data-stu-id="a5894-130">Like the [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) compiler option, the `/link` compiler option uses the Csc.rsp response file, which references frequently used [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assemblies.</span></span> <span data-ttu-id="a5894-131">Utilisez l’option [/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.</span><span class="sxs-lookup"><span data-stu-id="a5894-131">Use the [/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) compiler option if you do not want the compiler to use the Csc.rsp file.</span></span>  
   
- La forme abrégée de `/link` est `/l`.  
+ <span data-ttu-id="a5894-132">La forme abrégée de `/link` est `/l`.</span><span class="sxs-lookup"><span data-stu-id="a5894-132">The short form of `/link` is `/l`.</span></span>  
   
-## <a name="generics-and-embedded-types"></a>Types génériques et imbriqués  
- Les sections suivantes décrivent les limitations de l’utilisation de types génériques dans les applications qui incorporent des types interop.  
+## <a name="generics-and-embedded-types"></a><span data-ttu-id="a5894-133">Types génériques et imbriqués</span><span class="sxs-lookup"><span data-stu-id="a5894-133">Generics and Embedded Types</span></span>  
+ <span data-ttu-id="a5894-134">Les sections suivantes décrivent les limitations de l’utilisation de types génériques dans les applications qui incorporent des types interop.</span><span class="sxs-lookup"><span data-stu-id="a5894-134">The following sections describe the limitations on using generic types in applications that embed interop types.</span></span>  
   
-### <a name="generic-interfaces"></a>Interfaces génériques  
- Vous ne pouvez pas utiliser des interfaces génériques incorporées depuis un assembly d’interopérabilité. L'exemple suivant le démontre.  
+### <a name="generic-interfaces"></a><span data-ttu-id="a5894-135">Interfaces génériques</span><span class="sxs-lookup"><span data-stu-id="a5894-135">Generic Interfaces</span></span>  
+ <span data-ttu-id="a5894-136">Vous ne pouvez pas utiliser des interfaces génériques incorporées depuis un assembly d’interopérabilité.</span><span class="sxs-lookup"><span data-stu-id="a5894-136">Generic interfaces that are embedded from an interop assembly cannot be used.</span></span> <span data-ttu-id="a5894-137">L'exemple suivant le démontre.</span><span class="sxs-lookup"><span data-stu-id="a5894-137">This is shown in the following example.</span></span>  
   
- [!code-cs[VbLinkCompilerCS#1](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_1.cs)]  
+ [!code-csharp[VbLinkCompilerCS#1](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_1.cs)]  
   
-### <a name="types-that-have-generic-parameters"></a>Types ayant des paramètres génériques  
- Vous ne pouvez pas utiliser des types qui ont un paramètre générique dont le type est incorporé depuis un assembly d’interopérabilité si ce type provient d’un assembly externe. Cette restriction ne s’applique pas aux interfaces. Prenons l’exemple de l’interface <xref:Microsoft.Office.Interop.Excel.Range> qui est définie dans l’assembly <xref:Microsoft.Office.Interop.Excel>. Si une bibliothèque incorpore les types interop de l’assembly <xref:Microsoft.Office.Interop.Excel> et expose une méthode qui retourne un type générique qui a un paramètre dont le type est l’interface <xref:Microsoft.Office.Interop.Excel.Range>, cette méthode doit retourner une interface générique, comme dans l’exemple de code suivant.  
+### <a name="types-that-have-generic-parameters"></a><span data-ttu-id="a5894-138">Types ayant des paramètres génériques</span><span class="sxs-lookup"><span data-stu-id="a5894-138">Types That Have Generic Parameters</span></span>  
+ <span data-ttu-id="a5894-139">Vous ne pouvez pas utiliser des types qui ont un paramètre générique dont le type est incorporé depuis un assembly d’interopérabilité si ce type provient d’un assembly externe.</span><span class="sxs-lookup"><span data-stu-id="a5894-139">Types that have a generic parameter whose type is embedded from an interop assembly cannot be used if that type is from an external assembly.</span></span> <span data-ttu-id="a5894-140">Cette restriction ne s’applique pas aux interfaces.</span><span class="sxs-lookup"><span data-stu-id="a5894-140">This restriction does not apply to interfaces.</span></span> <span data-ttu-id="a5894-141">Prenons l’exemple de l’interface <xref:Microsoft.Office.Interop.Excel.Range> qui est définie dans l’assembly <xref:Microsoft.Office.Interop.Excel>.</span><span class="sxs-lookup"><span data-stu-id="a5894-141">For example, consider the <xref:Microsoft.Office.Interop.Excel.Range> interface that is defined in the <xref:Microsoft.Office.Interop.Excel> assembly.</span></span> <span data-ttu-id="a5894-142">Si une bibliothèque incorpore les types interop de l’assembly <xref:Microsoft.Office.Interop.Excel> et expose une méthode qui retourne un type générique qui a un paramètre dont le type est l’interface <xref:Microsoft.Office.Interop.Excel.Range>, cette méthode doit retourner une interface générique, comme dans l’exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="a5894-142">If a library embeds interop types from the <xref:Microsoft.Office.Interop.Excel> assembly and exposes a method that returns a generic type that has a parameter whose type is the <xref:Microsoft.Office.Interop.Excel.Range> interface, that method must return a generic interface, as shown in the following code example.</span></span>  
   
- [!code-cs[VbLinkCompilerCS#2](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_2.cs)]  
-[!code-cs[VbLinkCompilerCS#3](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_3.cs)]  
-[!code-cs[VbLinkCompilerCS#4](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_4.cs)]  
+ [!code-csharp[VbLinkCompilerCS#2](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_2.cs)]  
+[!code-csharp[VbLinkCompilerCS#3](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_3.cs)]  
+[!code-csharp[VbLinkCompilerCS#4](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_4.cs)]  
   
- Dans l’exemple suivant, le code client peut appeler la méthode qui retourne l’interface générique <xref:System.Collections.IList> sans erreur.  
+ <span data-ttu-id="a5894-143">Dans l’exemple suivant, le code client peut appeler la méthode qui retourne l’interface générique <xref:System.Collections.IList> sans erreur.</span><span class="sxs-lookup"><span data-stu-id="a5894-143">In the following example, client code can call the method that returns the <xref:System.Collections.IList> generic interface without error.</span></span>  
   
- [!code-cs[VbLinkCompilerCS#5](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_5.cs)]  
+ [!code-csharp[VbLinkCompilerCS#5](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_5.cs)]  
   
-## <a name="example"></a>Exemple  
- Le code suivant compile le fichier source `OfficeApp.cs` et des assemblys de référence à partir de `COMData1.dll` et de `COMData2.dll` pour produire `OfficeApp.exe`.  
+## <a name="example"></a><span data-ttu-id="a5894-144">Exemple</span><span class="sxs-lookup"><span data-stu-id="a5894-144">Example</span></span>  
+ <span data-ttu-id="a5894-145">Le code suivant compile le fichier source `OfficeApp.cs` et des assemblys de référence à partir de `COMData1.dll` et de `COMData2.dll` pour produire `OfficeApp.exe`.</span><span class="sxs-lookup"><span data-stu-id="a5894-145">The following code compiles source file `OfficeApp.cs` and reference assemblies from `COMData1.dll` and `COMData2.dll` to produce `OfficeApp.exe`.</span></span>  
   
 ```csharp  
 csc /link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.cs  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [Procédure pas à pas : incorporation de types provenant d’assemblys managés](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)   
- [/reference (options du compilateur C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)   
- [/noconfig (options du compilateur C#)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)   
- [Génération à partir de la ligne de commande avec csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)   
- [Vue d’ensemble de l’interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)
-
+## <a name="see-also"></a><span data-ttu-id="a5894-146">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a5894-146">See Also</span></span>  
+ [<span data-ttu-id="a5894-147">Options du compilateur C#</span><span class="sxs-lookup"><span data-stu-id="a5894-147">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+ [<span data-ttu-id="a5894-148">Procédure pas à pas : incorporation de types provenant d’assemblys managés</span><span class="sxs-lookup"><span data-stu-id="a5894-148">Walkthrough: Embedding Types from Managed Assemblies</span></span>](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
+ [<span data-ttu-id="a5894-149">/reference (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="a5894-149">/reference (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)  
+ [<span data-ttu-id="a5894-150">/noconfig (Options du compilateur c#)</span><span class="sxs-lookup"><span data-stu-id="a5894-150">/noconfig (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)  
+ [<span data-ttu-id="a5894-151">Génération à partir de la ligne de commande avec csc.exe</span><span class="sxs-lookup"><span data-stu-id="a5894-151">Command-line Building With csc.exe</span></span>](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)  
+ [<span data-ttu-id="a5894-152">Vue d’ensemble de l’interopérabilité</span><span class="sxs-lookup"><span data-stu-id="a5894-152">Interoperability Overview</span></span>](../../../csharp/programming-guide/interop/interoperability-overview.md)

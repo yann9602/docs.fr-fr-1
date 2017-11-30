@@ -1,52 +1,53 @@
 ---
-title: "Blocs de scripts utilisant msxsl:script | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Blocs de scripts utilisant msxsl:script
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 2e127fb02725d11e62c45157b4e45327fc9f1ace
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Blocs de scripts utilisant msxsl:script
-La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts incorporés en utilisant l'élément `msxsl:script`.  Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL \(Microsoft Intermediate Language\) par le CodeDOM \(Code Document Object Model\) et exécutée au cours de l'exécution.  L' assembly généré à partir du bloc de script incorporé est distinct de l'assembly généré pour la feuille de style.  
+# <a name="script-blocks-using-msxslscript"></a><span data-ttu-id="b9c97-102">Blocs de scripts utilisant msxsl:script</span><span class="sxs-lookup"><span data-stu-id="b9c97-102">Script Blocks Using msxsl:script</span></span>
+<span data-ttu-id="b9c97-103">La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts incorporés en utilisant l'élément `msxsl:script`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-103">The <xref:System.Xml.Xsl.XslCompiledTransform> class supports embedded scripts using the `msxsl:script` element.</span></span> <span data-ttu-id="b9c97-104">Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par le CodeDOM (Code Document Object Model) et exécutée au cours de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="b9c97-104">When the style sheet is loaded, any defined functions are compiled to Microsoft intermediate language (MSIL) by the Code Document Object Model (CodeDOM) and are executed during run time.</span></span> <span data-ttu-id="b9c97-105">L' assembly généré à partir du bloc de script incorporé est distinct de l'assembly généré pour la feuille de style.</span><span class="sxs-lookup"><span data-stu-id="b9c97-105">The assembly generated from the embedded script block is separate than the assembly generated for the style sheet.</span></span>  
   
-## Activer les scripts XSLT  
- La prise en charge des scripts incorporés est un réglage XSLT facultatif de la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  La prise en charge des scripts est désactivée par défaut.  Pour l'activer, créez un objet <xref:System.Xml.Xsl.XsltSettings> avec la propriété <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A> définie sur `true` et transmettez l'objet à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.  
+## <a name="enable-xslt-script"></a><span data-ttu-id="b9c97-106">Activer les scripts XSLT</span><span class="sxs-lookup"><span data-stu-id="b9c97-106">Enable XSLT Script</span></span>  
+ <span data-ttu-id="b9c97-107">La prise en charge des scripts incorporés est un réglage XSLT facultatif de la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="b9c97-107">Support for embedded scripts is an optional XSLT setting on the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="b9c97-108">La prise en charge des scripts est désactivée par défaut.</span><span class="sxs-lookup"><span data-stu-id="b9c97-108">Script support is disabled by default.</span></span> <span data-ttu-id="b9c97-109">Pour l'activer, créez un objet <xref:System.Xml.Xsl.XsltSettings> avec la propriété <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A> définie sur `true` et transmettez l'objet à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.</span><span class="sxs-lookup"><span data-stu-id="b9c97-109">To enable script support, create an <xref:System.Xml.Xsl.XsltSettings> object with the <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A> property set to `true` and pass the object to the <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> method.</span></span>  
   
 > [!NOTE]
->  Le script XSLT ne doit être activé que si la prise en charge des scripts est nécessaire et si vous travaillez dans un environnement totalement fiable.  
+>  <span data-ttu-id="b9c97-110">Le script XSLT ne doit être activé que si la prise en charge des scripts est nécessaire et si vous travaillez dans un environnement totalement fiable.</span><span class="sxs-lookup"><span data-stu-id="b9c97-110">XSLT scripting should be enabled only if you require script support and you are working in a fully trusted environment.</span></span>  
   
-## Définition de l'élément msxsl:script  
- L'élément `msxsl:script` est une extension Microsoft de la recommandation XSLT 1.0. Il se définit comme suit :  
+## <a name="msxslscript-element-definition"></a><span data-ttu-id="b9c97-111">Définition de l'élément msxsl:script</span><span class="sxs-lookup"><span data-stu-id="b9c97-111">msxsl:script Element Definition</span></span>  
+ <span data-ttu-id="b9c97-112">L'élément `msxsl:script` est une extension Microsoft de la recommandation XSLT 1.0. Il se définit comme suit :</span><span class="sxs-lookup"><span data-stu-id="b9c97-112">The `msxsl:script` element is a Microsoft extension to the XSLT 1.0 recommendation and has the following definition:</span></span>  
   
-```  
+```xml  
 <msxsl:script language = "language-name" implements-prefix = "prefix of user namespace"> </msxsl:script>  
 ```  
   
- Le préfixe `msxsl` est lié à l'URI d'espace de noms `urn:schemas-microsoft-com:xslt`.  La feuille de style doit inclure la déclaration d'espace de noms `xmlns:msxsl=urn:schemas-microsoft-com:xslt`.  
+ <span data-ttu-id="b9c97-113">Le préfixe `msxsl` est lié à l'URI d'espace de noms `urn:schemas-microsoft-com:xslt`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-113">The `msxsl` prefix is bound to the `urn:schemas-microsoft-com:xslt` namespace URI.</span></span> <span data-ttu-id="b9c97-114">La feuille de style doit inclure la déclaration d'espace de noms `xmlns:msxsl=urn:schemas-microsoft-com:xslt`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-114">The style sheet must include the `xmlns:msxsl=urn:schemas-microsoft-com:xslt` namespace declaration.</span></span>  
   
- L'attribut `language` est facultatif.  Sa valeur est le langage du bloc de code incorporé.  Ce langage est mappé au compilateur CodeDOM approprié à l'aide de la méthode <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A?displayProperty=fullName>.  La classe <xref:System.Xml.Xsl.XslCompiledTransform> peut prendre en charge tout langage Microsoft .NET, à condition que le fournisseur approprié soit installé sur l'ordinateur et enregistré dans la section system.codedom du fichier machine.config.  Si aucun attribut `language` n'est spécifié, le langage par défaut est JScript.  Le nom du langage ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
+ <span data-ttu-id="b9c97-115">L'attribut `language` est facultatif.</span><span class="sxs-lookup"><span data-stu-id="b9c97-115">The `language` attribute is optional.</span></span> <span data-ttu-id="b9c97-116">Sa valeur est le langage du bloc de code incorporé.</span><span class="sxs-lookup"><span data-stu-id="b9c97-116">Its value is the code language of the embedded code block.</span></span> <span data-ttu-id="b9c97-117">Ce langage est mappé au compilateur CodeDOM approprié à l'aide de la méthode <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="b9c97-117">The language is mapped to the appropriate CodeDOM compiler using the <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="b9c97-118">La classe <xref:System.Xml.Xsl.XslCompiledTransform> peut prendre en charge tout langage Microsoft .NET, à condition que le fournisseur approprié soit installé sur l'ordinateur et enregistré dans la section system.codedom du fichier machine.config.</span><span class="sxs-lookup"><span data-stu-id="b9c97-118">The <xref:System.Xml.Xsl.XslCompiledTransform> class can support any Microsoft .NET language, assuming the appropriate provider is installed on the machine and is registered in the system.codedom section of the machine.config file.</span></span> <span data-ttu-id="b9c97-119">Si aucun attribut `language` n'est spécifié, le langage par défaut est JScript.</span><span class="sxs-lookup"><span data-stu-id="b9c97-119">If a `language` attribute is not specified, the language defaults to JScript.</span></span> <span data-ttu-id="b9c97-120">Le nom du langage ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.</span><span class="sxs-lookup"><span data-stu-id="b9c97-120">The language name is not case-sensitive so 'JavaScript' and 'javascript' are equivalent.</span></span>  
   
- L'attribut `implements-prefix` est obligatoire.  Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script.  La valeur de cet attribut est le préfixe qui représente l'espace de noms.  Ce préfixe peut être défini à un endroit d'une feuille de style.  
+ <span data-ttu-id="b9c97-121">L'attribut `implements-prefix` est obligatoire.</span><span class="sxs-lookup"><span data-stu-id="b9c97-121">The `implements-prefix` attribute is mandatory.</span></span> <span data-ttu-id="b9c97-122">Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script.</span><span class="sxs-lookup"><span data-stu-id="b9c97-122">This attribute is used to declare a namespace and associate it with the script block.</span></span> <span data-ttu-id="b9c97-123">La valeur de cet attribut est le préfixe qui représente l'espace de noms.</span><span class="sxs-lookup"><span data-stu-id="b9c97-123">The value of this attribute is the prefix that represents the namespace.</span></span> <span data-ttu-id="b9c97-124">Ce préfixe peut être défini à un endroit d'une feuille de style.</span><span class="sxs-lookup"><span data-stu-id="b9c97-124">This prefix can be defined somewhere in a style sheet.</span></span>  
   
 > [!NOTE]
->  Lors de l'utilisation de l'élément `msxsl:script`, il est vivement recommandé de placer le script \(quel que soit son langage\) dans une section CDATA.  Étant donné que le script peut contenir des opérateurs, identificateurs ou délimiteurs pour un langage donné, s'il n'est pas contenu dans une section CDATA, il risque d'être interprété à tort comme du XML.  Le XML suivant illustre un modèle de la section CDATA où peut être placé le code.  
+>  <span data-ttu-id="b9c97-125">Lors de l'utilisation de l'élément `msxsl:script`, il est vivement recommandé de placer le script (quel que soit son langage) dans une section CDATA.</span><span class="sxs-lookup"><span data-stu-id="b9c97-125">When using the `msxsl:script` element, we strongly recommend that the script, regardless of language, be placed inside a CDATA section.</span></span> <span data-ttu-id="b9c97-126">Étant donné que le script peut contenir des opérateurs, identificateurs ou délimiteurs pour un langage donné, s'il n'est pas contenu dans une section CDATA, il risque d'être interprété à tort comme du XML.</span><span class="sxs-lookup"><span data-stu-id="b9c97-126">Because the script can contain operators, identifiers, or delimiters for a given language, if it is not contained within a CDATA section, it has the potential of being misinterpreted as XML.</span></span> <span data-ttu-id="b9c97-127">Le XML suivant illustre un modèle de la section CDATA où peut être placé le code.</span><span class="sxs-lookup"><span data-stu-id="b9c97-127">The following XML shows a template of the CDATA section where code can be placed.</span></span>  
   
-```  
+```xml  
 <msxsl:script implements-prefix='your-prefix' language='CSharp'>  
 <![CDATA[  
 // Code block.  
@@ -54,12 +55,12 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 </msxsl:script>  
 ```  
   
-## Fonctions de script  
- Les fonctions peuvent être déclarées dans l'élément `msxsl:script`.  Lorsqu'une fonction est déclarée, elle est contenue dans un bloc de script.  Les feuilles de style peuvent contenir plusieurs blocs de scripts, chacun fonctionnant indépendamment des autres.  Ainsi, si vous êtes en cours d'exécution dans un bloc de script, vous ne pouvez pas appeler une fonction que vous avez définie dans un autre bloc de script, sauf si elle est déclarée comme possédant le même espace de noms et le même langage de script.  Puisque chaque bloc de script peut être écrit dans son propre langage et que le bloc est analysé en fonction des règles grammaticales de cet analyseur de langage, il est recommandé d'utiliser la syntaxe correcte pour le langage utilisé.  Par exemple, si vous êtes dans un bloc de script Microsoft C\#, utilisez la syntaxe de commentaires C\#.  
+## <a name="script-functions"></a><span data-ttu-id="b9c97-128">Fonctions de script</span><span class="sxs-lookup"><span data-stu-id="b9c97-128">Script Functions</span></span>  
+ <span data-ttu-id="b9c97-129">Les fonctions peuvent être déclarées dans l'élément `msxsl:script`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-129">Functions can be declared within the `msxsl:script` element.</span></span> <span data-ttu-id="b9c97-130">Lorsqu'une fonction est déclarée, elle est contenue dans un bloc de script.</span><span class="sxs-lookup"><span data-stu-id="b9c97-130">When a function is declared, it is contained in a script block.</span></span> <span data-ttu-id="b9c97-131">Les feuilles de style peuvent contenir plusieurs blocs de scripts, chacun fonctionnant indépendamment des autres.</span><span class="sxs-lookup"><span data-stu-id="b9c97-131">Style sheets can contain multiple script blocks, each operating independent of the other.</span></span> <span data-ttu-id="b9c97-132">Ainsi, si vous êtes en cours d'exécution dans un bloc de script, vous ne pouvez pas appeler une fonction que vous avez définie dans un autre bloc de script, sauf si elle est déclarée comme possédant le même espace de noms et le même langage de script.</span><span class="sxs-lookup"><span data-stu-id="b9c97-132">That means that if you are executing inside a script block, you cannot call a function that you defined in another script block unless it is declared to have the same namespace and the same scripting language.</span></span> <span data-ttu-id="b9c97-133">Puisque chaque bloc de script peut être écrit dans son propre langage et que le bloc est analysé en fonction des règles grammaticales de cet analyseur de langage, il est recommandé d'utiliser la syntaxe correcte pour le langage utilisé.</span><span class="sxs-lookup"><span data-stu-id="b9c97-133">Because each script block can be in its own language, and the block is parsed according to the grammar rules of that language parser we recommend that you use the correct syntax for the language in use.</span></span> <span data-ttu-id="b9c97-134">Par exemple, si vous êtes dans un bloc de script Microsoft C#, utilisez la syntaxe de commentaires C#.</span><span class="sxs-lookup"><span data-stu-id="b9c97-134">For example, if you are in a Microsoft C# script block, use the C# comment syntax.</span></span>  
   
- Les arguments fournis et les valeurs retournées par la fonction peuvent être de n'importe quel type.  Les types XPath W3C étant un sous\-ensemble des types CLR \(common language runtime\), une conversion de type est appliquée aux types qui ne sont pas considérés comme des types XPath.  Le tableau suivant indique les correspondances entre les types W3C et les types CLR.  
+ <span data-ttu-id="b9c97-135">Les arguments fournis et les valeurs retournées par la fonction peuvent être de n'importe quel type.</span><span class="sxs-lookup"><span data-stu-id="b9c97-135">The supplied arguments and return values to the function can be of any type.</span></span> <span data-ttu-id="b9c97-136">Les types XPath W3C étant un sous-ensemble des types CLR (common language runtime), une conversion de type est appliquée aux types qui ne sont pas considérés comme des types XPath.</span><span class="sxs-lookup"><span data-stu-id="b9c97-136">Because the W3C XPath types are a subset of the common language runtime (CLR) types, type conversion takes place on types that are not considered to be an XPath type.</span></span> <span data-ttu-id="b9c97-137">Le tableau suivant indique les correspondances entre les types W3C et les types CLR.</span><span class="sxs-lookup"><span data-stu-id="b9c97-137">The following table shows the corresponding W3C types and the equivalent CLR type.</span></span>  
   
-|Type W3C|Type CLR|  
+|<span data-ttu-id="b9c97-138">Type W3C</span><span class="sxs-lookup"><span data-stu-id="b9c97-138">W3C type</span></span>|<span data-ttu-id="b9c97-139">Type CLR</span><span class="sxs-lookup"><span data-stu-id="b9c97-139">CLR type</span></span>|  
 |--------------|--------------|  
 |`String`|<xref:System.String>|  
 |`Boolean`|<xref:System.Boolean>|  
@@ -67,25 +68,25 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 |`Result Tree Fragment`|<xref:System.Xml.XPath.XPathNavigator>|  
 |`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator>|  
   
- Les types CLR numériques sont convertis en objet <xref:System.Double>.  Le type <xref:System.DateTime> est converti en <xref:System.String>.  Les types <xref:System.Xml.XPath.IXPathNavigable> sont convertis en <xref:System.Xml.XPath.XPathNavigator>.  **XPathNavigator\[\]** est converti en objet <xref:System.Xml.XPath.XPathNodeIterator>.  
+ <span data-ttu-id="b9c97-140">Les types CLR numériques sont convertis en objet <xref:System.Double>.</span><span class="sxs-lookup"><span data-stu-id="b9c97-140">CLR numeric types are converted to <xref:System.Double>.</span></span> <span data-ttu-id="b9c97-141">Le type <xref:System.DateTime> est converti en <xref:System.String>.</span><span class="sxs-lookup"><span data-stu-id="b9c97-141">The <xref:System.DateTime> type is converted to <xref:System.String>.</span></span> <span data-ttu-id="b9c97-142">Les types <xref:System.Xml.XPath.IXPathNavigable> sont convertis en <xref:System.Xml.XPath.XPathNavigator>.</span><span class="sxs-lookup"><span data-stu-id="b9c97-142"><xref:System.Xml.XPath.IXPathNavigable> types are converted to <xref:System.Xml.XPath.XPathNavigator>.</span></span> <span data-ttu-id="b9c97-143">**XPathNavigator []** est convertie en <xref:System.Xml.XPath.XPathNodeIterator>.</span><span class="sxs-lookup"><span data-stu-id="b9c97-143">**XPathNavigator[]** is converted to <xref:System.Xml.XPath.XPathNodeIterator>.</span></span>  
   
- Tous les autres types provoquent une erreur.  
+ <span data-ttu-id="b9c97-144">Tous les autres types provoquent une erreur.</span><span class="sxs-lookup"><span data-stu-id="b9c97-144">All other types throw an error.</span></span>  
   
-### Importation d'espaces de noms et d'assemblys  
- La classe <xref:System.Xml.Xsl.XslCompiledTransform> prédéfinit un ensemble d'assemblys et d'espaces de noms qui sont pris en charge par défaut par l'élément `msxsl:script`.  Cependant, vous pouvez utiliser des classes et des membres appartenant à un espace de noms qui ne figure pas sur la liste prédéfinie en important l'assembly et l'espace de noms dans un bloc `msxsl:script`.  
+### <a name="importing-namespaces-and-assemblies"></a><span data-ttu-id="b9c97-145">Importation d'espaces de noms et d'assemblys</span><span class="sxs-lookup"><span data-stu-id="b9c97-145">Importing Namespaces and Assemblies</span></span>  
+ <span data-ttu-id="b9c97-146">La classe <xref:System.Xml.Xsl.XslCompiledTransform> prédéfinit un ensemble d'assemblys et d'espaces de noms qui sont pris en charge par défaut par l'élément `msxsl:script`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-146">The <xref:System.Xml.Xsl.XslCompiledTransform> class predefines a set of assemblies and namespaces that are supported by default by the `msxsl:script` element.</span></span> <span data-ttu-id="b9c97-147">Cependant, vous pouvez utiliser des classes et des membres appartenant à un espace de noms qui ne figure pas sur la liste prédéfinie en important l'assembly et l'espace de noms dans un bloc `msxsl:script`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-147">However, you can use classes and members belonging to a namespace that is not on the predefined list by importing the assembly and namespace in `msxsl:script` block.</span></span>  
   
-#### Assemblys  
- Les deux assemblys suivants sont référencés par défaut :  
+#### <a name="assemblies"></a><span data-ttu-id="b9c97-148">Assemblys</span><span class="sxs-lookup"><span data-stu-id="b9c97-148">Assemblies</span></span>  
+ <span data-ttu-id="b9c97-149">Les deux assemblys suivants sont référencés par défaut :</span><span class="sxs-lookup"><span data-stu-id="b9c97-149">The following two assemblies are referenced by default:</span></span>  
   
--   System.dll  
+-   <span data-ttu-id="b9c97-150">System.dll</span><span class="sxs-lookup"><span data-stu-id="b9c97-150">System.dll</span></span>  
   
--   System.Xml.dll  
+-   <span data-ttu-id="b9c97-151">System.Xml.dll</span><span class="sxs-lookup"><span data-stu-id="b9c97-151">System.Xml.dll</span></span>  
   
--   Microsoft.VisualBasic.dll \(lorsque le langage de script est VB\)  
+-   <span data-ttu-id="b9c97-152">Microsoft.VisualBasic.dll (lorsque le langage de script est VB)</span><span class="sxs-lookup"><span data-stu-id="b9c97-152">Microsoft.VisualBasic.dll (when the script language is VB)</span></span>  
   
- Vous pouvez importer les assemblys supplémentaires en utilisant l'élément `msxsl:assembly`.  Cela comprend l'assembly lorsque la feuille de style est compilée.  L'élément `msxsl:assembly` a la définition suivante :  
+ <span data-ttu-id="b9c97-153">Vous pouvez importer les assemblys supplémentaires en utilisant l'élément `msxsl:assembly`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-153">You can import the additional assemblies using the `msxsl:assembly` element.</span></span> <span data-ttu-id="b9c97-154">Cela comprend l'assembly lorsque la feuille de style est compilée.</span><span class="sxs-lookup"><span data-stu-id="b9c97-154">This includes the assembly when the style sheet is compiled.</span></span> <span data-ttu-id="b9c97-155">L'élément `msxsl:assembly` a la définition suivante :</span><span class="sxs-lookup"><span data-stu-id="b9c97-155">The `msxsl:assembly` element has the following definition:</span></span>  
   
-```  
+```xml  
 <msxsl:script>  
   <msxsl:assembly name="system.assemblyName" />  
   <msxsl:assembly href="path-name" />  
@@ -95,30 +96,30 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 </msxsl:script>  
 ```  
   
- L'attribut `name` contient le nom de l'assembly et l'attribut `href` contient le chemin de l'assembly.  Le nom de l'assembly peut être un nom complet, comme « System.Data, Version\=2.0.3600.0, Culture\=neutral, PublicKeyToken\=b77a5c561934e089 », ou un nom court, comme « System.Web ».  
+ <span data-ttu-id="b9c97-156">L'attribut `name` contient le nom de l'assembly et l'attribut `href` contient le chemin de l'assembly.</span><span class="sxs-lookup"><span data-stu-id="b9c97-156">The `name` attribute contains the name of the assembly and the `href` attribute contains the path to the assembly.</span></span> <span data-ttu-id="b9c97-157">Le nom de l'assembly peut être un nom complet, comme « System.Data, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 », ou un nom court, comme « System.Web ».</span><span class="sxs-lookup"><span data-stu-id="b9c97-157">The assembly name can be a full name, such as "System.Data, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089", or a short name, such as "System.Web".</span></span>  
   
-#### Espaces de noms  
- Les espaces de noms suivants sont inclus par défaut :  
+#### <a name="namespaces"></a><span data-ttu-id="b9c97-158">Espaces de noms</span><span class="sxs-lookup"><span data-stu-id="b9c97-158">Namespaces</span></span>  
+ <span data-ttu-id="b9c97-159">Les espaces de noms suivants sont inclus par défaut :</span><span class="sxs-lookup"><span data-stu-id="b9c97-159">The following namespaces are included by default:</span></span>  
   
--   System  
+-   <span data-ttu-id="b9c97-160">System</span><span class="sxs-lookup"><span data-stu-id="b9c97-160">System</span></span>  
   
--   System.Collection  
+-   <span data-ttu-id="b9c97-161">System.Collection</span><span class="sxs-lookup"><span data-stu-id="b9c97-161">System.Collection</span></span>  
   
--   System.Text  
+-   <span data-ttu-id="b9c97-162">System.Text</span><span class="sxs-lookup"><span data-stu-id="b9c97-162">System.Text</span></span>  
   
--   System.Text.RegularExpressions  
+-   <span data-ttu-id="b9c97-163">System.Text.RegularExpressions</span><span class="sxs-lookup"><span data-stu-id="b9c97-163">System.Text.RegularExpressions</span></span>  
   
--   System.Xml  
+-   <span data-ttu-id="b9c97-164">System.Xml</span><span class="sxs-lookup"><span data-stu-id="b9c97-164">System.Xml</span></span>  
   
--   System.Xml.Xsl  
+-   <span data-ttu-id="b9c97-165">System.Xml.Xsl</span><span class="sxs-lookup"><span data-stu-id="b9c97-165">System.Xml.Xsl</span></span>  
   
--   System.Xml.XPath  
+-   <span data-ttu-id="b9c97-166">System.Xml.XPath</span><span class="sxs-lookup"><span data-stu-id="b9c97-166">System.Xml.XPath</span></span>  
   
--   Microsoft.VisualBasic \(lorsque le langage de script est VB\)  
+-   <span data-ttu-id="b9c97-167">Microsoft.VisualBasic (lorsque le langage de script est VB)</span><span class="sxs-lookup"><span data-stu-id="b9c97-167">Microsoft.VisualBasic (when the script language is VB)</span></span>  
   
- Vous pouvez ajouter la prise en charge d'autres espaces de noms à l'aide de l'attribut `namespace`.  La valeur de l'attribut est le nom de l'espace de noms.  
+ <span data-ttu-id="b9c97-168">Vous pouvez ajouter la prise en charge d'autres espaces de noms à l'aide de l'attribut `namespace`.</span><span class="sxs-lookup"><span data-stu-id="b9c97-168">You can add support for additional namespaces using the `namespace` attribute.</span></span> <span data-ttu-id="b9c97-169">La valeur de l'attribut est le nom de l'espace de noms.</span><span class="sxs-lookup"><span data-stu-id="b9c97-169">The attribute value is the name of the namespace.</span></span>  
   
-```  
+```xml  
 <msxsl:script>  
   <msxsl:using namespace="system.namespaceName" />  
     <![CDATA[  
@@ -127,21 +128,21 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 </msxsl:script>  
 ```  
   
-## Exemple  
- L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
+## <a name="example"></a><span data-ttu-id="b9c97-170">Exemple</span><span class="sxs-lookup"><span data-stu-id="b9c97-170">Example</span></span>  
+ <span data-ttu-id="b9c97-171">L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.</span><span class="sxs-lookup"><span data-stu-id="b9c97-171">The following example uses an embedded script to calculate the circumference of a circle given its radius.</span></span>  
   
  [!code-csharp[XSLT_Script#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Script/CS/xslt_script.cs#1)]
  [!code-vb[XSLT_Script#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_Script/VB/xslt_script.vb#1)]  
   
-#### number.xml  
+#### <a name="numberxml"></a><span data-ttu-id="b9c97-172">number.xml</span><span class="sxs-lookup"><span data-stu-id="b9c97-172">number.xml</span></span>  
  [!code-xml[XSLT_Script#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/number.xml#2)]  
   
-#### calc.xsl  
+#### <a name="calcxsl"></a><span data-ttu-id="b9c97-173">calc.xsl</span><span class="sxs-lookup"><span data-stu-id="b9c97-173">calc.xsl</span></span>  
  [!code-xml[XSLT_Script#3](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/calc.xsl#3)]  
   
-### Sortie  
+### <a name="output"></a><span data-ttu-id="b9c97-174">Sortie</span><span class="sxs-lookup"><span data-stu-id="b9c97-174">Output</span></span>  
   
-```  
+```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  
   <circle>  
     <radius>12</radius>  
@@ -154,6 +155,6 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 </circles>  
 ```  
   
-## Voir aussi  
- [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)   
- [Génération et compilation de code source dynamique](../../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)
+## <a name="see-also"></a><span data-ttu-id="b9c97-175">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b9c97-175">See Also</span></span>  
+ [<span data-ttu-id="b9c97-176">Transformations XSLT</span><span class="sxs-lookup"><span data-stu-id="b9c97-176">XSLT Transformations</span></span>](../../../../docs/standard/data/xml/xslt-transformations.md)  
+ [<span data-ttu-id="b9c97-177">Génération et compilation de code source dynamique</span><span class="sxs-lookup"><span data-stu-id="b9c97-177">Dynamic Source Code Generation and Compilation</span></span>](../../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)

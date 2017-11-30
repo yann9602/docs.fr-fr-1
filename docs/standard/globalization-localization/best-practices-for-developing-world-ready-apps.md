@@ -1,109 +1,112 @@
 ---
-title: "Meilleures pratiques pour d&#233;velopper des applications mondialisables | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "applications globales, meilleures pratiques"
-  - "applications universelles, meilleures pratiques"
-  - "globalisation (.NET Framework), meilleures pratiques"
-  - "applications internationales (.NET Framework), meilleures pratiques"
+title: "Meilleures pratiques pour développer des applications mondialisables"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- global applications, best practices
+- world-ready applications, best practices
+- globalization [.NET Framework], best practices
+- international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
-caps.latest.revision: 20
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 8a50080fa4b84abe84fbb1a44f18e1fb680a07c7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Meilleures pratiques pour d&#233;velopper des applications mondialisables
-Cette section décrit les meilleures pratiques pour développer des applications mondialisables.  
+# <a name="best-practices-for-developing-world-ready-applications"></a><span data-ttu-id="7950e-102">Meilleures pratiques pour développer des applications mondialisables</span><span class="sxs-lookup"><span data-stu-id="7950e-102">Best Practices for Developing World-Ready Applications</span></span>
+<span data-ttu-id="7950e-103">Cette section décrit les meilleures pratiques pour développer des applications mondialisables.</span><span class="sxs-lookup"><span data-stu-id="7950e-103">This section describes the best practices to follow when developing world-ready applications.</span></span>  
   
-## Meilleures pratiques de globalisation  
+## <a name="globalization-best-practices"></a><span data-ttu-id="7950e-104">Meilleures pratiques de globalisation</span><span class="sxs-lookup"><span data-stu-id="7950e-104">Globalization Best Practices</span></span>  
   
-1.  Utilisez le codage Unicode en interne dans votre application.  
+1.  <span data-ttu-id="7950e-105">Utilisez le codage Unicode en interne dans votre application.</span><span class="sxs-lookup"><span data-stu-id="7950e-105">Make your application Unicode internally.</span></span>  
   
-2.  Servez\-vous des classes fournies par l'espace de noms <xref:System.Globalization> pour manipuler les données et les mettre en forme.  
+2.  <span data-ttu-id="7950e-106">Servez-vous des classes fournies par l'espace de noms <xref:System.Globalization> pour manipuler les données et les mettre en forme.</span><span class="sxs-lookup"><span data-stu-id="7950e-106">Use the culture-aware classes provided by the <xref:System.Globalization> namespace to manipulate and format data.</span></span>  
   
-    -   Pour trier, utilisez la classe <xref:System.Globalization.SortKey> et la classe <xref:System.Globalization.CompareInfo>.  
+    -   <span data-ttu-id="7950e-107">Pour trier, utilisez la classe <xref:System.Globalization.SortKey> et la classe <xref:System.Globalization.CompareInfo>.</span><span class="sxs-lookup"><span data-stu-id="7950e-107">For sorting, use the <xref:System.Globalization.SortKey> class and the <xref:System.Globalization.CompareInfo> class.</span></span>  
   
-    -   Pour les comparaisons de chaînes, utilisez la classe <xref:System.Globalization.CompareInfo>.  
+    -   <span data-ttu-id="7950e-108">Pour les comparaisons de chaînes, utilisez la classe <xref:System.Globalization.CompareInfo>.</span><span class="sxs-lookup"><span data-stu-id="7950e-108">For string comparisons, use the <xref:System.Globalization.CompareInfo> class.</span></span>  
   
-    -   Pour la mise en forme des dates et heures, utilisez la classe <xref:System.Globalization.DateTimeFormatInfo>.  
+    -   <span data-ttu-id="7950e-109">Pour la mise en forme des dates et heures, utilisez la classe <xref:System.Globalization.DateTimeFormatInfo>.</span><span class="sxs-lookup"><span data-stu-id="7950e-109">For date and time formatting, use the <xref:System.Globalization.DateTimeFormatInfo> class.</span></span>  
   
-    -   Pour la mise en forme des nombres, utilisez la classe <xref:System.Globalization.NumberFormatInfo>.  
+    -   <span data-ttu-id="7950e-110">Pour la mise en forme des nombres, utilisez la classe <xref:System.Globalization.NumberFormatInfo>.</span><span class="sxs-lookup"><span data-stu-id="7950e-110">For numeric formatting, use the <xref:System.Globalization.NumberFormatInfo> class.</span></span>  
   
-    -   Pour les calendriers grégoriens et non grégoriens, utilisez la classe <xref:System.Globalization.Calendar> ou l'une des implémentations de calendrier spécifiques.  
+    -   <span data-ttu-id="7950e-111">Pour les calendriers grégoriens et non grégoriens, utilisez la classe <xref:System.Globalization.Calendar> ou l'une des implémentations de calendrier spécifiques.</span><span class="sxs-lookup"><span data-stu-id="7950e-111">For Gregorian and non-Gregorian calendars, use the <xref:System.Globalization.Calendar> class or one of the specific calendar implementations.</span></span>  
   
-3.  Utilisez les paramètres de propriété de culture fournis par la classe <xref:System.Globalization.CultureInfo?displayProperty=fullName> dans les situations appropriées.  Utilisez la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> pour les tâches de mise en forme, par exemple la mise en forme des dates, des heures ou des nombres.  Utilisez la propriété <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> pour récupérer des ressources.  Notez que les propriétés `CurrentCulture` et `CurrentUICulture` peuvent être définies par thread.  
+3.  <span data-ttu-id="7950e-112">Utilisez les paramètres de propriété de culture fournis par la classe <xref:System.Globalization.CultureInfo?displayProperty=nameWithType> dans les situations appropriées.</span><span class="sxs-lookup"><span data-stu-id="7950e-112">Use the culture property settings provided by the <xref:System.Globalization.CultureInfo?displayProperty=nameWithType> class in the appropriate situations.</span></span> <span data-ttu-id="7950e-113">Utilisez la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pour les tâches de mise en forme, par exemple la mise en forme des dates, des heures ou des nombres.</span><span class="sxs-lookup"><span data-stu-id="7950e-113">Use the <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> property for formatting tasks, such as date and time or numeric formatting.</span></span> <span data-ttu-id="7950e-114">Utilisez la propriété <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> pour récupérer des ressources.</span><span class="sxs-lookup"><span data-stu-id="7950e-114">Use the <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> property to retrieve resources.</span></span> <span data-ttu-id="7950e-115">Notez que les propriétés `CurrentCulture` et `CurrentUICulture` peuvent être définies par thread.</span><span class="sxs-lookup"><span data-stu-id="7950e-115">Note that the `CurrentCulture` and `CurrentUICulture` properties can be set per thread.</span></span>  
   
-4.  Permettez à votre application de lire et d'écrire des données dans divers systèmes d'encodage à l'aide des classes d'encodage de l'espace de noms <xref:System.Text>.  Ne supposez pas que les données entrées dans votre application seront par défaut codées en ASCII.  Supposez que des caractères internationaux seront fournis partout où un utilisateur peut entrer un texte.  Par exemple, l'application doit accepter les caractères internationaux dans les noms de serveurs, de répertoires, de fichiers et d'utilisateurs, ainsi que dans les URL.  
+4.  <span data-ttu-id="7950e-116">Permettez à votre application de lire et d'écrire des données dans divers systèmes d'encodage à l'aide des classes d'encodage de l'espace de noms <xref:System.Text>.</span><span class="sxs-lookup"><span data-stu-id="7950e-116">Enable your application to read and write data to and from a variety of encodings by using the encoding classes in the <xref:System.Text> namespace.</span></span> <span data-ttu-id="7950e-117">Ne supposez pas que les données entrées dans votre application seront par défaut codées en ASCII.</span><span class="sxs-lookup"><span data-stu-id="7950e-117">Do not assume ASCII data.</span></span> <span data-ttu-id="7950e-118">Supposez que des caractères internationaux seront fournis partout où un utilisateur peut entrer un texte.</span><span class="sxs-lookup"><span data-stu-id="7950e-118">Assume that international characters will be supplied anywhere a user can enter text.</span></span> <span data-ttu-id="7950e-119">Par exemple, l'application doit accepter les caractères internationaux dans les noms de serveurs, de répertoires, de fichiers et d'utilisateurs, ainsi que dans les URL.</span><span class="sxs-lookup"><span data-stu-id="7950e-119">For example, the application should accept international characters in server names, directories, file names, user names, and URLs.</span></span>  
   
-5.  Lorsque vous utilisez la classe <xref:System.Text.UTF8Encoding>, pour des raisons de sécurité, utilisez la fonctionnalité de détection d'erreurs offerte par cette classe.  Pour activer la fonctionnalité de détection d'erreurs, l'application crée une instance de la classe à l'aide du constructeur qui prend un paramètre `throwOnInvalidBytes` et lui affecte la valeur `true`.  
+5.  <span data-ttu-id="7950e-120">Lorsque vous utilisez la classe <xref:System.Text.UTF8Encoding>, pour des raisons de sécurité, utilisez la fonctionnalité de détection d'erreurs offerte par cette classe.</span><span class="sxs-lookup"><span data-stu-id="7950e-120">When using the <xref:System.Text.UTF8Encoding> class, for security reasons, use the error detection feature offered by this class.</span></span> <span data-ttu-id="7950e-121">Pour activer la fonctionnalité de détection d'erreurs, l'application crée une instance de la classe à l'aide du constructeur qui prend un paramètre `throwOnInvalidBytes` et lui affecte la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="7950e-121">To turn on the error detection feature, the application creates an instance of the class using the constructor that takes a `throwOnInvalidBytes` parameter and sets the value of this parameter to `true`.</span></span>  
   
-6.  Autant que possible, traitez les chaînes comme des chaînes entières, et non comme une série de caractères.  Ceci est particulièrement important lorsque vous effectuez un tri ou que vous recherchez des sous\-chaînes.  Vous éviterez ainsi les problèmes liés à l'analyse de caractères combinés.  
+6.  <span data-ttu-id="7950e-122">Autant que possible, traitez les chaînes comme des chaînes entières, et non comme une série de caractères.</span><span class="sxs-lookup"><span data-stu-id="7950e-122">Whenever possible, handle strings as entire strings instead of as a series of individual characters.</span></span> <span data-ttu-id="7950e-123">Ceci est particulièrement important lorsque vous effectuez un tri ou que vous recherchez des sous-chaînes.</span><span class="sxs-lookup"><span data-stu-id="7950e-123">This is especially important when sorting or searching for substrings.</span></span> <span data-ttu-id="7950e-124">Vous éviterez ainsi les problèmes liés à l'analyse de caractères combinés.</span><span class="sxs-lookup"><span data-stu-id="7950e-124">This will prevent problems associated with parsing combined characters.</span></span>  
   
-7.  Affichez le texte à l'aide des classes fournies par l'espace de noms <xref:System.Drawing>.  
+7.  <span data-ttu-id="7950e-125">Affichez le texte à l'aide des classes fournies par l'espace de noms <xref:System.Drawing>.</span><span class="sxs-lookup"><span data-stu-id="7950e-125">Display text using the classes provided by the <xref:System.Drawing> namespace.</span></span>  
   
-8.  Pour préserver la cohérence parmi les divers systèmes d'exploitation, ne permettez pas aux paramètres utilisateur de se substituer à <xref:System.Globalization.CultureInfo>.  Utilisez le constructeur `CultureInfo` qui accepte un paramètre `useUserOverride` et lui affecte la valeur `false`.  
+8.  <span data-ttu-id="7950e-126">Pour préserver la cohérence parmi les divers systèmes d'exploitation, ne permettez pas aux paramètres utilisateur de se substituer à <xref:System.Globalization.CultureInfo>.</span><span class="sxs-lookup"><span data-stu-id="7950e-126">For consistency across operating systems, do not allow user settings to override <xref:System.Globalization.CultureInfo>.</span></span> <span data-ttu-id="7950e-127">Utilisez le constructeur `CultureInfo` qui accepte un paramètre `useUserOverride` et lui affecte la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="7950e-127">Use the `CultureInfo` constructor that accepts a `useUserOverride` parameter and set it to `false`.</span></span>  
   
-9. Testez les fonctionnalités de votre application sur des versions internationales des systèmes d'exploitation, en utilisant des données internationales.  
+9. <span data-ttu-id="7950e-128">Testez les fonctionnalités de votre application sur des versions internationales des systèmes d'exploitation, en utilisant des données internationales.</span><span class="sxs-lookup"><span data-stu-id="7950e-128">Test your application functionality on international operating system versions, using international data.</span></span>  
   
-10. Si une décision relative à la sécurité est basée sur le résultat d'une opération de comparaison de chaînes ou de changement de casse, l'application doit exécuter une opération indépendante de la culture.  Cette pratique garantit que le résultat n'est pas affecté par la valeur de `CultureInfo.CurrentCulture`.  Consultez la section « Comparaisons de chaînes qui utilisent la culture actuelle » du document [Meilleures pratiques pour l'utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md) pour obtenir un exemple illustrant comment les comparaisons de chaînes dépendantes de la culture peuvent produire des résultats incohérents.  
+10. <span data-ttu-id="7950e-129">Si une décision relative à la sécurité est basée sur le résultat d'une opération de comparaison de chaînes ou de changement de casse, l'application doit exécuter une opération indépendante de la culture.</span><span class="sxs-lookup"><span data-stu-id="7950e-129">If a security decision is based on the result of a string comparison or case change operation, have the application perform a culture-insensitive operation.</span></span> <span data-ttu-id="7950e-130">Cette pratique garantit que le résultat n'est pas affecté par la valeur de `CultureInfo.CurrentCulture`.</span><span class="sxs-lookup"><span data-stu-id="7950e-130">This practice ensures that the result is not affected by the value of `CultureInfo.CurrentCulture`.</span></span> <span data-ttu-id="7950e-131">Consultez la section « Chaîne comparaisons qui utiliser la Culture en cours » de [meilleures pratiques pour l’utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md) pour obtenir un exemple qui montre comment dépendante de la culture chaîne comparaisons peuvent produire des résultats incohérents.</span><span class="sxs-lookup"><span data-stu-id="7950e-131">See the "String Comparisons that Use the Current Culture" section of [Best Practices for Using Strings](../../../docs/standard/base-types/best-practices-strings.md) for an example that demonstrates how culture-sensitive string comparisons can produce inconsistent results.</span></span>  
   
-## Meilleures pratiques de localisation  
+## <a name="localization-best-practices"></a><span data-ttu-id="7950e-132">Meilleures pratiques de localisation</span><span class="sxs-lookup"><span data-stu-id="7950e-132">Localization Best Practices</span></span>  
   
-1.  Déplacez toutes les ressources localisables vers des bibliothèques DLL séparées, consacrées exclusivement à ces ressources.  Les ressources localisables incluent les éléments d'interface utilisateur, tels que les chaînes, les messages d'erreur, les boîtes de dialogue et les menus, ainsi que les ressources d'objet incorporé.  
+1.  <span data-ttu-id="7950e-133">Déplacez toutes les ressources localisables vers des bibliothèques DLL séparées, consacrées exclusivement à ces ressources.</span><span class="sxs-lookup"><span data-stu-id="7950e-133">Move all localizable resources to separate resource-only DLLs.</span></span> <span data-ttu-id="7950e-134">Les ressources localisables incluent les éléments d'interface utilisateur, tels que les chaînes, les messages d'erreur, les boîtes de dialogue et les menus, ainsi que les ressources d'objet incorporé.</span><span class="sxs-lookup"><span data-stu-id="7950e-134">Localizable resources include user interface elements, such as strings, error messages, dialog boxes, menus, and embedded object resources.</span></span>  
   
-2.  Ne codez pas en dur les chaînes ou les ressources d'interface utilisateur.  
+2.  <span data-ttu-id="7950e-135">Ne codez pas en dur les chaînes ou les ressources d'interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="7950e-135">Do not hardcode strings or user interface resources.</span></span>  
   
-3.  Ne placez pas de ressources non localisables dans les DLL consacrées exclusivement aux ressources.  Vous éviterez ainsi de compliquer la tâche des traducteurs.  
+3.  <span data-ttu-id="7950e-136">Ne placez pas de ressources non localisables dans les DLL consacrées exclusivement aux ressources.</span><span class="sxs-lookup"><span data-stu-id="7950e-136">Do not put nonlocalizable resources into the resource-only DLLs.</span></span> <span data-ttu-id="7950e-137">Vous éviterez ainsi de compliquer la tâche des traducteurs.</span><span class="sxs-lookup"><span data-stu-id="7950e-137">This causes confusion for translators.</span></span>  
   
-4.  N'utilisez pas de chaînes composites qui sont construites au moment de l'exécution à partir d'expressions concaténées.  Les chaînes composites sont difficiles à localiser parce qu'elles supposent souvent un ordre grammatical anglais qui ne s'applique pas à toutes les langues.  
+4.  <span data-ttu-id="7950e-138">N'utilisez pas de chaînes composites qui sont construites au moment de l'exécution à partir d'expressions concaténées.</span><span class="sxs-lookup"><span data-stu-id="7950e-138">Do not use composite strings that are built at run time from concatenated phrases.</span></span> <span data-ttu-id="7950e-139">Les chaînes composites sont difficiles à localiser parce qu'elles supposent souvent un ordre grammatical anglais qui ne s'applique pas à toutes les langues.</span><span class="sxs-lookup"><span data-stu-id="7950e-139">Composite strings are difficult to localize because they often assume an English grammatical order that does not apply to all languages.</span></span>  
   
-5.  Évitez les constructions ambigües telles que « Empty Folder », dans lesquelles les chaînes peuvent être traduites différemment selon les rôles grammaticaux de leurs composants.  Par exemple, « empty » peut être un verbe ou un adjectif, ce qui conduit à des traductions différentes dans des langues telles que l'italien ou le français.  
+5.  <span data-ttu-id="7950e-140">Évitez les constructions ambigües telles que « Empty Folder », dans lesquelles les chaînes peuvent être traduites différemment selon les rôles grammaticaux de leurs composants.</span><span class="sxs-lookup"><span data-stu-id="7950e-140">Avoid ambiguous constructs such as "Empty Folder" where the strings can be translated differently depending on the grammatical roles of the string components.</span></span> <span data-ttu-id="7950e-141">Par exemple, « empty » peut être un verbe ou un adjectif, ce qui conduit à des traductions différentes dans des langues telles que l'italien ou le français.</span><span class="sxs-lookup"><span data-stu-id="7950e-141">For example, "empty" can be either a verb or an adjective, which can lead to different translations in languages such as Italian or French.</span></span>  
   
-6.  Évitez d'utiliser des images et des icônes qui contiennent du texte dans votre application.  Le coût de leur localisation est élevé.  
+6.  <span data-ttu-id="7950e-142">Évitez d'utiliser des images et des icônes qui contiennent du texte dans votre application.</span><span class="sxs-lookup"><span data-stu-id="7950e-142">Avoid using images and icons that contain text in your application.</span></span> <span data-ttu-id="7950e-143">Le coût de leur localisation est élevé.</span><span class="sxs-lookup"><span data-stu-id="7950e-143">They are expensive to localize.</span></span>  
   
-7.  Prévoyez beaucoup de place pour la longueur des chaînes à développer dans l'interface utilisateur.  Dans certaines langues, les phrases sont de 50 à 75 % plus longues que dans d'autres.  
+7.  <span data-ttu-id="7950e-144">Prévoyez beaucoup de place pour la longueur des chaînes à développer dans l'interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="7950e-144">Allow plenty of room for the length of strings to expand in the user interface.</span></span> <span data-ttu-id="7950e-145">Dans certaines langues, les phrases sont de 50 à 75 % plus longues que dans d'autres.</span><span class="sxs-lookup"><span data-stu-id="7950e-145">In some languages, phrases can require 50-75 percent more space than they need in other languages.</span></span>  
   
-8.  Utilisez la classe <xref:System.Resources.ResourceManager?displayProperty=fullName> pour récupérer des ressources selon culture.  
+8.  <span data-ttu-id="7950e-146">Utilisez la classe <xref:System.Resources.ResourceManager?displayProperty=nameWithType> pour récupérer des ressources selon culture.</span><span class="sxs-lookup"><span data-stu-id="7950e-146">Use the <xref:System.Resources.ResourceManager?displayProperty=nameWithType> class to retrieve resources based on culture.</span></span>  
   
-9. Utilisez Visual Studio pour créer des boîtes de dialogue Windows Forms, que vous pourrez localiser à l'aide de [Windows Forms Resource Editor \(Winres.exe\)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md).  Ne codez pas les boîtes de dialogue Windows Forms manuellement.  
+9. <span data-ttu-id="7950e-147">Utiliser Visual Studio pour créer des boîtes de dialogue Windows Forms, afin qu’ils puissent être localisés à l’aide de la [Windows Forms Resource Editor (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md).</span><span class="sxs-lookup"><span data-stu-id="7950e-147">Use Visual Studio to create Windows Forms dialog boxes, so that they can be localized using the [Windows Forms Resource Editor (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md).</span></span> <span data-ttu-id="7950e-148">Ne codez pas les boîtes de dialogue Windows Forms manuellement.</span><span class="sxs-lookup"><span data-stu-id="7950e-148">Do not code Windows Forms dialog boxes by hand.</span></span>  
   
-10. Confiez la localisation \(la traduction\) à des professionnels.  
+10. <span data-ttu-id="7950e-149">Confiez la localisation (la traduction) à des professionnels.</span><span class="sxs-lookup"><span data-stu-id="7950e-149">Arrange for professional localization (translation).</span></span>  
   
-11. Pour une description complète de la création et de la localisation des ressources, consultez [Ressources dans les applications](../../../docs/framework/resources/index.md).  
+11. <span data-ttu-id="7950e-150">Pour obtenir une description complète de la création et la localisation des ressources, consultez [ressources dans les Applications](../../../docs/framework/resources/index.md).</span><span class="sxs-lookup"><span data-stu-id="7950e-150">For a complete description of creating and localizing resources, see [Resources in Applications](../../../docs/framework/resources/index.md).</span></span>  
   
-## Meilleures pratiques de globalisation pour les applications ASP.NET  
+## <a name="globalization-best-practices-for-aspnet-applications"></a><span data-ttu-id="7950e-151">Meilleures pratiques de globalisation pour les applications ASP.NET</span><span class="sxs-lookup"><span data-stu-id="7950e-151">Globalization Best Practices for ASP.NET Applications</span></span>  
   
-1.  Définissez explicitement les propriétés <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> et <xref:System.Globalization.CultureInfo.CurrentCulture%2A> dans vote application.  Ne comptez pas sur leurs valeurs par défaut.  
+1.  <span data-ttu-id="7950e-152">Définissez explicitement les propriétés <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> et <xref:System.Globalization.CultureInfo.CurrentCulture%2A> dans vote application.</span><span class="sxs-lookup"><span data-stu-id="7950e-152">Explicitly set the <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> and <xref:System.Globalization.CultureInfo.CurrentCulture%2A> properties in your application.</span></span> <span data-ttu-id="7950e-153">Ne comptez pas sur leurs valeurs par défaut.</span><span class="sxs-lookup"><span data-stu-id="7950e-153">Do not rely on defaults.</span></span>  
   
-2.  Notez que les applications ASP.NET sont des applications managées et, par conséquent, peuvent utiliser les mêmes classes que d'autres applications managées pour récupérer, afficher et manipuler des informations en fonction de la culture.  
+2.  <span data-ttu-id="7950e-154">Notez que les applications ASP.NET sont des applications managées et, par conséquent, peuvent utiliser les mêmes classes que d'autres applications managées pour récupérer, afficher et manipuler des informations en fonction de la culture.</span><span class="sxs-lookup"><span data-stu-id="7950e-154">Note that ASP.NET applications are managed applications and therefore can use the same classes as other managed applications for retrieving, displaying, and manipulating information based on culture.</span></span>  
   
-3.  Gardez à l'esprit que vous pouvez spécifier les trois types d'encodage suivants dans ASP.NET :  
+3.  <span data-ttu-id="7950e-155">Gardez à l'esprit que vous pouvez spécifier les trois types d'encodage suivants dans ASP.NET :</span><span class="sxs-lookup"><span data-stu-id="7950e-155">Be aware that you can specify the following three types of encodings in ASP.NET:</span></span>  
   
-    -   requestEncoding spécifie l'encodage reçu du navigateur du client.  
+    -   <span data-ttu-id="7950e-156">requestEncoding spécifie l'encodage reçu du navigateur du client.</span><span class="sxs-lookup"><span data-stu-id="7950e-156">requestEncoding specifies the encoding received from the client's browser.</span></span>  
   
-    -   responseEncoding spécifie l'encodage à envoyer au navigateur du client.  Dans la plupart des situations, cet encodage doit être identique à celui spécifié pour requestEncoding.  
+    -   <span data-ttu-id="7950e-157">responseEncoding spécifie l'encodage à envoyer au navigateur du client.</span><span class="sxs-lookup"><span data-stu-id="7950e-157">responseEncoding specifies the encoding to send to the client browser.</span></span> <span data-ttu-id="7950e-158">Dans la plupart des situations, cet encodage doit être identique à celui spécifié pour requestEncoding.</span><span class="sxs-lookup"><span data-stu-id="7950e-158">In most situations, this encoding should be the same as that specified for requestEncoding.</span></span>  
   
-    -   fileEncoding spécifie l'encodage par défaut pour l'analyse des fichiers .aspx, .asmx et .asax.  
+    -   <span data-ttu-id="7950e-159">fileEncoding spécifie l'encodage par défaut pour l'analyse des fichiers .aspx, .asmx et .asax.</span><span class="sxs-lookup"><span data-stu-id="7950e-159">fileEncoding specifies the default encoding for .aspx, .asmx, and .asax file parsing.</span></span>  
   
-4.  Spécifiez les valeurs des attributs requestEncoding, responseEncoding, fileEncoding, culture et uiCulture aux trois emplacements suivants dans une application ASP.NET :  
+4.  <span data-ttu-id="7950e-160">Spécifiez les valeurs des attributs requestEncoding, responseEncoding, fileEncoding, culture et uiCulture aux trois emplacements suivants dans une application ASP.NET :</span><span class="sxs-lookup"><span data-stu-id="7950e-160">Specify the values for the requestEncoding, responseEncoding, fileEncoding, culture, and uiCulture attributes in the following three places in an ASP.NET application:</span></span>  
   
-    -   Dans la section globalisation d'un fichier Web.config.  Ce fichier est externe à l'application ASP.NET.  Pour plus d'informations, consultez [\<globalization\>, élément](http://msdn.microsoft.com/fr-fr/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7).  
+    -   <span data-ttu-id="7950e-161">Dans la section globalisation d'un fichier Web.config.</span><span class="sxs-lookup"><span data-stu-id="7950e-161">In the globalization section of a Web.config file.</span></span> <span data-ttu-id="7950e-162">Ce fichier est externe à l'application ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="7950e-162">This file is external to the ASP.NET application.</span></span> <span data-ttu-id="7950e-163">Pour plus d’informations, consultez [ \<globalisation > élément](http://msdn.microsoft.com/en-us/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7).</span><span class="sxs-lookup"><span data-stu-id="7950e-163">For more information, see [\<globalization> Element](http://msdn.microsoft.com/en-us/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7).</span></span>  
   
-    -   Dans une directive de page.  Notez que lorsqu'une application se trouve dans une page, le fichier a déjà été lu.  De ce fait, il est trop tard pour spécifier fileEncoding et requestEncoding.  Seuls uiCulture, Culture et responseEncoding peuvent être spécifiés dans une directive de page.  
+    -   <span data-ttu-id="7950e-164">Dans une directive de page.</span><span class="sxs-lookup"><span data-stu-id="7950e-164">In a page directive.</span></span> <span data-ttu-id="7950e-165">Notez que lorsqu'une application se trouve dans une page, le fichier a déjà été lu.</span><span class="sxs-lookup"><span data-stu-id="7950e-165">Note that, when an application is in a page, the file has already been read.</span></span> <span data-ttu-id="7950e-166">De ce fait, il est trop tard pour spécifier fileEncoding et requestEncoding.</span><span class="sxs-lookup"><span data-stu-id="7950e-166">Therefore, it is too late to specify fileEncoding and requestEncoding.</span></span> <span data-ttu-id="7950e-167">Seuls uiCulture, Culture et responseEncoding peuvent être spécifiés dans une directive de page.</span><span class="sxs-lookup"><span data-stu-id="7950e-167">Only uiCulture, Culture, and responseEncoding can be specified in a page directive.</span></span>  
   
-    -   Par programme, dans le code de l'application.  Ce paramètre peut varier par demande.  Comme dans le cas de la directive de page, il est trop tard pour spécifier fileEncoding et requestEncoding au moment où le code de l'application est atteint.  Seuls uiCulture, Culture et responseEncoding peuvent être spécifiés dans le code de l'application.  
+    -   <span data-ttu-id="7950e-168">Par programme, dans le code de l'application.</span><span class="sxs-lookup"><span data-stu-id="7950e-168">Programmatically in application code.</span></span> <span data-ttu-id="7950e-169">Ce paramètre peut varier par demande.</span><span class="sxs-lookup"><span data-stu-id="7950e-169">This setting can vary per request.</span></span> <span data-ttu-id="7950e-170">Comme dans le cas de la directive de page, il est trop tard pour spécifier fileEncoding et requestEncoding au moment où le code de l'application est atteint.</span><span class="sxs-lookup"><span data-stu-id="7950e-170">As with a page directive, by the time the application's code is reached it is too late to specify fileEncoding and requestEncoding.</span></span> <span data-ttu-id="7950e-171">Seuls uiCulture, Culture et responseEncoding peuvent être spécifiés dans le code de l'application.</span><span class="sxs-lookup"><span data-stu-id="7950e-171">Only uiCulture, Culture, and responseEncoding can be specified in application code.</span></span>  
   
-5.  Notez que la valeur uiCulture peut être définie sur la langue acceptée par le navigateur.  
+5.  <span data-ttu-id="7950e-172">Notez que la valeur uiCulture peut être définie sur la langue acceptée par le navigateur.</span><span class="sxs-lookup"><span data-stu-id="7950e-172">Note that the uiCulture value can be set to the browser accept language.</span></span>  
   
-## Voir aussi  
- [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)   
- [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)
+## <a name="see-also"></a><span data-ttu-id="7950e-173">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7950e-173">See Also</span></span>  
+ [<span data-ttu-id="7950e-174">Globalisation et localisation</span><span class="sxs-lookup"><span data-stu-id="7950e-174">Globalization and Localization</span></span>](../../../docs/standard/globalization-localization/index.md)  
+ [<span data-ttu-id="7950e-175">Ressources dans des applications de bureau</span><span class="sxs-lookup"><span data-stu-id="7950e-175">Resources in Desktop Apps</span></span>](../../../docs/framework/resources/index.md)

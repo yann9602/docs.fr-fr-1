@@ -1,40 +1,38 @@
 ---
-title: "Prise en charge de la fonction msxsl:node-set() | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Prise en charge de la fonction msxsl:node-set()
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d0cbf517-d9f6-4097-9851-4fa62903decd
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: a3dcb45e6aeecb9e54ad48db4130689ac0fdd358
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Prise en charge de la fonction msxsl:node-set()
-La fonction `msxsl:node-set` vous permet de convertir un fragment d'arborescence résultat en une collection de nœuds.  La collection de nœuds obtenue contient toujours un seul nœud et représente le nœud racine de l'arborescence.  
+# <a name="support-for-the-msxslnode-set-function"></a><span data-ttu-id="71ced-102">Prise en charge de la fonction msxsl:node-set()</span><span class="sxs-lookup"><span data-stu-id="71ced-102">Support for the msxsl:node-set() Function</span></span>
+<span data-ttu-id="71ced-103">La fonction `msxsl:node-set` vous permet de convertir un fragment d'arborescence résultat en une collection de nœuds.</span><span class="sxs-lookup"><span data-stu-id="71ced-103">The `msxsl:node-set` function enables you to convert a result tree fragment into a node set.</span></span> <span data-ttu-id="71ced-104">La collection de nœuds obtenue contient toujours un seul nœud et représente le nœud racine de l'arborescence.</span><span class="sxs-lookup"><span data-stu-id="71ced-104">The resulting node set always contains a single node and is the root node of the tree.</span></span>  
   
 > [!NOTE]
->  La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].  Vous pouvez effectuer des transformations XSLT \(Extensible Stylesheet Language Transformation\) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
+>  <span data-ttu-id="71ced-105">La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="71ced-105">The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span> <span data-ttu-id="71ced-106">Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>.</span><span class="sxs-lookup"><span data-stu-id="71ced-106">You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="71ced-107">Consultez [à l’aide de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) pour plus d’informations.</span><span class="sxs-lookup"><span data-stu-id="71ced-107">See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.</span></span>  
   
- La fonction `msxsl:node-set` vous permet de convertir un fragment d'arborescence résultat en une collection de nœuds.  La collection de nœuds obtenue contient toujours un seul nœud et représente le nœud racine de l'arborescence.  
+ <span data-ttu-id="71ced-108">La fonction `msxsl:node-set` vous permet de convertir un fragment d'arborescence résultat en une collection de nœuds.</span><span class="sxs-lookup"><span data-stu-id="71ced-108">The `msxsl:node-set` function enables you to convert a result tree fragment into a node set.</span></span> <span data-ttu-id="71ced-109">La collection de nœuds obtenue contient toujours un seul nœud et représente le nœud racine de l'arborescence.</span><span class="sxs-lookup"><span data-stu-id="71ced-109">The resulting node set always contains a single node and is the root node of the tree.</span></span>  
   
-## Exemple  
- Dans l'exemple suivant, `$var` est une variable qui est une arborescence de nœuds dans la feuille de style.  L'instruction for\-each associée à la fonction `node-set` permet à l'utilisateur d'itérer sur cette arborescence de nœuds comme une collection de nœuds.  
+## <a name="example"></a><span data-ttu-id="71ced-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="71ced-110">Example</span></span>  
+ <span data-ttu-id="71ced-111">Dans l'exemple suivant, `$var` est une variable qui est une arborescence de nœuds dans la feuille de style.</span><span class="sxs-lookup"><span data-stu-id="71ced-111">In the following example, `$var` is a variable that is a node tree in the style sheet.</span></span> <span data-ttu-id="71ced-112">L'instruction for-each associée à la fonction `node-set` permet à l'utilisateur d'itérer sur cette arborescence de nœuds comme une collection de nœuds.</span><span class="sxs-lookup"><span data-stu-id="71ced-112">The for-each statement combined with the `node-set` function allows the user to iterate over this node tree as a node set.</span></span>  
   
-## nodeset.xsl  
+## <a name="nodesetxsl"></a><span data-ttu-id="71ced-113">nodeset.xsl</span><span class="sxs-lookup"><span data-stu-id="71ced-113">nodeset.xsl</span></span>  
   
-```  
+```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
                 xmlns:msxsl="urn:schemas-microsoft-com:xslt"  
                 xmlns:user="http://www.contoso.com"  
@@ -54,13 +52,13 @@ La fonction `msxsl:node-set` vous permet de convertir un fragment d'arborescence
 </xsl:stylesheet>  
 ```  
   
-## Sortie  
- La sortie de la transformation est :  
+## <a name="output"></a><span data-ttu-id="71ced-114">Sortie</span><span class="sxs-lookup"><span data-stu-id="71ced-114">Output</span></span>  
+ <span data-ttu-id="71ced-115">La sortie de la transformation est :</span><span class="sxs-lookup"><span data-stu-id="71ced-115">The output of the transformation is</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <authors><author>Michael Howard</author><author>Michael Kay</author></authors>  
 ```  
   
-## Voir aussi  
- [Implémentation du processeur XSLT par la classe XslTransform](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+## <a name="see-also"></a><span data-ttu-id="71ced-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="71ced-116">See Also</span></span>  
+ [<span data-ttu-id="71ced-117">XslTransform Class Implements the XSLT Processor</span><span class="sxs-lookup"><span data-stu-id="71ced-117">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

@@ -10,35 +10,33 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
+ms.openlocfilehash: dc9b45e21f15ad92304685a1aff6760f3406cee2
+ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
 ms.translationtype: HT
-ms.sourcegitcommit: 019461964ba63d874ce86511474aa37b4342bbc4
-ms.openlocfilehash: b4a95438fe8b7490337de10299b824c5796bb4d1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/29/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/22/2017
 ---
+# <a name="asynchronous-programming"></a><span data-ttu-id="2ba78-104">Programmation asynchrone</span><span class="sxs-lookup"><span data-stu-id="2ba78-104">Asynchronous programming</span></span>
 
-# <a name="asynchronous-programming"></a>Programmation asynchrone
+<span data-ttu-id="2ba78-105">Si vous avez besoin d’écrire du code qui utilise les E/S de manière intensive (par exemple, pour récupérer des données d’un réseau ou accéder à une base de données), optez pour la programmation asynchrone.</span><span class="sxs-lookup"><span data-stu-id="2ba78-105">If you have any I/O-bound needs (such as requesting data from a network or accessing a database), you'll want to utilize asynchronous programming.</span></span>  <span data-ttu-id="2ba78-106">L’écriture de code asynchrone est également indiquée si votre code utilise le processeur de manière intensive, notamment pour effectuer un calcul complexe.</span><span class="sxs-lookup"><span data-stu-id="2ba78-106">You could also have CPU-bound code, such as performing an expensive calculation, which is also a good scenario for writing async code.</span></span>
 
-Si vous avez besoin d’écrire du code qui utilise les E/S de manière intensive (par exemple, pour récupérer des données d’un réseau ou accéder à une base de données), optez pour la programmation asynchrone.  L’écriture de code asynchrone est également indiquée si votre code utilise le processeur de manière intensive, notamment pour effectuer un calcul complexe.
+<span data-ttu-id="2ba78-107">C# fournit un modèle de programmation asynchrone de niveau de langage. Ce modèle facilite l’écriture de code asynchrone, en vous évitant d’effectuer des rappels multiples ou de vous conformer à une bibliothèque qui prend en charge l’asynchronisme.</span><span class="sxs-lookup"><span data-stu-id="2ba78-107">C# has a language-level asynchronous programming model which allows for easily writing asynchronous code without having to juggle callbacks or conform to a library which supports asynchrony.</span></span> <span data-ttu-id="2ba78-108">Il suit ce que l’on appelle le [modèle asynchrone basé sur des tâches (TAP)](https://msdn.microsoft.com/library/hh873175.aspx).</span><span class="sxs-lookup"><span data-stu-id="2ba78-108">It follows what is known as the [Task-based Asynchronous Pattern (TAP)](https://msdn.microsoft.com/library/hh873175.aspx).</span></span>
 
-C# fournit un modèle de programmation asynchrone de niveau de langage. Ce modèle facilite l’écriture de code asynchrone, en vous évitant d’effectuer des rappels multiples ou de vous conformer à une bibliothèque qui prend en charge l’asynchronisme. Il suit ce que l’on appelle le [modèle asynchrone basé sur des tâches (TAP)](https://msdn.microsoft.com/library/hh873175.aspx).
+## <a name="basic-overview-of-the-asynchronous-model"></a><span data-ttu-id="2ba78-109">Vue d’ensemble du modèle asynchrone</span><span class="sxs-lookup"><span data-stu-id="2ba78-109">Basic Overview of the Asynchronous Model</span></span>
 
-## <a name="basic-overview-of-the-asynchronous-model"></a>Vue d’ensemble du modèle asynchrone
+<span data-ttu-id="2ba78-110">La programmation asynchrone est basée sur les objets `Task` et `Task<T>`, qui modélisent les opérations asynchrones.</span><span class="sxs-lookup"><span data-stu-id="2ba78-110">The core of async programming are the `Task` and `Task<T>` objects, which model asynchronous operations.</span></span>  <span data-ttu-id="2ba78-111">Ces objets sont exposés à l’aide des mots clés `async` et `await`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-111">They are supported by the `async` and `await` keywords.</span></span>  <span data-ttu-id="2ba78-112">Dans la plupart des cas, le modèle est assez simple :</span><span class="sxs-lookup"><span data-stu-id="2ba78-112">The model is fairly simple in most cases:</span></span> 
 
-La programmation asynchrone est basée sur les objets `Task` et `Task<T>`, qui modélisent les opérations asynchrones.  Ces objets sont exposés à l’aide des mots clés `async` et `await`.  Dans la plupart des cas, le modèle est assez simple : 
+<span data-ttu-id="2ba78-113">Pour du code utilisant les E/S de manière intensive, vous spécifiez une opération `await` qui retourne un objet `Task` ou `Task<T>` dans une méthode `async`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-113">For I/O-bound code, you `await` an operation which returns a `Task` or `Task<T>` inside of an `async` method.</span></span>
 
-Pour du code utilisant les E/S de manière intensive, vous spécifiez une opération `await` qui retourne un objet `Task` ou `Task<T>` dans une méthode `async`.
+<span data-ttu-id="2ba78-114">Pour du code utilisant le processeur de manière intensive, vous spécifiez une opération `await` qui est démarrée sur un thread d’arrière-plan avec la méthode `Task.Run`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-114">For CPU-bound code, you `await` an operation which is started on a background thread with the `Task.Run` method.</span></span>
 
-Pour du code utilisant le processeur de manière intensive, vous spécifiez une opération `await` qui est démarrée sur un thread d’arrière-plan avec la méthode `Task.Run`.
+<span data-ttu-id="2ba78-115">Le mot clé `await` trouve ici toute son utilité.</span><span class="sxs-lookup"><span data-stu-id="2ba78-115">The `await` keyword is where the magic happens.</span></span> <span data-ttu-id="2ba78-116">Il cède le contrôle à l’appelant de la méthode qui a effectué l’opération `await`. Au final, c’est ce qui rend une interface utilisateur réactive ou un service élastique.</span><span class="sxs-lookup"><span data-stu-id="2ba78-116">It yields control to the caller of the method that performed `await`, and it ultimately allows a UI to be responsive or a service to be elastic.</span></span>
 
-Le mot clé `await` trouve ici toute son utilité. Il cède le contrôle à l’appelant de la méthode qui a effectué l’opération `await`. Au final, c’est ce qui rend une interface utilisateur réactive ou un service élastique.
+<span data-ttu-id="2ba78-117">Il y a d’autres approches du code asynchrone que les approches `async` et `await` décrites dans l’article sur le modèle TAP mentionné ci-dessus, mais la suite de ce document traite en particulier des constructions de niveau de langage.</span><span class="sxs-lookup"><span data-stu-id="2ba78-117">There are other ways to approach async code than `async` and `await` outlined in the TAP article linked above, but this document will focus on the language-level constructs from this point forward.</span></span>
 
-Il y a d’autres approches du code asynchrone que les approches `async` et `await` décrites dans l’article sur le modèle TAP mentionné ci-dessus, mais la suite de ce document traite en particulier des constructions de niveau de langage.
+### <a name="io-bound-example-downloading-data-from-a-web-service"></a><span data-ttu-id="2ba78-118">Exemple de code utilisant les E/S de manière intensive : télécharger des données d’un service web</span><span class="sxs-lookup"><span data-stu-id="2ba78-118">I/O-Bound Example: Downloading data from a web service</span></span>
 
-### <a name="io-bound-example-downloading-data-from-a-web-service"></a>Exemple de code utilisant les E/S de manière intensive : télécharger des données d’un service web
-
-Imaginons que vous souhaitez écrire du code qui télécharge des données d’un service web quand un utilisateur appuie sur un bouton, mais qui ne bloque pas le thread d’interface utilisateur. Il vous suffit d’écrire ce code :
+<span data-ttu-id="2ba78-119">Imaginons que vous souhaitez écrire du code qui télécharge des données d’un service web quand un utilisateur appuie sur un bouton, mais qui ne bloque pas le thread d’interface utilisateur.</span><span class="sxs-lookup"><span data-stu-id="2ba78-119">You may need to download some data from a web service when a button is pressed, but don’t want to block the UI thread.</span></span> <span data-ttu-id="2ba78-120">Il vous suffit d’écrire ce code :</span><span class="sxs-lookup"><span data-stu-id="2ba78-120">It can be accomplished simply like this:</span></span>
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
@@ -54,13 +52,13 @@ downloadButton.Clicked += async (o, e) =>
 };
 ```
 
-C’est tout ! Le code exprime l’intention (télécharger des données de façon asynchrone) sans que cela nécessite des interactions compliquées avec les objets Task.
+<span data-ttu-id="2ba78-121">C’est tout !</span><span class="sxs-lookup"><span data-stu-id="2ba78-121">And that’s it!</span></span> <span data-ttu-id="2ba78-122">Le code exprime l’intention (télécharger des données de façon asynchrone) sans que cela nécessite des interactions compliquées avec les objets Task.</span><span class="sxs-lookup"><span data-stu-id="2ba78-122">The code expresses the intent (downloading some data asynchronously) without getting bogged down in interacting with Task objects.</span></span>
 
-### <a name="cpu-bound-example-performing-a-calculation-for-a-game"></a>Exemple de code utilisant le processeur de manière intensive : effectuer un calcul dans un jeu
+### <a name="cpu-bound-example-performing-a-calculation-for-a-game"></a><span data-ttu-id="2ba78-123">Exemple de code utilisant le processeur de manière intensive : effectuer un calcul dans un jeu</span><span class="sxs-lookup"><span data-stu-id="2ba78-123">CPU-bound Example: Performing a Calculation for a Game</span></span>
 
-Supposons que vous développez un jeu pour mobile dans lequel l’appui sur un bouton peut causer des dommages à de nombreux ennemis à l’écran.  Le calcul des dommages infligés peut nécessiter beaucoup de ressources. Si ce calcul est effectué sur le thread d’interface utilisateur, le jeu risque d’être considérablement ralenti pendant la durée du calcul.
+<span data-ttu-id="2ba78-124">Supposons que vous développez un jeu pour mobile dans lequel l’appui sur un bouton peut causer des dommages à de nombreux ennemis à l’écran.</span><span class="sxs-lookup"><span data-stu-id="2ba78-124">Say you're writing a mobile game where pressing a button can inflict damage on many enemies on the screen.</span></span>  <span data-ttu-id="2ba78-125">Le calcul des dommages infligés peut nécessiter beaucoup de ressources. Si ce calcul est effectué sur le thread d’interface utilisateur, le jeu risque d’être considérablement ralenti pendant la durée du calcul.</span><span class="sxs-lookup"><span data-stu-id="2ba78-125">Performing the damage calculation can be expensive, and doing it on the UI thread would make the game appear to pause as the calculation is performed!</span></span>
 
-La meilleure façon de gérer cette situation est de démarrer un thread d’arrière-plan qui effectue le travail à l’aide de `Task.Run`, et retourne le résultat `await`.  Ainsi, l’interface utilisateur conserve les mêmes performances pendant le calcul.
+<span data-ttu-id="2ba78-126">La meilleure façon de gérer cette situation est de démarrer un thread d’arrière-plan qui effectue le travail à l’aide de `Task.Run`, et retourne le résultat `await`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-126">The best way to handle this is to start a background thread which does the work using `Task.Run`, and `await` its result.</span></span>  <span data-ttu-id="2ba78-127">Ainsi, l’interface utilisateur conserve les mêmes performances pendant le calcul.</span><span class="sxs-lookup"><span data-stu-id="2ba78-127">This will allow the UI to feel smooth as the work is being done.</span></span>
 
 ```csharp
 private DamageResult CalculateDamageDone()
@@ -81,54 +79,54 @@ calculateButton.Clicked += async (o, e) =>
 };
 ```
 
-Et voilà !  Ce code exprime clairement l’intention de l’événement de clic du bouton. Il ne nécessite pas de gérer un thread d’arrière-plan manuellement et il effectue le travail de façon non bloquante.
+<span data-ttu-id="2ba78-128">Et voilà !</span><span class="sxs-lookup"><span data-stu-id="2ba78-128">And that's it!</span></span>  <span data-ttu-id="2ba78-129">Ce code exprime clairement l’intention de l’événement de clic du bouton. Il ne nécessite pas de gérer un thread d’arrière-plan manuellement et il effectue le travail de façon non bloquante.</span><span class="sxs-lookup"><span data-stu-id="2ba78-129">This code cleanly expresses the intent of the button's click event, it doesn't require managing a background thread manually, and it does so in a non-blocking way.</span></span>
 
-### <a name="what-happens-under-the-covers"></a>Les dessous du code
+### <a name="what-happens-under-the-covers"></a><span data-ttu-id="2ba78-130">Les dessous du code</span><span class="sxs-lookup"><span data-stu-id="2ba78-130">What happens under the covers</span></span>
 
-Il y a de nombreux éléments variables en ce qui concerne les opérations asynchrones.  Si vous souhaitez connaître tous les dessous des objets `Task` et `Task<T>`, consultez l’article [Async en détail](../standard/async-in-depth.md).
+<span data-ttu-id="2ba78-131">Il y a de nombreux éléments variables en ce qui concerne les opérations asynchrones.</span><span class="sxs-lookup"><span data-stu-id="2ba78-131">There's a lot of moving pieces where asynchronous operations are concerned.</span></span>  <span data-ttu-id="2ba78-132">Si vous souhaitez connaître tous les dessous des objets `Task` et `Task<T>`, consultez l’article [Async en détail](../standard/async-in-depth.md).</span><span class="sxs-lookup"><span data-stu-id="2ba78-132">If you're curious about what's happening underneath the covers of `Task` and `Task<T>`, checkout the [Async in-depth](../standard/async-in-depth.md) article for more information.</span></span>
 
-Sur le plan du langage C#, le compilateur transforme votre code en une machine à états qui effectue le suivi des événements, tels que la suspension de l’exécution en présence d’un `await` et la reprise de l’exécution à la fin d’un travail en arrière-plan.
+<span data-ttu-id="2ba78-133">Sur le plan du langage C#, le compilateur transforme votre code en une machine à états qui effectue le suivi des événements, tels que la suspension de l’exécution en présence d’un `await` et la reprise de l’exécution à la fin d’un travail en arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="2ba78-133">On the C# side of things, the compiler transforms your code into a state machine which keeps track of things like yielding execution when an `await` is reached and resuming execution when a background job has finished.</span></span>
 
-D’un point de vue théorique, il s’agit d’une implémentation du [modèle de promesses d’asynchronisme](https://en.wikipedia.org/wiki/Futures_and_promises).
+<span data-ttu-id="2ba78-134">D’un point de vue théorique, il s’agit d’une implémentation du [modèle de promesses d’asynchronisme](https://en.wikipedia.org/wiki/Futures_and_promises).</span><span class="sxs-lookup"><span data-stu-id="2ba78-134">For the theoretically-inclined, this is an implementation of the [Promise Model of asynchrony](https://en.wikipedia.org/wiki/Futures_and_promises).</span></span>
 
-## <a name="key-pieces-to-understand"></a>Points clés à comprendre
+## <a name="key-pieces-to-understand"></a><span data-ttu-id="2ba78-135">Points clés à comprendre</span><span class="sxs-lookup"><span data-stu-id="2ba78-135">Key Pieces to Understand</span></span>
 
-*   Le code asynchrone peut être utilisé pour du code utilisant les E/S ou le processeur de manière intensive, mais il est utilisé de manière différente dans chaque scénario.
-*   Le code asynchrone utilise les objets `Task<T>` et `Task`, qui sont des constructions servant à modéliser le travail effectué en arrière-plan.
-* Le mot clé `async` définit une méthode comme asynchrone, ce qui vous permet d’utiliser le mot clé `await` dans le corps de la méthode.
-*   Quand le mot clé `await` est utilisé, il suspend la méthode d’appel et cède le contrôle à son appelant jusqu’à ce que la tâche awaited soit terminée.
-*   Le mot clé `await` peut uniquement être utilisé dans une méthode asynchrone.
+*   <span data-ttu-id="2ba78-136">Le code asynchrone peut être utilisé pour du code utilisant les E/S ou le processeur de manière intensive, mais il est utilisé de manière différente dans chaque scénario.</span><span class="sxs-lookup"><span data-stu-id="2ba78-136">Async code can be used for both I/O-bound and CPU-bound code, but differently for each scenario.</span></span>
+*   <span data-ttu-id="2ba78-137">Le code asynchrone utilise les objets `Task<T>` et `Task`, qui sont des constructions servant à modéliser le travail effectué en arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="2ba78-137">Async code uses `Task<T>` and `Task`, which are constructs used to model work being done in the background.</span></span>
+* <span data-ttu-id="2ba78-138">Le mot clé `async` définit une méthode comme asynchrone, ce qui vous permet d’utiliser le mot clé `await` dans le corps de la méthode.</span><span class="sxs-lookup"><span data-stu-id="2ba78-138">The `async` keyword turns a method into an async method, which allows you to use the `await` keyword in its body.</span></span>
+*   <span data-ttu-id="2ba78-139">Quand le mot clé `await` est utilisé, il suspend la méthode d’appel et cède le contrôle à son appelant jusqu’à ce que la tâche awaited soit terminée.</span><span class="sxs-lookup"><span data-stu-id="2ba78-139">When the `await` keyword is applied, it suspends the calling method and yields control back to its caller until the awaited task is complete.</span></span>
+*   <span data-ttu-id="2ba78-140">Le mot clé `await` peut uniquement être utilisé dans une méthode asynchrone.</span><span class="sxs-lookup"><span data-stu-id="2ba78-140">`await` can only be used inside an async method.</span></span>
 
-## <a name="recognize-cpu-bound-and-io-bound-work"></a>Déterminer si un travail utilise le processeur ou les E/S de manière intensive
+## <a name="recognize-cpu-bound-and-io-bound-work"></a><span data-ttu-id="2ba78-141">Déterminer si un travail utilise le processeur ou les E/S de manière intensive</span><span class="sxs-lookup"><span data-stu-id="2ba78-141">Recognize CPU-Bound and I/O-Bound Work</span></span>
 
-Les deux premiers exemples de ce guide vous ont montré comment utiliser `async` et `await` pour un travail utilisant les E/S et le processeur de manière intensive.  Il est primordial de savoir déterminer si un travail à effectuer utilise les E/S ou le processeur de manière intensive, car ce point peut avoir un impact important sur les performances de votre code et entraîner une utilisation incorrecte de certaines constructions.
+<span data-ttu-id="2ba78-142">Les deux premiers exemples de ce guide vous ont montré comment utiliser `async` et `await` pour un travail utilisant les E/S et le processeur de manière intensive.</span><span class="sxs-lookup"><span data-stu-id="2ba78-142">The first two examples of this guide showed how you can use `async` and `await` for I/O-bound and CPU-bound work.</span></span>  <span data-ttu-id="2ba78-143">Il est primordial de savoir déterminer si un travail à effectuer utilise les E/S ou le processeur de manière intensive, car ce point peut avoir un impact important sur les performances de votre code et entraîner une utilisation incorrecte de certaines constructions.</span><span class="sxs-lookup"><span data-stu-id="2ba78-143">It's key that you can identify when a job you need to do is I/O-bound or CPU-bound, because it can greatly affect the performance of your code and could potentially lead to misusing certain constructs.</span></span>
 
-Voici deux questions à vous poser avant d’écrire du code :
+<span data-ttu-id="2ba78-144">Voici deux questions à vous poser avant d’écrire du code :</span><span class="sxs-lookup"><span data-stu-id="2ba78-144">Here are two questions you should ask before you write any code:</span></span>
 
-1. Votre code doit-il « attendre » quelque chose, par exemple des données d’une base de données ?
+1. <span data-ttu-id="2ba78-145">Votre code doit-il « attendre » quelque chose, par exemple des données d’une base de données ?</span><span class="sxs-lookup"><span data-stu-id="2ba78-145">Will your code be "waiting" for something, such as data from a database?</span></span>
 
-    Si la réponse est « oui », le travail **utilise les E/S de manière intensive**.
+    <span data-ttu-id="2ba78-146">Si la réponse est « oui », le travail **utilise les E/S de manière intensive**.</span><span class="sxs-lookup"><span data-stu-id="2ba78-146">If your answer is "yes", then your work is **I/O-bound**.</span></span>
 
-2. Le code doit-il effectuer un calcul très complexe ?
+2. <span data-ttu-id="2ba78-147">Le code doit-il effectuer un calcul très complexe ?</span><span class="sxs-lookup"><span data-stu-id="2ba78-147">Will your code be performing a very expensive computation?</span></span>
 
-    Si la réponse est « oui », le travail **utilise le processeur de manière intensive**.
+    <span data-ttu-id="2ba78-148">Si la réponse est « oui », le travail **utilise le processeur de manière intensive**.</span><span class="sxs-lookup"><span data-stu-id="2ba78-148">If you answered "yes", then your work is **CPU-bound**.</span></span>
     
-Si le travail à faire **utilise les E/S de manière intensive**, utilisez `async` et `await` *sans* `Task.Run`.  Vous *ne devez pas* utiliser la bibliothèque parallèle de tâches.  La raison à cela est expliquée dans l’article [Async en détail](../standard/async-in-depth.md).
+<span data-ttu-id="2ba78-149">Si le travail à faire **utilise les E/S de manière intensive**, utilisez `async` et `await` *sans* `Task.Run`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-149">If the work you have is **I/O-bound**, use `async` and `await` *without* `Task.Run`.</span></span>  <span data-ttu-id="2ba78-150">Vous *ne devez pas* utiliser la bibliothèque parallèle de tâches.</span><span class="sxs-lookup"><span data-stu-id="2ba78-150">You *should not* use the Task Parallel Library.</span></span>  <span data-ttu-id="2ba78-151">La raison à cela est expliquée dans l’article [Async en détail](../standard/async-in-depth.md).</span><span class="sxs-lookup"><span data-stu-id="2ba78-151">The reason for this is outlined in the [Async in Depth article](../standard/async-in-depth.md).</span></span>
 
-Si le travail à faire **utilise le processeur de manière intensive** et que la réactivité est une exigence, utilisez `async` et `await`, mais transférez le travail sur un autre thread *avec* `Task.Run`.  Si le travail accepte la concurrence et le parallélisme, vous pouvez également utiliser la bibliothèque parallèle de tâches.
+<span data-ttu-id="2ba78-152">Si le travail à faire **utilise le processeur de manière intensive** et que la réactivité est une exigence, utilisez `async` et `await`, mais transférez le travail sur un autre thread *avec* `Task.Run`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-152">If the work you have is **CPU-bound** and you care about responsiveness, use `async` and `await` but spawn the work off on another thread *with* `Task.Run`.</span></span>  <span data-ttu-id="2ba78-153">Si le travail accepte la concurrence et le parallélisme, vous pouvez également utiliser la bibliothèque parallèle de tâches.</span><span class="sxs-lookup"><span data-stu-id="2ba78-153">If the work is appropriate for concurrency and parallelism, you should also consider using the Task Parallel Library.</span></span>
 
-De plus, vous devez toujours mesurer les performances d’exécution de votre code.  Par exemple, vous constaterez peut-être que le coût d’un travail utilisant le processeur de manière intensive n’est pas si élevé que cela par rapport à la surcharge des changements de contexte induits par le multithreading.  Chaque solution ayant ses compromis, choisissez le meilleur compromis pour votre scénario.
+<span data-ttu-id="2ba78-154">De plus, vous devez toujours mesurer les performances d’exécution de votre code.</span><span class="sxs-lookup"><span data-stu-id="2ba78-154">Additionally, you should always measure the execution of your code.</span></span>  <span data-ttu-id="2ba78-155">Par exemple, vous constaterez peut-être que le coût d’un travail utilisant le processeur de manière intensive n’est pas si élevé que cela par rapport à la surcharge des changements de contexte induits par le multithreading.</span><span class="sxs-lookup"><span data-stu-id="2ba78-155">For example, you may find yourself in a situation where your CPU-bound work is not costly enough compared with the overhead of context switches when multithreading.</span></span>  <span data-ttu-id="2ba78-156">Chaque solution ayant ses compromis, choisissez le meilleur compromis pour votre scénario.</span><span class="sxs-lookup"><span data-stu-id="2ba78-156">Every choice has its tradeoff, and you should pick the correct tradeoff for your situation.</span></span>
 
-## <a name="more-examples"></a>Autres exemples
+## <a name="more-examples"></a><span data-ttu-id="2ba78-157">Autres exemples</span><span class="sxs-lookup"><span data-stu-id="2ba78-157">More Examples</span></span>
 
-Les exemples suivants montrent diverses façons d’écrire du code asynchrone dans C#.  Ils correspondent à plusieurs scénarios différents que vous êtes susceptible de rencontrer.
+<span data-ttu-id="2ba78-158">Les exemples suivants montrent diverses façons d’écrire du code asynchrone dans C#.</span><span class="sxs-lookup"><span data-stu-id="2ba78-158">The following examples demonstrate various ways you can write async code in C#.</span></span>  <span data-ttu-id="2ba78-159">Ils correspondent à plusieurs scénarios différents que vous êtes susceptible de rencontrer.</span><span class="sxs-lookup"><span data-stu-id="2ba78-159">They cover a few different scenarios you may come across.</span></span>
 
-### <a name="extracting-data-from-a-network"></a>Extraire des données d’un réseau
+### <a name="extracting-data-from-a-network"></a><span data-ttu-id="2ba78-160">Extraire des données d’un réseau</span><span class="sxs-lookup"><span data-stu-id="2ba78-160">Extracting Data from a Network</span></span>
 
-Cet extrait de code télécharge le code HTML à partir du site www.dotnetfoundation.org et compte le nombre d’occurrences de la chaîne « .NET » dans le code HTML.  Il utilise ASP.NET MVC pour définir une méthode de contrôleur web qui exécute cette tâche et retourne le nombre.
+<span data-ttu-id="2ba78-161">Cet extrait de code télécharge le code HTML à partir du site www.dotnetfoundation.org et compte le nombre d’occurrences de la chaîne « .NET » dans le code HTML.</span><span class="sxs-lookup"><span data-stu-id="2ba78-161">This snippet downloads the HTML from www.dotnetfoundation.org and counts the number of times the string ".NET" occurs in the HTML.</span></span>  <span data-ttu-id="2ba78-162">Il utilise ASP.NET MVC pour définir une méthode de contrôleur web qui exécute cette tâche et retourne le nombre.</span><span class="sxs-lookup"><span data-stu-id="2ba78-162">It uses ASP.NET MVC to define a web controller method which performs this task, returning the number.</span></span>
 
 > [!NOTE]
-> Si vous prévoyez d’effectuer une analyse HTML dans le code de production, n’utilisez pas d’expressions régulières. Utilisez plutôt une bibliothèque d’analyse.
+> <span data-ttu-id="2ba78-163">Si vous prévoyez d’effectuer une analyse HTML dans le code de production, n’utilisez pas d’expressions régulières.</span><span class="sxs-lookup"><span data-stu-id="2ba78-163">If you plan on doing HTML parsing in production code, don't use regular expressions.</span></span> <span data-ttu-id="2ba78-164">Utilisez plutôt une bibliothèque d’analyse.</span><span class="sxs-lookup"><span data-stu-id="2ba78-164">Use a parsing library instead.</span></span>
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
@@ -141,11 +139,11 @@ public async Task<int> GetDotNetCountAsync()
     // to accept another request, rather than blocking on this one.
     var html = await _httpClient.DownloadStringAsync("http://dotnetfoundation.org");
 
-    return Regex.Matches(html, ".NET").Count;
+    return Regex.Matches(html, @"\.NET").Count;
 }
 ```
 
-Voici le même scénario écrit pour une application Windows universelle, qui effectue la même tâche quand l’utilisateur appuie sur un bouton :
+<span data-ttu-id="2ba78-165">Voici le même scénario écrit pour une application Windows universelle, qui effectue la même tâche quand l’utilisateur appuie sur un bouton :</span><span class="sxs-lookup"><span data-stu-id="2ba78-165">Here's the same scenario written for a Universal Windows App, which performs the same task when a Button is pressed:</span></span>
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
@@ -164,7 +162,7 @@ private async void SeeTheDotNets_Click(object sender, RoutedEventArgs e)
     // The await operator suspends SeeTheDotNets_Click, returning control to its caller.
     // This is what allows the app to be responsive and not hang on the UI thread.
     var html = await getDotNetFoundationHtmlTask;
-    int count = Regex.Matches(html, ".NET").Count;
+    int count = Regex.Matches(html, @"\.NET").Count;
 
     DotNetCountLabel.Text = $"Number of .NETs on dotnetfoundation.org: {count}";
 
@@ -173,14 +171,14 @@ private async void SeeTheDotNets_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="waiting-for-multiple-tasks-to-complete"></a>Attendre la fin de plusieurs tâches
+### <a name="waiting-for-multiple-tasks-to-complete"></a><span data-ttu-id="2ba78-166">Attendre la fin de plusieurs tâches</span><span class="sxs-lookup"><span data-stu-id="2ba78-166">Waiting for Multiple Tasks to Complete</span></span>
 
-Vous pouvez avoir un scénario qui nécessite de récupérer plusieurs éléments de données simultanément.  L’API `Task` contient deux méthodes, `Task.WhenAll` et `Task.WhenAny`, que vous pouvez utiliser pour écrire du code asynchrone qui spécifie une attente non bloquante sur plusieurs travaux en arrière-plan.
+<span data-ttu-id="2ba78-167">Vous pouvez avoir un scénario qui nécessite de récupérer plusieurs éléments de données simultanément.</span><span class="sxs-lookup"><span data-stu-id="2ba78-167">You may find yourself in a situation where you need to retrieve multiple pieces of data concurrently.</span></span>  <span data-ttu-id="2ba78-168">Le `Task` API contient deux méthodes, `Task.WhenAll` et `Task.WhenAny` vous permettent d’écrire du code asynchrone qui exécute une attente non bloquant sur plusieurs tâches en arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="2ba78-168">The `Task` API contains two methods, `Task.WhenAll` and `Task.WhenAny` which allow you to write asynchronous code which performs a non-blocking wait on multiple background jobs.</span></span>
 
-Cet exemple vous montre comment récupérer des données `User` pour plusieurs `userId`.
+<span data-ttu-id="2ba78-169">Cet exemple vous montre comment récupérer des données `User` pour plusieurs `userId`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-169">This example shows how you might grab `User` data for a set of `userId`s.</span></span>
 
 ```csharp
-public async Task<User> GetUser(int userId)
+public async Task<User> GetUserAsync(int userId)
 {
     // Code omitted:
     //
@@ -188,23 +186,23 @@ public async Task<User> GetUser(int userId)
     // to the entry in the database with {userId} as its Id.
 }
 
-public static Task<IEnumerable<User>> GetUsers(IEnumerable<int> userIds)
+public static async Task<IEnumerable<User>> GetUsersAsync(IEnumerable<int> userIds)
 {
     var getUserTasks = new List<Task<User>>();
     
     foreach (int userId in userIds)
     {
-        getUserTasks.Add(GetUser(id));
+        getUserTasks.Add(GetUserAsync(userId));
     }
     
     return await Task.WhenAll(getUserTasks);
 }
 ```
 
-Voici une façon plus succincte d’écrire ce code, en utilisant LINQ :
+<span data-ttu-id="2ba78-170">Voici une façon plus succincte d’écrire ce code, en utilisant LINQ :</span><span class="sxs-lookup"><span data-stu-id="2ba78-170">Here's another way to write this a bit more succinctly, using LINQ:</span></span>
 
 ```csharp
-public async Task<User> GetUser(int userId)
+public async Task<User> GetUserAsync(int userId)
 {
     // Code omitted:
     //
@@ -212,64 +210,63 @@ public async Task<User> GetUser(int userId)
     // to the entry in the database with {userId} as its Id.
 }
 
-public static async Task<User[]> GetUsers(IEnumerable<int> userIds)
+public static async Task<User[]> GetUsersAsync(IEnumerable<int> userIds)
 {
-    var getUserTasks = userIds.Select(id => GetUser(id));
+    var getUserTasks = userIds.Select(id => GetUserAsync(id));
     return await Task.WhenAll(getUserTasks);
 }
 ```
-Si vous choisissez de combiner LINQ avec du code asynchrone, pour réduire la quantité de code, faites-le avec précaution.  Du fait que LINQ utilise l’exécution différée, les appels asynchrones ne sont pas effectués immédiatement comme c’est le cas dans une boucle `foreach()`, sauf si vous forcez l’itération de la séquence générée avec un appel à `.ToList()` ou `.ToArray()`.
+<span data-ttu-id="2ba78-171">Si vous choisissez de combiner LINQ avec du code asynchrone, pour réduire la quantité de code, faites-le avec précaution.</span><span class="sxs-lookup"><span data-stu-id="2ba78-171">Although it's less code, take care when mixing LINQ with asynchronous code.</span></span>  <span data-ttu-id="2ba78-172">Du fait que LINQ utilise l’exécution différée, les appels asynchrones ne sont pas effectués immédiatement comme c’est le cas dans une boucle `foreach()`, sauf si vous forcez l’itération de la séquence générée avec un appel à `.ToList()` ou `.ToArray()`.</span><span class="sxs-lookup"><span data-stu-id="2ba78-172">Because LINQ uses deferred (lazy) execution, async calls won't happen immediately as they do in a `foreach()` loop unless you force the generated sequence to iterate with a call to `.ToList()` or `.ToArray()`.</span></span>
 
-## <a name="important-info-and-advice"></a>Informations et conseils importants
+## <a name="important-info-and-advice"></a><span data-ttu-id="2ba78-173">Informations et conseils importants</span><span class="sxs-lookup"><span data-stu-id="2ba78-173">Important Info and Advice</span></span>
 
-La programmation asynchrone est relativement simple, mais il y a quelques points à garder à l’esprit pour éviter un comportement inattendu du code.
+<span data-ttu-id="2ba78-174">La programmation asynchrone est relativement simple, mais il y a quelques points à garder à l’esprit pour éviter un comportement inattendu du code.</span><span class="sxs-lookup"><span data-stu-id="2ba78-174">Although async programming is relatively straightforward, there are some details to keep in mind which can prevent unexpected behavior.</span></span>
 
-*  **Les méthodes `async` doivent contenir un mot clé** `await` **dans leur corps pour pouvoir être suspendues.**
+*  <span data-ttu-id="2ba78-175">**Les méthodes `async` doivent contenir un mot clé** `await` **dans leur corps pour pouvoir être suspendues.**</span><span class="sxs-lookup"><span data-stu-id="2ba78-175">`async` **methods need to have an** `await` **keyword in their body or they will never yield!**</span></span>
 
-Il ne faut pas oublier ce point.  Si `await` n’est pas utilisé dans le corps d’une méthode `async`, le compilateur C# génère un avertissement, mais le code est compilé et exécuté comme s’il s’agissait d’une méthode standard.  Notez également que cela n’aurait aucune utilité, car la machine à états générée par le compilateur C# pour la méthode async n’accomplirait aucune opération dans ce cas.
+<span data-ttu-id="2ba78-176">Il ne faut pas oublier ce point.</span><span class="sxs-lookup"><span data-stu-id="2ba78-176">This is important to keep in mind.</span></span>  <span data-ttu-id="2ba78-177">Si `await` n’est pas utilisé dans le corps d’une méthode `async`, le compilateur C# génère un avertissement, mais le code est compilé et exécuté comme s’il s’agissait d’une méthode standard.</span><span class="sxs-lookup"><span data-stu-id="2ba78-177">If `await` is not used in the body of an `async` method, the C# compiler will generate a warning, but the code will compile and run as if it were a normal method.</span></span>  <span data-ttu-id="2ba78-178">Notez également que cela n’aurait aucune utilité, car la machine à états générée par le compilateur C# pour la méthode async n’accomplirait aucune opération dans ce cas.</span><span class="sxs-lookup"><span data-stu-id="2ba78-178">Note that this would also be incredibly inefficient, as the state machine generated by the C# compiler for the async method would not be accomplishing anything.</span></span>
 
-*   **Vous devez ajouter le suffixe « Async » au nom de chaque méthode async que vous écrivez.**
+*   <span data-ttu-id="2ba78-179">**Vous devez ajouter le suffixe « Async » au nom de chaque méthode async que vous écrivez.**</span><span class="sxs-lookup"><span data-stu-id="2ba78-179">**You should add "Async" as the suffix of every async method name you write.**</span></span>
 
-Cette convention de .NET aide à différencier les méthodes synchrones et asynchrones. Notez que cela n’est pas obligatoire pour certaines méthodes qui ne sont pas explicitement appelées par votre code (par exemple, les gestionnaires d’événements et les méthodes de contrôleur web). L’attribution d’un nom explicite pour ces méthodes a moins d’importance.
+<span data-ttu-id="2ba78-180">Cette convention de .NET aide à différencier les méthodes synchrones et asynchrones.</span><span class="sxs-lookup"><span data-stu-id="2ba78-180">This is the convention used in .NET to more-easily differentiate synchronous and asynchronous methods.</span></span> <span data-ttu-id="2ba78-181">Notez que cela n’est pas obligatoire pour certaines méthodes qui ne sont pas explicitement appelées par votre code (par exemple, les gestionnaires d’événements et les méthodes de contrôleur web).</span><span class="sxs-lookup"><span data-stu-id="2ba78-181">Note that certain methods which aren’t explicitly called by your code (such as event handlers or web controller methods) don’t necessarily apply.</span></span> <span data-ttu-id="2ba78-182">L’attribution d’un nom explicite pour ces méthodes a moins d’importance.</span><span class="sxs-lookup"><span data-stu-id="2ba78-182">Because these are not explicitly called by your code, being explicit about their naming isn’t as important.</span></span>
 
-*   `async void`  **doit être utilisé uniquement pour les gestionnaires d’événements.**
+*   <span data-ttu-id="2ba78-183">`async void`  **doit être utilisé uniquement pour les gestionnaires d’événements.**</span><span class="sxs-lookup"><span data-stu-id="2ba78-183">`async void` **should only be used for event handlers.**</span></span>
 
-L’utilisation de `async void` est le seul moyen de permettre le fonctionnement des gestionnaires d’événements asynchrones, car les événements n’ont pas de types de retour (et ne peuvent donc pas utiliser les objets `Task` et `Task<T>`). Toute autre utilisation de la méthode `async void` ne suit pas le modèle TAP et peut être difficile à implémenter, comme expliqué ci-après :
+<span data-ttu-id="2ba78-184">L’utilisation de `async void` est le seul moyen de permettre le fonctionnement des gestionnaires d’événements asynchrones, car les événements n’ont pas de types de retour (et ne peuvent donc pas utiliser les objets `Task` et `Task<T>`).</span><span class="sxs-lookup"><span data-stu-id="2ba78-184">`async void` is the only way to allow asynchronous event handlers to work because events do not have return types (thus cannot make use of `Task` and `Task<T>`).</span></span> <span data-ttu-id="2ba78-185">Toute autre utilisation de la méthode `async void` ne suit pas le modèle TAP et peut être difficile à implémenter, comme expliqué ci-après :</span><span class="sxs-lookup"><span data-stu-id="2ba78-185">Any other use of `async void` does not follow the TAP model and can be challenging to use, such as:</span></span>
 
-  *   Les exceptions levées dans une méthode `async void` ne peuvent pas être interceptées en dehors de cette méthode.
-  *   Les méthodes `async void` sont très difficiles à tester.
-  *   Les méthodes `async void` peuvent avoir des effets secondaires gênants si l’appelant n’attend pas de méthodes asynchrones.
+  *   <span data-ttu-id="2ba78-186">Les exceptions levées dans une méthode `async void` ne peuvent pas être interceptées en dehors de cette méthode.</span><span class="sxs-lookup"><span data-stu-id="2ba78-186">Exceptions thrown in an `async void` method can’t be caught outside of that method.</span></span>
+  *   <span data-ttu-id="2ba78-187">Les méthodes `async void` sont très difficiles à tester.</span><span class="sxs-lookup"><span data-stu-id="2ba78-187">`async void` methods are very difficult to test.</span></span>
+  *   <span data-ttu-id="2ba78-188">Les méthodes `async void` peuvent avoir des effets secondaires gênants si l’appelant n’attend pas de méthodes asynchrones.</span><span class="sxs-lookup"><span data-stu-id="2ba78-188">`async void` methods can cause bad side effects if the caller isn’t expecting them to be async.</span></span>
 
-*   **Définissez le thread avec précaution si vous utilisez des expressions lambda asynchrones dans des expressions LINQ.**
+*   <span data-ttu-id="2ba78-189">**Définissez le thread avec précaution si vous utilisez des expressions lambda asynchrones dans des expressions LINQ.**</span><span class="sxs-lookup"><span data-stu-id="2ba78-189">**Tread carefully when using async lambdas in LINQ expressions**</span></span>
 
-Dans LINQ, les expressions lambda utilisent l’exécution différée, ce qui signifie que l’exécution du code peut s’arrêter à un point que vous n’aviez pas prévu. L’introduction de tâches bloquantes dans ce code peut facilement provoquer un interblocage si le code n’est pas écrit correctement. De plus, l’imbrication de code asynchrone peut rendre la logique d’exécution du code plus compliquée. Combiner du code asynchrone et du code LINQ offre beaucoup de possibilités, mais nécessite d’être fait avec précaution et de manière claire.
+<span data-ttu-id="2ba78-190">Dans LINQ, les expressions lambda utilisent l’exécution différée, ce qui signifie que l’exécution du code peut s’arrêter à un point que vous n’aviez pas prévu.</span><span class="sxs-lookup"><span data-stu-id="2ba78-190">Lambda expressions in LINQ use deferred execution, meaning code could end up executing at a time when you’re not expecting it to.</span></span> <span data-ttu-id="2ba78-191">L’introduction de tâches bloquantes dans ce code peut facilement provoquer un interblocage si le code n’est pas écrit correctement.</span><span class="sxs-lookup"><span data-stu-id="2ba78-191">The introduction of blocking tasks into this can easily result in a deadlock if not written correctly.</span></span> <span data-ttu-id="2ba78-192">De plus, l’imbrication de code asynchrone peut rendre la logique d’exécution du code plus compliquée.</span><span class="sxs-lookup"><span data-stu-id="2ba78-192">Additionally, the nesting of asynchronous code like this can also make it more difficult to reason about the execution of the code.</span></span> <span data-ttu-id="2ba78-193">Combiner du code asynchrone et du code LINQ offre beaucoup de possibilités, mais nécessite d’être fait avec précaution et de manière claire.</span><span class="sxs-lookup"><span data-stu-id="2ba78-193">Async and LINQ are powerful, but should be used together as carefully and clearly as possible.</span></span>
 
-*   **Écrivez le code qui attend certaines tâches de façon non bloquante.**
+*   <span data-ttu-id="2ba78-194">**Écrivez le code qui attend certaines tâches de façon non bloquante.**</span><span class="sxs-lookup"><span data-stu-id="2ba78-194">**Write code that awaits Tasks in a non-blocking manner**</span></span>
 
-Si vous choisissez de bloquer le thread actuel pour attendre la fin d’une tâche, vous risquez de provoquer des interblocages et le blocage de threads de contexte, et de gérer moins facilement les erreurs. Le tableau suivant fournit des conseils pour attendre la fin de tâches de façon non bloquante :
+<span data-ttu-id="2ba78-195">Si vous choisissez de bloquer le thread actuel pour attendre la fin d’une tâche, vous risquez de provoquer des interblocages et le blocage de threads de contexte, et de gérer moins facilement les erreurs.</span><span class="sxs-lookup"><span data-stu-id="2ba78-195">Blocking the current thread as a means to wait for a Task to complete can result in deadlocks and blocked context threads, and can require significantly more complex error-handling.</span></span> <span data-ttu-id="2ba78-196">Le tableau suivant fournit des conseils pour attendre la fin de tâches de façon non bloquante :</span><span class="sxs-lookup"><span data-stu-id="2ba78-196">The following table provides guidance on how to deal with waiting for Tasks in a non-blocking way:</span></span>
 
-| Utilisez... | Au lieu de... | Pour |
+| <span data-ttu-id="2ba78-197">Utilisez...</span><span class="sxs-lookup"><span data-stu-id="2ba78-197">Use this...</span></span> | <span data-ttu-id="2ba78-198">Au lieu de...</span><span class="sxs-lookup"><span data-stu-id="2ba78-198">Instead of this...</span></span> | <span data-ttu-id="2ba78-199">Pour</span><span class="sxs-lookup"><span data-stu-id="2ba78-199">When wishing to do this</span></span> |
 | --- | --- | --- |
-| `await` | `Task.Wait` ou `Task.Result` | Extraire le résultat d’une tâche en arrière-plan |
-| `await Task.WhenAny` | `Task.WaitAny` | Attendre la fin d’une tâche |
-| `await Task.WhenAll` | `Task.WaitAll` | Attendre la fin de toutes les tâches |
-| `await Task.Delay` | `Thread.Sleep` | Attendre pendant une période |
+| `await` | <span data-ttu-id="2ba78-200">`Task.Wait` ou `Task.Result`</span><span class="sxs-lookup"><span data-stu-id="2ba78-200">`Task.Wait` or `Task.Result`</span></span> | <span data-ttu-id="2ba78-201">Extraire le résultat d’une tâche en arrière-plan</span><span class="sxs-lookup"><span data-stu-id="2ba78-201">Retrieving the result of a background task</span></span> |
+| `await Task.WhenAny` | `Task.WaitAny` | <span data-ttu-id="2ba78-202">Attendre la fin d’une tâche</span><span class="sxs-lookup"><span data-stu-id="2ba78-202">Waiting for any task to complete</span></span> |
+| `await Task.WhenAll` | `Task.WaitAll` | <span data-ttu-id="2ba78-203">Attendre la fin de toutes les tâches</span><span class="sxs-lookup"><span data-stu-id="2ba78-203">Waiting for all tasks to complete</span></span> |
+| `await Task.Delay` | `Thread.Sleep` | <span data-ttu-id="2ba78-204">Attendre pendant une période</span><span class="sxs-lookup"><span data-stu-id="2ba78-204">Waiting for a period of time</span></span> |
 
-*   **Limitez l’écriture de code avec état.**
+*   <span data-ttu-id="2ba78-205">**Limitez l’écriture de code avec état.**</span><span class="sxs-lookup"><span data-stu-id="2ba78-205">**Write less stateful code**</span></span>
 
-Écrivez du code qui ne dépend pas de l’état d’objets globaux ou de l’exécution de certaines méthodes. Le code doit uniquement dépendre des valeurs de retour des méthodes. Pourquoi ?
+<span data-ttu-id="2ba78-206">Écrivez du code qui ne dépend pas de l’état d’objets globaux ou de l’exécution de certaines méthodes.</span><span class="sxs-lookup"><span data-stu-id="2ba78-206">Don’t depend on the state of global objects or the execution of certain methods.</span></span> <span data-ttu-id="2ba78-207">Le code doit uniquement dépendre des valeurs de retour des méthodes.</span><span class="sxs-lookup"><span data-stu-id="2ba78-207">Instead, depend only on the return values of methods.</span></span> <span data-ttu-id="2ba78-208">Pourquoi ?</span><span class="sxs-lookup"><span data-stu-id="2ba78-208">Why?</span></span>
 
-  *   La logique du code sera plus facile à comprendre.
-  *   Le code sera plus facile à tester.
-  *   Combiner du code asynchrone et du code synchrone est beaucoup plus simple.
-  *   Les concurrences critiques peuvent généralement être évitées.
-  *   Rendre le code dépendant des valeurs de retour facilite la coordination du code asynchrone.
-  *   En prime, le code fonctionne parfaitement avec l’injection de dépendances.
+  *   <span data-ttu-id="2ba78-209">La logique du code sera plus facile à comprendre.</span><span class="sxs-lookup"><span data-stu-id="2ba78-209">Code will be easier to reason about.</span></span>
+  *   <span data-ttu-id="2ba78-210">Le code sera plus facile à tester.</span><span class="sxs-lookup"><span data-stu-id="2ba78-210">Code will be easier to test.</span></span>
+  *   <span data-ttu-id="2ba78-211">Combiner du code asynchrone et du code synchrone est beaucoup plus simple.</span><span class="sxs-lookup"><span data-stu-id="2ba78-211">Mixing async and synchronous code is far simpler.</span></span>
+  *   <span data-ttu-id="2ba78-212">Les concurrences critiques peuvent généralement être évitées.</span><span class="sxs-lookup"><span data-stu-id="2ba78-212">Race conditions can typically be avoided altogether.</span></span>
+  *   <span data-ttu-id="2ba78-213">Rendre le code dépendant des valeurs de retour facilite la coordination du code asynchrone.</span><span class="sxs-lookup"><span data-stu-id="2ba78-213">Depending on return values makes coordinating async code simple.</span></span>
+  *   <span data-ttu-id="2ba78-214">En prime, le code fonctionne parfaitement avec l’injection de dépendances.</span><span class="sxs-lookup"><span data-stu-id="2ba78-214">(Bonus) it works really well with dependency injection.</span></span>
 
-L’objectif recommandé est d’atteindre une [transparence référentielle](https://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) complète ou quasi-complète dans votre code. Votre base de code sera alors prédictible, testable et facile à gérer.
+<span data-ttu-id="2ba78-215">L’objectif recommandé est d’atteindre une [transparence référentielle](https://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) complète ou quasi-complète dans votre code.</span><span class="sxs-lookup"><span data-stu-id="2ba78-215">A recommended goal is to achieve complete or near-complete [Referential Transparency](https://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) in your code.</span></span> <span data-ttu-id="2ba78-216">Votre base de code sera alors prédictible, testable et facile à gérer.</span><span class="sxs-lookup"><span data-stu-id="2ba78-216">Doing so will result in an extremely predictable, testable, and maintainable codebase.</span></span>
 
-## <a name="other-resources"></a>Autres ressources
+## <a name="other-resources"></a><span data-ttu-id="2ba78-217">Autres ressources</span><span class="sxs-lookup"><span data-stu-id="2ba78-217">Other Resources</span></span>
 
-* L’article [Async en détail](../standard/async-in-depth.md) fournit des informations supplémentaires sur le fonctionnement des tâches.
-* Les vidéos [Six Essential Tips for Async](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) de Lucian Wischik sont une ressource très utile pour la programmation asynchrone.
-
+* <span data-ttu-id="2ba78-218">L’article [Async en détail](../standard/async-in-depth.md) fournit des informations supplémentaires sur le fonctionnement des tâches.</span><span class="sxs-lookup"><span data-stu-id="2ba78-218">[Async in-depth](../standard/async-in-depth.md) provides more information about how Tasks work.</span></span>
+* <span data-ttu-id="2ba78-219">Les vidéos [Six Essential Tips for Async](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) de Lucian Wischik sont une ressource très utile pour la programmation asynchrone.</span><span class="sxs-lookup"><span data-stu-id="2ba78-219">Lucian Wischik's [Six Essential Tips for Async](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) are a wonderful resource for async programming</span></span>

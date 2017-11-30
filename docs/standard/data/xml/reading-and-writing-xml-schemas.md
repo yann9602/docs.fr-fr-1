@@ -1,43 +1,45 @@
 ---
-title: "Lecture et &#233;criture de sch&#233;mas XML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Lecture et écriture de schémas XML"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-caps.latest.revision: 2
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: aaf63acbb58fd86f7fa9a5dc3dce7508d90cfada
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Lecture et &#233;criture de sch&#233;mas XML
-L'API Modèle Objet du schéma \(SOM\) peut permettre de lire et écrire des schémas de langage XSD \(XML Schema Definition\) dans des fichiers ou d'autres sources et de générer un cache de schéma XML à l'aide des classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=fullName> correspondant aux structures définies dans la recommandation du W3C \(World Wide Web Consortium\) sur les schémas XML.  
+# <a name="reading-and-writing-xml-schemas"></a><span data-ttu-id="5c2a8-102">Lecture et écriture de schémas XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-102">Reading and Writing XML Schemas</span></span>
+<span data-ttu-id="5c2a8-103">L'API Modèle Objet du schéma (SOM) peut permettre de lire et écrire des schémas de langage XSD (XML Schema Definition) dans des fichiers ou d'autres sources et de générer un cache de schéma XML à l'aide des classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondant aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-103">The Schema Object Model (SOM) API can be used to read and write XML Schema definition language (XSD) schemas from files or other sources and build XML schemas in-memory using the classes in the <xref:System.Xml.Schema?displayProperty=nameWithType> namespace that map to the structures defined in the World Wide Web Consortium (W3C) XML Schema Recommendation.</span></span>  
   
-## Lecture et écriture de schémas XML  
- La classe <xref:System.Xml.Schema.XmlSchema> fournit les méthodes <xref:System.Xml.Schema.XmlSchema.Read%2A> et <xref:System.Xml.Schema.XmlSchema.Write%2A> pour lire et écrire des schémas XML.  La méthode <xref:System.Xml.Schema.XmlSchema.Read%2A> retourne un objet <xref:System.Xml.Schema.XmlSchema> représentant le schéma XML et prend un objet <xref:System.Xml.Schema.ValidationEventHandler> facultatif comme paramètre pour traiter les avertissements et erreurs de validation de schéma rencontrées lors de la lecture d'un schéma XML.  
+## <a name="reading-and-writing-xml-schemas"></a><span data-ttu-id="5c2a8-104">Lecture et écriture de schémas XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-104">Reading and Writing XML Schemas</span></span>  
+ <span data-ttu-id="5c2a8-105">La classe <xref:System.Xml.Schema.XmlSchema> fournit les méthodes <xref:System.Xml.Schema.XmlSchema.Read%2A> et <xref:System.Xml.Schema.XmlSchema.Write%2A> pour lire et écrire des schémas XML.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-105">The <xref:System.Xml.Schema.XmlSchema> class provides the <xref:System.Xml.Schema.XmlSchema.Read%2A> and <xref:System.Xml.Schema.XmlSchema.Write%2A> methods to read and write XML schemas.</span></span> <span data-ttu-id="5c2a8-106">La méthode <xref:System.Xml.Schema.XmlSchema.Read%2A> retourne un objet <xref:System.Xml.Schema.XmlSchema> représentant le schéma XML et prend un objet <xref:System.Xml.Schema.ValidationEventHandler> facultatif comme paramètre pour traiter les avertissements et erreurs de validation de schéma rencontrées lors de la lecture d'un schéma XML.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-106">The <xref:System.Xml.Schema.XmlSchema.Read%2A> method returns an <xref:System.Xml.Schema.XmlSchema> object representing the XML schema and takes an optional <xref:System.Xml.Schema.ValidationEventHandler> as a parameter to handle schema validation warnings and errors encountered while reading an XML schema.</span></span>  
   
- La méthode <xref:System.Xml.Schema.XmlSchema.Write%2A> écrit des schémas XML dans des objets <xref:System.IO.Stream>, <xref:System.IO.TextWriter> et <xref:System.Xml.XmlWriter> et peut prendre un <xref:System.Xml.XmlNamespaceManager> facultatif comme paramètre.  Un objet <xref:System.Xml.XmlNamespaceManager> permet de traiter les espaces de noms rencontrés dans un schéma XML.  Pour plus d'informations sur la classe <xref:System.Xml.XmlNamespaceManager>, consultez [Gestion d'espaces de noms dans un document XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).  
+ <span data-ttu-id="5c2a8-107">La méthode <xref:System.Xml.Schema.XmlSchema.Write%2A> écrit des schémas XML dans des objets <xref:System.IO.Stream>, <xref:System.IO.TextWriter> et <xref:System.Xml.XmlWriter> et peut prendre un <xref:System.Xml.XmlNamespaceManager> facultatif comme paramètre.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-107">The <xref:System.Xml.Schema.XmlSchema.Write%2A> method writes XML schemas to <xref:System.IO.Stream>, <xref:System.IO.TextWriter> and <xref:System.Xml.XmlWriter> objects and can take an optional <xref:System.Xml.XmlNamespaceManager> object as a parameter.</span></span> <span data-ttu-id="5c2a8-108">Un objet <xref:System.Xml.XmlNamespaceManager> permet de traiter les espaces de noms rencontrés dans un schéma XML.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-108">An <xref:System.Xml.XmlNamespaceManager> is used to handle namespaces encountered in an XML schema.</span></span> <span data-ttu-id="5c2a8-109">Pour plus d’informations sur la <xref:System.Xml.XmlNamespaceManager> de classe, consultez [la gestion des espaces de noms un Document XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="5c2a8-109">For more information about the <xref:System.Xml.XmlNamespaceManager> class, see [Managing Namespaces in an XML Document](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).</span></span>  
   
- L'exemple de code suivant illustre la lecture et l'écriture de schémas XML à partir de et vers un fichier.  Il prend le fichier `example.xsd`, le lit dans un objet <xref:System.Xml.Schema.XmlSchema> à l'aide de la méthode `static` <xref:System.Xml.Schema.XmlSchema.Read%2A>, puis l'écrit dans la console et dans un nouveau fichier `new.xsd`.  Il fournit également un objet <xref:System.Xml.Schema.ValidationEventHandler> comme paramètre à la méthode `static` <xref:System.Xml.Schema.XmlSchema.Read%2A> pour traiter les avertissements ou erreurs de validation de schéma rencontrés pendant la lecture du schéma XML.  Si l'objet <xref:System.Xml.Schema.ValidationEventHandler> n'est pas spécifié \(`null`\), aucun avertissement ou aucune erreur n'est signalée.  
+ <span data-ttu-id="5c2a8-110">L'exemple de code suivant illustre la lecture et l'écriture de schémas XML à partir de et vers un fichier.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-110">The following code example illustrates reading and writing XML schemas from and to a file.</span></span> <span data-ttu-id="5c2a8-111">Il prend le fichier `example.xsd`, le lit dans un objet <xref:System.Xml.Schema.XmlSchema> à l'aide de la méthode `static`<xref:System.Xml.Schema.XmlSchema.Read%2A>, puis l'écrit dans la console et dans un nouveau fichier `new.xsd`.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-111">The code example takes the `example.xsd` file, reads it into an <xref:System.Xml.Schema.XmlSchema> object using the `static`<xref:System.Xml.Schema.XmlSchema.Read%2A> method, and then writes the file to the console and a new `new.xsd` file.</span></span> <span data-ttu-id="5c2a8-112">Il fournit également un objet <xref:System.Xml.Schema.ValidationEventHandler> comme paramètre à la méthode `static`<xref:System.Xml.Schema.XmlSchema.Read%2A> pour traiter les avertissements ou erreurs de validation de schéma rencontrés pendant la lecture du schéma XML.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-112">The code example also provides a <xref:System.Xml.Schema.ValidationEventHandler> as a parameter to the `static`<xref:System.Xml.Schema.XmlSchema.Read%2A> method to handle any schema validation warnings or errors encountered while reading the XML schema.</span></span> <span data-ttu-id="5c2a8-113">Si l'objet <xref:System.Xml.Schema.ValidationEventHandler> n'est pas spécifié (`null`), aucun avertissement ou aucune erreur n'est signalée.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-113">If the <xref:System.Xml.Schema.ValidationEventHandler> is not specified (`null`), no warnings or errors are reported.</span></span>  
   
  [!code-cpp[XmlSchemaReadWriteExample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaReadWriteExample/CPP/XmlSchemaReadWriteExample.cpp#1)]
  [!code-csharp[XmlSchemaReadWriteExample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaReadWriteExample/CS/XmlSchemaReadWriteExample.cs#1)]
  [!code-vb[XmlSchemaReadWriteExample#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaReadWriteExample/VB/XmlSchemaReadWriteExample.vb#1)]  
   
- L'exemple prend le fichier `example.xsd` comme entrée.  
+ <span data-ttu-id="5c2a8-114">L'exemple prend le fichier `example.xsd` comme entrée.</span><span class="sxs-lookup"><span data-stu-id="5c2a8-114">The example takes the `example.xsd` as input.</span></span>  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <xs:schema id="play" targetNamespace="http://tempuri.org/play.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/play.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
     <xs:element name='myShoeSize'>  
@@ -52,12 +54,12 @@ L'API Modèle Objet du schéma \(SOM\) peut permettre de lire et écrire des sch
 </xs:schema>  
 ```  
   
-## Voir aussi  
- [Vue d'ensemble du Modèle Objet du schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)   
- [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)   
- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)   
- [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)   
- [Inclusion ou importation de schémas XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)   
- [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)   
- [Jeu d'informations de post\-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)   
- [Gestion d'espaces de noms dans un document XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)
+## <a name="see-also"></a><span data-ttu-id="5c2a8-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5c2a8-115">See Also</span></span>  
+ [<span data-ttu-id="5c2a8-116">Vue d’ensemble du modèle objet schéma XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-116">XML Schema Object Model Overview</span></span>](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
+ [<span data-ttu-id="5c2a8-117">Création de schémas XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-117">Building XML Schemas</span></span>](../../../../docs/standard/data/xml/building-xml-schemas.md)  
+ [<span data-ttu-id="5c2a8-118">Traversée de schémas XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-118">Traversing XML Schemas</span></span>](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
+ [<span data-ttu-id="5c2a8-119">Modification de schémas XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-119">Editing XML Schemas</span></span>](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
+ [<span data-ttu-id="5c2a8-120">Inclusion ou importation de schémas XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-120">Including or Importing XML Schemas</span></span>](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
+ [<span data-ttu-id="5c2a8-121">XmlSchemaSet pour la Compilation du schéma</span><span class="sxs-lookup"><span data-stu-id="5c2a8-121">XmlSchemaSet for Schema Compilation</span></span>](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+ [<span data-ttu-id="5c2a8-122">Jeu d’informations de post-compilation de schéma</span><span class="sxs-lookup"><span data-stu-id="5c2a8-122">Post-Schema Compilation Infoset</span></span>](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)  
+ [<span data-ttu-id="5c2a8-123">Gestion d’espaces de noms dans un document XML</span><span class="sxs-lookup"><span data-stu-id="5c2a8-123">Managing Namespaces in an XML Document</span></span>](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)

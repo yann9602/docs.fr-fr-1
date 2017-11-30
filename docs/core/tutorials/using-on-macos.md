@@ -9,54 +9,52 @@ ms.topic: get-started-article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
+ms.openlocfilehash: b172e5fc4fcf9dd5c1e6f268f3c046e77592ebd3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 54a5078f71c68ce3d35c67b266dc198e123cdf88
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="getting-started-with-net-core-on-macos"></a><span data-ttu-id="ed437-104">Bien démarrer avec .NET Core sur macOS</span><span class="sxs-lookup"><span data-stu-id="ed437-104">Getting started with .NET Core on macOS</span></span>
 
-# <a name="getting-started-with-net-core-on-macos"></a>Bien démarrer avec .NET Core sur macOS
-
-Ce document présente les étapes et les flux de travail permettant de créer une solution .NET Core pour macOS. Découvrez comment créer des projets et des tests unitaires, utiliser les outils de débogage et incorporer des bibliothèques tierces à l’aide de [NuGet](https://www.nuget.org/).
+<span data-ttu-id="ed437-105">Ce document présente les étapes et les flux de travail permettant de créer une solution .NET Core pour macOS.</span><span class="sxs-lookup"><span data-stu-id="ed437-105">This document provides the steps and workflow to create a .NET Core solution for macOS.</span></span> <span data-ttu-id="ed437-106">Découvrez comment créer des projets et des tests unitaires, utiliser les outils de débogage et incorporer des bibliothèques tierces à l’aide de [NuGet](https://www.nuget.org/).</span><span class="sxs-lookup"><span data-stu-id="ed437-106">Learn how to create projects, unit tests, use the debugging tools, and incorporate third-party libraries via [NuGet](https://www.nuget.org/).</span></span>
 
 > [!NOTE]
-> Cet article utilise [Visual Studio Code](http://code.visualstudio.com) sur macOS.
+> <span data-ttu-id="ed437-107">Cet article utilise [Visual Studio Code](http://code.visualstudio.com) sur macOS.</span><span class="sxs-lookup"><span data-stu-id="ed437-107">This article uses [Visual Studio Code](http://code.visualstudio.com) on macOS.</span></span>
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a><span data-ttu-id="ed437-108">Prérequis</span><span class="sxs-lookup"><span data-stu-id="ed437-108">Prerequisites</span></span>
 
-Installez le [SDK .NET Core](https://www.microsoft.com/net/core). Ce SDK .NET Core inclut la dernière version du framework et du runtime .NET Core.
+<span data-ttu-id="ed437-109">Installez le [SDK .NET Core](https://www.microsoft.com/net/core).</span><span class="sxs-lookup"><span data-stu-id="ed437-109">Install the [.NET Core SDK](https://www.microsoft.com/net/core).</span></span> <span data-ttu-id="ed437-110">Ce SDK .NET Core inclut la dernière version du framework et du runtime .NET Core.</span><span class="sxs-lookup"><span data-stu-id="ed437-110">The .NET Core SDK includes the latest release of the .NET Core framework and runtime.</span></span>
 
-Installez [Visual Studio Code](http://code.visualstudio.com). Au cours de cet article, vous allez également installer des extensions Visual Studio Code pour améliorer l’expérience de développement de .NET Core.
+<span data-ttu-id="ed437-111">Installez [Visual Studio Code](http://code.visualstudio.com).</span><span class="sxs-lookup"><span data-stu-id="ed437-111">Install [Visual Studio Code](http://code.visualstudio.com).</span></span> <span data-ttu-id="ed437-112">Au cours de cet article, vous allez également installer des extensions Visual Studio Code pour améliorer l’expérience de développement de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="ed437-112">During the course of this article, you also install Visual Studio Code extensions that improve the .NET Core development experience.</span></span>
 
-Installez l’extension C# de Visual Studio Code en ouvrant Visual Studio Code et en appuyant sur <kbd>F1</kbd> pour ouvrir la palette Visual Studio Code. Tapez **ext install** pour afficher la liste des extensions. Sélectionnez l’extension C#. Redémarrez Visual Studio Code pour activer l’extension. Pour plus d’informations, consultez la [documentation sur l’extension C# pour Visual Studio Code](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
+<span data-ttu-id="ed437-113">Installez l’extension C# de Visual Studio Code en ouvrant Visual Studio Code et en appuyant sur <kbd>F1</kbd> pour ouvrir la palette Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="ed437-113">Install the Visual Studio Code C# extension by opening Visual Studio Code and pressing <kbd>F1</kbd> to open the Visual Studio Code palette.</span></span> <span data-ttu-id="ed437-114">Tapez **ext install** pour afficher la liste des extensions.</span><span class="sxs-lookup"><span data-stu-id="ed437-114">Type **ext install** to see the list of extensions.</span></span> <span data-ttu-id="ed437-115">Sélectionnez l’extension C#.</span><span class="sxs-lookup"><span data-stu-id="ed437-115">Select the C# extension.</span></span> <span data-ttu-id="ed437-116">Redémarrez Visual Studio Code pour activer l’extension.</span><span class="sxs-lookup"><span data-stu-id="ed437-116">Restart Visual Studio Code to activate the extension.</span></span> <span data-ttu-id="ed437-117">Pour plus d’informations, consultez la [documentation sur l’extension C# pour Visual Studio Code](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).</span><span class="sxs-lookup"><span data-stu-id="ed437-117">For more information, see the [Visual Studio Code C# Extension documentation](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).</span></span>
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a><span data-ttu-id="ed437-118">Bien démarrer</span><span class="sxs-lookup"><span data-stu-id="ed437-118">Getting started</span></span>
 
-Dans ce didacticiel, vous créez trois projets : un projet de bibliothèque, des tests pour ce projet de bibliothèque et une application console qui utilise la bibliothèque. Vous pouvez [afficher ou télécharger la source](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden) pour cette rubrique dans le dépôt dotnet/docs sur GitHub. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+<span data-ttu-id="ed437-119">Dans ce didacticiel, vous créez trois projets : un projet de bibliothèque, des tests pour ce projet de bibliothèque et une application console qui utilise la bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="ed437-119">In this tutorial, you create three projects: a library project, tests for that library project, and a console application that makes use of the library.</span></span> <span data-ttu-id="ed437-120">Vous pouvez [afficher ou télécharger la source](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden) pour cette rubrique dans le dépôt dotnet/docs sur GitHub.</span><span class="sxs-lookup"><span data-stu-id="ed437-120">You can [view or download the source](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden) for this topic at the dotnet/docs repository on GitHub.</span></span> <span data-ttu-id="ed437-121">Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span><span class="sxs-lookup"><span data-stu-id="ed437-121">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
 
-Démarrez Visual Studio Code. Appuyez sur <kbd>Ctrl</kbd>+<kbd>\`</kbd> (accent grave) ou sélectionnez **Affichage > Terminal intégré** dans le menu pour ouvrir un terminal incorporé dans Visual Studio Code. Vous pouvez également ouvrir un interpréteur de commandes externe à l’aide de la commande **Ouvrir dans l’invite de commandes** de l’Explorateur (**Ouvrir dans Terminal** sur Mac ou Linux) si vous préférez travailler en dehors de Visual Studio Code.
+<span data-ttu-id="ed437-122">Démarrez Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="ed437-122">Start Visual Studio Code.</span></span> <span data-ttu-id="ed437-123">Appuyez sur <kbd>Ctrl</kbd>+<kbd>\\`</kbd> (accent grave) ou sélectionnez **Affichage > Terminal intégré** dans le menu pour ouvrir un terminal incorporé dans Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="ed437-123">Press <kbd>Ctrl</kbd>+<kbd>\\`</kbd> (the backquote or backtick character) or select **View > Integrated Terminal** from the menu to open an embedded terminal in Visual Studio Code.</span></span> <span data-ttu-id="ed437-124">Vous pouvez également ouvrir un interpréteur de commandes externe à l’aide de la commande **Ouvrir dans l’invite de commandes** de l’Explorateur (**Ouvrir dans Terminal** sur Mac ou Linux) si vous préférez travailler en dehors de Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="ed437-124">You can still open an external shell with the Explorer **Open in Command Prompt** command (**Open in Terminal** on Mac or Linux) if you prefer to work outside of Visual Studio Code.</span></span>
 
-Commencez par créer un fichier de solution qui servira de conteneur pour un ou plusieurs projets .NET Core. Dans le terminal, créez un dossier *golden* et ouvrez le dossier. Ce dossier est la racine de votre solution. Exécutez la commande [`dotnet new`](../tools/dotnet-new.md) pour créer une solution, *golden.sln* :
+<span data-ttu-id="ed437-125">Commencez par créer un fichier de solution qui servira de conteneur pour un ou plusieurs projets .NET Core.</span><span class="sxs-lookup"><span data-stu-id="ed437-125">Begin by creating a solution file, which serves as a container for one or more .NET Core projects.</span></span> <span data-ttu-id="ed437-126">Dans le terminal, créez un dossier *golden* et ouvrez le dossier.</span><span class="sxs-lookup"><span data-stu-id="ed437-126">In the terminal, create a *golden* folder and open the folder.</span></span> <span data-ttu-id="ed437-127">Ce dossier est la racine de votre solution.</span><span class="sxs-lookup"><span data-stu-id="ed437-127">This folder is the root of your solution.</span></span> <span data-ttu-id="ed437-128">Exécutez la commande [`dotnet new`](../tools/dotnet-new.md) pour créer une solution, *golden.sln* :</span><span class="sxs-lookup"><span data-stu-id="ed437-128">Run the [`dotnet new`](../tools/dotnet-new.md) command to create a new solution, *golden.sln*:</span></span>
 
 ```console
 dotnet new sln
 ```
 
-À partir du dossier *golden*, exécutez la commande suivante pour créer un projet de bibliothèque qui génère deux fichiers,*library.csproj* et *Class1.cs*, dans le dossier *library* :
+<span data-ttu-id="ed437-129">À partir du dossier *golden*, exécutez la commande suivante pour créer un projet de bibliothèque qui génère deux fichiers,*library.csproj* et *Class1.cs*, dans le dossier *library* :</span><span class="sxs-lookup"><span data-stu-id="ed437-129">From the *golden* folder, execute the following command to create a library project, which produces two files,*library.csproj* and *Class1.cs*, in the *library* folder:</span></span>
 
 ```console
 dotnet new classlib -o library
 ```
 
-Exécutez la commande [`dotnet sln`](../tools/dotnet-sln.md) pour ajouter le projet *library.csproj* que vous venez de créer à la solution :
+<span data-ttu-id="ed437-130">Exécutez la commande [`dotnet sln`](../tools/dotnet-sln.md) pour ajouter le projet *library.csproj* que vous venez de créer à la solution :</span><span class="sxs-lookup"><span data-stu-id="ed437-130">Execute the [`dotnet sln`](../tools/dotnet-sln.md) command to add the newly created *library.csproj* project to the solution:</span></span>
 
 ```console
 dotnet sln add library/library.csproj
 ```
 
-Le fichier *library.csproj* contient les informations suivantes :
+<span data-ttu-id="ed437-131">Le fichier *library.csproj* contient les informations suivantes :</span><span class="sxs-lookup"><span data-stu-id="ed437-131">The *library.csproj* file contains the following information:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -68,13 +66,13 @@ Le fichier *library.csproj* contient les informations suivantes :
 </Project>
 ```
 
-Les méthodes de la bibliothèque sérialisent et désérialisent les objets au format JSON. Pour prendre en charge la sérialisation et la désérialisation JSON, ajoutez une référence au package NuGet `Newtonsoft.Json`. La commande `dotnet add` ajoute de nouveaux éléments à un projet. Pour ajouter une référence à un package NuGet, utilisez la commande [`dotnet add package`](../tools/dotnet-add-package.md) et spécifiez le nom du package :
+<span data-ttu-id="ed437-132">Les méthodes de la bibliothèque sérialisent et désérialisent les objets au format JSON.</span><span class="sxs-lookup"><span data-stu-id="ed437-132">Our library methods serialize and deserialize objects in JSON format.</span></span> <span data-ttu-id="ed437-133">Pour prendre en charge la sérialisation et la désérialisation JSON, ajoutez une référence au package NuGet `Newtonsoft.Json`.</span><span class="sxs-lookup"><span data-stu-id="ed437-133">To support JSON serialization and deserialization, add a reference to the `Newtonsoft.Json` NuGet package.</span></span> <span data-ttu-id="ed437-134">La commande `dotnet add` ajoute de nouveaux éléments à un projet.</span><span class="sxs-lookup"><span data-stu-id="ed437-134">The `dotnet add` command adds new items to a project.</span></span> <span data-ttu-id="ed437-135">Pour ajouter une référence à un package NuGet, utilisez la commande [`dotnet add package`](../tools/dotnet-add-package.md) et spécifiez le nom du package :</span><span class="sxs-lookup"><span data-stu-id="ed437-135">To add a reference to a NuGet package, use the [`dotnet add package`](../tools/dotnet-add-package.md) command and specify the name of the package:</span></span>
 
 ```console
 dotnet add library package Newtonsoft.Json
 ```
 
-Cette opération ajoute `Newtonsoft.Json` et ses dépendances au projet de bibliothèque. Vous pouvez aussi modifier manuellement le fichier *library.csproj* et ajouter le nœud suivant :
+<span data-ttu-id="ed437-136">Cette opération ajoute `Newtonsoft.Json` et ses dépendances au projet de bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="ed437-136">This adds `Newtonsoft.Json` and its dependencies to the library project.</span></span> <span data-ttu-id="ed437-137">Vous pouvez aussi modifier manuellement le fichier *library.csproj* et ajouter le nœud suivant :</span><span class="sxs-lookup"><span data-stu-id="ed437-137">Alternatively, manually edit the *library.csproj* file and add the following node:</span></span>
 
 ```xml
 <ItemGroup>
@@ -82,13 +80,13 @@ Cette opération ajoute `Newtonsoft.Json` et ses dépendances au projet de bibli
 </ItemGroup>
 ```
 
-Exécutez [`dotnet restore`](../tools/dotnet-restore.md), qui restaure les dépendances et crée un dossier *obj* dans *library* avec trois fichiers, notamment un fichier *project.assets.json* :
+<span data-ttu-id="ed437-138">Exécuter [ `dotnet restore` ](../tools/dotnet-restore.md), ([voir la Remarque](#dotnet-restore-note)) qui restaure les dépendances et crée un *obj* dossier *bibliothèque* avec trois fichiers, y compris un *project.assets.json* fichier :</span><span class="sxs-lookup"><span data-stu-id="ed437-138">Execute [`dotnet restore`](../tools/dotnet-restore.md), ([see note](#dotnet-restore-note)) which restores dependencies and creates an *obj* folder inside *library* with three files in it, including a *project.assets.json* file:</span></span>
 
 ```console
 dotnet restore
 ```
 
-Dans le dossier *library*, renommez le fichier *Class1.cs* en *Thing.cs*. Remplacez le code par ce qui suit :
+<span data-ttu-id="ed437-139">Dans le dossier *library*, renommez le fichier *Class1.cs* en *Thing.cs*.</span><span class="sxs-lookup"><span data-stu-id="ed437-139">In the *library* folder, rename the file *Class1.cs* to *Thing.cs*.</span></span> <span data-ttu-id="ed437-140">Remplacez le code par ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="ed437-140">Replace the code with the following:</span></span>
 
 ```csharp
 using static Newtonsoft.Json.JsonConvert;
@@ -103,35 +101,35 @@ namespace Library
 }
 ```
 
-La classe `Thing` contient une méthode publique, `Get`, qui retourne la somme de deux nombres. Pour cela, elle convertit la somme en chaîne, puis la désérialise en entier. Ce code utilise un certain nombre de fonctionnalités C# modernes, telles que des [`using static`directives](../../csharp/language-reference/keywords/using-static.md), des [membres expression-bodied](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members) et des [chaînes interpolées](../../csharp/language-reference/keywords/interpolated-strings.md).
+<span data-ttu-id="ed437-141">La classe `Thing` contient une méthode publique, `Get`, qui retourne la somme de deux nombres. Pour cela, elle convertit la somme en chaîne, puis la désérialise en entier.</span><span class="sxs-lookup"><span data-stu-id="ed437-141">The `Thing` class contains one public method, `Get`, which returns the sum of two numbers but does so by converting the sum into a string and then deserializing it into an integer.</span></span> <span data-ttu-id="ed437-142">Ce code utilise un certain nombre de fonctionnalités C# modernes, telles que des [`using static`directives](../../csharp/language-reference/keywords/using-static.md), des [membres expression-bodied](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members) et des [chaînes interpolées](../../csharp/language-reference/keywords/interpolated-strings.md).</span><span class="sxs-lookup"><span data-stu-id="ed437-142">This makes use of a number of modern C# features, such as [`using static` directives](../../csharp/language-reference/keywords/using-static.md), [expression-bodied members](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members), and [interpolated strings](../../csharp/language-reference/keywords/interpolated-strings.md).</span></span>
 
-Générez la bibliothèque à l’aide de la commande [ `dotnet build` ](../tools/dotnet-build.md). Un fichier *library.dll* est généré sous *golden/library/bin/Debug/netstandard1.4* :
+<span data-ttu-id="ed437-143">Générez la bibliothèque à l’aide de la commande [ `dotnet build` ](../tools/dotnet-build.md).</span><span class="sxs-lookup"><span data-stu-id="ed437-143">Build the library with the [`dotnet build`](../tools/dotnet-build.md) command.</span></span> <span data-ttu-id="ed437-144">Un fichier *library.dll* est généré sous *golden/library/bin/Debug/netstandard1.4* :</span><span class="sxs-lookup"><span data-stu-id="ed437-144">This produces a *library.dll* file under *golden/library/bin/Debug/netstandard1.4*:</span></span>
 
 ```console
 dotnet build
 ```
 
-## <a name="create-the-test-project"></a>Créer le projet de test
+## <a name="create-the-test-project"></a><span data-ttu-id="ed437-145">Créer le projet de test</span><span class="sxs-lookup"><span data-stu-id="ed437-145">Create the test project</span></span>
 
-Créez un projet de test pour la bibliothèque. À partir du dossier *golden*, créez un projet de test :
+<span data-ttu-id="ed437-146">Créez un projet de test pour la bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="ed437-146">Build a test project for the library.</span></span> <span data-ttu-id="ed437-147">À partir du dossier *golden*, créez un projet de test :</span><span class="sxs-lookup"><span data-stu-id="ed437-147">From the *golden* folder, create a new test project:</span></span>
 
 ```console
 dotnet new xunit -o test-library
 ```
 
-Ajoutez le projet de test à la solution :
+<span data-ttu-id="ed437-148">Ajoutez le projet de test à la solution :</span><span class="sxs-lookup"><span data-stu-id="ed437-148">Add the test project to the solution:</span></span>
 
 ```console
 dotnet sln add test-library/test-library.csproj
 ```
 
-Ajoutez une référence de projet à la bibliothèque créée à la section précédente pour que le compilateur puisse trouver et utiliser le projet de bibliothèque. Utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :
+<span data-ttu-id="ed437-149">Ajoutez une référence de projet à la bibliothèque créée à la section précédente pour que le compilateur puisse trouver et utiliser le projet de bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="ed437-149">Add a project reference the library you created in the previous section so that the compiler can find and use the library project.</span></span> <span data-ttu-id="ed437-150">Utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :</span><span class="sxs-lookup"><span data-stu-id="ed437-150">Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
 
 ```console
 dotnet add test-library/test-library.csproj reference library/library.csproj
 ```
 
-Vous pouvez aussi modifier manuellement le fichier *test-library.csproj* et ajouter le nœud suivant :
+<span data-ttu-id="ed437-151">Vous pouvez aussi modifier manuellement le fichier *test-library.csproj* et ajouter le nœud suivant :</span><span class="sxs-lookup"><span data-stu-id="ed437-151">Alternatively, manually edit the *test-library.csproj* file and add the following node:</span></span>
 
 ```xml
 <ItemGroup>
@@ -139,7 +137,7 @@ Vous pouvez aussi modifier manuellement le fichier *test-library.csproj* et ajou
 </ItemGroup>
 ```
 
-Maintenant que les dépendances ont été correctement configurées, créez les tests pour votre bibliothèque. Ouvrez *UnitTest1.cs* et remplacez son contenu par le code suivant :
+<span data-ttu-id="ed437-152">Maintenant que les dépendances ont été correctement configurées, créez les tests pour votre bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="ed437-152">Now that the dependencies have been properly configured, create the tests for your library.</span></span> <span data-ttu-id="ed437-153">Ouvrez *UnitTest1.cs* et remplacez son contenu par le code suivant :</span><span class="sxs-lookup"><span data-stu-id="ed437-153">Open *UnitTest1.cs* and replace its contents with the following code:</span></span>
 
 ```csharp
 using Library;
@@ -157,71 +155,73 @@ namespace TestApp
 }
 ```
 
-Le fait de déclarer la valeur 42 n’est pas égal à 19+23 (ou 42) quand vous créez initialement le test unitaire (`Assert.NotEqual`), qui échoue. Lors de la création d’un test unitaire, une étape importante consiste à le faire échouer une fois pour confirmer sa logique.
+<span data-ttu-id="ed437-154">Le fait de déclarer la valeur 42 n’est pas égal à 19+23 (ou 42) quand vous créez initialement le test unitaire (`Assert.NotEqual`), qui échoue.</span><span class="sxs-lookup"><span data-stu-id="ed437-154">Note that you assert the value 42 is not equal to 19+23 (or 42) when you first create the unit test (`Assert.NotEqual`), which will fail.</span></span> <span data-ttu-id="ed437-155">Lors de la création d’un test unitaire, une étape importante consiste à le faire échouer une fois pour confirmer sa logique.</span><span class="sxs-lookup"><span data-stu-id="ed437-155">An important step in building unit tests is to create the test to fail once first to confirm its logic.</span></span>
 
-À partir du dossier *golden*, exécutez les commandes suivantes :
+<span data-ttu-id="ed437-156">À partir du dossier *golden*, exécutez les commandes suivantes :</span><span class="sxs-lookup"><span data-stu-id="ed437-156">From the *golden* folder, execute the following commands:</span></span>
 
 ```console
-dotnet restore
+dotnet restore 
 dotnet test test-library/test-library.csproj
 ```
 
-Ces commandes trouvent de manière récursive tous les projets pour restaurer les dépendances, les générer et activer le Test Runner xUnit pour exécuter les tests. Le test unique échoue comme prévu.
+<span data-ttu-id="ed437-157">Ces commandes trouvent de manière récursive tous les projets pour restaurer les dépendances, les générer et activer le Test Runner xUnit pour exécuter les tests.</span><span class="sxs-lookup"><span data-stu-id="ed437-157">These commands will recursively find all projects to restore dependencies, build them, and activate the xUnit test runner to run the tests.</span></span> <span data-ttu-id="ed437-158">Le test unique échoue comme prévu.</span><span class="sxs-lookup"><span data-stu-id="ed437-158">The single test fails, as you expect.</span></span>
 
-Modifiez le fichier *UnitTest1.cs* et remplacez l’assertion `Assert.NotEqual` par `Assert.Equal`. Exécutez la commande suivante à partir du dossier *golden* pour réexécuter le test, qui réussit cette fois-ci :
+<span data-ttu-id="ed437-159">Modifiez le fichier *UnitTest1.cs* et remplacez l’assertion `Assert.NotEqual` par `Assert.Equal`.</span><span class="sxs-lookup"><span data-stu-id="ed437-159">Edit the *UnitTest1.cs* file and change the assertion from `Assert.NotEqual` to `Assert.Equal`.</span></span> <span data-ttu-id="ed437-160">Exécutez la commande suivante à partir du dossier *golden* pour réexécuter le test, qui réussit cette fois-ci :</span><span class="sxs-lookup"><span data-stu-id="ed437-160">Execute the following command from the *golden* folder to re-run the test, which passes this time:</span></span>
 
 ```console
 dotnet test test-library/test-library.csproj
 ```
 
-## <a name="create-the-console-app"></a>Créer l’application console
+## <a name="create-the-console-app"></a><span data-ttu-id="ed437-161">Créer l’application console</span><span class="sxs-lookup"><span data-stu-id="ed437-161">Create the console app</span></span>
 
-L’application console que vous allez créer dans les étapes suivantes est dépendante du projet de bibliothèque créé précédemment et appelle sa méthode de bibliothèque durant l’exécution. Ce modèle de développement vous permet de voir comment créer des bibliothèques réutilisables pour plusieurs projets.
+<span data-ttu-id="ed437-162">L’application console que vous allez créer dans les étapes suivantes est dépendante du projet de bibliothèque créé précédemment et appelle sa méthode de bibliothèque durant l’exécution.</span><span class="sxs-lookup"><span data-stu-id="ed437-162">The console app you create over the following steps takes a dependency on the library project you created earlier and calls its library method when it runs.</span></span> <span data-ttu-id="ed437-163">Ce modèle de développement vous permet de voir comment créer des bibliothèques réutilisables pour plusieurs projets.</span><span class="sxs-lookup"><span data-stu-id="ed437-163">Using this pattern of development, you see how to create reusable libraries for multiple projects.</span></span>
 
-Créez une application console à partir du dossier *golden* :
+<span data-ttu-id="ed437-164">Créez une application console à partir du dossier *golden* :</span><span class="sxs-lookup"><span data-stu-id="ed437-164">Create a new console application from the *golden* folder:</span></span>
 
 ```console
 dotnet new console -o app
 ```
 
-Ajoutez le projet d’application console à la solution :
+<span data-ttu-id="ed437-165">Ajoutez le projet d’application console à la solution :</span><span class="sxs-lookup"><span data-stu-id="ed437-165">Add the console app project to the solution:</span></span>
 
 ```console
 dotnet sln add app/app.csproj
 ```
 
-Créez la dépendance à la bibliothèque en exécutant la commande `dotnet add reference` :
+<span data-ttu-id="ed437-166">Créez la dépendance à la bibliothèque en exécutant la commande `dotnet add reference` :</span><span class="sxs-lookup"><span data-stu-id="ed437-166">Create the dependency on the library by running the `dotnet add reference` command:</span></span>
 
 ```console
 dotnet add app/app.csproj reference library/library.csproj
 ```
 
-Exécutez `dotnet restore` pour restaurer les dépendances des trois projets dans la solution. Ouvrez *program.cs* et remplacez le contenu de la méthode `Main` par la ligne suivante :
+<span data-ttu-id="ed437-167">Exécutez `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) pour restaurer les dépendances de ces trois projets dans la solution.</span><span class="sxs-lookup"><span data-stu-id="ed437-167">Run `dotnet restore` ([see note](#dotnet-restore-note)) to restore the dependencies of the three projects in the solution.</span></span> <span data-ttu-id="ed437-168">Ouvrez *program.cs* et remplacez le contenu de la méthode `Main` par la ligne suivante :</span><span class="sxs-lookup"><span data-stu-id="ed437-168">Open *Program.cs* and replace the contents of the `Main` method with the following line:</span></span>
 
 ```csharp
 WriteLine($"The answer is {new Thing().Get(19, 23)}");
 ```
 
-Ajoutez deux directives `using` en haut du fichier *Program.cs* :
+<span data-ttu-id="ed437-169">Ajoutez deux directives `using` en haut du fichier *Program.cs* :</span><span class="sxs-lookup"><span data-stu-id="ed437-169">Add two `using` directives to the top of the *Program.cs* file:</span></span>
 
 ```csharp
 using static System.Console;
 using Library;
 ```
 
-Lancez la commande suivante `dotnet run` pour exécuter l’exécutable, où l’option `-p` après `dotnet run` spécifie le projet de l’application principale. L’application génère la chaîne « The answer is 42 ».
+<span data-ttu-id="ed437-170">Lancez la commande suivante `dotnet run` pour exécuter l’exécutable, où l’option `-p` après `dotnet run` spécifie le projet de l’application principale.</span><span class="sxs-lookup"><span data-stu-id="ed437-170">Execute the following `dotnet run` command to run the executable, where the `-p` option to `dotnet run` specifies the project for the main application.</span></span> <span data-ttu-id="ed437-171">L’application génère la chaîne « The answer is 42 ».</span><span class="sxs-lookup"><span data-stu-id="ed437-171">The app produces the string "The answer is 42".</span></span>
 
 ```console
 dotnet run -p app/app.csproj
 ```
 
-## <a name="debug-the-application"></a>Déboguer l’application
+## <a name="debug-the-application"></a><span data-ttu-id="ed437-172">Déboguer l’application</span><span class="sxs-lookup"><span data-stu-id="ed437-172">Debug the application</span></span>
 
-Définissez un point d’arrêt au niveau de l’instruction `WriteLine` dans la méthode `Main`. Pour ce faire, appuyez sur la touche <kbd>F9</kbd> quand le curseur se trouve sur la ligne `WriteLine` ou cliquez dans la marge gauche de la ligne où vous souhaitez définir le point d’arrêt. Un cercle rouge apparaît dans la marge à côté de la ligne de code. Quand le point d’arrêt est atteint, l’exécution du code s’arrête *avant* l’exécution de la ligne de point d’arrêt.
+<span data-ttu-id="ed437-173">Définissez un point d’arrêt au niveau de l’instruction `WriteLine` dans la méthode `Main`.</span><span class="sxs-lookup"><span data-stu-id="ed437-173">Set a breakpoint at the `WriteLine` statement in the `Main` method.</span></span> <span data-ttu-id="ed437-174">Pour ce faire, appuyez sur la touche <kbd>F9</kbd> quand le curseur se trouve sur la ligne `WriteLine` ou cliquez dans la marge gauche de la ligne où vous souhaitez définir le point d’arrêt.</span><span class="sxs-lookup"><span data-stu-id="ed437-174">Do this by either pressing the <kbd>F9</kbd> key when the cursor is over the `WriteLine` line or by clicking the mouse in the left margin on the line where you want to set the breakpoint.</span></span> <span data-ttu-id="ed437-175">Un cercle rouge apparaît dans la marge à côté de la ligne de code.</span><span class="sxs-lookup"><span data-stu-id="ed437-175">A red circle will appear in the margin next to the line of code.</span></span> <span data-ttu-id="ed437-176">Quand le point d’arrêt est atteint, l’exécution du code s’arrête *avant* l’exécution de la ligne de point d’arrêt.</span><span class="sxs-lookup"><span data-stu-id="ed437-176">When the breakpoint is reached, code execution will stop *before* the breakpoint line is executed.</span></span>
 
-Ouvrez l’onglet du débogueur. Pour cela, sélectionnez l’icône de débogage dans la barre d’outils de Visual Studio Code, puis **Affichage > Déboguer** à partir de la barre de menus, ou utilisez le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>D</kbd> :
+<span data-ttu-id="ed437-177">Ouvrez l’onglet du débogueur. Pour cela, sélectionnez l’icône de débogage dans la barre d’outils de Visual Studio Code, puis **Affichage > Déboguer** à partir de la barre de menus, ou utilisez le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>D</kbd> :</span><span class="sxs-lookup"><span data-stu-id="ed437-177">Open the debugger tab by selecting the Debug icon in the Visual Studio Code toolbar, selecting **View > Debug** from the menu bar, or using the keyboard shortcut <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>:</span></span>
 
 ![Débogueur Visual Studio Code](./media/using-on-macos/vscodedebugger.png)
 
-Appuyez sur le bouton de lecture pour démarrer l’application sous le débogueur. L’application s’exécute jusqu’au point d’arrêt. Exécutez pas à pas la méthode `Get`, puis vérifiez que vous avez passé les arguments appropriés. Vérifiez que la réponse est 42.
+<span data-ttu-id="ed437-179">Appuyez sur le bouton de lecture pour démarrer l’application sous le débogueur.</span><span class="sxs-lookup"><span data-stu-id="ed437-179">Press the Play button to start the application under the debugger.</span></span> <span data-ttu-id="ed437-180">L’application s’exécute jusqu’au point d’arrêt.</span><span class="sxs-lookup"><span data-stu-id="ed437-180">The app begins execution and runs to the breakpoint, where it stops.</span></span> <span data-ttu-id="ed437-181">Exécutez pas à pas la méthode `Get`, puis vérifiez que vous avez passé les arguments appropriés.</span><span class="sxs-lookup"><span data-stu-id="ed437-181">Step into the `Get` method and make sure that you have passed in the correct arguments.</span></span> <span data-ttu-id="ed437-182">Vérifiez que la réponse est 42.</span><span class="sxs-lookup"><span data-stu-id="ed437-182">Confirm that the answer is 42.</span></span>
 
+<a name="dotnet-restore-note"></a>
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

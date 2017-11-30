@@ -1,155 +1,162 @@
 ---
-title: "Comparaison de cha&#238;nes dans .NET Framework | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Compare (méthode)"
-  - "CompareOrdinal (méthode)"
-  - "CompareTo (méthode)"
-  - "EndsWith (méthode)"
-  - "Equals (méthode)"
-  - "IndexOf (méthode)"
-  - "LastIndexOf (méthode)"
-  - "StartsWith (méthode)"
-  - "chaînes (.NET Framework), comparer"
-  - "comparaisons de valeurs de chaînes"
+title: "Comparaison de chaînes dans .NET"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- value comparisons of strings
+- LastIndexOf method
+- CompareTo method
+- IndexOf method
+- Compare method
+- strings [.NET Framework], comparing
+- CompareOrdinal method
+- EndsWith method
+- Equals method
+- StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-caps.latest.revision: 15
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 34aa922155943d1b4d39de2e7c33ebc1228e1083
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comparaison de cha&#238;nes dans .NET Framework
-Le .NET Framework fournit plusieurs méthodes permettant de comparer les valeurs de chaînes. Le tableau suivant répertorie et décrit les méthodes de comparaison de valeurs.  
+# <a name="comparing-strings-in-net"></a><span data-ttu-id="ddbeb-102">Comparaison de chaînes dans .NET</span><span class="sxs-lookup"><span data-stu-id="ddbeb-102">Comparing Strings in .NET</span></span>
+<span data-ttu-id="ddbeb-103">.NET fournit plusieurs méthodes permettant de comparer les valeurs de chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-103">.NET provides several methods to compare the values of strings.</span></span> <span data-ttu-id="ddbeb-104">Le tableau suivant répertorie et décrit les méthodes de comparaison de valeurs.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-104">The following table lists and describes the value-comparison methods.</span></span>  
   
-|Nom de la méthode|Utilisation|  
-|-----------------------|-----------------|  
-|<xref:System.String.Compare%2A?displayProperty=fullName>|Compare les valeurs de deux chaînes. Retourne une valeur entière.|  
-|<xref:System.String.CompareOrdinal%2A?displayProperty=fullName>|Compare deux chaînes sans tenir compte de la culture locale. Retourne une valeur entière.|  
-|<xref:System.String.CompareTo%2A?displayProperty=fullName>|Compare l'objet chaîne actif à une autre chaîne. Retourne une valeur entière.|  
-|<xref:System.String.StartsWith%2A?displayProperty=fullName>|Détermine si une chaîne commence par la chaîne passée. Retourne une valeur booléenne.|  
-|<xref:System.String.EndsWith%2A?displayProperty=fullName>|Détermine si une chaîne se termine par la chaîne passée. Retourne une valeur booléenne.|  
-|<xref:System.String.Equals%2A?displayProperty=fullName>|Détermine si deux chaînes sont identiques. Retourne une valeur booléenne.|  
-|<xref:System.String.IndexOf%2A?displayProperty=fullName>|Retourne la position d'index d'un caractère ou d'une chaîne, en commençant par le début de la chaîne que vous examinez. Retourne une valeur entière.|  
-|<xref:System.String.LastIndexOf%2A?displayProperty=fullName>|Retourne la position d'index d'un caractère ou d'une chaîne, en commençant par la fin de la chaîne que vous examinez. Retourne une valeur entière.|  
+|<span data-ttu-id="ddbeb-105">Nom de la méthode</span><span class="sxs-lookup"><span data-stu-id="ddbeb-105">Method name</span></span>|<span data-ttu-id="ddbeb-106">Utilisation</span><span class="sxs-lookup"><span data-stu-id="ddbeb-106">Use</span></span>|  
+|-----------------|---------|  
+|<xref:System.String.Compare%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-107">Compare les valeurs de deux chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-107">Compares the values of two strings.</span></span> <span data-ttu-id="ddbeb-108">Retourne une valeur entière.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-108">Returns an integer value.</span></span>|  
+|<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-109">Compare deux chaînes sans tenir compte de la culture locale.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-109">Compares two strings without regard to local culture.</span></span> <span data-ttu-id="ddbeb-110">Retourne une valeur entière.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-110">Returns an integer value.</span></span>|  
+|<xref:System.String.CompareTo%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-111">Compare l'objet chaîne actif à une autre chaîne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-111">Compares the current string object to another string.</span></span> <span data-ttu-id="ddbeb-112">Retourne une valeur entière.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-112">Returns an integer value.</span></span>|  
+|<xref:System.String.StartsWith%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-113">Détermine si une chaîne commence par la chaîne passée.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-113">Determines whether a string begins with the string passed.</span></span> <span data-ttu-id="ddbeb-114">Retourne une valeur booléenne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-114">Returns a Boolean value.</span></span>|  
+|<xref:System.String.EndsWith%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-115">Détermine si une chaîne se termine par la chaîne passée.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-115">Determines whether a string ends with the string passed.</span></span> <span data-ttu-id="ddbeb-116">Retourne une valeur booléenne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-116">Returns a Boolean value.</span></span>|  
+|<xref:System.String.Equals%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-117">Détermine si deux chaînes sont identiques.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-117">Determines whether two strings are the same.</span></span> <span data-ttu-id="ddbeb-118">Retourne une valeur booléenne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-118">Returns a Boolean value.</span></span>|  
+|<xref:System.String.IndexOf%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-119">Retourne la position d'index d'un caractère ou d'une chaîne, en commençant par le début de la chaîne que vous examinez.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-119">Returns the index position of a character or string, starting from the beginning of the string you are examining.</span></span> <span data-ttu-id="ddbeb-120">Retourne une valeur entière.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-120">Returns an integer value.</span></span>|  
+|<xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>|<span data-ttu-id="ddbeb-121">Retourne la position d'index d'un caractère ou d'une chaîne, en commençant par la fin de la chaîne que vous examinez.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-121">Returns the index position of a character or string, starting from the end of the string you are examining.</span></span> <span data-ttu-id="ddbeb-122">Retourne une valeur entière.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-122">Returns an integer value.</span></span>|  
   
-## Comparer  
- La méthode statique <xref:System.String.Compare%2A?displayProperty=fullName> fournit un moyen de comparer deux chaînes de façon approfondie. Cette méthode prend en compte la culture. Vous pouvez utiliser cette fonction pour comparer deux chaînes ou les sous\-chaînes de deux chaînes. En outre, des surcharges sont fournies, qui prennent ou non en compte les différences de casse et de culture. Le tableau suivant montre les trois valeurs entières que cette méthode peut retourner.  
+## <a name="compare"></a><span data-ttu-id="ddbeb-123">Comparer</span><span class="sxs-lookup"><span data-stu-id="ddbeb-123">Compare</span></span>  
+ <span data-ttu-id="ddbeb-124">La méthode statique <xref:System.String.Compare%2A?displayProperty=nameWithType> fournit un moyen de comparer deux chaînes de façon approfondie.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-124">The static <xref:System.String.Compare%2A?displayProperty=nameWithType> method provides a thorough way of comparing two strings.</span></span> <span data-ttu-id="ddbeb-125">Cette méthode prend en compte la culture.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-125">This method is culturally aware.</span></span> <span data-ttu-id="ddbeb-126">Vous pouvez utiliser cette fonction pour comparer deux chaînes ou les sous-chaînes de deux chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-126">You can use this function to compare two strings or substrings of two strings.</span></span> <span data-ttu-id="ddbeb-127">En outre, des surcharges sont fournies, qui prennent ou non en compte les différences de casse et de culture.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-127">Additionally, overloads are provided that regard or disregard case and cultural variance.</span></span> <span data-ttu-id="ddbeb-128">Le tableau suivant montre les trois valeurs entières que cette méthode peut retourner.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-128">The following table shows the three integer values that this method might return.</span></span>  
   
-|Valeur de retour|Condition|  
-|----------------------|---------------|  
-|Entier négatif|La première chaîne précède la seconde chaîne dans l'ordre de tri.<br /><br /> ou<br /><br /> La première chaîne est `null`.|  
-|0|La première chaîne et la seconde chaîne sont égales.<br /><br /> ou<br /><br /> Les deux chaînes sont `null`.|  
-|Entier positif<br /><br /> ou<br /><br /> 1|La première chaîne suit la seconde chaîne dans l'ordre de tri.<br /><br /> ou<br /><br /> La seconde chaîne est `null`.|  
+|<span data-ttu-id="ddbeb-129">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="ddbeb-129">Return value</span></span>|<span data-ttu-id="ddbeb-130">Condition</span><span class="sxs-lookup"><span data-stu-id="ddbeb-130">Condition</span></span>|  
+|------------------|---------------|  
+|<span data-ttu-id="ddbeb-131">Entier négatif</span><span class="sxs-lookup"><span data-stu-id="ddbeb-131">A negative integer</span></span>|<span data-ttu-id="ddbeb-132">La première chaîne précède la seconde chaîne dans l'ordre de tri.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-132">The first string precedes the second string in the sort order.</span></span><br /><br /> <span data-ttu-id="ddbeb-133">ou</span><span class="sxs-lookup"><span data-stu-id="ddbeb-133">-or-</span></span><br /><br /> <span data-ttu-id="ddbeb-134">La première chaîne est `null`.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-134">The first string is `null`.</span></span>|  
+|<span data-ttu-id="ddbeb-135">0</span><span class="sxs-lookup"><span data-stu-id="ddbeb-135">0</span></span>|<span data-ttu-id="ddbeb-136">La première chaîne et la seconde chaîne sont égales.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-136">The first string and the second string are equal.</span></span><br /><br /> <span data-ttu-id="ddbeb-137">ou</span><span class="sxs-lookup"><span data-stu-id="ddbeb-137">-or-</span></span><br /><br /> <span data-ttu-id="ddbeb-138">Les deux chaînes sont `null`.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-138">Both strings are `null`.</span></span>|  
+|<span data-ttu-id="ddbeb-139">Entier positif</span><span class="sxs-lookup"><span data-stu-id="ddbeb-139">A positive integer</span></span><br /><br /> <span data-ttu-id="ddbeb-140">ou</span><span class="sxs-lookup"><span data-stu-id="ddbeb-140">-or-</span></span><br /><br /> <span data-ttu-id="ddbeb-141">1</span><span class="sxs-lookup"><span data-stu-id="ddbeb-141">1</span></span>|<span data-ttu-id="ddbeb-142">La première chaîne suit la seconde chaîne dans l'ordre de tri.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-142">The first string follows the second string in the sort order.</span></span><br /><br /> <span data-ttu-id="ddbeb-143">ou</span><span class="sxs-lookup"><span data-stu-id="ddbeb-143">-or-</span></span><br /><br /> <span data-ttu-id="ddbeb-144">La seconde chaîne est `null`.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-144">The second string is `null`.</span></span>|  
   
 > [!IMPORTANT]
->  La méthode <xref:System.String.Compare%2A?displayProperty=fullName> est principalement destinée à être utilisée lors du classement ou du tri de chaînes. Vous ne devez pas utiliser la méthode <xref:System.String.Compare%2A?displayProperty=fullName> pour tester l'égalité \(c'est\-à\-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre\). Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName>.  
+>  <span data-ttu-id="ddbeb-145">La méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> est principalement destinée à être utilisée lors du classement ou du tri de chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-145">The <xref:System.String.Compare%2A?displayProperty=nameWithType> method is primarily intended for use when ordering or sorting strings.</span></span> <span data-ttu-id="ddbeb-146">Vous ne devez pas utiliser la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> pour tester l'égalité (c'est-à-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre).</span><span class="sxs-lookup"><span data-stu-id="ddbeb-146">You should not use the <xref:System.String.Compare%2A?displayProperty=nameWithType> method to test for equality (that is, to explicitly look for a return value of 0 with no regard for whether one string is less than or greater than the other).</span></span> <span data-ttu-id="ddbeb-147">Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-147">Instead, to determine whether two strings are equal, use the <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method.</span></span>  
   
- L'exemple suivant utilise la méthode <xref:System.String.Compare%2A?displayProperty=fullName> pour déterminer les valeurs relatives de deux chaînes.  
+ <span data-ttu-id="ddbeb-148">L'exemple suivant utilise la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> pour déterminer les valeurs relatives de deux chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-148">The following example uses the <xref:System.String.Compare%2A?displayProperty=nameWithType> method to determine the relative values of two strings.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#6)]
  [!code-csharp[Conceptual.String.BasicOps#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#6)]
  [!code-vb[Conceptual.String.BasicOps#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#6)]  
   
- Cet exemple affiche `-1` sur la console.  
+ <span data-ttu-id="ddbeb-149">Cet exemple affiche `-1` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-149">This example displays `-1` to the console.</span></span>  
   
- L'exemple précédent tient compte par défaut de la culture. Pour effectuer une comparaison de chaînes indépendantes de la culture, utilisez une surcharge de la méthode <xref:System.String.Compare%2A?displayProperty=fullName> qui vous permet de spécifier la culture à utiliser en fournissant un paramètre *culture*. Pour un exemple qui montre comment utiliser la méthode <xref:System.String.Compare%2A?displayProperty=fullName> pour effectuer une comparaison indépendante de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ <span data-ttu-id="ddbeb-150">L'exemple précédent tient compte par défaut de la culture.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-150">The preceding example is culture-sensitive by default.</span></span> <span data-ttu-id="ddbeb-151">Pour effectuer une comparaison de chaînes indépendantes de la culture, utilisez une surcharge de la <xref:System.String.Compare%2A?displayProperty=nameWithType> méthode qui vous permet de spécifier la culture à utiliser en fournissant un *culture* paramètre.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-151">To perform a culture-insensitive string comparison, use an overload of the <xref:System.String.Compare%2A?displayProperty=nameWithType> method that allows you to specify the culture to use by supplying a *culture* parameter.</span></span> <span data-ttu-id="ddbeb-152">Pour obtenir un exemple qui montre comment utiliser le <xref:System.String.Compare%2A?displayProperty=nameWithType> méthode pour effectuer une comparaison indépendante de la culture, consultez [effectuer des comparaisons de chaînes indépendantes de la Culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).</span><span class="sxs-lookup"><span data-stu-id="ddbeb-152">For an example that demonstrates how to use the <xref:System.String.Compare%2A?displayProperty=nameWithType> method to perform a culture-insensitive comparison, see [Performing Culture-Insensitive String Comparisons](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).</span></span>  
   
-## CompareOrdinal  
- La méthode <xref:System.String.CompareOrdinal%2A?displayProperty=fullName> compare deux objets chaîne sans prendre en compte la culture locale. Les valeurs de retour de cette méthode sont identiques aux valeurs retournées par la méthode **Compare** du tableau précédent.  
+## <a name="compareordinal"></a><span data-ttu-id="ddbeb-153">CompareOrdinal</span><span class="sxs-lookup"><span data-stu-id="ddbeb-153">CompareOrdinal</span></span>  
+ <span data-ttu-id="ddbeb-154">La méthode <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> compare deux objets chaîne sans prendre en compte la culture locale.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-154">The <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> method compares two string objects without considering the local culture.</span></span> <span data-ttu-id="ddbeb-155">Les valeurs de retour de cette méthode sont identiques aux valeurs retournées par la méthode **Compare** du tableau précédent.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-155">The return values of this method are identical to the values returned by the **Compare** method in the previous table.</span></span>  
   
 > [!IMPORTANT]
->  La méthode <xref:System.String.CompareOrdinal%2A?displayProperty=fullName> est principalement destinée à être utilisée lors du classement ou du tri de chaînes. Vous ne devez pas utiliser la méthode <xref:System.String.CompareOrdinal%2A?displayProperty=fullName> pour tester l'égalité \(c'est\-à\-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre\). Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName>.  
+>  <span data-ttu-id="ddbeb-156">La méthode <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> est principalement destinée à être utilisée lors du classement ou du tri de chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-156">The <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> method is primarily intended for use when ordering or sorting strings.</span></span> <span data-ttu-id="ddbeb-157">Vous ne devez pas utiliser la méthode <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> pour tester l'égalité (c'est-à-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre).</span><span class="sxs-lookup"><span data-stu-id="ddbeb-157">You should not use the <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> method to test for equality (that is, to explicitly look for a return value of 0 with no regard for whether one string is less than or greater than the other).</span></span> <span data-ttu-id="ddbeb-158">Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-158">Instead, to determine whether two strings are equal, use the <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method.</span></span>  
   
- L'exemple suivant utilise la méthode **CompareOrdinal** pour comparer les valeurs de deux chaînes.  
+ <span data-ttu-id="ddbeb-159">L'exemple suivant utilise la méthode **CompareOrdinal** pour comparer les valeurs de deux chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-159">The following example uses the **CompareOrdinal** method to compare the values of two strings.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#7)]
  [!code-csharp[Conceptual.String.BasicOps#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#7)]
  [!code-vb[Conceptual.String.BasicOps#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#7)]  
   
- Cet exemple affiche `-32` sur la console.  
+ <span data-ttu-id="ddbeb-160">Cet exemple affiche `-32` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-160">This example displays `-32` to the console.</span></span>  
   
-## CompareTo  
- La méthode <xref:System.String.CompareTo%2A?displayProperty=fullName> compare la chaîne encapsulée par l'objet chaîne actif à une autre chaîne ou un autre objet. Les valeurs de retour de cette méthode sont identiques aux valeurs retournées par la méthode <xref:System.String.Compare%2A?displayProperty=fullName> du tableau précédent.  
+## <a name="compareto"></a><span data-ttu-id="ddbeb-161">CompareTo</span><span class="sxs-lookup"><span data-stu-id="ddbeb-161">CompareTo</span></span>  
+ <span data-ttu-id="ddbeb-162">La méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> compare la chaîne encapsulée par l'objet chaîne actif à une autre chaîne ou un autre objet.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-162">The <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method compares the string that the current string object encapsulates to another string or object.</span></span> <span data-ttu-id="ddbeb-163">Les valeurs de retour de cette méthode sont identiques aux valeurs retournées par la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> du tableau précédent.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-163">The return values of this method are identical to the values returned by the <xref:System.String.Compare%2A?displayProperty=nameWithType> method in the previous table.</span></span>  
   
 > [!IMPORTANT]
->  La méthode <xref:System.String.CompareTo%2A?displayProperty=fullName> est principalement destinée à être utilisée lors du classement ou du tri de chaînes. Vous ne devez pas utiliser la méthode <xref:System.String.CompareTo%2A?displayProperty=fullName> pour tester l'égalité \(c'est\-à\-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre\). Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName>.  
+>  <span data-ttu-id="ddbeb-164">La méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> est principalement destinée à être utilisée lors du classement ou du tri de chaînes.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-164">The <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method is primarily intended for use when ordering or sorting strings.</span></span> <span data-ttu-id="ddbeb-165">Vous ne devez pas utiliser la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour tester l'égalité (c'est-à-dire rechercher explicitement une valeur de retour égale à 0 sans savoir si une chaîne est inférieure ou supérieure à l'autre).</span><span class="sxs-lookup"><span data-stu-id="ddbeb-165">You should not use the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method to test for equality (that is, to explicitly look for a return value of 0 with no regard for whether one string is less than or greater than the other).</span></span> <span data-ttu-id="ddbeb-166">Pour déterminer si deux chaînes sont égales, utilisez à la place la méthode <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-166">Instead, to determine whether two strings are equal, use the <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method.</span></span>  
   
- L’exemple suivant utilise la méthode <xref:System.String.CompareTo%2A?displayProperty=fullName> pour comparer l’objet `string1` à l’objet `string2`.  
+ <span data-ttu-id="ddbeb-167">L’exemple suivant utilise la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour comparer l’objet `string1` à l’objet `string2`.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-167">The following example uses the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method to compare the `string1` object to the `string2` object.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#8](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#8)]
  [!code-csharp[Conceptual.String.BasicOps#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#8)]
  [!code-vb[Conceptual.String.BasicOps#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#8)]  
   
- Cet exemple affiche `-1` sur la console.  
+ <span data-ttu-id="ddbeb-168">Cet exemple affiche `-1` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-168">This example displays `-1` to the console.</span></span>  
   
- Toutes les surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=fullName> effectuent par défaut des comparaisons dépendantes de la culture et qui respectent la casse. Aucune surcharge de cette méthode n'est fournie pour vous permettre d'effectuer une comparaison indépendante de la culture. Pour la clarté du code, nous vous recommandons d’utiliser à la place la méthode **String.Compare**, en spécifiant <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> pour les opérations dépendantes de la culture ou <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> pour les opérations indépendantes de la culture. Pour un exemple montrant comment utiliser la méthode **String.Compare** pour effectuer des comparaisons dépendantes et indépendantes de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ <span data-ttu-id="ddbeb-169">Toutes les surcharges de la <xref:System.String.CompareTo%2A?displayProperty=nameWithType> méthode effectuent des comparaisons dépendantes de la culture et respecte la casse par défaut.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-169">All overloads of the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method perform culture-sensitive and case-sensitive comparisons by default.</span></span> <span data-ttu-id="ddbeb-170">Aucune surcharge de cette méthode n'est fournie pour vous permettre d'effectuer une comparaison indépendante de la culture.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-170">No overloads of this method are provided that allow you to perform a culture-insensitive comparison.</span></span> <span data-ttu-id="ddbeb-171">Pour la clarté du code, nous vous recommandons d’utiliser le **String.Compare** méthode à la place, en spécifiant <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pour les opérations dépendantes de la culture ou <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> pour les opérations indépendantes de la culture.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-171">For code clarity, we recommend that you use the **String.Compare** method instead, specifying <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> for culture-sensitive operations or <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> for culture-insensitive operations.</span></span> <span data-ttu-id="ddbeb-172">Pour un exemple montrant comment utiliser la méthode **String.Compare** pour effectuer des comparaisons dépendantes et indépendantes de la culture, consultez [Réalisation de comparaisons de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).</span><span class="sxs-lookup"><span data-stu-id="ddbeb-172">For examples that demonstrate how to use the **String.Compare** method to perform both culture-sensitive and culture-insensitive comparisons, see [Performing Culture-Insensitive String Comparisons](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).</span></span>  
   
-## Equals  
- La méthode **String.Equals** peut facilement déterminer si deux chaînes sont identiques. Cette méthode respectant la casse retourne une valeur booléenne **true** ou **false**. Elle peut être utilisée à partir d'une classe existante, comme illustré dans l'exemple suivant. L'exemple suivant utilise la méthode **Equals** pour déterminer si un objet chaîne contient la phrase "Hello World".  
+## <a name="equals"></a><span data-ttu-id="ddbeb-173">Equals</span><span class="sxs-lookup"><span data-stu-id="ddbeb-173">Equals</span></span>  
+ <span data-ttu-id="ddbeb-174">La méthode **String.Equals** peut facilement déterminer si deux chaînes sont identiques.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-174">The **String.Equals** method can easily determine if two strings are the same.</span></span> <span data-ttu-id="ddbeb-175">Cette méthode respectant la casse retourne une valeur booléenne **true** ou **false** .</span><span class="sxs-lookup"><span data-stu-id="ddbeb-175">This case-sensitive method returns a **true** or **false** Boolean value.</span></span> <span data-ttu-id="ddbeb-176">Elle peut être utilisée à partir d'une classe existante, comme illustré dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-176">It can be used from an existing class, as illustrated in the next example.</span></span> <span data-ttu-id="ddbeb-177">L'exemple suivant utilise la méthode **Equals** pour déterminer si un objet chaîne contient la phrase "Hello World".</span><span class="sxs-lookup"><span data-stu-id="ddbeb-177">The following example uses the **Equals** method to determine whether a string object contains the phrase "Hello World".</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#9](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#9)]
  [!code-csharp[Conceptual.String.BasicOps#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#9)]
  [!code-vb[Conceptual.String.BasicOps#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#9)]  
   
- Cet exemple affiche `True` sur la console.  
+ <span data-ttu-id="ddbeb-178">Cet exemple affiche `True` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-178">This example displays `True` to the console.</span></span>  
   
- Cette méthode peut également être utilisée comme une méthode statique. L'exemple suivant compare deux objets chaîne à l'aide d'une méthode statique.  
+ <span data-ttu-id="ddbeb-179">Cette méthode peut également être utilisée comme une méthode statique.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-179">This method can also be used as a static method.</span></span> <span data-ttu-id="ddbeb-180">L'exemple suivant compare deux objets chaîne à l'aide d'une méthode statique.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-180">The following example compares two string objects using a static method.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#10](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#10)]
  [!code-csharp[Conceptual.String.BasicOps#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#10)]
  [!code-vb[Conceptual.String.BasicOps#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#10)]  
   
- Cet exemple affiche `True` sur la console.  
+ <span data-ttu-id="ddbeb-181">Cet exemple affiche `True` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-181">This example displays `True` to the console.</span></span>  
   
-## StartsWith et EndsWith  
- Vous pouvez utiliser la méthode **String.StartsWith** pour déterminer si un objet chaîne commence par les mêmes caractères que ceux qui constituent une autre chaîne. Cette méthode qui respecte la casse retourne **true** si l'objet chaîne en cours commence par la chaîne passée, et **false** ce n'est pas le cas. L'exemple suivant utilise cette méthode pour déterminer si un objet chaîne commence par "Hello".  
+## <a name="startswith-and-endswith"></a><span data-ttu-id="ddbeb-182">StartsWith et EndsWith</span><span class="sxs-lookup"><span data-stu-id="ddbeb-182">StartsWith and EndsWith</span></span>  
+ <span data-ttu-id="ddbeb-183">Vous pouvez utiliser la méthode **String.StartsWith** pour déterminer si un objet chaîne commence par les mêmes caractères que ceux qui constituent une autre chaîne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-183">You can use the **String.StartsWith** method to determine whether a string object begins with the same characters that encompass another string.</span></span> <span data-ttu-id="ddbeb-184">Cette méthode qui respecte la casse retourne **true** si l'objet chaîne en cours commence par la chaîne passée, et **false** ce n'est pas le cas.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-184">This case-sensitive method returns **true** if the current string object begins with the passed string and **false** if it does not.</span></span> <span data-ttu-id="ddbeb-185">L'exemple suivant utilise cette méthode pour déterminer si un objet chaîne commence par "Hello".</span><span class="sxs-lookup"><span data-stu-id="ddbeb-185">The following example uses this method to determine if a string object begins with "Hello".</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#11](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#11)]
  [!code-csharp[Conceptual.String.BasicOps#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#11)]
  [!code-vb[Conceptual.String.BasicOps#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#11)]  
   
- Cet exemple affiche `True` sur la console.  
+ <span data-ttu-id="ddbeb-186">Cet exemple affiche `True` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-186">This example displays `True` to the console.</span></span>  
   
- La méthode **String.EndsWith** compare une chaîne passée aux caractères qui se trouvent à la fin de l'objet chaîne actif. Elle retourne également une valeur booléenne. L'exemple suivant teste la fin d'une chaîne à l'aide de la méthode **EndsWith**.  
+ <span data-ttu-id="ddbeb-187">La méthode **String.EndsWith** compare une chaîne passée aux caractères qui se trouvent à la fin de l'objet chaîne actif.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-187">The **String.EndsWith** method compares a passed string to the characters that exist at the end of the current string object.</span></span> <span data-ttu-id="ddbeb-188">Elle retourne également une valeur booléenne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-188">It also returns a Boolean value.</span></span> <span data-ttu-id="ddbeb-189">L'exemple suivant teste la fin d'une chaîne à l'aide de la méthode **EndsWith** .</span><span class="sxs-lookup"><span data-stu-id="ddbeb-189">The following example checks the end of a string using the **EndsWith** method.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#12](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#12)]
  [!code-csharp[Conceptual.String.BasicOps#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#12)]
  [!code-vb[Conceptual.String.BasicOps#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#12)]  
   
- Cet exemple affiche `False`  sur la console.  
+ <span data-ttu-id="ddbeb-190">Cet exemple affiche `False` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-190">This example displays `False` to the console.</span></span>  
   
-## IndexOf et LastIndexOf  
- Vous pouvez utiliser la méthode **String.IndexOf** pour déterminer la position de la première occurrence d'un caractère particulier dans une chaîne. Cette méthode qui respecte la casse commence à compter à partir du début d'une chaîne et retourne la position d'un caractère passé en utilisant un index de base zéro. Si le caractère est introuvable, la valeur \-1 est retournée.  
+## <a name="indexof-and-lastindexof"></a><span data-ttu-id="ddbeb-191">IndexOf et LastIndexOf</span><span class="sxs-lookup"><span data-stu-id="ddbeb-191">IndexOf and LastIndexOf</span></span>  
+ <span data-ttu-id="ddbeb-192">Vous pouvez utiliser la méthode **String.IndexOf** pour déterminer la position de la première occurrence d'un caractère particulier dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-192">You can use the **String.IndexOf** method to determine the position of the first occurrence of a particular character within a string.</span></span> <span data-ttu-id="ddbeb-193">Cette méthode qui respecte la casse commence à compter à partir du début d'une chaîne et retourne la position d'un caractère passé en utilisant un index de base zéro.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-193">This case-sensitive method starts counting from the beginning of a string and returns the position of a passed character using a zero-based index.</span></span> <span data-ttu-id="ddbeb-194">Si le caractère est introuvable, la valeur -1 est retournée.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-194">If the character cannot be found, a value of –1 is returned.</span></span>  
   
- L'exemple suivant utilise la méthode **IndexOf** pour rechercher la première occurrence du caractère '`l`' dans une chaîne.  
+ <span data-ttu-id="ddbeb-195">L'exemple suivant utilise la méthode **IndexOf** pour rechercher la première occurrence du caractère '`l`' dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-195">The following example uses the **IndexOf** method to search for the first occurrence of the '`l`' character in a string.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#13](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#13)]
  [!code-csharp[Conceptual.String.BasicOps#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#13)]
  [!code-vb[Conceptual.String.BasicOps#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#13)]  
   
- Cet exemple affiche `2` sur la console.  
+ <span data-ttu-id="ddbeb-196">Cet exemple affiche `2` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-196">This example displays `2` to the console.</span></span>  
   
- La méthode **String.LastIndexOf** est similaire à la méthode **String.IndexOf**, sauf qu'elle retourne la position de la dernière occurrence d'un caractère particulier dans une chaîne. Elle respecte la casse et utilise un index de base zéro.  
+ <span data-ttu-id="ddbeb-197">La méthode **String.LastIndexOf** est similaire à la méthode **String.IndexOf** , sauf qu'elle retourne la position de la dernière occurrence d'un caractère particulier dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-197">The **String.LastIndexOf** method is similar to the **String.IndexOf** method except that it returns the position of the last occurrence of a particular character within a string.</span></span> <span data-ttu-id="ddbeb-198">Elle respecte la casse et utilise un index de base zéro.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-198">It is case-sensitive and uses a zero-based index.</span></span>  
   
- L'exemple suivant utilise la méthode **LastIndexOf** pour rechercher la dernière occurrence du caractère '`l`' dans une chaîne.  
+ <span data-ttu-id="ddbeb-199">L'exemple suivant utilise la méthode **LastIndexOf** pour rechercher la dernière occurrence du caractère '`l`' dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-199">The following example uses the **LastIndexOf** method to search for the last occurrence of the '`l`' character in a string.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#14](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#14)]
  [!code-csharp[Conceptual.String.BasicOps#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#14)]
  [!code-vb[Conceptual.String.BasicOps#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#14)]  
   
- Cet exemple affiche `9` sur la console.  
+ <span data-ttu-id="ddbeb-200">Cet exemple affiche `9` sur la console.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-200">This example displays `9` to the console.</span></span>  
   
- Les deux méthodes sont utiles quand elles sont utilisées conjointement avec la méthode **String.Remove**. Vous pouvez utiliser la méthode **IndexOf** ou la méthode **LastIndexOf**  pour récupérer la position d'un caractère, puis fournir cette position à la méthode **Remove** pour supprimer un caractère ou un mot commençant par ce caractère.  
+ <span data-ttu-id="ddbeb-201">Les deux méthodes sont utiles quand elles sont utilisées conjointement avec la méthode **String.Remove** .</span><span class="sxs-lookup"><span data-stu-id="ddbeb-201">Both methods are useful when used in conjunction with the **String.Remove** method.</span></span> <span data-ttu-id="ddbeb-202">Vous pouvez utiliser la méthode **IndexOf** ou la méthode **LastIndexOf** pour récupérer la position d'un caractère, puis fournir cette position à la méthode **Remove** pour supprimer un caractère ou un mot commençant par ce caractère.</span><span class="sxs-lookup"><span data-stu-id="ddbeb-202">You can use either the **IndexOf** or **LastIndexOf** methods to retrieve the position of a character, and then supply that position to the **Remove** method in order to remove a character or a word that begins with that character.</span></span>  
   
-## Voir aussi  
- [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)   
- [Exécution d'opérations de chaînes indépendantes de la culture](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+## <a name="see-also"></a><span data-ttu-id="ddbeb-203">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ddbeb-203">See Also</span></span>  
+ [<span data-ttu-id="ddbeb-204">Opérations de chaînes de base</span><span class="sxs-lookup"><span data-stu-id="ddbeb-204">Basic String Operations</span></span>](../../../docs/standard/base-types/basic-string-operations.md)  
+ [<span data-ttu-id="ddbeb-205">Exécution d'opérations de chaînes indépendantes de la culture</span><span class="sxs-lookup"><span data-stu-id="ddbeb-205">Performing Culture-Insensitive String Operations</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

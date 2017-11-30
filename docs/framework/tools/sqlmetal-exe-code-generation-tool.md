@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - SQLMetal [LINQ to SQL]
 - code generation tool
@@ -22,135 +16,133 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: Erikre
 ms.author: erikre
 manager: erikre
+ms.openlocfilehash: fa4cf7baa3ca3ba19a733438920357034e8de193
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6d0ac9c682c60db8eb9e5188a71916dc5d97de60
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (outil de génération de code)
-L'outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :  
+# <a name="sqlmetalexe-code-generation-tool"></a><span data-ttu-id="c0e9c-102">SqlMetal.exe (outil de génération de code)</span><span class="sxs-lookup"><span data-stu-id="c0e9c-102">SqlMetal.exe (Code Generation Tool)</span></span>
+<span data-ttu-id="c0e9c-103">L'outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c0e9c-103">The SqlMetal command-line tool generates code and mapping for the [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] component of the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].</span></span> <span data-ttu-id="c0e9c-104">En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-104">By applying options that appear later in this topic, you can instruct SqlMetal to perform several different actions that include the following:</span></span>  
   
--   À partir d'une base de données, générez le code source et les attributs de mappage ou un fichier de mappage.  
+-   <span data-ttu-id="c0e9c-105">À partir d'une base de données, générez le code source et les attributs de mappage ou un fichier de mappage.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-105">From a database, generate source code and mapping attributes or a mapping file.</span></span>  
   
--   À partir d'une base de données, générez un fichier .dbml (database markup language) intermédiaire à des fins de personnalisation.  
+-   <span data-ttu-id="c0e9c-106">À partir d'une base de données, générez un fichier .dbml (database markup language) intermédiaire à des fins de personnalisation.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-106">From a database, generate an intermediate database markup language (.dbml) file for customization.</span></span>  
   
--   À partir d'un fichier .dbml, générez du code et des attributs de mappage ou un fichier de mappage.  
+-   <span data-ttu-id="c0e9c-107">À partir d'un fichier .dbml, générez du code et des attributs de mappage ou un fichier de mappage.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-107">From a .dbml file, generate code and mapping attributes or a mapping file.</span></span>  
   
- Cet outil est installé automatiquement avec Visual Studio. Par défaut, ce fichier se trouve à l'emplacement suivant : `drive`:\Program Files\Microsoft SDKs\Windows\v`n.nn`\bin. Si vous n’installez pas Visual Studio, vous pouvez également obtenir le fichier SQLMetal en téléchargeant le [SDK Windows](http://go.microsoft.com/fwlink/?LinkId=142225).  
+ <span data-ttu-id="c0e9c-108">Cet outil est installé automatiquement avec Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-108">This tool is automatically installed with Visual Studio.</span></span> <span data-ttu-id="c0e9c-109">Par défaut, ce fichier se trouve à l'emplacement suivant : `drive`:\Program Files\Microsoft SDKs\Windows\v`n.nn`\bin.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-109">By default, the file is located at `drive`:\Program Files\Microsoft SDKs\Windows\v`n.nn`\bin.</span></span> <span data-ttu-id="c0e9c-110">Si vous n’installez pas Visual Studio, vous pouvez également obtenir le fichier SQLMetal en téléchargeant le [SDK Windows](http://go.microsoft.com/fwlink/?LinkId=142225).</span><span class="sxs-lookup"><span data-stu-id="c0e9c-110">If you do not install Visual Studio, you can also get the SQLMetal file by downloading the [Windows SDK](http://go.microsoft.com/fwlink/?LinkId=142225).</span></span>  
   
 > [!NOTE]
->  Les développeurs qui utilisent Visual Studio peuvent également utiliser [!INCLUDE[vs_ordesigner_long](../../../includes/vs-ordesigner-long-md.md)] pour générer des classes d'entité. L'approche de ligne de commande est bien adaptée aux bases de données volumineuses. Puisque SqlMetal est un outil de ligne de commande, vous pouvez l'utiliser dans un processus de génération.  
+>  <span data-ttu-id="c0e9c-111">Les développeurs qui utilisent Visual Studio peuvent également utiliser [!INCLUDE[vs_ordesigner_long](../../../includes/vs-ordesigner-long-md.md)] pour générer des classes d'entité.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-111">Developers who use Visual Studio can also use the [!INCLUDE[vs_ordesigner_long](../../../includes/vs-ordesigner-long-md.md)] to generate entity classes.</span></span> <span data-ttu-id="c0e9c-112">L'approche de ligne de commande est bien adaptée aux bases de données volumineuses.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-112">The command-line approach scales well for large databases.</span></span> <span data-ttu-id="c0e9c-113">Puisque SqlMetal est un outil de ligne de commande, vous pouvez l'utiliser dans un processus de génération.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-113">Because SqlMetal is a command-line tool, you can use it in a build process.</span></span>  
   
- Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md). À l’invite de commandes, tapez ce qui suit :  
+ <span data-ttu-id="c0e9c-114">Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7).</span><span class="sxs-lookup"><span data-stu-id="c0e9c-114">To run the tool, use the Developer Command Prompt (or the Visual Studio Command Prompt in Windows 7).</span></span> <span data-ttu-id="c0e9c-115">Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md). À l’invite de commandes, tapez ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-115">For more information, see [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md).At the command prompt, type the following:</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="c0e9c-116">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c0e9c-116">Syntax</span></span>  
   
 ```  
 sqlmetal [options] [<input file>]  
 ```  
   
-## <a name="options"></a>Options  
- Pour afficher la liste des options la plus récente, tapez `sqlmetal /?` à partir d’une invite de commandes depuis l’emplacement d’installation.  
+## <a name="options"></a><span data-ttu-id="c0e9c-117">Options</span><span class="sxs-lookup"><span data-stu-id="c0e9c-117">Options</span></span>  
+ <span data-ttu-id="c0e9c-118">Pour afficher la liste des options la plus récente, tapez `sqlmetal /?` à partir d’une invite de commandes depuis l’emplacement d’installation.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-118">To view the most current option list, type `sqlmetal /?` at a command prompt from the installed location.</span></span>  
   
- **Options de connexion**  
+ <span data-ttu-id="c0e9c-119">**Options de connexion**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-119">**Connection Options**</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="c0e9c-120">Option</span><span class="sxs-lookup"><span data-stu-id="c0e9c-120">Option</span></span>|<span data-ttu-id="c0e9c-121">Description</span><span class="sxs-lookup"><span data-stu-id="c0e9c-121">Description</span></span>|  
 |------------|-----------------|  
-|**/server:** *\<nom>*|Spécifie le nom du serveur de base de données.|  
-|**/database:** *\<nom>*|Spécifie le catalogue de base de données sur le serveur.|  
-|**/user:** *\<nom>*|Spécifie l'ID de connexion de l'utilisateur. Valeur par défaut : utilisez l'authentification Windows.|  
-|**/password:** *\<mot_de_passe>*|Spécifie le mot de passe d'ouverture de session. Valeur par défaut : utilisez l'authentification Windows.|  
-|**/conn:** *\<chaîne_connexion>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **/server**, **/database**, **/user**ou **/password** .<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.|  
-|**/timeout:** *\<secondes>*|Spécifie la valeur du délai d'attente lorsque SqlMetal accède à la base de données. Valeur par défaut : 0 (à savoir, aucune limite de temps).|  
+|<span data-ttu-id="c0e9c-122">**/server:** *\<nom>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-122">**/server:** *\<name>*</span></span>|<span data-ttu-id="c0e9c-123">Spécifie le nom du serveur de base de données.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-123">Specifies database server name.</span></span>|  
+|<span data-ttu-id="c0e9c-124">**/database:** *\<nom>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-124">**/database:** *\<name>*</span></span>|<span data-ttu-id="c0e9c-125">Spécifie le catalogue de base de données sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-125">Specifies database catalog on server.</span></span>|  
+|<span data-ttu-id="c0e9c-126">**/user:** *\<nom>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-126">**/user:** *\<name>*</span></span>|<span data-ttu-id="c0e9c-127">Spécifie l'ID de connexion de l'utilisateur. Valeur par défaut : utilisez l'authentification Windows.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-127">Specifies logon user id. Default value: Use Windows authentication.</span></span>|  
+|<span data-ttu-id="c0e9c-128">**/password:** *\<mot_de_passe>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-128">**/password:** *\<password>*</span></span>|<span data-ttu-id="c0e9c-129">Spécifie le mot de passe d'ouverture de session.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-129">Specifies logon password.</span></span> <span data-ttu-id="c0e9c-130">Valeur par défaut : utilisez l'authentification Windows.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-130">Default value: Use Windows authentication.</span></span>|  
+|<span data-ttu-id="c0e9c-131">**/conn:** *\<chaîne_connexion>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-131">**/conn:** *\<connection string>*</span></span>|<span data-ttu-id="c0e9c-132">Spécifie la chaîne de connexion de base de données.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-132">Specifies database connection string.</span></span> <span data-ttu-id="c0e9c-133">Ne peut pas être utilisée avec les options **/server**, **/database**, **/user**ou **/password** .</span><span class="sxs-lookup"><span data-stu-id="c0e9c-133">Cannot be used with **/server**, **/database**, **/user**, or **/password** options.</span></span><br /><br /> <span data-ttu-id="c0e9c-134">N'inclut pas le nom de fichier dans la chaîne de connexion.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-134">Do not include the file name in the connection string.</span></span> <span data-ttu-id="c0e9c-135">Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-135">Instead, add the file name to the command line as the input file.</span></span> <span data-ttu-id="c0e9c-136">Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-136">For example, the following line specifies "c:\northwnd.mdf" as the input file: **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.</span></span>|  
+|<span data-ttu-id="c0e9c-137">**/timeout:** *\<secondes>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-137">**/timeout:** *\<seconds>*</span></span>|<span data-ttu-id="c0e9c-138">Spécifie la valeur du délai d'attente lorsque SqlMetal accède à la base de données.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-138">Specifies time-out value when SqlMetal accesses the database.</span></span> <span data-ttu-id="c0e9c-139">Valeur par défaut : 0 (à savoir, aucune limite de temps).</span><span class="sxs-lookup"><span data-stu-id="c0e9c-139">Default value: 0 (that is, no time limit).</span></span>|  
   
- **Options d'extraction**  
+ <span data-ttu-id="c0e9c-140">**Options d'extraction**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-140">**Extraction options**</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="c0e9c-141">Option</span><span class="sxs-lookup"><span data-stu-id="c0e9c-141">Option</span></span>|<span data-ttu-id="c0e9c-142">Description</span><span class="sxs-lookup"><span data-stu-id="c0e9c-142">Description</span></span>|  
 |------------|-----------------|  
-|**/views**|Extrait des vues de base de données.|  
-|**/functions**|Extrait des fonctions de base de données.|  
-|**/sprocs**|Extrait des procédures stockées.|  
+|<span data-ttu-id="c0e9c-143">**/views**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-143">**/views**</span></span>|<span data-ttu-id="c0e9c-144">Extrait des vues de base de données.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-144">Extracts database views.</span></span>|  
+|<span data-ttu-id="c0e9c-145">**/functions**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-145">**/functions**</span></span>|<span data-ttu-id="c0e9c-146">Extrait des fonctions de base de données.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-146">Extracts database functions.</span></span>|  
+|<span data-ttu-id="c0e9c-147">**/sprocs**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-147">**/sprocs**</span></span>|<span data-ttu-id="c0e9c-148">Extrait des procédures stockées.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-148">Extracts stored procedures.</span></span>|  
   
- **Options de sortie**  
+ <span data-ttu-id="c0e9c-149">**Options de sortie**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-149">**Output options**</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="c0e9c-150">Option</span><span class="sxs-lookup"><span data-stu-id="c0e9c-150">Option</span></span>|<span data-ttu-id="c0e9c-151">Description</span><span class="sxs-lookup"><span data-stu-id="c0e9c-151">Description</span></span>|  
 |------------|-----------------|  
-|**/dbml** *[:file]*|Envoie la sortie au format .dbml. Ne peut pas être utilisée avec l’option **/map** .|  
-|**/code** *[:file]*|Envoie la sortie sous la forme de code source. Ne peut pas être utilisée avec l’option **/dbml** .|  
-|**/map** *[:file]*|Génère un fichier de mappage XML plutôt que des attributs. Ne peut pas être utilisée avec l’option **/dbml** .|  
+|<span data-ttu-id="c0e9c-152">**/dbml** *[:file]*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-152">**/dbml** *[:file]*</span></span>|<span data-ttu-id="c0e9c-153">Envoie la sortie au format .dbml.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-153">Sends output as .dbml.</span></span> <span data-ttu-id="c0e9c-154">Ne peut pas être utilisée avec l’option **/map** .</span><span class="sxs-lookup"><span data-stu-id="c0e9c-154">Cannot be used with **/map** option.</span></span>|  
+|<span data-ttu-id="c0e9c-155">**/code** *[:file]*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-155">**/code** *[:file]*</span></span>|<span data-ttu-id="c0e9c-156">Envoie la sortie sous la forme de code source.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-156">Sends output as source code.</span></span> <span data-ttu-id="c0e9c-157">Ne peut pas être utilisée avec l’option **/dbml** .</span><span class="sxs-lookup"><span data-stu-id="c0e9c-157">Cannot be used with **/dbml** option.</span></span>|  
+|<span data-ttu-id="c0e9c-158">**/map** *[:file]*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-158">**/map** *[:file]*</span></span>|<span data-ttu-id="c0e9c-159">Génère un fichier de mappage XML plutôt que des attributs.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-159">Generates an XML mapping file instead of attributes.</span></span> <span data-ttu-id="c0e9c-160">Ne peut pas être utilisée avec l’option **/dbml** .</span><span class="sxs-lookup"><span data-stu-id="c0e9c-160">Cannot be used with **/dbml** option.</span></span>|  
   
- **Divers**  
+ <span data-ttu-id="c0e9c-161">**Divers**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-161">**Miscellaneous**</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="c0e9c-162">Option</span><span class="sxs-lookup"><span data-stu-id="c0e9c-162">Option</span></span>|<span data-ttu-id="c0e9c-163">Description</span><span class="sxs-lookup"><span data-stu-id="c0e9c-163">Description</span></span>|  
 |------------|-----------------|  
-|**/language:** *\<langage>*|Spécifie le langage du code source.<br /><br /> *\<langage>* valide : vb, csharp.<br /><br /> Valeur par défaut : Dérivé de l’extension du nom du fichier de code.|  
-|**/namespace:** *\<nom>*|Spécifie l'espace de noms du code généré. Valeur par défaut : Aucun espace de noms.|  
-|**/context:** *\<type>*|Spécifie le nom de la classe du contexte de données. Valeur par défaut : Dérivé du nom de la base de données.|  
-|**/entitybase:** *\<type>*|Spécifie la classe de base des classes d'entité du code généré. Valeur par défaut : Les entités n'ont pas de classe de base.|  
-|**/pluralize**|Pluralise ou singularise automatiquement des noms de membre et de classe.<br /><br /> Cette option est disponible uniquement dans la version Anglais américain.|  
-|**/serialization:** *\<option>*|Génère des classes sérialisables.<br /><br /> *\<option>*valide : None, Unidirectional. Valeur par défaut : Aucun.<br /><br /> Pour plus d’informations, consultez [Sérialisation](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
+|<span data-ttu-id="c0e9c-164">**/language:** *\<langage>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-164">**/language:** *\<language>*</span></span>|<span data-ttu-id="c0e9c-165">Spécifie le langage du code source.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-165">Specifies source code language.</span></span><br /><br /> <span data-ttu-id="c0e9c-166">*\<langage>* valide : vb, csharp.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-166">Valid *\<language>*: vb, csharp.</span></span><br /><br /> <span data-ttu-id="c0e9c-167">Valeur par défaut : Dérivé de l’extension du nom du fichier de code.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-167">Default value: Derived from extension on code file name.</span></span>|  
+|<span data-ttu-id="c0e9c-168">**/namespace:** *\<nom>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-168">**/namespace:** *\<name>*</span></span>|<span data-ttu-id="c0e9c-169">Spécifie l'espace de noms du code généré.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-169">Specifies namespace of the generated code.</span></span> <span data-ttu-id="c0e9c-170">Valeur par défaut : Aucun espace de noms.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-170">Default value: no namespace.</span></span>|  
+|<span data-ttu-id="c0e9c-171">**/context:** *\<type>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-171">**/context:** *\<type>*</span></span>|<span data-ttu-id="c0e9c-172">Spécifie le nom de la classe du contexte de données.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-172">Specifies name of data context class.</span></span> <span data-ttu-id="c0e9c-173">Valeur par défaut : Dérivé du nom de la base de données.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-173">Default value: Derived from database name.</span></span>|  
+|<span data-ttu-id="c0e9c-174">**/entitybase:** *\<type>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-174">**/entitybase:** *\<type>*</span></span>|<span data-ttu-id="c0e9c-175">Spécifie la classe de base des classes d'entité du code généré.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-175">Specifies the base class of the entity classes in the generated code.</span></span> <span data-ttu-id="c0e9c-176">Valeur par défaut : Les entités n'ont pas de classe de base.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-176">Default value: Entities have no base class.</span></span>|  
+|<span data-ttu-id="c0e9c-177">**/pluralize**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-177">**/pluralize**</span></span>|<span data-ttu-id="c0e9c-178">Pluralise ou singularise automatiquement des noms de membre et de classe.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-178">Automatically pluralizes or singularizes class and member names.</span></span><br /><br /> <span data-ttu-id="c0e9c-179">Cette option est disponible uniquement dans la version Anglais américain.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-179">This option is available only in the U.S. English version.</span></span>|  
+|<span data-ttu-id="c0e9c-180">**/serialization:** *\<option>*</span><span class="sxs-lookup"><span data-stu-id="c0e9c-180">**/serialization:** *\<option>*</span></span>|<span data-ttu-id="c0e9c-181">Génère des classes sérialisables.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-181">Generates serializable classes.</span></span><br /><br /> <span data-ttu-id="c0e9c-182">*\<option>*valide : None, Unidirectional.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-182">Valid *\<option>*: None, Unidirectional.</span></span> <span data-ttu-id="c0e9c-183">Valeur par défaut : Aucun.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-183">Default value: None.</span></span><br /><br /> <span data-ttu-id="c0e9c-184">Pour plus d’informations, consultez [Sérialisation](../../../docs/framework/data/adonet/sql/linq/serialization.md).</span><span class="sxs-lookup"><span data-stu-id="c0e9c-184">For more information, see [Serialization](../../../docs/framework/data/adonet/sql/linq/serialization.md).</span></span>|  
   
- **Fichier d'entrée**  
+ <span data-ttu-id="c0e9c-185">**Fichier d'entrée**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-185">**Input File**</span></span>  
   
-|Option|Description|  
+|<span data-ttu-id="c0e9c-186">Option</span><span class="sxs-lookup"><span data-stu-id="c0e9c-186">Option</span></span>|<span data-ttu-id="c0e9c-187">Description</span><span class="sxs-lookup"><span data-stu-id="c0e9c-187">Description</span></span>|  
 |------------|-----------------|  
-|**\<fichier_entrée>**|Spécifie un fichier SQL Server Express .mdf, un fichier [!INCLUDE[ssEW](../../../includes/ssew-md.md)] .sdf, ou un fichier intermédiaire .dbml.|  
+|<span data-ttu-id="c0e9c-188">**\<fichier_entrée>**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-188">**\<input file>**</span></span>|<span data-ttu-id="c0e9c-189">Spécifie un fichier SQL Server Express .mdf, un fichier [!INCLUDE[ssEW](../../../includes/ssew-md.md)] .sdf, ou un fichier intermédiaire .dbml.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-189">Specifies a SQL Server Express .mdf file, a [!INCLUDE[ssEW](../../../includes/ssew-md.md)] .sdf file, or a .dbml intermediate file.</span></span>|  
   
-## <a name="remarks"></a>Remarques  
- La fonctionnalité SqlMetal implique en fait deux étapes :  
+## <a name="remarks"></a><span data-ttu-id="c0e9c-190">Remarques</span><span class="sxs-lookup"><span data-stu-id="c0e9c-190">Remarks</span></span>  
+ <span data-ttu-id="c0e9c-191">La fonctionnalité SqlMetal implique en fait deux étapes :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-191">SqlMetal functionality actually involves two steps:</span></span>  
   
--   Extraction des métadonnées de la base de données dans un fichier .dbml.  
+-   <span data-ttu-id="c0e9c-192">Extraction des métadonnées de la base de données dans un fichier .dbml.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-192">Extracting the metadata of the database into a .dbml file.</span></span>  
   
--   Génération d'un fichier de sortie de code.  
+-   <span data-ttu-id="c0e9c-193">Génération d'un fichier de sortie de code.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-193">Generating a code output file.</span></span>  
   
-     En utilisant les options de ligne de commande appropriées, vous pouvez produire [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] ou du code source C#, ou encore un fichier de mappage XML.  
+     <span data-ttu-id="c0e9c-194">En utilisant les options de ligne de commande appropriées, vous pouvez produire [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] ou du code source C#, ou encore un fichier de mappage XML.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-194">By using the appropriate command-line options, you can produce [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] or C# source code, or you can produce an XML mapping file.</span></span>  
   
- Pour extraire les métadonnées d'un fichier .mdf, vous devez spécifier le nom du fichier .mdf après toutes les autres options.  
+ <span data-ttu-id="c0e9c-195">Pour extraire les métadonnées d'un fichier .mdf, vous devez spécifier le nom du fichier .mdf après toutes les autres options.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-195">To extract the metadata from an .mdf file, you must specify the name of the .mdf file after all other options.</span></span>  
   
- Si **/server** n’est pas spécifié, **localhost/sqlexpress** est supposé.  
+ <span data-ttu-id="c0e9c-196">Si **/server** n’est pas spécifié, **localhost/sqlexpress** est supposé.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-196">If no **/server** is specified, **localhost/sqlexpress** is assumed.</span></span>  
   
- [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)] lève une exception si une ou plusieurs conditions parmi les suivantes est vraie :  
+ [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)]<span data-ttu-id="c0e9c-197"> lève une exception si une ou plusieurs conditions parmi les suivantes est vraie :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-197"> throws an exception if one or more of the following conditions are true:</span></span>  
   
--   SqlMetal essaie d'extraire une procédure stockée qui s'appelle elle-même.  
+-   <span data-ttu-id="c0e9c-198">SqlMetal essaie d'extraire une procédure stockée qui s'appelle elle-même.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-198">SqlMetal tries to extract a stored procedure that calls itself.</span></span>  
   
--   Le niveau d'imbrication d'une procédure stockée, d'une fonction, ou d'une vue dépasse 32.  
+-   <span data-ttu-id="c0e9c-199">Le niveau d'imbrication d'une procédure stockée, d'une fonction, ou d'une vue dépasse 32.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-199">The nesting level of a stored procedure, function, or view exceeds 32.</span></span>  
   
-     SqlMetal intercepte cette exception et la signale comme un avertissement.  
+     <span data-ttu-id="c0e9c-200">SqlMetal intercepte cette exception et la signale comme un avertissement.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-200">SqlMetal catches this exception and reports it as a warning.</span></span>  
   
- Pour spécifier un nom de fichier d'entrée, ajoutez son nom à la ligne de commande comme fichier d'entrée. L’inclusion du nom de fichier dans la chaîne de connexion (avec l’option **/conn** ) n’est pas prise en charge.  
+ <span data-ttu-id="c0e9c-201">Pour spécifier un nom de fichier d'entrée, ajoutez son nom à la ligne de commande comme fichier d'entrée.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-201">To specify an input file name, add the name to the command line as the input file.</span></span> <span data-ttu-id="c0e9c-202">L’inclusion du nom de fichier dans la chaîne de connexion (avec l’option **/conn** ) n’est pas prise en charge.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-202">Including the file name in the connection string (using the **/conn** option) is not supported.</span></span>  
   
-## <a name="examples"></a>Exemples  
- Générez un fichier .dbml qui inclut des métadonnées SQL extraites :  
+## <a name="examples"></a><span data-ttu-id="c0e9c-203">Exemples</span><span class="sxs-lookup"><span data-stu-id="c0e9c-203">Examples</span></span>  
+ <span data-ttu-id="c0e9c-204">Générez un fichier .dbml qui inclut des métadonnées SQL extraites :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-204">Generate a .dbml file that includes extracted SQL metadata:</span></span>  
   
- **sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml**  
+ <span data-ttu-id="c0e9c-205">**sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-205">**sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml**</span></span>  
   
- Générez un fichier .dbml qui inclut des métadonnées SQL extraites d'un fichier .mdf à l'aide de SQL Server Express :  
+ <span data-ttu-id="c0e9c-206">Générez un fichier .dbml qui inclut des métadonnées SQL extraites d'un fichier .mdf à l'aide de SQL Server Express :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-206">Generate a .dbml file that includes extracted SQL metadata from an .mdf file by using SQL Server Express:</span></span>  
   
- **sqlmetal /dbml:mymeta.dbml mydbfile.mdf**  
+ <span data-ttu-id="c0e9c-207">**sqlmetal /dbml:mymeta.dbml mydbfile.mdf**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-207">**sqlmetal /dbml:mymeta.dbml mydbfile.mdf**</span></span>  
   
- Générez un fichier .dbml qui inclut des métadonnées SQL extraites de SQL Server Express :  
+ <span data-ttu-id="c0e9c-208">Générez un fichier .dbml qui inclut des métadonnées SQL extraites de SQL Server Express :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-208">Generate a .dbml file that includes extracted SQL metadata from SQL Server Express:</span></span>  
   
- **sqlmetal /server:.\sqlexpress /dbml:mymeta.dbml /database:northwind**  
+ <span data-ttu-id="c0e9c-209">**sqlmetal /server:.\sqlexpress /dbml:mymeta.dbml /database:northwind**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-209">**sqlmetal /server:.\sqlexpress /dbml:mymeta.dbml /database:northwind**</span></span>  
   
- Générez du code source à partir d'un fichier de métadonnées .dbml :  
+ <span data-ttu-id="c0e9c-210">Générez du code source à partir d'un fichier de métadonnées .dbml :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-210">Generate source code from a .dbml metadata file:</span></span>  
   
- **sqlmetal /namespace:nwind /code:nwind.cs /language:csharp mymetal.dbml**  
+ <span data-ttu-id="c0e9c-211">**sqlmetal /namespace:nwind /code:nwind.cs /language:csharp mymetal.dbml**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-211">**sqlmetal /namespace:nwind /code:nwind.cs /language:csharp mymetal.dbml**</span></span>  
   
- Générez le code source directement à partir de métadonnées SQL :  
+ <span data-ttu-id="c0e9c-212">Générez le code source directement à partir de métadonnées SQL :</span><span class="sxs-lookup"><span data-stu-id="c0e9c-212">Generate source code from SQL metadata directly:</span></span>  
   
- **sqlmetal /server:myserver /database:northwind /namespace:nwind /code:nwind.cs /language:csharp**  
+ <span data-ttu-id="c0e9c-213">**sqlmetal /server:myserver /database:northwind /namespace:nwind /code:nwind.cs /language:csharp**</span><span class="sxs-lookup"><span data-stu-id="c0e9c-213">**sqlmetal /server:myserver /database:northwind /namespace:nwind /code:nwind.cs /language:csharp**</span></span>  
   
 > [!NOTE]
->  Quand vous utilisez l’option **/pluralize** avec l’exemple de base de données Northwind, notez le comportement suivant. Lorsque SqlMetal génère des noms de types de lignes pour des tables, les noms de table sont au singulier. Lorsqu'il génère des propriétés <xref:System.Data.Linq.DataContext> pour des tables, les noms de table sont au pluriel. Par coïncidence, les tables de l'exemple de base de données Northwind sont déjà au pluriel. Par conséquent, vous ne pourrez pas voir cette partie active. Bien qu’il soit courant de nommer des tables de base de données au pluriel, il est également courant dans .NET de nommer des collections au pluriel.  
+>  <span data-ttu-id="c0e9c-214">Quand vous utilisez l’option **/pluralize** avec l’exemple de base de données Northwind, notez le comportement suivant.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-214">When you use the **/pluralize** option with the Northwind sample database, note the following behavior.</span></span> <span data-ttu-id="c0e9c-215">Lorsque SqlMetal génère des noms de types de lignes pour des tables, les noms de table sont au singulier.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-215">When SqlMetal makes row-type names for tables, the table names are singular.</span></span> <span data-ttu-id="c0e9c-216">Lorsqu'il génère des propriétés <xref:System.Data.Linq.DataContext> pour des tables, les noms de table sont au pluriel.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-216">When it makes <xref:System.Data.Linq.DataContext> properties for tables, the table names are plural.</span></span> <span data-ttu-id="c0e9c-217">Par coïncidence, les tables de l'exemple de base de données Northwind sont déjà au pluriel.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-217">Coincidentally, the tables in the Northwind sample database are already plural.</span></span> <span data-ttu-id="c0e9c-218">Par conséquent, vous ne pourrez pas voir cette partie active.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-218">Therefore, you do not see that part working.</span></span> <span data-ttu-id="c0e9c-219">Bien qu’il soit courant de nommer des tables de base de données au pluriel, il est également courant dans .NET de nommer des collections au pluriel.</span><span class="sxs-lookup"><span data-stu-id="c0e9c-219">Although it is common practice to name database tables singular, it is also a common practice in .NET to name collections plural.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide pratique pour générer le modèle objet en Visual Basic ou C#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)   
- [Génération de code dans LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)   
- [Mappage externe](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
-
+## <a name="see-also"></a><span data-ttu-id="c0e9c-220">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c0e9c-220">See Also</span></span>  
+ [<span data-ttu-id="c0e9c-221">Comment : générer le modèle objet en Visual Basic ou c#</span><span class="sxs-lookup"><span data-stu-id="c0e9c-221">How to: Generate the Object Model in Visual Basic or C#</span></span>](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  
+ [<span data-ttu-id="c0e9c-222">Génération de code dans LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="c0e9c-222">Code Generation in LINQ to SQL</span></span>](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [<span data-ttu-id="c0e9c-223">Mappage externe</span><span class="sxs-lookup"><span data-stu-id="c0e9c-223">External Mapping</span></span>](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
