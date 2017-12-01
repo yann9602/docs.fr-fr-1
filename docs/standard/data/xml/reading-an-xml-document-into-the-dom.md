@@ -1,38 +1,39 @@
 ---
-title: "Lecture d&#39;un document XML dans le DOM | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Lecture d'un document XML dans le DOM
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: a4fb291f-5630-49ba-a49a-5b66c3b71e49
-caps.latest.revision: 3
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: b8844705b492574443ff4f37de33ccaf1f5fedd7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Lecture d&#39;un document XML dans le DOM
-Les informations XML lues en mémoire peuvent être de différents formats :  chaîne, flux, URL, lecteur de texte ou classe dérivée de l'objet <xref:System.Xml.XmlReader>.  
+# <a name="reading-an-xml-document-into-the-dom"></a>Lecture d'un document XML dans le DOM
+Les informations XML lues en mémoire peuvent être de différents formats : chaîne, flux, URL, lecteur de texte ou classe dérivée de l'objet <xref:System.Xml.XmlReader>.  
   
- La méthode <xref:System.Xml.XmlDocument.Load%2A> charge le document en mémoire et des méthodes surchargées sont disponibles pour prendre des données de chacun des différents formats.  Il existe également une méthode <xref:System.Xml.XmlDocument.LoadXml%2A>, qui lit du XML à partir d'une chaîne.  
+ La méthode <xref:System.Xml.XmlDocument.Load%2A> charge le document en mémoire et des méthodes surchargées sont disponibles pour prendre des données de chacun des différents formats. Il existe également une méthode <xref:System.Xml.XmlDocument.LoadXml%2A>, qui lit du XML à partir d'une chaîne.  
   
- Les nœuds créés lors du chargement du DOM \(Document Object Model\) XML varient selon la méthode <xref:System.Xml.XmlDocument.Load%2A>.  Le tableau suivant répertorie les différences entre certaines des méthodes <xref:System.Xml.XmlDocument.Load%2A> et les rubriques où elles sont traitées.  
+ Les nœuds créés lors du chargement du DOM (Document Object Model) XML varient selon la méthode <xref:System.Xml.XmlDocument.Load%2A>. Le tableau suivant répertorie les différences entre certaines des méthodes <xref:System.Xml.XmlDocument.Load%2A> et les rubriques où elles sont traitées.  
   
 |Objet|Rubrique|  
-|-----------|--------------|  
-|Création de nœuds d'espace blanc|L'objet utilisé pour charger le DOM a un effet sur l'espace blanc et sur les nœuds d'espace blanc significatifs générés dans le DOM.  Pour plus d'informations, consultez [Gestion des espaces blancs significatifs ou non lors du chargement du DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).|  
-|Chargement de XML à partir d'un nœud spécifique ou chargement du document XML entier|La méthode <xref:System.Xml.XmlDocument.Load%2A?displayProperty=fullName> permet de charger des données dans le DOM à partir d'un nœud spécifique.  Pour plus d'informations, consultez [Chargement de données à partir d'un lecteur](../../../../docs/standard/data/xml/load-data-from-a-reader.md).|  
-|Validation du XML lors de son chargement|Les données XML chargées dans le DOM peuvent être validées à mesure qu'elles sont chargées.  Utilisez pour cela un objet <xref:System.Xml.XmlReader> de validation.  Pour plus d'informations sur la validation de XML lors de son chargement, voir [Validation d'un document XML dans le DOM](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md).|  
+|-------------|-----------|  
+|Création de nœuds d'espace blanc|L'objet utilisé pour charger le DOM a un effet sur l'espace blanc et sur les nœuds d'espace blanc significatifs générés dans le DOM. Pour plus d’informations, consultez [espace blanc et gère un espace blanc significatif lors du chargement du DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).|  
+|Chargement de XML à partir d'un nœud spécifique ou chargement du document XML entier|À l’aide de la <xref:System.Xml.XmlDocument.Load%2A?displayProperty=nameWithType> données de la méthode peuvent être chargées à partir d’un nœud spécifique dans le DOM. Pour plus d’informations, consultez [charger des données à partir d’un lecteur](../../../../docs/standard/data/xml/load-data-from-a-reader.md).|  
+|Validation du XML lors de son chargement|Les données XML chargées dans le DOM peuvent être validées à mesure qu'elles sont chargées. Utilisez pour cela un objet <xref:System.Xml.XmlReader> de validation. Pour plus d’informations sur la validation XML lors de son chargement, consultez [validation d’un Document XML dans le DOM](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md).|  
   
  L'exemple suivant montre le chargement de XML avec la méthode <xref:System.Xml.XmlDocument.LoadXml%2A> et l'enregistrement des données dans un fichier texte appelé `data.xml`.  
   
@@ -76,5 +77,5 @@ public class Sample
 }  
 ```  
   
-## Voir aussi  
- [DOM \(Document Object Model\) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Voir aussi  
+ [Document Object Model (DOM) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

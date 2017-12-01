@@ -1,42 +1,24 @@
 ---
 title: "Constantes (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 81a085ff016fb9ee8f8a13167728c37ca799920a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 85273420e9e0dbf4b8f24568d97be127c85d5f42
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="constants-c-programming-guide"></a>Constantes (Guide de programmation C#)
-Les constantes sont des valeurs immuables qui sont connues au moment de la compilation et qui ne changent pas pendant la durée de vie du programme. Les constantes sont déclarées avec le modificateur [const](../../../csharp/language-reference/keywords/const.md). Seuls les types intégrés C# (à l’exclusion de <xref:System.Object?displayProperty=fullName>) peuvent être déclarés comme `const`. Pour obtenir une liste des types intégrés, consultez [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md). Les types définis par l’utilisateur, notamment les classes, les structs et les tableaux, ne peuvent pas être `const`. Utilisez le modificateur [readonly](../../../csharp/language-reference/keywords/readonly.md) pour créer une classe, un struct ou un tableau initialisé une fois au moment de l’exécution (par exemple, dans un constructeur) et qui ne peut pas être modifié ultérieurement.  
+Les constantes sont des valeurs immuables qui sont connues au moment de la compilation et qui ne changent pas pendant la durée de vie du programme. Les constantes sont déclarées avec le modificateur [const](../../../csharp/language-reference/keywords/const.md). Seuls les types intégrés C# (à l’exclusion de <xref:System.Object?displayProperty=nameWithType>) peuvent être déclarés comme `const`. Pour obtenir une liste des types intégrés, consultez [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md). Les types définis par l’utilisateur, notamment les classes, les structs et les tableaux, ne peuvent pas être `const`. Utilisez le modificateur [readonly](../../../csharp/language-reference/keywords/readonly.md) pour créer une classe, un struct ou un tableau initialisé une fois au moment de l’exécution (par exemple, dans un constructeur) et qui ne peut pas être modifié ultérieurement.  
   
  C# ne prend pas en charge les propriétés, les événements ou les méthodes `const`.  
   
@@ -44,7 +26,7 @@ Les constantes sont des valeurs immuables qui sont connues au moment de la compi
   
  Les constantes doivent être initialisées à mesure qu’elles sont déclarées. Exemple :  
   
- [!code-cs[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_1.cs)]  
+ [!code-csharp[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_1.cs)]  
   
  Dans cet exemple, la constante `months` est toujours 12, et ne peut pas être modifiée, même par la classe elle-même. En fait, quand le compilateur rencontre un identificateur constant dans du code source C# (par exemple, `months`), il substitue la valeur littérale directement dans le code en langage intermédiaire (IL, Intermediate Language) qu’il produit. Étant donné qu’aucune adresse de variable n’est associée à une constante au moment de l’exécution, les champs `const` ne peuvent pas être passés par référence et ne peuvent pas apparaître comme l-value dans une expression.  
   
@@ -53,26 +35,25 @@ Les constantes sont des valeurs immuables qui sont connues au moment de la compi
   
  Plusieurs constantes du même type peuvent être déclarées en même temps, par exemple :  
   
- [!code-cs[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_2.cs)]  
+ [!code-csharp[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_2.cs)]  
   
  L’expression utilisée pour initialiser une constante peut référencer une autre constante si elle ne crée pas de référence circulaire. Exemple :  
   
- [!code-cs[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_3.cs)]  
+ [!code-csharp[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_3.cs)]  
   
- Les constantes peuvent être marquées comme [public](../../../csharp/language-reference/keywords/public.md), [private](../../../csharp/language-reference/keywords/private.md), [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md) ou `protected internal`. Ces modificateurs d’accès définissent la façon dont les utilisateurs de la classe peuvent accéder à la constante. Pour plus d’informations, consultez [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Constantes peuvent être marquées comme étant [public](../../../csharp/language-reference/keywords/public.md), [privé](../../../csharp/language-reference/keywords/private.md), [protégé](../../../csharp/language-reference/keywords/protected.md), [interne](../../../csharp/language-reference/keywords/internal.md), [protégéinterne](../../../csharp/language-reference/keywords/protected-internal.md)ou [protégé privé](../../../csharp/language-reference/keywords/private-protected.md). Ces modificateurs d’accès définissent la façon dont les utilisateurs de la classe peuvent accéder à la constante. Pour plus d’informations, consultez [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
  Les constantes sont accessibles comme si elles étaient des champs [static](../../../csharp/language-reference/keywords/static.md), car la valeur de la constante est identique pour toutes les instances du type. Vous n’utilisez pas le mot clé `static` pour les déclarer. Les expressions ne se trouvant pas dans la classe qui définit la constante doivent utiliser le nom de la classe, un point et le nom de la constante pour accéder à la constante. Exemple :  
   
- [!code-cs[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_4.cs)]  
+ [!code-csharp[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_4.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [Types](../../../csharp/programming-guide/types/index.md)   
- [readonly](../../../csharp/language-reference/keywords/readonly.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [Types](../../../csharp/programming-guide/types/index.md)  
+ [readonly](../../../csharp/language-reference/keywords/readonly.md)  
  [Immutability in C# Part One: Kinds of Immutability](http://go.microsoft.com/fwlink/?LinkId=112379)
-

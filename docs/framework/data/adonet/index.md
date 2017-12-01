@@ -5,28 +5,26 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-ado
+ms.technology: dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 17872cf1052acd963933b2d444a638e790e2c946
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: 93e631d8f8cc32943f7563495d9846a80822245f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET est un ensemble de classes qui exposent les services d'accès aux données pour les programmeurs .NET Framework. ADO.NET propose un large ensemble de composants pour la création d'applications distribuées avec partage de données. Partie intégrante du .NET Framework, il permet d'accéder à des données relationnelles, XML et d'application. ADO.NET répond à divers besoins en matière de développement, en permettant notamment de créer des clients de bases de données frontaux et des objets métier de couche intermédiaire utilisés par des applications, outils, langages ou navigateurs Internet.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Nouveautés d’ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
- Présente les fonctionnalités nouvelles d’ADO.NET.  
+ Introduit des fonctionnalités nouvelles dans ADO.NET.  
   
  [Vue d’ensemble d’ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
  Propose une introduction à la conception et aux composants de la technologie ADO.NET.  
@@ -41,7 +39,7 @@ ADO.NET est un ensemble de classes qui exposent les services d'accès aux donné
  Décrit les mappages de types de données entre les fournisseurs de données .NET Framework et les types de données .NET Framework.  
   
  [DataSets, DataTables et DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- Explique comment créer et utiliser des `DataSets`, des `DataSets` typés, des `DataTables` et des `DataViews`..  
+ Explique comment créer et utiliser des `DataSets`, des `DataSets` typés, des `DataTables` et des `DataViews`.  
   
  [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md)  
  Fournit des informations sur LINQ to DataSet, y compris des exemples de programmation.  
@@ -75,6 +73,5 @@ ADO.NET est un ensemble de classes qui exposent les services d'accès aux donné
  Fournit une liste complète des exemples et des exemples QuickStart associés à .NET Framework.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Accès aux données dans Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)   
+ [Accès aux données dans Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
-

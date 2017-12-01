@@ -1,35 +1,36 @@
 ---
-title: "Validation de sch&#233;ma XML (XSD) avec XmlSchemaCollection | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Validation de schéma XML (XSD) avec XmlSchemaCollection"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: ebe8a55cd5dd80be10553948c7765f81429c0957
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Validation de sch&#233;ma XML (XSD) avec XmlSchemaCollection
-Vous pouvez utiliser la classe <xref:System.Xml.Schema.XmlSchemaCollection> pour valider un document XML par rapport à des schémas de langage XSD \(XML Schema Definition\).  L'objet <xref:System.Xml.Schema.XmlSchemaCollection> améliore les performances en stockant des schémas dans la collection de sorte qu'ils ne soient pas chargés en mémoire lors de chaque validation.  Si le schéma existe dans la collection de schémas, l'attribut `schemaLocation` permet de l'y rechercher.  
+# <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Validation de schéma XML (XSD) avec XmlSchemaCollection
+Vous pouvez utiliser la classe <xref:System.Xml.Schema.XmlSchemaCollection> pour valider un document XML par rapport à des schémas de langage XSD (XML Schema Definition). L'objet <xref:System.Xml.Schema.XmlSchemaCollection> améliore les performances en stockant des schémas dans la collection de sorte qu'ils ne soient pas chargés en mémoire lors de chaque validation. Si le schéma existe dans la collection de schémas, l'attribut `schemaLocation` permet de l'y rechercher.  
   
 > [!IMPORTANT]
->  La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>.  Pour plus d'informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+>  La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la <xref:System.Xml.Schema.XmlSchemaSet> , consultez classe [XmlSchemaSet pour la Compilation du schéma](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
   
  L'exemple suivant montre l'élément racine d'un fichier de données.  
   
-```  
+```xml  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  
     xmlns="urn:bookstore-schema"  
     elementFormDefault="qualified"  
@@ -58,7 +59,7 @@ vreader = new XmlValidatingReader (reader);
 vreader.Schemas.Add(xsc);  
 ```  
   
- L'attribut `targetNamespace` est généralement utilisé lorsque vous ajoutez la propriété `namespaceURI` dans la méthode <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> pour l'objet <xref:System.Xml.Schema.XmlSchemaCollection>.  Vous pouvez spécifier une référence null avant d'ajouter le schéma à l'objet <xref:System.Xml.Schema.XmlSchemaCollection>.  Utilisez une chaîne vide \(""\) pour les schémas sans espace de noms.  L'objet <xref:System.Xml.Schema.XmlSchemaCollection> ne peut avoir qu'un seul schéma sans espace de noms.  
+ L'attribut `targetNamespace` est généralement utilisé lorsque vous ajoutez la propriété `namespaceURI` dans la méthode <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> pour l'objet <xref:System.Xml.Schema.XmlSchemaCollection>. Vous pouvez spécifier une référence null avant d'ajouter le schéma à l'objet <xref:System.Xml.Schema.XmlSchemaCollection>. Utilisez une chaîne vide ("") pour les schémas sans espace de noms. L'objet <xref:System.Xml.Schema.XmlSchemaCollection> ne peut avoir qu'un seul schéma sans espace de noms.  
   
  L'exemple de code suivant ajoute un schéma XML, HeadCount.xsd, à l'objet <xref:System.Xml.Schema.XmlSchemaCollection> et valide HeadCount.xml.  
   
@@ -133,7 +134,7 @@ namespace ValidationSample
   
  Le code suivant présente le contenu du fichier d'entrée, HeadCount.xml, à valider.  
   
-```  
+```xml  
 <!--Load HeadCount.xsd in SchemaCollection for Validation-->  
 <hc:HeadCount xmlns:hc='xsdHeadCount'>  
    <Name>Waldo Pepper</Name>  
@@ -143,7 +144,7 @@ namespace ValidationSample
   
  Le code suivant présente le contenu du fichier de schéma XML, HeadCount.xsd, par rapport auquel la validation doit s'effectuer.  
   
-```  
+```xml  
 <xs:schema xmlns="xsdHeadCount" targetNamespace="xsdHeadCount" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
    <xs:element name='HeadCount' type="HEADCOUNT"/>  
    <xs:complexType name="HEADCOUNT">  
@@ -155,7 +156,7 @@ namespace ValidationSample
 </xs:schema>  
 ```  
   
- L'exemple de code suivant crée un objet <xref:System.Xml.XmlValidatingReader> qui prend un objet <xref:System.Xml.XmlTextReader>.  Le fichier d'entrée, sample4.xml, est validé par rapport au schéma XML sample4.xsd.  
+ L'exemple de code suivant crée un objet <xref:System.Xml.XmlValidatingReader> qui prend un objet <xref:System.Xml.XmlTextReader>. Le fichier d'entrée, sample4.xml, est validé par rapport au schéma XML sample4.xsd.  
   
 ```vb  
 Dim tr As New XmlTextReader("sample4.xml")  
@@ -181,7 +182,7 @@ while(vr.Read()) {
   
  Le code suivant présente le contenu du fichier d'entrée, sample4.xml, à valider.  
   
-```  
+```xml  
 <datatypes xmlns="datatypesTest">  
     <number>  
         <number_1>123</number_1>  
@@ -191,7 +192,7 @@ while(vr.Read()) {
   
  Le code suivant présente le contenu du fichier de schéma XML, sample4.xsd, par rapport auquel la validation doit s'effectuer.  
   
-```  
+```xml  
 <xs:schema   
     xmlns:xs="http://www.w3.org/2001/XMLSchema"   
     xmlns:tns="datatypesTest"   
@@ -214,8 +215,8 @@ while(vr.Read()) {
 </xs:schema>  
 ```  
   
-## Voir aussi  
- <xref:System.Xml.XmlParserContext>   
- <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=fullName>   
- <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=fullName>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Xml.XmlParserContext>  
+ <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>  
+ <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>  
  [Compilation de schéma XmlSchemaCollection](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)

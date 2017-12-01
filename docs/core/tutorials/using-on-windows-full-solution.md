@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
+ms.openlocfilehash: 694201c1a2a2c373f62b0e0d8e3c1d8aa7e6e881
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6b164198f5fbbae5ebc6164fc281dd7de8172b70
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017
 
 Visual Studio 2017 fournit un environnement de développement complet pour le développement d’applications .NET Core. Les procédures décrites dans ce document expliquent comment créer une solution .NET Core classique qui inclut des bibliothèques réutilisables, des tests et utilise des bibliothèques tierces. 
@@ -29,7 +27,7 @@ Suivez les instructions stipulées dans [notre page de prérequis](../windows-pr
 
 ### <a name="writing-the-library"></a>Écriture de la bibliothèque
 
-1. Dans Visual Studio, choisissez **Fichier**, **Nouveau**, **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez le nœud **Visual C#**, choisissez le nœud **.NET Core**, puis choisissez **Bibliothèque de classes (.NET Standard)**. 
+1. Dans Visual Studio, choisissez **Fichier**, **Nouveau**, **Projet**. Dans le **nouveau projet** boîte de dialogue, développez le **Visual C#** nœud et choisissez la **.NET Standard** nœud, puis choisissez **bibliothèque de classes (.NET Standard)**. 
 
 2. Nommez le projet « Library » et la solution « Golden ». Laissez l’option **Créer le répertoire pour la solution** activée. Cliquez sur **OK**.
 
@@ -81,4 +79,3 @@ Suivez les instructions stipulées dans [notre page de prérequis](../windows-pr
 9. Appuyez sur F5 pour exécuter l’application.
 
    L’application doit se générer sans erreur et atteindre le point d’arrêt. Vous pouvez également vérifier que la sortie de l’application est « The answer is 42. ».
-

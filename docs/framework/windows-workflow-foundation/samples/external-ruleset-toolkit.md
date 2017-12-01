@@ -12,11 +12,11 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 6e3ec30edc65fd136fff56b1469664a6ba3b44f3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 9ff7a7e7cfd29ea6e5029219115b4bfff1c6895c
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="external-ruleset-toolkit"></a>External RuleSet Toolkit
 Généralement, lorsque des règles sont utilisées dans une application de workflow, elles font partie de l'assembly. Dans certains cas, il peut être préférable de gérer les RuleSets séparément de l'assembly afin qu'ils soient mis à jour sans que la génération et le déploiement de l'assembly de workflow ne soient nécessaires. Cet exemple vous permet de gérer et de modifier des RuleSets dans une base de données et d'accéder à ceux-ci à partir d'un workflow au moment de son exécution, opération qui permet aux instances de workflow en cours d'intégrer automatiquement des modifications de RuleSets.  
@@ -143,6 +143,4 @@ Généralement, lorsque des règles sont utilisées dans une application de work
 10. Vous pouvez désormais exécuter le projet `RuleSetToolkitUsageSample` comme s'il s'agissait de toute autre application console de workflow. Appuyez sur F5 ou Ctrl+F5 dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] ou exécutez directement le fichier RuleSetToolkitUsageSample.exe.  
   
     > [!NOTE]
-    >  Vous devez fermer l'outil RuleSet pour recompiler l'exemple d'utilisation, car l'outil charge l'assembly correspondant à cet exemple.  
-  
-## <a name="see-also"></a>Voir aussi
+    >  Vous devez fermer l'outil RuleSet pour recompiler l'exemple d'utilisation, car l'outil charge l'assembly correspondant à cet exemple.

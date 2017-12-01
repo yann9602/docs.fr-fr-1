@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
+ms.openlocfilehash: a6546818eaeac3c32a6a9ddd7e64b1b0e0ea170f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 33b22ab80f9b4d42975f2c41c880543c615a3e01
-ms.openlocfilehash: c66f1b2b85d377c84712c0ad73682cdeeb7249fd
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/31/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-glossary"></a>Glossaire .NET
 
 L’objectif principal de ce glossaire est de préciser la signification de certains termes et acronymes qui apparaissent fréquemment dans la documentation .NET sans y être définis.
@@ -31,15 +29,15 @@ Semblable au compilateur [JIT](#jit), ce compilateur convertit également le lan
 
 Implémentation ASP.NET d’origine fournie avec .NET Framework.
 
-ASP.NET est parfois un terme général qui désigne les deux implémentations d’ASP.NET, y compris ASP.NET Core. C’est le contexte qui détermine la signification véhiculée par le terme. 
+ASP.NET est parfois un terme général qui désigne les deux implémentations d’ASP.NET, y compris ASP.NET Core. C’est le contexte qui détermine la signification véhiculée par le terme. Reportez-vous à ASP.NET 4.x lorsque vous souhaitez indiquer clairement que vous n’utilisez pas ASP.NET pour les deux implémentations. 
 
-Consultez [ASP.NET](/aspnet/#pivot=aspnet).
+Consultez [documentation ASP.NET](/aspnet/#pivot=aspnet).
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
 Implémentation multiplateforme, hautes performances et open source d’ASP.NET basée sur .NET Core.
 
-Consultez [ASP.NET Core](/aspnet/#pivot=core).
+Consultez [documentation d’ASP.NET Core](/aspnet/#pivot=core).
 
 ## <a name="assembly"></a>assembly
 
@@ -278,5 +276,4 @@ Implémentation de .NET qui sert à générer des logiciels et des applications 
 [.NET Core](../core/index.md)  
 [ASP.NET Overview](/aspnet/index#pivot=aspnet) (Vue d’ensemble d’ASP.NET)  
 [ASP.NET Core Overview](/aspnet/index#pivot=core) (Vue d’ensemble d’ASP.NET Core)  
-
 

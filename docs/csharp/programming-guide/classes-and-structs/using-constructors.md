@@ -1,45 +1,26 @@
 ---
 title: Utilisation de constructeurs (Guide de programmation C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- constructors [C#], about constructors
+helpviewer_keywords: constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: eb9fcd1e4090da300de17c7fd808669ba51767c6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 75b55fde2fbd1697aed7eb0665a571c63b9b0b42
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-constructors-c-programming-guide"></a>Utilisation de constructeurs (Guide de programmation C#)
 Quand une [classe](../../../csharp/language-reference/keywords/class.md) ou un [struct](../../../csharp/language-reference/keywords/struct.md) est créé, son constructeur est appelé. Les constructeurs portent le même nom que la classe ou le struct, et ils initialisent généralement les membres de données du nouvel objet.  
   
  Dans l’exemple suivant, une classe nommée `Taxi` est définie en utilisant un constructeur simple. Cette classe est ensuite instanciée à l’aide de l’opérateur [new](../../../csharp/language-reference/keywords/new.md). Le constructeur `Taxi` est appelé par l’opérateur `new` immédiatement après l’allocation de la mémoire pour le nouvel objet.  
   
- [!code-cs[csProgGuideObjects#53](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_1.cs)]  
+ [!code-csharp[csProgGuideObjects#53](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_1.cs)]  
   
  Un constructeur qui ne prend pas de paramètres est appelé *constructeur par défaut*. Les constructeurs par défaut sont appelés chaque fois qu’un objet est instancié à l’aide de l’opérateur `new` et qu’aucun argument n’est fourni à `new`. Pour plus d’informations, consultez [Constructeurs d’instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
   
@@ -47,7 +28,7 @@ Quand une [classe](../../../csharp/language-reference/keywords/class.md) ou un [
   
  Vous pouvez empêcher qu’une classe soit instanciée en rendant le constructeur privé, comme suit :  
   
- [!code-cs[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_2.cs)]  
+ [!code-csharp[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_2.cs)]  
   
  Pour plus d’informations, consultez [Constructeurs privés](../../../csharp/programming-guide/classes-and-structs/private-constructors.md).  
   
@@ -78,35 +59,35 @@ Console.WriteLine("{0}, {1}", a, b);
   
  Les classes et les `structs` peuvent tous les deux définir des constructeurs qui prennent des paramètres. Les constructeurs qui prennent des paramètres doivent être appelés à l’aide d’une instruction `new` ou d’une instruction [base](../../../csharp/language-reference/keywords/base.md). Les classes et les `structs` peuvent également définir plusieurs constructeurs, et ni l’un ni l’autre n’est nécessaire pour définir un constructeur par défaut. Exemple :  
   
- [!code-cs[csProgGuideObjects#54](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_3.cs)]  
+ [!code-csharp[csProgGuideObjects#54](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_3.cs)]  
   
  Cette classe peut être créée à l’aide de l’une ou l’autre des instructions suivantes :  
   
- [!code-cs[csProgGuideObjects#55](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_4.cs)]  
+ [!code-csharp[csProgGuideObjects#55](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_4.cs)]  
   
  Un constructeur peut utiliser le mot clé `base` pour appeler le constructeur d’une classe de base. Exemple :  
   
- [!code-cs[csProgGuideObjects#56](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_5.cs)]  
+ [!code-csharp[csProgGuideObjects#56](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_5.cs)]  
   
  Dans cet exemple, le constructeur de la classe de base est appelé avant que le bloc du constructeur ne soit exécuté. Le mot clé `base` peut être utilisé avec ou sans paramètres. Tous les paramètres du constructeur peuvent être utilisés comme paramètres pour `base` ou comme partie d’une expression. Pour plus d’informations, consultez [base](../../../csharp/language-reference/keywords/base.md).  
   
  Dans une classe dérivée, si un constructeur de classe de base n’est pas appelé explicitement à l’aide du mot clé `base`, le constructeur par défaut, s’il existe, est appelé implicitement. Cela signifie que les déclarations de constructeur suivantes sont en fait les mêmes :  
   
- [!code-cs[csProgGuideObjects#58](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_6.cs)]  
+ [!code-csharp[csProgGuideObjects#58](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_6.cs)]  
   
- [!code-cs[csProgGuideObjects#57](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_7.cs)]  
+ [!code-csharp[csProgGuideObjects#57](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_7.cs)]  
   
  Si une classe de base n’offre pas de constructeur par défaut, la classe dérivée doit faire un appel explicite à un constructeur de base à l’aide du mot clé `base`.  
   
  Un constructeur peut appeler un autre constructeur dans le même objet à l’aide du mot clé [this](../../../csharp/language-reference/keywords/this.md). Comme `base`, `this` peut être utilisé avec ou sans paramètres, et tous les paramètres dans le constructeur sont disponibles comme paramètres pour `this` ou comme partie d’une expression. Par exemple, le deuxième constructeur de l’exemple précédent peut être récrit à l’aide de `this` :  
   
- [!code-cs[csProgGuideObjects#59](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_8.cs)]  
+ [!code-csharp[csProgGuideObjects#59](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_8.cs)]  
   
  L’utilisation du mot clé `this` dans l’exemple précédent provoque l’appel de ce constructeur :  
   
- [!code-cs[csProgGuideObjects#60](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_9.cs)]  
+ [!code-csharp[csProgGuideObjects#60](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_9.cs)]  
   
- Les constructeurs peuvent être marqués comme [public](../../../csharp/language-reference/keywords/public.md), [private](../../../csharp/language-reference/keywords/private.md), [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md) ou `protected internal`. Ces modificateurs d’accès définissent la façon dont les utilisateurs de la classe peuvent construire la classe. Pour plus d’informations, consultez [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Les constructeurs peuvent être marqués comme [public](../../../csharp/language-reference/keywords/public.md), [privé](../../../csharp/language-reference/keywords/private.md), [protégé](../../../csharp/language-reference/keywords/protected.md), [interne](../../../csharp/language-reference/keywords/internal.md), [protégéinterne](../../../csharp/language-reference/keywords/protected-internal.md)ou [protégé privé](../../../csharp/language-reference/keywords/private-protected.md). Ces modificateurs d’accès définissent la façon dont les utilisateurs de la classe peuvent construire la classe. Pour plus d’informations, consultez [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
  Un constructeur peut être déclaré statique à l’aide du mot clé [static](../../../csharp/language-reference/keywords/static.md). Les constructeurs statiques sont appelés automatiquement, juste avant que des champs statiques soient accessibles, et ils sont généralement utilisés pour initialiser des membres de classe statique. Pour plus d’informations, consultez [Constructeurs statiques](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  
   
@@ -114,8 +95,7 @@ Console.WriteLine("{0}, {1}", a, b);
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
  [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)
-

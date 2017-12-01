@@ -1,28 +1,26 @@
 ---
-title: "Suppression d&#39;attributs d&#39;un nœud d&#39;&#233;l&#233;ment dans le DOM | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Suppression d'attributs d'un nœud d'élément dans le DOM"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: b4ca08d8080c2116ce05634a544c91780869b165
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Suppression d&#39;attributs d&#39;un nœud d&#39;&#233;l&#233;ment dans le DOM
-Il existe plusieurs manières de supprimer des attributs.  L'une des techniques consiste à les supprimer de la collection d'attributs.  Pour ce faire, procédez comme suit :  
+# <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Suppression d'attributs d'un nœud d'élément dans le DOM
+Il existe plusieurs manières de supprimer des attributs. L'une des techniques consiste à les supprimer de la collection d'attributs. Pour ce faire, procédez comme suit :  
   
 1.  Obtenez la collection d'attributs à partir de l'élément à l'aide de `XmlAttributeCollection attrs = elem.Attributes;`.  
   
@@ -42,11 +40,11 @@ Il existe plusieurs manières de supprimer des attributs.  L'une des techniques 
   
 -   Utilisez la méthode <xref:System.Xml.XmlElement.RemoveAttributeAt%2A> pour supprimer de la collection un attribut spécifique par son numéro d'index.  
   
- Une autre solution consiste à obtenir l'élément, puis l'attribut à partir de la collection d'attributs et de supprimer directement le nœud d'attribut.  Pour obtenir l'attribut à partir de la collection d'attributs, vous pouvez utiliser un nom, `XmlAttribute attr = attrs["attr_name"];`, un index `XmlAttribute attr = attrs[0];` ou donner un nom qualifié à l'espace de noms `XmlAttribute attr = attrs["attr_localName", "attr_namespace"]`.  
+ Une autre solution consiste à obtenir l'élément, puis l'attribut à partir de la collection d'attributs et de supprimer directement le nœud d'attribut. Pour obtenir l'attribut à partir de la collection d'attributs, vous pouvez utiliser un nom, `XmlAttribute attr = attrs["attr_name"];`, un index `XmlAttribute attr = attrs[0];` ou donner un nom qualifié à l'espace de noms `XmlAttribute attr = attrs["attr_localName", "attr_namespace"]`.  
   
- Quelle que soit la méthode utilisée pour la suppression des attributs, la suppression d'attributs définis comme des attributs par défaut dans la DTD \(définition de type de document\) est sujette à des restrictions spéciales.  Les attributs par défaut ne peuvent pas être supprimés, à moins que l'élément auquel ils appartiennent ne le soit également.  Les attributs par défaut sont toujours présents pour les éléments possédant des attributs par défaut déclarés.  La suppression d'un attribut par défaut d'un objet <xref:System.Xml.XmlAttributeCollection> ou de l'objet <xref:System.Xml.XmlElement> provoque l'insertion d'un attribut de substitution dans l'objet <xref:System.Xml.XmlAttributeCollection> de l'élément, initialisé à la valeur par défaut qui a été déclarée.  Si un élément est défini comme `<book att1="1" att2="2" att3="3"></book>`, un élément `book` possède trois attributs par défaut déclarés.  L'implémentation du modèle DOM \(Document Object Model\) XML assure que tant que cet élément `book`  existe, il possède ces trois attributs par défaut `att1`, `att2` et `att3`.  
+ Quelle que soit la méthode utilisée pour la suppression des attributs, la suppression d'attributs définis comme des attributs par défaut dans la DTD (définition de type de document) est sujette à des restrictions spéciales. Les attributs par défaut ne peuvent pas être supprimés, à moins que l'élément auquel ils appartiennent ne le soit également. Les attributs par défaut sont toujours présents pour les éléments possédant des attributs par défaut déclarés. La suppression d'un attribut par défaut d'un objet <xref:System.Xml.XmlAttributeCollection> ou de l'objet <xref:System.Xml.XmlElement> provoque l'insertion d'un attribut de substitution dans l'objet <xref:System.Xml.XmlAttributeCollection> de l'élément, initialisé à la valeur par défaut qui a été déclarée. Si un élément est défini comme `<book att1="1" att2="2" att3="3"></book>`, un élément `book` possède trois attributs par défaut déclarés. L’implémentation du modèle DOM (Document objet Model) XML garantit que tant que cet `book` élément existe, il possède ces trois attributs par défaut `att1`, `att2`, et `att3`.  
   
  Appelée avec un objet <xref:System.Xml.XmlAttribute>, la méthode <xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> définit la valeur de l'attribut sur String.Empty, étant donné qu'un attribut ne peut pas exister sans valeur.  
   
-## Voir aussi  
- [DOM \(Document Object Model\) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Voir aussi  
+ [Document Object Model (DOM) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -5,24 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - strong-name bypass feature
 - strong-named assemblies, loading into trusted application domains
 ms.assetid: 234e088c-3b11-495a-8817-e0962be79d82
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: fe694f9324a67e1ffa3eacf16cfbfcc266550693
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0af565c6d27be6a5a22bfb0fd1f90e4e46deec33
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-disable-the-strong-name-bypass-feature"></a>Comment : désactiver la fonctionnalité consistant à ignorer les noms forts
 À partir du .NET Framework version 3.5 Service Pack 1 (SP1), les signatures de noms forts ne sont pas validées quand un assembly est chargé dans un objet <xref:System.AppDomain> de confiance totale, tel que le <xref:System.AppDomain> par défaut pour la zone `MyComputer`. Cette fonctionnalité permet d’ignorer les noms forts. Dans un environnement de confiance totale, les demandes de <xref:System.Security.Permissions.StrongNameIdentityPermission> aboutissent toujours pour les assemblys de confiance totale signés, quelle que soit leur signature. La seule restriction est que l’assembly doit être entièrement fiable, car sa zone est entièrement fiable. Le nom fort n’étant pas un facteur déterminant dans ces conditions, il n’y a aucune raison pour qu’il soit validé. Ignorer la validation des signatures de noms forts fournit une amélioration significative des performances.  
@@ -64,7 +62,6 @@ ms.lasthandoff: 07/28/2017
 >  Vous pouvez activer et désactiver la validation des noms forts pour une application uniquement si la fonctionnalité consistant à ignorer la validation est activée pour l’ordinateur. Si cette fonctionnalité a été désactivée pour l’ordinateur, les noms forts sont validés pour toutes les applications et vous ne pouvez pas ignorer la validation pour une application unique.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Sn.exe (Outil Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
- [\<bypassTrustedAppStrongNames>, élément](../../../docs/framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)   
+ [Sn.exe (outil Strong Name)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
+ [\<bypassTrustedAppStrongNames > élément](../../../docs/framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)  
  [Création et utilisation d’assemblys avec nom fort](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)
-

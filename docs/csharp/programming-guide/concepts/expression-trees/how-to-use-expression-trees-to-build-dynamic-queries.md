@@ -1,30 +1,21 @@
 ---
 title: "Guide pratique pour utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 52cd44dd-a3ec-441e-b93a-4eca388119c7
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 78de99ed9b2a2d80c17cb013715a15f45f8fa2ac
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b09674690093ea89fcf59b79d90d34e9605b44a2
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>Guide pratique pour utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques (C#)
 Dans LINQ, des arborescences d’expressions sont utilisées pour représenter des requêtes structurées qui ciblent des sources de données qui implémentent <xref:System.Linq.IQueryable%601>. Par exemple, le fournisseur LINQ implémente l’interface <xref:System.Linq.IQueryable%601> pour interroger des magasins de données relationnelles. Le compilateur C# compile les requêtes qui ciblent de telles sources de données dans du code qui génère une arborescence d’expressions lors de l’exécution. Le fournisseur de requêtes peut ensuite parcourir la structure de données de l’arborescence d’expressions et la traduire en un langage de requête qui convienne à la source de données.  
@@ -126,7 +117,6 @@ foreach (string company in results)
 -   Copiez le code de l’exemple et collez-le dans la méthode `Main`.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)   
- [Guide pratique pour exécuter des arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)   
+ [Arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
+ [Comment : exécuter des arborescences d’Expression (c#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
  [Guide pratique pour spécifier dynamiquement des filtres de prédicat au moment de l’exécution](../../../../csharp/programming-guide/linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)
-

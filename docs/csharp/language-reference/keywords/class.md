@@ -1,42 +1,22 @@
 ---
 title: "class (référence C#)"
-ms.date: 2017-07-18
+ms.date: 07/18/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - class_CSharpKeyword
 - class
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- class keyword [C#]
+helpviewer_keywords: class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: ae4b019ee88b6f331a76c750ab94fc76a3343adb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cd4fbca0ce7148c571075d31a0e1e4a986d75149
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="class-c-reference"></a>class (référence C#)
 
@@ -62,7 +42,7 @@ Le langage C# ne permet qu'un seul héritage. Cela signifie qu’une classe peut
 
 Les classes que vous déclarez directement dans un espace de noms, non imbriquées dans d’autres classes, peuvent être [public](../../../csharp/language-reference/keywords/public.md) ou [internal](../../../csharp/language-reference/keywords/internal.md). Par défaut, les classes sont `internal`.
 
-Les membres de classe, notamment les classes imbriquées, peuvent être [public](../../../csharp/language-reference/keywords/public.md), `protected internal`, [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md) ou [private](../../../csharp/language-reference/keywords/private.md). Par défaut, les membres sont [private](../../../csharp/language-reference/keywords/private.md).
+Membres de classe, y compris les classes imbriquées, peuvent être [public](../../../csharp/language-reference/keywords/public.md), `protected internal`, [protégé](../../../csharp/language-reference/keywords/protected.md), [interne](../../../csharp/language-reference/keywords/internal.md), [privé](../../../csharp/language-reference/keywords/private.md), ou `private protected`. Par défaut, les membres sont [private](../../../csharp/language-reference/keywords/private.md).
 
 Pour plus d’informations, consultez [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).
 
@@ -94,12 +74,12 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Interfaces](../../../csharp/programming-guide/interfaces/index.md)
 
-- [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)
+- [Structures](../../../csharp/programming-guide/classes-and-structs/structs.md)
 
 ## <a name="example"></a>Exemple
 L’exemple suivant explique comment déclarer des champs, des constructeurs et des méthodes de classe. Il illustre également l’instanciation d’un objet et l’impression des données d’une instance. Dans cet exemple, deux classes sont déclarées. La première, `Child`, contient deux champs privés (`name` et `age`), deux constructeurs publics et une méthode publique. La deuxième, `StringTest`, contient `Main`.
 
-[!code-cs[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]
+[!code-csharp[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]
 
 ## <a name="comments"></a>Commentaires
 Notez que, dans l’exemple précédant, les champs privés (`name` et `age`) ne sont accessibles que par le biais de la méthode publique de la classe `Child`. Par exemple, vous ne pouvez pas imprimer le nom de l’enfant à partir de la méthode `Main` en utilisant une instruction comme celle-ci :
@@ -118,8 +98,7 @@ Notez enfin que pour l’objet créé à l’aide du constructeur par défaut (`
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)  
  [Types référence](../../../csharp/language-reference/keywords/reference-types.md)
-

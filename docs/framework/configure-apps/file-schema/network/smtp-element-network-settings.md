@@ -53,7 +53,7 @@ Configure le format de remise, de la méthode de remise et à partir de l’adre
 |Attribut|Description|  
 |---------------|-----------------|  
 |`deliveryFormat`|Spécifie le format de remise de messages électroniques sortants. Les valeurs acceptables sont SevenBit et International.|  
-|`deliveryMethod`|Spécifie la méthode de remise pour les messages électroniques. Les valeurs acceptables sont network, pickupDirectoryFromIis et specifiedPickupDirectory.|  
+|`deliveryMethod`|Spécifie la méthode de remise pour les messages électroniques. Les valeurs acceptables sont network, pickupDirectoryFromIis et SpecifiedPickupDirectory.|  
 |`from`|Spécifie l’adresse d’origine de messages électroniques sortants.|  
   
 ### <a name="child-elements"></a>Éléments enfants  

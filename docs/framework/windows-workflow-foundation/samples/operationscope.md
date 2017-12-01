@@ -12,11 +12,11 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 6d1e2738e8cdb546a1dcbb00689e5b4c360ddd04
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: b90ab7e38f40cb515166d4d08e0316ffb9061be3
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="operationscope"></a>OperationScope
 Cet exemple montre comment les activités de messagerie, <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply>, peuvent être utilisées pour exposer une activité personnalisée existante en tant qu'opération dans un service de workflow. Cet exemple inclut une nouvelle activité personnalisée appelée `OperationScope`. Elle est destinée à faciliter le développement d'un service de workflow en permettant aux utilisateurs de créer le corps de leurs opérations séparément en tant qu'activités personnalisées et de les exposer facilement en tant qu'opérations de service à l'aide de l'activité `OperationScope`. Par exemple, une activité `Add` personnalisée que prend deux arguments `in` et qui retourne un argument `out` pourrait être exposée en tant qu'opération `Add` sur le service de workflow en le déposant dans un `OperationScope`.  
@@ -47,6 +47,4 @@ Cet exemple montre comment les activités de messagerie, <xref:System.ServiceMod
 >   
 >  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\OperationScope`  
-  
-## <a name="see-also"></a>Voir aussi
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\OperationScope`

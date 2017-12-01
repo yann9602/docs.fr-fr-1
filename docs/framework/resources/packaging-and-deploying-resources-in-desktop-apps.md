@@ -5,10 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
 - resource files, deploying
@@ -31,16 +33,15 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: c91195c4e70366a3feb7a96f80e4e44dda89239e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5de456ff1a371a43241dba3b47be7dcd80bf8f70
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>Empaquetage et déploiement de ressources dans des applications de bureau
 Les applications s’appuient sur le gestionnaire des ressources du .NET Framework, représenté par la classe <xref:System.Resources.ResourceManager>, pour récupérer des ressources localisées. Le gestionnaire des ressources suppose qu’un modèle Hub and Spoke est utilisé pour empaqueter et déployer des ressources. Le hub est l’assembly principal qui contient le code exécutable non localisable et les ressources pour une culture unique, appelée culture neutre ou par défaut. La culture par défaut est la culture de secours de l’application ; il s’agit de la culture dont les ressources sont utilisées si aucune ressource localisée ne peut être trouvée. Chaque spoke se connecte à un assembly satellite qui contient les ressources d’une culture unique, mais ne contient pas de code.  
@@ -63,7 +64,7 @@ Les applications s’appuient sur le gestionnaire des ressources du .NET Framewo
  Quand vous empaquetez les ressources de votre application, vous devez les nommer en utilisant les conventions d’affectation de noms pour les ressources que le Common Language Runtime attend. Le runtime identifie une ressource par son nom de culture. Chaque culture a un nom unique, qui est en général une combinaison d’un nom de culture à deux lettres en minuscules associé à une langue et, si nécessaire, un nom de sous-culture à deux lettres en majuscules associé à un pays ou une région. Le nom de la sous-culture suit le nom de la culture, séparés par un tiret (-). Les exemples incluent ja-JP pour le japonais tel qu’il est parlé au Japon, en-US pour l’anglais tel qu’il est parlé aux États-Unis, de-DE pour l’allemand tel qu’il est parlé en Allemagne ou de-AT pour l’allemand tel qu’il est parlé en Autriche. Consultez [Informations de référence sur l’API NLS (National Language Support)](http://go.microsoft.com/fwlink/?LinkId=200048) sur le centre de développement Go Global pour obtenir une liste complète des noms de cultures.  
   
 > [!NOTE]
->  Pour plus d’informations sur la création de fichiers de ressources, consultez [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md) et [Création d’assemblys satellites](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md) dans MSDN Library.  
+>  Pour plus d’informations sur la création de fichiers de ressources, consultez [création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md) et [création d’assemblys satellites](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).  
   
 <a name="cpconpackagingdeployingresourcesanchor1"></a>   
 ## <a name="the-resource-fallback-process"></a>Processus de secours pour les ressources  
@@ -84,7 +85,7 @@ Les applications s’appuient sur le gestionnaire des ressources du .NET Framewo
   
 3.  Le runtime interroge ensuite Windows Installer pour déterminer si l’assembly satellite doit être installé à la demande. Dans ce cas, il gère l’installation, charge l’assembly et y recherche la ressource demandée. S’il trouve la ressource dans l’assembly, il l’utilise. S’il ne trouve pas la ressource, il continue la recherche.  
   
-4.  Le runtime déclenche l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> pour indiquer qu’il lui est impossible de trouver l’assembly satellite. Si vous choisissez de gérer l’événement, le gestionnaire d’événements peut retourner une référence à l’assembly satellite dont les ressources seront utilisées pour la recherche. Sinon, le gestionnaire d’événements retourne `null` et la recherche se poursuit.  
+4.  Le runtime déclenche l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour indiquer qu’il lui est impossible de trouver l’assembly satellite. Si vous choisissez de gérer l’événement, le gestionnaire d’événements peut retourner une référence à l’assembly satellite dont les ressources seront utilisées pour la recherche. Sinon, le gestionnaire d’événements retourne `null` et la recherche se poursuit.  
   
 5.  Le runtime effectue ensuite une nouvelle recherche dans le Global Assembly Cache, cette fois pour trouver l’assembly parent de la culture demandée. Si l’assembly parent existe dans le Global Assembly Cache, le runtime recherche la ressource demandée dans cet assembly.  
   
@@ -94,9 +95,9 @@ Les applications s’appuient sur le gestionnaire des ressources du .NET Framewo
   
 7.  Le runtime interroge ensuite Windows Installer pour déterminer si l’assembly satellite parent doit être installé à la demande. Dans ce cas, il gère l’installation, charge l’assembly et y recherche la ressource demandée. S’il trouve la ressource dans l’assembly, il l’utilise. S’il ne trouve pas la ressource, il continue la recherche.  
   
-8.  Le runtime déclenche l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> pour indiquer qu’il lui est impossible de trouver une ressource de secours appropriée. Si vous choisissez de gérer l’événement, le gestionnaire d’événements peut retourner une référence à l’assembly satellite dont les ressources seront utilisées pour la recherche. Sinon, le gestionnaire d’événements retourne `null` et la recherche se poursuit.  
+8.  Le runtime déclenche l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour indiquer qu’il lui est impossible de trouver une ressource de secours appropriée. Si vous choisissez de gérer l’événement, le gestionnaire d’événements peut retourner une référence à l’assembly satellite dont les ressources seront utilisées pour la recherche. Sinon, le gestionnaire d’événements retourne `null` et la recherche se poursuit.  
   
-9. Le runtime effectue ensuite des recherches dans les assemblys parents, comme aux trois étapes précédentes, dans les différents niveaux. Chaque culture n’a qu’un seul parent, qui est défini par la propriété <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=fullName>, mais un parent peut avoir son propre parent. La recherche des cultures parentes s’arrête quand la propriété <xref:System.Globalization.CultureInfo.Parent%2A> d’une culture retourne <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> ; pour la culture de secours pour les ressources, la culture indifférente n’est pas considérée comme une culture parente ou une culture qui peut avoir des ressources.  
+9. Le runtime effectue ensuite des recherches dans les assemblys parents, comme aux trois étapes précédentes, dans les différents niveaux. Chaque culture n’a qu’un seul parent, qui est défini par la propriété <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType>, mais un parent peut avoir son propre parent. La recherche des cultures parentes s’arrête quand la propriété <xref:System.Globalization.CultureInfo.Parent%2A> d’une culture retourne <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> ; pour la culture de secours pour les ressources, la culture indifférente n’est pas considérée comme une culture parente ou une culture qui peut avoir des ressources.  
   
 10. Si la culture spécifiée à l’origine et tous les parents ont fait l’objet de la recherche et que la ressource est toujours introuvable, la ressource de la culture par défaut (de secours) est utilisée. En règle générale, les ressources de la culture par défaut sont incluses dans l’assembly d’application principal. Toutefois, vous pouvez spécifier la valeur <xref:System.Resources.UltimateResourceFallbackLocation.Satellite> pour la propriété <xref:System.Resources.NeutralResourcesLanguageAttribute.Location%2A> de l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> pour indiquer que l’emplacement de secours ultime pour les ressources est un assembly satellite, plutôt que l’assembly principal.  
   
@@ -115,7 +116,7 @@ Les applications s’appuient sur le gestionnaire des ressources du .NET Framewo
   
 -   Les assemblys satellites ne sont pas installés à la demande.  
   
--   Le code d’application ne gère pas l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName>.  
+-   Le code d’application ne gère pas l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>.  
   
  Vous optimisez la recherche des assemblys satellites en incluant l’élément [\<relativeBindForResources>](../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md) et en affectant à son attribut `enabled` la valeur `true` dans le fichier de configuration de l’application, comme indiqué dans l’exemple suivant.  
   
@@ -133,10 +134,10 @@ Les applications s’appuient sur le gestionnaire des ressources du .NET Framewo
   
 -   Le runtime n’interroge pas Windows Installer pour l’installation à la demande des assemblys satellites.  
   
--   Si la recherche d’un assembly de ressource particulier échoue, le runtime ne déclenche pas l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName>.  
+-   Si la recherche d’un assembly de ressource particulier échoue, le runtime ne déclenche pas l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>.  
   
 ### <a name="ultimate-fallback-to-satellite-assembly"></a>Secours ultime pour l’assembly satellite  
- Vous pouvez éventuellement supprimer des ressources de l’assembly principal et spécifier que le runtime doit charger les ressources de secours ultime depuis un assembly satellite qui correspond à une culture spécifique. Pour contrôler le processus de secours, vous utilisez le constructeur <xref:System.Resources.NeutralResourcesLanguageAttribute.%23ctor%28System.String%2CSystem.Resources.UltimateResourceFallbackLocation%29?displayProperty=fullName> et fournissez une valeur pour le paramètre <xref:System.Resources.UltimateResourceFallbackLocation> qui spécifie si le gestionnaire des ressources doit extraire les ressources de secours à partir de l’assembly principal ou d’un assembly satellite.  
+ Vous pouvez éventuellement supprimer des ressources de l’assembly principal et spécifier que le runtime doit charger les ressources de secours ultime depuis un assembly satellite qui correspond à une culture spécifique. Pour contrôler le processus de secours, vous utilisez le constructeur <xref:System.Resources.NeutralResourcesLanguageAttribute.%23ctor%28System.String%2CSystem.Resources.UltimateResourceFallbackLocation%29?displayProperty=nameWithType> et fournissez une valeur pour le paramètre <xref:System.Resources.UltimateResourceFallbackLocation> qui spécifie si le gestionnaire des ressources doit extraire les ressources de secours à partir de l’assembly principal ou d’un assembly satellite.  
   
  L’exemple suivant utilise l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> pour stocker les ressources de secours d’une application dans un assembly satellite pour la langue Français (fr).  L’exemple comprend deux fichiers de ressources textuels qui définissent une ressource de type chaîne unique nommée `Greeting`. Le premier, resources.fr.txt, contient une ressource de langue française.  
   
@@ -168,7 +169,8 @@ Greeting=Добрый день
   
  Le code source de l’application réside dans un fichier nommé Example1.cs ou Example1.vb. Il inclut l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> pour indiquer que la ressource d’application par défaut se trouve dans le sous-répertoire fr. Il instancie le gestionnaire des ressources, récupère la valeur de la ressource `Greeting` et l’affiche dans la console.  
   
- [!code-csharp[Conceptual.Resources.Packaging#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.packaging/cs/example1.cs#1)] [!code-vb[Conceptual.Resources.Packaging#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.packaging/vb/example1.vb#1)]  
+ [!code-csharp[Conceptual.Resources.Packaging#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.packaging/cs/example1.cs#1)]
+ [!code-vb[Conceptual.Resources.Packaging#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.packaging/vb/example1.vb#1)]  
   
  Vous pouvez ensuite compiler le code source C# à partir de la ligne de commande comme suit :  
   
@@ -190,8 +192,7 @@ Bon jour!
  Des contraintes de temps ou de budget peuvent vous empêcher de créer un ensemble de ressources pour chaque sous-culture que votre application prend en charge. À la place, vous pouvez créer un seul assembly satellite pour une culture parente qui peut être utilisé par toutes les sous-cultures apparentées. Par exemple, vous pouvez fournir un seul assembly satellite anglais (en) qui est récupéré par les utilisateurs qui demandent des ressources anglaises spécifiques à une région et un seul assembly satellite allemand (de) pour les utilisateurs qui demandent des ressources allemandes spécifiques à une région. Par exemple, les demandes pour l’allemand tel qu’il est parlé en Allemagne (de-DE), en Autriche (de-AT) et en Suisse (de-CH) reviennent à l’assembly satellite allemand (de). Comme les ressources par défaut représentent les ressources de secours final et doivent dont être les ressources qui seront demandées par la majorité des utilisateurs de votre application, choisissez-les avec précaution. Cette solution déploie des ressources qui sont moins spécifiques à une culture, mais peut réduire de manière significative les coûts de localisation de votre application.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)   
- [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)   
- [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)   
+ [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)  
+ [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)  
+ [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
  [Création d’assemblys satellites](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)
-

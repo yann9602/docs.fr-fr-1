@@ -21,14 +21,14 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 96bd12b69b84537415ddf2e0ae992ec179f32493
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: aa6a2e60e34f6c3a78343318ae102883da84e266
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="isymunmanagedbindergetreaderfromstream-method"></a>ISymUnmanagedBinder::GetReaderFromStream, méthode
-Une interface de métadonnées et un flux qui contient le magasin de symboles, retourne le correct <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> symboles de structure qui lira le débogage à partir du magasin de symboles donné.  
+Une interface de métadonnées et un flux qui contient le magasin de symboles, retourne le correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure qui lira le débogage des symboles à partir du magasin de symboles donné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +47,7 @@ HRESULT GetReaderFromStream(
  [in] Pointeur vers le flux de données qui contient le magasin de symboles.  
   
  `pRetVal`  
- [out] Un pointeur qui est défini à le <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> interface.  
+ [out] Un pointeur qui est défini à le [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  

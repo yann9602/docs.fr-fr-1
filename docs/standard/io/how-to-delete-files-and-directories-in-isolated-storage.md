@@ -1,45 +1,52 @@
 ---
-title: "Comment&#160;: supprimer des fichiers et des r&#233;pertoires dans un stockage isol&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "stockage de données à l’aide du stockage isolé, suppression de fichiers et de répertoires"
-  - "répertoires (.NET Framework), stockage isolé"
-  - "fichiers (.NET Framework), stockage isolé"
-  - "stockage isolé, suppression de fichiers et de répertoires"
-  - "magasins de données, suppression de fichiers et de répertoires"
-  - "magasins, création de fichiers et de répertoires"
-  - "supprimer des fichiers dans un fichier de stockage isolé"
-  - "stockage de données à l’aide du stockage isolé, suppression de fichiers et de répertoires"
-  - "supprimer des répertoires dans un fichier de stockage isolé"
+title: "Comment : supprimer des fichiers et des répertoires dans un stockage isolé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- data storage using isolated storage, deleting files and directories
+- directories [.NET Framework], isolated storage
+- files [.NET Framework], isolated storage
+- isolated storage, deleting files and directories
+- data stores, deleting files and directories
+- stores, creating files and directories
+- deleting files within isolated stage file
+- storing data using isolated storage, deleting files and directories
+- deleting directories within isolated stage file
 ms.assetid: 8fcc0dea-435b-4d40-ba4d-ba056265c202
-caps.latest.revision: 12
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 971f27cd25cbe4be3ca3fad6283ab32d4f6db0ac
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: supprimer des fichiers et des r&#233;pertoires dans un stockage isol&#233;
-Vous pouvez supprimer des répertoires et des fichiers dans un fichier de stockage isolé.  Dans un magasin, le fichier et le répertoire du temps du système d'exploitation et sont spécifiés comme relatif à la racine du système de fichiers virtuels.  Ils ne respectent pas la casse sur les systèmes d'exploitation Windows.  
+# <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>Comment : supprimer des fichiers et des répertoires dans un stockage isolé
+Vous pouvez supprimer des répertoires et des fichiers dans un fichier de stockage isolé. Dans un magasin, les noms de répertoires et de fichiers dépendent du système d’exploitation et sont spécifiées par rapport à la racine du système de fichiers virtuel. Ils ne sont pas la casse sur les systèmes d’exploitation Windows.  
   
- La classe <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=fullName> propose deux méthodes d'instance pour supprimer des répertoires et des fichiers : <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> et <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>.  Une exception <xref:System.IO.IsolatedStorage.IsolatedStorageException> est levée si vous tentez de supprimer un fichier ou un répertoire qui n'existe pas.  Si vous incluez un caractère générique dans nom, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> lève une exception <xref:System.IO.IsolatedStorage.IsolatedStorageException>, ainsi que <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> lève une exception <xref:System.ArgumentException>.  
+ Le <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType> classe fournit deux méthodes pour supprimer des fichiers et répertoires : <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> et <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>. Un <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception est levée si vous essayez de supprimer un fichier ou répertoire n’existe pas. Si vous incluez un caractère générique dans le nom, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> lève une <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception, et <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> lève une <xref:System.ArgumentException> exception.  
   
- La méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> échoue si le répertoire contient des fichiers ou des sous\-répertoires.  Vous pouvez utiliser les méthodes <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> et <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> pour récupérer les fichiers existants et les répertoires.  Pour plus d'informations sur la recherche le système de fichiers virtuel d'un magasin, consultez [Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md).  
+ Le <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> méthode échoue si le répertoire contient des fichiers ou des sous-répertoires. Vous pouvez utiliser la <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> et <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> méthodes pour extraire les fichiers existants et les répertoires. Pour plus d’informations sur la recherche dans le système de fichiers virtuel d’un magasin, consultez [Comment : rechercher des fichiers existants et des répertoires dans un stockage isolé](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md).  
   
-## Exemple  
- L'exemple de code suivant crée, puis supprime plusieurs répertoires et fichiers.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant crée et supprime ensuite plusieurs fichiers et répertoires.  
   
  [!code-cpp[Conceptual.IsolatedStorage#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source4.cpp#4)]
  [!code-csharp[Conceptual.IsolatedStorage#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source4.cs#4)]
  [!code-vb[Conceptual.IsolatedStorage#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source4.vb#4)]  
   
-## Voir aussi  
- <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=fullName>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>  
  [Stockage isolé](../../../docs/standard/io/isolated-storage.md)

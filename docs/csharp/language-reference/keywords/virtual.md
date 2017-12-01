@@ -1,41 +1,22 @@
 ---
 title: "virtual (référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - virtual_CSharpKeyword
 - virtual
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- virtual keyword [C#]
+helpviewer_keywords: virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: dce3333646bca6f558e3760849b6cffdb34a6c0b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 24ca77a0a645a17c0223437e73539bc04ba80f23
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="virtual-c-reference"></a>virtual (référence C#)
 Le mot clé `virtual` sert à modifier une méthode, une propriété, un indexeur ou une déclaration event et leur permet d’être substitués dans une classe dérivée. Par exemple, cette méthode peut être substituée par toute classe qui en hérite :  
@@ -54,9 +35,9 @@ public virtual double Area()
   
  Par défaut, les méthodes ne sont pas virtuelles. Vous ne pouvez pas substituer une méthode non virtuelle.  
   
- Vous ne pouvez pas utiliser le modificateur `virtual` avec les modificateurs `static`, `abstract, private` ou `override`. L’exemple suivant illustre une propriété virtuelle :  
+ Vous ne pouvez pas utiliser le `virtual` modificateur avec la `static`, `abstract`, `private`, ou `override` modificateurs. L’exemple suivant illustre une propriété virtuelle :  
   
- [!code-cs[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_1.cs)]  
+ [!code-csharp[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_1.cs)]  
   
  Les propriétés virtuelles se comportent comme les méthodes abstraites, à l’exception des différences dans la syntaxe de déclaration et d’appel.  
   
@@ -75,18 +56,17 @@ public Cylinder(double r, double h): base(r, h) {}
   
  Le programme suivant calcule et affiche la zone appropriée pour chaque figure en appelant l’implémentation appropriée de la méthode `Area()`, selon l’objet associé à la méthode.  
   
- [!code-cs[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_2.cs)]  
+ [!code-csharp[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_2.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)   
- [abstract](../../../csharp/language-reference/keywords/abstract.md)   
- [override](../../../csharp/language-reference/keywords/override.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)  
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)  
+ [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
+ [abstract](../../../csharp/language-reference/keywords/abstract.md)  
+ [override](../../../csharp/language-reference/keywords/override.md)  
  [new](../../../csharp/language-reference/keywords/new.md)
-

@@ -12,11 +12,11 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 23351ad32e608dc27b973691ec9a00fc2f94b3fe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 5ea3106f87dae64204ea0c02a1388ed8893c858b
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-the-invokepowershell-activity"></a>Utilisation de l'activité InvokePowerShell
 L'exemple InvokePowerShell montre comment appeler des commandes Windows PowerShell à l'aide de l'activité `InvokePowerShell`.  
@@ -215,6 +215,4 @@ new ForEach<PSObject>
 >   
 >  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`  
-  
-## <a name="see-also"></a>Voir aussi
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`

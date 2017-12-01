@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
+ms.openlocfilehash: 709ef2ba2202e69ba35834789ad6e743a0f6b719
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0cb5725a70d94173c8596f818dcaa6eb2de13bcc
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="documenting-your-code-with-xml-comments"></a>Documentation de votre code avec des commentaires XML
 
 Les commentaires de documentation XML sont un genre particulier de commentaire, ajouté au-dessus de la définition d’un type ou d’un membre défini par l’utilisateur. Ils sont spéciaux, car ils peuvent être traités par le compilateur pour générer un fichier de documentation XML au moment de la compilation.
@@ -27,10 +25,10 @@ Les commentaires de documentation XML, comme tous les autres commentaires, sont 
 
 Vous pouvez générer le fichier XML au moment de la compilation en procédant comme suit :
 
-- Si vous développez une application avec .NET Core à partir de la ligne de commande, vous pouvez ajouter un [élément DocumentationFile](http://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties) à la section `<PropertyGroup>` de votre fichier projet .csproj. L’exemple suivant génère un fichier XML dans le répertoire du projet avec le même nom de fichier racine que le projet :
+- Si vous développez une application avec .NET Core à partir de la ligne de commande, vous pouvez ajouter un [élément DocumentationFile](http://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties) à la section `<PropertyGroup>` de votre fichier projet .csproj. L’exemple suivant génère un fichier XML dans le répertoire du projet avec le même nom de fichier racine que l’assembly :
 
    ```xml
-   <DocumentationFile>$(MSBuildProjectName).xml</DocumentationFile>
+   <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
    ```
 
    Vous pouvez également spécifier le chemin absolu ou relatif exact et le nom du fichier XML. L’exemple suivant génère le fichier XML dans le même répertoire que la version Debug d’une application :
@@ -45,7 +43,7 @@ Vous pouvez générer le fichier XML au moment de la compilation en procédant c
 
 Les commentaires de documentation XML utilisent des barres obliques triples (`///`) et le corps d’un commentaire au format XML. Exemple :
 
-[!code-csharp[Commentaires sur la documentation XML](../../samples/snippets/csharp/concepts/codedoc/xml-comment.cs)]
+[!code-csharp[XML Documentation Comment](../../samples/snippets/csharp/concepts/codedoc/xml-comment.cs)]
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 
@@ -53,7 +51,7 @@ Examinons en détail la documentation d’une bibliothèque mathématique très 
 
 Voici le code de la bibliothèque mathématique simple :
 
-[!code-csharp[Exemple de bibliothèque](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
+[!code-csharp[Sample Library](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
 
 L’exemple de bibliothèque prend en charge quatre opérations arithmétiques principales `add`, `subtract`, `multiply` et `divide` sur des types de données `int` et `double`.
 
@@ -65,7 +63,7 @@ Comme mentionné précédemment, les balises de documentation XML peuvent être 
 La balise `<summary>` ajoute des informations succinctes relatives à un type ou un membre.
 Je vais expliquer son utilisation en l’ajoutant à la définition de la classe `Math` et à la première méthode `Add`. N’hésitez pas à l’appliquer au reste de votre code.
 
-[!code-csharp[Balise summary](../../samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
+[!code-csharp[Summary Tag](../../samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
 
 La balise `<summary>` est très importante, et nous vous recommandons de l’inclure, car son contenu est la principale source d’informations sur les types ou les membres dans IntelliSense ou un document de référence des API.
 
@@ -73,28 +71,28 @@ La balise `<summary>` est très importante, et nous vous recommandons de l’inc
 
 La balise `<remarks>` complète les informations relatives aux types ou aux membres fournies par la balise `<summary>`. Dans cet exemple, vous allez simplement l’ajouter à la classe.
 
-[!code-csharp[Balise remarks](../../samples/snippets/csharp/concepts/codedoc/remarks-tag.cs)]
+[!code-csharp[Remarks Tag](../../samples/snippets/csharp/concepts/codedoc/remarks-tag.cs)]
 
 ### <a name="ltreturnsgt"></a>&lt;returns&gt;
 
 La balise `<returns>` décrit la valeur de retour d’une déclaration de méthode.
 Comme auparavant, l’exemple suivant illustre la balise `<returns>` sur la première méthode `Add`. Vous pouvez effectuer la même opération sur d’autres méthodes.
 
-[!code-csharp[Balise returns](../../samples/snippets/csharp/concepts/codedoc/returns-tag.cs)]
+[!code-csharp[Returns Tag](../../samples/snippets/csharp/concepts/codedoc/returns-tag.cs)]
 
 ### <a name="ltvaluegt"></a>&lt;value&gt;
 
 La balise `<value>` est similaire à la balise `<returns>`, excepté que vous l’utilisez pour les propriétés.
 En supposant que votre bibliothèque `Math` a une propriété statique appelée `PI`, voici comment utiliser cette balise :
 
-[!code-csharp[Balise value](../../samples/snippets/csharp/concepts/codedoc/value-tag.cs)]
+[!code-csharp[Value Tag](../../samples/snippets/csharp/concepts/codedoc/value-tag.cs)]
 
 ### <a name="ltexamplegt"></a>&lt;example&gt;
 
 La balise `<example>` permet d’inclure un exemple de votre documentation XML.
 Cela implique l’utilisation de la balise enfant `<code>`.
 
-[!code-csharp[Balise example](../../samples/snippets/csharp/concepts/codedoc/example-tag.cs)]
+[!code-csharp[Example Tag](../../samples/snippets/csharp/concepts/codedoc/example-tag.cs)]
 
 La balise `code` conserve les sauts de ligne et la mise en retrait pour les exemples plus longs.
 
@@ -103,7 +101,7 @@ La balise `code` conserve les sauts de ligne et la mise en retrait pour les exem
 La balise `<para>` permet de mettre en forme le contenu de sa balise parente. `<para>` est généralement utilisée dans une balise, telle que `<remarks>` ou `<returns>`, pour diviser du texte en paragraphes.
 Vous pouvez mettre en forme le contenu de la balise `<remarks>` pour la définition de votre classe.
 
-[!code-csharp[Balise para](../../samples/snippets/csharp/concepts/codedoc/para-tag.cs)]
+[!code-csharp[Para Tag](../../samples/snippets/csharp/concepts/codedoc/para-tag.cs)]
 
 ### <a name="ltcgt"></a>&lt;c&gt;
 
@@ -111,14 +109,14 @@ Toujours concernant la mise en forme, vous utilisez la balise `<c>` pour le marq
 Elle est semblable à la balise `<code>`, mais inline. Elle est utile quand vous voulez afficher un exemple de code rapide comme partie du contenu d’une balise.
 Mettons à jour la documentation de la classe `Math`.
 
-[!code-csharp[Balise c](../../samples/snippets/csharp/concepts/codedoc/c-tag.cs)]
+[!code-csharp[C Tag](../../samples/snippets/csharp/concepts/codedoc/c-tag.cs)]
 
 ### <a name="ltexceptiongt"></a>&lt;exception&gt;
 
 En utilisant la balise `<exception>`, vous informez vos développeurs qu’une méthode peut lever des exceptions spécifiques.
 Si vous examinez votre bibliothèque `Math`, vous pouvez voir que les deux méthodes `Add` lèvent une exception si une certaine condition est remplie. Il est toutefois moins évident de voir que la méthode `Divide` utilisée avec un entier lève également une exception si le paramètre `b` est égal à zéro. Ajoutez maintenant une documentation d’exception à cette méthode.
 
-[!code-csharp[Balise exception](../../samples/snippets/csharp/concepts/codedoc/exception-tag.cs)]
+[!code-csharp[Exception Tag](../../samples/snippets/csharp/concepts/codedoc/exception-tag.cs)]
 
 L’attribut `cref` référence une exception qui est disponible à partir de l’environnement de compilation actuel.
 Il peut s’agir de tout type défini dans le projet ou dans un assembly référencé. Le compilateur émet un avertissement si sa valeur ne peut pas être résolue.
@@ -127,7 +125,7 @@ Il peut s’agir de tout type défini dans le projet ou dans un assembly référ
 
 La balise `<see>` vous permet de créer un lien interactif vers une page de documentation pour un autre élément de code. Dans notre prochain exemple, nous allons créer un lien interactif entre les deux méthodes `Add`.
 
-[!code-csharp[Balise see](../../samples/snippets/csharp/concepts/codedoc/see-tag.cs)]
+[!code-csharp[See Tag](../../samples/snippets/csharp/concepts/codedoc/see-tag.cs)]
 
 `cref` est un attribut **obligatoire** qui représente une référence à un type ou à ses membres et qui est disponible à partir de l’environnement de compilation actuel. Il peut s’agir de tout type défini dans le projet ou dans un assembly référencé.
 
@@ -135,7 +133,7 @@ La balise `<see>` vous permet de créer un lien interactif vers une page de docu
 
 Vous pouvez utiliser la balise `<seealso>` de la même façon que la balise `<see>`. La seule différence est que son contenu est généralement placé dans une section "Voir aussi". Ici, nous allons ajouter une balise `seealso` sous la méthode `Add` utilisée avec un entier pour référencer d’autres méthodes de la classe qui acceptent des paramètres entiers :
 
-[!code-csharp[Balise seealso](../../samples/snippets/csharp/concepts/codedoc/seealso-tag.cs)]
+[!code-csharp[Seealso Tag](../../samples/snippets/csharp/concepts/codedoc/seealso-tag.cs)]
 
 L’attribut `cref` représente une référence à un type ou à ses membres et est disponible à partir de l’environnement de compilation actuel.
 Il peut s’agir de tout type défini dans le projet ou dans un assembly référencé.
@@ -144,34 +142,34 @@ Il peut s’agir de tout type défini dans le projet ou dans un assembly référ
 
 La balise `<param>` permet de décrire les paramètres d’une méthode. Voici un exemple sur la méthode `Add` double : le paramètre décrit par la balise est spécifié dans l’attribut `name` **obligatoire**.
 
-[!code-csharp[Balise param](../../samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
+[!code-csharp[Param Tag](../../samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
 
 ### <a name="lttypeparamgt"></a>&lt;typeparam&gt;
 
 Vous utilisez la balise `<typeparam>` exactement comme la balise `<param>`, mais pour permettre aux déclarations de types ou de méthodes génériques de décrire un paramètre générique.
 Ajoutez une méthode générique rapide à votre classe `Math` pour vérifier si une quantité est supérieure à une autre.
 
-[!code-csharp[Balise typeparam](../../samples/snippets/csharp/concepts/codedoc/typeparam-tag.cs)]
+[!code-csharp[Typeparam Tag](../../samples/snippets/csharp/concepts/codedoc/typeparam-tag.cs)]
 
 ### <a name="ltparamrefgt"></a>&lt;paramref&gt;
 
 Alors que vous décrivez ce que fait une méthode dans ce qui pourrait être une balise `<summary>`, vous souhaiterez peut-être créer une référence à un paramètre. La balise `<paramref>` est idéale pour cette tâche précise. Mettons à jour le récapitulatif de notre méthode `Add` double. Comme pour la balise `<param>`, le nom du paramètre est spécifié dans l’attribut `name` **obligatoire**.
 
-[!code-csharp[Balise paramref](../../samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
+[!code-csharp[Paramref Tag](../../samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
 ### <a name="lttypeparamrefgt"></a>&lt;typeparamref&gt;
 
 Vous utilisez la balise `<typeparamref>` exactement comme la balise `<paramref>`, mais pour permettre aux déclarations de types ou de méthodes génériques de décrire un paramètre générique.
 Vous pouvez utiliser la même méthode générique que celle créée précédemment.
 
-[!code-csharp[Balise typeparamref](../../samples/snippets/csharp/concepts/codedoc/typeparamref-tag.cs)]
+[!code-csharp[Typeparamref Tag](../../samples/snippets/csharp/concepts/codedoc/typeparamref-tag.cs)]
 
 ### <a name="ltlistgt"></a>&lt;list&gt;
 
 La balise `<list>` vous permet de mettre en forme des informations de documentation sous la forme d’une liste triée, d’une liste non triée ou d’un tableau.
 Créez une liste non triée de toutes les opérations mathématiques prises en charge par votre bibliothèque `Math`.
 
-[!code-csharp[Balise list](../../samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
+[!code-csharp[List Tag](../../samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
 Vous pouvez créer une liste triée ou un tableau en remplaçant l’attribut `type` par `number` ou `table`, respectivement.
 
@@ -179,7 +177,7 @@ Vous pouvez créer une liste triée ou un tableau en remplaçant l’attribut `t
 
 Si vous avez suivi ce didacticiel et appliqué les balises à votre code au besoin, votre code doit maintenant ressembler à ce qui suit :
 
-[!code-csharp[Bibliothèque avec balises](../../samples/snippets/csharp/concepts/codedoc/tagged-library.cs)]
+[!code-csharp[Tagged Library](../../samples/snippets/csharp/concepts/codedoc/tagged-library.cs)]
 
 À partir de votre code, vous pouvez générer un site web de documentation détaillée complet avec des références croisées interactives. Vous êtes maintenant confronté à un autre problème : votre code est devenu difficile à lire.
 Avec toutes ces informations à parcourir, cela va être un cauchemar pour les développeurs qui veulent contribuer à ce code. Heureusement, il existe une balise XML qui peut vous aider à gérer ce problème :
@@ -190,11 +188,11 @@ La balise `<include>` vous permet de faire référence à des commentaires se tr
 
 Vous allez maintenant déplacer toutes vos balises XML dans un fichier XML distinct nommé `docs.xml`. Vous pouvez nommer ce fichier comme vous le souhaitez.
 
-[!code-xml[Exemple de code XML](../../samples/snippets/csharp/concepts/codedoc/include.xml)]
+[!code-xml[Sample XML](../../samples/snippets/csharp/concepts/codedoc/include.xml)]
 
 Dans le code XML ci-dessus, les commentaires de documentation de chaque membre apparaissent directement dans une balise nommée en fonction de ce qu’il fait. Vous pouvez choisir votre propre stratégie. Maintenant que vous avez vos commentaires XML dans un fichier distinct, voyons comment votre code peut être rendu plus lisible à l’aide de la balise `<include>` :
 
-[!code-csharp[Balise include](../../samples/snippets/csharp/concepts/codedoc/include-tag.cs)]
+[!code-csharp[Include Tag](../../samples/snippets/csharp/concepts/codedoc/include-tag.cs)]
 
 Et voilà : notre code est à nouveau lisible, et aucune information de documentation n’a été perdue. 
 
@@ -228,4 +226,3 @@ La documentation du code est recommandée pour de nombreuses raisons. Voici quel
 [Commentaires de documentation XML (Guide de programmation C#)](programming-guide/xmldoc/xml-documentation-comments.md)
 
 [Balises recommandées pour les commentaires de documentation (Guide de programmation C#)](programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
-

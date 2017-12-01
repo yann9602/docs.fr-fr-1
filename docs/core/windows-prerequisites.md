@@ -6,12 +6,11 @@ ms.author: johalex
 ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
+ms.openlocfilehash: 16a72edde39e4857dbdfb400f195deb9975f993c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: 84f1eaf5fbfcdf8d1dd1b90545f9236e2daedd15
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Configuration requise pour .NET Core sur Windows
 
@@ -39,9 +38,9 @@ Consultez [.NET Core 1.x - Versions des systèmes d’exploitation prises en cha
 
 ## <a name="net-core-dependencies"></a>Dépendances .NET Core
 
-.NET Core nécessite le package redistribuable Visual C++ lors de l’exécution sur des versions de Windows antérieures à Windows 10 et Windows Server 2016. Cette dépendance est installée automatiquement par le programme d’installation de .NET Core.
+.NET core 1.1 et antérieur requiert le package redistribuable Visual C++ lors de l’exécution sur les versions de Windows antérieures à Windows 10 et Windows Server 2016. Cette dépendance est installée automatiquement par le programme d’installation de .NET Core.
 
-Vous devez installer [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/en-us/download/details.aspx?id=52685) manuellement quand :
+Vous devez installer [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/download/details.aspx?id=52685) manuellement quand :
 
    * vous installez .NET Core avec le [script du programme d’installation](./tools/dotnet-install-script.md) ;
    * vous déployez une application .NET Core autonome.
@@ -95,4 +94,3 @@ Pur développer des applications .NET Core 1.x dans Visual Studio, [télécharge
      > * Dans la boîte de dialogue **À propos de Microsoft Visual Studio**, vérifiez le numéro de version.
 >     * Pour les applications .NET Core 2.x, Visual Studio 2017 version 15.3 (26730.01) ou une version ultérieure.
 >     * Pour les applications .NET Core 1.x, Visual Studio 2017 version 15.0 (26228.04) ou une version ultérieure.
-

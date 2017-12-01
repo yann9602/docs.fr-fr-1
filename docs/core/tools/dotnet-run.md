@@ -3,22 +3,21 @@ title: Commande dotnet run - Interface CLI .NET Core
 description: "La commande dotnet run fournit une option pratique pour exécuter votre application à partir du code source."
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
+ms.date: 09/24/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: 7670934199d7d4b8a7c5e598142366ef1eb3ef1c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: c98a69ced3c309da0ff035efb5c76e7034d54e79
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-run"></a>dotnet run
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet run` - Exécute le code source sans commandes explicites de compilation ou de démarrage.
 
@@ -74,6 +73,10 @@ Définit la configuration de build. La valeur par défaut est `Debug`.
 
 Crée et exécute l’application à l’aide du [framework](../../standard/frameworks.md) spécifié. Le framework doit être spécifié dans le fichier projet.
 
+`--force`
+
+Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Cela équivaut à supprimer *project.assets.json*.
+
 `-h|--help`
 
 Affiche une aide brève pour la commande.
@@ -85,6 +88,10 @@ Nom du profil de lancement éventuel à utiliser au lancement de l’application
 `--no-build`
 
 Ne génère pas le projet avant l’exécution.
+
+`--no-dependencies`
+
+En cas de restauration d’un projet avec des références entre projets (P2P), restaure le projet racine et non les références.
 
 `--no-launch-profile`
 
@@ -142,4 +149,3 @@ Exécutez le projet spécifié :
 Exécuter le projet situé dans le répertoire actif (l’argument `--help` de cet exemple est passé à l’application, puisque l’argument `--` est utilisé) :
 
 `dotnet run --configuration Release -- --help`
-

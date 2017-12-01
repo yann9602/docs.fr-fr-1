@@ -1,42 +1,23 @@
 ---
 title: "-bugreport (Options du compilateur C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /bugreport
-dev_langs:
-- CSharp
+f1_keywords: /bugreport
 helpviewer_keywords:
 - /bugreport compiler option [C#]
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d1341383d48a28966a0873f3124cdc3567ec3f76
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ccfea1aa7e51ad013418f61bc4478034c9a5d830
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="bugreport-c-compiler-options"></a>/bugreport (Options du compilateur C#)
 Spécifie que les informations de débogage doivent être placées dans un fichier pour une future analyse.  
@@ -77,7 +58,6 @@ Spécifie que les informations de débogage doivent être placées dans un fichi
  Notez que le contenu du fichier généré expose le code source, ce qui pourrait entraîner une divulgation d’informations non voulue.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [-errorreport (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)   
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [/errorreport (Options du compilateur c#)](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)  
  [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
-

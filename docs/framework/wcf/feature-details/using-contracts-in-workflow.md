@@ -13,11 +13,11 @@ caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 1c84483b2ca18d63f20e64a62bb757e244db9b24
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: 1493728809721c125b371e0d2ade2050b4909e5d
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-contracts-in-workflow"></a>Utilisation de contrats dans le workflow
 Lorsque vous implémentez un service, vous définissez plusieurs contrats qui décrivent le service et les données qu'il envoie et reçoit. Les données sont représentées par des contrats de données et des contrats de message ; à la fois les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et de workflow utilisent des définitions de contrat de données et de contrat de messages dans le cadre des descriptions de service. Le service lui-même expose des métadonnées (au format WSDL) pour décrire les opérations du service. Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les contrats de service et les contrats d'opération définissent le service et les opérations qu'il prend en charge. Toutefois, dans un service de workflow, ces contrats font partie du processus d'entreprise lui-même ; ils sont exposés dans les métadonnées par un processus nommé inférence de contrat.  
@@ -29,17 +29,13 @@ Lorsque vous implémentez un service, vous définissez plusieurs contrats qui d�
   
 -   <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>  
   
--   <!--zz <xref:System.ServiceModel.Activities.Receive.OperationContractName%2A>  --> `System.ServiceModel.Activities.Receive.OperationContractName`
+-   <xref:System.ServiceModel.Activities.Receive.OperationName%2A>
   
--   <xref:System.ServiceModel.Activities.Receive.Action%2A>  
-  
--   <!--zz <xref:System.ServiceModel.Activities.Receive.ValueType%2A> --> `System.ServiceModel.Activities.Receive.ValueType`
-  
+-   <xref:System.ServiceModel.Activities.Receive.Action%2A>   
+ 
  Activité <xref:System.ServiceModel.Activities.SendReply>  
   
 -   <xref:System.ServiceModel.Activities.SendReply.Action%2A>  
-  
--   <!--zz <xref:System.ServiceModel.Activities.SendReply.ValueType%2A>-->  `System.ServiceModel.Activities.SendReply.ValueType`
   
  Activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>  
   

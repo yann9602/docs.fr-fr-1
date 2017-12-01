@@ -1,40 +1,45 @@
 ---
-title: "PLINQ Data Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PLINQ queries, sample data"
+title: "Données PLINQ, exemple"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: f0e94fec1d1390c68808c06a8ff23f52556c6f74
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# PLINQ Data Sample
-Cet exemple contient des exemples de données au format .csv ainsi que des méthodes qui les transforment en collections en mémoire de Clients \(Customers\), Produits \(Products\), Commandes \(Orders\) et Détails commande \(Order Details\).  Pour expérimenter davantage avec PLINQ, vous pouvez coller des exemples de code d'autres rubriques dans le code de cette rubrique et les appeler depuis la méthode `Main`.  Vous pouvez également utiliser ces données avec vos propres requêtes PLINQ.  
+# <a name="plinq-data-sample"></a>Données PLINQ, exemple
+Cet exemple contient des exemples de données au format .csv, ainsi que des méthodes qui les transforment en collections en mémoire de clients, les produits, les commandes et les détails de la commande. Pour expérimenter davantage avec PLINQ, vous pouvez coller les exemples de code d’autres rubriques dans le code dans cette rubrique et l’appeler à partir de la `Main` (méthode). Vous pouvez également utiliser ces données avec vos propres requêtes PLINQ.  
   
- Les données représentent un sous\-ensemble de la base de données Northwind.  Cinquante \(50\) enregistrements client sont inclus, mais pas tous les champs.  Il comprend un sous\-ensemble de lignes des Commandes \(Orders\) et les données des Détails commande \(Order\_Detail\) correspondantes pour chaque Client \(Customer\).  Tous les Produits sont inclus.  
+ Les données représentent un sous-ensemble de la base de données Northwind. Les enregistrements de clients cinquante (50) sont inclus, mais pas tous les champs. Un sous-ensemble de lignes dans les commandes et les données Order_Detail correspondantes pour chaque client est inclus. Tous les produits sont inclus.  
   
 > [!NOTE]
->  Le groupe de données n'est pas assez grand pour démontrer que PLINQ est plus rapide que LINQ to Objects pour les requêtes qui contiennent uniquement des clauses de base `where` et `select`.  Pour observer cette augmentation de vitesse sur de petits groupes de données tels que celui\-ci, utilisez des requêtes qui contiennent des opérations sollicitant fortement les ressources informatiques sur chaque élément du groupe de données.  
+>  Le jeu de données n’est pas assez grand pour démontrer que PLINQ est plus rapide que LINQ to Objects pour les requêtes qui contiennent simplement base `where` et `select` clauses. Pour observer augmente la vitesse de petits jeux de données tels que cela, utilisez les requêtes qui contiennent des opérations sollicitant sur chaque élément du jeu de données.  
   
-### Pour configurer cet exemple  
+### <a name="to-set-up-this-sample"></a>Pour installer cet exemple  
   
-1.  Créez un projet d'application console Visual Basic ou Visual C\#.  
+1.  Créez un projet d’application console Visual Basic ou Visual c#.  
   
-2.  Remplacez le contenu du Module1.vb ou Program.cs à l'aide du code qui suit ces étapes.  
+2.  Remplacez le contenu du Module1.vb ou Program.cs en utilisant le code qui suit ces étapes.  
   
-3.  Dans le menu **Projet**, cliquez sur **Ajouter un nouvel élément**.  Sélectionnez **Fichier texte** puis cliquez sur **OK**.  Copiez les données de cette rubrique puis collez\-les dans le nouveau fichier texte.  Dans le menu **Fichier**, cliquez sur **Enregistrer**, nommez le fichier Plinqdata.csv, puis enregistrez\-le dans le dossier qui contient vos fichiers de code source.  
+3.  Dans le menu **Projet** , cliquez sur **Ajouter un nouvel élément**. Sélectionnez **fichier texte** puis cliquez sur **OK**. Copier les données dans cette rubrique et collez-le dans le nouveau fichier texte. Sur le **fichier** menu, cliquez sur **enregistrer**, nommez le fichier Plinqdata.csv, puis enregistrez-le dans le dossier qui contient vos fichiers de code source.  
   
-4.  Appuyez sur F5 pour vérifier que le projet est créé et exécuté correctement.  La sortie suivante doit s'afficher dans la fenêtre de console.  
+4.  Appuyez sur F5 pour vérifier que le projet est généré et s’exécute correctement. La sortie suivante doit être affichée dans la fenêtre de console.  
   
     ```  
     Customer count: 50  
@@ -47,7 +52,7 @@ Cet exemple contient des exemples de données au format .csv ainsi que des méth
  [!code-csharp[PLINQ#50](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#50)]
  [!code-vb[PLINQ#50](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#50)]  
   
-## Données  
+## <a name="data"></a>Données  
   
 ```  
 CUSTOMERS  
@@ -861,8 +866,7 @@ PRODUCTS
 76,Lakkalikööri,18.0000  
 77,Original Frankfurter grüne Soße,13.0000  
 END PRODUCTS  
-  
 ```  
   
-## Voir aussi  
- [Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a>Voir aussi  
+ [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

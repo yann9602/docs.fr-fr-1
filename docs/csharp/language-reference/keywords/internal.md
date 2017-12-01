@@ -1,44 +1,29 @@
 ---
 title: "internal (référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - internal_CSharpKeyword
 - internal
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- internal keyword [C#]
+helpviewer_keywords: internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: a3b115022ed2b38dfcfbbfad3c5fc00e0203b255
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5674a78e2c317357c31d9e2661a25ce86cbf4f6a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="internal-c-reference"></a>internal (référence C#)
-Le mot clé `internal` est un [modificateur d’accès](../../../csharp/language-reference/keywords/access-modifiers.md) pour les types et les membres de type. Les types et les membres internes (internal) sont accessibles uniquement dans les fichiers d’un même assembly, comme dans l’exemple suivant :  
+Le mot clé `internal` est un [modificateur d’accès](../../../csharp/language-reference/keywords/access-modifiers.md) pour les types et les membres de type. 
+  
+ > Cette page traite `internal` accès. Le `internal` le mot clé est également dans le cadre de la [ `protected internal` ](./protected-internal.md) modificateur d’accès.
+  
+Les types et les membres internes (internal) sont accessibles uniquement dans les fichiers d’un même assembly, comme dans l’exemple suivant :  
   
 ```  
 public class BaseClass   
@@ -47,9 +32,7 @@ public class BaseClass
     internal static int x = 0;  
 }  
 ```  
-  
- Les types et les membres ayant le modificateur d’accès `protected internal` sont accessibles à partir de l’assembly actuel ou des types dérivés de la classe conteneur.  
-  
+
  Pour obtenir une comparaison de `internal` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](../../../csharp/language-reference/keywords/accessibility-levels.md) et [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
  Pour plus d’informations, consultez [Assemblys et le Global Assembly Cache](../../../csharp/programming-guide/concepts/assemblies-gac/index.md).  
@@ -111,13 +94,12 @@ public class TestAccess
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)   
- [Niveaux d’accessibilité](../../../csharp/language-reference/keywords/accessibility-levels.md)   
- [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
- [public](../../../csharp/language-reference/keywords/public.md)   
- [private](../../../csharp/language-reference/keywords/private.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)  
+ [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)  
+ [Niveaux d’accessibilité](../../../csharp/language-reference/keywords/accessibility-levels.md)  
+ [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)  
+ [public](../../../csharp/language-reference/keywords/public.md)  
+ [private](../../../csharp/language-reference/keywords/private.md)  
  [protected](../../../csharp/language-reference/keywords/protected.md)
-

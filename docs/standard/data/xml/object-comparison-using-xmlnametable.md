@@ -1,28 +1,29 @@
 ---
-title: "Comparaison d&#39;objets &#224; l&#39;aide de XmlNameTable | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Comparaison d'objets à l'aide de XmlNameTable"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8d94e041-d340-4ddf-9a2c-d7319e3f4f86
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 0cd1a3bad69499b4804299adecabad3a43b5eab1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comparaison d&#39;objets &#224; l&#39;aide de XmlNameTable
-Lors de la création d'un objet **XmlDocument**, une table de noms est spécialement créée à l'intention de ce document.  Quand les données XML sont chargées dans le document ou quand de nouveaux éléments ou attributs sont créés, les noms d'attributs et d'éléments sont placés dans **XmlNameTable**.  Vous pouvez également créer un **XmlDocument** en utilisant un **NameTable** existant issu d'un autre document.  Lorsque des **XmlDocument** sont créés avec le constructeur qui prend un paramètre **XmlNameTable**, le document a accès aux préfixes, aux espaces de noms et aux noms de nœud déjà stockés dans **XmlNameTable**.  Quelle que soit la manière dont les noms sont chargés dans la table de noms, une fois les noms stockés dans la table, ils peuvent être comparés rapidement par la comparaison d'objets et non au moyen de la comparaison de chaînes.  Des chaînes peuvent également être ajoutées à la table de noms à l'aide de la méthode [NameTable.Add](frlrfSystemXmlNameTableClassAddTopic).  L'exemple de code suivant illustre la création d'une table de noms et l'ajout de la chaîne **MyString** à cette table.  Ensuite, un **XmlDocument** est créé au moyen de cette table, et les noms d'éléments et d'attributs de **Myfile.xml** sont ajoutés à la table de noms existante.  
+# <a name="object-comparison-using-xmlnametable"></a>Comparaison d'objets à l'aide de XmlNameTable
+**XmlDocument**, lors de la création, une table de noms créée spécifiquement pour ce document. Lorsque XML est chargé dans le document ou de nouveaux éléments ou attributs sont créés, les noms d’élément et d’attribut sont placés dans le **XmlNameTable**. Vous pouvez également créer un **XmlDocument** utilisant un existant **NameTable** à partir d’un autre document. Lorsque **XmlDocument** sont créés avec le constructeur qui prend un **XmlNameTable** paramètre, le document a accès aux noms de nœud, les espaces de noms et les préfixes déjà stockés dans le  **XmlNameTable**. Quelle que soit la manière dont les noms sont chargés dans la table de noms, une fois les noms stockés dans la table, ils peuvent être comparés rapidement par la comparaison d'objets et non au moyen de la comparaison de chaînes. Chaînes peuvent également être ajoutés à la table de nom à l’aide du <xref:System.Xml.NameTable.Add%2A>. L’exemple de code suivant montre une table de noms en cours de création et de la chaîne **MyString** ajoutées à la table. Après cela, une **XmlDocument** est créé à l’aide de cette table et les noms d’élément et d’attribut dans **Myfile.xml** sont ajoutés à la table de noms existant.  
   
 ```vb  
 Dim nt As New NameTable()  
@@ -57,7 +58,7 @@ if (((object)node1.Name) == ((object)node2.Name))
 { ...  
 ```  
   
- Le scénario ci\-avant, qui montre une table de noms passée entre deux documents, est courant lorsque le même type de document est traité de façon répétée \(tel que des documents de commande sur un site de commerce électronique\), ces documents étant conformes à un schéma en langage XSD \(XML Schema Definition\) ou une définition de type de document \(DTD\) et contenant une répétition des mêmes chaînes.  L'utilisation de la même table de noms permet d'améliorer les performances puisque le même nom d'élément se retrouve dans plusieurs documents.  
+ Le scénario ci-avant, qui montre une table de noms passée entre deux documents, est courant lorsque le même type de document est traité de façon répétée (tel que des documents de commande sur un site de commerce électronique), ces documents étant conformes à un schéma en langage XSD (XML Schema Definition) ou une définition de type de document (DTD) et contenant une répétition des mêmes chaînes. L'utilisation de la même table de noms permet d'améliorer les performances puisque le même nom d'élément se retrouve dans plusieurs documents.  
   
-## Voir aussi  
- [DOM \(Document Object Model\) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Voir aussi  
+ [Document Object Model (DOM) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

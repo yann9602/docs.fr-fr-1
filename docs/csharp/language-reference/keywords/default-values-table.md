@@ -1,13 +1,10 @@
 ---
 title: "Tableau des valeurs par défaut (référence C#)"
 descripton: Learn what are the default values of value types returned by the default constructors.
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - constructors [C#], return values
 - keywords [C#], new
@@ -18,30 +15,14 @@ helpviewer_keywords:
 - constructors [C#], default constructor
 - types [C#], default constructor return values
 ms.assetid: 4af2c1df-9e3a-48c1-83ac-b192986fc5bc
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: d034c1daf495c50e299fec4c5bf399652dad08ce
+ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
 ms.translationtype: HT
-ms.sourcegitcommit: f8cf12317f1f0163028db003ff31604480da5d1c
-ms.openlocfilehash: 975d416259778e0741347829d8a9c79aaa6cfc8c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/12/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/25/2017
 ---
 # <a name="default-values-table-c-reference"></a>Tableau des valeurs par défaut (référence C#)
 Le tableau suivant indique les valeurs par défaut de types valeur qui sont retournées par les constructeurs par défaut. Les constructeurs par défaut sont appelés au moyen de l’opérateur `new`, comme suit :
@@ -63,7 +44,7 @@ Pour rappel, il n’est pas possible d’utiliser en C# des variables qui n’on
 |[bool](../../../csharp/language-reference/keywords/bool.md)|`false`|
 |[byte](../../../csharp/language-reference/keywords/byte.md)|0|
 |[char](../../../csharp/language-reference/keywords/char.md)|'\0'|
-|[decimal](../../../csharp/language-reference/keywords/decimal.md)|0.0M|
+|[decimal](../../../csharp/language-reference/keywords/decimal.md)|M 0|
 |[double](../../../csharp/language-reference/keywords/double.md)|0.0D|
 |[enum](../../../csharp/language-reference/keywords/enum.md)|Valeur produite par l’expression (E)0, où E est l’identificateur de l’enum.|
 |[float](../../../csharp/language-reference/keywords/float.md)|0.0F|
@@ -77,10 +58,9 @@ Pour rappel, il n’est pas possible d’utiliser en C# des variables qui n’on
 |[ushort](../../../csharp/language-reference/keywords/ushort.md)|0|
 
 ## <a name="see-also"></a>Voir aussi
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Tableau des types valeur](../../../csharp/language-reference/keywords/value-types-table.md)   
- [Types valeur](../../../csharp/language-reference/keywords/value-types.md)   
- [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Tableau des types valeur](../../../csharp/language-reference/keywords/value-types-table.md)  
+ [Types valeur](../../../csharp/language-reference/keywords/value-types.md)  
+ [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)  
  [Tableaux de référence des types](../../../csharp/language-reference/keywords/reference-tables-for-types.md)
-

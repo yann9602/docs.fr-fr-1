@@ -1,14 +1,10 @@
 ---
 title: -linkresource (Options du compilateur C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /linkresource
-dev_langs:
-- CSharp
+f1_keywords: /linkresource
 helpviewer_keywords:
 - /linkresource compiler option [C#]
 - linkres compiler option [C#]
@@ -17,29 +13,14 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d478c42141288cc3a1478ecf43f50c961a9d2246
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 022d6c1a53eab98fc033c902f903e7bc66e6da3f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="linkresource-c-compiler-options"></a>/linkresource (Options du compilateur C#)
 Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fichier de ressources n’est pas ajouté au fichier de sortie. Cette option diffère de l’option [/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) qui incorpore un fichier de ressources dans le fichier de sortie.  
@@ -65,9 +46,9 @@ Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fi
   
  **/linkresource** nécessite une option [/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) autre que **/target:module**.  
   
- Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](http://msdn.microsoft.com/library/8ef159de-b660-4bec-9213-c3fbc4d1c6f4) ou dans l'environnement de développement, il est accessible à l'aide des membres de l'espace de noms <xref:System.Resources>. Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=fullName>. Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource`* dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l'exécution.  
+ Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l'environnement de développement, il est accessible à l'aide des membres de l'espace de noms <xref:System.Resources>. Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pour toutes les autres ressources, utilisez le `GetManifestResource` méthodes dans la <xref:System.Reflection.Assembly> classe pour accéder à la ressource au moment de l’exécution.  
   
- Le fichier spécifié dans `filename` peut avoir n’importe quel format. C’est le cas, par exemple, si vous voulez qu’une DLL native fasse partie de l'assembly pour qu’elle puisse être installée dans le Global Assembly Cache et accessible à partir du code managé dans l'assembly. Le deuxième des exemples suivants montre comment effectuer cette opération. Vous pouvez effectuer la même opération dans Assembly Linker. Le troisième des exemples suivants montre comment effectuer cette opération. Pour plus d’informations, consultez [Al.exe (Assembly Linker)](https://msdn.microsoft.com/library/c405shex) et [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md).  
+ Le fichier spécifié dans `filename` peut avoir n’importe quel format. C’est le cas, par exemple, si vous voulez qu’une DLL native fasse partie de l'assembly pour qu’elle puisse être installée dans le Global Assembly Cache et accessible à partir du code managé dans l'assembly. Le deuxième des exemples suivants montre comment effectuer cette opération. Vous pouvez effectuer la même opération dans Assembly Linker. Le troisième des exemples suivants montre comment effectuer cette opération. Pour plus d’informations, consultez [Al.exe (Assembly Linker)](../../../framework/tools/al-exe-assembly-linker.md) et [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md).  
   
  **/linkres** est la forme abrégée de **/linkresource**.  
   
@@ -98,8 +79,7 @@ gacutil -i A.dll
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [Al.exe (Assembly Linker)](https://msdn.microsoft.com/library/c405shex)   
- [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)   
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Al.exe (Assembly Linker)](../../../framework/tools/al-exe-assembly-linker.md)  
+ [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)  
  [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
-

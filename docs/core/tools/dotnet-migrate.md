@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
+ms.openlocfilehash: d2c99df730d90e0a6b69197cf036c62073cf8749
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
-ms.openlocfilehash: 674b19f9fc546e057c7b7fa4b024a0b013eda7e5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
@@ -39,7 +38,7 @@ La migration est effectuée sur les éléments suivants :
 * Un fichier *solution.sln*, où il migre les projets référencés dans la solution.
 * Sur tous les sous-répertoires du répertoire donné de manière récursive.
 
-La commande `dotnet migrate` conserve le fichier *project.json* migré dans un répertoire `backup`, qu’elle crée s’il n’existe pas. Ce comportement peut être ignoré à l’aide de l’option `--skip-backup`.
+La commande `dotnet migrate` conserve le fichier *project.json* migré dans un répertoire `backup`, qu’elle crée s’il n’existe pas. Ce comportement est substitué à l’aide de la `--skip-backup` option.
 
 Par défaut, l’opération de migration affiche l’état du processus de migration dans la sortie standard (STDOUT). Si vous utilisez l’option `--report-file <REPORT_FILE>`, la sortie est enregistrée dans le fichier spécifié. 
 
@@ -49,7 +48,7 @@ La commande `dotnet migrate` prend en charge uniquement les projets *project.jso
 
 `PROJECT_JSON/GLOBAL_JSON/SOLUTION_FILE/PROJECT_DIR`
 
-Le chemin de l’un des éléments suivants :
+Le chemin d’accès à l’un des éléments suivants :
 
 * Un fichier *project.json* à migrer.
 * Un fichier *global.json*, il migre les dossiers spécifiés vers *global.json*.
@@ -62,7 +61,7 @@ Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par déf
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `-t|--template-file <TEMPLATE_FILE>`
 

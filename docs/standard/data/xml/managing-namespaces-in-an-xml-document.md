@@ -1,51 +1,49 @@
 ---
-title: "Gestion d&#39;espaces de noms dans un document&#160;XML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Gestion d'espaces de noms dans un document XML"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-caps.latest.revision: 5
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: e9761afe8b56e15edba6e0319cce9a02501a6bb0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Gestion d&#39;espaces de noms dans un document&#160;XML
-Les espaces de noms XML associent les noms d'éléments et d'attributs dans un document XML à des URI prédéfinis et personnalisés.  Pour créer ces associations, définissez des préfixes pour des URI d'espace de noms et utilisez ces préfixes pour qualifier des noms d'élément et d'attribut dans des données XML.  Les espaces de noms empêchent les conflits entre les noms d'élément et d'attribut et permettent aux éléments et attributs de même nom d'être gérés différemment et validés différemment.  
+# <a name="managing-namespaces-in-an-xml-document"></a>Gestion d'espaces de noms dans un document XML
+Les espaces de noms XML associent les noms d'éléments et d'attributs dans un document XML à des URI prédéfinis et personnalisés. Pour créer ces associations, définissez des préfixes pour des URI d'espace de noms et utilisez ces préfixes pour qualifier des noms d'élément et d'attribut dans des données XML. Les espaces de noms empêchent les conflits entre les noms d'élément et d'attribut et permettent aux éléments et attributs de même nom d'être gérés différemment et validés différemment.  
   
 <a name="declare"></a>   
-## Déclaration d'espaces de noms  
- Pour déclarer un espace de noms sur un élément, utilisez l'attribut `xmlns:` :  
+## <a name="declaring-namespaces"></a>Déclaration d'espaces de noms  
+ Pour déclarer un espace de noms sur un élément, utilisez l'attribut `xmlns:` :  
   
  `xmlns:<name>=<"uri">`  
   
- où `<name>` est le préfixe de l'espace de noms et `<"uri">` fait référence à l'URI qui identifie l'espace de noms.  Une fois que vous avez déclaré le préfixe, vous pouvez l'utiliser pour qualifier des éléments et des attributs dans un document XML et les associer à un URI d'espace de noms.  Le préfixe de l'espace de noms étant utilisé dans la totalité d'un document, il doit être court de préférence.  
+ où `<name>` est le préfixe de l'espace de noms et `<"uri">` fait référence à l'URI qui identifie l'espace de noms. Une fois que vous avez déclaré le préfixe, vous pouvez l'utiliser pour qualifier des éléments et des attributs dans un document XML et les associer à un URI d'espace de noms. Le préfixe de l'espace de noms étant utilisé dans la totalité d'un document, il doit être court de préférence.  
   
- Cet exemple définit deux éléments `BOOK`.  Le premier élément est qualifié par le préfixe `mybook`, tandis que le deuxième élément est qualifié par le préfixe `bb`.  Chaque préfixe est associé à un URI d'espace de noms différent :  
+ Cet exemple définit deux éléments `BOOK`. Le premier élément est qualifié par le préfixe `mybook`, tandis que le deuxième élément est qualifié par le préfixe `bb`. Chaque préfixe est associé à un URI d'espace de noms différent :  
   
-```  
+```xml  
 <mybook:BOOK xmlns:mybook="http://www.contoso.com/books.dtd">  
 <bb:BOOK xmlns:bb="urn:blueyonderairlines">  
 ```  
   
- Pour indiquer qu'un élément fait partie d'un espace de noms particulier, ajoutez\-lui le préfixe de l'espace de noms.  Par exemple, si un élément `Author` appartient à l'espace de noms `mybook`, il est déclaré comme suit : `<mybook:Author>`.  
+ Pour indiquer qu'un élément fait partie d'un espace de noms particulier, ajoutez-lui le préfixe de l'espace de noms. Par exemple, si un élément `Author` appartient à l'espace de noms `mybook`, il est déclaré comme suit : `<mybook:Author>`.  
   
 <a name="scope"></a>   
-## Portée de la déclaration  
- Un espace de noms est effectif à partir de son point de déclaration jusqu'à la fin de l'élément dans lequel il a été déclaré.  Dans cet exemple, l'espace de noms défini dans l'élément `BOOK` ne s'applique pas aux éléments situés en dehors de l'élément `BOOK`, tels que l'élément `Publisher` :  
+## <a name="declaration-scope"></a>Portée de la déclaration  
+ Un espace de noms est effectif à partir de son point de déclaration jusqu'à la fin de l'élément dans lequel il a été déclaré. Dans cet exemple, l'espace de noms défini dans l'élément `BOOK` ne s'applique pas aux éléments situés en dehors de l'élément `BOOK`, tels que l'élément `Publisher` :  
   
-```  
+```xml  
 <Author>Joe Smith</Author>  
 <BOOK xmlns:book="http://www.contoso.com">  
     <title>My Wonderful Day</title>  
@@ -58,26 +56,26 @@ Les espaces de noms XML associent les noms d'éléments et d'attributs dans un d
   
  Un espace de noms doit être déclaré avant de pouvoir être utilisé, mais cela ne signifie pas qu'il doit apparaître tout en haut du document XML.  
   
- Lorsque vous utilisez plusieurs espaces de noms dans un document XML, vous pouvez définir un espace de noms comme l'espace de noms par défaut afin de créer un document plus clair.  L'espace de noms par défaut est déclaré dans l'élément racine et s'applique à tous les éléments non qualifiés dans le document.  Les espaces de noms par défaut s'appliquent uniquement aux éléments, pas aux attributs.  
+ Lorsque vous utilisez plusieurs espaces de noms dans un document XML, vous pouvez définir un espace de noms comme l'espace de noms par défaut afin de créer un document plus clair. L'espace de noms par défaut est déclaré dans l'élément racine et s'applique à tous les éléments non qualifiés dans le document. Les espaces de noms par défaut s'appliquent uniquement aux éléments, pas aux attributs.  
   
- Pour utiliser l'espace de noms par défaut, omettez le préfixe et le signe deux\-points de la déclaration sur l'élément :  
+ Pour utiliser l'espace de noms par défaut, omettez le préfixe et le signe deux-points de la déclaration sur l'élément :  
   
-```  
+```xml  
 <BOOK xmlns="http://www.contoso.com/books.dtd">  
 ```  
   
-## Gestion des espaces de noms  
- La classe <xref:System.Xml.XmlNamespaceManager> stocke une collection d'URI d'espace de noms et leurs préfixes, et vous permet de rechercher, d'ajouter et de supprimer des espaces de noms dans cette collection.  Dans certains contextes, cette classe est indispensable pour améliorer les performances de traitement XML.  Par exemple, la classe <xref:System.Xml.Xsl.XsltContext> utilise <xref:System.Xml.XmlNamespaceManager> pour la prise en charge de XPath.  
+## <a name="managing-namespaces"></a>Gestion des espaces de noms  
+ La classe <xref:System.Xml.XmlNamespaceManager> stocke une collection d'URI d'espace de noms et leurs préfixes, et vous permet de rechercher, d'ajouter et de supprimer des espaces de noms dans cette collection. Dans certains contextes, cette classe est indispensable pour améliorer les performances de traitement XML. Par exemple, la classe <xref:System.Xml.Xsl.XsltContext> utilise <xref:System.Xml.XmlNamespaceManager> pour la prise en charge de XPath.  
   
- Le gestionnaire d'espaces de noms n'effectue aucune validation sur les espaces de noms, mais part du principe que les préfixes et les espaces de noms ont déjà été vérifiés et sont conformes à la spécification [du W3C sur les espaces de noms](http://www.w3.org/TR/REC-xml-names/).  
+ Le Gestionnaire de l’espace de noms n’effectue aucune validation sur les espaces de noms, mais suppose que les préfixes et espaces de noms ont déjà été vérifiés et sont conformes à la [espaces de noms W3C](http://www.w3.org/TR/REC-xml-names/) spécification.  
   
 > [!NOTE]
->  [LINQ to XML](../../../../ocs/visual-basic/programming-guide/concepts/linq/linq-to-xml.md) n'utilise pas <xref:System.Xml.XmlNamespaceManager> pour gérer les espaces de noms.  Pour des informations sur la gestion des espaces de noms lors de l'utilisation de LINQ to XML, consultez [Utilisation des espaces de noms XML](../../../../ocs/visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md) dans la documentation LINQ.  
+>  [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) n’utilise pas <xref:System.Xml.XmlNamespaceManager> pour gérer les espaces de noms. Consultez [utilisation des espaces de noms XML](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430) dans la documentation LINQ pour plus d’informations sur la gestion des espaces de noms lors de l’utilisation de LINQ to XML.  
   
- Voici quelques tâches de recherche et de gestion que vous pouvez effectuer avec la classe <xref:System.Xml.XmlNamespaceManager>.  Pour obtenir plus d'informations et des exemples, suivez les liens à la page de référence de chaque méthode ou propriété.  
+ Voici quelques tâches de recherche et de gestion que vous pouvez effectuer avec la classe <xref:System.Xml.XmlNamespaceManager>. Pour obtenir plus d'informations et des exemples, suivez les liens à la page de référence de chaque méthode ou propriété.  
   
 |Pour|Utilisez|  
-|----------|--------------|  
+|--------|---------|  
 |Ajouter un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
 |Supprimer un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
 |Rechercher l'URI de l'espace de noms par défaut|Propriété <xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A>|  
@@ -88,6 +86,6 @@ Les espaces de noms XML associent les noms d'éléments et d'attributs dans un d
 |Vérifier si un préfixe est défini dans la portée actuelle|Méthode <xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
 |Obtenir la table de noms utilisée pour rechercher les préfixes et les URI|Propriété <xref:System.Xml.XmlNamespaceManager.NameTable%2A>|  
   
-## Voir aussi  
- <xref:System.Xml.XmlNamespaceManager>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Xml.XmlNamespaceManager>  
  [Documents et données XML](../../../../docs/standard/data/xml/index.md)

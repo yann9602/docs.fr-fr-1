@@ -1,39 +1,45 @@
 ---
 title: "Installer le .NET Framework sur Windows 7 SP1"
+ms.custom: updateeachrelease
 description: "Découvrez comment installer le .NET Framework sur Windows 7 SP1."
 author: rlander
 ms.author: mairaw
 keywords: .NET Framework, installer
-ms.date: 08/03/2017
+ms.date: 10/17/2017
 ms.topic: article
 ms.prod: .net-framework
+ms.openlocfilehash: ac9116da40618d9a6f4bc2bb5f031bd8ffeec7b3
+ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
 ms.translationtype: HT
-ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
-ms.openlocfilehash: a9ee34089237adf6fe1d277add72a9f36a49e11e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/27/2017
 ---
+# <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Installer le .NET Framework sur Windows 7 SP1 et Windows Server 2008 R2
 
-# <a name="install-the-net-framework-on-windows-7-sp1"></a>Installer le .NET Framework sur Windows 7 SP1
+Le .NET Framework est requis pour exécuter des applications sur Windows. Vous pouvez utiliser les instructions suivantes pour l’installer. Vous arrivées sur cette page après la tentative d’exécution d’une application et afficher la boîte de dialogue suivante sur votre ordinateur.
 
-Vous pouvez avoir besoin du .NET Framework pour exécuter une application sur Windows 7 SP1. Vous pouvez installer les versions les plus récentes prises en charge à l’aide des instructions suivantes. Les instructions dépendent de la version du .NET Framework dont vous avez besoin.
+![Cette application n’a pas pu être démarrée.](./media/this-application-could-not-be-started.png)
 
-## <a name="net-framework-47"></a>.NET Framework 4.7
+Ces instructions vous aideront à installer les versions du .NET Framework que vous avez besoin. Le [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) est la version la plus récente. Il est pris en charge sur Windows 7 et Windows Server 2008 R2 et est inclus avec le [mise à jour de Windows 10 automne créateurs](https://www.microsoft.com/software-download/windows10) et [Windows Server 2016 Version 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709).
 
-Vous pouvez installer [.NET Framework 4.7](https://www.microsoft.com/net/download/framework) sur Windows 7.
+## <a name="net-framework-471"></a>.NET framework 4.7.1
 
-.NET Framework 4.7 est inclus dans [Windows 10 Creators Update](https://www.microsoft.com/software-download/windows10).
+* [Télécharger le Kit de développement .NET Framework 4.7.1](https://www.microsoft.com/net/framework/versions/net471?utm_source=ms-docs&utm_medium=referral)
 
-.NET Framework 4.7 prend en charge les applications conçues pour .NET Framework 4.0 ou ultérieur. Les autres versions du .NET Framework sont disponibles à partir de la page web [Télécharger le .NET Framework](https://www.microsoft.com/net/download/framework).
+Le [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) peut être utilisé pour exécuter des applications créées pour le .NET Framework 4.0 ou version ultérieure.
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 
-Le .NET Framework 3.5 est fourni avec Windows 7.
+Le [.NET Framework 3.5](https://www.microsoft.com/en-us/download/details.aspx?id=21) est inclus avec Windows 7.
 
 .NET Framework 3.5 prend en charge les applications conçues pour .NET Framework 1.0 à 3.5.
 
-## <a name="help"></a>Aide
+## <a name="help"></a>Help
 
-Vous pouvez [contacter Microsoft pour obtenir de l’aide](mailto:dotnet-install-help@microsoft.com?subject=Help installing .NET Framework) si vous ne pouvez installer la version correcte du .NET Framework.
+Vous pouvez [contacter Microsoft pour obtenir de l’aide](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help) si vous ne pouvez installer la version correcte du .NET Framework.
 
+## <a name="see-also"></a>Voir aussi
+
+[Télécharger le .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
+[Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)   
+[Installer le .NET Framework pour les développeurs](guide-for-developers.md)

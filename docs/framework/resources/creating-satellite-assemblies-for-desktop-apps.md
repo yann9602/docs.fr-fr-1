@@ -5,10 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
 - resource files, deploying
@@ -28,22 +30,21 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 11d455f16c5ee3ce78c26c7642831900e527b960
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: febb9d50bd61eef53f39bb0f36cd4e3a6049e9f5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Création d'assemblys satellites pour les applications bureautiques
 Les fichiers de ressources jouent un rôle central dans les applications localisées. Ils permettent à une application d’afficher des chaînes, des images et d’autres données dans la langue et la culture de l’utilisateur, et de fournir des données de remplacement si les ressources relatives à la langue et la culture de l’utilisateur ne sont pas disponibles. Le .NET Framework utilise un modèle Hub and Spoke pour localiser et récupérer les ressources localisées. Le hub est l’assembly principal qui contient le code exécutable non localisable et les ressources pour une culture unique, appelée culture neutre ou par défaut. La culture par défaut est la culture de secours de l’application ; elle est utilisée quand aucune ressource localisée n’est disponible. Vous utilisez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> pour désigner la culture de la culture par défaut de l’application. Chaque spoke se connecte à un assembly satellite qui contient les ressources d’une culture localisée unique, mais ne contient pas de code. Dans la mesure où les assemblys satellites ne font pas partie de l’assembly principal, vous pouvez facilement remplacer ou mettre à jour les ressources correspondant à une culture spécifique sans remplacer l’assembly principal de l’application.  
   
 > [!NOTE]
->  Les ressources de la culture par défaut d’une application peuvent aussi être stockées dans un assembly satellite. Pour cela, vous affectez à l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> la valeur <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=fullName>.  
+>  Les ressources de la culture par défaut d’une application peuvent aussi être stockées dans un assembly satellite. Pour cela, vous affectez à l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> la valeur <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType>.  
   
 ## <a name="satellite-assembly-name-and-location"></a>Nom et emplacement de l’assembly satellite  
  Le modèle Hub and Spoke nécessite que vous placiez les ressources à des emplacements spécifiques afin qu’elles soient facilement trouvées et utilisées. Si vous ne compilez pas et ne nommez pas les ressources comme prévu ou si vous ne les placez pas aux endroits corrects, le Common Language Runtime ne sera pas en mesure de les trouver et utilisera les ressources de la culture par défaut à la place. Le gestionnaire des ressources du .NET Framework, représenté par un objet <xref:System.Resources.ResourceManager>, permet d’accéder automatiquement aux ressources localisées. Le gestionnaire des ressources nécessite les éléments suivants :  
@@ -96,9 +97,10 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
   
 1.  Créez un fichier de ressources nommé Greeting.resx ou Greeting.txt pour contenir la ressource de la culture par défaut. Stockez une chaîne unique nommée `HelloString` dont la valeur est « Hello world! » dans ce fichier.  
   
-2.  Pour indiquer que l’anglais (en) est la culture par défaut de l’application, ajoutez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=fullName> suivant au fichier AssemblyInfo de l’application ou au fichier de code source principal qui sera compilé dans l’assembly principal de l’application.  
+2.  Pour indiquer que l’anglais (en) est la culture par défaut de l’application, ajoutez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> suivant au fichier AssemblyInfo de l’application ou au fichier de code source principal qui sera compilé dans l’assembly principal de l’application.  
   
-     [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]  [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
+     [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
+     [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
   
 3.  Ajoutez la prise en charge de cultures supplémentaires (en-US, fr-FR et ru-RU) à l’application comme suit :  
   
@@ -122,9 +124,10 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
 5.  Compilez le code source suivant avec les ressources de la culture par défaut dans l’assembly principal de l’application :  
   
     > [!IMPORTANT]
-    >  Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez modifier l’appel au constructeur de la classe <xref:System.Resources.ResourceManager> comme suit :`ResourceManager rm = new ResourceManager("Greetings",``typeof(Example).Assembly);`  
+    >  Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez modifier l’appel au constructeur de la classe <xref:System.Resources.ResourceManager> comme suit :`ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`  
   
-     [!code-csharp[Conceptual.Resources.Locating#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]  [!code-vb[Conceptual.Resources.Locating#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]  
+     [!code-csharp[Conceptual.Resources.Locating#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]
+     [!code-vb[Conceptual.Resources.Locating#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]  
   
      Si l’application se nomme Example et que vous compilez à partir de la ligne de commande, la commande pour le compilateur C# est :  
   
@@ -223,9 +226,10 @@ gacutil /i:StringLibrary.resources.dll
   
 3.  Créez un fichier de ressources nommé Strings.resx pour contenir la ressource de la culture par défaut. Stockez une chaîne unique nommée `Greeting` dont la valeur est « How do you do? » dans ce fichier.  
   
-4.  Pour indiquer que l’anglais « en » est la culture par défaut de l’application, ajoutez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=fullName> suivant au fichier AssemblyInfo de l’application ou au fichier de code source principal qui sera compilé dans l’assembly principal de l’application :  
+4.  Pour indiquer que l’anglais « en » est la culture par défaut de l’application, ajoutez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> suivant au fichier AssemblyInfo de l’application ou au fichier de code source principal qui sera compilé dans l’assembly principal de l’application :  
   
-     [!code-csharp[Conceptual.Resources.Satellites#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#2)]  [!code-vb[Conceptual.Resources.Satellites#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#2)]  
+     [!code-csharp[Conceptual.Resources.Satellites#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#2)]
+     [!code-vb[Conceptual.Resources.Satellites#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#2)]  
   
 5.  Ajoutez la prise en charge de cultures supplémentaires (en-US, fr-FR et ru-RU) à l’application comme suit :  
   
@@ -246,9 +250,10 @@ gacutil /i:StringLibrary.resources.dll
 7.  Compilez le code source suivant pour StringLibrary.vb ou StringLibrary.cs avec les ressources de la culture par défaut dans un assembly de bibliothèque à signature différée nommé StringLibrary.dll :  
   
     > [!IMPORTANT]
-    >  Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez remplacer l’appel au constructeur de la classe <xref:System.Resources.ResourceManager> par `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.  
+    >  Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez modifier l’appel à la <xref:System.Resources.ResourceManager> constructeur de classe `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.  
   
-     [!code-csharp[Conceptual.Resources.Satellites#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]  [!code-vb[Conceptual.Resources.Satellites#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]  
+     [!code-csharp[Conceptual.Resources.Satellites#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]
+     [!code-vb[Conceptual.Resources.Satellites#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]  
   
      La commande pour le compilateur C# est :  
   
@@ -294,7 +299,8 @@ gacutil /i:StringLibrary.resources.dll
   
 13. Si vous utilisez Visual Studio, créez un projet **Application console** nommé `Example`, ajoutez-lui une référence à StringLibrary.dll et le code source suivant, puis compilez.  
   
-     [!code-csharp[Conceptual.Resources.Satellites#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/example.cs#3)]  [!code-vb[Conceptual.Resources.Satellites#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/example.vb#3)]  
+     [!code-csharp[Conceptual.Resources.Satellites#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/example.cs#3)]
+     [!code-vb[Conceptual.Resources.Satellites#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/example.vb#3)]  
   
      Pour compiler à partir de la ligne de commande, utilisez la commande suivante pour le compilateur C# :  
   
@@ -311,10 +317,9 @@ gacutil /i:StringLibrary.resources.dll
 14. Exécutez Example.exe.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)   
- [Temporisation de signature d'un assembly](../../../docs/framework/app-domains/delay-sign-assembly.md)   
- [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)   
- [Sn.exe (Outil Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
- [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)   
+ [Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
+ [Temporisation de signature d'un assembly](../../../docs/framework/app-domains/delay-sign-assembly.md)  
+ [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
+ [Sn.exe (outil Strong Name)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
+ [Gacutil.exe (outil Global Assembly Cache)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)  
  [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)
-

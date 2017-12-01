@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
+ms.openlocfilehash: 1ffacd52df89a955ebfa72dc58836211c7a58640
+ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e5d2d5d7074678383243e687d4b469606007e585
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/08/2017
 ---
-
 # <a name="properties"></a>Propriétés
 
 Les propriétés sont des éléments de première classe dans C#. Le langage définit la syntaxe que les développeurs utilisent pour écrire du code qui exprime leur intention de conception avec précision.
@@ -151,7 +149,7 @@ public class Person
 
 À présent, la propriété `FirstName` est accessible à partir de n’importe quel code, mais elle peut uniquement être assignée à partir de code dans la classe `Person`.
 
-Vous pouvez ajouter n’importe quel modificateur d’accès restrictif à l’accesseur set ou get. Le modificateur d’accès que vous ajoutez à un accesseur doit être plus restrictif que le modificateur d’accès spécifié dans la définition de propriété. Le code ci-dessus est autorisé, car la propriété `FirstName` est `public`, mais l’accesseur set est `private`. En revanche, vous ne pouvez pas déclarer une propriété `private` avec un accesseur `public`. Les propriétés peuvent également être déclarées comme `protected`, `internal`, `protected internal` ou même `private`.   
+Vous pouvez ajouter n’importe quel modificateur d’accès restrictif à l’accesseur set ou get. Le modificateur d’accès que vous ajoutez à un accesseur doit être plus restrictif que le modificateur d’accès spécifié dans la définition de propriété. Le code ci-dessus est autorisé, car la propriété `FirstName` est `public`, mais l’accesseur set est `private`. En revanche, vous ne pouvez pas déclarer une propriété `private` avec un accesseur `public`. Déclarations de propriétés peuvent également être déclarées `protected`, `internal`, `protected internal`, `private protected` ou même `private`.   
 
 Placer le modificateur le plus restrictif sur l’accesseur `get` est également autorisé. Par exemple, vous pouvez avoir une propriété `public`, mais restreindre l’accesseur `get` à `private`. Ce scénario s’observe rarement dans la pratique.
 
@@ -317,4 +315,3 @@ Là encore, il s’agit d’un exemple de cas où vous pouvez écrire du code da
 
 Les propriétés sont une forme de champs intelligents dans une classe ou un objet. De l’extérieur de l’objet, elles apparaissent sous la forme de champs dans l’objet. Toutefois, les propriétés peuvent être implémentées avec toutes les fonctionnalités C#.
 Vous pouvez écrire du code qui remplit les exigences de validation, d’accessibilité, d’évaluation différée ou toute autre exigence requise dans vos scénarios.
-

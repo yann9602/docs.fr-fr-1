@@ -1,39 +1,40 @@
 ---
-title: "Extension du DOM | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Extension du DOM
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-caps.latest.revision: 5
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "5"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: b91c49be9268d8dc967daeac116cf67b2ed7d742
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Extension du DOM
-Le .NET Framework Microsoft comprend un ensemble de classes de base qui fournit une implémentation du DOM \(Document Objet Model\) XML.  L'objet <xref:System.Xml.XmlNode> et ses classes dérivées proposent des méthodes et des propriétés qui permettent la navigation, l'interrogation et la modification du contenu et de la structure d'un document XML.  
+# <a name="extending-the-dom"></a>Extension du DOM
+Microsoft .NET Framework inclut un ensemble de classes de base qui fournit une implémentation de l’objet de modèle DOM (Document XML). L'objet <xref:System.Xml.XmlNode> et ses classes dérivées proposent des méthodes et des propriétés qui permettent la navigation, l'interrogation et la modification du contenu et de la structure d'un document XML.  
   
- Lors du chargement en mémoire de contenu XML à l'aide du DOM, les nœuds créés contiennent des informations telles que le nom de nœud, le type de nœud, etc.  Il peut arriver que vous ayez besoin d'informations spécifiques sur les nœuds que les classes de base ne fournissent pas.  Par exemple, il peut être utile de connaître le numéro de ligne et la position d'un nœud.  Dans ce cas, vous pouvez faire dériver de nouvelles classes de classes DOM existantes et ajouter des fonctionnalités complémentaires.  
+ Lors du chargement en mémoire de contenu XML à l'aide du DOM, les nœuds créés contiennent des informations telles que le nom de nœud, le type de nœud, etc. Il peut arriver que vous ayez besoin d'informations spécifiques sur les nœuds que les classes de base ne fournissent pas. Par exemple, il peut être utile de connaître le numéro de ligne et la position d'un nœud. Dans ce cas, vous pouvez faire dériver de nouvelles classes de classes DOM existantes et ajouter des fonctionnalités complémentaires.  
   
  La dérivation de nouvelles classes est soumise à deux indications générales :  
   
--   Il est recommandé de ne jamais faire dériver des classes de la classe <xref:System.Xml.XmlNode>.  Il est plutôt conseillé de dériver des classes à partir de la classe qui correspond au type de nœud auquel vous vous intéressez.  Par exemple, si vous souhaitez renvoyer des informations supplémentaires sur les nœuds d'attributs, vous pouvez dériver de la classe <xref:System.Xml.XmlAttribute>.  
+-   Il est recommandé de ne jamais faire dériver des classes de la classe <xref:System.Xml.XmlNode>. Il est plutôt conseillé de dériver des classes à partir de la classe qui correspond au type de nœud auquel vous vous intéressez. Par exemple, si vous souhaitez renvoyer des informations supplémentaires sur les nœuds d'attributs, vous pouvez dériver de la classe <xref:System.Xml.XmlAttribute>.  
   
 -   À l'exception des méthodes de création de nœud, il est recommandé, lors de la substitution d'une fonction, de toujours appeler une version de base de la fonction et ensuite d'ajouter le complément de traitement éventuellement requis.  
   
-## Création de vos propres instances de nœud  
- La classe <xref:System.Xml.XmlDocument> contient des méthodes de création de nœud.  Quand un fichier XML est chargé, ces méthodes sont appelées afin de créer les nœuds.  Vous pouvez les substituer de sorte que les instances de nœud soient créées au moment du chargement d'un document.  Par exemple, si vous avez étendu la classe <xref:System.Xml.XmlElement>, la classe <xref:System.Xml.XmlDocument> est héritée et la méthode <xref:System.Xml.XmlDocument.CreateElement%2A> remplacée.  
+## <a name="creating-your-own-node-instances"></a>Création de vos propres instances de nœud  
+ La classe <xref:System.Xml.XmlDocument> contient des méthodes de création de nœud. Quand un fichier XML est chargé, ces méthodes sont appelées afin de créer les nœuds. Vous pouvez les substituer de sorte que les instances de nœud soient créées au moment du chargement d'un document. Par exemple, si vous avez étendu la classe <xref:System.Xml.XmlElement>, la classe <xref:System.Xml.XmlDocument> est héritée et la méthode <xref:System.Xml.XmlDocument.CreateElement%2A> remplacée.  
   
  L'exemple suivant montre comment substituer la méthode <xref:System.Xml.XmlDocument.CreateElement%2A> afin de retourner votre implémentation de la classe <xref:System.Xml.XmlElement>.  
   
@@ -55,10 +56,10 @@ class LineInfoDocument : XmlDocument {
   }  
 ```  
   
-## Extension d'une classe  
- Pour étendre une classe, faites\-la dériver de l'une des classes DOM existantes.  Ensuite, vous pouvez substituer n'importe quelle méthode ou propriété virtuelle de cette classe de base ou ajouter la vôtre.  
+## <a name="extending-a-class"></a>Extension d'une classe  
+ Pour étendre une classe, faites-la dériver de l'une des classes DOM existantes. Ensuite, vous pouvez substituer n'importe quelle méthode ou propriété virtuelle de cette classe de base ou ajouter la vôtre.  
   
- Dans l'exemple suivant, une nouvelle classe est créée ; elle implémente la classe <xref:System.Xml.XmlElement> et l'interface <xref:System.Xml.IXmlLineInfo>.  D'autres méthodes et propriétés sont définies pour permettre aux utilisateurs de recueillir des informations sur les lignes.  
+ Dans l'exemple suivant, une nouvelle classe est créée ; elle implémente la classe <xref:System.Xml.XmlElement> et l'interface <xref:System.Xml.IXmlLineInfo>. D'autres méthodes et propriétés sont définies pour permettre aux utilisateurs de recueillir des informations sur les lignes.  
   
 ```vb  
 Class LineInfoElement  
@@ -122,7 +123,7 @@ class LineInfoElement : XmlElement, IXmlLineInfo {
 } // End LineInfoElement class.  
 ```  
   
-### Exemple  
+### <a name="example"></a>Exemple  
  L'exemple suivant dénombre les éléments d'un document XML.  
   
 ```vb  
@@ -164,7 +165,7 @@ Class LineInfoElement
       CType(doc, LineInfoDocument).IncrementElementCount()  
    End Sub 'New  
 End Class 'LineInfoElement  
- _ 'End LineInfoElement class.   
+ _ 'End LineInfoElement class.  
   
 Public Class Test  
   
@@ -225,10 +226,10 @@ public class Test {
 }   
 ```  
   
-##### Entrée  
+##### <a name="input"></a>Entrée  
  book.xml  
   
-```  
+```xml  
 <!--sample XML fragment-->  
 <book genre='novel' ISBN='1-861001-57-5' misc='sale-item'>  
   <title>The Handmaid's Tale</title>  
@@ -236,23 +237,23 @@ public class Test {
 </book>  
 ```  
   
-##### Sortie  
+##### <a name="output"></a>Sortie  
   
 ```  
 Number of elements in book.xml: 3  
 ```  
   
- Pour obtenir un exemple illustrant l'extension des classes DOM XML \(System.Xml\), voir www.gotdotnet.com\/userfiles\/XMLDom\/extendDOM.zip.  
+ Pour obtenir un exemple illustrant l'extension des classes DOM XML (System.Xml), voir www.gotdotnet.com/userfiles/XMLDom/extendDOM.zip.  
   
-## Gestionnaire d'événements de nœud  
- L'implémentation .NET Framework du DOM comprend également un système d'événements qui vous permet de recevoir et de gérer des événements lors de la modification de nœuds dans un document XML.  L'utilisation des classes <xref:System.Xml.XmlNodeChangedEventHandler> et <xref:System.Xml.XmlNodeChangedEventArgs> vous permet de capturer des événements `NodeChanged`, `NodeChanging`, `NodeInserted`, `NodeInserting`, `NodeRemoved` et `NodeRemoving`.  
+## <a name="node-event-handler"></a>Gestionnaire d'événements de nœud  
+ L'implémentation .NET Framework du DOM comprend également un système d'événements qui vous permet de recevoir et de gérer des événements lors de la modification de nœuds dans un document XML. L'utilisation des classes <xref:System.Xml.XmlNodeChangedEventHandler> et <xref:System.Xml.XmlNodeChangedEventArgs> vous permet de capturer des événements `NodeChanged`, `NodeChanging`, `NodeInserted`, `NodeInserting`, `NodeRemoved` et `NodeRemoving`.  
   
  Le processus de gestion d'événements fonctionne exactement de la même façon dans les classes dérivées que dans les classes DOM d'origine.  
   
- Pour plus d'informations sur la gestion des événements de nœud, consultez [Événements](../../../../docs/standard/events/index.md) et [Délégué XmlNodeChangedEventHandler](frlrfSystemXmlXmlNodeChangedEventHandlerClassTopic).  
+ Pour plus d’informations sur la gestion des événements de nœud, consultez [événements](../../../../docs/standard/events/index.md) et <xref:System.Xml.XmlNodeChangedEventHandler>.  
   
-## Attributs par défaut et méthode CreateElement  
- Lors de la substitution de la méthode <xref:System.Xml.XmlDocument.CreateElement%2A> dans une classe dérivée, les attributs par défaut ne sont pas ajoutés lorsque vous créez de nouveaux éléments pendant la modification du document.  Ce problème ne se pose que lors de la modification.  Puisque la méthode <xref:System.Xml.XmlDocument.CreateElement%2A> est responsable de l'ajout d'attributs par défaut à un objet <xref:System.Xml.XmlDocument>, vous devez coder cette fonctionnalité dans la méthode <xref:System.Xml.XmlDocument.CreateElement%2A>.  Si vous chargez un objet <xref:System.Xml.XmlDocument> qui comporte des attributs par défaut, ceux\-ci sont gérés correctement.  Pour plus d'informations sur les attributs par défaut, voir [Création de nouveaux attributs pour des éléments du DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md).  
+## <a name="default-attributes-and-the-createelement-method"></a>Attributs par défaut et méthode CreateElement  
+ Lors de la substitution de la méthode <xref:System.Xml.XmlDocument.CreateElement%2A> dans une classe dérivée, les attributs par défaut ne sont pas ajoutés lorsque vous créez de nouveaux éléments pendant la modification du document. Ce problème ne se pose que lors de la modification. Puisque la méthode <xref:System.Xml.XmlDocument.CreateElement%2A> est responsable de l'ajout d'attributs par défaut à un objet <xref:System.Xml.XmlDocument>, vous devez coder cette fonctionnalité dans la méthode <xref:System.Xml.XmlDocument.CreateElement%2A>. Si vous chargez un objet <xref:System.Xml.XmlDocument> qui comporte des attributs par défaut, ceux-ci sont gérés correctement. Pour plus d’informations sur les attributs par défaut, consultez [création de nouveaux attributs pour les éléments dans le DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md).  
   
-## Voir aussi  
- [DOM \(Document Object Model\) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Voir aussi  
+ [Document Object Model (DOM) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

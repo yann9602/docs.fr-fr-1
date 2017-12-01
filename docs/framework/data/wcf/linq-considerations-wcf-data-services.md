@@ -20,11 +20,11 @@ caps.latest.revision: "5"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 4072574d1451655ba303af257c87c309c79dfc82
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: c7998ebe8c136c8ca8056510954edba7aa291b61
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Considérations sur LINQ (WCF Data Services)
 Cette rubrique fournit des informations sur la façon dont les requêtes LINQ sont composées et exécutées lorsque vous utilisez le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et décrit les restrictions d'utilisation de LINQ pour interroger un service de données qui implémente [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]composer et exécuter des requêtes par rapport à un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-en fonction du service de données, consultez [interrogation du Service de données](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
@@ -216,7 +216,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.Math.Round%28System.Decimal%29>|`decimal round(decimal p0)`|  
 |<xref:System.Math.Round%28System.Double%29>|`double round(double p0)`|  
   
-|Membre <xref:System.Linq.Expressions.Expression?qualifyHint=False&autoUpgrade=True>|Fonction [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] prise en charge|  
+|Membre <xref:System.Linq.Expressions.Expression>|Fonction [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] prise en charge|  
 |---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  
 |<xref:System.Linq.Expressions.Expression.TypeIs%28System.Linq.Expressions.Expression%2CSystem.Type%29>|`bool isof(type p0)`|  
   

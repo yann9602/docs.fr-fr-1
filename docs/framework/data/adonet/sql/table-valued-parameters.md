@@ -16,11 +16,11 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 47009516d4118fec1a075a2dbccfa747f9a63131
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: 47956848079e6094dc000d95ec4066f814a70e35
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="table-valued-parameters"></a>Paramètres table
 Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d'une application cliente vers [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] sans avoir recours à plusieurs allers-retours ou à une logique côté serveur spéciale pour le traitement des données. Les paramètres table vous permettent d'encapsuler des lignes de données dans une application cliente et d'envoyer les données au serveur dans une commande paramétrée unique. Les lignes de données entrantes sont stockées dans une variable de table qui peut ensuite être traitée en utilisant [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
@@ -96,7 +96,7 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
 -   Vous ne pouvez pas utiliser d'instruction ALTER TABLE pour modifier la conception des paramètres table.  
   
 ## <a name="configuring-a-sqlparameter-example"></a>Exemple : configuration d'un SqlParameter  
- <xref:System.Data.SqlClient>prend en charge le remplissage des paramètres table à partir de <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> ou System.Collections.Generic.IEnumerable\<<xref:Microsoft.SqlServer.Server.SqlDataRecord>> (<xref:System.Collections.Generic.IEnumerable%601>? qualifyHint = False & mise à niveau automatique = True) les objets. Vous devez spécifier un nom de type pour le paramètre table à l'aide de la propriété <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> d'un objet <xref:System.Data.SqlClient.SqlParameter>. Le `TypeName` doit correspondre au nom d'un type compatible précédemment créé sur le serveur. Le fragment de code suivant montre comment configurer l'objet <xref:System.Data.SqlClient.SqlParameter> pour insérer des données.  
+ <xref:System.Data.SqlClient>prend en charge le remplissage des paramètres table à partir de <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> ou <xref:System.Collections.Generic.IEnumerable%601>  \  <xref:Microsoft.SqlServer.Server.SqlDataRecord> objets. Vous devez spécifier un nom de type pour le paramètre table à l'aide de la propriété <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> d'un objet <xref:System.Data.SqlClient.SqlParameter>. Le `TypeName` doit correspondre au nom d'un type compatible précédemment créé sur le serveur. Le fragment de code suivant montre comment configurer l'objet <xref:System.Data.SqlClient.SqlParameter> pour insérer des données.  
   
 ```csharp  
 // Configure the command and parameter.  

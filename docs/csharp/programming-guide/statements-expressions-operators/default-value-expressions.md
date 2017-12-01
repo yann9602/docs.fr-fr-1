@@ -1,24 +1,22 @@
 ---
 title: "Expressions de valeur par défaut (Guide de programmation C#)"
 description: "Les expressions de valeur par défaut produisent la valeur par défaut des types référence et des types valeur"
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - generics [C#], default keyword
 - default keyword [C#], generic programming
 ms.assetid: b9daf449-4e64-496e-8592-6ed2c8875a98
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: c2bb1c269e5347d615c47ab828506aef538c4761
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 0dc2fcee3903b80816c98bab47e2b9a2e5ef78b0
-ms.openlocfilehash: 7b5b53d7ed92c6f6377a3e494daf1d02a4cf0934
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="default-value-expressions-c-programming-guide"></a>Expressions de valeur par défaut (Guide de programmation C#)
 
@@ -27,15 +25,15 @@ Une expression de valeur par défaut produit la valeur par défaut d’un type. 
 - Si `T` est un type référence ou un type valeur.
 - Si `T` est un type valeur, s’il s’agit d’une valeur numérique ou d’un struct défini par l’utilisateur.
 
- Avec une variable `t` d’un type paramétré `T`, l’instruction `t = null` est valide uniquement si `T` est un type référence. L’affectation de `t = 0` fonctionne uniquement pour les types valeur numériques mais pas pour les structs. La solution consiste à utiliser une expression de valeur par défaut, qui retourne `null` pour les types référence (types de classes et types interface) et zéro pour les types valeur numériques. Pour des structs définis par l’utilisateur, elle retourne le struct initialisé sur le modèle de bit zéro qui produit 0 ou `null` pour chaque membre, selon que ce membre est un type valeur ou référence. Pour les types valeur Nullable, `default` retourne <xref:System.Nullable%601?displayProperty=fullName>, initialisé comme n’importe quel struct.
+ Avec une variable `t` d’un type paramétré `T`, l’instruction `t = null` est valide uniquement si `T` est un type référence. L’affectation de `t = 0` fonctionne uniquement pour les types valeur numériques mais pas pour les structs. La solution consiste à utiliser une expression de valeur par défaut, qui retourne `null` pour les types référence (types de classes et types interface) et zéro pour les types valeur numériques. Pour des structs définis par l’utilisateur, elle retourne le struct initialisé sur le modèle de bit zéro qui produit 0 ou `null` pour chaque membre, selon que ce membre est un type valeur ou référence. Pour les types valeur Nullable, `default` retourne <xref:System.Nullable%601?displayProperty=nameWithType>, initialisé comme n’importe quel struct.
 
 L’expression `default(T)` n’est pas limitée aux classes et aux méthodes génériques. Vous pouvez utiliser les expressions de valeur par défaut avec n’importe quel type managé. Toutes ces expressions sont valides :
 
- [!code-cs[csProgGuideGenerics#1](../../../../samples/snippets/csharp/programming-guide/statements-expressions-operators/default-value-expressions.cs)]
+ [!code-csharp[csProgGuideGenerics#1](../../../../samples/snippets/csharp/programming-guide/statements-expressions-operators/default-value-expressions.cs)]
 
  L’exemple suivant de la classe `GenericList<T>` montre comment utiliser l’opérateur `default(T)` dans une classe générique. Pour plus d’informations, consultez [Introduction aux génériques](../generics/introduction-to-generics.md).
 
- [!code-cs[csProgGuideGenerics#2](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#Snippet41)]
+ [!code-csharp[csProgGuideGenerics#2](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#Snippet41)]
 
 ## <a name="default-literal-and-type-inference"></a>Littéral par défaut et inférence de type
 
@@ -49,12 +47,11 @@ L’expression `default(T)` n’est pas limitée aux classes et aux méthodes g�
 
 L’exemple suivant illustre plusieurs utilisations du littéral `default` dans une expression de valeur par défaut :
 
-[!code-cs[csProgGuideGenerics#3](../../../../samples/snippets/csharp/programming-guide/statements-expressions-operators/default-literal.cs)]
+[!code-csharp[csProgGuideGenerics#3](../../../../samples/snippets/csharp/programming-guide/statements-expressions-operators/default-literal.cs)]
 
 ## <a name="see-also"></a>Voir aussi
 
- <xref:System.Collections.Generic> [Guide de programmation C#](../index.md)   
- [Génériques](../generics/index.md)   
- [Méthodes génériques](../generics/generic-methods.md)   
- [Génériques](~/docs/standard/generics/index.md)   
-
+ <xref:System.Collections.Generic>[Guide de programmation c#](../index.md)  
+ [Génériques](../generics/index.md)  
+ [Méthodes génériques](../generics/generic-methods.md)  
+ [Génériques](~/docs/standard/generics/index.md)  

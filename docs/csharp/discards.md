@@ -1,5 +1,5 @@
 ---
-title: "Éléments ignorés - Guide C# | Microsoft Docs"
+title: "Éléments ignorés - Guide C#"
 description: "Décrit la prise en charge par C# des éléments ignorés, qui sont des variables qui peuvent être ignorées, et les différentes façons dont les éléments ignorés peuvent être utilisés."
 keywords: .NET,.NET Core
 author: rpetrusha
@@ -9,21 +9,20 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
+ms.openlocfilehash: 800a27d2d186c738dceb6838aa669377a0c07b01
+ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
 ms.translationtype: HT
-ms.sourcegitcommit: 6170e096e36f8d054fdfe9cbd8311e6492e32a04
-ms.openlocfilehash: 3f8804f9b7522e385b145a9643dec942cc1aab9f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
 
 À compter de C# 7, les éléments ignorés sont pris en charge. Il s’agit de variables temporaires factices, qui sont inutilisées de façon intentionnelle dans le code d’une application. Les éléments ignorés sont équivalents à des variables non affectées : elles n’ont pas de valeur. Comme il n’existe qu’une seule variable d’élément ignoré et qu’un stockage ne peut même pas lui être alloué, les éléments ignorés peuvent réduire les allocations de mémoire. Dans la mesure où elles éclairent l’intention de votre code, elles améliorent sa lisibilité et sa maintenabilité.
 
-Vous indiquez qu’une variable est un élément ignoré en lui affectant comme nom le trait de soulignement (`_`). Par exemple, l’appel de méthode suivant retourne un tuple de 3 éléments, où la première et la seconde valeurs sont des éléments ignorés :
+Vous indiquez qu’une variable est un élément ignoré en lui affectant comme nom le trait de soulignement (`_`). Par exemple, l’appel de méthode suivant retourne un objet de 3 tuples dans lequel les valeurs des premier et deuxième sont ignore et *zone* est une variable déclarée précédemment, à définir pour le troisième composant correspondant retourné par  *GetCityInformation*:
 
 ```csharp
-(var _, _, area) = city.GetCityInformation(cityName);
+(_, _, area) = city.GetCityInformation(cityName);
 ```
 
 Dans C# 7, les éléments ignorés sont pris en charge dans les affectations dans les contextes suivants :
@@ -39,13 +38,13 @@ Quand `_` est un élément ignoré valide, une tentative de récupérer sa valeu
 
 Les éléments ignorés sont particulièrement utiles pour travailler avec des tuples quand le code de votre application utilise certains éléments d’un tuple mais ignore les autres. Par exemple, la méthode `QueryCityDataForYears` suivante retourne un tuple de 6 éléments avec le nom d’une ville, sa région, une année, la population de la ville pour cette année, une seconde année et la population de la ville pour cette seconde année. L’exemple montre la différence de population entre ces deux années. Parmi les données disponibles dans le tuple, nous ne sommes pas intéressés par la région de la ville, et nous connaissons le nom de la ville et les deux dates au moment du design. Par conséquent, nous sommes intéressés seulement par les deux valeurs de la population stockées dans le tuple et nous pouvons gérer ses valeurs restantes comme éléments ignorés.  
 
-[!code-csharp[Tuple avec des éléments ignorés](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
+[!code-csharp[Tuple-discard](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
 Pour plus d’informations sur la déconstruction de tuples avec des éléments ignorés, consultez [Déconstruction de tuples et d’autres types](deconstruct.md#deconstructing-tuple-elements-with-discards).
 
 La méthode `Deconstruct` d’une classe, d’un struct ou d’une interface vous permet aussi de récupérer et de déconstruire un ensemble spécifique de données d’un objet. Vous pouvez utiliser des éléments ignorés quand vous êtes intéressé seulement par un sous-ensemble des valeurs déconstruites. L’exemple suivant déconstruit un objet `Person` en quatre chaînes (le prénom et le nom, la ville et l’état), mais ignore le nom et l’état.
 
-[!code-csharp[Classe et éléments ignorés](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/class-discard1.cs)]
+[!code-csharp[Class-discard](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/class-discard1.cs)]
 
 Pour plus d’informations sur la déconstruction de types définis par l’utilisateur avec des éléments ignorés, consultez [Déconstruction de tuples et d’autres types](deconstruct.md#deconstructing-a-user-defined-type-with-discards).
 
@@ -55,7 +54,7 @@ Le *modèle d’élément ignoré* peut être utilisé dans des critères spéci
 
 L’exemple suivant définit une méthode `ProvidesFormatInfo` qui utilise des instructions [is](language-reference/keywords/is.md) pour déterminer si un objet fournit une implémentation de <xref:System.IFormatProvider> et teste si l’objet est `null`. Il utilise également le modèle d’élément ignoré pour gérer les objets non null de n’importe quel autre type.
 
-[!code-csharp[modèle d’élément ignoré](../../samples/snippets/csharp/programming-guide/discards/discard-pattern2.cs)]
+[!code-csharp[discard-pattern](../../samples/snippets/csharp/programming-guide/discards/discard-pattern2.cs)]
 
 ## <a name="calls-to-methods-with-out-parameters"></a>Appels à des méthodes avec des paramètres out
 
@@ -63,30 +62,29 @@ Quand vous appelez la méthode `Deconstruct` pour déconstruire un type défini 
 
 L’exemple suivant appelle la méthode [DateTime.TryParse (String, out DateTime)](<xref:System.DateTime.TryParse(System.String,System.DateTime@)>) pour déterminer si la représentation sous forme de chaîne d’une date est valide dans la culture actuelle. Comme l’exemple concerne ici uniquement la validation de la chaîne de date et pas son analyse pour extraire la date, l’argument `out` de la méthode est un élément ignoré.
 
-[!code-csharp[élément ignoré avec out](../../samples/snippets/csharp/programming-guide/discards/discard-out1.cs)]
+[!code-csharp[discard-with-out](../../samples/snippets/csharp/programming-guide/discards/discard-out1.cs)]
 
 ## <a name="a-standalone-discard"></a>Élément ignoré autonome
 
 Vous pouvez utiliser un élément ignoré autonome pour indiquer une variable que vous choisissez d’ignorer. L’exemple suivant utilise un élément ignoré autonome pour ignorer l’objet <xref:System.Threading.Tasks.Task> retourné par une opération asynchrone. Ceci a pour effet de supprimer l’exception levée par l’opération au moment où elle se termine.
 
-[!code-csharp[élément ignoré autonome](../../samples/snippets/csharp/programming-guide/discards/standalone-discard1.cs)]
+[!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard1.cs)]
 
 Notez que `_` est aussi un identificateur valide. Quand il est utilisé en dehors d’un contexte pris en charge, `_` est traité non pas comme élément ignoré, mais comme variable valide. Si un identificateur nommé `_` est déjà dans l’étendue, l’utilisation de `_` comme élément ignoré autonome peut provoquer :
 
 - Une modification accidentelle de la valeur de la variable `_` dans l’étendue en lui affectant la valeur de l’élément ignoré prévu. Exemple :
 
-   [!code-csharp[élément ignoré autonome](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
+   [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
  
 - Une erreur de compilateur pour violation de sécurité du type. Exemple :
 
-   [!code-csharp[élément ignoré autonome](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
+   [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
  
 - Erreur de compilateur CS0136, « Impossible de déclarer une variable locale ou un paramètre nommé ’_’ dans cette portée, car ce nom est utilisé dans une portée locale englobante pour définir une variable locale ou un paramètre ». Exemple :
 
-   [!code-csharp[élément ignoré autonome](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
+   [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 
 ## <a name="see-also"></a>Voir aussi
 [Déconstruction de tuples et d’autres types](deconstruct.md)   
 [Mot clé `is` ](language-reference/keywords/is.md)   
 [Mot clé `switch`](language-reference/keywords/switch.md)   
-

@@ -1,30 +1,21 @@
 ---
 title: Assemblys friend (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: b65ea7de-0801-477a-a39c-e914c2cc107c
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 20b8d4f2d58af510a28160d28e6ef740d293d835
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e2680b5799c552a063ff7c539a31a5dd00b90a75
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="friend-assemblies-c"></a>Assemblys friend (C#)
 Un *assembly friend* est un assembly qui peut accéder aux types et membres [internes](../../../../csharp/language-reference/keywords/internal.md) d'un autre assembly. Si vous identifiez un assembly comme étant un assembly friend, vous n’avez plus à marquer ses types et ses membres comme publics pour qu’ils soient accessibles aux autres assemblys. Ceci est particulièrement utile dans les scénarios suivants :  
@@ -88,10 +79,9 @@ public class ClassWithFriendMethod
  Pour plus d’informations sur la façon d’accéder aux types et aux méthodes `internal` d’un assembly à partir d’un fichier de module (avec l’extension .netmodule), consultez [/moduleassemblyname (C#)](../../../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- <xref:System.Security.Permissions.StrongNameIdentityPermission>   
- [Guide pratique pour créer des assemblys friend non signés (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)   
- [Guide pratique pour créer des assemblys friend signés (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)   
- [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)   
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ <xref:System.Security.Permissions.StrongNameIdentityPermission>  
+ [Comment : créer des assemblys Friend non signés (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
+ [Comment : créer des assemblys Friend signés (c#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
+ [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
  [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
-

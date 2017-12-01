@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
+ms.openlocfilehash: 09c7da7c780389d3819cf23a533cc425b43ad5ff
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 465326fe520d6a062609e0c4c471135ef88b0dd6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate et le mot clé `delegate`
 
 [Précédent](delegates-overview.md)
@@ -26,7 +24,7 @@ Cet article traite des classes du .NET Framework qui prennent en charge les dé
 
 ## <a name="defining-delegate-types"></a>Définition des types délégués
 
-Commençons par le mot clé 'delegate', car c’est l’élément principal que vous utilisez quand vous travaillez avec des délégués. Le code que le compilateur génère quand vous utilisez le mot clé `delegate` mappe aux appels de méthode qui appellent des membres des classes @System.Delegate et @System.MulticastDelegate. 
+Commençons par le mot clé 'delegate', car c’est l’élément principal que vous utilisez quand vous travaillez avec des délégués. Le code que le compilateur génère quand vous utilisez le mot clé `delegate` mappe aux appels de méthode qui appellent des membres des classes <xref:System.Delegate> et <xref:System.MulticastDelegate>. 
 
 Vous définissez un type délégué à l’aide d’une syntaxe similaire à la définition d’une signature de méthode. Vous venez d’ajouter le mot clé `delegate` à la définition.
 
@@ -122,7 +120,7 @@ L’exemple Sort() attache généralement une méthode cible unique au délégu�
 
 ## <a name="delegate-and-multicastdelegate-classes"></a>Classes Delegate et MulticastDelegate
 
-La prise en charge du langage décrite ci-dessus fournit les fonctionnalités et la prise en charge généralement nécessaires pour utiliser des délégués. Ces fonctionnalités sont basées sur deux classes du .NET Core Framework : @System.Delegate et @"System.MulticastDelegate".
+La prise en charge du langage décrite ci-dessus fournit les fonctionnalités et la prise en charge généralement nécessaires pour utiliser des délégués. Ces fonctionnalités reposent sur les deux classes de l’infrastructure .NET Core : <xref:System.Delegate> et <xref:System.MulticastDelegate>.
 
 La classe `System.Delegate` et son unique sous-classe directe, `System.MulticastDelegate`, fournissent la prise en charge du framework pour la création de délégués, l’inscription de méthodes comme cibles de délégués et l’appel de toutes les méthodes inscrites comme cible de délégué. 
 
@@ -143,4 +141,3 @@ Les méthodes que vous utiliserez le plus avec les délégués sont `Invoke()` e
 Maintenant que vous avez vu la syntaxe du langage et les classes qui prennent en charge les délégués, examinons la façon dont les délégués fortement typés sont utilisés, créés et appelés.
 
 [Suivant](delegates-strongly-typed.md)
-

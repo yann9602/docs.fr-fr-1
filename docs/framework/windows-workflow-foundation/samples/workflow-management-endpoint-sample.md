@@ -12,11 +12,11 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 9d13d1d2af449631f93dd4df29ff41113ffbbfec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: a6be74ba917a8684571a64394ec902cf51bc67bd
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="workflow-management-endpoint-sample"></a>Exemple de point de terminaison de gestion de workflow
 Cet exemple montre comment un point de terminaison de contrôle de workflow peut être utilisé pour créer et exécuter des workflows à la fois localement et à distance. Il montre comment héberger un point de terminaison de contrôle et écrire des clients qui appellent le point de terminaison de contrôle pour créer et exécuter l'instance d'un workflow. Le workflow n'est pas un service.  
@@ -42,6 +42,4 @@ Cet exemple montre comment un point de terminaison de contrôle de workflow peut
 >   
 >  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ManagementEndpoint`  
-  
-## <a name="see-also"></a>Voir aussi
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ManagementEndpoint`

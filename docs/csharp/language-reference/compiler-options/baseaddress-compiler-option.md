@@ -1,45 +1,26 @@
 ---
 title: "-baseaddress (Options du compilateur C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /dllbase
-dev_langs:
-- CSharp
+f1_keywords: /dllbase
 helpviewer_keywords:
 - baseaddress compiler option [C#]
 - /baseaddress compiler option [C#]
 - -baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 7cd3269754f783ab8b26683f5215aa81825673e6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 91193ae794957b5045a225614d6322e86d18d459
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="baseaddress-c-compiler-options"></a>/baseaddress (Options du compilateur C#)
-L’option **/baseaddress** vous permet de spécifier l’adresse de base préférée à laquelle doit être chargée une DLL. Pour plus d’informations sur le moment et la raison de l’utilisation de cette option, consultez [Amélioration du temps de démarrage des applications](http://go.microsoft.com/fwlink/?LinkId=107043) et [journal web de Larry Osterman](http://go.microsoft.com/fwlink/?LinkId=107044).  
+L’option **/baseaddress** vous permet de spécifier l’adresse de base préférée à laquelle doit être chargée une DLL. Pour plus d’informations sur quand et pourquoi utiliser cette option, consultez [blog de Larry Osterman](http://go.microsoft.com/fwlink/?LinkId=107044).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -71,7 +52,6 @@ L’option **/baseaddress** vous permet de spécifier l’adresse de base préf�
      Pour définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.BaseAddress%2A>.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Diagnostics.ProcessModule.BaseAddress%2A?displayProperty=fullName>   
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ <xref:System.Diagnostics.ProcessModule.BaseAddress%2A?displayProperty=nameWithType>  
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
-

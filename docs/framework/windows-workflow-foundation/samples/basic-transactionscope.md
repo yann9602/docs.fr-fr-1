@@ -12,11 +12,11 @@ caps.latest.revision: "13"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: d4f9d9e966a0a6d8fa48d195b17438b3d78b32a9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 01d5d6f35ed9eaa64786d18c2477862594c546be
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="basic-transactionscope"></a>Bases de TransactionScope
 Cet exemple est composé de quatre scénarios qui s'exécutent pour montrer comment imbriquer des instances <xref:System.Activities.Statements.TransactionScope>. Le premier scénario présente l'imbrication d'une activité tierce dont l'auteur ignore totalement la construction. Les deuxième et troisième scénarios montrent comment les délais d'expiration sont respectés, et le dernier scénario présente le paramètre <xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A>.  
@@ -47,6 +47,4 @@ Cet exemple est composé de quatre scénarios qui s'exécutent pour montrer comm
 >   
 >  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Transactions\BasicTransactionScope`  
-  
-## <a name="see-also"></a>Voir aussi
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Transactions\BasicTransactionScope`

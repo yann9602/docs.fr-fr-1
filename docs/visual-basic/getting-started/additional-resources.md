@@ -1,12 +1,9 @@
 ---
 title: "Ressources supplémentaires pour les programmeurs Visual Basic"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic, additional resources
 - Help
@@ -19,29 +16,14 @@ helpviewer_keywords:
 - support, Visual Studio sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 4f37aaffa33d618a54ea56252b7183f9bce1ed7b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1ebc788f629e011dff88c1db119ce25a3829e009
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="additional-resources-for-visual-basic-programmers"></a>Ressources supplémentaires pour les programmeurs Visual Basic
 Les sites web suivants fournissent des instructions et peuvent vous aider à trouver des solutions aux problèmes courants que vous rencontrez.  
@@ -63,7 +45,7 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 |Terme|Définition|  
 |----------|----------------|  
 |[Galerie de code](http://code.msdn.microsoft.com/)|Téléchargez et partagez des exemples d'applications et d'autres ressources avec la communauté de développeurs.|  
-|[CodePlex](http://www.codeplex.com/)|Héberge des projets de logiciels open source. Vous pouvez utiliser CodePlex pour rechercher des logiciels open source ou créer des projets à partager avec le monde entier.|  
+|[GitHub](http://www.github.com/)|Héberge des projets de logiciels open source. Vous pouvez utiliser GitHub pour rechercher des logiciels open source ou de créer des projets à partager avec le monde entier.|  
 |[Exemples de code Visual Basic](http://msdn.microsoft.com/vbasic/ms789074)|Fournit des exemples d'application, web et de données en Visual Basic.|  
   
 ### <a name="forums"></a>Forums  
@@ -106,6 +88,5 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 |[vb.dotnet.technical](http://go.microsoft.com/fwlink/?LinkId=145986)|Fournit un forum pour la discussion des nouvelles fonctionnalités de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] sur les forums DevX.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Bien démarrer](../../visual-basic/getting-started/index.md)   
+ [Prise en main](../../visual-basic/getting-started/index.md)  
  [Nous contacter](/visualstudio/ide/talk-to-us)
-

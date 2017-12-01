@@ -1,41 +1,22 @@
 ---
 title: "sbyte (référence C#)"
-ms.date: 2017-03-14
+ms.date: 03/14/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - sbyte_CSharpKeyword
 - sbyte
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- sbyte keyword [C#]
+helpviewer_keywords: sbyte keyword [C#]
 ms.assetid: 1a9c7b48-73d1-4d33-b485-c4faf0a816bc
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 010ac98f523eca5929100f7c51b8b6ef5d11de30
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 69741a5b9556c769156687584041667312550c17
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="sbyte-c-reference"></a>sbyte (référence C#)
 
@@ -43,7 +24,7 @@ ms.lasthandoff: 07/28/2017
   
 |Type|Plage|Taille|Type .NET Framework|  
 |----------|-----------|----------|-------------------------|  
-|`sbyte`|-128 à 127|Entier 8 bits signé|<xref:System.SByte?displayProperty=fullName>|  
+|`sbyte`|-128 à 127|Entier 8 bits signé|<xref:System.SByte?displayProperty=nameWithType>|  
   
 ## <a name="literals"></a>Littéraux  
 
@@ -51,16 +32,20 @@ Vous pouvez déclarer et initialiser une variable `sbyte` en lui assignant un li
 
 Dans l’exemple suivant, les entiers égaux à -102 représentés comme des littéraux décimaux, hexadécimaux et binaires sont convertis à partir de valeurs [int](../../../csharp/language-reference/keywords/int.md) en valeurs `sbyte`.    
   
-[!code-cs[SByte](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#SByte)]  
+[!code-csharp[SByte](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#SByte)]  
 
 > [!NOTE] 
 > Vous utilisez le préfixe `0x` ou `0X` pour désigner un littéral hexadécimal, et le préfixe `0b` ou `0B` pour désigner un littéral binaire. Les littéraux décimaux n’ont pas de préfixe.
 
-À compter de C# 7, vous pouvez également utiliser le caractère de soulignement, `_`, comme séparateur numérique pour améliorer la lisibilité, comme dans l’exemple suivant.
+À partir de C# 7, quelques fonctionnalités ont été ajoutées améliorer la lisibilité. 
+ - C# 7.0 permet l’utilisation d’un caractère de soulignement `_`, comme un séparateur de chiffre.
+ - 7.2 c# permet `_` à utiliser comme séparateur de chiffres pour un littéral binaire ou en hexadécimal, après le préfixe. Un littéral décimal n’est pas autorisé à avoir un trait de soulignement.
 
-[!code-cs[SByteSeparator](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#SByteS)]  
+ Certains exemples sont présentés ci-dessous.
 
-Si le littéral entier est en dehors de la plage de `sbyte` (autrement dit, s’il est inférieur à <xref:System.SByte.MinValue?displayProperty=fullName> ou supérieur à <xref:System.SByte.MaxValue?displayProperty=fullName>, une erreur de compilation se produit. Quand un littéral entier n’a pas de suffixe, son type est le premier des types suivants dans lesquels sa valeur peut être représentée : [int](int.md), [uint](uint.md), [long](long.md), [ulong](ulong.md). Cela signifie que, dans cet exemple, les littéraux numériques `0x9A` et `0b10011010` sont interprétés comme des entiers signés 32 bits avec une valeur égale à 156, ce qui dépasse <xref:System.SByte.MaxValue?displayProperty=fullName>. Pour cette raison, l’opérateur de cast est nécessaire et l’attribution doit se produire dans un contexte [non vérifié](unchecked.md). 
+[!code-csharp[SByteSeparator](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#SByteS)]  
+
+Si le littéral entier est en dehors de la plage de `sbyte` (autrement dit, s’il est inférieur à <xref:System.SByte.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.SByte.MaxValue?displayProperty=nameWithType>, une erreur de compilation se produit. Quand un littéral entier n’a pas de suffixe, son type est le premier des types suivants dans lesquels sa valeur peut être représentée : [int](int.md), [uint](uint.md), [long](long.md), [ulong](ulong.md). Cela signifie que, dans cet exemple, les littéraux numériques `0x9A` et `0b10011010` sont interprétés comme des entiers signés 32 bits avec une valeur égale à 156, ce qui dépasse <xref:System.SByte.MaxValue?displayProperty=nameWithType>. Pour cette raison, l’opérateur de cast est nécessaire et l’attribution doit se produire dans un contexte [non vérifié](unchecked.md). 
 
 ## <a name="compiler-overload-resolution"></a>Résolution de surcharge du compilateur
 
@@ -124,12 +109,11 @@ sbyte y = (sbyte)3.0;  // OK: explicit conversion
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.SByte>   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
- [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
+ <xref:System.SByte>  
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)  
+ [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)  
+ [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+ [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
  [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
-

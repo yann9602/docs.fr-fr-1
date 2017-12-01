@@ -1,12 +1,9 @@
 ---
 title: "Vue d'ensemble de l'interopérabilité (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - COM interop
 - C# language, interoperability
@@ -14,29 +11,14 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: de7ff105de85392fd4b8b342f26e67e89d0d9b96
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c817dcd9073a5a1d4aeee558bf53d50566bbb472
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Vue d'ensemble de l'interopérabilité (Guide de programmation C#)
 Cette rubrique décrit les méthodes qui permettent une interopérabilité entre le code managé C# et le code non managé.  
@@ -81,10 +63,9 @@ Cette rubrique décrit les méthodes qui permettent une interopérabilité entre
  Pour plus d’informations, consultez [Exposition de composants .NET Framework à COM](http://msdn.microsoft.com/library/e42a65f7-1e61-411f-b09a-aca1bbce24c6) et [Exemple de classe COM](../../../csharp/programming-guide/interop/example-com-class.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Amélioration des performances d’interopérabilité](http://go.microsoft.com/fwlink/?LinkId=99564)   
- [Introduction à COM Interop](http://go.microsoft.com/fwlink/?LinkId=112406)   
- [Marshaling entre du code géré et du code non géré](http://go.microsoft.com/fwlink/?LinkId=112398)   
- [Interopération avec du code non managé](https://msdn.microsoft.com/library/sd10k43k)   
- [Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)   
+ [Amélioration des performances Interop](http://go.microsoft.com/fwlink/?LinkId=99564)  
+ [Introduction à COM Interop](http://go.microsoft.com/fwlink/?LinkId=112406)  
+ [Marshaling entre Code managé et non managé](http://go.microsoft.com/fwlink/?LinkId=112398)  
+ [Interopération avec du code non managé](https://msdn.microsoft.com/library/sd10k43k)  
+ [Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-
