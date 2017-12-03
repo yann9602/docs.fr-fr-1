@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
 caps.latest.revision: "36"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6154309f24ea0eda062b7108ae280175d3ad97e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d8698e0657de31d78699df478da5e716bf831fc4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Accès aux services à l'aide d'un client WCF
 Après la création d'un service, l'étape suivante consiste à créer un proxy client [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Une application cliente utilise le proxy client [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] pour communiquer avec le service. En général, les applications clientes importent les métadonnées d'un service pour générer le code client [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] qui permet d'appeler le service.  

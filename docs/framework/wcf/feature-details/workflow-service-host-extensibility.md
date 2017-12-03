@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c0e8f7bb-cb13-49ec-852f-b85d7c23972f
 caps.latest.revision: "14"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 36ecde17986425436e17e6b7a4043fc74a6e583e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 29e4fb590733392ebae10fe1ad18781653c0d202
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-service-host-extensibility"></a>Extensibilité de l'hôte du service de workflow
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] fournit la classe <xref:System.ServiceModel.Activities.WorkflowServiceHost> pour l'hébergement de services de workflow. Cette classe est utilisée lorsque vous auto-hébergez un service de workflow dans une application managée ou un service Windows. Cette classe est également utilisée lors de l'hébergement d'un service de workflow dans les services IIS (Internet Information Services) ou WAS (Windows Process Activation Service). La classe <xref:System.ServiceModel.Activities.WorkflowServiceHost> fournit des points d'extension qui vous permettent d'ajouter des extensions personnalisées, de modifier le comportement inactif et d'héberger des workflows sans service (workflows qui n'utilisent aucune activité de messagerie).  

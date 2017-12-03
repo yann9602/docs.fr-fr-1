@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: af513015-85bf-417b-8729-1bdff77ff6d6
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 821f629a7f39869975af19c793fe26188a40d7d6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b658cc481d3ca5e87b5b9e2aab6b7561be2c65b1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="discovery-binding-element-sample"></a>Exemple Discovery Binding Element
 Cet exemple montre comment utiliser l’élément de liaison du client de découverte pour découvrir un service. Cette fonctionnalité permet aux développeurs d'ajouter un canal client de découverte à leur pile de canaux clients existante, ce qui rend le modèle de programmation très intuitif. Lorsque le canal associé est ouvert, l'adresse du service est résolue à l'aide de la découverte. Cet exemple est composé des projets suivants :  

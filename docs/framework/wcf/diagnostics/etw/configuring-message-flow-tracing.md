@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 15571ca2-bee2-47fb-ba10-fcbc09152ad0
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 77a7148a0fc96c4a043a06fbfac7b139c7720d4f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cfac12fc0c5fbaabf612bbd8cc950f93a59a54c8
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-message-flow-tracing"></a>Configuration du suivi de flux de messages
 Lorsque le suivi d'activité [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] est activé, les ID d'activité de bout en bout sont affectés à des activités logiques dans toute la pile [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]. Il existe désormais dans [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)], une version plus performante de cette fonctionnalité qui fonctionne avec ETW (Suivi d'événements Windows), appelée le suivi de flux de messages. Lorsqu'il est activé, les ID d'activité de bout en bout sont extraits des messages entrants (ou leur sont affectés, s'ils sont vides) et sont propagés à tous les événements de suivi émis une fois que le message a été décodé par le canal. Les clients peuvent utiliser cette fonctionnalité pour reconstruire des flux de messages avec les journaux de suivi de différents services après décodage.  

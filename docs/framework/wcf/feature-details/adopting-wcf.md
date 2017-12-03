@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 49ba71e2-9468-4082-84c5-cf8daf95e34a
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 15fc02882148054fe53534c75905f51cfffe68fe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e27ee5f2e1b2ad042fd8c0104e89b99eb5e4bc96
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="adopting-windows-communication-foundation"></a>Adoption de Windows Communication Foundation
 Vous pouvez choisir d'utiliser [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour tout nouveau développement, en continuant de maintenir à jour les applications existantes développées à l'aide d'ASP.NET. Étant donné que [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a été conçu pour faciliter au mieux la communication avec des applications développées avec le .NET Framework dans tous les scénarios, il peut faire office d'outil standard pour résoudre une large gamme de problèmes de communication du logiciel qu'ASP.NET ne peut résoudre de la même manière.  

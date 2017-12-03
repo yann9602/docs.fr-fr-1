@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: endpoints [WCF]
 ms.assetid: bd0c310f-dd9f-4081-9be2-3db5909850b6
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4ac3d1f16d860ea01217d0d1d35d0588da0c8d87
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a1771f5c69442ea4e95925339c28204663f78eb2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Points de terminaison Windows Communication Foundation
 Toutes les communications avec un [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service s’effectue via le *points de terminaison* du service. Les points de terminaison fournissent au client l'accès aux fonctionnalités offertes par un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  

@@ -16,14 +16,14 @@ helpviewer_keywords:
 - WCF Data Services, data binding
 ms.assetid: 2477af0a-676f-44f7-b73d-e66208785509
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 5b56fecef5ace38f728d8cc68df4dcfeb71bfedf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3ee72f1c3eaf2c78a7cdff9b2a4db81ef0b767a2
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Procédure : lier des données à l'aide d'une source de données projet (WCF Data Services)
 Vous pouvez créer des sources de données basées sur les objets de données générés dans une application cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Lorsque vous ajoutez une référence à un service de données à l’aide de la **ajouter une référence de Service** boîte de dialogue, une source de données de projet est créée en même temps que les classes de données clientes générées. Une source de données est créée pour chaque jeu d'entités exposé par le service de données. Vous pouvez créer des formulaires qui affichent des données à partir du service en faisant glisser ces éléments de source de données à partir de la **des Sources de données** fenêtre sur le concepteur. Ces éléments deviennent des contrôles liés à la source de données. Pendant l’exécution, cette source de données est liée à une instance de la <xref:System.Data.Services.Client.DataServiceCollection%601> (classe), qui est remplie avec les objets retournés par une requête au service de données. Pour plus d’informations, consultez [liaison de données aux contrôles](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  

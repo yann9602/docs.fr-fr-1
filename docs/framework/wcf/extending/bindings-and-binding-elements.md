@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: binding elements [WCF]
 ms.assetid: 765ff77b-7682-4ea3-90eb-e4d751e37379
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 98086ca5a5cc7d4680756819a31838fa14852bd5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 39615c7a74d30ebd5f316988704992b49982c4a4
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="bindings-and-binding-elements"></a>Liaisons et éléments de liaison
 Les liaisons sont des collections d’éléments de configuration spéciale, appelées *éléments de liaison*, qui sont évalué par le runtime du service chaque fois qu’un client ou point de terminaison de service est en cours de construction. Le type et l’ordre des éléments de liaison dans une liaison déterminent la sélection et l’ordre d’empilement des protocoles et des canaux de transport dans la pile de canaux d’un point de terminaison.  

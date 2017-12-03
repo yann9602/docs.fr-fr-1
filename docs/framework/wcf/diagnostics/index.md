@@ -17,14 +17,14 @@ helpviewer_keywords:
 - WCF, administration
 ms.assetid: 34c81c08-0e0f-4fbc-9ae8-91948640ee43
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2f103570cf7d94a9ac6256f3db991c44767fa7c4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4aa9cacfaa966bbe37618406f4b1413dec433726
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="administration-and-diagnostics"></a>Administration et diagnostics
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit un jeu complet de fonctionnalités vous permettant de surveiller les différentes étapes du cycle de vie d'une application. Par exemple, utilisez la configuration pour installer les services et les clients lors du déploiement. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] inclut un jeu important de compteurs de performance pour vous aider à mesurer les performances de votre application. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expose également au moment de l'exécution les données d'inspection d'un service par l'intermédiaire d'un fournisseur WMI (Windows Management Instrumentation) de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. En cas de défaillance ou de fonctionnement incorrect de l'application, vous pouvez utiliser le journal des événements afin de vérifier si un événement significatif s'est produit. Vous pouvez également utiliser la journalisation des messages et le suivi pour afficher les événements qui se produisent sur l'ensemble de votre application. Ces fonctionnalités permettent aux développeurs et aux professionnels de l'informatique de dépanner une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lorsque celle-ci ne se comporte pas correctement.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e8668b37-c79f-4714-9de5-afcb88b9ff02
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ac43be1978a2a6e80b08e0c4bcd5e0e92043719e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d637dfaa4b3639d1e47280c423489735844a2a47
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Création d’un en-tête personnalisé qui est signé et- ou chiffrées
 Si vous appelez un service autre que WCF à l'aide d'un client WCF, il est parfois nécessaire d'utiliser des en-têtes SOAP personnalisés. Un bogue de canonisation dans WCF empêche les en-têtes personnalisés qui sont signés et chiffrés de fonctionner avec un service non-WCF. Le problème est causé par la canonisation incorrecte des espaces de noms XML par défaut. Ceci pose problème uniquement si vous appelez des services autres que WCF avec en-têtes personnalisés qui sont signés et/ou chiffrés.  Lorsque le service reçoit le message contenant l'en-tête personnalisé signé et/ou chiffré, il n'est pas en mesure de vérifier la signature. Cette solution de contournement évite le bogue de canonisation, permet l'interopérabilité avec les services autres que WCF, mais n'empêche pas l'interopérabilité avec les services WCF.  

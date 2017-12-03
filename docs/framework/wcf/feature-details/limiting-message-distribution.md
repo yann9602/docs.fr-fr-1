@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
 caps.latest.revision: "10"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ab46b1c908e8eb61ea49315e120973f1ea381bc6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 191baa2df4a6a5a4fe8139e8b7ad36bd1c60b40d
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="limiting-message-distribution"></a>Limitation de la distribution de messages
 Le canal homologue est, de par sa conception, une maille de diffusion. Son modèle de saturation de base implique la distribution de chaque message envoyé par tout membre d'une maille à tous les autres membres de cette maille. C'est idéal dans les situations où chaque message généré par un membre est pertinent et utile à tous les autres membres (par exemple, une salle de conversation). Toutefois, de nombreuses applications ont parfois besoin de limiter la distribution de messages. Par exemple, si un nouveau membre rejoint une maille et souhaite extraire le dernier message envoyé sur cette maille, cette demande ne doit pas être envoyée à chaque membre de la maille. Elle peut être limitée aux voisins proches ou les messages générés localement peuvent être filtrés. Les messages peuvent également être envoyés à un nœud individuel sur la maille. Cette rubrique décrit l'utilisation du nombre de sauts, d'un filtre de propagation de messages, d'un filtre local ou d'une connexion directe pour contrôler la façon dont les messages sont transférés sur la maille, et fournit des recommandations générales sur le choix d'une approche.  

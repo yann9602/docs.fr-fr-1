@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
 caps.latest.revision: "2"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1e9093c7a499ca8333f1b474f1777619b48a2084
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fe2f00d9f735583bb048669ff0ab2659db68bf1f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-data-services-resources"></a>Ressources de services de données WCF
 Les rubriques d'introduction [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] se trouvent aux emplacements indiqués ci-après. Un grand nombre de ces rubriques contiennent également des liens vers des rubriques connexes qui contiennent des informations plus détaillées.  

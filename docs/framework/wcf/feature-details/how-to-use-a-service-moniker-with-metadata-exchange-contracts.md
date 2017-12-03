@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ed6ce9b87a5e2d8945a57110c02cce8024439f14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 31720b0639f9be68a2124b4ff844a2837787ef81
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Comment : utiliser un moniker de service avec des contrats d'échange de métadonnées
 Après avoir développé de nouveaux services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vous pouvez décider que vous souhaitez être en mesure d'appeler ces services à partir d'un script ou d'une application Visual Basic 6.0. Une méthode consisterait à générer un assembly client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], à inscrire l'assembly avec COM, à installer l'assembly dans le Global Assembly Cache (GAC), puis à référencer les types COM à partir de votre code Visual Basic. Lors de la distribution de l'application, vous devrez distribuer également l'assembly client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. L'utilisateur devra ensuite inscrire l'assembly client WCF avec COM et le placer dans le GAC. COM Interop [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vous permet également d'effectuer les mêmes appels de service sans reposer sur un assembly client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Le moniker [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vous permet d'appeler tout service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à partir de tout langage compatible avec COM (Visual Basic, VBScript, Visual Basic pour applications (VBA), et ainsi de suite) en spécifiant un URI de point de terminaison d'échange de métadonnées (Mex) que le moniker de service utilise pour extraire des informations de type à propos du service. Cette rubrique décrit comment appeler l'exemple [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de Mise en route à l'aide d'un moniker [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui spécifie un point de terminaison Mex.  

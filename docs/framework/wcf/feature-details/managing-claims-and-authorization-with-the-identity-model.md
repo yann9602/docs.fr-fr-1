@@ -16,14 +16,14 @@ helpviewer_keywords:
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
 caps.latest.revision: "20"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a5734065a82c6b45b837c9cb5a74ba6e46207fb7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b69c17b9fcb14bbd70b60c32965fb1163c22e765
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Gestion des revendications et autorisation avec le modèle d'identité
 Une autorisation correspond au processus permettant d'identifier les entités autorisées à changer ou à consulter des ressources informatiques ou à y accéder d'une manière ou d'une autre. Par exemple, dans une entreprise, seuls les responsables peuvent avoir accès aux fichiers des employés. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] prend en charge deux mécanismes pour exécuter le traitement des autorisations. Le premier mécanisme vous permet de contrôler les processus d'autorisation à l'aide des constructions CLR (Common Language Runtime) existantes. Le deuxième est un modèle basé sur les revendications appelé le *modèle d’identité*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise le modèle d'identité pour créer des revendications à partir des messages entrants. Les classes de ce modèle peuvent être étendues pour assurer la prise en charge de nouveaux types de revendication lorsqu'un schéma d'autorisation personnalisé est utilisé. Cette rubrique présente les principaux concepts de programmation du modèle d'identité et répertorie les principales classes utilisées par cette fonctionnalité.  

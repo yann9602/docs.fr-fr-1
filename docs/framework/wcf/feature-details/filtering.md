@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: b97c53225afdc2710db26720ed3f28c12a322d8b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4a5b2c78ef7e675a656caf00e9d0ba0c9eb0630b
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="filtering"></a>Filtrage
 Le système de filtrage [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peut utiliser des filtres déclaratifs pour trouver des messages correspondants et prendre des décisions opérationnelles. Vous pouvez utiliser des filtres pour déterminer ce qu'il faut faire d'un message en examinant une partie du message. Par exemple, un processus de mise en file d'attente peut utiliser une requête XPath 1.0 pour vérifier l'élément prioritaire d'un en-tête connu afin de déterminer s'il faut déplacer un message au début de la file d'attente.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8365a152-eacd-4779-9130-bbc48fa5c5d9
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6d9ee9c1331c5c8754b336024f4b11a040c8a201
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 353c1ce4688442513417ee03bfecd3cee3db3d62
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="wcf-discovery-object-model"></a>Modèle objet de découverte WCF
 La découverte WCF consiste en un jeu de types fournissant un modèle de programmation unifié qui permet de développer des services détectables au moment de l'exécution et des clients qui recherchent et utilisent ces services.  

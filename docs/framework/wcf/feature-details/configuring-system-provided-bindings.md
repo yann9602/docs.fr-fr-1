@@ -14,14 +14,14 @@ helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 443f8d65-f1f2-4311-83b3-4d8fdf7ccf16
 caps.latest.revision: "17"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: c26a4f804f99fda637937bfa5ddaef218c15ede7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 91994fc31e4b0f30d575cd43ad44e66dcdb0a7f0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-system-provided-bindings"></a>Configuration des liaisons fournies par le système
 Les liaisons spécifient le mécanisme de communication à utiliser pour communiquer avec un point de terminaison et indiquer comment se connecter à un point de terminaison. Les liaisons se composent des éléments qui définissent comment les canaux [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sont posés en couches pour fournir les fonctionnalités de communication requises. Une liaison contient trois types d'éléments :  

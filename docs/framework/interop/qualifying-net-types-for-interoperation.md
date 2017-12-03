@@ -1,12 +1,8 @@
 ---
 title: "Qualification des types .NET en vue d'une interopérabilité"
-ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - exposing .NET Framework components to COM
@@ -16,24 +12,23 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b6487c151f49f6084977deb600e7f93e5eb7acee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 165536656f0de6b53680565bee93f0bb8d607d48
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="qualifying-net-types-for-interoperation"></a>Qualification des types .NET en vue d'une interopérabilité
 Si vous envisagez d’exposer les types d’un assembly à des applications COM, prenez en compte les exigences COM Interop au moment de la conception. Les types managés (classe, interface, structure et énumération) s’intègrent parfaitement aux types COM lorsque vous respectez les consignes suivantes :  
   
 -   Les classes doivent implémenter les interfaces de manière explicite.  
   
-     Même si COM Interop fournit un mécanisme permettant de générer automatiquement une interface contenant tous les membres de la classe et de sa classe de base, il est fortement recommandé de fournir des interfaces explicites. L’interface générée automatiquement est appelée « interface de classe ». Pour obtenir des instructions, consultez [Présentation de l’interface de classe](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
+     Même si COM Interop fournit un mécanisme permettant de générer automatiquement une interface contenant tous les membres de la classe et de sa classe de base, il est fortement recommandé de fournir des interfaces explicites. L’interface générée automatiquement est appelée « interface de classe ». Pour connaître les instructions, consultez [présentation de l’interface de classe](com-callable-wrapper.md#introducing-the-class-interface).  
   
-     Vous pouvez utiliser [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C# et C++ pour incorporer des définitions d’interface dans votre code, au lieu du langage IDL (ou équivalent). Pour plus d’informations sur la syntaxe, consultez la documentation relative à votre langage.  
+     Vous pouvez utiliser Visual Basic, c# et C++ pour incorporer des définitions d’interface dans votre code, au lieu de devoir utiliser le langage IDL (Interface Definition) ou son équivalent. Pour plus d’informations sur la syntaxe, consultez la documentation relative à votre langage.  
   
 -   Les types managés doivent être publics.  
   

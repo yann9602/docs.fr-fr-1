@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1e96331e-31b6-4272-bbbd-29ed1e110460
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 0ac45390d78f4fbce15c8910fcdcc95713c5898a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3ff0eb124d2593ce16de58ca5df2f14f57d2c4c6
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="transaction-management-escalation"></a>Remontée de la gestion des transactions
 Windows héberge un ensemble de services et de modules qui constituent ensemble un gestionnaire de transactions. La remontée de la gestion des transactions décrit le processus de migration d'une transaction de l'un des composants du gestionnaire de transactions à un autre.  

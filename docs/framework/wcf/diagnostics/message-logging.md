@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 6bce0682-75ef-4d65-a659-b328fba4a8b5
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 04e1b881d9aab1c35195794394cddf5172288cc1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a771cbc22febf966fec2cf608a9b59204fc6e51a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="message-logging"></a>Journalisation des messages
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] intègre une fonctionnalité permettant d'enregistrer les messages entrants et sortants afin de pouvoir les utiliser hors ligne. L'enregistrement des messages dans des journaux vous permet de voir à quoi ils ressemblent et à quoi ressemble le corps de ces messages. Ce type d'enregistrement est particulièrement utile car il vous permet de savoir quels arguments ont été passés et de connaître la manière dont le point de terminaison destinataire a perçu les arguments exprimés en langage XML. En outre, l'enregistrement des messages tels qu'ils ont été reçus vous permet d'identifier les messages erronés et de voir la manière dont les messages sont arrivés. Dans ces journaux, vous pouvez également examiner les jetons de sécurité utilisés, les parties chiffrées et signées ainsi que les parties laissées telles quelles.  

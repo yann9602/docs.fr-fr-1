@@ -11,14 +11,14 @@ ms.topic: article
 helpviewer_keywords: bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
 caps.latest.revision: "16"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a131574e0e3de8507a91807d5de2899238c14628
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: eb2d66217202ee43fb2377f4a8ef26a47b676c11
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vue d’ensemble des liaisons Windows Communication Foundation
 Les liaisons sont des objets utilisés pour spécifier les détails de communication requis pour se connecter au point de terminaison d'un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Chaque point de terminaison dans un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] requiert qu'une liaison soit spécifiée correctement. Cette rubrique décrit les types de détails de communication définis par les liaisons, les éléments d'une liaison, les liaisons incluses dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] et comment une liaison peut être spécifiée pour un point de terminaison.  

@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
 caps.latest.revision: "30"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: f33920dbad701d803b9cb062cdd2b11aa1346df4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: df3f52ef7b3620b67a00cf4f5eb731a4d0b98208
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="workflow-services-overview"></a>Vue d'ensemble des services de workflow
 Les services de workflow sont des services basés sur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], implémentés à l'aide de workflows. Les services de workflow sont des workflows qui utilisent les activités de messagerie pour envoyer et recevoir des messages [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. .NET Framework 4.5 introduit plusieurs activités de messagerie qui vous permettent d'envoyer et de recevoir des messages à partir d'un workflow. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]activités de messagerie et comment elles peuvent être utilisées pour implémenter des modèles d’échange de message différents, consultez [d’activités de messagerie](../../../../docs/framework/wcf/feature-details/messaging-activities.md).  
