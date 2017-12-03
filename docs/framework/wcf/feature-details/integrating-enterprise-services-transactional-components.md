@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 7c2420c700d893e6c2c19b72beed0e605ffd4853
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a236a34dd20661d62d59a3712a1800ff1f9a11ad
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Intégration de composants transactionnels Enterprise Services
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]fournit un mécanisme automatique pour l’intégration avec les Services d’entreprise (voir [intégration à des Applications COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Cependant, vous préférez peut-être pouvoir développer des services utilisant en interne des composants transactionnels hébergés par Enterprise Services. Étant donné que la [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fonctionnalité de Transactions s’appuie sur le <xref:System.Transactions> infrastructure, le processus d’intégration des Services d’entreprise avec [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est identique à celle permettant de spécifier l’interopérabilité entre <xref:System.Transactions> et Enterprise Services, comme indiqué dans [l’interopérabilité avec les Services d’entreprise et les Transactions COM +](http://go.microsoft.com/fwlink/?LinkId=94949).  

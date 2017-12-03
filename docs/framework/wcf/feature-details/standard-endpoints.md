@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 3fcb4225-addc-44f2-935d-30e4943a8812
 caps.latest.revision: "11"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 755669b1305060efeb6af592867844b571b67020
-ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 869861ce1e2ba4456c8e8fbd06f9ff590fb3576a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="standard-endpoints"></a>Points de terminaison standard
 Les points de terminaison sont définis en spécifiant une adresse, une liaison et un contrat. Les autres paramètres qui peuvent être définis sur un point de terminaison incluent la configuration du comportement, les en-têtes, et les URI d'écoute.  Pour certains types de points de terminaison, ces valeurs ne changent pas. Par exemple, les points de terminaison d'échange de métadonnées utilisent toujours le contrat <xref:System.ServiceModel.Description.IMetadataExchange>. D'autres points de terminaison, tels que <xref:System.ServiceModel.Description.WebHttpEndpoint>, requièrent toujours un comportement de point de terminaison spécifié. L'utilisation d'un point de terminaison peut être simplifiée par l'emploi de points de terminaison possédant des valeurs par défaut pour des propriétés de point de terminaison courantes. Les points de terminaison standard permettent à un développeur de définir un point de terminaison avec des valeurs par défaut ou dont une ou plusieurs propriétés de point de terminaison restent inchangées.  Les points de terminaison de ce type vous permettent d'utiliser un point de terminaison sans avoir à spécifier les informations qui sont de nature statique. Les points de terminaison standard peuvent être utilisés comme points de terminaison d'infrastructure et d'application.  

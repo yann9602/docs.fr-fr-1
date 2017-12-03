@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2e8061ea-10f5-407c-a31f-d0d74ce12f27
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: e9edc168dc6e4111e5f2d58a62c2b0341f74aa04
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 07a39983d0e561fdad4c09e641912b0d15aa4033
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="binding-a-custom-activity-property-to-a-designer-control"></a>Liaison d’une propriété d’activité personnalisée à un contrôle de concepteur
 La liaison contrôle de concepteur de zone de texte à un argument d'activité est assez simple . Toutefois, la liaison d'un contrôle de concepteur complexe (tel qu'une zone de liste déroulante) à un argument d'activité peut poser des problèmes. Cette rubrique explique comment lier un argument d'activité à un contrôle de zone de liste déroulante sur un concepteur d'activités personnalisées.  

@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8851adde-c3c2-4391-9523-d8eb831490af
 caps.latest.revision: "7"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 02c6d346c6ebea27148c11f5f033f74dfb556e44
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 52a599d9cba2e68fdb74d364dad562d2547ca020
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-tracking-to-troubleshoot-applications"></a>Utilisation du suivi pour résoudre les problèmes posés par les applications
 [!INCLUDE[wf](../../../includes/wf-md.md)] vous permet de suivre les informations associées au workflow pour donner des détails concernant l'exécution d'une application de [!INCLUDE[wf2](../../../includes/wf2-md.md)] ou d'un service. Les hôtes de [!INCLUDE[wf2](../../../includes/wf2-md.md)] sont en mesure de capturer des événements du workflow pendant l'exécution d'une instance de workflow. Si votre workflow génère des erreurs ou des exceptions, vous pouvez utiliser les détails du suivi [!INCLUDE[wf2](../../../includes/wf2-md.md)] pour résoudre les problèmes liés à son traitement.  

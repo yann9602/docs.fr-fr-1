@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4ab86b17-eab9-4846-a881-0099f9a7cc64
 caps.latest.revision: "13"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ba41bd63f1dc23441cc7f265a8b1339d0b1194d5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8dbaa6f3df2bd4dcbde199f867686b3e05ae235f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>Attributs ServiceModel et référence ServiceDescription
 Le *arborescence de description* correspond à la hiérarchie de types (commençant par la <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> classe) qui décrivent ensemble chaque aspect d’un service. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise une arborescence de description pour générer une exécution du service valide, pour publier le langage WSDL (Web Services Description Language), le langage XSD (XML Schema Definition Language) et les assertions de stratégie (métadonnées) concernant le service qui permettent aux clients de s'y connecter et de l'utiliser, et pour générer diverses représentations de code et de fichier de configuration des valeurs de l'arborescence de description.  

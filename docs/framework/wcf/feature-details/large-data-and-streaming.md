@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
 caps.latest.revision: "27"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 741fdd9c4326243414ce6c19dcdd8f80317fe225
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 23daee4b8e7cd1fcf7ec7f085fb40d788aa5e556
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="large-data-and-streaming"></a>Données volumineuses et diffusion en continu
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est une infrastructure de communication basée sur XML. Étant donné que les données XML sont souvent codées au format texte standard défini dans le [spécification XML 1.0](http://go.microsoft.com/fwlink/?LinkId=94838)et connectées, les architectes et développeurs de systèmes sont généralement concerne l’encombrement du câble (ou taille) de messages envoyés entre le réseau et l’encodage de texte XML pose des défis particuliers pour le transfert efficace de données binaires.  

@@ -14,14 +14,14 @@ dev_langs:
 helpviewer_keywords: message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
 caps.latest.revision: "46"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 521393aabb9d5674b00194926cb67071cc4566bc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 14020e62e936ae6a9acad25c6c24d937feb150af
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="using-message-contracts"></a>Utilisation de contrats de message
 En général lors de la génération d'applications [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], les développeurs accordent une attention particulière aux structures de données et aux problèmes de sérialisation, et n'ont pas à se soucier de la structure des messages dans lesquels les données sont stockées. Pour ces applications, créer des contrats de données pour les paramètres ou les valeurs de retour est une procédure simple. ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Spécifiant le transfert de données dans les contrats de Service](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  

@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: c106feb0-0245-43b5-aefe-93ce0e4d38eb
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 004a37682b855135998ef4620e673421f769326d
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 06a302b13db3b82dabb43989ac272df0d9aac008
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="basic-xaml-only-service"></a>Service uniquement en XAML de base
 Cet exemple montre comment créer un service uniquement en XAML. Le scénario est un service de diagnostic pour les problèmes liés à la voiture. Le service est implémenté comme un workflow qui pose une série de questions au client afin de diagnostiquer le problème. Il existe deux types de problèmes que le service peut diagnostiquer (la voiture ne démarre pas ou l'air conditionné ne fonctionne pas). Le workflow utilise le modèle Demande/réponse du concepteur pour exposer trois opérations de service simples. Le service est hébergé dans IIS en créant un répertoire virtuel dans IIS et en copiant le service1.xamlx et les fichiers Web.config dans le répertoire virtuel ; aucun code compilé n'est requis. Par défaut cet exemple copie automatiquement les fichiers nécessaires dans le répertoire virtuel créé lorsque vous suivez les instructions d’installation pour les exemples WCF et WF : [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) lors de la génération dans Visual Studio 2010.  
