@@ -10,17 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 0b8a694a-92fa-498b-b5d6-fcf75e4d329d
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 873e5cf3f3441707f92de124eaa44262796b6823
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 365ed993be6c21567090b51fd41b551240abd1e1
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="reliable-messaging-sessions-faulted"></a><span data-ttu-id="88214-102">Sessions de messagerie fiable ayant renvoyé des erreurs</span><span class="sxs-lookup"><span data-stu-id="88214-102">Reliable Messaging Sessions Faulted</span></span>
-<span data-ttu-id="88214-103">Nom de compteur : Échec des sessions de messagerie fiable.</span><span class="sxs-lookup"><span data-stu-id="88214-103">Counter Name: Reliable Messaging Sessions Faulted.</span></span>  
+# <a name="reliable-messaging-sessions-faulted"></a><span data-ttu-id="52b75-102">Sessions de messagerie fiable ayant renvoyé des erreurs</span><span class="sxs-lookup"><span data-stu-id="52b75-102">Reliable Messaging Sessions Faulted</span></span>
+<span data-ttu-id="52b75-103">Nom de compteur : Échec des sessions de messagerie fiable.</span><span class="sxs-lookup"><span data-stu-id="52b75-103">Counter Name: Reliable Messaging Sessions Faulted.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="88214-104">Description</span><span class="sxs-lookup"><span data-stu-id="88214-104">Description</span></span>  
- <span data-ttu-id="88214-105">Nombre de sessions de messagerie fiable défaillantes dans ce service.</span><span class="sxs-lookup"><span data-stu-id="88214-105">Number of reliable messaging sessions that are faulted in this service.</span></span>
+## <a name="description"></a><span data-ttu-id="52b75-104">Description</span><span class="sxs-lookup"><span data-stu-id="52b75-104">Description</span></span>  
+ <span data-ttu-id="52b75-105">Nombre de sessions de messagerie fiable défaillantes dans ce service.</span><span class="sxs-lookup"><span data-stu-id="52b75-105">Number of reliable messaging sessions that are faulted in this service.</span></span>

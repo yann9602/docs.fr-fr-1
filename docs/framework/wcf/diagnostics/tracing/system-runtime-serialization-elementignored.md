@@ -10,22 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 795fc64f-07af-4b88-9256-1b154d2b209d
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 1f08570ce99e70baf26b445e64001b9a6650131a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d4bc7c14a8a5aaa0cec600122393b3af20629d23
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="systemruntimeserializationelementignored"></a><span data-ttu-id="64bf7-102">System.Runtime.Serialization.ElementIgnored</span><span class="sxs-lookup"><span data-stu-id="64bf7-102">System.Runtime.Serialization.ElementIgnored</span></span>
-<span data-ttu-id="64bf7-103">System.Runtime.Serialization.ElementIgnored</span><span class="sxs-lookup"><span data-stu-id="64bf7-103">System.Runtime.Serialization.ElementIgnored</span></span>  
+# <a name="systemruntimeserializationelementignored"></a><span data-ttu-id="55041-102">System.Runtime.Serialization.ElementIgnored</span><span class="sxs-lookup"><span data-stu-id="55041-102">System.Runtime.Serialization.ElementIgnored</span></span>
+<span data-ttu-id="55041-103">System.Runtime.Serialization.ElementIgnored</span><span class="sxs-lookup"><span data-stu-id="55041-103">System.Runtime.Serialization.ElementIgnored</span></span>  
   
-## <a name="description"></a><span data-ttu-id="64bf7-104">Description</span><span class="sxs-lookup"><span data-stu-id="64bf7-104">Description</span></span>  
- <span data-ttu-id="64bf7-105">Un élément non reconnu a été détecté dans le code XML pendant la désérialisation ; il a été ignoré.</span><span class="sxs-lookup"><span data-stu-id="64bf7-105">An unrecognized element was encountered in the XML during deserialization, which was ignored.</span></span>  
+## <a name="description"></a><span data-ttu-id="55041-104">Description</span><span class="sxs-lookup"><span data-stu-id="55041-104">Description</span></span>  
+ <span data-ttu-id="55041-105">Un élément non reconnu a été détecté dans le code XML pendant la désérialisation ; il a été ignoré.</span><span class="sxs-lookup"><span data-stu-id="55041-105">An unrecognized element was encountered in the XML during deserialization, which was ignored.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="64bf7-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="64bf7-106">See Also</span></span>  
- [<span data-ttu-id="64bf7-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="64bf7-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="64bf7-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="64bf7-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="64bf7-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="64bf7-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="55041-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="55041-106">See Also</span></span>  
+ [<span data-ttu-id="55041-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="55041-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="55041-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="55041-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="55041-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="55041-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

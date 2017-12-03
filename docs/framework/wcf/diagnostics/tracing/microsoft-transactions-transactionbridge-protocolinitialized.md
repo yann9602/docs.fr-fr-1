@@ -10,22 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 166dfa2d-10de-447a-b76f-3b64752a2967
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: a77264e59357bda911135b74d5eaf8c85683d71b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6acb1e9178de6d2041501f441b9985d31a49b6c0
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="microsofttransactionstransactionbridgeprotocolinitialized"></a><span data-ttu-id="3a611-102">Microsoft.Transactions.TransactionBridge.ProtocolInitialized</span><span class="sxs-lookup"><span data-stu-id="3a611-102">Microsoft.Transactions.TransactionBridge.ProtocolInitialized</span></span>
-<span data-ttu-id="3a611-103">Le service de protocole WS-Atomic Transaction a été initialisé.</span><span class="sxs-lookup"><span data-stu-id="3a611-103">The WS-Atomic Transaction protocol service was initialized.</span></span>  
+# <a name="microsofttransactionstransactionbridgeprotocolinitialized"></a><span data-ttu-id="a80fe-102">Microsoft.Transactions.TransactionBridge.ProtocolInitialized</span><span class="sxs-lookup"><span data-stu-id="a80fe-102">Microsoft.Transactions.TransactionBridge.ProtocolInitialized</span></span>
+<span data-ttu-id="a80fe-103">Le service de protocole WS-Atomic Transaction a été initialisé.</span><span class="sxs-lookup"><span data-stu-id="a80fe-103">The WS-Atomic Transaction protocol service was initialized.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="3a611-104">Description</span><span class="sxs-lookup"><span data-stu-id="3a611-104">Description</span></span>  
- <span data-ttu-id="3a611-105">Suivi lors du démarrage du gestionnaire de transactions afin d’indiquer le protocole qui a été correctement initialisé.</span><span class="sxs-lookup"><span data-stu-id="3a611-105">Traced during Transaction Manager startup to indicate which protocol has been successfully initialized.</span></span>  
+## <a name="description"></a><span data-ttu-id="a80fe-104">Description</span><span class="sxs-lookup"><span data-stu-id="a80fe-104">Description</span></span>  
+ <span data-ttu-id="a80fe-105">Suivi lors du démarrage du gestionnaire de transactions afin d’indiquer le protocole qui a été correctement initialisé.</span><span class="sxs-lookup"><span data-stu-id="a80fe-105">Traced during Transaction Manager startup to indicate which protocol has been successfully initialized.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3a611-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3a611-106">See Also</span></span>  
- [<span data-ttu-id="3a611-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="3a611-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="3a611-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="3a611-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="3a611-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="3a611-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="a80fe-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a80fe-106">See Also</span></span>  
+ [<span data-ttu-id="a80fe-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="a80fe-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="a80fe-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="a80fe-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="a80fe-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="a80fe-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

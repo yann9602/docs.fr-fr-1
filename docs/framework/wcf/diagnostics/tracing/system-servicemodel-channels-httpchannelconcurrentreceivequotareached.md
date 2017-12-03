@@ -10,22 +10,22 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: db6d8cdb-0d25-4bfb-8963-eff465733d70
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 40b5e992751fdf9a7ce65c1f3ac379e5e4669e6f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 03fb0a1d7bc461bc5319a65cc04eb0e1ce032255
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="systemservicemodelchannelshttpchannelconcurrentreceivequotareached"></a><span data-ttu-id="6ed30-102">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span><span class="sxs-lookup"><span data-stu-id="6ed30-102">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span></span>
-<span data-ttu-id="6ed30-103">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span><span class="sxs-lookup"><span data-stu-id="6ed30-103">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span></span>  
+# <a name="systemservicemodelchannelshttpchannelconcurrentreceivequotareached"></a><span data-ttu-id="8ab79-102">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span><span class="sxs-lookup"><span data-stu-id="8ab79-102">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span></span>
+<span data-ttu-id="8ab79-103">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span><span class="sxs-lookup"><span data-stu-id="8ab79-103">System.ServiceModel.Channels.HttpChannelConcurrentReceiveQuotaReached</span></span>  
   
-## <a name="description"></a><span data-ttu-id="6ed30-104">Description</span><span class="sxs-lookup"><span data-stu-id="6ed30-104">Description</span></span>  
- <span data-ttu-id="6ed30-105">Le quota de réception simultanée HTTP a été atteint.</span><span class="sxs-lookup"><span data-stu-id="6ed30-105">The HTTP concurrent receive quota was reached.</span></span>  
+## <a name="description"></a><span data-ttu-id="8ab79-104">Description</span><span class="sxs-lookup"><span data-stu-id="8ab79-104">Description</span></span>  
+ <span data-ttu-id="8ab79-105">Le quota de réception simultanée HTTP a été atteint.</span><span class="sxs-lookup"><span data-stu-id="8ab79-105">The HTTP concurrent receive quota was reached.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6ed30-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ed30-106">See Also</span></span>  
- [<span data-ttu-id="6ed30-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="6ed30-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="6ed30-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="6ed30-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="6ed30-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="6ed30-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="8ab79-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8ab79-106">See Also</span></span>  
+ [<span data-ttu-id="8ab79-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="8ab79-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="8ab79-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="8ab79-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="8ab79-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="8ab79-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

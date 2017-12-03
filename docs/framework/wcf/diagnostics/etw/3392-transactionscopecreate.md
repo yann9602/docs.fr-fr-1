@@ -10,29 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 2b6257a6-683b-4adc-aca5-6d095e4c03a0
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 81f46db19d91c9fbc7327055445ee6f3f83c78e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: db039f2488ece8f1a3948922b60d3513f3b3238a
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="3392---transactionscopecreate"></a><span data-ttu-id="0cc3a-102">3392 - TransactionScopeCreate</span><span class="sxs-lookup"><span data-stu-id="0cc3a-102">3392 - TransactionScopeCreate</span></span>
-## <a name="properties"></a><span data-ttu-id="0cc3a-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="0cc3a-103">Properties</span></span>  
+# <a name="3392---transactionscopecreate"></a><span data-ttu-id="6dda1-102">3392 - TransactionScopeCreate</span><span class="sxs-lookup"><span data-stu-id="6dda1-102">3392 - TransactionScopeCreate</span></span>
+## <a name="properties"></a><span data-ttu-id="6dda1-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="6dda1-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="0cc3a-104">ID</span><span class="sxs-lookup"><span data-stu-id="0cc3a-104">ID</span></span>|<span data-ttu-id="0cc3a-105">3392</span><span class="sxs-lookup"><span data-stu-id="0cc3a-105">3392</span></span>|  
-|<span data-ttu-id="0cc3a-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="0cc3a-106">Keywords</span></span>|<span data-ttu-id="0cc3a-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="0cc3a-107">ServiceModel</span></span>|  
-|<span data-ttu-id="0cc3a-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="0cc3a-108">Level</span></span>|<span data-ttu-id="0cc3a-109">Information</span><span class="sxs-lookup"><span data-stu-id="0cc3a-109">Information</span></span>|  
-|<span data-ttu-id="0cc3a-110">Canal</span><span class="sxs-lookup"><span data-stu-id="0cc3a-110">Channel</span></span>|<span data-ttu-id="0cc3a-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="0cc3a-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="6dda1-104">ID</span><span class="sxs-lookup"><span data-stu-id="6dda1-104">ID</span></span>|<span data-ttu-id="6dda1-105">3392</span><span class="sxs-lookup"><span data-stu-id="6dda1-105">3392</span></span>|  
+|<span data-ttu-id="6dda1-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="6dda1-106">Keywords</span></span>|<span data-ttu-id="6dda1-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="6dda1-107">ServiceModel</span></span>|  
+|<span data-ttu-id="6dda1-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="6dda1-108">Level</span></span>|<span data-ttu-id="6dda1-109">Information</span><span class="sxs-lookup"><span data-stu-id="6dda1-109">Information</span></span>|  
+|<span data-ttu-id="6dda1-110">Canal</span><span class="sxs-lookup"><span data-stu-id="6dda1-110">Channel</span></span>|<span data-ttu-id="6dda1-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="6dda1-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="0cc3a-112">Description</span><span class="sxs-lookup"><span data-stu-id="0cc3a-112">Description</span></span>  
- <span data-ttu-id="0cc3a-113">Cet événement est émis lorsque le TransactionScope est créé.</span><span class="sxs-lookup"><span data-stu-id="0cc3a-113">This event is emitted when the TransactionScope is being created.</span></span>  
+## <a name="description"></a><span data-ttu-id="6dda1-112">Description</span><span class="sxs-lookup"><span data-stu-id="6dda1-112">Description</span></span>  
+ <span data-ttu-id="6dda1-113">Cet événement est émis lorsque le TransactionScope est créé.</span><span class="sxs-lookup"><span data-stu-id="6dda1-113">This event is emitted when the TransactionScope is being created.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="0cc3a-114">Message</span><span class="sxs-lookup"><span data-stu-id="0cc3a-114">Message</span></span>  
- <span data-ttu-id="0cc3a-115">TransactionScope est en cours de création avec LocalIdentifier : « %1 » et DistributedIdentifier : « %2 ».</span><span class="sxs-lookup"><span data-stu-id="0cc3a-115">TransactionScope is being created with LocalIdentifier:'%1' and DistributedIdentifier:'%2'.</span></span>  
+## <a name="message"></a><span data-ttu-id="6dda1-114">Message</span><span class="sxs-lookup"><span data-stu-id="6dda1-114">Message</span></span>  
+ <span data-ttu-id="6dda1-115">TransactionScope est en cours de création avec LocalIdentifier : « %1 » et DistributedIdentifier : « %2 ».</span><span class="sxs-lookup"><span data-stu-id="6dda1-115">TransactionScope is being created with LocalIdentifier:'%1' and DistributedIdentifier:'%2'.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="0cc3a-116">Détails</span><span class="sxs-lookup"><span data-stu-id="0cc3a-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="6dda1-116">Détails</span><span class="sxs-lookup"><span data-stu-id="6dda1-116">Details</span></span>

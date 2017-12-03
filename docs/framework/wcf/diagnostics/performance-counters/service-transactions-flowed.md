@@ -10,17 +10,17 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7c564d7d-60d3-45a4-a9a1-c78f62ace57f
 caps.latest.revision: "4"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 87a1b0493582c86b0f75f381928d5aaeada85d6a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 01487cddc89b3b77039ddeadc9ec254af7c5f86f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="service-transactions-flowed"></a><span data-ttu-id="847cd-102">Service : transactions passées</span><span class="sxs-lookup"><span data-stu-id="847cd-102">Service: Transactions Flowed</span></span>
-<span data-ttu-id="847cd-103">Nom du compteur : Transactions passées.</span><span class="sxs-lookup"><span data-stu-id="847cd-103">Counter Name: Transactions Flowed.</span></span>  
+# <a name="service-transactions-flowed"></a><span data-ttu-id="a0c19-102">Service : transactions passées</span><span class="sxs-lookup"><span data-stu-id="a0c19-102">Service: Transactions Flowed</span></span>
+<span data-ttu-id="a0c19-103">Nom du compteur : Transactions passées.</span><span class="sxs-lookup"><span data-stu-id="a0c19-103">Counter Name: Transactions Flowed.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="847cd-104">Description</span><span class="sxs-lookup"><span data-stu-id="847cd-104">Description</span></span>  
- <span data-ttu-id="847cd-105">Nombre de transactions passées aux opérations dans ce service.</span><span class="sxs-lookup"><span data-stu-id="847cd-105">Number of transactions flowed to operations in this service.</span></span>
+## <a name="description"></a><span data-ttu-id="a0c19-104">Description</span><span class="sxs-lookup"><span data-stu-id="a0c19-104">Description</span></span>  
+ <span data-ttu-id="a0c19-105">Nombre de transactions passées aux opérations dans ce service.</span><span class="sxs-lookup"><span data-stu-id="a0c19-105">Number of transactions flowed to operations in this service.</span></span>

@@ -10,25 +10,25 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: d8f9c844-4629-4a45-9599-856dc8f01794
 caps.latest.revision: "6"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 4e5c27b2b276e6659680dabfd9460c6d072bad3a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 15e46f8d9550d4361ef92c1fa4860f17a2dfd088
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="ltroutinggt-of-ltservicebehaviorgt"></a><span data-ttu-id="af205-102">&lt;routing&gt; of &lt;serviceBehavior&gt;</span><span class="sxs-lookup"><span data-stu-id="af205-102">&lt;routing&gt; of &lt;serviceBehavior&gt;</span></span>
-<span data-ttu-id="af205-103">Fournit un accès au service de routage au moment de l'exécution afin d'autoriser une modification dynamique de la configuration de routage.</span><span class="sxs-lookup"><span data-stu-id="af205-103">Provides run-time access to the routing service to allow dynamic modification of the routing configuration.</span></span>  
+# <a name="ltroutinggt-of-ltservicebehaviorgt"></a><span data-ttu-id="7a141-102">&lt;routing&gt; of &lt;serviceBehavior&gt;</span><span class="sxs-lookup"><span data-stu-id="7a141-102">&lt;routing&gt; of &lt;serviceBehavior&gt;</span></span>
+<span data-ttu-id="7a141-103">Fournit un accès au service de routage au moment de l'exécution afin d'autoriser une modification dynamique de la configuration de routage.</span><span class="sxs-lookup"><span data-stu-id="7a141-103">Provides run-time access to the routing service to allow dynamic modification of the routing configuration.</span></span>  
   
- <span data-ttu-id="af205-104">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="af205-104">\<system.ServiceModel></span></span>  
-<span data-ttu-id="af205-105">\<comportements ></span><span class="sxs-lookup"><span data-stu-id="af205-105">\<behaviors></span></span>  
-<span data-ttu-id="af205-106">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="af205-106">\<serviceBehaviors></span></span>  
-<span data-ttu-id="af205-107">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="af205-107">\<behavior></span></span>  
-<span data-ttu-id="af205-108">\<routage ></span><span class="sxs-lookup"><span data-stu-id="af205-108">\<routing></span></span>  
+ <span data-ttu-id="7a141-104">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="7a141-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="7a141-105">\<comportements ></span><span class="sxs-lookup"><span data-stu-id="7a141-105">\<behaviors></span></span>  
+<span data-ttu-id="7a141-106">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="7a141-106">\<serviceBehaviors></span></span>  
+<span data-ttu-id="7a141-107">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="7a141-107">\<behavior></span></span>  
+<span data-ttu-id="7a141-108">\<routage ></span><span class="sxs-lookup"><span data-stu-id="7a141-108">\<routing></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="af205-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="af205-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7a141-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7a141-109">Syntax</span></span>  
   
 ```xml  
 <behaviors>
@@ -42,28 +42,28 @@ ms.lasthandoff: 10/18/2017
 </behaviors>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="af205-110">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="af205-110">Attributes and Elements</span></span>  
- <span data-ttu-id="af205-111">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="af205-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="7a141-110">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="7a141-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="7a141-111">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="7a141-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="af205-112">Attributs</span><span class="sxs-lookup"><span data-stu-id="af205-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="7a141-112">Attributs</span><span class="sxs-lookup"><span data-stu-id="7a141-112">Attributes</span></span>  
   
-|<span data-ttu-id="af205-113">Attribut</span><span class="sxs-lookup"><span data-stu-id="af205-113">Attribute</span></span>|<span data-ttu-id="af205-114">Description</span><span class="sxs-lookup"><span data-stu-id="af205-114">Description</span></span>|  
+|<span data-ttu-id="7a141-113">Attribut</span><span class="sxs-lookup"><span data-stu-id="7a141-113">Attribute</span></span>|<span data-ttu-id="7a141-114">Description</span><span class="sxs-lookup"><span data-stu-id="7a141-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="af205-115">filterTable</span><span class="sxs-lookup"><span data-stu-id="af205-115">filterTable</span></span>|<span data-ttu-id="af205-116">Chaîne qui spécifie le nom de la table de routage contenant les filtres destinés à être évalués par le service de routage.</span><span class="sxs-lookup"><span data-stu-id="af205-116">A string that specifies the name of the routing table that contains filters to be evaluated by the routing service.</span></span> <span data-ttu-id="af205-117">Cette valeur doit correspondre à la `name` attribut d’un [ \<filterTable >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertable.md) élément dans le [ \<filterTables >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertables.md) section.</span><span class="sxs-lookup"><span data-stu-id="af205-117">This value must match the `name` attribute of a [\<filterTable>](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertable.md) element in the [\<filterTables>](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertables.md) section.</span></span>|  
-|<span data-ttu-id="af205-118">routeOnHeaderOnly</span><span class="sxs-lookup"><span data-stu-id="af205-118">routeOnHeaderOnly</span></span>|<span data-ttu-id="af205-119">Valeur booléenne qui spécifie si le filtre doit examiner à la fois le corps du message et l'en-tête, ou l'en-tête uniquement.</span><span class="sxs-lookup"><span data-stu-id="af205-119">A Boolean value that specifies whether the filter will examine both the message body and the header, or the header only.</span></span> <span data-ttu-id="af205-120">La valeur par défaut est `true`.</span><span class="sxs-lookup"><span data-stu-id="af205-120">The default is `true`.</span></span>|  
-|<span data-ttu-id="af205-121">soapProcessingEnabled</span><span class="sxs-lookup"><span data-stu-id="af205-121">soapProcessingEnabled</span></span>|<span data-ttu-id="af205-122">Valeur booléenne qui spécifie si le traitement SOAP doit avoir lieu.</span><span class="sxs-lookup"><span data-stu-id="af205-122">A Boolean value that specifies whether SOAP processing should occur.</span></span>|  
+|<span data-ttu-id="7a141-115">filterTable</span><span class="sxs-lookup"><span data-stu-id="7a141-115">filterTable</span></span>|<span data-ttu-id="7a141-116">Chaîne qui spécifie le nom de la table de routage contenant les filtres destinés à être évalués par le service de routage.</span><span class="sxs-lookup"><span data-stu-id="7a141-116">A string that specifies the name of the routing table that contains filters to be evaluated by the routing service.</span></span> <span data-ttu-id="7a141-117">Cette valeur doit correspondre à la `name` attribut d’un [ \<filterTable >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertable.md) élément dans le [ \<filterTables >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertables.md) section.</span><span class="sxs-lookup"><span data-stu-id="7a141-117">This value must match the `name` attribute of a [\<filterTable>](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertable.md) element in the [\<filterTables>](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertables.md) section.</span></span>|  
+|<span data-ttu-id="7a141-118">routeOnHeaderOnly</span><span class="sxs-lookup"><span data-stu-id="7a141-118">routeOnHeaderOnly</span></span>|<span data-ttu-id="7a141-119">Valeur booléenne qui spécifie si le filtre doit examiner à la fois le corps du message et l'en-tête, ou l'en-tête uniquement.</span><span class="sxs-lookup"><span data-stu-id="7a141-119">A Boolean value that specifies whether the filter will examine both the message body and the header, or the header only.</span></span> <span data-ttu-id="7a141-120">La valeur par défaut est `true`.</span><span class="sxs-lookup"><span data-stu-id="7a141-120">The default is `true`.</span></span>|  
+|<span data-ttu-id="7a141-121">soapProcessingEnabled</span><span class="sxs-lookup"><span data-stu-id="7a141-121">soapProcessingEnabled</span></span>|<span data-ttu-id="7a141-122">Valeur booléenne qui spécifie si le traitement SOAP doit avoir lieu.</span><span class="sxs-lookup"><span data-stu-id="7a141-122">A Boolean value that specifies whether SOAP processing should occur.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="af205-123">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="af205-123">Child Elements</span></span>  
- <span data-ttu-id="af205-124">Aucun.</span><span class="sxs-lookup"><span data-stu-id="af205-124">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="7a141-123">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="7a141-123">Child Elements</span></span>  
+ <span data-ttu-id="7a141-124">Aucun.</span><span class="sxs-lookup"><span data-stu-id="7a141-124">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="af205-125">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="af205-125">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="7a141-125">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="7a141-125">Parent Elements</span></span>  
   
-|<span data-ttu-id="af205-126">Élément</span><span class="sxs-lookup"><span data-stu-id="af205-126">Element</span></span>|<span data-ttu-id="af205-127">Description</span><span class="sxs-lookup"><span data-stu-id="af205-127">Description</span></span>|  
+|<span data-ttu-id="7a141-126">Élément</span><span class="sxs-lookup"><span data-stu-id="7a141-126">Element</span></span>|<span data-ttu-id="7a141-127">Description</span><span class="sxs-lookup"><span data-stu-id="7a141-127">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="af205-128">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="af205-128">\<behavior></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|<span data-ttu-id="af205-129">Spécifie un élément de comportement.</span><span class="sxs-lookup"><span data-stu-id="af205-129">Specifies a behavior element.</span></span>|  
+|[<span data-ttu-id="7a141-128">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="7a141-128">\<behavior></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|<span data-ttu-id="7a141-129">Spécifie un élément de comportement.</span><span class="sxs-lookup"><span data-stu-id="7a141-129">Specifies a behavior element.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="af205-130">Remarques</span><span class="sxs-lookup"><span data-stu-id="af205-130">Remarks</span></span>  
- <span data-ttu-id="af205-131">Lorsqu'il est ajouté à la configuration de comportement du service, cet élément de configuration active le routage pour le service.</span><span class="sxs-lookup"><span data-stu-id="af205-131">When added to the service’s behavior configuration, this configuration element enables routing for the service.</span></span> <span data-ttu-id="af205-132">Vous pouvez spécifier la table de routage réelle que le service doit utiliser dans cet élément.</span><span class="sxs-lookup"><span data-stu-id="af205-132">You can specify the actual routing table to be used by the service in this element.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7a141-130">Remarques</span><span class="sxs-lookup"><span data-stu-id="7a141-130">Remarks</span></span>  
+ <span data-ttu-id="7a141-131">Lorsqu'il est ajouté à la configuration de comportement du service, cet élément de configuration active le routage pour le service.</span><span class="sxs-lookup"><span data-stu-id="7a141-131">When added to the service’s behavior configuration, this configuration element enables routing for the service.</span></span> <span data-ttu-id="7a141-132">Vous pouvez spécifier la table de routage réelle que le service doit utiliser dans cet élément.</span><span class="sxs-lookup"><span data-stu-id="7a141-132">You can specify the actual routing table to be used by the service in this element.</span></span>  
   
- <span data-ttu-id="af205-133">Cette section de configuration vous permet de modifier immédiatement vos paramètres de routage lorsque votre modèle de déploiement change.</span><span class="sxs-lookup"><span data-stu-id="af205-133">Using this configuration section, you can change your routing settings on the fly when your deployment pattern changes.</span></span> <span data-ttu-id="af205-134">Au moment de l'exécution, vous pouvez inscrire votre propre extension de routage avec de nouveaux paramètres de routage. Le service de routage commence alors à utiliser les informations de configuration mises à jour pour les nouveaux messages et sessions, en laissant les messages/sessions en cours utiliser les règles qui étaient en place lorsqu'ils ont démarré.</span><span class="sxs-lookup"><span data-stu-id="af205-134">At runtime, you can register your own routing extension with new routing settings and the routing service will begin using the updated configuration information for new messages and sessions, while leaving in-flight messages/sessions using whatever rules were in place when they started.</span></span>  <span data-ttu-id="af205-135">Vous avez ainsi la possibilité de reconfigurer le service de routage au moment de l'exécution, sans interruption de session ni recyclage.</span><span class="sxs-lookup"><span data-stu-id="af205-135">This gives you the ability to do session-safe, recycle-less reconfiguration of the Routing Service during runtime.</span></span>  
+ <span data-ttu-id="7a141-133">Cette section de configuration vous permet de modifier immédiatement vos paramètres de routage lorsque votre modèle de déploiement change.</span><span class="sxs-lookup"><span data-stu-id="7a141-133">Using this configuration section, you can change your routing settings on the fly when your deployment pattern changes.</span></span> <span data-ttu-id="7a141-134">Au moment de l'exécution, vous pouvez inscrire votre propre extension de routage avec de nouveaux paramètres de routage. Le service de routage commence alors à utiliser les informations de configuration mises à jour pour les nouveaux messages et sessions, en laissant les messages/sessions en cours utiliser les règles qui étaient en place lorsqu'ils ont démarré.</span><span class="sxs-lookup"><span data-stu-id="7a141-134">At runtime, you can register your own routing extension with new routing settings and the routing service will begin using the updated configuration information for new messages and sessions, while leaving in-flight messages/sessions using whatever rules were in place when they started.</span></span>  <span data-ttu-id="7a141-135">Vous avez ainsi la possibilité de reconfigurer le service de routage au moment de l'exécution, sans interruption de session ni recyclage.</span><span class="sxs-lookup"><span data-stu-id="7a141-135">This gives you the ability to do session-safe, recycle-less reconfiguration of the Routing Service during runtime.</span></span>  
   

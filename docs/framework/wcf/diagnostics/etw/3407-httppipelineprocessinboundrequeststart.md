@@ -10,29 +10,29 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: f9cc34e8-f4e1-43c8-823f-6186ee5e676f
 caps.latest.revision: "3"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 2f5f6cd6df2bd054d8eb57d2beb31f3c131b59e5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 43c0fd3ea2af1f71fb4f78064aeba36be7994356
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="3407---httppipelineprocessinboundrequeststart"></a><span data-ttu-id="628f3-102">3407 - HttpPipelineProcessInboundRequestStart</span><span class="sxs-lookup"><span data-stu-id="628f3-102">3407 - HttpPipelineProcessInboundRequestStart</span></span>
-## <a name="properties"></a><span data-ttu-id="628f3-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="628f3-103">Properties</span></span>  
+# <a name="3407---httppipelineprocessinboundrequeststart"></a><span data-ttu-id="d6332-102">3407 - HttpPipelineProcessInboundRequestStart</span><span class="sxs-lookup"><span data-stu-id="d6332-102">3407 - HttpPipelineProcessInboundRequestStart</span></span>
+## <a name="properties"></a><span data-ttu-id="d6332-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="d6332-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="628f3-104">ID</span><span class="sxs-lookup"><span data-stu-id="628f3-104">ID</span></span>|<span data-ttu-id="628f3-105">3407</span><span class="sxs-lookup"><span data-stu-id="628f3-105">3407</span></span>|  
-|<span data-ttu-id="628f3-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="628f3-106">Keywords</span></span>|<span data-ttu-id="628f3-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="628f3-107">HTTP</span></span>|  
-|<span data-ttu-id="628f3-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="628f3-108">Level</span></span>|<span data-ttu-id="628f3-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="628f3-109">Verbose</span></span>|  
-|<span data-ttu-id="628f3-110">Canal</span><span class="sxs-lookup"><span data-stu-id="628f3-110">Channel</span></span>|<span data-ttu-id="628f3-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="628f3-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="d6332-104">ID</span><span class="sxs-lookup"><span data-stu-id="d6332-104">ID</span></span>|<span data-ttu-id="d6332-105">3407</span><span class="sxs-lookup"><span data-stu-id="d6332-105">3407</span></span>|  
+|<span data-ttu-id="d6332-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="d6332-106">Keywords</span></span>|<span data-ttu-id="d6332-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="d6332-107">HTTP</span></span>|  
+|<span data-ttu-id="d6332-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="d6332-108">Level</span></span>|<span data-ttu-id="d6332-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="d6332-109">Verbose</span></span>|  
+|<span data-ttu-id="d6332-110">Canal</span><span class="sxs-lookup"><span data-stu-id="d6332-110">Channel</span></span>|<span data-ttu-id="d6332-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="d6332-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="628f3-112">Description</span><span class="sxs-lookup"><span data-stu-id="628f3-112">Description</span></span>  
- <span data-ttu-id="628f3-113">Cet événement est émis lorsque le gestionnaire de messages HTTP a commencé le traitement de la demande entrante.</span><span class="sxs-lookup"><span data-stu-id="628f3-113">This event is emitted when the Http message handler started processing the inbound request.</span></span>  
+## <a name="description"></a><span data-ttu-id="d6332-112">Description</span><span class="sxs-lookup"><span data-stu-id="d6332-112">Description</span></span>  
+ <span data-ttu-id="d6332-113">Cet événement est émis lorsque le gestionnaire de messages HTTP a commencé le traitement de la demande entrante.</span><span class="sxs-lookup"><span data-stu-id="d6332-113">This event is emitted when the Http message handler started processing the inbound request.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="628f3-114">Message</span><span class="sxs-lookup"><span data-stu-id="628f3-114">Message</span></span>  
- <span data-ttu-id="628f3-115">Le gestionnaire de messages HTTP a commencé le traitement de la demande entrante.</span><span class="sxs-lookup"><span data-stu-id="628f3-115">Http message handler started processing the inbound request.</span></span>  
+## <a name="message"></a><span data-ttu-id="d6332-114">Message</span><span class="sxs-lookup"><span data-stu-id="d6332-114">Message</span></span>  
+ <span data-ttu-id="d6332-115">Le gestionnaire de messages HTTP a commencé le traitement de la demande entrante.</span><span class="sxs-lookup"><span data-stu-id="d6332-115">Http message handler started processing the inbound request.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="628f3-116">Détails</span><span class="sxs-lookup"><span data-stu-id="628f3-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="d6332-116">Détails</span><span class="sxs-lookup"><span data-stu-id="d6332-116">Details</span></span>

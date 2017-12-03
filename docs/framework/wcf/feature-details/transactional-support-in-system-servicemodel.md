@@ -10,36 +10,36 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e7e54ed3-d1e5-4aa7-a653-1300c6b304eb
 caps.latest.revision: "9"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 172cda7e675a37d49d2e57c8bc93e8c8882df72e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 92e75f8f23bb0bc6d11e9bb6fd6e83c35559b847
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
-# <a name="transactional-support-in-systemservicemodel"></a><span data-ttu-id="de39e-102">Prise en charge transactionnelle dans System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="de39e-102">Transactional Support in System.ServiceModel</span></span>
-<span data-ttu-id="de39e-103">Les rubriques de cette section décrivent les fonctionnalités transactionnelles fournies par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="de39e-103">The topics in this section describe the transactional functionalities [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] provides.</span></span>  
+# <a name="transactional-support-in-systemservicemodel"></a><span data-ttu-id="f5956-102">Prise en charge transactionnelle dans System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="f5956-102">Transactional Support in System.ServiceModel</span></span>
+<span data-ttu-id="f5956-103">Les rubriques de cette section décrivent les fonctionnalités transactionnelles fournies par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="f5956-103">The topics in this section describe the transactional functionalities [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] provides.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="de39e-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="de39e-104">In This Section</span></span>  
- [<span data-ttu-id="de39e-105">Attributs de Transaction ServiceModel</span><span class="sxs-lookup"><span data-stu-id="de39e-105">ServiceModel Transaction Attributes</span></span>](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)  
- <span data-ttu-id="de39e-106">Décrit les deux attributs <xref:System.ServiceModel> standard qui vous permettent de configurer le comportement de transactions pour un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="de39e-106">Describes the two standard <xref:System.ServiceModel> attributes that enable you to configure the behavior of transactions for a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="f5956-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="f5956-104">In This Section</span></span>  
+ [<span data-ttu-id="f5956-105">Attributs de Transaction ServiceModel</span><span class="sxs-lookup"><span data-stu-id="f5956-105">ServiceModel Transaction Attributes</span></span>](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)  
+ <span data-ttu-id="f5956-106">Décrit les deux attributs <xref:System.ServiceModel> standard qui vous permettent de configurer le comportement de transactions pour un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="f5956-106">Describes the two standard <xref:System.ServiceModel> attributes that enable you to configure the behavior of transactions for a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
   
- [<span data-ttu-id="de39e-107">Configuration des transactions ServiceModel</span><span class="sxs-lookup"><span data-stu-id="de39e-107">ServiceModel Transaction Configuration</span></span>](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md)  
- <span data-ttu-id="de39e-108">Décrit les différents paramètres de configuration qui permettent d’activer la transaction pour un service.</span><span class="sxs-lookup"><span data-stu-id="de39e-108">Describes the various configuration settings that can be used to enable transaction for a service.</span></span>  
+ [<span data-ttu-id="f5956-107">Configuration des transactions ServiceModel</span><span class="sxs-lookup"><span data-stu-id="f5956-107">ServiceModel Transaction Configuration</span></span>](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md)  
+ <span data-ttu-id="f5956-108">Décrit les différents paramètres de configuration qui permettent d’activer la transaction pour un service.</span><span class="sxs-lookup"><span data-stu-id="f5956-108">Describes the various configuration settings that can be used to enable transaction for a service.</span></span>  
   
- [<span data-ttu-id="de39e-109">Activation du flux de Transaction</span><span class="sxs-lookup"><span data-stu-id="de39e-109">Enabling Transaction Flow</span></span>](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)  
- <span data-ttu-id="de39e-110">Décrit comment activer le flux de transaction.</span><span class="sxs-lookup"><span data-stu-id="de39e-110">Describes how to enable transaction flow.</span></span>  
+ [<span data-ttu-id="f5956-109">Activation du flux de Transaction</span><span class="sxs-lookup"><span data-stu-id="f5956-109">Enabling Transaction Flow</span></span>](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)  
+ <span data-ttu-id="f5956-110">Décrit comment activer le flux de transaction.</span><span class="sxs-lookup"><span data-stu-id="f5956-110">Describes how to enable transaction flow.</span></span>  
   
- [<span data-ttu-id="de39e-111">Comment : créer un Service transactionnel</span><span class="sxs-lookup"><span data-stu-id="de39e-111">How to: Create a Transactional Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-transactional-service.md)  
- <span data-ttu-id="de39e-112">Montre comment créer un service transactionnel dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="de39e-112">Demonstrates how to create a transactional service in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
+ [<span data-ttu-id="f5956-111">Comment : créer un Service transactionnel</span><span class="sxs-lookup"><span data-stu-id="f5956-111">How to: Create a Transactional Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-transactional-service.md)  
+ <span data-ttu-id="f5956-112">Montre comment créer un service transactionnel dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="f5956-112">Demonstrates how to create a transactional service in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
   
- [<span data-ttu-id="de39e-113">Diagnostic d’Applications transactionnelles</span><span class="sxs-lookup"><span data-stu-id="de39e-113">Diagnosing Transactional Applications</span></span>](../../../../docs/framework/wcf/feature-details/diagnosing-transactional-applications.md)  
- <span data-ttu-id="de39e-114">Décrit comment utiliser les fonctionnalités de gestion de diagnostic dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour dépanner votre application transactionnelle.</span><span class="sxs-lookup"><span data-stu-id="de39e-114">Describes how to use the management and diagnostics feature in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] to troubleshoot your transactional application.</span></span>  
+ [<span data-ttu-id="f5956-113">Diagnostic d’Applications transactionnelles</span><span class="sxs-lookup"><span data-stu-id="f5956-113">Diagnosing Transactional Applications</span></span>](../../../../docs/framework/wcf/feature-details/diagnosing-transactional-applications.md)  
+ <span data-ttu-id="f5956-114">Décrit comment utiliser les fonctionnalités de gestion de diagnostic dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour dépanner votre application transactionnelle.</span><span class="sxs-lookup"><span data-stu-id="f5956-114">Describes how to use the management and diagnostics feature in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] to troubleshoot your transactional application.</span></span>  
   
- [<span data-ttu-id="de39e-115">Comparaison des Transactions dans COM + et dans ServiceModel</span><span class="sxs-lookup"><span data-stu-id="de39e-115">Comparing Transactions in COM+ and ServiceModel</span></span>](../../../../docs/framework/wcf/feature-details/comparing-transactions-in-com-and-servicemodel.md)  
- <span data-ttu-id="de39e-116">Décrit comment simuler le comportement d'un service COM+ transactionnel à l'aide des attributs fournis par l'espace de noms <xref:System.ServiceModel>.</span><span class="sxs-lookup"><span data-stu-id="de39e-116">Describes how to simulate the behavior of a transactional COM+ service using the attributes provided by the <xref:System.ServiceModel> namespace.</span></span>  
+ [<span data-ttu-id="f5956-115">Comparaison des Transactions dans COM + et dans ServiceModel</span><span class="sxs-lookup"><span data-stu-id="f5956-115">Comparing Transactions in COM+ and ServiceModel</span></span>](../../../../docs/framework/wcf/feature-details/comparing-transactions-in-com-and-servicemodel.md)  
+ <span data-ttu-id="f5956-116">Décrit comment simuler le comportement d'un service COM+ transactionnel à l'aide des attributs fournis par l'espace de noms <xref:System.ServiceModel>.</span><span class="sxs-lookup"><span data-stu-id="f5956-116">Describes how to simulate the behavior of a transactional COM+ service using the attributes provided by the <xref:System.ServiceModel> namespace.</span></span>  
   
- [<span data-ttu-id="de39e-117">Intégration de Enterprise Services composants transactionnels</span><span class="sxs-lookup"><span data-stu-id="de39e-117">Integrating Enterprise Services Transactional Components</span></span>](../../../../docs/framework/wcf/feature-details/integrating-enterprise-services-transactional-components.md)  
- <span data-ttu-id="de39e-118">Décrit comment intégrer vos services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec le code qui utilise le service d'entreprise.</span><span class="sxs-lookup"><span data-stu-id="de39e-118">Describes how to integrate your [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services with code that uses enterprise service.</span></span>
+ [<span data-ttu-id="f5956-117">Intégration de Enterprise Services composants transactionnels</span><span class="sxs-lookup"><span data-stu-id="f5956-117">Integrating Enterprise Services Transactional Components</span></span>](../../../../docs/framework/wcf/feature-details/integrating-enterprise-services-transactional-components.md)  
+ <span data-ttu-id="f5956-118">Décrit comment intégrer vos services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec le code qui utilise le service d'entreprise.</span><span class="sxs-lookup"><span data-stu-id="f5956-118">Describes how to integrate your [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services with code that uses enterprise service.</span></span>
