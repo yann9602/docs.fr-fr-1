@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: a5509a5c-de24-4bc2-9a48-19138055dcce
 caps.latest.revision: "5"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: d204600682ec8acbc229240c4e1bc859d8ea4d21
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5657b48a648603f24e89c0eebd1285ed9a505e54
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="reliable-messaging-protocol-version-10"></a>Protocole de messagerie fiable version 1.0
 Cette rubrique traite des détails de l'implémentation [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour le protocole WS-Reliable Messaging de février 2005 (version 1.0) nécessaire pour l'interopérabilité à l'aide du transport HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] suit la spécification WS-Reliable Messaging avec les contraintes et les éclaircissements présentés dans cette rubrique. Notez que le protocole WS-ReliableMessaging version 1.0 est implémenté à partir de [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
@@ -396,7 +396,7 @@ Cette rubrique traite des détails de l'implémentation [!INCLUDE[indigo1](../..
 #### <a name="lastmessage-exchange"></a>Échange LastMessage  
  L'initiateur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] génère un dernier message vide sur le tronçon de la requête HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requiert une réponse, mais ignore le message de réponse réel. Le répondeur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] répond au dernier message vide de la séquence de demande avec le dernier message vide de la séquence de réponse.  
   
- Si le répondeur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] reçoit un dernier message dans lequel l'URI action n'est pas http://schemas.xmlsoap.org/ws/2005/02/rm/LastMessage, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] répond avec un dernier message. Dans le cas d'un protocole d'échange de messages bidirectionnel, le dernier message contient le message d'application ; dans le cas d'un protocole d'échange de messages unidirectionnel, le dernier message est vide.  
+ Si le répondeur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] reçoit un dernier message dans lequel l'URI action n'est pas http://schemas.xmlsoap.org/ws/2005/02/rm/LastMessage, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]il répond avec un dernier message. Dans le cas d'un protocole d'échange de messages bidirectionnel, le dernier message contient le message d'application ; dans le cas d'un protocole d'échange de messages unidirectionnel, le dernier message est vide.  
   
  Le répondeur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne requiert pas d'accusé de réception pour le dernier message vide de la séquence de réponse.  
   

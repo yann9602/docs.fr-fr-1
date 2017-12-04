@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 1050d395-092e-44d3-b4ba-66be3b039ffb
 caps.latest.revision: "12"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 185fa5e641a1834a7c5f7906b5e5cf84dacaa9f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bd4bf1a97a544730714c46c1ba6f7f102166da35
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="configuring-internet-information-services-70-for-windows-communication-foundation"></a>Configuration des services Internet (IIS) 7.0 pour Windows Communication Foundation
 Les services Internet (IIS) 7.0 sont conçus de manière modulaire vous permettant ainsi d'installer uniquement les composants dont vous avez besoin. Leur conception s'appuie sur la nouvelle technologie multi-composant orientée manifeste, utilisée pour la première fois dans [!INCLUDE[wv](../../../../includes/wv-md.md)]. [!INCLUDE[iisver](../../../../includes/iisver-md.md)] comporte plus de 40 composants autonomes pouvant être installés indépendamment. Cela permet aux professionnels de l'informatique de personnaliser plus facilement leur installation en fonction de leurs besoins. Cette rubrique contient des instructions permettant de configurer [!INCLUDE[iisver](../../../../includes/iisver-md.md)] en vue d'une utilisation avec [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et d'identifier les composants requis.  
@@ -49,7 +49,7 @@ Les services Internet (IIS) 7.0 sont conçus de manière modulaire vous permett
  Il s'agit de l'installation par défaut de [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Dans le cadre de cette installation, vous pouvez utiliser [!INCLUDE[iisver](../../../../includes/iisver-md.md)] pour fournir du contenu statique (pages HTML et autres contenus, par exemple). Toutefois, vous ne pouvez pas exécuter [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ni d'applications CGI ni de services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hôtes.  
   
 ## <a name="iis-70-installation-with-aspnet-support"></a>IIS 7.0 : installation avec prise en charge ASP.NET  
- Vous devez installer [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] pour que [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] fonctionne sur IIS 7.0. Après avoir vérifié **ASP.NET**, votre écran doit ressembler à l’illustration suivante.  
+ Vous devez installer [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] pour qu'il [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] fonctionne sur IIS 7.0. Après avoir vérifié **ASP.NET**, votre écran doit ressembler à l’illustration suivante.  
   
  ![Des paramètres obligatoires Asp.NET](../../../../docs/framework/wcf/feature-details/media/wcfc-trunfeaturesonoroff3s.gif "wcfc_TrunFeaturesOnOrOFf3s")  
   

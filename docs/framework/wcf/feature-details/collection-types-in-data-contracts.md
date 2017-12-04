@@ -17,14 +17,14 @@ helpviewer_keywords:
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
 caps.latest.revision: "19"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: ca3bbb4b88bf4355d3c487196672636e6b77d419
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e22763f78d8a40ced4350a93a1f1833e19aac17f
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="collection-types-in-data-contracts"></a>Types de collections dans les contrats de données
 Une *collection* est une liste d'éléments d'un certain type. Dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], ces listes peuvent être représentées à l'aide de tableaux ou de divers autres types (liste générique, <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>ou <xref:System.Collections.ArrayList>générique). Par exemple, une collection peut contenir une liste d'adresses pour un client donné. Ces collections sont appelées *collections liste*, indépendamment de leur type réel.  
@@ -165,7 +165,7 @@ Une *collection* est une liste d'éléments d'un certain type. Dans le [!INCLUDE
   
 ```xml  
 <CustomerList4>  
-    <customer>...</ customer>  
+    <customer>...</customer>  
     <customer>...</customer>  
     <customer>...</customer>  
     ...  
@@ -297,10 +297,10 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 |Type référencé|Interface implémentée par le type référencé|Exemple|Type traité comme|  
 |---------------------|----------------------------------------------|-------------|---------------------|  
 |Non générique ou générique fermé (nombre de paramètres quelconque)|<xref:System.Collections.IDictionary>|`MyType : IDictionary`<br /><br /> ou<br /><br /> `MyType<T> : IDictionary` où T=`int`|Générique fermé `IDictionary<object,object>`|  
-|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>, fermé|`MyType<T> : IDictionary\<string, bool>` où T=`int`|Générique fermé (par exemple, `IDIctionary\<string,bool>`)|  
-|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, la clé ou la valeur est fermée, l'autre est ouverte et utilise un des paramètres du type|`MyType\<T,U,V> : IDictionary\<string,V>` où T=`int`, U=`float`, V=`bool`<br /><br /> ou<br /><br /> `MyType<Z> : IDictionary\<Z,bool>` où Z=`string`|Générique fermé (par exemple, `IDictionary\<string,bool>`)|  
-|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, la clé et la valeur sont ouvertes et chacune d'elles utilise un des paramètres du type|`MyType\<T,U,V> : IDictionary\<V,U>` où T=`int`, U=`bool`, V=`string`|Générique fermé (par exemple, `IDictionary\<string,bool>`)|  
-|Générique ouvert (deux paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, ouvert, utilise les deux paramètres génériques du type dans l'ordre où ils apparaissent|`MyType\<K,V> : IDictionary\<K,V>`, K et V sont ouverts tous les deux|Générique ouvert (par exemple, `IDictionary\<K,V>`)|  
+|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>, fermé|`MyType<T> : IDictionary<string, bool>`où T =`int`|Générique fermé (par exemple, `IDIctionary<string,bool>`)|  
+|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, la clé ou la valeur est fermée, l'autre est ouverte et utilise un des paramètres du type|`MyType<T,U,V> : IDictionary<string,V>`où T =`int`, U =`float`, V =`bool`<br /><br /> ou<br /><br /> `MyType<Z> : IDictionary<Z,bool>`où Z =`string`|Générique fermé (par exemple, `IDictionary<string,bool>`)|  
+|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, la clé et la valeur sont ouvertes et chacune d'elles utilise un des paramètres du type|`MyType<T,U,V> : IDictionary<V,U>` où T=`int`, U=`bool`, V=`string`|Générique fermé (par exemple, `IDictionary<string,bool>`)|  
+|Générique ouvert (deux paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, ouvert, utilise les deux paramètres génériques du type dans l'ordre où ils apparaissent|`MyType<K,V> : IDictionary<K,V>`, K et V sont ouverts tous les deux|Générique ouvert (par exemple, `IDictionary<K,V>`)|  
   
  Si le type implémente <xref:System.Collections.IDictionary> et le <xref:System.Collections.Generic.IDictionary%602>générique, seul le <xref:System.Collections.Generic.IDictionary%602> générique est pris en compte.  
   
@@ -331,12 +331,12 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 |Le type de collection implémente|Méthodes appelées lors de la sérialisation|Méthodes appelées lors de la désérialisation|  
 |--------------------------------|-----------------------------------------|-------------------------------------------|  
-|<xref:System.Collections.Generic.IDictionary%602> générique|`get_Keys`, `get_Values`|Generic Add|  
+|<xref:System.Collections.Generic.IDictionary%602>|`get_Keys`, `get_Values`|Generic Add|  
 |<xref:System.Collections.IDictionary>|`get_Keys`, `get_Values`|`Add`|  
-|<xref:System.Collections.Generic.IList%601> générique|Indexeur <xref:System.Collections.Generic.IList%601> générique|Generic Add|  
-|<xref:System.Collections.Generic.ICollection%601> générique|Enumerator|Generic Add|  
+|<xref:System.Collections.Generic.IList%601>|Indexeur <xref:System.Collections.Generic.IList%601> générique|Generic Add|  
+|<xref:System.Collections.Generic.ICollection%601>|Enumerator|Generic Add|  
 |<xref:System.Collections.IList>|Indexeur<xref:System.Collections.IList> |`Add`|  
-|<xref:System.Collections.Generic.IEnumerable%601> générique|`GetEnumerator`|Méthode non statique nommée `Add` qui accepte un paramètre du type approprié (le type du paramètre générique ou un de ses types de base). Une telle méthode doit exister pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et de la désérialisation.|  
+|<xref:System.Collections.Generic.IEnumerable%601>|`GetEnumerator`|Méthode non statique nommée `Add` qui accepte un paramètre du type approprié (le type du paramètre générique ou un de ses types de base). Une telle méthode doit exister pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et de la désérialisation.|  
 |<xref:System.Collections.IEnumerable> (et donc <xref:System.Collections.ICollection>, qui en dérive)|`GetEnumerator`|Méthode non statique nommée `Add` qui accepte un paramètre de type `Object`. Une telle méthode doit exister pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et de la désérialisation.|  
   
  Le tableau précédent répertorie les interfaces de collection dans l'ordre de priorité décroissant. Cela signifie, par exemple, que si un type implémente à la fois <xref:System.Collections.IList> et <xref:System.Collections.Generic.IEnumerable%601>générique, la collection est sérialisée et désérialisée en fonction des règles <xref:System.Collections.IList> :  
