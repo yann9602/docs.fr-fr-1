@@ -1,5 +1,5 @@
 ---
-title: "Démarrages rapides - Introduction aux classes - Guide C#"
+title: "Guides de démarrage rapide - Introduction aux classes - Guide C#"
 description: "Créez votre premier programme C# et explorez les concepts orientés objet"
 author: billwagner
 ms.author: wiwagn
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 0ddb7508841087571c0cd095b1d1518e4aad50ff
-ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
+ms.openlocfilehash: ad6e83d427b55482f9615e0083682bdca6c56704
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="introduction-to-classes"></a>Introduction aux classes
 
@@ -38,9 +38,9 @@ namespace classes
 }
 ```
 
-Dans ce Démarrage rapide, vous allez créer des types qui représentent un compte bancaire. Les développeurs définissent généralement chaque classe dans un fichier texte différent. Cela simplifie la gestion au fur et à mesure qu’un programme augmente en taille.  Créez un fichier nommé **BankAccount.cs** dans le répertoire **classes**. 
+Dans ce guide de démarrage rapide, vous allez créer des types qui représentent un compte bancaire. Les développeurs définissent généralement chaque classe dans un fichier texte différent. Cela simplifie la gestion au fur et à mesure qu’un programme augmente en taille.  Créez un fichier nommé **BankAccount.cs** dans le répertoire **classes**. 
 
-Ce fichier contiendra la définition d’un ***compte bancaire***. La programmation orientée objet organise le code en créant des types sous la forme de ***classes***. Ces classes contiennent le code qui représente une entité spécifique. La classe `BankAccount` représente un compte bancaire. Le code implémente des opérations spécifiques à travers des méthodes et des propriétés. Dans ce Démarrage rapide, le compte bancaire prend en charge le comportement suivant :
+Ce fichier contiendra la définition d’un ***compte bancaire***. La programmation orientée objet organise le code en créant des types sous la forme de ***classes***. Ces classes contiennent le code qui représente une entité spécifique. La classe `BankAccount` représente un compte bancaire. Le code implémente des opérations spécifiques à travers des méthodes et des propriétés. Dans ce guide de démarrage rapide, le compte bancaire prend en charge le comportement suivant :
 
 1. Il contient un numéro à 10 chiffres qui identifie le compte bancaire de manière unique.
 1. Il contient une chaîne qui stocke le nom du ou des détenteurs.
@@ -76,7 +76,7 @@ namespace classes
 }
 ```
 
-Avant de poursuivre, examinons ce que vous venez de créer.  La déclaration `namespace` permet d’organiser logiquement votre code. Ce Démarrage rapide étant relativement petit, vous allez placer tout le code dans un même espace de noms. 
+Avant de poursuivre, examinons ce que vous venez de créer.  La déclaration `namespace` permet d’organiser logiquement votre code. Ce guide de démarrage rapide étant relativement petit, vous allez placer tout le code dans un même espace de noms. 
 
 `public class BankAccount` définit la classe ou le type que vous créez. Tout ce qui est situé entre `{` et `}` après la déclaration de classe définit le comportement de la classe. La classe `BankAccount` a cinq ***membres***. Les trois premiers sont des ***propriétés***. Les propriétés sont des éléments de données qui peuvent avoir un code qui applique la validation ou d’autres règles. Les deux derniers sont des ***méthodes***. Les méthodes sont des blocs de code qui effectuent une fonction unique. La lecture des noms de chacun des membres doit fournir suffisamment d’informations pour vous permettre (ou à tout autre développeur) de comprendre ce que fait la classe.
 
@@ -195,11 +195,11 @@ Enregistrez le fichier et tapez `dotnet run` pour effectuer un essai.
 
 ## <a name="challenge---log-all-transactions"></a>Test : consigner toutes les transactions
 
-Pour terminer ce Démarrage rapide, vous pouvez écrire la méthode `GetAccountHistory` qui crée une `string` pour l’historique des transactions. Ajoutez cette méthode au type `BankAccount` :
+Pour terminer ce guide de démarrage rapide, vous pouvez écrire la méthode `GetAccountHistory` qui crée une `string` pour l’historique des transactions. Ajoutez cette méthode au type `BankAccount` :
 
 [!code-csharp[History](../../../samples/csharp/classes-quickstart/BankAccount.cs#History "Display transaction history")]
 
-Cette méthode utilise la classe <xref:System.Text.StringBuilder> pour mettre en forme une chaîne contenant une ligne par transaction. Vous avez vu le code de mise en forme de chaîne précédemment dans ces Démarrages rapides. Vous pouvez observer le nouveau caractère `\t`. Celui-ci insère une tabulation pour mettre en forme la sortie.
+Cette méthode utilise la classe <xref:System.Text.StringBuilder> pour mettre en forme une chaîne contenant une ligne par transaction. Vous avez vu le code de mise en forme de chaîne précédemment dans ces guides de démarrage rapide. Vous pouvez observer le nouveau caractère `\t`. Celui-ci insère une tabulation pour mettre en forme la sortie.
 
 Ajoutez cette ligne pour effectuer un essai dans **Program.cs** :
 
@@ -211,6 +211,6 @@ Tapez `dotnet run` pour afficher les résultats.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Si vous êtes bloqué, vous pouvez afficher la source de ce Démarrage rapide [dans notre dépôt GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/classes-quickstart/).
+Si vous êtes bloqué, vous pouvez afficher la source de ce guide de démarrage rapide [dans notre dépôt GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/classes-quickstart/).
 
-Félicitations, vous avez terminé tous nos Démarrage rapides. Si vous souhaitez en savoir plus, explorez nos [didacticiels](../tutorials/index.md).
+Félicitations, vous avez terminé tous nos guides de démarrage rapide. Si vous souhaitez en savoir plus, explorez nos [didacticiels](../tutorials/index.md).

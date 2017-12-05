@@ -3,18 +3,14 @@ title: "Installer le .NET Framework 3.5 sur Windows 10, Windows 8.1 et Window
 description: "Découvrez comment installer .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8."
 author: rlander
 ms.author: mairaw
-keywords: .NET Framework, installer
-ms.date: 05/26/2017
+ms.date: 11/27/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.technology: vs-ide-deployment
-ms.devlang: dotnet
-ms.assetid: 67cda1d5-c6g4-4eb5-93e6-4f478de07ff7
-ms.openlocfilehash: 85a3cada074714c24015d90c26d94551f4f411f2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 51c412733b76777a78c4a739ce9b077acc86f069
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Installer le .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8
 
@@ -37,3 +33,9 @@ Vous pouvez activer le .NET Framework 3.5 dans le Panneau de configuration de W
    ![Installation de .NET avec le Panneau de configuration](./media/dotnet-control-panel.png)
 
    Vous n’avez pas besoin de sélectionner des éléments enfants pour **Activation HTTP de Windows Communication Foundation** et **Activation non-HTTP de Windows Communication Foundation**, sauf si vous êtes un développeur ou un administrateur de serveur ayant besoin de cette fonctionnalité.
+
+## <a name="troubleshoot-the-installation-of-the-net-framework-35"></a>Résoudre les problèmes d’installation du .NET Framework 3.5
+
+Pendant l’installation, si vous rencontrez l’erreur 0x800f0906, 0x800f0907, 0x800f081f ou 0x800F0922, consultez [Erreur d’installation de .NET Framework 3.5 : 0x800f0906, 0x800f0907 ou 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09) pour découvrir comment résoudre ces problèmes.
+
+Si l’une des méthodes décrites dans l’article précédent échoue ou que vous n’avez pas de connexion Internet, vous devez utiliser votre support d’installation Windows. Pour plus d’informations, consultez [Déployer le .NET Framework 3.5 à l’aide de Gestion et maintenance des images de déploiement (DISM)](https://technet.microsoft.com/library/Dn482069.aspx). Si vous ne disposez pas du support d’installation, consultez [Créer un support d’installation pour Windows](https://support.microsoft.com/help/15088/windows-create-installation-media).

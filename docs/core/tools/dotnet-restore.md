@@ -4,15 +4,15 @@ description: "Découvrez comment restaurer les dépendances et les outils spéci
 keywords: "dotnet-restore, CLI, commande CLI, .NET Core"
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
+ms.date: 11/30/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 82a78dcb0cc85e2ba087b6df5ee029cbfb687358
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 887f562803226d99901a6ee13175c1a43956b0cd
+ms.sourcegitcommit: f416ac259c1a771e4e6c72728d8c11a77082f11c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -53,6 +53,21 @@ Pour les dépendances, vous pouvez spécifier l’emplacement des packages resta
 Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer le package dans lequel l’outil est empaqueté, puis il restaure les dépendances de l’outil, comme spécifié dans son fichier projet.
 
 Le comportement de la commande `dotnet restore` est affecté par certains paramètres du fichier *Nuget.Config*, le cas échéant. Par exemple, si vous définissez `globalPackagesFolder` dans *NuGet.Config*, les packages NuGet restaurés sont placés dans le dossier spécifié. Cette méthode permet également de spécifier l’option `--packages` sur la commande `dotnet restore`. Pour plus d’informations, consultez [Informations de référence sur NuGet.Config](/nuget/schema/nuget-config-file).
+
+## <a name="implicit-dotnet-restore"></a>`dotnet restore` implicite
+
+À compter de .NET Core 2.0, `dotnet restore` est au besoin exécuté implicitement quand vous exécutez les commandes suivantes :
+
+- [`dotnet new`](dotnet-new.md)
+- [`dotnet build`](dotnet-build.md)
+- [`dotnet run`](dotnet-run.md)
+- [`dotnet test`](dotnet-test.md)
+- [`dotnet publish`](dotnet-publish.md)
+- [`dotnet pack`](dotnet-pack.md)
+
+Dans la plupart des cas, vous n’avez plus besoin d’utiliser explicitement la commande `dotnet restore`. 
+
+Dans certains cas, l’exécution implicite de `dotnet restore` pose problème. Par exemple, certains systèmes automatisés, comme les systèmes de génération, doivent appeler explicitement `dotnet restore` pour contrôler quand la restauration a lieu afin de pouvoir contrôler l’utilisation du réseau. Pour empêcher l’exécution implicite de `dotnet restore`, vous pouvez utiliser le commutateur `--no-restore` avec l’une de ces commandes afin de désactiver la restauration implicite.
 
 ## <a name="arguments"></a>Arguments
 
