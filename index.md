@@ -3,11 +3,11 @@ layout: HubPage
 hide_bc: True
 title: Documentation .NET
 description: "Découvrez comment utiliser .NET pour créer diverses applications sur n’importe quelle plateforme en C#, Visual Basic et F#. Parcourez les informations de référence sur les API, les exemples de code, les didacticiels et plus encore."
-ms.openlocfilehash: e2e5e0d63464cdfad3432daa2d99da08fefedb5f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 6817628e110d59b3d5b7c8e52fa2d5cc7cac4cd7
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/02/2017
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -217,7 +217,7 @@ ms.lasthandoff: 10/18/2017
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/dotnet/Docs/blob/master/CONTRIBUTING.md">Contribuer à la documentation .NET et aux exemples</a></p>
+                                    <p><a href="https://github.com/dotnet/Docs/blob/master/CONTRIBUTING.md">Collaboration aux docs .NET et exemples</a></p>
                                     <p><a href="/dotnet/project-json">Recherche de la version Visual Studio 2015/project.json de la documentation</a></p>
                                 </div>
                             </li>
@@ -413,7 +413,7 @@ ms.lasthandoff: 10/18/2017
                                             </div>
                                             <div class="cardText">
                                                 <a href="https://docs.microsoft.com/azure/storage/">
-                                                    <h3>Stockage Azure</h3>
+                                                    <h3>Azure Storage</h3>
                                                     <p>Découvrez le service Stockage Azure et apprenez à créer des applications à l’aide de tables, de files d’attente, de fichiers et d’objets blob Azure.</p>
                                                 </a>
                                             </div>
@@ -539,7 +539,7 @@ ms.lasthandoff: 10/18/2017
                                             <div class="cardText">
                                                 <a href="https://msdn.microsoft.com/library/dd30h2yb.aspx">
                                                     <h3>Windows Forms</h3>
-                                                    <p>Développez rapidement des applications métier pour des postes de travail Windows.</p>
+                                                    <p>Développez rapidement des applications métier pour postes de travail Windows.</p>
                                                 </a>
                                             </div>
                                         </div>
@@ -600,7 +600,7 @@ ms.lasthandoff: 10/18/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="http://docs.cryengine.com/display/CEPROG/CE%23+Programming">
+                                                <a href="http://docs.cryengine.com/display/CEPROG/C%23+Programming">
                                                 <h3>CRYENGINE</h3>
                                                 <p>Découvrez comment utiliser CRYENGINE pour générer des jeux en C#.</p>
                                                 </a>
@@ -621,7 +621,7 @@ ms.lasthandoff: 10/18/2017
                                             <div class="cardText">
                                                 <a href="http://www.monogame.net/documentation/?page=main">
                                                     <h3>MonoGame</h3>
-                                                    <p>Générez des jeux en C# en suivant les didacticiels et les instructions de configuration contenus dans le hub de documentation de la bibliothèque MonoGame.</p>
+                                                    <p>Générez des jeux en C# grâce aux didacticiels et instructions de configuration contenus dans le hub de documentation de la bibliothèque MonoGame.</p>
                                                 </a>
                                             </div>
                                         </div>
