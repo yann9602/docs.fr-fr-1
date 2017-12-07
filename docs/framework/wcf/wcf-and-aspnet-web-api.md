@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b311dc5b328a09bd301cc1d012ca4d13cfb70f9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: 932db4ef12666d20ba497cc8f6d78b43c7670373
+ms.sourcegitcommit: 5126483ef09c487296801bbac368dd8a55a6b709
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF et API Web ASP.NET
 WCF est le modèle de programmation unifié de Microsoft permettant de générer des applications orientées service. Il permet aux développeurs de générer des solutions transactionnelles sécurisées et fiables qui s'intègrent à plusieurs plateformes et interagissent avec les investissements existants. [ASP.NET Web API](http://www.asp.net/web-api) est une infrastructure qui permet de facilement créer des services HTTP qui atteignent un large éventail de clients, y compris les navigateurs et périphériques mobiles. L'API Web ASP.NET est une plate-forme idéale pour générer des applications RESTful sur le .NET Framework. Cette rubrique vous aider à déterminer quelle technologie est la plus adaptée vos besoins.  
@@ -29,7 +29,7 @@ WCF est le modèle de programmation unifié de Microsoft permettant de générer
 |---------|---------------------|  
 |Active les services de génération qui prennent en charge plusieurs fournisseurs de transport (HTTP, TCP, UDP et transports personnalisés) et permet le basculement entre eux.|HTTP uniquement. Modèle de programmation de première classe pour le protocole HTTP. Plus adapté pour l’accès à partir de différents navigateurs, activation etc. large atteindre les appareils mobiles.|  
 |Active les services de génération qui prennent en charge plusieurs encodages (texte, MTOM et binaire) du même type de message et permet la commutation entre eux.|Active les API Web de génération qui prennent en charge une large gamme de types de média y compris XML, JSON, etc.|  
-|Prend en charge les services de génération avec les normes WS-*, tels que messagerie fiable, transactions et sécurité des messages.|Utilise le protocole et les formats de base, tels que HTTP, WebSockets, SSL, JQuery, JSON et XML. Il n'existe aucune prise en charge des protocoles de niveau supérieur, tels que Messagerie fiable ou Transactions.|  
+|Prend en charge les services de génération avec les normes WS-*, tels que messagerie fiable, transactions et sécurité des messages.|Utilise le protocole de base et des formats tels que HTTP, WebSockets, SSL, JSON et XML. Il n’existe aucune prise en charge des protocoles de niveau supérieur, tels que Messagerie fiable ou Transactions.|  
 |Prend en charge les modèles d’échange de messages duplex, demande-réponse et unidirectionnels.|HTTP est demande/réponse, mais des modèles supplémentaires peuvent être pris en charge via [SignalR](https://github.com/SignalR/SignalR) et l’intégration de WebSocket.|  
 |Les services SOAP WCF peuvent être décrits en WSDL, ce qui permet aux outils automatisés de générer des proxys clients même pour les services ayant des schémas complexes.|Il existe plusieurs façons de décrire une API Web, allant d'une page HTML générée automatiquement décrivant les extraits de code aux métadonnées structurées pour les API intégrées OData.|  
 |Fourni avec le .NET Framework.|Fourni avec le .NET framework, mais est open source et est également disponible hors band en tant que téléchargement indépendant.|  
