@@ -217,7 +217,7 @@ return result;
 
 <span data-ttu-id="20bf8-251">Pour ajouter ce genre de dé à votre collection, commencez par définir un type pour représenter le dé percentile :</span><span class="sxs-lookup"><span data-stu-id="20bf8-251">To add this kind of die to your collection, first define a type to represent the percentile die:</span></span>
 
-[!code-csharp[18_PercentileDie](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDie "Percentile Die type")]
+[!code-csharp[18_PercentileDice](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDice "Percentile Die type")]
 
 <span data-ttu-id="20bf8-252">Ajoutez ensuite une expression de correspondance `case` pour le nouveau type :</span><span class="sxs-lookup"><span data-stu-id="20bf8-252">Then, add a `case` match expression for the new type:</span></span>
 
