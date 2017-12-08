@@ -14,10 +14,10 @@ items:
 - durationInMinutes: 1
   content: "Ce guide de démarrage rapide vous explique comment utiliser C# de manière interactive à l’aide de votre navigateur et comment afficher les résultats de la compilation et de l’exécution de votre code. Il contient une série de leçons qui commencent par un programme « Hello World ». Ces leçons présentent les concepts de base du langage C#.\n"
   ms.openlocfilehash: ce1791bd7949c89269b1051d15765f5efd273e7c
-  ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
+  ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 12/01/2017
+  ms.lasthandoff: 12/07/2017
 - title: "Exécuter votre premier programme C#"
   durationInMinutes: 2
   content: "Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nFélicitations ! Vous avez exécuté votre premier programme C#. Il s’agit d’un programme simple qui affiche le message « Hello World! ». Il a utilisé la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pour afficher ce message. `Console` est un type qui représente la fenêtre de console. `WriteLine` est une méthode du type `Console` qui affiche une ligne de texte sur cette console de texte.\n\nPoursuivons notre exploration. Le reste de cette leçon explore l’utilisation du type `string`, qui représente du texte en C#. À l’instar du type `Console`, le type `string` propose différentes méthodes. La méthode `string` fonctionne avec du texte. \n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
