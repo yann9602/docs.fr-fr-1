@@ -26,7 +26,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  <span data-ttu-id="f13b0-106">Pour exécuter les exemples, Visual Studio version 2012 ou ultérieure et le .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="f13b0-106">To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.</span></span>  
   
-##  <span data-ttu-id="f13b0-107"><a name="BKMK_CancelaTask"></a> Annuler une tâche</span><span class="sxs-lookup"><span data-stu-id="f13b0-107"><a name="BKMK_CancelaTask"></a> Cancel a Task</span></span>  
+##  <a name="BKMK_CancelaTask"></a> <span data-ttu-id="f13b0-107">Annuler une tâche</span><span class="sxs-lookup"><span data-stu-id="f13b0-107">Cancel a Task</span></span>  
  <span data-ttu-id="f13b0-108">Le premier exemple associe le bouton **Annuler** à une tâche de téléchargement unique.</span><span class="sxs-lookup"><span data-stu-id="f13b0-108">The first example associates the **Cancel** button with a single download task.</span></span> <span data-ttu-id="f13b0-109">Si vous appuyez sur le bouton pendant que l’application télécharge du contenu, le téléchargement est annulé.</span><span class="sxs-lookup"><span data-stu-id="f13b0-109">If you choose the button while the application is downloading content, the download is canceled.</span></span>  
   
 ### <a name="downloading-the-example"></a><span data-ttu-id="f13b0-110">Téléchargement de l'exemple</span><span class="sxs-lookup"><span data-stu-id="f13b0-110">Downloading the Example</span></span>  
@@ -144,7 +144,7 @@ ms.lasthandoff: 11/21/2017
     Download canceled.  
     ```  
   
-##  <span data-ttu-id="f13b0-140"><a name="BKMK_CancelaListofTasks"></a> Annuler une liste de tâches</span><span class="sxs-lookup"><span data-stu-id="f13b0-140"><a name="BKMK_CancelaListofTasks"></a> Cancel a List of Tasks</span></span>  
+##  <a name="BKMK_CancelaListofTasks"></a> <span data-ttu-id="f13b0-140">Annuler une liste de tâches</span><span class="sxs-lookup"><span data-stu-id="f13b0-140">Cancel a List of Tasks</span></span>  
  <span data-ttu-id="f13b0-141">Vous pouvez étendre l’exemple précédent pour annuler de nombreuses tâches à la fois en associant la même instance `CancellationTokenSource` à chaque tâche.</span><span class="sxs-lookup"><span data-stu-id="f13b0-141">You can extend the previous example to cancel many tasks by associating the same `CancellationTokenSource` instance with each task.</span></span> <span data-ttu-id="f13b0-142">Si vous choisissez le bouton **Annuler**, vous annulez toutes les tâches qui ne sont pas encore terminées.</span><span class="sxs-lookup"><span data-stu-id="f13b0-142">If you choose the **Cancel** button, you cancel all tasks that aren’t yet complete.</span></span>  
   
 ### <a name="downloading-the-example"></a><span data-ttu-id="f13b0-143">Téléchargement de l'exemple</span><span class="sxs-lookup"><span data-stu-id="f13b0-143">Downloading the Example</span></span>  
@@ -256,7 +256,7 @@ ms.lasthandoff: 11/21/2017
     Downloads canceled.  
     ```  
   
-##  <span data-ttu-id="f13b0-164"><a name="BKMK_CompleteExamples"></a> Exemples complets</span><span class="sxs-lookup"><span data-stu-id="f13b0-164"><a name="BKMK_CompleteExamples"></a> Complete Examples</span></span>  
+##  <a name="BKMK_CompleteExamples"></a> <span data-ttu-id="f13b0-164">Exemples complets</span><span class="sxs-lookup"><span data-stu-id="f13b0-164">Complete Examples</span></span>  
  <span data-ttu-id="f13b0-165">Les sections suivantes contiennent le code correspondant à chacun des exemples précédents.</span><span class="sxs-lookup"><span data-stu-id="f13b0-165">The following sections contain the code for each of the previous examples.</span></span> <span data-ttu-id="f13b0-166">Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.</span><span class="sxs-lookup"><span data-stu-id="f13b0-166">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>  
   
  <span data-ttu-id="f13b0-167">Vous pouvez télécharger les projets à partir de la page [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046).</span><span class="sxs-lookup"><span data-stu-id="f13b0-167">You can download the projects from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046).</span></span>  
