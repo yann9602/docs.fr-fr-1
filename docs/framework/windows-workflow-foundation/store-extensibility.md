@@ -117,7 +117,7 @@ ms.lasthandoff: 12/02/2017
     go  
     ```  
   
-##  <span data-ttu-id="cd2b3-119"><a name="InstancePromotedProperties"></a>Vue [System.Activities.DurableInstancing.InstancePromotedProperties]</span><span class="sxs-lookup"><span data-stu-id="cd2b3-119"><a name="InstancePromotedProperties"></a> [System.Activities.DurableInstancing.InstancePromotedProperties] view</span></span>  
+##  <a name="InstancePromotedProperties"></a><span data-ttu-id="cd2b3-119">Vue [System.Activities.DurableInstancing.InstancePromotedProperties]</span><span class="sxs-lookup"><span data-stu-id="cd2b3-119">[System.Activities.DurableInstancing.InstancePromotedProperties] view</span></span>  
   
 |<span data-ttu-id="cd2b3-120">Nom de la colonne</span><span class="sxs-lookup"><span data-stu-id="cd2b3-120">Column Name</span></span>|<span data-ttu-id="cd2b3-121">Type de colonne</span><span class="sxs-lookup"><span data-stu-id="cd2b3-121">Column Type</span></span>|<span data-ttu-id="cd2b3-122">Description</span><span class="sxs-lookup"><span data-stu-id="cd2b3-122">Description</span></span>|  
 |-----------------|-----------------|-----------------|  

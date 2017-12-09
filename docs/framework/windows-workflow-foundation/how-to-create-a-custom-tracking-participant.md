@@ -37,7 +37,7 @@ ms.lasthandoff: 12/02/2017
   
 -   [<span data-ttu-id="4f048-116">Pour générer et exécuter l’application</span><span class="sxs-lookup"><span data-stu-id="4f048-116">To build and run the application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_BuildAndRun)  
   
-###  <span data-ttu-id="4f048-117"><a name="BKMK_CustomTrackingParticipant"></a>Pour créer le participant de suivi personnalisé</span><span class="sxs-lookup"><span data-stu-id="4f048-117"><a name="BKMK_CustomTrackingParticipant"></a> To create the custom tracking participant</span></span>  
+###  <a name="BKMK_CustomTrackingParticipant"></a><span data-ttu-id="4f048-117">Pour créer le participant de suivi personnalisé</span><span class="sxs-lookup"><span data-stu-id="4f048-117">To create the custom tracking participant</span></span>  
   
 1.  <span data-ttu-id="4f048-118">Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **ajouter**, **classe**.</span><span class="sxs-lookup"><span data-stu-id="4f048-118">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Class**.</span></span> <span data-ttu-id="4f048-119">Type `StatusTrackingParticipant` dans les **nom** , puis cliquez sur **ajouter**.</span><span class="sxs-lookup"><span data-stu-id="4f048-119">Type `StatusTrackingParticipant` into the **Name** box, and click **Add**.</span></span>  
   
@@ -113,7 +113,7 @@ ms.lasthandoff: 12/02/2017
   
      <span data-ttu-id="4f048-127">Si aucun modèle de suivi n'est spécifié, le modèle de suivi par défaut est utilisé.</span><span class="sxs-lookup"><span data-stu-id="4f048-127">When no tracking profile is specified, the default tracking profile is used.</span></span> <span data-ttu-id="4f048-128">Lorsque le modèle de suivi par défaut est utilisé, les enregistrements de suivi sont émis pour tous les `ActivityStates`.</span><span class="sxs-lookup"><span data-stu-id="4f048-128">When the default tracking profile is used, tracking records are emitted for all `ActivityStates`.</span></span> <span data-ttu-id="4f048-129">Étant donné que nous devons uniquement capturer le texte une seule fois pendant le cycle de vie de l'activité `WriteLine`, nous extrayons uniquement le texte de l'état `ActivityStates.Executing`.</span><span class="sxs-lookup"><span data-stu-id="4f048-129">Because we only need to capture the text one time during the lifecycle of the `WriteLine` activity, we only extract the text from the `ActivityStates.Executing` state.</span></span> <span data-ttu-id="4f048-130">Dans [pour créer le modèle de suivi et inscrire le participant de suivi](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), un modèle de suivi est créé qui spécifie que seules `WriteLine` `ActivityStates.Executing` des enregistrements de suivi sont émis.</span><span class="sxs-lookup"><span data-stu-id="4f048-130">In [To create the tracking profile and register the tracking participant](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), a tracking profile is created that specifies that only `WriteLine` `ActivityStates.Executing` tracking records are emitted.</span></span>  
   
-###  <span data-ttu-id="4f048-131"><a name="BKMK_TrackingProfile"></a>Pour créer le modèle de suivi et inscrire le participant de suivi</span><span class="sxs-lookup"><span data-stu-id="4f048-131"><a name="BKMK_TrackingProfile"></a> To create the tracking profile and register the tracking participant</span></span>  
+###  <a name="BKMK_TrackingProfile"></a><span data-ttu-id="4f048-131">Pour créer le modèle de suivi et inscrire le participant de suivi</span><span class="sxs-lookup"><span data-stu-id="4f048-131">To create the tracking profile and register the tracking participant</span></span>  
   
 1.  <span data-ttu-id="4f048-132">Avec le bouton droit **WorkflowHostForm** dans **l’Explorateur de solutions** et choisissez **afficher le Code**.</span><span class="sxs-lookup"><span data-stu-id="4f048-132">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
@@ -234,7 +234,7 @@ ms.lasthandoff: 12/02/2017
         // Workflow lifecycle handlers...  
     ```  
   
-###  <span data-ttu-id="4f048-137"><a name="BKMK_DisplayTracking"></a>Pour afficher les informations de suivi</span><span class="sxs-lookup"><span data-stu-id="4f048-137"><a name="BKMK_DisplayTracking"></a> To display the tracking information</span></span>  
+###  <a name="BKMK_DisplayTracking"></a><span data-ttu-id="4f048-137">Pour afficher les informations de suivi</span><span class="sxs-lookup"><span data-stu-id="4f048-137">To display the tracking information</span></span>  
   
 1.  <span data-ttu-id="4f048-138">Avec le bouton droit **WorkflowHostForm** dans **l’Explorateur de solutions** et choisissez **afficher le Code**.</span><span class="sxs-lookup"><span data-stu-id="4f048-138">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
@@ -329,7 +329,7 @@ ms.lasthandoff: 12/02/2017
     }  
     ```  
   
-###  <span data-ttu-id="4f048-142"><a name="BKMK_BuildAndRun"></a>Pour générer et exécuter l’application</span><span class="sxs-lookup"><span data-stu-id="4f048-142"><a name="BKMK_BuildAndRun"></a> To build and run the application</span></span>  
+###  <a name="BKMK_BuildAndRun"></a><span data-ttu-id="4f048-142">Pour générer et exécuter l’application</span><span class="sxs-lookup"><span data-stu-id="4f048-142">To build and run the application</span></span>  
   
 1.  <span data-ttu-id="4f048-143">Appuyez sur Ctrl+Maj+B pour générer l'application.</span><span class="sxs-lookup"><span data-stu-id="4f048-143">Press Ctrl+Shift+B to build the application.</span></span>  
   
