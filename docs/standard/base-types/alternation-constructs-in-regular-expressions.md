@@ -31,7 +31,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a><span data-ttu-id="cf1c4-102">Constructions d'alternative dans les expressions régulières</span><span class="sxs-lookup"><span data-stu-id="cf1c4-102">Alternation Constructs in Regular Expressions</span></span>
-<span data-ttu-id="cf1c4-103"><a name="top"></a> Les constructions d'alternative modifient une expression régulière pour permettre la correspondance de type inclusif/exclusif ou conditionnelle.</span><span class="sxs-lookup"><span data-stu-id="cf1c4-103"><a name="top"></a> Alternation constructs modify a regular expression to enable either/or or conditional matching.</span></span> <span data-ttu-id="cf1c4-104">.NET prend en charge trois constructions d’alternative :</span><span class="sxs-lookup"><span data-stu-id="cf1c4-104">.NET supports three alternation constructs:</span></span>  
+<a name="top"></a> <span data-ttu-id="cf1c4-103">Les constructions d'alternative modifient une expression régulière pour permettre la correspondance de type inclusif/exclusif ou conditionnelle.</span><span class="sxs-lookup"><span data-stu-id="cf1c4-103">Alternation constructs modify a regular expression to enable either/or or conditional matching.</span></span> <span data-ttu-id="cf1c4-104">.NET prend en charge trois constructions d’alternative :</span><span class="sxs-lookup"><span data-stu-id="cf1c4-104">.NET supports three alternation constructs:</span></span>  
   
 -   [<span data-ttu-id="cf1c4-105">Utilisation des critères spéciaux avec &#124;</span><span class="sxs-lookup"><span data-stu-id="cf1c4-105">Pattern matching with &#124;</span></span>](#Either_Or)  
   
