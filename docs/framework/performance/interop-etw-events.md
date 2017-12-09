@@ -23,7 +23,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="interop-etw-events"></a><span data-ttu-id="1c7a6-102">Événements ETW d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="1c7a6-102">Interop ETW Events</span></span>
-<span data-ttu-id="1c7a6-103"><a name="top"></a> Les événements d'interopérabilité capturent des informations sur la création et la mise en cache du stub MSIL (Microsoft Intermediate Language).</span><span class="sxs-lookup"><span data-stu-id="1c7a6-103"><a name="top"></a> Interop events capture information about Microsoft intermediate language (MSIL) stub generation and caching.</span></span>  
+<a name="top"></a> <span data-ttu-id="1c7a6-103">Les événements d'interopérabilité capturent des informations sur la création et la mise en cache du stub MSIL (Microsoft Intermediate Language).</span><span class="sxs-lookup"><span data-stu-id="1c7a6-103">Interop events capture information about Microsoft intermediate language (MSIL) stub generation and caching.</span></span>  
   
  <span data-ttu-id="1c7a6-104">Cette catégorie comprend les événements suivants :</span><span class="sxs-lookup"><span data-stu-id="1c7a6-104">This category consists of the following events:</span></span>  
   

@@ -23,7 +23,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="security-etw-events"></a><span data-ttu-id="0375d-102">Événements de sécurité ETW</span><span class="sxs-lookup"><span data-stu-id="0375d-102">Security ETW Events</span></span>
-<span data-ttu-id="0375d-103"><a name="top"></a> Les événements de sécurité sont déclenchés pendant la vérification de nom fort et la vérification Authenticode.</span><span class="sxs-lookup"><span data-stu-id="0375d-103"><a name="top"></a> Security events are raised during strong name verification and Authenticode verification.</span></span>  
+<a name="top"></a> <span data-ttu-id="0375d-103">Les événements de sécurité sont déclenchés pendant la vérification de nom fort et la vérification Authenticode.</span><span class="sxs-lookup"><span data-stu-id="0375d-103">Security events are raised during strong name verification and Authenticode verification.</span></span>  
   
  <span data-ttu-id="0375d-104">Cette catégorie comprend les événements suivants :</span><span class="sxs-lookup"><span data-stu-id="0375d-104">This category consists of the following events:</span></span>  
   

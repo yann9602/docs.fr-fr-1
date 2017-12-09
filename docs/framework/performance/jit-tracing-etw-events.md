@@ -23,7 +23,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/18/2017
 ---
 # <a name="jit-tracing-etw-events"></a><span data-ttu-id="d227d-102">Événements ETW de traçage JIT</span><span class="sxs-lookup"><span data-stu-id="d227d-102">JIT Tracing ETW Events</span></span>
-<span data-ttu-id="d227d-103"><a name="top"></a> Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.</span><span class="sxs-lookup"><span data-stu-id="d227d-103"><a name="top"></a> These events collect information relating to the success or failure of just-in-time (JIT) inlining and JIT tail calls.</span></span>  
+<a name="top"></a> <span data-ttu-id="d227d-103">Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.</span><span class="sxs-lookup"><span data-stu-id="d227d-103">These events collect information relating to the success or failure of just-in-time (JIT) inlining and JIT tail calls.</span></span>  
   
  <span data-ttu-id="d227d-104">Les événements de traçage JIT se composent des deux catégories suivantes :</span><span class="sxs-lookup"><span data-stu-id="d227d-104">JIT tracing events consist of the following two categories:</span></span>  
   
