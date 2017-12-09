@@ -1,3 +1,4 @@
+### YamlMime:YamlDocument
 documentType: Tutorial
 title: Collections en C#
 metadata:
@@ -8,14 +9,14 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-items:
-- durationInMinutes: 1
-  content: "Ce guide de démarrage rapide vous apprend c# de manière interactive, à l’aide de votre navigateur pour écrire du code c# et de voir les résultats de la compilation et exécution de votre code. Il contient une série de leçons sur la création, la modification et l’exploration de collections et tableaux.\n"
   ms.openlocfilehash: e00cf6badcbd39cc1e9320095169d86efb9cad8f
   ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
   ms.translationtype: HT
   ms.contentlocale: fr-FR
   ms.lasthandoff: 11/22/2017
+items:
+- durationInMinutes: 1
+  content: "Ce guide de démarrage rapide vous apprend c# de manière interactive, à l’aide de votre navigateur pour écrire du code c# et de voir les résultats de la compilation et exécution de votre code. Il contient une série de leçons sur la création, la modification et l’exploration de collections et tableaux.\n"
 - title: "Créer des listes"
   durationInMinutes: 2
   content: "Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive (remplacez « <name> » par votre nom) et cliquez sur le bouton **Exécuter** :\n\n```csharp\nvar names = new List<string> { \"<name>\", \"Ana\", \"Felipe\" };\nforeach (var name in names)\n{\n  Console.WriteLine($\"Hello {name.ToUpper()}!\");\n}\n```\n\nVous venez de créer une liste de chaînes, d’ajouter trois noms à cette liste et d’afficher les noms tout en majuscules. Vous utilisez des concepts que vous avez appris dans des Démarrages rapides précédents pour lire la liste en boucle.\n\nLe code permettant d’afficher les noms utilise des **chaînes interpolées**.  Quand vous faites précéder une `string` du caractère `$`, vous pouvez incorporer le code C# dans la déclaration de chaîne. La chaîne réelle remplace ce code C# par la valeur qu’elle génère. Dans cet exemple, elle remplace `{name.ToUpper()}` par chaque nom, converti en majuscules, car vous avez appelé la méthode <xref:System.String.ToUpper%2A>.\n\nContinuons notre exploration.\n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"

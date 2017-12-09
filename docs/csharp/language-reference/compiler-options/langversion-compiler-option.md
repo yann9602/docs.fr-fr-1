@@ -13,11 +13,11 @@ ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
 caps.latest.revision: "33"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d034958b14c54540aa175a23067d47bd5d850bab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7d3d59f63102ccf3c1d54e4028635c8daad56164
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="langversion-c-compiler-options"></a>/langversion (Options du compilateur C#)
 Force le compilateur à accepter uniquement la syntaxe incluse dans la spécification choisie du langage C#.  
@@ -80,7 +80,7 @@ Force le compilateur à accepter uniquement la syntaxe incluse dans la spécific
  [Informations de référence sur la spécification du langage C#](../../../csharp/language-reference/language-specification/index.md) : .NET Foundation  
  C# 1.0/1.1 [ISO/IEC 23270 : 2003](https://www.iso.org/standard/36768.html) Technologies de l’information -- Spécification du langage C# : Catalogue ISO  
  C# 2.0 [ISO/IEC 23270 : 2006](https://www.iso.org/standard/42926.html) Technologies de l’information -- Spécification du langage C# : Catalogue ISO  
- C# 2.0 [c042926_ISO_IEC_23270_2006(E).zip](http://go.microsoft.com/fwlink/?LinkId=144406) ISO/IEC 23270:2006 au format PDF : Normes ISO disponibles gratuitement  
+ C# 2.0 [c042926_ISO_IEC_23270_2006(E).zip](http://standards.iso.org/ittf/PubliclyAvailableStandards/c042926_ISO_IEC_23270_2006(E).zip) ISO/IEC 23270:2006 au format PDF : Normes ISO disponibles gratuitement  
  C# 3.0 [CSharp Language Specification.doc](http://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc) Spécification du langage C# version 3.0 : Microsoft Corporation  
  C# 4.0 [Ecma-334.pdf](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf) Norme ECMA-334 4e édition    
  C# 5.0 [CSharp Language Specification.docx](https://www.microsoft.com/download/details.aspx?id=7029) Spécification du langage C# version 5.0 : Microsoft Corporation  

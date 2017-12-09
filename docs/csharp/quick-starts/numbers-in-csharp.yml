@@ -1,3 +1,4 @@
+### YamlMime:YamlDocument
 documentType: Tutorial
 title: Nombres en C#
 metadata:
@@ -10,14 +11,14 @@ metadata:
   nextTutorialTitle: Branches et des boucles en c#
   displayType: two-column
   interactive: csharp
-items:
-- durationInMinutes: 1
-  content: "Ce guide de démarrage rapide vous apprend sur les types de nombres en c# de manière interactive, à l’aide de votre navigateur et afficher les résultats de la compilation et exécution de votre code en c#. Il contient une série de leçons pour explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage C#.\n"
   ms.openlocfilehash: bc859589078d1e2d16145125a80e738837c1ebf9
   ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
   ms.translationtype: HT
   ms.contentlocale: fr-FR
   ms.lasthandoff: 11/22/2017
+items:
+- durationInMinutes: 1
+  content: "Ce guide de démarrage rapide vous apprend sur les types de nombres en c# de manière interactive, à l’aide de votre navigateur et afficher les résultats de la compilation et exécution de votre code en c#. Il contient une série de leçons pour explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage C#.\n"
 - title: "Explorer les mathématiques avec des entiers"
   durationInMinutes: 4
   content: "Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :\n\n```csharp\nint a = 18;\nint b = 6;\nint c = a + b;\nConsole.WriteLine(c);\n```\n\nVous venez d’observer l’une des opérations mathématiques de base avec des entiers. Le type `int` représente un **entier**, qui peut être positif ou négatif. Vous utilisez le symbole `+` pour effectuer une addition. Les autres opérations mathématiques courantes avec des entiers sont les suivantes :\n\n- `-` pour la soustraction\n- `*` pour la multiplication\n- `/` pour la division\n\n> [!TIP]\n> Tout au long de ce guide de démarrage rapide, vous pouvez Explorer à votre rythme en modifiant le code que vous avez écrit dans la fenêtre interactive. Ce guide de démarrage rapide fournit des exemples que vous pouvez essayer à chaque étape.\n\nCommencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **Exécuter**.\n\nSoustraction :\n\n```csharp\nint c = a - b;\n```\n\nMultiplication :\n\n```csharp\nint c = a * b;\n```\n\nDivision : \n\n```csharp\nint c = a / b;\n```\n\nVous pouvez également, si vous le souhaitez, effectuer des essais en réalisant plusieurs opérations mathématiques dans la même ligne.\n\n> [!TIP]\n> Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans la fenêtre interactive pour identifier les corrections à apporter.\n> Cet exercice vous aidera à mieux comprendre la structure du code C#.     \n\n> [!NOTE]\n> Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).\n"
