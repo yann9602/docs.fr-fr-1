@@ -14,11 +14,11 @@ ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4d52ade26bc249625a77720fe05ad9c1ab58b04f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4177b9da15bb89f37a7b3cbb27937e09d1c12635
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="platform-visual-basic"></a>/platform (Visual Basic)
 Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut exécuter le fichier de sortie.  
@@ -71,7 +71,7 @@ Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut ex�
   
 -   Les fichiers exécutables compilés avec `/platform:anycpu32bitpreferred` s'exécutent sur le CLR 32 bits.  
   
- Pour plus d’informations sur la façon de développer une application de s’exécuter sur une version 64 bits de Windows, consultez [Applications 64 bits](https://msdn.microsoft.com/library/ms241064).  
+ Pour plus d’informations sur la façon de développer une application de s’exécuter sur une version 64 bits de Windows, consultez [Applications 64 bits](../../../../docs/framework/64-bit-apps.md).  
   
 ### <a name="to-set-platform-in-the-visual-studio-ide"></a>Pour définir /platform dans l'IDE de Visual Studio  
   

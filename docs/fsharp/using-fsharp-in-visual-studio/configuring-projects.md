@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 8b2ed206-34e4-4256-a6ce-0c2499561165
-ms.openlocfilehash: d2a92f725c40443c8dc6af593d28deccd3ee88de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f56fed1e16b4de1d97766f37cb1c72297d5502d5
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="configuring-projects-in-visual-studio"></a>Configuration de projets dans Visual Studio
 
@@ -32,7 +32,7 @@ Le **Concepteur de projets** et son utilisation générale sont entièrement dé
 |`Build`|[Build Page, Project Designer &#40; C &#35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|Vous permet de contrôler comment le code est compilé.|
 |`Build Events`|[Build Page événements, Concepteur de projets &#40; C &#35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|Vous permet de spécifier des commandes à exécuter avant ou après la compilation.|
 |`Debug`|[Page Déboguer, Concepteur de projet](https://msdn.microsoft.com/library/2wcdezs5.aspx)|Permet de contrôler la façon dont l’application s’exécute pendant le débogage. Cela inclut tout spécial débogage modes que vous voulez activer, telles que le code natif et SQL et de la ligne de commande à utiliser et quel est le répertoire de démarrage de votre application.|
-|`Reference Paths`|[Gestion des références dans un projet](https://msdn.microsoft.com/library/ez524kew.aspx)|Vous permet de spécifier où rechercher les assemblys dont dépend le code.|
+|`Reference Paths`|[Gestion des références dans un projet](/visualstudio/ide/managing-references-in-a-project)|Vous permet de spécifier où rechercher les assemblys dont dépend le code.|
 
 ## <a name="f-specific-settings"></a>F #-paramètres spécifiques
 Le tableau suivant résume les paramètres spécifiques à F #:

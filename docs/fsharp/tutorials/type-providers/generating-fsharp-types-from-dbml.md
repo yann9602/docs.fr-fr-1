@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 6fbb6ccc-248f-4226-95e9-f6f99541dbe4
-ms.openlocfilehash: 50e0a2bb6378c82b5c6425589da8a982b5fc496a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a919c2acb2b5b8c2ce93124f2f541bd092d15c35
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="walkthrough-generating-f-types-from-a-dbml-file"></a>Procédure pas à pas : génération de types F# à partir d'un fichier DBML
 
@@ -24,7 +24,7 @@ Ce guide a été écrit pour F # 3.0 et sera mise à jour.  Pour obtenir la list
 > [!NOTE]
 Les liens de référence d’API vous permettront de MSDN.  Les informations de référence sur les API docs.microsoft.com ne sont pas terminées.
 
-Cette procédure pas à pas pour F # 3.0 décrit comment créer des types de données à partir d’une base de données lorsque vous disposez des informations de schéma codées dans un fichier .dbml. LINQ to SQL utilise ce format de fichier pour représenter le schéma de base de données. Vous pouvez générer un fichier LINQ to SQL schéma dans Visual Studio en utilisant le Concepteur Objet/Relationnel (O/R). Pour plus d’informations, consultez [vue d’ensemble du Concepteur O/R](https://msdn.microsoft.com/library/bb384511.aspx) et [la génération de Code dans LINQ to SQL](https://msdn.microsoft.com/library/bb386976).
+Cette procédure pas à pas pour F # 3.0 décrit comment créer des types de données à partir d’une base de données lorsque vous disposez des informations de schéma codées dans un fichier .dbml. LINQ to SQL utilise ce format de fichier pour représenter le schéma de base de données. Vous pouvez générer un fichier LINQ to SQL schéma dans Visual Studio en utilisant le Concepteur Objet/Relationnel (O/R). Pour plus d’informations, consultez [vue d’ensemble du Concepteur O/R](https://msdn.microsoft.com/library/bb384511.aspx) et [la génération de Code dans LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md).
 
 Le fournisseur de type de langage de balisage de base de données (DBML) vous permet d’écrire du code qui utilise les types basés sur un schéma de base de données sans avoir à spécifier une chaîne de connexion statique au moment de la compilation. Qui peut être utile si vous devez autoriser la possibilité que l’application finale doit utiliser une autre base de données, informations d’identification différentes ou une chaîne de connexion autre que celui que vous utilisez pour développer l’application. Si vous avez une connexion directe de la base de données que vous pouvez utiliser au moment de la compilation, et c’est la même base de données et les informations d’identification que vous utiliserez par la suite dans votre application générée, vous pouvez également utiliser le fournisseur de type SQLDataConnection. Pour plus d’informations, consultez [procédure pas à pas : accès à une base de données SQL à l’aide des fournisseurs de Type](accessing-a-sql-database.md).
 

@@ -12,22 +12,22 @@ ms.assetid: fcf78ff1-f1ab-4a5d-b6d8-00d2046b6c80
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 8a53a153851973c735a430056520b01c27b1ef59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9ef4306da5c093b8302e377cc3b68d5700b8dfa8
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-visual-basic"></a>Assemblys et le Global Assembly Cache (Visual Basic)
 Les assemblys constituent l’unité fondamentale dans le déploiement, la gestion de version, la portée d’activation et les autorisations de sécurité d’une application .NET. Les assemblys prennent la forme d’un fichier exécutable (.exe) ou d’un fichier de bibliothèque de liens dynamiques (.dll) et sont les blocs de construction du .NET Framework. Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Vous pouvez comparer un assembly à une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité.  
   
- Les assemblys peuvent contenir un ou plusieurs modules. Par exemple, les projets plus importants peuvent être planifiés de sorte que plusieurs développeurs individuels travaillent sur des modules distincts, qui se regroupent pour créer un assembly unique. Pour plus d’informations sur les modules, consultez la rubrique [Comment : générer un assembly multifichier](https://msdn.microsoft.com/library/226t7yxe).  
+ Les assemblys peuvent contenir un ou plusieurs modules. Par exemple, les projets plus importants peuvent être planifiés de sorte que plusieurs développeurs individuels travaillent sur des modules distincts, qui se regroupent pour créer un assembly unique. Pour plus d’informations sur les modules, consultez la rubrique [Comment : générer un assembly multifichier](../../../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md).  
   
  Les assemblys ont les propriétés suivantes :  
   
 -   Les assemblys sont implémentés en tant que fichiers .exe ou .dll.  
   
--   Vous pouvez partager un assembly entre des applications en le plaçant dans le Global Assembly Cache. Les assemblys doivent avoir un nom fort avant d’être inclus dans le GAC. Pour plus d’informations, consultez [Assemblys avec nom fort](https://msdn.microsoft.com/library/wd40t7ad).  
+-   Vous pouvez partager un assembly entre des applications en le plaçant dans le Global Assembly Cache. Les assemblys doivent avoir un nom fort avant d’être inclus dans le GAC. Pour plus d’informations, consultez [Assemblys avec nom fort](../../../../../docs/framework/app-domains/strong-named-assemblies.md).  
   
 -   Les assemblys sont chargés en mémoire uniquement s’ils sont requis. S’ils ne sont pas utilisés, ils ne sont pas chargés. Cela signifie que les assemblys peuvent être un moyen efficace pour gérer les ressources dans les grands projets.  
   
@@ -46,7 +46,7 @@ Les assemblys constituent l’unité fondamentale dans le déploiement, la gesti
   
  Étant donné que les assemblys contiennent des informations sur le contenu, le contrôle de version et les dépendances, les applications créées avec Visual Basic n’utilisent pas les valeurs de registre Windows pour fonctionner correctement. Les assemblys réduisent les conflits de fichiers .dll et rendent vos applications plus fiables et plus faciles à déployer. Dans de nombreux cas, vous pouvez installer une application .NET simplement en copiant ses fichiers sur l’ordinateur cible.  
   
- Pour plus d’informations, consultez [Manifeste d’assembly](https://msdn.microsoft.com/library/1w45z383).  
+ Pour plus d’informations, consultez [Manifeste d’assembly](../../../../../docs/framework/app-domains/assembly-manifest.md).  
   
 ## <a name="adding-a-reference-to-an-assembly"></a>Ajout d’une référence à un assembly  
  Pour utiliser un assembly, vous devez y ajouter une référence. Ensuite, vous devez utiliser [l’instruction Imports](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour choisir l’espace de noms des éléments que vous souhaitez utiliser. Une fois qu’un assembly est référencé et importé, toutes les classes, propriétés, méthodes accessibles et les autres membres de ses espaces de noms sont disponibles pour votre application comme si leur code faisait partie de votre fichier source.  
@@ -58,7 +58,7 @@ Les assemblys constituent l’unité fondamentale dans le déploiement, la gesti
 >  Pour générer un assembly dans Visual Studio, dans le menu **Générer**, choisissez **Générer**.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Assemblys dans le Common Language Runtime](https://msdn.microsoft.com/library/k3677y81)  
+ [Assemblys dans le Common Language Runtime](../../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Assemblys friend (Visual Basic)](friend-assemblies.md)  
  [Comment : partager un Assembly avec d’autres Applications (Visual Basic)](how-to-share-an-assembly-with-other-applications.md)  
  [Comment : charger et décharger des assemblys (Visual Basic)](how-to-load-and-unload-assemblies.md)  

@@ -32,11 +32,11 @@ ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
 caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 691b65280b958edcf8e856ee6df793e0b7b05184
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 59fee9eb79af86df7f01bd77c27a929ef61fcfe2
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="declared-element-names-visual-basic"></a>Noms d'éléments déclarés (Visual Basic)
 Chaque élément déclaré a un nom, également appelé un *identificateur*, qui est utilisé par le code qui y fait référence.  
@@ -71,7 +71,7 @@ Chaque élément déclaré a un nom, également appelé un *identificateur*, qui
  `xyz$wv`  
   
 > [!CAUTION]
->  Les noms d’élément commençant par un trait de soulignement (`_`) ne font pas partie de la [indépendance du langage et composants indépendants du langage](https://msdn.microsoft.com/library/12a7a7h3) (CLS), le code conforme CLS ne peut pas utiliser un composant qui définit les noms de ce type. Toutefois, un trait de soulignement dans n’importe quelle autre position dans un nom d’élément est conforme à CLS.  
+>  Les noms d’élément commençant par un trait de soulignement (`_`) ne font pas partie de la [indépendance du langage et composants indépendants du langage](../../../../../docs/standard/language-independence-and-language-independent-components.md) (CLS), le code conforme CLS ne peut pas utiliser un composant qui définit les noms de ce type. Toutefois, un trait de soulignement dans n’importe quelle autre position dans un nom d’élément est conforme à CLS.  
   
 ### <a name="name-length-guidelines"></a>Instructions de longueur de nom  
  Un point de vue pratique, votre nom doit être aussi court que possible tout en identifiant clairement la nature de l’élément. Cela améliore la lisibilité de votre code et réduit la taille du fichier source et de longueur de ligne.  

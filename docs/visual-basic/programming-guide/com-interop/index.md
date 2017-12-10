@@ -14,11 +14,11 @@ ms.assetid: 3ffd1bdf-1b8d-47f5-87eb-75b659f64294
 caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 87c87852024412b7a7ed55a2c429842ce75a13a8
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 6a64eaba75128a3844847fbf803c86c2d700db72
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="com-interop-visual-basic"></a>COM Interop (Visual Basic)
 Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. La plupart des logiciels actuels incluent des objets COM. Bien que les assemblys .NET représentent le meilleur choix pour les nouvelles applications, vous devrez peut-être parfois utiliser des objets COM. Cette section traite de certains des problèmes liés à la création et à l’utilisation des objets COM avec [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
@@ -55,7 +55,7 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
  Décrit l’utilisation d’objets COM existants comme base des nouveaux objets.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Interopération avec du code non managé](https://msdn.microsoft.com/library/sd10k43k)  
+ [Interopération avec du code non managé](../../../../docs/framework/interop/index.md)  
  Décrit les services d'interopérabilité fournis par le common language runtime.  
   
  [Exposition de composants COM au .NET Framework](http://msdn.microsoft.com/library/e78b14f1-e487-43cd-9c6d-1a07483f1730)  
@@ -64,5 +64,5 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
  [Exposition de composants .NET Framework à COM](http://msdn.microsoft.com/library/e42a65f7-1e61-411f-b09a-aca1bbce24c6)  
  Décrit la préparation et l’utilisation de types managés à partir de COM.  
   
- [Application d’attributs d’interopérabilité](https://msdn.microsoft.com/library/d4w8x20h)  
+ [Application d’attributs d’interopérabilité](../../../../docs/framework/interop/applying-interop-attributes.md)  
  Aborde les attributs que vous pouvez utiliser lors de l’utilisation de code non managé.

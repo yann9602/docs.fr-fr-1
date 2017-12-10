@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 809e9a34-b271-4c87-8356-2426b44f4721
-ms.openlocfilehash: bcba1e5d1cae1c610525c51bdbdd54088359e79a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 05727bf11eccfd64f823dd280b1a19210815ca5a
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="visual-f-development-environment-features"></a>Fonctionnalités de l’environnement de développement Visual F#
 
@@ -50,7 +50,7 @@ Le tableau suivant récapitule les fonctionnalités de propriétés de projet pr
 |Sécurité (modifier les niveaux de confiance)|Non||
 
 ## <a name="code-and-text-editor-features"></a>Code et les fonctionnalités de l’éditeur de texte
-Les fonctionnalités suivantes des éditeurs de texte Visual Studiocode sont pris en charge en F #. Pour obtenir des informations générales sur la modification du code dans Visual Studio et les fonctionnalités de l’éditeur de texte, consultez [l’écriture de Code dans l’éditeur de texte et le Code](https://msdn.microsoft.com/library/efc4xwkb.aspx).
+Les fonctionnalités suivantes des éditeurs de texte Visual Studiocode sont pris en charge en F #. Pour obtenir des informations générales sur la modification du code dans Visual Studio et les fonctionnalités de l’éditeur de texte, consultez [l’écriture de Code dans l’éditeur de texte et le Code](/visualstudio/ide/writing-code-in-the-code-and-text-editor).
 
 |Fonctionnalité|Description|Prise en charge en F #?|
 |-------|-----------|----------------|
@@ -58,18 +58,18 @@ Les fonctionnalités suivantes des éditeurs de texte Visual Studiocode sont pri
 |Mise en forme automatique|Remet en forme du code de mise en retrait standard et un style.|Non|
 |Signets|Permet d’enregistrer des emplacements dans l’éditeur.|Oui|
 |Modifier la mise en retrait|Met en retrait ou annule un retrait des lignes sélectionnées.|Oui|
-|[Recherche et remplacement de texte](https://msdn.microsoft.com/library/139eef4h.aspx)|Permet d’effectuer une recherche dans un fichier, un projet ou une solution et potentiellement modifier texte.|Oui|
+|[Recherche et remplacement de texte](/visualstudio/ide/finding-and-replacing-text)|Permet d’effectuer une recherche dans un fichier, un projet ou une solution et potentiellement modifier texte.|Oui|
 |Atteindre la définition pour API .NET Framework|Lorsque le curseur est positionné sur une API .NET Framework, affiche le code généré à partir des métadonnées de .NET Framework.|Non|
 |Atteindre la définition pour API définie par l’utilisateur|Lorsque le curseur se trouve sur une entité de programme que vous avez définie, déplace le curseur à l’emplacement où l’entité est définie dans votre code.|Oui|
 |Atteindre la ligne|Permet d’accéder à une ligne spécifique dans un fichier, par numéro de ligne.|Oui|
 |Barres de navigation en haut du fichier|Permet d’accéder à des emplacements dans le code, en, par exemple, nom de la fonction.|Oui|
-|Mode Plan ; Consultez [mise en relief](https://msdn.microsoft.com/library/td6a5x4s.aspx).|Vous permet de réduire des sections de votre code pour créer une vue plus compacte.|Oui|
+|Mode Plan ; Consultez [mise en relief](/visualstudio/ide/outlining).|Vous permet de réduire des sections de votre code pour créer une vue plus compacte.|Oui|
 |Remplacer par des tabulations|Convertit les espaces en tabulations.|Oui|
 |Colorisation de type|Affiche le nom des types définis dans une couleur spécifique.|Oui|
 |Recherche rapide. Consultez Recherche rapide, fenêtre Rechercher et remplacer.|Permet d’effectuer une recherche dans un fichier ou un projet.|Oui|
 
 ## <a name="intellisense-features"></a>Fonctionnalités IntelliSense
-Le tableau suivant récapitule les fonctionnalités IntelliSense prises en charge et non pris en charge en F #. Pour obtenir des informations générales sur IntelliSense, consultez [utilisation d’IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx).
+Le tableau suivant récapitule les fonctionnalités IntelliSense prises en charge et non pris en charge en F #. Pour obtenir des informations générales sur IntelliSense, consultez [utilisation d’IntelliSense](/visualstudio/ide/using-intellisense).
 
 |Fonctionnalité|Description|Prise en charge en F #?|
 |-------|-----------|----------------|
@@ -108,10 +108,10 @@ Le tableau suivant récapitule la prise en charge pour F # de Visual Studio tool
 |Hiérarchie d'appels|Affiche la structure imbriquée de la fonction appelle dans votre code.|Non|
 |Métrique du code|Rassemble des informations relatives à votre code, comme le nombre de lignes.|Non|
 |Affichage de classes|Fournit une vue basée sur le type du code dans un projet.|Non|
-|[Liste d’erreurs, fenêtre](https://msdn.microsoft.com/library/33df3b7a.aspx)|Affiche une liste d’erreurs dans le code.|Oui|
+|[Liste d’erreurs, fenêtre](/visualstudio/ide/reference/error-list-window)|Affiche une liste d’erreurs dans le code.|Oui|
 |[F# Interactive](../tutorials/fsharp-interactive/index.md)|Vous permet de taper (ou copier et coller) F # de code et exécutez immédiatement, indépendamment de la génération de votre projet. La fenêtre F # Interactive est une lecture, l’évaluer, la boucle d’impression (REPL).|Oui|
 |Explorateur d'objets|Permet d’afficher les types dans un assembly.|Types F # tels qu’ils apparaissent dans des assemblys compilés n’apparaissent pas exactement comme vous les avez créés. Vous pouvez parcourir la représentation compilée des types F #, mais vous ne pouvez pas afficher les types de telles qu’elles apparaissent à partir de F #.|
-|[Sortie (fenêtre)](https://msdn.microsoft.com/library/3hk6fby3.aspx)|Affiche la sortie de build.|Oui|
+|[Sortie (fenêtre)](/visualstudio/ide/reference/output-window)|Affiche la sortie de build.|Oui|
 |Analyse des performances|Fournit des outils pour mesurer les performances de votre code.|Oui|
 |Fenêtre Propriétés|Affiche et permet la modification des propriétés de l’objet dans l’environnement de développement qui a le focus.|Oui|
 |[Explorateur de serveurs](https://msdn.microsoft.com/library/x603htbk.aspx)|Fournit des méthodes pour interagir avec un large éventail de ressources du serveur.|Oui|

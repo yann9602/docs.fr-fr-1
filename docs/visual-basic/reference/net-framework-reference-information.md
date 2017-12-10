@@ -12,11 +12,11 @@ ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c5c2824b3af8753dbb90577fe47cf63d2dc793ff
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 158da956015e022c20550171ebe867e7c975c03a
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Informations de référence du .NET Framework (Visual Basic)
 Cette rubrique fournit des liens vers des informations sur la façon de travailler avec les [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] bibliothèque de classes.  
@@ -25,13 +25,13 @@ Cette rubrique fournit des liens vers des informations sur la façon de travaill
  [Prise en main](../../framework/get-started/index.md)  
  Fournit une vue d'ensemble complète du .NET Framework et des liens vers des ressources supplémentaires.  
   
- [Présentation des bibliothèques de classes](https://msdn.microsoft.com/library/hfa3fa08)  
+ [Présentation des bibliothèques de classes](../../../docs/standard/class-library-overview.md)  
  Présente les classes, interfaces et types valeur qui permettent d’accélérer et d’optimiser le processus de développement et de fournir l’accès aux fonctionnalités du système.  
   
- [Guide de développement](https://msdn.microsoft.com/library/hh156542)  
+ [Guide de développement](../../../docs/framework/development-guide.md)  
  Fournit un guide sur tous les domaines technologiques clés et les tâches de développement d’applications, y compris la création, de configuration, de débogage, de sécurisation et de déploiement de votre application. Cette rubrique fournit également des informations dynamiques programmation, l’interopérabilité, l’extensibilité, gestion de la mémoire et des threads.  
   
- [Outils](https://msdn.microsoft.com/library/d9kh6s92)  
+ [Outils](../../../docs/framework/tools/index.md)  
  Décrit les outils que vous pouvez utiliser pour développer, configurer et déployer des applications à l’aide des technologies .NET Framework.  
   
  [Exemples .NET Framework](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  

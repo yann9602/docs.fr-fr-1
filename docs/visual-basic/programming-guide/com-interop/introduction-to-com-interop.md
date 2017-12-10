@@ -14,11 +14,11 @@ ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 81a9d0fc7036ff1b821c46687541311f26113212
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 13df7dc6b325b97411b910c0fc8e05e65a332dc5
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Introduction à COM Interop (Visual Basic)
 Le modèle COM (Component Object) permet à un objet exposer ses fonctionnalités à d’autres composants et d’héberger des applications. Alors que les objets COM ont été essentiels à la programmation de nombreuses années Windows, les applications conçues pour le common language runtime (CLR) offrent de nombreux avantages.  
@@ -62,7 +62,7 @@ Le modèle COM (Component Object) permet à un objet exposer ses fonctionnalité
 ## <a name="see-also"></a>Voir aussi  
  [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)  
  [Procédure pas à pas : implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- [Interopération avec du code non managé](https://msdn.microsoft.com/library/sd10k43k)  
+ [Interopération avec du code non managé](../../../../docs/framework/interop/index.md)  
  [Dépannage des problèmes liés à l’interopérabilité](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
  [Assemblys et le Global Assembly Cache](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
  [Tlbimp.exe (importateur de bibliothèques de types)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  

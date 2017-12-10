@@ -12,11 +12,11 @@ ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1c5355f10fba2d1d18bc514c93f31051781bed14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2082d8169dc325b86957e7a54c6e49304660aa94
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Concepts de base de l’application Windows Forms (Visual Basic)
 Une partie importante de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] est la possibilité de créer des applications Windows Forms qui s’exécutent localement sur les ordinateurs des utilisateurs. Vous pouvez utiliser Visual Studio pour créer l’interface utilisateur et d’applications à l’aide de Windows Forms. Une application Windows Forms repose sur les classes de le <xref:System.Windows.Forms> espace de noms.  
@@ -24,11 +24,11 @@ Une partie importante de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] est la poss
 ## <a name="designing-windows-forms-applications"></a>Conception de Windows Forms Applications  
  Vous pouvez créer des Windows Forms et des applications de service Windows avec [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]. Pour plus d’informations, consultez les rubriques suivantes :  
   
--   [Mise en route des Windows Forms](https://msdn.microsoft.com/library/ms229601.aspx). Fournit des informations sur la façon de créer et programmer des Windows Forms.  
+-   [Mise en route des Windows Forms](../../../../docs/framework/winforms/getting-started-with-windows-forms.md). Fournit des informations sur la façon de créer et programmer des Windows Forms.  
    
--   [Contrôles Windows Forms](https://msdn.microsoft.com/library/ettb6e2a.aspx). Collection de rubriques détaillant l’utilisation de contrôles Windows Forms.  
+-   [Contrôles Windows Forms](../../../../docs/framework/winforms/controls/index.md). Collection de rubriques détaillant l’utilisation de contrôles Windows Forms.  
   
--   [Applications de Service Windows](https://msdn.microsoft.com/library/y817hyb6.aspx). Répertorie les rubriques qui expliquent comment créer des services Windows.  
+-   [Applications de Service Windows](../../../../docs/framework/windows-services/index.md). Répertorie les rubriques qui expliquent comment créer des services Windows.  
   
 ## <a name="building-rich-interactive-user-interfaces"></a>Création d'interfaces utilisateur interactives et enrichies  
  Windows Forms est le composant client intelligent de la [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], un ensemble de bibliothèques managées qui autorisent des tâches d’application courantes telles que la lecture et l’écriture dans le système de fichiers. À l’aide d’un environnement de développement comme [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], vous pouvez créer des applications Windows Forms qui affichent des informations, de demandent la saisie des utilisateurs et de communiquent avec des ordinateurs distants sur un réseau.  
@@ -36,10 +36,10 @@ Une partie importante de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] est la poss
  Dans les Windows Forms, un formulaire est une surface visuelle sur laquelle vous affichez des informations à l’utilisateur. Généralement, vous générez des applications Windows Forms en plaçant des contrôles sur les formulaires et en développant des réponses aux actions de l’utilisateur, telles que des clics de souris ou des pressions. Un *contrôle* est un élément d’interface utilisateur discret qui affiche des données ou accepte l’entrée de données.  
   
 ### <a name="events"></a>Événements  
- Lorsqu’un utilisateur modifie un formulaire ou l’un de ses contrôles, il génère un événement. Votre application réagit à ces événements en exécutant du code et traite les événements quand ils se produisent. Pour plus d’informations, consultez [Création de gestionnaires d’événements dans les Windows Forms](https://msdn.microsoft.com/library/dacysss4.aspx).  
+ Lorsqu’un utilisateur modifie un formulaire ou l’un de ses contrôles, il génère un événement. Votre application réagit à ces événements en exécutant du code et traite les événements quand ils se produisent. Pour plus d’informations, consultez [Création de gestionnaires d’événements dans les Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).  
   
 ### <a name="controls"></a>Contrôles  
- Windows Forms contient divers contrôles que vous pouvez placer sur les formulaires : contrôles qui affichent des zones de texte, boutons, listes déroulantes, cases d’option et même des pages Web. Pour obtenir la liste de tous les contrôles que vous pouvez utiliser sur un formulaire, consultez [Contrôles à utiliser dans les Windows Forms](https://msdn.microsoft.com/library/3xdhey7w.aspx). Si un contrôle existant ne répond pas à vos besoins, Windows Forms prend également en charge la création de vos propres contrôles personnalisés à l'aide de la classe <xref:System.Windows.Forms.UserControl>.  
+ Windows Forms contient divers contrôles que vous pouvez placer sur les formulaires : contrôles qui affichent des zones de texte, boutons, listes déroulantes, cases d’option et même des pages Web. Pour obtenir la liste de tous les contrôles que vous pouvez utiliser sur un formulaire, consultez [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md). Si un contrôle existant ne répond pas à vos besoins, Windows Forms prend également en charge la création de vos propres contrôles personnalisés à l'aide de la classe <xref:System.Windows.Forms.UserControl>.  
   
  Windows Forms offre des contrôles d'interface utilisateur enrichis qui émulent les fonctionnalités des applications haut de gamme telles que Microsoft Office. À l’aide de la <xref:System.Windows.Forms.ToolStrip> et <xref:System.Windows.Forms.MenuStrip> (contrôle), vous pouvez créer barres d’outils et des menus qui contiennent du texte et des images, affichent des sous-menus et hébergent d’autres contrôles tels que les zones de texte et les zones de liste déroulante.  
   
@@ -53,9 +53,9 @@ Une partie importante de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] est la poss
 |Pour|Voir|  
 |--------|---------|  
 |Créez une application Windows Forms avec[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]|[Procédure pas à pas : Création un Windows Form Simple](http://msdn.microsoft.com/en-us/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
-|Utiliser des contrôles sur les formulaires|[Comment : ajouter des contrôles à des Windows Forms](https://msdn.microsoft.com/library/0h5y8567.aspx)|   
-|Créer des graphismes avec<xref:System.Drawing>|[Mise en route de la programmation graphique](https://msdn.microsoft.com/library/da0f23z7.aspx)|  
-|Créer des contrôles personnalisés|[Comment : hériter de la classe UserControl](https://msdn.microsoft.com/library/00ctb4z0.aspx)|  
+|Utiliser des contrôles sur les formulaires|[Comment : ajouter des contrôles à des Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
+|Créer des graphismes avec<xref:System.Drawing>|[Mise en route de la programmation graphique](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
+|Créer des contrôles personnalisés|[Comment : hériter de la classe UserControl](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ## <a name="displaying-and-manipulating-data"></a>Affichage et manipulation de données  
  De nombreuses applications doivent afficher des données provenant d'une base de données, d'un fichier XML, d'un service web XML ou autre source de données. Windows Forms fournit un contrôle souple appelé le <xref:System.Windows.Forms.DataGridView> contrôle pour le rendu de ces données tabulaires dans un format de ligne et de colonne classique, afin que chaque élément de données occupe sa propre cellule. À l’aide de <xref:System.Windows.Forms.DataGridView> vous pouvez personnaliser l’apparence des cellules individuelles, verrouiller des lignes et colonnes en place arbitraires et afficher des contrôles complexes dans les cellules, entre autres fonctionnalités.  
@@ -72,7 +72,7 @@ Une partie importante de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] est la poss
   
 |Pour|Voir|  
 |--------|---------|  
-|Utilisez le <xref:System.Windows.Forms.BindingSource> composant|[Comment : lier des contrôles Windows Forms au composant BindingSource à l’aide du concepteur](https://msdn.microsoft.com/library/801dxw2t.aspx)|  
+|Utilisez le <xref:System.Windows.Forms.BindingSource> composant|[Comment : lier des contrôles Windows Forms au composant BindingSource à l’aide du concepteur](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
 |Travailler avec [!INCLUDE[vstecado](~/includes/vstecado-md.md)] des sources de données|[Comment : trier et filtrer des données ADO.NET avec le composant BindingSource Windows Forms](https://msdn.microsoft.com/library/ya3sah92.aspx)|  
 |Utilisez la fenêtre Sources de données|[Procédure pas à pas : affichage de données sur un Windows Form](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
@@ -98,10 +98,10 @@ Une partie importante de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] est la poss
   
 |Pour|Voir|  
 |--------|---------|  
-|Imprimer le contenu d’un formulaire|[Comment : imprimer des graphiques dans Windows Forms](https://msdn.microsoft.com/library/741a0ktc.aspx)<br /><br /> [Comment : imprimer un fichier texte composé de plusieurs pages dans les Windows Forms](https://msdn.microsoft.com/library/cwbe712d.aspx)|   
-|En savoir plus sur la sécurité Windows Forms|[Vue d’ensemble de la sécurité dans les Windows Forms](https://msdn.microsoft.com/library/90k49ccb.aspx)|  
+|Imprimer le contenu d’un formulaire|[Comment : imprimer des graphiques dans Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Comment : imprimer un fichier texte composé de plusieurs pages dans les Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
+|En savoir plus sur la sécurité Windows Forms|[Vue d’ensemble de la sécurité dans les Windows Forms](../../../../docs/framework/winforms/security-in-windows-forms-overview.md)|  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  
- [Vue d'ensemble des Windows Forms](https://msdn.microsoft.com/library/8bxxy49h.aspx)  
+ [Vue d'ensemble des Windows Forms](../../../../docs/framework/winforms/windows-forms-overview.md)  
  [My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)
