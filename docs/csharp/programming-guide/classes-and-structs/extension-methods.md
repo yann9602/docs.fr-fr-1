@@ -12,11 +12,11 @@ ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
 caps.latest.revision: "35"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 30058a461dddb872e76bef574273c62910e8b2c8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 34a80e4bf129c6104d50a8a0877271136c0c4198
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 Les méthodes d'extension vous permettent d'« ajouter » des méthodes à des types existants sans créer un type dérivé, ni recompiler ou modifier le type d'origine. Les méthodes d'extension sont un type particulier de méthode statique appelées comme s'il s'agissait de méthodes d'instance sur le type étendu. Pour le code client écrit en C#, F# et Visual Basic, il n’y a aucune différence apparente lors de l’appel entre une méthode d’extension et les méthodes qui sont réellement définies dans un type.  
@@ -84,14 +84,14 @@ using System.Linq;
   
 -   Les méthodes d'extension sont mises en portée au niveau de l'espace de noms. Par exemple, si vous avez plusieurs classes statiques qui contiennent des méthodes d'extension dans un espace de noms unique nommé `Extensions`, elles seront toutes mises en portée par la directive `using Extensions;`.  
   
- Pour une bibliothèque de classes que vous avez implémentée, vous ne devez pas utiliser de méthodes d'extension pour éviter d'incrémenter le numéro de version d'un assembly. Si vous souhaitez ajouter une fonctionnalité importante à une bibliothèque dont le code source vous appartient, vous devez suivre les directives .NET Framework standard relatives à la gestion de version des assemblys. Pour plus d’informations, consultez [Versioning des assemblys](https://msdn.microsoft.com/library/51ket42z).  
+ Pour une bibliothèque de classes que vous avez implémentée, vous ne devez pas utiliser de méthodes d'extension pour éviter d'incrémenter le numéro de version d'un assembly. Si vous souhaitez ajouter une fonctionnalité importante à une bibliothèque dont le code source vous appartient, vous devez suivre les directives .NET Framework standard relatives à la gestion de version des assemblys. Pour plus d’informations, consultez [Versioning des assemblys](../../../../docs/framework/app-domains/assembly-versioning.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
- [Exemples de programmation parallèle (notamment les nombreux exemples de méthodes d’extension)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
+ [Exemples de programmation parallèle (il s’agit de nombreux exemples de méthodes d’extension)](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
  [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
  [Vue d’ensemble des opérateurs de requête standard](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
- [Règles de conversion d’instances paramètres et leur impact](http://go.microsoft.com/fwlink/?LinkId=112385)  
- [Méthodes d’extension l’interopérabilité entre les langages](http://go.microsoft.com/fwlink/?LinkId=112386)  
+ [Règles de conversion pour les paramètres Instance et leur impact](http://go.microsoft.com/fwlink/?LinkId=112385)  
+ [Interopérabilité des méthodes d’extension entre les langages](http://go.microsoft.com/fwlink/?LinkId=112386)  
  [Méthodes d’extension et délégués curryfiés](http://go.microsoft.com/fwlink/?LinkId=112387)  
- [Extension method Binding and Error reporting](http://go.microsoft.com/fwlink/?LinkId=112388)
+ [Liaison de méthode d’extension et rapport d’erreurs](http://go.microsoft.com/fwlink/?LinkId=112388)

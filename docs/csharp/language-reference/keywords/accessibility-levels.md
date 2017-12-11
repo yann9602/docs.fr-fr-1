@@ -1,6 +1,6 @@
 ---
 title: "Niveaux d’accessibilité (référence C#)"
-ms.date: 07/20/2015
+ms.date: 12/06/2017
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.topic: article
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-caps.latest.revision: "19"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 77124554d7a0b38414e154e024aceddbfffcfbd4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 816ee0fab3fae21bff2ffbfcbfe39d04dcf95025
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="accessibility-levels-c-reference"></a>Niveaux d’accessibilité (référence C#)
+
 Utilisez les modificateurs d’accès [public](../../../csharp/language-reference/keywords/public.md), [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md) ou [private](../../../csharp/language-reference/keywords/private.md) pour spécifier l’un des niveaux d’accessibilité déclarée ci-dessous pour les membres.  
   
 |Accessibilité déclarée|Signification|  
@@ -27,9 +27,9 @@ Utilisez les modificateurs d’accès [public](../../../csharp/language-referenc
 |`internal`|L’accès est limité à l’assembly actuel.|  
 |`protected internal`|L’accès est limité à l’assembly actuel ou aux types dérivés de la classe conteneur.|  
 |`private`|L’accès est limité au type conteneur.|  
-|`private protected`|L’accès est limité à la classe de conteneur ou les types dérivés de la classe de conteneur dans l’assembly actuel.|  
+|`private protected`|L’accès est limité à la classe conteneur ou aux types dérivés de la classe conteneur dans l’assembly actuel. Disponible depuis C# 7.2. |  
   
- Modificateur d’accès qu’une seule est autorisé pour un membre ou un type, sauf lorsque vous utilisez la `protected internal` ou `private protected` combinaisons.  
+ Vous ne pouvez spécifier qu’un seul modificateur d’accès pour un membre ou un type, sauf si vous utilisez les combinaisons `protected internal` ou `private protected`.  
   
  Les modificateurs d’accès ne sont pas autorisés sur les espaces de noms. Les espaces de noms ne présentent aucune limitation d’accès.  
   
@@ -52,7 +52,7 @@ Utilisez les modificateurs d’accès [public](../../../csharp/language-referenc
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Référence C#](../../../csharp/language-reference/index.md)  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)  
  [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)  
