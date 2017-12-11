@@ -9,11 +9,11 @@ ms.prod: .net-framework
 ms.technology: vs-ide-deployment
 ms.devlang: dotnet
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
-ms.openlocfilehash: 2fdce1e131eaa0d6952b2910f73105f097487711
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 037d94452dd62c06fe6d8ac7aea1143f52b96d32
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Exécution d’applications console dans des conteneurs Windows
 
@@ -59,7 +59,7 @@ Vous devez disposer de Docker pour Windows, version 1.12 bêta 26 ou ultérieu
 ## <a name="building-the-application"></a>Génération de l’application
 En général, les applications console sont distribuées par le biais d’un programme d’installation, de FTP ou d’un déploiement avec partage de fichiers. Pendant le déploiement sur un conteneur, les ressources doivent être compilées et transférées vers un emplacement qui peut être utilisé au moment de la création de l’image Docker.
 
-Dans *build.ps1*, le script utilise [MSBuild](https://msdn.microsoft.com/library/dd393574.aspx) pour compiler l’application afin de terminer la tâche de création des ressources. Quelques paramètres sont passés à MSBuild pour finaliser les ressources nécessaires : le nom de la solution ou du fichier de projet à compiler, l’emplacement de la sortie et enfin la configuration (débogage ou release).
+Dans *build.ps1*, le script utilise [MSBuild](/visualstudio/msbuild/msbuild) pour compiler l’application afin de terminer la tâche de création des ressources. Quelques paramètres sont passés à MSBuild pour finaliser les ressources nécessaires : le nom de la solution ou du fichier de projet à compiler, l’emplacement de la sortie et enfin la configuration (débogage ou release).
 
 Dans l’appel à `Invoke-MSBuild`, `OutputPath` est défini sur **publish** et `Configuration` sur **Release**. 
 

@@ -18,11 +18,11 @@ ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
 caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4a148aa9b7dad357aeaa6f88ec11098418005719
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 53bd56647d04c40c44a240edcd084f0719c3d4aa
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)
 Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travailler avec les lecteurs, les fichiers et les répertoires.  
@@ -46,7 +46,7 @@ Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travaill
   
 -   **Recherche**. Vous pouvez interroger et modifier votre position dans le flux.  
   
- Pour plus d'informations, consultez [Composing Streams](https://msdn.microsoft.com/library/e4y2dch9).  
+ Pour plus d'informations, consultez [Composing Streams](../../../../../docs/standard/io/composing-streams.md).  
   
 ## <a name="types-of-streams"></a>Types de flux  
  Dans le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], un flux est représenté par la classe <xref:System.IO.Stream>, qui forme la classe abstraite pour tous les autres flux. Vous ne pouvez pas créer directement une instance de la classe <xref:System.IO.Stream>. Vous devez utiliser l’une des classes qu’elle implémente.  
@@ -65,13 +65,13 @@ Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travaill
   
 |Pour|Voir|
 |---|---|   
-|Lire et écrire dans un fichier de données|[Comment : lire et écrire dans un fichier de données créé récemment](https://msdn.microsoft.com/library/36b93480.aspx)|  
-|Lire le texte d’un fichier|[Comment : lire du texte dans un fichier](https://msdn.microsoft.com/library/db5x7c0d.aspx)|  
-|Écrire du texte dans un fichier|[Comment : écrire du texte dans un fichier](https://msdn.microsoft.com/library/6ka1wd3w.aspx)|  
-|Lire les caractères d’une chaîne|[Comment : lire les caractères d’une chaîne](https://msdn.microsoft.com/library/9yyz8a6c.aspx)|  
-|Écrire des caractères dans une chaîne|[Comment : écrire des caractères dans une chaîne](https://msdn.microsoft.com/library/z4kzt0dd.aspx)|  
-|Chiffrer des données|[Chiffrement de données](https://msdn.microsoft.com/library/as0w18af.aspx)|  
-|Déchiffrer des données|[Déchiffrement de données](https://msdn.microsoft.com/library/te15te69.aspx)|  
+|Lire et écrire dans un fichier de données|[Comment : lire et écrire dans un fichier de données créé récemment](../../../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|Lire le texte d’un fichier|[Comment : lire du texte dans un fichier](../../../../../docs/standard/io/how-to-read-text-from-a-file.md)|  
+|Écrire du texte dans un fichier|[Comment : écrire du texte dans un fichier](../../../../../docs/standard/io/how-to-write-text-to-a-file.md)|  
+|Lire les caractères d’une chaîne|[Comment : lire les caractères d’une chaîne](../../../../../docs/standard/io/how-to-read-characters-from-a-string.md)|  
+|Écrire des caractères dans une chaîne|[Comment : écrire des caractères dans une chaîne](../../../../../docs/standard/io/how-to-write-characters-to-a-string.md)|  
+|Chiffrer des données|[Chiffrement de données](../../../../../docs/standard/security/encrypting-data.md)|  
+|Déchiffrer des données|[Déchiffrement de données](../../../../../docs/standard/security/decrypting-data.md)|  
   
 ## <a name="file-access-and-attributes"></a>Accès aux fichiers et attributs  
  Vous pouvez contrôler la façon dont les fichiers sont créés, ouverts et partagés avec les énumérations <xref:System.IO.FileAccess>, <xref:System.IO.FileMode> et <xref:System.IO.FileShare>, qui contiennent les indicateurs utilisés par les constructeurs de la classe <xref:System.IO.FileStream>. Par exemple, quand vous ouvrez ou créez un <xref:System.IO.FileStream>, l’énumération <xref:System.IO.FileMode> vous permet de spécifier si le fichier est ouvert pour l’ajout, si un fichier est créé si le fichier spécifié n’existe pas, si le fichier est remplacé, et ainsi de suite.  
@@ -82,7 +82,7 @@ Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travaill
   
 |Pour|Voir|  
 |---|---|
-|Ouvrir un fichier journal et y ajouter du texte|[Comment : ouvrir un fichier journal et y ajouter des éléments](https://msdn.microsoft.com/library/3zc0w663.aspx)|  
+|Ouvrir un fichier journal et y ajouter du texte|[Comment : ouvrir un fichier journal et y ajouter des éléments](../../../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)|  
 |Déterminer les attributs d’un fichier|<xref:System.IO.FileAttributes>|  
   
 ## <a name="file-permissions"></a>Autorisations de fichiers  
@@ -95,19 +95,19 @@ Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travaill
   
 |Pour|Voir|
 |---|---|  
-|Créer un magasin isolé|[Obtention de magasins](https://msdn.microsoft.com/library/k48a6h13.aspx)|  
-|Énumérer les magasins isolés|[Énumération de magasins](https://msdn.microsoft.com/library/c3dy613a.aspx)|  
-|Supprimer un magasin isolé|[Suppression de magasins](https://msdn.microsoft.com/library/5w71t104.aspx)|  
-|Créer un fichier ou un répertoire dans un stockage isolé|[Comment : créer des fichiers et des répertoires dans un stockage isolé](https://msdn.microsoft.com/library/6h2ws3ft.aspx)|  
-|Rechercher un fichier dans un stockage isolé|[Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé](https://msdn.microsoft.com/library/zd5e2z84.aspx)|  
-|Lire ou écrire dans un fichier dans un stockage isolé|[Lecture et écriture dans des fichiers](https://msdn.microsoft.com/library/xf96a1wz.aspx)|  
-|Supprimer un fichier ou un répertoire dans un stockage isolé|[Comment : supprimer des fichiers et des répertoires dans un stockage isolé](https://msdn.microsoft.com/library/kx3852wf.aspx)|  
+|Créer un magasin isolé|[Obtention de magasins](../../../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|  
+|Énumérer les magasins isolés|[Énumération de magasins](../../../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|  
+|Supprimer un magasin isolé|[Suppression de magasins](../../../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|  
+|Créer un fichier ou un répertoire dans un stockage isolé|[Comment : créer des fichiers et des répertoires dans un stockage isolé](../../../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|  
+|Rechercher un fichier dans un stockage isolé|[Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé](../../../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|  
+|Lire ou écrire dans un fichier dans un stockage isolé|[Lecture et écriture dans des fichiers](../../../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|  
+|Supprimer un fichier ou un répertoire dans un stockage isolé|[Comment : supprimer des fichiers et des répertoires dans un stockage isolé](../../../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|  
   
 ## <a name="file-events"></a>Événements de fichiers  
  Le composant <xref:System.IO.FileSystemWatcher> vous permet de surveiller les modifications dans les fichiers et répertoires de votre système ou sur n’importe quel ordinateur auquel vous avez accès par le biais du réseau. Par exemple, si un fichier est modifié, vous souhaiterez peut-être envoyer à un utilisateur une alerte signalant la modification. Quand des modifications se produisent, un ou plusieurs événements sont déclenchés, stockés dans une mémoire tampon et transmis au composant <xref:System.IO.FileSystemWatcher> pour traitement.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Composition de flux](https://msdn.microsoft.com/library/e4y2dch9)  
+ [Composition de flux](../../../../../docs/standard/io/composing-streams.md)  
  [Fichier et flux de données E/S](https://msdn.microsoft.com/library/k3352a4t)  
  [E/S sur fichier asynchrones](https://msdn.microsoft.com/library/kztecsys)  
  [Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)
