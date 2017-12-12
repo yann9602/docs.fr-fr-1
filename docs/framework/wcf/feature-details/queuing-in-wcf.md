@@ -10,14 +10,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e98d76ba-1acf-42cd-b137-0f8214661112
 caps.latest.revision: "21"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 64a66b1ce04f6c644eef266fee1c89366f1fb707
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d1364aa4284bcc858a9164f78e14daecc1a3ad54
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="queuing-in-wcf"></a>Mise en file d'attente dans WCF
 Cette section décrit comment utiliser la communication mise en file d'attente dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -62,7 +62,7 @@ Cette section décrit comment utiliser la communication mise en file d'attente d
   
 -   `Durable:` si sa valeur est `true` (valeur par défaut), le canal mis en file d'attente garantit que MSMQ stocke le message durablement sur le disque. Ainsi, en cas d'arrêt et de redémarrage du service MSMQ, les messages présents sur le disque sont transférés à la file d'attente cible ou sont remis au service. Lorsque sa valeur est `false`, les messages sont stockés dans un magasin volatil et sont perdus en cas d'arrêt et de redémarrage du service MSMQ.  
   
- Pour le transfert fiable `ExactlyOnce`, MSMQ requiert que la file d'attente soit transactionnelle. Par ailleurs, MSMQ requiert une transaction pour pouvoir lire les messages depuis une file d'attente transactionnelle. De ce fait, lorsque vous utilisez le `NetMsmqBinding`, n'oubliez pas qu'une transaction est requise pour envoyer ou recevoir des messages lorsque `ExactlyOnce` a la valeur `true`. De même, MSMQ requiert que la file d'attente soit non transactionnelle pour une garantie optimale, comme lorsque `ExactlyOnce` a la valeur `false` et pour la messagerie volatile. Ainsi, si la valeur `ExactlyOnce` est affectée à `false` ou à durable à `false`, vous ne pouvez pas envoyer ni recevoir de messages à l'aide d'une transaction.  
+ Pour le transfert fiable `ExactlyOnce`, MSMQ requiert que la file d'attente soit transactionnelle. Par ailleurs, MSMQ requiert une transaction pour pouvoir lire les messages depuis une file d'attente transactionnelle. De ce fait, lorsque vous utilisez le `NetMsmqBinding`, n'oubliez pas qu'une transaction est requise pour envoyer ou recevoir des messages lorsque `ExactlyOnce` a la valeur `true`. De même, MSMQ requiert que la file d'attente soit non transactionnelle pour une garantie optimale, comme lorsque `ExactlyOnce` a la valeur `false` et pour la messagerie volatile. Ainsi, si la valeur `ExactlyOnce` est affectée à `false` ou à durable `false`, vous ne pouvez pas envoyer ni recevoir de messages à l'aide d'une transaction.  
   
 > [!NOTE]
 >  Assurez-vous que la file d'attente appropriée (transactionnelle ou non transactionnelle) est créée en fonction des paramètres des liaisons. Si `ExactlyOnce` a la valeur `true`, utilisez une file d'attente transactionnelle ; sinon, utilisez une file d'attente non transactionnelle.  

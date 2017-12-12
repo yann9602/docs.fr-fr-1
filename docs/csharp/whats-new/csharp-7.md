@@ -1,5 +1,5 @@
 ---
-title: "Quelles sont les nouveautés en C# 7 - Guide c#"
+title: "Nouveautés de C# 7 | Guide C#"
 description: "Découvrez les nouvelles fonctionnalités disponibles dans la prochaine version 7 du langage C#."
 keywords: "C#, .NET, .NET Core, dernières fonctionnalités, nouveautés"
 author: BillWagner
@@ -10,21 +10,21 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: f98039404789e8886154e04c4b97a21741c4d885
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 3f3598fce5abeb67b772f51ed6f93e6ada4c92d0
+ms.sourcegitcommit: 401c4427a3ec0d1263543033b3084039278509dc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="whats-new-in-c-7"></a>Nouveautés de C# 7
 
 C# 7 ajoute un certain nombre de nouvelles fonctionnalités au langage C# :
-* [`out`variables](#out-variables)
+* [Variables `out`](#out-variables)
     - Vous pouvez déclarer des valeurs `out` inline comme arguments de la méthode dans laquelle elles sont utilisées.
 * [Tuples](#tuples)
     - Vous pouvez créer des types légers et sans nom qui contiennent plusieurs champs publics. Les compilateurs et les outils de l’IDE comprennent la sémantique de ces types.
 * [Éléments ignorés](#discards)
-    - Ignore est des variables temporaires, en écriture seule utilisés dans les attributions lorsque vous ne vous souciez la valeur assignée. Ils sont particulièrement utiles lorsque Déconstruction de tuples et les types définis par l’utilisateur, ainsi que lors de l’appel de méthodes avec `out` paramètres.
+    - Les éléments ignorés sont les variables temporaires en écriture seule utilisées dans les attributions quand vous ne vous souciez pas de la valeur assignée. Ils sont particulièrement utiles lors de la déconstruction de tuples et de types définis par l’utilisateur, ainsi que lors de l’appel de méthodes avec des paramètres `out`.
 * [Critères spéciaux](#pattern-matching)
     - Vous pouvez créer une logique de branchement basée sur des types arbitraires et les valeurs des membres de ces types.
 * [Variables locales et retours `ref`](#ref-locals-and-returns)
@@ -82,30 +82,30 @@ return result;
 > Les nouvelles fonctionnalités des tuples exigent les types <xref:System.ValueTuple>.
 > Vous devez ajouter le package NuGet [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) pour pouvoir l’utiliser sur les plateformes qui n’incluent pas les types.
 >
-> Ces fonctionnalités sont semblables à celles d’autres langages qui reposent sur les types fournis dans le framework. Exemple inclure `async` et `await` de partie de confiance sur le `INotifyCompletion` interface et LINQ s’appuyer sur `IEnumerable<T>`. Toutefois, le mécanisme de remise change à mesure que le .NET dépend de moins en moins de la plateforme. Le .NET Framework n’est pas toujours émis à la même cadence que le compilateur de langage. Quand les nouvelles fonctionnalités de langage reposent sur de nouveaux types, ces types sont disponibles sous la forme de packages NuGet au moment de l’émission des fonctionnalités de langage. À mesure que ces nouveaux types sont ajoutés à l’API .NET Standard et remis dans le cadre du framework, les packages NuGet ne sont plus obligatoires.
+> Ces fonctionnalités sont semblables à celles d’autres langages qui reposent sur les types fournis dans le framework. `async` et `await` qui reposent sur l’interface `INotifyCompletion`, et LINQ qui repose sur `IEnumerable<T>` en sont des exemples. Toutefois, le mécanisme de remise change à mesure que le .NET dépend de moins en moins de la plateforme. Le .NET Framework n’est pas toujours émis à la même cadence que le compilateur de langage. Quand les nouvelles fonctionnalités de langage reposent sur de nouveaux types, ces types sont disponibles sous la forme de packages NuGet au moment de l’émission des fonctionnalités de langage. À mesure que ces nouveaux types sont ajoutés à l’API .NET Standard et remis dans le cadre du framework, les packages NuGet ne sont plus obligatoires.
 
 C# fournit une syntaxe complète pour les classes et les structs, utilisée pour expliquer l’intention de votre conception. Cependant, cette syntaxe complète nécessite parfois un travail supplémentaire avec peu d’avantages. Vous pouvez souvent écrire des méthodes qui nécessitent une structure simple contenant plusieurs éléments de données. Pour prendre en charge ces scénarios, des *tuples* ont été ajoutées à C#. Les tuples sont des structures de données légères contenant plusieurs champs pour représenter les membres de données.
 Les champs ne sont pas validés, et vous ne pouvez pas définir vos propres méthodes.
 
 > [!NOTE]
-> Tuples n’étaient pas disponibles avant le 7 c#, mais ils ont été inefficaces et n’avaient aucune prise en charge linguistique.
-> Cela signifie que les éléments tuple peuvent uniquement être référencées en tant que `Item1`, `Item2` et ainsi de suite. C# 7 introduit la prise en charge linguistique pour les tuples, ce qui permet les noms de champs d’un tuple à l’aide des types de tuple plus sémantiques.
+> Les tuples étaient disponibles avant C# 7, mais ils n’étaient pas efficaces et n’avaient aucune prise en charge du langage.
+> Cela signifiait que les éléments tuples pouvaient uniquement être référencés comme `Item1`, `Item2`, et ainsi de suite. C# 7 introduit la prise en charge du langage pour les tuples, ce qui permet d’utiliser des noms sémantiques pour les champs d’un tuple avec de nouveaux types tuple plus efficaces.
 
 Vous pouvez créer un tuple en assignant chaque membre à une valeur :
 
 [!code-csharp[UnnamedTuple](../../../samples/snippets/csharp/new-in-7/program.cs#04_UnnamedTuple "Unnamed tuple")]
 
-Que l’assignation crée un tuple dont les membres sont `Item1` et `Item2`, que vous pouvez utiliser dans la même façon que <xref:System.Tuple> vous pouvez modifier la syntaxe pour créer un tuple qui fournit les noms sémantiques pour chacun des membres du tuple :
+Cette assignation crée un tuple dont les membres sont `Item1` et `Item2`, que vous pouvez utiliser de la même façon que <xref:System.Tuple>. Vous pouvez modifier la syntaxe pour créer un tuple qui fournit des noms sémantiques à chacun des membres du tuple :
 
 [!code-csharp[NamedTuple](../../../samples/snippets/csharp/new-in-7/program.cs#05_NamedTuple "Named tuple")]
 
-Le tuple `namedLetters` contient des champs appelés `Alpha` et `Beta`. Ces noms n’existent qu’au moment de la compilation et ne sont pas conservées par exemple lors de l’inspection du tuple à l’aide de la réflexion lors de l’exécution.
+Le tuple `namedLetters` contient des champs appelés `Alpha` et `Beta`. Ces noms n’existent qu’au moment de la compilation et ne sont pas conservés par exemple lors de l’inspection du tuple à l’aide de la réflexion lors de l’exécution.
 
 Dans une assignation de tuple, vous pouvez également spécifier les noms des champs dans la partie droite :
 
 [!code-csharp[ImplicitNamedTuple](../../../samples/snippets/csharp/new-in-7/program.cs#06_ImplicitNamedTuple "Implicitly named tuple")]
 
-Vous pouvez spécifier les noms de champs sur le côté gauche et droit de l’attribution de :
+Vous pouvez spécifier des noms pour les champs dans la partie gauche et dans la partie droite de l’assignation :
 
 [!code-csharp[NamedTupleConflict](../../../samples/snippets/csharp/new-in-7/program.cs#07_NamedTupleConflict "Named tuple conflict")]
 
@@ -149,25 +149,25 @@ Vous n’êtes pas lié par les noms définis dans la méthode `Deconstruct`. Vo
 
 La [rubrique relative au tuples](../tuples.md) vous permet d’étudier les tuples plus en détail.
 
-## <a name="discards"></a>Ignore
+## <a name="discards"></a>Éléments ignorés
 
-Souvent lorsque Déconstruction un tuple ou appeler une méthode avec `out` paramètres, vous êtes obligé de définir une variable dont vous ne vous souciez et que vous ne prévoyez pas d’utiliser la valeur. C# ajoute la prise en charge de *ignore* pour gérer ce scénario. Un rejet est en écriture seule variable dont le nom est `_` (caractère de soulignement) ; vous pouvez assigner toutes les valeurs que vous souhaitez ignorer à la variable unique. Un rejet est semblable à une variable non assignée ; en dehors de l’instruction d’assignation, le rejet ne peut pas être utilisé dans le code.
+Souvent, lors de la déconstruction d’un tuple ou de l’appel d’une méthode avec des paramètres `out`, vous devez définir une variable dont la valeur ne vous importe pas et que vous ne prévoyez pas d’utiliser. C# ajoute la prise en charge des *éléments ignorés* pour gérer ce scénario. Un élément ignoré est une variable en écriture seule dont le nom est `_` (caractère de soulignement) ; vous pouvez assigner toutes les valeurs que vous souhaitez ignorer à la variable unique. Un élément ignoré est semblable à une variable non assignée ; en dehors de l’instruction d’assignation, l’élément ignoré ne peut pas être utilisé dans le code.
 
-Ignore est pris en charge dans les scénarios suivants :
+Les éléments ignorés sont pris en charge dans les scénarios suivants :
 
-* Lorsque Déconstruction tuples ou les types définis par l’utilisateur.
+* Lors de la déconstruction de tuples ou de types définis par l’utilisateur.
 
-* Lors de l’appel de méthodes avec [hors](../language-reference/keywords/out.md) paramètres.
+* Lors d’appels à des méthodes avec des paramètres [out](../language-reference/keywords/out.md).
 
-* Dans une opération avec mise en correspondance le [est](../language-reference/keywords/is.md) et [commutateur](../language-reference/keywords/switch.md) instructions.
+* Dans une opération de critères spéciaux avec les instructions [is](../language-reference/keywords/is.md) et [switch](../language-reference/keywords/switch.md).
 
-* Comme un identificateur autonome lorsque vous souhaitez explicitement identifier la valeur d’une assignation, comme un rejet.
+* Comme un identificateur autonome quand vous voulez explicitement identifier la valeur d’une assignation comme un élément ignoré.
 
-L’exemple suivant définit un `QueryCityDataForYears` méthode qui retourne un 6-tuple qui contient les données pour une ville pendant deux ans différents. L’appel de méthode dans l’exemple concerne uniquement avec les valeurs de deux remplissage retournés par la méthode et par conséquent, traite les valeurs restantes dans le tuple comme supprime lorsqu’elle décompose le tuple.
+L’exemple suivant définit une méthode `QueryCityDataForYears` qui retourne un tuple à 6 composants qui contient des données pour une ville au cours de deux années différentes. L’appel de méthode dans l’exemple s’intéresse uniquement à deux valeurs de population retournées par la méthode et traite par conséquent les valeurs restantes dans le tuple comme des éléments ignorés lors de la déconstruction du tuple.
 
 [!code-csharp[Tuple-discard](../../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
-Pour plus d’informations, consultez [ignore](../discards.md).
+Pour plus d’informations, consultez [Éléments ignorés](../discards.md).
  
 ## <a name="pattern-matching"></a>Critères spéciaux
 
@@ -175,9 +175,9 @@ Les *critères spéciaux* constituent une fonctionnalité qui vous permet d’im
 
 Les critères spéciaux prennent en charge les expressions `is` et les expressions `switch`. L’une ou l’autre permettent d’inspecter un objet et ses propriétés afin de déterminer s’il correspond au modèle recherché. Vous utilisez le mot clé `when` pour spécifier des règles supplémentaires pour le modèle.
 
-### <a name="is-expression"></a>`is`expression
+### <a name="is-expression"></a>Expression `is`
 
-Le `is` expression de modèle s’étend familières `is` opérateur pour interroger un objet au-delà de son type.
+L’expression de modèle `is` étend l’opérateur `is` classique pour interroger un objet au-delà de son type.
 
 Commençons par un scénario simple. Nous allons ajouter à ce scénario des fonctionnalités qui illustrent la façon dont les expressions de critères spéciaux facilitent les algorithmes qui fonctionnent avec les types non apparentés. Nous allons commencer par une méthode qui calcule la somme d’un certain nombre de lancers de dés :
 
@@ -203,7 +203,7 @@ Les expressions de correspondance prennent également en charge les constantes. 
 
 [!code-csharp[SwitchWithConstants](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#17_SwitchWithConstants "Switch with constants")]
 
-Le code ci-dessus ajoute des cas pour `0` comme un cas particulier de `int`, et `null` comme un cas particulier quand il n’y a aucune entrée. Cela illustre une nouvelle fonctionnalité importante des expressions de modèle switch : l’ordre des expressions `case` a maintenant de l’importance. Le cas `0` doit apparaître avant le cas général `int`. Sinon, le premier modèle à mettre en correspondance serait le cas `int`, même si la valeur est `0`. Si vous organisez accidentellement des expressions de correspondance tel qu’un cas a déjà été traité, le compilateur indicateur qui et génère une erreur.
+Le code ci-dessus ajoute des cas pour `0` comme un cas particulier de `int`, et `null` comme un cas particulier quand il n’y a aucune entrée. Cela illustre une nouvelle fonctionnalité importante des expressions de modèle switch : l’ordre des expressions `case` a maintenant de l’importance. Le cas `0` doit apparaître avant le cas général `int`. Sinon, le premier modèle à mettre en correspondance serait le cas `int`, même si la valeur est `0`. Si vous classez par mégarde des expressions de correspondance de sorte qu’un cas ultérieur a déjà été traité, le compilateur le signale et génère une erreur.
 
 Ce même comportement active le cas particulier pour une séquence d’entrée vide.
 Vous pouvez voir que le cas pour un élément `IEnumerable` qui contient des éléments doit apparaître avant le cas général `IEnumerable`.
@@ -215,9 +215,9 @@ Pour finir, ajoutons un dernier `case` pour un nouveau style de dé. Certains je
 > [!NOTE]
 > Deux dés percentiles à 10 faces peuvent représenter chaque nombre compris entre 0 et 99. Un dé a des faces marquées `00`, `10`, `20`, ... `90`. L’autre dé a des faces marquées `0`, `1`, `2`, ... `9`. Additionnez les valeurs des deux dés. Vous pouvez alors obtenir n’importe quel nombre compris entre 0 à 99.
 
-Pour ajouter ce genre de dé à votre collection, commencez par définir un type pour représenter le dé percentile :
+Pour ajouter ce genre de dé à votre collection, commencez par définir un type pour représenter le dé percentile. La propriété `TensDigit` stocke les valeurs `0`, `10`, `20`, jusqu’à `90` :
 
-[!code-csharp[18_PercentileDie](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDie "Percentile Die type")]
+[!code-csharp[18_PercentileDice](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDice "Percentile Die type")]
 
 Ajoutez ensuite une expression de correspondance `case` pour le nouveau type :
 
@@ -277,14 +277,14 @@ Pour obtenir le résultat souhaité, vous devez ajouter le `ref` modificateur à
 
 À présent, la deuxième instruction `WriteLine` dans l’exemple ci-dessus affiche la valeur `24`, ce qui indique que le stockage dans la matrice a été modifié. La variable locale a été déclarée avec le modificateur `ref`, et elle prendra un retour `ref`. Vous devez initialiser une variable `ref` au moment de sa déclaration : vous ne pouvez pas séparer la déclaration et l’initialisation.
 
-Le langage c# a trois autres règles de protection de façon malveillante la `ref` variables locales et les retourne :
+Le langage C# a trois autres règles qui vous protègent contre une mauvaise utilisation des variables locales et des retours `ref` :
 
-* Vous ne pouvez pas affecter une valeur de retour de méthode standard pour une `ref` variable locale.
+* Vous ne pouvez pas affecter une valeur de retour de méthode standard à une variable locale `ref`.
     - Cela rejette les instructions telles que `ref int i = sequence.Count();`.
 * Vous ne pouvez pas retourner un `ref` à une variable dont la durée de vie ne s’étend pas au-delà de l’exécution de la méthode.
-    - Cela signifie que vous ne peut pas retourner une référence à une variable locale ou une variable avec une portée semblable.
-* `ref`variables locales et les retourne ne peut pas être utilisé avec les méthodes async.
-    - Le compilateur ne peut pas savoir si la variable référencée a été définie à sa valeur finale lorsque la méthode async retourne.
+    - Cela signifie que vous ne pouvez pas retourner une référence à une variable locale ni une variable avec une étendue similaire.
+* Les variables locales et les retours `ref` ne peuvent pas être utilisés avec les méthodes Async.
+    - Le compilateur ne peut pas savoir si la variable référencée a été définie à sa valeur finale quand la méthode Async est retournée.
 
 L’ajout de variables locales ref et de retours ref permet d’utiliser des algorithmes qui sont plus efficaces en évitant la copie de valeurs, ou d’effectuer plusieurs fois des opérations de déréférencement. 
 
@@ -366,7 +366,7 @@ La nouvelle fonctionnalité du langage signifie que les méthodes async peuvent 
 [!code-csharp[UsingValueTask](../../../samples/snippets/csharp/new-in-7/AsyncWork.cs#30_UsingValueTask "Using ValueTask")]
 
 > [!NOTE]
-> Vous devez ajouter le package NuGet [ `System.Threading.Tasks.Extensions` ](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) pour pouvoir utiliser le <xref:System.Threading.Tasks.ValueTask%601> type.
+> Vous devez ajouter le package NuGet [`System.Threading.Tasks.Extensions`](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) pour pouvoir utiliser le type <xref:System.Threading.Tasks.ValueTask%601>.
 
 Une optimisation simple consisterait à utiliser `ValueTask` dans des emplacements où `Task` était utilisé avant. Toutefois, si vous voulez effectuer manuellement des optimisations supplémentaires, vous pouvez mettre en cache les résultats à partir du travail asynchrone et réutiliser le résultat dans les appels suivants. Le struct `ValueTask` a un constructeur avec un paramètre `Task` pour vous permettre de construire un `ValueTask` à partir de la valeur de retour de toute méthode async existante :
 

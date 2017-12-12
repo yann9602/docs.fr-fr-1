@@ -9,14 +9,14 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 66833724-dc36-4fad-86b0-59ffeaa3ba6a
 caps.latest.revision: "8"
-author: Erikre
-ms.author: erikre
-manager: erikre
-ms.openlocfilehash: 6202d17741c276c03e80cedd979cbcf2f39ccc1f
-ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4aaab8fca4693f6b253d48f066e644cc76637241
+ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="order-processing-with-policy"></a>Traitement des commandes avec une stratégie
 L'exemple de stratégie du traitement des commandes présente quelques-unes des fonctionnalités clés contenues dans le [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] de Windows Workflow Foundation (WF). Les fonctionnalités suivantes du moteur de règles WF sont nouvelles :  
@@ -47,7 +47,7 @@ L'exemple de stratégie du traitement des commandes présente quelques-unes des 
   
     -   `invalidItemNum`  
   
-         Cette règle assure que le numéro d'élément est compris entre 1 et 6 (inclus). Si le numéro est compris dans cette fourchette, la règle ne fait rien (excepté des impressions dans la console). Dans le cas contraire, la `invalidItemNum` règle effectue les opérations suivantes:  
+         Cette règle assure que le numéro d'élément est compris entre 1 et 6 (inclus). Si le numéro est compris dans cette fourchette, la règle ne fait rien (excepté des impressions dans la console). Dans le cas contraire, `invalidItemNum` elle effectue les opérations suivantes :  
   
         1.  Elle crée un objet `OrderError` en lui transmettant le numéro d'élément indiqué et définit les propriétés `ErrorText` et `CustomerName` dans cet objet.  
   
