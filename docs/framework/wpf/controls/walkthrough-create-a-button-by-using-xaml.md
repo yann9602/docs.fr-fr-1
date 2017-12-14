@@ -14,11 +14,11 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b6d24356841e8b385bef47bcba0e5694b48240
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 543e6496c826c864dc77e50fd096fc4cb43f600e
+ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/13/2017
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Procédure pas à pas : créer un bouton avec XAML
 L’objectif de cette procédure pas à pas est d’apprendre à créer un bouton animé à utiliser dans un [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] application. Cette procédure pas à pas utilise des styles et un modèle pour créer une ressource de bouton personnalisé qui permet la réutilisation du code et la séparation de la logique de bouton de la déclaration de bouton. Cette procédure pas à pas est écrite entièrement en [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -76,7 +76,7 @@ L’objectif de cette procédure pas à pas est d’apprendre à créer un bouto
     </Application>  
     ```  
   
-     Portée de la ressource est déterminée par où vous définissez la ressource. Définition des ressources dans `Application.Resoureses` dans le app.xaml fichier permet à la ressource à utiliser à partir de n’importe où dans l’application. Pour en savoir plus sur la définition de la portée de vos ressources, consultez [ressources XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+     Portée de la ressource est déterminée par où vous définissez la ressource. Définition des ressources dans `Application.Resources` dans le app.xaml fichier permet à la ressource à utiliser à partir de n’importe où dans l’application. Pour en savoir plus sur la définition de la portée de vos ressources, consultez [ressources XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
 2.  **Créer un style et définir des valeurs de propriété de base avec lui :** ajoutez le balisage suivant à la `Application.Resources` bloc. Cette balise crée un <xref:System.Windows.Style> qui s’applique à tous les boutons dans l’application, en définissant le <xref:System.Windows.FrameworkElement.Width%2A> des boutons à 90 et <xref:System.Windows.FrameworkElement.Margin%2A> à 10 :  
   
@@ -328,7 +328,7 @@ L’objectif de cette procédure pas à pas est d’apprendre à créer un bouto
   
      Appuyez sur F5 pour exécuter l’application et cliquez sur un des boutons. Notez que le bouton reste en surbrillance une fois que vous cliquez dessus, car elle a encore le focus. Si vous cliquez sur un autre, le bouton Nouveau acquiert un focus pendant que le dernier le perd.  
   
-4.  **Ajouter des animations pour** <xref:System.Windows.UIElement.MouseEnter> **et** <xref:System.Windows.UIElement.MouseLeave> **:** ensuite, nous ajoutons certaines animations aux déclencheurs.   Ajoutez le balisage suivant n’importe où à l’intérieur de la `ControlTemplate.Triggers` bloc.  
+4.  **Ajouter des animations pour** <xref:System.Windows.UIElement.MouseEnter> **et** <xref:System.Windows.UIElement.MouseLeave> **:** ensuite, nous ajoutons certaines animations aux déclencheurs. Ajoutez le balisage suivant n’importe où à l’intérieur de la `ControlTemplate.Triggers` bloc.  
   
     ```  
     <!-- Animations that start when mouse enters and leaves button. -->  
