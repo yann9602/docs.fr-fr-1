@@ -12,11 +12,11 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 369c8738addeb083b42063161957cf9f97e2cd1c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: e60ed6fb2fb85faa1d2d744bf29e40d3eaa639c3
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Fonctionnalités spécifiques à Windows Workflow Foundation
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] ajoute un certain nombre de fonctionnalités à Windows Workflow Foundation. Ce document décrit quelques-unes de ces nouvelles fonctionnalités et donne des détails relatifs à certains scénarios dans lesquels elles peuvent être utiles.  
@@ -82,7 +82,7 @@ ms.lasthandoff: 12/02/2017
   
 -   À titre d'exemple de corrélation utilisé pour regrouper des messages, citons une corrélation demande-réponse.  
   
-    -   Dans une activité <xref:System.ServiceModel.Activities.Receive>, cliquez sur la propriété <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> et ajoutez un <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> à l'aide du CorrelationHandle créé à la première étape décrite précédemment.  
+    -   Sur un <xref:System.ServiceModel.Activities.Receive> activité, cliquez sur le <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> propriété et ajoutez un <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> à l’aide du CorrelationHandle créé à l’étape 1 ci-dessus.  
   
     -   Créer un <xref:System.ServiceModel.Activities.SendReply> activité en cliquant sur le <xref:System.ServiceModel.Activities.Receive> et en cliquant sur « Create SendReply ». Collez-la dans votre flux de travail à la suite de l'activité <xref:System.ServiceModel.Activities.Receive>.  
   

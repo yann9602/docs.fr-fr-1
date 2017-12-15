@@ -17,11 +17,11 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a27e17e4940ff68f34d1e7e4accfb9e112bc412b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3f024ae77740c596d8646b10a036428e2342d084
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="weak-event-patterns"></a>Modèles d'événement faible
 Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne sont pas détruits en coordination avec l’objet écouteur qui joint le gestionnaire à la source. Cette situation peut conduire à des fuites de mémoire. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement. Ce modèle de conception est appelé le *du modèle d’événement faible*.  
@@ -45,7 +45,7 @@ Dans les applications, il est possible que les gestionnaires qui sont attachés 
 |--------------|-----------------------|  
 |Utiliser une classe de gestionnaire d’événement faible existante|Si l’événement que vous voulez vous abonner a correspondante <xref:System.Windows.WeakEventManager>, utilisez le Gestionnaire d’événement faible existant. Pour obtenir la liste des gestionnaires d’événement faible qui sont inclus dans WPF, consultez la hiérarchie d’héritage dans le <xref:System.Windows.WeakEventManager> classe. Toutefois, notez qu’il n’y a relativement peu gestionnaires d’événement faible qui sont inclus dans WPF, vous devrez probablement choisir l’une des autres approches.|  
 |Utiliser une classe de gestionnaire d’événement faible générique|Utilisez un type générique <xref:System.Windows.WeakEventManager%602> lorsque existant <xref:System.Windows.WeakEventManager> est non disponible, vous souhaitez un moyen simple d’implémenter, et vous ne sont pas concernées par l’efficacité. Le type générique <xref:System.Windows.WeakEventManager%602> est moins efficace que d’un gestionnaire d’événements faibles existantes ou personnalisées. Par exemple, la classe générique fait plus de réflexion pour découvrir l’événement étant donné le nom de l’événement. En outre, le code pour inscrire l’événement à l’aide de l’objet générique <xref:System.Windows.WeakEventManager%602> est plus détaillé qu’utilisant un existant ou personnalisé <xref:System.Windows.WeakEventManager>.|  
-|Créer une classe de gestionnaire d’événement faible personnalisé|Créer un personnalisé <xref:System.Windows.WeakEventManager> lorsque vous existant <xref:System.Windows.WeakEventManager> n’est pas disponible et que vous souhaitez la meilleure efficacité. L’aide d’un <xref:System.Windows.WeakEventManager> pour vous abonner à un événement est plus efficace, mais vous n’entraînent pas le coût de l’écriture de code plus au début.|  
+|Créer une classe de gestionnaire d’événement faible personnalisé|Créer un personnalisé <xref:System.Windows.WeakEventManager> lorsque existant <xref:System.Windows.WeakEventManager> n’est pas disponible et que vous souhaitez la meilleure efficacité. L’aide d’un <xref:System.Windows.WeakEventManager> pour vous abonner à un événement est plus efficace, mais vous n’entraînent pas le coût de l’écriture de code plus au début.|  
   
  Les sections suivantes décrivent comment implémenter le modèle d’événement faible.  Pour des raisons de cette discussion, de s’abonner à l’événement présente les caractéristiques suivantes.  
   

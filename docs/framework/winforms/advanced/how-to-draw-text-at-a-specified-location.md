@@ -15,17 +15,17 @@ helpviewer_keywords:
 - text [Windows Forms], drawing at specified locations [Windows Forms]
 - drawing text
 - drawing text [Windows Forms], specified locations [Windows Forms]
-- Windows Forms, drawing text a a specified location
+- Windows Forms, drawing text at a specified location
 ms.assetid: 60816423-1c38-465e-980d-2c2b64d74086
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aab9570b98caec5b3975a5b3ff6f1e62d4ad303b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe6e8563b19ef18b89ad970f3ca35bf5f0782a32
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="how-to-draw-text-at-a-specified-location"></a>Comment : écrire du texte à un emplacement spécifié
 Lorsque vous effectuez un dessin personnalisé, vous pouvez dessiner du texte dans une seule ligne horizontale, en commençant à un point spécifié. Vous pouvez dessiner du texte de cette manière à l’aide de la <xref:System.Drawing.Graphics.DrawString%2A> surchargées de la <xref:System.Drawing.Graphics> classe qui prend un <xref:System.Drawing.Point> ou <xref:System.Drawing.PointF> paramètre. Le <xref:System.Drawing.Graphics.DrawString%2A> méthode requiert également un <xref:System.Drawing.Brush> et<xref:System.Drawing.Font>  

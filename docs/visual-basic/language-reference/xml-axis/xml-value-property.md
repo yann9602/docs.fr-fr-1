@@ -16,11 +16,11 @@ ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6c52ac09e209d6e3f0cfd877a071cbbe3ab96f18
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d9294c2d1d83dce3bca2abc22ee9c70296fc8014
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="xml-value-property-visual-basic"></a>Propriété de valeur XML (Visual Basic)
 Fournit l’accès à la valeur du premier élément d’une collection de <xref:System.Xml.Linq.XElement> objets.  
@@ -63,7 +63,7 @@ object.Value
  `Phone number: 206-555-0144`  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment obtenir la valeur d’un attribut XML à partir d’une collection de <xref:System.Xml.Linq.XAttribute> objets. L’exemple utilise la propriété axe d’attribut pour afficher la valeur de la `type` attribut pour tous les le `phone` éléments.  
+ L’exemple suivant montre comment obtenir la valeur d’un attribut XML à partir d’une collection de <xref:System.Xml.Linq.XAttribute> objets. L’exemple utilise la propriété axe d’attribut pour afficher la valeur de la `type` attribut pour tous les `phone` éléments.  
   
  [!code-vb[VbXMLSamples#16](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_2.vb)]  
   

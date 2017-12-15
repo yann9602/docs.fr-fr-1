@@ -16,11 +16,11 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b82b409f27b14109c8e13fc8909235befc7a8d1d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4363e4e4e444a2c34b79e3b3ad8d8e2f36fe8e1a
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Création d'un objet DataView (LINQ to DataSet)
 Il existe deux manières de créer un <xref:System.Data.DataView> dans le contexte de [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Vous pouvez créer un <xref:System.Data.DataView> à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] sur une <xref:System.Data.DataTable>, ou vous pouvez la créer à partir d'une <xref:System.Data.DataTable> typée ou non typée. Dans les deux cas, vous créez le <xref:System.Data.DataView> en utilisant l’une de le <xref:System.Data.DataTableExtensions.AsDataView%2A> les méthodes d’extension ; <xref:System.Data.DataView> n’est pas être construit directement dans le [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] contexte.  
@@ -60,7 +60,7 @@ Il existe deux manières de créer un <xref:System.Data.DataView> dans le contex
  [!code-csharp[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquery1)]
  [!code-vb[DP DataView Samples#CreateLDVFromQuery1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquery1)]  
   
- Vous pouvez également utiliser les propriétés basées sur chaîne <xref:System.Data.DataView.RowFilter%2A> et <xref:System.Data.DataView.Sort%2A> pour filtrer et trier un <xref:System.Data.DataView> après sa création à partir d'une requête. Notez que cela entraîne la suppression des informations de tri et de filtrage héritées de la requête. L'exemple suivant crée un <xref:System.Data.DataView> à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] qui filtre par noms commençant par la lettre 'S'. La propriété <xref:System.Data.DataView.Sort%2A> basée sur chaîne est définie pour un tri sur le nom par ordre croissant et sur le prénom par ordre décroissant :  
+ Vous pouvez également utiliser basé sur la chaîne <xref:System.Data.DataView.RowFilter%2A> et <xref:System.Data.DataView.Sort%2A> propriétés à filtrer et trier un <xref:System.Data.DataView> après qu’il a été créé à partir d’une requête. Notez que cela entraîne la suppression des informations de tri et de filtrage héritées de la requête. L'exemple suivant crée un <xref:System.Data.DataView> à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] qui filtre par noms commençant par la lettre 'S'. La propriété <xref:System.Data.DataView.Sort%2A> basée sur chaîne est définie pour un tri sur le nom par ordre croissant et sur le prénom par ordre décroissant :  
   
  [!code-csharp[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquerystringsort)]
  [!code-vb[DP DataView Samples#CreateLDVFromQueryStringSort](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquerystringsort)]  

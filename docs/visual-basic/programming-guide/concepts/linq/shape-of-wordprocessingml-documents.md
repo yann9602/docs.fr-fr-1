@@ -12,11 +12,11 @@ ms.assetid: 2dfb446b-5a07-4c00-9ab3-a74ba734ff3a
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f29ed78062337c7036ada2405fa610ff1f883feb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5809e8148e7ac426b876ad11948878ee0bfcd016
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="shape-of-wordprocessingml-documents-visual-basic"></a>Forme des Documents de WordprocessingML (Visual Basic)
 Cette rubrique présente la forme XML d'un document WordprocessingML.  
@@ -24,7 +24,7 @@ Cette rubrique présente la forme XML d'un document WordprocessingML.
 ## <a name="microsoft-office-formats"></a>Formats Microsoft Office  
  Le format de fichier natif pour la version 2007 de Microsoft Office System est le format XML ouvert Microsoft Office (communément appelé Open XML). Open XML est un format XML compatible avec la norme ECMA et actuellement soumis à un processus de normalisation ISO-IEC. Le langage de balisage pour les fichiers de traitement de texte dans Open XML se nomme WordprocessingML. Ce didacticiel utilise des fichiers sources WordprocessingML comme entrée pour les exemples.  
   
- Si vous utilisez Microsoft Office 2003, vous pouvez enregistrer des documents au format Office Open XML si vous avez installé le Module de compatibilité Microsoft Office pour formats de fichiers Word, Excel et PowerPoint 2007.  
+ Si vous utilisez Microsoft Office 2003, vous pouvez enregistrer des documents au format Office Open XML si vous avez installé le Pack de compatibilité Microsoft Office pour Word, Excel et Formats de fichier PowerPoint 2007.  
   
 ## <a name="the-shape-of-wordprocessingml-documents"></a>Forme des documents WordprocessingML  
  La première chose à comprendre est la forme des documents WordprocessingML. Un document WordprocessingML contient un élément de corps (nommé `w:body`) qui contient les paragraphes du document. Chaque paragraphe contient une ou plusieurs exécutions de texte (nommées `w:r`). Chaque exécution de texte contient un ou plusieurs segments de texte (nommés `w:t`).  

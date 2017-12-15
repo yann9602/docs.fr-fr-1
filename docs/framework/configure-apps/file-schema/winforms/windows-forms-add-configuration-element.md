@@ -15,11 +15,11 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 367ca30c577cbb4ed7fed130bdcbd4faac2d46c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 828a28769e164535d4dde989ef8cce91caf9cb48
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="windows-forms-add-configuration-element"></a>Windows Forms ajoutent l’élément de Configuration
 
@@ -113,7 +113,7 @@ Pour plus d’informations sur comment tirer profit de prise en charge des réso
 
 ### <a name="single-pass-scaling"></a>Seul passage mise à l’échelle
 
-La mise à l’échelle unique ou passer plusieurs influence la réactivité perçue de l’interface utilisateur et les éléments d’interface de l’apparence visuelle de l’utilisateur comme ils sont mis à l’échelle. À compter de la 4.7 Framework .NET, Windows Forms utilise mise à l’échelle d’une seule passe. Dans les versions précédentes du .NET Framework, la mise à l’échelle a été effectuée via plusieurs passes, ce qui a provoqué des contrôles à l’échelle plus de données nécessaires. Mise à l’échelle de passage unique doit être désactivée uniquement si votre application dépend de l’ancien comportement.  
+La mise à l’échelle unique ou passer plusieurs d’influence sur la réactivité perçue de l’interface utilisateur et l’apparence visuelle des éléments d’interface utilisateur comme ils sont mis à l’échelle. À compter de la 4.7 Framework .NET, Windows Forms utilise mise à l’échelle d’une seule passe. Dans les versions précédentes du .NET Framework, la mise à l’échelle a été effectuée via plusieurs passes, ce qui a provoqué des contrôles à l’échelle plus de données nécessaires. Mise à l’échelle de passage unique doit être désactivée uniquement si votre application dépend de l’ancien comportement.  
 
 ## <a name="see-also"></a>Voir aussi
  
