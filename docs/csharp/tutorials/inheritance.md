@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: ec5ca3132ac68b85ebb517e569241f20080b4f63
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 39de8879fd902c714a58cf59c70f0a4914b2ff6e
+ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
@@ -62,7 +62,7 @@ Bien que tous les autres membres de classe de base sont hérités par les classe
 
 - Les membres [internes](../language-reference/keywords/internal.md) sont visibles uniquement dans les classes dérivées qui sont trouvent dans le même assembly que la classe de base. Ils ne sont pas visibles dans les classes dérivées situées dans un autre assembly à partir de la classe de base.
 
-- [Public](../language-reference/keywords/public.md) membres sont visibles dans les classes dérivées et font partie de l’interface publique de la classe dérivée. Les membres publics hérités peuvent être appelées comme s’ils étaient définis dans la classe dérivée. Dans l’exemple suivant, la classe `A` définit une méthode nommée `Method1`, et la classe `B` hérite de la classe `A`. L’exemple appelle ensuite `Method1` comme s’il s’agissait d’une méthode d’instance sur `B`.
+- Les membres [publics](../language-reference/keywords/public.md) sont visibles dans les classes dérivées et font partie de l’interface publique de la classe dérivée. Les membres publics hérités peuvent être appelées comme s’ils étaient définis dans la classe dérivée. Dans l’exemple suivant, la classe `A` définit une méthode nommée `Method1`, et la classe `B` hérite de la classe `A`. L’exemple appelle ensuite `Method1` comme s’il s’agissait d’une méthode d’instance sur `B`.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
@@ -179,7 +179,7 @@ Lors de la conception de notre classe `Publication`, nous devons prendre plusieu
 
 - Les membres à inclure dans notre classe de base `Publication` et si les membres `Publication` fournissent des implémentations de méthode, ou si `Publication` est une classe de base abstraite qui sert de modèle pour ses classes dérivées.
 
-  Dans ce cas, la classe `Publication` fournit des implémentations de méthode. La section [Conception de classes de base abstraites et leurs classes dérivées](#abstract) contient un exemple qui utilise une classe de base abstraite pour définir les méthodes que les classes dérivées doit substituer. Les classes dérivées sont libres de fournir une implémentation qui convient pour le type dérivé.
+  Dans ce cas, la classe `Publication` fournit des implémentations de méthode. La section [Conception de classes de base abstraites et leurs classes dérivées](#abstract) contient un exemple qui utilise une classe de base abstraite pour définir les méthodes que les classes dérivées doivent substituer. Les classes dérivées sont libres de fournir une implémentation qui convient pour le type dérivé.
 
   La possibilité de réutiliser le code (autrement dit, plusieurs classes dérivées partagent la déclaration et l’implémentation de méthodes de classe de base et n’ont pas besoin de les substituer) constitue un avantage des classes de base non abstraites. Par conséquent, nous devons ajouter des membres à `Publication` si leur code est susceptible d’être partagé par certains ou la majorité des types `Publication` spécialisés. Si nous ne le faites pas efficacement, vous devrez fournir des implémentations de membres en grande partie identiques dans les classes dérivées au lieu d’une implémentation unique de la classe de base. La nécessité de maintenir le code dupliqué à plusieurs emplacements est une source potentielle de bogues.
 

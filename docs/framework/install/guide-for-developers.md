@@ -14,17 +14,17 @@ ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 46e79e67b5d6f088eb2a0fb39e6f4f10c6ed8549
-ms.sourcegitcommit: 7296449e03f747528f9bc59954c74bf4e359cc1e
+ms.openlocfilehash: cee014956ff4ba2f8e0f66df5bd46a4e843352e4
+ms.sourcegitcommit: 4a96a0fe9f87de70291245d71b76c7d1b15127ae
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="install-the-net-framework-for-developers"></a>Installer le .NET Framework pour les développeurs
 
 Le .NET Framework fait partie intégrante de nombreuses applications s’exécutant sur Windows et fournit des fonctionnalités communes pour l’exécution de ces applications. Pour les développeurs, le .NET Framework fournit un modèle de programmation complet et cohérent pour créer des applications offrant une expérience utilisateur visuellement attrayante et des communications fluides et sécurisées.  
 
-Cet article fournit des liens pour installer toutes les versions du .NET Framework sur votre ordinateur, du .NET Framework 4.5 au [!INCLUDE[net_current](../../../includes/net-current-version.md)]. Si vous êtes développeur, vous pouvez également utiliser ces liens pour télécharger et redistribuer le .NET Framework avec vos applications.
+Cet article fournit des liens pour installer toutes les versions du .NET Framework sur votre ordinateur, du .NET Framework 4.5 au [!INCLUDE[net_current](../../../includes/net-current-version.md)]. Si vous êtes développeur, vous pouvez également utiliser ces liens pour télécharger et redistribuer le .NET Framework avec vos applications. Pour plus d'informations sur le déploiement d’une version du .NET Framework avec votre application, consultez le [Guide de déploiement du .NET Framework pour les développeurs](../deployment/deployment-guide-for-developers.md).
 
 > [!NOTE]
 > Cette rubrique s’adresse aux développeurs qui souhaitent installer le .NET Framework sur leur propre système ou qui souhaitent l’installer avec leurs applications. Si vous souhaitez installer le .NET Framework, consultez les rubriques qui traitent de l’installation du .NET Framework sur des systèmes d’exploitation spécifiques, par exemple [Installer le .NET Framework sur Windows 10 et Windows Server 2016](on-windows-10.md).  
@@ -64,11 +64,11 @@ Pour une présentation générale du .NET Framework à destination des utilisat
 <a name="choices"></a>
 ## <a name="installation-choices"></a>Choix d'installation
 
-Installez un pack de ciblage développeur pour développer sur la version la plus récente du .NET Framework dans Visual Studio ou un autre environnement de développement, ou téléchargez le redistribuable du .NET Framework pour le distribuer avec votre application ou contrôle.  
+Installez un Targeting Pack de développeur pour développer sur la version la plus récente du .NET Framework dans Visual Studio ou un autre environnement de développement, ou téléchargez le redistribuable du .NET Framework pour le distribuer avec votre application ou contrôle.  
   
-## <a name="to-install-the-net-framework-developer-or-targeting-pack"></a>Pour installer le pack de ciblage ou développeur du .NET Framework
+## <a name="to-install-the-net-framework-developer-or-targeting-pack"></a>Pour installer le .NET Framework Developer ou Targeting Pack
 
-Le pack du développeur pour le .NET Framework version 4.5.1 ou 4.5.2, le pack de ciblage pour le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] et le pack du développeur pour le [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], 4.6.2, 4.7 ou 4.7.1 fournissent les assemblys de référence, les modules linguistiques et les fichiers IntelliSense du .NET Framework 4.5.1 ou 4.5.2 ou du [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1 ou 4.6.2, ou du .NET Framework 4.7 ou 4.7.1 pour une utilisation dans un environnement de développement intégré, comme Visual Studio.  Si vous utilisez Visual Studio, le pack du développeur ou le pack de ciblage ajoutent également la version installée du .NET Framework sur les cibles choisies quand vous créez un projet.  Choisissez l’un de ces packs du développeur ou de ces packs de ciblage :  
+Le pack du développeur pour le .NET Framework version 4.5.1 ou 4.5.2, le pack de ciblage pour le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] et le pack du développeur pour le [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], 4.6.2, 4.7 ou 4.7.1 fournissent les assemblys de référence, les modules linguistiques et les fichiers IntelliSense du .NET Framework 4.5.1 ou 4.5.2 ou du [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1 ou 4.6.2, ou du .NET Framework 4.7 ou 4.7.1 pour une utilisation dans un environnement de développement intégré, comme Visual Studio.  Si vous utilisez Visual Studio, le Developer Pack ou le Targeting Pack ajoutent également la version installée du .NET Framework sur les cibles choisies quand vous créez un projet.  Choisissez l'un de ces Developer Packs ou Targeting Packs :  
 
 - [Microsoft .NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)
 
@@ -86,7 +86,7 @@ Le pack du développeur pour le .NET Framework version 4.5.1 ou 4.5.2, le pack d
   
 - [.NET Framework 4.5.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=324213) pour installer la version 4.5.1 sur Visual Studio 2012 ou d’autres IDE.  
   
-Dans la page de téléchargement du pack du développeur, choisissez **Télécharger**. Ensuite, choisissez **Exécuter** ou **Enregistrer**, puis suivez les instructions lorsque vous y êtes invité.  
+Dans la page de téléchargement du Developer Pack, choisissez **Télécharger**. Ensuite, choisissez **Exécuter** ou **Enregistrer**, puis suivez les instructions lorsque vous y êtes invité.  
   
 ## <a name="to-install-or-download-the-net-framework-redistributable"></a>Pour installer ou télécharger le redistribuable du .NET Framework
 
