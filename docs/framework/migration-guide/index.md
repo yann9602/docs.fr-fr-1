@@ -1,53 +1,46 @@
 ---
 title: "Guide de migration vers le .NET Framework 4.7, 4.6 et 4.5 "
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework, migrating applications to
 - migration, .NET Framework
 ms.assetid: 02d55147-9b3a-4557-a45f-fa936fadae3b
-caps.latest.revision: 56
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 0c1f9ffd1df3861c2e9b000faccae381b04295dd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 820d1966172a93c06c6451c51bc7f360496f46b8
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="migration-guide-to-the-net-framework-47-46-and-45"></a>Guide de migration vers le .NET Framework 4.7, 4.6 et 4.5 
-Si vous avez créé votre application à l’aide d’une version antérieure du .NET Framework, vous pouvez en général la mettre à niveau facilement vers le .NET Framework 4.5 et ses versions intermédiaires (4.5.1 et 4.5.2), le .NET Framework 4.6 et ses versions intermédiaires (4.6.1 et 4.6.2) ou le .NET Framework 4.7. Ouvrez votre projet dans Visual Studio. Si votre projet a été créé dans une version antérieure, la boîte de dialogue **Compatibilité des projets** s’ouvre automatiquement. Pour plus d’informations sur la mise à niveau d’un projet dans Visual Studio, consultez [Porter, migrer et mettre à niveau des projets Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects) et [Ciblage et compatibilité de la plateforme Visual Studio 2017](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).  
+# <a name="migration-guide-to-the-net-framework-47-46-and-45"></a><span data-ttu-id="588de-102">Guide de migration vers le .NET Framework 4.7, 4.6 et 4.5</span><span class="sxs-lookup"><span data-stu-id="588de-102">Migration Guide to the .NET Framework 4.7, 4.6, and 4.5</span></span> 
+<span data-ttu-id="588de-103">Si vous avez créé votre application à l’aide d’une version antérieure du .NET Framework, vous pouvez en général la mettre à niveau facilement vers .NET Framework 4.5 et ses versions intermédiaires (4.5.1 et 4.5.2), .NET Framework 4.6 et ses versions intermédiaires (4.6.1 et 4.6.2) ou .NET Framework 4.7 et sa version intermédiaire, .NET Framework 4.7.1.</span><span class="sxs-lookup"><span data-stu-id="588de-103">If you created your app using an earlier version of the .NET Framework, you can generally upgrade it to the .NET Framework 4.5 and its point releases (4.5.1 and 4.5.2), the .NET Framework 4.6 and its point releases (4.6.1 and 4.6.2), or the .NET Framework 4.7 and its point release, the .NET Framework 4.7.1, easily.</span></span> <span data-ttu-id="588de-104">Ouvrez votre projet dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="588de-104">Open your project in Visual Studio.</span></span> <span data-ttu-id="588de-105">Si votre projet a été créé dans une version antérieure de Visual Studio, la boîte de dialogue **Compatibilité des projets** s’ouvre automatiquement.</span><span class="sxs-lookup"><span data-stu-id="588de-105">If your project was created in an earlier version of Visual Studio, the **Project Compatibility** dialog box automatically opens.</span></span> <span data-ttu-id="588de-106">Pour plus d’informations sur la mise à niveau d’un projet dans Visual Studio, consultez [Porter, migrer et mettre à niveau des projets Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects) et [Ciblage et compatibilité de la plateforme Visual Studio 2017](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).</span><span class="sxs-lookup"><span data-stu-id="588de-106">For more information about upgrading a project in Visual Studio, see [Port, Migrate, and Upgrade Visual Studio Projects](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects) and [Visual Studio 2017 Platform Targeting and Compatibility](https://www.visualstudio.com/en-us/productinfo/vs2017-compatibility-vs).</span></span>  
   
- Toutefois, certaines modifications dans le .NET Framework nécessitent des modifications dans le code. Vous pouvez également bénéficier des nouvelles fonctionnalités du .NET Framework 4.5 et de ses versions intermédiaires, du .NET Framework 4.6 et de ses versions intermédiaires, ainsi que du .NET Framework 4.7. Le fait d’apporter ces types de modifications à votre application pour obtenir une nouvelle version du .NET Framework est généralement appelé *migration*. Si la migration de votre application n'est pas nécessaire, vous pouvez l'exécuter dans le .NET Framework 4.5 ou ses versions ultérieures sans la recompiler.  
+ <span data-ttu-id="588de-107">Toutefois, certaines modifications dans le .NET Framework nécessitent des modifications dans le code.</span><span class="sxs-lookup"><span data-stu-id="588de-107">However, some changes in the .NET Framework require changes to your code.</span></span> <span data-ttu-id="588de-108">Vous pouvez également bénéficier des nouvelles fonctionnalités de .NET Framework 4.5 et ses versions intermédiaires, de .NET Framework 4.6 et ses versions intermédiaires, ainsi que de .NET Framework 4.7 et sa version intermédiaire, .NET Framework 4.7.1.</span><span class="sxs-lookup"><span data-stu-id="588de-108">You may also want to take advantage of functionality that is new in the .NET Framework 4.5 and its point releases, in the .NET Framework 4.6 and its point releases, or in the .NET Framework 4.7 and its point release, the .NET Framework 4.7.1.</span></span> <span data-ttu-id="588de-109">Le fait d’apporter ces types de modifications à votre application pour obtenir une nouvelle version du .NET Framework est généralement appelé *migration*.</span><span class="sxs-lookup"><span data-stu-id="588de-109">Making these types of changes to your app for a new version of the .NET Framework is typically referred to as *migration*.</span></span> <span data-ttu-id="588de-110">Si la migration de votre application n’est pas nécessaire, vous pouvez l’exécuter dans .NET Framework 4.5 ou une version ultérieure sans la recompiler.</span><span class="sxs-lookup"><span data-stu-id="588de-110">If your app doesn't have to be migrated, you can run it in the .NET Framework 4.5 or a later version without recompiling it.</span></span>  
   
-## <a name="migration-resources"></a>Ressources de migration  
- Consultez les documents suivants avant de migrer votre application à partir des versions antérieures du .NET Framework vers la version 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 ou 4.7 :  
+## <a name="migration-resources"></a><span data-ttu-id="588de-111">Ressources de migration</span><span class="sxs-lookup"><span data-stu-id="588de-111">Migration resources</span></span>  
+ <span data-ttu-id="588de-112">Consultez les documents suivants avant de migrer votre application à partir des versions antérieures du .NET Framework vers la version 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 ou 4.7.1 :</span><span class="sxs-lookup"><span data-stu-id="588de-112">Review the following documents before you migrate your app from earlier versions of the .NET Framework to version 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, or 4.7.1:</span></span>  
   
--   Consultez [Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md) pour comprendre la version CLR sous-jacente à chaque version du .NET Framework, et pour passer en revue les instructions qui vous permettront de cibler correctement vos applications.  
+-   <span data-ttu-id="588de-113">Consultez [Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md) pour comprendre la version CLR sous-jacente à chaque version du .NET Framework, et pour passer en revue les instructions qui vous permettront de cibler correctement vos applications.</span><span class="sxs-lookup"><span data-stu-id="588de-113">See [Versions and Dependencies](../../../docs/framework/migration-guide/versions-and-dependencies.md) to understand the CLR version underlying each version of the .NET Framework and to review guidelines for targeting your apps successfully.</span></span>  
   
--   Consultez [Compatibilité des applications](../../../docs/framework/migration-guide/application-compatibility.md) pour découvrir les modifications d’exécution et de reciblage susceptibles d’affecter votre application, et savoir comment les gérer.  
+-   <span data-ttu-id="588de-114">Consultez [Compatibilité des applications](../../../docs/framework/migration-guide/application-compatibility.md) pour découvrir les modifications d’exécution et de reciblage susceptibles d’affecter votre application, et savoir comment les gérer.</span><span class="sxs-lookup"><span data-stu-id="588de-114">Review [Application Compatibility](../../../docs/framework/migration-guide/application-compatibility.md) to find out about runtime and retargeting changes that might affect your app and how to handle them.</span></span>  
   
--   Consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md) pour déterminer les types ou membres rendus obsolètes dans votre code, et les alternatives recommandées.  
+-   <span data-ttu-id="588de-115">Consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md) pour déterminer les types ou membres rendus obsolètes dans votre code, et les alternatives recommandées.</span><span class="sxs-lookup"><span data-stu-id="588de-115">Review [What's Obsolete in the Class Library](../../../docs/framework/whats-new/whats-obsolete.md) to determine any types or members in your code that have been made obsolete, and the recommended alternatives.</span></span>  
   
--   Consultez [Nouveautés](../../../docs/framework/whats-new/index.md) pour obtenir la description des nouvelles fonctionnalités que vous pouvez ajouter à votre application.  
+-   <span data-ttu-id="588de-116">Consultez [Nouveautés](../../../docs/framework/whats-new/index.md) pour obtenir la description des nouvelles fonctionnalités que vous pouvez ajouter à votre application.</span><span class="sxs-lookup"><span data-stu-id="588de-116">See [What's New](../../../docs/framework/whats-new/index.md) for descriptions of new features that you may want to add to your app.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Compatibilité des applications](../../../docs/framework/migration-guide/application-compatibility.md)   
- [Migration à partir du .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)   
- [Compatibilité des versions](../../../docs/framework/migration-guide/version-compatibility.md)   
- [Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md)   
- [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)   
- [Nouveautés](../../../docs/framework/whats-new/index.md)   
- [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md)   
- [Version du .NET Framework et informations de l’assembly](http://go.microsoft.com/fwlink/?LinkId=201701)   
- [Politique de support de Microsoft .NET Framework](http://go.microsoft.com/fwlink/?LinkId=196607) [Problèmes de migration du .NET Framework 4](net-framework-4-migration-issues.md)
-
+## <a name="see-also"></a><span data-ttu-id="588de-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="588de-117">See Also</span></span>  
+ [<span data-ttu-id="588de-118">Compatibilité des applications</span><span class="sxs-lookup"><span data-stu-id="588de-118">Application Compatibility</span></span>](../../../docs/framework/migration-guide/application-compatibility.md)  
+ [<span data-ttu-id="588de-119">Migration à partir du .NET Framework 1.1</span><span class="sxs-lookup"><span data-stu-id="588de-119">Migrating from the .NET Framework 1.1</span></span>](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)  
+ [<span data-ttu-id="588de-120">Compatibilité des versions</span><span class="sxs-lookup"><span data-stu-id="588de-120">Version Compatibility</span></span>](../../../docs/framework/migration-guide/version-compatibility.md)  
+ [<span data-ttu-id="588de-121">Versions et dépendances</span><span class="sxs-lookup"><span data-stu-id="588de-121">Versions and Dependencies</span></span>](../../../docs/framework/migration-guide/versions-and-dependencies.md)  
+ [<span data-ttu-id="588de-122">Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.5</span><span class="sxs-lookup"><span data-stu-id="588de-122">How to: Configure an App to Support .NET Framework 4 or 4.5</span></span>](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)  
+ [<span data-ttu-id="588de-123">Nouveautés</span><span class="sxs-lookup"><span data-stu-id="588de-123">What's New</span></span>](../../../docs/framework/whats-new/index.md)  
+ [<span data-ttu-id="588de-124">Éléments obsolètes dans la bibliothèque de classes</span><span class="sxs-lookup"><span data-stu-id="588de-124">What's Obsolete in the Class Library</span></span>](../../../docs/framework/whats-new/whats-obsolete.md)  
+ [<span data-ttu-id="588de-125">Version du .NET Framework et informations de l’assembly</span><span class="sxs-lookup"><span data-stu-id="588de-125">.NET Framework Version and Assembly Information</span></span>](http://go.microsoft.com/fwlink/?LinkId=201701)  
+ <span data-ttu-id="588de-126">[Politique de support de Microsoft .NET Framework](http://go.microsoft.com/fwlink/?LinkId=196607) [Problèmes de migration du .NET Framework 4](net-framework-4-migration-issues.md)</span><span class="sxs-lookup"><span data-stu-id="588de-126">[Microsoft .NET Framework Support Lifecycle Policy](http://go.microsoft.com/fwlink/?LinkId=196607) [.NET Framework 4 migration issues](net-framework-4-migration-issues.md)</span></span>

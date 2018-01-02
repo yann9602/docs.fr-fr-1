@@ -1,80 +1,70 @@
 ---
 title: Assemblys et le Global Assembly Cache (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 923a64e98fde3ab11f4e3feb6c91507ae8886151
+ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2b98bd872bfdcbebb34fff3d878b92f39e27bbe0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/09/2017
 ---
-# <a name="assemblies-and-the-global-assembly-cache-c"></a>Assemblys et le Global Assembly Cache (C#)
-Les assemblys constituent l’unité fondamentale dans le déploiement, la gestion de version, la portée d’activation et les autorisations de sécurité d’une application .NET. Les assemblys prennent la forme d’un fichier exécutable (.exe) ou d’un fichier de bibliothèque de liens dynamiques (.dll) et sont les blocs de construction du .NET Framework. Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Vous pouvez comparer un assembly à une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité.  
+# <a name="assemblies-and-the-global-assembly-cache-c"></a><span data-ttu-id="fcecf-102">Assemblys et le Global Assembly Cache (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-102">Assemblies and the Global Assembly Cache (C#)</span></span>
+<span data-ttu-id="fcecf-103">Les assemblys constituent l’unité fondamentale dans le déploiement, la gestion de version, la portée d’activation et les autorisations de sécurité d’une application .NET.</span><span class="sxs-lookup"><span data-stu-id="fcecf-103">Assemblies form the fundamental unit of deployment, version control, reuse, activation scoping, and security permissions for a .NET-based application.</span></span> <span data-ttu-id="fcecf-104">Les assemblys prennent la forme d’un fichier exécutable (.exe) ou d’un fichier de bibliothèque de liens dynamiques (.dll) et sont les blocs de construction du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="fcecf-104">Assemblies take the form of an executable (.exe) file or dynamic link library (.dll) file, and are the building blocks of the .NET Framework.</span></span> <span data-ttu-id="fcecf-105">Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type.</span><span class="sxs-lookup"><span data-stu-id="fcecf-105">They provide the common language runtime with the information it needs to be aware of type implementations.</span></span> <span data-ttu-id="fcecf-106">Vous pouvez comparer un assembly à une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité.</span><span class="sxs-lookup"><span data-stu-id="fcecf-106">You can think of an assembly as a collection of types and resources that form a logical unit of functionality and are built to work together.</span></span>  
   
- Les assemblys peuvent contenir un ou plusieurs modules. Par exemple, les projets plus importants peuvent être planifiés de sorte que plusieurs développeurs individuels travaillent sur des modules distincts, qui se regroupent pour créer un assembly unique. Pour plus d’informations sur les modules, consultez la rubrique [Comment : générer un assembly multifichier](https://msdn.microsoft.com/library/226t7yxe).  
+ <span data-ttu-id="fcecf-107">Les assemblys peuvent contenir un ou plusieurs modules.</span><span class="sxs-lookup"><span data-stu-id="fcecf-107">Assemblies can contain one or more modules.</span></span> <span data-ttu-id="fcecf-108">Par exemple, les projets plus importants peuvent être planifiés de sorte que plusieurs développeurs individuels travaillent sur des modules distincts, qui se regroupent pour créer un assembly unique.</span><span class="sxs-lookup"><span data-stu-id="fcecf-108">For example, larger projects may be planned in such a way that several individual developers work on separate modules, all coming together to create a single assembly.</span></span> <span data-ttu-id="fcecf-109">Pour plus d’informations sur les modules, consultez la rubrique [Comment : générer un assembly multifichier](../../../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md).</span><span class="sxs-lookup"><span data-stu-id="fcecf-109">For more information about modules, see the topic [How to: Build a Multifile Assembly](../../../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md).</span></span>  
   
- Les assemblys ont les propriétés suivantes :  
+ <span data-ttu-id="fcecf-110">Les assemblys ont les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="fcecf-110">Assemblies have the following properties:</span></span>  
   
--   Les assemblys sont implémentés en tant que fichiers .exe ou .dll.  
+-   <span data-ttu-id="fcecf-111">Les assemblys sont implémentés en tant que fichiers .exe ou .dll.</span><span class="sxs-lookup"><span data-stu-id="fcecf-111">Assemblies are implemented as .exe or .dll files.</span></span>  
   
--   Vous pouvez partager un assembly entre des applications en le plaçant dans le Global Assembly Cache. Les assemblys doivent avoir un nom fort avant d’être inclus dans le GAC. Pour plus d’informations, consultez [Assemblys avec nom fort](https://msdn.microsoft.com/library/wd40t7ad).  
+-   <span data-ttu-id="fcecf-112">Vous pouvez partager un assembly entre des applications en le plaçant dans le Global Assembly Cache.</span><span class="sxs-lookup"><span data-stu-id="fcecf-112">You can share an assembly between applications by putting it in the global assembly cache.</span></span> <span data-ttu-id="fcecf-113">Les assemblys doivent avoir un nom fort avant d’être inclus dans le GAC.</span><span class="sxs-lookup"><span data-stu-id="fcecf-113">Assemblies must be strong-named before they can be included in the global assembly cache.</span></span> <span data-ttu-id="fcecf-114">Pour plus d’informations, consultez [Assemblys avec nom fort](../../../../../docs/framework/app-domains/strong-named-assemblies.md).</span><span class="sxs-lookup"><span data-stu-id="fcecf-114">For more information, see [Strong-Named Assemblies](../../../../../docs/framework/app-domains/strong-named-assemblies.md).</span></span>  
   
--   Les assemblys sont chargés en mémoire uniquement s’ils sont requis. S’ils ne sont pas utilisés, ils ne sont pas chargés. Cela signifie que les assemblys peuvent être un moyen efficace pour gérer les ressources dans les grands projets.  
+-   <span data-ttu-id="fcecf-115">Les assemblys sont chargés en mémoire uniquement s’ils sont requis.</span><span class="sxs-lookup"><span data-stu-id="fcecf-115">Assemblies are only loaded into memory if they are required.</span></span> <span data-ttu-id="fcecf-116">S’ils ne sont pas utilisés, ils ne sont pas chargés.</span><span class="sxs-lookup"><span data-stu-id="fcecf-116">If they are not used, they are not loaded.</span></span> <span data-ttu-id="fcecf-117">Cela signifie que les assemblys peuvent être un moyen efficace pour gérer les ressources dans les grands projets.</span><span class="sxs-lookup"><span data-stu-id="fcecf-117">This means that assemblies can be an efficient way to manage resources in larger projects.</span></span>  
   
--   Vous pouvez obtenir par programme des informations sur un assembly à l’aide de la réflexion. Pour plus d’informations, consultez [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md).  
+-   <span data-ttu-id="fcecf-118">Vous pouvez obtenir par programme des informations sur un assembly à l’aide de la réflexion.</span><span class="sxs-lookup"><span data-stu-id="fcecf-118">You can programmatically obtain information about an assembly by using reflection.</span></span> <span data-ttu-id="fcecf-119">Pour plus d’informations, consultez [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md).</span><span class="sxs-lookup"><span data-stu-id="fcecf-119">For more information, see [Reflection (C#)](../../../../csharp/programming-guide/concepts/reflection.md).</span></span>  
   
--   Si vous voulez charger un assembly seulement pour l’inspecter, utilisez une méthode comme <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A>.  
+-   <span data-ttu-id="fcecf-120">Si vous voulez charger un assembly seulement pour l’inspecter, utilisez une méthode comme <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A>.</span><span class="sxs-lookup"><span data-stu-id="fcecf-120">If you want to load an assembly only to inspect it, use a method such as <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A>.</span></span>  
   
-## <a name="assembly-manifest"></a>Manifeste d'assembly  
- Tous les assemblys contiennent un *manifeste d’assembly*. Semblable à une table des matières, le manifeste d’assembly contient les éléments suivants :  
+## <a name="assembly-manifest"></a><span data-ttu-id="fcecf-121">Manifeste d'assembly</span><span class="sxs-lookup"><span data-stu-id="fcecf-121">Assembly Manifest</span></span>  
+ <span data-ttu-id="fcecf-122">Tous les assemblys contiennent un *manifeste d’assembly*.</span><span class="sxs-lookup"><span data-stu-id="fcecf-122">Within every assembly is an *assembly manifest*.</span></span> <span data-ttu-id="fcecf-123">Semblable à une table des matières, le manifeste d’assembly contient les éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="fcecf-123">Similar to a table of contents, the assembly manifest contains the following:</span></span>  
   
--   L’identité de l’assembly (nom et version).  
+-   <span data-ttu-id="fcecf-124">L’identité de l’assembly (nom et version).</span><span class="sxs-lookup"><span data-stu-id="fcecf-124">The assembly's identity (its name and version).</span></span>  
   
--   Une table de fichiers décrivant tous les autres fichiers qui composent l’assembly, par exemple, les autres assemblys que vous avez créés et qui sont utilisés par votre fichier .exe ou .dll, ou même des fichiers bitmap ou Readme.  
+-   <span data-ttu-id="fcecf-125">Une table de fichiers décrivant tous les autres fichiers qui composent l’assembly, par exemple, les autres assemblys que vous avez créés et qui sont utilisés par votre fichier .exe ou .dll, ou même des fichiers bitmap ou Readme.</span><span class="sxs-lookup"><span data-stu-id="fcecf-125">A file table describing all the other files that make up the assembly, for example, any other assemblies you created that your .exe or .dll file relies on, or even bitmap or Readme files.</span></span>  
   
--   Une *liste de référence de l’assembly*, qui est une liste de toutes les dépendances externes, fichiers .dll ou autres, nécessaires à votre application qui ont été créés par quelqu’un d’autre. Les références de l’assembly contiennent des références aux objets globaux et privés. Les objets globaux se trouvent dans le Global Assembly Cache, une zone disponible pour d’autres applications. Les objets privés doivent être dans un répertoire au même niveau ou à un niveau inférieur que celui du répertoire dans lequel votre application est installée.  
+-   <span data-ttu-id="fcecf-126">Une *liste de référence de l’assembly*, qui est une liste de toutes les dépendances externes, fichiers .dll ou autres, nécessaires à votre application qui ont été créés par quelqu’un d’autre.</span><span class="sxs-lookup"><span data-stu-id="fcecf-126">An *assembly reference list*, which is a list of all external dependencies—.dlls or other files your application needs that may have been created by someone else.</span></span> <span data-ttu-id="fcecf-127">Les références de l’assembly contiennent des références aux objets globaux et privés.</span><span class="sxs-lookup"><span data-stu-id="fcecf-127">Assembly references contain references to both global and private objects.</span></span> <span data-ttu-id="fcecf-128">Les objets globaux se trouvent dans le Global Assembly Cache, une zone disponible pour d’autres applications.</span><span class="sxs-lookup"><span data-stu-id="fcecf-128">Global objects reside in the global assembly cache, an area available to other applications.</span></span> <span data-ttu-id="fcecf-129">Les objets privés doivent être dans un répertoire au même niveau ou à un niveau inférieur que celui du répertoire dans lequel votre application est installée.</span><span class="sxs-lookup"><span data-stu-id="fcecf-129">Private objects must be in a directory at either the same level as or below the directory in which your application is installed.</span></span>  
   
- Comme les assemblys contiennent des informations sur le contenu, le contrôle de version et les dépendances, les applications créées avec C# ne dépendent pas des valeurs du Registre Windows pour fonctionner correctement. Les assemblys réduisent les conflits de fichiers .dll et rendent vos applications plus fiables et plus faciles à déployer. Dans de nombreux cas, vous pouvez installer une application .NET simplement en copiant ses fichiers sur l’ordinateur cible.  
+ <span data-ttu-id="fcecf-130">Comme les assemblys contiennent des informations sur le contenu, le contrôle de version et les dépendances, les applications créées avec C# ne dépendent pas des valeurs du Registre Windows pour fonctionner correctement.</span><span class="sxs-lookup"><span data-stu-id="fcecf-130">Because assemblies contain information about content, versioning, and dependencies, the applications you create with C# do not rely on Windows registry values to function properly.</span></span> <span data-ttu-id="fcecf-131">Les assemblys réduisent les conflits de fichiers .dll et rendent vos applications plus fiables et plus faciles à déployer.</span><span class="sxs-lookup"><span data-stu-id="fcecf-131">Assemblies reduce .dll conflicts and make your applications more reliable and easier to deploy.</span></span> <span data-ttu-id="fcecf-132">Dans de nombreux cas, vous pouvez installer une application .NET simplement en copiant ses fichiers sur l’ordinateur cible.</span><span class="sxs-lookup"><span data-stu-id="fcecf-132">In many cases, you can install a .NET-based application simply by copying its files to the target computer.</span></span>  
   
- Pour plus d’informations, consultez [Manifeste d’assembly](https://msdn.microsoft.com/library/1w45z383).  
+ <span data-ttu-id="fcecf-133">Pour plus d’informations, consultez [Manifeste d’assembly](../../../../../docs/framework/app-domains/assembly-manifest.md).</span><span class="sxs-lookup"><span data-stu-id="fcecf-133">For more information see [Assembly Manifest](../../../../../docs/framework/app-domains/assembly-manifest.md).</span></span>  
   
-## <a name="adding-a-reference-to-an-assembly"></a>Ajout d’une référence à un assembly  
- Pour utiliser un assembly, vous devez y ajouter une référence. Ensuite, vous utilisez [la directive using](../../../../csharp/language-reference/keywords/using-directive.md) pour choisir l’espace de noms des éléments que vous voulez utiliser. Une fois qu’un assembly est référencé et importé, toutes les classes, propriétés, méthodes accessibles et les autres membres de ses espaces de noms sont disponibles pour votre application comme si leur code faisait partie de votre fichier source.  
+## <a name="adding-a-reference-to-an-assembly"></a><span data-ttu-id="fcecf-134">Ajout d’une référence à un assembly</span><span class="sxs-lookup"><span data-stu-id="fcecf-134">Adding a Reference to an Assembly</span></span>  
+ <span data-ttu-id="fcecf-135">Pour utiliser un assembly, vous devez y ajouter une référence.</span><span class="sxs-lookup"><span data-stu-id="fcecf-135">To use an assembly, you must add a reference to it.</span></span> <span data-ttu-id="fcecf-136">Ensuite, vous utilisez [la directive using](../../../../csharp/language-reference/keywords/using-directive.md) pour choisir l’espace de noms des éléments que vous voulez utiliser.</span><span class="sxs-lookup"><span data-stu-id="fcecf-136">Next, you use the [using directive](../../../../csharp/language-reference/keywords/using-directive.md) to choose the namespace of the items you want to use.</span></span> <span data-ttu-id="fcecf-137">Une fois qu’un assembly est référencé et importé, toutes les classes, propriétés, méthodes accessibles et les autres membres de ses espaces de noms sont disponibles pour votre application comme si leur code faisait partie de votre fichier source.</span><span class="sxs-lookup"><span data-stu-id="fcecf-137">Once an assembly is referenced and imported, all the accessible classes, properties, methods, and other members of its namespaces are available to your application as if their code were part of your source file.</span></span>  
   
- En C#, vous pouvez aussi utiliser deux versions du même assembly dans une même application. Pour plus d’informations, consultez [extern alias](../../../../csharp/language-reference/keywords/extern-alias.md).  
+ <span data-ttu-id="fcecf-138">En C#, vous pouvez aussi utiliser deux versions du même assembly dans une même application.</span><span class="sxs-lookup"><span data-stu-id="fcecf-138">In C#, you can also use two versions of the same assembly in a single application.</span></span> <span data-ttu-id="fcecf-139">Pour plus d’informations, consultez [extern alias](../../../../csharp/language-reference/keywords/extern-alias.md).</span><span class="sxs-lookup"><span data-stu-id="fcecf-139">For more information, see [extern alias](../../../../csharp/language-reference/keywords/extern-alias.md).</span></span>  
   
-## <a name="creating-an-assembly"></a>Création d’un assembly  
- Compilez votre application en cliquant sur **Générer** dans le menu **Générer** ou en la générant à partir de la ligne de commande avec le compilateur en ligne de commande. Pour plus d’informations sur la génération d’assemblys à partir de la ligne de commande, consultez [Génération à partir de la ligne de commande avec csc.exe](../../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  
+## <a name="creating-an-assembly"></a><span data-ttu-id="fcecf-140">Création d’un assembly</span><span class="sxs-lookup"><span data-stu-id="fcecf-140">Creating an Assembly</span></span>  
+ <span data-ttu-id="fcecf-141">Compilez votre application en cliquant sur **Générer** dans le menu **Générer** ou en la générant à partir de la ligne de commande avec le compilateur en ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="fcecf-141">Compile your application by clicking **Build** on the **Build** menu or by building it from the command line using the command-line compiler.</span></span> <span data-ttu-id="fcecf-142">Pour plus d’informations sur la génération d’assemblys à partir de la ligne de commande, consultez [Génération à partir de la ligne de commande avec csc.exe](../../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="fcecf-142">For details about building assemblies from the command line, see [Command-line Building With csc.exe](../../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span>  
   
 > [!NOTE]
->  Pour générer un assembly dans Visual Studio, dans le menu **Générer**, choisissez **Générer**.  
+>  <span data-ttu-id="fcecf-143">Pour générer un assembly dans Visual Studio, dans le menu **Générer**, choisissez **Générer**.</span><span class="sxs-lookup"><span data-stu-id="fcecf-143">To build an assembly in Visual Studio, on the **Build** menu choose **Build**.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Assemblys dans le common language runtime](https://msdn.microsoft.com/library/k3677y81)   
- [Assemblys friend (C++)](friend-assemblies.md)   
- [Guide pratique pour partager un assembly avec d’autres applications (C#)](how-to-share-an-assembly-with-other-applications.md)   
- [Guide pratique pour charger et décharger des assemblys (C#)](how-to-load-and-unload-assemblies.md)   
- [Guide pratique pour déterminer si un fichier est un assembly (C#)](how-to-determine-if-a-file-is-an-assembly.md)   
- [Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande (C#)](how-to-create-and-use-assemblies-using-the-command-line.md)   
- [Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio (C#)](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)   
- [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio (C#)](walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
-
+## <a name="see-also"></a><span data-ttu-id="fcecf-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fcecf-144">See Also</span></span>  
+ [<span data-ttu-id="fcecf-145">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="fcecf-145">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="fcecf-146">Assemblys dans le Common Language Runtime</span><span class="sxs-lookup"><span data-stu-id="fcecf-146">Assemblies in the Common Language Runtime</span></span>](../../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [<span data-ttu-id="fcecf-147">Assemblys friend (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-147">Friend Assemblies (C#)</span></span>](friend-assemblies.md)  
+ [<span data-ttu-id="fcecf-148">Guide pratique pour partager un assembly avec d’autres applications (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-148">How to: Share an Assembly with Other Applications (C#)</span></span>](how-to-share-an-assembly-with-other-applications.md)  
+ [<span data-ttu-id="fcecf-149">Guide pratique pour charger et décharger des assemblys (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-149">How to: Load and Unload Assemblies (C#)</span></span>](how-to-load-and-unload-assemblies.md)  
+ [<span data-ttu-id="fcecf-150">Guide pratique pour déterminer si un fichier est un assembly (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-150">How to: Determine If a File Is an Assembly (C#)</span></span>](how-to-determine-if-a-file-is-an-assembly.md)  
+ [<span data-ttu-id="fcecf-151">Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-151">How to: Create and Use Assemblies Using the Command Line (C#)</span></span>](how-to-create-and-use-assemblies-using-the-command-line.md)  
+ [<span data-ttu-id="fcecf-152">Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-152">Walkthrough: Embedding Types from Managed Assemblies in Visual Studio (C#)</span></span>](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
+ [<span data-ttu-id="fcecf-153">Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio (C#)</span><span class="sxs-lookup"><span data-stu-id="fcecf-153">Walkthrough: Embedding Type Information from Microsoft Office Assemblies in Visual Studio (C#)</span></span>](walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)

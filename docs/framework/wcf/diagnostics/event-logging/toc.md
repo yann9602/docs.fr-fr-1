@@ -1,5 +1,5 @@
 # [Journalisation des événements](index.md)
-## [Référence générale des événements](events-general-reference.md)
+## [Informations de référence générales sur les événements](events-general-reference.md)
 ### [BindingError](bindingerror.md)
 ### [ComPlusDllHostInitializerStartingError](complusdllhostinitializerstartingerror.md)
 ### [ComPlusInstanceCreationError](complusinstancecreationerror.md)

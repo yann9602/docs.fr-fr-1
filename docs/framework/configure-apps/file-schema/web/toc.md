@@ -1,3 +1,3 @@
 # [Schéma des paramètres web](index.md)
-## [< System.web >, élément (paramètres Web)](system-web-element-web-settings.md)
-### [<applicationPool>Élément (paramètres Web)](applicationpool-element-web-settings.md)
+## [<system.web>, élément (paramètres web)](system-web-element-web-settings.md)
+### [<applicationPool>, élément (paramètres web)](applicationpool-element-web-settings.md)

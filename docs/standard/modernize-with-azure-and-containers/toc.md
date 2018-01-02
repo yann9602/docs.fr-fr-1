@@ -1,0 +1,6 @@
+# [Introduction](index.md)
+## [Lift-and-shift des applications existantes sur IaaS Azure](lift-and-shift-existing-apps-azure-iaas.md)
+## [Migrer vos bases de données relationnelles vers Azure](migrate-your-relational-databases-to-azure.md)
+## [Lift-and-shift des applications existantes sur DevOps](lift-and-shift-existing-apps-devops/)
+## [Procédures pas à pas et vue d’ensemble technique pour le démarrage](walkthroughs-technical-get-started-overview.md)
+## [Conclusions](conclusions.md)

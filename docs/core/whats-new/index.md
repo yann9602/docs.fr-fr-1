@@ -7,38 +7,38 @@ ms.author: ronpet
 ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
-ms.devlang: dotnet
+ms.openlocfilehash: e54cabe67558300b5c5fb9552d78397850d4c782
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: b47d4c74a01b99d743b69328c201096bc8d89794
-ms.openlocfilehash: e43f72ebd26c34636c239d8ac9f749d52d3f60a0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="whats-new-in-net-core"></a>Nouveautés de .NET Core
+# <a name="whats-new-in-net-core"></a><span data-ttu-id="dc569-104">Nouveautés de .NET Core</span><span class="sxs-lookup"><span data-stu-id="dc569-104">What's new in .NET Core</span></span>
 
-.NET core 2.0 inclut les nouvelles fonctionnalités et améliorations dans les domaines suivants :
+<span data-ttu-id="dc569-105">.NET core 2.0 inclut les nouvelles fonctionnalités et améliorations dans les domaines suivants :</span><span class="sxs-lookup"><span data-stu-id="dc569-105">.NET Core 2.0 includes enhancements and new features in the following areas:</span></span>
 
-- [Outillage](#tooling)
-- [Langages pris en charge](#language-support)
-- [Améliorations de plate-forme](#platform-improvements)
-- [Modifications d'API](#api-changes-and-library-support)
-- [Intégration Visual Studio](#visual-studio-integration)
-- [Améliorations apportées à la documentation](#documentation-improvements) 
+- [<span data-ttu-id="dc569-106">Outillage</span><span class="sxs-lookup"><span data-stu-id="dc569-106">Tooling</span></span>](#tooling)
+- [<span data-ttu-id="dc569-107">Langages pris en charge</span><span class="sxs-lookup"><span data-stu-id="dc569-107">Language support</span></span>](#language-support)
+- [<span data-ttu-id="dc569-108">Améliorations de plate-forme</span><span class="sxs-lookup"><span data-stu-id="dc569-108">Platform improvements</span></span>](#platform-improvements)
+- [<span data-ttu-id="dc569-109">Modifications d'API</span><span class="sxs-lookup"><span data-stu-id="dc569-109">API changes</span></span>](#api-changes-and-library-support)
+- [<span data-ttu-id="dc569-110">Intégration Visual Studio</span><span class="sxs-lookup"><span data-stu-id="dc569-110">Visual Studio integration</span></span>](#visual-studio-integration)
+- [<span data-ttu-id="dc569-111">Améliorations apportées à la documentation</span><span class="sxs-lookup"><span data-stu-id="dc569-111">Documentation improvements</span></span>](#documentation-improvements)
 
-## <a name="tooling"></a>Outillage
+## <a name="tooling"></a><span data-ttu-id="dc569-112">Outillage</span><span class="sxs-lookup"><span data-stu-id="dc569-112">Tooling</span></span>
 
-### <a name="dotnet-restore-runs-implicitly"></a>la restauration de dotnet s’exécute implicitement
+### <a name="dotnet-restore-runs-implicitly"></a><span data-ttu-id="dc569-113">la restauration de dotnet s’exécute implicitement</span><span class="sxs-lookup"><span data-stu-id="dc569-113">dotnet restore runs implicitly</span></span>
 
-Dans les versions précédentes de .NET Core, vous deviez exécuter la commande [restauration de dotnet ](../tools/dotnet-restore.md) pour télécharger les dépendances immédiatement après la création d’un nouveau projet avec la commande [nouveauté de dotnet](../tools/dotnet-new.md), ainsi que dès que vous ajoutiez une nouvelle dépendance à votre projet. Dans .NET Core 2.0, `dotnet restore` s’exécute implicitement lorsque la `dotnet new` s’exécute. Il s’exécute également implicitement si les dépendances doivent être mises à jour lorsque d’autres commandes, telles que les commandes `run`, `build` et `publish` s’exécutent.
+<span data-ttu-id="dc569-114">Dans les versions précédentes de .NET Core, vous deviez exécuter la commande [restauration de dotnet ](../tools/dotnet-restore.md) pour télécharger les dépendances immédiatement après la création d’un nouveau projet avec la commande [nouveauté de dotnet](../tools/dotnet-new.md), ainsi que dès que vous ajoutiez une nouvelle dépendance à votre projet.</span><span class="sxs-lookup"><span data-stu-id="dc569-114">In previous versions of .NET Core, you had to run the [dotnet restore](../tools/dotnet-restore.md) command to download dependencies immediately after you created a new project with the [dotnet new](../tools/dotnet-new.md) command, as well as whenever you added a new dependency to your project.</span></span>
 
-Vous pouvez également désactiver l’appel automatique de `dotnet restore` en passant le commutateur `--no-restore` sur les commandes `new`, `run`, `build`, `publish`, `pack` et `test`. 
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-### <a name="retargeting-to-net-core-20"></a>Reciblage vers .NET Core 2.0
+<span data-ttu-id="dc569-115">Vous pouvez également désactiver l’appel automatique de `dotnet restore` en passant le commutateur `--no-restore` sur les commandes `new`, `run`, `build`, `publish`, `pack` et `test`.</span><span class="sxs-lookup"><span data-stu-id="dc569-115">You can also disable the automatic invocation of `dotnet restore` by passing the `--no-restore` switch to the `new`, `run`, `build`, `publish`, `pack`, and `test` commands.</span></span> 
 
-Si le Kit SDK .NET Core 2.0 est installé, les projets qui ciblent .NET Core 1.x peuvent être reciblés vers .NET Core 2.0. 
+### <a name="retargeting-to-net-core-20"></a><span data-ttu-id="dc569-116">Reciblage vers .NET Core 2.0</span><span class="sxs-lookup"><span data-stu-id="dc569-116">Retargeting to .NET Core 2.0</span></span>
 
-Pour recibler vers .NET Core 2.0, modifiez votre fichier projet en modifiant la valeur de l’élément `<TargetFramework>` (ou l’élément `<TargetFrameworks>` si vous avez plus d’une cibles dans votre fichier projet) de 1.x à 2.0 :
+<span data-ttu-id="dc569-117">Si le Kit SDK .NET Core 2.0 est installé, les projets qui ciblent .NET Core 1.x peuvent être reciblés vers .NET Core 2.0.</span><span class="sxs-lookup"><span data-stu-id="dc569-117">If the .NET Core 2.0 SDK is installed, projects that target .NET Core 1.x can be retargeted to .NET Core 2.0.</span></span>
+
+<span data-ttu-id="dc569-118">Pour recibler vers .NET Core 2.0, modifiez votre fichier projet en modifiant la valeur de l’élément `<TargetFramework>` (ou l’élément `<TargetFrameworks>` si vous avez plus d’une cibles dans votre fichier projet) de 1.x à 2.0 :</span><span class="sxs-lookup"><span data-stu-id="dc569-118">To retarget to .NET Core 2.0, edit your project file by changing the value of the `<TargetFramework>` element (or the `<TargetFrameworks>` element if you have more than one target in your project file) from 1.x to 2.0:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -46,7 +46,7 @@ Pour recibler vers .NET Core 2.0, modifiez votre fichier projet en modifiant la 
  </PropertyGroup>
 ```
 
-Vous pouvez également recibler les bibliothèques .NET Standard vers .NET Standard 2.0 de la même façon :
+<span data-ttu-id="dc569-119">Vous pouvez également recibler les bibliothèques .NET Standard vers .NET Standard 2.0 de la même façon :</span><span class="sxs-lookup"><span data-stu-id="dc569-119">You can also retarget .NET Standard libraries to .NET Standard 2.0 the same way:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -54,113 +54,114 @@ Vous pouvez également recibler les bibliothèques .NET Standard vers .NET Stand
  </PropertyGroup>
 ```
 
-Pour plus d’informations sur la migration de votre projet vers .NET Core 2.0, consultez [Migration depuis ASP.NET Core 1.x vers ASP.NET Core 2.0](/aspnet/core/migration/1x-to-2x/index).
+<span data-ttu-id="dc569-120">Pour plus d’informations sur la migration de votre projet vers .NET Core 2.0, consultez [Migration depuis ASP.NET Core 1.x vers ASP.NET Core 2.0](/aspnet/core/migration/1x-to-2x/index).</span><span class="sxs-lookup"><span data-stu-id="dc569-120">For more information about migrating your project to .NET Core 2.0, see [Migrating from ASP.NET Core 1.x to ASP.NET Core 2.0](/aspnet/core/migration/1x-to-2x/index).</span></span>
 
-## <a name="language-support"></a>Langages pris en charge
+## <a name="language-support"></a><span data-ttu-id="dc569-121">Langages pris en charge</span><span class="sxs-lookup"><span data-stu-id="dc569-121">Language support</span></span>
 
-En plus de la prise en charge de c# et F #, .NET Core 2.0 prend également en charge Visual Basic.
+<span data-ttu-id="dc569-122">En plus de la prise en charge de c# et F #, .NET Core 2.0 prend également en charge Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="dc569-122">In addition to supporting C# and F#, .NET Core 2.0 also supports Visual Basic.</span></span>
 
-### <a name="visual-basic"></a>Visual Basic
+### <a name="visual-basic"></a><span data-ttu-id="dc569-123">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="dc569-123">Visual Basic</span></span>
 
-Avec la version 2.0, .NET Core prend désormais en charge Visual Basic 2017. Vous pouvez utiliser Visual Basic pour créer des types de projets suivants :
+<span data-ttu-id="dc569-124">Avec la version 2.0, .NET Core prend désormais en charge Visual Basic 2017.</span><span class="sxs-lookup"><span data-stu-id="dc569-124">With version 2.0, .NET Core now supports Visual Basic 2017.</span></span> <span data-ttu-id="dc569-125">Vous pouvez utiliser Visual Basic pour créer des types de projets suivants :</span><span class="sxs-lookup"><span data-stu-id="dc569-125">You can use Visual Basic to create the following project types:</span></span>
 
-- Applications de consoles .NET Core
-- Bibliothèques de classes .NET Core
-- Bibliothèques de classes .NET Standard
-- Projets de test unitaire .NET Core
-- Projet de test xUnit .NET Core 
+- <span data-ttu-id="dc569-126">Applications de consoles .NET Core</span><span class="sxs-lookup"><span data-stu-id="dc569-126">.NET Core console apps</span></span>
+- <span data-ttu-id="dc569-127">Bibliothèques de classes .NET Core</span><span class="sxs-lookup"><span data-stu-id="dc569-127">.NET Core class libraries</span></span>
+- <span data-ttu-id="dc569-128">Bibliothèques de classes .NET Standard</span><span class="sxs-lookup"><span data-stu-id="dc569-128">.NET Standard class libraries</span></span>
+- <span data-ttu-id="dc569-129">Projets de test unitaire .NET Core</span><span class="sxs-lookup"><span data-stu-id="dc569-129">.NET Core unit test projects</span></span>
+- <span data-ttu-id="dc569-130">Projet de test xUnit .NET Core</span><span class="sxs-lookup"><span data-stu-id="dc569-130">.NET Core xUnit test projects</span></span>
 
-Par exemple, pour créer une application Visual Basic « Hello World », procédez comme suit à partir de la ligne de commande :
+<span data-ttu-id="dc569-131">Par exemple, pour créer une application Visual Basic « Hello World », procédez comme suit à partir de la ligne de commande :</span><span class="sxs-lookup"><span data-stu-id="dc569-131">For example, to create a Visual Basic "Hello World" application, do the following steps from the command line:</span></span>
 
-1. Ouvrez la fenêtre de la console, créez un répertoire pour votre projet et définissez-le comme répertoire actif.
+1. <span data-ttu-id="dc569-132">Ouvrez la fenêtre de la console, créez un répertoire pour votre projet et définissez-le comme répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="dc569-132">Open a console window, create a directory for your project, and make it the current directory.</span></span>
 
-1. Entrez la commande `dotnet new console -lang vb`.
+1. <span data-ttu-id="dc569-133">Entrez la commande `dotnet new console -lang vb`.</span><span class="sxs-lookup"><span data-stu-id="dc569-133">Enter the command `dotnet new console -lang vb`.</span></span>
 
-   La commande crée un fichier projet avec une extension de fichier `.vbproj` ainsi qu’un fichier de code source Visual Basic nommé *Program.vb*. Ce fichier contient le code source pour écrire la chaîne « Hello World ! » sur la fenêtre de console.
-  
-1.  Entrez la commande `dotnet run`. Les [outils .NET Core CLI](../tools/index.md) compilent et exécutent automatiquement l’application, qui affiche le message « Hello World ! » dans la fenêtre de console.
+   <span data-ttu-id="dc569-134">La commande crée un fichier projet avec une extension de fichier `.vbproj` ainsi qu’un fichier de code source Visual Basic nommé *Program.vb*.</span><span class="sxs-lookup"><span data-stu-id="dc569-134">The command creates a project file with a `.vbproj` file extension, along with a Visual Basic source code file named *Program.vb*.</span></span> <span data-ttu-id="dc569-135">Ce fichier contient le code source pour écrire la chaîne « Hello World ! »</span><span class="sxs-lookup"><span data-stu-id="dc569-135">This file contains the source code to write the string "Hello World!"</span></span> <span data-ttu-id="dc569-136">sur la fenêtre de console.</span><span class="sxs-lookup"><span data-stu-id="dc569-136">to the console window.</span></span>
 
-### <a name="support-for-c-71"></a>Prise en charge de C#, 7.1
+1.  <span data-ttu-id="dc569-137">Entrez la commande `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="dc569-137">Enter the command `dotnet run`.</span></span> <span data-ttu-id="dc569-138">Les [outils .NET Core CLI](../tools/index.md) compilent et exécutent automatiquement l’application, qui affiche le message « Hello World ! »</span><span class="sxs-lookup"><span data-stu-id="dc569-138">The [.NET Core CLI tools](../tools/index.md) automatically compile and execute the application, which displays the message "Hello World!"</span></span> <span data-ttu-id="dc569-139">dans la fenêtre de console.</span><span class="sxs-lookup"><span data-stu-id="dc569-139">in the console window.</span></span>
 
-.NET core 2.0 prend en charge C# 7.1, qui ajoute un nombre de nouvelles fonctionnalités, notamment :
+### <a name="support-for-c-71"></a><span data-ttu-id="dc569-140">Prise en charge de C#, 7.1</span><span class="sxs-lookup"><span data-stu-id="dc569-140">Support for C# 7.1</span></span>
 
-- La méthode `Main`, le point d’entrée de l’application, peut être marquée avec le mot clé [asynchrone](../../csharp/language-reference/keywords/async.md).
-- Déduire les noms de tuple.
-- Expressions par défaut.
+<span data-ttu-id="dc569-141">.NET core 2.0 prend en charge C# 7.1, qui ajoute un nombre de nouvelles fonctionnalités, notamment :</span><span class="sxs-lookup"><span data-stu-id="dc569-141">.NET Core 2.0 supports C# 7.1, which adds a number of new features, including:</span></span>
+
+- <span data-ttu-id="dc569-142">La méthode `Main`, le point d’entrée de l’application, peut être marquée avec le mot clé [asynchrone](../../csharp/language-reference/keywords/async.md).</span><span class="sxs-lookup"><span data-stu-id="dc569-142">The `Main` method, the application entry point, can be marked with the [async](../../csharp/language-reference/keywords/async.md) keyword.</span></span>
+- <span data-ttu-id="dc569-143">Déduire les noms de tuple.</span><span class="sxs-lookup"><span data-stu-id="dc569-143">Inferred tuple names.</span></span>
+- <span data-ttu-id="dc569-144">Expressions par défaut.</span><span class="sxs-lookup"><span data-stu-id="dc569-144">Default expressions.</span></span>
 
 <!-- For more information see [link to C# what's new](url). -->
 
-## <a name="platform-improvements"></a>Améliorations de plate-forme
+## <a name="platform-improvements"></a><span data-ttu-id="dc569-145">Améliorations de plate-forme</span><span class="sxs-lookup"><span data-stu-id="dc569-145">Platform improvements</span></span>
 
-.NET core 2.0 inclut plusieurs fonctionnalités qui facilitent l’installation de .NET Core et pour l’utiliser sur les systèmes d’exploitation pris en charge.
+<span data-ttu-id="dc569-146">.NET core 2.0 inclut plusieurs fonctionnalités qui facilitent l’installation de .NET Core et pour l’utiliser sur les systèmes d’exploitation pris en charge.</span><span class="sxs-lookup"><span data-stu-id="dc569-146">.NET Core 2.0 includes a number of features that make it easier to install .NET Core and to use it on supported operating systems.</span></span>
 
-### <a name="net-core-for-linux-is-a-single-implementation"></a>.NET core pour Linux est une mise en œuvre unique
+### <a name="net-core-for-linux-is-a-single-implementation"></a><span data-ttu-id="dc569-147">.NET core pour Linux est une mise en œuvre unique</span><span class="sxs-lookup"><span data-stu-id="dc569-147">.NET Core for Linux is a single implementation</span></span>
 
-.NET core 2.0 offre une mise en œuvre unique de Linux qui fonctionne sur plusieurs distributions de Linux. .NET core 1.x exige que vous téléchargiez une mise en œuvre de Linux spécifique à la distribution.
+<span data-ttu-id="dc569-148">.NET core 2.0 offre une mise en œuvre unique de Linux qui fonctionne sur plusieurs distributions de Linux.</span><span class="sxs-lookup"><span data-stu-id="dc569-148">.NET Core 2.0 offers a single Linux implementation that works on multiple Linux distributions.</span></span> <span data-ttu-id="dc569-149">.NET core 1.x exige que vous téléchargiez une mise en œuvre de Linux spécifique à la distribution.</span><span class="sxs-lookup"><span data-stu-id="dc569-149">.NET Core 1.x required that you download a distribution-specific Linux implementation.</span></span>
 
-Vous pouvez également développer des applications qui ciblent Linux en tant que système d’exploitation unique. .NET core 1.x exige que vous cibliez séparément chaque distribution Linux. 
+<span data-ttu-id="dc569-150">Vous pouvez également développer des applications qui ciblent Linux en tant que système d’exploitation unique.</span><span class="sxs-lookup"><span data-stu-id="dc569-150">You can also develop apps that target Linux as a single operating system.</span></span> <span data-ttu-id="dc569-151">.NET core 1.x exige que vous cibliez séparément chaque distribution Linux.</span><span class="sxs-lookup"><span data-stu-id="dc569-151">.NET Core 1.x required that you target each Linux distribution separately.</span></span>
 
-### <a name="support-for-the-apple-cryptographic-libraries"></a>Prise en charge des bibliothèques de chiffrement Apple
+### <a name="support-for-the-apple-cryptographic-libraries"></a><span data-ttu-id="dc569-152">Prise en charge des bibliothèques de chiffrement Apple</span><span class="sxs-lookup"><span data-stu-id="dc569-152">Support for the Apple cryptographic libraries</span></span>
 
-.NET core 1.x sur macOS exige la bibliothèque de chiffrements du kit de ressources OpenSSL. .NET core 2.0 utilise les bibliothèques de chiffrement Apple et ne nécessite pas OpenSSL, vous n’en avez donc pas besoin pour l’installer. 
+<span data-ttu-id="dc569-153">.NET core 1.x sur macOS exige la bibliothèque de chiffrements du kit de ressources OpenSSL.</span><span class="sxs-lookup"><span data-stu-id="dc569-153">.NET Core 1.x on macOS required the OpenSSL toolkit's cryptographic library.</span></span> <span data-ttu-id="dc569-154">.NET core 2.0 utilise les bibliothèques de chiffrement Apple et ne nécessite pas OpenSSL, vous n’en avez donc pas besoin pour l’installer.</span><span class="sxs-lookup"><span data-stu-id="dc569-154">.NET Core 2.0 uses the Apple cryptographic libraries and doesn't require OpenSSL, so you no longer need to install it.</span></span>
 
-## <a name="api-changes-and-library-support"></a>Prise en charge de la bibliothèque et des modifications de l’API
+## <a name="api-changes-and-library-support"></a><span data-ttu-id="dc569-155">Prise en charge de la bibliothèque et des modifications de l’API</span><span class="sxs-lookup"><span data-stu-id="dc569-155">API changes and library support</span></span>
 
-### <a name="support-for-net-standard-20"></a>Prise en charge de .NET 2.0 Standard
+### <a name="support-for-net-standard-20"></a><span data-ttu-id="dc569-156">Prise en charge de .NET 2.0 Standard</span><span class="sxs-lookup"><span data-stu-id="dc569-156">Support for .NET Standard 2.0</span></span>
 
-.NET Standard définit un ensemble par version de l’API qui doit être disponible sur des mises en œuvre .NET conformes à cette version de la norme. .NET Standard est destiné aux développeurs de bibliothèques. Il vise à garantir la fonctionnalité disponible dans une bibliothèque qui cible une version de .NET Standard sur chaque mise en œuvre .NET. .NET core 1.x prend en charge la .NET Standard version 1.6 ; .NET Core 2.0 prend en charge la dernière version, .NET Standard 2.0. Pour plus d'informations, consultez [.NET Standard](../../standard/net-standard.md).
+<span data-ttu-id="dc569-157">.NET Standard définit un ensemble par version de l’API qui doit être disponible sur des mises en œuvre .NET conformes à cette version de la norme.</span><span class="sxs-lookup"><span data-stu-id="dc569-157">The .NET Standard defines a versioned set of APIs that must be available on .NET implementations that comply with that version of the standard.</span></span> <span data-ttu-id="dc569-158">.NET Standard est destiné aux développeurs de bibliothèques.</span><span class="sxs-lookup"><span data-stu-id="dc569-158">The .NET Standard is targeted at library developers.</span></span> <span data-ttu-id="dc569-159">Il vise à garantir la fonctionnalité disponible dans une bibliothèque qui cible une version de .NET Standard sur chaque mise en œuvre .NET.</span><span class="sxs-lookup"><span data-stu-id="dc569-159">It aims to guarantee the functionality that is available to a library that targets a version of the .NET Standard on each .NET implementation.</span></span> <span data-ttu-id="dc569-160">.NET core 1.x prend en charge la .NET Standard version 1.6 ; .NET Core 2.0 prend en charge la dernière version, .NET Standard 2.0.</span><span class="sxs-lookup"><span data-stu-id="dc569-160">.NET Core 1.x supports the .NET Standard version 1.6; .NET Core 2.0 supports the latest version, .NET Standard 2.0.</span></span> <span data-ttu-id="dc569-161">Pour plus d'informations, consultez [.NET Standard](../../standard/net-standard.md).</span><span class="sxs-lookup"><span data-stu-id="dc569-161">For more information, see [.NET Standard](../../standard/net-standard.md).</span></span>
 
-.NET Standard 2.0 inclut plus de 20 000 API de plus que dans la version .NET Standard 1.6. Une grande partie de cette surface d’exposition étendue résulte de l’incorporation des API communs à .NET Framework et Xamarin dans .NET Standard.
+<span data-ttu-id="dc569-162">.NET Standard 2.0 inclut plus de 20 000 API de plus que dans la version .NET Standard 1.6.</span><span class="sxs-lookup"><span data-stu-id="dc569-162">.NET Standard 2.0 includes over 20,000 more APIs than were available in the .NET Standard 1.6.</span></span> <span data-ttu-id="dc569-163">Une grande partie de cette surface d’exposition étendue résulte de l’incorporation des API communs à .NET Framework et Xamarin dans .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="dc569-163">Much of this expanded surface area results from incorporating APIs that are common to the .NET Framework and Xamarin into .NET Standard.</span></span>
 
-Les bibliothèques de classes .NET Standard 2.0 peuvent également faire référence à des bibliothèques de classes .NET Framework, à condition qu’elles appellent des API présents dans .NET Standard 2.0. Aucune recompilation des bibliothèques .NET Framework n’est requise.
+<span data-ttu-id="dc569-164">Les bibliothèques de classes .NET Standard 2.0 peuvent également faire référence à des bibliothèques de classes .NET Framework, à condition qu’elles appellent des API présents dans .NET Standard 2.0.</span><span class="sxs-lookup"><span data-stu-id="dc569-164">.NET Standard 2.0 class libraries can also reference .NET Framework class libraries, provided that they call APIs that are present in the .NET Standard 2.0.</span></span> <span data-ttu-id="dc569-165">Aucune recompilation des bibliothèques .NET Framework n’est requise.</span><span class="sxs-lookup"><span data-stu-id="dc569-165">No recompilation of the .NET Framework libraries is required.</span></span>
 
-Pour obtenir la liste des API ajoutés à .NET Standard depuis sa dernière version, la version 1.6 .NET Standard, consultez [.NET Standard 2.0 vs. 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).
+<span data-ttu-id="dc569-166">Pour obtenir la liste des API ajoutés à .NET Standard depuis sa dernière version, la version 1.6 .NET Standard, consultez [.NET Standard 2.0 vs. 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).</span><span class="sxs-lookup"><span data-stu-id="dc569-166">For a list of the APIs that have been added to the .NET Standard since its last version, the .NET Standard 1.6, see [.NET Standard 2.0 vs. 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md).</span></span>
 
-### <a name="expanded-surface-area"></a>Surface d’exposition étendue
+### <a name="expanded-surface-area"></a><span data-ttu-id="dc569-167">Surface d’exposition étendue</span><span class="sxs-lookup"><span data-stu-id="dc569-167">Expanded surface area</span></span>
 
-Le nombre total d’API disponible sur .NET Core 2.0 a plus que doublé par rapport à .NET Core 1.1. 
+<span data-ttu-id="dc569-168">Le nombre total d’API disponible sur .NET Core 2.0 a plus que doublé par rapport à .NET Core 1.1.</span><span class="sxs-lookup"><span data-stu-id="dc569-168">The total number of APIs available on .NET Core 2.0 has more than doubled in comparison with .NET Core 1.1.</span></span>
 
-### <a name="support-for-net-framework-libraries"></a>Prise en charge des bibliothèques .NET Framework
+<span data-ttu-id="dc569-169">Et grâce au [pack de compatibilité Windows](../porting/windows-compat-pack.md), le portage à partir du .NET Framework est beaucoup plus simple.</span><span class="sxs-lookup"><span data-stu-id="dc569-169">And with the [Windows Compatibility Pack](../porting/windows-compat-pack.md) porting from .NET Framework has also become much simpler.</span></span>
 
-Le code .NET Core peut faire référence aux bibliothèques .NET Framework existantes, y compris les packages NuGet existants. Notez que les bibliothèques doivent utiliser des API qui se trouvent dans .NET Standard.
+### <a name="support-for-net-framework-libraries"></a><span data-ttu-id="dc569-170">Prise en charge des bibliothèques .NET Framework</span><span class="sxs-lookup"><span data-stu-id="dc569-170">Support for .NET Framework libraries</span></span>
 
-## <a name="visual-studio-integration"></a>Visual Studio, intégration
+<span data-ttu-id="dc569-171">Le code .NET Core peut faire référence aux bibliothèques .NET Framework existantes, y compris les packages NuGet existants.</span><span class="sxs-lookup"><span data-stu-id="dc569-171">.NET Core code can reference existing .NET Framework libraries, including existing NuGet packages.</span></span> <span data-ttu-id="dc569-172">Notez que les bibliothèques doivent utiliser des API qui se trouvent dans .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="dc569-172">Note that the libraries must use APIs that are found in .NET Standard.</span></span>
 
-Visual Studio 2017 version 15,3 et dans certains cas, Visual Studio pour Mac proposent un nombre d’améliorations importantes pour les développeurs de .NET Core.
+## <a name="visual-studio-integration"></a><span data-ttu-id="dc569-173">Visual Studio, intégration</span><span class="sxs-lookup"><span data-stu-id="dc569-173">Visual Studio integration</span></span>
 
-### <a name="retargeting-net-core-apps-and-net-standard-libraries"></a>Reciblage des applications .NET Core et des bibliothèques .NET Standard
+<span data-ttu-id="dc569-174">Visual Studio 2017 version 15,3 et dans certains cas, Visual Studio pour Mac proposent un nombre d’améliorations importantes pour les développeurs de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="dc569-174">Visual Studio 2017 version 15.3 and in some cases Visual Studio for Mac offer a number of significant enhancements for .NET Core developers.</span></span>
 
-Si le Kit SDK .NET Core 2.0 est installé, vous pouvez recibler les projets .NET Core 1.x vers .NET Core 2.0 et les bibliothèques .NET Standard 1.x vers .NET Standard 2.0. 
+### <a name="retargeting-net-core-apps-and-net-standard-libraries"></a><span data-ttu-id="dc569-175">Reciblage des applications .NET Core et des bibliothèques .NET Standard</span><span class="sxs-lookup"><span data-stu-id="dc569-175">Retargeting .NET Core apps and .NET Standard libraries</span></span>
 
-Pour recibler votre projet dans Visual Studio, ouvrez l’onglet **Application** de la boîte de dialogue des propriétés du projet et modifiez la valeur**Infrastructure cible** sur **.NET Core 2.0** ou **.NET Standard 2.0**. Vous pouvez également le modifier en cliquant sur le projet avec le bouton droit et en sélectionnant l’option **Modifier le fichier\*.csproj**. Pour plus d'informations, consultez la section [Outillage](#tooling) plus haut dans cette rubrique.
+<span data-ttu-id="dc569-176">Si le Kit SDK .NET Core 2.0 est installé, vous pouvez recibler les projets .NET Core 1.x vers .NET Core 2.0 et les bibliothèques .NET Standard 1.x vers .NET Standard 2.0.</span><span class="sxs-lookup"><span data-stu-id="dc569-176">If the .NET Core 2.0 SDK is installed, you can retarget .NET Core 1.x projects to .NET Core 2.0 and .NET Standard 1.x libraries to .NET Standard 2.0.</span></span>
 
-### <a name="live-unit-testing-support-for-net-core"></a>Prise en charge de Live Unit Testing pour .NET Core
+<span data-ttu-id="dc569-177">Pour recibler votre projet dans Visual Studio, ouvrez l’onglet **Application** de la boîte de dialogue des propriétés du projet et modifiez la valeur**Infrastructure cible** sur **.NET Core 2.0** ou **.NET Standard 2.0**.</span><span class="sxs-lookup"><span data-stu-id="dc569-177">To retarget your project in Visual Studio, you open the **Application** tab of the project's properties dialog and change the **Target framework** value to **.NET Core 2.0** or **.NET Standard 2.0**.</span></span> <span data-ttu-id="dc569-178">Vous pouvez également le modifier en cliquant sur le projet avec le bouton droit et en sélectionnant l’option **Modifier le fichier\*.csproj**.</span><span class="sxs-lookup"><span data-stu-id="dc569-178">You can also change it by right-clicking on the project and selecting the **Edit \*.csproj file** option.</span></span> <span data-ttu-id="dc569-179">Pour plus d'informations, consultez la section [Outillage](#tooling) plus haut dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="dc569-179">For more information, see the [Tooling](#tooling) section earlier in this topic.</span></span>
 
-Lorsque vous modifiez votre code, Live Unit Testing exécute automatiquement tous les tests unitaires affectés en arrière-plan et présente les résultats et la couverture du code dans l’environnement Visual Studio. .NET Core 2.0 prend désormais en charge Live Unit Testing. Live Unit Testing était auparavant disponible uniquement pour les applications .NET Framework. 
+### <a name="live-unit-testing-support-for-net-core"></a><span data-ttu-id="dc569-180">Prise en charge de Live Unit Testing pour .NET Core</span><span class="sxs-lookup"><span data-stu-id="dc569-180">Live Unit Testing support for .NET Core</span></span>
 
-Pour plus d’informations, consultez [Live Unit Testing avec Visual Studio 2017](/visualstudio/test/live-unit-testing) et la [FAQ Live Unit Testing](/visualstudio/test/live-unit-testing-faq).
+<span data-ttu-id="dc569-181">Lorsque vous modifiez votre code, Live Unit Testing exécute automatiquement tous les tests unitaires affectés en arrière-plan et présente les résultats et la couverture du code dans l’environnement Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="dc569-181">Whenever you modify your code, Live Unit Testing automatically runs any affected unit tests in the background and displays the results and code coverage live in the Visual Studio environment.</span></span> <span data-ttu-id="dc569-182">.NET Core 2.0 prend désormais en charge Live Unit Testing.</span><span class="sxs-lookup"><span data-stu-id="dc569-182">.NET Core 2.0 now supports Live Unit Testing.</span></span> <span data-ttu-id="dc569-183">Live Unit Testing était auparavant disponible uniquement pour les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="dc569-183">Previously, Live Unit Testing was available only for .NET Framework applications.</span></span>
 
-### <a name="better-support-for-multiple-target-frameworks"></a>Meilleure prise en charge pour plusieurs infrastructures cibles
+<span data-ttu-id="dc569-184">Pour plus d’informations, consultez [Live Unit Testing avec Visual Studio 2017](/visualstudio/test/live-unit-testing) et la [FAQ Live Unit Testing](/visualstudio/test/live-unit-testing-faq).</span><span class="sxs-lookup"><span data-stu-id="dc569-184">For more information, see [Live Unit Testing with Visual Studio 2017](/visualstudio/test/live-unit-testing) and the [Live Unit Testing FAQ](/visualstudio/test/live-unit-testing-faq).</span></span>
 
-Si vous créez un projet pour plusieurs infrastructures cibles, vous pouvez maintenant sélectionner la plateforme cible dans le menu de niveau supérieur. Dans l’illustration suivante, un projet nommé SCD1 cible Mac OS X 10.11 64 bits (`osx.10.11-x64`) et Windows 10/Windows Server 2016 64 bits (`win10-x64`). Vous pouvez sélectionner l’infrastructure cible avant de sélectionner le bouton du projet, dans ce cas pour exécuter une version de débogage.
+### <a name="better-support-for-multiple-target-frameworks"></a><span data-ttu-id="dc569-185">Meilleure prise en charge pour plusieurs infrastructures cibles</span><span class="sxs-lookup"><span data-stu-id="dc569-185">Better support for multiple target frameworks</span></span>
 
-![Sélection de l’infrastructure cible lors de la génération d’un projet](media/multitarget.png) 
+<span data-ttu-id="dc569-186">Si vous créez un projet pour plusieurs infrastructures cibles, vous pouvez maintenant sélectionner la plateforme cible dans le menu de niveau supérieur.</span><span class="sxs-lookup"><span data-stu-id="dc569-186">If you're building a project for multiple target frameworks, you can now select the target platform from the top-level menu.</span></span> <span data-ttu-id="dc569-187">Dans l’illustration suivante, un projet nommé SCD1 cible Mac OS X 10.11 64 bits (`osx.10.11-x64`) et Windows 10/Windows Server 2016 64 bits (`win10-x64`).</span><span class="sxs-lookup"><span data-stu-id="dc569-187">In the following figure, a project named SCD1 targets 64-bit Mac OS X 10.11 (`osx.10.11-x64`) and 64-bit Windows 10/Windows Server 2016 (`win10-x64`).</span></span> <span data-ttu-id="dc569-188">Vous pouvez sélectionner l’infrastructure cible avant de sélectionner le bouton du projet, dans ce cas pour exécuter une version de débogage.</span><span class="sxs-lookup"><span data-stu-id="dc569-188">You can select the target framework before selecting the project button, in this case to run a debug build.</span></span>
 
-### <a name="side-by-side-support-for-net-core-sdks"></a>Prise en charge côte à côte pour les kits SDK .NET Core
+![Sélection de l’infrastructure cible lors de la génération d’un projet](media/multitarget.png)
 
-Vous pouvez maintenant installer le Kit SDK .NET Core indépendamment de Visual Studio. Cela rend possible pour une seule version de Visual Studio pour générer des projets qui ciblent des versions différentes du .NET Core. Auparavant, Visual Studio et le Kit SDK .NET Core ont été étroitement couplés ; une version particulière du kit SDK accompagnée d’une version particulière de Visual Studio.
+### <a name="side-by-side-support-for-net-core-sdks"></a><span data-ttu-id="dc569-190">Prise en charge côte à côte pour les kits SDK .NET Core</span><span class="sxs-lookup"><span data-stu-id="dc569-190">Side-by-side support for .NET Core SDKs</span></span>
 
-## <a name="documentation-improvements"></a>Améliorations apportées à la documentation
+<span data-ttu-id="dc569-191">Vous pouvez maintenant installer le Kit SDK .NET Core indépendamment de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="dc569-191">You can now install the .NET Core SDK independently of Visual Studio.</span></span> <span data-ttu-id="dc569-192">Cela rend possible pour une seule version de Visual Studio pour générer des projets qui ciblent des versions différentes du .NET Core.</span><span class="sxs-lookup"><span data-stu-id="dc569-192">This makes it possible for a single version of Visual Studio to build projects that target different versions of .NET Core.</span></span> <span data-ttu-id="dc569-193">Auparavant, Visual Studio et le Kit SDK .NET Core ont été étroitement couplés ; une version particulière du kit SDK accompagnée d’une version particulière de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="dc569-193">Previously, Visual Studio and the .NET Core SDK were tightly coupled; a particular version of the SDK accompanied a particular version of Visual Studio.</span></span>
 
-### <a name="net-application-architecture"></a>Architecture de l’application .NET
+## <a name="documentation-improvements"></a><span data-ttu-id="dc569-194">Améliorations apportées à la documentation</span><span class="sxs-lookup"><span data-stu-id="dc569-194">Documentation improvements</span></span>
 
-[L’architecture de l’application .NET](https://www.microsoft.com/net/learn/architecture) vous donne accès à un ensemble de livres électroniques qui fournissent des instructions, des meilleures pratiques et des exemples d’applications lors de l’utilisation de .NET pour générer :
+### <a name="net-application-architecture"></a><span data-ttu-id="dc569-195">Architecture de l’application .NET</span><span class="sxs-lookup"><span data-stu-id="dc569-195">.NET Application Architecture</span></span>
 
-- Containers de Microservices et Docker.
-- Des applications web avec ASP.NET.
-- Des applications mobiles avec Xamarin.
-- Des applications qui sont déployées sur le Cloud avec Azure.
+<span data-ttu-id="dc569-196">[L’architecture de l’application .NET](https://www.microsoft.com/net/learn/architecture) vous donne accès à un ensemble de livres électroniques qui fournissent des instructions, des bonnes pratiques et des exemples d’applications lors de l’utilisation de .NET pour générer :</span><span class="sxs-lookup"><span data-stu-id="dc569-196">[.NET Application Architecture](https://www.microsoft.com/net/learn/architecture) gives you access to a set of e-books that provide guidance, best practices, and sample applications when using .NET to build:</span></span>
 
-## <a name="see-also"></a>Voir aussi
- [Nouveautés de ASP.NET Core 2.0](/aspnet/core/aspnetcore-2.0)
+- <span data-ttu-id="dc569-197">Containers de Microservices et Docker.</span><span class="sxs-lookup"><span data-stu-id="dc569-197">Microservices and Docker containers.</span></span>
+- <span data-ttu-id="dc569-198">Des applications web avec ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="dc569-198">Web applications with ASP.NET.</span></span>
+- <span data-ttu-id="dc569-199">Des applications mobiles avec Xamarin.</span><span class="sxs-lookup"><span data-stu-id="dc569-199">Mobile applications with Xamarin.</span></span>
+- <span data-ttu-id="dc569-200">Des applications qui sont déployées sur le Cloud avec Azure.</span><span class="sxs-lookup"><span data-stu-id="dc569-200">Applications that are deployed to the Cloud with Azure.</span></span>
 
+## <a name="see-also"></a><span data-ttu-id="dc569-201">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dc569-201">See also</span></span>
+ [<span data-ttu-id="dc569-202">Nouveautés de ASP.NET Core 2.0</span><span class="sxs-lookup"><span data-stu-id="dc569-202">What's new in ASP.NET Core 2.0</span></span>](/aspnet/core/aspnetcore-2.0)
