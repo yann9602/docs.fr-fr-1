@@ -1,30 +1,21 @@
 ---
 title: Assemblys et le Global Assembly Cache (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 3743c07f1de1d39f07d559aa161e4547422a6e52
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2b98bd872bfdcbebb34fff3d878b92f39e27bbe0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-c"></a>Assemblys et le Global Assembly Cache (C#)
 Les assemblys constituent l’unité fondamentale dans le déploiement, la gestion de version, la portée d’activation et les autorisations de sécurité d’une application .NET. Les assemblys prennent la forme d’un fichier exécutable (.exe) ou d’un fichier de bibliothèque de liens dynamiques (.dll) et sont les blocs de construction du .NET Framework. Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Vous pouvez comparer un assembly à une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité.  
@@ -68,13 +59,12 @@ Les assemblys constituent l’unité fondamentale dans le déploiement, la gesti
 >  Pour générer un assembly dans Visual Studio, dans le menu **Générer**, choisissez **Générer**.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Assemblys dans le common language runtime](https://msdn.microsoft.com/library/k3677y81)   
- [Assemblys friend (C++)](friend-assemblies.md)   
- [Guide pratique pour partager un assembly avec d’autres applications (C#)](how-to-share-an-assembly-with-other-applications.md)   
- [Guide pratique pour charger et décharger des assemblys (C#)](how-to-load-and-unload-assemblies.md)   
- [Guide pratique pour déterminer si un fichier est un assembly (C#)](how-to-determine-if-a-file-is-an-assembly.md)   
- [Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande (C#)](how-to-create-and-use-assemblies-using-the-command-line.md)   
- [Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio (C#)](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)   
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)  
+ [Assemblys dans le Common Language Runtime](https://msdn.microsoft.com/library/k3677y81)  
+ [Assemblys friend (C#)](friend-assemblies.md)  
+ [Guide pratique pour partager un assembly avec d’autres applications (C#)](how-to-share-an-assembly-with-other-applications.md)  
+ [Guide pratique pour charger et décharger des assemblys (C#)](how-to-load-and-unload-assemblies.md)  
+ [Guide pratique pour déterminer si un fichier est un assembly (C#)](how-to-determine-if-a-file-is-an-assembly.md)  
+ [Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande (C#)](how-to-create-and-use-assemblies-using-the-command-line.md)  
+ [Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio (C#)](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
  [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio (C#)](walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
-

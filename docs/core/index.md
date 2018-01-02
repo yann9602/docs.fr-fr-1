@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f2b312cb-f80c-4b0d-9101-93908f06a6fa
+ms.openlocfilehash: 54540b8a1fc0ceaf68dfb3fcbb04fefae2296695
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9f2128080d34e78733cec926e59ee5dbe9b98a0d
-ms.openlocfilehash: 14e72dad71b8d99cea947e14f2ac77aedcfb5672
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/07/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-core-guide"></a>Guide .NET Core
 
 > Découvrez les [didacticiels « Bien démarrer »](get-started.md) pour apprendre à créer une application .NET Core simple. Il suffit de quelques minutes pour créer votre première application et la rendre opérationnelle.
@@ -43,9 +41,9 @@ Voici les caractéristiques qui définissent le mieux .NET Core :
 
 ### <a name="languages"></a>Langages
 
-Les langages C# et F# (et bientôt Visual Basic) peuvent être utilisés pour écrire des applications et des bibliothèques pour .NET Core. Les compilateurs s’exécutent sur .NET Core, ce qui vous permet de développer pour .NET Core où qu’il s’exécute. En règle générale, les compilateurs s’utilisent non pas directement, mais indirectement via les outils du SDK.
+Vous pouvez utiliser les langages C#, Visual Basic et F# pour écrire des applications et des bibliothèques pour .NET Core. Les compilateurs s’exécutent sur .NET Core, ce qui vous permet de développer pour .NET Core où qu’il s’exécute. En règle générale, les compilateurs s’utilisent non pas directement, mais indirectement via les outils du SDK.
 
-Les compilateurs C# et F# et les outils .NET Core sont ou peuvent être intégrés dans plusieurs éditeurs de texte et environnements IDE, dont Visual Studio, [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text et Vim, ce qui fait du développement .NET Core une option dans votre environnement de codage et système d’exploitation préférés. Nous devons en partie cette intégration aux bons gens du [projet OmniSharp](http://www.omnisharp.net/).
+Les compilateurs C#, Visual Basic et F# ainsi que les outils .NET Core sont ou peuvent être intégrés dans plusieurs éditeurs de texte et IDE, dont Visual Studio, [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text et Vim, faisant ainsi du développement .NET Core une option dans votre environnement de codage et votre système d’exploitation préférés. Nous devons en partie cette intégration aux bons gens du [projet OmniSharp](http://www.omnisharp.net/).
 
 ### <a name="net-apis-and-compatibility"></a>API .NET et compatibilité
 
@@ -153,4 +151,3 @@ Les principales différences entre .NET Core et Mono sont les suivantes :
 - **Plateformes** : Mono prend en charge un grand nombre de plateformes et de processeurs.
 - **Open Source** : Mono et .NET Core utilisent tous deux une licence MIT et sont des projets .NET Foundation.
 - **Priorité** : les plateformes mobiles sont la principale priorité de Mono depuis quelques années, alors que .NET Core accorde la priorité aux charges de travail cloud.
-

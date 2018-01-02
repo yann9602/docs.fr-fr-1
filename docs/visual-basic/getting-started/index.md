@@ -1,40 +1,21 @@
 ---
 title: "Bien démarrer avec Visual Basic"
-ms.date: 2017-08-10
+ms.date: 08/10/2017
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-caps.latest.revision: 36
+caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 1593475bf5b4a34f854bc3e89be84d7720cd497b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 4e3c1a1e6728d4a5e256b81b0f8a8b29851dc625
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="get-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
 Cette section de la documentation vous aide à commencer à développer des applications Visual Basic.  
@@ -66,7 +47,7 @@ Fournit une liste de sites web et de newsgroups susceptibles de vous aider à tr
  [Obtention de Visual Basic](https://www.visualstudio.com/downloads/)  
  Fournit des liens de téléchargement pour les versions de Visual Studio qui prennent en charge Visual Basic, y compris les versions gratuites.  
 
- [Notions de base de Visual Basic pour les débutants](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)   
+ [Concepts de base de Visual Basic pour les débutants](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)  
  Cours Microsoft Virtual Academy qui présente les notions de base de la programmation en Visual Basic.
 
  [Programmation orientée objet](../programming-guide/concepts/object-oriented-programming.md)  
@@ -91,4 +72,3 @@ Fournit une liste de sites web et de newsgroups susceptibles de vous aider à tr
   
  [Développement Office et SharePoint](https://msdn.microsoft.com/library/d2tx7z6d)  
  Fournit des informations sur l'utilisation de Microsoft Office et de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] dans le cadre d'une application d'entreprise.
-

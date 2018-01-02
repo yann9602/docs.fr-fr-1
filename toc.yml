@@ -13,9 +13,18 @@
           tocHref: /dotnet/standard/
           topicHref: /dotnet/standard/index
           items:
-            - name: "Microservices\_.NET\_-- Architecture pour les applications\_.NET en conteneurs"
+            - name: Applications web ASP.NET modernes (livre électronique)
+              tocHref: /dotnet/standard/modern-web-apps-azure-architecture/
+              topicHref: /dotnet/standard/modern-web-apps-azure-architecture/index
+            - name: Microservices .NET - Architecture (livre électronique)
               tocHref: /dotnet/standard/microservices-architecture/
               topicHref: /dotnet/standard/microservices-architecture/index
+            - name: Modernisation des applications .NET (livre électronique)
+              tocHref: /dotnet/standard/modernize-with-azure-and-containers/
+              topicHref: /dotnet/standard/modernize-with-azure-and-containers/index
+            - name: Microservices .NET - DevOps (livre électronique)
+              tocHref: /dotnet/standard/containerized-lifecycle-architecture/
+              topicHref: /dotnet/standard/containerized-lifecycle-architecture/index
             - name: Modèles de programmation asynchrone
               tocHref: /dotnet/standard/asynchronous-programming-patterns/
               topicHref: /dotnet/standard/asynchronous-programming-patterns/index
@@ -114,7 +123,7 @@
                     - name: Schéma des paramètres réseau
                       tocHref: /dotnet/framework/configure-apps/file-schema/network/
                       topicHref: /dotnet/framework/configure-apps/file-schema/network/index
-                    - name: Schéma des paramètres d’exécution
+                    - name: Schéma des paramètres d'exécution
                       tocHref: /dotnet/framework/configure-apps/file-schema/runtime/
                       topicHref: /dotnet/framework/configure-apps/file-schema/runtime/index
                     - name: Schéma des paramètres de démarrage
@@ -341,6 +350,9 @@
           tocHref: /dotnet/csharp/
           topicHref: /dotnet/csharp/index
           items:
+            - name: Guides de démarrage rapide
+              tocHref: /dotnet/csharp/quick-starts/
+              topicHref: /dotnet/csharp/quick-starts/index
             - name: Bien démarrer
               tocHref: /dotnet/csharp/getting-started/
               topicHref: /dotnet/csharp/getting-started/index

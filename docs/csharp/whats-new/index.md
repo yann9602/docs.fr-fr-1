@@ -4,32 +4,34 @@ description: "Évolution du langage C#"
 keywords: "C#, dernières fonctionnalités, nouveautés, Roslyn"
 author: BillWagner
 ms.author: wiwagn
-ms.date: 03/21/2017
+ms.date: 11/13/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
+ms.openlocfilehash: 719fbe826b0b115b19067dbaf0d04f14e6534890
+ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
 ms.translationtype: HT
-ms.sourcegitcommit: df0438dd742db802bb0f935d840006236d5d9bf9
-ms.openlocfilehash: 0a328f62a02aea223340fcc00e839e841041a7d6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/29/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/15/2017
 ---
-
 # <a name="whats-new-in-c"></a>Nouveautés de C# #
 
 Cette page fournit un Guide des nouvelles fonctionnalités de chaque version majeure du langage c#. Les liens suivants fournissent des informations détaillées sur les principales fonctionnalités ajoutées dans chaque version.
 
 > [!IMPORTANT]
-> Le langage c# s’appuie sur des types et des méthodes présents dans une *bibliothèque standard* pour certaines des fonctionnalités. Par exemple, le traitement des exceptions. Chaque instruction ou expression`throw` est vérifiée pour s’assurer de l’objet levé est dérivé de @System.Exception. De même, chaque `catch` est vérifié pour assurer que le type intercepté est dérivé de @System.Exception. Chaque version peut ajouter de nouvelles spécifications. Pour utiliser les dernières fonctionnalités de langage dans les environnements plus anciens, vous devrez peut-être installer des bibliothèques spécifiques. Celles-ci sont décrits dans la page pour chaque version spécifique. Pour en savoir plus, consultez les [relations entre le langage et la bibliothèque](relationships-between-language-and-library.md) pour l’arrière-plan sur cette dépendance. 
+> Le langage c# s’appuie sur des types et des méthodes présents dans une *bibliothèque standard* pour certaines des fonctionnalités. Par exemple, le traitement des exceptions. Chaque instruction ou expression`throw` est vérifiée pour s’assurer de l’objet levé est dérivé de <xref:System.Exception>. De même, chaque `catch` est vérifié pour assurer que le type intercepté est dérivé de <xref:System.Exception>. Chaque version peut ajouter de nouvelles spécifications. Pour utiliser les dernières fonctionnalités de langage dans les environnements plus anciens, vous devrez peut-être installer des bibliothèques spécifiques. Ces dépendances sont décrites dans la page pour chaque version spécifique. Pour en savoir plus, consultez les [relations entre le langage et la bibliothèque](relationships-between-language-and-library.md) pour l’arrière-plan sur cette dépendance. 
+
+
+* [C# 7.2](csharp-7-2.md) :
+    - Cette page décrit les dernières fonctionnalités du langage C#. C# 7.2 est actuellement disponible dans [Visual Studio 2017 version 15.5](https://www.visualstudio.com/vs/whatsnew/) et dans le kit [SDK .NET Core 2.0](../../core/whats-new/index.md).
 
 * [C# 7.1](csharp-7-1.md):
-    - Cette page décrit les dernières fonctionnalités du langage C#. Cela concerne C# 7.1, actuellement disponible dans [Visual Studio 2017 version 15.3](https://www.visualstudio.com/vs/whatsnew/) et dans le kit [SDK .NET Core 2.0](../../core/whats-new/index.md).
+    - Cette page décrit les fonctionnalités dans C# 7.1. Ces fonctionnalités ont été ajoutées dans [Visual Studio 2017 version 15.3](https://www.visualstudio.com/vs/whatsnew/) et dans le kit [SDK .NET Core 2.0](../../core/whats-new/index.md).
 
 * [C# 7](csharp-7.md) :
-    - Cette page décrit les fonctionnalités ajoutées dans C# 7. Elles ont été ajoutées dans [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) et [.NET Core 1.0](../../core/whats-new/index.md) et ultérieur
+    - Cette page décrit les fonctionnalités ajoutées dans C# 7. Ces fonctionnalités ont été ajoutées dans [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) et [.NET Core 1.0](../../core/whats-new/index.md) et versions ultérieures
      
 * [C# 6](csharp-6.md) :
     - Cette page décrit les nouvelles fonctionnalités de C# 6. Ces fonctionnalités sont disponibles dans Visual Studio 2015 pour les développeurs Windows, et dans .NET Core 1.0 pour les développeurs s’intéressant à C# sur Mac OS et Linux.
@@ -68,4 +70,3 @@ Les fonctionnalités clés répertoriées ci-dessous ont été introduites dans 
 
  * C# 1, Visual Studio .NET 2002 : 
      - Première version de [C#](../csharp.md).   
-

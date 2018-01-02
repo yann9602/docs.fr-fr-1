@@ -8,21 +8,23 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - delegate model for events
 - application development [.NET Framework], events
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: d5b5c8db7dc264185a5f58438ead83d4a65ec492
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ae0776501bffc23ae07cc88c7f0d1729ed01b6f7
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="handling-and-raising-events"></a>Gestion et déclenchement d'événements
 Les événements dans le .NET Framework sont basés sur le modèle délégué. Le modèle délégué suit le modèle de conception observateur, qui permet à un abonné de s'inscrire pour recevoir des notifications d'un fournisseur. Un émetteur d'événements émet une notification d'événement, et un récepteur d'événements reçoit cette notification et définit une réponse à celle-ci. Cet article décrit les principaux composants du modèle délégué, comment consommer les événements des applications, et comment implémenter des événements dans votre code.  
@@ -38,7 +40,8 @@ Les événements dans le .NET Framework sont basés sur le modèle délégué. L
   
  L'exemple suivant montre comment déclarer un évènement appelé `ThresholdReached`. L'événement est associé au délégué <xref:System.EventHandler> et déclenché dans une méthode nommée `OnThresholdReached`.  
   
- [!code-csharp[EventsOverview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#1)] [!code-vb[EventsOverview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#1)]  
+ [!code-csharp[EventsOverview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#1)]
+ [!code-vb[EventsOverview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#1)]  
   
 ## <a name="delegates"></a>Délégués  
  Un délégué est un type qui détient une référence à une méthode. Un délégué est déclaré avec une signature qui indique le type de retour et les paramètres des méthodes qu'il référence, et peut contenir des références à des méthodes qui correspondent à sa signature. Un délégué est donc équivalent à un rappel ou un pointeur de fonction de type sécurisé. Une déclaration Delegate suffit à définir une classe déléguée.  
@@ -51,25 +54,28 @@ Les événements dans le .NET Framework sont basés sur le modèle délégué. L
   
  Pour les scénarios dans lesquels les délégués <xref:System.EventHandler> et <xref:System.EventHandler%601> ne fonctionnent pas, vous pouvez définir un délégué. Les scénarios qui nécessitent de définir un délégué sont très rares, par exemple lorsque vous devez utiliser du code qui ne reconnaît pas les génériques. Vous marquez un délégué avec le `delegate` en (C#) et le mot clé `Delegate` (en Visual Basic) dans la déclaration. L'exemple suivant montre comment déclarer un délégué nommé `ThresholdReachedEventHandler`.  
   
- [!code-csharp[EventsOverview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)] [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
+ [!code-csharp[EventsOverview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
+ [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
   
 ## <a name="event-data"></a>Données d’événement  
- Les données associées à un événement peuvent être obtenues via une classe de données d'événement. .NET Framework fournit plusieurs classes de données d'événement que vous pouvez utiliser dans vos applications. Par exemple, la classe <xref:System.IO.Ports.SerialDataReceivedEventArgs> est la classe de données d'événement pour l'événement <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=fullName>. .NET Framework suit un modèle d'affectation de nom qui veut que toutes les classes de données d'évènement se terminent par `EventArgs`. Pour savoir quelle classe de données d'événement est associée à un événement, il suffit d'examiner le délégué de l'événement. Par exemple, le délégué <xref:System.IO.Ports.SerialDataReceivedEventHandler> inclut la classe <xref:System.IO.Ports.SerialDataReceivedEventArgs> comme paramètre.  
+ Les données associées à un événement peuvent être obtenues via une classe de données d'événement. .NET Framework fournit plusieurs classes de données d'événement que vous pouvez utiliser dans vos applications. Par exemple, la classe <xref:System.IO.Ports.SerialDataReceivedEventArgs> est la classe de données d'événement pour l'événement <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=nameWithType>. .NET Framework suit un modèle d'affectation de nom qui veut que toutes les classes de données d'évènement se terminent par `EventArgs`. Pour savoir quelle classe de données d'événement est associée à un événement, il suffit d'examiner le délégué de l'événement. Par exemple, le délégué <xref:System.IO.Ports.SerialDataReceivedEventHandler> inclut la classe <xref:System.IO.Ports.SerialDataReceivedEventArgs> comme paramètre.  
   
- La classe <xref:System.EventArgs> est le type de base pour toutes les classes de données d'événement. <xref:System.EventArgs> est également la classe que vous utilisez quand un événement n'a pas de données associée. Lorsque vous créez un événement qui vise uniquement à notifier à d'autres classes que quelque chose est survenu et n'a pas besoin de passer des données, incluez la classe <xref:System.EventArgs> comme deuxième paramètre du délégué. Vous pouvez passer la valeur <xref:System.EventArgs.Empty?displayProperty=fullName> lorsqu'aucune donnée n'est fournie. Le délégué <xref:System.EventHandler> inclut la classe <xref:System.EventArgs> comme paramètre.  
+ La classe <xref:System.EventArgs> est le type de base pour toutes les classes de données d'événement. <xref:System.EventArgs> est également la classe que vous utilisez quand un événement n'a pas de données associée. Lorsque vous créez un événement qui vise uniquement à notifier à d'autres classes que quelque chose est survenu et n'a pas besoin de passer des données, incluez la classe <xref:System.EventArgs> comme deuxième paramètre du délégué. Vous pouvez passer la valeur <xref:System.EventArgs.Empty?displayProperty=nameWithType> lorsqu'aucune donnée n'est fournie. Le délégué <xref:System.EventHandler> inclut la classe <xref:System.EventArgs> comme paramètre.  
   
  Lorsque vous souhaitez créer une classe personnalisée de données d'événement, créez une classe qui dérive de <xref:System.EventArgs>, puis fournissez tous les membres requis pour passer les données liées à l'événement. En général, vous devriez utiliser le même modèle d'affectation de noms que .NET Framework et terminer le nom de classe de données d'événement avec `EventArgs`.  
   
  L'exemple suivant illustre une classe de données d'événement nommée `ThresholdReachedEventArgs`. Elle contient les propriétés spécifiques à l'événement déclenché.  
   
- [!code-csharp[EventsOverview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#3)] [!code-vb[EventsOverview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#3)]  
+ [!code-csharp[EventsOverview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#3)]
+ [!code-vb[EventsOverview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#3)]  
   
 ## <a name="event-handlers"></a>Gestionnaires d'événements  
  Pour répondre à un événement, vous définissez une méthode de gestion d'événements dans le récepteur d'événements. Cette méthode doit correspondre à la signature du délégué pour l'événement géré. Dans le gestionnaire des évènements, vous exécutez les actions nécessaires lorsque l'événement est déclenché, comme la collecte de l'entrée d'utilisateur après que l'utilisateur clique sur un bouton. Pour recevoir des notifications lorsque l'événement se produit, la méthode de votre gestionnaire d'événements doit s'abonner à l'événement.  
   
  L'exemple suivant présente une méthode de gestionnaire d'événements nommée `c_ThresholdReached` qui correspond à la signature du délégué <xref:System.EventHandler>. La méthode s'abonne à l'événement `ThresholdReached`.  
   
- [!code-csharp[EventsOverview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#2)] [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
+ [!code-csharp[EventsOverview#2](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#2)]
+ [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## <a name="static-and-dynamic-event-handlers"></a>Gestionnaires d'événements statiques et dynamiques  
  .NET Framework permet aux abonnés de s'inscrire pour recevoir des notifications d'événements statiques ou dynamiques. Les gestionnaires d’événements statiques sont en vigueur pendant toute la durée de vie de la classe dont ils gèrent les événements. Les gestionnaires d’événements dynamiques sont explicitement activés et désactivés pendant l’exécution du programme, généralement en réponse à une logique de programme conditionnelle. Par exemple, ils peuvent être utilisés si les notifications d’événements sont nécessaires uniquement dans certaines conditions ou si une application fournit plusieurs gestionnaires d’événements et les conditions d’exécution définissent le gestionnaire approprié à utiliser. L'exemple de la section précédente indique comment ajouter dynamiquement un gestionnaire d'événements. Pour plus d’informations, consultez [Événements](../../visual-basic/programming-guide/language-features/events/index.md) et [Événements](../../csharp/programming-guide/events/index.md).  
@@ -89,11 +95,10 @@ Les événements dans le .NET Framework sont basés sur le modèle délégué. L
 |[Comment : consommer des événements dans une application Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Montre comment gérer un événement déclenché par un contrôle Web Forms.|  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.EventHandler>   
- <xref:System.EventHandler%601>   
- <xref:System.EventArgs>   
- <xref:System.Delegate>   
- [Vue d’ensemble des événements et des événements routés (Applications du Windows Store)](http://go.microsoft.com/fwlink/?LinkId=261485)   
- [Événements (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)   
+ <xref:System.EventHandler>  
+ <xref:System.EventHandler%601>  
+ <xref:System.EventArgs>  
+ <xref:System.Delegate>  
+ [Vue d’ensemble des événements et des événements routés (applications du Windows Store)](http://go.microsoft.com/fwlink/?LinkId=261485)  
+ [Événements (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
  [Événements (Guide de programmation C#)](../../csharp/programming-guide/events/index.md)
-

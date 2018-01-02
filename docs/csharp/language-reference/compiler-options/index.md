@@ -1,14 +1,10 @@
 ---
 title: Options du compilateur C#
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- cs.build.options
-dev_langs:
-- CSharp
+f1_keywords: cs.build.options
 helpviewer_keywords:
 - compiler options [C#]
 - csc.exe
@@ -16,36 +12,21 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 28878fca5bccf23f906395298c8b2b5b7499fd40
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 02cfb7708959057de593506db55e4f31f5ab4fd0
-ms.openlocfilehash: 7c5f5274a5685e50fb7f1d06771b0340200d1c3f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="c-compiler-options"></a>Options du compilateur C#
 Le compilateur produit des fichiers exécutables (.exe), des bibliothèques de liens dynamiques (.dll) ou des modules de code (.netmodule).  
   
  Chaque option du compilateur est disponible sous deux formes : **-option** et **/option**. La documentation ne présente que la forme **/option**.  
   
- Dans Visual Web Developer 2008, vous définissez les options du compilateur dans le fichier web.config. Pour plus d’informations, consultez [\<compilateur> Élément](https://msdn.microsoft.com/library/y9x69bzw).  
+ Dans Visual Studio, vous définissez les options du compilateur dans le fichier web.config. Pour plus d’informations, consultez [\<compilateur> Élément](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Génération à partir de la ligne de commande avec csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)  
@@ -69,4 +50,3 @@ Le compilateur produit des fichiers exécutables (.exe), des bibliothèques de l
   
  [Préparation et gestion des générations](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
  Procédures de génération dans l’environnement de développement Visual Studio.
-

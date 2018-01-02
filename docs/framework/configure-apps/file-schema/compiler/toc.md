@@ -1,5 +1,5 @@
 # [Schéma des paramètres du fournisseur de langage et du compilateur](index.md)
-## [< System.codedom > (élément)](system-codedom-element.md)
+## [<system.codedom>, élément](system-codedom-element.md)
 ### [<compilers>, élément](compilers-element.md)
 #### [<compiler>, élément](compiler-element.md)
 ##### [<providerOption>, élément](provideroption-element.md)

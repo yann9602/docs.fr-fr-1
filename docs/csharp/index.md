@@ -15,20 +15,18 @@ helpviewer_keywords:
 - C# language
 - Visual C#
 ms.author: wiwagn
+ms.openlocfilehash: 5ecc77970dbd32ca743bcd09fc63d49299a164a5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 5cb79aa1fd89e080e8dc67c379a0a927102a6419
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-
 # <a name="c-guide"></a>Guide C#
 
 Le guide C# représente une mine d’informations sur le langage C#. Ce site s’adresse à des publics très différents. En fonction de votre expérience en programmation, ou avec le langage C# et .NET, vous pouvez explorer les différentes sections de ce guide.
 
 * Pour les développeurs débutants :
-    - Commencez par notre section [didacticiels](tutorials/index.md). Ces didacticiels vous montrent comment créer des programmes C# à partir de zéro. Les didacticiels fournissent une procédure pas à pas pour créer des programmes. Vous apprendrez les concepts du langage et découvrirez comment générer vos propres programmes C#. Si vous préférez commencer par lire des informations d’ensemble, essayez notre [présentation du langage C#](tour-of-csharp/index.md). Elle explique les concepts du langage C#. Après avoir lu cette section, vous aurez une connaissance élémentaire du langage et serez prêt à suivre les didacticiels ou à créer votre propre programme.
+    - Commencez par notre section [Guides de démarrage rapide](quick-starts/index.md). Ces derniers vous permettent d’explorer le langage C# interactivement dans votre navigateur. À partir de là, vous pouvez passer à notre section [Didacticiels](tutorials/index.md). Ces didacticiels vous montrent comment créer des programmes C# à partir de zéro. Les didacticiels fournissent une procédure pas à pas pour créer des programmes. Vous apprendrez les concepts du langage et découvrirez comment générer vos propres programmes C#. Si vous préférez commencer par lire des informations d’ensemble, essayez notre [présentation du langage C#](tour-of-csharp/index.md). Elle explique les concepts du langage C#. Après avoir lu cette section, vous aurez une connaissance élémentaire du langage et serez prêt à suivre les didacticiels ou à créer votre propre programme.
 
 * Pour les développeurs qui découvrent C# : 
     - Si vous avez déjà développé, mais pas en C#, lisez la [présentation du langage C#](tour-of-csharp/index.md). Vous apprendrez la syntaxe de base et la structure du langage, et vous pourrez utiliser la présentation du langage pour comparer C# à d’autres langages que vous avez déjà utilisés. Vous pouvez également parcourir les [didacticiels](tutorials/index.md) pour essayer des programmes C# de base.
@@ -77,6 +75,5 @@ Il y a plusieurs sections dans le Guide de C#. Vous pouvez les lire dans l’ord
     - Lien avec la dernière version des spécifications C# au format Microsoft Word.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Bien démarrer avec Visual Basic et Visual C#](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
+ [Bien démarrer avec Visual Basic et Visual C#](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)  
  [Développement .NET](https://msdn.microsoft.com/library/ff361664)
-

@@ -8,12 +8,11 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
+ms.openlocfilehash: 73d733a45837d047319312ea7b2e558a02b39eba
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: a50c2ad3183c80fd76e6db042674e49367d7ffc9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Déploiement d’applications web .NET Core basées sur un seul conteneur sur des hôtes Linux ou Windows Nano Server
 
@@ -45,7 +44,7 @@ L’application [eShopWeb](https://github.com/dotnet-architecture/eShopOnContain
 
 L’application utilise une base de données SQL Server pour le stockage de catalogue. Dans les déploiements basés sur des conteneurs, cette application monolithique peut accéder au même magasin de données que l’application basée sur des microservices. L’application est configurée pour exécuter SQL Server dans un conteneur à côté de l’application monolithique. Dans un environnement de production, SQL Server s’exécuterait sur une machine à haute disponibilité, en dehors de l’hôte Docker. Pour des raisons pratiques, dans un environnement de développement ou de test, nous vous recommandons d’exécuter SQL Server dans son propre conteneur.
 
-L’ensemble initial de fonctionnalités permet uniquement la consultation du catalogue. Par des mises à jour, il serait possible d’activer l’ensemble complet de fonctionnalités de l’application en conteneur. Une architecture d’application web monolithique plus avancée est décrite dans le livre électronique intitulé [ASP.NET Web Application architecture practices](https://aka.ms/webappebook) et l’[exemple d’application eShopOnWeb](http://aka.ms/WebAppArchitecture) y afférent, même si dans ce cas, elle n’exécute pas de conteneurs Docker, car ce scénario s’intéresse tout particulièrement au développement web strict à l’aide d’ASP.NET Core.
+L’ensemble initial de fonctionnalités permet uniquement la consultation du catalogue. Par des mises à jour, il serait possible d’activer l’ensemble complet de fonctionnalités de l’application en conteneur. Une architecture d’application web monolithique plus avancée est décrite dans le livre électronique intitulé [ASP.NET Web Application architecture practices](https://aka.ms/webappebook) et dans [l’exemple d’application eShopOnWeb](http://aka.ms/WebAppArchitecture) qui s’y rattache, même si dans ce cas, elle ne s’exécute pas dans des conteneurs Docker, car ce scénario s’intéresse tout particulièrement au développement web avec ASP.NET Core.
 
 Cependant, la version simplifiée disponible dans eShopOnContainers (eShopWeb) s’exécute dans un conteneur Docker.
 
@@ -119,6 +118,8 @@ services:
   command: /bin/bash -c "dotnet restore ./eShopWeb.sln && dotnet publish  ./eShopWeb.sln -c Release -o ./obj/Docker/publish"
 ```
 
+**Remarque** : À compter de .NET Core 2.0, la commande dotnet restore s’exécute automatiquement quand dotnet publish est exécuté.
+
 Notez que l’image est une image de build ASP.NET Core. Cette image comprend le kit SDK et les outils de génération permettant de générer votre application et de créer les images nécessaires. Le fait d’exécuter le projet **docker-composer** avec ce fichier a pour effet de démarrer le conteneur de build à partir de l’image, puis de générer l’image de votre application dans ce conteneur. Vous devez spécifier ce fichier docker-compose en ligne de commande pour générer votre application dans un conteneur Docker avant de la lancer.
 
 Dans Visual Studio, vous pouvez exécuter votre application dans des conteneurs Docker en sélectionnant le projet **docker-composer** comme projet de démarrage, puis en appuyant sur Ctrl+F5 (F5 pour déboguer), comme vous le feriez avec n’importe quelle autre application. Quand vous démarrez le projet **docker-compose**, Visual Studio exécute **docker-compose** en utilisant le fichier docker-compose.yml, le fichier docker-compose.override.yml, puis l’un des fichiers docker-compose.vs.\*. Une fois que l’application a démarré, Visual Studio lance automatiquement le navigateur.
@@ -145,4 +146,3 @@ L’Assistant qui ajoute la prise en charge de Docker communique avec le process
 
 >[!div class="step-by-step"]
 [Précédent] (../docker-application-development-process/docker-app-development-workflow.md) [Suivant] (../containerize-net-framework-applications/index.md)
-

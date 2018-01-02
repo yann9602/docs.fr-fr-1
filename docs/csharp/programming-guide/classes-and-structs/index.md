@@ -2,13 +2,10 @@
 title: "Classes et structs (Guide de programmation C#)"
 description: "Décrit l’utilisation des classes et des structures (structs) en C#."
 keywords: "classes (C#), structs (C#), structures (structures) (C#), types référence (C#), types valeur (C#)"
-ms.date: 2016-01-17
+ms.date: 01/17/2016
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - structs [C#], about structs
 - classes [C#], overview
@@ -17,29 +14,14 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-caps.latest.revision: 48
+caps.latest.revision: "48"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 8c4cbbdd0384c0c0e97d6a7c655e798d0562d9a8
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2076de96c58fb89813495cb59adacb8a0082d93c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Classes et structs (Guide de programmation C#)
 Les classes et structs sont deux des constructions de base du système de type commun dans le .NET Framework. Chacun est en substance une structure de données qui encapsule un ensemble de données et de comportements constituant une unité logique. Les données et comportements sont les *membres* de la classe ou du struct, et ils incluent ses méthodes, propriétés, événements, etc., comme indiqué plus loin dans cette rubrique.  
@@ -57,7 +39,7 @@ Les classes et structs sont deux des constructions de base du système de type c
 ## <a name="example"></a>Exemple  
  Dans l’exemple suivant, `CustomClass` dans l’espace de noms `ProgrammingGuide` a trois membres : un constructeur d’instance, une propriété nommée `Number` et une méthode nommée `Multiply`. La méthode `Main` de la classe `Program` crée une instance (objet) de `CustomClass`, et la méthode et la propriété de l’objet sont accessibles avec la notation par points.
   
- [!code-cs[csProgGuideObjects#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/class1.cs#1)]  
+ [!code-csharp[csProgGuideObjects#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/class1.cs#1)]  
   
 ## <a name="encapsulation"></a>Encapsulation  
  *L’encapsulation* est parfois considérée comme le premier pilier ou principe de la programmation orientée objet. D'après le principe d'encapsulation, une classe ou un struct peut spécifier le degré d'accessibilité de chacun de ses membres au code situé en dehors de la classe ou du struct. Les méthodes et variables qui ne sont pas destinées à être utilisées d’en dehors de la classe ou de l’assembly peuvent être masquées afin de limiter le risque d’erreurs ou de code malveillant exploitant une faille de sécurité.  
@@ -88,7 +70,7 @@ Les classes et structs sont deux des constructions de base du système de type c
 -   [Types imbriqués](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
   
 ### <a name="accessibility"></a>Accessibilité  
- Certaines méthodes et propriétés sont censées être appelées ou accessibles par le code qui se trouve à l’extérieur de votre classe ou de votre struct, connu sous le terme de *code client*. D’autres méthodes et propriétés peuvent être uniquement utilisables dans la classe ou le struct proprement dits. Il est important de limiter l’accessibilité de votre code afin que seul le code client prévu puisse y accéder. Vous pouvez spécifier l’accessibilité de vos types et de leurs membres vis-à-vis du code client à l’aide des modificateurs d’accès [public](../../../csharp/language-reference/keywords/public.md), [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md), `protected internal` et [private](../../../csharp/language-reference/keywords/private.md). L’accessibilité par défaut est `private`. Pour plus d’informations, consultez la page [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Certaines méthodes et propriétés sont censées être appelées ou accessibles par le code qui se trouve à l’extérieur de votre classe ou de votre struct, connu sous le terme de *code client*. D’autres méthodes et propriétés peuvent être uniquement utilisables dans la classe ou le struct proprement dits. Il est important de limiter l’accessibilité de votre code afin que seul le code client prévu puisse y accéder. Vous pouvez spécifier l’accessibilité de vos types et de leurs membres vis-à-vis du code client à l’aide des modificateurs d’accès [public](../../../csharp/language-reference/keywords/public.md), [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md), [protected internal](../../../csharp/language-reference/keywords/protected-internal.md), [private](../../../csharp/language-reference/keywords/private.md) et [private protected](../../../csharp/language-reference/keywords/private-protected.md). L’accessibilité par défaut est `private`. Pour plus d’informations, consultez la page [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
 ### <a name="inheritance"></a>Héritage  
  Les classes (mais pas les structs) prennent en charge le concept d'héritage. Une classe qui dérive d’une autre classe (la *classe de base*) contient automatiquement tous les membres publics, protégés et internes de la classe de base, sauf ses constructeurs et finaliseurs. Pour plus d’informations, consultez les pages [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md) et [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
@@ -127,4 +109,3 @@ Les classes et structs sont deux des constructions de base du système de type c
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-

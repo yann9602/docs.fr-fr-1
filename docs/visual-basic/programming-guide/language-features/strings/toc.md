@@ -4,6 +4,7 @@
 ### [Types de méthodes de manipulation de chaînes](types-of-string-manipulation-methods.md)
 ### [Nothing et chaînes](nothing-and-strings.md)
 ### [Comment les informations de culture affectent les chaînes](how-culture-affects-strings.md)
+### [Chaînes interpolées](interpolated-strings.md)
 ### [Accès à une chaîne de base zéro et accès à une chaîne de base un](zero-based-vs-one-based-string-access.md)
 ## [Guide pratique : créer des chaînes à l’aide de StringBuilder](how-to-create-strings-using-a-stringbuilder.md)
 ## [Guide pratique : effectuer une recherche dans une chaîne](how-to-search-within-a-string.md)

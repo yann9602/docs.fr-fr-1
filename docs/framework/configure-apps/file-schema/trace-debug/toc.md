@@ -1,5 +1,5 @@
 # [Schéma des paramètres de trace et de débogage](index.md)
-## [< system.diagnostics >](system-diagnostics-element.md)
+## [<system.diagnostics>](system-diagnostics-element.md)
 ### [<assert>](assert-element.md)
 ### [<performanceCounters>](performancecounters-element.md)
 ### [<sharedListeners>](sharedlisteners-element.md)
