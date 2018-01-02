@@ -11,11 +11,11 @@ ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
 caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2bf9f87f44f0c3df3f438676706c5d0433534c15
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ccfcd97eefb47807c44819182e3bd46ec7598b3c
+ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Guide pratique pour interroger des fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)
 Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié. Le deuxième exemple montre comment rechercher des fichiers dont la taille et l’heure de création correspondent également.  
@@ -95,7 +95,7 @@ class QueryDuplicateFileNames
         // Change the root drive or folder if necessary.  
         string startFolder = @"c:\program files\Microsoft Visual Studio 9.0\Common7";  
   
-        // Make the the lines shorter for the console display  
+        // Make the lines shorter for the console display  
         int charsToSkip = startFolder.Length;  
   
         // Take a snapshot of the file system.  
