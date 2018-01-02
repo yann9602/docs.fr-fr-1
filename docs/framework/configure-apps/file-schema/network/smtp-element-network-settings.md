@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 17b4050c43354da7e7ba6c3ea13a0c7621faf0a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 598fe3dc2a49187e923cd689f863d0a3327e735f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsmtpgt-element-network-settings"></a>&lt;SMTP&gt; élément (paramètres réseau)
 Configure le format de remise, de la méthode de remise et à partir de l’adresse pour l’envoi de messages électroniques.  
@@ -53,7 +54,7 @@ Configure le format de remise, de la méthode de remise et à partir de l’adre
 |Attribut|Description|  
 |---------------|-----------------|  
 |`deliveryFormat`|Spécifie le format de remise de messages électroniques sortants. Les valeurs acceptables sont SevenBit et International.|  
-|`deliveryMethod`|Spécifie la méthode de remise pour les messages électroniques. Les valeurs acceptables sont network, pickupDirectoryFromIis et SpecifiedPickupDirectory.|  
+|`deliveryMethod`|Spécifie la méthode de remise pour les messages électroniques. Les valeurs acceptables sont network, pickupDirectoryFromIis et specifiedPickupDirectory.|  
 |`from`|Spécifie l’adresse d’origine de messages électroniques sortants.|  
   
 ### <a name="child-elements"></a>Éléments enfants  

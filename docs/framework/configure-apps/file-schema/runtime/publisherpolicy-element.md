@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 654887c870a7f620c52fa402d6324de39fdb2feb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d5f629dd347f63c8fb8e624c475bfb0ecf658f41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltpublisherpolicygt-element"></a>&lt;publisherPolicy&gt; élément
 Spécifie si le runtime applique la stratégie de l'éditeur.  
@@ -53,7 +54,7 @@ Spécifie si le runtime applique la stratégie de l'éditeur.
   
 ## <a name="apply-attribute"></a>appliquer l’attribut  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`yes`|Applique la stratégie de serveur de publication. Il s'agit du paramètre par défaut.|  
 |`no`|N’applique pas la stratégie d’éditeur.|  
@@ -68,7 +69,7 @@ Spécifie si le runtime applique la stratégie de l'éditeur.
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Lorsqu’un fournisseur de composant publie une nouvelle version d’un assembly, le fournisseur peut inclure une stratégie d’éditeur pour les applications qui utilisent l’ancienne version désormais utilisent la nouvelle version. Pour spécifier s’il faut appliquer la stratégie d’éditeur pour un assembly particulier, placez le  **\<publisherPolicy >** élément dans le  **\<dependentAssembly >** élément.  
   
  Le paramètre par défaut pour le **appliquer** attribut est **Oui**. Définition de la **appliquer** attribut **aucun** remplacements précédents **Oui** paramètres d’un assembly.  

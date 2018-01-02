@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b46d12ecebae17b7cfe2168b6313be45ad5b04d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9776e900015dad8bce8c16991b8ce0aeb6067812
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsupportportabilitygt-element"></a>&lt;supportPortability&gt; élément
 Spécifie qu’une application peut référencer le même assembly dans deux implémentations différentes du .NET Framework, en désactivant le comportement par défaut qui traite les assemblys de façon équivalente à des fins de portabilité des applications.  
@@ -51,7 +52,7 @@ Spécifie qu’une application peut référencer le même assembly dans deux imp
 |Valeur|Description|  
 |-----------|-----------------|  
 |true|Activer la prise en charge pour la portabilité entre les implémentations de l’assembly .NET Framework spécifié. Il s'agit de la valeur par défaut.|  
-|false|Désactiver la prise en charge pour la portabilité entre les implémentations de l’assembly .NET Framework spécifié. Cela permet à l’application d’avoir des références à plusieurs implémentations de l’assembly spécifié.|  
+|False|Désactiver la prise en charge pour la portabilité entre les implémentations de l’assembly .NET Framework spécifié. Cela permet à l’application d’avoir des références à plusieurs implémentations de l’assembly spécifié.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -64,7 +65,7 @@ Spécifie qu’une application peut référencer le même assembly dans deux imp
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
 |`assemblyBinding`|Contient des informations à propos de la redirection des versions d'assemblys et de l'emplacement de ces derniers.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Compter les [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], prise en charge est fournie automatiquement pour les applications qui peuvent utiliser une des deux implémentations du .NET Framework, par exemple l’implémentation du .NET Framework ou .NET Framework pour l’implémentation Silverlight. Les deux implémentations d’un assembly .NET Framework particulier sont considérées comme équivalents par le binder d’assembly. Dans certains scénarios, cette fonctionnalité de portabilité application pose des problèmes. Dans ces scénarios, le `<supportPortability>` élément peut être utilisé pour désactiver la fonctionnalité.  
   
  Un tel scénario est un assembly qui doit faire référence à l’implémentation du .NET Framework et le .NET Framework pour l’implémentation Silverlight d’un assembly de référence particulier. Par exemple, un concepteur XAML écrit dans Windows Presentation Foundation (WPF) devrez peut-être faire référence à la fois l’implémentation de bureau WPF pour l’interface d’utilisateur du concepteur et le sous-ensemble de WPF qui est inclus dans l’implémentation de Silverlight. Par défaut, les références séparées provoquent une erreur du compilateur parce que la liaison d’assembly considère les deux assemblys comme équivalents. Cet élément désactive le comportement par défaut et permet la compilation de réussir.  

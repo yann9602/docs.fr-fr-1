@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: d2eb903b8a84410aa08504c12e78a016d2368923
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6140a5a66d39cbee3c2a8477dcab88aaa717e745
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsystemnetgt-element-network-settings"></a>&lt;system.Net&gt; élément (paramètres réseau)
 Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.  
@@ -42,7 +43,7 @@ Contient des paramètres qui spécifient la manière dont .NET Framework se conn
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -62,7 +63,7 @@ Contient des paramètres qui spécifient la manière dont .NET Framework se conn
 |-----------------|---------------------|  
 |[configuration](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Contient des paramètres pour tous les espaces de noms.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le [ \<system.net >](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) élément contient des paramètres pour les classes dans le <xref:System.Net> et les espaces de noms enfants. Ces paramètres configurent les modules d’authentification, gestion des connexions, les paramètres de messagerie, le serveur proxy et les modules de demandes Internet pour recevoir des informations à partir d’hôtes Internet.  
   
 ## <a name="example"></a>Exemple  

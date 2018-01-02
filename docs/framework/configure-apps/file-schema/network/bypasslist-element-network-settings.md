@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 3d349f14535de806e0b130ef64b58333e63f1b86
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 20e3676e69357dc73433876275cb2737ee235552
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltbypasslistgt-element-network-settings"></a>&lt;BypassList&gt; élément (paramètres réseau)
 Fournit un ensemble d’expressions régulières décrivant les adresses qui n’utilisent pas un proxy.  
@@ -44,7 +45,7 @@ Fournit un ensemble d’expressions régulières décrivant les adresses qui n�
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -60,7 +61,7 @@ Fournit un ensemble d’expressions régulières décrivant les adresses qui n�
 |-----------------|---------------------|  
 |[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La liste d’exclusion contient des expressions régulières qui décrivent les URI qui <xref:System.Net.WebRequest> instances accèdent directement à la place de via le serveur proxy.  
   
  Soyez prudent lorsque vous spécifiez une expression régulière pour cet élément. L’expression régulière « [a-z] +\\.contoso\\.com » correspond à tout hôte dans le domaine contoso.com, mais elle correspond également à n’importe quel hôte dans le domaine contoso.com.cpandl.com. Pour faire correspondre uniquement sur un ordinateur hôte dans le domaine contoso.com, utilisez une ancre (« $») : « [a-z] +\\.contoso\\.com$ ».  

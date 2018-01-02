@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: eee2cb916d79bf3b79e882cd757b10344121f6b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0ece4395c574a4d6bc9399788ad3fb513cb86379
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltmsmqtransportsecuritygt"></a>&lt;msmqTransportSecurity&gt;
 Spécifie des paramètres de sécurité de transport MSMQ pour une liaison personnalisée.  
@@ -62,7 +63,7 @@ Spécifie des paramètres de sécurité de transport MSMQ pour une liaison perso
 |[\<msmqIntegration >](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegration.md)|Spécifie des paramètres requis pour l'interaction avec un expéditeur ou un récepteur MSMQ.|  
 |[\<msmqTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqtransport.md)|Spécifie les propriétés de communication mises en file d'attente pour un service Windows Communication Foundation (WCF) qui utilise le protocole MSMQ natif.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Pour plus d’informations sur la sécurité de transport, consultez [sécurité du Transport](../../../../../docs/framework/wcf/feature-details/transport-security.md).  
   
 ## <a name="see-also"></a>Voir aussi  
@@ -71,7 +72,7 @@ Spécifie des paramètres de sécurité de transport MSMQ pour une liaison perso
  <xref:System.ServiceModel.Channels.CustomBinding>  
  [Files d’attente dans WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
  [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)  
- [Choix d’un Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  

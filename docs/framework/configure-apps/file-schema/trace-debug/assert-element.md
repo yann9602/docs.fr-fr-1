@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 520dfec180157c9a05c5fc3beb51b5fc17f9088b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9670cf0faa3e7f69b8f99b09fa26741991a60481
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltassertgt-element"></a>&lt;Assert&gt; élément
 Indique si une boîte de message doit s’afficher quand vous appelez la méthode <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ; spécifie également le nom du fichier dans lequel écrire les messages.  
@@ -50,7 +51,7 @@ Indique si une boîte de message doit s’afficher quand vous appelez la méthod
   
 ## <a name="assertuienabled-attribute"></a>Attribut d’AssertUiEnabled  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`true`|Affiche la boîte de message. Il s'agit de la valeur par défaut.|  
 |`false`|Ne pas afficher la boîte de message.|  
@@ -65,7 +66,7 @@ Indique si une boîte de message doit s’afficher quand vous appelez la méthod
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les deux attributs dans le  **\<assert >** élément sont facultatifs. Vous pouvez désactiver les boîtes de message sans spécifier de fichier pour écrire les messages, ou vous pouvez spécifier un fichier pour écrire des messages tout en laissant les messages activés.  
   
 ## <a name="example"></a>Exemple  

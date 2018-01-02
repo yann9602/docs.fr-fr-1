@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: eae909e2f70cfa045dd9a5c6b7496f112a59dc45
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bed3abd5522b748a2bd24ba03c7be5d991deae9a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-bypasslist-network-settings"></a>&lt;ajouter&gt; , élément pour bypasslist (paramètres réseau)
 Ajoute une adresse IP ou le nom DNS à la liste de contournement du proxy.  
@@ -62,7 +63,7 @@ Ajoute une adresse IP ou le nom DNS à la liste de contournement du proxy.
 |-----------------|---------------------|  
 |[BypassList](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières décrivant les adresses qui n’utilisent pas un proxy.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `add` élément insère des expressions régulières décrivant les adresses IP ou des noms de serveur DNS à la liste des adresses qui contournent un serveur proxy.  
   
  La valeur de la `address` attribut doit être une expression régulière qui décrit un ensemble d’adresses IP ou des noms d’hôte.  

@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 5ee20b9177d519010c40351e335973dce10256f4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 620197065a8e689997b4081b3d90169aa0e3c6c3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt-element-for-bypasslist-network-settings"></a>&lt;Désactivez&gt; , élément pour bypasslist (paramètres réseau)
 Efface la liste de contournement du proxy.  
@@ -46,7 +47,7 @@ Efface la liste de contournement du proxy.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -57,7 +58,7 @@ Efface la liste de contournement du proxy.
 |-----------------|---------------------|  
 |[BypassList](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières décrivant les adresses qui n’utilisent pas un proxy.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `clear` élément efface toutes les entrées de la liste d’exclusion.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  

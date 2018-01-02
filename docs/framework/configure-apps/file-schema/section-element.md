@@ -14,11 +14,12 @@ ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c8ed8b0211c8366d799fe158d91dcb42f92ad0cf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4e7de6e5ce6415c58deeca14df74c26e24957054
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="section-element"></a>\<section > élément
 
@@ -70,9 +71,9 @@ Les attributs suivants sont appliquent uniquement aux applications ASP.NET. Le s
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucune
+Aucun.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Déclaration essentiellement d’une section de configuration définit un nouvel élément pour le fichier de configuration. Le nouvel élément contient une configuration de gestionnaire de section de paramètres (autrement dit, une classe qui implémente le <xref:System.Configuration.IConfigurationSectionHandler> interface) lit. Les attributs et les éléments enfants d’une section que vous définissez dépendent du Gestionnaire de section que vous permet de lire vos paramètres.
 

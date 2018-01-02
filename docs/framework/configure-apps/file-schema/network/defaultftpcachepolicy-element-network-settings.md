@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 6b9a5fb2f62c27d278570ad789deab30917bc432
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0c62be73db6d9d0b6ce67dd87021c589502d5fec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltdefaultftpcachepolicygt-element-network-settings"></a>&lt;defaultFtpCachePolicy&gt; élément (paramètres réseau)
 Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la mise en cache de stratégie.  
@@ -52,7 +53,7 @@ Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la 
   
 ## <a name="policylevel-attribute"></a>PolicyLevel qui n’est attribut  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`Default`|Retourne la ressource mise en cache si la ressource est actualisée, la longueur du contenu est précise et d’expiration, modification et les attributs de la longueur de contenu sont présents.|  
 |`BypassCache`|Retourne la ressource à partir du serveur.|  
@@ -72,7 +73,7 @@ Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la 
 |-------------|-----------------|  
 |[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment spécifier une stratégie de la mise en cache de FTP `NoCacheNoStore`.  

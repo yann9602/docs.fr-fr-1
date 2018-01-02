@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b734a095f0c9ea9ad1bd6e78f3ef4264f4f2317e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7f9b4ec506097cf010af78b3504def08102e0774
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltserviceprincipalnamegt"></a>&lt;nom principal de service&gt;
 Spécifie l'identité d'un service par son nom de principal du service (SPN).  
@@ -51,7 +52,7 @@ Spécifie l'identité d'un service par son nom de principal du service (SPN).
 |-------------|-----------------|  
 |[\<identité >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Spécifie l'identité du service à authentifier par le client.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Un client [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] sécurisé qui se connecte à un point de terminaison avec cette identité utilise le SPN pour effectuer l'authentification SSPI avec le point de terminaison.  
   
 ## <a name="see-also"></a>Voir aussi  
@@ -59,5 +60,5 @@ Spécifie l'identité d'un service par son nom de principal du service (SPN).
  <xref:System.ServiceModel.EndpointAddress>  
  <xref:System.ServiceModel.EndpointAddress.Identity%2A>  
  <xref:System.ServiceModel.SpnEndpointIdentity>  
- [L’authentification et identité de Service](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [\<identité >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)

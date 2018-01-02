@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: a5f0b6b207fbd51504149fd5c245f41ef89f17f4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 03c2fa7fe65650b760937ef06b848152893e023b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsystemidentitymodelservicesgt"></a>&lt;system.identityModel.services&gt;
 Section de configuration pour l’authentification à l’aide du protocole WS-Federation.  
@@ -37,7 +38,7 @@ Section de configuration pour l’authentification à l’aide du protocole WS-F
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -46,9 +47,9 @@ Section de configuration pour l’authentification à l’aide du protocole WS-F
 |[\<federationConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Contient les paramètres qui configurent le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> modules HTTP de (SAM).|  
   
 ### <a name="parent-elements"></a>Éléments parents  
- Aucune  
+ Aucun.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Ajouter un `<system.identityModel.services>` section au fichier de configuration de votre application pour fournir les paramètres pour le SAM et WSFAM.  
   
 > [!IMPORTANT]

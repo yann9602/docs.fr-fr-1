@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 83244e1df239110d86367423b91458aefb5d07a5
-ms.sourcegitcommit: 5bfcb8d341239df251351f318038d31cdc9159d7
+ms.workload: dotnet
+ms.openlocfilehash: 9cc68f4be869a4773b8a6b932d1f6363855fe584
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt; élément
 Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppContext> pour fournir un mécanisme d’annulation d’abonnement aux nouvelles fonctionnalités.  
@@ -50,7 +51,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
   
 ### <a name="value-attribute"></a>valeur d’attribut  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |« nom = valeur »|Un nom de commutateur prédéfinis ainsi que sa valeur (`true` ou `false`). Plusieurs paires nom/valeur de commutateur sont séparés par des points-virgules (« ; »). Pour obtenir la liste de noms prédéfinis de commutateur pris en charge par le .NET Framework, consultez la section Notes.|  
   
@@ -64,7 +65,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  En commençant par le .NET Framework 4.6, la `<AppContextSwitchOverrides>` élément dans un fichier de configuration autorise les appelants dotés d’une API pour déterminer si son application peut tirer parti des nouvelles fonctionnalités ou conserver la compatibilité avec les versions précédentes d’une bibliothèque. Par exemple, si le comportement d’une API a changé entre deux versions d’une bibliothèque, le `<AppContextSwitchOverrides>` élément permet aux appelants de cette API pour désactiver le nouveau comportement sur les versions qui prennent en charge les nouvelles fonctionnalités de la bibliothèque. Pour les applications qui appellent des API dans le .NET Framework, le `<AppContextSwitchOverrides>` élément peut également permettre aux appelants dont les applications ciblent une version antérieure du .NET Framework à adopter les nouvelles fonctionnalités si leur application s’exécute sur une version de .NET Framework qui inclut fonctionnalité.  
   
  Le `value` attribut de la `<AppContextSwitchOverrides>` élément se compose d’une chaîne unique qui se compose d’une ou plusieurs paires nom/valeur délimitée par des points-virgules.  Chaque nom identifie un commutateur de compatibilité, et sa valeur correspondante est une valeur booléenne (`true` ou `false`) qui indique si le commutateur est défini. Par défaut, le commutateur est `false`, et les bibliothèques fournissent la nouvelle fonctionnalité. Ils fournissent uniquement les fonctionnalités antérieures si le commutateur est défini (autrement dit, sa valeur est `true`). Cela permet aux bibliothèques fournir le nouveau comportement d’API existantes tout en permettant aux appelants qui varient selon le comportement précédent refuser les nouvelles fonctionnalités.  

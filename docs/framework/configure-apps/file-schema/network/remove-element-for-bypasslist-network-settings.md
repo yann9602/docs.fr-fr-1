@@ -21,11 +21,12 @@ caps.latest.revision: "16"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: a87632ec9725aa24d085ca6c1bf1e54545b324fd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a385401217c10a316268f48757e46e3d0cfea09c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltremovegt-element-for-bypasslist-network-settings"></a>&lt;Supprimez&gt; , élément pour bypasslist (paramètres réseau)
 Supprime une adresse IP ou le nom DNS de la liste de contournement du proxy.  
@@ -62,7 +63,7 @@ Supprime une adresse IP ou le nom DNS de la liste de contournement du proxy.
 |-----------------|---------------------|  
 |[BypassList](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières décrivant les adresses qui n’utilisent pas un proxy.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `remove` élément supprime des expressions régulières décrivant les adresses IP ou des noms de serveur DNS dans la liste des adresses qui contournent un serveur proxy. Les adresses ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.  
   
  La valeur de la `address` attribut doit être une expression régulière qui décrit un ensemble d’adresses IP ou des noms d’hôte.  

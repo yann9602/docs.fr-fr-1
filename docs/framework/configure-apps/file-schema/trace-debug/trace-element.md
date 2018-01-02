@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 157adb6c7317aa047976cdb9e30711d20c9e543b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d7ddcbdbdbbc2924d4f725d2fd401f873a4cfb0b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttracegt-element"></a>&lt;trace&gt; élément
 Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.  
@@ -55,14 +56,14 @@ Contient les écouteurs qui collectent, stockent et acheminent les messages de t
   
 ## <a name="autoflush-attribute"></a>AutoFlush attribut  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`false`|Ne vide pas automatiquement la mémoire tampon de sortie. Il s'agit de la valeur par défaut.|  
 |`true`|Vide automatiquement la mémoire tampon de sortie.|  
   
 ## <a name="usegloballock-attribute"></a>Attribut d’useGlobalLock  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`false`|N’utilise pas le verrouillage global si l’écouteur est thread-safe ; Sinon, utilise le verrouillage global.|  
 |`true`|Utilise le verrouillage global que l’écouteur soit thread-safe. Il s'agit de la valeur par défaut.|  

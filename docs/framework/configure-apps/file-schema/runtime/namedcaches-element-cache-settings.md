@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bdafddcb05dd50f059c9f6804573beec085a4a2a
-ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
+ms.workload: dotnet
+ms.openlocfilehash: f4c4bd9901b053c96a260435c34ffa3ddd2c7283
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnamedcachesgt-element-cache-settings"></a>&lt;namedCaches&gt; élément (paramètres de Cache)
 Spécifie une collection de paramètres de configuration pour le nommé <xref:System.Runtime.Caching.MemoryCache> instances. Le <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A> propriété fait référence à la collection de paramètres de configuration à partir d’un ou plusieurs `namedCaches` éléments du fichier de configuration.  
@@ -68,7 +69,7 @@ Spécifie une collection de paramètres de configuration pour le nommé <xref:Sy
 |-------------|-----------------|  
 |[\<memoryCache>](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)|Définit un élément qui est utilisé pour configurer un cache basé sur la classe <xref:System.Runtime.Caching.MemoryCache> .|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La section de configuration du cache mémoire du fichier Web.config peut contenir `add`, `remove`, et `clear` d’attributs pour le `namedCaches` collection. Chaque `namedCaches` entrée est identifiée par le `name` attribut.  
   
  Vous pouvez récupérer des instances d’entrées de cache mémoire en référençant les informations contenues dans les fichiers de configuration d’application. Par défaut, seule l’instance de cache par défaut a une entrée dans le fichier de configuration. L’instance de cache par défaut est l’instance qui est retourné à partir de la <xref:System.Runtime.Caching.MemoryCache.Default%2A> propriété.  

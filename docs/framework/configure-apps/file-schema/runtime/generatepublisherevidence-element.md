@@ -16,11 +16,12 @@ caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 78293c396687f9c0c99ffdfbe94cf1f3c548289d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c7f7debed03526dbd7a5b2e24ff8a370921fe020
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltgeneratepublisherevidencegt-element"></a>&lt;generatePublisherEvidence&gt; élément
 Spécifie si le runtime crée <xref:System.Security.Policy.Publisher> preuve de sécurité d’accès du code (CAS).  
@@ -62,7 +63,7 @@ Spécifie si le runtime crée <xref:System.Security.Policy.Publisher> preuve de 
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 >  Dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures, cet élément n’a aucun effet sur le temps de chargement d’assembly. Pour plus d’informations, consultez la section « Simplification de la stratégie sécurité » dans [modifications de sécurité](../../../../../docs/framework/security/security-changes.md).  

@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 3bc8abc019ddb271c8c1246b280be754585bfd61
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f8cd497871d8a58504cf790f84cc7e5a1d4e39b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltbindingredirectgt-element"></a>&lt;bindingRedirect&gt; élément
 Redirige une version d'assembly vers une autre.  
@@ -57,7 +58,7 @@ newVersion="new assembly version"/>
   
 |Élément|Description|  
 |-------------|-----------------|  
-|Aucune||  
+|Aucun.||  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -68,7 +69,7 @@ newVersion="new assembly version"/>
 |`dependentAssembly`|Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez un élément dependentAssembly pour chaque assembly.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Lorsque vous générez une application .NET Framework basée sur un assembly avec nom fort, l'application utilise par défaut cette version de l'assembly au moment de l'exécution, même si une nouvelle version est disponible. Vous pouvez toutefois configurer l'application pour faire en sorte qu'elle s'exécute en utilisant une version plus récente de l'assembly. Pour plus d’informations sur la façon dont le runtime utilise ces fichiers afin de déterminer la version d’assembly à utiliser, consultez [méthode de localisation des assemblys par le Runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
  Vous pouvez rediriger plusieurs versions d'assembly en incluant plusieurs éléments `bindingRedirect` dans un élément `dependentAssembly`. Vous pouvez également rediriger une version plus récente vers une version antérieure de l'assembly.  

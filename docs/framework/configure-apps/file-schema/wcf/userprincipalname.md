@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 616eb07a76da93ff1019ea7e80b5ce3151e6e8a4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 34bfaeb563bd4979bf29a5e45a60730eb38700b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltuserprincipalnamegt"></a>&lt;userPrincipalName&gt;
 Indique le nom d'utilisateur principal (UPN) d'un service à authentifier par le client.  
@@ -51,7 +52,7 @@ Indique le nom d'utilisateur principal (UPN) d'un service à authentifier par le
 |-------------|-----------------|  
 |[\<identité >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Spécifie l'identité du service à authentifier par le client.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Un client [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] sécurisé qui se connecte à un point de terminaison avec cette identité utilise l'UPN pour effectuer l'authentification SSPI avec le point de terminaison.  
   
 ## <a name="example"></a>Exemple  
@@ -68,5 +69,5 @@ Indique le nom d'utilisateur principal (UPN) d'un service à authentifier par le
  <xref:System.ServiceModel.EndpointAddress>  
  <xref:System.ServiceModel.EndpointAddress.Identity%2A>  
  <xref:System.ServiceModel.UpnEndpointIdentity>  
- [L’authentification et identité de Service](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [\<identité >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)

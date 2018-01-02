@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ac20d3da42b150734abbbd36c4ec9fc2e60b6216
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f0da0e8afb2a9f89116b0d30992ce27b8520271d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwebrequestmodulesgt-element-network-settings"></a>&lt;webRequestModules&gt; élément (paramètres réseau)
 Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.  
@@ -43,7 +44,7 @@ Spécifie les modules à utiliser pour demander des informations à des hôtes r
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -59,7 +60,7 @@ Spécifie les modules à utiliser pour demander des informations à des hôtes r
 |-----------------|---------------------|  
 |[System.NET](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `webRequestModules` élément inscrit les descendants de le <xref:System.Net.WebRequest> classe pour gérer les demandes d’informations sur les hôtes de réseau. Les modules de demande Web doivent implémenter le <xref:System.Net.IWebRequestCreate> interface.  
   
  Le .NET Framework inclut des modules de demande Web pour les URI commençant par http://, https:// et file://. Vous pouvez substituer les modules par défaut qu’en inscrivant un module personnalisé dans le fichier de configuration.  

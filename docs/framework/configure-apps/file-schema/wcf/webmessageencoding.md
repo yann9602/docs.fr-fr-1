@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e9629ecbe744ac1f4bbd44e22ac42a3e81fff27a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b3b5a8ff5fdf9e3da8824e7eb9443f71613899dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwebmessageencodinggt"></a>&lt;webMessageEncoding&gt;
 Permet de lire et d'écrire du contenu XML en texte brut, les encodages de message JSON (JavaScript Objet Notation) et du contenu binaire brut dans une liaison [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
@@ -61,7 +62,7 @@ writeEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />
 |-------------|-----------------|  
 |[\<liaison >](../../../../../docs/framework/misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L'encodage est le processus de transformation d'un message en une séquence d'octets. Le décodage est le processus inverse. Ces processus nécessitent l'encodage de caractères à titre de spécification.  
   
  L'élément `webMessageEncoding` fonctionne par délégation à une série d'encodeurs internes afin de gérer les données XML de texte brut, les encodages JSON et les données binaires brutes. Cette délégation a lieu par le biais d'un encodeur de message composite.  
@@ -91,7 +92,7 @@ writeEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />
  <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
  <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>  
  [Encodage de message](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
- [Choix d’un encodeur de Message](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [Sélection d’un encodeur de message](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  

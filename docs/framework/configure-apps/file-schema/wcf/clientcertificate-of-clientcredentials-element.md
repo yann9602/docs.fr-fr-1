@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b42167491de72eff5f17dfd8f25ad862c118c23f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1b5603ad7402e46f8b977fe21b0ad1d43c4bfbf8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltclientcertificategt-of-ltclientcredentialsgt-element"></a>&lt;clientCertificate&gt;, élément de &lt;clientCredentials&gt;
 Définit un certificat X.509 utilisé pour authentifier un client à un service.  
@@ -60,7 +61,7 @@ X509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
 |-------------|-----------------|  
 |[\<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Indique les informations d'identification utilisées pour authentifier le client auprès d'un service.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cet élément de configuration spécifie le certificat utilisé pour authentifier le client avec cet élément. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Comment : spécifier des valeurs d’informations d’identification de Client](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
 ## <a name="see-also"></a>Voir aussi  
@@ -74,4 +75,4 @@ X509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
  [Guide pratique pour spécifier les valeurs d’informations d’identification du client](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md)  
  [Sécurisation des clients](../../../../../docs/framework/wcf/securing-clients.md)  
  [Utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Sécurisation des Services et Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+ [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 43f0d30f8c18c4755f31d0c851c773207bc15b78
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 391e5f2a7d9d8076ba9e9a3057e3d8899e2ce672
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltremovegt-element-for-webrequestmodules-network-settings"></a>&lt;Supprimez&gt; , élément pour webRequestModules (paramètres réseau)
 Supprime un module de demande Web personnalisé de l’application.  
@@ -61,7 +62,7 @@ Supprime un module de demande Web personnalisé de l’application.
 |-----------------|---------------------|  
 |[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `remove` élément supprime le module de demande Web inscrit pour le préfixe URI spécifié.  
   
  La valeur de la `prefix` attribut doit-elle être les premiers caractères d’un URI valide, par exemple, « http » ou « http://www.contoso.com ».  

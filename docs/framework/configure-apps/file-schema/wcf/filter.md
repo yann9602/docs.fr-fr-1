@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: af2095289d5f711733c71238b855c685114d1997
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 186c511cd8a69cef5e30e369641628a10a0972d7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltfiltergt"></a>&lt;filtre&gt;
 
@@ -59,7 +60,7 @@ Aucun.
 
 | Élément | Description |
 | ------- | ----------- |
-| [\<routage >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | Section de configuration pour définir un jeu de filtres de routage, déterminant le type de [!INCLUDE[ indigo1](../../../../../includes/indigo1-md.md)]<xref:System.ServiceModel.Dispatcher.MessageFilter> à utiliser lors de l'évaluation des messages entrants. |
+| [\<routage >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | Une section de configuration pour définir un ensemble de filtres de routage, qui détermine le type de [!INCLUDE[ indigo1](../../../../../includes/indigo1-md.md)] <xref:System.ServiceModel.Dispatcher.MessageFilter> à utiliser lors de l’évaluation des messages entrants. |
 
 ## <a name="see-also"></a>Voir aussi
 

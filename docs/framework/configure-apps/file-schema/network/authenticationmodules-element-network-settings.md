@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: fe2e1757a3e2da5c2aa6084c0eb21164de3ece0e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e7fcaee557884d0c24b7bb15f2424a9e0a413439
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltauthenticationmodulesgt-element-network-settings"></a>&lt;authenticationModules&gt; élément (paramètres réseau)
 Spécifie les modules utilisés pour authentifier les demandes du réseau.  
@@ -43,7 +44,7 @@ Spécifie les modules utilisés pour authentifier les demandes du réseau.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -59,7 +60,7 @@ Spécifie les modules utilisés pour authentifier les demandes du réseau.
 |-----------------|---------------------|  
 |[System.NET](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `authenticationModule` élément spécifie les modules d’authentification qui effectuent le processus d’authentification avec un serveur. Un module d’authentification doit implémenter le <xref:System.Net.IAuthenticationModule> interface.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  

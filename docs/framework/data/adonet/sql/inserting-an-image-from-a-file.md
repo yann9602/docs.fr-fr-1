@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a780e35d9eb5420138587102aee753e96a8eff9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb264374b3f9ff4e1f424f69565751f69ed810e0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="inserting-an-image-from-a-file"></a>Insertion d'une image à partir d'un fichier
 Vous pouvez écrire des objets binaires volumineux (BLOB) dans une base de données sous forme de données de type binaire ou caractère en fonction du type du champ de votre source de données. BLOB est un terme générique qui fait référence aux types de données `text`, `ntext` et `image` qui contiennent généralement des documents et des images.  
@@ -141,8 +142,8 @@ public static byte[] GetPhoto(string filePath)
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide des commandes pour modifier des données](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
- [Extraction de données binaires](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
+ [Utilisation des commandes pour modifier les données](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+ [Récupération de données binaires](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
  [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- [Mappages de Type de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
+ [Mappages de types de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

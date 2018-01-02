@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ff083cfbcdfa772bb5904f4311d95e399c22c97e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b1ca0d5ae73d01e5bbb719f7bcc9a3f5a19fc291
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-of-ltfiltersgt"></a>&lt;add&gt; de &lt;filters&gt;
 Filtre XPath qui spécifie le type de message à enregistrer.  
@@ -54,7 +55,7 @@ Filtre XPath qui spécifie le type de message à enregistrer.
 |-------------|-----------------|  
 |[\<filtres >](../../../../../docs/framework/configure-apps/file-schema/wcf/filters.md)|Contient une collection de filtres XPath utilisés pour contrôler le type de message enregistré.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les filtres sont appliqués uniquement à la couche de transport, spécifiée par `logMessagesAtTransportLevel` (valeur `true`). Le niveau de service et l'enregistrement du message incorrect ne sont pas affectés par les filtres.  
   
  Pour ajouter un filtre à la collection, utilisez le mot clé `add`. Lorsqu'un ou plusieurs filtres sont définis, seuls les messages qui correspondent au moins à l'un des filtres sont enregistrés. Si aucun filtre n'est défini, tous les messages passent.  
@@ -86,6 +87,6 @@ Filtre XPath qui spécifie le type de message à enregistrer.
  <xref:System.ServiceModel.Configuration.MessageLoggingElement.Filters%2A>  
  <xref:System.ServiceModel.Configuration.XPathMessageFilterElement>  
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>  
- [Configuration de la journalisation de Message](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
- [Configuration de la journalisation de Message](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
+ [Configuration de la journalisation des messages](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
+ [Configuration de la journalisation des messages](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
  [\<enregistrement des messages >](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)

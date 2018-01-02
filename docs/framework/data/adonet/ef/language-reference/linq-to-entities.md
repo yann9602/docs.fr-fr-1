@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 685651f4291a11b857da82a63068e4bd2333275c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c1ef47e6b4f584e0a49482d9eb2ed7bf14602a03
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 LINQ to Entities assure une prise en charge de la technologie LINQ (Language Integrated Query), ce qui permet aux développeurs d’écrire des requêtes par rapport au modèle conceptuel Entity Framework à l’aide du langage Visual Basic ou Visual C#. Les requêtes exécutées avec Entity Framework sont représentées par des requêtes d'arborescence de commandes, lesquelles s'exécutent par rapport au contexte de l'objet. LINQ to Entities convertit les requêtes LINQ (Language-Integrated Query) en requêtes d'arborescence de commandes, exécute les requêtes avec Entity Framework, puis retourne les objets qui peuvent être utilisés aussi bien par Entity Framework que par LINQ. Voici le processus de création et d'exécution d'une requête LINQ to Entities :  
@@ -86,20 +87,20 @@ LINQ to Entities assure une prise en charge de la technologie LINQ (Language Int
   
  [Requêtes compilées (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md)  
   
- [Exécution des requêtes](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md)  
+ [Exécution de la requête](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md)  
   
  [Résultats de requête](../../../../../../docs/framework/data/adonet/ef/language-reference/query-results.md)  
   
  [Opérateurs de requête standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)  
   
- [Méthode CLR pour le mappage de fonction canonique](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)  
+ [Mappage de la méthode CLR aux fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md)  
   
- [Méthodes de prise en charge et non pris en charge de LINQ (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
+ [Méthodes LINQ prises en charge et non prises en charge (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
   
- [Problèmes connus et des considérations dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
+ [Problèmes connus et éléments à prendre en compte dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Problèmes connus et des considérations dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
+ [Problèmes connus et éléments à prendre en compte dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)  
  [LINQ (Language Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
  [LINQ et ADO.NET](../../../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
  [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)

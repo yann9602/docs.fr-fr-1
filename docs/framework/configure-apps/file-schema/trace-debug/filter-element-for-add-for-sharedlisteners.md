@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ce4134d9059d1f1d5bd2e435a3cc87d3fbccd422
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bc3f97619c8ec28a61a9a51b431581383558a7d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltfiltergt-element-for-ltaddgt-for-ltsharedlistenersgt"></a>&lt;filtre&gt; élément &lt;ajouter&gt; pour &lt;sharedListeners&gt;
 Ajoute un filtre à un écouteur dans la collection `sharedListeners`.  
@@ -64,7 +65,7 @@ Ajoute un filtre à un écouteur dans la collection `sharedListeners`.
 |`sharedListeners`|Collection d’écouteurs une source ou un élément de la trace peut faire référence.|  
 |`add`|Ajoute un écouteur à la **sharedListeners** collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si un écouteur est défini dans un `<add>` élément de la `<sharedListeners>` élément, le filtre de cet écouteur doit être défini dans un `<filter>` élément qui est un enfant de le `<add>` élément.  
   
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et le fichier de configuration d’application.  

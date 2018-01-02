@@ -23,16 +23,17 @@ caps.latest.revision: "42"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9bd09d0da70869ba193b414d8a2ce6c25cbb6b38
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload: dotnet
+ms.openlocfilehash: 7e4d336992be216178b1237c9f43bffb3de61fba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="add-ins-and-extensibility"></a>Compléments et extensibilité
 <a name="top"></a> Les compléments fournissent des fonctionnalités ou des services étendus pour une application hôte. Le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] fournit un modèle de programmation que les développeurs peuvent utiliser pour développer des compléments et les activer dans leur application hôte. Le modèle permet de réaliser ceci en construisant un pipeline de communication entre l'hôte et le complément. Le modèle est implémenté à l'aide des types des espaces de noms <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>et <xref:System.AddIn.Contract> .  
   
- Cette vue d'ensemble contient les sections suivantes :  
+ Cette vue d'ensemble contient les sections suivantes :  
   
 -   [Modèle de complément](#addin_model)  
   

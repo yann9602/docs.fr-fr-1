@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: c5b30f1dc3ccade3028c31c57ffdab521802f086
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 272a4262295b5dd67414dd0ef6523f90b2125836
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcodebasegt-element"></a>&lt;codeBase&gt; élément
 Spécifie où le common language runtime peut trouver un assembly.  
@@ -55,7 +56,7 @@ href="URL of assembly"/>
   
 ## <a name="version-attribute"></a>Attribut de version  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |Les valeurs valides pour chaque partie du numéro de version sont compris entre 0 et 65535.|Non applicable.|  
   
@@ -71,7 +72,7 @@ href="URL of assembly"/>
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`System.web`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le runtime doit utiliser le  **\<codeBase >** défini dans un fichier de configuration machine ou d’un fichier de stratégie d’éditeur, le fichier doit également rediriger la version d’assembly. Fichiers de configuration d’application peuvent avoir un paramètre codebase sans rediriger la version d’assembly. Après avoir déterminé la version de l’assembly à utiliser, le runtime applique le paramètre de la base de code à partir du fichier qui détermine la version. Si aucun code de base n’est indiquée, le runtime détecte l’assembly de manière habituelle.  
   
  Si l’assembly a un nom fort, le paramètre codebase peut être n’importe où sur l’intranet local ou sur Internet. Si l’assembly est un assembly privé, le paramètre codebase doit être un chemin d’accès relatif au répertoire de l’application.  

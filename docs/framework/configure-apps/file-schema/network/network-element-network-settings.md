@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 679351fd2d6f0727d40bd57c9ef2016738462eb7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d3e99a10403a735383ee5e1a78c1f85ac7fd8281
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnetworkgt-element-network-settings"></a>&lt;réseau&gt; élément (paramètres réseau)
 Configure les options réseau pour un serveur SMTP Simple Mail Transport Protocol () externe.  
@@ -74,7 +75,7 @@ Configure les options réseau pour un serveur SMTP Simple Mail Transport Protoco
 |-------------|-----------------|  
 |[\<SMTP >, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Configure les options d’envoi du courrier SMTP Simple Mail Transport Protocol ().|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Certains serveurs SMTP exigent que vous vous authentifier auprès du serveur avant des utiliser. Si vous souhaitez vous authentifier en utilisant les informations d’identification de réseau par défaut sur votre ordinateur hôte, définissez le `defaultCredentials` attribut `true`. Le <xref:System.Net.Configuration.SmtpNetworkElement.DefaultCredentials%2A?displayProperty=nameWithType> propriété peut être utilisée pour obtenir la valeur actuelle de la `defaultCredentials` attribut à partir des fichiers de configuration applicables.  
   
  Vous pouvez également utiliser l’authentification de base (nom d’utilisateur et mot de passe) pour vous authentifier auprès du serveur SMTP. Pour utiliser cette option, vous devez spécifier un nom d’utilisateur valide et un mot de passe pour le serveur SMTP spécifié.  

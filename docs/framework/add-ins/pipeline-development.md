@@ -20,11 +20,12 @@ caps.latest.revision: "31"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4991fc65a48d620d30d09c44f1a30c2d1839071e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0ad577145c26b9c43e8b7fb3b61f27f374ff9298
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pipeline-development"></a>Développement de pipeline
 Le pipeline de complément est le chemin d’accès des segments de pipeline que l’application hôte et son complément doivent utiliser pour communiquer entre eux.  
@@ -51,7 +52,7 @@ Pipeline de complément avec types
   
 |Segment de pipeline|Description|  
 |----------------------|-----------------|  
-|Host|L’assembly d’application qui crée une instance d’un complément.|  
+|Hôte|L’assembly d’application qui crée une instance d’un complément.|  
 |Vue hôte du complément|Représente l’affichage de l’application hôte des types d’objets et méthodes utilisés pour communiquer avec le complément. La vue hôte est une interface ou une classe de base abstraite.|  
 |Adaptateur côté hôte|Un assembly avec une ou plusieurs classes qui adapte des méthodes vers et depuis le contrat.<br /><br /> Ce segment de pipeline est identifié à l’aide de la <xref:System.AddIn.Pipeline.HostAdapterAttribute> attribut.<br /><br /> Les assemblys composés de plusieurs modules ne sont pas pris en charge.|  
 |Contrat|Une interface qui est dérivée de la <xref:System.AddIn.Contract.IContract> interface et qui définit le protocole pour communiquer des types entre l’hôte et son complément.<br /><br /> Ce segment de pipeline est identifié en définissant le <xref:System.AddIn.Pipeline.AddInContractAttribute> attribut.|  
@@ -84,7 +85,7 @@ Chemin d’activation du complément à l’hôte
 ## <a name="walkthroughs"></a>Procédures pas à pas  
  Il existe trois rubriques de procédure pas à pas qui décrivent comment créer des pipelines à l’aide de Visual Studio :  
   
--   [Procédure pas à pas : Création d’une Application Extensible](../../../docs/framework/add-ins/walkthrough-create-extensible-app.md)  
+-   [Procédure pas à pas : création d’une application extensible](../../../docs/framework/add-ins/walkthrough-create-extensible-app.md)  
   
      Décrit un complément calculatrice qui effectue l’addition, soustraction, multiplication et calculs de division pour l’hôte.  
   

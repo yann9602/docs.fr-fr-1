@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 0fe32b20b9b0a0217ecef36f65ae1ee4084e92ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 97eab03079ac7881e69ba69d324287d287eb4ecf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt-element-for-connectionmanagement-network-settings"></a>&lt;Désactivez&gt; , élément pour connectionManagement (paramètres réseau)
 Efface la liste de gestion des connexions.  
@@ -45,7 +46,7 @@ Efface la liste de gestion des connexions.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -56,7 +57,7 @@ Efface la liste de gestion des connexions.
 |-----------------|---------------------|  
 |[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `clear` élément efface toutes les entrées de la liste de gestion des connexions.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  

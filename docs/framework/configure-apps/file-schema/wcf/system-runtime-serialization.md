@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8a6eb2b152f2ab11bbe0e08ff1ad22f94d45057e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ab66252ebc5b87c197b3e4ac7b6def9355e5f201
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsystemruntimeserializationgt"></a>&lt;System.Runtime.Serialization&gt;
 Représente l'élément racine correspondant à la section d'espace de noms <xref:System.Runtime.Serialization> et contient des éléments permettant de définir les options du <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -47,7 +48,7 @@ Représente l'élément racine correspondant à la section d'espace de noms <xre
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -63,5 +64,5 @@ Représente l'élément racine correspondant à la section d'espace de noms <xre
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.Serialization>  
- [À l’aide de contrats de données](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Types connus de contrat de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+ [Utilisation de contrats de données](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

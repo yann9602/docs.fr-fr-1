@@ -20,11 +20,12 @@ caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 740b08806dff65d3ce1b8de378138c2647944fd4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0dadf0e07f5e3a9f9152ae7cd57c62721402bff0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltassemblyidentitygt-element-for-ltruntimegt"></a>&lt;assemblyIdentity&gt; , élément pour &lt;runtime&gt;
 Contient des informations d’identification sur l’assembly.  
@@ -58,7 +59,7 @@ culture="assembly culture"/>
   
 ## <a name="processorarchitecture-attribute"></a>processorArchitecture, attribut  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`amd64`|Processeur AMD 64 bits uniquement.|  
 |`ia64`|Processeur Intel 64 bits uniquement.|  
@@ -77,7 +78,7 @@ culture="assembly culture"/>
 |`dependentAssembly`|Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez une `<dependentAssembly>` élément pour chaque assembly.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Chaque  **\<dependentAssembly >** l’élément doit avoir un  **\<assemblyIdentity >** élément enfant.  
   
  Si le `processorArchitecture` attribut est présent, le `<assemblyIdentity>` élément s’applique uniquement à l’assembly avec l’architecture de processeur correspondante. Si le `processorArchitecture` attribut n’est pas présent, le `<assemblyIdentity>` élément peut s’appliquer à un assembly avec une architecture de processeur.  

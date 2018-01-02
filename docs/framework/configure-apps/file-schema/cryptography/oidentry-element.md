@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 12c3b87f1cec72798ea92357f34ecc25b7e6edcf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2d6dfe38f8e632a31f7a20191678f1fff7fd88ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltoidentrygt-element"></a>&lt;oidEntry&gt; élément
 Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.  
@@ -62,7 +63,7 @@ Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.
 |`mscorlib`|Contient le `cryptographySettings` élément.|  
 |`oidMap`|Contient les mappages de d’identificateur d’objet ASN.1 aux classes.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  OID ASN.1 identifient les algorithmes dans certains formats de chiffrement. Mapper des identificateurs d’objet aux noms conviviaux des algorithmes que vous souhaitez identifier.  
   
 ## <a name="example"></a>Exemple  

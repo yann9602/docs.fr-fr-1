@@ -20,11 +20,12 @@ caps.latest.revision: "70"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: c4c64de42f82590e1e8dc24afa46f66c3efb35b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 547e6a5b800f1adf5ba9835470d2dd405ce97b14
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltruntimegt-element"></a>&lt;runtime&gt; élément
 Fournit des informations utilisées par le common language runtime pour configurer des applications.  
@@ -43,7 +44,7 @@ Fournit des informations utilisées par le common language runtime pour configur
  Les sections suivantes décrivent les éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -94,7 +95,7 @@ Fournit des informations utilisées par le common language runtime pour configur
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les éléments enfants dans le [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section d’un fichier de configuration sont utilisés par le common language runtime pour configurer la façon dont une application s’exécute. Par exemple, le [ \<gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) élément détermine si le garbage collector utilise le garbage collection de station de travail ou le garbage collection côté serveur, le [ \< UseRandomizedStringHashAlgorithm >](../../../../../docs/framework/configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md) élément détermine si le common language runtime calcule les codes de hachage de chaîne sur chaque application ou d’une base par domaine d’application et le `AppContextSwitchOverrides` élément permet aux utilisateurs de bibliothèque Pour participer ou refuser la fonctionnalité modifiée fournie par une bibliothèque.  
   
  Les éléments dans le [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section sont lus automatiquement par le common language runtime au démarrage de l’application. Vous pouvez également définir le fichier de configuration pour un domaine d’application non-par défaut en fournissant son nom à la <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> propriété ; ses paramètres sont lus automatiquement lorsque le domaine d’application est chargé. Vous devez rarement, voire jamais, ont besoin de directement lire les paramètres dans le [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section dans le fichier de configuration de votre application.  

@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 6170b59e87948225708c9e697cba1542d756d2f4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4b360b206586b263627ab6f6b7e0309f3055f38a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltremovegt-element-for-ltnamedcachesgt"></a>&lt;supprimer&gt; , élément pour &lt;namedCaches&gt;
 Supprime une entité de cache nommé de la collection `namedCaches` d’un cache mémoire.  
@@ -57,7 +58,7 @@ Supprime une entité de cache nommé de la collection `namedCaches` d’un cache
 |-------------|-----------------|  
 |[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Contient une collection de paramètres de configuration pour le nommé <xref:System.Runtime.Caching.MemoryCache> instances.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `remove` élément supprime un `namedCache` entrée à partir de la collection de cache nommé pour un cache mémoire.  
   
 ## <a name="see-also"></a>Voir aussi  

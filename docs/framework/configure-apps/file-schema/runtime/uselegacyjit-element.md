@@ -15,11 +15,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 735733fc33a21c2f275c1ea9894c43558f01626e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9d2a71e44db2d6e85ae730f4603bf191f54525c2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltuselegacyjitgt-element"></a>&lt;useLegacyJit&gt; élément
 
@@ -49,14 +50,14 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
   
 ### <a name="enabled-attribute"></a>attribut Enabled  
   
-| Valeur | Description                                                                                                         |  
+| Value | Description                                                                                                         |  
 | ----- | ------------------------------------------------------------------------------------------------------------------- |  
 | 0     | Le common language runtime utilise le nouveau compilateur JIT 64 bits inclus dans le .NET Framework 4.6 et versions ultérieures. |  
 | 1     | Le common language runtime utilise le compilateur JIT 64 bits plus anciens.                                                     |  
   
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune
+Aucun.
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -65,7 +66,7 @@ Aucune
 | `configuration` | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |  
 | `runtime`       | Contient des informations sur les options d'initialisation du runtime.                                                        |  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
 
 À compter de .NET Framework 4.6, le common language runtime utilise un nouveau compilateur 64 bits pour la compilation juste à temps (JIT) par défaut. Dans certains cas, cela peut entraîner une différence de comportement du code d’application qui a été compilé juste-à la version précédente du compilateur JIT 64 bits. En définissant le `enabled` attribut de la `<useLegacyJit>` élément `1`, vous pouvez désactiver le nouveau compilateur JIT 64 bits et à la place compiler votre application à l’aide du compilateur JIT 64 bits hérité.  
   

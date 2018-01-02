@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 6170c02296859d9c47e5288f287a4371d7cb0c56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b983c5eb80f958098b6991970559d077b97a0759
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltremovegt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;supprimer&gt; élément &lt;écouteurs&gt; pour &lt;source&gt;
 Supprime un écouteur de la collection `Listeners` pour une source de trace.  
@@ -61,7 +62,7 @@ Supprime un écouteur de la collection `Listeners` pour une source de trace.
 |`source`|Spécifie une source de trace qui lance des messages de traçage.|  
 |`listeners`|Spécifie les écouteurs de collectent, stocker et acheminer les messages.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `<remove>` élément supprime un écouteur spécifié de la `Listeners` collection pour une source de trace.  
   
  Vous pouvez supprimer un élément à partir de la `Listeners` collection pour une source de trace par programme en appelant le <xref:System.Diagnostics.TraceListenerCollection.Remove%2A> méthode sur le <xref:System.Diagnostics.TraceSource.Listeners%2A> propriété de la <xref:System.Diagnostics.TraceSource> instance.  

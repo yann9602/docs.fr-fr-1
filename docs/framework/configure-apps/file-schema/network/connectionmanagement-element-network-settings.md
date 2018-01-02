@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e3380ce1e8e798740214feee0e76d9949caa6bc9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 700d06d22c76762c80ea877006a8ac3789052b14
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltconnectionmanagementgt-element-network-settings"></a>&lt;connectionManagement&gt; élément (paramètres réseau)
 Spécifie le nombre maximal de connexions à un hôte réseau.  
@@ -43,7 +44,7 @@ Spécifie le nombre maximal de connexions à un hôte réseau.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -59,7 +60,7 @@ Spécifie le nombre maximal de connexions à un hôte réseau.
 |-----------------|---------------------|  
 |[System.NET](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `connectionManagement` élément définit le nombre maximal de connexions à un serveur ou un groupe de serveurs.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  

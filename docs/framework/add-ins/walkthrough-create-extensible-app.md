@@ -22,11 +22,12 @@ caps.latest.revision: "32"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6609f30844421f94965fbe05114db96ed8edbb31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ac4b6fc2ae36d848306178f281cceeeb0654ec03
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>Procédure pas à pas : création d'une application extensible
 Cette procédure pas à pas explique comment créer un pipeline pour un complément qui exécute des fonctions de calculatrice simple. Il ne présente pas un scénario réel ; au lieu de cela, il illustre les fonctionnalités de base d’un pipeline et la manière dont un complément peut fournir des services pour un ordinateur hôte.  
@@ -57,7 +58,7 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
   
  La version 2 de la calculatrice de complément fournit des possibilités de calcul plus et montre comment le contrôle de version. Il est décrit dans [procédure pas à pas : l’activation de la compatibilité descendante en tant que vos modifications de l’hôte](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Les éléments suivants sont nécessaires pour effectuer cette procédure pas à pas :  
   
 -   [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].  
@@ -327,7 +328,7 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
   
 1.  Pour chaque projet dans la solution, utilisez la **générer** onglet de **propriétés du projet** (le **compiler** onglet dans Visual Basic) pour définir la valeur de la **chemin de sortie**  (le **chemin de sortie de génération** en Visual Basic). Si vous avez nommé votre dossier d’application `MyApp`, par exemple, vos projets seraient générés dans les dossiers suivants :  
   
-    |Projet|Chemin d'accès|  
+    |Projet|Chemin d’accès|  
     |-------------|----------|  
     |AddInCalcV1|MyApp\Pipeline\AddIns\CalcV1|  
     |Calc1AddInSideAdapter|MyApp\Pipeline\AddInSideAdapters|  
@@ -367,4 +368,4 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
  [Procédure pas à pas : Passage de Collections entre les hôtes et les compléments](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)  
  [Exigences de développement de pipeline](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
  [Contrats, les vues et les adaptateurs](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c)  
- [Pipeline Development](../../../docs/framework/add-ins/pipeline-development.md)
+ [Développement de pipeline](../../../docs/framework/add-ins/pipeline-development.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2558423b412333a4d6ac9f650ad8ff3dab449d74
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c96537cad59034578d1284f7dc432e5775f3730b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltusesmallinternalthreadstacksgt-element"></a>&lt;UseSmallInternalThreadStacks&gt; élément
 Demandes de réduire la mémoire que le common language runtime (CLR) utilisent en spécifiant des tailles de pile explicites lorsqu’il crée certains threads qu’il utilise en interne, au lieu d’utiliser la taille de pile par défaut pour ces threads.  
@@ -49,7 +50,7 @@ Demandes de réduire la mémoire que le common language runtime (CLR) utilisent 
 |Valeur|Description|  
 |-----------|-----------------|  
 |true|Demander des tailles de pile explicite.|  
-|false|Utilisez la taille de pile par défaut. Ceci est la valeur par défaut pour le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
+|False|Utilisez la taille de pile par défaut. Ceci est la valeur par défaut pour le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -61,7 +62,7 @@ Demandes de réduire la mémoire que le common language runtime (CLR) utilisent 
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cet élément de configuration est utilisé pour demander l’utilisation réduite de la mémoire virtuelle dans un processus, car les tailles de threads explicites que le CLR utilise pour ses threads internes, si la demande est honorée, sont plus petites que la taille par défaut.  
   
 > [!IMPORTANT]

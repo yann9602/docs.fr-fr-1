@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 181e6a9458754934d6b3b27a31c2cf2dd3455f52
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ed3e933e1c3468a09b1d6b089b4abf52dad85017
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttransportgt-of-ltnetpeertcpbindinggt"></a>&lt;transport&gt; de &lt;netPeerTcpBinding&gt;
 Spécifie les paramètres de sécurité de niveau transport lors de l’utilisation du [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md).  
@@ -58,7 +59,7 @@ Spécifie les paramètres de sécurité de niveau transport lors de l’utilisat
 |Mot de passe|L'authentification du transport de canal homologue requiert un mot de passe correct.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -71,7 +72,7 @@ Spécifie les paramètres de sécurité de niveau transport lors de l’utilisat
  <xref:System.ServiceModel.PeerSecuritySettings.Transport%2A>  
  <xref:System.ServiceModel.Configuration.PeerSecurityElement.Transport%2A>  
  <xref:System.ServiceModel.PeerTransportSecuritySettings>  
- [Sécurisation des Services et Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
