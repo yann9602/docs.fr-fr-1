@@ -13,22 +13,23 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 55c8b9a01eaf53105968e044aecb7e38ad691aac
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6c9cbdb61152a5315aaf919e3a3c58d9329449e3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ltdiscoveryclientgt"></a><span data-ttu-id="93523-102">&lt;discoveryClient&gt;</span><span class="sxs-lookup"><span data-stu-id="93523-102">&lt;discoveryClient&gt;</span></span>
-<span data-ttu-id="93523-103">Élément de configuration qui crée une liaison personnalisée permettant à une application cliente de rechercher automatiquement un service détectable et de trouver son adresse au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="93523-103">A configuration element for creating a custom binding that enables a client application to automatically search for a discoverable service and find its address at runtime.</span></span>  
+# <a name="ltdiscoveryclientgt"></a><span data-ttu-id="60e95-102">&lt;discoveryClient&gt;</span><span class="sxs-lookup"><span data-stu-id="60e95-102">&lt;discoveryClient&gt;</span></span>
+<span data-ttu-id="60e95-103">Élément de configuration qui crée une liaison personnalisée permettant à une application cliente de rechercher automatiquement un service détectable et de trouver son adresse au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="60e95-103">A configuration element for creating a custom binding that enables a client application to automatically search for a discoverable service and find its address at runtime.</span></span>  
   
-<span data-ttu-id="93523-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="93523-104">\<system.serviceModel></span></span>  
-<span data-ttu-id="93523-105">\<liaisons ></span><span class="sxs-lookup"><span data-stu-id="93523-105">\<bindings></span></span>  
-<span data-ttu-id="93523-106">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="93523-106">\<customBinding></span></span>  
-<span data-ttu-id="93523-107">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="93523-107">\<binding></span></span>  
-<span data-ttu-id="93523-108">\<discoveryClient ></span><span class="sxs-lookup"><span data-stu-id="93523-108">\<discoveryClient></span></span>  
+<span data-ttu-id="60e95-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="60e95-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="60e95-105">\<liaisons ></span><span class="sxs-lookup"><span data-stu-id="60e95-105">\<bindings></span></span>  
+<span data-ttu-id="60e95-106">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="60e95-106">\<customBinding></span></span>  
+<span data-ttu-id="60e95-107">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="60e95-107">\<binding></span></span>  
+<span data-ttu-id="60e95-108">\<discoveryClient ></span><span class="sxs-lookup"><span data-stu-id="60e95-108">\<discoveryClient></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="93523-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="93523-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="60e95-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="60e95-109">Syntax</span></span>  
   
 ```xml  
 <discoveryClient discoveryEndpoint="String" >
@@ -44,27 +45,27 @@ ms.lasthandoff: 12/02/2017
 </discoveryClient>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="93523-110">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="93523-110">Attributes and Elements</span></span>  
- <span data-ttu-id="93523-111">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="93523-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="60e95-110">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="60e95-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="60e95-111">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="60e95-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="93523-112">Attributs</span><span class="sxs-lookup"><span data-stu-id="93523-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="60e95-112">Attributs</span><span class="sxs-lookup"><span data-stu-id="60e95-112">Attributes</span></span>  
   
-|<span data-ttu-id="93523-113">Attribut</span><span class="sxs-lookup"><span data-stu-id="93523-113">Attribute</span></span>|<span data-ttu-id="93523-114">Description</span><span class="sxs-lookup"><span data-stu-id="93523-114">Description</span></span>|  
+|<span data-ttu-id="60e95-113">Attribut</span><span class="sxs-lookup"><span data-stu-id="60e95-113">Attribute</span></span>|<span data-ttu-id="60e95-114">Description</span><span class="sxs-lookup"><span data-stu-id="60e95-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="93523-115">discoveryEndpoint</span><span class="sxs-lookup"><span data-stu-id="93523-115">discoveryEndpoint</span></span>|<span data-ttu-id="93523-116">Chaîne qui contient le nom du point de terminaison de découverte permettant à une application cliente de rechercher automatiquement un service détectable et de trouver son adresse au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="93523-116">A string that contains the name of the Discovery Endpoint that enables a client application to automatically search for a discoverable service and find its address at runtime.</span></span>|  
+|<span data-ttu-id="60e95-115">discoveryEndpoint</span><span class="sxs-lookup"><span data-stu-id="60e95-115">discoveryEndpoint</span></span>|<span data-ttu-id="60e95-116">Chaîne qui contient le nom du point de terminaison de découverte permettant à une application cliente de rechercher automatiquement un service détectable et de trouver son adresse au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="60e95-116">A string that contains the name of the Discovery Endpoint that enables a client application to automatically search for a discoverable service and find its address at runtime.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="93523-117">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="93523-117">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="60e95-117">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="60e95-117">Child Elements</span></span>  
   
-|<span data-ttu-id="93523-118">Élément</span><span class="sxs-lookup"><span data-stu-id="93523-118">Element</span></span>|<span data-ttu-id="93523-119">Description</span><span class="sxs-lookup"><span data-stu-id="93523-119">Description</span></span>|  
+|<span data-ttu-id="60e95-118">Élément</span><span class="sxs-lookup"><span data-stu-id="60e95-118">Element</span></span>|<span data-ttu-id="60e95-119">Description</span><span class="sxs-lookup"><span data-stu-id="60e95-119">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="93523-120">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="93523-120">\<standardEndpoints></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|<span data-ttu-id="93523-121">Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte.</span><span class="sxs-lookup"><span data-stu-id="93523-121">A configuration element that supplies a set of criteria used by a client application to search for a discovery service.</span></span> <span data-ttu-id="93523-122">Critères peuvent être regroupés en critères de recherche (spécifiant les services que vous recherchez) et recherchez les critères d’arrêt (la durée pendant laquelle la recherche).</span><span class="sxs-lookup"><span data-stu-id="93523-122">Criteria can be grouped into search criteria (specifying what services you’re looking for) and find termination criteria (how long the search should last).</span></span>|  
+|[<span data-ttu-id="60e95-120">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="60e95-120">\<standardEndpoints></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|<span data-ttu-id="60e95-121">Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte.</span><span class="sxs-lookup"><span data-stu-id="60e95-121">A configuration element that supplies a set of criteria used by a client application to search for a discovery service.</span></span> <span data-ttu-id="60e95-122">Critères peuvent être regroupés en critères de recherche (spécifiant les services que vous recherchez) et recherchez les critères d’arrêt (la durée pendant laquelle la recherche).</span><span class="sxs-lookup"><span data-stu-id="60e95-122">Criteria can be grouped into search criteria (specifying what services you’re looking for) and find termination criteria (how long the search should last).</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="93523-123">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="93523-123">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="60e95-123">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="60e95-123">Parent Elements</span></span>  
   
-|<span data-ttu-id="93523-124">Élément</span><span class="sxs-lookup"><span data-stu-id="93523-124">Element</span></span>|<span data-ttu-id="93523-125">Description</span><span class="sxs-lookup"><span data-stu-id="93523-125">Description</span></span>|  
+|<span data-ttu-id="60e95-124">Élément</span><span class="sxs-lookup"><span data-stu-id="60e95-124">Element</span></span>|<span data-ttu-id="60e95-125">Description</span><span class="sxs-lookup"><span data-stu-id="60e95-125">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="93523-126">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="93523-126">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)|<span data-ttu-id="93523-127">Définit toutes les fonctions de liaison d’une liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="93523-127">Defines all binding capabilities of the custom binding.</span></span>|  
+|[<span data-ttu-id="60e95-126">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="60e95-126">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)|<span data-ttu-id="60e95-127">Définit toutes les fonctions de liaison d’une liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="60e95-127">Defines all binding capabilities of the custom binding.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="93523-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="93523-128">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="60e95-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="60e95-128">See Also</span></span>  
  <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>  
  <xref:System.ServiceModel.Discovery.Configuration.DiscoveryClientElement>

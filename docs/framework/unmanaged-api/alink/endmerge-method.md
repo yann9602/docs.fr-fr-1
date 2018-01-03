@@ -21,16 +21,17 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7f29abf03c636fc552fe550534ca1b1395b43aae
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58e9cecae43fb69f1ce2e90eb9d6551d287ca7b3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="endmerge-method"></a><span data-ttu-id="34dc1-102">EndMerge, méthode</span><span class="sxs-lookup"><span data-stu-id="34dc1-102">EndMerge Method</span></span>
-<span data-ttu-id="34dc1-103">Indique que tous les attributs personnalisés ont été fusionnées dans la portée d’émission.</span><span class="sxs-lookup"><span data-stu-id="34dc1-103">Indicates that all custom attributes have been merged into the emit scope.</span></span>  
+# <a name="endmerge-method"></a><span data-ttu-id="4ac44-102">EndMerge, méthode</span><span class="sxs-lookup"><span data-stu-id="4ac44-102">EndMerge Method</span></span>
+<span data-ttu-id="4ac44-103">Indique que tous les attributs personnalisés ont été fusionnées dans la portée d’émission.</span><span class="sxs-lookup"><span data-stu-id="4ac44-103">Indicates that all custom attributes have been merged into the emit scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="34dc1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="34dc1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4ac44-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4ac44-104">Syntax</span></span>  
   
 ```  
 HRESULT EndMerge(  
@@ -38,17 +39,17 @@ HRESULT EndMerge(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="34dc1-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="34dc1-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="4ac44-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="4ac44-105">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="34dc1-106">ID de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="34dc1-106">ID of the assembly.</span></span>  
+ <span data-ttu-id="4ac44-106">ID de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="4ac44-106">ID of the assembly.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="34dc1-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="34dc1-107">Return Value</span></span>  
- <span data-ttu-id="34dc1-108">Retourne S_OK si la méthode réussit.</span><span class="sxs-lookup"><span data-stu-id="34dc1-108">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="4ac44-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="4ac44-107">Return Value</span></span>  
+ <span data-ttu-id="4ac44-108">Retourne S_OK si la méthode réussit.</span><span class="sxs-lookup"><span data-stu-id="4ac44-108">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="34dc1-109">Spécifications</span><span class="sxs-lookup"><span data-stu-id="34dc1-109">Requirements</span></span>  
- <span data-ttu-id="34dc1-110">Requiert alink.h</span><span class="sxs-lookup"><span data-stu-id="34dc1-110">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4ac44-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="4ac44-109">Requirements</span></span>  
+ <span data-ttu-id="4ac44-110">Requiert alink.h</span><span class="sxs-lookup"><span data-stu-id="4ac44-110">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="34dc1-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="34dc1-111">See Also</span></span>  
- [<span data-ttu-id="34dc1-112">Interface IALink</span><span class="sxs-lookup"><span data-stu-id="34dc1-112">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [<span data-ttu-id="34dc1-113">IALink2 (Interface)</span><span class="sxs-lookup"><span data-stu-id="34dc1-113">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [<span data-ttu-id="34dc1-114">ALink (API)</span><span class="sxs-lookup"><span data-stu-id="34dc1-114">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a><span data-ttu-id="4ac44-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4ac44-111">See Also</span></span>  
+ [<span data-ttu-id="4ac44-112">IALink, interface</span><span class="sxs-lookup"><span data-stu-id="4ac44-112">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [<span data-ttu-id="4ac44-113">IALink2, interface</span><span class="sxs-lookup"><span data-stu-id="4ac44-113">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [<span data-ttu-id="4ac44-114">API ALink</span><span class="sxs-lookup"><span data-stu-id="4ac44-114">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)

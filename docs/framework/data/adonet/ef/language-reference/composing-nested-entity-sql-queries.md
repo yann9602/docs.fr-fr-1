@@ -13,17 +13,18 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 175affdd8e9763f6cc7d0c48c38498af6e8ffabb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6aab21c4b22e731f3d85a2f444e82bc04906c320
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="composing-nested-entity-sql-queries"></a><span data-ttu-id="3ae40-102">Composition de requêtes Entity SQL imbriquées</span><span class="sxs-lookup"><span data-stu-id="3ae40-102">Composing Nested Entity SQL Queries</span></span>
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="3ae40-103"> est un langage fonctionnel riche.</span><span class="sxs-lookup"><span data-stu-id="3ae40-103"> is a rich functional language.</span></span> <span data-ttu-id="3ae40-104">Le bloc de construction de [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est une expression.</span><span class="sxs-lookup"><span data-stu-id="3ae40-104">The building block of [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is an expression.</span></span> <span data-ttu-id="3ae40-105">Contrairement à SQL classique, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] n’est pas limité à un jeu de résultats tabulaire : [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge la composition d’expressions complexes qui peuvent avoir des littéraux, des paramètres ou des expressions imbriquées.</span><span class="sxs-lookup"><span data-stu-id="3ae40-105">Unlike conventional SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is not limited to a tabular result set: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] supports composing complex expressions that can have literals, parameters, or nested expressions.</span></span> <span data-ttu-id="3ae40-106">Une valeur de l’expression peut être paramétrée ou composée d’une autre expression.</span><span class="sxs-lookup"><span data-stu-id="3ae40-106">A value in the expression can be parameterized or composed of some other expression.</span></span>  
+# <a name="composing-nested-entity-sql-queries"></a><span data-ttu-id="cb6d1-102">Composition de requêtes Entity SQL imbriquées</span><span class="sxs-lookup"><span data-stu-id="cb6d1-102">Composing Nested Entity SQL Queries</span></span>
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="cb6d1-103"> est un langage fonctionnel riche.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-103"> is a rich functional language.</span></span> <span data-ttu-id="cb6d1-104">Le bloc de construction de [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est une expression.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-104">The building block of [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is an expression.</span></span> <span data-ttu-id="cb6d1-105">Contrairement à SQL classique, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] n’est pas limité à un jeu de résultats tabulaire : [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge la composition d’expressions complexes qui peuvent avoir des littéraux, des paramètres ou des expressions imbriquées.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-105">Unlike conventional SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is not limited to a tabular result set: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] supports composing complex expressions that can have literals, parameters, or nested expressions.</span></span> <span data-ttu-id="cb6d1-106">Une valeur de l’expression peut être paramétrée ou composée d’une autre expression.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-106">A value in the expression can be parameterized or composed of some other expression.</span></span>  
   
-## <a name="nested-expressions"></a><span data-ttu-id="3ae40-107">Expressions imbriquées</span><span class="sxs-lookup"><span data-stu-id="3ae40-107">Nested Expressions</span></span>  
- <span data-ttu-id="3ae40-108">Une expression imbriquée peut être placée partout où une valeur du type qu'elle retourne est acceptée.</span><span class="sxs-lookup"><span data-stu-id="3ae40-108">A nested expression can be placed anywhere a value of the type it returns is accepted.</span></span> <span data-ttu-id="3ae40-109">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="3ae40-109">For example:</span></span>  
+## <a name="nested-expressions"></a><span data-ttu-id="cb6d1-107">Expressions imbriquées</span><span class="sxs-lookup"><span data-stu-id="cb6d1-107">Nested Expressions</span></span>  
+ <span data-ttu-id="cb6d1-108">Une expression imbriquée peut être placée partout où une valeur du type qu'elle retourne est acceptée.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-108">A nested expression can be placed anywhere a value of the type it returns is accepted.</span></span> <span data-ttu-id="cb6d1-109">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="cb6d1-109">For example:</span></span>  
   
 ```  
 -- Returns a hierarchical collection of three elements at top-level.   
@@ -35,7 +36,7 @@ ROW(@x, {@x}, {@x, 4, 5}, {@x, 7, 8, 9})
 {{{@x}}};  
 ```  
   
- <span data-ttu-id="3ae40-110">Une requête imbriquée peut être placée dans une clause de projection.</span><span class="sxs-lookup"><span data-stu-id="3ae40-110">A nested query can be placed in a projection clause.</span></span> <span data-ttu-id="3ae40-111">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="3ae40-111">For example:</span></span>  
+ <span data-ttu-id="cb6d1-110">Une requête imbriquée peut être placée dans une clause de projection.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-110">A nested query can be placed in a projection clause.</span></span> <span data-ttu-id="cb6d1-111">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="cb6d1-111">For example:</span></span>  
   
 ```  
 -- Returns a collection of rows where each row contains an Address entity.  
@@ -45,7 +46,7 @@ SELECT address, (SELECT DEREF(soh)
                     AS salesOrderHeader FROM AdventureWorksEntities.Address AS address  
 ```  
   
- <span data-ttu-id="3ae40-112">Dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)], les requêtes imbriquées doivent toujours être placées entre parenthèses :</span><span class="sxs-lookup"><span data-stu-id="3ae40-112">In [!INCLUDE[esql](../../../../../../includes/esql-md.md)], nested queries must always be enclosed in parentheses:</span></span>  
+ <span data-ttu-id="cb6d1-112">Dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)], les requêtes imbriquées doivent toujours être placées entre parenthèses :</span><span class="sxs-lookup"><span data-stu-id="cb6d1-112">In [!INCLUDE[esql](../../../../../../includes/esql-md.md)], nested queries must always be enclosed in parentheses:</span></span>  
   
 ```  
 -- Pseudo-Entity SQL  
@@ -56,19 +57,19 @@ UNION ALL
 FROM … );  
 ```  
   
- <span data-ttu-id="3ae40-113">L’exemple suivant montre comment imbriquer correctement des expressions dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [Comment : classer l’Union de deux requêtes](http://msdn.microsoft.com/en-us/853c583a-eaba-4400-830d-be974e735313).</span><span class="sxs-lookup"><span data-stu-id="3ae40-113">The following example demonstrates how to properly nest expressions in [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [How to: Order the Union of Two Queries](http://msdn.microsoft.com/en-us/853c583a-eaba-4400-830d-be974e735313).</span></span>  
+ <span data-ttu-id="cb6d1-113">L’exemple suivant montre comment imbriquer correctement des expressions dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [Comment : classer l’Union de deux requêtes](http://msdn.microsoft.com/en-us/853c583a-eaba-4400-830d-be974e735313).</span><span class="sxs-lookup"><span data-stu-id="cb6d1-113">The following example demonstrates how to properly nest expressions in [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [How to: Order the Union of Two Queries](http://msdn.microsoft.com/en-us/853c583a-eaba-4400-830d-be974e735313).</span></span>  
   
-## <a name="nested-queries-in-projection"></a><span data-ttu-id="3ae40-114">Requêtes imbriquées dans la projection</span><span class="sxs-lookup"><span data-stu-id="3ae40-114">Nested Queries in Projection</span></span>  
- <span data-ttu-id="3ae40-115">Les requêtes imbriquées d'une clause de projection peuvent être traduites en requêtes de produit cartésien sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="3ae40-115">Nested queries in the project clause might get translated into Cartesian product queries on the server.</span></span> <span data-ttu-id="3ae40-116">Sur certains serveurs principaux dont SQL Server, cela peut avoir pour conséquences l'augmentation de volume de la table TempDB et une diminution des performances du serveur.</span><span class="sxs-lookup"><span data-stu-id="3ae40-116">In some backend servers, including SLQ Server, this can cause the TempDB table to get very large, which can adversely affect server performance.</span></span>  
+## <a name="nested-queries-in-projection"></a><span data-ttu-id="cb6d1-114">Requêtes imbriquées dans la projection</span><span class="sxs-lookup"><span data-stu-id="cb6d1-114">Nested Queries in Projection</span></span>  
+ <span data-ttu-id="cb6d1-115">Les requêtes imbriquées d'une clause de projection peuvent être traduites en requêtes de produit cartésien sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-115">Nested queries in the project clause might get translated into Cartesian product queries on the server.</span></span> <span data-ttu-id="cb6d1-116">Sur certains serveurs principaux dont SQL Server, cela peut avoir pour conséquences l'augmentation de volume de la table TempDB et une diminution des performances du serveur.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-116">In some backend servers, including SLQ Server, this can cause the TempDB table to get very large, which can adversely affect server performance.</span></span>  
   
- <span data-ttu-id="3ae40-117">Vous trouverez ci-dessous un exemple de ce type de requête :</span><span class="sxs-lookup"><span data-stu-id="3ae40-117">The following is an example of such a query:</span></span>  
+ <span data-ttu-id="cb6d1-117">Vous trouverez ci-dessous un exemple de ce type de requête :</span><span class="sxs-lookup"><span data-stu-id="cb6d1-117">The following is an example of such a query:</span></span>  
   
 ```  
 SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2 FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1 FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
 ```  
   
-## <a name="ordering-nested-queries"></a><span data-ttu-id="3ae40-118">Ordre de tri des requêtes imbriquées</span><span class="sxs-lookup"><span data-stu-id="3ae40-118">Ordering Nested Queries</span></span>  
- <span data-ttu-id="3ae40-119">Dans Entity Framework, une expression imbriquée peut être placée n'importe où dans la requête.</span><span class="sxs-lookup"><span data-stu-id="3ae40-119">In the Entity Framework, a nested expression can be placed anywhere in the query.</span></span> <span data-ttu-id="3ae40-120">Entity SQL offrant une grande souplesse dans l'écriture des requêtes, il est possible d'écrire une requête qui contient un classement des requêtes imbriquées.</span><span class="sxs-lookup"><span data-stu-id="3ae40-120">Because Entity SQL allows great flexibility in writing queries, it is possible to write a query that contains an ordering of nested queries.</span></span> <span data-ttu-id="3ae40-121">Toutefois, l'ordre d'une requête imbriquée n'est pas conservé.</span><span class="sxs-lookup"><span data-stu-id="3ae40-121">However, the order of a nested query is not preserved.</span></span>  
+## <a name="ordering-nested-queries"></a><span data-ttu-id="cb6d1-118">Ordre de tri des requêtes imbriquées</span><span class="sxs-lookup"><span data-stu-id="cb6d1-118">Ordering Nested Queries</span></span>  
+ <span data-ttu-id="cb6d1-119">Dans Entity Framework, une expression imbriquée peut être placée n'importe où dans la requête.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-119">In the Entity Framework, a nested expression can be placed anywhere in the query.</span></span> <span data-ttu-id="cb6d1-120">Entity SQL offrant une grande souplesse dans l'écriture des requêtes, il est possible d'écrire une requête qui contient un classement des requêtes imbriquées.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-120">Because Entity SQL allows great flexibility in writing queries, it is possible to write a query that contains an ordering of nested queries.</span></span> <span data-ttu-id="cb6d1-121">Toutefois, l'ordre d'une requête imbriquée n'est pas conservé.</span><span class="sxs-lookup"><span data-stu-id="cb6d1-121">However, the order of a nested query is not preserved.</span></span>  
   
 ```  
 -- The following query will order the results by last name.  
@@ -85,5 +86,5 @@ SELECT C2.FirstName, C2.LastName
         ORDER BY C1.LastName) as C2  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3ae40-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3ae40-122">See Also</span></span>  
- [<span data-ttu-id="3ae40-123">Vue d’ensemble de Entity SQL</span><span class="sxs-lookup"><span data-stu-id="3ae40-123">Entity SQL Overview</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+## <a name="see-also"></a><span data-ttu-id="cb6d1-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cb6d1-122">See Also</span></span>  
+ [<span data-ttu-id="cb6d1-123">Vue d’ensemble d’Entity SQL</span><span class="sxs-lookup"><span data-stu-id="cb6d1-123">Entity SQL Overview</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

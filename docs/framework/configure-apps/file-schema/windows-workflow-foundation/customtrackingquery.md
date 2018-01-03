@@ -12,25 +12,26 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 908c340167d50d4d16e0eeff7cc2e01290b55e7a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7d4427ad1b45ceade29b8859d30eba746a70a27d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ltcustomtrackingquerygt"></a><span data-ttu-id="749b5-102">&lt;customTrackingQuery&gt;</span><span class="sxs-lookup"><span data-stu-id="749b5-102">&lt;customTrackingQuery&gt;</span></span>
-<span data-ttu-id="749b5-103">Représente une collection de requêtes permettant d’effectuer le suivi des événements que vous définissez dans vos activités de code.</span><span class="sxs-lookup"><span data-stu-id="749b5-103">Represents a collection of queries that are used to track events that you define in your code activities.</span></span> <span data-ttu-id="749b5-104">La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des enregistrements de suivi personnalisés.</span><span class="sxs-lookup"><span data-stu-id="749b5-104">The query is necessary for a tracking participant to subscribe to custom tracking records.</span></span>  
+# <a name="ltcustomtrackingquerygt"></a><span data-ttu-id="42481-102">&lt;customTrackingQuery&gt;</span><span class="sxs-lookup"><span data-stu-id="42481-102">&lt;customTrackingQuery&gt;</span></span>
+<span data-ttu-id="42481-103">Représente une collection de requêtes permettant d’effectuer le suivi des événements que vous définissez dans vos activités de code.</span><span class="sxs-lookup"><span data-stu-id="42481-103">Represents a collection of queries that are used to track events that you define in your code activities.</span></span> <span data-ttu-id="42481-104">La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des enregistrements de suivi personnalisés.</span><span class="sxs-lookup"><span data-stu-id="42481-104">The query is necessary for a tracking participant to subscribe to custom tracking records.</span></span>  
   
- <span data-ttu-id="749b5-105">Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="749b5-105">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
+ <span data-ttu-id="42481-105">Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="42481-105">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
   
-<span data-ttu-id="749b5-106">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="749b5-106">\<system.serviceModel></span></span>  
-<span data-ttu-id="749b5-107">\<suivi ></span><span class="sxs-lookup"><span data-stu-id="749b5-107">\<tracking></span></span>  
-<span data-ttu-id="749b5-108">\<trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="749b5-108">\<trackingProfile></span></span>  
-<span data-ttu-id="749b5-109">\<flux de travail ></span><span class="sxs-lookup"><span data-stu-id="749b5-109">\<workflow></span></span>  
-<span data-ttu-id="749b5-110">\<customTrackingQueries ></span><span class="sxs-lookup"><span data-stu-id="749b5-110">\<customTrackingQueries></span></span>  
-<span data-ttu-id="749b5-111">\<customTrackingQuery ></span><span class="sxs-lookup"><span data-stu-id="749b5-111">\<customTrackingQuery></span></span>  
+<span data-ttu-id="42481-106">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="42481-106">\<system.serviceModel></span></span>  
+<span data-ttu-id="42481-107">\<suivi ></span><span class="sxs-lookup"><span data-stu-id="42481-107">\<tracking></span></span>  
+<span data-ttu-id="42481-108">\<trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="42481-108">\<trackingProfile></span></span>  
+<span data-ttu-id="42481-109">\<flux de travail ></span><span class="sxs-lookup"><span data-stu-id="42481-109">\<workflow></span></span>  
+<span data-ttu-id="42481-110">\<customTrackingQueries ></span><span class="sxs-lookup"><span data-stu-id="42481-110">\<customTrackingQueries></span></span>  
+<span data-ttu-id="42481-111">\<customTrackingQuery ></span><span class="sxs-lookup"><span data-stu-id="42481-111">\<customTrackingQuery></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="749b5-112">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="749b5-112">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="42481-112">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="42481-112">Syntax</span></span>  
   
 ```xml  
 <tracking>
@@ -45,27 +46,27 @@ ms.lasthandoff: 12/02/2017
 </tracking>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="749b5-113">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="749b5-113">Attributes and Elements</span></span>  
- <span data-ttu-id="749b5-114">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="749b5-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="42481-113">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="42481-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="42481-114">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="42481-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="749b5-115">Attributs</span><span class="sxs-lookup"><span data-stu-id="749b5-115">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="42481-115">Attributs</span><span class="sxs-lookup"><span data-stu-id="42481-115">Attributes</span></span>  
   
-|<span data-ttu-id="749b5-116">Attribut</span><span class="sxs-lookup"><span data-stu-id="749b5-116">Attribute</span></span>|<span data-ttu-id="749b5-117">Description</span><span class="sxs-lookup"><span data-stu-id="749b5-117">Description</span></span>|  
+|<span data-ttu-id="42481-116">Attribut</span><span class="sxs-lookup"><span data-stu-id="42481-116">Attribute</span></span>|<span data-ttu-id="42481-117">Description</span><span class="sxs-lookup"><span data-stu-id="42481-117">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="749b5-118">activityName</span><span class="sxs-lookup"><span data-stu-id="749b5-118">activityName</span></span>|<span data-ttu-id="749b5-119">Chaîne qui spécifie le nom de l'activité ayant généré l'enregistrement de suivi.</span><span class="sxs-lookup"><span data-stu-id="749b5-119">A string that specifies the name of the activity that generated the tracking record.</span></span>|  
-|<span data-ttu-id="749b5-120">name</span><span class="sxs-lookup"><span data-stu-id="749b5-120">name</span></span>|<span data-ttu-id="749b5-121">Chaîne qui spécifie le nom de l'enregistrement de suivi personnalisé émis.</span><span class="sxs-lookup"><span data-stu-id="749b5-121">A string that specifies the name of the custom tracking record that is emitted.</span></span>|  
+|<span data-ttu-id="42481-118">activityName</span><span class="sxs-lookup"><span data-stu-id="42481-118">activityName</span></span>|<span data-ttu-id="42481-119">Chaîne qui spécifie le nom de l'activité ayant généré l'enregistrement de suivi.</span><span class="sxs-lookup"><span data-stu-id="42481-119">A string that specifies the name of the activity that generated the tracking record.</span></span>|  
+|<span data-ttu-id="42481-120">name</span><span class="sxs-lookup"><span data-stu-id="42481-120">name</span></span>|<span data-ttu-id="42481-121">Chaîne qui spécifie le nom de l'enregistrement de suivi personnalisé émis.</span><span class="sxs-lookup"><span data-stu-id="42481-121">A string that specifies the name of the custom tracking record that is emitted.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="749b5-122">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="749b5-122">Child Elements</span></span>  
- <span data-ttu-id="749b5-123">Aucun.</span><span class="sxs-lookup"><span data-stu-id="749b5-123">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="42481-122">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="42481-122">Child Elements</span></span>  
+ <span data-ttu-id="42481-123">Aucun.</span><span class="sxs-lookup"><span data-stu-id="42481-123">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="749b5-124">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="749b5-124">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="42481-124">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="42481-124">Parent Elements</span></span>  
   
-|<span data-ttu-id="749b5-125">Élément</span><span class="sxs-lookup"><span data-stu-id="749b5-125">Element</span></span>|<span data-ttu-id="749b5-126">Description</span><span class="sxs-lookup"><span data-stu-id="749b5-126">Description</span></span>|  
+|<span data-ttu-id="42481-125">Élément</span><span class="sxs-lookup"><span data-stu-id="42481-125">Element</span></span>|<span data-ttu-id="42481-126">Description</span><span class="sxs-lookup"><span data-stu-id="42481-126">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="749b5-127">\<customTrackingQuery ></span><span class="sxs-lookup"><span data-stu-id="749b5-127">\<customTrackingQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|<span data-ttu-id="749b5-128">Requête qui permet d'effectuer le suivi des événements que vous définissez dans vos activités de code.</span><span class="sxs-lookup"><span data-stu-id="749b5-128">A query that is used to track events that you define in your code activities.</span></span>|  
+|[<span data-ttu-id="42481-127">\<customTrackingQuery ></span><span class="sxs-lookup"><span data-stu-id="42481-127">\<customTrackingQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|<span data-ttu-id="42481-128">Requête qui permet d'effectuer le suivi des événements que vous définissez dans vos activités de code.</span><span class="sxs-lookup"><span data-stu-id="42481-128">A query that is used to track events that you define in your code activities.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="749b5-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="749b5-129">See Also</span></span>  
- <span data-ttu-id="749b5-130"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="749b5-130"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span></span>       
- <span data-ttu-id="749b5-131"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="749b5-131"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span></span>         
- [<span data-ttu-id="749b5-132">Suivi et traçage de workflow</span><span class="sxs-lookup"><span data-stu-id="749b5-132">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [<span data-ttu-id="749b5-133">Profils de suivi</span><span class="sxs-lookup"><span data-stu-id="749b5-133">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+## <a name="see-also"></a><span data-ttu-id="42481-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="42481-129">See Also</span></span>  
+ <span data-ttu-id="42481-130"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="42481-130"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span></span>       
+ <span data-ttu-id="42481-131"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="42481-131"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span></span>         
+ [<span data-ttu-id="42481-132">Suivi et traçage de workflow</span><span class="sxs-lookup"><span data-stu-id="42481-132">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [<span data-ttu-id="42481-133">Profils de suivi</span><span class="sxs-lookup"><span data-stu-id="42481-133">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

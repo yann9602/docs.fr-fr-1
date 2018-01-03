@@ -13,16 +13,17 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 12de808403ee6714d2bcfd15da4e67a8596e1ff1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c6b258bd06fd3e7e348e190b0897d66036006873
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="-equals-entity-sql"></a><span data-ttu-id="2e351-102">= (égal à) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="2e351-102">= (Equals) (Entity SQL)</span></span>
-<span data-ttu-id="2e351-103">Compare l'égalité de deux expressions.</span><span class="sxs-lookup"><span data-stu-id="2e351-103">Compares the equality of two expressions.</span></span>  
+# <a name="-equals-entity-sql"></a><span data-ttu-id="d5baf-102">= (égal à) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="d5baf-102">= (Equals) (Entity SQL)</span></span>
+<span data-ttu-id="d5baf-103">Compare l'égalité de deux expressions.</span><span class="sxs-lookup"><span data-stu-id="d5baf-103">Compares the equality of two expressions.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2e351-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2e351-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d5baf-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d5baf-104">Syntax</span></span>  
   
 ```  
 expression = expression  
@@ -30,24 +31,24 @@ or
 expression == expression  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="2e351-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="2e351-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="d5baf-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="d5baf-105">Arguments</span></span>  
  `expression`  
- <span data-ttu-id="2e351-106">Toute expression valide.</span><span class="sxs-lookup"><span data-stu-id="2e351-106">Any valid expression.</span></span> <span data-ttu-id="2e351-107">Les deux expressions doivent posséder des types de données implicitement convertibles.</span><span class="sxs-lookup"><span data-stu-id="2e351-107">Both expressions must have implicitly convertible data types.</span></span>  
+ <span data-ttu-id="d5baf-106">Toute expression valide.</span><span class="sxs-lookup"><span data-stu-id="d5baf-106">Any valid expression.</span></span> <span data-ttu-id="d5baf-107">Les deux expressions doivent posséder des types de données implicitement convertibles.</span><span class="sxs-lookup"><span data-stu-id="d5baf-107">Both expressions must have implicitly convertible data types.</span></span>  
   
-## <a name="result-types"></a><span data-ttu-id="2e351-108">Types de résultats</span><span class="sxs-lookup"><span data-stu-id="2e351-108">Result Types</span></span>  
- <span data-ttu-id="2e351-109">`true` si l'expression de gauche est égale à l'expression de droite ; sinon, `false`.</span><span class="sxs-lookup"><span data-stu-id="2e351-109">`true` if the left expression is equal to the right expression; otherwise, `false`.</span></span>  
+## <a name="result-types"></a><span data-ttu-id="d5baf-108">Types de résultats</span><span class="sxs-lookup"><span data-stu-id="d5baf-108">Result Types</span></span>  
+ <span data-ttu-id="d5baf-109">`true` si l'expression de gauche est égale à l'expression de droite ; sinon, `false`.</span><span class="sxs-lookup"><span data-stu-id="d5baf-109">`true` if the left expression is equal to the right expression; otherwise, `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2e351-110">Remarques</span><span class="sxs-lookup"><span data-stu-id="2e351-110">Remarks</span></span>  
- <span data-ttu-id="2e351-111">L'opérateur « = = » est équivalent à « = ».</span><span class="sxs-lookup"><span data-stu-id="2e351-111">The == operator is equivalent to =.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d5baf-110">Notes</span><span class="sxs-lookup"><span data-stu-id="d5baf-110">Remarks</span></span>  
+ <span data-ttu-id="d5baf-111">L'opérateur « = = » est équivalent à « = ».</span><span class="sxs-lookup"><span data-stu-id="d5baf-111">The == operator is equivalent to =.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="2e351-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="2e351-112">Example</span></span>  
- <span data-ttu-id="2e351-113">La requête Entity SQL ci-dessous utilise l'opérateur de comparaison « = » pour comparer l'égalité de deux expressions.</span><span class="sxs-lookup"><span data-stu-id="2e351-113">The following Entity SQL query uses = comparison operator to compare the equality of two expressions.</span></span> <span data-ttu-id="2e351-114">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="2e351-114">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="2e351-115">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="2e351-115">To compile and run this query, follow these steps:</span></span>  
+## <a name="example"></a><span data-ttu-id="d5baf-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="d5baf-112">Example</span></span>  
+ <span data-ttu-id="d5baf-113">La requête Entity SQL ci-dessous utilise l'opérateur de comparaison « = » pour comparer l'égalité de deux expressions.</span><span class="sxs-lookup"><span data-stu-id="d5baf-113">The following Entity SQL query uses = comparison operator to compare the equality of two expressions.</span></span> <span data-ttu-id="d5baf-114">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="d5baf-114">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="d5baf-115">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="d5baf-115">To compile and run this query, follow these steps:</span></span>  
   
-1.  <span data-ttu-id="2e351-116">Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="2e351-116">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
+1.  <span data-ttu-id="d5baf-116">Suivez la procédure indiquée dans [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="d5baf-116">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
   
-2.  <span data-ttu-id="2e351-117">Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="2e351-117">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
+2.  <span data-ttu-id="d5baf-117">Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="d5baf-117">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#EQUALS](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#equals)]  
   
-## <a name="see-also"></a><span data-ttu-id="2e351-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2e351-118">See Also</span></span>  
- [<span data-ttu-id="2e351-119">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="2e351-119">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a><span data-ttu-id="d5baf-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d5baf-118">See Also</span></span>  
+ [<span data-ttu-id="d5baf-119">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="d5baf-119">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

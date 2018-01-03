@@ -13,20 +13,21 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 89d42cba78eb9758d8b3491fd1bd3b25ef168f9c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 491277e39b29d7c3e0a0d69ec8745b2c6718a91e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ltclaimtyperequiredgt"></a><span data-ttu-id="37ec1-102">&lt;claimTypeRequired&gt;</span><span class="sxs-lookup"><span data-stu-id="37ec1-102">&lt;claimTypeRequired&gt;</span></span>
-<span data-ttu-id="37ec1-103">Spécifie le jeu de revendications requises pour les jetons de sécurité entrants.</span><span class="sxs-lookup"><span data-stu-id="37ec1-103">Specifies the set of required claims for incoming security tokens.</span></span>  
+# <a name="ltclaimtyperequiredgt"></a><span data-ttu-id="efe04-102">&lt;claimTypeRequired&gt;</span><span class="sxs-lookup"><span data-stu-id="efe04-102">&lt;claimTypeRequired&gt;</span></span>
+<span data-ttu-id="efe04-103">Spécifie le jeu de revendications requises pour les jetons de sécurité entrants.</span><span class="sxs-lookup"><span data-stu-id="efe04-103">Specifies the set of required claims for incoming security tokens.</span></span>  
   
- <span data-ttu-id="37ec1-104">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="37ec1-104">\<system.identityModel></span></span>  
-<span data-ttu-id="37ec1-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="37ec1-105">\<identityConfiguration></span></span>  
-<span data-ttu-id="37ec1-106">\<claimTypeRequired ></span><span class="sxs-lookup"><span data-stu-id="37ec1-106">\<claimTypeRequired></span></span>  
+ <span data-ttu-id="efe04-104">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="efe04-104">\<system.identityModel></span></span>  
+<span data-ttu-id="efe04-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="efe04-105">\<identityConfiguration></span></span>  
+<span data-ttu-id="efe04-106">\<claimTypeRequired ></span><span class="sxs-lookup"><span data-stu-id="efe04-106">\<claimTypeRequired></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="37ec1-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="37ec1-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="efe04-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="efe04-107">Syntax</span></span>  
   
 ```xml  
 <system.identityModel>  
@@ -37,20 +38,20 @@ ms.lasthandoff: 10/18/2017
 </system.identityModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="37ec1-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="37ec1-108">Attributes and Elements</span></span>  
- <span data-ttu-id="37ec1-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="37ec1-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="efe04-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="efe04-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="efe04-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="efe04-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="37ec1-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="37ec1-110">Attributes</span></span>  
- <span data-ttu-id="37ec1-111">Aucun</span><span class="sxs-lookup"><span data-stu-id="37ec1-111">None</span></span>  
+### <a name="attributes"></a><span data-ttu-id="efe04-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="efe04-110">Attributes</span></span>  
+ <span data-ttu-id="efe04-111">Aucun.</span><span class="sxs-lookup"><span data-stu-id="efe04-111">None</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="37ec1-112">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="37ec1-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="efe04-112">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="efe04-112">Child Elements</span></span>  
   
-|<span data-ttu-id="37ec1-113">Élément</span><span class="sxs-lookup"><span data-stu-id="37ec1-113">Element</span></span>|<span data-ttu-id="37ec1-114">Description</span><span class="sxs-lookup"><span data-stu-id="37ec1-114">Description</span></span>|  
+|<span data-ttu-id="efe04-113">Élément</span><span class="sxs-lookup"><span data-stu-id="efe04-113">Element</span></span>|<span data-ttu-id="efe04-114">Description</span><span class="sxs-lookup"><span data-stu-id="efe04-114">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="37ec1-115">\<claimType ></span><span class="sxs-lookup"><span data-stu-id="37ec1-115">\<claimType></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtype.md)|<span data-ttu-id="37ec1-116">Spécifie une seule revendication facultative ou obligatoire pour les jetons de sécurité entrants.</span><span class="sxs-lookup"><span data-stu-id="37ec1-116">Specifies a single optional or required claim for incoming security tokens.</span></span>|  
+|[<span data-ttu-id="efe04-115">\<claimType ></span><span class="sxs-lookup"><span data-stu-id="efe04-115">\<claimType></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtype.md)|<span data-ttu-id="efe04-116">Spécifie une seule revendication facultative ou obligatoire pour les jetons de sécurité entrants.</span><span class="sxs-lookup"><span data-stu-id="efe04-116">Specifies a single optional or required claim for incoming security tokens.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="37ec1-117">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="37ec1-117">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="efe04-117">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="efe04-117">Parent Elements</span></span>  
   
-|<span data-ttu-id="37ec1-118">Élément</span><span class="sxs-lookup"><span data-stu-id="37ec1-118">Element</span></span>|<span data-ttu-id="37ec1-119">Description</span><span class="sxs-lookup"><span data-stu-id="37ec1-119">Description</span></span>|  
+|<span data-ttu-id="efe04-118">Élément</span><span class="sxs-lookup"><span data-stu-id="efe04-118">Element</span></span>|<span data-ttu-id="efe04-119">Description</span><span class="sxs-lookup"><span data-stu-id="efe04-119">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="37ec1-120">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="37ec1-120">\<identityConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|<span data-ttu-id="37ec1-121">Spécifie les paramètres d’identité au niveau du service.</span><span class="sxs-lookup"><span data-stu-id="37ec1-121">Specifies service-level identity settings.</span></span>|
+|[<span data-ttu-id="efe04-120">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="efe04-120">\<identityConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|<span data-ttu-id="efe04-121">Spécifie les paramètres d’identité au niveau du service.</span><span class="sxs-lookup"><span data-stu-id="efe04-121">Specifies service-level identity settings.</span></span>|

@@ -20,31 +20,32 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 055ca5a85ca37401107b5cef8f6ff55237c3320b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 33d1c7d91c33c194353af43deed9329b9b4ec841
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="raceonrcwcleanup-mda"></a><span data-ttu-id="45ca9-102">Assistant Débogage managé raceOnRCWCleanup</span><span class="sxs-lookup"><span data-stu-id="45ca9-102">raceOnRCWCleanup MDA</span></span>
-<span data-ttu-id="45ca9-103">L’Assistant Débogage managé (MDA) `raceOnRCWCleanup` est activé quand le Common Language Runtime (CLR) détecte qu’un [wrapper RCW](../../../docs/framework/interop/runtime-callable-wrapper.md) est en cours d’utilisation au moment où un appel visant à le libérer est effectué à l’aide d’une commande telle que la méthode <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="45ca9-103">The `raceOnRCWCleanup` managed debugging assistant (MDA) is activated when the common language runtime (CLR) detects that a [Runtime Callable Wrapper](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) is in use when a call to release it is made using a command such as the <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType> method.</span></span>  
+# <a name="raceonrcwcleanup-mda"></a><span data-ttu-id="6ab11-102">Assistant Débogage managé raceOnRCWCleanup</span><span class="sxs-lookup"><span data-stu-id="6ab11-102">raceOnRCWCleanup MDA</span></span>
+<span data-ttu-id="6ab11-103">L’Assistant Débogage managé (MDA) `raceOnRCWCleanup` est activé quand le Common Language Runtime (CLR) détecte qu’un [wrapper RCW](../../../docs/framework/interop/runtime-callable-wrapper.md) est en cours d’utilisation au moment où un appel visant à le libérer est effectué à l’aide d’une commande telle que la méthode <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="6ab11-103">The `raceOnRCWCleanup` managed debugging assistant (MDA) is activated when the common language runtime (CLR) detects that a [Runtime Callable Wrapper](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) is in use when a call to release it is made using a command such as the <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType> method.</span></span>  
   
-## <a name="symptoms"></a><span data-ttu-id="45ca9-104">Symptômes</span><span class="sxs-lookup"><span data-stu-id="45ca9-104">Symptoms</span></span>  
- <span data-ttu-id="45ca9-105">Violations d'accès ou altération de la mémoire pendant ou après la libération d'un RCW à l'aide de <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> ou d'une méthode similaire.</span><span class="sxs-lookup"><span data-stu-id="45ca9-105">Access violations or memory corruption during or after freeing an RCW using <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> or a similar method.</span></span>  
+## <a name="symptoms"></a><span data-ttu-id="6ab11-104">Symptômes</span><span class="sxs-lookup"><span data-stu-id="6ab11-104">Symptoms</span></span>  
+ <span data-ttu-id="6ab11-105">Violations d'accès ou altération de la mémoire pendant ou après la libération d'un RCW à l'aide de <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> ou d'une méthode similaire.</span><span class="sxs-lookup"><span data-stu-id="6ab11-105">Access violations or memory corruption during or after freeing an RCW using <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> or a similar method.</span></span>  
   
-## <a name="cause"></a><span data-ttu-id="45ca9-106">Cause</span><span class="sxs-lookup"><span data-stu-id="45ca9-106">Cause</span></span>  
- <span data-ttu-id="45ca9-107">Le RCW est en cours d'utilisation sur un autre thread ou sur la pile des threads de libération,</span><span class="sxs-lookup"><span data-stu-id="45ca9-107">The RCW is in use on another thread or on the freeing thread stack.</span></span>  <span data-ttu-id="45ca9-108">et ne peut donc pas être libéré.</span><span class="sxs-lookup"><span data-stu-id="45ca9-108">An RCW that is in use cannot be released.</span></span>  
+## <a name="cause"></a><span data-ttu-id="6ab11-106">Cause</span><span class="sxs-lookup"><span data-stu-id="6ab11-106">Cause</span></span>  
+ <span data-ttu-id="6ab11-107">Le RCW est en cours d'utilisation sur un autre thread ou sur la pile des threads de libération,</span><span class="sxs-lookup"><span data-stu-id="6ab11-107">The RCW is in use on another thread or on the freeing thread stack.</span></span>  <span data-ttu-id="6ab11-108">et ne peut donc pas être libéré.</span><span class="sxs-lookup"><span data-stu-id="6ab11-108">An RCW that is in use cannot be released.</span></span>  
   
-## <a name="resolution"></a><span data-ttu-id="45ca9-109">Résolution</span><span class="sxs-lookup"><span data-stu-id="45ca9-109">Resolution</span></span>  
- <span data-ttu-id="45ca9-110">Ne libérez pas un RCW qui pourrait être utilisé dans le thread actuel ou dans d'autres threads.</span><span class="sxs-lookup"><span data-stu-id="45ca9-110">Do not free an RCW that could be in use either in the current or in other threads.</span></span>  
+## <a name="resolution"></a><span data-ttu-id="6ab11-109">Résolution</span><span class="sxs-lookup"><span data-stu-id="6ab11-109">Resolution</span></span>  
+ <span data-ttu-id="6ab11-110">Ne libérez pas un RCW qui pourrait être utilisé dans le thread actuel ou dans d'autres threads.</span><span class="sxs-lookup"><span data-stu-id="6ab11-110">Do not free an RCW that could be in use either in the current or in other threads.</span></span>  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="45ca9-111">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="45ca9-111">Effect on the Runtime</span></span>  
- <span data-ttu-id="45ca9-112">Cet Assistant Débogage managé n'a aucun effet sur le CLR.</span><span class="sxs-lookup"><span data-stu-id="45ca9-112">This MDA has no effect on the CLR.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="6ab11-111">Effet sur le runtime</span><span class="sxs-lookup"><span data-stu-id="6ab11-111">Effect on the Runtime</span></span>  
+ <span data-ttu-id="6ab11-112">Cet Assistant Débogage managé n'a aucun effet sur le CLR.</span><span class="sxs-lookup"><span data-stu-id="6ab11-112">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="45ca9-113">Sortie</span><span class="sxs-lookup"><span data-stu-id="45ca9-113">Output</span></span>  
- <span data-ttu-id="45ca9-114">Message décrivant l'erreur.</span><span class="sxs-lookup"><span data-stu-id="45ca9-114">A message describing the error.</span></span>  
+## <a name="output"></a><span data-ttu-id="6ab11-113">Sortie</span><span class="sxs-lookup"><span data-stu-id="6ab11-113">Output</span></span>  
+ <span data-ttu-id="6ab11-114">Message décrivant l'erreur.</span><span class="sxs-lookup"><span data-stu-id="6ab11-114">A message describing the error.</span></span>  
   
-## <a name="configuration"></a><span data-ttu-id="45ca9-115">Configuration</span><span class="sxs-lookup"><span data-stu-id="45ca9-115">Configuration</span></span>  
+## <a name="configuration"></a><span data-ttu-id="6ab11-115">Configuration</span><span class="sxs-lookup"><span data-stu-id="6ab11-115">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -54,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="45ca9-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="45ca9-116">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="6ab11-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ab11-116">See Also</span></span>  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [<span data-ttu-id="45ca9-117">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="45ca9-117">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [<span data-ttu-id="45ca9-118">Marshaling d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="45ca9-118">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)
+ [<span data-ttu-id="6ab11-117">Diagnostic d’erreurs avec les Assistants Débogage managé</span><span class="sxs-lookup"><span data-stu-id="6ab11-117">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [<span data-ttu-id="6ab11-118">Marshaling d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="6ab11-118">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)

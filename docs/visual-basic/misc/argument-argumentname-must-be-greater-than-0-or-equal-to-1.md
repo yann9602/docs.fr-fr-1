@@ -9,21 +9,21 @@ ms.assetid: 22c6bf5f-5194-43ec-8a8c-88f781801927
 caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9615cc606d4b28b7faee0b590ae6d865a64b08ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9c1c0c5632dd11456da231b5afb6bea80598b9b4
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="argument-39ltargumentnamegt39-must-be-greater-than-0-or-equal-to--1"></a><span data-ttu-id="ae9da-102">Argument &#39; &lt;nom_argument&gt;&#39; doit être supérieur à 0 ou égal à -1</span><span class="sxs-lookup"><span data-stu-id="ae9da-102">Argument &#39;&lt;argumentname&gt;&#39; must be greater than 0 or equal to -1</span></span>
-<span data-ttu-id="ae9da-103">La valeur d’un argument est inférieure à 0 mais n’est pas égale à -1.</span><span class="sxs-lookup"><span data-stu-id="ae9da-103">An argument's value is less than 0 but not equal to -1.</span></span>  
+# <a name="argument-39ltargumentnamegt39-must-be-greater-than-0-or-equal-to--1"></a><span data-ttu-id="1b453-102">Argument &#39; &lt;nom_argument&gt;&#39; doit être supérieur à 0 ou égal à -1</span><span class="sxs-lookup"><span data-stu-id="1b453-102">Argument &#39;&lt;argumentname&gt;&#39; must be greater than 0 or equal to -1</span></span>
+<span data-ttu-id="1b453-103">La valeur d’un argument est inférieure à 0 mais n’est pas égale à -1.</span><span class="sxs-lookup"><span data-stu-id="1b453-103">An argument's value is less than 0 but not equal to -1.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="ae9da-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="ae9da-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="1b453-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="1b453-104">To correct this error</span></span>  
   
-1.  <span data-ttu-id="ae9da-105">Vérifiez que la valeur de l’argument est comprise dans la plage valide.</span><span class="sxs-lookup"><span data-stu-id="ae9da-105">Ensure that the argument's value falls within the valid range.</span></span>  
+1.  <span data-ttu-id="1b453-105">Vérifiez que la valeur de l’argument est comprise dans la plage valide.</span><span class="sxs-lookup"><span data-stu-id="1b453-105">Ensure that the argument's value falls within the valid range.</span></span>  
   
-2.  <span data-ttu-id="ae9da-106">Si l’argument est fourni par un calcul, vérifiez les valeurs traitées par le calcul.</span><span class="sxs-lookup"><span data-stu-id="ae9da-106">If the argument is supplied by a calculation, check the values the calculation processes.</span></span>  
+2.  <span data-ttu-id="1b453-106">Si l’argument est fourni par un calcul, vérifiez les valeurs traitées par le calcul.</span><span class="sxs-lookup"><span data-stu-id="1b453-106">If the argument is supplied by a calculation, check the values the calculation processes.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ae9da-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ae9da-107">See Also</span></span>  
- [<span data-ttu-id="ae9da-108">Passage d’un argument par valeur et par référence</span><span class="sxs-lookup"><span data-stu-id="ae9da-108">Passing Arguments by Value and by Reference</span></span>](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)  
- [<span data-ttu-id="ae9da-109">Paramètre en passant des modifications de mécanisme en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="ae9da-109">Parameter Passing Mechanism Changes in Visual Basic</span></span>](http://msdn.microsoft.com/en-us/0fa2b0dc-aa1c-4797-bbd6-aa13c611cab2)
+## <a name="see-also"></a><span data-ttu-id="1b453-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1b453-107">See Also</span></span>  
+ [<span data-ttu-id="1b453-108">Passage d’un argument par valeur et par référence</span><span class="sxs-lookup"><span data-stu-id="1b453-108">Passing Arguments by Value and by Reference</span></span>](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)  
+ 
