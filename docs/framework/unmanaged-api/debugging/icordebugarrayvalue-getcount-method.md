@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4b96a408b3e3f1965cb02b7b90205408d1c7a49f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8a4dfdf6ad1fc50cbca039d50b32bc81b6b977ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugarrayvaluegetcount-method"></a><span data-ttu-id="2b434-102">ICorDebugArrayValue::GetCount, méthode</span><span class="sxs-lookup"><span data-stu-id="2b434-102">ICorDebugArrayValue::GetCount Method</span></span>
-<span data-ttu-id="2b434-103">Obtient le nombre total d’éléments dans le tableau.</span><span class="sxs-lookup"><span data-stu-id="2b434-103">Gets the total number of elements in the array.</span></span>  
+# <a name="icordebugarrayvaluegetcount-method"></a><span data-ttu-id="f310a-102">ICorDebugArrayValue::GetCount, méthode</span><span class="sxs-lookup"><span data-stu-id="f310a-102">ICorDebugArrayValue::GetCount Method</span></span>
+<span data-ttu-id="f310a-103">Obtient le nombre total d’éléments dans le tableau.</span><span class="sxs-lookup"><span data-stu-id="f310a-103">Gets the total number of elements in the array.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2b434-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2b434-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f310a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f310a-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCount (  
@@ -38,15 +39,15 @@ HRESULT GetCount (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2b434-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="2b434-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="f310a-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="f310a-105">Parameters</span></span>  
  `pnCount`  
- <span data-ttu-id="2b434-106">[out] Pointeur vers le nombre total d’éléments dans le tableau.</span><span class="sxs-lookup"><span data-stu-id="2b434-106">[out] A pointer to the total number of elements in the array.</span></span>  
+ <span data-ttu-id="f310a-106">[out] Pointeur vers le nombre total d’éléments dans le tableau.</span><span class="sxs-lookup"><span data-stu-id="f310a-106">[out] A pointer to the total number of elements in the array.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2b434-107">Spécifications</span><span class="sxs-lookup"><span data-stu-id="2b434-107">Requirements</span></span>  
- <span data-ttu-id="2b434-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2b434-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f310a-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="f310a-107">Requirements</span></span>  
+ <span data-ttu-id="f310a-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f310a-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2b434-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="2b434-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f310a-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f310a-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="2b434-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2b434-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f310a-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f310a-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="2b434-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2b434-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="f310a-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f310a-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

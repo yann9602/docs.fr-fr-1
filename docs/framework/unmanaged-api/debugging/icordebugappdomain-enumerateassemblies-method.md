@@ -21,16 +21,17 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dde65b9a3add4c0b7cd4dea90d5cebaae9f05794
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 243cdd1cabe7813d4e92a9d1868a9f0b105e1da8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugappdomainenumerateassemblies-method"></a><span data-ttu-id="d14f2-102">ICorDebugAppDomain::EnumerateAssemblies, méthode</span><span class="sxs-lookup"><span data-stu-id="d14f2-102">ICorDebugAppDomain::EnumerateAssemblies Method</span></span>
-<span data-ttu-id="d14f2-103">Obtient un énumérateur pour les assemblys dans le domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="d14f2-103">Gets an enumerator for the assemblies in the application domain.</span></span>  
+# <a name="icordebugappdomainenumerateassemblies-method"></a><span data-ttu-id="73412-102">ICorDebugAppDomain::EnumerateAssemblies, méthode</span><span class="sxs-lookup"><span data-stu-id="73412-102">ICorDebugAppDomain::EnumerateAssemblies Method</span></span>
+<span data-ttu-id="73412-103">Obtient un énumérateur pour les assemblys dans le domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="73412-103">Gets an enumerator for the assemblies in the application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d14f2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d14f2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="73412-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="73412-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateAssemblies (  
@@ -38,15 +39,15 @@ HRESULT EnumerateAssemblies (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d14f2-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d14f2-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="73412-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="73412-105">Parameters</span></span>  
  `ppAssemblies`  
- <span data-ttu-id="d14f2-106">[out] Pointeur vers l’adresse d’un objet ICorDebugAssemblyEnum qui est l’énumérateur pour les assemblys dans le domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="d14f2-106">[out] A pointer to the address of an ICorDebugAssemblyEnum object that is the enumerator for the assemblies in the application domain.</span></span>  
+ <span data-ttu-id="73412-106">[out] Pointeur vers l’adresse d’un objet ICorDebugAssemblyEnum qui est l’énumérateur pour les assemblys dans le domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="73412-106">[out] A pointer to the address of an ICorDebugAssemblyEnum object that is the enumerator for the assemblies in the application domain.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d14f2-107">Spécifications</span><span class="sxs-lookup"><span data-stu-id="d14f2-107">Requirements</span></span>  
- <span data-ttu-id="d14f2-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d14f2-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="73412-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="73412-107">Requirements</span></span>  
+ <span data-ttu-id="73412-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="73412-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d14f2-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d14f2-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="73412-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="73412-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d14f2-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d14f2-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="73412-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="73412-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d14f2-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d14f2-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="73412-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="73412-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
