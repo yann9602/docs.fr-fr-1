@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c4674acd6d097eb1cb03d5dd07b0c686404d1145
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7aba9aca61497b9b3efd1419d0565bdcfcd7ee7e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="troubleshooting"></a>Résolution des problèmes
 Les informations suivantes exposent quelques problèmes que vous pouvez rencontrer dans vos applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et fournissent des suggestions pour les éviter, ou du moins en réduire l'effet.  
@@ -80,5 +81,5 @@ Les informations suivantes exposent quelques problèmes que vous pouvez rencontr
  La méthode générée `OnCreated()` est appelée chaque fois que le constructeur d'objet est appelé, y compris dans le cas où [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] appelle le constructeur pour faire une copie pour les valeurs d'origine. Tenez compte de ce comportement si vous implémentez la méthode `OnCreated()` dans votre propre classe partielle.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Prise en charge le débogage](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)  
+ [Prise en charge du débogage](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)  
  [Forum Aux Questions](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)

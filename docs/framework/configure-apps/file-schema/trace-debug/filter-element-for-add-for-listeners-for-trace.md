@@ -18,11 +18,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 3d1cf912e5a07e7514a6b032ff511923ae93c5f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: efd31d03960fa516886586c4cf0a3e080d904977
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltfiltergt-element-for-ltaddgt-for-ltlistenersgt-for-lttracegt"></a>&lt;filtre&gt; élément &lt;ajouter&gt; pour &lt;écouteurs&gt; pour &lt;trace&gt;
 Ajoute un filtre à un écouteur de la `Listeners` collection pour une trace.  
@@ -65,7 +66,7 @@ Ajoute un filtre à un écouteur de la `Listeners` collection pour une trace.
 |`listeners`|Contient des écouteurs qui collectent, stocker et acheminer les messages. Les écouteurs dirigent la sortie de traçage vers une cible appropriée.|  
 |`add`|Ajoute un écouteur à la collection `Listeners`.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `<filter>` élément doit être contenu dans un `<add>` élément pour un écouteur de trace qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md). Si l’écouteur est défini dans un [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
   
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et le fichier de configuration d’application.  

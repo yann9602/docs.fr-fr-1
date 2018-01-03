@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5cf7a0aedc1fcd387b4b41233cd7c31b7ec64de4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 273d467df5ee97b4803a1843a0b0d86f7244feae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttransportgt-of-ltnettcpbindinggt"></a>&lt;transport&gt; de &lt;netTcpBinding&gt;
 Définit le type d’exigences de sécurité au niveau du message pour un point de terminaison configuré avec la [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
@@ -78,7 +79,7 @@ Définit le type d’exigences de sécurité au niveau du message pour un point 
 |EncryptAndSign|-Les messages sont chiffrés et signés.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -86,7 +87,7 @@ Définit le type d’exigences de sécurité au niveau du message pour un point 
 |-------------|-----------------|  
 |[\<sécurité >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|Spécifie les fonctions de sécurité de le [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Utilisez la sécurité de transport pour l'intégrité et la confidentialité du message SOAP et l'authentification mutuelle. Si ce mode de sécurité est sélectionné sur une liaison, la pile de canaux est configurée à l’aide d’un transport sécurisé et les messages SOAP sont sécurisés à l’aide d’une sécurité de transport, telle que Windows (Negotiate) ou SSL sur TCP.  
   
 ## <a name="see-also"></a>Voir aussi  
@@ -94,7 +95,7 @@ Définit le type d’exigences de sécurité au niveau du message pour un point 
  <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Transport%2A>  
  <xref:System.ServiceModel.NetTcpSecurity.Transport%2A>  
  <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>  
- [Sécurisation des Services et Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  

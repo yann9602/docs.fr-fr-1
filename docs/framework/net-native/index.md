@@ -19,11 +19,12 @@ caps.latest.revision: "27"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a79744d99571fa1428da1fade8f63c4c80ae7b6c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 92dac407ace9a039f5e6edc16b093fea5c485f63
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compiling-apps-with-net-native"></a>Compilation d'applications avec .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]est une technologie de précompilation pour générer et déployer des applications Windows qui est fournie avec Visual Studio 2015 et versions ultérieures. Elle compile automatiquement la version commerciale des applications écrites en code managé (C# ou Visual Basic) et qui ciblent .NET Framework et Windows 10 en code natif.  
@@ -49,7 +50,7 @@ ms.lasthandoff: 10/18/2017
 > [!IMPORTANT]
 > Pour la plupart des applications et des scénarios, .NET Native offre des temps de démarrage beaucoup plus rapides et des performances supérieures par rapport à une application compilée pour le langage intermédiaire ou à une image NGEN. Toutefois, les résultats peuvent varier. Pour vous assurer que votre application a bénéficié d’améliorations des performances de .NET Native, vous devez comparer ses performances avec celle de la version non - .NET Native de votre application. Pour plus d’informations, consultez [vue d’ensemble de la Session de Performance](https:/docs.microsoft.com/visualstudio/profiling/performance-session-overview).
  
-Toutefois, [!INCLUDE[net_native](../../../includes/net-native-md.md)] va au-delà d'une simple compilation en code natif. Il transforme la façon dont les applications .NET Framework sont intégrées et exécutées. En particulier :  
+Toutefois, [!INCLUDE[net_native](../../../includes/net-native-md.md)] va au-delà d'une simple compilation en code natif. Il transforme la façon dont les applications .NET Framework sont intégrées et exécutées. En particulier :  
   
 -   Pendant la précompilation, les parties nécessaires de .NET Framework sont liées statiquement dans votre application. Cela permet à l'application de s'exécuter avec les bibliothèques app-local de .NET Framework et au compilateur d'effectuer une analyse globale pour procurer des gains de performance. Ainsi, les applications se lancent systématiquement plus rapidement même après une mise à jour de .NET Framework.  
   
@@ -79,7 +80,7 @@ Toutefois, [!INCLUDE[net_native](../../../includes/net-native-md.md)] va au-del�
   
     -   [API qui s’appuient sur la réflexion](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)  
   
-    -   [Guide de référence de l'API de réflexion](../../../docs/framework/net-native/net-native-reflection-api-reference.md)  
+    -   [Informations de référence sur les API de réflexion](../../../docs/framework/net-native/net-native-reflection-api-reference.md)  
   
     -   [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
   

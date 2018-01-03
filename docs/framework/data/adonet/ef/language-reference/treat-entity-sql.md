@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: fa7bfd2a9fffdd0cfedced76cf83f9e01630c986
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c386016eebf4571399aa55a261c1225146df8ccd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="treat-entity-sql"></a>TREAT (Entity SQL)
 Traite un objet d'un type de base déterminé en tant qu'objet du type dérivé spécifié.  
@@ -44,7 +45,7 @@ TREAT ( expression as type)
 ## <a name="return-value"></a>Valeur de retour  
  Valeur du type de données spécifié.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  TREAT est utilisé pour effectuer un upcast entre des classes connexes. Par exemple, si `Employee` est dérivé de `Person` et que p est de type `Person`, `TREAT(p AS NamespaceName.Employee)` effectue un upcast d'une instance générique de `Person` vers `Employee`; autrement dit, cela vous permet de traiter p en tant que `Employee`.  
   
  TREAT est utilisé dans des scénarios d'héritage dans lesquels vous pouvez exécuter une requête de ce type :  
@@ -78,4 +79,4 @@ WHERE p IS OF (NamespaceName.Employee)
   
 ## <a name="see-also"></a>Voir aussi  
  [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [Types structurés Nullable](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)
+ [Types structurés autorisant la valeur null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 6c82149fb5d76ac7b95198ce2b29550eade54b48
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a860fae543e4d74e2b0569ed3672f3dc113f84c3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="navigate-entity-sql"></a>NAVIGATE (Entity SQL)
 Parcourt la relation établie entre des entités.  
@@ -44,7 +45,7 @@ navigate(instance-expresssion, [relationship-type], [to-end [, from-end] ])
 ## <a name="return-value"></a>Valeur de retour  
  Si la cardinalité de la terminaison To est 1, la valeur retournée est `Ref<T>`. Si la cardinalité de la terminaison To est n, la valeur retournée est `Collection<Ref<T>>`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les relations sont des constructions de première classe dans le modèle EDM ( [!INCLUDE[adonet_edm](../../../../../../includes/adonet-edm-md.md)] ). Elles peuvent être établies entre plusieurs types d'entités et les utilisateurs peuvent les parcourir d'une terminaison (entité) à l'autre. `from` et `to` sont facultatifs à la condition qu'il n'existe aucune ambiguïté au niveau de la résolution des noms dans la relation.  
   
  NAVIGATE est valide dans l'espace O et C.  
@@ -53,7 +54,7 @@ navigate(instance-expresssion, [relationship-type], [to-end [, from-end] ])
   
  navigate(`instance-expresssion`, `relationship-type`, [ `to-end` [, `from-end` ] ] )  
   
- Par exemple :  
+ Par exemple :  
   
 ```  
 Select o.Id, navigate(o, OrderCustomer, Customer, Order)  

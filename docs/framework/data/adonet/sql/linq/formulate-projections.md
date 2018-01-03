@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 8afd48c6ce7c6313e82a7b74c2271f52833d1f5e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: bb22ddd4882d9885c55301a6fdc6a0eb336b49af
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="formulate-projections"></a>Formuler des projections
 Les exemples suivants expliquent comment l'instruction `select` dans C# et l'instruction `Select` dans [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] peuvent être associées à d'autres fonctionnalités pour former des projections de requête.  

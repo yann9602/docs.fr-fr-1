@@ -13,16 +13,17 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 746013a11d10162a78116ff41d0b09d942f7651b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6ec4bc061ea7a2b7875c9c5521d73dfd2e96954a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="oracle-data-type-mappings"></a>Mappages des types de données Oracle
 La table suivante répertorie les types de données Oracle et leurs mappages sur le <xref:System.Data.OracleClient.OracleDataReader>.  
   
-|Type de données Oracle|Type de données .NET Framework retourné par OracleDataReader.GetValue|Type de données OracleClient retourné par OracleDataReader.GetOracleValue|Remarques|  
+|Type de données Oracle|Type de données .NET Framework retourné par OracleDataReader.GetValue|Type de données OracleClient retourné par OracleDataReader.GetOracleValue|Notes|  
 |----------------------|--------------------------------------------------------------------|------------------------------------------------------------------------|-------------|  
 |**BFILE**|**Byte]**|<xref:System.Data.OracleClient.OracleBFile>||  
 |**OBJET BLOB**|**Byte]**|<xref:System.Data.OracleClient.OracleLob>||  
@@ -50,7 +51,7 @@ La table suivante répertorie les types de données Oracle et leurs mappages sur
   
  Le tableau suivant répertorie les types de données Oracle et les types de données .NET Framework (**System.Data.DbType** et <xref:System.Data.OracleClient.OracleType>) à utiliser pour les lier comme paramètres.  
   
-|Type de données Oracle|Énumération DbType à lier comme paramètre|Énumération OracleType à lier comme paramètre|Remarques|  
+|Type de données Oracle|Énumération DbType à lier comme paramètre|Énumération OracleType à lier comme paramètre|Notes|  
 |----------------------|-----------------------------------------------|---------------------------------------------------|-------------|  
 |**BFILE**||**BFile**|Oracle n’autorise la liaison un **BFILE** comme un **BFILE** paramètre. Le fournisseur de données .NET pour Oracle ne construit pas automatiquement un pour vous si vous tentez de lier un non -**BFILE** de valeurs, tels que **byte []** ou <xref:System.Data.OracleClient.OracleBinary>.|  
 |**OBJET BLOB**||**Objet BLOB**|Oracle n’autorise la liaison un **BLOB** comme un **BLOB** paramètre. Le fournisseur de données .NET pour Oracle ne construit pas automatiquement un pour vous si vous tentez de lier un non -**BLOB** de valeurs, tels que **byte []** ou <xref:System.Data.OracleClient.OracleBinary>.|  

@@ -15,11 +15,11 @@ ms.assetid: 5d296ab3-bafe-4c4d-9887-78f162ed86c7
 caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 1cfdb94ebafa7d6a14253aeb59ab98b3a953fe4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1e701addb31b361e55f2761f441c23deaef7c10d
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="optionexplicit"></a>/optionexplicit
 Indique au compilateur de signaler des erreurs si les variables ne sont pas déclarées avant leur utilisation.  
@@ -34,12 +34,12 @@ Indique au compilateur de signaler des erreurs si les variables ne sont pas déc
  `+` &#124; `-`  
  Facultatif. Spécifiez `/optionexplicit+` pour exiger la déclaration explicite des variables. Le `/optionexplicit+` option est la valeur par défaut et est identique à `/optionexplicit`. Le `/optionexplicit-` option permet une déclaration implicite des variables.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si le fichier de code source contient un [Option Explicit, instruction](../../../visual-basic/language-reference/statements/option-explicit-statement.md), l’instruction substitue le `/optionexplicit` paramètre du compilateur de ligne de commande.  
   
 ### <a name="to-set-optionexplicit-in-the-visual-studio-ide"></a>Pour définir /optionexplicit dans l’IDE de Visual Studio  
   
-1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.   
   
 2.  Cliquez sur l’onglet **Compiler**.  
   

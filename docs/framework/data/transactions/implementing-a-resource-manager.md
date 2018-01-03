@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d9fe72090de3722137c2b0c2190c11f190be5fbc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 25a45626564bb58950b251ae5e9041609d96a207
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-a-resource-manager"></a>Implémentation d'un gestionnaire des ressources
 Les ressources utilisées dans une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. Les gestionnaires de ressources travaillent en coopération avec le gestionnaire de transactions pour fournir à l'application la garantie de l'atomicité et de l'isolation. Microsoft SQL Server, les files d'attente de messages durables et les tables de hachage en mémoire sont des gestionnaires de ressources.  
@@ -44,22 +45,22 @@ Les ressources utilisées dans une transaction sont managées par un gestionnair
 ## <a name="in-this-section"></a>Dans cette section  
  Les étapes généralement suivies par un gestionnaire de ressources sont détaillées dans les rubriques suivantes.  
   
- [Inscription des ressources en tant que Participants dans une Transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
+ [Inscription de ressources comme participants à une transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
   
  Décrit comment inscrire une ressource durable ou volatile à une transaction.  
   
- [Valide la Transaction en une seule phase et à plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [Validation d’une transaction en une phase unique et en plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  Décrit la façon dont un gestionnaire de ressources répond à la notification de validation et prépare la validation.  
   
- [Récupération](../../../../docs/framework/data/transactions/performing-recovery.md)  
+ [Exécution de la récupération](../../../../docs/framework/data/transactions/performing-recovery.md)  
   
  Décrit comment un gestionnaire de ressources durables récupère après la défaillance.  
   
- [Niveaux de confiance de sécurité de l’accès aux ressources](../../../../docs/framework/data/transactions/security-trust-levels-in-accessing-resources.md)  
+ [Niveaux de confiance de sécurité dans l’accès aux ressources](../../../../docs/framework/data/transactions/security-trust-levels-in-accessing-resources.md)  
   
  Décrit comment les trois niveaux de confiance de System.Transactions permettent de restreindre l'accès aux types de ressources que <xref:System.Transactions> expose.  
   
- [Optimisation à l’aide de la validation à Phase unique et la Notification de Phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
+ [Optimisation à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
   
  Décrit les pratiques d'optimisation disponibles pour l'implémentations des gestionnaires de ressources.

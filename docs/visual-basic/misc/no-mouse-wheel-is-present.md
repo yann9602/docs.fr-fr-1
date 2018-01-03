@@ -9,11 +9,11 @@ ms.assetid: e924ffba-4af1-4247-9a6f-d19a03738f62
 caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 43d91abd8178f2ac00a42af2168388f2f7b94cbd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c96f6efed793cfcd4a1a23099e2bba1f01e53437
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="no-mouse-wheel-is-present"></a>Absence de roulette de souris
 La propriété `My.Computer.Mouse.WheelScrollLines` a été appelée, mais la souris ne possède pas de roulette de défilement.  
@@ -22,11 +22,11 @@ La propriété `My.Computer.Mouse.WheelScrollLines` a été appelée, mais la so
   
 -   Vérifiez la propriété `My.Computer.Mouse.WheelExists` pour déterminer si la souris a une roulette de défilement avant d’appeler la propriété `My.Computer.Mouse.WheelScrollLines` .  
   
-     ou  
+     - ou -  
   
 -   Installez une souris dotée d’une roulette de défilement sur l’ordinateur.  
   
 ## <a name="see-also"></a>Voir aussi  
- [My.Computer.Mouse.WheelScrollLines, propriété](http://msdn.microsoft.com/en-us/67600f96-25d7-4dd9-946a-b46e1fc6a57f)  
- [My.Computer.Mouse.WheelExists, propriété](http://msdn.microsoft.com/en-us/332d44f7-0b66-4eaa-b4ce-d7f161bfbd07)  
+ [My.Computer.Mouse.WheelScrollLines](xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines)  
+ [My.Computer.Mouse.WheelExists](xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists)  
  [Exceptions et gestion des erreurs dans Visual Basic](http://msdn.microsoft.com/en-us/3e351e73-cf23-40ab-8b60-05794160529e)

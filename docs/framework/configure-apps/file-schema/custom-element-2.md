@@ -10,11 +10,12 @@ ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a9722493ec62952d7cbc07d478687b8495d24f95
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2154e2a178050e5bafa7d19f37a766141d0a5838
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>Élément personnalisé pour NameValueSectionHandler et DictionarySectionHandler
 
@@ -25,7 +26,7 @@ Définit les paramètres pour les sections de configuration personnalisées qui 
 
 ## <a name="attributes"></a>Attributs
 
-Aucune
+Aucun.
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -41,7 +42,7 @@ Aucune
 | [**\<Supprimer >** ](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et<xref:System.Configuration.DictionarySectionHandler> |    Supprime un paramètre défini précédemment. |
 | [**\<Désactivez >** ](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md) pour <xref:System.Configuration.NameValueSectionHandler> et<xref:System.Configuration.DictionarySectionHandler> | Efface tous les paramètres déjà définis dans une section. |
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le  **\<sectionName >** est un élément personnalisé défini par un  **\<section >** de balise dans le  **\<configSections >**élément.
 

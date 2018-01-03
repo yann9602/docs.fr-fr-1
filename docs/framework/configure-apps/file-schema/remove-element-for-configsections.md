@@ -12,11 +12,12 @@ ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e6dfd1ac56070f55f30bd4bd093e1185486da295
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: bf2cb49fbeb01ad176a1d24d711cebc97ba14004
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="remove-element-for-configsections"></a>\<Supprimer >, élément pour \<configSections >
 
@@ -46,9 +47,9 @@ Supprime un groupe de sections ou une section prédéfinis.
 
 # <a name="child-elements"></a>Éléments enfants
 
-Aucune
+Aucun.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Vous pouvez utiliser la  **\<Supprimer >** élément à supprimer les sections et groupes de votre application qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 

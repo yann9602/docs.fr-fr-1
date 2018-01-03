@@ -14,11 +14,11 @@ ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 13df7dc6b325b97411b910c0fc8e05e65a332dc5
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 39a4245b51c1199a6aeb0c23282b1917f51164d2
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Introduction à COM Interop (Visual Basic)
 Le modèle COM (Component Object) permet à un objet exposer ses fonctionnalités à d’autres composants et d’héberger des applications. Alors que les objets COM ont été essentiels à la programmation de nombreuses années Windows, les applications conçues pour le common language runtime (CLR) offrent de nombreux avantages.  
@@ -51,7 +51,7 @@ Le modèle COM (Component Object) permet à un objet exposer ses fonctionnalité
 ### <a name="importing-and-exporting-type-libraries"></a>Importation et exportation de bibliothèques de types  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]contient un utilitaire, Tlbimp, qui vous permet d’importer des informations à partir d’une bibliothèque de types dans un [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] application. Vous pouvez générer des bibliothèques de types provenant d’assemblys à l’aide de l’utilitaire Tlbexp.  
   
- Pour plus d’informations sur Tlbimp et Tlbexp, consultez [Tlbimp.exe (Type Library Importer)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382) et [Tlbexp.exe (exportateur)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
+ Pour plus d’informations sur Tlbimp et Tlbexp, consultez [Tlbimp.exe (Type Library Importer)](../../../framework/tools/tlbimp-exe-type-library-importer.md) et [Tlbexp.exe (exportateur)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
   
 ## <a name="interop-assemblies"></a>Assemblys d’interopérabilité  
  Assemblys PIA sont [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] le code d’assemblys qui pont entre managées et non managées, membres de l’objet COM mappage en équivalent [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] membres managés. Assemblys d’interopérabilité créés par Visual Basic .NET gèrent de nombreux détails de l’utilisation des objets COM, tels que le marshaling d’interopérabilité.  
@@ -62,10 +62,10 @@ Le modèle COM (Component Object) permet à un objet exposer ses fonctionnalité
 ## <a name="see-also"></a>Voir aussi  
  [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)  
  [Procédure pas à pas : implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- [Interopération avec du code non managé](../../../../docs/framework/interop/index.md)  
+ [Interopération avec du code non managé](../../../framework/interop/index.md)  
  [Dépannage des problèmes liés à l’interopérabilité](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
  [Assemblys et le Global Assembly Cache](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Tlbimp.exe (importateur de bibliothèques de types)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
+ [Tlbimp.exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md)  
  [Tlbexp.exe (exportateur de bibliothèques de types)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
  [Marshaling d'interopérabilité](../../../framework/interop/interop-marshaling.md)  
  [COM Interop sans inscription](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)

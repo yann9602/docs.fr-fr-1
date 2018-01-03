@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 143447020f41368a3553a0c8cda78e80806b75ba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0424a92f2308c21404cf35cd59c797498e6af992
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-adonet-applications"></a>Sécurisation des applications ADO.NET
 L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter les pièges de codage courants, tels que la non validation des entrées d'utilisateur. Une application qui accède à des données présente de nombreux points de défaillance possibles qu'un agresseur peut exploiter pour extraire, manipuler ou détruire des données sensibles. Il est donc important de comprendre tous les aspects de la sécurité, depuis le processus de modélisation de menace durant la phase de conception de votre application, jusqu'à son déploiement éventuel et sa maintenance en cours.  
@@ -33,7 +34,7 @@ L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter le
  [Sécuriser l’accès aux données](../../../../docs/framework/data/adonet/secure-data-access.md)  
  Décrit comment utiliser des données à partir d'une source de données sécurisée.  
   
- [Sécuriser les Applications clientes](../../../../docs/framework/data/adonet/secure-client-applications.md)  
+ [Applications clientes sécurisées](../../../../docs/framework/data/adonet/secure-client-applications.md)  
  Décrit des considérations sur la sécurité pour les applications clientes.  
   
  [Sécurité d’accès du code et ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)  
@@ -46,7 +47,7 @@ L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter le
  [Sécurité SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  Décrit les fonctionnalités de sécurité SQL Server du point de vue d’un développeur.  
   
- [Considérations sur la sécurité](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
+ [Considérations relatives à la sécurité](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
  Décrit la sécurité des applications reposant sur Entity Framework.  
   
  [Sécurité](../../../../docs/standard/security/index.md)  

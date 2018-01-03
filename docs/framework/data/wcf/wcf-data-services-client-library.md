@@ -17,11 +17,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 65b02945aa81fdf18ad328a833f8f85744035871
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8e8f5626ab7439b34377ba0200fd232c41017652
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-data-services-client-library"></a>Bibliothèque client services de données WCF
 Toute application peut interagir avec un service de données basé sur [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] si elle peut envoyer une requête HTTP et traiter le flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] retourné par un service de données. Cette interopérabilité vous permet d'accéder aux services basés sur [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à partir d'une large gamme d'applications Web. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]inclut des bibliothèques clientes qui fournissent une expérience en programmation plus riche lorsque vous consommez [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux à partir de .NET Framework ou les applications Silverlight.  
@@ -40,22 +41,22 @@ Toute application peut interagir avec un service de données basé sur [!INCLUDE
  [Chargement de contenu différé](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)  
  Décrit comment charger un contenu supplémentaire non inclus dans la réponse à la requête initiale.  
   
- [Mise à jour du Service de données](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
+ [Mise à jour du service de données](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
  Décrit comment créer, modifier et supprimer des entités et des relations à l'aide des bibliothèques clientes.  
   
  [Opérations asynchrones](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
  Décrit les fonctions fournies par les bibliothèques clientes pour l'utilisation d'un service de données de façon asynchrone.  
   
- [Opérations de traitement par lot](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
+ [Opérations de traitement par lots](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
  Décrit comment envoyer plusieurs demandes au service de données dans un lot unique à l'aide des bibliothèques clientes.  
   
  [Liaison de données aux contrôles](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
  Décrit comment lier des contrôles à un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux retourné par un service de données.  
   
- [Appel des opérations de Service](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)  
+ [Appel des opérations de service](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)  
  Décrit comment utiliser la bibliothèque cliente pour appeler des opérations de service.  
   
- [Gérer le contexte de Service de données](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)  
+ [Gestion du contexte du service de données](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)  
  Décrit les options de gestion du comportement de la bibliothèque cliente.  
   
  [Utilisation des données binaires](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)  

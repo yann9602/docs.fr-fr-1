@@ -31,11 +31,11 @@ ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
 caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 009c5a383cc3296f7f92888a344fa265547f1077
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8a50f44a167952c735c6ed2830ca87105413401b
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next, instruction (Visual Basic)
 Répète un groupe d’instructions un nombre spécifié de fois.  
@@ -186,4 +186,4 @@ Next [ counter ]
  [Do...Loop (instruction)](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
  [Structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
  [Exit (instruction)](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)
+ [Collections](../../programming-guide/concepts/collections.md)

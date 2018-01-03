@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5a5aea48b1c70c550641f3450dff16e57dd4f62b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 071c6b41d24465a599afa87a296c0797e8ca6ed9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="aggregate-canonical-functions"></a>Fonctions d'agrégation canoniques
 
@@ -48,7 +49,7 @@ Les agrégats basés sur des collections (fonctions de collection) opèrent sur 
 min(select value o.ShipDate from LOB.Orders as o)
 ```
 
-Les expressions figurant dans des agrégats basés sur des collections sont évalués dans l’étendue de résolution de noms ambiante actuelle.
+Les expressions figurant dans des agrégats basés sur des collections sont évalués dans la résolution de noms de portée ambiante actuelle.
 
 ## <a name="group-based-aggregates"></a>Agrégats basés sur un groupe
 

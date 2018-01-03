@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 21518cad85ebcfc4c326e99d615b4f2dfccf6a2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ebae7ad633273a9c33aa7ddcad1b11ad76d9046c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="identifiers-entity-sql"></a>Identificateurs (Entity SQL)
 Les identificateurs sont utilisés dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pour représenter des alias d'expression de requête, des références de variables, des propriétés d'objets, des fonctions, etc. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]fournit deux types d’identificateurs : les identificateurs simples et les identificateurs entre guillemets.  
@@ -132,5 +133,5 @@ SELECT 1 AS X, 2 AS X …
   
 ## <a name="see-also"></a>Voir aussi  
  [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [Vue d’ensemble de Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
- [Jeu de caractères d’entrée](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md)
+ [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
+ [Jeu de caractères en entrée](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md)

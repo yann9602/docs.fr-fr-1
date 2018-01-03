@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b3544eac58fe168c5f2e6a355e8cf97b4598bb76
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: eb1b495358350bdf2501c56191c2930020930388
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="overlaps-entity-sql"></a>OVERLAPS (Entity SQL)
 Détermine si deux collections ont des éléments en commun.  
@@ -35,7 +36,7 @@ expression OVERLAPS expression
 ## <a name="return-value"></a>Valeur de retour  
  `true` si les deux collections ont des éléments en commun ; sinon, `false`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  OVERLAPS est fonctionnellement équivalent à ce qui suit :  
   
  `EXISTS ( expression INTERSECT expression )`  

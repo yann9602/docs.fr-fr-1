@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 14a758f1d69da4db8ed58809de20d3522ea7e4e9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8d880583016e6ccc0ae57fea10c35cb32726c93e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lthttplistenergt-element-network-settings"></a>&lt;httpListener&gt; élément (paramètres réseau)
 Personnalise les paramètres utilisés par la <xref:System.Net.HttpListener> classe.  
@@ -55,7 +56,7 @@ Personnalise les paramètres utilisés par la <xref:System.Net.HttpListener> cla
 |-----------------|---------------------|  
 |[Paramètres](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le **unescapeRequestUrl** attribut indique si <xref:System.Net.HttpListener> utilise l’URI sans séquence d’échappement brut au lieu de l’URI converti où toutes les valeurs encodées de pourcentage sont converties et autres étapes de normalisation sont exécutées.  
   
  Lorsqu’un <xref:System.Net.HttpListener> instance reçoit une demande via le `http.sys` service, il crée une instance de la chaîne d’URI fournie par `http.sys`et l’expose en tant que le <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType> propriété.  

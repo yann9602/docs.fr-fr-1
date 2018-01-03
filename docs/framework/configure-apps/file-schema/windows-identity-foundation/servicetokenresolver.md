@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 06e871ee31880a219d9105ff4ce667618bfb78f0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cd981c8e48f003060c74787fdd2f29557c07901d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicetokenresolvergt"></a>&lt;serviceTokenResolver&gt;
 Inscrit le résolveur de jeton de service qui est utilisé par les gestionnaires de la collection du Gestionnaire de jetons. Le programme de résolution de jeton de service permet de résoudre le jeton de chiffrement sur les jetons et les messages entrant.  
@@ -53,7 +54,7 @@ Inscrit le résolveur de jeton de service qui est utilisé par les gestionnaires
 |type|Spécifie le type du programme de résolution de jeton de service. Soit le <xref:System.IdentityModel.Selectors.SecurityTokenResolver> ou un type qui dérive de la <xref:System.IdentityModel.Selectors.SecurityTokenResolver> classe. Pour plus d’informations sur la façon de spécifier le `type` d’attribut, consultez [références de Type personnalisé]. Obligatoire.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -61,7 +62,7 @@ Inscrit le résolveur de jeton de service qui est utilisé par les gestionnaires
 |-------------|-----------------|  
 |[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Fournit des gestionnaires de jetons de configuration pour une collection de sécurité.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le programme de résolution de jeton de service peut être utilisé pour résoudre le jeton de chiffrement sur les jetons et les messages entrant. Il est utilisé pour récupérer la clé doit être utilisée pour déchiffrer les jetons entrants. Vous devez spécifier le `type` attribut. Le type spécifié peut être <xref:System.IdentityModel.Selectors.SecurityTokenResolver> ou un type personnalisé qui dérive de la <xref:System.IdentityModel.Selectors.SecurityTokenResolver> classe.  
   
  Certains gestionnaires de jetons permettent de spécifier les paramètres de résolution de jeton de service dans la configuration. Paramètres de gestionnaires de jetons individuels remplacent celles spécifiées dans la collection de gestionnaire de jetons de sécurité.  

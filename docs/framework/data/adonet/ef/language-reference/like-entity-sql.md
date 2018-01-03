@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 773547b097bad80e82350b473b6e59d0d84aa6dd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f7118637671dbc18c1385b71cc492b5307a377c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="like-entity-sql"></a>LIKE (Entity SQL)
 Détermine si une `String` de caractères donnée correspond à un modèle spécifié.  
@@ -44,7 +45,7 @@ match [NOT] LIKE pattern [ESCAPE escape]
 ## <a name="return-value"></a>Valeur de retour  
  `true` si la `string` correspond au modèle ; sinon, `false`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)]les expressions qui utilisent l’opérateur LIKE sont évaluées à peu près de la même façon que les expressions qui utilisent l’égalité comme critère de filtre. Toutefois, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] expressions qui utilisent l’opérateur LIKE peuvent inclure des littéraux et des caractères génériques.  
   
  Le tableau ci-dessous décrit la syntaxe de la chaîne (`string`) de modèle.  

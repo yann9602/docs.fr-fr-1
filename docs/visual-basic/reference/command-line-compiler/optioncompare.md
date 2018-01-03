@@ -15,11 +15,11 @@ ms.assetid: 7237b766-b44d-4cc5-9a3c-885348a7d9e4
 caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a6f602e0b0b23345bf1f5aae843bd44bd2642bc9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 62a9a4bf3428f3ee731e7ecc63be51dbf3076ee4
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="optioncompare"></a>/optioncompare
 Spécifie la façon dont sont effectuées les comparaisons de chaînes.  
@@ -30,7 +30,7 @@ Spécifie la façon dont sont effectuées les comparaisons de chaînes.
 /optioncompare:{binary | text}  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Vous pouvez spécifier `/optioncompare` dans un des deux formes : `/optioncompare:binary` pour utiliser des comparaisons de chaînes binaires et `/optioncompare:text` pour utiliser des comparaisons de chaînes de texte. Par défaut, le compilateur utilise `/optioncompare:binary`.  
   
  Dans Microsoft Windows, la page de codes utilisée détermine l’ordre de tri binaire. Un ordre de tri binaire standard est la suivante :  
@@ -43,7 +43,7 @@ Spécifie la façon dont sont effectuées les comparaisons de chaînes.
   
 ### <a name="to-set-optioncompare-in-the-visual-studio-ide"></a>Pour définir /optioncompare dans l’IDE de Visual Studio  
   
-1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.   
   
 2.  Cliquez sur l’onglet **Compiler**.  
   

@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bd2356845c76e81ce2efe87bdf247de293d6115d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4a502cb309bce3a1a2fb55c9e5477b7a6a395960
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltstartupgt-element"></a>&lt;démarrage&gt; élément
 Spécifie les informations de démarrage du common language runtime.  
@@ -50,7 +51,7 @@ Spécifie les informations de démarrage du common language runtime.
   
 ## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>Attribut d’useLegacyV2RuntimeActivationPolicy  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`true`|Activer [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] stratégie d’activation du runtime pour le runtime choisi, qui consiste à lier les techniques d’activation runtime hérité (telles que la [fonction CorBindToRuntimeEx](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)) au runtime choisi dans le fichier de configuration au lieu de coupe les CLR version 2.0. Par conséquent, si CLR version 4 ou ultérieure est choisie dans le fichier de configuration, les assemblys en mode mixte créés avec les versions antérieures du .NET Framework sont chargées avec la version CLR choisie. Ce paramètre empêche CLR version 1.1 ou CLR version 2.0 de se charger dans le même processus, en désactivant efficacement la fonctionnalité côte à côte in-process.|  
 |`false`|Utilisez la stratégie d’activation par défaut pour le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures, qui consiste à autoriser runtime hérité techniques charger le CLR version 1.1 ou 2.0 dans le processus d’activation. Ce paramètre empêche les assemblys en mode mixte de charger dans le .NET Framework 4 ou version ultérieure, sauf si elles ont été générées avec le .NET Framework 4 ou version ultérieure. Cette valeur est la valeur par défaut.|  
@@ -68,7 +69,7 @@ Spécifie les informations de démarrage du common language runtime.
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le  **\<supportedRuntime >** élément doit être utilisé par toutes les applications générées à l’aide de la version 1.1 ou ultérieure du runtime. Les applications générées pour prendre en charge uniquement la version 1.0 du runtime doivent utiliser le  **\<requiredRuntime >** élément.  
   
  Le code de démarrage d’une application hébergée dans Microsoft Internet Explorer ignore la  **\<démarrage >** élément et ses éléments enfants.  

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26ed0c9dd2c895d4a01536a5715c6235ff65df7b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6f43462ac42c59407ae90f2d342a445a688e1b26
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltudpbindinggt"></a>&lt;udpBinding&gt;
 Élément de configuration utilisé pour configurer la liaison <xref:System.ServiceModel.UdpBinding>.  
@@ -85,7 +86,7 @@ ms.lasthandoff: 12/02/2017
 |-------------|-----------------|  
 |[\<liaisons >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  UdpBinding permet aux services WCF de communiquer sur le transport UDP. Il permet des échanges de messages « fire and forget » où un client envoie un message à un service et attend pas de réponse.  
   
 ## <a name="example"></a>Exemple  

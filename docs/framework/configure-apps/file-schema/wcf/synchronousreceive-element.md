@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 79d78517b62e4476106ff1ed7978c770a17caf2a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 63923121ae96b85bd192899a8d8ad285a3ad5b2d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsynchronousreceivegt-element"></a>&lt;synchronousReceive&gt;, élément
 Cet élément de configuration est utilisé en vue de spécifier le comportement de réception des messages au moment de l'exécution dans une application cliente ou de service. Il n'a aucun attribut ou élément enfant.  
@@ -38,7 +39,7 @@ Cet élément de configuration est utilisé en vue de spécifier le comportement
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -49,7 +50,7 @@ Cet élément de configuration est utilisé en vue de spécifier le comportement
 |-------------|-----------------|  
 |[\<comportement >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Spécifie un comportement de point de terminaison.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Utilisez ce comportement pour indiquer à l’écouteur de canal d’utiliser une réception synchrone au lieu de celle par défaut (asynchrone). [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] émet un nouveau thread pour pomper chaque canal accepté. Si le nombre de canaux est important, il est possible de rencontrer une insuffisance de threads.  
   
 ## <a name="see-also"></a>Voir aussi  

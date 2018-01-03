@@ -27,11 +27,11 @@ ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
 caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 56dd7fc339c452d64eb18211337b9a7674a83e1c
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: c297a84b37b455a4b30b1848aa9bdd30dc567ec1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch...Finally, instruction (Visual Basic)
 Fournit un moyen de gérer certaines ou toutes les erreurs possibles qui peuvent se produire dans un bloc de code donné lors de code en cours d’exécution.  
@@ -67,7 +67,7 @@ End Try
 |`finallyStatements`|Facultatif. Instructions qui sont exécutées une fois que tout autre traitement d’erreur s’est produite.|  
 |`End Try`|Met fin à la `Try...Catch...Finally` structure.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si vous pensez qu’une exception particulière se produise pendant une section particulière de code, placez le code dans un `Try` bloquer et d’utiliser un `Catch` bloc pour conserver le contrôle et de gérer l’exception si elle se produit.  
   
  A `Try…Catch` instruction se compose d’un `Try` bloc suivi par une ou plusieurs `Catch` clauses qui spécifient des gestionnaires pour différentes exceptions. Lorsqu’une exception est levée dans un `Try` bloc, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] recherche le `Catch` instruction qui gère l’exception. Si une correspondance `Catch` instruction n’est trouvée, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] examine la méthode qui a appelé la méthode actuelle, et ainsi de suite la pile des appels. Si aucun `Catch` bloc est trouvé, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] affiche un message d’exception non gérée à l’utilisateur et arrête l’exécution du programme.  
@@ -134,10 +134,10 @@ End Try
   
  Un `Await` expression ne peut pas être à l’intérieur d’un `Catch` bloc ou `Finally` bloc.  
   
-## <a name="iterators"></a>Itérateurs  
+## <a name="iterators"></a>Iterators  
  Une fonction d’itérateur ou `Get` accesseur effectue une itération personnalisée sur une collection. Un itérateur utilise une [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) instruction pour retourner chaque élément de la collection un à la fois. Vous appelez une fonction d’itérateur en utilisant un [For Each... L’instruction suivante](../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
- A `Yield` instruction peut être à l’intérieur d’un `Try` bloc. A `Try` bloc qui contient un `Yield` instruction peut avoir `Catch` bloque et peut avoir un `Finally` bloc. Consultez la section « Essayez de blocs dans Visual Basic » de [itérateurs](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7) pour obtenir un exemple.  
+ A `Yield` instruction peut être à l’intérieur d’un `Try` bloc. A `Try` bloc qui contient un `Yield` instruction peut avoir `Catch` bloque et peut avoir un `Finally` bloc. Consultez la section « Essayez de blocs dans Visual Basic » de [itérateurs](../../programming-guide/concepts/iterators.md) pour obtenir un exemple.  
   
  A `Yield` instruction ne peut pas être à l’intérieur d’un `Catch` bloc ou une `Finally` bloc.  
   
@@ -194,5 +194,5 @@ End Try
  [Exit (instruction)](../../../visual-basic/language-reference/statements/exit-statement.md)  
  [On Error (instruction)](../../../visual-basic/language-reference/statements/on-error-statement.md)  
  [Bonnes pratiques pour l’utilisation des extraits de code](/visualstudio/ide/best-practices-for-using-code-snippets)  
- [Gestion des exceptions](../../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)  
+ [Gestion des exceptions](../../../standard/parallel-programming/exception-handling-task-parallel-library.md)  
  [Throw (instruction)](../../../visual-basic/language-reference/statements/throw-statement.md)

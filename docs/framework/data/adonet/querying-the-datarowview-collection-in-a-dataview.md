@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b17a489552e7b2bcb6044fce99e5f526b8293a25
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 02b32157fe88bddfd9a777042f6da87aa48ca551
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="querying-the-datarowview-collection-in-a-dataview"></a>Interrogation de la collection DataRowView dans un DataView
 L'objet <xref:System.Data.DataView> expose une collection énumérable d'objets <xref:System.Data.DataRowView>. L'objet <xref:System.Data.DataRowView> représente une vue personnalisée d'un objet <xref:System.Data.DataRow> et affiche une version spécifique de cet objet <xref:System.Data.DataRow> dans un contrôle. Une seule version d'un objet <xref:System.Data.DataRow> peut être affichée par le biais d'un contrôle, comme un objet <xref:System.Windows.Forms.DataGridView>. Vous pouvez accéder à l'objet <xref:System.Data.DataRow> qui est exposé par le <xref:System.Data.DataRowView> par le biais de la propriété <xref:System.Data.DataRowView.Row%2A> de l'objet <xref:System.Data.DataRowView>. Lorsque vous affichez des valeurs à l'aide d'un <xref:System.Data.DataRowView>, la propriété <xref:System.Data.DataView.RowStateFilter%2A> détermine la version de ligne de l'objet <xref:System.Data.DataRow> sous-jacent qui est exposée. Pour plus d’informations sur les différentes versions de ligne à l’aide de l’accès à un <xref:System.Data.DataRow>, consultez [état des lignes et des Versions de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md). Étant donné que la collection de <xref:System.Data.DataRowView> objets exposés par le <xref:System.Data.DataView> est dénombrable, vous pouvez utiliser [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] pour l’interroger.  

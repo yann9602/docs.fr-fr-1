@@ -18,11 +18,11 @@ ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2575598577820bd7a72fae2d9b8ba52978f5952d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e6ba5ce4b009e0d8c675db07b56b9811c595ae2f
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent, instruction
 Déclenche un événement déclaré au niveau du module dans une classe, un formulaire ou un document.  
@@ -40,7 +40,7 @@ RaiseEvent eventname[( argumentlist )]
  `argumentlist`  
  Facultatif. Liste délimitée par des virgules des variables, des tableaux ou des expressions. Le `argumentlist` argument doit être mis entre parenthèses. S’il n’y a pas d’arguments, les parenthèses doivent être omis.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Requis `eventname` est le nom d’un événement déclaré dans le module. Il suit les conventions d’affectation des noms variables de Visual Basic.  
   
  Si l’événement n’a pas été déclaré dans le module dans lequel il est déclenché, une erreur se produit. Le fragment de code suivant illustre une déclaration d’événement et d’une procédure dans laquelle l’événement est déclenché.  
@@ -80,7 +80,7 @@ RaiseEvent eventname[( argumentlist )]
  Appuyez sur F5 pour exécuter l’exemple précédent, puis cliquez sur le bouton intitulé **Démarrer**. La première zone de texte commence à décompter les secondes. Quand la durée totale (10 secondes) s'est écoulée, la première zone de texte affiche « Terminé ».  
   
 > [!NOTE]
->  Le `My.Application.DoEvents` méthode ne traite pas les événements dans la même façon que le formulaire. Pour permettre au formulaire gérer les événements directement, vous pouvez utiliser le multithreading. Pour plus d’informations, consultez [Threading](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c).  
+>  Le `My.Application.DoEvents` méthode ne traite pas les événements dans la même façon que le formulaire. Pour permettre au formulaire gérer les événements directement, vous pouvez utiliser le multithreading. Pour plus d’informations, consultez [Threading](../../programming-guide/concepts/threading/index.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Événements](../../../visual-basic/programming-guide/language-features/events/index.md)  

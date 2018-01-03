@@ -14,11 +14,11 @@ ms.assetid: 49819f1d-a1bd-4201-affe-5afe6d9712e1
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 04b79b3d14a9c4a9f9721860cd1ed44032dfa5d1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d472795affe0df098d1551daf51a2f0ae20723ba
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="warnaserror-visual-basic"></a>/warnaserror (Visual Basic)
 Indique au compilateur de traiter la première occurrence d’un avertissement comme une erreur.  
@@ -36,7 +36,7 @@ Indique au compilateur de traiter la première occurrence d’un avertissement c
 |+ &#124; -|Facultatif. Par défaut, `/warnaserror-` est en vigueur ; les avertissements n’empêchent pas le compilateur de générer un fichier de sortie. Le `/warnaserror` option, qui est le même que `/warnaserror+`, génère des avertissements à traiter comme des erreurs.|  
 |`numberList`|Facultatif. Liste délimitée par des virgules l’ID d’avertissement numéros à laquelle le `/warnaserror` option s’applique. Si aucun ID d’avertissement n’est spécifié, le `/warnaserror` option s’applique à tous les avertissements.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `/warnaserror` option traite tous les avertissements comme des erreurs. Les messages qui seraient normalement signalés comme avertissements apparaissent comme des erreurs. Le compilateur signale les autres occurrences du même avertissement en tant qu’avertissements.  
   
  Par défaut, `/warnaserror-` est en vigueur, ce qui provoque les avertissements d’information uniquement. Le `/warnaserror` option, qui est le même que `/warnaserror+`, génère des avertissements à traiter comme des erreurs.  
@@ -48,7 +48,7 @@ Indique au compilateur de traiter la première occurrence d’un avertissement c
   
 |Pour définir /warnaserror pour traiter tous les avertissements comme des erreurs dans l’IDE de Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Assurez-vous que le **désactiver tous les avertissements** case à cocher est désactivée.<br />4.  Vérifiez le **traiter tous les avertissements comme des erreurs** case à cocher.|  
+|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Assurez-vous que le **désactiver tous les avertissements** case à cocher est désactivée.<br />4.  Vérifiez le **traiter tous les avertissements comme des erreurs** case à cocher.|  
   
 |Pour définir /warnaserror à traiter certains avertissements comme des erreurs dans l’IDE de Visual Studio|  
 |---|  

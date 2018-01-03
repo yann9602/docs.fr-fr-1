@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: e70db99157e0bc49e1548d18c8fccfa44af42356
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 12ce6c47db89fe91fd11a94aa10a47b57b45d736
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="set-entity-sql"></a>SET (Entity SQL)
 L'expression SET est utilisée pour convertir une collection d'objets en ensemble grâce à la production d'une nouvelle collection dans laquelle toutes les éléments en double ont été supprimés.  
@@ -32,7 +33,7 @@ SET ( expression )
  `expression`  
  Toute expression de requête valide qui retourne une collection.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L'expression d'ensemble `SET(c)` est logiquement équivalente à l'instruction select suivante :  
   
 ```  

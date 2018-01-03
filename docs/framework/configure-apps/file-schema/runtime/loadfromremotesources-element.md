@@ -16,11 +16,12 @@ caps.latest.revision: "31"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 959073381ef936fa7c0b248419c8529deaee969f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: efb968d40e54c7552fba0a592e759f9e83c92309
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltloadfromremotesourcesgt-element"></a>&lt;loadFromRemoteSources&gt; élément
 Spécifie si les assemblys à partir de sources distantes doivent se voir accorder une confiance totale.  
@@ -65,7 +66,7 @@ Spécifie si les assemblys à partir de sources distantes doivent se voir accord
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Dans le .NET Framework version 3.5 et les versions antérieures, si vous avez chargé un assembly à partir d’un emplacement distant, l’assembly s’exécute une confiance partielle avec un jeu d’autorisations qui dépendaient de la zone dans laquelle il a été chargé. Par exemple, si vous avez chargé un assembly à partir d’un site Web, il a été chargé dans la zone Internet et accordé le jeu d’autorisations Internet. En d’autres termes, elle est exécutée dans un bac à sable Internet. Si vous essayez d’exécuter cet assembly dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures, une exception est levée ; vous devez soit créer explicitement un bac à sable pour l’assembly (consultez [Comment : exécuter Partially Trusted Code dans un bac à sable](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)), ou l’exécuter en mode confiance totale.  
   
  Le `<loadFromRemoteSources>` élément vous permet de spécifier que les assemblys qui auraient été exécutées de confiance partiel dans les versions antérieures du .NET Framework doivent être exécutées entièrement confiance dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures. Par défaut, les assemblys à distance ne s’exécutent pas dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures. Pour exécuter un assembly distant, vous devez l’exécuter avec une confiance totale ou créer un bac à sable <xref:System.AppDomain> dans pour son exécution.  

@@ -12,11 +12,12 @@ ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 author: guardrex
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e91c3d9693cf656a8c56c82d1997f74c2b3d64c8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 57ee634c987d344d81f1ca099fe55e633bfbf659
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Désactivez >, élément pour NameValueSectionHandler et DictionarySectionHandler
 
@@ -34,7 +35,7 @@ Efface tous les paramètres déjà définis dans une section.
 
 ## <a name="attributes"></a>Attributs
 
-Aucune
+Aucun.
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -44,9 +45,9 @@ Aucune
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucune
+Aucun.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Vous pouvez utiliser la  **\<Effacer >** élément à supprimer de tous les paramètres de votre application qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 

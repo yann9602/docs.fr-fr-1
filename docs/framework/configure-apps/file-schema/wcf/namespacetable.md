@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a6646b94449a79c96a8720a798f48298ab32ee0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 28bbeae9d1dbe43ad787c391ae461b44a8e85147
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnamespacetablegt"></a>&lt;namespaceTable&gt;
 
@@ -45,7 +46,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ### <a name="attributes"></a>Attributs
 
-Aucune
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -57,7 +58,7 @@ Aucune
 
 |     | Description |
 | --- | ----------- |
-| [**\<routage >**](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | Représente une section de configuration permettant de définir un jeu de filtres de routage, qui détermine le type de [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]<xref:System.ServiceModel.Dispatcher.MessageFilter> à utiliser lors de l'évaluation des messages entrants, ainsi que des tables de routage qui définissent les points de terminaison cibles auxquels envoyer des messages lorsqu'un filtre correspond. |
+| [**\<routage >**](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | Représente une section de configuration pour définir un ensemble de filtres de routage, qui détermine le type de [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] <xref:System.ServiceModel.Dispatcher.MessageFilter> à utiliser lors de l’évaluation des messages entrants, ainsi que le routage des tables qui définissent les points de terminaison cible pour envoyer des messages lorsqu’un filtre correspond. |
 
 ## <a name="see-also"></a>Voir aussi
 

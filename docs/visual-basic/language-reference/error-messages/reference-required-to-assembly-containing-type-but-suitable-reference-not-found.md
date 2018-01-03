@@ -14,11 +14,11 @@ ms.assetid: 1b29dbc5-8268-45fe-bfc2-b2070a5c845c
 caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 04a1b16a10d2a3945d1efbe3a2bd0850f1da39fe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5ca2454f5c306b3defd1c885dfd59ee130f3e828
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="reference-required-to-assembly-39ltassemblyidentitygt39-containing-type-39lttypenamegt39-but-a-suitable-reference-could-not-be-found-due-to-ambiguity-between-projects-39ltprojectname1gt39-and-39ltprojectname2gt39"></a>Référence à l’assembly &#39; requise &lt;assemblyidentity&gt;&#39; type de conteneur &#39;&lt; TypeName&gt;&#39; mais une référence appropriée n’a pas être trouvée en raison de l’ambiguïté entre les projets &#39;&lt; nom_projet1&gt;&#39; et &#39;&lt; nom_projet2&gt;&#39;
 Une expression utilise un type, comme une classe, une structure, une interface, une énumération ou un délégué, qui est défini en dehors de votre projet. Cependant, des références de projet désignent plusieurs assemblys définissant ce type.  
@@ -38,6 +38,6 @@ Une expression utilise un type, comme une classe, une structure, une interface, 
 ## <a name="see-also"></a>Voir aussi  
  [Gestion des références dans un projet](/visualstudio/ide/managing-references-in-a-project)  
  [Références aux éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- [NIB Comment : ajouter ou supprimer des références à l’aide de la boîte de dialogue Ajouter une référence](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)  
+   
  [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)  
  [Dépannage de références rompues](/visualstudio/ide/troubleshooting-broken-references)

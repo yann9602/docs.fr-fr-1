@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bbb74d9a542833a96c61bcc09f6e4e5f0807843d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eb624052c3638cb49abe143ebd4173a5ee85a054
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;ajouter&gt; élément &lt;écouteurs&gt; pour &lt;trace&gt;
 Ajoute un écouteur à la **écouteurs** collection.  
@@ -67,7 +68,7 @@ Ajoute un écouteur à la **écouteurs** collection.
 |`system.diagnostics`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
 |`trace`|Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le <xref:System.Diagnostics.Debug> et <xref:System.Diagnostics.Trace> classes partagent le même **écouteurs** collection. Si vous ajoutez un objet écouteur à la collection dans un de ces classes, l’autre classe utilise le même écouteur. Les classes d’écouteur dérivent la <xref:System.Diagnostics.TraceListener>.  
   
  Si vous ne spécifiez pas le `name` attribut de l’écouteur de trace, la <xref:System.Diagnostics.TraceListener.Name%2A> les valeurs par défaut écouteur de trace à une chaîne vide (« »). Si votre application possède un seul écouteur, vous pouvez ajouter sans spécifier un nom et supprimer en spécifiant une chaîne vide pour le nom. Toutefois, si votre application a plusieurs écouteurs, vous devez spécifier des noms uniques pour chaque écouteur de trace, ce qui vous permet d’identifier et de gérer des écouteurs de trace individuels dans le <xref:System.Diagnostics.Debug.Listeners%2A> et <xref:System.Diagnostics.Trace.Listeners%2A> collections.  

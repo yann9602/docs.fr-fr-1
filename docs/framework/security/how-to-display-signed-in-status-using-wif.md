@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 494e67b39187a2a38f29f994e17051430d90f708
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f6951eb6c9df7a3fef09f5972f3cb5fcabe5496f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Comment : afficher l’état Connecté à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -26,7 +27,7 @@ ms.lasthandoff: 10/18/2017
   
 -   Web Forms ASP.NET®  
   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  Cette rubrique décrit comment afficher l’état de la connexion dans une application ASP.NET WIF. WIF fournit le mécanisme permettant à votre application de prendre en charge les revendications, ainsi que pour gérer l’authentification et l’autorisation pour les ressources d’applications.  
   
 ## <a name="contents"></a>Sommaire  
@@ -82,7 +83,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="step-2--create-a-relying-party-aspnet-application"></a>Étape 2 : créer une application ASP.NET par partie de confiance  
  Cette étape décrit comment créer une application Web Forms ASP.NET par partie de confiance qui s’intègre avec WIF.  
   
-#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une simple application ASP.NET  
+#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une application ASP.NET simple  
   
 1.  Démarrez Visual Studio et cliquez sur **Fichier**, **Nouveau**, puis **Projet**.  
   

@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: cc1458996e70e8af05c4e2bc9e6c61a5d8a9f87d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 20031092f5109fef1bf7167eccab949e2e7c5b39
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-clr-type-mismatches"></a>Incompatibilité entre types SQL-CLR
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] automatise en grande partie la traduction entre le modèle objet et SQL Server. Certaines situations ne permettent toutefois pas une traduction exacte. Cette incompatibilité majeure entre les types CLR (Common Language Runtime) et les types de base de données SQL Server est résumée dans les sections suivantes. Vous trouverez plus d’informations sur les mappages de type spécifique et de la traduction de fonctions à [le mappage de Type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) et [les fonctions et les Types de données](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md).  
@@ -135,7 +136,7 @@ or col1 != col2
  Dans les cas simples, ces différences soumettent les expressions CLR à des casts redondants pour une expression SQL correspondante. Plus important, les résultats intermédiaires d'une expression SQL risquent de faire l'objet d'une promotion implicite en un type qui ne présente aucun équivalent exact en C# et inversement. De manière générale, le test, le débogage et la validation de ce type d'expressions représentent une charge de travail supplémentaire pour l'utilisateur.  
   
 ### <a name="collation"></a>Classement  
- Transact-SQL prend en charge des classements explicites tels que les annotations des types de chaînes de caractères. Ces classements déterminent la validité de certaines comparaisons. Par exemple, la comparaison de deux colonnes avec des classements explicites différents est une erreur. L'utilisation d'un type de chaîne CTS très simplifié ne provoque pas de telles erreurs. Prenons l'exemple suivant :  
+ Transact-SQL prend en charge des classements explicites tels que les annotations des types de chaînes de caractères. Ces classements déterminent la validité de certaines comparaisons. Par exemple, la comparaison de deux colonnes avec des classements explicites différents est une erreur. L'utilisation d'un type de chaîne CTS très simplifié ne provoque pas de telles erreurs. Prenons l'exemple suivant :  
   
 ```  
 create table T2 (  

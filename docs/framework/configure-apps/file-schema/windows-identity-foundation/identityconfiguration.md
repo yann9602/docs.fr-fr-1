@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: b1cca286fc967631c60aa02a1318fe24120e05b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 48f9eef329f5d2e0e751fd2a03b0d3af9ddc355c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltidentityconfigurationgt"></a>&lt;identityConfiguration&gt;
 Spécifie les paramètres d’identité au niveau du service.  
@@ -66,7 +67,7 @@ Spécifie les paramètres d’identité au niveau du service.
 |-------------|-----------------|  
 |[\<system.identityModel >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)|Fournit la configuration pour activer les options de Windows Identity Foundation (WIF) dans les applications.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Identité de plusieurs configurations peuvent être définies, chacun avec un nom unique. Le comportement est comme suit :  
   
 1.  Si aucun `<identityConfiguration>` élément est spécifié. Une configuration d’identité par défaut est créée lors de l’exécution et remplie avec les valeurs par défaut.  

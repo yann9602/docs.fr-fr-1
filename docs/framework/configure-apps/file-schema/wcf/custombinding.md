@@ -13,11 +13,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 267bf183e40c8647959e97ae479d78cfe41367b2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1659e6352fa195bae56b764c80a08dee56b4c9e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcustombindinggt"></a>&lt;customBinding&gt;
 Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.  
@@ -215,7 +216,7 @@ Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.
 |-------------|-----------------|  
 |liaisons|Contient toutes les liaisons pour les applications de Windows Communication Foundation.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les liaisons personnalisées permettent d’exercer un contrôle total sur la pile de messagerie WCF. Les liaisons spécialement conçues peuvent être créées en ajoutant des éléments de configuration pour des entités spécifiques. Par exemple, l'utilisateur peut associer les sections `httpsTransport`, `reliableSession` et `security` pour créer une liaison fiable et sécurisée basée sur https.  
   
  Une liaison individuelle définit la pile de messages en spécifiant les éléments de configuration des éléments de la pile suivant leur l'ordre d'apparition dans cette pile. Chaque élément définit et configure l'élément de la pile. Il doit y avoir un seul élément de transport dans chaque liaison personnalisée. Sans cet élément, la pile de messagerie est incomplète.  

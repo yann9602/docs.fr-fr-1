@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 8ce4cc33d054e74fc9868a16764e744daf260c10
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2d617e78231bd0b9f4e332c4b7fbe58b78598868
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaddgt-element-for-schemesettings-uri-settings"></a>&lt;ajouter&gt; , élément de schemeSettings (paramètres d’Uri)
 Ajoute un paramètre de schéma pour un nom de schéma.  
@@ -47,12 +48,12 @@ Ajoute un paramètre de schéma pour un nom de schéma.
   
 ## <a name="attribute-name-attribute"></a>{Nom de l’attribut} Attribut  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |genericUriParserOptions|Les options d’analyseur pour ce schéma. La seule valeur prise en charge est genericUriParserOptions = « DontUnescapePathDotsAndSlashes ».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -60,7 +61,7 @@ Ajoute un paramètre de schéma pour un nom de schéma.
 |-------------|-----------------|  
 |[\<schemeSettings, élément (paramètres d’Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Par défaut, le <xref:System.Uri?displayProperty=nameWithType> pour cent de classe n’échappe pas encodée séparateurs de chemin d’accès avant d’exécuter la compression de chemin d’accès. Cela a été implémenté en tant que mécanisme de sécurité contre les attaques comme suit :  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  

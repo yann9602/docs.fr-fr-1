@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ae25f03a091d3a9705a2e445fec948d8c5e15e0f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e18115e460bf546c2fd6263e4671457a3da68f65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adonet-overview"></a>Vue d'ensemble d'ADO.NET
 ADO.NET propose un accès cohérent à des sources de données, telles que SQL Server et XML, ainsi qu'à des sources de données exposées via OLE DB et ODBC. Des applications grand public de partage de données peuvent utiliser ADO.NET pour se connecter à des sources de données et extraire, manipuler et mettre à jour les données qu'elles contiennent.  
@@ -36,22 +37,22 @@ ADO.NET propose un accès cohérent à des sources de données, telles que SQL S
  [Architecture ADO.NET](../../../../docs/framework/data/adonet/ado-net-architecture.md)  
  Propose une vue d'ensemble de l'architecture et des composants d'ADO.NET.  
   
- [Les instructions et les Options de la technologie ADO.NET](../../../../docs/framework/data/adonet/ado-net-technology-options-and-guidelines.md)  
+ [Options et instructions de technologie ADO.NET](../../../../docs/framework/data/adonet/ado-net-technology-options-and-guidelines.md)  
  Décrit les produits et les technologies livrés avec la plateforme de données d'entité (Entity Data Platform).  
   
  [LINQ et ADO.NET](../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
  Décrit comment les requêtes LINQ (Language-Integrated Query) sont implémentées dans ADO.NET et propose des liens vers les rubriques associées.  
   
- [Fournisseurs de données .NET framework](../../../../docs/framework/data/adonet/data-providers.md)  
+ [Fournisseurs de données .NET Framework](../../../../docs/framework/data/adonet/data-providers.md)  
  Propose une vue d'ensemble du design du fournisseur de données .NET Framework et des fournisseurs de données .NET Framework inclus dans ADO.NET.  
   
- [Groupes de données ADO.NET](../../../../docs/framework/data/adonet/ado-net-datasets.md)  
+ [DataSets ADO.NET](../../../../docs/framework/data/adonet/ado-net-datasets.md)  
  Fournit une vue d'ensemble du design et des composants du `DataSet`.  
   
  [Exécution côte à côte dans ADO.NET](../../../../docs/framework/data/adonet/side-by-side-execution.md)  
  Présente les différences des versions successives d'ADO.NET et leur incidence sur l'exécution côte à côte et la compatibilité des applications.  
   
- [Exemples de Code ADO.NET](../../../../docs/framework/data/adonet/ado-net-code-examples.md)  
+ [Exemples de code ADO.NET](../../../../docs/framework/data/adonet/ado-net-code-examples.md)  
  Fournit des exemples de code qui récupèrent des données à l'aide des fournisseurs de données ADO.NET.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

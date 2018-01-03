@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9f4fe6c82d0a6f53dfa05a82622e0412280212cc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fc85c93dc73918d661195e33ce5094622db36af4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwsdlimportergt"></a>&lt;wsdlImporter&gt;
 Indique tous les importateurs WSDL qui importent des métadonnées WSDL (Web Services Description Language) 1.1 avec des pièces jointes WS-Policy.  
@@ -56,7 +57,7 @@ Indique tous les importateurs WSDL qui importent des métadonnées WSDL (Web Ser
 |-------------|-----------------|  
 |[\<wsdlImporters >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md)|Indique tous les importateurs WSDL qui importent des métadonnées WSDL (Web Services Description Language) 1.1 avec des pièces jointes WS-Policy.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Un importateur WSDL permet d'importer des métadonnées et de convertir ces informations en différentes classes représentant les informations de contrat et de point de terminaison. Il peut importer sélectivement des informations de contrat et de point de terminaison ainsi que des propriétés qui exposent toute erreur d'importation et accepte des informations de types liées au processus d'importation et de conversion. Il prend également en charge les informations et les propriétés de liaison qui donnent accès aux documents de stratégie, documents WSDL, extensions WSDL et documents de schéma XML.  
   
 ## <a name="see-also"></a>Voir aussi  
@@ -65,5 +66,5 @@ Indique tous les importateurs WSDL qui importent des métadonnées WSDL (Web Ser
  <xref:System.ServiceModel.Configuration.WsdlImporterElementCollection>  
  <xref:System.ServiceModel.Description.MetadataImporter>  
  <xref:System.ServiceModel.Description.WsdlImporter>  
- [Configuration du Client WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)  
+ [Configuration du client WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)  
  [Clients](../../../../../docs/framework/wcf/feature-details/clients.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d3791ea4084a6ae568fef1e76680f91434284639
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8576ba3ae26788076fedf71a1f8028afbd263378
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>Scénarios de sécurité des applications dans SQL Server
 Aucune méthode universelle n'existe pour créer une application cliente SQL Server sécurisée. Chaque application est unique au niveau de sa configuration, de son environnement de déploiement et de ses utilisateurs. Une application relativement sécurisée lors de son déploiement initial peut devenir moins sécurisée avec le temps. Il est impossible d'anticiper avec précision sur les menaces qui peuvent survenir dans le futur.  
@@ -45,10 +46,10 @@ Aucune méthode universelle n'existe pour créer une application cliente SQL Ser
  Affectez toujours un mot de passe fort au compte `sa`, même lorsque vous utilisez l'authentification Windows.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [La gestion des autorisations avec des procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
+ [Gestion des autorisations avec les procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
  Décrit comment utiliser des procédures stockées pour gérer les autorisations et contrôler l'accès aux données. L'utilisation des procédures stockées est un moyen efficace pour pallier de nombreuses menaces concernant la sécurité.  
   
- [L’écriture SQL dynamique sécurisé dans SQL Server](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
+ [Écriture de code SQL dynamique sécurisé dans SQL Server](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
  Décrit des techniques permettant d'écrire du code SQL dynamique sécurisé à l'aide de procédures stockées.  
   
  [Signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
@@ -57,13 +58,13 @@ Aucune méthode universelle n'existe pour créer une application cliente SQL Ser
  [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
  Décrit la manière d'utiliser la clause EXECUTE AS pour emprunter l'identité d'un autre utilisateur. L'emprunt d'identité transfère le contexte de l'exécution de l'appelant vers l'utilisateur spécifié.  
   
- [L’octroi d’autorisations au niveau des lignes dans SQL Server](../../../../../docs/framework/data/adonet/sql/granting-row-level-permissions-in-sql-server.md)  
+ [Attribution d’autorisations de niveau ligne dans SQL Server](../../../../../docs/framework/data/adonet/sql/granting-row-level-permissions-in-sql-server.md)  
  Décrit comment implémenter des autorisations au niveau de la ligne pour limiter l'accès aux données.  
   
- [Création de rôles d’Application dans SQL Server](../../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)  
+ [Création de rôles d’application dans SQL Server](../../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)  
  Décrit les fonctions et les fonctionnalités de rôles d’application.  
   
- [Activation de l’accès des bases de données croisées dans SQL Server](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
+ [Activation de l’accès entre bases de données dans SQL Server](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
  Décrit comment activer l'accès aux bases de données croisées sans risque pour la sécurité.  
   
 ## <a name="see-also"></a>Voir aussi  

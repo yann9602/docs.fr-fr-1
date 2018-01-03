@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ba0c376bc0b57013fe4701a1f9e84fdd9a5ed62a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1f606d01c12ce3f5d9d4ff8720b06511a64347f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="-or-entity-sql"></a>|| (OR) (Entity SQL)
 Combine deux expressions `Boolean` .  
@@ -37,7 +38,7 @@ boolean_expression || boolean_expression
 ## <a name="return-value"></a>Valeur de retour  
  `true` si l'une des conditions a la valeur `true`; sinon, `false`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  OR est un opérateur logique [!INCLUDE[esql](../../../../../../includes/esql-md.md)] . Il est utilisé pour combiner deux conditions. Lorsque vous utilisez plusieurs opérateurs logiques dans une instruction, les opérateurs OR sont évalués après les opérateurs AND. L'utilisation de parenthèses permet toutefois de modifier l'ordre de traitement.  
   
  Les doubles barres verticales (&#124; &#124;) ont la même fonctionnalité que l’opérateur OR.  
@@ -46,9 +47,9 @@ boolean_expression || boolean_expression
   
 ||`TRUE`|`FALSE`|`NULL`|  
 |-|------------|-------------|------------|  
-|`TRUE`|true|true|true|  
-|`FALSE`|true|false|NULL|  
-|`NULL`|true|NULL|NULL|  
+|`TRUE`|true|TRUE|TRUE|  
+|`FALSE`|TRUE|FALSE|NULL|  
+|`NULL`|TRUE|NULL|NULL|  
   
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur OR pour combiner deux expressions `Boolean` . Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  

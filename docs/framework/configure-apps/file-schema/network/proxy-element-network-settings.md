@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 7178527f369c698b0ab53aa41cb28dd0126436b3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b0b397e66e0f73d10f482bc9151a6fbacf3e774d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltproxygt-element-network-settings"></a>&lt;proxy&gt; élément (paramètres réseau)
 Définit un serveur proxy.  
@@ -69,7 +70,7 @@ Définit un serveur proxy.
   
 ## <a name="text-value"></a>Valeur texte  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `proxy` élément définit un serveur proxy pour une application. Si cet élément est manquant dans le fichier de configuration, le .NET Framework utilise les paramètres de proxy dans Internet Explorer.  
   
  La valeur de la `proxyaddress` attribut doit être un bien formé URI Uniform Resource Indicator ().  

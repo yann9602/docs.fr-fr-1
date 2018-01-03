@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 12de808403ee6714d2bcfd15da4e67a8596e1ff1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c6b258bd06fd3e7e348e190b0897d66036006873
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="-equals-entity-sql"></a>= (égal à) (Entity SQL)
 Compare l'égalité de deux expressions.  
@@ -37,7 +38,7 @@ expression == expression
 ## <a name="result-types"></a>Types de résultats  
  `true` si l'expression de gauche est égale à l'expression de droite ; sinon, `false`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L'opérateur « = = » est équivalent à « = ».  
   
 ## <a name="example"></a>Exemple  

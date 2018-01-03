@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 1967575aa7a287064d6da54d929ce095e89ee24f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d959d28f50cef7820702ae535dcc3307e59cf080
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="query-expression-examples-linq-to-dataset"></a>Exemples d'expression de requête (LINQ to DataSet)
 Cette section fournit des exemples de programmation [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dans une syntaxe d'expression de requête qui utilise des opérateurs de requête standard. Le <xref:System.Data.DataSet> utilisé dans ces exemples est rempli à l’aide de la `FillDataSet` (méthode), qui est spécifié dans [chargement des données dans un groupe de données](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md). Pour plus d’informations, consultez [vue d’ensemble des opérateurs de requête Standard](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
@@ -29,7 +30,7 @@ Cette section fournit des exemples de programmation [!INCLUDE[linq_dataset](../.
  [Restriction](../../../../docs/framework/data/adonet/query-expression-syntax-examples-restriction-linq-to-dataset.md)  
  Les exemples de cette rubrique montrent comment utiliser la méthode <xref:System.Linq.Enumerable.Where%2A> pour interroger un <xref:System.Data.DataSet>.  
   
- [Le partitionnement](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
+ [Partitionnement](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
  Les exemples de cette rubrique montrent comment utiliser les méthodes <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A> pour interroger un <xref:System.Data.DataSet> et partitionner les résultats.  
   
  [Classement](../../../../docs/framework/data/adonet/query-expression-syntax-examples-ordering-linq-to-dataset.md)  
@@ -45,6 +46,6 @@ Cette section fournit des exemples de programmation [!INCLUDE[linq_dataset](../.
  Les exemples de cette rubrique montrent comment utiliser les méthodes <xref:System.Linq.Enumerable.GroupJoin%2A> et <xref:System.Linq.Enumerable.Join%2A> pour interroger un <xref:System.Data.DataSet>.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Exemples de requête fondée sur une méthode](../../../../docs/framework/data/adonet/method-based-query-examples-linq-to-dataset.md)  
+ [Exemples de requêtes fondées sur une méthode](../../../../docs/framework/data/adonet/method-based-query-examples-linq-to-dataset.md)  
  [Exemples d’opérateurs spécifiques aux DataSets](../../../../docs/framework/data/adonet/dataset-specific-operator-examples-linq-to-dataset.md)  
- [LINQ to DataSet Examples](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+ [Exemples LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

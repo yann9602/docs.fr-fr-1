@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f2737e67fe1fe1e33b2600f448b02321f6ce1888
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 35665bd79a14b74e192fed439e935936411d85c3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltrequestcachinggt-element-network-settings"></a>&lt;requestCaching&gt; élément (paramètres réseau)
 Contrôle le mécanisme de mise en cache pour les demandes réseau.  
@@ -59,7 +60,7 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
   
 ## <a name="policylevel-attribute"></a>PolicyLevel qui n’est attribut  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`Default`|Retourne la ressource mise en cache si la ressource est actualisée, la longueur du contenu est précise et d’expiration, modification et les attributs de la longueur de contenu sont présents.|  
 |`BypassCache`|Retourne la ressource à partir du serveur.|  

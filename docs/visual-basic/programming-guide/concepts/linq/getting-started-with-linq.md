@@ -18,11 +18,11 @@ ms.assetid: 53c66373-ff43-431f-b4bb-f98362830279
 caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 53087db3225ffd66be39a496057758cfc80d27b6
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 718eff92a2ba472661f0067e1766e63e0703178a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="getting-started-with-linq-in-visual-basic"></a>Mise en route de LINQ dans Visual Basic
 Cette section contient des vues d’ensemble, des exemples et des informations générales qui vous aideront à comprendre et utiliser Visual Basic et Language-Integrated Query (LINQ).  
@@ -50,10 +50,10 @@ Cette section contient des vues d’ensemble, des exemples et des informations g
  [Vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
  Décrit comment Visual Basic prend en charge LINQ to XML.  
   
- [LINQ to DataSet présentation](../../../../framework/data/adonet/linq-to-dataset-overview.md)  
+ [Vue d’ensemble de LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset-overview.md)  
  Fournit une vue d’ensemble conceptuelle de LINQ to DataSet.  
   
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
  Explique les LINQ à la technologie SQL et fournit des liens vers des rubriques qui vous aident à utilisent LINQ to SQL.  
   
  [Prise en charge de LINQ par les outils et l’IDE Visual Studio (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md)  

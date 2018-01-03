@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a64bc0c9b5e1358046e78429780af796f60e404e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 92949205801e5bc498fdaaa67c2fa228140a2eb5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="having-entity-sql"></a>HAVING (Entity SQL)
 Spécifie une condition de recherche pour un groupe ou un agrégat.  
@@ -32,7 +33,7 @@ Spécifie une condition de recherche pour un groupe ou un agrégat.
  `search_condition`  
  Indique les critères de recherche à réunir pour le groupe ou l'agrégat. Lorsque HAVING est utilisé avec GROUP BY ALL, la clause HAVING remplace ALL.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La clause HAVING est utilisée pour spécifier une condition de filtrage supplémentaire sur le résultat d'un regroupement. Si aucune clause GROUP BY n'est spécifiée dans l'expression de requête, un groupe implicite constitué d'un seul ensemble est supposé exister.  
   
 > [!NOTE]

@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b616a6cf08dd47a9e46e8e887efbc88469dedfd3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6f631d785698ae59370053c4e35307514c44087c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="asynchronous-operations"></a>Opérations asynchrones
 L'exécution de certaines opérations de base de données, telles que des exécutions de commande, peut prendre du temps. Dans ce cas, les applications mono-thread doivent bloquer d'autres opérations et attendre que l'exécution de la commande s'achève avant de pouvoir continuer leurs propres opérations. En revanche, la possibilité d'assigner l'opération longue à un thread d'arrière-plan permet au thread à l'avant-plan de rester actif pendant toute l'opération. Dans une application Windows, par exemple, vous pouvez déléguer l'opération de longue durée à un thread d'arrière-plan tout en autorisant le thread d'interface utilisateur à rester réactif pendant l'exécution de l'opération.  
@@ -33,10 +34,10 @@ L'exécution de certaines opérations de base de données, telles que des exécu
  [Applications Windows utilisant des rappels](../../../../../docs/framework/data/adonet/sql/windows-applications-using-callbacks.md)  
  Fournit un exemple montrant comment exécuter une commande asynchrone en toute sécurité, en gérant correctement l'interaction avec un formulaire et son contenu depuis un thread distinct.  
   
- [Applications ASP.NET utilisant des Handles d’attente](../../../../../docs/framework/data/adonet/sql/aspnet-apps-using-wait-handles.md)  
+ [Applications ASP.NET utilisant les handles d’attente](../../../../../docs/framework/data/adonet/sql/aspnet-apps-using-wait-handles.md)  
  Fournit un exemple montrant comment exécuter plusieurs commandes simultanées à partir d'une page ASP.NET, en utilisant des handles d'attente pour gérer l'opération lors de l'accomplissement de toutes les commandes.  
   
- [Interrogation dans les Applications Console](../../../../../docs/framework/data/adonet/sql/polling-in-console-applications.md)  
+ [Interrogation dans les applications console](../../../../../docs/framework/data/adonet/sql/polling-in-console-applications.md)  
  Fournit un exemple montrant l'utilisation de l'interrogation pour attendre l'accomplissement de l'exécution d'une commande asynchrone à partir d'une application console. Cette technique est également valable dans une bibliothèque de classes ou une autre application sans interface utilisateur.  
   
 ## <a name="see-also"></a>Voir aussi  

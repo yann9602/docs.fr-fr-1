@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: f0c708c19761f6086e1b5c2fdd15904c76fe3de9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e36019cd6d010e25292fa50ed3bf795dfca15f73
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
 Spécifie des paramètres qui activent l'audit d'événements de sécurité pendant des opérations de service.  
@@ -59,7 +60,7 @@ Spécifie des paramètres qui activent l'audit d'événements de sécurité pend
 |-------------|-----------------|  
 |[\<comportement >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cet élément de configuration sert à effectuer un audit des événements d'authentification [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]. Lorsque l'audit est activé, il est possible de réaliser l'audit des tentatives d'authentification réussies ou échouées (ou les deux). Les événements sont écrits dans l'un des trois journaux des événements : application, sécurité ou journal par défaut de la version du système d'exploitation. Les journaux des événements peuvent être consultés à l'aide de l'Observateur d'événements Windows.  
   
  Pour obtenir un exemple détaillé de l’utilisation de cet élément de configuration, consultez [comportement de l’audit du Service](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md).  
@@ -91,6 +92,6 @@ Spécifie des paramètres qui activent l'audit d'événements de sécurité pend
  <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>  
  <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
  [Comportements de sécurité](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [L’audit](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Comment : auditer les événements de sécurité](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
+ [Audit](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
+ [Guide pratique pour auditer des événements de sécurité](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
  [Comportement de l’audit de service](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)

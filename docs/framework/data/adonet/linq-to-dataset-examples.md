@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 808c12ee0f9a52c09fa32a0bdf2cc0177bf8be4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e05042b8b94949c44e8a7a4942f02e7b7a84dd8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linq-to-dataset-examples"></a>Exemples de LINQ to DataSet
 Cette section fournit des [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] exemples de programmation qui utilisent les opérateurs de requête standard. Le <xref:System.Data.DataSet> utilisé dans ces exemples est rempli à l’aide de la `FillDataSet` (méthode), qui est spécifié dans [chargement des données dans un groupe de données](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md). Pour plus d’informations, consultez [vue d’ensemble des opérateurs de requête Standard](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
@@ -30,7 +31,7 @@ Cette section fournit des [!INCLUDE[linq_dataset](../../../../includes/linq-data
   
 -   [Restriction](../../../../docs/framework/data/adonet/query-expression-syntax-examples-restriction-linq-to-dataset.md)  
   
--   [Le partitionnement](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
+-   [Partitionnement](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
   
 -   [Classement](../../../../docs/framework/data/adonet/query-expression-syntax-examples-ordering-linq-to-dataset.md)  
   
@@ -40,16 +41,16 @@ Cette section fournit des [!INCLUDE[linq_dataset](../../../../includes/linq-data
   
 -   [Opérateurs de jointure](../../../../docs/framework/data/adonet/query-expression-syntax-examples-join-operators.md)  
   
- [Exemples de requête fondée sur une méthode](../../../../docs/framework/data/adonet/method-based-query-examples-linq-to-dataset.md)  
+ [Exemples de requêtes fondées sur une méthode](../../../../docs/framework/data/adonet/method-based-query-examples-linq-to-dataset.md)  
  Contient les exemples suivants :  
   
 -   [Projection](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-projection.md)  
   
--   [Le partitionnement](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-partitioning-linq.md)  
+-   [Partitionnement](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-partitioning-linq.md)  
   
 -   [Classement](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-ordering-linq-to-dataset.md)  
   
--   [Opérateurs de jeu](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-set-operators.md)  
+-   [Opérateurs d’ensembles](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-set-operators.md)  
   
 -   [Opérateurs de conversion](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-conversion-operators.md)  
   
@@ -64,4 +65,4 @@ Cette section fournit des [!INCLUDE[linq_dataset](../../../../includes/linq-data
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)  
- [Chargement des données dans un jeu de données](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
+ [Chargement de données dans un DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)

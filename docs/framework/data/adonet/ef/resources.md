@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 928934070cfb428f467ddf9ee89e01af1f605328
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a9907876c92a815df7b1a3b449076823465745de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="entity-framework-resources"></a>Ressources Entity Framework
 Les ressources externes suivantes fournissent des informations et une aide pour créer des applications Entity Framework.  
@@ -38,7 +39,7 @@ Les ressources externes suivantes fournissent des informations et une aide pour 
  Blog contenant un forum aux questions à propos d’Entity Framework.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Présentation d’Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md)  
+ [Vue d’ensemble d’Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md)  
  [Prise en main](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
  [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)  
  [Outils ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)

@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f8484fe902b356f7fae4e526bdaa5610bf7d7ac6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0e4c854d9f7e1262a771dadc897878dac20a642e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltreliablesessiongt"></a>&lt;reliableSession&gt;
 Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery).  
@@ -58,7 +59,7 @@ Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est
 |reliableMessagingVersion|Valeur autorisée de <xref:System.ServiceModel.ReliableMessagingVersion> qui spécifie la version de messagerie WS-Reliable à utiliser.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -66,7 +67,7 @@ Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est
 |-------------|-----------------|  
 |[\<liaison >](../../../../../docs/framework/misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les sessions fiables fournissent des fonctionnalités pour une messagerie et des sessions fiables. La messagerie fiable réessaie d'établir la communication en cas d'échec et permet de spécifier des assurances de remise telles que l'ordre d'arrivée des messages. Les sessions conservent l'état pour les clients entre les appels. Cet élément assure également en option la remise de messages ordonnés. Cette session implémentée peut croiser des intermédiaires SOAP et de transport.  
   
  Chaque élément de liaison représente une étape de traitement lors de l'envoi ou de la réception des messages. Au moment de l'exécution, les éléments de liaison créent les fabrications de canal et les écouteurs nécessaires pour générer les piles de canaux sortants et entrants requis pour envoyer et recevoir des messages. Le `reliableSession` fournit une couche facultative dans la pile capable d'établir une session fiable entre des points de terminaison et de configurer le comportement de cette session.  

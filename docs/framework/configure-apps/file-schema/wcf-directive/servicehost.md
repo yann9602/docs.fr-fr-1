@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10f7a0b077fb50149ad60034607eec413e774ee6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 027debb311a3f9547623b6dff778e82b7e475327
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicehost"></a>@ServiceHost
 Associe la fabrique utilisée pour générer l'hôte de service au service à héberger ainsi qu'à d'autres aspects de programmation requis pour compiler le code d'hébergement fourni dans le fichier .svc ou pour y accéder.  
@@ -50,7 +51,7 @@ CodeBehind = "CodeBehind"%>
 #### <a name="codebehind"></a>CodeBehind  
  Spécifie le fichier source qui implémente le service web XML, lorsque la classe implémentant le service web XML ne réside pas dans le même fichier et n’a pas été compilée dans un assembly et placée dans le répertoire \Bin.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le <xref:System.ServiceModel.ServiceHost> utilisé pour héberger le service est un point d'extensibilité figurant dans le modèle de programmation [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]. Un modèle de fabrique est utilisé pour instancier le <xref:System.ServiceModel.ServiceHost> car il peut s'agir d'un type polymorphe ne devant pas être instancié directement par l'environnement d'hébergement.  
   
  L'implémentation par défaut utilise <xref:System.ServiceModel.Activation.ServiceHostFactory> pour créer une instance de <xref:System.ServiceModel.ServiceHost>. Mais vous pouvez fournir votre propre fabrique (celle qui retourne votre hôte dérivé) en spécifiant le nom de type CLR de l’implémentation de fabrique dans la [ @ServiceHost ](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) la directive.  
@@ -77,4 +78,4 @@ Factory="WebScriptServiceHostFactory"
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Hôte de Service personnalisé](../../../../../docs/framework/wcf/samples/custom-service-host.md)
+ [Hôte de service personnalisé](../../../../../docs/framework/wcf/samples/custom-service-host.md)

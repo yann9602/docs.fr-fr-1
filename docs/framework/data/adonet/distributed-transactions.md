@@ -13,14 +13,15 @@ caps.latest.revision: "7"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: de93298062c7f99fcca3688efbd0b546d3c04c0e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6bc9a754325f7d01ee36622a23efde1cbc7c4812
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="distributed-transactions"></a>Transactions distribuées
-Une transaction est un ensemble de tâches liées entre elles qui échouent (abort) ou réussissent (commit) globalement, entre autres choses. A *distributed transaction* est une transaction qui affecte plusieurs ressources. Pour qu’une transaction distribuée soit validée, l’ensemble des participants doivent garantir que tout changement apporté aux données sera permanent. Ces modifications doivent persister même en cas de panne du système ou de tout autre événement imprévu. Il suffit qu'un seul des participants n'apporte pas cette garantie pour que l'ensemble de la transaction échoue et toutes les modifications apportées aux données dans le cadre de la transaction sont annulées.  
+Une transaction est un ensemble de tâches liées entre elles qui échouent (abort) ou sont validées (commit) globalement, entre autres choses. A *distributed transaction* est une transaction qui affecte plusieurs ressources. Pour qu’une transaction distribuée soit validée, l’ensemble des participants doivent garantir que tout changement apporté aux données sera permanent. Ces modifications doivent persister même en cas de panne du système ou de tout autre événement imprévu. Il suffit qu'un seul des participants n'apporte pas cette garantie pour que l'ensemble de la transaction échoue et toutes les modifications apportées aux données dans le cadre de la transaction sont annulées.  
   
 > [!NOTE]
 >  Une exception est levée lorsque vous tentez de valider ou d'annuler une transaction si `DataReader` démarre pendant que la transaction est active.  
@@ -58,6 +59,6 @@ Une transaction est un ensemble de tâches liées entre elles qui échouent (abo
  Vous devrez peut-être activer MS DTC sur le réseau afin d'utiliser des transactions distribuées. Si le Pare-feu Windows est activé, vous devez autoriser le service MS DTC à utiliser le réseau ou à ouvrir le port MS DTC.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Transactions et accès simultané](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
+ [Transactions et accès concurrentiel](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [Intégration de System.Transactions à SQL Server](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

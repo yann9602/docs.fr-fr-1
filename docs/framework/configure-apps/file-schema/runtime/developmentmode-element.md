@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4573c3a5e0cf64996f2a4e109736d966b754494a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a77f93a0dff198821509c2c26f67caa137073ced
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltdevelopmentmodegt-element"></a>&lt;developmentMode&gt; élément
 Indique si le runtime recherche des assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.  
@@ -50,7 +51,7 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
   
 ## <a name="developerinstallation-attribute"></a>Attribut de developerInstallation  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |**true**|Recherche les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.|  
 |**false**|Ne recherche pas les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH. Ceci est la valeur par défaut|  
@@ -65,7 +66,7 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Utilisez ce paramètre uniquement au moment du développement. Le runtime ne vérifie pas les versions sur les assemblys avec nom fort trouvés dans DEVPATH. Elle utilise simplement le premier assembly qu’il trouve.  
   
 ## <a name="example"></a>Exemple  

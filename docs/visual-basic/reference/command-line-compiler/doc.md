@@ -14,11 +14,11 @@ ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2490529b951ef6e583e3bfa54afced89c823e874
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1f9d4f584f217e6996a499614b97f184b28664f8
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="doc"></a>/doc
 Traite les commentaires de documentation pour les diriger vers un fichier XML.  
@@ -38,7 +38,7 @@ Traite les commentaires de documentation pour les diriger vers un fichier XML.
 |`+` &#124; `-`|Facultatif. Spécification +, ou simplement `/doc`, indique au compilateur de générer des informations de documentation et les placer dans un fichier XML. Spécification de `-` est l’équivalent de ne pas spécifier `/doc`, à l’origine d’aucune information de documentation doit être créé.|  
 |`file`|Obligatoire si l'option `/doc:` est utilisée. Spécifie le fichier XML de sortie, qui est renseigné avec les commentaires à partir des fichiers de code source de la compilation. Si le nom de fichier contient un espace, mettre le nom entre guillemets (« »).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `/doc` option contrôle si le compilateur génère un fichier XML contenant les commentaires de documentation. Si vous utilisez la `/doc:``file` syntaxe, la `file` paramètre spécifie le nom du fichier XML. Si vous utilisez `/doc` ou `/doc+`, le compilateur prend le nom du fichier XML à partir du fichier exécutable ou la bibliothèque que le compilateur est en train de créer. Si vous utilisez `/doc-` ou ne spécifiez pas la `/doc` option, le compilateur ne crée pas d’un fichier XML.  
   
  Dans les fichiers de code source, les commentaires de documentation peuvent précéder les définitions suivantes :  
@@ -55,7 +55,7 @@ Traite les commentaires de documentation pour les diriger vers un fichier XML.
   
 |Pour définir /doc dans Visual Studio environnement de développement intégré|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Définissez la valeur de la **fichier de documentation XML de générer** boîte.|  
+|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Définissez la valeur de la **fichier de documentation XML de générer** boîte.|  
   
 ## <a name="example"></a>Exemple  
  Consultez [documenter votre Code avec XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md) pour obtenir un exemple.  

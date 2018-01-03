@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 911a770fb4dc6d11f17c1f287a53ddb6552c690a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 47799c5eb10a3274b8b5f10d4ccec96a575da949
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transports"></a>Transports
 La couche de transport se situe au niveau le plus bas de la pile des canaux. Les principaux transports utilisés dans [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] sont HTTP, HTTPS, TCP ainsi que les canaux nommés. Cette section répertorie tous les éléments de configuration qui vous permettent de configurer des types différents de transports.  
@@ -27,7 +28,7 @@ La couche de transport se situe au niveau le plus bas de la pile des canaux. Les
  <xref:System.ServiceModel.Channels.TransportBindingElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
  [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)  
- [Choix d’un Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  

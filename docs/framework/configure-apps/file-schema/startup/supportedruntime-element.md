@@ -15,11 +15,12 @@ ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 5c38dc87d6015f0c814ea319c9353ea757478b85
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 77886cef1a8dbd320223526b86f86fa9cee6a9f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsupportedruntimegt-element"></a>&lt;supportedRuntime&gt; élément
 Spécifie quelles versions du Common Language Runtime sont prises en charge par l'application. Cet élément doit être utilisé par toutes les applications créées avec la version 1.1 ou ultérieure du .NET Framework.  
@@ -43,7 +44,7 @@ Spécifie quelles versions du Common Language Runtime sont prises en charge par 
 |**version**|Attribut facultatif.<br /><br /> Valeur de chaîne qui spécifie la version du Common Language Runtime (CLR) prise en charge par cette application. Pour les valeurs valides de le `version` d’attribut, consultez la [les valeurs « version du runtime »](#version) section. **Remarque :** via le .NET Framework 3.5, le «*version du runtime*» valeur prend la forme *majeure*. *mineure*. *build*. Depuis [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], seuls les numéros de version principale et secondaire sont nécessaires (c'est-à-dire "v4.0" au lieu de "v4.0.30319"). La chaîne courte est recommandée.|  
 |**référence (SKU)**|Attribut facultatif.<br /><br /> Valeur de chaîne qui spécifie la référence (SKU), qui à son tour spécifie quelle version du .NET Framework cette application prend en charge.<br /><br /> En commençant par le .NET Framework 4.0, l’utilisation de la `sku` est recommandé d’attribut.  Quand il est présent, il indique la version du .NET Framework ciblée par l’application.<br /><br /> Pour les valeurs valides de l’attribut de référence (SKU), consultez le [les valeurs « id de référence (SKU) »](#sku) section.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
 Si le  **\<supportedRuntime >** élément n’est pas présent dans le fichier de configuration d’application, la version du runtime utilisée pour générer l’application est utilisée.  
 
 Le  **\<supportedRuntime >** élément doit être utilisé par toutes les applications générées à l’aide de la version 1.1 ou ultérieure du runtime. Les applications générées pour prendre en charge uniquement la version 1.0 du runtime doivent utiliser le [ \<requiredRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) élément.  

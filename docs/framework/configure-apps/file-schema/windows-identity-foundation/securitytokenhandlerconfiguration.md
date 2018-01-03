@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: be98c93452c9c7a37ecad5b03f5160ea08f2c82e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ac7284fa418c1540582c40bd744e913ba31aa881
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsecuritytokenhandlerconfigurationgt"></a>&lt;securityTokenHandlerConfiguration&gt;
 Fournit la configuration de la collection de gestionnaires de jetons.  
@@ -69,7 +70,7 @@ Fournit la configuration de la collection de gestionnaires de jetons.
 |-------------|-----------------|  
 |[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Spécifie une collection de gestionnaires de jetons de sécurité qui sont enregistrés avec le point de terminaison.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cette section fournit des valeurs de propriété d’un <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration> objet. Les paramètres configurés dans cette section remplacent ceux configurés sur le service. Certains de ces paramètres peuvent, à son tour, être remplacée par les paramètres spécifiés quand un gestionnaire est ajouté à la collection de gestionnaire de jetons de sécurité.  
   
 ## <a name="example"></a>Exemple  

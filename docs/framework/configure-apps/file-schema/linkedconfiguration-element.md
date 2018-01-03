@@ -22,11 +22,12 @@ caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bfea438ec19303c35ad9d7a2816cb7b9473a00c0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: dffff7fefa80f420e61045b21b0e0c1a170e2911
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linkedconfiguration-element"></a>\<linkedConfiguration > élément
 
@@ -56,9 +57,9 @@ Spécifie un fichier de configuration à inclure.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucune
+Aucun.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le  **\<linkedConfiguration >** élément simplifie la maintenance pour les assemblys de composant. Si une ou plusieurs applications utilisent un assembly disposant d’un fichier de configuration qui réside dans un emplacement connu, les fichiers de configuration des applications qui utilisent l’assembly peuvent utiliser le  **\<linkedConfiguration >** élément à inclure le fichier de configuration d’assembly, au lieu d’y compris les informations de configuration directement. Lorsque l’assembly de composant est prise en charge, la mise à jour le fichier de configuration commun fournit des informations de configuration mise à jour pour toutes les applications qui utilisent l’assembly.
 

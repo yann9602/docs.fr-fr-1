@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9fe960d5b19f5119f2337ec410738a2df31f20c5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ad5329e50a5bea933e8fdfdfd473b2d4b9e0b211
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="createref-entity-sql"></a>CREATEREF (Entity SQL)
 Crée les références à une entité dans un jeu d'entités.  
@@ -35,7 +36,7 @@ CreateRef(entityset_identifier, row_typed_expression)
  `row_typed_expression`  
  Expression typée ligne correspondant aux propriétés de clés du type d'entité.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La structure de`row_typed_expression` doit être équivalente au type de clé de l'entité. Autrement dit, les champs qu'elle contient doivent être identiques en nombre et en types à ceux des clés de l'entité, et ils doivent être disposés dans le même ordre.  
   
  Dans l'exemple ci-dessous, Orders et BadOrders sont des jeux d'entités de type Order, et Id est supposé être l'unique propriété de clé de type Order. Cet exemple montre comment produire une référence à une entité de BadOrders. Notez que la référence peut être non résolue.  Autrement dit, la référence peut ne pas identifier réellement une entité spécifique. Dans ce cas, une opération `DEREF` sur cette référence retourne une valeur NULL.  
@@ -57,5 +58,5 @@ from LOB.Orders as o
 ## <a name="see-also"></a>Voir aussi  
  [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md)  
- [CLÉ](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)  
+ [KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)  
  [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)

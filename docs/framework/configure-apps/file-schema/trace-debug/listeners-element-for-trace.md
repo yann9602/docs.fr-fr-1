@@ -17,11 +17,12 @@ caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 97d6673fddb20e99454bf97c87254049b82f0000
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b9c1f52f880a38791a9a8d5b5372b2ad53c5569f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltlistenersgt-element-for-lttracegt"></a>&lt;écouteurs&gt; , élément pour &lt;trace&gt;
 Spécifie un écouteur qui collecte, stocke et achemine les messages. Les écouteurs dirigent la sortie de traçage vers une cible appropriée.  
@@ -45,7 +46,7 @@ Spécifie un écouteur qui collecte, stocke et achemine les messages. Les écout
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -63,7 +64,7 @@ Spécifie un écouteur qui collecte, stocke et achemine les messages. Les écout
 |`system.diagnostics`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
 |`trace`|Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le <xref:System.Diagnostics.Debug> et <xref:System.Diagnostics.Trace> classes partagent le même **écouteurs** collection. Si vous ajoutez un objet écouteur à la collection dans un de ces classes, l’autre classe utilise le même écouteur. Les classes d’écouteur livrées avec le .NET Framework dérivent la <xref:System.Diagnostics.TraceListener> classe.  
   
 ## <a name="configuration-file"></a>Fichier de configuration  

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 192273c6d364cebe828965ed016eea81135602f9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6710d3e9bf52ff10ee8dd545161f0858001f2c40
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Comment : créer un projet LINQ to DataSet dans Visual Studio
 Les différents types de projets [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] nécessitent certains espaces de noms importés (Visual Basic) ou directives `using` (C#) et références. Il doit y avoir au minimum une référence à System.Core.dll et une directive `using` pour <xref:System.Linq>. Celles-ci sont fournies par défaut si vous créez un projet [!INCLUDE[csharp_orcas_long](../../../../includes/csharp-orcas-long-md.md)]. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] requiert également une référence à System.Data.dll et System.Data.DataSetExtensions.dll et une directive `Imports` (Visual Basic) ou `using` (C#).  

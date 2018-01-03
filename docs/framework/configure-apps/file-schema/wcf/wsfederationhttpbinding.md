@@ -14,11 +14,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 694b904587795823ae2f730b8182f404eba93a58
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 18a12bc127dca49e319eac0f6fbcfc6ab6cbfc55
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwsfederationhttpbindinggt"></a>&lt;wsFederationHttpBinding&gt;
 Définit une liaison qui prend en charge WS-Federation.  
@@ -145,10 +146,10 @@ wsFederationBinding (élément)
 |-------------|-----------------|  
 |[\<liaisons >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La fédération est la capacité à partager des identités sur plusieurs systèmes pour authentification et autorisation. Ces identités peuvent faire référence à des utilisateurs ou des ordinateurs. Le protocole HTTP fédéré prend en charge la sécurité SOAP, ainsi que la sécurité en mode mixte, mais il ne prend pas en charge exclusivement à l'aide de la sécurité de transport. Cette liaison fournit la prise en charge [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] pour le protocole WS-Federation. Les services configurés avec cette liaison doivent utiliser le transport HTTP.  
   
- Les liaisons se composent d'une pile d'éléments de liaison. La pile d'éléments de liaison dans  
+ Les liaisons se composent d'une pile d'éléments de liaison. La pile d’éléments de liaison dans  
   
  `wsFederationHttpBinding` est la même que celle contenue dans `wsHttpBinding`.  
   
@@ -200,7 +201,7 @@ wsFederationBinding (élément)
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.WSFederationHttpBinding>  
  <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>  
- [Comment : créer une liaison WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [Guide pratique pour créer une liaison WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  

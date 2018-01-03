@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ff43b9279130ed710d9d88cbf2ba5ead4a6f0ebc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6166cae86d2956ae3eec28b98fe0af864f6b708b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="diffgrams"></a>DiffGrams
 Un DiffGram est un format XML qui identifie la version actuelle et la version d'origine d'éléments de données. L'objet <xref:System.Data.DataSet> utilise le format DiffGram pour charger son contenu et le rendre persistent, ainsi que pour le sérialiser en vue de son transport via une connexion réseau. Lorsqu’un <xref:System.Data.DataSet> est écrit en tant que DiffGram, il remplit le DiffGram avec toutes les informations nécessaires pour recréer précisément le contenu, cependant pas le schéma, de la <xref:System.Data.DataSet>, y compris les valeurs de colonne à partir des deux le **Original** et **actuel** versions de ligne, les informations d’erreur de ligne et ordre des lignes.  
@@ -93,7 +94,7 @@ Un DiffGram est un format XML qui identifie la version actuelle et la version d'
   
 |Annotation|Description|  
 |----------------|-----------------|  
-|**id**|Sert à apparier les éléments dans le  **\<diffgr : avant >** et  **\<diffgr : Errors >** blocs le  **\<**  ***DataInstance***  **>**  bloc. Les valeurs de la **diffgr : ID** annotation se présentent sous la forme *[TableName] [RowIdentifier]*. Par exemple : `<Customers diffgr:id="Customers1">`.|  
+|**ID**|Sert à apparier les éléments dans le  **\<diffgr : avant >** et  **\<diffgr : Errors >** blocs le  **\<**  ***DataInstance***  **>**  bloc. Les valeurs de la **diffgr : ID** annotation se présentent sous la forme *[TableName] [RowIdentifier]*. Par exemple : `<Customers diffgr:id="Customers1">`.|  
 |**parentId**|Identifie l’élément à partir de la  **\<**  ***DataInstance***  **>**  bloc est l’élément parent de l’élément actuel. Les valeurs de la **diffgr : parentId** annotation se présentent sous la forme *[TableName] [RowIdentifier]*. Par exemple : `<Orders diffgr:parentId="Customers1">`.|  
 |**hasChanges**|Identifie une ligne dans le  **\<**  ***DataInstance***  **>**  bloquent comme modifiée. Le **hasChanges** annotation peut avoir l’une des deux valeurs suivantes :<br /><br /> **inséré**<br /> Identifie un **Added** ligne.<br /><br /> **modifié**<br /> Identifie un **modifié** ligne qui contient un **d’origine** version de ligne dans le  **\<diffgr : avant >** bloc. Notez que **Deleted** lignes ont une **d’origine** version de ligne dans le  **\<diffgr : avant >** bloc, mais il n’y aura pas d’élément annoté dans le  **\<**  ***DataInstance***  **>**  bloc.|  
 |**hasErrors**|Identifie une ligne dans le  **\<**  ***DataInstance***  **>**  bloc avec un **RowError**. L’élément de l’erreur est placé dans le  **\<diffgr : Errors >** bloc.|  
@@ -144,6 +145,6 @@ Un DiffGram est un format XML qui identifie la version actuelle et la version d'
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  [Chargement d’un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
- [L’écriture du contenu d’un DataSet en tant que données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)  
+ [Écriture du contenu d’un DataSet comme données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)  
  [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

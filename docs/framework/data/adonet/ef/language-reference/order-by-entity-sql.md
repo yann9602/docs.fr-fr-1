@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b805d4437ffd8d3d56a7cdc599bdda797a763d13
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e4ef6edfc56fe73cd509d466fcc26cdb24069c9f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="order-by-entity-sql"></a>ORDER BY (Entity SQL)
 Spécifie l'ordre de classement utilisé sur les objets retournés dans une instruction SELECT.  
@@ -54,7 +55,7 @@ Spécifie l'ordre de classement utilisé sur les objets retournés dans une inst
  SKIP `n`  
  Ignore les `n` premiers éléments.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La clause ORDER BY est logiquement appliquée au résultat de la clause SELECT. La clause ORDER BY peut faire référence aux éléments de la liste de sélection avec leurs alias. La clause ORDER BY peut également faire référence à d'autres variables qui se trouvent actuellement dans l'étendue. Toutefois, si la clause SELECT a été spécifiée avec un modificateur DISTINCT, la clause ORDER BY ne peut faire référence qu'à des alias de la clause SELECT.  
   
  `SELECT c AS c1 FROM cs AS c ORDER BY c1.e1, c.e2`  
@@ -137,6 +138,6 @@ SELECT C2.FirstName, C2.LastName
 ## <a name="see-also"></a>Voir aussi  
  [Expressions de requête](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)  
  [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [IGNORER](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)  
- [LIMITE](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)  
- [RETOUR AU DÉBUT](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
+ [SKIP](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)  
+ [LIMIT](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)  
+ [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)

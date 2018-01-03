@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: bd787373b869c31727cfc0d027b6b98774b0d630
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a20061c551f5cb1a19c64a2f92b8180465f58eb2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-strings-in-adonet"></a>Chaînes de connexion dans ADO.NET
 Le .NET Framework 2.0 a introduit de nouvelles fonctionnalités permettant d'utiliser des chaînes de connexion, y compris l'intégration de nouveaux mots clés aux classes de générateur de chaînes de connexion, qui facilitent la création de chaînes de connexion valides au moment de l'exécution.  
@@ -38,10 +39,10 @@ Le .NET Framework 2.0 a introduit de nouvelles fonctionnalités permettant d'ut
  [Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  Montre comment utiliser les classes `ConnectionStringBuilder` pour générer des chaînes de connexion valides au moment de l'exécution.  
   
- [Chaînes de connexion et les fichiers de Configuration](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)  
+ [Chaînes de connexion et fichiers de configuration](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)  
  Montre comment stocker et extraire des chaînes de connexion dans des fichiers de configuration.  
   
- [Syntaxe de chaîne de connexion](../../../../docs/framework/data/adonet/connection-string-syntax.md)  
+ [Syntaxe des chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-syntax.md)  
  Décrit comment configurer des chaînes de connexion spécifiques au fournisseur pour `SqlClient`, `OracleClient`, `OleDb` et `Odbc`.  
   
  [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)  

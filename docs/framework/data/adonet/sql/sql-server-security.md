@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 4f41a794916c63672ca0c844f086629f77b90aa0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4b8eafeedd03097488b1493b5654db360eab94fb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-security"></a>Sécurité SQL Server
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] possède de nombreuses fonctionnalités qui prennent en charge la création d'applications de base de données sécurisées.  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
  [Vue d’ensemble de la sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  Décrit l'architecture et les fonctionnalités de sécurité de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
   
- [Scénarios de sécurité dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  Contient des rubriques présentant différents scénarios de sécurité pour les applications ADO.NET et [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
   
  [Sécurité SQL Server Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-security.md)  

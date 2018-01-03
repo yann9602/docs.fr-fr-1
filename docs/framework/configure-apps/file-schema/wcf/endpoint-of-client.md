@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec959a9eeea82c56d6a2ae5ec3a7befce67676e3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 351f49c346cb8126cdd9d540a4db382bf5f4e721
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltendpointgt-of-ltclientgt"></a>&lt;endpoint&gt; de &lt;client&gt;
 Spécifie les propriétés du contrat, de la liaison et de l’adresse du point de terminaison du canal employées par les clients pour se connecter aux points de terminaison de service sur le serveur.  
@@ -85,5 +86,5 @@ Spécifie les propriétés du contrat, de la liaison et de l’adresse du point 
  <xref:System.ServiceModel.Configuration.ChannelEndpointElementCollection>  
  <xref:System.ServiceModel.Configuration.ClientSection.Endpoints%2A>  
  <xref:System.ServiceModel.Configuration.ChannelEndpointElement>  
- [Configuration du Client WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)  
+ [Configuration du client WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)  
  [Clients](../../../../../docs/framework/wcf/feature-details/clients.md)

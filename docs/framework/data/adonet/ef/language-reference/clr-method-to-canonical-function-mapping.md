@@ -13,14 +13,15 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5d1e6a1cc362663be3aa6c6084f658eba25dfe54
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 53acc5745b3b80cd4c124dc3f9a74173bb118158
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-method-to-canonical-function-mapping"></a>Mappage de la méthode CLR aux fonctions de chaînes canoniques
-Entity Framework fournit un ensemble de fonctions canoniques chargées d’implémenter des fonctionnalités communes à de nombreux systèmes de base de données, notamment la manipulation de chaînes et les fonctions mathématiques. Cela permet aux développeurs de cibler un large éventail de systèmes de base de données. Lorsqu'elles sont appelées via une technologie de requête comme LINQ to Entities, ces fonctions canoniques sont traduites dans la fonction de magasin correspondante du fournisseur utilisé. Les appels de fonction peuvent ainsi être exprimés sous une forme commune dans toutes les sources de données, ce qui procure une expérience de requête cohérente. Les opérateurs au niveau du bit AND, OR, NOT et XOR sont également mappés à des fonctions canoniques lorsque l'opérande est de type numérique. Dans le cas des opérandes booléens, les opérateurs au niveau du bit AND, OR, NOT et XOR calculent les opérations logiques AND, OR, NOT et XOR de leurs opérandes. Pour plus d’informations, consultez [fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).  
+Entity Framework fournit un ensemble de fonctions canoniques chargées d’implémenter des fonctionnalités communes à de nombreux systèmes de base de données, notamment la manipulation de chaînes et les fonctions mathématiques. Cela permet aux développeurs de cibler un large éventail de systèmes de base de données. Lorsqu'elles sont appelées via une technologie de requête comme LINQ to Entities, ces fonctions canoniques sont traduites dans la fonction de magasin correspondante du fournisseur utilisé. Les appels de fonction peuvent ainsi être exprimés sous une forme commune dans toutes les sources de données, ce qui procure une expérience de requête cohérente. Les opérateurs au niveau du bit AND, OR, NOT et XOR sont également mappés à des fonctions canoniques lorsque l’opérande est de type numérique. Dans le cas des opérandes booléens, les opérateurs au niveau du bit AND, OR, NOT et XOR calculent les opérations logiques AND, OR, NOT et XOR de leurs opérandes. Pour plus d’informations, consultez [fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).  
   
  Pour les scénarios LINQ, les requêtes exécutées sur Entity Framework impliquent le mappage de certaines méthodes CLR aux méthodes au niveau de la source de données sous-jacente au moyen de fonctions canoniques. Les appels de méthode d'une requête LINQ to Entities qui ne sont pas explicitement mappés à une fonction canonique entraîneront la levée d'une exception d'exécution <xref:System.NotSupportedException>.  
   

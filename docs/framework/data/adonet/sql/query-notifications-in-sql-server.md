@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 854407d2e6d1341d5917cc78664c1f653e55fa35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d922598cb31e60b1c1648884555695c1ba089726
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="query-notifications-in-sql-server"></a>Notifications de requête dans SQL Server
 Basées sur l'infrastructure Service Broker, les notifications de requête permettent de notifier des applications en cas de modification de données. Cette fonction est particulièrement utile pour les applications qui génèrent un cache d'informations à partir d'une base de données, telles que les applications Web, et qui doivent être informées en cas de modification des données sources.  
@@ -49,16 +50,16 @@ Basées sur l'infrastructure Service Broker, les notifications de requête perme
 -   [Développement (Service Broker)](http://msdn.microsoft.com/library/bb522908.aspx)  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Activation des Notifications de requête](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md)  
+ [Activation de notifications de requête](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md)  
  Explique comment utiliser des notifications de requête incluant les exigences relatives à leur utilisation et à leur activation.  
   
- [SqlDependency dans une Application ASP.NET](../../../../../docs/framework/data/adonet/sql/sqldependency-in-an-aspnet-app.md)  
+ [SqlDependency dans une application ASP.NET](../../../../../docs/framework/data/adonet/sql/sqldependency-in-an-aspnet-app.md)  
  Montre comment utiliser les notifications de requête à partir d'une application ASP.NET.  
   
  [Détection des modifications avec SqlDependency](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
  Montre comment détecter lorsque les résultats de la requête seront différents de ceux reçus à l'origine.  
   
- [Exécution de SqlCommand avec un SqlNotificationRequest](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
+ [Exécution de SqlCommand avec une SqlNotificationRequest](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
  Illustre la configuration d'un objet <xref:System.Data.SqlClient.SqlCommand> pour travailler avec une notification de requête.  
   
 ## <a name="reference"></a>Référence  

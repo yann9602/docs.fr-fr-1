@@ -14,16 +14,14 @@ ms.assetid: 3f40bacd-3fac-4741-b204-852f693d4340
 caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 3f45dc17304c3c9d62b65760f2c1b5d461812a66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e6a2d66c860b72bd3ef59c02f548ac563fab6b8c
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="no-accessible-39main39-method-with-an-appropriate-signature-was-found-in-39ltnamegt39"></a>Non accessible &#39; Principaux &#39; méthode avec une signature appropriée a été trouvé dans &#39; &lt;nom&gt;&#39;
 Les applications de ligne de commande doivent avoir un `Sub Main` défini. `Main`doit être déclarée comme `Public Shared` si elle est définie dans une classe, ou en tant que `Public` s’il est défini dans un module.  
-  
- Pour plus d’informations sur `Main`, consultez [NIB : Visual Basic Version of Hello, World](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c).  
   
  **ID d’erreur :** BC30737  
   
@@ -32,6 +30,5 @@ Les applications de ligne de commande doivent avoir un `Sub Main` défini. `Main
 -   Définir un `Public Sub Main` procédure pour votre projet. Déclarez-le en tant que `Shared` si et seulement si vous la définissez au sein d’une classe.  
   
 ## <a name="see-also"></a>Voir aussi  
- [NIB : Version de Visual Basic de Hello, World](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c)  
  [Structure d’un programme Visual Basic](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)  
  [Procédures](../../../visual-basic/programming-guide/language-features/procedures/index.md)

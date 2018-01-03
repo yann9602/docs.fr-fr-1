@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 0a4490870cb12ff221f75b043f01baad9b5c7c96
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dadb2d7635f132b44d6fca8c56f53b847ffb1ff9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;httpWebRequest&gt; élément (paramètres réseau)
 Personnalise les paramètres de la demande Web.  
@@ -65,7 +66,7 @@ Personnalise les paramètres de la demande Web.
 |-----------------|---------------------|  
 |[Paramètres](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Par défaut, le .NET Framework applique strictement la norme RFC 2616 pour l’analyse URI. Certaines réponses du serveur peuvent inclure des caractères de contrôle dans les champs interdits, ce qui provoquent le <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> méthode pour lever une <xref:System.Net.WebException>. Si **useUnsafeHeaderParsing** a la valeur **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> ne lèvent pas dans ce cas ; cependant, votre application sera vulnérable à plusieurs formes d’attaques d’analyse URI. La meilleure solution consiste à modifier le serveur afin que la réponse n’inclut pas les caractères de contrôle.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  

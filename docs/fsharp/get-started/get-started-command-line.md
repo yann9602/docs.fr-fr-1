@@ -1,6 +1,6 @@
 ---
 title: "Démarrer avec les outils de ligne de commande avec F #"
-description: "Découvrez comment utiliser F # avec l’interface CLI d’inter-plateformes .NET Core."
+description: "Découvrez comment utiliser F # sur un système d’exploitation (Windows, MacOS, Linux) avec l’interface CLI d’inter-plateformes .NET Core."
 keywords: visual f#, f#, programmation fonctionnelle, .NET, .NET Core
 author: cartermp
 ms.author: phcart
@@ -10,17 +10,17 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 615db1ec-6ef3-4de2-bae6-4586affa9771
-ms.openlocfilehash: a23d4861ce599f20f37ecd0564a0187e7b9b739f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 4820a8a306bd478429b497a8b7c70ff170c1c655
+ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>Prise en main) (F # avec l’interface de ligne de base .NET
 
-Cet article décrit comment vous pouvez commencer à utiliser à l’aide de F # sur .NET Core. Il passe par la création d’une solution à projets multiples avec une bibliothèque de classes est appelée par une Application Console.
+Cet article décrit comment vous pouvez commencer par n’importe quel système d’exploitation (Windows, Mac OS ou Linux) à l’aide de F # avec l’interface de ligne de base de .NET. Il passe par la création d’une solution à projets multiples avec une bibliothèque de classes est appelée par une Application Console.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour commencer, vous devez installer le [.NET Core SDK 1.0 ou version ultérieure](https://dot.net/core). Il est inutile pour désinstaller une version précédente du SDK .NET Core, elle prend en charge les installations côte à côte.
 

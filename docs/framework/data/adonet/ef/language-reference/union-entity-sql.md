@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b62d874a9885ed864282c765cf428f3c2a445745
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5e8b3c28fa7b320b1bbf0f3d7621a587812a6e89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="union-entity-sql"></a>UNION (Entity SQL)
 Combine les résultats de deux requêtes, ou plus, en une collection unique.  
@@ -43,7 +44,7 @@ expression
 ## <a name="return-value"></a>Valeur de retour  
  Collection du même type que l' `expression`ou d'un type de base commun ou dérivé de celui-ci.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  UNION est l'un des opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] . Tous les opérateurs de jeu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sont évalués de gauche à droite. Pour plus d’informations de priorité pour la [!INCLUDE[esql](../../../../../../includes/esql-md.md)] opérateurs de jeu, consultez [EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md).  
   
 ## <a name="example"></a>Exemple  

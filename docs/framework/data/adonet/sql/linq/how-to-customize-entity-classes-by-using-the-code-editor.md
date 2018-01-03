@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: d5586e28e784c43488245db814abf32d863232fc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 68a28e25cf07ec3d84cc7bb12734594ca55e7e0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-customize-entity-classes-by-using-the-code-editor"></a>Comment : personnaliser des classes d'entité à l'aide de l'éditeur de code
 Les développeurs qui utilisent [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] peuvent créer ou personnaliser leurs classes d'entité à l'aide du [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)].  
@@ -26,43 +27,43 @@ Les développeurs qui utilisent [!INCLUDE[vs_current_short](../../../../../../in
   
  Les rubriques de cette section décrivent comment personnaliser votre modèle objet.  
   
- [Comment : spécifier des noms de base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-names.md)  
+ [Guide pratique pour spécifier des noms de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-names.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>.  
   
- [Comment : représenter des Tables en tant que Classes](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-tables-as-classes.md)  
+ [Guide pratique pour représenter des tables en tant que classes](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-tables-as-classes.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.TableAttribute>.  
   
- [Comment : représenter des colonnes en tant que membres de classe](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-class-members.md)  
+ [Guide pratique pour représenter des colonnes en tant que membres de classe](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-class-members.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute>.  
   
- [Comment : représenter les clés primaires](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-primary-keys.md)  
+ [Guide pratique pour représenter les clés primaires](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-primary-keys.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey%2A>.  
   
- [Comment : mapper des relations de base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)  
+ [Guide pratique pour mapper des relations de base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)  
  Fournit des exemples d'utilisation de l'attribut <xref:System.Data.Linq.Mapping.AssociationAttribute>.  
   
- [Comment : représenter des colonnes en tant que la base de données générée](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-database-generated.md)  
+ [Guide pratique pour représenter des colonnes en tant que colonnes générées par une base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-database-generated.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>.  
   
- [Comment : représenter des colonnes en tant que colonnes Timestamp ou Version](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-timestamp-or-version-columns.md)  
+ [Guide pratique pour représenter des colonnes en tant que colonnes timestamp ou version](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-timestamp-or-version-columns.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute.IsVersion%2A>.  
   
- [Comment : spécifier les Types de données de base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-data-types.md)  
+ [Guide pratique pour spécifier des types de données de base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-database-data-types.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>.  
   
- [Comment : représenter des colonnes calculées](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-computed-columns.md)  
+ [Guide pratique pour représenter des colonnes calculées](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-computed-columns.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>.  
   
- [Comment : spécifier des champs de stockage privés](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-private-storage-fields.md)  
+ [Guide pratique pour spécifier des champs de stockage privés](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-private-storage-fields.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>.  
   
- [Comment : représenter des colonnes comme autorisant les valeurs Null](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-allowing-null-values.md)  
+ [Guide pratique pour représenter des colonnes en tant que colonnes autorisant les valeurs Null](../../../../../../docs/framework/data/adonet/sql/linq/how-to-represent-columns-as-allowing-null-values.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A>.  
   
- [Comment : mapper des hiérarchies d’héritage](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-inheritance-hierarchies.md)  
+ [Guide pratique pour mapper des hiérarchies d’héritage](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-inheritance-hierarchies.md)  
  Décrit les mappages requis pour spécifier une hiérarchie d'héritage.  
   
- [Comment : spécifier la vérification de conflits d’accès concurrentiel](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-concurrency-conflict-checking.md)  
+ [Guide pratique pour spécifier la vérification de conflits d’accès concurrentiel](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-concurrency-conflict-checking.md)  
  Explique comment utiliser <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A>.  
   
 ## <a name="see-also"></a>Voir aussi  

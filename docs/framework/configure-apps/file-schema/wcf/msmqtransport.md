@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 87fd7dc848e59cd8fb58131cf24cae4038ea82d3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 441ec2cd07d46d44f527da7799e9df6d3bec4408
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltmsmqtransportgt"></a>&lt;msmqTransport&gt;
 Déclenche le transfert de messages par un canal via le transport MSMQ lorsque celui-ci fait partie d’une liaison personnalisée.  
@@ -91,7 +92,7 @@ Déclenche le transfert de messages par un canal via le transport MSMQ lorsque c
 |-------------|-----------------|  
 |[\<liaison >](../../../../../docs/framework/misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L'élément `msmqTransport` permet de définir les propriétés du canal de communication mis en file d'attente. Le canal de communication mis en file d'attente utilise Message Queuing pour son transport.  
   
  Cet élément de liaison est l'élément de liaison par défaut utilisé par la liaison standard Message Queuing (`netMsmqBinding`).  
@@ -103,7 +104,7 @@ Déclenche le transfert de messages par un canal via le transport MSMQ lorsque c
  <xref:System.ServiceModel.Channels.CustomBinding>  
  [Files d’attente dans WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
  [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)  
- [Choix d’un Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  

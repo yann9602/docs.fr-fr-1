@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 85a980191e727ec1a20cca618504d1d9cbc2c277
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8cdd5d8a05354ad6f0df8343d546fd6cd1e8eac4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltservicedebuggt"></a>&lt;serviceDebug&gt;
 Spécifie les fonctionnalités de débogage et d'informations d'aide pour un service [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
@@ -66,7 +67,7 @@ Spécifie les fonctionnalités de débogage et d'informations d'aide pour un ser
 |-------------|-----------------|  
 |[\<comportement >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Paramètre `includeExceptionDetailInFaults` à `true` permet au service de retourner toute exception qui est levée par le code d’application même si l’exception n’est pas déclarée à l’aide de la <xref:System.ServiceModel.FaultContractAttribute>. Ce paramètre est utile lors du débogage de cas où le serveur lève une exception inattendue. Avec cet attribut, un formulaire sérialisé de l'exception inconnue est retourné et vous pouvez consulter plus de détails de l'exception.  
   
 > [!CAUTION]
@@ -82,5 +83,5 @@ Spécifie les fonctionnalités de débogage et d'informations d'aide pour un ser
  <xref:System.ServiceModel.Configuration.ServiceDebugElement>  
  <xref:System.ServiceModel.Description.ServiceDebugBehavior>  
  [Spécification et gestion des erreurs dans les contrats et les services](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  
- [La gestion des Exceptions et des erreurs](../../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)  
+ [Gestion des exceptions et des erreurs](../../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)  
  [Comportement de débogage de service](../../../../../docs/framework/wcf/samples/service-debug-behavior.md)

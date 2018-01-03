@@ -16,11 +16,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7405cf37aaa21f8773952c9e7ed941bc8ae3150b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 99aa438c64fdb8f2d14207e6afb06afa8e5f014a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding"></a>Liaison de données
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]prend en charge la liaison aux contrôles communs, tels que les contrôles de grille. Plus précisément, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] définit les modèles de base pour la liaison à une grille de données et de gérer la liaison maître / détail en termes d’affichage et la mise à jour.  
@@ -95,7 +96,7 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.ComponentModel.ICancelAddNew> est implémenté dans toutes les collections [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] liées aux données (`SortableBindingList` générique et `EntitySet` générique). Dans les deux implémentations, le code s'applique comme suit :  
   
--   Permet l'insertion des éléments, puis leur suppression de la collection.  
+-   Permet l’insertion des éléments, puis leur suppression de la collection.  
   
 -   N'effectue pas le suivi des modifications tant que l'interface utilisateur ne valide pas l'édition.  
   

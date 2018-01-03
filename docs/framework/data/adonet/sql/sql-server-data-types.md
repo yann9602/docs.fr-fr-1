@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 16c675491a378d72d82a252d79a73379f494893c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fd3982cf8eeeb88a162e77a3ef4b9d6e75e19fc6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-data-types-and-adonet"></a>Types de données SQL Server et ADO.NET
 SQL Server et le .NET Framework sont basés sur des systèmes de types différents, ce qui peut entraîner une perte de données potentielle. Afin de protéger l'intégrité des données, le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>) fournit des méthodes d'accesseur typé pour utiliser les données SQL Server. Vous pouvez également utiliser les énumérations des classes <xref:System.Data.SqlDbType> pour spécifier les types de données <xref:System.Data.SqlClient.SqlParameter>.  
@@ -33,19 +34,19 @@ SQL Server et le .NET Framework sont basés sur des systèmes de types différen
 1.  [Types de données (moteur de base de données)](http://go.microsoft.com/fwlink/?LinkID=107468)  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [SqlTypes et le jeu de données](../../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md)  
+ [SqlTypes et le DataSet](../../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md)  
  Décrit la prise en charge de type pour `SqlTypes` dans le `DataSet`.  
   
- [Gestion des valeurs Null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md)  
+ [Gestion des valeurs null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md)  
  Montre comment utiliser des valeurs null et la logique à trois valeurs.  
   
  [Comparaison du GUID et des valeurs uniqueidentifier](../../../../../docs/framework/data/adonet/sql/comparing-guid-and-uniqueidentifier-values.md)  
  Montre comment utiliser des valeurs GUID et d'identificateur unique dans SQL Server et le .NET Framework.  
   
- [Données de date et heure](../../../../../docs/framework/data/adonet/sql/date-and-time-data.md)  
+ [Données de date et d’heure](../../../../../docs/framework/data/adonet/sql/date-and-time-data.md)  
  Explique comment utiliser les nouveaux types de données de date et d'heure introduits dans SQL Server 2008.  
   
- [UDT volumineux](../../../../../docs/framework/data/adonet/sql/large-udts.md)  
+ [Grands types définis par l’utilisateur](../../../../../docs/framework/data/adonet/sql/large-udts.md)  
  Montre comment récupérer des données des UDT volumineux introduits dans SQL Server 2008.  
   
  [Données XML dans SQL Server](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
@@ -65,8 +66,8 @@ SQL Server et le .NET Framework sont basés sur des systèmes de types différen
  Décrit l'énumération `DbType` et tous ses membres.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Mappages de Type de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
- [Configuration des paramètres et des Types de données de paramètre](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
+ [Mappages de types de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
+ [Configuration des paramètres et des types de données des paramètres](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
  [Paramètres table](../../../../../docs/framework/data/adonet/sql/table-valued-parameters.md)  
  [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

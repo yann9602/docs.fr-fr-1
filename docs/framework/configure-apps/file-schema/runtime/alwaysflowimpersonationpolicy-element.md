@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 52cdb26f6f78ed740efa1f27958368e8c7e2ae78
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: be1df955f7586848968cb32cd66a4c6889cfffa8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltalwaysflowimpersonationpolicygt-element"></a>&lt;alwaysFlowImpersonationPolicy&gt; élément
 Spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité.  
@@ -65,7 +66,7 @@ Spécifie que l’identité Windows est toujours transmise entre des points asyn
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Dans les versions 1.0 et 1.1 du .NET Framework, l’identité Windows n’est pas transmis entre des points asynchrones. Dans le .NET Framework version 2.0, il existe un <xref:System.Threading.ExecutionContext> objet qui contient des informations sur le thread en cours d’exécution et les transmet entre des points asynchrones dans un domaine d’application. Le <xref:System.Security.Principal.WindowsIdentity> également transmis dans le cadre des informations qui circulent entre des points asynchrones, sous réserve de l’emprunt d’identité a été obtenue à l’aide de méthodes managées telles que <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> et pas par d’autres moyens, tels que platform appel à des méthodes natives. Cet élément est utilisé pour spécifier que l’identité de Windows est transmise entre des points asynchrones, quelle que soit la façon dont l’emprunt d’identité a été atteint.  
   
  Vous pouvez modifier ce comportement par défaut de deux manières différentes :  

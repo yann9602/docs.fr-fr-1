@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 34e6e7c505dab135452664fdb815ee3e905a2ad0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b2739cc5eaa6a1e43c06849e1b00f7ac8bd531e7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcleargt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;Désactivez&gt; élément &lt;écouteurs&gt; pour &lt;trace&gt;
 Efface la collection `Listeners` de la trace.  
@@ -42,7 +43,7 @@ Efface la collection `Listeners` de la trace.
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -56,7 +57,7 @@ Efface la collection `Listeners` de la trace.
 |`trace`|Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.|  
 |`listeners`|Contient des écouteurs qui collectent, stocker et acheminer les messages. Les écouteurs dirigent la sortie de traçage vers une cible appropriée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `<clear>` élément supprime tous les écouteurs de la `Listeners` collection de la trace. Vous pouvez utiliser la `<clear>` élément avant d’utiliser le `<add>` pour garantir l’aucun autre écouteur actif dans la collection.  
   
  Vous pouvez effacer le `Listeners` collection par programme en appelant le <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> méthode sur le <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> propriété (`System.Diagnostics.Trace.Listeners.Clear()`).  

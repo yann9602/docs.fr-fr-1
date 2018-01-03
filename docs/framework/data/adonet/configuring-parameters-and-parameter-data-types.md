@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 9119b6db6b1d3c2099af3c7bdbe042ced4dca94e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0f5aed56ba4958d44e0628f55115308751afae55
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Configuration des paramètres et des types de données des paramètres
 Les objets de commande utilisent des paramètres pour passer des valeurs à des instructions SQL ou à des procédures stockées, en fournissant la vérification et la validation des types. Contrairement au texte de la commande, l'entrée de paramètre est traitée comme une valeur littérale et non pas comme du code exécutable. Cela vous permet de vous protéger des attaques « par injection de code SQL », dans lesquelles un attaquant insère une commande qui compromet la sécurité sur le serveur dans une instruction SQL.  
@@ -56,12 +57,12 @@ Les objets de commande utilisent des paramètres pour passer des valeurs à des 
   
 |Type .NET Framework|DbType|SqlDbType|OleDbType|OdbcType|OracleType|  
 |-------------------------|------------|---------------|---------------|--------------|----------------|  
-|<xref:System.Boolean>|Booléen|Bit|Booléen|Bit|Byte|  
+|<xref:System.Boolean>|Boolean|Bit|Booléen|Bit|Byte|  
 |<xref:System.Byte>|Byte|TinyInt|UnsignedTinyInt|TinyInt|Byte|  
 |byte[]|Binaire|VarBinary`.` cette conversion implicite échouera si le tableau d’octets est supérieur à la taille maximale de VarBinary, soit 8 000 octets. Pour les tableaux d’octets supérieurs à 8 000 octets, définissez explicitement la <xref:System.Data.SqlDbType>.|VarBinary|Binaire|Raw|  
 |<xref:System.Char>|``|La déduction de <xref:System.Data.SqlDbType> à partir de char n'est pas prise en charge.|Char|Char|Byte|  
 |<xref:System.DateTime>|DateTime|DateTime|DBTimeStamp|DateTime|DateTime|  
-|<xref:System.DateTimeOffset>|DateTimeOffset|DateTimeOffset dans SQL Server 2008. La déduction de <xref:System.Data.SqlDbType> à partir de DateTimeOffset n'est pas prise en charge dans les versions de SQL Server antérieures à SQL Server 2008.|||DateTime|  
+|<xref:System.DateTimeOffset>|DateTimeOffset|DateTimeOffset dans SQL Server 2008. La déduction de <xref:System.Data.SqlDbType> à partir de DateTimeOffset n'est pas prise en charge dans les versions de SQL Server antérieures à SQL Server 2008.|||DateTime|  
 |<xref:System.Decimal>|Decimal|Decimal|Decimal|Numérique|Nombre|  
 |<xref:System.Double>|Double|Float|Double|Double|Double|  
 |<xref:System.Single>|Single|Real|Single|Real|Float|  
@@ -70,8 +71,8 @@ Les objets de commande utilisent des paramètres pour passer des valeurs à des 
 |<xref:System.Int32>|Int32|Int|Int|Int|Int32|  
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Nombre|  
 |<xref:System.Object>|Objet|Variante|Variante|La déduction d'OdbcType à partir d'Object n'est pas prise en charge.|Blob|  
-|<xref:System.String>|Chaîne|NVarChar. Cette conversion implicite échouera si la chaîne est supérieure à la taille maximale de NVarChar, soit 4 000 caractères. Pour les chaînes supérieures à 4 000 caractères, définissez explicitement <xref:System.Data.SqlDbType>.|VarWChar|NVarChar|NVarChar|  
-|<xref:System.TimeSpan>|Heure|Time dans SQL Server 2008. La déduction de <xref:System.Data.SqlDbType> à partir de TimeSpan n'est pas prise en charge dans les versions de SQL Server antérieures à SQL Server 2008.|DBTime|Heure|DateTime|  
+|<xref:System.String>|Chaîne|NVarChar. Cette conversion implicite échouera si la chaîne est supérieure à la taille maximale de NVarChar, soit 4 000 caractères. Pour les chaînes supérieures à 4 000 caractères, définissez explicitement <xref:System.Data.SqlDbType>.|VarWChar|NVarChar|NVarChar|  
+|<xref:System.TimeSpan>|réflexion|Time dans SQL Server 2008. La déduction de <xref:System.Data.SqlDbType> à partir de TimeSpan n'est pas prise en charge dans les versions de SQL Server antérieures à SQL Server 2008.|DBTime|réflexion|DateTime|  
 |<xref:System.UInt16>|UInt16|La déduction de <xref:System.Data.SqlDbType> à partir de UInt16 n'est pas prise en charge.|UnsignedSmallInt|Int|UInt16|  
 |<xref:System.UInt32>|UInt32|La déduction de <xref:System.Data.SqlDbType> à partir de UInt32 n'est pas prise en charge.|UnsignedInt|BigInt|UInt32|  
 |<xref:System.UInt64>|UInt64|La déduction de <xref:System.Data.SqlDbType> à partir de UInt64 n'est pas prise en charge.|UnsignedBigInt|Numérique|Nombre|  
@@ -81,7 +82,7 @@ Les objets de commande utilisent des paramètres pour passer des valeurs à des 
 |``|Date|Date dans SQL Server 2008. La déduction de <xref:System.Data.SqlDbType> à partir de Date n'est pas prise en charge dans les versions de SQL Server antérieures à SQL Server 2008.|DBDate|Date|DateTime|  
 |``|SByte|La déduction de <xref:System.Data.SqlDbType> à partir de SByte n'est pas prise en charge.|TinyInt|La déduction de `OdbcType` à partir de SByte n'est pas prise en charge.|SByte|  
 ||StringFixedLength|NChar|WChar|NChar|NChar|  
-||Heure|Time dans SQL Server 2008. La déduction de <xref:System.Data.SqlDbType> à partir de Time n'est pas prise en charge dans les versions de SQL Server antérieures à SQL Server 2008.|DBTime|Heure|DateTime|  
+||réflexion|Time dans SQL Server 2008. La déduction de <xref:System.Data.SqlDbType> à partir de Time n'est pas prise en charge dans les versions de SQL Server antérieures à SQL Server 2008.|DBTime|réflexion|DateTime|  
 ||VarNumeric|La déduction de <xref:System.Data.SqlDbType> à partir de VarNumeric n'est pas prise en charge.|VarNumeric|La déduction de `OdbcType` à partir de VarNumeric n'est pas prise en charge.|Nombre|  
 |type défini par l'utilisateur (objet avec <xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>)|Objet ou chaîne, selon le fournisseur (SqlClient retourne toujours un objet, ODBC retourne toujours une chaîne et le fournisseur de données managées OleDb l'un ou l'autre)|SqlDbType.Udt si <xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> est présent, sinon Variant|OleDbType.VarWChar (si la valeur est Null), sinon OleDbType.Variant.|OdbcType.NVarChar|non pris en charge|  
   
@@ -121,7 +122,7 @@ CREATE PROCEDURE dbo.CustOrderHist @CustomerID varchar(5)
  [!code-vb[DataWorks SqlClient.StoredProcedure#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.StoredProcedure/VB/source.vb#1)]  
   
 ## <a name="using-parameters-with-an-oledbcommand-or-odbccommand"></a>Utilisation des paramètres avec OleDbCommand ou OdbcCommand  
- Lorsque vous utilisez des paramètres avec un objet <xref:System.Data.OleDb.OleDbCommand> ou <xref:System.Data.Odbc.OdbcCommand>, l'ordre des paramètres ajoutés à la collection `Parameters` doit correspondre à celui des paramètres définis dans votre procédure stockée. Les fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour OLE DB et [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour ODBC traitent les paramètres d'une procédure stockée comme des espaces réservés et appliquent des valeurs de paramètre par ordre. En outre, les paramètres des valeurs de retour doivent être les premiers paramètres ajoutés à la collection `Parameters` .  
+ Lorsque vous utilisez des paramètres avec un objet <xref:System.Data.OleDb.OleDbCommand> ou <xref:System.Data.Odbc.OdbcCommand>, l'ordre des paramètres ajoutés à la collection `Parameters` doit correspondre à celui des paramètres définis dans votre procédure stockée. Les fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour OLE DB et [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour ODBC traitent les paramètres d'une procédure stockée comme des espaces réservés et appliquent des valeurs de paramètre par ordre. En outre, les paramètres des valeurs de retour doivent être les premiers paramètres ajoutés à la collection `Parameters` .  
   
  Les fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour OLE DB et [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour ODBC ne prennent pas en charge les paramètres nommés pour le passage des paramètres à une instruction SQL ou une procédure stockée. Dans ce cas, vous devez utiliser l'espace réservé de point d'interrogation (?), comme dans l'exemple suivant.  
   

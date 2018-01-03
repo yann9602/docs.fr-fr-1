@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7cd561cf0e0a9e080b150bdaa412686126423c91
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b6231f362a30f4766ccf5a43d33fa0dc7257ad57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltuserandomizedstringhashalgorithmgt-element"></a>&lt;UseRandomizedStringHashAlgorithm&gt; élément
 Détermine si le common language runtime calcule les codes de hachage de chaînes sur un par domaine d’application.  
@@ -65,7 +66,7 @@ Détermine si le common language runtime calcule les codes de hachage de chaîne
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Par défaut, le <xref:System.StringComparer> classe et <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> la méthode utilise un seul algorithme de hachage qui génère un code de hachage cohérent entre domaines d’application. Cela revient à affecter la `enabled` attribut de la `<UseRandomizedStringHashAlgorithm>` élément `0`. Il s’agit d’algorithme de hachage utilisé dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
   
  Le <xref:System.StringComparer> classe et le <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> méthode peut également utiliser un autre algorithme de hachage qui calcule les codes de hachage sur un par domaine d’application. Par conséquent, les codes de hachage pour les chaînes équivalentes sont différentes entre domaines d’application. Il s’agit d’une fonctionnalité d’abonnement ; Pour en bénéficier, vous devez définir le `enabled` attribut de la `<UseRandomizedStringHashAlgorithm>` élément `1`.  

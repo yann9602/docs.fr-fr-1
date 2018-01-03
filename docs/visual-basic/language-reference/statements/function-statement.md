@@ -35,11 +35,11 @@ ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
 caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 667ab7ceb54e1f339fd645883ca2686c0cbb72b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 52e9210f9e715b6055e6ed199ef1aa4b919c6dd6
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="function-statement-visual-basic"></a>Function, instruction (Visual Basic)
 Déclare le nom, paramètres et le code qui définissent une `Function` procédure.  
@@ -173,7 +173,7 @@ End Function
   
      Termine la définition de cette procédure.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Tout le code exécutable doit être à l’intérieur d’une procédure. Chaque procédure, à son tour, est déclaré dans une classe, une structure ou un module qui est appelé à la classe, structure ou module conteneur.  
   
  Pour retourner une valeur au code appelant, utilisez un `Function` procédure ; sinon, utilisez un `Sub` procédure.  
@@ -239,7 +239,7 @@ End Function
   
  Le type de retour d’une fonction d’itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, ou <xref:System.Collections.Generic.IEnumerator%601>.  
   
- Pour plus d’informations, consultez [Itérateurs](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7).  
+ Pour plus d'informations, consultez [Itérateurs](../../programming-guide/concepts/iterators.md).  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant utilise le `Function` instruction pour déclarer le nom, des paramètres et que le code qui forment le corps d’un `Function` procédure. Le `ParamArray` modificateur permet à la fonction d’accepter un nombre variable d’arguments.  

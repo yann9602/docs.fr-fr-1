@@ -14,11 +14,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 75cb32ac55bfa397d12f4ec514488f6b2a159e3d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7f3593b6d7f8778ae8d74e779d3446403b99b655
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-wcf-data-services"></a>Mise en route avec les services de données WCF
 Les rubriques de cette section vous aident à comprendre rapidement [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] et comment utiliser [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour exposer et consommer [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux en expliquant les technologies sous-jacentes. Cette section inclut les deux contenu conceptuel et un [quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) didacticiel.  
@@ -26,13 +27,13 @@ Les rubriques de cette section vous aident à comprendre rapidement [!INCLUDE[ss
 ## <a name="in-this-section"></a>Dans cette section  
  Les rubriques suivantes décrivent comment créer des services de données en utilisant [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [Exposition de vos données en tant que Service](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
+ [Exposition de vos données comme service](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
  Décrit les étapes nécessaires à la création d'un service de données au moyen d'[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [L’accès aux ressources de Service de données](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
+ [Accès aux ressources d’un service de données](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
  Décrit comment utiliser des [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux.  
   
- [À l’aide d’un Service de données dans une Application cliente](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
+ [Utilisation d’un service de données dans une application cliente](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
  Décrit comment travailler avec un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] de flux dans une application cliente .NET Framework.  
   
  [Démarrage rapide](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  

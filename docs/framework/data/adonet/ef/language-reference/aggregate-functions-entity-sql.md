@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ff9462b1a5a6f6f9f4614098c38bb5fab14a5203
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a7c5675645591ff467d983155e61fb21615a6171
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="aggregate-functions-entity-sql"></a>Fonctions d'agrégation (Entity SQL)
 Un agrégat est une construction de langage qui condense une collection en un scalaire dans le cadre d’une opération de groupe. Les agrégats [!INCLUDE[esql](../../../../../../includes/esql-md.md)] se présentent sous deux formes :  
@@ -28,7 +29,7 @@ Un agrégat est une construction de langage qui condense une collection en un sc
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)]tente d’abord d’interpréter une expression comme une fonction de la collection et si l’expression est dans le contexte d’une expression SELECT il l’interprète comme un agrégat de groupe.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]définit un opérateur d’agrégation spécial appelé [GROUPPARTITION](../../../../../../docs/framework/data/adonet/ef/language-reference/grouppartition-entity-sql.md). Cet opérateur vous permet d’obtenir une référence au jeu d’entrée groupé. Cela permet d'exécuter des requêtes de regroupement améliorées, où les résultats de la clause GROUP BY peuvent être utilisés à des emplacements autres qu'un agrégat de groupe ou des fonctions de collection.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]définit un opérateur d’agrégation spécial appelé [GROUPPARTITION](../../../../../../docs/framework/data/adonet/ef/language-reference/grouppartition-entity-sql.md). Cet opérateur vous permet d’obtenir une référence au jeu d’entrée groupé. Cela permet d’exécuter des requêtes de regroupement améliorées, où les résultats de la clause GROUP BY peuvent être utilisés à des emplacements autres qu’un agrégat de groupe ou des fonctions de collection.  
   
 ## <a name="collection-functions"></a>Fonctions de collection  
  Les fonctions de collection fonctionnent sur des collections et retournent une valeur scalaire. Par exemple, si `orders` est une collection de toutes les commandes `orders`, vous pouvez calculer la première date d'expédition grâce à l'expression suivante :  

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c0c919bb5be12005850b81059fc641f6f25b06bb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2f67ad1947d421a5221a34ad8392242e4d18039f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-linq-to-dataset"></a>Sécurité (LINQ to DataSet)
 Cette rubrique traite des questions de sécurité dans [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  
@@ -30,7 +31,7 @@ Cette rubrique traite des questions de sécurité dans [!INCLUDE[linq_dataset](.
 ## <a name="external-input"></a>Entrée externe  
  Les applications reçoivent souvent des entrées externes (provenant d'un utilisateur ou d'un autre agent externe) et exécutent des actions en fonction de ces entrées.  Dans le cas de [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], l’application peut construire une requête d’une certaine manière, en fonction de l’entrée externe ou utiliser une entrée dans la requête externe. Les requêtes [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] acceptent des paramètres partout où des littéraux sont admis. Les développeurs d'applications devraient utiliser des requêtes paramétrées, plutôt que d'injecter des littéraux directement dans la requête à partir d'un agent externe.  
   
- Toute entrée provenant directement ou indirectement d'un utilisateur ou d'un agent externe doit avoir un contenu qui se base sur la syntaxe du langage cible afin d'exécuter des actions non autorisées. C'est ce que l'on appelle une « attaque par injection de code SQL », terme dérivé d'un modèle d'attaque où le langage cible est Transact-SQL. L'entrée utilisateur injectée directement dans la requête est utilisée pour effacer une table de base de données, provoquer un déni de service, ou modifier d'une manière ou d'une autre la nature de l'opération en cours. Bien qu'il soit possible de composer des requêtes dans [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], cette opération est effectuée via l'API de modèle objet. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]requêtes ne sont pas composées par manipulation ou concaténation, tels qu’ils sont en Transact-SQL, ne sont pas vulnérables aux attaques d’injection SQL dans le sens classique du terme.  
+ Toute entrée provenant directement ou indirectement d'un utilisateur ou d'un agent externe doit avoir un contenu qui se base sur la syntaxe du langage cible afin d'exécuter des actions non autorisées. C'est ce que l'on appelle une « attaque par injection de code SQL », terme dérivé d'un modèle d'attaque où le langage cible est Transact-SQL. L’entrée utilisateur injectée directement dans la requête est utilisée pour effacer une table de base de données, provoquer un déni de service, ou modifier d’une manière ou d’une autre la nature de l’opération en cours. Bien qu'il soit possible de composer des requêtes dans [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], cette opération est effectuée via l'API de modèle objet. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]requêtes ne sont pas composées par manipulation ou concaténation, tels qu’ils sont en Transact-SQL, ne sont pas vulnérables aux attaques d’injection SQL dans le sens classique du terme.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

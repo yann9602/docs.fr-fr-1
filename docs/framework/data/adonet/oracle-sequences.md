@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c50e8d64201a369ed76e328ee355201cbd45bca6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bf4c41906d67bc97547ea24af3dd30ed4fa998ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="oracle-sequences"></a>Séquences Oracle
 Le fournisseur de données .NET Framework pour Oracle offre une prise en charge pour l'extraction des valeurs de séquence Oracle clés générées par le serveur, une fois les insertions réalisées par <xref:System.Data.OracleClient.OracleDataAdapter>.  

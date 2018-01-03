@@ -15,11 +15,11 @@ ms.assetid: dd4b29e7-6fa1-428c-877e-69955420bb72
 caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6118ca5f73a0d446842c33859e0623032082bcd8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d804ce75929592675068fdc434a1ba7429fa5373
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="ctype-function-visual-basic"></a>Fonction CType (Visual Basic)
 Retourne le résultat d’une conversion explicite d’une expression dans un type de données spécifié, objet, structure, classe ou une interface.  
@@ -37,7 +37,7 @@ CType(expression, typename)
  `typename`  
  Toute expression qui est autorisée dans un `As` clause dans un `Dim` instruction, autrement dit, le nom de n’importe quel type de données objet, structure, classe ou interface.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!TIP]
 >  Vous pouvez également utiliser les fonctions suivantes pour effectuer une conversion de type :  
@@ -73,4 +73,4 @@ CType(expression, typename)
  [Fonctions de conversion](../../../visual-basic/language-reference/functions/conversion-functions.md)  
  [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)  
  [Guide pratique : définir un opérateur de conversion](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
- [Conversion de type dans le .NET Framework](http://msdn.microsoft.com/library/ba36154f-064c-47d3-9f05-72f93a7ca96d)
+ [Conversion de type dans le .NET Framework](../../../standard/base-types/type-conversion.md)

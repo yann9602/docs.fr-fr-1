@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 82456bf5b892bc32a6eba0d3cf074b4adc76a305
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0df2c3eea706bae92a9cbef9165c374e8efb368a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-clr-custom-type-mappings"></a>Mappages de types personnalisés SQL-CLR
 Le mappage de type entre SQL Server et le langage Common Language Runtime (CLR) est automatiquement spécifié lorsque vous utilisez l'outil de ligne de commande SQLMetal ou le Concepteur Objet/Relationnel (Concepteur O/R).  
@@ -42,5 +43,5 @@ Le mappage de type entre SQL Server et le langage Common Language Runtime (CLR) 
  En cas de modification de la base de données, vous devez mettre à jour le fichier DBML afin qu'il prenne ces modifications en compte. L'une des méthodes utilisées consiste à créer automatiquement un nouveau fichier DBML et à effectuer de nouveau les personnalisations de mappage de type. Vous pouvez aussi comparer les différences entre le nouveau fichier DBML et le fichier DBML personnalisé, puis mettre ce dernier à jour manuellement afin de prendre en compte les modifications de base de données.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Mappage de Type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
+ [Mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)  
  [Génération de code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)

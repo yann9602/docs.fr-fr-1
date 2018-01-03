@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: f7f85a1d0d5ca720c82d513c7d51ac6ddaf5afb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d08d839d0eb80c23b96f87cf26d3d68db7d358f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltsecuritygt-of-ltpeertransportgt"></a>&lt;security&gt; de &lt;peerTransport&gt;
 Contient les paramètres de sécurité associés à un canal homologue, y compris le type d'authentification utilisé et la sécurité utilisée pour le transport de messages.  
@@ -73,7 +74,7 @@ Contient les paramètres de sécurité associés à un canal homologue, y compri
  <xref:System.ServiceModel.Channels.CustomBinding>  
  [Sécurité de transport](../../../../../docs/framework/wcf/feature-details/transport-security.md)  
  [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)  
- [Choix d’un Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  

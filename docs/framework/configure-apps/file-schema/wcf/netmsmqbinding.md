@@ -13,11 +13,12 @@ caps.latest.revision: "35"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 74850690d6680ede24d880b846a75ef9464dcc2b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9f0c8f0d2f9ed2471fab2eda17c7d9f9be5b77c8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnetmsmqbindinggt"></a>&lt;netMsmqBinding&gt;
 Définit une liaison mise en file d’attente adaptée à la communication entre ordinateurs.  
@@ -106,7 +107,7 @@ Définit une liaison mise en file d’attente adaptée à la communication entre
 |-------------|-----------------|  
 |[\<liaisons >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La liaison `netMsmqBinding` fournit la prise en charge de la mise en file d'attente en utilisant MSMQ (Microsoft Message Queuing) comme transport et active la prise en charge des applications faiblement couplées, de l'isolation de défaillance, du nivellement de charge et des opérations hors circuit. Pour une description de ces fonctionnalités, consultez [les files d’attente dans WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
   
 ## <a name="example"></a>Exemple  

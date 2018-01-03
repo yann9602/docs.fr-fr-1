@@ -30,11 +30,11 @@ ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
 caps.latest.revision: "56"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4aefacd33e0b3c8f64fd26929af06469136237f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 11601eb1caad1c6cc6d9898f590436a977a78fa1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next, instruction (Visual Basic)
 Répète un groupe d’instructions pour chaque élément dans une collection.  
@@ -73,7 +73,7 @@ Next [ element ]
   
  [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_1.vb)]  
   
- Pour plus d’exemples, consultez [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b) et [tableaux](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Pour plus d’exemples, consultez [Collections](../../../standard/collections/index.md) et [tableaux](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="nested-loops"></a>Boucles imbriquées  
  Vous pouvez imbriquer `For Each` boucles en plaçant une boucle à l’intérieur d’une autre.  
@@ -105,7 +105,7 @@ Next [ element ]
   
 -   Il existe une boucle infinie, ce qui est une boucle qui pourrait exécuter un importantes ou infini même le nombre de fois. Si vous détectez une telle condition, vous pouvez utiliser `Exit For` pour abandonner la boucle. Pour plus d’informations, consultez [faire... Instruction de boucle](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
   
-## <a name="iterators"></a>Itérateurs  
+## <a name="iterators"></a>Iterators  
  Vous utilisez un *itérateur* pour effectuer une itération personnalisée sur une collection. Un itérateur peut être une fonction ou un `Get` accesseur. Il utilise un `Yield` instruction pour retourner chaque élément de la collection un à la fois.  
   
  Vous appelez un itérateur en utilisant un `For Each...Next` instruction. Chaque itération de la boucle `For Each` appelle l’itérateur. Quand un `Yield` instruction est atteint dans l’itérateur, l’expression dans la `Yield` instruction est retournée et l’emplacement actuel dans le code est conservé. L’exécution est redémarrée à partir de cet emplacement la prochaine fois que l’itérateur est appelé.  
@@ -114,7 +114,7 @@ Next [ element ]
   
  [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_4.vb)]  
   
- Pour plus d’informations, consultez [itérateurs](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7), [instruction Yield](../../../visual-basic/language-reference/statements/yield-statement.md), et [itérateur](../../../visual-basic/language-reference/modifiers/iterator.md).  
+ Pour plus d’informations, consultez [itérateurs](../../programming-guide/concepts/iterators.md), [instruction Yield](../../../visual-basic/language-reference/statements/yield-statement.md), et [itérateur](../../../visual-basic/language-reference/modifiers/iterator.md).  
   
 ## <a name="technical-implementation"></a>Implémentation technique  
  Lorsqu’un `For Each`...`Next` instruction s’exécute, Visual Basic évalue la collection qu’une seule fois, avant le démarrage de la boucle. Si votre bloc d’instructions modifie `element` ou `group`, ces modifications n’affectent pas l’itération de la boucle.  
@@ -180,7 +180,7 @@ End Sub
  [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
+ [Collections](../../../standard/collections/index.md)  
  [For...Next (instruction)](../../../visual-basic/language-reference/statements/for-next-statement.md)  
  [Structures de boucle](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
  [While...End While (instruction)](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  

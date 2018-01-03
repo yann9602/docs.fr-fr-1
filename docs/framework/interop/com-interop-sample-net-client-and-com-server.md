@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3a2db2aba0904aac89bf5fe73c715ff7a5eeb5f1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ac82ed799e2dfcae605d48ef462b0b4c2756b5b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>Exemple COM Interop : client .NET et serveur COM
 Cet exemple montre comment un [client .NET](#cpconcominteropsamplenetclientcomserveranchor1), généré pour accéder à un [serveur COM](#cpconcominteropsamplenetclientcomserveranchor2), crée une instance d’une coclasse COM et appelle les membres de classe pour effectuer des calculs d’emprunts.  

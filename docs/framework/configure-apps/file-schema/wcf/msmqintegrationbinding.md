@@ -14,11 +14,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c31674f26724e575170be5698e8671ba156739f4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 59c1c6be1f02477c7ad2d4c90d09173f9296d1e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltmsmqintegrationbindinggt"></a>&lt;msmqIntegrationBinding&gt;
 Définit une liaison qui prend en charge la mise en file d’attente par routage des messages via MSMQ.  
@@ -103,7 +104,7 @@ msmqIntegrationBinding
 |-------------|-----------------|  
 |[\<liaisons >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cet élément de liaison peut être utilisé pour permettre aux applications de Windows Communication Foundation (WCF) envoyer des messages à et recevoir des messages à partir des applications MSMQ existantes qui utilisent MSMQ des API natives COM ou les types définis dans le <xref:System.Messaging?displayProperty=nameWithType> espace de noms vous peut utiliser cet élément de configuration pour spécifier les façons de régler la file d’attente, les assurances de transfert, si les messages doivent être stockés de façon durable, et comment les messages doivent être protégés et authentifiés. Pour plus d’informations, consultez [Comment : échanger des Messages avec les points de terminaison WCF et les Applications Message Queuing](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
   
 ## <a name="example"></a>Exemple  

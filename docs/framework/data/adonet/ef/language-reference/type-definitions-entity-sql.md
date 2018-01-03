@@ -13,16 +13,17 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: b890a56daeab1c3a0fbb8c95ec29a81cb7689e9d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 269d0b7942a949b899a445af0fc15502e0ae3f7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="type-definitions-entity-sql"></a>Définitions de type (Entity SQL)
 Une définition de type est utilisée dans l'instruction de déclaration d'une fonction incluse [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’instruction de déclaration pour une fonction inline se compose de la [fonction](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md) mot clé suivi par l’identificateur représentant le nom de fonction (par exemple, « MyAvg ») suivi d’une liste de définition des paramètres entre parenthèses (pour exemple, « dues Collection(Decimal)").  
   
  La liste de définitions de paramètres est composée de zéro, une ou plusieurs définitions de paramètres. Chaque définition de paramètre se compose d'un identificateur (le nom du paramètre de la fonction, par exemple, « dues ») suivi d'une définition de type (par exemple, « Collection(Decimal) »).  
@@ -97,5 +98,5 @@ select Ref(x) from AdventureWorksEntities.SalesOrderHeaders as x
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble de Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
+ [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
  [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

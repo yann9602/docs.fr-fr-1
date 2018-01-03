@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 08526aeebd01196c064154a35df267b8040df796
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b580f0611d18b03ba831a3f5a3d0481bd27b0869
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlclient-for-entity-framework-functions"></a>Fonctions SqlClient pour l’Entity Framework
 Le fournisseur de données .NET Framework pour SQL Server (SqlClient) pour Entity Framework fournit un ensemble de fonctions qui permettent d'effectuer des calculs mathématiques et d'agrégation, ainsi que des fonctions qui permettent d'effectuer des opérations `System.DateTime` et `string`. Ces fonctions se trouvent dans l'espace de noms `SQLServer`.  
@@ -27,11 +28,11 @@ Le fournisseur de données .NET Framework pour SQL Server (SqlClient) pour Ent
  Pour plus d’informations sur le mappage des fonctions canoniques comment aux fonctions SQL Server, consultez [modèle conceptuel canonique pour le mappage des fonctions SQL Server](../../../../../docs/framework/data/adonet/ef/conceptual-model-canonical-to-sql-server-functions-mapping.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Mappage des fonctions de modèle conceptuel canonique à SQL Server](../../../../../docs/framework/data/adonet/ef/conceptual-model-canonical-to-sql-server-functions-mapping.md)  
+ [Mappage du modèle conceptuel canonique aux fonctions SQL Server](../../../../../docs/framework/data/adonet/ef/conceptual-model-canonical-to-sql-server-functions-mapping.md)  
   
  [Fonctions d’agrégation](../../../../../docs/framework/data/adonet/ef/aggregate-functions-sqlclient-for-entity-framework.md)  
   
- [Fonctions de date et heure](../../../../../docs/framework/data/adonet/ef/date-and-time-functions.md)  
+ [Fonctions de date et d’heure](../../../../../docs/framework/data/adonet/ef/date-and-time-functions.md)  
   
  [Fonctions mathématiques](../../../../../docs/framework/data/adonet/ef/mathematical-functions.md)  
   
@@ -41,4 +42,4 @@ Le fournisseur de données .NET Framework pour SQL Server (SqlClient) pour Ent
   
 ## <a name="see-also"></a>Voir aussi  
  [Référence Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [Vue d’ensemble de Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+ [Vue d’ensemble d’Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

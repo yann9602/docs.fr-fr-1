@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 03d4febc7e61425d0057c48949b18281ca3dec4b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 431fb89c31e670b6a35a0d8908351a7ea60ce7ac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="programming-guide"></a>Guide de programmation
 Cette section contient des informations sur la création et l'utilisation de votre modèle objet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Si vous utilisez [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)], vous pouvez également utiliser le [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pour effectuer un grand nombre de ces tâches.  
@@ -37,7 +38,7 @@ Cette section contient des informations sur la création et l'utilisation de vot
  [Apport et soumission de modifications de données](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)  
  Explique comment modifier des données dans la base de données.  
   
- [Prise en charge le débogage](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)  
+ [Prise en charge du débogage](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)  
  Décrit la prise en charge disponible pour le débogage des projets [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  

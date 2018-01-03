@@ -15,11 +15,11 @@ ms.assetid: f6c09db1-0553-464a-abe3-d4510c61d6ed
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4400ee58214c8f9990d4b123e17ef0f6553a5a69
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2df7fa743e72d12dcef1aa9be5ea43d24ef43cee
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="optioninfer"></a>/optioninfer
 Permet l'utilisation de l'inférence de type de variable locale dans les déclarations de variable.  
@@ -39,12 +39,12 @@ Permet l'utilisation de l'inférence de type de variable locale dans les déclar
 > [!NOTE]
 >  Vous pouvez utiliser l'option `/noconfig` pour conserver les valeurs par défaut internes du compilateur au lieu de celles spécifiées dans le fichier vbc.rsp. Pour cette option, la valeur par défaut du compilateur est `/optioninfer-`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si le fichier de code source contient un [Option Infer, instruction](../../../visual-basic/language-reference/statements/option-infer-statement.md), l’instruction substitue le `/optioninfer` paramètre du compilateur de ligne de commande.  
   
 ### <a name="to-set-optioninfer-in-the-visual-studio-ide"></a>Pour définir /optioninfer dans l'IDE de Visual Studio  
   
-1.  Sélectionnez un projet dans **l’Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. Pour plus d’informations, consultez [NIB : gestion des propriétés de projet avec le Concepteur de projet](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e).  
+1.  Sélectionnez un projet dans **l’Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.  
   
 2.  Sur le **compiler** onglet, modifiez la valeur dans la **Option infer** boîte.  
   

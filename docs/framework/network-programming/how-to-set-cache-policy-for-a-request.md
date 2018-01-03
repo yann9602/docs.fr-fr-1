@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 2cd278f307784cd994f733c029e606f507c523f4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3ff59bab2963d78425f9b7f4b41bdb679ed8e6f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Procédure : définition d’une stratégie de cache pour une demande
 L’exemple suivant montre comment définir une stratégie de cache pour une demande. L’exemple d’entrée est un URI tel que http://www.contoso.com/.  

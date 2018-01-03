@@ -14,11 +14,11 @@ ms.assetid: 6540c1d0-bb19-4051-a579-2e4f9094585e
 caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 39ae94e309ee8d18e6b5317445b7e4b7f6a42af9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ab1c7c5cc7a7f4ad899df7722769238e05d96e6b
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="friend-assembly-reference-ltreferencegt-is-invalid"></a>Référence d’assembly friend &lt;référence&gt; n’est pas valide
 Référence d’assembly friend \<référence > n’est pas valide. Les assemblys signés avec un nom fort doivent spécifier une clé publique dans leurs déclarations InternalsVisibleTo.  
@@ -33,5 +33,6 @@ Référence d’assembly friend \<référence > n’est pas valide. Les assembly
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection.AssemblyName>  
- [Assemblys friend](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
- [Guide pratique : créer des assemblys Friend signés](http://msdn.microsoft.com/library/f5542300-58b4-4e1c-b809-8df11e95e69b)
+ [Assemblys friend](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ 
+

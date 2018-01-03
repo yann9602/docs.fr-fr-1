@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ceadd193784a2c1936b0dcc2d634ae87b513e57e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8807564cb9acf8c50aed43ee11441ebdfbbcea78
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="grouppartition-entity-sql"></a>GROUPPARTITION (Entity SQL)
 Retourne une collection de valeurs d'argument projetées en dehors de la partition de groupe actuelle à laquelle l'agrégat est associé. L'agrégat `GroupPartition` est un agrégat basé sur les groupes et n'a aucune forme basée sur les collections.  
@@ -32,7 +33,7 @@ GROUPPARTITION( [ALL|DISTINCT] expression )
  `expression`  
  Toute expression [!INCLUDE[esql](../../../../../../includes/esql-md.md)] .  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La requête suivante produit une liste de produits et une collection de quantités de ligne de commande pour chaque produit :  
   
 ```  
@@ -51,7 +52,7 @@ select p, Sum(ol.Quantity) from LOB.OrderLines as ol
   
  L'opérateur `GROUPPARTITION` peut être utilisé conjointement à des fonctions d'agrégation définies par l'utilisateur.  
   
- `GROUPPARTITION` est un opérateur d'agrégation spécial qui maintient une référence au jeu de données d'entrée groupé. Cette référence peut être utilisée n'importe où dans la requête où GROUP BY est dans la portée. Par exemple :  
+ `GROUPPARTITION` est un opérateur d'agrégation spécial qui maintient une référence au jeu de données d'entrée groupé. Cette référence peut être utilisée n'importe où dans la requête où GROUP BY est dans la portée. Par exemple :  
   
 ```  
 select p, GroupPartition(ol.Quantity) from LOB.OrderLines as ol group by ol.Product as p  

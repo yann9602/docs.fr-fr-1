@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 2052656a524eafd7b9a137ac7d5006aba53fc075
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 77658b1c4b40090b8e532f1a0566ecb927328d65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-express-security"></a>Sécurité SQL Server Express
 Microsoft SQL Server Express Edition (SQL Server Express) repose sur Microsoft SQL Server et prend en charge la plupart des fonctionnalités du moteur de base de données. Il est conçu de telle manière que les fonctionnalités non essentielles et la connectivité réseau sont désactivées par défaut afin de réduire la surface d'exposition susceptible d'être attaquée par un utilisateur malveillant.  
@@ -45,9 +46,9 @@ Microsoft SQL Server Express Edition (SQL Server Express) repose sur Microsoft 
 |[Connexion à SQL Server Express](http://msdn.microsoft.com/library/ms165679.aspx) dans la documentation en ligne de SQL Server|Décrit comment utiliser SQL Server Express Edition sur un réseau.|  
 |[Documentation en ligne de Microsoft SQL Server 2005 Express Edition](http://msdn.microsoft.com/library/ms165706.aspx)|Documentation complète relative à SQL Server 2005 Express Edition.|  
 |[Les Instances d’utilisateur pour les non-administrateurs](http://msdn.microsoft.com/library/ms143684.aspx) dans la documentation en ligne de SQL Server|Décrit comment créer et déployer des instances utilisateur.|  
-|[Instances utilisateur Express de SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Décrit les fonctionnalités des instances utilisateur dans une application ADO.NET. Fournit des informations sur l'activation d'une interface utilisateur, la connexion à une instance utilisateur à l'aide d'un <xref:System.Data.SqlClient.SqlConnection>, la durée de vie d'une instance utilisateur et des scénarios d'instance utilisateur.|  
+|[Instances utilisateur SQL Server Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Décrit les fonctionnalités des instances utilisateur dans une application ADO.NET. Fournit des informations sur l'activation d'une interface utilisateur, la connexion à une instance utilisateur à l'aide d'un <xref:System.Data.SqlClient.SqlConnection>, la durée de vie d'une instance utilisateur et des scénarios d'instance utilisateur.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [Instances utilisateur Express de SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
+ [Instances utilisateur SQL Server Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

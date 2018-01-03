@@ -14,11 +14,11 @@ ms.assetid: 83fc339d-6652-415d-b205-b5133319b5b0
 caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 2697b837a536b1b879196bd10843a2b76314747a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c5bb11bc62e951339113f4b48e98e05362490ca1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="main"></a>/main
 Spécifie la classe ou le module qui contient la procédure `Sub Main`.  
@@ -33,7 +33,7 @@ Spécifie la classe ou le module qui contient la procédure `Sub Main`.
  `location`  
  Obligatoire. Qualification complète de la classe ou le module qui contient le `Sub Main` procédure qui est appelée lorsque le programme démarre. Cela peut être sous la forme **présentée** ou **/main:namespace.module**.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Utilisez cette option lorsque vous créez un fichier exécutable ou un programme exécutable Windows. Si le **/main** option est omise, le compilateur recherche partagé valide `Sub Main` dans tous les modules et les classes publiques.  
   
  Consultez [procédure Main dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md) pour en savoir plus sur les différentes formes de la `Main` procédure.  
@@ -46,7 +46,7 @@ Spécifie la classe ou le module qui contient la procédure `Sub Main`.
   
 1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.  
   
-     Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).  
+       
   
 2.  Cliquez sur l’onglet **Application** .  
   
@@ -65,5 +65,4 @@ vbc t2.vb t3.vb /main:Test2
  [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
  [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
  [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- [NIB : Version de Visual Basic de Hello, World](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c)  
  [Procédure Main dans Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c713cc8e5f3d7e81b196820e0a25fde0018b6c80
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 07892869759ac5856b26099f2421caff1ebaf74d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="secure-data-access"></a>Sécuriser l'accès aux données
 Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes de sécurité disponibles dans la base de données ou le magasin de données sous-jacent. Vous devez également prendre en compte les implications relatives à la sécurité des autres fonctionnalités ou composants que votre application peut contenir.  
@@ -46,8 +47,8 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
 |Ressource|Description|  
 |--------------|-----------------|  
 |[Paramètres DataAdapter](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|Décrit comment utiliser des paramètres avec un `DataAdapter`.|  
-|[Modification des données avec des procédures stockées](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|Décrit comment spécifier des paramètres et obtenir une valeur de retour.|  
-|[La gestion des autorisations avec des procédures stockées dans SQL Server](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Décrit comment utiliser des procédures stockées SQL Server pour encapsuler l'accès aux données.|  
+|[Modification des données avec les procédures stockées](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|Décrit comment spécifier des paramètres et obtenir une valeur de retour.|  
+|[Gestion des autorisations avec les procédures stockées dans SQL Server](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Décrit comment utiliser des procédures stockées SQL Server pour encapsuler l'accès aux données.|  
   
 ## <a name="script-exploits"></a>Attaques de script  
  Une attaque de script est une autre forme d'injection qui utilise des caractères nuisibles insérés dans une page Web. Le navigateur ne valide pas les caractères insérés et les traitera dans le cadre de la page.  

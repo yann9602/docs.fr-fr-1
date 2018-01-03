@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9a85e09e92ebea4cdc0c1de93f4e9a4a21ff4d7e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: baa8846d339e87c121ece2678157c132035db07f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-workflow-foundation-configuration-schema"></a>Schéma de configuration Windows Workflow Foundation
 Les éléments de configuration [!INCLUDE[wf](../../../../../includes/wf-md.md)] vous permettent de configurer des applications de flux de travail. Vous pouvez notamment configurer le suivi et le traçage d'une application de flux de travail. Pour plus d’informations sur le suivi et le traçage, consultez [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Pour les services de flux de travail, vous pouvez également utiliser des éléments de configuration [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]. Pour plus d’informations sur [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)], consultez [Schéma de configuration WCF](../../../../../docs/framework/configure-apps/file-schema/wcf/index.md).  

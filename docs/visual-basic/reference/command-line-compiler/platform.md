@@ -14,11 +14,11 @@ ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4177b9da15bb89f37a7b3cbb27937e09d1c12635
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 90e2a6a0f6a7b1eb3b919cca22ae8ce37a9c00bc
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="platform-visual-basic"></a>/platform (Visual Basic)
 Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut exécuter le fichier de sortie.  
@@ -40,7 +40,7 @@ Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut ex�
 |`anycpu`|Compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. L'application s'exécutera en tant qu'application 32 bits sur les versions 32 bits de Windows et en tant qu'application 64 bits sur les versions 64 bits de Windows. Cet indicateur est la valeur par défaut.|  
 |`anycpu32bitpreferred`|Compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. L'application s'exécutera en tant qu'application 32 bits sur les versions 32 et 64 bits de Windows. Cet indicateur n'est valide que pour les fichiers exécutables (.EXE) et nécessite [!INCLUDE[net_v45](~/includes/net-v45-md.md)].|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Utilisez l'option `/platform` pour spécifier le type de processeur ciblé par le fichier de sortie.  
   
  En général, les assemblys .NET Framework écrits en Visual Basic s'exécutent de la même façon, quelle que soit la plateforme. Cependant, dans certains cas, leur comportement peut varier d'une plateforme à une autre. Voici les cas les plus courants :  
@@ -71,13 +71,11 @@ Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut ex�
   
 -   Les fichiers exécutables compilés avec `/platform:anycpu32bitpreferred` s'exécutent sur le CLR 32 bits.  
   
- Pour plus d’informations sur la façon de développer une application de s’exécuter sur une version 64 bits de Windows, consultez [Applications 64 bits](../../../../docs/framework/64-bit-apps.md).  
+ Pour plus d’informations sur la façon de développer une application de s’exécuter sur une version 64 bits de Windows, consultez [Applications 64 bits](../../../framework/64-bit-apps.md).  
   
 ### <a name="to-set-platform-in-the-visual-studio-ide"></a>Pour définir /platform dans l'IDE de Visual Studio  
   
 1.  Dans **l’Explorateur de solutions**, choisissez le projet, ouvrez le **projet** menu, puis sur **propriétés**.  
-  
-     Pour plus d’informations, consultez [NIB : gestion des propriétés de projet avec le Concepteur de projet](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e).  
   
 2.  Sur le **compiler** onglet, activez ou désactivez le **préférer 32 bits** case à cocher, ou, dans le **unité centrale cible** , choisissez une valeur.  
   

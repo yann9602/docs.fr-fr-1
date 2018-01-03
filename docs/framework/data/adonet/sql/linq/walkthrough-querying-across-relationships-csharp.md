@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c294b888d95c4d6a77d96198f885c2363fda4e36
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 61586b8d556a9edccace25b75ceb2696ec675dd3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Procédure pas à pas : interrogation de relations (C#)
 Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *associations* pour représenter les relations de clé étrangère dans la base de données.  
@@ -26,7 +27,7 @@ Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](..
   
  Cette procédure pas à pas a été écrite à l'aide des paramètres de développement Visual C#.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Vous devez avoir terminé [procédure pas à pas : requête (c#) et modèle d’objet Simple](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md). Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\linqtest5.  
   
 ## <a name="overview"></a>Vue d'ensemble  

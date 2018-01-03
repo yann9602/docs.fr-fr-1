@@ -17,11 +17,11 @@ ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
 caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 35a40d6dfb6c66183afb0f3a2980a3b7863353fa
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: 2ee98b317e9d94cad5087e708bd71ca88d2bae63
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="keywords-visual-basic"></a>Mots clés (Visual Basic)
 Les tableaux suivants listent tous les mots clés du langage [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
@@ -107,7 +107,6 @@ Les tableaux suivants listent tous les mots clés du langage [!INCLUDE[vbprvb](
 |-----------|-----------------|  
 |[Liste des tableaux](../../../visual-basic/language-reference/keywords/arrays-summary.md)|Liste les éléments de langage utilisés pour créer, définir et utiliser des tableaux.|  
 |[Liste des objets Collection](../../../visual-basic/language-reference/keywords/collection-object-summary.md)|Liste les éléments de langage utilisés pour les collections.|  
-|[Liste des directives du compilateur (Visual Basic)](http://msdn.microsoft.com/en-us/874dad02-d4a5-4a9d-8a48-0191a0ac794a)|Liste les directives qui contrôlent le comportement du compilateur.|  
 |[Liste des flux de contrôle](../../../visual-basic/language-reference/keywords/control-flow-summary.md)|Liste les instructions utilisées pour l’exécution en boucle et le contrôle du flux de procédure.|  
 |[Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)|Liste les fonctions utilisées pour convertir les nombres, les dates, les heures et les chaînes.|  
 |[Liste des types de données](../../../visual-basic/language-reference/keywords/data-types-summary.md)|Liste les types de données. Répertorie également les fonctions utilisées pour effectuer des conversions entre plusieurs types de données et vérifier des types de données.|  

@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f747d921e9c131edaa8a1749c5adc5eae14623c7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5f79ed7af91f2e54edbc2174da2afa1b3cb56557
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-an-assembly39s-location"></a>Spécification d’un Assembly &#39; s emplacement
 Il existe deux façons de spécifier l’emplacement d’un assembly :  

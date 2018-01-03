@@ -14,11 +14,11 @@ ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 10213597fa65c44a56b30c37e2e6f4e732d96954
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 5a1edd7976f1e22117e1f4f31354388d5257ffc1
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="events-visual-basic"></a>Événements (Visual Basic)
 On peut se représenter un projet [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] comme une série de procédures qui s’exécutent de façon séquentielle, mais, en réalité, la plupart des programmes sont pilotés par des événements, ce qui signifie que le flux d’exécution est déterminé par des occurrences externes nommées *événements*.  
@@ -113,5 +113,5 @@ On peut se représenter un projet [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] co
 |[Guide pratique : déclarer des événements personnalisés pour économiser la mémoire](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|Montre comment définir un événement personnalisé qui utilise la mémoire uniquement lorsque l’événement est géré.|  
 |[Dépannage des gestionnaires d’événements hérités en Visual Basic](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|Répertorie les problèmes courants qui surviennent avec les gestionnaires d’événements dans les composants hérités.|  
 |[Événements](../../../../standard/events/index.md)|Fournit une vue d’ensemble du modèle d’événement dans [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].|  
-|[Création de gestionnaires d’événements dans Windows Forms](../../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)|Explique comment utiliser des événements associés à des objets Windows Forms.|  
+|[Création de gestionnaires d’événements dans les Windows Forms](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Explique comment utiliser des événements associés à des objets Windows Forms.|  
 |[Délégués](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Fournit une vue d’ensemble des délégués en Visual Basic.|

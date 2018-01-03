@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3097f5352a8f92397b80f0c20e0cc2206e1e3fee
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 50cbf6521870a54f4f87c3eeb12030d5d7f2f6bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lthttptransportgt"></a>&lt;httpTransport&gt;
 Spécifie un transport HTTP pour la transmission des messages SOAP d’une liaison personnalisée.  
@@ -68,7 +69,7 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
 |useDefaultWebProxy|Valeur booléenne qui spécifie si les paramètres proxy à l'échelle de l'ordinateur sont utilisés plutôt que ceux spécifiques à l'utilisateur. La valeur par défaut est `true`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -76,7 +77,7 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
 |-------------|-----------------|  
 |[\<liaison >](../../../../../docs/framework/misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L'élément `httpTransport` constitue le point de départ pour créer une liaison personnalisée qui implémente le protocole de transport HTTP. HTTP est le principal transport utilisé à des fins d'interopérabilité. Ce transport est pris en charge par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] pour garantir l'interopérabilité avec d'autres piles de services Web non-[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)].  
   
 ## <a name="see-also"></a>Voir aussi  
@@ -85,7 +86,7 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
  <xref:System.ServiceModel.Channels.TransportBindingElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
  [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)  
- [Choix d’un Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  

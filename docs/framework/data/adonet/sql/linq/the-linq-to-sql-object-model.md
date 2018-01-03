@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 30231ea756e80ddeac087fa8b3e46664860c26a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1ecccda5b9570519f69cadc9214daded16edbc89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="the-linq-to-sql-object-model"></a>Modèle objet LINQ to SQL
 Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un modèle objet exprimé dans le langage de programmation du développeur est mappé au modèle de données d’une base de données relationnelle. Les opérations sur les données sont ensuite effectuées en fonction du modèle objet.  
@@ -42,7 +43,7 @@ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un mod
 >  Les descriptions suivantes supposent que vous possédez des connaissances de base sur le modèle de données relationnel et ses règles.  
   
 ## <a name="linq-to-sql-entity-classes-and-database-tables"></a>Classes d'entité et tables de base de données LINQ to SQL  
- Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], une table de base de données est représentée par une *classe d’entité*. Une classe d'entité est similaire aux autres classes si ce n'est que vous pouvez l'annoter en utilisant des informations spéciales qui l'associent à une table de base de données. Pour procéder à cette annotation, ajoutez un attribut personnalisé (<xref:System.Data.Linq.Mapping.TableAttribute>) à votre déclaration de classe, comme dans l'exemple suivant :  
+ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], une table de base de données est représentée par une *classe d’entité*. Une classe d’entité est similaire aux autres classes si ce n’est que vous pouvez l’annoter en utilisant des informations spéciales qui l’associent à une table de base de données. Pour procéder à cette annotation, ajoutez un attribut personnalisé (<xref:System.Data.Linq.Mapping.TableAttribute>) à votre déclaration de classe, comme dans l'exemple suivant :  
   
 ### <a name="example"></a>Exemple  
  [!code-csharp[DLinqObjectModel#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectModel/cs/Program.cs#1)]
@@ -91,5 +92,5 @@ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un mod
  Pour plus d’informations, consultez les sections attribut de fonction, attribut de procédure stockée et l’attribut de paramètre de [mappage basé sur l’attribut](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) et [de procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Mappage basé sur un attribut](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
+ [Mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
  [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

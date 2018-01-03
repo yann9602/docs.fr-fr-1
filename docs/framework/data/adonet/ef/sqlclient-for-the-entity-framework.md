@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 3cb7880621a849b7162ea5f86ee0786f6184ea58
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 590df03857805c43b6e9a60c030cadcad3501d3d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlclient-for-the-entity-framework"></a>SqlClient pour Entity Framework
 Cette section décrit le fournisseur de données .NET Framework pour SQL Server (SqlClient) qui permet à Entity Framework de travailler sur Microsoft SQL Server.  
@@ -36,7 +37,7 @@ Cette section décrit le fournisseur de données .NET Framework pour SQL Serve
   
 |SQL Server 2000|SQL Server 2005|SQL Server 2008|  
 |-|-|-|  
-|2000|2005|2008|  
+|2 000|2005|2008|  
   
 > [!NOTE]
 >  En commençant par [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] 2010, le [ADO.NET Entity Data Model Tools](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527) ne prennent pas en charge SQL Server 2000.  

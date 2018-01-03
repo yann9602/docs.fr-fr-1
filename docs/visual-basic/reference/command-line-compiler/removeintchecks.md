@@ -17,11 +17,11 @@ ms.assetid: c1835bd5-1e38-4fba-bd2f-6984774765d4
 caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 4e765f0007eea8e196b1a1b3b55b969c5b074b52
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 917977d8e5e12c231370ab3c956aca9d96e8a8a8
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="removeintchecks"></a>/removeintchecks
 Active la vérification des opérations sur les entiers ou désactivez les erreurs de dépassement.  
@@ -40,7 +40,7 @@ Active la vérification des opérations sur les entiers ou désactivez les erreu
   
 |Pour définir /removeintchecks dans Visual Studio environnement de développement intégré|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur le bouton **Avancées** .<br />4.  Modifier la valeur de la **supprimer les contrôles de dépassement de capacité d’entier** boîte.|  
+|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur le bouton **Avancées** .<br />4.  Modifier la valeur de la **supprimer les contrôles de dépassement de capacité d’entier** boîte.|  
   
 ## <a name="example"></a>Exemple  
  Le code suivant compile `Test.vb` et désactive la vérification des erreurs de dépassement de capacité d’entier.  

@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e4779baa24e172affad2ed5e04451ad791d7cdf5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7fd4e12d77380942204d37b59644c46aed3a0148
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltwsfederationgt"></a>&lt;wsFederation&gt;
 Fournit la configuration pour le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM).  
@@ -77,7 +78,7 @@ Fournit la configuration pour le <xref:System.IdentityModel.Services.WSFederatio
 |signOutReply|Spécifie l’URL à laquelle le client doit être redirigé par le service de jeton de sécurité (STS) au cours de la déconnexion via le protocole WS-Federation de passif. Définit le paramètre wreply sur une demande de déconnexion WS-Federation. Facultatif. La valeur par défaut est une chaîne vide, ce qui indique que des paramètres supplémentaires doivent être inclus dans la demande.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -85,7 +86,7 @@ Fournit la configuration pour le <xref:System.IdentityModel.Services.WSFederatio
 |-------------|-----------------|  
 |[\<federationConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Contient les paramètres qui configurent le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Vous pouvez utiliser la `<wsFederation>` élément pour configurer les paramètres de configuration par défaut WS-Federation et le comportement par défaut pour le WSFAM. Paramètres WS-Federation définis sous le `<wsFederation>` élément défini les propriétés équivalentes exposées par la <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> classe. Ces propriétés restent les mêmes pour chaque demande émise par le WSFAM. Vous pouvez modifier les paramètres WS-Federation dynamiquement pendant la demande de traitement en ajoutant des gestionnaires d’événements pour les événements exposés par WSFAM ; par exemple, le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> événement. Pour plus d’informations, consultez la documentation relative à la <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> classe.  
   
  Le `<wsFederation>` élément est représenté par la <xref:System.IdentityModel.Services.Configuration.WSFederationElement> classe. L’objet de configuration lui-même est représenté par la <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration> classe. Un seul <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration> instance est définie sur le <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> objet est accessible via la <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> propriété et fournit la configuration pour le WSFAM.  

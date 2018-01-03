@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 3ce884c19d205df4727dcce96ffdf34144ff1dd6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 69c96698b309a789b4527c76e1fe8b8b99811a19
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltaudienceurisgt"></a>&lt;audienceUris&gt;
 Spécifie le jeu d’URI qui sont des identificateurs acceptables de la partie de confiance (RP). Les jetons ne seront pas acceptées, sauf si elles sont justement pas limitées pour un des URI d’audience autorisés.  
@@ -69,7 +70,7 @@ Spécifie le jeu d’URI qui sont des identificateurs acceptables de la partie d
 |-------------|-----------------|  
 |[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Fournit des gestionnaires de jetons de configuration pour une collection de sécurité.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Par défaut, la collection est vide. Utilisez `<add>`, `<clear>`, et `<remove>` éléments pour modifier la collection. <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>et <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> objets utilisent les valeurs dans la collection d’URI d’audience pour configurer toutes autorisées audience restrictions URI dans <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> objets.  
   
  Le `<audienceUris>` élément est représenté par la <xref:System.IdentityModel.Configuration.AudienceUriElementCollection> classe. Un URI individuel ajouté à la collection est représenté par la <xref:System.IdentityModel.Configuration.AudienceUriElement> classe.  

@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 7c1d438a83f090795a158ade1dfdbb7d2b2df863
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 79cd52f137347ec24e7cc9a646d0306d95fe53d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transaction-support"></a>Prise en charge des transactions
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]prend en charge trois modèles de transaction distincts. Ces modèles sont présentés ci-dessous dans l'ordre d'exécution des contrôles.  
@@ -35,4 +36,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
- [Comment : mettre entre les envois de données à l’aide de Transactions](../../../../../../docs/framework/data/adonet/sql/linq/how-to-bracket-data-submissions-by-using-transactions.md)
+ [Guide pratique pour mettre entre parenthèses des soumissions de données à l’aide de transactions](../../../../../../docs/framework/data/adonet/sql/linq/how-to-bracket-data-submissions-by-using-transactions.md)

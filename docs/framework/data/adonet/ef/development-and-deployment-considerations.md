@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: bd7bad0734007b68fe6089a11b6b59d5d22e9954
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 594d0516a739986580d37e86eab32da14c359e99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="development-and-deployment-considerations"></a>Points à prendre en considération pour le développement et le déploiement
 Les rubriques de cette section abordent les problèmes à prendre en compte lors du développement ou du déploiement d’une application basée sur ADO.NET Entity Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Considérations sur la sécurité](../../../../../docs/framework/data/adonet/ef/security-considerations.md)  
+ [Considérations relatives à la sécurité](../../../../../docs/framework/data/adonet/ef/security-considerations.md)  
   
- [Considérations relatives aux performances](../../../../../docs/framework/data/adonet/ef/performance-considerations.md)  
+ [Considérations sur les performances](../../../../../docs/framework/data/adonet/ef/performance-considerations.md)  
   
  [Considérations sur la migration](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)  
   
- [Considérations relatives au déploiement](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
+ [Points à prendre en considération pour le déploiement](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
   
 ## <a name="see-also"></a>Voir aussi  
  [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)  
- [Présentation d’Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md)  
+ [Vue d’ensemble d’Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md)  
  [Prise en main](../../../../../docs/framework/data/adonet/ef/getting-started.md)  
  [Outils ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)

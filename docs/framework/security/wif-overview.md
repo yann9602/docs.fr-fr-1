@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 312324553333427c08acf7ef3eb11059f2224d06
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a3b07d94804741dfbfee508dfb0ce47e2cb47c2a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-identity-foundation-45-overview"></a>Vue d'ensemble de Windows Identity Foundation 4.5
 Windows Identity Foundation 4.5 est un ensemble de classes .NET Framework permettant d'implémenter une identité basée sur des revendications dans vos applications. Vous pouvez ainsi exploiter plus facilement les avantages des applications et des services qui prennent en charge les revendications. WIF 4.5 peut être utilisé dans toute application Web ou service Web qui utilise la version 4.5 de. NET Framework ou une version ultérieure. WIF est simplement une partie de la famille des logiciels d'identité fédérée de Microsoft qui implémente la vision partagée de secteur en fonction de normes ouvertes. La plateforme d’identité fédérée comprend trois composants : les [services de fédération Active Directory®](http://go.microsoft.com/fwlink/?LinkID=247516) (AD FS) 2.0, les [services ACS](http://go.microsoft.com/fwlink/?LinkID=247517) (Microsoft Azure Access Control Service) et WIF. Ensemble, ces trois éléments forment le cœur de la nouvelle plateforme d'accès et d'identité Cloud basée sur les revendications de Microsoft.  
@@ -45,6 +46,6 @@ Windows Identity Foundation 4.5 est un ensemble de classes .NET Framework permet
   
 -   Délégation d'identité.  WIF facilite la gestion des identités à travers les limites de service afin que les développeurs puissent réaliser un scénario de délégation d'identité.  
   
--   Mise en place de l'authentification. Les exigences en termes d'authentification pour différentes ressources dans une application peuvent varier. WIF fournit aux développeurs la capacité de générer des applications qui peuvent imposer des spécifications incrémentielles d'authentification (par exemple : la connexion initiale avec le nom d'utilisateur/l'authentification par mot de passe, puis l'authentification par carte à puce).  
+-   Mise en place de l'authentification. Les exigences en termes d’authentification pour différentes ressources dans une application peuvent varier. WIF fournit aux développeurs la capacité de générer des applications qui peuvent imposer des exigences incrémentielles d’authentification (par exemple : la connexion initiale avec le nom d’utilisateur/l’authentification par mot de passe, puis l’authentification par carte à puce).  
   
  À l'aide de WIF, vous tirerez plus facilement des avantages du modèle d'identité basé sur des revendications. Pour plus d’informations, consultez le [livre blanc sur Windows Identity Foundation pour les développeurs](http://download.microsoft.com/download/7/d/0/7d0b5166-6a8a-418a-addd-95ee9b046994/windowsidentityfoundationwhitepaperfordevelopers-rtw.pdf).

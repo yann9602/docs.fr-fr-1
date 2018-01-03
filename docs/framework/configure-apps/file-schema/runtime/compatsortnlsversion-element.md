@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8d82187248e743d9081a97411f2ff2ad84707e61
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 613c02abd7d200bd2e1bf10f85a1aa84994583f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltcompatsortnlsversiongt-element"></a>&lt;CompatSortNLSVersion&gt; élément
 Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'exécution de comparaisons de chaînes.  
@@ -64,7 +65,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Étant donné que la comparaison de chaînes, le tri et les opérations de casse effectuaient par le <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> classe dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] est conforme à la norme Unicode 5.1, les résultats des méthodes de comparaison de chaînes telles que <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> et <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> peut différer de versions précédentes du .NET Framework. Si votre application dépend d'un comportement hérité, vous pouvez restaurer la comparaison de chaînes et les règles de tri utilisées dans [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)] et versions antérieures en incluant l'élément `<CompatSortNLSVersion>` dans le fichier de configuration de l'application.  
   
 > [!IMPORTANT]

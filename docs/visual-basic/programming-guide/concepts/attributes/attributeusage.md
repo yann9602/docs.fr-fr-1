@@ -12,11 +12,11 @@ ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
 caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 29d227cf50fe23d5619bf5fb6f9a598ea78ef077
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 5f358068d00c042a979216cdda51dcc7e07abbc5
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
 Détermine de quelle manière une classe d’attributs personnalisés peut être utilisée. `AttributeUsage` est un attribut qui peut être appliqué à des définitions d’attributs personnalisés pour contrôler le mode d’application du nouvel attribut. Voici le code quand les paramètres par défaut sont appliqués de manière explicite :  
@@ -97,7 +97,7 @@ End Class
   
  Dans ce cas, `Attr1` n’est pas appliqué à `DClass` par héritage.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’attribut `AttributeUsage` est un attribut à usage unique : il ne peut pas être appliqué plusieurs fois à la même classe. `AttributeUsage` est un alias pour <xref:System.AttributeUsageAttribute>.  
   
  Pour plus d’informations, consultez la page [Accéder à des attributs grâce à la réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).  
@@ -174,7 +174,7 @@ A2
  <xref:System.Attribute>  
  <xref:System.Reflection>  
  [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)  
- [Attributs](../../../../../docs/standard/attributes/index.md)  
+ [Attributs](../../../../standard/attributes/index.md)  
  [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
  [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
  [Créer des attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)  

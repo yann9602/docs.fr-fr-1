@@ -20,11 +20,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 79eb9f9ef95dae24dd38fa93b137c9303815143b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 23bd6007beb870895316a565283ee7e7354c931b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-cryptography-classes"></a>Configuration de classes de chiffrement
 Le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] permet aux administrateurs d’ordinateur configurer les algorithmes de chiffrement par défaut et les implémentations d’algorithme par le .NET Framework et les applications écrites de façon adéquate.  Par exemple, une entreprise qui utilise sa propre implémentation d’un algorithme de chiffrement faire que l’implémentation par défaut au lieu de l’implémentation fournie dans le [!INCLUDE[winsdkshort](../../../includes/winsdkshort-md.md)]. Bien que les applications managées qui utilisent le chiffrement peuvent toujours choisir de lier explicitement à une implémentation particulière, il est recommandé qu’ils créent un objet de chiffrement en utilisant le système de configuration de chiffrement.  

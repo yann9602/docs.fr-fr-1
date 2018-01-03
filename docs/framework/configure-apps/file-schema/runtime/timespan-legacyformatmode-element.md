@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2724b3811e9cc28888a9beac0c1ed77092302c3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: be4b26cdc79cef0854221172b8dea0bcc0f50981
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttimespanlegacyformatmodegt-element"></a>&lt;TimeSpan_LegacyFormatMode&gt; élément
 Détermine si le runtime conserve le comportement hérité dans les opérations de formatage avec <xref:System.TimeSpan?displayProperty=nameWithType> valeurs.  
@@ -65,7 +66,7 @@ Détermine si le runtime conserve le comportement hérité dans les opérations 
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  En commençant par le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], le <xref:System.TimeSpan?displayProperty=nameWithType> structure implémente la <xref:System.IFormattable> interface et prend en charge la mise en forme des opérations avec des chaînes de format standard et personnalisées. Si une méthode d’analyse rencontre un spécificateur de format non pris en charge ou de la chaîne de format, il lève une <xref:System.FormatException>.  
   
  Dans les versions précédentes du .NET Framework, le <xref:System.TimeSpan> structure n’implémente pas <xref:System.IFormattable> et ne prend pas en charge les chaînes de format. Toutefois, de nombreux développeurs supposé par erreur que <xref:System.TimeSpan> prenait en charge un ensemble de chaînes de format et les utilisés dans [les opérations de mise en forme composite](../../../../../docs/standard/base-types/composite-formatting.md) avec des méthodes telles que <xref:System.String.Format%2A?displayProperty=nameWithType>. En règle générale, si un type implémente <xref:System.IFormattable> et prend en charge les chaînes, les appels aux méthodes de mise en forme avec un format non pris en charge lèvent habituellement des chaînes de format un <xref:System.FormatException>. Toutefois, étant donné que <xref:System.TimeSpan> n’a pas implémenté <xref:System.IFormattable>, le runtime ignoré la chaîne de format et appelé à la place la <xref:System.TimeSpan.ToString?displayProperty=nameWithType> (méthode). Cela signifie que, bien que les chaînes de format avaient aucun effet sur l’opération de mise en forme, leur présence n’ont pas généré un <xref:System.FormatException>.  

@@ -13,19 +13,19 @@ ms.assetid: 65dcdb95-6c3e-47cc-987d-190000f71653
 caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 6f0cf690b816d57dc4a2646eb82d649727d033a9
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 93072bf30c8ee2a4a44c4862de0882072c298f8b
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-displaying-data-in-a-datarepeater-control-visual-studio"></a>Procédure pas à pas : affichage de données dans un contrôle DataRepeater (Visual Studio)
 Cette procédure pas à pas propose un scénario complet de base permettant d’afficher des données liées dans un contrôle <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> .  
   
-## <a name="prerequisite"></a>Composants requis  
+## <a name="prerequisite"></a>Prérequis  
  Cette procédure pas à pas requiert l'exemple de base de données Northwind.  
   
- Si cette base de données n’est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du [Centre de téléchargement Microsoft](http://go.microsoft.com/fwlink/?LinkID=98088). Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+ Si cette base de données n’est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du [Centre de téléchargement Microsoft](http://go.microsoft.com/fwlink/?LinkID=98088). Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
 ## <a name="overview"></a>Vue d'ensemble  
  La première partie de cette procédure pas à pas se compose de quatre tâches principales :  
@@ -91,9 +91,9 @@ Cette procédure pas à pas propose un scénario complet de base permettant d’
   
     -   Si une connexion de données à l'exemple de base de données Northwind est disponible dans la liste déroulante, sélectionnez-la.  
   
-         ou  
+         - ou -  
   
-    -   Cliquez sur le bouton **Nouvelle connexion** pour configurer une nouvelle connexion de données. Pour plus d'informations, consultez [How to: Create Connections to SQL Server Databases](http://msdn.microsoft.com/en-us/360c340d-e5a6-4a7e-a569-e95d500be43d).  
+    -   Cliquez sur le bouton **Nouvelle connexion** pour configurer une nouvelle connexion de données. Pour plus d’informations, consultez [ajouter de nouvelles connexions](/visualstudio/data-tools/add-new-connections).  
   
 5.  Si la base de données requiert un mot de passe, sélectionnez l'option permettant d'inclure les données sensibles, puis cliquez sur **Suivant**.  
   

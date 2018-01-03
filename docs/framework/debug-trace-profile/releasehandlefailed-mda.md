@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cbd6e2a52eb576f321dfa7dda5682d325f554158
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2deefc4626bf8382c7de806eb3d687d468580bf4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed (MDA)
 L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avertir les développeurs que la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> d'une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> retourne la valeur `false`.  

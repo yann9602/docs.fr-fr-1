@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 836742264e44c4cb13f97a3528177080bd10c364
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a782969502509cb766e3a1d38222118a352dc3db
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connection-string-builders"></a>Builders de chaînes de connexion
 Dans les versions antérieures de [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], vérification des chaînes de connexion avec la chaîne concaténée ne prenaient pas de valeurs, afin qu’au moment de l’exécution, un mot clé incorrect est généré lors de la compilation un <xref:System.ArgumentException>. Chacun des fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] utilisait une syntaxe différente pour les mots clés de chaîne de connexion, ce qui rendait difficile la génération de chaînes de connexion valides si l'opération était effectuée manuellement. Pour résoudre ce problème, [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 a introduit de nouveaux générateurs de chaînes de connexion pour chaque fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Chaque fournisseur de données inclut une classe de générateur de chaînes de connexion fortement typée qui hérite de <xref:System.Data.Common.DbConnectionStringBuilder>. Le tableau suivant répertorie les fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] et leurs classes de générateur de chaînes de connexion associées.  

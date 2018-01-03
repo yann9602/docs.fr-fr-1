@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 098f9a09ba4fe114a3ad63f6d98efcd6bb090ac4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e7255110a9118c3a31c84e3262fd5b1490d546e7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ampamp-and-entity-sql"></a>&amp;&amp;(ET) (Entity SQL)
 Retourne `true` si les deux expressions ont pour valeur `true`; sinon, `false` ou la valeur `NULL`.  
@@ -34,15 +35,15 @@ boolean_expression && boolean_expression
  `boolean_expression`  
  Toute expression valide qui retourne une valeur booléenne.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les doubles « et » commerciaux (&&) ont la même fonctionnalité que l'opérateur AND.  
   
  Le tableau ci-dessous indique les valeurs d'entrée et les types de retour possibles.  
   
 ||`TRUE`|`FALSE`|`NULL`|  
 |-|------------|-------------|------------|  
-|`TRUE`|true|false|NULL|  
-|`FALSE`|false|false|false|  
+|`TRUE`|TRUE|FALSE|NULL|  
+|`FALSE`|FALSE|FALSE|FALSE|  
 |`NULL`|NULL|false|NULL|  
   
 ## <a name="example"></a>Exemple  

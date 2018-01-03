@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5ed85fde0b7c031a95ce3fee577cb07380a05eb8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 038cf7ad9f6004f785fe35eccf38185272b0ed37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migration-considerations-entity-framework"></a>Considérations sur la migration (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework présente plusieurs avantages pour une application existante. La possibilité d'utiliser un modèle conceptuel pour séparer des structures de données utilisées par l'application du schéma de la source de données constitue l'un de ces avantages les plus importants. Cela vous permet d'apporter facilement des modifications à venir au modèle de stockage ou à la source de données eux-mêmes sans apporter de modifications de compensation à l'application. Pour plus d’informations sur les avantages de l’utilisation de la [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], consultez [présentation d’Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) et [Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -106,5 +107,5 @@ ms.lasthandoff: 11/21/2017
  [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)]Les applications Web doivent fréquemment gérer l’état d’une page Web ou d’une session utilisateur. Les objets dans une <xref:System.Data.Objects.ObjectContext> instance peut être stockée dans l’état d’affichage client ou dans l’état de session sur le serveur et ultérieurement récupérée et rattachée à un nouveau contexte de l’objet. Pour plus d’informations, consultez [attachement et détachement des objets](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Considérations relatives au déploiement](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
+ [Points à prendre en considération pour le déploiement](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
  [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)

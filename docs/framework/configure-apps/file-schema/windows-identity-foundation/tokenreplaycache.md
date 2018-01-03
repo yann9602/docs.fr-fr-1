@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e43e79416ddb8862cbc6e52d9d449a02b123af83
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f388369d4dc2e590473ad98189ade70b77551b10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lttokenreplaycachegt"></a>&lt;tokenReplayCache&gt;
 Inscrit un cache de relecture de jetons avec un service ou d’une collection de gestionnaire de jetons de sécurité.  
@@ -50,7 +51,7 @@ Inscrit un cache de relecture de jetons avec un service ou d’une collection de
 |type|Un type qui dérive de la <xref:System.IdentityModel.Tokens.TokenReplayCache> classe. Pour plus d’informations sur la façon de spécifier une personnalisée `type`, voir [références de Type personnalisé].
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -58,7 +59,7 @@ Inscrit un cache de relecture de jetons avec un service ou d’une collection de
 |-------------|-----------------|  
 |[\<met en cache >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Inscrit le met en cache utilisé par un service ou une collection de gestionnaire de jetons de sécurité.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le cache de relecture de jetons est utilisé pour détecter les jetons relus. Détection de relecture de jetons est activée par le [ \<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md) élément, qui spécifie également l’heure d’expiration maximal pour les jetons.  
   
 ## <a name="example"></a>Exemple  

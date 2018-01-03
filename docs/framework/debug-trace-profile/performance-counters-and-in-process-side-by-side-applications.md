@@ -21,11 +21,12 @@ caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 16c43545b24f8c0290bfe993d91b7e4203ac11fa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: acbdf1ff1f2827bf607c2f838685d5161af61fd0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-counters-and-in-process-side-by-side-applications"></a>Compteurs de performance et applications côte à côte in-process
 À l’aide de l’Analyseur de performances (Perfmon.exe), il est possible de différencier les compteurs de performance pour chaque runtime. Cette rubrique décrit la modification du Registre nécessaire pour activer cette fonctionnalité.  
@@ -47,7 +48,7 @@ ms.lasthandoff: 10/18/2017
 |Nom de la clé|HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\\.NETFramework\Performance|  
 |Nom de la valeur|ProcessNameFormat|  
 |Type de valeur|REG_DWORD|  
-|Valeur|1 (0x00000001)|  
+|Value|1 (0x00000001)|  
   
  La valeur 0 pour `ProcessNameFormat` indique que le comportement par défaut est « Activé » ; autrement dit, Perfmon.exe affiche les compteurs de performance pour chaque application. Quand vous affectez la valeur 1, Perfmon.exe lève l’ambiguïté liée aux versions multiples d’une application et fournit des compteurs de performance pour chaque runtime. Toute autre valeur pour le paramètre de clé de Registre `ProcessNameFormat` est non prise en charge et réservée à un usage ultérieur.  
   

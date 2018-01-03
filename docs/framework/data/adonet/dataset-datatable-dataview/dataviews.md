@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a2653a94992440b747371c5d8a7b9daa66b3e3ab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 26fbae0474253dc9792a0290a36dd52044d148b9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dataviews"></a>DataViews
 Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des données stockées dans un objet <xref:System.Data.DataTable>, possibilité qui est souvent utilisée dans les applications de liaison de données. À l’aide un **DataView**, vous pouvez présenter les données dans une table avec différents ordres de tri et vous pouvez filtrer les données par état de ligne ou en fonction d’une expression de filtre.  
@@ -32,7 +33,7 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
  [Création d’un DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-dataview.md)  
  Décrit comment créer un **DataView** pour un **DataTable**.  
   
- [Tri et filtrage des données](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md)  
+ [Tri et filtre de données](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md)  
  Décrit comment définir les propriétés d’un **DataView** pour retourner des sous-ensembles de lignes de données répondant à des critères filtre spécifique, ou pour retourner des données dans un ordre de tri particulier.  
   
  [DataRows et DataRowViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarows-and-datarowviews.md)  
@@ -41,13 +42,13 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
  [Recherche de lignes](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md)  
  Explique comment rechercher une ligne particulière dans une **DataView**.  
   
- [Vues et Relations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/childviews-and-relations.md)  
+ [Vues et relations enfants](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/childviews-and-relations.md)  
  Décrit comment créer des vues de données à partir d’une relation parent-enfant à l’aide un **DataView**.  
   
  [Modification des DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/modifying-dataviews.md)  
  Décrit comment modifier les données sous-jacentes **DataTable** via la **DataView**, y compris l’activation ou désactivation des mises à jour.  
   
- [La gestion des événements de DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataview-events.md)  
+ [Gestion des événements de DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataview-events.md)  
  Décrit comment utiliser le **ListChanged** événement pour recevoir une notification lorsque le contenu ou l’ordre d’un **DataView** est en cours de mise à jour.  
   
  [Gestion des DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/managing-dataviews.md)  

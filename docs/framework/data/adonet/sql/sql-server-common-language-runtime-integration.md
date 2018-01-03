@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 3705db8b9d359ce83c6c47bef58de327745bed44
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: de415a6282b1d27d803d448bd3225355c08e011b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-common-language-runtime-integration"></a>Intégration CLR SQL Server
 SQL Server 2005 a introduit l'intégration du composant Common Language Runtime (CLR) de .NET Framework pour Microsoft Windows. Cela signifie que vous pouvez écrire des procédures stockées, des déclencheurs, des types définis par l'utilisateur, des fonctions définies par l'utilisateur, des agrégats définis par l'utilisateur et des fonctions de flux évaluées par une table, en utilisant tout langage .NET Framework, notamment Microsoft Visual Basic .NET et Microsoft Visual C#. L'espace de noms <xref:Microsoft.SqlServer.Server> contient un ensemble de nouvelles API permettant au code managé d'interagir avec l'environnement Microsoft SQL Server.  
@@ -31,7 +32,7 @@ SQL Server 2005 a introduit l'intégration du composant Common Language Runtime
 1.  [Concepts de programmation Integration Common Language Runtime (CLR)](http://go.microsoft.com/fwlink/?LinkId=115240)  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Introduction à l’intégration du CLR SQL Server](../../../../../docs/framework/data/adonet/sql/introduction-to-sql-server-clr-integration.md)  
+ [Introduction à l’intégration CLR SQL Server](../../../../../docs/framework/data/adonet/sql/introduction-to-sql-server-clr-integration.md)  
  Fournit une présentation de l'intégration de CLR dans SQL Server. Fournit des liens vers d'autres rubriques.  
   
  [Fonctions CLR définies par l’utilisateur](../../../../../docs/framework/data/adonet/sql/clr-user-defined-functions.md)  
@@ -46,10 +47,10 @@ SQL Server 2005 a introduit l'intégration du composant Common Language Runtime
  [Déclencheurs CLR](../../../../../docs/framework/data/adonet/sql/clr-triggers.md)  
  Décrit comment implémenter et utiliser des déclencheurs CLR. Fournit des liens vers d'autres rubriques.  
   
- [La connexion de contexte](../../../../../docs/framework/data/adonet/sql/the-context-connection.md)  
+ [Connexion de contexte](../../../../../docs/framework/data/adonet/sql/the-context-connection.md)  
  Décrit la connexion de contexte.  
   
- [Comportement de SQL Server dans spécifique au processus d’ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-in-process-specific-behavior-of-adonet.md)  
+ [Comportement SQL Server spécifique au processus d’ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-in-process-specific-behavior-of-adonet.md)  
  Décrit les extensions spécifiques au mode in-process SQL Server pour ADO.NET et la connexion de contexte. Fournit des liens vers d'autres rubriques.  
   
 ## <a name="see-also"></a>Voir aussi  

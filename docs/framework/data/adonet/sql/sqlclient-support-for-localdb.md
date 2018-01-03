@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: abe9487f9c2ebbb93c2e712959237f722ee707b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 99845420549393829582ade11f38b75e3ebff484
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sqlclient-support-for-localdb"></a>Prise en charge de SqlClient pour LocalDB
 À partir de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] nom de code Denali, une version légère de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], appelée LocalDB, sera disponible. Cette rubrique explique comment se connecter à une base de données LocalDB.  

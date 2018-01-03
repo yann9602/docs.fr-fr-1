@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ac3c3542e46168f5903ff0425740a29f16253733
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6d64034f8059dc094b3fc8a71c6a2b7e96fe8d89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>Création d'une classe pour contenir des fonctions DLL
 L’enveloppement d’une fonction DLL fréquemment utilisée dans une classe managée est une stratégie efficace d’encapsulation des fonctionnalités de la plateforme. Bien que cette opération ne soit pas obligatoire dans tous les cas, un wrapper de classe s’avère pratique, car la définition de fonctions DLL peut être fastidieuse et sujette à erreurs. En cas de programmation en Visual Basic ou C#, vous devez déclarer les fonctions DLL dans une classe ou un module Visual Basic.  
@@ -34,7 +35,7 @@ L’enveloppement d’une fonction DLL fréquemment utilisée dans une classe ma
   
  Une fois l’encapsulation effectuée, vous pouvez appeler les méthodes sur la fonction de la même manière que vous appelez des méthodes sur toute autre fonction statique. L’appel de code non managé gère automatiquement la fonction exportée sous-jacente.  
   
- Lors de la conception d’une classe managée pour l’appel de code non managé, tenez compte des relations entre les classes et les fonctions DLL. Par exemple, vous pouvez :  
+ Lors de la conception d’une classe managée pour l’appel de code non managé, tenez compte des relations entre les classes et les fonctions DLL. Par exemple, vous pouvez :  
   
 -   déclarer des fonctions DLL dans une classe existante ;  
   
