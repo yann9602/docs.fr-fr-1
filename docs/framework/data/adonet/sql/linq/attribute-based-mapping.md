@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: a8397c106ec45d9e6e1e9ec513536142d3048bd7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2ee0e87c801e15a54229e559ce65cabf5f474a61
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="attribute-based-mapping"></a>Mappage basé sur les attributs
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mappe une base de données SQL Server à un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modèle d’objet en appliquant des attributs ou en utilisant un fichier de mappage externe. Cette rubrique présente l'approche basée sur les attributs.  

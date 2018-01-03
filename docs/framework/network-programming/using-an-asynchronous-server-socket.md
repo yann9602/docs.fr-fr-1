@@ -27,11 +27,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: c5c696e04b940923d53eb79c055330a91734e1a0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 128628815f99ecb0e3d89530211c8607d17d3fb9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Utilisation d’un socket serveur asynchrone
 Les sockets serveur asynchrones utilisent le modèle de programmation asynchrone de .NET Framework pour traiter les demandes de service réseau. La classe <xref:System.Net.Sockets.Socket> respecte la convention de nommage standard de .NET Framework pour les méthodes asynchrones. Par exemple, la méthode synchrone <xref:System.Net.Sockets.Socket.Accept%2A> correspond aux méthodes asynchrones <xref:System.Net.Sockets.Socket.BeginAccept%2A> et <xref:System.Net.Sockets.Socket.EndAccept%2A>.  
@@ -271,7 +272,7 @@ public static void readCallback(IAsyncResult ar) {
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide d’un Socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [Utilisation d’un socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
  [Exemple de socket serveur asynchrone](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
  [Thread](../../../docs/standard/threading/index.md)  
  [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)

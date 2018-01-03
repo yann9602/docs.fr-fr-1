@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d511bcda2ab4e879c123d866b3f6c887173c1d2f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3ad300d86dadd470d0a2d50d5d6deac5bd0bad71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setpekind-method"></a>SetPEKind, méthode
 Détermine le type exécutable portable, un ordinateur ou spécifique à indépendant de l’ordinateur.  
@@ -55,11 +56,11 @@ HRESULT SetPEKind(
 ## <a name="return-value"></a>Valeur de retour  
  Retourne S_OK si la méthode réussit.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  Requiert alink.h.  
   
 ## <a name="see-also"></a>Voir aussi  
- [GetPEKind (méthode)](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md)  
- [IALink2 (Interface)](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Interface IALink](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [ALink (API)](../../../../docs/framework/unmanaged-api/alink/index.md)
+ [GetPEKind, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md)  
+ [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f4e4eebce1779f1b32a74819fea19fb23204b80c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c486faf43a1109b0391f40072ab267b72e1d07d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltapplicationgt-element-net-native"></a>&lt;Application&gt;, élément (.NET Native)
 Sert de conteneur pour les types à l'échelle de l'application et pour les membres de type dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution, et applique la stratégie de réflexion runtime à tous les éléments de programme dans une application.  
@@ -84,7 +85,7 @@ Sert de conteneur pour les types à l'échelle de l'application et pour les memb
 |-------------|-----------------|  
 |[\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md)|Élément racine d'un fichier de directives de runtime.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’élément [\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md) peut contenir zéro ou un élément `<Application>`. Un même fichier de directives de réflexion ne peut pas contenir plusieurs éléments `<Application>`.  
   
  Un élément `<Application>` peut être utilisé de deux manières différentes :  

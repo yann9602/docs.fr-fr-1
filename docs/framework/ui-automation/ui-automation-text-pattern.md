@@ -18,11 +18,12 @@ caps.latest.revision: "61"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: ca710fcd4d5ded93bdc1f47b3c8a523f3afa05f4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c374281af80d4546368d33b09a63b4fdb654f16c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-text-pattern"></a>Modèle de texte UI Automation
 > [!NOTE]
@@ -31,8 +32,8 @@ ms.lasthandoff: 11/21/2017
  Cette rubrique contient des vues d’ensemble et des rubriques de procédures pour vous aider à démarrer dans la programmation des éléments texte dans [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble de TextPattern UI Automation](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)  
- [TextPattern et vue d’ensemble des objets incorporés](../../../docs/framework/ui-automation/textpattern-and-embedded-objects-overview.md)  
+ [Vue d’ensemble de TextPattern d’UI Automation](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)  
+ [Vue d’ensemble de TextPattern et des objets incorporés](../../../docs/framework/ui-automation/textpattern-and-embedded-objects-overview.md)  
  [Rubriques de guide pratique](../../../docs/framework/ui-automation/ui-automation-text-pattern-how-to-topics.md)  
   
 ## <a name="reference"></a>Référence  
@@ -40,4 +41,4 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="see-also"></a>Voir aussi  
  [Modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)  
- [Modèles de contrôle UI Automation pour les Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
+ [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)

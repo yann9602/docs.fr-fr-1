@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9e3ff6c4ec8febda93136c5ac88223b5baf80124
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a84fdb104296cf15b5f0d2d04f4ddd7ea1419643
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Événements ETW dans la bibliothèque parallèle de tâches et PLINQ
 La bibliothèque parallèle de tâches et PLINQ génèrent les événements de suivi d’événements pour Windows (ETW) que vous pouvez utiliser pour profiler et dépanner des applications à l’aide d’outils tels que Windows Performance Analyzer. Toutefois, dans la plupart des scénarios, la meilleure façon de profiler du code d’application parallèle est d’utiliser le [visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer) dans [!INCLUDE[vsUltShort](../../../includes/vsultshort-md.md)].  
@@ -37,7 +38,7 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 #### <a name="user-data"></a>Données utilisateur  
   
-|**Nom**|**Type**|**Description**|  
+|**Name**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
@@ -53,7 +54,7 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 #### <a name="user-data"></a>Données utilisateur  
   
-|**Nom**|**Type**|**Description**|  
+|**Name**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
@@ -67,7 +68,7 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 #### <a name="user-data"></a>Données utilisateur  
   
-|**Nom**|**Type**|**Description**|  
+|**Name**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
@@ -83,7 +84,7 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 #### <a name="user-data"></a>Données utilisateur  
   
-|**Nom**|**Type**|**Description**|  
+|**Name**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
@@ -103,7 +104,7 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 #### <a name="user-data"></a>Données utilisateur  
   
-|**Nom**|**Type**|**Description**|  
+|**Name**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
@@ -116,7 +117,7 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 #### <a name="user-data"></a>Données utilisateur  
   
-|**Nom**|**Type**|**Description**|  
+|**Name**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  

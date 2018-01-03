@@ -14,11 +14,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3bcb29fa522f706f5500ab3cb12f956d5e2236b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 65bf6bfd0bd437848137506605a958f5f2e8d750
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="batching-operations-wcf-data-services"></a>Opérations de traitement par lots (services de données WCF)
 Le [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] du lot prend en charge le traitement des demandes à un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-en fonction du service. Pour plus d’informations, consultez [OData : traitement par lot](http://go.microsoft.com/fwlink/?LinkId=186075). Dans [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], chaque opération qui utilise le <xref:System.Data.Services.Client.DataServiceContext>, tels que l’exécution d’une requête ou d’enregistrer les modifications, les résultats dans une demande distincte qui est envoyé au service de données. Pour maintenir une étendue logique pour les jeux d'opérations, vous pouvez définir explicitement des lots opérationnels. Cela garantit que toutes les opérations dans le lot sont envoyées au service de données dans une requête HTTP unique permet au serveur de traiter les opérations de manière atomique et réduit le nombre d’allers-retours au service de données.  

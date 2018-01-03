@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 42ec863e9accbd2156b6eeed5857ff86075cf0a5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 53241a459f561bdfd8fc5cb077cb8384f1d906b9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="certtimestampauthenticodelicense-function"></a>CertTimestampAuthenticodeLicense, fonction
 Horodate une licence XrML Authenticode.  
@@ -45,7 +46,7 @@ HRESULT CertTimestampAuthenticodeLicense (
  `pTimestampSignatureBlob`  
  [en sortie] Un pointeur vers CRYPT_DATA_BLOB pour recevoir la signature de l'horodatage codé en base64. Il incombe l’appelant de libérer `pTimestampSignatureBlob` -> `pbData` avec `HepFree()` après utilisation. Consultez le [CRYPTOAPI_BLOB](http://msdn.microsoft.com/library/windows/desktop/aa380238.aspx) structure.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La signature de l'horodatage est en réalité un message PKCS #7 SignedData dont le contenu est la forme binaire de la valeur de SignatureValue de la signature de la licence. Ceci agit comme une contre-signature de la licence.  
   
 ## <a name="return-value"></a>Valeur de retour  

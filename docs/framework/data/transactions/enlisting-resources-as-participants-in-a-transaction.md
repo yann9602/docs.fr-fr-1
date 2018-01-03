@@ -15,11 +15,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 98ac35edc458e370f2b7b9b116d2872d0db2da71
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 270b3755901e3c5bc95352b5f3d07a338e73a90e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enlisting-resources-as-participants-in-a-transaction"></a>Inscription de ressources comme participants à une transaction
 Les ressources participant à une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. La coordination s'effectue par envoi de notifications aux abonnés qui se sont inscrits à une transaction via le gestionnaire de transactions.  
@@ -58,5 +59,5 @@ Les ressources participant à une transaction sont managées par un gestionnaire
  La classe <xref:System.Transactions.Transaction> fournit également la méthode <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> permettant de s'inscrire à une PSPE (Promotable Single Phase Enlistment). Cela permet à un gestionnaire de ressources durables d'héberger et de « posséder » une transaction qui peut, si nécessaire, être ensuite remontée pour être managée par le MSDTC. Pour plus d’informations, consultez [optimisation à l’aide de la validation à Phase unique et la Notification de Phase unique pouvant être promues](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Optimisation à l’aide de la validation à Phase unique et la Notification de Phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
- [Valide la Transaction en une seule phase et à plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)
+ [Optimisation à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
+ [Validation d’une transaction en une phase unique et en plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)

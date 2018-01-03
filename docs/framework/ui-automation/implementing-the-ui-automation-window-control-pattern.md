@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 9e8d83c3ef40ccc6e97ba3128cab5d88a5af5305
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3f1b44184f1a241943d9fa9d60a62a703dbaf0d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-the-ui-automation-window-control-pattern"></a>Implémentation du modèle de contrôle Window d’UI Automation
 > [!NOTE]
@@ -32,8 +33,8 @@ ms.lasthandoff: 11/21/2017
  Le modèle de contrôle <xref:System.Windows.Automation.WindowPattern> est utilisé pour prendre en charge les contrôles qui fournissent une fonctionnalité de fenêtre fondamentale dans une [!INCLUDE[TLA#tla_gui](../../../includes/tlasharptla-gui-md.md)]traditionnelle. Les contrôles qui doivent implémenter ce modèle de contrôle sont notamment les fenêtres d’application de niveau supérieur, les fenêtres enfants de l’ [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] , les contrôles de volet de fractionnement redimensionnables, les boîtes de dialogue modales et les fenêtres d’info-bulle.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
- Quand vous implémentez le modèle de contrôle Window, notez les conventions et recommandations suivantes :  
+## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
+ Quand vous implémentez le modèle de contrôle Window, notez les conventions et recommandations suivantes :  
   
 -   Pour prendre en charge la possibilité de modifier la taille de la fenêtre et la position de l’écran à l’aide d’UI Automation, un contrôle doit implémenter <xref:System.Windows.Automation.Provider.ITransformProvider> en plus de <xref:System.Windows.Automation.Provider.IWindowProvider>.  
   
@@ -49,20 +50,20 @@ ms.lasthandoff: 11/21/2017
 ## <a name="required-members-for-iwindowprovider"></a>Membres obligatoires pour IWindowProvider  
  Les propriétés, méthodes et événements suivants sont obligatoires pour l’interface IWindowProvider.  
   
-|Membre obligatoire|Type de membre|Remarques|  
+|Membre obligatoire|Type de membre|Notes|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.IsTopmost%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Propriété|Aucun|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Propriété|Aucune|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Méthode|Aucune|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Méthode|Aucune|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Méthode|Aucune|  
-|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Événement|Aucune|  
-|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Événement|Aucune|  
-|<xref:System.Windows.Automation.WindowInteractionState>|Événement|N’est pas nécessairement défini sur <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|Propriété|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Propriété|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.IsTopmost%2A>|Propriété|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Propriété|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Propriété|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Propriété|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Méthode|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Méthode|Aucun.|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Méthode|Aucun.|  
+|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|événement|Aucun.|  
+|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|événement|Aucun.|  
+|<xref:System.Windows.Automation.WindowInteractionState>|événement|N’est pas nécessairement défini sur <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Exceptions  
@@ -74,8 +75,8 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> -Lorsque le paramètre n’est pas un nombre valide.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble du modèles contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
- [Prise en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [Modèles de contrôle UI Automation pour les Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [Vue d’ensemble d’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
  [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

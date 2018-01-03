@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 505a83f15d5056b0280af31d372623530d6e66ec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 84c09de4e0ce6e436c2c814c4cd9990db012d422
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugblockingreason-enumeration"></a>CorDebugBlockingReason, énumération
 Spécifie les raisons pour lesquelles un thread peut être bloqué sur un objet donné.  
@@ -47,10 +48,10 @@ Typedef enum CorDebugBlockingReason
 |`BLOCKING_MONITOR_CRITICAL_SECTION`|Un thread essaie d’acquérir la section critique qui est associée avec le verrou du moniteur sur un objet. En règle générale, cela se produit lorsque vous appelez une de le <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> ou <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> méthodes.|  
 |`BLOCKING_MONITOR_EVENT`|Un thread est en attente sur l’événement qui est associé à un verrou de moniteur pour un objet. En règle générale, cela se produit lorsque vous appelez une de le <xref:System.Threading.Monitor?displayProperty=nameWithType> `Wait` méthodes.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Lorsque le `BLOCKING_MONITOR_CRITICAL_SECTION` ou `BLOCKING_MONITOR_EVENT` membre est utilisé dans un [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structure, le `pBlockingObject` membre de la structure pointe vers une interface « ICorDebugValue » qui représente l’objet qui est en cours d’entrée . Il est également garanti pour implémenter le [ICorDebugHeapValue3](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-interface.md) interface.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

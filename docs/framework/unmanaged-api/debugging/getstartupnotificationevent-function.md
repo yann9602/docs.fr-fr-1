@@ -22,11 +22,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 305350a9186c90af1e8646bc230536dcd2de47cc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 809f34d265e0a1677d8b7fc78515b20df7353968
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getstartupnotificationevent-function"></a>Fonction GetStartupNotificationEvent
 Crée ou ouvre un gestionnaire d'événements qui sera signalé par un Common Language Runtime (CLR) qui est chargé dans le processus cible spécifié.  
@@ -58,12 +59,12 @@ HRESULT GetStartupNotificationEvent
  E_FAIL (ou autres codes de retour E_)  
  Impossible d'obtenir le handle de l'événement de notification de démarrage.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Sur le système d'exploitation Windows, `debuggeePID` est mappé à un identificateur de processus du système d'exploitation.  
   
  L'événement est signalé avant l'exécution de code managé par le CLR ayant signalé l'événement.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** dbgshim.h  

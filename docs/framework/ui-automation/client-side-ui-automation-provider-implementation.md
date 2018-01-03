@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: cf8a054b832b1accdfa8e1d63b2d971a10f244b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 50335994fab424b3100c91a202a7ea53643db551
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté client
 > [!NOTE]
@@ -60,5 +61,5 @@ ms.lasthandoff: 11/21/2017
  Les deux derniers paramètres sont facultatifs. Le client peut spécifier le nom d’image de l’application cible quand il souhaite utiliser différents fournisseurs pour différentes applications. Par exemple, le client peut utiliser un fournisseur pour un contrôle ListView [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] dans une application connue prenant en charge le modèle MultipleView, et un autre fournisseur pour un contrôle similaire dans une autre application connue n’assurant pas cette prise en charge.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Créer un fournisseur côté Client UI Automation](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
- [Implémenter des fournisseurs UI Automation dans une Application cliente](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+ [Créer un fournisseur UI Automation côté client](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
+ [Implémenter des fournisseurs UI Automation dans une application cliente](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)

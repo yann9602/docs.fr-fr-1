@@ -15,11 +15,12 @@ caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b2f38283e4944c4f24668fa243d628e80daeac55
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f4c4e8222acaf290ea9298a59d2ae77b81d2c913
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ialink3-interface"></a>IALink3, interface
 Fournit une méthode unique, `SetManifestFile`, ce qui vous permet de spécifier ou de réinitialiser le fichier manifest de l’éditeur de liens utilise lorsqu’il crée un assembly.  
@@ -29,10 +30,10 @@ Fournit une méthode unique, `SetManifestFile`, ce qui vous permet de spécifier
  Vous permet de spécifier ou de réinitialiser le fichier manifeste qui utilise l’éditeur de liens lorsqu’il crée l’assembly.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [ALink (API)](../../../../docs/framework/unmanaged-api/alink/index.md)  
+ [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)  
  Prend en charge la création d'assemblys .NET Framework et de modules indépendants.  
   
- [Interface IALink](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  Aide à construire des assemblys .NET Framework.  
   
  [Al.exe (Assembly Linker)](../../../../docs/framework/tools/al-exe-assembly-linker.md)  

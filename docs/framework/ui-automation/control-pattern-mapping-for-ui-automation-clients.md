@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 31beb7ab9a978f5bb379a3c1d61c90c19c26ca6b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6a5f9d115c601775cc4f5b1c61d71d739f7a405b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>Mappage de modèle de contrôle pour les clients UI Automation
 > [!NOTE]
@@ -34,7 +35,7 @@ ms.lasthandoff: 10/18/2017
   
 -   Prise en charge conditionnelle. Le contrôle peut prendre en charge ce modèle de contrôle en fonction de l’état du contrôle.  
   
--   Non prise en charge. Le contrôle ne prend pas en charge ce modèle de contrôle. Les contrôles personnalisés peuvent prendre en charge ce modèle de contrôle.  
+-   Non pris en charge. Le contrôle ne prend pas en charge ce modèle de contrôle. Les contrôles personnalisés peuvent prendre en charge ce modèle de contrôle.  
   
 > [!NOTE]
 >  Certains contrôles disposent d’une prise en charge conditionnelle pour plusieurs modèles de contrôle selon les fonctionnalités du contrôle. Par exemple, le contrôle d’élément de menu dispose d’une prise en charge conditionnelle pour le modèle de contrôle <xref:System.Windows.Automation.InvokePattern>, <xref:System.Windows.Automation.ExpandCollapsePattern>, <xref:System.Windows.Automation.TogglePattern>ou <xref:System.Windows.Automation.SelectionItemPattern> , selon sa fonction dans le contrôle de menu.  
@@ -42,49 +43,49 @@ ms.lasthandoff: 10/18/2017
 <a name="control_mapping_clients"></a>   
 ## <a name="ui-automation-control-patterns-for-clients"></a>Modèles de contrôle UI Automation pour les clients  
   
-|Type de contrôle|Pris en charge|Prise en charge conditionnelle|Non prise en charge|  
+|Type de contrôle|Prise en charge|Prise en charge conditionnelle|Non prise en charge|  
 |------------------|---------------|-------------------------|-------------------|  
-|Bouton|None|Invoke, Toggle, Expand Collapse|None|  
-|Calendrier|Grid, Table|Selection, Scroll|Valeur|  
-|Case à cocher|Basculer|None|None|  
+|Bouton|Aucun.|Invoke, Toggle, Expand Collapse|Aucun.|  
+|Calendrier|Grid, Table|Selection, Scroll|Value|  
+|Case à cocher|Basculer|Aucun.|Aucun.|  
 |Combo Box|Développer/Réduire|Selection, Value|Scroll|  
-|DataGrid|Grille|Scroll, Selection, Table|None|  
-|DataItem|Selection Item|Expand Collapse, Grid Item, Scroll Item, Table, Toggle, Value|None|  
-|Document|Texte|Scroll, Value|None|  
-|Modifier|None|Text, Range Value, Value|None|  
-|Regrouper|None|Développer/Réduire|None|  
-|En-tête|None|Transformer|None|  
-|HeaderItem|None|Transform, Invoke|None|  
-|Lien hypertexte|Appeler|Valeur|None|  
-|Image|None|Grid Item, Table Item|Invoke, Selection Item|  
-|Liste|None|Grid, Multiple View, Scroll, Selection|Table|  
-|List Item|Selection Item|Expand Collapse, Grid Item, Invoke, Scroll Item, Toggle, Value|None|  
-|Menu|None|None|None|  
-|Barre de menus|None|Expand Collapse, Dock, Transform|None|  
-|Élément de menu|None|Expand Collapse, Invoke, Selection Item, Toggle|None|  
-|Volet|None|Dock. Scroll, Transform|Fenêtre|  
-|ProgressBar|None|Range Value, Value|None|  
-|RadioButton|Selection Item|None|Basculer|  
-|Scroll Bar|None|Range Value|Scroll|  
-|Séparateur|None|None|None|  
-|Curseur|None|Range Value, Selection, Value|None|  
-|Spinner|None|Range Value, Selection, Value|None|  
-|Bouton partagé|Invoke, Expand Collapse|None|None|  
-|Barre d'état|None|Grille|None|  
-|Onglet|Sélection|Scroll|None|  
-|TabItem|Selection Item|None|Appeler|  
-|Table|Grid, Grid Item, Table, Table Item|None|None|  
-|Texte|None|Grid Item, Table Item, Text|Valeur|  
-|Thumb|Transformer|None|None|  
-|Barre de titre|None|None|None|  
-|Tool Bar|None|Dock, Expand Collapse, Transform|None|  
-|Tool Tip|None|Text, Window|None|  
-|Arborescence|None|Scroll, Selection|None|  
-|TreeItem|Développer/Réduire|Invoke, Scroll Item, Selection Item, Toggle|None|  
-|Fenêtre|Transform, Window|Station d' accueil|None|  
+|DataGrid|Grille|Scroll, Selection, Table|Aucun.|  
+|DataItem|Selection Item|Expand Collapse, Grid Item, Scroll Item, Table, Toggle, Value|Aucun.|  
+|Document|Texte|Scroll, Value|Aucun.|  
+|Modifier|Aucun.|Text, Range Value, Value|Aucun.|  
+|Regrouper|Aucun.|Développer/Réduire|Aucun.|  
+|En-tête|Aucun.|Transformer|Aucun.|  
+|HeaderItem|Aucun.|Transform, Invoke|Aucun.|  
+|Lien hypertexte|Appeler|Value|Aucun.|  
+|Image|Aucun.|Grid Item, Table Item|Invoke, Selection Item|  
+|Liste|Aucun.|Grid, Multiple View, Scroll, Selection|Table|  
+|List Item|Selection Item|Expand Collapse, Grid Item, Invoke, Scroll Item, Toggle, Value|Aucun.|  
+|Menu|Aucun.|Aucun|Aucun.|  
+|Barre de menus|Aucun.|Expand Collapse, Dock, Transform|Aucun.|  
+|Élément de menu|Aucun.|Expand Collapse, Invoke, Selection Item, Toggle|Aucun.|  
+|Volet|Aucun.|Dock. Scroll, Transform|Fenêtre|  
+|ProgressBar|Aucun.|Range Value, Value|Aucun.|  
+|RadioButton|Selection Item|Aucun.|Basculer|  
+|Scroll Bar|Aucun.|Range Value|Scroll|  
+|Séparateur|Aucun.|Aucun|Aucun.|  
+|Curseur|None|Range Value, Selection, Value|Aucun.|  
+|Spinner|Aucun.|Range Value, Selection, Value|Aucun.|  
+|Bouton partagé|Invoke, Expand Collapse|Aucun.|Aucun.|  
+|Barre d'état|Aucun.|Grille|Aucun.|  
+|Onglet|Sélection|Scroll|Aucun.|  
+|TabItem|Selection Item|Aucun.|Appeler|  
+|Table|Grid, Grid Item, Table, Table Item|Aucun.|Aucun.|  
+|Texte|Aucun.|Grid Item, Table Item, Text|Value|  
+|Thumb|Transformer|Aucun.|Aucun.|  
+|Barre de titre|Aucun.|Aucun|Aucun.|  
+|Tool Bar|Aucun.|Dock, Expand Collapse, Transform|Aucun.|  
+|Tool Tip|Aucun.|Text, Window|Aucun.|  
+|Arborescence|Aucun.|Scroll, Selection|Aucun.|  
+|TreeItem|Développer/Réduire|Invoke, Scroll Item, Selection Item, Toggle|Aucun.|  
+|Fenêtre|Transform, Window|Station d' accueil|Aucun.|  
   
 > [!NOTE]
 >  Si un type de contrôle ne possède aucun modèle de contrôle pris en charge répertorié, mais possède un ou plusieurs modèles de contrôle pris en charge de manière conditionnelle, l’un de ces modèles de contrôle conditionnels est constamment pris en charge.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)
+ [Vue d’ensemble d’UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)

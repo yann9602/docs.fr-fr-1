@@ -27,11 +27,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ce50fa5cf8664f93753312ee5f1db2b3058c3fd9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 03f6dc6ea517aba410430fea69113b64dccc6ff6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-synchronous-server-socket"></a>Utilisation d’un socket serveur synchrone
 Les sockets serveur synchrones interrompent l’exécution de l’application jusqu’à la réception d’une demande de connexion sur le socket. Les sockets serveur synchrones ne sont pas appropriés pour les applications dont l’exécution nécessite une utilisation intensive du réseau, mais ils peuvent être utiles pour les applications réseau simples.  
@@ -85,6 +86,6 @@ handler.Close();
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Utilisation d’un Socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Utilisation d’un socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
  [Exemple de socket serveur synchrone](../../../docs/framework/network-programming/synchronous-server-socket-example.md)  
  [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)

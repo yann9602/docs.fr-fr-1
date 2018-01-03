@@ -25,11 +25,12 @@ caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 7a1be9f377f9b241bf46ac67f4f3f08fc5a43821
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a09c8c47c91222d6292d46d2eea80a30ed786494
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="location-based-cache-policies"></a>stratégies de cache basées sur l’emplacement
 Une stratégie de cache basée sur l’emplacement définit l’actualisation des entrées valides mises en cache en fonction de l’emplacement d’où la ressource demandée peut être récupérée. Une ressource mise en cache est valide si elle respecte les exigences de revalidation spécifiées par le serveur. Une stratégie de cache basée sur l’emplacement peut être créée par programmation à l’aide du constructeur de classe <xref:System.Net.Cache.RequestCachePolicy> ou <xref:System.Net.Cache.HttpRequestCachePolicy>. Le type de stratégie basée sur l’emplacement est passé au constructeur avec une valeur d’énumération <xref:System.Net.Cache.RequestCacheLevel> ou <xref:System.Net.Cache.HttpRequestCacheLevel>. Pour obtenir des exemples de code qui créent des stratégies de cache basées sur l’emplacement, consultez [Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Les sections suivantes expliquent chaque type de stratégie de cache basée sur l’emplacement pour les ressources HTTP et HTTPS.  

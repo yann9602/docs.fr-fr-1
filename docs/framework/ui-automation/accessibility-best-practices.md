@@ -16,11 +16,12 @@ caps.latest.revision: "16"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: d8714bb211c649d783cb1cfc46058e3b097def26
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 83b4c2ae04ab6be1f1a1327649bbf679a24580ce
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessibility-best-practices"></a>Meilleures pratiques d'accessibilité
 > [!NOTE]
@@ -30,11 +31,11 @@ ms.lasthandoff: 11/21/2017
   
 <a name="Programmatic_Access"></a>   
 ## <a name="programmatic-access"></a>Accès par programmation  
- L'accès par programmation implique de vérifier que tous les éléments de l' [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] sont étiquetés, que les valeurs des propriétés sont exposées et que les événements appropriés sont déclenchés. Pour les contrôles [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] standard, l'essentiel de ce travail est déjà effectué via <xref:System.Windows.Automation.Peers.AutomationPeer>. Les contrôles personnalisés nécessitent un travail supplémentaire pour vérifier que l'accès par programmation est correctement implémenté.  
+ L'accès par programmation implique de vérifier que tous les éléments de l'[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] sont étiquetés, que les valeurs des propriétés sont exposées et que les événements appropriés sont déclenchés. Pour les contrôles [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] standard, l'essentiel de ce travail est déjà effectué via <xref:System.Windows.Automation.Peers.AutomationPeer>. Les contrôles personnalisés nécessitent un travail supplémentaire pour vérifier que l'accès par programmation est correctement implémenté.  
   
 <a name="Enable_Programmatic_Access_to_all_UI_Elements_and_Text"></a>   
 ### <a name="enable-programmatic-access-to-all-ui-elements-and-text"></a>Activer l'accès par programmation à tous les éléments de l'interface utilisateur et le texte  
- Les éléments de l'[!INCLUDE[TLA#tla_ui#initcap](../../../includes/tlasharptla-uisharpinitcap-md.md)] doivent activer l'accès par programmation. Si l' [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] est un contrôle [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] standard, la prise en charge de l'accès par programmation est incluse dans le contrôle. Si le contrôle est un contrôle personnalisé, tel qu'un contrôle qui a été sous-classé à partir d'un contrôle commun ou un contrôle qui a été sous-classé à partir de Control, vous devez alors vérifier l'implémentation d' <xref:System.Windows.Automation.Peers.AutomationPeer> pour les zones qui peuvent nécessiter des modifications.  
+ Les éléments de l'[!INCLUDE[TLA#tla_ui#initcap](../../../includes/tlasharptla-uisharpinitcap-md.md)] doivent activer l'accès par programmation. Si l'[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] est un contrôle [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] standard, la prise en charge de l'accès par programmation est incluse dans le contrôle. Si le contrôle est un contrôle personnalisé, tel qu'un contrôle qui a été sous-classé à partir d'un contrôle commun ou un contrôle qui a été sous-classé à partir de Control, vous devez alors vérifier l'implémentation d' <xref:System.Windows.Automation.Peers.AutomationPeer> pour les zones qui peuvent nécessiter des modifications.  
   
  L'application de cette meilleure pratique permet aux fournisseurs de [!INCLUDE[TLA2#tla_at](../../../includes/tla2sharptla-at-md.md)] d'identifier et de manipuler les éléments de l' [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]de votre produit.  
   
@@ -110,7 +111,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="support-navigation-standards-and-powerful-navigation-schemes"></a>Prendre en charge les standards de navigation et les schémas de navigation puissants  
  Des aspects différents de la navigation au clavier fournissent aux utilisateurs des moyens différents pour naviguer dans l' [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
- Les applications doivent fournir les interfaces de clavier suivantes :  
+ Les applications doivent fournir les interfaces de clavier suivantes :  
   
 -   touches de raccourci et touches d'accès rapide soulignées pour toutes les commandes, ainsi que pour tous les menus et contrôles ;  
   

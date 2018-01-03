@@ -15,11 +15,12 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 16ffe789635ee13c118c63c30ef255cc9b264a9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 565cd9384e150f707b2e5e72342579d95c3a096e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Vue d'ensemble du modèle de programmation par attributs (MEF)
 Dans Managed Extensibility Framework (MEF), un *modèle de programmation* est une méthode particulière qui permet de définir l'ensemble d'objets conceptuels sur lequel MEF fonctionne. Ces objets conceptuels incluent des composants, des importations et des exportations. MEF utilise ces objets mais ne spécifie pas comment ils doivent être représentés. Par conséquent, une grande variété de modèles de programmation sont possibles, y compris des modèles de programmation personnalisés.  
@@ -153,7 +154,7 @@ public class MyAddin
 }  
 ```  
   
- Dans cette classe, la méthode `DoSomething` accepte un paramètre unique `int` et retourne une `string`. Pour correspondre à cette exportation, le composant d'importation doit déclarer un membre approprié. La classe suivante importe la méthode `DoSomething` .  
+ Dans cette classe, la méthode `DoSomething` accepte un paramètre unique `int` et retourne une `string`. Pour correspondre à cette exportation, le composant d'importation doit déclarer un membre approprié. La classe suivante importe la méthode `DoSomething`.  
   
 ```vb  
 Public Class MyClass1  

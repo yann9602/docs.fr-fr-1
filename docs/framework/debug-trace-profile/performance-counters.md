@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2e21b1f92c6694c6572d4651e94964e5d2d93c51
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 15486a55fc15ba2cc3cc64db50f317b39dfd77bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
 Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l’[Analyseur de performances](http://technet.microsoft.com/library/cc749249.aspx).  
@@ -260,5 +261,5 @@ for (int i = 0; i < Array.Length; i++)
 |**Total de vérifications à l’exécution**|Affiche le nombre total de vérifications de sécurité d'accès du code à l'exécution effectuées depuis le démarrage de l'application. Les vérifications de sécurité d'accès du code à l'exécution sont effectuées quand un appelant demande une autorisation particulière. La vérification à l'exécution se produit à chaque appel par l'appelant, en examinant la pile de threads actuelle de l'appelant. Utilisé avec le compteur **Épaisseur de la pile**, ce compteur indique la diminution de performances due aux vérifications de sécurité.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md)  
+ [Compteurs de performance](../../../docs/framework/debug-trace-profile/performance-counters.md)  
  [Profilage d’exécution](../../../docs/framework/debug-trace-profile/runtime-profiling.md)

@@ -25,11 +25,12 @@ caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: f44bef7804e9101b2d1bc50ba53f3fc7a5fa90ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fbf25ae866b338d2f1ac0ea11570e0d535e9137c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="internet-authentication"></a>Authentification Internet
 Les classes <xref:System.Net> prennent en charge divers mécanismes d’authentification client, parmi lesquels les méthodes d’authentification Internet standard (de base, Digest, Negotiate, NTLM et Kerberos) et les méthodes personnalisées que vous pouvez créer.  
@@ -49,6 +50,6 @@ Les classes <xref:System.Net> prennent en charge divers mécanismes d’authenti
  Certains schémas d’authentification authentifient un utilisateur sans faire de demande de ressource au préalable. Une application peut gagner du temps en effectuant une pré-authentification de la ressource, ce qui évite au moins un aller-retour avec le serveur. Elle peut aussi effectuer l’authentification au démarrage du programme pour être plus réactive avec l’utilisateur ultérieurement. Les schémas d’authentification qui peuvent utiliser la pré-authentification ont leur propriété <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> définie sur **true**.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Base et authentification Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
+ [Authentification de base et authentification Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
  [Authentification NTLM et Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
  [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)

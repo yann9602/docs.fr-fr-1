@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 11be45743bd215315139fb77f016e85bc9b592c5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a86604febb7641eef147608e564a27883fdc4bec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corgcreference-structure"></a>COR_GC_REFERENCE, structure
 Contient des informations sur un objet qui doit faire l'objet d'une récupération de mémoire.  
@@ -48,7 +49,7 @@ typedef struct _COR_GC_REFERENCE {
 |`type`|A [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) valeur d’énumération qui indique la provenance de la racine. Pour plus d'informations, consultez la section Remarques.|  
 |`extraData`|Données supplémentaires sur l’objet par le garbage collector. Ces informations dépendent de la source de l’objet, comme indiqué par le `type` champ. Pour plus d'informations, consultez la section Remarques.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `type` champ est un [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) valeur d’énumération qui indique d'où provenance la référence. Un particulier `COR_GC_REFERENCE` valeur peut refléter un des types suivants d’objets gérés :  
   
 -   Objets à partir de toutes les piles managées (`CorGCReferenceType.CorReferenceStack`). Cela inclut des références actives dans le code managé, ainsi que les objets créés par le common language runtime.  
@@ -57,7 +58,7 @@ typedef struct _COR_GC_REFERENCE {
   
 -   Objets à partir de la file d’attente du finaliseur (`CorGCReferenceType.CorReferenceFinalizer`). La file d’attente du finaliseur racines d’objets jusqu'à ce que le finaliseur a exécuté.  
   
- Le `extraData` champ contienne des données supplémentaires en fonction de la source (ou type) de la référence. Les valeurs possibles sont :  
+ Le `extraData` champ contienne des données supplémentaires en fonction de la source (ou type) de la référence. Les valeurs possibles sont :  
   
 -   `DependentSource`. Si le `type` est `CorGCREferenceType.CorHandleStrongDependent`, ce champ est l’objet qui, si elle est actif, racines par le garbage collector à l’objet `COR_GC_REFERENCE.Location`.  
   
@@ -65,7 +66,7 @@ typedef struct _COR_GC_REFERENCE {
   
 -   `Size`. Si le `type` est `CorGCREferenceType.CorHandleStrongSizedByref`, ce champ est la dernière taille de l’arborescence de l’objet pour lequel le garbage collector calculé les racines de l’objet. Notez que ce calcul n’est pas nécessairement à jour.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

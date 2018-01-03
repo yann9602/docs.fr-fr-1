@@ -16,11 +16,12 @@ caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 5cf7422fe1c007077e88b9171c4071168ec68fb5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 040a45b5724bdc18c93a97f9fe9717be7543d641
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transaction-and-bulk-copy-operations"></a>Transaction et opérations de copie en bloc
 Les opérations de copie en bloc peuvent être réalisées sous forme d’opérations isolées ou en tant qu’étape d’une transaction en comptant plusieurs. Cette dernière option vous permet d'effectuer plus d'une opération de copie en bloc dans la même transaction et d'effectuer d'autres opérations de base de données (telles que des insertions, des mises à jour et des suppressions) tout en vous laissant la possibilité de valider ou de restaurer toute la transaction.  
@@ -32,7 +33,7 @@ Les opérations de copie en bloc peuvent être réalisées sous forme d’opéra
   
  Dans l’exemple, la table source et la table de destination comportent chacune une `Identity` colonne nommée **ProductID**. Le code commence par préparer la table de destination en supprimant toutes les lignes et puis en insérant une simple ligne dont **ProductID** est censé exister dans la table source. Par défaut, une nouvelle valeur pour la colonne `Identity` est générée dans la table de destination pour chaque ligne ajoutée. Dans cet exemple, une option est définie lorsque la connexion est ouverte qui oblige le processus de chargement en bloc à utiliser les valeurs `Identity` de la table source.  
   
- L'opération de copie en bloc est exécutée avec la propriété <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A> ayant la valeur 10. Lorsque l'opération rencontre la ligne non valide, une exception est levée. Dans ce premier exemple, l'opération de copie en bloc n'est pas traitée. Tous les lots copiés jusqu'au moment de l'erreur sont validés ; le lot contenant la clé dupliquée est annulé et l'opération de copie en bloc est suspendue avant la reprise du traitement des autres lots.  
+ L'opération de copie en bloc est exécutée avec la propriété <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A> ayant la valeur 10. Lorsque l'opération rencontre la ligne non valide, une exception est levée. Dans ce premier exemple, l'opération de copie en bloc n'est pas traitée. Tous les lots copiés jusqu’au moment de l’erreur sont validés ; le lot contenant la clé dupliquée est annulé et l’opération de copie en bloc est suspendue avant la reprise du traitement des autres lots.  
   
 > [!NOTE]
 >  Cet exemple ne s’exécutera pas à moins que vous ayez créé les tables de travail comme décrit dans [configuration exemple de copie en bloc](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Ce code est fourni pour illustrer la syntaxe pour l’utilisation de **SqlBulkCopy** uniquement. Si les tables sources et de destination se trouvent dans la même instance [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], il est plus facile et plus rapide d'utiliser une instruction [!INCLUDE[tsql](../../../../../includes/tsql-md.md)]`INSERT … SELECT` pour copier les données.  
@@ -48,7 +49,7 @@ Les opérations de copie en bloc peuvent être réalisées sous forme d’opéra
 > [!NOTE]
 >  Puisque des lots différents sont exécutés dans différentes transactions, si une erreur se produit durant l'opération de copie en bloc, toutes les lignes du lot en cours seront annulées mais les lignes des lots précédents resteront dans la base de données.  
   
- L'application console suivante est semblable à l'exemple précédent, avec une exception : dans cet exemple, l'opération de copie en bloc gère ses propres transactions. Tous les lots copiés jusqu'au moment de l'erreur sont validés ; le lot contenant la clé dupliquée est annulé et l'opération de copie en bloc est suspendue avant la reprise du traitement des autres lots.  
+ L'application console suivante est semblable à l'exemple précédent, avec une exception : dans cet exemple, l'opération de copie en bloc gère ses propres transactions. Tous les lots copiés jusqu’au moment de l’erreur sont validés ; le lot contenant la clé dupliquée est annulé et l’opération de copie en bloc est suspendue avant la reprise du traitement des autres lots.  
   
 > [!IMPORTANT]
 >  Cet exemple ne s’exécutera pas à moins que vous ayez créé les tables de travail comme décrit dans [configuration exemple de copie en bloc](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Ce code est fourni pour illustrer la syntaxe pour l’utilisation de **SqlBulkCopy** uniquement. Si les tables sources et de destination se trouvent dans la même instance [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], il est plus facile et plus rapide d'utiliser une instruction [!INCLUDE[tsql](../../../../../includes/tsql-md.md)]`INSERT … SELECT` pour copier les données.  

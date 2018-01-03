@@ -15,11 +15,12 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2f8646fbb1c878e850d9bcda4e7117111dc825f3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 92c4d7c6693e3a2a011cb4ac39b42a1d96985a36
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="alink-api-unmanaged-api-reference"></a>API ALink (Informations de référence sur les API non managées)
 Prend en charge la création d'assemblys .NET Framework et de modules indépendants.  
@@ -33,17 +34,17 @@ Prend en charge la création d'assemblys .NET Framework et de modules indépenda
   
  [AssemblyAttributesGoHereSM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheresm.md)  
   
- [AssemblyOptions (énumération)](../../../../docs/framework/unmanaged-api/alink/assemblyoptions-enumeration.md)  
+ [AssemblyOptions, énumération](../../../../docs/framework/unmanaged-api/alink/assemblyoptions-enumeration.md)  
   
- [CreateALink (fonction)](../../../../docs/framework/unmanaged-api/alink/createalink-function.md)  
+ [CreateALink, fonction](../../../../docs/framework/unmanaged-api/alink/createalink-function.md)  
   
- [GetALinkMessageDll (fonction)](../../../../docs/framework/unmanaged-api/alink/getalinkmessagedll-function.md)  
+ [GetALinkMessageDll, fonction](../../../../docs/framework/unmanaged-api/alink/getalinkmessagedll-function.md)  
   
- [Interface IALink](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
   
- [IALink2 (Interface)](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
   
- [IALink3 (Interface)](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
+ [IALink3, interface](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur les API non managées](../../../../docs/framework/unmanaged-api/index.md)

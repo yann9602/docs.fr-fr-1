@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 516e065bc360538e7b62807a5492c0c6c9d16e69
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c9c3bc67d7ce59d259fec06377c5de1768a130ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-wif-tracing"></a>Comment : activer le suivi WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -26,7 +27,7 @@ ms.lasthandoff: 10/18/2017
   
 -   Web Forms ASP.NET®  
   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  Cette procédure fournit des procédures pas à pas détaillées pour l’activation du suivi WIF dans une application ASP.NET. Elle fournit également des instructions pour tester l’application afin de vérifier que l’écouteur de suivi et le journal fonctionnent correctement. Cette procédure ne fournit pas d'instructions détaillées pour créer un service d'émission de jeton de sécurité (STS, Security Token Service), et utilise à la place le développement STS fourni avec l'outil Identité et accès. Le développement STS n'exécute de véritable authentification et est destiné à des fins de test uniquement. Vous devez installer l'outil Identité et accès pour exécuter cette procédure. Il peut être téléchargé à partir de l’emplacement suivant : [Identity and Access Tool](http://go.microsoft.com/fwlink/?LinkID=245849)  
   
 > [!IMPORTANT]
@@ -62,7 +63,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application-and-enable-tracing"></a>Étape 1 : créer une simple application Web Forms ASP.NET et activer le suivi  
  Dans cette étape, vous allez créer une application Web Forms ASP.NET et modifier le fichier *Web.config* pour activer le suivi.  
   
-#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une simple application ASP.NET  
+#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une application ASP.NET simple  
   
 1.  Démarrez Visual Studio et cliquez sur **Fichier**, **Nouveau**, puis **Projet**.  
   

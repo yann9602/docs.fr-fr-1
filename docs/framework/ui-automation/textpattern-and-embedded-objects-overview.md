@@ -18,11 +18,12 @@ caps.latest.revision: "17"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: af8d519b8036c5598740331960cacce07f375ac0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0b08bb2b4d9cdb5e90582fbce280a03f6fc04d13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>Vue d'ensemble de TextPattern et des objets incorporés
 > [!NOTE]
@@ -82,7 +83,7 @@ Exemples de la façon dont une plage de texte est ajustée pour Move() et Expand
   
 |Méthode appelée|Résultat|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Retourne la chaîne « L'URL http://www.microsoft.com est incorporée dans le texte ».|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Retourne la chaîne « L'URL http://www.microsoft.com est incorporée dans le texte ».|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Retourne l' <xref:System.Windows.Automation.AutomationElement> le plus profond qui englobe la plage de texte ; dans ce cas, il s'agit de l' <xref:System.Windows.Automation.AutomationElement> qui représente le fournisseur de texte lui-même.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|Retourne un <xref:System.Windows.Automation.AutomationElement> qui représente le contrôle de lien hypertexte.|  
 |<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> où <xref:System.Windows.Automation.AutomationElement> est l'objet retourné par la méthode `GetChildren` précédente.|Retourne la plage qui représente « http://www.microsoft.com ».|  
@@ -155,7 +156,7 @@ Exemples de la façon dont une plage de texte est ajustée pour Move() et Expand
   
 |Méthode appelée|Résultat|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.GridPattern.GetItem%2A> avec des paramètres {1,1}.|Retourne l' <xref:System.Windows.Automation.AutomationElement> représentant le contenu de la cellule du tableau ; dans ce cas, l'élément est un contrôle de texte.|  
+|<xref:System.Windows.Automation.GridPattern.GetItem%2A> avec des paramètres {1,1}.|Retourne l'<xref:System.Windows.Automation.AutomationElement> représentant le contenu de la cellule du tableau ; dans ce cas, l'élément est un contrôle de texte.|  
 |<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> où <xref:System.Windows.Automation.AutomationElement> est l'objet retourné par la méthode `GetItem` précédente.|Retourne « Y ».|  
   
 ## <a name="see-also"></a>Voir aussi  
@@ -163,7 +164,7 @@ Exemples de la façon dont une plage de texte est ajustée pour Move() et Expand
  <xref:System.Windows.Automation.Text.TextPatternRange>  
  <xref:System.Windows.Automation.Provider.ITextProvider>  
  <xref:System.Windows.Automation.Provider.ITextRangeProvider>  
- [Intégré d’accès aux objets à l’aide d’UI Automation](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)  
- [Expose the Content of a Table Using UI Automation](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
+ [Accéder à des objets incorporés à l’aide d’UI Automation](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)  
+ [Exposer le contenu d’une table à l’aide d’UI Automation](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
  [Accéder au texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)  
  [Exemple de sélection et de recherche de TextPattern](http://msdn.microsoft.com/en-us/0a3bca57-8b72-489d-a57c-da85b7a22c7f)

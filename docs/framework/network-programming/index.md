@@ -17,11 +17,12 @@ caps.latest.revision: "24"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 76b747624a22212fb7b9ba1a6353956a99ed1559
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d702e7c910536566aabfaa7948afb24ae94d2cb1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="network-programming-in-the-net-framework"></a>Programmation réseau dans le .NET Framework
 Microsoft .NET Framework fournit une implémentation en couche, extensible et managée des services Internet que vous pouvez intégrer rapidement et facilement à vos applications. Les applications réseau peuvent générer des protocoles enfichables pour tirer parti automatiquement de nouveaux protocoles Internet, ou elles peuvent utiliser une implémentation managée de l'interface Windows Socket pour fonctionner au niveau du socket.  
@@ -143,7 +144,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  Fournit un support pour la configuration de l'authentification à l'aide de la protection étendue pour les applications.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Rubriques de procédures de programmation réseau](../../../docs/framework/network-programming/network-programming-how-to-topics.md)  
+ [Rubriques de guide pratique sur la programmation réseau](../../../docs/framework/network-programming/network-programming-how-to-topics.md)  
  [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Exemples de mise en réseau pour .NET dans MSDN Code Gallery](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)  
  [Exemple HttpClient](http://go.microsoft.com/fwlink/?LinkId=242550)

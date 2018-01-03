@@ -21,11 +21,12 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f354058e0de944bbce9d128d3f4baa9b941fda08
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 48ad5e34b926cf3dab562f57bb9206fa0ba70e6b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="emitinternalexportedtypes-method"></a>EmitInternalExportedTypes, méthode
 Émet des types ajoutés à l’assembly. Appelez cette méthode une fois connu types internes ont été ajoutés.  
@@ -45,10 +46,10 @@ HRESULT EmitInternalExportedTypes(
 ## <a name="return-value"></a>Valeur de retour  
  Retourne S_OK si la méthode réussit.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  Requiert alink.h  
   
 ## <a name="see-also"></a>Voir aussi  
- [IALink2 (Interface)](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Interface IALink](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [ALink (API)](../../../../docs/framework/unmanaged-api/alink/index.md)
+ [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

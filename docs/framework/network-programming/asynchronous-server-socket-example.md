@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: cf9889f53ca4b7079e762725d1f61eba4987e61e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 57922a9f0ca431a2e2f070f34670d6f7f6d76635
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="asynchronous-server-socket-example"></a>Exemple de sockets serveur asynchrones
 L’exemple de programme suivant crée un serveur qui reçoit des demandes de connexion de clients. Le serveur est créé avec un socket asynchrone. L’exécution de l’application serveur n’est pas suspendue pendant l’attente d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne reçue du client doit contenir la chaîne « \<EOF> » qui indique la fin du message.  
@@ -306,5 +307,5 @@ public class AsynchronousSocketListener {
   
 ## <a name="see-also"></a>Voir aussi  
  [Exemple de socket client asynchrone](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)  
- [Utilisation d’un Socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Utilisation d’un socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
  [Exemples de code de socket](../../../docs/framework/network-programming/socket-code-examples.md)

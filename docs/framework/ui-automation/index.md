@@ -15,11 +15,12 @@ caps.latest.revision: "80"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: efdd8624311ad6e3fe751d39d689e84663b4c61e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0a0e4499816bd6cd4e2703d28d615a8732a0524e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessibility"></a>Accessibilité
 > [!NOTE]
@@ -36,7 +37,7 @@ ms.lasthandoff: 10/18/2017
  [Clients UI Automation pour le code managé](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code.md)  
  [Modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)  
  [Modèle de texte UI Automation](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)  
- [UI Automation Control Types](../../../docs/framework/ui-automation/ui-automation-control-types.md)  
+ [Types de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-types.md)  
  [Spécification UI Automation et promesse de la communauté](../../../docs/framework/ui-automation/ui-automation-specification-and-community-promise.md)  
   
 ## <a name="related-sections"></a>Rubriques connexes  

@@ -12,11 +12,12 @@ caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 1b9769d4e3936e127407f68de81f9b5b5da4fbc0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f142c7aaa71ab2dbee1d2955f2c235a65e6c8bfa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pnrp-clouds"></a>Nuages PNRP
 Un « cloud » PNRP représente un ensemble de nœuds qui peuvent communiquer entre eux via le réseau. Le terme « cloud » est un synonyme de « maille d’homologue ».  

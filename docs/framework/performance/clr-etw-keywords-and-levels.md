@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7f5dcdd969619526c52a9ae44014030a9f0c6dc5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 72775d4cb478b6d9c9d2e65119c63f8a34ae47d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Niveaux et mots clés ETW du CLR
 <a name="top"></a> Les événements de suivi d'événements pour Windows (ETW) peuvent être filtrés par catégorie et par niveau. Les [Mots clés ETW du CLR](#keywords) d’événement permettent de filtrer les événements par catégorie. Ils sont utilisés sous forme de combinaisons pour les fournisseurs d’arrêt et de runtime. Les [niveaux d'événement](#levels) sont identifiés par des indicateurs.  
@@ -45,7 +46,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="clr-etw-runtime-keywords"></a>Mots clés de runtime ETW du CLR  
  Le tableau suivant répertorie les mots clés de runtime ETW du CLR, leurs valeurs et leur usage.  
   
-|Nom du mot clé de runtime|Valeur|Objectif|  
+|Nom du mot clé de runtime|Value|Objectif|  
 |--------------------------|-----------|-------------|  
 |`GCKeyword`|0x00000001|Active la collecte d' [événements de garbage collection](../../../docs/framework/performance/garbage-collection-etw-events.md).|  
 |`LoaderKeyword`|0x00000008|Active la collecte d’ [événements de chargeur](../../../docs/framework/performance/loader-etw-events.md).|  
@@ -70,7 +71,7 @@ ms.lasthandoff: 11/21/2017
 ### <a name="clr-etw-rundown-keywords"></a>Mots clés d’arrêt ETW du CLR  
  Le tableau suivant répertorie les mots clés d’arrêt ETW du CLR, leurs valeurs et leur usage.  
   
-|Nom du mot clé d’arrêt|Valeur|Objectif|  
+|Nom du mot clé d’arrêt|Value|Objectif|  
 |--------------------------|-----------|-------------|  
 |`LoaderRundownKeyword`|0x00000008|Active la collecte d’événements de chargeur quand il est utilisé avec `StartRundownKeyword` et `EndRundownKeyword`.|  
 |`JitRundownKeyword`|0x00000010|Active la collecte des événements `DCStart` et `DCEnd` de méthode pour les méthodes compilées juste-à-temps (JIT) quand il est utilisé avec `StartRundownKeyword` et `EndRundownKeyword`.|  
@@ -89,12 +90,12 @@ ms.lasthandoff: 11/21/2017
   
 |Mots clés et indicateurs|Domaine d'application, assembly, événements de chargement/déchargement de module|Événements de chargement/déchargement de méthode (sauf événements dynamiques)|Événements de chargement/destruction de méthode dynamique|  
 |------------------------|--------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------|  
-|`LoaderKeyword`|Événements de chargement et déchargement.|Aucun(e).|Aucun(e).|  
-|`JITKeyword`<br /><br /> (+ `StartEnumerationKeyword` n'ajoute rien)|Aucun(e).|Événements de chargement.|Événements de chargement et déchargement.|  
-|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucun(e).|Événements de chargement et déchargement.|Événements de chargement et déchargement.|  
-|`NGenKeyword`|Aucun(e).|Aucun(e).|Non applicable.|  
-|`NGenKeyword` +<br /><br /> `StartEnumerationKeyword`|Aucun(e).|Événements de chargement.|Non applicable.|  
-|`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucun(e).|Événements de déchargement.|Non applicable.|  
+|`LoaderKeyword`|Événements de chargement et déchargement.|Aucun.|Aucun.|  
+|`JITKeyword`<br /><br /> (+ `StartEnumerationKeyword` n'ajoute rien)|Aucun.|Événements de chargement.|Événements de chargement et déchargement.|  
+|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucun.|Événements de chargement et déchargement.|Événements de chargement et déchargement.|  
+|`NGenKeyword`|Aucun.|Aucun(e).|Non applicable.|  
+|`NGenKeyword` +<br /><br /> `StartEnumerationKeyword`|Aucun.|Événements de chargement.|Non applicable.|  
+|`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|Aucun.|Événements de déchargement.|Non applicable.|  
   
  [Retour au début](#top)  
   
@@ -103,12 +104,12 @@ ms.lasthandoff: 11/21/2017
   
 |Mots clés et indicateurs|Domaine d'application, assembly, événements DCStart/DCEnd de module|Événements DCStart/DCEnd de méthode (y compris les événements de méthode dynamique)|  
 |------------------------|----------------------------------------------------------------|----------------------------------------------------------------------|  
-|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|Événements`DCStart` .|Aucun(e).|  
-|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|Événements`DCEnd` .|Aucun(e).|  
-|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Aucun(e).|Événements`DCStart` .|  
-|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Aucun(e).|Événements`DCEnd` .|  
-|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Aucun(e).|Événements`DCStart` .|  
-|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Aucun(e).|Événements`DCEnd` .|  
+|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|Événements`DCStart` .|Aucun.|  
+|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|Événements`DCEnd` .|Aucun.|  
+|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Aucun.|Événements`DCStart` .|  
+|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Aucun.|Événements`DCEnd` .|  
+|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Aucun.|Événements`DCStart` .|  
+|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Aucun.|Événements`DCEnd` .|  
   
  [Retour au début](#top)  
   

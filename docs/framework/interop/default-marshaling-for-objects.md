@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c5bfafcad5f1f60e7e763b69f220188517d29f17
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 157b5648af4ef429a73fe71a924e15ad3973f7f5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="default-marshaling-for-objects"></a>Marshaling par défaut pour les objets
 Les paramètres et les champs de type <xref:System.Object?displayProperty=nameWithType> peuvent être exposés à un code non managé sous la forme de l’un des types suivants :  
@@ -152,7 +153,7 @@ struct ObjectHolder {
 ### <a name="marshaling-system-types-to-variant"></a>Marshaling de types système vers des variants  
  Le tableau suivant montre les types d’objets managés et leurs types variant COM correspondants. Ces types sont convertis uniquement quand la signature de la méthode appelée est de type <xref:System.Object?displayProperty=nameWithType>.  
   
-|de type Object|Type variant COM|  
+|Type d'objet|Type variant COM|  
 |-----------------|----------------------|  
 |Référence d’objet null (**Nothing** en Visual Basic).|**VT_EMPTY**|  
 |<xref:System.DBNull?displayProperty=nameWithType>|**VT_NULL**|  
@@ -254,12 +255,12 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
 |**TypeCode.Decimal**|**VT_DECIMAL**|  
 |**TypeCode.DateTime**|**VT_DATE**|  
 |**TypeCode.String**|**VT_BSTR**|  
-|Non prise en charge.|**VT_INT**|  
-|Non prise en charge.|**VT_UINT**|  
-|Non prise en charge.|**VT_ARRAY**|  
-|Non prise en charge.|**VT_RECORD**|  
-|Non prise en charge.|**VT_CY**|  
-|Non prise en charge.|**VT_VARIANT**|  
+|Non pris en charge.|**VT_INT**|  
+|Non pris en charge.|**VT_UINT**|  
+|Non pris en charge.|**VT_ARRAY**|  
+|Non pris en charge.|**VT_RECORD**|  
+|Non pris en charge.|**VT_CY**|  
+|Non pris en charge.|**VT_VARIANT**|  
   
  La valeur du variant COM est déterminée en appelant l’interface **IConvertible.To** *Type*, où **To** *Type* est la routine de conversion qui correspond au type retourné par **IConvertible.GetTypeCode**. Par exemple, un objet qui retourne **TypeCode.Double** depuis **IConvertible.GetTypeCode** est marshalé en tant que variant COM de type **VT_R8**. Vous pouvez obtenir la valeur du variant (stockée dans le champ **dblVal** du variant COM) en effectuant un cast en une interface **IConvertible** et en appelant la méthode <xref:System.IConvertible.ToDouble%2A>.  
   
@@ -293,7 +294,7 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
 |**VT_ARRAY** &#124; **VT_\***|<xref:System.Array?displayProperty=nameWithType>|  
 |**VT_CY**|<xref:System.Decimal?displayProperty=nameWithType>|  
 |**VT_RECORD**|Type valeur boxed correspondant.|  
-|**VT_VARIANT**|Non prise en charge.|  
+|**VT_VARIANT**|Non pris en charge.|  
   
  Les types variant passés à partir de COM vers le code managé, puis repassés à COM peuvent ne pas conserver le même type variant durant la durée de l’appel. Envisagez ce qui se passe quand un variant de type **VT_DISPATCH** est passé à partir de COM vers le .NET Framework. Lors du marshaling, le variant est converti en <xref:System.Object?displayProperty=nameWithType>. Si **Object** est ensuite repassé à COM, il est remarshalé vers un variant de type **VT_UNKNOWN**. Rien ne garantit que le variant produit quand un objet est marshalé à partir de code managé vers COM sera du même type que le variant utilisé à l’origine pour produire l’objet.  
   
@@ -329,7 +330,7 @@ Variants passés par valeur et par référence
   
  Le tableau suivant résume les règles de propagation pour les variants et les objets.  
   
-|De|Pour|Changements retournés|  
+|From|À|Changements retournés|  
 |----------|--------|-----------------------------|  
 |**Variant**  *v*|**Object**  *o*|Never|  
 |**Object**  *o*|**Variant**  *v*|Never|  

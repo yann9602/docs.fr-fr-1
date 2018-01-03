@@ -16,11 +16,12 @@ caps.latest.revision: "34"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 057aed4012a884ea13806a4d1174d53dd27ab609
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e675681d1de3aa46645047da61ae8aac2ea0ba31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Vue d’ensemble des modèles de contrôle UI Automation
 > [!NOTE]
@@ -83,8 +84,8 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|Expose des informations spécifiques aux fenêtres, un concept fondamental du système d’exploitation [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] . Les fenêtres d’application de niveau supérieur ([!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)], [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)], etc.), les fenêtres enfants d’ [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] et les boîtes de dialogue sont des exemples de contrôles qui sont en fait des fenêtres.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Modèles de contrôle UI Automation pour les Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [Mappage de modèle de contrôle pour les Clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
- [Vue d’ensemble UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)  
- [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
- [Événements UI Automation pour les Clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)
+ [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [Mappage de modèle de contrôle pour les clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
+ [Vue d’ensemble d’UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)  
+ [Propriétés UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
+ [Événements UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: c2f03065ee6f1292f72a33a72b1d43b1fed0c8f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 76d9b8fab965523852adafb6b7d858c34e72d408
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sql-server-schema-collections"></a>Collections de schémas SQL Server
 Le fournisseur de données Microsoft .NET Framework pour SQL Server prend en charge d’autres collections de schémas en plus des collections de schémas courantes. Les collections de schémas varient légèrement selon la version de SQL Server que vous utilisez. Pour déterminer la liste des collections de schémas prises en charge, appelez le **GetSchema** méthode sans argument ou avec le nom de collection de schémas « MetaDataCollections ». Cette opération retourne un <xref:System.Data.DataTable> avec une liste des collections de schémas prises en charge, le nombre de restrictions qu'elles prennent en charge et le nombre d'éléments d'identification qu'elles utilisent.  
@@ -258,13 +259,13 @@ Le fournisseur de données Microsoft .NET Framework pour SQL Server prend en cha
 |version_minor|Objet|Numéro de version secondaire.|  
 |version_build|Objet|Numéro de build.|  
 |version_revision|Objet|Numéro de révision.|  
-|culture_info|Objet|Informations de culture associées à cet UDT.|  
-|public_key|Objet|Clé publique utilisée par cet assembly.|  
+|culture_info|Object|Informations de culture associées à cet UDT.|  
+|public_key|Object|Clé publique utilisée par cet assembly.|  
 |is_fixed_length|Booléen|Indique si la longueur du type est toujours identique à max_length.|  
 |max_length|Int16|Longueur maximale du type en octets.|  
 |Create_Date|DateTime|Date à laquelle l'assembly a été créé/enregistré.|  
 |Permission_set_desc|Chaîne|Nom convivial de l'ensemble d'autorisations/niveau de sécurité pour l'assembly.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [La récupération des informations de schéma de base de données](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [Récupération des informations de schéma de base de données](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

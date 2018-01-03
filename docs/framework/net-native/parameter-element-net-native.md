@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f603f795682c7ea1f48e5d9356af6e0477246da1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 820c36abda104bbf748e5b3a7838f3c7715048e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltparametergt-element-net-native"></a>&lt;Parameter&gt;, élément (.NET Native)
 Applique la stratégie de réflexion au type de l’argument passé à une méthode.  
@@ -78,7 +79,7 @@ Applique la stratégie de réflexion au type de l’argument passé à une méth
 |-------------|-----------------|  
 |[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’élément `<Parameter>` est un enfant de l’élément [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) et est utilisé pour appliquer la stratégie à un paramètre de méthode particulier. Le paramètre de méthode spécifique est défini par le nom plutôt que par le type. Au moins un attribut qui représente un type de stratégie, tel que `Activate` ou `Dynamic`, doit être présent.  
   
 ## <a name="see-also"></a>Voir aussi  

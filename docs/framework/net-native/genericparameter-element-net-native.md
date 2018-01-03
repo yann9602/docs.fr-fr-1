@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c682c75d4be78e9219a32e2a92520e9f9bfff823
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 601118d2dcc42f9e35da0e24c782b218efd7a025
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltgenericparametergt-element-net-native"></a>&lt;GenericParameter&gt;, élément (.NET Native)
 Applique la stratégie au type de paramètre d'un type ou d'une méthode générique.  
@@ -79,7 +80,7 @@ Applique la stratégie au type de paramètre d'un type ou d'une méthode génér
 |[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Applique une stratégie de réflexion runtime à un constructeur ou à une méthode.|  
 |[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie de réflexion runtime à un type particulier, tel qu'une classe ou une structure.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’élément `<GenericParameter>` est un enfant de l’élément [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) ou [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) et permet d’appliquer la stratégie à un paramètre de type générique particulier, qui est spécifié par son nom dans la signature de type ou de méthode générique.  
   
  L'élément `<GenericParameter>` est particulièrement utile quand il est employé avec des sérialiseurs. L’exemple suivant utilise l’élément `<GenericParameter>` pour appliquer la stratégie au type `T` dans les appels aux surcharges de méthode [JsonConvert.DeserializeObject\<T>(String)](http://james.newtonking.com/json/help/index.html?topic=html/T_Newtonsoft_Json_JsonConvert.htm) du sérialiseur JSON Newtonsoft.  

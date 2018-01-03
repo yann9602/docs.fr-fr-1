@@ -21,11 +21,12 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a102e9601f751ee8c7e325293e83467b1314ff41
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 54a5afd8ee42fa122f3e18415be0b1d06c2f9302
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="createalink-function"></a>CreateALink, fonction
 Crée une instance de l’utilitaire Assembly Linker et définit un pointeur vers l’interface spécifiée.  
@@ -46,7 +47,7 @@ HRESULT CreateALink (
 |`riid`|Le nom physique d’une des interfaces Assembly Linker.|  
 |`ppInterface`|L’emplacement de réussite contient un pointeur vers le `riid` interface.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Bibliothèque**: alink.dll  
   
 ## <a name="see-also"></a>Voir aussi  

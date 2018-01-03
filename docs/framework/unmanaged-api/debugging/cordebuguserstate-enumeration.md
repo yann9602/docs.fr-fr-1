@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 95240dfea92a4ebbf2c7b9c11b7376d912c40fe5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 57fd9df27b1911c90bd11712b67e6e64588c2b5f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebuguserstate-enumeration"></a>CorDebugUserState, énumération
 Indique l'état de l'utilisateur d'un thread.  
@@ -46,7 +47,7 @@ typedef enum CorDebugUserState {
   
 ## <a name="members"></a>Membres  
   
-|Valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`USER_STOP_REQUESTED`|Un arrêt du thread a été demandé.|  
 |`USER_SUSPEND_REQUESTED`|Une suspension du thread a été demandée.|  
@@ -58,12 +59,12 @@ typedef enum CorDebugUserState {
 |`USER_UNSAFE_POINT`|Le thread est à un point non sécurisé. Autrement dit, le thread est à un point d’exécution où il peut bloquer le garbage collection.<br /><br /> Déboguer les événements peuvent être distribués à partir de points non sécurisés, mais la suspension d’un thread à un point non sécurisé est très susceptible de provoquer un blocage jusqu'à ce que le thread est repris. Les points sécurisés et sont déterminés par le juste-à-temps (JIT) et l’implémentation de garbage collection.|  
 |`USER_THREADPOOL`|Le thread est dans le pool de threads.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’état utilisateur d’un thread est l’état que le thread a lorsque le débogueur l’examine. Un thread peut avoir une combinaison d’états utilisateur.  
   
  Utilisez le [ICorDebugThread::GetUserState](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) méthode pour récupérer l’état utilisateur d’un thread.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

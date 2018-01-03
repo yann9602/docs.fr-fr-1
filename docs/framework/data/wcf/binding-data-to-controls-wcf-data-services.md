@@ -20,11 +20,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ca580801e6bb8786071ec705d4a86d367b02f622
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a4f6c4d7fb657cf091c5637f110d115059055c42
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Liaison des données aux contrôles (services de données WCF)
 Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez lier des contrôles tels que les contrôles `ComboBox` et `ListView` à une instance de la classe <xref:System.Data.Services.Client.DataServiceCollection%601>. Cette collection, qui hérite de la classe <xref:System.Collections.ObjectModel.ObservableCollection%601>, contient les données d'un flux [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Cette classe représente une collection de données dynamique qui fournit des notifications lorsque des éléments sont ajoutés ou supprimés. Lorsque vous utilisez une instance de <xref:System.Data.Services.Client.DataServiceCollection%601> pour la liaison de données, le [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] les bibliothèques clientes gèrent ces événements pour vous assurer que les objets suivis par le <xref:System.Data.Services.Client.DataServiceContext> restent synchronisés avec les données dans l’élément d’interface utilisateur relié.  
@@ -124,5 +125,5 @@ Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez li
  Pour plus d’informations, consultez [mise à jour du Service de données](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : générer manuellement des Classes de Service de données Client](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md)  
- [Comment : ajouter une référence de Service de données](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)
+ [Guide pratique pour générer manuellement les classes de services de données client](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md)  
+ [Guide pratique pour ajouter une référence de services de données](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)

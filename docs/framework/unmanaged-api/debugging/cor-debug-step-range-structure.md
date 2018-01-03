@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4a696b69cf08d15ecd39a87920ecaa1934c00578
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 27b1b7b26ea788683f9b322306c55a4b3945f342
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugsteprange-structure"></a>COR_DEBUG_STEP_RANGE, structure
 Contient les informations de décalage pour une plage de code.  
@@ -46,7 +47,7 @@ typedef struct {
 |`startOffset`|Le décalage du début de la plage.|  
 |`endOffset`|Le décalage de la fin de la plage.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl  
@@ -56,6 +57,6 @@ typedef struct {
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [StepRange (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)  
+ [StepRange, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)  
  [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)

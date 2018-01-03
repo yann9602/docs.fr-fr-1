@@ -15,11 +15,12 @@ caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: dc9f8f4e958d1988cecd769431e99d70ff2a4cfd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 970b428343f4e2dec73e7eceec20414cd8bdfbac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-override-a-global-proxy-selection"></a>Comment : remplacer une sélection de proxy global
 Cet exemple envoie une **WebRequest** à www.contoso.com qui substitue la sélection de proxy global avec un serveur proxy nommé `alternateproxy` sur le port 80.  

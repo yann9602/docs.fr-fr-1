@@ -39,11 +39,12 @@ caps.latest.revision: "63"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e23de3ea6e9693c05aa81da056ac7763bced8e9a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 12a96068412f05d48b8b006385c66f3efbbf9870
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="diagnosing-errors-with-managed-debugging-assistants"></a>Diagnostic d'erreurs avec les Assistants de débogage managés
 Les Assistants Débogage managé sont des aides au débogage qui fonctionnent conjointement avec le Common Language Runtime (CLR) pour fournir des informations sur l'état d'exécution. Les Assistants génèrent des messages d'information sur les événements du runtime que vous ne pouvez pas intercepter en temps normal. Vous pouvez utiliser les Assistants Débogage managé pour isoler les bogues d'application difficiles à déceler qui se produisent pendant les phases de transition entre un code managé et un code non managé. Vous pouvez activer ou désactiver tous les Assistants Débogage managé en ajoutant une clé au Registre Windows ou en définissant une variable d'environnement. Vous pouvez activer des Assistants Débogage managé spécifiques à l'aide de paramètres de configuration d'application. Vous pouvez définir des paramètres de configuration supplémentaires pour certains Assistants Débogage managé dans le fichier de configuration de l'application. Comme ces fichiers de configuration sont analysés au chargement du runtime, vous devez activer l'Assistant Débogage managé avant que l'application managée ne démarre. Vous ne pouvez pas l'activer pour les applications qui ont déjà démarré.  

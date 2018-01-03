@@ -18,11 +18,12 @@ caps.latest.revision: "60"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 8fc62b22673c732d1cb5f698916960dc1edcc192
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f6320bb23420ffcaf736aafabcb5fde38061febd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-providers-for-managed-code-how-to-topics"></a>Rubriques "Comment" relatives aux fournisseurs UI Automation pour le code managé
 > [!NOTE]
@@ -31,10 +32,10 @@ ms.lasthandoff: 10/18/2017
  Cette section contient des exemples de code qui montrent comment effectuer les tâches dans l’écriture [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] fournisseurs pour [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] éléments.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Exposer un fournisseur côté serveur UI Automation](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
+ [Exposer un fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
  [Retourner les propriétés d’un fournisseur UI Automation](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
  [Déclencher des événements à partir d’un fournisseur UI Automation](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
- [Activer la Navigation dans un fournisseur de Fragment UI Automation](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
- [Prise en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [Créer un fournisseur côté Client UI Automation](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
- [Implémenter des fournisseurs UI Automation dans une Application cliente](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+ [Activer la navigation dans un fournisseur de fragment UI Automation](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
+ [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [Créer un fournisseur UI Automation côté client](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
+ [Implémenter des fournisseurs UI Automation dans une application cliente](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)

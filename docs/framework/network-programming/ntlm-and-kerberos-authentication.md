@@ -29,11 +29,12 @@ caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 36e88b163ab857180a02278828dba7dcec457736
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c1662e5b0f8afd4ef92d2893a11c25457dbce024
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ntlm-and-kerberos-authentication"></a>Authentification NTLM et Kerberos
 Par défaut, l’authentification NTLM et l’authentification Kerberos utilisent les informations d’identification utilisateur de Microsoft Windows NT qui sont associées à l’application appelante pour tenter l’authentification auprès du serveur. Lorsque vous utilisez l’authentification NTLM qui n’est pas celle par défaut, l’application définit le type d’authentification sur NTLM et utilise un objet <xref:System.Net.NetworkCredential> pour passer le nom d’utilisateur, le mot de passe et le domaine à l’hôte, comme indiqué dans l’exemple suivant.  
@@ -72,5 +73,5 @@ WReq.Credentials = CredentialCache.DefaultCredentials;
 >  L’authentification NTLM ne fonctionne pas via un serveur proxy.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Base et authentification Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
+ [Authentification de base et authentification Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
  [Authentification Internet](../../../docs/framework/network-programming/internet-authentication.md)

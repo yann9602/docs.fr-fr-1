@@ -15,11 +15,12 @@ caps.latest.revision: "54"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 57fd183b042779d06274573db7b4569dbe6a54d0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c87034827d0295578f9a7efe134d158291f87713
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-fundamentals"></a>Notions de base d'UI Automation
 > [!NOTE]
@@ -28,14 +29,14 @@ ms.lasthandoff: 10/18/2017
  Cette section contient des vues d’ensemble de haut niveau de la [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)  
+ [Vue d’ensemble d’UI Automation](../../../docs/framework/ui-automation/ui-automation-overview.md)  
  [UI Automation et Microsoft Active Accessibility](../../../docs/framework/ui-automation/ui-automation-and-microsoft-active-accessibility.md)  
- [Vue d’ensemble d’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [Vue d’ensemble du modèles contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [Vue d’ensemble des propriétés UI Automation](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
  [Vue d’ensemble des événements UI Automation](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
  [Vue d’ensemble de la sécurité UI Automation](../../../docs/framework/ui-automation/ui-automation-security-overview.md)  
- [À l’aide d’UI Automation pour les tests automatisés](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
+ [Utilisation d’UI Automation pour des tests automatisés](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Automation>  

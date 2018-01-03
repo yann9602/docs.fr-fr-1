@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7879a600ec0ecfebc96b18476121f2ad205ece8f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d8ca19a5a49815130103672f43452ebbfedfae3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Utilisation d'actions pour implémenter le comportement côté serveur
 Les actions OData permettent d'implémenter un comportement qui agit sur une ressource extraite d'un service OData.  Par exemple, prenez un film numérique comme ressource. Vous pouvez effectuer plusieurs opérations avec celui-ci : extraction, évaluation/commentaire ou archivage. Ce sont des exemples d'actions pouvant être implémentées par un service de données WCF qui gère les films numériques. Les actions sont écrites dans une réponse OData qui contient une ressource sur laquelle l'action peut être appelée. Lorsqu'un utilisateur demande une ressource qui représente un film numérique, la réponse retournée par le service de données WCF contient des informations sur les actions disponibles pour cette ressource. La disponibilité d'une action dépend de l'état du service de données ou de la ressource. Par exemple, une fois qu'un film numérique est extrait, il ne peut pas être extrait par un autre utilisateur. Les clients peuvent appeler une action en indiquant simplement une URL. Par exemple, http://MyServer/MovieService.svc/Movies(6) identifie un film numérique spécifique et http://MyServer/MovieService.svc/Movies(6)/Checkout appelle l'action sur le film spécifié. Les actions vous permettent d'exposer votre modèle de service sans exposer votre modèle de données. Poursuivons avec l'exemple de service de film, vous pouvez autoriser un utilisateur à évaluer un film, mais pas à exposer directement les données d'évaluation en tant que ressource. Vous pouvez implémenter une action d'évaluation pour autoriser l'utilisateur à évaluer un film, sans accéder directement aux données d'évaluation en tant que ressource.  
@@ -92,5 +93,5 @@ MoviesModel context = new MoviesModel (new Uri("http://MyServer/MoviesService.sv
 ## <a name="see-also"></a>Voir aussi  
  [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)  
  [Définition de WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
- [Développement et le déploiement des Services de données WCF](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)  
- [Fournisseurs de services de données personnalisé](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)
+ [Développement et déploiement de WCF Data Services](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)  
+ [Fournisseurs de services de données personnalisés](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)

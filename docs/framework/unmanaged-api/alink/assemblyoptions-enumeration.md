@@ -21,11 +21,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ccbbcabd3fbb372322ca6334f6ab6db4fdafc2f1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6ad4f9e02ed0d22009fcb8a5ac078231f2cb22e3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblyoptions-enumeration"></a>Énumération AssemblyOptions
 Énumère les options de l’assembly.  
@@ -82,7 +83,7 @@ typedef enum _AssemblyOptions {
 |optAssemSatelliteVer|Chaîne - encodée sous la forme « Major.Minor.Build.Revision ».|  
 |optLastAssemOption|Un compteur du nombre d’éléments.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **En-tête :** alink.h  
   
  **Bibliothèque**: alink.dll  

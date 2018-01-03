@@ -19,11 +19,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7fa76c5672b4117c446aca145b7cf98dae7801d4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e8819e8127d16b83d531dc6bdcd3af88245c695e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hébergement du service de données (services de données WCF)
 À l’aide de [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez créer un service qui expose des données en tant qu’un [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] de flux. Ce service de données est défini comme une classe qui hérite de <xref:System.Data.Services.DataService%601>. Cette classe fournit la fonctionnalité requise pour traiter les messages de demande, effectuer des mises à jour par rapport à la source de données et générer des messages de réponses, comme requis par [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Toutefois, un service de données ne peut pas lier à et écouter sur un socket de réseau pour les requêtes HTTP entrantes. Pour ces fonctionnalités requises, le service de données s'appuie sur un composant d'hébergement.  
@@ -84,5 +85,5 @@ ms.lasthandoff: 12/02/2017
   
 ## <a name="see-also"></a>Voir aussi  
  [Définition de WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
- [Exposition de vos données en tant que Service](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
- [Configuration du Service de données](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)
+ [Exposition de vos données comme service](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
+ [Configuration du service de données](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)

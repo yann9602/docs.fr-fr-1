@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 807452326193d193f3bc603ebc7b74a5a0f1c281
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cf48153454fbb2c24dc3f1cfe1f82deefa4ee723
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setmanifestfile-method"></a>SetManifestFile, méthode
 Vous permet de spécifier ou de réinitialiser le fichier manifeste par l’éditeur de liens lorsqu’il crée l’assembly.  
@@ -44,14 +45,14 @@ HRESULT SetManifestFile(
 ## <a name="return-value"></a>Valeur de retour  
  Retourne S_OK si la méthode réussit.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Appelez cela avant de demander le Win32ResBlob. La valeur de le `pszFile` paramètre est le nom du fichier manifeste dont le contenu est lu et mis dans les ressources Win32 avec l’ID de RT_MANIFEST. Lorsqu’elle est appelée à l’aide d’un paramètre de valeur NULL, tout manifeste lu précédemment est désactivée. Cela permet de réinitialiser l’état de l’éditeur de liens à celui de la durée d’initialisation.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  Requiert aLink.h  
   
 ## <a name="see-also"></a>Voir aussi  
- [IALink3 (Interface)](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
- [ALink (API)](../../../../docs/framework/unmanaged-api/alink/index.md)  
- [Interface IALink](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink3, interface](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
+ [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)  
+ [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [Al.exe (Assembly Linker)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

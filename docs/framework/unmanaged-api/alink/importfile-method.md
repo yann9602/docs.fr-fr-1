@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 46830699ba43c406da313653e1910e8f7a18a2ae
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b5d4f93336fe19210086c39b8db6d167b3caa222
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="importfile-method"></a>ImportFile, méthode
 Importe les assemblys et modules indépendants.  
@@ -63,10 +64,10 @@ HRESULT ImportFile(
 ## <a name="return-value"></a>Valeur de retour  
  Retourne S_OK si la méthode réussit.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  Requiert alink.h  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interface IALink](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 (Interface)](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [ALink (API)](../../../../docs/framework/unmanaged-api/alink/index.md)
+ [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

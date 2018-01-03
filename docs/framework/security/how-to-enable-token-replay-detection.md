@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: cde32407f072f3d29af4a8d1aae559e46057ae3a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a7c72d77b4894376fb6cb8aed2d1c6641a3977da
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-token-replay-detection"></a>Guide pratique pour activer la détection de relecture de jetons
 ## <a name="applies-to"></a>S'applique à  
@@ -26,7 +27,7 @@ ms.lasthandoff: 10/18/2017
   
 -   Web Forms ASP.NET®  
   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  Cette procédure fournit des procédures pas à pas détaillées pour l’activation de la détection de relecture de jetons dans une application ASP.NET qui utilise WIF. Elle fournit également des instructions pour tester l’application afin de vérifier que la détection de relecture de jetons est activée. Cette procédure ne fournit pas d'instructions détaillées pour créer un service d'émission de jeton de sécurité (STS, Security Token Service), et utilise à la place le développement STS fourni avec l'outil Identité et accès. Le développement STS n'exécute de véritable authentification et est destiné à des fins de test uniquement. Vous devez installer l'outil Identité et accès pour exécuter cette procédure. Il peut être téléchargé à partir de l’emplacement suivant : [Identity and Access Tool](http://go.microsoft.com/fwlink/?LinkID=245849)  
   
 ## <a name="contents"></a>Sommaire  
@@ -61,7 +62,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application-and-enable-replay-detection"></a>Étape 1 : créer une simple application Web Forms ASP.NET et activer la détection de relecture  
  Dans cette étape, vous allez créer une application Web Forms ASP.NET et modifier le fichier *Web.config* pour activer la détection de relecture.  
   
-#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une simple application ASP.NET  
+#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une application ASP.NET simple  
   
 1.  Démarrez Visual Studio et cliquez sur **Fichier**, **Nouveau**, puis **Projet**.  
   

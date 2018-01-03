@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1643e5d645ec6c3ae35b2e57b8cb4f4bcb048379
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ebdee4427bd0848e75e58443fefd439acaa27f64
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loader-etw-events"></a>Événements ETW de chargeur
 <a name="top"></a> Ces événements collectent des informations relatives au chargement et déchargement des domaines d'application, des assemblys et des modules.  
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="application-domain-events"></a>Événements de domaine d'application  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Événement|Niveau|  
+|Mot clé pour déclencher l'événement|événement|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AppDomainLoad_V1` et `AppDomainUnLoad_V1`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informatif (4)|  
@@ -74,7 +75,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="clr-loader-assembly-events"></a>Événements d'assembly de chargeur du CLR  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Événement|Niveau|  
+|Mot clé pour déclencher l'événement|événement|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AssemblyLoad` et `AssemblyUnload`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informatif (4)|  
@@ -106,7 +107,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="module-events"></a>Événements de module  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Événement|Niveau|  
+|Mot clé pour déclencher l'événement|événement|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`ModuleLoad_V2` et `ModuleUnload_V2`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informatif (4)|  
@@ -154,7 +155,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="clr-domain-module-events"></a>Événements de module de domaine du CLR  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Événement|Niveau|  
+|Mot clé pour déclencher l'événement|événement|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informatif (4)|  
@@ -187,7 +188,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="module-range-events"></a>Événements de plage de module  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Événement|Niveau|  
+|Mot clé pour déclencher l'événement|événement|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`PerfTrackKeyWord`)|`ModuleRange`|Informatif (4)|  
 |`PerfTrackKeyWord`|`ModuleRangeDCStart`|Informatif (4)|  

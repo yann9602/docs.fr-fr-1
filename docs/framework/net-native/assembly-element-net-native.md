@@ -13,11 +13,12 @@ caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 073a526e72f46864b2e08d33ec14a53034c144b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a34e49e4d11f442f15db2f06b330b8b84a165a08
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltassemblygt-element-net-native"></a>&lt;Assembly&gt;, élément (.NET Native)
 Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.  
@@ -84,7 +85,7 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
 |[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) peut avoir zéro, un ou plusieurs éléments `<Assembly>`.|  
 |[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) peut avoir zéro ou un élément `<Assembly>`.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) qui spécifie une bibliothèque, mais définit la stratégie de réflexion runtime en fonction de ses éléments enfants. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
   
  L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L’élément `<Assembly>` doit être un enfant de l’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md).  

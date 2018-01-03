@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6d739eaf73ff8336e74130d7176697229fdffd12
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a09419c208d4ac754eb48da0c8d1b5d93386eb3d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contention-etw-events"></a>Événements ETW de conflit
 Les événements de conflit sont déclenchés chaque fois qu’il existe un conflit sur les verrous <xref:System.Threading.Monitor?displayProperty=nameWithType> ou les verrous natifs utilisés par le runtime. Le conflit se produit quand un thread attend un verrou alors qu’un autre thread possède ce verrou.  
@@ -33,7 +34,7 @@ Les événements de conflit sont déclenchés chaque fois qu’il existe un conf
   
  Le tableau suivant affiche des informations sur les événements.  
   
-|Événement|ID d'événement|Moment du déclenchement|  
+|événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`ContentionStart_V1`|81|Le conflit démarre. Cet événement n’inclut pas le temps qui s’écoule avant qu’un thread ne commence à attendre l’acquisition d’un verrou. Il est déclenché uniquement quand l’attente commence.|  
 |`ContentionStop`|81|Le conflit se termine.|  

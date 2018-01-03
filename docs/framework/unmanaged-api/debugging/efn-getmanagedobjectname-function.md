@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 80e36f6c60c4c305cad9176cd7f185d8b6d2fdf2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c29aa82143c34a229cee0a5b000657c9add22bd4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="efngetmanagedobjectname-function"></a>_EFN_GetManagedObjectName, fonction
 Obtient le nom d’un type à l’aide du pointeur d’objet managé fourni.  
@@ -52,10 +53,10 @@ HRESULT _EFN_GetManagedObjectName(
  `cbName`  
  [out] Le nombre de caractères disponibles dans la mémoire tampon de chaîne.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  S’il n’existe aucun code managé sur le thread actuellement dans le contexte, la fonction retourne les HRESULT SOS_E_NOMANAGEDCODE avec une valeur d’environnement 0xa0 et un code d’erreur de 0 x 1000.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** SOS_Stacktrace.h  

@@ -17,11 +17,12 @@ caps.latest.revision: "31"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: d42952328f70fec32b4a2cb58733785b3c1d97ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1d40bc94887df604577c025181ae7f5f2776cdc1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="implementing-the-ui-automation-invoke-control-pattern"></a>Implémentation du modèle de contrôle Invoke d’UI Automation
 > [!NOTE]
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et recommandations en matière d'implémentation  
- Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et recommandations suivantes :  
+ Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et recommandations suivantes :  
   
 -   Les contrôles implémentent <xref:System.Windows.Automation.Provider.IInvokeProvider> si le même comportement n’est pas exposé par le biais d’un autre fournisseur de modèle de contrôle. Par exemple, si la méthode <xref:System.Windows.Automation.InvokePattern.Invoke%2A> exécute, sur un contrôle, la même action que la méthode <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> ou <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> , le contrôle ne doit pas implémenter <xref:System.Windows.Automation.Provider.IInvokeProvider>.  
   
@@ -64,7 +65,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="required-members-for-iinvokeprovider"></a>Membres requis pour IInvokeProvider  
  Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.IInvokeProvider>.  
   
-|Membres requis|Type de membre|Remarques|  
+|Membres requis|Type de membre|Notes|  
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|méthode|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> est un appel asynchrone et doit retourner immédiatement une valeur sans se bloquer.<br /><br /> Ce comportement est particulièrement critique pour les contrôles qui, directement ou indirectement, lancent une boîte de dialogue modale lorsqu’ils sont appelés. Tout client UI Automation à l’origine de l’événement reste bloqué jusqu’à la fermeture de la boîte de dialogue modale.|  
   
@@ -77,9 +78,9 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Automation.ElementNotEnabledException>|Si le contrôle n’est pas activé.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble du modèles contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
- [Prise en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [Modèles de contrôle UI Automation pour les Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
  [Appeler un contrôle à l’aide d’UI Automation](../../../docs/framework/ui-automation/invoke-a-control-using-ui-automation.md)  
- [Vue d’ensemble d’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
  [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

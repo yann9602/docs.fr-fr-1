@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50d523fdd0498aef7e662af5f4dc41b2394dcf42
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c993a4f09a7187b45331f6beb71a9637da87d20f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>Gérer le contexte du service de données (WCF Data Services)
 La classe <xref:System.Data.Services.Client.DataServiceContext> encapsule des opérations prises en charge sur un service de données spécifié. Même si les services [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] sont sans état, ce n'est pas le cas du contexte. Par conséquent, vous pouvez utiliser la <xref:System.Data.Services.Client.DataServiceContext> classe pour gérer l’état sur le client entre des interactions avec le service de données pour prendre en charge des fonctionnalités telles que la gestion des modifications. Cette classe gère également des identités et suit les modifications.  
@@ -48,6 +49,6 @@ La classe <xref:System.Data.Services.Client.DataServiceContext> encapsule des op
   
 ## <a name="see-also"></a>Voir aussi  
  [Bibliothèque cliente WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
- [Mise à jour du Service de données](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
+ [Mise à jour du service de données](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
  [Opérations asynchrones](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
- [Opérations de traitement par lot](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)
+ [Opérations de traitement par lots](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)

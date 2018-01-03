@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 38c3d10eaefe4608084a5e5f6ad417446200799b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6f85dabc8a447db13173a672db37b327ba4a9fe6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimisation à l'aide de la validation à phase unique et de la notification de phase unique pouvant être promue
 Cette rubrique décrit les mécanismes fournis par l'infrastructure <xref:System.Transactions> pour l'optimisation des performances.  
@@ -70,5 +71,5 @@ Cette rubrique décrit les mécanismes fournis par l'infrastructure <xref:System
  S'il n'y a qu'une inscription volatile et aucune inscription durable, l'inscription volatile reçoit la notification SPC.  S’il existe des inscriptions volatiles et qu’une inscription durable, les inscriptions volatiles reçoivent 2PC. Une fois terminée, l'inscription durable reçoit la notification SPC.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Inscription des ressources en tant que Participants dans une Transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
- [Valide la Transaction en une seule phase et à plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)
+ [Inscription de ressources comme participants à une transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
+ [Validation d’une transaction en une phase unique et en plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)

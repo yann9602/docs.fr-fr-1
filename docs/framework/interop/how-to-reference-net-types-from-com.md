@@ -22,11 +22,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f58225e41d7e09471685395dd6e2194ee5de123c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3c6427254aeec1a9e272579665fcd9893daa2316
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-reference-net-types-from-com"></a>Comment : référencer des types .NET à partir de COM
 Du point de vue du code client et serveur, les différences entre COM et le .NET Framework sont largement invisibles. Les clients Microsoft Visual Basic peuvent afficher un objet .NET dans l’Explorateur d’objets, qui expose la syntaxe et les méthodes de l’objet, les propriétés et les champs exactement comme s’il s’agissait de tout autre objet COM.  
@@ -41,7 +42,7 @@ Du point de vue du code client et serveur, les différences entre COM et le .NET
     #import "..\LoanLib\LoanLib.tlb" raw_interfaces_only  
     ```  
   
-     ou  
+     - ou -  
   
 -   Ajoutez une directive #import pour Mscorlib.tlb. Exemple :  
   

@@ -20,11 +20,12 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e4c829f4a74c3d2e84a070dfbe5d35d89b1b7ae6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ecdadc96c0fb850fef13ba978fc97eef91dadd65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordebugguidtotypemapping-structure"></a>CorDebugGuidToTypeMapping, structure
 Mappe un [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID à son objet ICorDebugType correspondant.  
@@ -45,7 +46,7 @@ typedef struct CorDebugGuidToTypeMapping {
 |`iid`|Le GUID de la mise en cache [!INCLUDE[wrt](../../../../includes/wrt-md.md)] type.|  
 |`pType`|Pointeur vers un objet ICorDebugType qui fournit des informations sur le type de mise en cache.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** [!INCLUDE[wrt](../../../../includes/wrt-md.md)].  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

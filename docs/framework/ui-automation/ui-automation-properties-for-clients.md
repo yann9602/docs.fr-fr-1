@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 0c9a007d88189172e6331c6876f2a18f341cd5cc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fdd748da4bb414726e2eae88dcab59cf60259a13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-properties-for-clients"></a>Propriétés UI Automation pour les clients
 > [!NOTE]
@@ -114,6 +115,6 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Automation.AutomationElement.RootElement%2A>|(Propriété statique) <xref:System.Windows.Automation.AutomationElement>racine.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Mise en cache dans les Clients UI Automation](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
+ [Mise en cache dans les clients UI Automation](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
  [Implémentation de fournisseur UI Automation côté serveur](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
  [S’abonner à des événements UI Automation](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)

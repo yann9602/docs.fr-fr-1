@@ -13,11 +13,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 014dc690d034c27f0f004172fb8108249bb5c89b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ed448ea3af702706b45e27e923ebe540d83de868
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ltnamespacegt-element-net-native"></a>&lt;Namespace&gt;, élément (.NET Native)
 Applique la stratégie de réflexion runtime à tous les types dans un espace de noms spécifié.  
@@ -86,7 +87,7 @@ Applique la stratégie de réflexion runtime à tous les types dans un espace de
 |[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) peut avoir zéro ou un élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md).|  
 |`<Namespace>`|Applique la stratégie de réflexion à tous les types dans un espace de noms parent.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les attributs `Activate`, `Browse`, `Dynamic` et `Serialize` sont tous facultatifs. Si aucun n'est présent, l'élément `<Namespace>` sert uniquement de conteneur pour les éléments enfants. S'ils sont présents, l'élément `<Namespace>` applique la stratégie de réflexion runtime à tous les types dans l'espace de noms spécifié.  
   
  Quand il est un enfant de l’élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md), l’élément `<Namespace>` substitue la stratégie de réflexion runtime définie par l’élément [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md).  

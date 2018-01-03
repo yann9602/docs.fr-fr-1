@@ -25,11 +25,12 @@ caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 6f96463b4f9cb7e61c403cfd77f747c8aefd99a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6b799f57644420653b371ac0e65b414c807008b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="listening-with-sockets"></a>écoute avec des sockets
 Les sockets de serveur et d’écoute ouvrent un port sur le réseau, puis attendent qu’un client se connecte à ce port. Cet exemple montre comment créer un service distant pour un réseau TCP/IP, cependant, il existe d’autres protocoles et familles d’adresses réseau.  
@@ -69,8 +70,8 @@ listener.Listen(100);
  La méthode **Listen** prend un seul paramètre qui spécifie combien de connexions au **Socket** peuvent être mises en attente avant qu’une erreur « Serveur occupé » soit retournée au client qui souhaite se connecter. Dans ce cas, jusqu’à 100 clients peuvent être placés dans la file d’attente de connexion avant qu’une réponse « Serveur occupé » ne soit retournée au 101e client.  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide d’un Socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
- [Utilisation d’un Socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
- [Utilisation de Sockets clients](../../../docs/framework/network-programming/using-client-sockets.md)  
+ [Utilisation d’un socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [Utilisation d’un socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Utilisation de sockets clients](../../../docs/framework/network-programming/using-client-sockets.md)  
  [Guide pratique pour créer un socket](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
  [Sockets](../../../docs/framework/network-programming/sockets.md)

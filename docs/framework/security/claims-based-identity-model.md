@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 7219e982f755542a35a33dddf74ee24f4b67e8e6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c205aec714d06b5d2aaf2806867fe51ef508385e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="claims-based-identity-model"></a>Modèle d’identité basée sur les revendications
 Lorsque vous créez des applications qui prennent en charge les revendications, l'identité de l'utilisateur est représentée dans votre application comme un ensemble de revendications. Une revendication peut être le nom de l'utilisateur, une autre peut être une adresse de messagerie. L'idée est qu'un système d'identité externe soit configuré pour fournir à votre application tout ce qu'elle doit savoir à propos de l'utilisateur avec chaque demande effectuée, ainsi que l'assurance de chiffrement que les données d'identité que vous recevez proviennent d'une source approuvée.  
@@ -44,7 +45,7 @@ Lorsque vous créez des applications qui prennent en charge les revendications, 
 ## <a name="introduction-to-claims-based-identity"></a>Présentation de l'identité basée sur les revendications  
  La terminologie et les concepts suivants peuvent vous aider à comprendre cette nouvelle architecture de l'identité.  
   
-### <a name="identity"></a>Identité  
+### <a name="identity"></a>identité  
  Pour les besoins de description du modèle de programmation dans Windows Identity Foundation (WIF), nous utiliserons le terme « identité » pour représenter un jeu d’attributs qui décrit un utilisateur ou une autre entité dans un système à sécuriser.  
   
 ### <a name="claim"></a>Revendication  

@@ -13,11 +13,12 @@ caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c4257876abeeccf762a7caa87f667468a16bba70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ce23d66f79f94af74250cff137499f6c8b1582ac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migration de votre application du Windows Store vers .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] fournit une compilation statique des applications dans le Windows Store ou sur l'ordinateur du développeur. Cela diffère de la compilation dynamique effectuée pour les applications du Windows Store par le compilateur juste-à-temps (JIT) ou le [générateur d'images natives (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) sur l'appareil. Malgré les différences, [!INCLUDE[net_native](../../../includes/net-native-md.md)] essaie d’assurer la compatibilité avec [.NET pour les applications du Windows Store](http://msdn.microsoft.com/library/windows/apps/br230302.aspx). Pour l'essentiel, les éléments qui fonctionnent sur .NET pour les applications du Windows Store fonctionnent également avec [!INCLUDE[net_native](../../../includes/net-native-md.md)].  Toutefois, dans certains cas, vous pouvez rencontrer des changements de comportement. Ce document traite de ces différences entre la version .NET standard pour les applications du Windows Store et [!INCLUDE[net_native](../../../includes/net-native-md.md)] dans les domaines suivants :  
@@ -79,7 +80,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="other-reflection-related-differences"></a>Autres différences en matière de réflexion  
  Le comportement de .NET pour les applications du Windows Store et de [!INCLUDE[net_native](../../../includes/net-native-md.md)]présente un certain nombre d'autres différences liées à la réflexion.  
   
- Dans [!INCLUDE[net_native](../../../includes/net-native-md.md)]:  
+ Dans [!INCLUDE[net_native](../../../includes/net-native-md.md)] :  
   
 -   La réflexion privée de types et de membres de la bibliothèque de classes .NET Framework n'est pas prise en charge. Vous pouvez, toutefois, réfléchir vos propres types et membres privés, ainsi que les types et les membres dans des bibliothèques tierces.  
   
@@ -169,7 +170,7 @@ ms.lasthandoff: 11/21/2017
   
 <a name="HttpClient"></a>   
 ### <a name="httpclient-differences"></a>Différences pour HttpClient  
- Dans [!INCLUDE[net_native](../../../includes/net-native-md.md)], la classe <xref:System.Net.Http.HttpClientHandler> utilise WinINet de façon interne (via la classe [HttpBaseProtocolFilter](http://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) ) au lieu des classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> utilisées dans la version .NET standard pour les applications du Windows Store.  WinINet ne prend pas en charge toutes les options de configuration prises en charge par la classe <xref:System.Net.Http.HttpClientHandler> .  Par conséquent :  
+ Dans [!INCLUDE[net_native](../../../includes/net-native-md.md)], la classe <xref:System.Net.Http.HttpClientHandler> utilise WinINet de façon interne (via la classe [HttpBaseProtocolFilter](http://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) ) au lieu des classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> utilisées dans la version .NET standard pour les applications du Windows Store.  WinINet ne prend pas en charge toutes les options de configuration prises en charge par la classe <xref:System.Net.Http.HttpClientHandler> .  Par conséquent :  
   
 -   Certaines des propriétés de fonctionnalité de <xref:System.Net.Http.HttpClientHandler> retournent `false` sur [!INCLUDE[net_native](../../../includes/net-native-md.md)], tandis qu'elles retournent `true` dans la version .NET standard pour les applications du Windows Store.  
   
@@ -616,7 +617,7 @@ ms.lasthandoff: 11/21/2017
   
 -   Tous les sérialiseurs (<xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> et <xref:System.Xml.Serialization.XmlSerializer>) ne parviennent pas à générer un code de sérialisation pour un type <xref:System.Xml.Linq.XElement?displayProperty=nameWithType> ou pour un type contenant <xref:System.Xml.Linq.XElement>. Ils affichent des erreurs de génération à la place.  
   
--   Les constructeurs suivants des types de sérialisation ne fonctionnent pas nécessairement comme prévu :  
+-   Les constructeurs suivants des types de sérialisation ne fonctionnent pas nécessairement comme prévu :  
   
     -   <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29?displayProperty=nameWithType>  
   

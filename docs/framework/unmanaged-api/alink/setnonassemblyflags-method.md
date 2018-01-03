@@ -19,11 +19,12 @@ caps.latest.revision: "4"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c5f8761259e89b4befd0eeaf893ffbe5d4142350
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7e944f285ee0925b76fdd9b95c824deee38cead2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="setnonassemblyflags-method"></a>SetNonAssemblyFlags, méthode
 Définit les indicateurs qui ne sont pas spécifiques à l’assembly.  
@@ -43,10 +44,10 @@ HRESULT SetNonAssemblyFlags(
 ## <a name="return-value"></a>Valeur de retour  
  Retourne S_OK si la méthode réussit.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  Requiert alink.h  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interface IALink](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 (Interface)](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [ALink (API)](../../../../docs/framework/unmanaged-api/alink/index.md)
+ [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08296be1002ee50e18a45c546645f4cc117d6bb5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fa6711ef5591110c74a1da95358aac4d8a8da655
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="quickstart-wcf-data-services"></a>Démarrage rapide (services de données WCF)
 Ce démarrage rapide vous aide à vous familiariser avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] via une série de tâches qui prennent en charge les rubriques de [mise en route](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).  
@@ -28,7 +29,7 @@ Ce démarrage rapide vous aide à vous familiariser avec [!INCLUDE[ssAstoria](..
 ## <a name="what-you-will-learn"></a>Contenu du didacticiel  
  La première tâche dans ce démarrage rapide montre comment créer un service de données pour exposer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] issu de l'exemple de base de données Northwind. Dans les rubriques ultérieures, vous accéderez au flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à l'aide d'un navigateur Web et vous créerez également une application cliente [!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] qui consomme le flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à l'aide de bibliothèques clientes.  
   
-## <a name="prerequisites"></a>Composants requis  
+## <a name="prerequisites"></a>Prérequis  
  Pour effectuer ce démarrage rapide, vous devez installer les composants suivants :  
   
 -   [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
@@ -41,10 +42,10 @@ Ce démarrage rapide vous aide à vous familiariser avec [!INCLUDE[ssAstoria](..
  [Création du service de données](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
  Définir l'application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] , définir le modèle de données, créer le service de données et autoriser l'accès aux ressources.  
   
- [L’accès au Service à partir d’un navigateur Web](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
+ [Accès au service à partir d’un navigateur web](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
  Démarrer le service à partir de [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] et y accéder en soumettant des demandes HTTP GET au flux exposé via un navigateur Web.  
   
- [Création de l’Application cliente .NET Framework](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
+ [Création de l’application cliente du .NET Framework](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)  
  Créer une application cliente [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pour consommer le flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] , lier des données aux contrôles Windows, modifier les données liées dans les contrôles dépendants, puis renvoyer les modifications au service de données.  
   
 > [!NOTE]

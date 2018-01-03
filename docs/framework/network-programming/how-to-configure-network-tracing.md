@@ -21,11 +21,12 @@ caps.latest.revision: "23"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 12f328d58ef568c78d1e2c8a8ff564839cba9f3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4a6b277b2676409bebc059637daca5681b853f03
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-configure-network-tracing"></a>Guide pratique pour configurer le suivi réseau
 Le fichier de configuration de l'application ou de l'ordinateur contient les paramètres qui déterminent le format et le contenu des traces réseau. Avant d'effectuer cette procédure, assurez-vous que le traçage est activé. Pour plus d’informations sur l’activation du suivi, consultez [Activation du suivi réseau](../../../docs/framework/network-programming/enabling-network-tracing.md).  
@@ -88,7 +89,7 @@ Le fichier de configuration de l'application ou de l'ordinateur contient les par
   
  Lorsque vous ajoutez un nom au bloc `<switches>`, la sortie de trace inclut les informations de certaines méthodes associées au nom. Le tableau suivant décrit la sortie.  
   
-|Nom|Sortie de|  
+|Name|Sortie de|  
 |----------|-----------------|  
 |`System.Net.Sockets`|Certaines méthodes publiques des classes <xref:System.Net.Sockets.Socket>, <xref:System.Net.Sockets.TcpListener>, <xref:System.Net.Sockets.TcpClient> et <xref:System.Net.Dns>|  
 |`System.Net`|Certaines méthodes publiques des classes <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpWebResponse>, <xref:System.Net.FtpWebRequest> et <xref:System.Net.FtpWebResponse>, et les informations de débogage de SSL (les certificats non valides, la liste des émetteurs manquants et les erreurs de certificat client.)|  
@@ -106,7 +107,7 @@ Le fichier de configuration de l'application ou de l'ordinateur contient les par
 |`Tracemode`|Attribut <xref:System.String> facultatif. Définissez la valeur `includehex` pour afficher les traces de protocole au format hexadécimal et texte. Définissez la valeur `protocolonly` pour afficher uniquement du texte. La valeur par défaut est `includehex`.<br /><br /> Cet attribut doit être défini sur l’élément \<switches> comme illustré dans l’exemple. Une exception est levée si cet attribut est défini sur un élément sous l’élément \<source>.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interprétation du traçage réseau](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
+ [Interprétation du suivi réseau](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
  [Traçage réseau dans .NET Framework](../../../docs/framework/network-programming/network-tracing.md)  
- [L’activation du traçage réseau](../../../docs/framework/network-programming/enabling-network-tracing.md)  
+ [Activation du suivi réseau](../../../docs/framework/network-programming/enabling-network-tracing.md)  
  [Introduction à l’instrumentation et au traçage](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)

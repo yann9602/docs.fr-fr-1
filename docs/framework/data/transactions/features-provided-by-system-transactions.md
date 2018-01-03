@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d615d4e1da86ef2a23563f25f6976099daedf10e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1170adc2fb2ede41e9e111e9d7dd6612f06676a9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="features-provided-by-systemtransactions"></a>Fonctionnalités fournies par System.Transactions
 Cette section explique comment utiliser les fonctions fournies par l'espace de noms <xref:System.Transactions> pour écrire votre propre application transactionnelle et votre gestionnaire de ressources. Plus précisément, cette section explique comment créer et participer à une transaction (locale ou distribuée) avec un ou plusieurs participants.  

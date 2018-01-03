@@ -23,11 +23,12 @@ caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 082d84fe0ac4193f3da5ac9be52789432bde76aa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4df092afd4d60811683b4187df78f27ad971cf89
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trace-switches"></a>Commutateurs de traçage
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer. Ces commutateurs sont des objets présents dans votre code, mais ils peuvent être configurés en dehors du code via le fichier .config. Trois types de commutateurs de trace sont disponibles dans .NET Framework : la classe <xref:System.Diagnostics.BooleanSwitch> , la classe <xref:System.Diagnostics.TraceSwitch> et la classe <xref:System.Diagnostics.SourceSwitch> . La classe <xref:System.Diagnostics.BooleanSwitch> agit comme un bouton bascule qui active ou désactive diverses instructions de trace. Les classes <xref:System.Diagnostics.TraceSwitch> et <xref:System.Diagnostics.SourceSwitch> vous permettent d'activer un commutateur de trace pour un niveau de traçage spécifique. Les messages <xref:System.Diagnostics.Trace> ou <xref:System.Diagnostics.TraceSource> spécifiés pour ce niveau et tous les niveaux inférieurs seront alors affichés. Si vous désactivez le commutateur, les messages de trace ne seront pas affichés. Toutes ces classes dérivent de la classe abstraite (**MustInherit**) **Switch**, comme tous les commutateurs créés par l'utilisateur.  
@@ -65,7 +66,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
  Les propriétés **TraceSwitch** indiquent le niveau de trace maximal pour le commutateur. Autrement dit, les informations de traçage sont écrites pour le niveau spécifié et tous les niveaux inférieurs. Par exemple, si **TraceInfo** a la valeur **true**, **TraceError** et **TraceWarning** ont également la valeur **true** , mais **TraceVerbose** peut très bien avoir la valeur **false**.  
   
- Ces propriétés sont en lecture seule. L'objet **TraceSwitch** les définit automatiquement quand la propriété **TraceLevel** est définie. Par exemple :  
+ Ces propriétés sont en lecture seule. L'objet **TraceSwitch** les définit automatiquement quand la propriété **TraceLevel** est définie. Exemple :  
   
 ```vb  
 Dim myTraceSwitch As New TraceSwitch("SwitchOne", "The first switch")  
@@ -93,5 +94,5 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
   
 ## <a name="see-also"></a>Voir aussi  
  [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
- [Comment : ajouter des instructions de traçage au Code d’Application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
+ [Guide pratique pour ajouter des instructions de suivi au code d’application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
  [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

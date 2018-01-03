@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 353ae034381ab29787aba1c1c362f4c6fc57da7e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ea7214e284754b1a2f5c8a7a68f19b1b94e02a13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="method-etw-events"></a>Événements ETW de méthode
 <a name="top"></a> Ces événements collectent des informations spécifiques aux méthodes. La charge utile de ces événements est requise pour la résolution des symboles. De plus, ces événements fournissent des informations utiles telles que le nombre de fois qu'une méthode a été appelée.  
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/18/2017
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
 |`JITKeyword` (0x10)|Informatif (4)|  
-|`NGenKeyword` (0x20)|Informatif (4)|  
+|Fournisseur de runtime `NGenKeyword` (0x20)|Informatif (4)|  
 |`JitRundownKeyword` (0x10)|Informatif (4)|  
 |`NGENRundownKeyword` (0x20)|Informatif (4)|  
   
@@ -68,7 +69,7 @@ ms.lasthandoff: 10/18/2017
 |MethodStartAddress|win:UInt64|Adresse de début de la méthode.|  
 |MethodSize|win:UInt32|Taille de la méthode.|  
 |MethodToken|win:UInt32|0 pour les méthodes dynamiques et les programmes d'assistance JIT.|  
-|MethodFlags|win:UInt32|0x1 : méthode dynamique.<br /><br /> 0x2 : méthode générique.<br /><br /> 0x4 : méthode de code compilé juste-à-temps (JIT) (ou code d'image natif NGEN).<br /><br /> 0x8 : méthode d'assistance.|  
+|MethodFlags|win:UInt32|0x1 : méthode dynamique.<br /><br /> 0x2 : méthode générique.<br /><br /> 0x4 : méthode de code compilé juste-à-temps (JIT) (ou code d'image natif NGEN).<br /><br /> 0x8 : méthode d'assistance.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
  [Retour au début](#top)  
@@ -87,7 +88,7 @@ ms.lasthandoff: 10/18/2017
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID d'événement|Description|  
+|Événement|ID de l'événement|Description|  
 |-----------|--------------|----------------|  
 |`DCStartInit_V1`|147|Envoyé avant le démarrage de l'énumération pendant un arrêt de début.|  
 |`DCStartComplete_V1`|145|Envoyé à la fin de l'énumération pendant un arrêt de début.|  
@@ -108,10 +109,10 @@ ms.lasthandoff: 10/18/2017
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
-|`JITKeyword` (0x10)|Détaillé (5)|  
+|Fournisseur de runtime `JITKeyword` (0x10)|Détaillé (5)|  
 |`NGenKeyword` (0x20)|Détaillé (5)|  
-|`JitRundownKeyword` (0x10)|Détaillé (5)|  
-|`NGENRundownKeyword` (0x20)|Détaillé (5)|  
+|Fournisseur d'arrêt `JitRundownKeyword` (0x10)|Détaillé (5)|  
+|Fournisseur d'arrêt `NGENRundownKeyword` (0x20)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
@@ -131,7 +132,7 @@ ms.lasthandoff: 10/18/2017
 |MethodStartAddress|win:UInt64|Adresse de début.|  
 |MethodSize|win:UInt32|Longueur de la méthode.|  
 |MethodToken|win:UInt32|0 pour les méthodes dynamiques et les programmes d'assistance JIT.|  
-|MethodFlags|win:UInt32|0x1 : méthode dynamique.<br /><br /> 0x2 : méthode générique.<br /><br /> 0x4 : méthode compilée juste-à-temps (JIT) (ou générée par NGen.exe)<br /><br /> 0x8 : méthode d'assistance.|  
+|MethodFlags|win:UInt32|0x1 : méthode dynamique.<br /><br /> 0x2 : méthode générique.<br /><br /> 0x4 : méthode compilée juste-à-temps (JIT) (ou générée par NGen.exe)<br /><br /> 0x8 : méthode d'assistance.|  
 |MethodNameSpace|win:UnicodeString|Nom d'espace de noms complet associé à la méthode.|  
 |MethodName|win:UnicodeString|Nom complet de classe associé à la méthode.|  
 |MethodSignature|win:UnicodeString|Signature de la méthode (liste de noms de types séparés par des virgules).|  
@@ -145,10 +146,10 @@ ms.lasthandoff: 10/18/2017
   
 |Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
-|`JITKeyword` (0x10)|Détaillé (5)|  
+|Fournisseur de runtime `JITKeyword` (0x10)|Détaillé (5)|  
 |`NGenKeyword` (0x20)|Détaillé (5)|  
-|`JitRundownKeyword` (0x10)|Détaillé (5)|  
-|`NGENRundownKeyword` (0x20)|Détaillé (5)|  
+|Fournisseur d'arrêt `JitRundownKeyword` (0x10)|Détaillé (5)|  
+|Fournisseur d'arrêt `NGENRundownKeyword` (0x20)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   

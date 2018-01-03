@@ -17,11 +17,12 @@ caps.latest.revision: "35"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 4dde3e44778511606a2dcd2ce32cb479788c0478
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d86c70ec4421bc716b12044bac30f8f925c375f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-overview"></a>Vue d'ensemble d'UI Automation
 > [!NOTE]
@@ -72,10 +73,10 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Windows.Automation.Peers>|PresentationFramework|Développeurs de fournisseurs UI Automation pour [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].|  
   
 <a name="UI_Automation_Model"></a>   
-## <a name="ui-automation-model"></a>Modèle UI Automation  
+## <a name="ui-automation-model"></a>Modèle UI Automation  
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] expose chaque partie de l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] aux applications clientes en tant qu’élément <xref:System.Windows.Automation.AutomationElement>. Les éléments sont contenus dans une arborescence, avec le bureau comme élément racine. Les clients peuvent filtrer l’affichage brut de l’arborescence sous la forme d’une vue de contrôle ou d’une vue de contenu. Les applications peuvent également créer des vues personnalisées.  
   
- Les objets<xref:System.Windows.Automation.AutomationElement> exposent les propriétés communes des éléments d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] qu’ils représentent. L’une de ces propriétés est le type de contrôle, qui définit son apparence et ses fonctionnalités de base comme une entité reconnaissable unique : par exemple, un bouton ou une case à cocher.  
+ Les objets<xref:System.Windows.Automation.AutomationElement> exposent les propriétés communes des éléments d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] qu’ils représentent. L’une de ces propriétés est le type de contrôle, qui définit son apparence et ses fonctionnalités de base comme une entité reconnaissable unique : par exemple, un bouton ou une case à cocher.  
   
  En outre, les éléments exposent des modèles de contrôle qui fournissent des propriétés spécifiques à leurs types de contrôle. Les modèles de contrôle exposent également des méthodes qui permettent aux clients d’obtenir des informations supplémentaires sur l’élément et de fournir une entrée.  
   
@@ -85,8 +86,8 @@ ms.lasthandoff: 11/21/2017
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] fournit également des informations aux applications clientes via des événements. Contrairement à [!INCLUDE[TLA2#tla_winevents](../../../includes/tla2sharptla-winevents-md.md)], les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ne reposent pas sur un mécanisme de diffusion. Les clients[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’inscrivent pour des notifications d’événements spécifiques et peuvent demander que des propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spécifiques et des informations de modèle de contrôle soient passées à leurs gestionnaires d’événements. En outre, un événement [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] contient une référence à l’élément qui l’a déclenché. Les fournisseurs peuvent améliorer les performances en déclenchant des événements de manière sélective, selon que des clients les écoutent ou non.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble d’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [Vue d’ensemble du modèles contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [Vue d’ensemble des propriétés UI Automation](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
  [Vue d’ensemble des événements UI Automation](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
  [Vue d’ensemble de la sécurité UI Automation](../../../docs/framework/ui-automation/ui-automation-security-overview.md)
