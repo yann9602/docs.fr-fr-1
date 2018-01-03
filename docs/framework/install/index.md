@@ -1,5 +1,5 @@
 ---
-title: "Guide d’installation"
+title: "Guide d’installation du .NET Framework"
 description: "Découvrez comment installer le .NET Framework sur Windows."
 author: rlander
 ms.author: mairaw
@@ -8,11 +8,11 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.prod: .net-framework
 ms.devlang: dotnet
-ms.openlocfilehash: c18ef9ab9341e371f0a5f752a8989dd968fdd807
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.openlocfilehash: 7661919fa50eb9b08cead2c8a04a1a8af5fbf3d2
+ms.sourcegitcommit: 4a96a0fe9f87de70291245d71b76c7d1b15127ae
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="installation-guide"></a>Guide d’installation
 
@@ -22,7 +22,7 @@ Vous pouvez installer le .NET Framework sur les différentes versions de Windows
 
 - [Windows 10 et Windows Server 2016](on-windows-10.md)
 - [Windows 8.1 et Windows Server 2012 R2](on-windows-8-1.md)
-- [Windows 8 et Windows Server 2012](on-windows-8.md)
+- [Windows 8 et Windows Server 2012](on-windows-8.md)
 - [Windows 7 et Windows Server 2008 R2](on-windows-7.md)
 - [Windows Vista et Windows Server 2008](on-windows-vista.md)
 
@@ -32,7 +32,7 @@ Vous pouvez installer le .NET Framework sur les différentes versions de Windows
 
 ## <a name="see-also"></a>Voir aussi
 
-[Télécharger le .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
-[Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)   
-[Installer le .NET Framework pour les développeurs](guide-for-developers.md)
-
+[Télécharger le .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)  
+[Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)  
+[Installer le .NET Framework pour les développeurs](guide-for-developers.md)  
+[Déployer le .NET Framework pour les développeurs](../deployment/deployment-guide-for-developers.md)  

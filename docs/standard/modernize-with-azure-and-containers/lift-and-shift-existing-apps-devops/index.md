@@ -4,11 +4,14 @@ description: Modernisez des applications .NET existantes avec le cloud Azure et 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 6c1bbbcd99c2abee43a789fddf4546e7ee8d3380
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 08bf7da36714b2c18d96659814bb11df6d9b26fc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="lift-and-shift-existing-apps-devops"></a>Lift-and-shift des applications existantes sur DevOps
 > Vision : L’opération de lift-and-shift de vos applications .NET Framework existantes en applications Prêtes pour le DevOps cloud améliore grandement votre agilité en matière de déploiement, ce qui vous permet de livrer vos applications plus rapidement et à un coût moindre.

@@ -18,11 +18,12 @@ caps.latest.revision: "65"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 777c78a1ee296fd92d48547aeb53a083afa95b28
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2615c7b8c75f7736bbf8334512790d0a5c43c8d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-tools"></a>Outils du .NET Framework
 Les outils du .NET Framework facilitent la création, le déploiement et la gestion d'applications et de composants qui ciblent le .NET Framework.  
@@ -31,7 +32,7 @@ Les outils du .NET Framework facilitent la création, le déploiement et la gest
   
  Vous pouvez exécuter tous les outils à partir de la ligne de commande, à l'exception de la visionneuse du cache d'assembly (Shfusion.dll). Vous devez accéder à Shfusion.dll à partir de l'Explorateur de fichiers.  
   
- Le meilleur moyen d'exécuter l'outil en ligne de commande consiste à utiliser l'invite de commandes développeur Visual Studio. Ces utilitaires vous permettent d’exécuter facilement les outils, sans naviguer jusqu’au dossier d’installation. Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Le meilleur moyen d'exécuter l'outil en ligne de commande consiste à utiliser l'invite de commandes développeur Visual Studio. Ces utilitaires vous permettent d’exécuter facilement les outils, sans naviguer jusqu’au dossier d’installation. Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
 > [!NOTE]
 >  Certains outils sont spécifiques aux ordinateurs 32 bits ou aux ordinateurs 64 bits. Veillez à exécuter la version appropriée de l'outil pour votre ordinateur.  

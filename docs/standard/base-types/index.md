@@ -17,11 +17,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d6b1c760fb8667850d4f4e88ca8fe5bcf0b0a662
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7746d53748260610a7f0e33611dd672fd644d269
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="working-with-base-types-in-net"></a>Utilisation des types de base dans .NET
 Cette section décrit les opérations de type de base .NET, y compris la mise en forme, la conversion et les opérations courantes.  
@@ -36,7 +39,7 @@ Cette section décrit les opérations de type de base .NET, y compris la mise en
  [Manipulation de chaînes](../../../docs/standard/base-types/manipulating-strings.md)  
  Explique comment manipuler et mettre en forme des chaînes.  
   
- [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)  
+ [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)  
  Explique comment convertir des chaînes en types .NET Framework.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

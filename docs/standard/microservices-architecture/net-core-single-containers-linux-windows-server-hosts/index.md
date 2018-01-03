@@ -8,11 +8,14 @@ ms.date: 05/26/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.topic: article
-ms.openlocfilehash: 73d733a45837d047319312ea7b2e558a02b39eba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f85b3db6b4ca6d22c4b855c8b96051c1c31350a6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Déploiement d’applications web .NET Core basées sur un seul conteneur sur des hôtes Linux ou Windows Nano Server
 
@@ -111,7 +114,7 @@ version: '2'
   
 services:
   ci-build:
-    image: microsoft/aspnetcore-build:1.0-1.1
+    image: microsoft/aspnetcore-build:latest
     volumes:
       - .:/src
     working_dir: /src
@@ -122,7 +125,7 @@ services:
 
 Notez que l’image est une image de build ASP.NET Core. Cette image comprend le kit SDK et les outils de génération permettant de générer votre application et de créer les images nécessaires. Le fait d’exécuter le projet **docker-composer** avec ce fichier a pour effet de démarrer le conteneur de build à partir de l’image, puis de générer l’image de votre application dans ce conteneur. Vous devez spécifier ce fichier docker-compose en ligne de commande pour générer votre application dans un conteneur Docker avant de la lancer.
 
-Dans Visual Studio, vous pouvez exécuter votre application dans des conteneurs Docker en sélectionnant le projet **docker-composer** comme projet de démarrage, puis en appuyant sur Ctrl+F5 (F5 pour déboguer), comme vous le feriez avec n’importe quelle autre application. Quand vous démarrez le projet **docker-compose**, Visual Studio exécute **docker-compose** en utilisant le fichier docker-compose.yml, le fichier docker-compose.override.yml, puis l’un des fichiers docker-compose.vs.\*. Une fois que l’application a démarré, Visual Studio lance automatiquement le navigateur.
+Dans Visual Studio, vous pouvez exécuter votre application dans des conteneurs Docker en sélectionnant le projet **docker-composer** comme projet de démarrage, puis en appuyant sur Ctrl+F5 (F5 pour déboguer), comme vous le feriez avec n’importe quelle autre application. Quand vous démarrez le projet **docker-compose**, Visual Studio exécute **docker-compose** en utilisant le fichier docker-compose.yml, le fichier docker-compose.override.yml, puis l’un des fichiers docker-compose.vs\*. Une fois que l’application a démarré, Visual Studio lance automatiquement le navigateur.
 
 Si vous lancez l’application dans le débogueur, Visual Studio s’attache à l’application en cours d’exécution dans Docker.
 

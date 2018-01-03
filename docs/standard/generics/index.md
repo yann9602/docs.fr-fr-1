@@ -36,11 +36,14 @@ caps.latest.revision: "23"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 510d7f30853496409caccab69e68f55a6638319e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d06c2ae074045ae750c079383f43c3d6aa6f726c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generics-in-the-net-framework"></a>Génériques dans le .NET Framework
 <a name="top"></a> Les génériques vous permettent d'adapter une méthode, une classe ou une structure au type de données sur lequel elle agit. Par exemple, au lieu d'utiliser la classe <xref:System.Collections.Hashtable> qui accepte tous les types de clés et de valeurs, vous pouvez utiliser la classe générique <xref:System.Collections.Generic.Dictionary%602> et spécifier le type autorisé pour la clé et pour la valeur. Les génériques présentent plusieurs avantages, notamment une plus grande réutilisabilité du code et une meilleure cohérence des types.  
@@ -123,7 +126,7 @@ ms.lasthandoff: 10/18/2017
   
 -   Les génériques simplifient le code généré dynamiquement. Quand vous utilisez des génériques avec du code généré dynamiquement, vous n'avez pas besoin de générer le type. Cela permet d'augmenter le nombre de scénarios dans lesquels vous pouvez utiliser des méthodes dynamiques légères au lieu de générer des assemblys entiers. Pour plus d'informations, consultez "Comment définir et exécuter des méthodes dynamiques".  
   
- Voici quelques-unes des limitations des génériques :  
+ Voici quelques-unes des limitations des génériques :  
   
 -   Les types génériques peuvent être dérivés de la plupart des classes de base, telles que <xref:System.MarshalByRefObject> (et les contraintes peuvent être utilisées pour exiger que les paramètres de type générique dérivent de classes de base comme <xref:System.MarshalByRefObject>). Cependant, le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] ne prend pas en charge les types génériques liés au contexte. Un type générique peut être dérivé de <xref:System.ContextBoundObject>. Toutefois, si vous tentez de créer une instance de ce type, une exception <xref:System.TypeLoadException>sera levée.  
   
@@ -142,7 +145,7 @@ ms.lasthandoff: 10/18/2017
   
 <a name="class_library_and_language_support"></a>   
 ## <a name="class-library-and-language-support"></a>Bibliothèque de classes et prise en charge des langages  
- Le .NET Framework fournit plusieurs classes de collection génériques dans les espaces de noms suivants :  
+ Le .NET Framework fournit plusieurs classes de collection génériques dans les espaces de noms suivants :  
   
 -   L'espace de noms <xref:System.Collections.Generic> catalogue la plupart des types de collections génériques fournis par le .NET Framework, tels que les classes génériques <xref:System.Collections.Generic.List%601> et <xref:System.Collections.Generic.Dictionary%602> .  
   

@@ -21,11 +21,14 @@ caps.latest.revision: "42"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3f6beb720819a1be4e45bf4cefac3d805d7ee5e7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7e176ebf6660e1c517e5ef7a505c259666bb30a0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>Globalisation et localisation d'applications .NET Framework
 Le développement d'une [application mondialisable](http://msdn.microsoft.com/goglobal/bb978433.aspx), notamment une application qui peut être localisée dans une ou plusieurs langues, implique trois étapes : la globalisation, l'examen de la faisabilité de localisation et la localisation.  
@@ -62,7 +65,7 @@ Le développement d'une [application mondialisable](http://msdn.microsoft.com/go
  [Opérations de chaînes indépendantes de la culture](../../../docs/standard/globalization-localization/culture-insensitive-string-operations.md)  
  Explique comment utiliser les méthodes et les classes .NET Framework dépendantes de la culture par défaut pour obtenir des résultats indépendants de la culture.  
   
- [Bonnes pratiques pour développer des applications mondialisables](../../../docs/standard/globalization-localization/best-practices-for-developing-world-ready-apps.md)  
+ [Meilleures pratiques pour développer des applications mondialisables](../../../docs/standard/globalization-localization/best-practices-for-developing-world-ready-apps.md)  
  Décrit les meilleures pratiques en matière de globalisation, de localisation et de développement d'applications ASP.NET mondialisables.  
   
 ## <a name="reference"></a>Référence  
