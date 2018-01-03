@@ -21,16 +21,17 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f73035740965077d6508235d0d570d16ac5eeaab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 550f0512e3469fa13f918082dbe55ddb239f694b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugilframegetstackvalue-method"></a><span data-ttu-id="125b8-102">ICorDebugILFrame::GetStackValue, méthode</span><span class="sxs-lookup"><span data-stu-id="125b8-102">ICorDebugILFrame::GetStackValue Method</span></span>
-<span data-ttu-id="125b8-103">Cette méthode n’a pas encore été implémentée.</span><span class="sxs-lookup"><span data-stu-id="125b8-103">This method has not been implemented.</span></span>  
+# <a name="icordebugilframegetstackvalue-method"></a><span data-ttu-id="99297-102">ICorDebugILFrame::GetStackValue, méthode</span><span class="sxs-lookup"><span data-stu-id="99297-102">ICorDebugILFrame::GetStackValue Method</span></span>
+<span data-ttu-id="99297-103">Cette méthode n’a pas encore été implémentée.</span><span class="sxs-lookup"><span data-stu-id="99297-103">This method has not been implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="125b8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="125b8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="99297-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="99297-104">Syntax</span></span>  
   
 ```  
 HRESULT GetStackValue (  
@@ -39,5 +40,5 @@ HRESULT GetStackValue (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="125b8-105">Spécifications</span><span class="sxs-lookup"><span data-stu-id="125b8-105">Requirements</span></span>  
- <span data-ttu-id="125b8-106">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="125b8-106">**Header:** CorDebug.idl, CorDebug.h</span></span>
+## <a name="requirements"></a><span data-ttu-id="99297-105">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="99297-105">Requirements</span></span>  
+ <span data-ttu-id="99297-106">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="99297-106">**Header:** CorDebug.idl, CorDebug.h</span></span>

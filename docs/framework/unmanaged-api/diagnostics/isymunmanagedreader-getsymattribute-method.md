@@ -21,16 +21,17 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f57d2c4541945d90b1695850311928884fdc9cc5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9795d5c7937f3c66c799665ba0e07e70c2be0b66
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedreadergetsymattribute-method"></a><span data-ttu-id="2edca-102">ISymUnmanagedReader::GetSymAttribute, méthode</span><span class="sxs-lookup"><span data-stu-id="2edca-102">ISymUnmanagedReader::GetSymAttribute Method</span></span>
-<span data-ttu-id="2edca-103">Obtient un attribut personnalisé en fonction de son nom.</span><span class="sxs-lookup"><span data-stu-id="2edca-103">Gets a custom attribute based upon its name.</span></span> <span data-ttu-id="2edca-104">Contrairement aux attributs personnalisés des métadonnées, ces attributs personnalisés sont conservés dans le magasin de symboles.</span><span class="sxs-lookup"><span data-stu-id="2edca-104">Unlike metadata custom attributes, these custom attributes are held in the symbol store.</span></span>  
+# <a name="isymunmanagedreadergetsymattribute-method"></a><span data-ttu-id="836bc-102">ISymUnmanagedReader::GetSymAttribute, méthode</span><span class="sxs-lookup"><span data-stu-id="836bc-102">ISymUnmanagedReader::GetSymAttribute Method</span></span>
+<span data-ttu-id="836bc-103">Obtient un attribut personnalisé en fonction de son nom.</span><span class="sxs-lookup"><span data-stu-id="836bc-103">Gets a custom attribute based upon its name.</span></span> <span data-ttu-id="836bc-104">Contrairement aux attributs personnalisés des métadonnées, ces attributs personnalisés sont conservés dans le magasin de symboles.</span><span class="sxs-lookup"><span data-stu-id="836bc-104">Unlike metadata custom attributes, these custom attributes are held in the symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2edca-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2edca-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="836bc-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="836bc-105">Syntax</span></span>  
   
 ```  
 HRESULT GetSymAttribute (  
@@ -42,27 +43,27 @@ HRESULT GetSymAttribute (
         length_is (*pcBuffer)] BYTE buffer[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2edca-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="2edca-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="836bc-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="836bc-106">Parameters</span></span>  
  `parent`  
- <span data-ttu-id="2edca-107">[in] Le jeton de métadonnées pour l’objet pour lequel l’attribut est demandé.</span><span class="sxs-lookup"><span data-stu-id="2edca-107">[in] The metadata token for the object for which the attribute is requested.</span></span>  
+ <span data-ttu-id="836bc-107">[in] Le jeton de métadonnées pour l’objet pour lequel l’attribut est demandé.</span><span class="sxs-lookup"><span data-stu-id="836bc-107">[in] The metadata token for the object for which the attribute is requested.</span></span>  
   
  `name`  
- <span data-ttu-id="2edca-108">[in] Pointeur vers la variable qui indique l’attribut à récupérer.</span><span class="sxs-lookup"><span data-stu-id="2edca-108">[in] A pointer to the variable that indicates the attribute to retrieve.</span></span>  
+ <span data-ttu-id="836bc-108">[in] Pointeur vers la variable qui indique l’attribut à récupérer.</span><span class="sxs-lookup"><span data-stu-id="836bc-108">[in] A pointer to the variable that indicates the attribute to retrieve.</span></span>  
   
  `cBuffer`  
- <span data-ttu-id="2edca-109">[in] Taille du tableau `buffer`.</span><span class="sxs-lookup"><span data-stu-id="2edca-109">[in] The size of the `buffer` array.</span></span>  
+ <span data-ttu-id="836bc-109">[in] Taille du tableau `buffer`.</span><span class="sxs-lookup"><span data-stu-id="836bc-109">[in] The size of the `buffer` array.</span></span>  
   
  `pcBuffer`  
- <span data-ttu-id="2edca-110">[out] Pointeur vers la variable qui reçoit la longueur des données d’attribut.</span><span class="sxs-lookup"><span data-stu-id="2edca-110">[out] A pointer to the variable that receives the length of the attribute data.</span></span>  
+ <span data-ttu-id="836bc-110">[out] Pointeur vers la variable qui reçoit la longueur des données d’attribut.</span><span class="sxs-lookup"><span data-stu-id="836bc-110">[out] A pointer to the variable that receives the length of the attribute data.</span></span>  
   
  `buffer`  
- <span data-ttu-id="2edca-111">[out] Pointeur vers la variable qui reçoit les données d’attribut.</span><span class="sxs-lookup"><span data-stu-id="2edca-111">[out] A pointer to the variable that receives the attribute data.</span></span>  
+ <span data-ttu-id="836bc-111">[out] Pointeur vers la variable qui reçoit les données d’attribut.</span><span class="sxs-lookup"><span data-stu-id="836bc-111">[out] A pointer to the variable that receives the attribute data.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="2edca-112">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="2edca-112">Return Value</span></span>  
- <span data-ttu-id="2edca-113">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur...</span><span class="sxs-lookup"><span data-stu-id="2edca-113">S_OK if the method succeeds; otherwise, E_FAIL or some other error code..</span></span>  
+## <a name="return-value"></a><span data-ttu-id="836bc-112">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="836bc-112">Return Value</span></span>  
+ <span data-ttu-id="836bc-113">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur...</span><span class="sxs-lookup"><span data-stu-id="836bc-113">S_OK if the method succeeds; otherwise, E_FAIL or some other error code..</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2edca-114">Spécifications</span><span class="sxs-lookup"><span data-stu-id="2edca-114">Requirements</span></span>  
- <span data-ttu-id="2edca-115">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="2edca-115">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="836bc-114">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="836bc-114">Requirements</span></span>  
+ <span data-ttu-id="836bc-115">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="836bc-115">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2edca-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2edca-116">See Also</span></span>  
- [<span data-ttu-id="2edca-117">ISymUnmanagedReader (Interface)</span><span class="sxs-lookup"><span data-stu-id="2edca-117">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a><span data-ttu-id="836bc-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="836bc-116">See Also</span></span>  
+ [<span data-ttu-id="836bc-117">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="836bc-117">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

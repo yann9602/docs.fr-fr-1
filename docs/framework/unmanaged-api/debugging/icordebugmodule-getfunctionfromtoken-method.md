@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 96e458bc8fdcf37f572c1f45ba9c31d15311c8c6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c449b49333de562cd5ed07f827da6bc295e9c3c1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugmodulegetfunctionfromtoken-method"></a><span data-ttu-id="68faa-102">ICorDebugModule::GetFunctionFromToken, méthode</span><span class="sxs-lookup"><span data-stu-id="68faa-102">ICorDebugModule::GetFunctionFromToken Method</span></span>
-<span data-ttu-id="68faa-103">Obtient la fonction qui est spécifiée par le jeton de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="68faa-103">Gets the function that is specified by the metadata token.</span></span>  
+# <a name="icordebugmodulegetfunctionfromtoken-method"></a><span data-ttu-id="06fa9-102">ICorDebugModule::GetFunctionFromToken, méthode</span><span class="sxs-lookup"><span data-stu-id="06fa9-102">ICorDebugModule::GetFunctionFromToken Method</span></span>
+<span data-ttu-id="06fa9-103">Obtient la fonction qui est spécifiée par le jeton de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="06fa9-103">Gets the function that is specified by the metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="68faa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="68faa-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="06fa9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="06fa9-104">Syntax</span></span>  
   
 ```  
 HRESULT GetFunctionFromToken(  
@@ -39,21 +40,21 @@ HRESULT GetFunctionFromToken(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="68faa-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="68faa-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="06fa9-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="06fa9-105">Parameters</span></span>  
  `methodDef`  
- <span data-ttu-id="68faa-106">[in] A `mdMethodDef` jeton de métadonnées qui référence les métadonnées de la fonction.</span><span class="sxs-lookup"><span data-stu-id="68faa-106">[in] A `mdMethodDef` metadata token that references the function's metadata.</span></span>  
+ <span data-ttu-id="06fa9-106">[in] A `mdMethodDef` jeton de métadonnées qui référence les métadonnées de la fonction.</span><span class="sxs-lookup"><span data-stu-id="06fa9-106">[in] A `mdMethodDef` metadata token that references the function's metadata.</span></span>  
   
  `ppFunction`  
- <span data-ttu-id="68faa-107">[out] Pointeur vers l’adresse d’un objet d’interface ICorDebugFunction qui représente la fonction.</span><span class="sxs-lookup"><span data-stu-id="68faa-107">[out] A pointer to the address of a ICorDebugFunction interface object that represents the function.</span></span>  
+ <span data-ttu-id="06fa9-107">[out] Pointeur vers l’adresse d’un objet d’interface ICorDebugFunction qui représente la fonction.</span><span class="sxs-lookup"><span data-stu-id="06fa9-107">[out] A pointer to the address of a ICorDebugFunction interface object that represents the function.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="68faa-108">Remarques</span><span class="sxs-lookup"><span data-stu-id="68faa-108">Remarks</span></span>  
- <span data-ttu-id="68faa-109">Le `GetFunctionFromToken` méthode retourne un CORDBG_E_FUNCTION_NOT_IL HRESULT si la valeur passée dans `methodDef` ne fait pas référence à une méthode MSIL (intermediate language).</span><span class="sxs-lookup"><span data-stu-id="68faa-109">The `GetFunctionFromToken` method returns a CORDBG_E_FUNCTION_NOT_IL HRESULT if the value passed in `methodDef` does not refer to a Microsoft intermediate language (MSIL) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="06fa9-108">Notes</span><span class="sxs-lookup"><span data-stu-id="06fa9-108">Remarks</span></span>  
+ <span data-ttu-id="06fa9-109">Le `GetFunctionFromToken` méthode retourne un CORDBG_E_FUNCTION_NOT_IL HRESULT si la valeur passée dans `methodDef` ne fait pas référence à une méthode MSIL (intermediate language).</span><span class="sxs-lookup"><span data-stu-id="06fa9-109">The `GetFunctionFromToken` method returns a CORDBG_E_FUNCTION_NOT_IL HRESULT if the value passed in `methodDef` does not refer to a Microsoft intermediate language (MSIL) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="68faa-110">Spécifications</span><span class="sxs-lookup"><span data-stu-id="68faa-110">Requirements</span></span>  
- <span data-ttu-id="68faa-111">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="68faa-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="06fa9-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="06fa9-110">Requirements</span></span>  
+ <span data-ttu-id="06fa9-111">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="06fa9-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="68faa-112">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="68faa-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="06fa9-112">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="06fa9-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="68faa-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="68faa-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="06fa9-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="06fa9-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="68faa-114">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="68faa-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="06fa9-114">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="06fa9-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

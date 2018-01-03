@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 24b4ed62c3fb68306683d2199f901ec510f0da6d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9694ee2e27d8789b661abc7393a480411c2b0191
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugilframegetlocalvariable-method"></a><span data-ttu-id="c25a7-102">ICorDebugILFrame::GetLocalVariable, méthode</span><span class="sxs-lookup"><span data-stu-id="c25a7-102">ICorDebugILFrame::GetLocalVariable Method</span></span>
-<span data-ttu-id="c25a7-103">Obtient la valeur de la variable locale spécifiée dans ce frame de pile Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="c25a7-103">Gets the value of the specified local variable in this Microsoft intermediate language (MSIL) stack frame.</span></span>  
+# <a name="icordebugilframegetlocalvariable-method"></a><span data-ttu-id="886de-102">ICorDebugILFrame::GetLocalVariable, méthode</span><span class="sxs-lookup"><span data-stu-id="886de-102">ICorDebugILFrame::GetLocalVariable Method</span></span>
+<span data-ttu-id="886de-103">Obtient la valeur de la variable locale spécifiée dans ce frame de pile Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="886de-103">Gets the value of the specified local variable in this Microsoft intermediate language (MSIL) stack frame.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c25a7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c25a7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="886de-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="886de-104">Syntax</span></span>  
   
 ```  
 HRESULT GetLocalVariable (  
@@ -39,21 +40,21 @@ HRESULT GetLocalVariable (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="c25a7-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="c25a7-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="886de-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="886de-105">Parameters</span></span>  
  `dwIndex`  
- <span data-ttu-id="c25a7-106">[in] Index de la variable locale dans ce frame de pile MSIL.</span><span class="sxs-lookup"><span data-stu-id="c25a7-106">[in] The index of the local variable in this MSIL stack frame.</span></span>  
+ <span data-ttu-id="886de-106">[in] Index de la variable locale dans ce frame de pile MSIL.</span><span class="sxs-lookup"><span data-stu-id="886de-106">[in] The index of the local variable in this MSIL stack frame.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="c25a7-107">[out] Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur récupérée.</span><span class="sxs-lookup"><span data-stu-id="c25a7-107">[out] A pointer to the address of an ICorDebugValue object that represents the retrieved value.</span></span>  
+ <span data-ttu-id="886de-107">[out] Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur récupérée.</span><span class="sxs-lookup"><span data-stu-id="886de-107">[out] A pointer to the address of an ICorDebugValue object that represents the retrieved value.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c25a7-108">Remarques</span><span class="sxs-lookup"><span data-stu-id="c25a7-108">Remarks</span></span>  
- <span data-ttu-id="c25a7-109">Le `GetLocalVariable` méthode peut être utilisée dans un frame de pile MSIL ou dans un frame compilé juste-à-temps (JIT).</span><span class="sxs-lookup"><span data-stu-id="c25a7-109">The `GetLocalVariable` method can be used either in an MSIL stack frame or in a just-in-time (JIT) compiled frame.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="886de-108">Notes</span><span class="sxs-lookup"><span data-stu-id="886de-108">Remarks</span></span>  
+ <span data-ttu-id="886de-109">Le `GetLocalVariable` méthode peut être utilisée dans un frame de pile MSIL ou dans un frame compilé juste-à-temps (JIT).</span><span class="sxs-lookup"><span data-stu-id="886de-109">The `GetLocalVariable` method can be used either in an MSIL stack frame or in a just-in-time (JIT) compiled frame.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c25a7-110">Spécifications</span><span class="sxs-lookup"><span data-stu-id="c25a7-110">Requirements</span></span>  
- <span data-ttu-id="c25a7-111">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c25a7-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="886de-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="886de-110">Requirements</span></span>  
+ <span data-ttu-id="886de-111">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="886de-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c25a7-112">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c25a7-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="886de-112">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="886de-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="c25a7-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c25a7-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="886de-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="886de-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c25a7-114">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c25a7-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="886de-114">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="886de-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

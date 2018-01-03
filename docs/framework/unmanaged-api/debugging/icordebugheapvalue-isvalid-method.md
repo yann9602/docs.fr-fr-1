@@ -21,18 +21,19 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: df7105c94a6f88c9c196f1d9d6be6f4a62f7c258
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3f4f356c953feaf0e6597983f431222a469e90c1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugheapvalueisvalid-method"></a><span data-ttu-id="28732-102">ICorDebugHeapValue::IsValid, méthode</span><span class="sxs-lookup"><span data-stu-id="28732-102">ICorDebugHeapValue::IsValid Method</span></span>
-<span data-ttu-id="28732-103">Obtient une valeur qui indique si l’objet représenté par ICorDebugHeapValue est valide.</span><span class="sxs-lookup"><span data-stu-id="28732-103">Gets a value that indicates whether the object represented by this ICorDebugHeapValue is valid.</span></span>  
+# <a name="icordebugheapvalueisvalid-method"></a><span data-ttu-id="cada3-102">ICorDebugHeapValue::IsValid, méthode</span><span class="sxs-lookup"><span data-stu-id="cada3-102">ICorDebugHeapValue::IsValid Method</span></span>
+<span data-ttu-id="cada3-103">Obtient une valeur qui indique si l’objet représenté par ICorDebugHeapValue est valide.</span><span class="sxs-lookup"><span data-stu-id="cada3-103">Gets a value that indicates whether the object represented by this ICorDebugHeapValue is valid.</span></span>  
   
- <span data-ttu-id="28732-104">Cette méthode a été déconseillée dans le .NET Framework version 2.0.</span><span class="sxs-lookup"><span data-stu-id="28732-104">This method has been deprecated in the .NET Framework version 2.0.</span></span>  
+ <span data-ttu-id="cada3-104">Cette méthode a été déconseillée dans le .NET Framework version 2.0.</span><span class="sxs-lookup"><span data-stu-id="cada3-104">This method has been deprecated in the .NET Framework version 2.0.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="28732-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="28732-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cada3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cada3-105">Syntax</span></span>  
   
 ```  
 HRESULT IsValid (  
@@ -40,20 +41,20 @@ HRESULT IsValid (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="28732-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="28732-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="cada3-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="cada3-106">Parameters</span></span>  
  `pbValid`  
- <span data-ttu-id="28732-107">[out] Pointeur vers une valeur booléenne qui indique si cette valeur sur le tas est valide.</span><span class="sxs-lookup"><span data-stu-id="28732-107">[out] A pointer to a Boolean value that indicates whether this value on the heap is valid.</span></span>  
+ <span data-ttu-id="cada3-107">[out] Pointeur vers une valeur booléenne qui indique si cette valeur sur le tas est valide.</span><span class="sxs-lookup"><span data-stu-id="cada3-107">[out] A pointer to a Boolean value that indicates whether this value on the heap is valid.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="28732-108">Remarques</span><span class="sxs-lookup"><span data-stu-id="28732-108">Remarks</span></span>  
- <span data-ttu-id="28732-109">La valeur n’est pas valide si elle a été récupéré par le garbage collector.</span><span class="sxs-lookup"><span data-stu-id="28732-109">The value is invalid if it has been reclaimed by the garbage collector.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cada3-108">Notes</span><span class="sxs-lookup"><span data-stu-id="cada3-108">Remarks</span></span>  
+ <span data-ttu-id="cada3-109">La valeur n’est pas valide si elle a été récupéré par le garbage collector.</span><span class="sxs-lookup"><span data-stu-id="cada3-109">The value is invalid if it has been reclaimed by the garbage collector.</span></span>  
   
- <span data-ttu-id="28732-110">Cette méthode est dépréciée.</span><span class="sxs-lookup"><span data-stu-id="28732-110">This method has been deprecated.</span></span> <span data-ttu-id="28732-111">Dans le .NET Framework 2.0, toutes les valeurs sont valides jusqu'à ce que [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) est appelée, à laquelle les valeurs sont invalidés.</span><span class="sxs-lookup"><span data-stu-id="28732-111">In the .NET Framework 2.0, all values are valid until [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) is called, at which time the values are invalidated.</span></span>  
+ <span data-ttu-id="cada3-110">Cette méthode est dépréciée.</span><span class="sxs-lookup"><span data-stu-id="cada3-110">This method has been deprecated.</span></span> <span data-ttu-id="cada3-111">Dans le .NET Framework 2.0, toutes les valeurs sont valides jusqu'à ce que [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) est appelée, à laquelle les valeurs sont invalidés.</span><span class="sxs-lookup"><span data-stu-id="cada3-111">In the .NET Framework 2.0, all values are valid until [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) is called, at which time the values are invalidated.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="28732-112">Spécifications</span><span class="sxs-lookup"><span data-stu-id="28732-112">Requirements</span></span>  
- <span data-ttu-id="28732-113">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="28732-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cada3-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="cada3-112">Requirements</span></span>  
+ <span data-ttu-id="cada3-113">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cada3-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="28732-114">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="28732-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="cada3-114">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="cada3-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="28732-115">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="28732-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="cada3-115">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cada3-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="28732-116">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="28732-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="cada3-116">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cada3-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

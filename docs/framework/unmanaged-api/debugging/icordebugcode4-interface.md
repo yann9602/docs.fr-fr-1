@@ -19,37 +19,38 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bddbdb0986392bf1d9664e351bcc654ffa526257
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 30c0599e183d51030ac5b063a2aca4352ad95eca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugcode4-interface"></a><span data-ttu-id="83a5f-102">Interface de ICorDebugCode4</span><span class="sxs-lookup"><span data-stu-id="83a5f-102">ICorDebugCode4 Interface</span></span>
-<span data-ttu-id="83a5f-103">Fournit une méthode qui permet à un débogueur énumérer les variables locales et les arguments dans une fonction.</span><span class="sxs-lookup"><span data-stu-id="83a5f-103">Provides a method that enables a debugger to enumerate the local variables and arguments in a function.</span></span>  
+# <a name="icordebugcode4-interface"></a><span data-ttu-id="42dbe-102">Interface de ICorDebugCode4</span><span class="sxs-lookup"><span data-stu-id="42dbe-102">ICorDebugCode4 Interface</span></span>
+<span data-ttu-id="42dbe-103">Fournit une méthode qui permet à un débogueur énumérer les variables locales et les arguments dans une fonction.</span><span class="sxs-lookup"><span data-stu-id="42dbe-103">Provides a method that enables a debugger to enumerate the local variables and arguments in a function.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="83a5f-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="83a5f-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="42dbe-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="42dbe-104">Methods</span></span>  
   
-|<span data-ttu-id="83a5f-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="83a5f-105">Method</span></span>|<span data-ttu-id="83a5f-106">Description</span><span class="sxs-lookup"><span data-stu-id="83a5f-106">Description</span></span>|  
+|<span data-ttu-id="42dbe-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="42dbe-105">Method</span></span>|<span data-ttu-id="42dbe-106">Description</span><span class="sxs-lookup"><span data-stu-id="42dbe-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="83a5f-107">EnumerateVariableHomes (méthode)</span><span class="sxs-lookup"><span data-stu-id="83a5f-107">EnumerateVariableHomes Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-enumeratevariablehomes-method.md)|<span data-ttu-id="83a5f-108">Obtient un énumérateur pour les variables locales et les arguments dans une fonction.</span><span class="sxs-lookup"><span data-stu-id="83a5f-108">Gets an enumerator to the local variables and arguments in a function.</span></span>|  
+|[<span data-ttu-id="42dbe-107">EnumerateVariableHomes, méthode</span><span class="sxs-lookup"><span data-stu-id="42dbe-107">EnumerateVariableHomes Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-enumeratevariablehomes-method.md)|<span data-ttu-id="42dbe-108">Obtient un énumérateur pour les variables locales et les arguments dans une fonction.</span><span class="sxs-lookup"><span data-stu-id="42dbe-108">Gets an enumerator to the local variables and arguments in a function.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="83a5f-109">Remarques</span><span class="sxs-lookup"><span data-stu-id="83a5f-109">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="42dbe-109">Notes</span><span class="sxs-lookup"><span data-stu-id="42dbe-109">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="83a5f-110">Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.</span><span class="sxs-lookup"><span data-stu-id="83a5f-110">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+>  <span data-ttu-id="42dbe-110">Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.</span><span class="sxs-lookup"><span data-stu-id="42dbe-110">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="83a5f-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="83a5f-111">Requirements</span></span>  
- <span data-ttu-id="83a5f-112">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="83a5f-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="42dbe-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="42dbe-111">Requirements</span></span>  
+ <span data-ttu-id="42dbe-112">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="42dbe-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="83a5f-113">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="83a5f-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="42dbe-113">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="42dbe-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="83a5f-114">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="83a5f-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="42dbe-114">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="42dbe-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="83a5f-115">**Versions du .NET framework :**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="83a5f-115">**.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span></span>  
+ <span data-ttu-id="42dbe-115">**Versions du .NET framework :**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="42dbe-115">**.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="83a5f-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="83a5f-116">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="42dbe-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="42dbe-116">See Also</span></span>  
     
     
- [<span data-ttu-id="83a5f-117">Icordebugcode3, Interface</span><span class="sxs-lookup"><span data-stu-id="83a5f-117">ICorDebugCode3 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
- [<span data-ttu-id="83a5f-118">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="83a5f-118">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [<span data-ttu-id="42dbe-117">ICorDebugCode3, interface</span><span class="sxs-lookup"><span data-stu-id="42dbe-117">ICorDebugCode3 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
+ [<span data-ttu-id="42dbe-118">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="42dbe-118">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
