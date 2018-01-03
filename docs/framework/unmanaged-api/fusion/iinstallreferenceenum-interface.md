@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d3847d06c77a92eb6e63542f03405ca0cb9c9560
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2f1a80d1d79fce952a7071abd5e435604824d00e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iinstallreferenceenum-interface"></a>IInstallReferenceEnum, interface
 Représente un énumérateur pour les assemblys référencés installés dans le global assembly cache.  
@@ -44,9 +45,9 @@ interface IInstallReferenceEnum : IUnknown {
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetNextInstallReferenceItem (méthode)](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-getnextinstallreferenceitem-method.md)|Obtient un pointeur vers la prochaine `IInstallReferenceItem` contenus dans ce `IInstallReferenceEnum`.|  
+|[GetNextInstallReferenceItem, méthode](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-getnextinstallreferenceitem-method.md)|Obtient un pointeur vers la prochaine `IInstallReferenceItem` contenus dans ce `IInstallReferenceEnum`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Fusion.h  
@@ -55,4 +56,4 @@ interface IInstallReferenceEnum : IUnknown {
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IInstallReferenceItem (Interface)](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)
+ [IInstallReferenceItem, interface](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)

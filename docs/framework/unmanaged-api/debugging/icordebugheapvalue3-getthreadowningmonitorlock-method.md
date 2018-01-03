@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3571f546f71515a980c5415e568ae85eb0863d42
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1a2198e54c764fde0248563b040ac98984001888
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugheapvalue3getthreadowningmonitorlock-method"></a>ICorDebugHeapValue3::GetThreadOwningMonitorLock, méthode
 Retourne le thread managé qui possède le verrou du moniteur sur cet objet.  
@@ -56,7 +57,7 @@ HRESULT GetThreadOwningMonitorLock (
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si un thread managé possède le verrou du moniteur sur cet objet :  
   
 -   La méthode retourne S_OK.  
@@ -69,7 +70,7 @@ HRESULT GetThreadOwningMonitorLock (
   
  Si une erreur se produit et il ne peut pas déterminer qui, le cas échéant, le thread possède le verrou du moniteur sur cet objet, la méthode retourne un HRESULT qui indique un échec.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0c8a4421b716614081368755388bd2ab8d8fe22e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 018ed69e52efd21ca25029284c70f1c8493d877f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugstackwalk-interface"></a>ICorDebugStackWalk, interface
 Fournit des méthodes pour obtenir les méthodes managées, ou frames, sur la pile d'un thread.  
@@ -32,17 +33,17 @@ Fournit des méthodes pour obtenir les méthodes managées, ou frames, sur la pi
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetContext (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md)|Retourne le contexte pour le frame actuel dans le `ICorDebugStackWalk` objet.|  
+|[GetContext, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md)|Retourne le contexte pour le frame actuel dans le `ICorDebugStackWalk` objet.|  
 |[SetContext, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md)|Définit le `ICorDebugStackWalk` contexte actuel de l’objet à un contexte valid pour le thread.|  
 |[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md)|Déplace le `ICorDebugStackWalk` objet à l’image suivante.|  
-|[GetFrame (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getframe-method.md)|Obtient le frame actuel le `ICorDebugStackWalk` objet.|  
+|[GetFrame, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getframe-method.md)|Obtient le frame actuel le `ICorDebugStackWalk` objet.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 >  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

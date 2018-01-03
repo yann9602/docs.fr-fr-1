@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a05ba891e734fbf5a94b2a1f91e29d484e1c788b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6e950847764e695f705aeded0e3804db4b872827
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebuginternalframe-interface1"></a>ICorDebugInternalFrame Interface1
 Représente un frame interne d’exécution sur la pile. Cette interface est une sous-classe de l’interface ICorDebugFrame.  
@@ -32,14 +33,14 @@ Représente un frame interne d’exécution sur la pile. Cette interface est une
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetFrameType (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md)|Obtient le type de ce frame interne.|  
+|[GetFrameType, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md)|Obtient le type de ce frame interne.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 >  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

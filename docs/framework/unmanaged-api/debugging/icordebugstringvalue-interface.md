@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 03ae6fba5d880b11baac695866853e0b3a4d8cc7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e9958e6f5ad73658b278d83c78e58cf4166d5642
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugstringvalue-interface1"></a>ICorDebugStringValue Interface1
 Une sous-classe de ICorDebugHeapValue qui s’applique aux valeurs de chaîne.  
@@ -32,15 +33,15 @@ Une sous-classe de ICorDebugHeapValue qui s’applique aux valeurs de chaîne.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetLength (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|Obtient le nombre de caractères dans la chaîne référencée par cet `ICorDebugStringValue`.|  
+|[GetLength, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|Obtient le nombre de caractères dans la chaîne référencée par cet `ICorDebugStringValue`.|  
 |[GetString, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|Obtient la chaîne référencée par cet `ICorDebugStringValue`.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 >  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 35c6152836adf02d541bacd149ed9ac053765ba6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c9696687f292d7dcaa3d430c1e269f0fedb05e98
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ireferenceidentity-interface"></a>IReferenceIdentity, interface
 Représente une référence à la signature unique d’un objet de code.  
@@ -37,7 +38,7 @@ Représente une référence à la signature unique d’un objet de code.
 |`IReferenceIdentity::GetAttribute`|Obtient la valeur de l’attribut dans l’espace de noms spécifié, avec le nom spécifié.|  
 |`IReferenceIdentity::SetAttribute`|Définit l’attribut qui possède l’espace de noms et le nom spécifié à la valeur spécifiée.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Isolation.h  
@@ -46,4 +47,4 @@ Représente une référence à la signature unique d’un objet de code.
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IEnumIDENTITY_ATTRIBUTE (Interface)](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)
+ [IEnumIDENTITY_ATTRIBUTE, interface](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)

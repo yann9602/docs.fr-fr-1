@@ -17,11 +17,12 @@ caps.latest.revision: "38"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 56b0774db462c92c6ab0d66ab7158dcc01da0c9e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 610b2d44fca43f2745b7b423a5cdb73c5a7d74d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-textpattern-overview"></a>Vue d'ensemble de TextPattern d'UI Automation
 > [!NOTE]
@@ -70,7 +71,7 @@ ms.lasthandoff: 11/21/2017
 |||  
 |-|-|  
 |`System.Windows.Automation.TextPattern Class`|Point d'entrée pour le modèle de texte [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] .<br /><br /> Cette classe contient également les deux écouteurs d'événements <xref:System.Windows.Automation.TextPattern> : <xref:System.Windows.Automation.TextPattern.TextSelectionChangedEvent> et <xref:System.Windows.Automation.TextPattern.TextChangedEvent>.|  
-|`System.Windows.Automation.Text.TextPatternRange Class`|Représentation d'une étendue de texte dans un conteneur de texte qui prend en charge <xref:System.Windows.Automation.TextPattern>.<br /><br /> Les clients UI Automation doivent faire attention à la validité actuelle d’une plage de texte créée à l’aide de <xref:System.Windows.Automation.Text.TextPatternRange>. Si le texte d'origine dans le contrôle de texte est complètement remplacé par un nouveau texte, la plage de texte actuelle devient non valide. Toutefois, la plage de texte peut rester viable si seule une partie du texte d'origine est modifiée et que le contrôle de texte sous-jacent gère son « pointeur » de texte avec des points d'ancrage (ou points de terminaison) plutôt qu'avec un positionnement de caractère absolu.<br /><br /> Les clients peuvent écouter un <xref:System.Windows.Automation.TextPattern.TextChangedEvent> pour être avertis de toute modification apportée au contenu textuel qu'ils utilisent.|  
+|`System.Windows.Automation.Text.TextPatternRange Class`|Représentation d'une étendue de texte dans un conteneur de texte qui prend en charge <xref:System.Windows.Automation.TextPattern>.<br /><br /> Les clients UI Automation doivent faire attention à la validité actuelle d’une plage de texte créée à l’aide de <xref:System.Windows.Automation.Text.TextPatternRange>. Si le texte d'origine dans le contrôle de texte est complètement remplacé par un nouveau texte, la plage de texte actuelle devient non valide. Toutefois, la plage de texte peut rester viable si seule une partie du texte d'origine est modifiée et que le contrôle de texte sous-jacent gère son « pointeur » de texte avec des points d'ancrage (ou points de terminaison) plutôt qu'avec un positionnement de caractère absolu.<br /><br /> Les clients peuvent écouter un <xref:System.Windows.Automation.TextPattern.TextChangedEvent> pour être avertis de toute modification apportée au contenu textuel qu'ils utilisent.|  
 |`System.Windows.Automation.AutomationTextAttribute Class`|Utilisé pour identifier les attributs de mise en forme d'une plage de texte.|  
   
 <a name="TextPattern_Provider_API_s"></a>   
@@ -138,10 +139,10 @@ L'exemple suivant illustre un ensemble de points de début et de terminaison.
  Unité de texte prédéfinie (caractère, mot, ligne ou paragraphe) utilisée pour naviguer dans les segments logiques d'une plage de texte.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Modèles de contrôle UI Automation pour les Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [Vue d’ensemble du modèles contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
- [Vue d’ensemble d’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [Modèles de contrôle UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [Vue d’ensemble des modèles de contrôle UI Automation](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [Présentation de l’arborescence UI Automation](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
  [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
- [Prise en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [Mappage de modèle de contrôle pour les Clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
+ [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [Mappage de modèle de contrôle pour les clients UI Automation](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
  [Infrastructure de Services de texte](http://msdn.microsoft.com/library/default.asp?url=/library/tsf/tsf/text_services_framework.asp)

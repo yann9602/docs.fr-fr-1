@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c44db9021a7dbf5b497db3536eddcea020e71bf7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 71fd69cbcced1440839b9eedf8fbe3d8f5b90646
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="callid-structure"></a>CALL_ID, structure
 Fournit des informations à un débogueur sur une fonction qui est appelée. Consultez le [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) interface pour plus d’informations.  
@@ -53,9 +54,9 @@ typedef struct tagCALL_ID
 |`szEntryPoint`|Spécifie l’adresse de l’appel.|  
 |`szDestinationMachine`|Identifie l’ordinateur qui exécute l’appel.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **En-tête :** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Voir aussi  
- [INotifySink2 (Interface)](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
- [Structures du magasin de symboles de Diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+ [INotifySink2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
+ [Structures du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

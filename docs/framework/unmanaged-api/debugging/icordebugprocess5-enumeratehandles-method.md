@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5377f4ce0571cdb1de6c338f4bbb87d6a589aaf7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c9bf9f1a4d565e0af4f3ee34a2805116407027d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugprocess5enumeratehandles-method"></a>ICorDebugProcess5::EnumerateHandles, méthode
 Obtient un énumérateur pour les handles d’objet dans un processus.  
@@ -44,7 +45,7 @@ HRESULT EnumerateHandles(     [in] CorGCReferenceType types,
  `ppENum`  
  [out] Un pointeur vers l’adresse d’un [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) qui est un énumérateur pour les objets pour le garbage collector.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `EnumerateHandles`est une fonction d’assistance qui prend en charge l’inspection de la table de handles. Il est similaire à la [ICorDebugProcess5::EnumerateGCReferences](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) (méthode), à ceci près qu’au lieu de remplir une [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) collection avec tous les objets par le garbage collector, il inclut uniquement les objets qui ont des descripteurs de la table de handles.  
   
  Le `types` paramètre spécifie les types de handle à inclure dans la collection. `types`peut être une des trois membres suivants de la [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) énumération :  
@@ -55,7 +56,7 @@ HRESULT EnumerateHandles(     [in] CorGCReferenceType types,
   
 -   `CorHandleAll`(tous les handles).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

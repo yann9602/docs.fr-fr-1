@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: cf2f852d0da36211e379a4068cccff9dfc656100
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c19e472ef571def1011d2a00701fea3a6fadfea8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugdatatargetgetplatform-method"></a>ICorDebugDataTarget::GetPlatform, méthode
 Fournit des informations sur la plateforme, notamment l’architecture de processeur et de système d’exploitation, sur lequel s’exécute le processus cible.  
@@ -40,7 +41,7 @@ HRESULT GetPlatform([out] CorDebugPlatform * pTargetPlatform);
  `pTargetPlatform`  
  [out] Un pointeur vers un [CorDebugPlatformEnum](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md) énumération qui décrit la plateforme cible.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `CorDebugPlatformEnum` valeur de retour d’énumération est utilisée par le [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) interface pour déterminer les détails du processus cible tels que sa taille du pointeur disposition de l’espace adresse, jeu de Registre, format de l’instruction, mise en page du contexte, et conventions d’appel.  
   
  Le `pTargetPlatform` valeur peut faire référence à une plateforme émulée pour la cible au lieu de spécifier le matériel en cours d’utilisation. Par exemple, un processus qui s’exécute dans l’environnement Windows on Windows (WOW) sur une édition 64 bits du système d’exploitation Windows doit utiliser le `CORDB_PLATFORM_WINDOWS_X86` valeur de la [CorDebugPlatformEnum](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md) énumération.  
@@ -51,7 +52,7 @@ HRESULT GetPlatform([out] CorDebugPlatform * pTargetPlatform);
   
 -   Le matériel sur la plateforme cible est inutilisable.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -61,6 +62,6 @@ HRESULT GetPlatform([out] CorDebugPlatform * pTargetPlatform);
  **Versions du .NET framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICorDebugDataTarget (Interface)](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)  
+ [ICorDebugDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)  
  [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)

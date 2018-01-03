@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e0df76f43ad037a4681f985e99401cb8c7f5a2ce
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a9cbb755bd8f52482f7eece6e9d236f29cadc419
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugclass2getparameterizedtype-method"></a>ICorDebugClass2::GetParameterizedType, méthode
 Obtient la déclaration de type pour cette classe.  
@@ -54,7 +55,7 @@ HRESULT GetParameterizedType (
  `ppType`  
  [out] Un pointeur vers l’adresse d’un `ICorDebugType` objet qui représente la déclaration de type. Cet objet est équivalent à un <xref:System.Type> objet dans le code managé.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si la classe n’est pas générique, autrement dit, si elle n’a aucun paramètre de type, `GetParameterizedType` obtient simplement l’objet de type runtime correspondant à la classe. Le `elementType` paramètre doit être défini sur le type d’élément correct pour la classe : ELEMENT_TYPE_VALUETYPE si la classe est un type valeur ; sinon, ELEMENT_TYPE_CLASS.  
   
  Si la classe accepte les paramètres de type (par exemple, `ArrayList<T>`), vous pouvez utiliser `GetParameterizedType` pour construire un objet de type pour un type instancié comme `ArrayList<int>`.  
@@ -66,7 +67,7 @@ HRESULT GetParameterizedType (
   
  L’introduction de la `ICorDebugType` objet pour représenter la notion d’exécution d’un type a des répercussions tout au long de l’API. Fonctions qui prenaient précédemment un `ICorDebugClass` ou `ICorDebugClass2` objet ou même un `CorElementType` valeur sont généralisées pour prendre un `ICorDebugType` objet.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

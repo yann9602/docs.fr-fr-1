@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 268951d70fec1096fc9cafaeeb6da3b83bc0acf2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 58fbb5ae13433e0faa47db1e1e49d086670e69d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="isymunmanageddocumentgetchecksumalgorithmid-method"></a>ISymUnmanagedDocument::GetCheckSumAlgorithmId, méthode
 Obtient l’identificateur d’algorithme de somme de contrôle, ou retourne un GUID de tous les zéros s’il n’existe aucune somme de contrôle.  
@@ -45,4 +46,4 @@ HRESULT GetCheckSumAlgorithmId(
  S_OK si la méthode réussit.  
   
 ## <a name="see-also"></a>Voir aussi  
- [ISymUnmanagedDocument (Interface)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+ [ISymUnmanagedDocument, interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

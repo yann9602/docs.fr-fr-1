@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dc5e5e6a0ff0784825a69ba1873224a537ad46c3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d877b534ca2501117153047858a1a1f2736bdd4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugfunction2getjmcstatus-method"></a>ICorDebugFunction2::GetJMCStatus, méthode
 Obtient une valeur qui indique si la fonction qui est représentée par cet objet ICorDebugFunction2 est marquée comme du code utilisateur.  
@@ -42,10 +43,10 @@ HRESULT GetJMCStatus (
  `pbIsJustMyCode`  
  [out] Un pointeur vers une valeur booléenne qui est `true`, si cette fonction est marquée comme du code utilisateur ; sinon, la valeur est `false`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si la fonction représentée par ce `ICorDebugFunction2` ne peut pas être débogué `pbIsJustMyCode` sera toujours `false`.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

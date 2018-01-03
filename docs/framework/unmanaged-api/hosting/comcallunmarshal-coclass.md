@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2760fc84466c85e022421bcc17dcee6444ec859a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2cbaefd2b2c3b79a97107f4aaa394a3db2c68b33
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="comcallunmarshal-coclass"></a>Coclasse ComCallUnmarshal
 Fournit des interfaces pour gérer le marshaling de pointeurs d’interface.  
@@ -42,7 +43,7 @@ coclass ComCallUnmarshal {
 |---------------|-----------------|  
 |`IMarshal`|Fournit des méthodes de création, de l’initialisation et de gérer un proxy dans un processus client.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.idl  

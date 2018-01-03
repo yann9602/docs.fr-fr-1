@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bc1f3a46ac7da58fb2c209f833173a1bc6b32ea4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 79e2a35a455407715a05e826d31c5d5ab05a02ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ienumdefinitionidentity-interface"></a>IEnumDefinitionIdentity, interface
 Sert d’énumérateur pour une collection de `IDefinitionIdentity` objets.  
@@ -62,7 +63,7 @@ IEnumDefinitionIdentity : IUnknown {
 |`IEnumDefinitionIdentity::Reset`|Déplace le pointeur d’instruction au début de cette `IEnumDefinitionIdentity`.|  
 |`IEnumDefinitionIdentity::Skip`|Déplace le pointeur d’instruction par le nombre spécifié d’éléments, en commençant à la position actuelle.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Isolation.h  
@@ -71,4 +72,4 @@ IEnumDefinitionIdentity : IUnknown {
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IDefinitionIdentity (Interface)](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)
+ [IDefinitionIdentity, interface](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)

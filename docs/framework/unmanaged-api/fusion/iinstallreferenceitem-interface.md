@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2a10143ff8fa4fd17937ec700f8ce8ed60121ceb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6dca48edebe63ae7752ad8b2256133373bcc9872
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iinstallreferenceitem-interface"></a>IInstallReferenceItem, interface
 Représente un élément installé dans le global assembly cache.  
@@ -32,9 +33,9 @@ Représente un élément installé dans le global assembly cache.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetReference (méthode)](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-getreference-method.md)|Obtient un pointeur vers le `FUSION_INSTALL_REFERENCE` structure représentée par ce `IInstallReferenceItem`.|  
+|[GetReference, méthode](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-getreference-method.md)|Obtient un pointeur vers le `FUSION_INSTALL_REFERENCE` structure représentée par ce `IInstallReferenceItem`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Fusion.h  
@@ -43,4 +44,4 @@ Représente un élément installé dans le global assembly cache.
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [FUSION_INSTALL_REFERENCE (Structure)](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md)
+ [FUSION_INSTALL_REFERENCE, structure](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md)

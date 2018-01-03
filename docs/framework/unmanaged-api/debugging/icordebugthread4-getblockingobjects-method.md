@@ -21,11 +21,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6783d7f9af67acdff147cc46ea4f856f9b10bf3a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 006535885868ef2778146f86e5395ea1f7605d6f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugthread4getblockingobjects-method"></a>ICorDebugThread4::GetBlockingObjects, méthode
 Fournit une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures qui fournissent des informations de blocage des threads.  
@@ -41,7 +42,7 @@ HRESULT GetBlockingObjects (
  `ppBlockingObjectEnum`  
  [out] Un pointeur vers une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le premier élément dans l’énumération retournée correspond à la première structure qui bloque le thread. Le deuxième élément correspond à un élément de blocage rencontré pendant l’exécution d’un appel de procédure asynchrone (APC) bloquée sur le premier et ainsi de suite.  
   
  L’énumération est valide uniquement pour la durée de l’état synchronisé actuel.  
@@ -52,7 +53,7 @@ HRESULT GetBlockingObjects (
   
  Si un thread est bloqué et l’erreur ne peut pas être déterminé, la méthode retourne un HRESULT qui indique un échec ; Sinon, retourne S_OK.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -62,6 +63,6 @@ HRESULT GetBlockingObjects (
  **Versions du .NET framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICorDebugThread4 (Interface)](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)  
+ [ICorDebugThread4, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)  
  [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)

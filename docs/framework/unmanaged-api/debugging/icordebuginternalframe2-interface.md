@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b612cb2fb8b2a84555ccf36a8537ebecff673d47
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d87303fbe95804b458a42ed43b65f29233814977
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebuginternalframe2-interface"></a>ICorDebugInternalFrame2, interface
 Fournit des informations sur les frames internes, notamment l’adresse de la pile et la position par rapport aux objets ICorDebugFrame.  
@@ -32,16 +33,16 @@ Fournit des informations sur les frames internes, notamment l’adresse de la pi
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetFrameAddress (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-getframeaddress-method.md)|Retourne l’adresse de la pile du frame interne.|  
-|[IsCloserToLeaf (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Vérifie si le `this` frame interne est proche de la feuille de l’objet ICorDebugFrame spécifié.|  
+|[GetFrameAddress, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-getframeaddress-method.md)|Retourne l’adresse de la pile du frame interne.|  
+|[IsCloserToLeaf, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Vérifie si le `this` frame interne est proche de la feuille de l’objet ICorDebugFrame spécifié.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cette interface étend l’interface ICorDebugInternalFrame.  
   
 > [!NOTE]
 >  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

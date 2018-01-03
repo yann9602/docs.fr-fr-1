@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4714183eb79a25639dae6824a1d27eb1ca6bb009
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0a4410814669ed329e477fbad13dac60103b1ac0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="deprecated-clr-hosting-interfaces-and-coclasses"></a>Interfaces d’hébergement du CLR et coclasses déconseillées
 Cette section décrit les interfaces non managées hôtes peuvent utiliser pour intégrer le common language runtime (CLR) dans les versions du .NET Framework 1.0 et 1.1 dans leurs applications. Ces interfaces fournissent des méthodes pour un ordinateur hôte configurer et charger le runtime dans un processus.  
@@ -31,10 +32,10 @@ Cette section décrit les interfaces non managées hôtes peuvent utiliser pour 
  IAppDomainSetup  
  Fournit des méthodes pour l’hôte de configurer un <xref:System.AppDomain>.  
   
- [ICeeFileGen (classe)](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md)  
+ [ICeeFileGen, classe](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md)  
  (Déconseillée) Fournit des fonctionnalités pour la création d’un fichier exécutable portable natif (PE).  
   
- [ICorRuntimeHost (Interface)](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)  
+ [ICorRuntimeHost, interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)  
  Fournit des méthodes pour l’hôte configurer les paramètres de CLR.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

@@ -17,11 +17,12 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9800541fdb91993118aa4c2cc63a7849a3f2dbb9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6eec7f0ceefee88fe20f987d5887c32b284ec8d2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugprocess7-interface"></a>ICorDebugProcess7, interface
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -32,11 +33,11 @@ ms.lasthandoff: 11/21/2017
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Setwriteablemetadataupdatemode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)|Définit une valeur qui détermine comment le débogueur gère les mises à jour en mémoire des métadonnées dans le processus cible.|  
+|[SetWriteableMetadataUpdateMode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)|Définit une valeur qui détermine comment le débogueur gère les mises à jour en mémoire des métadonnées dans le processus cible.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

@@ -21,11 +21,12 @@ caps.latest.revision: "6"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9ee867afe99fc5d2f2eb27bb1e6888aef8341d71
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f44f0707892197398e4638a5e6d037fba7c8fc71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebuginternalframe2getframeaddress-method"></a>ICorDebugInternalFrame2::GetFrameAddress, méthode
 Retourne l’adresse de la pile du frame interne.  
@@ -49,10 +50,10 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
 |E_FAIL|L’adresse du frame interne n’a pas pu être retourné.|  
 |E_INVALIDARG|`pAddress` a la valeur `null`.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La valeur retournée dans `pAddress` peut être utilisé pour déterminer l’emplacement du frame interne par rapport aux autres frames sur la pile. Même sur les ordinateurs basés sur IA-64, le frame interne vit uniquement sur la pile, et il n’existe aucun pointeur correspondant vers un magasin de stockage.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -62,6 +63,6 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
  **Versions du .NET framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICorDebugInternalFrame2 (Interface)](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md)  
+ [ICorDebugInternalFrame2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md)  
  [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)

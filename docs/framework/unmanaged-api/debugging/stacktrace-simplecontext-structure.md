@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 87ce3d50d6da6a7c23b13fa10123033efbb6c52c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 756c1d4129aebedea46443613d286a51562a3896
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stacktracesimplecontext-structure"></a>StackTrace_SimpleContext
 Fournit un contexte simple qui peut être utilisé à la place d'une structure `CONTEXT` complète.  
@@ -49,10 +50,10 @@ struct StackTrace_SimpleContext
 |`FrameOffset`|Offset de frame ou EBP sur x86 les plateformes.|  
 |`InstructionOffset`|Le pointeur d’instruction, ou que le pointeur d’instruction (EIP) entrée sur x86 plateformes.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Étant donné que les fonctions de trace de pile doivent généralement retourner uniquement l’adresse offset de frame et adresse de la pile, vous pouvez éventuellement utiliser le `SimpleContext` structure au lieu d’un grand `CONTEXT` structure.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** SOS_Stacktrace.h  

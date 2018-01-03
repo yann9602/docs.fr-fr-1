@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7f6596918819294f0ab68735cec12f9eab8bf83e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 751cca87962473501ef29a4deb99d9d24be33396
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugenum-interface1"></a>ICorDebugEnum Interface1
 Sert d’interface de base abstraite pour les énumérateurs qui sont utilisés par une application de débogage.  
@@ -32,12 +33,12 @@ Sert d’interface de base abstraite pour les énumérateurs qui sont utilisés 
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Clone (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-clone-method.md)|Crée une copie de ce `ICorDebugEnum` objet.|  
-|[GetCount (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-getcount-method.md)|Obtient le nombre d’éléments dans l’énumération.|  
-|[Reset (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-reset-method.md)|Déplace le curseur au début de l’énumération.|  
+|[Clone, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-clone-method.md)|Crée une copie de ce `ICorDebugEnum` objet.|  
+|[GetCount, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-getcount-method.md)|Obtient le nombre d’éléments dans l’énumération.|  
+|[Reset, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-reset-method.md)|Déplace le curseur au début de l’énumération.|  
 |[Skip, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-skip-method.md)|Déplace le curseur vers l’avant dans l’énumération par le nombre spécifié d’éléments.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les énumérateurs suivants dérivent `ICorDebugEnum`:  
   
 -   « ICorDebugAppDomainEnum »  
@@ -85,7 +86,7 @@ Sert d’interface de base abstraite pour les énumérateurs qui sont utilisés 
 > [!NOTE]
 >  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

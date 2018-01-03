@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3c73d12731a5c72b8c0e724f74ee0aa9ebddeee9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: db5054ab9b71eb93005fc0315acba82d807487ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getversionfromprocess-function"></a>GetVersionFromProcess, fonction
 Obtient le numéro de version du common language runtime (CLR) qui est associé au handle de processus spécifié.  
@@ -62,11 +63,11 @@ HRESULT GetVersionFromProcess (
 |Code de retour|Description|  
 |-----------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
-|E_INVALIDARG|`pVersion`a la valeur null et `cchBuffer` n’est pas null, ou vice versa.<br /><br /> ou<br /><br /> `hProcess`n’est pas un handle valide d’un processus.<br /><br /> ou<br /><br /> Le CLR n’est pas chargé.|  
+|E_INVALIDARG|`pVersion`a la valeur null et `cchBuffer` n’est pas null, ou vice versa.<br /><br /> - ou -<br /><br /> `hProcess`n’est pas un handle valide d’un processus.<br /><br /> - ou -<br /><br /> Le CLR n’est pas chargé.|  
 |ERROR_INSUFFICIENT_BUFFER|`cchBuffer`est null ou inférieur à la longueur de la chaîne de version.|  
 |E_NOTIMPL|Cette méthode n’est pas disponible sur le système d’exploitation Microsoft Windows 95, Microsoft Windows 98 ou Microsoft Windows Millennium Edition.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -76,6 +77,6 @@ HRESULT GetVersionFromProcess (
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [GetRequestedRuntimeInfo (fonction)](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  
- [GetRequestedRuntimeVersion (fonction)](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
- [Fonctions d’hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+ [GetRequestedRuntimeInfo, fonction](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  
+ [GetRequestedRuntimeVersion, fonction](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
+ [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

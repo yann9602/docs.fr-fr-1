@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 01f84c7126a4017a8d3b199f94eb497fae8e1a49
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f2754caf11f89358b3e81e6324835d5b2e12f17e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugthreadsetdebugstate-method"></a>ICorDebugThread::SetDebugState, méthode
 Définit les indicateurs qui décrivent l’état de débogage de ICorDebugThread.  
@@ -42,10 +43,10 @@ HRESULT SetDebugState (
  `state`  
  [in] Combinaison de bits des valeurs d’énumération CorDebugThreadState qui spécifient l’état de débogage de ce thread.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `SetDebugState`définit l’état de débogage actuel du thread. (Le « état de débogage actuel » représente l’état de débogage si le processus de se poursuivre, pas l’état actuel réel.) La valeur normale est THREAD_RUNNING. Seul le débogueur peut affecter l’état de débogage d’un thread. États de débogage dernière à travers continue, donc si vous souhaitez conserver un thread THREAD_SUSPENDed sur plusieurs continue, vous pouvez définir une seule fois et au préoccupez pas. Suspendre les threads et la reprise du processus peuvent entraîner des blocages, bien qu’il soit généralement peu probable. Ceci est une qualité intrinsèque des threads et processus et de par sa conception. Un débogueur peut arrêter de façon asynchrone et reprendre les threads pour arrêter l’interblocage. Si l’état utilisateur du thread inclut USER_UNSAFE_POINT, le thread peut bloquer un garbage collection (GC). Cela signifie que le thread suspendu risque davantage de provoquer un interblocage. Cela peut affecter pas les événements sont déjà en file d’attente de débogage. Par conséquent, un débogueur doit vider la file d’attente de la totalité de l’événement (en appelant [ICorDebugController::HasQueuedCallbacks](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)) avant de suspendre ou reprendre des threads. Sinon, il peut obtenir des événements sur un thread qu’elle estime qu’il a déjà suspendu.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

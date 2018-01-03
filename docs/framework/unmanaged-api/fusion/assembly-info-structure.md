@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d532bbd2d338f942c09c4213620468a3361db5f6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 215d80c3d207c2f50cfbd74386915b0467692b57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="assemblyinfo-structure"></a>ASSEMBLY_INFO, structure
 Contient des informations sur un assembly qui est enregistré dans le global assembly cache.  
@@ -50,7 +51,7 @@ typedef struct _ASSEMBLY_INFO {
 |`pszCurrentAssemblyPathBuf`|Pointeur vers une mémoire tampon de chaîne qui contient le chemin d’accès actuel dans le fichier manifeste. Le chemin d’accès doit se terminer par un caractère null.|  
 |`cchBuf`|Le nombre de caractères larges, y compris la marque de fin null, qui `pszCurrentAssemblyPathBuf` contient.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Fusion.h  

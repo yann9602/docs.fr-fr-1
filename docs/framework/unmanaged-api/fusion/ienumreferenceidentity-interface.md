@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 49e1425e8e7e3d09dc36915916b887d2887dccff
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d1af31c72770947c33f358a9689bac6fd95ef53c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ienumreferenceidentity-interface"></a>IEnumReferenceIdentity, interface
 Sert d’énumérateur pour une collection de `IReferenceIdentity` objets.  
@@ -37,7 +38,7 @@ Sert d’énumérateur pour une collection de `IReferenceIdentity` objets.
 |`IEnumReferenceIdentity::Reset`|Déplace le pointeur d’instruction au début de cette `IEnumReferenceIdentity`.|  
 |`IEnumReferenceIdentity::Skip`|Déplace le pointeur d’instruction par le nombre spécifié d’éléments, en commençant à la position actuelle.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Isolation.h  
@@ -46,4 +47,4 @@ Sert d’énumérateur pour une collection de `IReferenceIdentity` objets.
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IReferenceIdentity (Interface)](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)
+ [IReferenceIdentity, interface](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)

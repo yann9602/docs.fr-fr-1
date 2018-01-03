@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8500eb7a9f1762402567e9352a3ce84f5a672a45
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1acca300362162b94410aadb10b123b4ecacc664
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="isymunmanagednamespace-interface"></a>ISymUnmanagedNamespace, interface
 Représente un espace de noms.  
@@ -32,12 +33,12 @@ Représente un espace de noms.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetName (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|Obtient le nom de cet espace de noms.|  
-|[GetNamespaces (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|Obtient les enfants de cet espace de noms.|  
-|[GetVariables (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|Retourne toutes les variables définies dans une portée globale au sein de cet espace de noms.|  
+|[GetName, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|Obtient le nom de cet espace de noms.|  
+|[GetNamespaces, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|Obtient les enfants de cet espace de noms.|  
+|[GetVariables, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|Retourne toutes les variables définies dans une portée globale au sein de cet espace de noms.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **En-tête :** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interfaces du magasin de symboles de Diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+ [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

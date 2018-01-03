@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a412ec7fbc619ae01a981fefe10ce0e4f2874848
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5cf99b35d45c1dda8f187e0206e068c128f347d1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugvaluegetsize-method"></a>ICorDebugValue::GetSize, méthode
 Obtient la taille, en octets, de cet objet « ICorDebugValue ».  
@@ -42,12 +43,12 @@ HRESULT GetSize (
  `pSize`  
  [out] La taille, en octets, de cet objet de valeur.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si le type de valeur est un type référence, cette méthode retourne la taille du pointeur plutôt que la taille de l’objet.  
   
  Le `ICorDebugValue::GetSize` retourne de la méthode `COR_E_OVERFLOW` pour les objets qui sont supérieurs à 4 Go sur les plateformes 64 bits. Utilisez le [ICorDebugValue3::GetSize64](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) méthode à la place pour les objets qui sont supérieurs à 4 Go.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -58,4 +59,4 @@ HRESULT GetSize (
   
 ## <a name="see-also"></a>Voir aussi  
     
- [GetSize64 (méthode)](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)
+ [GetSize64, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)

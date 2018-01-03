@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 31ae48d62221d45a8457c304a1929886738190c4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cab889761c204204e7eda46fde0df42f31b89fbc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugthreadgetid-method"></a>ICorDebugThread::GetID, méthode
 Obtient l’identificateur de système d’exploitation actuel de la partie active du ICorDebugThread.  
@@ -42,10 +43,10 @@ HRESULT GetID (
  `pdwThreadId`  
  [out] L’identificateur du thread.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’identificateur de système d’exploitation susceptible d’être modifié pendant l’exécution d’un processus et peut être une valeur différente pour les différentes parties du thread.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

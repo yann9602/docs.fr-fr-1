@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4c5fd66fb3ba5eba1b01451b77472a94bc16dfef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e613b9101e842a584eef4bcbac1bf3de1dba5cd3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorpublishgetprocess-method"></a>ICorPublish::GetProcess, méthode
 Obtient un [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instance qui représente le processus avec l’identificateur spécifié.  
@@ -46,10 +47,10 @@ HRESULT GetProcess(
  `ppProcess`  
  [out] Un pointeur vers l’adresse d’un `ICorPublishProcess` instance qui représente le processus.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `GetProcess`échoue si le processus n’existe pas ou n’est pas un processus managé qui peut être débogué par l’utilisateur actuel.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorPub.idl, CorPub.h  
@@ -59,4 +60,4 @@ HRESULT GetProcess(
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICorPublish (Interface)](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)
+ [ICorPublish, interface](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)
