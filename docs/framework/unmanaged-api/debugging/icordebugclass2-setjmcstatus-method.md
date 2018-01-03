@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: da9f61bd9a652b4c8e340ddecdee4b48bbdb086e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5fa9de4482b674173dba6a8316491507330f6376
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugclass2setjmcstatus-method"></a>ICorDebugClass2::SetJMCStatus, méthode
 Pour chaque méthode de la classe, définit une valeur qui indique si la méthode est un code défini par l’utilisateur.  
@@ -42,12 +43,12 @@ HRESULT SetJMCStatus (
  `bIsJustMyCode`  
  [in] La valeur `true` pour indiquer que la méthode est définie par l’utilisateur de code ; sinon, valeur `false`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Un uniquement mon code (JMC) ignorera le code non défini par l’utilisateur. Code défini par l’utilisateur doit être un sous-ensemble de code pouvant être débogué.  
   
  `SetJMCStatus`Retourne une valeur HRESULT de S_FALSE en cas d’échec définir la valeur de n’importe quelle méthode, même si la valeur pour toutes les autres méthodes.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

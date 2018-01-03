@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ce5e42bb9374f22ad29ef0e97a141a796f087a98
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 37a9be7924a6d9c1f1d78bd10f9642fff22036bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugchaingetstackrange-method"></a>ICorDebugChain::GetStackRange, méthode
 Obtient la plage d’adresses du segment de pile pour cette chaîne.  
@@ -46,10 +47,10 @@ HRESULT GetStackRange (
  `pEnd`  
  [out] Un pointeur vers un `CORDB_ADDRESS` valeur qui est l’adresse de fin du segment de pile.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La plage numérique est utile uniquement pour la comparaison des emplacements de frame de pile. Vous ne pouvez pas faire d’hypothèses sur ce qui est réellement stocké dans la pile.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

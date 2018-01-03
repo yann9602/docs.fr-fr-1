@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ffcd4dc32f2f509dd9421b2c24781fb2819418b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2e2772833d75ced2209896ca37cf6cf37fb965f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corilmap-structure"></a>COR_IL_MAP, structure
 Spécifie des modifications dans le décalage relatif d'une fonction.  
@@ -46,7 +47,7 @@ typedef struct _COR_IL_MAP {
 |`newOffset`|Nouvel offset MSIL par rapport au début de la fonction.|  
 |`fAccurate`|`true`Si le mappage est avéré précis ; dans le cas contraire, `false`.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le format de la carte est le suivant : le débogueur suppose que `oldOffset` fait référence à un offset MSIL dans le code MSIL non modifié d’origine. Le `newOffset` paramètre fait référence à l’offset MSIL correspondant dans le nouveau code instrumenté.  
   
  Pour exécuter pas à pas pour fonctionner correctement, les conditions suivantes doivent être remplies :  
@@ -83,7 +84,7 @@ typedef struct _COR_IL_MAP {
   
 -   Un nouvel offset de 20 ou supérieur sera mappé à l’ancien offset 9.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorProf.idl  

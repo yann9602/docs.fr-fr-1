@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1dd0d00338f3f9ff9ac63e84a29124913cc9febe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4a681b19eaa4a1828e6d6b5276713d61a3625121
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugeval2rudeabort-method"></a>ICorDebugEval2::RudeAbort, méthode
 Abandonne le calcul par ce `ICorDebugEval2` est en cours.  
@@ -36,10 +37,10 @@ Abandonne le calcul par ce `ICorDebugEval2` est en cours.
 HRESULT RudeAbort ();  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `RudeAbort`ne libère pas les verrous maintenus par l’évaluateur, et laisse donc la session de débogage dans un état potentiellement dangereux. Appelez cette méthode avec une extrême prudence.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

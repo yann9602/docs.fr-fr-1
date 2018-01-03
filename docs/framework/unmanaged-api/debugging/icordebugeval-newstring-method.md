@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 48c1a36e32feb94e8399c46f88a98f75c81fdb6a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6cc45d766801391fcd157c39357058be17759f8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugevalnewstring-method"></a>ICorDebugEval::NewString, méthode
 Alloue une nouvelle instance de chaîne avec le contenu spécifié.  
@@ -42,10 +43,10 @@ HRESULT NewString (
  `string`  
  [in] Pointeur vers le contenu de la chaîne.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La chaîne est toujours créée dans le domaine d’application dans lequel le thread est en cours d’exécution.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

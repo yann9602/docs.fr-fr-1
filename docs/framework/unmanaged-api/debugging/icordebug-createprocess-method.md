@@ -21,11 +21,12 @@ caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4a05bb8d8486f5ae12910d51e3717c4c91ef09cb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 16e45f3bad92914ce8c7fb0044534789a7a28b2e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess, méthode
 Lance un processus et son thread principal sous le contrôle du débogueur.  
@@ -86,7 +87,7 @@ HRESULT CreateProcess (
  `ppProcess`  
  [out] Pointeur vers l’adresse d’un objet ICorDebugProcess qui représente le processus.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les paramètres de cette méthode sont identiques à celles de Win32 `CreateProcess` (méthode).  
   
  Pour activer le débogage en mode mixte non managé, définissez `dwCreationFlags` à DEBUG_PROCESS &#124; DEBUG_ONLY_THIS_PROCESS. Si vous souhaitez utiliser uniquement le débogage managé, ne définissez pas ces indicateurs.  
@@ -95,7 +96,7 @@ HRESULT CreateProcess (
   
  Débogage d’interopérabilité n’est pas pris en charge sur les plateformes Win9x et non x86 telles que les plateformes basée sur IA-64 et AMD64.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -105,4 +106,4 @@ HRESULT CreateProcess (
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICorDebug (Interface)](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+ [ICorDebug, interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)

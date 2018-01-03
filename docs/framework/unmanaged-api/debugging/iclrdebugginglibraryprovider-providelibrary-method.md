@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d3a34579787e976022ffa8caf7c29d8a565a7c73
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cf6860a616312504e3d23177734cb532405bd714
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iclrdebugginglibraryproviderprovidelibrary-method"></a>ICLRDebuggingLibraryProvider::ProvideLibrary, méthode
 Obtient un fournisseur de bibliothèque interface de rappel qui permet de common language runtime (CLR) des bibliothèques de débogage spécifiques à la version à la demande et le chargement.  
@@ -62,7 +63,7 @@ HRESULT ProvideLibrary(
   
 ## <a name="exceptions"></a>Exceptions  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `ProvideLibrary`permet au débogueur de fournir des modules qui sont nécessaires pour le débogage de fichiers CLR spécifiques tels que mscordbi.dll et mscordacwks.dll. Les handles de module doivent rester valides jusqu'à ce qu’un appel à la [ICLRDebugging::CanUnloadNow](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) méthode indique qu’ils peuvent être libérés, à quel point il est assurée par l’appelant de libérer les handles.  
   
  Le débogueur peut utiliser tous les moyens pour rechercher ou obtenir le module de débogage.  
@@ -72,7 +73,7 @@ HRESULT ProvideLibrary(
 >   
 >  Si un problème de sécurité sérieux est découvert dans une bibliothèque déjà libérée, tels que mscordbi.dll ou mscordacwks.dll, le shim peut être corrigé pour reconnaître les mauvaises versions des fichiers. Le shim peut ensuite émettre des demandes pour les versions corrigées des fichiers et rejeter les mauvaises versions si elles sont fournies en réponse à une demande. Cela peut se produire uniquement si l’utilisateur a corrigé vers une nouvelle version du shim. Les versions non corrigées restent vulnérables.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

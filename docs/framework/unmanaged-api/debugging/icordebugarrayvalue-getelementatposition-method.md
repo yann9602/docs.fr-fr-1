@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 20af0afa395dd69dc8967aa9f39a8bf99eacf530
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c26a55815e57126895902275148940c5271c235b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugarrayvaluegetelementatposition-method"></a>ICorDebugArrayValue::GetElementAtPosition, méthode
 Obtient l’élément à la position donnée, en traitant le tableau comme un tableau unidimensionnel de base zéro.  
@@ -46,10 +47,10 @@ HRESULT GetElementAtPosition (
  `ppValue`  
  [out] Pointeur vers l’adresse d’un objet ICorDebugValue qui représente la valeur de l’élément.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La disposition d’un tableau multidimensionnel suit le style C++ de disposition de tableau.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

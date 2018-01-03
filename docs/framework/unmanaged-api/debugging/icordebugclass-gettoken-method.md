@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 805ecd7111fd06dfe0d13f60e6dd1e64ec3c37b6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 408575c53feb81a2b273bd1064e2d3eaa37c4fb8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugclassgettoken-method"></a>ICorDebugClass::GetToken, méthode
 Obtient le `TypeDef` jeton de métadonnées qui fait référence à la définition de cette classe.  
@@ -42,7 +43,7 @@ HRESULT GetToken (
  `pTypeDef`  
  [out] Un pointeur vers un `mdTypeDef` jeton qui fait référence à la définition de cette classe.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

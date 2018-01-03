@@ -22,11 +22,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d4d4c9502b52f521b9faa8e8d352f0721af68314
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6539b471d6a3075bb4cec69b382cf7702a439d5a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enumerateclrs-function"></a>Fonction EnumerateCLRs
 Fournit un mécanisme pour énumérer les CLR dans un processus.  
@@ -68,7 +69,7 @@ HRESULT EnumerateCLRs (
  E_FAIL (ou autres codes de retour E_)  
  Impossible d'énumérer les CLR chargés.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Pour un processus cible qui est identifié par `debuggeePID`, la fonction retourne un tableau de chemins d'accès, `ppStringArrayOut`, vers les CLR chargés dans le processus ; un tableau de handles d'événement, `ppHandleArrayOut`, qui peut contenir un événement continue-startup pour le CLR au même index ; et la taille des tableaux, `pdwArrayLengthOut`, qui spécifie le nombre de CLR chargés.  
   
  Sur le système d'exploitation Windows, `debuggeePID` est mappé à un identificateur de processus du système d'exploitation.  
@@ -77,7 +78,7 @@ HRESULT EnumerateCLRs (
   
  Cette fonction peut être appelée en affectant la valeur null aux deux paramètres de tableau afin de retourner le nombre de CLR dans le processus cible. Avec ce nombre, un appelant peut déduire la taille de la mémoire tampon qui sera créée : `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** dbgshim.h  

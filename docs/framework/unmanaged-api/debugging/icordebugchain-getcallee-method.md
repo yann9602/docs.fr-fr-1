@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ed2bf8d8e91799fd0b01012d5d6e212d26a526be
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3b584929d99e641e361de916c402a0d5723e53c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugchaingetcallee-method"></a>ICorDebugChain::GetCallee, méthode
 Obtient la chaîne qui a été appelée par cette chaîne.  
@@ -42,10 +43,10 @@ HRESULT GetCallee (
  `ppChain`  
  [out] Pointeur vers l’adresse d’un objet ICorDebugChain qui représente la chaîne appelée. Si cette chaîne est en cours d’exécution (autrement dit, si cette chaîne n’est pas en attente pour un retour de chaîne appelée), `ppChain` sera null.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cette chaîne attendra la chaîne appelée à retourner avant de reprendre l’exécution. La chaîne appelée peut être sur un autre thread dans le cas d’appels marshalés inter-threads.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

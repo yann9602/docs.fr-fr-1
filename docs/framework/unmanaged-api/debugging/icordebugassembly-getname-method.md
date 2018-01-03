@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d54139f8d7562f7f1ceb6e704731cd890a5f99df
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cf2b84a6ab7cc1745fbf7330e66f94ea04635892
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugassemblygetname-method"></a>ICorDebugAssembly::GetName, méthode
 Obtient le nom de l’assembly que cela `ICorDebugAssembly` représente l’instance.  
@@ -50,10 +51,10 @@ HRESULT GetName (
  `szName`  
  [out] Tableau qui stocke le nom.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `GetName` méthode retourne le chemin d’accès et le nom complet de l’assembly.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

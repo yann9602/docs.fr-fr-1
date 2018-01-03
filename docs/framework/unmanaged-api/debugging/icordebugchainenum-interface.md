@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5ac8e880072e2ef66f8f3d51779f3589de556916
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b7611dbb77c8f67bb0cb4844bc200ed350d0739f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icordebugchainenum-interface1"></a>ICorDebugChainEnum Interface1
 Implémente les méthodes ICorDebugEnum et énumère des tableaux ICorDebugChain.  
@@ -34,12 +35,12 @@ Implémente les méthodes ICorDebugEnum et énumère des tableaux ICorDebugChain
 |------------|-----------------|  
 |[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugchainenum-next-method.md)|Obtient le nombre spécifié de `ICorDebugChain` les instances de l’énumération, en démarrant à la position actuelle.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 >  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
