@@ -21,16 +21,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 94c530015cc1770adf31c336dfb00eb06ffd70a7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 69c28cba90c8ebef1b178263c8edac2cb5914c0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icordebugcodegetsize-method"></a><span data-ttu-id="ca813-102">ICorDebugCode::GetSize, méthode</span><span class="sxs-lookup"><span data-stu-id="ca813-102">ICorDebugCode::GetSize Method</span></span>
-<span data-ttu-id="ca813-103">Obtient la taille, en octets, du code binaire représenté par « ICorDebugCode ».</span><span class="sxs-lookup"><span data-stu-id="ca813-103">Gets the size, in bytes, of the binary code represented by this "ICorDebugCode".</span></span>  
+# <a name="icordebugcodegetsize-method"></a><span data-ttu-id="d9716-102">ICorDebugCode::GetSize, méthode</span><span class="sxs-lookup"><span data-stu-id="d9716-102">ICorDebugCode::GetSize Method</span></span>
+<span data-ttu-id="d9716-103">Obtient la taille, en octets, du code binaire représenté par « ICorDebugCode ».</span><span class="sxs-lookup"><span data-stu-id="d9716-103">Gets the size, in bytes, of the binary code represented by this "ICorDebugCode".</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ca813-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ca813-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d9716-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d9716-104">Syntax</span></span>  
   
 ```  
 HRESULT GetSize (  
@@ -38,18 +39,18 @@ HRESULT GetSize (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="ca813-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ca813-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="d9716-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d9716-105">Parameters</span></span>  
  `pcBytes`  
- <span data-ttu-id="ca813-106">[out] Un pointeur vers la taille, en octets, du fichier binaire de code par ce `ICorDebugCode` représente l’objet.</span><span class="sxs-lookup"><span data-stu-id="ca813-106">[out] A pointer to the size, in bytes, of the binary code that this `ICorDebugCode` object represents.</span></span>  
+ <span data-ttu-id="d9716-106">[out] Un pointeur vers la taille, en octets, du fichier binaire de code par ce `ICorDebugCode` représente l’objet.</span><span class="sxs-lookup"><span data-stu-id="d9716-106">[out] A pointer to the size, in bytes, of the binary code that this `ICorDebugCode` object represents.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ca813-107">Spécifications</span><span class="sxs-lookup"><span data-stu-id="ca813-107">Requirements</span></span>  
- <span data-ttu-id="ca813-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ca813-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d9716-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d9716-107">Requirements</span></span>  
+ <span data-ttu-id="d9716-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d9716-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ca813-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="ca813-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="d9716-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d9716-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="ca813-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ca813-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="d9716-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d9716-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="ca813-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ca813-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="d9716-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d9716-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ca813-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ca813-112">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d9716-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d9716-112">See Also</span></span>  
  
