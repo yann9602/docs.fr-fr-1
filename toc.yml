@@ -371,6 +371,9 @@
             - name: Concepts
               tocHref: /dotnet/csharp/concepts/
               topicHref: /dotnet/csharp/concepts/index
+            - name: SDK .NET Compiler Platform
+              tocHref: /dotnet/csharp/roslyn-sdk/
+              topicHref: /dotnet/csharp/roslyn-sdk/index
             - name: Guide de programmation
               tocHref: /dotnet/csharp/programming-guide/
               topicHref: /dotnet/csharp/programming-guide/index
