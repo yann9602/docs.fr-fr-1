@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f9d044ab9b95eb4144770a90367028b5b513a69c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 52713566419eedbb5a39153541402920479eb500
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="collection-activities-in-wf"></a>Activités de collection dans le WF
 Les activités de collection sont utilisées pour utiliser les objets de collection dans un workflow. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] comprend des activités fournies par le système permettant d'ajouter des éléments à une collection et de les supprimer, de vérifier l'existence d'un élément dans une collection et d'effacer une collection. `ExistsInCollection`et `RemoveFromCollection` ont un <xref:System.Activities.OutArgument%601> de type <xref:System.Boolean>, qui indique le résultat.  
@@ -29,12 +30,12 @@ Les activités de collection sont utilisées pour utiliser les objets de collect
 |||  
 |-|-|  
 |<xref:System.Activities.Statements.AddToCollection%601>|Ajoute un élément à une collection spécifiée.|  
-|<xref:System.Activities.Statements.ClearCollection%601>|Efface tous les éléments d’une collection spécifiée.|  
+|<xref:System.Activities.Statements.ClearCollection%601>|Efface tous les éléments d'une collection spécifiée.|  
 |<xref:System.Activities.Statements.ExistsInCollection%601>|Retourne `true` si un élément existe dans une collection.|  
 |<xref:System.Activities.Statements.RemoveFromCollection%601>|Supprime un élément d'une collection spécifiée et retourne `true` si celui-ci a correctement été supprimé.|  
   
 ## <a name="using-collection-activities"></a>Utilisation d'activités de collection  
- L'exemple de code suivant montre comment interagir avec une collection déclarée comme une variable de workflow. La collection utilisée est une <!--zz <xref:System.Collections.Generic.List%E2%80%991>--> `System.Collections.Generic.List` de <xref:System.String> objets nommés `fruitList`.  
+ L’exemple de code suivant montre comment interagir avec une collection déclarée comme une variable de workflow. La collection utilisée est une <!--zz <xref:System.Collections.Generic.List%E2%80%991>--> `System.Collections.Generic.List` de <xref:System.String> objets nommés `fruitList`.  
   
 ```csharp  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  

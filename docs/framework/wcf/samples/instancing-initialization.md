@@ -13,11 +13,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5345816295b9de54426aef3da697b99b4f0ce10e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0bc034028f8dacbac638c27e6fb8f48603cdcf2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="instancing-initialization"></a>Instancing Initialization
 Cet exemple étend le [Pooling](../../../../docs/framework/wcf/samples/pooling.md) exemple en définissant une interface, `IObjectControl`, qui personnalise l’initialisation d’un objet à activer et désactiver. Le client appelle des méthodes qui retournent l'objet au pool et d'autres qui ne retournent pas l'objet au pool.  
@@ -144,7 +145,7 @@ if (activeObjectsCount == 0)
 }  
 ```  
   
- Les extensions de couche ServiceModel sont raccordées à l'aide des comportements suivants :  
+ Les extensions de couche ServiceModel sont raccordées à l’aide des comportements suivants :  
   
 -   Comportements de service : permettent de personnaliser l'ensemble de l'exécution du service.  
   
@@ -154,11 +155,11 @@ if (activeObjectsCount == 0)
   
 -   Comportements d'opération : permettent de personnaliser la classe <xref:System.ServiceModel.Dispatcher.ClientOperation> ou la classe <xref:System.ServiceModel.Dispatcher.DispatchOperation> sur le client ou le service respectivement.  
   
- Dans le cadre d'une extension de mise en pool d’objets, il est possible de créer un comportement de point de terminaison ou un comportement de service. Dans cet exemple, nous utilisons un comportement de service qui applique la capacité de mise en mise en pool d’objets à chaque point de terminaison du service. Pour ce faire, implémentez l'interface <xref:System.ServiceModel.Description.IServiceBehavior>. Il existe plusieurs méthodes pour que le ServiceModel tienne compte des comportements personnalisés :  
+ Dans le cadre d’une extension de mise en pool d’objets, il est possible de créer un comportement de point de terminaison ou un comportement de service. Dans cet exemple, nous utilisons un comportement de service qui applique la capacité de mise en mise en pool d’objets à chaque point de terminaison du service. Pour ce faire, implémentez l'interface <xref:System.ServiceModel.Description.IServiceBehavior>. Il existe plusieurs méthodes pour que le ServiceModel tienne compte des comportements personnalisés :  
   
 -   Utilisation d'un attribut personnalisé.  
   
--   L'ajouter de façon impérative à la collection de comportements de la description de service.  
+-   L’ajouter de façon impérative à la collection de comportements de la description de service.  
   
 -   Extension du fichier de configuration  
   

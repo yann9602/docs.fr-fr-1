@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2caa77285ebe327adc690b26baeb58aa800627fb
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 04d93203f98c91b0d5bbed5f833745a9bb9ab1d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lines-curves-and-shapes"></a>Lignes, courbes et formes
 La partie du graphique vectoriel de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] est utilisé pour dessiner des lignes, courbes et pour dessiner et remplir des formes.  

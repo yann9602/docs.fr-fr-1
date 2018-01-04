@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5a1c4ab7c2ee6f7164b6158dcb4ca4721be12650
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6a84a68f9082d00559938c2710b6574690fa6ab4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-gradient-brush-to-fill-shapes"></a>Utilisation d'un pinceau à dégradé pour remplir des formes
 Vous pouvez utiliser un pinceau de dégradé pour remplir une forme avec une couleur. Par exemple, vous pouvez utiliser un dégradé horizontal pour remplir une forme avec une couleur qui change progressivement à mesure que vous déplacez le bord gauche de la forme sur le bord droit. Imaginez un rectangle avec un bord gauche noirs (représenté par les composants rouges, verts et bleus 0, 0, 0) et un bord droit de couleur rouge (représenté par 255, 0, 0). Si le rectangle est 256 pixels de large, le composant rouge d’un pixel donné sera supérieure à la composante rouge du pixel situé à sa gauche. Le pixel le plus à gauche dans une ligne a des composants de couleur (0, 0, 0), le deuxième pixel a (1, 0, 0), le troisième pixel (2, 0, 0) et ainsi de suite jusqu'à ce que vous obtenez au pixel plus à droite, ce qui a RVB (255, 0, 0). Ces valeurs de couleur interpolée composent le dégradé de couleur.  

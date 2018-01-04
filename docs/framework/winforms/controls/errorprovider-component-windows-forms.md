@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c1dd0cfd8062274d4e2ad9ce75ae41ed69e703d4
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0dbebd020d4512b90215dae781f359a3a633c609
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="errorprovider-component-windows-forms"></a>ErrorProvider, composant (Windows Forms)
 Windows Forms `ErrorProvider` composant est utilisé pour indiquer à l’utilisateur d’une manière non intrusifs pose problème. Il est généralement utilisé conjointement avec la validation des entrées d’utilisateur sur un formulaire ou l’affichage des erreurs dans un jeu de données.  
@@ -38,7 +39,7 @@ Windows Forms `ErrorProvider` composant est utilisé pour indiquer à l’utilis
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.ErrorProvider>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

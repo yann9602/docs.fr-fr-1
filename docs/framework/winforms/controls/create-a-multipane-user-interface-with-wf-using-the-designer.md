@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7b49f5440626fc7f6c869e87351680ec2f1de25e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6cfd9f258aa7c43f4c98e475c40af7fe7d9c286b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a>Comment : créer une interface utilisateur à plusieurs volets avec des Windows Forms à l'aide du concepteur
 Dans la procédure suivante, vous allez créer une interface utilisateur à plusieurs volets semblable à celle utilisée dans Microsoft Outlook, avec une **dossier** liste, un **Messages** volet et un **aperçu** volet. Cette disposition est obtenue principalement par le biais d’ancrage de contrôles dans le formulaire.  

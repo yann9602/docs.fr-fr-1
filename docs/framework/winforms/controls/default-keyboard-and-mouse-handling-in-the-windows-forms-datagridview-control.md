@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d0f1ec3f1fe0b078da92c93cbb928075d7d462c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 627784f3d68ddf03f1f6c94975405dded3163c06
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control"></a>Gestion par défaut du clavier et de la souris dans le contrôle DataGridView Windows Forms
 Les tableaux suivants décrivent comment les utilisateurs peuvent interagir avec le <xref:System.Windows.Forms.DataGridView> contrôle via un clavier et une souris.  
@@ -43,10 +44,10 @@ Les tableaux suivants décrivent comment les utilisateurs peuvent interagir avec
 |GAUCHE|Déplace le focus vers la cellule précédente dans la ligne. Si le focus est dans la première cellule de la ligne, n’exécute aucune opération.|  
 |DROITE|Déplace le focus vers la cellule suivante dans la ligne. Si le focus est dans la dernière cellule de la ligne, n’exécute aucune opération.|  
 |HAUT|Déplace le focus vers la cellule juste au-dessus de la cellule active. Si le focus est dans la première ligne, n’exécute aucune opération.|  
-|ACCUEIL|Déplace le focus vers la première cellule de la ligne actuelle.|  
+|ORIGINE|Déplace le focus vers la première cellule de la ligne actuelle.|  
 |FIN|Déplace le focus vers la dernière cellule de la ligne actuelle.|  
-|PG.SUIV|Fait défiler le contrôle vers le bas par le nombre de lignes qui sont entièrement affichés. Déplace le focus vers la dernière ligne affichée entièrement sans modifier les colonnes.|  
-|PG.PRÉC|Fait défiler le contrôle vers le haut par le nombre de lignes qui sont entièrement affichés. Déplace le focus sur la première ligne affichée sans modifier les colonnes.|  
+|Page suivante|Fait défiler le contrôle vers le bas par le nombre de lignes qui sont entièrement affichés. Déplace le focus vers la dernière ligne affichée entièrement sans modifier les colonnes.|  
+|Page précédente|Fait défiler le contrôle vers le haut par le nombre de lignes qui sont entièrement affichés. Déplace le focus sur la première ligne affichée sans modifier les colonnes.|  
 |TAB|Si le <xref:System.Windows.Forms.DataGridView.StandardTab%2A> valeur de propriété est `false`, déplace le focus vers la cellule suivante dans la ligne actuelle. Si le focus se trouve déjà dans la dernière cellule de la ligne, déplace le focus vers la première cellule de la ligne suivante. Si le focus est dans la dernière cellule dans le contrôle, déplace le focus vers le contrôle suivant dans l’ordre de tabulation du conteneur parent.<br /><br /> Si le <xref:System.Windows.Forms.DataGridView.StandardTab%2A> valeur de propriété est `true`, déplace le focus vers le contrôle suivant dans l’ordre de tabulation du conteneur parent.|  
 |MAJ+TAB|Si le <xref:System.Windows.Forms.DataGridView.StandardTab%2A> valeur de propriété est `false`, déplace le focus vers la cellule précédente dans la ligne actuelle. Si le focus se trouve déjà dans la première cellule de la ligne, déplace le focus vers la dernière cellule de la ligne précédente. Si le focus est dans la première cellule dans le contrôle, déplace le focus au contrôle précédent dans l’ordre de tabulation du conteneur parent.<br /><br /> Si le <xref:System.Windows.Forms.DataGridView.StandardTab%2A> valeur de propriété est `true`, déplace le focus vers le contrôle précédent dans l’ordre de tabulation du conteneur parent.|  
 |CTRL+TAB|Si le <xref:System.Windows.Forms.DataGridView.StandardTab%2A> valeur de propriété est `false`, déplace le focus vers le contrôle suivant dans l’ordre de tabulation du conteneur parent.<br /><br /> Si le <xref:System.Windows.Forms.DataGridView.StandardTab%2A> valeur de propriété est `true`, déplace le focus vers la cellule suivante dans la ligne actuelle. Si le focus se trouve déjà dans la dernière cellule de la ligne, déplace le focus vers la première cellule de la ligne suivante. Si le focus est dans la dernière cellule dans le contrôle, déplace le focus vers le contrôle suivant dans l’ordre de tabulation du conteneur parent.|  

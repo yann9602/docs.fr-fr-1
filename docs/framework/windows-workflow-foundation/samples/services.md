@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b2cee42de74609cbfc793822471655d88b32d9ce
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 924368f5de4c5698c439a6c8744a15babd62d762
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="services"></a>Services
 Cette section contient des liens vers des exemples qui illustrent les fonctionnalités des services [!INCLUDE[wf](../../../../includes/wf-md.md)].  
@@ -37,25 +38,25 @@ Cette section contient des liens vers des exemples qui illustrent les fonctionna
  [Service uniquement en XAML de base](../../../../docs/framework/windows-workflow-foundation/samples/basic-xaml-only-service.md)  
  Montre comment créer un service uniquement en XAML.  
   
- [Mise en forme des messages dans les Services de flux de travail](../../../../docs/framework/windows-workflow-foundation/samples/formatting-messages-in-workflow-services.md)  
+ [Mise en forme des messages dans les services de workflow](../../../../docs/framework/windows-workflow-foundation/samples/formatting-messages-in-workflow-services.md)  
  Montre comment des types utilisateur différents peuvent être utilisés dans des activités de messagerie (services WF). L'exemple de service est un service d'approbation des dépenses simple qui expose trois opérations.  
   
- [Corrélation Duplex durable](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
+ [Durable Duplex](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)  
  Montre comment installer et configurer un échange de messages duplex durable à l'aide des activités de messagerie dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
  [Corrélation basée sur le contenu](../../../../docs/framework/windows-workflow-foundation/samples/content-based-correlation.md)  
  Montre comment les activités de messagerie (<xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply> et <xref:System.ServiceModel.Activities.ReceiveReply>) peuvent être utilisées avec plusieurs corrélations basées sur le contenu et une corrélation basée sur le contenu.  
   
- [Mise en cache avec l’envoi de canal](../../../../docs/framework/windows-workflow-foundation/samples/channel-caching-with-send.md)  
+ [Mise en cache des canaux avec Send](../../../../docs/framework/windows-workflow-foundation/samples/channel-caching-with-send.md)  
  Montre comment utiliser <xref:System.ServiceModel.Activities.SendMessageChannelCache>.  
   
  [Délai durable en XAMLX](../../../../docs/framework/windows-workflow-foundation/samples/durable-delay-in-xamlx.md)  
  Montre comment utiliser un délai durable, qui est un délai rendant le workflow persistant sur un périphérique durable pendant le délai.  
   
- [Mise en mémoire tampon de réception](../../../../docs/framework/windows-workflow-foundation/samples/buffered-receive.md)  
+ [Mise en mémoire tampon de la réception](../../../../docs/framework/windows-workflow-foundation/samples/buffered-receive.md)  
  Montre comment installer et configurer la fonctionnalité de réception mise en mémoire dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
- [Activation de XAML](../../../../docs/framework/windows-workflow-foundation/samples/xaml-activation.md)  
+ [Activation XAML](../../../../docs/framework/windows-workflow-foundation/samples/xaml-activation.md)  
  Montre comment héberger un workflow déclaratif dans [!INCLUDE[iisver](../../../../includes/iisver-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  

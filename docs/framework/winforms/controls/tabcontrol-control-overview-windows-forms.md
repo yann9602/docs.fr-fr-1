@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 707fb08e487acc8a585e9fe9a246e7485d5e2749
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 04407ca8ddb51658ffd9cc4078d8f545c08e9312
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tabcontrol-control-overview-windows-forms"></a>Vue d'ensemble du contrôle TabControl (Windows Forms)
 Le <xref:System.Windows.Forms.TabControl> Windows Forms affiche plusieurs onglets comparables aux intercalaires d'un agenda ou aux étiquettes d'un ensemble de dossiers dans un classeur. Les onglets peuvent contenir des images et d'autres contrôles. Vous pouvez utiliser le contrôle d’onglet pour produire le type de la boîte de dialogue de plusieurs pages qui s’affiche de nombreux emplacements dans le système d’exploitation Windows, tels que les propriétés d’affichage de contrôle de panneau de configuration. En outre, le <xref:System.Windows.Forms.TabControl> peut être utilisé pour créer des pages de propriétés qui sont utilisées pour définir un groupe de propriétés connexes.  

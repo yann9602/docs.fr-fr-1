@@ -20,11 +20,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 309429c2481bad3a8dff4708d9e2ea8a03057a4e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e12620a5079efaba4faa9101253a3a586965b7e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-validate-application-settings"></a>Comment : valider des paramètres d'application
 Cette rubrique illustre la validation des paramètres d’application avant qu’ils ne soient rendus persistants.  
@@ -33,7 +34,7 @@ Cette rubrique illustre la validation des paramètres d’application avant qu�
   
  L’événement que vous utilisez dépend du moment où vous devez valider vos paramètres, comme décrit dans le tableau suivant.  
   
-|Événement|Occurrence et utilisation|  
+|événement|Occurrence et utilisation|  
 |-----------|------------------------|  
 |<xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>|Se produit après le chargement initial d’un groupe de propriétés de paramètres.<br /><br /> Utilisez cet événement pour valider les valeurs initiales de l’ensemble du groupe de propriétés avant de les utiliser dans l’application.|  
 |<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>|Se produit avant la modification de la valeur d’une propriété unique de paramètres.<br /><br /> Utilisez cet événement pour valider une propriété unique avant sa modification. Il peut fournir des commentaires immédiats aux utilisateurs à propos de leurs actions et de leurs choix.|  
@@ -68,11 +69,11 @@ Cette rubrique illustre la validation des paramètres d’application avant qu�
         MySettings.Default   
         ```  
   
-         ou  
+         - ou -  
   
     -   Si vous êtes un développeur Visual Basic et si vous avez créé vos paramètres d’application à l’aide du Concepteur de projet, vous pouvez récupérer vos paramètres à l’aide de l’[objet My.Settings](~/docs/visual-basic/language-reference/objects/my-settings-object.md).  
   
-         ou  
+         - ou -  
   
     -   Si vous avez créé vos paramètres en dérivant de <xref:System.Configuration.ApplicationSettingsBase> directement, vous devez instancier votre classe manuellement.  
   
@@ -90,7 +91,7 @@ Cette rubrique illustre la validation des paramètres d’application avant qu�
   
 1.  Si vous êtes un développeur c#, dans votre formulaire ou de contrôle `Load` événement, ajoutez un gestionnaire d’événements pour le <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> événement.  
   
-     ou  
+     - ou -  
   
      Si vous êtes un développeur Visual Basic, vous devez déclarer la variable `Settings` à l’aide du mot clé`WithEvents`.  
   

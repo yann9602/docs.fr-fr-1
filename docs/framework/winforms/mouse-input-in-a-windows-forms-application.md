@@ -14,11 +14,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cb45f22a037b459556f6de2e8cda0e025b621686
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 56b267222f8e22d9d411d744f67d93cde6ba17a2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mouse-input-in-a-windows-forms-application"></a>Entrée de la souris dans une application Windows Forms
 Windows Forms inclut divers événements de souris et une prise en charge supplémentaire pour les curseurs de souris, la capture de souris et le comportement de glisser-déplacer personnalisés.  

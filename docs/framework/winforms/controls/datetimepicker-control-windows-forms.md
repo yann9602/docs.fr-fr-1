@@ -18,11 +18,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6d87d1968b2a605a45f9cb0a918e6345679aa9c2
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 514f4e4835a047c8c340c0026aa5b59f6f3f7822
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datetimepicker-control-windows-forms"></a>DateTimePicker, contrôle (Windows Forms)
 Windows Forms `DateTimePicker` contrôle permet à l’utilisateur à sélectionner un seul élément dans une liste de dates ou d’heures. Lorsqu’il est utilisé pour représenter une date, il s’affiche en deux parties : une liste déroulante contenant une date sous forme de texte et une grille qui s’affiche lorsque vous cliquez sur la flèche bas en regard de la liste.  
@@ -42,10 +43,10 @@ Windows Forms `DateTimePicker` contrôle permet à l’utilisateur à sélection
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DateTimePicker>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.MonthCalendar>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

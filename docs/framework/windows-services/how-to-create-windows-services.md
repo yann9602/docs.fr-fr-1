@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: c4d7f2f19c8d156f86513ac7138bccd59ae3b7fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7d93f8543b9e6e370827f5a666315d562e28ee76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-windows-services"></a>Comment : créer des services Windows
 Lorsque vous créez un service, vous pouvez utiliser un modèle de projet Visual Studio appelé **Service Windows**. Ce modèle accomplit automatiquement pour vous une grande part du travail : il référence les classes et les espaces de noms appropriés, définit l'héritage à partir de la classe de base des services et substitue les méthodes que vous êtes le plus susceptible de vouloir substituer.  
@@ -77,11 +78,11 @@ Lorsque vous créez un service, vous pouvez utiliser un modèle de projet Visual
 8.  Installez le service. Pour plus d'informations, consultez [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Introduction aux Applications de Service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Comment : écrire des Services par programmation](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)  
- [Comment : ajouter des programmes d’installation à votre Application de Service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
- [Comment : enregistrer des informations sur les Services](../../../docs/framework/windows-services/how-to-log-information-about-services.md)  
- [Comment : démarrer des Services](../../../docs/framework/windows-services/how-to-start-services.md)  
- [Comment : spécifier le contexte de sécurité pour les Services](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)  
- [Comment : installer et désinstaller des Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [Procédure pas à pas : Création d’une Application de Service Windows dans le Concepteur de composants](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+ [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [Guide pratique pour écrire les services par programmation](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)  
+ [Guide pratique pour ajouter des programmes d’installation à votre application de service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
+ [Guide pratique pour enregistrer des informations relatives aux services](../../../docs/framework/windows-services/how-to-log-information-about-services.md)  
+ [Guide pratique pour démarrer des services](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [Guide pratique pour spécifier le contexte de sécurité des services](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)  
+ [Guide pratique pour installer et désinstaller des services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [Procédure pas à pas : création d’une application de service Windows dans le Concepteur de composants](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

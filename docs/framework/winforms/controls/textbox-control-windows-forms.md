@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4800b06b5d0bbc5ce51d7cf00798ca98ef8bf656
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d606140a5be2b1770bc5a16159e96e20b0fccdd9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textbox-control-windows-forms"></a>TextBox, contrôle (Windows Forms)
 Zones de texte Windows Forms sont utilisées pour obtenir des données à partir de l’utilisateur ou pour afficher le texte. Le `TextBox` contrôle est généralement utilisé pour le texte modifiable, bien qu’il puisse également être en lecture seule. Zones de texte peuvent afficher plusieurs lignes, renvoi à la taille du contrôle et ajouter une mise en forme. Le `TextBox` contrôle permet à un seul format de texte affiché ou entré dans le contrôle.  
@@ -49,7 +50,7 @@ Zones de texte Windows Forms sont utilisées pour obtenir des données à partir
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.TextBox>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

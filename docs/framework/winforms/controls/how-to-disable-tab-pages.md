@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 20674a93459f42a793ddf5f7ee5dffb1fa122d0c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2db19d402f32bd43bb7053403428e8055755d017
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-disable-tab-pages"></a>Comment : désactiver les pages d'onglets
 Dans certains cas, vous devez restreindre l’accès aux données qui sont disponibles dans votre application Windows Forms. Un exemple peut être lorsque vous avez des données affichées dans les pages d’un contrôle onglet. les administrateurs peut avoir plus d’informations sur une page d’onglet que vous ne souhaitez pas empêcher les invités ou les utilisateurs de niveau inférieur.  

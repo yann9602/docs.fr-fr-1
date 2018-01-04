@@ -24,11 +24,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e6926d72f5aae82588cb45d1a231e8f1b413b22c
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e672c0bf6eddaef7bd0b2103fdde75ae2554dedd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="checkedlistbox-control-windows-forms"></a>CheckedListBox, contrôle (Windows Forms)
 Windows Forms `CheckedListBox` contrôle affiche une liste d’éléments, comme le <xref:System.Windows.Forms.ListBox> contrôler et pouvez également afficher une case à cocher en regard des éléments dans la liste.  
@@ -42,7 +43,7 @@ Windows Forms `CheckedListBox` contrôle affiche une liste d’éléments, comme
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.CheckedListBox>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  

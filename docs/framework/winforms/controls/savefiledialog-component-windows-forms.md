@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 589e31bc8fe4044306e5ba2b5223608a61863cb4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b5b648f74d3b69a49950eb4e4c9419287aafa3f3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog, composant (Windows Forms)
 Le composant Windows Forms <xref:System.Windows.Forms.SaveFileDialog>  est une boîte de dialogue préconfigurée. Il est identique à la boîte de dialogue Enregistrer le fichier standard utilisée par Windows. Il hérite de la classe <xref:System.Windows.Forms.CommonDialog>.  

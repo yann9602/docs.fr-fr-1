@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1b6a1438a48cd6cd21532a977dcf9cee69fd2cea
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2069d419d185cde366b463c5682f9d1395e551a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="splitter-control-windows-forms"></a>Splitter, contrôle (Windows Forms)
 Windows Forms `Splitter` permettent de redimensionner des contrôles ancrés au moment de l’exécution. Le `Splitter` contrôle est souvent utilisé dans les formulaires dont les contrôles qui ont différentes longueurs de données à présent, comme l’Explorateur Windows, dont les volets de données contiennent des informations de longueur différente à différents moments.  
@@ -35,7 +36,7 @@ Windows Forms `Splitter` permettent de redimensionner des contrôles ancrés au 
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.Splitter>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

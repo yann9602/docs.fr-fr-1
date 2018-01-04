@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6a5996c398e4f864da4b505020974307b0e0e316
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 638a439a663925be6eea230984310f7b86b81030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="control-type-recommendations"></a>Recommandations relatives au type du contrôle
 .NET Framework vous offre la possibilité de développer et d'implémenter de nouveaux contrôles. Outre le contrôle utilisateur familier, vous constaterez que vous pouvez désormais écrire des contrôles personnalisés qui effectuent leur propre peinture et même étendre les fonctionnalités des contrôles existants via l'héritage. Le choix du type de contrôle à créer peut être délicat. Cette section souligne les différences entre les différents types de contrôles à partir desquels vous pouvez hériter et fournit des conseils quant au type le plus adapté à votre projet.  
@@ -73,7 +74,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [Guide pratique pour aligner un contrôle sur les bords des formulaires au moment du design](http://msdn.microsoft.com/library/1fxyb15b\(v=vs.110\))  
   
--   [Guide pratique pour hériter de la classe UserControl](http://msdn.microsoft.com/library/00ctb4z0\(v=vs.110\))  
+-   [Comment : hériter de la classe UserControl](http://msdn.microsoft.com/library/00ctb4z0\(v=vs.110\))  
   
 -   [Guide pratique pour créer des contrôles pour des Windows Forms](http://msdn.microsoft.com/library/bs3yhkh7\(v=vs.110\))  
   
@@ -87,7 +88,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [Guide pratique pour créer un contrôle Windows Forms qui bénéficie des fonctionnalités au moment du design](http://msdn.microsoft.com/library/307hck25\(v=vs.110\))  
   
--   [Guide pratique pour créer un contrôle Windows Forms qui bénéficie des fonctionnalités au moment du design](http://msdn.microsoft.com/library/307hck25\(v=vs.120\))  
+-   [Comment : créer un contrôle Windows Forms qui bénéficie des fonctionnalités au moment du design](http://msdn.microsoft.com/library/307hck25\(v=vs.120\))  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide pratique pour développer un contrôle Windows Forms simple](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  

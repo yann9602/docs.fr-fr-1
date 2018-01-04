@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be7615441f29046fc1a469e3cace86267fc6c031
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 57c4c720e910762a303fc4987166f22960c2f03b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-collection-activities"></a>Utilisation d’activités de collection
 Cet exemple montre comment utiliser les activités de collection (<xref:System.Activities.Statements.AddToCollection%601>, <xref:System.Activities.Statements.ClearCollection%601>, <xref:System.Activities.Statements.ExistsInCollection%601> et <xref:System.Activities.Statements.RemoveFromCollection%601>) avec une classe qui implémente l'interface <xref:System.Collections.ICollection> et comment créer une activité personnalisée qui itère au sein d'une collection pour imprimer le contenu de chaque élément de la collection. L'activité personnalisée nommée `PrintCollection`imprime sur la console les membres d'élément d'une collection nommée `Numbers`.  
@@ -26,16 +27,16 @@ Cet exemple montre comment utiliser les activités de collection (<xref:System.A
 |Nom de l'activité|Description|  
 |-------------------|-----------------|  
 |<xref:System.Activities.Statements.AddToCollection%601>|Ajoute un élément à une collection.|  
-|<xref:System.Activities.Statements.ClearCollection%601>|Efface tous les éléments d’une collection.|  
+|<xref:System.Activities.Statements.ClearCollection%601>|Efface tous les éléments d'une collection.|  
 |<xref:System.Activities.Statements.ExistsInCollection%601>|Retourne `true` si l'élément spécifié existe dans la collection.|  
-|<xref:System.Activities.Statements.RemoveFromCollection%601>|Supprime un élément d’une collection.|  
+|<xref:System.Activities.Statements.RemoveFromCollection%601>|Supprime un élément d'une collection.|  
   
  L'exemple se compose de deux solutions, une sous le répertoire CodedWorkflow et l'autre sous le répertoire DesignerWorkflow. Elles illustrent deux façons différentes d'utiliser les activités dans le même but.  
   
 |Solution|Description|Fichiers principaux|  
 |-|-|-|  
-|CodedWorkflow|Exemple d'application cliente qui montre comment appeler les activités de collection par programmation.|**PrintCollection.cs**: activité d’assistance pour imprimer sur la console chaque élément dans une collection.<br /><br /> **Program.cs**: crée par programmation une activité de séquence qui contient une série d’activités de collection et l’exécute.|  
-|DesignerWorkflow|Exemple d'application cliente qui montre comment utiliser de façon déclarative les activités de collection dans le concepteur de workflow.|**CollectionWorkflow.xaml**: un workflow créé de façon déclarative avec le concepteur qui utilise les activités de collection.<br /><br /> **PrintCollection.cs**: activité d’assistance pour imprimer sur la console chaque élément dans une collection.<br /><br /> **Program.cs**: appelle le workflow décrit dans CollectionWorkflow.xaml.|  
+|CodedWorkflow|Exemple d’application cliente qui montre comment appeler les activités de collection par programmation.|**PrintCollection.cs**: activité d’assistance pour imprimer sur la console chaque élément dans une collection.<br /><br /> **Program.cs**: crée par programmation une activité de séquence qui contient une série d’activités de collection et l’exécute.|  
+|DesignerWorkflow|Exemple d’application cliente qui montre comment utiliser de façon déclarative les activités de collection dans le concepteur de workflow.|**CollectionWorkflow.xaml**: un workflow créé de façon déclarative avec le concepteur qui utilise les activités de collection.<br /><br /> **PrintCollection.cs**: activité d’assistance pour imprimer sur la console chaque élément dans une collection.<br /><br /> **Program.cs**: appelle le workflow décrit dans CollectionWorkflow.xaml.|  
   
  Dans la démonstration, les membres d'élément de collection `Numbers` sont imprimés sur la console à l'aide d'une activité définie pour la personnalisation appelée `PrintCollection`.  
   

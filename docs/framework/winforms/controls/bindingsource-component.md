@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 006cafafdf8e3c3f4da77394d6155fa52e113b58
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 08b55bc2bd5af78eb6c3d0f5adce3ec39d288a9f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bindingsource-component"></a>Composant BindingSource
 Encapsule une source de données pour la liaison à des contrôles.  
@@ -75,7 +76,7 @@ Encapsule une source de données pour la liaison à des contrôles.
  Fournit la documentation de référence pour le contrôle <xref:System.Windows.Forms.BindingNavigator>.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Liaison de données Windows Forms](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
+ [Liaison de données Windows Forms](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
  Contient des liens vers des rubriques décrivant l’architecture de liaison de données Windows Forms.  
   
  Consultez également [Liaison de contrôles à des données dans Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio).

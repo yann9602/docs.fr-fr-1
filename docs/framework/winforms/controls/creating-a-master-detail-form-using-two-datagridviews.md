@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a0d213d70d6f12cb8b574f07457c1b20317670d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: af6f1bcb172543b372cbca52f54b675b6baf87d2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>Procédure pas à pas : création d'un formulaire maître/détail qui utilise deux contrôles DataGridView Windows Forms
 Un des scénarios plus courants pour l’utilisation de la <xref:System.Windows.Forms.DataGridView> contrôle est le *maître/détail* formulaire, dans lequel une relation parent/enfant entre deux tables de base de données s’affiche. Sélection de lignes dans la table principale entraîne la table de détail mettre à jour avec les données enfants correspondantes.  
@@ -34,7 +35,7 @@ Un des scénarios plus courants pour l’utilisation de la <xref:System.Windows.
   
  Pour copier le code dans cette rubrique sous forme de liste unique, consultez [Comment : créer un maître/détail formulaire à l’aide de deux contrôles DataGridView Windows Forms](../../../../docs/framework/winforms/controls/create-a-master-detail-form-using-two-datagridviews.md).  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :  
   
 -   Accès à un serveur doté de la base de données Northwind SQL Server.  

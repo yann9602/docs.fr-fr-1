@@ -18,11 +18,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eebd0f36fbf1bf3bfc37b8fa836d318a9b8ac007
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c70e1a88384041a2a1d958e48c672a961752202b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-column-row-and-cell-features-in-the-windows-forms-datagridview-control"></a>Fonctionnalités de base liées aux colonnes, lignes et cellules dans le contrôle DataGridView Windows Forms
 Nombreux comportements de base de `DataGridView` cellules, lignes et colonnes peuvent être modifiés en définissant les propriétés uniques. Les rubriques de cette section décrivent plusieurs de ces fonctionnalités les plus couramment utilisés.  

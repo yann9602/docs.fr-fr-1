@@ -12,11 +12,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1e4bb05f1b5f14554ff5183b42bbc8884cb114f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 669e1bd1daeb8f2569a851e21d10f250d1bc2204
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>Utilisation de WorkflowInvoker et WorkflowApplication
 [!INCLUDE[wf](../../../includes/wf-md.md)] fournit plusieurs méthodes d'hébergement de workflows. <xref:System.Activities.WorkflowInvoker> offre un moyen simple pour appeler un workflow comme s'il s'agissait d'un appel de méthode et ne peut être utilisé que pour les workflows qui n'utilisent pas la persistance. <xref:System.Activities.WorkflowApplication> fournit un modèle plus riche pour exécuter des workflows, qui inclut la notification des événements de cycle de vie, le contrôle d'exécution, la modification de signet et la persistance. <xref:System.ServiceModel.Activities.WorkflowServiceHost> fournit la prise en charge des activités de messagerie et est principalement utilisé avec les services de workflow. Cette rubrique vous présente l'hébergement de workflow avec <xref:System.Activities.WorkflowInvoker> et <xref:System.Activities.WorkflowApplication>. [!INCLUDE[crabout](../../../includes/crabout-md.md)]hébergement de workflows avec <xref:System.ServiceModel.Activities.WorkflowServiceHost>, consultez [Services de Workflow](../../../docs/framework/wcf/feature-details/workflow-services.md) et [d’hébergement de la vue d’ensemble des Services de Workflow](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  
@@ -106,5 +107,5 @@ ms.lasthandoff: 12/02/2017
  
  [!code-csharp[CFX_WorkflowApplicationExample#2](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#2)]  
   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  <xref:System.Activities.WorkflowInvoker> offre un moyen simplifié d'appeler des workflows et, bien qu'il fournisse des méthodes pour le passage des données au début d'un workflow et l'extraction de données d'un workflow terminé, il ne prévoit pas de scénarios plus complexes dans lesquels <xref:System.Activities.WorkflowApplication> peut être utilisé.

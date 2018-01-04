@@ -12,11 +12,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 014604262952d3aef3676318042ae3c96dc07c89
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b1298f150709b48f18de654be2ab17adfdcbf42a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="durable-duplex"></a>Durable Duplex
 Cet exemple montre comment installer et configurer un échange de messages duplex durable à l'aide des activités de messagerie dans [!INCLUDE[wf](../../../../includes/wf-md.md)]. Un échange de messages duplex durable est un échange de messages bidirectionnel qui a lieu sur une longue période de temps. La durée de vie de l'échange de messages peut être plus longue que la durée de vie du canal de communication et la durée de vie en mémoire des instances de service.  

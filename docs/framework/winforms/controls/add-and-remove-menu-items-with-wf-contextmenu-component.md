@@ -27,11 +27,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cf0e579d5cf377169eeb4d394c4127d53fd54540
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b2f3ca6f97049e0519243915856702654b924243
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-and-remove-menu-items-with-the-windows-forms-contextmenu-component"></a>Comment : ajouter et supprimer des éléments de menu avec le composant ContextMenu Windows Forms
 Explique comment ajouter et supprimer des éléments de menu contextuel dans les Windows Forms.  
@@ -68,7 +69,7 @@ Explique comment ajouter et supprimer des éléments de menu contextuel dans les
     contextMenu1->MenuItems->Remove(mnuItemNew);  
     ```  
   
-     ou  
+     - ou -  
   
 2.  Utilisez le `Clear` méthode de la `MenuItems` collection de la <xref:System.Windows.Forms.ContextMenu> composant à supprimer tous les éléments dans le menu.  
   

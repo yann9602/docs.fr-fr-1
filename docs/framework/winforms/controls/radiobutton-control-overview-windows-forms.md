@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ac0a04c506919ef807a3f8c5ed5aa75ee998f64a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 67befd973dec38628f97a0d3153c399d48c18305
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="radiobutton-control-overview-windows-forms"></a>Vue d'ensemble du contrôle RadioButton (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.RadioButton> contrôle présente un ensemble de deux ou plusieurs choix mutuellement exclusifs à l’utilisateur. Tandis que les cases à cocher et des cases d’option peut sembler fonctionner de la même façon, il existe une différence importante : lorsqu’un utilisateur sélectionne une case d’option, les autres cases d’option dans le même groupe ne peut pas être sélectionnée. En revanche, vous pouvez sélectionner autant de cases à cocher. Définition d’un groupe de cases d’option indique à l’utilisateur, « Voici un ensemble de choix à partir de laquelle vous pouvez choisir un seul et unique ».  

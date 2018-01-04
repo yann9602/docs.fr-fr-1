@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7404087117ec45e09495897905094690c01fbaa8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d635a1d5122319e228feb4d8a362b7609129c9de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="token-authenticator"></a>Token Authenticator
 Cet exemple montre comment implémenter un authentificateur de jetons personnalisé. Dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], un authentificateur de jetons permet de valider le jeton utilisé avec le message, en vérifiant qu'il est cohérent, et en authentifiant l'identité associée au jeton.  
@@ -40,7 +41,7 @@ Cet exemple montre comment implémenter un authentificateur de jetons personnali
   
  Cet exemple montre également comment l'identité de l'appelant est accessible à partir de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] après le processus d'authentification du jeton personnalisé.  
   
- Le service expose un point de terminaison unique permettant de communiquer avec le service, défini à l'aide du fichier de configuration App.config. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec un `wsHttpBinding` standard, avec le mode de sécurité du message (mode par défaut de `wsHttpBinding`). Cet exemple définit le `wsHttpBinding` standard pour permettre l'authentification du client à l'aide du nom d'utilisateur. Le service configure également le certificat de service à l'aide du comportement `serviceCredentials`. Le comportement `securityCredentials` vous permet de spécifier un certificat de service. Un certificat de service est utilisé par un client pour authentifier le service et fournir la protection des messages. La configuration suivante référence le certificat localhost installé pendant l'installation de l'exemple, tel que décrit dans les instructions d'installation suivantes.  
+ Le service expose un point de terminaison unique permettant de communiquer avec le service, défini à l'aide du fichier de configuration App.config. Le point de terminaison se compose d’une adresse, d’une liaison et d’un contrat. La liaison est configurée avec un `wsHttpBinding` standard, avec le mode de sécurité du message (mode par défaut de `wsHttpBinding`). Cet exemple définit le `wsHttpBinding` standard pour permettre l'authentification du client à l'aide du nom d'utilisateur. Le service configure également le certificat de service à l'aide du comportement `serviceCredentials`. Le comportement `securityCredentials` vous permet de spécifier un certificat de service. Un certificat de service est utilisé par un client pour authentifier le service et fournir la protection des messages. La configuration suivante référence le certificat localhost installé pendant l'installation de l'exemple, tel que décrit dans les instructions d'installation suivantes.  
   
 ```xml  
 <system.serviceModel>  
@@ -91,7 +92,7 @@ Cet exemple montre comment implémenter un authentificateur de jetons personnali
   </system.serviceModel>  
 ```  
   
- La configuration de point de terminaison de client se compose d'un nom de configuration, d'une adresse absolue pour le point de terminaison de service, de la liaison et du contrat. La liaison du client est configurée avec le `Mode` et le `clientCredentialType` appropriés.  
+ La configuration de point de terminaison de client se compose d’un nom de configuration, d’une adresse absolue pour le point de terminaison de service, de la liaison et du contrat. La liaison du client est configurée avec le `Mode` et le `clientCredentialType` appropriés.  
   
 ```xml  
 <system.serviceModel>  

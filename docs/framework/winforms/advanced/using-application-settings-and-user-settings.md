@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f9544b6af74608bd1b29db3250e887999ae3187f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 310fcad07ce7cf541312ff83e41d7e5fc2643898
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-application-settings-and-user-settings"></a>Utilisation de paramètres d'application et de paramètres utilisateur
 À compter de .NET Framework 2.0, vous pouvez créer et accéder aux valeurs qui sont conservées entre les sessions d’exécution de l’application. Ces valeurs sont appelées *paramètres*. Les paramètres peuvent représenter des préférences de l’utilisateur ou des informations précieuses l’application doivent utiliser. Par exemple, vous pouvez créer une série de paramètres qui stockent les préférences utilisateur pour le jeu de couleurs d’une application. Ou bien, vous pouvez stocker la chaîne de connexion qui spécifie une base de données utilisées par votre application. Les paramètres permettent de que vous permettent de conserver les informations qui sont essentielles à l’application en dehors du code et pour créer des profils qui stockent les préférences des utilisateurs individuels.  

@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50d1952632b29450a441d3cf0c7d66bffc000ea5
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: e6cec2356159b59e58ac6785a2988df7b2fac0e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="constructing-and-drawing-paths"></a>Génération et dessin de tracés
 Un chemin d’accès est une séquence de primitives graphiques (lignes, rectangles, courbes, texte, etc.) qui peuvent être manipulées et dessiné comme une unité unique. Un chemin d’accès peut être divisé en *chiffres* qui sont ouverts ou fermés. Un graphique peut contenir plusieurs primitives.  

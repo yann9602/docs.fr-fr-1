@@ -12,14 +12,15 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f0b1f27af6b4ec372b9dbd63e4bc89a5c435efe6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 10fc7461c077d73fedb1e326f88156e4a816cdee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Procédure : créer un concepteur d'activités personnalisées
-Les concepteurs d'activités personnalisées sont généralement implémentés de telle sorte que les activités qui leur sont associées soient composables avec d'autres activités dont les concepteurs peuvent être déposés dans l'aire de conception avec eux. Cette fonctionnalité requiert qu’un concepteur d’activités personnalisées fournisse une « zone de dépôt » où une activité arbitraire peut être placée, ainsi que les moyens de gérer la collection résultante d’éléments sur l’aire de conception. Cette rubrique décrit comment créer un concepteur d’activités personnalisées qui contient une telle zone de dépôt et comment créer un concepteur d’activités personnalisées qui fournit cette fonctionnalité d’édition requise pour gérer la collection d’éléments de concepteur.  
+Les concepteurs d’activités personnalisées sont généralement implémentés de telle sorte que les activités qui leur sont associées soient composables avec d’autres activités dont les concepteurs peuvent être déposés dans l’aire de conception avec eux. Cette fonctionnalité requiert qu’un concepteur d’activités personnalisées fournisse une « zone de dépôt » où une activité arbitraire peut être placée, ainsi que les moyens de gérer la collection résultante d’éléments sur l’aire de conception. Cette rubrique décrit comment créer un concepteur d’activités personnalisées qui contient une telle zone de dépôt et comment créer un concepteur d’activités personnalisées qui fournit cette fonctionnalité d’édition requise pour gérer la collection d’éléments de concepteur.  
   
  Les concepteurs d'activités personnalisées héritent généralement d'<xref:System.Activities.Presentation.ActivityDesigner>, qui est le type du concepteur d'activités de base par défaut pour toutes activités sans concepteur particulier. Ce type fournit l'expérience au moment du design tirée de l'interaction avec la grille des propriétés et de la configuration des aspects de base comme la gestion des couleurs et des icônes.  
   

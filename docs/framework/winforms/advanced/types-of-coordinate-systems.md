@@ -26,11 +26,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be89584ee8e7a82c405bf8664bfad18ced6d989a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 287b1c9eddef882041d9e4eac44a06190f3585a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="types-of-coordinate-systems"></a>Types de systèmes de coordonnées
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]utilise trois espaces de coordonnées : monde, page et périphérique. Coordonnées universelles sont les coordonnées utilisées pour modéliser un environnement graphique particulier et les coordonnées que vous passez aux méthodes dans le .NET Framework. Les coordonnées de page font référence au système de coordonnées utilisé par une surface de dessin, comme un formulaire ou un contrôle. Coordonnées de périphérique sont les coordonnées utilisées par le périphérique physique qui est dessiné, tel qu’un écran ou une feuille de papier. Lorsque vous effectuez l’appel `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, les points que vous passez à la <xref:System.Drawing.Graphics.DrawLine%2A> méthode —`(0, 0)` et `(160, 80)`, se trouvent dans l’espace de coordonnées universelles. Avant de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut dessiner la ligne à l’écran, les coordonnées passent par une séquence de transformations. Une transformation, appelée la transformation universelle, convertit les coordonnées universelles en coordonnées de page, et une autre transformation, appelée la transformation de page, convertit les coordonnées de page en coordonnées de périphérique.  
@@ -50,7 +51,7 @@ ms.lasthandoff: 11/21/2017
 |-|-|  
 |World|(0, 0) à (160, 80)|  
 |Page|(100, 50) à (260, 130)|  
-|Périphérique|(100, 50) à (260, 130)|  
+|Appareil|(100, 50) à (260, 130)|  
   
  Notez que l’espace de coordonnées de page a son origine dans le coin supérieur gauche de la zone cliente ; Ce sera toujours le cas. Notez également que, car l’unité de mesure est le pixel, les coordonnées de périphérique sont les mêmes que les coordonnées de page. Si vous définissez l’unité de mesure avec une valeur différente de pixels (par exemple, pouces), puis les coordonnées de périphérique sera différentes de coordonnées de la page.  
   
@@ -83,7 +84,7 @@ ms.lasthandoff: 11/21/2017
 |-|-|  
 |World|(0, 0) à (2, 1)|  
 |Page|(0, 0) à (2, 1)|  
-|Périphérique|(0, 0, à (192, 96)|  
+|Appareil|(0, 0, à (192, 96)|  
   
  Notez que l’origine de l’espace de coordonnées universelles étant à l’angle supérieur gauche de la zone cliente, les coordonnées de page sont les mêmes que les coordonnées de monde.  
   
@@ -102,7 +103,7 @@ ms.lasthandoff: 11/21/2017
 |-|-|  
 |World|(0, 0) à (2, 1)|  
 |Page|(2, 0,5) à (4, 1.5)|  
-|Périphérique|(192, 48) à (384, 144)|  
+|Appareil|(192, 48) à (384, 144)|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Systèmes de coordonnées et transformations](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  

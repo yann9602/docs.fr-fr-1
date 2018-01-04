@@ -18,11 +18,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d4823b7d7411b7896e723683b70021292dd989aa
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2ed5ccd46a6563ced2cf5946304a36d0c204a00a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="monthcalendar-control-windows-forms"></a>MonthCalendar, contrôle (Windows Forms)
 Windows Forms `MonthCalendar` contrôle présente une interface graphique intuitive pour les utilisateurs afficher et définir les informations de date. Le contrôle affiche une grille contenant les jours numérotés du mois, organisées en colonnes sous les jours de la semaine. Vous pouvez sélectionner un autre mois en cliquant sur les boutons de direction de chaque côté de la légende du mois. Contrairement à la même <xref:System.Windows.Forms.DateTimePicker> (contrôle), vous pouvez sélectionner une plage de dates à l’aide de ce contrôle ; Toutefois, le <xref:System.Windows.Forms.DateTimePicker> contrôle vous permet de définir des délais, ainsi que des dates.  

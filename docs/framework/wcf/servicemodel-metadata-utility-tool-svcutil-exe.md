@@ -18,11 +18,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0f2ef91986cb5ad31560c4a7f418218a168f1b2f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ce66f98f064ec5c9460dd1909f8eb7bc44c26f76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Outil Service Model Metadata Tool (Svcutil.exe)
 L'outil Service Model Metadata Tool est utilisé pour générer un code de modèle de service à partir de documents de métadonnées, ainsi que des documents de métadonnées à partir d'un code de modèle de service.  
@@ -35,11 +36,11 @@ L'outil Service Model Metadata Tool est utilisé pour générer un code de modè
   
 |Tâche|Rubrique|  
 |----------|-----------|  
-|Génère le code à partir des services en cours d'exécution ou de documents de métadonnées statiques.|[Génération d’un Client WCF à partir des métadonnées de Service](../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)|  
-|Exporte des documents de métadonnées à partir de code compilé.|[Comment : utiliser Svcutil.exe pour exporter les métadonnées à partir de Code de Service compilé](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|  
-|Valide le code de service compilé.|[Comment : utiliser Svcutil.exe pour valider le Code de Service compilé](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|  
-|Télécharge des documents de métadonnées à partir de services en cours d'exécution.|[Comment : utiliser Svcutil.exe pour télécharger des Documents de métadonnées](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|  
-|Génère du code de sérialisation.|[Comment : améliorer le démarrage du temps des Applications clientes WCF à l’aide de XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|  
+|Génère le code à partir des services en cours d'exécution ou de documents de métadonnées statiques.|[Génération d’un client WCF à partir de métadonnées de service](../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)|  
+|Exporte des documents de métadonnées à partir de code compilé.|[Guide pratique pour utiliser Svcutil.exe pour exporter des métadonnées à partir de code de service compilé](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|  
+|Valide le code de service compilé.|[Guide pratique pour utiliser Svcutil.exe pour valider le code de service compilé](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|  
+|Télécharge des documents de métadonnées à partir de services en cours d'exécution.|[Guide pratique pour utiliser Svcutil.exe pour télécharger des documents de métadonnées](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|  
+|Génère du code de sérialisation.|[Guide pratique pour améliorer le temps de démarrage des applications clientes WCF à l’aide de XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|  
   
 > [!CAUTION]
 >  Svcutil remplace les fichiers existants d'un disque si les noms qui ont été fournis en tant que paramètres sont identiques. Cela peut inclure des fichiers de code, des fichiers de configuration ou de métadonnées. Pour éviter cela, lorsque vous générez du code et des fichiers de configuration, utilisez le commutateur `/mergeConfig`.  
@@ -82,8 +83,8 @@ L'outil Service Model Metadata Tool est utilisé pour générer un code de modè
   
 |Argument|Description|  
 |--------------|-----------------|  
-|`epr`|Chemin d'accès à un fichier XML qui contient une référence de point de terminaison WS-Addressing pour un service qui prend en charge WS-Metadata Exchange. Pour plus d'informations, consultez la section consacrée au téléchargement de métadonnées.|  
-|`metadataDocumentPath`|Chemin d'accès à un document de métadonnées (wsdl ou xsd) qui contient le contrat à importer dans le code (.wsdl, .xsd, .wspolicy ou .wsmex).<br /><br /> Svcutil effectue des imports et des opérations d'inclusion lorsque vous spécifiez une URL distante pour les métadonnées. Toutefois, si vous souhaitez traiter des fichiers de métadonnées sur le système de fichiers local, vous devez spécifier tous les fichiers dans cet argument. De cette façon, vous pouvez utiliser Svcutil dans un environnement de génération dans lequel vous ne pouvez pas avoir de dépendances de réseau. Vous pouvez utiliser des caractères génériques (par exemple, \*.wsdl) pour cet argument.|  
+|`epr`|Chemin d’accès à un fichier XML qui contient une référence de point de terminaison WS-Addressing pour un service qui prend en charge WS-Metadata Exchange. Pour plus d'informations, consultez la section consacrée au téléchargement de métadonnées.|  
+|`metadataDocumentPath`|Chemin d’accès à un document de métadonnées (wsdl ou xsd) qui contient le contrat à importer dans le code (.wsdl, .xsd, .wspolicy ou .wsmex).<br /><br /> Svcutil effectue des imports et des opérations d'inclusion lorsque vous spécifiez une URL distante pour les métadonnées. Toutefois, si vous souhaitez traiter des fichiers de métadonnées sur le système de fichiers local, vous devez spécifier tous les fichiers dans cet argument. De cette façon, vous pouvez utiliser Svcutil dans un environnement de génération dans lequel vous ne pouvez pas avoir de dépendances de réseau. Vous pouvez utiliser des caractères génériques (par exemple, \*.wsdl) pour cet argument.|  
 |`url`|URL d'accès à un point de terminaison de service qui fournit les métadonnées ou à un document de métadonnées hébergé en ligne. Pour plus d'informations sur la façon dont ces documents sont récupérés, consultez la section consacrée au téléchargement de métadonnées.|  
   
 |Option|Description|  
@@ -122,7 +123,7 @@ L'outil Service Model Metadata Tool est utilisé pour générer un code de modè
   
 |Argument|Description|  
 |--------------|-----------------|  
-|`assemblyPath`|Spécifie le chemin d'accès à un assembly qui contient des services, des contrats ou des types de contrat de données à exporter. Des caractères génériques de ligne de la commande standard peuvent être utilisés pour fournir plusieurs fichiers en tant qu'entrée.|  
+|`assemblyPath`|Spécifie le chemin d’accès à un assembly qui contient des services, des contrats ou des types de contrat de données à exporter. Des caractères génériques de ligne de la commande standard peuvent être utilisés pour fournir plusieurs fichiers en tant qu'entrée.|  
   
 |Option|Description|  
 |------------|-----------------|  
@@ -166,7 +167,7 @@ L'outil Service Model Metadata Tool est utilisé pour générer un code de modè
 |Argument|Description|  
 |--------------|-----------------|  
 |`url`|URL d'accès à un point de terminaison de service qui fournit les métadonnées ou à un document de métadonnées hébergé en ligne.|  
-|`epr`|Chemin d'accès à un fichier XML qui contient une référence de point de terminaison WS-Addressing pour un service qui prend en charge WS-Metadata Exchange.|  
+|`epr`|Chemin d’accès à un fichier XML qui contient une référence de point de terminaison WS-Addressing pour un service qui prend en charge WS-Metadata Exchange.|  
   
 ### <a name="xmlserializer-type-generation"></a>Génération de type XmlSerializer  
  Les applications clientes et de services qui utilisent des types de données sérialisables à l'aide de <xref:System.Xml.Serialization.XmlSerializer> génèrent et compilent le code de sérialisation de ces types de données lors de l'exécution, ce qui peut provoquer des performances de démarrage lentes.  

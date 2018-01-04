@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3b763217527a2306bfe648e3b327124408cea62f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 206a2632221f2521992a43e72abc152923dd85a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="radiobutton-control-windows-forms"></a>RadioButton, contrôle (Windows Forms)
 Windows Forms `RadioButton` contrôle présente un ensemble de deux ou plusieurs choix mutuellement exclusifs à l’utilisateur. Tandis que les cases à cocher et des cases d’option peut sembler fonctionner de la même façon, il existe une différence importante : lorsqu’un utilisateur sélectionne une case d’option, les autres cases d’option dans le même groupe ne peut pas être sélectionnée.  
@@ -37,7 +38,7 @@ Windows Forms `RadioButton` contrôle présente un ensemble de deux ou plusieurs
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.RadioButton>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

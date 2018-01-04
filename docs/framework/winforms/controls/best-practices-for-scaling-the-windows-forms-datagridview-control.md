@@ -20,11 +20,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bfefd41a4773c81757f73e725095057f988cef2c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ecd629bd38e08c8d6909ee4ad771f17b1554fc80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="best-practices-for-scaling-the-windows-forms-datagridview-control"></a>Meilleures pratiques pour la mise à l'échelle du contrôle DataGridView Windows Forms
 Le <xref:System.Windows.Forms.DataGridView> contrôle est conçu pour offrir une évolutivité maximale. Si vous avez besoin afficher de grandes quantités de données, vous devez suivre les instructions décrites dans cette rubrique afin d’éviter de consommer de grandes quantités de mémoire ou d’affecter la réactivité de l’interface utilisateur (IU). Cette rubrique présente les problèmes suivants :  

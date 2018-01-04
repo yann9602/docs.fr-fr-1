@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fdeb5011e5f44eb45d553045c2f89b97f9e4d100
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 705f9dbb8ea7f4d462a2b19cc0c6b845ae8f578b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tabcontrol-control-windows-forms"></a>TabControl, contrôle (Windows Forms)
 Le `TabControl` Windows Forms affiche plusieurs onglets comparables aux intercalaires d'un agenda ou aux étiquettes d'un ensemble de dossiers dans un classeur. Les onglets peuvent contenir des images et d'autres contrôles. Utilisez le `TabControl` pour créer des pages de propriétés.  
@@ -50,7 +51,7 @@ Le `TabControl` Windows Forms affiche plusieurs onglets comparables aux intercal
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.TabControl>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Boîtes de dialogue dans les Windows Forms](../../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  

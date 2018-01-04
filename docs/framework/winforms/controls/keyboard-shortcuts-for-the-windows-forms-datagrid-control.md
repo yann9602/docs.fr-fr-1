@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7ac73652d5f017fe43d1745866de38cd7eeccf8e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3e80281f3a89737f060804aa5237705386232763
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="keyboard-shortcuts-for-the-windows-forms-datagrid-control"></a>Raccourcis clavier du contrôle DataGrid Windows Forms
 > [!NOTE]
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/21/2017
 |Annuler la modification de la cellule en mode édition de cellule.<br /><br /> En cas de sélection, annuler la modification de la ligne.|ÉCHAP|  
 |Supprimer le caractère avant le point d’insertion lors de la modification d’une cellule.|RETOUR ARRIÈRE|  
 |Supprimer le caractère après le point d’insertion lors de la modification d’une cellule.|SUPPR|  
-|Déplacer vers la première cellule de la ligne actuelle.|ACCUEIL|  
+|Déplacer vers la première cellule de la ligne actuelle.|ORIGINE|  
 |Déplacer vers la dernière cellule de la ligne actuelle.|FIN|  
 |Mettez en surbrillance les caractères dans la cellule active et positionner le point d’insertion à la fin de la ligne. Revient à double-cliquer sur une cellule.|F2|  
 |Si le focus est sur une cellule, déplacez vers la cellule suivante dans la ligne.<br /><br /> Si le focus est sur la dernière cellule dans une ligne, déplacer vers le premier lien de table enfant de la ligne et le développer.<br /><br /> Si le focus est sur un lien enfant, déplacer jusqu’au lien enfant suivant.<br /><br /> Si le focus est sur le dernier lien enfant, déplacer vers la première cellule de la ligne suivante.|TAB|  

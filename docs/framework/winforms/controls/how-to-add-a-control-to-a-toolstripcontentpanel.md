@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 150dd8939077052d4e6d947925c047da0d0432c1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2e513505dbc25f2eebe8c3ba8353622b3c284297
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-a-control-to-a-toolstripcontentpanel"></a>Comment : ajouter un contrôle à un ToolStripContentPanel
 Vous pouvez ajouter un ou plusieurs contrôles à un <xref:System.Windows.Forms.ToolStripContentPanel> par programmation.  

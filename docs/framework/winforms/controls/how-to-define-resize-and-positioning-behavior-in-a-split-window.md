@@ -20,18 +20,19 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: db4a99c7dae7783e8ea51f43ad51fcd2214997e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ed78a49119c87c52a07cc2ade030e66087d3f420
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>Comment : définir le redimensionnement et le positionnement du comportement dans une fenêtre fractionnée
 Les panneaux de la <xref:System.Windows.Forms.SplitContainer> contrôle se prêtent bien au redimensionnement et manipulées par les utilisateurs. Toutefois, il peut arriver lorsque vous souhaitez contrôler par programme le séparateur, où il est positionné, et dans quelle mesure il peut être déplacé.  
   
  Le <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> propriété et les autres propriétés sur le <xref:System.Windows.Forms.SplitContainer> contrôle vous donne un contrôle précis sur le comportement de votre interface utilisateur en fonction de vos besoins. Ces propriétés sont répertoriées dans le tableau suivant.  
   
-|Nom|Description|  
+|Name|Description|  
 |----------|-----------------|  
 |Propriété <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>|Détermine si le séparateur est mobile au moyen de la souris ou du clavier.|  
 |Propriété <xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A>|Détermine la distance en pixels du bord gauche ou supérieur à la barre de fractionnement mobile.|  

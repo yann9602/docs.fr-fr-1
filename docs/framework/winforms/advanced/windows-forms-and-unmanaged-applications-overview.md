@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ae36d1897b452767fae5f48bd6501c18f9405801
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c6b31aacfb95452cc86b5359cbec4946e85eac4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-and-unmanaged-applications-overview"></a>Vue d'ensemble des applications Windows Forms et non managées
 Les contrôles et les applications Windows Forms peuvent interagir avec des applications non managées, avec certaines restrictions. Les sections suivantes décrivent les scénarios et les configurations pris en charge et non pris en charge par les applications et les contrôles Windows Forms.  
@@ -39,7 +40,7 @@ Les contrôles et les applications Windows Forms peuvent interagir avec des appl
   
 |Version de Windows Forms|Prise en charge|  
 |---------------------------|-------------|  
-|.NET Framework version 1.0|Internet Explorer 5.01 et versions ultérieures|  
+|.NET Framework version 1.0|Internet Explorer 5.01 et versions ultérieures|  
 |.NET Framework version 1.1 et ultérieures|Internet Explorer 5.01 et versions ultérieures<br /><br /> Bibliothèque MFC (Microsoft Foundation Class) 7.0 et versions ultérieures|  
   
 ## <a name="hosting-windows-forms-components-as-activex-controls"></a>Hébergement de composants Windows Forms en tant que contrôles ActiveX  
@@ -59,7 +60,7 @@ Les contrôles et les applications Windows Forms peuvent interagir avec des appl
 ## <a name="resolving-interoperability-issues"></a>Résolution des problèmes d'interopérabilité  
  Vous pouvez résoudre ces problèmes en affichant le formulaire sur une boucle de message [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], que vous pouvez créer à l'aide de la méthode <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>.  
   
- Pour qu'un Windows Form fonctionne correctement à partir d'une application cliente COM, vous devez l'exécuter sur une boucle de message Windows Forms. Pour cela, utilisez l'une des approches suivantes :  
+ Pour qu'un Windows Form fonctionne correctement à partir d'une application cliente COM, vous devez l'exécuter sur une boucle de message Windows Forms. Pour cela, utilisez l'une des approches suivantes :  
   
 -   Utilisez la méthode <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> pour afficher le Windows Form. Pour plus d'informations, consultez [How to: Support COM Interop by Displaying a Windows Form with the ShowDialog Method](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md).  
   

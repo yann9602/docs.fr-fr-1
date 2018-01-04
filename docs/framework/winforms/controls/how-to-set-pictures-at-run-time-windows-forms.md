@@ -24,11 +24,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 429c0c928d8bff4f837186040288d9447fc18687
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6fd0e990b494bc0b7a3008f211aa6ded9e04d732
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Comment : définir des images au moment de l'exécution (Windows Forms)
 Vous pouvez définir par programme l’image affichée par les Windows Forms <xref:System.Windows.Forms.PictureBox> contrôle.  

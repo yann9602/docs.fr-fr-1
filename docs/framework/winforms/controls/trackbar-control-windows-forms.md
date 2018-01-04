@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 36e978aedd1f1259ff99703e0b94d623d565a8ee
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 761a3217aa78f33cd781b9a4581eb6e409a5ff85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trackbar-control-windows-forms"></a>TrackBar, contrôle (Windows Forms)
 Windows Forms `TrackBar` contrôle (parfois également appelé contrôle « slider ») est utilisé pour naviguer dans une grande quantité d’informations ou d’ajuster visuellement un paramètre numérique. Le `TrackBar` contrôle comporte deux parties : le curseur de défilement, également appelé un curseur et les marques de graduation. Le curseur est la partie qui peut être ajustée. Sa position correspond à la <xref:System.Windows.Forms.TrackBar.Value%2A> propriété. Les graduations sont des indicateurs visuels qui sont exécutées à intervalles réguliers. La barre de suivi se déplace dans les incréments que vous spécifiez. Pour définir la vitesse ou la souris clignotement du curseur est un exemple d’utilisation d’une barre de suivi.  

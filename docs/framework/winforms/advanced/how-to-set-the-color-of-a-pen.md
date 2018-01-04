@@ -20,11 +20,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 452e88b4b41a22cc78f73e120e49468e4f4dad56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 66527be5a70f9c7c60f4ca3836ee68b96872442f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-color-of-a-pen"></a>Comment : définir la couleur d'un stylet
 Cet exemple modifie la couleur d’un préexistant <xref:System.Drawing.Pen> objet  

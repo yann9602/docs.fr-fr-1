@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f635ecbce5095ff70ae66a78d24310bfb8249a51
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 7477ef53db9c2740a747c6a021a602ea32dfe3ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="checkbox-control-windows-forms"></a>CheckBox, contrôle (Windows Forms)
 Le contrôle `CheckBox` Windows Forms indique si une condition particulière est activée ou désactivée. Il est couramment utilisé pour présenter une sélection Oui/Non ou Vrai/Faux à l'utilisateur. Vous pouvez utiliser des contrôles de case à cocher dans des groupes pour afficher plusieurs choix à partir desquels l'utilisateur peut sélectionner un ou plusieurs éléments. Il est similaire au contrôle <xref:System.Windows.Forms.RadioButton>, mais vous pouvez choisir un nombre quelconque de contrôles `CheckBox` regroupés.  
@@ -41,7 +42,7 @@ Le contrôle `CheckBox` Windows Forms indique si une condition particulière est
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.CheckBox>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

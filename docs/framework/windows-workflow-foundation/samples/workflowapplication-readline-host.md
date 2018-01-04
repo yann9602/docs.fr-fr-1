@@ -12,11 +12,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1ba33dff4be8ae3e75ee4d1873feeb4d5e5944b7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f8426dd3835f53eeb85711a691c878ce2b877d09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflowapplication-readline-host"></a>Hôte ReadLine WorkflowApplication
 Cet exemple est un hôte ReadLine générique. Vous pouvez charger et exécuter tout workflow à l'aide de l'activité `ReadLine` incluse (ou d'autres activités semblables qui obtiennent des données à partir de signets repris avec les chaînes). La sortie de l'activité `WriteLine` ou de tout élément qui écrit dans l'extension <xref:System.Activities.Statements.WriteLine.TextWriter%2A> est dirigée vers la fenêtre hôte. Lorsqu'une instance est inactive, les signets disponibles pour cette instance s'affichent dans une zone de liste déroulante. Si vous sélectionnez un signet, entrez un texte et appuyez sur le bouton de reprise de signet, l'exécution du workflow continue. Vous pouvez également annuler, abandonner ou arrêter un workflow sélectionné. La persistance est activée par défaut ; vous pouvez fermer et rouvrir hôte, et la liste des instances est remplie avec les instances stockées dans la base de données. Le suivi est utilisé pour générer des événements de niveau <xref:System.Activities.WorkflowApplication> pour l'hôte avec la possibilité d'ajouter un suivi détaillé au niveau de l'activité.  

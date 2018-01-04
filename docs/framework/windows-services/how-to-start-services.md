@@ -16,11 +16,12 @@ caps.latest.revision: "16"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: e4f93da8a2a5be00d798d64caba0f54bfd71ceb2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8352edaa9386adc1fbf3057c6e98f5a9cf9ce4a1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-start-services"></a>Comment : démarrer des services
 Une fois un service est installé, il doit être démarré. Appelez le <xref:System.ServiceProcess.ServiceBase.OnStart%2A> méthode sur la classe de service. En règle générale, le <xref:System.ServiceProcess.ServiceBase.OnStart%2A> méthode définit le travail utile effectué par le service. Après le démarrage d’un service, il reste actif jusqu'à ce qu’il est suspendu ou arrêté.  
@@ -87,6 +88,6 @@ Une fois un service est installé, il doit être démarré. Appelez le <xref:Sys
 2.  Appelez la méthode <xref:System.ServiceProcess.ServiceController.Start%2A> pour démarrer le service.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Introduction aux Applications de Service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Comment : créer des Services Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
- [Comment : ajouter des programmes d’installation à votre Application de Service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
+ [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [Guide pratique pour créer des services Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
+ [Guide pratique pour ajouter des programmes d’installation à votre application de service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

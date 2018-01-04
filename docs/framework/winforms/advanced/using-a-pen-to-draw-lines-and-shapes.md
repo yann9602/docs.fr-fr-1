@@ -18,11 +18,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0913dc2745e1b244e4b03c0e6b946441a401c5b1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 35f43316e2535aae6622ccf7952f649cdb92fc81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-a-pen-to-draw-lines-and-shapes"></a>Utilisation d'un stylet pour dessiner des lignes et des formes
 Utilisez [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] `Pen` objets pour dessiner des segments de ligne, des courbes et des contours des formes. Dans cette section, *ligne* fait référence à un de ces éléments, sauf si spécifié pour n'indiquer qu’un segment de ligne. Définir les propriétés d’un stylet pour contrôler la couleur, largeur, l’alignement et le style des lignes dessinées avec ce stylet.  
@@ -51,4 +52,4 @@ Utilisez [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] `Pe
   
 ## <a name="reference"></a>Référence  
  <xref:System.Drawing.Pen>  
- Décrit cette classe et propose des liens vers tous ses membres.
+ Décrit cette classe et fournit des liens vers tous ses membres.
