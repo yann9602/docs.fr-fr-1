@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6da8c187d3ec4290181c4aad8c2338fb05f1563b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 566c35e9906b38a9c8fc3ccd39071127f7780e6a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmsmqpoisonmessagemovedretry"></a><span data-ttu-id="54f0b-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span><span class="sxs-lookup"><span data-stu-id="54f0b-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span></span>
-<span data-ttu-id="54f0b-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span><span class="sxs-lookup"><span data-stu-id="54f0b-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span></span>  
+# <a name="systemservicemodelchannelsmsmqpoisonmessagemovedretry"></a><span data-ttu-id="ccace-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span><span class="sxs-lookup"><span data-stu-id="ccace-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span></span>
+<span data-ttu-id="ccace-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span><span class="sxs-lookup"><span data-stu-id="ccace-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedRetry</span></span>  
   
-## <a name="description"></a><span data-ttu-id="54f0b-104">Description</span><span class="sxs-lookup"><span data-stu-id="54f0b-104">Description</span></span>  
- <span data-ttu-id="54f0b-105">Le message incohérent a déplacé dans la sous-file d'attente de nouvel essai.</span><span class="sxs-lookup"><span data-stu-id="54f0b-105">Poison message moved to the retry sub-queue.</span></span>  
+## <a name="description"></a><span data-ttu-id="ccace-104">Description</span><span class="sxs-lookup"><span data-stu-id="ccace-104">Description</span></span>  
+ <span data-ttu-id="ccace-105">Le message incohérent a déplacé dans la sous-file d'attente de nouvel essai.</span><span class="sxs-lookup"><span data-stu-id="ccace-105">Poison message moved to the retry sub-queue.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="54f0b-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="54f0b-106">See Also</span></span>  
- [<span data-ttu-id="54f0b-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="54f0b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="54f0b-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="54f0b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="54f0b-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="54f0b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="ccace-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ccace-106">See Also</span></span>  
+ [<span data-ttu-id="ccace-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="ccace-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="ccace-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="ccace-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="ccace-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="ccace-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

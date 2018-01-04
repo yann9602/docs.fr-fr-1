@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 792f9798025e0eba5a9981f5188d01bc11060df5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 590116af392f5be32f40aa3fad2c33166d5e0058
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsinitiatingtcpconnection"></a><span data-ttu-id="d5d9a-102">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="d5d9a-102">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>
-<span data-ttu-id="d5d9a-103">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="d5d9a-103">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>  
+# <a name="systemservicemodelchannelsinitiatingtcpconnection"></a><span data-ttu-id="f69dd-102">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="f69dd-102">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>
+<span data-ttu-id="f69dd-103">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="f69dd-103">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>  
   
-## <a name="description"></a><span data-ttu-id="d5d9a-104">Description</span><span class="sxs-lookup"><span data-stu-id="d5d9a-104">Description</span></span>  
- <span data-ttu-id="d5d9a-105">Lancement d'une connexion TCP.</span><span class="sxs-lookup"><span data-stu-id="d5d9a-105">Initiating a TCP connection.</span></span>  
+## <a name="description"></a><span data-ttu-id="f69dd-104">Description</span><span class="sxs-lookup"><span data-stu-id="f69dd-104">Description</span></span>  
+ <span data-ttu-id="f69dd-105">Lancement d'une connexion TCP.</span><span class="sxs-lookup"><span data-stu-id="f69dd-105">Initiating a TCP connection.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d5d9a-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d5d9a-106">See Also</span></span>  
- [<span data-ttu-id="d5d9a-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="d5d9a-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="d5d9a-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="d5d9a-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="d5d9a-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="d5d9a-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="f69dd-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f69dd-106">See Also</span></span>  
+ [<span data-ttu-id="f69dd-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="f69dd-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="f69dd-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="f69dd-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="f69dd-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="f69dd-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

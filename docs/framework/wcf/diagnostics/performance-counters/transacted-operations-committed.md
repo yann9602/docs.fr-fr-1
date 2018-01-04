@@ -13,14 +13,15 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7dc66193d542370ffa3f266611068b67f089257c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 61f7e2453778685715a90f8fbcf439be517f59ff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="transacted-operations-committed"></a><span data-ttu-id="cacbc-102">Opérations traitées validées</span><span class="sxs-lookup"><span data-stu-id="cacbc-102">Transacted Operations Committed</span></span>
-<span data-ttu-id="cacbc-103">Nom du compteur : opérations transactionnelles validées</span><span class="sxs-lookup"><span data-stu-id="cacbc-103">Counter Name: Transacted Operations Committed.</span></span>  
+# <a name="transacted-operations-committed"></a><span data-ttu-id="155f1-102">Opérations traitées validées</span><span class="sxs-lookup"><span data-stu-id="155f1-102">Transacted Operations Committed</span></span>
+<span data-ttu-id="155f1-103">Nom du compteur : opérations transactionnelles validées</span><span class="sxs-lookup"><span data-stu-id="155f1-103">Counter Name: Transacted Operations Committed.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="cacbc-104">Description</span><span class="sxs-lookup"><span data-stu-id="cacbc-104">Description</span></span>  
- <span data-ttu-id="cacbc-105">Nombre d'opérations transactionnelles validées sur un service.</span><span class="sxs-lookup"><span data-stu-id="cacbc-105">Number of transactional operations that have been committed in this service.</span></span>
+## <a name="description"></a><span data-ttu-id="155f1-104">Description</span><span class="sxs-lookup"><span data-stu-id="155f1-104">Description</span></span>  
+ <span data-ttu-id="155f1-105">Nombre d'opérations transactionnelles validées sur un service.</span><span class="sxs-lookup"><span data-stu-id="155f1-105">Number of transactional operations that have been committed in this service.</span></span>

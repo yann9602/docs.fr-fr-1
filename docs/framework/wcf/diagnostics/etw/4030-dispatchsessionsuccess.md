@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 896bb2b1affa0bdd410663e0cc4d00586024c9c2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dc2790ebef10a721970a2f60d4f3e32deb48e4c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="4030---dispatchsessionsuccess"></a><span data-ttu-id="6ee0a-102">4030 - DispatchSessionSuccess</span><span class="sxs-lookup"><span data-stu-id="6ee0a-102">4030 - DispatchSessionSuccess</span></span>
-## <a name="properties"></a><span data-ttu-id="6ee0a-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="6ee0a-103">Properties</span></span>  
+# <a name="4030---dispatchsessionsuccess"></a><span data-ttu-id="a49e0-102">4030 - DispatchSessionSuccess</span><span class="sxs-lookup"><span data-stu-id="a49e0-102">4030 - DispatchSessionSuccess</span></span>
+## <a name="properties"></a><span data-ttu-id="a49e0-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="a49e0-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="6ee0a-104">ID</span><span class="sxs-lookup"><span data-stu-id="6ee0a-104">ID</span></span>|<span data-ttu-id="6ee0a-105">4030</span><span class="sxs-lookup"><span data-stu-id="6ee0a-105">4030</span></span>|  
-|<span data-ttu-id="6ee0a-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="6ee0a-106">Keywords</span></span>|<span data-ttu-id="6ee0a-107">ActivationServices</span><span class="sxs-lookup"><span data-stu-id="6ee0a-107">ActivationServices</span></span>|  
-|<span data-ttu-id="6ee0a-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="6ee0a-108">Level</span></span>|<span data-ttu-id="6ee0a-109">Information</span><span class="sxs-lookup"><span data-stu-id="6ee0a-109">Information</span></span>|  
-|<span data-ttu-id="6ee0a-110">Canal</span><span class="sxs-lookup"><span data-stu-id="6ee0a-110">Channel</span></span>|<span data-ttu-id="6ee0a-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="6ee0a-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
+|<span data-ttu-id="a49e0-104">ID</span><span class="sxs-lookup"><span data-stu-id="a49e0-104">ID</span></span>|<span data-ttu-id="a49e0-105">4030</span><span class="sxs-lookup"><span data-stu-id="a49e0-105">4030</span></span>|  
+|<span data-ttu-id="a49e0-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="a49e0-106">Keywords</span></span>|<span data-ttu-id="a49e0-107">ActivationServices</span><span class="sxs-lookup"><span data-stu-id="a49e0-107">ActivationServices</span></span>|  
+|<span data-ttu-id="a49e0-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="a49e0-108">Level</span></span>|<span data-ttu-id="a49e0-109">Information</span><span class="sxs-lookup"><span data-stu-id="a49e0-109">Information</span></span>|  
+|<span data-ttu-id="a49e0-110">Canal</span><span class="sxs-lookup"><span data-stu-id="a49e0-110">Channel</span></span>|<span data-ttu-id="a49e0-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="a49e0-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="6ee0a-112">Description</span><span class="sxs-lookup"><span data-stu-id="6ee0a-112">Description</span></span>  
- <span data-ttu-id="6ee0a-113">Cet événement est émis lorsque la distribution de session a réussi.</span><span class="sxs-lookup"><span data-stu-id="6ee0a-113">This event is emitted when the session dispatch has succeeded.</span></span>  
+## <a name="description"></a><span data-ttu-id="a49e0-112">Description</span><span class="sxs-lookup"><span data-stu-id="a49e0-112">Description</span></span>  
+ <span data-ttu-id="a49e0-113">Cet événement est émis lorsque la distribution de session a réussi.</span><span class="sxs-lookup"><span data-stu-id="a49e0-113">This event is emitted when the session dispatch has succeeded.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="6ee0a-114">Message</span><span class="sxs-lookup"><span data-stu-id="6ee0a-114">Message</span></span>  
- <span data-ttu-id="6ee0a-115">Distribution de sessions effectuée.</span><span class="sxs-lookup"><span data-stu-id="6ee0a-115">Session dispatch succeeded.</span></span>  
+## <a name="message"></a><span data-ttu-id="a49e0-114">Message</span><span class="sxs-lookup"><span data-stu-id="a49e0-114">Message</span></span>  
+ <span data-ttu-id="a49e0-115">Distribution de sessions effectuée.</span><span class="sxs-lookup"><span data-stu-id="a49e0-115">Session dispatch succeeded.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="6ee0a-116">Détails</span><span class="sxs-lookup"><span data-stu-id="6ee0a-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="a49e0-116">Détails</span><span class="sxs-lookup"><span data-stu-id="a49e0-116">Details</span></span>

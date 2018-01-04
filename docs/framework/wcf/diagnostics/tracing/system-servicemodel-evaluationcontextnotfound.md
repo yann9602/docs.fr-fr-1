@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4f1637da4d8ee654cfb1215e966b5f1db6394461
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a487e33130cb76c77b93c04fb3c1b41f80272c70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelevaluationcontextnotfound"></a><span data-ttu-id="ddcea-102">System.ServiceModel.EvaluationContextNotFound</span><span class="sxs-lookup"><span data-stu-id="ddcea-102">System.ServiceModel.EvaluationContextNotFound</span></span>
-<span data-ttu-id="ddcea-103">System.ServiceModel.EvaluationContextNotFound</span><span class="sxs-lookup"><span data-stu-id="ddcea-103">System.ServiceModel.EvaluationContextNotFound</span></span>  
+# <a name="systemservicemodelevaluationcontextnotfound"></a><span data-ttu-id="e3af9-102">System.ServiceModel.EvaluationContextNotFound</span><span class="sxs-lookup"><span data-stu-id="e3af9-102">System.ServiceModel.EvaluationContextNotFound</span></span>
+<span data-ttu-id="e3af9-103">System.ServiceModel.EvaluationContextNotFound</span><span class="sxs-lookup"><span data-stu-id="e3af9-103">System.ServiceModel.EvaluationContextNotFound</span></span>  
   
-## <a name="description"></a><span data-ttu-id="ddcea-104">Description</span><span class="sxs-lookup"><span data-stu-id="ddcea-104">Description</span></span>  
- <span data-ttu-id="ddcea-105">Le contexte de l'évaluation de la configuration était introuvable.</span><span class="sxs-lookup"><span data-stu-id="ddcea-105">The configuration evaluation context was not found.</span></span>  
+## <a name="description"></a><span data-ttu-id="e3af9-104">Description</span><span class="sxs-lookup"><span data-stu-id="e3af9-104">Description</span></span>  
+ <span data-ttu-id="e3af9-105">Le contexte de l'évaluation de la configuration était introuvable.</span><span class="sxs-lookup"><span data-stu-id="e3af9-105">The configuration evaluation context was not found.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ddcea-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ddcea-106">See Also</span></span>  
- [<span data-ttu-id="ddcea-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="ddcea-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="ddcea-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="ddcea-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="ddcea-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="ddcea-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e3af9-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e3af9-106">See Also</span></span>  
+ [<span data-ttu-id="e3af9-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="e3af9-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e3af9-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="e3af9-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e3af9-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="e3af9-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

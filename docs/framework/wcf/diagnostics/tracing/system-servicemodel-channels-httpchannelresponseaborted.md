@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e1b52f70c4323227bbbd91047a82efcf1a89abec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6a60e47193c069abc584007f27d0d1e5ecf1ee35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelshttpchannelresponseaborted"></a><span data-ttu-id="c185e-102">System.ServiceModel.Channels.HttpChannelResponseAborted</span><span class="sxs-lookup"><span data-stu-id="c185e-102">System.ServiceModel.Channels.HttpChannelResponseAborted</span></span>
-<span data-ttu-id="c185e-103">Échec de l'envoi d'un message de réponse sur HTTP.</span><span class="sxs-lookup"><span data-stu-id="c185e-103">Failed to send a response message over HTTP.</span></span>  
+# <a name="systemservicemodelchannelshttpchannelresponseaborted"></a><span data-ttu-id="704da-102">System.ServiceModel.Channels.HttpChannelResponseAborted</span><span class="sxs-lookup"><span data-stu-id="704da-102">System.ServiceModel.Channels.HttpChannelResponseAborted</span></span>
+<span data-ttu-id="704da-103">Échec de l'envoi d'un message de réponse sur HTTP.</span><span class="sxs-lookup"><span data-stu-id="704da-103">Failed to send a response message over HTTP.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="c185e-104">Description</span><span class="sxs-lookup"><span data-stu-id="c185e-104">Description</span></span>  
- <span data-ttu-id="c185e-105">Ce suivi de niveau d'avertissement indique qu'une réponse de canal HTTP a été annulée.</span><span class="sxs-lookup"><span data-stu-id="c185e-105">This warning level trace indicates that an HTTP channel response was aborted.</span></span> <span data-ttu-id="c185e-106">Les informations supplémentaires du suivi indiquent la raison ou le message passé à la méthode d'annulation.</span><span class="sxs-lookup"><span data-stu-id="c185e-106">Additional information in this trace will reveal the reason or the message passed to the Abort method.</span></span>  
+## <a name="description"></a><span data-ttu-id="704da-104">Description</span><span class="sxs-lookup"><span data-stu-id="704da-104">Description</span></span>  
+ <span data-ttu-id="704da-105">Ce suivi de niveau d'avertissement indique qu'une réponse de canal HTTP a été annulée.</span><span class="sxs-lookup"><span data-stu-id="704da-105">This warning level trace indicates that an HTTP channel response was aborted.</span></span> <span data-ttu-id="704da-106">Les informations supplémentaires du suivi indiquent la raison ou le message passé à la méthode d'annulation.</span><span class="sxs-lookup"><span data-stu-id="704da-106">Additional information in this trace will reveal the reason or the message passed to the Abort method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c185e-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c185e-107">See Also</span></span>  
- [<span data-ttu-id="c185e-108">Le suivi</span><span class="sxs-lookup"><span data-stu-id="c185e-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="c185e-109">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="c185e-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="c185e-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="c185e-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="704da-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="704da-107">See Also</span></span>  
+ [<span data-ttu-id="704da-108">Suivi</span><span class="sxs-lookup"><span data-stu-id="704da-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="704da-109">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="704da-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="704da-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="704da-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f1cb876d4eb6d630edd74cea428fe5877a7083b9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7f060641b3e52dcdce98faf1e1d8a52024ed3e85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelslistenerdisposed"></a><span data-ttu-id="e419c-102">System.ServiceModel.Channels.ListenerDisposed</span><span class="sxs-lookup"><span data-stu-id="e419c-102">System.ServiceModel.Channels.ListenerDisposed</span></span>
-<span data-ttu-id="e419c-103">System.ServiceModel.Channels.ListenerDisposed</span><span class="sxs-lookup"><span data-stu-id="e419c-103">System.ServiceModel.Channels.ListenerDisposed</span></span>  
+# <a name="systemservicemodelchannelslistenerdisposed"></a><span data-ttu-id="e5927-102">System.ServiceModel.Channels.ListenerDisposed</span><span class="sxs-lookup"><span data-stu-id="e5927-102">System.ServiceModel.Channels.ListenerDisposed</span></span>
+<span data-ttu-id="e5927-103">System.ServiceModel.Channels.ListenerDisposed</span><span class="sxs-lookup"><span data-stu-id="e5927-103">System.ServiceModel.Channels.ListenerDisposed</span></span>  
   
-## <a name="description"></a><span data-ttu-id="e419c-104">Description</span><span class="sxs-lookup"><span data-stu-id="e419c-104">Description</span></span>  
- <span data-ttu-id="e419c-105">Écouteur éliminé.</span><span class="sxs-lookup"><span data-stu-id="e419c-105">Listener disposed.</span></span>  
+## <a name="description"></a><span data-ttu-id="e5927-104">Description</span><span class="sxs-lookup"><span data-stu-id="e5927-104">Description</span></span>  
+ <span data-ttu-id="e5927-105">Écouteur éliminé.</span><span class="sxs-lookup"><span data-stu-id="e5927-105">Listener disposed.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e419c-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e419c-106">See Also</span></span>  
- [<span data-ttu-id="e419c-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="e419c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="e419c-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="e419c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="e419c-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="e419c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e5927-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e5927-106">See Also</span></span>  
+ [<span data-ttu-id="e5927-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="e5927-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e5927-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="e5927-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e5927-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="e5927-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
