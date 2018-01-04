@@ -23,18 +23,19 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7df8b785b2c05acbbec9c17e12e462d755d0cd3b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7691730f4f65d5d89f9f66f8fc1c8c6449702ae9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol"></a><span data-ttu-id="fdf42-102">Comment : ajouter et supprimer des onglets avec le contrôle TabControl Windows Forms</span><span class="sxs-lookup"><span data-stu-id="fdf42-102">How to: Add and Remove Tabs with the Windows Forms TabControl</span></span>
-<span data-ttu-id="fdf42-103">Par défaut, un <xref:System.Windows.Forms.TabControl> contrôle contient deux <xref:System.Windows.Forms.TabPage> contrôles.</span><span class="sxs-lookup"><span data-stu-id="fdf42-103">By default, a <xref:System.Windows.Forms.TabControl> control contains two <xref:System.Windows.Forms.TabPage> controls.</span></span> <span data-ttu-id="fdf42-104">Vous pouvez accéder à ces onglets via le <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="fdf42-104">You can access these tabs through the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
+# <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol"></a><span data-ttu-id="6fd45-102">Comment : ajouter et supprimer des onglets avec le contrôle TabControl Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6fd45-102">How to: Add and Remove Tabs with the Windows Forms TabControl</span></span>
+<span data-ttu-id="6fd45-103">Par défaut, un <xref:System.Windows.Forms.TabControl> contrôle contient deux <xref:System.Windows.Forms.TabPage> contrôles.</span><span class="sxs-lookup"><span data-stu-id="6fd45-103">By default, a <xref:System.Windows.Forms.TabControl> control contains two <xref:System.Windows.Forms.TabPage> controls.</span></span> <span data-ttu-id="6fd45-104">Vous pouvez accéder à ces onglets via le <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="6fd45-104">You can access these tabs through the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
   
-### <a name="to-add-a-tab-programmatically"></a><span data-ttu-id="fdf42-105">Pour ajouter un onglet par programmation</span><span class="sxs-lookup"><span data-stu-id="fdf42-105">To add a tab programmatically</span></span>  
+### <a name="to-add-a-tab-programmatically"></a><span data-ttu-id="6fd45-105">Pour ajouter un onglet par programmation</span><span class="sxs-lookup"><span data-stu-id="6fd45-105">To add a tab programmatically</span></span>  
   
--   <span data-ttu-id="fdf42-106">Utilisez le <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="fdf42-106">Use the <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> method of the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
+-   <span data-ttu-id="6fd45-106">Utilisez le <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="6fd45-106">Use the <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> method of the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
   
     ```vb  
     Dim myTabPage As New TabPage()  
@@ -55,13 +56,13 @@ ms.lasthandoff: 11/21/2017
     tabControl1->TabPages->Add(myTabPage);  
     ```  
   
-### <a name="to-remove-a-tab-programmatically"></a><span data-ttu-id="fdf42-107">Pour supprimer un onglet par programme</span><span class="sxs-lookup"><span data-stu-id="fdf42-107">To remove a tab programmatically</span></span>  
+### <a name="to-remove-a-tab-programmatically"></a><span data-ttu-id="6fd45-107">Pour supprimer un onglet par programme</span><span class="sxs-lookup"><span data-stu-id="6fd45-107">To remove a tab programmatically</span></span>  
   
--   <span data-ttu-id="fdf42-108">Pour supprimer les onglets sélectionnés, utilisez la <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="fdf42-108">To remove selected tabs, use the <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> method of the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
+-   <span data-ttu-id="6fd45-108">Pour supprimer les onglets sélectionnés, utilisez la <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="6fd45-108">To remove selected tabs, use the <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> method of the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
   
-     <span data-ttu-id="fdf42-109">ou</span><span class="sxs-lookup"><span data-stu-id="fdf42-109">-or-</span></span>  
+     <span data-ttu-id="6fd45-109">- ou -</span><span class="sxs-lookup"><span data-stu-id="6fd45-109">-or-</span></span>  
   
--   <span data-ttu-id="fdf42-110">Pour supprimer tous les onglets, utilisez la <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="fdf42-110">To remove all tabs, use the <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> method of the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
+-   <span data-ttu-id="6fd45-110">Pour supprimer tous les onglets, utilisez la <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> méthode de la <xref:System.Windows.Forms.TabControl.TabPages%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="6fd45-110">To remove all tabs, use the <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> method of the <xref:System.Windows.Forms.TabControl.TabPages%2A> property.</span></span>  
   
     ```vb  
     ' Removes the selected tab:  
@@ -84,8 +85,8 @@ ms.lasthandoff: 11/21/2017
     tabControl1->TabPages->Clear();  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="fdf42-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fdf42-111">See Also</span></span>  
- [<span data-ttu-id="fdf42-112">Vue d’ensemble du contrôle TabControl</span><span class="sxs-lookup"><span data-stu-id="fdf42-112">TabControl Control Overview</span></span>](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)  
- [<span data-ttu-id="fdf42-113">Guide pratique pour ajouter un contrôle à une page d'onglet</span><span class="sxs-lookup"><span data-stu-id="fdf42-113">How to: Add a Control to a Tab Page</span></span>](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)  
- [<span data-ttu-id="fdf42-114">Guide pratique pour désactiver les pages d'onglets</span><span class="sxs-lookup"><span data-stu-id="fdf42-114">How to: Disable Tab Pages</span></span>](../../../../docs/framework/winforms/controls/how-to-disable-tab-pages.md)  
- [<span data-ttu-id="fdf42-115">Guide pratique pour modifier l'apparence du contrôle TabControl Windows Forms</span><span class="sxs-lookup"><span data-stu-id="fdf42-115">How to: Change the Appearance of the Windows Forms TabControl</span></span>](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
+## <a name="see-also"></a><span data-ttu-id="6fd45-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6fd45-111">See Also</span></span>  
+ [<span data-ttu-id="6fd45-112">Vue d’ensemble du contrôle TabControl</span><span class="sxs-lookup"><span data-stu-id="6fd45-112">TabControl Control Overview</span></span>](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)  
+ [<span data-ttu-id="6fd45-113">Guide pratique pour ajouter un contrôle à une page d'onglet</span><span class="sxs-lookup"><span data-stu-id="6fd45-113">How to: Add a Control to a Tab Page</span></span>](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)  
+ [<span data-ttu-id="6fd45-114">Guide pratique pour désactiver les pages d'onglets</span><span class="sxs-lookup"><span data-stu-id="6fd45-114">How to: Disable Tab Pages</span></span>](../../../../docs/framework/winforms/controls/how-to-disable-tab-pages.md)  
+ [<span data-ttu-id="6fd45-115">Guide pratique pour modifier l'apparence du contrôle TabControl Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6fd45-115">How to: Change the Appearance of the Windows Forms TabControl</span></span>](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
