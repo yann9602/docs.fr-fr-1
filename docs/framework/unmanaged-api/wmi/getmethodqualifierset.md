@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 79a19d3bb40dd4d435bd7cf97eb0b4071020648e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 2999bef31576cf2bc025868260c2b1782a9b69f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getmethodqualifierset-function"></a>GetMethodQualifierSet (fonction)
 Récupère le qualificateur défini pour une méthode particulière.
@@ -54,13 +55,13 @@ HRESULT GetMethodQualifierSet (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La méthode spécifiée n’existe pas. |
 |`WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un paramètre est `null`. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::GetMethodQualifierSet](https://msdn.microsoft.com/library/aa391446(v=vs.85).aspx) (méthode). 
 
@@ -68,7 +69,7 @@ Un appel à cette fonction est prise en charge uniquement si l’objet actuel es
 
 Étant donné que chaque méthode peut avoir son propre qualificateurs, le [IWbemQualifierSet pointeur](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) permet d’ajouter, modifier ou supprimer ces qualificateurs de l’appelant.
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
 **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1ab3df6d2233059de76036da7ff27f5cc1808aaf
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 3af852fb4b9899a7937f288ffb65d8ca84e4aef1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getpropertyhandle-function"></a>GetPropertyHandle (fonction)
 Retourne un identificateur unique qui identifie une propriété.
@@ -58,14 +59,14 @@ HRESULT GetPropertyHandle (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Le nom de la propriété spécifiée est introuvable. |
 |`WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un paramètre n’est pas valide. |
 |`WBEM_E_NOT_SUPPORTED` | 0x8004100c | La propriété demandée est de type sont `CIM_OBJECT` ou `CIM_ARRAY`. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::GetPropertyHandle](https://msdn.microsoft.com/library/aa391771(v=vs.85).aspx) (méthode).
 
@@ -73,7 +74,7 @@ Vous pouvez utiliser ce handle pour identifier les propriétés lorsque vous uti
 
 Handles peuvent être récupérées pour les propriétés de tous les types de données autres que `CIM_OBJECT` et `CIM_ARRAY`. Retournée le travail de handles sur toutes les instances d’une classe.
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
 **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b51050bce4603ebcfe99fb38d66e54683c677293
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: dc821bddf1d33ea1144fef0821b81cf027d8f92f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi (fonction)
 Crée une connexion via DCOM à un espace de noms WMI sur un ordinateur spécifié.  
@@ -53,14 +54,14 @@ HRESULT ConnectServerWmi (
  
 `lSecurityFlags`[in] Indicateurs à passer à la `ConnectServerWmi` (méthode). Une valeur de zéro (0) pour ce paramètre entraîne l’appel à `ConnectServerWmi` retournant uniquement après l’établie d’une connexion au serveur. Cela peut entraîner une application ne répond ne pas indéfiniment si le serveur est interrompue. Les autres valeurs valides sont :
 
-| Constante  | Valeur  | Description  |
+| Constante  | Value  | Description  |
 |---------|---------|---------|
 | `CONNECT_REPOSITORY_ONLY` | 0 x 40 | Réservé à un usage interne. Ne pas utiliser. |
 | `WBEM_FLAG_CONNECT_USE_MAX_WAIT` | 0 x 80 | `ConnectServerWmi`Retourne un maximum de deux minutes. |
 
 `strAuthority`[in] Le nom de domaine de l’utilisateur. Il peut afficher les valeurs suivantes :
 
-| Valeur | Description |
+| Value | Description |
 |---------|---------|
 | vide | L’authentification NTLM est utilisée, et le domaine NTLM de l’utilisateur actuel est utilisé. Si `strUser` Spécifie le domaine (l’emplacement recommandé), il ne doit pas être spécifié ici. La fonction retourne `WBEM_E_INVALID_PARAMETER` si vous spécifiez le domaine dans les deux paramètres. |
 | Kerberos :*nom principal* | L’authentification Kerberos est utilisée, et ce paramètre contient un nom principal Kerberos. |
@@ -82,14 +83,14 @@ HRESULT ConnectServerWmi (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0 x 80041001 | Il a été un échec général. |
 | `WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un paramètre n’est pas valide. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible pour terminer l’opération. |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemLocator::ConnectServer](https://msdn.microsoft.com/libraryaa391769%28v=vs.85%29.aspx) (méthode).
 
@@ -98,7 +99,7 @@ Cette fonction encapsule un appel à la [IWbemLocator::ConnectServer](https://ms
 `strUser`ne peut pas être une chaîne vide. Si le domaine est spécifié dans `strAuthority`, il doit également être exclu dans `strUser`, ou la fonction retourne `WBEM_E_INVALID_PARAMETER`.
 
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

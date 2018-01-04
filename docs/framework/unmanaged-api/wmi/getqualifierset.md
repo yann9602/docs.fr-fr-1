@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 15d384003f3a18124a07d83a8308f4b8a5c6a31b
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 127e7862d0cb0d204e91cd5ee36f2d32f1453a8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet (fonction)
 Récupère le qualificateur définie pour une instance de classe ou une définition de classe.
@@ -50,7 +51,7 @@ HRESULT GetQualifierSet (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0 x 80041001 | Il a été un échec général. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La méthode spécifiée n’existe pas. |
@@ -58,13 +59,13 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 |`WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un paramètre est `null`. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::GetQualifierSet](https://msdn.microsoft.com/library/aa391451(v=vs.85).aspx) (méthode). 
 
 Le [IWbemQualifierSet pointeur](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) permet d’ajouter, modifier ou supprimer ces qualificateurs de l’appelant. Ces qualificateurs ajoutés, modifiés ou supprimés s’appliquent à la définition de classe ou instance entière.
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
 **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

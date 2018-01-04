@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0241745396ab01a777eef6e3b88e4c12bdd8b429
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f069d09f25575c39db097024384ad1bf14eaaf02
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver, fonction
 Charge une bibliothèque de types et utilise l’élément [interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) pour résoudre toutes les bibliothèques de types référencées en interne.  
@@ -71,7 +72,7 @@ HRESULT LoadTypeLibWithResolver(
 |`TYPE_E_INVALIDSTATE`|La bibliothèque de types n’a pas pu être ouvert.|  
 |`TYPE_E_CANTLOADLIBRARY`|La bibliothèque de types ou de la DLL n’a pas pu être chargé.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le [Tlbexp.exe (exportateur)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) appelle la `LoadTypeLibWithResolver` fonction pendant le processus de conversion de l’assembly de bibliothèque de types.  
   
  Cette fonction charge la bibliothèque de types spécifiée avec un accès minimal au Registre. La fonction examine ensuite la bibliothèque de types pour les bibliothèques de types référencées en interne, chacune d’elles doit être chargé et ajouté à la bibliothèque de type parent.  
@@ -86,7 +87,7 @@ HRESULT LoadTypeLibWithResolver(
   
  Si vous appelez `LoadTypeLibWithResolver` directement, vous devez fournir votre propre [interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) implémentation.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** TlbRef.h  

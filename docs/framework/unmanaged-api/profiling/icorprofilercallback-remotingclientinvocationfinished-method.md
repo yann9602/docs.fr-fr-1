@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 77f86d12d3a19f1b02ece35c8b717e78802f74f6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3f0ae2be95b559074ca9dacde493a98008608b4d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilercallbackremotingclientinvocationfinished-method"></a>ICorProfilerCallback::RemotingClientInvocationFinished, méthode
 Notifie le profileur qu’un appel de la communication à distance s’est exécutée entièrement sur le client.  
@@ -36,7 +37,7 @@ Notifie le profileur qu’un appel de la communication à distance s’est exéc
 HRESULT RemotingClientInvocationFinished();  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si l’appel de la communication à distance était synchrone, il s’est également exécutée entièrement sur le serveur. Si l’appel de la communication à distance était asynchrone, une réponse peut encore être attendue lorsque l’appel est géré. Si une réponse est attendue, elle se produit comme un appel à [ICorProfilerCallback::RemotingClientReceivingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) et un appel supplémentaire à `RemotingClientInvocationFinished` pour indiquer le traitement secondaire requis d’un appel asynchrone.  
   
  Chacune des paires de rappels suivantes se produit sur le même thread :  
@@ -53,7 +54,7 @@ HRESULT RemotingClientInvocationFinished();
   
 -   Le profileur ne reçoit pas de notifications exactes pour les événements de la communication à distance asynchrone.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -63,4 +64,4 @@ HRESULT RemotingClientInvocationFinished();
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interface ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+ [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

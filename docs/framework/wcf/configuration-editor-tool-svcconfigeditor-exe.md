@@ -18,21 +18,22 @@ caps.latest.revision: "45"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a301e23ead8e52273ed4fe7a503f1fe11e2f1348
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e21dacd5f01ba956ba78456b8e325d0b7e767df7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>Outil Éditeur de configuration (SvcConfigEditor.exe)
 L'Éditeur de configuration de service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] (SvcConfiEditor.exe) permet aux administrateurs et aux développeurs de créer et de modifier des paramètres de configuration pour les services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] à l'aide d'une interface graphique utilisateur. Grâce à cet outil, vous pouvez gérer les paramètres des liaisons, des comportements, des services et des diagnostics [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] sans modifier directement les fichiers de configuration XML.  
   
- L'Éditeur de configuration de service se trouve dans le dossier C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin.  
+ L’Éditeur de configuration de service se trouve dans le dossier C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin.  
   
 ## <a name="the-wcf-configuration-editor"></a>Éditeur de configuration WCF  
  L'Éditeur de configuration de service est fourni avec un Assistant qui vous guide à travers toutes les étapes de configuration d'un service ou d'un client [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Il est vivement recommandé d'utiliser l'Assistant au lieu d'utiliser directement l'éditeur.  
   
- Si vous avez déjà quelques fichiers de configuration conformes au schéma System.Configuration standard, vous pouvez gérer des paramètres spécifiques pour les liaisons, comportements, services et diagnostics avec l'interface utilisateur. L'Éditeur de configuration de service vous permet de gérer les paramètres des fichiers de configuration [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] existants, ainsi que les fichiers exécutables, les services COM+ et les services hébergés sur le Web. Lorsque vous ouvrez un service hébergé sur le Web au moyen de l'Éditeur de configuration de service, vous accédez à la propre configuration du service et aux sections de configurations héritées des nœuds de niveau supérieur.  
+ Si vous avez déjà quelques fichiers de configuration conformes au schéma System.Configuration standard, vous pouvez gérer des paramètres spécifiques pour les liaisons, comportements, services et diagnostics avec l’interface utilisateur. L'Éditeur de configuration de service vous permet de gérer les paramètres des fichiers de configuration [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] existants, ainsi que les fichiers exécutables, les services COM+ et les services hébergés sur le Web. Lorsque vous ouvrez un service hébergé sur le Web au moyen de l'Éditeur de configuration de service, vous accédez à la propre configuration du service et aux sections de configurations héritées des nœuds de niveau supérieur.  
   
  Les paramètres de configuration [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] sont situés dans la section `<system.serviceModel>` du fichier de configuration ; par conséquent, l'éditeur fonctionne exclusivement sur le contenu de cet élément et n'accède pas à d'autres éléments du même fichier. Vous pouvez naviguer directement jusqu'aux fichiers de configuration existants ou vous pouvez sélectionner un assembly qui contient un service, un répertoire virtuel ou un service COM+. L'éditeur charge le fichier de configuration pour ce service particulier et autorise l'utilisateur à ajouter des nouveaux éléments ou à modifier des éléments existants imbriqués dans la section `<system.serviceModel>` du fichier de configuration.  
   
@@ -60,7 +61,7 @@ L'Éditeur de configuration de service [!INCLUDE[indigo1](../../../includes/indi
   
  L'interface utilisateur de l'Éditeur de configuration de service est divisée dans les zones suivantes :  
   
--   Volet (arborescence) qui affiche les éléments de configuration sous forme d'arborescence à gauche. Vous pouvez exécuter des opérations dans l'arbre en cliquant avec le bouton droit sur les nœuds.  
+-   Volet (arborescence) qui affiche les éléments de configuration sous forme d'arborescence à gauche. Vous pouvez exécuter des opérations dans l’arbre en cliquant avec le bouton droit sur les nœuds.  
   
 -   Volet de tâches qui présente les tâches courantes applicables aux éléments actuels dans la partie inférieure gauche de la fenêtre.  
   
@@ -212,7 +213,7 @@ L'Éditeur de configuration de service [!INCLUDE[indigo1](../../../includes/indi
   
 #### <a name="editing-the-configuration-of-binding-element-extensions-in-a-custom-binding"></a>Modification de la configuration d’extensions d’élément de liaison dans une liaison personnalisée  
   
-1.  Sélectionnez le nœud de liaison dans l'arbre.  
+1.  Sélectionnez le nœud de liaison dans l’arbre.  
   
 2.  Sélectionnez la liaison personnalisée qui contient l'élément que vous souhaitez modifier.  
   
@@ -327,11 +328,11 @@ L'Éditeur de configuration de service [!INCLUDE[indigo1](../../../includes/indi
  Cette section permet de configurer des types de liaison par défaut pour différents protocoles (tels que HTTP, TCP, MSMQ ou net.pipe) en appliquant un mappage défini entre les schémas d'adresse de protocole et les liaisons possibles. Vous pouvez également ajouter de nouveaux mappages à d'autres protocoles.  
   
 #### <a name="extensions"></a>Extensions  
- Les nouvelles extensions de liaison, les extensions d'élément de liaison, les extensions de point de terminaison standard et les extensions de comportement peuvent être enregistrées en vue d'être utilisées dans la configuration [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Les extensions sont des paires de nom/type. Le nom définit le nom de l'extension dans la configuration, alors que le type implémente l'extension. Il existe quatre types d'extension :  
+ Les nouvelles extensions de liaison, les extensions d'élément de liaison, les extensions de point de terminaison standard et les extensions de comportement peuvent être enregistrées en vue d'être utilisées dans la configuration [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Les extensions sont des paires de nom/type. Le nom définit le nom de l'extension dans la configuration, alors que le type implémente l'extension. Il existe quatre types d’extension :  
   
 -   Les extensions de liaison définissent un type de liaison entier. Par exemple : `basicHttpBinding`  
   
--   Les extensions d'élément de liaison définissent un élément d'une liaison. Par exemple : `textMessageEncoding`  
+-   Les extensions d’élément de liaison définissent un élément d’une liaison. Par exemple : `textMessageEncoding`  
   
 -   Les extensions de point de terminaison standard définissent un point de terminaison standard entier. Par exemple : `discoveryEndpoint`  
   
@@ -339,7 +340,7 @@ L'Éditeur de configuration de service [!INCLUDE[indigo1](../../../includes/indi
   
  Les extensions inscrites dans la configuration peuvent être utilisées comme tout autre composant [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] du même type.  
   
-##### <a name="adding-a-new-extension"></a>Ajout d'une nouvelle extension  
+##### <a name="adding-a-new-extension"></a>Ajout d’une nouvelle extension  
  Sélectionnez l’un des nœuds d’extension parmi les nœuds avancés.  
   
 1.  Cliquez sur **Nouveau**.  
@@ -348,7 +349,7 @@ L'Éditeur de configuration de service [!INCLUDE[indigo1](../../../includes/indi
   
 3.  Cliquez sur **OK**.  
   
-4.  L’extension apparaît maintenant dans l’éditeur à l’endroit approprié. Par exemple, si vous ajoutez une extension d'élément de comportement, elle apparaît dans la liste des extensions disponibles.  
+4.  L’extension apparaît maintenant dans l’éditeur à l’endroit approprié. Par exemple, si vous ajoutez une extension d’élément de comportement, elle apparaît dans la liste des extensions disponibles.  
   
 #### <a name="hosting-environment"></a>Environnement d'hébergement  
  Cette section permet de définir des paramètres d'instanciation pour l'environnement d'hébergement de service.  
@@ -379,7 +380,7 @@ L'Éditeur de configuration de service [!INCLUDE[indigo1](../../../includes/indi
   
 1.  Sélectionnez **fichier** menu -> **intégrer** -> **l’Application COM +.** Cette opération ferme le fichier actuellement ouvert. Si des données ne sont pas enregistrées dans le fichier actif, une boîte de dialogue d'enregistrement apparaît. Le **Assistant intégration COM +** est ensuite lancée.  
   
-2.  Dans la première page, sélectionnez l’application COM+ de l’arbre. Si vous ne trouvez pas votre application COM+ dans l'arbre, vérifiez qu'il est installé dans les services de composants et enregistré dans le Global Assembly Cache (GAC).  
+2.  Dans la première page, sélectionnez l’application COM+ de l’arbre. Si vous ne trouvez pas votre application COM+ dans l’arbre, vérifiez qu’il est installé dans les services de composants et enregistré dans le Global Assembly Cache (GAC).  
   
 3.  Dans la page suivante, sélectionnez les méthodes que vous souhaitez exposer en tant que services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Toutes les méthodes prises en charge dans l'application COM+ sont affichées et sélectionnées par défaut.  
   

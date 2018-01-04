@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7fdb6759d4e39ad9ab6bd6da2c2a0e2abfbe5d56
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 1bf5c6dbf0f707942d58f4d7cf155636f0532724
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="qualifiersetput-function"></a>QualifierSet_Put (fonction)
 Écrit la valeur et le qualificateur nommé. Le nouveau qualificateur remplace la valeur précédente du même nom. Si le qualificateur n’existe pas, il est créé. 
@@ -52,7 +53,7 @@ HRESULT QualifierSet_Put (
 
 `lFlavor`[in] Une des constantes suivantes qui définit les versions de qualificateur souhaité pour ce qualificateur. La valeur par défaut est `WBEM_FLAVOR_OVERRIDABLE` (0).
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_OVERRIDABLE` | 0 | Le qualificateur peut être substitué dans une classe dérivée ou une instance. **Il s’agit de la valeur par défaut.** |
 | `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | Le qualificateur est propagé aux instances. |
@@ -64,7 +65,7 @@ HRESULT QualifierSet_Put (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_CANNOT_BE_KEY` | 0x8004101f | Une tentative non conforme pour spécifier le **clé** qualificateur sur une propriété qui ne peut pas être une clé. Les clés sont spécifiées om c ; définition ass d’un objet et ne peut pas être modifié sur chaque instance. |
 | `WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un paramètre n’est pas valide. |
@@ -72,11 +73,11 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `WBEM_E_OVERRIDE_NOT_ALLOWED` | 0x8004101a | Il n’est pas possible d’appeler le `QualifierSet_Put` méthode sur le qualificateur, car l’objet propriétaire n’autorise pas les remplacements. |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemQualifierSet::Put](https://msdn.microsoft.com/library/aa391871(v=vs.85).aspx) (méthode).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

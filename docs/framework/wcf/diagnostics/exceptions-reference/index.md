@@ -13,38 +13,39 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: be20fa22484cb002792a5bc714f2009fb342f644
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7b82c1821362b874f38f9419269708a7f61ab690
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exceptions-reference"></a>Informations de référence sur les exceptions
 Cette section répertorie toutes les exceptions dans les zones suivantes générées par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] :  
   
  [IdentityModel](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/identitymodel-exceptions.md)  
   
- [Intégration COM +](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/com-integration.md)  
+ [Intégration COM+](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/com-integration.md)  
   
  [Configuration](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/configuration.md)  
   
- [Communications principales : Infrastructure de canal](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-channel-framework.md)  
+ [Communications principales : framework de canal](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-channel-framework.md)  
   
- [Communications principales : Infrastructure de connexion](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-connection-framework.md)  
+ [Communications principales : framework de connexion](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-connection-framework.md)  
   
  Communications principales : canaux de transport HTTP/HTTPS  
   
- [Communications principales : Canaux de Transport Duplex internes](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-internal-duplex-transport-channels.md)  
+ [Communications principales : canaux de transport duplex internes](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-internal-duplex-transport-channels.md)  
   
- [Communications principales : Canaux de Transport du canal nommé](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-named-pipe-transport-channels.md)  
+ [Communications principales : canaux de transport du canal nommé](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-named-pipe-transport-channels.md)  
   
- [Communications principales : Canaux de Transport TCP](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-tcp-transport-channels.md)  
+ [Communications principales : canaux de transport TCP](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-tcp-transport-channels.md)  
   
- [Communications principales : Infrastructure de Transport](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-transport-framework.md)  
+ [Communications principales : framework de transport](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-transport-framework.md)  
   
- [Communications principales : utilitaires](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-utilities.md)  
+ [Communications principales : utilitaires](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-utilities.md)  
   
- [Communications principales : Prise en charge Webhost](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-webhost-support.md)  
+ [Communications principales : prise en charge Webhost](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-webhost-support.md)  
   
  [Transaction](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/transaction-exceptions.md)  
   
@@ -60,9 +61,9 @@ Cette section répertorie toutes les exceptions dans les zones suivantes génér
   
  [Exceptions de sécurité](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/security-exceptions.md)  
   
- [Infrastructure de service](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/service-framework.md)  
+ [Framework de service](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/service-framework.md)  
   
- [Données d’infrastructure de service](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/service-framework-data.md)  
+ [Données de framework de service](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/service-framework-data.md)  
   
  [Module de formatage de transactions](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/transaction-formatter.md)  
   

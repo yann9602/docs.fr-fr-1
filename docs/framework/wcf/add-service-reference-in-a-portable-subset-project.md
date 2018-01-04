@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8c39a60d3b34ca1b5c219d12bda4af5217f389f3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2a4074920d3ca616498c14511bf39763d7d87ed3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Ajouter une référence de service à un projet de sous-ensemble portable
 Les projets portables du sous-ensemble permettent aux programmeurs d’assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs implémentations .NET (bureau, Silverlight, Windows Phone et XBOX). Projets portables du sous-ensemble référencent uniquement les bibliothèques portables .NET qui sont un assembly .NET framework qui peut être utilisé sur toute implémentation du .NET.  

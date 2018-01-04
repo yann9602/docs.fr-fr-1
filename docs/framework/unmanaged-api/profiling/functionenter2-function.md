@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0aa1d98021dcbfc38721d7f30ad305065dced605
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0709d54589b3f88b461adde3f3d380407d263855
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="functionenter2-function"></a>FunctionEnter2 (fonction)
 Notifie le profileur que le contrôle est passé à une fonction et fournit des informations sur la pile des arguments de fonction et de frame. Cette fonction remplace la [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) (fonction).  
@@ -56,7 +57,7 @@ void __stdcall FunctionEnter2 (
   
  Pour accéder aux informations d’argument, la `COR_PRF_ENABLE_FUNCTION_ARGS` indicateur doit être défini. Le profileur peut utiliser le [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) pour définir les indicateurs d’événement.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les valeurs de la `func` et `argumentInfo` paramètres ne sont pas valides après le `FunctionEnter2` fonction retourne, car les valeurs peuvent changer ou être détruites.  
   
  Le `FunctionEnter2` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser le `__declspec`(`naked`) attribut de classe de stockage.  
@@ -71,7 +72,7 @@ void __stdcall FunctionEnter2 (
   
  En outre, le `FunctionEnter2` (fonction) ne doit pas appeler dans du code managé ou de quelque manière qu’une allocation de mémoire managée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl  
@@ -81,7 +82,7 @@ void __stdcall FunctionEnter2 (
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [FunctionLeave2 (fonction)](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)  
- [FunctionTailcall2 (fonction)](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)  
- [SetEnterLeaveFunctionHooks2 (méthode)](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)  
- [Fonctions statiques globales du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+ [FunctionLeave2, fonction](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)  
+ [FunctionTailcall2, fonction](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)  
+ [SetEnterLeaveFunctionHooks2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)  
+ [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

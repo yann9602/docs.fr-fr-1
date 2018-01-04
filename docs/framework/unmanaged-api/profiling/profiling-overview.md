@@ -38,11 +38,12 @@ caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 6d7918a369b5a5656fa2e059bdaaf6c211bd022c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 84688ed80d0cb1b802290176400eb45998052a34
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="profiling-overview"></a>Vue d'ensemble du profilage
 <a name="top"></a>Un profileur est un outil qui surveille l’exécution d’une autre application. Un profileur CLR (Common Language Runtime) est une bibliothèque de liens dynamiques (DLL) qui se compose de fonctions qui reçoivent des messages du CLR et qui lui en envoient à l'aide de l'API de profilage. La DLL du profileur est chargée par le CLR au moment de l'exécution.  
@@ -239,6 +240,6 @@ Architecture de profilage
 |-----------|-----------------|  
 |[Configuration d’un environnement de profilage](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)|Explique comment initialiser un profileur, définir des notifications d'événements et profiler un service Windows.|  
 |[Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)|Décrit les interfaces non managées que l'API de profilage utilise.|  
-|[Fonctions statiques globales du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)|Décrit les fonctions statiques globales non managées que l'API de profilage utilise.|  
+|[Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)|Décrit les fonctions statiques globales non managées que l'API de profilage utilise.|  
 |[Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)|Décrit les énumérations non managées utilisées par l'API de profilage.|  
 |[Structures de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)|Décrit les structures non managées utilisées par l'API de profilage.|

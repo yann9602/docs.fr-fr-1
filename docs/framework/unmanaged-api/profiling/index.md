@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 26fa9471b46a7a963d66ebf0d5b3c6a0286ae640
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5583a9b81d81acfca80368ca54d5f97899daa1d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="profiling-unmanaged-api-reference"></a>Profilage (Informations de référence sur les API non managées)
 L’API de profilage permet à un profileur de surveiller l’exécution d’un programme par le common language runtime (CLR).  
@@ -36,13 +37,13 @@ L’API de profilage permet à un profileur de surveiller l’exécution d’un 
  [Configuration d’un environnement de profilage](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)  
  Décrit les étapes à suivre pour profiler une application .NET Framework.  
   
- [Les profileurs CLR et les applications du Windows Store](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md)  
+ [Profileurs CLR et applications du Windows Store](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md)  
  Explique comment les outils de diagnostic qui utilisent l’API de profilage CLR pour fonctionner correctement avec les applications du Windows Store de port.  
   
  [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md)  
  Documente les conditions dans lesquelles un appel de méthode retourne la `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE` HRESULT.  
   
- [Fonctions statiques globales du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
+ [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
  Décrit les fonctions statiques globales non managées que l'API de profilage utilise.  
   
  [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)  

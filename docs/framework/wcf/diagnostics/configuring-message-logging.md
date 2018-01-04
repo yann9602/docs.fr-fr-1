@@ -14,11 +14,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e42b4007d438fbabaf497981b654415ca7eeb415
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a867d5f85177ad9a19a5766c65a8f1f98c04cd17
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-message-logging"></a>Configuration de la journalisation des messages
 Cette rubrique contient des instructions permettant de configurer l'enregistrement des messages en fonction de différentes situations.  
@@ -81,7 +82,7 @@ Cette rubrique contient des instructions permettant de configurer l'enregistreme
  Vous pouvez contrôler le niveau d'enregistrement en définissant les attributs `logMessagesAtServiceLevel`, `logMalformedMessages` et `logMessagesAtTransportLevel` de l'élément `messageLogging`.  
   
 ### <a name="service-level"></a>Niveau service  
- Les messages enregistrés à ce niveau sont ceux qui sont sur le point d'arriver (côté destinataire) dans le code utilisateur ou de quitter ce dernier (côté expéditeur). Si des filtres ont été définis, seuls les messages respectant les critères définis par ces filtres seront enregistrés. Dans le cas contraire, tous les messages du niveau service seront enregistrés. Les messages d'infrastructure (transactions, canal homologue et sécurité) sont également enregistrés à ce niveau, à l'exception des messages de messagerie fiable. Pour les messages transmis en flux continu, seuls les en-têtes sont enregistrés. Les messages sécurisés sont également enregistrés et déchiffrés à ce niveau.  
+ Les messages enregistrés à ce niveau sont ceux qui sont sur le point d'arriver (côté destinataire) dans le code utilisateur ou de quitter ce dernier (côté expéditeur). Si des filtres ont été définis, seuls les messages respectant les critères définis par ces filtres seront enregistrés. Dans le cas contraire, tous les messages du niveau service seront enregistrés. Les messages d’infrastructure (transactions, canal homologue et sécurité) sont également enregistrés à ce niveau, à l’exception des messages de messagerie fiable. Pour les messages transmis en flux continu, seuls les en-têtes sont enregistrés. Les messages sécurisés sont également enregistrés et déchiffrés à ce niveau.  
   
 ### <a name="transport-level"></a>Niveau transport  
  Les messages enregistrés à ce niveau sont prêts à être encodés ou décodés pour ou après transmission. Si des filtres ont été définis, seuls les messages respectant les critères définis par ces filtres seront enregistrés. Dans le cas contraire, tous les messages de niveau transport seront enregistrés. Tous les messages d'infrastructure sont enregistrés à ce niveau, notamment les messages de messagerie fiable. Pour les messages transmis en flux continu, seuls les en-têtes sont enregistrés. Les messages sécurisés sont également enregistrés à ce niveau sous leur forme chiffrée, sauf si un transport sécurisé tel qu'HTTPS est utilisé.  
@@ -126,7 +127,7 @@ Cette rubrique contient des instructions permettant de configurer l'enregistreme
 ## <a name="message-filters"></a>Filtres de message  
  Les filtres de message sont définis dans l'élément de configuration `messageLogging` de la section de configuration `diagnostics`. Ils sont appliqués aux niveaux service et transport. Lorsqu'un ou plusieurs filtres sont définis, seuls les messages qui correspondent au moins à l'un des filtres sont enregistrés. Si aucun filtre n'est défini, tous les messages passent.  
   
- Les filtres prennent en charge la syntaxe XPath complète et s'appliquent dans l'ordre dans lequel ils apparaissent dans le fichier de configuration. Un filtre syntaxiquement incorrect provoque la levée d'une exception de configuration.  
+ Les filtres prennent en charge la syntaxe XPath complète et s’appliquent dans l’ordre dans lequel ils apparaissent dans le fichier de configuration. Un filtre syntaxiquement incorrect provoque la levée d'une exception de configuration.  
   
  Les filtres fournissent également une fonctionnalité de sécurité qui utilise l'attribut `nodeQuota` et qui limite le nombre maximal de nœuds dans XPath DOM pouvant être examinés pour comparaison avec les filtres définis.  
   
@@ -174,5 +175,5 @@ Cette rubrique contient des instructions permettant de configurer l'enregistreme
   
 ## <a name="see-also"></a>Voir aussi  
  [\<enregistrement des messages >](../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)  
- [Enregistrement des messages](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
- [Paramètres recommandés pour le traçage et journalisation des messages](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md)
+ [Journalisation des messages](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
+ [Paramètres recommandés pour le suivi et la journalisation des messages](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md)

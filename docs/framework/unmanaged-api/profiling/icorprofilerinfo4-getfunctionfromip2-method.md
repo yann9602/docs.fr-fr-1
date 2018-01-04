@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 2173326c5c67d1f4d3a8e28f84508fd6affb8299
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4f354bdc198a8060c7241a2b9bdb472bee5ed7b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilerinfo4getfunctionfromip2-method"></a>ICorProfilerInfo4::GetFunctionFromIP2, méthode
 Mappe un pointeur d’instruction de code managé vers la version recompilée juste-d’une fonction.  
@@ -49,13 +50,13 @@ HRESULT GetFunctionFromIP2(
  `pReJitId`  
  [out] L’identité de la version recompilée juste-de la fonction.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `GetFunctionFromIP2`est semblable à `GetFunctionFromIP`, sauf qu’elle obtient l’ID recompilé juste-au lieu de l’ID de la fonction de la fonction qui contient l’adresse IP spécifiée.  
   
 > [!NOTE]
 >  `GetFunctionFromIP2`peut déclencher un garbage collection, tandis que `GetFunctionFromIP` ne seront pas.  Pour plus d’informations, consultez [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -65,4 +66,4 @@ HRESULT GetFunctionFromIP2(
  **Versions du .NET framework :**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICorProfilerInfo (Interface)](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+ [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

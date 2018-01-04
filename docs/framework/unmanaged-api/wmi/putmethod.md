@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 64e43165b34b74540931b308100c9ca942946bcf
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 7e97ffcf44a738234f67d9736382c46c42e5b61e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="putmethod-function"></a>PutMethod (fonction)
 Crée une méthode.
@@ -63,7 +64,7 @@ HRESULT PutMethod (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un ou plusieurs paramètres ne sont pas valides. |
 | `WBEM_E_INVALID_DUPLICATE_PARAMETER` | 0x80041043 | Le `[in, out]` paramètre de méthode spécifié à la fois dans le *pInSignature* et *pOutSignature* objets ont des qualificateurs différents.
@@ -73,7 +74,7 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `WBEM_E_PROPAGATED_METHOD` | 0x80041034 | Une tentative a été effectuée pour réutiliser un nom de méthode existant à partir d’une classe parente, et les signatures ne correspondent pas. |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi. |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::PutMethod](https://msdn.microsoft.com/library/aa391456(v=vs.85).aspx) (méthode).
 
@@ -91,7 +92,7 @@ Chaque propriété dans un [__Parameters](https://msdn.microsoft.com/library/aa3
 
 Pour obtenir un exemple, consultez la [IWbemClassObject::PutMethod](https://msdn.microsoft.com/library/aa391456(v=vs.85).aspx) (méthode).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

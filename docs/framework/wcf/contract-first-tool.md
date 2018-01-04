@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d00a4bac555166368114951625e18991e955cc02
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5079a4b45c7adf0cfd4d9ae1069379184422dc98
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="contract-first-tool"></a>Outil « Contrat en premier »
 Les contrats de service doivent souvent être créés à partir de services existants. Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les classes de contrat de données peuvent être créées automatiquement à partir des services existants à l'aide de l'outil Contrat en premier. Pour utiliser l'outil Contrat en premier, le fichier de définition de schéma XML (XSD) doit être téléchargé localement ; l'outil ne peut pas importer les contrats de données distants via HTTP.  
@@ -355,4 +356,4 @@ namespace TestXSD3.ContractTypes
  Les erreurs et les avertissements rencontrés lors de l'analyse du schéma XSD apparaissent comme des erreurs et des avertissements de build.  
   
 ## <a name="interface-inheritance"></a>Héritage de l'interface  
- Il n'est pas possible d'utiliser l'héritage de l'interface avec un développement Contrat en premier ; cela est cohérent avec la façon dont les interfaces se comportent dans d'autres opérations. Afin d'utiliser une interface qui hérite d'une interface de base, utilisez deux points de terminaison distincts. Le premier point de terminaison utilise le contrat hérité et le second implémente l'interface de base.
+ Il n'est pas possible d'utiliser l'héritage de l'interface avec un développement Contrat en premier ; cela est cohérent avec la façon dont les interfaces se comportent dans d'autres opérations. Afin d’utiliser une interface qui hérite d’une interface de base, utilisez deux points de terminaison distincts. Le premier point de terminaison utilise le contrat hérité et le second implémente l’interface de base.

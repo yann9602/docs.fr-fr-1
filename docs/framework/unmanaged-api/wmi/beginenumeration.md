@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 12a742774bff22030bdfaaa34e431059e016a4bf
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 90c3e8448a61145290ea4a75b1d38f7ae010cb9f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration (fonction)
 Réinitialise l’énumérateur au début de l’énumération.  
@@ -49,14 +50,14 @@ HRESULT BeginEnumeration (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | La combinaison d’indicateurs dans `lEnumFlags` n’est pas valide ou non valide argument a été spécifié. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectuée sans appel intermédiaire à [ `EndEnumeration` ](endenumeration.md). |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible pour commencer une nouvelle énumération. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::BeginEnumeration](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) (méthode).
 
@@ -64,21 +65,21 @@ Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument s
 
 **Groupe 1**
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0 x 4 | Inclure les propriétés qui constituent la clé uniquement. |
 |`WBEM_FLAG_REFS_ONLY` | 0 x 8 | Inclure les propriétés qui sont des références d’objet. |
 
 **Groupe 2**
 
-Constante  |Valeur  |Description  |
+Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_SYSTEM_ONLY` | 0 x 30 | Limiter l’énumération uniquement les propriétés système. |
 |`WBEM_FLAG_NONSYSTEM_ONLY` | 0 x 40 | Les propriétés locales et propagées mais exclut les propriétés système à partir de l’énumération. |
 
 Pour les classes :
 
-Constante  |Valeur  |Description  |
+Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0 x 100 | Limiter l’énumération de propriétés de substitution dans la définition de classe. |
 |`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0 x 100 | Limiter l’énumération de propriétés de substitution dans la définition de classe en cours et de nouvelles propriétés sont définies dans la classe. |
@@ -88,13 +89,13 @@ Constante  |Valeur  |Description  |
 
 Pour les instances :
 
-Constante  |Valeur  |Description  |
+Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0 x 10 | Limiter l’énumération de propriétés définies ou modifiées dans la classe elle-même. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0 x 20 | Limiter l’énumération de propriétés qui sont héritées de classes de base. |
 
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

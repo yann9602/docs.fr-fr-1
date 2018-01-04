@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 754c938242035549b9deb94a2fe3b975b1384fc0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 713b9594ac628c2c256e8592d3894feee8029332
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="defining-and-specifying-faults"></a>Définition et spécification des erreurs
 Les erreurs SOAP acheminent des informations de condition d'erreur d'un service à un client et, dans le cas duplex, d'un client à un service d'une manière interopérable. Cette rubrique explique quand et comment définir le contenu d'erreur personnalisé et spécifier quelles opérations peuvent les retourner. [!INCLUDE[crabout](../../../includes/crabout-md.md)]manière dont un client duplex, ou le service peut envoyer ces erreurs et la façon dont une application cliente ou de service gère ces erreurs, consultez [envoi et réception des erreurs](../../../docs/framework/wcf/sending-and-receiving-faults.md). Pour une vue d’ensemble de la gestion des erreurs dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] les applications, consultez [spécification et gestion des erreurs dans les contrats et les Services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -106,4 +107,4 @@ End Class
  [Guide pratique pour déclarer des erreurs dans des contrats de service](../../../docs/framework/wcf/how-to-declare-faults-in-service-contracts.md)  
  [Présentation du niveau de protection](../../../docs/framework/wcf/understanding-protection-level.md)  
  [Guide pratique pour définir la propriété ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
- [Transfert de données en spécifiant dans les contrats de Service](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+ [Spécification du transfert de données dans des contrats de service](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3204e4c280c6c1acd50062fa44b46344926c3908
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 293d7f8502b39eac6508ba10b2fac128c6aa4879
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="designing-service-contracts"></a>Conception de contrats de service
 Cette rubrique explique ce que sont les contrats de service, comment ils sont définis, quelles opérations sont disponibles (et les implications des échanges de messages sous-jacents), quels types de données sont utilisés et d’autres aspects qui vous aident à concevoir des opérations qui répondent aux exigences de votre scénario.  
@@ -39,7 +40,7 @@ Cette rubrique explique ce que sont les contrats de service, comment ils sont d�
   
 -   Les types de modèles d'échange que vous pouvez utiliser.  
   
--   Si vous pouvez inclure des conditions de sécurité explicites dans le contrat.  
+-   Si vous pouvez inclure des exigences de sécurité explicites dans le contrat.  
   
 -   Les restrictions d'entrée et de sortie d'opération.  
   
@@ -125,7 +126,7 @@ Sub Hello (ByVal greeting As String)
   
  Un échange de messages dans lequel un message est envoyé et aucun message n'est reçu ne peut pas prendre en charge une opération de service qui spécifie une valeur de retour autre que `void` ; dans ce cas, une exception <xref:System.InvalidOperationException> est levée.  
   
- L'absence de message de retour signifie également qu'il ne peut y avoir aucune erreur SOAP retournée pour signaler une erreur lors du traitement ou de la communication. (La communication d'informations sur les erreurs lorsque les opérations sont unidirectionnelles requiert un modèle d'échange de messages duplex.)  
+ L'absence de message de retour signifie également qu'il ne peut y avoir aucune erreur SOAP retournée pour signaler une erreur lors du traitement ou de la communication. (La communication d’informations sur les erreurs lorsque les opérations sont unidirectionnelles requiert un modèle d’échange de messages duplex.)  
   
  Pour spécifier un échange de messages unidirectionnel pour une opération qui retourne `void`, affectez à la propriété <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> la valeur `true`, comme dans l'exemple de code C# suivant.  
   
@@ -186,7 +187,7 @@ End Interface
 ### <a name="specify-message-protection-level-on-the-contract"></a>Spécifier le niveau de protection des messages sur le contrat  
  Lorsque vous concevez votre contrat, vous devez également décider du niveau de protection des messages des services qui implémentent votre contrat. Cela est nécessaire uniquement si la sécurité de message est appliquée à la liaison dans le point de terminaison du contrat. Si la sécurité est désactivée pour la liaison (autrement dit, si la liaison fournie par le système affecte au <xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType> la valeur <xref:System.ServiceModel.SecurityMode.None?displayProperty=nameWithType>), vous n'avez pas à choisir le niveau de protection des messages pour le contrat. Dans la plupart des cas, les liaisons fournies par le système avec la sécurité au niveau du message appliquée fournissent un niveau de protection suffisant et il n'est pas nécessaire de considérer le niveau de protection sur la base de chaque opération ou de chaque message.  
   
- Le niveau de protection est une valeur qui spécifie si les messages (ou parties de messages) qui prennent en charge un service sont signés, signés et chiffrés, ou envoyés sans signature ou chiffrement. Le niveau de protection peut être défini à différentes portées : au niveau du service, pour une opération particulière, pour un message dans cette opération, ou pour une partie de message. Les valeurs définies à une portée deviennent la valeur par défaut pour les plus petites portées, sauf substitution explicite. Si une configuration de liaison est incapable de fournir le niveau de protection minimum requis pour le contrat, une exception est levée. Et lorsque aucune valeur de niveau de protection n'est définie explicitement sur le contrat, la configuration de liaison contrôle le niveau de protection pour tous les messages si la liaison a la sécurité de message. Il s'agit du comportement par défaut.  
+ Le niveau de protection est une valeur qui spécifie si les messages (ou parties de messages) qui prennent en charge un service sont signés, signés et chiffrés, ou envoyés sans signature ou chiffrement. Le niveau de protection peut être défini à différentes portées : au niveau du service, pour une opération particulière, pour un message dans cette opération, ou pour une partie de message. Les valeurs définies à une portée deviennent la valeur par défaut pour les plus petites portées, sauf substitution explicite. Si une configuration de liaison est incapable de fournir le niveau de protection minimum requis pour le contrat, une exception est levée. Et lorsque aucune valeur de niveau de protection n’est définie explicitement sur le contrat, la configuration de liaison contrôle le niveau de protection pour tous les messages si la liaison a la sécurité de message. Il s'agit du comportement par défaut.  
   
 > [!IMPORTANT]
 >  L'affectation explicite à plusieurs portées d'un contrat un niveau de protection inférieur au niveau complet de <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> est en général une décision qui implique un compromis entre le degré de sécurité et les performances. Dans ces cas-là, vos décisions doivent dépendre de vos opérations et de la valeur des données qu'elles échangent. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Sécurisation des Services](../../../docs/framework/wcf/securing-services.md).  
@@ -222,7 +223,7 @@ End Interface
   
  Lors de l'interaction avec une implémentation `ISampleService` dans un point de terminaison avec un <xref:System.ServiceModel.WSHttpBinding> par défaut (le <xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType>par défaut, qui est <xref:System.ServiceModel.SecurityMode.Message>), tous les messages sont chiffrés et signés puisqu'il s'agit du niveau de protection par défaut. Toutefois, lorsqu'un service `ISampleService` est utilisé avec un <xref:System.ServiceModel.BasicHttpBinding> par défaut (le <xref:System.ServiceModel.SecurityMode>par défaut, qui est <xref:System.ServiceModel.SecurityMode.None>), tous les messages sont envoyés comme du texte puisqu'il n'y a aucune sécurité pour cette liaison, et le niveau de protection est donc ignoré (autrement dit, les messages ne sont ni chiffrés ni signés). Si le <xref:System.ServiceModel.SecurityMode> était changé en <xref:System.ServiceModel.SecurityMode.Message>, ces messages seraient chiffrés et signés (car ce serait maintenant le niveau de protection par défaut de la liaison).  
   
- Si vous souhaitez spécifier ou ajuster explicitement les exigences en matière de protection pour votre contrat, affectez à la propriété <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> (ou à l'une des propriétés `ProtectionLevel` à une plus petite portée) le niveau requis par votre contrat de service. Dans ce cas, l'utilisation d'un paramètre explicite requiert que la liaison prenne en charge ce paramètre au minimum pour la portée utilisée. Par exemple, l'exemple de code suivant spécifie explicitement une valeur <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A>, pour l'opération `GetGuid`.  
+ Si vous souhaitez spécifier ou ajuster explicitement les exigences en matière de protection pour votre contrat, affectez à la propriété <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> (ou à l'une des propriétés `ProtectionLevel` à une plus petite portée) le niveau requis par votre contrat de service. Dans ce cas, l’utilisation d’un paramètre explicite requiert que la liaison prenne en charge ce paramètre au minimum pour la portée utilisée. Par exemple, l'exemple de code suivant spécifie explicitement une valeur <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A>, pour l'opération `GetGuid`.  
   
 ```csharp  
 [ServiceContract]  
@@ -269,20 +270,20 @@ End Interface
  [!INCLUDE[crabout](../../../includes/crabout-md.md)]niveaux de protection et leur utilisation, consultez [au niveau de Protection de présentation](../../../docs/framework/wcf/understanding-protection-level.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)]la sécurité, consultez [sécurisation des Services](../../../docs/framework/wcf/securing-services.md).  
   
 ##### <a name="other-operation-signature-requirements"></a>Autres exigences de signature d’opération  
- Certaines fonctionnalités d'application requièrent un type particulier de signature d'opération. Par exemple, la liaison <xref:System.ServiceModel.NetMsmqBinding> prend en charge les services et clients fiables, dans lesquels une application peut redémarrer au milieu de la communication et reprendre là où elle s'est interrompue sans entraîner la perte de messages. ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Les files d’attente dans WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).) Toutefois, les opérations fiables doivent prendre un seul paramètre `in` et n'avoir aucune valeur de retour.  
+ Certaines fonctionnalités d’application requièrent un type particulier de signature d’opération. Par exemple, la liaison <xref:System.ServiceModel.NetMsmqBinding> prend en charge les services et clients fiables, dans lesquels une application peut redémarrer au milieu de la communication et reprendre là où elle s'est interrompue sans entraîner la perte de messages. ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Les files d’attente dans WCF](../../../docs/framework/wcf/feature-details/queues-in-wcf.md).) Toutefois, les opérations fiables doivent prendre un seul paramètre `in` et n'avoir aucune valeur de retour.  
   
  Un autre exemple est l'utilisation de types <xref:System.IO.Stream> dans les opérations. Étant donné que le paramètre <xref:System.IO.Stream> inclut le corps du message entier, si une entrée ou une sortie (autrement dit, un paramètre `ref`, un paramètre `out` ou une valeur de retour) est de type <xref:System.IO.Stream>, il doit s'agir de la seule entrée ou sortie spécifiée dans votre opération. De plus, le paramètre ou type de retour doit être <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType> ou <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>. [!INCLUDE[crabout](../../../includes/crabout-md.md)]flux de données, consultez [des données volumineuses et diffusion en continu](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   
 ##### <a name="names-namespaces-and-obfuscation"></a>Noms, espaces de noms et obfuscation  
  Les noms et les espaces de noms des types .NET dans la définition de contrats et les opérations sont significatifs lorsque les contrats sont convertis en WSDL et lorsque les messages de contrat sont créés et envoyés. Par conséquent, il est vivement recommandé que les noms et les espaces de noms du contrat de service soient définis explicitement à l'aide des propriétés `Name` et `Namespace` de tous les attributs de contrat de prise en charge tels que <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.OperationContractAttribute>, <xref:System.Runtime.Serialization.DataContractAttribute>,  <xref:System.Runtime.Serialization.DataMemberAttribute> et d'autres attributs de contrat.  
   
- Il en résulte notamment que si les noms et les espaces de noms ne sont pas définis explicitement, l'utilisation de l'obscurcissement IL sur l'assembly altère les noms et les espaces de noms des types de contrat, WSDL est modifié et les échanges sur le câble échouent généralement. Si vous ne définissez pas explicitement les noms et les espaces de noms des contrats mais prévoyez d'utiliser l'obscurcissement, utilisez les attributs <xref:System.Reflection.ObfuscationAttribute> et <xref:System.Reflection.ObfuscateAssemblyAttribute> pour empêcher la modification des noms et des espaces de noms des types de contrat.  
+ Il en résulte notamment que si les noms et les espaces de noms ne sont pas définis explicitement, l’utilisation de l’obfuscation IL sur l’assembly altère les noms et les espaces de noms des types de contrat, WSDL est modifié et les échanges sur le câble échouent généralement. Si vous ne définissez pas explicitement les noms et les espaces de noms des contrats mais prévoyez d'utiliser l'obscurcissement, utilisez les attributs <xref:System.Reflection.ObfuscationAttribute> et <xref:System.Reflection.ObfuscateAssemblyAttribute> pour empêcher la modification des noms et des espaces de noms des types de contrat.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : créer un contrat demande-réponse](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)  
- [Comment : créer un contrat unidirectionnel](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md)  
- [Comment : créer un contrat Duplex](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)  
- [Transfert de données en spécifiant dans les contrats de Service](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
+ [Guide pratique pour créer un contrat demande-réponse](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)  
+ [Guide pratique pour créer un contrat unidirectionnel](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md)  
+ [Guide pratique pour créer un contrat duplex](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)  
+ [Spécification du transfert de données dans des contrats de service](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
  [Spécification et gestion des erreurs dans les contrats et les services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  
  [Utilisation de sessions](../../../docs/framework/wcf/using-sessions.md)  
  [Opérations synchrones et asynchrones](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)  

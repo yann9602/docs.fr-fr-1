@@ -13,14 +13,15 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 157f0cc5d860841940b0850ca3895f82a12d47ce
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fc5fa1b3600489cb2d5f31c263019ae5006edf65
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endpoint-performance-counters"></a>Compteurs de performance de point de terminaison
-Les compteurs de performance de point de terminaison capturent des données qui révèlent comment un point de terminaison accepte des messages. Ils se trouvent sous l'objet de performance `ServiceModelEndpoint 4.0.0.0` dans l'affichage de l'analyseur de performances. Les instances sont nommées à l'aide du modèle suivant :  
+Les compteurs de performance de point de terminaison capturent des données qui révèlent comment un point de terminaison accepte des messages. Ils se trouvent sous l'objet de performance `ServiceModelEndpoint 4.0.0.0` dans l'affichage de l'analyseur de performances. Les instances sont nommées à l’aide du modèle suivant :  
   
 ```  
 (ServiceName).(ContractName)@(endpoint listener address)  

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c6030b1ad1dc3953137d3b068be1bceb99975a5f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ce62eb348cb57ce6137c58fbc50a32e829980c0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="monitoring-service-operation-failures"></a>Surveillance des échecs d'opération de service
 Si le traçage analytique est activé pour une application, les échecs de service peuvent facilement être surveillés dans l'Observateur d'événements.  Cette rubrique montre comment déterminer quand une opération de service échoue et comment déterminer la cause de cet échec.  

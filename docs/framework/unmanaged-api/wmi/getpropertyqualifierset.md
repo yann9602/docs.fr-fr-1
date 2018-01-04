@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bd8abdb34f37273e469bdf5fc659b261bb2b9304
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 7ca2981c8833abaafd5d206b66d6e91f34e2c91d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getpropertyqualifierset-function"></a>GetPropertyQualifierSet (fonction)
 Récupère le qualificateur définie pour une propriété particulière.
@@ -54,7 +55,7 @@ HRESULT GetPropertyQualifierSet (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0 x 80041001 | Il a été un échec général. |
 | `WBEM_E_NOT_FOUND` | 0x80041002 | La méthode spécifiée n’existe pas. |
@@ -63,7 +64,7 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `WBEM_E_SYSTEM_PROPERTY` | 0x80041030 | La fonction tente d’obtenir des qualificateurs d’une propriété système. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::GetPropertyQualifierSet](https://msdn.microsoft.com/library/aa391450(v=vs.85).aspx) (méthode). 
 
@@ -73,7 +74,7 @@ Un appel à cette fonction est prise en charge uniquement si l’objet actuel es
 
 Dans la mesure où les propriétés système n’ont des qualificateurs d’aucun, la fonction retourne `WBEM_E_SYSTEM_PROPERTY` si vous tentez d’obtenir un [IWbemQualifierSet](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) pointeur pour une propriété système.
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
 **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

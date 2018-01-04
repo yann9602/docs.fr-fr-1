@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c5d274c966a345e0e2984018bcd8aa1e2dade03b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f2ae13f25a1f99de4cf7dcb46dd33ed86682bf64
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="functiontailcall3-function"></a>FunctionTailcall3, fonction
 Notifie le profileur que la fonction en cours d’exécution est sur le point d’exécuter un appel tail à une autre fonction.  
@@ -38,7 +39,7 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
  `functionOrRemappedID`  
  [in] Identificateur de la fonction en cours d’exécution qui doit faire un appel tail.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `FunctionTailcall3` fonction de rappel notifie le profileur que les fonctions sont appelées. Utilisez le [ICorProfilerInfo3::SetEnterLeaveFunctionHooks3, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md) pour enregistrer votre implémentation de cette fonction.  
   
  Le `FunctionTailcall3` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser le `__declspec(naked)` attribut de classe de stockage.  
@@ -53,7 +54,7 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
   
  Le `FunctionTailcall3` fonction ne doit pas appeler dans du code managé ou provoquer une allocation de mémoire managée en aucune façon.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl  
@@ -67,9 +68,9 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
  [FunctionLeave3](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md)  
  [FunctionEnter3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md)  
  [FunctionLeave3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md)  
- [FunctionTailcall3WithInfo (fonction)](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md)  
+ [FunctionTailcall3WithInfo, fonction](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md)  
  [SetEnterLeaveFunctionHooks3](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md)  
  [SetEnterLeaveFunctionHooks3WithInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)  
  [SetFunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setfunctionidmapper-method.md)  
  [SetFunctionIDMapper2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setfunctionidmapper2-method.md)  
- [Fonctions statiques globales du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+ [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 86d741a16a0293892d0d6d90f1763d744ed3675d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2127cdb1178da37bcfe77a0e1a02ccd34be2d800
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Nom fort (Informations de référence sur les API non managées)
 L’API de nommage fort permet à un client d’administrer la signature des assemblys avec nom fort.  
@@ -59,7 +60,7 @@ L’API de nommage fort permet à un client d’administrer la signature des ass
  [StrongNameErrorInfo, fonction](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md)  
  Obtient le dernier code d’erreur qui a été déclenché par une des fonctions à nom fort.  
   
- [StrongNameFreeBuffer (fonction)](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md)  
+ [StrongNameFreeBuffer, fonction](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md)  
  Libère la mémoire qui a été allouée avec un appel précédent à une fonction de nom fort, tel que [StrongNameGetPublicKey](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md), [StrongNameTokenFromPublicKey](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md), ou [StrongNameSignatureGeneration ](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md).   Déconseillées à compter du [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
   
  [StrongNameGetBlob, fonction](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetblob-function.md)  
@@ -86,7 +87,7 @@ L’API de nommage fort permet à un client d’administrer la signature des ass
  [StrongNameKeyInstall, fonction](../../../../docs/framework/unmanaged-api/strong-naming/strongnamekeyinstall-function.md)  
  Importe une paire de clés publique/privée dans un conteneur.  Déconseillées à compter du [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
   
- [StrongNameSignatureGeneration (fonction)](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)  
+ [StrongNameSignatureGeneration, fonction](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)  
  Génère une signature de nom fort pour l’assembly spécifié.   Déconseillées à compter du [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
   
  [StrongNameSignatureGenerationEx, fonction](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegenerationex-function.md)  
@@ -116,9 +117,9 @@ L’API de nommage fort permet à un client d’administrer la signature des ass
  [Structure de nom fort](http://msdn.microsoft.com/en-us/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
  Décrit la structure non managée qui utilise des API de nommage fort pour administrer la signature des assemblys avec nom fort...  
   
- [PublicKeyBlob (Structure)](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
+ [PublicKeyBlob, structure](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
  Représente la clé publique d’une paire de clés publique/privée dans un format binaire.  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)  
+ [ICLRStrongName, interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)  
  [Informations de référence sur les API non managées](../../../../docs/framework/unmanaged-api/index.md)

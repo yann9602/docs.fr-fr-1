@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: aedeec76f4fabb2f6bd32d7d06eb5a1a5734534e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 0dce964829399e6761152a8ff424671b47cc6eb3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="inheritsfrom-function"></a>InheritsFrom (fonction)
 Détermine si l’instance ou la classe actuelle dérive d’une classe parente spécifiée.
@@ -50,17 +51,17 @@ HRESULT InheritsFrom (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_S_NO_ERROR` | 0 | L’objet actuel hérite `wszAncestor`.  |
 | `WBEM_S_FALSE` | 1 | L’objet actuel n’hérite pas de `wszAncestor`. |
 |`WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | `wszAncestor` a la valeur `null`. |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::InheritsFrom](https://msdn.microsoft.com/library/aa391452(v=vs.85).aspx) (méthode).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

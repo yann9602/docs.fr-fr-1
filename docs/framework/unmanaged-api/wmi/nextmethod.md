@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d9b14424bb914be3ba127670e1b6490f79854d6e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 6b886b3ecbd1d5b5b8d212846b2bd8291fa43909
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="nextmethod-function"></a>NextMethod (fonction)
 Récupère la méthode suivante dans une énumération qui commence par un appel à [BeginMethodEnumeration](beginmethodenumeration.md).  
@@ -62,13 +63,13 @@ HRESULT NextMethod (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_UNEXPECTED` | 0x8004101d | Il n’y avait aucun appel à la [ `BeginEnumeration` ](beginenumeration.md) (fonction). |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
 | `WBEM_S_NO_MORE_DATA` | 0x40005 | Il n’y a aucune autre propriété dans l’énumération. |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::NextMethod](https://msdn.microsoft.com/library/aa391454(v=vs.85).aspx) (méthode).
 
@@ -78,7 +79,7 @@ L’appelant commence la séquence d’énumération en appelant le [BeginMethod
 
 Pour obtenir un exemple C++, consultez le [IWbemClassObject::NextMethod](https://msdn.microsoft.com/library/aa391454(v=vs.85).aspx) (méthode).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

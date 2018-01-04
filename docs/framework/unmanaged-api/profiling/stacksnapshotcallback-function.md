@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 92f7071ebcf7664b3622c180b9f1bade50909cea
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 32cf21fb5a76fdec4daa322d53a8eb218ae2f2b5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stacksnapshotcallback-function"></a>StackSnapshotCallback (fonction)
 Fournit au profileur des informations sur chaque frame managé et chaque exécution de frames non managés sur la pile pendant un parcours de pile, qui est initié par le [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) (méthode).  
@@ -62,12 +63,12 @@ HRESULT __stdcall StackSnapshotCallback (
  `clientData`  
  [in] Un pointeur vers les données client, qui sont transmis directement par le biais de `ICorProfilerInfo2::DoStackSnapshot`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `StackSnapshotCallback` fonction est implémentée par le writer de profileur. Vous devez limiter la complexité du travail effectué dans `StackSnapshotCallback`. Par exemple, lorsque vous utilisez `ICorProfilerInfo2::DoStackSnapshot` de manière asynchrone, le thread cible peut contenir des verrous. Si le code situé dans `StackSnapshotCallback` requiert les mêmes verrous, un interblocage peut entraîner.  
   
  Le `ICorProfilerInfo2::DoStackSnapshot` les appels de méthode du `StackSnapshotCallback` fonction une fois par frame managé ou une fois par exécution de frames non managés. Si `StackSnapshotCallback` est appelée pour une exécution de frames non managés, le profileur peut utiliser le contexte de Registre (référencé par le `context` paramètre) pour effectuer son propre parcours de pile non managé. Dans ce cas, Win32 `CONTEXT` structure représente l’état de l’UC pour le frame plus récemment envoyée lors de l’exécution de frames non managés. Bien que Win32 `CONTEXT` structure inclut des valeurs pour tous les registres, vous devez compter uniquement sur les valeurs de Registre de pointeur de pile, Registre de pointeur de frame, Registre de pointeur d’instruction et la non volatile (autrement dit, préservée) registres d’entiers.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl  
@@ -77,5 +78,5 @@ HRESULT __stdcall StackSnapshotCallback (
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [DoStackSnapshot (méthode)](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md)  
- [Fonctions statiques globales du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+ [DoStackSnapshot, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md)  
+ [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

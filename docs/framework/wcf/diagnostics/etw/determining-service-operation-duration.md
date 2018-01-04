@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 24f1bc22e088c0198ec8a8f8183611d2b43941b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2c96aa6752feca637f89ed309d1a5c87cea4a3a9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="determining-service-operation-duration"></a>Détermination de la durée d'une opération de service
 Si le traçage analytique est activé dans une application [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)], la durée d'exécution d'une opération de service peut être déterminée facilement en examinant le journal des événements.  Cette rubrique montre comment déterminer la durée d'exécution d'une opération de service.  

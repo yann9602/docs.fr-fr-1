@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2ba2530dd43e6924187c80214d5efa13ebc548de
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 80284900c318a3776168b781ce2e0e5e4a68f96d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getnames-function"></a>GetNames (fonction)
 Récupère un sous-ensemble ou tous les noms des propriétés d’un objet. 
@@ -62,14 +63,14 @@ HRESULT GetNames (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0 x 80041001 | Il a été un échec général. |
 |`WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un ou plusieurs paramètres ne sont pas valides, ou une combinaison incorrecte d’indicateurs et de paramètres a été spécifiée. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible pour terminer l’opération. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::GetNames](https://msdn.microsoft.com/library/aa391447(v=vs.85).aspx) (méthode).
 
@@ -80,19 +81,19 @@ Valeurs de l’indicateur de `lFlags` sont des champs de bits
 
 Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument sont des champs de bits sont définis dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code.  Vous pouvez combiner un indicateur de chaque groupe de tout indicateur de tout autre groupe. Toutefois, les indicateurs à partir du même groupe sont mutuellement exclusifs. 
 
-| Indicateurs de groupe 1 |Valeur  |Description  |
+| Indicateurs de groupe 1 |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_ALWAYS` | 0 | Retourner tous les noms de propriété. `strQualifierName`et `pQualifierVal` ne sont pas utilisés. |
 | `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Retourner uniquement les propriétés qui ont un qualificateur du nom spécifié par le `strQualifierName` paramètre. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Retourner uniquement des propriétés qui n’ont pas d’un qualificateur du nom spécifié par le `strQualifierName` paramètre. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Retourne uniquement les propriétés qui ont un qualificateur du nom spécifié par le `wszQualifierName` paramètre et également avoir une valeur identique à celle spécifiée par la `pQualifierVal` structure. Si cet indicateur est utilisé, vous devez spécifier à la fois un `wszQualifierName` et un `pQualifierValue`. |
 
-| Indicateurs de groupe 2 |Valeur  |Description  |
+| Indicateurs de groupe 2 |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0 x 4 | Retourner uniquement les noms des propriétés qui définissent les clés. |
 |`WBEM_FLAG_REFS_ONLY` | 0 x 8 | Retour uniquement noms de propriétés qui sont des références d’objet. |
 
-| Indicateurs de groupe 3 |Valeur  |Description  |
+| Indicateurs de groupe 3 |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0 x 10 | Retourner uniquement les noms de propriété qui appartiennent à la classe la plus dérivée. Exclure les propriétés des classes parentes. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0 x 20 | Retourner uniquement les noms de propriété qui appartiennent à des classes parentes. |
@@ -101,7 +102,7 @@ Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument s
 
 La fonction alloue une nouvelle toujours `SAFEARRAY` si elle retourne `WBEM_S_NO_ERROR`, et `pstrNames` est toujours défini à pointer sur elle. Le tableau retourné peut avoir des éléments, 0 si aucune propriété correspondent aux filtres spécifiés. Si la fonction retourne une valeur autre que `WBM_S_NO_ERROR`, un nouveau `SAFEARRAY` structure n’est pas retournée.
  
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

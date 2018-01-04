@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 54a8ee366431360f7b653b48f4ce407a35f8465b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 727816a674d2357c8a9ba1f19679c57669e92f50
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corprfmoduleflags-enumeration"></a>COR_PRF_MODULE_FLAGS, énumération
 Spécifie les propriétés d'un module.  
@@ -55,10 +56,10 @@ typedef enum
 |COR_PRF_MODULE_FLAT_LAYOUT|Mise en page du module en mémoire est plat, non mappé. Si un module a ce bit défini, les profileurs qui lisent des informations directement à partir de l’en-tête du fichier exécutable portable (PE) ont d’être prudent lors de l’interprétation des adresses virtuelles relatives (RVA) dans l’en-tête.|  
 |COR_PRF_MODULE_WINDOWS_RUNTIME|L’indicateur de type de contenu de Windows Runtime est défini dans les métadonnées pour l’assembly de ce module. C’est le cas pour tous les modules de métadonnées Windows (.winmd).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Bits de COR_PRF_MODULE_FLAGS sont retournés au profileur dans le `pdwModuleFlags` paramètre de sortie de la [ICorProfilerInfo3::GetModuleInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getmoduleinfo2-method.md) (méthode). Certaines combinaisons de deux ou plusieurs indicateurs sont possibles, mais pas toutes les combinaisons possibles.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

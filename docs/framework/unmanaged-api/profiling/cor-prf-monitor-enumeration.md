@@ -19,11 +19,12 @@ caps.latest.revision: "33"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c0e2f774bd178676494f24364c7b8890665c3810
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e6dc135681d11a496dbc27553d46a5d101b6d7b9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corprfmonitor-enumeration"></a>COR_PRF_MONITOR, énumération
 Contient des valeurs utilisées pour spécifier un comportement, des fonctionnalités ou des événements auxquels le profileur veut s'abonner.  
@@ -183,10 +184,10 @@ typedef enum {
 |`COR_PRF_MONITOR_IMMUTABLE`|Représente tous les indicateurs `COR_PRF_MONITOR` qui peuvent être définis uniquement lors de l'initialisation. Les tentatives de modification d'un ou plusieurs de ces indicateurs après l'initialisation retournent une valeur `HRESULT`, qui indique un échec.|  
 |`COR_PRF_REQUIRE_PROFILE_IMAGE`|Représente tous les indicateurs `COR_PRF_MONITOR` qui requièrent des images à profil optimisé.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  A `COR_PRF_MONITOR` valeur est utilisée avec la [ICorProfilerInfo::GetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md) et [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) méthodes pour définir les notifications d’événements par le common language runtime au le Générateur de profils.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -197,5 +198,5 @@ typedef enum {
   
 ## <a name="see-also"></a>Voir aussi  
  [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)  
- [GetEventMask (méthode)](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)  
- [SetEventMask (méthode)](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)
+ [GetEventMask, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)  
+ [SetEventMask, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)

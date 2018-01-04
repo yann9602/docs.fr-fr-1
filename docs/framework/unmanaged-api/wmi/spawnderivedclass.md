@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 16f9a762c87e1e181202739b70cd978a80864f04
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 51a0dd0013b1bb3898bcc81ee2d64be20a5b6ecc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="spawnderivedclass-function"></a>SpawnDerivedClass (fonction)
 Crée un objet de classe qui vient d’être dérivée d’un objet spécifié.    
@@ -53,7 +54,7 @@ HRESULT SpawnDerivedClass (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0 x 80041001 | Il a été un échec général. |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | Une opération non valide, telles que la génération d’une classe à partir d’une instance, a été demandée. |
@@ -62,7 +63,7 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | `ppNewClass` a la valeur `null`. |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::SpawnDerivedClass](https://msdn.microsoft.com/library/aa391436(v=vs.85).aspx) (méthode).
 
@@ -70,7 +71,7 @@ Cette fonction encapsule un appel à la [IWbemClassObject::SpawnDerivedClass](ht
 
 Le nouvel objet retourné dans `ppNewClass` devient automatiquement une sous-classe de l’objet actuel. Ce comportement ne peut pas être substitué. Il n’existe aucune autre méthode par laquelle les sous-classes (classes dérivées) peuvent être créés.
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

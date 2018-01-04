@@ -21,11 +21,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 35c87b98a8e0c02ab6f4bca7a4f7a16ff6839c6b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 127f6d76e85ed30f1407d16f8d81c93dd2941960
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap, méthode
 Définit une carte de code pour la fonction spécifiée à l’aide des entrées de mappage Microsoft intermediate language (MSIL) spécifiées.  
@@ -56,7 +57,7 @@ HRESULT SetILInstrumentedCodeMap(
  `rgILMapEntries`  
  [in] Tableau de structures COR_IL_MAP, dont chacun spécifie un offset MSIL.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Un profileur insère souvent des instructions dans le code source d’une méthode pour instrumenter cette méthode (par exemple, pour avertir lorsqu’une ligne source donnée est atteinte). `SetILInstrumentedCodeMap`permet à un profileur de mapper les instructions MSIL d’origine vers leurs nouveaux emplacements. Un profileur peut utiliser le [ICorProfilerInfo::GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) méthode pour obtenir l’offset MSIL d’origine pour un offset natif donné.  
   
  Le débogueur suppose que chaque ancien offset fait référence à un offset MSIL dans le code MSIL non modifié d’origine, et que chaque nouvel offset fait référence à l’offset MSIL dans le nouveau code instrumenté. Le mappage doit être trié par ordre croissant. Pour exécuter pas à pas pour fonctionner correctement, suivez ces instructions :  
@@ -85,7 +86,7 @@ HRESULT SetILInstrumentedCodeMap(
   
     -   Un nouvel offset de 20 ou supérieur sera mappé à l’ancien offset 9.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -95,4 +96,4 @@ HRESULT SetILInstrumentedCodeMap(
  **Versions du .NET framework :**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICorProfilerInfo (Interface)](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+ [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

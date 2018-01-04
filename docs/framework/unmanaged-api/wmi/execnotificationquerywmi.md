@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7f42878c146d478d5183342c3a743f3bd208008b
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: d6dd0926d2262f8d0aa125b86755017a65a95a7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="execnotificationquerywmi-function"></a>ExecNotificationQueryWmi (fonction)
 Exécute une requête pour recevoir les événements. L’appel retourne immédiatement, et l’appelant peut interroger l’énumérateur retourné pour les événements qu’elles arrivent. Libération de l’énumérateur retourné annule la requête.  
@@ -54,7 +55,7 @@ HRESULT ExecNotificationQueryWmi (
 `lFlags`   
 [in] Une combinaison des deux indicateurs suivants qui affectent le comportement de cette fonction. Ces valeurs sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code. 
 
-| Constante | Valeur  | Description  |
+| Constante | Value  | Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_RETURN_IMMEDIATELY` | 0 x 10 | L’indicateur provoque un appel semi-synchrone. Si cet indicateur n’est pas défini, l’appel échoue. Il s’agit, car les événements sont reçus en continu, ce qui signifie que l’utilisateur doit interroger l’énumérateur retourné. Cet appel de blocage infini rend qui est impossible. |
 | `WBEM_FLAG_FORWARD_ONLY` | 0 x 20 | La fonction retourne un énumérateur de type avant uniquement. En règle générale, les énumérateurs avant uniquement sont plus rapides et utilisent moins de mémoire que les énumérateurs classiques, mais ils ne permettent pas d’appels à [Clone](clone.md). |
@@ -86,7 +87,7 @@ HRESULT ExecNotificationQueryWmi (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0 x 80041003 | L’utilisateur ne dispose pas d’autorisation d’afficher un ou plusieurs des classes de la fonction peut retourner. |
 | `WBEM_E_FAILED` | 0 x 80041001 | Une erreur non spécifiée s’est produite. |
@@ -103,7 +104,7 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `WBEM_E_UNPARSABLE_QUERY` | 0x80041058 | La requête ne peut pas être analysée. |
 | `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemServices::ExecNotificationQuery](https://msdn.microsoft.com/library/aa392105(v=vs.85).aspx) (méthode).
 
@@ -113,7 +114,7 @@ Il existe des limites au nombre de `AND` et `OR` mots clés qui peuvent être ut
 
 Si l’appel de fonction échoue, vous pouvez obtenir des informations d’erreur supplémentaires en appelant le [GetErrorInfo](geterrorinfo.md) (fonction).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

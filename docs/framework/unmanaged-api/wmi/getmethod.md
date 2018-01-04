@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b4e89dabb7f4542a63260445ff2d70edcafc1784
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: f22a2dfa7aae411cac960cbad2017718df8057e1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getmethod-function"></a>GetMethod (fonction)
 Récupère des informations sur la méthode spécifiée.
@@ -62,13 +63,13 @@ HRESULT GetMethod (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La propriété spécifiée est introuvable. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible pour terminer l’opération. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::GetMethod](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx) (méthode).
 
@@ -76,7 +77,7 @@ Gestion de Windows peut définir le [IWbemClassObject](https://msdn.microsoft.co
 
 Dans `ppInSignature` et `ppOutSignature` décrivent respectivement en tant que propriétés dans les paramètres, in et out un `IWbemClassObject` l’instance de la classe système [_Parameters](https://msdn.microsoft.com/library/aa394667(v=vs.85).aspx). Les propriétés de `ppInsignature` sont nommés **Param***n*, où  *n*  est la position du paramètre dans la signature de méthode (par exemple, en tant que `Param1`, `Param2`, etc..). Les propriétés de `ppOutSignature` sont également appelés **Param***n*, et la valeur de retour est nommée **ReturnValue**. Pour plus d’informations et obtenir un exemple, consultez [IWbemClassObject::GetMethod méthode](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
 **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

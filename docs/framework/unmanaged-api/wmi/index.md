@@ -8,11 +8,12 @@ ms.date: 11/06/2017
 ms.topic: article-type-from-white-list
 ms.prod: .net-framework
 ms.devlang: cpp
-ms.openlocfilehash: 461d90aaf5beca1c0f1d1965ce0ea07411e56e79
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.workload: dotnet
+ms.openlocfilehash: 466ba410f7d6c13eb5f1949bf3aa32c3951a8ba7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>Windows Management Instrumentation (WMI) et les compteurs de Performance (référence des API non managées)
 
@@ -24,34 +25,34 @@ L’API comprend les fonctions suivantes :
 
 | Fonction | Description |
 |---------|---------|
-| [BeginEnumeration (fonction)](beginenumeration.md) | Rétablit l’énumérateur au début d’une énumération de propriétés de l’objet WMI. |
-| [BeginMethodEnumeration (fonction)](beginmethodenumeration.md) |  Commence une énumération des méthodes disponibles pour un objet. |
-| [BlessIWbemServices (fonction)](blessiwbemservices.md) | Indique si les informations d’identification utilisateur autorisent l’accès à une classe IWbemServices spécifiée. |
-| [BlessIWbemServicesObject (fonction)](blessiwbemservicesobject.md) | Indique si les informations d’identification autorisent l’accès à un objet de service IWbem spécifié. |
+| [BeginEnumeration, fonction](beginenumeration.md) | Rétablit l’énumérateur au début d’une énumération de propriétés de l’objet WMI. |
+| [BeginMethodEnumeration, fonction](beginmethodenumeration.md) |  Commence une énumération des méthodes disponibles pour un objet. |
+| [BlessIWbemServices, fonction](blessiwbemservices.md) | Indique si les informations d’identification utilisateur autorisent l’accès à une classe IWbemServices spécifiée. |
+| [BlessIWbemServicesObject, fonction](blessiwbemservicesobject.md) | Indique si les informations d’identification autorisent l’accès à un objet de service IWbem spécifié. |
 | [Clone, fonction](clone.md) | Retourne un nouvel objet qui est un clone complet de l’objet actuel. |
-| [CloneEnumWbemClassObject (fonction)](cloneenumwbemclassobject.md) | Effectue une copie logique d’un énumérateur, en conservant sa position actuelle dans une énumération. |
-| [CompareTo (fonction)](compareto.md) | Compare un objet à un autre objet de gestion de Windows. |
+| [CloneEnumWbemClassObject, fonction](cloneenumwbemclassobject.md) | Effectue une copie logique d’un énumérateur, en conservant sa position actuelle dans une énumération. |
+| [CompareTo, fonction](compareto.md) | Compare un objet à un autre objet de gestion de Windows. |
 | [ConnectServerWmi (fonction)](connectserverwmi.md) | Crée une connexion via DCOM à un espace de noms WMI sur un ordinateur spécifié. |
 | [CreateClassEnumWmi (fonction)](createclassenumwmi.md) | Retourne un énumérateur pour toutes les classes qui répondent aux critères de sélection spécifiés. |
 | [CreateInstanceEnumWmi (fonction)](createinstanceenumwmi.md) | Retourne un énumérateur qui retourne les instances d’une classe spécifiée qui répondent aux critères de sélection spécifiés. |
-| [Supprimer (fonction)](delete.md) | Supprime une propriété spécifiée à partir d’une définition de classe et tous ses qualificateurs. |
-| [DeleteMethod (fonction)](deletemethod.md) | Supprime une méthode spécifiée à partir d’une définition de classe CIM. |
-| [EndEnumeration (fonction)](endenumeration.md) | Met fin à une séquence d’énumération. | 
-| [EndMethodEnumeration (fonction)](endmethodenumeration.md) | Met fin à une séquence d’énumération lancée en appelant le [BeginMethodEnumeration fonction](beginmethodenumeration.md). |
-| [ExecNotificationQueryWmi (fonction)](execnotificationquerywmi.md) | Exécute une requête pour recevoir les événements. |
-| [ExecQueryWmi (fonction)](execquerywmi.md) | Exécute une requête pour récupérer des objets. |
-| [FormatFromRawValue (fonction)](formatfromrawvalue.md) | Convertit une valeur de données de performances brutes au format spécifié, ou les deux valeurs de données de performances brutes si la conversion de format est basé sur le temps. | 
+| [Delete, fonction](delete.md) | Supprime une propriété spécifiée à partir d’une définition de classe et tous ses qualificateurs. |
+| [DeleteMethod, fonction](deletemethod.md) | Supprime une méthode spécifiée à partir d’une définition de classe CIM. |
+| [EndEnumeration, fonction](endenumeration.md) | Met fin à une séquence d’énumération. | 
+| [EndMethodEnumeration, fonction](endmethodenumeration.md) | Met fin à une séquence d’énumération lancée en appelant le [BeginMethodEnumeration fonction](beginmethodenumeration.md). |
+| [ExecNotificationQueryWmi, fonction](execnotificationquerywmi.md) | Exécute une requête pour recevoir les événements. |
+| [ExecQueryWmi, fonction](execquerywmi.md) | Exécute une requête pour récupérer des objets. |
+| [FormatFromRawValue, fonction](formatfromrawvalue.md) | Convertit une valeur de données de performances brutes au format spécifié, ou les deux valeurs de données de performances brutes si la conversion de format est basé sur le temps. | 
 | [Get, fonction](get.md) | Récupère une valeur de propriété spécifiée si elle existe. |
 | [GetCurrentApartmentType (fonction)](getcurrentapartmenttype.md) | Récupère le type de cloisonnement dans lequel l’appelant s’exécute. |
 | [GetDemultiplexedStub (fonction)](getdemultiplexedstub.md) | Crée un récepteur de redirecteur d’objet pour aider un client lors de la réception des appels asynchrones de la gestion de Windows. |
 | [GetErrorInfo (fonction)](geterrorinfo.md) | Récupère les informations d’erreur à partir de l’appel de fonction précédente. | 
-| [GetMethod (fonction)](getmethod.md) | Récupère des informations sur la méthode spécifiée. | 
-| [GetMethodOrigin (fonction)](getmethodorigin.md) | Détermine la classe dans laquelle une méthode est déclarée. |
-| [GetMethodQualifierSet (fonction)](getmethodqualifierset.md) | Récupère le qualificateur défini pour une méthode particulière. |
-| [GetNames (fonction)](getnames.md) | Récupère un sous-ensemble ou tous les noms des propriétés d’un objet. |
-| [GetObjectText (fonction)](getobjecttext.md) | Retourne un rendu de texte d’un objet dans la syntaxe MOF. | 
-| [GetPropertyHandle (fonction)](getpropertyhandle.md) | Retourne un identificateur unique qui identifie une propriété. |
-| [GetPropertyOrigin (fonction)](getpropertyorigin.md) | Détermine la classe dans laquelle une propriété est déclarée. |
+| [GetMethod, fonction](getmethod.md) | Récupère des informations sur la méthode spécifiée. | 
+| [GetMethodOrigin, fonction](getmethodorigin.md) | Détermine la classe dans laquelle une méthode est déclarée. |
+| [GetMethodQualifierSet, fonction](getmethodqualifierset.md) | Récupère le qualificateur défini pour une méthode particulière. |
+| [GetNames, fonction](getnames.md) | Récupère un sous-ensemble ou tous les noms des propriétés d’un objet. |
+| [GetObjectText, fonction](getobjecttext.md) | Retourne un rendu de texte d’un objet dans la syntaxe MOF. | 
+| [GetPropertyHandle, fonction](getpropertyhandle.md) | Retourne un identificateur unique qui identifie une propriété. |
+| [GetPropertyOrigin, fonction](getpropertyorigin.md) | Détermine la classe dans laquelle une propriété est déclarée. |
 | [GetPropertyQualifierSet (fonction)](getpropertyqualifierset.md) | Récupère le qualificateur définie pour une propriété particulière.  |
 | [GetQualifierSet (fonction)](getqualifierset.md) | Récupère le qualificateur définie pour une instance de classe ou une définition de classe. |
 | [InheritsFrom (fonction)](inheritsfrom.md) | Détermine si l’instance ou la classe actuelle dérive d’une classe parente spécifiée. |

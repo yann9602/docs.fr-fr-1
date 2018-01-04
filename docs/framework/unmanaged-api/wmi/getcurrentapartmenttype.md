@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b250913b55ba59261a666760cc15466b6f9d096e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: a42c6c3c778dbdefd4b83621e65b81741b940ebe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType (fonction)
 Récupère le type de cloisonnement dans lequel l’appelant s’exécute.   
@@ -49,16 +50,16 @@ HRESULT GetCurrentApartmentType (
 ## <a name="return-value"></a>Valeur de retour
 
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `S_OK` | 0 | La fonction s’est terminée correctement. |
 | `E_FAIL` | 0x80000008 | L’appelant ne s’exécute pas dans un thread cloisonné. |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IComThreadingInfo::GetCurrentApartmentType](https://msdn.microsoft.com/library/windows/desktop/ms683752(v=vs.85).aspx) (méthode).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

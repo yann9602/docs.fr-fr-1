@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f32487d2bd59bd76acdc32218c6bb0842de20e87
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 30f5bf651990cafe06811019cf2b3d92f866f646
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="delete-function"></a>Supprimer (fonction)
 Supprime la propriété spécifiée et tous ses qualificateurs d’une définition de classe CIM.
@@ -50,7 +51,7 @@ HRESULT Delete (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0 x 80041001 | Une erreur non spécifiée s’est produite. |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | La propriété ne peut pas être supprimée. |
@@ -62,11 +63,11 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
 | `WBEM_E_RESET_TO_DEFAULT` | 0x80041030 | La fonction supprimée d’une valeur par défaut de remplacement pour la classe actuelle. La valeur par défaut pour cette propriété dans la classe parente a été reactiviated. | 
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::Delete](https://msdn.microsoft.com/library/aa391438(v=vs.85).aspx) (méthode).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

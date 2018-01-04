@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a7c20da9f4eafa615ff23bad4d78e669a8417464
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 13f39da43ccd19e6568465f9303930d2dc16a639
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-framework-data"></a>Données d'infrastructure de service
 Cette rubrique répertorie toutes les exceptions générées par les données d'infrastructure de service.  
@@ -45,8 +46,8 @@ Cette rubrique répertorie toutes les exceptions générées par les données d'
 |MultipleMessageHeaders|Plusieurs en-têtes avec le nom et l'espace de noms spécifiés ont été trouvés.|  
 |MultipleMessageHeadersWithActor|Plusieurs en-têtes avec le nom, l'espace de noms et le rôle spécifiés ont été trouvés.|  
 |MultipleRelatesToHeaders|Plusieurs en-têtes RelatesTo avec la relation spécifiée ont été trouvés. Un seul en-tête est autorisé par relation.|  
-|QueryFunctionTypeNotSupported|Le type de retour spécifié pour IXsltContextFunction n'est pas pris en charge.|  
-|QueryIteratorOutOfScope|XPathNodeIterator a été invalidé. Les éléments XPathNodeIterator passés comme arguments à des fonctions IXsltContextFunctions sont uniquement valides à l'intérieur de la fonction. Ils ne peuvent pas être mis en cache pour une utilisation ultérieure ou être retournés par la fonction.|  
+|QueryFunctionTypeNotSupported|Le type de retour spécifié pour IXsltContextFunction n’est pas pris en charge.|  
+|QueryIteratorOutOfScope|XPathNodeIterator a été invalidé. Les éléments XPathNodeIterator passés comme arguments à des fonctions IXsltContextFunctions sont uniquement valides à l’intérieur de la fonction. Ils ne peuvent pas être mis en cache pour une utilisation ultérieure ou être retournés par la fonction.|  
 |QueryVariableNull|Les méthodes IXsltContextVariable ne peuvent pas retourner la valeur null.|  
 |QueryVariableTypeNotSupported|Le type dérivé IXsltContextVariable spécifié n'est pas pris en charge.|  
 |ReceiveShutdownReturnedMessage|Le canal a reçu un message d'entrée inattendu avec l'action spécifiée lors de la fermeture. Fermez le canal lorsque vous n'attendez plus de message d'entrée.|  

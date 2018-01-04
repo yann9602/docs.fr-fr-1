@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 74f44d366ec4f3848f7c8436e208dcaee3466fe1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f974230dc5ddf2a663f05fc06850f49f1de6e773
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imetadatainfogetfilemapping-method"></a>IMetaDataInfo::GetFileMapping, méthode
 Obtient la région de mémoire du fichier mappé et le type de mappage.  
@@ -58,7 +59,7 @@ HRESULT GetFileMapping (
 |`E_INVALIDARG`|NULL a été transmise en tant que valeur d’argument.|  
 |`COR_E_NOTSUPPORTED`|L’implémentation CLR ne peut pas fournir d’informations sur la région de mémoire. Cela peut se produire pour les raisons suivantes :<br /><br /> -La portée des métadonnées a été ouverte avec le `ofWrite` ou `ofCopyMemory` indicateur.<br />-La portée des métadonnées a été ouverte sans le `ofReadOnly` indicateur.<br />-La [IMetaDataDispenser::OpenScopeOnMemory](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) méthode a été utilisée pour ouvrir uniquement la partie métadonnées du fichier.<br />-Le fichier n’est pas un fichier exécutable portable (PE). **Remarque :** ces conditions dépendent de l’implémentation CLR, et sont susceptibles d’être affaiblies dans les futures versions du CLR.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La mémoire qui `ppvData` pointe vers est valide tant que la portée des métadonnées sous-jacentes est ouverte.  
   
  Dans l’ordre pour que cette méthode fonctionne, lorsque vous mappez les métadonnées d’un fichier sur disque dans la mémoire en appelant le [IMetaDataDispenser::OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) (méthode), vous devez spécifier le `ofReadOnly` indicateur et vous ne devez pas spécifier le `ofWrite` ou `ofCopyMemory` indicateur.  
@@ -67,7 +68,7 @@ HRESULT GetFileMapping (
   
  Passage de NULL pour une des trois paramètres n’est pas pris en charge. La méthode retourne `E_INVALIDARG`, et aucune des sorties sont remplies. Ignorer le type de mappage ou la taille de la région peut entraîner un arrêt anormal de programme.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  
@@ -77,5 +78,5 @@ HRESULT GetFileMapping (
  **Versions du .NET framework :**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [IMetaDataInfo (Interface)](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-interface.md)  
- [CorFileMapping (énumération)](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)
+ [IMetaDataInfo, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-interface.md)  
+ [CorFileMapping, énumération](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)

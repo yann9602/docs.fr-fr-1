@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 33f576b177ddb66d6145e0b1a5d0d104346640ee
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b4980beca761a4c49c39e92c6c73a7bc1a5038b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="end-to-end-tracing-scenarios"></a>Scénarios de suivi de bout en bout
 Cette section contient des rubriques qui décrivent différents scénarios d'utilisation du suivi.  
@@ -38,16 +39,16 @@ Cette section contient des rubriques qui décrivent différents scénarios d'uti
   
 -   [Propagation d’ID d’activité](../../../../../docs/framework/wcf/diagnostics/tracing/activity-id-propagation.md)  
   
--   [Scénarios synchrones utilisant HTTP, TCP ou canal nommé](../../../../../docs/framework/wcf/diagnostics/tracing/synchronous-scenarios-using-http-tcp-or-named-pipe.md)  
+-   [Scénarios synchrones utilisant HTTP, TCP ou un canal nommé](../../../../../docs/framework/wcf/diagnostics/tracing/synchronous-scenarios-using-http-tcp-or-named-pipe.md)  
   
--   [Scénarios asynchrones à l’aide de HTTP, TCP ou canal nommé](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md)  
+-   [Scénarios asynchrones utilisant HTTP, TCP ou un canal nommé](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md)  
   
--   [Suivi des activités de sécurité des messages](../../../../../docs/framework/wcf/diagnostics/tracing/activity-tracing-in-message-security.md)  
+-   [Suivi d’activité dans la sécurité de message](../../../../../docs/framework/wcf/diagnostics/tracing/activity-tracing-in-message-security.md)  
   
 -   [MSMQ](../../../../../docs/framework/wcf/diagnostics/tracing/msmq.md)  
   
--   [COM +](../../../../../docs/framework/wcf/diagnostics/tracing/com.md)  
+-   [COM+](../../../../../docs/framework/wcf/diagnostics/tracing/com.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)

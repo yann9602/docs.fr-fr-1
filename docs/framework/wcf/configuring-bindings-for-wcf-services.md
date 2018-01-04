@@ -14,11 +14,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 92fc3886f81ee401cbd3de2fb6ef251e4c340394
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b11810e0a39c5b6091a63ef33e5abfccb95b7555
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Configuration de liaisons pour les services Windows Communication Foundation
 Lorsque vous créez une application, vous souhaitez souvent confier des décisions à l'administrateur après le déploiement de l'application. Par exemple, il n'existe souvent aucune façon de savoir à l'avance ce que sera une adresse de service ou un URI (Uniform Resource Identifier). Au lieu de d'encoder de manière irréversible une adresse, il est préférable de permettre à un administrateur de le faire après avoir créé un service. Cette souplesse est obtenue par le biais de la configuration.  
@@ -53,7 +54,7 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
   
  Les quatre exemples ci-dessous illustrent les configurations de liaison les plus courantes utilisées pour configurer un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
   
-#### <a name="specifying-an-endpoint-to-use-a-binding-type"></a>Spécification d'un point de terminaison pour utiliser un type de liaison  
+#### <a name="specifying-an-endpoint-to-use-a-binding-type"></a>Spécification d’un point de terminaison pour utiliser un type de liaison  
  Le premier exemple montre comment spécifier un point de terminaison configuré avec une adresse, un contrat et une liaison.  
   
 ```xml  
@@ -63,8 +64,7 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
   <endpoint   
       address="/HelloWorld2/"  
       contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
-      binding="basicHttpBinding" />  
-  </endpoint>  
+      binding="basicHttpBinding" />
 </service>  
 ```  
   
@@ -77,7 +77,7 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
  L'attribut de `binding` sélectionne une liaison prédéfinie ou personnalisée à utiliser pour ce point de terminaison spécifique. Un point de terminaison qui ne sélectionne pas explicitement de liaison utilise la sélection de liaison par défaut, qui correspond à `BasicHttpBinding`.  
   
 #### <a name="modifying-a-predefined-binding"></a>Modification d'une liaison prédéfinie  
- Dans l'exemple suivant, une liaison prédéfinie est modifiée. Elle peut alors être utilisée pour configurer tout point de terminaison dans le service. La liaison est modifiée en affectant 1 seconde à la valeur <xref:System.ServiceModel.Configuration.IBindingConfigurationElement.ReceiveTimeout%2A>. Notez que la propriété retourne un objet <xref:System.TimeSpan>.  
+ Dans l’exemple suivant, une liaison prédéfinie est modifiée. Elle peut alors être utilisée pour configurer tout point de terminaison dans le service. La liaison est modifiée en affectant 1 seconde à la valeur <xref:System.ServiceModel.Configuration.IBindingConfigurationElement.ReceiveTimeout%2A>. Notez que la propriété retourne un objet <xref:System.TimeSpan>.  
   
  Cette liaison modifiée se trouve dans la section consacrée aux liaisons. Cette liaison modifiée peut maintenant être utilisée lors de la création de tout point de terminaison en définissant l'attribut `binding` dans l'élément `endpoint`.  
   
@@ -89,8 +89,7 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
   <endpoint   
       address="/HelloWorld2/"  
       contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
-      binding="basicHttpBinding" />  
-  </endpoint>  
+      binding="basicHttpBinding" />
 </service>  
 <bindings>  
     <basicHttpBinding   
@@ -113,12 +112,11 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
 </behaviors>  
 <services>  
     <service   
-       name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
+       name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
        <endpoint   
           address="http://computer:8080/Hello"  
           contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
-          binding="basicHttpBinding" />  
-       </endpoint>  
+          binding="basicHttpBinding" />
     </service>  
 </services>  
 ```  
@@ -136,14 +134,12 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
         address="http://computer:8080/Hello1"  
         contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
         binding="basicHttpBinding"  
-        bindingConfiguration="shortTimeout"  
-    </endpoint>  
+        bindingConfiguration="shortTimeout" />
     <endpoint  
         address="http://computer:8080/Hello2"  
         contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
         binding="basicHttpBinding"  
-        bindingConfiguration="Secure"  
-     </endpoint>  
+        bindingConfiguration="Secure" />
 </service>  
 <bindings>  
     <basicHttpBinding   
@@ -151,8 +147,9 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
         timeout="00:00:00:01"   
      />  
      <basicHttpBinding   
-        name="Secure" />  
+        name="Secure">  
         <Security mode="Transport" />  
+     </basicHttpBinding>
 </bindings>  
 ```  
   

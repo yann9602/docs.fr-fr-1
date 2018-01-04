@@ -17,35 +17,36 @@ caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 42762812c9d27073fac34b20df5011b386f05740
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b29c63ea9dfbd69863aad1afa712444405be763e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="profiling-structures"></a>Structures de profilage
 Cette section décrit les structures non managées utilisées par l'API de profilage.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Cor_prf_assembly_reference_info, Structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)  
+ [COR_PRF_ASSEMBLY_REFERENCE_INFO, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)  
  Fournit au CLR (Common Language Runtime) des informations sur un assembly de référence qui doit être pris en compte lors d'un parcours de fermeture des références d'assembly.  
   
- [COR_PRF_CODE_INFO, Structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md)  
+ [COR_PRF_CODE_INFO, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md)  
  Représente un bloc contigu de code natif stocké en mémoire.  
   
- [COR_PRF_EX_CLAUSE_INFO (Structure)](../../../../docs/framework/unmanaged-api/profiling/cor-prf-ex-clause-info-structure.md)  
+ [COR_PRF_EX_CLAUSE_INFO, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-ex-clause-info-structure.md)  
  Stocke des informations sur une instance de clause d'exception spécifique et sa trame associée.  
   
- [COR_PRF_FUNCTION (Structure)](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-structure.md)  
+ [COR_PRF_FUNCTION, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-structure.md)  
  Fournit une représentation unique d'une fonction en combinant son ID avec l'ID de sa version recompilée.  
   
- [COR_PRF_FUNCTION_ARGUMENT_INFO, Structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md)  
+ [COR_PRF_FUNCTION_ARGUMENT_INFO, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md)  
  Représente les arguments d’une fonction, selon un ordre de gauche à droite.  
   
- [COR_PRF_FUNCTION_ARGUMENT_RANGE (Structure)](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md)  
+ [COR_PRF_FUNCTION_ARGUMENT_RANGE, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md)  
  Représente un bloc d’arguments de fonction stockés de façon contiguë en mémoire selon un ordre de gauche à droite.  
   
- [COR_PRF_GC_GENERATION_RANGE, Structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md)  
+ [COR_PRF_GC_GENERATION_RANGE, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md)  
  Décrit une plage (un bloc) de mémoire qui va faire l’objet d’un garbage collection.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
@@ -57,6 +58,6 @@ Cette section décrit les structures non managées utilisées par l'API de profi
   
  [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
   
- [Fonctions statiques globales du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
+ [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
   
  [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

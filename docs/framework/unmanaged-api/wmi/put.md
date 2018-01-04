@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6c4ad979a3a662618ab62b52d63bda3dbb1e71b9
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 09d3edc74b34688d5cc36e688f634850cfb60910
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="put-function"></a>Fonction Put
 Définit une propriété nommée par une nouvelle valeur.
@@ -63,7 +64,7 @@ HRESULT Put (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0 x 80041001 | Il a été un échec général. |
 |`WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un ou plusieurs paramètres ne sont pas valides. |
@@ -72,7 +73,7 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `WBEM_E_TYPE_MISMATCH` | 0 x 80041005 | Pour les instances : indique que `pVal` pointe vers un `VARIANT` d’un type incorrect pour la propriété. <br/> Pour les définitions de classe : la propriété existe déjà dans la classe parente et le nouveau type de COM est différent de l’ancien type COM. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi. |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::Put](https://msdn.microsoft.com/library/aa391455(v=vs.85).aspx) (méthode).
 
@@ -90,7 +91,7 @@ Utilisez le `vtType` paramètre uniquement lorsque vous créez de nouvelles prop
 
 Pour obtenir un exemple, consultez la [IWbemClassObject::Put](https://msdn.microsoft.com/library/aa391455(v=vs.85).aspx) (méthode).
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

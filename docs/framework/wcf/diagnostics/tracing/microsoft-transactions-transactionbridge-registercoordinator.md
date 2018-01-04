@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ae94edf97e513fe4065550ea074c083fd1df5394
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bc87a427a0a44f28ba7bfe4f2d71fa43768b4b76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="microsofttransactionstransactionbridgeregistercoordinator"></a>Microsoft.Transactions.TransactionBridge.RegisterCoordinator
 Service de protocole WS-Atomic Transaction inscrit avec succès auprès de son coordinateur pour un protocole de contrôle.  
@@ -26,6 +27,6 @@ Service de protocole WS-Atomic Transaction inscrit avec succès auprès de son c
  Suivi lorsque le Gestionnaire de transactions local est inscrit auprès de son Gestionnaire de transaction supérieur.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

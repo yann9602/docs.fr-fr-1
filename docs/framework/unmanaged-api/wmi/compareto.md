@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: dacb1516bebfc73ae9e16b03f3755ab49382e571
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 038074b5bb3adc816caa226d3167395758d2ae57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compareto-function"></a>CompareTo (fonction)
 Compare un objet à un autre objet de gestion de Windows.  
@@ -55,7 +56,7 @@ HRESULT CompareTo (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0 x 80041001 | Une erreur non spécifiée s’est produite. |
 | `WBEM_E_INVALID_PARAMETER` | 0 x 80041008 | Un paramètre n’est pas valide. |
@@ -64,13 +65,13 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `WBEM_S_DIFFERENT` | 0x40003 | Les objets sont différents. |
 | `WBEM_S_SAME` | 0 | Les objets sont identiques selon les indicateurs de comparaison. |
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Cette fonction encapsule un appel à la [IWbemClassObject::CompareTo](https://msdn.microsoft.com/library/aa391437(v=vs.85).aspx) (méthode).
 
 Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code. Vous pouvez spécifier les caractéristiques individuelles impliquées dans la comparaison en spécifiant une combinaison au niveau du bit des indicateurs suivants :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorer la source (le serveur et l’espace de noms que dont elles proviennent). |
 | `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorer tous les qualificateurs (y compris **clé** et **dynamique**) |
@@ -81,11 +82,11 @@ Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument s
 
 Ou vous pouvez spécifier un seul indicateur composite comme suit :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Prendre en compte toutes les fonctionnalités dans la comparaison. |
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

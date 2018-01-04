@@ -14,11 +14,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eb2d66217202ee43fb2377f4a8ef26a47b676c11
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4bc4fc7559872a808c2de87e4926075614351030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vue d’ensemble des liaisons Windows Communication Foundation
 Les liaisons sont des objets utilisés pour spécifier les détails de communication requis pour se connecter au point de terminaison d'un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Chaque point de terminaison dans un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] requiert qu'une liaison soit spécifiée correctement. Cette rubrique décrit les types de détails de communication définis par les liaisons, les éléments d'une liaison, les liaisons incluses dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] et comment une liaison peut être spécifiée pour un point de terminaison.  

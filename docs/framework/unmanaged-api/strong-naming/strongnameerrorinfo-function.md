@@ -24,11 +24,12 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 0fbe77f16ed022458a036b6627b82f80d194276c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 81e6eaa83baab67f54a1b1ce46d616be7e6fdd62
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo, fonction
 Obtient le dernier code d’erreur qui a été déclenché par une des fonctions à nom fort.  
@@ -44,10 +45,10 @@ HRESULT StrongNameErrorInfo ();
 ## <a name="return-value"></a>Valeur de retour  
  Code d’erreur COM dernière défini par une des fonctions à nom fort.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La plupart des méthodes à nom fort retournent une simple `true` ou `false` indication de leur achèvement. Utilisez le `StrongNameErrorInfo` fonction pour récupérer un HRESULT qui spécifie la dernière erreur générée par les fonctions de nom fort.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** StrongName.h  

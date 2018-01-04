@@ -22,11 +22,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: db1152e82edde34dc8dbaba09f20b9f769dffbca
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d884b80ba8ccc42d1b6acc671db408305a095a7d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Les profileurs CLR et les applications du Windows Store
 Cette rubrique explique ce que vous devez tenir compte lorsque les outils de diagnostic de l’écriture qui analysent géré du code exécuté dans une application Windows Store.  Il fournit également des instructions pour modifier vos outils de développement existants afin qu’ils continuer de fonctionner lorsque vous les exécutiez sur les applications du Windows Store.  Pour comprendre ces informations, il est préférable de que si vous êtes familiarisé avec l’API de profilage de Common Language Runtime, vous avez déjà utilisé cette API dans un outil de diagnostic que s’exécute correctement sur les applications de bureau Windows et que vous êtes maintenant intéressé par la modification de l’outil Pour exécuter correctement sur les applications du Windows Store.  

@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0cd98e6db0f400d022fe0af4e96336616cbb7183
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0387d6d5eee1c30cb1137072e2c4600f12479e8e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="functionenter-function"></a>FunctionEnter (fonction)
 Notifie le profileur que le contrôle est passé à une fonction.  
@@ -43,7 +44,7 @@ void __stdcall FunctionEnter (
  `funcID`  
  [in] Identificateur de la fonction à laquelle le contrôle est passé.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `FunctionEnter` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser le `__declspec`(`naked`) attribut de classe de stockage.  
   
  Le moteur d’exécution n’enregistre pas les registres avant d’appeler cette fonction.  
@@ -56,7 +57,7 @@ void __stdcall FunctionEnter (
   
  En outre, le `FunctionEnter` (fonction) ne doit pas appeler dans du code managé ou de quelque manière qu’une allocation de mémoire managée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl  
@@ -66,8 +67,8 @@ void __stdcall FunctionEnter (
  **Versions du .NET framework :** 1.1, 1.0  
   
 ## <a name="see-also"></a>Voir aussi  
- [FunctionEnter2 (fonction)](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)  
- [FunctionLeave2 (fonction)](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)  
- [FunctionTailcall2 (fonction)](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)  
- [SetEnterLeaveFunctionHooks2 (méthode)](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)  
- [Fonctions statiques globales du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+ [FunctionEnter2, fonction](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)  
+ [FunctionLeave2, fonction](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)  
+ [FunctionTailcall2, fonction](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)  
+ [SetEnterLeaveFunctionHooks2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)  
+ [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

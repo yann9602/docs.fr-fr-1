@@ -17,18 +17,19 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 500e57b36bbbdd1d23e6efb2c50421e3e134bcb3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 61c4f26c9880d8a7f6a8fb356bafcc0d312509dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-ws-i-basic-profile-11-interoperable-services"></a>Création de services pouvant interagir avec le profil Basic Profile 1.1 de WS-I
 Pour configurer un point de terminaison de service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] afin qu'il puisse interagir avec les clients du service Web [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] :  
   
 -   Utilisez le type <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> comme type de liaison pour votre point de terminaison de service.  
   
--   N'utilisez pas les fonctionnalités de rappel et de contrat de session, ni les comportements de transaction sur votre point de terminaison de service  
+-   N’utilisez pas les fonctionnalités de rappel et de contrat de session, ni les comportements de transaction sur votre point de terminaison de service  
   
  Vous pouvez éventuellement activer la prise en charge du protocole HTTPS et de l'authentification du client au niveau du transport sur la liaison.  
   
@@ -51,4 +52,4 @@ Pour configurer un point de terminaison de service [!INCLUDE[indigo2](../../../i
  [!code-xml[C_HowTo-WCFServiceAndASMXClient#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/common/app.config#1)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interopérabilité avec les Services Web ASP.NET](../../../docs/framework/wcf/feature-details/interop-with-aspnet-web-services.md)
+ [Interopérabilité avec les services web ASP.NET](../../../docs/framework/wcf/feature-details/interop-with-aspnet-web-services.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7be93c5949966c052e77adebe8bb4d7aac9149bb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1bc7383c5b93203b144c965f06fa7365c864de27
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-architecture"></a>Architecture Windows Communication Foundation
 Le graphique suivant illustre les principales couches de l'architecture [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].  
@@ -48,7 +49,7 @@ Le graphique suivant illustre les principales couches de l'architecture [!INCLUD
   
  Les canaux de protocole implémentent des protocoles de traitement de message, souvent en lisant ou en écrivant des en-têtes supplémentaires dans le message. Ces protocoles sont notamment WS-Security et WS-Reliability.  
   
- La couche de messagerie illustre les formats et modèles d'échange possibles des données. WS-Security est une implémentation de la spécification WS-Security qui active la sécurité au niveau de la couche de message. Le canal de messagerie WS-Reliable active la garantie de remise des messages. Les encodeurs présentent divers encodages qui permettent de répondre aux besoins du message. Le canal HTTP spécifie que le protocole HTTP (HyperText Transport Protocol) est utilisé pour la remise des messages. De même, le canal TCP spécifie le protocole TCP. Le canal de flux de transaction définit les modèles de messages traités. Le canal nommé active la communication entre processus. Le canal MSMQ active l'interopérabilité avec les applications MSMQ.  
+ La couche de messagerie illustre les formats et modèles d’échange possibles des données. WS-Security est une implémentation de la spécification WS-Security qui active la sécurité au niveau de la couche de message. Le canal de messagerie WS-Reliable active la garantie de remise des messages. Les encodeurs présentent divers encodages qui permettent de répondre aux besoins du message. Le canal HTTP spécifie que le protocole HTTP (HyperText Transport Protocol) est utilisé pour la remise des messages. De même, le canal TCP spécifie le protocole TCP. Le canal de flux de transaction définit les modèles de messages traités. Le canal nommé active la communication entre processus. Le canal MSMQ active l'interopérabilité avec les applications MSMQ.  
   
 ### <a name="hosting-and-activation"></a>Hébergement et activation  
  Sous sa forme définitive, un service est un programme. Comme tout autre programme, un service doit être exécuté dans un fichier exécutable. Il s’agit comme un *auto-hébergé* service.  
